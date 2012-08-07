@@ -1,5 +1,4 @@
-#! /usr/bin/env python
-# Copyright (C) 2012 OpenStack, LLC.
+# Copyright 2012 Hewlett-Packard Development Company, L.P.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -40,18 +39,13 @@
 # triggerApprovalCategory and triggerApprovalValue only required if triggerOnCommentAddedEvent: 'true'
 
 import xml.etree.ElementTree as XML
+import jenkins_jobs.modules.base
 
-
-def register(registry):
-    mod = Triggers(registry)
-    registry.registerModule(mod)
-
-
-class Triggers(object):
+class Triggers(jenkins_jobs.modules.base.Base):
     sequence = 50
 
     def __init__(self, registry):
-        self.registry = registry
+        super(Triggers, self).__init__(registry)
         for f in dir(self):
             if not f.startswith('_trigger_'):
                 continue

@@ -1,5 +1,4 @@
-#! /usr/bin/env python
-# Copyright (C) 2012 OpenStack, LLC.
+# Copyright 2012 Hewlett-Packard Development Company, L.P.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,6 +13,9 @@
 # under the License.
 
 # Jenkins Job module for Zuul
+
+import jenkins_jobs.modules.base
+
 
 ZUUL_PARAMETERS = [
     {'description': 'Zuul provided key to link builds with Gerrit events',
@@ -53,13 +55,7 @@ ZUUL_NOTIFICATIONS = [
      'protocol': 'HTTP'}
     ]
 
-
-def register(registry):
-    mod = Zuul()
-    registry.registerModule(mod)
-
-
-class Zuul(object):
+class Zuul(jenkins_jobs.modules.base.Base):
     sequence = 0
 
     def handle_data(self, data):

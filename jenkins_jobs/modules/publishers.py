@@ -1,5 +1,4 @@
-#! /usr/bin/env python
-# Copyright (C) 2012 OpenStack, LLC.
+# Copyright 2012 Hewlett-Packard Development Company, L.P.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,18 +16,13 @@
 # No additional YAML needed
 
 import xml.etree.ElementTree as XML
+import jenkins_jobs.modules.base
 
-
-def register(registry):
-    mod = Publishers(registry)
-    registry.registerModule(mod)
-
-
-class Publishers(object):
+class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
     def __init__(self, registry):
-        self.registry = registry
+        super(Publishers, self).__init__(registry)
         for f in dir(self):
             if not f.startswith('_publisher_'):
                 continue

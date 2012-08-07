@@ -1,5 +1,4 @@
-#! /usr/bin/env python
-# Copyright (C) 2012 OpenStack, LLC.
+# Copyright 2012 Hewlett-Packard Development Company, L.P.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,14 +21,10 @@
 #   goals: 'test'
 
 import xml.etree.ElementTree as XML
+import jenkins_jobs.modules.base
 
 
-def register(registry):
-    mod = Freestyle()
-    registry.registerModule(mod)
-
-
-class Freestyle(object):
+class Freestyle(jenkins_jobs.modules.base.Base):
     sequence = 0
 
     def root_xml(self, data):

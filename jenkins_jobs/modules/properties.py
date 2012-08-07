@@ -1,5 +1,4 @@
-#! /usr/bin/env python
-# Copyright (C) 2012 OpenStack, LLC.
+# Copyright 2012 Hewlett-Packard Development Company, L.P.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,14 +16,10 @@
 # No additional YAML needed
 
 import xml.etree.ElementTree as XML
+import jenkins_jobs.modules.base
 
 
-def register(registry):
-    mod = Properties()
-    registry.registerModule(mod)
-
-
-class Properties(object):
+class Properties(jenkins_jobs.modules.base.Base):
     sequence = 20
 
     def handle_data(self, data):

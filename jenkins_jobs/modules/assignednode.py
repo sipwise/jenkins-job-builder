@@ -1,5 +1,4 @@
-#! /usr/bin/env python
-# Copyright (C) 2012 OpenStack, LLC.
+# Copyright 2012 Hewlett-Packard Development Company, L.P.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,18 +18,13 @@
 #   - node: 'oneiric'
 
 import xml.etree.ElementTree as XML
+import jenkins_jobs.modules.base
 
 
-def register(registry):
-    mod = AssignedNode()
-    registry.registerModule(mod)
-
-
-class AssignedNode(object):
+class AssignedNode(jenkins_jobs.modules.base.Base):
     sequence = 40
 
     def gen_xml(self, xml_parent, data):
         node = data['assignednode']['node']
         XML.SubElement(xml_parent, 'assignedNode').text = node
-        XML.SubElement(xml_parent, 'canRoam').text = 'false' 
-
+        XML.SubElement(xml_parent, 'canRoam').text = 'false'

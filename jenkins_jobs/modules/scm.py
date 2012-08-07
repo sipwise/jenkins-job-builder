@@ -1,5 +1,4 @@
-#! /usr/bin/env python
-# Copyright (C) 2012 OpenStack, LLC.
+# Copyright 2012 Hewlett-Packard Development Company, L.P.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,14 +20,10 @@
 #  scm: 'false'
 
 import xml.etree.ElementTree as XML
+import jenkins_jobs.modules.base
 
 
-def register(registry):
-    mod = SCM()
-    registry.registerModule(mod)
-
-
-class SCM(object):
+class SCM(jenkins_jobs.modules.base.Base):
     sequence = 30
 
     def handle_data(self, data):
