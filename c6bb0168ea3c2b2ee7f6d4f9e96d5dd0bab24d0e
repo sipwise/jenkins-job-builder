@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//yeE\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 2
+      },
+      "writtenOn": "2012-08-12T12:20:54Z",
+      "side": 1,
+      "message": "Not important for this change, but perhaps we should make this read \"MANAGED BY JOB-BUILDER\" or something.",
+      "revId": "c6bb0168ea3c2b2ee7f6d4f9e96d5dd0bab24d0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//yeA\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 2
+      },
+      "writtenOn": "2012-08-12T12:20:54Z",
+      "side": 1,
+      "message": "Not important for this change, but we should really make this URL configurable.",
+      "revId": "c6bb0168ea3c2b2ee7f6d4f9e96d5dd0bab24d0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
