@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//gQs\u003d",
+        "filename": "tools/run-compare-xml.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-09-05T18:41:20Z",
+      "side": 1,
+      "message": "Should this be `(cd .test/old/out \u0026\u0026 find -type f)` ? I think .test/old/config can be ignored?",
+      "revId": "c9a8fed84e81d4bd9aba7288b0776a364eb51a12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//gQo\u003d",
+        "filename": "tools/run-compare-xml.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-09-05T18:41:20Z",
+      "side": 1,
+      "message": "$x has a prepeneded \u0027./\u0027 which is causing problems when that is joined to .test/old/out/ to create a path.",
+      "revId": "c9a8fed84e81d4bd9aba7288b0776a364eb51a12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
