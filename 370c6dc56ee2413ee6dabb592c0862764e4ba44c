@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//hE0\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-09-04T23:40:03Z",
+      "side": 1,
+      "message": "i don\u0027t actually see an option in the UI that would change \"on\", do you?\n\nIf not, we can just leave it as true always.",
+      "revId": "370c6dc56ee2413ee6dabb592c0862764e4ba44c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
