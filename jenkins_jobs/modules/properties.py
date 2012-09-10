@@ -12,14 +12,67 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-# Jenkins Job module for job properties
-# No additional YAML needed
+
+"""
+The Properties module supplies a wide range of options that are
+implemented as Jenkins job properties, from the obvious (job
+parameters) to the less obvious (job throttling).
+
+The module defines three kinds of components, all of which accept
+lists of components in the :ref:`Job` definition.  They may be
+components defined below, locally defined macros, or locally defined
+components found via entry points.
+
+**Component**: properties
+  :Macro: property
+  :Entry Point: jenkins_jobs.properties
+
+**Component**: parameters
+  :Macro: parameter
+  :Entry Point: jenkins_jobs.parameters
+
+**Component**: notifications
+  :Macro: notification
+  :Entry Point: jenkins_jobs.notifications
+
+Example::
+
+  job:
+    name: test_job
+
+    properties:
+      - github:
+          url: https://github.com/openstack-ci/jenkins-job-builder/
+
+    parameters:
+      - string:
+          name: FOO
+          default: bar
+          description: "A parameter named FOO, defaults to 'bar'."
+
+    notifications:
+      - http:
+          url: http://example.com/jenkins_endpoint
+"""
+
 
 import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 
 
 def github(parser, xml_parent, data):
+    """yaml: github
+    Sets the GitHub URL for the project.
+
+    :arg str url: the GitHub URL
+
+    Example::
+
+      properties:
+        - github:
+            url: https://github.com/openstack-ci/jenkins-job-builder/
+
+    """
     github = XML.SubElement(xml_parent,
                'com.coravy.hudson.plugins.github.GithubProjectProperty')
     github_url = XML.SubElement(github, 'projectUrl')
@@ -27,6 +80,21 @@ def github(parser, xml_parent, data):
 
 
 def throttle(parser, xml_parent, data):
+    """yaml: throttle
+    Throttles the number of builds for this job.
+
+    :arg int max-per-node: max concurrent builds per node (default 0)
+    :arg int max-total: max concurrent builds (default 0)
+    :arg bool enabled: whether throttling is enabled (default True)
+    :arg str option: TODO: describe throttleOption
+
+    Example::
+
+      properties:
+        - throttle:
+            max-total: 4
+
+    """
     throttle = XML.SubElement(xml_parent,
                  'hudson.plugins.throttleconcurrents.ThrottleJobProperty')
     XML.SubElement(throttle, 'maxConcurrentPerNode').text = str(
@@ -111,38 +179,14 @@ def label_param(parser, xml_parent, data):
       'org.jvnet.jenkins.plugins.nodelabelparameter.LabelParameterDefinition')
 
 
-def http_endpoint(parser, xml_parent, data):
-    endpoint_element = XML.SubElement(xml_parent,
-                'com.tikal.hudson.plugins.notification.Endpoint')
-    XML.SubElement(endpoint_element, 'protocol').text = 'HTTP'
-    XML.SubElement(endpoint_element, 'url').text = data['url']
-
-
 class Properties(jenkins_jobs.modules.base.Base):
     sequence = 20
 
     def gen_xml(self, parser, xml_parent, data):
-        properties = XML.SubElement(xml_parent, 'properties')
+        properties = xml_parent.find('properties')
+        if properties is None:
+            properties = XML.SubElement(xml_parent, 'properties')
 
         for prop in data.get('properties', []):
             self._dispatch('property', 'properties',
                            parser, properties, prop)
-
-        parameters = data.get('parameters', [])
-        if parameters:
-            pdefp = XML.SubElement(properties,
-                                   'hudson.model.ParametersDefinitionProperty')
-            pdefs = XML.SubElement(pdefp, 'parameterDefinitions')
-            for param in parameters:
-                self._dispatch('parameter', 'parameters',
-                               parser, pdefs, param)
-
-        notifications = data.get('notifications', [])
-        if notifications:
-            notify_element = XML.SubElement(properties,
-            'com.tikal.hudson.plugins.notification.HudsonNotificationProperty')
-            endpoints_element = XML.SubElement(notify_element, 'endpoints')
-
-            for endpoint in notifications:
-                self._dispatch('notification', 'notifications',
-                               parser, endpoints_element, endpoint)
