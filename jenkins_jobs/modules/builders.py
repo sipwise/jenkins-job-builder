@@ -12,22 +12,42 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-# Jenkins Job module for builders
-# To use add the folowing into your YAML:
-# builders:
-#   - 'gerrit_git_prep'
-#   - 'python26'
+
+"""
+Builders define actions that the Jenkins job should execute.  Examples
+include shell scripts or maven targets.
+"""
+
 
 import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 
-
 def shell(parser, xml_parent, data):
+    """yaml: shell
+    Execute a shell command.
+
+    Example::
+
+      builders:
+        - shell: "make test"
+
+    """
     shell = XML.SubElement(xml_parent, 'hudson.tasks.Shell')
     XML.SubElement(shell, 'command').text = data
 
-
 def trigger_builds(parser, xml_parent, data):
+    """yaml: trigger-builds
+    Trigger builds of other jobs.
+
+    Example::
+
+      builders:
+        - trigger-builds:
+            - project: NAME
+              predefined-parameters:
+                VARIABLE=VALUE
+
+    """
     tbuilder = XML.SubElement(xml_parent,
                    'hudson.plugins.parameterizedtrigger.TriggerBuilder')
     configs = XML.SubElement(tbuilder, 'configs')
