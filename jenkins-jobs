@@ -4,6 +4,7 @@ import jenkins_jobs.builder
 import argparse
 import ConfigParser
 import logging
+import sys
 
 def main():
     parser = argparse.ArgumentParser()
@@ -53,6 +54,9 @@ def main():
                           options.name))
         builder.update_job(options.path, options.name)
     elif options.command == 'test':
+        if(not options.output_dir):
+            logger.error("You must specify an output dir (-o) in test mode")
+            sys.exit(1)
         builder.update_job(options.path, options.name,
                            output_dir=options.output_dir)
 
