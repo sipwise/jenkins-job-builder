@@ -73,6 +73,12 @@ def authenticated_build(parser, xml_parent, data):
         XML.SubElement(security, 'permission').text = \
         'hudson.model.Item.Build:authenticated'
 
+def hipchat(parser, xml_parent, data):
+    pdefhip = XML.SubElement(xml_parent,
+              'jenkins.plugins.hipchat.HipChatNotifier_-HipChatJobProperty')
+    XML.SubElement(pdefhip, 'room').text = data['room']
+    XML.SubElement(pdefhip, 'startNotification').text = str(
+                                  data.get('start-notify', 'false')).lower()
 
 def base_param(parser, xml_parent, data, do_default, ptype):
     pdef = XML.SubElement(xml_parent, ptype)

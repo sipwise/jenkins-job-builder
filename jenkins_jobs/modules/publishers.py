@@ -261,6 +261,13 @@ def pipeline(parser, xml_parent, data):
            'au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger')
     XML.SubElement(pippub, 'downstreamProjectNames').text = data
 
+def hipchat(parser, xml_parent, data):
+    hippub = XML.SubElement(xml_parent, 
+                       'jenkins.plugins.hipchat.HipChatNotifier')
+    XML.SubElement(hippub, 'jenkinsUrl').text = data['jenkins_url']
+    XML.SubElement(hippub, 'authToken').text = data['authtoken']
+    XML.SubElement(hippub, 'room').text = data['room_id']
+        
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 

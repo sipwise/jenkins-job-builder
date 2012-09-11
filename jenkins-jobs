@@ -33,7 +33,10 @@ def main():
         conf = options.conf
     else:
         conf = '/etc/jenkins_jobs/jenkins_jobs.ini'
-
+    
+    # Kludge alert - making the config object global so that it can
+    # be accessed from elsewhere.
+    global config
     if not options.command == 'test':
         logger.debug("Reading config from {0}".format(conf))
         conffp = open(conf, 'r')
