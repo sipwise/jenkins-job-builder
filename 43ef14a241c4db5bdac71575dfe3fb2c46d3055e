@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//b4k\u003d",
+        "filename": "jenkins-jobs",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-09-11T16:55:21Z",
+      "side": 1,
+      "message": "I expect we\u0027ll have a pep8 job for this eventually; it\u0027s not a requirement to clean up the trailing whitespace (adding logging is _way_ more important than whitespace), but you might think about that for the future.",
+      "revId": "43ef14a241c4db5bdac71575dfe3fb2c46d3055e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//b4g\u003d",
+        "filename": "jenkins-jobs",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-09-11T16:55:21Z",
+      "side": 1,
+      "message": "This seems like it would be good as an .info.",
+      "revId": "43ef14a241c4db5bdac71575dfe3fb2c46d3055e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//b4c\u003d",
+        "filename": "jenkins-jobs",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-09-11T16:55:21Z",
+      "side": 1,
+      "message": ".info for this one too?",
+      "revId": "43ef14a241c4db5bdac71575dfe3fb2c46d3055e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//b4w\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-09-11T16:55:21Z",
+      "side": 1,
+      "message": "I think these two should be debug, and ...",
+      "revId": "43ef14a241c4db5bdac71575dfe3fb2c46d3055e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//b44\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-09-11T16:55:21Z",
+      "side": 1,
+      "message": "I think these two should be .info, what do you think?",
+      "revId": "43ef14a241c4db5bdac71575dfe3fb2c46d3055e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
