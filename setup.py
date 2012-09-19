@@ -45,6 +45,7 @@ setup(name='jenkins_job_builder',
             'inject=jenkins_jobs.modules.properties:inject',
             'authenticated-build=jenkins_jobs.modules.properties:'
               'authenticated_build',
+            'hipchat=jenkins_jobs.modules.hipchat_notif:hipchat_property',
             ],
         'jenkins_jobs.parameters': [
             'string=jenkins_jobs.modules.parameters:string_param',
@@ -67,6 +68,7 @@ setup(name='jenkins_job_builder',
             'scp=jenkins_jobs.modules.publishers:scp',
             'pipeline=jenkins_jobs.modules.publishers:pipeline',
             'email=jenkins_jobs.modules.publishers:email',
+            'hipchat=jenkins_jobs.modules.hipchat_notif:hipchat_publisher',
             ],
         'jenkins_jobs.scm': [
             'git=jenkins_jobs.modules.scm:git',
@@ -94,6 +96,7 @@ setup(name='jenkins_job_builder',
             'triggers=jenkins_jobs.modules.triggers:Triggers',
             'wrappers=jenkins_jobs.modules.wrappers:Wrappers',
             'zuul=jenkins_jobs.modules.zuul:Zuul',
+            'hipchat=jenkins_jobs.modules.hipchat_notif:HipChat',
             ]
         }
 
