@@ -113,16 +113,19 @@ def inject(parser, xml_parent, data):
     inject = XML.SubElement(xml_parent,
                  'EnvInjectJobProperty')
     info = XML.SubElement(inject, 'info')
-    XML.SubElement(info, 'propertiesFilePath').text = str(
-        data.get('properties-file', ''))
-    XML.SubElement(info, 'propertiesContent').text = str(
-        data.get('properties-content', ''))
-    XML.SubElement(info, 'scriptFilePath').text = str(
-        data.get('script-file', ''))
-    XML.SubElement(info, 'scriptContent').text = str(
-        data.get('script-content', ''))
-    XML.SubElement(info, 'groovyScriptContent').text = str(
-        data.get('groovy-content', ''))
+    # It seems like empty properties (e.g. <scriptFilePath/>) cause problems
+    # for the EnvInject plugin (EnvInject v1.5.3 on jenkins v1.464 at least).
+    # Inject only those properties that have been specified.
+    str_props = {'properties-file': 'propertiesFilePath',
+                 'properties-content': 'propertiesContent',
+                 'script-file': 'scriptFilePath',
+                 'script-content': 'scriptContent',
+                 'groovy-content': 'groovyScriptContent',
+                }
+    for p, xp in str_props.iteritems():
+        if p in data:
+            XML.SubElement(info, xp).text = str(data[p])
+
     XML.SubElement(info, 'loadFilesFromMaster').text = str(
         data.get('load-from-master', 'false')).lower()
     XML.SubElement(inject, 'on').text = str(
