@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAALH//UMw\u003d",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-09-21T20:25:47Z",
+      "side": 1,
+      "message": "It might help newcomers to also have a link to http://wiki.openstack.org/HowToContribute as well.",
+      "revId": "9281a57753665c064779ed4d2549a7f57906969c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//UIo\u003d",
         "filename": "README.md",
         "patchSetId": 1
