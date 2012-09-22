@@ -1,0 +1,22 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//UIo\u003d",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2012-09-21T21:24:53Z",
+      "side": 1,
+      "message": "Indeed! I have added the link with patchset 2.",
+      "parentUuid": "AAAALH//UMw\u003d",
+      "revId": "9281a57753665c064779ed4d2549a7f57906969c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
