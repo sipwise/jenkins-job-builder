@@ -38,6 +38,9 @@ Example::
 
 import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 def shell(parser, xml_parent, data):
@@ -80,6 +83,10 @@ def trigger_builds(parser, xml_parent, data):
                    'hudson.plugins.parameterizedtrigger.TriggerBuilder')
     configs = XML.SubElement(tbuilder, 'configs')
     for project_def in data:
+        logger.debug("Trigger build: {0}".format(project_def))
+        if 'project' not in project_def or project_def['project'] == '':
+            logger.debug("No project specified - skipping trigger-build")
+            continue
         tconfig = XML.SubElement(configs,
             'hudson.plugins.parameterizedtrigger.BlockableBuildTriggerConfig')
         tconfigs = XML.SubElement(tconfig, 'configs')
