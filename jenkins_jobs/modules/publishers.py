@@ -394,10 +394,11 @@ def pipeline(parser, xml_parent, data):
         - pipleline:
             downstreamProjectNames: 'deploy'
     """
-    pippub = XML.SubElement(xml_parent,
+    if data != '':
+        pippub = XML.SubElement(xml_parent,
                             'au.com.centrumsystems.hudson.plugin.'
                             'buildpipeline.trigger.BuildPipelineTrigger')
-    XML.SubElement(pippub, 'downstreamProjectNames').text = data
+        XML.SubElement(pippub, 'downstreamProjectNames').text = data
 
 
 def email(parser, xml_parent, data):
