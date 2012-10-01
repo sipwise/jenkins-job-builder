@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//UUQ\u003d",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-09-21T18:34:17Z",
+      "side": 1,
+      "message": "Slight pep8 issue here (we are trying to use stricter pep8 checks so I point it out). Line 77 should be indented one level and line 78 unindented one level.",
+      "revId": "234d25901c56ba2311955dfb9482ac5dce30992a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
