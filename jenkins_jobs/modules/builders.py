@@ -56,6 +56,41 @@ def shell(parser, xml_parent, data):
     XML.SubElement(shell, 'command').text = data
 
 
+def ant(parser, xml_parent, data):
+    """yaml: ant
+    Execute an ant target.
+
+    The ant targets should be a space separated list of ant targets to execute.
+    List can be passed directly as an argument or as the 'targets' parameter.
+    You might specify a buildfile using the 'buildfile' parameter.
+
+    Example by just specifying a target::
+
+        builders:
+         - ant: "posttarget"
+
+    Example specifying the build file too and several targets::
+
+        builders:
+          - ant:
+           - targets: "debug test install"
+           - buildfile: "build.xml"
+
+    """
+    ant = XML.SubElement(xml_parent, 'hudson.tasks.Ant')
+
+    if type(data) is str:
+        # Support for short form: -ant: "target"
+        data = [{'targets': data}]
+    for project_def in data:
+        if 'targets' in project_def:
+            targets = XML.SubElement(ant, 'targets')
+            targets.text = project_def['targets']
+        if 'buildfile' in project_def:
+            buildfile = XML.SubElement(ant, 'buildFile')
+            buildfile.text = project_def['buildfile']
+
+
 def trigger_builds(parser, xml_parent, data):
     """yaml: trigger-builds
     Trigger builds of other jobs.
