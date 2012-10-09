@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAALH//Lwc\u003d",
+        "filename": "jenkins-jobs",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-10-08T16:41:49Z",
+      "side": 1,
+      "message": "I think it would be a good idea to add a help message for this command. If I am not mistaken this command will delete all of the jobs on the jenkins server and not just those managed by Jenkins Job Builder. A warning about this behaviour is a good thing.",
+      "revId": "d2bc1683ca07e24a36a07bce0ece196bb435722b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//LYM\u003d",
         "filename": "jenkins-jobs",
         "patchSetId": 2
