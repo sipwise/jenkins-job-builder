@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//KsE\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-10-09T20:51:20Z",
+      "side": 1,
+      "message": "s/uses/use/",
+      "revId": "65b2b53aedbb4eb6ea8275e9898d9a9d9d5526f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//KsA\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-10-09T20:51:20Z",
+      "side": 1,
+      "message": "Insert this line here:\n\n      :Parameter: space separated list of Ant targets\n\nTo make the documentation of form #1 match \"shell\" below, which also takes no named parameters.",
+      "revId": "65b2b53aedbb4eb6ea8275e9898d9a9d9d5526f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
