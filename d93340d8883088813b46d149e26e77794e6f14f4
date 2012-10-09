@@ -1,0 +1,22 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//LP8\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2012-10-09T08:16:37Z",
+      "side": 1,
+      "message": "Space in URL has been removed with patchset 3.",
+      "parentUuid": "AAAALH//Ljg\u003d",
+      "revId": "d93340d8883088813b46d149e26e77794e6f14f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
