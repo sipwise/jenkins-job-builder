@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAALH//Ljg\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-10-08T21:30:53Z",
+      "side": 1,
+      "message": "There is an extra space between \u0027display/\u0027 and \u0027JENKINS/\u0027 that should be removed.",
+      "revId": "d93340d8883088813b46d149e26e77794e6f14f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//LP8\u003d",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
