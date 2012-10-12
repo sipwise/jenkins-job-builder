@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAALH//KAE\u003d",
+        "filename": "jenkins-jobs",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-10-10T16:58:23Z",
+      "side": 1,
+      "message": "This should be localconf \u003d os.path.join(os.path.dirname(__file__), \u0027jenkins_jobs.ini\u0027) for more flexibility.",
+      "revId": "27ec65ad10b3f9863b78f1f5757bf88786582482",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//J1k\u003d",
         "filename": "jenkins-jobs",
         "patchSetId": 1
