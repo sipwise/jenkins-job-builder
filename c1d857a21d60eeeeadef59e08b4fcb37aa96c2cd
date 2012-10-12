@@ -1,0 +1,22 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//J0k\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2012-10-10T19:59:53Z",
+      "side": 1,
+      "message": "Good catch!\n\nI wrote that YAML example when I though the \"pattern\" was just a file path. Ends up being an ANT file pattern, so I updated the code below but forgot about the docblock.\n\nKeeping code and doc in sync is challenging :(",
+      "parentUuid": "AAAALH//KAg\u003d",
+      "revId": "c1d857a21d60eeeeadef59e08b4fcb37aa96c2cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
