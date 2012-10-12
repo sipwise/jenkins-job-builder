@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAALH//Jzg\u003d",
+        "filename": "jenkins-jobs",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-10-10T20:05:01Z",
+      "side": 1,
+      "message": "I think this should be just \u0027jenkins_jobs.ini\u0027. No \u0027/\u0027 needed.",
+      "revId": "a4c1e05f685865774890a14010e4c23422e6a057",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALH//JuU\u003d",
         "filename": "jenkins-jobs",
         "patchSetId": 2
