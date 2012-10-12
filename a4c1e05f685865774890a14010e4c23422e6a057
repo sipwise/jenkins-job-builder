@@ -1,0 +1,22 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//JuU\u003d",
+        "filename": "jenkins-jobs",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2012-10-10T20:58:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALH//Jzg\u003d",
+      "revId": "a4c1e05f685865774890a14010e4c23422e6a057",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
