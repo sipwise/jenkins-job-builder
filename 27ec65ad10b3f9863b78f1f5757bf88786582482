@@ -1,0 +1,22 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//J1k\u003d",
+        "filename": "jenkins-jobs",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2012-10-10T19:42:55Z",
+      "side": 1,
+      "message": "Not sure what you mean, I guess that is about the path separator being different on some OS.\n\nDone in next patchset :-]",
+      "parentUuid": "AAAALH//KAE\u003d",
+      "revId": "27ec65ad10b3f9863b78f1f5757bf88786582482",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
