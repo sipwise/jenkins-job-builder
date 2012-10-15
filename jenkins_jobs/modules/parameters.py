@@ -176,6 +176,29 @@ def choice_param(parser, xml_parent, data):
         XML.SubElement(a, 'string').text = choice
 
 
+def svn_tags_param(parser, xml_parent, data):
+    """yaml: svn_tags
+    A svn_tag parameter
+    Requires the Jenkins 'Parameterized Trigger Plugin'
+    <https://wiki.jenkins-ci.org/display/JENKINS/
+    Parameterized+Trigger+Plugin>'_
+
+    :arg str url: the url to list tags from
+
+    Example::
+
+      parameters:
+        - svn_tags:
+            url: http://svn.example.com/repo
+    """
+    pdef = base_param(parser, xml_parent, data, True, 
+      'hudson.scm.listtagsparameter.ListSubversionTagsParameterDefinition')
+    XML.SubElement(pdef, 'tagsDir').text = data['url']
+    XML.SubElement(pdef, 'reverseByDate').text = "true"
+    XML.SubElement(pdef, 'reverseByName').text = "false"
+    XML.SubElement(pdef, 'maxTags').text = "100"
+
+
 class Parameters(jenkins_jobs.modules.base.Base):
     sequence = 21
 
