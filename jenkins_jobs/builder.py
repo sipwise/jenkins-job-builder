@@ -110,9 +110,21 @@ class YamlParser(object):
 
     def getXMLForTemplateJob(self, project, template):
         s = yaml.dump(template, default_flow_style=False)
-        s = s.format(**project)
-        data = yaml.load(s)
-        self.getXMLForJob(data)
+        dimensions = []
+        for (k,v) in project.items():
+            if type(v) == list and k not in ['jobs']:
+                dimensions.append(zip([k]*len(v),v))
+
+        # XXX somewhat hackish to ensure we actually have a single
+        # pass through the loop
+        if len(dimensions) == 0:
+            dimensions = [("","")]
+        for values in itertools.product(*dimensions):
+            ip = project.copy()
+            ip.update(values)
+            y = s.format(**ip)
+            data = yaml.load(y)
+            self.getXMLForJob(data)
 
     def getXMLForJob(self, data):
         kind = data.get('project-type', 'freestyle')
