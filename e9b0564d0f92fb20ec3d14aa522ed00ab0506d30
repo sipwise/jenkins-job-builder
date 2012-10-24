@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//Rrk\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-09-26T15:58:14Z",
+      "side": 1,
+      "message": "trailing whitespace",
+      "revId": "e9b0564d0f92fb20ec3d14aa522ed00ab0506d30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALH//Rqg\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-09-26T15:58:14Z",
+      "side": 1,
+      "message": "This creates a copy of the dict so it can be modified safely.  Currently by specification the dict can only be one level deep and reference strings.  However, I wonder if we shouldn\u0027t go ahead and use copy.deepcopy here to both be more explicit about what\u0027s happening, and to possibly prevent future bugs if the structure gets more complex.\n\nIf you agree, can you go ahead and make that change.  If not, would you mind adding a comment here so at least the purpose of the dict() call is a little more explicit (it looks like something that could be overlooked in a refactoring, for instance).",
+      "revId": "e9b0564d0f92fb20ec3d14aa522ed00ab0506d30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
