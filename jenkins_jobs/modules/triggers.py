@@ -140,7 +140,7 @@ def pollscm(parser, xml_parent, data):
 
 
 def timed(parser, xml_parent, data):
-    """yaml: pollscm
+    """yaml: timed
     Poll the SCM to determine if there has been a change.
 
     :Parameter: the polling interval (cron syntax)
@@ -148,7 +148,7 @@ def timed(parser, xml_parent, data):
     Example:
 
     trigger:
-      - pollscm: "@midnight"
+      - timed: "@midnight"
     """
     scmtrig = XML.SubElement(xml_parent, 'hudson.triggers.TimerTrigger')
     XML.SubElement(scmtrig, 'spec').text = data
