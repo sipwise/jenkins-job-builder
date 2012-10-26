@@ -1,1 +1,6 @@
+discover
+fixtures
+python-subunit
 sphinx
+testtools
+testrepository
