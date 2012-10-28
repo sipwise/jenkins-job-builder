@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//7QE\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 576,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-10-26T18:42:50Z",
+      "side": 1,
+      "message": "the comma after \u0027wiki\u0027 should be a period.",
+      "revId": "8e79bcdb65411f4221d74ebc4e05087ac3ee1e1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
