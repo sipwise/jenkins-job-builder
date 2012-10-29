@@ -86,6 +86,7 @@ setup(name='jenkins_job_builder',
             'timeout=jenkins_jobs.modules.wrappers:timeout',
             'timestamps=jenkins_jobs.modules.wrappers:timestamps',
             'ansicolor=jenkins_jobs.modules.wrappers:ansicolor',
+            'mask-passwords=jenkins_jobs.modules.wrappers:maskpasswords',
             ],
         'jenkins_jobs.modules': [
             'assignednode=jenkins_jobs.modules.assignednode:AssignedNode',
