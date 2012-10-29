@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//7Fg\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-10-26T20:59:22Z",
+      "side": 1,
+      "message": "The timed trigger does not pollscm to determine a change. Instead it triggers jobs at certain times. You will want to update this line and the :Parameter: line below.",
+      "revId": "733224516901b5e6012a42ad545f05191bbcfd14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
