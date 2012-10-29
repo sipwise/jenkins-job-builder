@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//79U\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-10-26T00:36:02Z",
+      "side": 1,
+      "message": "Should this line be \"tordinal \u003d XML.SubElement(tthreshold, \u0027ordinal\u0027)\"? I am not sure of the exact XML but it seems odd that name would show up twice.",
+      "revId": "dd2527ffd04834f839d8165cad42d6ff9749b81f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
