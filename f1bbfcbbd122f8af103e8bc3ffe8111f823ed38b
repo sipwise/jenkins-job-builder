@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//5sQ\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2012-10-29T19:51:53Z",
+      "side": 1,
+      "message": "Strictly not necessary since the Job Template heading immediately below here already creates an implicit job-template hyperlink target. I see that it was done above for the Job section heading, but it doesn\u0027t seem to be consistent throughout other files for this project so that could simply have been a misunderstanding of the restructuredtext spec on the part of a previous contributor. I see it in logical places within other files for heading aliasing (some of which are also not strictly necessary, like pluralization when the heading is a subset of the alias already, such that link source suffixes could be used instead), but even then it\u0027s not being done consistently. We could probably stand to clean all that up if someone gets time.",
+      "revId": "f1bbfcbbd122f8af103e8bc3ffe8111f823ed38b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//5sM\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2012-10-29T19:51:53Z",
+      "side": 1,
+      "message": "Same comment as for _job-template above.",
+      "revId": "f1bbfcbbd122f8af103e8bc3ffe8111f823ed38b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//5v0\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2012-10-29T19:51:53Z",
+      "side": 1,
+      "message": "Relying on the fact that non-null strings evaluate true as conditional expressions, this could more cleanly be...\n\n   if not (\u0027project\u0027 in project_def and project_def[\u0027project\u0027]):\n\n...or shorter still...\n\n   if not project_def.get(\u0027project\u0027):\n\n(the latter returns the value if the key exists and nothing otherwise, rather than risk raising a KeyError).",
+      "revId": "f1bbfcbbd122f8af103e8bc3ffe8111f823ed38b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//5vM\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2012-10-29T19:51:53Z",
+      "side": 1,
+      "message": "Any reason we can\u0027t just rely on...\n\n   if not configs:\n\nThat object should evaluate false when empty, correct?",
+      "revId": "f1bbfcbbd122f8af103e8bc3ffe8111f823ed38b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//5us\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2012-10-29T19:51:53Z",
+      "side": 1,
+      "message": "Could this instead be...\n\n   if data:\n\nIt should already evaluate false if it\u0027s null/empty.",
+      "revId": "f1bbfcbbd122f8af103e8bc3ffe8111f823ed38b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//5uE\u003d",
+        "filename": "samples/pipeline.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2012-10-29T19:51:53Z",
+      "side": 1,
+      "message": "Lots of trailing whitespace throughout this file... running \u0027git diff --check master\u0027 should alert you to this in the future I think (or use an editor style which highlights these for you automagically).",
+      "revId": "f1bbfcbbd122f8af103e8bc3ffe8111f823ed38b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//5tg\u003d",
+        "filename": "samples/pipeline.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2012-10-29T19:51:53Z",
+      "side": 1,
+      "message": "Another nitpick, it looks like you\u0027re not using a consistent line-wrap column in your comment blocks.",
+      "revId": "f1bbfcbbd122f8af103e8bc3ffe8111f823ed38b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//5s4\u003d",
+        "filename": "tools/run-compare-xml-samples.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2012-10-29T19:51:53Z",
+      "side": 1,
+      "message": "Please only indent with spaces, no tabs. Again, there are editor styles which can highlight tab characters for you to make that more obvious.",
+      "revId": "f1bbfcbbd122f8af103e8bc3ffe8111f823ed38b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
