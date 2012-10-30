@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//+o0\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-10-23T18:01:35Z",
+      "side": 1,
+      "message": "For consintency, \"svn-tags\" would be nice here (and needs to match setup.py).",
+      "revId": "bfd964b52e6640172dde9d0ae265a4eb0be62247",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//+pM\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-10-23T18:01:35Z",
+      "side": 1,
+      "message": "Should these constants be documented in the docstring for this function?",
+      "revId": "bfd964b52e6640172dde9d0ae265a4eb0be62247",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//+o8\u003d",
+        "filename": "setup.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-10-23T18:01:35Z",
+      "side": 1,
+      "message": "For consistency, \"svn-tags\u003d...\" would be nice here.",
+      "revId": "bfd964b52e6640172dde9d0ae265a4eb0be62247",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
