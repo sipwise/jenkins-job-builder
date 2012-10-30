@@ -19,6 +19,42 @@
     },
     {
       "key": {
+        "uuid": "AAAALn//9wk\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2012-10-24T15:26:18Z",
+      "side": 1,
+      "message": "Doesn\u0027t that come from the base_param function I\u0027m calling?",
+      "parentUuid": "AAAALn//9w0\u003d",
+      "revId": "e78951ff4d3efcd5acaac8cdc49cbba082b3f6ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//9wE\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2012-10-24T15:28:24Z",
+      "side": 1,
+      "message": "If that is the case I need to add them to the list of args up above.",
+      "parentUuid": "AAAALn//9wk\u003d",
+      "revId": "e78951ff4d3efcd5acaac8cdc49cbba082b3f6ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALn//9s0\u003d",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 13
@@ -31,6 +67,24 @@
       "side": 1,
       "message": "Yes, you\u0027re right, sorry about that.  And yes, it would be a good idea to add it to the :arg list.",
       "parentUuid": "AAAALn//9wE\u003d",
+      "revId": "e78951ff4d3efcd5acaac8cdc49cbba082b3f6ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//9lY\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2012-10-24T17:49:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALn//9s0\u003d",
       "revId": "e78951ff4d3efcd5acaac8cdc49cbba082b3f6ab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
