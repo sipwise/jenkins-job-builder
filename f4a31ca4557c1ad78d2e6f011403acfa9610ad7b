@@ -33,6 +33,24 @@
       "revId": "f4a31ca4557c1ad78d2e6f011403acfa9610ad7b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//9xI\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2012-10-24T15:20:34Z",
+      "side": 1,
+      "message": "svn-tags or svn tag or subversion tag?",
+      "parentUuid": "AAAALn//9x8\u003d",
+      "revId": "f4a31ca4557c1ad78d2e6f011403acfa9610ad7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
