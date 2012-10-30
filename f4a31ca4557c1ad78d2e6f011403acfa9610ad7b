@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//9yA\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-10-24T15:14:47Z",
+      "side": 1,
+      "message": "svn_tag -\u003e svn tag",
+      "revId": "f4a31ca4557c1ad78d2e6f011403acfa9610ad7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//9x8\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-10-24T15:14:47Z",
+      "side": 1,
+      "message": "svn_tags -\u003e svn-tags",
+      "revId": "f4a31ca4557c1ad78d2e6f011403acfa9610ad7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
