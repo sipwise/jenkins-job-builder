@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALH//RpU\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-09-26T16:18:32Z",
+      "side": 1,
+      "message": "I realize this is my fault, but would you mind fixing this doc string while you\u0027re in here?",
+      "revId": "ecdcf1feef09ca70d5b363141bbe5bab3c8b9be7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
