@@ -89,6 +89,7 @@ setup(name='jenkins_job_builder',
             'timeout=jenkins_jobs.modules.wrappers:timeout',
             'timestamps=jenkins_jobs.modules.wrappers:timestamps',
             'ansicolor=jenkins_jobs.modules.wrappers:ansicolor',
+            'set-build-name=jenkins_jobs.modules.wrappers:set_build_name',
             ],
         'jenkins_jobs.modules': [
             'assignednode=jenkins_jobs.modules.assignednode:AssignedNode',
