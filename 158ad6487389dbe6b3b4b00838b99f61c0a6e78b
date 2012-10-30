@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//53w\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-10-29T17:57:14Z",
+      "side": 1,
+      "message": "this would be more readable as \"mask_passwords\" (changing this would need a corresponding change to setup.py).",
+      "revId": "158ad6487389dbe6b3b4b00838b99f61c0a6e78b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//538\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-10-29T17:57:14Z",
+      "side": 1,
+      "message": "typo: JEnkins",
+      "revId": "158ad6487389dbe6b3b4b00838b99f61c0a6e78b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
