@@ -36,6 +36,7 @@ setup(name='jenkins_job_builder',
             'ant=jenkins_jobs.modules.builders:ant',
             'trigger-builds=jenkins_jobs.modules.builders:trigger_builds',
             'builders-from=jenkins_jobs.modules.builders:builders_from',
+            'env-inject=jenkins_jobs.modules.builders:env_inject',
             ],
         'jenkins_jobs.reporters': [
             'email=jenkins_jobs.modules.reporters:email',
