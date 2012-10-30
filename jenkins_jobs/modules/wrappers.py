@@ -93,6 +93,25 @@ def ansicolor(parser, xml_parent, data):
                    'hudson.plugins.ansicolor.AnsiColorBuildWrapper')
 
 
+def build_name(parser, xml_parent, data):
+    """yaml: build-name
+    Set the name of the build
+    Requires the Jenkins `Build Name Setter Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Build+Name+Setter+Plugin>`_
+
+    :arg str name: Name for the build
+
+    Example::
+
+      wrappers:
+        - build-name:
+            name: Build-${FOO}
+    """
+    bsetter = XML.SubElement(xml_parent,
+               'org.jenkinsci.plugins.buildnamesetter.BuildNameSetter')
+    XML.SubElement(bsetter, 'template').text = data['name']
+
+
 class Wrappers(jenkins_jobs.modules.base.Base):
     sequence = 80
 
