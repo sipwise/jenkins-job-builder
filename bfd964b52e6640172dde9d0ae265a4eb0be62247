@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALn//+mo\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2012-10-23T19:43:24Z",
+      "side": 1,
+      "message": "Do you mean to change def svn_tags_param... to def svn-tags_param...  Or just change setup.py to be svn-tags referencing svn_tags_param",
+      "parentUuid": "AAAALn//+o0\u003d",
+      "revId": "bfd964b52e6640172dde9d0ae265a4eb0be62247",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALn//+pM\u003d",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2012-10-23T18:01:35Z",
       "side": 1,
       "message": "Should these constants be documented in the docstring for this function?",
+      "revId": "bfd964b52e6640172dde9d0ae265a4eb0be62247",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//+f4\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2012-10-23T19:43:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALn//+pM\u003d",
       "revId": "bfd964b52e6640172dde9d0ae265a4eb0be62247",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
