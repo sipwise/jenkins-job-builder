@@ -93,6 +93,43 @@ def ansicolor(parser, xml_parent, data):
                    'hudson.plugins.ansicolor.AnsiColorBuildWrapper')
 
 
+def workspace_cleanup(parser, xml_parent, data):
+    """yaml: workspace_cleanup
+
+    <https://wiki.jenkins-ci.org/display/JENKINS/Workspace+Cleanup+Plugin>`_
+
+    :arg list include: list of files to be included
+    :arg list exclude: list of files to be excluded
+    :arg bool dirmatch: Apply pattern to directories too
+
+    Example::
+
+      wrappers:
+        - workspace_cleanup:
+            include:
+              - "*.zip"
+    """
+
+    p = XML.SubElement(xml_parent,
+                   'hudson.plugins.ws__cleanup.PreBuildCleanup')
+    p.set("plugin", "ws-cleanup@0.10")
+    if "include" in data or "exclude" in data:
+        patterns = XML.SubElement(p, 'patterns')
+
+    for inc in data.get("include", []):
+        ptrn = XML.SubElement(patterns, 'hudson.plugins.ws__cleanup.Pattern')
+        XML.SubElement(ptrn, 'pattern').text = inc
+        XML.SubElement(ptrn, 'type').text = "INCLUDE"
+
+    for exc in data.get("exclude", []):
+        ptrn = XML.SubElement(patterns, 'hudson.plugins.ws__cleanup.Pattern')
+        XML.SubElement(ptrn, 'pattern').text = exc
+        XML.SubElement(ptrn, 'type').text = "EXCLUDE"
+
+    deldirs = XML.SubElement(p, 'deleteDirs')
+    deldirs.text = str(data.get("dirmatch", "false")).lower()
+
+
 class Wrappers(jenkins_jobs.modules.base.Base):
     sequence = 80
 
