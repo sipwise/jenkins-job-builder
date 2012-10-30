@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALn//52o\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2012-10-29T18:16:55Z",
+      "side": 1,
+      "message": "You said in my svn-tags work that we were using lowercase and hypens instead of underscores:\n\nI have a few inline comments; one is a suggested doc improvement. The others are about naming consistency; which, granted, I should probably write up in the README. But basically, I\u0027d like the YAML keywords to be all lower-case and use hyphens rather than underscores (there\u0027s some old code that\u0027s inconsistent on that point, someday we\u0027ll deprecate it out).",
+      "parentUuid": "AAAALn//53w\u003d",
+      "revId": "158ad6487389dbe6b3b4b00838b99f61c0a6e78b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALn//538\u003d",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 3
