@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//+dc\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-10-23T20:05:08Z",
+      "side": 1,
+      "message": "The documentation should say \"svn-tags:\" with a hyphen.",
+      "revId": "41599d4f8bbe8c7a9341cebee9a1c74b4a74eea4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//+dM\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-10-23T20:05:08Z",
+      "side": 1,
+      "message": "Great, but that doesn\u0027t format correctly.  You can \"cd doc \u0026\u0026 make html\" to test the documentation generation.  Output will be in \"doc/build/html/scm.html\".\n\nAnd micro-nit: EXAMPLE is usually mixed-case rather than all-caps.",
+      "revId": "41599d4f8bbe8c7a9341cebee9a1c74b4a74eea4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
