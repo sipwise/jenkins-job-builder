@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALn//+bI\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2012-10-24T13:18:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALn//+dc\u003d",
+      "revId": "41599d4f8bbe8c7a9341cebee9a1c74b4a74eea4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALn//+dM\u003d",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 8
