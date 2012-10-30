@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//9JY\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-10-24T22:47:51Z",
+      "side": 1,
+      "message": "This line should end with `Parameterised Trigger Plugin. Sphinx/rst uses `Name \u003clink\u003e`_ for links (notice backticks are used instead of single quotes). The closing backtick needs to be added, see comment below.",
+      "revId": "963ff7e82ef14c72da32335169cf797a81a42dee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
