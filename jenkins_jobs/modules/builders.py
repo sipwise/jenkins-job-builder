@@ -70,7 +70,8 @@ def copyartifact(parser, xml_parent, data):
     :arg str project: Project to copy from
     :arg str filter: what files to copy
     :arg str target: Target base directory for copy, blank means use workspace
-
+    :arg str which: Which build to copy from: latest-successful, latest-saved,
+      upstream, permalink, specific, workspace, build-param
 
     Example::
 
@@ -78,12 +79,69 @@ def copyartifact(parser, xml_parent, data):
         - copyartifact:
             project: foo
             filter: *.tar.gz
-
     """
+
+    mapping = {
+        'latest-successful': {
+            'class': 'hudson.plugins.copyartifact.StatusBuildSelector',
+            'options': {
+                'stable': bool
+                }
+            },
+        'latest-saved': {
+            'class': 'hudson.plugins.copyartifact.SavedBuildSelector',
+            'options': {}
+            },
+        'upstream': {
+            'class': 'hudson.plugins.copyartifact.TriggeredBuildSelector',
+            'options': {
+                'fallbackToLastSuccessful': bool
+                }
+            },
+        'permalink': {
+            'class': 'hudson.plugins.copyartifact.PermalinkBuildSelector',
+            'options': {
+                # XXX: really one of lastBuild, lastStableBuild,
+                # lastSuccessfulBuild, lastFailedBuild,
+                # lastUnstableBuild, lastUnsuccessfulBuild
+                'id': str
+                }
+            },
+
+        'specific': {
+            'class': 'hudson.plugins.copyartifact.SpecificBuildSelector',
+            'options': {
+                'buildNumber': str
+                }
+            },
+        'workspace': {
+            'class': 'hudson.plugins.copyartifact.WorkspaceSelector',
+            'options': {}
+            },
+        'build-param': {
+            'class': 'hudson.plugins.copyartifact.ParameterizedBuildSelector',
+            'options': {
+                'parameterName': str
+                }
+            }
+        }
+
     t = XML.SubElement(xml_parent, 'hudson.plugins.copyartifact.CopyArtifact')
     XML.SubElement(t, 'projectName').text = data["project"]
     XML.SubElement(t, 'filter').text = data.get("filter", "")
-    XML.SubElement(t, 'target').text = data.get("project", "")
+    XML.SubElement(t, 'target').text = data.get("target", "")
+    selector = mapping[data.get("which", "latest_successful")]
+    xsel = XML.SubElement(t, 'selector')
+    xsel.set("class", selector['class'])
+    for (optname, opttype) in selector['options'].items():
+        if opttype == bool:
+            # XXX: is false reasonable?
+            v = str(data.get(optname, False)).lower()
+        elif opttype == str:
+            v = data.get(optname, "")
+        else:
+            raise Exception("Unknown option type {0}".format(opttype))
+        XML.SubElement(xsel, optname).text = v
 
 
 def ant(parser, xml_parent, data):
