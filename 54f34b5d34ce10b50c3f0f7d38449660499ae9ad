@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//4kY\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-10-30T19:18:45Z",
+      "side": 1,
+      "message": "This should just be \u0027inject\u0027.",
+      "revId": "54f34b5d34ce10b50c3f0f7d38449660499ae9ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
