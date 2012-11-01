@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//4DI\u003d",
+        "filename": "README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2012-10-31T08:48:55Z",
+      "side": 1,
+      "message": "missing `s around pep8 and pyflakes?",
+      "revId": "1c53a9696166cbe08199393688d3165faddee929",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
