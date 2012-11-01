@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//4Do\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2012-10-31T08:41:05Z",
+      "side": 1,
+      "message": "Why not just \"build-name\" as the name?",
+      "revId": "ed1df9204165faf7543b68bbe5051f0588a96f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//4Dk\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2012-10-31T08:41:05Z",
+      "side": 1,
+      "message": "Missing \u003e, also, missing arg lists?",
+      "revId": "ed1df9204165faf7543b68bbe5051f0588a96f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//4Dc\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2012-10-31T08:41:05Z",
+      "side": 1,
+      "message": "This should probably be name: \u0027Build-${{FOO}}\u0027, else it will try to find the FOO value from the YAML file?",
+      "revId": "ed1df9204165faf7543b68bbe5051f0588a96f82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
