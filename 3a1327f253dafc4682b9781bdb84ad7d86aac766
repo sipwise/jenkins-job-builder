@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//4qc\u003d",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-10-30T17:37:09Z",
+      "side": 1,
+      "message": "s/consistently/consistency/",
+      "revId": "3a1327f253dafc4682b9781bdb84ad7d86aac766",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
