@@ -93,6 +93,7 @@ setup(name='jenkins_job_builder',
             'ansicolor=jenkins_jobs.modules.wrappers:ansicolor',
             'mask-passwords=jenkins_jobs.modules.wrappers:mask_passwords',
             'build-name=jenkins_jobs.modules.wrappers:build_name',
+            'port-allocator=jenkins_jobs.modules.wrappers:port_allocator',
             ],
         'jenkins_jobs.modules': [
             'assignednode=jenkins_jobs.modules.assignednode:AssignedNode',
