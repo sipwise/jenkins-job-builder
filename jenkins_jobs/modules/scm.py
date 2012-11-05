@@ -110,18 +110,22 @@ def svn(self, xml_parent, data):
 
       scm:
         - svn:
-           url: http://svn.example.com/repo
-           basedir: .
            workspaceupdater: update
+           repos:
+             - url: http://svn.example.com/repo
+               basedir: .
+             - url: http://svn.example.com/repo2
+               basedir: repo2
     """
-
+    repos = data['repos']
     scm = XML.SubElement(xml_parent, 'scm', {'class':
               'hudson.scm.SubversionSCM'})
     locations = XML.SubElement(scm, 'locations')
     module = XML.SubElement(locations,
               'hudson.scm.SubversionSCM_-ModuleLocation')
-    XML.SubElement(module, 'remote').text = data['url']
-    XML.SubElement(module, 'local').text = data['basedir']
+    for repo in repos:
+        XML.SubElement(module, 'remote').text = repo['url']
+        XML.SubElement(module, 'local').text = repo['basedir']
     updater = data.get('workspaceupdater', 'wipeworkspace')
     if updater == 'wipeworkspace':
         updaterclass = 'CheckoutUpdater'
