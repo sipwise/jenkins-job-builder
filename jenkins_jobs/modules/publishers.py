@@ -640,6 +640,7 @@ def claimbuild(parser, xml_parent, data):
     XML.SubElement(xml_parent, 'hudson.plugins.claim.ClaimPublisher')
 
 
+<<<<<<< HEAD
 def base_email_ext(parser, xml_parent, data, ttype):
     trigger = XML.SubElement(xml_parent,
                  'hudson.plugins.emailext.plugins.trigger.' + ttype)
@@ -735,6 +736,24 @@ def email_ext(parser, xml_parent, data):
     XML.SubElement(emailext, 'defaultContent').text = data.get('body', '')
     XML.SubElement(emailext, 'attachmentsPattern').text = ''
     XML.SubElement(emailext, 'presendScript').text = ''
+
+
+def aggregate_tests(parser, xml_parent, data):
+    """yaml: aggregate-tests
+    Aggregate downstream test results
+
+    :arg bool include-failed-builds: whether to include failed builds
+        (default false)
+
+    Example::
+
+        - aggregate-tests:
+            include-failed-builds: true
+    """
+    agg = XML.SubElement(xml_parent,
+             'hudson.tasks.test.AggregatedTestResultPublisher')
+    XML.SubElement(agg, 'includeFailedBuilds').text = str(data.get(
+             'include-failed-builds', False)).lower()
 
 
 class Publishers(jenkins_jobs.modules.base.Base):
