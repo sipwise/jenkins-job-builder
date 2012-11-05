@@ -640,6 +640,25 @@ def claimbuild(parser, xml_parent, data):
     XML.SubElement(xml_parent, 'hudson.plugins.claim.ClaimPublisher')
 
 
+def aggregate_tests(parser, xml_parent, data):
+    """yaml: aggregate-tests
+    Aggregate downstream test results
+
+    :arg bool include-failed-builds: whether to include falied builds
+        (default false)
+
+    Example::
+
+      publishers:
+        - aggregate-tests:
+            include-failed-builds: true
+    """
+    agg = XML.SubElement(xml_parent,
+             'hudson.tasks.test.AggregatedTestResultPublisher')
+    XML.SubElement(agg, 'includeFailedBuilds').text = str(data.get(
+             'include-failed-builds', False)).lower()
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
