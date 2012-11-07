@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//zVo\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-11-05T19:37:22Z",
+      "side": 1,
+      "message": "Please use @example.com or another RFC2606 reserved domain: http://tools.ietf.org/rfc/rfc2606.txt",
+      "revId": "5991c7c3716f00942079ae653f5d615aeaaead65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
