@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//3O8\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-10-31T19:28:29Z",
+      "side": 1,
+      "message": "This needs and opening backtick and the link name.",
+      "revId": "1d2be220bf22c49209d0c4f11cae03222daa3e79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//3Oo\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-10-31T19:28:29Z",
+      "side": 1,
+      "message": "I think Jim is asking that the yaml use dashes instead of underscores. workspace_cleanup should be workspace-cleanup. The python function should remain as workspace_cleanup as that fits the python style guide.",
+      "revId": "1d2be220bf22c49209d0c4f11cae03222daa3e79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//3Ok\u003d",
+        "filename": "setup.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-10-31T19:28:29Z",
+      "side": 1,
+      "message": "workspace_cleanup here should be workspace-cleanup.",
+      "revId": "1d2be220bf22c49209d0c4f11cae03222daa3e79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
