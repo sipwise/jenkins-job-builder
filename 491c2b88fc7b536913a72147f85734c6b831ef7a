@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAALn//yGU\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2012-11-06T18:47:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAALn//yL0\u003d",
+      "revId": "491c2b88fc7b536913a72147f85734c6b831ef7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALn//yLc\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -65,6 +83,24 @@
       "writtenOn": "2012-11-06T17:39:49Z",
       "side": 1,
       "message": "And this should be: data.get(\u0027record-artifacts\u0027, False).lower() so it\u0027s a string.\n\n(we should really have a generic bool conversion method)",
+      "revId": "491c2b88fc7b536913a72147f85734c6b831ef7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//yGM\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2012-11-06T18:47:19Z",
+      "side": 1,
+      "message": "I followed what inject does in properties: str(data.get(\u0027record-artifacts\u0027, False)).lower()",
+      "parentUuid": "AAAALn//yLI\u003d",
       "revId": "491c2b88fc7b536913a72147f85734c6b831ef7a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
