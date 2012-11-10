@@ -2,6 +2,108 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAALn//w7I\u003d",
+        "filename": ".gitignore",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2012-11-07T22:31:23Z",
+      "side": 1,
+      "message": "Might be nice to start standardizing on some patterns for these which aren\u0027t project-name-specific... not sure it\u0027s critical this time around though, just food for thought.",
+      "revId": "5992b216cfaa3e9282d714d748bbf4ae37f67147",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//w5s\u003d",
+        "filename": "MANIFEST.in",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2012-11-07T22:31:23Z",
+      "side": 1,
+      "message": "I see some projects also explicitly including their tox.ini (not sure if that\u0027s necessary). Also some do:\n\n    recursive-include doc\n    recursive-include tools",
+      "revId": "5992b216cfaa3e9282d714d748bbf4ae37f67147",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//w50\u003d",
+        "filename": "MANIFEST.in",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2012-11-07T22:31:23Z",
+      "side": 1,
+      "message": "Might want *.py[co] instead if you\u0027re already being aggressive?",
+      "revId": "5992b216cfaa3e9282d714d748bbf4ae37f67147",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//w3Y\u003d",
+        "filename": "jenkins_jobs/sphinx/yaml.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2012-11-07T22:31:23Z",
+      "side": 1,
+      "message": "The fact this was needed implies a to do list item somewhere...",
+      "revId": "5992b216cfaa3e9282d714d748bbf4ae37f67147",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//w04\u003d",
+        "filename": "jenkins_jobs/version.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2012-11-07T22:31:23Z",
+      "side": 1,
+      "message": "I\u0027m a little unclear as to why we don\u0027t need a python_package\u003d\u0027jenkins-job-builder\u0027 parameter. It looks like VersionInfo.__init__() will be setting python_package to jenkins_jobs without it (which may be intentional, I just don\u0027t have a firm grasp of setuptools and friends yet so figured I\u0027d ask since it differs from examples I looked at).",
+      "revId": "5992b216cfaa3e9282d714d748bbf4ae37f67147",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//wyw\u003d",
+        "filename": "setup.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2012-11-07T22:31:23Z",
+      "side": 1,
+      "message": "Other packages seem to be using hyphens instead of underscores here. I have no idea if there\u0027s any merit in changing it at this point though.",
+      "revId": "5992b216cfaa3e9282d714d748bbf4ae37f67147",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALn//u9I\u003d",
         "filename": "setup.py",
         "patchSetId": 5
