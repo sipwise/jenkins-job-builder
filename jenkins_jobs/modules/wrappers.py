@@ -188,6 +188,33 @@ def port_allocator(parser, xml_parent, data):
     XML.SubElement(dpt, 'name').text = data['name']
 
 
+def locks_and_latches(parser, xml_parent, data):
+    """yaml: locks-and-latches
+    Control parallel execution of jobs.
+    Requires the Jenkins `Locks and Latches Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Locks+and+Latches+plugin>`_
+
+    :arg list locks: list of locks to use
+      :Locks: * **locks** (`str`) -- Name of lock
+
+    Example::
+
+      wrappers:
+        - locks-and-latches:
+            locks:
+              - lock: FOO
+              - lock: FOO2
+    """
+    lw = XML.SubElement(xml_parent,
+             'hudson.plugins.locksandlatches.LockWrapper')
+    locktop = XML.SubElement(lw, 'locks')
+    locks = data['locks']
+    for lock in locks:
+        lockwrapper = XML.SubElement(locktop,
+              'hudson.plugins.locksandlatches.LockWrapper_-LockWaitConfig')
+        XML.Sublement(lockwrapper, 'name').text = lock['lock']
+
+
 class Wrappers(jenkins_jobs.modules.base.Base):
     sequence = 80
 
