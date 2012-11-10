@@ -1,0 +1,22 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//u9I\u003d",
+        "filename": "setup.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4162
+      },
+      "writtenOn": "2012-11-09T14:49:23Z",
+      "side": 1,
+      "message": "You are right, they are discouraged[1].\n\nhttp://www.python.org/dev/peps/pep-0008/#package-and-module-names",
+      "parentUuid": "AAAALn//wyw\u003d",
+      "revId": "5992b216cfaa3e9282d714d748bbf4ae37f67147",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
