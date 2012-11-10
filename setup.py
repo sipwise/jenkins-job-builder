@@ -46,6 +46,9 @@ setuptools.setup(
         'Programming Language :: Python'
     ],
     entry_points={
+      'console_scripts': [
+          'jenkins-jobs=jenkins_jobs.cmd:main',
+          ],
       'jenkins_jobs.projects': [
           'freestyle=jenkins_jobs.modules.project_freestyle:Freestyle',
           'maven=jenkins_jobs.modules.project_maven:Maven',
