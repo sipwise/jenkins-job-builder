@@ -1,0 +1,22 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH///SQ\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-11-12T18:45:39Z",
+      "side": 1,
+      "message": "What about:\n\nwrappers:\n  - locks:\n    - FOO\n    - FOO2\n\nAnd if latches ever comes about, it could probably be similarly implemented (the latches and locks functions may need to inspect the xml hierarchy if they end up sharing the same xml parent, but that\u0027s do-able).",
+      "parentUuid": "AAAAMH///TE\u003d",
+      "revId": "81c5d0c0805c75ba3c554db8367d8f996bad5f15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
