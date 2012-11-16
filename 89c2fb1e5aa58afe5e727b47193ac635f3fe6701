@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAMH//+Hw\u003d",
+        "filename": "jenkins_jobs/modules/zuul.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-11-13T17:37:13Z",
+      "side": 1,
+      "message": "The explicit concatenation here is not necessary if you replace the \u0027+\u0027 with a \u0027\\\u0027. Python will treat:\n\n  s \u003d \u0027foo bar \u0027 \\\n          \u0027baz\u0027\nas\n  s \u003d \u0027foo bar baz\u0027\n\nI think this would be my preferred way of handling the long strings as it is just escaping the line break rather than performing string operations.",
+      "revId": "89c2fb1e5aa58afe5e727b47193ac635f3fe6701",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//9vE\u003d",
         "filename": "jenkins_jobs/modules/zuul.py",
         "patchSetId": 3
