@@ -1,0 +1,22 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//9vE\u003d",
+        "filename": "jenkins_jobs/modules/zuul.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2012-11-13T22:50:00Z",
+      "side": 1,
+      "message": "Done in patchset 3.",
+      "parentUuid": "AAAAMH//+Hw\u003d",
+      "revId": "89c2fb1e5aa58afe5e727b47193ac635f3fe6701",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
