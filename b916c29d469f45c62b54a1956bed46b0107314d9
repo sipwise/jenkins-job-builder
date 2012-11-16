@@ -1,0 +1,11 @@
+Code-Review+2: James E. Blair <corvus@inaugust.com>
+Verified+2: Jenkins
+Approved+1: Clark Boylan <clark.boylan@gmail.com>
+Code-Review+2: Clark Boylan <clark.boylan@gmail.com>
+Code-Review+1: Paul Belanger <paul.belanger@polybeacon.com>
+Code-Review+1: Tollef Fog Heen <tfheen@varnish-software.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 16 Nov 2012 00:22:31 +0000
+Reviewed-on: https://review.openstack.org/16071
+Project: openstack-ci/jenkins-job-builder
+Branch: refs/heads/master
