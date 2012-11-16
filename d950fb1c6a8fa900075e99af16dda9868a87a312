@@ -1,0 +1,22 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//8S4\u003d",
+        "filename": "jenkins_jobs/modules/zuul.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2012-11-14T21:30:17Z",
+      "side": 1,
+      "message": "Done.\nI noticed that issue in the ZUUL_PARAMETERS part, forgot to fix that one. Nice catch !",
+      "parentUuid": "AAAAMH//8es\u003d",
+      "revId": "d950fb1c6a8fa900075e99af16dda9868a87a312",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
