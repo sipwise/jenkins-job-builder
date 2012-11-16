@@ -1,0 +1,40 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//5f8\u003d",
+        "filename": "jenkins_jobs/modules/zuul.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2012-11-16T16:02:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//5i0\u003d",
+      "revId": "014c9c684089387e6412d199acdaf68ccf24038d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//5f4\u003d",
+        "filename": "jenkins_jobs/modules/zuul.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2012-11-16T16:02:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//5iw\u003d",
+      "revId": "014c9c684089387e6412d199acdaf68ccf24038d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
