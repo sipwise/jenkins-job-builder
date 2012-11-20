@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//2Fw\u003d",
+        "filename": "jenkins-jobs",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2012-11-20T13:23:47Z",
+      "side": 1,
+      "message": ".. \"whenever\" and \"developing\"",
+      "revId": "ea139ba1ad03b0d71f3bbe8007187a25e5a998f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//2Fo\u003d",
+        "filename": "jenkins-jobs",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2012-11-20T13:23:47Z",
+      "side": 1,
+      "message": "ditto, \"development\"",
+      "revId": "ea139ba1ad03b0d71f3bbe8007187a25e5a998f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
