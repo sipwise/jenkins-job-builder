@@ -45,11 +45,15 @@ def main():
     if options.conf:
         conf = options.conf
     else:
-        # Fallback to script directory
-        localconf = os.path.join(os.path.dirname(__file__),
-            'jenkins_jobs.ini')
-        if os.path.isfile(localconf):
-            conf = localconf
+        # Fallback to script directory or current directory
+        known_confs = (
+            os.path.join(os.path.dirname(__file__), 'jenkins_jobs.ini'),
+            os.path.join(os.getcwd(), 'jenkins_jobs.ini'),
+            )
+        for possconf in known_confs:
+            if os.path.isfile(possconf):
+                conf = possconf
+                continue
 
     if not options.command == 'test':
         logger.debug("Reading config from {0}".format(conf))

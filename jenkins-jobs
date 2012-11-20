@@ -1,0 +1,12 @@
+#!/usr/bin/env python
+#
+# This is a very basic helper that would start up jenkins job builder
+# whenver you are developping. Save you from having to install the module
+# on your developpement box.
+
+import pkg_resources
+
+dist = pkg_resources.get_distribution("jenkins-job-builder")
+ep = pkg_resources.load_entry_point(
+    dist, group='console_scripts', name='jenkins-jobs')
+ep()
