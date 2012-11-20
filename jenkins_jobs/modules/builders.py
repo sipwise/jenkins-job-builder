@@ -332,9 +332,18 @@ class Builders(jenkins_jobs.modules.base.Base):
     sequence = 60
 
     def gen_xml(self, parser, xml_parent, data):
+        # Track wheter we have generated a <builders/> which is
+        # required by Jenkins but optional in our configuration
+        has_builders = False
+
         for alias in ['prebuilders', 'builders', 'postbuilders']:
             if alias in data:
                 builders = XML.SubElement(xml_parent, alias)
+                has_builders = has_builders or (alias == 'builders')
                 for builder in data[alias]:
                     self._dispatch('builder', 'builders',
                                    parser, builders, builder)
+        if not has_builders:
+            # Make sure we always generate a <builders/> entry or
+            # Jenkins will NPE
+            XML.SubElement(xml_parent, 'builders')
