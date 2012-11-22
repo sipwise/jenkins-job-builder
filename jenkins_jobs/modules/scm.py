@@ -55,6 +55,19 @@ def git(self, xml_parent, data):
     :arg bool use-author: Use author rather than committer in Jenkin's build
       changeset
     :arg bool wipe-workspace: Wipe out workspace before build
+    :arg str browser: what repository browser to use (default '(Auto)')
+    :arg str browser-url: url for the repository browser
+
+    :browser values:
+        :githubweb:
+        :fisheye:
+        :bitbucketweb:
+        :gitblit:
+        :gitlab:
+        :gitoriousweb:
+        :gitweb:
+        :redmineweb:
+        :viewgit:
 
     Example::
 
@@ -64,6 +77,8 @@ def git(self, xml_parent, data):
           branches:
             - master
             - stable
+          browser: githubweb
+          browser-url: http://github.com/foo/example.git
     """
 
     # XXX somebody should write the docs for those with option name =
@@ -121,6 +136,38 @@ def git(self, xml_parent, data):
             xe.text = str(val).lower()
         else:
             xe.text = val
+    browser = data.get('browser', 'auto')
+    if browser == 'githubweb':
+        browserclass = 'GithubWeb'
+    elif browser == 'fisheye':
+        browserclass = 'FisheyeGitRepositoryBrowser'
+    elif browser == 'bitbucketweb':
+        browserclass = 'BitbucketWeb'
+    elif browser == 'cgit':
+        browserclass = 'CGit'
+    elif browser == 'gitblit':
+        browserclass = 'GitBlitRepositoryBrowser'
+    elif browser == 'gitlab':
+        browserclass = 'GitLab'
+    elif browser == 'gitoriousweb':
+        browserclass = 'GitoriousWeb'
+    elif browser == 'gitweb':
+        browserclass = 'GitWeb'
+    elif browser == 'redmineweb':
+        browserclass = 'RedmineWeb'
+    elif browser == 'viewgit':
+        browserclass = 'ViewGitWeb'
+    elif browser == 'auto':
+        browserclass = 'Auto'
+    else:
+        raise Exception("Browser entered is not valid must be one of: " +
+                        "githubweb, fisheye, bitbucketweb, cgit, gitblit, " +
+                        "gitlab, gitoriousweb, gitweb, redmineweb, viewgit, " +
+                        "or auto")
+    if browser != 'auto':
+        bc = XML.SubElement(scm, 'browser', {'class':
+            'hudson.plugins.git.browser.' + browserclass})
+        XML.SubElement(bc, 'url').text = data['browser-url']
 
 
 def svn(self, xml_parent, data):
