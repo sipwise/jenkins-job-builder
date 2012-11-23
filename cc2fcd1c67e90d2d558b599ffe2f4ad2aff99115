@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//03s\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 4162
+      },
+      "writtenOn": "2012-11-21T03:33:16Z",
+      "side": 1,
+      "message": "I would actually be open to doing:\nXML.SubElement(\n    xml, \u0027blockBuildWhenDownstreamBuilding\u0027).text \u003d \u0027true\u0027\n\nJust a matter of preference.",
+      "revId": "cc2fcd1c67e90d2d558b599ffe2f4ad2aff99115",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
