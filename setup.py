@@ -125,6 +125,7 @@ setuptools.setup(
             'workspace_cleanup',
             'port-allocator=jenkins_jobs.modules.wrappers:port_allocator',
             'locks=jenkins_jobs.modules.wrappers:locks',
+            'inject=jenkins_jobs.modules.wrappers:inject',
         ],
         'jenkins_jobs.modules': [
             'assignednode=jenkins_jobs.modules.assignednode:AssignedNode',
