@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//1Fg\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 901,
+      "author": {
+        "id": 6288
+      },
+      "writtenOn": "2012-11-20T23:31:22Z",
+      "side": 1,
+      "message": "isn\u0027t a inline (json style) list the same as as a yaml list?\n\nIn [3]: cat /tmp/test.yaml\na:\n - entry1\n - entry2\nb: [entry1, entry2]\n\nIn [4]: yaml.load(open(\"/tmp/test.yaml\"))\n\nOut[4]: {\u0027a\u0027: [\u0027entry1\u0027, \u0027entry2\u0027], \u0027b\u0027: [\u0027entry1\u0027, \u0027entry2\u0027]}\n\nIn [5]: d \u003d _\n\nIn [6]: str(d[\"a\"]) \u003d\u003d str(d[\"b\"])\n\nOut[6]: True",
+      "parentUuid": "AAAAMH//1jc\u003d",
+      "revId": "696517ed9bbf7009e466b50e303376e58acaf79a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//1ig\u003d",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 2
