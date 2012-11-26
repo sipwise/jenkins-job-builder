@@ -16,6 +16,24 @@
       "revId": "5d2581a3dc9bb3ce73aacba546aac30a9ecd23bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//zqQ\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 787,
+      "author": {
+        "id": 6288
+      },
+      "writtenOn": "2012-11-21T23:16:56Z",
+      "side": 1,
+      "message": "I couldn\u0027t fit the three levels into the sphinx doc reasonably so I decided to use the example as doc\n\none could add them flattened out\nI think the example is more useful than that.",
+      "parentUuid": "AAAAMH//zqg\u003d",
+      "revId": "5d2581a3dc9bb3ce73aacba546aac30a9ecd23bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
