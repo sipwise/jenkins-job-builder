@@ -1,0 +1,22 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//yvw\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2012-11-22T20:49:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAMH//zww\u003d",
+      "revId": "8735cb1a5d5962f63ca21fb48392b2518dfd7902",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
