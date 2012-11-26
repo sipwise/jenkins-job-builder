@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//1io\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 884,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-11-20T19:18:50Z",
+      "side": 1,
+      "message": "Renaming this to copy_to_master and changing the yaml below to copy-to-master would fit the existing yaml better.",
+      "revId": "696517ed9bbf7009e466b50e303376e58acaf79a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//1jc\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 901,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-11-20T19:18:50Z",
+      "side": 1,
+      "message": "I think it would be more appropriate if these two lists were yaml lists eg\n  includes:\n    - file1\n    - file2*.txt\n\nThen have the copytomaster function do the translation to what the xml should look like (I think you can just str(your_list)).",
+      "revId": "696517ed9bbf7009e466b50e303376e58acaf79a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//1ig\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-11-20T19:18:50Z",
+      "side": 1,
+      "message": "Renaming this to copy_to_slave and changing the yaml below to copy-to-slave would fit the existing yaml better.",
+      "revId": "696517ed9bbf7009e466b50e303376e58acaf79a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//1i8\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-11-20T19:18:50Z",
+      "side": 1,
+      "message": "Same suggestion to use normal yaml lists here as in the other function.",
+      "revId": "696517ed9bbf7009e466b50e303376e58acaf79a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
