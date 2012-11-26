@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAMH//1Dc\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 799,
+      "author": {
+        "id": 6288
+      },
+      "writtenOn": "2012-11-20T23:47:31Z",
+      "side": 1,
+      "message": "top level are the actual threshold counts, severity denotes what counts to the threshold\n\nI\u0027ll add docs if you think the way of representing the plugin config is ok.",
+      "revId": "84276334fca093375199332736574b117b397e29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//1Bs\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
