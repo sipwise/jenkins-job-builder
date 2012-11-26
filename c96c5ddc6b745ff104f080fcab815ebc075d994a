@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//zvM\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 907,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-11-21T22:32:26Z",
+      "side": 1,
+      "message": "Don\u0027t hate me, because the accepted python standard is to use underscores copy_to_master is correct for the function name, but we are trying consistently use hyphens in the yaml. So this should be \u0027- copy-to-master\u0027.",
+      "revId": "c96c5ddc6b745ff104f080fcab815ebc075d994a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//zvI\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-11-21T22:32:26Z",
+      "side": 1,
+      "message": "For the same reason as copy-to-master, this should be \u0027- copy-to-slave\u0027.",
+      "revId": "c96c5ddc6b745ff104f080fcab815ebc075d994a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//zvA\u003d",
+        "filename": "setup.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-11-21T22:32:26Z",
+      "side": 1,
+      "message": "This line should be:\n \u0027copy-to-master\u003djenkins_jobs.modules.publishers:copy_to_master\u0027",
+      "revId": "c96c5ddc6b745ff104f080fcab815ebc075d994a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//zu4\u003d",
+        "filename": "setup.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-11-21T22:32:26Z",
+      "side": 1,
+      "message": "This line should be:\n  \u0027copy-to-slave\u003djenkins_jobs.modules.wrappers:copy_to_slave\u0027",
+      "revId": "c96c5ddc6b745ff104f080fcab815ebc075d994a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
