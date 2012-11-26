@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//zrc\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2012-11-21T23:00:22Z",
+      "side": 1,
+      "message": "Extra space in front of :, not sure it matters much.",
+      "revId": "dbde5ea70485f88aed26a7b4f4e8a5a0c22b73a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
