@@ -20,6 +20,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//1Dk\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 803,
+      "author": {
+        "id": 6288
+      },
+      "writtenOn": "2012-11-20T23:47:31Z",
+      "side": 1,
+      "message": "the all tag (allErrors in xml) basically says sum of all issues.\nmaybe error-sum is a better name?\n\nhow much deviation from what the plugin authors choose makes sense?\n\nis it good style to split the takes this way?\none could drop the display indent and rename verything display-error, display-warning etc",
+      "revId": "84276334fca093375199332736574b117b397e29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//1B0\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
