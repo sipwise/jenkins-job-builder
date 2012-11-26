@@ -1,0 +1,40 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//1Bs\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 799,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-11-21T01:12:12Z",
+      "side": 1,
+      "message": "I think this works for me. Basically if you hit a threshold above the severity tells Jenkins how it should report about the job. eg go over the threshold and that results in a warning.",
+      "parentUuid": "AAAAMH//1Dc\u003d",
+      "revId": "84276334fca093375199332736574b117b397e29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//1B0\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 803,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-11-21T01:12:12Z",
+      "side": 1,
+      "message": "I think deviating from the XML is ok, but you will want to remain close to what shows up in the Jenkins GUI when configuring changes. That way people can refer to Jenkins for additional documentation on what particular settings do.",
+      "parentUuid": "AAAAMH//1Dk\u003d",
+      "revId": "84276334fca093375199332736574b117b397e29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
