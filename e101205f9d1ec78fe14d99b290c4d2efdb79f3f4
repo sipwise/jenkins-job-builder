@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAMH//0s8\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2012-11-21T08:14:57Z",
+      "side": 1,
+      "message": "Indeed, I am not sure what I had in mind when I wrote the code.\n\nDone.",
+      "parentUuid": "AAAAMH//1vw\u003d",
+      "revId": "e101205f9d1ec78fe14d99b290c4d2efdb79f3f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//1v8\u003d",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2012-11-20T16:53:02Z",
       "side": 1,
       "message": "Can you note the version in which you observed this behavior?  1.472 I think from your commit msg.",
+      "revId": "e101205f9d1ec78fe14d99b290c4d2efdb79f3f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//0s4\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2012-11-21T08:14:57Z",
+      "side": 1,
+      "message": "In PS2, I have merged that comment with the above one and mention the version.",
+      "parentUuid": "AAAAMH//1v8\u003d",
       "revId": "e101205f9d1ec78fe14d99b290c4d2efdb79f3f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
