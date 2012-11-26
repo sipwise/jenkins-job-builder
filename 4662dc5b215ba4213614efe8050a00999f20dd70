@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//zs0\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2012-11-21T22:51:26Z",
+      "side": 1,
+      "message": "should be relative-to.",
+      "revId": "4662dc5b215ba4213614efe8050a00999f20dd70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//zss\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2012-11-21T22:51:26Z",
+      "side": 1,
+      "message": "should be include-ant-excludes",
+      "revId": "4662dc5b215ba4213614efe8050a00999f20dd70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//zsg\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2012-11-21T22:51:26Z",
+      "side": 1,
+      "message": "ditto, include-ant-excludes",
+      "revId": "4662dc5b215ba4213614efe8050a00999f20dd70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
