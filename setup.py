@@ -133,9 +133,8 @@ setuptools.setup(
             'copy-to-slave=jenkins_jobs.modules.wrappers:copy_to_slave',
         ],
         'jenkins_jobs.modules': [
-            'assignednode=jenkins_jobs.modules.assignednode:AssignedNode',
+            'general=jenkins_jobs.modules.general:General',
             'builders=jenkins_jobs.modules.builders:Builders',
-            'logrotate=jenkins_jobs.modules.logrotate:LogRotate',
             'properties=jenkins_jobs.modules.properties:Properties',
             'parameters=jenkins_jobs.modules.parameters:Parameters',
             'notifications=jenkins_jobs.modules.notifications:Notifications',
