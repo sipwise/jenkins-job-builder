@@ -146,6 +146,7 @@ setuptools.setup(
             'wrappers=jenkins_jobs.modules.wrappers:Wrappers',
             'zuul=jenkins_jobs.modules.zuul:Zuul',
             'hipchat=jenkins_jobs.modules.hipchat_notif:HipChat',
+            'jdk=jenkins_jobs.modules.jdk:JDK',
         ]
     }
 )
