@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//xRk\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-11-26T16:56:05Z",
+      "side": 1,
+      "message": "Does this need to check if \u0027~\u0027 was expanded? This path is used later to create dirs if they are not already created and I think in some odd cases you may end up with a dir called ~ in the $PWD.",
+      "revId": "63746e216347483c1f5c66d388a5ab3e18441790",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
