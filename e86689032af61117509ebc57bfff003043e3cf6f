@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAMH//wig\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-11-26T23:27:33Z",
+      "side": 1,
+      "message": "Is browser not part of the mapping on line 86 because it needs to throw this exception?",
+      "revId": "e86689032af61117509ebc57bfff003043e3cf6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAMH//wck\u003d",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 4
