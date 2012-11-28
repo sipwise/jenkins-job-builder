@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//wck\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-11-27T00:33:04Z",
+      "side": 1,
+      "message": "clarkb, I expect it\u0027s mostly because it needs this lookup ^",
+      "revId": "e86689032af61117509ebc57bfff003043e3cf6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
