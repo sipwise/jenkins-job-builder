@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMH//xBo\u003d",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-11-26T19:52:46Z",
+      "side": 1,
+      "message": "The (C) statement is probably wrong.  Unless you work for HP.",
+      "revId": "bc25ecbe6d7a6fc1ab63f2561964a9388e77b7ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMH//w9A\u003d",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2012-11-26T19:52:46Z",
+      "side": 1,
+      "message": "I think it would be good to wrap the parameters below in something like:\n\n  :Job Parameters:\n      * **combination-filter** (`str`): axes selection filter\n      ...",
+      "revId": "bc25ecbe6d7a6fc1ab63f2561964a9388e77b7ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
