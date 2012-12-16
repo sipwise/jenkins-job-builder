@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//7ZU\u003d",
+        "filename": "tests/publishers/test_xunit.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-10-26T16:11:58Z",
+      "side": 1,
+      "message": "I would replace unittest with testtools in this file. They should be compatible, but testtools is more robust.",
+      "revId": "3b78f9c4d08dcd5d1906640701514c58afbfb456",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//7ZQ\u003d",
+        "filename": "tools/test-requires",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-10-26T16:11:58Z",
+      "side": 1,
+      "message": "If you change to testtools you will want to add testtools here. If you use testr instead of nose you will want to have:\n testtools\n python-subunit\n testrepository\n discover\n fixtures\n\nTesttools is a replacement for unittest. Python-subunit is a test runner that outputs subunit test results. testrepository is a test runner that understand subunit and can run tests in parrallel (it does a lot of other things too). discover is a library used to discover tests. And finally fixtures is the fixtures library written by the same folks that brought us testtools.\n\nWith the above list nose and nosehtmloutput will not be necessary.",
+      "revId": "3b78f9c4d08dcd5d1906640701514c58afbfb456",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//7ZM\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-10-26T16:11:58Z",
+      "side": 1,
+      "message": "To use testr you will want to add\nsetenv \u003d SUBUNIT_FORMATTER\u003dtee testr_subunit_log\nhere.",
+      "revId": "3b78f9c4d08dcd5d1906640701514c58afbfb456",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//7ZE\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-10-26T16:11:58Z",
+      "side": 1,
+      "message": "To use testr you will want to replace the above line with:\ncommands \u003d bash -c \u0027if [ ! -d .testrepository ] ; then testr init ; fi\u0027\n           bash -c \u0027testr run --parallel ; RET\u003d$? ; echo \"Slowest Tests\" ; testr slowest \u0026\u0026 exit $RET\u0027\n\nAnd you will need to add a .testr.conf file to the root of the project containing:\n\n [DEFAULT]\n test_command\u003dpython -m subunit.run discover tests/ $LISTOPT $IDOPTION\n test_id_option\u003d--load-list $IDFILE\n test_list_option\u003d--list",
+      "revId": "3b78f9c4d08dcd5d1906640701514c58afbfb456",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
