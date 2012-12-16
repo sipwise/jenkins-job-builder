@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAMX//9p0\u003d",
+        "filename": "setup.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2012-12-04T18:14:13Z",
+      "side": 1,
+      "message": "Will relocating this to the top preserve the module load order, reducing the impact on the XML element output ordering? At least that\u0027s the way I read builder.ModuleRegistry...",
+      "revId": "a765e6e0ef45227fd6d83108d067a0fcb0fae15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
