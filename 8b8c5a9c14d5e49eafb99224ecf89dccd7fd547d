@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAALn//4xM\u003d",
+        "filename": "tests/publishers/test_publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-10-30T16:42:16Z",
+      "side": 1,
+      "message": "One thing that might be kind of nice is to have distinct test cases for each of the various publishers that we are testing instead of using a for loop here. This would make it more clear where things have broken if/when they do break.\n\nThat said making such a system flexible and easy to write tests against may not be easy. Just thought I would throw the idea out there.",
+      "revId": "8b8c5a9c14d5e49eafb99224ecf89dccd7fd547d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAALn//4qE\u003d",
         "filename": "tests/publishers/test_publishers.py",
         "patchSetId": 5
@@ -32,6 +49,24 @@
       "side": 1,
       "message": "Perhaps you could load the fixtures into a dict as filename: contents. Then each test could simply grab fixture[\u0027filename\u0027] and do its thing. Curious to see what you come up with.",
       "parentUuid": "AAAALn//4qE\u003d",
+      "revId": "8b8c5a9c14d5e49eafb99224ecf89dccd7fd547d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//1SY\u003d",
+        "filename": "tests/publishers/test_publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-11-02T16:01:50Z",
+      "side": 1,
+      "message": "I was thinking about this a little more and here is my current crazy idea.\n\nUse the fixtures library and have a fixture that looks up the name of the test that instantiated it. Then look in the directory containing this test for files/test_name.xml and files/test_name.yaml and load these into memory (or maybe have two different fixtures one for yaml and one for xml). Then each test can simply use the fixtures however they want. Still a little more overhead than a loop, but when something fails it should be very clear what exactly failed.",
+      "parentUuid": "AAAALn//4pY\u003d",
       "revId": "8b8c5a9c14d5e49eafb99224ecf89dccd7fd547d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
