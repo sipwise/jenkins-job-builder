@@ -16,6 +16,24 @@
       "revId": "a765e6e0ef45227fd6d83108d067a0fcb0fae15c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAMX//9ok\u003d",
+        "filename": "setup.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2012-12-04T18:26:50Z",
+      "side": 1,
+      "message": "I put this line at the top and it made no difference in the resulting xml output, it was still below the scm section",
+      "parentUuid": "AAAAMX//9p0\u003d",
+      "revId": "a765e6e0ef45227fd6d83108d067a0fcb0fae15c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
