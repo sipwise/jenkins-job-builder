@@ -1,0 +1,22 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//4qE\u003d",
+        "filename": "tests/publishers/test_publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2012-10-30T17:39:32Z",
+      "side": 1,
+      "message": "Indeed. That file was originally named test_xunit since I wanted to test the xunit publisher. I then though that testing another publisher would be exactly the same: load a yaml, parse it, compare with an expected xml file. So i renamed the file test_publishers.\n\nOne possible way would be to build the list of fixtures on initialization of the class. Several methods could be added that would only act on a specific prefix (such as \u0027xunit\u0027) and filter out the list of fixtures to only test those.\n\nI am not sure how to dynamically create the test methods though.  Will look at it.",
+      "parentUuid": "AAAALn//4xM\u003d",
+      "revId": "8b8c5a9c14d5e49eafb99224ecf89dccd7fd547d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
