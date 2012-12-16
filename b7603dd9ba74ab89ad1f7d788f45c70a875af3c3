@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAALn//7Wc\u003d",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-10-26T17:19:24Z",
+      "side": 1,
+      "message": "This config section is not necessary if using testr.",
+      "revId": "b7603dd9ba74ab89ad1f7d788f45c70a875af3c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAALn//7WY\u003d",
+        "filename": "tests/publishers/test_xunit.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2012-10-26T17:19:24Z",
+      "side": 1,
+      "message": "The first argument to this method should probably be self (in order to follow convention).\n\nYou will also want to use one of the self.assert* methods in here to assert the results of your test.",
+      "revId": "b7603dd9ba74ab89ad1f7d788f45c70a875af3c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
