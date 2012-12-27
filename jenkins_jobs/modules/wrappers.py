@@ -205,7 +205,7 @@ def locks(parser, xml_parent, data):
     Example::
 
       wrappers:
-        - locks:
+        - locks
             - FOO
             - FOO2
     """
