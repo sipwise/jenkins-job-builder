@@ -279,21 +279,21 @@ def inject(parser, xml_parent, data):
 
       wrappers:
         - inject:
-            properties-file-path: /usr/local/foo
+            properties-file: /usr/local/foo
             properties-content: PATH=/foo/bar
-            script-file-path: /usr/local/foo.sh
+            script-file: /usr/local/foo.sh
             script-content: echo $PATH
     """
     eib = XML.SubElement(xml_parent, 'EnvInjectBuildWrapper')
     info = XML.SubElement(eib, 'info')
-    XML.SubElement(info, 'propertiesFilePath').text = data.get(
-        'properties-file-path', '')
-    XML.SubElement(info, 'propertiesContent').text = data.get(
-        'properties-content', '')
-    XML.SubElement(info, 'scriptFilePath').text = data.get(
-        'script-file-path', '')
-    XML.SubElement(info, 'scriptContent').text = data.get(
-        'script-content', '')
+    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
+        'properties-file', 'propertiesFilePath', info, data)
+    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
+        'properties-content', 'propertiesContent', info, data)
+    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
+        'script-file', 'scriptFilePath', info, data)
+    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
+        'script-content', 'scriptContent', info, data)
     XML.SubElement(info, 'loadFilesFromMaster').text = 'false'
 
 
