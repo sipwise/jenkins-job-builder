@@ -126,16 +126,21 @@ def inject(parser, xml_parent, data):
     inject = XML.SubElement(xml_parent,
                             'EnvInjectJobProperty')
     info = XML.SubElement(inject, 'info')
-    XML.SubElement(info, 'propertiesFilePath').text = str(
-        data.get('properties-file', ''))
-    XML.SubElement(info, 'propertiesContent').text = str(
-        data.get('properties-content', ''))
-    XML.SubElement(info, 'scriptFilePath').text = str(
-        data.get('script-file', ''))
-    XML.SubElement(info, 'scriptContent').text = str(
-        data.get('script-content', ''))
-    XML.SubElement(info, 'groovyScriptContent').text = str(
-        data.get('groovy-content', ''))
+    if 'properties-file' in data:
+        XML.SubElement(info, 'propertiesFilePath').text = str(
+            data['properties-file'])
+    if 'properties-content' in data:
+        XML.SubElement(info, 'propertiesContent').text = str(
+            data['properties-content'])
+    if 'script-file' in data:
+        XML.SubElement(info, 'scriptFilePath').text = str(
+            data['script-file'])
+    if 'script-content' in data:
+        XML.SubElement(info, 'scriptContent').text = str(
+            data['script-content'])
+    if 'groovy-content' in data:
+        XML.SubElement(info, 'groovyScriptContent').text = str(
+            data['groovy-content'])
     XML.SubElement(info, 'loadFilesFromMaster').text = str(
         data.get('load-from-master', 'false')).lower()
     XML.SubElement(inject, 'on').text = str(
