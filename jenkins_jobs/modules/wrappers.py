@@ -285,14 +285,18 @@ def inject(parser, xml_parent, data):
     """
     eib = XML.SubElement(xml_parent, 'EnvInjectBuildWrapper')
     info = XML.SubElement(eib, 'info')
-    XML.SubElement(info, 'propertiesFilePath').text = data.get(
-        'properties-file-path', '')
-    XML.SubElement(info, 'propertiesContent').text = data.get(
-        'properties-content', '')
-    XML.SubElement(info, 'scriptFilePath').text = data.get(
-        'script-file-path', '')
-    XML.SubElement(info, 'scriptContent').text = data.get(
-        'script-content', '')
+    if 'properties-file-path' in data:
+        XML.SubElement(info, 'propertiesFilePath').text = data.get(
+            'properties-file-path', '')
+    if 'properties-content' in data:
+        XML.SubElement(info, 'propertiesContent').text = data.get(
+            'properties-content', '')
+    if 'script-file-path' in data:
+        XML.SubElement(info, 'scriptFilePath').text = data.get(
+            'script-file-path', '')
+    if 'script-content' in data:
+        XML.SubElement(info, 'scriptContent').text = data.get(
+            'script-content', '')
     XML.SubElement(info, 'loadFilesFromMaster').text = 'false'
 
 
