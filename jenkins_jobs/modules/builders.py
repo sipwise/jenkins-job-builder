@@ -1,4 +1,4 @@
-# Copyright 2012 Hewlett-Packard Development Company, L.P.
+# opyright 2012 Hewlett-Packard Development Company, L.P.
 # Copyright 2012 Varnish Software AS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -271,10 +271,10 @@ def inject(parser, xml_parent, data):
     """
     eib = XML.SubElement(xml_parent, 'EnvInjectBuilder')
     info = XML.SubElement(eib, 'info')
-    propfile = data.get('properties-file', '')
-    XML.SubElement(info, 'propertiesFilePath').text = propfile
-    propcontent = data.get('properties-content', '')
-    XML.SubElement(info, 'propertiesContent').text = propcontent
+    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
+        'properties-file', 'propertiesFilePath', info, data)
+    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
+        'properties-content', 'propertiesContent', info, data)
 
 
 def artifact_resolver(parser, xml_parent, data):
