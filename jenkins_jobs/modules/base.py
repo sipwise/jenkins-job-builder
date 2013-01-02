@@ -16,7 +16,13 @@
 
 import pkg_resources
 import yaml
+import xml.etree.ElementTree as XML
 
+def add_nonblank_xml_subelement(yaml_tag, xml_tag, info, data):
+    if yaml_tag in data:
+        value = data.get(yaml_tag, '')
+        if value != '':
+            XML.SubElement(info, xml_tag).text = value
 
 class Base(object):
     """
