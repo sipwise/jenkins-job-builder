@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//h7g\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-01-17T03:22:18Z",
+      "side": 1,
+      "message": "Need a blank line between Example:: and wrappers: here too.",
+      "revId": "4a42b3d9f6dcd33c241785838f5c2c7e0c6586c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
