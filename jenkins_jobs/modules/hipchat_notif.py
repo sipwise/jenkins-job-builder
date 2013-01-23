@@ -65,15 +65,12 @@ class HipChat(jenkins_jobs.modules.base.Base):
            unless actually required.
         """
         if(not self.authToken):
-            # Verify that the config object in the registry is of type
-            # ConfigParser (it could possibly be a regular 'dict' object which
-            # doesn't have the right get() method).
-            if(not isinstance(self.registry.global_config,
-                              ConfigParser.ConfigParser)):
-                raise jenkins_jobs.errors.JenkinsJobsException(
-                    'HipChat requires a config object in the registry.')
+            # If this config is missing it is faked by returning the variable name as the value
             self.authToken = self.registry.global_config.get(
                 'hipchat', 'authtoken')
+            if self.registry.command != 'test' and self.authToken == 'authtoken':
+                raise jenkins_jobs.errors.JenkinsJobsException(
+                    'HipChat requires a config object in the registry.')
             self.jenkinsUrl = self.registry.global_config.get('jenkins', 'url')
 
     def gen_xml(self, parser, xml_parent, data):
