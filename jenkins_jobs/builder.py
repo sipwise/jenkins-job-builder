@@ -53,8 +53,8 @@ def deep_format(obj, paramdict):
 
 
 class YamlParser(object):
-    def __init__(self, config=None):
-        self.registry = ModuleRegistry(config)
+    def __init__(self, command, config=None):
+        self.registry = ModuleRegistry(command, config)
         self.data = {}
         self.jobs = []
 
@@ -177,9 +177,10 @@ class YamlParser(object):
 
 
 class ModuleRegistry(object):
-    def __init__(self, config):
+    def __init__(self, command, config):
         self.modules = []
         self.handlers = {}
+        self.command = command
         self.global_config = config
 
         for entrypoint in pkg_resources.iter_entry_points(
@@ -227,6 +228,7 @@ class CacheStorage(object):
             self.data = {}
             return
         self.data = yaml.load(yfile)
+        logger.debug("Using cache: '{0}'".format(self.cachefilename))
         yfile.close()
 
     @staticmethod
@@ -287,9 +289,10 @@ class Jenkins(object):
 
 class Builder(object):
     def __init__(self, jenkins_url, jenkins_user, jenkins_password,
-                 config=None):
+                 command, config=None):
         self.jenkins = Jenkins(jenkins_url, jenkins_user, jenkins_password)
         self.cache = CacheStorage()
+        self.command = command
         self.global_config = config
 
     def delete_job(self, name):
@@ -309,7 +312,7 @@ class Builder(object):
                                 if (f.endswith('.yml') or f.endswith('.yaml'))]
         else:
             files_to_process = [fn]
-        parser = YamlParser(self.global_config)
+        parser = YamlParser(self.command, self.global_config)
         for in_file in files_to_process:
             logger.debug("Parsing YAML file {0}".format(in_file))
             parser.parse(in_file)
@@ -338,3 +341,5 @@ class Builder(object):
             if self.cache.has_changed(job.name, md5):
                 self.jenkins.update_job(job.name, job.output())
                 self.cache.set(job.name, md5)
+            else:
+                logger.debug("'{0}' has not changed".format(job.name))

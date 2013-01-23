@@ -58,12 +58,13 @@ def main():
         config = ConfigParser.ConfigParser()
         config.readfp(conffp)
     else:
+        logger.debug("Not reading config for test output generation")
         config = {}
     logger.debug("Config: {0}".format(config))
     builder = jenkins_jobs.builder.Builder(config.get('jenkins', 'url'),
                                            config.get('jenkins', 'user'),
                                            config.get('jenkins', 'password'),
-                                           config)
+                                           options.command, config)
 
     if options.command == 'delete':
         for job in options.name:
