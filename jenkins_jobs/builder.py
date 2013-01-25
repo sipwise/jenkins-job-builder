@@ -227,6 +227,7 @@ class CacheStorage(object):
             self.data = {}
             return
         self.data = yaml.load(yfile)
+        logger.debug("Using cache: '{0}'".format(self.cachefilename))
         yfile.close()
 
     @staticmethod
@@ -338,3 +339,5 @@ class Builder(object):
             if self.cache.has_changed(job.name, md5):
                 self.jenkins.update_job(job.name, job.output())
                 self.cache.set(job.name, md5)
+            else:
+                logger.debug("'{0}' has not changed".format(job.name))
