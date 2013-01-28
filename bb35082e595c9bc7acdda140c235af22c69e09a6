@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//V4s\u003d",
+        "filename": "jenkins_jobs/modules/base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2013-01-28T08:18:25Z",
+      "side": 1,
+      "message": "I think the interface here should be different, something like:\n\n    def add_nonblank_xml_subelement(parent, tag, value):\n    \"\"\"\n    Adds an XML SubElement with the name tag to parent if value is a non-empty string\n    \"\"\"\n\nThe function would then look like:\n\n    if value is not None and value !\u003d \u0027\u0027:\n        XML.SubElement(parent, tag).text \u003d value\n\nPassing in a yaml tag name and the entire yaml structure somewhere else looks sub-optimal, in particular because you can\u0027t then address subelements well.\n\nAssuming you do this, the calls to add_n_x_s should be adjusted, of course.",
+      "revId": "bb35082e595c9bc7acdda140c235af22c69e09a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
