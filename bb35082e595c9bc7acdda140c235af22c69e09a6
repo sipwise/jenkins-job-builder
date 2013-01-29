@@ -16,6 +16,24 @@
       "revId": "bb35082e595c9bc7acdda140c235af22c69e09a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//UKk\u003d",
+        "filename": "jenkins_jobs/modules/base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 215
+      },
+      "writtenOn": "2013-01-29T09:43:21Z",
+      "side": 1,
+      "message": "The change you are suggesting substantially reduces the benefit of the function.\n\nThe yaml_tag value differs from the xml_tag value, therefore the interface you suggest prohibits the two different checks that are performed within this function.  This would force the first check back into the code wherever this function is used, which seems less dry to me.",
+      "parentUuid": "AAAAM3//V4s\u003d",
+      "revId": "bb35082e595c9bc7acdda140c235af22c69e09a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
