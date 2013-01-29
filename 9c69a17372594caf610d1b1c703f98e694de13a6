@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//Trc\u003d",
+        "filename": "jenkins_jobs/modules/base.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2013-01-29T16:27:16Z",
+      "side": 1,
+      "message": "might want to consider str(value) here?",
+      "revId": "9c69a17372594caf610d1b1c703f98e694de13a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
