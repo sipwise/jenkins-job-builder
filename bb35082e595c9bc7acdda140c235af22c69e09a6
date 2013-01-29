@@ -52,6 +52,24 @@
       "revId": "bb35082e595c9bc7acdda140c235af22c69e09a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//UJQ\u003d",
+        "filename": "jenkins_jobs/modules/base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 215
+      },
+      "writtenOn": "2013-01-29T10:24:45Z",
+      "side": 1,
+      "message": "To keep the same functionality it would actually change it to:\n\n    info \u003d XML.SubElement(eib, \u0027info\u0027)\n    if \u0027properties-content\u0027 in data:\n        add_nonblank_xml_subelement(\u0027propertiesContent\u0027, info, data.get(\u0027properties-content\u0027))\n\nThe current function checks for the existence of the yaml tag in the data before retrieving it, and then only adds the XML output if the retrieved value is not a blank string.\n\nBy changing the function as you suggest that first check can no longer be performed.",
+      "parentUuid": "AAAAM3//UJo\u003d",
+      "revId": "bb35082e595c9bc7acdda140c235af22c69e09a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
