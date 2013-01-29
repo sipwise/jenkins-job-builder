@@ -88,6 +88,24 @@
       "revId": "bb35082e595c9bc7acdda140c235af22c69e09a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//T3s\u003d",
+        "filename": "jenkins_jobs/modules/base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 215
+      },
+      "writtenOn": "2013-01-29T15:11:32Z",
+      "side": 1,
+      "message": "Sure, now that makes sense.  Because data is of type dict, and default behaviour of a dict.get() call is as you describe.\n\nReworking changes as requested.",
+      "parentUuid": "AAAAM3//UCk\u003d",
+      "revId": "bb35082e595c9bc7acdda140c235af22c69e09a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
