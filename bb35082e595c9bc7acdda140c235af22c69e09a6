@@ -70,6 +70,24 @@
       "revId": "bb35082e595c9bc7acdda140c235af22c69e09a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//UCk\u003d",
+        "filename": "jenkins_jobs/modules/base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2013-01-29T13:13:14Z",
+      "side": 1,
+      "message": "data.get(key) returns the value corresponding to key is such exists, else it returns None, so for a non-existing key it would be equivalent to calling:\n\n    add_nonblank_xml_subelement(\u0027propertiesContent\u0027, info, None)\n\nThis means my suggested if check fails and the function returns without adding a subelement.",
+      "parentUuid": "AAAAM3//UJQ\u003d",
+      "revId": "bb35082e595c9bc7acdda140c235af22c69e09a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
