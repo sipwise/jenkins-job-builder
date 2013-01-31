@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//O8g\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 957,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-01-31T23:54:36Z",
+      "side": 1,
+      "message": "typo: should be \u0027-\u0027 instead of \u0027_\u0027",
+      "revId": "cf8b4ed522b9ca00df3b3d570aee58411d4bd0f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//O8c\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 967,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-01-31T23:54:36Z",
+      "side": 1,
+      "message": "typo s/_/-/",
+      "revId": "cf8b4ed522b9ca00df3b3d570aee58411d4bd0f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
