@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3//Td8\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2013-01-31T18:04:58Z",
+      "side": 1,
+      "message": "Typo... \"froma\" should be \"from a\" instead.",
+      "revId": "c54ea6c7c292b746c5a59255a9f6fb6b7173da91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//PnE\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2013-01-31T18:04:58Z",
+      "side": 1,
+      "message": "It looks like this should show the cooked default type (single-select) key from choicedict below, rather than the raw (PT_SINGLE_SELECT) value. Same goes for the example YAML further down.",
+      "revId": "c54ea6c7c292b746c5a59255a9f6fb6b7173da91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3//PnI\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2013-01-31T18:04:58Z",
+      "side": 1,
+      "message": "It would probably make sense to show something other than the default type in this example.",
+      "revId": "c54ea6c7c292b746c5a59255a9f6fb6b7173da91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
