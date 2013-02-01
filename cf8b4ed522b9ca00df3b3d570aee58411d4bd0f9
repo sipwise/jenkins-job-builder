@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAM3//Ofs\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 957,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2013-02-01T09:17:18Z",
+      "side": 1,
+      "message": "you right, I read the name convection, and I fixed it in setup.py but i forgot to fix it in doc. thanks.",
+      "parentUuid": "AAAAM3//O8g\u003d",
+      "revId": "cf8b4ed522b9ca00df3b3d570aee58411d4bd0f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAM3//O8c\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
