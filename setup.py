@@ -100,6 +100,7 @@ setuptools.setup(
             'junit=jenkins_jobs.modules.publishers:junit',
             'xunit=jenkins_jobs.modules.publishers:xunit',
             'violations=jenkins_jobs.modules.publishers:violations',
+            'checkstyle=jenkins_jobs.modules.publishers:checkstyle',
             'scp=jenkins_jobs.modules.publishers:scp',
             'pipeline=jenkins_jobs.modules.publishers:pipeline',
             'email=jenkins_jobs.modules.publishers:email',
