@@ -91,26 +91,25 @@ def trigger_parameterized_builds(parser, xml_parent, data):
                               'hudson.plugins.parameterizedtrigger.'
                               'BuildTrigger')
     configs = XML.SubElement(tbuilder, 'configs')
-    for project_def in data:
-        tconfig = XML.SubElement(configs,
-                                 'hudson.plugins.parameterizedtrigger.'
-                                 'BuildTriggerConfig')
-        tconfigs = XML.SubElement(tconfig, 'configs')
-        if 'predefined-parameters' in project_def:
-            params = XML.SubElement(tconfigs,
-                                    'hudson.plugins.parameterizedtrigger.'
-                                    'PredefinedBuildParameters')
-            properties = XML.SubElement(params, 'properties')
-            properties.text = project_def['predefined-parameters']
-        else:
-            tconfigs.set('class', 'java.util.Collections$EmptyList')
-        projects = XML.SubElement(tconfig, 'projects')
-        projects.text = project_def['project']
-        condition = XML.SubElement(tconfig, 'condition')
-        condition.text = project_def.get('condition', 'ALWAYS')
-        trigger_with_no_params = XML.SubElement(tconfig,
-                                                'triggerWithNoParameters')
-        trigger_with_no_params.text = 'false'
+    tconfig = XML.SubElement(configs,
+                             'hudson.plugins.parameterizedtrigger.'
+                             'BuildTriggerConfig')
+    tconfigs = XML.SubElement(tconfig, 'configs')
+    if 'predefined-parameters' in data:
+        params = XML.SubElement(tconfigs,
+                                'hudson.plugins.parameterizedtrigger.'
+                                'PredefinedBuildParameters')
+        properties = XML.SubElement(params, 'properties')
+        properties.text = data['predefined-parameters']
+    else:
+        tconfigs.set('class', 'java.util.Collections$EmptyList')
+    projects = XML.SubElement(tconfig, 'projects')
+    projects.text = data['project']
+    condition = XML.SubElement(tconfig, 'condition')
+    condition.text = data.get('condition', 'ALWAYS')
+    trigger_with_no_params = XML.SubElement(tconfig,
+                                            'triggerWithNoParameters')
+    trigger_with_no_params.text = 'false'
 
 
 def trigger(parser, xml_parent, data):
