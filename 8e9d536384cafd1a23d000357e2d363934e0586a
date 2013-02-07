@@ -1,0 +1,11 @@
+Approved+1: Monty Taylor <mordred@inaugust.com>
+Code-Review+2: Monty Taylor <mordred@inaugust.com>
+Verified+2: Jenkins
+Code-Review+1: Jon-Paul Sullivan <jonpaul.sullivan@hp.com>
+Code-Review+2: Jeremy Stanley <fungi@yuggoth.org>
+Code-Review+1: Tollef Fog Heen <tfheen@varnish-software.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 07 Feb 2013 10:57:33 +0000
+Reviewed-on: https://review.openstack.org/18820
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
