@@ -70,6 +70,9 @@ def copyartifact(parser, xml_parent, data):
     :arg str project: Project to copy from
     :arg str filter: what files to copy
     :arg str target: Target base directory for copy, blank means use workspace
+    :arg str flatten: Flatten directories (Boolean)
+    :arg str optional: Do not fail if no artifact can be copied (Boolean)
+    :arg str selector: Build selector 'latest' build or 'triggered' build
 
 
     Example::
@@ -84,6 +87,19 @@ def copyartifact(parser, xml_parent, data):
     XML.SubElement(t, 'projectName').text = data["project"]
     XML.SubElement(t, 'filter').text = data.get("filter", "")
     XML.SubElement(t, 'target').text = data.get("target", "")
+    XML.SubElement(t, 'flatten').text = str(data.get(
+        "flatten", False)).lower()
+    XML.SubElement(t, 'optional').text = str(data.get(
+        "optional", False)).lower()
+    
+    selector = data.get("selector", "latest")
+
+    if selector == 'triggered':
+        XML.SubElement(t, 'selector', {'class': 'hudson.plugins.copyartifact.'
+                                                'TriggeredBuildSelector'})
+    else:
+        XML.SubElement(t, 'selector', {'class': 'hudson.plugins.copyartifact.'
+                                                'StatusBuildSelector'})
 
 
 def ant(parser, xml_parent, data):
