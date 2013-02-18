@@ -70,6 +70,7 @@ def copyartifact(parser, xml_parent, data):
     :arg str project: Project to copy from
     :arg str filter: what files to copy
     :arg str target: Target base directory for copy, blank means use workspace
+    :arg str selector: Build selector - 'latest' build or 'triggered' build
 
 
     Example::
@@ -78,12 +79,22 @@ def copyartifact(parser, xml_parent, data):
         - copyartifact:
             project: foo
             filter: *.tar.gz
+            selector: latest
 
     """
     t = XML.SubElement(xml_parent, 'hudson.plugins.copyartifact.CopyArtifact')
     XML.SubElement(t, 'projectName').text = data["project"]
     XML.SubElement(t, 'filter').text = data.get("filter", "")
     XML.SubElement(t, 'target').text = data.get("target", "")
+
+    selector = data.get("selector", "latest")
+
+    if selector == 'triggered':
+        XML.SubElement(t, 'selector', {'class': 'hudson.plugins.copyartifact.'
+                                                'TriggeredBuildSelector'})
+    else:
+        XML.SubElement(t, 'selector', {'class': 'hudson.plugins.copyartifact.'
+                                                'StatusBuildSelector'})
 
 
 def ant(parser, xml_parent, data):
