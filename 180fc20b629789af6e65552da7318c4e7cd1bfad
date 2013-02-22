@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAM3/+q/M\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-02-22T00:23:58Z",
+      "side": 1,
+      "message": "So this line here should be unindented one level. Emacs python pep8 mode (or whatever it is called I am not an emacs user) does not like this. Vim seems to add the indent and the pep8 script yells if you don\u0027t have it (E125) so we ignore the error when running pep8.",
+      "revId": "180fc20b629789af6e65552da7318c4e7cd1bfad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
