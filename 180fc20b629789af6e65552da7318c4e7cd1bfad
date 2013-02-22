@@ -16,6 +16,24 @@
       "revId": "180fc20b629789af6e65552da7318c4e7cd1bfad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAM3/+qhA\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 741
+      },
+      "writtenOn": "2013-02-22T10:57:42Z",
+      "side": 1,
+      "message": "Happy to un-indent - this is actually my most hated PEP8 rule ;)",
+      "parentUuid": "AAAAM3/+q/M\u003d",
+      "revId": "180fc20b629789af6e65552da7318c4e7cd1bfad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
