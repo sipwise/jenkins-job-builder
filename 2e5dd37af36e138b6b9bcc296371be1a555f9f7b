@@ -16,6 +16,24 @@
       "revId": "2e5dd37af36e138b6b9bcc296371be1a555f9f7b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//2S8\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1212,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-03-08T22:22:34Z",
+      "side": 1,
+      "message": "This would make the code clearer indeed.\n\nIn the following change (I5ff3614781cb52a47bf9816c2326d3fe9a96a47f), I took a similar approach, using local variables. This makes lines shorter, but it\u0027s a matter of taste I guess.\n\nWhat do you prefer? I\u0027ll update both changes accordingly.",
+      "parentUuid": "AAAAN3//2UU\u003d",
+      "revId": "2e5dd37af36e138b6b9bcc296371be1a555f9f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
