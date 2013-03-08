@@ -225,13 +225,15 @@ def svn(self, xml_parent, data):
     XML.SubElement(scm, 'workspaceUpdater', {'class':
                    'hudson.scm.subversion.' + updaterclass})
 
-
 class SCM(jenkins_jobs.modules.base.Base):
     sequence = 30
 
     def gen_xml(self, parser, xml_parent, data):
         scms = data.get('scm', [])
         if scms:
+            if len(scms) > 1:
+                xml_parent = XML.SubElement(xml_parent, 'scm', {'class': 'org.jenkinsci.plugins.multiplescms.MultiSCM'})
+                xml_parent = XML.SubElement(xml_parent, 'scms')
             for scm in data.get('scm', []):
                 self._dispatch('scm', 'scm',
                                parser, xml_parent, scm)
