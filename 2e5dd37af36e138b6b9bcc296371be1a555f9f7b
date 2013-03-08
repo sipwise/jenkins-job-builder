@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//2UU\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1212,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-03-08T22:14:04Z",
+      "side": 1,
+      "message": "What do you think about passing in these arguments as keyword args? eg:\n  console_prefix\u003d\u0027CIFS: \u0027,\n  plugin_tag\u003d\u0027jenkins.plugins.publish__over__cifs.\u0027\n                   \u0027CifsPublisherPlugin\u0027,\n\nand so on? I think for large numbers of arguments this makes the code easier to understand.",
+      "revId": "2e5dd37af36e138b6b9bcc296371be1a555f9f7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
