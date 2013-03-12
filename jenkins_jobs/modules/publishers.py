@@ -572,17 +572,9 @@ def checkstyle(parser, xml_parent, data):
     :arg int unHealthy: stormy threshold
     :arg str healthThreshold: Threshold priority for health status
      (high: only high, normal: high and normal, low: all)
-    :arg dict thresholds
-        :arg dict unstable
-            :arg int totalAll
-            :arg int totalHigh
-            :arg int totalNormal
-            :arg int totalLow
-        :arg dict failed
-            :arg int totalAll
-            :arg int totalHigh
-            :arg int totalNormal
-            :arg int totalLow
+    :arg dict thresholds: Configure failure levels. Can contains 'unstable'
+     and 'failed' keys, each of them define several thresholds chosen among
+     'totalAll', 'totalHigh', 'totalNormal' and 'totalLow'.
     :arg str defaultEncoding: encoding for parsing or showing files
      (empty will use platform default)
 
