@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//ypg\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 6316
+      },
+      "writtenOn": "2013-03-12T14:28:58Z",
+      "side": 1,
+      "message": "Just some grammar suggestions:\n\n\"Can contains\" should be \"Can contain\"\n\n\"chosen among\" might be better if it read \"selected from\", plus the use of a colon to identify the list might be helpful, so \"each of them define several thresholds selected from: \u0027totalAll\u0027, \u0027totalHigh\u0027, \u0027totalNormal\u0027, \u0027totalLow\u0027.\"",
+      "revId": "577fc5906112933215d1ca67445b364d34475198",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
