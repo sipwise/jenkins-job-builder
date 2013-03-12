@@ -34,6 +34,32 @@ import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 
 
+def build_gerrit_triggers(xml_parent, data):
+    available_simple_triggers = {
+        'triggerOnChangeMergedEvent': 'PluginChangeMergedEvent',
+        'triggerOnDraftPublishedEvent': 'PluginDraftPublishedEvent',
+        'triggerOnPatchsetUploadedEvent': 'PluginPatchsetCreatedEvent',
+        'triggerOnRefUpdatedEvent': 'PluginRefUpdatedEvent',
+    }
+    tag_namespace = 'com.sonyericsson.hudson.plugins.gerrit.trigger.'   \
+        'hudsontrigger.events'
+
+    trigger_on_events = XML.SubElement(xml_parent, 'triggerOnEvents')
+    for config_key, tag_name in available_simple_triggers.iteritems():
+        if data.get(config_key, False):
+            XML.SubElement(trigger_on_events,
+                           '%s.%s' % (tag_namespace, tag_name))
+
+    if data.get('triggerOnCommentAddedEvent', False):
+        cadded = XML.SubElement(trigger_on_events,
+                                '%s.%s' % (tag_namespace,
+                                           'PluginCommentAddedEvent'))
+        XML.SubElement(cadded, 'verdictCategory').text = \
+            data['triggerApprovalCategory']
+        XML.SubElement(cadded, 'commentAddedTriggerApprovalValue').text = \
+            str(data['triggerApprovalValue'])
+
+
 def gerrit(parser, xml_parent, data):
     """yaml: gerrit
     Trigger on a Gerrit event.
@@ -43,6 +69,8 @@ def gerrit(parser, xml_parent, data):
     :arg bool triggerOnPatchsetUploadedEvent: Trigger on patchset upload
     :arg bool triggerOnChangeMergedEvent: Trigger on change merged
     :arg bool triggerOnCommentAddedEvent: Trigger on comment added
+    :arg bool triggerOnDraftPublishedEvent: Trigger on draft published event.
+        Requires Gerrit Trigger Plugin version >= 2.6.0
     :arg bool triggerOnRefUpdatedEvent: Trigger on ref-updated
     :arg str triggerApprovalCategory: Approval category for comment added
     :arg int triggerApprovalValue: Approval value for comment added
@@ -98,24 +126,12 @@ def gerrit(parser, xml_parent, data):
         XML.SubElement(gbranch, 'pattern').text = project['branchPattern']
     XML.SubElement(gtrig, 'silentMode').text = 'false'
     XML.SubElement(gtrig, 'escapeQuotes').text = 'true'
-    XML.SubElement(gtrig, 'triggerOnPatchsetUploadedEvent').text = \
-        str(data['triggerOnPatchsetUploadedEvent']).lower()
-    XML.SubElement(gtrig, 'triggerOnChangeMergedEvent').text = \
-        str(data['triggerOnChangeMergedEvent']).lower()
-    XML.SubElement(gtrig, 'triggerOnCommentAddedEvent').text = \
-        str(data['triggerOnCommentAddedEvent']).lower()
-    XML.SubElement(gtrig, 'triggerOnRefUpdatedEvent').text = \
-        str(data['triggerOnRefUpdatedEvent']).lower()
+    build_gerrit_triggers(gtrig, data)
     if 'overrideVotes' in data and data['overrideVotes'] == 'true':
         XML.SubElement(gtrig, 'gerritBuildSuccessfulVerifiedValue').text = \
             str(data['gerritBuildSuccessfulVerifiedValue'])
         XML.SubElement(gtrig, 'gerritBuildFailedVerifiedValue').text = \
             str(data['gerritBuildFailedVerifiedValue'])
-    if data['triggerOnCommentAddedEvent']:
-        XML.SubElement(gtrig, 'commentAddedTriggerApprovalCategory').text = \
-            data['triggerApprovalCategory']
-        XML.SubElement(gtrig, 'commentAddedTriggerApprovalValue').text = \
-            str(data['triggerApprovalValue'])
     XML.SubElement(gtrig, 'buildStartMessage')
     XML.SubElement(gtrig, 'buildFailureMessage').text = data['failureMessage']
     XML.SubElement(gtrig, 'buildSuccessfulMessage')
