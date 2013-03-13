@@ -193,6 +193,40 @@ def git(self, xml_parent, data):
             xe.text = str(val).lower()
         else:
             xe.text = val
+
+    buildchooser = data.get('build-chooser', 'default')
+    buildchooserdict = {
+        'default': {
+            'attrs': {
+                'class': 'hudson.plugins.git.util.DefaultBuildChooser'
+            }
+        },
+        'inverse': {
+            'attrs': {
+                'class': 'hudson.plugins.git.util.InverseBuildChooser'
+            }
+        },
+        'gerrit': {
+            'attrs': {
+                'class': 'com.sonyericsson.hudson.plugins.gerrit.trigger' +
+                         '.hudsontrigger.GerritTriggerBuildChooser',
+                'plugin': 'gerrit-trigger'
+            },
+            'separator': '#'
+        }
+    }
+    if buildchooser not in buildchooserdict:
+        valid_bc = buildchooserdict.keys()
+        raise Exception("Build chooser entered is not valid must be one of: " +
+                        "%s or %s" % (', '.join(valid_bc[:-1]), valid_bc[-1]))
+
+    bc = XML.SubElement(scm, 'buildChooser',
+                        buildchooserdict[buildchooser].pop('attrs', {}))
+    # include any extra data without the special attrs member
+    for elem, value in buildchooserdict[buildchooser].iteritems():
+        XML.SubElement(bc, elem).text = value
+
+
     browser = data.get('browser', 'auto')
     browserdict = {'githubweb': 'GithubWeb',
                    'fisheye': 'FisheyeGitRepositoryBrowser',
