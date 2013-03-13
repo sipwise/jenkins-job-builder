@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//v4E\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-03-13T22:09:16Z",
+      "side": 1,
+      "message": "iterating over options.name with job, so shouldn\u0027t job be passed into update_job?",
+      "revId": "20c4d8f1f9ee4904f5552cbfcbd38ebc0ff1effa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
