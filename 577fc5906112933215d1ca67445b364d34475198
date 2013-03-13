@@ -16,6 +16,24 @@
       "revId": "577fc5906112933215d1ca67445b364d34475198",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//xAg\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-03-13T09:52:23Z",
+      "side": 1,
+      "message": "Done! Thank you for the review :-]",
+      "parentUuid": "AAAAN3//ypg\u003d",
+      "revId": "577fc5906112933215d1ca67445b364d34475198",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
