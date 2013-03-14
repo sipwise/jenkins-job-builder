@@ -30,6 +30,7 @@ ignore_cache=False
 url=http://localhost:8080/
 user=
 password=
+num_threads=1
 """
 
 
@@ -65,6 +66,9 @@ def main():
                          'including those not managed by Jenkins Job '
                          'Builder.')
     parser.add_argument('--conf', dest='conf', help='Configuration file')
+    parser.add_argument('--threads', dest='n_threads', type=int, default=None,
+                        help='Number of threads to use, 0 for autodetection '
+                        'and 1 for no parallel threads.')
     parser.add_argument('-l', '--log_level', dest='log_level', default='info',
                         help="Log level (default: %(default)s)")
     parser.add_argument(
@@ -138,6 +142,9 @@ def main():
                                            ignore_cache=ignore_cache,
                                            flush_cache=options.flush_cache)
 
+    if not options.n_threads:
+        options.n_threads = config.get('jenkins', 'num_threads')
+
     if options.command == 'delete':
         for job in options.name:
             logger.info("Deleting jobs in [{0}]".format(job))
@@ -150,12 +157,14 @@ def main():
     elif options.command == 'update':
         logger.info("Updating jobs in {0} ({1})".format(
             options.path, options.names))
-        jobs = builder.update_job(options.path, options.names)
+        jobs = builder.update_jobs(options.path, options.names,
+                                   n_threads=options.n_threads)
         if options.delete_old:
             builder.delete_old_managed(keep=[x.name for x in jobs])
     elif options.command == 'test':
-        builder.update_job(options.path, options.name,
-                           output_dir=options.output_dir)
+        builder.update_jobs(options.path, options.name,
+                            output_dir=options.output_dir,
+                            n_threads=options.n_threads)
 
 if __name__ == '__main__':
     sys.path.insert(0, '.')
