@@ -34,6 +34,10 @@ import copy
 import itertools
 import fnmatch
 import six
+from multiprocessing import cpu_count
+from multiprocessing.pool import ThreadPool
+from functools import wraps
+import traceback
 from jenkins_jobs.errors import JenkinsJobsException
 import jenkins_jobs.local_yaml as local_yaml
 
@@ -626,6 +630,98 @@ class Jenkins(object):
         return False
 
 
+def run_task(func, data={}, *args, **kwargs):
+    kwargs.update(data)
+    try:
+        result = func(*args, **kwargs)
+    except Exception, exc:
+        result = exc
+        logger.error("Exception occurred running: %s(%s, %s)" %
+                     (func.__name__, ", ".join(str(val) for val in args),
+                      ", ".join("%s=%s" % (k, v) for k, v in kwargs.items())))
+        logger.debug(traceback.print_exc())
+
+    return result
+
+
+def parallelize(func):
+    @wraps(func)
+    def parallel_exec(*args, **kwargs):
+        """
+        This decorator will run the decorated function in parallel using the
+        multiprocessing map_async function. It will not ensure the thread
+        safety of the decorated function. It accepts some special parameters.
+
+        :arg list parallelize: list of the arguments to pass to each of the
+          runs, the results of each run will be returned in the same order.
+        :arg int n_workers: number of workers to use, by default and if '0'
+          passed will autodetect the number of cores and use that, if '1'
+          passed, it will be single threaded.
+
+        Example:
+
+        > @parallelize
+        > def sample(param1, param2, param3):
+        >     return param1 + param2 + param3
+        >
+        > sample('param1', param2='val2',
+        >        parallelize=[
+        >            {'param3': 'val3'},
+        >            {'param3': 'val4'},
+        >            {'param3': 'val5'},
+        >        ])
+        >
+        ['param1val2val3', 'param1val2val4', 'param1val2val5']
+
+        This will run the `sample` function 3 times, in parallel (depending
+        on the number of detected cores) and return an array with the results
+        of the executions in the same order the parameters were passed.
+        """
+
+        data = kwargs.pop('parallelize')
+
+        # multiprocessing threading call map_async hangs with iterables of
+        # length 0. see http://bugs.python.org/issue12157
+        if len(data) == 0:
+            return
+
+        n_workers = kwargs.pop('n_workers', 0)
+        if not n_workers:
+            n_workers = cpu_count
+        pool = ThreadPool(processes=min(n_workers, len(data)))
+
+        # Use lambda to control the position of the parallel data to be passed
+        # as the first arg to the run_task function as functools.partial can
+        # only append such args.
+        result = pool.map_async(
+            lambda datum: run_task(func, datum, *args, **kwargs), data,
+            chunksize=1)
+
+        pool.close()
+        try:
+            while True:
+                if result.ready():
+                    break
+                result.wait(.2)
+        except KeyboardInterrupt:
+            logger.info("Received keyboard interrupt, terminating all threads")
+            pool.terminate()
+            raise
+        finally:
+            pool.join()
+            logger.debug("All running threads are finished")
+
+        results = result.get()
+        if not result.successful():
+            for idx, r in enumerate(results):
+                if not r:
+                    logger.error("Problem processing datum '%s'" % data[idx])
+
+        return results
+
+    return parallel_exec
+
+
 class Builder(object):
     def __init__(self, jenkins_url, jenkins_user, jenkins_password,
                  config=None, ignore_cache=False, flush_cache=False):
@@ -697,23 +793,26 @@ class Builder(object):
             self.jenkins.delete_job(job)
             if(self.cache.is_cached(job)):
                 self.cache.set(job, '')
+        self.cache.save()
 
     def delete_all_jobs(self):
         jobs = self.jenkins.get_jobs()
         for job in jobs:
             self.delete_job(job['name'])
 
-    def update_job(self, input_fn, names=None, output=None):
+    def update_jobs(self, input_fn, names=None, output=None, n_workers=1):
         self.load_files(input_fn)
         self.parser.expandYaml(names)
         self.parser.generateXML()
 
         self.parser.xml_jobs.sort(key=operator.attrgetter('name'))
 
-        for job in self.parser.xml_jobs:
-            if names and not matches(job.name, names):
-                continue
-            if output:
+        jobs = self.parser.xml_jobs
+        if names:
+            jobs = [job for job in jobs if matches(job.name, names)]
+
+        if output:
+            for job in jobs:
                 if hasattr(output, 'write'):
                     # `output` is a file-like object
                     logger.debug("Writing XML to '{0}'".format(output))
@@ -741,16 +840,26 @@ class Builder(object):
                 f = open(output_fn, 'w')
                 f.write(job.output())
                 f.close()
-                continue
-            md5 = job.md5()
-            if (self.jenkins.is_job(job.name)
-                    and not self.cache.is_cached(job.name)):
-                old_md5 = self.jenkins.get_job_md5(job.name)
-                self.cache.set(job.name, old_md5)
+            return
 
-            if self.cache.has_changed(job.name, md5) or self.ignore_cache:
-                self.jenkins.update_job(job.name, job.output())
-                self.cache.set(job.name, md5)
-            else:
-                logger.debug("'{0}' has not changed".format(job.name))
+        pjobs = [{'job': job} for job in jobs]
+
+        results = self.update_job(n_workers=n_workers, parallelize=pjobs)
+        for result in results:
+            if isinstance(result, BaseException):
+                raise result
+
+        self.cache.save()
         return self.parser.xml_jobs
+
+    @parallelize
+    def update_job(self, job):
+
+        md5 = job.md5()
+
+        if self.cache.has_changed(job.name, md5) or self.ignore_cache:
+            self.jenkins.update_job(job.name, job.output())
+            self.cache.set(job.name, md5)
+        else:
+            logger.debug("'{0}' has not changed".format(job.name))
+        return True
