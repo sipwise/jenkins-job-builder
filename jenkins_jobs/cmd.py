@@ -42,6 +42,7 @@ allow_empty_variables=False
 url=http://localhost:8080/
 user=
 password=
+workers=1
 
 [hipchat]
 authtoken=dummy
@@ -132,6 +133,9 @@ def create_parser():
                          'including those not managed by Jenkins Job '
                          'Builder.')
     parser.add_argument('--conf', dest='conf', help='configuration file')
+    parser.add_argument('--workers', dest='n_workers', type=int, default=None,
+                        help='number of workers to use, 0 for autodetection '
+                        'and 1 for no parallel workers.')
     parser.add_argument('-l', '--log_level', dest='log_level', default='info',
                         help="log level (default: %(default)s)")
     parser.add_argument(
@@ -277,6 +281,9 @@ def execute(options, config):
                 paths.append(path)
         options.path = paths
 
+    if not options.n_workers:
+        options.n_workers = config.getint('jenkins', 'workers')
+
     if options.command == 'delete':
         for job in options.name:
             builder.delete_job(job, options.path)
@@ -288,12 +295,14 @@ def execute(options, config):
     elif options.command == 'update':
         logger.info("Updating jobs in {0} ({1})".format(
             options.path, options.names))
-        jobs = builder.update_job(options.path, options.names)
+        jobs = builder.update_jobs(options.path, options.names,
+                                   n_workers=options.n_workers)
         if options.delete_old:
             builder.delete_old_managed(keep=[x.name for x in jobs])
     elif options.command == 'test':
-        builder.update_job(options.path, options.name,
-                           output=options.output_dir)
+        builder.update_jobs(options.path, options.name,
+                            output=options.output_dir,
+                            n_workers=options.n_workers)
 
 
 def version():

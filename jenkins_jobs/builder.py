@@ -35,6 +35,7 @@ import fnmatch
 from string import Formatter
 from jenkins_jobs.errors import JenkinsJobsException
 import jenkins_jobs.local_yaml as local_yaml
+from jenkins_jobs import parallel
 
 logger = logging.getLogger(__name__)
 MAGIC_MANAGE_STRING = "<!-- Managed by Jenkins Job Builder -->"
@@ -833,6 +834,7 @@ class Builder(object):
             self.jenkins.delete_job(job)
             if(self.cache.is_cached(job)):
                 self.cache.set(job, '')
+        self.cache.save()
 
     def delete_all_jobs(self):
         jobs = self.jenkins.get_jobs()
@@ -840,7 +842,7 @@ class Builder(object):
         for job in jobs:
             self.delete_job(job['name'])
 
-    def update_job(self, input_fn, jobs_glob=None, output=None):
+    def update_jobs(self, input_fn, jobs_glob=None, output=None, n_workers=1):
         self.load_files(input_fn)
         self.parser.expandYaml(jobs_glob)
         self.parser.generateXML()
@@ -848,10 +850,19 @@ class Builder(object):
         logger.info("Number of jobs generated:  %d", len(self.parser.xml_jobs))
         self.parser.xml_jobs.sort(key=operator.attrgetter('name'))
 
-        for job in self.parser.xml_jobs:
-            if jobs_glob and not matches(job.name, jobs_glob):
-                continue
-            if output:
+        jobs = self.parser.xml_jobs
+
+        if output:
+            if not hasattr(output, 'write'):
+                # assume path
+                output_dir = output
+                try:
+                    os.makedirs(output_dir)
+                except OSError:
+                    if not os.path.isdir(output_dir):
+                        raise
+
+            for job in jobs:
                 if hasattr(output, 'write'):
                     # `output` is a file-like object
                     logger.debug("Writing XML to '{0}'".format(output))
@@ -866,29 +877,31 @@ class Builder(object):
                         raise
                     continue
 
-                output_dir = output
-
-                try:
-                    os.makedirs(output_dir)
-                except OSError:
-                    if not os.path.isdir(output_dir):
-                        raise
-
                 output_fn = os.path.join(output_dir, job.name)
                 logger.debug("Writing XML to '{0}'".format(output_fn))
                 f = open(output_fn, 'w')
                 f.write(job.output())
                 f.close()
-                continue
-            md5 = job.md5()
-            if (self.jenkins.is_job(job.name)
-                    and not self.cache.is_cached(job.name)):
-                old_md5 = self.jenkins.get_job_md5(job.name)
-                self.cache.set(job.name, old_md5)
+            return jobs
 
-            if self.cache.has_changed(job.name, md5) or self.ignore_cache:
-                self.jenkins.update_job(job.name, job.output())
-                self.cache.set(job.name, md5)
-            else:
-                logger.debug("'{0}' has not changed".format(job.name))
-        return self.parser.xml_jobs
+        pjobs = [{'job': job} for job in jobs]
+
+        results = self.update_job(n_workers=n_workers, parallelize=pjobs)
+        for result in results:
+            if isinstance(result, BaseException):
+                raise result
+
+        self.cache.save()
+        return jobs
+
+    @parallel.parallelize
+    def update_job(self, job):
+
+        md5 = job.md5()
+
+        if self.cache.has_changed(job.name, md5) or self.ignore_cache:
+            self.jenkins.update_job(job.name, job.output())
+            self.cache.set(job.name, md5)
+        else:
+            logger.debug("'{0}' has not changed".format(job.name))
+        return True
