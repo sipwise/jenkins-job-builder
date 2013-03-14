@@ -28,6 +28,12 @@ import logging
 import copy
 import itertools
 from jenkins_jobs.errors import JenkinsJobsException
+import time
+from multiprocessing.pool import ThreadPool
+from threading import Lock
+import ConfigParser
+
+MAXTHREADS = 100
 
 logger = logging.getLogger(__name__)
 
@@ -386,6 +392,7 @@ class Jenkins(object):
 
     def delete_job(self, job_name):
         if self.is_job(job_name):
+            logger.info("Deleting jenkins job {0}".format(job_name))
             self.jenkins.delete_job(job_name)
 
     def get_jobs(self):
@@ -397,18 +404,56 @@ class Builder(object):
                  config=None, ignore_cache=False, flush_cache=False):
         self.jenkins = Jenkins(jenkins_url, jenkins_user, jenkins_password)
         self.cache = CacheStorage(jenkins_url, flush=flush_cache)
+        self.cache_lock = Lock()
         self.global_config = config
         self.ignore_cache = ignore_cache
+
+    def _parallel_exec(self, func, data):
+        """
+        This method takes a function and a list to process by calling the
+        given function once per item. Will retrieve the maximum number of
+        threads to spawn from a configuration option or use a default global
+        value. Avoids joining all threads in order to allow user to interrupt
+        execution to prevent further items from being processed.
+
+        :arg function func: Function to execute in parallel
+        :arg list data: List of items to be processed
+        """
+
+        # multiprocessing threading call map_async hangs with iterables of
+        # length 0. see http://bugs.python.org/issue12157
+        if len(data) == 0:
+            return
+
+        try:
+            maxthreads = self.global_config.get('jenkins', 'maxThreads',
+                                                raw=True)
+        except ConfigParser.NoOptionError:
+            maxthreads = MAXTHREADS
+        pool = ThreadPool(processes=min(maxthreads, len(data)))
+
+        result = pool.map_async(func, data, chunksize=1)
+        pool.close()
+        try:
+            while not result.ready():
+                time.sleep(.1)
+        except KeyboardInterrupt:
+            logger.info("Received keyboard interrupt, terminating all threads")
+            pool.terminate()
+        finally:
+            pool.join()
+            logger.debug("All running threads are finished")
 
     def delete_job(self, name):
         self.jenkins.delete_job(name)
         if(self.cache.is_cached(name)):
-            self.cache.set(name, '')
+            with self.cache_lock:
+                self.cache.set(name, '')
 
     def delete_all_jobs(self):
         jobs = self.jenkins.get_jobs()
-        for job in jobs:
-            self.delete_job(job['name'])
+        jobs.sort(lambda a, b: cmp(a['name'], b['name']))
+        self._parallel_exec(lambda job: self.delete_job(job['name']), jobs)
 
     def update_job(self, fn, names=None, output_dir=None):
         if os.path.isdir(fn):
@@ -427,19 +472,20 @@ class Builder(object):
 
         parser.jobs.sort(lambda a, b: cmp(a.name, b.name))
 
-        for job in parser.jobs:
+        def update_job_thread(job):
             if names and job.name not in names:
-                continue
+                return
             if output_dir:
-                if names:
+                if len(names) == 1:
                     print job.output()
-                    continue
+                    return
                 fn = os.path.join(output_dir, job.name)
                 logger.debug("Writing XML to '{0}'".format(fn))
                 f = open(fn, 'w')
                 f.write(job.output())
                 f.close()
-                continue
+                return
+
             md5 = job.md5()
             if (self.jenkins.is_job(job.name)
                     and not self.cache.is_cached(job.name)):
@@ -448,6 +494,9 @@ class Builder(object):
 
             if self.cache.has_changed(job.name, md5) or self.ignore_cache:
                 self.jenkins.update_job(job.name, job.output())
-                self.cache.set(job.name, md5)
+                with self.cache_lock:
+                    self.cache.set(job.name, md5)
             else:
                 logger.debug("'{0}' has not changed".format(job.name))
+
+        self._parallel_exec(update_job_thread, parser.jobs)
