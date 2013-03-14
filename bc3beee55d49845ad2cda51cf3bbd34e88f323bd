@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//uOg\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-03-14T22:56:17Z",
+      "side": 1,
+      "message": "Would it make sense to be a little bit more permissive about allowed characters?\n\nSay for example http://example.com/jenkins-502 versus http://example.com/jenkins-505 (which could be used for testing purpose before upgrade) are considered identical.\n\nA hash of jenkins_url would make the deal also, at the expense of clarity :)",
+      "revId": "bc3beee55d49845ad2cda51cf3bbd34e88f323bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
