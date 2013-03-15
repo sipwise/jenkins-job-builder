@@ -70,6 +70,12 @@ job_builder section
   job builder will search for any files specified by the custom application
   yaml tags 'include', 'include-raw' and 'include-raw-escaped'.
 
+**allow_duplicates**
+  (Optional) By default `jenkins-jobs` will abort any time a duplicate macro,
+  template, job-group or job name is encountered as it cannot establish the
+  correct one to use. When this option is set to True, only a warning is
+  emitted.
+
 jenkins section
 ^^^^^^^^^^^^^^^
 
