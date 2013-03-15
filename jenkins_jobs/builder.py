@@ -98,6 +98,10 @@ class YamlParser(object):
                                                "named '{0}'. Missing indent?"
                                                .format(n))
                 name = dfn['name']
+                if cls == 'job' and name in group:
+                    logger.error("Duplicate job name found: '{0}' already defined"
+                                 .format(name))
+                    raise RuntimeError("Duplicate job name specified")
                 group[name] = dfn
                 self.data[cls] = group
 
