@@ -16,6 +16,24 @@
       "revId": "bc3beee55d49845ad2cda51cf3bbd34e88f323bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAN3//tts\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-03-15T14:11:49Z",
+      "side": 1,
+      "message": "Indeed. So I am going to add numbers, dash and tilde. Should be good enough.\n\nI prefer not using a hash, that makes it hard to find out which cache file to delete.   Though one could add functionalities to skip cache or clear it :-]",
+      "parentUuid": "AAAAN3//uOg\u003d",
+      "revId": "bc3beee55d49845ad2cda51cf3bbd34e88f323bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
