@@ -123,7 +123,6 @@ def matches(what, glob_patterns):
 class YamlParser(object):
     def __init__(self, config=None):
         self.data = {}
-        self.jobs = []
         self.config = config
         self.registry = ModuleRegistry(self.config)
         self.path = ["."]
@@ -132,6 +131,16 @@ class YamlParser(object):
                     config.has_option('job_builder', 'include_path'):
                 self.path = config.get('job_builder',
                                        'include_path').split(':')
+        self._jobs = []
+        self._jobscache = {}
+        self._dirty = False
+
+    @property
+    def jobs(self):
+        if self._dirty:
+            self._jobs = list(self._jobscache.values())
+            self._dirty = False
+        return self._jobs
 
     def parse_fp(self, fp):
         data = local_yaml.load(fp, search_path=self.path)
@@ -155,12 +164,30 @@ class YamlParser(object):
                                                "named '{0}'. Missing indent?"
                                                .format(n))
                 name = dfn['name']
+                if name in group:
+                    self._handle_dups("Duplicate entry found: '{0}' is "
+                                      "already defined".format(name))
                 group[name] = dfn
                 self.data[cls] = group
 
     def parse(self, fn):
         with open(fn) as fp:
             self.parse_fp(fp)
+
+    def _handle_dups(self, message):
+        logger.error(message)
+
+        if not (self.config and self.config.has_section('job_builder') and
+                self.config.getboolean('job_builder', 'allow_duplicates')):
+            raise JenkinsJobsException(message)
+
+    def addJob(self, xml_job):
+        # catch duplicate job definitions
+        if xml_job.name in self._jobscache:
+            self._handle_dups("Duplicate definitions for job '{0}' specified"
+                              .format(xml_job.name))
+        self._jobscache[xml_job.name] = xml_job
+        self._dirty = True
 
     def getJob(self, name):
         job = self.data.get('job', {}).get(name, None)
@@ -331,8 +358,7 @@ class YamlParser(object):
             mod = Mod(self.registry)
             xml = mod.root_xml(data)
             self.gen_xml(xml, data)
-            job = XmlJob(xml, data['name'])
-            self.jobs.append(job)
+            self.addJob(XmlJob(xml, data['name']))
             break
 
     def gen_xml(self, xml, data):
