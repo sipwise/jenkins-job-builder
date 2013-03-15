@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAN3//to0\u003d",
+        "filename": "jenkins_jobs/modules/general.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6316
+      },
+      "writtenOn": "2013-03-15T15:17:52Z",
+      "side": 1,
+      "message": "Your line 81 and the existing line 84 seem to have similar syntax yet 84 employs parentheses and your patch does not. I wonder if there could be a uniform syntax in the file for the sake of reading ease?",
+      "revId": "20d58948069c42d1dd40d2186fb35475e8e02424",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
