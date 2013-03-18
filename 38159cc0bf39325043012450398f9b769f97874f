@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//+SM\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-03-18T20:56:11Z",
+      "side": 1,
+      "message": "is expanded_id a list?  if so wouldn\u0027t you need to iterate thru the list while doing this check?",
+      "revId": "38159cc0bf39325043012450398f9b769f97874f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
