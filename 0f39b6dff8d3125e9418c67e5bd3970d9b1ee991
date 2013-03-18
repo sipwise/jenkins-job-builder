@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//+zE\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-03-18T16:43:43Z",
+      "side": 1,
+      "message": "My understanding is that the new markup requires 2.6.0, so why don\u0027t we move this warning into the top of the doc section?",
+      "revId": "0f39b6dff8d3125e9418c67e5bd3970d9b1ee991",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
