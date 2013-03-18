@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//+OY\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-03-18T21:24:46Z",
+      "side": 1,
+      "message": "That consume only one argument which broke the feature to pass several job names as arguments.  I guess we want * here.\n\nhttp://docs.python.org/2/library/argparse.html#nargs",
+      "revId": "a0ccb45c5776b0e33990590f01857af1b2f17e37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
