@@ -16,6 +16,24 @@
       "revId": "0f39b6dff8d3125e9418c67e5bd3970d9b1ee991",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//+Jg\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-03-18T22:16:24Z",
+      "side": 1,
+      "message": "It has its place in the top top of the documentation indeed.\n\nDone",
+      "parentUuid": "AAAAOH//+zE\u003d",
+      "revId": "0f39b6dff8d3125e9418c67e5bd3970d9b1ee991",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
