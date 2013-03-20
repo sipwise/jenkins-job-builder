@@ -170,6 +170,54 @@ def github(parser, xml_parent, data):
     XML.SubElement(ghtrig, 'spec').text = ''
 
 
+def github_pull_request(parser, xml_parent, data):
+    """yaml: github-pull-request
+    Build pull requests in github and report results
+    Requires the Jenkins `GitHub Pull Request Builder Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/
+    GitHub+pull+request+builder+plugin>`_
+
+    :arg list admin-list: the users with admin rights (optional)
+    :arg string cron: cron syntax of when to run (optional)
+    :arg list white-list: users whose pull requests build (optional)
+    :arg list org-list: orgs whose users should be white listed (optional)
+
+    Example::
+
+      triggers:
+        - github-pull-request:
+            admin-list:
+              - user1
+              - user2
+            cron: * * * * *
+            white-list:
+              - user3
+              - user4
+            org-list:
+              - org1
+              - org2
+    """
+    ghprb = XML.SubElement(xml_parent, 'org.jenkinsci.plugins.ghprb.'
+                           'GhprbTrigger')
+    XML.SubElement(ghprb, 'spec').text = data.get('cron', '')
+    admins = data.get('admin-list', [''])
+    admin_string = ''
+    for admin in admins:
+        admin_string += admin + "\n"
+    XML.SubElement(ghprb, 'adminlist').text = admin_string
+    whites = data.get('white-list', [''])
+    white_string = ''
+    for white in whites:
+        white_string += white + "\n"
+    XML.SubElement(ghprb, 'whitelist').text = white_string
+    orgs = data.get('org-list', [''])
+    org_string = ''
+    for org in orgs:
+        org_string += org + "\n"
+    XML.SubElement(ghprb, 'orgslist').text = org_string
+    XML.SubElement(ghprb, 'cron').text = data.get('cron', '')
+
+
 class Triggers(jenkins_jobs.modules.base.Base):
     sequence = 50
 
