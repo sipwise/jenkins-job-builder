@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//5eA\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-03-21T19:08:54Z",
+      "side": 1,
+      "message": "You can replace the above 4 lines with:\n\n  admin_string \u003d \u0027\\n\u0027.join(data.get(\u0027admin-list\u0027, []))\n\nAnd if it needs a trailing newline, add it to that.",
+      "revId": "dc3ec6eeefe4518dce4fb30ad99e46b6ff11c7cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
