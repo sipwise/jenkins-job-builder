@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <builders>
+    <hudson.plugins.groovy.SystemGroovy plugin="groovy">
+      <scriptSource class="hudson.plugins.groovy.StringScriptSource">
+        <command>println &quot;Executing a groovy script in the master JVM&quot;
+</command>
+      </scriptSource>
+      <bindings>EXAMPLE=foo-bar</bindings>
+      <classpath/>
+    </hudson.plugins.groovy.SystemGroovy>
+    <hudson.plugins.groovy.SystemGroovy plugin="groovy">
+      <scriptSource class="hudson.plugins.groovy.FileScriptSource">
+        <scriptFile>/path/to/file.groovy</scriptFile>
+      </scriptSource>
+      <bindings/>
+      <classpath/>
+    </hudson.plugins.groovy.SystemGroovy>
+  </builders>
+</project>

@@ -1028,6 +1028,82 @@ def critical_block_end(parser, xml_parent, data):
     cbs.set('plugin', 'Exclusion')
 
 
+def _groovy_common(groovy, data, name):
+    """Helper function to generate the XML common to groovy builders
+    """
+
+    groovy.set('plugin', 'groovy')
+    source = XML.SubElement(groovy, 'scriptSource')
+
+    if 'command' in data and 'script-file' in data:
+        raise JenkinsJobsException("%s build step can only use one of "
+                                   "'command' or 'script-file'" % name)
+    elif 'command' in data:
+        source.set('class', 'hudson.plugins.groovy.StringScriptSource')
+        XML.SubElement(source, 'command').text = data.get('command', '')
+    elif 'script-file' in data:
+        source.set('class', 'hudson.plugins.groovy.FileScriptSource')
+        XML.SubElement(source, 'scriptFile').text = data.get('script-file', '')
+    else:
+        raise JenkinsJobsException("%s build step needs at least one of "
+                                   "'command' or 'script-file'" % name)
+
+    XML.SubElement(groovy, 'bindings').text = data.get('properties')
+    XML.SubElement(groovy, 'classpath').text = data.get('classpath')
+
+
+def groovy_system(parser, xml_parent, data):
+    """yaml: groovy-system
+    Execute a groovy script using the Jenkins master JVM
+    Requires the Jenkins `Groovy Plugin
+    <https://wiki.jenkins-ci.org/display/JENKINS/Groovy+Plugin>`_
+
+    :arg str command: the groovy script to execute
+    :arg str file: the groovy script to execute
+    :arg str properties: defines variable bindings in the properties
+            files format
+    :arg str classpath: script classpath
+
+    Example:
+
+    .. literalinclude:: ../../tests/builders/fixtures/groovy-system.yaml
+       :language: yaml
+    """
+
+    groovy = XML.SubElement(xml_parent, 'hudson.plugins.groovy.SystemGroovy')
+    _groovy_common(groovy, data, 'groovy-system')
+
+
+def groovy(parser, xml_parent, data):
+    """yaml: groovy
+    Execute a groovy script as a build step on the slave
+    Requires the Jenkins `Groovy Plugin
+    <https://wiki.jenkins-ci.org/display/JENKINS/Groovy+Plugin>`_
+
+    :arg str command: the groovy script to execute
+    :arg str file: the groovy script to execute
+    :arg str version: version of groovy installation to use
+        (default: '(Default)')
+    :arg str parameters: parameters for the groovy executable
+    :arg str script-parameters: parameters for the script
+    :arg str properties: properties that should be defined
+    :arg str classpath: script classpath
+
+    Example:
+
+    .. literalinclude:: ../../tests/builders/fixtures/groovy.yaml
+       :language: yaml
+    """
+    groovy = XML.SubElement(xml_parent, 'hudson.plugins.groovy.Groovy')
+    _groovy_common(groovy, data, 'groovy')
+
+    XML.SubElement(groovy, 'groovyName').text = data.get('version',
+                                                         '(Default)')
+    XML.SubElement(groovy, 'scriptParameters').text = \
+        data.get('script-parameters')
+    XML.SubElement(groovy, 'javaOps').text = data.get('java-opts')
+
+
 class Builders(jenkins_jobs.modules.base.Base):
     sequence = 60
 
