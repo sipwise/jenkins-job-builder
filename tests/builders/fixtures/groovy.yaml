@@ -1,0 +1,6 @@
+builders:
+  - groovy:
+      command: |
+          println "Executing a groovy script on a slave"
+  - groovy:
+      script-file: /path/to/file.groovy

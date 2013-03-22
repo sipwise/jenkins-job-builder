@@ -1,0 +1,7 @@
+builders:
+  - groovy-system:
+      command: |
+          println "Executing a groovy script in the master JVM"
+      properties: EXAMPLE=foo-bar
+  - groovy-system:
+      script-file: /path/to/file.groovy
