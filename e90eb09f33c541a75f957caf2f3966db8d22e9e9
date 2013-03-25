@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//1nM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-03-25T16:34:40Z",
+      "side": 1,
+      "message": "In the code, you say \"different values for a parameter\", which I think makes more sense.",
+      "revId": "e90eb09f33c541a75f957caf2f3966db8d22e9e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
