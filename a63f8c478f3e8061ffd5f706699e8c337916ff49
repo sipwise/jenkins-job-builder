@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//zd4\u003d",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-03-26T21:22:20Z",
+      "side": 1,
+      "message": "This will produce \"Only [\u0027label-expression\u0027, \u0027user-defined\u0027] axes types are supported\".\n\nWas it intentionally preferred to \"Only label-expression, user-defined axes types are supported\" that would be produced by [...] % \", \".join(self.supported_axis.keys()) ?\n\n(This is a matter of taste, it does not warrant a -1)",
+      "revId": "a63f8c478f3e8061ffd5f706699e8c337916ff49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
