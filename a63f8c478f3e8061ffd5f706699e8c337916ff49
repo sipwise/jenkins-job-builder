@@ -16,6 +16,24 @@
       "revId": "a63f8c478f3e8061ffd5f706699e8c337916ff49",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//zdU\u003d",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-03-26T21:32:08Z",
+      "side": 1,
+      "message": "That is indeed intentional. Firstly my laziness told me to do it, then I thought the enclosing brackets makes the possible choices to be clearer to my eyes.   I dont mind using a join :)",
+      "parentUuid": "AAAAOH//zd4\u003d",
+      "revId": "a63f8c478f3e8061ffd5f706699e8c337916ff49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
