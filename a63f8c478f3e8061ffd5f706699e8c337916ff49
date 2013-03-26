@@ -34,6 +34,24 @@
       "revId": "a63f8c478f3e8061ffd5f706699e8c337916ff49",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//zcg\u003d",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-03-26T21:37:25Z",
+      "side": 1,
+      "message": "Ok, this is fine with me then. It has the added advantage of not requiring to handle commas with a final \"and\" :)",
+      "parentUuid": "AAAAOH//zdU\u003d",
+      "revId": "a63f8c478f3e8061ffd5f706699e8c337916ff49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
