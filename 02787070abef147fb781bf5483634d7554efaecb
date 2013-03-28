@@ -16,6 +16,24 @@
       "revId": "02787070abef147fb781bf5483634d7554efaecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//wTQ\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-03-28T23:28:26Z",
+      "side": 1,
+      "message": "Indeed... I should revise my Python.\n\nDone",
+      "parentUuid": "AAAAOH//woE\u003d",
+      "revId": "02787070abef147fb781bf5483634d7554efaecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
