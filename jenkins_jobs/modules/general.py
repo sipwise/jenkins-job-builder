@@ -74,6 +74,9 @@ class General(jenkins_jobs.modules.base.Base):
         else:
             XML.SubElement(xml,
                            'blockBuildWhenUpstreamBuilding').text = 'false'
+        auth_token = data.get('auth-token')
+        if auth_token:
+            XML.SubElement(xml, 'authToken').text = auth_token
         if data.get('concurrent'):
             XML.SubElement(xml, 'concurrentBuild').text = 'true'
         else:
