@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOH//uRo\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 7178
+      },
+      "writtenOn": "2013-04-01T15:03:37Z",
+      "side": 1,
+      "message": "No, sorry about that. I\u0027ll push a v2 fixing that.",
+      "parentUuid": "AAAAOH//uTA\u003d",
+      "revId": "fb709f90a6c969fa0a48e081d8b85aed46099acb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOH//uSk\u003d",
         "filename": "jenkins_jobs/modules/general.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-04-01T14:44:17Z",
       "side": 1,
       "message": "I\u0027d prefer this to be:\n\n    if data.has_key(\u0027auth-token\u0027):\n        XML.SubElement(xml, \u0027authToken\u0027).text \u003d data[\u0027auth-token\u0027]\n\nit\u0027s shorter, and using data.get doesn\u0027t win you anything here.",
+      "revId": "fb709f90a6c969fa0a48e081d8b85aed46099acb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOH//uRc\u003d",
+        "filename": "jenkins_jobs/modules/general.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 7178
+      },
+      "writtenOn": "2013-04-01T15:03:37Z",
+      "side": 1,
+      "message": "Ok, I\u0027ll change as you suggest an resend.\n\nThanks a lot for your feedback",
+      "parentUuid": "AAAAOH//uSk\u003d",
       "revId": "fb709f90a6c969fa0a48e081d8b85aed46099acb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
