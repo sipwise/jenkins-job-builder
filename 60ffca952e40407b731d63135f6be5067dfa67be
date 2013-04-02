@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOH//sZ8\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2013-04-02T19:05:13Z",
+      "side": 1,
+      "message": "It should probably be \"List of switches for gradle\", since the code assumes it\u0027s getting a list.",
+      "revId": "60ffca952e40407b731d63135f6be5067dfa67be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
