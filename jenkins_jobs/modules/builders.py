@@ -71,35 +71,29 @@ def copyartifact(parser, xml_parent, data):
     :arg str filter: what files to copy
     :arg str target: Target base directory for copy, blank means use workspace
     :arg bool flatten: Flatten directories (default: false)
-    :arg str which-build: which build to get artifacts from
-        (optional, default last-successful)
-    :arg str build-number: specifies the build number to get when
-        when specific-build is specified as which-build
-    :arg str permalink: specifies the permalink to get when
-        permalink is specified as which-build
-    :arg bool stable: specifies to get only last stable build when
-        last-successful is specified as which-build
-    :arg bool fallback-to-last-successful: specifies to fallback to
-        last successful build when upstream-build is specified as which-build
-    :arg string param: specifies to use a build parameter to get the build when
-        build-param is specified as which-build
-
-    :which-build values:
-        :last-successful:
-        :specific-build:
-        :last-saved:
-        :upstream-build:
-        :permalink:
-        :workspace-latest:
-        :build-param:
-
-    :permalink values:
-        :last:
-        :last-stable:
-        :last-successful:
-        :last-failed:
-        :last-unstable:
-        :last-unsuccessful:
+    :arg dict which-build:
+      :which-build:
+        * **last-successful**
+        * **specific-build** (`dict`)
+            :specific-build: * **build-number** (`int`) -- Build number to\
+             retrieve
+        * **last-saved**
+        * **upstream-build** (`dict`)
+            :upstream-build: * **fallback-to-last-successful** (`bool`)\
+             -- Fallback to last successful
+        * **permalink** (`dict`)
+            :permalink: * **last**
+                        * **last-stable**
+                        * **last-successful** (`dict`)
+                            :last-successful: * **stable** (`bool`)\
+                             -- Only last stable build
+                        * **last-failed**
+                        * **last-unstable**
+                        * **last-unsuccessful**
+        * **workspace-latest**
+        * **build-param** (`dict`)
+            :build-param: * **param** (`string`)\
+             -- Use a build parameter to get the build
 
 
     Example::
@@ -438,7 +432,7 @@ def artifact_resolver(parser, xml_parent, data):
 
 def gradle(parser, xml_parent, data):
     """yaml: gradle
-    Execute gradle tasks.  Requires the Jenkins 'Gradle Plugin.
+    Execute gradle tasks.  Requires the Jenkins `Gradle Plugin.
     <https://wiki.jenkins-ci.org/display/JENKINS/Gradle+Plugin>`_
 
     :arg str tasks: List of tasks to execute
@@ -493,12 +487,12 @@ def maven_target(parser, xml_parent, data):
 
     Example::
 
-    builders:
-      - maven-target:
-          goals: clean
-          properties:
-            - foo=bar
-            - bar=foo
+      builders:
+        - maven-target:
+            goals: clean
+            properties:
+              - foo=bar
+              - bar=foo
     """
     maven = XML.SubElement(xml_parent, 'hudson.tasks.Maven')
     XML.SubElement(maven, 'targets').text = data['goals']
