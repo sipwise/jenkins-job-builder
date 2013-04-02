@@ -444,6 +444,7 @@ def gradle(parser, xml_parent, data):
     :arg str tasks: List of tasks to execute
     :arg bool wrapper: use gradle wrapper (default false)
     :arg bool executable: make gradlew executable (default false)
+    :arg list switches: Switches for gradle, can have multiples
 
     Example::
 
@@ -451,6 +452,9 @@ def gradle(parser, xml_parent, data):
         - gradle:
             wrapper: true
             executable: true
+            switches:
+              - "-g /foo/bar/.gradle"
+              - "-PmavenUserName=foobar"
             tasks: |
                    init
                    build
@@ -466,6 +470,8 @@ def gradle(parser, xml_parent, data):
         'wrapper', False)).lower()
     XML.SubElement(gradle, 'makeExecutable').text = str(data.get(
         'executable', False)).lower()
+    switch_string = '\n'.join(data.get('switches', []))
+    XML.SubElement(gradle, 'switches').text = switch_string
 
 
 def batch(parser, xml_parent, data):
