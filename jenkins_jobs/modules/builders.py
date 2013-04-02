@@ -29,7 +29,7 @@ via the ``jenkins_jobs.builders`` entry point.
 Example::
 
   job:
-    name: test_job
+    name: test_job77
 
     builders:
       - shell: "make test"
@@ -457,11 +457,14 @@ def gradle(parser, xml_parent, data):
                    tests
     """
     gradle = XML.SubElement(xml_parent, 'hudson.plugins.gradle.Gradle')
-    XML.SubElement(gradle, 'description').text = ''
-    XML.SubElement(gradle, 'switches').text = ''
+    XML.SubElement(gradle, 'gradleName').text = data.get(
+        'gradleName', '(Default)')
+    XML.SubElement(gradle, 'description').text = data.get('description', '')
+    XML.SubElement(gradle, 'switches').text = data.get('switches', '')
     XML.SubElement(gradle, 'tasks').text = data['tasks']
-    XML.SubElement(gradle, 'rootBuildScriptDir').text = ''
-    XML.SubElement(gradle, 'buildFile').text = ''
+    XML.SubElement(gradle, 'rootBuildScriptDir').text = data.get(
+        'rootBuildScriptDir', '')
+    XML.SubElement(gradle, 'buildFile').text = data.get('buildFile', '')
     XML.SubElement(gradle, 'useWrapper').text = str(data.get(
         'wrapper', False)).lower()
     XML.SubElement(gradle, 'makeExecutable').text = str(data.get(
