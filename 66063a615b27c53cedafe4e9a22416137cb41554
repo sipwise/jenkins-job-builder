@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOX//+tk\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-04-03T18:49:43Z",
+      "side": 1,
+      "message": "How does this modification relate to the change?",
+      "revId": "66063a615b27c53cedafe4e9a22416137cb41554",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//+sw\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-04-03T18:49:43Z",
+      "side": 1,
+      "message": "nit: add a documentation of new parameters?",
+      "revId": "66063a615b27c53cedafe4e9a22416137cb41554",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//+s0\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-04-03T18:49:43Z",
+      "side": 1,
+      "message": "The current convention is to name yaml keys with hyphenated-names (see the first comment of James E. Blair in https://review.openstack.org/#/c/24262)m which would be here gradle-name, root-build-script-dir and build-file.\n\nJenkins tag name are camelCase, which make the confusion easy.",
+      "revId": "66063a615b27c53cedafe4e9a22416137cb41554",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
