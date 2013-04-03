@@ -16,6 +16,24 @@
       "revId": "c00926a444b680c45a665a7eaf759e9e47145095",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//+sg\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-04-03T18:55:10Z",
+      "side": 1,
+      "message": "I followed the same convention used for JAVA_OPTS passed to ant.  I think it makes it clearer that it is a list of switches/options passed somewhere and not a text area like shell.  A user is probably going to end up with the roughly the same yaml code for clarity regardless if it is a string or list:\n\n  builders:\n    - gradle:\n      - switches: |\n                       -g /home/builduser/.gradle\n                       -PmavenUserName\u003dbuilduser\n\nvs\n\n  builders:\n    - gradle:\n      - switches:\n        - \"-g /home/builduser/.gradle\n        - \"-PmavenUserName\u003dbuilduser\"\n\nsince this gets confusing to read for a lot of switches:\n\n  builders:\n    - gradle:\n      - switches: \"-g /home/builduser/.gradle -PmavenUserName\u003dbuilduser\"\n\nUltimately, though, I can see it going both ways and haven\u0027t really been clear on when to use a list and when to use a string.  Like gradle tasks, it feels cleaner to see the list of tasks that are going to be implemented as a list as opposed to just space separated, but Jenkins just has a textfield to put all the tasks in with a space.\n\nIs A B C D E a list or is it a string?  With white space as the delimiter I think it is a list, which is how gradle tasks work.  Do we model what Jenkins looks like in the ui or the concept behind the ui design?",
+      "parentUuid": "AAAAOX//+uA\u003d",
+      "revId": "c00926a444b680c45a665a7eaf759e9e47145095",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
