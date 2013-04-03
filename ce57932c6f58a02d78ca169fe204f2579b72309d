@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOX//+sM\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-04-03T19:04:19Z",
+      "side": 1,
+      "message": "accesing --\u003e accessing?",
+      "revId": "ce57932c6f58a02d78ca169fe204f2579b72309d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//+sE\u003d",
+        "filename": "doc/source/general.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-04-03T19:04:19Z",
+      "side": 1,
+      "message": "accesing -\u003e accessing?",
+      "revId": "ce57932c6f58a02d78ca169fe204f2579b72309d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
