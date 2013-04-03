@@ -37,7 +37,7 @@ import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 
 
-def base_param(parser, xml_parent, data, do_default, ptype):
+def base_param(module, parser, xml_parent, data, do_default, ptype):
     pdef = XML.SubElement(xml_parent, ptype)
     XML.SubElement(pdef, 'name').text = data['name']
     XML.SubElement(pdef, 'description').text = data['description']
@@ -50,7 +50,7 @@ def base_param(parser, xml_parent, data, do_default, ptype):
     return pdef
 
 
-def string_param(parser, xml_parent, data):
+def string_param(module, parser, xml_parent, data):
     """yaml: string
     A string parameter.
 
@@ -66,11 +66,11 @@ def string_param(parser, xml_parent, data):
             default: bar
             description: "A parameter named FOO, defaults to 'bar'."
     """
-    base_param(parser, xml_parent, data, True,
+    base_param(module, parser, xml_parent, data, True,
                'hudson.model.StringParameterDefinition')
 
 
-def bool_param(parser, xml_parent, data):
+def bool_param(module, parser, xml_parent, data):
     """yaml: bool
     A boolean parameter.
 
@@ -87,11 +87,11 @@ def bool_param(parser, xml_parent, data):
             description: "A parameter named FOO, defaults to 'false'."
     """
     data['default'] = str(data.get('default', 'false')).lower()
-    base_param(parser, xml_parent, data, True,
+    base_param(module, parser, xml_parent, data, True,
                'hudson.model.BooleanParameterDefinition')
 
 
-def file_param(parser, xml_parent, data):
+def file_param(module, parser, xml_parent, data):
     """yaml: file
     A file parameter.
 
@@ -105,11 +105,11 @@ def file_param(parser, xml_parent, data):
             name: test.txt
             description: "Upload test.txt."
     """
-    base_param(parser, xml_parent, data, False,
+    base_param(module, parser, xml_parent, data, False,
                'hudson.model.FileParameterDefinition')
 
 
-def text_param(parser, xml_parent, data):
+def text_param(module, parser, xml_parent, data):
     """yaml: text
     A text parameter.
 
@@ -125,11 +125,11 @@ def text_param(parser, xml_parent, data):
             default: bar
             description: "A parameter named FOO, defaults to 'bar'."
     """
-    base_param(parser, xml_parent, data, True,
+    base_param(module, parser, xml_parent, data, True,
                'hudson.model.TextParameterDefinition')
 
 
-def label_param(parser, xml_parent, data):
+def label_param(module, parser, xml_parent, data):
     """yaml: label
     A node label parameter.
 
@@ -145,12 +145,12 @@ def label_param(parser, xml_parent, data):
             default: precise
             description: "The node on which to run the job"
     """
-    base_param(parser, xml_parent, data, True,
+    base_param(module, parser, xml_parent, data, True,
                'org.jvnet.jenkins.plugins.nodelabelparameter.'
                'LabelParameterDefinition')
 
 
-def choice_param(parser, xml_parent, data):
+def choice_param(module, parser, xml_parent, data):
     """yaml: choice
     A single selection parameter.
 
@@ -168,7 +168,7 @@ def choice_param(parser, xml_parent, data):
               - glance
             description: "On which project to run?"
     """
-    pdef = base_param(parser, xml_parent, data, False,
+    pdef = base_param(module, parser, xml_parent, data, False,
                       'hudson.model.ChoiceParameterDefinition')
     choices = XML.SubElement(pdef, 'choices',
                              {'class': 'java.util.Arrays$ArrayList'})
@@ -177,7 +177,7 @@ def choice_param(parser, xml_parent, data):
         XML.SubElement(a, 'string').text = choice
 
 
-def validating_string_param(parser, xml_parent, data):
+def validating_string_param(module, parser, xml_parent, data):
     """yaml: validating-string
     A validating string parameter
     Requires the Jenkins `Validating String Plugin.
@@ -200,14 +200,14 @@ def validating_string_param(parser, xml_parent, data):
             regex: [A-Za-z]*
             msg: Your entered value failed validation
     """
-    pdef = base_param(parser, xml_parent, data, True,
+    pdef = base_param(module, parser, xml_parent, data, True,
                       'hudson.plugins.validating__string__parameter.'
                       'ValidatingStringParameterDefinition')
     XML.SubElement(pdef, 'regex').text = data['regex']
     XML.SubElement(pdef, 'failedValidationMessage').text = data['msg']
 
 
-def svn_tags_param(parser, xml_parent, data):
+def svn_tags_param(module, parser, xml_parent, data):
     """yaml: svn-tags
     A svn tag parameter
     Requires the Jenkins `Parameterized Trigger Plugin.
@@ -230,7 +230,7 @@ def svn_tags_param(parser, xml_parent, data):
             url: http://svn.example.com/repo
             filter: [A-za-z0-9]*
     """
-    pdef = base_param(parser, xml_parent, data, True,
+    pdef = base_param(module, parser, xml_parent, data, True,
                       'hudson.scm.listtagsparameter.'
                       'ListSubversionTagsParameterDefinition')
     XML.SubElement(pdef, 'tagsDir').text = data['url']

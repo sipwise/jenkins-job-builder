@@ -37,7 +37,6 @@ Example::
 """
 
 
-import pkg_resources
 import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 import logging
@@ -45,7 +44,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def shell(parser, xml_parent, data):
+def shell(module, parser, xml_parent, data):
     """yaml: shell
     Execute a shell command.
 
@@ -61,7 +60,7 @@ def shell(parser, xml_parent, data):
     XML.SubElement(shell, 'command').text = data
 
 
-def copyartifact(parser, xml_parent, data):
+def copyartifact(module, parser, xml_parent, data):
     """yaml: copyartifact
 
     Copy artifact from another project.  Requires the Jenkins `Copy Artifact
@@ -162,7 +161,7 @@ def copyartifact(parser, xml_parent, data):
         XML.SubElement(selector, 'parameterName').text = data['param']
 
 
-def ant(parser, xml_parent, data):
+def ant(module, parser, xml_parent, data):
     """yaml: ant
     Execute an ant target.  Requires the Jenkins `Ant Plugin.
     <https://wiki.jenkins-ci.org/display/JENKINS/Ant+Plugin>`_
@@ -244,7 +243,7 @@ def ant(parser, xml_parent, data):
     XML.SubElement(ant, 'antName').text = data.get('ant-name', 'default')
 
 
-def trigger_builds(parser, xml_parent, data):
+def trigger_builds(module, parser, xml_parent, data):
     """yaml: trigger-builds
     Trigger builds of other jobs.
     Requires the Jenkins `Parameterized Trigger Plugin.
@@ -325,7 +324,7 @@ def trigger_builds(parser, xml_parent, data):
         xml_parent.remove(tbuilder)
 
 
-def builders_from(parser, xml_parent, data):
+def builders_from(module, parser, xml_parent, data):
     """yaml: builders-from
     Use builders from another project.
     Requires the Jenkins `Template Project Plugin.
@@ -344,7 +343,7 @@ def builders_from(parser, xml_parent, data):
     XML.SubElement(pbs, 'projectName').text = data
 
 
-def inject(parser, xml_parent, data):
+def inject(module, parser, xml_parent, data):
     """yaml: inject
     Inject an environment for the job.
     Requires the Jenkins `EnvInject Plugin.
@@ -368,7 +367,7 @@ def inject(parser, xml_parent, data):
         info, 'propertiesContent', data.get('properties-content'))
 
 
-def artifact_resolver(parser, xml_parent, data):
+def artifact_resolver(module, parser, xml_parent, data):
     """yaml: artifact-resolver
     Allows one to resolve artifacts from a maven repository like nexus
     (without having maven installed)
@@ -437,7 +436,7 @@ def artifact_resolver(parser, xml_parent, data):
     XML.SubElement(ar, 'releaseChecksumPolicy').text = 'warn'
 
 
-def gradle(parser, xml_parent, data):
+def gradle(module, parser, xml_parent, data):
     """yaml: gradle
     Execute gradle tasks.  Requires the Jenkins 'Gradle Plugin.
     <https://wiki.jenkins-ci.org/display/JENKINS/Gradle+Plugin>`_
@@ -469,7 +468,7 @@ def gradle(parser, xml_parent, data):
         'executable', False)).lower()
 
 
-def batch(parser, xml_parent, data):
+def batch(module, parser, xml_parent, data):
     """yaml: batch
     Execute a batch command.
 
@@ -485,16 +484,13 @@ def batch(parser, xml_parent, data):
     XML.SubElement(batch, 'command').text = data
 
 
-def create_builders(parser, name, params):
+def create_builders(module, parser, step):
     dummy_parent = XML.Element("dummy")
-    for ep in pkg_resources.iter_entry_points(
-        group='jenkins_jobs.builders', name=name):
-        func = ep.load()
-        func(parser, dummy_parent, params)
+    module.construct_builders(parser, dummy_parent, step)
     return list(dummy_parent)
 
 
-def conditional_step(parser, xml_parent, data):
+def conditional_step(module, parser, xml_parent, data):
     """yaml: conditional_step
     Conditionaly execute some build steps.  Requires the Jenkins `Conditional
     BuildStep Plugin`_.
@@ -597,8 +593,8 @@ def conditional_step(parser, xml_parent, data):
                                 'org.jenkins_ci.plugins.run_condition.common.'
                                 'BaseDirectory$JenkinsHome')
 
-    def build_step(parent, name, params):
-        for edited_node in create_builders(parser, name, params):
+    def build_step(parent, step):
+        for edited_node in create_builders(module, parser, step):
             if not has_multiple_steps:
                 edited_node.set('class', edited_node.tag)
                 edited_node.tag = 'buildStep'
@@ -635,8 +631,7 @@ def conditional_step(parser, xml_parent, data):
     XML.SubElement(root_tag, "runner").set('class',
                                            evaluation_class)
     for step in steps:
-        step_name, step_params = step.items()[0]
-        build_step(steps_parent, step_name, step_params)
+        build_step(steps_parent, step)
 
 
 def maven_target(parser, xml_parent, data):
@@ -683,3 +678,7 @@ class Builders(jenkins_jobs.modules.base.Base):
         project_type = data.get('project-type', 'freestyle')
         if project_type in ('freestyle', 'matrix') and 'builders' not in data:
             XML.SubElement(xml_parent, 'builders')
+
+    def construct_builders(self, parser, xml_parent, data):
+        self._dispatch('builder', 'builders',
+                       parser, xml_parent, data)

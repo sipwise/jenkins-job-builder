@@ -37,7 +37,7 @@ import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 
 
-def http_endpoint(parser, xml_parent, data):
+def http_endpoint(module, parser, xml_parent, data):
     """yaml: http
     Defines an HTTP notification endpoint.
     Requires the Jenkins `Notification Plugin.

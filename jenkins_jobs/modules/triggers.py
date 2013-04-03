@@ -118,7 +118,7 @@ def build_gerrit_skip_votes(xml_parent, data):
             XML.SubElement(skip_vote_node, tag_name).text = 'false'
 
 
-def gerrit(parser, xml_parent, data):
+def gerrit(module, parser, xml_parent, data):
     """yaml: gerrit
     Trigger on a Gerrit event.
     Requires the Jenkins `Gerrit Trigger Plugin
@@ -246,7 +246,7 @@ def gerrit(parser, xml_parent, data):
     XML.SubElement(gtrig, 'customUrl')
 
 
-def pollscm(parser, xml_parent, data):
+def pollscm(module, parser, xml_parent, data):
     """yaml: pollscm
     Poll the SCM to determine if there has been a change.
 
@@ -262,7 +262,7 @@ def pollscm(parser, xml_parent, data):
     XML.SubElement(scmtrig, 'spec').text = data
 
 
-def timed(parser, xml_parent, data):
+def timed(module, parser, xml_parent, data):
     """yaml: timed
     Trigger builds at certain times.
 
@@ -277,7 +277,7 @@ def timed(parser, xml_parent, data):
     XML.SubElement(scmtrig, 'spec').text = data
 
 
-def github(parser, xml_parent, data):
+def github(module, parser, xml_parent, data):
     """yaml: github
     Trigger a job when github repository is pushed to
     Requires the Jenkins `GitHub Plugin.
@@ -293,7 +293,7 @@ def github(parser, xml_parent, data):
     XML.SubElement(ghtrig, 'spec').text = ''
 
 
-def github_pull_request(parser, xml_parent, data):
+def github_pull_request(module, parser, xml_parent, data):
     """yaml: github-pull-request
     Build pull requests in github and report results
     Requires the Jenkins `GitHub Pull Request Builder Plugin.

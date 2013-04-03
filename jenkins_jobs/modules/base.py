@@ -117,7 +117,7 @@ class Base(object):
         for ep in pkg_resources.iter_entry_points(
             group='jenkins_jobs.{0}'.format(component_list_type), name=name):
             func = ep.load()
-            func(parser, xml_parent, component_data)
+            func(self, parser, xml_parent, component_data)
         else:
             # Otherwise, see if it's defined as a macro
             component = parser.data.get(component_type, {}).get(name)

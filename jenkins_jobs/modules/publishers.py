@@ -40,7 +40,7 @@ import jenkins_jobs.modules.base
 import logging
 
 
-def archive(parser, xml_parent, data):
+def archive(module, parser, xml_parent, data):
     """yaml: archive
     Archive build artifacts
 
@@ -69,7 +69,7 @@ def archive(parser, xml_parent, data):
         latest.text = 'false'
 
 
-def trigger_parameterized_builds(parser, xml_parent, data):
+def trigger_parameterized_builds(module, parser, xml_parent, data):
     """yaml: trigger-parameterized-builds
     Trigger parameterized builds of other jobs.
     Requires the Jenkins `Parameterized Trigger Plugin.
@@ -141,7 +141,7 @@ def trigger_parameterized_builds(parser, xml_parent, data):
         trigger_with_no_params.text = 'false'
 
 
-def trigger(parser, xml_parent, data):
+def trigger(module, parser, xml_parent, data):
     """yaml: trigger
     Trigger non-parametrised builds of other jobs.
 
@@ -187,7 +187,7 @@ def trigger(parser, xml_parent, data):
     tcolor.text = thresholds[threshold]['color']
 
 
-def coverage(parser, xml_parent, data):
+def coverage(module, parser, xml_parent, data):
     """yaml: coverage
     Generate a cobertura coverage report.
     Requires the Jenkins `Cobertura Coverage Plugin.
@@ -253,7 +253,7 @@ def coverage(parser, xml_parent, data):
     XML.SubElement(cobertura, 'sourceEncoding').text = 'ASCII'
 
 
-def ftp(parser, xml_parent, data):
+def ftp(module, parser, xml_parent, data):
     """yaml: ftp
     Upload files via FTP.
     Requires the Jenkins `Publish over FTP Plugin.
@@ -292,7 +292,7 @@ def ftp(parser, xml_parent, data):
     XML.SubElement(transfer_node, 'asciiMode').text = 'false'
 
 
-def junit(parser, xml_parent, data):
+def junit(module, parser, xml_parent, data):
     """yaml: junit
     Publish JUnit test results.
 
@@ -311,7 +311,7 @@ def junit(parser, xml_parent, data):
     XML.SubElement(junitresult, 'testDataPublishers')
 
 
-def xunit(parser, xml_parent, data):
+def xunit(module, parser, xml_parent, data):
     """yaml: xunit
     Publish tests results.  Requires the Jenkins `xUnit Plugin.
     <https://wiki.jenkins-ci.org/display/JENKINS/xUnit+Plugin>`_
@@ -469,7 +469,7 @@ def _violations_add_entry(xml_parent, name, data):
         XML.SubElement(tconfig, 'pattern')
 
 
-def violations(parser, xml_parent, data):
+def violations(module, parser, xml_parent, data):
     """yaml: violations
     Publish code style violations.
     Requires the Jenkins `Violations Plugin.
@@ -535,7 +535,7 @@ def violations(parser, xml_parent, data):
     XML.SubElement(config, 'encoding').text = 'default'
 
 
-def checkstyle(parser, xml_parent, data):
+def checkstyle(module, parser, xml_parent, data):
     """yaml: checkstyle
     Publish trend reports with Checkstyle.
     Requires the `Checkstyle Plugin.
@@ -679,7 +679,7 @@ def checkstyle(parser, xml_parent, data):
     XML.SubElement(checkstyle, 'pattern').text = data.get('pattern', '')
 
 
-def scp(parser, xml_parent, data):
+def scp(module, parser, xml_parent, data):
     """yaml: scp
     Upload files via SCP
     Requires the Jenkins `SCP Plugin.
@@ -726,7 +726,7 @@ def scp(parser, xml_parent, data):
             XML.SubElement(entry_e, 'copyAfterFailure').text = 'false'
 
 
-def pipeline(parser, xml_parent, data):
+def pipeline(module, parser, xml_parent, data):
     """yaml: pipeline
     Specify a downstream project in a pipeline.
     Requires the Jenkins `Build Pipeline Plugin.
@@ -754,7 +754,7 @@ def pipeline(parser, xml_parent, data):
         XML.SubElement(pippub, 'downstreamProjectNames').text = data
 
 
-def email(parser, xml_parent, data):
+def email(module, parser, xml_parent, data):
     """yaml: email
     Email notifications on build failure.
 
@@ -785,7 +785,7 @@ def email(parser, xml_parent, data):
         data.get('send-to-individuals', False)).lower()
 
 
-def claim_build(parser, xml_parent, data):
+def claim_build(module, parser, xml_parent, data):
     """yaml: claim-build
     Claim build failures
     Requires the Jenkins `Claim Plugin.
@@ -800,7 +800,7 @@ def claim_build(parser, xml_parent, data):
     XML.SubElement(xml_parent, 'hudson.plugins.claim.ClaimPublisher')
 
 
-def base_email_ext(parser, xml_parent, data, ttype):
+def base_email_ext(module, parser, xml_parent, data, ttype):
     trigger = XML.SubElement(xml_parent,
                              'hudson.plugins.emailext.plugins.trigger.'
                              + ttype)
@@ -814,7 +814,7 @@ def base_email_ext(parser, xml_parent, data, ttype):
     XML.SubElement(email, 'sendToRecipientList').text = 'true'
 
 
-def email_ext(parser, xml_parent, data):
+def email_ext(module, parser, xml_parent, data):
     """yaml: email-ext
     Extend Jenkin's built in email notification
     Requires the Jenkins `Email-ext Plugin.
@@ -903,7 +903,7 @@ def email_ext(parser, xml_parent, data):
     XML.SubElement(emailext, 'presendScript').text = ''
 
 
-def fingerprint(parser, xml_parent, data):
+def fingerprint(module, parser, xml_parent, data):
     """yaml: fingerprint
     Fingerprint files to track them across builds
 
@@ -925,7 +925,7 @@ def fingerprint(parser, xml_parent, data):
         'record-artifacts', False)).lower()
 
 
-def aggregate_tests(parser, xml_parent, data):
+def aggregate_tests(module, parser, xml_parent, data):
     """yaml: aggregate-tests
     Aggregate downstream test results
 
@@ -943,7 +943,7 @@ def aggregate_tests(parser, xml_parent, data):
         'include-failed-builds', False)).lower()
 
 
-def cppcheck(parser, xml_parent, data):
+def cppcheck(module, parser, xml_parent, data):
     """yaml: cppcheck
     Cppcheck result publisher
     Requires the Jenkins `Cppcheck Plugin.
@@ -1029,7 +1029,7 @@ def cppcheck(parser, xml_parent, data):
         str(gdisplay.get('information', 'false')).lower()
 
 
-def logparser(parser, xml_parent, data):
+def logparser(module, parser, xml_parent, data):
     """yaml: logparser
     Requires the Jenkins `Log Parser Plugin.
     <https://wiki.jenkins-ci.org/display/JENKINS/Log+Parser+Plugin>`_
@@ -1056,7 +1056,7 @@ def logparser(parser, xml_parent, data):
     XML.SubElement(clog, 'parsingRulesPath').text = data.get('parse-rules', '')
 
 
-def copy_to_master(parser, xml_parent, data):
+def copy_to_master(module, parser, xml_parent, data):
     """yaml: copy-to-master
     Copy files to master from slave
     Requires the Jenkins `Copy To Slave Plugin.
@@ -1091,7 +1091,7 @@ def copy_to_master(parser, xml_parent, data):
         XML.SubElement(cm, 'overrideDestinationFolder').text = 'true'
 
 
-def jira(parser, xml_parent, data):
+def jira(module, parser, xml_parent, data):
     """yaml: jira
     Update relevant JIRA issues
     Requires the Jenkins `JIRA Plugin
@@ -1105,7 +1105,7 @@ def jira(parser, xml_parent, data):
     XML.SubElement(xml_parent, 'hudson.plugins.jira.JiraIssueUpdater')
 
 
-def groovy_postbuild(parser, xml_parent, data):
+def groovy_postbuild(module, parser, xml_parent, data):
     """yaml: groovy-postbuild
     Execute a groovy script.
     Requires the Jenkins `Groovy Postbuild Plugin
@@ -1158,7 +1158,7 @@ def base_publish_over(xml_parent, data, console_prefix,
     return (outer, transfersset)
 
 
-def cifs(parser, xml_parent, data):
+def cifs(module, parser, xml_parent, data):
     """yaml: cifs
     Upload files via CIFS.
     Requires the Jenkins `Publish over CIFS Plugin.
@@ -1196,7 +1196,7 @@ def cifs(parser, xml_parent, data):
                       plugin_reference_tag)
 
 
-def sonar(parser, xml_parent, data):
+def sonar(module, parser, xml_parent, data):
     """yaml: sonar
     Sonar plugin support.
     Requires the Jenkins `Sonar Plugin.

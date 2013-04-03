@@ -36,7 +36,7 @@ import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 
 
-def email(parser, xml_parent, data):
+def email(module, parser, xml_parent, data):
     """yaml: email
     Email notifications on build failure.
 

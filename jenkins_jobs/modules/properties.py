@@ -36,7 +36,7 @@ import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 
 
-def github(parser, xml_parent, data):
+def github(module, parser, xml_parent, data):
     """yaml: github
     Sets the GitHub URL for the project.
 
@@ -55,7 +55,7 @@ def github(parser, xml_parent, data):
     github_url.text = data['url']
 
 
-def throttle(parser, xml_parent, data):
+def throttle(module, parser, xml_parent, data):
     """yaml: throttle
     Throttles the number of builds for this job.
     Requires the Jenkins `Throttle Concurrent Builds Plugin.
@@ -101,7 +101,7 @@ def throttle(parser, xml_parent, data):
     XML.SubElement(throttle, 'configVersion').text = '1'
 
 
-def inject(parser, xml_parent, data):
+def inject(module, parser, xml_parent, data):
     """yaml: inject
     Allows you to inject evironment variables into the build.
     Requires the Jenkins `Env Inject Plugin.
@@ -148,7 +148,7 @@ def inject(parser, xml_parent, data):
         data.get('keep-build-variables', 'true')).lower()
 
 
-def authenticated_build(parser, xml_parent, data):
+def authenticated_build(module, parser, xml_parent, data):
     """yaml: authenticated-build
     Specifies an authorization matrix where only authenticated users
     may trigger a build.
@@ -169,7 +169,7 @@ def authenticated_build(parser, xml_parent, data):
             'hudson.model.Item.Build:authenticated'
 
 
-def authorization(parser, xml_parent, data):
+def authorization(module, parser, xml_parent, data):
     """yaml: authorization
     Specifies an authorization matrix
 
@@ -227,7 +227,7 @@ def authorization(parser, xml_parent, data):
                 pe.text = "{0}:{1}".format(mapping[perm], username)
 
 
-def extended_choice(parser, xml_parent, data):
+def extended_choice(module, parser, xml_parent, data):
     """yaml: extended-choice
     Creates an extended choice property where values can be read from a file
     Requires the Jenkins `Extended Choice Parameter Plugin.

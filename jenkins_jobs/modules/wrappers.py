@@ -35,7 +35,7 @@ import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 
 
-def timeout(parser, xml_parent, data):
+def timeout(module, parser, xml_parent, data):
     """yaml: timeout
     Abort the build if it runs too long.
     Requires the Jenkins `Build Timeout Plugin.
@@ -64,7 +64,7 @@ def timeout(parser, xml_parent, data):
         failbuild.text = 'false'
 
 
-def timestamps(parser, xml_parent, data):
+def timestamps(module, parser, xml_parent, data):
     """yaml: timestamps
     Add timestamps to the console log.
     Requires the Jenkins `Timestamper Plugin.
@@ -79,7 +79,7 @@ def timestamps(parser, xml_parent, data):
                    'hudson.plugins.timestamper.TimestamperBuildWrapper')
 
 
-def ansicolor(parser, xml_parent, data):
+def ansicolor(module, parser, xml_parent, data):
     """yaml: ansicolor
     Translate ANSI color codes to HTML in the console log.
     Requires the Jenkins `Ansi Color Plugin.
@@ -94,7 +94,7 @@ def ansicolor(parser, xml_parent, data):
                    'hudson.plugins.ansicolor.AnsiColorBuildWrapper')
 
 
-def mask_passwords(parser, xml_parent, data):
+def mask_passwords(module, parser, xml_parent, data):
     """yaml: mask-passwords
     Hide passwords in the console log.
     Requires the Jenkins `Mask Passwords Plugin.
@@ -110,7 +110,7 @@ def mask_passwords(parser, xml_parent, data):
                    'MaskPasswordsBuildWrapper')
 
 
-def workspace_cleanup(parser, xml_parent, data):
+def workspace_cleanup(module, parser, xml_parent, data):
     """yaml: workspace-cleanup
 
     See `Workspace Cleanup Plugin.
@@ -148,7 +148,7 @@ def workspace_cleanup(parser, xml_parent, data):
     deldirs.text = str(data.get("dirmatch", "false")).lower()
 
 
-def build_name(parser, xml_parent, data):
+def build_name(module, parser, xml_parent, data):
     """yaml: build-name
     Set the name of the build
     Requires the Jenkins `Build Name Setter Plugin.
@@ -170,7 +170,7 @@ def build_name(parser, xml_parent, data):
     XML.SubElement(bsetter, 'template').text = data['name']
 
 
-def port_allocator(parser, xml_parent, data):
+def port_allocator(module, parser, xml_parent, data):
     """yaml: port-allocator
     Assign unique TCP port numbers
     Requires the Jenkins `Port Allocator Plugin.
@@ -194,7 +194,7 @@ def port_allocator(parser, xml_parent, data):
     XML.SubElement(dpt, 'name').text = data['name']
 
 
-def locks(parser, xml_parent, data):
+def locks(module, parser, xml_parent, data):
     """yaml: locks
     Control parallel execution of jobs.
     Requires the Jenkins `Locks and Latches Plugin.
@@ -220,7 +220,7 @@ def locks(parser, xml_parent, data):
         XML.SubElement(lockwrapper, 'name').text = lock
 
 
-def copy_to_slave(parser, xml_parent, data):
+def copy_to_slave(module, parser, xml_parent, data):
     """yaml: copy-to-slave
     Copy files to slave before build
     Requires the Jenkins `Copy To Slave Plugin.
@@ -264,7 +264,7 @@ def copy_to_slave(parser, xml_parent, data):
     XML.SubElement(cs, 'hudsonHomeRelative').text = 'false'
 
 
-def inject(parser, xml_parent, data):
+def inject(module, parser, xml_parent, data):
     """yaml: inject
     Add or override environment variables to the whole build process
     Requires the Jenkins `EnvInject Plugin.
@@ -297,7 +297,7 @@ def inject(parser, xml_parent, data):
     XML.SubElement(info, 'loadFilesFromMaster').text = 'false'
 
 
-def jclouds(parser, xml_parent, data):
+def jclouds(module, parser, xml_parent, data):
     """yaml: jclouds
     :arg bool single-use: Whether or not to terminate the slave after use
                           (default: False).
