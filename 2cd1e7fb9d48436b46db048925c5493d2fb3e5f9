@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Code-Review+2: Clark Boylan <clark.boylan@gmail.com>
+Approved+1: Jeremy Stanley <fungi@yuggoth.org>
+Code-Review+2: Jeremy Stanley <fungi@yuggoth.org>
+Code-Review+1: Khai Do <zaro0508@gmail.com>
+Code-Review+1: Arnaud Fabre <fabre.arnaud@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 03 Apr 2013 20:08:36 +0000
+Reviewed-on: https://review.openstack.org/25432
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
