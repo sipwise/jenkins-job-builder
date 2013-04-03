@@ -34,6 +34,24 @@
       "revId": "c00926a444b680c45a665a7eaf759e9e47145095",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//+p4\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-04-03T19:21:52Z",
+      "side": 1,
+      "message": "Ok, I see your point. A list is a bit clearer in that respect.\n\nIn my patches, for now, I\u0027ve merely stuck with what Jenkins displays in the UI, but one of the secondary goals of jenkins job builder (in my mind) is to simplify configuring a job, and that might require some adjustments.\n\nThanks for the explanation!",
+      "parentUuid": "AAAAOX//+sg\u003d",
+      "revId": "c00926a444b680c45a665a7eaf759e9e47145095",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
