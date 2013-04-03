@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOX//+aA\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-04-03T21:52:30Z",
+      "side": 1,
+      "message": "Has this merged the which-build values and the build-number, permalink, stable, etc args? I think the individual args still need to be listed as :args.",
+      "revId": "cdb7ce61a0a533e0dcbb87e885303495ac481245",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
