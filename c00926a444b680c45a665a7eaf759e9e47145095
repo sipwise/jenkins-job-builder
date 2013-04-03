@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOX//+uA\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-04-03T18:34:26Z",
+      "side": 1,
+      "message": "Since the switches tag is a simple text node, what is the added value of a yaml list compared to a text value ? Especially since it\u0027s a list of command arguments: any whitespace character does the job.",
+      "revId": "c00926a444b680c45a665a7eaf759e9e47145095",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
