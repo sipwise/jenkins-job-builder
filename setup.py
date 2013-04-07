@@ -120,6 +120,7 @@ setuptools.setup(
             'cifs=jenkins_jobs.modules.publishers:cifs',
             'sonar=jenkins_jobs.modules.publishers:sonar',
             'join-trigger=jenkins_jobs.modules.publishers:join_trigger',
+            'raw=jenkins_jobs.modules.publishers:raw',
         ],
         'jenkins_jobs.scm': [
             'git=jenkins_jobs.modules.scm:git',

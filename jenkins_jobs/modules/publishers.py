@@ -1272,6 +1272,18 @@ def join_trigger(parser, xml_parent, data):
     XML.SubElement(jointrigger, 'joinProjects').text = joinProjectsText
 
 
+def raw(parser, xml_parent, data):
+    """yaml: raw
+    Dump some raw XML into the publishers config
+
+    Example::
+
+      publishers:
+        - raw: "<myelement/>"
+    """
+    xml_parent.append(XML.fromstring(data))
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
