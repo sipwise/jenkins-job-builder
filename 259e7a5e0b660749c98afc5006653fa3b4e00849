@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAOn///2Y\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 741
+      },
+      "writtenOn": "2013-04-08T19:24:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOX//5fQ\u003d",
+      "revId": "259e7a5e0b660749c98afc5006653fa3b4e00849",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAOX//5fI\u003d",
         "filename": "jenkins_jobs/modules/project_multijob.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-04-08T16:45:40Z",
       "side": 1,
       "message": "Would you consider making this a full example including both the project-type and builder?  Also, perhaps a sphinx ref to the builder.",
+      "revId": "259e7a5e0b660749c98afc5006653fa3b4e00849",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn///2U\u003d",
+        "filename": "jenkins_jobs/modules/project_multijob.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 741
+      },
+      "writtenOn": "2013-04-08T19:24:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAOX//5fI\u003d",
       "revId": "259e7a5e0b660749c98afc5006653fa3b4e00849",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
