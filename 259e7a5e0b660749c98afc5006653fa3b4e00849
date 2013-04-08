@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOX//5fQ\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-04-08T16:45:40Z",
+      "side": 1,
+      "message": "Would you mind documenting the parameters?  You can consult artifact resolver for an example of the nested parameters needed for the \u0027projects:\u0027 list.\n\nAlso, I think it\u0027s worth a note explaining that the job type must by multijob for this, probably with a sphinx ref to the multijob module.",
+      "revId": "259e7a5e0b660749c98afc5006653fa3b4e00849",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOX//5fI\u003d",
+        "filename": "jenkins_jobs/modules/project_multijob.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-04-08T16:45:40Z",
+      "side": 1,
+      "message": "Would you consider making this a full example including both the project-type and builder?  Also, perhaps a sphinx ref to the builder.",
+      "revId": "259e7a5e0b660749c98afc5006653fa3b4e00849",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
