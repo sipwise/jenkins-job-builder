@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn///yA\u003d",
+        "filename": "jenkins_jobs/modules/project_multijob.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-04-08T20:14:51Z",
+      "side": 1,
+      "message": "One more thing -- typo here, and we usually link to the plugin wiki page on jenkins.org.",
+      "revId": "56c1c914c0dfa95a3f313f790c877293c86c8f2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
