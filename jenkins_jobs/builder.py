@@ -209,6 +209,7 @@ class YamlParser(object):
 class ModuleRegistry(object):
     def __init__(self, config):
         self.modules = []
+        self.modules_by_component_name = {}
         self.handlers = {}
         self.global_config = config
 
@@ -218,6 +219,8 @@ class ModuleRegistry(object):
             mod = Mod(self)
             self.modules.append(mod)
             self.modules.sort(lambda a, b: cmp(a.sequence, b.sequence))
+            if mod.component_type is not None:
+                self.modules_by_component_name[mod.component_type] = mod
 
     def registerHandler(self, category, name, method):
         cat_dict = self.handlers.get(category, {})
@@ -227,6 +230,65 @@ class ModuleRegistry(object):
 
     def getHandler(self, category, name):
         return self.handlers[category][name]
+
+    def dispatch(self, component_type,
+                 parser, xml_parent,
+                 component, template_data={}):
+        """TODO:
+        This is a helper method that you can call from your
+        implementation of gen_xml.  It allows your module to define a
+        type of component, and benefit from extensibility via Python
+        entry points and Jenkins Job Builder :ref:`Macros <macro>`.
+
+        :arg string component_type: the name of the component
+          (e.g., `builder`)
+        :arg YAMLParser parser: the global YMAL Parser
+        :arg Element xml_parent: the parent XML element
+        :arg dict template_data: values that should be interpolated into
+          the component definition
+
+        TODO.
+
+        See the Publishers module for a simple example of how to use
+        this method.
+        """
+
+        if component_type not in self.modules_by_component_name:
+            raise JenkinsJobsException("Unknown component type: "
+                                       "'{0}'.".format(component_type))
+
+        component_list_type = self.modules_by_component_name[component_type] \
+            .component_list_type
+
+        if isinstance(component, dict):
+            # The component is a sigleton dictionary of name: dict(args)
+            name, component_data = component.items()[0]
+            if template_data:
+                # Template data contains values that should be interpolated
+                # into the component definition
+                s = yaml.dump(component_data, default_flow_style=False)
+                s = s.format(**template_data)
+                component_data = yaml.load(s)
+        else:
+            # The component is a simple string name, eg "run-tests"
+            name = component
+            component_data = {}
+
+        # Look for a component function defined in an entry point
+        for ep in pkg_resources.iter_entry_points(
+            group='jenkins_jobs.{0}'.format(component_list_type), name=name):
+            func = ep.load()
+            func(parser, xml_parent, component_data)
+        else:
+            # Otherwise, see if it's defined as a macro
+            component = parser.data.get(component_type, {}).get(name)
+            if component:
+                for b in component[component_list_type]:
+                    # Pass component_data in as template data to this function
+                    # so that if the macro is invoked with arguments,
+                    # the arguments are interpolated into the real defn.
+                    self.dispatch(component_type,
+                                  parser, xml_parent, b, component_data)
 
 
 class XmlJob(object):

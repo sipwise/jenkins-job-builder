@@ -514,14 +514,20 @@ def maven_target(parser, xml_parent, data):
 class Builders(jenkins_jobs.modules.base.Base):
     sequence = 60
 
+    component_type = 'builder'
+    component_list_type = 'builders'
+
     def gen_xml(self, parser, xml_parent, data):
 
         for alias in ['prebuilders', 'builders', 'postbuilders']:
             if alias in data:
                 builders = XML.SubElement(xml_parent, alias)
                 for builder in data[alias]:
-                    self._dispatch('builder', 'builders',
-                                   parser, builders, builder)
+                    # XXX: Is using self.component_type better, or
+                    # do we want to say "we want to dispatch to builder, no
+                    # matter what"?
+                    self.registry.dispatch('builder', parser, builders,
+                                           builder)
 
         # Make sure freestyle projects always have a <builders> entry
         # or Jenkins v1.472 (at least) will NPE.

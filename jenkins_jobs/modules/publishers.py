@@ -1254,9 +1254,11 @@ def sonar(parser, xml_parent, data):
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
+    component_type = 'publisher'
+    component_list_type = 'publishers'
+
     def gen_xml(self, parser, xml_parent, data):
         publishers = XML.SubElement(xml_parent, 'publishers')
 
         for action in data.get('publishers', []):
-            self._dispatch('publisher', 'publishers',
-                           parser, publishers, action)
+            self.registry.dispatch('publisher', parser, publishers, action)
