@@ -302,6 +302,47 @@ def extended_choice(parser, xml_parent, data):
         'default-property-key', '')
 
 
+def validating_string(parser, xml_parent, data):
+    """yaml: validating-string
+    Parameter with regular expression validation.  Requires the Jenkins
+    `Validating String Parameter Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/
+    Validating+String+Parameter+Plugin>`_
+
+    :arg str name: Name of the parameter
+    :arg str default: Default value (default '')
+    :arg str description: Description of the parameter (default '')
+    :arg str regex: Regular Expression to validate the value given (default '')
+    :arg str message: Message when the regular expression fails (default '')
+
+    Example::
+
+      properties:
+        - validating-string:
+            name: foo
+            default: bar
+            description: Enter a value
+            default: barbar
+            regex: ".*"
+            message: You must enter a value
+    """
+    pdp = XML.SubElement(xml_parent, 'hudson.model.'
+                         'ParametersDefinitionProperty')
+    param = XML.SubElement(pdp, 'parameterDefinitions')
+    validating = XML.SubElement(param, 'hudson.plugins.'
+                                'validating__string__parameter.'
+                                'ValidatingStringParameterDefinition')
+    XML.SubElement(validating, 'name').text = data['name']
+    description = XML.SubElement(validating, 'description')
+    description.text = data.get('description', '')
+    default = XML.SubElement(validating, 'defaultValue')
+    default.text = data.get('default', '')
+    regex = XML.SubElement(validating, 'regex')
+    regex.text = data.get('regex', '')
+    message = XML.SubElement(validating, 'failedValidationMessage')
+    message.text = data.get('message', '')
+
+
 class Properties(jenkins_jobs.modules.base.Base):
     sequence = 20
 
