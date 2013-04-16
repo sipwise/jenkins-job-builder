@@ -302,6 +302,36 @@ def extended_choice(parser, xml_parent, data):
         'default-property-key', '')
 
 
+def string(parser, xml_parent, data):
+    """yaml: string
+    A simple string parameter.  Requires the Jenkins `Parameterized Build
+    Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Parameterized+Build>`_
+
+    :arg str name: Name of the parameter
+    :arg str default: Default value (default '')
+    :arg str description: Description of the parameter (default '')
+
+    Example::
+
+      properties:
+        - string:
+            name: foo
+            default: bar
+            description: The necessary value for build
+    """
+    pdp = XML.SubElement(xml_parent, 'hudson.model.'
+                         'ParametersDefinitionProperty')
+    param = XML.SubElement(pdp, 'parameterDefinitions')
+    string = XML.SubElement(param, 'hudson.model.'
+                            'StringParameterDefinition')
+    XML.SubElement(string, 'name').text = data['name']
+    default = XML.SubElement(string, 'defaultValue')
+    default.text = data.get('default', '')
+    description = XML.SubElement(string, 'description')
+    description.text = data.get('description', '')
+
+
 class Properties(jenkins_jobs.modules.base.Base):
     sequence = 20
 

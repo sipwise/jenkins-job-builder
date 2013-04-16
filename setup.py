@@ -79,6 +79,7 @@ setuptools.setup(
             'authenticated_build',
             'authorization=jenkins_jobs.modules.properties:authorization',
             'extended-choice=jenkins_jobs.modules.properties:extended_choice',
+            'string=jenkins_jobs.modules.properties:string',
         ],
         'jenkins_jobs.parameters': [
             'string=jenkins_jobs.modules.parameters:string_param',
