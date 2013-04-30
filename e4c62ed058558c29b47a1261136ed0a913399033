@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//qac\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-04-30T00:36:17Z",
+      "side": 1,
+      "message": "The whole False as a default value, convert to string, then lower case the string process is typically only used for true or false values. In this case you just want an arbitrary string.\n\nYou could rewrite this to be\n  XML.SubElement(gradle, \u0027gradleName\u0027).text \u003d data.get(\u0027gradle-name\u0027, \u0027\u0027)\n\nThen any arbitrary string will be passed through and if not specified you get an empty tag. I would test that an empty tag doesn\u0027t confuse Jenkins though. We have seen that happen with some of the plugins. If an empty tag is a problem then you will want to wrap the whole thing in an if with a check that the value was specified and only provide the tag if it was.",
+      "revId": "e4c62ed058558c29b47a1261136ed0a913399033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
