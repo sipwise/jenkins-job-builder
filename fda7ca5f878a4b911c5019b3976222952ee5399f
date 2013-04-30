@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//qXc\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-04-30T02:55:50Z",
+      "side": 1,
+      "message": "You can simplify this even more. You don\u0027t need to wrap the gradle-name get in str() and you don\u0027t need to call lower(). just data.get() is sufficient.",
+      "revId": "fda7ca5f878a4b911c5019b3976222952ee5399f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
