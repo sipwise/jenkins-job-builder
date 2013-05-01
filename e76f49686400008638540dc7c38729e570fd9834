@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//nLw\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-05-01T21:34:28Z",
+      "side": 1,
+      "message": "If data[\u0027maven-version\u0027] does not map to a valid value won\u0027t this through a KeyError exception? Same thing with data[\u0027pom\u0027]. I think you want to use data.get() to get the values with sane defaults that match the docstring defaults above.",
+      "revId": "e76f49686400008638540dc7c38729e570fd9834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
