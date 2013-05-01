@@ -16,6 +16,24 @@
       "revId": "e76f49686400008638540dc7c38729e570fd9834",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//nKc\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-05-01T21:44:45Z",
+      "side": 1,
+      "message": "If data[\u0027maven-version\u0027] does not map to a valid value, the test \"if \u0027maven-version\u0027 in data\" should return false, and no KeyError should occur.\n\nIf the element mavenName (respectively pom) is missing from the XML configuration, Jenkins uses the default maven installation (respectively pom.xml). The defaults mentionned in the docstring should hence match what will be used by Jenkins. Perhaps would you prefer if that was more explicit in the code, or use a different wording in the docstring?",
+      "parentUuid": "AAAAOn//nLw\u003d",
+      "revId": "e76f49686400008638540dc7c38729e570fd9834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
