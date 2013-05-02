@@ -36,6 +36,32 @@ import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 
 
+def promoted_build(parser, xml_parent, data):
+    """yaml: promoted-build
+    Marks a build for promotion. A promotion process with an identical
+    name must be created in the job in order for job promotion to persist.
+    Requires the Jenkins `Promoted Builds Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Promoted+Builds+Plugin>`_
+
+    :arg list names: the promoted build names
+
+    Example::
+
+      properties:
+        - promoted-build:
+            names:
+              - "Release to QA"
+              - "Jane Must Approve"
+    """
+    promoted = XML.SubElement(xml_parent, 'hudson.plugins.promoted__builds.'
+                                          'JobPropertyImpl')
+    names = data.get('names', [])
+    if names:
+        active_processes = XML.SubElement(promoted, 'activeProcessNames')
+        for n in names:
+            XML.SubElement(active_processes, 'string').text = str(n)
+
+
 def github(parser, xml_parent, data):
     """yaml: github
     Sets the GitHub URL for the project.
