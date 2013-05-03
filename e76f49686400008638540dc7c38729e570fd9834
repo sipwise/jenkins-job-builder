@@ -34,6 +34,24 @@
       "revId": "e76f49686400008638540dc7c38729e570fd9834",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//kE8\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-05-03T18:08:19Z",
+      "side": 1,
+      "message": "I somehow missed the if checks... As for the pom.xml default I was expecting it to be more explicit in the code. But this is fine.",
+      "parentUuid": "AAAAOn//nKc\u003d",
+      "revId": "e76f49686400008638540dc7c38729e570fd9834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
