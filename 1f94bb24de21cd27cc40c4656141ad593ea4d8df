@@ -16,6 +16,24 @@
       "revId": "1f94bb24de21cd27cc40c4656141ad593ea4d8df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//lHI\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7422
+      },
+      "writtenOn": "2013-05-03T02:39:53Z",
+      "side": 1,
+      "message": "I\u0027d have to walk through what it means to create a promoted build in the jenkins web config. Is there precedent for this? Is that somethign we want in the tool\u0027s doco?\n\nTotally do-able though. Other\u0027s have thoughts?\n\nHere\u0027s the process:\n1) Add the promoted-build section to the yaml and pick a unique name(s) for your process.\n2) In the job web interface, check \u0027Promote builds when...\u0027, give your new process(es) the name(s) you set in 1, then save the job.",
+      "parentUuid": "AAAAOn//lIY\u003d",
+      "revId": "1f94bb24de21cd27cc40c4656141ad593ea4d8df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
