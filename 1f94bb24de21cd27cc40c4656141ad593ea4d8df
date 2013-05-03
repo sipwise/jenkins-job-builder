@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//lIY\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2013-05-03T02:22:10Z",
+      "side": 1,
+      "message": "Additional example content demonstrating configuration of the promotion process might help clarify what this caveat actually means.",
+      "revId": "1f94bb24de21cd27cc40c4656141ad593ea4d8df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
