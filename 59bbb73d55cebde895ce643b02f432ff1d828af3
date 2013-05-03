@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//lJs\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 831,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2013-05-03T02:10:18Z",
+      "side": 1,
+      "message": "It looks like maybe your indentation here is off by one?",
+      "revId": "59bbb73d55cebde895ce643b02f432ff1d828af3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAOn//lJo\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 835,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2013-05-03T02:10:18Z",
+      "side": 1,
+      "message": "And here, off by a few?",
+      "revId": "59bbb73d55cebde895ce643b02f432ff1d828af3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
