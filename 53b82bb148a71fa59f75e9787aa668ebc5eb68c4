@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//daY\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-05-08T22:46:18Z",
+      "side": 1,
+      "message": "Git blame shows that a bunch of people have touched this file. May want to credit their (C) too.",
+      "revId": "53b82bb148a71fa59f75e9787aa668ebc5eb68c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
