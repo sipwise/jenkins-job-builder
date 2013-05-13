@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//Wd0\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-05-13T22:17:43Z",
+      "side": 1,
+      "message": "Don\u0027t hate me. I just realized that there is a typo here. It should be fail-unstable. Sorry I did not catch this earlier.",
+      "revId": "c6d78817dc9f57f9505ec5b34ee50324484a62a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
