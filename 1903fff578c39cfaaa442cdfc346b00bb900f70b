@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//W5M\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-05-13T18:28:21Z",
+      "side": 1,
+      "message": "You can put the logger assignment here. See the inline comment below for more info.",
+      "revId": "1903fff578c39cfaaa442cdfc346b00bb900f70b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAOn//W5U\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-05-13T18:28:21Z",
+      "side": 0,
+      "message": "I think we can leave this here, then in the coverage plugin where you want to perform logging of your own you can do:\n\n  logger \u003d logging.getLogger(__name__)\n\nThis will give you the same logger and logging will handle all of the magic to make that happen behind the scenes.\n\nThe reason for not wanting to get the logger at the module level is that that code will be executed whenever this file is imported even if we never need the logger.",
+      "revId": "73540705e1253f8b0537d67ca406ed7e5b85b17d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
