@@ -1319,9 +1319,74 @@ def sonar(parser, xml_parent, data):
             data_triggers.get('skip-when-envvar-defined', '')
 
 
+def performance(parser, xml_parent, data):
+    """yaml: performance
+    Publish performance test results from jmeter and junit.
+    Requires the Jenkins `Performance Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Performance+Plugin>`_
+
+    :arg int failed-threshold: Specify the error percentage threshold that
+                               set the build failed. A negative value means
+                               dont use this threshold (default 0)
+    :arg int unstable-threshold: Specify the error percentage threshold that
+                                 set the build unstable. A negative value means
+                                 dont use this threshold (default 0)
+    :arg dict report:
+
+             :targets: (jmeter, junit)
+
+               * **report-file** (`str`): Specify a custom report file
+                (jmeter default \**/*.jtl, junit default **/TEST-\*.xml)
+
+    Example::
+
+      publishers:
+        - performance:
+            failed-threshold: 85
+            unstable-threshold: -1
+            report:
+               - jmeter:
+                   report-file: "/special/file.jtl"
+               - junit:
+                   report-file: "/special/file.xml"
+               - jmeter:
+               - junit:
+
+
+    """
+    perf = XML.SubElement(xml_parent, 'hudson.plugins.performance.'
+                                      'PerformancePublisher')
+    XML.SubElement(perf, 'errorFailedThreshold').text = str(data.get(
+        'failed-threshold', 0))
+    XML.SubElement(perf, 'errorUnstableThreshold').text = str(data.get(
+        'unstable-threshold', 0))
+    parsers = XML.SubElement(perf, 'parsers')
+    for item in data['report']:
+        item_name = item.keys()[0]
+        item_values = item.get(item_name, None)
+        if item_name == 'jmeter' and item_values is not None:
+            jmhold = XML.SubElement(parsers, 'hudson.plugins.performance.'
+                                             'JMeterParser')
+            XML.SubElement(jmhold, 'glob').text = item_values.get(
+                'report-file', '**/*.jtl')
+        if item_name == 'junit' and item_values is not None:
+            juhold = XML.SubElement(parsers, 'hudson.plugins.performance.'
+                                             'JUnitParser')
+            XML.SubElement(juhold, 'glob').text = item_values.get(
+                'report-file', '**/TEST-*.xml')
+        if item_name == 'jmeter' and item_values is None:
+            jmhold = XML.SubElement(parsers, 'hudson.plugins.performance.'
+                                             'JMeterParser')
+            XML.SubElement(jmhold, 'glob').text = '**/*.jtl'
+        if item_name == 'junit' and item_values is None:
+            juhold = XML.SubElement(parsers, 'hudson.plugins.performance.'
+                                             'JUnitParser')
+            XML.SubElement(juhold, 'glob').text = '**/TEST-*.xml'
+
+
 def join_trigger(parser, xml_parent, data):
     """yaml: join-trigger
-    Trriiger a job after all the immediate downstream jobs have completed
+    Trigger a job after all the immediate downstream jobs have completed
 
     :arg list projects: list of projects to trigger
 
