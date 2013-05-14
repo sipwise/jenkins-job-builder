@@ -234,7 +234,7 @@ def ant(parser, xml_parent, data):
             javaopts = data['java-opts']
             jopt_string = ''
             for jopt in javaopts:
-                jopt_string += jopt + "\n"
+                jopt_string += jopt + ' '
             jopt_element = XML.SubElement(ant, 'antOpts')
             jopt_element.text = jopt_string
 
