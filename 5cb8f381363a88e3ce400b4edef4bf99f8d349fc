@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//9ac\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-05-17T18:23:45Z",
+      "side": 1,
+      "message": "Just noting lines 235-237 could be rewritten to be\n  jopt_string \u003d \u0027 \u0027.join(javaopts)",
+      "revId": "5cb8f381363a88e3ce400b4edef4bf99f8d349fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
