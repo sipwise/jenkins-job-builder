@@ -128,6 +128,7 @@ setuptools.setup(
             'cifs=jenkins_jobs.modules.publishers:cifs',
             'sonar=jenkins_jobs.modules.publishers:sonar',
             'join-trigger=jenkins_jobs.modules.publishers:join_trigger',
+            'jabber=jenkins_jobs.modules.publishers:jabber',
         ],
         'jenkins_jobs.scm': [
             'git=jenkins_jobs.modules.scm:git',
