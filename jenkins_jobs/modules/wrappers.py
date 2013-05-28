@@ -347,6 +347,21 @@ def jclouds(parser, xml_parent, data):
                        'JCloudsOneOffSlave')
 
 
+def build_user_vars(parser, xml_parent, data):
+    """yaml: build-user-vars
+    Set environment variables to the value of the user that started the build.
+    Requires the Jenkins `Build User Vars Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Build+User+Vars+Plugin>`_
+
+    Example::
+
+      wrappers:
+        - build-user-vars
+    """
+    bu = XML.SubElement(xml_parent,
+                        'org.jenkinsci.plugins.builduser.BuildUser')
+
+
 class Wrappers(jenkins_jobs.modules.base.Base):
     sequence = 80
 
