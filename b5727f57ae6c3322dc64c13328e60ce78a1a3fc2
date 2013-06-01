@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPH//ezQ\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 7422
+      },
+      "writtenOn": "2013-06-01T22:32:15Z",
+      "side": 1,
+      "message": "I\u0027m not particularly thrilled with this data structure and what I have to do to access it.\n\nIf someone has a good idea as to how to preserve the optional attribute in a cleaner way, I\u0027d welcome the feedback.",
+      "revId": "b5727f57ae6c3322dc64c13328e60ce78a1a3fc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
