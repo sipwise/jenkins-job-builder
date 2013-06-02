@@ -47,7 +47,7 @@ def archive(parser, xml_parent, data):
 
     :arg str artifacts: path specifier for artifacts to archive
     :arg str excludes: path specifier for artifacts to exclude
-    :arg bool latest_only: only keep the artifacts from the latest
+    :arg bool latest-only: only keep the artifacts from the latest
       successful build
 
     Example::
@@ -63,7 +63,10 @@ def archive(parser, xml_parent, data):
         excludes = XML.SubElement(archiver, 'excludes')
         excludes.text = data['excludes']
     latest = XML.SubElement(archiver, 'latestOnly')
+    # backward compatibilty
     latest_only = data.get('latest_only', False)
+    if 'latest-only' in data:
+        latest_only = data['latest-only']
     if latest_only:
         latest.text = 'true'
     else:
