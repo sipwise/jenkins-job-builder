@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAPH//dU4\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2013-06-03T15:28:01Z",
+      "side": 1,
+      "message": "This seems like it would get annoying, but I guess fixing it would need JJB to grow the ability to parse XML job configs to re-include existing secret data... or maybe some mechanism to merge secrets from another file on the server so you could keep it separate from the job configs in revision control.",
+      "revId": "b5727f57ae6c3322dc64c13328e60ce78a1a3fc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//ezQ\u003d",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 1
@@ -13,6 +30,24 @@
       "writtenOn": "2013-06-01T22:32:15Z",
       "side": 1,
       "message": "I\u0027m not particularly thrilled with this data structure and what I have to do to access it.\n\nIf someone has a good idea as to how to preserve the optional attribute in a cleaner way, I\u0027d welcome the feedback.",
+      "revId": "b5727f57ae6c3322dc64c13328e60ce78a1a3fc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPH//dOw\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2013-06-03T15:28:01Z",
+      "side": 1,
+      "message": "It doesn\u0027t really seem like a particularly dirty means of getting at that option, but from a DRY perspective you could tighten this block up to something like...\n\n    if \u0027web-access\u0027 in data:\n        web \u003d XML.SubElement(tfs, ...\n        if isinstance(store, list):\n            XML.SubElement(web, ...\n\nThough I guess this would also act when store is neither a list nor None (in which case an exception would be warranted anyway right?).",
+      "parentUuid": "AAAAPH//ezQ\u003d",
       "revId": "b5727f57ae6c3322dc64c13328e60ce78a1a3fc2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
