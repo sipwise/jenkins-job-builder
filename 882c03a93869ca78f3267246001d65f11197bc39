@@ -16,6 +16,24 @@
       "revId": "882c03a93869ca78f3267246001d65f11197bc39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//+q4\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6288
+      },
+      "writtenOn": "2013-06-04T17:33:51Z",
+      "side": 1,
+      "message": "nothing, just to keep the diff to jenkins generated xmlsmall (the post build variant needs 0.14 though)",
+      "parentUuid": "AAAAPH//b6k\u003d",
+      "revId": "882c03a93869ca78f3267246001d65f11197bc39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
