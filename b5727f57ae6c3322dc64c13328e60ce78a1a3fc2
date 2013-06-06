@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//46E\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-06-06T17:25:53Z",
+      "side": 1,
+      "message": "There is some talk of adding a !include directive that would add another file\u0027s contents to the location of the !include. This might be a reasonable ish way of saving a password outside of revision control but having it get merged into the Jenkins jobs as JJB compile time.",
+      "parentUuid": "AAAAPH//dU4\u003d",
+      "revId": "b5727f57ae6c3322dc64c13328e60ce78a1a3fc2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPH//ezQ\u003d",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 1
