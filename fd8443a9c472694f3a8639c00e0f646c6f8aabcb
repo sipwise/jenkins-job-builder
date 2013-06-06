@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//4zE\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-06-06T17:52:03Z",
+      "side": 1,
+      "message": "I slightly prefer using \u0027keep-forever\u0027 instead and inverting the default.",
+      "revId": "fd8443a9c472694f3a8639c00e0f646c6f8aabcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//4y8\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-06-06T17:52:03Z",
+      "side": 1,
+      "message": "Typically imports would happen at the top of the file unless there is a particular reason for importing them late (order matters etc). Is there a reason for importing these late? if not can we move these imports to the top of the file?",
+      "revId": "fd8443a9c472694f3a8639c00e0f646c6f8aabcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPX//4ys\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-06-06T17:52:03Z",
+      "side": 1,
+      "message": "See above comment.",
+      "revId": "fd8443a9c472694f3a8639c00e0f646c6f8aabcb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
