@@ -23,7 +23,7 @@ import re
 import doctest
 import testtools
 import xml.etree.ElementTree as XML
-import yaml
+import jenkins_jobs.local_yaml as yaml
 from jenkins_jobs.builder import XmlJob, YamlParser, ModuleRegistry
 from jenkins_jobs.modules import (project_flow,
                                   project_matrix,
@@ -31,30 +31,33 @@ from jenkins_jobs.modules import (project_flow,
                                   project_multijob)
 
 
-def get_scenarios(fixtures_path):
+def get_scenarios(fixtures_path, in_ext='yaml', out_ext='xml'):
     """Returns a list of scenarios, each scenario being described
-    by two parameters (yaml and xml filenames).
-        - content of the fixture .xml file (aka expected)
+    by two parameters (yaml and xml filenames by default).
+        - content of the fixture output file (aka expected)
     """
     scenarios = []
     files = os.listdir(fixtures_path)
-    yaml_files = [f for f in files if re.match(r'.*\.yaml$', f)]
+    input_files = [f for f in files if re.match(r'.*\.{0}$'.format(in_ext), f)]
 
-    for yaml_filename in yaml_files:
-        xml_candidate = re.sub(r'\.yaml$', '.xml', yaml_filename)
-        # Make sure the yaml file has a xml counterpart
-        if xml_candidate not in files:
+    for input_filename in input_files:
+        output_candidate = re.sub(r'\.{0}$'.format(in_ext),
+                                  '.{0}'.format(out_ext), input_filename)
+        # Make sure the input file has a output counterpart
+        if output_candidate not in files:
             raise Exception(
-                "No XML file named '%s' to match "
-                "YAML file '%s'" % (xml_candidate, yaml_filename))
-        conf_candidate = re.sub(r'\.yaml$', '.conf', yaml_filename)
+                "No {0} file named '{1}' to match {2} file '{3}'"
+                .format(out_ext.toupper(), output_candidate,
+                        in_ext.toupper(), input_filename))
+
+        conf_candidate = re.sub(r'\.yaml$', '.conf', input_filename)
         # If present, add the configuration file
         if conf_candidate not in files:
             conf_candidate = None
 
-        scenarios.append((yaml_filename, {
-            'yaml_filename': yaml_filename,
-            'xml_filename': xml_candidate,
+        scenarios.append((input_filename, {
+            'in_filename': input_filename,
+            'out_filename': output_candidate,
             'conf_filename': conf_candidate,
         }))
 
@@ -71,17 +74,17 @@ class BaseTestCase(object):
 
     def __read_content(self):
         # Read XML content, assuming it is unicode encoded
-        xml_filepath = os.path.join(self.fixtures_path, self.xml_filename)
+        xml_filepath = os.path.join(self.fixtures_path, self.out_filename)
         xml_content = u"%s" % codecs.open(xml_filepath, 'r', 'utf-8').read()
 
-        yaml_filepath = os.path.join(self.fixtures_path, self.yaml_filename)
+        yaml_filepath = os.path.join(self.fixtures_path, self.in_filename)
         with file(yaml_filepath, 'r') as yaml_file:
             yaml_content = yaml.load(yaml_file)
 
         return (yaml_content, xml_content)
 
     def test_yaml_snippet(self):
-        if not self.xml_filename or not self.yaml_filename:
+        if not self.out_filename or not self.in_filename:
             return
 
         yaml_content, expected_xml = self.__read_content()
