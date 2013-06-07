@@ -1,0 +1,5 @@
+# vim: sw=4 ts=4 et
+- job:
+    name: test-job-1
+    wrapper:
+      !include include001.yaml.inc
