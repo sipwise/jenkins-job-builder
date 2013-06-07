@@ -1,0 +1,30 @@
+[
+    {
+        "job": {
+            "name": "test-job-1",
+            "wrapper": [
+                {
+                    "step1": {
+                        "subitem1": "data1",
+                        "subitem3": "data3",
+                        "subitem2": "data2"
+                    }
+                },
+                {
+                    "step2": {
+                        "otheritem3": "dummy3",
+                        "otheritem2": "dummy2",
+                        "otheritem1": "dummy1"
+                    }
+                },
+                {
+                    "step3": {
+                        "subitem1": "data1",
+                        "subitem3": "data3",
+                        "subitem2": "data2"
+                    }
+                }
+            ]
+        }
+    }
+]

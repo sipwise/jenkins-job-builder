@@ -26,25 +26,28 @@ import yaml
 from jenkins_jobs.builder import XmlJob, YamlParser, ModuleRegistry
 
 
-def get_scenarios(fixtures_path):
+def get_scenarios(fixtures_path, in_ext='yaml', out_ext='xml'):
     """Returns a list of scenarios, each scenario being described
     by two parameters (yaml and xml filenames).
         - content of the fixture .xml file (aka expected)
     """
     scenarios = []
     files = os.listdir(fixtures_path)
-    yaml_files = [f for f in files if re.match(r'.*\.yaml$', f)]
+    input_files = [f for f in files if re.match(r'.*\.{0}$'.format(in_ext), f)]
 
-    for yaml_filename in yaml_files:
-        xml_candidate = re.sub(r'\.yaml$', '.xml', yaml_filename)
+    for input_filename in input_files:
+        output_candidate = re.sub(r'\.{0}$'.format(in_ext),
+                                  '.{0}'.format(out_ext), input_filename)
         # Make sure the yaml file has a xml counterpart
-        if xml_candidate not in files:
+        if output_candidate not in files:
             raise Exception(
-                "No XML file named '%s' to match "
-                "YAML file '%s'" % (xml_candidate, yaml_filename))
+                "No {0} file named '{1}' to match {2} file '{3}'"
+                .format(out_ext.toupper(), output_candidate,
+                        in_ext.toupper(), input_filename))
 
-        scenarios.append((yaml_filename, {
-            'yaml_filename': yaml_filename, 'xml_filename': xml_candidate
+        scenarios.append((input_filename, {
+            '{0}_filename'.format(in_ext): input_filename,
+            '{0}_filename'.format(out_ext): output_candidate
         }))
 
     return scenarios

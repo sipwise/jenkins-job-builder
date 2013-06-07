@@ -1,0 +1,10 @@
+# vim: sw=4 ts=4 et
+- job:
+    name: test-job-include-raw-1
+    builders:
+      - shell:
+          !include-raw include001.yaml.inc
+      - shell:
+          !include-raw include-raw001-hello-world.sh
+      - shell:
+          !include-raw include-raw001-vars.sh
