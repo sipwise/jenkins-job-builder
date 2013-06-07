@@ -77,6 +77,15 @@ jenkins section
   The base URL for your Jenkins installation.
 
 
+yaml_loader section
+^^^^^^^^^^^^^^^^^^^
+
+**include_path**
+  (Optional) Can be set to a ':' delimited list of paths, which jenkins
+  job builder will search for any files specified by the custom
+  application yaml tags.
+
+
 Running
 -------
 

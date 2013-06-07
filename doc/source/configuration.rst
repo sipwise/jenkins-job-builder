@@ -332,6 +332,12 @@ definitions unless they specify a different Default object with the
 Will set the job description for every job created.
 
 
+Custom Yaml Tags
+----------------
+
+.. automodule:: jenkins_jobs.local_yaml
+
+
 Modules
 -------
 

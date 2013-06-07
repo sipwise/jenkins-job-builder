@@ -30,13 +30,13 @@ class TestCaseModuleYamlInclude(TestWithScenarios, TestCase, BaseTestCase):
     scenarios = get_scenarios(fixtures_path)
 
     def test_yaml_snippet(self):
-        if not self.xml_filename or not self.yaml_filename:
+        if not self.out_filename or not self.in_filename:
             return
 
-        xml_filepath = os.path.join(self.fixtures_path, self.xml_filename)
+        xml_filepath = os.path.join(self.fixtures_path, self.out_filename)
         expected_xml = u"%s" % open(xml_filepath, 'r').read()
 
-        yaml_filepath = os.path.join(self.fixtures_path, self.yaml_filename)
+        yaml_filepath = os.path.join(self.fixtures_path, self.in_filename)
 
         if self.conf_filename:
             config = ConfigParser()
