@@ -46,6 +46,9 @@ the following format::
   url=JENKINS_URL
   ignore_cache=IGNORE_CACHE_FLAG
 
+  [yaml]
+  include_path=PATH1:PATH2:PATH3
+
 **user**
   This should be the name of a user previously defined in Jenkins.
   Appropriate user permissions must be set under the Jenkins security
@@ -64,6 +67,11 @@ the following format::
 **ignore_cache**
   (Optional) If set to True, jenkins job builder
   won't be using any cache.
+
+**include_path**
+  (Optional) Can be set to a ':' delimited list of paths, which jenkins
+  job builder will search for any files specified by the custom
+  application yaml tags.
 
 
 Running
