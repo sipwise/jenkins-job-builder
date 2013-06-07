@@ -1,7 +1,6 @@
-# Joint copyright:
-#  - Copyright 2012,2013 Wikimedia Foundation
-#  - Copyright 2012,2013 Antoine "hashar" Musso
-#  - Copyright 2013 Arnaud Fabre
+#!/usr/bin/env python
+#
+# Copyright 2013 Darragh Bailey
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,39 +15,36 @@
 # under the License.
 
 import os
+import doctest
+import testtools
+import json
 from testtools import TestCase
 from testscenarios.testcase import TestWithScenarios
 from tests.base import get_scenarios, BaseTestCase
-import doctest
-import testtools
-from jenkins_jobs.builder import YamlParser
 
 
-class TestCaseModuleYamlInclude(TestWithScenarios, TestCase, BaseTestCase):
+class TestCaseLocalYamlInclude(TestWithScenarios, TestCase, BaseTestCase):
+    """
+    Verify application specific tags independently of any changes to
+    modules XML parsing behaviour
+    """
     fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
-    scenarios = get_scenarios(fixtures_path)
+    scenarios = get_scenarios(fixtures_path, 'yaml', 'json')
+
+    __read_content = getattr(BaseTestCase, '_BaseTestCase__read_content')
 
     def test_yaml_snippet(self):
         if not self.out_filename or not self.in_filename:
             return
 
-        xml_filepath = os.path.join(self.fixtures_path, self.out_filename)
-        expected_xml = u"%s" % open(xml_filepath, 'r').read()
+        yaml_content, expected_json = self.__read_content()
 
-        yaml_filepath = os.path.join(self.fixtures_path, self.in_filename)
-
-        parser = YamlParser()
-        parser.parse(yaml_filepath)
-
-        # Generate the XML tree
-        parser.generateXML()
-
-        # Prettify generated XML
-        pretty_xml = parser.jobs[0].output()
+        pretty_json = json.dumps(yaml_content, indent=4,
+                                 separators=(',', ': '))
 
         self.assertThat(
-            pretty_xml,
-            testtools.matchers.DocTestMatches(expected_xml,
+            pretty_json,
+            testtools.matchers.DocTestMatches(expected_json,
                                               doctest.ELLIPSIS |
                                               doctest.NORMALIZE_WHITESPACE |
                                               doctest.REPORT_NDIFF)
