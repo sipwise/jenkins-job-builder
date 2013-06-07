@@ -1,0 +1,18 @@
+[
+    {
+        "job": {
+            "builders": [
+                {
+                    "shell": "- step1: &step1_data\n    subitem1: data1\n    subitem2: data2\n    subitem3: data3\n- step2:\n    otheritem1: dummy1\n    otheritem2: dummy2\n    otheritem3: dummy3\n- step3: *step1_data\n"
+                },
+                {
+                    "shell": "#!/bin/bash\n#\n# Sample script showing how the yaml include-raw tag can be used\n# to inline scripts that are maintained outside of the jenkins\n# job yaml configuration.\n\necho \"hello world\"\n\nexit 0\n"
+                },
+                {
+                     "shell": "#!/bin/bash\n#\n# sample script to check that brackets aren't escaped\n# when using the include-raw application yaml tag\n\nVAR1=\"hello\"\nVAR2=\"world\"\nVAR3=\"${VAR1} ${VAR2}\"\n\n[[ -n \"${VAR3}\" ]] && { \n    # this next section is executed as one\n    echo \"${VAR3}\"\n    exit 0\n}\n\n"
+                }
+            ],
+            "name": "test-job-include-raw-1"
+        }
+    }
+]
