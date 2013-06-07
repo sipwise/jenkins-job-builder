@@ -28,6 +28,8 @@ import logging
 import copy
 import itertools
 from jenkins_jobs.errors import JenkinsJobsException
+import local_yaml
+import ConfigParser
 
 logger = logging.getLogger(__name__)
 MAGIC_MANAGE_STRING = "<!-- Managed by Jenkins Job Builder -->"
@@ -56,13 +58,17 @@ def deep_format(obj, paramdict):
 
 
 class YamlParser(object):
-    def __init__(self, config=None):
+    def __init__(self, config=ConfigParser.ConfigParser()):
         self.registry = ModuleRegistry(config)
+        try:
+            self.path = config.get('include', 'path').split(':')
+        except (ConfigParser.NoSectionError, ConfigParser.NoOptionError):
+            self.path = ["."]
         self.data = {}
         self.jobs = []
 
     def parse(self, fn):
-        data = yaml.load(open(fn))
+        data = local_yaml.load(open(fn), search_path=self.path)
         if data:
             for item in data:
                 cls, dfn = item.items()[0]
