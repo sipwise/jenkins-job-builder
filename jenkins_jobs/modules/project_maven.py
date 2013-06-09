@@ -37,6 +37,7 @@ Example::
       root-pom: doc/src/pom.xml
       goals: "clean generate-sources"
       maven-name: Maven3
+      ignore-upstream-changes: true
 """
 
 import xml.etree.ElementTree as XML
@@ -61,12 +62,14 @@ class Maven(jenkins_jobs.modules.base.Base):
         if maven_name:
             XML.SubElement(xml_parent, 'mavenName').text = maven_name
 
+        XML.SubElement(xml_parent, 'ignoreUpstremChanges').text = \
+            data['maven'].get('ignore-upstream-changes', 'true')
+
         XML.SubElement(xml_parent, 'rootPOM').text = \
             data['maven'].get('root-pom', 'pom.xml')
         XML.SubElement(xml_parent, 'aggregatorStyleBuild').text = 'true'
         XML.SubElement(xml_parent, 'incrementalBuild').text = 'false'
         XML.SubElement(xml_parent, 'perModuleEmail').text = 'true'
-        XML.SubElement(xml_parent, 'ignoreUpstremChanges').text = 'true'
         XML.SubElement(xml_parent, 'archivingDisabled').text = 'false'
         XML.SubElement(xml_parent, 'resolveDependencies').text = 'false'
         XML.SubElement(xml_parent, 'processPlugins').text = 'false'
