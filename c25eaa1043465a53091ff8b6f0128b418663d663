@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//xsU\u003d",
+        "filename": "jenkins_jobs/modules/project_maven.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-06-10T21:40:27Z",
+      "side": 1,
+      "message": "This isn\u0027t required so shouldn\u0027t be documented here in this example (note the text abouv that says \"All of the fields below are required, except...\".  But if we keep adding more to that sentence, it will become too long, so I think we should start a table of optional fields (like we use for most of the builder parameters) and their defaults.",
+      "revId": "c25eaa1043465a53091ff8b6f0128b418663d663",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
