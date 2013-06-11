@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPX//uYI\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-06-11T21:20:26Z",
+      "side": 1,
+      "message": "You could write this as no_keep_forever \u003d str(not data.get(\u0027keep-forever\u0027, True)).lower(). Not sure if that is clearer though. (Note that the default value is boolean so that \u0027not\u0027 works properly).",
+      "revId": "38e633b7ece1ddd906dd75330ccd134c82cf4581",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
