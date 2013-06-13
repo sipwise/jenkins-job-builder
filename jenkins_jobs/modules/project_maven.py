@@ -26,6 +26,7 @@ in the :ref:`Job` definition.
         * **artifact-id** (`str`): ArtifactId. (required)
     * **root-pom** (`str`): The path to the pom.xml file. (defaults to pom.xml)
     * **goals** (`str`): Goals to execute. (required)
+    * **maven-options** (`str`): Java options to pass
     * **maven-name** (`str`): Installation of maven which should be used.
       Not setting ``maven-name`` appears to use the first maven install
       defined in the global jenkins config.
@@ -44,6 +45,7 @@ Example::
         artifact-id: example-guide
       root-pom: doc/src/pom.xml
       goals: "clean generate-sources"
+      maven-options: '-Dmyvar=/path/somewhere'
       maven-name: Maven3
 """
 
@@ -64,6 +66,10 @@ class Maven(jenkins_jobs.modules.base.Base):
         XML.SubElement(root_module, 'artifactId').text = \
             data['maven']['root-module']['artifact-id']
         XML.SubElement(xml_parent, 'goals').text = data['maven']['goals']
+
+        maven_options = data['maven']['maven-options']
+        if maven_options:
+            XML.SubElement(xml_parent, 'mavenOpts').text = maven_options
 
         maven_name = data['maven'].get('maven-name')
         if maven_name:
