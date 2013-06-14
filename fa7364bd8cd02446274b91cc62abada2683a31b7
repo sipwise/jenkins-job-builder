@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPX//no0\u003d",
+        "filename": "jenkins_jobs/modules/project_maven.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-06-14T07:55:44Z",
+      "side": 1,
+      "message": "maven-opts is fine for me, yes.",
+      "parentUuid": "AAAAPX//oCs\u003d",
+      "revId": "fa7364bd8cd02446274b91cc62abada2683a31b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//oZQ\u003d",
         "filename": "jenkins_jobs/modules/project_maven.py",
         "patchSetId": 1
