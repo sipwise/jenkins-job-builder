@@ -31,6 +31,8 @@ in the :ref:`Job` definition.
       defined in the global jenkins config.
     * **ignore-upstream-changes** (`bool`): Do not start a build whenever
       a SNAPSHOT dependency is built or not. (defaults to true)
+    * **automatic-archiving** (`bool`): Activate automatic artifact archiving
+      (defaults to true).
 
 Example::
 
@@ -45,6 +47,7 @@ Example::
       root-pom: doc/src/pom.xml
       goals: "clean generate-sources"
       maven-name: Maven3
+      automatic-archiving: true
 """
 
 import xml.etree.ElementTree as XML
@@ -77,7 +80,8 @@ class Maven(jenkins_jobs.modules.base.Base):
         XML.SubElement(xml_parent, 'aggregatorStyleBuild').text = 'true'
         XML.SubElement(xml_parent, 'incrementalBuild').text = 'false'
         XML.SubElement(xml_parent, 'perModuleEmail').text = 'true'
-        XML.SubElement(xml_parent, 'archivingDisabled').text = 'false'
+        XML.SubElement(xml_parent, 'archivingDisabled').text = \
+            str(not data['maven'].get('automatic-archiving', True)).lower()
         XML.SubElement(xml_parent, 'resolveDependencies').text = 'false'
         XML.SubElement(xml_parent, 'processPlugins').text = 'false'
         XML.SubElement(xml_parent, 'mavenValidationLevel').text = '-1'
