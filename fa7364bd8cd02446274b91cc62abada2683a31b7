@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//9t4\u003d",
+        "filename": "jenkins_jobs/modules/project_maven.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-06-17T09:40:24Z",
+      "side": 1,
+      "message": "Made it:\n\n Java options to pass to maven (aka MAVEN_OPTS)",
+      "revId": "fa7364bd8cd02446274b91cc62abada2683a31b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//oXI\u003d",
         "filename": "jenkins_jobs/modules/project_maven.py",
         "patchSetId": 1
@@ -72,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//9tw\u003d",
+        "filename": "jenkins_jobs/modules/project_maven.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-06-17T09:40:24Z",
+      "side": 1,
+      "message": "Renamed it \u0027maven-opts\u0027 :)",
+      "parentUuid": "AAAAPX//no0\u003d",
+      "revId": "fa7364bd8cd02446274b91cc62abada2683a31b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPX//oZQ\u003d",
         "filename": "jenkins_jobs/modules/project_maven.py",
         "patchSetId": 1
@@ -83,6 +118,41 @@
       "writtenOn": "2013-06-13T22:33:00Z",
       "side": 1,
       "message": "This makes the maven-options mandatory. Since this option is not always needed, it might be better to make it optional :\n\n  maven_options \u003d data[\u0027maven\u0027].get(\u0027maven-options\u0027)\n  if maven_options:\n    ...",
+      "revId": "fa7364bd8cd02446274b91cc62abada2683a31b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//9to\u003d",
+        "filename": "jenkins_jobs/modules/project_maven.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-06-17T09:40:24Z",
+      "side": 1,
+      "message": "Good catch! I copy pasted the \u0027maven-name\u0027 line below but somehow got rid of the get() :(\n\nDone!",
+      "parentUuid": "AAAAPX//oZQ\u003d",
+      "revId": "fa7364bd8cd02446274b91cc62abada2683a31b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//9tk\u003d",
+        "filename": "jenkins_jobs/modules/project_maven.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-06-17T09:40:24Z",
+      "side": 1,
+      "message": "renamed maven_options variable to maven_opts for consistency.",
       "revId": "fa7364bd8cd02446274b91cc62abada2683a31b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
