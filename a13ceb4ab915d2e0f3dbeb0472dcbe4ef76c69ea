@@ -16,6 +16,24 @@
       "revId": "a13ceb4ab915d2e0f3dbeb0472dcbe4ef76c69ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//5ak\u003d",
+        "filename": "jenkins_jobs/modules/project_maven.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-06-18T18:57:45Z",
+      "side": 1,
+      "message": "Nice little trick indeed! And it doesn\u0027t take long to take into account so... Done :)",
+      "parentUuid": "AAAAPn//6ws\u003d",
+      "revId": "a13ceb4ab915d2e0f3dbeb0472dcbe4ef76c69ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
