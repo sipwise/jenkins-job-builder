@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//6ws\u003d",
+        "filename": "jenkins_jobs/modules/project_maven.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-06-18T09:52:22Z",
+      "side": 1,
+      "message": "By putting the \u0027str(\u0027 at the end of the previous line, you can get rid of the ugly backslash :-)  That is what is being done lines 75-76 for ignoreUpstremChanges.  But I am nitpicking :)",
+      "revId": "a13ceb4ab915d2e0f3dbeb0472dcbe4ef76c69ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
