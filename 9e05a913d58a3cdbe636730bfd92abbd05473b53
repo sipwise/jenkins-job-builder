@@ -16,6 +16,24 @@
       "revId": "9e05a913d58a3cdbe636730bfd92abbd05473b53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//zfU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7580
+      },
+      "writtenOn": "2013-06-20T22:24:42Z",
+      "side": 1,
+      "message": "What would you like me to include into the commit message?\nThe exact reasons why I implemented this plugin?\nI looked at the guidelines, they are mostly about commiting changes, not new features.",
+      "parentUuid": "AAAAPn//0PA\u003d",
+      "revId": "9e05a913d58a3cdbe636730bfd92abbd05473b53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
