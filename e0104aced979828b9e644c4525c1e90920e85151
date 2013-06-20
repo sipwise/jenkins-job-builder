@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//1Ko\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2013-06-20T07:38:29Z",
+      "side": 1,
+      "message": "Use expose or export, not exposure here.  (Ditto for the others below).",
+      "revId": "e0104aced979828b9e644c4525c1e90920e85151",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
