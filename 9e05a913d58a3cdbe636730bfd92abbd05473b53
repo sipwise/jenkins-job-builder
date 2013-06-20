@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//0PA\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-06-20T15:25:05Z",
+      "side": 1,
+      "message": "I feel this commit does not meet our Git commit message guideline:\nhttps://wiki.openstack.org/wiki/GitCommitMessages#Summary_of_GIT_commit_message_structure",
+      "revId": "9e05a913d58a3cdbe636730bfd92abbd05473b53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
