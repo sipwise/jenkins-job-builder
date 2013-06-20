@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//1a4\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2013-06-20T05:54:38Z",
+      "side": 1,
+      "message": "use yaml-style names here, so expose-to-env, not camelCase.",
+      "revId": "5943ee9fd302e86db204c70d4a92cbc573deeb9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//1as\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2013-06-20T05:54:38Z",
+      "side": 1,
+      "message": "Same as comment for line 63",
+      "revId": "5943ee9fd302e86db204c70d4a92cbc573deeb9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//1ao\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2013-06-20T05:54:38Z",
+      "side": 1,
+      "message": "Same as comment for line 63",
+      "revId": "5943ee9fd302e86db204c70d4a92cbc573deeb9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//1aY\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2013-06-20T05:54:38Z",
+      "side": 1,
+      "message": "Please provide an example time value to explain the format.",
+      "revId": "5943ee9fd302e86db204c70d4a92cbc573deeb9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
