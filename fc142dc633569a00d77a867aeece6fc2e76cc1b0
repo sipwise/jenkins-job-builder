@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//vqo\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7422
+      },
+      "writtenOn": "2013-06-23T04:38:42Z",
+      "side": 1,
+      "message": "s/enables/enables the ability to add...",
+      "revId": "fc142dc633569a00d77a867aeece6fc2e76cc1b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//vqc\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 7422
+      },
+      "writtenOn": "2013-06-23T04:38:42Z",
+      "side": 1,
+      "message": "I think you can express this evaluation even more elegantly if you use something like this: https://github.com/openstack-infra/jenkins-job-builder/blob/master/jenkins_jobs/modules/builders.py#L475\n\nXML.SubElement(pdef, \u0027value\u0027).text \u003d data.get(\u0027value\u0027, \u0027\u0027)\n\nYou can apply the same idea to ll. 49-..., and 100-....",
+      "revId": "fc142dc633569a00d77a867aeece6fc2e76cc1b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//vqY\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 7422
+      },
+      "writtenOn": "2013-06-23T04:38:42Z",
+      "side": 1,
+      "message": "bonus space before the period",
+      "revId": "fc142dc633569a00d77a867aeece6fc2e76cc1b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
