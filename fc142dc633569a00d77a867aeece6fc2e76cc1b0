@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//vXM\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7422
+      },
+      "writtenOn": "2013-06-23T16:47:20Z",
+      "side": 1,
+      "message": "Why not XML.SubElement(pdef, \u0027exposedToEnvironment\u0027).text \u003d str(data.get( \u0027expose-to-env\u0027, False)).lower() ?",
+      "revId": "fc142dc633569a00d77a867aeece6fc2e76cc1b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//vqc\u003d",
         "filename": "jenkins_jobs/modules/metadata.py",
         "patchSetId": 5
@@ -48,6 +65,24 @@
       "side": 1,
       "message": "Unfortunately, it does not work, I did try that before using this ugly comparison. It seems as if the data[\u0027value\u0027] is indeed assigned the literal \u0027None\u0027.",
       "parentUuid": "AAAAPn//vqc\u003d",
+      "revId": "fc142dc633569a00d77a867aeece6fc2e76cc1b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//vW8\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 7422
+      },
+      "writtenOn": "2013-06-23T16:47:20Z",
+      "side": 1,
+      "message": "Strange. Hopefully one of the core contributors can weigh in here.",
+      "parentUuid": "AAAAPn//vkU\u003d",
       "revId": "fc142dc633569a00d77a867aeece6fc2e76cc1b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
