@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//s3E\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7580
+      },
+      "writtenOn": "2013-06-24T23:07:28Z",
+      "side": 1,
+      "message": "Apache license is fine with me :-)",
+      "parentUuid": "AAAAPn//s9Y\u003d",
+      "revId": "933b2619ddf2a99316def15e24ee82a99f7e9367",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//s9o\u003d",
         "filename": "jenkins_jobs/modules/metadata.py",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//s4E\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 7580
+      },
+      "writtenOn": "2013-06-24T23:07:28Z",
+      "side": 1,
+      "message": "I have already tried that approach and it does not seem to work: I am getting then\n\n\u003cvalue\u003eNone\u003c/value\u003e\n\nIn the final XML document instead of \n\n\u003cvalue/\u003e\n\nwhenever a value is not supplied in the YAML.",
+      "parentUuid": "AAAAPn//s9o\u003d",
+      "revId": "933b2619ddf2a99316def15e24ee82a99f7e9367",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//s9k\u003d",
         "filename": "jenkins_jobs/modules/metadata.py",
         "patchSetId": 6
@@ -47,6 +83,24 @@
       "writtenOn": "2013-06-24T22:27:49Z",
       "side": 1,
       "message": "See above comment.",
+      "revId": "933b2619ddf2a99316def15e24ee82a99f7e9367",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//s34\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7580
+      },
+      "writtenOn": "2013-06-24T23:07:28Z",
+      "side": 1,
+      "message": "See my reply on the lines 71-74: does not work as expected, unfortunately.",
+      "parentUuid": "AAAAPn//s9k\u003d",
       "revId": "933b2619ddf2a99316def15e24ee82a99f7e9367",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
