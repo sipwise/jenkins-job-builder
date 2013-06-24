@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//s9Y\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-06-24T22:27:49Z",
+      "side": 1,
+      "message": "You can add a line for your copyright as well as this is a derivative work of the original.",
+      "revId": "933b2619ddf2a99316def15e24ee82a99f7e9367",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//s9o\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-06-24T22:27:49Z",
+      "side": 1,
+      "message": "I would prefer that lines 71-74 become:\n  value \u003d data.get(\u0027value\u0027, \u0027\u0027)\n\nThen you would omit the value key from the yaml to have an empty value.",
+      "revId": "933b2619ddf2a99316def15e24ee82a99f7e9367",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//s9k\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-06-24T22:27:49Z",
+      "side": 1,
+      "message": "See above comment.",
+      "revId": "933b2619ddf2a99316def15e24ee82a99f7e9367",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
