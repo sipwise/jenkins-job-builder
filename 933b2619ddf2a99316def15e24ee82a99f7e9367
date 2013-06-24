@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//sys\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-06-24T23:24:26Z",
+      "side": 1,
+      "message": "Yes, the license shouldn\u0027t change, but you can add a copyright line for yourself.",
+      "parentUuid": "AAAAPn//s3E\u003d",
+      "revId": "933b2619ddf2a99316def15e24ee82a99f7e9367",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//s9o\u003d",
         "filename": "jenkins_jobs/modules/metadata.py",
         "patchSetId": 6
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "I have already tried that approach and it does not seem to work: I am getting then\n\n\u003cvalue\u003eNone\u003c/value\u003e\n\nIn the final XML document instead of \n\n\u003cvalue/\u003e\n\nwhenever a value is not supplied in the YAML.",
       "parentUuid": "AAAAPn//s9o\u003d",
+      "revId": "933b2619ddf2a99316def15e24ee82a99f7e9367",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//syk\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-06-24T23:24:26Z",
+      "side": 1,
+      "message": "The trick I have used in the get method is that \u0027\u0027 becomes the default value if there are no values in the yaml. This is what your if else is essentially doing except it is keying off of a value of \u0027None\u0027. The code I have written should work. Note that if you omit the default value argument to get() it will return None which will get converted to the string \"None\".",
+      "parentUuid": "AAAAPn//s4E\u003d",
       "revId": "933b2619ddf2a99316def15e24ee82a99f7e9367",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
