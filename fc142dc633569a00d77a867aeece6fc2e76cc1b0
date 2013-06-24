@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//u3U\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7580
+      },
+      "writtenOn": "2013-06-24T08:32:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//vqo\u003d",
+      "revId": "fc142dc633569a00d77a867aeece6fc2e76cc1b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//vXM\u003d",
         "filename": "jenkins_jobs/modules/metadata.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2013-06-23T16:47:20Z",
       "side": 1,
       "message": "Why not XML.SubElement(pdef, \u0027exposedToEnvironment\u0027).text \u003d str(data.get( \u0027expose-to-env\u0027, False)).lower() ?",
+      "revId": "fc142dc633569a00d77a867aeece6fc2e76cc1b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//uz4\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7580
+      },
+      "writtenOn": "2013-06-24T08:32:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//vXM\u003d",
       "revId": "fc142dc633569a00d77a867aeece6fc2e76cc1b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -100,6 +136,24 @@
       "writtenOn": "2013-06-23T04:38:42Z",
       "side": 1,
       "message": "bonus space before the period",
+      "revId": "fc142dc633569a00d77a867aeece6fc2e76cc1b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//u3M\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 7580
+      },
+      "writtenOn": "2013-06-24T08:32:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAPn//vqY\u003d",
       "revId": "fc142dc633569a00d77a867aeece6fc2e76cc1b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
