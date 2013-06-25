@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//skY\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 7580
+      },
+      "writtenOn": "2013-06-25T01:35:01Z",
+      "side": 1,
+      "message": "I tried your code as it stands there (here\u0027s the diff):\n\n-    if data[\u0027value\u0027] \u003d\u003d \u0027None\u0027:\n-        value \u003d \u0027\u0027\n-    else:\n-        value \u003d data[\u0027value\u0027]\n+    value \u003d data.get(\u0027value\u0027, \u0027\u0027)\n\nbut I still get the \u0027None\u0027 values in the XML. \n\nThe problem happens whenever there is a variable specified in the \u0027value\u0027 attribute of the job-template, and the value of that variable is blank in the project template. Here\u0027s an example:\n\n- job-template:\n    name: \u0027{name}-{build}\u0027\n...\n    metadata:\n      - string:\n          name: stageaware\n          value: \u0027{stageaware}\u0027\n          expose-to-env: true\n\n- project:\n    name: projectname\n    build:\n     - buildname\n    jobs:\n     - \u0027{name}-{build}\u0027:\n        stageaware:\n...\n\nI guess what happens is that when the project template gets parsed, the variable \u0027stageaware\u0027 from the above example is assigned a \u0027None\u0027 value which is then passed on to job-template so it is not blank any more.",
+      "parentUuid": "AAAAPn//syk\u003d",
+      "revId": "933b2619ddf2a99316def15e24ee82a99f7e9367",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//s9k\u003d",
         "filename": "jenkins_jobs/modules/metadata.py",
         "patchSetId": 6
