@@ -126,6 +126,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//p/Q\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-06-25T20:52:04Z",
+      "side": 1,
+      "message": "I agree with Clark\u0027s conclusion, and I think his code is what should be there.  I\u0027d like to point out a subtlety which may be lost: the original code says:\n\n  if data[\u0027value\u0027] \u003d\u003d \u0027None\u0027:\n\nNote that \u0027None\u0027 is in quotes.  Because of your recent clarification, I think I understand where that is coming from.  In your example, stageaware is being set to the None object as a job argument in the project section.  It appears that somewhere that is being translated to the string \u0027None\u0027.  That is either a bug in or mis-use of the JJB template syntax.  I think we should look into why that is happening separately.  I have not looked into it deeply, but I will note that \"null\" (WITHOUT quotes) is the yaml equivalent of the None object, so perhaps \"stageaware: null\" would do what you want.\n\nWe have never \"unset\" a variable in JJB, our use has always been limited to setting it to non-null values.\n\nRegardless, I think Clark\u0027s original suggestion is the right code.",
+      "parentUuid": "AAAAPn//skY\u003d",
+      "revId": "933b2619ddf2a99316def15e24ee82a99f7e9367",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//s9k\u003d",
         "filename": "jenkins_jobs/modules/metadata.py",
         "patchSetId": 6
