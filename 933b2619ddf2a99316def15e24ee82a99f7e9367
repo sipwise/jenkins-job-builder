@@ -144,6 +144,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAPn//oyQ\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 7580
+      },
+      "writtenOn": "2013-06-26T07:59:23Z",
+      "side": 1,
+      "message": "Yes, both you and Clark are right!\nI feel almost like I had a brain eclipse: I am now wondering why did I not set the \u0027stageaware\u0027 variable in the project template in this case - setting it to \u0027false\u0027 instead of blank value solves all the problems and the code works as expected, without all those nasty comparisons to \u0027None\u0027 literals.\nI will submit the changeset in a short while.",
+      "parentUuid": "AAAAPn//p/Q\u003d",
+      "revId": "933b2619ddf2a99316def15e24ee82a99f7e9367",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//s9k\u003d",
         "filename": "jenkins_jobs/modules/metadata.py",
         "patchSetId": 6
