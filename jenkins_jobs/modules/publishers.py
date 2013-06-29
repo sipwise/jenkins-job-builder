@@ -1759,6 +1759,64 @@ def maven_deploy(parser, xml_parent, data):
         data.get('deploy-unstable', 'false')).lower()
 
 
+def tap(parser, xml_parent, data):
+    """yaml: tap
+    Adds support to TAP test result files
+
+    :arg str results: TAP test result files
+    :arg bool fail-if-no-results: Fail if no result (default False)
+    :arg bool failed-tests-mark-build-as-failure:
+                Mark build as failure if test fails (default False)
+    :arg bool enable-subtests: Enable subtests (Default True)
+    :arg bool discard-old-reports: Discard old reports (Default True)
+    :arg bool todo-is-failure: Handle TODO's as failures (Default True)
+
+
+    Example::
+
+        publisher:
+            - tap:
+                results: puiparts.tap
+                todo-is-failure: False
+    """
+
+    p = XML.SubElement(
+        xml_parent,
+        'org.tap4j.plugin.TapPublisher'
+    )
+    XML.SubElement(
+        p,
+        'testResults'
+    ).text = data['results']
+    XML.SubElement(
+        p,
+        'failIfNoResults'
+    ).text = data.get('fail-if-no-results', False)
+    XML.SubElement(
+        p,
+        'failedTestsMarkBuildAsFailure'
+    ).text = data.get(
+        'failed-tests-mark-build-as-failure',
+        False
+    )
+    XML.SubElement(
+        p,
+        'outputTapToConsole'
+    ).text = True
+    XML.SubElement(
+        p,
+        'enableSubtests'
+    ).text = data.get('enable-subtests', True)
+    XML.SubElement(
+        p,
+        'discardOldReports'
+    ).text = data.get('discard-old-reports', False)
+    XML.SubElement(
+        p,
+        'todoIsFailure'
+    ).text = data.get('todo-is-failure', True)
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
