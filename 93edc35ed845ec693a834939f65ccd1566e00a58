@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//fUg\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1787,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-06-30T00:49:17Z",
+      "side": 1,
+      "message": "You can put \"str(\" on the first line and the rest on the other like maven_deploy did. This will avoid the use of \\.",
+      "revId": "93edc35ed845ec693a834939f65ccd1566e00a58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
