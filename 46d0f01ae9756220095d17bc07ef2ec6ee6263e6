@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//cos\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-07-01T19:08:17Z",
+      "side": 1,
+      "message": "To follow the python conventions we use here this should be called \u0027env_file\u0027 and not \u0027envFile\u0027.",
+      "revId": "46d0f01ae9756220095d17bc07ef2ec6ee6263e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//coo\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-07-01T19:08:17Z",
+      "side": 1,
+      "message": "To follow our yaml conventions this should be \u0027env-file\u0027 and not \u0027envFile\u0027.",
+      "revId": "46d0f01ae9756220095d17bc07ef2ec6ee6263e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//cog\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-07-01T19:08:17Z",
+      "side": 1,
+      "message": "This data.get should refer to env-file and not properties-file.",
+      "revId": "46d0f01ae9756220095d17bc07ef2ec6ee6263e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
