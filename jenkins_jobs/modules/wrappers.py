@@ -298,6 +298,24 @@ def inject(parser, xml_parent, data):
         info, 'scriptContent', data.get('script-content'))
     XML.SubElement(info, 'loadFilesFromMaster').text = 'false'
 
+def envFile(parser, xml_parent, data):
+    """yaml: envFile
+    Add or override environment variables to the whole build process
+    Requires the Jenkins `Environment File Plugin.
+    https://wiki.jenkins-ci.org/display/JENKINS/Envfile+Plugin`_
+
+    :arg str properties-file: path to the properties file (default '')
+
+    Example::
+
+      wrappers:
+        - envFile:
+            properties-file: ${WORKSPACE}/foo
+    """
+    eib = XML.SubElement(xml_parent,
+                          'hudson.plugins.envfile.EnvFileBuildWrapper')
+    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
+        eib, 'filePath', data.get('properties-file'))
 
 def jclouds(parser, xml_parent, data):
     """yaml: jclouds
