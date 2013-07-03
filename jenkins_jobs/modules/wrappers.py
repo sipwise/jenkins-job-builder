@@ -85,13 +85,23 @@ def ansicolor(parser, xml_parent, data):
     Requires the Jenkins `Ansi Color Plugin.
     <https://wiki.jenkins-ci.org/display/JENKINS/AnsiColor+Plugin>`_
 
+    :arg string colormap: (optional) color mapping to use
+
     Example::
 
       wrappers:
         - ansicolor
+            colormap: vga
     """
-    XML.SubElement(xml_parent,
-                   'hudson.plugins.ansicolor.AnsiColorBuildWrapper')
+    cwrapper = XML.SubElement(
+        xml_parent,
+        'hudson.plugins.ansicolor.AnsiColorBuildWrapper')
+
+    # Optional colormap
+    colormap = data.get('colormap', False)
+    if colormap:
+        cmap = XML.SubElement(cwrapper, 'colorMapName')
+        cmap.text = colormap
 
 
 def mask_passwords(parser, xml_parent, data):
