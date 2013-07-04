@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//Ubo\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1774,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-07-04T03:40:23Z",
+      "side": 1,
+      "message": "comment says default is True but below code is setting default to false.?",
+      "revId": "b16542c3d1edd468544abb436f5795a8097e1a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//Ubs\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1796,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-07-04T03:40:23Z",
+      "side": 1,
+      "message": "why can\u0027t user of this plugin set this config to false?",
+      "revId": "b16542c3d1edd468544abb436f5795a8097e1a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
