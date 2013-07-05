@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAPn//QTQ\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7422
+      },
+      "writtenOn": "2013-07-05T23:54:45Z",
+      "side": 1,
+      "message": "Maybe an article here? \u0027exposed to the job environment.\u0027",
+      "revId": "56f9782057019ba69f12019929f3de0ffa530a0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAPn//QS8\u003d",
+        "filename": "jenkins_jobs/modules/metadata.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7422
+      },
+      "writtenOn": "2013-07-05T23:54:45Z",
+      "side": 1,
+      "message": "This doesn\u0027t appear to be formatting correctly in the docs:\n\nhttp://docs-draft.openstack.org/33773/8/check/gate-jenkins-job-builder-docs/718/doc/build/html/api/jenkins_jobs.modules.metadata.html#module-jenkins_jobs.modules.metadata\n\nYou can test build the docs locally by executing \u0027tox -venv -- python setup.py build_sphinx\u0027",
+      "revId": "56f9782057019ba69f12019929f3de0ffa530a0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
