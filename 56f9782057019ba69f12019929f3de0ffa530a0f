@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAP3///M0\u003d",
+        "filename": "doc/source/metadata.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2013-07-07T18:01:21Z",
+      "side": 1,
+      "message": "Should be \"Metadata\" instead, I think.",
+      "revId": "56f9782057019ba69f12019929f3de0ffa530a0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAPn//QTQ\u003d",
         "filename": "jenkins_jobs/modules/metadata.py",
         "patchSetId": 8
