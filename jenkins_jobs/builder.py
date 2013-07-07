@@ -93,6 +93,22 @@ class YamlParser(object):
             return job
         return self.applyDefaults(job)
 
+    def resolveDefaults(self):
+        defaults = self.data.get('defaults', {})
+        defaults_to_resolve = [d for d in defaults.values() if 'inherit' in d]
+        while defaults_to_resolve:
+            # Find defaults whose parent are already fully resolved.
+            roots = [d for d in defaults_to_resolve
+                     if 'inherit' not in defaults[d['inherit']]]
+            if not roots:
+                raise JenkinsJobsException("Cycle detected in defaults"
+                                           "definition")
+            for default_to_resolve in roots:
+                default_to_resolve.update(
+                    defaults[default_to_resolve['inherit']])
+                del default_to_resolve['inherit']
+                defaults_to_resolve.remove(default_to_resolve)
+
     def applyDefaults(self, data):
         whichdefaults = data.get('defaults', 'global')
         defaults = self.data.get('defaults', {}).get(whichdefaults, {})
@@ -419,6 +435,7 @@ class Builder(object):
         for in_file in files_to_process:
             logger.debug("Parsing YAML file {0}".format(in_file))
             parser.parse(in_file)
+        parser.resolveDefaults()
         if names:
             logger.debug("Will filter out jobs not in %s" % names)
         parser.generateXML(names)
