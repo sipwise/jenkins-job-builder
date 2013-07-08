@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//8iU\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-07-08T18:51:42Z",
+      "side": 1,
+      "message": "ansicolor needs a colon if it gets an argument.\n\nMaybe have two examples, the current one, and then the new one with the argument.",
+      "revId": "0bdec7837ded72e4e7a3499fe5acf1f786dec8cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
