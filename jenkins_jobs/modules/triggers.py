@@ -241,7 +241,11 @@ def gerrit(parser, xml_parent, data):
         XML.SubElement(gtrig, 'gerritBuildFailedVerifiedValue').text = \
             str(data['gerrit-build-failed-verified-value'])
     XML.SubElement(gtrig, 'buildStartMessage')
-    XML.SubElement(gtrig, 'buildFailureMessage').text = data['failure-message']
+    if 'failure-message' in data:
+        msg = data['failure-message']
+        XML.SubElement(gtrig, 'buildFailureMessage').text = msg
+    else:
+        XML.SubElement(gtrig, 'buildFailureMessage')
     XML.SubElement(gtrig, 'buildSuccessfulMessage')
     XML.SubElement(gtrig, 'buildUnstableMessage')
     XML.SubElement(gtrig, 'customUrl')
