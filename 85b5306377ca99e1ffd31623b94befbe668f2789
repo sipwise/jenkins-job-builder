@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//4w0\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-07-09T19:13:16Z",
+      "side": 1,
+      "message": "While it works, this could be written in a shorter way:\n\n  XML.SubElement(gtrig, \u0027buildFailureMessage\u0027).text \u003d data.get(\u0027failure-message\u0027, \u0027\u0027)\n\n\"get\" on a dict allows a default value, in case the dict does not contain the key.",
+      "revId": "85b5306377ca99e1ffd31623b94befbe668f2789",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
