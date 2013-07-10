@@ -70,6 +70,7 @@ setuptools.setup(
             'grails=jenkins_jobs.modules.builders:grails',
             'conditional-step=jenkins_jobs.modules.builders:conditional_step',
             'msbuild=jenkins_jobs.modules.builders:msbuild',
+            'custom-python=jenkins_jobs.modules.builders:custom_python',
         ],
         'jenkins_jobs.reporters': [
             'email=jenkins_jobs.modules.reporters:email',

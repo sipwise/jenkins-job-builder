@@ -60,6 +60,55 @@ def shell(parser, xml_parent, data):
     XML.SubElement(shell, 'command').text = data
 
 
+def custom_python(parser, xml_parent, data):
+    """yaml: custom-python
+    Execute Custom Python command. Requires Shining Panda plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/ShiningPanda+Plugin>
+
+    :arg str plugin-version: Version of plugin (optional, default
+        is 'shiningpanda@0.19')
+    :arg str home: Path to custom Python location
+    :arg str shell: Shell script to execute
+    :arg str xshell: xShell script to execute (see plugin docs)
+    :arg str python: Python script to execute
+    :arg bool ignore-exit-code: Tell Shinig Panda to ignore exit code
+        (optional, default is False)
+
+    :Parameter: the shell command to execute
+
+    Example::
+
+      builders:
+          custom-python:
+              plugin-version: 'shiningpanda@0.19'
+              home: '/home/user/virtualenv/jenkins'
+              shell: |
+                  python my_script.py
+              ignore-exit-code: False
+
+    """
+    cust_python = XML.SubElement(xml_parent,
+                                 'jenkins.plugins.shiningpanda. \
+                                 builders.CustomPythonBuilder')
+    cust_python.set(
+        'plugin', 'shiningpanda@0.19'
+        if not data.get('plugin-version') else data['plugin-version'])
+
+    XML.SubElement(cust_python, 'home').text = data['home']
+    if data.get('shell'):
+        XML.SubElement(cust_python, 'nature').text = 'shell'
+        XML.SubElement(cust_python, 'command').text = data['shell']
+    elif data.get('xshell'):
+        XML.SubElement(cust_python, 'nature').text = 'xshell'
+        XML.SubElement(cust_python, 'command').text = data['shell']
+    elif data.get('python'):
+        XML.SubElement(cust_python, 'nature').text = 'python'
+        XML.SubElement(cust_python, 'command').text = data['python']
+
+    XML.SubElement(cust_python, 'ignoreExitCode').text = str(
+        data.get('ignore-exit-code', False))
+
+
 def copyartifact(parser, xml_parent, data):
     """yaml: copyartifact
 
