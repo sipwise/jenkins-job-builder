@@ -105,6 +105,7 @@ def git(self, xml_parent, data):
     # None so we have a sensible name/key for it.
     mapping = [
         # option, xml name, default value (text), attributes (hard coded)
+        ("shallow-clone", 'useShallowClone', False),
         ("disable-submodules", 'disableSubmodules', False),
         ("recursive-submodules", 'recursiveSubmodules', False),
         (None, 'doGenerateSubmoduleConfigurations', False),
