@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//2WE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6316
+      },
+      "writtenOn": "2013-07-10T13:28:29Z",
+      "side": 1,
+      "message": "For those who might not know that rvm stands for ruby version manager perhaps we can expand the acronym in the commit message.\n\nI suggest: \"Add rvm (ruby version manager) plugin support ...\"",
+      "revId": "6ef9375e87cafb55d236ebe60dd149064248d888",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
