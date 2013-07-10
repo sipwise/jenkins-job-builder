@@ -119,8 +119,8 @@ def git(self, xml_parent, data):
         (None, 'submoduleCfg', '', {'class': 'list'}),
         ('basedir', 'relativeTargetDir', ''),
         (None, 'reference', ''),
-        (None, 'gitConfigName', ''),
-        (None, 'gitConfigEmail', ''),
+        ("git-config-name", 'gitConfigName', ''),
+        ("git-config-email", 'gitConfigEmail', ''),
         ('skip-tag', 'skipTag', False),
         (None, 'scmName', ''),
     ]
