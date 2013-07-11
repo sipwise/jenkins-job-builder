@@ -451,6 +451,13 @@ def gradle(parser, xml_parent, data):
     :arg bool wrapper: use gradle wrapper (default false)
     :arg bool executable: make gradlew executable (default false)
     :arg list switches: Switches for gradle, can have multiples
+    :arg bool root-dir: Whether to run the gradle script from the
+        top level directory or from a different location (default true)
+    :arg str root-build-script: If your workspace has the
+        top-level build.gradle in somewhere other than the module
+        root directory, specify the path (relative to the module
+        root) here, such as ${workspace}/parent/ instead of just
+        ${workspace}.
 
     Example::
 
@@ -459,6 +466,8 @@ def gradle(parser, xml_parent, data):
             gradle-name: "gradle-1.2"
             wrapper: true
             executable: true
+            root-dir: true
+            root-build-script: ${workspace}/tests
             switches:
               - "-g /foo/bar/.gradle"
               - "-PmavenUserName=foobar"
@@ -480,6 +489,10 @@ def gradle(parser, xml_parent, data):
         'executable', False)).lower()
     switch_string = '\n'.join(data.get('switches', []))
     XML.SubElement(gradle, 'switches').text = switch_string
+    XML.SubElement(gradle, 'fromRootBuildScriptDir').text = str(data.get(
+        'root-dir', False)).lower()
+    XML.SubElement(gradle, 'rootBuildScriptDir').text = data.get(
+        'root-build-script', '')
 
 
 def batch(parser, xml_parent, data):
