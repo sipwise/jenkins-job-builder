@@ -16,6 +16,40 @@
       "revId": "0bdec7837ded72e4e7a3499fe5acf1f786dec8cc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//0BY\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-07-11T02:22:07Z",
+      "side": 1,
+      "message": "Why return False if colormap is not found? get() returns None by default which would evaluate to False below.",
+      "revId": "0bdec7837ded72e4e7a3499fe5acf1f786dec8cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//0Bo\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-07-11T02:22:07Z",
+      "side": 1,
+      "message": "Can\u0027t this go on one line and avoid the use of a variable?",
+      "revId": "0bdec7837ded72e4e7a3499fe5acf1f786dec8cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
