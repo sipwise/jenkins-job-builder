@@ -16,6 +16,24 @@
       "revId": "6ef9375e87cafb55d236ebe60dd149064248d888",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//0C8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-07-11T02:15:00Z",
+      "side": 1,
+      "message": "\"for jenkins-job-builder\" feels superfluous as THIS is the JJB project.",
+      "parentUuid": "AAAAP3//2WE\u003d",
+      "revId": "6ef9375e87cafb55d236ebe60dd149064248d888",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
