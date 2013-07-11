@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//zdk\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-07-11T06:48:40Z",
+      "side": 1,
+      "message": "requires back tick (`) around plugin name and url and should end with underscore (_)",
+      "revId": "2a0ecc486b5e32105d2f3a4748e3e839be916f2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//zcg\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-07-11T06:48:40Z",
+      "side": 1,
+      "message": "would it make more sense if there is a \u0027nature\u0027 arg that has sub elements of shell, xshell, or  python?",
+      "revId": "2a0ecc486b5e32105d2f3a4748e3e839be916f2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//zco\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-07-11T06:48:40Z",
+      "side": 1,
+      "message": "should be \u0027- custom-python:\u0027",
+      "revId": "2a0ecc486b5e32105d2f3a4748e3e839be916f2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//zZc\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-07-11T06:48:40Z",
+      "side": 1,
+      "message": "using a \u0027nature\u0027 arg it would be something like..\n\nnature:\n   - shell: |\n           python my_script.py",
+      "revId": "2a0ecc486b5e32105d2f3a4748e3e839be916f2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
