@@ -34,6 +34,57 @@
       "revId": "6ef9375e87cafb55d236ebe60dd149064248d888",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//zl8\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-07-11T05:46:41Z",
+      "side": 1,
+      "message": "this plugin has \u0027implementation\u0027 as the text box label, so would be better to use \u0027implementation\u0027 instead of \u0027name\u0027",
+      "revId": "6ef9375e87cafb55d236ebe60dd149064248d888",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//zng\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-07-11T05:46:41Z",
+      "side": 1,
+      "message": "probably should be..\n\nwrappers:\n  - rvm-env:\n       implementation: 1.9.3",
+      "revId": "6ef9375e87cafb55d236ebe60dd149064248d888",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//znU\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-07-11T05:46:41Z",
+      "side": 1,
+      "message": "from above, should reference data[\u0027implementation\u0027]",
+      "revId": "6ef9375e87cafb55d236ebe60dd149064248d888",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
