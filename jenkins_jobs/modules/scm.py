@@ -22,6 +22,8 @@ Note: Adding more than one scm definition requires the Jenkins `Multiple
 SCMs plugin.
 <https://wiki.jenkins-ci.org/display/JENKINS/Multiple+SCMs+Plugin>`_
 
+Note: Jenkins will execute this module after properties and before scm.
+
 **Component**: scm
   :Macro: scm
   :Entry Point: jenkins_jobs.scm

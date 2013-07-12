@@ -16,6 +16,8 @@
 """
 Wrappers can alter the way the build is run as well as the build output.
 
+Note: Jenkins will execute this module after triggers and before prebuilders.
+
 **Component**: wrappers
   :Macro: wrapper
   :Entry Point: jenkins_jobs.wrappers

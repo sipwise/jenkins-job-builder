@@ -16,6 +16,8 @@
 """
 The Parameters module allows you to specify build parameters for a job.
 
+Note: Jenkins will execute properties before any other JJB module.
+
 **Component**: parameters
   :Macro: parameter
   :Entry Point: jenkins_jobs.parameters

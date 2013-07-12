@@ -16,6 +16,8 @@
 """
 Triggers define what causes a jenkins job to start buliding.
 
+Note: Jenkins will execute this module after scm and before wrappers.
+
 **Component**: triggers
   :Macro: trigger
   :Entry Point: jenkins_jobs.triggers

@@ -22,6 +22,10 @@ may be components defined below, locally defined macros (using the top
 level definition of ``builder:``, or locally defined components found
 via the ``jenkins_jobs.builders`` entry point.
 
+Note: Jenkins will execute this module after prebuilders and before any
+      of the post build actions.
+
+
 **Component**: builders
   :Macro: builder
   :Entry Point: jenkins_jobs.builders

@@ -17,6 +17,8 @@
 The Properties module supplies a wide range of options that are
 implemented as Jenkins job properties.
 
+Note: Jenkins will execute properties before any other JJB module.
+
 **Component**: properties
   :Macro: property
   :Entry Point: jenkins_jobs.properties
