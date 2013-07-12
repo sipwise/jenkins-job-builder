@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//tUs\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-07-12T16:56:50Z",
+      "side": 1,
+      "message": "These param names seem a little confusing to me.  \"root-dir\" sounds like a path, but it\u0027s a bool.  And \"root-build-script\" sounds like it should be a path to an executable, but it\u0027s really a path to a dir.\n\nWould you consider changing them to something like \"use-root-dir\" (or something similarly boolean sounding), and \"root-build-script-dir\" (or similar)?",
+      "revId": "2548f8037e01c7671c99c7a1f828c01687b685ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
