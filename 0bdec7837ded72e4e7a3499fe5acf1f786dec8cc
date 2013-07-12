@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//uxQ\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-07-12T09:16:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//8iU\u003d",
+      "revId": "0bdec7837ded72e4e7a3499fe5acf1f786dec8cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//0BY\u003d",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//uxE\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-07-12T09:16:19Z",
+      "side": 1,
+      "message": "Because I am a python newbie :-]\n\nDone!",
+      "parentUuid": "AAAAP3//0BY\u003d",
+      "revId": "0bdec7837ded72e4e7a3499fe5acf1f786dec8cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//0Bo\u003d",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2013-07-11T02:22:07Z",
       "side": 1,
       "message": "Can\u0027t this go on one line and avoid the use of a variable?",
+      "revId": "0bdec7837ded72e4e7a3499fe5acf1f786dec8cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//uwg\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-07-12T09:16:19Z",
+      "side": 1,
+      "message": "Indeed. Done!",
+      "parentUuid": "AAAAP3//0Bo\u003d",
       "revId": "0bdec7837ded72e4e7a3499fe5acf1f786dec8cc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
