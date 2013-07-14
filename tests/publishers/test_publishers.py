@@ -30,13 +30,6 @@ FIXTURES_PATH = os.path.join(
     os.path.dirname(__file__), 'fixtures')
 
 
-def load_tests(loader, tests, pattern):
-    return unittest.TestSuite(
-        build_test_case(xml, yamldef, files)
-        for yamldef, xml, files in get_fixtures()
-    )
-
-
 def get_fixtures():
     """Returns a list of tuples containing, in order:
         - content of the fixture .yaml file
@@ -71,35 +64,42 @@ def get_fixtures():
     return fixtures
 
 
-def build_test_case(expected_xml, yaml, files):
-    class TestCaseModulePublisher(testtools.TestCase):
+def build_testcases(name, bases, d):
+    def build_test_method(yamldef, xml, files):
+        def test(self):
+            self.core_yaml_snippet(yamldef, xml, files)
+        return test
 
-        # testtools.TestCase settings:
-        maxDiff = None      # always dump text difference
-        longMessage = True  # keep normal error message when providing our
+    for yamldef, xml, files in get_fixtures():
+        # Transform the file name so that it can be used as a method name.
+        normalized_name = os.path.basename(files[1]).replace('.', '_')
+        d['test_%s' % normalized_name] = build_test_method(yamldef, xml, files)
 
-        def __init__(self, expected_xml, yaml, files):
-            testtools.TestCase.__init__(self, 'test_yaml_snippet')
-            self.xml = expected_xml
-            self.yaml = yaml
-            self.files = files
+    return type(name, bases, d)
 
-        def test_yaml_snippet(self):
-            xml_project = XML.Element('project')  # root element
-            parser = YamlParser()
-            pub = publishers.Publishers(ModuleRegistry({}))
 
-            # Generate the XML tree directly with modules/publishers/*
-            pub.gen_xml(parser, xml_project, self.yaml)
+class TestCaseModulePublisher(testtools.TestCase):
+    __metaclass__ = build_testcases
 
-            # Prettify generated XML
-            pretty_xml = XmlJob(xml_project, 'fixturejob').output()
+    # testtools.TestCase settings:
+    maxDiff = None      # always dump text difference
+    longMessage = True  # keep normal error message when providing our
 
-            self.assertMultiLineEqual(
-                self.xml, pretty_xml,
-                'Test inputs: %s' % ', '.join(self.files)
-            )
-    return TestCaseModulePublisher(expected_xml, yaml, files)
+    def core_yaml_snippet(self, yaml, expected_xml, files):
+        xml_project = XML.Element('project')  # root element
+        parser = YamlParser()
+        pub = publishers.Publishers(ModuleRegistry({}))
+
+        # Generate the XML tree directly with modules/publishers/*
+        pub.gen_xml(parser, xml_project, yaml)
+
+        # Prettify generated XML
+        pretty_xml = XmlJob(xml_project, 'fixturejob').output()
+
+        self.assertMultiLineEqual(
+            expected_xml, pretty_xml,
+            'Test inputs: %s' % ', '.join(files)
+        )
 
 if __name__ == "__main__":
     unittest.main()
