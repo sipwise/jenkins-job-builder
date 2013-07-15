@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAP3//osw\u003d",
+        "filename": "tests/publishers/test_publishers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-07-15T15:26:21Z",
+      "side": 1,
+      "message": "Arnaud : I have added you as a copyright holder. You deserve it !",
+      "revId": "5ff956511f89d5629bbc70c151806676ddfd8d62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//osc\u003d",
+        "filename": "tests/publishers/test_publishers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-07-15T15:26:21Z",
+      "side": 1,
+      "message": "I have reordered the tuple elements returned by get_fixtures() to make it consistent with the assert call.",
+      "revId": "5ff956511f89d5629bbc70c151806676ddfd8d62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//osM\u003d",
+        "filename": "tests/publishers/test_publishers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-07-15T15:26:21Z",
+      "side": 1,
+      "message": "Here is the get_fixtures() reordering.",
+      "revId": "5ff956511f89d5629bbc70c151806676ddfd8d62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//osI\u003d",
+        "filename": "tests/publishers/test_publishers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-07-15T15:26:21Z",
+      "side": 1,
+      "message": "A very basic lame comment explaining why the class has to be wrapped.",
+      "revId": "5ff956511f89d5629bbc70c151806676ddfd8d62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
