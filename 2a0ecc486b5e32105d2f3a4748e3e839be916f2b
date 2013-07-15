@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//mxs\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-07-15T22:28:50Z",
+      "side": 1,
+      "message": "If this parameter required? From the plugins I saw, Jenkins always managed to add it by itself, using it merely as a hint to know which version of the plugin has been used.",
+      "revId": "2a0ecc486b5e32105d2f3a4748e3e839be916f2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//zcg\u003d",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -30,6 +47,24 @@
       "writtenOn": "2013-07-11T06:48:40Z",
       "side": 1,
       "message": "would it make more sense if there is a \u0027nature\u0027 arg that has sub elements of shell, xshell, or  python?",
+      "revId": "2a0ecc486b5e32105d2f3a4748e3e839be916f2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//mw8\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-07-15T22:28:50Z",
+      "side": 1,
+      "message": "That, or perhaps to attributes : nature (valued to sheel, xshell or python), and executable (for example), which would be understood as either the shell/xshell or python interpreter.\n\nThis would simplify lines 98 to 106 to a simple :\n\n  XML.SubElement(cust_python, \u0027nature\u0027).text \u003d data[\u0027nature\u0027]\n  XML.SubElement(cust_python, \u0027command\u0027).text \u003d data[\u0027interpreter\u0027]",
+      "parentUuid": "AAAAP3//zcg\u003d",
       "revId": "2a0ecc486b5e32105d2f3a4748e3e839be916f2b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +99,23 @@
       "writtenOn": "2013-07-11T06:48:40Z",
       "side": 1,
       "message": "using a \u0027nature\u0027 arg it would be something like..\n\nnature:\n   - shell: |\n           python my_script.py",
+      "revId": "2a0ecc486b5e32105d2f3a4748e3e839be916f2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//mw0\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-07-15T22:28:50Z",
+      "side": 1,
+      "message": "The string can be broken to prevent the use of a backslash:\n\n  XML.SubElement(xml_parent,\n                 \u0027jenkins.plugins.shiningpanda.\u0027\n                 \u0027builders.CustomPythonBuilder\u0027)",
       "revId": "2a0ecc486b5e32105d2f3a4748e3e839be916f2b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
