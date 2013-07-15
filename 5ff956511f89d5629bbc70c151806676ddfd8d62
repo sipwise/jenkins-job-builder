@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//mz8\u003d",
+        "filename": "tests/publishers/test_publishers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-07-15T22:14:28Z",
+      "side": 1,
+      "message": "Thank you :) And you are welcome!",
+      "parentUuid": "AAAAP3//osw\u003d",
+      "revId": "5ff956511f89d5629bbc70c151806676ddfd8d62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//osc\u003d",
         "filename": "tests/publishers/test_publishers.py",
         "patchSetId": 13
@@ -64,6 +82,24 @@
       "writtenOn": "2013-07-15T15:26:21Z",
       "side": 1,
       "message": "A very basic lame comment explaining why the class has to be wrapped.",
+      "revId": "5ff956511f89d5629bbc70c151806676ddfd8d62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//mzo\u003d",
+        "filename": "tests/publishers/test_publishers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-07-15T22:14:28Z",
+      "side": 1,
+      "message": "This make it more clear indeed.\n\nHave you had time to look at another possible approach to that issue, submitted in a dependant change?",
+      "parentUuid": "AAAAP3//osI\u003d",
       "revId": "5ff956511f89d5629bbc70c151806676ddfd8d62",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
