@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAP3//jRI\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-07-16T17:25:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//nG0\u003d",
+      "revId": "09133d9f697bb5d282d15dac1db41471653c50bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//nGw\u003d",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-15T21:08:20Z",
       "side": 1,
       "message": "This is the scm module.",
+      "revId": "09133d9f697bb5d282d15dac1db41471653c50bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAP3//jRA\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-07-16T17:25:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAP3//nGw\u003d",
       "revId": "09133d9f697bb5d282d15dac1db41471653c50bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
