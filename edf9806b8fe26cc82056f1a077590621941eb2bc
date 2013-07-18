@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn///EA\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-07-18T00:20:13Z",
+      "side": 1,
+      "message": "sequence",
+      "revId": "edf9806b8fe26cc82056f1a077590621941eb2bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn///D4\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-07-18T00:20:13Z",
+      "side": 1,
+      "message": "maybe say \u0027(maven only)\u0027 on the pre and postbuilders lines",
+      "revId": "edf9806b8fe26cc82056f1a077590621941eb2bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn///D0\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-07-18T00:20:13Z",
+      "side": 1,
+      "message": "trailing ws",
+      "revId": "edf9806b8fe26cc82056f1a077590621941eb2bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
