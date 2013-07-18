@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQn//+oc\u003d",
+        "filename": "tests/publishers/fixtures/xunit001.xml",
+        "patchSetId": 13
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-07-18T04:36:28Z",
+      "side": 1,
+      "message": "To make these tests pass locally I need to add\n  \u003c/types\u003e\n  \u003ctypes\u003e\n\nhere.",
+      "revId": "5ff956511f89d5629bbc70c151806676ddfd8d62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//osw\u003d",
         "filename": "tests/publishers/test_publishers.py",
         "patchSetId": 13
