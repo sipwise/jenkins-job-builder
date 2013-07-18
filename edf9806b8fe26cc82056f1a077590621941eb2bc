@@ -50,6 +50,23 @@
       "revId": "edf9806b8fe26cc82056f1a077590621941eb2bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//+rY\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-07-18T04:04:17Z",
+      "side": 1,
+      "message": "I think this sentence can probably be removed if you use Jeblair\u0027s suggestion to put (maven only) on the pre and post builder lines.",
+      "revId": "edf9806b8fe26cc82056f1a077590621941eb2bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
