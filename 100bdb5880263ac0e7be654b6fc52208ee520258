@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//83Y\u003d",
+        "filename": "setup.cfg",
+        "patchSetId": 14
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-07-18T16:01:41Z",
+      "side": 1,
+      "message": "Is this here for people choosing to run nose instead of testr?",
+      "revId": "100bdb5880263ac0e7be654b6fc52208ee520258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
