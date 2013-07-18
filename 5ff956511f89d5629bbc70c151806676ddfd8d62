@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//+Yc\u003d",
+        "filename": "tests/publishers/fixtures/xunit001.xml",
+        "patchSetId": 13
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-07-18T07:15:24Z",
+      "side": 1,
+      "message": "Which is the reason I have started to write unit tests for JJB.  The xunit publisher (introduced by  https://review.openstack.org/#/c/14283/ ) has a bug that makes it wrap each testtype in a \u003ctypes/\u003e which is not what the Jenkins plugin does.  One can confirm by manually creating a freestyle and adding two xunit test result reports.\n\nThe fixture xunit001.xml is actually what is expected and I need to fix up the xunit publisher and rebase this change on top of the fix and the test will pass. The resulting Jenkins configuration is:\n\n \u003cxunit plugin\u003d\"xunit@1.60\"\u003e\n   \u003ctypes\u003e\n     \u003cPHPUnitJunitHudsonTestType\u003e...\u003c/PHPUnitJunitHudsonTestType\u003e\n     \u003cCppUnitJunitHudsonTestType\u003e...\u003c/CppUnitJunitHudsonTestType\u003e\n   \u003c/types\u003e\n  ...",
+      "parentUuid": "AAAAQn//+oc\u003d",
+      "revId": "5ff956511f89d5629bbc70c151806676ddfd8d62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAP3//osw\u003d",
         "filename": "tests/publishers/test_publishers.py",
         "patchSetId": 13
@@ -117,6 +135,24 @@
       "side": 1,
       "message": "This make it more clear indeed.\n\nHave you had time to look at another possible approach to that issue, submitted in a dependant change?",
       "parentUuid": "AAAAP3//osI\u003d",
+      "revId": "5ff956511f89d5629bbc70c151806676ddfd8d62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//+Zc\u003d",
+        "filename": "tests/publishers/test_publishers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-07-18T07:15:24Z",
+      "side": 1,
+      "message": "Arnaud\u003e I have read your dependent change based on testscenario, definitely nicer than the code in my patchset :-] Thank you!",
+      "parentUuid": "AAAAP3//mzo\u003d",
       "revId": "5ff956511f89d5629bbc70c151806676ddfd8d62",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
