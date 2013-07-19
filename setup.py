@@ -140,6 +140,7 @@ setuptools.setup(
             'workspace_cleanup',
             'maven-deploy=jenkins_jobs.modules.publishers:maven_deploy',
             'tap=jenkins_jobs.modules.publishers:tap',
+            'post-tasks=jenkins_jobs.modules.publishers:post_tasks',
         ],
         'jenkins_jobs.scm': [
             'git=jenkins_jobs.modules.scm:git',
