@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//6H4\u003d",
+        "filename": "setup.cfg",
+        "patchSetId": 14
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-07-19T12:33:39Z",
+      "side": 1,
+      "message": "Ah I forgot to clean that up. Nose would not work due to the way we generate the tests, that definitely requires testr.\n\nI have removed the section.",
+      "parentUuid": "AAAAQn//83Y\u003d",
+      "revId": "100bdb5880263ac0e7be654b6fc52208ee520258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//8tY\u003d",
         "filename": "tox.ini",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2013-07-18T16:51:06Z",
       "side": 1,
       "message": "Inconsistent tabbing here.",
+      "revId": "100bdb5880263ac0e7be654b6fc52208ee520258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//6Ho\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 14
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-07-19T12:33:39Z",
+      "side": 1,
+      "message": "I have joined both lines :-)",
+      "parentUuid": "AAAAQn//8tY\u003d",
       "revId": "100bdb5880263ac0e7be654b6fc52208ee520258",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
