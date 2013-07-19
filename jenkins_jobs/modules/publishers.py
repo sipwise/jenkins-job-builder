@@ -1770,6 +1770,35 @@ def maven_deploy(parser, xml_parent, data):
         data.get('deploy-unstable', 'false')).lower()
 
 
+def text_finder(parser, xml_parent, data):
+    """yaml: text_finder
+    This plugin lets you search keywords in the files you specified and
+    additionally check builds' status
+
+     Example::
+
+     publishers:
+       - text_finder:
+           regexp: "some string"
+           fileset: "file.txt"
+           alsoCheckConsoleOutput: true
+           succeedIfFound: false
+           unstableIfFound: false
+
+    """
+    finder = XML.SubElement(xml_parent, 
+                            'hudson.plugins.textfinder.TextFinderPublisher')
+    if ('fileset' in data):
+        XML.SubElement(finder, 'fileSet').text = data['fileset']
+    XML.SubElement(finder, 'regexp').text = data['regexp']
+    check_output = str(data.get('alsoCheckConsoleOutput', 'false')).lower()
+    XML.SubElement(finder, 'alsoCheckConsoleOutput').text = check_output
+    succeed_if_found = str(data.get('succeedIfFound', 'false')).lower()
+    XML.SubElement(finder, 'succeedIfFound').text = succeed_if_found
+    unstable_if_found = str(data.get('unstableIfFound', 'false')).lower()
+    XML.SubElement(finder, 'unstableIfFound').text = unstable_if_found 
+
+
 def tap(parser, xml_parent, data):
     """yaml: tap
     Adds support to TAP test result files
