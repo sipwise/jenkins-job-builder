@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//4Mk\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1840,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-07-19T22:42:50Z",
+      "side": 1,
+      "message": "Can you list the defaults in the docs?  (eg operator... (default \u0027AND\u0027))",
+      "revId": "f6852f2af04619789e642e87250bf6cb6c83f3fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//4Mw\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1846,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-07-19T22:42:50Z",
+      "side": 1,
+      "message": "the task dict doesn\u0027t seem to be necessary; could we just move everything up one level?\n\n  - post-tasks:\n      - matches:\n        ...\n      - matches:\n        ...",
+      "revId": "f6852f2af04619789e642e87250bf6cb6c83f3fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
