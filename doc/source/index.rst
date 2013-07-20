@@ -25,6 +25,13 @@ Contents:
    configuration
    extending
 
+API:
+
+.. toctree::
+   :maxdepth: 1
+
+   api/autoindex
+
 Indices and tables
 ==================
 
