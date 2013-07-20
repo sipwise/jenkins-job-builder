@@ -25,6 +25,8 @@ Contents:
    configuration
    extending
 
+API:
+
 Indices and tables
 ==================
 

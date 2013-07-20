@@ -77,3 +77,4 @@ field, or via the parser parameter of components.
 
 .. autoclass:: jenkins_jobs.builder.ModuleRegistry
    :members:
+   :noindex:
