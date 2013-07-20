@@ -31,8 +31,8 @@ Example::
           url: https://github.com/openstack-ci/jenkins-job-builder/
 """
 
-
 import xml.etree.ElementTree as XML
+
 import jenkins_jobs.modules.base
 
 
@@ -113,7 +113,7 @@ def throttle(parser, xml_parent, data):
         data.get('max-per-node', '0'))
     XML.SubElement(throttle, 'maxConcurrentTotal').text = str(
         data.get('max-total', '0'))
-    # TODO: What's "categories"?
+    # TODO(pabelanger): What's "categories"?
     #XML.SubElement(throttle, 'categories')
     if data.get('enabled', True):
         XML.SubElement(throttle, 'throttleEnabled').text = 'true'
@@ -188,7 +188,7 @@ def authenticated_build(parser, xml_parent, data):
       properties:
         - authenticated-build
     """
-    # TODO: generalize this
+    # TODO(pabelanger): generalize this
     if data:
         security = XML.SubElement(xml_parent,
                                   'hudson.security.'
