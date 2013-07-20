@@ -90,8 +90,8 @@ Example using user-defined axis::
      - shell: make "$database"
 """
 
-
 import xml.etree.ElementTree as XML
+
 import jenkins_jobs.modules.base
 
 

@@ -42,8 +42,8 @@ That speficies that the job should be run on a Jenkins node or node group
 named ``precise``.
 """
 
-
 import xml.etree.ElementTree as XML
+
 import jenkins_jobs.modules.base
 
 

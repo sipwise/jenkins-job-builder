@@ -155,7 +155,7 @@ class Zuul(jenkins_jobs.modules.base.Base):
                 continue
 
             if ('zuul' not in job.get('triggers', []) and
-                'zuul-post' not in job.get('triggers', [])):
+                    'zuul-post' not in job.get('triggers', [])):
                 continue
             if 'parameters' not in job:
                 job['parameters'] = []

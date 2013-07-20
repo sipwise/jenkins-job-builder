@@ -20,15 +20,16 @@
 #    :license: BSD, see LICENSE for details.
 
 import re
-from sphinx.ext.autodoc import Documenter, FunctionDocumenter
-from sphinx.domains.python import PyModulelevel, _pseudo_parse_arglist
+
 from sphinx import addnodes
-from sphinx.locale import _
+from sphinx.domains import python as sphinx_python
+from sphinx.ext import autodoc
+from sphinx import locale
 
 yaml_sig_re = re.compile('yaml:\s*(.*)')
 
 
-class PyYAMLFunction(PyModulelevel):
+class PyYAMLFunction(sphinx_python.PyModulelevel):
     def handle_signature(self, sig, signode):
         """Transform a Python signature into RST nodes.
 
@@ -74,7 +75,7 @@ class PyYAMLFunction(PyModulelevel):
                 signode += addnodes.desc_annotation(' ' + anno, ' ' + anno)
             return fullname, name_prefix
 
-        _pseudo_parse_arglist(signode, arglist)
+        sphinx_python._pseudo_parse_arglist(signode, arglist)
         if retann:
             signode += addnodes.desc_returns(retann, retann)
         if anno:
@@ -82,25 +83,29 @@ class PyYAMLFunction(PyModulelevel):
         return fullname, name_prefix
 
     def get_index_text(self, modname, name_cls):
-        return _('%s (in module %s)') % (name_cls[0], modname)
+        return locale._(
+            '%(name)s (in module %(mod)s)') % ({'name': name_cls[0]},
+                                               {'mod': modname})
 
 
-class YAMLFunctionDocumenter(FunctionDocumenter):
-    priority = FunctionDocumenter.priority + 10
+class YAMLFunctionDocumenter(autodoc.FunctionDocumenter):
+    priority = autodoc.FunctionDocumenter.priority + 10
     objtype = 'yamlfunction'
     directivetype = 'yamlfunction'
 
     @classmethod
     def can_document_member(cls, member, membername, isattr, parent):
-        if not FunctionDocumenter.can_document_member(member, membername,
-                                                      isattr, parent):
+        if not autodoc.FunctionDocumenter.can_document_member(member,
+                                                              membername,
+                                                              isattr,
+                                                              parent):
             return False
         if member.__doc__ is not None and yaml_sig_re.match(member.__doc__):
             return True
         return False
 
     def _find_signature(self, encoding=None):
-        docstrings = Documenter.get_doc(self, encoding, 2)
+        docstrings = autodoc.Documenter.get_doc(self, encoding, 2)
         if len(docstrings) != 1:
             return
         doclines = docstrings[0]
@@ -124,7 +129,7 @@ class YAMLFunctionDocumenter(FunctionDocumenter):
         lines = getattr(self, '__new_doclines', None)
         if lines is not None:
             return [lines]
-        return Documenter.get_doc(self, encoding, ignore)
+        return autodoc.Documenter.get_doc(self, encoding, ignore)
 
     def format_signature(self):
         result = self._find_signature()
