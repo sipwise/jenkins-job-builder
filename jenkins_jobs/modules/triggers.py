@@ -29,10 +29,11 @@ Example::
       - timed: '@daily'
 """
 
+import re
 
 import xml.etree.ElementTree as XML
+
 import jenkins_jobs.modules.base
-import re
 
 
 def gerrit_handle_legacy_configuration(data):
