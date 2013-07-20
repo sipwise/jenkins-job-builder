@@ -19,12 +19,12 @@
 
 import os
 import re
-from testscenarios.testcase import TestWithScenarios
+from testscenarios import testcase
 import unittest
 import xml.etree.ElementTree as XML
 import yaml
 
-from jenkins_jobs.builder import XmlJob, YamlParser, ModuleRegistry
+from jenkins_jobs import builder
 from jenkins_jobs.modules import publishers
 
 FIXTURES_PATH = os.path.join(
@@ -55,7 +55,7 @@ def get_scenarios():
     return scenarios
 
 
-class TestCaseModulePublisher(TestWithScenarios):
+class TestCaseModulePublisher(testcase.TestWithScenarios):
     scenarios = get_scenarios()
 
     # unittest.TestCase settings:
@@ -77,14 +77,14 @@ class TestCaseModulePublisher(TestWithScenarios):
         yaml_content, expected_xml = self.__read_content()
 
         xml_project = XML.Element('project')  # root element
-        parser = YamlParser()
-        pub = publishers.Publishers(ModuleRegistry({}))
+        parser = builder.YamlParser()
+        pub = publishers.Publishers(builder.ModuleRegistry({}))
 
         # Generate the XML tree directly with modules/publishers/*
         pub.gen_xml(parser, xml_project, yaml_content)
 
         # Prettify generated XML
-        pretty_xml = XmlJob(xml_project, 'fixturejob').output()
+        pretty_xml = builder.XmlJob(xml_project, 'fixturejob').output()
 
         self.assertEqual(
             expected_xml, pretty_xml,

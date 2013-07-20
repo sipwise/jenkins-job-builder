@@ -15,26 +15,29 @@
 
 # Manage jobs in Jenkins server
 
-import os
-import hashlib
-import yaml
-import json
-import xml.etree.ElementTree as XML
-from xml.dom import minidom
-import jenkins
-import re
-import pkg_resources
-import logging
 import copy
+import hashlib
 import itertools
-from jenkins_jobs.errors import JenkinsJobsException
+import jenkins
+import json
+import logging
+import os
+import pkg_resources
+import re
+import xml.etree.ElementTree as XML
+import yaml
+
+from xml.dom import minidom
+
+from jenkins_jobs import errors
 
 logger = logging.getLogger(__name__)
 
 
 def deep_format(obj, paramdict):
     """Apply the paramdict via str.format() to all string objects found within
-       the supplied obj. Lists and dicts are traversed recursively."""
+       the supplied obj. Lists and dicts are traversed recursively.
+    """
     # YAML serialisation was originally used to achieve this, but that places
     # limitations on the values in paramdict - the post-format result must
     # still be valid YAML (so substituting-in a string containing quotes, for
@@ -72,8 +75,9 @@ class YamlParser(object):
                         n = v
                         break
                 # Syntax error
-                raise JenkinsJobsException("Syntax error, for item named "
-                                           "'{0}'. Missing indent?".format(n))
+                raise errors.JenkinsJobsException("Syntax error, for item "
+                                                  "named '{0}'. Missing "
+                                                  "indent?".format(n))
             name = dfn['name']
             group[name] = dfn
             self.data[cls] = group
@@ -201,7 +205,7 @@ class YamlParser(object):
     def getXMLForJob(self, data):
         kind = data.get('project-type', 'freestyle')
         for ep in pkg_resources.iter_entry_points(
-            group='jenkins_jobs.projects', name=kind):
+                group='jenkins_jobs.projects', name=kind):
             Mod = ep.load()
             mod = Mod(self.registry)
             xml = mod.root_xml(data)
@@ -224,7 +228,7 @@ class ModuleRegistry(object):
         self.global_config = config
 
         for entrypoint in pkg_resources.iter_entry_points(
-            group='jenkins_jobs.modules'):
+                group='jenkins_jobs.modules'):
             Mod = entrypoint.load()
             mod = Mod(self)
             self.modules.append(mod)
@@ -264,8 +268,8 @@ class ModuleRegistry(object):
         """
 
         if component_type not in self.modules_by_component_type:
-            raise JenkinsJobsException("Unknown component type: "
-                                       "'{0}'.".format(component_type))
+            raise errors.JenkinsJobsException("Unknown component type: "
+                                              "'{0}'.".format(component_type))
 
         component_list_type = self.modules_by_component_type[component_type] \
             .component_list_type
@@ -286,7 +290,8 @@ class ModuleRegistry(object):
 
         # Look for a component function defined in an entry point
         for ep in pkg_resources.iter_entry_points(
-            group='jenkins_jobs.{0}'.format(component_list_type), name=name):
+                group='jenkins_jobs.{0}'.format(component_list_type),
+                name=name):
             func = ep.load()
             func(parser, xml_parent, component_data)
         else:
@@ -440,7 +445,7 @@ class Builder(object):
                 continue
             md5 = job.md5()
             if (self.jenkins.is_job(job.name)
-                and not self.cache.is_cached(job.name)):
+                    and not self.cache.is_cached(job.name)):
                 old_md5 = self.jenkins.get_job_md5(job.name)
                 self.cache.set(job.name, old_md5)
 
