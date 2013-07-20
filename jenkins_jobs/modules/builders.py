@@ -36,10 +36,10 @@ Example::
 
 """
 
-
-import xml.etree.ElementTree as XML
-import jenkins_jobs.modules.base
 import logging
+import xml.etree.ElementTree as XML
+
+import jenkins_jobs.modules.base
 
 logger = logging.getLogger(__name__)
 

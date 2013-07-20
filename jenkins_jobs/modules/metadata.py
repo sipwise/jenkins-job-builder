@@ -33,8 +33,8 @@ Example::
           expose-to-env: true
 """
 
-
 import xml.etree.ElementTree as XML
+
 import jenkins_jobs.modules.base
 
 
@@ -114,7 +114,7 @@ def date_metadata(parser, xml_parent, data):
     """
     pdef = base_metadata(parser, xml_parent, data,
                          'metadata-date')
-    # TODO: convert time from any reasonable format into epoch
+    # TODO(pabelanger): convert time from any reasonable format into epoch
     mval = XML.SubElement(pdef, 'value')
     XML.SubElement(mval, 'time').text = data['time']
     XML.SubElement(mval, 'timezone').text = data['timezone']
