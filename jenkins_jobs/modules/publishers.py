@@ -34,11 +34,11 @@ Example::
           target_path: 'project'
 """
 
-
-import xml.etree.ElementTree as XML
-import jenkins_jobs.modules.base
 import logging
 import sys
+import xml.etree.ElementTree as XML
+
+import jenkins_jobs.modules.base
 
 
 def archive(parser, xml_parent, data):
@@ -120,11 +120,11 @@ def trigger_parameterized_builds(parser, xml_parent, data):
                                  'BuildTriggerConfig')
         tconfigs = XML.SubElement(tconfig, 'configs')
         if ('predefined-parameters' in project_def
-            or 'git-revision' in project_def
-            or 'property-file' in project_def
-            or 'current-parameters' in project_def
-            or 'svn-revision' in project_def
-            or 'restrict-matrix-project' in project_def):
+                or 'git-revision' in project_def
+                or 'property-file' in project_def
+                or 'current-parameters' in project_def
+                or 'svn-revision' in project_def
+                or 'restrict-matrix-project' in project_def):
 
             if 'predefined-parameters' in project_def:
                 params = XML.SubElement(tconfigs,
@@ -146,7 +146,7 @@ def trigger_parameterized_builds(parser, xml_parent, data):
                 properties = XML.SubElement(params, 'propertiesFile')
                 properties.text = project_def['property-file']
             if ('current-parameters' in project_def
-                and project_def['current-parameters']):
+                    and project_def['current-parameters']):
                 XML.SubElement(tconfigs,
                                'hudson.plugins.parameterizedtrigger.'
                                'CurrentBuildParameters')
@@ -155,7 +155,7 @@ def trigger_parameterized_builds(parser, xml_parent, data):
                                'hudson.plugins.parameterizedtrigger.'
                                'SubversionRevisionBuildParameters')
             if ('restrict-matrix-project' in project_def
-                and project_def['restrict-matrix-project']):
+                    and project_def['restrict-matrix-project']):
                 subset = XML.SubElement(tconfigs,
                                         'hudson.plugins.parameterizedtrigger.'
                                         'matrix.MatrixSubsetBuildParameters')
@@ -679,7 +679,8 @@ def violations(parser, xml_parent, data):
         'pmd',
         'pylint',
         'simian',
-        'stylecop']:
+        'stylecop'
+    ]:
         _violations_add_entry(configs, name, data.get(name, {}))
 
     XML.SubElement(config, 'limit').text = '100'
@@ -968,7 +969,7 @@ def email(parser, xml_parent, data):
             recipients: breakage@example.com
     """
 
-    # TODO: raise exception if this is applied to a maven job
+    # TODO(pabelanger): raise exception if this is applied to a maven job
     mailer = XML.SubElement(xml_parent,
                             'hudson.tasks.Mailer')
     XML.SubElement(mailer, 'recipients').text = data['recipients']
