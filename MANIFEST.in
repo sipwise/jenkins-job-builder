@@ -1,4 +1,3 @@
-include jenkins_jobs/versioninfo
 include AUTHORS
 include ChangeLog
 
