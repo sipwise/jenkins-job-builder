@@ -42,12 +42,13 @@ If you set ``enabled: false``, no hipchat parameters are written to XML.
 # The global config object is therefore passed down to the registry object,
 # and this object is passed to the HipChat() class initialiser.
 
-import xml.etree.ElementTree as XML
-import jenkins_jobs.modules.base
-import jenkins_jobs.errors
-import logging
 import ConfigParser
+import logging
 import sys
+import xml.etree.ElementTree as XML
+
+import jenkins_jobs.errors
+import jenkins_jobs.modules.base
 
 logger = logging.getLogger(__name__)
 

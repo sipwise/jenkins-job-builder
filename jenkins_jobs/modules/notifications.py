@@ -32,8 +32,8 @@ Example::
           url: http://example.com/jenkins_endpoint
 """
 
-
 import xml.etree.ElementTree as XML
+
 import jenkins_jobs.modules.base
 
 

@@ -32,8 +32,8 @@ Example::
           description: "A parameter named FOO, defaults to 'bar'."
 """
 
-
 import xml.etree.ElementTree as XML
+
 import jenkins_jobs.modules.base
 
 
