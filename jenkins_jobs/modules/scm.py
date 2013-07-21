@@ -69,6 +69,7 @@ def git(self, xml_parent, data):
     :arg bool prune: Prune remote branches
     :arg bool clean: Clean after checkout
     :arg bool fastpoll: Use fast remote polling
+    :arg bool shallow-clone: Use Git shallow clone instead of full clone
     :arg bool disable-submodules: Disable submodules
     :arg bool recursive-submodules: Recursively update submodules
     :arg bool use-author: Use author rather than committer in Jenkin's build
