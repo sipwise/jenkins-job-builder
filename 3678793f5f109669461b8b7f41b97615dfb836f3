@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//zxg\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-07-22T22:05:36Z",
+      "side": 1,
+      "message": "i think pathignore needs a \u0027:\u0027",
+      "revId": "3678793f5f109669461b8b7f41b97615dfb836f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
