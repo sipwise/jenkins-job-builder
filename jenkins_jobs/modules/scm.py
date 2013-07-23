@@ -77,6 +77,9 @@ def git(self, xml_parent, data):
     :arg bool wipe-workspace: Wipe out workspace before build
     :arg str browser: what repository browser to use (default '(Auto)')
     :arg str browser-url: url for the repository browser
+    :arg str git-config-name: The name for checking out a Git repository
+    :arg str git-config-email: The email address for checking out a Git
+             repository
 
     :browser values:
         :githubweb:
