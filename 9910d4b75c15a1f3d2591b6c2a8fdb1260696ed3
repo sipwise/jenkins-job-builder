@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//wG0\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-07-23T22:48:03Z",
+      "side": 1,
+      "message": "s/hsould/should",
+      "revId": "9910d4b75c15a1f3d2591b6c2a8fdb1260696ed3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//wBI\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-07-23T22:48:03Z",
+      "side": 1,
+      "message": "should be \u0027str\u0027 for consistency",
+      "revId": "9910d4b75c15a1f3d2591b6c2a8fdb1260696ed3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
