@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//sns\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1805,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-07-24T21:06:05Z",
+      "side": 1,
+      "message": "should rest of code be inside the if to make it dependent on the fileset having some data?",
+      "revId": "b7bcb9f45ae5927a167bfc79ef4f4c1a8c28ddd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//spU\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1807,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-07-24T21:06:05Z",
+      "side": 1,
+      "message": "\u0027alsoCheckConsoleOutput\u0027 should match above referenced param \u0027also-check-console-output\u0027",
+      "revId": "b7bcb9f45ae5927a167bfc79ef4f4c1a8c28ddd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//spE\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1809,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-07-24T21:06:05Z",
+      "side": 1,
+      "message": "\u0027succeedIfFound\u0027 should match above referenced param \u0027succeed-if-found\u0027",
+      "revId": "b7bcb9f45ae5927a167bfc79ef4f4c1a8c28ddd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//so8\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1811,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-07-24T21:06:05Z",
+      "side": 1,
+      "message": "\u0027unstableIfFound\u0027 should match above referenced param \u0027unstable-if-found\u0027",
+      "revId": "b7bcb9f45ae5927a167bfc79ef4f4c1a8c28ddd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
