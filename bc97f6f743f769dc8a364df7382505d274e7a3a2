@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//scg\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1838,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-07-24T21:55:32Z",
+      "side": 1,
+      "message": "Do we need two strings instead of one for \u0027htmlpublisher.HtmlPubliser\u0027 ?",
+      "revId": "bc97f6f743f769dc8a364df7382505d274e7a3a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
