@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//rOM\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1805,
+      "author": {
+        "id": 7604
+      },
+      "writtenOn": "2013-07-25T10:30:13Z",
+      "side": 1,
+      "message": "It\u0027s possible to use this plugin with empty \u0027fileset\u0027 field.",
+      "parentUuid": "AAAAQn//sns\u003d",
+      "revId": "b7bcb9f45ae5927a167bfc79ef4f4c1a8c28ddd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//spU\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 7
