@@ -33,6 +33,7 @@ Example::
 
 import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
+from jenkins_jobs.modules.builders import create_builders
 
 
 def timeout(parser, xml_parent, data):
@@ -567,6 +568,36 @@ def sauce_ondemand(parser, xml_parent, data):
     XML.SubElement(sauce, 'httpsProtocol').text = protocol
     options = data.get('sauce-connect-options', '')
     XML.SubElement(sauce, 'options').text = options
+
+
+def pre_scm_buildstep(parser, xml_parent, data):
+    """yaml: pre-scm-buildstep
+    Execute a Buils Step before running the SCM
+    Requires the Jenkins `pre-scm-buildstep.
+    <https://wiki.jenkins-ci.org/display/JENKINS/pre-scm-buildstep>`_
+
+    :arg buildsteps list: List of build steps to execute
+
+        :Buildstep: Any acceptable build step
+
+    Example::
+
+      wrappers:
+        - pre-scm-buildstep:
+          - shell: |
+              #!/bin/bash
+              echo "Doing somethiung cool"
+          - shell: |
+              #!/bin/zsh
+              echo "Doing somethin cool with zsh"
+    """
+    bsp = XML.SubElement(xml_parent,
+                         'org.jenkinsci.plugins.preSCMbuildstep.'
+                         'PreSCMBuildStepsWrapper')
+    bs = XML.SubElement(bsp, 'buildSteps')
+    for step in data:
+        for edited_node in create_builders(parser, step):
+            bs.append(edited_node)
 
 
 class Wrappers(jenkins_jobs.modules.base.Base):
