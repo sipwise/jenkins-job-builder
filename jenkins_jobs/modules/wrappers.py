@@ -41,8 +41,20 @@ def timeout(parser, xml_parent, data):
     Requires the Jenkins `Build Timeout Plugin.
     <https://wiki.jenkins-ci.org/display/JENKINS/Build-timeout+Plugin>`_
 
-    :arg int timeout: Abort the build after this number of minutes
     :arg bool fail: Mark the build as failed (default false)
+    :arg bool write-desc: Write a message in the description
+    :arg int timeout: Abort the build after this number of minutes
+    :arg string type: Timeout type to use
+    :arg elastic-percentage int: Percentage of the three most recent builds
+        where to declare a timeout
+    :arg elastic-default-min int: Timeout to use if there were no previous
+        builds
+
+    :type values:
+     * **likelyStuck**
+     * **elastic**
+     * **absolute**
+
 
     Example::
 
@@ -50,18 +62,23 @@ def timeout(parser, xml_parent, data):
         - timeout:
             timeout: 90
             fail: true
+            type: absolute
     """
     twrapper = XML.SubElement(xml_parent,
                               'hudson.plugins.build__timeout.'
                               'BuildTimeoutWrapper')
-    tminutes = XML.SubElement(twrapper, 'timeoutMinutes')
-    tminutes.text = str(data['timeout'])
-    failbuild = XML.SubElement(twrapper, 'failBuild')
-    fail = data.get('fail', False)
-    if fail:
-        failbuild.text = 'true'
-    else:
-        failbuild.text = 'false'
+    XML.SubElement(twrapper, 'timeoutMinutes').text = str(
+        data.get('timeout', 3))
+    XML.SubElement(twrapper, 'failBuild').text = str(
+        data.get('fail', 'false')).lower()
+    XML.SubElement(twrapper, 'writingDescription').text = str(
+        data.get('write-desc', 'false')).lower()
+    XML.SubElement(twrapper, 'timeoutPercentage').text = str(
+        data.get('elastic-percentage', 0))
+    XML.SubElement(twrapper, 'timeoutMinutesElasticDefault').text = str(
+        data.get('elastic-default-min', 3))
+    XML.SubElement(twrapper, 'timeoutType').text = str(
+        data.get('type', 'absolute'))
 
 
 def timestamps(parser, xml_parent, data):
