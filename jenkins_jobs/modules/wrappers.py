@@ -464,6 +464,37 @@ def release(parser, xml_parent, data):
                                      builder)
 
 
+def pre_scm_buildstep(parser, xml_parent, data):
+    """yaml: pre-scm-buildstep
+    Execute a Buils Step before running the SCM
+    Requires the Jenkins `pre-scm-buildstep.
+    <https://wiki.jenkins-ci.org/display/JENKINS/pre-scm-buildstep>`_
+
+    :arg buildsteps list: List of build steps to execute
+        :Buildstep: * **shell** (`str`) -- shell script to execute
+
+    Example::
+
+      wrappers:
+        - pre-scm-buildstep:
+          - shell: |
+              #!/bin/bash
+              echo "Doing somethiung cool"
+          - shell: |
+              #!/bin/zsh
+              echo "Doing somethin cool with zsh"
+    """
+    bsp = XML.SubElement(xml_parent,
+                         'org.jenkinsci.plugins.preSCMbuildstep.'
+                         'PreSCMBuildStepsWrapper')
+    bs = XML.SubElement(bsp, 'buildSteps')
+    for step_dict in data:
+        step_type, content = step_dict.iteritems().next()
+        if step_type == 'shell':
+            step = XML.SubElement(bs, 'hudson.tasks.Shell')
+            XML.SubElement(step, 'command').text = str(content)
+
+
 class Wrappers(jenkins_jobs.modules.base.Base):
     sequence = 80
 

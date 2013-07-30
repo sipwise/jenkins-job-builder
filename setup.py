@@ -170,6 +170,8 @@ setuptools.setup(
             'jclouds=jenkins_jobs.modules.wrappers:jclouds',
             'build-user-vars=jenkins_jobs.modules.wrappers:build_user_vars',
             'release=jenkins_jobs.modules.wrappers:release',
+            ('pre-scm-buildstep='
+             'jenkins_jobs.modules.wrappers:pre_scm_buildstep'),
         ],
         'jenkins_jobs.modules': [
             'general=jenkins_jobs.modules.general:General',
