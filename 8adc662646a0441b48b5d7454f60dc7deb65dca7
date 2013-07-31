@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//Zzw\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-07-31T18:47:28Z",
+      "side": 1,
+      "message": "typo: \u0027Buils\u0027",
+      "revId": "8adc662646a0441b48b5d7454f60dc7deb65dca7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Zzo\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-07-31T18:47:28Z",
+      "side": 1,
+      "message": "missing the word \"plugin\".",
+      "revId": "8adc662646a0441b48b5d7454f60dc7deb65dca7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
