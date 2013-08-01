@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQn//U8s\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-01T21:50:48Z",
+      "side": 1,
+      "message": "not sure if it matters, but most of the other plugins specify \u0027str\u0027 instead of \u0027string\u0027.  maybe just nice to be consistent.",
+      "revId": "109ced0091a5c87ee95fef396a3049f9c6278f24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//U8g\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-01T21:50:48Z",
+      "side": 1,
+      "message": "backwards, should be type of variable before variable name.",
+      "revId": "109ced0091a5c87ee95fef396a3049f9c6278f24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//U8Y\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-01T21:50:48Z",
+      "side": 1,
+      "message": "backwards here as well.",
+      "revId": "109ced0091a5c87ee95fef396a3049f9c6278f24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//U9A\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-01T21:50:48Z",
+      "side": 1,
+      "message": "would be nice to have examples for rest of the options added",
+      "revId": "109ced0091a5c87ee95fef396a3049f9c6278f24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//U84\u003d",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 2
@@ -30,6 +98,23 @@
       "writtenOn": "2013-08-01T21:47:10Z",
       "side": 1,
       "message": "timeoutPercentage and timeoutMinutesElasticDefault only make sense in the context of the elastic timeout type. Our existing job are absolute but have these options included. Are these options ignored in that case? or should we consider only conditionally including them if the type is elastic?\n\nSee http://logs.openstack.org/29/39329/2/check/jenkins-job-builder-compare-xml/e76afa4/ for info on the changes this produces for our existing jobs.",
+      "revId": "109ced0091a5c87ee95fef396a3049f9c6278f24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//U7w\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-01T21:50:48Z",
+      "side": 1,
+      "message": "probably should make force lower case for type.",
       "revId": "109ced0091a5c87ee95fef396a3049f9c6278f24",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
