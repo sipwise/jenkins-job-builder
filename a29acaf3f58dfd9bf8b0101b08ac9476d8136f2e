@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//U6U\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-01T22:03:21Z",
+      "side": 1,
+      "message": "s/a Buils/a build",
+      "revId": "a29acaf3f58dfd9bf8b0101b08ac9476d8136f2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//U6A\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-01T22:03:21Z",
+      "side": 1,
+      "message": "backwards, should specify variable type before variable name",
+      "revId": "a29acaf3f58dfd9bf8b0101b08ac9476d8136f2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//U5Y\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-01T22:03:21Z",
+      "side": 1,
+      "message": "is this neccessary?",
+      "revId": "a29acaf3f58dfd9bf8b0101b08ac9476d8136f2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//U4M\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-01T22:03:21Z",
+      "side": 1,
+      "message": "should this not be? ..\n-pre-scm-buildstep:\n    buildsteps:\n           -shell: |",
+      "revId": "a29acaf3f58dfd9bf8b0101b08ac9476d8136f2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
