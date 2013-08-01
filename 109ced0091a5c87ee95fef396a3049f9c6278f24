@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//U84\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-08-01T21:47:10Z",
+      "side": 1,
+      "message": "I think that we shouldn\u0027t default to 3 here. If you want timeouts and don\u0027t provide a timeout that should be an error which the old code produced.",
+      "revId": "109ced0091a5c87ee95fef396a3049f9c6278f24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//U8o\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-08-01T21:47:10Z",
+      "side": 1,
+      "message": "timeoutPercentage and timeoutMinutesElasticDefault only make sense in the context of the elastic timeout type. Our existing job are absolute but have these options included. Are these options ignored in that case? or should we consider only conditionally including them if the type is elastic?\n\nSee http://logs.openstack.org/29/39329/2/check/jenkins-job-builder-compare-xml/e76afa4/ for info on the changes this produces for our existing jobs.",
+      "revId": "109ced0091a5c87ee95fef396a3049f9c6278f24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
