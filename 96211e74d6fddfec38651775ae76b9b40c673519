@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//WNo\u003d",
+        "filename": "doc/source/conf.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2013-08-01T16:53:04Z",
+      "side": 0,
+      "message": "Does something else set the version in the docs now, or do we not want it set?",
+      "revId": "96211e74d6fddfec38651775ae76b9b40c673519",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

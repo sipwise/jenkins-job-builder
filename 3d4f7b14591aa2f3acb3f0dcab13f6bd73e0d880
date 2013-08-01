@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//WNQ\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2013-08-01T16:53:04Z",
+      "side": 1,
+      "message": "I don\u0027t think d2to1 is needed any more, it is?",
+      "revId": "3d4f7b14591aa2f3acb3f0dcab13f6bd73e0d880",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//WMk\u003d",
+        "filename": "setup.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2013-08-01T16:53:04Z",
+      "side": 1,
+      "message": "The newer version of pbr wants pbr\u003dTrue and no longer needs d2to1.",
+      "revId": "3d4f7b14591aa2f3acb3f0dcab13f6bd73e0d880",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
