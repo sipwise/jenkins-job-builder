@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//U+8\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-08-01T21:38:45Z",
+      "side": 1,
+      "message": "Does reference refer to a git reference or an actual repo? If it refers to an actually repo I think this key should be called something else. Maybe reference-repo. Looks like internally the plugin uses \u0027reference\u0027 for the same value but if reference does not refer to a git ref that will be confusing.",
+      "revId": "dff6335b89e45462dc0bbb0fb44ad8d3beb6cd17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
