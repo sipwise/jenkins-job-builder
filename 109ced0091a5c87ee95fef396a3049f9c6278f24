@@ -87,6 +87,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//TYw\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-02T08:37:16Z",
+      "side": 1,
+      "message": "timeoutMinutes is only needed for absolute type, if we want to force the user to specify the needed options for each type I can do it, but it will get a little more complicated, but I don\u0027t think that we should do that only for absolute type in any case.\n\nBtw. I goit it from the default the plugin sets for the version 1.11\n\nSay the word and I\u0027ll implement the restrictive parameters logic.",
+      "parentUuid": "AAAAQn//U84\u003d",
+      "revId": "109ced0091a5c87ee95fef396a3049f9c6278f24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//U8o\u003d",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 2
@@ -104,6 +122,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//Tc0\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-02T08:37:16Z",
+      "side": 1,
+      "message": "If you check the generated xml for a job that uses this plugin, it includes all the options but only take into account those that matter for the current type of timeout.\n\nTimeoutMinutes only makes sense for absolute type too.",
+      "parentUuid": "AAAAQn//U8o\u003d",
+      "revId": "109ced0091a5c87ee95fef396a3049f9c6278f24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//U7w\u003d",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 2
@@ -115,6 +151,24 @@
       "writtenOn": "2013-08-01T21:50:48Z",
       "side": 1,
       "message": "probably should make force lower case for type.",
+      "revId": "109ced0091a5c87ee95fef396a3049f9c6278f24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Tc4\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-02T08:37:16Z",
+      "side": 1,
+      "message": "likelyStuck is not lowercase, using lowercase for the values will force me to use a mapping between the value the user entered and the value the plugin expects. Can be done but will complicate the logic. How important is it?",
+      "parentUuid": "AAAAQn//U7w\u003d",
       "revId": "109ced0091a5c87ee95fef396a3049f9c6278f24",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
