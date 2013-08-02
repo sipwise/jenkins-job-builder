@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//TCQ\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-02T11:32:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//U6U\u003d",
+      "revId": "a29acaf3f58dfd9bf8b0101b08ac9476d8136f2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//U6A\u003d",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-01T22:03:21Z",
       "side": 1,
       "message": "backwards, should specify variable type before variable name",
+      "revId": "a29acaf3f58dfd9bf8b0101b08ac9476d8136f2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//TCM\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-02T11:32:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//U6A\u003d",
       "revId": "a29acaf3f58dfd9bf8b0101b08ac9476d8136f2e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//TCU\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-02T11:32:45Z",
+      "side": 1,
+      "message": "Better explicit than implicit ;)\nIf it really bothers you I can put it away, maybe it\u0027s worth documenting it a bit more and show an example with different build steps. What do you think?",
+      "parentUuid": "AAAAQn//U5Y\u003d",
+      "revId": "a29acaf3f58dfd9bf8b0101b08ac9476d8136f2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//U4M\u003d",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 3
@@ -64,6 +118,24 @@
       "writtenOn": "2013-08-01T22:03:21Z",
       "side": 1,
       "message": "should this not be? ..\n-pre-scm-buildstep:\n    buildsteps:\n           -shell: |",
+      "revId": "a29acaf3f58dfd9bf8b0101b08ac9476d8136f2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//TCc\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-02T11:32:45Z",
+      "side": 1,
+      "message": "There\u0027s no need for them to be grouped under the buildsteps option as there are no other options. And being consistent with previous patches, if the extra level is not needed it should not be there.\nDon\u0027t you agree?",
+      "parentUuid": "AAAAQn//U4M\u003d",
       "revId": "a29acaf3f58dfd9bf8b0101b08ac9476d8136f2e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
