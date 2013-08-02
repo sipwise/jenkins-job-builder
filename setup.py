@@ -143,6 +143,7 @@ setuptools.setup(
             'text-finder=jenkins_jobs.modules.publishers:text_finder',
             'html-publisher=jenkins_jobs.modules.publishers:html_publisher',
             'post-tasks=jenkins_jobs.modules.publishers:post_tasks',
+            'robot=jenkins_jobs.modules.publishers:robot',
         ],
         'jenkins_jobs.scm': [
             'git=jenkins_jobs.modules.scm:git',
