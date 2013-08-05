@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//Mn4\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-05T16:28:41Z",
+      "side": 1,
+      "message": "my problem with this doc is that it doesn\u0027t provide any value and doesn\u0027t the below example already serve as an sample?",
+      "parentUuid": "AAAAQn//TCU\u003d",
+      "revId": "a29acaf3f58dfd9bf8b0101b08ac9476d8136f2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//U4M\u003d",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 3
@@ -136,6 +154,24 @@
       "side": 1,
       "message": "There\u0027s no need for them to be grouped under the buildsteps option as there are no other options. And being consistent with previous patches, if the extra level is not needed it should not be there.\nDon\u0027t you agree?",
       "parentUuid": "AAAAQn//U4M\u003d",
+      "revId": "a29acaf3f58dfd9bf8b0101b08ac9476d8136f2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Mmw\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-05T16:28:41Z",
+      "side": 1,
+      "message": "ok.  I don\u0027t think it\u0027s always consistent.  I just happend to find another plugin in jjb that is more explicit in how it groups the arguments.  Anyways i guess i\u0027m ok either way on this one.",
+      "parentUuid": "AAAAQn//TCc\u003d",
       "revId": "a29acaf3f58dfd9bf8b0101b08ac9476d8136f2e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
