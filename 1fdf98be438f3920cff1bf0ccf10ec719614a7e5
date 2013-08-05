@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//MdQ\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1120,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-05T17:15:07Z",
+      "side": 1,
+      "message": "i think you need to do a data.get here like the rest of the variables above.",
+      "revId": "1fdf98be438f3920cff1bf0ccf10ec719614a7e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
