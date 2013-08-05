@@ -16,6 +16,24 @@
       "revId": "1fdf98be438f3920cff1bf0ccf10ec719614a7e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//MaA\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1120,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-05T17:29:55Z",
+      "side": 1,
+      "message": "no need to, matrix trigger I do that 3 lines up. But I might want to do a str() of it before calling upper.",
+      "parentUuid": "AAAAQn//MdQ\u003d",
+      "revId": "1fdf98be438f3920cff1bf0ccf10ec719614a7e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
