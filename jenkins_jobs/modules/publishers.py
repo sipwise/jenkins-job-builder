@@ -1980,6 +1980,251 @@ def xml_summary(parser, xml_parent, data):
     XML.SubElement(summary, 'name').text = data['files']
 
 
+def warnings(parser, xml_parent, data):
+    """yaml: warnings
+    Generate trend report for compiler warnings in the console log or
+    in log files.  Requires the Jenkins `Warnings Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Warnings+Plugin>`_
+
+    :arg list console-log-parser: The parser to use to scan the console
+        log (default '')
+    :arg str workspace-file-pattern: Fileset 'includes' setting that
+        specifies the files to scan for warnings
+    :arg list workspace-file-parser: The parser to use to scan the files
+        provided in workspace-file-pattern (default '')
+    :arg str warnings-to-include: Comma separated list of regular
+        expressions that specifies the files to include in the report
+        (based on their absolute filename).  If this field is empty then
+        all files are included (default '')
+    :arg str warning-to-ignore: Comma separated list of regular expressions
+        that specifies the files to exclude from the report (based on their
+        absolute filename). (default '')
+    :arg bool run-always: By default, this plug-in runs only for stable or
+        unstable builds, but not for failed builds.  If this plug-in
+        should run even for failed builds then activate this. (default false)
+    :arg bool detect-modules: Determines if Ant or Maven modules should be
+        detected for all files that contain warnings.  Activating this
+        option may increase your build time since the detector scans
+        the whole workspace for 'build.xml' or 'pom.xml' files in order
+        to assign the correct module names. (default false)
+    :arg bool resolve-relative-paths: Determines if relative paths in
+        warnings should be resolved using a time expensive operation that
+        scans the whole workspace for matching files.  Deactivate this
+        option if you encounter performance problems.  (default false)
+    :arg int health-threshold-high: The upper threshold for the build
+        health.  If left empty then no health report is created.  If
+        the actual number of warnings is between the provided
+        thresholds then the build health is interpolated (default '')
+    :arg int health-threshold-low: The lower threshold for the build
+        health.  See health-threshold-high.  (default '')
+    :arg dict health-priorities: Determines which warning priorities
+        should be considered when evaluating the build health (default
+        all-priorities)
+
+        :health-priorities values:
+          * **priority-high** -- Only priority high
+          * **high-and-normal** -- Priorities high and normal
+          * **all-priorities** -- All priorities
+    :arg dict total-thresholds: If the number of total warnings is greater
+        than one of these thresholds then a build is considered as unstable
+        or failed, respectively. (default '')
+        :total-thresholds:
+            * **unstable** (`dict`)
+                :unstable: * **total-all** (`int`)
+                           * **total-high** (`int`)
+                           * **total-normal** (`int`)
+                           * **total-low** (`int`)
+            * **failed** (`dict`)
+                :failed: * **total-all** (`int`)
+                         * **total-high** (`int`)
+                         * **total-normal** (`int`)
+                         * **total-low** (`int`)
+    :arg dict new-thresholds: If the specified number of new warnings exceeds
+        one of these thresholds then a build is considered as unstable or
+        failed, respectively.  (default '')
+        :new-thresholds:
+            * **unstable** (`dict`)
+                :unstable: * **new-all** (`int`)
+                           * **new-high** (`int`)
+                           * **new-normal** (`int`)
+                           * **new-low** (`int`)
+            * **failed** (`dict`)
+                :failed: * **new-all** (`int`)
+                         * **new-high** (`int`)
+                         * **new-normal** (`int`)
+                         * **new-high** (`int`)
+    :arg bool use-delta-for-new-warnings:  If set then the number of new
+        warnings is calculated by subtracting the total number of warnings
+        of the current build from the reference build. This may lead to wrong
+        results if you have both fixed and new warnings in a build. If not set,
+        then the number of new warnings is calculated by an asymmetric set
+        difference of the warnings in the current and reference build. This
+        will find all new warnings even if the number of total warnings is
+        decreasing. However, sometimes false positives will be reported due
+        to minor changes in a warning (refactoring of variable of method
+        names, etc.) (default false)
+    :arg bool only-use-stable-builds-as-reference: The number of new warnings
+        will be calculated based on the last stable build, allowing reverts
+        of unstable builds where the number of warnings was decreased.
+        (default false)
+    :arg str default-encoding: Default encoding when parsing or showing files
+        Leave empty to use default encoding of platform (default '')
+
+    Example::
+
+      publishers:
+        - warnings:
+            console-log-parser:
+              - FxCop
+              - CodeAnalysis
+            workspace-file-pattern:
+              - '**/*.out'
+              - '**/*.warnings'
+            workspace-file-parser:
+              - AcuCobol Compiler
+              - FxCop
+            warnings-to-include: '[a-zA-Z]\.java,[a-zA-Z]\.cpp'
+            warnings-to-ignore: '[a-zA-Z]\.html,[a-zA-Z]\.js'
+            run-always: true
+            detect-modules: true
+            resolve-relative-paths: true
+            health-threshold-high: 50
+            health-threshold-low: 25
+            health-priorities: high-and-normal
+            total-thresholds:
+                unstable:
+                    total-all: 100
+                    total-high: 100
+                    total-normal: 50
+                    total-low: 10
+                failed:
+                    total-all: 100
+                    total-high: 1
+                    total-normal: 5
+                    total-low: 10
+            new-thresholds:
+                unstable:
+                    new-all: 100
+                    new-high: 50
+                    new-normal: 30
+                    new-low: 10
+                failed:
+                    new-all: 100
+                    new-high: 1
+                    new-normal: 5
+                    new-low: 7
+            use-delta-for-new-warnings: true
+            only-use-stable-builds-as-reference: true
+            default-encoding: ISO-8859-9
+    """
+    warnings = XML.SubElement(xml_parent,
+                              'hudson.plugins.warnings.'
+                              'WarningsPublisher')
+    console = XML.SubElement(warnings, 'consoleParsers')
+    for parser in data.get('console-log-parser', ''):
+        console_parser = XML.SubElement(console,
+                                        'hudson.plugins.warnings.'
+                                        'ConsoleParser')
+        XML.SubElement(console_parser, 'parserName').text = parser
+    workspace_patterns = 0
+    workspace = XML.SubElement(warnings, 'parserConfigurations')
+    for pattern in data.get('workspace-file-pattern', ''):
+        workspace_patterns = workspace_patterns + 1
+    workspace_parsers = 0
+    for parser in data.get('workspace-file-parser', ''):
+        workspace_parsers = workspace_parsers + 1
+    if workspace_parsers != workspace_patterns:
+        raise Exception("You do not have the same number of parsers" +
+                        " as patterns, they should be equal")
+    index = 0
+    for pattern in data.get('workspace-file-pattern', ''):
+        workspace_pattern = XML.SubElement(workspace,
+                                           'hudson.plugins.warnings.'
+                                           'ParserConfiguration')
+        XML.SubElement(workspace_pattern, 'pattern').text = pattern
+        parser = data.get('workspace-file-parser', '')
+        XML.SubElement(workspace_pattern, 'parserName').text = \
+            parser[index]
+        index = index + 1
+    warnings_to_include = data.get('warnings-to-include', '')
+    XML.SubElement(warnings, 'includePattern').text = warnings_to_include
+    warnings_to_ignore = data.get('warnings-to-ignore', '')
+    XML.SubElement(warnings, 'excludePattern').text = warnings_to_ignore
+    run_always = str(data.get('run-always', 'false')).lower()
+    XML.SubElement(warnings, 'canRunOnFailed').text = run_always
+    detect_modules = str(data.get('detect-modules', 'false')).lower()
+    XML.SubElement(warnings, 'shouldDetectModules').text = detect_modules
+    #Note the logic reversal (included here to match the GUI)
+    if data.get('resolve-relative-paths', False):
+        XML.SubElement(warnings, 'doNotResolveRelativePaths').text = 'false'
+    else:
+        XML.SubElement(warnings, 'doNotResolveRelativePaths').text = 'true'
+    health_threshold_high = str(data.get('health-threshold-high', ''))
+    XML.SubElement(warnings, 'healthy').text = health_threshold_high
+    health_threshold_low = str(data.get('health-threshold-low', ''))
+    XML.SubElement(warnings, 'unHealthy').text = health_threshold_low
+    prioritiesdict = {'priority-high': 'high',
+                      'high-and-normal': 'normal',
+                      'all-priorities': 'low'}
+    priority = data.get('health-priorities', 'all-priorities')
+    if priority not in prioritiesdict:
+        raise Exception("Health-Priority entered is not valid must be one " +
+                        "of: priority-high, high-and-normal, all-priorities")
+    XML.SubElement(warnings, 'thresholdLimit').text = prioritiesdict[priority]
+    td = XML.SubElement(warnings, 'thresholds')
+    tthresholds = data.get('total-thresholds', {})
+    tunstable = tthresholds.get('unstable', {})
+    tfailed = tthresholds.get('failed', {})
+    nthresholds = data.get('new-thresholds', {})
+    nunstable = nthresholds.get('unstable', {})
+    nfailed = nthresholds.get('failed', {})
+    val = str(tunstable.get('total-all', ''))
+    XML.SubElement(td, 'unstableTotalAll').text = val
+    val = str(tunstable.get('total-high', ''))
+    XML.SubElement(td, 'unstableTotalHigh').text = val
+    val = str(tunstable.get('total-normal', ''))
+    XML.SubElement(td, 'unstableTotalNormal').text = val
+    val = str(tunstable.get('total-low', ''))
+    XML.SubElement(td, 'unstableTotalLow').text = val
+    val = str(tfailed.get('total-all', ''))
+    XML.SubElement(td, 'failedTotalAll').text = val
+    val = str(tfailed.get('total-high', ''))
+    XML.SubElement(td, 'failedTotalHigh').text = val
+    val = str(tfailed.get('total-normal', ''))
+    XML.SubElement(td, 'failedTotalNormal').text = val
+    val = str(tfailed.get('total-low', ''))
+    XML.SubElement(td, 'failedTotalLow').text = val
+    if data.get('new-thresholds', False):
+        XML.SubElement(warnings, 'dontComputeNew').text = 'false'
+        val = str(nunstable.get('new-all', ''))
+        XML.SubElement(td, 'unstableNewAll').text = val
+        val = str(nunstable.get('new-high', ''))
+        XML.SubElement(td, 'unstableNewHigh').text = val
+        val = str(nunstable.get('new-normal', ''))
+        XML.SubElement(td, 'unstableNewNormal').text = val
+        val = str(nunstable.get('new-low', ''))
+        XML.SubElement(td, 'unstableNewLow').text = val
+        val = str(nfailed.get('new-all', ''))
+        XML.SubElement(td, 'failedNewAll').text = val
+        val = str(nfailed.get('new-high', ''))
+        XML.SubElement(td, 'failedNewHigh').text = val
+        val = str(nfailed.get('new-normal', ''))
+        XML.SubElement(td, 'failedNewNormal').text = val
+        val = str(nfailed.get('new-low', ''))
+        XML.SubElement(td, 'failedNewLow').text = val
+        delta = data.get('use-delta-for-new-warnings', False)
+        XML.SubElement(warnings, 'useDeltaValues').text = str(delta).lower()
+        use_stable_builds = data.get('only-use-stable-builds-as-reference', 'false')
+        XML.SubElement(warnings, 'useStableBuildAsReference').text = str(
+            use_stable_builds).lower()
+    else:
+        XML.SubElement(warnings, 'dontComputeNew').text = 'true'
+        XML.SubElement(warnings, 'useStableBuildAsReference').text = 'false'
+        XML.SubElement(warnings, 'useDeltaValues').text = 'false'
+    encoding = data.get('default-encoding', '')
+    XML.SubElement(warnings, 'defaultEncoding').text = encoding
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
