@@ -33,6 +33,24 @@
       "revId": "3393b39fce1166f52824f45b2ba4c0111e125549",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Hfk\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-08-06T22:50:42Z",
+      "side": 1,
+      "message": "Actually we want to keep pyflakes as we are gating on it. These sections can be removed once the flake8 stuff merges and Zuul has been told to stop running the pyflakes job.",
+      "parentUuid": "AAAAQn//Hgs\u003d",
+      "revId": "3393b39fce1166f52824f45b2ba4c0111e125549",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
