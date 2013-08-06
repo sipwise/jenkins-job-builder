@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//Hg8\u003d",
+        "filename": "test-requirements.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-08-06T22:45:56Z",
+      "side": 1,
+      "message": "I would prefer to simply depend on hacking so that it can install whichever versions of pep8, flake8, and pyflakes it wants.",
+      "revId": "3393b39fce1166f52824f45b2ba4c0111e125549",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Hgs\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-08-06T22:45:56Z",
+      "side": 1,
+      "message": "pyflakes is redundant with flake8 you can remove this section and remove pyflakes from the list on line 2.",
+      "revId": "3393b39fce1166f52824f45b2ba4c0111e125549",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
