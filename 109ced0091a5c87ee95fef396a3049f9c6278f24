@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//GXY\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-07T07:49:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//U8s\u003d",
+      "revId": "109ced0091a5c87ee95fef396a3049f9c6278f24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//U8g\u003d",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-01T21:50:48Z",
       "side": 1,
       "message": "backwards, should be type of variable before variable name.",
+      "revId": "109ced0091a5c87ee95fef396a3049f9c6278f24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//GXc\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-07T07:49:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//U8g\u003d",
       "revId": "109ced0091a5c87ee95fef396a3049f9c6278f24",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//GXg\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-07T07:49:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//U8Y\u003d",
+      "revId": "109ced0091a5c87ee95fef396a3049f9c6278f24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//U9A\u003d",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2013-08-01T21:50:48Z",
       "side": 1,
       "message": "would be nice to have examples for rest of the options added",
+      "revId": "109ced0091a5c87ee95fef396a3049f9c6278f24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//GXk\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-07T07:49:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//U9A\u003d",
       "revId": "109ced0091a5c87ee95fef396a3049f9c6278f24",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +295,24 @@
       "side": 1,
       "message": "I\u0027d actually prefer \u0027likely-stuck\u0027 to match the existing yaml style.",
       "parentUuid": "AAAAQn//Tc4\u003d",
+      "revId": "109ced0091a5c87ee95fef396a3049f9c6278f24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//GXs\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-07T07:49:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//H1k\u003d",
       "revId": "109ced0091a5c87ee95fef396a3049f9c6278f24",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
