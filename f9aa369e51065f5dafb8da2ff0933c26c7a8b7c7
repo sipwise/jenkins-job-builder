@@ -16,6 +16,24 @@
       "revId": "f9aa369e51065f5dafb8da2ff0933c26c7a8b7c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//Gco\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2004,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-07T07:13:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//H2Q\u003d",
+      "revId": "f9aa369e51065f5dafb8da2ff0933c26c7a8b7c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
