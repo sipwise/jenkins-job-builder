@@ -16,6 +16,24 @@
       "revId": "96211e74d6fddfec38651775ae76b9b40c673519",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//C8g\u003d",
+        "filename": "doc/source/conf.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 4162
+      },
+      "writtenOn": "2013-08-07T23:34:09Z",
+      "side": 0,
+      "message": "Yes, PBR does.  However, this assumes you use PBR to build sphinx.  We could add a check, if version was not set to manually import version_info.",
+      "parentUuid": "AAAAQn//WNo\u003d",
+      "revId": "96211e74d6fddfec38651775ae76b9b40c673519",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

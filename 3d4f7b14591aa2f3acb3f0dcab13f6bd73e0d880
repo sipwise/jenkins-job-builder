@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn//C8Q\u003d",
+        "filename": "requirements.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4162
+      },
+      "writtenOn": "2013-08-07T23:34:09Z",
+      "side": 1,
+      "message": "removing",
+      "parentUuid": "AAAAQn//HkY\u003d",
+      "revId": "3d4f7b14591aa2f3acb3f0dcab13f6bd73e0d880",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//WMk\u003d",
         "filename": "setup.py",
         "patchSetId": 2
@@ -48,6 +66,24 @@
       "writtenOn": "2013-08-01T16:53:04Z",
       "side": 1,
       "message": "The newer version of pbr wants pbr\u003dTrue and no longer needs d2to1.",
+      "revId": "3d4f7b14591aa2f3acb3f0dcab13f6bd73e0d880",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//C8E\u003d",
+        "filename": "setup.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4162
+      },
+      "writtenOn": "2013-08-07T23:34:09Z",
+      "side": 1,
+      "message": "ack\u0027d",
+      "parentUuid": "AAAAQn//WMk\u003d",
       "revId": "3d4f7b14591aa2f3acb3f0dcab13f6bd73e0d880",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
