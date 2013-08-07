@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//DEE\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-08-07T22:54:50Z",
+      "side": 1,
+      "message": "I\u0027m afraid this might create some confusion when --no-cache is used with that option.\n\nGiven the following invocations:\n\n  jenkins_jobs update jobs.yaml  # Make sure Jenkins is up-to-date.\n  jenkins_jobs  --no-cache update jobs.yaml job1\n  jenkins_jobs update jobs.yaml job2\n\nI could expect that the update of job2 would be a no-op, but since the cache has been flushed, job2 will be updated anyway.\n\nSupporting that usage would probably involve some logic in CacheStorage, but renaming the option to be more explicit (--flush-cache?) would be fine for me.",
+      "revId": "976f36284c2f43365254266e6c6287a0196307c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
