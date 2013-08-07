@@ -16,6 +16,24 @@
       "revId": "d243dd075ff82b71bcc00c3ba86364df09f4110d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//DFI\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-07T22:52:10Z",
+      "side": 1,
+      "message": "When manually adding a parameter with an empty description via the interface, the generated XML element is empty.\n\nWith that in mind, should I update to use an empty string?",
+      "parentUuid": "AAAAQn//DF0\u003d",
+      "revId": "d243dd075ff82b71bcc00c3ba86364df09f4110d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
