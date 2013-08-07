@@ -27,6 +27,7 @@ import pkg_resources
 import logging
 import copy
 import itertools
+import fnmatch
 from jenkins_jobs.errors import JenkinsJobsException
 
 logger = logging.getLogger(__name__)
@@ -53,6 +54,19 @@ def deep_format(obj, paramdict):
     else:
         ret = obj
     return ret
+
+
+def matches(what, where):
+    """
+    Checks if the given string matches again te given list of glob patterns
+
+    :arg str what: String that we want to test if matches
+    :arg list where: list of glob patters to match
+    """
+    for pattern in where:
+        if re.match(fnmatch.translate(pattern), what):
+            return True
+    return False
 
 
 class YamlParser(object):
@@ -114,7 +128,7 @@ class YamlParser(object):
                         changed = True
 
         for job in self.data.get('job', {}).values():
-            if jobs_filter and job['name'] not in jobs_filter:
+            if jobs_filter and not matches(job['name'], jobs_filter):
                 continue
             logger.debug("XMLifying job '{0}'".format(job['name']))
             job = self.applyDefaults(job)
@@ -199,7 +213,7 @@ class YamlParser(object):
                 # We also want to skip XML generation whenever the user did
                 # not ask for that job.
                 job_name = expanded.get('name')
-                if jobs_filter and job_name not in jobs_filter:
+                if jobs_filter and not matches(job_name, jobs_filter):
                     continue
 
                 logger.debug("Generating XML for template job {0}"
@@ -401,6 +415,7 @@ class Jenkins(object):
 
     def delete_job(self, job_name):
         if self.is_job(job_name):
+            logger.info("Deleting job {0}".format(job_name))
             self.jenkins.delete_job(job_name)
 
     def get_jobs(self):
@@ -425,10 +440,17 @@ class Builder(object):
         self.global_config = config
         self.ignore_cache = ignore_cache
 
-    def delete_job(self, name):
-        self.jenkins.delete_job(name)
-        if(self.cache.is_cached(name)):
-            self.cache.set(name, '')
+    def load_files(self, fn):
+        if os.path.isdir(fn):
+            files_to_process = [os.path.join(fn, f)
+                                for f in os.listdir(fn)
+                                if (f.endswith('.yml') or f.endswith('.yaml'))]
+        else:
+            files_to_process = [fn]
+        self.parser = YamlParser(self.global_config)
+        for in_file in files_to_process:
+            logger.debug("Parsing YAML file {0}".format(in_file))
+            self.parser.parse(in_file)
 
     def delete_old_managed(self, keep):
         jobs = self.jenkins.get_jobs()
@@ -439,30 +461,29 @@ class Builder(object):
                             .format(job['name']))
                 self.delete_job(job['name'])
 
+    def delete_job(self, fn, names):
+        self.load_files(fn)
+        self.parser.generateXML(names)
+        for job in self.parser.jobs:
+            if names and not matches(job.name, names):
+                continue
+            self.jenkins.delete_job(job.name)
+            if(self.cache.is_cached(job.name)):
+                self.cache.set(job.name, '')
+
     def delete_all_jobs(self):
         jobs = self.jenkins.get_jobs()
         for job in jobs:
             self.delete_job(job['name'])
 
     def update_job(self, fn, names=None, output_dir=None):
-        if os.path.isdir(fn):
-            files_to_process = [os.path.join(fn, f)
-                                for f in os.listdir(fn)
-                                if (f.endswith('.yml') or f.endswith('.yaml'))]
-        else:
-            files_to_process = [fn]
-        parser = YamlParser(self.global_config)
-        for in_file in files_to_process:
-            logger.debug("Parsing YAML file {0}".format(in_file))
-            parser.parse(in_file)
-        if names:
-            logger.debug("Will filter out jobs not in %s" % names)
-        parser.generateXML(names)
+        self.load_files(fn)
+        self.parser.generateXML(names)
 
-        parser.jobs.sort(lambda a, b: cmp(a.name, b.name))
+        self.parser.jobs.sort(lambda a, b: cmp(a.name, b.name))
 
-        for job in parser.jobs:
-            if names and job.name not in names:
+        for job in self.parser.jobs:
+            if names and not matches(job.name, names):
                 continue
             if output_dir:
                 if names:
@@ -485,4 +506,4 @@ class Builder(object):
                 self.cache.set(job.name, md5)
             else:
                 logger.debug("'{0}' has not changed".format(job.name))
-        return parser.jobs
+        return self.parser.jobs
