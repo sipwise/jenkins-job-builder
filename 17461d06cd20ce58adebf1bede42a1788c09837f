@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn//DPg\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-08-07T22:35:18Z",
+      "side": 1,
+      "message": "nit: configuration.",
+      "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//DIg\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-08-07T22:35:18Z",
+      "side": 1,
+      "message": "optional: often the default is given as a boolean expression (False / True). The str() is required since yaml creates booleans and not strings when it sees a value like \"true\".\n\nThis is purely a matter of style.",
+      "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//DJw\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-08-07T22:35:18Z",
+      "side": 1,
+      "message": "Why did you added a call to str?",
+      "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//DJg\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-08-07T22:35:18Z",
+      "side": 1,
+      "message": "Empty strings, list, etc. are coerced to False in an boolean condition [1]. This can be written:\n\n  if dyn_trigger:\n\n[1] http://docs.python.org/3/reference/expressions.html#booleans",
+      "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//DJ0\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-08-07T22:35:18Z",
+      "side": 1,
+      "message": "From what I can see in Jenkins, these tags are included by default (even though with a value \u0027false\u0027).\n\nIf I understand correctly your comment in Iad3e61eabd0acd057ad45df7784fa7788246172c, omitting them is even an error : if a user successively enable and disable dynamic trigger configuration, the enabled configuration will be kept.\n\nThis means it would be more correct to do:\n\n  dyn_trigger \u003d str(data.get(\u0027dynamic-trigger-url\u0027, \u0027\u0027))\n  XML.SubElement(gtrig, \u0027dynamicTriggerConfiguration\u0027).text \u003d \u0027true\u0027 if dyn_trigger else \u0027false\u0027\n  XML.SubElement(gtrig, \u0027triggerConfigURL\u0027).text \u003d dyn_trigger\n\n?",
+      "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
