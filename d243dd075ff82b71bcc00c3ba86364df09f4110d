@@ -34,6 +34,24 @@
       "revId": "d243dd075ff82b71bcc00c3ba86364df09f4110d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn//DDg\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-08-07T22:58:08Z",
+      "side": 1,
+      "message": "If you use an empty string I think you will get \u003cdescription\u003e\u003c/description\u003e which if I interpret your comment correctly is what you get from Jenkins.",
+      "parentUuid": "AAAAQn//DFI\u003d",
+      "revId": "d243dd075ff82b71bcc00c3ba86364df09f4110d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
