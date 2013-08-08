@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn/++5o\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1990,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-08-08T22:54:20Z",
+      "side": 1,
+      "message": "There can be several parsers, so console-log-parsers?",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/++/E\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1992,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-08-08T22:54:20Z",
+      "side": 1,
+      "message": "According to the code, this is a list, not a scalar string.",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/+++A\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1995,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-08-08T22:54:20Z",
+      "side": 1,
+      "message": "workspace-file-pattern and workspace-file-parser work together. The lists must have the same size and order matters. This is not very obvious and error-prone for the user.\n\nWould it be possible to design the configuration so that related options are close together? What comes to mind is something like:\n\n  - warnings:\n      workspace-file-scanners:\n        - file-pattern: \u0027**/*.out\u0027\n          scanner: \"AcuCobol Compiler\"\n        - file-pattern: \u0027**/*.warnings\u0027\n          scanner: FxCop\n\nThat is, workspace-file-scanners would be a list of dictionaries, each with two entries.\n\nThe check done 2135-2142 could disappear that way.",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/++8M\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1999,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-08-08T22:54:20Z",
+      "side": 1,
+      "message": "optional: Replace \"If the field is emtpy ... (default \u0027\u0027)\" by \"By default all files are included\" ?\n\nThis formulation avoid detours between what Jenkins expects and how JJB provides the value.",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/++8E\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2000,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-08-08T22:54:20Z",
+      "side": 1,
+      "message": "warning-to-ignore --\u003e warnings-to-ignore. The code already has the s.",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/++7w\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2005,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-08-08T22:54:20Z",
+      "side": 1,
+      "message": "optional: in the same spirit as for line 1999, perhaps replace \"If this plug-in ...\" by something like \"Set to true if the plug-in should run even for failed builds. (default false)\" ?",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/++50\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2107,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-08-08T22:54:20Z",
+      "side": 1,
+      "message": "This is off-topic, but shouldn\u0027t failed thresholds be higher than unstable thresholds? :)",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/++5U\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2128,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-08-08T22:54:20Z",
+      "side": 1,
+      "message": "nit: data.get(\u0027console-log-parser\u0027, []), while here equivalent, would show the intent more clearly, since a yaml list is expected.",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/++4Y\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2136,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-08-08T22:54:20Z",
+      "side": 1,
+      "message": "This can be done more efficiently:\n\n  file_patterns \u003d data.get(\u0027workspace-file-pattern\u0027, [])\n  workspace_patterns \u003d len(file_patterns)\n\nThis will probably need to be adjusted is the configuration options are modified (see my comment line 1995).",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/++4U\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2138,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-08-08T22:54:20Z",
+      "side": 1,
+      "message": "nit, similar to line 2128:\n\n  for parser in data.get(\u0027workspace-file-parser\u0027, []):",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/++34\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2144,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-08-08T22:54:20Z",
+      "side": 1,
+      "message": "nit: use [] for the default value.",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/++2Y\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2170,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-08-08T22:54:20Z",
+      "side": 1,
+      "message": "Rename to prioritiesDict.",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/++14\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2176,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-08-08T22:54:20Z",
+      "side": 1,
+      "message": "prioritiesDict can be reused to prevent duplication:\n\n  raise Exception(\"Health-Priority entered is not valid must be one \" +\n                  \"of\" +  \", \".join(prioritiesDict.keys()))",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
