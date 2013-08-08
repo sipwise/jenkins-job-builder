@@ -47,8 +47,11 @@ def deep_format(obj, paramdict):
             ret.append(deep_format(item, paramdict))
     elif isinstance(obj, dict):
         ret = {}
-        for item in obj:
-            ret[item] = deep_format(obj[item], paramdict)
+        try:
+            for item in obj:
+                ret[item] = deep_format(obj[item], paramdict)
+        except KeyError:
+            ret = obj
     else:
         ret = obj
     return ret
