@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn/+6vU\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 7017
+      },
+      "writtenOn": "2013-08-09T22:30:12Z",
+      "side": 1,
+      "message": "Sigh :( From what I remember, this was a pretty consistent idiom in JJB. I guess I was wrong.\n\nI\u0027ve pushed a proposal in I54087b5487c7186fcc4ee70ea9b28c1a1002a547.",
+      "parentUuid": "AAAAQn/++Ls\u003d",
+      "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn/++Og\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 1
