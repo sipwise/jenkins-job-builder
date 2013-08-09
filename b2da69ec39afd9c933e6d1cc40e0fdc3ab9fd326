@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn/+8/A\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1990,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-08-09T12:44:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn/++5o\u003d",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn/++/E\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-08-08T22:54:20Z",
       "side": 1,
       "message": "According to the code, this is a list, not a scalar string.",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/+8+8\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1992,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-08-09T12:44:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn/++/E\u003d",
       "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn/+8+o\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1999,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-08-09T12:44:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn/++8M\u003d",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn/++8E\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 4
@@ -81,6 +135,24 @@
       "writtenOn": "2013-08-08T22:54:20Z",
       "side": 1,
       "message": "warning-to-ignore --\u003e warnings-to-ignore. The code already has the s.",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/+8+k\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2000,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-08-09T12:44:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn/++8E\u003d",
       "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn/+8+g\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2005,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-08-09T12:44:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn/++7w\u003d",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn/++50\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 4
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn/+8+Q\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2107,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-08-09T12:44:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn/++50\u003d",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn/++5U\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 4
@@ -132,6 +240,24 @@
       "writtenOn": "2013-08-08T22:54:20Z",
       "side": 1,
       "message": "nit: data.get(\u0027console-log-parser\u0027, []), while here equivalent, would show the intent more clearly, since a yaml list is expected.",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/+8+M\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2128,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-08-09T12:44:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn/++5U\u003d",
       "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -172,6 +298,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn/+898\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2138,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-08-09T12:44:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn/++4U\u003d",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn/++34\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 4
@@ -183,6 +327,24 @@
       "writtenOn": "2013-08-08T22:54:20Z",
       "side": 1,
       "message": "nit: use [] for the default value.",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/+890\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2144,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-08-09T12:44:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn/++34\u003d",
       "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +368,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn/+89w\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2170,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-08-09T12:44:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn/++2Y\u003d",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn/++14\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 4
@@ -217,6 +397,24 @@
       "writtenOn": "2013-08-08T22:54:20Z",
       "side": 1,
       "message": "prioritiesDict can be reused to prevent duplication:\n\n  raise Exception(\"Health-Priority entered is not valid must be one \" +\n                  \"of\" +  \", \".join(prioritiesDict.keys()))",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/+89g\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2176,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-08-09T12:44:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn/++14\u003d",
       "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
