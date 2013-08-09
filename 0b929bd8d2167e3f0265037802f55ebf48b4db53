@@ -16,6 +16,24 @@
       "revId": "0b929bd8d2167e3f0265037802f55ebf48b4db53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/+9zE\u003d",
+        "filename": "setup.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-09T06:54:00Z",
+      "side": 1,
+      "message": "This is to break the string into multiple lines to avoid passing the 80 columns line length",
+      "parentUuid": "AAAAQn/++KY\u003d",
+      "revId": "0b929bd8d2167e3f0265037802f55ebf48b4db53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
