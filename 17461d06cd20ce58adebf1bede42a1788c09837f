@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAQn/++LE\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-09T04:20:47Z",
+      "side": 1,
+      "message": "s/posibility/possibility",
+      "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//DPg\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 1
@@ -36,6 +53,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn/++Ls\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-09T04:20:47Z",
+      "side": 1,
+      "message": "Unfortunately, style isn\u0027t consistency across the project. If we prefer one style, we should update everything to show the example.",
+      "parentUuid": "AAAAQn//DIg\u003d",
+      "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/++Og\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-09T04:20:47Z",
+      "side": 1,
+      "message": "Default value in above doc is false. Which one is good?",
+      "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//DJw\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 1
@@ -47,6 +99,24 @@
       "writtenOn": "2013-08-07T22:35:18Z",
       "side": 1,
       "message": "Why did you added a call to str?",
+      "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/++MM\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-09T04:20:47Z",
+      "side": 1,
+      "message": "Ditto. Same comment for all the occurrences below, except ones where boolean values are expected.",
+      "parentUuid": "AAAAQn//DJw\u003d",
       "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +151,23 @@
       "writtenOn": "2013-08-07T22:35:18Z",
       "side": 1,
       "message": "From what I can see in Jenkins, these tags are included by default (even though with a value \u0027false\u0027).\n\nIf I understand correctly your comment in Iad3e61eabd0acd057ad45df7784fa7788246172c, omitting them is even an error : if a user successively enable and disable dynamic trigger configuration, the enabled configuration will be kept.\n\nThis means it would be more correct to do:\n\n  dyn_trigger \u003d str(data.get(\u0027dynamic-trigger-url\u0027, \u0027\u0027))\n  XML.SubElement(gtrig, \u0027dynamicTriggerConfiguration\u0027).text \u003d \u0027true\u0027 if dyn_trigger else \u0027false\u0027\n  XML.SubElement(gtrig, \u0027triggerConfigURL\u0027).text \u003d dyn_trigger\n\n?",
+      "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/++OA\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-09T04:20:47Z",
+      "side": 1,
+      "message": "typo s/sucessful-message/successful-message",
       "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
