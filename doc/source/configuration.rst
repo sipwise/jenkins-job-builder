@@ -287,6 +287,23 @@ definitions unless they specify a different Default object with the
 
 Will set the job description for every job created.
 
+Defaults can inherit each other.  The effective defaults is the
+conjunction of all inherited defaults.  The set of defaults to
+inherit from is specified using the name ``inherit``.  Inheriting
+from the defaults ``global``, if wanted, must be explicit. For
+example, the following defaults are equivalent, given the previous
+declaration of ``global``::
+
+  - defaults:
+      name: linux-jobs-inherited
+      inherit: global
+      node: linux
+
+  - defaults:
+      name: linux-jobs
+      description: 'Do not edit this job through the web!'
+      node:linux
+
 
 Modules
 -------
