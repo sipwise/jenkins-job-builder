@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn/+8eU\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1995,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-08-09T15:15:01Z",
+      "side": 1,
+      "message": "Done\nThis way is much nicer!",
+      "parentUuid": "AAAAQn/+++A\u003d",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn/++8M\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 4
@@ -275,6 +293,24 @@
       "writtenOn": "2013-08-08T22:54:20Z",
       "side": 1,
       "message": "This can be done more efficiently:\n\n  file_patterns \u003d data.get(\u0027workspace-file-pattern\u0027, [])\n  workspace_patterns \u003d len(file_patterns)\n\nThis will probably need to be adjusted is the configuration options are modified (see my comment line 1995).",
+      "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/+8eM\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2136,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-08-09T15:15:01Z",
+      "side": 1,
+      "message": "I might have this done",
+      "parentUuid": "AAAAQn/++4Y\u003d",
       "revId": "b2da69ec39afd9c933e6d1cc40e0fdc3ab9fd326",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
