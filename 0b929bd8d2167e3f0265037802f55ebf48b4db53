@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn/++KY\u003d",
+        "filename": "setup.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-09T04:25:54Z",
+      "side": 1,
+      "message": "did we all miss this?  Is there a reason to put this definition inside of ()?",
+      "revId": "0b929bd8d2167e3f0265037802f55ebf48b4db53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
