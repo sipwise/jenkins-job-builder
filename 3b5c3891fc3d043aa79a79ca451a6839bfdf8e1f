@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQn/++IQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-09T04:56:34Z",
+      "side": 1,
+      "message": "s/ot/or",
+      "revId": "3b5c3891fc3d043aa79a79ca451a6839bfdf8e1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/++IY\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-09T04:56:34Z",
+      "side": 1,
+      "message": "Why not write-description ?",
+      "revId": "3b5c3891fc3d043aa79a79ca451a6839bfdf8e1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/++IU\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-09T04:56:34Z",
+      "side": 1,
+      "message": "Would \u0027default-elastic-timeout\u0027 or \u0027elastic-default-timeout\u0027 be a better name? I feel it should at least contain the word \u0027timeout\u0027.",
+      "revId": "3b5c3891fc3d043aa79a79ca451a6839bfdf8e1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
