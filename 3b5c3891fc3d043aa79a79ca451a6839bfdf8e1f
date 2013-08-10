@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn/+9yo\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-10T08:17:41Z",
+      "side": 1,
+      "message": "Just because is shorter. But I agree that it\u0027s not common in the code to shorten option names.",
+      "parentUuid": "AAAAQn/++IY\u003d",
+      "revId": "3b5c3891fc3d043aa79a79ca451a6839bfdf8e1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn/++IU\u003d",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 3
