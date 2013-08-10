@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn/+5+0\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-10T08:29:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//DPg\u003d",
+      "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//DIg\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 1
@@ -89,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn/+5+4\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-10T08:29:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//DIg\u003d",
+      "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn/++Og\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 1
@@ -100,6 +136,24 @@
       "writtenOn": "2013-08-09T04:20:47Z",
       "side": 1,
       "message": "Default value in above doc is false. Which one is good?",
+      "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/+5+8\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-10T08:29:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn/++Og\u003d",
       "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -141,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn/+9x0\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-10T08:29:15Z",
+      "side": 1,
+      "message": "Because even if a boolean value is not expected, the user can pass a boolean value and that this way I make sure that I get what I expect, a string (if later I want to use lower, upper or any string method, then I\u0027m sure that I will not get the wrong type).",
+      "parentUuid": "AAAAQn/++MM\u003d",
+      "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn//DJg\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 1
@@ -152,6 +224,24 @@
       "writtenOn": "2013-08-07T22:35:18Z",
       "side": 1,
       "message": "Empty strings, list, etc. are coerced to False in an boolean condition [1]. This can be written:\n\n  if dyn_trigger:\n\n[1] http://docs.python.org/3/reference/expressions.html#booleans",
+      "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/+5/M\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-10T08:29:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//DJg\u003d",
       "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -175,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQn/+5/A\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-10T08:29:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn//DJ0\u003d",
+      "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn/++OA\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 1
@@ -186,6 +294,24 @@
       "writtenOn": "2013-08-09T04:20:47Z",
       "side": 1,
       "message": "typo s/sucessful-message/successful-message",
+      "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQn/+5/E\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-08-10T08:29:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn/++OA\u003d",
       "revId": "17461d06cd20ce58adebf1bede42a1788c09837f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
