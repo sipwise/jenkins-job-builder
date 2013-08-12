@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//7FY\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 827,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-12T22:44:28Z",
+      "side": 1,
+      "message": "When 2nd parameter is not provided, None is used. Removing the 2nd parameter would allow code simplification. In fact, conditional statement can now be simplified to:\n\n  if nodeLabelName and nodeLabel:",
+      "revId": "98e3eedd568d1e947e1df6a7d66a2d2684379bc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
