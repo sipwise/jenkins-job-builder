@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//7/0\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-08-12T19:15:25Z",
+      "side": 1,
+      "message": "Isn\u0027t default_to_resolve a root here and thus won\u0027t have an inherit key? I think you should parent_defaults \u003d defaults[default_to_resolve] instead and maybe change default_to_resolve to use a different more clear name. eg \u0027root\u0027",
+      "revId": "1cf189285992209c5479e3c4ef58c980a0511bda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//79o\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-08-12T19:15:25Z",
+      "side": 1,
+      "message": "Would it be possible to build a proper graph and iterate through it once? This seems a bit brute force.",
+      "revId": "1cf189285992209c5479e3c4ef58c980a0511bda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
