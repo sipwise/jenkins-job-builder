@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//8zc\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-12T16:16:15Z",
+      "side": 1,
+      "message": "Please include default value in documentation. The value is false.",
+      "revId": "5d8e83d3eb78957a093a7a5b9b01ad4bb0de3dcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//80c\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 901,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-12T16:16:15Z",
+      "side": 1,
+      "message": "Those options should be marked as optional.",
+      "revId": "5d8e83d3eb78957a093a7a5b9b01ad4bb0de3dcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//80Q\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 902,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-12T16:16:15Z",
+      "side": 1,
+      "message": "Should be int.",
+      "revId": "5d8e83d3eb78957a093a7a5b9b01ad4bb0de3dcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//80E\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 919,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-12T16:16:15Z",
+      "side": 1,
+      "message": "timeout example should not have quotes.",
+      "revId": "5d8e83d3eb78957a093a7a5b9b01ad4bb0de3dcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//8z0\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1359,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-12T16:16:15Z",
+      "side": 1,
+      "message": "Code style uses single-quotes. Please use them for consistency.",
+      "revId": "5d8e83d3eb78957a093a7a5b9b01ad4bb0de3dcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
