@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAQ3//9xM\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2057,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-08-12T13:06:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn/+66s\u003d",
+      "revId": "ec9d9f8abba050849a8dfad3987381819564638f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAQn/+6xM\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 6
@@ -64,6 +82,24 @@
       "writtenOn": "2013-08-09T21:48:55Z",
       "side": 1,
       "message": "This looks fine, but I couldn\u0027t help myself to think it was possible to write this in a shorter way. This is my attempt, completely untested, which covers lines 2229 to 2278:\n\n  for base in [\"total\", \"new\"]:\n      thresholds \u003d data.get(\"%s-thresholds\" % base, {})\n      for status in [\"unstable\", \"failed\"]:\n          bystatus \u003d thresholds.get(status, {})\n          for level in [\"all\", \"high\", \"normal\", \"low\"]:\n              val \u003d str(bystatus.get(\"%s-%s\" % (base, level), \u0027\u0027))\n              XML.SubElement(td, \"%s%s%s\" % (\n                  status, base.capitalize(), level.capitalize()\n              ).txt \u003d val\n  if data.get(\u0027new-thresholds\u0027):\n      XML.SubElement(warnings, \u0027dontComputeNew\u0027).text \u003d \u0027false\u0027\n      delta \u003d data.get(\u0027use-delta-for-new-warnings\u0027, False)\n      XML.SubElement(warnings, \u0027useDeltaValues\u0027).text \u003d str(delta).lower()\n      use_stable_builds \u003d data.get(\u0027only-use-stable-builds-as-reference\u0027,\n                                   False)\n      XML.SubElement(warnings, \u0027useStableBuildAsReference\u0027).text \u003d str(\n        use_stable_builds).lower()\n  else:\n      XML.SubElement(warnings, \u0027dontComputeNew\u0027).text \u003d \u0027true\u0027\n      XML.SubElement(warnings, \u0027useStableBuildAsReference\u0027).text \u003d \u0027false\u0027\n      XML.SubElement(warnings, \u0027useDeltaValues\u0027).text \u003d \u0027false\u0027\n\nIt\u0027s shorter but more complex to understand at first. What do you think?",
+      "revId": "ec9d9f8abba050849a8dfad3987381819564638f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//9iY\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2268,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-08-12T13:06:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAQn/+6yQ\u003d",
       "revId": "ec9d9f8abba050849a8dfad3987381819564638f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
