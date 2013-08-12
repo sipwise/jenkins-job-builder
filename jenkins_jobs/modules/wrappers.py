@@ -44,6 +44,7 @@ def timeout(parser, xml_parent, data):
 
     :arg int timeout: Abort the build after this number of minutes
     :arg bool fail: Mark the build as failed (default false)
+    :arg bool fail-description: Write the build description after timeout
 
     Example::
 
@@ -51,6 +52,7 @@ def timeout(parser, xml_parent, data):
         - timeout:
             timeout: 90
             fail: true
+            fail-description: true
     """
     twrapper = XML.SubElement(xml_parent,
                               'hudson.plugins.build__timeout.'
@@ -63,6 +65,8 @@ def timeout(parser, xml_parent, data):
         failbuild.text = 'true'
     else:
         failbuild.text = 'false'
+    faildescription = str(data.get('fail-description', 'false')).lower()
+    XML.SubElement(twrapper, 'writingDescription').text = faildescription
 
 
 def timestamps(parser, xml_parent, data):
