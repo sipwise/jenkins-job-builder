@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//9CQ\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 830,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-12T15:20:26Z",
+      "side": 1,
+      "message": "could you maybe rename \u0027nodelabel\u0027?  It\u0027s slightly confusing because you\u0027ve already got \u0027nodeLabel\u0027 defined above.",
+      "revId": "170206d1164c31b9b3f3e3928ef94f7ab5f02132",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//9A8\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-12T15:20:26Z",
+      "side": 1,
+      "message": "better to use the boolean False type instead of string \u0027false\u0027.",
+      "revId": "170206d1164c31b9b3f3e3928ef94f7ab5f02132",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
