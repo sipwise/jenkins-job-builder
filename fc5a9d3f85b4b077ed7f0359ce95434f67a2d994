@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//7Zk\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1902,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-08-12T21:52:16Z",
+      "side": 1,
+      "message": "Should be a period instead of a colon at the end of this line. Thank you for fixing this.",
+      "revId": "fc5a9d3f85b4b077ed7f0359ce95434f67a2d994",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7XI\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2061,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-08-12T21:52:16Z",
+      "side": 1,
+      "message": "What do you think about calling this \u0027files-to-include\u0027 ? I expect a list of warnings with the current name. Same question about warnings-to-ignore being renamed files-to-ignore.",
+      "revId": "fc5a9d3f85b4b077ed7f0359ce95434f67a2d994",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7WY\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2209,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-08-12T21:52:16Z",
+      "side": 1,
+      "message": "warnings_to_include and warnings_to_ignore would need to be renamed here as well if my comments above are addressed.",
+      "revId": "fc5a9d3f85b4b077ed7f0359ce95434f67a2d994",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAQ3//7Vw\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2218,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-08-12T21:52:16Z",
+      "side": 1,
+      "message": "You could rewrite this if else to be XML.SubElement(warnings, \u0027doNotResolveRelativePaths\u0027).text \u003d str(not data.get(\u0027resolve-relative-paths\u0027, False)).lower()",
+      "revId": "fc5a9d3f85b4b077ed7f0359ce95434f67a2d994",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
