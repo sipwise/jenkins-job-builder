@@ -1,0 +1,10 @@
+Approved+1: James E. Blair <corvus@inaugust.com>
+Code-Review+2: James E. Blair <corvus@inaugust.com>
+Verified+2: Jenkins
+Code-Review+2: Arnaud Fabre <fabre.arnaud@gmail.com>
+Code-Review+2: Mathieu Gagné <mgagne@iweb.com>
+Submitted-by: Jenkins
+Submitted-at: Mon, 12 Aug 2013 22:52:45 +0000
+Reviewed-on: https://review.openstack.org/40651
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
