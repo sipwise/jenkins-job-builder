@@ -58,6 +58,8 @@ class General(jenkins_jobs.modules.base.Base):
         description = XML.SubElement(xml, 'description')
         description.text = data.get('description', '')
         XML.SubElement(xml, 'keepDependencies').text = 'false'
+        if 'display-name' in data:
+            XML.SubElement(xml, 'displayName').text = data['display-name']
         if data.get('disabled'):
             XML.SubElement(xml, 'disabled').text = 'true'
         else:
