@@ -58,6 +58,8 @@ class General(jenkins_jobs.modules.base.Base):
         description = XML.SubElement(xml, 'description')
         description.text = data.get('description', '')
         XML.SubElement(xml, 'keepDependencies').text = 'false'
+        if 'displayName' in data:
+            XML.SubElement(xml, 'displayName').text = data['displayName']
         if data.get('disabled'):
             XML.SubElement(xml, 'disabled').text = 'true'
         else:
@@ -83,7 +85,7 @@ class General(jenkins_jobs.modules.base.Base):
         if 'workspace' in data:
             XML.SubElement(xml, 'customWorkspace').text = \
                 str(data['workspace'])
-        if('quiet-period' in data):
+        if 'quiet-period' in data:
             XML.SubElement(xml, 'quietPeriod').text = str(data['quiet-period'])
         node = data.get('node', None)
         if node:
