@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAQ3//2hY\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-13T22:58:00Z",
+      "side": 1,
+      "message": "in the plugin it\u0027s actually called \u0027parameter filters\u0027 so why not give it the same name?",
+      "revId": "167d26416040e41ca8a6697ed9ec88cdbe77764b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
