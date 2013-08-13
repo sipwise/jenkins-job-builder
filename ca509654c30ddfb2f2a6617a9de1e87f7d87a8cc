@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Approved+1: Arnaud Fabre <fabre.arnaud@gmail.com>
+Code-Review+1: Arnaud Fabre <fabre.arnaud@gmail.com>
+Code-Review+2: Mathieu Gagné <mgagne@iweb.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 13 Aug 2013 20:48:17 +0000
+Reviewed-on: https://review.openstack.org/40973
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
