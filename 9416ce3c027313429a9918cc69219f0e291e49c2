@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASX//6HE\u003d",
+        "filename": "jenkins_jobs/modules/general.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-08-23T21:54:12Z",
+      "side": 1,
+      "message": "display-name is the documented key. You should check if \u0027display-name\u0027 is in data.",
+      "revId": "9416ce3c027313429a9918cc69219f0e291e49c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASX//6G8\u003d",
+        "filename": "jenkins_jobs/modules/general.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-08-23T21:54:12Z",
+      "side": 1,
+      "message": "After making the change on line 61 you will need to set the text to data[\u0027display-name\u0027].",
+      "revId": "9416ce3c027313429a9918cc69219f0e291e49c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
