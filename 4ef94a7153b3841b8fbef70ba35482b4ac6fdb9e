@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//86c\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2276,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-27T16:13:34Z",
+      "side": 1,
+      "message": "pattern is pretty generic, might be nicer if this variable was named \u0027report-files\u0027?",
+      "revId": "4ef94a7153b3841b8fbef70ba35482b4ac6fdb9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
