@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//7vA\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2278,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-27T20:21:55Z",
+      "side": 1,
+      "message": "Other plugins are documenting default value like this: (default \u0027**/sloccount.sc\u0027)\n\nI would like you to update for better consistency.",
+      "revId": "efe2ad727c05e4eea475a8da6b9e4e6f14d9ec4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7vM\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2284,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-27T20:21:55Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "efe2ad727c05e4eea475a8da6b9e4e6f14d9ec4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
