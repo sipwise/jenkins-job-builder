@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//84Y\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2291,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-27T16:33:24Z",
+      "side": 1,
+      "message": "missing type? probably should be \"arg: list series: ..\"",
+      "revId": "ffd2cb2a1a17e6da6efb1ea08caa27492b8bdbce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//85Q\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2301,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-27T16:33:24Z",
+      "side": 1,
+      "message": "should not have colon after arg.",
+      "revId": "ffd2cb2a1a17e6da6efb1ea08caa27492b8bdbce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//85M\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2304,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-27T16:33:24Z",
+      "side": 1,
+      "message": "should not have colon after arg",
+      "revId": "ffd2cb2a1a17e6da6efb1ea08caa27492b8bdbce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//85I\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2306,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-27T16:33:24Z",
+      "side": 1,
+      "message": "should not have colon after arg",
+      "revId": "ffd2cb2a1a17e6da6efb1ea08caa27492b8bdbce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//85E\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2313,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-27T16:33:24Z",
+      "side": 1,
+      "message": "should not have colon after arg",
+      "revId": "ffd2cb2a1a17e6da6efb1ea08caa27492b8bdbce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//81E\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2357,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-27T16:33:24Z",
+      "side": 1,
+      "message": "shouldn\u0027t this validation go before the previous line?",
+      "revId": "ffd2cb2a1a17e6da6efb1ea08caa27492b8bdbce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//8yg\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2368,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-27T16:33:24Z",
+      "side": 1,
+      "message": "Better to use the False boolean type than false string.  something like this..\n\nstr(data.get(\u0027displayTable\u0027, False)).lower()",
+      "revId": "ffd2cb2a1a17e6da6efb1ea08caa27492b8bdbce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//8zA\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2380,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-08-27T16:33:24Z",
+      "side": 1,
+      "message": "Better to use the False boolean type than false string",
+      "revId": "ffd2cb2a1a17e6da6efb1ea08caa27492b8bdbce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
