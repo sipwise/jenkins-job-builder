@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//7dE\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2276,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-27T21:26:14Z",
+      "side": 1,
+      "message": "Should be marked as optional or (default \u0027\u0027) should be added unless it is required.",
+      "revId": "93caff06a4285b72feb2cdd48fba936968e3ed60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7ew\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2279,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-27T21:26:14Z",
+      "side": 1,
+      "message": "Should be marked as int",
+      "revId": "93caff06a4285b72feb2cdd48fba936968e3ed60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7fY\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2285,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-27T21:26:14Z",
+      "side": 1,
+      "message": "This should be marked as bool.\n\nCan \"use-description\" be used instead?",
+      "revId": "93caff06a4285b72feb2cdd48fba936968e3ed60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7fI\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2288,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-27T21:26:14Z",
+      "side": 1,
+      "message": "When checked -\u003e When enabled",
+      "revId": "93caff06a4285b72feb2cdd48fba936968e3ed60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7eo\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2299,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-27T21:26:14Z",
+      "side": 1,
+      "message": "Should be marked as bool",
+      "revId": "93caff06a4285b72feb2cdd48fba936968e3ed60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7eE\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2305,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-27T21:26:14Z",
+      "side": 1,
+      "message": "What would happen if this value is not provided?",
+      "revId": "93caff06a4285b72feb2cdd48fba936968e3ed60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7eA\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2315,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-27T21:26:14Z",
+      "side": 1,
+      "message": "Missing closing parenthesis.",
+      "revId": "93caff06a4285b72feb2cdd48fba936968e3ed60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7e4\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2328,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-27T21:26:14Z",
+      "side": 1,
+      "message": "Should be false, not \u0027false\u0027.",
+      "revId": "93caff06a4285b72feb2cdd48fba936968e3ed60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//7eU\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2336,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-27T21:26:14Z",
+      "side": 1,
+      "message": "Should be true, not \u0027true\u0027.",
+      "revId": "93caff06a4285b72feb2cdd48fba936968e3ed60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
