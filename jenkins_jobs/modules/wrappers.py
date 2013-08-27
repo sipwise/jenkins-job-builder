@@ -119,7 +119,11 @@ def ansicolor(parser, xml_parent, data):
     Requires the Jenkins `Ansi Color Plugin.
     <https://wiki.jenkins-ci.org/display/JENKINS/AnsiColor+Plugin>`_
 
-    :arg string colormap: (optional) color mapping to use
+    :arg array colormap: (optional) color mapping to use (Default xterm)
+    :colormap values:
+      * **xterm**
+      * **vga**
+      * **css**
 
     Examples::
 
@@ -136,9 +140,10 @@ def ansicolor(parser, xml_parent, data):
         'hudson.plugins.ansicolor.AnsiColorBuildWrapper')
 
     # Optional colormap
-    colormap = data.get('colormap')
-    if colormap:
-        XML.SubElement(cwrapper, 'colorMapName').text = colormap
+    colormap = data.get('colormap', 'xterm')
+    if colormap not in ['xterm', 'vga', 'css']:
+        raise Exception("color-map must be one of xterm, vga, or css")
+    XML.SubElement(cwrapper, 'colorMapName').text = colormap
 
 
 def mask_passwords(parser, xml_parent, data):
