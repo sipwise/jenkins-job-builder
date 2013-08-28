@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//1jo\u003d",
+        "filename": "setup.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T23:38:23Z",
+      "side": 1,
+      "message": "You will have to rebase against master. The list got sorted and will cause a merge conflict when approved.",
+      "revId": "cd43aa19207a237c5ab741fd28e60dfe9af9aff9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
