@@ -2298,6 +2298,117 @@ def sloccount(parser, xml_parent, data):
     XML.SubElement(top, 'encoding').text = data.get('charset', 'UTF-8')
 
 
+def ircbot(parser, xml_parent, data):
+    """yaml: ircbot
+    ircbot enables Jenkins to send build notifications via IRC and lets you
+    interact with Jenkins via an IRC bot.
+
+    See `ircbot Plugin page:
+    <https://wiki.jenkins-ci.org/display/JENKINS/IRC+Plugin>`_
+
+    :arg list strategy: When to send notifications
+
+        :strategy values:
+            * **all** `dic` always (default)
+            * **any_failure** `dic` on any failure_and_fixed
+            * **failure_and_fixed** `dic` on failure and fixes
+            * **new_failure_and_fixed** `dic` on new failure and fixes
+            * **statechange_only** `dic` only on state change
+    :arg bool notify-start: Whether to send notifications to channels when a
+                           build starts
+                           (default: false)
+    :arg bool notify-committers: Whether to send notifications to the users
+                                that are suspected of having broken this build
+                                (default: false)
+    :arg bool notify-culprits: Also send notifications to 'culprits' from
+                              previous unstable/failed builds
+                              (default: false)
+    :arg bool notify-upstream: Whether to send notifications to upstream
+                              committers if no committers were found for a
+                              broken build
+                              (default: false)
+    :arg bool notify-fixers: Whether to send notifications to the users that
+                            have fixed a broken build
+                            (default: false)
+    :arg list message-type: Channel Notification Message.
+        * **summary-scm** (`dict`) for summary + SCM changes (default)
+        * **summary** (`dict`) for summary only
+        * **summary-params** (`dict`) for summary + build parameters
+        * **summary-scm-fail** (`dict`) for summary + SCM changes + failures)
+    :arg list channels: list channels definitions
+                        If empty, it takes channel from Jenkins configuration.
+                        (default: empty)
+
+        :channels values:
+            * **name** (`str`) Channel name
+            * **password** (`str`) Channel password (optional)
+            * **notify-only** (`bool`) Set to true if you want to disallow bot
+                                       commands (default: false)
+
+    Example::
+
+      publishers:
+        - ircbot:
+            strategy: all
+            notify-start: false
+            notify-committers: false
+            notify-culprits: false
+            notify-upstream: false
+            notify-fixers: false
+            message-type: summary-scm
+            channels:
+                - name: '#jenkins-channel1'
+                  password: secrete
+                  notify-only: false
+                - name: '#jenkins-channel2'
+                  notify-only: true
+
+    """
+    top = XML.SubElement(xml_parent, 'hudson.plugins.ircbot.IrcPublisher')
+    message_dict = {'summary-scm': 'DefaultBuildToChatNotifier',
+                    'summary': 'SummaryOnlyBuildToChatNotifier',
+                    'summary-params': 'BuildParametersBuildToChatNotifier',
+                    'summary-scm-fail': 'PrintFailingTestsBuildToChatNotifier'}
+    message = data.get('message-type', 'summary-scm')
+    if message not in message_dict:
+        raise Exception("message-type entered is not valid, must be one of: " +
+                        "summary-scm, summary-params, summary-scm-fail or " +
+                        "summary")
+    message = "hudson.plugins.im.build_notify." + message_dict.get(message)
+    XML.SubElement(top, 'buildToChatNotifier', attrib={'class': message})
+    strategy_dict = {'all': 'ALL',
+                     'any_failure': 'ANY_FAILURE',
+                     'failure_and_fixed': 'FAILURE_AND_FIXED',
+                     'new_failure_and_fixed': 'NEW_FAILURE_AND_FIXED',
+                     'statechange_only': 'STATECHANGE_ONLY'}
+    strategy = data.get('strategy', 'all')
+    if strategy not in strategy_dict:
+        raise Exception("strategy entered is not valid, must be one of: " +
+                        "all, any_failure, failure_and_fixed or " +
+                        "new_failure_and_fixed, statechange_only")
+    XML.SubElement(top, 'strategy').text = strategy_dict.get(strategy)
+    targets = XML.SubElement(top, 'targets')
+    channels = data.get('channels', [])
+    for channel in channels:
+        sub = XML.SubElement(targets,
+                             'hudson.plugins.im.GroupChatIMMessageTarget')
+        XML.SubElement(sub, 'name').text = channel.get('name')
+        XML.SubElement(sub, 'password').text = channel.get('password')
+        XML.SubElement(sub, 'notificationOnly').text = str(
+            channel.get('notify-only', False)).lower()
+    XML.SubElement(top, 'notifyOnBuildStart').text = str(
+        data.get('notify-start', False)).lower()
+    XML.SubElement(top, 'notifySuspects').text = str(
+        data.get('notify-committers', False)).lower()
+    XML.SubElement(top, 'notifyCulprits').text = str(
+        data.get('notify-culprits', False)).lower()
+    XML.SubElement(top, 'notifyFixers').text = str(
+        data.get('notify-fixers', False)).lower()
+    XML.SubElement(top, 'notifyUpstreamCommitters').text = str(
+        data.get('notify-upstream', False)).lower()
+    XML.SubElement(top, 'matrixMultiplier').text = 'ONLY_CONFIGURATIONS'
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
