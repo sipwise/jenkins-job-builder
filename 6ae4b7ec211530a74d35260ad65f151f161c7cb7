@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//8fg\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T02:51:13Z",
+      "side": 1,
+      "message": "s/color-map/colormap until it gets renamed.",
+      "revId": "6ae4b7ec211530a74d35260ad65f151f161c7cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
