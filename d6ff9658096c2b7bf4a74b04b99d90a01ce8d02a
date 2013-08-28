@@ -70,6 +70,24 @@
       "revId": "d6ff9658096c2b7bf4a74b04b99d90a01ce8d02a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//1hk\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T23:47:05Z",
+      "side": 1,
+      "message": "I don\u0027t see a consensus in the doc. string is fine with me.",
+      "parentUuid": "AAAASn//2oQ\u003d",
+      "revId": "d6ff9658096c2b7bf4a74b04b99d90a01ce8d02a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
