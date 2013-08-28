@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+2: Clark Boylan <clark.boylan@gmail.com>
+Approved+1: Mathieu Gagné <mgagne@iweb.com>
+Code-Review+2: Mathieu Gagné <mgagne@iweb.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 28 Aug 2013 23:42:56 +0000
+Reviewed-on: https://review.openstack.org/44149
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
