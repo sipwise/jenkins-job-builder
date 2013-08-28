@@ -34,6 +34,24 @@
       "revId": "d6ff9658096c2b7bf4a74b04b99d90a01ce8d02a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//2ro\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T19:41:51Z",
+      "side": 1,
+      "message": "If ansicolor only accepts ONE value, it should be a string in doc\n\nAbout changing dict to array, it was for the implementation only (L144), not the documentation itself.",
+      "parentUuid": "AAAASn//21M\u003d",
+      "revId": "d6ff9658096c2b7bf4a74b04b99d90a01ce8d02a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
