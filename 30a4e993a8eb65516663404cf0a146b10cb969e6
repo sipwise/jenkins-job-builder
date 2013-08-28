@@ -1,0 +1,327 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//31g\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2277,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T16:25:08Z",
+      "side": 1,
+      "message": "I would like possible values to be documented like this one instead of inline:\n\nhttps://github.com/openstack-infra/jenkins-job-builder/blob/master/jenkins_jobs/modules/publishers.py#L1695-1702\n\nActual format is unusable/unreadable:\n\nhttp://docs-draft.openstack.org/32/44032/1/check/gate-jenkins-job-builder-docs/5c55be9/doc/build/html/publishers.html#publishers.ircbot",
+      "revId": "30a4e993a8eb65516663404cf0a146b10cb969e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//31Y\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2283,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T16:25:08Z",
+      "side": 1,
+      "message": "\u003d\u003e notify-start",
+      "revId": "30a4e993a8eb65516663404cf0a146b10cb969e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//31U\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2286,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T16:25:08Z",
+      "side": 1,
+      "message": "\u003d\u003e notify-commiters",
+      "revId": "30a4e993a8eb65516663404cf0a146b10cb969e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//31I\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2289,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T16:25:08Z",
+      "side": 1,
+      "message": "\u003d\u003e notify-culprits",
+      "revId": "30a4e993a8eb65516663404cf0a146b10cb969e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//304\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2292,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T16:25:08Z",
+      "side": 1,
+      "message": "\u003d\u003e notify-upstream",
+      "revId": "30a4e993a8eb65516663404cf0a146b10cb969e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//30s\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2296,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T16:25:08Z",
+      "side": 1,
+      "message": "\u003d\u003e notify-fixers",
+      "revId": "30a4e993a8eb65516663404cf0a146b10cb969e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//30o\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2299,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T16:25:08Z",
+      "side": 1,
+      "message": "Sam here, I would like possible values to be documented like this one instead of inline:\n\nhttps://github.com/openstack-infra/jenkins-job-builder/blob/master/jenkins_jobs/modules/publishers.py#L1695-1702",
+      "revId": "30a4e993a8eb65516663404cf0a146b10cb969e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//3rs\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2310,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T16:25:08Z",
+      "side": 1,
+      "message": "Better mark it as (optional)",
+      "revId": "30a4e993a8eb65516663404cf0a146b10cb969e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//3ro\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2311,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T16:25:08Z",
+      "side": 1,
+      "message": "\u003d\u003e notify-only",
+      "revId": "30a4e993a8eb65516663404cf0a146b10cb969e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//30Y\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2319,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T16:25:08Z",
+      "side": 1,
+      "message": "false",
+      "revId": "30a4e993a8eb65516663404cf0a146b10cb969e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//30U\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2320,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T16:25:08Z",
+      "side": 1,
+      "message": "false",
+      "revId": "30a4e993a8eb65516663404cf0a146b10cb969e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//30Q\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2321,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T16:25:08Z",
+      "side": 1,
+      "message": "false",
+      "revId": "30a4e993a8eb65516663404cf0a146b10cb969e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//30M\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2322,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T16:25:08Z",
+      "side": 1,
+      "message": "false",
+      "revId": "30a4e993a8eb65516663404cf0a146b10cb969e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//30E\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2323,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T16:25:08Z",
+      "side": 1,
+      "message": "false",
+      "revId": "30a4e993a8eb65516663404cf0a146b10cb969e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//3rg\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2341,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T16:25:08Z",
+      "side": 1,
+      "message": "\u003d\u003e summary-scm-fail or\n\nOr use:\n\n    raise Exception(\"message-type entered is not valid, must be one of: \" + \", \".join(message_dict.keys())",
+      "revId": "30a4e993a8eb65516663404cf0a146b10cb969e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//3qo\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2345,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T16:25:08Z",
+      "side": 1,
+      "message": "Please wrap 2nd item on new line for better readability",
+      "revId": "30a4e993a8eb65516663404cf0a146b10cb969e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//3qk\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2351,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T16:25:08Z",
+      "side": 1,
+      "message": "Same suggestion about the use of join() instead.",
+      "revId": "30a4e993a8eb65516663404cf0a146b10cb969e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//3wc\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2356,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T16:25:08Z",
+      "side": 1,
+      "message": "Default value of \u0027\u0027 is not required and is in fact misleading to the actual expected value which is an array.\n\nRemove the default value, it will fallback to None.",
+      "revId": "30a4e993a8eb65516663404cf0a146b10cb969e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//3w4\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2362,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T16:25:08Z",
+      "side": 1,
+      "message": "We try to avoid the use of backslashes. You can do this instead:\n\n    XML.SubElement(sub, \u0027notificationOnly\u0027).text \u003d str(\n        channel.get(\u0027notif-only\u0027, False)).lower()",
+      "revId": "30a4e993a8eb65516663404cf0a146b10cb969e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
