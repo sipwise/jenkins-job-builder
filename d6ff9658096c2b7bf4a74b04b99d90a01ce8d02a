@@ -16,6 +16,24 @@
       "revId": "d6ff9658096c2b7bf4a74b04b99d90a01ce8d02a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//21M\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-08-28T18:58:19Z",
+      "side": 1,
+      "message": "I don\u0027t think I understand.  I understand the second statement, that this line should be\nchanged back to :arg str colormap\nBut I don\u0027t understand what you mean by \"Can you provide a list of colormap?\"  Are \nyou asking if color map can take a list like:\nwrappers:\n  - ansicolor:\n    - vga\n    - css\n?  The answer to that is no.  Or are you asking about providing another argument that \nis a list?  Also, when I submitted the duplicate code for ansicolor you asked me to \nsubstitue dict for array as I originally had color-map as a dict.  That is why I changed \nit to array here instead of str, I can change it back to str if you want.",
+      "parentUuid": "AAAASn//3oc\u003d",
+      "revId": "d6ff9658096c2b7bf4a74b04b99d90a01ce8d02a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
