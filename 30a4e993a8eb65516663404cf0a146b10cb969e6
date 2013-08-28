@@ -322,6 +322,23 @@
       "revId": "30a4e993a8eb65516663404cf0a146b10cb969e6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//1j4\u003d",
+        "filename": "setup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T23:37:45Z",
+      "side": 1,
+      "message": "You will have to rebase against master. The list got sorted and will cause a merge conflict when approved.",
+      "revId": "30a4e993a8eb65516663404cf0a146b10cb969e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
