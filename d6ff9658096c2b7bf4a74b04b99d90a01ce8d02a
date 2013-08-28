@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//3oc\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-28T16:29:19Z",
+      "side": 1,
+      "message": "Can you actually provide a list of colormap? Type should stay string.",
+      "revId": "d6ff9658096c2b7bf4a74b04b99d90a01ce8d02a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
