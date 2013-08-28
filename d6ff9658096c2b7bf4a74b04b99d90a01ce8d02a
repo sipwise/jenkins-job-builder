@@ -52,6 +52,24 @@
       "revId": "d6ff9658096c2b7bf4a74b04b99d90a01ce8d02a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//2oQ\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-08-28T19:56:04Z",
+      "side": 1,
+      "message": "Ah ok cool.  I changed the docs back to have the parameter be a string.  I changed to back to `string` but I have also seen `str` in the docs, which is preferred?",
+      "parentUuid": "AAAASn//2ro\u003d",
+      "revId": "d6ff9658096c2b7bf4a74b04b99d90a01ce8d02a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
