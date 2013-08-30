@@ -30,7 +30,7 @@ import itertools
 from jenkins_jobs.errors import JenkinsJobsException
 
 logger = logging.getLogger(__name__)
-
+MAGIC_MANAGE_STRING = "\n\nManaged by Jenkins Job Builder"
 
 def deep_format(obj, paramdict):
     """Apply the paramdict via str.format() to all string objects found within
@@ -147,6 +147,7 @@ class YamlParser(object):
                         # Except name, since the group's name is not useful
                         d['name'] = project['name']
                         if template:
+                            d["description"] += MAGIC_MANAGE_STRING
                             self.getXMLForTemplateJob(d, template, jobs_filter)
                     continue
                 # see if it's a template
@@ -155,6 +156,7 @@ class YamlParser(object):
                     d = {}
                     d.update(project)
                     d.update(jobparams)
+                    d["description"] += MAGIC_MANAGE_STRING
                     self.getXMLForTemplateJob(d, template, jobs_filter)
 
     def getXMLForTemplateJob(self, project, template, jobs_filter=None):
@@ -391,6 +393,12 @@ class Jenkins(object):
     def get_jobs(self):
         return self.jenkins.get_jobs()
 
+    def is_managed(self, job_name):
+        xml = self.jenkins.get_job_config(job_name)
+        out = XML.fromstring(xml)
+        description = out.find(".//description").text or ""
+        return description.endswith(MAGIC_MANAGE_STRING)
+
 
 class Builder(object):
     def __init__(self, jenkins_url, jenkins_user, jenkins_password,
@@ -404,6 +412,13 @@ class Builder(object):
         self.jenkins.delete_job(name)
         if(self.cache.is_cached(name)):
             self.cache.set(name, '')
+
+    def delete_managed(self, keep):
+        jobs = self.jenkins.get_jobs()
+        for job in jobs:
+            if job['name'] not in keep and self.jenkins.is_managed(job['name']):
+                print "would delete {0}".format(job["name"])
+#                self.delete_job(job['name'])
 
     def delete_all_jobs(self):
         jobs = self.jenkins.get_jobs()
@@ -451,3 +466,4 @@ class Builder(object):
                 self.cache.set(job.name, md5)
             else:
                 logger.debug("'{0}' has not changed".format(job.name))
+        return parser.jobs
