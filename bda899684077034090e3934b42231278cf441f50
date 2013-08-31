@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//rO4\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2309,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-31T04:26:56Z",
+      "side": 1,
+      "message": "Copied from patch set 1:\n\nI would like possible values to be documented like this one instead of inline:\nhttps://github.com/openstack-infra/jenkins-job-builder/blob/master/jenkins_jobs/modules/publishers.py#L1695-\n\nActual format is unusable/unreadable:\nhttp://docs-draft.openstack.org/32/44032/2/check/gate-jenkins-job-builder-docs/8a326d1/doc/build/html/publishers.html#publishers.ircbot",
+      "revId": "bda899684077034090e3934b42231278cf441f50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//rO0\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2331,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-08-31T04:26:56Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "bda899684077034090e3934b42231278cf441f50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
