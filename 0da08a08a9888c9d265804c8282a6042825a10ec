@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//ooA\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2309,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-02T04:44:52Z",
+      "side": 1,
+      "message": "Should be string",
+      "revId": "0da08a08a9888c9d265804c8282a6042825a10ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//on8\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2312,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-02T04:44:52Z",
+      "side": 1,
+      "message": "Not sure what\u0027s the purpose of (`dic`). Should be removed.",
+      "revId": "0da08a08a9888c9d265804c8282a6042825a10ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//on4\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2333,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-02T04:44:52Z",
+      "side": 1,
+      "message": "Should be string",
+      "revId": "0da08a08a9888c9d265804c8282a6042825a10ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//on0\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2336,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-02T04:44:52Z",
+      "side": 1,
+      "message": "(`dict`) should be removed.",
+      "revId": "0da08a08a9888c9d265804c8282a6042825a10ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
