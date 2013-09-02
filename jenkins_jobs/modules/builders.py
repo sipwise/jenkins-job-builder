@@ -949,6 +949,33 @@ def grails(parser, xml_parent, data):
         data.get('refresh-dependencies', False)).lower()
 
 
+def sbt(parser, xml_parent, data):
+    """yaml: sbt
+    Execute a sbt build step. Requires the `Jenkins Sbt Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/sbt+plugin`_
+
+    :arg str name: Select a sbt installation to use (optional)
+    :arg str jvm-flags: Parameters to pass to the JVM (optional)
+    :arg str actions: Select the sbt tasks to execute (optional)
+    :arg str sbt-flags: Add flags to SBT launcher (optional)
+    :arg str subdirPath: Path relative to workspace to run sbt in (optional)
+
+
+    """
+    sbt = XML.SubElement(xml_parent, 'org.jvnet.hudson.plugins.'
+                                     'SbtPluginBuilder')
+    XML.SubElement(sbt, 'name').text = data.get(
+        'name', '')
+    XML.SubElement(sbt, 'jvmFlags').text = data.get(
+        'jvm-flags', '')
+    XML.SubElement(sbt, 'sbtFlags').text = data.get(
+        'sbt-flags', '')
+    XML.SubElement(sbt, 'actions').text = data.get(
+        'actions', '')
+    XML.SubElement(sbt, 'subdirPath').text = data.get(
+        'subdirPath', '')
+
+
 class Builders(jenkins_jobs.modules.base.Base):
     sequence = 60
 
