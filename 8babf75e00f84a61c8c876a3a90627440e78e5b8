@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//g14\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2306,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-03T22:15:51Z",
+      "side": 1,
+      "message": "Please use this wording:\n\n  Requires the Jenkins `IRC Plugin. \u003chttps://wiki.jenkins-ci.org/display/JENKINS/IRC+Plugin\u003e`_\n\nI\u0027m in the process of updating all wording for better consistency",
+      "revId": "8babf75e00f84a61c8c876a3a90627440e78e5b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//g1E\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2347,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-03T22:15:51Z",
+      "side": 1,
+      "message": "Sorry if I made you change twice but this formatting for be better for this specific parameter type:\n\nhttps://github.com/openstack-infra/jenkins-job-builder/blob/master/jenkins_jobs/modules/builders.py#L763-779",
+      "revId": "8babf75e00f84a61c8c876a3a90627440e78e5b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
