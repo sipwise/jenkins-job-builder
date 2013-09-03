@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//g2Q\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 2305,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-03T22:09:16Z",
+      "side": 1,
+      "message": "I asked for this wording to be used for better consistency:\n\n  Requires the Jenkins `Plot Plugin. \u003chttps://wiki.jenkins-ci.org/display/JENKINS/Plot+Plugin\u003e`_",
+      "revId": "ba1e272eaf06b87f2078058f5d5a1ab6843c491d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
