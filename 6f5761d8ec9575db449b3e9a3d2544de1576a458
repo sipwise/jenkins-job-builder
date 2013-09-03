@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//hQo\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2305,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-03T21:11:12Z",
+      "side": 1,
+      "message": "Please reword for consistency:\n\nRequires the Jenkins `Plot Plugin.\n\u003chttps://wiki.jenkins-ci.org/display/JENKINS/Plot+Plugin\u003e`_\n\nActual formatting is wrong: http://docs-draft.openstack.org/85/43685/15/check/gate-jenkins-job-builder-docs/91767c9/doc/build/html/publishers.html#publishers.plot",
+      "revId": "6f5761d8ec9575db449b3e9a3d2544de1576a458",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hW0\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2316,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-03T21:11:12Z",
+      "side": 1,
+      "message": "Line should wrap at the beginning of the line, no indentation.\n\nSee wrong output here:\nhttp://docs-draft.openstack.org/85/43685/15/check/gate-jenkins-job-builder-docs/91767c9/doc/build/html/publishers.html#publishers.plot\n\nI cannot build doc on my laptop:\n\n    jenkins_jobs/modules/publishers.py:docstring of publishers.plot:14: ERROR: Unexpected indentation.",
+      "revId": "6f5761d8ec9575db449b3e9a3d2544de1576a458",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//hWM\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2326,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-03T21:11:12Z",
+      "side": 1,
+      "message": "I would prefer this syntax to be used: https://github.com/openstack-infra/jenkins-job-builder/blob/master/jenkins_jobs/modules/builders.py#L763-779\n\nActual output is wrong:\nhttp://docs-draft.openstack.org/85/43685/15/check/gate-jenkins-job-builder-docs/91767c9/doc/build/html/publishers.html#publishers.plot\n\nAnd I\u0027m getting build error on my side:\n\n    jenkins_jobs/modules/publishers.py:docstring of publishers.plot:27: ERROR: Unexpected indentation.",
+      "revId": "6f5761d8ec9575db449b3e9a3d2544de1576a458",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
