@@ -167,6 +167,11 @@ def trigger_parameterized_builds(parser, xml_parent, data):
                                         'matrix.MatrixSubsetBuildParameters')
                 XML.SubElement(subset, 'filter').text = \
                     project_def['restrict-matrix-project']
+            same_node = project_def.get("same-node", False)
+            if same_node is True:
+                XML.SubElement(tconfigs,
+                               'hudson.plugins.'
+                               'parameterizedtrigger.NodeParameters')
         else:
             tconfigs.set('class', 'java.util.Collections$EmptyList')
         projects = XML.SubElement(tconfig, 'projects')

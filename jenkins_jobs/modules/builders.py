@@ -299,6 +299,11 @@ def trigger_builds(parser, xml_parent, data):
                                     'PredefinedBuildParameters')
             properties = XML.SubElement(params, 'properties')
             properties.text = project_def['predefined-parameters']
+        same_node = project_def.get("same-node", False)
+        if same_node is True:
+            XML.SubElement(tconfigs,
+                           'hudson.plugins.'
+                           'parameterizedtrigger.NodeParameters')
         if(len(list(tconfigs)) == 0):
             tconfigs.set('class', 'java.util.Collections$EmptyList')
         projects = XML.SubElement(tconfig, 'projects')
