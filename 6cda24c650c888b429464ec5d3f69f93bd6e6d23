@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//iec\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-09-03T18:01:45Z",
+      "side": 1,
+      "message": "How about:\n\n  \u003c!-- Managed by Jenkins Job Builder --\u003e\n\n:)",
+      "revId": "6cda24c650c888b429464ec5d3f69f93bd6e6d23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
