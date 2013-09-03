@@ -260,8 +260,10 @@ def trigger_builds(parser, xml_parent, data):
       triggered job.
     :arg bool svn-revision: Whether to pass the svn revision
       to the triggered job
-    :arg bool block: whether to wait for the triggered jobs
+    :arg bool block: Whether to wait for the triggered jobs
       to finish or not (default false)
+    :arg bool same-node: Whether to trigger the build on the same node
+      as its parent
 
     Example::
 
@@ -299,6 +301,11 @@ def trigger_builds(parser, xml_parent, data):
                                     'PredefinedBuildParameters')
             properties = XML.SubElement(params, 'properties')
             properties.text = project_def['predefined-parameters']
+        same_node = project_def.get('same-node', False)
+        if same_node is True:
+            XML.SubElement(tconfigs,
+                           'hudson.plugins.'
+                           'parameterizedtrigger.NodeParameters')
         if(len(list(tconfigs)) == 0):
             tconfigs.set('class', 'java.util.Collections$EmptyList')
         projects = XML.SubElement(tconfig, 'projects')
