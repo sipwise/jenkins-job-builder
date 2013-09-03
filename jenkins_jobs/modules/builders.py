@@ -260,8 +260,10 @@ def trigger_builds(parser, xml_parent, data):
       triggered job.
     :arg bool svn-revision: Whether to pass the svn revision
       to the triggered job
-    :arg bool block: whether to wait for the triggered jobs
+    :arg bool block: Whether to wait for the triggered jobs
       to finish or not (default false)
+    :arg bool same-node: Whether to trigger the build on the same node
+      as its parent
 
     Example::
 

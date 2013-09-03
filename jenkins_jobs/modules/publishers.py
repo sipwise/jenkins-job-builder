@@ -96,6 +96,8 @@ def trigger_parameterized_builds(parser, xml_parent, data):
       if any of the files are not found in the workspace (default 'False')
     :arg str restrict-matrix-project: Filter that restricts the subset
         of the combinations that the downstream project will run (optional)
+    :arg bool same-node: Whether to trigger the build on the same node
+      as its parent
 
     Example::
 
