@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//kAM\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2342,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-09-03T13:56:05Z",
+      "side": 1,
+      "message": "Note that the channels MUST be defined in the Jenkins system configuration.  The IRC bot will not join a channel which is only specified at the job level.\n\nIf you specify an other channel there you get:\n\nMar 27, 2013 12:09:14 PM hudson.plugins.ircbot.v2.PircListener onServerResponse\nWARNING: IRC server responded error 404 Message:\nmw-jenkinsbot #wikimedia-test :Cannot send to channel\n\n:(  I filled a bug upstream about it https://issues.jenkins-ci.org/browse/JENKINS-17379\n\n\nI would add a warning in channels:  your channel MUST be configured separately in Jenkins system configuration.",
+      "revId": "d0bf9250198ffea1231588c3ed34a7db1d952664",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//kEk\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2378,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-09-03T13:56:05Z",
+      "side": 1,
+      "message": "The Exception message should list the keys of message_dict instead of duplicating them.",
+      "revId": "d0bf9250198ffea1231588c3ed34a7db1d952664",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//kFQ\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2390,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-09-03T13:56:05Z",
+      "side": 1,
+      "message": "The Exception message should list the keys of strategy_dict instead of duplicating them.",
+      "revId": "d0bf9250198ffea1231588c3ed34a7db1d952664",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//j9A\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2411,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-09-03T13:56:05Z",
+      "side": 1,
+      "message": "The IRC plugin depends on https://github.com/jenkinsci/instant-messaging-plugin which inject an additional field in the configuration form whenever the project is a multi configuration project.\n\nIn src/main/resources/hudson/plugins/im/IMPublisher/further-config.jelly of instant-messaging-plugin:\n\n\n    \u003cj:if test\u003d\"${instance.isMatrixProject(it)}\"\u003e\n      \u003cf:entry title\u003d\"${%Notify for matrix projects}\" field\u003d\"matrixNotifier\" help\u003d\"/plugin/instant-messaging/help-matrix_notify.html\"\u003e\n          \u003cf:enum field\u003d\"matrixNotifier\"\u003e\n             ${it.getLabel()}\n          \u003c/f:enum\u003e\n      \u003c/f:entry\u003e\n   \u003c/j:if\u003e\n\nI created an empty multi-configuration project and the IRC configuration is indeed blessed with another drop list:\n\n Notify for matrix projects:\n - ONLY PARENT: notify only once when parent run starts/finishes\n - ONLY CONFIGURATIONS: notify for each configuration run\n - ALL: notify for parent run and each configuration run\n\nThe corresponding values are:\n\n ONLY_PARENT\n ONLY_CONFIGURATIONS\n ALL\n\nSo we might want to list out the additional parameters.   If we can detect whether the type of project the publisher is applied too, we could raise an error whenever someone try to change the matrixMultiplier on a non multi configuration job.",
+      "revId": "d0bf9250198ffea1231588c3ed34a7db1d952664",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
