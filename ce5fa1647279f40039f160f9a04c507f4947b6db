@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//khs\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 3153
+      },
+      "writtenOn": "2013-09-03T11:22:43Z",
+      "side": 1,
+      "message": "this white line is useless imo",
+      "revId": "ce5fa1647279f40039f160f9a04c507f4947b6db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
