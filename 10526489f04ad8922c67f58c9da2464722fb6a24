@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//iXg\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 957,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-09-03T18:17:09Z",
+      "side": 1,
+      "message": "I think the syntax for this link is wrong; check the builder above this one.",
+      "revId": "10526489f04ad8922c67f58c9da2464722fb6a24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
