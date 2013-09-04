@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//bBA\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-04T22:11:00Z",
+      "side": 1,
+      "message": "We prefer Python boolean to be used as default value.\n\nYou can see an example of such usage here:\nhttps://github.com/openstack-infra/jenkins-job-builder/blob/master/jenkins_jobs/modules/publishers.py#L1733-L1734",
+      "revId": "5efc27c240567533007f67659b7e6785b1d2e02d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
