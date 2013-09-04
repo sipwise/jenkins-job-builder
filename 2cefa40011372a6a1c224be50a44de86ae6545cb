@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//bpc\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2013-09-04T20:08:16Z",
+      "side": 1,
+      "message": "That\u0027s the plan for the next change for this patch. I\u0027d like to get the base functionality in first.",
+      "parentUuid": "AAAASn//ezE\u003d",
+      "revId": "2cefa40011372a6a1c224be50a44de86ae6545cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//eyA\u003d",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 5
