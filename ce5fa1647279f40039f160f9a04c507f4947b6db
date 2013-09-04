@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//gA4\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-04T02:21:22Z",
+      "side": 1,
+      "message": "This is missing a space when the colon and the description.\n\nSee what this missing space does to the documentation:\nhttp://docs-draft.openstack.org/05/44705/1/check/gate-jenkins-job-builder-docs/f8b5022/doc/build/html/publishers.html#publishers.jacoco",
+      "revId": "ce5fa1647279f40039f160f9a04c507f4947b6db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gA0\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-04T02:21:22Z",
+      "side": 1,
+      "message": "That one too.",
+      "revId": "ce5fa1647279f40039f160f9a04c507f4947b6db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//khs\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
