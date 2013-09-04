@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAASn//a4M\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-04T22:52:58Z",
+      "side": 1,
+      "message": "says optional here, but below code has a default value. is it optional or default?",
+      "revId": "5efc27c240567533007f67659b7e6785b1d2e02d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//a34\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-04T22:52:58Z",
+      "side": 1,
+      "message": "says optional here, but below code has a default value. is it optional or default?",
+      "revId": "5efc27c240567533007f67659b7e6785b1d2e02d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//a3s\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-04T22:52:58Z",
+      "side": 1,
+      "message": "says optional here, but below code has a default value. is it optional or default?",
+      "revId": "5efc27c240567533007f67659b7e6785b1d2e02d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//a04\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-04T22:52:58Z",
+      "side": 1,
+      "message": "don\u0027t believe you need quotes if you use boolean type as Mathieu suggested.",
+      "revId": "5efc27c240567533007f67659b7e6785b1d2e02d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//bBA\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 3
@@ -13,6 +81,23 @@
       "writtenOn": "2013-09-04T22:11:00Z",
       "side": 1,
       "message": "We prefer Python boolean to be used as default value.\n\nYou can see an example of such usage here:\nhttps://github.com/openstack-infra/jenkins-job-builder/blob/master/jenkins_jobs/modules/publishers.py#L1733-L1734",
+      "revId": "5efc27c240567533007f67659b7e6785b1d2e02d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//a0w\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-04T22:52:58Z",
+      "side": 1,
+      "message": "probably should validate whether specified item is an acceptable target item.\n\nhere\u0027s an example:\nhttps://github.com/openstack-infra/jenkins-job-builder/blob/master/jenkins_jobs/modules/publishers.py#L2240-L2241",
       "revId": "5efc27c240567533007f67659b7e6785b1d2e02d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
