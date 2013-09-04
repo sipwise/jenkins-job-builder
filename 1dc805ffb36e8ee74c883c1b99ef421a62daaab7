@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//bFA\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 954,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-04T22:02:11Z",
+      "side": 1,
+      "message": "I would prefer this wording to be used instead:\n\n    Requires the Jenkins `Sbt Plugin.\n    \u003chttps://wiki.jenkins-ci.org/display/JENKINS/sbt+plugin\u003e`_\n\nThis will fix your link formatting issue [1] and be consistency with the wording used elsewhere.\n\n[1] http://docs-draft.openstack.org/85/44685/2/check/gate-jenkins-job-builder-docs/cf8dd5a/doc/build/html/builders.html#builders.sbt",
+      "revId": "1dc805ffb36e8ee74c883c1b99ef421a62daaab7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//bD4\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 957,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-04T22:02:11Z",
+      "side": 1,
+      "message": "What happens if no name is provided? Which sbt install is used?",
+      "revId": "1dc805ffb36e8ee74c883c1b99ef421a62daaab7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//bDE\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 961,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-04T22:02:11Z",
+      "side": 1,
+      "message": "Please update to use subdir-path to be consistent with JJB style.",
+      "revId": "1dc805ffb36e8ee74c883c1b99ef421a62daaab7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//bDM\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 976,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-04T22:02:11Z",
+      "side": 1,
+      "message": "Will need to update here.",
+      "revId": "1dc805ffb36e8ee74c883c1b99ef421a62daaab7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
