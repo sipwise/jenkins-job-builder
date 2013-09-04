@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//gFU\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-04T01:55:11Z",
+      "side": 1,
+      "message": "Please limit the commit summary to 50 characters. The rest can be moved to the commit description on the 3rd line.\n\nA guideline can be found here:\nhttps://wiki.openstack.org/wiki/GitCommitMessages#Summary_of_GIT_commit_message_structure",
+      "revId": "67e26c9b0b6a8dd0e86cc26b8c3d7ad38817f917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gF0\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-04T01:55:11Z",
+      "side": 1,
+      "message": "This is nitpicking:\n\nEverything else in this method and file is using single-quote, this should therefore be single-quotes too.",
+      "revId": "67e26c9b0b6a8dd0e86cc26b8c3d7ad38817f917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//gGI\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-04T01:55:11Z",
+      "side": 1,
+      "message": "This could be simplified to:\n\n    if same_node:",
+      "revId": "67e26c9b0b6a8dd0e86cc26b8c3d7ad38817f917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
