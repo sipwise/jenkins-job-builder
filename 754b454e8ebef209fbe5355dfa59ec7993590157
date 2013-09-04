@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//ato\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-04T23:25:50Z",
+      "side": 1,
+      "message": "param is \u0027choosing-strategy\u0027 here, but it\u0027s \u0027build-chooser\u0027 in code below. should make it consistent.",
+      "revId": "754b454e8ebef209fbe5355dfa59ec7993590157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//atk\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-04T23:25:50Z",
+      "side": 1,
+      "message": "would be nice to show an example.",
+      "revId": "754b454e8ebef209fbe5355dfa59ec7993590157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//asg\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-04T23:25:50Z",
+      "side": 1,
+      "message": "Does this mean that this also requires the gerrit-trigger plugin?",
+      "revId": "754b454e8ebef209fbe5355dfa59ec7993590157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
