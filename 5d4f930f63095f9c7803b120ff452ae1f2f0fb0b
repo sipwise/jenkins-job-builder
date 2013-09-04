@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//cR4\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 2328,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-04T18:22:40Z",
+      "side": 1,
+      "message": "should this be \u0027series\u0027 (lowercase with \u0027s\u0027) to match arg above and example below?",
+      "revId": "5d4f930f63095f9c7803b120ff452ae1f2f0fb0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//cKA\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 2389,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-04T18:22:40Z",
+      "side": 1,
+      "message": "would be better if you could get format from the format_dict object.  I  believe you can show valid formats by doing this.. \n\u0027, \u0027.join(format_dict.keys())",
+      "revId": "5d4f930f63095f9c7803b120ff452ae1f2f0fb0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//cJk\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 2420,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-04T18:22:40Z",
+      "side": 1,
+      "message": "would be better if you could get style from the style_list object.  I  believe you can show valid formats by doing this.. \n\u0027, \u0027.join(style_list)",
+      "revId": "5d4f930f63095f9c7803b120ff452ae1f2f0fb0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
