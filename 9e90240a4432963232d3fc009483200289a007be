@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//dDU\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-04T15:40:29Z",
+      "side": 1,
+      "message": "nitpick: This looks to not be indented like the other examples.\n\nThis block should be indented with 4 spaces to be aligned under the first \u0027c\u0027 of jacoco.",
+      "revId": "9e90240a4432963232d3fc009483200289a007be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//dC4\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-04T15:40:29Z",
+      "side": 1,
+      "message": "This looks to not be indented like the other examples.\n\nThis block should be aligned with 2 spaces to have the \u0027-\u0027 aligned under the \u0027r\u0027 of targets.\n\nThe content of the block is indented fine however.",
+      "revId": "9e90240a4432963232d3fc009483200289a007be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
