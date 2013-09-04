@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//azs\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-04T23:07:22Z",
+      "side": 1,
+      "message": "please keep commit message to less than 80 chars per line.",
+      "revId": "4dc33b6a49a5e02d25b07b4b7ade7dc2308b2e1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//aws\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-04T23:07:22Z",
+      "side": 1,
+      "message": "should handle for any case, something like this..\n\nproject_def.get(\u0027same-node\u0027, False)).lower()",
+      "revId": "4dc33b6a49a5e02d25b07b4b7ade7dc2308b2e1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//av4\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-04T23:07:22Z",
+      "side": 1,
+      "message": "i believe since same_node is a boolean you can just evaluate with \u0027if same_node:\u0027",
+      "revId": "4dc33b6a49a5e02d25b07b4b7ade7dc2308b2e1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
