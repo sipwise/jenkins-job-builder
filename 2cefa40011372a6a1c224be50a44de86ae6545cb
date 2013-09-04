@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//ezE\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-09-04T10:00:11Z",
+      "side": 1,
+      "message": "How about adding a placeholder for a custom identifier to be inserted before the \u0027--\u003e\u0027?\n\nAs the message could then be altered at runtime to support uploads from multiple configs without accidentally removing the other teams jobs.",
+      "revId": "2cefa40011372a6a1c224be50a44de86ae6545cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//eyA\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-09-04T10:00:11Z",
+      "side": 1,
+      "message": "If you add a format placeholder as suggested above, at this point it should be possible to access the config object through self.registry.global_config and if there is a custom modifier set to be used, perform the substitution at this point.\n\nDoes make the code in the Jenkins class further down a little more complex.",
+      "revId": "2cefa40011372a6a1c224be50a44de86ae6545cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//exY\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-09-04T10:00:11Z",
+      "side": 1,
+      "message": "I can\u0027t think of an easy way to access a custom manage string modifier at this point, so maybe add an additional parameter:\n\n is_managed(self, job_name, managed_string \u003d None):\n\nAnd then do the interpolation on the string in method in the Builder class that calls this method, or switch to requesting and returning the description and do the test on whether it is managed within the Builder class.",
+      "revId": "2cefa40011372a6a1c224be50a44de86ae6545cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
