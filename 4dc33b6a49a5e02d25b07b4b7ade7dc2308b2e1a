@@ -50,6 +50,24 @@
       "revId": "4dc33b6a49a5e02d25b07b4b7ade7dc2308b2e1a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//apw\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 8658
+      },
+      "writtenOn": "2013-09-04T23:37:53Z",
+      "side": 1,
+      "message": "If I wrap same_node in str(...).lower() it\u0027s not a boolean any longer. If same_node were \u0027false\u0027 it would still evaluate to True.",
+      "parentUuid": "AAAASn//av4\u003d",
+      "revId": "4dc33b6a49a5e02d25b07b4b7ade7dc2308b2e1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
