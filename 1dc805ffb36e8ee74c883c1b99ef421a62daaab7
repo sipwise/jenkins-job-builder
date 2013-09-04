@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//bBw\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 960,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-04T22:16:35Z",
+      "side": 1,
+      "message": "when i use sbt plugin, the plugin sets \u0027-Dsbt.log.noformat\u003dtrue\u0027  as default value for sbt-flags.  should this not be the default?",
+      "revId": "1dc805ffb36e8ee74c883c1b99ef421a62daaab7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//bDE\u003d",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
