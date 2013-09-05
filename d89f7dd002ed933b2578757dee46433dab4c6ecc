@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//WMI\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2516,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-05T22:36:52Z",
+      "side": 1,
+      "message": "since it looks like every series needs a file.  How about load the file right at the beginning instead?",
+      "revId": "d89f7dd002ed933b2578757dee46433dab4c6ecc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
