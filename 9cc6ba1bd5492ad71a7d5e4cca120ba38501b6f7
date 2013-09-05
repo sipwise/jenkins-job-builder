@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//WR4\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-05T22:08:38Z",
+      "side": 1,
+      "message": "A dict is not required if the mapping is one-to-one. A list/array would be a good choice instead.",
+      "revId": "9cc6ba1bd5492ad71a7d5e4cca120ba38501b6f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
