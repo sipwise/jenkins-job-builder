@@ -2522,6 +2522,7 @@ def plot(parser, xml_parent, data):
             XML.SubElement(subserie, 'file').text = serie.get('file')
             XML.SubElement(subserie, 'label').text = serie.get('label', '')
         if format_data == 'csv':
+            XML.SubElement(subserie, 'file').text = serie.get('file')
             XML.SubElement(subserie, 'exclusionValues').text = \
                 serie.get('exclude', '')
             XML.SubElement(subserie, 'url').text = serie.get('url', '')
