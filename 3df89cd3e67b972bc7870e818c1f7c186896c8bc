@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//XwM\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 966,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-05T15:20:33Z",
+      "side": 1,
+      "message": "would be nice if you could provide an example.",
+      "revId": "3df89cd3e67b972bc7870e818c1f7c186896c8bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
