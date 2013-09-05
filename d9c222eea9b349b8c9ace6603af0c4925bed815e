@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//Z5c\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-05T04:46:38Z",
+      "side": 1,
+      "message": "Defaults are usually placed between parentheses at the end. (default master)\n\nThere is plenty of examples available here:\nhttps://github.com/openstack-infra/jenkins-job-builder/blob/master/jenkins_jobs/modules/publishers.py",
+      "revId": "d9c222eea9b349b8c9ace6603af0c4925bed815e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Z44\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-05T04:46:38Z",
+      "side": 1,
+      "message": "I don\u0027t see any option with attributes.",
+      "revId": "d9c222eea9b349b8c9ace6603af0c4925bed815e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Z4k\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-05T04:46:38Z",
+      "side": 1,
+      "message": "The first condition looks superfluous as there is no None entry in the mapping.",
+      "revId": "d9c222eea9b349b8c9ace6603af0c4925bed815e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Z4U\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-05T04:46:38Z",
+      "side": 1,
+      "message": "I\u0027m not sure I fully understand the intention here. What\u0027s the purpose of this condition?",
+      "revId": "d9c222eea9b349b8c9ace6603af0c4925bed815e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
