@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//XtI\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-05T15:28:49Z",
+      "side": 1,
+      "message": "in above param definition and example, \u0027target\u0027 is used for the param.  here you are referencing  data[\u0027items\u0027].  should it not be data[\u0027targets\u0027]?",
+      "revId": "19c9e802cab1f5244f2a5b6f5a3105149c76283d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
