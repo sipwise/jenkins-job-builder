@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//Vtk\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-09-06T02:04:11Z",
+      "side": 1,
+      "message": "Changed to state \u0027(default \u003cvalue\u003e)\u0027 for those settings that the code will set a default for, for others that rely on the current plugin default, replaced with \u0027(optional)\u0027.",
+      "parentUuid": "AAAASn//V2M\u003d",
+      "revId": "d9c222eea9b349b8c9ace6603af0c4925bed815e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//Z44\u003d",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 1
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "Copy\u0027n\u0027paste from the git code above, left the possibility of being able to specify attributes in place, but since none are needed, I\u0027ll remove the comment and associated code below as it\u0027s probably unlikely to be needed unless the Repo plugin starts making use of another plugin.",
       "parentUuid": "AAAASn//Z44\u003d",
+      "revId": "d9c222eea9b349b8c9ace6603af0c4925bed815e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//VuE\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-09-06T02:04:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//V2E\u003d",
       "revId": "d9c222eea9b349b8c9ace6603af0c4925bed815e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -107,6 +143,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//VuA\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-09-06T02:04:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAASn//V1g\u003d",
+      "revId": "d9c222eea9b349b8c9ace6603af0c4925bed815e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//Z4U\u003d",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 1
@@ -136,6 +190,24 @@
       "side": 1,
       "message": "Any attributes with default values in the mapping should be set even if not defined by the yaml code.\n\nIf the yaml code doesn\u0027t define an element from the mapping and there is no default value specified in the mapping dict above, should not create a default XML entry and skip to the the next item, otherwise it will continue to add a XML entry for the given element.",
       "parentUuid": "AAAASn//Z4U\u003d",
+      "revId": "d9c222eea9b349b8c9ace6603af0c4925bed815e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Vtw\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-09-06T02:04:11Z",
+      "side": 1,
+      "message": "Added comment to explain this.",
+      "parentUuid": "AAAASn//V1I\u003d",
       "revId": "d9c222eea9b349b8c9ace6603af0c4925bed815e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
