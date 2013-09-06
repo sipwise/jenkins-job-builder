@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//V2M\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-09-06T00:42:15Z",
+      "side": 1,
+      "message": "Is there a distinction in documenting what the plugin uses as defaults and what JJB will set as defaults?\n\nAnywhere in this where it\u0027s stated that some value will be used\u0027 if not set\u0027, is current plugin default behaviour but not explicitly set as default by the code below, while at the end of this list for those two items that will be explicitly set by JJB I use \u0027(default: true)\u0027.",
+      "parentUuid": "AAAASn//Z5c\u003d",
+      "revId": "d9c222eea9b349b8c9ace6603af0c4925bed815e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//Z44\u003d",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-05T04:46:38Z",
       "side": 1,
       "message": "I don\u0027t see any option with attributes.",
+      "revId": "d9c222eea9b349b8c9ace6603af0c4925bed815e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//V2E\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-09-06T00:42:15Z",
+      "side": 1,
+      "message": "Copy\u0027n\u0027paste from the git code above, left the possibility of being able to specify attributes in place, but since none are needed, I\u0027ll remove the comment and associated code below as it\u0027s probably unlikely to be needed unless the Repo plugin starts making use of another plugin.",
+      "parentUuid": "AAAASn//Z44\u003d",
       "revId": "d9c222eea9b349b8c9ace6603af0c4925bed815e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAASn//V1g\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-09-06T00:42:15Z",
+      "side": 1,
+      "message": "Copy\u0027n\u0027paste from the git scm code. Forgot to trim it out.",
+      "parentUuid": "AAAASn//Z4k\u003d",
+      "revId": "d9c222eea9b349b8c9ace6603af0c4925bed815e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//Z4U\u003d",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2013-09-05T04:46:38Z",
       "side": 1,
       "message": "I\u0027m not sure I fully understand the intention here. What\u0027s the purpose of this condition?",
+      "revId": "d9c222eea9b349b8c9ace6603af0c4925bed815e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//V1I\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-09-06T00:42:15Z",
+      "side": 1,
+      "message": "Any attributes with default values in the mapping should be set even if not defined by the yaml code.\n\nIf the yaml code doesn\u0027t define an element from the mapping and there is no default value specified in the mapping dict above, should not create a default XML entry and skip to the the next item, otherwise it will continue to add a XML entry for the given element.",
+      "parentUuid": "AAAASn//Z4U\u003d",
       "revId": "d9c222eea9b349b8c9ace6603af0c4925bed815e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
