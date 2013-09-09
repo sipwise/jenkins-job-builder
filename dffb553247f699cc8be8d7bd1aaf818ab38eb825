@@ -16,6 +16,24 @@
       "revId": "dffb553247f699cc8be8d7bd1aaf818ab38eb825",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//N0Y\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-09T20:45:04Z",
+      "side": 1,
+      "message": "good catch. thanks.",
+      "parentUuid": "AAAASn//N4I\u003d",
+      "revId": "dffb553247f699cc8be8d7bd1aaf818ab38eb825",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
