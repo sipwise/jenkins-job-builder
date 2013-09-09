@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//Nzw\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2542,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-09T20:52:19Z",
+      "side": 1,
+      "message": "There is a duplicated \"the\".\n\nI would like the documentation to be formatted like the one in ircbot. See the strategy parameter.",
+      "revId": "1890949dbf1c97ada94e3322cf829bd978d10a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//Nzg\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2599,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-09T20:52:19Z",
+      "side": 1,
+      "message": "We use lower-case values with hypens in JJB.\n\nSee ircbot on how to do such mapping in JJB. (strategy_dict)",
+      "revId": "1890949dbf1c97ada94e3322cf829bd978d10a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
