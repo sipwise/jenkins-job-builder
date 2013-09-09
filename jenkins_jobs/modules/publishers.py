@@ -2538,7 +2538,10 @@ def plot(parser, xml_parent, data):
     :arg list series: list data series definitions
 
       :Serie: * **file** (`str`) : files to include
-              * **exclude** (`str`) : CSV files to exclude (default: empty)
+              * **inclusion-flag** (`str`) : filtering mode for CSV files. The
+                The result can be: OFF, INCLUDE_BY_STRING, EXCLUDE_BY_STRING,
+                INCLUDE_BY_COLUMN, EXCLUDE_BY_COLUMN. (default: OFF)
+              * **exclude** (`str`) : exclude pattern for CSV file.
               * **url** (`str`) : for 'csv' and 'xml' file types
                 used when you click on a point (default: empty)
               * **display-table** (`bool`) : for 'csv' file type
@@ -2571,12 +2574,11 @@ def plot(parser, xml_parent, data):
                   label: MyLabel
                   format: properties
                 - file: graph-me-first.csv
-                  exclude: exclude-me-1.csv
                   url: 'http://srv1'
+                  inclusion-flag: OFF
                   display-table: true
                   format: csv
                 - file: graph-me-third.xml
-                  exclude: exclude-me-2.xml
                   url: 'http://srv2'
                   format: xml
                   xpath-type: NODE
@@ -2594,6 +2596,8 @@ def plot(parser, xml_parent, data):
                    'csv': 'hudson.plugins.plot.CSVSeries',
                    'xml': 'hudson.plugins.plot.XMLSeries'}
     xpath_list = ['NODESET', 'NODE', 'STRING', 'BOOLEAN', 'NUMBER']
+    inclusion_flag_list = [ 'OFF', 'INCLUDE_BY_STRING', 'EXCLUDE_BY_STRING',
+                             'INCLUDE_BY_COLUMN', 'EXCLUDE_BY_COLUMN' ]
     for serie in series:
         format_data = serie.get('format')
         if format_data not in format_dict:
@@ -2604,6 +2608,12 @@ def plot(parser, xml_parent, data):
         if format_data == 'properties':
             XML.SubElement(subserie, 'label').text = serie.get('label', '')
         if format_data == 'csv':
+            inclusion_flag = serie.get('ínclusion-flag', 'OFF')
+            if inclusion_flag not in inclusion_flag_list:
+                raise Exception("Inclusion flag result entered is not valid," +
+                                "must be one of: " +
+                                ", ".join(inclusion_flag_list))
+            XML.SubElement(subserie, 'inclusionFlag').text = inclusion_flag
             XML.SubElement(subserie, 'exclusionValues').text = \
                 serie.get('exclude', '')
             XML.SubElement(subserie, 'url').text = serie.get('url', '')
