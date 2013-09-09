@@ -39,6 +39,7 @@ import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 import logging
 import sys
+import random
 
 
 def archive(parser, xml_parent, data):
@@ -2535,10 +2536,19 @@ def plot(parser, xml_parent, data):
                                descriptions used as X-axis labels and the
                                build number and date used for tooltips.
                                (default: False)
+    :arg str csv-file-name: Use for choosing the file name in which the data
+                            will be persisted. If none specified and random
+                            name is generated as done in the Jenkins Plot
+                            plugin.
+                            (default: random generated .csv filename, same
+                            behaviour than the Jenkins Plot plugin)
     :arg list series: list data series definitions
 
       :Serie: * **file** (`str`) : files to include
-              * **exclude** (`str`) : CSV files to exclude (default: empty)
+              * **inclusion-flag** (`str`) : filtering mode for CSV files. The
+                result can be: off, include_by_string, exclude_by_string,
+                include_by_column, exclude_by_column. (default: off)
+              * **exclude** (`str`) : exclude pattern for CSV file.
               * **url** (`str`) : for 'csv' and 'xml' file types
                 used when you click on a point (default: empty)
               * **display-table** (`bool`) : for 'csv' file type
@@ -2550,11 +2560,12 @@ def plot(parser, xml_parent, data):
                 Can be: properties, csv, xml
               * **xpath-type** (`str`) : The result type of the expression must
                 be supplied due to limitations in the java.xml.xpath parsing.
-                The result can be: NODE, NODESET, BOOLEAN, STRING, or NUMBER.
+                The result can be: node, nodeset, boolean, string, or number.
                 Strings and numbers will be converted to double. Boolean will
-                be converted to 1 for true, and 0 for false. (default: 'NODE')
+                be converted to 1 for true, and 0 for false. (default: 'node')
               * **xpath** (`str`) : used by 'xml' file type
                 Xpath which selects the values that should be plotted.
+
 
     Example::
 
@@ -2571,15 +2582,14 @@ def plot(parser, xml_parent, data):
                   label: MyLabel
                   format: properties
                 - file: graph-me-first.csv
-                  exclude: exclude-me-1.csv
                   url: 'http://srv1'
+                  inclusion-flag: 'off'
                   display-table: true
                   format: csv
                 - file: graph-me-third.xml
-                  exclude: exclude-me-2.xml
                   url: 'http://srv2'
                   format: xml
-                  xpath-type: NODE
+                  xpath-type: 'node'
                   xpath: '/*'
 
     """
@@ -2588,12 +2598,19 @@ def plot(parser, xml_parent, data):
     plugin = XML.SubElement(plots, 'hudson.plugins.plot.Plot')
     XML.SubElement(plugin, 'title').text = data.get('title', '')
     XML.SubElement(plugin, 'yaxis').text = data['yaxis']
+    XML.SubElement(plugin, 'csvFileName').text = \
+        data.get('csv-file-name', '%s.csv' % random.randrange(2 << 32))
     topseries = XML.SubElement(plugin, 'series')
     series = data['series']
     format_dict = {'properties': 'hudson.plugins.plot.PropertiesSeries',
                    'csv': 'hudson.plugins.plot.CSVSeries',
                    'xml': 'hudson.plugins.plot.XMLSeries'}
-    xpath_list = ['NODESET', 'NODE', 'STRING', 'BOOLEAN', 'NUMBER']
+    xpath_dict = {'nodeset': 'NODESET', 'node': 'NODE', 'string': 'STRING',
+                  'boolean': 'BOOLEAN', 'number': 'NUMBER'}
+    inclusion_dict = {'off': 'OFF', 'include_by_string': 'INCLUDE_BY_STRING',
+                      'exclude_by_string': 'EXCLUDE_BY_STRING',
+                      'include_by_column': 'INCLUDE_BY_COLUMN',
+                      'exclude_by_column': 'EXCLUDE_BY_COLUMN'}
     for serie in series:
         format_data = serie.get('format')
         if format_data not in format_dict:
@@ -2604,6 +2621,13 @@ def plot(parser, xml_parent, data):
         if format_data == 'properties':
             XML.SubElement(subserie, 'label').text = serie.get('label', '')
         if format_data == 'csv':
+            inclusion_flag = serie.get('inclusion-flag', 'off')
+            if inclusion_flag not in inclusion_dict:
+                raise Exception("Inclusion flag result entered is not valid," +
+                                " must be one of: " +
+                                ", ".join(inclusion_dict))
+            XML.SubElement(subserie, 'inclusionFlag').text = \
+                inclusion_dict.get(inclusion_flag)
             XML.SubElement(subserie, 'exclusionValues').text = \
                 serie.get('exclude', '')
             XML.SubElement(subserie, 'url').text = serie.get('url', '')
@@ -2612,11 +2636,12 @@ def plot(parser, xml_parent, data):
         if format_data == 'xml':
             XML.SubElement(subserie, 'url').text = serie.get('url', '')
             XML.SubElement(subserie, 'xpathString').text = serie.get('xpath')
-            xpathtype = serie.get('xpath-type', 'NODE')
-            if xpathtype not in xpath_list:
+            xpathtype = serie.get('xpath-type', 'node')
+            if xpathtype not in xpath_dict:
                 raise Exception("XPath result entered is not valid, must be " +
-                                "one of: " + ", ".join(xpath_list))
-            XML.SubElement(subserie, 'nodeTypeString').text = xpathtype
+                                "one of: " + ", ".join(xpath_dict))
+            XML.SubElement(subserie, 'nodeTypeString').text = \
+                xpath_dict.get(xpathtype)
         XML.SubElement(subserie, 'fileType').text = serie.get('format')
     XML.SubElement(plugin, 'group').text = data['group']
     XML.SubElement(plugin, 'useDescr').text = \
