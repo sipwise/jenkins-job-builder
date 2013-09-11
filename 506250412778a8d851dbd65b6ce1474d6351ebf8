@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//GvQ\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 985,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-11T21:50:42Z",
+      "side": 1,
+      "message": "I would prefer the name to be use-pty. It will match the one used by the Jenkins plugin and be more explicit on its purpose and that a boolean is expected.",
+      "revId": "506250412778a8d851dbd65b6ce1474d6351ebf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
