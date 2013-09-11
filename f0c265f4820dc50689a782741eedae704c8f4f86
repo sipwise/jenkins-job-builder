@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//G7k\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2549,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-11T20:40:28Z",
+      "side": 1,
+      "message": "This should be include-by-string. (same below) This is the style JJB uses.\n\nThis should be documented/formatted like the strategy value in ircbot.",
+      "revId": "f0c265f4820dc50689a782741eedae704c8f4f86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//G6k\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2611,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-11T20:40:28Z",
+      "side": 1,
+      "message": "format_dict, xpath_dict and inclusion_dict should be moved outside the loop as they would otherwise be redefined for each loop iteration.",
+      "revId": "f0c265f4820dc50689a782741eedae704c8f4f86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//G7w\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2617,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-11T20:40:28Z",
+      "side": 1,
+      "message": "This should be include-by-string. (same below) This is the style JJB uses.",
+      "revId": "f0c265f4820dc50689a782741eedae704c8f4f86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
