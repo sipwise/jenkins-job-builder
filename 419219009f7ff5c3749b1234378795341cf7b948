@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//HSU\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2544,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-11T19:32:48Z",
+      "side": 1,
+      "message": "s/than/as",
+      "revId": "419219009f7ff5c3749b1234378795341cf7b948",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
