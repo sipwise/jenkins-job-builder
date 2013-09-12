@@ -16,6 +16,23 @@
       "revId": "506250412778a8d851dbd65b6ce1474d6351ebf8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAASn//GE0\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 985,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-12T04:18:11Z",
+      "side": 1,
+      "message": "I agree with Mathieu.  Also the code sets default to \u0027False\u0027.  would be good to add default to docstring.",
+      "revId": "506250412778a8d851dbd65b6ce1474d6351ebf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
