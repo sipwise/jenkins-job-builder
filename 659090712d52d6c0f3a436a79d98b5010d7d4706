@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAASn//D6M\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-12T18:20:05Z",
+      "side": 1,
+      "message": "docstring above says this param is required.  how about check to make sure it exists and not set to empty string otherwise raise exception?",
+      "revId": "659090712d52d6c0f3a436a79d98b5010d7d4706",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
