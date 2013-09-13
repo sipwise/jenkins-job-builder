@@ -2675,6 +2675,126 @@ def plot(parser, xml_parent, data):
         XML.SubElement(plugin, 'style').text = style
 
 
+def git_publisher(parser, xml_parent, data):
+    """yaml: git-publisher
+    This plugin will push merge results, tags, and/or branches to
+    remote repositories after the job completes.
+
+    :arg bool push-merge: push merges back to the origin specified in the
+                          pre-build merge options (Default: False)
+    :arg bool push-only-if-success: Only push to remotes if the build succeeds
+                                    - otherwise, nothing will be pushed.
+                                    (Default: True)
+    :arg list tags-to-push: tags to push at the completion of the build
+
+        :tag: * **target-repo-name** (`str`) remote repo name to push to
+              * **tag-name** (`str`) name of tag to push
+              * **tag-message** (`str`) message content of the tag
+              * **create-tag** (`bool`) whether or not to create the tag
+                after the build, if this is False then the tag needs to
+                exist locally (Default: False)
+              * **update-tag** (`bool`) whether to overwrite a remote tag
+                or not (Default: False)
+
+    :arg list branches-to-push: branches to push at the completion of the build
+
+        :branch: * **target-repo-name** (`str`) remote repo name to push to
+                 * **branch-name** (`str`) name of remote branch to push to
+
+    :arg list notes-to-push: notes to push at the completion of the build
+
+        :note: * **target-repo-name** (`str`) remote repo name to push to
+               * **note-msg** (`str`) content of the note
+               * **note-namespace** (`str`) namespace of the note (optional)
+               * **note-replace** (`bool`) whether to overwrite a note or not
+                 (Default: False)
+
+
+    Example::
+
+        publishers:
+            - git-publisher:
+                push-merge: true
+                push-only-if-success: false
+                tags-to-push:
+                    - tag:
+                        target-repo-name: tagremotename
+                        tag-name: tagname
+                        tag-message: "some tag message"
+                        create-tag: true
+                        update-tag: true
+                branches-to-push:
+                    - branch:
+                        target-repo-name: branchremotename
+                        branch-name: "some/branch"
+                notes-to-push:
+                    - note:
+                        target-repo-name: remotename
+                        note-msg: "some note to push"
+                        note-namespace: commits
+                        note-replace: true
+
+    """
+    mappings = [('push-merge', 'pushMerge', False),
+                ('push-only-if-success', 'pushOnlyIfSuccess', True)]
+
+    tag_mappings = [('target-repo-name', 'targetRepoName', 'origin'),
+                    ('tag-name', 'tagName', None),
+                    ('tag-message', 'tagMessage', ''),
+                    ('create-tag', 'createTag', False),
+                    ('update-tag', 'updateTag', False)]
+
+    branch_mappings = [('target-repo-name', 'targetRepoName', 'origin'),
+                       ('branch-name', 'branchName', None)]
+
+    note_mappings = [('target-repo-name', 'targetRepoName', 'origin'),
+                     ('note-msg', 'noteMsg', None),
+                     ('note-namespace', 'noteNamespace', 'master'),
+                     ('note-replace', 'noteReplace', False)]
+
+    def handle_entity_children(entity, entity_xml, child_mapping):
+        for prop in child_mapping:
+            opt, xmlopt, default_val = prop[:3]
+            val = entity.get(opt, default_val)
+            if val is None:
+                raise Exception('Required option missing: %s' % opt)
+            if type(val) == bool:
+                val = str(val).lower()
+            XML.SubElement(entity_xml, xmlopt).text = val
+
+    top = XML.SubElement(xml_parent, 'hudson.plugins.git.GitPublisher')
+    XML.SubElement(top, 'configVersion').text = '2'
+    handle_entity_children(data, top, mappings)
+
+    tags = data.get('tags-to-push', [])
+    if tags:
+        xml_tags = XML.SubElement(top, 'tagsToPush')
+        for tag in tags:
+            xml_tag = XML.SubElement(
+                xml_tags,
+                'hudson.plugins.git.GitPublisher_-TagToPush')
+            handle_entity_children(tag['tag'], xml_tag, tag_mappings)
+
+    branches = data.get('branches-to-push', [])
+    if branches:
+        xml_branches = XML.SubElement(top, 'branchesToPush')
+        for branch in branches:
+            xml_branch = XML.SubElement(
+                xml_branches,
+                'hudson.plugins.git.GitPublisher_-BranchToPush')
+            handle_entity_children(branch['branch'], xml_branch,
+                                   branch_mappings)
+
+    notes = data.get('notes-to-push', [])
+    if notes:
+        xml_notes = XML.SubElement(top, 'notesToPush')
+        for note in notes:
+            xml_note = XML.SubElement(
+                xml_notes,
+                'hudson.plugins.git.GitPublisher_-NoteToPush')
+            handle_entity_children(note['note'], xml_note, note_mappings)
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
