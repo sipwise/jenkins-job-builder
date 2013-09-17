@@ -1424,7 +1424,7 @@ def groovy_postbuild(parser, xml_parent, data):
     root_tag = 'org.jvnet.hudson.plugins.groovypostbuild.'\
         'GroovyPostbuildRecorder'
     groovy = XML.SubElement(xml_parent, root_tag)
-    XML.SubElement(groovy, 'groovyScript').text = data
+    XML.SubElement(groovy, 'groovyScript').text = parser.load_script(data)
 
 
 def base_publish_over(xml_parent, data, console_prefix,
@@ -2057,8 +2057,8 @@ def post_tasks(parser, xml_parent, data):
             task.get('escalate-status', False)).lower()
         XML.SubElement(task_xml, 'RunIfJobSuccessful').text = str(
             task.get('run-if-job-successful', False)).lower()
-        XML.SubElement(task_xml, 'script').text = str(
-            task.get('script', ''))
+        script = task.get('script', '')
+        XML.SubElement(task_xml, 'script').text = parser.load_script(script)
 
 
 def xml_summary(parser, xml_parent, data):
