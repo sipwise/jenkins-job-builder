@@ -57,7 +57,7 @@ def shell(parser, xml_parent, data):
 
     """
     shell = XML.SubElement(xml_parent, 'hudson.tasks.Shell')
-    XML.SubElement(shell, 'command').text = data
+    XML.SubElement(shell, 'command').text = parser.load_script(data)
 
 
 def copyartifact(parser, xml_parent, data):

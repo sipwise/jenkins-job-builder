@@ -20,6 +20,14 @@ import os
 import sys
 
 
+CONF_DEFAULTS = {
+    'url': 'http://localhost:8080',
+    'user': 'jenkinsuser',
+    'password': 'secretpass',
+    'scripts_dir': '',
+}
+
+
 def confirm(question):
     answer = raw_input('%s (Y/N): ' % question).upper().strip()
     if not answer == 'Y':
@@ -50,6 +58,8 @@ def main():
                          'including those not managed by Jenkins Job '
                          'Builder.')
     parser.add_argument('--conf', dest='conf', help='Configuration file')
+    parser.add_argument('--scripts-dir', dest='scripts_dir', default=None,
+                        help='Directory where the scripts are located.')
     parser.add_argument('-l', '--log_level', dest='log_level', default='info',
                         help="Log level (default: %(default)s)")
     parser.add_argument(
@@ -77,17 +87,21 @@ def main():
         if os.path.isfile(localconf):
             conf = localconf
 
+    config = ConfigParser.ConfigParser(defaults=CONF_DEFAULTS)
     if os.path.isfile(conf):
         logger.debug("Reading config from {0}".format(conf))
         conffp = open(conf, 'r')
-        config = ConfigParser.ConfigParser()
         config.readfp(conffp)
     elif options.command == 'test':
+        ## to avoid the 'no section' error when getting the defaults
+        config.add_section('jenkins')
         logger.debug("Not reading config for test output generation")
-        config = {}
     else:
         raise jenkins_jobs.errors.JenkinsJobsException(
             "A valid configuration file is required when not run as a test")
+
+    if options.scripts_dir:
+        config.set('DEFAULT', 'scripts_dir', options.scripts_dir)
 
     logger.debug("Config: {0}".format(config))
     builder = jenkins_jobs.builder.Builder(config.get('jenkins', 'url'),
@@ -113,7 +127,7 @@ def main():
         if options.delete_old:
             builder.delete_old_managed(keep=[x.name for x in jobs])
     elif options.command == 'test':
-        builder.update_job(options.path, options.name,
+        builder.update_job(options.path, options.name, test=True,
                            output_dir=options.output_dir)
 
 if __name__ == '__main__':
