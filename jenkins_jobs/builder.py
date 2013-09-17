@@ -56,10 +56,11 @@ def deep_format(obj, paramdict):
 
 
 class YamlParser(object):
-    def __init__(self, config=None):
+    def __init__(self, config=None, scripts_dir=''):
         self.registry = ModuleRegistry(config)
         self.data = {}
         self.jobs = []
+        self.scripts_dir = os.path.abspath(scripts_dir)
 
     def parse(self, fn):
         data = yaml.load(open(fn))
@@ -231,6 +232,17 @@ class YamlParser(object):
         # The \n\n is not hard coded, because they get stripped if the
         # project does not otherwise have a description.
         return "\n\n" + MAGIC_MANAGE_STRING
+
+    def load_script(self, script):
+        if not isinstance(script, str) or not script.startswith('src:'):
+            return script
+        script = script.split(':', 1)[1]
+        script_path = os.path.join(self.scripts_dir, script)
+        ## Avoid getting out of the directory
+        if not os.path.abspath(script_path).startswith(self.scripts_dir):
+            raise IOError('You are not allowed to source scripts outside the '
+                          'scripts directory: %s' % script)
+        return open(script_path).read()
 
 
 class ModuleRegistry(object):
@@ -449,9 +461,16 @@ class Builder(object):
             files_to_process = [os.path.join(fn, f)
                                 for f in os.listdir(fn)
                                 if (f.endswith('.yml') or f.endswith('.yaml'))]
+            scripts_dir = fn
         else:
             files_to_process = [fn]
-        parser = YamlParser(self.global_config)
+            scripts_dir = os.path.dirname(fn)
+        ## if the scripts_dir was specified in the config, overwrite it
+        if self.global_config.has_option('jenkins', 'scripts_dir'):
+            scripts_dir = self.global_config.get('jenkins', 'scripts_dir')
+        parser = YamlParser(
+            self.global_config,
+            scripts_dir=os.path.join(scripts_dir, 'scripts'))
         for in_file in files_to_process:
             logger.debug("Parsing YAML file {0}".format(in_file))
             parser.parse(in_file)
