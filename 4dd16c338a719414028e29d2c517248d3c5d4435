@@ -16,6 +16,24 @@
       "revId": "4dd16c338a719414028e29d2c517248d3c5d4435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//7lo\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2708,
+      "author": {
+        "id": 5371
+      },
+      "writtenOn": "2013-09-17T01:08:16Z",
+      "side": 1,
+      "message": "I read that the Jenkins default was \u0027master\u0027 and was trying to match that. It probably makes more sense to change the docstring to indicate the default.",
+      "parentUuid": "AAAAS3//8nc\u003d",
+      "revId": "4dd16c338a719414028e29d2c517248d3c5d4435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
