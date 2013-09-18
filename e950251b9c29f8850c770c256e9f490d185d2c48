@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAS3//zf4\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-09-18T22:42:33Z",
+      "side": 1,
+      "message": "This needs to be indented with 2 more spaces. If I copy/paste your example and try it, it\u0027s not working.",
+      "revId": "e950251b9c29f8850c770c256e9f490d185d2c48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//OFo\u003d",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 3
