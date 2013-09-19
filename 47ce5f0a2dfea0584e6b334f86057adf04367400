@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//xI4\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2678,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-19T17:18:54Z",
+      "side": 1,
+      "message": "i agree with Mathieu.  This is a feature of the git plugin so makes sense to just name it git to also match the plugin name.",
+      "parentUuid": "AAAAS3//zTc\u003d",
+      "revId": "47ce5f0a2dfea0584e6b334f86057adf04367400",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//zTY\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -47,6 +65,24 @@
       "writtenOn": "2013-09-19T00:14:31Z",
       "side": 1,
       "message": "Those names are too verbose to my taste. If anyone disagree with my opinion, please let me know.\n\nCould it be named tags instead?",
+      "revId": "47ce5f0a2dfea0584e6b334f86057adf04367400",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//xIs\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2688,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-19T17:18:54Z",
+      "side": 1,
+      "message": "i usually like the wording to match whatever is in UI.   in this case i think i like the longer name, but i\u0027m fine either way.",
+      "parentUuid": "AAAAS3//zTE\u003d",
       "revId": "47ce5f0a2dfea0584e6b334f86057adf04367400",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
