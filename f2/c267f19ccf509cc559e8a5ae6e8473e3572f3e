@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Code-Review+1: Paul Belanger <paul.belanger@polybeacon.com>
+Code-Review+1: Sergey Lukjanov <slukjanov@mirantis.com>
+Approved+1: Khai Do <zaro0508@gmail.com>
+Code-Review+2: Khai Do <zaro0508@gmail.com>
+Code-Review+2: Mathieu Gagné <mgagne@iweb.com>
+Submitted-by: Jenkins
+Submitted-at: Mon, 23 Sep 2013 18:05:50 +0000
+Reviewed-on: https://review.openstack.org/47862
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
