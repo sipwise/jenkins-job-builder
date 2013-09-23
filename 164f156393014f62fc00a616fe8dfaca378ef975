@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//oyA\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 6786
+      },
+      "writtenOn": "2013-09-23T15:55:55Z",
+      "side": 1,
+      "message": "this line is too long (pep8)",
+      "revId": "164f156393014f62fc00a616fe8dfaca378ef975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
