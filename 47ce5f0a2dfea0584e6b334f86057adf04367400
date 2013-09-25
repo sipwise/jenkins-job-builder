@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//iZU\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2678,
+      "author": {
+        "id": 5371
+      },
+      "writtenOn": "2013-09-25T02:34:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//zTc\u003d",
+      "revId": "47ce5f0a2dfea0584e6b334f86057adf04367400",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//zTY\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -48,6 +66,24 @@
       "writtenOn": "2013-09-19T00:14:31Z",
       "side": 1,
       "message": "I would like a link to the required Jenkins plugin to be included here. (to the Jenkins wiki)",
+      "revId": "47ce5f0a2dfea0584e6b334f86057adf04367400",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//ibw\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2681,
+      "author": {
+        "id": 5371
+      },
+      "writtenOn": "2013-09-25T02:34:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//zTY\u003d",
       "revId": "47ce5f0a2dfea0584e6b334f86057adf04367400",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -89,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//ia0\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2688,
+      "author": {
+        "id": 5371
+      },
+      "writtenOn": "2013-09-25T02:34:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//zTE\u003d",
+      "revId": "47ce5f0a2dfea0584e6b334f86057adf04367400",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//zQ0\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -100,6 +154,24 @@
       "writtenOn": "2013-09-19T00:14:31Z",
       "side": 1,
       "message": "Git SCM plugin uses \"remote\". It would be a good idea to be consistent with that one.\n\nThis defaults to \u0027origin\u0027. It should be documented.",
+      "revId": "47ce5f0a2dfea0584e6b334f86057adf04367400",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//ibA\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2690,
+      "author": {
+        "id": 5371
+      },
+      "writtenOn": "2013-09-25T02:34:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//zQ0\u003d",
       "revId": "47ce5f0a2dfea0584e6b334f86057adf04367400",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -123,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//ia8\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2691,
+      "author": {
+        "id": 5371
+      },
+      "writtenOn": "2013-09-25T02:34:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//zSw\u003d",
+      "revId": "47ce5f0a2dfea0584e6b334f86057adf04367400",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//zSs\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -134,6 +224,24 @@
       "writtenOn": "2013-09-19T00:14:31Z",
       "side": 1,
       "message": "tag-message \u003d\u003e message",
+      "revId": "47ce5f0a2dfea0584e6b334f86057adf04367400",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//ia4\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2692,
+      "author": {
+        "id": 5371
+      },
+      "writtenOn": "2013-09-25T02:34:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//zSs\u003d",
       "revId": "47ce5f0a2dfea0584e6b334f86057adf04367400",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -157,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//ibE\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2699,
+      "author": {
+        "id": 5371
+      },
+      "writtenOn": "2013-09-25T02:34:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//zSA\u003d",
+      "revId": "47ce5f0a2dfea0584e6b334f86057adf04367400",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//zOc\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -174,6 +300,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//ibI\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2701,
+      "author": {
+        "id": 5371
+      },
+      "writtenOn": "2013-09-25T02:34:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//zOc\u003d",
+      "revId": "47ce5f0a2dfea0584e6b334f86057adf04367400",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//zSk\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -185,6 +329,24 @@
       "writtenOn": "2013-09-19T00:14:31Z",
       "side": 1,
       "message": "branch-name \u003d\u003e name",
+      "revId": "47ce5f0a2dfea0584e6b334f86057adf04367400",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//ibM\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2702,
+      "author": {
+        "id": 5371
+      },
+      "writtenOn": "2013-09-25T02:34:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//zSk\u003d",
       "revId": "47ce5f0a2dfea0584e6b334f86057adf04367400",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -225,6 +387,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//iac\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2706,
+      "author": {
+        "id": 5371
+      },
+      "writtenOn": "2013-09-25T02:34:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//zOY\u003d",
+      "revId": "47ce5f0a2dfea0584e6b334f86057adf04367400",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//zRU\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -236,6 +416,24 @@
       "writtenOn": "2013-09-19T00:14:31Z",
       "side": 1,
       "message": "note-msg \u003d\u003e message (to be consistent with above)",
+      "revId": "47ce5f0a2dfea0584e6b334f86057adf04367400",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//iag\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2707,
+      "author": {
+        "id": 5371
+      },
+      "writtenOn": "2013-09-25T02:34:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//zRU\u003d",
       "revId": "47ce5f0a2dfea0584e6b334f86057adf04367400",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -259,6 +457,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//iak\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2708,
+      "author": {
+        "id": 5371
+      },
+      "writtenOn": "2013-09-25T02:34:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//zRc\u003d",
+      "revId": "47ce5f0a2dfea0584e6b334f86057adf04367400",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//zRM\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -270,6 +486,24 @@
       "writtenOn": "2013-09-19T00:14:31Z",
       "side": 1,
       "message": "note-replace \u003d\u003e replace-note",
+      "revId": "47ce5f0a2dfea0584e6b334f86057adf04367400",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//iao\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2710,
+      "author": {
+        "id": 5371
+      },
+      "writtenOn": "2013-09-25T02:34:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//zRM\u003d",
       "revId": "47ce5f0a2dfea0584e6b334f86057adf04367400",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
