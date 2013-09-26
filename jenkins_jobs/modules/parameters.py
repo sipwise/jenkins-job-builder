@@ -261,6 +261,83 @@ def svn_tags_param(parser, xml_parent, data):
     XML.SubElement(pdef, 'uuid').text = "1-1-1-1-1"
 
 
+def dynamic_choice_param(parser, xml_parent, data):
+    """yaml: dynamic-choice
+    A Dynamic choice parameter
+    Requires the Jenkins `Dynamic parameter Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/
+    Jenkins+Dynamic+Parameter+Plug-in>`_
+
+    :arg str name: The name of the parameter.
+    :arg str script: A Groovy script returning list of choices.
+    :arg str description: A description of the parameter. (optional)
+    :arg bool read_only: Whether the field should be read only. (optional)
+    :arg str class_paths: class paths (optional)
+
+    Example::
+
+      parameters:
+        - dynamic-choice:
+            name: foo
+            script: |
+                return ["Hello", "world"]
+            description: |
+                This is a description of the foo param.
+            read_only: false
+    """
+
+    pdef = base_param(parser, xml_parent, data, False,
+                      'com.seitenbau.jenkins.plugins.dynamicparameter.'
+                      'ChoiceParameterDefinition')
+    pdef.attrib['plugin'] = "dynamicparameter@0.2.0"
+    create_common_dynamic_param_dom(pdef, data)
+
+
+def dynamic_string_param(parser, xml_parent, data):
+    """yaml: dynamic-string
+    A Dynamic string parameter
+    Requires the Jenkins `Dynamic parameter Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/
+    Jenkins+Dynamic+Parameter+Plug-in>`_
+
+    :arg str name: The name of the parameter.
+    :arg str script: A Groovy script returning the parameter default.
+    :arg str description: A description of the parameter. (optional)
+    :arg bool read_only: Whether the field should be read only. (optional)
+    :arg str class_paths: class paths (optional)
+
+    Example::
+
+      parameters:
+        - dynamic-string:
+            name: foo
+            script: |
+                return "Hello world"
+            description: |
+                This is a description of the foo param.
+            read_only: false
+    """
+    pdef = base_param(parser, xml_parent, data, False,
+                      'com.seitenbau.jenkins.plugins.dynamicparameter.'
+                      'StringParameterDefinition')
+    pdef.attrib['plugin'] = "dynamicparameter@0.2.0"
+    create_common_dynamic_param_dom(pdef, data)
+
+
+def create_common_dynamic_param_dom(pdef, data):
+    """
+    Creates several DOM elements in pdef, common for dynamic parameters.
+    """
+    XML.SubElement(pdef, '__script').text = data['script']
+    XML.SubElement(pdef, '__remote').text = \
+        str(data.get('remote', False)).lower()
+    XML.SubElement(pdef, '__classPath').text = data.get('class_paths', '')
+    XML.SubElement(pdef, 'readonlyInputField').text = \
+        str(data.get('read_only', False)).lower()
+    XML.SubElement(pdef, '__localBaseDirectory').attrib['serialization'] = \
+        'custom'
+
+
 class Parameters(jenkins_jobs.modules.base.Base):
     sequence = 21
 
