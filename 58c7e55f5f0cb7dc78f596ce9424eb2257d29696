@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//ddE\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2013-09-26T11:04:06Z",
+      "side": 1,
+      "message": "true, rather than True seems to be used elsewhere, so I\u0027d prefer that for consistency.",
+      "revId": "58c7e55f5f0cb7dc78f596ce9424eb2257d29696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//ddA\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2013-09-26T11:04:06Z",
+      "side": 1,
+      "message": "Ditto, false, rather than False",
+      "revId": "58c7e55f5f0cb7dc78f596ce9424eb2257d29696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
