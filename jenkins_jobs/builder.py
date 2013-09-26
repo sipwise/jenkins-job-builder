@@ -151,8 +151,12 @@ class YamlParser(object):
                         d.update(jobparams)
                         d.update(group)
                         d.update(group_jobparams)
-                        # Except name, since the group's name is not useful
-                        d['name'] = project['name']
+                        if 'name' in jobparams:
+                            # Let us forge the project name, for example using parameters
+                            d['name'] = jobparams['name']
+                        else:
+                            # Except name, since the group's name is not useful
+                            d['name'] = project['name']
                         if template:
                             self.getXMLForTemplateJob(d, template, jobs_filter)
                     continue
@@ -177,6 +181,8 @@ class YamlParser(object):
         for values in itertools.product(*dimensions):
             params = copy.deepcopy(project)
             params.update(values)
+            # parameters self expanding, hacky
+            params = deep_format(params, params)
             expanded = deep_format(template, params)
 
             # Keep track of the resulting expansions to avoid
