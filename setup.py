@@ -98,6 +98,10 @@ setuptools.setup(
             'text=jenkins_jobs.modules.parameters:text_param',
             ('validating-string=jenkins_jobs.modules.parameters:'
              'validating_string_param'),
+            ('dynamic_string=jenkins_jobs.modules.parameters:'
+            'dynamic_string_param'),
+            ('dynamic_choice=jenkins_jobs.modules.parameters:'
+             'dynamic_choice_param'),
         ],
         'jenkins_jobs.metadata': [
             'date=jenkins_jobs.modules.metadata:date_metadata',
