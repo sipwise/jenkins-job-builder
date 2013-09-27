@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//aP4\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2013-09-27T08:52:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//ddE\u003d",
+      "revId": "58c7e55f5f0cb7dc78f596ce9424eb2257d29696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//ddA\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-26T11:04:06Z",
       "side": 1,
       "message": "Ditto, false, rather than False",
+      "revId": "58c7e55f5f0cb7dc78f596ce9424eb2257d29696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//aP8\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2013-09-27T08:52:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//ddA\u003d",
       "revId": "58c7e55f5f0cb7dc78f596ce9424eb2257d29696",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
