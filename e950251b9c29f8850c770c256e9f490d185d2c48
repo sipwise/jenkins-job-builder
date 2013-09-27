@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//Z4c\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-09-27T11:44:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAS3//zf4\u003d",
+      "revId": "e950251b9c29f8850c770c256e9f490d185d2c48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAASn//OFo\u003d",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-09T19:09:19Z",
       "side": 1,
       "message": "This comment implies default values should be text, but we allow non text values below and type check them on line 298. I think we should either update the comment or the default values, but this is inherited from the git function above so I don\u0027t know that this needs to be done now.",
+      "revId": "e950251b9c29f8850c770c256e9f490d185d2c48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//Z4U\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-09-27T11:44:16Z",
+      "side": 1,
+      "message": "Think it\u0027s worth fixing given the need for a new patchset.",
+      "parentUuid": "AAAASn//OFo\u003d",
       "revId": "e950251b9c29f8850c770c256e9f490d185d2c48",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
