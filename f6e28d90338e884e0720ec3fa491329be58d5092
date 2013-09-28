@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//WxE\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-09-28T16:22:27Z",
+      "side": 1,
+      "message": "Could you mention it is a Groovy script?",
+      "revId": "f6e28d90338e884e0720ec3fa491329be58d5092",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//WxI\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-09-28T16:22:27Z",
+      "side": 1,
+      "message": "it is no more the \u0027foo\u0027 param but the \u0027bar\u0027 one.",
+      "revId": "f6e28d90338e884e0720ec3fa491329be58d5092",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//WxA\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-09-28T16:22:27Z",
+      "side": 1,
+      "message": "Could you mention it is a Groovy script?",
+      "revId": "f6e28d90338e884e0720ec3fa491329be58d5092",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
