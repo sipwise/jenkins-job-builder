@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//WyA\u003d",
+        "filename": "tests/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-09-28T16:13:30Z",
+      "side": 1,
+      "message": "Thank you for generalizing the code from   tests/publishers/test_publishers.py  !!\n\nWould you mind removing get_scenarios() from tests/publishers/test_publishers.py and updated that file to use this base module?  Should be something like:\n\n +from ..base import get_scenarios\n\n class TestCaseModulePublisher(TestWithScenarios, testtools.TestCase):\n -    scenarios \u003d get_scenarios()\n +    scenarios \u003d get_scenarios(FIXTURES_PATH)\n\n\nI am wondering whether the new base.py should be introduced in a new change and then rebase your shallow patch on top of it. That is probably not important :-)\n\nThanks!",
+      "revId": "a88a8da6c57b8c31c59f6ac03e5a2a24e1f9fb9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//Wyw\u003d",
+        "filename": "tests/scm/fixtures/git-shallow-clone01.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-09-28T16:13:30Z",
+      "side": 1,
+      "message": "trailing whitespace (sorry :D)",
+      "revId": "a88a8da6c57b8c31c59f6ac03e5a2a24e1f9fb9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//Wys\u003d",
+        "filename": "tests/scm/fixtures/git-shallow-clone02.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-09-28T16:13:30Z",
+      "side": 1,
+      "message": "trailing whitespace (sorry \u003dD)",
+      "revId": "a88a8da6c57b8c31c59f6ac03e5a2a24e1f9fb9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//Wyo\u003d",
+        "filename": "tests/scm/fixtures/git-shallow-clone03.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-09-28T16:13:30Z",
+      "side": 1,
+      "message": "trailing whitespace (sorry 8-) )",
+      "revId": "a88a8da6c57b8c31c59f6ac03e5a2a24e1f9fb9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
