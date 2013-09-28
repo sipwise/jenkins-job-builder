@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//WnM\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-09-28T19:12:07Z",
+      "side": 1,
+      "message": "Isn\u0027t it the same as:\n\n data.get(\u0027optname\u0027, val)",
+      "revId": "6404d9da20e94c3212a5eef40eb30c590c2a2f27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//Wno\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-09-28T19:12:07Z",
+      "side": 1,
+      "message": "I think we usually do not bother skipping empty element and send them anyway.  Not a big deal though.",
+      "revId": "6404d9da20e94c3212a5eef40eb30c590c2a2f27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
