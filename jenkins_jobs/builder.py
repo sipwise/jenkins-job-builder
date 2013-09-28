@@ -164,6 +164,10 @@ class YamlParser(object):
                     d.update(project)
                     d.update(jobparams)
                     self.getXMLForTemplateJob(d, template, jobs_filter)
+                else:
+                    raise JenkinsJobsException("Failed to find suitable "
+                                               "template named '{0}'"
+                                               .format(jobname))
 
     def getXMLForTemplateJob(self, project, template, jobs_filter=None):
         dimensions = []
@@ -307,6 +311,8 @@ class ModuleRegistry(object):
                 name=name):
             func = ep.load()
             func(parser, xml_parent, component_data)
+            # exit with break to prevent else branch from always running
+            break
         else:
             # Otherwise, see if it's defined as a macro
             component = parser.data.get(component_type, {}).get(name)
@@ -317,6 +323,10 @@ class ModuleRegistry(object):
                     # the arguments are interpolated into the real defn.
                     self.dispatch(component_type,
                                   parser, xml_parent, b, component_data)
+            else:
+                raise JenkinsJobsException("Unknown entry point or macro '{0}'"
+                                           " for component type: '{1}'.".
+                                           format(name, component_type))
 
 
 class XmlJob(object):
