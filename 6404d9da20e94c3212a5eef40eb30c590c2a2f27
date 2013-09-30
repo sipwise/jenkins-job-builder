@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//VW8\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-09-30T01:26:40Z",
+      "side": 1,
+      "message": "yes it is, I\u0027ll wait on an answer on the following section before submitting an update for this to avoid needing to update again.",
+      "parentUuid": "AAAAS3//WnM\u003d",
+      "revId": "6404d9da20e94c3212a5eef40eb30c590c2a2f27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//Wno\u003d",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2013-09-28T19:12:07Z",
       "side": 1,
       "message": "I think we usually do not bother skipping empty element and send them anyway.  Not a big deal though.",
+      "revId": "6404d9da20e94c3212a5eef40eb30c590c2a2f27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//VXM\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-09-30T01:26:40Z",
+      "side": 1,
+      "message": "Wasn\u0027t sure whether it would cause problems in sending elements where the default was blank, so defaulted to the more conservative behaviour of matching the plugin behaviour which only saves the XML elements if not blank except for certain ones which it provides a default value if not set by the user.\n\nTrivial to change, so just need some indication on whether it\u0027s better to send all XML elements or try to match plugin behaviour where known?",
+      "parentUuid": "AAAAS3//Wno\u003d",
       "revId": "6404d9da20e94c3212a5eef40eb30c590c2a2f27",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
