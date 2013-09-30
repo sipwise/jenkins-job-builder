@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//SzA\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-30T19:23:54Z",
+      "side": 1,
+      "message": "s/te/the",
+      "revId": "5b05b66a9a40c72afb580461a3a6b7e1d07f9769",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//Si0\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-30T19:23:54Z",
+      "side": 1,
+      "message": "Does this make it so that the path is required for jobs to be deleted?  I think it would be better if we could keep the original delete job functionality while adding this file glob feature.",
+      "revId": "5b05b66a9a40c72afb580461a3a6b7e1d07f9769",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
