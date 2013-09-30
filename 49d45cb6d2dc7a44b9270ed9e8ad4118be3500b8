@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//S4I\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-30T17:50:23Z",
+      "side": 1,
+      "message": "I don\u0027t see where the name is used in the code.  is it being set somewhere?\n\nAlso is this param optional?",
+      "revId": "49d45cb6d2dc7a44b9270ed9e8ad4118be3500b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//S38\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-30T17:50:23Z",
+      "side": 1,
+      "message": "This says optional, but in code it\u0027s set to False by default.  Which should it be?",
+      "revId": "49d45cb6d2dc7a44b9270ed9e8ad4118be3500b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//S3Q\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-09-30T17:50:23Z",
+      "side": 1,
+      "message": "Seems like the script is a required param.  Would be good to check that one is specified otherwise raise an exception.",
+      "revId": "49d45cb6d2dc7a44b9270ed9e8ad4118be3500b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
