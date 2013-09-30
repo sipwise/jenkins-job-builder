@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//SKo\u003d",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-09-30T21:55:29Z",
+      "side": 1,
+      "message": "Maybe you can make sure here that the included file is not outside of the scripts directories (!include ../../../../etc/passwd)",
+      "revId": "089e820d26d874f57883134941bf2c3ec3a5ba75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
