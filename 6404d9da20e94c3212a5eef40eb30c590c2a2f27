@@ -69,6 +69,24 @@
       "revId": "6404d9da20e94c3212a5eef40eb30c590c2a2f27",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//OtM\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-10-01T21:22:47Z",
+      "side": 1,
+      "message": "IMO, matching the plugin behavior is safer way to go thus that is what I would do.",
+      "parentUuid": "AAAAS3//VXM\u003d",
+      "revId": "6404d9da20e94c3212a5eef40eb30c590c2a2f27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
