@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//Rh4\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-10-01T04:13:41Z",
+      "side": 1,
+      "message": "Wasn\u0027t sure whether to use the suggested \u0027Inclusion\u0027 header here as other tags could be added over time if additional behaviour was considered useful.",
+      "revId": "f3242951442e58a0a7bc2feb7688401b17bf3ce7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
