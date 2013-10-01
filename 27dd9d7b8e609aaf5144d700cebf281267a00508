@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//Qz4\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-10-01T10:36:33Z",
+      "side": 1,
+      "message": "While this works correctly as far as I can tell I\u0027m 100% sure it\u0027s actually correct as it depends on why there was a loop in the first place?\n\nIs it just because the result was a generator object, because it seems like it can only work correctly if only one result is returned.",
+      "revId": "27dd9d7b8e609aaf5144d700cebf281267a00508",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
