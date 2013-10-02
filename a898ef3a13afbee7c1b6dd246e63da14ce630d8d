@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//N9c\u003d",
+        "filename": "tests/publishers/test_publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-10-02T03:18:30Z",
+      "side": 1,
+      "message": "I thought that absolute import was part of python from 2.6 onwards?\n\nSince JJB is tested in 2.6 and 2.7, presumably 2.5 and earlier are not supported so this line shouldn\u0027t be needed.",
+      "revId": "a898ef3a13afbee7c1b6dd246e63da14ce630d8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
