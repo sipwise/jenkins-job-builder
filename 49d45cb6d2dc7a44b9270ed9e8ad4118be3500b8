@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//KY0\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2013-10-03T06:28:01Z",
+      "side": 1,
+      "message": "It\u0027s general attr for params.\nSee the base_param() at #40, it uses the name, so no optional.",
+      "parentUuid": "AAAAS3//S4I\u003d",
+      "revId": "49d45cb6d2dc7a44b9270ed9e8ad4118be3500b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//S38\u003d",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//KXE\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2013-10-03T06:28:01Z",
+      "side": 1,
+      "message": "Agree, better state in the docs what the default value is.",
+      "parentUuid": "AAAAS3//S38\u003d",
+      "revId": "49d45cb6d2dc7a44b9270ed9e8ad4118be3500b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//S3Q\u003d",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2013-09-30T17:50:23Z",
       "side": 1,
       "message": "Seems like the script is a required param.  Would be good to check that one is specified otherwise raise an exception.",
+      "revId": "49d45cb6d2dc7a44b9270ed9e8ad4118be3500b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//KYc\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2013-10-03T06:28:01Z",
+      "side": 1,
+      "message": "What do You mean by \u0027check or raise\u0027 please?\nIsn\u0027t that what will actually happen - KeyError?\n\nFor ex. see that base_param(), no special check for \"name in data\", no single raise here etc. So this just follows the existing flow-style in this file, should that be changed?\n\nOr you meant script \u003d empty string situation? But that would be bcs explicitly requested by user in job description.",
+      "parentUuid": "AAAAS3//S3Q\u003d",
       "revId": "49d45cb6d2dc7a44b9270ed9e8ad4118be3500b8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
