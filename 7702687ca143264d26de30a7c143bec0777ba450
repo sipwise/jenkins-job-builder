@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//Kpk\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-10-03T02:46:01Z",
+      "side": 1,
+      "message": "Is there a specific reason to use the generic \u0027Exception\u0027 instead of JenkinsJobsException?",
+      "revId": "7702687ca143264d26de30a7c143bec0777ba450",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
