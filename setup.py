@@ -53,6 +53,7 @@ setuptools.setup(
             'matrix=jenkins_jobs.modules.project_matrix:Matrix',
             'maven=jenkins_jobs.modules.project_maven:Maven',
             'multijob=jenkins_jobs.modules.project_multijob:MultiJob',
+            'flow=jenkins_jobs.modules.project_flow:Flow',
         ],
         'jenkins_jobs.builders': [
             'ant=jenkins_jobs.modules.builders:ant',
