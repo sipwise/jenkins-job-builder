@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//HcA\u003d",
+        "filename": "setup.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-04T03:01:52Z",
+      "side": 1,
+      "message": "This should be moved above freestyle. List is alphabetically sorted.",
+      "revId": "a7c7f934795b931fb129b91ec658cc7e45f3d5af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
