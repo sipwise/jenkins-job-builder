@@ -41,7 +41,8 @@ later.  There are a few basic optional fields for a Job definition::
       block-upstream: false
 
 **project-type**
-  Defaults to "freestyle", but "maven" can also be specified.
+  Defaults to "freestyle", but "maven" as well as "multijob" or "flow"
+  can also be specified.
 
 **defaults**
   Specifies a set of `Defaults`_ to use for this job, defaults to
