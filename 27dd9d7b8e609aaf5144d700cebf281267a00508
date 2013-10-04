@@ -16,6 +16,24 @@
       "revId": "27dd9d7b8e609aaf5144d700cebf281267a00508",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//Fa4\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-10-04T17:01:16Z",
+      "side": 1,
+      "message": "I think this is working because the way we use entry points ensures each group:name combo passed to iter_entry_points results in a single value referred to by the group:name key.\n\nThis works but only by convention. What do you think about guarding against iter_entry_points returning multiple values, by converting iter_entry_points results to a list then checking the length and using an if instead of the for? something like:\n\n  eps \u003d list(pkg_resources.iter_entry_points(...))\n  if eps and len(eps) \u003d\u003d1:\n    # Do stuff from for less break.\n  elif eps and len(eps) \u003e 1:\n    raise SomethingBrokeOurConvention()\n  else:\n    # Do stuff from else.",
+      "parentUuid": "AAAAS3//Qz4\u003d",
+      "revId": "27dd9d7b8e609aaf5144d700cebf281267a00508",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
