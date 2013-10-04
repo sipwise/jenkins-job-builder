@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//Ha4\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-04T03:14:25Z",
+      "side": 1,
+      "message": "How was those values (user/password) determined? Are they required? They look arbitrary to me.\n\nI don\u0027t feel we should provide default values if they are no use for the user.",
+      "revId": "edcddab837d9b3477e8b0a9521521767d0bd05f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
