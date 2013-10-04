@@ -16,6 +16,40 @@
       "revId": "f3242951442e58a0a7bc2feb7688401b17bf3ce7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//ESg\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-10-04T23:54:22Z",
+      "side": 1,
+      "message": "This probably actually isn\u0027t a problem today, but this default config parameter will be used in ever YamlParser instance that is constructed without a provided config. This sort of thing is often the cause of bugs later on when self.registry.config randomly has things in it that you don\u0027t expect it to have.",
+      "revId": "f3242951442e58a0a7bc2feb7688401b17bf3ce7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//ERw\u003d",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-10-04T23:54:22Z",
+      "side": 1,
+      "message": "Seems like python should have a better way to escape things that conflict with format strings, but I can\u0027t find one.",
+      "revId": "f3242951442e58a0a7bc2feb7688401b17bf3ce7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
