@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//FK4\u003d",
+        "filename": "tests/scm/test_scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-10-04T18:22:08Z",
+      "side": 1,
+      "message": "We should always use absolute imports. Eventually when we get flake8 and hacking running against this code base it will complain about the relative imports.",
+      "revId": "76efc25361403d57fd1f32492710f735481cbbe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
