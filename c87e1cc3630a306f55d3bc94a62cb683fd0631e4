@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//FQE\u003d",
+        "filename": "jenkins_jobs/modules/project_flow.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-04T18:01:45Z",
+      "side": 1,
+      "message": "A space is required between : and | otherwise copying the example results in failure of JJB.",
+      "revId": "c87e1cc3630a306f55d3bc94a62cb683fd0631e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
