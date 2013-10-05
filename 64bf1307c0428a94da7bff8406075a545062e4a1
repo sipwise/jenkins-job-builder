@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAS3//EPE\u003d",
+        "filename": "tests/general/test_general.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-10-05T00:16:35Z",
+      "side": 1,
+      "message": "The other change that adds testing (++ to testing this is badly needed) adds a file that looks just like this. Can we maybe have a base class that we inherit from and set some class member value to tell it where to find the fixtures? This seems better than copy and pasting this particular process all over the place.",
+      "revId": "64bf1307c0428a94da7bff8406075a545062e4a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
