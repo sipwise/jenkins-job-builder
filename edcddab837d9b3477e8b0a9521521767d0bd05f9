@@ -16,6 +16,24 @@
       "revId": "edcddab837d9b3477e8b0a9521521767d0bd05f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH///jM\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-10-06T06:25:41Z",
+      "side": 1,
+      "message": "Arbitrary choices. Essentially this is all about preventing an exception from being thrown when using the test command and no config file is passed.\n\nI see 3 options:\n1 require config files in all cases including running the test command\n2 have a default conf like this, except set \u0027user\u0027 and \u0027password\u0027 to None (url must be defined or it will result in an exception)\n3 create a TEST_CONF string representation of a dummy config for the test command only and read it in using cStringIO.StringIO\n\n TEST_CONF\u003d\"\"\"\n [jenkins]\n url\u003dhttp://localhost:8080/\n user\u003d\n password\u003d\n \"\"\"\n\nThen replace the \"config.add_section(\u0027jenkins\u0027)\" with \"config.readfp(cStringIO.StringIO(TEST_CONF))\", and drop setting the defaults when creating the ConfigParser object.",
+      "parentUuid": "AAAAS3//Ha4\u003d",
+      "revId": "edcddab837d9b3477e8b0a9521521767d0bd05f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
