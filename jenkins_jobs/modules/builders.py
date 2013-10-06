@@ -986,6 +986,59 @@ def sbt(parser, xml_parent, data):
         'subdir-path', '')
 
 
+def virtualenv(parser, xml_parent, data):
+    """yaml: virtualenv
+
+    This builder allows you to create virtualenv on the fly to build
+    your project. Requires the Jenkins `Shining Panda Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/ShiningPanda+Plugin>`_
+
+    :arg str python-version: Name of the Python installation to use.
+    :arg str name: Name of this virtualenv (optional)
+    :arg bool clear: Delete and recreate the virtualenv environment
+        on each build (default false)
+    :arg bool use-distribute: Use Distribute for package management
+        (default false)
+    :arg bool system-site-packages: Give access to the global site-packages
+        directory to the virtual environment (default false)
+
+    :arg bool ignore-exit-code: Don't mark the build as failure if any of
+        the commands exits with a non-zero exit code (default false)
+    :arg str nature: Nature of the command field. Can be Shell, XShell or
+        Python (default Shell).
+    :arg str command: Command to execute.
+
+    Example::
+
+      builders:
+        - virtualenv:
+            python-version: "System-CPython-2.7"
+            name: venv
+            clear: true
+            use-distribute: false
+            system-site-packages: false
+            ignore-exit-code: false
+            nature: XShell
+            command:|
+                pip install -r requirements.txt
+    """
+    venv = XML.SubElement(
+        xml_parent,
+        'jenkins.plugins.shiningpanda.builders.VirtualenvBuilder')
+    XML.SubElement(venv, 'pythonName').text = data['python-version']
+    XML.SubElement(venv, 'home').text = data['name']
+    XML.SubElement(venv, 'clear').text = str(data.get(
+        'clear', 'false')).lower()
+    XML.SubElement(venv, 'useDistribute').text = str(data.get(
+        'use-distribute', 'false')).lower()
+    XML.SubElement(venv, 'systemSitePackages').text = str(data.get(
+        'system-site-packages', 'false')).lower()
+    XML.SubElement(venv, 'command').text = data['command']
+    XML.SubElement(venv, 'ignoreExitCode').text = str(data.get(
+        'ignore-exit-code', 'false')).lower()
+    XML.SubElement(venv, 'nature').text = data.get('nature', 'Shell')
+
+
 class Builders(jenkins_jobs.modules.base.Base):
     sequence = 60
 
