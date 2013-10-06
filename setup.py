@@ -72,6 +72,7 @@ setuptools.setup(
             'sbt=jenkins_jobs.modules.builders:sbt',
             'shell=jenkins_jobs.modules.builders:shell',
             'trigger-builds=jenkins_jobs.modules.builders:trigger_builds',
+            'virtualenv=jenkins_jobs.modules.builders:virtualenv',
         ],
         'jenkins_jobs.reporters': [
             'email=jenkins_jobs.modules.reporters:email',
