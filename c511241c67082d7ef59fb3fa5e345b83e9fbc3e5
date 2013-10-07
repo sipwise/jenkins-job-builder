@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//7bo\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 996,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-10-07T22:35:50Z",
+      "side": 1,
+      "message": "is there a default value here? or does it depend on what\u0027s gets configured in jenkins global config?",
+      "revId": "c511241c67082d7ef59fb3fa5e345b83e9fbc3e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//7bU\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1031,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-10-07T22:35:50Z",
+      "side": 1,
+      "message": "using python False data type is prefered",
+      "revId": "c511241c67082d7ef59fb3fa5e345b83e9fbc3e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//7cQ\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1033,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-10-07T22:35:50Z",
+      "side": 1,
+      "message": "using python False data type is prefered",
+      "revId": "c511241c67082d7ef59fb3fa5e345b83e9fbc3e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//7cI\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1035,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-10-07T22:35:50Z",
+      "side": 1,
+      "message": "using python False data type is prefered",
+      "revId": "c511241c67082d7ef59fb3fa5e345b83e9fbc3e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//7cM\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1038,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-10-07T22:35:50Z",
+      "side": 1,
+      "message": "using python False data type is prefered",
+      "revId": "c511241c67082d7ef59fb3fa5e345b83e9fbc3e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
