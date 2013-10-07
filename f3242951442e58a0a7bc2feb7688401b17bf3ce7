@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//+Gs\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-10-07T09:37:26Z",
+      "side": 1,
+      "message": "Reworked, now uses \u0027None\u0027 type as previous, but means it needs to test that it\u0027s not None before attempting to retrieve config settings.",
+      "parentUuid": "AAAAS3//ESg\u003d",
+      "revId": "f3242951442e58a0a7bc2feb7688401b17bf3ce7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//ERw\u003d",
         "filename": "jenkins_jobs/local_yaml.py",
         "patchSetId": 3
