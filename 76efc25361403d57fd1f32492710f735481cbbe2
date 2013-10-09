@@ -16,6 +16,24 @@
       "revId": "76efc25361403d57fd1f32492710f735481cbbe2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//EpA\u003d",
+        "filename": "tests/scm/test_scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 2424
+      },
+      "writtenOn": "2013-10-09T20:19:14Z",
+      "side": 1,
+      "message": "I see, do you expect \"from tests.base import get_scenarios\"?",
+      "parentUuid": "AAAAS3//FK4\u003d",
+      "revId": "76efc25361403d57fd1f32492710f735481cbbe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
