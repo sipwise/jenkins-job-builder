@@ -34,6 +34,24 @@
       "revId": "27dd9d7b8e609aaf5144d700cebf281267a00508",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//18M\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-10-09T04:16:54Z",
+      "side": 1,
+      "message": "That confirms my thoughts on the intention, although it does look look like pkg_resources will error if there are duplicate entry points with the same name within the same group, so seems like the convention is enforced by current behaviour.\n\nStill, being explicit on what\u0027s supported seems a better idea rather than relying on implicit behaviour.",
+      "parentUuid": "AAAAS3//Fa4\u003d",
+      "revId": "27dd9d7b8e609aaf5144d700cebf281267a00508",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
