@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//tS8\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1031,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-10-10T22:01:58Z",
+      "side": 1,
+      "message": "Just noting that the reason False is preferred is that False is the type provided by the yaml parser if a value is specified, so we prefer the boolean type for consistency. It also helps make it clear why we then coerce it to a string and lower case the characters.",
+      "parentUuid": "AAAATH//7bU\u003d",
+      "revId": "c511241c67082d7ef59fb3fa5e345b83e9fbc3e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//7cQ\u003d",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 1
