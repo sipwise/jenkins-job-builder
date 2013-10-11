@@ -36,6 +36,46 @@ import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 
 
+def ownership(parser, xml_parent, data):
+    """yaml: ownership
+    Plugin provides explicit ownership for jobs and slave nodes.
+    Requires the `Ownership Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Ownership+Plugin>`_
+
+    :arg bool enabled: whether ownership enabled (default : true)
+    :arg str owner: the owner of job
+    :arg list coowner: list of job co-owners
+
+    Example::
+
+        properties:
+         - ownership:
+            owner: abraverm
+            coowner:
+             - lbednar
+             - edolinin
+    """
+    ownership_plugin = \
+        XML.SubElement(xml_parent,
+                       'com.synopsys.arc.'
+                       'jenkins.plugins.ownership.jobs.JobOwnerJobProperty')
+    ownership = XML.SubElement(ownership_plugin, 'ownership')
+
+    if data.get('enabled', True):
+        XML.SubElement(ownership, 'ownershipEnabled').text = 'True'
+    else:
+        XML.SubElement(ownership, 'ownershipEnabled').text = 'False'
+
+    owner = data.get('owner')
+    XML.SubElement(ownership, 'primaryOwnerId').text = str(owner)
+
+    coowners = data.get('coowner', [])
+    if coowners:
+        coownersIds = XML.SubElement(ownership, 'coownersIds')
+        for coowner in coowners:
+            XML.SubElement(coownersIds, 'string').text = str(coowner)
+
+
 def promoted_build(parser, xml_parent, data):
     """yaml: promoted-build
     Marks a build for promotion. A promotion process with an identical
