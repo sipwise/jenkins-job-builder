@@ -34,6 +34,24 @@
       "revId": "76efc25361403d57fd1f32492710f735481cbbe2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//k0E\u003d",
+        "filename": "tests/scm/test_scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-10-14T11:05:44Z",
+      "side": 1,
+      "message": "A similar change has to be done on https://review.openstack.org/#/c/49775/ as well.",
+      "parentUuid": "AAAAS3//EpA\u003d",
+      "revId": "76efc25361403d57fd1f32492710f735481cbbe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
