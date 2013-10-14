@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//k9M\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-10-14T10:26:03Z",
+      "side": 1,
+      "message": "I am pretty sure you can pass a dict representation of TEST_CONF as a first parameter to ConfigParser(). Something like:\n\n config \u003d ConfigParser.ConfigParser( {\n \u0027jenkins\u0027 : {\n    \u0027url\u0027: \u0027http://localhost:8080/\u0027,\n    \u0027user\u0027: \u0027\u0027,\n    \u0027password\u0027: \u0027\u0027,\n    },\n } )\n\nThat would save the cStringIO import.\n\nhttp://docs.python.org/2/library/configparser.html#ConfigParser.ConfigParser has a \"defaults\" parameter.",
+      "revId": "048d5221137a11111ad475f6d8cd674875eb14f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
