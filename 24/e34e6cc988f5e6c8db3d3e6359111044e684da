@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Approved+1: Antoine Musso <hashar@free.fr>
+Code-Review+2: Antoine Musso <hashar@free.fr>
+Code-Review+1: Emilien Macchi <emilien.macchi@enovance.com>
+Code-Review+2: Clark Boylan <cboylan@sapwetik.org>
+Submitted-by: Jenkins
+Submitted-at: Mon, 14 Oct 2013 10:17:41 +0000
+Reviewed-on: https://review.openstack.org/50392
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
