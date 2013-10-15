@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//e1o\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-15T16:18:36Z",
+      "side": 1,
+      "message": "I would like the wording to be:\n\n  Requires the Jenkins `Ownership Plugin.\n\nfor better consistency with other plugins.",
+      "revId": "a1238adfeb0f1b7012cf5243052ed86d03db942d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//e3o\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-15T16:18:36Z",
+      "side": 1,
+      "message": "I would prefer it to be co-owners.",
+      "revId": "a1238adfeb0f1b7012cf5243052ed86d03db942d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//e3Y\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-15T16:18:36Z",
+      "side": 1,
+      "message": "Does it need to be a capitalized value?\n\nIf not, this could be simplified to (removing the need of the conditional):\n\nXML.SubElement(ownership, \u0027ownershipEnabled\u0027).text \u003d str(data.get(\u0027enabled\u0027, True)).lower()",
+      "revId": "a1238adfeb0f1b7012cf5243052ed86d03db942d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//e20\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-15T16:18:36Z",
+      "side": 1,
+      "message": "The value returned by .get(\u0027owner\u0027) should already be a string. No need to cast.",
+      "revId": "a1238adfeb0f1b7012cf5243052ed86d03db942d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//e2o\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-15T16:18:36Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "a1238adfeb0f1b7012cf5243052ed86d03db942d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//e14\u003d",
+        "filename": "setup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-15T16:18:36Z",
+      "side": 1,
+      "message": "This list is alphabetically sorted. The line should be added after inject and before priority-sorter.",
+      "revId": "a1238adfeb0f1b7012cf5243052ed86d03db942d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
