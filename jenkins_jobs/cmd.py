@@ -25,6 +25,7 @@ TEST_CONF = """
 url=http://localhost:8080/
 user=
 password=
+keep_descriptions=False
 """
 
 
