@@ -113,9 +113,10 @@ def matches(what, where):
 
 class YamlParser(object):
     def __init__(self, config=None):
-        self.registry = ModuleRegistry(config)
         self.data = {}
         self.jobs = []
+        self.config = config
+        self.registry = ModuleRegistry(self.config)
 
     def parse(self, fn):
         data = yaml.load(open(fn))
@@ -275,8 +276,18 @@ class YamlParser(object):
 
     def getXMLForJob(self, data):
         kind = data.get('project-type', 'freestyle')
-        data["description"] = (data.get("description", "") +
-                               self.get_managed_string()).lstrip()
+        if self.config:
+            keep_desc = self.config.getboolean('job_builder',
+                                               'keep_descriptions')
+        else:
+            keep_desc = False
+        if keep_desc:
+            description = data.get("description", None)
+        else:
+            description = data.get("description", '')
+        if description is not None:
+            data["description"] = description + \
+                self.get_managed_string()
         for ep in pkg_resources.iter_entry_points(
                 group='jenkins_jobs.projects', name=kind):
             Mod = ep.load()
@@ -502,7 +513,7 @@ class Builder(object):
                  config=None, ignore_cache=False, flush_cache=False):
         self.jenkins = Jenkins(jenkins_url, jenkins_user, jenkins_password)
         self.cache = CacheStorage(jenkins_url, flush=flush_cache)
-        self.global_config = config
+        self.global_config = config 
         self.ignore_cache = ignore_cache
 
     def load_files(self, fn):
