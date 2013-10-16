@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//ZQE\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-10-16T18:45:14Z",
+      "side": 1,
+      "message": "Generally i think setting default to \u0027None\u0027 might be the right thing to do but I think it might break openstack projects because i don\u0027t think we set description on every job and I think our intention is to always append the MANAGE_MAGIC_STRING to the description by default.  That lets us know which projects are managed by JJB.",
+      "revId": "9f18aee15b025587e33648c98a154f27da5b7885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
