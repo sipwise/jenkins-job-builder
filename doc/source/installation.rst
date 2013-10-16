@@ -45,6 +45,7 @@ the following format::
   password=PASSWORD
   url=JENKINS_URL
   ignore_cache=IGNORE_CACHE_FLAG
+  keep_descriptions=True
 
 **user**
   This should be the name of a user previously defined in Jenkins.
@@ -64,6 +65,12 @@ the following format::
 **ignore_cache**
   (Optional) If set to True, jenkins job builder
   won't be using any cache.
+
+**keep_descriptions**
+  By default `jenkins-jobs` will overwrite the jobs descriptions even if no
+  description has been defined explicitly, this option changes that behavior.
+  When this option is set to True, that behavior changes and it will only
+  overwrite the description if you specified it in the yaml. False by default.
 
 
 Running
