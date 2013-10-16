@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//ZT8\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-10-16T18:27:20Z",
+      "side": 1,
+      "message": "please document whether is param is required or not.",
+      "revId": "4947215b20a91a5915a11b94b516d57f6beeb8b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//ZUE\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-10-16T18:27:20Z",
+      "side": 1,
+      "message": "is this a required param?  should we maybe check that jobs contains a value otherwise raise an exception?",
+      "revId": "4947215b20a91a5915a11b94b516d57f6beeb8b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//ZVo\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-10-16T18:27:20Z",
+      "side": 1,
+      "message": "this var definition should probably be outside of the 1st for loop (line 409).",
+      "revId": "4947215b20a91a5915a11b94b516d57f6beeb8b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//ZU0\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-10-16T18:27:20Z",
+      "side": 1,
+      "message": "would be better to use the JenkinsJobBuilderException instead.",
+      "revId": "4947215b20a91a5915a11b94b516d57f6beeb8b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//ZV4\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-10-16T18:27:20Z",
+      "side": 1,
+      "message": "maybe better to print the expected list from the result_dict?  something like \u0027,\u0027.join(result_dict.keys()) should work.",
+      "revId": "4947215b20a91a5915a11b94b516d57f6beeb8b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
