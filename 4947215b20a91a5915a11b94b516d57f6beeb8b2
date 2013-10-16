@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//YyQ\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-10-16T20:37:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//ZT8\u003d",
+      "revId": "4947215b20a91a5915a11b94b516d57f6beeb8b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//ZUE\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2013-10-16T18:27:20Z",
       "side": 1,
       "message": "is this a required param?  should we maybe check that jobs contains a value otherwise raise an exception?",
+      "revId": "4947215b20a91a5915a11b94b516d57f6beeb8b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//YuM\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-10-16T20:37:14Z",
+      "side": 1,
+      "message": "Done and implemented the exception as JenkinsJobsException",
+      "parentUuid": "AAAATH//ZUE\u003d",
       "revId": "4947215b20a91a5915a11b94b516d57f6beeb8b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//YyI\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-10-16T20:37:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//ZVo\u003d",
+      "revId": "4947215b20a91a5915a11b94b516d57f6beeb8b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//ZU0\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 2
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATH//Yto\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-10-16T20:37:14Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "AAAATH//ZU0\u003d",
+      "revId": "4947215b20a91a5915a11b94b516d57f6beeb8b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//ZV4\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 2
@@ -81,6 +153,24 @@
       "writtenOn": "2013-10-16T18:27:20Z",
       "side": 1,
       "message": "maybe better to print the expected list from the result_dict?  something like \u0027,\u0027.join(result_dict.keys()) should work.",
+      "revId": "4947215b20a91a5915a11b94b516d57f6beeb8b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//YxI\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2013-10-16T20:37:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATH//ZV4\u003d",
       "revId": "4947215b20a91a5915a11b94b516d57f6beeb8b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
