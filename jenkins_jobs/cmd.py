@@ -18,6 +18,21 @@ import ConfigParser
 import logging
 import os
 import sys
+import cStringIO
+
+
+DEFAULT_CONF = """
+[DEFAULT]
+keep_descriptions=False
+"""
+
+
+TEST_CONF = """
+[jenkins]
+url=http://localhost:8080/
+user=
+password=
+"""
 
 
 def confirm(question):
@@ -78,8 +93,9 @@ def main():
                                  'jenkins_jobs.ini')
         if os.path.isfile(localconf):
             conf = localconf
-
     config = ConfigParser.ConfigParser()
+    ## Load default config anyway
+    config.readfp(cStringIO.StringIO(DEFAULT_CONF))
     if os.path.isfile(conf):
         logger.debug("Reading config from {0}".format(conf))
         conffp = open(conf, 'r')
