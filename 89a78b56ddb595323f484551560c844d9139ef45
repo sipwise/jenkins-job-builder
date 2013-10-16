@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//ZdE\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1002,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-10-16T17:47:52Z",
+      "side": 1,
+      "message": "is this a required param?  if it is then you should probably set a default value.",
+      "revId": "89a78b56ddb595323f484551560c844d9139ef45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//Zcw\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1034,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-10-16T17:47:52Z",
+      "side": 1,
+      "message": "No default?  what if it\u0027s not specified?  Maybe check for value otherwise raise exception?",
+      "revId": "89a78b56ddb595323f484551560c844d9139ef45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
