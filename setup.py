@@ -168,6 +168,7 @@ setuptools.setup(
              'github_pull_request'),
             'pollscm=jenkins_jobs.modules.triggers:pollscm',
             'timed=jenkins_jobs.modules.triggers:timed',
+            'build-result=jenkins_jobs.modules.triggers:build_result',
         ],
         'jenkins_jobs.wrappers': [
             'ansicolor=jenkins_jobs.modules.wrappers:ansicolor',
