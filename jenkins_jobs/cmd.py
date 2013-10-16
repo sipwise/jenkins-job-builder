@@ -18,6 +18,19 @@ import ConfigParser
 import logging
 import os
 import sys
+import cStringIO
+
+
+DEFAULT_CONF = """
+[DEFAULT]
+keep_descriptions=False
+
+# This section is used for testing also
+[jenkins]
+url=http://localhost:8080/
+user=
+password=
+"""
 
 
 def confirm(question):
@@ -78,20 +91,15 @@ def main():
                                  'jenkins_jobs.ini')
         if os.path.isfile(localconf):
             conf = localconf
-
     config = ConfigParser.ConfigParser()
-    if os.path.isfile(conf):
+    ## Load default config always
+    config.readfp(cStringIO.StringIO(DEFAULT_CONF))
+    if options.command == 'test':
+        logger.debug("Not reading config for test output generation")
+    elif os.path.isfile(conf):
         logger.debug("Reading config from {0}".format(conf))
         conffp = open(conf, 'r')
         config.readfp(conffp)
-    elif options.command == 'test':
-        ## to avoid the 'no section' and 'no option' errors when testing
-        config.add_section("jenkins")
-        config.set("jenkins", "url", "http://localhost:8080")
-        config.set("jenkins", "user", None)
-        config.set("jenkins", "password", None)
-        config.set("jenkins", "ignore_cache", False)
-        logger.debug("Not reading config for test output generation")
     else:
         raise jenkins_jobs.errors.JenkinsJobsException(
             "A valid configuration file is required when not run as a test")
