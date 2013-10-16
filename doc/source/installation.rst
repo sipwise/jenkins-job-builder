@@ -38,13 +38,25 @@ After installation, you will need to create a configuration file.  By
 default, `jenkins-jobs` looks in
 ``/etc/jenkins_jobs/jenkins_jobs.ini`` but you may specify an
 alternate location when running `jenkins-jobs`.  The file should have
-the following format::
+the following format:
 
-  [jenkins]
-  user=USERNAME
-  password=PASSWORD
-  url=JENKINS_URL
-  ignore_cache=IGNORE_CACHE_FLAG
+.. literalinclude:: ../../etc/jenkins_jobs.ini-sample
+
+job_builder section
+^^^^^^^^^^^^^^^^^^^
+
+**ignore_cache**
+  (Optional) If set to True, jenkins job builder
+  won't be using any cache.
+
+**keep_descriptions**
+  By default `jenkins-jobs` will overwrite the jobs descriptions even if no
+  description has been defined explicitly, this option changes that behavior.
+  When this option is set to True, that behavior changes and it will only
+  overwrite the description if you specified it in the yaml. False by default.
+
+jenkins section
+^^^^^^^^^^^^^^^
 
 **user**
   This should be the name of a user previously defined in Jenkins.
@@ -60,10 +72,6 @@ the following format::
 
 **url**
   The base URL for your Jenkins installation.
-
-**ignore_cache**
-  (Optional) If set to True, jenkins job builder
-  won't be using any cache.
 
 
 Running
