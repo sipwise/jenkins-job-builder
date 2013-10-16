@@ -66,6 +66,7 @@ class YamlParser(object):
         self.registry = ModuleRegistry(config)
         self.data = {}
         self.jobs = []
+        self.config = config
 
     def parse(self, fn):
         data = yaml.load(open(fn))
@@ -216,8 +217,14 @@ class YamlParser(object):
 
     def getXMLForJob(self, data):
         kind = data.get('project-type', 'freestyle')
-        data["description"] = data.get("description", "") + \
-            self.get_managed_string()
+        keep_desc = self.config.getboolean('jenkins', 'keep_descriptions')
+        if keep_desc:
+            description = data.get("description", None)
+        else:
+            description = data.get("description", '')
+        if description is not None:
+            data["description"] = description + \
+                self.get_managed_string()
         for ep in pkg_resources.iter_entry_points(
                 group='jenkins_jobs.projects', name=kind):
             Mod = ep.load()

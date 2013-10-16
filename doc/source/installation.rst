@@ -25,6 +25,7 @@ the following format::
   user=USERNAME
   password=PASSWORD
   url=JENKINS_URL
+  keep_description=True
 
 **user**
   This should be the name of a user previously defined in Jenkins.
@@ -40,6 +41,12 @@ the following format::
 
 **url**
   The base URL for your Jenkins installation.
+
+**keep_description**
+  By default `jenkins-jobs` will overwrite the jobs descriptions even if none
+  defined explicitly, this option changes that behavior. So when this option
+  is set to True, it will not overwrite the jobs description if none defined
+  explicitly. False by default.
 
 
 Running
