@@ -368,6 +368,67 @@ def github_pull_request(parser, xml_parent, data):
     XML.SubElement(ghprb, 'cron').text = data.get('cron', '')
 
 
+def build_result(parser, xml_parent, data):
+    """yaml: build-result
+    Configure jobB to monitor jobA build result. A build is scheduled if there
+    is a new build result matches your criteria (unstable, failure, ...)
+    Requires the Jenkins `BuildResultTrigger Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/BuildResultTrigger+Plugin>`_
+
+    :arg list jobs: The jobs to monitor
+    :arg list result: Build result to monitor for (default success)
+    :arg bool combine: Combine all job information.  A build will be
+        scheduled only if all conditions are met (default false)
+    :arg str cron: The cron syntax with which to poll the jobs for the
+        supplied result (default '')
+
+    Example::
+
+      triggers:
+        - build-result:
+            combine: true
+            cron: '* * * * *'
+            groups:
+              - jobs:
+                  - foo
+                  - example
+                results:
+                  - unstable
+              - jobs:
+                  - foo2
+                results:
+                  - not-built
+                  - aborted
+    """
+    brt = XML.SubElement(xml_parent, 'org.jenkinsci.plugins.'
+                         'buildresulttrigger.BuildResultTrigger')
+    XML.SubElement(brt, 'spec').text = data.get('cron', '')
+    XML.SubElement(brt, 'combinedJobs').text = str(
+        data.get('combine', False)).lower()
+    jobs_info = XML.SubElement(brt, 'jobsInfo')
+    for group in data['groups']:
+        brti = XML.SubElement(jobs_info, 'org.jenkinsci.plugins.'
+                              'buildresulttrigger.model.'
+                              'BuildResultTriggerInfo')
+        jobs_string = ",".join(group['jobs'])
+        XML.SubElement(brti, 'jobNames').text = jobs_string
+        checked_results = XML.SubElement(brti, 'checkedResults')
+        for result in group.get('results', ['success']):
+            result_dict = {'success': 'SUCCESS',
+                           'unstable': 'UNSTABLE',
+                           'failure': 'FAILURE',
+                           'not-built': 'NOT_BUILT',
+                           'aborted': 'ABORTED'}
+            if result not in result_dict:
+                raise Exception("Result entered is not valid, must be one of: "
+                                "success, unstable, failure, not-built, "
+                                "or aborted")
+            model_checked = XML.SubElement(checked_results, 'org.jenkinsci.'
+                                           'plugins.buildresulttrigger.model.'
+                                           'CheckedResult')
+            XML.SubElement(model_checked, 'checked').text = result_dict[result]
+
+
 class Triggers(jenkins_jobs.modules.base.Base):
     sequence = 50
 
