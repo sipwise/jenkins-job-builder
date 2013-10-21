@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//Mks\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-21T15:37:26Z",
+      "side": 1,
+      "message": "s/result/results/",
+      "revId": "8dac23afe48bd9bea93c3480ec583c9c5227f7f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//Mkc\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-21T15:37:26Z",
+      "side": 1,
+      "message": "I would like this option to be documented as well as it looks to be required.",
+      "revId": "8dac23afe48bd9bea93c3480ec583c9c5227f7f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATH//MkQ\u003d",
+        "filename": "setup.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-21T15:37:26Z",
+      "side": 1,
+      "message": "This list is alphabetically sorted. This entry should be placed above gerrit.",
+      "revId": "8dac23afe48bd9bea93c3480ec583c9c5227f7f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
