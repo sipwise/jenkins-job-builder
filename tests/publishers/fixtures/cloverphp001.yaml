@@ -1,0 +1,6 @@
+# vim: sw=4 ts=4 et
+#
+# Test for the defaults, only xmllocation is required
+publishers:
+ - cloverphp:
+       xmllocation: 'build/clover.xml'
