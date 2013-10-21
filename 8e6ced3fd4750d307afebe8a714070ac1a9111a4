@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATH//Mh8\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-21T15:47:18Z",
+      "side": 1,
+      "message": "self.config looks to not be defined when running tests.",
+      "revId": "8e6ced3fd4750d307afebe8a714070ac1a9111a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
