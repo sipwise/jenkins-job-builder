@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATX//78k\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1002,
+      "author": {
+        "id": 8951
+      },
+      "writtenOn": "2013-10-24T00:14:21Z",
+      "side": 1,
+      "message": "Yes, this is required and it depends on which system and Python version is installed. There is a list of default candidates in\n\n https://github.com/jenkinsci/shiningpanda-plugin/blob/master/src/main/java/jenkins/plugins/shiningpanda/tools/PythonInstallationFinder.java\n\nA sane default seems to be \u0027System-CPython-2.7\u0027, which have higher chances to be installed in Linux and OS X.",
+      "parentUuid": "AAAATH//ZdE\u003d",
+      "revId": "89a78b56ddb595323f484551560c844d9139ef45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATH//Zcw\u003d",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 3
