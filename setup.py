@@ -97,6 +97,14 @@ setuptools.setup(
             'string=jenkins_jobs.modules.parameters:string_param',
             'svn-tags=jenkins_jobs.modules.parameters:svn_tags_param',
             'text=jenkins_jobs.modules.parameters:text_param',
+            ('dynamic-choice=jenkins_jobs.modules.parameters:'
+             'dynamic_choice_param'),
+            ('dynamic-choice-scriptler=jenkins_jobs.modules.parameters:'
+             'dynamic_choice_scriptler_param'),
+            ('dynamic-string=jenkins_jobs.modules.parameters:'
+             'dynamic_string_param'),
+            ('dynamic-string-scriptler=jenkins_jobs.modules.parameters:'
+             'dynamic_string_scriptler_param'),
             ('validating-string=jenkins_jobs.modules.parameters:'
              'validating_string_param'),
         ],
