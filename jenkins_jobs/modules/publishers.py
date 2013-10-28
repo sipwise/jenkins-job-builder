@@ -77,6 +77,25 @@ def archive(parser, xml_parent, data):
         latest.text = 'false'
 
 
+def blame_upstream_committers(parser, xml_parent, data):
+    """yaml: blame-upstream-committers
+    Notify upstream commiters when build fails
+    Requires the Jenkins `JaCoCo Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/
+    Blame+Upstream+Committers+Plugin>`_
+
+    Example::
+
+      publishers:
+        - blame-upstream-committers:
+    """
+
+    blame = XML.SubElement(xml_parent,
+                           'hudson.plugins.blame__upstream__commiters.'
+                           'BlameUpstreamCommitersPublisher')
+    XML.SubElement(blame, 'sendToIndividuals').text = 'false'
+
+
 def trigger_parameterized_builds(parser, xml_parent, data):
     """yaml: trigger-parameterized-builds
     Trigger parameterized builds of other jobs.
