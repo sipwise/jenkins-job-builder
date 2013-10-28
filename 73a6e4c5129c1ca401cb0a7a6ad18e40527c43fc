@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//y1o\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-28T23:00:05Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be [jenkins] ?",
+      "revId": "73a6e4c5129c1ca401cb0a7a6ad18e40527c43fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
