@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//ypk\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 4162
+      },
+      "writtenOn": "2013-10-29T00:29:03Z",
+      "side": 1,
+      "message": "Why is this parameter not exposed?",
+      "revId": "606d5dc277e6f687cb4a5ba0d81895aaa5580aff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
