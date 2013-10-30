@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn//pVY\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-10-30T23:21:42Z",
+      "side": 1,
+      "message": "i think should be \u0027none is defined\u0027",
+      "revId": "73a6e4c5129c1ca401cb0a7a6ad18e40527c43fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//pU0\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-10-30T23:21:42Z",
+      "side": 1,
+      "message": "how about \u0027JJB will not overwrite the job description if it is not defined.\u0027",
+      "revId": "73a6e4c5129c1ca401cb0a7a6ad18e40527c43fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//y1o\u003d",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 6
