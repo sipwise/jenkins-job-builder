@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//t4A\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-30T01:49:47Z",
+      "side": 1,
+      "message": "I would prefer this parameter to be named read-only as it is the correct spelling and better fit with JJB config style.",
+      "revId": "abccb7ffa603a06584fbcf1f409dc79bd989d0e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//t4Y\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-30T01:49:47Z",
+      "side": 1,
+      "message": "Example crashes JJB with this error:\n\n  TypeError: cannot serialize [\u0027optionA\u0027, \u0027optionB\u0027] (type list)\n\nBetter wrap the value in double-quotes or use multilines syntax.",
+      "revId": "abccb7ffa603a06584fbcf1f409dc79bd989d0e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//t4M\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-30T01:49:47Z",
+      "side": 1,
+      "message": "Same here and in example.",
+      "revId": "abccb7ffa603a06584fbcf1f409dc79bd989d0e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//t38\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-30T01:49:47Z",
+      "side": 1,
+      "message": "We use lowercase booleans in examples. All examples should be updated accordingly.",
+      "revId": "abccb7ffa603a06584fbcf1f409dc79bd989d0e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//t3o\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-30T01:49:47Z",
+      "side": 1,
+      "message": "I would suggest using \"script-id\" to better fit with JJB style.\n\ns/expression/script as below is referring to script, not expression.",
+      "revId": "abccb7ffa603a06584fbcf1f409dc79bd989d0e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//t2g\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-30T01:49:47Z",
+      "side": 1,
+      "message": "Same here. s/expression/script/\n\nDescription should be: \"which generates the default value\"",
+      "revId": "abccb7ffa603a06584fbcf1f409dc79bd989d0e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//t1U\u003d",
+        "filename": "setup.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-30T01:49:47Z",
+      "side": 1,
+      "message": "This list is alphabetically sorted. Those new entries should be moved after choice and before file entries.",
+      "revId": "abccb7ffa603a06584fbcf1f409dc79bd989d0e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
