@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn//t04\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-30T02:10:31Z",
+      "side": 1,
+      "message": "s/JaCoCo/Blame Upstream Committers/",
+      "revId": "606d5dc277e6f687cb4a5ba0d81895aaa5580aff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//tzY\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-30T02:10:31Z",
+      "side": 1,
+      "message": "If no parameter is required, the \u0027:\u0027 can be dropped.",
+      "revId": "606d5dc277e6f687cb4a5ba0d81895aaa5580aff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//ypk\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
@@ -13,6 +47,41 @@
       "writtenOn": "2013-10-29T00:29:03Z",
       "side": 1,
       "message": "Why is this parameter not exposed?",
+      "revId": "606d5dc277e6f687cb4a5ba0d81895aaa5580aff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//tzg\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-30T02:10:31Z",
+      "side": 1,
+      "message": "The UI doesn\u0027t allow you to update this value. According to plugin source, this value looks hard-coded.",
+      "parentUuid": "AAAATn//ypk\u003d",
+      "revId": "606d5dc277e6f687cb4a5ba0d81895aaa5580aff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//t0g\u003d",
+        "filename": "setup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-10-30T02:10:31Z",
+      "side": 1,
+      "message": "This is missing the publishers part. Should be:\n\n  blame-upstream-committers\u003djenkins_jobs.modules.publishers:blame_upstream_committers",
       "revId": "606d5dc277e6f687cb4a5ba0d81895aaa5580aff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
