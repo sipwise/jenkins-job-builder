@@ -484,6 +484,34 @@ def tfs(self, xml_parent, data):
                                                   'plugins.tfs.browsers.'
                                                   'TeamSystemWebAccess'
                                                   'Browser'})
+def clone_workspace(self, xml_parent, data):
+    """yaml: clone-workspace
+    Specifies the workspace to clone for this job.
+
+    parent: name of the job to clone
+    criteria: 'Any'*|'Not Failed'|'Successful'
+
+    Requires the Jenkins `Clone Workspace SCM Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/
+    Clone+Workspace+SCM+Plugin>`_
+
+    Example::
+
+        scm:
+            - clone-workspace:
+                parent: the-other-job
+                criteria: Successful
+    """
+    cloner = XML.SubElement(xml_parent, 'scm',
+                            attrib={'class':'hudson.plugins.cloneworkspace.CloneWorkspaceSCM',
+                                    'plugin':'clone-workspace-scm@0.6'})
+
+    parentJobName = XML.SubElement(cloner, 'parentJobName')
+    parentJobName.text = data['parent']
+
+    criteria = XML.SubElement(cloner, 'criteria')
+    criteria.text = data.get('criteria', 'Any')
+
 
 
 class SCM(jenkins_jobs.modules.base.Base):

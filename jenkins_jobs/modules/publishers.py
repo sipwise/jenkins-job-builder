@@ -2809,6 +2809,47 @@ def git(parser, xml_parent, data):
                 'hudson.plugins.git.GitPublisher_-NoteToPush')
             handle_entity_children(note['note'], xml_note, note_mappings)
 
+def clone_workspace(parser, xml_parent, data):
+    """yaml: clone-workspace
+    This publisher will configure the job to archive the specified parts of the
+    workspace as tar or zip.
+
+    criteria: 'Any'*|'Not Failed'|'Successful'
+    archive-method: 'TAR'*|'ZIP'
+
+    Requires the Jenkins `Clone Workspace SCM Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/
+    Clone+Workspace+SCM+Plugin>`_
+
+    Example::
+
+        publishers:
+            - clone-workspace:
+                archive-method: ZIP
+                criteria: Successful
+                include: '**'
+                exclude: '.git/objects/**'
+                override-default-excludes: true
+    """
+    cloner = XML.SubElement(xml_parent, 'hudson.plugins.cloneworkspace.CloneWorkspacePublisher',
+                            attrib={'plugin':'clone-workspace-scm@0.6'})
+
+    workspaceGlob = XML.SubElement(cloner, 'workspaceGlob')
+    workspaceGlob.text = data.get('include', '')
+
+    if 'exclude' in data:
+      workspaceExcludeGlob = XML.SubElement(cloner, 'workspaceExcludeGlob')
+      workspaceExcludeGlob.text = data['exclude']
+
+    criteria = XML.SubElement(cloner, 'criteria')
+    criteria.text = data.get('criteria', 'Any')
+
+    archiveMethod = XML.SubElement(cloner, 'archiveMethod')
+    archiveMethod.text = data.get('archive-method', 'TAR')
+
+    overrideDefaultExcludes = XML.SubElement(cloner, 'overrideDefaultExcludes')
+    overrideDefaultExcludes.text = str(data.get('override-default-excludes', False)).lower()
+
 
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
