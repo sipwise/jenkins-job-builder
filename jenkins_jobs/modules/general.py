@@ -55,6 +55,9 @@ class General(jenkins_jobs.modules.base.Base):
         if jdk:
             XML.SubElement(xml, 'jdk').text = jdk
         XML.SubElement(xml, 'actions')
+        display_name = data.get('display-name', None)
+        if display_name is not None:
+            XML.SubElement(xml, 'displayName').text = display_name
         desc_text = data.get('description', None)
         if desc_text is not None:
             description = XML.SubElement(xml, 'description')
