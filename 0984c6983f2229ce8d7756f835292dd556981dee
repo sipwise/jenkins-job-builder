@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//lVo\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-10-31T22:54:55Z",
+      "side": 1,
+      "message": "we prefer using the JenkinsJobBuilderException",
+      "revId": "0984c6983f2229ce8d7756f835292dd556981dee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//lVc\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-10-31T22:54:55Z",
+      "side": 1,
+      "message": "we prefer using the JenkinsJobBuilderException",
+      "revId": "0984c6983f2229ce8d7756f835292dd556981dee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//lTk\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-10-31T22:54:55Z",
+      "side": 1,
+      "message": "should we verify that the user specified val is within a valid range?",
+      "revId": "0984c6983f2229ce8d7756f835292dd556981dee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
