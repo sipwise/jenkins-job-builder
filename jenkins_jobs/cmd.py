@@ -38,11 +38,13 @@ def main():
     parser_update.add_argument('--delete-old', help='Delete obsolete jobs',
                                action='store_true',
                                dest='delete_old', default=False,)
+
     parser_test = subparser.add_parser('test')
     parser_test.add_argument('path', help='Path to YAML file or directory')
     parser_test.add_argument('-o', dest='output_dir',
                              help='Path to output XML')
     parser_test.add_argument('name', help='name(s) of job(s)', nargs='*')
+
     parser_delete = subparser.add_parser('delete')
     parser_delete.add_argument('name', help='name of job', nargs='+')
     parser_delete.add_argument('-p', '--path', default=None,
@@ -51,6 +53,7 @@ def main():
                          help='Delete *ALL* jobs from Jenkins server, '
                          'including those not managed by Jenkins Job '
                          'Builder.')
+
     parser.add_argument('--conf', dest='conf', help='Configuration file')
     parser.add_argument('-l', '--log_level', dest='log_level', default='info',
                         help="Log level (default: %(default)s)")
@@ -62,6 +65,17 @@ def main():
     parser.add_argument(
         '--flush-cache', action='store_true', dest='flush_cache',
         default=False, help='Flush all the cache entries before updating')
+
+    # template command parser
+    parser_ptest = subparser.add_parser('template-test')
+    parser_ptest.add_argument('load_path', help='Path to YAML file(s) for template')
+    parser_ptest.add_argument('template', help='Job Template name')
+    parser_ptest.add_argument('-p', '--params', dest='params',
+        help='{key:value} to inject into the project template',
+        nargs='+')
+    parser_ptest.add_argument('-o', '--output', dest='output_dir',
+                              help='Path to output XML')
+
     options = parser.parse_args()
 
     options.log_level = getattr(logging, options.log_level.upper(),
@@ -84,7 +98,7 @@ def main():
         conffp = open(conf, 'r')
         config = ConfigParser.ConfigParser()
         config.readfp(conffp)
-    elif options.command == 'test':
+    elif options.command == 'test' or options.command == 'template-test':
         logger.debug("Not reading config for test output generation")
         config = {}
     else:
@@ -117,6 +131,11 @@ def main():
     elif options.command == 'test':
         builder.update_job(options.path, options.name,
                            output_dir=options.output_dir)
+    elif options.command == 'template-test':
+        builder.create_job_from_template(options.load_path,
+                                         options.template,
+                                         options.params,
+                                         output=options.output_dir)
 
 if __name__ == '__main__':
     sys.path.insert(0, '.')

@@ -61,6 +61,22 @@ def deep_format(obj, paramdict):
         ret = obj
     return ret
 
+def parser_load(config, fn):
+    """
+    :arg obj    config: config to pass to yaml
+    :arg string fn: file(s) to load / parse
+    """
+    if isinstance(fn, str) and os.path.isdir(fn):
+        files_to_process = [os.path.join(fn, f)
+                            for f in os.listdir(fn)
+                            if (f.endswith('.yml') or f.endswith('.yaml'))]
+    else:
+        files_to_process = [fn]
+    parser = YamlParser(config)
+    for in_file in files_to_process:
+        logger.debug("Parsing YAML file {0}".format(in_file))
+        parser.parse(in_file)
+    return parser
 
 def matches(what, where):
     """
@@ -82,7 +98,15 @@ class YamlParser(object):
         self.jobs = []
 
     def parse(self, fn):
-        data = yaml.load(open(fn))
+        """fn can either be a file system path or a string
+        representing a YAML doc
+        """
+        if isinstance(fn, str) and os.path.exists(fn):
+          data = yaml.load(open(fn))
+        elif isinstance(fn, str):
+          data = yaml.load(fn)
+        else:
+          data = fn
         if data:
             for item in data:
                 cls, dfn = item.items()[0]
@@ -100,6 +124,7 @@ class YamlParser(object):
                 name = dfn['name']
                 group[name] = dfn
                 self.data[cls] = group
+        return data
 
     def getJob(self, name):
         job = self.data.get('job', {}).get(name, None)
@@ -242,6 +267,17 @@ class YamlParser(object):
             job = XmlJob(xml, data['name'])
             self.jobs.append(job)
             break
+
+    def loadProjectTemplate(self, template_name, params):
+        project = {}
+        project['jobs'] = [template_name]
+        for param in params:
+            list = param.split(':')
+            val = list.pop()
+            key = list.pop()
+            project[key] = val
+        project['name'] = deep_format(template_name, project)
+        return project
 
     def gen_xml(self, xml, data):
         for module in self.registry.modules:
@@ -438,7 +474,6 @@ class Jenkins(object):
             pass
         return False
 
-
 class Builder(object):
     def __init__(self, jenkins_url, jenkins_user, jenkins_password,
                  config=None, ignore_cache=False, flush_cache=False):
@@ -491,13 +526,31 @@ class Builder(object):
             self.delete_job(job['name'])
 
     def update_job(self, fn, names=None, output_dir=None):
-        self.load_files(fn)
-        self.parser.generateXML(names)
+        """Default job update fx - loads a file / dir of templates
+        generates all XML, sort the jobs and call self.update_jobs()
+        to loop through parser.jobs and create all jobs
 
-        self.parser.jobs.sort(lambda a, b: cmp(a.name, b.name))
+        :arg string fn: File(s) to load / parse
+        :arg list names: List of job names to update
+        :arg string output_dir: Output dir for config.xml files
+        """
+        parser = parser_load(self.global_config, fn)
+        parser.generateXML(names)
+        parser.jobs.sort(lambda a, b: cmp(a.name, b.name))
+        return self.update_jobs(parser.jobs, names, output_dir)
 
-        for job in self.parser.jobs:
-            if names and not matches(job.name, names):
+    def update_jobs(self, jobs, names=None, output_dir=None):
+        """
+        loops through a list of jobs and creates jobs based on a filter
+
+        :arg list jobs: List of job objects, formatted by YamlParser
+        :arg list names: List of job names to update
+        :arg string output_dir: Output dir for config.xml files
+        """
+        if names:
+            logger.debug("Will filter out jobs not in %s" % names)
+        for job in jobs:
+            if names and job.name not in names:
                 continue
             if output_dir:
                 if names:
@@ -514,10 +567,22 @@ class Builder(object):
                     and not self.cache.is_cached(job.name)):
                 old_md5 = self.jenkins.get_job_md5(job.name)
                 self.cache.set(job.name, old_md5)
-
             if self.cache.has_changed(job.name, md5) or self.ignore_cache:
                 self.jenkins.update_job(job.name, job.output())
                 self.cache.set(job.name, md5)
             else:
                 logger.debug("'{0}' has not changed".format(job.name))
-        return self.parser.jobs
+        return jobs
+
+    def create_job_from_template(self, fn, template, params, output=None):
+        """
+        :arg string fn: file(s) to load / parse
+        :arg string template: name of the template, defined somewhere in fn
+        :arg list   params: [key:values] to inject into template
+        """
+        parser  = parser_load(self.global_config, fn)
+        project = parser.loadProjectTemplate(template, params)
+        parser.getXMLForTemplateJob(project,
+                                    parser.getJobTemplate(template),
+                                    project['name'])
+        self.update_jobs(parser.jobs, names=[project['name']], output_dir=output)
