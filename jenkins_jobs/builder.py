@@ -61,6 +61,7 @@ def deep_format(obj, paramdict):
         ret = obj
     return ret
 
+
 def parser_load(config, fn):
     """
     :arg obj    config: config to pass to yaml
@@ -77,6 +78,7 @@ def parser_load(config, fn):
         logger.debug("Parsing YAML file {0}".format(in_file))
         parser.parse(in_file)
     return parser
+
 
 def matches(what, where):
     """
@@ -102,11 +104,11 @@ class YamlParser(object):
         representing a YAML doc
         """
         if isinstance(fn, str) and os.path.exists(fn):
-          data = yaml.load(open(fn))
+            data = yaml.load(open(fn))
         elif isinstance(fn, str):
-          data = yaml.load(fn)
+            data = yaml.load(fn)
         else:
-          data = fn
+            data = fn
         if data:
             for item in data:
                 cls, dfn = item.items()[0]
@@ -474,6 +476,7 @@ class Jenkins(object):
             pass
         return False
 
+
 class Builder(object):
     def __init__(self, jenkins_url, jenkins_user, jenkins_password,
                  config=None, ignore_cache=False, flush_cache=False):
@@ -580,9 +583,11 @@ class Builder(object):
         :arg string template: name of the template, defined somewhere in fn
         :arg list   params: [key:values] to inject into template
         """
-        parser  = parser_load(self.global_config, fn)
+        parser = parser_load(self.global_config, fn)
         project = parser.loadProjectTemplate(template, params)
         parser.getXMLForTemplateJob(project,
                                     parser.getJobTemplate(template),
                                     project['name'])
-        self.update_jobs(parser.jobs, names=[project['name']], output_dir=output)
+        self.update_jobs(parser.jobs,
+                         names=[project['name']],
+                         output_dir=output)

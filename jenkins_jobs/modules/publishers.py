@@ -1403,6 +1403,7 @@ def copy_to_master(parser, xml_parent, data):
     XML.SubElement(cm, 'runAfterResultFinalised').text = str(
         data.get('run-after-finalized', True)).lower()
 
+
 def jira(parser, xml_parent, data):
     """yaml: jira
     Update relevant JIRA issues

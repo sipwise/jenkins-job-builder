@@ -68,11 +68,12 @@ def main():
 
     # template command parser
     parser_ptest = subparser.add_parser('template-test')
-    parser_ptest.add_argument('load_path', help='Path to YAML file(s) for template')
+    parser_ptest.add_argument('load_path', help='Path to template')
     parser_ptest.add_argument('template', help='Job Template name')
     parser_ptest.add_argument('-p', '--params', dest='params',
-        help='{key:value} to inject into the project template',
-        nargs='+')
+                              help='{key:value} to inject into
+                              the project template',
+                              nargs='+')
     parser_ptest.add_argument('-o', '--output', dest='output_dir',
                               help='Path to output XML')
 
