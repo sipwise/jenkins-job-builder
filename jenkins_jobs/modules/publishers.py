@@ -50,6 +50,8 @@ def archive(parser, xml_parent, data):
     :arg str excludes: path specifier for artifacts to exclude
     :arg bool latest-only: only keep the artifacts from the latest
       successful build
+    :arg bool fail-on-empty: fails the build when no artifacts could be
+      archived
 
     Example::
 
@@ -75,6 +77,10 @@ def archive(parser, xml_parent, data):
         latest.text = 'true'
     else:
         latest.text = 'false'
+
+    if 'fail-on-empty' in data:
+        allowEmpty = XML.SubElement(archiver, 'allowEmptyArchive')
+        allowEmpty.text = str(not data['fail-on-empty']).lower()
 
 
 def trigger_parameterized_builds(parser, xml_parent, data):
