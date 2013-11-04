@@ -73,7 +73,7 @@ def main():
     parser_ptest.add_argument('-p', '--params', dest='params',
                               help='key values to inject into '
                               'the project template. This can be an arbitrary '
-                              'list, witheach key value separated by a colon',
+                              'list, with each key value separated by a colon',
                               nargs='+')
     parser_ptest.add_argument('-o', '--output', dest='output_dir',
                               help='Path to output XML')
