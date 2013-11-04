@@ -71,9 +71,9 @@ def main():
     parser_ptest.add_argument('load_path', help='Path to template')
     parser_ptest.add_argument('template', help='Job Template name')
     parser_ptest.add_argument('-p', '--params', dest='params',
-                              help='key values to inject into
-                              the project template. This can be an arbitrary
-                              list, each key value being separated by a colon',
+                              help='key values to inject into '
+                              'the project template. This can be an arbitrary '
+                              'list, witheach key value separated by a colon',
                               nargs='+')
     parser_ptest.add_argument('-o', '--output', dest='output_dir',
                               help='Path to output XML')
