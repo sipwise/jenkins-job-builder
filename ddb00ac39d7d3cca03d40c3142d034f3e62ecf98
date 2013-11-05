@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//diY\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-11-05T15:23:16Z",
+      "side": 1,
+      "message": "Would it make sense to call it allow-empty to match the logic of the XML element name \u0027AllowEmptyArchive\u0027 ?  Would default to false and one would explicitly set it to true.",
+      "revId": "ddb00ac39d7d3cca03d40c3142d034f3e62ecf98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
