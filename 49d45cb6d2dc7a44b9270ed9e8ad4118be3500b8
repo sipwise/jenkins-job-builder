@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAS3//MwU\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 4325
+      },
+      "writtenOn": "2013-11-05T12:57:00Z",
+      "side": 1,
+      "message": "Take a look on base_param.\n\nIt is required.",
+      "parentUuid": "AAAAS3//S4I\u003d",
+      "revId": "49d45cb6d2dc7a44b9270ed9e8ad4118be3500b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAS3//S38\u003d",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 5
@@ -65,6 +83,24 @@
       "writtenOn": "2013-10-03T06:28:01Z",
       "side": 1,
       "message": "Agree, better state in the docs what the default value is.",
+      "parentUuid": "AAAAS3//S38\u003d",
+      "revId": "49d45cb6d2dc7a44b9270ed9e8ad4118be3500b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAS3//MvI\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 4325
+      },
+      "writtenOn": "2013-11-05T12:57:00Z",
+      "side": 1,
+      "message": "The default value of this in GUI is read_only \u003d False. I think I made it consistent with the bool_param. I am adding the doc as Pavel suggested.",
       "parentUuid": "AAAAS3//S38\u003d",
       "revId": "49d45cb6d2dc7a44b9270ed9e8ad4118be3500b8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -101,6 +137,24 @@
       "side": 1,
       "message": "What do You mean by \u0027check or raise\u0027 please?\nIsn\u0027t that what will actually happen - KeyError?\n\nFor ex. see that base_param(), no special check for \"name in data\", no single raise here etc. So this just follows the existing flow-style in this file, should that be changed?\n\nOr you meant script \u003d empty string situation? But that would be bcs explicitly requested by user in job description.",
       "parentUuid": "AAAAS3//S3Q\u003d",
+      "revId": "49d45cb6d2dc7a44b9270ed9e8ad4118be3500b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//dv4\u003d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 4325
+      },
+      "writtenOn": "2013-11-05T12:57:00Z",
+      "side": 1,
+      "message": "Neither I do understand what Khai wants me to do. I won\u0027t touch this part.",
+      "parentUuid": "AAAAS3//KYc\u003d",
       "revId": "49d45cb6d2dc7a44b9270ed9e8ad4118be3500b8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
