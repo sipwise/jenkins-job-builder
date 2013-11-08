@@ -386,6 +386,50 @@ def inject(parser, xml_parent, data):
     XML.SubElement(info, 'loadFilesFromMaster').text = 'false'
 
 
+def inject_passwords(parser, xml_parent, data):
+    """yaml: inject_passwords
+    Add or override passwords passed as environment variables.
+    Requires the Jenkins `EnvInject Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/EnvInject+Plugin>`_
+
+    :arg bool globals: Inject globally defined passwords (default: False).
+    :arg list passwords: List of password entries.
+    :arg str name: The name of the password environment variable.
+    :arg str value: The value of the password.  Should be encrypted.
+
+    Example::
+
+      wrappers:
+        - inject-passwords:
+            globals: False
+            passwords:
+              - name: 'user_password'
+                value: 'zgzkUXsq8UVCYvDFBKoFlNSlokJuillWlyY+eh7DFXk='
+              - name: 'admin_password'
+                value: '+3kqvBzXspckf85UulBmSahgRyEQ6aCoUfLTBNZEv1o='
+    """
+
+    eip = XML.SubElement(xml_parent, 'EnvInjectPasswordWrapper')
+
+    # Convert globals to its corresponding XML element
+    globs_xml = XML.SubElement(eip, 'injectGlobalPasswords')
+    globs = data.get('globals', False)
+    globs_xml.text = 'true' if globs else 'false'
+
+    # Now enter all the local password entries
+    entries = XML.SubElement(eip, 'passwordEntries')
+    for entry in data.get('passwords', []):
+        # Complain about badly formed elements
+        if 'name' not in entry or 'password' not in entry:
+            raise ValueError("password entry must have both 'name' and "
+                             "'password' elements")
+
+        # Store the name and password
+        entry_xml = XML.SubElement(entries, 'EnvInjectPasswordEntry')
+        XML.SubElement(entry_xml, 'name').text = entry['name']
+        XML.SubElement(entry_xml, 'value').text = entry['password']
+
+
 def env_file(parser, xml_parent, data):
     """yaml: env-file
     Add or override environment variables to the whole build process
