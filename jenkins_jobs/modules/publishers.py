@@ -2856,6 +2856,54 @@ def build_publisher(parser, xml_parent, data):
         str(data.get('artifact-num-to-keep', -1))
 
 
+def stash(parser, xml_parent, data):
+    """yaml: stash
+    This plugin will configure the Jenkins Stash Notifier plugin to
+    notify Atlassian Stash after job completes.
+
+    Requires the Jenkins `StashNotifier Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/StashNotifier+Plugin>`_
+
+    :arg string server-base-url: Base url of Stash Server (Default: "")
+    :arg string server-user-name: Username of Stash Server (Default: "")
+    :arg string server-user-password: Password of Stash Server (Default: "")
+    :arg bool   ignore-ssl: Ignore unverified SSL certificate (Default: False)
+    :arg string commit-sha1: Commit SHA1 to notify (Default: "")
+    :arg string include-build-number-in-key: Include build number in key
+                (Default: False)
+
+    Example::
+            - stash:
+                server-base-url: "https://mystash"
+                server-user-name: x
+                server-user-password: x
+                ignore-ssl: true
+
+    """
+    mappings = [('server-base-url', 'stashServerBaseUrl', ""),
+                ('server-user-name', 'stashUserName', ""),
+                ('server-user-password', 'stashUserPassword', ""),
+                ('ignore-ssl', 'ignoreUnverifiedSSLPeer', False),
+                ('commit-sha1', 'commitSha1', ""),
+                ('include-build-number-in-key', 'includeBuildNumberInKey',
+                 False)]
+
+    def handle_entity_children(entity, entity_xml, child_mapping):
+        for prop in child_mapping:
+            opt, xmlopt, default_val = prop[:3]
+            val = entity.get(opt, default_val)
+            if val is None:
+                raise Exception('Required option missing: %s' % opt)
+            if type(val) == bool:
+                val = str(val).lower()
+            XML.SubElement(entity_xml, xmlopt).text = val
+
+    top = XML.SubElement(xml_parent,
+                         'org.jenkinsci.plugins.stashNotifier.StashNotifier')
+
+    handle_entity_children(data, top, mappings)
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 

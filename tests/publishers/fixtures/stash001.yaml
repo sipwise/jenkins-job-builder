@@ -1,0 +1,9 @@
+# vim: sw=4 ts=4 et
+publishers:
+  - stash:
+      server-base-url: "https://mystash"
+      server-user-name: a
+      server-user-password: b
+      ignore-ssl: true
+      commit-sha1: c
+      include-build-number-in-key: true
