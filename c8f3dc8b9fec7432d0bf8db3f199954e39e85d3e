@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//GkE\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1378,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-11-14T11:53:20Z",
+      "side": 1,
+      "message": "Can you move the addition of run-after-finalized in a different change?  It is unrelated to the nice work you did on templates :-]\n\nThis way, we can merge in that new change without waiting for the template related change to be merged in.\n\nAlso, that would need some tests added in tests/fixtures/publishers/",
+      "revId": "c8f3dc8b9fec7432d0bf8db3f199954e39e85d3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
