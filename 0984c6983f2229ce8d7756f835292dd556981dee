@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//F2E\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-11-14T14:40:06Z",
+      "side": 1,
+      "message": "We never used it there.  I would use a different change updating all occurrences and using:\n\n  from jenkins_jobs.errors import JenkinsJobsException",
+      "parentUuid": "AAAATn//lVo\u003d",
+      "revId": "0984c6983f2229ce8d7756f835292dd556981dee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//lVc\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//F10\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-11-14T14:40:06Z",
+      "side": 1,
+      "message": "We never used it there. I would use a different change updating all occurrences.",
+      "parentUuid": "AAAATn//lVc\u003d",
+      "revId": "0984c6983f2229ce8d7756f835292dd556981dee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//lTk\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2013-10-31T22:54:55Z",
       "side": 1,
       "message": "should we verify that the user specified val is within a valid range?",
+      "revId": "0984c6983f2229ce8d7756f835292dd556981dee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//FyA\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-11-14T14:40:06Z",
+      "side": 1,
+      "message": "Done by skipping XML whenever val is None or not an integer, then raising an exception whenever val is \u003c0 or \u003e100.",
+      "parentUuid": "AAAATn//lTk\u003d",
       "revId": "0984c6983f2229ce8d7756f835292dd556981dee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
