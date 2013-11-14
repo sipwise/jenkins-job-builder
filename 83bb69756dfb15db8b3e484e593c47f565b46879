@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//Eas\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-14T20:59:34Z",
+      "side": 1,
+      "message": "we prefer to us the bool type with default value.  something like..\n\nhttp://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/modules/publishers.py#n357",
+      "revId": "83bb69756dfb15db8b3e484e593c47f565b46879",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Eac\u003d",
+        "filename": "setup.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-14T20:59:34Z",
+      "side": 1,
+      "message": "how about shorter name?  maybe just \u0027blame\u0027 or \u0027blame-upstream\u0027?",
+      "revId": "83bb69756dfb15db8b3e484e593c47f565b46879",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
