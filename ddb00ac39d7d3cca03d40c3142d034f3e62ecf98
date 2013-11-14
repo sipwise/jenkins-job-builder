@@ -55,6 +55,23 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//EaI\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-14T21:01:28Z",
+      "side": 1,
+      "message": "could you please add example?",
+      "revId": "ddb00ac39d7d3cca03d40c3142d034f3e62ecf98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//EeA\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
