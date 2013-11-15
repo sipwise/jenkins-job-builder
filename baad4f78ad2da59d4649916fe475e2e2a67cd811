@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//DXw\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-15T05:36:06Z",
+      "side": 1,
+      "message": "it looks like viewgit also has a project name field.  would it be possible to make this patch work with viewgit\u0027s project name field as well?",
+      "revId": "baad4f78ad2da59d4649916fe475e2e2a67cd811",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
