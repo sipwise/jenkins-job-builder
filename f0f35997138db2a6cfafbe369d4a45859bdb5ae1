@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//A3U\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-15T17:42:20Z",
+      "side": 1,
+      "message": "not only specific to gitblit anymore, right?",
+      "revId": "f0f35997138db2a6cfafbe369d4a45859bdb5ae1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
