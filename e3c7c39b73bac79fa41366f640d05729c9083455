@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//DNY\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2817,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-15T06:20:38Z",
+      "side": 1,
+      "message": "could you please document default values for criteria and archive-method?",
+      "revId": "e3c7c39b73bac79fa41366f640d05729c9083455",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//DM8\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2819,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-15T06:20:38Z",
+      "side": 1,
+      "message": "could you please add description of the other params?  like include, exclude, and override-default-excludes?",
+      "revId": "e3c7c39b73bac79fa41366f640d05729c9083455",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//DMc\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2838,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-15T06:20:38Z",
+      "side": 1,
+      "message": "include empty set by default?  by enabling this plugin wouldn\u0027t you want to include something by default?",
+      "revId": "e3c7c39b73bac79fa41366f640d05729c9083455",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//DMw\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2845,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-15T06:20:38Z",
+      "side": 1,
+      "message": "could we check for valid values?",
+      "revId": "e3c7c39b73bac79fa41366f640d05729c9083455",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//DMo\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2848,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-15T06:20:38Z",
+      "side": 1,
+      "message": "could we check for valid values?",
+      "revId": "e3c7c39b73bac79fa41366f640d05729c9083455",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//DL8\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-15T06:20:38Z",
+      "side": 1,
+      "message": "could you please document the default value?",
+      "revId": "e3c7c39b73bac79fa41366f640d05729c9083455",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//DSs\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-15T06:20:38Z",
+      "side": 1,
+      "message": "criteria is a discrete list of possible values, could we check that the passed in value is valid? maybe throw a JenkinsJobsException if value is not valid?  here\u0027s an example:\nhttp://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/modules/triggers.py#n426",
+      "revId": "e3c7c39b73bac79fa41366f640d05729c9083455",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
