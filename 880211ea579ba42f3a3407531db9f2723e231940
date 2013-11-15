@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//A0U\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2895,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-15T17:45:28Z",
+      "side": 1,
+      "message": "we prefer using JenkinsJobBuilderException",
+      "revId": "880211ea579ba42f3a3407531db9f2723e231940",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//A0Q\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2896,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-15T17:45:28Z",
+      "side": 1,
+      "message": "i think better way to check type is to use isinstance(val, bool)",
+      "revId": "880211ea579ba42f3a3407531db9f2723e231940",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
