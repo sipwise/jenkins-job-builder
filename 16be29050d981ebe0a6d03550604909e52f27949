@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn//DUo\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-15T05:54:24Z",
+      "side": 1,
+      "message": "what happened to \u0027sendToIndividuals\u0027 element from last patch set?  I think you need that.  When i set this option that element is set to: \u003csendToIndividuals\u003efalse\u003c/sendToIndividuals\u003e",
+      "revId": "16be29050d981ebe0a6d03550604909e52f27949",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
