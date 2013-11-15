@@ -11,6 +11,13 @@ systems, including Jenkins.  If you use Puppet, you can use the
 
 __ https://github.com/openstack-infra/config/tree/master/modules/jenkins
 
+Unit Tests
+----------
+
+Unit tests have been included and are in the 'tests' folder. To run tests
+execute the command::
+
+    tox -epy27
 
 Configuration File
 ------------------
@@ -54,15 +61,18 @@ Usage
 ^^^^^
 .. program-output:: jenkins-jobs --help
 
-Testing
-^^^^^^^
-Once you have a configuration defined, you can test it with::
+Testing JJB
+^^^^^^^^^^^
+Once you have a configuration defined, you can test the job builder by running::
 
   jenkins-jobs test /path/to/config -o /path/to/output
 
 That will write XML files to the output directory for all of the jobs
-defined in the configuration directory.  When you're satisfied, you
-can run::
+defined in the configuration directory.  
+
+Updating Jenkins
+^^^^^^^^^^^^^^^^
+When you're satisfied with the generated xml from the test, you can run::
 
   jenkins-jobs update /path/to/config
 
