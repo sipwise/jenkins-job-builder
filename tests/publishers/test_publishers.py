@@ -24,7 +24,7 @@ from jenkins_jobs.modules import publishers
 from tests.base import get_scenarios, BaseTestCase
 
 
-class TestCaseModulePublisher(TestWithScenarios, TestCase, BaseTestCase):
+class TestCaseModulePublishers(TestWithScenarios, TestCase, BaseTestCase):
     fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
     scenarios = get_scenarios(fixtures_path)
     klass = publishers.Publishers
