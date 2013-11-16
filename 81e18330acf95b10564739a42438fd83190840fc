@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+/qA\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2877,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-11-16T00:44:55Z",
+      "side": 1,
+      "message": "Unfortunately we need a blank line between Example:: and - stash: for the documents to render properly. A blank line should be added here.",
+      "revId": "81e18330acf95b10564739a42438fd83190840fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+/p8\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2891,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-11-16T00:44:55Z",
+      "side": 1,
+      "message": "Is there a need for the closure? It isn\u0027t immediately clear to me why this closure is used. If there is a need for it (it is late on Friday I am probably just missing something obvious) can we keep the parameter names to this function consistent with the parameters of the outer function? (data vs entity, top vs entity_xml, and child_mapping isn\u0027t needed as mappings is available in the inner scope)",
+      "revId": "81e18330acf95b10564739a42438fd83190840fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+/pg\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2896,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-11-16T00:44:55Z",
+      "side": 1,
+      "message": "I don\u0027t think this if will ever evaluate to true because each of the opts have a non None default_val. In addition to default values we should track if the option is required. If it is required use the default value otherwise throw an error when the option is missing.",
+      "revId": "81e18330acf95b10564739a42438fd83190840fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
