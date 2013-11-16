@@ -77,6 +77,19 @@ def archive(parser, xml_parent, data):
         latest.text = 'false'
 
 
+def emotional_jenkins(parser, xml_parent, data):
+    """yaml: emotional-jenkins
+    Emotional Jenkins.
+    Requires the Jenkins `Emotional Jenkins Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Emotional+Jenkins+Plugin>`_
+
+    Example::
+      publishers:
+        - emotional-jenkins
+    """
+    XML.SubElement(xml_parent, 'org.jenkinsci.plugins.emotional__jenkins.EmotionalJenkinsPublisher')
+
+
 def trigger_parameterized_builds(parser, xml_parent, data):
     """yaml: trigger-parameterized-builds
     Trigger parameterized builds of other jobs.

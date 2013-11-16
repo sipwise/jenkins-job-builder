@@ -137,6 +137,7 @@ setuptools.setup(
              'groovy_postbuild'),
             'html-publisher=jenkins_jobs.modules.publishers:html_publisher',
             'ircbot=jenkins_jobs.modules.publishers:ircbot',
+            'emotional-jenkins=jenkins_jobs.modules.publishers:emotional_jenkins',
             'jabber=jenkins_jobs.modules.publishers:jabber',
             'jacoco=jenkins_jobs.modules.publishers:jacoco',
             'jira=jenkins_jobs.modules.publishers:jira',
