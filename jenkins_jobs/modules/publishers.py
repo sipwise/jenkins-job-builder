@@ -1374,11 +1374,14 @@ def copy_to_master(parser, xml_parent, data):
     :arg string destination: absolute path into which the files will be copied.
                              If left blank they will be copied into the
                              workspace of the current job
+    :arg bool run-after-finalized: whether this should run after results are
+                                   finalized or not
 
     Example::
 
       publishers:
         - copy-to-master:
+            run-after-finalized: true
             includes:
               - file1
               - file2*.txt
@@ -1396,6 +1399,9 @@ def copy_to_master(parser, xml_parent, data):
 
     if data.get('destination', ''):
         XML.SubElement(cm, 'overrideDestinationFolder').text = 'true'
+
+    XML.SubElement(cm, 'runAfterResultFinalised').text = str(
+        data.get('run-after-finalized', True)).lower()
 
 
 def jira(parser, xml_parent, data):
