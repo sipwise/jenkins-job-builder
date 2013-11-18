@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn/+4qI\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1377,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-11-18T23:44:33Z",
+      "side": 1,
+      "message": "It would be prefered to use \"finalised\u0027 instead of \"finalized\" to fit with Jenkins config and inline help.",
+      "revId": "18a6810d86a00a29523a9264db1a9600d4ecc073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+4t8\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
