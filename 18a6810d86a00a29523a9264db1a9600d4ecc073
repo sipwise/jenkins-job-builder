@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+4t8\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1378,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-11-18T23:33:37Z",
+      "side": 1,
+      "message": "Default value should be documented.",
+      "revId": "18a6810d86a00a29523a9264db1a9600d4ecc073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
