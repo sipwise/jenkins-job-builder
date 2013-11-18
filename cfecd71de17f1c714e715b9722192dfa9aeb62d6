@@ -16,6 +16,24 @@
       "revId": "cfecd71de17f1c714e715b9722192dfa9aeb62d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+5zg\u003d",
+        "filename": "tests/properties/fixtures/throttle001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-18T19:38:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+58I\u003d",
+      "revId": "cfecd71de17f1c714e715b9722192dfa9aeb62d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
