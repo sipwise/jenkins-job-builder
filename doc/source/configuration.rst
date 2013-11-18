@@ -133,9 +133,9 @@ provide values for the variables in a `Job Template`_.  It looks like
 this::
 
   - project:
-    name: project-name
-    jobs:
-      - '{name}-unit-tests'
+      name: project-name
+      jobs:
+        - '{name}-unit-tests'
 
 Any number of arbitrarily named additional fields may be specified,
 and they will be available for variable substitution in the job
@@ -150,9 +150,9 @@ substitutions as follows::
       name: project-name
       jobs:
         - '{name}-unit-tests':
-          mail-to: developer@nowhere.net
-	- '{name}-perf-tests':
-          mail-to: projmanager@nowhere.net
+            mail-to: developer@nowhere.net
+        - '{name}-perf-tests':
+            mail-to: projmanager@nowhere.net
 
 If a variable is a list, the job template will be realized with the
 variable set to each value in the list.  Multiple lists will lead to
