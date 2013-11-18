@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+58I\u003d",
+        "filename": "tests/properties/fixtures/throttle001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-11-18T18:32:13Z",
+      "side": 1,
+      "message": "This trailing whitespace should be removed since there are other changes to be made.",
+      "revId": "cfecd71de17f1c714e715b9722192dfa9aeb62d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
