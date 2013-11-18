@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+1: Elizabeth Krumbach Joseph <lyz@princessleia.com>
+Approved+1: Mathieu Gagné <mgagne@iweb.com>
+Code-Review+2: Mathieu Gagné <mgagne@iweb.com>
+Submitted-by: Jenkins
+Submitted-at: Mon, 18 Nov 2013 19:00:58 +0000
+Reviewed-on: https://review.openstack.org/56998
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
