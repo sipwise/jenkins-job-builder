@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn/+4rY\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-11-18T23:37:52Z",
+      "side": 1,
+      "message": "An empty line needs to be inserted between \"Example::\" and the example for documentation to render correctly.",
+      "revId": "02c7625e9afc61bf5e1f5cef51dfee9e3c75400c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+4uQ\u003d",
         "filename": "setup.py",
         "patchSetId": 2
