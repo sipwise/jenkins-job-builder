@@ -26,12 +26,12 @@ Example::
 
   job:
     name: test_job
-
     publishers:
       - scp:
           site: 'example.com'
-          source: 'doc/build/html/**/*'
-          target_path: 'project'
+          files:
+            - target: 'dest/dir'
+              source: 'base/source/dir/**'
 """
 
 
@@ -109,7 +109,6 @@ def trigger_parameterized_builds(parser, xml_parent, data):
               property-file: version.prop
               fail-on-missing: true
             - project: yet_another_job
-              predefined-parameters: foo=bar
               git-revision: true
               restrict-matrix-project: label=="x86"
 
@@ -944,11 +943,14 @@ def scp(parser, xml_parent, data):
 
     Example::
 
-      publishers:
-        - scp:
-            site: 'example.com'
-            target: 'dest/dir'
-            source: 'base/source/dir/**'
+    publishers:
+      - scp:
+          site: 'example.com'
+          files:
+            - target: 'dest/dir'
+              source: 'base/source/dir/**'
+              keep-hierarchy: true
+              copy-after-failure: true
     """
     site = data['site']
     scp = XML.SubElement(xml_parent,
