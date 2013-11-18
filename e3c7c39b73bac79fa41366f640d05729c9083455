@@ -118,6 +118,23 @@
       "revId": "e3c7c39b73bac79fa41366f640d05729c9083455",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+6Xw\u003d",
+        "filename": "setup.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-11-18T16:52:43Z",
+      "side": 1,
+      "message": "This list is alphabetically sorted. This entry should be moved before git.",
+      "revId": "e3c7c39b73bac79fa41366f640d05729c9083455",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
