@@ -33,6 +33,23 @@
       "revId": "18a6810d86a00a29523a9264db1a9600d4ecc073",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+3y8\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1382,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-19T05:29:29Z",
+      "side": 1,
+      "message": "could you please add a test for this new param?  then could please replace this block with contents of the test.  example can be found here: https://review.openstack.org/#/c/57068",
+      "revId": "18a6810d86a00a29523a9264db1a9600d4ecc073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
