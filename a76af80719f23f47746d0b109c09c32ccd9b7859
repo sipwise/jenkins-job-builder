@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+0rI\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-19T17:49:08Z",
+      "side": 1,
+      "message": "sorry, this didn\u0027t work.  you can see in the jenkins-job-builder-doc test result.  it needs to be exactly.  need to remove one colon after Example and add \u0027..\u0027 before \u0027literalinclude\u0027, like so..\n\nExample:\n\n.. literalinclude:: ../../tests/publishers/fixtures/blame001.yaml",
+      "revId": "a76af80719f23f47746d0b109c09c32ccd9b7859",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
