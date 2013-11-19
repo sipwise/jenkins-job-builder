@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+320\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-19T05:16:52Z",
+      "side": 1,
+      "message": "we want to move to using test as examples.  please replace this block with:\n\n.. literalinclude:: ../../tests/publishers/fixtures/cloverphp001.yaml",
+      "revId": "21e26ab804ee4c01f1e02ac3f3850cca5fe962c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+32w\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-19T05:16:52Z",
+      "side": 1,
+      "message": "we want to move to using test as examples.  please replace this block with:\n\n.. literalinclude:: ../../tests/publishers/fixtures/cloverphp002.yaml",
+      "revId": "21e26ab804ee4c01f1e02ac3f3850cca5fe962c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+31I\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-19T05:16:52Z",
+      "side": 1,
+      "message": "we prefer to use JenkinsJobException instead.",
+      "revId": "21e26ab804ee4c01f1e02ac3f3850cca5fe962c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+30o\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-19T05:16:52Z",
+      "side": 1,
+      "message": "we prefer to use JenkinsJobException",
+      "revId": "21e26ab804ee4c01f1e02ac3f3850cca5fe962c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+30k\u003d",
+        "filename": "tests/publishers/fixtures/cloverphp001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-19T05:16:52Z",
+      "side": 1,
+      "message": "please remove above lines.  this file will be used as an minimal example",
+      "revId": "21e26ab804ee4c01f1e02ac3f3850cca5fe962c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+328\u003d",
+        "filename": "tests/publishers/fixtures/cloverphp002.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-19T05:16:52Z",
+      "side": 1,
+      "message": "using this file as the example.  please remove this line",
+      "revId": "21e26ab804ee4c01f1e02ac3f3850cca5fe962c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
