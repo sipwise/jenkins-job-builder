@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+3xc\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-19T05:39:19Z",
+      "side": 1,
+      "message": "we want to move to using test as examples.  could you please replace this line with:\n\n.. literalinclude:: ../../tests/publishers/fixtures/blame001.yaml",
+      "revId": "604ce6f49472320463e0bb9edd878ce8159f7b6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+3xw\u003d",
+        "filename": "tests/publishers/fixtures/blame001.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-19T05:39:19Z",
+      "side": 1,
+      "message": "please remove this line",
+      "revId": "604ce6f49472320463e0bb9edd878ce8159f7b6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
