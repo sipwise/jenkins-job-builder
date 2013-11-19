@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+3zs\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-19T05:24:59Z",
+      "side": 1,
+      "message": "we want to move to using tests as examples.  please replace this block with:\n\n.. literalinclude:: ../../tests/publishers/fixtures/emotional-jenkins.yaml",
+      "revId": "1bf504062f06551c7e79a6dc320117484a5d6323",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+3z0\u003d",
+        "filename": "tests/publishers/fixtures/emotional-jenkins.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-19T05:24:59Z",
+      "side": 1,
+      "message": "please remove this line",
+      "revId": "1bf504062f06551c7e79a6dc320117484a5d6323",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
