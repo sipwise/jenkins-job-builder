@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+z/s\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-11-19T20:11:16Z",
+      "side": 1,
+      "message": "There is a missing \u0027t\u0027 in Documentation.",
+      "revId": "322c9d135a266af045de77a9b2d457de2e8b4d66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+z/o\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-11-19T20:11:16Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "322c9d135a266af045de77a9b2d457de2e8b4d66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+z/U\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-11-19T20:11:16Z",
+      "side": 1,
+      "message": "trailing whitespace should be removed.",
+      "revId": "322c9d135a266af045de77a9b2d457de2e8b4d66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
