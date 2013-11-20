@@ -428,6 +428,32 @@ def build_blocker(parser, xml_parent, data):
     XML.SubElement(blocker, 'blockingJobs').text = jobs
 
 
+def batch_tasks(parser, xml_parent, data):
+    """yaml: batch-tasks
+    Batch task
+    Requires the Jenkins `Batch Task Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Batch+Task+Plugin>`_
+
+    :arg list batch-tasks: Batch tasks.
+
+        :Task: * **name** (`str`) Task name.
+               * **script** (`str`) Task script.
+
+    Example::
+
+    .. literalinclude:: ../../tests/properties/fixtures/batch-task.yaml
+
+    """
+    pdef = XML.SubElement(xml_parent,
+                          'hudson.plugins.batch__task.BatchTaskProperty')
+    tasks = XML.SubElement(pdef, 'tasks')
+    for task in data:
+        batch_task = XML.SubElement(tasks,
+                                    'hudson.plugins.batch__task.BatchTask')
+        XML.SubElement(batch_task, 'name').text = task['name']
+        XML.SubElement(batch_task, 'script').text = task['script']
+
+
 class Properties(jenkins_jobs.modules.base.Base):
     sequence = 20
 
