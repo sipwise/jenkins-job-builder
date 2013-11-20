@@ -1,0 +1,7 @@
+# vim: sw=4 ts=4 et
+properties:
+    - batch-tasks:
+        - name: release
+          script: mvn -B release:prepare release:perform
+        - name: say hello
+          script: echo "Hello world"
