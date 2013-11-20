@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+vG0\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-11-20T22:18:33Z",
+      "side": 0,
+      "message": "i would normalize jobparams to be a dict",
+      "revId": "28ec20bb7f3e97177663c84a5443942e6314c30d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+vGw\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-11-20T22:18:33Z",
+      "side": 0,
+      "message": "same there, normalize group_jobparams to always be a dict?",
+      "revId": "28ec20bb7f3e97177663c84a5443942e6314c30d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
