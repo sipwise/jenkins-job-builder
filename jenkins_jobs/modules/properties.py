@@ -90,6 +90,10 @@ def promoted_build(parser, xml_parent, data):
             names:
               - "Release to QA"
               - "Jane Must Approve"
+
+    .. seealso:
+        The :py:func:`batch-tasks` which serve similar purpose, but batch-tasks are
+        completely defineable in job-builder.
     """
     promoted = XML.SubElement(xml_parent, 'hudson.plugins.promoted__builds.'
                                           'JobPropertyImpl')
