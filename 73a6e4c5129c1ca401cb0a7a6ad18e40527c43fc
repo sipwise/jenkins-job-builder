@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+yNw\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-11-20T08:39:23Z",
+      "side": 1,
+      "message": "I\u0027ve rephrased that part, please look if now it\u0027s more understandable.",
+      "parentUuid": "AAAATn//pU0\u003d",
+      "revId": "73a6e4c5129c1ca401cb0a7a6ad18e40527c43fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//y1o\u003d",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 6
@@ -47,6 +65,24 @@
       "writtenOn": "2013-10-28T23:00:05Z",
       "side": 1,
       "message": "Shouldn\u0027t this be [jenkins] ?",
+      "revId": "73a6e4c5129c1ca401cb0a7a6ad18e40527c43fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+1r8\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-11-20T08:39:23Z",
+      "side": 1,
+      "message": "No, as what I want is the default to be always False, then you can overwrite it using the [jenkins] section.",
+      "parentUuid": "AAAATn//y1o\u003d",
       "revId": "73a6e4c5129c1ca401cb0a7a6ad18e40527c43fc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
