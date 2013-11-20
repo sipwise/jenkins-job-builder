@@ -170,9 +170,11 @@ class YamlParser(object):
                         # Allow a group to override parameters set by a project
                         d = {}
                         d.update(project)
-                        d.update(jobparams)
+                        if isinstance(jobparams, dict):
+                            d.update(jobparams)
                         d.update(group)
-                        d.update(group_jobparams)
+                        if isinstance(group_jobparams, dict):
+                            d.update(group_jobparams)
                         # Except name, since the group's name is not useful
                         d['name'] = project['name']
                         if template:
@@ -183,7 +185,8 @@ class YamlParser(object):
                 if template:
                     d = {}
                     d.update(project)
-                    d.update(jobparams)
+                    if isinstance(jobparams, dict):
+                        d.update(jobparams)
                     self.getXMLForTemplateJob(d, template, jobs_filter)
 
     def getXMLForTemplateJob(self, project, template, jobs_filter=None):
