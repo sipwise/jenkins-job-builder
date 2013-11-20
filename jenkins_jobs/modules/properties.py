@@ -90,6 +90,10 @@ def promoted_build(parser, xml_parent, data):
             names:
               - "Release to QA"
               - "Jane Must Approve"
+
+    .. seealso::
+        :func:`batch_task` which are are completely defineable in job-builder.
+
     """
     promoted = XML.SubElement(xml_parent, 'hudson.plugins.promoted__builds.'
                                           'JobPropertyImpl')
