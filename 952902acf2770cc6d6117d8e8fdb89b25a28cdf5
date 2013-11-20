@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+wB0\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2867,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-20T17:35:56Z",
+      "side": 1,
+      "message": "hmm. Does this param not override the global url one?  \nso assume url is not specified here, this code will set url to default of \"\".  how does the global jenkins know whether to use the global value or \"\"?",
+      "parentUuid": "AAAATn/+yH0\u003d",
+      "revId": "952902acf2770cc6d6117d8e8fdb89b25a28cdf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+y0A\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 6
