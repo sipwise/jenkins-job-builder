@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+yz4\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2867,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-20T04:39:09Z",
+      "side": 1,
+      "message": "are any of these params required?  I would assume that at least url is required.",
+      "revId": "952902acf2770cc6d6117d8e8fdb89b25a28cdf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+y0A\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2872,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-20T04:39:09Z",
+      "side": 1,
+      "message": "should this be bool type?",
+      "revId": "952902acf2770cc6d6117d8e8fdb89b25a28cdf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+yzg\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2876,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-20T04:39:09Z",
+      "side": 1,
+      "message": "we are moving to use test as examples.  could you please replace this block with a reference to the test?  you can find an example here: https://review.openstack.org/#/c/56779",
+      "revId": "952902acf2770cc6d6117d8e8fdb89b25a28cdf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+yzY\u003d",
+        "filename": "tests/publishers/fixtures/stash001.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-20T04:39:09Z",
+      "side": 1,
+      "message": "please remove this line",
+      "revId": "952902acf2770cc6d6117d8e8fdb89b25a28cdf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
