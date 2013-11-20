@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+yH0\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2867,
+      "author": {
+        "id": 9371
+      },
+      "writtenOn": "2013-11-20T09:11:04Z",
+      "side": 1,
+      "message": "No, there is a global configuration in jenkins that is a fallback.",
+      "parentUuid": "AAAATn/+yz4\u003d",
+      "revId": "952902acf2770cc6d6117d8e8fdb89b25a28cdf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+y0A\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+yHw\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2872,
+      "author": {
+        "id": 9371
+      },
+      "writtenOn": "2013-11-20T09:11:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+y0A\u003d",
+      "revId": "952902acf2770cc6d6117d8e8fdb89b25a28cdf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+yzg\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 6
@@ -47,6 +83,24 @@
       "writtenOn": "2013-11-20T04:39:09Z",
       "side": 1,
       "message": "we are moving to use test as examples.  could you please replace this block with a reference to the test?  you can find an example here: https://review.openstack.org/#/c/56779",
+      "revId": "952902acf2770cc6d6117d8e8fdb89b25a28cdf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+yHs\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2876,
+      "author": {
+        "id": 9371
+      },
+      "writtenOn": "2013-11-20T09:11:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+yzg\u003d",
       "revId": "952902acf2770cc6d6117d8e8fdb89b25a28cdf5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
