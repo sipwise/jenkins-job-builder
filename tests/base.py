@@ -54,6 +54,11 @@ class BaseTestCase(object):
     scenarios = []
     fixtures_path = None
 
+    # The test_yaml_snippet expects following members defined. They will get
+    # redefined by testscenarios if there is any scenario to run.
+    xml_filename = None
+    yaml_filename = None
+
     # TestCase settings:
     maxDiff = None      # always dump text difference
     longMessage = True  # keep normal error message when providing our
