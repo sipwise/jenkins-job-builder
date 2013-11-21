@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+ssg\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 4325
+      },
+      "writtenOn": "2013-11-21T11:52:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+uvM\u003d",
+      "revId": "b1ca22b3c4b1940ee11943bb131a86cb14c6d95f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+uvE\u003d",
         "filename": "jenkins_jobs/modules/properties.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-11-21T00:06:31Z",
       "side": 1,
       "message": "JJB style uses hyphens, not underscores to separate words. This would therefore need to be changed to \"batch-tasks\".",
+      "revId": "b1ca22b3c4b1940ee11943bb131a86cb14c6d95f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+ssU\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 4325
+      },
+      "writtenOn": "2013-11-21T11:52:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+uvE\u003d",
       "revId": "b1ca22b3c4b1940ee11943bb131a86cb14c6d95f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
