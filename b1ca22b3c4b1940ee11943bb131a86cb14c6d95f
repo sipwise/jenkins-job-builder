@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+uvM\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-11-21T00:06:31Z",
+      "side": 1,
+      "message": "Copy pasted from a previous comment by Khai Do in an other change:\n\nwe are moving to use test as examples. could you please replace this block with a reference to the test? you can find an example here: https://review.openstack.org/#/c/56779",
+      "revId": "b1ca22b3c4b1940ee11943bb131a86cb14c6d95f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+uvE\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-11-21T00:06:31Z",
+      "side": 1,
+      "message": "JJB style uses hyphens, not underscores to separate words. This would therefore need to be changed to \"batch-tasks\".",
+      "revId": "b1ca22b3c4b1940ee11943bb131a86cb14c6d95f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
