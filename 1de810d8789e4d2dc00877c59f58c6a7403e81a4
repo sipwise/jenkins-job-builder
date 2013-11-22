@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+mBk\u003d",
+        "filename": "tests/triggers/test_triggers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-11-22T17:41:30Z",
+      "side": 1,
+      "message": "s/General/Triggers/",
+      "revId": "1de810d8789e4d2dc00877c59f58c6a7403e81a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
