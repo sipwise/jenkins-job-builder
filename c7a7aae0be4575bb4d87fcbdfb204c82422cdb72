@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+i2s\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-24T14:46:33Z",
+      "side": 1,
+      "message": "could this be just a little more descriptive?",
+      "revId": "c7a7aae0be4575bb4d87fcbdfb204c82422cdb72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+i2o\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-11-24T14:46:33Z",
+      "side": 1,
+      "message": "this definition should probably outside of the for loop?",
+      "revId": "c7a7aae0be4575bb4d87fcbdfb204c82422cdb72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
