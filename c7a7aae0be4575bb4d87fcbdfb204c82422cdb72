@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+grs\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 4325
+      },
+      "writtenOn": "2013-11-25T10:25:13Z",
+      "side": 1,
+      "message": "OK, I have copied and modified some description from \nhttps://wiki.jenkins-ci.org/display/JENKINS/Batch+Task+Plugin",
+      "parentUuid": "AAAATn/+i2s\u003d",
+      "revId": "c7a7aae0be4575bb4d87fcbdfb204c82422cdb72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+i2o\u003d",
         "filename": "jenkins_jobs/modules/properties.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2013-11-24T14:46:33Z",
       "side": 1,
       "message": "this definition should probably outside of the for loop?",
+      "revId": "c7a7aae0be4575bb4d87fcbdfb204c82422cdb72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+gu0\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 4325
+      },
+      "writtenOn": "2013-11-25T10:25:13Z",
+      "side": 1,
+      "message": "I don\u0027t see why and I think it cannot. \n\n * There may be more BatchTask tags per BatchTaskProperty\n * There must be one and only one BatchTask tag per the script and name.",
+      "parentUuid": "AAAATn/+i2o\u003d",
       "revId": "c7a7aae0be4575bb4d87fcbdfb204c82422cdb72",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
