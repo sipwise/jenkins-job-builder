@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+F9M\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-02T16:51:23Z",
+      "side": 1,
+      "message": "\u0027on\u0027 should be \u0027it\u0027?",
+      "revId": "a224815f9e1ab49ea740b0dc7a9546dc426f59a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+F3Y\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-02T16:51:23Z",
+      "side": 1,
+      "message": "I like the idea of multiple configurations.  However I think defining it in multiple locations is confusing.  How about we put all of these config sections in jenkins_jobs.ini?",
+      "revId": "a224815f9e1ab49ea740b0dc7a9546dc426f59a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
