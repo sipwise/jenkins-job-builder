@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+E7M\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-02T19:48:21Z",
+      "side": 1,
+      "message": "variable for this docstring already denotes default so all sections in here  are  default configs.  so isn\u0027t a \u0027default\u0027 section redundant?  Maybe rename it to \u0027gobal\u0027? or maybe rename the docstring var to \u0027CONFIGS\u0027.  Also it would probably be good to make the case consistent for section\u0027s name.",
+      "revId": "fa5ae92d4f1657464fa43a0d3412acfac794a543",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
