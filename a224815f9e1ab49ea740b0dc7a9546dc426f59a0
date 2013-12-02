@@ -33,6 +33,24 @@
       "revId": "a224815f9e1ab49ea740b0dc7a9546dc426f59a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+FyI\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-12-02T17:00:45Z",
+      "side": 1,
+      "message": "Im not sure that I follow....\n\nHere are defined the default values for the configuration options, that can be overwritten using the configuration file.\n\nPutting the default values in the configuration file makes no sense to me, they stop being defaults and become a configuration template\u0027 that you must fill up. Also that forces you to specify all the option inside the configuration file and makes this patch not backwards compatible (as you will have to define the new option in you config file).\n\nCan you elaborate please?",
+      "parentUuid": "AAAATn/+F3Y\u003d",
+      "revId": "a224815f9e1ab49ea740b0dc7a9546dc426f59a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
