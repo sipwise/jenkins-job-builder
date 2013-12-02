@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+E+I\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-02T19:39:23Z",
+      "side": 1,
+      "message": "seem like we just lost a param, what happened to config?",
+      "revId": "909623cdc6b9ebb6706e0d01cadec26adf321e91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
