@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+FWg\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-12-02T18:21:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+F9M\u003d",
+      "revId": "a224815f9e1ab49ea740b0dc7a9546dc426f59a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+F3Y\u003d",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 8
@@ -136,6 +154,24 @@
       "side": 1,
       "message": "i agree.  would it make sense to just add these to a general default CONFIGS docstring with a [default] and [jenkins] section?",
       "parentUuid": "AAAATn/+FoI\u003d",
+      "revId": "a224815f9e1ab49ea740b0dc7a9546dc426f59a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+FWs\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-12-02T18:21:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+Fko\u003d",
       "revId": "a224815f9e1ab49ea740b0dc7a9546dc426f59a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
