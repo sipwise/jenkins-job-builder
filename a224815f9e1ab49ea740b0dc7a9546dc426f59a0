@@ -51,6 +51,58 @@
       "revId": "a224815f9e1ab49ea740b0dc7a9546dc426f59a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+Fq0\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-02T17:26:59Z",
+      "side": 1,
+      "message": "Yup,  you are right.  Thanks for setting me straight.",
+      "parentUuid": "AAAATn/+FyI\u003d",
+      "revId": "a224815f9e1ab49ea740b0dc7a9546dc426f59a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+FqQ\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-02T17:26:59Z",
+      "side": 1,
+      "message": "is this just an example?  i don\u0027t see it used anywhere.  i would prefer it to be removed if not used.",
+      "revId": "a224815f9e1ab49ea740b0dc7a9546dc426f59a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+FpY\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-02T17:26:59Z",
+      "side": 1,
+      "message": "was this where you intended to use the TEST_CONF?",
+      "revId": "a224815f9e1ab49ea740b0dc7a9546dc426f59a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
