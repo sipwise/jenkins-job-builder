@@ -103,6 +103,24 @@
       "revId": "a224815f9e1ab49ea740b0dc7a9546dc426f59a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+FoI\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-12-02T17:29:46Z",
+      "side": 1,
+      "message": "Yep, but another patch added the following lines and I forgot to delete it, but seing it I think it will be nicer to use the TEST_CONG instead of adding each option one by one, what do you think?",
+      "parentUuid": "AAAATn/+FpY\u003d",
+      "revId": "a224815f9e1ab49ea740b0dc7a9546dc426f59a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
