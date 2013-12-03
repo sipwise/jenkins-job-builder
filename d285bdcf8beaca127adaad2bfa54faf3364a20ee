@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/+CtU\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-03T05:47:23Z",
+      "side": 1,
+      "message": "batch_task never changes so why does it need to be defined for every task?",
+      "revId": "d285bdcf8beaca127adaad2bfa54faf3364a20ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
