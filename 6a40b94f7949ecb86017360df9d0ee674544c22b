@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9/Mc\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-12-03T18:33:05Z",
+      "side": 1,
+      "message": "I think I\u0027d like this to appear in a list of optional entries; as it stands, it looks like it is required, but most people should just omit it.",
+      "revId": "6a40b94f7949ecb86017360df9d0ee674544c22b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
