@@ -34,6 +34,24 @@
       "revId": "d285bdcf8beaca127adaad2bfa54faf3364a20ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9/gY\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-03T17:32:55Z",
+      "side": 1,
+      "message": "yup.  your right.  sorry about that.  I just realized that batch_task is a reference to the newly created element so it needs to be defined for every task.",
+      "parentUuid": "AAAATn/+BIs\u003d",
+      "revId": "d285bdcf8beaca127adaad2bfa54faf3364a20ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
