@@ -16,6 +16,24 @@
       "revId": "d285bdcf8beaca127adaad2bfa54faf3364a20ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+BIs\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 4325
+      },
+      "writtenOn": "2013-12-03T12:42:22Z",
+      "side": 1,
+      "message": "It does change as every batch task can have different children. They are just different \"entities\" with same tag name.\n\n\u003ctasks\u003e\n  \u003chudson.plugins.batch__task.BatchTask\u003e \u003c-- this is the batch_task! --\u003e\n    \u003cname\u003efoo1\u003c/name\u003e\n    \u003cscript\u003ebar2\u003c/name\u003e\n  \u003c/hudson.plugins.batch__task.BatchTask\u003e \u003c-- this is the batch_task! --\u003e\n  \u003chudson.plugins.batch__task.BatchTask\u003e\n    \u003cname\u003efoo2\u003c/name\u003e\n    \u003cscript\u003ebar2\u003c/name\u003e\n  \u003c/hudson.plugins.batch__task.BatchTask\u003e\n  \u003chudson.plugins.batch__task.BatchTask\u003e\n    \u003cname\u003efoo3\u003c/name\u003e\n    \u003cscript\u003ebar3\u003c/name\u003e\n  \u003c/hudson.plugins.batch__task.BatchTask\u003e\n\u003c/tasks\u003e",
+      "parentUuid": "AAAATn/+CtU\u003d",
+      "revId": "d285bdcf8beaca127adaad2bfa54faf3364a20ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
