@@ -287,7 +287,7 @@ class YamlParser(object):
             mod = Mod(self.registry)
             xml = mod.root_xml(data)
             self.gen_xml(xml, data)
-            job = XmlJob(xml, data['name'])
+            job = XmlJob(xml, data['name'], data.get('override_name'))
             self.jobs.append(job)
             break
 
@@ -408,9 +408,10 @@ class ModuleRegistry(object):
 
 
 class XmlJob(object):
-    def __init__(self, xml, name):
+    def __init__(self, xml, name, override_name = None):
         self.xml = xml
         self.name = name
+        self.override_name = override_name
 
     def md5(self):
         return hashlib.md5(self.output()).hexdigest()
@@ -559,13 +560,14 @@ class Builder(object):
         self.parser.jobs.sort(lambda a, b: cmp(a.name, b.name))
 
         for job in self.parser.jobs:
+            use_name = job.override_name or job.name
             if names and not matches(job.name, names):
                 continue
             if output_dir:
                 if names:
                     print job.output()
                     continue
-                fn = os.path.join(output_dir, job.name)
+                fn = os.path.join(output_dir, use_name)
                 logger.debug("Writing XML to '{0}'".format(fn))
                 f = open(fn, 'w')
                 f.write(job.output())
@@ -578,7 +580,7 @@ class Builder(object):
                 self.cache.set(job.name, old_md5)
 
             if self.cache.has_changed(job.name, md5) or self.ignore_cache:
-                self.jenkins.update_job(job.name, job.output())
+                self.jenkins.update_job(use_name, job.output())
                 self.cache.set(job.name, md5)
             else:
                 logger.debug("'{0}' has not changed".format(job.name))
