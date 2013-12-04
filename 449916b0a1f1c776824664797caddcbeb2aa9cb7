@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/94KI\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-12-04T23:18:34Z",
+      "side": 1,
+      "message": "This line is more than 79 characters long and is causing pep8 to fail.",
+      "revId": "449916b0a1f1c776824664797caddcbeb2aa9cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
