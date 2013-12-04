@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/94cQ\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4325
+      },
+      "writtenOn": "2013-12-04T22:21:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/99D0\u003d",
+      "revId": "d285bdcf8beaca127adaad2bfa54faf3364a20ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/99Nw\u003d",
         "filename": "jenkins_jobs/modules/properties.py",
         "patchSetId": 6
@@ -47,6 +65,24 @@
       "writtenOn": "2013-12-04T02:34:34Z",
       "side": 1,
       "message": "Good catch.",
+      "parentUuid": "AAAATn/99Nw\u003d",
+      "revId": "d285bdcf8beaca127adaad2bfa54faf3364a20ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/94cc\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 4325
+      },
+      "writtenOn": "2013-12-04T22:21:10Z",
+      "side": 1,
+      "message": "Aha! Thanks!",
       "parentUuid": "AAAATn/99Nw\u003d",
       "revId": "d285bdcf8beaca127adaad2bfa54faf3364a20ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
