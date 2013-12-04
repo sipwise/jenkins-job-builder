@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/98rU\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-04T05:36:16Z",
+      "side": 1,
+      "message": "If this feature ends up being a configuration, shouldn\u0027t it be named disable_cache instead?",
+      "revId": "cb9d801df63ac2325ab65571898a443a1c332cec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
