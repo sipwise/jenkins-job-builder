@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<project>
+  <scm class="hudson.plugins.mercurial.MercurialSCM">
+    <source>ssh://hg@hg/repo</source>
+    <clean>false</clean>
+    <modules/>
+  </scm>
+</project>
