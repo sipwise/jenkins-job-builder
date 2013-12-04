@@ -1,0 +1,10 @@
+scm:
+  - hg:
+     branch: feature
+     url: ssh://hg@hg/repo
+     modules:
+       - module1
+       - module2
+     clean: true
+     browser: hgweb
+     browser-url: http://hg/repo

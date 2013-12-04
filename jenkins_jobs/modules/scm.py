@@ -106,12 +106,12 @@ def git(self, xml_parent, data):
 
       scm:
         - git:
-          url: https://example.com/project.git
-          branches:
-            - master
-            - stable
-          browser: githubweb
-          browser-url: http://github.com/foo/example.git
+            url: https://example.com/project.git
+            branches:
+              - master
+              - stable
+            browser: githubweb
+            browser-url: http://github.com/foo/example.git
     """
 
     # XXX somebody should write the docs for those with option name =
@@ -491,6 +491,91 @@ def tfs(self, xml_parent, data):
                                                   'plugins.tfs.browsers.'
                                                   'TeamSystemWebAccess'
                                                   'Browser'})
+
+
+def hg(self, xml_parent, data):
+    """yaml: hg
+    Specifies the mercurial SCM repository for this job.
+    Requires the Jenkins `Mercurial Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Mercurial+Plugin>`_
+
+    :arg str url: URL of the hg repository
+    :arg str branch: the branch name if you'd like to track a specific branch
+      in a repository (optional)
+    :arg list(str) modules: reduce unnecessary builds by specifying a list of
+      "modules" within the repository. A module is a directory name within the
+      repository that this project lives in. (optional)
+    :arg bool clean: wipe any local modifications or untracked files in the
+      repository checkout (default false)
+    :arg str subdir: check out the Mercurial repository into this
+      subdirectory of the job's workspace (default '')
+    :arg str browser: what repository browser to use (default 'auto')
+    :arg str browser-url: url for the repository browser
+
+    :browser values:
+        :fisheye:
+        :bitbucketweb:
+        :googlecode:
+        :hgweb:
+        :kilnhg:
+        :rhodecode:
+        :rhodecodelegacy:
+
+    Example:
+
+      scm:
+        - hg:
+           branch: feature
+           url: ssh://hg@hg/repo
+           modules:
+             - module1
+             - module2
+           clean: true
+           browser: hgweb
+           browser-url: http://hg/repo
+
+    """
+    scm = XML.SubElement(xml_parent, 'scm', {'class':
+                         'hudson.plugins.mercurial.MercurialSCM'})
+    if 'url' in data:
+        XML.SubElement(scm, 'source').text = data['url']
+    else:
+        raise JenkinsJobsException("A top level url must exist")
+
+    if 'branch' in data:
+        XML.SubElement(scm, 'branch').text = data['branch']
+
+    if 'subdir' in data:
+        XML.SubElement(scm, 'subdir').text = data['subdir']
+
+    xc = XML.SubElement(scm, 'clean')
+    xc.text = str(data.get('clean', False)).lower()
+
+    xm = XML.SubElement(scm, 'modules')
+    if 'modules' in data:
+        xm.text = ' '.join(data['modules'])
+
+    browser = data.get('browser', 'auto')
+    browserdict = {'fisheye': 'FishEye',
+                   'bitbucketweb': 'BitBucket',
+                   'hgweb': 'HgWeb',
+                   'googlecode': 'GoogleCode',
+                   'kilnhg': 'KilnHG',
+                   'rhodecode': 'RhodeCode',
+                   'rhodecodelegacy': 'RhodeCodeLegacy',
+                   'auto': 'auto'}
+    if browser not in browserdict:
+        raise JenkinsJobsException("Browser entered is not valid must be one "
+                                   "of: %s" % ", ".join(browserdict.keys()))
+    if browser != 'auto':
+        bc = XML.SubElement(scm, 'browser', {'class':
+                            'hudson.plugins.mercurial.browser.' +
+                            browserdict[browser]})
+        if 'browser-url' in data:
+            XML.SubElement(bc, 'url').text = data['browser-url']
+        else:
+            raise JenkinsJobsException("A browser-url must be specified along "
+                                       "with browser.")
 
 
 class SCM(jenkins_jobs.modules.base.Base):
