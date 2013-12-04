@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn/99Nw\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2013-12-04T01:39:18Z",
+      "side": 1,
+      "message": "The double colons here make the text below this literal text this means we see the literalinclude literally in the docs http://docs-draft.openstack.org/69/57469/6/check/gate-jenkins-job-builder-docs/479de7a/doc/build/html/properties.html#properties.batch-tasks\n\nIf you convert the double colons to a single colon you will get the desired effect. See the emotional jenkins function in publishers.py for an example.",
+      "revId": "d285bdcf8beaca127adaad2bfa54faf3364a20ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+CtU\u003d",
         "filename": "jenkins_jobs/modules/properties.py",
         "patchSetId": 6
