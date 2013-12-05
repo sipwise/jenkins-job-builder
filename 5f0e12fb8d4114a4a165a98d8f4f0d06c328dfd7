@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/93QY\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-05T04:39:15Z",
+      "side": 1,
+      "message": "Thanks for fixing that one.",
+      "revId": "5f0e12fb8d4114a4a165a98d8f4f0d06c328dfd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/93Rk\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-05T04:39:15Z",
+      "side": 1,
+      "message": "Should be marked as (optional) if none is required.",
+      "revId": "5f0e12fb8d4114a4a165a98d8f4f0d06c328dfd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/93Rg\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-05T04:39:15Z",
+      "side": 1,
+      "message": "Should be marked as (optional) if none is required.",
+      "revId": "5f0e12fb8d4114a4a165a98d8f4f0d06c328dfd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/93R8\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-05T04:39:15Z",
+      "side": 1,
+      "message": "Default value should be documented. (looks to be False)",
+      "revId": "5f0e12fb8d4114a4a165a98d8f4f0d06c328dfd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/93R0\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-05T04:39:15Z",
+      "side": 1,
+      "message": "Should be \u0027auto\u0027, not \u0027(Auto)\u0027.",
+      "revId": "5f0e12fb8d4114a4a165a98d8f4f0d06c328dfd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/93Qc\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 526,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-05T04:39:15Z",
+      "side": 1,
+      "message": "We are trying to move away from having to manually maintain examples while adding tests. The idea is to create at least one test and use it as an example in the documentation.\n\nTake a look at this review/change to get an idea on how to do it:\nhttps://review.openstack.org/#/c/58341/",
+      "revId": "5f0e12fb8d4114a4a165a98d8f4f0d06c328dfd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/93TQ\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 542,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-05T04:39:15Z",
+      "side": 1,
+      "message": "or what? \u003d)",
+      "revId": "5f0e12fb8d4114a4a165a98d8f4f0d06c328dfd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/93TA\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 551,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-05T04:39:15Z",
+      "side": 1,
+      "message": "This block can be rewritten to one line:\n\n  xc.text \u003d str(data.get(\u0027clean\u0027, False)).lower()\n\nThis file isn\u0027t a great example of the current JJB code style regarding how boolean values are handled.",
+      "revId": "5f0e12fb8d4114a4a165a98d8f4f0d06c328dfd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/93S4\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 562,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-05T04:39:15Z",
+      "side": 1,
+      "message": "nitpick: This can be simplified to (modules is never reused):\n\n  xm.text \u003d \u0027 \u0027.join(data[\u0027modules\u0027])",
+      "revId": "5f0e12fb8d4114a4a165a98d8f4f0d06c328dfd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/93Sc\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 574,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-05T04:39:15Z",
+      "side": 1,
+      "message": "Again, this file isn\u0027t a great example of latest JJB code style. This can be simplified to:\n\n  raise JenkinsJobsException(\"Browser entered is not valid must be one \"\n                             \"of %s\" % \", \".join(browserdict.keys()))\n\nOne advantage being that you won\u0027t have to update the list of supported browsers at 2 places.",
+      "revId": "5f0e12fb8d4114a4a165a98d8f4f0d06c328dfd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/93RU\u003d",
+        "filename": "setup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-05T04:39:15Z",
+      "side": 1,
+      "message": "This list is alphabetically sorted. This entry should go after git.",
+      "revId": "5f0e12fb8d4114a4a165a98d8f4f0d06c328dfd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
