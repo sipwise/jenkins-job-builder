@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<project>
+  <builders>
+    <hudson.tasks.Maven>
+      <targets>clean</targets>
+      <properties>foo=bar bar=foo</properties>
+      <mavenName>Maven3</mavenName>
+      <pom>parent/pom.xml</pom>
+      <usePrivateRepository>true</usePrivateRepository>
+      <settings class="jenkins.mvn.DefaultSettingsProvider"/>
+      <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
+    </hudson.tasks.Maven>
+  </builders>
+</project>

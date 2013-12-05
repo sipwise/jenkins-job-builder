@@ -1,0 +1,9 @@
+builders:
+        - maven-target:
+            maven-version: Maven3
+            pom: parent/pom.xml
+            goals: clean
+            private-repository: true
+            properties:
+              - foo=bar
+              - bar=foo

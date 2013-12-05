@@ -729,19 +729,14 @@ def maven_target(parser, xml_parent, data):
     :arg str goals: Goals to execute
     :arg str properties: Properties for maven, can have multiples
     :arg str pom: Location of pom.xml (defaults to pom.xml)
+    :arg bool private-repository: Use private maven repository for this
+      job (defaults to false)
     :arg str maven-version: Installation of maven which should be used
       (optional)
 
-    Example::
+    Example:
 
-      builders:
-        - maven-target:
-            maven-version: Maven3
-            pom: parent/pom.xml
-            goals: clean
-            properties:
-              - foo=bar
-              - bar=foo
+    .. literalinclude:: ../../tests/builders/fixtures/maven-target-doc.yaml
     """
     maven = XML.SubElement(xml_parent, 'hudson.tasks.Maven')
     XML.SubElement(maven, 'targets').text = data['goals']
@@ -751,7 +746,8 @@ def maven_target(parser, xml_parent, data):
         XML.SubElement(maven, 'mavenName').text = str(data['maven-version'])
     if 'pom' in data:
         XML.SubElement(maven, 'pom').text = str(data['pom'])
-    XML.SubElement(maven, 'usePrivateRepository').text = 'false'
+    use_private = str(data.get('private-repository', False)).lower()
+    XML.SubElement(maven, 'usePrivateRepository').text = use_private
     XML.SubElement(maven, 'settings', {
                    'class': 'jenkins.mvn.DefaultSettingsProvider'})
     XML.SubElement(maven, 'globalSettings', {
