@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9174\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2013-12-05T10:52:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/92dE\u003d",
+      "revId": "4ddd9c8b75e95f26e4268627948c36a90db78519",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/92co\u003d",
         "filename": "tests/builders/fixtures/maven-target001.yaml",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-05T08:55:03Z",
       "side": 1,
       "message": "trailing whitespace, please remove.",
+      "revId": "4ddd9c8b75e95f26e4268627948c36a90db78519",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/917o\u003d",
+        "filename": "tests/builders/fixtures/maven-target001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2013-12-05T10:52:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/92co\u003d",
       "revId": "4ddd9c8b75e95f26e4268627948c36a90db78519",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
