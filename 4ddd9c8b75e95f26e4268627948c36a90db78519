@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/92dE\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2013-12-05T08:55:03Z",
+      "side": 1,
+      "message": "Same comment as previously: this probably shouldn\u0027t be there.",
+      "revId": "4ddd9c8b75e95f26e4268627948c36a90db78519",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/92co\u003d",
+        "filename": "tests/builders/fixtures/maven-target001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2013-12-05T08:55:03Z",
+      "side": 1,
+      "message": "trailing whitespace, please remove.",
+      "revId": "4ddd9c8b75e95f26e4268627948c36a90db78519",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
