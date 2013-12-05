@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/92ss\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2013-12-05T07:49:49Z",
+      "side": 1,
+      "message": "This shouldn\u0027t be here, I suspect.",
+      "revId": "fc78f92de1b8940bb90bed925aebdb45d33f9969",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/92sk\u003d",
+        "filename": "tests/builders/fixtures/maven-target001.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2013-12-05T07:49:49Z",
+      "side": 1,
+      "message": "Trailing whitespace.",
+      "revId": "fc78f92de1b8940bb90bed925aebdb45d33f9969",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
