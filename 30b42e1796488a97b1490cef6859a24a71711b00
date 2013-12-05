@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9zxI\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-05T17:38:37Z",
+      "side": 1,
+      "message": "I see this is required, could you please explicitly state that?",
+      "revId": "30b42e1796488a97b1490cef6859a24a71711b00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9zx4\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-05T17:38:37Z",
+      "side": 1,
+      "message": "Thanks for adding tests. We want to move towards tests as examples. Would you mind making one of your test as the documented example? here\u0027s an example of how to do: https://review.openstack.org/#/c/57068",
+      "revId": "30b42e1796488a97b1490cef6859a24a71711b00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9zs0\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 570,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-05T17:38:37Z",
+      "side": 1,
+      "message": "I don\u0027t see handling when browser is set to \u0027auto\u0027? anything need to be done for that case?",
+      "revId": "30b42e1796488a97b1490cef6859a24a71711b00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9zsg\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 574,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-05T17:38:37Z",
+      "side": 1,
+      "message": "isn\u0027t the browser-url required for both \u0027auto\u0027 and others? or does it use the \u0027url\u0027 when set to auto?",
+      "revId": "30b42e1796488a97b1490cef6859a24a71711b00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
