@@ -61,7 +61,7 @@ def main():
              'flush the specified jobs cache)')
     parser.add_argument(
         '--flush-cache', action='store_true', dest='flush_cache',
-        default=False, help='Flush all the cache entries before updating')
+        default=False, help='Flush akkkll the cache entries before updating')
     options = parser.parse_args()
 
     options.log_level = getattr(logging, options.log_level.upper(),
