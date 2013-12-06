@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9s4E\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2013-12-06T23:57:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9s9s\u003d",
+      "revId": "9856c68ffc213374694bbd9c694db4eb8f280700",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9s90\u003d",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9s5A\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 737,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2013-12-06T23:57:50Z",
+      "side": 1,
+      "message": "I\u0027m not following what you mean here. I didn\u0027t change anything ?\n\nI\u0027ve remvoed : and build still passes. not sure what the difference though.",
+      "parentUuid": "AAAATn/9s90\u003d",
+      "revId": "9856c68ffc213374694bbd9c694db4eb8f280700",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9s9Q\u003d",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2013-12-06T23:16:26Z",
       "side": 1,
       "message": "Unless there\u0027s a special reason, you didn\u0027t have to create a special maven-target-doc.yaml for this.  You could have just used the maven-target001.yaml file here.",
+      "revId": "9856c68ffc213374694bbd9c694db4eb8f280700",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9s40\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 739,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2013-12-06T23:57:50Z",
+      "side": 1,
+      "message": "I did it since the other test that the absence of pom et.al. actually works. Two different tests. more complete. Simpler and better IMO.",
+      "parentUuid": "AAAATn/9s9Q\u003d",
       "revId": "9856c68ffc213374694bbd9c694db4eb8f280700",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
