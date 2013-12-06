@@ -60,44 +60,44 @@ class Maven(jenkins_jobs.modules.base.Base):
     sequence = 0
 
     def root_xml(self, data):
-        if 'maven' not in data:
-            return None
         xml_parent = XML.Element('maven2-moduleset')
-        root_module = XML.SubElement(xml_parent, 'rootModule')
-        XML.SubElement(root_module, 'groupId').text = \
-            data['maven']['root-module']['group-id']
-        XML.SubElement(root_module, 'artifactId').text = \
-            data['maven']['root-module']['artifact-id']
-        XML.SubElement(xml_parent, 'goals').text = data['maven']['goals']
 
-        maven_opts = data['maven'].get('maven-opts')
-        if maven_opts:
-            XML.SubElement(xml_parent, 'mavenOpts').text = maven_opts
+        if 'maven' in data:
+            root_module = XML.SubElement(xml_parent, 'rootModule')
+            XML.SubElement(root_module, 'groupId').text = \
+                data['maven']['root-module']['group-id']
+            XML.SubElement(root_module, 'artifactId').text = \
+                data['maven']['root-module']['artifact-id']
+            XML.SubElement(xml_parent, 'goals').text = data['maven']['goals']
 
-        maven_name = data['maven'].get('maven-name')
-        if maven_name:
-            XML.SubElement(xml_parent, 'mavenName').text = maven_name
+            maven_opts = data['maven'].get('maven-opts')
+            if maven_opts:
+                XML.SubElement(xml_parent, 'mavenOpts').text = maven_opts
 
-        XML.SubElement(xml_parent, 'ignoreUpstremChanges').text = str(
-            data['maven'].get('ignore-upstream-changes', True)).lower()
+            maven_name = data['maven'].get('maven-name')
+            if maven_name:
+                XML.SubElement(xml_parent, 'mavenName').text = maven_name
 
-        XML.SubElement(xml_parent, 'rootPOM').text = \
-            data['maven'].get('root-pom', 'pom.xml')
-        XML.SubElement(xml_parent, 'aggregatorStyleBuild').text = 'true'
-        XML.SubElement(xml_parent, 'incrementalBuild').text = 'false'
-        XML.SubElement(xml_parent, 'perModuleEmail').text = 'true'
-        XML.SubElement(xml_parent, 'archivingDisabled').text = str(
-            not data['maven'].get('automatic-archiving', True)).lower()
-        XML.SubElement(xml_parent, 'resolveDependencies').text = 'false'
-        XML.SubElement(xml_parent, 'processPlugins').text = 'false'
-        XML.SubElement(xml_parent, 'mavenValidationLevel').text = '-1'
-        XML.SubElement(xml_parent, 'runHeadless').text = 'false'
-        XML.SubElement(xml_parent, 'settingConfigId')
-        XML.SubElement(xml_parent, 'globalSettingConfigId')
+            XML.SubElement(xml_parent, 'ignoreUpstremChanges').text = str(
+                data['maven'].get('ignore-upstream-changes', True)).lower()
 
-        run_post_steps = XML.SubElement(xml_parent, 'runPostStepsIfResult')
-        XML.SubElement(run_post_steps, 'name').text = 'FAILURE'
-        XML.SubElement(run_post_steps, 'ordinal').text = '2'
-        XML.SubElement(run_post_steps, 'color').text = 'red'
+            XML.SubElement(xml_parent, 'rootPOM').text = \
+                data['maven'].get('root-pom', 'pom.xml')
+            XML.SubElement(xml_parent, 'aggregatorStyleBuild').text = 'true'
+            XML.SubElement(xml_parent, 'incrementalBuild').text = 'false'
+            XML.SubElement(xml_parent, 'perModuleEmail').text = 'true'
+            XML.SubElement(xml_parent, 'archivingDisabled').text = str(
+                not data['maven'].get('automatic-archiving', True)).lower()
+            XML.SubElement(xml_parent, 'resolveDependencies').text = 'false'
+            XML.SubElement(xml_parent, 'processPlugins').text = 'false'
+            XML.SubElement(xml_parent, 'mavenValidationLevel').text = '-1'
+            XML.SubElement(xml_parent, 'runHeadless').text = 'false'
+            XML.SubElement(xml_parent, 'settingConfigId')
+            XML.SubElement(xml_parent, 'globalSettingConfigId')
+
+            run_post_steps = XML.SubElement(xml_parent, 'runPostStepsIfResult')
+            XML.SubElement(run_post_steps, 'name').text = 'FAILURE'
+            XML.SubElement(run_post_steps, 'ordinal').text = '2'
+            XML.SubElement(run_post_steps, 'color').text = 'red'
 
         return xml_parent
