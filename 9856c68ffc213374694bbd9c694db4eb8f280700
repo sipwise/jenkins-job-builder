@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9su0\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 737,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-07T01:22:46Z",
+      "side": 1,
+      "message": "look in the comments for jenkins results.  click on \u0027gate-jenkins-job-builder-docs\u0027  to view the docs that got generated for the patch.  find this section in the sphinx generated doc to make sure it appears correctly.",
+      "parentUuid": "AAAATn/9s5A\u003d",
+      "revId": "9856c68ffc213374694bbd9c694db4eb8f280700",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9s9Q\u003d",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 5
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "I did it since the other test that the absence of pom et.al. actually works. Two different tests. more complete. Simpler and better IMO.",
       "parentUuid": "AAAATn/9s9Q\u003d",
+      "revId": "9856c68ffc213374694bbd9c694db4eb8f280700",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9suw\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 739,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-07T01:22:46Z",
+      "side": 1,
+      "message": "gotcha,  great!",
+      "parentUuid": "AAAATn/9s40\u003d",
       "revId": "9856c68ffc213374694bbd9c694db4eb8f280700",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
