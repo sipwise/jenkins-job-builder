@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<project>
+  <properties>
+    <hudson.plugins.sidebar__link.ProjectLinks>
+      <links>
+        <hudson.plugins.sidebar__link.LinkAction>
+          <url>ws/sources/target/jacoco.exec</url>
+          <text>Jacoco test results</text>
+          <icon>computer.gif</icon>
+        </hudson.plugins.sidebar__link.LinkAction>
+        <hudson.plugins.sidebar__link.LinkAction>
+          <url>http://review.openstack.org</url>
+          <text>Gerrit</text>
+        </hudson.plugins.sidebar__link.LinkAction>
+      </links>
+    </hudson.plugins.sidebar__link.ProjectLinks>
+  </properties>
+</project>
