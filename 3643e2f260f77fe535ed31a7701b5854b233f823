@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9rVc\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-12-08T11:11:53Z",
+      "side": 1,
+      "message": "You may want to strip off your local path, aka remove:\n\n /home/khaido/workspace/jenkins-job-builder/.tox/py27/local/lib/python2.7/site-packages/",
+      "revId": "3643e2f260f77fe535ed31a7701b5854b233f823",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9rVU\u003d",
+        "filename": "jenkins_jobs/modules/project_maven.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-12-08T11:11:53Z",
+      "side": 0,
+      "message": "I guess you \"just\" have to make the xml_parent assignment line the first statement in this method then return it early keep the same if.  That is nicer than:\n\n if condition:\n   // lot of code",
+      "revId": "04be0f43ade0fa168ab5aab4ac0885a576b5dd21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
