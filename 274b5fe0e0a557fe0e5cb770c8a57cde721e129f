@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9rIM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-08T19:14:41Z",
+      "side": 1,
+      "message": "nitpick: This should be aligned under the letter \"d\" of sidebar-links",
+      "revId": "274b5fe0e0a557fe0e5cb770c8a57cde721e129f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9rIY\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-08T19:14:41Z",
+      "side": 1,
+      "message": "This should be:\n\n  :arg list sidebar-links: ...",
+      "revId": "274b5fe0e0a557fe0e5cb770c8a57cde721e129f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9rIQ\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-08T19:14:41Z",
+      "side": 1,
+      "message": "JJB style does not include single-quotes around the argument type.\n\nIs URL really optional?",
+      "revId": "274b5fe0e0a557fe0e5cb770c8a57cde721e129f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9rIo\u003d",
+        "filename": "setup.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-08T19:14:41Z",
+      "side": 1,
+      "message": "This list is alphabetically ordered. This should go before \"throttle\".",
+      "revId": "274b5fe0e0a557fe0e5cb770c8a57cde721e129f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
