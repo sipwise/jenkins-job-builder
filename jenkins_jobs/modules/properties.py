@@ -120,6 +120,43 @@ def github(parser, xml_parent, data):
     github_url.text = data['url']
 
 
+def sidebar_links(parser, xml_parent, data):
+    """yaml: sidebar-links
+    Add links to the sidebar of project page.
+    Requires the Jenkins `Sidebar-Link Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/
+    Sidebar-Link+Plugin>`_
+
+    :arg list sidebar-links: list of links to add to sidebar.
+
+       :Link: * **url** (`str`) -- URL for link
+              * **text** (`str`) -- Text for link (optional)
+              * **icon** (`str`) -- Icon for link (optional)
+
+    Example:
+
+    .. literalinclude:: ../../tests/properties/fixtures/sidebarlinks001.yaml
+
+    """
+
+    sidebarn = XML.SubElement(xml_parent, 'hudson.plugins.sidebar__link.'
+                                          'ProjectLinks')
+    linksn = XML.SubElement(sidebarn, 'links')
+
+    for link in data:
+        linkn = XML.SubElement(linksn, 'hudson.plugins.sidebar__link'
+                               '.LinkAction')
+        if('url' in link):
+            XML.SubElement(linkn, 'url').text = link['url']
+        else:
+            raise JenkinsJobsException("Must specify an url for"
+                                       " a sidebar link")
+        if('text' in link):
+            XML.SubElement(linkn, 'text').text = link['text']
+        if('icon' in link):
+            XML.SubElement(linkn, 'icon').text = link['icon']
+
+
 def throttle(parser, xml_parent, data):
     """yaml: throttle
     Throttles the number of builds for this job.
