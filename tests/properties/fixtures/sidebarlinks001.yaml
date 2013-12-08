@@ -1,0 +1,9 @@
+properties:
+  - sidebar-links:
+    - link:
+      url: ws/sources/target/jacoco.exec
+      text: Jacoco test results
+      icon: computer.gif
+    - link:
+      url: http://review.openstack.org
+      text: Gerrit
