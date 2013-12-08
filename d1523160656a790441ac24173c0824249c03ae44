@@ -16,6 +16,24 @@
       "revId": "d1523160656a790441ac24173c0824249c03ae44",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9rUg\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 729,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2013-12-08T14:03:49Z",
+      "side": 1,
+      "message": "jenkins does not require it to be there. The mvn launch will though most likely fail but there are many of such cases and I could find examples in jenkins builder that otherwise complained about missing arguments.\n\nIf you can point me to one I would be happy to fix it - but as said, technically you do not require to fill this in for jenkins.",
+      "parentUuid": "AAAATn/9rn4\u003d",
+      "revId": "d1523160656a790441ac24173c0824249c03ae44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
