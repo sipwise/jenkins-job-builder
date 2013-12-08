@@ -89,6 +89,7 @@ setuptools.setup(
             'priority-sorter=jenkins_jobs.modules.properties:priority_sorter',
             'promoted-build=jenkins_jobs.modules.properties:promoted_build',
             'throttle=jenkins_jobs.modules.properties:throttle',
+            'sidebar-links=jenkins_jobs.modules.properties:sidebar_links'
         ],
         'jenkins_jobs.parameters': [
             'bool=jenkins_jobs.modules.parameters:bool_param',
