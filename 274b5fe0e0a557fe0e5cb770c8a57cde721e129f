@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9q6A\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2013-12-08T23:10:15Z",
+      "side": 1,
+      "message": "Why ? the attribute name is \u0027links\u0027.\n\nsidebar-links is the name of the parent/jenkins-plugin.",
+      "parentUuid": "AAAATn/9rIY\u003d",
+      "revId": "274b5fe0e0a557fe0e5cb770c8a57cde721e129f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9rIQ\u003d",
         "filename": "jenkins_jobs/modules/properties.py",
         "patchSetId": 3
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9q54\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2013-12-08T23:10:15Z",
+      "side": 1,
+      "message": "single-quotes: Done,  I think.\n\nThis format is entered this way by looking at how nested lists was documented in publishers.py and copying from there - but I noticed I got \u0027 instead of ` so i\u0027ve made that change hoping that is what you referred to ?\n\nURL non optional: Done.\n\ntechnically the url can be empty but it will be rendered blank so now i\u0027ve made it so you at least need to specify url and if you do leave it blank - well then you probably meant it to be blank.",
+      "parentUuid": "AAAATn/9rIQ\u003d",
+      "revId": "274b5fe0e0a557fe0e5cb770c8a57cde721e129f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9rIo\u003d",
         "filename": "setup.py",
         "patchSetId": 3
@@ -64,6 +100,24 @@
       "writtenOn": "2013-12-08T19:14:41Z",
       "side": 1,
       "message": "This list is alphabetically ordered. This should go before \"throttle\".",
+      "revId": "274b5fe0e0a557fe0e5cb770c8a57cde721e129f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9q6I\u003d",
+        "filename": "setup.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2013-12-08T23:10:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9rIo\u003d",
       "revId": "274b5fe0e0a557fe0e5cb770c8a57cde721e129f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
