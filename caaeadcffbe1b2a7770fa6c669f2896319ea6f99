@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9qY4\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-09T05:37:59Z",
+      "side": 1,
+      "message": "There is no \"links\" element in the YAML.\n\nThis should be sidebar-links or be removed completely as I see 2 conflicting examples in JJB. One being batch-tasks and the other trigger-parameterized-builds.\n\n- http://ci.openstack.org/jenkins-job-builder/publishers.html#publishers.trigger-parameterized-builds\n- http://ci.openstack.org/jenkins-job-builder/properties.html#properties.batch-tasks\n\nEither ways, it shouldn\u0027t be \"links\".\n\nYou can have a preview of the generated docs here:\nhttp://docs-draft.openstack.org/10/60710/4/check/gate-jenkins-job-builder-docs/6285df9/doc/build/html/properties.html#properties.sidebar-links",
+      "revId": "caaeadcffbe1b2a7770fa6c669f2896319ea6f99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9qYU\u003d",
+        "filename": "tests/properties/fixtures/sidebarlinks001.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-09T05:37:59Z",
+      "side": 1,
+      "message": "\"link:\" is useless/unused and add no value. It should be removed from the example to be consistent with other similar plugins accepting list of items.\n\nSee batch-tasks for an example of a similar plugin:\nhttp://ci.openstack.org/jenkins-job-builder/properties.html#properties.batch-tasks",
+      "revId": "caaeadcffbe1b2a7770fa6c669f2896319ea6f99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
