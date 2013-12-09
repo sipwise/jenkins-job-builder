@@ -52,6 +52,40 @@
       "revId": "d1523160656a790441ac24173c0824249c03ae44",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9lxE\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 755,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2013-12-09T21:57:04Z",
+      "side": 1,
+      "message": "these two lines resulted in settings and globalsettings being duplicated.",
+      "revId": "d1523160656a790441ac24173c0824249c03ae44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9lxY\u003d",
+        "filename": "tests/builders/fixtures/maven-target-doc.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2013-12-09T21:57:04Z",
+      "side": 1,
+      "message": "These two settings and globalSettings are redundant.",
+      "revId": "d1523160656a790441ac24173c0824249c03ae44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
