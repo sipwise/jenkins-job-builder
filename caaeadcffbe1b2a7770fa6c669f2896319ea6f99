@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9m1E\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2013-12-09T18:21:12Z",
+      "side": 1,
+      "message": "I didn\u0027t realize the code was actually ignoring \"links\" - now fixed so \"links\" is removed/not-needed.",
+      "parentUuid": "AAAATn/9qY4\u003d",
+      "revId": "caaeadcffbe1b2a7770fa6c669f2896319ea6f99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9qYU\u003d",
         "filename": "tests/properties/fixtures/sidebarlinks001.yaml",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-09T05:37:59Z",
       "side": 1,
       "message": "\"link:\" is useless/unused and add no value. It should be removed from the example to be consistent with other similar plugins accepting list of items.\n\nSee batch-tasks for an example of a similar plugin:\nhttp://ci.openstack.org/jenkins-job-builder/properties.html#properties.batch-tasks",
+      "revId": "caaeadcffbe1b2a7770fa6c669f2896319ea6f99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9m1Q\u003d",
+        "filename": "tests/properties/fixtures/sidebarlinks001.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2013-12-09T18:21:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/9qYU\u003d",
       "revId": "caaeadcffbe1b2a7770fa6c669f2896319ea6f99",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
