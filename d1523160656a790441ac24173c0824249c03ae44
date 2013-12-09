@@ -34,6 +34,24 @@
       "revId": "d1523160656a790441ac24173c0824249c03ae44",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9nAU\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 729,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-09T17:32:31Z",
+      "side": 1,
+      "message": "that sounds reasonable.",
+      "parentUuid": "AAAATn/9rUg\u003d",
+      "revId": "d1523160656a790441ac24173c0824249c03ae44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
