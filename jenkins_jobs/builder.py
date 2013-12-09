@@ -517,6 +517,18 @@ class Builder(object):
         for job in jobs:
             self.delete_job(job['name'])
 
+    def list_local_jobs(self, fn):
+        self.load_files(fn)
+        self.parser.generateXML()
+        jobs = [j.name for j in self.parser.jobs]
+        jobs.sort()
+        return jobs
+
+    def list_remote_jobs(self):
+        jobs = [j['name'] for j in self.jenkins.get_jobs()]
+        jobs.sort()
+        return jobs
+
     def update_job(self, fn, names=None, output_dir=None):
         self.load_files(fn)
         self.parser.generateXML(names)
