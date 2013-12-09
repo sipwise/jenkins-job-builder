@@ -16,6 +16,23 @@
       "revId": "cb9d801df63ac2325ab65571898a443a1c332cec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9pbQ\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-12-09T10:28:15Z",
+      "side": 1,
+      "message": "Could you add that parameter to the example file etc/jenkins_jobs.ini-sample ? Should be:\n\n ignore_cache \u003d false\n\nThanks",
+      "revId": "cb9d801df63ac2325ab65571898a443a1c332cec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
