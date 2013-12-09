@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9lnE\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-12-09T22:31:21Z",
+      "side": 1,
+      "message": "I think path should be another argument to match the other subcommands.  so it should be \"list --local --path /path/to/yaml\"\n\n(I kind of wish --path were a global option; maybe we should change that later.)",
+      "revId": "4805b4ca8f83a7df786422be6255e82c988e0e6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
