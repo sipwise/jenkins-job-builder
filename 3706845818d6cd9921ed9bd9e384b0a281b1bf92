@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9nDA\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-12-09T17:31:09Z",
+      "side": 1,
+      "message": "\"Your job definition\" might be clearer.",
+      "revId": "3706845818d6cd9921ed9bd9e384b0a281b1bf92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9nCo\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2013-12-09T17:31:09Z",
+      "side": 1,
+      "message": "xml-location might be more readable.",
+      "revId": "3706845818d6cd9921ed9bd9e384b0a281b1bf92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
