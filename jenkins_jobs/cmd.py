@@ -33,20 +33,16 @@ def main():
     subparser = parser.add_subparsers(help='update, test or delete job',
                                       dest='command')
     parser_update = subparser.add_parser('update')
-    parser_update.add_argument('path', help='Path to YAML file or directory')
     parser_update.add_argument('names', help='name(s) of job(s)', nargs='*')
     parser_update.add_argument('--delete-old', help='Delete obsolete jobs',
                                action='store_true',
                                dest='delete_old', default=False,)
     parser_test = subparser.add_parser('test')
-    parser_test.add_argument('path', help='Path to YAML file or directory')
     parser_test.add_argument('-o', dest='output_dir', required=True,
                              help='Path to output XML')
     parser_test.add_argument('name', help='name(s) of job(s)', nargs='*')
     parser_delete = subparser.add_parser('delete')
     parser_delete.add_argument('name', help='name of job', nargs='+')
-    parser_delete.add_argument('-p', '--path', default=None,
-                               help='Path to YAML file or directory')
     subparser.add_parser('delete-all',
                          help='Delete *ALL* jobs from Jenkins server, '
                          'including those not managed by Jenkins Job '
@@ -54,6 +50,7 @@ def main():
     parser.add_argument('--conf', dest='conf', help='Configuration file')
     parser.add_argument('-l', '--log_level', dest='log_level', default='info',
                         help="Log level (default: %(default)s)")
+    parser.add_argument('-p', '--path', help='Path to YAML file or directory')
     parser.add_argument(
         '--ignore-cache', action='store_true',
         dest='ignore_cache', default=False,
@@ -102,6 +99,14 @@ def main():
                                            config,
                                            ignore_cache=options.ignore_cache,
                                            flush_cache=options.flush_cache)
+
+    if (options.command in ['delete', 'test', 'update']
+            and options.path is None):
+
+        logger.error('Command %s require YAML configuration files.',
+                     options.command)
+        logger.error('Use --path to specifiy a directory/file')
+        sys.exit(1)
 
     if options.command == 'delete':
         for job in options.name:

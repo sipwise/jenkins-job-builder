@@ -29,7 +29,7 @@ every module.  You can run the unit tests by execute the command::
 
     tox -epy27
 
-*Note - view tox.ini to run test on other versions of python
+*Note - view tox.ini to run test on other versions of python*
 
 Configuration File
 ------------------
@@ -77,16 +77,16 @@ Testing JJB
 ^^^^^^^^^^^
 Once you have a configuration defined, you can test the job builder by running::
 
-  jenkins-jobs test /path/to/config -o /path/to/output
+  jenkins-jobs --path /path/to/config test -o /path/to/output
 
 That will write XML files to the output directory for all of the jobs
-defined in the configuration directory.  
+defined in the configuration directory.
 
 Updating Jenkins
 ^^^^^^^^^^^^^^^^
 When you're satisfied with the generated xml from the test, you can run::
 
-  jenkins-jobs update /path/to/config
+  jenkins-jobs --path /path/to/config update
 
 Which will upload the configurations to Jenkins if needed.  Jenkins Job
 Builder maintains, for each host, a cache [#f1]_ of previously configured jobs,
@@ -99,7 +99,7 @@ update it.
 To update a specific list of jobs, simply pass them as additional
 arguments after the configuration path. To update Foo1 and Foo2 run::
 
-  jenkins-jobs update /path/to/config Foo1 Foo2
+  jenkins-jobs --path /path/to/config update Foo1 Foo2
 
 
 .. rubric:: Footnotes
