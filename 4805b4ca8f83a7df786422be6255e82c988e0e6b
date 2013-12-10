@@ -16,6 +16,24 @@
       "revId": "4805b4ca8f83a7df786422be6255e82c988e0e6b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9jFM\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-12-10T11:20:31Z",
+      "side": 1,
+      "message": "I made --path a global option with  https://review.openstack.org/61084\n\nWill rebase.",
+      "parentUuid": "AAAATn/9lnE\u003d",
+      "revId": "4805b4ca8f83a7df786422be6255e82c988e0e6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
