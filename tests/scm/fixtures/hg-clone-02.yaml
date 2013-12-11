@@ -1,0 +1,6 @@
+scm:
+  - hg:
+      source: https://bitbucket.org/tortoisehg/thg
+      branch: default
+      browser: bitbucket
+      browser-url: https://bitbucket.org/tortoisehg/thg

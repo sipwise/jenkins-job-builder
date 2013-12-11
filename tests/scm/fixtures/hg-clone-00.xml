@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<project>
+  <scm class="hudson.plugins.mercurial.MercurialSCM">
+    <source>http://selenic.com/repo/hg</source>
+    <branch>default</branch>
+    <clean>false</clean>
+    <browser class="hudson.plugins.mercurial.browser.HgWeb">
+      <url>http://selenic.com/repo/hg/</url>
+    </browser>
+    <modules/>
+    <subdir/>
+  </scm>
+</project>

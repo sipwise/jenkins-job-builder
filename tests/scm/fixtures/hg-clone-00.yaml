@@ -1,0 +1,6 @@
+scm:
+  - hg:
+      source: http://selenic.com/repo/hg
+      branch: default
+      browser: hgweb
+      browser-url: http://selenic.com/repo/hg/

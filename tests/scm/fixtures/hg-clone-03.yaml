@@ -1,0 +1,5 @@
+scm:
+  - hg:
+      source: https://bitbucket.org/tortoisehg/thg
+      branch: default
+      clean: true
