@@ -175,6 +175,7 @@ setuptools.setup(
             'repo=jenkins_jobs.modules.scm:repo',
             'svn=jenkins_jobs.modules.scm:svn',
             'tfs=jenkins_jobs.modules.scm:tfs',
+            'hg=jenkins_jobs.modules.scm:hg',
         ],
         'jenkins_jobs.triggers': [
             'build-result=jenkins_jobs.modules.triggers:build_result',

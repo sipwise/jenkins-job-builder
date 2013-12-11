@@ -493,6 +493,67 @@ def tfs(self, xml_parent, data):
                                                   'Browser'})
 
 
+def hg(self, xml_parent, data):
+    """yaml: hg
+    Specifies the mercurial SCM repository for this job.
+    Requires the Jenkins `Mercurial Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Mercurial+Plugin>`_
+
+    :arg str source: specify the repository to track.
+    :arg str branch: branch name to checkout.
+    :arg bool clean: wipe any local modifications or untracked files
+    :arg list modules: track changes only in "modules" listed
+    :arg str subdir: checkout into this subdirectory
+
+    Example::
+
+      scm:
+        - hg:
+            source: http://selenic.com/repo/hg
+            branch: default
+            browser: hgweb
+            browser-url: http://selenic.com/repo/hg/
+    """
+    mercurial = XML.SubElement(xml_parent, 'scm', {'class': 'hudson.plugins.'
+                                                   'mercurial.MercurialSCM'})
+    XML.SubElement(mercurial, 'source').text = str(data.get('source', ''))
+    XML.SubElement(mercurial, 'branch').text = str(data.get('branch', ' '))
+    val = str(data.get('clean', False)).lower()
+    XML.SubElement(mercurial, 'clean').text = val
+    browserdict = {"auto": "",
+                   'bitbucket': 'BitBucket',
+                   "fisheye": "FishEye",
+                   "hgweb": "HgWeb",
+                   "kilnhg": "KilnHG",
+                   "rhodecode": "RhodeCode",
+                   "rhodecode-pre-1.2.0": "RhodeCodeLegacy"}
+    # hudson.plugins.mercurial.browser.
+    browser = data.get('browser')
+
+    if browser and browser not in browserdict:
+        raise JenkinsJobsException("Browser entered is not valid must be one "
+                                   "of: %s" % ", ".join(browserdict.keys()))
+    if browser and browser != 'auto':
+        bc = XML.SubElement(mercurial, 'browser',
+                            {'class': 'hudson.plugins.'
+                             'mercurial.browser.' + browserdict[browser]})
+        XML.SubElement(bc, 'url').text = data['browser-url']
+
+    if "modules" in data:
+        if isinstance(data["modules"], list):
+            modules = ", ".join(data["modules"])
+        elif isinstance(data["modules"], basestring):
+            modules = data["modules"]
+        else:
+            raise JenkinsJobsException("'modules' must be a list or a string")
+
+    else:
+        modules = ""
+
+    XML.SubElement(mercurial, "modules").text = modules
+    XML.SubElement(mercurial, "subdir").text = data.get("subdir", "")
+
+
 class SCM(jenkins_jobs.modules.base.Base):
     sequence = 30
 

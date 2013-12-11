@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<project>
+  <scm class="hudson.plugins.mercurial.MercurialSCM">
+    <source>https://bitbucket.org/tortoisehg/thg</source>
+    <branch>default</branch>
+    <clean>false</clean>
+    <browser class="hudson.plugins.mercurial.browser.BitBucket">
+      <url>https://bitbucket.org/tortoisehg/thg</url>
+    </browser>
+    <modules/>
+    <subdir/>
+  </scm>
+</project>
