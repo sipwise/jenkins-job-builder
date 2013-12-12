@@ -16,6 +16,24 @@
       "revId": "fa5ae92d4f1657464fa43a0d3412acfac794a543",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9TAI\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2013-12-12T22:22:31Z",
+      "side": 1,
+      "message": "The DEFAULT section is a special section that ConfigParser uses as fallback when looking for an option on any other section. But I can put everything under jenkins and will work too",
+      "parentUuid": "AAAATn/+E7M\u003d",
+      "revId": "fa5ae92d4f1657464fa43a0d3412acfac794a543",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
