@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9XrQ\u003d",
+        "filename": "setup.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6786
+      },
+      "writtenOn": "2013-12-12T06:13:30Z",
+      "side": 1,
+      "message": "You should keep trailing \u0027,\u0027 here.",
+      "revId": "e8c5f198e2de169513df73814602203fc54eef7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
