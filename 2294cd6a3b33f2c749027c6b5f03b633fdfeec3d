@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9Tn8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2424
+      },
+      "writtenOn": "2013-12-12T20:07:55Z",
+      "side": 1,
+      "message": "oops, yes, \u0027create\u0027",
+      "parentUuid": "AAAATn/9X9o\u003d",
+      "revId": "2294cd6a3b33f2c749027c6b5f03b633fdfeec3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9X8g\u003d",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9ToY\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 2424
+      },
+      "writtenOn": "2013-12-12T20:07:55Z",
+      "side": 1,
+      "message": "You\u0027re right, it should raise JenkinsJobException when it isn\u0027t defined.",
+      "parentUuid": "AAAATn/9X8g\u003d",
+      "revId": "2294cd6a3b33f2c749027c6b5f03b633fdfeec3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9X8c\u003d",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2013-12-12T05:12:44Z",
       "side": 1,
       "message": "is this an optional param?  What would happen if nothing is specified for this?",
+      "revId": "2294cd6a3b33f2c749027c6b5f03b633fdfeec3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9ToE\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 2424
+      },
+      "writtenOn": "2013-12-12T20:07:55Z",
+      "side": 1,
+      "message": "When it\u0027s not defined, I won\u0027t include it in the XML and with this we\u0027ll let the jenkins mercurial plugin use their own default for this option.",
+      "parentUuid": "AAAATn/9X8c\u003d",
       "revId": "2294cd6a3b33f2c749027c6b5f03b633fdfeec3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +175,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9Tos\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 2424
+      },
+      "writtenOn": "2013-12-12T20:07:55Z",
+      "side": 1,
+      "message": "OK, this will make things easier in the future, the examples will be tested.",
+      "parentUuid": "AAAATn/9X68\u003d",
+      "revId": "2294cd6a3b33f2c749027c6b5f03b633fdfeec3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9X7w\u003d",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 1
@@ -138,6 +210,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/9To8\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 2424
+      },
+      "writtenOn": "2013-12-12T20:07:55Z",
+      "side": 1,
+      "message": "Absolutely.",
+      "parentUuid": "AAAATn/9X7w\u003d",
+      "revId": "2294cd6a3b33f2c749027c6b5f03b633fdfeec3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9X9A\u003d",
         "filename": "setup.py",
         "patchSetId": 1
@@ -149,6 +239,24 @@
       "writtenOn": "2013-12-12T05:12:44Z",
       "side": 1,
       "message": "really, hg?",
+      "revId": "2294cd6a3b33f2c749027c6b5f03b633fdfeec3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9Tsg\u003d",
+        "filename": "setup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 2424
+      },
+      "writtenOn": "2013-12-12T20:07:55Z",
+      "side": 1,
+      "message": "Do you prefer to call it mercurial?",
+      "parentUuid": "AAAATn/9X9A\u003d",
       "revId": "2294cd6a3b33f2c749027c6b5f03b633fdfeec3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
