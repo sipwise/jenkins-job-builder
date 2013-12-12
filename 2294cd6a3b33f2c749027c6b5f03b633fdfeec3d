@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9X9o\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-12T05:12:44Z",
+      "side": 1,
+      "message": "i think you mean \u0027create\u0027?",
+      "revId": "2294cd6a3b33f2c749027c6b5f03b633fdfeec3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9X8g\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-12T05:12:44Z",
+      "side": 1,
+      "message": "is this a required param? if so maybe we want to verify that it\u0027s there otherwise throw a JenkinsJobException?",
+      "revId": "2294cd6a3b33f2c749027c6b5f03b633fdfeec3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9X8c\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-12T05:12:44Z",
+      "side": 1,
+      "message": "is this an optional param?  What would happen if nothing is specified for this?",
+      "revId": "2294cd6a3b33f2c749027c6b5f03b633fdfeec3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9X84\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-12T05:12:44Z",
+      "side": 1,
+      "message": "i see the code defaults to False.  Could you please specify in docstring?",
+      "revId": "2294cd6a3b33f2c749027c6b5f03b633fdfeec3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9X5s\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-12T05:12:44Z",
+      "side": 1,
+      "message": "i see that default value is \"\".  Could you please specify in docstring?",
+      "revId": "2294cd6a3b33f2c749027c6b5f03b633fdfeec3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9X5g\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-12T05:12:44Z",
+      "side": 1,
+      "message": "i see that default value is \"\".  Could you please specify in docstring?",
+      "revId": "2294cd6a3b33f2c749027c6b5f03b633fdfeec3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9X68\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-12T05:12:44Z",
+      "side": 1,
+      "message": "we are moving to using tests as examples.  could you please reference one of your tests as the example?  Here\u0027s an example on how: https://review.openstack.org/#/c/57068",
+      "revId": "2294cd6a3b33f2c749027c6b5f03b633fdfeec3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9X7w\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-12T05:12:44Z",
+      "side": 1,
+      "message": "key value pairs are not consistent with single and double quotes.  could you please make it consistent?",
+      "revId": "2294cd6a3b33f2c749027c6b5f03b633fdfeec3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9X9A\u003d",
+        "filename": "setup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-12T05:12:44Z",
+      "side": 1,
+      "message": "really, hg?",
+      "revId": "2294cd6a3b33f2c749027c6b5f03b633fdfeec3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
