@@ -141,6 +141,9 @@ class YamlParser(object):
             job = self.applyDefaults(job)
             self.getXMLForJob(job)
         for project in self.data.get('project', {}).values():
+            if jobs_filter and not matches(project['name'], jobs_filter):
+                logger.debug("Ignoring job {0}".format(project['name']))
+                continue
             logger.debug("XMLifying project '{0}'".format(project['name']))
             for jobspec in project.get('jobs', []):
                 if isinstance(jobspec, dict):
