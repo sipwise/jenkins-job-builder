@@ -16,6 +16,7 @@
 # Manage jobs in Jenkins server
 
 import os
+import sys
 import hashlib
 import yaml
 import json
@@ -82,7 +83,11 @@ class YamlParser(object):
         self.jobs = []
 
     def parse(self, fn):
-        data = yaml.load(open(fn))
+        if fn == '-':
+            data = yaml.load(sys.stdin)
+        else:
+            data = yaml.load(open(fn))
+
         if data:
             for item in data:
                 cls, dfn = item.items()[0]
