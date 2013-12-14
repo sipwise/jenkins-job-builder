@@ -45,6 +45,48 @@ import jenkins_jobs.modules.base
 from jenkins_jobs.errors import JenkinsJobsException
 
 
+def bzr(self, xml_parent, data):
+    """yaml: bzr
+    Specifies the bzr SCM repository for this job.
+    Requires the Jenkins `Bazaar plugin
+    <http://wiki.jenkins-ci.org/display/JENKINS/Bazaar+Plugin>`_
+
+    :arg str url: Specify the repository to track. This can be URL or a local
+     file path. (required)
+    :arg str loggerhead: The repository "loggerhead" browser URL for the root
+     of the project. For example, a Launchpad project called myproject would
+     use http://bazaar.launchpad.net/~myteam/myproject/mybranch. (optional)
+    :arg bool clean-tree: When this option is checked, the Bazaar plugin will
+      run "bzr clean-tree --quiet --ignored --unknown --detritus --force" to
+      clean up the workspace before pulling the branch. (default false)
+    :arg bool checkout: Use bzr lightweight checkout instead of a full branch.
+      (default false)
+
+    Examples::
+
+      scm:
+        - bzr:
+           url: http://anonscm.debian.org/bzr/pg/pg9.3/trunk/
+           loggerhead: https://alioth.debian.org/scm/loggerhead/pg/pg9.3/trunk/
+           clean-tree: true
+           checkout: true
+    """
+
+    bzr = XML.SubElement(xml_parent, 'scm', {'class': 'hudson.plugins.bazaar.'
+                                             'BazaarSCM'})
+    XML.SubElement(bzr, 'source').text = str(
+        data.get('url', ''))
+    XML.SubElement(bzr, 'cleantree').text = str(
+        data.get('clean-tree', 'false'))
+    XML.SubElement(bzr, 'checkout').text = str(
+        data.get('checkout', 'false'))
+    if 'loggerhead' in data:
+        browser = XML.SubElement(bzr, 'browser', {'class': 'hudson.plugins.'
+                                      'bazaar.browsers.Loggerhead'})
+        XML.SubElement(browser, 'url').text = str(
+            data.get('loggerhead', ''))
+
+
 def git(self, xml_parent, data):
     """yaml: git
     Specifies the git SCM repository for this job.

@@ -174,6 +174,7 @@ setuptools.setup(
             'xunit=jenkins_jobs.modules.publishers:xunit',
         ],
         'jenkins_jobs.scm': [
+            'bzr=jenkins_jobs.modules.scm:bzr',
             'git=jenkins_jobs.modules.scm:git',
             'repo=jenkins_jobs.modules.scm:repo',
             'svn=jenkins_jobs.modules.scm:svn',
