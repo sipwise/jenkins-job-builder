@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9Fdw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-16T22:48:44Z",
+      "side": 1,
+      "message": "Please fix this example (including indentation and removal of link: attribute) and/or remove it from commit message. An example is already provided in documentation.",
+      "revId": "21e600d99c3c254e70a9be9b797b19a79c269ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9FeI\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-16T22:48:44Z",
+      "side": 1,
+      "message": "This needs to be an empty string if no text is set or link won\u0027t show up.",
+      "revId": "21e600d99c3c254e70a9be9b797b19a79c269ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9FeU\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-16T22:48:44Z",
+      "side": 1,
+      "message": "Same here. This needs to be an empty string if no icon is set or link won\u0027t show up.",
+      "revId": "21e600d99c3c254e70a9be9b797b19a79c269ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9Ff4\u003d",
+        "filename": "tests/properties/fixtures/sidebarlinks001.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-16T22:48:44Z",
+      "side": 1,
+      "message": "link: HAS to be removed. It is not required for the config to work and only creates confusion.\n\nExample should be:\n\nproperties:\n  - sidebar-links:\n    - url: ws/sources/target/jacoco.exec\n      text: Jacoco test results\n      icon: computer.gif\n    - url: http://review.openstack.org\n      text: Gerrit",
+      "revId": "21e600d99c3c254e70a9be9b797b19a79c269ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
