@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9JtE\u003d",
+        "filename": "tools/pip-requires",
+        "patchSetId": 9
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2013-12-16T09:26:41Z",
+      "side": 1,
+      "message": "Don\u0027t particularly like this dependency, but it seems that minidom produces different XML output depending on the python version which makes it really difficult to produce a regex expression that works consistently.\n\nIncluding PyXML changes minidom to produce consistent output on both 2.6 and 2.7.",
+      "revId": "11fdd4e8565feb56e2843ff8834c69346e2d7b82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
