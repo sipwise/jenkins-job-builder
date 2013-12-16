@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn/9Hxw\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 2424
+      },
+      "writtenOn": "2013-12-16T16:11:43Z",
+      "side": 1,
+      "message": "This patch is about \"adding mercurial support\", it shouldn\u0027t be changing git support docstrings",
+      "revId": "30b42e1796488a97b1490cef6859a24a71711b00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/9zxI\u003d",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 3
@@ -30,6 +47,23 @@
       "writtenOn": "2013-12-05T17:38:37Z",
       "side": 1,
       "message": "Thanks for adding tests. We want to move towards tests as examples. Would you mind making one of your test as the documented example? here\u0027s an example of how to do: https://review.openstack.org/#/c/57068",
+      "revId": "30b42e1796488a97b1490cef6859a24a71711b00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9HxA\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 2424
+      },
+      "writtenOn": "2013-12-16T16:11:43Z",
+      "side": 1,
+      "message": "It would be good to support strings as well for \u0027modules\u0027 option (modules: foo), it will make things less verbose when you only want to monitor one of your modules",
       "revId": "30b42e1796488a97b1490cef6859a24a71711b00",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
