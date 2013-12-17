@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/9AME\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-17T20:20:41Z",
+      "side": 1,
+      "message": "Please provide a brief description of the bug itself as \"fix bug ###\" isn\u0027t descriptive enough of the change made.\n\nRefer to this document for an example of a good git commit message:\nhttps://wiki.openstack.org/wiki/GitCommitMessages#Summary_of_GIT_commit_message_structure\n\nExample of good commit message:\n\n  Fix filtering when templates are used\n  \n  Description of the problem and how it is fixed...\n\n  Closes-bug: #1260649",
+      "revId": "2558b10ca6759b9557625dc2e1df986888d4639d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/9ALo\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-17T20:20:41Z",
+      "side": 1,
+      "message": "Debug message should be: \"Ignoring project {0}\"",
+      "revId": "2558b10ca6759b9557625dc2e1df986888d4639d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
