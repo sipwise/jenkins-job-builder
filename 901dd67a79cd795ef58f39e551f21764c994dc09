@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/8940\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-12-18T10:10:10Z",
+      "side": 1,
+      "message": "Can you document the default value there? Ie:\n\n (default false)\n\nWe are not always giving the default though but I think it would be nice to have whenever we add new parameters :-)",
+      "revId": "901dd67a79cd795ef58f39e551f21764c994dc09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/894U\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2013-12-18T10:10:10Z",
+      "side": 1,
+      "message": "We did a pass to normalize boolean value, the recommended way is to use:\n\n str(data.get(\u0027allow-empty\u0027, False)).lower()\n\nI don\u0027t think value is actually needed so you could skip it and assign that directly to empty.text i.e.:\n\n empty.text \u003d  str(data.get(\u0027allow-empty\u0027, False)).lower()",
+      "revId": "901dd67a79cd795ef58f39e551f21764c994dc09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
