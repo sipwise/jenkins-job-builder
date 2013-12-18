@@ -40,6 +40,8 @@ def archive(parser, xml_parent, data):
     :arg str excludes: path specifier for artifacts to exclude
     :arg bool latest-only: only keep the artifacts from the latest
       successful build
+    :arg bool allow-empty:  pass the build if no artifacts are
+      found (default false)
 
     Example::
 
@@ -65,6 +67,11 @@ def archive(parser, xml_parent, data):
         latest.text = 'true'
     else:
         latest.text = 'false'
+
+    if 'allow-empty' in data:
+        empty = XML.SubElement(archiver, 'allowEmptyArchive')
+        # Default behavior is to fail the build.
+        empty.text = str(data.get('allow-empty', False)).lower()
 
 
 def blame_upstream(parser, xml_parent, data):
