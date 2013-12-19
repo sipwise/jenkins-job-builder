@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAATn/84/s\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-19T05:08:30Z",
+      "side": 1,
+      "message": "we are moving to using test as example.  would you mind replacing this section with a reference to your test?  Take a look at the below module (emotional_jenkins) as an example.",
+      "revId": "bc90fe54d061f7da38d8f3bef77f5dcbba0a3168",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/85AI\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 3
