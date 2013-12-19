@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/85AI\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2013-12-19T05:01:58Z",
+      "side": 1,
+      "message": "There is no need to check for presence of allow-empty in data. L74 is already taking care of it. False will be used as the default value if allow-empty isn\u0027t found.",
+      "revId": "bc90fe54d061f7da38d8f3bef77f5dcbba0a3168",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
