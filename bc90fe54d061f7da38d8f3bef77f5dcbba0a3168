@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/84+E\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 9736
+      },
+      "writtenOn": "2013-12-19T05:21:56Z",
+      "side": 1,
+      "message": "Yes, I\u0027ll take a look. Thanks.",
+      "parentUuid": "AAAATn/84/s\u003d",
+      "revId": "bc90fe54d061f7da38d8f3bef77f5dcbba0a3168",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/85AI\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2013-12-19T05:01:58Z",
       "side": 1,
       "message": "There is no need to check for presence of allow-empty in data. L74 is already taking care of it. False will be used as the default value if allow-empty isn\u0027t found.",
+      "revId": "bc90fe54d061f7da38d8f3bef77f5dcbba0a3168",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/8498\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 9736
+      },
+      "writtenOn": "2013-12-19T05:21:56Z",
+      "side": 1,
+      "message": "I figured adding it this way would be safer and not change the behavior of the API. If anyone is doing validation tests of XML output from this tool this would cause that validation to fail.\nthe line:\n\u003callowEmptyArchive\u003evalue\u003c/allowEmptyArchive\u003e \nnow appears, and it wasn\u0027t there before. \n\nI am happy to take the check out. If that is the preferred behavior.",
+      "parentUuid": "AAAATn/85AI\u003d",
       "revId": "bc90fe54d061f7da38d8f3bef77f5dcbba0a3168",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
