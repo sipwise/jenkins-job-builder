@@ -88,6 +88,28 @@ Example:
     .. literalinclude::
         /../../tests/localyaml/fixtures/include-raw-escaped-multi001.yaml
 
+
+To allow for job templates to perform substitution on the path names, when a
+filename containing a python format placeholder is encountered, lazy loading
+support is enabled, where instead of returning the contents back during yaml
+parsing, it is delayed until the variable substitution is performed.
+
+Example:
+
+    .. literalinclude:: /../../tests/yamlparser/fixtures/lazy-load-jobs001.yaml
+
+.. note::
+
+    Because lazy-loading involves performing the substitution on the file
+    name, it means that jenkins-job-builder can not call the variable
+    substitution on the contents of the file. This means that the
+    ``!include-raw`` tag will behave as though ``!include-raw-escape`` tag was
+    used instead whenever name substitution on the filename is to be performed.
+
+    Given the behaviour described above, when substitution is to be performed
+    on any filename passed via ``!include-raw-escape`` the tag will be
+    automatically converted to ``!include-raw`` and no escaping will be
+    performed.
 """
 
 import codecs
@@ -223,9 +245,20 @@ class YamlInclude(BaseYAMLObject, YAMLObject):
         return filename
 
     @classmethod
+    def _lazy_load(cls, loader, tag, node_str):
+        logger.info("Lazy loading of file template '{0}' enabled"
+                    .format(node_str))
+        return LazyLoader((cls, loader, node_str))
+
+    @classmethod
     def _from_file(cls, loader, node):
-        filename = cls._find_file(loader.construct_yaml_str(node),
-                                  loader.search_path)
+        node_str = loader.construct_yaml_str(node)
+        try:
+            node_str.format()
+        except KeyError:
+            return cls._lazy_load(loader, cls.yaml_tag, node)
+
+        filename = cls._find_file(node_str, loader.search_path)
         with open(filename, 'r') as f:
             data = yaml.load(f, functools.partial(cls.yaml_loader,
                                                   search_path=loader.search_path
@@ -250,8 +283,13 @@ class YamlIncludeRaw(YamlInclude):
 
     @classmethod
     def _from_file(cls, loader, node):
-        filename = cls._find_file(loader.construct_yaml_str(node),
-                                  loader.search_path)
+        node_str = loader.construct_yaml_str(node)
+        try:
+            node_str.format()
+        except KeyError:
+            return cls._lazy_load(loader, cls.yaml_tag, node)
+
+        filename = cls._find_file(node_str, loader.search_path)
         try:
             with codecs.open(filename, 'r', 'utf-8') as f:
                 data = f.read()
@@ -267,7 +305,15 @@ class YamlIncludeRawEscape(YamlIncludeRaw):
 
     @classmethod
     def from_yaml(cls, loader, node):
-        return loader.escape_callback(YamlIncludeRaw.from_yaml(loader, node))
+        data = YamlIncludeRaw.from_yaml(loader, node)
+        if isinstance(data, LazyLoader):
+            logger.warn("Replacing %s tag with %s since lazy loading means "
+                        "file contents will not be deep formatted for "
+                        "variable substitution.", cls.yaml_tag,
+                        YamlIncludeRaw.yaml_tag)
+            return data
+        else:
+            return loader.escape_callback(data)
 
 
 class YamlIncludeDeprecated(YamlInclude):
@@ -300,6 +346,27 @@ class YamlIncludeRawEscapeDeprecated(YamlIncludeRawEscape):
                                         cls).yaml_tag)
         return super(YamlIncludeRawEscapeDeprecated, cls).from_yaml(loader,
                                                                     node)
+
+
+class LazyLoader(str):
+    """Helper class to provide lazy loading of files included using !include*
+    tags where the path to the given file contains unresolved placeholders.
+    """
+
+    def __init__(self, data):
+        # str subclasses can only have one argument, so assume it is a tuple
+        # being passed and unpack as needed
+        self._cls, self._loader, self._node = data
+
+    def __str__(self):
+        return self._cls.yaml_tag
+
+    def __repr__(self):
+        return self._cls.yaml_tag
+
+    def format(self, *args, **kwargs):
+        self._node.value = self._node.value.format(*args, **kwargs)
+        return self._cls.from_yaml(self._loader, self._node)
 
 
 def load(stream, **kwargs):
