@@ -79,7 +79,7 @@ def deep_format(obj, paramdict):
     # limitations on the values in paramdict - the post-format result must
     # still be valid YAML (so substituting-in a string containing quotes, for
     # example, is problematic).
-    if isinstance(obj, str):
+    if hasattr(obj, 'format'):
         try:
             ret = obj.format(**paramdict)
         except KeyError as exc:
