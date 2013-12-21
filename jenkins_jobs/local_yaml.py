@@ -75,6 +75,30 @@ Example:
     .. literalinclude::
         /../../tests/localyaml/fixtures/include-raw001-vars.sh
 
+
+To allow for job templates to perform substitution on the path names, when a
+filename containing a python format placeholder is encountered, lazy loading
+support is enabled, where instead of returning the contents back during yaml
+parsing, it is delayed until the variable substitution is performed.
+
+Example:
+
+    .. literalinclude:: /../../tests/yamlparser/fixtures/lazy-load-jobs001.yaml
+
+.. note::
+
+    Because lazy-loading involves performing the substitution on the file
+    name, it means that jenkins-job-builder can not call the variable
+    substitution on the contents of the file. This means that the
+    ``!include-raw`` tag will behave as though ``!include-raw-escape`` tag was
+    used instead whenever name substitution on the filename is to be performed.
+
+    Given the behaviour described above, when substitution is to be performed
+    on any filename passed via ``!include-raw-escape`` the tag will be
+    automatically converted to ``!include-raw`` and no escaping will be
+    performed.
+
+
 """
 
 import codecs
@@ -201,8 +225,22 @@ class LocalLoader(OrderedConstructor, yaml.Loader):
                 return candidate
         return filename
 
+    def _lazy_load(self, tag, node_str):
+        logger.info("Lazy loading of file template '{0}' enabled"
+                    .format(node_str))
+        return LazyLoader(("!%s %s" % (tag, node_str),
+                           functools.partial(LocalLoader,
+                                             search_path=self.search_path
+                                             )))
+
     def _include_tag(self, loader, node):
-        filename = self._find_file(loader.construct_yaml_str(node))
+        node_str = loader.construct_yaml_str(node)
+        try:
+            node_str.format()
+        except KeyError:
+            return self._lazy_load("include", node_str)
+
+        filename = self._find_file(node_str)
         with open(filename, 'r') as f:
             data = yaml.load(f, functools.partial(LocalLoader,
                                                   search_path=self.search_path
@@ -210,7 +248,13 @@ class LocalLoader(OrderedConstructor, yaml.Loader):
         return data
 
     def _include_raw_tag(self, loader, node):
-        filename = self._find_file(loader.construct_yaml_str(node))
+        node_str = loader.construct_yaml_str(node)
+        try:
+            node_str.format()
+        except KeyError:
+            return self._lazy_load("include-raw", node_str)
+
+        filename = self._find_file(node_str)
         try:
             with codecs.open(filename, 'r', 'utf-8') as f:
                 data = f.read()
@@ -221,10 +265,37 @@ class LocalLoader(OrderedConstructor, yaml.Loader):
         return data
 
     def _include_raw_escape_tag(self, loader, node):
-        return self._escape(self._include_raw_tag(loader, node))
+        data = self._include_raw_tag(loader, node)
+        if isinstance(data, LazyLoader):
+            logger.info("Replacing !include-raw-escape tag with !include-raw "
+                        "since lazy loading means file contents will not be "
+                        "deep formatted for variable substitution.")
+            return data
+        else:
+            return self._escape(data)
 
     def _escape(self, data):
         return re.sub(r'({|})', r'\1\1', data)
+
+
+class LazyLoader(str):
+    """Helper class to provide lazy loading of files included using !include*
+    tags where the path to the given file contains unresolved placeholders.
+    """
+
+    def __init__(self, data):
+        # str subclasses can only have one argument, so assume it is a tuple
+        # being passed and unpack as needed
+        self._tag, self._loader = data
+
+    def __str__(self):
+        return self._tag
+
+    def __repr__(self):
+        return self._tag
+
+    def format(self, *args, **kwargs):
+        return yaml.load(self._tag.format(*args, **kwargs), self._loader)
 
 
 def load(stream, **kwargs):
