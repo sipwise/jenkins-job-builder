@@ -51,6 +51,16 @@ Example:
     .. literalinclude::
         /../../tests/localyaml/fixtures/include-raw-escaped001.yaml
 
+
+Includes support for lazy loading of files where the path contains a
+placeholder to be substituted after initial load and before final parsing of
+the resulting data.
+
+
+Example:
+
+    .. literalinclude:: /../../tests/yamlparser/fixtures/lazy-load-jobs001.yaml
+
 """
 
 import functools
@@ -129,8 +139,22 @@ class LocalLoader(yaml.Loader):
                 return candidate
         return filename
 
+    def _lazy_load(self, tag, node_str):
+        logger.info("Lazy loading of file template '{0}' enabled"
+                    .format(node_str))
+        return LazyLoader(("!%s %s" % (tag, node_str),
+                           functools.partial(LocalLoader,
+                                             search_path=self.search_path
+                                             )))
+
     def _include_tag(self, loader, node):
-        filename = self._find_file(loader.construct_yaml_str(node))
+        node_str = loader.construct_yaml_str(node)
+        try:
+            node_str.format()
+        except KeyError:
+            return self._lazy_load("include", node_str)
+
+        filename = self._find_file(node_str)
         with open(filename, 'r') as f:
             data = yaml.load(f, functools.partial(LocalLoader,
                                                   search_path=self.search_path
@@ -138,7 +162,13 @@ class LocalLoader(yaml.Loader):
         return data
 
     def _include_raw_tag(self, loader, node):
-        filename = self._find_file(loader.construct_yaml_str(node))
+        node_str = loader.construct_yaml_str(node)
+        try:
+            node_str.format()
+        except KeyError:
+            return self._lazy_load("include-raw", node_str)
+
+        filename = self._find_file(node_str)
         try:
             with open(filename, 'r') as f:
                 data = f.read()
@@ -149,10 +179,34 @@ class LocalLoader(yaml.Loader):
         return data
 
     def _include_raw_escape_tag(self, loader, node):
-        return self._escape(self._include_raw_tag(loader, node))
+        data = self._include_raw_tag(loader, node)
+        if isinstance(data, LazyLoader):
+            return data
+        else:
+            return self._escape(data)
 
     def _escape(self, data):
         return re.sub(r'({|})', r'\1\1', data)
+
+
+class LazyLoader(str):
+    """Helper class to provide lazy loading of files included using !include*
+    tags where the path to the given file contains unresolved placeholders.
+    """
+
+    def __init__(self, data):
+        # str subclasses can only have one argument, so assume it is a tuple
+        # being passed and unpack as needed
+        self._tag, self._loader = data
+
+    def __str__(self):
+        return self._tag
+
+    def __repr__(self):
+        return self._tag
+
+    def format(self, *args, **kwargs):
+        return yaml.load(self._tag.format(*args, **kwargs), self._loader)
 
 
 def load(stream, **kwargs):
