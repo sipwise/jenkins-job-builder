@@ -141,7 +141,16 @@ class LocalLoader(yaml.Loader):
         return filename
 
     def _include_tag(self, loader, node):
-        filename = self._find_file(loader.construct_yaml_str(node))
+        node_str = loader.construct_yaml_str(node)
+        if re.search("\{.*\}", node_str):
+            logger.info("Lazy loading of file template '{0}' enabled"
+                        .format(node_str))
+            return LazyLoader("!include %s" % node_str,
+                              functools.partial(LocalLoader,
+                                                search_path=self.search_path
+                                                ))
+
+        filename = self._find_file(node_str)
         with open(filename, 'r') as f:
             data = yaml.load(f, functools.partial(LocalLoader,
                                                   search_path=self.search_path
@@ -149,7 +158,16 @@ class LocalLoader(yaml.Loader):
         return data
 
     def _include_raw_tag(self, loader, node):
-        filename = self._find_file(loader.construct_yaml_str(node))
+        node_str = loader.construct_yaml_str(node)
+        if re.search("\{.*\}", node_str):
+            logger.info("Lazy loading of file template '{0}' enabled"
+                        .format(node_str))
+            return LazyLoader("!include-raw %s" % node_str,
+                              functools.partial(LocalLoader,
+                                                search_path=self.search_path
+                                                ))
+
+        filename = self._find_file(node_str)
         with open(filename, 'r') as f:
             data = f.read()
         return data
@@ -159,6 +177,16 @@ class LocalLoader(yaml.Loader):
 
     def _escape(self, data):
         return re.sub(r'({|})', r'\1\1', data)
+
+
+class LazyLoader(object):
+
+    def __init__(self, tag, loader):
+        self.tag = tag
+        self.loader = loader
+
+    def format(self, *args, **kwargs):
+        return yaml.load(self.tag.format(*args, **kwargs), self.loader)
 
 
 def load(stream, **kwargs):
