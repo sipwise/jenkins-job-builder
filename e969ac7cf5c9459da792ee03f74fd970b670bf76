@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAATn/8sUA\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2013-12-23T05:16:53Z",
+      "side": 1,
+      "message": "a new \u0027ignore_cache\u0027 flag was added.  i think you\u0027ll need to add \u0027ignore_cache\u003dFalse\u0027 here.",
+      "revId": "e969ac7cf5c9459da792ee03f74fd970b670bf76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
