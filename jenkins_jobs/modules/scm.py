@@ -156,6 +156,8 @@ def git(self, xml_parent, data):
         refspec = '+refs/heads/*:refs/remotes/origin/*'
     XML.SubElement(huser, 'refspec').text = refspec
     XML.SubElement(huser, 'url').text = data['url']
+    if 'credentials-id' in data:
+        XML.SubElement(huser, 'credentialsId').text = data['credentials-id']
     xml_branches = XML.SubElement(scm, 'branches')
     branches = data.get('branches', ['**'])
     for branch in branches:
