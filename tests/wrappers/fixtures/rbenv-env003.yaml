@@ -1,0 +1,10 @@
+wrappers:
+  - rbenv-env:
+      ruby-version: 2.0.0-p353
+      ignore-local-version: true
+      preinstall-gem-list: "foo,bar"
+      rbenv-root: "/usr/local/rbenv"
+      rbenv-repo: "https://github.com/somewhere/rbenv.git"
+      rbenv-branch: "rbenv-branch"
+      ruby-build-repo: "https://github.com/somewhere/ruby-build.git"
+      ruby-build-branch: "rbuild-branch"
