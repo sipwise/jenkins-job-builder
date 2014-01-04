@@ -237,6 +237,97 @@ def rvm_env(parser, xml_parent, data):
                     'ruby-class': 'String'}).text = "rvm"
 
 
+def rbenv_env(parser, xml_parent, data):
+    """yaml: rbenv-env
+    Set the rbenv implementation
+    Requires the Jenkins `rbenv plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/rbenv+plugin>`_
+
+    :arg str ruby-version: (optional) Version of Ruby to use. Syntax is
+                             X.Y.Z-p### such as '2.0.0-p353' or '1.9.3-p484'.
+                             Defaults to '1.9.3-p484'.
+    :arg bool ignore-local-version: (optional) If set, ignore local Ruby
+                             version (defined in the ".ruby-version" file in
+                             workspace) even if it has been defined.  Defaults
+                             to false.
+    :arg str preinstall-gem-list: (optional) List of gems to install.  Example:
+                             'bundler,rake'.  Defaults to 'bundler,rake'.
+    :arg str rbenv-root: (optional) RBENV_ROOT.  Defaults to $HOME/.rbenv.
+    :arg str rbenv-repo: (optional) Which repo to clone rbenv from.  Defaults
+                             to 'https://github.com/sstephenson/rbenv.git'.
+    :arg str rbenv-branch: (optional) Which branch to clone rbenv from.
+                             Defaults to 'master'.
+    :arg str ruby-build-repo: (optional) Which repo to clone ruby-build from.
+                   Defaults to 'https://github.com/sstephenson/ruby-build.git'.
+    :arg str ruby-build-branch: (optional) Which branch to clone ruby-build
+                             from.  Defaults to 'master'.
+
+    Example::
+
+      wrappers:
+        - rbenv-env:
+            ruby-version: '2.0.0-p353'
+    """
+
+    mapping = [
+        # option, xml name, default value (text), attributes (hard coded)
+        ("preinstall-gem-list", 'gem__list', 'bundler,rake'),
+        ("rbenv-root", 'rbenv__root', '$HOME/.rbenv'),
+        ("rbenv-repo", 'rbenv__repository',
+            'https://github.com/sstephenson/rbenv.git'),
+        ("rbenv-branch", 'rbenv__revision', 'master'),
+        ("ruby-build-repo", 'ruby__build__repository',
+            'https://github.com/sstephenson/ruby-build.git'),
+        ("ruby-build-branch", 'ruby__build__revision', 'master'),
+        ("ruby-version", 'version', '1.9.3-p484'),
+    ]
+
+    rpo = XML.SubElement(xml_parent,
+                         'ruby-proxy-object')
+
+    ro_class = "Jenkins::Tasks::BuildWrapperProxy"
+    ro = XML.SubElement(rpo,
+                        'ruby-object',
+                        {'ruby-class': ro_class,
+                         'pluginid': 'rbenv'})
+
+    p = XML.SubElement(ro,
+                       'pluginid',
+                       {'pluginid': "rbenv",
+                        'ruby-class': "String"})
+    p.text = "rbenv"
+
+    o = XML.SubElement(ro,
+                       'object',
+                       {'ruby-class': 'RbenvWrapper',
+                        'pluginid': 'rbenv'})
+
+    for elem in mapping:
+        (optname, xmlname, val) = elem[:3]
+        xe = XML.SubElement(o,
+                            xmlname,
+                            {'ruby-class': "String",
+                             'pluginid': "rbenv"})
+        if optname and optname in data:
+            val = data[optname]
+        if type(val) == bool:
+            xe.text = str(val).lower()
+        else:
+            xe.text = val
+
+    ignore_local_class = 'FalseClass'
+
+    if 'ignore-local-version' in data:
+        ignore_local_string = str(data['ignore-local-version']).lower()
+        if ignore_local_string == 'true':
+            ignore_local_class = 'TrueClass'
+
+    xe = XML.SubElement(o,
+                        'ignore__local__version',
+                        {'ruby-class': ignore_local_class,
+                         'pluginid': 'rbenv'})
+
+
 def build_name(parser, xml_parent, data):
     """yaml: build-name
     Set the name of the build
