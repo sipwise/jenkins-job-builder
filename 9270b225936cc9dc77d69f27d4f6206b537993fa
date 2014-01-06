@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//6DA\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-06T23:44:56Z",
+      "side": 1,
+      "message": "could you please add the parameter to this list?\n\nwould also be great if you could add a test or just add this param to an existing test.  http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/tests/scm/fixtures",
+      "revId": "9270b225936cc9dc77d69f27d4f6206b537993fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
