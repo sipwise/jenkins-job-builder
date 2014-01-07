@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH//1RI\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-07T22:48:26Z",
+      "side": 1,
+      "message": "you should only have 1 change-id.  this one appears to be abandoned, so you should remove this one from the commit message.",
+      "revId": "c478ab71f1616ab03d4120aa18f20b873be67844",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//1SM\u003d",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 1
