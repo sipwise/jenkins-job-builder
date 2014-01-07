@@ -82,7 +82,7 @@ def blame_upstream(parser, xml_parent, data):
 
     Example:
 
-    .. literalinclude::  /../../tests/publishers/fixtures/blame001.yaml
+    .. literalinclude::  ../../tests/publishers/fixtures/blame001.yaml
 
     """
 
