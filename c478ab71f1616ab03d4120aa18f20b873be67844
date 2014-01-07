@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//1SM\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-07T22:45:30Z",
+      "side": 1,
+      "message": "Could you please add a test and then replace this example block with a reference to the test?  here\u0027s an example: https://review.openstack.org/#/c/57068/",
+      "revId": "c478ab71f1616ab03d4120aa18f20b873be67844",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//1UA\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-07T22:45:30Z",
+      "side": 1,
+      "message": "\u0027p\u0027 is never used, so can be simplified with \nXML.SubElement(ro, \u0027pluginid\u0027, {\u0027pluginid\u0027: \"rbenv\", \u0027ruby-class\u0027: \"String\"}).text \u003d \"rebenv\"",
+      "revId": "c478ab71f1616ab03d4120aa18f20b873be67844",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//1Ss\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-07T22:45:30Z",
+      "side": 1,
+      "message": "should \u0027ro\u0027 be \u0027p\u0027 instead? if so you can you can ignore my previous comment about \u0027p\u0027",
+      "revId": "c478ab71f1616ab03d4120aa18f20b873be67844",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
