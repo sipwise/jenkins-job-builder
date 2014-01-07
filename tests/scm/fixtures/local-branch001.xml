@@ -20,8 +20,8 @@
     <recursiveSubmodules>false</recursiveSubmodules>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
     <authorOrCommitter>false</authorOrCommitter>
-    <clean>true</clean>
-    <wipeOutWorkspace>true</wipeOutWorkspace>
+    <clean>false</clean>
+    <wipeOutWorkspace>false</wipeOutWorkspace>
     <pruneBranches>false</pruneBranches>
     <remotePoll>false</remotePoll>
     <gitTool>Default</gitTool>
@@ -33,6 +33,6 @@
     <skipTag>false</skipTag>
     <scmName/>
     <useShallowClone>false</useShallowClone>
-    <localBranch/>
+    <localBranch>master</localBranch>
   </scm>
 </project>
