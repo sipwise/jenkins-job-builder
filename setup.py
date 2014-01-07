@@ -202,6 +202,7 @@ setuptools.setup(
             'mask-passwords=jenkins_jobs.modules.wrappers:mask_passwords',
             'pathignore=jenkins_jobs.modules.wrappers:pathignore',
             'port-allocator=jenkins_jobs.modules.wrappers:port_allocator',
+            'ssh-agent=jenkins_jobs.modules.wrappers:ssh_agent',
             ('pre-scm-buildstep='
              'jenkins_jobs.modules.wrappers:pre_scm_buildstep'),
             'release=jenkins_jobs.modules.wrappers:release',

@@ -493,6 +493,20 @@ def jclouds(parser, xml_parent, data):
                        'jenkins.plugins.jclouds.compute.'
                        'JCloudsOneOffSlave')
 
+def ssh_agent(parser, xml_parent, data):
+    """yaml: ssh-agent
+    Configures an ssh-agent with the given set of credentials
+
+    Example::
+
+      wrappers:
+        - ssh-agent:
+          credentials-id: 9ec2b8b2-0312-402e-967d-db9215f7da0e
+    """
+    agent = XML.SubElement(xml_parent,
+                          'com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper')
+    XML.SubElement(agent, 'user').text = data['credentials-id']
+
 
 def build_user_vars(parser, xml_parent, data):
     """yaml: build-user-vars
