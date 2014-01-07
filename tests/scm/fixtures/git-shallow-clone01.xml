@@ -33,5 +33,6 @@
     <skipTag>false</skipTag>
     <scmName/>
     <useShallowClone>true</useShallowClone>
+    <localBranch/>
   </scm>
 </project>
