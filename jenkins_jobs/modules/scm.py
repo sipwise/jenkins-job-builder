@@ -59,6 +59,7 @@ def git(self, xml_parent, data):
       when polling for changes. (if polling is enabled)
     :arg list(str) included-regions: list of file/folders to include
     :arg list(str) excluded-regions: list of file/folders to exclude
+    :arg str local-branch: Checkout/merge to local branch
     :arg dict merge:
         :merge:
             * **remote** (`string`) - name of repo that contains branch to
@@ -136,6 +137,7 @@ def git(self, xml_parent, data):
         ('skip-tag', 'skipTag', False),
         ('scm-name', 'scmName', ''),
         ("shallow-clone", "useShallowClone", False),
+        ("local-branch", "localBranch", ''),
     ]
 
     choosing_strategies = {

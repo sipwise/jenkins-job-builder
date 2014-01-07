@@ -20,7 +20,7 @@
     <recursiveSubmodules>false</recursiveSubmodules>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
     <authorOrCommitter>false</authorOrCommitter>
-    <clean>true</clean>
+    <clean>false</clean>
     <wipeOutWorkspace>true</wipeOutWorkspace>
     <pruneBranches>false</pruneBranches>
     <remotePoll>false</remotePoll>
@@ -33,6 +33,6 @@
     <skipTag>false</skipTag>
     <scmName/>
     <useShallowClone>false</useShallowClone>
-    <localBranch/>
+    <localBranch>master</localBranch>
   </scm>
 </project>
