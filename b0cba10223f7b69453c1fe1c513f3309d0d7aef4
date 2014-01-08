@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//w44\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-08T18:43:56Z",
+      "side": 1,
+      "message": "please replace this block with a reference to your test as requested in patch set #1.  looks like rbenv-env003.yaml is the most detailed one.",
+      "revId": "b0cba10223f7b69453c1fe1c513f3309d0d7aef4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//w4M\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-08T18:43:56Z",
+      "side": 1,
+      "message": "\u0027xe\u0027 never used, so probably don\u0027t need it.",
+      "revId": "b0cba10223f7b69453c1fe1c513f3309d0d7aef4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
