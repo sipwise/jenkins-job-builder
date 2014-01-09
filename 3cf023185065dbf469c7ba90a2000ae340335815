@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//ul0\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-09T05:03:46Z",
+      "side": 1,
+      "message": "One to many colons here.  Try \u0027Example:\u0027 instead.  You can verify by generating the doc locally.  here\u0027s the howto: http://ci.openstack.org/jenkins-job-builder/installation.html#documentation",
+      "revId": "3cf023185065dbf469c7ba90a2000ae340335815",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
