@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//qR0\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-01-09T23:59:06Z",
+      "side": 1,
+      "message": "Would be good to have tests added and to use the yaml test case as the example documentation, see https://review.openstack.org/#/c/65186/.",
+      "revId": "fe1ac812425a6ad8f2f2d996d35f52e92cabcff8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
