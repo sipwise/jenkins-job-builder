@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//rkU\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1163,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-09T17:20:02Z",
+      "side": 1,
+      "message": "code and example indicates that this param is called \u0027project\u0027 instead of \u0027parameter\u0027 ?\n\nAlso, is this a required parameter?  if so could you please specify and maybe have the code check for its existence?",
+      "revId": "1811e04ff90752211f5ff1fd46707912156f9686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//rnE\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1166,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-09T17:20:02Z",
+      "side": 1,
+      "message": "could you please specify the default for this param?",
+      "revId": "1811e04ff90752211f5ff1fd46707912156f9686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//rmc\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1169,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-09T17:20:02Z",
+      "side": 1,
+      "message": "we are moving to using tests as examples.  would you mind replacing this example block with a reference to the test? here\u0027s an example: https://review.openstack.org/#/c/57068/",
+      "revId": "1811e04ff90752211f5ff1fd46707912156f9686",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
