@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//Vrc\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-14T22:05:19Z",
+      "side": 1,
+      "message": "Looked at this again and was wrong about config not being available if file is not defined in /etc/..  It\u0027s only not available when running jenkins-jobs in test mode.",
+      "parentUuid": "AAAAUH//WPo\u003d",
+      "revId": "a563d0de6ea5f837255d31f2e498536cab500358",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//WwU\u003d",
         "filename": "jenkins_jobs/local_yaml.py",
         "patchSetId": 15
