@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//Wts\u003d",
+        "filename": "etc/jenkins_jobs.ini-sample",
+        "patchSetId": 15
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-14T19:34:34Z",
+      "side": 1,
+      "message": "Could you please add some documentation for this section?",
+      "revId": "a563d0de6ea5f837255d31f2e498536cab500358",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//WPo\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-14T19:34:34Z",
+      "side": 1,
+      "message": "This seems non-standard for jjb.  Shouldn\u0027t the include section be read in from cmd.py instead? http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/cmd.py#n83\n\nThat\u0027s where we are handling all of the jjb configs.  The way it\u0027s done here makes the config not available if the ini file is not defined in /etc/..  or if jjb is running in test mode.",
+      "revId": "a563d0de6ea5f837255d31f2e498536cab500358",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//WwU\u003d",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-14T19:34:34Z",
+      "side": 1,
+      "message": "this reference works, but i don\u0027t think the leading forward slash (\u0027/\u0027) should be there. that leading slash makes it seem like an absolute path reference instead of relative path.",
+      "revId": "a563d0de6ea5f837255d31f2e498536cab500358",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//WwM\u003d",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-14T19:34:34Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "a563d0de6ea5f837255d31f2e498536cab500358",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//WwA\u003d",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-14T19:34:34Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "a563d0de6ea5f837255d31f2e498536cab500358",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
