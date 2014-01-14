@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//VoM\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-01-14T22:59:10Z",
+      "side": 1,
+      "message": "If https://review.openstack.org/#/c/52080 gets merged before then I\u0027ll tidy this up a little by ensuring a default is set in the ConfigParser object and will skip catching the Exceptions.",
+      "parentUuid": "AAAAUH//Vrc\u003d",
+      "revId": "a563d0de6ea5f837255d31f2e498536cab500358",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//WwU\u003d",
         "filename": "jenkins_jobs/local_yaml.py",
         "patchSetId": 15
@@ -65,6 +83,24 @@
       "writtenOn": "2014-01-14T19:34:34Z",
       "side": 1,
       "message": "this reference works, but i don\u0027t think the leading forward slash (\u0027/\u0027) should be there. that leading slash makes it seem like an absolute path reference instead of relative path.",
+      "revId": "a563d0de6ea5f837255d31f2e498536cab500358",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//VZY\u003d",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-01-14T22:59:10Z",
+      "side": 1,
+      "message": "Unfortunately removing it prevents it from working fully:\n\nFor an example without the slash see https://review.openstack.org/gitweb?p\u003dopenstack-infra/jenkins-job-builder.git;a\u003dblob;f\u003djenkins_jobs/modules/triggers.py;h\u003d1b887759ee32ec88a882e38ad8576e0ae5cf3e9c;hb\u003da563d0de6ea5f837255d31f2e498536cab500358#l366\n\nProduces a warning (really it should probably be an error) in the console output:\nhttp://logs.openstack.org/83/48783/15/check/gate-jenkins-job-builder-docs/a96e507/console.html\n\nAnd results in no example appearing the following in the API docs:\nhttp://docs-draft.openstack.org/83/48783/15/check/gate-jenkins-job-builder-docs/a96e507/doc/build/html/api/jenkins_jobs.modules.triggers.html#jenkins_jobs.modules.triggers.github-pull-request\n\nIt does however appear correctly in the standard docs:\nhttp://docs-draft.openstack.org/83/48783/15/check/gate-jenkins-job-builder-docs/a96e507/doc/build/html/triggers.html#triggers.github-pull-request\n\n\nUsing the leading slash however works correctly for both for sets of documentation:\n\nAPI: http://docs-draft.openstack.org/83/48783/15/check/gate-jenkins-job-builder-docs/a96e507/doc/build/html/api/jenkins_jobs.local_yaml.html#module-jenkins_jobs.local_yaml\n\nConfiguration: http://docs-draft.openstack.org/83/48783/15/check/gate-jenkins-job-builder-docs/a96e507/doc/build/html/configuration.html#module-jenkins_jobs.local_yaml\n\n\nThere is an include tag which would result in an error here if the test files weren\u0027t found but that removes the highlighted formatting that is applied with \u0027literalinclude\u0027 is used.",
+      "parentUuid": "AAAAUH//WwU\u003d",
       "revId": "a563d0de6ea5f837255d31f2e498536cab500358",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
