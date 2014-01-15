@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//QHM\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-01-15T21:31:05Z",
+      "side": 1,
+      "message": "I don\u0027t think so, as the DEFAULT section is a special section that is used by any other sections. I don\u0027t think that you should override the default values in a site-specific configuration file.",
+      "parentUuid": "AAAAUH//Qqg\u003d",
+      "revId": "0c93a2aed726ced4b4589c14f545f85f4337fd58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//QqU\u003d",
         "filename": "doc/source/installation.rst",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-15T19:04:12Z",
       "side": 1,
       "message": "s/keep_description/keep_descriptions",
+      "revId": "0c93a2aed726ced4b4589c14f545f85f4337fd58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//QGA\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-01-15T21:31:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH//QqU\u003d",
       "revId": "0c93a2aed726ced4b4589c14f545f85f4337fd58",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH//QI4\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-01-15T21:31:05Z",
+      "side": 1,
+      "message": "No, DEFAULT section is a spacial section used by ConfigParser as fallback in case the option you are looking for is not found in the section you are looking for it.\n\nIf I use DEFAULT here it will ignore any configuration override you put in the jenkins section.",
+      "parentUuid": "AAAAUH//QtU\u003d",
+      "revId": "0c93a2aed726ced4b4589c14f545f85f4337fd58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH//Qqo\u003d",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 11
@@ -64,6 +118,24 @@
       "writtenOn": "2014-01-15T19:04:12Z",
       "side": 1,
       "message": "This config should be in jenkins section.",
+      "revId": "0c93a2aed726ced4b4589c14f545f85f4337fd58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//QHA\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-01-15T21:31:05Z",
+      "side": 1,
+      "message": "I don\u0027t agree, as it has to be considered the default value and not a specific configuration.",
+      "parentUuid": "AAAAUH//Qqo\u003d",
       "revId": "0c93a2aed726ced4b4589c14f545f85f4337fd58",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
