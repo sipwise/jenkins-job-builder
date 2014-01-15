@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//Qqg\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-01-15T19:04:12Z",
+      "side": 1,
+      "message": "This should be in DEFAULT section.",
+      "revId": "0c93a2aed726ced4b4589c14f545f85f4337fd58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//QqU\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-01-15T19:04:12Z",
+      "side": 1,
+      "message": "s/keep_description/keep_descriptions",
+      "revId": "0c93a2aed726ced4b4589c14f545f85f4337fd58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//QtU\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-01-15T19:04:12Z",
+      "side": 1,
+      "message": "This should be DEFAULT section as per documentation and default value.",
+      "revId": "0c93a2aed726ced4b4589c14f545f85f4337fd58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//Qqo\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-01-15T19:04:12Z",
+      "side": 1,
+      "message": "This config should be in jenkins section.",
+      "revId": "0c93a2aed726ced4b4589c14f545f85f4337fd58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
