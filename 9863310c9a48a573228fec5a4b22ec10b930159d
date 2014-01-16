@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH//J+c\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-01-16T22:42:59Z",
+      "side": 1,
+      "message": "Looks to me like there is a genuine question over whether all options should be placed under the \u0027jenkins\u0027 section (not talking about the special DEFAULTS section), or it there should be different sections dealing with the different areas of functionality.",
+      "revId": "9863310c9a48a573228fec5a4b22ec10b930159d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH//J48\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-01-16T22:42:59Z",
+      "side": 1,
+      "message": "On looking at this again I\u0027m struggling with whether this really makes sense. If we\u0027re not going to have any other sections other than \u0027jenkins\u0027 then this is unnecessary and the options should be placed under the jenkins section at the end of this string.\n\nIf we are going to have other sections, then only the options that are truly common to all should appear here, and it\u0027s not clear as to why these options are common compared to \u0027url\u0027, \u0027user\u0027 and \u0027password\u0027.\n\nParticularly since for ConfigParser, when reading config from multiple sources, replacement occurs at the option level rather than the section level, so if you put the defaults for these options under the jenkins section, they will only be overwritten if the user\u0027s config sets these specific options.",
+      "revId": "9863310c9a48a573228fec5a4b22ec10b930159d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
