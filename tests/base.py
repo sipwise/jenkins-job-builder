@@ -24,6 +24,10 @@ import testtools
 import xml.etree.ElementTree as XML
 import yaml
 from jenkins_jobs.builder import XmlJob, YamlParser, ModuleRegistry
+from jenkins_jobs.modules import (project_flow,
+                                  project_matrix,
+                                  project_maven,
+                                  project_multijob)
 
 
 def get_scenarios(fixtures_path):
@@ -78,15 +82,13 @@ class BaseTestCase(object):
         root_element = XML.Element('project')
         if ('project-type' in yaml_content):
             if (yaml_content['project-type'] == "maven"):
-                root_element = XML.Element('maven2-moduleset')
+                root_element = project_maven.Maven(None).root_xml(yaml_content)
             if (yaml_content['project-type'] == "matrix"):
-                root_element = XML.Element('matrix-project')
+                root_element = project_matrix.Matrix(None).root_xml(yaml_content)
             if (yaml_content['project-type'] == "flow"):
-                root_element = XML.Element('com.cloudbees.plugins.flow.'
-                                           'BuildFlow')
+                root_element = project_flow.Flow(None).root_xml(yaml_content)
             if (yaml_content['project-type'] == "multijob"):
-                root_element = XML.Element('com.tikal.jenkins.plugins.'
-                                           'multijob.MultiJobProject')
+                root_element = project_multijob.MultiJob(None).root_xml(yaml_content)
 
         xml_project = root_element
         parser = YamlParser()
