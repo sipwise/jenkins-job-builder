@@ -24,7 +24,7 @@ import testtools
 import xml.etree.ElementTree as XML
 import yaml
 from jenkins_jobs.builder import XmlJob, YamlParser, ModuleRegistry
-
+from jenkins_jobs.modules import project_maven
 
 def get_scenarios(fixtures_path):
     """Returns a list of scenarios, each scenario being described
@@ -78,7 +78,7 @@ class BaseTestCase(object):
         root_element = XML.Element('project')
         if ('project-type' in yaml_content):
             if (yaml_content['project-type'] == "maven"):
-                root_element = XML.Element('maven2-moduleset')
+                root_element = project_maven.Maven(None).root_xml(yaml_content)
             if (yaml_content['project-type'] == "matrix"):
                 root_element = XML.Element('matrix-project')
             if (yaml_content['project-type'] == "flow"):
