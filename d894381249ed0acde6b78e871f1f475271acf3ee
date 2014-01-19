@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+/50\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-19T18:09:52Z",
+      "side": 0,
+      "message": "should keep leading \u0027/\u0027",
+      "revId": "d894381249ed0acde6b78e871f1f475271acf3ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

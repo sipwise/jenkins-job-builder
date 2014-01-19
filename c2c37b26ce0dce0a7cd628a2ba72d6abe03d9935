@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+/5w\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-19T18:09:52Z",
+      "side": 1,
+      "message": "add a leading \u0027/\u0027",
+      "revId": "c2c37b26ce0dce0a7cd628a2ba72d6abe03d9935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+/5o\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-19T18:09:52Z",
+      "side": 1,
+      "message": "add a leading \u0027/\u0027",
+      "revId": "c2c37b26ce0dce0a7cd628a2ba72d6abe03d9935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
