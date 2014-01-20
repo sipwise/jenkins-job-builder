@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+5Z4\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-01-20T23:33:27Z",
+      "side": 1,
+      "message": "Here is the behaviour I see when trying your patch.\n\nWhen removing this option from my JJB config:\n\nWith the latest Git plugin (2.0.x): \"Check out to specific local branch\" is added to the list of activated option under the \"Additional Behaviours\" section with an empty value. I feel this shouldn\u0027t be the case.\n\nWith the old Git plugin (1.5.x): The XML element is present in the generated XML configuration. (but the plugin itself removes it if the value is empty)\n\nI would prefer this option to not have any default value to better fit with the Jenkins Git plugin behaviour and avoid any possible undesirable side effect.",
+      "revId": "70a9919463a46f764d5cb7ec1f33eebddd2d2ac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
