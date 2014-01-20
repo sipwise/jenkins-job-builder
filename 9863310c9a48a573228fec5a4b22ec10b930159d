@@ -33,6 +33,24 @@
       "revId": "9863310c9a48a573228fec5a4b22ec10b930159d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+5hc\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-01-20T23:11:56Z",
+      "side": 1,
+      "message": "ditto. Now that I understand the purpose of DEFAULT, I agree that those options should be moved elsewhere. It doesn\u0027t make sure to put them there.",
+      "parentUuid": "AAAAUH//J48\u003d",
+      "revId": "9863310c9a48a573228fec5a4b22ec10b930159d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
