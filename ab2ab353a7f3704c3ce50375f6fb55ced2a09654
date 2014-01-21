@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+zi0\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-21T22:40:07Z",
+      "side": 1,
+      "message": "literalinclude needs a leading \u0027/\u0027, for more info check https://review.openstack.org/#/c/67712",
+      "revId": "ab2ab353a7f3704c3ce50375f6fb55ced2a09654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
