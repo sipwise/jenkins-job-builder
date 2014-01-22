@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+xd0\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 680,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2014-01-22T09:38:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+zcU\u003d",
+      "revId": "79c32c00398f2eab40cf0d612d34508d3b9cfe40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+zbI\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-21T23:07:11Z",
       "side": 1,
       "message": "we are moving to test as examples.  would you be willing to add a test then replace this section with a reference to the test?  There are many examples of tests in the test folder and here is an example of referencing the test..\nhttp://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/modules/publishers.py#n85",
+      "revId": "79c32c00398f2eab40cf0d612d34508d3b9cfe40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+xdw\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2014-01-22T09:38:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+zbI\u003d",
       "revId": "79c32c00398f2eab40cf0d612d34508d3b9cfe40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
