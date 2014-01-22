@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+ua0\u003d",
+        "filename": "tests/scm/fixtures/git001.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-01-22T19:14:40Z",
+      "side": 1,
+      "message": "Will need to be updated for:\n\n  \u003c?xml version\u003d\"1.0\" encoding\u003d\"utf-8\"?\u003e",
+      "revId": "72040fcb800d8be74bbc0c50e0a15caf3190430a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
