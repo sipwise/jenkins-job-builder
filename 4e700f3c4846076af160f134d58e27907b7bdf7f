@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+ueQ\u003d",
+        "filename": "tests/scm/fixtures/local-branch001.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-01-22T19:08:39Z",
+      "side": 1,
+      "message": "Will need to updated for:\n\n  \u003c?xml version\u003d\"1.0\" encoding\u003d\"utf-8\"?\u003e",
+      "revId": "4e700f3c4846076af160f134d58e27907b7bdf7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
