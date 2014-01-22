@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/+td8\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 680,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-01-22T22:44:23Z",
+      "side": 1,
+      "message": "I would prefer this formatting to be used:\n\n    :arg bool test-stability: Add historical information about test\n        results stability (default false).\n        Requires the Jenkins `Test stability Plugin.\n        \u003chttps://wiki.jenkins-ci.org/display/JENKINS/Test+stability+plugin\u003e`_",
+      "revId": "f28f6f77542abbd917db01fb40a13297b30db97d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+utY\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
