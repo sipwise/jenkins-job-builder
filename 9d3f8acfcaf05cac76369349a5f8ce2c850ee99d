@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+ub4\u003d",
+        "filename": "tests/wrappers/fixtures/rbenv-env001.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-01-22T19:13:39Z",
+      "side": 1,
+      "message": "Will need to be updated for:\n\n  \u003c?xml version\u003d\"1.0\" encoding\u003d\"utf-8\"?\u003e",
+      "revId": "9d3f8acfcaf05cac76369349a5f8ce2c850ee99d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+ub0\u003d",
+        "filename": "tests/wrappers/fixtures/rbenv-env002.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-01-22T19:13:39Z",
+      "side": 1,
+      "message": "Will need to be updated for:\n\n  \u003c?xml version\u003d\"1.0\" encoding\u003d\"utf-8\"?\u003e",
+      "revId": "9d3f8acfcaf05cac76369349a5f8ce2c850ee99d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+ubw\u003d",
+        "filename": "tests/wrappers/fixtures/rbenv-env003.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-01-22T19:13:39Z",
+      "side": 1,
+      "message": "Will need to be updated for:\n\n  \u003c?xml version\u003d\"1.0\" encoding\u003d\"utf-8\"?\u003e",
+      "revId": "9d3f8acfcaf05cac76369349a5f8ce2c850ee99d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
