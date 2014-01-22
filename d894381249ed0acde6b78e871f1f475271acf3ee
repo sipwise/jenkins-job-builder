@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/+tP4\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-22T23:56:42Z",
+      "side": 1,
+      "message": "need to update with the pretty print ideas from master..\n\n# Pretty printing ideas from\n\n# http://stackoverflow.com/questions/749796/pretty-printing-xml-in-python\n\npretty_text_re \u003d re.compile(\u0027\u003e\\n\\s+([^\u003c\u003e\\s].*?)\\n\\s+\u003c/\u0027, re.DOTALL)",
+      "revId": "d894381249ed0acde6b78e871f1f475271acf3ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+udI\u003d",
         "filename": "tests/yamlparser/fixtures/complete001.xml",
         "patchSetId": 2
