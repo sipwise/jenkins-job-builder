@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+utY\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-22T18:21:49Z",
+      "side": 1,
+      "message": "one too many colons after \u0027default\u0027.  You can verify that docs generated correctly by either building them yourself.. http://ci.openstack.org/jenkins-job-builder/installation.html#documentation\n\nor you can look at the jenkins doc results on this change.",
+      "revId": "f28f6f77542abbd917db01fb40a13297b30db97d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+utM\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 688,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-22T18:21:49Z",
+      "side": 1,
+      "message": "one too many colons here as well.",
+      "revId": "f28f6f77542abbd917db01fb40a13297b30db97d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
