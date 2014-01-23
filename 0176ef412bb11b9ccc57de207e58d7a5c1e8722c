@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+mjs\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-01-23T23:35:37Z",
+      "side": 1,
+      "message": "I feel this should be named rbenv instead to be consistent with the actual plugin name.",
+      "revId": "0176ef412bb11b9ccc57de207e58d7a5c1e8722c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
