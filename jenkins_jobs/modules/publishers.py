@@ -3102,6 +3102,33 @@ def description_setter(parser, xml_parent, data):
     XML.SubElement(descriptionsetter, 'setForMatrix').text = for_matrix
 
 
+def sitemonitor(parser, xml_parent, data):
+    """yaml: sitemonitor
+    This plugin checks the availability of an url.
+
+    It requires the `sitemonitor plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/SiteMonitor+Plugin>`_
+
+    :arg list sites: List of URLs to check
+
+    Example::
+
+      publishers:
+        - sitemonitor:
+            sites:
+              - url: http://foo.example.com/
+              - url: http://bar.example.com:8080/
+    """
+    mon = XML.SubElement(xml_parent,
+                         'hudson.plugins.sitemonitor.SiteMonitorRecorder')
+    if data.get('sites'):
+        sites = XML.SubElement(mon, 'mSites')
+        for siteurl in data.get('sites'):
+            site = XML.SubElement(sites,
+                                  'hudson.plugins.sitemonitor.model.Site')
+            XML.SubElement(site, 'mUrl').text = siteurl['url']
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
