@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+kds\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 680,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2014-01-24T09:52:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+td8\u003d",
+      "revId": "f28f6f77542abbd917db01fb40a13297b30db97d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+utY\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-22T18:21:49Z",
       "side": 1,
       "message": "one too many colons after \u0027default\u0027.  You can verify that docs generated correctly by either building them yourself.. http://ci.openstack.org/jenkins-job-builder/installation.html#documentation\n\nor you can look at the jenkins doc results on this change.",
+      "revId": "f28f6f77542abbd917db01fb40a13297b30db97d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+kdo\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2014-01-24T09:52:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+utY\u003d",
       "revId": "f28f6f77542abbd917db01fb40a13297b30db97d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+kdk\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 688,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2014-01-24T09:52:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+utM\u003d",
+      "revId": "f28f6f77542abbd917db01fb40a13297b30db97d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+ubU\u003d",
         "filename": "tests/publishers/fixtures/junit001.xml",
         "patchSetId": 2
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/+kdg\u003d",
+        "filename": "tests/publishers/fixtures/junit001.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2014-01-24T09:52:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+ubU\u003d",
+      "revId": "f28f6f77542abbd917db01fb40a13297b30db97d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/+ubQ\u003d",
         "filename": "tests/publishers/fixtures/junit002.xml",
         "patchSetId": 2
@@ -81,6 +153,24 @@
       "writtenOn": "2014-01-22T19:14:04Z",
       "side": 1,
       "message": "Will need to be updated for:\n\n  \u003c?xml version\u003d\"1.0\" encoding\u003d\"utf-8\"?\u003e",
+      "revId": "f28f6f77542abbd917db01fb40a13297b30db97d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+kdc\u003d",
+        "filename": "tests/publishers/fixtures/junit002.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2014-01-24T09:52:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAUH/+ubQ\u003d",
       "revId": "f28f6f77542abbd917db01fb40a13297b30db97d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
