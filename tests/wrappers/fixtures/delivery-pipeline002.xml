@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<se.diabol.jenkins.pipeline.PipelineVersionContributor plugin="delivery-pipeline-plugin@0.6.10">
+		<versionTemplate/>
+		<updateDisplayName>false</updateDisplayName>
+	</se.diabol.jenkins.pipeline.PipelineVersionContributor>
+</project>
