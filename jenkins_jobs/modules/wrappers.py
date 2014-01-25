@@ -60,7 +60,7 @@ def ci_skip(parser, xml_parent, data):
     obj = XML.SubElement(robj, 'object', {
         'ruby-class': 'CiSkipWrapper', 'pluginid': 'ci-skip'
     })
-    ciskip = XML.SubElement(obj, 'ci__skip', {
+    XML.SubElement(obj, 'ci__skip', {
         'pluginid': 'ci-skip', 'ruby-class': 'NilClass'
     })
 
@@ -861,6 +861,33 @@ def pre_scm_buildstep(parser, xml_parent, data):
     for step in data:
         for edited_node in create_builders(parser, step):
             bs.append(edited_node)
+
+
+def pipeline_version(parser, xml_parent, data):
+    """yaml: pipeline-version
+    If enabled the job will create a version based on the template.
+    The version will be set to the environment variable PIPELINE_VERSION and
+    will also be set in the downstream jobs.
+
+    Requires the Jenkins `Delivery Pipeline Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Delivery+Pipeline+Plugin>`_
+
+    :arg str template: Template for generated version e.g 1.0.${BUILD_NUMBER}
+        (default: '')
+    :arg bool set-display-name: Set the generated version as the display name
+        for the build (default: false)
+
+    Example:
+
+    .. literalinclude:: /../../tests/wrappers/fixtures/pipeline-version1.yaml
+
+    """
+    pvc = XML.SubElement(xml_parent,
+                         'se.diabol.jenkins.pipeline.'
+                         'PipelineVersionContributor')
+    XML.SubElement(pvc, 'versionTemplate').text = data.get('template', '')
+    XML.SubElement(pvc, 'updateDisplayName').text = str(data.get(
+        'set-display-name', False)).lower()
 
 
 class Wrappers(jenkins_jobs.modules.base.Base):
