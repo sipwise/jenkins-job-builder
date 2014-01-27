@@ -1,0 +1,6 @@
+publishers:
+    - campfire-notification:
+        subdomain: 'sub'
+        ssl: 'true'
+        token: 'TOKEN'
+        room: 'room'

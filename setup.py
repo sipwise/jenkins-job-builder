@@ -124,6 +124,8 @@ setuptools.setup(
             'blame-upstream=jenkins_jobs.modules.publishers:blame_upstream',
             'build-publisher=jenkins_jobs.modules.publishers:build_publisher',
             'checkstyle=jenkins_jobs.modules.publishers:checkstyle',
+            ('campfire-notification=jenkins_jobs.modules.publishers:'
+                'campfire_notification'),
             'cifs=jenkins_jobs.modules.publishers:cifs',
             'claim-build=jenkins_jobs.modules.publishers:claim_build',
             'cloverphp=jenkins_jobs.modules.publishers:cloverphp',
