@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+Pa4\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-01-28T19:23:26Z",
+      "side": 1,
+      "message": "I would prefer this style to be used:\n\n  from jenkins_jobs.modules import hudson_model\n\nAFAIK, this style is preferred to aliasing according to hacking:\nhttp://docs.openstack.org/developer/hacking/#imports",
+      "revId": "62c40398f10f09893d2387ff07e6ac584dc7b431",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Pbg\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 664,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-01-28T19:23:26Z",
+      "side": 1,
+      "message": "AFAIK, XXX not in YYY is preferred over not XXX in YYY style for better readability.",
+      "revId": "62c40398f10f09893d2387ff07e6ac584dc7b431",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+PaI\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-01-28T19:23:26Z",
+      "side": 1,
+      "message": "We use this style to convert boolean to string:\n\n str(wr_threshold[\u0027complete\u0027]).lower()",
+      "revId": "62c40398f10f09893d2387ff07e6ac584dc7b431",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+PZ0\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-01-28T19:23:26Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "62c40398f10f09893d2387ff07e6ac584dc7b431",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
