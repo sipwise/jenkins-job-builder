@@ -1,0 +1,7 @@
+builders:
+      - conditional-step:
+          condition-kind: current-status
+          condition-worst: aborted
+          condition-best: not_build
+          steps:
+              - shell: "sl"
