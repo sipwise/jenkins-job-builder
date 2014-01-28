@@ -254,6 +254,81 @@ def trigger(parser, xml_parent, data):
     tcolor.text = thresholds[threshold]['color']
 
 
+def clone_workspace(parser, xml_parent, data):
+    """yaml: clone-workspace
+    Archive the workspace from builds of one project and reuse them as the SCM
+    source for another project.
+    Requires the Jenkins `Clone Workspace SCM Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Clone+Workspace+SCM+Plugin>`_
+
+    :arg str workspace-glob: Files to include in cloned workspace
+    :arg str workspace-exclude-glob: Files to exclude from cloned workspace
+    :arg str criteria: Criteria for build to be archived.  Can be 'any',
+        'not failed', or 'successful'. (default: any )
+    :arg str archive-method: Choose the method to use for archiving the
+        workspace.  Can be 'tar' or 'zip'.  (default: tar)
+    :arg bool override-default-excludes: Override default ant excludes.
+        (default: false)
+
+    Minimal example:
+
+    .. literalinclude::
+      /../../tests/publishers/fixtures/clone-workspace001.yaml
+
+    Full example:
+
+    .. literalinclude::
+      /../../tests/publishers/fixtures/clone-workspace002.yaml
+
+    """
+
+    cloneworkspace = XML.SubElement(
+        xml_parent,
+        'hudson.plugins.cloneworkspace.CloneWorkspacePublisher',
+        {'plugin': 'clone-workspace-scm'})
+
+    XML.SubElement(
+        cloneworkspace,
+        'workspaceGlob').text = data.get('workspace-glob', None)
+
+    if 'workspace-exclude-glob' in data:
+        XML.SubElement(
+            cloneworkspace,
+            'workspaceExcludeGlob').text = data['workspace-exclude-glob']
+
+    criteria = XML.SubElement(cloneworkspace, 'criteria')
+
+    if 'criteria' in data:
+        if data['criteria'].lower() == 'not failed':
+            criteria.text = 'Not Failed'
+        elif data['criteria'].lower() == 'successful':
+            criteria.text = 'Successful'
+        elif data['criteria'].lower() == 'any':
+            criteria.text = 'Any'
+        else:
+            raise JenkinsJobsException(
+                'clone-workspace criteria must be '
+                '"not failed", "successful", or "any"')
+    else:
+        criteria.text = 'Any'
+
+    archive_list = ['TAR', 'ZIP']
+
+    archive_method = data.get('archive-method', 'TAR').upper()
+
+    if 'archive-method' in data and archive_method not in archive_list:
+        raise JenkinsJobsException(
+            'clone-workspace archive-method must be tar or zip')
+    else:
+        XML.SubElement(cloneworkspace, 'archiveMethod').text = archive_method
+
+    XML.SubElement(
+        cloneworkspace,
+        'overrideDefaultExcludes').text = str(data.get(
+            'override-default-excludes',
+            False)).lower()
+
+
 def cloverphp(parser, xml_parent, data):
     """yaml: cloverphp
     Capture code coverage reports from PHPUnit
