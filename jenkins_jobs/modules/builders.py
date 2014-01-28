@@ -39,6 +39,7 @@ Example::
 
 import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
+import jenkins_jobs.modules.hudson_model as hudson_model
 from jenkins_jobs.errors import JenkinsJobsException
 import logging
 
@@ -323,17 +324,26 @@ def trigger_builds(parser, xml_parent, data):
         if(block):
             block = XML.SubElement(tconfig, 'block')
             bsft = XML.SubElement(block, 'buildStepFailureThreshold')
-            XML.SubElement(bsft, 'name').text = 'FAILURE'
-            XML.SubElement(bsft, 'ordinal').text = '2'
-            XML.SubElement(bsft, 'color').text = 'RED'
+            XML.SubElement(bsft, 'name').text = \
+                hudson_model.FAILURE['name']
+            XML.SubElement(bsft, 'ordinal').text = \
+                hudson_model.FAILURE['ordinal']
+            XML.SubElement(bsft, 'color').text = \
+                hudson_model.FAILURE['color']
             ut = XML.SubElement(block, 'unstableThreshold')
-            XML.SubElement(ut, 'name').text = 'UNSTABLE'
-            XML.SubElement(ut, 'ordinal').text = '1'
-            XML.SubElement(ut, 'color').text = 'Yellow'
+            XML.SubElement(ut, 'name').text = \
+                hudson_model.UNSTABLE['name']
+            XML.SubElement(ut, 'ordinal').text = \
+                hudson_model.UNSTABLE['ordinal']
+            XML.SubElement(ut, 'color').text = \
+                hudson_model.UNSTABLE['color']
             ft = XML.SubElement(block, 'failureThreshold')
-            XML.SubElement(ft, 'name').text = 'FAILURE'
-            XML.SubElement(ft, 'ordinal').text = '2'
-            XML.SubElement(ft, 'color').text = 'RED'
+            XML.SubElement(ft, 'name').text = \
+                hudson_model.FAILURE['name']
+            XML.SubElement(ft, 'ordinal').text = \
+                hudson_model.FAILURE['ordinal']
+            XML.SubElement(ft, 'color').text = \
+                hudson_model.FAILURE['color']
     # If configs is empty, remove the entire tbuilder tree.
     if(len(configs) == 0):
         logger.debug("Pruning empty TriggerBuilder tree.")
@@ -597,8 +607,10 @@ def conditional_step(parser, xml_parent, data):
     current-status     Run the build step if the current build status is
                        within the configured range
 
-                         :condition-worst: Worst status
-                         :condition-best: Best status
+                         :condition-worst: Worst status (accepted values are:
+                         success, unstable, failure, not_build, aborted)
+                         :condition-best: Best status (accepted values are:
+                         success, unstable, failure, not_build, aborted)
     shell              Run the step if the shell command succeed
 
                          :condition-command: Shell command to execute
@@ -648,9 +660,30 @@ def conditional_step(parser, xml_parent, data):
                      'org.jenkins_ci.plugins.run_condition.core.'
                      'StatusCondition')
             wr = XML.SubElement(ctag, 'worstResult')
-            XML.SubElement(wr, "name").text = cdata['condition-worst']
+            wr_name = cdata['condition-worst']
+            if not wr_name in hudson_model.THRESHOLDS:
+                raise JenkinsJobsException(
+                    "threshold must be one of %s" %
+                    ", ".join(hudson_model.THRESHOLDS.keys()))
+            wr_threshold = hudson_model.THRESHOLDS[wr_name]
+            XML.SubElement(wr, "name").text = wr_threshold['name']
+            XML.SubElement(wr, "ordinal").text = wr_threshold['ordinal']
+            XML.SubElement(wr, "color").text = wr_threshold['color']
+            XML.SubElement(wr, "completeBuild").text = \
+                'true' if wr_threshold['complete'] else 'false'
+
             br = XML.SubElement(ctag, 'bestResult')
-            XML.SubElement(br, "name").text = cdata['condition-best']
+            br_name = cdata['condition-best']
+            if not br_name in hudson_model.THRESHOLDS:
+                raise JenkinsJobsException(
+                    "threshold must be one of %s" %
+                    ", ".join(hudson_model.THRESHOLDS.keys()))
+            br_threshold = hudson_model.THRESHOLDS[br_name]
+            XML.SubElement(br, "name").text = br_threshold['name']
+            XML.SubElement(br, "ordinal").text = br_threshold['ordinal']
+            XML.SubElement(br, "color").text = br_threshold['color']
+            XML.SubElement(br, "completeBuild").text = \
+                'true' if br_threshold['complete'] else 'false'
         elif kind == "shell":
             ctag.set('class',
                      'org.jenkins_ci.plugins.run_condition.contributed.'
