@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+JpA\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-01-29T17:18:46Z",
+      "side": 1,
+      "message": "One boolean left here.",
+      "revId": "6ceffdcbe0932dd84e55506f4a985b7dee53ac2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
