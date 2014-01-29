@@ -512,14 +512,16 @@ class SCM(jenkins_jobs.modules.base.Base):
     component_list_type = 'scm'
 
     def gen_xml(self, parser, xml_parent, data):
-        scms = data.get('scm', [])
-        if scms:
-            if len(scms) > 1:
-                class_name = 'org.jenkinsci.plugins.multiplescms.MultiSCM'
-                xml_attribs = {'class': class_name}
-                xml_parent = XML.SubElement(xml_parent, 'scm', xml_attribs)
-                xml_parent = XML.SubElement(xml_parent, 'scms')
-            for scm in data.get('scm', []):
-                self.registry.dispatch('scm', parser, xml_parent, scm)
-        else:
+        scms_parent = XML.Element('scms')
+        for scm in data.get('scm', []):
+            self.registry.dispatch('scm', parser, scms_parent, scm)
+        scms_count = len(scms_parent)
+        if scms_count == 0:
             XML.SubElement(xml_parent, 'scm', {'class': 'hudson.scm.NullSCM'})
+        elif scms_count == 1:
+            xml_parent.append(scms_parent[0])
+        else:
+            class_name = 'org.jenkinsci.plugins.multiplescms.MultiSCM'
+            xml_attribs = {'class': class_name}
+            xml_parent = XML.SubElement(xml_parent, 'scm', xml_attribs)
+            xml_parent.append(scms_parent)
