@@ -38,7 +38,9 @@ def get_scenarios(fixtures_path):
     """
     scenarios = []
     files = os.listdir(fixtures_path)
+    print files
     yaml_files = [f for f in files if re.match(r'.*\.yaml$', f)]
+    print yaml_files
 
     for yaml_filename in yaml_files:
         xml_candidate = re.sub(r'\.yaml$', '.xml', yaml_filename)
@@ -103,6 +105,34 @@ class BaseTestCase(object):
         # Prettify generated XML
         pretty_xml = unicode(XmlJob(xml_project, 'fixturejob').output(),
                              'utf-8')
+
+        self.assertThat(
+            pretty_xml,
+            testtools.matchers.DocTestMatches(expected_xml,
+                                              doctest.ELLIPSIS |
+                                              doctest.NORMALIZE_WHITESPACE |
+                                              doctest.REPORT_NDIFF)
+        )
+
+
+class SingleJobTestCase(BaseTestCase):
+    def test_yaml_snippet(self):
+        if not self.xml_filename or not self.yaml_filename:
+            return
+
+        xml_filepath = os.path.join(self.fixtures_path, self.xml_filename)
+        expected_xml = u"%s" % open(xml_filepath, 'r').read()
+
+        yaml_filepath = os.path.join(self.fixtures_path, self.yaml_filename)
+
+        parser = YamlParser()
+        parser.parse(yaml_filepath)
+
+        # Generate the XML tree
+        parser.generateXML()
+
+        # Prettify generated XML
+        pretty_xml = parser.jobs[0].output()
 
         self.assertThat(
             pretty_xml,
