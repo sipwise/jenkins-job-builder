@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+CoU\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1307,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-30T18:35:05Z",
+      "side": 1,
+      "message": "is \u0027both\u0027 the only option?  if not then can you list the other valid options here?",
+      "revId": "2d189351148756758f7d2a86749dad462b671174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Cns\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1376,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-30T18:35:05Z",
+      "side": 1,
+      "message": "what if an invalid option is entered?  can we check for that and throw JenkinsJobsException or something?",
+      "revId": "2d189351148756758f7d2a86749dad462b671174",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
