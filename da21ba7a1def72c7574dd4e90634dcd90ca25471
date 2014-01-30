@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+GEg\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3114,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-30T06:33:00Z",
+      "side": 1,
+      "message": "could you please replace this example section with a reference to your test using a literalinclude?  There are examples in this module.",
+      "revId": "da21ba7a1def72c7574dd4e90634dcd90ca25471",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
