@@ -3113,6 +3113,35 @@ def description_setter(parser, xml_parent, data):
     XML.SubElement(descriptionsetter, 'setForMatrix').text = for_matrix
 
 
+def testng_publisher(parser, xml_parent, data):
+    """yaml: testng-publisher
+    This plugin publishes TestNG test reports.
+
+    Requires the Jenkins `TestNG Results Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/testng-plugin>`_
+
+    :arg str pattern: filename pattern to locate the TestNG XML report files
+    :arg bool escape-test-description: escapes the description string
+      associated with the test method while displaying test method details
+      (Default True)
+    :arg bool escape-exception-msg: escapes the test method's exception
+      messages. (Default True)
+
+    Example::
+
+    .. literalinclude::
+       /../../tests/publishers/fixtures/testng-publisher001.yaml
+
+    """
+
+    reporter = XML.SubElement(xml_parent, 'hudson.plugins.testng.Publisher')
+    XML.SubElement(reporter, 'reportFilenamePattern').text = data['pattern']
+    XML.SubElement(reporter, 'escapeTestDescp').text = str(data.get(
+        'escape-test-description', True))
+    XML.SubElement(reporter, 'escapeExceptionMsg').text = str(data.get(
+        'escape-exception-msg', True))
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
