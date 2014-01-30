@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+Cug\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-30T18:19:14Z",
+      "side": 1,
+      "message": "We like to use tests as examples.  Could you please add some tests then replace this section with a reference to the test?  You can find many examples of tests in the test folder.  You can find examples of referencing tests as examples module.  Look for the \u0027literalinclude\u0027 reference.",
+      "revId": "f93d5fd04712462d9380f8d7c3ff287a0e9dbc25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+Cso\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-30T18:19:14Z",
+      "side": 1,
+      "message": "since this is required, maybe should have a check validate then throw JenkinsJobsException if it\u0027s not present?",
+      "revId": "f93d5fd04712462d9380f8d7c3ff287a0e9dbc25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+CtY\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-30T18:19:14Z",
+      "side": 1,
+      "message": "the python False object is preffered over \u0027false\u0027 string.",
+      "revId": "f93d5fd04712462d9380f8d7c3ff287a0e9dbc25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+CtQ\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-30T18:19:14Z",
+      "side": 1,
+      "message": "the python False object is preffered over \u0027false\u0027 string.",
+      "revId": "f93d5fd04712462d9380f8d7c3ff287a0e9dbc25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
