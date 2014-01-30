@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+F/o\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-30T07:10:26Z",
+      "side": 1,
+      "message": "literalinclude needs a leading \u0027/\u0027, explained in change  Ib1f8ccca40af1ee54c2bd00b2b42ba39e3c0c8e5",
+      "revId": "12907c84273588ba8159fd1c1ecc29cd1a9d46f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
