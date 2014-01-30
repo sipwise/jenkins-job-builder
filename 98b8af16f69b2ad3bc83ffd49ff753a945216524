@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+CnM\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3116,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-30T18:38:33Z",
+      "side": 1,
+      "message": "maybe just \u0027testng\u0027 to better align with plugin name?",
+      "revId": "98b8af16f69b2ad3bc83ffd49ff753a945216524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+CnA\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3123,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-30T18:38:33Z",
+      "side": 1,
+      "message": "is this a required param?  what happens if user doesn\u0027t provide anything for this?",
+      "revId": "98b8af16f69b2ad3bc83ffd49ff753a945216524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
