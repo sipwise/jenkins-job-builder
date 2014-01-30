@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+GCY\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-30T06:53:57Z",
+      "side": 1,
+      "message": "just \u0027campfire\u0027 might be better to align with plugin name?",
+      "revId": "20ea004a8840208c16cfb96593ea3b8e4f394d79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+GCw\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-30T06:53:57Z",
+      "side": 1,
+      "message": "literalinclude needs a leading \u0027/\u0027, explained in change  Ib1f8ccca40af1ee54c2bd00b2b42ba39e3c0c8e5",
+      "revId": "20ea004a8840208c16cfb96593ea3b8e4f394d79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
