@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+DJI\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-30T17:25:17Z",
+      "side": 1,
+      "message": "there are only 2 valid values, so what if the user entered an invalid value?",
+      "revId": "0456c3774c564e45bcad3307cf55422ef15336fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/+DGc\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-30T17:25:17Z",
+      "side": 1,
+      "message": "processing this and the above params can be simplified by doing something like this to set the value or use a default value..\n \nXML.SubElement(cloneworkspace, \u0027overrideDefaultExcludes\u0027).text \u003d str(data.get(\u0027override-default-excludes\u0027, False)).lower()",
+      "revId": "0456c3774c564e45bcad3307cf55422ef15336fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
