@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+F2U\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2014-01-30T07:58:42Z",
+      "side": 1,
+      "message": "Looks like there\u0027s an extra space after the : here?",
+      "revId": "4b0e3ca4289b000ea2aeb5ce439eda8c5970c394",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
