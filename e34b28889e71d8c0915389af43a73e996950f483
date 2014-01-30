@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/+GDY\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-30T06:38:49Z",
+      "side": 1,
+      "message": "literalinclude needs a leading \u0027/\u0027, explained in change  Ib1f8ccca40af1ee54c2bd00b2b42ba39e3c0c8e5",
+      "revId": "e34b28889e71d8c0915389af43a73e996950f483",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
