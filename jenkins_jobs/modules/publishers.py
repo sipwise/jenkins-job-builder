@@ -1287,6 +1287,7 @@ def email_ext(parser, xml_parent, data):
         like ${BUILD_NUMBER}, but the real magic is using groovy or
         javascript to hook into the Jenkins API itself
     :arg bool attach-build-log: Include build log in the email (default false)
+    :arg str attachments: pattern of files to include as attachment (optional)
     :arg bool unstable: Send an email for an unstable result (default false)
     :arg bool first-failure: Send an email for just the first failure
         (default false)
@@ -1303,6 +1304,7 @@ def email_ext(parser, xml_parent, data):
     :arg bool still-unstable: Send an email if the build is still unstable
         (default false)
     :arg bool pre-build: Send an email before the build (default false)
+    :arg str matrix-trigger-mode: (default "both")
 
     Example::
 
@@ -1313,6 +1315,7 @@ def email_ext(parser, xml_parent, data):
             subject: Subject for Build ${BUILD_NUMBER}
             body: The build has finished
             attach-build-log: false
+            attachments: "*/foo*.log"
             unstable: true
             first-failure: true
             not-built: true
@@ -1325,6 +1328,7 @@ def email_ext(parser, xml_parent, data):
             fixed: true
             still-unstable: true
             pre-build: true
+            matrix-trigger-mode: only_configurations
     """
     emailext = XML.SubElement(xml_parent,
                               'hudson.plugins.emailext.ExtendedEmailPublisher')
@@ -1362,12 +1366,15 @@ def email_ext(parser, xml_parent, data):
         'subject', '$DEFAULT_SUBJECT')
     XML.SubElement(emailext, 'defaultContent').text = data.get(
         'body', '$DEFAULT_CONTENT')
-    XML.SubElement(emailext, 'attachmentsPattern').text = ''
+    XML.SubElement(emailext, 'attachmentsPattern').text = data.get(
+        'attachments', '')
     XML.SubElement(emailext, 'presendScript').text = ''
     XML.SubElement(emailext, 'attachBuildLog').text = \
         str(data.get('attach-build-log', False)).lower()
     XML.SubElement(emailext, 'replyTo').text = data.get('reply-to',
                                                         '$DEFAULT_RECIPIENTS')
+    XML.SubElement(emailext, 'matrixTriggerMode').text = \
+        str(data.get('matrix-trigger-mode', 'BOTH')).lower()
 
 
 def fingerprint(parser, xml_parent, data):
