@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/97y8\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-31T22:29:48Z",
+      "side": 1,
+      "message": "how about literalinclude the sample file instead?\n\nthe following format:\n\n  .. literalinclude::  /../../etc/jenkins_jobs.ini-sample",
+      "revId": "0600f4e4cd70055559b9a0fb57d784746d554946",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/97t0\u003d",
+        "filename": "etc/jenkins_jobs.ini-sample",
+        "patchSetId": 17
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-31T22:29:48Z",
+      "side": 1,
+      "message": "yaml seems too generic of a name.  since this feature is a \u0027yaml include file\u0027 feature how about naming this section \u0027yaml_includes\u0027 ?",
+      "revId": "0600f4e4cd70055559b9a0fb57d784746d554946",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/978o\u003d",
+        "filename": "tests/localyaml/fixtures/include-raw001-vars.sh",
+        "patchSetId": 17
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-31T22:29:48Z",
+      "side": 1,
+      "message": "pls remove red blob",
+      "revId": "0600f4e4cd70055559b9a0fb57d784746d554946",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/975Y\u003d",
+        "filename": "tests/yamlparser/fixtures/include-raw-escape001-echo-vars.sh",
+        "patchSetId": 17
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-31T22:29:48Z",
+      "side": 1,
+      "message": "pls remove red blob",
+      "revId": "0600f4e4cd70055559b9a0fb57d784746d554946",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/975E\u003d",
+        "filename": "tests/yamlparser/fixtures/include-raw-escape001.xml",
+        "patchSetId": 17
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-31T22:29:48Z",
+      "side": 1,
+      "message": "pls remove red blob",
+      "revId": "0600f4e4cd70055559b9a0fb57d784746d554946",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
