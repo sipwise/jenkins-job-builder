@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9/Vg\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3127,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-01-31T09:37:17Z",
+      "side": 1,
+      "message": "The file does not get included and that text show as is :(\n\nhttp://docs-draft.openstack.org/90/69290/5/check/gate-jenkins-job-builder-docs/d62d3d8/doc/build/html/publishers.html#publishers.sitemonitor",
+      "revId": "6c395ff23f14a56ed868d3cbe1d84cab371ea3c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
