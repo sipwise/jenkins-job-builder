@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUH/99Zg\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3125,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-01-31T16:59:21Z",
+      "side": 1,
+      "message": "one too many \u0027:\u0027 here.",
+      "revId": "6c395ff23f14a56ed868d3cbe1d84cab371ea3c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9/Vg\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 5
