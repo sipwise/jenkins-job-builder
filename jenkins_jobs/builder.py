@@ -118,7 +118,30 @@ class YamlParser(object):
         self.jobs = []
 
     def parse(self, fn):
-        data = yaml.load(open(fn))
+        """
+        Takes a file name or yaml string and loads it into Python data
+        structures that can be used to generate Job XML.
+
+        :arg str fn: String filename(unopened file handle) or string of Yaml.
+
+        See :py:meth:`jenkins_jobs.builder.Builder.load_files` load_files
+        method to see how this method is called.
+
+        See the test_yamlparser.py cases for examples loading strings
+        and files.
+        """
+        try:
+            yaml_source = open(fn)
+        except IOError:
+            yaml_source = fn
+
+        data = yaml.safe_load(yaml_source)
+        self._parse_implmentation(data)
+
+    def _parse_implmentation(self, data):
+        """
+        Private implmentation of the parse method.
+        """
         if data:
             for item in data:
                 cls, dfn = item.items()[0]
