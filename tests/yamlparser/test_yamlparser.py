@@ -53,3 +53,33 @@ class TestCaseModuleYamlInclude(TestWithScenarios, TestCase, BaseTestCase):
                                               doctest.NORMALIZE_WHITESPACE |
                                               doctest.REPORT_NDIFF)
         )
+
+    def test_yaml_string_snippet(self):
+        if not self.xml_filename or not self.yaml_filename:
+            return
+
+        xml_filepath = os.path.join(self.fixtures_path, self.xml_filename)
+        expected_xml = u"%s" % open(xml_filepath, 'r').read()
+
+        yaml_filepath = os.path.join(self.fixtures_path, self.yaml_filename)
+        fh_yaml_file = open(yaml_filepath)
+
+        yaml_str = fh_yaml_file.read()
+        fh_yaml_file.close()
+
+        parser = YamlParser()
+        parser.parse(yaml_str)
+
+        # Generate the XML tree
+        parser.generateXML()
+
+        # Prettify generated XML
+        pretty_xml = parser.jobs[0].output()
+
+        self.assertThat(
+            pretty_xml,
+            testtools.matchers.DocTestMatches(expected_xml,
+                                              doctest.ELLIPSIS |
+                                              doctest.NORMALIZE_WHITESPACE |
+                                              doctest.REPORT_NDIFF)
+        )
