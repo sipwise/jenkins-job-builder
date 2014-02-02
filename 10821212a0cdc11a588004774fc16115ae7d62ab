@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/95zQ\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-02T00:40:27Z",
+      "side": 1,
+      "message": "This is ok, but you might consider just creating a valid values list then checking if the value is in the list, something like line 2921.  That would be simpler.",
+      "revId": "10821212a0cdc11a588004774fc16115ae7d62ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/950M\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-02T00:40:27Z",
+      "side": 1,
+      "message": "should \u0027any\u0027 be lower case?",
+      "revId": "10821212a0cdc11a588004774fc16115ae7d62ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/95zM\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-02T00:40:27Z",
+      "side": 1,
+      "message": "do same as suggestion above for criteria.",
+      "revId": "10821212a0cdc11a588004774fc16115ae7d62ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
