@@ -118,7 +118,7 @@ class YamlParser(object):
         self.jobs = []
 
     def parse(self, fn):
-        data = yaml.load(open(fn))
+        data = yaml.load((fn))
         if data:
             for item in data:
                 cls, dfn = item.items()[0]
@@ -515,7 +515,7 @@ class Builder(object):
         self.parser = YamlParser(self.global_config)
         for in_file in files_to_process:
             logger.debug("Parsing YAML file {0}".format(in_file))
-            self.parser.parse(in_file)
+            self.parser.parse(open(in_file))
 
     def delete_old_managed(self, keep):
         jobs = self.jenkins.get_jobs()

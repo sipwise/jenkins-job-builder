@@ -38,7 +38,7 @@ class TestCaseModuleYamlInclude(TestWithScenarios, TestCase, BaseTestCase):
         yaml_filepath = os.path.join(self.fixtures_path, self.yaml_filename)
 
         parser = YamlParser()
-        parser.parse(yaml_filepath)
+        parser.parse(open(yaml_filepath))
 
         # Generate the XML tree
         parser.generateXML()
