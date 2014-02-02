@@ -23,28 +23,64 @@ import doctest
 import testtools
 from jenkins_jobs.builder import YamlParser
 
+def get_pretty_xml(yaml):
+    parser = YamlParser()
+    parser.parse(yaml)
+
+    # Generate the XML tree
+    parser.generateXML()
+
+    # Prettify generated XML
+    pretty_xml = parser.jobs[0].output()
+
+    return pretty_xml
+
+def read_yaml_file_contents(yaml_filepath):
+    fh_yaml_file = open(yaml_filepath)
+    yaml_str = fh_yaml_file.read()
+    fh_yaml_file.close()
+
+    return yaml_str
 
 class TestCaseModuleYamlInclude(TestWithScenarios, TestCase, BaseTestCase):
     fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
     scenarios = get_scenarios(fixtures_path)
 
-    def test_yaml_snippet(self):
-        if not self.xml_filename or not self.yaml_filename:
-            return
-
+    def __base_setup(self):
         xml_filepath = os.path.join(self.fixtures_path, self.xml_filename)
         expected_xml = u"%s" % open(xml_filepath, 'r').read()
 
         yaml_filepath = os.path.join(self.fixtures_path, self.yaml_filename)
 
-        parser = YamlParser()
-        parser.parse(yaml_filepath)
+        return (expected_xml, yaml_filepath)
 
-        # Generate the XML tree
-        parser.generateXML()
+    def test_yaml_snippet(self):
+        if not self.xml_filename or not self.yaml_filename:
+            return
 
-        # Prettify generated XML
-        pretty_xml = parser.jobs[0].output()
+        expected_xml, yaml_filepath = self.__base_setup()
+
+        # Prettify generated XML from file
+        pretty_xml = get_pretty_xml(yaml_filepath)
+
+        self.assertThat(
+            pretty_xml,
+            testtools.matchers.DocTestMatches(expected_xml,
+                                              doctest.ELLIPSIS |
+                                              doctest.NORMALIZE_WHITESPACE |
+                                              doctest.REPORT_NDIFF)
+        )
+
+    def test_yaml_string_snippet(self):
+        if not self.xml_filename or not self.yaml_filename:
+            return
+
+        expected_xml, yaml_filepath = self.__base_setup()
+
+        yaml_str = read_yaml_file_contents(yaml_filepath)
+
+        # Prettify generated XML from string
+        pretty_xml = get_pretty_xml(yaml_str)
 
         self.assertThat(
             pretty_xml,
