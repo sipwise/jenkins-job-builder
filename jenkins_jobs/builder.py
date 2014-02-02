@@ -118,7 +118,13 @@ class YamlParser(object):
         self.jobs = []
 
     def parse(self, fn):
-        data = yaml.load(open(fn))
+        try:
+            yaml_source = open(fn)
+        except IOError:
+            yaml_source = fn
+
+        data = yaml.load(yaml_source)
+
         if data:
             for item in data:
                 cls, dfn = item.items()[0]
