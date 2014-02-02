@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/94Jg\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-02-02T19:18:58Z",
+      "side": 1,
+      "message": "You might want to add a short description of this plugin. From https://github.com/jenkinsci/ci-skip-plugin :\n\nSkip making a build for certain push. Just add [ci skip] into your commit\u0027s message to let Jenkins know, that you do not want to perform build for the next push.",
+      "revId": "18a5f57aedcac9c1b049aec95792c54c3a95b6be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
