@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/90SM\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-03T17:09:18Z",
+      "side": 1,
+      "message": "Maybe add the following here..\n\nThe scm module allows referencing multiple repositories  in a Jenkins job.",
+      "revId": "1965179707d779ab54d4c3a825a9d3b3de004a65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/90Uk\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-03T17:09:18Z",
+      "side": 1,
+      "message": "youl\u0027ll need to rebase on master, but how about replacing this example section with a reference to one of your multi-scm tests?",
+      "revId": "1965179707d779ab54d4c3a825a9d3b3de004a65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
