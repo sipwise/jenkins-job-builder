@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9yYc\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-03T23:09:42Z",
+      "side": 1,
+      "message": "in previous patches, you accept case insensitive inputs.  but now the code is no longer doing that.  i think it case insensitive would be better.",
+      "revId": "8eec57dbbe5bcc7553ca0cf2b22a622a09fc619a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9yXk\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-03T23:09:42Z",
+      "side": 1,
+      "message": "would be better if you just list the criteria_list. there\u0027s an example on line #684",
+      "revId": "8eec57dbbe5bcc7553ca0cf2b22a622a09fc619a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9yYY\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-03T23:09:42Z",
+      "side": 1,
+      "message": "same comment about case insensitive input.",
+      "revId": "8eec57dbbe5bcc7553ca0cf2b22a622a09fc619a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9yXI\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-03T23:09:42Z",
+      "side": 1,
+      "message": "same comment about listing valid inputs.",
+      "revId": "8eec57dbbe5bcc7553ca0cf2b22a622a09fc619a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
