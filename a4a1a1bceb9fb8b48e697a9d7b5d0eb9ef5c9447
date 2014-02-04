@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9xHE\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-04T06:41:26Z",
+      "side": 1,
+      "message": "We to use tests as examples.  There is already a tests/builders/fixtures/trigger-builds001.yaml file so would you mind replacing this block with a literalinclude reference to the test?  There is an example on line #776",
+      "revId": "a4a1a1bceb9fb8b48e697a9d7b5d0eb9ef5c9447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9xE4\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 629,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-04T06:41:26Z",
+      "side": 1,
+      "message": "replace this block with literalinclude to one of the your tests?",
+      "revId": "a4a1a1bceb9fb8b48e697a9d7b5d0eb9ef5c9447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9xFk\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-04T06:41:26Z",
+      "side": 1,
+      "message": "there isn\u0027t an existing test for this and i\u0027m concerned that these changes are not being tested.  Would you be willing to add a test?",
+      "revId": "a4a1a1bceb9fb8b48e697a9d7b5d0eb9ef5c9447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9xI4\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-04T06:41:26Z",
+      "side": 1,
+      "message": "NOTBUILT and ABORTED have added to the list.  are these valid alternatives?",
+      "revId": "a4a1a1bceb9fb8b48e697a9d7b5d0eb9ef5c9447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
