@@ -454,6 +454,34 @@ def build_result(parser, xml_parent, data):
             XML.SubElement(model_checked, 'checked').text = result_dict[result]
 
 
+def file_name(parser, xml_parent, data):
+    pass
+
+
+def folder_content(parser, xml_parent, data):
+    pass
+
+
+def script(parser, xml_parent, data):
+    st = XML.SubElement(
+        xml_parent,
+        'org.jenkinsci.plugins.scripttrigger.ScriptTrigger'
+    )
+    label = data.get('label')
+
+    XML.SubElement(st, 'spec').text = data.get('spec')
+    XML.SubElement(st, 'labelRestriction').text = str(bool(label)).lower()
+    if label:
+        XML.SubElement(st, 'triggerLabel').text = label
+    XML.SubElement(st, 'enableConcurrentBuild').text = str(
+        data.get('enable-concurrent', False)).lower()
+    XML.SubElement(st, 'exitCode').text = str(data.get('exit-code', ''))
+
+
+def url(parser, xml_parent, data):
+    pass
+
+
 class Triggers(jenkins_jobs.modules.base.Base):
     sequence = 50
 

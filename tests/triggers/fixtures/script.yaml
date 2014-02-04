@@ -1,0 +1,6 @@
+triggers:
+  - script:
+        spec: exit 0
+        enable-concurrent: False
+        label: master
+        exit-code: 0
