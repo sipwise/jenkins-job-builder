@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9kpQ\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-05T23:21:35Z",
+      "side": 1,
+      "message": "are any of these parameters required?  can you save the project  config if all of these are set to default?",
+      "revId": "f82b4157e00ccead16f2a81632fc7775fe5d74b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
