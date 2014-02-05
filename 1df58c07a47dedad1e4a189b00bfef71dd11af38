@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9k2I\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-05T22:57:58Z",
+      "side": 1,
+      "message": "how about renaming to least_load for consistency?",
+      "revId": "1df58c07a47dedad1e4a189b00bfef71dd11af38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9k1w\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-05T22:57:58Z",
+      "side": 1,
+      "message": "is there not enough space to put url all on one line?",
+      "revId": "1df58c07a47dedad1e4a189b00bfef71dd11af38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9k1Y\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-05T22:57:58Z",
+      "side": 1,
+      "message": "we are moving to test as examples, could you please replace this section with a literalinclude reference to one of your tests? there is an example on line #53",
+      "revId": "1df58c07a47dedad1e4a189b00bfef71dd11af38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9kyY\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-05T22:57:58Z",
+      "side": 1,
+      "message": "i think this can be just a one liner..\n\nXML.SubElement(least, \u0027leastLoadDisabled\u0027).text \u003d str(data.get(\u0027disabled\u0027, True)).lower()",
+      "revId": "1df58c07a47dedad1e4a189b00bfef71dd11af38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
