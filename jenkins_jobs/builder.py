@@ -66,7 +66,7 @@ def writexml(self, writer, indent="", addindent="", newl=""):
     else:
         writer.write("/>%s" % (newl))
 
-if sys.hexversion < 0x02070000:
+if sys.hexversion <= 0x020703f0:
     minidom.Element.writexml = writexml
 
 
