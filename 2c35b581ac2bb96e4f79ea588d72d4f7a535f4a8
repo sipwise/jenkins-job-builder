@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9dt8\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-06T18:24:03Z",
+      "side": 1,
+      "message": "cool, i didn\u0027t even know about the title method. this works great!",
+      "revId": "2c35b581ac2bb96e4f79ea588d72d4f7a535f4a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9dtk\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-06T18:24:03Z",
+      "side": 1,
+      "message": "i mentioned this in patch 6.  you can just reuse the values in criteria_list to print out this list.",
+      "revId": "2c35b581ac2bb96e4f79ea588d72d4f7a535f4a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
