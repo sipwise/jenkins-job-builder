@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9eBY\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 9906
+      },
+      "writtenOn": "2014-02-06T17:58:03Z",
+      "side": 1,
+      "message": "The problem is that it\u0027s camel case.. is there a method I can use to make stuff camel case? If so, this will be an easy fix.\n\nNevermind, figured it out.  title()!\n\nOops, ok, so this is done in the newest patchset.",
+      "parentUuid": "AAAAUH/9eS0\u003d",
+      "revId": "8f81748efacb4fe1549da96debe77fb933b01998",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9eVQ\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 8
