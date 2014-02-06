@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9eS0\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-06T17:14:05Z",
+      "side": 1,
+      "message": "i really like what you had in patch 6 for this.  the only thing that it didn\u0027t do was accept case insensitive input.  seems like you could just use the same trick you used for archive-method?",
+      "revId": "8f81748efacb4fe1549da96debe77fb933b01998",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9eVQ\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-06T17:14:05Z",
+      "side": 1,
+      "message": "this is a good way to accepting case insensitive input.  why not do the same for criteria parameter above?",
+      "revId": "8f81748efacb4fe1549da96debe77fb933b01998",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
