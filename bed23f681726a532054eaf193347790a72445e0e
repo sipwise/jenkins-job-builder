@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9c9I\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-06T20:16:17Z",
+      "side": 1,
+      "message": "the resulting string is: \"clone-workspace criteria must be one of: [\u0027Not Failed\u0027, \u0027Successful\u0027, \u0027Any\u0027]\"\n\nhowever if code is..\n\"clone-workspace criteria must be one of: \" + \",\".join(criteria_list))\n\nthe result will be: \"clone-workspace criteria must be one of: Not Failed,Successful,Any\"\n\ni think 2nd one is better.",
+      "revId": "bed23f681726a532054eaf193347790a72445e0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9c8w\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-06T20:16:17Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "bed23f681726a532054eaf193347790a72445e0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
