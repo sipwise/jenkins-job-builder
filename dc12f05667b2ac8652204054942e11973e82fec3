@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9dmA\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-06T18:56:42Z",
+      "side": 1,
+      "message": "one too many \u0027:\u0027 here, fails to render..\nhttp://docs-draft.openstack.org/08/69608/5/check/gate-jenkins-job-builder-docs/3aa47c8/doc/build/html/builders.html\n\nhere\u0027s the info on how to build docs locally..\nhttp://ci.openstack.org/jenkins-job-builder/installation.html#documentation",
+      "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9dls\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-06T18:56:42Z",
+      "side": 1,
+      "message": "one too many \u0027:\u0027 here",
+      "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9dkE\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-06T18:56:42Z",
+      "side": 1,
+      "message": "i had a question about this in PS 4,  what about NOTBUILD and ABORTED?",
+      "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9dkA\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-06T18:56:42Z",
+      "side": 1,
+      "message": "one too many \u0027:\u0027 here",
+      "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9di8\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-06T18:56:42Z",
+      "side": 1,
+      "message": "would it be better to accept case insensitive input?  if so upper method here would do it.",
+      "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
