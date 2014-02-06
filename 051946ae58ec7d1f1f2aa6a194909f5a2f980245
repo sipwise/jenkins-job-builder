@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9da4\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 875,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-06T19:18:18Z",
+      "side": 1,
+      "message": "would \u0027localhost\u0027 would be a better default?",
+      "revId": "051946ae58ec7d1f1f2aa6a194909f5a2f980245",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9dYU\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 898,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-06T19:18:18Z",
+      "side": 1,
+      "message": "redis configs seem to get set regardless of the use-redis setting.  Should there be a conditional to only set if use-redis is true?",
+      "revId": "051946ae58ec7d1f1f2aa6a194909f5a2f980245",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
