@@ -16,6 +16,24 @@
       "revId": "f82b4157e00ccead16f2a81632fc7775fe5d74b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9glc\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 4325
+      },
+      "writtenOn": "2014-02-06T12:34:59Z",
+      "side": 1,
+      "message": "Well there indeed was a problem. When I specified only\n\n    triggers:\n    - script:\n\nI got None as a data and then it failed on data.get(). I am going to solve this by checking for data to be None and replace it with {} in such case, so the defaults are applied fine in such case.",
+      "parentUuid": "AAAAUH/9kpQ\u003d",
+      "revId": "f82b4157e00ccead16f2a81632fc7775fe5d74b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
