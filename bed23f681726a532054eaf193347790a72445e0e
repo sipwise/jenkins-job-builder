@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9c4s\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 9906
+      },
+      "writtenOn": "2014-02-06T20:22:44Z",
+      "side": 1,
+      "message": "I agree, I couldn\u0027t figure out a clean way to display that list ;)\n\nFixing now.",
+      "parentUuid": "AAAAUH/9c9I\u003d",
+      "revId": "bed23f681726a532054eaf193347790a72445e0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9c8w\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 10
