@@ -488,6 +488,7 @@ def batch_tasks(parser, xml_parent, data):
         XML.SubElement(batch_task, 'name').text = task['name']
         XML.SubElement(batch_task, 'script').text = task['script']
 
+
 def delivery_pipeline(parser, xml_parent, data):
     """yaml: delivery_pipeline
     Requires the Jenkins `Delivery Pipeline Plugin.
