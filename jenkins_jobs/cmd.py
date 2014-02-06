@@ -88,8 +88,8 @@ def main():
         ## to avoid the 'no section' and 'no option' errors when testing
         config.add_section("jenkins")
         config.set("jenkins", "url", "http://localhost:8080")
-        config.set("jenkins", "user", None)
-        config.set("jenkins", "password", None)
+        config.set("jenkins", "user", "")
+        config.set("jenkins", "password", "")
         config.set("jenkins", "ignore_cache", False)
         logger.debug("Not reading config for test output generation")
     else:
