@@ -198,6 +198,7 @@ setuptools.setup(
             'ci-skip=jenkins_jobs.modules.wrappers:ci_skip',
             'copy-to-slave=jenkins_jobs.modules.wrappers:copy_to_slave',
             'env-file=jenkins_jobs.modules.wrappers:env_file',
+            'env-script=jenkins_jobs.modules.wrappers:env_script',
             'inject=jenkins_jobs.modules.wrappers:inject',
             'inject-passwords=jenkins_jobs.modules.wrappers:inject_passwords',
             'jclouds=jenkins_jobs.modules.wrappers:jclouds',
