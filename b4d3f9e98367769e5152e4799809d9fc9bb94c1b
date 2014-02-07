@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX///Ew\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-07T23:07:29Z",
+      "side": 1,
+      "message": "should this be \u0027env-script\u0027?",
+      "revId": "b4d3f9e98367769e5152e4799809d9fc9bb94c1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX///Dk\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-07T23:07:29Z",
+      "side": 1,
+      "message": "we would like to use a test as the example.  could you please add a test then replace this section with a literalinclue reference to the test?  there are many examples in the code base already.",
+      "revId": "b4d3f9e98367769e5152e4799809d9fc9bb94c1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX///Dw\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-07T23:07:29Z",
+      "side": 1,
+      "message": "docstring says default is \u0027 \u0027, but code is not setting a default.  what you probably want is data.get(\u0027script\u0027, \u0027 \u0027)",
+      "revId": "b4d3f9e98367769e5152e4799809d9fc9bb94c1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
