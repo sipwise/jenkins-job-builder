@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9Wk4\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 7933
+      },
+      "writtenOn": "2014-02-07T14:44:24Z",
+      "side": 1,
+      "message": "I don\u0027t get your comment about the extra \u0027:\u0027. You were right about the fact that it didn\u0027t rendered properly. It\u0027s all been fixed in the latest patch now.",
+      "parentUuid": "AAAAUH/9dmA\u003d",
+      "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9dls\u003d",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2014-02-06T18:56:42Z",
       "side": 1,
       "message": "one too many \u0027:\u0027 here",
+      "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9Wkw\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 7933
+      },
+      "writtenOn": "2014-02-07T14:44:24Z",
+      "side": 1,
+      "message": "Same here....",
+      "parentUuid": "AAAAUH/9dls\u003d",
       "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9Wjs\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 7933
+      },
+      "writtenOn": "2014-02-07T14:44:24Z",
+      "side": 1,
+      "message": "I added comments on this issue previously. I made changes to make sure the NOTBUILD and ABORTED status are not supported thus not changing the old behavior.",
+      "parentUuid": "AAAAUH/9dkE\u003d",
+      "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9dkA\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 5
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9Wjk\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 7933
+      },
+      "writtenOn": "2014-02-07T14:44:24Z",
+      "side": 1,
+      "message": "Same here... I don\u0027t get it.",
+      "parentUuid": "AAAAUH/9dkA\u003d",
+      "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9di8\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 5
@@ -81,6 +153,24 @@
       "writtenOn": "2014-02-06T18:56:42Z",
       "side": 1,
       "message": "would it be better to accept case insensitive input?  if so upper method here would do it.",
+      "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9WjQ\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 7933
+      },
+      "writtenOn": "2014-02-07T14:44:24Z",
+      "side": 1,
+      "message": "I thought of it and decided that at this stage, such a feature would not have the roi. The documentation is clear on what values are supported.",
+      "parentUuid": "AAAAUH/9di8\u003d",
       "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
