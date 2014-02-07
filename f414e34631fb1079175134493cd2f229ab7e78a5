@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUH/9Yns\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2014-02-07T09:41:46Z",
+      "side": 1,
+      "message": "moving close to example",
+      "parentUuid": "AAAAUH/9doY\u003d",
+      "revId": "f414e34631fb1079175134493cd2f229ab7e78a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9dn4\u003d",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 4
@@ -47,6 +65,24 @@
       "writtenOn": "2014-02-06T18:38:20Z",
       "side": 1,
       "message": "for some reason this isn\u0027t getting rendered correctly.. \nhttp://docs-draft.openstack.org/27/69827/4/check/gate-jenkins-job-builder-docs/fce689e/doc/build/html/scm.html\n\nIt probably has to do with indentation. you might try indenting it like the other ones in this module.  here\u0027s the info to generate doc locally.. \nhttp://ci.openstack.org/jenkins-job-builder/installation.html#documentation",
+      "revId": "f414e34631fb1079175134493cd2f229ab7e78a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUH/9YsA\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2014-02-07T09:41:46Z",
+      "side": 1,
+      "message": "true, adding indent helped.",
+      "parentUuid": "AAAAUH/9dpc\u003d",
       "revId": "f414e34631fb1079175134493cd2f229ab7e78a5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
