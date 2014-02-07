@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUH/9Z48\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 7680
+      },
+      "writtenOn": "2014-02-07T05:30:29Z",
+      "side": 1,
+      "message": "You probably want `yaml.safe_load` here, otherwise yaml can execute arbitrary code.",
+      "revId": "798a3416fbb979d495c881b119db8ddb4d2aa397",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
