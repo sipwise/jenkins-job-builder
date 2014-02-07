@@ -1032,3 +1032,62 @@ class Builders(jenkins_jobs.modules.base.Base):
         project_type = data.get('project-type', 'freestyle')
         if project_type in ('freestyle', 'matrix') and 'builders' not in data:
             XML.SubElement(xml_parent, 'builders')
+
+
+def python_virtualenv(parser, xml_parent, data):
+    """yaml: python-virtualenv
+    Execute a command inside a python virtualenv
+
+    :arg str python_version: Name of the python installation to use.
+        Must match one of the configured installations on server configuration
+        (default: System-CPython-2.7
+    :arg str name: Name of this virtualenv. Two virtualenv builders with the
+        same name will use the same virtualenv installation (optional)
+    :arg bool clear: If true, delete and recreate virtualenv on each build.
+        (default: false)
+    :arg bool use-distribute: if true use distribute, if false use setuptools.
+        (default: true)
+    :arg str nature: Nature of the command field. (default: shell)
+    :arg str command: The command to execute
+    :arg bool system-site-packages: if true, give acccess to the global
+        site-packages directory to the virtualenv. (default: false)
+    :arg bool ignore-exit-code: mark the build as failure if any of the
+        commands bellow exits with a non-zero exit code. (default: false)
+    :nature values:
+    *  **shell**
+    *  **xshell**
+    *  **python**
+
+    Example::
+
+      builders:
+        - python-virtualenv:
+            python-name: "System-CPython-2.7"
+            nature: shell
+            command: python setup.py build
+            ignore-exit-code: true
+    """
+
+    t = XML.SubElement(xml_parent,
+                       'jenkins.plugins.shiningpanda.builders.'
+                       'VirtualenvBuilder')
+    XML.SubElement(t, 'pythonName').text = data.get("python-version",
+                                                    "System-CPython-2.7")
+    XML.SubElement(t, 'home').text = data.get("name", "")
+    clear = data.get("clear", False)
+    XML.SubElement(t, 'clear').text = str(clear).lower()
+    use_distribute = data.get('use-distribute', False)
+    XML.SubElement(t, 'useDistribute').text = str(use_distribute).lower()
+    ignore_exit_code = data.get('ignore-exit-code', False)
+    XML.SubElement(t, 'ignoreExitCode').text = str(ignore_exit_code).lower()
+    system_site_packages = data.get('system-site-packages', False)
+    XML.SubElement(t, 'systemSitePackages').text = str(
+        system_site_packages).lower()
+    XML.SubElement(t, 'command').text = data.get("command", "")
+    nature = data.get('nature', 'shell')
+    naturetuple = ('shell', 'xshell', 'python')
+    if nature not in naturetuple:
+        raise JenkinsJobsException("nature '%s' is not valid: must be "
+                                   "one of 'shell', 'xshell' or 'python'"
+                                   % (nature))
+    XML.SubElement(t, 'nature').text = nature
