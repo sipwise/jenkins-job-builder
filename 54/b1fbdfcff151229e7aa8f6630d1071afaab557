@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Approved+1: Khai Do <zaro0508@gmail.com>
+Code-Review+2: Khai Do <zaro0508@gmail.com>
+Code-Review+1: Eli Klein <elijah@aclue.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 07 Feb 2014 21:46:23 +0000
+Reviewed-on: https://review.openstack.org/71764
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
