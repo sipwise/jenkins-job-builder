@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX///bE\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-07T22:03:51Z",
+      "side": 1,
+      "message": "we are moving to use test as examples.  could you please replace this section with a literalinclude reference to your test?  There\u0027s an example right above (batch_tasks)",
+      "revId": "5dfb026135650aacb178f3dd4be7a53910c6af66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX///ZM\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-07T22:03:51Z",
+      "side": 1,
+      "message": "param doc above says there\u0027s a default, but code does not set a default value.  line #369 has an example of how to set a default value.",
+      "revId": "5dfb026135650aacb178f3dd4be7a53910c6af66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
