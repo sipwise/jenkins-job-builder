@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX///BU\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1090,
+      "author": {
+        "id": 8211
+      },
+      "writtenOn": "2014-02-07T23:23:20Z",
+      "side": 1,
+      "message": "why is this dict needed? You can use a tuple if the keys and values ar all the same.  Also, taking advantage that you put those values into a var, I suggest using it to generate the exception message from it.",
+      "revId": "549a58821c5177d3191832a45e6243b329c11569",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX///A0\u003d",
+        "filename": "setup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 8211
+      },
+      "writtenOn": "2014-02-07T23:23:20Z",
+      "side": 1,
+      "message": "I know its valid, by for the sake of readability I\u0027d use parenthesis (as before) to group the string. Indentation can solve that issue too, but I prefer consistency in the code.",
+      "revId": "549a58821c5177d3191832a45e6243b329c11569",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
