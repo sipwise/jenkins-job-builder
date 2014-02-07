@@ -16,6 +16,24 @@
       "revId": "dcfe7696d05a7389c6d84c52e824892b425f43b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX///Zk\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-02-07T22:08:13Z",
+      "side": 1,
+      "message": "Yup I think that is how we do it in other part of the code :)",
+      "parentUuid": "AAAAUH/9cVo\u003d",
+      "revId": "dcfe7696d05a7389c6d84c52e824892b425f43b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
