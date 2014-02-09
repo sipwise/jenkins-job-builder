@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//7GI\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1092,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-02-09T17:42:22Z",
+      "side": 1,
+      "message": "Maybe use:\n \"nature \u0027%s\u0027 is not valid: must be \"\n \"one of %s\" % (nature, \u0027, \u0027.join(naturetuple))\n\nto avoid repeating the available values.",
+      "revId": "63369c5a77c78f199e73c8b4f133f68b6fb0feee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//7F4\u003d",
+        "filename": "setup.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-02-09T17:42:22Z",
+      "side": 1,
+      "message": "missing something one-space indentation to match parenthesis",
+      "revId": "63369c5a77c78f199e73c8b4f133f68b6fb0feee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
