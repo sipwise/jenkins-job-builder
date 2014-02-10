@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//1XA\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 7933
+      },
+      "writtenOn": "2014-02-10T14:37:28Z",
+      "side": 1,
+      "message": "Khai, here\u0027s the number of occurences of \u0027Example::\u0027 in this project. \n\n? (detached @ 2af51af? ) ~/Projets/jenkins-job-builder$ grep -r \u0027Example::\u0027 . | wc -l\n     180\n\nI agree to the fact that it does not render perfectly, the same goes for at least a dozen of other methods. At least it compiles and produce the documentation. I cannot fix sphinx problems here.\n\nThe fact of the matter is that this plugin has been broken for at least 2 weeks now. If you don\u0027t want to have this corrected, please state so accordingly. They are thousands of issues in this project. There isn\u0027t even a good set of unit tests (yaml to xml string comparison aren\u0027t good unit tests). I am willing to participate and make this a better tool but I think we have to stop waisting our time on such small details.",
+      "parentUuid": "AAAAUX//5Rs\u003d",
+      "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9dls\u003d",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 5
@@ -102,6 +120,24 @@
       "side": 1,
       "message": "needs to be \u0027Example:\u0027",
       "parentUuid": "AAAAUH/9Wkw\u003d",
+      "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//1WY\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 7933
+      },
+      "writtenOn": "2014-02-10T14:37:28Z",
+      "side": 1,
+      "message": "It this is the case, I am willing to replace all occurences of Example:: with Example:: in this porject in another commit.",
+      "parentUuid": "AAAAUX//5N4\u003d",
       "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -258,6 +294,24 @@
       "writtenOn": "2014-02-10T05:19:33Z",
       "side": 1,
       "message": "your doing the same validation on a smaller set of thresholds below so is this one even necessary?",
+      "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//1VA\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 7933
+      },
+      "writtenOn": "2014-02-10T14:37:28Z",
+      "side": 1,
+      "message": "You are right, I\u0027ll fix it.",
+      "parentUuid": "AAAAUX//5Ok\u003d",
       "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
