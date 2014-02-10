@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//5Rs\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-10T05:19:33Z",
+      "side": 1,
+      "message": "it\u0027s still not rendering correctly in latest PS.  what i mean is that \u0027Example::\u0027 should be \u0027Example:\u0027  (one colon).\n\nhere are instructions if you want to build docs locally to make sure it\u0027s working..\nhttp://ci.openstack.org/jenkins-job-builder/installation.html#documentation",
+      "parentUuid": "AAAAUH/9Wk4\u003d",
+      "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9dls\u003d",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 5
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "Same here....",
       "parentUuid": "AAAAUH/9dls\u003d",
+      "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//5N4\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-10T05:19:33Z",
+      "side": 1,
+      "message": "needs to be \u0027Example:\u0027",
+      "parentUuid": "AAAAUH/9Wkw\u003d",
       "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -107,6 +143,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//5OY\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-10T05:19:33Z",
+      "side": 1,
+      "message": "i see the change now.",
+      "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9dkA\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 5
@@ -142,6 +195,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//5OQ\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-10T05:19:33Z",
+      "side": 1,
+      "message": "needs to be \u0027Example:\u0027",
+      "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9di8\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 5
@@ -171,6 +241,23 @@
       "side": 1,
       "message": "I thought of it and decided that at this stage, such a feature would not have the roi. The documentation is clear on what values are supported.",
       "parentUuid": "AAAAUH/9di8\u003d",
+      "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//5Ok\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-10T05:19:33Z",
+      "side": 1,
+      "message": "your doing the same validation on a smaller set of thresholds below so is this one even necessary?",
       "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
