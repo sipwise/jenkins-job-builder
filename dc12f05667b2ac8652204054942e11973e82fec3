@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//0JA\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-10T16:52:29Z",
+      "side": 1,
+      "message": "sorry if i haven\u0027t made myself clear.  Due to legacy we currently have a mixture of how examples are entered into the code base.  In the past examples were entered as docstring in the method headers but we\u0027ve found that non-tested examples can be incorrect and even become outdated over time.  We\u0027ve recently moved to using literalinclude to reference a test so that the examples get tested and don\u0027t get outdated.  In cases where examples are docstring right in the method then you would use \u0027Example::\u0027, in cases where it\u0027s using the literalinclude then it needs to be \u0027Example:\u0027 otherwise the example won\u0027t render in the generated sphinx docs.  It\u0027s just the way sphinx works.\n\nI do think it is important that we fix plugin, but i think good and accurate documentation on how to use it is equally important :)",
+      "parentUuid": "AAAAUX//1XA\u003d",
+      "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9dls\u003d",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 5
