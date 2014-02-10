@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//z9M\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 7933
+      },
+      "writtenOn": "2014-02-10T17:10:58Z",
+      "side": 1,
+      "message": "Thanks for the explanation Khai. Changes were made in the latest patch.",
+      "parentUuid": "AAAAUX//0JA\u003d",
+      "revId": "dc12f05667b2ac8652204054942e11973e82fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/9dls\u003d",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 5
