@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//qPY\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-11T17:23:12Z",
+      "side": 1,
+      "message": "same as in wrapper.py  not rendering correctly.",
+      "revId": "9dc0c55c8ef763f0799ced42cb5c2f284a9576c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//qRA\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 882,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-11T17:23:12Z",
+      "side": 1,
+      "message": "this is not rendering correctly (http://docs-draft.openstack.org/58/71658/7/check/gate-jenkins-job-builder-docs/4fb2b80/doc/build/html/wrappers.html).  i think it needs to be all on one line.\n\ntry building docs locally to verify.. http://ci.openstack.org/jenkins-job-builder/installation.html#documentation",
+      "revId": "9dc0c55c8ef763f0799ced42cb5c2f284a9576c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
