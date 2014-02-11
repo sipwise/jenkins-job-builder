@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//u+4\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-11T06:05:50Z",
+      "side": 1,
+      "message": "how about changing name to \u0027heavy_job\u0027 for consistency?",
+      "revId": "fedd1dd7cf59c7e5b087100706138b4384d35329",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//vEk\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-11T06:05:50Z",
+      "side": 1,
+      "message": "requires leading \u0027/\u0027, explanation in change  Ib1f8ccca40af1ee54c2bd00b2b42ba39e3c0c8e5",
+      "revId": "fedd1dd7cf59c7e5b087100706138b4384d35329",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
