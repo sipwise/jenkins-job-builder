@@ -1,0 +1,14 @@
+- project:
+    name: test_custom_distri
+    distributions: !!python/tuple [precise, jessie]
+    jobs:
+      - '{name}-source'
+
+- job-template:
+      name: '{name}-source'
+      project-type: matrix
+      axes:
+        - axis:
+            type: user-defined
+            name: distribution
+            values: '{{distributions}}'
