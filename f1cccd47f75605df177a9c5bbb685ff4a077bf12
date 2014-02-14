@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAUX//M9w\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1317,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-14T22:07:33Z",
+      "side": 1,
+      "message": "could you please add javadocs similar to other plugins?  Also could you add a test and link it as an example?",
+      "revId": "f1cccd47f75605df177a9c5bbb685ff4a077bf12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//QFg\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
@@ -13,6 +30,24 @@
       "writtenOn": "2014-02-14T14:36:28Z",
       "side": 1,
       "message": "I would prefer a form like:\n\n    if \u0027send-to\u0027 in data:\n            XML.SubElement(email, \u0027sendToDevelopers\u0027).text \u003d (\u0027developers\u0027 in data[\u0027send-to\u0027]).lower()\n            XML.SubElement(email, \u0027sendToRequester\u0027).text \u003d (\u0027requestor\u0027 in data[\u0027send-to\u0027]).lower()\n            XML.SubElement(email, \u0027includeCulprits\u0027).text \u003d (\u0027culprits\u0027 in data[\u0027send-to\u0027]).lower()\n            ...\n\nor \n\n    def set_option(email, tagname, yaml_option):\n              XML.SubElement(email, tagname).text \u003d (yaml_option in data[\u0027send-to\u0027]).lower()\n\n    if \u0027send-to\u0027 in data:\n        set_option(email, \u0027sendToDevelopers\u0027, \u0027developers\u0027)\n        set_option(email, \u0027sendToRequester\u0027, \u0027requestor\u0027)\n        ...",
+      "revId": "f1cccd47f75605df177a9c5bbb685ff4a077bf12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//M8k\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1327,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-14T22:07:33Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "AAAAUX//QFg\u003d",
       "revId": "f1cccd47f75605df177a9c5bbb685ff4a077bf12",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
