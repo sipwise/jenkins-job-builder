@@ -3193,6 +3193,62 @@ def sitemonitor(parser, xml_parent, data):
             XML.SubElement(site, 'mUrl').text = siteurl['url']
 
 
+def ruby_metrics(parser, xml_parent, data):
+    """yaml: ruby-metrics
+    Rcov plugin parses rcov html report files and
+    shows it in Jenkins with a trend graph.
+
+    Requires the Jenkins `Ruby metrics plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Ruby+metrics+plugin>`_
+
+    :arg str report-dir: Relative path to the coverage report directory
+    :arg int tc-healthy: Report healthy when total coverage is greater then
+      this number
+    :arg int tc-unhealthy: Report unhealthy when total coverage is less then
+      this number
+    :arg int tc-unstable: Report unstable when total coverage is less then
+      this number
+    :arg int cc-healthy: Report healthy when code coverage is greater then
+      this number
+    :arg int cc-unhealthy: Report unhealthy when code coverage is less then
+      this number
+    :arg int cc-unstable: Report unstable when code coverage is less then
+      this number
+
+    Example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/ruby-metrics.yaml
+
+    """
+
+    metrics = XML.SubElement(
+        xml_parent,
+        'hudson.plugins.rubyMetrics.rcov.RcovPublisher')
+    report_dir = data.get('report-dir', '')
+    XML.SubElement(metrics, 'reportDir').text = report_dir
+    targets = XML.SubElement(metrics, 'targets')
+    tc_target = XML.SubElement(
+        targets,
+        'hudson.plugins.rubyMetrics.rcov.model.MetricTarget')
+    XML.SubElement(tc_target, 'metric').text = 'TOTAL_COVERAGE'
+    tc_healthy = data.get('tc-healthy', 80)
+    XML.SubElement(tc_target, 'healthy').text = str(tc_healthy)
+    tc_unhealthy = data.get('tc-unhealthy', 0)
+    XML.SubElement(tc_target, 'unhealthy').text = str(tc_unhealthy)
+    tc_unstable = data.get('tc-unstable', 0)
+    XML.SubElement(tc_target, 'unstable').text = str(tc_unstable)
+    cc_target = XML.SubElement(
+        targets,
+        'hudson.plugins.rubyMetrics.rcov.model.MetricTarget')
+    XML.SubElement(cc_target, 'metric').text = 'CODE_COVERAGE'
+    cc_healthy = data.get('cc-healthy', 80)
+    XML.SubElement(cc_target, 'healthy').text = str(cc_healthy)
+    cc_unhealthy = data.get('cc-unhealthy', 0)
+    XML.SubElement(cc_target, 'unhealthy').text = str(cc_unhealthy)
+    cc_unstable = data.get('cc-unstable', 0)
+    XML.SubElement(cc_target, 'unstable').text = str(cc_unstable)
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
