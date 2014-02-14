@@ -1,0 +1,9 @@
+publishers:
+  - ruby-metrics:
+      report-dir: "coverage/rcov"
+      tc-healthy: 90
+      tc-unhealthy: 50
+      tc-unstable: 30
+      cc-healthy: 90
+      cc-unhealthy: 50
+      cc-unstable: 30
