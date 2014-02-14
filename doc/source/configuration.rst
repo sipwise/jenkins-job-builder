@@ -123,6 +123,30 @@ define a template that you can use to create jobs with a `Project`_
 definition.  It's name will depend on what is supplied to the
 `Project`_.
 
+If you want to use lists or dicts variables you can use ``{obj:key}``.
+For example::
+
+  - project:
+      name: test_project
+      distributions: !!python/tuple [precise, jessie]
+      architectures: !!python/tuple &architectures
+        - amd64
+        - i386
+      axis_a:
+          type: user-defined
+          name: architectures
+          values: *architectures
+
+  - job-template:
+        name: '{name}-source'
+        project-type: matrix
+        axes:
+          - axis:
+              type: user-defined
+              name: distribution
+              values: '{obj:distributions}'
+          - axis: '{obj:axis_a}'
+
 .. _project:
 
 Project
