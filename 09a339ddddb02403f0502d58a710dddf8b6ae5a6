@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//Mk0\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 866,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-14T23:44:57Z",
+      "side": 1,
+      "message": "i think it makes more sense for this to be named \u0027delivery_pipeline\u0027 to match the plugin name.  So when you use this plugin you call it in a wrappers yaml section, while the other one gets called in properties section.  That is what makes them distinct.  Many existing JJB plugins already use this pattern.  \n\nFor example if you want use this plugin you would specify..\nwrappers:\n  - delivery-pipeline\n\nfor the properties one it\u0027s..\nproperties:\n  - delivery-pipeline",
+      "revId": "09a339ddddb02403f0502d58a710dddf8b6ae5a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Mkw\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 867,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-14T23:44:57Z",
+      "side": 1,
+      "message": "\u0027delivery-pipeline\u0027",
+      "revId": "09a339ddddb02403f0502d58a710dddf8b6ae5a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Mkk\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 882,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-14T23:44:57Z",
+      "side": 1,
+      "message": "\u0027delivery-pipeline1.yaml\u0027",
+      "revId": "09a339ddddb02403f0502d58a710dddf8b6ae5a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//MjM\u003d",
+        "filename": "setup.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-14T23:44:57Z",
+      "side": 1,
+      "message": "\u0027delivery-pipeline\u0027",
+      "revId": "09a339ddddb02403f0502d58a710dddf8b6ae5a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
