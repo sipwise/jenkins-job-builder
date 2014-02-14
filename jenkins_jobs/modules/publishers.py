@@ -1322,10 +1322,28 @@ def base_email_ext(parser, xml_parent, data, ttype):
     XML.SubElement(email, 'recipientList').text = ''
     XML.SubElement(email, 'subject').text = '$PROJECT_DEFAULT_SUBJECT'
     XML.SubElement(email, 'body').text = '$PROJECT_DEFAULT_CONTENT'
-    XML.SubElement(email, 'sendToDevelopers').text = 'false'
-    XML.SubElement(email, 'sendToRequester').text = 'false'
-    XML.SubElement(email, 'includeCulprits').text = 'false'
-    XML.SubElement(email, 'sendToRecipientList').text = 'true'
+    if 'send-to' in data:
+        if 'developers' in data['send-to']:
+            XML.SubElement(email, 'sendToDevelopers').text = 'true'
+        else:
+            XML.SubElement(email, 'sendToDevelopers').text = 'false'
+        if 'requestor' in data['send-to']:
+            XML.SubElement(email, 'sendToRequester').text = 'true'
+        else:
+            XML.SubElement(email, 'sendToRequester').text = 'false'
+        if 'culprits' in data['send-to']:
+            XML.SubElement(email, 'includeCulprits').text = 'true'
+        else:
+            XML.SubElement(email, 'includeCulprits').text = 'false'
+        if 'recipients' in data['send-to']:
+            XML.SubElement(email, 'sendToRecipientList').text = 'true'
+        else:
+            XML.SubElement(email, 'sendToRecipientList').text = 'false'
+    else:
+        XML.SubElement(email, 'sendToRequester').text = 'false'
+        XML.SubElement(email, 'sendToDevelopers').text = 'false'
+        XML.SubElement(email, 'includeCulprits').text = 'false'
+        XML.SubElement(email, 'sendToRecipientList').text = 'false'
 
 
 def email_ext(parser, xml_parent, data):
@@ -1360,27 +1378,10 @@ def email_ext(parser, xml_parent, data):
         (default false)
     :arg bool pre-build: Send an email before the build (default false)
 
-    Example::
+    Example:
 
-      publishers:
-        - email-ext:
-            recipients: foo@example.com, bar@example.com
-            reply-to: foo@example.com
-            subject: Subject for Build ${BUILD_NUMBER}
-            body: The build has finished
-            attach-build-log: false
-            unstable: true
-            first-failure: true
-            not-built: true
-            aborted: true
-            regression: true
-            failure: true
-            improvement: true
-            still-failing: true
-            success: true
-            fixed: true
-            still-unstable: true
-            pre-build: true
+    .. literalinclude:: /../../tests/publishers/fixtures/email-ext.yaml
+
     """
     emailext = XML.SubElement(xml_parent,
                               'hudson.plugins.emailext.ExtendedEmailPublisher')
