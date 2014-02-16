@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//Jbo\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3204,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-16T03:28:42Z",
+      "side": 1,
+      "message": "the code sets default values for these params.  could you please document it here?",
+      "revId": "2122b20741d1a3ef85ba165b2a5cbbf8e85d0861",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
