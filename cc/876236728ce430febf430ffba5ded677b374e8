@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Approved+1: Khai Do <zaro0508@gmail.com>
+Code-Review+2: Khai Do <zaro0508@gmail.com>
+Code-Review+1: Lukasz Jernas <deejay1@srem.org>
+Submitted-by: Jenkins
+Submitted-at: Sun, 16 Feb 2014 03:16:18 +0000
+Reviewed-on: https://review.openstack.org/73803
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
