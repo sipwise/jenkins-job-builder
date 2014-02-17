@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//El8\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1317,
+      "author": {
+        "id": 7604
+      },
+      "writtenOn": "2014-02-17T10:13:14Z",
+      "side": 1,
+      "message": "Could you please explain your idea? All email_ext plugin parameters which are set in this function are explained in the main function for this plugin, there\u0027s a test for them. Also any docs placed here will be shown in the documentation separately.",
+      "parentUuid": "AAAAUX//M9w\u003d",
+      "revId": "f1cccd47f75605df177a9c5bbb685ff4a077bf12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//QFg\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
