@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//E5E\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-02-17T10:01:02Z",
+      "side": 1,
+      "message": "The above seems unnecessarily verbose.",
+      "revId": "2749c75564e0d388b1e08b69d8174ab8ff814d77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//E6k\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-02-17T10:01:02Z",
+      "side": 1,
+      "message": "I suspect this will lack context when someone is looking at git history of the final merged change, since they won\u0027t see the previous revisions of the change.",
+      "revId": "2749c75564e0d388b1e08b69d8174ab8ff814d77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//EvY\u003d",
+        "filename": "tests/yamlparser/test_yamlparser.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-02-17T10:01:02Z",
+      "side": 1,
+      "message": "Given that this is now duplicating a decent chunk of code that was in turn copied from base.py, perhaps the common code could be put into helper methods either within BaseTestCase or at least within this class.",
+      "revId": "2749c75564e0d388b1e08b69d8174ab8ff814d77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
