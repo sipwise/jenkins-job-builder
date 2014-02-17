@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX//Erw\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-02-17T10:19:46Z",
+      "side": 1,
+      "message": "Sure no reason that can\u0027t be done :)",
+      "parentUuid": "AAAAUH/97y8\u003d",
+      "revId": "0600f4e4cd70055559b9a0fb57d784746d554946",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUH/97t0\u003d",
         "filename": "etc/jenkins_jobs.ini-sample",
         "patchSetId": 17
@@ -30,6 +48,24 @@
       "writtenOn": "2014-01-31T22:29:48Z",
       "side": 1,
       "message": "yaml seems too generic of a name.  since this feature is a \u0027yaml include file\u0027 feature how about naming this section \u0027yaml_includes\u0027 ?",
+      "revId": "0600f4e4cd70055559b9a0fb57d784746d554946",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX//Em0\u003d",
+        "filename": "etc/jenkins_jobs.ini-sample",
+        "patchSetId": 17
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-02-17T10:19:46Z",
+      "side": 1,
+      "message": "Since any future application specific tags would be added via the same class, I was looking for name that would also work for containing options to specific to other yaml tags, or any other behaviour around how the new yaml loader class would work.\n\nWould \u0027yaml_loader\u0027 strike a reasonable balance?",
+      "parentUuid": "AAAAUH/97t0\u003d",
       "revId": "0600f4e4cd70055559b9a0fb57d784746d554946",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
