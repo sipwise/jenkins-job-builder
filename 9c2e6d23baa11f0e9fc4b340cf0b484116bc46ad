@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//DhY\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-02-17T12:16:32Z",
+      "side": 1,
+      "message": "The plugin page mentions supports for Groovy script as well ( https://wiki.jenkins-ci.org/display/JENKINS/ScriptTrigger+Plugin ), it takes another optional parameter which is a property file.\n\nMight want to add support for Groovy script either in this change or in a next change :-]",
+      "revId": "9c2e6d23baa11f0e9fc4b340cf0b484116bc46ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
