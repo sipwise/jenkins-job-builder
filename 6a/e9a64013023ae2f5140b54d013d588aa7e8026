@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Approved+1: Antoine Musso <hashar@free.fr>
+Code-Review+2: Antoine Musso <hashar@free.fr>
+Code-Review+2: Clark Boylan <cboylan@sapwetik.org>
+Code-Review+1: Pavel Sedlák <psedlak@redhat.com>
+Code-Review+1: Khai Do <zaro0508@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Mon, 17 Feb 2014 12:52:29 +0000
+Reviewed-on: https://review.openstack.org/71266
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
