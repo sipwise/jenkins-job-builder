@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX//DNk\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-02-17T12:55:41Z",
+      "side": 1,
+      "message": "From python-jenkins, in Jenkins.__init__ :\n\n        if username is not None and password is not None:\n            self.auth \u003d auth_headers(username, password)\n        else:\n            self.auth \u003d None\n\nOn a setup that does not need any authentication (user and password to None), that would make python-jenkins to use authentication and send an header with:\n\n Basic \u0027Og\u003d\u003d\u0027\n\nWhich might have some interesting side effects (i.e. Jenkins thinking it should auth the user \u0027\u0027 with password \u0027\u0027 and thus failing).  That is a corner case really.",
+      "revId": "64514d50a813f3723c2423a27a5406d9bb1f5b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
