@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+79k\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 9736
+      },
+      "writtenOn": "2014-02-18T04:39:28Z",
+      "side": 1,
+      "message": "Done. Removed line.",
+      "parentUuid": "AAAAUX//E5E\u003d",
+      "revId": "2749c75564e0d388b1e08b69d8174ab8ff814d77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//E6k\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+79c\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 9736
+      },
+      "writtenOn": "2014-02-18T04:39:28Z",
+      "side": 1,
+      "message": "Done.\nRemoved.",
+      "parentUuid": "AAAAUX//E6k\u003d",
+      "revId": "2749c75564e0d388b1e08b69d8174ab8ff814d77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX//EvY\u003d",
         "filename": "tests/yamlparser/test_yamlparser.py",
         "patchSetId": 6
@@ -47,6 +83,24 @@
       "writtenOn": "2014-02-17T10:01:02Z",
       "side": 1,
       "message": "Given that this is now duplicating a decent chunk of code that was in turn copied from base.py, perhaps the common code could be put into helper methods either within BaseTestCase or at least within this class.",
+      "revId": "2749c75564e0d388b1e08b69d8174ab8ff814d77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+79M\u003d",
+        "filename": "tests/yamlparser/test_yamlparser.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 9736
+      },
+      "writtenOn": "2014-02-18T04:39:28Z",
+      "side": 1,
+      "message": "Next draft has refactored code.",
+      "parentUuid": "AAAAUX//EvY\u003d",
       "revId": "2749c75564e0d388b1e08b69d8174ab8ff814d77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
