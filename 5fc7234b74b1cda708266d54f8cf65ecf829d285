@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+0YY\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1039,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-18T20:33:34Z",
+      "side": 1,
+      "message": "could you please specify which plugin is required for this?",
+      "revId": "5fc7234b74b1cda708266d54f8cf65ecf829d285",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+0X0\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1041,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-18T20:33:34Z",
+      "side": 1,
+      "message": "our convention is to use dashes for param names",
+      "revId": "5fc7234b74b1cda708266d54f8cf65ecf829d285",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+0W4\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1043,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-18T20:33:34Z",
+      "side": 1,
+      "message": "missing close parenthesis?",
+      "revId": "5fc7234b74b1cda708266d54f8cf65ecf829d285",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+0Us\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1057,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-18T20:33:34Z",
+      "side": 1,
+      "message": "could you please indent?",
+      "revId": "5fc7234b74b1cda708266d54f8cf65ecf829d285",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+0Y8\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1061,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-18T20:33:34Z",
+      "side": 1,
+      "message": "We are moving to use tests as examples.  Would you be able to create a test (or two) for this and then reference the test using a literalinclude.  That way the examples are always kept up to date.  There are many examples in this module that you can follow.",
+      "revId": "5fc7234b74b1cda708266d54f8cf65ecf829d285",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
