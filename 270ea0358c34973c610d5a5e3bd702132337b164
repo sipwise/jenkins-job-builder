@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+1qY\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-18T18:53:46Z",
+      "side": 1,
+      "message": "+1 on section name.  Could you please add this to jenkins_jobs.ini-sample as well?  Also it might be nice  to literalinclude a reference to that file so we don\u0027t have duplicate info in two places.",
+      "revId": "270ea0358c34973c610d5a5e3bd702132337b164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+1bo\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-18T18:53:46Z",
+      "side": 1,
+      "message": "original code uses lstrip() when setting this value.  is there a reason why you left it out?",
+      "revId": "270ea0358c34973c610d5a5e3bd702132337b164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+1GA\u003d",
+        "filename": "tests/yamlparser/fixtures/complete002.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-18T18:53:46Z",
+      "side": 1,
+      "message": "Would be good to add another test setting a  \u0027description\u0027 here to test that the description gets set with the MAGIC_MANAGE_STRING.  This scenario is not tested in complete001.yaml\n\nAlso this file is exactly the same as complete001.yaml.  Would you be able to simplify this config so that you are just testing the description change?  I think this is all you need..\n\n- project:\n    name: test\n    version:\n        - 1.2\n    jobs:\n        - \u0027build_myproject_{version}\u0027\n\n- job-template:\n    name: \u0027build_myproject_{version}\u0027\n    description: \u0027David Caro is cool!\u0027\n    builders:\n      - shell: |\n         #!/usr/bin/env python\n         #\n         print(\"Doing something cool with python\")",
+      "revId": "270ea0358c34973c610d5a5e3bd702132337b164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
