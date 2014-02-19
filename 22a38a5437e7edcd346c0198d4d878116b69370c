@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+rDs\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1057,
+      "author": {
+        "id": 10022
+      },
+      "writtenOn": "2014-02-19T21:24:02Z",
+      "side": 1,
+      "message": "this module offers only a subset of the feature offered by the shining-panda plugin. Calling it shining-panda could have two effects I can think of:\n1) if people don\u0027t already know the plugin, it could not be clear what it does\n2) if people already know the plugin, they may think it as all the features.",
+      "parentUuid": "AAAAUX/+sLY\u003d",
+      "revId": "22a38a5437e7edcd346c0198d4d878116b69370c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+sLU\u003d",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 5
