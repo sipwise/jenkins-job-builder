@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+sLY\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1057,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-19T19:28:19Z",
+      "side": 1,
+      "message": "I think it would be better to name the jjb plugin the same as the jenkins plugin, so how about changing to shinging_panda?",
+      "revId": "22a38a5437e7edcd346c0198d4d878116b69370c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+sLU\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1058,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-19T19:28:19Z",
+      "side": 1,
+      "message": "shinging-panda",
+      "revId": "22a38a5437e7edcd346c0198d4d878116b69370c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
