@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+qmo\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1057,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-19T22:22:57Z",
+      "side": 1,
+      "message": "1) hmm, so i think the typical jjb user looks for equivalent functionality in jjb as jenkins and the best way to do that would be to look for available jjb plugins that match what\u0027s available in jenkins.\n2) It\u0027s pretty common in JJB to have partial implementations of a jenkins plugin.  Sometimes one person may start the plugin with whatever options they need then others will come along and add to it.  Although it\u0027s good practice try and implement all of the functionality up front.  This might be another good reason to give it the same name as the jenkins plugin, otherwise the next person that comes along  may not know that the equivalent jenkins plugin already exists and they just need to add a little to it.",
+      "parentUuid": "AAAAUX/+rDs\u003d",
+      "revId": "22a38a5437e7edcd346c0198d4d878116b69370c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+sLU\u003d",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 5
