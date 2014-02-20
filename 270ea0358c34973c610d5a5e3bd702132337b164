@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+0R4\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-02-20T11:00:29Z",
+      "side": 1,
+      "message": "I see, but now that I see it, is there any reason to do it apart from passing the test?",
+      "parentUuid": "AAAAUX/+1bo\u003d",
+      "revId": "270ea0358c34973c610d5a5e3bd702132337b164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+m/I\u003d",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 14
@@ -65,6 +83,24 @@
       "writtenOn": "2014-02-20T10:29:39Z",
       "side": 1,
       "message": "This is a backwards compatibility breaking change. Please include the previous code as a subsequent \u0027elif\u0027 block after this one and emit a \u0027deprecation\u0027 message to the user if it reaches that block of code. It can be removed after the next release, but that at least gives end users a chance to update their configuration files.",
+      "revId": "270ea0358c34973c610d5a5e3bd702132337b164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+lgo\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-02-20T11:00:29Z",
+      "side": 1,
+      "message": "Will do",
+      "parentUuid": "AAAAUX/+m/I\u003d",
       "revId": "270ea0358c34973c610d5a5e3bd702132337b164",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -99,6 +135,24 @@
       "writtenOn": "2014-02-18T18:53:46Z",
       "side": 1,
       "message": "Would be good to add another test setting a  \u0027description\u0027 here to test that the description gets set with the MAGIC_MANAGE_STRING.  This scenario is not tested in complete001.yaml\n\nAlso this file is exactly the same as complete001.yaml.  Would you be able to simplify this config so that you are just testing the description change?  I think this is all you need..\n\n- project:\n    name: test\n    version:\n        - 1.2\n    jobs:\n        - \u0027build_myproject_{version}\u0027\n\n- job-template:\n    name: \u0027build_myproject_{version}\u0027\n    description: \u0027David Caro is cool!\u0027\n    builders:\n      - shell: |\n         #!/usr/bin/env python\n         #\n         print(\"Doing something cool with python\")",
+      "revId": "270ea0358c34973c610d5a5e3bd702132337b164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+lf8\u003d",
+        "filename": "tests/yamlparser/fixtures/complete002.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-02-20T11:00:29Z",
+      "side": 1,
+      "message": "will do",
+      "parentUuid": "AAAAUX/+1GA\u003d",
       "revId": "270ea0358c34973c610d5a5e3bd702132337b164",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
