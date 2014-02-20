@@ -36,6 +36,58 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+nJM\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-02-20T10:29:39Z",
+      "side": 1,
+      "message": "Removal of lstrip() is why you needed to modify the complete001.xml scenario file.",
+      "parentUuid": "AAAAUX/+1bo\u003d",
+      "revId": "270ea0358c34973c610d5a5e3bd702132337b164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+m/I\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-02-20T10:29:39Z",
+      "side": 1,
+      "message": "This is a backwards compatibility breaking change. Please include the previous code as a subsequent \u0027elif\u0027 block after this one and emit a \u0027deprecation\u0027 message to the user if it reaches that block of code. It can be removed after the next release, but that at least gives end users a chance to update their configuration files.",
+      "revId": "270ea0358c34973c610d5a5e3bd702132337b164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+m+s\u003d",
+        "filename": "tests/yamlparser/fixtures/complete001.xml",
+        "patchSetId": 14
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-02-20T10:29:39Z",
+      "side": 1,
+      "message": "If you restore the missing \u0027lstrip()\u0027 around the code that manages the description string, this change will be unnecessary.",
+      "revId": "270ea0358c34973c610d5a5e3bd702132337b164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+1GA\u003d",
         "filename": "tests/yamlparser/fixtures/complete002.yaml",
         "patchSetId": 14
