@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+pqE\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-02-20T00:42:51Z",
+      "side": 1,
+      "message": "This will evaluate to False if the date[\u0027ssl\u0027] is set to false, preventing the user to override \"Use SSL\" global configuration.",
+      "revId": "04b21f7bcddda95fed7ba493b71837fa115419bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+pp0\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-02-20T00:42:51Z",
+      "side": 1,
+      "message": "I would prefer it to be properly converted for consistency with other boolean values in JJB:\n\n  str(data[\u0027ssl\u0027]).lower()",
+      "revId": "04b21f7bcddda95fed7ba493b71837fa115419bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+psQ\u003d",
+        "filename": "tests/publishers/fixtures/campfire001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-02-20T00:42:51Z",
+      "side": 1,
+      "message": "This should be true, not \u0027true\u0027.",
+      "revId": "04b21f7bcddda95fed7ba493b71837fa115419bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
