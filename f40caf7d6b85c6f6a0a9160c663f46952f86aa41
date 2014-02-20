@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAUX/+pv4\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-02-20T00:30:52Z",
+      "side": 1,
+      "message": "I would prefer an hyphen to be used to be consistent with JJB style.",
+      "revId": "f40caf7d6b85c6f6a0a9160c663f46952f86aa41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+pvs\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-02-20T00:30:52Z",
+      "side": 1,
+      "message": "The Jenkins plugin name is \"least load\". Description should use that name.",
+      "revId": "f40caf7d6b85c6f6a0a9160c663f46952f86aa41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+pwA\u003d",
+        "filename": "setup.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-02-20T00:30:52Z",
+      "side": 1,
+      "message": "I would prefer an hyphen to be used to be consistent with JJB style.",
+      "revId": "f40caf7d6b85c6f6a0a9160c663f46952f86aa41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAUX/+pvI\u003d",
+        "filename": "tests/properties/fixtures/least_load001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-02-20T00:30:52Z",
+      "side": 1,
+      "message": "Will need to fix here too.",
+      "revId": "f40caf7d6b85c6f6a0a9160c663f46952f86aa41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
