@@ -52,6 +52,10 @@ def main():
                          'including those not managed by Jenkins Job '
                          'Builder.')
     parser.add_argument('--conf', dest='conf', help='Configuration file')
+    parser.add_argument('--parallel', dest='parallel', action='store_true',
+                        default=False, help='Run in parallel')
+    parser.add_argument('--threads', dest='n_threads', type=int,
+                        default=None, help='Number of threads to use')
     parser.add_argument('-l', '--log_level', dest='log_level', default='info',
                         help="Log level (default: %(default)s)")
     parser.add_argument(
@@ -124,12 +128,16 @@ def main():
     elif options.command == 'update':
         logger.info("Updating jobs in {0} ({1})".format(
             options.path, options.names))
-        jobs = builder.update_job(options.path, options.names)
+        jobs = builder.update_jobs(options.path, options.names,
+                                   parallelize=options.parallel,
+                                   n_threads=options.n_threads)
         if options.delete_old:
             builder.delete_old_managed(keep=[x.name for x in jobs])
     elif options.command == 'test':
-        builder.update_job(options.path, options.name,
-                           output_dir=options.output_dir)
+        builder.update_jobs(options.path, options.name,
+                            output_dir=options.output_dir,
+                            parallelize=options.parallel,
+                            n_threads=options.n_threads)
 
 if __name__ == '__main__':
     sys.path.insert(0, '.')
