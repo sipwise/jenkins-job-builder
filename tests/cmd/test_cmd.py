@@ -83,10 +83,11 @@ class CmdTests(testtools.TestCase):
         cmd.execute(args, config)
         self.assertEqual(args.path, path_list)
 
-    @mock.patch('jenkins_jobs.cmd.Builder.update_job')
+    @mock.patch('jenkins_jobs.cmd.Builder.update_jobs')
     @mock.patch('jenkins_jobs.cmd.os.path.isdir')
+    @mock.patch('jenkins_jobs.cmd.os.listdir')
     @mock.patch('jenkins_jobs.cmd.os.walk')
-    def test_recursive_multi_path(self, os_walk_mock, isdir_mock,
+    def test_recursive_multi_path(self, os_walk_mock, listdir_mock, isdir_mock,
                                   update_job_mock):
         """
         Run test mode and pass multiple paths with recursive path option.
@@ -122,7 +123,11 @@ class CmdTests(testtools.TestCase):
             return os_walk_return_values[path_name]
 
         os_walk_mock.side_effect = os_walk_side_effects
+        listdir_mock = lambda x: tuple()
         isdir_mock.return_value = True
+
+        # get rid of the unused pylint warning
+        self.assertEqual(listdir_mock, listdir_mock)
 
         path_list = os_walk_return_values.keys()
         paths = []
@@ -138,13 +143,15 @@ class CmdTests(testtools.TestCase):
         config.readfp(StringIO(cmd.DEFAULT_CONF))
         cmd.execute(args, config)
 
-        update_job_mock.assert_called_with(paths, [], output=args.output_dir)
+        update_job_mock.assert_called_with(paths, [], output=args.output_dir,
+                                           n_workers=1)
 
         args = self.parser.parse_args(['test', multipath])
         config.set('job_builder', 'recursive', 'True')
         cmd.execute(args, config)
 
-        update_job_mock.assert_called_with(paths, [], output=args.output_dir)
+        update_job_mock.assert_called_with(paths, [], output=args.output_dir,
+                                           n_workers=1)
 
     def test_console_output(self):
         """
@@ -175,11 +182,12 @@ class CmdTests(testtools.TestCase):
         self.assertEqual(config.get('jenkins', 'url'),
                          "http://test-jenkins.with.non.default.url:8080/")
 
-    @mock.patch('jenkins_jobs.cmd.Builder.update_job')
+    @mock.patch('jenkins_jobs.cmd.Builder.update_jobs')
     @mock.patch('jenkins_jobs.cmd.os.path.isdir')
+    @mock.patch('jenkins_jobs.cmd.os.listdir')
     @mock.patch('jenkins_jobs.cmd.os.walk')
-    def test_recursive_path_option(self, os_walk_mock, isdir_mock,
-                                   update_job_mock):
+    def test_recursive_path_option(self, os_walk_mock, listdir_mock,
+                                   isdir_mock, update_job_mock):
         """
         Test handling of recursive path option
         """
@@ -195,19 +203,26 @@ class CmdTests(testtools.TestCase):
         isdir_mock.return_value = True
         paths = [path for path, _, _ in os_walk_mock.return_value]
 
+        listdir_mock = lambda x: tuple()
+
+        # get rid of the unused pylint warning
+        self.assertEqual(listdir_mock, listdir_mock)
+
         args = self.parser.parse_args(['test', '-r', '/jjb_configs'])
         args.output_dir = mock.MagicMock()
         config = configparser.ConfigParser()
         config.readfp(StringIO(cmd.DEFAULT_CONF))
         cmd.execute(args, config)   # probably better to fail here
 
-        update_job_mock.assert_called_with(paths, [], output=args.output_dir)
+        update_job_mock.assert_called_with(paths, [], output=args.output_dir,
+                                           n_workers=1)
 
         args = self.parser.parse_args(['test', '/jjb_configs'])
         config.set('job_builder', 'recursive', 'True')
         cmd.execute(args, config)   # probably better to fail here
 
-        update_job_mock.assert_called_with(paths, [], output=args.output_dir)
+        update_job_mock.assert_called_with(paths, [], output=args.output_dir,
+                                           n_workers=1)
 
     @mock.patch('jenkins_jobs.cmd.Builder.delete_job')
     def test_delete_single_job(self, delete_job_mock):
