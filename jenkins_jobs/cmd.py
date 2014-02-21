@@ -104,6 +104,9 @@ def create_parser():
     parser_update.add_argument('--delete-old', help='delete obsolete jobs',
                                action='store_true',
                                dest='delete_old', default=False,)
+    parser_update.add_argument('--workers', dest='n_workers', type=int,
+                               default=1, help='number of workers to use, 0 '
+                               'for autodetection and 1 for just one worker.')
 
     # subparser: test
 
@@ -116,6 +119,9 @@ def create_parser():
     parser_test.add_argument('-o', dest='output_dir', default=sys.stdout,
                              help='path to output XML')
     parser_test.add_argument('name', help='name(s) of job(s)', nargs='*')
+    parser_test.add_argument('--workers', dest='n_workers', type=int,
+                             default=1, help='number of workers to use, 0 '
+                             'for autodetection and 1 for just one worker.')
 
     # subparser: delete
 
@@ -288,12 +294,14 @@ def execute(options, config):
     elif options.command == 'update':
         logger.info("Updating jobs in {0} ({1})".format(
             options.path, options.names))
-        jobs = builder.update_job(options.path, options.names)
+        jobs = builder.update_jobs(options.path, options.names,
+                                   n_workers=options.n_workers)
         if options.delete_old:
             builder.delete_old_managed(keep=[x.name for x in jobs])
     elif options.command == 'test':
-        builder.update_job(options.path, options.name,
-                           output=options.output_dir)
+        builder.update_jobs(options.path, options.name,
+                            output=options.output_dir,
+                            n_workers=options.n_workers)
 
 
 def version():

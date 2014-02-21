@@ -139,6 +139,12 @@ You can also pass JJB a directory containing multiple job definition files::
 which will write XML files to the output directory for all of the jobs
 defined in the defs directory.
 
+You can also enable the parallel execution of the program passing the workers
+option with a value of 0, 2, or higer. Use 0 to run as many workers as cores in
+the host that runs it, and 2 or higher to specify the number of workers to use::
+
+  jenkins-jobs test --workers 0 /path/to/defs -o /path/to/output
+
 Updating Jobs
 ^^^^^^^^^^^^^
 When you're satisfied with the generated XML from the test, you can run::
@@ -157,6 +163,9 @@ To update a specific list of jobs, simply pass them as additional
 arguments after the job definition path. To update Foo1 and Foo2 run::
 
   jenkins-jobs update /path/to/defs Foo1 Foo2
+
+As with the test subcommand, update also accepts the workers option to run in
+parallel mode
 
 Passing Multiple Paths
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -247,6 +256,7 @@ There is also a command to delete **all** jobs.
 **WARNING**: Use with caution::
 
   jenkins-jobs delete-all
+
 
 Globbed Parameters
 ^^^^^^^^^^^^^^^^^^
