@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAUX/+bKw\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-02-21T08:32:43Z",
+      "side": 1,
+      "message": "The extra whitespace the lstrip removed was previously intended to be removed by a regex expression that was intended to correctly reformat XML that was incorrectly formatted by minidom. When a more comprehensive solution was put in place the lstrip was added to ensure the extra whitespace wasn\u0027t added unless it was separating the magic description from a yaml specified description.\n\nFunctionaly probably not, but logically I would consider it bad practice to change behaviour in an unassociated commit, since it becomes more difficult for people looking back at the git log to easily understand the intent of a code change.",
+      "parentUuid": "AAAAUX/+0R4\u003d",
+      "revId": "270ea0358c34973c610d5a5e3bd702132337b164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAUX/+m/I\u003d",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 14
