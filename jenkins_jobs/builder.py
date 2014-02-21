@@ -291,7 +291,7 @@ class YamlParser(object):
             description = data.get("description", '')
         if description is not None:
             data["description"] = description + \
-                self.get_managed_string().lstrip()
+                self.get_managed_string()
         for ep in pkg_resources.iter_entry_points(
                 group='jenkins_jobs.projects', name=kind):
             Mod = ep.load()
