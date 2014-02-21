@@ -29,10 +29,131 @@ import logging
 import copy
 import itertools
 import fnmatch
+import threading
+import Queue
+import time
+from multiprocessing import cpu_count
+from functools import wraps
 from jenkins_jobs.errors import JenkinsJobsException
+import traceback
 
 logger = logging.getLogger(__name__)
 MAGIC_MANAGE_STRING = "<!-- Managed by Jenkins Job Builder -->"
+
+
+class TaskFunc(dict):
+    """
+    Simple class to wrap around the information needed to run a function.
+    """
+    def __init__(self, n_ord, func, args=None, kwargs=None):
+        self['func'] = func
+        self['args'] = args or []
+        self['kwargs'] = kwargs or {}
+        self['ord'] = n_ord
+
+
+class Worker(threading.Thread):
+    """
+    Class that actually does the work, gets a TaskFunc through the queue,
+    runs its function with the passed parameters and returns the result
+    If the string 'done' is passed instead of a TaskFunc instance, the thread
+    will end.
+    """
+    def __init__(self, in_queue, out_queue):
+        threading.Thread.__init__(self)
+        self.in_queue = in_queue
+        self.out_queue = out_queue
+
+    def run(self):
+        while True:
+            task = self.in_queue.get()
+            if task == 'done':
+                return
+            try:
+                res = task['func'](*task['args'],
+                                   **task['kwargs'])
+            except Exception, exc:
+                res = exc
+                traceback.print_exc()
+            self.out_queue.put((task['ord'], res))
+
+
+def parallelize(func):
+    @wraps(func)
+    def parallelized(*args, **kwargs):
+        """
+        This function will spawn threads and run the decorated function in
+        parallel on the threads. It will not ensure the thread safety of the
+        decorated function (the decorated function should be thread safe by
+        itself). It accepts two special parameters:
+
+        :arg list parallelize: list of the arguments to pass to each of the
+        runs, the results of each run will be returned in the same order.
+        :arg int n_threads: number of threads to use, will autodetect the
+        number of cores and use that by default.
+
+        Example:
+
+        > @parallelize
+        > def sample(param1, param2, param3):
+        >     return param1 + param2 + param3
+        >
+        > sample('param1', param2='val2',
+        >        parallelize=[
+        >            {'param3': 'val3'},
+        >            {'param3': 'val4'},
+        >            {'param3': 'val5'},
+        >        ])
+        >
+        ['param1val2val3', 'param1val2val4', 'param1val2val5']
+
+        This will run the function `parallelized_function` 3 times, in
+        parallel (depending on the number of detected cores) and return an
+        array with the results of the executions in the same order the
+        parameters were passed.
+        """
+        if 'parallelize' not in kwargs:
+            return func(*args, **kwargs)
+        ## prepare the workers
+        n_threads = None
+        if 'n_threads' in kwargs:
+            n_threads = kwargs.pop('n_threads')
+        ## If no number of threads passed or passed 0
+        if not n_threads:
+            n_threads = cpu_count()
+        logging.debug("Running parallel %d threads" % n_threads)
+        thread_pool = []
+        in_queue = Queue.Queue()
+        out_queue = Queue.Queue()
+        for n_thread in range(n_threads):
+            new_worker = Worker(in_queue, out_queue)
+            new_worker.setDaemon(True)
+            logging.debug("Spawning thread %d" % n_thread)
+            new_worker.start()
+            thread_pool.append(new_worker)
+        ## Feed the workers
+        p_kwargs = kwargs.pop('parallelize')
+        n_ord = 0
+        for f_kwargs in p_kwargs:
+            f_kwargs.update(kwargs)
+            in_queue.put(TaskFunc(n_ord, func, args, f_kwargs))
+            n_ord += 1
+        for _ in range(n_threads):
+            in_queue.put('done')
+        ## Wait for the results
+        logging.debug("Waiting for threads to finish processing")
+        results = []
+        for _ in p_kwargs:
+            new_res = out_queue.get()
+            results.append(new_res)
+        ## cleanup
+        for worker in thread_pool:
+            worker.join()
+        ## Reorder the results
+        results = [r[1] for r in sorted(results)]
+        logging.debug("Parallel task finished")
+        return results
+    return parallelized
 
 
 # Python <= 2.7.3's minidom toprettyxml produces broken output by adding
@@ -462,11 +583,17 @@ class CacheStorage(object):
             return False
         return True
 
+    def save(self):
+        yfile = file(self.cachefilename, 'w')
+        yaml.dump(self.data, yfile)
+        yfile.close()
+
 
 class Jenkins(object):
     def __init__(self, url, user, password):
         self.jenkins = jenkins.Jenkins(url, user, password)
 
+    @parallelize
     def update_job(self, job_name, xml):
         if self.is_job(job_name):
             logger.info("Reconfiguring jenkins job {0}".format(job_name))
@@ -546,22 +673,43 @@ class Builder(object):
             self.jenkins.delete_job(job)
             if(self.cache.is_cached(job)):
                 self.cache.set(job, '')
+        self.cache.save()
 
     def delete_all_jobs(self):
         jobs = self.jenkins.get_jobs()
         for job in jobs:
             self.delete_job(job['name'])
 
-    def update_job(self, fn, names=None, output_dir=None):
+    @parallelize
+    def changed(self, job):
+        md5 = job.md5()
+        changed = self.ignore_cache or self.cache.has_changed(job.name, md5)
+        if not changed:
+            logger.debug("'{0}' has not changed".format(job.name))
+        return changed
+
+    def update_jobs(self, fn, names=None, output_dir=None,
+                    parallelize=False, n_threads=None):
+        orig = time.time()
         self.load_files(fn)
         self.parser.generateXML(names)
+        step = time.time()
+        logging.debug('%d XML files generated in %ss'
+                      % (len(self.parser.jobs), str(step - orig)))
 
         self.parser.jobs.sort(lambda a, b: cmp(a.name, b.name))
 
-        for job in self.parser.jobs:
-            if names and not matches(job.name, names):
-                continue
-            if output_dir:
+        ## Filter by name if any
+        logging.debug('Filtering %d jobs by name' % len(self.parser.jobs))
+        if names:
+            jobs = [job for job in self.parser.jobs
+                    if matches(job.name, names)]
+        else:
+            jobs = self.parser.jobs
+
+        ## Write xmls (or just print) if output_dir passed and finish
+        if output_dir:
+            for job in jobs:
                 if names:
                     print job.output()
                     continue
@@ -570,16 +718,37 @@ class Builder(object):
                 f = open(fn, 'w')
                 f.write(job.output())
                 f.close()
-                continue
-            md5 = job.md5()
-            if (self.jenkins.is_job(job.name)
-                    and not self.cache.is_cached(job.name)):
-                old_md5 = self.jenkins.get_job_md5(job.name)
-                self.cache.set(job.name, old_md5)
+            return self.parser.jobs
 
-            if self.cache.has_changed(job.name, md5) or self.ignore_cache:
-                self.jenkins.update_job(job.name, job.output())
-                self.cache.set(job.name, md5)
-            else:
-                logger.debug("'{0}' has not changed".format(job.name))
+        ## Filter out the jobs that did not change
+        logging.debug('Filtering %d jobs for changed jobs' % len(jobs))
+        step = time.time()
+        jobs = [job for job in jobs
+                if self.changed(job)]
+        logging.debug("Filtered for changed jobs in %ss"
+                      % (time.time() - step))
+
+        ## Update the jobs
+        logging.debug('Updating jobs')
+        step = time.time()
+        if parallelize:
+            p_params = [{'job': job} for job in jobs]
+            results = self.update_job(n_threads=n_threads,
+                                      parallelize=p_params)
+            print "Parsing results"
+            for result in results:
+                if isinstance(result, Exception):
+                    raise result
+        else:
+            for job in jobs:
+                self.update_job(job)
+        self.cache.save()
+        print "Updated %d jobs in %ss" % (len(jobs),
+                                          time.time() - step)
+        print "Total run took %ss" % (time.time() - orig)
         return self.parser.jobs
+
+    @parallelize
+    def update_job(self, job):
+        self.jenkins.update_job(job.name, job.output())
+        self.cache.set(job.name, job.md5())
