@@ -73,6 +73,9 @@ def main(argv=None):
                          'including those not managed by Jenkins Job '
                          'Builder.')
     parser.add_argument('--conf', dest='conf', help='configuration file')
+    parser.add_argument('--threads', dest='n_threads', type=int, default=1,
+                        help='number of threads to use, 0 for autodetection '
+                        'and 1 for no parallel threads.')
     parser.add_argument('-l', '--log_level', dest='log_level', default='info',
                         help="log level (default: %(default)s)")
     parser.add_argument(
@@ -100,7 +103,7 @@ def main(argv=None):
         if os.path.isfile(localconf):
             conf = localconf
     config = ConfigParser.ConfigParser()
-    ## Load default config always
+    # Load default config always
     config.readfp(cStringIO.StringIO(DEFAULT_CONF))
     if options.command == 'test':
         logger.debug("Not reading config for test output generation")
@@ -170,12 +173,14 @@ def execute(options, config, logger):
     elif options.command == 'update':
         logger.info("Updating jobs in {0} ({1})".format(
             options.path, options.names))
-        jobs = builder.update_job(options.path, options.names)
+        jobs = builder.update_jobs(options.path, options.names,
+                                   n_threads=options.n_threads)
         if options.delete_old:
             builder.delete_old_managed(keep=[x.name for x in jobs])
     elif options.command == 'test':
-        builder.update_job(options.path, options.name,
-                           output=options.output_dir)
+        builder.update_jobs(options.path, options.name,
+                            output=options.output_dir,
+                            n_threads=options.n_threads)
 
 if __name__ == '__main__':
     sys.path.insert(0, '.')

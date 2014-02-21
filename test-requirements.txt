@@ -9,3 +9,4 @@ testscenarios
 testtools
 testrepository
 sphinxcontrib-programoutput
+mock
