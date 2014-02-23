@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//9w8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-02-23T11:04:01Z",
+      "side": 1,
+      "message": "I think you mis-understood, the lstrip() was not added to work around a minidom issue, it was added when the minidom issue was fixed and the broken regex was dropped to ensure the following:\n\nIf user set a description and the magic string was being added, the user description and custom magic string would be separated and clearly distinguishable. (optional)\n\nIf the user did not enter a custom description, so only the magic string was used, the resulting description would not be surrounded by excess whitespace exactly as if you used jenkins\u0027 UI to set the description (hard requiredment)",
+      "revId": "a1ad3b3655e5dcbe937b7259371491da33edde59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//9wI\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-02-23T11:04:01Z",
+      "side": 1,
+      "message": "If you decide that there should be no whitespace separating a user specified description and the managed_string, then the lstrip() could be removed, provided you also remove the leading \u0027\\n\\n\u0027 here as well.",
+      "revId": "a1ad3b3655e5dcbe937b7259371491da33edde59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//9xI\u003d",
+        "filename": "tests/yamlparser/fixtures/complete001.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-02-23T11:04:01Z",
+      "side": 1,
+      "message": "If you entered a description into jenkins via the standard UI, it does not prefix descriptions with additional whitespace.",
+      "revId": "a1ad3b3655e5dcbe937b7259371491da33edde59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
