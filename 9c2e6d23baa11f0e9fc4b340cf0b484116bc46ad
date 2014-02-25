@@ -34,6 +34,24 @@
       "revId": "9c2e6d23baa11f0e9fc4b340cf0b484116bc46ad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//q4s\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-02-25T11:00:44Z",
+      "side": 1,
+      "message": "Jaroslav : indeed, lets add groovy trigger in a different patch.",
+      "parentUuid": "AAAAUX//Db0\u003d",
+      "revId": "9c2e6d23baa11f0e9fc4b340cf0b484116bc46ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
