@@ -1382,6 +1382,9 @@ def email_ext(parser, xml_parent, data):
     :arg str recipients: Comma separated list of emails
     :arg str reply-to: Comma separated list of emails that should be in
         the Reply-To header for this project (default is $DEFAULT_RECIPIENTS)
+    :arg str content-type: The content type of the emails sent. If not set, the
+        Jenkins plugin uses the value set on the main configuration page.
+        Possible values: 'html', 'text' or 'default' (default 'default')
     :arg str subject: Subject for the email, can include variables like
         ${BUILD_NUMBER} or even groovy or javascript code
     :arg str body: Content for the body of the email, can include variables
@@ -1447,7 +1450,8 @@ def email_ext(parser, xml_parent, data):
         base_email_ext(parser, ctrigger, data, 'StillUnstableTrigger')
     if data.get('pre-build', False):
         base_email_ext(parser, ctrigger, data, 'PreBuildTrigger')
-    XML.SubElement(emailext, 'contentType').text = 'default'
+    XML.SubElement(emailext, 'contentType').text = data.get(
+        'content-type', 'default')
     XML.SubElement(emailext, 'defaultSubject').text = data.get(
         'subject', '$DEFAULT_SUBJECT')
     XML.SubElement(emailext, 'defaultContent').text = data.get(
