@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//qqU\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1414,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-02-25T11:25:21Z",
+      "side": 0,
+      "message": "Double columns :(",
+      "revId": "07fa712f50668e2f8858cea33d27b60a96903b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
