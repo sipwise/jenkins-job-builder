@@ -1367,10 +1367,20 @@ def base_email_ext(parser, xml_parent, data, ttype):
     XML.SubElement(email, 'recipientList').text = ''
     XML.SubElement(email, 'subject').text = '$PROJECT_DEFAULT_SUBJECT'
     XML.SubElement(email, 'body').text = '$PROJECT_DEFAULT_CONTENT'
-    XML.SubElement(email, 'sendToDevelopers').text = 'false'
-    XML.SubElement(email, 'sendToRequester').text = 'false'
-    XML.SubElement(email, 'includeCulprits').text = 'false'
-    XML.SubElement(email, 'sendToRecipientList').text = 'true'
+    if 'send-to' in data:
+        XML.SubElement(email, 'sendToDevelopers').text = \
+            str('developers' in data['send-to']).lower()
+        XML.SubElement(email, 'sendToRequester').text = \
+            str('requestor' in data['send-to']).lower()
+        XML.SubElement(email, 'includeCulprits').text = \
+            str('culprits' in data['send-to']).lower()
+        XML.SubElement(email, 'sendToRecipientList').text = \
+            str('recipients' in data['send-to']).lower()
+    else:
+        XML.SubElement(email, 'sendToRequester').text = 'true'
+        XML.SubElement(email, 'sendToDevelopers').text = 'true'
+        XML.SubElement(email, 'includeCulprits').text = 'true'
+        XML.SubElement(email, 'sendToRecipientList').text = 'true'
 
 
 def email_ext(parser, xml_parent, data):
@@ -1411,11 +1421,20 @@ def email_ext(parser, xml_parent, data):
             * **both**
             * **only-parent**
             * **only-configurations**
+    :arg list send-to: list of recipients from the predefined groups
+        (all groups enabled by default)
+
+        :send-to values:
+            * **developers**
+            * **requestor**
+            * **culprits**
+            * **recipients**
 
     Example:
 
     .. literalinclude:: /../../tests/publishers/fixtures/email-ext001.yaml
     """
+
     emailext = XML.SubElement(xml_parent,
                               'hudson.plugins.emailext.ExtendedEmailPublisher')
     if 'recipients' in data:
