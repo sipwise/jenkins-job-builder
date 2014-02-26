@@ -30,10 +30,12 @@ import re
 import pkg_resources
 from pprint import pformat
 import logging
+import socket
 import copy
 import itertools
 import fnmatch
 import six
+import time
 from jenkins_jobs.errors import JenkinsJobsException
 import jenkins_jobs.local_yaml as local_yaml
 
@@ -698,6 +700,9 @@ class Jenkins(object):
     def get_jobs(self):
         return self.jenkins.get_jobs()
 
+    def get_info(self):
+        return self.jenkins.get_info()
+
     def is_managed(self, job_name):
         xml = self.jenkins.get_job_config(job_name)
         try:
@@ -844,3 +849,28 @@ class Builder(object):
             else:
                 logger.debug("'{0}' has not changed".format(job.name))
         return self.parser.xml_jobs
+
+    def wait_for_jenkins(self, seconds=0):
+        if not seconds:
+            return True
+
+        saved_timeout = self.jenkins.jenkins.timeout
+        while seconds:
+            try:
+                # Reset socket timeout to it's default so we don't
+                # end up waiting ages
+                self.jenkins.jenkins.timeout = socket._GLOBAL_DEFAULT_TIMEOUT
+                if self.jenkins.get_info()['mode'] == 'NORMAL':
+                    return True
+            except KeyError:
+                pass  # Got JSON but mode not (yet) found
+            # Everything besides 'connection refused' (jenkins not
+            # yet listening) is a permanent error
+            except jenkins.JenkinsException as e:
+                if 'Connection refused' not in str(e):
+                    raise
+            finally:
+                self.jenkins.jenkins.timeout = saved_timeout
+            seconds -= 1
+            time.sleep(1)
+        return False
