@@ -39,3 +39,15 @@ class TestCaseTestBuilder(TestCase):
         # Trigger fetching the plugins from jenkins when accessing the property
         self.builder._plugins_list = None
         self.assertEqual(self.builder.plugins_list, ['p1', 'p2'])
+
+    @mock.patch.object(jenkins_jobs.builder.jenkins.Jenkins,
+                       'wait_for_normal_op', return_value=True)
+    def test_wait_for_ready_jenkins(self, jenkins_mock):
+        "Wait for a jenkins that is already working fine"
+        self.assertEqual(self.builder.wait_for_jenkins(5), True)
+
+    @mock.patch.object(jenkins_jobs.builder.jenkins.Jenkins,
+                       'wait_for_normal_op', return_value=False)
+    def test_wait_for_jenkins__timeout(self, jenkins_mock):
+        "Wait for a jenkins that doesn't start up in time"
+        self.assertEqual(self.builder.wait_for_jenkins(5), False)

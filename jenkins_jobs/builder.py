@@ -708,8 +708,8 @@ class Jenkins(object):
 
         return plugins_list
 
-    def get_jobs(self):
-        return self.jenkins.get_jobs()
+    def wait_for_normal_op(self, timeout):
+        return self.jenkins.wait_for_normal_op(timeout)
 
     def is_managed(self, job_name):
         xml = self.jenkins.get_job_config(job_name)
@@ -858,3 +858,6 @@ class Builder(object):
             else:
                 logger.debug("'{0}' has not changed".format(job.name))
         return self.parser.xml_jobs
+
+    def wait_for_jenkins(self, timeout):
+        return self.jenkins.wait_for_normal_op(timeout)

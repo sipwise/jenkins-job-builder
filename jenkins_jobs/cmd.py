@@ -118,6 +118,9 @@ def create_parser():
     parser.add_argument(
         '--flush-cache', action='store_true', dest='flush_cache',
         default=False, help='flush all the cache entries before updating')
+    parser.add_argument('--wait', help='Time (in seconds) to wait for '
+                        'jenkins to start', dest='wait', type=int,
+                        nargs='?', const=5)
     parser.add_argument('--version', dest='version', action='version',
                         version=version(),
                         help='show version')
@@ -240,6 +243,11 @@ def execute(options, config):
             else:
                 paths.append(path)
         options.path = paths
+
+    if (getattr(options, 'wait', 0) and
+        not builder.wait_for_jenkins(options.wait)):
+        raise JenkinsJobsException("Jenkins did not come up in %d seconds"
+                                   % options.wait)
 
     if options.command == 'delete':
         for job in options.name:
