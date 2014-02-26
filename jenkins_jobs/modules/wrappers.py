@@ -951,6 +951,24 @@ def delivery_pipeline(parser, xml_parent, data):
         'set-display-name', False)).lower()
 
 
+def matrix_tie_parent(parser, xml_parent, data):
+    """yaml: matrix-tie-parent
+    Tie parent to a node
+    Requires the Jenkins `Matrix Tie Parent Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Matrix+Tie+Parent+Plugin>`_
+
+    :arg str node: Name of the node.
+
+    Example::
+
+      wrappers:
+        - matrix-tie-parent:
+            node: Unix
+    """
+    mtp = XML.SubElement(xml_parent, 'matrixtieparent.BuildWrapperMtp')
+    XML.SubElement(mtp, 'labelName').text = data['node']
+
+
 class Wrappers(jenkins_jobs.modules.base.Base):
     sequence = 80
 
