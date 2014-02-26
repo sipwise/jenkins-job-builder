@@ -26,6 +26,7 @@ import xml.etree.ElementTree as XML
 import xml
 from xml.dom import minidom
 import jenkins
+from six.moves.urllib.error import URLError
 import re
 import pkg_resources
 from pprint import pformat
@@ -34,6 +35,7 @@ import copy
 import itertools
 import fnmatch
 import six
+import time
 from jenkins_jobs.errors import JenkinsJobsException
 import jenkins_jobs.local_yaml as local_yaml
 
@@ -615,6 +617,9 @@ class Jenkins(object):
     def get_jobs(self):
         return self.jenkins.get_jobs()
 
+    def get_info(self):
+        return self.jenkins.get_info()
+
     def is_managed(self, job_name):
         xml = self.jenkins.get_job_config(job_name)
         try:
@@ -754,3 +759,26 @@ class Builder(object):
             else:
                 logger.debug("'{0}' has not changed".format(job.name))
         return self.parser.xml_jobs
+
+    def wait_for_jenkins(self, seconds=0):
+        if not seconds:
+            return True
+
+        while seconds:
+            try:
+                if self.jenkins.get_info()['mode'] == 'NORMAL':
+                    return True
+            except KeyError:
+                pass  # Got JSON but mode not (yet) found
+            except AttributeError:
+                # python-jenkins throws this trying to decode None in
+                # maybe_add_crumb if jenkins is not yet listing
+                pass
+            except URLError as e:
+                # Everything besides connection refused is a
+                # permanent error
+                if e.args[0].errno != errno.ECONNREFUSED:
+                    raise
+            seconds -= 1
+            time.sleep(1)
+        return False
