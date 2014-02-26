@@ -198,6 +198,9 @@ class Jenkins(object):
             self._job_list = None
         return self.jobs
 
+    def wait_for_normal_op(self, timeout):
+        return self.jenkins.wait_for_normal_op(timeout)
+
     def is_managed(self, job_name):
         xml = self.jenkins.get_job_config(job_name)
         try:
@@ -425,3 +428,6 @@ class Builder(object):
                      'will change in future versions to the signature of the '
                      'new parallel_update_job')
         return self.update_jobs(input_fn, jobs_glob, output)
+
+    def wait_for_jenkins(self, timeout):
+        return self.jenkins.wait_for_normal_op(timeout)
