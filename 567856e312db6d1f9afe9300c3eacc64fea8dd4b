@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVX//0Bk\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-02-28T04:41:30Z",
+      "side": 1,
+      "message": "probably should update doc as well:  \nhttps://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/doc/source/installation.rst#n20",
+      "revId": "567856e312db6d1f9afe9300c3eacc64fea8dd4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
