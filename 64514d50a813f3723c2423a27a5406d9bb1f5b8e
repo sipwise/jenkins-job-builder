@@ -34,6 +34,24 @@
       "revId": "64514d50a813f3723c2423a27a5406d9bb1f5b8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//oaQ\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-03-02T10:46:42Z",
+      "side": 1,
+      "message": "Maybe we should not set them at all then catch the exception thrown when attempting to access a missing option and then pass None to Jenkins.\n\n \u003e\u003e\u003e import ConfigParser\n \u003e\u003e\u003e c \u003d ConfigParser.ConfigParser()\n \u003e\u003e\u003e c.add_section(\u0027jenkins\u0027)\n \u003e\u003e\u003e c.get(\"jenkins\",\"foo\")\n ConfigParser.NoOptionError: No option \u0027foo\u0027 in section: \u0027jenkins\u0027\n \u003e\u003e\u003e\n\nWould need to add comment to explain why user and password are not populated with defaults.",
+      "parentUuid": "AAAAU3//iYU\u003d",
+      "revId": "64514d50a813f3723c2423a27a5406d9bb1f5b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
