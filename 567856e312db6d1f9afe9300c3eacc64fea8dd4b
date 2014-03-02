@@ -16,6 +16,24 @@
       "revId": "567856e312db6d1f9afe9300c3eacc64fea8dd4b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVX//oeQ\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-03-02T09:56:35Z",
+      "side": 1,
+      "message": "Indeed maintaining documentation is nicer. Good catch!",
+      "parentUuid": "AAAAVX//0Bk\u003d",
+      "revId": "567856e312db6d1f9afe9300c3eacc64fea8dd4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
