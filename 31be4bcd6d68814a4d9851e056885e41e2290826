@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVX//ofU\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3236,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-03-02T09:52:01Z",
+      "side": 1,
+      "message": "I find the cc-* tc-* a bit non obvious. What about using lists such as the xunit publisher ( tests/publishers/fixtures/xunit001.yaml ). Ie:\n\n - ruby-metrics:\n    target:\n        - coverage:\n            healthy: 80\n            unhealthy: 0\n            unstable: 0\n        - total-coverage: \n            healthy: 80\n            unhealthy: 0\n            unstable: 0",
+      "revId": "31be4bcd6d68814a4d9851e056885e41e2290826",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
