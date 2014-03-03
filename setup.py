@@ -168,6 +168,7 @@ setuptools.setup(
             'pipeline=jenkins_jobs.modules.publishers:pipeline',
             'plot=jenkins_jobs.modules.publishers:plot',
             'post-tasks=jenkins_jobs.modules.publishers:post_tasks',
+            'postbuildscript=jenkins_jobs.modules.publishers:postbuildscript',
             'robot=jenkins_jobs.modules.publishers:robot',
             'scp=jenkins_jobs.modules.publishers:scp',
             'sloccount=jenkins_jobs.modules.publishers:sloccount',
