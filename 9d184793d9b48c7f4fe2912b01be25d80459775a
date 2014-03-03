@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//26k\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3395,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-03-03T19:13:37Z",
+      "side": 1,
+      "message": "I would prefer an error to be raised if the target name is invalid or not supported. Someone could end up with this config and JJB would still be happy which would be strange IMO:\n\n  publishers:\n    - ruby-metrics:\n        report-dir: \"coverage/rcov\"\n        target:\n          - total-coverage:\n               healthy: 80\n               unhealthy: 0\n               unstable: 0\n          - baboon-coverage:\n                 healthy: 80\n                 unhealthy: 0\n                 unstable: 0",
+      "revId": "9d184793d9b48c7f4fe2912b01be25d80459775a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//26w\u003d",
+        "filename": "tests/publishers/fixtures/ruby-metrics.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-03-03T19:13:37Z",
+      "side": 1,
+      "message": "I would prefer it to be named code-coverage to better reflect its purpose and the caption used in UI.",
+      "revId": "9d184793d9b48c7f4fe2912b01be25d80459775a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
