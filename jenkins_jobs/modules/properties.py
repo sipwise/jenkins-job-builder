@@ -554,6 +554,24 @@ def delivery_pipeline(parser, xml_parent, data):
     XML.SubElement(pipeline, 'taskName').text = data.get('task', '')
 
 
+def zeromq_event(parser, xml_parent, data):
+    """yaml: zeromq-event
+    Requires the Jenkins `ZMQ Event Publisher.
+    <https://github.com/cboylan/zmq-event-publisher.git>`_
+
+    Example:
+
+    .. literalinclude:: \
+            /../../tests/properties/fixtures/zeromq-event.yaml
+
+    """
+
+    zmq_event = XML.SubElement(xml_parent,
+                               'org.jenkinsci.plugins.'
+                               'ZMQEventPublisher.HudsonNotificationProperty')
+    XML.SubElement(zmq_event, 'enabled').text = 'true'
+
+
 class Properties(jenkins_jobs.modules.base.Base):
     sequence = 20
 
