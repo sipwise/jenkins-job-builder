@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//3Ak\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1387,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-03-03T19:07:24Z",
+      "side": 1,
+      "message": "Actually, possible values are text/plain, text/html and default.",
+      "revId": "dd23abb46778380c302a7fe9f9615e9c2e5fcfeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//2/U\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1454,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-03-03T19:07:24Z",
+      "side": 1,
+      "message": "Is it worth validating the input value?",
+      "revId": "dd23abb46778380c302a7fe9f9615e9c2e5fcfeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
