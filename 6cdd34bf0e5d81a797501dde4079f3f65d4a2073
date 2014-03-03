@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//4yA\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2423,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-03-03T16:23:31Z",
+      "side": 1,
+      "message": "The defaults are:\n onsuccess: true\n onfailure: false\n\nWhich mean the post action will never run on failure. If you want the post build to always run, you would have to set:\n\n onsuccess: false\n onfailure: false\n\nI am not sure how to expose it properly.",
+      "revId": "6cdd34bf0e5d81a797501dde4079f3f65d4a2073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
