@@ -73,6 +73,10 @@ setuptools.setup(
             'sbt=jenkins_jobs.modules.builders:sbt',
             'shell=jenkins_jobs.modules.builders:shell',
             'trigger-builds=jenkins_jobs.modules.builders:trigger_builds',
+            ('critical-block-start=jenkins_jobs.modules.builders:'
+             'critical_block_start'),
+            ('critical-block-end=jenkins_jobs.modules.builders:'
+             'critical_block_end'),
         ],
         'jenkins_jobs.reporters': [
             'email=jenkins_jobs.modules.reporters:email',
@@ -230,6 +234,7 @@ setuptools.setup(
              'workspace_cleanup'),
             ('delivery-pipeline=jenkins_jobs.modules.wrappers:'
              'delivery_pipeline'),
+            'exclusion=jenkins_jobs.modules.wrappers:exclusion',
         ],
         'jenkins_jobs.modules': [
             'builders=jenkins_jobs.modules.builders:Builders',
