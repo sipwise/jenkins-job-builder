@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//q6U\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2014-03-04T18:55:53Z",
+      "side": 1,
+      "message": "Perhaps fn should be renamed to something like \u0027data\u0027 to make it clear that more than a file name is accepted.",
+      "revId": "e6011eb727b79e1d2ccc2868ec3bc487e14192c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//q4w\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2014-03-04T18:55:53Z",
+      "side": 1,
+      "message": "I am a bit concerned about this change in behavior. IOError is thrown if the file could not be opened. Maybe it couldn\u0027t be opened due to file permissions or a path tyop. There are many cases like that where the resulting string shouldn\u0027t be interpreted as valid yaml.\n\nI think we may want to deal with this at a slightly higher level and make it clear when we are parsing a string directly or parsing the data within a file? Perhaps a second method which can also call _parse_implementation that is called explicitly when appropriate?\n\nI am open to ideas though as I am not very thrilled with my suggestion either.",
+      "revId": "e6011eb727b79e1d2ccc2868ec3bc487e14192c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
