@@ -13,7 +13,8 @@
 # under the License.
 
 """
-The Zuul module adds triggers that configure jobs for use with Zuul_.
+The Zuul module adds triggers that configure jobs for use with Zuul_. It
+essentially add jobs parameters `expected by Zuul`_.
 
 To change the Zuul notification URL, set a global default::
 
@@ -24,12 +25,19 @@ To change the Zuul notification URL, set a global default::
 The above URL is the default.
 
 .. _Zuul: http://ci.openstack.org/zuul/
+.. _expected by Zuul: \
+http://ci.openstack.org/zuul/launchers.html#zuul-parameters
 """
 
 
 def zuul():
     """yaml: zuul
     Configure this job to be triggered by Zuul.
+
+    It adds parameters describing the change triggering the build such as the
+    branch name, change number and patchset.
+
+    See parameters `expected by Zuul`_.
 
     Example::
 
@@ -41,6 +49,12 @@ def zuul():
 def zuul_post():
     """yaml: zuul-post
     Configure this post-merge job to be triggered by Zuul.
+
+    It adds parameters describing the reference update triggering the build
+    which are the previous and next revisions in full (32 hexadecimal sha1) and
+    short form.
+
+    See parameters `expected by Zuul`_.
 
     Example::
 
