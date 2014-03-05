@@ -20,6 +20,12 @@ import os
 import sys
 
 
+DEFAULT_JENKINS_URL = "http://localhost:8080"
+DEFAULT_USER = None
+DEFAULT_PASSWORD = None
+DEFAULT_IGNORE_CACHE = False
+
+
 def confirm(question):
     answer = raw_input('%s (Y/N): ' % question).upper().strip()
     if not answer == 'Y':
@@ -56,7 +62,7 @@ def main():
                         help="Log level (default: %(default)s)")
     parser.add_argument(
         '--ignore-cache', action='store_true',
-        dest='ignore_cache', default=False,
+        dest='ignore_cache', default=DEFAULT_IGNORE_CACHE,
         help='Ignore the cache and update the jobs anyhow (that will only '
              'flush the specified jobs cache)')
     parser.add_argument(
@@ -85,12 +91,13 @@ def main():
         conffp = open(conf, 'r')
         config.readfp(conffp)
     elif options.command == 'test':
+        logger.debug("set param for test run")
         ## to avoid the 'no section' and 'no option' errors when testing
         config.add_section("jenkins")
-        config.set("jenkins", "url", "http://localhost:8080")
-        config.set("jenkins", "user", None)
-        config.set("jenkins", "password", None)
-        config.set("jenkins", "ignore_cache", False)
+        config.set("jenkins", "url", DEFAULT_JENKINS_URL)
+        config.set("jenkins", "user", DEFAULT_USER)
+        config.set("jenkins", "password", DEFAULT_PASSWORD)
+        config.set("jenkins", "ignore_cache", DEFAULT_IGNORE_CACHE)
         logger.debug("Not reading config for test output generation")
     else:
         raise jenkins_jobs.errors.JenkinsJobsException(
@@ -98,26 +105,33 @@ def main():
 
     logger.debug("Config: {0}".format(config))
 
-    # check the ignore_cache setting: first from command line,
-    # if not present check from ini file
-    ignore_cache = False
-    if options.ignore_cache:
-        ignore_cache = options.ignore_cache
-    elif config.has_option('jenkins', 'ignore_cache'):
-        ignore_cache = config.get('jenkins', 'ignore_cache')
-
     # workaround for python 2.6 interpolation error
     # https://bugs.launchpad.net/openstack-ci/+bug/1259631
     try:
+        url = config.get('jenkins', 'url')
+    except (TypeError, ConfigParser.NoOptionError):
+        url = DEFAULT_JENKINS_URL
+    try:
         user = config.get('jenkins', 'user')
     except (TypeError, ConfigParser.NoOptionError):
-        user = None
+        user = DEFAULT_USER
     try:
         password = config.get('jenkins', 'password')
     except (TypeError, ConfigParser.NoOptionError):
-        password = None
+        password = DEFAULT_PASSWORD
 
-    builder = jenkins_jobs.builder.Builder(config.get('jenkins', 'url'),
+    # check the ignore_cache setting: first from command line,
+    # if not present check from ini file
+    ignore_cache = DEFAULT_IGNORE_CACHE
+    if options.ignore_cache:
+        ignore_cache = options.ignore_cache
+    elif config.has_option('jenkins', 'ignore_cache'):
+        try:
+            ignore_cache = config.get('jenkins', 'ignore_cache')
+        except (TypeError, ConfigParser.NoOptionError):
+            pass
+
+    builder = jenkins_jobs.builder.Builder(url,
                                            user,
                                            password,
                                            config,
