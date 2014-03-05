@@ -33,6 +33,24 @@
       "revId": "e6011eb727b79e1d2ccc2868ec3bc487e14192c8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//h+Q\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 9736
+      },
+      "writtenOn": "2014-03-05T15:33:17Z",
+      "side": 1,
+      "message": "I\u0027m not sure if you are familiar with the original code which was a single method parse(self, fn) and the first line was: yaml.load(open(fn)) \nThis is the behavior I\u0027m trying to separate out. To that end I have kept the public method the same, though I agree it is now slightly less legible since fn can have multiple meanings. If this was from scratch, I would have named this method something like load_yaml() and had the parse method be the _parse_implementation. Since we have to support the existing user base this seemed like the safest approach. Totally up for suggestion here.\n\nIn this implementation though, it is easier to override the parse method to load however you want without having to worry about how the data itself is actually manipulated. Which is not the case today.",
+      "parentUuid": "AAAAVn//q4w\u003d",
+      "revId": "e6011eb727b79e1d2ccc2868ec3bc487e14192c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
