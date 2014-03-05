@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//n3Q\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3382,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2014-03-05T00:58:22Z",
+      "side": 1,
+      "message": "You can just set elname \u003d threashold_name.lower() here. No need for string interpolation.",
+      "revId": "cd5167d03d6eb8467dddd84cad41220b98fe3b1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
