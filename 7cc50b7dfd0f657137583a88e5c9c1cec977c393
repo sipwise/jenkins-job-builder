@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//fQs\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3353,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-05T19:45:22Z",
+      "side": 1,
+      "message": "could you please change to make it similar to the way the cobertura  \u0027target\u0027 param is documented?  it makes it easier to read in the sphinx generated doc.",
+      "revId": "7cc50b7dfd0f657137583a88e5c9c1cec977c393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
