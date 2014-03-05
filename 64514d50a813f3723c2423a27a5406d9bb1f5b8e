@@ -52,6 +52,24 @@
       "revId": "64514d50a813f3723c2423a27a5406d9bb1f5b8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//eGo\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-05T22:02:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVX//oaQ\u003d",
+      "revId": "64514d50a813f3723c2423a27a5406d9bb1f5b8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
