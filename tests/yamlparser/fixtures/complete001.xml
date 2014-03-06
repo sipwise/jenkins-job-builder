@@ -8,7 +8,7 @@
   <concurrentBuild>false</concurrentBuild>
   <canRoam>true</canRoam>
   <properties/>
-  <scm class="hudson.plugins.git.GitSCM">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.0">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -22,25 +22,23 @@
         <name>origin/**</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
-    <excludedUsers/>
-    <buildChooser class="com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritTriggerBuildChooser"/>
-    <disableSubmodules>false</disableSubmodules>
-    <recursiveSubmodules>false</recursiveSubmodules>
-    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
-    <authorOrCommitter>false</authorOrCommitter>
-    <clean>true</clean>
-    <wipeOutWorkspace>true</wipeOutWorkspace>
-    <pruneBranches>true</pruneBranches>
-    <remotePoll>false</remotePoll>
-    <gitTool>Default</gitTool>
-    <submoduleCfg class="list"/>
-    <relativeTargetDir/>
-    <reference/>
-    <gitConfigName/>
-    <gitConfigEmail/>
-    <skipTag>false</skipTag>
-    <scmName/>
-    <useShallowClone>false</useShallowClone>
+    <extensions>
+      <hudson.plugins.git.extensions.impl.UserExclusion/>
+      <hudson.plugins.git.extensions.impl.PathRestriction/>
+      <hudson.plugins.git.extensions.impl.BuildChooserSetting>
+        <buildChooser class="com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritTriggerBuildChooser">
+          <separator>#</separator>
+        </buildChooser>
+      </hudson.plugins.git.extensions.impl.BuildChooserSetting>
+      <hudson.plugins.git.extensions.impl.SubmoduleOption>
+        <disableSubmodules>false</disableSubmodules>
+        <recursiveSubmodules>false</recursiveSubmodules>
+      </hudson.plugins.git.extensions.impl.SubmoduleOption>
+      <hudson.plugins.git.extensions.impl.CloneOption/>
+      <hudson.plugins.git.extensions.impl.UserIdentity/>
+      <hudson.plugins.git.extensions.impl.CleanCheckout/>
+      <hudson.plugins.git.extensions.impl.PruneStaleBranch/>
+    </extensions>
     <browser class="hudson.plugins.git.browser.GitWeb">
       <url>http://review.openstack.org/gitweb?p=openstack-infra/jenkins-job-builder.git</url>
     </browser>

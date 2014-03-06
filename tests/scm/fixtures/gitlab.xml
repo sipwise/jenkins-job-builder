@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
-  <scm class="hudson.plugins.git.GitSCM">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@2.0">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -14,25 +14,21 @@
         <name>origin/master</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
-    <excludedUsers/>
-    <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser"/>
-    <disableSubmodules>false</disableSubmodules>
-    <recursiveSubmodules>false</recursiveSubmodules>
-    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
-    <authorOrCommitter>false</authorOrCommitter>
-    <clean>false</clean>
-    <wipeOutWorkspace>true</wipeOutWorkspace>
-    <pruneBranches>false</pruneBranches>
-    <remotePoll>false</remotePoll>
-    <gitTool>Default</gitTool>
-    <submoduleCfg class="list"/>
-    <relativeTargetDir/>
-    <reference/>
-    <gitConfigName/>
-    <gitConfigEmail/>
-    <skipTag>false</skipTag>
-    <scmName/>
-    <useShallowClone>false</useShallowClone>
+    <extensions>
+      <hudson.plugins.git.extensions.impl.UserExclusion/>
+      <hudson.plugins.git.extensions.impl.PathRestriction/>
+      <hudson.plugins.git.extensions.impl.BuildChooserSetting>
+        <buildChooser class="hudson.plugins.git.util.DefaultBuildChooser">
+          <separator>#</separator>
+        </buildChooser>
+      </hudson.plugins.git.extensions.impl.BuildChooserSetting>
+      <hudson.plugins.git.extensions.impl.SubmoduleOption>
+        <disableSubmodules>false</disableSubmodules>
+        <recursiveSubmodules>false</recursiveSubmodules>
+      </hudson.plugins.git.extensions.impl.SubmoduleOption>
+      <hudson.plugins.git.extensions.impl.CloneOption/>
+      <hudson.plugins.git.extensions.impl.UserIdentity/>
+    </extensions>
     <browser class="hudson.plugins.git.browser.GitLab">
       <url>https://gitlab.example.com/foo/bar/</url>
       <version>5.2</version>
