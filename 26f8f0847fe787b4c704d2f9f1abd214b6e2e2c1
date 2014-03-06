@@ -16,6 +16,24 @@
       "revId": "26f8f0847fe787b4c704d2f9f1abd214b6e2e2c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//auY\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1383,
+      "author": {
+        "id": 7604
+      },
+      "writtenOn": "2014-03-06T07:32:50Z",
+      "side": 1,
+      "message": "I changed these default values because they are set to \u0027true\u0027 by default when you manually add this plugin to any job in Jenkins. So it makes Job Builder\u0027s behavior a bit more predictable for users who haven\u0027t used it before. I\u0027ll revert these values if it doesn\u0027t make sense.",
+      "parentUuid": "AAAAVn//a1g\u003d",
+      "revId": "26f8f0847fe787b4c704d2f9f1abd214b6e2e2c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
