@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//a1g\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1383,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2014-03-06T07:12:03Z",
+      "side": 1,
+      "message": "Out of curiosity why did these default values change?",
+      "revId": "26f8f0847fe787b4c704d2f9f1abd214b6e2e2c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
