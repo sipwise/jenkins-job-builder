@@ -16,6 +16,23 @@
       "revId": "ca9e31ec188f5f0516ef65a0b28a1a2a756ef9e0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//Tn0\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 560,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2014-03-06T22:45:55Z",
+      "side": 1,
+      "message": "This URL isn\u0027t correct, I have updated the README there to point folk at the new location. I admittedly did a poor job when we moved repo locations. Sorry about the confusion.\n\nNew location is https://git.openstack.org/cgit/openstack-infra/zmq-event-publisher",
+      "revId": "ca9e31ec188f5f0516ef65a0b28a1a2a756ef9e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
