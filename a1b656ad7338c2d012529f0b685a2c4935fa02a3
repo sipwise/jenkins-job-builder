@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//bLI\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1040,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-06T06:07:23Z",
+      "side": 1,
+      "message": "it\u0027s not clear to me how or where you would add the critical build wrapper to make this work.  could you please provide a complete example?",
+      "revId": "a1b656ad7338c2d012529f0b685a2c4935fa02a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//bK4\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1046,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-06T06:07:23Z",
+      "side": 1,
+      "message": "this doesn\u0027t seem like it would be a good fit for literalinclude but maybe a complete example would be better here?",
+      "revId": "a1b656ad7338c2d012529f0b685a2c4935fa02a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//bWQ\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 965,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-06T06:07:23Z",
+      "side": 1,
+      "message": "we are want to use test as examples so they will get tested and won\u0027t get outdated.  could you please replace this section with a literalinclude to one of your tests?  You can find examples of literalinclude usage in this file.",
+      "revId": "a1b656ad7338c2d012529f0b685a2c4935fa02a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
