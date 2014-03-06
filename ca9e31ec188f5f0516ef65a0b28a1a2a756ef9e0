@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//a+U\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-06T06:42:10Z",
+      "side": 1,
+      "message": "could you please add a short description as well?",
+      "revId": "ca9e31ec188f5f0516ef65a0b28a1a2a756ef9e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
