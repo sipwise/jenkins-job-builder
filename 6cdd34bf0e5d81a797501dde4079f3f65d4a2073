@@ -2,6 +2,91 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAVn//Wz4\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2360,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-06T17:21:13Z",
+      "side": 1,
+      "message": "how about a short description of this plugin?",
+      "revId": "6cdd34bf0e5d81a797501dde4079f3f65d4a2073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//WtQ\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2366,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-06T17:21:13Z",
+      "side": 1,
+      "message": "the \u0027Example:\u0027 should be on another line",
+      "revId": "6cdd34bf0e5d81a797501dde4079f3f65d4a2073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//Ws8\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2367,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-06T17:21:13Z",
+      "side": 1,
+      "message": "how about section for description of the parameters?",
+      "revId": "6cdd34bf0e5d81a797501dde4079f3f65d4a2073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//W0U\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2371,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-06T17:21:13Z",
+      "side": 1,
+      "message": "sp executes/execute",
+      "revId": "6cdd34bf0e5d81a797501dde4079f3f65d4a2073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//WiA\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2415,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-06T17:21:13Z",
+      "side": 1,
+      "message": "does this also check that passed in builder is valid?   For example \u0027shell\u0027 or \u0027ant\u0027 are valid, but \u0027cuckoo\u0027 builder is not valid.",
+      "revId": "6cdd34bf0e5d81a797501dde4079f3f65d4a2073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//4yA\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
@@ -13,6 +98,24 @@
       "writtenOn": "2014-03-03T16:23:31Z",
       "side": 1,
       "message": "The defaults are:\n onsuccess: true\n onfailure: false\n\nWhich mean the post action will never run on failure. If you want the post build to always run, you would have to set:\n\n onsuccess: false\n onfailure: false\n\nI am not sure how to expose it properly.",
+      "revId": "6cdd34bf0e5d81a797501dde4079f3f65d4a2073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//Wko\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2423,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-06T17:21:13Z",
+      "side": 1,
+      "message": "although this option is confusing, your implementation seems ok to me.  are there any combinations that would not at all?",
+      "parentUuid": "AAAAVn//4yA\u003d",
       "revId": "6cdd34bf0e5d81a797501dde4079f3f65d4a2073",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
