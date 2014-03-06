@@ -102,24 +102,19 @@ def git(self, xml_parent, data):
     # XXX somebody should write the docs for those with option name =
     # None so we have a sensible name/key for it.
     mapping = [
-        # option, xml name, default value (text), attributes (hard coded)
-        ("disable-submodules", 'disableSubmodules', False),
-        ("recursive-submodules", 'recursiveSubmodules', False),
-        (None, 'doGenerateSubmoduleConfigurations', False),
-        ("use-author", 'authorOrCommitter', False),
-        ("clean", 'clean', False),
-        ("wipe-workspace", 'wipeOutWorkspace', True),
-        ("prune", 'pruneBranches', False),
-        ("fastpoll", 'remotePoll', False),
-        ("git-tool", 'gitTool', "Default"),
-        (None, 'submoduleCfg', '', {'class': 'list'}),
-        ('basedir', 'relativeTargetDir', ''),
-        ('reference-repo', 'reference', ''),
-        ("git-config-name", 'gitConfigName', ''),
-        ("git-config-email", 'gitConfigEmail', ''),
-        ('skip-tag', 'skipTag', False),
-        ('scm-name', 'scmName', ''),
-        ("shallow-clone", "useShallowClone", False),
+        # option, xml name, default value
+        ("use-author", 'hudson.plugins.git.extensions.impl.'
+         'AuthorInChangelog', False),
+        ("clean", 'hudson.plugins.git.extensions.impl.'
+         'CleanCheckout', False),
+        ("wipe-workspace", 'hudson.plugins.git.extensions.impl.'
+         'WipeWorkspace', False),
+        ("prune", 'hudson.plugins.git.extensions.impl.'
+         'PruneStaleBranch', False),
+        ("fastpoll", 'hudson.plugins.git.extensions.impl.'
+         'DisableRemotePoll', True),
+        ('skip-tag', 'hudson.plugins.git.extensions.impl.'
+         'PerBuildTag', True)
     ]
 
     choosing_strategies = {
@@ -129,9 +124,11 @@ def git(self, xml_parent, data):
         'inverse': 'hudson.plugins.git.util.InverseBuildChooser',
     }
 
-    scm = XML.SubElement(xml_parent,
-                         'scm', {'class': 'hudson.plugins.git.GitSCM'})
+    scm = XML.SubElement(
+        xml_parent,
+        'scm', {'class': 'hudson.plugins.git.GitSCM', 'plugin': 'git@2.0'})
     XML.SubElement(scm, 'configVersion').text = '2'
+
     user = XML.SubElement(scm, 'userRemoteConfigs')
     huser = XML.SubElement(user, 'hudson.plugins.git.UserRemoteConfig')
     XML.SubElement(huser, 'name').text = data.get('name', 'origin')
@@ -141,28 +138,46 @@ def git(self, xml_parent, data):
         refspec = '+refs/heads/*:refs/remotes/origin/*'
     XML.SubElement(huser, 'refspec').text = refspec
     XML.SubElement(huser, 'url').text = data['url']
+
     if 'credentials-id' in data:
         XML.SubElement(huser, 'credentialsId').text = data['credentials-id']
+
     xml_branches = XML.SubElement(scm, 'branches')
     branches = data.get('branches', ['**'])
     for branch in branches:
         bspec = XML.SubElement(xml_branches, 'hudson.plugins.git.BranchSpec')
         XML.SubElement(bspec, 'name').text = branch
-    excluded_users = '\n'.join(data.get('excluded-users', []))
-    XML.SubElement(scm, 'excludedUsers').text = excluded_users
+
+    xml_extensions = XML.SubElement(scm, 'extensions')
+
+    user_exclusion = XML.SubElement(
+        xml_extensions,
+        'hudson.plugins.git.extensions.impl.UserExclusion')
+    for user in data.get('excluded-users', []):
+        XML.SubElement(user_exclusion, 'excludedUsers').text = user
+
+    path_restriction = XML.SubElement(
+        xml_extensions,
+        'hudson.plugins.git.extensions.impl.PathRestriction')
     if 'included-regions' in data:
-        include_string = '\n'.join(data['included-regions'])
-        XML.SubElement(scm, 'includedRegions').text = include_string
+        included = '\n'.join(data['included-regions'])
+        XML.SubElement(path_restriction, 'includedRegions').text = included
+
     if 'excluded-regions' in data:
-        exclude_string = '\n'.join(data['excluded-regions'])
-        XML.SubElement(scm, 'excludedRegions').text = exclude_string
+        excluded = '\n'.join(data['excluded-regions'])
+        XML.SubElement(path_restriction, 'excludedRegions').text = excluded
+
     if 'merge' in data:
         merge = data['merge']
-        name = merge.get('remote', 'origin')
-        branch = merge['branch']
-        urc = XML.SubElement(scm, 'userMergeOptions')
-        XML.SubElement(urc, 'mergeRemote').text = name
-        XML.SubElement(urc, 'mergeTarget').text = branch
+        prebuild_merge = XML.SubElement(
+            xml_extensions,
+            'hudson.plugins.git.extensions.impl.PreBuildMerge')
+        options = XML.SubElement(prebuild_merge, 'options')
+        XML.SubElement(options, 'mergeRemote').text = merge.get(
+            'remote',
+            'origin')
+        XML.SubElement(options, 'mergeTarget').text = merge['branch']
+        XML.SubElement(options, 'mergeStrategy').text = merge['strategy']
 
     try:
         choosing_strategy = choosing_strategies[data.get('choosing-strategy',
@@ -170,23 +185,59 @@ def git(self, xml_parent, data):
     except KeyError:
         raise ValueError('Invalid choosing-strategy %r' %
                          data.get('choosing-strategy'))
-    XML.SubElement(scm, 'buildChooser', {'class': choosing_strategy})
+    build_chooser_setting = XML.SubElement(
+        xml_extensions,
+        'hudson.plugins.git.extensions.impl.BuildChooserSetting')
+    build_chooser = XML.SubElement(
+        build_chooser_setting,
+        'buildChooser', {'class': choosing_strategy})
+    XML.SubElement(build_chooser, 'separator').text = '#'
+
+    submodule_option = XML.SubElement(
+        xml_extensions,
+        'hudson.plugins.git.extensions.impl.SubmoduleOption')
+    XML.SubElement(submodule_option, 'disableSubmodules').text = str(
+        data.get('disable-submodules', False)).lower()
+    XML.SubElement(submodule_option, 'recursiveSubmodules').text = str(
+        data.get('recursive-submodules', False)).lower()
+
+    if 'basedir' in data:
+        relative_target_dir = XML.SubElement(
+            xml_extensions,
+            'hudson.plugins.git.extensions.impl.RelativeTargetDirectory')
+        XML.SubElement(
+            relative_target_dir, 'relativeTargetDir').text = data['basedir']
+
+    clone_option = XML.SubElement(
+        xml_extensions,
+        'hudson.plugins.git.extensions.impl.CloneOption')
+    if 'reference-repo' in data:
+        XML.SubElement(clone_option, 'reference').text = data['reference-repo']
+    if data.get('shallow-clone', False):
+        XML.SubElement(clone_option, 'shallow').text = str(
+            data.get('shallow-clone', False)).lower()
+
+    user_identity = XML.SubElement(
+        xml_extensions, 'hudson.plugins.git.extensions.impl.UserIdentity')
+    if 'git-config-name' in data:
+        XML.SubElement(user_identity, 'name').text = data['git-config-name']
+    if 'git-config-email' in data:
+        XML.SubElement(user_identity, 'email').text = data['git-config-email']
+
+    if 'scm-name' in data:
+        scm_name = XML.SubElement(
+            xml_extensions, 'hudson.plugins.git.extensions.impl.ScmName')
+        XML.SubElement(scm_name, 'name').text = data['scm-name']
 
     for elem in mapping:
-        (optname, xmlname, val) = elem[:3]
-        attrs = {}
-        if len(elem) >= 4:
-            attrs = elem[3]
-        xe = XML.SubElement(scm, xmlname, attrs)
-        if optname and optname in data:
-            val = data[optname]
-        if type(val) == bool:
-            xe.text = str(val).lower()
-        else:
-            xe.text = val
+        (optname, xmlname, val) = elem
+        if optname in data and data[optname] != val:
+            XML.SubElement(xml_extensions, xmlname)
 
     if 'local-branch' in data:
-        XML.SubElement(scm, 'localBranch').text = data['local-branch']
+        local_branch = XML.SubElement(
+            xml_extensions, 'hudson.plugins.git.extensions.impl.LocalBranch')
+        XML.SubElement(local_branch, 'localBranch').text = data['local-branch']
 
     browser = data.get('browser', 'auto')
     browserdict = {'githubweb': 'GithubWeb',
