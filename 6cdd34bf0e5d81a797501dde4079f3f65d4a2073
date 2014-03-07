@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//LUo\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2360,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-03-07T21:11:12Z",
+      "side": 1,
+      "message": "Rewritten :-]",
+      "parentUuid": "AAAAVn//Wz4\u003d",
+      "revId": "6cdd34bf0e5d81a797501dde4079f3f65d4a2073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//WtQ\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-06T17:21:13Z",
       "side": 1,
       "message": "the \u0027Example:\u0027 should be on another line",
+      "revId": "6cdd34bf0e5d81a797501dde4079f3f65d4a2073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//LWk\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2366,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-03-07T21:11:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//WtQ\u003d",
       "revId": "6cdd34bf0e5d81a797501dde4079f3f65d4a2073",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//LTU\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2367,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-03-07T21:11:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//Ws8\u003d",
+      "revId": "6cdd34bf0e5d81a797501dde4079f3f65d4a2073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//W0U\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAVn//LTY\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2371,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-03-07T21:11:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAVn//W0U\u003d",
+      "revId": "6cdd34bf0e5d81a797501dde4079f3f65d4a2073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//WiA\u003d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
@@ -81,6 +153,24 @@
       "writtenOn": "2014-03-06T17:21:13Z",
       "side": 1,
       "message": "does this also check that passed in builder is valid?   For example \u0027shell\u0027 or \u0027ant\u0027 are valid, but \u0027cuckoo\u0027 builder is not valid.",
+      "revId": "6cdd34bf0e5d81a797501dde4079f3f65d4a2073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//LJ0\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2415,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-03-07T21:11:12Z",
+      "side": 1,
+      "message": "dispatch looks up the builder name (i.e. cuckoo, shell) in Jenkins job list of entry point. If it can find it, an exception is thrown.",
+      "parentUuid": "AAAAVn//WiA\u003d",
       "revId": "6cdd34bf0e5d81a797501dde4079f3f65d4a2073",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -116,6 +206,24 @@
       "side": 1,
       "message": "although this option is confusing, your implementation seems ok to me.  are there any combinations that would not at all?",
       "parentUuid": "AAAAVn//4yA\u003d",
+      "revId": "6cdd34bf0e5d81a797501dde4079f3f65d4a2073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//LK8\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2423,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-03-07T21:11:12Z",
+      "side": 1,
+      "message": "The options in the interface read as:\n\n Execute script only if build succeeds\n Execute script only if build fails\n\nIf you set them both to false, the post script always run. You can prevent them from running on success or failure by checking one of the two boxes.\n\nIf you check both (true, true), the post scripts are never run.\n\nMaybe I should abstract out the confusion with a single parameter \u0027run-on\u0027 which would take four parameters: success, failure, both, never.  That would be nicer to hack/read and let one pass it as a parameter.  Does that sound better to you?",
+      "parentUuid": "AAAAVn//Wko\u003d",
       "revId": "6cdd34bf0e5d81a797501dde4079f3f65d4a2073",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
