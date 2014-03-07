@@ -16,6 +16,24 @@
       "revId": "42998345728d44203aeaaaee52f07fff4e68e0b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//Sn0\u003d",
+        "filename": "jenkins_jobs/const.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-07T01:09:22Z",
+      "side": 1,
+      "message": "this code came from activestate site and anything on there is licnese by the \"PSF\" license.  the full license is here: \nhttp://docs.python.org/2/license.html",
+      "parentUuid": "AAAAVn//S28\u003d",
+      "revId": "42998345728d44203aeaaaee52f07fff4e68e0b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
