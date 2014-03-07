@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAVn//S28\u003d",
+        "filename": "jenkins_jobs/const.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2014-03-07T00:34:41Z",
+      "side": 1,
+      "message": "Whats with the license and copyright here? Did this come out of another openstack project?",
+      "revId": "42998345728d44203aeaaaee52f07fff4e68e0b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
