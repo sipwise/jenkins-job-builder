@@ -2801,7 +2801,7 @@ def ircbot(parser, xml_parent, data):
     matrix_dict = {'all': 'ALL',
                    'only-configurations': 'ONLY_CONFIGURATIONS',
                    'only-parent': 'ONLY_PARENT'}
-    matrix = data.get('matrix-notifier', 'only_configurations')
+    matrix = data.get('matrix-notifier', 'only-configurations')
     if matrix not in matrix_dict:
         raise JenkinsJobsException("matrix-notifier entered is not valid, "
                                    "must be one of: %s" %
