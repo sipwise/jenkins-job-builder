@@ -1392,7 +1392,7 @@ def email_ext(parser, xml_parent, data):
         javascript to hook into the Jenkins API itself
     :arg bool attach-build-log: Include build log in the email (default false)
     :arg str attachments: pattern of files to include as attachment (optional)
-    :arg bool always: Send an email for every result (default false)
+    :arg bool always: Send an email for every result (default true)
     :arg bool unstable: Send an email for an unstable result (default false)
     :arg bool first-failure: Send an email for just the first failure
         (default false)
@@ -1400,7 +1400,7 @@ def email_ext(parser, xml_parent, data):
     :arg bool aborted: Send an email if the build is aborted (default false)
     :arg bool regression: Send an email if there is a regression
         (default false)
-    :arg bool failure: Send an email if the build fails (default true)
+    :arg bool failure: Send an email if the build fails (default false)
     :arg bool improvement: Send an email if the build improves (default false)
     :arg bool still-failing: Send an email if the build is still failing
         (default false)
@@ -1427,7 +1427,7 @@ def email_ext(parser, xml_parent, data):
     else:
         XML.SubElement(emailext, 'recipientList').text = '$DEFAULT_RECIPIENTS'
     ctrigger = XML.SubElement(emailext, 'configuredTriggers')
-    if data.get('always', False):
+    if data.get('always', True):
         base_email_ext(parser, ctrigger, data, 'AlwaysTrigger')
     if data.get('unstable', False):
         base_email_ext(parser, ctrigger, data, 'UnstableTrigger')
@@ -1439,7 +1439,7 @@ def email_ext(parser, xml_parent, data):
         base_email_ext(parser, ctrigger, data, 'AbortedTrigger')
     if data.get('regression', False):
         base_email_ext(parser, ctrigger, data, 'RegressionTrigger')
-    if data.get('failure', True):
+    if data.get('failure', False):
         base_email_ext(parser, ctrigger, data, 'FailureTrigger')
     if data.get('improvement', False):
         base_email_ext(parser, ctrigger, data, 'ImprovementTrigger')
