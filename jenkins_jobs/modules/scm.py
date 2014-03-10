@@ -470,6 +470,38 @@ def tfs(self, xml_parent, data):
                                                   'Browser'})
 
 
+def workspace(self, xml_parent, data):
+    """yaml: workspace
+    Specifies the cloned workspace for this job to use as a SCM source.
+    Requires the Jenkins `Clone Workspace SCM Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Clone+Workspace+SCM+Plugin>`_
+
+    The job the workspace is cloned from must be configured with an
+    clone-workspace publisher
+
+    :arg str parent-job: The name of the parent job to clone the
+        workspace from.
+    :arg str criteria: Set the criteria to determine what build of the parent
+        project to use. Can be one of 'Any', 'Not Failed' or 'Successful'.
+        (default: Any)
+
+
+    Example:
+
+      scm:
+        - workspace:
+           parent-job: "upstream-project"
+           criteria: "Successful"
+
+    """
+    workspace = XML.SubElement(xml_parent, 'scm', {'class': 'hudson.plugins.'
+                               'cloneworkspace.CloneWorkspaceSCM'})
+    XML.SubElement(workspace, 'parentJobName').text = str(
+        data.get('parent-job', ''))
+    XML.SubElement(workspace, 'criteria').text = str(
+        data.get('criteria', 'Any'))
+
+
 class SCM(jenkins_jobs.modules.base.Base):
     sequence = 30
 
