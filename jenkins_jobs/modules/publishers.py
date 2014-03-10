@@ -1797,6 +1797,21 @@ def cifs(parser, xml_parent, data):
                       plugin_reference_tag)
 
 
+def cigame(parser, xml_parent, data):
+    """yaml: ci-game
+    This plugin introduces a game where users gets point
+    on improving the builds.
+    Requires the Jenkins `The Continuous Integration Game plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/
+    The+Continuous+Integration+Game+plugin>`_
+
+    Example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/cigame.yaml
+    """
+    XML.SubElement(xml_parent, 'hudson.plugins.cigame.GamePublisher')
+
+
 def sonar(parser, xml_parent, data):
     """yaml: sonar
     Sonar plugin support.
