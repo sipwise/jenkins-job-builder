@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//714\u003d",
+        "filename": "tests/publishers/fixtures/email-ext002.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-12T20:46:22Z",
+      "side": 1,
+      "message": "please replace tab with space",
+      "revId": "487f687cf2fbe1545fbf941ad62e7001c37add91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
