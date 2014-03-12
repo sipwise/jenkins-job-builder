@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//7rg\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2738,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-12T20:58:10Z",
+      "side": 1,
+      "message": "would you mind replacing this example section with a literalinclude to a test?",
+      "revId": "5011fcd6e6411f5d94ac077fecb4408ae77c2baf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
