@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//8ys\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1384,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-12T18:25:32Z",
+      "side": 1,
+      "message": "+1 for quiet by default.",
+      "revId": "711b39f36facb1c7448ce632e47525c789470188",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
