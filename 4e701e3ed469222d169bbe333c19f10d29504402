@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//73s\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 501,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-12T20:34:05Z",
+      "side": 1,
+      "message": "could you please add validation of this param?  something like this.. http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/modules/publishers.py#n333",
+      "revId": "4e701e3ed469222d169bbe333c19f10d29504402",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
