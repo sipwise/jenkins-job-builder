@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAWH//7pM\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-12T21:02:12Z",
+      "side": 1,
+      "message": "we are moving to use test as examples.  would you mind replacing this section with a literalinclude reference to the test?  for an example take a look at the git one above.",
+      "revId": "4e701e3ed469222d169bbe333c19f10d29504402",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH//73s\u003d",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 1
