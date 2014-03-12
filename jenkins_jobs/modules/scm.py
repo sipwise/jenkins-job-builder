@@ -21,6 +21,7 @@ which accepts any number of scm definitions.
 Note: Adding more than one scm definition requires the Jenkins `Multiple
 SCMs plugin.
 <https://wiki.jenkins-ci.org/display/JENKINS/Multiple+SCMs+Plugin>`_
+Multiple Git remotes can be set up using the ``remotes`` attribute.
 
 **Component**: scm
   :Macro: scm
@@ -44,6 +45,12 @@ def git(self, xml_parent, data):
     :arg str credentials-id: ID of credentials to use to connect (optional)
     :arg str refspec: refspec to fetch
     :arg str name: name to fetch
+    :arg list(str) remotes: list of remotes to set up (optional, only needed if
+      multiple remotes need to be set up)
+        :Remote:
+            * **url** (`string`) - url of remote repo
+            * **credentials-id** - ID of credentials to use to connect
+                (optional)
     :arg list(str) branches: list of branch specifiers to build
     :arg list(str) excluded-users: list of users to ignore revisions from
       when polling for changes. (if polling is enabled)
@@ -133,16 +140,29 @@ def git(self, xml_parent, data):
                          'scm', {'class': 'hudson.plugins.git.GitSCM'})
     XML.SubElement(scm, 'configVersion').text = '2'
     user = XML.SubElement(scm, 'userRemoteConfigs')
-    huser = XML.SubElement(user, 'hudson.plugins.git.UserRemoteConfig')
-    XML.SubElement(huser, 'name').text = data.get('name', 'origin')
-    if 'refspec' in data:
-        refspec = data['refspec']
+    if 'remotes' in data:
+        for remoteData in data['remotes']:
+            huser = XML.SubElement(user, 'hudson.plugins.git.UserRemoteConfig')
+            remoteName = remoteData.keys()[0]
+            XML.SubElement(huser, 'name').text = remoteName
+            remoteParams = remoteData.values()[0]
+            remoteURL = remoteParams['url']
+            XML.SubElement(huser, 'url').text = remoteURL
+            if 'credentials-id' in remoteParams:
+                credentialsId = remoteParams['credentials-id']
+                XML.SubElement(huser, 'credentialsId').text = credentialsId
     else:
-        refspec = '+refs/heads/*:refs/remotes/origin/*'
-    XML.SubElement(huser, 'refspec').text = refspec
-    XML.SubElement(huser, 'url').text = data['url']
-    if 'credentials-id' in data:
-        XML.SubElement(huser, 'credentialsId').text = data['credentials-id']
+        huser = XML.SubElement(user, 'hudson.plugins.git.UserRemoteConfig')
+        XML.SubElement(huser, 'name').text = data.get('name', 'origin')
+        if 'refspec' in data:
+            refspec = data['refspec']
+        else:
+            refspec = '+refs/heads/*:refs/remotes/origin/*'
+        XML.SubElement(huser, 'refspec').text = refspec
+        XML.SubElement(huser, 'url').text = data['url']
+        if 'credentials-id' in data:
+            XML.SubElement(huser, 'credentialsId').text = \
+                data['credentials-id']
     xml_branches = XML.SubElement(scm, 'branches')
     branches = data.get('branches', ['**'])
     for branch in branches:
