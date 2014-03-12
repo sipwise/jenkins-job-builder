@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//7k8\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1801,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-12T21:11:25Z",
+      "side": 1,
+      "message": "did you mean \u0027cigame\u0027?",
+      "revId": "e2d2771cd9cd3cf546bc0245edcdac7ab93c9b3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
