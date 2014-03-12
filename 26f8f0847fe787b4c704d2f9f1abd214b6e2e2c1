@@ -34,6 +34,24 @@
       "revId": "26f8f0847fe787b4c704d2f9f1abd214b6e2e2c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//8zo\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1383,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-12T18:24:42Z",
+      "side": 1,
+      "message": "The jenkins plugin behavior seems odd, adding the plugin will blast email to all groups by default?  I usually think jjb default should mimic plugin defaults but this makes no sense to me.  I think i prefer quiet by default.",
+      "parentUuid": "AAAAVn//auY\u003d",
+      "revId": "26f8f0847fe787b4c704d2f9f1abd214b6e2e2c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
