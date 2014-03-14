@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//oGs\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-03-14T22:00:29Z",
+      "side": 1,
+      "message": "There is a lot of code duplication there. Having a single remote is a subset of the multiple remotes, and they both seems to use the same XML format.  So if there is no \u0027remotes\u0027, you could craft one out of \u0027origin\u0027, then iterate the \u0027remotes\u0027 and use the same code for both cases.",
+      "revId": "4ba655cb076d50323b665da8ffea1ae09dc35c2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
