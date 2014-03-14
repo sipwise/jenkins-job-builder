@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//oOw\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-14T21:43:38Z",
+      "side": 1,
+      "message": "I think it would be better to literalinclude the test file so we have examples at get tested and won\u0027t become outdated.  something like this: http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/modules/publishers.py#n86",
+      "revId": "af274f9e5c2cfe03fc216a498bd4e0b83e88f7db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
