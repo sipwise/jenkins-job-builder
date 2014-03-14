@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//pCA\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-14T20:23:10Z",
+      "side": 1,
+      "message": "this is probably not necessary since it\u0027s already documented in the param list",
+      "revId": "af81f30b1cacfd738f6655451c245e38e34756d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//o2g\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-14T20:23:10Z",
+      "side": 1,
+      "message": "this can be pulled outside of the conditional since it\u0027s duplicated in the else.",
+      "revId": "af81f30b1cacfd738f6655451c245e38e34756d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
