@@ -227,6 +227,24 @@
       "revId": "6cdd34bf0e5d81a797501dde4079f3f65d4a2073",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//pEg\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2423,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-14T19:44:56Z",
+      "side": 1,
+      "message": "IMO the best fix for this is the jenkins plugin, not jjb, so it\u0027s probably just better to mirror the jenkins plugin functionality.  Whoever wants to use this jjb module will most likely know how these parameters work.  I\u0027m thinking that good documention of these parameters in this jjb module will be the best help to users.",
+      "parentUuid": "AAAAVn//LK8\u003d",
+      "revId": "6cdd34bf0e5d81a797501dde4079f3f65d4a2073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
