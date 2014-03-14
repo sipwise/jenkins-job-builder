@@ -381,6 +381,17 @@ def svn(self, xml_parent, data):
       (default '.')
     :arg str workspaceupdater: optional argument to specify
       how to update the workspace (default wipeworkspace)
+    :arg list(str) excluded-users: list of users to ignore revisions from
+      when polling for changes (if polling is enabled)
+    :arg list(str) included-regions: list of file/folders to include
+    :arg list(str) excluded-regions: list of file/folders to exclude
+    :arg list(str) excluded-commit-messages: list of commit messages to exclude
+    :arg str exclusion-revprop-name: revision svn-property to ignore
+    :arg bool ignore-property-changes-on-directories: ignore svn-property only
+      changes of directories
+    :arg bool filter-changelog: If set Jenkins will apply the same inclusion
+      and exclusion patterns for displaying changelog entries as it does for
+      polling for changes
     :arg list repos: list of repositories to checkout (optional)
 
       :Repo: * **url** (`str`) -- URL for the repository
@@ -393,16 +404,9 @@ def svn(self, xml_parent, data):
              :emulateclean:  - delete unversioned/ignored files then update
              :update:        - do an svn update as much as possible
 
-    Example::
+    Example:
 
-      scm:
-        - svn:
-           workspaceupdater: update
-           repos:
-             - url: http://svn.example.com/repo
-               basedir: .
-             - url: http://svn.example.com/repo2
-               basedir: repo2
+    .. literalinclude:: /../../tests/scm/fixtures/svn-regions-001.yaml
     """
     scm = XML.SubElement(xml_parent, 'scm', {'class':
                          'hudson.scm.SubversionSCM'})
@@ -432,6 +436,33 @@ def svn(self, xml_parent, data):
         updaterclass = 'UpdateUpdater'
     XML.SubElement(scm, 'workspaceUpdater', {'class':
                    'hudson.scm.subversion.' + updaterclass})
+
+    mapping = [
+        # option, xml name, default value
+        ("excluded-regions", 'excludedRegions', []),
+        ("included-regions", 'includedRegions', []),
+        ("excluded-users", 'excludedUsers', []),
+        ("exclusion-revprop-name", 'excludedRevprop', ''),
+        ("excluded-commit-messages", 'excludedCommitMessages', []),
+        ("ignore-property-changes-on-directories", 'ignoreDirPropChanges',
+            False),
+        ("filter-changelog", 'filterChangelog', False),
+    ]
+
+    for optname, xmlname, defvalue in mapping:
+        if isinstance(defvalue, list):
+            val = '\n'.join(data.get(optname, defvalue))
+        else:
+            val = data.get(optname, defvalue)
+        # Skip adding xml entry if default is empty and no value given
+        if not val and (defvalue in ['', []]):
+            continue
+
+        xe = XML.SubElement(scm, xmlname)
+        if isinstance(defvalue, bool):
+            xe.text = str(val).lower()
+        else:
+            xe.text = str(val)
 
 
 def tfs(self, xml_parent, data):
