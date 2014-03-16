@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//krc\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-16T14:18:16Z",
+      "side": 1,
+      "message": "would be good to add a new line here.",
+      "revId": "f67e26fc50b3fd8051e83d33912656d128b407d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//krg\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-16T14:18:16Z",
+      "side": 1,
+      "message": "\u0027example::\u0027 should be \u0027example:\u0027 (one colon) otherwise it won\u0027t render, take a look at result of the jenkins test  http://docs-draft.openstack.org/90/73990/4/check/gate-jenkins-job-builder-docs/1669175/doc/build/html/configuration.html",
+      "revId": "f67e26fc50b3fd8051e83d33912656d128b407d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
