@@ -16,6 +16,24 @@
       "revId": "203363b2863d53334236ca0955e40617da8e6509",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//edw\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1055,
+      "author": {
+        "id": 7065
+      },
+      "writtenOn": "2014-03-17T17:20:00Z",
+      "side": 1,
+      "message": "What I\u0027m trying to convey is that one does not make sense without the other. I don\u0027t have a strong opinion one way or the other. If you feel it makes more sense to change it, I\u0027m fine with doing so.",
+      "parentUuid": "AAAAWH//eks\u003d",
+      "revId": "203363b2863d53334236ca0955e40617da8e6509",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
