@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//iq0\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1040,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-03-17T07:44:41Z",
+      "side": 1,
+      "message": "nit: \"resource that controls\" or \"resources that control\"",
+      "revId": "7c01debac577bd083e3807724de955584e8ef1bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//iqs\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1069,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-03-17T07:44:41Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "7c01debac577bd083e3807724de955584e8ef1bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
