@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//eks\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1055,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-17T17:10:21Z",
+      "side": 1,
+      "message": "I think what you are trying to show is usage of critical-block-start  in conjunction with critical-block-end (below).  If so, would it make more sense to remove the \u0027critical-block-end\u0027 from this example?  and remove the critical-block-start from the example below?",
+      "revId": "203363b2863d53334236ca0955e40617da8e6509",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
