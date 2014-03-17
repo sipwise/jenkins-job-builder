@@ -34,6 +34,24 @@
       "revId": "203363b2863d53334236ca0955e40617da8e6509",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//dVs\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1055,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-17T19:28:00Z",
+      "side": 1,
+      "message": "ok, then i think leave as is would be better.",
+      "parentUuid": "AAAAWH//edw\u003d",
+      "revId": "203363b2863d53334236ca0955e40617da8e6509",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
