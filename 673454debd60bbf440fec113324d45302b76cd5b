@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//euc\u003d",
+        "filename": "tests/yamlparser/fixtures/custom_distri.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-17T16:48:16Z",
+      "side": 1,
+      "message": "i didn\u0027t notice this before but the use of dict for this param produces essentially the same list as the distribution list above. Is there a use case where you would use dict in a different way?  I\u0027m thinking that it would be nice to exercise a use case that produces something a little different.  what do you think?",
+      "revId": "673454debd60bbf440fec113324d45302b76cd5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
