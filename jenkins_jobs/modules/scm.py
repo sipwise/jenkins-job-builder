@@ -88,6 +88,7 @@ def git(self, xml_parent, data):
         :gitweb:
         :redmineweb:
         :viewgit:
+        :stash:
 
     :choosing-strategy values:
         :default:
@@ -199,6 +200,7 @@ def git(self, xml_parent, data):
                    'gitweb': 'GitWeb',
                    'redmineweb': 'RedmineWeb',
                    'viewgit': 'ViewGitWeb',
+                   'stash': 'Stash',
                    'auto': 'auto'}
     if browser not in browserdict:
         raise JenkinsJobsException("Browser entered is not valid must be one "
