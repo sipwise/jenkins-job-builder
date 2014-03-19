@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//nkg\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-03-19T08:27:18Z",
+      "side": 0,
+      "message": "just in case anyone comments on the removal of getting the existing job xml first, imho this is worthless and only serves to to eat up resources. I\u0027ve never had an improvement due to this, and it is much faster to send the desired job result to Jenkins (1 http \u0027put\u0027) and let it work out if it is the same than to try and match plugin versions and xml ordering to have a single http \u0027get\u0027 at best and an http \u0027get\u0027 + \u0027put\u0027 at worst. latency of requests far outweigh the penalty of upload bandwidth being smaller than download in this case.",
+      "revId": "ca01c62187ca50d3184207572a7d1c37d8d66819",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

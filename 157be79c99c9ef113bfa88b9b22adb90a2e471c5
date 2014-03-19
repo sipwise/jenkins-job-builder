@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAWH//nig\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-03-19T08:27:18Z",
+      "side": 1,
+      "message": "did you forget to include the tests? this to me seems to be where the biggest difficulty in this area lies. need tests that exercise the multithreaded nature of this code while ensuring the default behavior remains single threaded.\n\nsolution may be to add new jobs to the gate jobs rather than trying to add specific unit tests, but it would be easier for subsequent development if devs didn\u0027t need to run the unit tests twice themselves.",
+      "revId": "157be79c99c9ef113bfa88b9b22adb90a2e471c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn/+xic\u003d",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 1
@@ -31,6 +48,109 @@
       "side": 1,
       "message": "Lack of knowledge. I was using threading instead of multiprocessing and did not even though of that. Will change.",
       "parentUuid": "AAAAVn/+xic\u003d",
+      "revId": "157be79c99c9ef113bfa88b9b22adb90a2e471c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//nls\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-03-19T08:27:18Z",
+      "side": 1,
+      "message": "note that the multiprocessing library in python contains both multi-threading and multiprocessing  APIs.",
+      "parentUuid": "AAAAWH//tes\u003d",
+      "revId": "157be79c99c9ef113bfa88b9b22adb90a2e471c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//I+Q\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-03-19T08:27:18Z",
+      "side": 1,
+      "message": "The code above here to create a thread pool, the necessary queues, and worker objects seems overly complex for working with a predefined set of work. Have you looked at using the \u0027threadpool\u0027 capabilities provided by the multiprocessing module?",
+      "revId": "157be79c99c9ef113bfa88b9b22adb90a2e471c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//9uU\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-03-19T08:27:18Z",
+      "side": 1,
+      "message": "I think  it might be better to make this object fully thread safe and also remove the duplication in the \u0027set()\u0027 method.",
+      "revId": "157be79c99c9ef113bfa88b9b22adb90a2e471c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//nnE\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 605,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-03-19T08:27:18Z",
+      "side": 1,
+      "message": "this I like much better than my previous attempt, should make it easier to apply multi threading elsewhere in the project or even replace transparently.",
+      "revId": "157be79c99c9ef113bfa88b9b22adb90a2e471c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//nh8\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-03-19T08:27:18Z",
+      "side": 1,
+      "message": "I think this option is unnecessary, see comment on next option for reasons.",
+      "revId": "157be79c99c9ef113bfa88b9b22adb90a2e471c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH//ngs\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-03-19T08:27:18Z",
+      "side": 1,
+      "message": "if you used the following values -\u003e behaviour for this option I believe you can eliminate the preceding option.\n\n 0 -\u003e user requested auto detect number of cores\n 1 -\u003e single threaded (default)\n \u003e1 -\u003e user specified\n\nsince I think that it would also be a good idea to allow use of a config option to control this rather than only from options, where the command-line option overrides the config option, probably need to leave the parser option default as being \u0027None\u0027, and use an if/else statement below to check for the config file option if the parser option is \u0027None\u0027 so that you always take the parser value if it is set to something.",
       "revId": "157be79c99c9ef113bfa88b9b22adb90a2e471c5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
