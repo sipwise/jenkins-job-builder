@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH//JPY\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2014-03-19T22:59:57Z",
+      "side": 1,
+      "message": "Old code allowed for a name other than origin, with a default of origin. This appears to hardcode origin. We should continue to support the old behavior. Should be sufficient to replace \u0027origin\u0027 here with data.get(\u0027name\u0027, \u0027origin\u0027).",
+      "revId": "15ff0c433fc26bd5a92dab002714b9def4294a83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
