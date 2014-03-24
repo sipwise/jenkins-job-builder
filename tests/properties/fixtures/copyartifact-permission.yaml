@@ -1,0 +1,3 @@
+properties:
+  - copyartifact-permission:
+      projects: foo*
