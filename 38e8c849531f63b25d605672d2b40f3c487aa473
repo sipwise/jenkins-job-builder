@@ -16,6 +16,24 @@
       "revId": "38e8c849531f63b25d605672d2b40f3c487aa473",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+kIM\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 548,
+      "author": {
+        "id": 6814
+      },
+      "writtenOn": "2014-03-25T21:15:58Z",
+      "side": 1,
+      "message": "Oh yes, that\u0027s a good idea.  Done!",
+      "parentUuid": "AAAAWH/+sEo\u003d",
+      "revId": "38e8c849531f63b25d605672d2b40f3c487aa473",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
