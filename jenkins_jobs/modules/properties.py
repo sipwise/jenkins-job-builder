@@ -533,6 +533,29 @@ def heavy_job(parser, xml_parent, data):
         data.get('weight', 1))
 
 
+def slave_utilization(parser, xml_parent, data):
+    """yaml: slave-utilization
+    This plugin allows you to specify the percentage of a slave's capacity a
+    job wants to use.
+
+    Requires the Jenkins `Slave Utilization Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Slave+Utilization+Plugin>`_
+
+    :arg int slave-percentage: Specify the percentage of a slave's execution
+        slots that this job should occupy (default: 0)
+    :arg bool single-instance-per-slave: Control whether this concurrent
+        instances of this job will be permitted to run in parallel on a single
+        slave (default: False)
+    """
+    utilization = XML.SubElement(
+        xml_parent, 'com.suryagaddipati.jenkins.SlaveUtilizationProperty')
+    XML.SubElement(utilization, 'needsExclusiveAccessToNode').text = 'true'
+    XML.SubElement(utilization, 'slaveUtilizationPercentage').text = str(
+        data.get('slave-percentage', 0))
+    XML.SubElement(utilization, 'singleInstancePerSlave').text = str(
+        data.get('single-instance-per-slave', False)).lower()
+
+
 def delivery_pipeline(parser, xml_parent, data):
     """yaml: delivery-pipeline
     Requires the Jenkins `Delivery Pipeline Plugin.
