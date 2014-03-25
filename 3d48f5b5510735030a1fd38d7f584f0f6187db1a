@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+kEs\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2014-03-25T21:26:46Z",
+      "side": 1,
+      "message": "Can you include your test yaml here instead of having an explicit example? The benefit of doing that is we should always have working examples if we use the test fixture data.\n\nbatch_tasks has an example of how to do this on line 530.",
+      "revId": "3d48f5b5510735030a1fd38d7f584f0f6187db1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+kEI\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2014-03-25T21:26:46Z",
+      "side": 1,
+      "message": "This check partially covers the check on line 501. Can we consolidate them together? Perhaps something like\n\n  if not data or not data.get(\u0027projects\u0027 None):\n      raise JenkinsJobsException(...)",
+      "revId": "3d48f5b5510735030a1fd38d7f584f0f6187db1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+kDk\u003d",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2014-03-25T21:26:46Z",
+      "side": 1,
+      "message": "We have been trying to keep this in alphabetical order if only to avoid most git merge conflicts. This line should come afte rthe builds-chain-fingerprinter line.",
+      "revId": "3d48f5b5510735030a1fd38d7f584f0f6187db1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
