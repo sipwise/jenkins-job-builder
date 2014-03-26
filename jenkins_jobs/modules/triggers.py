@@ -309,6 +309,131 @@ def pollscm(parser, xml_parent, data):
     XML.SubElement(scmtrig, 'spec').text = data
 
 
+def build_one_pollurl_content_type(xml_parent, entries, prefix,
+                                   collection_name, element_name):
+    namespace = 'org.jenkinsci.plugins.urltrigger.content'
+    content_type = XML.SubElement(
+        xml_parent, '{0}.{1}ContentType'.format(namespace, prefix))
+    if entries:
+        collection = XML.SubElement(content_type, collection_name)
+        for entry in entries:
+            content_entry = XML.SubElement(
+                collection, '{0}.{1}ContentEntry'.format(namespace, prefix))
+            XML.SubElement(content_entry, element_name).text = entry
+
+
+def build_pollurl_simple_content_type(xml_parent, data):
+    if data:
+        build_one_pollurl_content_type(xml_parent, [], 'Simple', '', '')
+
+
+def build_pollurl_json_content_type(xml_parent, data):
+    build_one_pollurl_content_type(xml_parent, data, 'JSON',
+                                   'jsonPaths', 'jsonPath')
+
+
+def build_pollurl_text_content_type(xml_parent, data):
+    build_one_pollurl_content_type(xml_parent, data, 'TEXT',
+                                   'regExElements', 'regEx')
+
+
+def build_pollurl_xml_content_type(xml_parent, data):
+    build_one_pollurl_content_type(xml_parent, data, 'XML', 'xPaths', 'xPath')
+
+
+def build_pollurl_content_types(xml_parent, data):
+    XML.SubElement(xml_parent, 'inspectingContent').text = str(
+        bool(data)).lower()
+    content_types = XML.SubElement(xml_parent, 'contentTypes')
+
+    for entry in data:
+        type_name = entry.keys()[0]
+        function_name = "build_pollurl_{0}_content_type".format(type_name)
+        function = globals()[function_name]
+        function(content_types, entry[type_name])
+
+
+def build_pollurl_urls(xml_parent, data):
+    for url in data:
+        entry = XML.SubElement(xml_parent,
+                               'org.jenkinsci.plugins.urltrigger.'
+                               'URLTriggerEntry')
+        XML.SubElement(entry, 'url').text = url['url']
+        XML.SubElement(entry, 'proxyActivated').text = str(
+            url.get('proxy', False)).lower()
+        if 'username' in url:
+            XML.SubElement(entry, 'username').text = url['username']
+        if 'password' in url:
+            XML.SubElement(entry, 'password').text = url['password']
+        if 'check-status' in url:
+            XML.SubElement(entry, 'checkStatus').text = 'true'
+            XML.SubElement(entry, 'statusCode').text = str(
+                url.get('check-status'))
+        else:
+            XML.SubElement(entry, 'checkStatus').text = 'false'
+            XML.SubElement(entry, 'statusCode').text = '200'
+        XML.SubElement(entry, 'timeout').text = str(
+            url.get('timeout', 300))
+        XML.SubElement(entry, 'checkETag').text = str(
+            url.get('check-etag', False)).lower()
+        XML.SubElement(entry, 'checkLastModificationDate').text = str(
+            url.get('check-date', False)).lower()
+        build_pollurl_content_types(entry, url.get('check-content', []))
+
+
+def pollurl(parser, xml_parent, data):
+    """yaml: pollurl
+    Trigger when the HTTP response from a URL changes.
+    Requires the Jenkins `URLTrigger Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/URLTrigger+Plugin>`_
+
+    :arg string cron: cron syntax of when to run (default '')
+    :arg string polling-node: Restrict where the polling should run.
+                              (default '')
+    :arg list urls: List of URLs to monitor
+
+      :URL: * **url** (`str`) -- URL to monitor for changes (required)
+            * **proxy** (`bool`) -- Activate the Jenkins proxy (default false)
+            * **timeout** (`int`) -- Connect/read timeout in seconds
+              (default 300)
+            * **username** (`string`) -- User name for basic authentication
+              (default '')
+            * **password** (`string`) -- Password for basic authentication
+              (default '')
+            * **check-status** (`int`) -- Check for a specific HTTP status
+              code (default 200)
+            * **check-etag** (`bool`) -- Check the HTTP ETag for changes
+              (default false)
+            * **check-date** (`bool`) -- Check the last modification date of
+              the URL (default false)
+            * **check-content** (`list`) -- List of content type changes to
+              monitor
+
+              :Content Type: * **simple** (`bool`) -- Trigger on any change to
+                               the content of the URL (default false)
+                             * **json** (`list`) -- Trigger on any change to
+                               the listed JSON paths
+                             * **text** (`list`) -- Trigger on any change to
+                               the listed regular expressions
+                             * **xml** (`list`) -- Trigger on any change to
+                               the listed XPath expressions
+
+    Example:
+
+    .. literalinclude:: /../../tests/triggers/fixtures/pollurl001.yaml
+    """
+
+    urltrig = XML.SubElement(xml_parent,
+                             'org.jenkinsci.plugins.urltrigger.URLTrigger')
+    node = data.get('polling-node')
+    XML.SubElement(urltrig, 'spec').text = data.get('cron', '')
+    XML.SubElement(urltrig, 'labelRestriction').text = str(bool(node)).lower()
+    if node:
+        XML.SubElement(urltrig, 'triggerLabel').text = node
+    entries = XML.SubElement(urltrig, 'entries')
+    build_pollurl_urls(entries, data.get('urls', []))
+
+
 def timed(parser, xml_parent, data):
     """yaml: timed
     Trigger builds at certain times.
