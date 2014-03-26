@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+ekg\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2014-03-26T14:46:47Z",
+      "side": 1,
+      "message": "Why not just set the defaults in the ConfigParser constructor? I think that will make the entire logic easier to follow.",
+      "revId": "58711213e5b63d832d7774cf12e11e1a6b28aac8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
