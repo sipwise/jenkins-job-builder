@@ -32,7 +32,7 @@ import fnmatch
 from jenkins_jobs.errors import JenkinsJobsException
 
 logger = logging.getLogger(__name__)
-MAGIC_MANAGE_STRING = "<!-- Managed by Jenkins Job Builder -->"
+MAGIC_MANAGE_STRING = "<!-- Managed by Jenkins Job Builder: %s -->"
 
 
 # Python <= 2.7.3's minidom toprettyxml produces broken output by adding
@@ -116,6 +116,10 @@ class YamlParser(object):
         self.registry = ModuleRegistry(config)
         self.data = {}
         self.jobs = []
+        if config:
+            self.job_tag = config.get("jenkins", "job_tag")
+        else:
+            self.job_tag = None
 
     def parse(self, fn):
         data = yaml.load(open(fn))
@@ -279,8 +283,9 @@ class YamlParser(object):
 
     def getXMLForJob(self, data):
         kind = data.get('project-type', 'freestyle')
-        data["description"] = (data.get("description", "") +
-                               self.get_managed_string()).lstrip()
+        if self.get_managed_string() is not None:
+            data["description"] = (data.get("description", "") +
+                                   self.get_managed_string()).lstrip()
         for ep in pkg_resources.iter_entry_points(
                 group='jenkins_jobs.projects', name=kind):
             Mod = ep.load()
@@ -299,7 +304,9 @@ class YamlParser(object):
     def get_managed_string(self):
         # The \n\n is not hard coded, because they get stripped if the
         # project does not otherwise have a description.
-        return "\n\n" + MAGIC_MANAGE_STRING
+        if self.job_tag is not None:
+            return "\n\n" + (MAGIC_MANAGE_STRING % self.job_tag)
+        return None
 
 
 class ModuleRegistry(object):
@@ -464,8 +471,9 @@ class CacheStorage(object):
 
 
 class Jenkins(object):
-    def __init__(self, url, user, password):
+    def __init__(self, url, user, password, job_tag):
         self.jenkins = jenkins.Jenkins(url, user, password)
+        self.job_tag = job_tag
 
     def update_job(self, job_name, xml):
         if self.is_job(job_name):
@@ -491,20 +499,25 @@ class Jenkins(object):
         return self.jenkins.get_jobs()
 
     def is_managed(self, job_name):
-        xml = self.jenkins.get_job_config(job_name)
-        try:
-            out = XML.fromstring(xml)
-            description = out.find(".//description").text
-            return description.endswith(MAGIC_MANAGE_STRING)
-        except (TypeError, AttributeError):
-            pass
+        if self.job_tag is not None:
+            xml = self.jenkins.get_job_config(job_name)
+            try:
+                out = XML.fromstring(xml)
+                description = out.find(".//description").text
+                return description.endswith(MAGIC_MANAGE_STRING % self.job_tag)
+            except (TypeError, AttributeError):
+                pass
         return False
 
 
 class Builder(object):
     def __init__(self, jenkins_url, jenkins_user, jenkins_password,
                  config=None, ignore_cache=False, flush_cache=False):
-        self.jenkins = Jenkins(jenkins_url, jenkins_user, jenkins_password)
+        job_tag = None
+        if config:
+            job_tag = config.get("jenkins", "job_tag")
+        self.jenkins = Jenkins(jenkins_url, jenkins_user, jenkins_password,
+                               job_tag)
         self.cache = CacheStorage(jenkins_url, flush=flush_cache)
         self.global_config = config
         self.ignore_cache = ignore_cache

@@ -79,7 +79,7 @@ def main():
         if os.path.isfile(localconf):
             conf = localconf
 
-    config = ConfigParser.ConfigParser()
+    config = ConfigParser.ConfigParser({"job_tag": "JJB"})
     if os.path.isfile(conf):
         logger.debug("Reading config from {0}".format(conf))
         conffp = open(conf, 'r')
