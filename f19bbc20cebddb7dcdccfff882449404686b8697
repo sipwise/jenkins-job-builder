@@ -34,6 +34,24 @@
       "revId": "f19bbc20cebddb7dcdccfff882449404686b8697",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+Sbc\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 6814
+      },
+      "writtenOn": "2014-03-27T20:34:10Z",
+      "side": 1,
+      "message": "It is my opinion that it would be confusing to expose that as a separate setting in jenkins job builder. If there is any value set for slaveUtilizationPercentage, that element must be set to true.  If there is no value set for slaveUtilizationPercentage, it must be set to false.\n\nHowever, your comments have made me notice a very minor bug here, which is that needsExclusiveAccessToNode is unrelated to singleInstancePerSlave, so it can be made conditional upon slaveUtilizationPercentage having a value.  I\u0027ll upload a new patchset shortly with that change.\n\nIf you still disagree and would prefer needsExclusiveAccessToNode should be directly configurable then that is also fine and I\u0027ll make that change; just let me know.",
+      "parentUuid": "AAAAWH/+UMw\u003d",
+      "revId": "f19bbc20cebddb7dcdccfff882449404686b8697",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
