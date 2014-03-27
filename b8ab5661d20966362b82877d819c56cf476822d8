@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+XUg\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 10841
+      },
+      "writtenOn": "2014-03-27T11:06:53Z",
+      "side": 1,
+      "message": "Question is if :auto: should be here as well?",
+      "revId": "b8ab5661d20966362b82877d819c56cf476822d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
