@@ -16,6 +16,24 @@
       "revId": "673454debd60bbf440fec113324d45302b76cd5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+UQs\u003d",
+        "filename": "tests/yamlparser/fixtures/custom_distri.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 10423
+      },
+      "writtenOn": "2014-03-27T19:25:09Z",
+      "side": 1,
+      "message": "I think the point is to test that it works. I don\u0027t need to use a dict. I don\u0027t have a clever use case for a dict. Sorry.\n\nThe idea is that you can use both. I don\u0027t quite understand the problem with this example. This just probes both cases.",
+      "parentUuid": "AAAAWH//euc\u003d",
+      "revId": "673454debd60bbf440fec113324d45302b76cd5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
