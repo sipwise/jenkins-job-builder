@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+RrA\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-27T22:09:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/+R0E\u003d",
+      "revId": "700a75e78433f222dd8c89de8882387d4a78b320",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+Rzs\u003d",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-27T21:56:59Z",
       "side": 1,
       "message": "How can this happen when it\u0027s set already?\n\nJust drop this try block?",
+      "revId": "700a75e78433f222dd8c89de8882387d4a78b320",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+RqA\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-27T22:09:17Z",
+      "side": 1,
+      "message": "Dunno.  When i replace this with  config.get(\u0027jenkins\u0027, \u0027user\u0027) i get the following..\n\nTraceback (most recent call last):\n  File \"/Users/khaido/workspace/jenkins-job-builder/.tox/py26/bin/jenkins-jobs\", line 10, in \u003cmodule\u003e\n    sys.exit(main())\n  File \"/Users/khaido/workspace/jenkins-job-builder/jenkins_jobs/cmd.py\", line 111, in main\n    config.get(\u0027jenkins\u0027, \u0027user\u0027)\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/ConfigParser.py\", line 546, in get\n    return self._interpolate(section, option, value, d)\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/ConfigParser.py\", line 586, in _interpolate\n    if \"%(\" in value:\nTypeError: argument of type \u0027NoneType\u0027 is not iterable",
+      "parentUuid": "AAAAWH/+Rzs\u003d",
       "revId": "700a75e78433f222dd8c89de8882387d4a78b320",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
