@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+UVQ\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-27T16:46:22Z",
+      "side": 1,
+      "message": "looks like url is required if user sets a remote.  Can we add a check for it and raise JenkinsJobsException(\"Must specify a remote url\") ?  You can find examples of JenkinsJobException usage in this file.",
+      "revId": "fc64a03e9e97ff7b11134fafcc1730bd66654cc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
