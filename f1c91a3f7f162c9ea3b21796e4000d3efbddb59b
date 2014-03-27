@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+Tps\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-27T18:13:01Z",
+      "side": 1,
+      "message": "should rename to \u0027copyartifact\u0027 to be consistent with the same method in builders.py: http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/modules/builders.py#n65",
+      "revId": "f1c91a3f7f162c9ea3b21796e4000d3efbddb59b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+TpQ\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-27T18:13:01Z",
+      "side": 1,
+      "message": "should rename",
+      "revId": "f1c91a3f7f162c9ea3b21796e4000d3efbddb59b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+Tnw\u003d",
+        "filename": "setup.cfg",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-27T18:13:01Z",
+      "side": 1,
+      "message": "rename to \u0027copyartifact\u0027",
+      "revId": "f1c91a3f7f162c9ea3b21796e4000d3efbddb59b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+TnA\u003d",
+        "filename": "tests/properties/fixtures/copyartifact-permission.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-27T18:13:01Z",
+      "side": 1,
+      "message": "rename to \u0027copyartifact\u0027",
+      "revId": "f1c91a3f7f162c9ea3b21796e4000d3efbddb59b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
