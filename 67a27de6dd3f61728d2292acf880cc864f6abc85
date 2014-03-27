@@ -16,6 +16,24 @@
       "revId": "67a27de6dd3f61728d2292acf880cc864f6abc85",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+XZg\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 10841
+      },
+      "writtenOn": "2014-03-27T11:05:37Z",
+      "side": 1,
+      "message": "Sure.\n\n:auto: is not listed in the list above. Should I add that one as well?",
+      "parentUuid": "AAAAWH/+XjI\u003d",
+      "revId": "67a27de6dd3f61728d2292acf880cc864f6abc85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
