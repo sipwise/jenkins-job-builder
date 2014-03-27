@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+ZAM\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2014-03-27T05:57:38Z",
+      "side": 1,
+      "message": "The double colon on this line makes the next section a literal block. This line should be just Example: (remove the extra colon). You can see what this currently renders as at: http://docs-draft.openstack.org/51/82551/3/check/gate-jenkins-job-builder-docs/0ebd209/doc/build/html/properties.html#properties.copyartifact-permission",
+      "revId": "e6ea78852d31c175566558e4320fd4c9cfc5fed8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
