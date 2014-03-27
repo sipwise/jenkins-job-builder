@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/+Yi0\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 5909
+      },
+      "writtenOn": "2014-03-27T07:08:54Z",
+      "side": 1,
+      "message": "Why not expose this setting in the YAML too?",
+      "revId": "f19bbc20cebddb7dcdccfff882449404686b8697",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
