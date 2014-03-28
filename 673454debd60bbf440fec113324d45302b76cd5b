@@ -34,6 +34,24 @@
       "revId": "673454debd60bbf440fec113324d45302b76cd5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+P6I\u003d",
+        "filename": "tests/yamlparser/fixtures/custom_distri.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-03-28T04:59:21Z",
+      "side": 1,
+      "message": "No problem.  Just thought there might be another use case to exercise but if not then LGTM.",
+      "parentUuid": "AAAAWH/+UQs\u003d",
+      "revId": "673454debd60bbf440fec113324d45302b76cd5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
