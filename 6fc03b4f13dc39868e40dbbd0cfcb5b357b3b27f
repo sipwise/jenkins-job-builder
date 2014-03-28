@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/+OxY\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 546,
+      "author": {
+        "id": 6814
+      },
+      "writtenOn": "2014-03-28T08:39:00Z",
+      "side": 1,
+      "message": "Good catch, thank you. Fixed.",
+      "parentUuid": "AAAAWH/+Pvc\u003d",
+      "revId": "6fc03b4f13dc39868e40dbbd0cfcb5b357b3b27f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/+Pt4\u003d",
         "filename": "jenkins_jobs/modules/properties.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-03-28T05:46:17Z",
       "side": 1,
       "message": "don\u0027t you need to cast percent to an int above so logic will work correctly here?  i mean..\n\npercent \u003d int(data.get(\u0027slave-percentage\u0027, 0))",
+      "revId": "6fc03b4f13dc39868e40dbbd0cfcb5b357b3b27f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/+OwM\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 6814
+      },
+      "writtenOn": "2014-03-28T08:39:00Z",
+      "side": 1,
+      "message": "I think technically it would work as is, but I do to cast to int at some point to avoid setting the field to an invalid value, and this is a perfectly good spot to do that. Also you\u0027re probably right even if I don\u0027t actually see the bug. :-)",
+      "parentUuid": "AAAAWH/+Pt4\u003d",
       "revId": "6fc03b4f13dc39868e40dbbd0cfcb5b357b3b27f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
