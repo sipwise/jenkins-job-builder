@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/905A\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-01T20:59:51Z",
+      "side": 1,
+      "message": "i don\u0027t think this needs to be a separate function because it\u0027s never used more than once.",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/905E\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-01T20:59:51Z",
+      "side": 1,
+      "message": "i don\u0027t think this needs to be a separate function because it\u0027s never used more than once.",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/905I\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-01T20:59:51Z",
+      "side": 1,
+      "message": "i don\u0027t think this needs to be a separate function because it\u0027s never used more than once.",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/905M\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-01T20:59:51Z",
+      "side": 1,
+      "message": "i don\u0027t think this needs to be a separate function because it\u0027s never used more than once.",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/905c\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-01T20:59:51Z",
+      "side": 1,
+      "message": "i don\u0027t think this needs to be a separate function because it\u0027s never used more than once.",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/91EQ\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-01T20:59:51Z",
+      "side": 1,
+      "message": "i don\u0027t think this needs to be a separate function because it\u0027s never used more than once.",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/91Ac\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-01T20:59:51Z",
+      "side": 1,
+      "message": "Doc and code for this param seem inconsistent.  Code treats this param as an optional which means that this param will not get written out to xml if it\u0027s not in the yaml.  Doc seems to indicate that this will always get written out with default value of empty string.\n\nI think you can get rid of the conditional.  Just read in the param and set default value at the same time, like you do with the \u0027cron\u0027 parameter",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/906k\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-01T20:59:51Z",
+      "side": 1,
+      "message": "same issue as username",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/906U\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-01T20:59:51Z",
+      "side": 1,
+      "message": "same issue as username",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9060\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-01T20:59:51Z",
+      "side": 1,
+      "message": "you can read in value and set default with one line:\n\nXML.SubElement(entry, \u0027statusCode\u0027).text \u003d str(url.get(\u0027check-status\u0027), True)).lower()",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/91GA\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-01T20:59:51Z",
+      "side": 1,
+      "message": "i don\u0027t think you need a conditional here.   Can you read in \u0027polling-node\u0027 like you do with \u0027cron\u0027?",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/91Bc\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-01T20:59:51Z",
+      "side": 1,
+      "message": "Since \u0027url\u0027 is a required parameter I would suggest adding a check here to verify that there is at least one \u0027url\u0027 specified otherwise throw JenkinsJobsException.  Example here: http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/modules/publishers.py#n404",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
