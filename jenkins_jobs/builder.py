@@ -562,15 +562,19 @@ class Builder(object):
             if names and not matches(job.name, names):
                 continue
             if output_dir:
-                if names:
-                    print job.output()
+                if output_dir in ('/dev/stdout', '-'):
+                    print(job.output())
                     continue
-                fn = os.path.join(output_dir, job.name)
-                logger.debug("Writing XML to '{0}'".format(fn))
-                f = open(fn, 'w')
-                f.write(job.output())
-                f.close()
-                continue
+                else:
+                    if names:
+                        print job.output()
+                        continue
+                    fn = os.path.join(output_dir, job.name)
+                    logger.debug("Writing XML to '{0}'".format(fn))
+                    f = open(fn, 'w')
+                    f.write(job.output())
+                    f.close()
+                    continue
             md5 = job.md5()
             if (self.jenkins.is_job(job.name)
                     and not self.cache.is_cached(job.name)):
