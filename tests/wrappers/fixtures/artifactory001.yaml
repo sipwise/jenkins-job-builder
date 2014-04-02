@@ -1,0 +1,5 @@
+wrappers:
+  - artifactory-maven3:
+      url: http://artifactory.devaws.dataxu.net/artifactory
+      name: 'test'
+      repo-key: repo
