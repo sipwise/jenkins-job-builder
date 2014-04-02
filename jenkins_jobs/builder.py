@@ -567,7 +567,7 @@ class Builder(object):
         for job in jobs:
             self.delete_job(job['name'])
 
-    def update_job(self, fn, names=None, output_dir=None):
+    def update_job(self, fn, names=None, output=None):
         self.load_files(fn)
         self.parser.generateXML(names)
 
@@ -576,11 +576,11 @@ class Builder(object):
         for job in self.parser.jobs:
             if names and not matches(job.name, names):
                 continue
-            if output_dir:
-                if names:
-                    print job.output()
+            if output:
+                if hasattr(output, 'write'):
+                    logger.debug("Writing XML to '{0}'".format(output))
+                    output.write(job.output())
                     continue
-                fn = os.path.join(output_dir, job.name)
                 logger.debug("Writing XML to '{0}'".format(fn))
                 f = open(fn, 'w')
                 f.write(job.output())
