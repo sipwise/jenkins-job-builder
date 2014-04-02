@@ -1,0 +1,7 @@
+wrappers:
+  - generic-artifactory:
+      url: http://artifactory.devaws.dataxu.net/artifactory
+      name: 'test'
+      deploy-build-info: true
+      repo-key: '{repo}'
+      deploy-pattern: '{deploy-pattern}'
