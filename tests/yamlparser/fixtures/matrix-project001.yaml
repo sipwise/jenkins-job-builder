@@ -1,0 +1,24 @@
+- job-template:
+    name: 'build_matrix'
+    project-type: matrix
+    axes:
+      - axis:
+          type: user-defined
+          name: JENKINS_PRODUCT
+          values: '{products}'
+      - axis:
+          type: label-expression
+          name: label
+          values:
+            - CM
+    builders:
+      - shell: |
+         #!/bin/bash -ex
+         #
+         echo $JENKINS_PRODUCT
+
+- project:
+    name: test
+    products: "alpha beta gamma"
+    jobs:
+        - 'build_matrix'
