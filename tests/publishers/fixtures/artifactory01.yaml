@@ -1,0 +1,10 @@
+publishers:
+- artifactory:
+    url: http://artifactory.test.net/artifactory
+    name: test
+    release-repo-key: libs-release-local
+    snapshot-repo-key: libs-snapshot-local
+    deploy-artifacts: true
+    publish-build-info: true
+    discard-old-builds: true
+    discard-build-artifacts: false
