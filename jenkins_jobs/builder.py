@@ -553,6 +553,9 @@ class Builder(object):
             self.delete_job(job['name'])
 
     def update_job(self, fn, names=None, output_dir=None):
+        if fn == '-':
+            fn = '/dev/stdin'
+
         self.load_files(fn)
         self.parser.generateXML(names)
 
@@ -562,8 +565,8 @@ class Builder(object):
             if names and not matches(job.name, names):
                 continue
             if output_dir:
-                if names:
-                    print job.output()
+                if output_dir in ('/dev/stdout', '-') or names:
+                    print(job.output())
                     continue
                 fn = os.path.join(output_dir, job.name)
                 logger.debug("Writing XML to '{0}'".format(fn))
