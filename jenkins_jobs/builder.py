@@ -553,6 +553,9 @@ class Builder(object):
             self.delete_job(job['name'])
 
     def update_job(self, fn, names=None, output_dir=None):
+        if fn == '-':
+            fn = '/dev/stdin'
+
         self.load_files(fn)
         self.parser.generateXML(names)
 
