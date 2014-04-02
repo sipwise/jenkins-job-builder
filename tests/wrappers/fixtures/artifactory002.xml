@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <buildWrappers>
+    <org.jfrog.hudson.generic.ArtifactoryGenericConfigurator>
+      <details>
+        <artifactoryUrl>http://artifactory.test.net/artifactory</artifactoryUrl>
+        <artifactoryName>test</artifactoryName>
+        <repositoryKey>release-repo</repositoryKey>
+        <snapshotsRepositoryKey>snapshot-repo</snapshotsRepositoryKey>
+      </details>
+      <deployPattern>*.zip=&gt;results</deployPattern>
+      <resolvePattern/>
+      <matrixParams/>
+      <deployBuildInfo>true</deployBuildInfo>
+      <includeEnvVars>false</includeEnvVars>
+      <envVarsPatterns>
+        <includePatterns/>
+        <excludePatterns>*password*,*secret*</excludePatterns>
+      </envVarsPatterns>
+      <discardOldBuilds>false</discardOldBuilds>
+      <discardBuildArtifacts>true</discardBuildArtifacts>
+    </org.jfrog.hudson.generic.ArtifactoryGenericConfigurator>
+  </buildWrappers>
+</project>
