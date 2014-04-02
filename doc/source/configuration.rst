@@ -40,6 +40,7 @@ later.  There are a few basic optional fields for a Job definition::
       workspace: /srv/build-area/job-name
       block-downstream: false
       block-upstream: false
+      override-name: actual-job-name
 
 **project-type**
   Defaults to "freestyle", but "maven" as well as "multijob" or "flow"
@@ -90,6 +91,15 @@ later.  There are a few basic optional fields for a Job definition::
   Specifies an authentication token that allows new builds to be
   triggered by accessing a special predefined URL. Only those who
   know the token will be able to trigger builds remotely.
+
+**override-name**
+  Optional value to override the name the job will actually use
+  when it's persisted on disk (and also in Jenkins). This allows
+  you to have two jobs (with different ``name``) but with the same
+  ``override-name``. One of those jobs is the "new" version of the
+  job and one is the "old" version, and you can then migrate
+  projects one by one to the new job definition without having to
+  change references in e.g. upstream jobs.
 
 .. _job-template:
 
