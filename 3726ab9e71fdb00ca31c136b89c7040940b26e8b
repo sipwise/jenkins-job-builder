@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/9uYk\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 10702
+      },
+      "writtenOn": "2014-04-02T15:32:43Z",
+      "side": 1,
+      "message": "This method is called dynamically from line 351 (now 428).  Without the dynamic call, I\u0027d need to use some sort of chained if/elif.  Is there a better way to do this?",
+      "parentUuid": "AAAAWH/905A\u003d",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/905E\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-01T20:59:51Z",
       "side": 1,
       "message": "i don\u0027t think this needs to be a separate function because it\u0027s never used more than once.",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9uYg\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 10702
+      },
+      "writtenOn": "2014-04-02T15:32:43Z",
+      "side": 1,
+      "message": "This method is called dynamically from line 351 (now 428).  Without the dynamic call, I\u0027d need to use some sort of chained if/elif.  Is there a better way to do this?",
+      "parentUuid": "AAAAWH/905E\u003d",
       "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/9uYE\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 10702
+      },
+      "writtenOn": "2014-04-02T15:32:43Z",
+      "side": 1,
+      "message": "This method is called dynamically from line 351 (now 428).  Without the dynamic call, I\u0027d need to use some sort of chained if/elif.  Is there a better way to do this?",
+      "parentUuid": "AAAAWH/905I\u003d",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/905M\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2014-04-01T20:59:51Z",
       "side": 1,
       "message": "i don\u0027t think this needs to be a separate function because it\u0027s never used more than once.",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9uX8\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 10702
+      },
+      "writtenOn": "2014-04-02T15:32:43Z",
+      "side": 1,
+      "message": "This method is called dynamically from line 351 (now 428).  Without the dynamic call, I\u0027d need to use some sort of chained if/elif.  Is there a better way to do this?",
+      "parentUuid": "AAAAWH/905M\u003d",
       "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/9uKo\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 10702
+      },
+      "writtenOn": "2014-04-02T15:32:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/905c\u003d",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/91EQ\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2014-04-01T20:59:51Z",
       "side": 1,
       "message": "i don\u0027t think this needs to be a separate function because it\u0027s never used more than once.",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9uOQ\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 10702
+      },
+      "writtenOn": "2014-04-02T15:32:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/91EQ\u003d",
       "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/9uVY\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 10702
+      },
+      "writtenOn": "2014-04-02T15:32:43Z",
+      "side": 1,
+      "message": "This parameter is optional and shouldn\u0027t appear in the output if not specified; I\u0027ve updated the documentation instead.",
+      "parentUuid": "AAAAWH/91Ac\u003d",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/906k\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 1
@@ -132,6 +258,24 @@
       "writtenOn": "2014-04-01T20:59:51Z",
       "side": 1,
       "message": "same issue as username",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9uVQ\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 10702
+      },
+      "writtenOn": "2014-04-02T15:32:43Z",
+      "side": 1,
+      "message": "This parameter is optional and shouldn\u0027t appear in the output if not specified; I\u0027ve updated the documentation instead.",
+      "parentUuid": "AAAAWH/906k\u003d",
       "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/9uU4\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 10702
+      },
+      "writtenOn": "2014-04-02T15:32:43Z",
+      "side": 1,
+      "message": "This parameter is optional and shouldn\u0027t appear in the output if not specified; I\u0027ve updated the documentation instead.",
+      "parentUuid": "AAAAWH/906U\u003d",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/9060\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 1
@@ -166,6 +328,24 @@
       "writtenOn": "2014-04-01T20:59:51Z",
       "side": 1,
       "message": "you can read in value and set default with one line:\n\nXML.SubElement(entry, \u0027statusCode\u0027).text \u003d str(url.get(\u0027check-status\u0027), True)).lower()",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9uT4\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 10702
+      },
+      "writtenOn": "2014-04-02T15:32:43Z",
+      "side": 1,
+      "message": "The input \u0027check-status\u0027 is an integer, not a boolean.  If it is present, then the output \u0027check-status\u0027 should be set to true and the output \u0027status-code\u0027 should be set to the provided integer.  Would it be better to make this two separate inputs instead?  That seemed redundant when I was working on this, but I can see how the code here is not as obvious as it could be.  Is it better to put more burden on the user in order to keep the code cleaner?",
+      "parentUuid": "AAAAWH/9060\u003d",
       "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWH/9uTE\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 10702
+      },
+      "writtenOn": "2014-04-02T15:32:43Z",
+      "side": 1,
+      "message": "\u0027polling-node\u0027 is optional; I\u0027ve updated the documentation instead.",
+      "parentUuid": "AAAAWH/91GA\u003d",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/91Bc\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 1
@@ -200,6 +398,24 @@
       "writtenOn": "2014-04-01T20:59:51Z",
       "side": 1,
       "message": "Since \u0027url\u0027 is a required parameter I would suggest adding a check here to verify that there is at least one \u0027url\u0027 specified otherwise throw JenkinsJobsException.  Example here: http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/modules/publishers.py#n404",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9uSE\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 10702
+      },
+      "writtenOn": "2014-04-02T15:32:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/91Bc\u003d",
       "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
