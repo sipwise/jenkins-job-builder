@@ -16,6 +16,24 @@
       "revId": "95e8197b5b1f138096648510c992f3874947752e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9q2s\u003d",
+        "filename": "jenkins_jobs/modules/project_maven.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 10354
+      },
+      "writtenOn": "2014-04-02T22:46:42Z",
+      "side": 1,
+      "message": "Sure.",
+      "parentUuid": "AAAAWH/9q7c\u003d",
+      "revId": "95e8197b5b1f138096648510c992f3874947752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
