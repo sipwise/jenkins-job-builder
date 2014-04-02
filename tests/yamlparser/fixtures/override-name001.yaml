@@ -1,0 +1,23 @@
+- project:
+    name: test
+    jobs:
+        - 'build_myproject_v2'
+
+- job-template:
+    name: 'build_myproject_v1'
+    override-name: 'build_myproject'
+    builders:
+      - shell: |
+         #!/usr/bin/env python
+         #
+         print("I am the old version. I should no longer be used.")
+
+- job-template:
+    name: 'build_myproject_v2'
+    override-name: 'build_myproject'
+    builders:
+      - shell: |
+         #!/usr/bin/env python
+         #
+         print("I am the new version, and I'm so much cooler.")
+
