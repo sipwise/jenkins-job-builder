@@ -39,8 +39,9 @@ def main():
                                action='store_true',
                                dest='delete_old', default=False,)
     parser_test = subparser.add_parser('test')
-    parser_test.add_argument('path', help='Path to YAML file or directory')
-    parser_test.add_argument('-o', dest='output_dir', required=True,
+    parser_test.add_argument('path', help='Path to YAML file or directory',
+                             nargs='?', default='/dev/stdin')
+    parser_test.add_argument('-o', dest='output_dir', default='/dev/stdout',
                              help='Path to output XML')
     parser_test.add_argument('name', help='name(s) of job(s)', nargs='*')
     parser_delete = subparser.add_parser('delete')
