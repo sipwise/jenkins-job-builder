@@ -37,6 +37,8 @@ in the :ref:`Job` definition.
       a SNAPSHOT dependency is built or not. (defaults to true)
     * **automatic-archiving** (`bool`): Activate automatic artifact archiving
       (defaults to true).
+    * **settings** (`str`): Path to custom maven settings file (optional)
+    * **global-settings** (`str`): Path to custom maven global settings file (optional)
 
 Example::
 
@@ -53,6 +55,8 @@ Example::
       maven-opts: '-Dmyvar=/path/somewhere'
       maven-name: Maven3
       automatic-archiving: true
+      settings: '~/.m2/settings.xml'
+      global-settings: '/etc/maven/settings.xml'
 """
 
 import xml.etree.ElementTree as XML
@@ -117,8 +121,22 @@ class Maven(jenkins_jobs.modules.base.Base):
         XML.SubElement(xml_parent, 'processPlugins').text = 'false'
         XML.SubElement(xml_parent, 'mavenValidationLevel').text = '-1'
         XML.SubElement(xml_parent, 'runHeadless').text = 'false'
-        XML.SubElement(xml_parent, 'settingConfigId')
-        XML.SubElement(xml_parent, 'globalSettingConfigId')
+        if 'settings' in data['maven']:
+            settings_root = XML.SubElement(xml_parent, 'settings',
+                {'class':'jenkins.mvn.FilePathSettingsProvider'})
+            XML.SubElement(settings_root, 'path').text = str(
+                data['maven'].get('settings', ''))
+        else:
+            XML.SubElement(xml_parent, 'settings',
+                {'class':'jenkins.mvn.DefaultSettingsProvider'})
+        if 'global-settings' in data['maven']:
+            settings_root = XML.SubElement(xml_parent, 'globalSettings',
+                {'class':'jenkins.mvn.FilePathGlobalSettingsProvider'})
+            XML.SubElement(settings_root, 'path').text = str(
+                data['maven'].get('global-settings', ''))
+        else:
+            XML.SubElement(xml_parent, 'globalSettings',
+                {'class':'jenkins.mvn.DefaultGlobalSettingsProvider'})
 
         run_post_steps = XML.SubElement(xml_parent, 'runPostStepsIfResult')
         XML.SubElement(run_post_steps, 'name').text = 'FAILURE'
