@@ -1,0 +1,8 @@
+wrappers:
+  - generic-artifactory:
+      url: http://artifactory.test.net/artifactory
+      name: 'test'
+      deploy-build-info: true
+      repo-key: 'release-repo'
+      snapshot-repo-key: 'snapshot-repo'
+      deploy-pattern: '*.zip=>results'

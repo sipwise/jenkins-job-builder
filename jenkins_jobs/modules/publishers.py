@@ -2121,6 +2121,186 @@ def maven_deploy(parser, xml_parent, data):
         data.get('deploy-unstable', False)).lower()
 
 
+def artifactory(parser, xml_parent, data):
+    """ yaml: artifactory
+    Uses/requires the Artifactory plugin to deploy artifacts to
+    Artifactory Server.
+
+    Requires the Jenkins `Artifactory Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Artifactory+Plugin>`_
+
+    :arg str url: Artifactory server url (default '')
+    :arg str name: Artifactory user with permissions use for
+        connected to the selected Artifactory Server (default '')
+    :arg str release-repo-key: Release repository name (default '')
+    :arg str snapshot-repo-key: Snapshots repository name (default '')
+    :arg bool deploy-artifacts: Push artifacts to the Artifactory
+        Server (default True)
+    :arg bool publish-build-info: Push build metadata with artifacts
+        (default False)
+    :arg bool discard-old-builds:
+        Remove older build info from Artifactory (default False)
+    :arg bool discard-build-artifacts:
+        Remove older build artifacts from Artifactory (default False)
+    :arg bool include-env-vars: Include all environment variables
+        accessible by the build process. Jenkins-specific env variables
+        are always included (default False)
+    :arg bool even-if-unstable: Deploy artifacts even when the build
+        is unstable (default False)
+    :arg bool run-checks: Run automatic license scanning check after the
+        build is complete (default False)
+    :arg bool include-publish-artifacts: Include the build's published
+        module artifacts in the license violation checks if they are
+        also used as dependencies for other modules in this build
+        (default False)
+    :arg bool pass-identified-downstream: When true, a build parameter
+        named ARTIFACTORY_BUILD_ROOT with a value of
+        ${JOB_NAME}-${BUILD_NUMBER} will be sent to downstream builds
+        (default False)
+    :arg bool license-auto-discovery: Tells Artifactory not to try
+        and automatically analyze and tag the build's dependencies
+        with license information upon deployment (default True)
+    :arg bool enable-issue-tracker-integration: When the Jenkins
+        JIRA plugin is enabled, synchronize information about JIRA
+        issues to Artifactory and attach issue information to build
+        artifacts (default False)
+    :arg bool aggregate-build-issues: When the Jenkins JIRA plugin
+        is enabled, include all issues from previous builds up to the
+        latest build status defined in "Aggregation Build Status"
+        (default False)
+    :arg bool allow-promotion-of-non-staged-builds: The build
+        promotion operation will be available to all successful builds
+        instead of only staged ones (default False)
+    :arg bool filter-excluded-artifacts-from-build: Add the excluded
+        files to the excludedArtifacts list and remove them from the
+        artifacts list in the build info (default False)
+    :arg str scopes:  A list of dependency scopes/configurations to run
+        license violation checks on. If left empty all dependencies from
+        all scopes will be checked (default '')
+    :arg str violation-recipients: Recipients that need to be notified
+        of license violations in the build info (default '')
+    :arg str matrix-params: Semicolon-separated list of properties to
+        attach to all deployed artifacts in addition to the default ones:
+        build.name, build.number, and vcs.revision (default '')
+    :arg str black-duck-app-name: The existing Black Duck Code Center
+        application name (default '')
+    :arg str black-duck-app-version: The existing Black Duck Code Center
+        application version (default '')
+    :arg str black-duck-report-recipients: Recipients that will be emailed
+        a report after the automatic Black Duck Code Center compliance checks
+        finished (default '')
+    :arg str black-duck-scopes: A list of dependency scopes/configurations
+        to run Black Duck Code Center compliance checks on. If left empty
+        all dependencies from all scopes will be checked (default '')
+    :arg bool black-duck-run-checks: Automatic Black Duck Code Center
+        compliance checks will occur after the build completes
+        (default False)
+    :arg bool black-duck-include-published-artifacts: Include the build's
+        published module artifacts in the license violation checks if they
+        are also used as dependencies for other modules in this build
+        (default False)
+    :arg bool auto-create-missing-component-requests: Auto create
+        missing components in Black Duck Code Center application after
+        the build is completed and deployed in Artifactory
+        (default True)
+    :arg bool auto-discard-stale-component-requests: Auto discard
+        stale components in Black Duck Code Center application after
+        the build is completed and deployed in Artifactory
+        (default True)
+    :arg str include-deployment-pattern: New line or comma separated mappings
+        of build artifacts to published artifacts. Supports Ant-style wildcards
+        mapping to target directories. E.g.: **/*.zip=>dir (default '')
+    :arg str exclude-deployment-pattern: New line or comma separated patterns
+        for excluding artifacts from deployment to Artifactory (default '')
+    :arg str include-env-var-pattern: Comma or space-separated list of
+        environment variables that will be included as part of the published
+        build info. Environment variables may contain the * and the ? wildcards
+        (default '')
+    :arg str exclude-env-var-pattern: Comma or space-separated list of
+        environment variables that will be excluded from the published
+        build info (default '*password*,*secret*')
+
+    Example::
+
+    .. literalinclude:: /../../tests/publishers/fixtures/artifactory01.yaml
+       :language: yaml
+
+    """
+
+    artifactory = XML.SubElement(
+        xml_parent, 'org.jfrog.hudson.ArtifactoryRedeployPublisher')
+
+    optional_bool_props = [
+        # xml property name, yaml property name, default value
+        ('deployArtifacts', 'deploy-artifacts', True),
+        ('discardOldBuilds', 'discard-old-builds', False),
+        ('discardBuildArtifacts', 'discard-build-artifacts', False),
+        ('deployBuildInfo', 'publish-build-info', False),
+        ('includeEnvVars', 'include-env-vars', False),
+        ('evenIfUnstable', 'even-if-unstable', False),
+        ('runChecks', 'run-checks', False),
+        ('includePublishArtifacts', 'include-publish-artifacts', False),
+        ('passIdentifiedDownstream', 'pass-identified-downstream', False),
+        ('licenseAutoDiscovery', 'license-auto-discovery', True),
+        ('enableIssueTrackerIntegration', 'enable-issue-tracker-integration',
+            False),
+        ('aggregateBuildIssues', 'aggregate-build-issues', False),
+        ('allowPromotionOfNonStagedBuilds',
+            'allow-promotion-of-non-staged-builds', False),
+        ('blackDuckRunChecks', 'black-duck-run-checks', False),
+        ('blackDuckIncludePublishedArtifacts',
+            'black-duck-include-published-artifacts', False),
+        ('autoCreateMissingComponentRequests',
+            'auto-create-missing-component-requests', True),
+        ('autoDiscardStaleComponentRequests',
+            'auto-discard-stale-component-requests', True),
+        ('filterExcludedArtifactsFromBuild',
+            'filter-excluded-artifacts-from-build', False)
+    ]
+
+    for (xml_prop, yaml_prop, default_value) in optional_bool_props:
+        XML.SubElement(artifactory, xml_prop).text = str(data.get(
+            yaml_prop, default_value)).lower()
+
+    optional_str_props = [
+        ('scopes', 'scopes'),
+        ('violationRecipients', 'violation-recipients'),
+        ('matrixParams', 'matrix-params'),
+        ('blackDuckAppName', 'black-duck-app-name'),
+        ('blackDuckAppVersion', 'black-duck-app-version'),
+        ('blackDuckReportRecipients', 'black-duck-report-recipients'),
+        ('blackDuckScopes', 'black-duck-scopes')
+    ]
+
+    for (xml_prop, yaml_prop) in optional_str_props:
+        XML.SubElement(artifactory, xml_prop).text = data.get(
+            yaml_prop, '')
+
+    details = XML.SubElement(artifactory, 'details')
+    XML.SubElement(details, 'artifactoryUrl').text = data.get('url', '')
+    XML.SubElement(details, 'artifactoryName').text = data.get('name', '')
+    XML.SubElement(details, 'repositoryKey').text = data.get(
+        'release-repo-key', '')
+    XML.SubElement(details, 'snapshotsRepositoryKey').text = data.get(
+        'snapshot-repo-key', '')
+
+    plugin = XML.SubElement(details, 'stagingPlugin')
+    XML.SubElement(plugin, 'pluginName').text = 'None'
+
+    deployment_patterns = XML.SubElement(
+        artifactory, 'artifactDeploymentPatterns')
+    XML.SubElement(deployment_patterns, 'includePatterns').text = data.get(
+        'include-deployment-pattern', '')
+    XML.SubElement(deployment_patterns, 'excludePatterns').text = data.get(
+        'exclude-deployment-pattern', '')
+
+    deployment_patterns = XML.SubElement(artifactory, 'envVarsPatterns')
+    XML.SubElement(deployment_patterns, 'includePatterns').text = data.get(
+        'include-env-var-pattern', '')
+    XML.SubElement(deployment_patterns, 'excludePatterns').text = data.get(
+        'exclude-env-var-pattern', '*password*,*secret*')
+
+
 def text_finder(parser, xml_parent, data):
     """yaml: text-finder
     This plugin lets you search keywords in the files you specified and
