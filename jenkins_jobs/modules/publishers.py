@@ -2121,6 +2121,110 @@ def maven_deploy(parser, xml_parent, data):
         data.get('deploy-unstable', False)).lower()
 
 
+def artifactory(parser, xml_parent, data):
+    """ yaml: artifactory
+    Uses/requires the Artifactory plugin to deploy artifacts Artifactory.
+
+    Requires the Jenkins `Artifactory Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Artifactory+Plugin>`_
+
+    :arg str url: Artifactory server url (default '')
+    :arg str release-repo-key: Release repository name (default '')
+    :arg str snapshot-repo-key: Snapshots repository name (default '')
+    :arg bool deploy-artifacts: Push artifacts (default False)
+    :arg bool publish-build-info: Push build metadata with artifacts
+              (default False)
+    :arg bool discard-old-builds:
+              Remove older build info from Artifactory (default False)
+    :arg bool discard-build-artifacts:
+              Remove older build artifacts from Artifactory (default False)
+
+    Example::
+
+      publishers:
+        - artifactory-deploy:
+            url: http://172.18.8.16:8081/artifactory
+            release-repo-key: libs-release-local
+            snapshot-repo-key: libs-snapshot-local
+            deploy-artifacts: true
+            publish-build-info: true
+            discard-old-builds: true
+            discard-build-artifacts: true
+    """
+
+    artifactory = XML.SubElement(
+        xml_parent, 'org.jfrog.hudson.ArtifactoryRedeployPublisher')
+
+    XML.SubElement(artifactory, 'deployArtifacts').text = str(data.get(
+        'deploy-artifacts', True)).lower()
+    XML.SubElement(artifactory, 'discardOldBuilds').text = str(data.get(
+        'discard-old-builds', False)).lower()
+    XML.SubElement(artifactory, 'discardBuildArtifacts').text = str(
+        data.get('discard-build-artifacts', False)).lower()
+    XML.SubElement(artifactory, 'deployBuildInfo').text = str(
+        data.get('publish-build-info', False)).lower()
+    XML.SubElement(artifactory, 'includeEnvVars').text = str(
+        data.get('include-env-vars', False)).lower()
+    XML.SubElement(artifactory, 'evenIfUnstable').text = str(
+        data.get('even-if-unstable', False)).lower()
+    XML.SubElement(artifactory, 'runChecks').text = str(
+        data.get('run-checks', False)).lower()
+    XML.SubElement(artifactory, 'includePublishArtifacts').text = str(
+        data.get('include-publish-artifacts', False)).lower()
+    XML.SubElement(artifactory, 'passIdentifiedDownstream').text = str(
+        data.get('pass-identified-downstream', False)).lower()
+    XML.SubElement(artifactory, 'licenseAutoDiscovery').text = str(
+        data.get('license-auto-discovery', True)).lower()
+    XML.SubElement(artifactory, 'disableLicenseAutoDiscovery').text = str(
+        data.get('disable-license-auto-discovery', False)).lower()
+    XML.SubElement(artifactory, 'enableIssueTrackerIntegration').text = str(
+        data.get('enable-issue-tracker-integration', False)).lower()
+    XML.SubElement(artifactory, 'aggregateBuildIssues').text = str(
+        data.get('aggregate-build-issues', False)).lower()
+    XML.SubElement(artifactory, 'allowPromotionOfNonStagedBuilds').text = str(
+        data.get('allow-promotion-of-non-staged-builds', False)).lower()
+    XML.SubElement(artifactory, 'blackDuckRunChecks').text = str(
+        data.get('black-duck-run-checks', False)).lower()
+    XML.SubElement(artifactory, 'blackDuckIncludePublishedArtifacts').text = \
+        str(data.get('black-duck-include-published-artifacts', False)).lower()
+    XML.SubElement(artifactory, 'autoCreateMissingComponentRequests').text = \
+        str(data.get('auto-create-missing-component-requests', True)).lower()
+    XML.SubElement(artifactory, 'autoDiscardStaleComponentRequests').text = \
+        str(data.get('auto-discard-stale-component-requests', True)).lower()
+    XML.SubElement(artifactory, 'filterExcludedArtifactsFromBuild').text = str(
+        data.get('filter-excluded-artifacts-from-build', False)).lower()
+
+    XML.SubElement(artifactory, 'scopes').text = ''
+    XML.SubElement(artifactory, 'violationRecipients').text = ''
+    XML.SubElement(artifactory, 'matrixParams').text = ''
+    XML.SubElement(artifactory, 'blackDuckAppName').text = ''
+    XML.SubElement(artifactory, 'blackDuckAppVersion').text = ''
+    XML.SubElement(artifactory, 'blackDuckReportRecipients').text = ''
+    XML.SubElement(artifactory, 'blackDuckScopes').text = ''
+
+    details = XML.SubElement(artifactory, 'details')
+    XML.SubElement(details, 'artifactoryUrl').text = data['url']
+    XML.SubElement(details, 'artifactoryName').text = data['name']
+    XML.SubElement(details, 'repositoryKey').text = data['release-repo-key']
+    XML.SubElement(details, 'snapshotsRepositoryKey').text = \
+        data['snapshot-repo-key']
+    plugin = XML.SubElement(details, 'stagingPlugin')
+    XML.SubElement(plugin, 'pluginName').text = 'None'
+
+    deployment_patterns = XML.SubElement(
+        artifactory, 'artifactDeploymentPatterns')
+    XML.SubElement(deployment_patterns, 'includePatterns').text = data.get(
+        'include-deployment-pattern', '')
+    XML.SubElement(deployment_patterns, 'excludePatterns').text = data.get(
+        'exclude-deployment-pattern', '')
+
+    deployment_patterns = XML.SubElement(artifactory, 'envVarsPatterns')
+    XML.SubElement(deployment_patterns, 'includePatterns').text = data.get(
+        'include-env-var-pattern', '')
+    XML.SubElement(deployment_patterns, 'excludePatterns').text = data.get(
+        'exclude-env-var-pattern', '*password*,*secret*')
+
+
 def text_finder(parser, xml_parent, data):
     """yaml: text-finder
     This plugin lets you search keywords in the files you specified and
