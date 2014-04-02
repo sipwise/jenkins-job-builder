@@ -37,7 +37,8 @@ internal YAML structure:
             * **type** (`str`) -- axis type, must be either
               'label-expression', 'user-defined' or 'slave'.
             * **name** (`str`) -- name of the axis
-            * **values** (`list`) -- values of the axis
+            * **values** (`list`) -- values of the axis. Can optionally be \
+              a space-separated string.
 
 Example::
 
@@ -141,6 +142,8 @@ class Matrix(jenkins_jobs.modules.base.Base):
             axis_name = self.supported_axis.get(axis['type'])
             lbl_root = XML.SubElement(ax_root, axis_name)
             name, values = axis['name'], axis['values']
+            if isinstance(values, basestring):
+                values = [v.strip() for v in values.split(" ")]
             XML.SubElement(lbl_root, 'name').text = str(name)
             v_root = XML.SubElement(lbl_root, 'values')
             for v in values:
