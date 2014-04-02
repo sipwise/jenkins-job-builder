@@ -1,0 +1,5 @@
+wrappers:
+  - artifactory:
+      url: http://artifactory.devaws.dataxu.net/artifactory
+      name: 'test'
+      repo-key: repo
