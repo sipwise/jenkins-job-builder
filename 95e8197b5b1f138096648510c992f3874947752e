@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9q7c\u003d",
+        "filename": "jenkins_jobs/modules/project_maven.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-02T22:26:12Z",
+      "side": 1,
+      "message": "we are moving to using tests as example?  Would you be willing to replace this section with a literalinclude to the project-maven001.yaml test?  You can find many examples of the literalinclude usage in publishers.py\n\nYou can generate the docs in your checkout to verify.  this is how: http://ci.openstack.org/jenkins-job-builder/installation.html#documentation",
+      "revId": "95e8197b5b1f138096648510c992f3874947752e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
