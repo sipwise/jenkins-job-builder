@@ -1,0 +1,14 @@
+wrappers:
+  - artifactory-maven-freestyle:
+      url: http://artifactory.example.net/artifactory
+      name: 'test'
+      repo-key: repo
+      include-env-vars: true
+      matrix-params:
+      - 'custom_prop=${PROJECT_ENV_VAR}'
+      include-deployment-pattern:
+      - '*.zip=>results'
+      include-env-var-pattern:
+      - 'PROJECT_*'
+      - 'ORG_*'
+
