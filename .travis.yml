@@ -1,0 +1,10 @@
+language: python
+env:
+- TOXENV=pep8
+- TOXENV=pyflakes
+- TOXENV=py26
+- TOXENV=py27
+install:
+- pip install tox==1.6.1
+script:
+- tox
