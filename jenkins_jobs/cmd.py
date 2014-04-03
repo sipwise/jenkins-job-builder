@@ -25,6 +25,7 @@ DEFAULT_CONF = """
 [job_builder]
 keep_descriptions=False
 ignore_cache=False
+recursive=False
 
 [jenkins]
 url=http://localhost:8080/
@@ -51,11 +52,15 @@ def main():
     parser_update.add_argument('--delete-old', help='Delete obsolete jobs',
                                action='store_true',
                                dest='delete_old', default=False,)
+    parser_update.add_argument('-r', '--recursive', action='store_true',
+                               help='Look for yaml files recusrsively')
     parser_test = subparser.add_parser('test')
     parser_test.add_argument('path', help='Path to YAML file or directory')
     parser_test.add_argument('-o', dest='output_dir', required=True,
                              help='Path to output XML')
     parser_test.add_argument('name', help='name(s) of job(s)', nargs='*')
+    parser_test.add_argument('-r', '--recursive', action='store_true',
+                             help='Look for yaml files recusrsively')
     parser_delete = subparser.add_parser('delete')
     parser_delete.add_argument('name', help='name of job', nargs='+')
     parser_delete.add_argument('-p', '--path', default=None,
@@ -149,12 +154,22 @@ def main():
     elif options.command == 'update':
         logger.info("Updating jobs in {0} ({1})".format(
             options.path, options.names))
-        jobs = builder.update_job(options.path, options.names)
+        recursive = options.recursive \
+            or config.getboolean('job_builder', 'recursive')
+        jobs = builder.update_job(
+            fn=options.path,
+            names=options.names,
+            recursive=recursive)
         if options.delete_old:
             builder.delete_old_managed(keep=[x.name for x in jobs])
     elif options.command == 'test':
-        builder.update_job(options.path, options.name,
-                           output_dir=options.output_dir)
+        recursive = options.recursive \
+            or config.getboolean('job_builder', 'recursive')
+        builder.update_job(
+            fn=options.path,
+            names=options.name,
+            output_dir=options.output_dir,
+            recursive=recursive)
 
 if __name__ == '__main__':
     sys.path.insert(0, '.')
