@@ -5,7 +5,7 @@ To install Jenkins Job Builder, run::
 
   sudo python setup.py install
 
-The OpenStack project uses puppet to manage its infrastructure
+The OpenStack project uses Puppet to manage its infrastructure
 systems, including Jenkins.  If you use Puppet, you can use the
 `OpenStack Jenkins module`__ to install Jenkins Job Builder.
 
@@ -14,7 +14,7 @@ __ https://github.com/openstack-infra/config/tree/master/modules/jenkins
 Documentation
 -------------
 
-Documentation have been included and are in the 'doc' folder. To generate docs
+Documentation is included and is in the ``doc`` folder. To generate docs
 locally execute the command::
 
     tox -e doc
@@ -24,14 +24,14 @@ The generated documentation is then available under ``doc/build/html/index.html`
 Unit Tests
 ----------
 
-Unit tests have been included and are in the 'tests' folder.  We recently
+Unit tests have been included and are in the ``tests`` folder.  We recently
 started including unit tests as examples in our documentation so to keep the
 examples up to date it is very important that we include a unit tests for
-every module.  You can run the unit tests by execute the command::
+every module.  To run the unit tests, execute the command::
 
-    tox -epy27
+    tox -e py27
 
-* Note - view tox.ini to run test on other versions of python
+* Note: View ``tox.ini`` to run test on other versions of python
 
 Configuration File
 ------------------
@@ -40,7 +40,9 @@ After installation, you will need to create a configuration file.  By
 default, `jenkins-jobs` looks in
 ``/etc/jenkins_jobs/jenkins_jobs.ini`` but you may specify an
 alternate location when running `jenkins-jobs`.  The file should have
-the following format::
+the following format:
+
+.. code-block:: ini
 
   [jenkins]
   user=USERNAME
@@ -87,7 +89,7 @@ Once you have a configuration defined, you can test the job builder by running::
   jenkins-jobs test /path/to/config -o /path/to/output
 
 That will write XML files to the output directory for all of the jobs
-defined in the configuration directory.  
+defined in the configuration directory.
 
 Updating Jenkins
 ^^^^^^^^^^^^^^^^
