@@ -117,8 +117,15 @@ class YamlParser(object):
         self.data = {}
         self.jobs = []
 
-    def parse(self, fn):
-        data = yaml.load(open(fn))
+    def parse(self, file_or_filename):
+        if isinstance(file_or_filename, file):
+            fn = file_or_filename.name
+            data = yaml.load(file_or_filename)
+        else:
+            fn = file_or_filename
+            with open(file_or_filename) as file_obj:
+                data = yaml.load(file_obj)
+
         if data:
             if not isinstance(data, list):
                 raise JenkinsJobsException(
@@ -509,13 +516,20 @@ class Builder(object):
         self.global_config = config
         self.ignore_cache = ignore_cache
 
-    def load_files(self, fn):
-        if os.path.isdir(fn):
-            files_to_process = [os.path.join(fn, f)
-                                for f in os.listdir(fn)
+    def is_dirname(self, file_or_filename_or_dirname):
+        if not isinstance(file_or_filename_or_dirname, str):
+            return False
+        return os.path.isdir(file_or_filename_or_dirname)
+
+    def load_files(self, file_or_filename_or_dirname):
+        if self.is_dirname(file_or_filename_or_dirname):
+            dirname = file_or_filename_or_dirname
+            files_to_process = [os.path.join(dirname, f)
+                                for f in os.listdir(dirname)
                                 if (f.endswith('.yml') or f.endswith('.yaml'))]
         else:
-            files_to_process = [fn]
+            file_or_filename = file_or_filename_or_dirname
+            files_to_process = [file_or_filename]
         self.parser = YamlParser(self.global_config)
         for in_file in files_to_process:
             logger.debug("Parsing YAML file {0}".format(in_file))
