@@ -26,6 +26,7 @@ DEFAULT_CONF = """
 [job_builder]
 keep_descriptions=False
 ignore_cache=False
+recursive=False
 
 [jenkins]
 url=http://localhost:8080/
@@ -40,6 +41,16 @@ def confirm(question):
         sys.exit('Aborted')
 
 
+def recurse_path(root):
+    basepath = os.path.realpath(root)
+    pathlist = [basepath]
+
+    for root, dirs, files in os.walk(basepath, topdown=True):
+        pathlist.extend([os.path.join(root, path) for path in dirs])
+
+    return pathlist
+
+
 def main(argv=None):
     # We default argv to None and assign to sys.argv[1:] below because having
     # an argument default value be a mutable type in Python is a gotcha. See
@@ -50,15 +61,18 @@ def main(argv=None):
     import jenkins_jobs.builder
     import jenkins_jobs.errors
     parser = argparse.ArgumentParser()
+    recursive_parser = argparse.ArgumentParser(add_help=False)
+    recursive_parser.add_argument('-r', '--recursive', action='store_true',
+                                  help='look for yaml files recusrsively')
     subparser = parser.add_subparsers(help='update, test or delete job',
                                       dest='command')
-    parser_update = subparser.add_parser('update')
+    parser_update = subparser.add_parser('update', parents=[recursive_parser])
     parser_update.add_argument('path', help='path to YAML file or directory')
     parser_update.add_argument('names', help='name(s) of job(s)', nargs='*')
     parser_update.add_argument('--delete-old', help='delete obsolete jobs',
                                action='store_true',
                                dest='delete_old', default=False,)
-    parser_test = subparser.add_parser('test')
+    parser_test = subparser.add_parser('test', parents=[recursive_parser])
     parser_test.add_argument('path', help='path to YAML file or directory',
                              nargs='?', default=sys.stdin)
     parser_test.add_argument('-o', dest='output_dir', default=sys.stdout,
@@ -153,6 +167,12 @@ def main(argv=None):
             logger.warn(
                 "Reading configuration from STDIN. Press %s to end input.",
                 key)
+    else:
+        if (hasattr(options, 'recursive') or
+            config.has_option('job_builder', 'recursive')) and \
+                os.path.isdir(options.path):
+
+            options.path = recurse_path(options.path)
 
     if options.command == 'delete':
         for job in options.name:
