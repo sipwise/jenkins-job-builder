@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9hoI\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-03T23:25:35Z",
+      "side": 1,
+      "message": "The modifed variable names seem unnecessarily verbose",
+      "revId": "eb9b13a388041a126d96e8679924664d0181d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9hjc\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-03T23:25:35Z",
+      "side": 1,
+      "message": "There are other objects in python that can be read from like files, besides file objects.\n\nPerhaps determine if what has been passed is a string, and if it is open it, otherwise just pass it to yaml.load().\n\nThat way any object that has the read() method can be used.",
+      "revId": "eb9b13a388041a126d96e8679924664d0181d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9hTU\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-03T23:25:35Z",
+      "side": 1,
+      "message": "Leftover code from alternative approach?",
+      "revId": "eb9b13a388041a126d96e8679924664d0181d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9hSA\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-03T23:25:35Z",
+      "side": 1,
+      "message": "I\u0027m not seeing any functional difference in the above code from what was there previously.",
+      "revId": "eb9b13a388041a126d96e8679924664d0181d6ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
