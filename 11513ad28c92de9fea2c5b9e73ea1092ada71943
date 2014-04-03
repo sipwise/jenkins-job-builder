@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9hN8\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-03T23:36:28Z",
+      "side": 1,
+      "message": "I think this would be better if it could transparently accept both a string as here or an input stream object and pass it directly to self.parse_fp(). i.e. don\u0027t require the caller to use different methods.",
+      "revId": "11513ad28c92de9fea2c5b9e73ea1092ada71943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9hO8\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-03T23:36:28Z",
+      "side": 1,
+      "message": "Seems an unnecessary abstraction, think it would be better left up to the parse method to determine the correct approach to handle the input passed, i.e. use open() on strings, and pass directly to parse_fp() for other objects that presumably had a read method.",
+      "revId": "11513ad28c92de9fea2c5b9e73ea1092ada71943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9hO4\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-03T23:36:28Z",
+      "side": 1,
+      "message": "See above comment on load_file_fp()",
+      "revId": "11513ad28c92de9fea2c5b9e73ea1092ada71943",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
