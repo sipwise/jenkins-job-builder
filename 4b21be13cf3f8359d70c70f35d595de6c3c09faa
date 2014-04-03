@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9lJ8\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-03T15:10:34Z",
+      "side": 1,
+      "message": "You may want to use an empty string to avoid TypeError exceptions on python 2.6",
+      "revId": "4b21be13cf3f8359d70c70f35d595de6c3c09faa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9lJs\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-03T15:10:34Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "4b21be13cf3f8359d70c70f35d595de6c3c09faa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9lI4\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-03T15:10:34Z",
+      "side": 1,
+      "message": "Recommend using \"False\" instead for python 2.6 ConfigParser compatibility.",
+      "revId": "4b21be13cf3f8359d70c70f35d595de6c3c09faa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9lNI\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-03T15:10:34Z",
+      "side": 1,
+      "message": "If you use strings as the values when setting the options above instead of python objects, you shouldn\u0027t need to catch exceptions here and also can skip the assignment below.",
+      "revId": "4b21be13cf3f8359d70c70f35d595de6c3c09faa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9lMs\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-03T15:10:34Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "4b21be13cf3f8359d70c70f35d595de6c3c09faa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9lYQ\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-03T15:10:34Z",
+      "side": 1,
+      "message": "If you test if there is an option before accessing it, the try/except shouldn\u0027t be required, or vice-versa.\n\nIf you need the try/except clause to catch another issue, then you might as well skip checking to see if the option was set in the first place.",
+      "revId": "4b21be13cf3f8359d70c70f35d595de6c3c09faa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9lTc\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-03T15:10:34Z",
+      "side": 1,
+      "message": "Using strings when setting the options should avoid the need to catch exceptions here, but you\u0027ll also need to use \u0027getboolean\u0027 to have ConfigParser convert the string to a python boolean.",
+      "revId": "4b21be13cf3f8359d70c70f35d595de6c3c09faa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
