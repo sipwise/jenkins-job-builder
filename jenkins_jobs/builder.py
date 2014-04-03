@@ -520,11 +520,20 @@ class Builder(object):
         self.global_config = config
         self.ignore_cache = ignore_cache
 
-    def load_files(self, fn):
+    def load_files(self, fn, recursive=False):
         if os.path.isdir(fn):
-            files_to_process = [os.path.join(fn, f)
-                                for f in os.listdir(fn)
-                                if (f.endswith('.yml') or f.endswith('.yaml'))]
+            if recursive:
+                files_to_process = []
+                for root, _, files in os.walk(fn):
+                    files_to_process += [os.path.join(root, fname)
+                                         for fname in files
+                                         if (fname.endswith('.yml')
+                                             or fname.endswith('.yaml'))]
+            else:
+                files_to_process = [os.path.join(fn, f)
+                                    for f in os.listdir(fn)
+                                    if (f.endswith('.yml')
+                                        or f.endswith('.yaml'))]
         else:
             files_to_process = [fn]
         self.parser = YamlParser(self.global_config)
@@ -563,8 +572,8 @@ class Builder(object):
         for job in jobs:
             self.delete_job(job['name'])
 
-    def update_job(self, fn, names=None, output_dir=None):
-        self.load_files(fn)
+    def update_job(self, fn, names=None, output_dir=None, recursive=False):
+        self.load_files(fn, recursive)
         self.parser.generateXML(names)
 
         self.parser.jobs.sort(lambda a, b: cmp(a.name, b.name))

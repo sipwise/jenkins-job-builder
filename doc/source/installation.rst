@@ -57,6 +57,10 @@ job_builder section
   When this option is set to True, that behavior changes and it will only
   overwrite the description if you specified it in the yaml. False by default.
 
+**recursive**
+  (Optional) If set to True, jenkins job builder will recursively search for
+  yaml files if a directory is passed.
+
 jenkins section
 ^^^^^^^^^^^^^^^
 
