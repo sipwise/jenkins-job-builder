@@ -118,7 +118,12 @@ class YamlParser(object):
         self.jobs = []
 
     def parse(self, fn):
-        data = yaml.load(open(fn))
+        if hasattr(fn, 'endswith'):
+            with open(fn) as file_obj:
+                data = yaml.load(file_obj)
+        else:
+            data = yaml.load(fn)
+
         if data:
             if not isinstance(data, list):
                 raise JenkinsJobsException(
@@ -509,8 +514,13 @@ class Builder(object):
         self.global_config = config
         self.ignore_cache = ignore_cache
 
+    def is_dirname(self, fn):
+        if not isinstance(fn, str):
+            return False
+        return os.path.isdir(fn)
+
     def load_files(self, fn):
-        if os.path.isdir(fn):
+        if self.is_dirname(fn):
             files_to_process = [os.path.join(fn, f)
                                 for f in os.listdir(fn)
                                 if (f.endswith('.yml') or f.endswith('.yaml'))]
