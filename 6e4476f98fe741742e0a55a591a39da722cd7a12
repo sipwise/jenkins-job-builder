@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9hsQ\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-03T22:45:23Z",
+      "side": 1,
+      "message": "I don\u0027t have an env to test it right now, but I\u0027m reasonably certain that you can\u0027t open \u0027/dev/stdin\u0027 on Windows, which although it\u0027s probably not a primary target platform, I still think we should try.",
+      "revId": "6e4476f98fe741742e0a55a591a39da722cd7a12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
