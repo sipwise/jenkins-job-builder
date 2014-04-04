@@ -212,6 +212,16 @@ def gerrit(parser, xml_parent, data):
                 file-paths:
                     - compare-type: ANT
                       pattern: subdirectory/**
+              - project-compare-type: 'PLAIN'
+                project-pattern: 'another-test-project'
+                branches:
+                    - branch-compare-type: 'PLAIN'
+                      branch-pattern: 'master'
+                    - branch-compare-type: 'PLAIN'
+                      branch-pattern: 'stable'
+                file-paths:
+                    - compare-type: ANT
+                      pattern: subdirectory/**
             skip-vote:
                 successful: true
                 failed: true
@@ -239,12 +249,21 @@ def gerrit(parser, xml_parent, data):
         XML.SubElement(gproj, 'compareType').text = \
             project['project-compare-type']
         XML.SubElement(gproj, 'pattern').text = project['project-pattern']
+
         branches = XML.SubElement(gproj, 'branches')
-        gbranch = XML.SubElement(branches, 'com.sonyericsson.hudson.plugins.'
-                                 'gerrit.trigger.hudsontrigger.data.Branch')
-        XML.SubElement(gbranch, 'compareType').text = \
-            project['branch-compare-type']
-        XML.SubElement(gbranch, 'pattern').text = project['branch-pattern']
+        project_branches = project.get('branches', [])
+        if not project_branches:
+            project_branches = [
+                {'branch-compare-type': project['branch-compare-type'],
+                 'branch-pattern': project['branch-pattern']}]
+        for branch in project_branches:
+            gbranch = XML.SubElement(
+                branches, 'com.sonyericsson.hudson.plugins.'
+                'gerrit.trigger.hudsontrigger.data.Branch')
+            XML.SubElement(gbranch, 'compareType').text = \
+                branch['branch-compare-type']
+            XML.SubElement(gbranch, 'pattern').text = branch['branch-pattern']
+
         project_file_paths = project.get('file-paths', [])
         if project_file_paths:
             fps_tag = XML.SubElement(gproj, 'filePaths')
