@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9eX0\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-04T09:16:31Z",
+      "side": 1,
+      "message": "Sorry I am late on this change and come with yet another enhancement request!\n\nThe list of available parameters are listed in the browserdict and then repeated in the error message. That is a recurring feature in the code and some publishers just display the dict key. You could thus use:\n\n \u0027Browser entered is not valid must be one of: %s\u0027\n % \u0027, \u0027.join( browserdict.keys() )\n\nThis way we avoid \"code\" duplication.  The two drawbacks are that you will have to amend this change yet again and that we are replacing the final \u0027and\u0027 with a comma.\n\n:-D",
+      "revId": "8e70f88020b176b50491a5e228c06d253f69a2df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
