@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9eMo\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 589,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-04T09:38:56Z",
+      "side": 1,
+      "message": "cacheStorage.save() does the same as cacheStorage.set() albeit without the md5. Is that intended?\n\nI am wondering whether we can get the cache slightly corrupted since each threads maintains a different state for jobs and might ends up overwriting each other data.\n\nWith two jobs jobA and jobB being in cache with md5sum 1 and 2. The cache would be:\n\n {jobA: 1, jobB: 2}\n\nNow we update both jobs in parallel, jobA md5sum becoming 3 and jobB md5sum becoming 4. The first thread would update the cache to:\n\n {jobA: 3, jobB: 2}\n\nThe second thread might have the old state for jobA and end up writing the old md5sum resulting in:\n\n {jobA: 1, jobB: 4}\n\nInstead of:\n\n {jobA: 3, jobB: 4}\n\n\nThat might be FUD sorry. A bit tired this morning and haven\u0027t closely looked at the code. Need someone clever than me to figure out whether it is a concern.",
+      "revId": "a779ef70dc71c12637640da924d73a8bbd58d679",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
