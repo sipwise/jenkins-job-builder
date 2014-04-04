@@ -1,0 +1,19 @@
+- defaults:
+    name: Foo
+    disabled: false
+    block-downstream: false
+    block-upstream: false
+    wrappers:
+      - timestamps
+
+- job-template:
+    name: '{component}-Test'
+    project-type: freestyle
+    defaults: '{component}'
+
+- project:
+    name: Foo-test-project
+    component:
+      - Foo
+    jobs:
+      - '{component}-Test'
