@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9eg0\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-04T08:52:36Z",
+      "side": 1,
+      "message": "Should we really pass the plugin name and versions? As I understand it it is populated by Jenkins when creating the configuration manually.  When writing jobs via the Jenkins API, I don\u0027t think it is needed and apparently we never do it.",
+      "revId": "235b157842d9d2a02461bdbbf8e9e20ffc64e95e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
