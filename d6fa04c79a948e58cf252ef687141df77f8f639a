@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9eyA\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-04T08:17:30Z",
+      "side": 1,
+      "message": "it\u0027s -\u003e its",
+      "revId": "d6fa04c79a948e58cf252ef687141df77f8f639a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9ex0\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-04T08:17:30Z",
+      "side": 1,
+      "message": "Missing period at the end of the sentence.",
+      "revId": "d6fa04c79a948e58cf252ef687141df77f8f639a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9exg\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-04T08:17:30Z",
+      "side": 1,
+      "message": "it -\u003e It",
+      "revId": "d6fa04c79a948e58cf252ef687141df77f8f639a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9exY\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-04T08:17:30Z",
+      "side": 1,
+      "message": "Missing period at the end of the sentence.",
+      "revId": "d6fa04c79a948e58cf252ef687141df77f8f639a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9exo\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-04T08:17:30Z",
+      "side": 1,
+      "message": "Missing period at the end of the sentence.",
+      "revId": "d6fa04c79a948e58cf252ef687141df77f8f639a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9exU\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-04T08:17:30Z",
+      "side": 1,
+      "message": "depends -\u003e depending",
+      "revId": "d6fa04c79a948e58cf252ef687141df77f8f639a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9ewI\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 695,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-04T08:17:30Z",
+      "side": 1,
+      "message": "this only needs to be initialized if parallelize is True",
+      "revId": "d6fa04c79a948e58cf252ef687141df77f8f639a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9eug\u003d",
+        "filename": "tests/parallel/test_parallel.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-04T08:17:30Z",
+      "side": 1,
+      "message": "Is this copyright header correct?",
+      "revId": "d6fa04c79a948e58cf252ef687141df77f8f639a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
