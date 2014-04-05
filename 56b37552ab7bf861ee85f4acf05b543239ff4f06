@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9WmA\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 11020
+      },
+      "writtenOn": "2014-04-05T21:34:02Z",
+      "side": 1,
+      "message": "Probably just a matter of style/taste here, but I\u0027d rather test hasattr(fn, \"read\") because that\u0027s what yaml.load is going to call on file-like objects rather than testing for \"endswith\" to check if it\u0027s a string-like. Also, it\u0027s more likely that the caller will pass a custom file object rather than a custom string.",
+      "revId": "56b37552ab7bf861ee85f4acf05b543239ff4f06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9WmU\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 11020
+      },
+      "writtenOn": "2014-04-05T21:34:02Z",
+      "side": 1,
+      "message": "I don\u0027t think exposing Builder.is_dirname is very useful, especially since it\u0027s currently being called only in one place. Wouldn\u0027t you rather keep that logic within load_files() ?",
+      "revId": "56b37552ab7bf861ee85f4acf05b543239ff4f06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9Wmg\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 11020
+      },
+      "writtenOn": "2014-04-05T21:34:02Z",
+      "side": 1,
+      "message": "would this work with Unicode strings? Maybe you want to test basestring?",
+      "revId": "56b37552ab7bf861ee85f4acf05b543239ff4f06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
