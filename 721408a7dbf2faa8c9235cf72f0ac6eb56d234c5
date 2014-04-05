@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9WiY\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-05T22:38:31Z",
+      "side": 1,
+      "message": "Attempting to execute \u0027open(\"/dev/stdin\")\u0027 on Windows will result in an IOError exception being thrown. Suggesting switching to pass the sys.stdin object to load_files() and rebase onto one of the commits implementing support for reading from file like objects and opening files given by name.",
+      "revId": "721408a7dbf2faa8c9235cf72f0ac6eb56d234c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
