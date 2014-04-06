@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9VbE\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-06T20:34:05Z",
+      "side": 1,
+      "message": "You could save the intermediate list and use slicing to join all but the last element with commas and then output the last by itself to avoid the drawback of having a comma.\n\nBut that\u0027s probably being a little too nitpicky :)\n\n if browser not in browserdict:\n     valid \u003d browserdict.keys().sort()\n     raise JenkinsJobsException(\"Browser entered is not valid must be one \"\n                                \"of: %s or %s\" % (\", \".join(valid[:-1]), valid[-1])",
+      "revId": "8198b13430f04bc43611deb0ebe32c21fa4f8e40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
