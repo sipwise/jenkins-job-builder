@@ -97,7 +97,7 @@ def create_parser():
                                   action='append', default=[],
                                   help='paths to exclude when using recursive'
                                        ' search, uses standard globbing.')
-    subparser = parser.add_subparsers(help='update, test or delete job',
+    subparser = parser.add_subparsers(help='update, test, list or delete job',
                                       dest='command')
 
     # subparser: update
@@ -122,6 +122,12 @@ def create_parser():
     parser_test.add_argument('-o', dest='output_dir', default=sys.stdout,
                              help='path to output XML')
     parser_test.add_argument('name', help='name(s) of job(s)', nargs='*')
+
+    # subparser: list
+    parser_list = subparser.add_parser('list', parents=[recursive_parser])
+    parser_list.add_argument('names', help='name(s) of job(s)', nargs='*')
+    parser_list.add_argument('-p', '--path', default=None,
+                             help='path to YAML file or directory')
 
     # subparser: delete
     parser_delete = subparser.add_parser('delete', parents=[recursive_parser])
@@ -220,6 +226,8 @@ def setup_config_settings(options):
         config.readfp(conffp)
     elif options.command == 'test':
         logger.debug("Not requiring config for test output generation")
+    elif options.command == 'list' and options.path is not None:
+        logger.debug("Not requiring config for listing jobs defined")
     else:
         raise JenkinsJobsException(
             "A valid configuration file is required when not run as a test"
@@ -352,6 +360,10 @@ def execute(options, config):
     if options.command == 'delete':
         for job in options.name:
             builder.delete_job(job, options.path)
+    elif options.command == 'list':
+        logger.info("Listing jobs in {0} ({1})".format(
+            options.path, options.names))
+        builder.list_jobs(options.names, options.path)
     elif options.command == 'delete-all':
         confirm('Sure you want to delete *ALL* jobs from Jenkins server?\n'
                 '(including those not managed by Jenkins Job Builder)')
