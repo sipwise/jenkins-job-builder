@@ -47,6 +47,10 @@ def main():
     parser_delete.add_argument('name', help='name of job', nargs='+')
     parser_delete.add_argument('-p', '--path', default=None,
                                help='Path to YAML file or directory')
+    parser_browse = subparser.add_parser('browse')
+    parser_browse.add_argument('name', help='name of job', nargs='*')
+    parser_browse.add_argument('-p', '--path', default=None,
+                               help='Path to YAML file or directory')
     subparser.add_parser('delete-all',
                          help='Delete *ALL* jobs from Jenkins server, '
                          'including those not managed by Jenkins Job '
@@ -128,6 +132,12 @@ def main():
         for job in options.name:
             logger.info("Deleting jobs in [{0}]".format(job))
             builder.delete_job(job, options.path)
+    elif options.command == 'browse':
+        if options.path and not options.name:
+            options.name = '*'
+        for job in options.name:
+            logger.info("Browsing jobs in [{0}]".format(job))
+            builder.browse_jobs(job, options.path)
     elif options.command == 'delete-all':
         confirm('Sure you want to delete *ALL* jobs from Jenkins server?\n'
                 '(including those not managed by Jenkins Job Builder)')

@@ -29,6 +29,7 @@ import logging
 import copy
 import itertools
 import fnmatch
+import webbrowser
 from jenkins_jobs.errors import JenkinsJobsException
 
 logger = logging.getLogger(__name__)
@@ -470,6 +471,7 @@ class CacheStorage(object):
 class Jenkins(object):
     def __init__(self, url, user, password):
         self.jenkins = jenkins.Jenkins(url, user, password)
+        self.jenkins_url = url
 
     def update_job(self, job_name, xml):
         if self.is_job(job_name):
@@ -481,6 +483,11 @@ class Jenkins(object):
 
     def is_job(self, job_name):
         return self.jenkins.job_exists(job_name)
+
+    def browse_job(self, job_name):
+        url = '%s/job/%s' % (self.jenkins_url, job_name)
+        logger.info("Opening {0}".format(url))
+        webbrowser.open(url)
 
     def get_job_md5(self, job_name):
         xml = self.jenkins.get_job_config(job_name)
@@ -555,6 +562,20 @@ class Builder(object):
         jobs = self.jenkins.get_jobs()
         for job in jobs:
             self.delete_job(job['name'])
+
+    def browse_jobs(self, glob_name, fn=None):
+        if fn:
+            if not glob_name:
+                glob_name = '*'
+            self.load_files(fn)
+            self.parser.generateXML(glob_name)
+            jobs = [j.name
+                    for j in self.parser.jobs
+                    if matches(j.name, [glob_name])]
+        else:
+            jobs = [glob_name]
+        for job in jobs:
+            self.jenkins.browse_job(job)
 
     def update_job(self, fn, names=None, output_dir=None):
         self.load_files(fn)
