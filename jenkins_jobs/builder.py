@@ -25,6 +25,7 @@ from pprint import pformat
 import re
 import sys
 import time
+import webbrowser
 import xml.etree.ElementTree as XML
 import yaml
 
@@ -157,6 +158,11 @@ class Jenkins(object):
 
         # if not exists, use jenkins
         return self.jenkins.job_exists(job_name)
+
+    def browse_job(self, job_name):
+        url = '%s/job/%s' % (self.jenkins.server, job_name)
+        logger.info("Opening {0}".format(url))
+        webbrowser.open(url)
 
     def get_job_md5(self, job_name):
         xml = self.jenkins.get_job_config(job_name)
@@ -329,6 +335,23 @@ class Builder(object):
 
         for job in jobs:
             stdout.write((job + '\n').encode('utf-8'))
+
+    def browse_jobs(self, jobs_glob=None, fn=None, batch=10):
+        jobs = self.get_jobs(jobs_glob, fn)
+
+        logger.info("Matching jobs: %d", len(jobs))
+
+        if len(jobs) > batch:
+            logger.info("Opening browser windows in batches of %d", batch)
+
+        for idx, job in enumerate(jobs):
+            self.jenkins.browse_job(job)
+
+            if batch and (idx + 1) % batch == 0:
+                remaining = len(jobs) - (idx + 1)
+                prompt = "Press ENTER to open {0} more jobs ({1} remaining): "
+                prompt = prompt.format(batch, remaining)
+                raw_input(prompt)
 
     def get_jobs(self, jobs_glob=None, fn=None):
         if fn:
