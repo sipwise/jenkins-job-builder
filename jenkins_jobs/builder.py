@@ -578,6 +578,26 @@ class Builder(object):
         for job in jobs:
             self.delete_job(job['name'])
 
+    def list_jobs(self, job_name_globs=None, fn='.'):
+        jobs = self.get_jobs(job_name_globs, fn)
+
+        logger.info("Matching jobs: %d", len(jobs))
+
+        for job in jobs:
+            print(job)
+
+    def get_jobs(self, job_name_globs=None, fn='.'):
+        if fn:
+            self.load_files(fn)
+            self.parser.generateXML(job_name_globs)
+            jobs = [j.name for j in self.parser.jobs]
+        else:
+            jobs = job_name_globs
+
+        logger.debug("Builder.get_jobs: returning %r", jobs)
+
+        return jobs
+
     def update_job(self, input_fn, names=None, output=None):
         self.load_files(input_fn)
         self.parser.generateXML(names)
