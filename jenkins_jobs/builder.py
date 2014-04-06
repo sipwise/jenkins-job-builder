@@ -23,6 +23,7 @@ import operator
 import os
 from pprint import pformat
 import re
+import sys
 import time
 import xml.etree.ElementTree as XML
 import yaml
@@ -31,6 +32,7 @@ import jenkins
 
 from jenkins_jobs.constants import MAGIC_MANAGE_STRING
 from jenkins_jobs.parallel import parallelize
+from jenkins_jobs.parser import matches
 from jenkins_jobs.parser import YamlParser
 from jenkins_jobs import utils
 
@@ -318,6 +320,28 @@ class Builder(object):
         self.jenkins.delete_all_jobs()
         # Need to clear the JJB cache after deletion
         self.cache.clear()
+
+    def list_jobs(self, jobs_glob=None, fn=None):
+        jobs = self.get_jobs(jobs_glob, fn)
+
+        logger.info("Matching jobs: %d", len(jobs))
+        stdout = utils.wrap_stream(sys.stdout)
+
+        for job in jobs:
+            stdout.write((job + '\n').encode('utf-8'))
+
+    def get_jobs(self, jobs_glob=None, fn=None):
+        if fn:
+            self.load_files(fn)
+            self.parser.expandYaml(jobs_glob)
+            jobs = [j['name'] for j in self.parser.jobs]
+        else:
+            jobs = [j['name'] for j in self.jenkins.get_jobs()
+                    if not jobs_glob or matches(j['name'], jobs_glob)]
+
+        logger.debug("Builder.get_jobs: returning %r", jobs)
+
+        return jobs
 
     @parallelize
     def changed(self, job):
