@@ -129,6 +129,15 @@ def create_parser():
     parser_list.add_argument('-p', '--path', default=None,
                              help='path to YAML file or directory')
 
+    # subparser: browse
+    parser_browse = subparser.add_parser('browse', parents=[recursive_parser])
+    parser_browse.add_argument('names', help='name(s) of job(s)', nargs='*',
+                               default=None)
+    parser_browse.add_argument('-b', '--batch', default=10,
+                               help='number of browser windows to open '
+                                    'at once')
+    parser_browse.add_argument('-p', '--path', default='.',
+                               help='Path to YAML file or directory')
     # subparser: delete
     parser_delete = subparser.add_parser('delete', parents=[recursive_parser])
     parser_delete.add_argument('name', help='name of job', nargs='+')
@@ -364,6 +373,11 @@ def execute(options, config):
         logger.info("Listing jobs in {0} ({1})".format(
             options.path, options.names))
         builder.list_jobs(options.names, options.path)
+    elif options.command == 'browse':
+        logger.info("Browsing jobs in {0} ({1})".format(
+            options.path, options.names))
+        builder.browse_jobs(options.names, options.path,
+                            batch=int(options.batch))
     elif options.command == 'delete-all':
         confirm('Sure you want to delete *ALL* jobs from Jenkins server?\n'
                 '(including those not managed by Jenkins Job Builder)')
