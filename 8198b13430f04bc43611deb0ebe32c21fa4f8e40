@@ -16,6 +16,24 @@
       "revId": "8198b13430f04bc43611deb0ebe32c21fa4f8e40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9TnU\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-07T08:20:52Z",
+      "side": 1,
+      "message": "That is nice Darragh.  Maybe we can make it a common function so we can reuse that logic everywhere.  Might want to have two of them since we will want to vary with AND and OR.",
+      "parentUuid": "AAAAWH/9VbE\u003d",
+      "revId": "8198b13430f04bc43611deb0ebe32c21fa4f8e40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
