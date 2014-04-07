@@ -2,6 +2,7 @@
 ignore_cache=True
 keep_descriptions=False
 recursive=False
+exclude=.*
 
 [jenkins]
 user=jenkins
