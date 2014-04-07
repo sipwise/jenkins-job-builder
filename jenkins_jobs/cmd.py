@@ -15,6 +15,7 @@
 
 import argparse
 import ConfigParser
+import fnmatch
 import logging
 import os
 import platform
@@ -32,6 +33,7 @@ DEFAULT_CONF = """
 keep_descriptions=False
 ignore_cache=False
 recursive=False
+exclude=.*
 
 [jenkins]
 url=http://localhost:8080/
@@ -46,11 +48,32 @@ def confirm(question):
         sys.exit('Aborted')
 
 
-def recurse_path(root):
+def recurse_path(root, excludes=[]):
     basepath = os.path.realpath(root)
     pathlist = [basepath]
 
+    patterns = [e for e in excludes if os.path.sep not in e]
+    absolute = [e for e in excludes if e.startswith(os.path.sep)]
+    relative = [e for e in excludes if os.path.sep in e and
+                not e.startswith(os.path.sep)]
     for root, dirs, files in os.walk(basepath, topdown=True):
+        dirs[:] = [
+            d for d in dirs
+            if not any([
+                True for pattern in patterns
+                if fnmatch.fnmatch(d, pattern)
+            ])
+            if not any([
+                True for path in absolute
+                if fnmatch.fnmatch(os.path.abspath(os.path.join(root, d)),
+                                   path)
+            ])
+            if not any([
+                True for path in relative
+                if fnmatch.fnmatch(os.path.relpath(os.path.join(root, d)),
+                                   path)
+            ])
+        ]
         pathlist.extend([os.path.join(root, path) for path in dirs])
 
     return pathlist
@@ -63,6 +86,10 @@ def create_parser():
     recursive_parser.add_argument('-r', '--recursive', action='store_true',
                                   dest='recursive', default=False,
                                   help='look for yaml files recursively')
+    recursive_parser.add_argument('-x', '--exclude', dest='exclude',
+                                  action='append', default=[],
+                                  help='paths to exclude when using recursive'
+                                       ' search, uses standard globbing.')
     subparser = parser.add_subparsers(help='update, test or delete job',
                                       dest='command')
     parser_update = subparser.add_parser('update', parents=[recursive_parser])
@@ -194,7 +221,11 @@ def execute(options, config):
         if (getattr(options, 'recursive', False)
             or config.getboolean('job_builder', 'recursive')) and \
                 os.path.isdir(options.path):
-            options.path = recurse_path(options.path)
+
+            excludes = config.get('job_builder', 'exclude').split(':')
+            excludes.extend(options.exclude)
+
+            options.path = recurse_path(options.path, excludes)
         else:
             options.path = [options.path]
 
