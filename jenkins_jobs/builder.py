@@ -536,12 +536,18 @@ class Builder(object):
             self.parser.parse_fp(fn)
             return
 
-        if os.path.isdir(fn):
-            files_to_process = [os.path.join(fn, f)
-                                for f in os.listdir(fn)
-                                if (f.endswith('.yml') or f.endswith('.yaml'))]
-        else:
-            files_to_process = [fn]
+        if not hasattr(fn, '__iter__'):
+            fn = [fn]
+
+        files_to_process = []
+        for path in fn:
+            if os.path.isdir(path):
+                files_to_process.extend([os.path.join(path, f)
+                                         for f in os.listdir(path)
+                                         if (f.endswith('.yml')
+                                             or f.endswith('.yaml'))])
+            else:
+                files_to_process.append(path)
 
         for in_file in files_to_process:
             logger.debug("Parsing YAML file {0}".format(in_file))
