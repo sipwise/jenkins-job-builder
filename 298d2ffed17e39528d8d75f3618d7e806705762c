@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9OlM\u003d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-07T20:09:36Z",
+      "side": 1,
+      "message": "I was going to ask if it was possible to use \u0027literalinclude\u0027 here, but since the test scenarios only supports a single output for each input file, I think that might be more work than is worth it to save a few lines here and now.",
+      "revId": "298d2ffed17e39528d8d75f3618d7e806705762c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
