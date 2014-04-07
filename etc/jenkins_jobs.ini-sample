@@ -3,6 +3,7 @@ ignore_cache=True
 keep_descriptions=False
 include_path=.:scripts:~/git/
 recursive=False
+exclude=.*
 allow_duplicates=False
 
 [jenkins]

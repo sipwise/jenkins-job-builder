@@ -93,28 +93,28 @@ class CmdTests(testtools.TestCase):
         """
         os_walk_return_values = {
             '/jjb_projects': [
-                ('/jjb_projects', ('dir1', 'dir2', 'dir3'), ()),
-                ('/jjb_projects/dir1', ('bar',), ()),
-                ('/jjb_projects/dir2', ('baz',), ()),
-                ('/jjb_projects/dir3', (), ()),
-                ('/jjb_projects/dir1/bar', (), ()),
-                ('/jjb_projects/dir2/baz', (), ()),
+                ('/jjb_projects', ['dir1', 'dir2', 'dir3'], ()),
+                ('/jjb_projects/dir1', ['bar'], ()),
+                ('/jjb_projects/dir2', ['baz'], ()),
+                ('/jjb_projects/dir3', [], ()),
+                ('/jjb_projects/dir1/bar', [], ()),
+                ('/jjb_projects/dir2/baz', [], ()),
             ],
             '/jjb_templates': [
-                ('/jjb_templates', ('dir1', 'dir2', 'dir3'), ()),
-                ('/jjb_templates/dir1', ('bar',), ()),
-                ('/jjb_templates/dir2', ('baz',), ()),
-                ('/jjb_templates/dir3', (), ()),
-                ('/jjb_templates/dir1/bar', (), ()),
-                ('/jjb_templates/dir2/baz', (), ()),
+                ('/jjb_templates', ['dir1', 'dir2', 'dir3'], ()),
+                ('/jjb_templates/dir1', ['bar'], ()),
+                ('/jjb_templates/dir2', ['baz'], ()),
+                ('/jjb_templates/dir3', [], ()),
+                ('/jjb_templates/dir1/bar', [], ()),
+                ('/jjb_templates/dir2/baz', [], ()),
             ],
             '/jjb_macros': [
-                ('/jjb_macros', ('dir1', 'dir2', 'dir3'), ()),
-                ('/jjb_macros/dir1', ('bar',), ()),
-                ('/jjb_macros/dir2', ('baz',), ()),
-                ('/jjb_macros/dir3', (), ()),
-                ('/jjb_macros/dir1/bar', (), ()),
-                ('/jjb_macros/dir2/baz', (), ()),
+                ('/jjb_macros', ['dir1', 'dir2', 'dir3'], ()),
+                ('/jjb_macros/dir1', ['bar'], ()),
+                ('/jjb_macros/dir2', ['baz'], ()),
+                ('/jjb_macros/dir3', [], ()),
+                ('/jjb_macros/dir1/bar', [], ()),
+                ('/jjb_macros/dir2/baz', [], ()),
             ],
         }
 
@@ -185,12 +185,12 @@ class CmdTests(testtools.TestCase):
         """
 
         os_walk_mock.return_value = [
-            ('/jjb_configs', ('dir1', 'dir2', 'dir3'), ()),
-            ('/jjb_configs/dir1', ('bar',), ()),
-            ('/jjb_configs/dir2', ('baz',), ()),
-            ('/jjb_configs/dir3', (), ()),
-            ('/jjb_configs/dir1/bar', (), ()),
-            ('/jjb_configs/dir2/baz', (), ()),
+            ('/jjb_configs', ['dir1', 'dir2', 'dir3'], ()),
+            ('/jjb_configs/dir1', ['bar', ], ()),
+            ('/jjb_configs/dir2', ['baz', ], ()),
+            ('/jjb_configs/dir3', [], ()),
+            ('/jjb_configs/dir1/bar', [], ()),
+            ('/jjb_configs/dir2/baz', [], ()),
         ]
         isdir_mock.return_value = True
         paths = [path for path, _, _ in os_walk_mock.return_value]
