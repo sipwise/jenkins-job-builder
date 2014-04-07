@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9Pek\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 962,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-07T18:12:02Z",
+      "side": 1,
+      "message": "we are moving to using test as examples.  could you please replace this section with a literalinclude to your test?  you can find examples in this file on how to do that.",
+      "revId": "5e12b52b681d66a27599968eec6b6a91ea86d0ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
