@@ -58,6 +58,18 @@ job_builder section
   When this option is set to True, that behavior changes and it will only
   overwrite the description if you specified it in the yaml. False by default.
 
+**recursive**
+  (Optional) If set to True, jenkins job builder will recursively search for
+  yaml files if a directory is passed.
+
+**exclude**
+  (Optional) If set to a list of values separated by ':', these paths will be
+  excluded from the list of paths to be processed when searching recursively.
+  Values containing no ``/`` will be matched against directory names at all
+  levels, those starting with ``/`` will be considered absolute, while others
+  containing a ``/`` somewhere other than the start of the value will be
+  considered relative to the starting path.
+
 jenkins section
 ^^^^^^^^^^^^^^^
 
