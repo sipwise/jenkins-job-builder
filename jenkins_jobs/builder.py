@@ -524,13 +524,19 @@ class Builder(object):
         self.global_config = config
         self.ignore_cache = ignore_cache
 
-    def load_files(self, fn):
-        if os.path.isdir(fn):
-            files_to_process = [os.path.join(fn, f)
-                                for f in os.listdir(fn)
-                                if (f.endswith('.yml') or f.endswith('.yaml'))]
-        else:
-            files_to_process = [fn]
+    def load_files(self, paths):
+        if not hasattr(paths, '__iter__'):
+            paths = [paths]
+
+        files_to_process = []
+        for fn in paths:
+            if os.path.isdir(fn):
+                files_to_process.extend([os.path.join(fn, f)
+                                         for f in os.listdir(fn)
+                                         if (f.endswith('.yml')
+                                             or f.endswith('.yaml'))])
+            else:
+                files_to_process.append(fn)
         self.parser = YamlParser(self.global_config)
         for in_file in files_to_process:
             logger.debug("Parsing YAML file {0}".format(in_file))
