@@ -109,12 +109,12 @@ class CmdTests(testtools.TestCase):
         """
 
         os_walk_mock.return_value = [
-            ('/jjb_configs', ('dir1', 'dir2', 'dir3'), ()),
-            ('/jjb_configs/dir1', ('bar',), ()),
-            ('/jjb_configs/dir2', ('baz',), ()),
-            ('/jjb_configs/dir3', (), ()),
-            ('/jjb_configs/dir1/bar', (), ()),
-            ('/jjb_configs/dir2/baz', (), ()),
+            ('/jjb_configs', ['dir1', 'dir2', 'dir3'], ()),
+            ('/jjb_configs/dir1', ['bar', ], ()),
+            ('/jjb_configs/dir2', ['baz', ], ()),
+            ('/jjb_configs/dir3', [], ()),
+            ('/jjb_configs/dir1/bar', [], ()),
+            ('/jjb_configs/dir2/baz', [], ()),
         ]
         isdir_mock.return_value = True
         paths = [path for path, _, _ in os_walk_mock.return_value]
