@@ -1,0 +1,27 @@
+- scm:
+    name: gerrit-scm
+    scm:
+      - git:
+         url: ssh://jenkins@review.openstack.org:29418/{project_pattern}.git
+         branches:
+          - origin/**
+         name: origin
+         prune: true
+         clean: true
+         browser: gitweb
+         browser-url: http://review.openstack.org/gitweb?p={project_pattern}.git
+         choosing-strategy: gerrit
+
+- project:
+    name: test
+    version:
+        - 1.2:
+            git_repo: 'jenkins-job-builder'
+    jobs:
+        - 'build_myproject_{version}'
+
+- job-template:
+    name: 'build_myproject_{version}'
+    scm:
+      - gerrit-scm:
+         project_pattern: 'openstack-infra/{git_repo}'

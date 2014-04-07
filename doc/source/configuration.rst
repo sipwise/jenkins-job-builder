@@ -189,6 +189,25 @@ values.  Example::
       jobs:
        - '{name}-{pyver}'
 
+If there are templates being realized that differ only in the variable
+used for its name (thus not a use case for job-specific substitutions),
+additional variables can be specified for project variables. Example::
+
+  - job-template:
+      name: '{name}-{pyver}'
+      builders:
+        - shell: 'git co {branch_name}'
+
+  - project:
+      name: project-name
+      pyver:
+       - 26:
+          branch_name: old_branch
+       - 27:
+          branch_name: new_branch
+      jobs:
+       - '{name}-{pyver}'
+
 Job Group
 ^^^^^^^^^
 
