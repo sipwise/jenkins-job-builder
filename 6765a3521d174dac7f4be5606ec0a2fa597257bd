@@ -16,6 +16,24 @@
       "revId": "6765a3521d174dac7f4be5606ec0a2fa597257bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9N+A\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-07T21:24:32Z",
+      "side": 1,
+      "message": "What is \"test mode\"? Only thing I see is the test command and when that is run, options.command \u003d\u003d \u0027test\u0027, so this wouldn\u0027t be triggered. Is there some other test mode I missed?",
+      "parentUuid": "AAAAWH/9O3Q\u003d",
+      "revId": "6765a3521d174dac7f4be5606ec0a2fa597257bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
