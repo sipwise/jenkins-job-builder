@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAWH/9O3Q\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-07T19:24:15Z",
+      "side": 1,
+      "message": "should browse be a noop when run JJB in test mode?",
+      "revId": "6765a3521d174dac7f4be5606ec0a2fa597257bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
