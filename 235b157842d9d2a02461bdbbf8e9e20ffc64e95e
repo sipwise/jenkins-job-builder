@@ -16,6 +16,24 @@
       "revId": "235b157842d9d2a02461bdbbf8e9e20ffc64e95e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWH/9OoE\u003d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-07T19:59:18Z",
+      "side": 1,
+      "message": "It also can vary between installations. I think if we are to start encoding the plugin versions, then it needs to be retrieved automatically by querying the jenkins installation.\n\nThe only reason it really makes sense to have this information is when trying to compare the generated XML with the existing XML for the job in Jenkins, and in most case it\u0027s still much quicker to send the generated XML to jenkins anyway and let it work out if there is something to be changed.",
+      "parentUuid": "AAAAWH/9eg0\u003d",
+      "revId": "235b157842d9d2a02461bdbbf8e9e20ffc64e95e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
