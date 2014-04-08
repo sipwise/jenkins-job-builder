@@ -34,6 +34,24 @@
       "revId": "6765a3521d174dac7f4be5606ec0a2fa597257bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//5ro\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-08T16:11:38Z",
+      "side": 1,
+      "message": "Yes, what i meant was test command.  For some reason i thought the usage of browse was in conjunction with the other commands.   Like you may want to browse to the project immediately updating a job.  I see that\u0027s it\u0027s a separate command now.",
+      "parentUuid": "AAAAWH/9N+A\u003d",
+      "revId": "6765a3521d174dac7f4be5606ec0a2fa597257bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
