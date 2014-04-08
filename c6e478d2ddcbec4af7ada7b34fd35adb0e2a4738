@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn///zM\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-08T01:43:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/9PtA\u003d",
+      "revId": "c6e478d2ddcbec4af7ada7b34fd35adb0e2a4738",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/9Pos\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn///ws\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-08T01:43:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/9Pos\u003d",
+      "revId": "c6e478d2ddcbec4af7ada7b34fd35adb0e2a4738",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/9PiM\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2014-04-07T18:01:36Z",
       "side": 1,
       "message": "we are moving to test as examples so would you be willing to replace this section with a literalinclude to one or more of the tests? here is an example of the literalinclude usage: http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/modules/publishers.py#n303",
+      "revId": "c6e478d2ddcbec4af7ada7b34fd35adb0e2a4738",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn///x0\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-08T01:43:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/9PiM\u003d",
       "revId": "c6e478d2ddcbec4af7ada7b34fd35adb0e2a4738",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
