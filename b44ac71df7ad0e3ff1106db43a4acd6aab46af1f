@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn//92M\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-04-08T07:46:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWn///IE\u003d",
+      "revId": "b44ac71df7ad0e3ff1106db43a4acd6aab46af1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///H4\u003d",
         "filename": "doc/source/installation.rst",
         "patchSetId": 18
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-08T04:10:09Z",
       "side": 1,
       "message": "\"won\u0027t use any cache\"\n\nNote that I\u0027ve fixed this in the original place in another change.",
+      "revId": "b44ac71df7ad0e3ff1106db43a4acd6aab46af1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//92U\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-04-08T07:46:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWn///H4\u003d",
       "revId": "b44ac71df7ad0e3ff1106db43a4acd6aab46af1f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn//92Q\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-04-08T07:46:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWn///Hw\u003d",
+      "revId": "b44ac71df7ad0e3ff1106db43a4acd6aab46af1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///Hg\u003d",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 18
@@ -64,6 +118,24 @@
       "writtenOn": "2014-04-08T04:10:09Z",
       "side": 1,
       "message": "It would be better to call the setting \"keep_description\".",
+      "revId": "b44ac71df7ad0e3ff1106db43a4acd6aab46af1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//92k\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-04-08T07:46:38Z",
+      "side": 1,
+      "message": "Please elaborate.\nFor me it makes more sense the plural as it will keep all the jobs descriptions. But it\u0027s a weak enough reason for me to easily change it if you have a reason to prefer the singular.",
+      "parentUuid": "AAAAWn///Hg\u003d",
       "revId": "b44ac71df7ad0e3ff1106db43a4acd6aab46af1f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn//92E\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-04-08T07:46:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWn///HY\u003d",
+      "revId": "b44ac71df7ad0e3ff1106db43a4acd6aab46af1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///Go\u003d",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 18
@@ -98,6 +188,24 @@
       "writtenOn": "2014-04-08T04:10:09Z",
       "side": 1,
       "message": "Wouldn\u0027t it be better to do this move in a separate change?",
+      "revId": "b44ac71df7ad0e3ff1106db43a4acd6aab46af1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn//930\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-04-08T07:46:38Z",
+      "side": 1,
+      "message": "Im my opinion is small enough, it does not break any compatibility, and is easy to track. So I think it\u0027s ok to make the change here, where it popped up.",
+      "parentUuid": "AAAAWn///Go\u003d",
       "revId": "b44ac71df7ad0e3ff1106db43a4acd6aab46af1f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
