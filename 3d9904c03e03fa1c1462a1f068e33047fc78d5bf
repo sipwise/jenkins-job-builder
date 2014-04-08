@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn///u8\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-08T01:51:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/9PaM\u003d",
+      "revId": "3d9904c03e03fa1c1462a1f068e33047fc78d5bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/9PZM\u003d",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-07T18:19:08Z",
       "side": 1,
       "message": "just adding one param so maybe better to add that param to the existing \u0027trigger-builds001.yaml\u0027 test instead of creating a new test?",
+      "revId": "3d9904c03e03fa1c1462a1f068e33047fc78d5bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn///v0\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-08T01:51:46Z",
+      "side": 1,
+      "message": "It was added as a separate test so we can be sure that the extra bit is only added in the config when same-node is true.",
+      "parentUuid": "AAAAWH/9PZM\u003d",
       "revId": "3d9904c03e03fa1c1462a1f068e33047fc78d5bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
