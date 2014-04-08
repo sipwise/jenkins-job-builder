@@ -16,6 +16,24 @@
       "revId": "5e12b52b681d66a27599968eec6b6a91ea86d0ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAWn///t4\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 962,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-08T01:57:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAWH/9Pek\u003d",
+      "revId": "5e12b52b681d66a27599968eec6b6a91ea86d0ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
