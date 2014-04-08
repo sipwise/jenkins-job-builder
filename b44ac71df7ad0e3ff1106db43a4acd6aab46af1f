@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn//9vQ\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-08T08:03:09Z",
+      "side": 1,
+      "message": "I was interpreting the setting in the context of a single Jenkins job, which only has one description.",
+      "parentUuid": "AAAAWn//92k\u003d",
+      "revId": "b44ac71df7ad0e3ff1106db43a4acd6aab46af1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///HY\u003d",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 18
