@@ -1,0 +1,7 @@
+[pep8]
+ignore = E125
+exclude = .venv,.tox,.tox/*,dist,doc,build,*egg
+
+[flake8]
+ignore = E125
+exclude = .venv,.tox,.tox/*,dist,doc,build,*egg
