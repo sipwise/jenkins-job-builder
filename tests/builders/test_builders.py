@@ -17,13 +17,11 @@
 
 import os
 from tests import base
-from testscenarios.testcase import TestWithScenarios
-from testtools import TestCase
 
 from jenkins_jobs.modules import builders
 
 
-class TestCaseModuleBuilders(TestWithScenarios, TestCase, base.BaseTestCase):
+class TestCaseModuleBuilders(base.BaseTestCase):
     fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
     scenarios = base.get_scenarios(fixtures_path)
     klass = builders.Builders

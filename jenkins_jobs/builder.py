@@ -30,7 +30,7 @@ from xml.dom import minidom
 import xml.etree.ElementTree as XML
 import yaml
 
-from jenkins_jobs.errors import JenkinsJobsException
+import jenkins_jobs.errors
 
 logger = logging.getLogger(__name__)
 MAGIC_MANAGE_STRING = "<!-- Managed by Jenkins Job Builder -->"
@@ -89,7 +89,7 @@ def deep_format(obj, paramdict):
             missing_key = exc.message
             desc = "%s parameter missing to format %s\nGiven: %s" % (
                    missing_key, obj, paramdict)
-            raise JenkinsJobsException(desc)
+            raise jenkins_jobs.errors.JenkinsJobsException(desc)
     elif isinstance(obj, list):
         ret = []
         for item in obj:
@@ -126,7 +126,7 @@ class YamlParser(object):
         data = yaml.load(open(fn))
         if data:
             if not isinstance(data, list):
-                raise JenkinsJobsException(
+                raise jenkins_jobs.errors.JenkinsJobsException(
                     "The topmost collection in file '{fname}' must be a list,"
                     " not a {cls}".format(fname=fn, cls=type(data)))
             for item in data:
@@ -139,9 +139,9 @@ class YamlParser(object):
                             n = v
                             break
                     # Syntax error
-                    raise JenkinsJobsException("Syntax error, for item "
-                                               "named '{0}'. Missing indent?"
-                                               .format(n))
+                    raise jenkins_jobs.errors.JenkinsJobsException(
+                        "Syntax error, for item named '{0}'. "
+                        "Missing indent?".format(n))
                 name = dfn['name']
                 group[name] = dfn
                 self.data[cls] = group
@@ -235,9 +235,9 @@ class YamlParser(object):
                     d.update(jobparams)
                     self.getXMLForTemplateJob(d, template, jobs_filter)
                 else:
-                    raise JenkinsJobsException("Failed to find suitable "
-                                               "template named '{0}'"
-                                               .format(jobname))
+                    raise jenkins_jobs.errors.JenkinsJobsException(
+                        "Failed to find suitable "
+                        "template named '{0}'".format(jobname))
 
     def getXMLForTemplateJob(self, project, template, jobs_filter=None):
         dimensions = []
@@ -357,8 +357,8 @@ class ModuleRegistry(object):
         """
 
         if component_type not in self.modules_by_component_type:
-            raise JenkinsJobsException("Unknown component type: "
-                                       "'{0}'.".format(component_type))
+            raise jenkins_jobs.errors.JenkinsJobsException(
+                "Unknown component type: '{0}'.".format(component_type))
 
         component_list_type = self.modules_by_component_type[component_type] \
             .component_list_type
@@ -385,7 +385,7 @@ class ModuleRegistry(object):
                        group='jenkins_jobs.{0}'.format(component_list_type),
                        name=name))
             if len(eps) > 1:
-                raise JenkinsJobsException(
+                raise jenkins_jobs.errors.JenkinsJobsException(
                     "Duplicate entry point found for component type: '{0}',"
                     "name: '{1}'".format(component_type, name))
             elif len(eps) == 1:
@@ -407,9 +407,9 @@ class ModuleRegistry(object):
                     self.dispatch(component_type,
                                   parser, xml_parent, b, component_data)
             else:
-                raise JenkinsJobsException("Unknown entry point or macro '{0}'"
-                                           " for component type: '{1}'.".
-                                           format(name, component_type))
+                raise jenkins_jobs.errors.JenkinsJobsException(
+                    "Unknown entry point or macro '{0}'"
+                    " for component type: '{1}'.".format(name, component_type))
 
 
 class XmlJob(object):

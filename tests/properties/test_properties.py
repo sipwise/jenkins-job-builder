@@ -17,14 +17,11 @@
 
 import os
 import tests.base
-from testscenarios.testcase import TestWithScenarios
-from testtools import TestCase
 
 from jenkins_jobs.modules import properties
 
 
-class TestCaseModuleProperties(TestWithScenarios, TestCase,
-                               tests.base.BaseTestCase):
+class TestCaseModuleProperties(tests.base.BaseTestCase):
     fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
     scenarios = tests.base.get_scenarios(fixtures_path)
     klass = properties.Properties

@@ -18,15 +18,12 @@
 import doctest
 import os
 import tests.base
-from testscenarios.testcase import TestWithScenarios
 import testtools
-from testtools import TestCase
 
-from jenkins_jobs.builder import YamlParser
+import jenkins_jobs.builder
 
 
-class TestCaseModuleYamlInclude(TestWithScenarios, TestCase,
-                                tests.base.BaseTestCase):
+class TestCaseModuleYamlInclude(tests.base.BaseTestCase):
     fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
     scenarios = tests.base.get_scenarios(fixtures_path)
 
@@ -39,7 +36,7 @@ class TestCaseModuleYamlInclude(TestWithScenarios, TestCase,
 
         yaml_filepath = os.path.join(self.fixtures_path, self.yaml_filename)
 
-        parser = YamlParser()
+        parser = jenkins_jobs.builder.YamlParser()
         parser.parse(yaml_filepath)
 
         # Generate the XML tree
