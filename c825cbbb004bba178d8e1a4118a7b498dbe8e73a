@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//3e8\u003d",
+        "filename": ".pep8",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-09T20:14:41Z",
+      "side": 1,
+      "message": "Those are currently passed to pep8 in tox.ini:\n\n [testenv:pep8]\n deps \u003d pep8\u003d\u003d1.3.3\n commands \u003d pep8 --repeat --show-source --ignore\u003dE125 --exclude\u003d.venv,.tox,dist,doc,build,*egg . {posargs}\n\nI would migrate to flake8 which supports having all those settings added to a [flake8] section in either tox.ini or setup.cfg.\n\n\nYou can have a look at how Zuul is handling flake8 by cloning:\n\n git clone ssh://review.openstack.org:29418/openstack-infra/zuul \n\nI am confident that it is the OpenStack state of the art way to run flake8 :-}",
+      "revId": "c825cbbb004bba178d8e1a4118a7b498dbe8e73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//3eg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-09T20:14:41Z",
+      "side": 1,
+      "message": "PEP8ify FTW !!!!111!!!1! BBQ\n\nThat is the official way to celebrates things in most old schools MMORPG.",
+      "revId": "c825cbbb004bba178d8e1a4118a7b498dbe8e73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//3eU\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-09T20:14:41Z",
+      "side": 1,
+      "message": "That is mixing two changes in one, please split that to another change just to be safe :]",
+      "revId": "c825cbbb004bba178d8e1a4118a7b498dbe8e73a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
