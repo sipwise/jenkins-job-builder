@@ -160,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAWn//9so\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-04-09T09:44:37Z",
+      "side": 1,
+      "message": "In my opinion that would make sense if it was inside a section named \u0027[job]\u0027 or \u0027[jenkins_job]\u0027 where you could be able to fine tune the configuration for each job. But being an option that applies to all or none of the jobs, I\u0027d keep the plural.",
+      "parentUuid": "AAAAWn//9vQ\u003d",
+      "revId": "b44ac71df7ad0e3ff1106db43a4acd6aab46af1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWn///HY\u003d",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 18
