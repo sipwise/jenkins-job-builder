@@ -199,11 +199,11 @@ def trigger_parameterized_builds(parser, xml_parent, data):
                                  'BuildTriggerConfig')
         tconfigs = XML.SubElement(tconfig, 'configs')
         if ('predefined-parameters' in project_def
-            or 'git-revision' in project_def
-            or 'property-file' in project_def
-            or 'current-parameters' in project_def
-            or 'svn-revision' in project_def
-            or 'restrict-matrix-project' in project_def):
+                or 'git-revision' in project_def
+                or 'property-file' in project_def
+                or 'current-parameters' in project_def
+                or 'svn-revision' in project_def
+                or 'restrict-matrix-project' in project_def):
 
             if 'predefined-parameters' in project_def:
                 params = XML.SubElement(tconfigs,
@@ -228,7 +228,7 @@ def trigger_parameterized_builds(parser, xml_parent, data):
                 failOnMissing.text = str(project_def.get('fail-on-missing',
                                                          False)).lower()
             if ('current-parameters' in project_def
-                and project_def['current-parameters']):
+                    and project_def['current-parameters']):
                 XML.SubElement(tconfigs,
                                'hudson.plugins.parameterizedtrigger.'
                                'CurrentBuildParameters')
@@ -237,7 +237,7 @@ def trigger_parameterized_builds(parser, xml_parent, data):
                                'hudson.plugins.parameterizedtrigger.'
                                'SubversionRevisionBuildParameters')
             if ('restrict-matrix-project' in project_def
-                and project_def['restrict-matrix-project']):
+                    and project_def['restrict-matrix-project']):
                 subset = XML.SubElement(tconfigs,
                                         'hudson.plugins.parameterizedtrigger.'
                                         'matrix.MatrixSubsetBuildParameters')
@@ -348,11 +348,11 @@ def clone_workspace(parser, xml_parent, data):
     else:
         XML.SubElement(cloneworkspace, 'archiveMethod').text = archive_method
 
-    XML.SubElement(
-        cloneworkspace,
-        'overrideDefaultExcludes').text = str(data.get(
-            'override-default-excludes',
-            False)).lower()
+    override_default_excludes_str = str(
+        data.get('override-default-excludes', False)).lower()
+    override_default_excludes_elem = XML.SubElement(
+        cloneworkspace, 'overrideDefaultExcludes')
+    override_default_excludes_elem.text = override_default_excludes_str
 
 
 def cloverphp(parser, xml_parent, data):
@@ -1005,21 +1005,21 @@ def violations(parser, xml_parent, data):
     XML.SubElement(configs, 'no-comparator')
 
     for name in [
-        'checkstyle',
-        'codenarc',
-        'cpd',
-        'cpplint',
-        'csslint',
-        'findbugs',
-        'fxcop',
-        'gendarme',
-        'jcreport',
-        'jslint',
-        'pep8',
-        'pmd',
-        'pylint',
-        'simian',
-        'stylecop']:
+            'checkstyle',
+            'codenarc',
+            'cpd',
+            'cpplint',
+            'csslint',
+            'findbugs',
+            'fxcop',
+            'gendarme',
+            'jcreport',
+            'jslint',
+            'pep8',
+            'pmd',
+            'pylint',
+            'simian',
+            'stylecop']:
         _violations_add_entry(configs, name, data.get(name, {}))
 
     XML.SubElement(config, 'limit').text = '100'
@@ -1305,7 +1305,7 @@ def pipeline(parser, xml_parent, data):
             properties.text = data['predefined-parameters']
 
         if ('current-parameters' in data
-            and data['current-parameters']):
+                and data['current-parameters']):
             XML.SubElement(configs,
                            'hudson.plugins.parameterizedtrigger.'
                            'CurrentBuildParameters')
@@ -1498,7 +1498,7 @@ def email_ext(parser, xml_parent, data):
                    'only-configurations': 'ONLY_CONFIGURATIONS',
                    'only-parent': 'ONLY_PARENT'}
     matrix_trigger = data.get('matrix-trigger', None)
-    ## If none defined, then do not create entry
+    # If none defined, then do not create entry
     if matrix_trigger is not None:
         if matrix_trigger not in matrix_dict:
             raise JenkinsJobsException("matrix-trigger entered is not valid, "
@@ -2638,7 +2638,7 @@ def warnings(parser, xml_parent, data):
     XML.SubElement(warnings, 'canRunOnFailed').text = run_always
     detect_modules = str(data.get('detect-modules', False)).lower()
     XML.SubElement(warnings, 'shouldDetectModules').text = detect_modules
-    #Note the logic reversal (included here to match the GUI)
+    # Note the logic reversal (included here to match the GUI)
     XML.SubElement(warnings, 'doNotResolveRelativePaths').text = \
         str(not data.get('resolve-relative-paths', False)).lower()
     health_threshold_high = str(data.get('health-threshold-high', ''))
