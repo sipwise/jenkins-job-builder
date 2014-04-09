@@ -17,9 +17,10 @@
 
 import os
 from testtools import TestCase
-from testscenarios.testcase import TestWithScenarios
-from jenkins_jobs.modules import notifications
 from tests.base import get_scenarios, BaseTestCase
+from testscenarios.testcase import TestWithScenarios
+
+from jenkins_jobs.modules import notifications
 
 
 class TestCaseModuleNotifications(TestWithScenarios, TestCase, BaseTestCase):

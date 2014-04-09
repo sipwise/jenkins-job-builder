@@ -15,12 +15,13 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import os
-from testtools import TestCase
-from testscenarios.testcase import TestWithScenarios
-from tests.base import get_scenarios, BaseTestCase
 import doctest
+import os
 import testtools
+from testtools import TestCase
+from tests.base import get_scenarios, BaseTestCase
+from testscenarios.testcase import TestWithScenarios
+
 from jenkins_jobs.builder import YamlParser
 
 

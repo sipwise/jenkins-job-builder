@@ -17,9 +17,10 @@
 
 import os
 from testscenarios.testcase import TestWithScenarios
-from testtools import TestCase
-from jenkins_jobs.modules import publishers
 from tests.base import get_scenarios, BaseTestCase
+from testtools import TestCase
+
+from jenkins_jobs.modules import publishers
 
 
 class TestCaseModulePublishers(TestWithScenarios, TestCase, BaseTestCase):

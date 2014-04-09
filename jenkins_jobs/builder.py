@@ -15,20 +15,21 @@
 
 # Manage jobs in Jenkins server
 
-import os
-import sys
-import hashlib
-import yaml
-import json
-import xml.etree.ElementTree as XML
-from xml.dom import minidom
-import jenkins
-import re
-import pkg_resources
-import logging
 import copy
-import itertools
 import fnmatch
+import hashlib
+import itertools
+import jenkins
+import json
+import logging
+import os
+import pkg_resources
+import re
+import sys
+from xml.dom import minidom
+import xml.etree.ElementTree as XML
+import yaml
+
 from jenkins_jobs.errors import JenkinsJobsException
 
 logger = logging.getLogger(__name__)
