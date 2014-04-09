@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//2RA\u003d",
+        "filename": "tests/general/fixtures/project-maven002.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-09T23:55:54Z",
+      "side": 0,
+      "message": "I don\u0027t think these were necessarily mis-named.  i think older versions of jenkins used these values.  Do these work with the version you are testing with?",
+      "revId": "72c02d41068a3935717d8666531781d7f05ced52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

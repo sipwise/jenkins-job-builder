@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//2SI\u003d",
+        "filename": "jenkins_jobs/modules/project_maven.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-09T23:55:54Z",
+      "side": 1,
+      "message": "wondering what would happen if setting is set to empty string?  if jenkins doesn\u0027t allow that then should JJB do the same?",
+      "revId": "9b32e0fbad9ab83928d5032df344b30b24266bbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//2SA\u003d",
+        "filename": "jenkins_jobs/modules/project_maven.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-09T23:55:54Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "9b32e0fbad9ab83928d5032df344b30b24266bbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
