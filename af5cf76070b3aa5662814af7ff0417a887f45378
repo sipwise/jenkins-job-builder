@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//81o\u003d",
+        "filename": "jenkins_jobs/modules/zuul.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-09T09:47:14Z",
+      "side": 1,
+      "message": "\"adds the job parameters\"",
+      "revId": "af5cf76070b3aa5662814af7ff0417a887f45378",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//81Q\u003d",
+        "filename": "jenkins_jobs/modules/zuul.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-09T09:47:14Z",
+      "side": 1,
+      "message": "Remove \"It\"",
+      "revId": "af5cf76070b3aa5662814af7ff0417a887f45378",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//81A\u003d",
+        "filename": "jenkins_jobs/modules/zuul.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-09T09:47:14Z",
+      "side": 1,
+      "message": "Remove \"It\".  Add a comma after \"build\".",
+      "revId": "af5cf76070b3aa5662814af7ff0417a887f45378",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
