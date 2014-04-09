@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAW3//7h8\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 571,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-09T12:40:12Z",
+      "side": 1,
+      "message": "You can pass the glob_name directly the to YamlParser.generateXML() then self.parser.jobs should hopefully have the list of generated (and filtered) jobs.\n\nTo get all jobs, pass a filter of None and it will skip filtering entirely.",
+      "revId": "6765a3521d174dac7f4be5606ec0a2fa597257bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//7dQ\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 578,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-09T12:40:12Z",
+      "side": 1,
+      "message": "My configuration generates 1391 jobs so every time one would run:\n\n jenkins-jobs browse\n\nThat will surely starve its computer :-)  You probably want to add some batch parameters to only open X jobs at a time with X being 20 by default or something like that.",
+      "revId": "6765a3521d174dac7f4be5606ec0a2fa597257bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//7fE\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-09T12:40:12Z",
+      "side": 1,
+      "message": "Make sure it default to None, would then be passed to YamlParser.generateXML() as a job_filter, if it is None that skips filtering entirely and thus yields all jobs.",
+      "revId": "6765a3521d174dac7f4be5606ec0a2fa597257bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//824\u003d",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 1
@@ -66,6 +117,23 @@
       "side": 1,
       "message": "Yes, what i meant was test command.  For some reason i thought the usage of browse was in conjunction with the other commands.   Like you may want to browse to the project immediately updating a job.  I see that\u0027s it\u0027s a separate command now.",
       "parentUuid": "AAAAWH/9N+A\u003d",
+      "revId": "6765a3521d174dac7f4be5606ec0a2fa597257bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//7eg\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-09T12:40:12Z",
+      "side": 1,
+      "message": "Just pass options.name to browse_jobs() which then will pass it down to generateXML().",
       "revId": "6765a3521d174dac7f4be5606ec0a2fa597257bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
