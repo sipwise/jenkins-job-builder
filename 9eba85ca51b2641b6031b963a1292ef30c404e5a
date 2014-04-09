@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//68U\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-09T13:37:35Z",
+      "side": 1,
+      "message": "I guess \"-\" can be dropped for both path and output directory since they defaults to sys.stdin and sys.stdout.",
+      "revId": "9eba85ca51b2641b6031b963a1292ef30c404e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//68M\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-09T13:37:35Z",
+      "side": 1,
+      "message": "Rewrite example to:\n\n jenkins-jobs test \u003c config/jenkins.yml\n\n:)",
+      "revId": "9eba85ca51b2641b6031b963a1292ef30c404e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//7CM\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-09T13:37:35Z",
+      "side": 1,
+      "message": "Since -o defaults to sys.stdout, I don\u0027t think there is any need to support \"-o -\" since that is the default.  Will make code slightly lighter in builder.py\n\nSame for the path pointing to \u0027-\u0027. The test command set path to sys.stdin by default.",
+      "revId": "9eba85ca51b2641b6031b963a1292ef30c404e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//7A4\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-09T13:37:35Z",
+      "side": 1,
+      "message": "The path being set to sys.stdin by default, I don\u0027t think we need to support \u0027-\u0027.",
+      "revId": "9eba85ca51b2641b6031b963a1292ef30c404e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//7Bk\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-09T13:37:35Z",
+      "side": 1,
+      "message": "The output defaults to sys.stdout isn\u0027t it? So you can just drop the \u0027-\u0027.\n\nThe previous:\n\n if output_dir:\n   if names:\n     print\n\nWas causing jobs to be emitted to stdout despite having an output directory passed as long as a single job is passed as a parameter.\n\nIe:\n\n  jenkins-jobs test -o /tmp/foo config/ \u0027somejob*\u0027\n\nWould not write to /tmp/foo and just print them.\n\nI think you can get it fixed by removing the \u0027or names\u0027.  Might want to say so in the commit message.",
+      "revId": "9eba85ca51b2641b6031b963a1292ef30c404e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//7Ds\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-09T13:37:35Z",
+      "side": 1,
+      "message": "Sounds good to me.  Might want to have the update and delete commands to act the same.\n\nWhenever someone invokes jenkins-job without a path, it would be nice to detect that the path is a tty and output some warning message. Something like:\n\n warning: reading configuration from STDIN. Press CTRL+D to end input.",
+      "revId": "9eba85ca51b2641b6031b963a1292ef30c404e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//7C0\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-09T13:37:35Z",
+      "side": 1,
+      "message": "output defaulting to sys.stdout in test mode seems saner indeed.",
+      "revId": "9eba85ca51b2641b6031b963a1292ef30c404e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
