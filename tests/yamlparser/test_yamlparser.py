@@ -17,17 +17,18 @@
 
 import doctest
 import os
+import tests.base
+from testscenarios.testcase import TestWithScenarios
 import testtools
 from testtools import TestCase
-from tests.base import get_scenarios, BaseTestCase
-from testscenarios.testcase import TestWithScenarios
 
 from jenkins_jobs.builder import YamlParser
 
 
-class TestCaseModuleYamlInclude(TestWithScenarios, TestCase, BaseTestCase):
+class TestCaseModuleYamlInclude(TestWithScenarios, TestCase,
+                                tests.base.BaseTestCase):
     fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
-    scenarios = get_scenarios(fixtures_path)
+    scenarios = tests.base.get_scenarios(fixtures_path)
 
     def test_yaml_snippet(self):
         if not self.xml_filename or not self.yaml_filename:

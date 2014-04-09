@@ -16,14 +16,15 @@
 # under the License.
 
 import os
-from testtools import TestCase
-from tests.base import get_scenarios, BaseTestCase
+import tests.base
 from testscenarios.testcase import TestWithScenarios
+from testtools import TestCase
 
 from jenkins_jobs.modules import notifications
 
 
-class TestCaseModuleNotifications(TestWithScenarios, TestCase, BaseTestCase):
+class TestCaseModuleNotifications(TestWithScenarios, TestCase,
+                                  tests.base.BaseTestCase):
     fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
-    scenarios = get_scenarios(fixtures_path)
+    scenarios = tests.base.get_scenarios(fixtures_path)
     klass = notifications.Notifications
