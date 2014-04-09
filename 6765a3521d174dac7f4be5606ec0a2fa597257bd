@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAW3//824\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-09T09:43:55Z",
+      "side": 1,
+      "message": "Nit: (also in the other help texts) the capitalisation of the help texts is inconsistent.  Some begin with upper case, some don\u0027t.",
+      "revId": "6765a3521d174dac7f4be5606ec0a2fa597257bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/9O3Q\u003d",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 1
