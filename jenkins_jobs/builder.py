@@ -15,6 +15,8 @@
 
 # Manage jobs in Jenkins server
 
+from __future__ import print_function
+
 import copy
 import fnmatch
 import hashlib
@@ -569,7 +571,7 @@ class Builder(object):
                 continue
             if output_dir:
                 if names:
-                    print job.output()
+                    print(job.output())
                     continue
                 fn = os.path.join(output_dir, job.name)
                 logger.debug("Writing XML to '{0}'".format(fn))
