@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//6F0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-09T15:33:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAW3//68U\u003d",
+      "revId": "9eba85ca51b2641b6031b963a1292ef30c404e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//68M\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-09T13:37:35Z",
       "side": 1,
       "message": "Rewrite example to:\n\n jenkins-jobs test \u003c config/jenkins.yml\n\n:)",
+      "revId": "9eba85ca51b2641b6031b963a1292ef30c404e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//6Fo\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-09T15:33:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAW3//68M\u003d",
       "revId": "9eba85ca51b2641b6031b963a1292ef30c404e5a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//6O4\u003d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-09T15:33:44Z",
+      "side": 1,
+      "message": "Yeah, probably makes sense. Initially I didn\u0027t default to sys.stdin and sys.stdout , so the -o - stuff was needed but then Alex Conrad pointed out that it should just be the default. I think I\u0027ll do as you suggested.\n\nThanks for all your comments, by the way!!!\n\nDone.",
+      "parentUuid": "AAAAW3//7CM\u003d",
+      "revId": "9eba85ca51b2641b6031b963a1292ef30c404e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//7A4\u003d",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2014-04-09T13:37:35Z",
       "side": 1,
       "message": "The path being set to sys.stdin by default, I don\u0027t think we need to support \u0027-\u0027.",
+      "revId": "9eba85ca51b2641b6031b963a1292ef30c404e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//6CI\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-09T15:33:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAW3//7A4\u003d",
       "revId": "9eba85ca51b2641b6031b963a1292ef30c404e5a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//6OU\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-09T15:33:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAW3//7Bk\u003d",
+      "revId": "9eba85ca51b2641b6031b963a1292ef30c404e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//7Ds\u003d",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 7
@@ -98,6 +188,24 @@
       "writtenOn": "2014-04-09T13:37:35Z",
       "side": 1,
       "message": "Sounds good to me.  Might want to have the update and delete commands to act the same.\n\nWhenever someone invokes jenkins-job without a path, it would be nice to detect that the path is a tty and output some warning message. Something like:\n\n warning: reading configuration from STDIN. Press CTRL+D to end input.",
+      "revId": "9eba85ca51b2641b6031b963a1292ef30c404e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//6No\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-09T15:33:44Z",
+      "side": 1,
+      "message": "Good idea! But someone will point out that it\u0027s CTRL+Z on Windows!\n\nHow about this?\n\n```diff\ndiff --git a/jenkins_jobs/cmd.py b/jenkins_jobs/cmd.py\nindex be87965..438277b 100755\n--- a/jenkins_jobs/cmd.py\n+++ b/jenkins_jobs/cmd.py\n@@ -17,6 +17,7 @@ import argparse\n import ConfigParser\n import logging\n import os\n+import platform\n import sys\n\n\n@@ -125,6 +126,14 @@ def main():\n                                            ignore_cache\u003dignore_cache,\n                                            flush_cache\u003doptions.flush_cache)\n\n+    if options.path \u003d\u003d sys.stdin:\n+        logger.debug(\"Input file is stdin\")\n+        if options.path.isatty():\n+            key \u003d \u0027CTRL+Z\u0027 if platform.system() \u003d\u003d \u0027Windows\u0027 else \u0027CTRL+D\u0027\n+            logger.warn(\n+                \"Reading configuration from STDIN. Press %s to end input.\",\n+                key)\n+\n     if options.command \u003d\u003d \u0027delete\u0027:\n         for job in options.name:\n```",
+      "parentUuid": "AAAAW3//7Ds\u003d",
       "revId": "9eba85ca51b2641b6031b963a1292ef30c404e5a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
