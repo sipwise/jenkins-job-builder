@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//6Xc\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-09T14:49:06Z",
+      "side": 1,
+      "message": "If one only wants to compare one branch he will still be able to define them as before i.e.:\n\n  branch-compare-type: foo\n  branch-pattern: bar\n\nOr using the new style:\n\n - branches:\n  branch-compare-type: foo\n  branch-pattern: bar\n\nThat is nice for back compatibility.\n\nYou might want to emit a warning when discarding data. Ie whenever a project has branches, tell the user that the branch-compare-type and branch-pattern defined at the project level are skipped.",
+      "revId": "09c592bd133c746add913823797190fdbed66bed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
