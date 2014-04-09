@@ -73,7 +73,8 @@ if sys.version_info[:3] <= (2, 7, 3):
 
 def deep_format(obj, paramdict):
     """Apply the paramdict via str.format() to all string objects found within
-       the supplied obj. Lists and dicts are traversed recursively."""
+       the supplied obj. Lists and dicts are traversed recursively.
+    """
     # YAML serialisation was originally used to achieve this, but that places
     # limitations on the values in paramdict - the post-format result must
     # still be valid YAML (so substituting-in a string containing quotes, for
@@ -104,8 +105,8 @@ def deep_format(obj, paramdict):
 
 
 def matches(what, where):
-    """
-    Checks if the given string matches against the given list of glob patterns
+    """Checks if the given string matches against the given list of glob
+    patterns
 
     :arg str what: String that we want to test if matches
     :arg list where: list of glob patters to match
