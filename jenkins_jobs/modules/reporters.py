@@ -66,7 +66,7 @@ def email(parser, xml_parent, data):
         XML.SubElement(mailer, 'dontNotifyEveryUnstableBuild').text = 'true'
     XML.SubElement(mailer, 'sendToIndividuals').text = str(
         data.get('send-to-individuals', False)).lower()
-    # TODO: figure out what this is:
+    # TODO(jeblair) figure out what this is:
     XML.SubElement(mailer, 'perModuleEmail').text = 'true'
 
 

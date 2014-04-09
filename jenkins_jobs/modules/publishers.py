@@ -1331,7 +1331,7 @@ def email(parser, xml_parent, data):
             recipients: breakage@example.com
     """
 
-    # TODO: raise exception if this is applied to a maven job
+    # TODO(jeblair) raise exception if this is applied to a maven job
     mailer = XML.SubElement(xml_parent,
                             'hudson.tasks.Mailer')
     XML.SubElement(mailer, 'recipients').text = data['recipients']

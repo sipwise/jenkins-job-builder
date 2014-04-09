@@ -196,7 +196,7 @@ def throttle(parser, xml_parent, data):
         data.get('max-per-node', '0'))
     XML.SubElement(throttle, 'maxConcurrentTotal').text = str(
         data.get('max-total', '0'))
-    # TODO: What's "categories"?
+    # TODO(jeblair) What's "categories"?
     #XML.SubElement(throttle, 'categories')
     if data.get('enabled', True):
         XML.SubElement(throttle, 'throttleEnabled').text = 'true'
@@ -271,7 +271,7 @@ def authenticated_build(parser, xml_parent, data):
       properties:
         - authenticated-build
     """
-    # TODO: generalize this
+    # TODO(jeblair) generalize this
     if data:
         security = XML.SubElement(xml_parent,
                                   'hudson.security.'
