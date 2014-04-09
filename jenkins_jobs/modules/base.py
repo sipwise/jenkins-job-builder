@@ -18,17 +18,15 @@ import xml.etree.ElementTree as XML
 
 
 def add_nonblank_xml_subelement(parent, tag, value):
-    """
-    Adds an XML SubElement with the name tag to parent if value is a non-empty
-    string
+    """Adds an XML SubElement with the name tag to parent
+    if value is a non-empty string
     """
     if value is not None and value != '':
         XML.SubElement(parent, tag).text = value
 
 
 class Base(object):
-    """
-    A base class for a Jenkins Job Builder Module.
+    """A base class for a Jenkins Job Builder Module.
 
     The module is initialized before any YAML is parsed.
 
