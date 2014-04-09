@@ -25,11 +25,13 @@ import testtools
 import xml.etree.ElementTree as XML
 import yaml
 
-from jenkins_jobs.builder import XmlJob, YamlParser, ModuleRegistry
-from jenkins_jobs.modules import (project_flow,
-                                  project_matrix,
-                                  project_maven,
-                                  project_multijob)
+from jenkins_jobs.builder import ModuleRegistry
+from jenkins_jobs.builder import XmlJob
+from jenkins_jobs.builder import YamlParser
+from jenkins_jobs.modules import project_flow
+from jenkins_jobs.modules import project_matrix
+from jenkins_jobs.modules import project_maven
+from jenkins_jobs.modules import project_multijob
 
 
 def get_scenarios(fixtures_path):

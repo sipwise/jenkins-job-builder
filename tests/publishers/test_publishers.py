@@ -16,14 +16,15 @@
 # under the License.
 
 import os
+import tests.base
 from testscenarios.testcase import TestWithScenarios
-from tests.base import get_scenarios, BaseTestCase
 from testtools import TestCase
 
 from jenkins_jobs.modules import publishers
 
 
-class TestCaseModulePublishers(TestWithScenarios, TestCase, BaseTestCase):
+class TestCaseModulePublishers(TestWithScenarios, TestCase,
+                               tests.base.BaseTestCase):
     fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
-    scenarios = get_scenarios(fixtures_path)
+    scenarios = tests.base.get_scenarios(fixtures_path)
     klass = publishers.Publishers
