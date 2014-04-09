@@ -16,14 +16,12 @@
 # under the License.
 
 import os
-from tests import base
-from testscenarios.testcase import TestWithScenarios
-from testtools import TestCase
+import tests.base
 
 from jenkins_jobs.modules import general
 
 
-class TestCaseModuleGeneral(TestWithScenarios, TestCase, base.BaseTestCase):
+class TestCaseModuleGeneral(tests.base.BaseTestCase):
     fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
-    scenarios = base.get_scenarios(fixtures_path)
+    scenarios = tests.base.get_scenarios(fixtures_path)
     klass = general.General

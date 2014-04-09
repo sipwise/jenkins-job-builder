@@ -40,7 +40,7 @@ Example::
 import logging
 import xml.etree.ElementTree as XML
 
-from jenkins_jobs.errors import JenkinsJobsException
+import jenkins_jobs.errors
 import jenkins_jobs.modules.base
 from jenkins_jobs.modules import hudson_model
 
@@ -142,10 +142,11 @@ def copyartifact(parser, xml_parent, data):
                   'workspace-latest': 'WorkspaceSelector',
                   'build-param': 'ParameterizedBuildSelector'}
     if select not in selectdict:
-        raise JenkinsJobsException("which-build entered is not valid must be "
-                                   "one of: last-successful, specific-build, "
-                                   "last-saved, upstream-build, permalink, "
-                                   "workspace-latest, or build-param")
+        raise jenkins_jobs.errors.JenkinsJobsException(
+            "which-build entered is not valid must be "
+            "one of: last-successful, specific-build, "
+            "last-saved, upstream-build, permalink, "
+            "workspace-latest, or build-param")
     permalink = data.get('permalink', 'last')
     permalinkdict = {'last': 'lastBuild',
                      'last-stable': 'lastStableBuild',
@@ -154,10 +155,11 @@ def copyartifact(parser, xml_parent, data):
                      'last-unstable': 'lastUnstableBuild',
                      'last-unsuccessful': 'lastUnsuccessfulBuild'}
     if permalink not in permalinkdict:
-        raise JenkinsJobsException("permalink entered is not valid must be "
-                                   "one of: last, last-stable, "
-                                   "last-successful, last-failed, "
-                                   "last-unstable, or last-unsuccessful")
+        raise jenkins_jobs.errors.JenkinsJobsException(
+            "permalink entered is not valid must be "
+            "one of: last, last-stable, "
+            "last-successful, last-failed, "
+            "last-unstable, or last-unsuccessful")
     selector = XML.SubElement(t, 'selector',
                               {'class': 'hudson.plugins.copyartifact.' +
                                selectdict[select]})
@@ -660,7 +662,7 @@ def conditional_step(parser, xml_parent, data):
             wr = XML.SubElement(ctag, 'worstResult')
             wr_name = cdata['condition-worst']
             if wr_name not in hudson_model.THRESHOLDS:
-                raise JenkinsJobsException(
+                raise jenkins_jobs.errors.JenkinsJobsException(
                     "threshold must be one of %s" %
                     ", ".join(hudson_model.THRESHOLDS.keys()))
             wr_threshold = hudson_model.THRESHOLDS[wr_name]
@@ -673,7 +675,7 @@ def conditional_step(parser, xml_parent, data):
             br = XML.SubElement(ctag, 'bestResult')
             br_name = cdata['condition-best']
             if not br_name in hudson_model.THRESHOLDS:
-                raise JenkinsJobsException(
+                raise jenkins_jobs.errors.JenkinsJobsException(
                     "threshold must be one of %s" %
                     ", ".join(hudson_model.THRESHOLDS.keys()))
             br_threshold = hudson_model.THRESHOLDS[br_name]
@@ -1141,13 +1143,14 @@ def shining_panda(parser, xml_parent, data):
     try:
         buildenv = data['build-environment']
     except KeyError:
-        raise JenkinsJobsException("A build-environment is required")
+        raise jenkins_jobs.errors.JenkinsJobsException(
+            "A build-environment is required")
 
     if buildenv not in envs:
         errorstring = ("build-environment '%s' is invalid. Must be one of %s."
                        % (buildenv, ', '.join("'{0}'".format(env)
                                               for env in envs)))
-        raise JenkinsJobsException(errorstring)
+        raise jenkins_jobs.errors.JenkinsJobsException(errorstring)
 
     t = XML.SubElement(xml_parent, '%s%s' %
                        (pluginelementpart, buildenvdict[buildenv]))
@@ -1160,8 +1163,8 @@ def shining_panda(parser, xml_parent, data):
         try:
             homevalue = data["home"]
         except KeyError:
-            raise JenkinsJobsException("'home' argument is required for the"
-                                       " 'custom' environment")
+            raise jenkins_jobs.errors.JenkinsJobsException(
+                "'home' argument is required for the 'custom' environment")
         XML.SubElement(t, 'home').text = homevalue
 
     if buildenv in ('virtualenv'):
@@ -1181,7 +1184,7 @@ def shining_panda(parser, xml_parent, data):
         errorstring = ("nature '%s' is not valid: must be one of %s."
                        % (nature, ', '.join("'{0}'".format(naturevalue)
                                             for naturevalue in naturetuple)))
-        raise JenkinsJobsException(errorstring)
+        raise jenkins_jobs.errors.JenkinsJobsException(errorstring)
     XML.SubElement(t, 'nature').text = nature
     XML.SubElement(t, 'command').text = data.get("command", "")
     ignore_exit_code = data.get('ignore-exit-code', False)

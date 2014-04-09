@@ -34,7 +34,7 @@ Example::
 import xml.etree.ElementTree as XML
 
 import jenkins_jobs.modules.base
-from jenkins_jobs.modules.builders import create_builders
+from jenkins_jobs.modules import builders
 
 
 def ci_skip(parser, xml_parent, data):
@@ -860,7 +860,7 @@ def pre_scm_buildstep(parser, xml_parent, data):
                          'PreSCMBuildStepsWrapper')
     bs = XML.SubElement(bsp, 'buildSteps')
     for step in data:
-        for edited_node in create_builders(parser, step):
+        for edited_node in builders.create_builders(parser, step):
             bs.append(edited_node)
 
 
