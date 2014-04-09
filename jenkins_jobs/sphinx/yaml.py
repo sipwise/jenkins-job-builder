@@ -82,7 +82,8 @@ class PyYAMLFunction(sphinx_python.PyModulelevel):
         return fullname, name_prefix
 
     def get_index_text(self, modname, name_cls):
-        return _('%s (in module %s)') % (name_cls[0], modname)
+        return _('%(name_cls)s (in module %(modname)s)') % {
+            'name_cls': name_cls[0], 'modname': modname}
 
 
 class YAMLFunctionDocumenter(autodoc.FunctionDocumenter):

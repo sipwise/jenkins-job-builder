@@ -75,7 +75,7 @@ class HipChat(jenkins_jobs.modules.base.Base):
                     raise jenkins_jobs.errors.JenkinsJobsException(
                         "Hipchat authtoken must not be a blank string")
             except (ConfigParser.NoSectionError,
-                    jenkins_jobs.errors.JenkinsJobsException), e:
+                    jenkins_jobs.errors.JenkinsJobsException) as e:
                 logger.fatal("The configuration file needs a hipchat section" +
                              " containing authtoken:\n{0}".format(e))
                 sys.exit(1)
