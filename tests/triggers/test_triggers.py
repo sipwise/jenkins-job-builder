@@ -17,9 +17,10 @@
 
 import os
 from testtools import TestCase
-from testscenarios.testcase import TestWithScenarios
-from jenkins_jobs.modules import triggers
 from tests.base import get_scenarios, BaseTestCase
+from testscenarios.testcase import TestWithScenarios
+
+from jenkins_jobs.modules import triggers
 
 
 class TestCaseModuleTriggers(TestWithScenarios, TestCase, BaseTestCase):

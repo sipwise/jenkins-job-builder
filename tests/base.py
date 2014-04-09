@@ -18,12 +18,13 @@
 # under the License.
 
 import codecs
+import doctest
 import os
 import re
-import doctest
 import testtools
 import xml.etree.ElementTree as XML
 import yaml
+
 from jenkins_jobs.builder import XmlJob, YamlParser, ModuleRegistry
 from jenkins_jobs.modules import (project_flow,
                                   project_matrix,
