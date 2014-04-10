@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//u8E\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-10T18:45:08Z",
+      "side": 1,
+      "message": "the command is missing {posargs}\n\nThe only dependency needed would be flake8 so we can save a bunch of time and avoid fetching all the requirements by specifying:\n\n deps \u003d flake8",
+      "revId": "3cfd8a92b2531771a53b8c02f593ac0779e5002a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//u9I\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-10T18:45:08Z",
+      "side": 1,
+      "message": "projcets -\u003e projects",
+      "revId": "3cfd8a92b2531771a53b8c02f593ac0779e5002a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//u84\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-10T18:45:08Z",
+      "side": 1,
+      "message": "Not sure we need to ignore H errors since we use flake8. Guess it is not doing any harm.",
+      "revId": "3cfd8a92b2531771a53b8c02f593ac0779e5002a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
