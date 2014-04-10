@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//1s8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-10T02:30:48Z",
+      "side": 1,
+      "message": "It would be useful if the commit message included a short summary of what \"H306\" is.\n\nSame for all the others on this topic.",
+      "revId": "df8ab66d05ef38c6ca655256322ab2ea95d6abba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
