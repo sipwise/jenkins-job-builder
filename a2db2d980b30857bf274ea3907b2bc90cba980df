@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//umc\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-10T19:50:05Z",
+      "side": 1,
+      "message": "Neat. Though now the test suite is missing a logger as well.\n\n $ tox -epy27\n ...\n No handlers could be found for logger \"jenkins_jobs.modules.triggers:gerrit\"\n No handlers could be found for logger \"jenkins_jobs.modules.triggers:gerrit\"\n Ran 96 (+3) tests in 0.549s (-0.059s)\n ...\n\nI guess the test suite needs a logger now.",
+      "revId": "a2db2d980b30857bf274ea3907b2bc90cba980df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//ulo\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-10T19:50:05Z",
+      "side": 1,
+      "message": "Nice.\n\nNote that  tests/triggers/fixtures/gerrit001.yaml and  tests/triggers/fixtures/gerrit002.yaml both throw that warning.\n\nYou might want to adjust them. If we want to verify we throw a warning that should probably be done in a different fixture and I have no idea how detect a message is logged, might not be worth it.",
+      "revId": "a2db2d980b30857bf274ea3907b2bc90cba980df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
