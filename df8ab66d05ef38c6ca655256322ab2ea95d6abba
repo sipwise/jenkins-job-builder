@@ -16,6 +16,24 @@
       "revId": "df8ab66d05ef38c6ca655256322ab2ea95d6abba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//vn0\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-04-10T17:22:17Z",
+      "side": 1,
+      "message": "Will do. Thanks",
+      "parentUuid": "AAAAW3//1s8\u003d",
+      "revId": "df8ab66d05ef38c6ca655256322ab2ea95d6abba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
