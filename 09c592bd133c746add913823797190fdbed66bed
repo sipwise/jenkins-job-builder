@@ -16,6 +16,24 @@
       "revId": "09c592bd133c746add913823797190fdbed66bed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//2NM\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-10T00:07:45Z",
+      "side": 1,
+      "message": "Done.  Added warning for both cases:\n\n- project defines a branch only in the project level; warn that it is deprecated and branches section should be used.\n\n- project defines a branch at project level, and one or more in branches section; warn that it is deprecated and data from project level is discarded.",
+      "parentUuid": "AAAAW3//6Xc\u003d",
+      "revId": "09c592bd133c746add913823797190fdbed66bed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
