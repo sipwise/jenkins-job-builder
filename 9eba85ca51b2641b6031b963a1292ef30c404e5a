@@ -212,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//ueo\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-10T20:08:39Z",
+      "side": 1,
+      "message": "So today I learned about the python module \u0027platform\u0027.  That CTRL+Z remembers me of a bug report we had for MediaWiki with windows users complaining that CTRL+D did not work.\n\nThanks for pasting the diff, makes thing easier to review.  Looks perfect to me!",
+      "parentUuid": "AAAAW3//6No\u003d",
+      "revId": "9eba85ca51b2641b6031b963a1292ef30c404e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//7C0\u003d",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 7
