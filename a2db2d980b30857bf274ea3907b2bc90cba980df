@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//rGc\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-11T08:42:19Z",
+      "side": 1,
+      "message": "OK, I have a fix.\n\nBTW there are a few other modules that have logging in them.  If this warning hasn\u0027t been seen before, it means those code paths are not being exercised by the test cases.\n\nOr nobody paid enough attention to the output :)",
+      "parentUuid": "AAAAW3//rLQ\u003d",
+      "revId": "a2db2d980b30857bf274ea3907b2bc90cba980df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//ulo\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 4
