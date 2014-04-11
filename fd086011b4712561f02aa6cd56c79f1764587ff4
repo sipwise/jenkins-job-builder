@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//q4k\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 585,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-11T09:17:05Z",
+      "side": 1,
+      "message": "Now fn refers to the config path. In the previous code the fn was overridden locally with the destination filename for the job.\n\nI would rename \u0027fn\u0027 there and bring back the os.path.join(output_dir, job.name) :-)",
+      "revId": "fd086011b4712561f02aa6cd56c79f1764587ff4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//q5E\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 587,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-11T09:17:05Z",
+      "side": 1,
+      "message": "I thought we could avoid repeating the logger.debug() / write() by opening the file if it is lacking the write attr.  But then we might ends up closing stdout which is probably not wanted :D",
+      "revId": "fd086011b4712561f02aa6cd56c79f1764587ff4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//q9E\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-11T09:17:05Z",
+      "side": 0,
+      "message": "You have dropped:\n\n fn \u003d os.path.join(output_dir, job.name)\n\nThus when passing as -o a directory with:\n\n jenkins-jobs test -o output/ config/ \n\nI get an exception when writing the output to it:\n\n IOError: [Errno 21] Is a directory: \u0027config/\u0027",
+      "revId": "e59182ea80d742c73b680a892dcf6c4c6293be30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
