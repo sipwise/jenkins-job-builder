@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//pvo\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 731,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-11T12:15:59Z",
+      "side": 1,
+      "message": "At this point (i.e. after filtering and verifying the cache) we can end up with less jobs than the number of threads...",
+      "revId": "8c70253e07bbf29b53072b89d3acd849d605887d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//pus\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 733,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-11T12:15:59Z",
+      "side": 1,
+      "message": "might want to give the number of jobs that are going to be updated. Ie:\n\n logging.debug(\u0027Updating %s job(s)\u0027 % len(jobs))",
+      "revId": "8c70253e07bbf29b53072b89d3acd849d605887d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//pt0\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 738,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-11T12:15:59Z",
+      "side": 1,
+      "message": "And there we would still launch n_threads even if we have no jobs. Debug session:\n\n DEBUG:root:Filtering 4 jobs by name\n DEBUG:root:Filtering 4 jobs for changed jobs\n DEBUG:jenkins_jobs.builder:\u0027mwext-WikiForum-jslint\u0027 has not changed\n DEBUG:jenkins_jobs.builder:\u0027mwext-WikiForum-lint\u0027 has not changed\n DEBUG:jenkins_jobs.builder:\u0027mwext-WikiForum-phpcs-HEAD\u0027 has not changed\n DEBUG:jenkins_jobs.builder:\u0027mwext-WikiForum-testextensions-master\u0027 has not changed\n DEBUG:root:Filtered for changed jobs in 0.0330531597137s\n DEBUG:root:Updating jobs\n DEBUG:root:Running parallel 4 threads\n DEBUG:root:Spawning thread 0\n DEBUG:root:Spawning thread 1\n DEBUG:root:Spawning thread 2\n DEBUG:root:Spawning thread 3\n DEBUG:root:Waiting for threads to finish processing\n DEBUG:root:Parallel task finished\n Parsing results\n Updated 0 jobs in 0.0714228153229s\n\nparallelized() should probably spawn less threads than the number of entry left in the queue.\n\n\nThat is not a big deal anyway. Just mentioning it for the sake of it. It only takes 70ms in the above example.",
+      "revId": "8c70253e07bbf29b53072b89d3acd849d605887d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
