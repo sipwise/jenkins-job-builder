@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//qlM\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-11T09:56:30Z",
+      "side": 1,
+      "message": "Should  I make it default to \"__ANY__\" if not specified?",
+      "revId": "a0a8080338ebe25b8fa015420a5e57bd53a2034f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//qkk\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-11T09:56:30Z",
+      "side": 1,
+      "message": "I added this check because otherwise all the other test files end up with an empty \"serverName\" element.\n\nShould I instead update them?",
+      "revId": "a0a8080338ebe25b8fa015420a5e57bd53a2034f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
