@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//nyg\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1061,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-11T16:36:35Z",
+      "side": 1,
+      "message": "ohh, that\u0027s right we prefer to drop the version info to be compatible with multiple versions of the plugin.  The job should still work if it\u0027s set to just \u0027Exclusion\u0027, jenkins will know what to do.",
+      "parentUuid": "AAAAW3//uvc\u003d",
+      "revId": "203363b2863d53334236ca0955e40617da8e6509",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//usk\u003d",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 4
@@ -117,6 +135,23 @@
       "writtenOn": "2014-04-10T19:28:06Z",
       "side": 1,
       "message": "Link is badly generated in the doc. You need a backquote before \u0027Exclusion\u0027.\n\nGenerated doc at http://docs-draft.openstack.org/40/77940/4/check/gate-jenkins-job-builder-docs/53ab314/doc/build/html/wrappers.html#wrappers.exclusion",
+      "revId": "203363b2863d53334236ca0955e40617da8e6509",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//nyY\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 972,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-11T16:36:35Z",
+      "side": 1,
+      "message": "same here, just drop the version number.",
       "revId": "203363b2863d53334236ca0955e40617da8e6509",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
