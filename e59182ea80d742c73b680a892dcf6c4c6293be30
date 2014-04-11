@@ -16,6 +16,24 @@
       "revId": "e59182ea80d742c73b680a892dcf6c4c6293be30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//paA\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-11T12:51:17Z",
+      "side": 0,
+      "message": "nuts, that\u0027ll teach me to review by sight only!",
+      "parentUuid": "AAAAW3//q9E\u003d",
+      "revId": "e59182ea80d742c73b680a892dcf6c4c6293be30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
