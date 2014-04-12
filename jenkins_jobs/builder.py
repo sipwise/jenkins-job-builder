@@ -580,6 +580,14 @@ class Builder(object):
                     "Press ENTER to open 10 more jobs [%d remaining]: "
                     % remaining)
 
+    def list_jobs(self, glob_name, fn=None):
+        jobs = self.get_jobs(glob_name, fn)
+
+        logger.info("Matching jobs: %d", len(jobs))
+
+        for idx, job in enumerate(jobs):
+            print(job)
+
     def get_jobs(self, glob_name, fn=None):
         if fn:
             self.load_files(fn)
