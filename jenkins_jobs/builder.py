@@ -574,6 +574,14 @@ class Builder(object):
         for job in jobs:
             self.delete_job(job['name'])
 
+    def list_jobs(self, job_name_globs=None, fn='.'):
+        jobs = self.get_jobs(job_name_globs, fn)
+
+        logger.info("Matching jobs: %d", len(jobs))
+
+        for idx, job in enumerate(jobs):
+            print(job)
+
     def browse_jobs(self, job_name_globs=None, fn='.', batch=10):
         jobs = self.get_jobs(job_name_globs, fn)
 
