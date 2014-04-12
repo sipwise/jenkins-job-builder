@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//kTw\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-12T12:57:21Z",
+      "side": 1,
+      "message": "I also think Jenkins will discard the unexpected options, but I will check.  I think the default in the plugin is __ANY__, but I will check that too.",
+      "parentUuid": "AAAAW3//l6c\u003d",
+      "revId": "a0a8080338ebe25b8fa015420a5e57bd53a2034f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//qkk\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 1
@@ -102,6 +120,24 @@
       "side": 1,
       "message": "I think you just have to test whether it still works on your version and older versions of the plugin.   I think making it optional (as-is) is safer for backwards compatibility.",
       "parentUuid": "AAAAW3//qkk\u003d",
+      "revId": "a0a8080338ebe25b8fa015420a5e57bd53a2034f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//kT8\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-12T12:57:21Z",
+      "side": 1,
+      "message": "I think the Jenkins UI will set __ANY__ but I\u0027ll have to confirm that when I get back to the office on Monday.\n\nLooking at the code again, there are other options (for example dynamic trigger URL) that are only in fairly recent versions of the plugin but don\u0027t have special handling.",
+      "parentUuid": "AAAAW3//l7I\u003d",
       "revId": "a0a8080338ebe25b8fa015420a5e57bd53a2034f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
