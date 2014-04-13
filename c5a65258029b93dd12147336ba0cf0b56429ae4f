@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//hoY\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-13T22:26:45Z",
+      "side": 1,
+      "message": "Nit. Is this the preferred way of constructing multi-line strings? Perhaps it might be easier to use a triple-quoted, indented string and then pass it to textwrap.dedent?\n\nBut feel free to ignore.",
+      "revId": "c5a65258029b93dd12147336ba0cf0b56429ae4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
