@@ -34,6 +34,24 @@
       "revId": "e59182ea80d742c73b680a892dcf6c4c6293be30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//iSQ\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-13T14:44:50Z",
+      "side": 0,
+      "message": "Ah, good catch!\n\nI think this means jjb needs more tests! I\u0027ll see what I can do if I can find some time...",
+      "parentUuid": "AAAAW3//q9E\u003d",
+      "revId": "e59182ea80d742c73b680a892dcf6c4c6293be30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
