@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//hnM\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-13T22:40:06Z",
+      "side": 1,
+      "message": "Is that true that it only needs \"flake8\"?\n\nMy thought was that this is now using \"hacking\" which is a plugin for \"flake8\", so it needs to have \"hacking\" and its dependencies as well.\n\nSo maybe what the OP has is good?",
+      "parentUuid": "AAAAW3//u8E\u003d",
+      "revId": "3cfd8a92b2531771a53b8c02f593ac0779e5002a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//u9I\u003d",
         "filename": "tox.ini",
         "patchSetId": 1
