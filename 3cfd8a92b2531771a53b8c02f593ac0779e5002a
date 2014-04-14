@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//aKA\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-14T19:20:46Z",
+      "side": 1,
+      "message": "On Wikimedia python repositories we use that tweak to skip the dependencies since we only care about flake8.  Should probably be hacking there for OpenStack or just ignore my comment entirely and keep using the test-requirements.txt :]",
+      "parentUuid": "AAAAW3//hnM\u003d",
+      "revId": "3cfd8a92b2531771a53b8c02f593ac0779e5002a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//u9I\u003d",
         "filename": "tox.ini",
         "patchSetId": 1
