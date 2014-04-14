@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAW3//aBw\u003d",
+        "filename": "tests/yamlparser/fixtures/templates001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-14T19:47:15Z",
+      "side": 1,
+      "message": "I think \u0027default-template\u0027 would be a better name?",
+      "revId": "0789909228f9d1b92cee7629b7f925d740461f7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//Z/A\u003d",
+        "filename": "tests/yamlparser/fixtures/templates001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-14T19:47:15Z",
+      "side": 1,
+      "message": "The defaults are ignored if the reference doesn\u0027t match the default template definition.  I think it would be better to fail instead of ignore.",
+      "revId": "0789909228f9d1b92cee7629b7f925d740461f7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//aBM\u003d",
+        "filename": "tests/yamlparser/fixtures/templates001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-14T19:47:15Z",
+      "side": 1,
+      "message": "I think the use case here is to have a default template that you can re-user or override in multiple job templates.  So would it make sense to test with multiple job templates?",
+      "revId": "0789909228f9d1b92cee7629b7f925d740461f7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
