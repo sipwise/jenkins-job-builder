@@ -16,6 +16,24 @@
       "revId": "c5a65258029b93dd12147336ba0cf0b56429ae4f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//aIo\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-14T19:23:49Z",
+      "side": 1,
+      "message": "I am fine with the antislashes :-]",
+      "parentUuid": "AAAAW3//hoY\u003d",
+      "revId": "c5a65258029b93dd12147336ba0cf0b56429ae4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
