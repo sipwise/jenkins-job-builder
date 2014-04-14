@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//aqs\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-14T18:14:06Z",
+      "side": 1,
+      "message": "I see, i didn\u0027t notice that before.  LGTM, along with the rest of the other methods.",
+      "parentUuid": "AAAAWH/9uYk\u003d",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAWH/905E\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 1
@@ -346,6 +364,24 @@
       "side": 1,
       "message": "The input \u0027check-status\u0027 is an integer, not a boolean.  If it is present, then the output \u0027check-status\u0027 should be set to true and the output \u0027status-code\u0027 should be set to the provided integer.  Would it be better to make this two separate inputs instead?  That seemed redundant when I was working on this, but I can see how the code here is not as obvious as it could be.  Is it better to put more burden on the user in order to keep the code cleaner?",
       "parentUuid": "AAAAWH/9060\u003d",
+      "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//arA\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-14T18:14:06Z",
+      "side": 1,
+      "message": "I see now, looking at it again the code LGTM.  IMO it would be more clear if this were 2 separate inputs.  I think most people using JJB are expecting modules to mirror the equivalent Jenkins plugin.",
+      "parentUuid": "AAAAWH/9uT4\u003d",
       "revId": "3726ab9e71fdb00ca31c136b89c7040940b26e8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
