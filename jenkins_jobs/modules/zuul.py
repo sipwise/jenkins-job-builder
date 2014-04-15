@@ -126,8 +126,8 @@ class Zuul(jenkins_jobs.modules.base.Base):
 
     def handle_data(self, parser):
         changed = False
-        jobs = (parser.data.get('job', {}).values() +
-                parser.data.get('job-template', {}).values())
+        jobs = (list(parser.data.get('job', {}).values()) +
+                list(parser.data.get('job-template', {}).values()))
         for job in jobs:
             triggers = job.get('triggers')
             if not triggers:
