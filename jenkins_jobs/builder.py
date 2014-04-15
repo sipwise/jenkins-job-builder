@@ -16,6 +16,7 @@
 # Manage jobs in Jenkins server
 
 import os
+import operator
 import sys
 import hashlib
 import yaml
@@ -325,7 +326,7 @@ class ModuleRegistry(object):
             Mod = entrypoint.load()
             mod = Mod(self)
             self.modules.append(mod)
-            self.modules.sort(lambda a, b: cmp(a.sequence, b.sequence))
+            self.modules.sort(key=operator.attrgetter('sequence'))
             if mod.component_type is not None:
                 self.modules_by_component_type[mod.component_type] = mod
 
@@ -578,7 +579,7 @@ class Builder(object):
                 continue
             if output_dir:
                 if names:
-                    print job.output()
+                    print(job.output())
                     continue
                 fn = os.path.join(output_dir, job.name)
                 logger.debug("Writing XML to '{0}'".format(fn))

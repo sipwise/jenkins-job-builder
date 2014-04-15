@@ -69,7 +69,7 @@ class BaseTestCase(object):
         xml_content = u"%s" % codecs.open(xml_filepath, 'r', 'utf-8').read()
 
         yaml_filepath = os.path.join(self.fixtures_path, self.yaml_filename)
-        with file(yaml_filepath, 'r') as yaml_file:
+        with open(yaml_filepath, 'r') as yaml_file:
             yaml_content = yaml.load(yaml_file)
 
         return (yaml_content, xml_content)
