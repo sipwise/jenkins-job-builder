@@ -147,9 +147,9 @@ def git(self, xml_parent, data):
         data['remotes'] = [{data.get('name', 'origin'): data.copy()}]
     for remoteData in data['remotes']:
         huser = XML.SubElement(user, 'hudson.plugins.git.UserRemoteConfig')
-        remoteName = remoteData.keys()[0]
+        remoteName = list(remoteData.keys())[0]
         XML.SubElement(huser, 'name').text = remoteName
-        remoteParams = remoteData.values()[0]
+        remoteParams = list(remoteData.values())[0]
         if 'refspec' in remoteParams:
             refspec = remoteParams['refspec']
         else:
@@ -369,7 +369,7 @@ def svn(self, xml_parent, data):
 
 
 def tfs(self, xml_parent, data):
-    """yaml: tfs
+    r"""yaml: tfs
     Specifies the Team Foundation Server repository for this job.
     Requires the Jenkins `Team Foundation Server Plugin.
     <https://wiki.jenkins-ci.org/display/JENKINS/
