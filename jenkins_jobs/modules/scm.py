@@ -386,9 +386,9 @@ def tfs(self, xml_parent, data):
         server.
     :arg str login: The user name that is registered on the server. The user
         name must contain the name and the domain name. Entered as
-        domain\\\user or user\@domain (optional).
+        domain\\\\user or user\@domain (optional).
         **NOTE**: You must enter in at least two slashes for the
-        domain\\\user format in JJB YAML. It will be rendered normally.
+        domain\\\\user format in JJB YAML. It will be rendered normally.
     :arg str use-update: If true, Hudson will not delete the workspace at end
         of each build. This causes the artifacts from the previous build to
         remain when a new build starts. (default true)

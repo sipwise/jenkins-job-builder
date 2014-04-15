@@ -78,7 +78,7 @@ class BaseTestCase(object):
         xml_content = u"%s" % codecs.open(xml_filepath, 'r', 'utf-8').read()
 
         yaml_filepath = os.path.join(self.fixtures_path, self.yaml_filename)
-        with file(yaml_filepath, 'r') as yaml_file:
+        with open(yaml_filepath, 'r') as yaml_file:
             yaml_content = yaml.load(yaml_file)
 
         return (yaml_content, xml_content)
@@ -110,8 +110,7 @@ class BaseTestCase(object):
         pub.gen_xml(parser, xml_project, yaml_content)
 
         # Prettify generated XML
-        pretty_xml = unicode(XmlJob(xml_project, 'fixturejob').output(),
-                             'utf-8')
+        pretty_xml = XmlJob(xml_project, 'fixturejob').output().decode('utf-8')
 
         self.assertThat(
             pretty_xml,
