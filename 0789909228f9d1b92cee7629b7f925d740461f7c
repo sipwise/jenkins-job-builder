@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//TSo\u003d",
+        "filename": "tests/yamlparser/fixtures/templates001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 9921
+      },
+      "writtenOn": "2014-04-15T13:58:26Z",
+      "side": 1,
+      "message": "Not necessarily, in my use-case I have a different set of defaults for each project, and I just reference them from each set of jobs through the variable. And they can also be used by non-templated jobs (which is my case). More complete example: https://gist.github.com/jvale/5dbe8ac629123913f828",
+      "parentUuid": "AAAAW3//aBw\u003d",
+      "revId": "0789909228f9d1b92cee7629b7f925d740461f7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//Z/A\u003d",
         "filename": "tests/yamlparser/fixtures/templates001.yaml",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAW3//TPU\u003d",
+        "filename": "tests/yamlparser/fixtures/templates001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 9921
+      },
+      "writtenOn": "2014-04-15T13:58:26Z",
+      "side": 1,
+      "message": "Ignoring an \"unknown\" set of defaults instead of failing is the current behaviour in normal jobs as well. Is that something we want?",
+      "parentUuid": "AAAAW3//Z/A\u003d",
+      "revId": "0789909228f9d1b92cee7629b7f925d740461f7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//aBM\u003d",
         "filename": "tests/yamlparser/fixtures/templates001.yaml",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2014-04-14T19:47:15Z",
       "side": 1,
       "message": "I think the use case here is to have a default template that you can re-user or override in multiple job templates.  So would it make sense to test with multiple job templates?",
+      "revId": "0789909228f9d1b92cee7629b7f925d740461f7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAW3//TIU\u003d",
+        "filename": "tests/yamlparser/fixtures/templates001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 9921
+      },
+      "writtenOn": "2014-04-15T13:58:26Z",
+      "side": 1,
+      "message": "As far as I know, the tests only support a single output for each input file, so not sure how it can be done without rewriting the tests infrastructure.",
+      "parentUuid": "AAAAW3//aBM\u003d",
       "revId": "0789909228f9d1b92cee7629b7f925d740461f7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
