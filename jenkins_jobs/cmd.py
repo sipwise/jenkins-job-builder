@@ -14,11 +14,12 @@
 # under the License.
 
 import argparse
-import ConfigParser
 import logging
 import os
 import platform
 import sys
+
+from jenkins_jobs.compat import ConfigParser
 
 
 def confirm(question):
