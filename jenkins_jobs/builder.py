@@ -17,6 +17,7 @@
 
 import errno
 import os
+import operator
 import sys
 import hashlib
 import yaml
@@ -132,7 +133,7 @@ class YamlParser(object):
                     " not a {cls}".format(fname=getattr(fp, 'name', fp),
                                           cls=type(data)))
             for item in data:
-                cls, dfn = item.items()[0]
+                cls, dfn = item.popitem()
                 group = self.data.get(cls, {})
                 if len(item.items()) > 1:
                     n = None
@@ -271,6 +272,7 @@ class YamlParser(object):
             # us guarantee a group of parameters will not be added a
             # second time.
             uniq = json.dumps(expanded, sort_keys=True)
+            uniq = uniq.encode('utf-8')
             checksum = hashlib.md5(uniq).hexdigest()
 
             # Lookup the checksum
@@ -337,7 +339,7 @@ class ModuleRegistry(object):
             Mod = entrypoint.load()
             mod = Mod(self)
             self.modules.append(mod)
-            self.modules.sort(lambda a, b: cmp(a.sequence, b.sequence))
+            self.modules.sort(key=operator.attrgetter('sequence'))
             if mod.component_type is not None:
                 self.modules_by_component_type[mod.component_type] = mod
 
@@ -380,7 +382,7 @@ class ModuleRegistry(object):
             .component_list_type
 
         if isinstance(component, dict):
-            # The component is a sigleton dictionary of name: dict(args)
+            # The component is a singleton dictionary of name: dict(args)
             name, component_data = component.items()[0]
             if template_data:
                 # Template data contains values that should be interpolated

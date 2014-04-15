@@ -14,7 +14,7 @@
 # under the License.
 
 import argparse
-import ConfigParser
+from six.moves import configparser
 import logging
 import os
 import platform
@@ -99,7 +99,7 @@ def main(argv=None):
                                  'jenkins_jobs.ini')
         if os.path.isfile(localconf):
             conf = localconf
-    config = ConfigParser.ConfigParser()
+    config = configparser.ConfigParser()
     ## Load default config always
     config.readfp(cStringIO.StringIO(DEFAULT_CONF))
     if options.command == 'test':
@@ -136,11 +136,11 @@ def execute(options, config, logger):
     # https://bugs.launchpad.net/openstack-ci/+bug/1259631
     try:
         user = config.get('jenkins', 'user')
-    except (TypeError, ConfigParser.NoOptionError):
+    except (TypeError, configparser.NoOptionError):
         user = None
     try:
         password = config.get('jenkins', 'password')
-    except (TypeError, ConfigParser.NoOptionError):
+    except (TypeError, configparser.NoOptionError):
         password = None
 
     builder = Builder(config.get('jenkins', 'url'),
