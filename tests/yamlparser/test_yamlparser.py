@@ -17,7 +17,7 @@
 
 import operator
 import os
-from ConfigParser import ConfigParser
+from six.moves import configparser
 from testtools import TestCase
 from testscenarios.testcase import TestWithScenarios
 from tests.base import get_scenarios, BaseTestCase
@@ -40,7 +40,7 @@ class TestCaseModuleYamlInclude(TestWithScenarios, TestCase, BaseTestCase):
         yaml_filepath = os.path.join(self.fixtures_path, self.yaml_filename)
 
         if self.conf_filename:
-            config = ConfigParser()
+            config = configparser.ConfigParser()
             conf_filepath = os.path.join(self.fixtures_path,
                                          self.conf_filename)
             config.readfp(open(conf_filepath))
@@ -55,7 +55,7 @@ class TestCaseModuleYamlInclude(TestWithScenarios, TestCase, BaseTestCase):
         parser.jobs.sort(key=operator.attrgetter('name'))
 
         # Prettify generated XML
-        pretty_xml = "\n".join(job.output() for job in parser.jobs)
+        pretty_xml = b"\n".join(job.output() for job in parser.jobs)
 
         self.assertThat(
             pretty_xml,
