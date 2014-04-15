@@ -14,7 +14,7 @@
 # under the License.
 
 import argparse
-import ConfigParser
+from jenkins_jobs.compat import ConfigParser
 import logging
 import os
 import platform
