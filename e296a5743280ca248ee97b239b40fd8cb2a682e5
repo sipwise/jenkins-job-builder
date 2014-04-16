@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH///1w\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-04-16T00:36:11Z",
+      "side": 1,
+      "message": "Unless we need features only available in python3 print function, this is not needed. print(...) will behave ok without this import.",
+      "revId": "e296a5743280ca248ee97b239b40fd8cb2a682e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH///0w\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-04-16T00:36:11Z",
+      "side": 1,
+      "message": "I guess you forgot to commit jenkins_jobs.compat.",
+      "revId": "e296a5743280ca248ee97b239b40fd8cb2a682e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
