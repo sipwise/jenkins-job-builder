@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//32c\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-16T19:15:10Z",
+      "side": 1,
+      "message": "I noticed hacking enforce the pep8 and flake8 version. That is a neat way to have all your repos to use the same conventions. I usually dont bother and just use whatever pypi provides :D\n\nI sometime use {posargs} for --show-source or --statistics / --select when linting a non compliant repo. That is a corner case.",
+      "parentUuid": "AAAAXH//4qw\u003d",
+      "revId": "3cfd8a92b2531771a53b8c02f593ac0779e5002a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//u9I\u003d",
         "filename": "tox.ini",
         "patchSetId": 1
@@ -137,6 +155,24 @@
       "side": 1,
       "message": "It\u0027s mostly to indicate that we\u0027re not using hacking on purpose.",
       "parentUuid": "AAAAW3//u84\u003d",
+      "revId": "3cfd8a92b2531771a53b8c02f593ac0779e5002a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//31o\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-16T19:15:10Z",
+      "side": 1,
+      "message": "Fair :-)",
+      "parentUuid": "AAAAXH//4qU\u003d",
       "revId": "3cfd8a92b2531771a53b8c02f593ac0779e5002a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
