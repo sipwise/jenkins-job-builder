@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//9a8\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-16T09:03:35Z",
+      "side": 1,
+      "message": "Should probably be named \u0027cover\u0027",
+      "revId": "7636d7359e85188787eb4e4a97a22e0a03333cf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//9a4\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-16T09:03:35Z",
+      "side": 1,
+      "message": "I would add the three new dependencies to test-requirements.txt",
+      "revId": "7636d7359e85188787eb4e4a97a22e0a03333cf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//9aw\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-16T09:03:35Z",
+      "side": 1,
+      "message": "Zuul uses:\n\n python setup.py testr --coverage\n\nProbably means you can get rid of pytest and pytest-cov :-)",
+      "revId": "7636d7359e85188787eb4e4a97a22e0a03333cf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
