@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//4qw\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2014-04-16T17:35:20Z",
+      "side": 1,
+      "message": "Yes, hacking is in requirements so it\u0027s easier to get the versions of pep8 and flake8 that it gets.  I think we don\u0027t normally use posargs with flake8 (\"tox -epep8\" should just do the right thing).  Is there a reason we should have it?",
+      "parentUuid": "AAAAW3//aKA\u003d",
+      "revId": "3cfd8a92b2531771a53b8c02f593ac0779e5002a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//u9I\u003d",
         "filename": "tox.ini",
         "patchSetId": 1
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//4qo\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2014-04-16T17:35:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAW3//u9I\u003d",
+      "revId": "3cfd8a92b2531771a53b8c02f593ac0779e5002a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//u84\u003d",
         "filename": "tox.ini",
         "patchSetId": 1
@@ -83,6 +119,24 @@
       "writtenOn": "2014-04-10T18:45:08Z",
       "side": 1,
       "message": "Not sure we need to ignore H errors since we use flake8. Guess it is not doing any harm.",
+      "revId": "3cfd8a92b2531771a53b8c02f593ac0779e5002a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//4qU\u003d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2014-04-16T17:35:20Z",
+      "side": 1,
+      "message": "It\u0027s mostly to indicate that we\u0027re not using hacking on purpose.",
+      "parentUuid": "AAAAW3//u84\u003d",
       "revId": "3cfd8a92b2531771a53b8c02f593ac0779e5002a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
