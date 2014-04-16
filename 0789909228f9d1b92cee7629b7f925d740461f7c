@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//5KQ\u003d",
+        "filename": "tests/yamlparser/fixtures/templates001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-16T16:37:39Z",
+      "side": 1,
+      "message": "ohh hold on.  JJB already has a defaults config: http://ci.openstack.org/jenkins-job-builder/configuration.html#defaults\n\ncan\u0027t the existing default config to accomplish this use case?",
+      "parentUuid": "AAAAW3//TSo\u003d",
+      "revId": "0789909228f9d1b92cee7629b7f925d740461f7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//Z/A\u003d",
         "filename": "tests/yamlparser/fixtures/templates001.yaml",
         "patchSetId": 1
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//5Og\u003d",
+        "filename": "tests/yamlparser/fixtures/templates001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-16T16:37:39Z",
+      "side": 1,
+      "message": "I still think it\u0027s better to fail instead of ignore because user has no indication that the job did not get created correctly, or the way they expected.   However since the current functionality is to ignore I think that fix can be in a separate change.  How about for for this change we at least log a warning message?",
+      "parentUuid": "AAAAW3//TPU\u003d",
+      "revId": "0789909228f9d1b92cee7629b7f925d740461f7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//aBM\u003d",
         "filename": "tests/yamlparser/fixtures/templates001.yaml",
         "patchSetId": 1
@@ -101,6 +137,24 @@
       "side": 1,
       "message": "As far as I know, the tests only support a single output for each input file, so not sure how it can be done without rewriting the tests infrastructure.",
       "parentUuid": "AAAAW3//aBM\u003d",
+      "revId": "0789909228f9d1b92cee7629b7f925d740461f7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//5Mc\u003d",
+        "filename": "tests/yamlparser/fixtures/templates001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-16T16:37:39Z",
+      "side": 1,
+      "message": "your right, my suggestion is to have a test with multiple templates and let the test infra validate only one of the resulting xml file.  The benefit would be to have a better example in the docs.",
+      "parentUuid": "AAAAW3//TIU\u003d",
       "revId": "0789909228f9d1b92cee7629b7f925d740461f7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
