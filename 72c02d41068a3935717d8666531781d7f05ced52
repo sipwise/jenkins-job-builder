@@ -16,6 +16,24 @@
       "revId": "72c02d41068a3935717d8666531781d7f05ced52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//1bI\u003d",
+        "filename": "tests/general/fixtures/project-maven002.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 10354
+      },
+      "writtenOn": "2014-04-17T04:10:42Z",
+      "side": 0,
+      "message": "It\u0027s possible that that\u0027s the value from older versions of Jenkins. The ones I\u0027m working with (all 1.550 or higher) completely ignore the settingConfigId and globalSettingConfigId. The only way to set these paths is if they\u0027re set as settings or globalSettings with the appropriate classes.",
+      "parentUuid": "AAAAW3//2RA\u003d",
+      "revId": "72c02d41068a3935717d8666531781d7f05ced52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
