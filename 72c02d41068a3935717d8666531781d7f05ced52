@@ -34,6 +34,24 @@
       "revId": "72c02d41068a3935717d8666531781d7f05ced52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//unk\u003d",
+        "filename": "tests/general/fixtures/project-maven002.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-17T21:20:12Z",
+      "side": 0,
+      "message": "hmm, now I\u0027m wondering if the new settings will work with older versions of Jenkins?  Version 1.550 is pretty recent, would it be possible to test with a slightly older version? maybe with the last LTS release?",
+      "parentUuid": "AAAAXH//1bI\u003d",
+      "revId": "72c02d41068a3935717d8666531781d7f05ced52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
