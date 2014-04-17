@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//0NI\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-17T08:20:05Z",
+      "side": 1,
+      "message": "glob_name should default to None.",
+      "revId": "f6894d1f1dcebef219ab79a5dfe9b55e68b1345b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//0N4\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-17T08:20:05Z",
+      "side": 1,
+      "message": "To be consistent with the update command, I would use the plurals form (i.e. \u0027names\u0027). And adjust the help description to \u0027name(s) of job(s)\u0027.\n\nShould default to None to trigger a whole match in the generateXML() code.\n\nDid a similar comment on parent change which added the browse command.",
+      "revId": "f6894d1f1dcebef219ab79a5dfe9b55e68b1345b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//0Mo\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-17T08:20:05Z",
+      "side": 1,
+      "message": "With a default of None above, you can drop this and just pass options.name to list_jobs() as a glob_name parameter.",
+      "revId": "f6894d1f1dcebef219ab79a5dfe9b55e68b1345b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
