@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//0Q8\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-17T08:14:16Z",
+      "side": 1,
+      "message": "From a comment on patchset1:\n\nYou can pass the glob_name directly the to YamlParser.generateXML() then self.parser.jobs should hopefully have the list of generated (and filtered) jobs.\nTo get all jobs, pass a filter of None and it will skip filtering entirely.\n\naka the method parameter \u0027glob_name\u0027 can default to None and generateXML() takes care of the filtering you copied below :D",
+      "revId": "dd09f40514811867a18ebf4dae1f6844ffaaffad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//0PM\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-17T08:14:16Z",
+      "side": 1,
+      "message": "Would rename it \u0027names\u0027 (plural) just like the \u0027update\u0027 commands and adjust the help to \u0027name(s) of job(s)\u0027 to be consistent.\n\nPer my comment on the other file, should default to None. Then that will be passed to the YamlParser as a job/glob filter.",
+      "revId": "dd09f40514811867a18ebf4dae1f6844ffaaffad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//0PI\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-17T08:14:16Z",
+      "side": 1,
+      "message": "You can drop it and let it be none",
+      "revId": "dd09f40514811867a18ebf4dae1f6844ffaaffad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//0O4\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-17T08:14:16Z",
+      "side": 1,
+      "message": "The name can be a glob such as \u0027project*\u0027 so I would just invoke builder.browse_jobs()",
+      "revId": "dd09f40514811867a18ebf4dae1f6844ffaaffad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//0Ow\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-17T08:14:16Z",
+      "side": 1,
+      "message": "You apparently forgot to pass glob_name\u003doptions.name :-)",
+      "revId": "dd09f40514811867a18ebf4dae1f6844ffaaffad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
