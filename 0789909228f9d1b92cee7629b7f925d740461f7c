@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//xxo\u003d",
+        "filename": "tests/yamlparser/fixtures/templates001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 9921
+      },
+      "writtenOn": "2014-04-17T15:11:19Z",
+      "side": 1,
+      "message": "This isn\u0027t about the defaults, it\u0027s about job-template. If you specify the defaults you want to use using a template variable, the variable isn\u0027t replaced. Currently, in this example, it would look for a set of defaults called -literally- \"{component}\" (with no variable substitution).",
+      "parentUuid": "AAAAXH//5KQ\u003d",
+      "revId": "0789909228f9d1b92cee7629b7f925d740461f7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//Z/A\u003d",
         "filename": "tests/yamlparser/fixtures/templates001.yaml",
         "patchSetId": 1
@@ -108,6 +126,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//xcQ\u003d",
+        "filename": "tests/yamlparser/fixtures/templates001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 9921
+      },
+      "writtenOn": "2014-04-17T15:11:19Z",
+      "side": 1,
+      "message": "Don\u0027t think it really makes sense to log a warning for that in this change as I just moved the location of the applyDefaults() call. But I can make a new change to issue that warning directly from applyDefaults(), for all jobs and not just templates.",
+      "parentUuid": "AAAAXH//5Og\u003d",
+      "revId": "0789909228f9d1b92cee7629b7f925d740461f7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//aBM\u003d",
         "filename": "tests/yamlparser/fixtures/templates001.yaml",
         "patchSetId": 1
@@ -155,6 +191,24 @@
       "side": 1,
       "message": "your right, my suggestion is to have a test with multiple templates and let the test infra validate only one of the resulting xml file.  The benefit would be to have a better example in the docs.",
       "parentUuid": "AAAAW3//TIU\u003d",
+      "revId": "0789909228f9d1b92cee7629b7f925d740461f7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//xeA\u003d",
+        "filename": "tests/yamlparser/fixtures/templates001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 9921
+      },
+      "writtenOn": "2014-04-17T15:11:19Z",
+      "side": 1,
+      "message": "Okay, makes sense, I\u0027ll update the test.",
+      "parentUuid": "AAAAXH//5Mc\u003d",
       "revId": "0789909228f9d1b92cee7629b7f925d740461f7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
