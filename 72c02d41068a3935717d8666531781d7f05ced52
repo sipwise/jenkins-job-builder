@@ -52,6 +52,24 @@
       "revId": "72c02d41068a3935717d8666531781d7f05ced52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//umo\u003d",
+        "filename": "tests/general/fixtures/project-maven002.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 10354
+      },
+      "writtenOn": "2014-04-17T21:22:45Z",
+      "side": 0,
+      "message": "I\u0027ll see what I can do to setup a test environment with the last LTS release.\n\nHopefully sometime this weekend.",
+      "parentUuid": "AAAAXH//unk\u003d",
+      "revId": "72c02d41068a3935717d8666531781d7f05ced52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
