@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAXH//1lI\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-17T03:22:06Z",
+      "side": 1,
+      "message": "The square braces around this are wrong.  This causes the if statement to always evaluate to True :(",
+      "revId": "c5a65258029b93dd12147336ba0cf0b56429ae4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//hoY\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 6
