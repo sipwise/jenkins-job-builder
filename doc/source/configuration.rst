@@ -123,6 +123,11 @@ define a template that you can use to create jobs with a `Project`_
 definition.  It's name will depend on what is supplied to the
 `Project`_.
 
+Template variables can also be used to specify an appropriate set of
+defaults for each generated job:
+
+.. literalinclude::  /../../tests/yamlparser/fixtures/templates001.yaml
+
 If you want to use lists or dicts variables you can use ``{obj:key}``.
 
 For example:
