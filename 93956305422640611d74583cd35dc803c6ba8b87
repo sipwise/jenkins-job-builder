@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//0KY\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3253,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-17T08:26:11Z",
+      "side": 1,
+      "message": "Can you remove \u0027(post-build)\u0027 there? It is a publisher so that is by definition occurring after the build.  We do not mention it on other publishers.",
+      "revId": "93956305422640611d74583cd35dc803c6ba8b87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//0Jk\u003d",
+        "filename": "tests/publishers/fixtures/doxygen001.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-17T08:26:11Z",
+      "side": 1,
+      "message": "Maybe add support for that \u003cfolderWhereYouRunDoxygen/\u003e variable as well ?",
+      "revId": "93956305422640611d74583cd35dc803c6ba8b87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
