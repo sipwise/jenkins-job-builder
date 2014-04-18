@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//nrs\u003d",
+        "filename": "tests/yamlparser/fixtures/templates001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-18T19:13:10Z",
+      "side": 1,
+      "message": "ahh i see.  would it be possible to add some documentation for this added feature?  the jjb docs are in the doc folder so maybe add something to this page? http://ci.openstack.org/jenkins-job-builder/configuration.html#job-template",
+      "parentUuid": "AAAAXH//xxo\u003d",
+      "revId": "0789909228f9d1b92cee7629b7f925d740461f7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//Z/A\u003d",
         "filename": "tests/yamlparser/fixtures/templates001.yaml",
         "patchSetId": 1
@@ -138,6 +156,24 @@
       "side": 1,
       "message": "Don\u0027t think it really makes sense to log a warning for that in this change as I just moved the location of the applyDefaults() call. But I can make a new change to issue that warning directly from applyDefaults(), for all jobs and not just templates.",
       "parentUuid": "AAAAXH//5Og\u003d",
+      "revId": "0789909228f9d1b92cee7629b7f925d740461f7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//nqg\u003d",
+        "filename": "tests/yamlparser/fixtures/templates001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-18T19:13:10Z",
+      "side": 1,
+      "message": "that would be nice.  if you are going to do that I would prefer that you propose a change to make JJB fail instead of warn.",
+      "parentUuid": "AAAAXH//xcQ\u003d",
       "revId": "0789909228f9d1b92cee7629b7f925d740461f7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
