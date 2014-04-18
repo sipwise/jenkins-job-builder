@@ -250,8 +250,7 @@ def execute(options, config):
             options.path = paths
 
     if options.command == 'delete':
-        for job in options.name:
-            builder.delete_job(job, options.path)
+        builder.delete_jobs(','.join(options.name), options.path)
     elif options.command == 'delete-all':
         confirm('Sure you want to delete *ALL* jobs from Jenkins server?\n'
                 '(including those not managed by Jenkins Job Builder)')
