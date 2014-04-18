@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//oGo\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-18T17:59:30Z",
+      "side": 1,
+      "message": "Ah, I figured it out. generateXML takes *a list* of globs. So I need this:\n\n    self.parser.generateXML([glob_name])\n\nThis code is tricky!",
+      "parentUuid": "AAAAXH//p5U\u003d",
+      "revId": "dd09f40514811867a18ebf4dae1f6844ffaaffad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//0PM\u003d",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 5
