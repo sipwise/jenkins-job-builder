@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//sXo\u003d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3253,
+      "author": {
+        "id": 11116
+      },
+      "writtenOn": "2014-04-18T06:55:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//0KY\u003d",
+      "revId": "93956305422640611d74583cd35dc803c6ba8b87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//0Jk\u003d",
         "filename": "tests/publishers/fixtures/doxygen001.xml",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-17T08:26:11Z",
       "side": 1,
       "message": "Maybe add support for that \u003cfolderWhereYouRunDoxygen/\u003e variable as well ?",
+      "revId": "93956305422640611d74583cd35dc803c6ba8b87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//sXg\u003d",
+        "filename": "tests/publishers/fixtures/doxygen001.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11116
+      },
+      "writtenOn": "2014-04-18T06:55:35Z",
+      "side": 1,
+      "message": "Good point, I updated the yaml fixture and the resulting xml file accordingly.",
+      "parentUuid": "AAAAXH//0Jk\u003d",
       "revId": "93956305422640611d74583cd35dc803c6ba8b87",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
