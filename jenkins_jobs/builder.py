@@ -16,6 +16,7 @@
 # Manage jobs in Jenkins server
 
 import errno
+import fnmatch
 import hashlib
 import io
 import logging
@@ -25,6 +26,7 @@ from pprint import pformat
 import re
 import tempfile
 import time
+import warnings
 import xml.etree.ElementTree as XML
 import yaml
 
@@ -312,10 +314,18 @@ class Builder(object):
         return deleted_jobs
 
     def delete_job(self, jobs_glob, fn=None):
+        warnings.warn(
+            "Builder.delete_job is deprecated. "
+            "Please use Builder.delete_jobs (more accurate name!).",
+            DeprecationWarning)
+        self.delete_jobs([jobs_glob], fn)
+
+    def delete_jobs(self, jobs_glob, fn=None):
         if fn:
             self.load_files(fn)
-            self.parser.expandYaml([jobs_glob])
-            jobs = [j['name'] for j in self.parser.jobs]
+            self.parser.expandYaml(jobs_glob)
+            jobs = [j['name'] for j in self.parser.jobs
+                    if fnmatch.fnmatch(j['name'], jobs_glob)]
         else:
             jobs = [jobs_glob]
 
