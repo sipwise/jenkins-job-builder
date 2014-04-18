@@ -44,7 +44,7 @@ def main():
                              help='path to output XML')
     parser_test.add_argument('name', help='name(s) of job(s)', nargs='*')
     parser_delete = subparser.add_parser('delete')
-    parser_delete.add_argument('name', help='name of job', nargs='+')
+    parser_delete.add_argument('names', help='name(s) of job(s)', nargs='+')
     parser_delete.add_argument('-p', '--path', default=None,
                                help='path to YAML file or directory')
     subparser.add_parser('delete-all',
@@ -126,9 +126,9 @@ def main():
                                            flush_cache=options.flush_cache)
 
     if options.command == 'delete':
-        for job in options.name:
-            logger.info("Deleting jobs in [{0}]".format(job))
-            builder.delete_job(job, options.path)
+        logger.info("Deleting jobs in {0} ({1})".format(
+            options.path, options.names))
+        builder.delete_job(options.names, options.path)
     elif options.command == 'delete-all':
         confirm('Sure you want to delete *ALL* jobs from Jenkins server?\n'
                 '(including those not managed by Jenkins Job Builder)')
