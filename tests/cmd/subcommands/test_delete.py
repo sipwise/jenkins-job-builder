@@ -8,8 +8,8 @@ from tests.cmd.test_cmd import CmdTestsBase
 @mock.patch('jenkins_jobs.builder.Jenkins.get_plugins_info', mock.MagicMock)
 class DeleteTests(CmdTestsBase):
 
-    @mock.patch('jenkins_jobs.cmd.Builder.delete_job')
-    def test_delete_single_job(self, delete_job_mock):
+    @mock.patch('jenkins_jobs.cmd.Builder.delete_jobs')
+    def test_delete_single_job(self, delete_jobs_mock):
         """
         Test handling the deletion of a single Jenkins job.
         """
@@ -17,8 +17,8 @@ class DeleteTests(CmdTestsBase):
         args = self.parser.parse_args(['delete', 'test_job'])
         cmd.execute(args, self.config)  # passes if executed without error
 
-    @mock.patch('jenkins_jobs.cmd.Builder.delete_job')
-    def test_delete_multiple_jobs(self, delete_job_mock):
+    @mock.patch('jenkins_jobs.cmd.Builder.delete_jobs')
+    def test_delete_multiple_jobs(self, delete_jobs_mock):
         """
         Test handling the deletion of multiple Jenkins jobs.
         """
