@@ -560,18 +560,17 @@ class Builder(object):
                 logger.debug("Ignoring unmanaged jenkins job %s",
                              job['name'])
 
-    def delete_job(self, glob_name, fn=None):
+    def delete_jobs(self, job_name_globs, fn=None):
         if fn:
             self.load_files(fn)
-            self.parser.generateXML(glob_name)
-            jobs = [j.name
-                    for j in self.parser.jobs
-                    if matches(j.name, [glob_name])]
+            self.parser.generateXML(job_name_globs)
+            jobs = [j.name for j in self.parser.jobs]
         else:
-            jobs = [glob_name]
+            jobs = job_name_globs
+
         for job in jobs:
             self.jenkins.delete_job(job)
-            if(self.cache.is_cached(job)):
+            if self.cache.is_cached(job):
                 self.cache.set(job, '')
 
     def delete_all_jobs(self):
