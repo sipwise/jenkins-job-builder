@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAXH//pbw\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 580,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-18T15:27:58Z",
+      "side": 1,
+      "message": "Oops, 10 is hard-coded here, I\u0027ll fix this to substitute in the value of `batch`.",
+      "revId": "dd09f40514811867a18ebf4dae1f6844ffaaffad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//0Q8\u003d",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 5
@@ -13,6 +30,24 @@
       "writtenOn": "2014-04-17T08:14:16Z",
       "side": 1,
       "message": "From a comment on patchset1:\n\nYou can pass the glob_name directly the to YamlParser.generateXML() then self.parser.jobs should hopefully have the list of generated (and filtered) jobs.\nTo get all jobs, pass a filter of None and it will skip filtering entirely.\n\naka the method parameter \u0027glob_name\u0027 can default to None and generateXML() takes care of the filtering you copied below :D",
+      "revId": "dd09f40514811867a18ebf4dae1f6844ffaaffad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//p5U\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-18T15:27:58Z",
+      "side": 1,
+      "message": "This sounds good, but I just tried it and with the following code, I get an unfiltered list of all jobs:\n\n```python\n            self.load_files(fn)\n            self.parser.generateXML(glob_name)\n            jobs \u003d [j.name for j in self.parser.jobs]\n```\n\nUser error? Or a bug in generateXML?\n\nIt also occurs to me that it\u0027s not obvious that generateXML would populate self.jobs (a side effect) or that it would apply filtering. So I feel like probably some refactoring might be nice. I hesitate to make my code depend on generateXML populating self.jobs because that is an undocumented side effect and that could easily go away if someone refactors that function. I would rather use a functional style where I use the return values of functions only and not side effects. Ideally, I wouldn\u0027t even call generateXML because I don\u0027t really need to generate XML just to browse or list jobs.",
+      "parentUuid": "AAAAXH//0Q8\u003d",
       "revId": "dd09f40514811867a18ebf4dae1f6844ffaaffad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -36,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//pdk\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-18T15:27:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//0PM\u003d",
+      "revId": "dd09f40514811867a18ebf4dae1f6844ffaaffad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//0PI\u003d",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 5
@@ -47,6 +100,24 @@
       "writtenOn": "2014-04-17T08:14:16Z",
       "side": 1,
       "message": "You can drop it and let it be none",
+      "revId": "dd09f40514811867a18ebf4dae1f6844ffaaffad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//pRM\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-18T15:27:58Z",
+      "side": 1,
+      "message": "Just tried this and it stopped working when I removed those 2 lines.\n\nI think YamlParser.generateXML is not working as expected.",
+      "parentUuid": "AAAAXH//0PI\u003d",
       "revId": "dd09f40514811867a18ebf4dae1f6844ffaaffad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//pTw\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-18T15:27:58Z",
+      "side": 1,
+      "message": "but then it wouldn\u0027t pass the name?\n\nI\u0027m realizing that this is confusing.\n\noptions.name, contrary to what it sounds like from the name, is not a job name. It\u0027s a glob pattern. Not all obvious from the name and makes it hard to understand the code. Should we rename it to options.job_name_globs? And then also `job` in the for loop above would be renamed to `job_name_glob`...\n\nWhat do you think?\n\nI hesitate to do that here though, because then it would be inconsistent with other commands. It seems like it should be done across the board in another changeset...?",
+      "parentUuid": "AAAAXH//0O4\u003d",
+      "revId": "dd09f40514811867a18ebf4dae1f6844ffaaffad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//0Ow\u003d",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 5
@@ -81,6 +170,24 @@
       "writtenOn": "2014-04-17T08:14:16Z",
       "side": 1,
       "message": "You apparently forgot to pass glob_name\u003doptions.name :-)",
+      "revId": "dd09f40514811867a18ebf4dae1f6844ffaaffad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//pc0\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-18T15:27:58Z",
+      "side": 1,
+      "message": "I don\u0027t think so, though I had to look at this for a little bit to remember how it works as well (maybe a sign that refactoring is needed...). It passes the first parameter of `job` which are pulled from `options.name` (`options.names` with the new modifications).\n\nThis is because the user can specify multiple glob expressions on the command-line and options.names is a list. This is just like the existing `delete` command, from which I copied code.\n\nSo I think this is OK, but let me know if it isn\u0027t.",
+      "parentUuid": "AAAAXH//0Ow\u003d",
       "revId": "dd09f40514811867a18ebf4dae1f6844ffaaffad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
