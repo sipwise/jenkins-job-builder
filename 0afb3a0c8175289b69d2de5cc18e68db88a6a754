@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//oLo\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-18T17:53:24Z",
+      "side": 1,
+      "message": "Should be \"path to output XML\" (lowercase) to match how we did it with the other commands.",
+      "revId": "0afb3a0c8175289b69d2de5cc18e68db88a6a754",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
