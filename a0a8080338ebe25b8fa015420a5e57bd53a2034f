@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//nCo\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-18T20:29:38Z",
+      "side": 1,
+      "message": "did you verify whether this setting is backwards compatible?",
+      "parentUuid": "AAAAW3//kTw\u003d",
+      "revId": "a0a8080338ebe25b8fa015420a5e57bd53a2034f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//qkk\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 1
