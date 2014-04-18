@@ -210,6 +210,9 @@ class YamlParser(object):
                 else:
                     jobname = jobspec
                     jobparams = {}
+                if jobs_glob and not matches(jobname, jobs_glob):
+                    logger.debug("Ignoring job {0}".format(jobname))
+                    continue
                 job = self.getJob(jobname)
                 if job:
                     # Just naming an existing defined job

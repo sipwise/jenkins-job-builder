@@ -25,6 +25,7 @@ from pprint import pformat
 import re
 import tempfile
 import time
+import warnings
 import xml.etree.ElementTree as XML
 import yaml
 
@@ -312,12 +313,23 @@ class Builder(object):
         return deleted_jobs
 
     def delete_job(self, jobs_glob, fn=None):
+        warnings.warn(
+            "Builder.delete_job is deprecated. "
+            "Please use Builder.delete_jobs (more accurate name!).",
+            DeprecationWarning)
+        self.delete_jobs([jobs_glob], fn)
+
+    def delete_jobs(self, jobs_globs, fn=None):
+        """
+        jobs_globs: List of one or more glob patterns
+        """
+
         if fn:
             self.load_files(fn)
-            self.parser.expandYaml([jobs_glob])
+            self.parser.expandYaml(jobs_globs)
             jobs = [j['name'] for j in self.parser.jobs]
         else:
-            jobs = [jobs_glob]
+            jobs = jobs_globs
 
         if jobs is not None:
             logger.info("Removing jenkins job(s): %s" % ", ".join(jobs))
