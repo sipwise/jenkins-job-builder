@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//nFM\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 10702
+      },
+      "writtenOn": "2014-04-18T20:31:21Z",
+      "side": 1,
+      "message": "They are arbitrary strings.  There\u0027s a default set built into Visualworks Smalltalk, but people are welcome to define their own to suit their own process.",
+      "parentUuid": "AAAAXH//nHk\u003d",
+      "revId": "5cbdc2ca6b05609a8ca00fbff3c35d50e303ef2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//nIY\u003d",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-18T20:17:32Z",
       "side": 1,
       "message": "would be good to check that user specified a valid pundle type.  i\u0027m guessing we would probably want to fail if invalid.",
+      "revId": "5cbdc2ca6b05609a8ca00fbff3c35d50e303ef2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//nB8\u003d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 10702
+      },
+      "writtenOn": "2014-04-18T20:31:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//nIY\u003d",
       "revId": "5cbdc2ca6b05609a8ca00fbff3c35d50e303ef2a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
