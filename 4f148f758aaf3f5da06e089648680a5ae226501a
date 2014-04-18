@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//m+A\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-18T20:40:12Z",
+      "side": 1,
+      "message": "I think I\u0027ll keep the default of \u0027.\u0027  here and solve the problem below...",
+      "parentUuid": "AAAAXH//nzY\u003d",
+      "revId": "4f148f758aaf3f5da06e089648680a5ae226501a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//n0I\u003d",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-18T18:46:05Z",
       "side": 1,
       "message": "options.path will always be true",
+      "revId": "4f148f758aaf3f5da06e089648680a5ae226501a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//m9s\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-18T20:40:12Z",
+      "side": 1,
+      "message": "Yes, good point. I am going to upload another change with a refactoring that gets rid of both this `if` statement and the `for` loop. It works by passing a list of glob patterns in instead of one by one and letting YamlParser.generateXML use its built-in filtering (which operates on a list of glob patterns).",
+      "parentUuid": "AAAAXH//n0I\u003d",
       "revId": "4f148f758aaf3f5da06e089648680a5ae226501a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
