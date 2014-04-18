@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//nzY\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-18T18:46:05Z",
+      "side": 1,
+      "message": "i think you want default\u003dNone here? otherwise your logic for options.path will always be true.",
+      "revId": "4f148f758aaf3f5da06e089648680a5ae226501a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//n0I\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-18T18:46:05Z",
+      "side": 1,
+      "message": "options.path will always be true",
+      "revId": "4f148f758aaf3f5da06e089648680a5ae226501a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
