@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//irk\u003d",
+        "filename": "README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-19T18:49:10Z",
+      "side": 1,
+      "message": "While at it I would simply remove Github from there and point user to the Gerrit version:  https://review.openstack.org/openstack-infra/jenkins-job-builder\n\nThat might prevent folks from assuming they can submit pull requests.",
+      "revId": "c5160453421999da61bacbf11c38273b6a801d4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
