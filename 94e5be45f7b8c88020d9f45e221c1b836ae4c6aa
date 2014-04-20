@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//iU8\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-04-20T02:15:59Z",
+      "side": 1,
+      "message": "I feel the description does not fully communication the purpose of this setting. The description lets me think it\u0027s a boolean when in fact, the value is the name of the environment variable to export.",
+      "revId": "94e5be45f7b8c88020d9f45e221c1b836ae4c6aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
