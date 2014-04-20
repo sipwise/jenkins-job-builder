@@ -34,6 +34,24 @@
       "revId": "94e5be45f7b8c88020d9f45e221c1b836ae4c6aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//iPE\u003d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-04-20T04:38:14Z",
+      "side": 1,
+      "message": "Expose the build timeout with an environment variable. The variable name is determined by [the value of] timeout-var.",
+      "parentUuid": "AAAAXH//iRY\u003d",
+      "revId": "94e5be45f7b8c88020d9f45e221c1b836ae4c6aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
