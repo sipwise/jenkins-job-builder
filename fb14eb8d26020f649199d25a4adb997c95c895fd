@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAXH//bB0\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-21T22:34:25Z",
+      "side": 1,
+      "message": "I missed this the first time around.",
+      "revId": "fb14eb8d26020f649199d25a4adb997c95c895fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//bX4\u003d",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 6
@@ -13,6 +30,24 @@
       "writtenOn": "2014-04-21T22:03:30Z",
       "side": 1,
       "message": "Although the function \u0027self.changed(job)\u0027 is decorated to be parallel, calling it via a loop in this manner ensures it can only be executed in series. Perhaps it would be more efficient to try and move this to be called via the \u0027update_job()\u0027 function.\n\nOtherwise you\u0027re incurring the setup/teardown of the threading code for each iteration of the loop.",
+      "revId": "fb14eb8d26020f649199d25a4adb997c95c895fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//bB4\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-21T22:34:25Z",
+      "side": 1,
+      "message": "I had to re-read the parallelized decorator again and I spotted that I missed that unless you add a value for \u0027parallelized\u003d..\u0027 the decorator will simply call the function passed rather than doing the setup/teardown.",
+      "parentUuid": "AAAAXH//bX4\u003d",
       "revId": "fb14eb8d26020f649199d25a4adb997c95c895fd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
