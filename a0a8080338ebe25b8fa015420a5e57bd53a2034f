@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//g0Q\u003d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-04-21T00:44:32Z",
+      "side": 1,
+      "message": "I\u0027ve run this against a Jenkins server running an older version of the plugin, and it seems to work fine.  It just ignores the setting.",
+      "parentUuid": "AAAAXH//nCo\u003d",
+      "revId": "a0a8080338ebe25b8fa015420a5e57bd53a2034f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//qkk\u003d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 1
