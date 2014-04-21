@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//bX4\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 732,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-21T22:03:30Z",
+      "side": 1,
+      "message": "Although the function \u0027self.changed(job)\u0027 is decorated to be parallel, calling it via a loop in this manner ensures it can only be executed in series. Perhaps it would be more efficient to try and move this to be called via the \u0027update_job()\u0027 function.\n\nOtherwise you\u0027re incurring the setup/teardown of the threading code for each iteration of the loop.",
+      "revId": "fb14eb8d26020f649199d25a4adb997c95c895fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//bWg\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 754,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-21T22:03:30Z",
+      "side": 1,
+      "message": "Why not use the parallel code all the time, even if running with a single thread?",
+      "revId": "fb14eb8d26020f649199d25a4adb997c95c895fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
