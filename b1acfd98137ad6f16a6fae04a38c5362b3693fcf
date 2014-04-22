@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//Zuk\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-22T03:22:46Z",
+      "side": 1,
+      "message": "would batch ever be false here since default is 10?  It seems like the only case that it would be false is if the user passes batch\u003d0 which i don\u0027t think a user would ever do.",
+      "revId": "b1acfd98137ad6f16a6fae04a38c5362b3693fcf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//ccI\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-22T03:22:46Z",
+      "side": 1,
+      "message": "wouldn\u0027t this  always evaluate to true because by default fn\u003d\u0027.\u0027   Should fn\u003dNone in the function prototype instead?",
+      "revId": "b1acfd98137ad6f16a6fae04a38c5362b3693fcf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
