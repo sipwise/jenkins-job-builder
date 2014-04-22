@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//UF4\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-22T15:15:04Z",
+      "side": 1,
+      "message": "I think my thought here was that the user could specify --batch\u003d0 to turn off batching. Without the check, if the user did that would result in a ZeroDivisionError.",
+      "parentUuid": "AAAAXH//Zuk\u003d",
+      "revId": "b1acfd98137ad6f16a6fae04a38c5362b3693fcf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXH//ccI\u003d",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-22T03:22:46Z",
       "side": 1,
       "message": "wouldn\u0027t this  always evaluate to true because by default fn\u003d\u0027.\u0027   Should fn\u003dNone in the function prototype instead?",
+      "revId": "b1acfd98137ad6f16a6fae04a38c5362b3693fcf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//UC4\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-22T15:15:04Z",
+      "side": 1,
+      "message": "The reason for the fn\u003d\u0027.\u0027 is that you can then do stuff in a directory full of .yaml files and it works without you specifying a filename or directory.\n\nfn could be None if some calling code passes fn\u003dNone. It doesn\u0027t look like this can happen in normal usage of jenkins-jobs, but it could happen if someone writes a tool on top of jjb (and actually we have a tool at SurveyMonkey that uses jjb).",
+      "parentUuid": "AAAAXH//ccI\u003d",
       "revId": "b1acfd98137ad6f16a6fae04a38c5362b3693fcf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
