@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXH//Wqw\u003d",
+        "filename": "tests/yamlparser/fixtures/templates001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 9921
+      },
+      "writtenOn": "2014-04-22T10:58:55Z",
+      "side": 1,
+      "message": "Sure, will submit a new patch.",
+      "parentUuid": "AAAAXH//nrs\u003d",
+      "revId": "0789909228f9d1b92cee7629b7f925d740461f7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAW3//Z/A\u003d",
         "filename": "tests/yamlparser/fixtures/templates001.yaml",
         "patchSetId": 1
@@ -174,6 +192,24 @@
       "side": 1,
       "message": "that would be nice.  if you are going to do that I would prefer that you propose a change to make JJB fail instead of warn.",
       "parentUuid": "AAAAXH//xcQ\u003d",
+      "revId": "0789909228f9d1b92cee7629b7f925d740461f7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//WqE\u003d",
+        "filename": "tests/yamlparser/fixtures/templates001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 9921
+      },
+      "writtenOn": "2014-04-22T10:58:55Z",
+      "side": 1,
+      "message": "Ok, I\u0027ll try to submit a change for that sometime next week.",
+      "parentUuid": "AAAAXH//nqg\u003d",
       "revId": "0789909228f9d1b92cee7629b7f925d740461f7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
