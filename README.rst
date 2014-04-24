@@ -12,6 +12,11 @@ To install::
 
     $ sudo python setup.py install
 
+Jenkins Job Builder depends on the Python Build Reasonableness library. You can
+make sure you have the most recent version installed on your system by running::
+
+    $ sudo easy_install --upgrade pbr
+
 Online documentation:
 
 * http://ci.openstack.org/jenkins-job-builder/
