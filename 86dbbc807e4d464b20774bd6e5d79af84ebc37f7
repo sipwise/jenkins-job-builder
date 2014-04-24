@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//AQg\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-24T18:20:53Z",
+      "side": 1,
+      "message": "Could just go with the following to remove the keys if they exists, otherwise ignore:\n\n kwargs.pop(\u0027n_threads\u0027, None)\n kwargs.pop(\u0027parallize\u0027, None)",
+      "revId": "86dbbc807e4d464b20774bd6e5d79af84ebc37f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//APY\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-24T18:20:53Z",
+      "side": 1,
+      "message": "Is the following a little cleaner using 1 line instead of 3:\n\n n_threads \u003d kwards.pop(\u0027n_threads\u0027, 0)",
+      "revId": "86dbbc807e4d464b20774bd6e5d79af84ebc37f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//AM4\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-24T18:20:53Z",
+      "side": 1,
+      "message": "What happens if someone \u0027Ctrl+C\u0027 at anytime from when the work is given to the threads until the threads are finished processing it?",
+      "revId": "86dbbc807e4d464b20774bd6e5d79af84ebc37f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//AS0\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-24T18:20:53Z",
+      "side": 1,
+      "message": "Rebase mistake I think",
+      "revId": "86dbbc807e4d464b20774bd6e5d79af84ebc37f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//ASw\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-24T18:20:53Z",
+      "side": 1,
+      "message": "Could you change to lower case to be consistent.",
+      "revId": "86dbbc807e4d464b20774bd6e5d79af84ebc37f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
