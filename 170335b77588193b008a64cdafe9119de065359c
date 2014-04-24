@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXX//+KA\u003d",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6609
+      },
+      "writtenOn": "2014-04-24T23:05:57Z",
+      "side": 1,
+      "message": "No more LP lists, you want: openstack-infra@lists.openstack.org",
+      "revId": "170335b77588193b008a64cdafe9119de065359c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
