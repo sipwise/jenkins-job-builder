@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXH//LX8\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-04-24T10:46:15Z",
+      "side": 1,
+      "message": "I would not use 1 char variables, I\u0027d use at least 3 chars or a full word. \u0027what\u0027 or \u0027base_str\u0027 for example.",
+      "revId": "0704330d467dd9a5f5d0b93e66cce423ac9b8dc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
