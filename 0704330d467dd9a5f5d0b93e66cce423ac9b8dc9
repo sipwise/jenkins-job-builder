@@ -16,6 +16,24 @@
       "revId": "0704330d467dd9a5f5d0b93e66cce423ac9b8dc9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//COQ\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-24T14:01:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAAXH//LX8\u003d",
+      "revId": "0704330d467dd9a5f5d0b93e66cce423ac9b8dc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
