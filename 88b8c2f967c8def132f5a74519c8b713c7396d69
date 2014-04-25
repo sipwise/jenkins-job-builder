@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXX//1mA\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 551,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-25T21:29:51Z",
+      "side": 1,
+      "message": "Think renaming to \u0027delete_jobs()\u0027 makes more sense.",
+      "revId": "88b8c2f967c8def132f5a74519c8b713c7396d69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//1pA\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-25T21:29:51Z",
+      "side": 1,
+      "message": "Rename to \u0027delete_jobs()\u0027 seems appropriate?",
+      "revId": "88b8c2f967c8def132f5a74519c8b713c7396d69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
