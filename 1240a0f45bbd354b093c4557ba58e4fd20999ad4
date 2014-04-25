@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXX//1xM\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 589,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-25T21:12:27Z",
+      "side": 1,
+      "message": "Is there a reason to split this and \u0027list_jobs()\u0027 into two separate functions? Planning to refactor other areas to make use of it?",
+      "revId": "1240a0f45bbd354b093c4557ba58e4fd20999ad4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//1wI\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 590,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-25T21:12:27Z",
+      "side": 1,
+      "message": "Also thinking that since I can\u0027t see how you can return jobs without loading files that it makes more sense to follow the update_job() signature than the delete_job() signature.\n\nUnless of course you decide to retrieve the list of jobs from the jenkins instance if there is no file specified?",
+      "revId": "1240a0f45bbd354b093c4557ba58e4fd20999ad4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//1vM\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-25T21:12:27Z",
+      "side": 1,
+      "message": "This seems like a copy/paste from delete_job() but doesn\u0027t seem to make sense for the current application.\n\nOnly use case I can see is if you don\u0027t specify a file that list jobs would list the jobs on the jenkins instance and apply the glob matching to the returned list.\n\nWhich might in turn be useful in refactoring the delete_job method.",
+      "revId": "1240a0f45bbd354b093c4557ba58e4fd20999ad4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//11Q\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-25T21:12:27Z",
+      "side": 1,
+      "message": "If the default is \u0027None\u0027 is there any need to specify it? I know that parser_delete does for the \u0027--path\u0027  option but that seems like the minority.",
+      "revId": "1240a0f45bbd354b093c4557ba58e4fd20999ad4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//11E\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-25T21:12:27Z",
+      "side": 1,
+      "message": "s/Path/path/ to be consistent with the others.",
+      "revId": "1240a0f45bbd354b093c4557ba58e4fd20999ad4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
