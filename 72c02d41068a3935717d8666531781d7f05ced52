@@ -70,6 +70,24 @@
       "revId": "72c02d41068a3935717d8666531781d7f05ced52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//4YM\u003d",
+        "filename": "tests/general/fixtures/project-maven002.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 10354
+      },
+      "writtenOn": "2014-04-25T15:32:16Z",
+      "side": 0,
+      "message": "So, I finally got a chance to sit down and do a little bit (not extensive) testing on this.\n\nCurrent Jenkins LTS at the time of patch is 1.532.x this LTS uses the same syntax as the patch as does the LTS prior (1.509.x). The LTS before that (1.480.x) does not appear to use the same syntax and I can\u0027t figure out what it is as the web UI isn\u0027t as clear on how to set custom settings files (though it does have a pull down for doing it that I can\u0027t figure out how to populate, and no manual path option) and a basic Maven job doesn\u0027t auto-include the XML.",
+      "parentUuid": "AAAAXH//umo\u003d",
+      "revId": "72c02d41068a3935717d8666531781d7f05ced52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
