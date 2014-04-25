@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXX//2ao\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 532,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-25T19:44:43Z",
+      "side": 1,
+      "message": "I think the recursive walking of paths is possibly better done outside of this class, as I think that it\u0027s better to have any manipulation (i.e. pattern matching to exclude/include) on the paths to walk done as part of the command line processing rather than within the class.\n\nI think that makes it much easier to treat this as an API that other tools can call.",
+      "revId": "c0b9bc9547b62887c024a381c72db1e48a6583bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//2aM\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-25T19:44:43Z",
+      "side": 1,
+      "message": "Would you consider using the \u0027parents\u0027 option to the add_parser call above as shown in I236b364c268fd2bf5511a2c6d9a1c87914f3b086?\n\nMeans if any details about the recursive option changes, it\u0027s in one place. And it would make it tidier when adding \u0027exclude\u0027 capabilities later :)",
+      "revId": "c0b9bc9547b62887c024a381c72db1e48a6583bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
