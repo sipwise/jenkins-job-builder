@@ -16,6 +16,24 @@
       "revId": "170335b77588193b008a64cdafe9119de065359c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//1Zs\u003d",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-04-25T22:04:42Z",
+      "side": 1,
+      "message": "Since Monty is probably super busy, I am updating it. Thanks Elizabeth!",
+      "parentUuid": "AAAAXX//+KA\u003d",
+      "revId": "170335b77588193b008a64cdafe9119de065359c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
