@@ -40,7 +40,10 @@ def confirm(question):
         sys.exit('Aborted')
 
 
-def main():
+def main(argv=None):
+    if argv is None:
+        argv = sys.argv[1:]
+
     import jenkins_jobs.builder
     import jenkins_jobs.errors
     parser = argparse.ArgumentParser()
@@ -77,7 +80,7 @@ def main():
     parser.add_argument(
         '--flush-cache', action='store_true', dest='flush_cache',
         default=False, help='flush all the cache entries before updating')
-    options = parser.parse_args()
+    options = parser.parse_args(argv)
 
     options.log_level = getattr(logging, options.log_level.upper(),
                                 logging.INFO)
@@ -170,3 +173,4 @@ def main():
 if __name__ == '__main__':
     sys.path.insert(0, '.')
     main()
+
