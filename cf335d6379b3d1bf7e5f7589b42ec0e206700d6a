@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXX//zqo\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-26T15:11:40Z",
+      "side": 1,
+      "message": "ouput \u003d\u003e output",
+      "revId": "cf335d6379b3d1bf7e5f7589b42ec0e206700d6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
