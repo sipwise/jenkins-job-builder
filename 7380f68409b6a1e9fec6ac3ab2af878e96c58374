@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAXX//z7I\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 11020
+      },
+      "writtenOn": "2014-04-26T09:30:31Z",
+      "side": 1,
+      "message": "Because we already have a lot of projects already configured with the regular Python plugin. Migrating to Shining Panda would not work for us.",
+      "parentUuid": "AAAAXX//0pk\u003d",
+      "revId": "7380f68409b6a1e9fec6ac3ab2af878e96c58374",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXX//0pg\u003d",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-26T02:33:41Z",
       "side": 1,
       "message": "we are moving to test as examples.  should replace this block with something like the one in the shining_panda module.",
+      "revId": "7380f68409b6a1e9fec6ac3ab2af878e96c58374",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//z6o\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 11020
+      },
+      "writtenOn": "2014-04-26T09:30:31Z",
+      "side": 1,
+      "message": "Thanks Khai. I don\u0027t quite understand what you mean. Are you saying that I should use the literalinclude directive of Sphinx to point to the actual test yaml file? If yes, that would make sense, I can make this change.",
+      "parentUuid": "AAAAXX//0pg\u003d",
       "revId": "7380f68409b6a1e9fec6ac3ab2af878e96c58374",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
