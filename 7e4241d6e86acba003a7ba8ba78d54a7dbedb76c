@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXX//zLQ\u003d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-27T00:58:09Z",
+      "side": 1,
+      "message": "nit: for consistency, should be \":arg str parameter: ..\"",
+      "revId": "7e4241d6e86acba003a7ba8ba78d54a7dbedb76c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
