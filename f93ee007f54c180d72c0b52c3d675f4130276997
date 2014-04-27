@@ -16,6 +16,24 @@
       "revId": "f93ee007f54c180d72c0b52c3d675f4130276997",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//zF0\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-27T03:18:35Z",
+      "side": 1,
+      "message": "Yeah this is a good point. I wrote it like this before I added the default argument to main, which of course it needs. This is now redundant. I will remove it. Good catch!",
+      "parentUuid": "AAAAXX//zHg\u003d",
+      "revId": "f93ee007f54c180d72c0b52c3d675f4130276997",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
