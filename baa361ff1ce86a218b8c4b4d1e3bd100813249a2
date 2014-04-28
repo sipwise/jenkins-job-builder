@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAXH//Cqs\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-04-24T13:05:38Z",
+      "side": 1,
+      "message": "This prevents things like tests/* from being matched as patterns.\n\nWhy distinguish between absolute patch, relative patch and patterns? Why not treat them all as patterns and match against the absolute path?\n\n\nThat will simplify a lot the loop below.",
+      "revId": "baa361ff1ce86a218b8c4b4d1e3bd100813249a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXX//2fo\u003d",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 6
