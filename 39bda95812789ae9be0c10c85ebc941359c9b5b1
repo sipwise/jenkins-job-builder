@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "facab960_0b0085a9",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-28T22:02:30Z",
+      "side": 1,
+      "message": "I meant any reason not to do the following:\n\n def main(argv\u003dsys.argv[1:])",
+      "revId": "39bda95812789ae9be0c10c85ebc941359c9b5b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
