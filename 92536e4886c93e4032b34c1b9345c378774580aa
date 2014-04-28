@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "facab960_42c192e3",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 11020
+      },
+      "writtenOn": "2014-04-28T21:02:45Z",
+      "side": 1,
+      "message": "This could probably be set at the module level:\n\nlogger.getLogger(__name__)\n\n... but I understand this is out of scope.",
+      "revId": "92536e4886c93e4032b34c1b9345c378774580aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
