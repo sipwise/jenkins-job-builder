@@ -34,6 +34,24 @@
       "revId": "39bda95812789ae9be0c10c85ebc941359c9b5b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "facab960_0b9c0569",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-28T22:10:16Z",
+      "side": 1,
+      "message": "Ah okay. Thanks for clarifying what you were asking. Indeed, I didn\u0027t understand your question before.\n\nThe reason I default to None and then assign is that I don\u0027t like to have arguments default to a mutable type, because it can cause very subtle ad confusing bugs.\n\nhttp://docs.python-guide.org/en/latest/writing/gotchas/#mutable-default-arguments\n\nThis probably isn\u0027t an issue in normal execution of JJB since main would probably only be called once. But I can imagine that if we started writing tests (which in fact is the motivation for this change), then we might call main several times and we could run into this weird behavior.\n\nI\u0027m very paranoid of this problem, because I\u0027ve hit it a few times and it always seems to take a long time to debug. So I pretty much never put mutable data structures as default argument values.",
+      "parentUuid": "facab960_0b0085a9",
+      "revId": "39bda95812789ae9be0c10c85ebc941359c9b5b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
