@@ -1,0 +1,22 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXX//2fo\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-25T19:23:54Z",
+      "side": 1,
+      "message": "It avoids the need to determine whether there is a need to add pattern symbols before/afterwards.\n\nConsider the paths:\n\n tests\n 1/tests\n 1/2/tests\n 1/2/tests/3\n 1/2/tests/4\n test\n test/2\n test/3/4\n 1/test\n 1/2/test\n 1/2/test/3\n 1/2/test/4\n\n\u0027-x test\u0027 will result in the following being discarded:\n\n test\n test/2\n test/3/4\n 1/test\n 1/2/test\n 1/2/test/3\n 1/2/test/4\n\nif they are all matched absolutely, the user must pass \u0027-x \"*/test/*\" -x \"*/test\"\u0027 to discard the same paths.\n\n\nTaking the first list and the current approach passing \u0027-x \"test/*\"\u0027, will only exclude:\n\n test\n test/2\n test/3/4\n\n\n\nIn any case you\u0027ve convinced me that this needs some test cases to demonstrate the desired behaviour :)",
+      "parentUuid": "AAAAXH//Cqs\u003d",
+      "revId": "baa361ff1ce86a218b8c4b4d1e3bd100813249a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
