@@ -16,6 +16,24 @@
       "revId": "b6c3b7c5d21d16b16a0859199cd58ef7fffc0b71",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "facab960_ab24f9c6",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-28T22:32:50Z",
+      "side": 1,
+      "message": "Cool. What variable name would you suggest? Are you referring to `what` (which I also don\u0027t love)\n\nIn the standard library in the re module, they use `string`, which is perhaps marginally better. https://docs.python.org/2/library/re.html",
+      "parentUuid": "facab960_cbc69d49",
+      "revId": "b6c3b7c5d21d16b16a0859199cd58ef7fffc0b71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
