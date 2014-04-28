@@ -1,0 +1,58 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXX//x+k\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 590,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-27T22:37:36Z",
+      "side": 1,
+      "message": "No reason that I can think of off-hand. Not sure why I didn\u0027t use one of them originally.",
+      "parentUuid": "AAAAXX//y2c\u003d",
+      "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//yBA\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 704,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-27T22:37:36Z",
+      "side": 1,
+      "message": "See above, I think it\u0027s best done as a separate change rather with a suitable commit message. Essentially this code has only been moved.",
+      "parentUuid": "AAAAXX//y2E\u003d",
+      "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//yA8\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-27T22:37:36Z",
+      "side": 1,
+      "message": "See above on the previous query on returning True.",
+      "parentUuid": "AAAAXX//y1w\u003d",
+      "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
