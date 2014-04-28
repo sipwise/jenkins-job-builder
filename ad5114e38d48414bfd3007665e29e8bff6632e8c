@@ -50,6 +50,24 @@
       "revId": "ad5114e38d48414bfd3007665e29e8bff6632e8c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "facab960_0b73254e",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 11020
+      },
+      "writtenOn": "2014-04-28T22:09:52Z",
+      "side": 1,
+      "message": "I think it\u0027s common practice to group \"import\" and \"from x import y\" statements together (at least I do that too). Although I\u0027ve been trying to find information about it in the pep8, I could not find anything (didn\u0027t spend too much time either).",
+      "parentUuid": "facab960_8b5c9527",
+      "revId": "ad5114e38d48414bfd3007665e29e8bff6632e8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
