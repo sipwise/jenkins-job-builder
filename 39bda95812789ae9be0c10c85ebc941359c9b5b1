@@ -16,6 +16,24 @@
       "revId": "39bda95812789ae9be0c10c85ebc941359c9b5b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "facab960_ebc7e162",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 11020
+      },
+      "writtenOn": "2014-04-28T22:06:51Z",
+      "side": 1,
+      "message": "This argv would be a mutable object (a list). It\u0027s a potential source of bugs in Python.\n\nTry this:\n\ndef foo(some_list\u003d[]):\n    some_list.append(\u0027foo\u0027)\n    return some_list\n\nprint foo()  # [\u0027foo\u0027]\nprint foo()  # [\u0027foo\u0027, \u0027foo\u0027] (!!!)\n\nSame applies for dictionaries or any other mutable object.",
+      "parentUuid": "facab960_0b0085a9",
+      "revId": "39bda95812789ae9be0c10c85ebc941359c9b5b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
