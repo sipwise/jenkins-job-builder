@@ -2,6 +2,24 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAXX//yBw\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-27T22:37:36Z",
+      "side": 1,
+      "message": "I need to add a test to ensure that the auto-detecting the number of processes is tested since I would have caught that if I checked.",
+      "parentUuid": "AAAAXX//y4w\u003d",
+      "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXX//x+k\u003d",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 3
