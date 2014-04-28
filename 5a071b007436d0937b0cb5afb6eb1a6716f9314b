@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAXX//vjw\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-28T10:17:34Z",
+      "side": 1,
+      "message": "My home machine is running Fedora 20 and I have not seen this problem. I\u0027ve also extracted the code from the python-libs rpm package to look at the current file and it contains the exact same code as is being monkey patched by the code.\n\nSeems like something else is going on and applying this at runtime is avoiding the problem, but without knowing what is occurring it seems likely that it could just as easily re-appear on other systems running newer versions of python such as 2.7.6.",
+      "revId": "5a071b007436d0937b0cb5afb6eb1a6716f9314b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
