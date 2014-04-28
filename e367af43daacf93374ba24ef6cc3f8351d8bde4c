@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAU3//0a0\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2014-02-24T17:08:22Z",
+      "side": 1,
+      "message": "I would prefer to have \u0027True for ...\u0027 here, to make it explicit the value of \u0027d\u0027 is irrelevant here (just used for the fnmatch below).",
+      "revId": "e367af43daacf93374ba24ef6cc3f8351d8bde4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAU3//0JE\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2014-02-24T17:08:22Z",
+      "side": 1,
+      "message": "This seems unnecessary. Otherwise, it should be done properly, as now it builds abspath as $(pwd)/$(subdirX), skipping the top/root folder (the one from commandline).\n\neg for:\n mkdir -p /tmp/xyz/jobs/sub{1,2}/subsub{A,B}\n cd /tmp/xyz\n jjb ./jobs\n\nthis line in `for path in dirs` evals like:\n sub2 \u003d\u003e abs: /tmp/xyz/sub2 \u003d\u003e abs+base: sub2\n sub1 \u003d\u003e abs: /tmp/xyz/sub1 \u003d\u003e abs+base: sub1\n subsubB \u003d\u003e abs: /tmp/xyz/subsubB \u003d\u003e abs+base: subsubB\n subsubA \u003d\u003e abs: /tmp/xyz/subsubA \u003d\u003e abs+base: subsubA\n subsubB \u003d\u003e abs: /tmp/xyz/subsubB \u003d\u003e abs+base: subsubB\n subsubA \u003d\u003e abs: /tmp/xyz/subsubA \u003d\u003e abs+base: subsubA\n\nwhich shows that sub1 and subsub path\u0027s are actually invalid, so why to use abspath here anyway, basename is not enough, what is this trying to solve?\n\nThe final pathlist is ok, as bellow you path.join root.\n\n[\u0027/tmp/xyz/jobs\u0027,\n \u0027/tmp/xyz/jobs/sub2\u0027,\n \u0027/tmp/xyz/jobs/sub1\u0027,\n \u0027/tmp/xyz/jobs/sub2/subsubB\u0027,\n \u0027/tmp/xyz/jobs/sub2/subsubA\u0027,\n \u0027/tmp/xyz/jobs/sub1/subsubB\u0027,\n \u0027/tmp/xyz/jobs/sub1/subsubA\u0027]",
+      "revId": "e367af43daacf93374ba24ef6cc3f8351d8bde4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
