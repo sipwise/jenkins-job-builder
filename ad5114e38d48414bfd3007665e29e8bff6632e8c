@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "facab960_eba9a125",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-28T22:28:12Z",
+      "side": 1,
+      "message": "The reasoning is that all of the imports above are from the standard library. This one is from the application. I like to sort my imports, as PEP8 recommends:\n\nhttp://legacy.python.org/dev/peps/pep-0008/#imports",
+      "parentUuid": "facab960_ebb8c12c",
+      "revId": "ad5114e38d48414bfd3007665e29e8bff6632e8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "facab960_8b5c9527",
         "filename": "jenkins_jobs/modules/hipchat_notif.py",
         "patchSetId": 4
@@ -64,6 +82,24 @@
       "writtenOn": "2014-04-28T22:09:52Z",
       "side": 1,
       "message": "I think it\u0027s common practice to group \"import\" and \"from x import y\" statements together (at least I do that too). Although I\u0027ve been trying to find information about it in the pep8, I could not find anything (didn\u0027t spend too much time either).",
+      "parentUuid": "facab960_8b5c9527",
+      "revId": "ad5114e38d48414bfd3007665e29e8bff6632e8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "facab960_6b44b174",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-04-28T22:28:12Z",
+      "side": 1,
+      "message": "The reasoning is that this import is from the application. I like to sort my imports, as PEP8 recommends:\n\nhttp://legacy.python.org/dev/peps/pep-0008/#imports\n\nI didn\u0027t move the the 2 other application imports though. Maybe I should\u0027ve. I guess I was trying to make the diff smaller and more focused and must\u0027ve thought that it was okay to move this one since I was touching the line anyway.\n\nI don\u0027t know whether I should move this import back to where it was or move all of them... :-) I guess I\u0027m leaning towards the former since I like to make diffs small and comprehensible. And clearly moving this wasn\u0027t so comprehensible. :-) So maybe it should be done in a separate change.",
       "parentUuid": "facab960_8b5c9527",
       "revId": "ad5114e38d48414bfd3007665e29e8bff6632e8c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
