@@ -1,0 +1,12 @@
+builders:
+  - trigger-builds:
+    - project: "build_started"
+      parameter-factories:
+        - factory: filebuild
+          file-pattern: propfile*.txt
+        - factory: binaryfile
+          parameter-name: filename
+          file-pattern: propfile*.txt
+        - factory: filebuild
+          file-pattern: otherpropfile*.txt
+      block: true
