@@ -2,6 +2,24 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAXX//yCY\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-27T22:37:36Z",
+      "side": 1,
+      "message": "For computational bound tasks that is try, but communication with Jenkins is primarily I/O bound. I\u0027ll have to re-test to confirm, but I recall that the use of Pool was slightly slower than ThreadPool.\n\nMight still be able to add the capability of switching between either depending on the task being parallelized, so I\u0027ll look to making it configurable.",
+      "parentUuid": "AAAAXX//y3E\u003d",
+      "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXX//yBw\u003d",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 3
@@ -32,6 +50,42 @@
       "side": 1,
       "message": "No reason that I can think of off-hand. Not sure why I didn\u0027t use one of them originally.",
       "parentUuid": "AAAAXX//y2c\u003d",
+      "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//yBQ\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-27T22:37:36Z",
+      "side": 1,
+      "message": "If there is a problem in processing the data the decorator will check the results to see which ones did not process successfully and relies on those that succeeded returning a value of \u0027True\u0027 or at least not None. If they return None or False it\u0027s considered an error and will be logged by the parallelize decorator.\n\nI\u0027m open to whether it\u0027s better require an explicit \u0027return False\u0027 to indicate a problem and consider a return value of None to not be an issue, or to require an explicit \u0027return True\u0027 for success.",
+      "parentUuid": "AAAAXX//y2Q\u003d",
+      "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//yBI\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 698,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-27T22:37:36Z",
+      "side": 1,
+      "message": "Personal preference is to avoid making changes unconnected to making use of parallelization beyond moving code around to allow it\u0027s execution in parallel efficiently. I would have thought that this should be done as a separate change for clarity.",
+      "parentUuid": "AAAAXX//y2I\u003d",
       "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
