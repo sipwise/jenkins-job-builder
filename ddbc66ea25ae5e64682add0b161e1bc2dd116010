@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAAAXX//y3E\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 11020
+      },
+      "writtenOn": "2014-04-27T07:52:26Z",
+      "side": 1,
+      "message": "Have you timed ThreadPool vs Pool? With the Python GIL, using real threads (ThreadPool) might actually be slower on multi-proc machines.",
+      "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXX//yCY\u003d",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 3
@@ -14,6 +31,41 @@
       "side": 1,
       "message": "For computational bound tasks that is try, but communication with Jenkins is primarily I/O bound. I\u0027ll have to re-test to confirm, but I recall that the use of Pool was slightly slower than ThreadPool.\n\nMight still be able to add the capability of switching between either depending on the task being parallelized, so I\u0027ll look to making it configurable.",
       "parentUuid": "AAAAXX//y3E\u003d",
+      "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//x3E\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 11020
+      },
+      "writtenOn": "2014-04-27T23:41:08Z",
+      "side": 1,
+      "message": "Nah, I wouldn\u0027t bother making it configurable. Just pick the best one for the task, my comment was just to make sure you were aware. If it turns out to be helpful to make it configurable, then we can add it in another change. But for now it would add unnecessary complexity.\n\nThat being said, from an API standpoint, I would expose the config name \"n_workers\" rather than \"n_threads\" so if you ever make it configurable in the future the naming won\u0027t be misleading.",
+      "parentUuid": "AAAAXX//yCY\u003d",
+      "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//y4w\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 11020
+      },
+      "writtenOn": "2014-04-27T07:52:26Z",
+      "side": 1,
+      "message": "I think cpu_count should be called here: n_threads \u003d cpu_count()",
       "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -38,6 +90,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAXX//y2c\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 590,
+      "author": {
+        "id": 11020
+      },
+      "writtenOn": "2014-04-27T07:52:26Z",
+      "side": 1,
+      "message": "Is there a reason for using sleep() here? It\u0027s usually considered a bad practice. I\u0027m not super familiar with multiprocessing, but I see that AsyncResult comes with .get() and .wait() methods that both optionally take a timeout value. Wouldn\u0027t that work?",
+      "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXX//x+k\u003d",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 3
@@ -50,6 +119,23 @@
       "side": 1,
       "message": "No reason that I can think of off-hand. Not sure why I didn\u0027t use one of them originally.",
       "parentUuid": "AAAAXX//y2c\u003d",
+      "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//y2Q\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 11020
+      },
+      "writtenOn": "2014-04-27T07:52:26Z",
+      "side": 1,
+      "message": "Any reason for returning `True`. I don\u0027t see it assigned anywhere. Maybe simply \"return\" would suffice (implicit None returned)",
       "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -74,6 +160,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAXX//x28\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 11020
+      },
+      "writtenOn": "2014-04-27T23:41:08Z",
+      "side": 1,
+      "message": "Got it. Thanks for clarifying.",
+      "parentUuid": "AAAAXX//yBQ\u003d",
+      "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//y2I\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 698,
+      "author": {
+        "id": 11020
+      },
+      "writtenOn": "2014-04-27T07:52:26Z",
+      "side": 1,
+      "message": "another way to do it which could prevent the extra disk access:\n\nexcept OSError as err:\n    if not err.errno \u003d\u003d errno.EEXIST:\n        raise",
+      "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXX//yBI\u003d",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 3
@@ -92,6 +213,41 @@
     },
     {
       "key": {
+        "uuid": "AAAAXX//x58\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 698,
+      "author": {
+        "id": 11020
+      },
+      "writtenOn": "2014-04-27T23:41:08Z",
+      "side": 1,
+      "message": "Fair enough.",
+      "parentUuid": "AAAAXX//yBI\u003d",
+      "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//y2E\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 704,
+      "author": {
+        "id": 11020
+      },
+      "writtenOn": "2014-04-27T07:52:26Z",
+      "side": 1,
+      "message": "The use of a context manager would be nice here:\n\nwith open(output_fn, \u0027w\u0027) as f:\n    f.write(job.output())",
+      "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXX//yBA\u003d",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 3
@@ -104,6 +260,41 @@
       "side": 1,
       "message": "See above, I think it\u0027s best done as a separate change rather with a suitable commit message. Essentially this code has only been moved.",
       "parentUuid": "AAAAXX//y2E\u003d",
+      "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//x5o\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 704,
+      "author": {
+        "id": 11020
+      },
+      "writtenOn": "2014-04-27T23:41:08Z",
+      "side": 1,
+      "message": "Yup, I tend to agree with you.",
+      "parentUuid": "AAAAXX//yBA\u003d",
+      "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXX//y1w\u003d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 11020
+      },
+      "writtenOn": "2014-04-27T07:52:26Z",
+      "side": 1,
+      "message": "Same question as above, is it necessary to return True or would a simple `return` statement work too?",
       "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
