@@ -53,6 +53,23 @@
       "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//bLQ\u003d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-21T21:57:54Z",
+      "side": 1,
+      "message": "Minor bug, should be calling \u0027config.getint()\u0027.",
+      "revId": "ddbc66ea25ae5e64682add0b161e1bc2dd116010",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
