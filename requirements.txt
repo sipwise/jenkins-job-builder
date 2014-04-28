@@ -1,3 +1,2 @@
 PyYAML
 python-jenkins
-pbr>=0.5.21,<1.0
