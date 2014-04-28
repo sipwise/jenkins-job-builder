@@ -16,6 +16,41 @@
       "revId": "dbe7d09b1d559927cecf6e06153c157ad5aec9e4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1371a2_043cf692",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 11020
+      },
+      "writtenOn": "2014-04-28T18:50:19Z",
+      "side": 1,
+      "message": "Hey Khai,\n\nThese represent the arguments passed on the command line. By default, you call parser.parse_args() without arguments, which, under the hood, will get the command line arguments from sys.args[1:] (see docs https://docs.python.org/2.7/library/argparse.html#argparse.ArgumentParser.parse_args).\n\nWith the current approach you can\u0027t test your command line parser because you have no way to pass arbitrary command line arguments for testing purpose. So the idea is that with main() now taking argv\u003dNone, you can pass whatever you want to test the behavior of your argument parser.\n\nI hope this makes sense.",
+      "parentUuid": "AAAAXX//tI4\u003d",
+      "revId": "dbe7d09b1d559927cecf6e06153c157ad5aec9e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1371a2_a44a4225",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 11020
+      },
+      "writtenOn": "2014-04-28T18:50:19Z",
+      "side": 1,
+      "message": "Marc, you forgot to remove the passed arguments.",
+      "revId": "dbe7d09b1d559927cecf6e06153c157ad5aec9e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
