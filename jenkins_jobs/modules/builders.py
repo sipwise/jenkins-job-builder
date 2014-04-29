@@ -203,14 +203,11 @@ def ant(parser, xml_parent, data):
     of targets to build.
 
     :Parameter: space separated list of Ant targets
-    :arg str ant-name: the name of the ant installation,
-        defaults to 'default' (optional)
 
     Example to call two Ant targets::
 
         builders:
           - ant: "target1 target2"
-             ant-name: "Standard Ant"
 
     The build file would be whatever the Jenkins Ant Plugin is set to use
     per default (i.e build.xml in the workspace root).
