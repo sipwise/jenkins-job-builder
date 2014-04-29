@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bad4c104_272f2aa3",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-04-29T17:38:28Z",
+      "side": 1,
+      "message": "hmm, this is an OS specific workaround?  Not sure if i like that because I think anyone working on JJB should be able to easily generate a coverage report locally.  Would like to see what others think though.",
+      "revId": "06899ab7fff473ae03b84c9dddadf646382b157d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
