@@ -386,8 +386,7 @@ def builders_from(parser, xml_parent, data):
     Example::
 
       builders:
-        - builders-from:
-            - project: "base-build"
+        - builders-from: "base-build"
     """
     pbs = XML.SubElement(xml_parent,
                          'hudson.plugins.templateproject.ProxyBuilder')
