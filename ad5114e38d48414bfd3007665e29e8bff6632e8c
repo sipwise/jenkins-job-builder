@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "bad4c104_838f0323",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-29T21:31:35Z",
+      "side": 1,
+      "message": "That\u0027s a good guide to follow, I\u0027ll have to remember it.",
+      "parentUuid": "facab960_eba9a125",
+      "revId": "ad5114e38d48414bfd3007665e29e8bff6632e8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "facab960_8b5c9527",
         "filename": "jenkins_jobs/modules/hipchat_notif.py",
         "patchSetId": 4
