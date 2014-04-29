@@ -34,6 +34,24 @@
       "revId": "b6c3b7c5d21d16b16a0859199cd58ef7fffc0b71",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bad4c104_63903fed",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-29T21:41:50Z",
+      "side": 1,
+      "message": "Sorry, should have been more verbose. A \u0027glob\u0027 is type of pattern, so saying \u0027glob_patterns\u0027 is like saying the same thing twice. Would have just gone with \u0027globs\u0027\n\nI\u0027d probably go for a more terse version such as:\n\n def matches(what, globs): \n     return any(fnmatch.fnmatch(what, pattern) for pattern in globs)\n\n\nBut like I said, it\u0027s not really an issue, just personal preference.",
+      "parentUuid": "facab960_ab24f9c6",
+      "revId": "b6c3b7c5d21d16b16a0859199cd58ef7fffc0b71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
