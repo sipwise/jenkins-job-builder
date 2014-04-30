@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_df0e3c34",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2397,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-30T20:39:56Z",
+      "side": 1,
+      "message": "\u0027are run\u0027 was correct :)",
+      "revId": "172af349f193836efdafc16a0f1f8c4c809c973b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_2422c1b9",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2399,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-30T20:39:56Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "172af349f193836efdafc16a0f1f8c4c809c973b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_9fee7421",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2459,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-04-30T20:39:56Z",
+      "side": 1,
+      "message": "If you are fixing up the documentation for this area, might be worth adding an \u0027arg\u0027 reference for \u0027builders\u0027 which checked for here.",
+      "revId": "172af349f193836efdafc16a0f1f8c4c809c973b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
