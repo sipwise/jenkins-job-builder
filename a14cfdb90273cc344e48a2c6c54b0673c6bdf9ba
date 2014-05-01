@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_987e80ad",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2476,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-05-01T12:33:28Z",
+      "side": 1,
+      "message": "Can you add a TODO comment that we should raise an exception whenever this is applied on a non matrix job?  I dont think we have anyway to detect that right now, but a comment would help for later \u003d)",
+      "revId": "a14cfdb90273cc344e48a2c6c54b0673c6bdf9ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
