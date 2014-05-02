@@ -227,6 +227,7 @@ class YamlParser(object):
                         d.update(jobparams)
                         d.update(group)
                         d.update(group_jobparams)
+                        d = self.applyDefaults(d)
                         # Except name, since the group's name is not useful
                         d['name'] = project['name']
                         if template:
@@ -238,6 +239,7 @@ class YamlParser(object):
                     d = {}
                     d.update(project)
                     d.update(jobparams)
+                    d = self.applyDefaults(d)
                     self.getXMLForTemplateJob(d, template, jobs_filter)
                 else:
                     raise JenkinsJobsException("Failed to find suitable "

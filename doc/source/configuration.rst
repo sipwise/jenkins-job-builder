@@ -331,6 +331,11 @@ definitions unless they specify a different Default object with the
 
 Will set the job description for every job created.
 
+The defaults are propagated to job templates and grouped jobs:
+
+.. literalinclude::  /../../tests/yamlparser/fixtures/defaults_on_jobtemplates.yaml
+
+.. literalinclude::  /../../tests/yamlparser/fixtures/defaults_on_groupedtemplates.yaml
 
 Modules
 -------
