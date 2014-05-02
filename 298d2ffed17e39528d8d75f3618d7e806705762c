@@ -16,6 +16,24 @@
       "revId": "298d2ffed17e39528d8d75f3618d7e806705762c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_1dc87921",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-02T18:51:04Z",
+      "side": 1,
+      "message": "I\u0027m not sure what you mean Darragh, but I think literalinclude would be a very good idea.  I\u0027m just concerned that future updates to this feature may miss updating the doc and example.",
+      "parentUuid": "AAAAWH/9OlM\u003d",
+      "revId": "298d2ffed17e39528d8d75f3618d7e806705762c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
