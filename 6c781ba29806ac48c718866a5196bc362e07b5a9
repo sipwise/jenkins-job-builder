@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_c5cba1a3",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-02T17:24:49Z",
+      "side": 1,
+      "message": "Users can override the default values in project and job-group definitions.  Would it be possible for you add a sentence or two for that?\n\nWould it make sense to add this test as validation?\n\n- defaults:\n    name: global\n    confversion: \u0027v0.42\u0027\n    fooversion: \u0027v0.10\u0027\n\n- project:\n    name: project\n    confversion: \u0027v0.52\u0027\n    jobs:\n        - job-group\n\n- job-group:\n    name: job-group\n    fooversion: \u0027v0.15\u0027\n    jobs:\n     - job-template\n\n- job-template:\n    name: job-template\n    builders:\n        - shell: \"echo \u0027confVersion: {confversion} \u0026 fooVersion: {fooversion}\u0027\"",
+      "revId": "6c781ba29806ac48c718866a5196bc362e07b5a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
