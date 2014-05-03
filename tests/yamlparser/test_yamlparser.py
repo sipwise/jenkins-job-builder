@@ -52,7 +52,7 @@ class TestCaseModuleYamlInclude(TestWithScenarios, TestCase, BaseTestCase):
         parser.generateXML()
 
         # Prettify generated XML
-        pretty_xml = parser.jobs[0].output()
+        pretty_xml = "\n".join([job.output() for job in parser.jobs])
 
         self.assertThat(
             pretty_xml,
