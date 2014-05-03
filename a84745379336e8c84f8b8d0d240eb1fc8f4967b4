@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_935ab04e",
+        "filename": "tests/yamlparser/test_yamlparser.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-05-03T21:01:25Z",
+      "side": 1,
+      "message": "Would it yield them always in the same order ? parser.jobs is a list so unlike dict I expect it to conserve order but I am a python newbie :)\n\nStraightforward indeed! Well done.",
+      "revId": "a84745379336e8c84f8b8d0d240eb1fc8f4967b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
