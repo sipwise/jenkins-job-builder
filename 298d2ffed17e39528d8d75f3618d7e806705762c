@@ -34,6 +34,24 @@
       "revId": "298d2ffed17e39528d8d75f3618d7e806705762c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_98965793",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-05-03T14:01:15Z",
+      "side": 1,
+      "message": "The output of this example would generate 2 XML results from the one yaml input.\n\nSo I thought that either the example would need to be changed, or you can\u0027t literalinclude it from a test yaml file until the test code could handle multiple outputs being generated. Thing is, the producing a single XML output doesn\u0027t really provide as good an example use case.\n\nHowever I\u0027ve just realised that the test code could easily be modified to support testing the XML generated for multiple jobs at a time. See I2732a7303fefff1f321a1a5b7eef9144d168e39a",
+      "parentUuid": "9ad9bd40_1dc87921",
+      "revId": "298d2ffed17e39528d8d75f3618d7e806705762c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
