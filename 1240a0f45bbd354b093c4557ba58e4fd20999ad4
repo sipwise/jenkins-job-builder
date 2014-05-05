@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9ad9bd40_e6bb2fe3",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 589,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-05-05T02:37:44Z",
+      "side": 1,
+      "message": "Yep, exactly. I figured getting the matching jobs is a pretty generic thing that a lot of commands could use. \"list\" is one. \"browse\" is another (see https://review.openstack.org/85580)",
+      "parentUuid": "AAAAXX//1xM\u003d",
+      "revId": "1240a0f45bbd354b093c4557ba58e4fd20999ad4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXX//1wI\u003d",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-04-25T21:12:27Z",
       "side": 1,
       "message": "Also thinking that since I can\u0027t see how you can return jobs without loading files that it makes more sense to follow the update_job() signature than the delete_job() signature.\n\nUnless of course you decide to retrieve the list of jobs from the jenkins instance if there is no file specified?",
+      "revId": "1240a0f45bbd354b093c4557ba58e4fd20999ad4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_068d7331",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 590,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-05-05T02:37:44Z",
+      "side": 1,
+      "message": "Don\u0027t know if I gave much thought when creating the signature.\n\nI kind of feel like maybe in the future the signatures might be more consistent with each other - that seems like it would be a good thing.\n\nIt does seem potentially useful to list the jobs on the server now that you mention it.",
+      "parentUuid": "AAAAXX//1wI\u003d",
       "revId": "1240a0f45bbd354b093c4557ba58e4fd20999ad4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9ad9bd40_269b5768",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-05-05T02:37:44Z",
+      "side": 1,
+      "message": "Yeah that could be nice to have this be able to get jobs on the server, without looking in files, and that could be used by delete. Might look at that in the future.",
+      "parentUuid": "AAAAXX//1vM\u003d",
+      "revId": "1240a0f45bbd354b093c4557ba58e4fd20999ad4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXX//11Q\u003d",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 4
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "9ad9bd40_e6132fb6",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-05-05T02:37:44Z",
+      "side": 1,
+      "message": "Oh yeah, this seems to not be necessary. Thanks!",
+      "parentUuid": "AAAAXX//11Q\u003d",
+      "revId": "1240a0f45bbd354b093c4557ba58e4fd20999ad4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAXX//11E\u003d",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 4
@@ -81,6 +153,24 @@
       "writtenOn": "2014-04-25T21:12:27Z",
       "side": 1,
       "message": "s/Path/path/ to be consistent with the others.",
+      "revId": "1240a0f45bbd354b093c4557ba58e4fd20999ad4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_a62127fd",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-05-05T02:37:44Z",
+      "side": 1,
+      "message": "Good catch. Thanks!",
+      "parentUuid": "AAAAXX//11E\u003d",
       "revId": "1240a0f45bbd354b093c4557ba58e4fd20999ad4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
