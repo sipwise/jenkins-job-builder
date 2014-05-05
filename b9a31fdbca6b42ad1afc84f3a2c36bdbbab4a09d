@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_049d5459",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-05-05T19:18:02Z",
+      "side": 1,
+      "message": "Is there any reason not to use:\n\n try:\n     fn \u003d iter(fn)\n except TypeException:\n     fn \u003d iter([fn])\n\nLooks to me more pythonic",
+      "revId": "b9a31fdbca6b42ad1afc84f3a2c36bdbbab4a09d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
