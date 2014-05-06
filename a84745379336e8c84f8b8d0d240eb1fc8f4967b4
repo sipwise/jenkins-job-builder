@@ -52,6 +52,24 @@
       "revId": "a84745379336e8c84f8b8d0d240eb1fc8f4967b4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_6010b9a8",
+        "filename": "tests/yamlparser/test_yamlparser.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-05-06T22:24:03Z",
+      "side": 1,
+      "message": "Regarding using the generator-expression. Guess I just assumed that \u0027join\u0027 needed a list rather than any type of iterable.\n\nI think the real concern behind the questions about ordering was whether parser.jobs would be populated in the same order when parsing the yaml files, rather than being outputted in the same order.\n\nThe order is essentially determined by how jobs are defined in yaml. Since JJB uses a list format for job definitions, they will be appended into parser.jobs in the order they are defined and read in from the yaml source. Note that standard jobs will be listed first, then those defined as part of projects for use with template jobs, due to the order of processing the item \u0027jobs\u0027 and \u0027projects\u0027 in YamlParser.generateXML()\n\nWhere it would get hairy is if the tests were loading multiple yaml files at the same time, then the overall order within the standard jobs and project jobs would depend on the other the files were parsed.\n\n\nBut within any single yaml file, without explicit re-ordering (parser.jobs is name sorted in update_jobs), the order of the job list elements in parser.jobs will match the order defined in that yaml file, where \u0027jobs\u0027 are grouped first and \u0027project\u0027 jobs are grouped second.\n\n\nFor simplicity, I might just ensure the order is alphabetical by always explicitly sorting parser.jobs.",
+      "parentUuid": "9ad9bd40_a2b9f316",
+      "revId": "a84745379336e8c84f8b8d0d240eb1fc8f4967b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
