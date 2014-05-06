@@ -16,6 +16,24 @@
       "revId": "b9a31fdbca6b42ad1afc84f3a2c36bdbbab4a09d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_008b6d1f",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-05-06T11:34:33Z",
+      "side": 1,
+      "message": "Need to be able to distinguish between a list and a string here. \u0027iter(\"string\")\u0027 is valid and will iterate over each letter in the string, which isn\u0027t correct as we wouldn\u0027t want that behaviour for single filenames.\n\nOptions:\n- support fn being a single string, a list or an object with a read method\n- support fn being a list or an object with a read method\n- require that fn is a list and check whether each item has a read method or not and parse accordingly\n\nI started with option 1, but I\u0027m open to rethinking what should and shouldn\u0027t be supported here in the name of sensible code :)",
+      "parentUuid": "9ad9bd40_049d5459",
+      "revId": "b9a31fdbca6b42ad1afc84f3a2c36bdbbab4a09d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
