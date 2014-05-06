@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad9bd40_bea1ec95",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-05-06T23:16:20Z",
+      "side": 1,
+      "message": "I\u0027ve just re-read this section of code and realized that you could remove some unnecessary pops later if you change this around:\n\n p_kwargs \u003d kwargs.pop(\u0027parallelize\u0027, {})\n n_threads \u003d kwargs.pop(\u0027n_threads\u0027, 0)\n\n if not p_kwargs or n_threads \u003d\u003d 1:\n   return func(*args, **kwargs)\n\n\nNote, that I\u0027m not sure the is logically correct, although it is identical in functionality to the current code below.\n\nIf n_threads \u003d\u003d 1, but p_kwargs is defined, it would seem that the code should still be calling the func for each entry in p_kwargs?\n\nFollowing would appear to be more logically correct:\n\n        n_threads \u003d kwargs.pop(\u0027n_threads\u0027, 0)\n        p_kwargs \u003d kwargs.pop(\u0027parallelize\u0027, {})\n        if n_threads \u003d\u003d 1:\n            results \u003d []\n            if p_kwargs:\n                for f_kwargs in p_kwargs:\n                    f_kwargs.update(kwargs)\n                    results.append(func(*args, **f_kwargs))\n                return results\n            else:\n                return func(*args, **kwargs)\n\n\nAlthough if it requires this to avoid the workaround in the update_jobs method, I have to wonder is it not just as easy to allow it to run via a single back end thread rather than having this extra code?",
+      "revId": "3504c0500450a17ce2429319290010bc1473ea58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_5ee540da",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-05-06T23:16:20Z",
+      "side": 1,
+      "message": "If you do the popping above at the start, you can remove this line.",
+      "revId": "3504c0500450a17ce2429319290010bc1473ea58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_becf2c55",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-05-06T23:16:20Z",
+      "side": 1,
+      "message": "Same here, if you pop the value at the start of the function you can do it just the once.",
+      "revId": "3504c0500450a17ce2429319290010bc1473ea58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_fe70d441",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 792,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-05-06T23:16:20Z",
+      "side": 1,
+      "message": "This else statement block seems like a workaround for the parallelize decorator not working with the n_thread\u003d1 case.\n\nHave suggested code above, that might remove the need to have this workaround.",
+      "revId": "3504c0500450a17ce2429319290010bc1473ea58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad9bd40_7e292436",
+        "filename": "tests/parallel/test_parallel.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-05-06T23:16:20Z",
+      "side": 1,
+      "message": "Think it would be worth adding the following additional tests as they ensure that the cpu_count function is actually used when intended (could also check that it\u0027s not used in other cases) and that at least one of the special cases where the number of threads is set to 1 is handled as expected:\n\n    @patch(\u0027multiprocessing.cpu_count\u0027)\n    def test_use_auto_detect_cores(self, mockCpu_count):\n\n        @parallelize\n        def parallel_test():\n            return True\n\n        mockCpu_count.return_value \u003d cpu_count()\n        result \u003d parallel_test(parallelize\u003d[{} for _ in range(10)],\n                               n_threads\u003d0)\n        self.assertThat(result, Equals([True for _ in range(10)]))\n        mockCpu_count.assert_called()\n\n    def test_parallel_single_thread(self):\n        expected \u003d range(10, 20)\n\n        @parallelize\n        def parallel_test(num_base, num_extra):\n            return num_base + num_extra\n\n        parallel_args \u003d [{\u0027num_extra\u0027: num} for num in range(10)]\n        result \u003d parallel_test(10, parallelize\u003dparallel_args, n_threads\u003d1)\n        self.assertThat(result, Equals(expected))",
+      "revId": "3504c0500450a17ce2429319290010bc1473ea58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
