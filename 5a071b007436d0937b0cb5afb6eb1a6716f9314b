@@ -16,6 +16,23 @@
       "revId": "5a071b007436d0937b0cb5afb6eb1a6716f9314b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_d33c6f96",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-05-08T22:04:07Z",
+      "side": 1,
+      "message": "Possibly we should be doing the following:\n\n # PyXML will result in xml.__name__ \u003d\u003d \"_xmlplus\"\n import xml\n if xml.__name__ !\u003d \u0027xml\u0027 or sys.version_info[:3] \u003c\u003d (2, 7, 0):\n     minidom.Element.writexml \u003d writexml",
+      "revId": "5a071b007436d0937b0cb5afb6eb1a6716f9314b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
