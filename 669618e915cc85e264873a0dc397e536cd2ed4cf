@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_33c03050",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-09T00:21:00Z",
+      "side": 1,
+      "message": "the dependent patch already references  templates003.yaml as an example.  Is templates002.yaml testing something different?  why reference this one instead of templates003.yaml",
+      "revId": "669618e915cc85e264873a0dc397e536cd2ed4cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
