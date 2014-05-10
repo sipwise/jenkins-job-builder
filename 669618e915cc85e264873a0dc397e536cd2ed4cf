@@ -16,6 +16,24 @@
       "revId": "669618e915cc85e264873a0dc397e536cd2ed4cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_8775219a",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-05-10T21:29:05Z",
+      "side": 1,
+      "message": "The templates003 (now templates001 - don\u0027t ask why I managed to use 003 when there was no 001), shows how a project specification can create multiple jobs where the variable substitution for each job is specified under each entry in the list of jobs under the project.\n\ntemplates002 shows how you can have a variable substitution listed in the project, which each entry in turn is applied to each of the jobs listed under the jobs.\n\nBoth of them involve variable substitution, it\u0027s just where the variables are specified and how the expansion varies based on this that differs",
+      "parentUuid": "7adec928_33c03050",
+      "revId": "669618e915cc85e264873a0dc397e536cd2ed4cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
