@@ -34,6 +34,24 @@
       "revId": "669618e915cc85e264873a0dc397e536cd2ed4cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_8efff266",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 9921
+      },
+      "writtenOn": "2014-05-12T15:00:33Z",
+      "side": 1,
+      "message": "The template in the dependent patch doesn\u0027t test this patch (variable-specific substitutions), it only checks job-specific substitutions.",
+      "parentUuid": "7adec928_33c03050",
+      "revId": "669618e915cc85e264873a0dc397e536cd2ed4cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
