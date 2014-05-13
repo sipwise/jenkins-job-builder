@@ -538,9 +538,11 @@ class Builder(object):
             return
 
         if os.path.isdir(fn):
-            files_to_process = [os.path.join(fn, f)
-                                for f in os.listdir(fn)
-                                if (f.endswith('.yml') or f.endswith('.yaml'))]
+            files_to_process = []
+            for top, subs, files in os.walk(fn):
+                [files_to_process.append(os.path.join(top, f))
+                 for f in files
+                 if (f.endswith('.yml') or f.endswith('.yaml'))]
         else:
             files_to_process = [fn]
 
