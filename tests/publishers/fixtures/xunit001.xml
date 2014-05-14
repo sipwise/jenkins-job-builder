@@ -5,12 +5,14 @@
       <types>
         <PHPUnitJunitHudsonTestType>
           <pattern>junit.log</pattern>
+          <skipNoTestFiles>true</skipNoTestFiles>
           <failIfNotNew>true</failIfNotNew>
           <deleteOutputFiles>true</deleteOutputFiles>
           <stopProcessingIfError>true</stopProcessingIfError>
         </PHPUnitJunitHudsonTestType>
         <CppUnitJunitHudsonTestType>
           <pattern>cppunit.log</pattern>
+          <skipNoTestFiles>true</skipNoTestFiles>
           <failIfNotNew>true</failIfNotNew>
           <deleteOutputFiles>true</deleteOutputFiles>
           <stopProcessingIfError>true</stopProcessingIfError>

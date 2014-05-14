@@ -832,6 +832,8 @@ def xunit(parser, xml_parent, data):
     :arg str pattern: An Ant pattern to look for Junit result files, \
     relative to the workspace root.
 
+    :arg bool skipifnofile: skip this step if no files found (default: true)
+
     :arg bool requireupdate: fail the build whenever fresh tests \
     results have not been found (default: true).
 
@@ -907,9 +909,12 @@ def xunit(parser, xml_parent, data):
 
         XML.SubElement(xmlframework, 'pattern').text = \
             supported_type[framework_name].get('pattern', '')
-        XML.SubElement(xmlframework, 'failIfNotNew').text = \
+        XML.SubElement(xmlframework, 'skipNoTestFiles').text = \
             str(supported_type[framework_name].get(
                 'requireupdate', True)).lower()
+        XML.SubElement(xmlframework, 'failIfNotNew').text = \
+            str(supported_type[framework_name].get(
+                'skipifnofile', True)).lower()
         XML.SubElement(xmlframework, 'deleteOutputFiles').text = \
             str(supported_type[framework_name].get(
                 'deleteoutput', True)).lower()
