@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_172bdc30",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 9107
+      },
+      "writtenOn": "2014-05-14T10:24:38Z",
+      "side": 1,
+      "message": "This line is only need on Python 3, so use:\n\nif six.PY3:\n   uniq \u003d uniq.encode(\u0027utf-8\u0027)\n\n(On Python 2, uniq is already a bytes string.)",
+      "range": {
+        "startLine": 273,
+        "startChar": 24,
+        "endLine": 273,
+        "endChar": 30
+      },
+      "revId": "85335d1ee0ae84a9a144e669308b99842c838027",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_3721b84d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 9107
+      },
+      "writtenOn": "2014-05-14T10:24:38Z",
+      "side": 1,
+      "message": "You should use the six module instead of a custom \"compat\" module.",
+      "revId": "85335d1ee0ae84a9a144e669308b99842c838027",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_571c8413",
+        "filename": "jenkins_jobs/compat.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9107
+      },
+      "writtenOn": "2014-05-14T10:24:38Z",
+      "side": 1,
+      "message": "This file should be dropped: please use the well known and stable third party six module. It is used in almost all OpenStack projects.",
+      "revId": "85335d1ee0ae84a9a144e669308b99842c838027",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_d7d7b421",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 9107
+      },
+      "writtenOn": "2014-05-14T10:24:38Z",
+      "side": 1,
+      "message": "You can add \"r\" prefix to the string to avoid the need of escaping antislash character (\\).",
+      "revId": "85335d1ee0ae84a9a144e669308b99842c838027",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
