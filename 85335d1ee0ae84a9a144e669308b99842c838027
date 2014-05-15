@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_ee292f38",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-05-15T00:34:44Z",
+      "side": 1,
+      "message": "Done. Fixed in patch set 9.",
+      "parentUuid": "7adec928_172bdc30",
+      "revId": "85335d1ee0ae84a9a144e669308b99842c838027",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_3721b84d",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 6
@@ -36,6 +54,24 @@
       "writtenOn": "2014-05-14T10:24:38Z",
       "side": 1,
       "message": "You should use the six module instead of a custom \"compat\" module.",
+      "revId": "85335d1ee0ae84a9a144e669308b99842c838027",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_0e22db51",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-05-15T00:34:44Z",
+      "side": 1,
+      "message": "Done. Fixed in patch set 9.",
+      "parentUuid": "7adec928_3721b84d",
       "revId": "85335d1ee0ae84a9a144e669308b99842c838027",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -59,6 +95,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_2e1f9709",
+        "filename": "jenkins_jobs/compat.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-05-15T00:34:44Z",
+      "side": 1,
+      "message": "Done. Fixed in patch set 9.",
+      "parentUuid": "7adec928_571c8413",
+      "revId": "85335d1ee0ae84a9a144e669308b99842c838027",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_d7d7b421",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 6
@@ -70,6 +124,24 @@
       "writtenOn": "2014-05-14T10:24:38Z",
       "side": 1,
       "message": "You can add \"r\" prefix to the string to avoid the need of escaping antislash character (\\).",
+      "revId": "85335d1ee0ae84a9a144e669308b99842c838027",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_4ec6a369",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-05-15T00:34:44Z",
+      "side": 1,
+      "message": "Actually, I don\u0027t even know why I changed this. It seems like it works and has nothing to do with Python 3 that I can remember.\n\nI reverted it.",
+      "parentUuid": "7adec928_d7d7b421",
       "revId": "85335d1ee0ae84a9a144e669308b99842c838027",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
