@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_f89d0767",
+        "filename": "tests/publishers/fixtures/email-ext002.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-05-20T03:11:26Z",
+      "side": 1,
+      "message": "Is the tab intentional?",
+      "revId": "441619d1f963ef8abf4e407f8a3a99e20acd8271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
