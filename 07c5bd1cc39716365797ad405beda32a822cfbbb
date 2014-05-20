@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_6e5a02f3",
+        "filename": "tests/yamlparser/test_yamlparser.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-05-20T14:35:56Z",
+      "side": 1,
+      "message": "Sounds safer this way. Thanks.",
+      "revId": "07c5bd1cc39716365797ad405beda32a822cfbbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
