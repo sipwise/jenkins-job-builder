@@ -16,6 +16,24 @@
       "revId": "441619d1f963ef8abf4e407f8a3a99e20acd8271",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_c5491090",
+        "filename": "tests/publishers/fixtures/email-ext002.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 10702
+      },
+      "writtenOn": "2014-05-21T15:00:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7adec928_f89d0767",
+      "revId": "441619d1f963ef8abf4e407f8a3a99e20acd8271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
