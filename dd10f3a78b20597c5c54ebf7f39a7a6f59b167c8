@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_09cf8eb1",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 914,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-21T17:58:52Z",
+      "side": 1,
+      "message": "is this backwards?  shouldn\u0027t \u0027requiresupdate\u0027 xml go with \u0027failIfNotNew\u0027 param?",
+      "revId": "dd10f3a78b20597c5c54ebf7f39a7a6f59b167c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
