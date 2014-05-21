@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_f3596b8f",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-21T22:04:44Z",
+      "side": 1,
+      "message": "I think would be better to deprecate rather than change function name. Other tools rely on jjb methods and I\u0027m guessing this might be one of them.",
+      "revId": "3841e082eb5d36833306e28aefc10a6126341151",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
