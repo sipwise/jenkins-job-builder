@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7adec928_b050b65f",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-21T23:18:52Z",
+      "side": 1,
+      "message": "because it\u0027s accessible with http.  do you have strong feeling for https?",
+      "parentUuid": "7adec928_90dc9a76",
+      "revId": "6a92bc45b90d43800a3552037b7947d2e39a0fc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_b0d99685",
         "filename": "setup.cfg",
         "patchSetId": 1
