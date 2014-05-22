@@ -16,6 +16,24 @@
       "revId": "3841e082eb5d36833306e28aefc10a6126341151",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_cb5d7d7b",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-05-22T15:33:19Z",
+      "side": 1,
+      "message": "Good point! I will add in a `delete_job` method that raises a DeprecationWarning and then calls `delete_jobs`...",
+      "parentUuid": "7adec928_f3596b8f",
+      "revId": "3841e082eb5d36833306e28aefc10a6126341151",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
