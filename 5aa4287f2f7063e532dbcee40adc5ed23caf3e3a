@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7adec928_0002df3d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-22T16:29:24Z",
+      "side": 1,
+      "message": "should this one be deprecated as well?  replaced with delete_jobs?",
+      "revId": "5aa4287f2f7063e532dbcee40adc5ed23caf3e3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7adec928_c00c7797",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 587,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-22T16:29:24Z",
+      "side": 1,
+      "message": "should this call delete_jobs instead?",
+      "revId": "5aa4287f2f7063e532dbcee40adc5ed23caf3e3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
