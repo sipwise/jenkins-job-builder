@@ -611,7 +611,8 @@ class Builder(object):
                     if not os.path.isdir(output_dir):
                         raise
 
-                output_fn = os.path.join(output_dir, job.name)
+                safe_job_name = job.name.replace(os.path.sep, '_')
+                output_fn = os.path.join(output_dir, safe_job_name)
                 logger.debug("Writing XML to '{0}'".format(output_fn))
                 f = open(output_fn, 'w')
                 f.write(job.output())
