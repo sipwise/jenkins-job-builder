@@ -1,0 +1,13 @@
+publishers:
+- sounds:
+    failure:
+      sound: EXPLODE
+      from:
+        - not_built
+        - aborted
+    success:
+      sound: Yahoo.Yodel
+      from:
+        - unstable
+        - success
+        - failure

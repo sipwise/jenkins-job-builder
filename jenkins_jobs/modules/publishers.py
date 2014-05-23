@@ -1843,6 +1843,123 @@ def sonar(parser, xml_parent, data):
             data_triggers.get('skip-when-envvar-defined', '')
 
 
+def sounds(parser, xml_parent, data):
+    """yaml: sounds
+    Play audio clips locally through sound hardware,
+    remotely by piping them through an operating system command,
+    or simultaneously through all browsers on a Jenkins page.
+
+    Requires the Jenkins `Jenkins Sounds plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Jenkins+Sounds+plugin>`_
+
+    :arg dict success: Play on success
+
+        :success:
+            * **sound** (`str`) Sound name
+            * **from** (`list`) Previous build result (default is all)
+                :from values:
+                    * **success**
+                    * **unstable**
+                    * **failure**
+                    * **not_built**
+                    * **aborted**
+
+    :arg dict unstable: Play on unstable
+
+        :unstable:
+            * **sound** (`str`) Sound name
+            * **from** (`list`) Previous build result (default is all)
+                :from values:
+                    * **success**
+                    * **unstable**
+                    * **failure**
+                    * **not_built**
+                    * **aborted**
+
+    :arg dict failure: Play on failure
+
+        :failure:
+            * **sound** (`str`) Sound name
+            * **from** (`list`) Previous build result (default is all)
+                :from values:
+                    * **success**
+                    * **unstable**
+                    * **failure**
+                    * **not_built**
+                    * **aborted**
+
+    :arg dict not_built: Play on not built
+
+        :not_built:
+            * **sound** (`str`) Sound name
+            * **from** (`list`) Previous build result (default is all)
+                :from values:
+                    * **success**
+                    * **unstable**
+                    * **failure**
+                    * **not_built**
+                    * **aborted**
+
+    :arg dict aborted: Play on aborted
+
+        :aborted:
+            * **sound** (`str`) Sound name
+            * **from** (`list`) Previous build result (default is all)
+                :from values:
+                    * **success**
+                    * **unstable**
+                    * **failure**
+                    * **not_built**
+                    * **aborted**
+
+    Minimal example using defaults:
+
+    .. literalinclude::  /../../tests/publishers/fixtures/sounds001.yaml
+
+    Full example:
+
+    .. literalinclude::  /../../tests/publishers/fixtures/sounds003.yaml
+    """
+
+    dict = {'success': {'ordinal': '0', 'color': 'BLUE',
+                        'completeBuild': 'true'},
+            'unstable': {'ordinal': '1', 'color': 'YELLOW',
+                         'completeBuild': 'true'},
+            'failure': {'ordinal': '2', 'color': 'RED',
+                        'completeBuild': 'true'},
+            'not_built': {'ordinal': '3', 'color': 'NOTBUILT',
+                          'completeBuild': 'false'},
+            'aborted': {'ordinal': '4', 'color': 'ABORTED',
+                        'completeBuild': 'false'}}
+    sounds = XML.SubElement(xml_parent, 'net.hurstfrost.hudson.'
+                                        'sounds.HudsonSoundsNotifier')
+    events = XML.SubElement(sounds, 'soundEvents')
+    for k, v in data.items():
+        event = XML.SubElement(events,
+                               'net.hurstfrost.hudson.sounds.'
+                               'HudsonSoundsNotifier_-SoundEvent')
+        XML.SubElement(event, 'soundId').text = v['sound']
+        to_result = XML.SubElement(event, 'toResult')
+        XML.SubElement(to_result, 'name').text = k.upper()
+        XML.SubElement(to_result, 'ordinal').text = dict[k]['ordinal']
+        XML.SubElement(to_result, 'color').text = dict[k]['color']
+        XML.SubElement(to_result, 'completeBuild').text \
+            = dict[k]['completeBuild']
+
+        from_results = XML.SubElement(event, 'fromResults')
+        results = ['not_built', 'success', 'aborted', 'failure', 'unstable']
+        if 'from' in v:
+            results = v['from']
+        for result in results:
+            from_result = XML.SubElement(from_results, 'hudson.model.Result')
+            XML.SubElement(from_result, 'name').text = result.upper()
+            XML.SubElement(from_result, 'ordinal').text \
+                = dict[result]['ordinal']
+            XML.SubElement(from_result, 'color').text = dict[result]['color']
+            XML.SubElement(from_result, 'completeBuild').text \
+                = dict[result]['completeBuild']
+
+
 def performance(parser, xml_parent, data):
     """yaml: performance
     Publish performance test results from jmeter and junit.
