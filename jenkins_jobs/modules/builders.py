@@ -494,6 +494,67 @@ def gradle(parser, xml_parent, data):
         'use-root-dir', False)).lower()
 
 
+def groovy(parser, xml_parent, data):
+    """yaml: groovy
+    Execute a groovy script or command.
+    Requires the Jenkins `Groovy Plugin
+    <https://wiki.jenkins-ci.org/display/JENKINS/Groovy+plugin>`_
+
+    :arg file: Groovy file to run.
+      (Alternative: you can choice a command instead)
+    :arg command: Groovy command to run.
+      (Alternative: you can choice a script file instead)
+    :arg version: Groovy version to use. (optional) (defaults to '(Default)')
+    :arg parameters: Parameters for the Groovy executable. (optional)
+    :arg script-parameters: These parameters will be passed to the script.
+      (optional)
+    :arg str properties: Instead of passing properties using the -D parameter
+      you can define them here. (optional)
+    :arg str java-opts: Direct access to JAVA_OPTS. Properties allows only
+      -D properties, while sometimes also other properties like -XX need to
+      be setup. It can be done here. This line is appended at the end of
+      JAVA_OPTS string. (optional)
+    :arg str class-path: Specify script classpath here. Each line is one
+      class path item. (optional)
+
+    Example:
+
+    .. literalinclude:: ../../tests/builders/fixtures/groovy001.yaml
+       :language: yaml
+    """
+
+    root_tag = 'hudson.plugins.groovy.Groovy'
+    groovy = XML.SubElement(xml_parent, root_tag)
+
+    scriptSource = XML.SubElement(groovy, "scriptSource")
+    if 'command' in data:
+        command = XML.SubElement(scriptSource, 'command')
+        command.text = str(data['command'])
+        scriptSource.set('class', 'hudson.plugins.groovy.StringScriptSource')
+    elif 'file' in data:
+        scriptFile = XML.SubElement(scriptSource, 'scriptFile')
+        scriptFile.text = str(data['file'])
+        scriptSource.set('class', 'hudson.plugins.groovy.FileScriptSource')
+    else:
+        raise JenkinsJobsException("A groovy command or file is required")
+
+    if 'version' in data:
+        XML.SubElement(groovy, 'groovyName').text = str(data['version'])
+    else:
+        XML.SubElement(groovy, 'groovyName').text = '(Default)'
+    if 'parameters' in data:
+        XML.SubElement(groovy, 'parameters').text = str(data['parameters'])
+    if 'script-parameters' in data:
+        XML.SubElement(groovy, 'scriptParameters').text = \
+            str(data['script-parameters'])
+    if 'properties' in data:
+        XML.SubElement(groovy, 'properties').text = str(data['properties'])
+    if 'java-opts' in data:
+        XML.SubElement(groovy, 'javaOpts').text = str(data['java-opts'])
+    if 'class-path' in data:
+        XML.SubElement(groovy, 'classPath').text = str(data['class-path'])
+
+
 def batch(parser, xml_parent, data):
     """yaml: batch
     Execute a batch command.
