@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5adbc538_196528e1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-05-26T15:39:53Z",
+      "side": 1,
+      "message": "This example does not work. In the scm macro, the 2nd level of scm shouldn\u0027t have an hypen in front of it.",
+      "revId": "e455a535a7313c77e95fc9d4bdd2a250938aff94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5adbc538_d92580ac",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2014-05-26T15:39:53Z",
+      "side": 1,
+      "message": "Can you remove it?",
+      "revId": "e455a535a7313c77e95fc9d4bdd2a250938aff94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
