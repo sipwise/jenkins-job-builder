@@ -475,6 +475,60 @@ def build_result(parser, xml_parent, data):
             XML.SubElement(model_checked, 'checked').text = result_dict[result]
 
 
+def reverse(parser, xml_parent, data):
+    """yaml: reverse
+    Set up a trigger so that when some other projects finish building, a new
+    build is scheduled for this project. This is convenient for running an
+    extensive test after a build is complete, for example.
+    This configuration complements the "Build other projects" section in the
+    "Post-build Actions" of an upstream project, but is preferable when you
+    want to configure the downstream project.
+
+    :arg str jobs: List (comma separated) of jobs to watch.
+    :arg str result: Build results to monitor for between the following
+      options: success, unstable and failure. (default to "success".
+
+    Example:
+
+    .. literalinclude:: /../../tests/triggers/fixtures/reverse.yaml
+    """
+    reserveBuildTrigger = XML.SubElement(
+        xml_parent, 'jenkins.triggers.ReverseBuildTrigger')
+
+    result_dict = {
+        'success': {
+            'name': 'SUCCESS',
+            'ordinal': '0',
+            'color': 'BLUE'
+        },
+        'unstable': {
+            'name': 'UNSTABLE',
+            'ordinal': '1',
+            'color': 'YELLOW'
+        },
+        'failure': {
+            'name': 'FAILURE',
+            'ordinal': '2',
+            'color': 'RED'
+        }
+    }
+
+    XML.SubElement(reserveBuildTrigger, 'spec').text = ''
+    XML.SubElement(reserveBuildTrigger, 'upstreamProjects').text = \
+        data.get('jobs')
+
+    threshold = XML.SubElement(reserveBuildTrigger, 'threshold')
+    result = data.get('result')
+    if result not in ["success", "unstable", "failure"]:
+        raise jenkins_jobs.errors.JenkinsJobsException(
+            "Should choise one of the following"
+            "options: 'success', 'unstable', 'failure'.")
+    XML.SubElement(threshold, 'name').text = result_dict[result]['name']
+    XML.SubElement(threshold, 'ordinal').text = result_dict[result]['ordinal']
+    XML.SubElement(threshold, 'color').text = result_dict[result]['color']
+    XML.SubElement(threshold, 'completeBuild').text = "true"
+
+
 def script(parser, xml_parent, data):
     """yaml: script
     Triggers the job using shell or batch script.
