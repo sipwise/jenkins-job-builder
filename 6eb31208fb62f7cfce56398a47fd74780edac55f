@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ae8d1ca_281d40be",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-05-27T11:54:15Z",
+      "side": 1,
+      "message": "The github page had the advantage to parse the README file giving some clue to the user:\n\n https://github.com/openstack-infra/jenkins-job-builder#jenkins-job-builder\n\nThe cgit link just point to the VCS page which is not that friendly.\n\n\nI could not find any documentation for all those [metadata] keywords.  Maybe there is one for the VCS ?",
+      "revId": "6eb31208fb62f7cfce56398a47fd74780edac55f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
