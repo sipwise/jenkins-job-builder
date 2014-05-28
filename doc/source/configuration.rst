@@ -195,17 +195,6 @@ the Job Templates in the Job Group will be realized.  For example::
 Would cause the jobs `foo-python-26` and `foo-python-27` to be created
 in Jenkins.
 
-The ``jobs:`` list can also allow for specifying job-specific
-substitutions as follows::
-
-  - job-group:
-      name: job-group-name
-      jobs:
-        - '{name}-build':
-            pipeline-next: '{name}-upload'
-        - '{name}-upload':
-            pipeline-next: ''
-
 .. _macro:
 
 Macro
