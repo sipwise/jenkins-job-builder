@@ -16,6 +16,24 @@
       "revId": "6eb31208fb62f7cfce56398a47fd74780edac55f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_f4269515",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6609
+      },
+      "writtenOn": "2014-05-28T18:54:50Z",
+      "side": 1,
+      "message": "The official location for this repository is our git.o.o location because we have full control over this resource, github is a mirror simply for the convenience of developers  who look there for code. We prefer not to rely upon a proprietary 3rd party resource just because it\u0027s prettier.",
+      "parentUuid": "3ae8d1ca_281d40be",
+      "revId": "6eb31208fb62f7cfce56398a47fd74780edac55f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
