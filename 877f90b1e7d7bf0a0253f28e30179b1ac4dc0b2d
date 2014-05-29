@@ -16,6 +16,24 @@
       "revId": "877f90b1e7d7bf0a0253f28e30179b1ac4dc0b2d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_13a13047",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 11640
+      },
+      "writtenOn": "2014-05-29T18:13:06Z",
+      "side": 1,
+      "message": "Hey Khai Do,\n\nThis doesn\u0027t fully closes the bug, because just adds the groovy, not the system groovy.\n\nShould you accept this commit and I do another one, one should I do a bigger commit to include the system groovy ?\n\nCheers",
+      "parentUuid": "3ae8d1ca_1384d00a",
+      "revId": "877f90b1e7d7bf0a0253f28e30179b1ac4dc0b2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
