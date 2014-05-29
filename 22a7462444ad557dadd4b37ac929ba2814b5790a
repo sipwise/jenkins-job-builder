@@ -16,6 +16,24 @@
       "revId": "22a7462444ad557dadd4b37ac929ba2814b5790a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ae8d1ca_ca0631ce",
+        "filename": "samples/README.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-29T16:31:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ae8d1ca_55ac9ca0",
+      "revId": "22a7462444ad557dadd4b37ac929ba2814b5790a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
