@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ae8d1ca_1384d00a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-29T18:02:56Z",
+      "side": 1,
+      "message": "could you please reference the LP issue? https://bugs.launchpad.net/openstack-ci/+bug/1251869 \n\njust add the following:\nCloses-Bug: #1251869",
+      "revId": "877f90b1e7d7bf0a0253f28e30179b1ac4dc0b2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
