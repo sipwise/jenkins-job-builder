@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_206aa91a",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-30T16:33:39Z",
+      "side": 1,
+      "message": "should identify the type for this param.  something like :arg str file: ..",
+      "revId": "fb470eadb8cb8bcf0e22aab4641f289fb347dec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_60ee71ee",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 504,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-30T16:33:39Z",
+      "side": 1,
+      "message": "chose instead of choice?",
+      "revId": "fb470eadb8cb8bcf0e22aab4641f289fb347dec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_8060dd36",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 505,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-30T16:33:39Z",
+      "side": 1,
+      "message": "please identify param type",
+      "revId": "fb470eadb8cb8bcf0e22aab4641f289fb347dec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_2079c92f",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-30T16:33:39Z",
+      "side": 1,
+      "message": "chose instead of choice?",
+      "revId": "fb470eadb8cb8bcf0e22aab4641f289fb347dec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_ffe85b7e",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-30T16:33:39Z",
+      "side": 1,
+      "message": "please identify param type",
+      "revId": "fb470eadb8cb8bcf0e22aab4641f289fb347dec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_3f02c33e",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-30T16:33:39Z",
+      "side": 1,
+      "message": "please identify param type",
+      "revId": "fb470eadb8cb8bcf0e22aab4641f289fb347dec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_df9abf13",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-30T16:33:39Z",
+      "side": 1,
+      "message": "please identify param type",
+      "revId": "fb470eadb8cb8bcf0e22aab4641f289fb347dec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_623754e4",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-30T16:33:39Z",
+      "side": 1,
+      "message": "you can handle this in one line..\n\nXML.SubElement(groovy, \u0027groovyName\u0027).text \u003d str(data.get(\u0027version\u0027, \u0027(Default)\u0027))\n\nthat will set param to \u0027(Default)\u0027 if nothing is specified.",
+      "revId": "fb470eadb8cb8bcf0e22aab4641f289fb347dec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_62daf479",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-30T16:33:39Z",
+      "side": 1,
+      "message": "please specify param type",
+      "revId": "fb470eadb8cb8bcf0e22aab4641f289fb347dec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a28ddc7d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-30T16:33:39Z",
+      "side": 1,
+      "message": "choice or chose?",
+      "revId": "fb470eadb8cb8bcf0e22aab4641f289fb347dec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_82e70040",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-30T16:33:39Z",
+      "side": 1,
+      "message": "please specify param type",
+      "revId": "fb470eadb8cb8bcf0e22aab4641f289fb347dec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_c2e9081c",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-30T16:33:39Z",
+      "side": 1,
+      "message": "choice or chose?",
+      "revId": "fb470eadb8cb8bcf0e22aab4641f289fb347dec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a2e4fc3b",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-30T16:33:39Z",
+      "side": 1,
+      "message": "please specify param type",
+      "revId": "fb470eadb8cb8bcf0e22aab4641f289fb347dec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_02cbf0a5",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 570,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-05-30T16:33:39Z",
+      "side": 1,
+      "message": "please specify param type",
+      "revId": "fb470eadb8cb8bcf0e22aab4641f289fb347dec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
