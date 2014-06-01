@@ -38,6 +38,7 @@ later.  There are a few basic optional fields for a Job definition::
       concurrent: true
       quiet-period: 5
       workspace: /srv/build-area/job-name
+      child-workspace: /srv/build-area/job-name
       block-downstream: false
       block-upstream: false
 
@@ -74,6 +75,10 @@ later.  There are a few basic optional fields for a Job definition::
 
 **workspace**
   Path for a custom workspace. Defaults to Jenkins default
+  configuration.
+
+**child-workspace**
+  Path for a child custom workspace. Defaults to Jenkins default
   configuration.
 
 **block-downstream**
