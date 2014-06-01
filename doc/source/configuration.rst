@@ -76,6 +76,10 @@ later.  There are a few basic optional fields for a Job definition::
   Path for a custom workspace. Defaults to Jenkins default
   configuration.
 
+**child-workspace**
+  Path for a child custom workspace. Defaults to Jenkins default
+  configuration.
+
 **block-downstream**
   Boolean value to set whether or not this job must block while
   downstream jobs are running. Downstream jobs are determined

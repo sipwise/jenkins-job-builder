@@ -58,6 +58,10 @@ later.  There are a few basic optional fields for a Job definition::
       Path for a custom workspace. Defaults to Jenkins default
       configuration.
 
+    * **child-workspace**:
+      Path for a child custom workspace. Defaults to Jenkins default
+      configuration.
+
     * **quiet-period**:
       Number of seconds to wait between consecutive runs of this job.
       Defaults to ``0``.
