@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_e702723d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-01T15:47:02Z",
+      "side": 1,
+      "message": "We are moving to test as examples so the examples will get continually tested and don\u0027t go stale.  Would you be willing to convert this entire example into one or more test files?  It\u0027s very easy, take a look at the tests/properties/fixtures folder to see examples of some tests.\n\nThen you can use a literalinclude to include the test file here as documentation.  take a look at the batch-task module below to see an example usage of  literalinclude.",
+      "revId": "861bb4b31b76ece9b10e7bad5212c06afc7250d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
