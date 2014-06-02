@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_165a09f3",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-06-02T22:45:11Z",
+      "side": 1,
+      "message": "The idea is to run the code as close as the original if the parallelization options are not passed, that prevents any failure in the parallelization code (or any unexpected behavior) to modify the behavior of the original function.\n\nSo I think that it\u0027s more logical to run the original function without extra pooling code when only one parameter passed in the parallelize argument, or when not passed at all, if only ne thread specified it should iterate the parallelized dict anyhow.\n\nSo it should be:\n  n_threads \u003d kwargs.pop(\u0027n_threads\u0027, None)\n  p_kwargs \u003d kwargs.pop(\u0027parallelize\u0027, {})\n  if len(p_kwargs) \u003d\u003d 1:\n      kwargs.update(p_kwargs)\n  if len(p_kwargs) in (1, 0):\n      return func(*args, **kwargs)\n\nSo yes, I think that it should run the same pooling code when n_threads \u003d\u003d 1.\n\nWill fix",
+      "parentUuid": "9ad9bd40_bea1ec95",
+      "revId": "3504c0500450a17ce2429319290010bc1473ea58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad9bd40_5ee540da",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 8
@@ -70,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_b6f8754a",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 792,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-06-02T22:45:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ad9bd40_fe70d441",
+      "revId": "3504c0500450a17ce2429319290010bc1473ea58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad9bd40_7e292436",
         "filename": "tests/parallel/test_parallel.py",
         "patchSetId": 8
@@ -81,6 +117,24 @@
       "writtenOn": "2014-05-06T23:16:20Z",
       "side": 1,
       "message": "Think it would be worth adding the following additional tests as they ensure that the cpu_count function is actually used when intended (could also check that it\u0027s not used in other cases) and that at least one of the special cases where the number of threads is set to 1 is handled as expected:\n\n    @patch(\u0027multiprocessing.cpu_count\u0027)\n    def test_use_auto_detect_cores(self, mockCpu_count):\n\n        @parallelize\n        def parallel_test():\n            return True\n\n        mockCpu_count.return_value \u003d cpu_count()\n        result \u003d parallel_test(parallelize\u003d[{} for _ in range(10)],\n                               n_threads\u003d0)\n        self.assertThat(result, Equals([True for _ in range(10)]))\n        mockCpu_count.assert_called()\n\n    def test_parallel_single_thread(self):\n        expected \u003d range(10, 20)\n\n        @parallelize\n        def parallel_test(num_base, num_extra):\n            return num_base + num_extra\n\n        parallel_args \u003d [{\u0027num_extra\u0027: num} for num in range(10)]\n        result \u003d parallel_test(10, parallelize\u003dparallel_args, n_threads\u003d1)\n        self.assertThat(result, Equals(expected))",
+      "revId": "3504c0500450a17ce2429319290010bc1473ea58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_16a12947",
+        "filename": "tests/parallel/test_parallel.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-06-02T22:45:11Z",
+      "side": 1,
+      "message": "I don\u0027t know where you get that patch decorator or the assert_called function, they are not in the testtools module as far as I can see, can you point me to the docs?",
+      "parentUuid": "9ad9bd40_7e292436",
       "revId": "3504c0500450a17ce2429319290010bc1473ea58",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
