@@ -1,3 +1,4 @@
+argparse
 hacking>=0.5.6,<0.8
 coverage>=3.6
 discover
@@ -9,3 +10,5 @@ testscenarios
 testtools
 testrepository
 sphinxcontrib-programoutput
+unittest2
+mock
