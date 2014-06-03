@@ -138,6 +138,24 @@
       "revId": "3504c0500450a17ce2429319290010bc1473ea58",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_8b2b4293",
+        "filename": "tests/parallel/test_parallel.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-03T09:49:50Z",
+      "side": 1,
+      "message": "Oops! Sorry about that.\n\nIt\u0027s available from https://pypi.python.org/pypi/mock for python \u003c 3 and as unittest.mock from python \u003e\u003d 3\n\nThe \u0027patch\u0027 decorator, mocks multiprocessing.cpu_count for the tested method only and passes through the mocked object as an argument to the decorated method, mockCpu_count in this case.\n\nThe \u0027assert_called\u0027 is just a standard method provided by the mock object.",
+      "parentUuid": "1ae5cdf2_16a12947",
+      "revId": "3504c0500450a17ce2429319290010bc1473ea58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
