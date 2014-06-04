@@ -161,9 +161,9 @@ remoteName/\*')
         data['remotes'] = [{data.get('name', 'origin'): data.copy()}]
     for remoteData in data['remotes']:
         huser = XML.SubElement(user, 'hudson.plugins.git.UserRemoteConfig')
-        remoteName = remoteData.keys()[0]
+        remoteName = next(iter(remoteData.keys()))
         XML.SubElement(huser, 'name').text = remoteName
-        remoteParams = remoteData.values()[0]
+        remoteParams = next(iter(remoteData.values()))
         if 'refspec' in remoteParams:
             refspec = remoteParams['refspec']
         else:
@@ -368,7 +368,7 @@ def store(self, xml_parent, data):
     pundles = XML.SubElement(scm, 'pundles')
     for pundle_spec in pundle_specs:
         pundle = XML.SubElement(pundles, '{0}.PundleSpec'.format(namespace))
-        pundle_type = pundle_spec.keys()[0]
+        pundle_type = next(iter(pundle_spec))
         pundle_name = pundle_spec[pundle_type]
         if pundle_type not in valid_pundle_types:
             raise JenkinsJobsException(
@@ -490,7 +490,7 @@ def svn(self, xml_parent, data):
 
 
 def tfs(self, xml_parent, data):
-    """yaml: tfs
+    r"""yaml: tfs
     Specifies the Team Foundation Server repository for this job.
     Requires the Jenkins `Team Foundation Server Plugin.
     <https://wiki.jenkins-ci.org/display/JENKINS/
