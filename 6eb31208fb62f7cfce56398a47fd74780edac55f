@@ -52,6 +52,24 @@
       "revId": "6eb31208fb62f7cfce56398a47fd74780edac55f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_693ed58d",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-06-04T09:31:33Z",
+      "side": 1,
+      "message": "I agree as well. Was just pointing the potential regression (i.e. no more pointing to a nicely formatted page).\n\n+1 ing.",
+      "parentUuid": "1ae5cdf2_6ccd395d",
+      "revId": "6eb31208fb62f7cfce56398a47fd74780edac55f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
