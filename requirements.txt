@@ -1,3 +1,4 @@
+six>=1.5.2
 PyYAML
 python-jenkins
 pbr>=0.8.2,<1.0
