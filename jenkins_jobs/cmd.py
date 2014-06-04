@@ -14,12 +14,11 @@
 # under the License.
 
 import argparse
-import ConfigParser
+from six.moves import configparser, StringIO
 import logging
 import os
 import platform
 import sys
-import cStringIO
 
 from jenkins_jobs.builder import Builder
 from jenkins_jobs.errors import JenkinsJobsException
@@ -115,9 +114,9 @@ def setup_config_settings(options):
                                  'jenkins_jobs.ini')
         if os.path.isfile(localconf):
             conf = localconf
-    config = ConfigParser.ConfigParser()
+    config = configparser.ConfigParser()
     ## Load default config always
-    config.readfp(cStringIO.StringIO(DEFAULT_CONF))
+    config.readfp(StringIO(DEFAULT_CONF))
     if options.command == 'test':
         logger.debug("Not reading config for test output generation")
     elif os.path.isfile(conf):
@@ -152,11 +151,11 @@ def execute(options, config):
     # https://bugs.launchpad.net/openstack-ci/+bug/1259631
     try:
         user = config.get('jenkins', 'user')
-    except (TypeError, ConfigParser.NoOptionError):
+    except (TypeError, configparser.NoOptionError):
         user = None
     try:
         password = config.get('jenkins', 'password')
-    except (TypeError, ConfigParser.NoOptionError):
+    except (TypeError, configparser.NoOptionError):
         password = None
 
     builder = Builder(config.get('jenkins', 'url'),

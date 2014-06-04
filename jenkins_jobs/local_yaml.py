@@ -115,7 +115,7 @@ class LocalLoader(yaml.Loader):
         self.add_constructor('!include-raw-escape',
                              self._include_raw_escape_tag)
 
-        if isinstance(self.stream, file):
+        if hasattr(self.stream, 'name'):
             self.search_path.add(os.path.normpath(
                 os.path.dirname(self.stream.name)))
         self.search_path.add(os.path.normpath(os.path.curdir))
