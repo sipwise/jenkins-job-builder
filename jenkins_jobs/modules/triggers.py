@@ -34,6 +34,10 @@ import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 from jenkins_jobs.modules import hudson_model
 import logging
+try:
+    from collections import OrderedDict
+except ImportError:
+    from ordereddict import OrderedDict
 import re
 
 
@@ -90,7 +94,7 @@ def build_gerrit_triggers(xml_parent, data):
         'hudsontrigger.events'
 
     trigger_on_events = XML.SubElement(xml_parent, 'triggerOnEvents')
-    for config_key, tag_name in available_simple_triggers.iteritems():
+    for config_key, tag_name in available_simple_triggers.items():
         if data.get(config_key, False):
             XML.SubElement(trigger_on_events,
                            '%s.%s' % (tag_namespace, tag_name))
@@ -106,14 +110,14 @@ def build_gerrit_triggers(xml_parent, data):
 
 
 def build_gerrit_skip_votes(xml_parent, data):
-    outcomes = {'successful': 'onSuccessful',
-                'failed': 'onFailed',
-                'unstable': 'onUnstable',
-                'notbuilt': 'onNotBuilt'}
+    outcomes = OrderedDict([('successful', 'onSuccessful'),
+                            ('failed', 'onFailed'),
+                            ('unstable', 'onUnstable'),
+                            ('notbuilt', 'onNotBuilt')])
 
     skip_vote_node = XML.SubElement(xml_parent, 'skipVote')
     skip_vote = data.get('skip-vote', {})
-    for result_kind, tag_name in outcomes.iteritems():
+    for result_kind, tag_name in outcomes.items():
         if skip_vote.get(result_kind, False):
             XML.SubElement(skip_vote_node, tag_name).text = 'true'
         else:
