@@ -115,7 +115,12 @@ class LocalLoader(yaml.Loader):
         self.add_constructor('!include-raw-escape',
                              self._include_raw_escape_tag)
 
-        if isinstance(self.stream, file):
+        # constructor to preserve order of maps and ensure that the order of
+        # keys returned is consistent across multiple python versions
+        self.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG,
+                             type(self).construct_yaml_map)
+
+        if hasattr(self.stream, 'name'):
             self.search_path.add(os.path.normpath(
                 os.path.dirname(self.stream.name)))
         self.search_path.add(os.path.normpath(os.path.curdir))
