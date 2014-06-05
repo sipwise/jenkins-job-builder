@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a866e027",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1943,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-05T17:12:18Z",
+      "side": 1,
+      "message": "Should we maybe check that the user supplied a valid build result state?",
+      "revId": "6ea139ee3f01f207401001cbf97975bd9db11c49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_43a1bf92",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1955,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-05T17:12:18Z",
+      "side": 1,
+      "message": "Should we maybe check that the user supplied a valid build result state?",
+      "revId": "6ea139ee3f01f207401001cbf97975bd9db11c49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_639ebb64",
+        "filename": "tests/publishers/fixtures/sounds002.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-05T17:12:18Z",
+      "side": 1,
+      "message": "you failure in all of the examples.  how about use a different one here?",
+      "revId": "6ea139ee3f01f207401001cbf97975bd9db11c49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
