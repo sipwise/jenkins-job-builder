@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_50c25e53",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-05T18:21:37Z",
+      "side": 1,
+      "message": "please add example for new param here.",
+      "revId": "2bbf287dc9034d1314ffb486306f86e509af5c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_90c06651",
+        "filename": "doc/source/general.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-05T18:21:37Z",
+      "side": 1,
+      "message": "please add example for new param here.",
+      "revId": "2bbf287dc9034d1314ffb486306f86e509af5c69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
