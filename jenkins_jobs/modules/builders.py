@@ -42,6 +42,7 @@ import jenkins_jobs.modules.base
 from jenkins_jobs.modules import hudson_model
 from jenkins_jobs.modules.helpers import config_file_provider_builder
 from jenkins_jobs.modules.helpers import config_file_provider_settings
+from jenkins_jobs.modules.publishers import base_publish_over
 from jenkins_jobs.errors import (JenkinsJobsException,
                                  MissingAttributeError,
                                  InvalidAttributeError)
@@ -1599,6 +1600,44 @@ def critical_block_end(parser, xml_parent, data):
         XML.SubElement(xml_parent,
                        'org.jvnet.hudson.plugins.exclusion.CriticalBlockEnd')
     cbs.set('plugin', 'Exclusion')
+
+
+def publish_over_ssh(parser, xml_parent, data):
+    """yaml: publish-over-ssh
+    Send files or execute commands over SSH.
+    Requires the Jenkins `Publish over SSH Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Publish+Over+SSH+Plugin>`_
+
+    :arg str site: name of the ssh site
+    :arg str target: destination directory
+    :arg bool target-is-date-format: whether target is a date format. If true,
+      raw text should be quoted (defaults to False)
+    :arg bool clean-remote: should the remote directory be deleted before
+      transferring files (defaults to False)
+    :arg str source: source path specifier
+    :arg str command: a command to execute on the remote server (optional)
+    :arg int timeout: timeout in milliseconds for the Exec command (optional)
+    :arg bool use-pty: run the exec command in pseudo TTY (defaults to False)
+    :arg str excludes: excluded file pattern (optional)
+    :arg str remove-prefix: prefix to remove from uploaded file paths
+      (optional)
+    :arg bool fail-on-error: fail the build if an error occurs (defaults to
+      False).
+
+    Example::
+
+    .. literalinclude:: /../../tests/builders/fixtures/publish-over-ssh.yaml
+       :language: yaml
+    """
+    console_prefix = 'SSH: '
+    tag_prefix = 'jenkins.plugins.publish'
+    plugin_tag = '%s__over__ssh.BapSshBuilderPlugin' % tag_prefix
+    publisher_tag = '%s__over__ssh.BapSshPublisher' % tag_prefix
+    transfer_tag = '%s__over__ssh.BapSshTransfer' % tag_prefix
+    reference_tag = '%s_over_ssh.BapSshPublisherPlugin' % tag_prefix
+
+    base_publish_over(xml_parent, data, console_prefix, plugin_tag,
+                      publisher_tag, transfer_tag, reference_tag)
 
 
 class Builders(jenkins_jobs.modules.base.Base):
