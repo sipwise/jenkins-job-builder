@@ -1,0 +1,6 @@
+builders:
+    - ssh:
+        site: 'server.example.com'
+        target: 'dest/dir'
+        source: 'base/source/dir/**'
+        timeout: 1800000
