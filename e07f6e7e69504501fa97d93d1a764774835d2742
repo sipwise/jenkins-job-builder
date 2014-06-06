@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_64d060ca",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-06-06T15:03:43Z",
+      "side": 0,
+      "message": "The code got introduced by https://review.openstack.org/#/c/43013/ and although it does not support parameters substation, that adds support to pass parameters to jobs in groups.  Removing that example entirely would left the feature undocumented.\n\nCan we come up with an example that does not use a variable and reference bug #1298568. Something like:\n\n - job-group:\n     name: job-group-name\n     jobs:\n         - \u0027{name}-build\u0027:\n             param: \u0027value\u0027\n         - \u0027{name}-upload\u0027:\n             dest: \u0027site.example.com\u0027",
+      "revId": "e07f6e7e69504501fa97d93d1a764774835d2742",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
