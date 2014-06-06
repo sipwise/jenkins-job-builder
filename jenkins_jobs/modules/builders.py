@@ -1028,6 +1028,93 @@ def critical_block_end(parser, xml_parent, data):
     cbs.set('plugin', 'Exclusion')
 
 
+def ssh(parser, xml_parent, data):
+    """yaml: ssh
+    Send files or execute commands over SSH.
+    Requires the Jenkins `Publish over SSH Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Publish+Over+SSH+Plugin>`_
+
+    :arg str site: name of the ssh site
+    :arg str target: destination directory
+    :arg bool target-is-date-format: whether target is a date format. If true,
+      raw text should be quoted (defaults to False)
+    :arg bool clean-remote: should the remote directory be deleted before
+      transferring files (defaults to False)
+    :arg str source: source path specifier
+    :arg str command: a command to execute on the remote server (optional)
+    :arg int timeout: timeout in milliseconds for the Exec command (optional)
+    :arg bool use-pty: run the exec command in pseudo TTY (defaults to False)
+    :arg str excludes: excluded file pattern (optional)
+    :arg str remove-prefix: prefix to remove from uploaded file paths
+      (optional)
+    :arg bool fail-on-error: fail the build if an error occurs (defaults to
+      False).
+
+    Example::
+
+      builders:
+        - ssh:
+            site: 'server.example.com'
+            target: 'dest/dir'
+            source: 'base/source/dir/**'
+            remove-prefix: 'base/source/dir'
+            excludes: '**/*.excludedfiletype'
+            use-pty: true
+            command: 'rm -r jenkins_$BUILD_NUMBER'
+            timeout: 1800000
+    """
+    console_prefix = 'SSH: '
+    tag_prefix = 'jenkins.plugins.publish'
+    plugin_tag = '%s__over__ssh.BapSshBuilderPlugin' % tag_prefix
+    publisher_tag = '%s__over__ssh.BapSshPublisher' % tag_prefix
+    transfer_tag = '%s__over__ssh.BapSshTransfer' % tag_prefix
+    reference_tag = '%s_over_ssh.BapSshPublisherPlugin' % tag_prefix
+
+    ssh_builder = XML.SubElement(xml_parent, plugin_tag)
+    top_delegate = XML.SubElement(ssh_builder, 'delegate')
+    XML.SubElement(top_delegate, 'consolePrefix').text = console_prefix
+
+    delegate = XML.SubElement(top_delegate, 'delegate')
+    publishers = XML.SubElement(delegate, 'publishers')
+
+    ssh_publisher = XML.SubElement(publishers, publisher_tag)
+    XML.SubElement(ssh_publisher, 'configName').text = data['site']
+    XML.SubElement(ssh_publisher, 'verbose').text = 'true'
+
+    transfers = XML.SubElement(ssh_publisher, 'transfers')
+    ssh_transfer = XML.SubElement(transfers, transfer_tag)
+
+    XML.SubElement(ssh_transfer, 'remoteDirectory').text = data['target']
+    XML.SubElement(ssh_transfer, 'sourceFiles').text = data['source']
+    XML.SubElement(ssh_transfer, 'excludes').text = data.get('excludes', '')
+    XML.SubElement(ssh_transfer, 'removePrefix').text = \
+        data.get('remove-prefix', '')
+    XML.SubElement(ssh_transfer, 'remoteDirectorySDF').text = \
+        str(data.get('target-is-date-format', False)).lower()
+    XML.SubElement(ssh_transfer, 'flatten').text = 'false'
+    XML.SubElement(ssh_transfer, 'cleanRemote').text = \
+        str(data.get('clean-remote', False)).lower()
+
+    if 'command' in data:
+        XML.SubElement(ssh_transfer, 'execCommand').text = data['command']
+    if 'timeout' in data:
+        XML.SubElement(ssh_transfer, 'execTimeout').text = str(data['timeout'])
+    if 'use-pty' in data:
+        XML.SubElement(ssh_transfer, 'usePty').text = \
+            str(data.get('use-pty', False)).lower()
+
+    XML.SubElement(ssh_publisher, 'useWorkspaceInPromotion').text = 'false'
+    XML.SubElement(ssh_publisher, 'usePromotionTimestamp').text = 'false'
+
+    XML.SubElement(delegate, 'continueOnError').text = 'false'
+    XML.SubElement(delegate, 'failOnError').text = \
+        str(data.get('fail-on-error', False)).lower()
+    XML.SubElement(delegate, 'alwaysPublishFromMaster').text = \
+        str(data.get('always-publish-from-master', False)).lower()
+    XML.SubElement(delegate, 'hostConfigurationAccess',
+                   {'class': reference_tag, 'reference': '../..'})
+
+
 class Builders(jenkins_jobs.modules.base.Base):
     sequence = 60
 
