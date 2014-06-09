@@ -1414,6 +1414,8 @@ def email_ext(parser, xml_parent, data):
         base_email_ext(parser, ctrigger, data, 'RegressionTrigger')
     if data.get('failure', True):
         base_email_ext(parser, ctrigger, data, 'FailureTrigger')
+    if data.get('second-failure', False):
+        base_email_ext(parser, ctrigger, data, 'SecondFailureTrigger')
     if data.get('improvement', False):
         base_email_ext(parser, ctrigger, data, 'ImprovementTrigger')
     if data.get('still-failing', False):
