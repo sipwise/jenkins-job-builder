@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a98e53ce",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-10T18:46:18Z",
+      "side": 1,
+      "message": "missing close brace?",
+      "revId": "eb9cdee7eec8572bbfd48ee47ae05efd47fd18c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_c979dffd",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-10T18:46:18Z",
+      "side": 1,
+      "message": "\"Choice should be one of the following\" would be better.",
+      "revId": "eb9cdee7eec8572bbfd48ee47ae05efd47fd18c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_c960ff37",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 525,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-10T18:46:18Z",
+      "side": 1,
+      "message": "can you re-use the result_dict to show the valid values here?",
+      "revId": "eb9cdee7eec8572bbfd48ee47ae05efd47fd18c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_c94abf82",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-10T18:46:18Z",
+      "side": 1,
+      "message": "is completeBuild not part of the result_dict?",
+      "revId": "eb9cdee7eec8572bbfd48ee47ae05efd47fd18c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
