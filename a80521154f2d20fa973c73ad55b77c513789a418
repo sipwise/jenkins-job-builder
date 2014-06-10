@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_45169556",
+        "filename": "etc/jenkins_jobs.ini-sample",
+        "patchSetId": 22
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-10T18:31:11Z",
+      "side": 1,
+      "message": "I don\u0027t think we need a new section for yaml loading in this case.  IMO loading yaml is just a step in building jobs, not something separate enough to warrant a new section therefore i think we should move these to job_builder section.\n\nAlso there\u0027s a proposal to add a recursive option for loading yaml files ( I126751e347622716c592c6ed1a57b8acb7bf79a4).  I think hat option naturally fits in job_builder section.  To be consistent both recursive and include_path should go together.",
+      "revId": "a80521154f2d20fa973c73ad55b77c513789a418",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
