@@ -1174,3 +1174,43 @@ def shining_panda(parser, xml_parent, data):
     XML.SubElement(t, 'command').text = data.get("command", "")
     ignore_exit_code = data.get('ignore-exit-code', False)
     XML.SubElement(t, 'ignoreExitCode').text = str(ignore_exit_code).lower()
+
+
+def managed_script(parser, xml_parent, data):
+    """yaml: managed-script
+    This step allows to reference and execute a centrally managed
+    script within your build. Requires the Jenkins `Managed Script Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Managed+Script+Plugin>`_
+
+    :arg str script-id: Id of script to execute
+    :arg str type: Type of managed file (default: script)
+
+        :type values:
+            * **batch**: Execute managed windows batch
+            * **script**: Execute managed script
+
+    :arg list args: Arguments to be passed to referenced script
+
+    Example:
+
+    .. literalinclude:: /../../tests/builders/fixtures/managed-script.yaml
+       :language: yaml
+
+    .. literalinclude:: /../../tests/builders/fixtures/managed-winbatch.yaml
+       :language: yaml
+    """
+    if data.get('type', 'script').lower() == 'script':
+        step = 'ScriptBuildStep'
+        script_tag = 'buildStepId'
+    elif data.get('type', 'script').lower() == 'batch':
+        step = 'WinBatchBuildStep'
+        script_tag = 'command'
+    else:
+        raise JenkinsJobsException("type entered is not valid must be "
+                                   "one of: script or batch")
+    ms = XML.SubElement(xml_parent,
+                        'org.jenkinsci.plugins.managedscripts.' + step)
+    XML.SubElement(ms, script_tag).text = data.get('script-id', '')
+    args = XML.SubElement(ms, 'buildStepArgs')
+    for arg in data.get('args', []):
+        XML.SubElement(args, 'string').text = arg
