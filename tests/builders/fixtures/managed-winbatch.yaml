@@ -1,0 +1,6 @@
+builders:
+  - managed-winbatch:
+      script-id: org.jenkinsci.plugins.managedscripts.WinBatchConfig1402391729132
+      args: 
+        - arg1
+        - arg2

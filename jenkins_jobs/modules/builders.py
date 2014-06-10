@@ -1174,3 +1174,47 @@ def shining_panda(parser, xml_parent, data):
     XML.SubElement(t, 'command').text = data.get("command", "")
     ignore_exit_code = data.get('ignore-exit-code', False)
     XML.SubElement(t, 'ignoreExitCode').text = str(ignore_exit_code).lower()
+    
+def managed_script(parser, xml_parent, data):
+    """yaml: managed-script
+    This step allows to reference and execute a centrally managed
+    script within your build. Requires the Jenkins `Managed Script Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Managed+Script+Plugin>`_
+
+    :arg str script-id: Id of script to execute
+    :arg list args: Arguments to be passed to referenced script
+
+    Example:
+
+    .. managed-script:: ../../tests/builders/fixtures/managed-script.yaml
+       :language: yaml
+    """
+    ms = \
+       XML.SubElement(xml_parent, 
+                      'org.jenkinsci.plugins.managedscripts.ScriptBuildStep')
+    XML.SubElement(ms, 'buildStepId').text = data.get('script-id', '')
+    args = XML.SubElement(ms, 'buildStepArgs')
+    for arg in data.get('args', []):
+        XML.SubElement(args, 'string').text = arg
+        
+def managed_winbatch(parser, xml_parent, data):
+    """yaml: managed-winbatch
+    This step allows to reference and execute a centrally managed
+    batch file within your build. Requires the Jenkins `Managed Script Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Managed+Script+Plugin>`_
+
+    :arg str script-id: Id of script to execute
+    :arg list args: Arguments to be passed to referenced script
+
+    Example:
+
+    .. managed-script:: ../../tests/builders/fixtures/managed-winbatch.yaml
+       :language: yaml
+    """
+    ms = \
+       XML.SubElement(xml_parent, 
+                      'org.jenkinsci.plugins.managedscripts.WinBatchBuildStep')
+    XML.SubElement(ms, 'command').text = data.get('script-id', '')
+    args = XML.SubElement(ms, 'buildStepArgs')
+    for arg in data.get('args', []):
+        XML.SubElement(args, 'string').text = arg
