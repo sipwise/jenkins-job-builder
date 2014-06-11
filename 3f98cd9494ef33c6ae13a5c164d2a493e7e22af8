@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_54754dc9",
+        "filename": "requirements.txt",
+        "patchSetId": 13
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-06-11T09:25:30Z",
+      "side": 1,
+      "message": "Ubuntu latest LTS (trusty) ships 1.5.2. I am wondering whether we can soften the dependency version to avoid having folks to install the update from pip.\n\nNot a blocker though, just wondering whether it is a good idea.",
+      "revId": "3f98cd9494ef33c6ae13a5c164d2a493e7e22af8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
