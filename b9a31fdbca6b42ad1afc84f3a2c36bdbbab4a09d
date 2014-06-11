@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_98a1ad48",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-11T22:57:27Z",
+      "side": 1,
+      "message": "Try to get back to this over the weekend.\n\nBaring any objections I think it would I\u0027ll go with option 3 but provide backwards compat with the existing behaviour and issue a deprecation warning in the case that the value passed does not have the \u0027__iter__\u0027 method implemented.",
+      "parentUuid": "1ae5cdf2_92a485ba",
+      "revId": "b9a31fdbca6b42ad1afc84f3a2c36bdbbab4a09d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_52467d50",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 5
@@ -83,6 +101,24 @@
       "writtenOn": "2014-06-10T00:37:00Z",
       "side": 1,
       "message": "shouldn\u0027t recursive option get passed to builder here?",
+      "revId": "b9a31fdbca6b42ad1afc84f3a2c36bdbbab4a09d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_d8d895f1",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-11T22:57:27Z",
+      "side": 1,
+      "message": "Builder object doesn\u0027t do the recursive search for files, it\u0027s methods such as update_jobs will be given the list of paths in the case the recursive option is turned on, and these will in turn call \u0027load_files\u0027.",
+      "parentUuid": "1ae5cdf2_d2f60df9",
       "revId": "b9a31fdbca6b42ad1afc84f3a2c36bdbbab4a09d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
