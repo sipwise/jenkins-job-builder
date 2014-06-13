@@ -803,6 +803,8 @@ def multijob(parser, xml_parent, data):
                   to the other job (optional)
                 * **predefined-parameters** (`str`) -- Pass predefined
                   parameters to the other job (optional)
+                * **kill-phase-on** (`str`) -- Stop the phase execution
+                  on specific job status (optional)
 
     Example:
 
@@ -869,6 +871,14 @@ def multijob(parser, xml_parent, data):
                                    'PredefinedBuildParameters')
             properties = XML.SubElement(param, 'properties')
             properties.text = predefined_parameters
+
+        # Kill phase on job status
+        kill_status = project.get('kill-phase-on')
+        if kill_status is not None:
+            XML.SubElement(
+                phaseJob,
+                'killPhaseOnJobResultCondition'
+            ).text = kill_status
 
 
 def grails(parser, xml_parent, data):
