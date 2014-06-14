@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_f8b6da23",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 807,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-06-14T20:12:54Z",
+      "side": 1,
+      "message": "Could you document some possible values?  Eg UNSTABLE.",
+      "revId": "a734a671f04a68c352bba25888d483059202b2ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
