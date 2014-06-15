@@ -32,6 +32,7 @@ import itertools
 import fnmatch
 import ConfigParser
 from jenkins_jobs.errors import JenkinsJobsException
+import local_yaml
 
 logger = logging.getLogger(__name__)
 MAGIC_MANAGE_STRING = "<!-- Managed by Jenkins Job Builder -->"
@@ -123,9 +124,16 @@ class YamlParser(object):
         self.jobs = []
         self.config = config
         self.registry = ModuleRegistry(self.config)
+        self.path = ["."]
+        if self.config:
+            try:
+                self.path = config.get('job_builder',
+                                       'include_path').split(':')
+            except (ConfigParser.NoSectionError, ConfigParser.NoOptionError):
+                pass
 
     def parse_fp(self, fp):
-        data = yaml.load(fp)
+        data = local_yaml.load(fp, search_path=self.path)
         if data:
             if not isinstance(data, list):
                 raise JenkinsJobsException(
