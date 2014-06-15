@@ -30,6 +30,7 @@ import logging
 import copy
 import itertools
 import fnmatch
+import ConfigParser
 from jenkins_jobs.errors import JenkinsJobsException
 
 logger = logging.getLogger(__name__)
@@ -304,8 +305,11 @@ class YamlParser(object):
     def getXMLForJob(self, data):
         kind = data.get('project-type', 'freestyle')
         if self.config:
-            keep_desc = self.config.getboolean('job_builder',
-                                               'keep_descriptions')
+            try:
+                keep_desc = self.config.getboolean('job_builder',
+                                                   'keep_descriptions')
+            except (ConfigParser.NoSectionError, ConfigParser.NoOptionError):
+                keep_desc = False
         else:
             keep_desc = False
         if keep_desc:
