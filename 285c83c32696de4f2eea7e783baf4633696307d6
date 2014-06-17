@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_23d189cd",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1186,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-17T22:35:39Z",
+      "side": 1,
+      "message": "Do we need 2 separate methods (managed_script \u0026 managed_winbatch) for this?  It seems like these 2 can be combined into one.  Maybe just add another \u0027type\u0027 param here indicating the script type so you can build either an batch or script?",
+      "revId": "285c83c32696de4f2eea7e783baf4633696307d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_43ae9599",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1190,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-17T22:35:39Z",
+      "side": 1,
+      "message": "need to have a leading slash otherwise it won\u0027t look right in docs, like this /../../tests/builders/..",
+      "revId": "285c83c32696de4f2eea7e783baf4633696307d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a39e7961",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1214,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-17T22:35:39Z",
+      "side": 1,
+      "message": "same as above.",
+      "revId": "285c83c32696de4f2eea7e783baf4633696307d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_43ea15ad",
+        "filename": "tests/builders/fixtures/managed-script.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-17T22:35:39Z",
+      "side": 1,
+      "message": "remove trailing whitespace",
+      "revId": "285c83c32696de4f2eea7e783baf4633696307d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_e3dc011b",
+        "filename": "tests/builders/fixtures/managed-winbatch.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-17T22:35:39Z",
+      "side": 1,
+      "message": "please remove trailing whitespace",
+      "revId": "285c83c32696de4f2eea7e783baf4633696307d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
