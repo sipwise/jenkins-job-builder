@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <buildWrappers>
+    <hudson.plugins.logfilesizechecker.LogfilesizecheckerWrapper plugin="logfilesizechecker@1.2">
+        <setOwn>true</setOwn>
+        <maxLogSize>1024</maxLogSize>
+        <failBuild>false</failBuild>
+    </hudson.plugins.logfilesizechecker.LogfilesizecheckerWrapper>
+  </buildWrappers>
+</project>

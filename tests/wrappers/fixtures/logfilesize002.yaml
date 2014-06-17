@@ -1,0 +1,5 @@
+wrappers:
+  - logfilesize:
+      set-own: false
+      size: 5
+      fail: true

@@ -56,6 +56,35 @@ def ci_skip(parser, xml_parent, data):
     })
 
 
+def logfilesize(parser, xml_parent, data):
+    """yaml: logfilesize
+    Abort the build if its logfile becames too big.
+    Requires the Jenkins `Logfilesizechecker Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Logfilesizechecker+Plugin>`_
+
+    :arg bool set-own: Use job specific maximum log size instead global
+        value (500 MB)
+    :arg bool fail: Mark the build as failed (default false)
+    :arg int size: Abort the build if logfile size is bigger than this
+        value (in MB)
+
+    Example:
+
+    .. literalinclude:: /../../tests/wrappers/fixtures/logfilesize001.yaml
+
+    """
+    lfswrapper = XML.SubElement(xml_parent,
+                                'hudson.plugins.logfilesizechecker.'
+                                'LogfilesizecheckerWrapper')
+    lfswrapper.set("plugin", "logfilesizechecker@1.2")
+    XML.SubElement(lfswrapper, 'setOwn').text = str(
+        data.get('set-own', 'false')).lower()
+    XML.SubElement(lfswrapper, 'maxLogSize').text = str(
+        data.get('size', '128')).lower()
+    XML.SubElement(lfswrapper, 'failBuild').text = str(
+        data.get('fail', 'false')).lower()
+
+
 def timeout(parser, xml_parent, data):
     """yaml: timeout
     Abort the build if it runs too long.
