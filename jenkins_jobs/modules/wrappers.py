@@ -24,6 +24,7 @@ Wrappers can alter the way the build is run as well as the build output.
 
 import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
+from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.modules.builders import create_builders
 
 
@@ -54,6 +55,43 @@ def ci_skip(parser, xml_parent, data):
     XML.SubElement(obj, 'ci__skip', {
         'pluginid': 'ci-skip', 'ruby-class': 'NilClass'
     })
+
+
+def logfilesize(parser, xml_parent, data):
+    """yaml: logfilesize
+    Abort the build if its logfile becomes too big.
+    Requires the Jenkins `Logfilesizechecker Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Logfilesizechecker+Plugin>`_
+
+    :arg bool set-own: Use job specific maximum log size instead of global
+        config value.
+    :arg bool fail: Make builds aborted by this wrapper be marked as "failed"
+        (default false).
+    :arg int size: Abort the build if logfile size is bigger than this
+        value (in MiB). Only applies if set-own is true.
+
+    Example:
+
+    .. literalinclude:: /../../tests/wrappers/fixtures/logfilesize001.yaml
+
+    .. literalinclude:: /../../tests/wrappers/fixtures/logfilesize002.yaml
+
+    """
+    lfswrapper = XML.SubElement(xml_parent,
+                                'hudson.plugins.logfilesizechecker.'
+                                'LogfilesizecheckerWrapper')
+    lfswrapper.set("plugin", "logfilesizechecker")
+    try:
+        set_own = data['set-own']
+    except KeyError:
+        raise JenkinsJobsException(
+            "set-own must be defined for logfilesize plugin")
+
+    XML.SubElement(lfswrapper, 'setOwn').text = str(set_own).lower()
+    XML.SubElement(lfswrapper, 'maxLogSize').text = str(
+        data.get('size', '128')).lower()
+    XML.SubElement(lfswrapper, 'failBuild').text = str(
+        data.get('fail', 'false')).lower()
 
 
 def timeout(parser, xml_parent, data):
