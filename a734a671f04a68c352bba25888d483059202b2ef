@@ -16,6 +16,41 @@
       "revId": "a734a671f04a68c352bba25888d483059202b2ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_f9ac8a8a",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 807,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-18T16:51:59Z",
+      "side": 1,
+      "message": "+1 to that.  also please check that the passed in values are valid.  here\u0027s an example: http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/modules/publishers.py#n335",
+      "parentUuid": "1ae5cdf2_f8b6da23",
+      "revId": "a734a671f04a68c352bba25888d483059202b2ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7916baf3",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 811,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-18T16:51:59Z",
+      "side": 1,
+      "message": "not your fault, but could you please add a leading slash here otherwise docs wont render correctly?  like this  \"/../../tests/..\"",
+      "revId": "a734a671f04a68c352bba25888d483059202b2ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
