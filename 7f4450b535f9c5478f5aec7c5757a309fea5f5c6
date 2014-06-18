@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_521f3409",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1069,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-18T05:22:21Z",
+      "side": 1,
+      "message": "need a leading slash (i.e. /../../tests/builders/..)",
+      "revId": "7f4450b535f9c5478f5aec7c5757a309fea5f5c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_52cd7485",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1083,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-18T05:22:21Z",
+      "side": 1,
+      "message": "should this be \u0027the groovy command ..\u0027 instead?",
+      "revId": "7f4450b535f9c5478f5aec7c5757a309fea5f5c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_729d1057",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1089,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-18T05:22:21Z",
+      "side": 1,
+      "message": "is this properties different than one in groovy_system? I\u0027m wondering why the description is different?",
+      "revId": "7f4450b535f9c5478f5aec7c5757a309fea5f5c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_9219bc24",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1094,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-18T05:22:21Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "7f4450b535f9c5478f5aec7c5757a309fea5f5c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_929e1c62",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1104,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-18T05:22:21Z",
+      "side": 1,
+      "message": "i don\u0027t see \u0027java-opts\u0027 parameter in doc above.  should this be \u0027parameters\u0027 instead?",
+      "revId": "7f4450b535f9c5478f5aec7c5757a309fea5f5c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
