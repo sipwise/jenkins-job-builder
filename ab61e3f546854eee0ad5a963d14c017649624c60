@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_2ae3cc34",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-19T14:36:13Z",
+      "side": 1,
+      "message": "Previously logging.INFO was the default, if we\u0027re setting the default at the top of the file to logging.WARNING, should we not use the same level or at least use:\n\n logger.getEffectiveLevel()\n\nTo retain the same level if what is specified is bogus?",
+      "revId": "ab61e3f546854eee0ad5a963d14c017649624c60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
