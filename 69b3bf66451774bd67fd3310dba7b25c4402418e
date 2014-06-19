@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_4c4f6292",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1381,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-06-19T09:05:07Z",
+      "side": 1,
+      "message": "The doc block should be moved after the next block \u0027matrix-trigger\u0027 :-) Will do.",
+      "revId": "69b3bf66451774bd67fd3310dba7b25c4402418e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
