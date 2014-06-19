@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_49273d12",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-06-19T19:13:34Z",
+      "side": 1,
+      "message": "I proposed on the parent patchset https://review.openstack.org/#/c/100098/2/jenkins_jobs/builder.py  to use config.has_option() instead of catching exceptions.  Ie:\n\n if config.has_option(\u0027job_builder\u0027, \u0027include_path\u0027):\n      self.path \u003d config.get(\u0027job_builder\u0027, \u0027include_path\u0027).split(\u0027:\u0027)\n\nSlightly easier to read compared to exceptions.\n\nFeel free to dismiss.",
+      "revId": "602758901d3d852da91f21abfb165efca3af9dc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_0980d5f5",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-06-19T19:13:34Z",
+      "side": 1,
+      "message": "Nit: Instead of single quoting \u0027!include\u0027 I would use double backquotes to denote a code sample. Ie ``!include``.",
+      "revId": "602758901d3d852da91f21abfb165efca3af9dc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_2983d103",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-06-19T19:13:34Z",
+      "side": 1,
+      "message": "Nit: double backquotes around !include-raw",
+      "revId": "602758901d3d852da91f21abfb165efca3af9dc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_8973054d",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-06-19T19:13:34Z",
+      "side": 1,
+      "message": "Nit: double backquotes around !include-raw-escape",
+      "revId": "602758901d3d852da91f21abfb165efca3af9dc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a9d361ff",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-06-19T19:13:34Z",
+      "side": 1,
+      "message": "I wish we could show the included file, the yaml template using !include* and the resulting output.  But that can be figured out later on.",
+      "revId": "602758901d3d852da91f21abfb165efca3af9dc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_c9bb4de3",
+        "filename": "tests/base.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-06-19T19:13:34Z",
+      "side": 1,
+      "message": "I am not sure this is needed. Looks like it is meant to avoid reloading all the files each time a method of this class is invoked.\n\nThat could use a comment. Ideally we would have the cache build-in the BaseTestCase class. But that is out of scope.",
+      "revId": "602758901d3d852da91f21abfb165efca3af9dc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
