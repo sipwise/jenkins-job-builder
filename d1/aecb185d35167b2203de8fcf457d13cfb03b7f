@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+2: Antoine Musso <hashar@free.fr>
+Workflow+1: Antoine Musso <hashar@free.fr>
+Code-Review+2: Khai Do <zaro0508@gmail.com>
+Code-Review+1: Matthew Oliver <matt@oliver.net.au>
+Submitted-by: Jenkins
+Submitted-at: Thu, 19 Jun 2014 09:05:06 +0000
+Reviewed-on: https://review.openstack.org/98803
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
