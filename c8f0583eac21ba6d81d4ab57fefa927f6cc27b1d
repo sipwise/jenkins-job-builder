@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_c6197c89",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-06-19T18:47:16Z",
+      "side": 1,
+      "message": "To avoid loading ConfigParser and maintaining a list of potential exceptions, I would rather check whether the config has the option. That is done at other place. Ie something like:\n\n if self.config.has_option(\u0027job_builder\u0027, \u0027keep_descriptions\u0027):\n     keep_desc \u003d self.config.getboolean(\u0027job_builder\u0027, \u0027keep_descriptions\u0027)\n else:\n     keep_desc \u003d False\n\nThat is imho nicer and easier to understand than catching exceptions.\n\nIdeally we would have all the defaults applied in cmd.py when initializing the configparser. But that needs a bit more work.",
+      "revId": "c8f0583eac21ba6d81d4ab57fefa927f6cc27b1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
