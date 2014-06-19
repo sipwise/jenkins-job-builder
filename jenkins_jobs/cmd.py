@@ -28,6 +28,7 @@ DEFAULT_CONF = """
 [job_builder]
 keep_descriptions=False
 ignore_cache=False
+ignore_missing_parameters=False
 
 [jenkins]
 url=http://localhost:8080/
