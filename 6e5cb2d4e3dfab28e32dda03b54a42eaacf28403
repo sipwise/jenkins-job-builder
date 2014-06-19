@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_cc6e1296",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-19T09:13:28Z",
+      "side": 1,
+      "message": "This block of code below is identical for both groovy and system_groovy. Why not place it in a common helper function?\n\nAlso would it be useful to at least check to see if both command and file with defined by accident and raise an error, as otherwise this will silently ignore the \u0027file\u0027 entry if both are defined?",
+      "revId": "6e5cb2d4e3dfab28e32dda03b54a42eaacf28403",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_8ca08a43",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-19T09:13:28Z",
+      "side": 1,
+      "message": "For all of the settings below, the groovy plugin sets empty tags if the value is not specified.\n\nI would generally go with the plugin behaviour and so use:\n\n XML.SubElement(groovy, \u0027\u003ctag\u003e\u0027).text \u003d str(data.get(\u0027\u003citem\u003e\u0027, \u0027\u0027))",
+      "revId": "6e5cb2d4e3dfab28e32dda03b54a42eaacf28403",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_0cff1a03",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 580,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-19T09:13:28Z",
+      "side": 1,
+      "message": "Same about this block of code below being identical for both groovy and system_groovy",
+      "revId": "6e5cb2d4e3dfab28e32dda03b54a42eaacf28403",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_ec2aee8f",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-19T09:13:28Z",
+      "side": 1,
+      "message": "For all of the settings below, the groovy plugin sets empty tags if the value is not specified. See above.",
+      "revId": "6e5cb2d4e3dfab28e32dda03b54a42eaacf28403",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_27823152",
+        "filename": "setup.cfg",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-19T09:13:28Z",
+      "side": 1,
+      "message": "Alphabetical order?",
+      "revId": "6e5cb2d4e3dfab28e32dda03b54a42eaacf28403",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
