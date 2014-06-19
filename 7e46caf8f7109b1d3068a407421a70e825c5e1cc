@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_2165bce0",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-19T11:00:40Z",
+      "side": 1,
+      "message": "The following 4 functions are not strictly necessary, see below for an alternative using a lookup table approach.",
+      "revId": "7e46caf8f7109b1d3068a407421a70e825c5e1cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a1a0ecf4",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-19T11:00:40Z",
+      "side": 1,
+      "message": "For a lookup table approach add the following:\n\n      valid_content_types \u003d {\n          \u0027simple\u0027: [\u0027Simple\u0027, \u0027\u0027, \u0027\u0027, []],\n          \u0027json\u0027: [\u0027JSON\u0027, \u0027jsonPaths\u0027, \u0027jsonPath\u0027, None],\n          \u0027text\u0027: [\u0027TEXT\u0027, \u0027regExElements\u0027, \u0027regEx\u0027, None],\n          \u0027xml\u0027: [\u0027XML\u0027, \u0027xPaths\u0027, \u0027xPath\u0027, None]\n      }",
+      "revId": "7e46caf8f7109b1d3068a407421a70e825c5e1cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_e17d946e",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-19T11:00:40Z",
+      "side": 1,
+      "message": "For the lookup table approach replace the following three lines with:\n\n           if type_name not in valid_content_types:\n               raise JenkinsJobsException(\u0027pollurl: Invalid Content Type\u0027)\n\n           content_type \u003d valid_content_types.get(type_name)\n           if entry[type_name]:\n               if content_type[3] is not None:\n                  build_one_pollurl_content_type(content_types,\n                                                 content_type[3],\n                                                 *content_type[0:3])\n               else:\n                   build_one_pollurl_content_type(content_types,\n                                                 entry[type_name],\n                                                 *content_type[0:3])",
+      "revId": "7e46caf8f7109b1d3068a407421a70e825c5e1cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_24aceaec",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-19T11:00:40Z",
+      "side": 1,
+      "message": "At the very least, if using the dynamic function call, you should wrap the following call with a try/except to catch a KeyError exception and raise a JenkinsJobException that explains to the user that it\u0027s an invalid content type in yaml file that\u0027s the real problem.",
+      "revId": "7e46caf8f7109b1d3068a407421a70e825c5e1cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
