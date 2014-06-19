@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_8d7ebae2",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-19T15:18:53Z",
+      "side": 1,
+      "message": "If you don\u0027t mind using python mocks (pip install mock) you can avoid needing to construct complete paths and use subprocess here and replace the following with:\n\n        console_out \u003d cStringIO.StringIO()\n        with mock.patch(\u0027sys.stdout\u0027, console_out):\n            cmd.main([\u0027test\u0027, os.path.join(self.fixtures_path, \u0027cmd-001.yaml\u0027)])\n        xml_content \u003d u\"%s\" % codecs.open(os.path.join(self.fixtures_path,\n                                                       \u0027cmd-001.xml\u0027),\n                                          \u0027r\u0027,\n                                          \u0027utf-8\u0027).read()\n        self.assertEqual(console_out.getvalue(), xml_content)",
+      "revId": "625b15be35a1ae1269e7fa572d9b4595dcd658a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
