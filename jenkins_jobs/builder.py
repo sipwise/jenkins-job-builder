@@ -71,7 +71,7 @@ if sys.version_info[:3] <= (2, 7, 3):
     minidom.Element.writexml = writexml
 
 
-def deep_format(obj, paramdict):
+def deep_format(obj, paramdict, ignore_missing=False):
     """Apply the paramdict via str.format() to all string objects found within
        the supplied obj. Lists and dicts are traversed recursively."""
     # YAML serialisation was originally used to achieve this, but that places
@@ -89,15 +89,20 @@ def deep_format(obj, paramdict):
             missing_key = exc.message
             desc = "%s parameter missing to format %s\nGiven: %s" % (
                    missing_key, obj, paramdict)
-            raise JenkinsJobsException(desc)
+            if ignore_missing:
+                logger.warning(desc)
+                ret = obj
+            else:
+                raise JenkinsJobsException(desc)
     elif isinstance(obj, list):
         ret = []
         for item in obj:
-            ret.append(deep_format(item, paramdict))
+            ret.append(deep_format(item, paramdict, ignore_missing))
     elif isinstance(obj, dict):
         ret = {}
         for item in obj:
-            ret[item.format(**paramdict)] = deep_format(obj[item], paramdict)
+            ret[item.format(**paramdict)] = deep_format(obj[item], paramdict,
+                                                        ignore_missing)
     else:
         ret = obj
     return ret
@@ -271,7 +276,11 @@ class YamlParser(object):
                     expanded_values[k] = v
 
             params.update(expanded_values)
-            expanded = deep_format(template, params)
+            if self.config:
+                ignore_missing = self.config.getboolean(
+                                             'job_builder',
+                                             'ignore_missing_parameters')
+            expanded = deep_format(template, params, ignore_missing)
 
             # Keep track of the resulting expansions to avoid
             # regenerating the exact same job.  Whenever a project has
