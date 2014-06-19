@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_1b79052f",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 542,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-19T13:39:55Z",
+      "side": 1,
+      "message": "If you do decide to include both don\u0027t forget to add an \u0027s\u0027 to Example :)",
+      "revId": "2aef1da88786108785fd3c10a4efd5eb6ee22e78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_7b884922",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-19T13:39:55Z",
+      "side": 1,
+      "message": "Forgot to suggest that it might be useful to include both the simple and full example by having a second literalinclude here or at the very least include the one that specifies more of the options.\n\n .. literalinclude:: ../../tests/builders/fixtures/groovy002.yaml",
+      "revId": "2aef1da88786108785fd3c10a4efd5eb6ee22e78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_dbb15de1",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 580,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-19T13:39:55Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "2aef1da88786108785fd3c10a4efd5eb6ee22e78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
