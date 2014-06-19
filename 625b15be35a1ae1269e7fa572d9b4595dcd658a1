@@ -16,6 +16,24 @@
       "revId": "625b15be35a1ae1269e7fa572d9b4595dcd658a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_2fd4b6e7",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-19T17:50:02Z",
+      "side": 1,
+      "message": "Thanks for the tip! Done",
+      "parentUuid": "1ae5cdf2_8d7ebae2",
+      "revId": "625b15be35a1ae1269e7fa572d9b4595dcd658a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
