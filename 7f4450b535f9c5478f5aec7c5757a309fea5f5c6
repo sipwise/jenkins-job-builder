@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_8c216aa0",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1069,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-19T09:05:16Z",
+      "side": 1,
+      "message": "I don\u0027t believe that\u0027s required anymore, but it\u0027s unclear as to what changed to fix the problem.",
+      "parentUuid": "1ae5cdf2_521f3409",
+      "revId": "7f4450b535f9c5478f5aec7c5757a309fea5f5c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_52cd7485",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-18T05:22:21Z",
       "side": 1,
       "message": "should this be \u0027the groovy command ..\u0027 instead?",
+      "revId": "7f4450b535f9c5478f5aec7c5757a309fea5f5c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_cc3d32bd",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1083,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-19T09:05:16Z",
+      "side": 1,
+      "message": "It should have, but I think the other patch https://review.openstack.org/#/c/95567 takes care of it.",
+      "parentUuid": "1ae5cdf2_52cd7485",
       "revId": "7f4450b535f9c5478f5aec7c5757a309fea5f5c6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_ac6706e9",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1089,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-19T09:05:16Z",
+      "side": 1,
+      "message": "The system one should probably have been called bindings, although they used to end up creating the same XML, just different names in the UI, it seems that this has changed and now they have different XML as well.",
+      "parentUuid": "1ae5cdf2_729d1057",
+      "revId": "7f4450b535f9c5478f5aec7c5757a309fea5f5c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_9219bc24",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_ec5d8e17",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1094,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-19T09:05:16Z",
+      "side": 1,
+      "message": "ditto :)",
+      "parentUuid": "1ae5cdf2_9219bc24",
+      "revId": "7f4450b535f9c5478f5aec7c5757a309fea5f5c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_929e1c62",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -81,6 +153,24 @@
       "writtenOn": "2014-06-18T05:22:21Z",
       "side": 1,
       "message": "i don\u0027t see \u0027java-opts\u0027 parameter in doc above.  should this be \u0027parameters\u0027 instead?",
+      "revId": "7f4450b535f9c5478f5aec7c5757a309fea5f5c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_ac7626d6",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1104,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-19T09:05:16Z",
+      "side": 1,
+      "message": "no, I just forgot to add the \u0027java-opts\u0027 into the description.",
+      "parentUuid": "1ae5cdf2_929e1c62",
       "revId": "7f4450b535f9c5478f5aec7c5757a309fea5f5c6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
