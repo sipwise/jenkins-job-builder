@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ae5cdf2_9bf41e88",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-06-20T02:48:49Z",
+      "side": 1,
+      "message": "put this in the message body rather than the subject.",
+      "range": {
+        "startLine": 7,
+        "startChar": 30,
+        "endLine": 7,
+        "endChar": 95
+      },
+      "revId": "198f94077c4f7b1145b921513e59e04d2295226b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_fb2c4204",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1186,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-06-20T02:48:49Z",
+      "side": 1,
+      "message": "should be quoted",
+      "range": {
+        "startLine": 1186,
+        "startChar": 61,
+        "endLine": 1186,
+        "endChar": 66
+      },
+      "revId": "198f94077c4f7b1145b921513e59e04d2295226b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_39988474",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 6
@@ -13,6 +59,47 @@
       "writtenOn": "2014-06-19T16:45:57Z",
       "side": 1,
       "message": "if user doesn\u0027t type \u0027batch\u0027 exactly then this will create a shell.  that could be bad because JJB will create a managed_script shell job while user expected a batch and user would never know why.  I think it\u0027s ok to default to shell, but should  throw a JenkinsJobsException if user doesn\u0027t specify either \u0027batch\u0027.",
+      "revId": "198f94077c4f7b1145b921513e59e04d2295226b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_5b361652",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1199,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-06-20T02:48:49Z",
+      "side": 1,
+      "message": "maybe change to:\n\n `data.get(\u0027type\u0027, \u0027shell\u0027).lower()`\n\n?",
+      "parentUuid": "1ae5cdf2_39988474",
+      "revId": "198f94077c4f7b1145b921513e59e04d2295226b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_bb463abe",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1202,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-06-20T02:48:49Z",
+      "side": 1,
+      "message": "unnecessary line break.",
+      "range": {
+        "startLine": 1202,
+        "startChar": 8,
+        "endLine": 1202,
+        "endChar": 10
+      },
       "revId": "198f94077c4f7b1145b921513e59e04d2295226b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
