@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_f2a297fa",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 549,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-20T13:48:47Z",
+      "side": 1,
+      "message": "Since this function can receive file-like objects as well, the warning should really be under the \"if not hasattr(fn, \u0027__iter__\u0027)\" statement, rather than checking if what was passed in is a string or not. Also breaks duck-typing to a degree, shouldn\u0027t care if what is passed in is a string type, just as long as it can be treated as a string to get the filename.",
+      "revId": "90d99b82b94c9e15cea500844a4b2458e94427aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_12270364",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 570,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-20T13:48:47Z",
+      "side": 1,
+      "message": "Normally try/except clauses are more pythonic in general, however I\u0027ve come across a reasonable argument that from a performance perspective it really depends on which you behaviour you expect will the more common. See http://programmers.stackexchange.com/questions/175655/python-forgiveness-vs-permission-and-duck-typing\n\nSince I\u0027m expecting that file-like objects will be less common that file names, I\u0027m pretty happy with using the ask-for-permission approach here.\n\nSo this is just an FYI if anyone starts saying try/except is the python way :)\n\nAlso even if we wanted to, I don\u0027t believe there is a try/except approach that works to distinguish between lists and strings hence the hasattr test for \u0027__iter__\u0027 above, and to use try/except around the parser.parse method we would need to distinguish between \u0027file/directory does not exist\u0027 errors and other types of IOError exceptions.",
+      "revId": "90d99b82b94c9e15cea500844a4b2458e94427aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_2d96624c",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-20T13:48:47Z",
+      "side": 1,
+      "message": "This will throw an AttributeError exception when using delete or delete-all commands as the parser wouldn\u0027t have the recursive parser included.\n\nMaybe use \"getattr(options, \u0027recursive\u0027, False)\" to be more explicit about the fact that the option not being set is considered false rather than my original attempt with the \u0027hasattr\u0027.",
+      "revId": "90d99b82b94c9e15cea500844a4b2458e94427aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_cd933e4d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-20T13:48:47Z",
+      "side": 1,
+      "message": "Not sure why I previous thought that config.has_option was the right one to use previously??? ;)",
+      "revId": "90d99b82b94c9e15cea500844a4b2458e94427aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
