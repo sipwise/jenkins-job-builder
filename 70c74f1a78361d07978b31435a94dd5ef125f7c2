@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_3f5af61d",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-20T23:02:29Z",
+      "side": 1,
+      "message": "thanks.  i think had to do that split stuff to accommodate for the previous  way i was writing test_console_out.",
+      "parentUuid": "1ae5cdf2_285f3042",
+      "revId": "70c74f1a78361d07978b31435a94dd5ef125f7c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_a838a0a0",
         "filename": "tests/cmd/test_cmd.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-20T14:16:34Z",
       "side": 1,
       "message": "tools_path looks like it\u0027s unused now with the switch to mocking the console out?",
+      "revId": "70c74f1a78361d07978b31435a94dd5ef125f7c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_5f834255",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-20T23:02:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_a838a0a0",
       "revId": "70c74f1a78361d07978b31435a94dd5ef125f7c2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_1f8d3a7c",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-20T23:02:29Z",
+      "side": 1,
+      "message": "Thanks.",
+      "parentUuid": "1ae5cdf2_a8bd006a",
+      "revId": "70c74f1a78361d07978b31435a94dd5ef125f7c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_68a77850",
         "filename": "tests/cmd/test_cmd.py",
         "patchSetId": 8
@@ -64,6 +118,24 @@
       "writtenOn": "2014-06-20T14:16:34Z",
       "side": 1,
       "message": "If you override the args.output_dir you can avoid the execute method below printing the generated XML to stdout, which is nice if you want to use testtools.run directly instead of tox:\n\n args.output_dir \u003d mock.MagicMock()",
+      "revId": "70c74f1a78361d07978b31435a94dd5ef125f7c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_5fbb42e4",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-20T23:02:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ae5cdf2_68a77850",
       "revId": "70c74f1a78361d07978b31435a94dd5ef125f7c2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
