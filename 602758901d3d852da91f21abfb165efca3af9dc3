@@ -137,6 +137,24 @@
       "revId": "602758901d3d852da91f21abfb165efca3af9dc3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_90994621",
+        "filename": "tests/base.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-06-20T16:42:31Z",
+      "side": 1,
+      "message": "I keep learning things about python. Thanks for the explanation :-)\n\n\u003e In python methods starting with \u0027__\u0027 are more private and are only defined on the parent class, and are not looked up in the same manner. So without this self.__read_content() doesn\u0027t exist although the parent class defines it.\n\nSince we reuse it in a child class, I would adjust it to a single underscore denoting it can be reused by childs and thus drop the line entirely in JsonTestCase()\n\nThat seems a bit nicer and more friendly to newbie pythonists like me \u003d)",
+      "parentUuid": "1ae5cdf2_ed41d539",
+      "revId": "602758901d3d852da91f21abfb165efca3af9dc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
