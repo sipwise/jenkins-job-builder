@@ -30,11 +30,25 @@ import logging
 import copy
 import itertools
 import fnmatch
+from string import Formatter
 from jenkins_jobs.errors import JenkinsJobsException
+import ConfigParser
 import local_yaml
 
 logger = logging.getLogger(__name__)
 MAGIC_MANAGE_STRING = "<!-- Managed by Jenkins Job Builder -->"
+
+
+class CustomFormatter(Formatter):
+    """
+    Custom formatter to allow non-existing key references when formatting a
+    string
+    """
+    def get_value(self, key, args, kwargs):
+        try:
+            return Formatter.get_value(self, key, args, kwargs)
+        except KeyError:
+            return ''
 
 
 # Python <= 2.7.3's minidom toprettyxml produces broken output by adding
@@ -409,7 +423,7 @@ class ModuleRegistry(object):
                 # Template data contains values that should be interpolated
                 # into the component definition
                 s = yaml.dump(component_data, default_flow_style=False)
-                s = s.format(**template_data)
+                s = CustomFormatter().format(s, **template_data)
                 component_data = yaml.load(s)
         else:
             # The component is a simple string name, eg "run-tests"
