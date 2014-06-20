@@ -34,11 +34,24 @@ import copy
 import itertools
 import fnmatch
 import six
+from string import Formatter
 from jenkins_jobs.errors import JenkinsJobsException
 import jenkins_jobs.local_yaml as local_yaml
 
 logger = logging.getLogger(__name__)
 MAGIC_MANAGE_STRING = "<!-- Managed by Jenkins Job Builder -->"
+
+
+class CustomFormatter(Formatter):
+    """
+    Custom formatter to allow non-existing key references when formatting a
+    string
+    """
+    def get_value(self, key, args, kwargs):
+        try:
+            return Formatter.get_value(self, key, args, kwargs)
+        except KeyError:
+            return ''
 
 
 # Python 2.6's minidom toprettyxml produces broken output by adding extraneous
@@ -78,7 +91,7 @@ if sys.version_info[:3] < (2, 7, 3) or xml.__name__ != 'xml':
     minidom.Element.writexml = writexml
 
 
-def deep_format(obj, paramdict):
+def deep_format(obj, paramdict, allow_empty=False):
     """Apply the paramdict via str.format() to all string objects found within
        the supplied obj. Lists and dicts are traversed recursively."""
     # YAML serialisation was originally used to achieve this, but that places
@@ -91,27 +104,34 @@ def deep_format(obj, paramdict):
             if result is not None:
                 ret = paramdict[result.group("key")]
             else:
-                ret = obj.format(**paramdict)
+                if allow_empty:
+                    ret = CustomFormatter().format(obj, **paramdict)
+                else:
+                    ret = obj.format(**paramdict)
         except KeyError as exc:
             missing_key = exc.message
             desc = "%s parameter missing to format %s\nGiven:\n%s" % (
-                   missing_key, obj, pformat(paramdict))
+                missing_key, obj, pformat(paramdict))
             raise JenkinsJobsException(desc)
     elif isinstance(obj, list):
         ret = []
         for item in obj:
-            ret.append(deep_format(item, paramdict))
+            ret.append(deep_format(item, paramdict, allow_empty))
     elif isinstance(obj, dict):
         ret = {}
         for item in obj:
-            try:
-                ret[item.format(**paramdict)] = \
-                    deep_format(obj[item], paramdict)
-            except KeyError as exc:
-                missing_key = exc.message
-                desc = "%s parameter missing to format %s\nGiven:\n%s" % (
-                    missing_key, obj, pformat(paramdict))
-                raise JenkinsJobsException(desc)
+            if allow_empty:
+                ret[CustomFormatter().format(item, **paramdict)] = \
+                    deep_format(obj[item], paramdict, allow_empty)
+            else:
+                try:
+                    ret[item.format(**paramdict)] = \
+                        deep_format(obj[item], paramdict, allow_empty)
+                except KeyError as exc:
+                    missing_key = exc.message
+                    desc = "%s parameter missing to format %s\nGiven:\n%s" % (
+                        missing_key, obj, pformat(paramdict))
+                    raise JenkinsJobsException(desc)
     else:
         ret = obj
     return ret
@@ -347,7 +367,13 @@ class YamlParser(object):
                     expanded_values[k] = v
 
             params.update(expanded_values)
-            expanded = deep_format(template, params)
+            allow_empty_variables = self.config \
+                and self.config.has_section('job_builder') \
+                and self.config.has_option(
+                    'job_builder', 'allow_empty_variables') \
+                and self.config.getboolean(
+                    'job_builder', 'allow_empty_variables')
+            expanded = deep_format(template, params, allow_empty_variables)
 
             # Keep track of the resulting expansions to avoid
             # regenerating the exact same job.  Whenever a project has
@@ -466,7 +492,15 @@ class ModuleRegistry(object):
                 # Template data contains values that should be interpolated
                 # into the component definition
                 s = yaml.dump(component_data, default_flow_style=False)
-                s = s.format(**template_data)
+                if self.global_config \
+                        and self.global_config.has_section('job_builder') \
+                        and self.global_config.has_option(
+                            'job_builder', 'allow_empty_variables') \
+                        and self.global_config.getboolean(
+                            'job_builder', 'allow_empty_variables'):
+                    s = CustomFormatter().format(s, **template_data)
+                else:
+                    s = s.format(**template_data)
                 component_data = yaml.load(s)
         else:
             # The component is a simple string name, eg "run-tests"
