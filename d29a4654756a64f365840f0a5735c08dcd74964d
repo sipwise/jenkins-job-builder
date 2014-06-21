@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_6d093383",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-21T19:49:33Z",
+      "side": 1,
+      "message": "When you rebase against latest, you should find the following snippet of code that needs to be updated.\n\n             expanded_values \u003d {}\n             for (k, v) in values:\n                 if isinstance(v, dict):\n-                    inner_key \u003d v.iterkeys().next()\n+                    inner_key \u003d next(iter(v.keys()))\n                     expanded_values[k] \u003d inner_key\n                     expanded_values.update(v[inner_key])",
+      "revId": "d29a4654756a64f365840f0a5735c08dcd74964d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_0d418fa5",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-21T19:49:33Z",
+      "side": 1,
+      "message": "dict.items() is an interator which can\u0027t be indexed. Looks like can just use popitem() here as I don\u0027t see jobspec being used subsequently.\n\n jobname, jobparams \u003d jobspec.popitem()",
+      "revId": "d29a4654756a64f365840f0a5735c08dcd74964d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_8d5aff7f",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-21T19:49:33Z",
+      "side": 1,
+      "message": "Need to add \u0027StringIO\u0027 to the this import.",
+      "revId": "d29a4654756a64f365840f0a5735c08dcd74964d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_4d647748",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-21T19:49:33Z",
+      "side": 1,
+      "message": "cStringIO should now come from six.moves as in py3 cStringIO has been replaced by io.StringIO.",
+      "revId": "d29a4654756a64f365840f0a5735c08dcd74964d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_2dc80b21",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-21T19:49:33Z",
+      "side": 1,
+      "message": "Needs to be updated to use StringIO as cStringIO doesn\u0027t exist in py3\n\n config.readfp(StringIO(DEFAULT_CONF))",
+      "revId": "d29a4654756a64f365840f0a5735c08dcd74964d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_ad025b3b",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-21T19:49:33Z",
+      "side": 1,
+      "message": "dict\u0027s in py2 appear to retain their order, but this definitely is not the case with py3. So will need to either sort the key/values when iterating over them, or use an ``OrderedDict`` from the ``collections`` module instead. Replacing this with the following might just be easier.\n\n     outcomes \u003d OrderedDict([(\u0027successful\u0027, \u0027onSuccessful\u0027),\n                             (\u0027failed\u0027, \u0027onFailed\u0027),\n                             (\u0027unstable\u0027, \u0027onUnstable\u0027),\n                             (\u0027notbuilt\u0027, \u0027onNotBuilt\u0027)])",
+      "revId": "d29a4654756a64f365840f0a5735c08dcd74964d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_edf8e34b",
+        "filename": "tests/base.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-21T19:49:33Z",
+      "side": 1,
+      "message": "This as been added since the original patch, so need to do the same as the previous class.\n\n pretty_xml \u003d \"\\n\".join(job.output().decode(\u0027utf-8\u0027) for job in parser.jobs)",
+      "revId": "d29a4654756a64f365840f0a5735c08dcd74964d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
