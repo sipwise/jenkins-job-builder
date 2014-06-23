@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_afcde160",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1349,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-06-23T07:45:56Z",
+      "side": 1,
+      "message": "Remove this for consistency with the other text.  See [1].\n\n[1] https://review.openstack.org/101394",
+      "range": {
+        "startLine": 1349,
+        "startChar": 54,
+        "endLine": 1349,
+        "endChar": 57
+      },
+      "revId": "f9c37e19b03b3f23527b9f41776e1e61657009ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
