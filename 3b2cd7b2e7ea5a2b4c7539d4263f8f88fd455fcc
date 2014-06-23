@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_69c90c25",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-23T14:20:50Z",
+      "side": 1,
+      "message": "On first glance it\u0027s not obvious as to how this is safe to be applied in general to all configurations, seems like it can result in typos and required missing data causing jobs to be generated incorrectly or incompletely in a silent manner unless the user checks the resulting XML.\n\nThinking that either this should be configurable or if the intention is to avoid a mistake in one job configuration from stopping an update run, to catch the exception generated at a suitable level, write out an error log and continue with the next job.",
+      "revId": "3b2cd7b2e7ea5a2b4c7539d4263f8f88fd455fcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
