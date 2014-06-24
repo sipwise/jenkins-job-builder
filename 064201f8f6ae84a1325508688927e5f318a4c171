@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_147a4677",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1202,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-24T03:46:30Z",
+      "side": 1,
+      "message": "would be better to call data.get(\u0027type\u0027, \u0027script\u0027) just once. so maybe something like..\n\nscript_type \u003d data.get(\u0027type\u0027, \u0027script\u0027)\nif script_type \u003d\u003d \u0027script\u0027:\n ..\nelif script_type \u003d\u003d \u0027batch\u0027:\n ..\nelse:",
+      "revId": "064201f8f6ae84a1325508688927e5f318a4c171",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
