@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "1ae5cdf2_7fc42c41",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1913,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-24T14:43:55Z",
+      "side": 1,
+      "message": "Don\u0027t suppose there is any way to sensibly condense this while retaining the meaning?",
+      "revId": "6ea139ee3f01f207401001cbf97975bd9db11c49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_443ec9db",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1933,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-24T14:43:55Z",
+      "side": 1,
+      "message": "These are already defined in jenkins_jobs/modules/hudson_model.py, and it seems like the definition from there could be reused here.",
+      "revId": "6ea139ee3f01f207401001cbf97975bd9db11c49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_a866e027",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
