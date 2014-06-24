@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_3d97143c",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-24T11:30:27Z",
+      "side": 1,
+      "message": "Don\u0027t think you meant to remove the lines that previously followed :)\n\nSorry if I wasn\u0027t clear, I just meant by adding in the MagicMock() line that the subsequent lines in the previous patch wouldn\u0027t cause extra output to the console.",
+      "revId": "190acdc7ec244d24f162cf1b2c95eb00a1153088",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_bdaa446f",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-24T11:30:27Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "190acdc7ec244d24f162cf1b2c95eb00a1153088",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
