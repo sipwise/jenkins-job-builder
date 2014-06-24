@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_199183f1",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-24T14:46:43Z",
+      "side": 1,
+      "message": "I was wondering as to why the reordering of options, it\u0027s coming from the general.rst.",
+      "revId": "d96d351868449bf9cc10f61516916cf28d77a316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
