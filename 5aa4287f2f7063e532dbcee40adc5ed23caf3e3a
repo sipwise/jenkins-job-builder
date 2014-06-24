@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_709383a4",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-24T11:47:24Z",
+      "side": 1,
+      "message": "There\u0027s no \u0027delete_jobs\u0027 in this class, so unless we should be re-factoring the delete_jobs method in the Builder class to be in the Jenkins class and just have a simple wrapper there I don\u0027t think there\u0027s any need for that.\n\nSeems like the current approach is to keep the logic in the Builder class and have this as just a simple interface to manage the connection to jenkins and retrieve/perform basic operations.",
+      "parentUuid": "7adec928_0002df3d",
+      "revId": "5aa4287f2f7063e532dbcee40adc5ed23caf3e3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_c00c7797",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2014-05-22T16:29:24Z",
       "side": 1,
       "message": "should this call delete_jobs instead?",
+      "revId": "5aa4287f2f7063e532dbcee40adc5ed23caf3e3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_1d4df899",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 587,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-24T11:47:24Z",
+      "side": 1,
+      "message": "Makes sense as otherwise we get a DeprecationWarning for an internal API call. Could be replaced with:\n\n self.delete_jobs([job[\u0027name\u0027] for job in jobs])",
+      "parentUuid": "7adec928_c00c7797",
       "revId": "5aa4287f2f7063e532dbcee40adc5ed23caf3e3a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
