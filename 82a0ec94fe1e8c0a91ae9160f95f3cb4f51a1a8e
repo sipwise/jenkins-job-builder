@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_230b3c25",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-25T17:29:27Z",
+      "side": 1,
+      "message": "should this reference \u0027templates003.yaml\u0027 instead?",
+      "revId": "82a0ec94fe1e8c0a91ae9160f95f3cb4f51a1a8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
