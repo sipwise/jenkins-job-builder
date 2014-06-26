@@ -34,6 +34,24 @@
       "revId": "d96d351868449bf9cc10f61516916cf28d77a316",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_0f8b99c0",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-26T16:00:54Z",
+      "side": 1,
+      "message": "Neither did I, just noting that it was coming from what contents were in the general.rst file :)",
+      "parentUuid": "1ae5cdf2_46e5df36",
+      "revId": "d96d351868449bf9cc10f61516916cf28d77a316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
