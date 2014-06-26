@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_4f6201ae",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-26T15:53:00Z",
+      "side": 1,
+      "message": "Would be good to mention that this is only valid for matrix type jobs.",
+      "revId": "5b83b7f35ab405dbaed30ae2421968a11e4f99eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_8f5889fa",
+        "filename": "doc/source/general.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-26T15:53:00Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "5b83b7f35ab405dbaed30ae2421968a11e4f99eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_4fd76123",
+        "filename": "jenkins_jobs/modules/general.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-26T15:53:00Z",
+      "side": 1,
+      "message": "Technically since the project type is set at the same level it is possible to validate whether this is within a matrix type job or not:\n\n if xml.tag !\u003d \u0027matrix-project\u0027:\n     raise Exception(\"Invalid project type for \u0027child-workspace\u0027\")\n\nHowever, since we can\u0027t do this sort of validation in general I\u0027m not sure we should start adding it in here until we have an idea of how to allow this across all modules?\n\nAnyone have any thoughts on this?",
+      "revId": "5b83b7f35ab405dbaed30ae2421968a11e4f99eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
