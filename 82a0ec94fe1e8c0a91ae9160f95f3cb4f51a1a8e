@@ -33,6 +33,42 @@
       "revId": "82a0ec94fe1e8c0a91ae9160f95f3cb4f51a1a8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_a0aa8bcf",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 9921
+      },
+      "writtenOn": "2014-06-27T17:15:58Z",
+      "side": 1,
+      "message": "Absolutely right, will fix it.",
+      "parentUuid": "1ae5cdf2_230b3c25",
+      "revId": "82a0ec94fe1e8c0a91ae9160f95f3cb4f51a1a8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_40e467df",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 9921
+      },
+      "writtenOn": "2014-06-27T17:15:58Z",
+      "side": 1,
+      "message": "Makes sense, it also unclutters this section, it\u0027s getting a bit crowded.",
+      "parentUuid": "1ae5cdf2_45e719e3",
+      "revId": "82a0ec94fe1e8c0a91ae9160f95f3cb4f51a1a8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
