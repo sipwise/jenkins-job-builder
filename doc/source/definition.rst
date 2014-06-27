@@ -311,6 +311,11 @@ defaults for each generated job:
 
 .. literalinclude::  /../../tests/yamlparser/fixtures/templates003.yaml
 
+These can be further combined in a more complex example:
+
+.. literalinclude::  /../../tests/yamlparser/fixtures/template_and_defaults.yaml
+
+
 .. _advanced:
 
 Advanced
