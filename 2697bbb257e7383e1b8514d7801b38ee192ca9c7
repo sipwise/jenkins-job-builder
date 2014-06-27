@@ -104,6 +104,24 @@
       "revId": "2697bbb257e7383e1b8514d7801b38ee192ca9c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_95088692",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-06-27T04:30:07Z",
+      "side": 1,
+      "message": "In that case I suggest leaving it as it is.  The other reviewers are more familiar with the project than I am.",
+      "parentUuid": "1ae5cdf2_75dcda18",
+      "revId": "2697bbb257e7383e1b8514d7801b38ee192ca9c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
