@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ae5cdf2_bb8f1acc",
+        "filename": "tests/yamlparser/fixtures/template_and_defaults.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-27T17:57:56Z",
+      "side": 1,
+      "message": "Doh, yes, yes it should. Exact same as arch.",
+      "parentUuid": "1ae5cdf2_db17869b",
+      "revId": "d1ce3b538af359cac7620ab758a1a7e427400544",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ae5cdf2_3b578a5b",
         "filename": "tests/yamlparser/fixtures/template_and_defaults.yaml",
         "patchSetId": 2
