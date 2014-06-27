@@ -16,6 +16,23 @@
       "revId": "82a0ec94fe1e8c0a91ae9160f95f3cb4f51a1a8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_45e719e3",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-06-27T16:40:32Z",
+      "side": 1,
+      "message": "Looking at the documentation from the dependent patch, I would suggest that this be moved down to under the \u0027Defaults\u0027 section and be referenced as further information on using template variables to control how defaults are applied at generation time.\n\nThat will make it easier to keep all the relevant examples in this area together.",
+      "revId": "82a0ec94fe1e8c0a91ae9160f95f3cb4f51a1a8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
