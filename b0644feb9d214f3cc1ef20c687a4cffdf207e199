@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_354412b7",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-06-27T04:35:10Z",
+      "side": 1,
+      "message": "Also here, and at a few other places lower down.",
+      "range": {
+        "startLine": 418,
+        "startChar": 54,
+        "endLine": 419,
+        "endChar": 40
+      },
+      "revId": "b0644feb9d214f3cc1ef20c687a4cffdf207e199",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
