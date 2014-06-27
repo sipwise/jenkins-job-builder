@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_2aabd1d6",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-06-27T03:05:03Z",
+      "side": 1,
+      "message": "In other parts of this module, such lines are wrapped like this:\n\n XML.SubElement(entry, \u0027proxyActivated\u0027).text \u003d \\\n     str(url.get(\u0027proxy\u0027, False)).lower()",
+      "range": {
+        "startLine": 410,
+        "startChar": 47,
+        "endLine": 411,
+        "endChar": 44
+      },
+      "revId": "2697bbb257e7383e1b8514d7801b38ee192ca9c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_4a8bbd68",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-06-27T03:05:03Z",
+      "side": 1,
+      "message": "Is the type name always going to be the first key?",
+      "range": {
+        "startLine": 434,
+        "startChar": 24,
+        "endLine": 434,
+        "endChar": 39
+      },
+      "revId": "2697bbb257e7383e1b8514d7801b38ee192ca9c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_eacac99e",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-06-27T03:05:03Z",
+      "side": 1,
+      "message": "The 0 is not strictly needed, if omitted, i.e. `[:3]` it will default to 0 anyway.\n\nWouldn\u0027t this be a bit easier to read if the inputs were given as explicit parameters, rather than using this form?",
+      "range": {
+        "startLine": 445,
+        "startChar": 43,
+        "endLine": 445,
+        "endChar": 61
+      },
+      "revId": "2697bbb257e7383e1b8514d7801b38ee192ca9c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
