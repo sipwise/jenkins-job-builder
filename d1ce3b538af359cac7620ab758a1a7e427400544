@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ae5cdf2_db17869b",
+        "filename": "tests/yamlparser/fixtures/template_and_defaults.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 9921
+      },
+      "writtenOn": "2014-06-27T17:53:07Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be \"{disabled}\" instead of \"false\" and \"disabled\" be defined in the global defaults as \"false\"?",
+      "revId": "d1ce3b538af359cac7620ab758a1a7e427400544",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ae5cdf2_3b578a5b",
+        "filename": "tests/yamlparser/fixtures/template_and_defaults.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 9921
+      },
+      "writtenOn": "2014-06-27T17:53:07Z",
+      "side": 1,
+      "message": "Same as previous \"disabled\" definition.",
+      "revId": "d1ce3b538af359cac7620ab758a1a7e427400544",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
