@@ -1,0 +1,41 @@
+- defaults:
+    name: global
+    arch: i386
+    disabled: false
+
+- defaults:
+    name: Foo
+    disabled: {disabled}
+    block-downstream: false
+    block-upstream: false
+    wrappers:
+      - timestamps
+
+- defaults:
+    name: Bar
+    disabled: {disabled}
+    block-downstream: false
+    block-upstream: true
+    wrappers:
+      - timestamps
+      - workspace-cleanup
+
+- job-template:
+    name: '{component}-test-{arch}'
+    project-type: freestyle
+    defaults: '{component}'
+    builders:
+      - shell: "echo Build arch {arch}."
+
+- project:
+    name: Test-project
+    component:
+      - Foo
+      - Bar
+    jobs:
+        - '{component}-test-{arch}':
+            arch: 'amd64'
+        - '{component}-test-{arch}'
+        - '{component}-test-{arch}':
+            arch: 'ppc'
+            disabled: true
