@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab895d6_8e73c7b0",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-29T14:35:19Z",
+      "side": 1,
+      "message": "should be \u0027instead of\u0027?\n\nisn\u0027t the global size configurable?  would it always be 500MB?\n\nalso i assume it uses the size from the global config by default.  if so could you please specify that in the docs?",
+      "revId": "26ee6f4dcea381956bc03ec011d860ed05e92d36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_ee61a3d4",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-29T14:35:19Z",
+      "side": 1,
+      "message": "does abort always return failed build?  i mean what happens when a build aborts due to size \u003e log file size even though i set fail to false?  would it still be a build failure?  Maybe it\u0027s just me but the naming of these parameters is a little confusing.",
+      "revId": "26ee6f4dcea381956bc03ec011d860ed05e92d36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_6ea59303",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-29T14:35:19Z",
+      "side": 1,
+      "message": "we usually don\u0027t like version number in the xml because it\u0027s might not work on upgrades.  could you please test without the version number to see if it works?",
+      "revId": "26ee6f4dcea381956bc03ec011d860ed05e92d36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_eeb8c32c",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-29T14:35:19Z",
+      "side": 1,
+      "message": "Should this be ignored if set-own\u003dfalse?\n\nlooks like there\u0027s a default value.  could you please document that above?\n\nAlso the default value for this param doesn\u0027t make sense because if i don\u0027t specify anything for this wrapper i will get a job that will abort my build if the log file size \u003e 128MB?  is that what we want?",
+      "revId": "26ee6f4dcea381956bc03ec011d860ed05e92d36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_2e055bc2",
+        "filename": "tests/wrappers/fixtures/logfilesize002.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-29T14:35:19Z",
+      "side": 1,
+      "message": "do you need to set this when set-own\u003dfalse?",
+      "revId": "26ee6f4dcea381956bc03ec011d860ed05e92d36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
