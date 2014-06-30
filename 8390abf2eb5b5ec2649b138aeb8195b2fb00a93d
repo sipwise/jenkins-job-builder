@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_f2e6e843",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-30T16:47:17Z",
+      "side": 1,
+      "message": "My preference is to patch python jenkins.  That\u0027s just my preference others might disagree though.  \n\nSo if it\u0027s done in JJB I don\u0027t think this would require multiple config files.  I think you can accomplish by adding a sections to jenkins_jobs.ini",
+      "revId": "8390abf2eb5b5ec2649b138aeb8195b2fb00a93d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_925dacec",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-06-30T16:47:17Z",
+      "side": 1,
+      "message": "I would add an example to the help like you did in the commit message.",
+      "revId": "8390abf2eb5b5ec2649b138aeb8195b2fb00a93d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
