@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_175955fe",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1037,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-01T22:35:28Z",
+      "side": 1,
+      "message": "I think you could probably get away with referencing the publisher as having the most uptodate information on what arguments are supported.",
+      "revId": "bbab75677fa62bb3831edf6c9530d9d94110e157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1cf41cf1",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1055,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-01T22:35:28Z",
+      "side": 1,
+      "message": "Please use literal include to reference the yaml in the unit test so that the example is kept in sync with the test code.\n\n  .. literalinclude:: /../../tests/builders/fixtures/ssh.yaml\n\nSee other examples through-out this module.",
+      "revId": "bbab75677fa62bb3831edf6c9530d9d94110e157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_dcd0e455",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1066,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-01T22:35:28Z",
+      "side": 1,
+      "message": "I would suggest moving more of this code to the publisher, since besides the parent tag, the remainder are identical, and this plugin also has support for a wrapper which also uses the same XML except for the parent tag as well.\n\nMaybe have a second helper function. Set the parent tag and call a \u0027publish_over_ssh\u0027 helper function with the updated xml_parent tag from both the publisher and builder, which will be available to use from the wrapper module it\u0027s updated as well.",
+      "revId": "bbab75677fa62bb3831edf6c9530d9d94110e157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_177dd56e",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1069,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-01T22:35:28Z",
+      "side": 1,
+      "message": "This is the only difference, but if you create the root tag here and then call a helper function in the publishers module with the new xml tag as the xml_parent, then the remaining three tags which will also be common to the wrappers step which is also supported by the same plugin.",
+      "revId": "bbab75677fa62bb3831edf6c9530d9d94110e157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_fc3cc895",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1172,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-01T22:35:28Z",
+      "side": 1,
+      "message": "I think it might be worth having this function call a publish_over_ssh function, that can be used from the builders and wrappers modules where in each case the correct xml_parent tags are set.",
+      "revId": "bbab75677fa62bb3831edf6c9530d9d94110e157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3741f95a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1696,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-01T22:35:28Z",
+      "side": 1,
+      "message": "While this produces the correct output for the build step \u0027publish-over-ssh\u0027, it is not correct for the publish-over-ssh behaviour.\n\nXML for the builder:\n\n \u003cjenkins.plugins.publish__over__ssh.BapSshBuilderPlugin plugin\u003d\"publish-over-ssh@1.11\"\u003e\n   \u003cdelegate\u003e\n     \u003cconsolePrefix\u003eSSH: \u003c/consolePrefix\u003e\n       \u003cdelegate\u003e\n         \u003cpublishers\u003e\n           \u003cjenkins.plugins.publish__over__ssh.BapSshPublisher\u003e\n\nXML for the publisher\n\n \u003cjenkins.plugins.publish__over__ssh.BapSshPublisherPlugin plugin\u003d\"publish-over-ssh@1.11\"\u003e\n   \u003cconsolePrefix\u003eSSH: \u003c/consolePrefix\u003e\n     \u003cdelegate\u003e\n       \u003cpublishers\u003e\n         \u003cjenkins.plugins.publish__over__ssh.BapSshPublisher\u003e\n\nXML for the wrapper pre-build (presumably similar for the wrapper post-build)\n\n \u003cjenkins.plugins.publish__over__ssh.BapSshPreBuildWrapper plugin\u003d\"publish-over-ssh@1.11\"\u003e\n   \u003cpreBuild\u003e\n     \u003cconsolePrefix\u003eSSH: \u003c/consolePrefix\u003e\n       \u003cdelegate\u003e\n         \u003cpublishers\u003e\n           \u003cjenkins.plugins.publish__over__ssh.BapSshPublisher\u003e",
+      "revId": "bbab75677fa62bb3831edf6c9530d9d94110e157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f71781a1",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-01T22:35:28Z",
+      "side": 1,
+      "message": "Please keep these in alphabetical order.\n\nI think it should also be named \u0027publish-over-ssh\u0027 to avoid confusion with the ssh plugin \u0027https://wiki.jenkins-ci.org/display/JENKINS/SSH+plugin\u0027. Not much can be done about the publisher name, but since there is no post build option available it shouldn\u0027t cause any confusion for now.",
+      "revId": "bbab75677fa62bb3831edf6c9530d9d94110e157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
