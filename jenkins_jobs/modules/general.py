@@ -49,6 +49,10 @@ import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 
 
+def val2strbool(v):
+    return 'true' if v in (True, "True", "true") else 'false'
+
+
 class General(jenkins_jobs.modules.base.Base):
     sequence = 10
 
@@ -64,30 +68,21 @@ class General(jenkins_jobs.modules.base.Base):
         XML.SubElement(xml, 'keepDependencies').text = 'false'
         disabled = data.get('disabled', None)
         if disabled is not None:
-            if disabled:
-                XML.SubElement(xml, 'disabled').text = 'true'
-            else:
-                XML.SubElement(xml, 'disabled').text = 'false'
+            XML.SubElement(xml, 'disabled').text = val2strbool(disabled)
         if 'display-name' in data:
             XML.SubElement(xml, 'displayName').text = data['display-name']
-        if data.get('block-downstream'):
-            XML.SubElement(xml,
-                           'blockBuildWhenDownstreamBuilding').text = 'true'
-        else:
-            XML.SubElement(xml,
-                           'blockBuildWhenDownstreamBuilding').text = 'false'
-        if data.get('block-upstream'):
-            XML.SubElement(xml,
-                           'blockBuildWhenUpstreamBuilding').text = 'true'
-        else:
-            XML.SubElement(xml,
-                           'blockBuildWhenUpstreamBuilding').text = 'false'
+        XML.SubElement(
+            xml, 'blockBuildWhenDownstreamBuilding').text = \
+            val2strbool(data.get('block-downstream'))
+        XML.SubElement(
+            xml,
+            'blockBuildWhenUpstreamBuilding').text = \
+            val2strbool(data.get('block-upstream'))
         if 'auth-token' in data:
             XML.SubElement(xml, 'authToken').text = data['auth-token']
-        if data.get('concurrent'):
-            XML.SubElement(xml, 'concurrentBuild').text = 'true'
-        else:
-            XML.SubElement(xml, 'concurrentBuild').text = 'false'
+        XML.SubElement(
+            xml, 'concurrentBuild').text = \
+            val2strbool(data.get('concurrent'))
         if 'workspace' in data:
             XML.SubElement(xml, 'customWorkspace').text = \
                 str(data['workspace'])
