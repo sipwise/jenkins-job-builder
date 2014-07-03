@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_89d97724",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-03T18:32:55Z",
+      "side": 1,
+      "message": "This bug is actually already fixed thanks to https://review.openstack.org/#/c/73990\n\nAdditionally this would only partially fix the bug as it would still require all other entry points that utilize simple data types to be modified to perform the additional checks as well.",
+      "revId": "250093a735a20d4f35e803a6004cc2aea4a2ae27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
