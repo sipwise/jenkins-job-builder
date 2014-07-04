@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_161e3bbb",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 10961
+      },
+      "writtenOn": "2014-07-04T22:34:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab895d6_8e73c7b0",
+      "revId": "26ee6f4dcea381956bc03ec011d860ed05e92d36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab895d6_ee61a3d4",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-06-29T14:35:19Z",
       "side": 1,
       "message": "does abort always return failed build?  i mean what happens when a build aborts due to size \u003e log file size even though i set fail to false?  would it still be a build failure?  Maybe it\u0027s just me but the naming of these parameters is a little confusing.",
+      "revId": "26ee6f4dcea381956bc03ec011d860ed05e92d36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d655a350",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 10961
+      },
+      "writtenOn": "2014-07-04T22:34:08Z",
+      "side": 1,
+      "message": "Parameter name \u0027faile\u0027 has the same semantics as for timeout wrapper plugin 20 lines below. Also there is the same description for checkboxes for both plugins on web UI. \n\nAfter the job is aborted it can have different statuses: \u0027aborted\u0027 or \u0027failed\u0027.\nBy default (in case \u0027fail\u0027 parameter is \u0027false\u0027) aborted job will have \u0027aborted\u0027 status, otherwise \u0027failed\u0027.",
+      "parentUuid": "dab895d6_ee61a3d4",
       "revId": "26ee6f4dcea381956bc03ec011d860ed05e92d36",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_36497fb7",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 10961
+      },
+      "writtenOn": "2014-07-04T22:34:08Z",
+      "side": 1,
+      "message": "Checked, works okay without specifying version number.",
+      "parentUuid": "dab895d6_6ea59303",
+      "revId": "26ee6f4dcea381956bc03ec011d860ed05e92d36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab895d6_eeb8c32c",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 1
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_368edfd0",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 10961
+      },
+      "writtenOn": "2014-07-04T22:34:08Z",
+      "side": 1,
+      "message": "default config value only is applicable in case set-own\u003dfalse.\n\nwe should upload xml element maxLogSize with any integer value even if set-own\u003dfalse.\n\n\"...if i don\u0027t specify anything for this wrapper...\" -- I corrected the code, set-own is required parameter, so if logfilesizechecker wrapper is defined job will be aborted with default config value (set-own\u003dfalse, \u0027size\u0027 *can* be specified (it will be ignored by java plugin) or not) or with \u0027size\u0027 parameter (set-own\u003dtrue).\n\nAlso I added one one more test to demonstrate both scenarios.\n\nShould I raise exception in case:\n * set-own\u003dfalse and \u0027size\u0027 parameter is specified?\n * set-own\u003dtrue and no size parameter is specified?\n * \u0027size\u0027 is not integer?\n\nI can see no such elaborate checks are done in most plugins....",
+      "parentUuid": "dab895d6_eeb8c32c",
+      "revId": "26ee6f4dcea381956bc03ec011d860ed05e92d36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab895d6_2e055bc2",
         "filename": "tests/wrappers/fixtures/logfilesize002.yaml",
         "patchSetId": 1
@@ -81,6 +153,24 @@
       "writtenOn": "2014-06-29T14:35:19Z",
       "side": 1,
       "message": "do you need to set this when set-own\u003dfalse?",
+      "revId": "26ee6f4dcea381956bc03ec011d860ed05e92d36",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_16a8fb1e",
+        "filename": "tests/wrappers/fixtures/logfilesize002.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 10961
+      },
+      "writtenOn": "2014-07-04T22:34:08Z",
+      "side": 1,
+      "message": "not needed. corrected",
+      "parentUuid": "dab895d6_2e055bc2",
       "revId": "26ee6f4dcea381956bc03ec011d860ed05e92d36",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
