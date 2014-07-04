@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_8ba22bfb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-04T15:56:55Z",
+      "side": 1,
+      "message": "Would you mind resetting the author here to yourself as really you\u0027re the author.",
+      "revId": "27faf7f05c3349a5653073f67b77c0c81c1bc626",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b0391af4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-04T15:56:55Z",
+      "side": 1,
+      "message": "Consider that when looking through \u0027git log\u0027 the above doesn\u0027t really provide anything of benefit.",
+      "revId": "27faf7f05c3349a5653073f67b77c0c81c1bc626",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0b129b56",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-04T15:56:55Z",
+      "side": 1,
+      "message": "This is closer, but again the end comment \u0027per reviewer comments\u0027 isn\u0027t particularly useful so why include it. To be aware of the previous approach the person would have to look at the change in gerrit, in which case they would have access to the comments anyway.\n\nSomething along the following lines:\n\n\"Use a lookup table dict to allow different predefined values to be supplied to a common helper function.\"",
+      "revId": "27faf7f05c3349a5653073f67b77c0c81c1bc626",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_cb5a6329",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-04T15:56:55Z",
+      "side": 1,
+      "message": "Since this commit doesn\u0027t modify the existing formatting, this information is only of use in the context of comparing the latest patch against the previous submissions. It is also potentially confusing since anyone looking back in history might be left wondering what formatting is the commit supposed to be modifying.\n\nI think you can drop this.",
+      "revId": "27faf7f05c3349a5653073f67b77c0c81c1bc626",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
