@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_2bfaff42",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-04T16:16:33Z",
+      "side": 1,
+      "message": "I would suggest just noting that the jenkins plugin changed behaviour from using $DEFAULT_RECIPIENTS to using $DEFAULT_REPLYTO along with a test to show it being used rather than trying to use the commit message to record what is different between the previous patchset and this one.",
+      "revId": "7ebd9d3c7378753897157574c2cab794a97fed25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0b537b6b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-04T16:16:33Z",
+      "side": 1,
+      "message": "I don\u0027t see the much benefit of the above?\n\nThe commit should just describe what this commit does, not how it is different to the previous attempt which won\u0027t be merged and therefore is not available for context.\n\ne.g. this commit doesn\u0027t remove any tabs in the current code so unless someone looked at the previous proposed change in gerrit, it doesn\u0027t help and if you are looking in gerrit, you have the review comments.",
+      "revId": "7ebd9d3c7378753897157574c2cab794a97fed25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
