@@ -174,14 +174,17 @@ class YamlParser(object):
     def getJobTemplate(self, name):
         return self.data.get('job-template', {}).get(name, None)
 
-    def applyDefaults(self, data):
+    def applyDefaults(self, data, params=None):
         whichdefaults = data.get('defaults', 'global')
         defaults = self.data.get('defaults', {}).get(whichdefaults, {})
         if defaults == {} and whichdefaults != 'global':
             raise JenkinsJobsException("Unknown defaults set: '{0}'"
                                        .format(whichdefaults))
         newdata = {}
-        newdata.update(defaults)
+        if params:
+            newdata.update(deep_format(defaults, params))
+        else:
+            newdata.update(defaults)
         newdata.update(data)
         return newdata
 
@@ -278,7 +281,7 @@ class YamlParser(object):
                     expanded_values[k] = v
 
             params.update(expanded_values)
-            expanded = self.applyDefaults(deep_format(template, params))
+            expanded = self.applyDefaults(deep_format(template, params), params)
 
             # Keep track of the resulting expansions to avoid
             # regenerating the exact same job.  Whenever a project has
