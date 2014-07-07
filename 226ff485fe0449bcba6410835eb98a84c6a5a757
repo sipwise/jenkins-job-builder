@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_768afe64",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1214,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-07T10:17:00Z",
+      "side": 1,
+      "message": "Re-reviewing this I think that you should add in a try/except here since AFAICT script-id is a required setting.\n\n try:\n     script_id \u003d data[\u0027script-id\u0027]\n except KeyError:\n     raise JenkinsJobsException(\"A script-id is required for managed-script\")\n\nIf instead blank is a valid value, could you add a comment to that effect.",
+      "revId": "226ff485fe0449bcba6410835eb98a84c6a5a757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
