@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_2cd4b6bb",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-07-07T12:50:38Z",
+      "side": 0,
+      "message": "That removal introduce a regression for a case which was not covered by tests.  When the defaults make use of variable, the variable coming from a project and passed to the job template is no more expanded.\n\nA test case which is failing because of this change is https://review.openstack.org/105155",
+      "revId": "463c84f0556ea78d429e36bdf158cf6bb1e3f390",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
