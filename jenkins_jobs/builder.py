@@ -162,7 +162,10 @@ class YamlParser(object):
         return self.data.get('job-group', {}).get(name, None)
 
     def getJobTemplate(self, name):
-        return self.data.get('job-template', {}).get(name, None)
+        job = self.data.get('job-template', {}).get(name, None)
+        if not job:
+            return job
+        return self.applyDefaults(job)
 
     def applyDefaults(self, data):
         whichdefaults = data.get('defaults', 'global')
@@ -268,7 +271,7 @@ class YamlParser(object):
                     expanded_values[k] = v
 
             params.update(expanded_values)
-            expanded = self.applyDefaults(deep_format(template, params))
+            expanded = deep_format(template, params)
 
             # Keep track of the resulting expansions to avoid
             # regenerating the exact same job.  Whenever a project has
