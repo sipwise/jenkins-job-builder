@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_dc984b6c",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-07T12:03:31Z",
+      "side": 1,
+      "message": "Could you switch to using the thresholds as defined in jenkins_jobs/modules/hudson_model.py to avoid maintaining the same information in two places. Just requires checking that the specified threshold is only in the subset of supported ones.\n\nCheck out the \u0027trigger\u0027 function in the publishers module as this is the complement of the functionality supported there.",
+      "revId": "a7b6e3b315f26b2d25f5e913ecb2eb49a6b4cf1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
