@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_1252a066",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-07T16:14:59Z",
+      "side": 1,
+      "message": "It\u0027s not really known as that anywhere outside of this review. \u0027after\u0027 was suggested as something that might be more obvious, but since the UI would have \u0027Build after other projects are built\u0027, I think it would be better to include the actual phrase from the UI in this case.",
+      "revId": "4bbd8c20c733c6c9b013640df52c4366c6a6a8d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
