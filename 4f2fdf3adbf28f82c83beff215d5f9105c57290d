@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_b166604f",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 529,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-07T11:08:41Z",
+      "side": 1,
+      "message": "There have been some cleanups to the function doc strings that I wasn\u0027t aware of previously. Could you change the following to match the format in the rest of the file:\n\n (defaults to \u0027(Default)\u0027)\n\nto:\n\n (default \u0027(Default)\u0027)",
+      "revId": "4f2fdf3adbf28f82c83beff215d5f9105c57290d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f15c587f",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-07T11:08:41Z",
+      "side": 1,
+      "message": "Sorry, missed that this should have \u0027(optional)\u0027 at the end. Could you add it in please.",
+      "revId": "4f2fdf3adbf28f82c83beff215d5f9105c57290d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_11570c59",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-07T11:08:41Z",
+      "side": 1,
+      "message": "Same here, thanks.",
+      "revId": "4f2fdf3adbf28f82c83beff215d5f9105c57290d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
