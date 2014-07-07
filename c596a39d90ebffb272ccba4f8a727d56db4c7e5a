@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_373de02b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-07T12:05:34Z",
+      "side": 1,
+      "message": "Think that the last sentence isn\u0027t required, as it really only helps in the context of the review and doesn\u0027t provide anything useful when viewing the git log outside of gerrit.",
+      "revId": "c596a39d90ebffb272ccba4f8a727d56db4c7e5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
