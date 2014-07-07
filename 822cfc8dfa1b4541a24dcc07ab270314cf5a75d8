@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_b6d9f658",
+        "filename": "jenkins_jobs/modules/zuul.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-07T10:27:40Z",
+      "side": 1,
+      "message": "should that be 40?",
+      "revId": "822cfc8dfa1b4541a24dcc07ab270314cf5a75d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
