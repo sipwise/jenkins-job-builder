@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_7fa531b4",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 487,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-07-08T20:27:57Z",
+      "side": 1,
+      "message": "Note the paragraph needs an empty new line in between to be interpreted by sphinx as actual paragraphs\n\nThe three paragraphs in the docstring shows as just one paragraph in the generated doc http://docs-draft.openstack.org/34/95734/5/check/gate-jenkins-job-builder-docs/5f65462/doc/build/html/triggers.html#triggers.reverse",
+      "revId": "a6a2cd371c86dd73f96e6a0cc5f9a68c60d44ce8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
