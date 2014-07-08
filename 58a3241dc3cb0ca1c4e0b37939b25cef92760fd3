@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_6a680e88",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-08T22:31:18Z",
+      "side": 1,
+      "message": "Would \u0027Make builds aborted by this wrapper be marked as \"failed\"\u0027 be clearer?\n\nI presume the idea is to communicate the following:\n\n if logfilesize \u003e maxsize:\n     if fail:\n         build.fail()\n     else:\n         build.abort()",
+      "revId": "58a3241dc3cb0ca1c4e0b37939b25cef92760fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ea809e48",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-08T22:31:18Z",
+      "side": 1,
+      "message": "Maybe \u0027Only applies if set-own is true\u0027? It\u0027s not actually required is it, since there is a default of 128 used before. Just that it is only used if set-own is true.",
+      "revId": "58a3241dc3cb0ca1c4e0b37939b25cef92760fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4a618ad2",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-08T22:31:18Z",
+      "side": 1,
+      "message": "I would just use a simple try/except here:\n\n try:\n     set_own \u003d data[\u0027set-own\u0027]\n except KeyError:\n     raise JenkinsJobsException(....)\n\nIf someone sets the value to a string of \u0027true\u0027 or \u0027false\u0027 I think that shold also be acceptable.",
+      "revId": "58a3241dc3cb0ca1c4e0b37939b25cef92760fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
