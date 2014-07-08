@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_2a69b625",
+        "filename": "test-requirements.txt",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-08T22:42:52Z",
+      "side": 0,
+      "message": "Did you intend on removing this? I assume that we would want to include any direct dependencies.",
+      "revId": "f62c568fa448b78b43011cf6c3a319e88c38a80a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
