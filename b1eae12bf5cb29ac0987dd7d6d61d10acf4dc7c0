@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_e23a9733",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 11295
+      },
+      "writtenOn": "2014-07-08T15:11:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7adec928_a98e9a25",
+      "revId": "b1eae12bf5cb29ac0987dd7d6d61d10acf4dc7c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_6c33c0f6",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-05-21T18:25:44Z",
       "side": 1,
       "message": "so it looks like parameter-factories can be one of [\u0027filebuild\u0027,\u0027binaryfile\u0027,\u0027counterbuild\u0027] ?\n\nwould be good to verify that the values specified for this param is actually valid.  here\u0027s an example.. http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/modules/publishers.py#n277",
+      "revId": "b1eae12bf5cb29ac0987dd7d6d61d10acf4dc7c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4249838d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 11295
+      },
+      "writtenOn": "2014-07-08T15:11:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7adec928_6c33c0f6",
       "revId": "b1eae12bf5cb29ac0987dd7d6d61d10acf4dc7c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_38811e4e",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 11295
+      },
+      "writtenOn": "2014-07-08T15:11:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7adec928_29244ac5",
+      "revId": "b1eae12bf5cb29ac0987dd7d6d61d10acf4dc7c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7adec928_29760ad9",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2014-05-21T18:25:44Z",
       "side": 1,
       "message": "would be good to verify that the values specified for this param is actually valid.",
+      "revId": "b1eae12bf5cb29ac0987dd7d6d61d10acf4dc7c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_5886d266",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 11295
+      },
+      "writtenOn": "2014-07-08T15:11:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7adec928_29760ad9",
       "revId": "b1eae12bf5cb29ac0987dd7d6d61d10acf4dc7c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
