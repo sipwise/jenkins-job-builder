@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_d58c4082",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-09T15:34:22Z",
+      "side": 1,
+      "message": "Apparently (see https://review.openstack.org/#/c/105620/1/tests/cmd/test_cmd.py for more info) testing the cmd module can sometimes result in the CacheStorage class attempting to create the cache directory multiple times as the tests are run in parallel.\n\nThis doesn\u0027t seem to occur that often, but it seems like it would be worth avoiding the intermittent failure.\n\nTwo possible solutions, wrap the CmdTests class with a mock to stub the CacheStorage class, or override setUp() to call \u0027fixtures.TempHomeDir()\u0027 to ensure each test can safely create the cache directory without risk of interference.\n\n @mock.patch(\u0027jenkins_jobs.builder.CacheStorage\u0027, mock.MagicMock)\n class CmdTests(testtools.TestCase):\n     ...\n\nor\n\n class CmdTests(testtools.TestCase):\n\n     fixtures_path \u003d os.path.join(os.path.dirname(__file__), \u0027fixtures\u0027)\n     parser \u003d cmd.create_parser()\n\n     def setUp():\n         super(CmdTests, self).setUp()\n         fixtures.TempHomeDir()\n     ...",
+      "revId": "d9efd31353275a87bd5e9621dc7b462b0b9b283c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
