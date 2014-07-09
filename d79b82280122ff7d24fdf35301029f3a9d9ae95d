@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_00d051f6",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2014-07-09T00:03:32Z",
+      "side": 1,
+      "message": "I believe the coverage test failure is due to inter test conflicts because they all end up sharing a single home dir. So the order that the tests run in can cause failures.\n\nI would use the python fixtures.TempHomeDir() fixture provided by the fixtures lib in JJB test setUp() to ensure that each test is run in a clean homedir environment.\n\nThat should probably be done in a separate change.",
+      "revId": "d79b82280122ff7d24fdf35301029f3a9d9ae95d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
