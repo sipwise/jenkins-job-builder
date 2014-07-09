@@ -16,6 +16,24 @@
       "revId": "d79b82280122ff7d24fdf35301029f3a9d9ae95d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8c3e4928",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-09T15:23:48Z",
+      "side": 1,
+      "message": "Not very common occurrence, but will probably start occurring more as we exercise the CLI functions since they will make use of the Builder class from jenkins_jobs which in turn utilizes the CacheStorage class which it appears is the source of the failure.\n\nThe other alternative is to mock the CacheStorage class for the entire CmdTests class.\n\n @mock.patch(\u0027jenkins_jobs.builder.CacheStorage\u0027, mock.MagicMock)\n\nI\u0027ll probably suggest this in a review of the dependent change as I think it\u0027s better to mock the object than to work around the underlying implementation inside it.",
+      "parentUuid": "baada198_00d051f6",
+      "revId": "d79b82280122ff7d24fdf35301029f3a9d9ae95d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
