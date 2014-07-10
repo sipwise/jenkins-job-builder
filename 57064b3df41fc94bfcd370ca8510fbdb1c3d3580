@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_3c7c64b5",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 589,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-10T12:15:09Z",
+      "side": 1,
+      "message": "I that for now, if you\u0027re not adding the list jobs on the server functionality, then \u0027fn\u0027 should be a required parameter.",
+      "revId": "57064b3df41fc94bfcd370ca8510fbdb1c3d3580",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_5c4af883",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-10T12:15:09Z",
+      "side": 1,
+      "message": "Since you set a default it requires someone to set the \u0027fn\u0027 arg to \u0027None\u0027 to get the else behaviour. Until this lists the jobs on the server, the if/else is redundant since returning a glob if one is set isn\u0027t useful. \n\nYou could just change this line to be something like the following (untested):\n\n jobs \u003d [j.name for j in self.jenkins.get_jobs()\n         if not jobs_name_globs or matches(j.name, job_name_globs)]\n\nAnd it should get the jobs from the remote and apply the filter\n\nBut I think it should be one or the other, remove the if/else or add the call to get the current jobs from the master.",
+      "revId": "57064b3df41fc94bfcd370ca8510fbdb1c3d3580",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
