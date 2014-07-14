@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_18b80874",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-14T22:19:02Z",
+      "side": 1,
+      "message": "Probably a good idea to move this list outside of the loops so it\u0027s not getting recreated each time. Python might be smart enough to do that anyway, but I\u0027m not sure, so probably better to default to good programming practice in any case.",
+      "revId": "a2a8b6a784258948a5796651a97f2cd6cb77cbc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_78a82420",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-14T22:19:02Z",
+      "side": 1,
+      "message": "Same as above here.",
+      "revId": "a2a8b6a784258948a5796651a97f2cd6cb77cbc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1846487b",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-14T22:19:02Z",
+      "side": 1,
+      "message": "You\u0027ve already defined this above, so if you move the above out outside of the loops there should be no need to re-define it.",
+      "revId": "a2a8b6a784258948a5796651a97f2cd6cb77cbc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
