@@ -37,7 +37,7 @@ import jenkins_jobs.modules.base
 from jenkins_jobs.errors import JenkinsJobsException
 
 
-def git(self, xml_parent, data):
+def git(parser, xml_parent, data):
     """yaml: git
     Specifies the git SCM repository for this job.
     Requires the Jenkins `Git Plugin.
@@ -253,7 +253,7 @@ remoteName/\*')
                 data.get('browser-version', '0.0'))
 
 
-def repo(self, xml_parent, data):
+def repo(parser, xml_parent, data):
     """yaml: repo
     Specifies the repo SCM repository for this job.
     Requires the Jenkins `Repo Plugin.
@@ -319,7 +319,7 @@ def repo(self, xml_parent, data):
             xe.text = str(val)
 
 
-def store(self, xml_parent, data):
+def store(parser, xml_parent, data):
     """yaml: store
     Specifies the Visualworks Smalltalk Store repository for this job.
     Requires the Jenkins `Visualworks Smalltalk Store Plugin.
@@ -382,7 +382,7 @@ def store(self, xml_parent, data):
         XML.SubElement(scm, 'generateParcelBuilderInputFile').text = 'false'
 
 
-def svn(self, xml_parent, data):
+def svn(parser, xml_parent, data):
     """yaml: svn
     Specifies the svn SCM repository for this job.
 
@@ -481,7 +481,7 @@ def svn(self, xml_parent, data):
             xe.text = str(val)
 
 
-def tfs(self, xml_parent, data):
+def tfs(parser, xml_parent, data):
     """yaml: tfs
     Specifies the Team Foundation Server repository for this job.
     Requires the Jenkins `Team Foundation Server Plugin.
@@ -605,7 +605,7 @@ def tfs(self, xml_parent, data):
                                                   'Browser'})
 
 
-def workspace(self, xml_parent, data):
+def workspace(parser, xml_parent, data):
     """yaml: workspace
     Specifies the cloned workspace for this job to use as a SCM source.
     Requires the Jenkins `Clone Workspace SCM Plugin.
