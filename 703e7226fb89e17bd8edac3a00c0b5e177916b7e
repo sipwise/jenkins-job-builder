@@ -22,6 +22,23 @@
       "revId": "703e7226fb89e17bd8edac3a00c0b5e177916b7e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9421234f",
+        "filename": "etc/jenkins_jobs.ini-sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-07-15T15:03:25Z",
+      "side": 1,
+      "message": "I\u0027m conflicted about this.  I think false should be the default but David is right that it might potentially break existing JJB execution in the wild :(\n\nAlso it\u0027s a nice touch to allow this to be configurable but I don\u0027t see a use case for setting this to true at all.  Why would anyone want to allow duplicate jobs?  \n\nMaybe this should just be set to NOT allow duplicates and NOT configurable?  This will just force users to fix their job configurations which isn\u0027t a bad thing right?",
+      "revId": "703e7226fb89e17bd8edac3a00c0b5e177916b7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
