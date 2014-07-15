@@ -39,6 +39,41 @@
       "revId": "703e7226fb89e17bd8edac3a00c0b5e177916b7e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0f334014",
+        "filename": "etc/jenkins_jobs.ini-sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-15T15:25:43Z",
+      "side": 1,
+      "message": "It would seem that the existing behaviour is wrong. And if we allow by default, users that aren\u0027t aware of this override behaviour will most likely end up being caught out by surprise. I think defaulting to the behaviour an end user would expect to be sensible is better than adhering to perfect backwards compatibility. Unless the suggestion is that it should be this way for a single release only with the breaking change of switching the default to be made after the next release?\n\nAntoine Musso has a use case of allowing duplicates which is why I included a config option to ignore.\n\nIn this case that block duplicate job names by default, those that need to override this behaviour can update their configuration to allow duplicates, and can do so before upgrading JJB without breaking their existing set up.",
+      "parentUuid": "baada198_9421234f",
+      "revId": "703e7226fb89e17bd8edac3a00c0b5e177916b7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ea435a3c",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-15T15:25:43Z",
+      "side": 1,
+      "message": "Potentially if duplicates are to be allowed it may make more sense to generate the specific job definitions after templates since that would allow for more specific to override generic templates rather than the current behaviour which is the reverse of this.",
+      "revId": "703e7226fb89e17bd8edac3a00c0b5e177916b7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
