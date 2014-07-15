@@ -35,6 +35,10 @@ from jenkins_jobs.errors import JenkinsJobsException
 import jenkins_jobs.modules.base
 from jenkins_jobs.modules import hudson_model
 import logging
+try:
+    from collections import OrderedDict
+except ImportError:
+    from ordereddict import OrderedDict
 import re
 
 
@@ -107,10 +111,10 @@ def build_gerrit_triggers(xml_parent, data):
 
 
 def build_gerrit_skip_votes(xml_parent, data):
-    outcomes = {'successful': 'onSuccessful',
-                'failed': 'onFailed',
-                'unstable': 'onUnstable',
-                'notbuilt': 'onNotBuilt'}
+    outcomes = OrderedDict([('successful', 'onSuccessful'),
+                            ('failed', 'onFailed'),
+                            ('unstable', 'onUnstable'),
+                            ('notbuilt', 'onNotBuilt')])
 
     skip_vote_node = XML.SubElement(xml_parent, 'skipVote')
     skip_vote = data.get('skip-vote', {})
