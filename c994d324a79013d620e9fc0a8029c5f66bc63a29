@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_d94676bf",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-07-15T14:39:53Z",
+      "side": 1,
+      "message": "bool type?  What is the Jenkins plugin default for this?  Can\u0027t we set the same default here?",
+      "revId": "c994d324a79013d620e9fc0a8029c5f66bc63a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d90036ad",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-07-15T14:39:53Z",
+      "side": 1,
+      "message": "thanks for providing multiple examples, although i would prefer to show this one first since it\u0027s simpler than logfilesize001.yaml \n\nAlso maybe you can give each one a little description? something like \"Minimum Config\" and \"Full Config\"?",
+      "revId": "c994d324a79013d620e9fc0a8029c5f66bc63a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_79848ad2",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-07-15T14:39:53Z",
+      "side": 1,
+      "message": "you won\u0027t need this if you have a default",
+      "revId": "c994d324a79013d620e9fc0a8029c5f66bc63a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_beac4836",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-07-15T14:39:53Z",
+      "side": 1,
+      "message": "why isn\u0027t the default size documented in the above docstring?",
+      "revId": "c994d324a79013d620e9fc0a8029c5f66bc63a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_59e6e6b0",
+        "filename": "tests/wrappers/fixtures/logfilesize002.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-07-15T14:39:53Z",
+      "side": 1,
+      "message": "you won\u0027t even need to specify \"set-own\" if there\u0027s a default.",
+      "revId": "c994d324a79013d620e9fc0a8029c5f66bc63a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
