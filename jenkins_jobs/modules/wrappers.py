@@ -390,20 +390,18 @@ def locks(parser, xml_parent, data):
 
     Example::
 
-      wrappers:
-        - locks:
-            - FOO
-            - FOO2
+    .. literalinclude::  /../../tests/wrappers/fixtures/locks002.yaml
     """
-    lw = XML.SubElement(xml_parent,
-                        'hudson.plugins.locksandlatches.LockWrapper')
-    locktop = XML.SubElement(lw, 'locks')
     locks = data
-    for lock in locks:
-        lockwrapper = XML.SubElement(locktop,
-                                     'hudson.plugins.locksandlatches.'
-                                     'LockWrapper_-LockWaitConfig')
-        XML.SubElement(lockwrapper, 'name').text = lock
+    if locks:
+        lw = XML.SubElement(xml_parent,
+                            'hudson.plugins.locksandlatches.LockWrapper')
+        locktop = XML.SubElement(lw, 'locks')
+        for lock in locks:
+            lockwrapper = XML.SubElement(locktop,
+                                         'hudson.plugins.locksandlatches.'
+                                         'LockWrapper_-LockWaitConfig')
+            XML.SubElement(lockwrapper, 'name').text = lock
 
 
 def copy_to_slave(parser, xml_parent, data):
