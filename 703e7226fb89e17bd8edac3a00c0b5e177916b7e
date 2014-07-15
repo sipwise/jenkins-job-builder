@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_7652e913",
+        "filename": "etc/jenkins_jobs.ini-sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-07-15T06:51:52Z",
+      "side": 1,
+      "message": "For backward compatibility would it be better to set the default to True?",
+      "range": {
+        "startLine": 5,
+        "startChar": 17,
+        "endLine": 5,
+        "endChar": 22
+      },
+      "revId": "703e7226fb89e17bd8edac3a00c0b5e177916b7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
