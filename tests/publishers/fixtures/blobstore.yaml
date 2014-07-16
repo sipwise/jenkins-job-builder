@@ -1,0 +1,7 @@
+publishers:
+  - blobstore:
+      profile: hp
+      files: '*.tar.gz'
+      container: jenkins
+      basedir: 
+
