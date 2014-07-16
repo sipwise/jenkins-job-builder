@@ -60,6 +60,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_cd477f76",
+        "filename": "etc/jenkins_jobs.ini-sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-07-16T00:43:51Z",
+      "side": 1,
+      "message": "OK, I am convinced.  Default false seems better.",
+      "parentUuid": "baada198_0f334014",
+      "revId": "703e7226fb89e17bd8edac3a00c0b5e177916b7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_ea435a3c",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 5
