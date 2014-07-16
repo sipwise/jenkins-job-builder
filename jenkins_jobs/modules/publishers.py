@@ -94,6 +94,44 @@ def blame_upstream(parser, xml_parent, data):
                    'BlameUpstreamCommitersPublisher')
 
 
+def blobstore(parser, xml_parent, data):
+    """yaml: blobstore
+    provides a way to store your build artifacts on JClouds supported cloud storage providers.
+    Requires the Jenkins `JClouds Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/JClouds+Plugin>`_
+
+    JClouds Cloud Storage Settings must be configured for the Jenkins instance.
+
+    :arg str profile: preconfigured storage profile
+    :arg str files: files to upload
+    :arg str basedir: the sourcd file path (relative to workspace)
+    :arg str container: the desination container name
+    :arg bool hierarchy: keep hierarchy (Default: False)
+
+    Example:
+
+    .. literalinclude::  /../../tests/publishers/fixtures/blobstore.yaml
+
+    """
+
+    deployer = XML.SubElement(xml_parent,
+                              'jenkins.plugins.jclouds.blobstore.'
+                              'BlobStorePublisher')
+    
+    if data is None or 'profile' not in data:
+        raise Exception('profile field is missing')
+    else:
+        
+        XML.SubElement(deployer, 'profileName').text = data.get('profile')
+        entries = XML.SubElement(deployer, 'entries')
+        deployer_entry = XML.SubElement(entries, 'jenkins.plugins.jclouds.blobstore.BlobStoreEntry')
+        XML.SubElement(deployer_entry, 'container').text = data['container']
+        XML.SubElement(deployer_entry, 'path').text = data['basedir']
+        XML.SubElement(deployer_entry, 'sourceFile').text = data['files']
+        hierarchy = str(data.get('hierarchy', False)).lower()
+        XML.SubElement(deployer_entry, 'keepHierarchy').text = hierarchy 
+
+
 def campfire(parser, xml_parent, data):
     """yaml: campfire
     Send build notifications to Campfire rooms.
