@@ -149,12 +149,13 @@ class SingleJobTestCase(BaseTestCase):
         parser.parse(yaml_filepath)
 
         # Generate the XML tree
+        parser.expandYaml()
         parser.generateXML()
 
-        parser.jobs.sort(key=operator.attrgetter('name'))
+        parser.xml_jobs.sort(key=operator.attrgetter('name'))
 
         # Prettify generated XML
-        pretty_xml = "\n".join(job.output() for job in parser.jobs)
+        pretty_xml = "\n".join(job.output() for job in parser.xml_jobs)
 
         self.assertThat(
             pretty_xml,
