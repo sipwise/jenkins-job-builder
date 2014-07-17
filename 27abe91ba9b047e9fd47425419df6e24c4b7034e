@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_17820000",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-17T22:32:34Z",
+      "side": 1,
+      "message": "maybe \u0027s/generation/expansion/\u0027",
+      "revId": "27abe91ba9b047e9fd47425419df6e24c4b7034e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_57f8f8c3",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-17T22:32:34Z",
+      "side": 1,
+      "message": "Is there any need to actually generate the XML at this point?\n\nSeems like with the nice reworking you\u0027ve done, this can be dropped since all that is of interest is the job name which can be retrieved from self.parser.jobs.",
+      "revId": "27abe91ba9b047e9fd47425419df6e24c4b7034e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
