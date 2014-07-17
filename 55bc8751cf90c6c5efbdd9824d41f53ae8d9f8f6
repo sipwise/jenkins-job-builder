@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_8a17f453",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-07-17T05:26:23Z",
+      "side": 1,
+      "message": "This implies multiple files, but the parameter in the XML is named \u0027sourceFile\u0027 implying a single file.",
+      "range": {
+        "startLine": 106,
+        "startChar": 20,
+        "endLine": 106,
+        "endChar": 35
+      },
+      "revId": "55bc8751cf90c6c5efbdd9824d41f53ae8d9f8f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6a00e002",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-07-17T05:26:23Z",
+      "side": 1,
+      "message": "source",
+      "range": {
+        "startLine": 107,
+        "startChar": 26,
+        "endLine": 107,
+        "endChar": 32
+      },
+      "revId": "55bc8751cf90c6c5efbdd9824d41f53ae8d9f8f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4a579c26",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-07-17T05:26:23Z",
+      "side": 1,
+      "message": "destination",
+      "range": {
+        "startLine": 108,
+        "startChar": 28,
+        "endLine": 108,
+        "endChar": 38
+      },
+      "revId": "55bc8751cf90c6c5efbdd9824d41f53ae8d9f8f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2a58a856",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-07-17T05:26:23Z",
+      "side": 1,
+      "message": "\"(default false)\" for consistency with other documentation.",
+      "range": {
+        "startLine": 109,
+        "startChar": 40,
+        "endLine": 109,
+        "endChar": 56
+      },
+      "revId": "55bc8751cf90c6c5efbdd9824d41f53ae8d9f8f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_dd59b436",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-07-17T05:26:23Z",
+      "side": 1,
+      "message": "This else block is not necessary.  The following code will not be executed anyway if the exception is raised at line 122.",
+      "range": {
+        "startLine": 123,
+        "startChar": 4,
+        "endLine": 124,
+        "endChar": 0
+      },
+      "revId": "55bc8751cf90c6c5efbdd9824d41f53ae8d9f8f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ea14f04e",
+        "filename": "tests/publishers/fixtures/blobstore.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-07-17T05:26:23Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 6,
+        "startChar": 14,
+        "endLine": 6,
+        "endChar": 15
+      },
+      "revId": "55bc8751cf90c6c5efbdd9824d41f53ae8d9f8f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
