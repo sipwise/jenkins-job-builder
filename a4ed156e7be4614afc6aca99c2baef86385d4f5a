@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_37154449",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-17T22:36:38Z",
+      "side": 1,
+      "message": "Think Khai meant could you include a \u0027(default 128)\u0027 here so that the documentation would mention th default specified below.",
+      "revId": "a4ed156e7be4614afc6aca99c2baef86385d4f5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
