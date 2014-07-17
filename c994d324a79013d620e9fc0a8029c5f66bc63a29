@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_7945fc13",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 10961
+      },
+      "writtenOn": "2014-07-17T18:12:14Z",
+      "side": 1,
+      "message": "yes, done",
+      "parentUuid": "baada198_d94676bf",
+      "revId": "c994d324a79013d620e9fc0a8029c5f66bc63a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_d90036ad",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-15T14:39:53Z",
       "side": 1,
       "message": "thanks for providing multiple examples, although i would prefer to show this one first since it\u0027s simpler than logfilesize001.yaml \n\nAlso maybe you can give each one a little description? something like \"Minimum Config\" and \"Full Config\"?",
+      "revId": "c994d324a79013d620e9fc0a8029c5f66bc63a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f9bcacdd",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 10961
+      },
+      "writtenOn": "2014-07-17T18:12:14Z",
+      "side": 1,
+      "message": "totally agree. Also as set-own has default, minimum config has no parameters.",
+      "parentUuid": "baada198_d90036ad",
       "revId": "c994d324a79013d620e9fc0a8029c5f66bc63a29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_39b704f7",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 10961
+      },
+      "writtenOn": "2014-07-17T18:12:14Z",
+      "side": 1,
+      "message": "yes.done",
+      "parentUuid": "baada198_79848ad2",
+      "revId": "c994d324a79013d620e9fc0a8029c5f66bc63a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_beac4836",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 3
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_597bd828",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 10961
+      },
+      "writtenOn": "2014-07-17T18:12:14Z",
+      "side": 1,
+      "message": "there is no default size for \u0027size\u0027 parameter in docstring.",
+      "parentUuid": "baada198_beac4836",
+      "revId": "c994d324a79013d620e9fc0a8029c5f66bc63a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_59e6e6b0",
         "filename": "tests/wrappers/fixtures/logfilesize002.yaml",
         "patchSetId": 3
@@ -81,6 +153,24 @@
       "writtenOn": "2014-07-15T14:39:53Z",
       "side": 1,
       "message": "you won\u0027t even need to specify \"set-own\" if there\u0027s a default.",
+      "revId": "c994d324a79013d620e9fc0a8029c5f66bc63a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d9b528d1",
+        "filename": "tests/wrappers/fixtures/logfilesize002.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 10961
+      },
+      "writtenOn": "2014-07-17T18:12:14Z",
+      "side": 1,
+      "message": "yes, removed \u0027set-own\u0027",
+      "parentUuid": "baada198_59e6e6b0",
       "revId": "c994d324a79013d620e9fc0a8029c5f66bc63a29",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
