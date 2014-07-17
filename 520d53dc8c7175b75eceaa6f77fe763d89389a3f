@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_e206ac84",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-17T23:06:49Z",
+      "side": 1,
+      "message": "Is \u0027blobstore\u0027 used in the Jenkins UI for this? Just wondering if users will be able to make the connection easily enough.",
+      "revId": "520d53dc8c7175b75eceaa6f77fe763d89389a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_c25d28ee",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-17T23:06:49Z",
+      "side": 1,
+      "message": "Given the way the dispatch function works, it\u0027s safe to assume that data will never be None. It\u0027ll either be a dict or list.",
+      "revId": "520d53dc8c7175b75eceaa6f77fe763d89389a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_82bdf004",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-17T23:06:49Z",
+      "side": 1,
+      "message": "Prefer if you used JenkinsJobsException here.",
+      "revId": "520d53dc8c7175b75eceaa6f77fe763d89389a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_020f20e2",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-17T23:06:49Z",
+      "side": 1,
+      "message": "Assuming none of the 3 settings above have default values that can be specified, it would be good to wrap them with a try/except clause and try and raise a JenkinsJobsException with an indication to try and help the user understand what they need to fix in their yaml, as otherwise they will need to look through the traceback to see which function the exception occurred in.\n\n\nWrapping all three and extracting the key used from the exception might be slightly more convenient than checking each individually first.\n\n try:\n     ....\n except KeyError as e:\n     raise JenkinsJobsException(\"blobstore requires \u0027%s\u0027 to be set\" % e.args[0])\n\nShould be able to use the examples in the file here.",
+      "revId": "520d53dc8c7175b75eceaa6f77fe763d89389a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_e28a2c19",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-17T23:06:49Z",
+      "side": 1,
+      "message": "It\u0027s acceptable to use an assignment split over two lines, unless you need \u0027hierarchy\u0027 elsewhere.\n\n XML.SubElement(deployer_entry, \u0027keepHierarchy\u0027).text \u003d str(\n     data.get(\u0027hierarchy\u0027, False)).lower()\n\nCouple of examples of this throughout the file, this seems to be more common than the other variation using \u0027\\\u0027.",
+      "revId": "520d53dc8c7175b75eceaa6f77fe763d89389a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
