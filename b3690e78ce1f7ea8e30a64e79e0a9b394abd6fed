@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_c4d98a84",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-18T23:09:59Z",
+      "side": 1,
+      "message": "I do wonder if the name is a little obscure. The plugin UI in jenkins never mentions blobstore, so unless you\u0027re familiar with the resulting XML there is no real connection.\n\nI don\u0027t know if it\u0027s any better to refer to it as jclouds-blobstore to make it easy to make the connection to the jclouds when viewing the yaml configuration?",
+      "revId": "b3690e78ce1f7ea8e30a64e79e0a9b394abd6fed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
