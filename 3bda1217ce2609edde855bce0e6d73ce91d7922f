@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_a4a2d697",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-18T23:50:30Z",
+      "side": 1,
+      "message": "technically this is a break in backwards compatibility if anyone else was making use of JJB\u0027s API.\n\nIf it\u0027s decided to keep the Yaml/XML job data managed separately at this level I think the new names are more sensible given the idea that jobs should be defined in yaml, and then the XML is generated from those definitions.\n\nI would be tempted though to have \u0027jobs\u0027 be a list of objects that contain both the XML and Yaml data for the referenced job.\n\nCertainly if we go forward with this approach it might be worth seeing if we need to announce anything or do something to note the change in behaviour.",
+      "revId": "3bda1217ce2609edde855bce0e6d73ce91d7922f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_c4feea37",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-18T23:50:30Z",
+      "side": 1,
+      "message": "I\u0027ve very tempted to suggest that we actually add a yaml attribute to this class and rename it to just \u0027Job\u0027. That way we can retrieve either the yaml or xml from the same list of jobs depending on what output format we want instead of storing two separate lists.\n\nCould possibly add a \u0027format\u0027 argument to both \u0027output\u0027 and \u0027md5\u0027 methods which default to \u0027xml\u0027 to control the default behaviour while still allowing requesting the yaml output to be printed out in a pretty format.\n\nSome of this could be added in the future if desired if we also add the ability to print the yaml generated from the JJB CLI.",
+      "revId": "3bda1217ce2609edde855bce0e6d73ce91d7922f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_84b79284",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 615,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-18T23:50:30Z",
+      "side": 1,
+      "message": "I do wonder if we should have the generateXML() method call the expandYaml method behind the scenes automatically as required rather than essentially always requiring usage of generateXML() to call expandYaml() beforehand.\n\nSeems an unnecessary burden on usage of the API.",
+      "revId": "3bda1217ce2609edde855bce0e6d73ce91d7922f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
