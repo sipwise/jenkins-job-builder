@@ -16,6 +16,92 @@
       "revId": "b3690e78ce1f7ea8e30a64e79e0a9b394abd6fed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3863451b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-07-19T06:05:26Z",
+      "side": 1,
+      "message": "Our convention is to use the name of the plugin, so \u0027jclouds\u0027 is what i would prefer.",
+      "parentUuid": "baada198_c4d98a84",
+      "revId": "b3690e78ce1f7ea8e30a64e79e0a9b394abd6fed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f87c6db8",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-07-19T06:05:26Z",
+      "side": 1,
+      "message": "please add \u0027(requied)\u0027 at the end to indicate that this is a required param",
+      "revId": "b3690e78ce1f7ea8e30a64e79e0a9b394abd6fed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_78405d5f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-07-19T06:05:26Z",
+      "side": 1,
+      "message": "would probably be better if you changed filename to \u0027jclouds001.yaml\u0027",
+      "revId": "b3690e78ce1f7ea8e30a64e79e0a9b394abd6fed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_986e11ff",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-07-19T06:05:26Z",
+      "side": 1,
+      "message": "we call these \u0027parameter\u0027 instead of \u0027field\u0027",
+      "revId": "b3690e78ce1f7ea8e30a64e79e0a9b394abd6fed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_731cfe66",
+        "filename": "tests/publishers/fixtures/blobstore.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-07-19T06:05:26Z",
+      "side": 1,
+      "message": "isn\u0027t basedir a required param?  wouldn\u0027t this cause JenkinsJobException?",
+      "revId": "b3690e78ce1f7ea8e30a64e79e0a9b394abd6fed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
