@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_a7c9f85b",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-19T00:24:04Z",
+      "side": 1,
+      "message": "These all appear to be optional with no default value to be assigned, so could you add \u0027(Optional)\u0027 to the end so that it\u0027s clear in the documentation.",
+      "revId": "c9086d09fe032eabda6488965787df89822783d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_47949c36",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-19T00:24:04Z",
+      "side": 1,
+      "message": "Could you include the default here for the docs.",
+      "revId": "c9086d09fe032eabda6488965787df89822783d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_67952031",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-19T00:24:04Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "c9086d09fe032eabda6488965787df89822783d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_67e360d8",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-19T00:24:04Z",
+      "side": 1,
+      "message": "Prefer if you kept the original example, by putting it in a test as well as it shows use of multiple repos/checkouts, and have the include/exclude regions example appear after it.",
+      "revId": "c9086d09fe032eabda6488965787df89822783d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
