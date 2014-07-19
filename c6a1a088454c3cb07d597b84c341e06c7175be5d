@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_73c6be9d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-07-19T06:17:27Z",
+      "side": 1,
+      "message": "please add \u0027(default false)\u0027 at the end?\n\nWhile your at it, would you mind documenting all of the defaults for this module? I think it will help users.",
+      "revId": "c6a1a088454c3cb07d597b84c341e06c7175be5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
