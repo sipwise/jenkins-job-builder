@@ -16,6 +16,24 @@
       "revId": "8707e89173d1ad5b1f3418e5e12d23902646c55b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4816b259",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 11011
+      },
+      "writtenOn": "2014-07-23T18:33:02Z",
+      "side": 1,
+      "message": "Darragh can correct me if I\u0027m wrong, but I think the motivation here is to make it so that the order of keys in the generated XML is deterministic and identical on different Python versions.\n\nThe problem is that in Python 3.3, they enabled hash randomization by default in order to prevent a certain kind of DoS attack. This results in iterating through dict keys becomes non-deterministic. Additionally, I believe that different hashing is used on 32-bit vs. 64-bit pretty much forever (before this change in 3.3). Which means that when you run tests that assert things about the XML output, you may end up getting different output than what you expect, even though it\u0027s equivalent.\n\nSo it\u0027s nice to force it to always you a deterministic order so that you don\u0027t get spurious test failures.\n\nhttps://docs.python.org/3/whatsnew/3.3.html (search for \"hash randomization\")\nhttp://bugs.python.org/issue13703",
+      "parentUuid": "baada198_ef04f01a",
+      "revId": "8707e89173d1ad5b1f3418e5e12d23902646c55b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
