@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_ef04f01a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-07-23T16:58:02Z",
+      "side": 1,
+      "message": "This change LGTM.  Was wondering if you could add info on why you\u0027ve added this?  I mean what is the use case this will help you solve?",
+      "revId": "8707e89173d1ad5b1f3418e5e12d23902646c55b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
