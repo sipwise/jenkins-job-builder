@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_474b0686",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 12476
+      },
+      "writtenOn": "2014-07-23T15:32:08Z",
+      "side": 1,
+      "message": "i have updated the code but i did leave it in the try block as to create the xml file in the correct order \n\ni have also updated the doc string",
+      "parentUuid": "baada198_47d14655",
+      "revId": "22d27970e69d6dd906be72e5a9f67a236a0437c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_4738669f",
         "filename": "tests/publishers/fixtures/jclouds001.yaml",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-23T15:19:46Z",
       "side": 1,
       "message": "Good catch Khai.\n\nIf basedir is optional, the the module code should be written to not require it be defined here at all.",
+      "revId": "22d27970e69d6dd906be72e5a9f67a236a0437c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_272ff2a8",
+        "filename": "tests/publishers/fixtures/jclouds001.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 12476
+      },
+      "writtenOn": "2014-07-23T15:32:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_4738669f",
       "revId": "22d27970e69d6dd906be72e5a9f67a236a0437c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
