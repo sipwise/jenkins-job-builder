@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_12b79222",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 11295
+      },
+      "writtenOn": "2014-07-23T12:34:29Z",
+      "side": 1,
+      "message": "Done the change, thanks :)",
+      "parentUuid": "baada198_18b80874",
+      "revId": "a2a8b6a784258948a5796651a97f2cd6cb77cbc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_78a82420",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_323576a8",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 11295
+      },
+      "writtenOn": "2014-07-23T12:34:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_78a82420",
+      "revId": "a2a8b6a784258948a5796651a97f2cd6cb77cbc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_1846487b",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 8
@@ -47,6 +83,24 @@
       "writtenOn": "2014-07-14T22:19:02Z",
       "side": 1,
       "message": "You\u0027ve already defined this above, so if you move the above out outside of the loops there should be no need to re-define it.",
+      "revId": "a2a8b6a784258948a5796651a97f2cd6cb77cbc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_52382a9f",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 11295
+      },
+      "writtenOn": "2014-07-23T12:34:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_1846487b",
       "revId": "a2a8b6a784258948a5796651a97f2cd6cb77cbc6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
