@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_47d14655",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-23T15:19:46Z",
+      "side": 1,
+      "message": "If \u0027basedir\u0027 is not actually required as you stated, then please use the common convention of:\n\n XML.SubElement(deployer_entry, \u0027path\u0027).text \u003d data.get(\u0027basedir\u0027, \u0027\u0027)\n\nIf the XML element should be added but left empty or:\n\n if \u0027basedir\u0027 in data:\n      XML.SubElement(deployer_entry, \u0027path\u0027).text \u003d data[\u0027basedir\u0027]\n\nIf the XML element should only be added if defined.\n\nBoth involve moving this out of the try/except and marking the docstring above indicate the argument is optional.",
+      "revId": "22d27970e69d6dd906be72e5a9f67a236a0437c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4738669f",
+        "filename": "tests/publishers/fixtures/jclouds001.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-23T15:19:46Z",
+      "side": 1,
+      "message": "Good catch Khai.\n\nIf basedir is optional, the the module code should be written to not require it be defined here at all.",
+      "revId": "22d27970e69d6dd906be72e5a9f67a236a0437c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
