@@ -37,6 +37,42 @@
     },
     {
       "key": {
+        "uuid": "baada198_30425568",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 12476
+      },
+      "writtenOn": "2014-07-23T14:56:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_c4d98a84",
+      "revId": "b3690e78ce1f7ea8e30a64e79e0a9b394abd6fed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_104f1193",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 12476
+      },
+      "writtenOn": "2014-07-23T14:56:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_3863451b",
+      "revId": "b3690e78ce1f7ea8e30a64e79e0a9b394abd6fed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_f87c6db8",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 4
@@ -48,6 +84,24 @@
       "writtenOn": "2014-07-19T06:05:26Z",
       "side": 1,
       "message": "please add \u0027(requied)\u0027 at the end to indicate that this is a required param",
+      "revId": "b3690e78ce1f7ea8e30a64e79e0a9b394abd6fed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b07e65ad",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 12476
+      },
+      "writtenOn": "2014-07-23T14:56:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_f87c6db8",
       "revId": "b3690e78ce1f7ea8e30a64e79e0a9b394abd6fed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_506ee900",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 12476
+      },
+      "writtenOn": "2014-07-23T14:56:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_78405d5f",
+      "revId": "b3690e78ce1f7ea8e30a64e79e0a9b394abd6fed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_986e11ff",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 4
@@ -88,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_306b35f2",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 12476
+      },
+      "writtenOn": "2014-07-23T14:56:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_986e11ff",
+      "revId": "b3690e78ce1f7ea8e30a64e79e0a9b394abd6fed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_731cfe66",
         "filename": "tests/publishers/fixtures/blobstore.yaml",
         "patchSetId": 4
@@ -99,6 +189,24 @@
       "writtenOn": "2014-07-19T06:05:26Z",
       "side": 1,
       "message": "isn\u0027t basedir a required param?  wouldn\u0027t this cause JenkinsJobException?",
+      "revId": "b3690e78ce1f7ea8e30a64e79e0a9b394abd6fed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d0dd99de",
+        "filename": "tests/publishers/fixtures/blobstore.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 12476
+      },
+      "writtenOn": "2014-07-23T14:56:07Z",
+      "side": 1,
+      "message": "basedir is not required as it is just for the dir structure after uploading. If not set it will just default to the root of the container(most common setup)",
+      "parentUuid": "baada198_731cfe66",
       "revId": "b3690e78ce1f7ea8e30a64e79e0a9b394abd6fed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
