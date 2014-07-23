@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_fbee79ec",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-23T15:01:18Z",
+      "side": 1,
+      "message": "Not quite sure how I missed this before. Would prefer to keep the simple example from first and have the more complex one showing parameter factories as a second example.",
+      "revId": "688caf0f95a9b5283da7c07fbb33b91ad5dd8c00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
