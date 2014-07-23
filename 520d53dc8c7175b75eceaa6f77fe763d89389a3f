@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_f0329d0e",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 12476
+      },
+      "writtenOn": "2014-07-23T14:55:56Z",
+      "side": 1,
+      "message": "was renamed",
+      "parentUuid": "baada198_e206ac84",
+      "revId": "520d53dc8c7175b75eceaa6f77fe763d89389a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_c25d28ee",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-17T23:06:49Z",
       "side": 1,
       "message": "Given the way the dispatch function works, it\u0027s safe to assume that data will never be None. It\u0027ll either be a dict or list.",
+      "revId": "520d53dc8c7175b75eceaa6f77fe763d89389a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_10363103",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 12476
+      },
+      "writtenOn": "2014-07-23T14:55:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_c25d28ee",
       "revId": "520d53dc8c7175b75eceaa6f77fe763d89389a3f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_b02ca5ad",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 12476
+      },
+      "writtenOn": "2014-07-23T14:55:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_82bdf004",
+      "revId": "520d53dc8c7175b75eceaa6f77fe763d89389a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_020f20e2",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 3
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_9008812e",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 12476
+      },
+      "writtenOn": "2014-07-23T14:55:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_020f20e2",
+      "revId": "520d53dc8c7175b75eceaa6f77fe763d89389a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_e28a2c19",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 3
@@ -81,6 +153,24 @@
       "writtenOn": "2014-07-17T23:06:49Z",
       "side": 1,
       "message": "It\u0027s acceptable to use an assignment split over two lines, unless you need \u0027hierarchy\u0027 elsewhere.\n\n XML.SubElement(deployer_entry, \u0027keepHierarchy\u0027).text \u003d str(\n     data.get(\u0027hierarchy\u0027, False)).lower()\n\nCouple of examples of this throughout the file, this seems to be more common than the other variation using \u0027\\\u0027.",
+      "revId": "520d53dc8c7175b75eceaa6f77fe763d89389a3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b003c50e",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 12476
+      },
+      "writtenOn": "2014-07-23T14:55:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_e28a2c19",
       "revId": "520d53dc8c7175b75eceaa6f77fe763d89389a3f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
