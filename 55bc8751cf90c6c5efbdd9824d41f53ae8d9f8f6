@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_eb2c7295",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 12476
+      },
+      "writtenOn": "2014-07-23T14:55:47Z",
+      "side": 1,
+      "message": "added regex so people will know that it is one seting that can include several files",
+      "parentUuid": "baada198_8a17f453",
+      "revId": "55bc8751cf90c6c5efbdd9824d41f53ae8d9f8f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_6a00e002",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -42,6 +60,24 @@
         "endLine": 107,
         "endChar": 32
       },
+      "revId": "55bc8751cf90c6c5efbdd9824d41f53ae8d9f8f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0b4fe66b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 12476
+      },
+      "writtenOn": "2014-07-23T14:55:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_6a00e002",
       "revId": "55bc8751cf90c6c5efbdd9824d41f53ae8d9f8f6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_2b52ea12",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 12476
+      },
+      "writtenOn": "2014-07-23T14:55:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_4a579c26",
+      "revId": "55bc8751cf90c6c5efbdd9824d41f53ae8d9f8f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_2a58a856",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -88,6 +142,24 @@
         "endLine": 109,
         "endChar": 56
       },
+      "revId": "55bc8751cf90c6c5efbdd9824d41f53ae8d9f8f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6b586231",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 12476
+      },
+      "writtenOn": "2014-07-23T14:55:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_2a58a856",
       "revId": "55bc8751cf90c6c5efbdd9824d41f53ae8d9f8f6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -117,6 +189,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_ab3d1abd",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 12476
+      },
+      "writtenOn": "2014-07-23T14:55:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_dd59b436",
+      "revId": "55bc8751cf90c6c5efbdd9824d41f53ae8d9f8f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_ea14f04e",
         "filename": "tests/publishers/fixtures/blobstore.yaml",
         "patchSetId": 2
@@ -134,6 +224,24 @@
         "endLine": 6,
         "endChar": 15
       },
+      "revId": "55bc8751cf90c6c5efbdd9824d41f53ae8d9f8f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2b790a93",
+        "filename": "tests/publishers/fixtures/blobstore.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 12476
+      },
+      "writtenOn": "2014-07-23T14:55:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_ea14f04e",
       "revId": "55bc8751cf90c6c5efbdd9824d41f53ae8d9f8f6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
