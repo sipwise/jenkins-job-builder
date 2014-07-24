@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_afb56ad1",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-24T16:56:08Z",
+      "side": 1,
+      "message": "s/\u0027false\u0027/false/\n\nProbably better to keep to the convention.",
+      "revId": "a7b3f9719a0fb5f134230b58cde9903fdd7e0bdc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
