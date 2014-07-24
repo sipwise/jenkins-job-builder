@@ -34,6 +34,24 @@
       "revId": "8707e89173d1ad5b1f3418e5e12d23902646c55b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_cf645e4b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-24T17:00:17Z",
+      "side": 1,
+      "message": "Marc\u0027s right, but probably should include more detail in the commit message to explain that not only is it needed across python versions due to the hash randomization, without it, the order of XML elements outputted in python 3 will vary across runs because the order of the keys for dict items created by reading the yaml files will vary.\n\nI think in general it\u0027s probably better to retain ordering based on the order that keys are defined in the yaml source files since it\u0027s something that is potentially important in the XML that is uploaded to jenkins.",
+      "parentUuid": "baada198_4816b259",
+      "revId": "8707e89173d1ad5b1f3418e5e12d23902646c55b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
