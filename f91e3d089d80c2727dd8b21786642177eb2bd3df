@@ -34,6 +34,24 @@
       "revId": "f91e3d089d80c2727dd8b21786642177eb2bd3df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_17710e77",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-07-24T15:54:02Z",
+      "side": 1,
+      "message": "Sorry I am lagging in my code review.\n\nI have explained it in a patch that adds tests for that regression https://review.openstack.org/#/c/105155/ . I copy pasted the relevant bits to the commit message.",
+      "parentUuid": "baada198_53637ab0",
+      "revId": "f91e3d089d80c2727dd8b21786642177eb2bd3df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
