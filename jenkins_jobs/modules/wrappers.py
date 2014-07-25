@@ -1014,6 +1014,33 @@ def exclusion(parser, xml_parent, data):
         XML.SubElement(dit, 'name').text = str(resource).upper()
 
 
+def ssh_agent_credentials(parser, xml_parent, data):
+    """yaml: ssh-agent-credentials
+    Sets up the user for the ssh agent plugin for jenkins.
+
+    Requires the Jenkins `SSH-Agent Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/SSH-Agent-Plugin>`_
+
+    :arg str user: The user id of the jenkins user credentials
+
+    Example:
+
+    .. literalinclude::
+            /../../tests/wrappers/fixtures/ssh-agent-credentials001.yaml
+
+    """
+
+    entry_xml = XML.SubElement(
+        xml_parent,
+        'com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper')
+    entry_xml.set('plugin', 'ssh-agent@1.4.1')
+
+    if 'user' not in data:
+        raise ValueError("Missing user")
+
+    XML.SubElement(entry_xml, 'user').text = data['user']
+
+
 class Wrappers(jenkins_jobs.modules.base.Base):
     sequence = 80
 
