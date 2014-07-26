@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_57b0a3db",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-07-26T18:33:26Z",
+      "side": 1,
+      "message": "Forgot the docstring update, need to include \u0027(Optional)\u0027 to the end of the above line.",
+      "revId": "bfaf1c66ac78502cabc492ea3af5e72c74eb42ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
