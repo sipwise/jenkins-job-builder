@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+2: Khai Do <zaro0508@gmail.com>
+Code-Review+2: Mathieu Gagné <mgagne@iweb.com>
+Workflow+1: Mathieu Gagné <mgagne@iweb.com>
+Submitted-by: Jenkins
+Submitted-at: Sun, 27 Jul 2014 05:50:06 +0000
+Reviewed-on: https://review.openstack.org/109831
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
