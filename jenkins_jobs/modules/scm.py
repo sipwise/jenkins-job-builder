@@ -88,6 +88,7 @@ def git(self, xml_parent, data):
     :arg str choosing-strategy: Jenkins class for selecting what to build
     :arg str git-config-name: Configure name for Git clone
     :arg str git-config-email: Configure email for Git clone
+    :arg str timeout: Timeout for git commands in minutes
 
     :browser values:
         :auto:
@@ -213,6 +214,12 @@ def git(self, xml_parent, data):
 
     if 'local-branch' in data:
         XML.SubElement(scm, 'localBranch').text = data['local-branch']
+
+    if 'timeout' in data:
+        ext = XML.SubElement(scm, 'extensions')
+        co = XML.SubElement(ext,
+                        'hudson.plugins.git.extensions.impl.CheckoutOption')
+        XML.SubElement(co, 'timeout').text = str(data['timeout'])
 
     browser = data.get('browser', 'auto')
     browserdict = {'auto': 'auto',
