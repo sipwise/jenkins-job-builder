@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_40bf0dca",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-08-02T13:57:04Z",
+      "side": 1,
+      "message": "would it be possible to list the valid types?  something like this.. http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/modules/publishers.py#n1443",
+      "revId": "1df6fce6c9197deed87670b018ca92fb295690fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
