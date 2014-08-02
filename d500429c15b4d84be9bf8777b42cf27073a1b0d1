@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_a03b8999",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-08-02T13:34:43Z",
+      "side": 1,
+      "message": "what is the definition of comparable?  I assume what you mean is \u0027wrapper\u0027 for \u0027wrappers\u0027 but what about the other jjb modules?  I think there needs to be additional documentation to clarify this.",
+      "revId": "d500429c15b4d84be9bf8777b42cf27073a1b0d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_e0f661d7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-08-02T13:34:43Z",
+      "side": 1,
+      "message": "The lazy-load-jobs001.yaml doesn\u0027t work  when i replace \u0027include-raw\u0027 with \u0027include-raw-escape\u0027.  I think this is  confusing because the docs currently say you should use \u0027include-raw-escape\u0027 for files with braces.  I think we should either support \u0027include-raw-escape\u0027 for this use case OR add documentation to let users know that you cannot use \u0027include-raw-escape\u0027 in this case.  I would prefer the former if it can easily be done.",
+      "revId": "d500429c15b4d84be9bf8777b42cf27073a1b0d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
