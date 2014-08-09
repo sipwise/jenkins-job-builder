@@ -3537,6 +3537,67 @@ def fitnesse(parser, xml_parent, data):
     XML.SubElement(fitnesse, 'fitnessePathToXmlResultsIn').text = results
 
 
+def valgrind(parser, xml_parent, data):
+    """yaml: valgrind
+    This plugin publishes Valgrind Memcheck XML results.
+
+    Requires the Jenkins `Valgrind Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Valgrind+Plugin>`_
+
+    :arg str pattern: Filename pattern to locate the Valgrind XML report files
+    :arg dict thresholds:
+        :thresholds:
+            * **unstable** (`dict`)
+                :unstable: * **invalid-read-write** (`int`)
+                           * **definitely-lost** (`int`)
+                           * **total** (`int`)
+            * **failed** (`dict`)
+                :failed: * **invlid-read-write** (`int`)
+                         * **definitely-lost** (`int`)
+                         * **total** (`int`)
+    :arg bool publish-if-aborted: Publish results for aborted builds
+      (Default: False)
+    :arg bool publish-if-failed: Publish results for failed builds
+      (Default: False)
+
+    Example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/valgrind001.yaml
+
+    """
+    p = XML.SubElement(xml_parent,
+                       'org.jenkinsci.plugins.valgrind.ValgrindPublisher')
+    p = XML.SubElement(p, 'valgrindPublisherConfig')
+
+    if not data['pattern']:
+        raise JenkinsJobsException("A filename pattern must be soecified.")
+
+    XML.SubElement(p, 'pattern').text = data.get('pattern', '')
+
+    dthresholds = data.get('thresholds', {})
+    dunstable = dthresholds.get('unstable', {})
+    dfailed = dthresholds.get('failed', {})
+
+    XML.SubElement(p, 'unstableThresholdInvalidReadWrite').text = str(
+        dunstable.get('invalid-read-write', ''))
+    XML.SubElement(p, 'unstableThresholdDefinitelyLost').text = str(
+        dunstable.get('definitely-lost', ''))
+    XML.SubElement(p, 'unstableThresholdTotal').text = str(
+        dunstable.get('total', ''))
+
+    XML.SubElement(p, 'failThresholdInvalidReadWrite').text = str(
+        dfailed.get('invalid-read-write', ''))
+    XML.SubElement(p, 'failThresholdDefinitelyLost').text = str(
+        dfailed.get('definitely-lost', ''))
+    XML.SubElement(p, 'failThresholdTotal').text = str(
+        dfailed.get('total', ''))
+
+    XML.SubElement(p, 'publishResultsForAbortedBuilds').text = str(
+        data.get("publish-if-aborted", False)).lower()
+    XML.SubElement(p, 'publishResultsForFailedBuilds').text = str(
+        data.get("publish-if-failed", False)).lower()
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
