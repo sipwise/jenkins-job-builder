@@ -25,6 +25,7 @@ Wrappers can alter the way the build is run as well as the build output.
 import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 from jenkins_jobs.modules.builders import create_builders
+from jenkins_jobs.errors import JenkinsJobsException
 
 
 def ci_skip(parser, xml_parent, data):
@@ -806,6 +807,28 @@ def sauce_ondemand(parser, xml_parent, data):
     XML.SubElement(sauce, 'httpsProtocol').text = protocol
     options = data.get('sauce-connect-options', '')
     XML.SubElement(sauce, 'options').text = options
+
+
+def ssh_agent(parser, xml_parent, data):
+    """yaml: ssh-agent
+    Make an SSH Private key available to a job via an ssh-agent
+    Requires the Jenkins `SSH Agent Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/SSH+Agent+Plugin>`_
+
+    :arg string user: UUID of an SSH key uploaded to jenkins via
+        Manage Jenkins -> Manage Credentials
+
+    Example::
+
+    .. literalinclude:: /../../tests/wrappers/fixtures/ssh-agent001.yaml
+
+    """
+    if data is None or data['user'] is None:
+        raise JenkinsJobsException("'user' is required by ssh-agent")
+
+    sshagent = XML.SubElement(xml_parent, 'com.cloudbees.jenkins.plugins.'
+                              'sshagent.SSHAgentBuildWrapper')
+    XML.SubElement(sshagent, 'user').text = data['user']
 
 
 def pathignore(parser, xml_parent, data):
