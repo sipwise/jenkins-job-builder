@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_cb1a4ec6",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1036,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-11T16:11:02Z",
+      "side": 1,
+      "message": "Please don\u0027t set the version number, and can you confirm whether it is really needed to set the plugin attribute?",
+      "revId": "3964d524ba9a278b6056fd9e25eb463ec891e026",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6b6b02f0",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1039,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-11T16:11:02Z",
+      "side": 1,
+      "message": "Please use \u0027JenkinsJobsException\u0027, import from jenkin_jobs.errors, when raising exceptions from the modules.\n\nGenerally I would go with the following construct here unless the \u0027user\u0027 param was optional:\n\n try:\n     XML.SubElement(entry_xml, \u0027user\u0027).text \u003d data[\u0027user\u0027]\n except KeyError:\n     raise JenkinsJobsException(\"Missing `user` for ssh-agent-credentials\")",
+      "revId": "3964d524ba9a278b6056fd9e25eb463ec891e026",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
