@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_e54bc45c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3557,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-11T14:06:50Z",
+      "side": 1,
+      "message": "Are all of these optional? If so, should really state that, otherwise should check below for the entries that are required.",
+      "revId": "e5d10cb6be8b9b6770ec09a2ae0a2bad6cb533dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_65117452",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3559,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-11T14:06:50Z",
+      "side": 1,
+      "message": "Convention is to use \u0027(default false)\u0027, granted there are a few variations in this file dating from before we tried to stick to one approach.",
+      "revId": "e5d10cb6be8b9b6770ec09a2ae0a2bad6cb533dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0528b883",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3561,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-11T14:06:50Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "e5d10cb6be8b9b6770ec09a2ae0a2bad6cb533dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2504dc12",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3572,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-11T14:06:50Z",
+      "side": 1,
+      "message": "This will cause an exception if the key \u0027pattern\u0027 is not defined, should be:\n\n if \u0027pattern\u0027 not in data:",
+      "revId": "e5d10cb6be8b9b6770ec09a2ae0a2bad6cb533dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0a336713",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3573,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-11T14:06:50Z",
+      "side": 1,
+      "message": "typo should be \u0027specified\u0027",
+      "revId": "e5d10cb6be8b9b6770ec09a2ae0a2bad6cb533dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_65497431",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3593,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-11T14:06:50Z",
+      "side": 1,
+      "message": "Seems like you could use a loop here to iterate over the thresholds for the same entries by just using a prefix.",
+      "revId": "e5d10cb6be8b9b6770ec09a2ae0a2bad6cb533dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
