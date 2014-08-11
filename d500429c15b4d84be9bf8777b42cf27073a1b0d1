@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_6ddb1a7d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-11T15:16:32Z",
+      "side": 1,
+      "message": "Not quite, it\u0027s a reference that when creating a LazyLoader object to wrap the file referenced by \u0027!include\u0027, the same tag name also needs to be passed to the object so it knows which constructor to call subsequently. Similarly for \u0027!include-raw\u0027, however for \u0027!include-raw-escape\u0027 the LazyLoader object should be told to use \u0027!include-raw\u0027 instead since it will directly return a result for the \u003cstr\u003e.format call used by the JJB\u0027s substitution approach. Where as for normal loading the \u0027format\u0027 method would be called on the result, which is why in a job-template definition we need to escape all braces in the file being read first.\n\nI\u0027ll look at rephrasing this, the intent is to describe what is going on within the LazyLoader code rather than how it would be used so that someone debugging or considering making a change can determine the original intent from the commit message.",
+      "parentUuid": "baada198_a03b8999",
+      "revId": "d500429c15b4d84be9bf8777b42cf27073a1b0d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_e0f661d7",
         "filename": "/COMMIT_MSG",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-02T13:34:43Z",
       "side": 1,
       "message": "The lazy-load-jobs001.yaml doesn\u0027t work  when i replace \u0027include-raw\u0027 with \u0027include-raw-escape\u0027.  I think this is  confusing because the docs currently say you should use \u0027include-raw-escape\u0027 for files with braces.  I think we should either support \u0027include-raw-escape\u0027 for this use case OR add documentation to let users know that you cannot use \u0027include-raw-escape\u0027 in this case.  I would prefer the former if it can easily be done.",
+      "revId": "d500429c15b4d84be9bf8777b42cf27073a1b0d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_cd6186a3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-11T15:16:32Z",
+      "side": 1,
+      "message": "That\u0027s a bug, since that was the intention. Users would define by using \u0027!include-raw-escape\u0027 and the code would tell LazyLoader to use the constructor for \u0027!include-raw\u0027 instead when reading in the finally resolved file name contents.",
+      "parentUuid": "baada198_e0f661d7",
       "revId": "d500429c15b4d84be9bf8777b42cf27073a1b0d1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
