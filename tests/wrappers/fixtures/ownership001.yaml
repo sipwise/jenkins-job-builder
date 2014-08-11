@@ -1,0 +1,4 @@
+wrappers:
+  - inject-ownership-variables:
+      job_variables: true
+      node_variables: true
