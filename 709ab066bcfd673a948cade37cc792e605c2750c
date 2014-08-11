@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_ab9c3a5c",
+        "filename": "tests/wrappers/fixtures/ssh-agent001.yml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-11T16:03:37Z",
+      "side": 1,
+      "message": "You need to rename this file as the \u0027.yml\u0027 extension does not get picked up by the tests.",
+      "revId": "709ab066bcfd673a948cade37cc792e605c2750c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
