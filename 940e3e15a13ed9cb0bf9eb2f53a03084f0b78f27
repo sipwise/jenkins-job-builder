@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_4a3f1f86",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 811,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-11T13:52:54Z",
+      "side": 1,
+      "message": "Very minor nit, this should probably be ssh_agent to follow the convention where we spaces in the plugin names are hyphenated for the yaml definition, and defined as an underscore for the function name, instead of just removing the whitespace.",
+      "revId": "940e3e15a13ed9cb0bf9eb2f53a03084f0b78f27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ca4a4f23",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 812,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-11T13:52:54Z",
+      "side": 1,
+      "message": "s/sshagent/ssh-agent/",
+      "revId": "940e3e15a13ed9cb0bf9eb2f53a03084f0b78f27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ea8d532b",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 816,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-11T13:52:54Z",
+      "side": 1,
+      "message": "Please include the list of parameters here as well as default values or whether they are optional. See above for examples.",
+      "revId": "940e3e15a13ed9cb0bf9eb2f53a03084f0b78f27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ea5c73f2",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 821,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-11T13:52:54Z",
+      "side": 1,
+      "message": "Please replace with an include of the yaml file from tests so that the example is kept in sync:\n\n  .. literalinclude:: /../../tests/wrappers/fixtures/ssh-agent001.yaml",
+      "revId": "940e3e15a13ed9cb0bf9eb2f53a03084f0b78f27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_aad51be7",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 825,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-11T13:52:54Z",
+      "side": 1,
+      "message": "Please do not set the version, probably don\u0027t need to specify the plugin attribute either. Unless you can confirm that it is definitely required.",
+      "revId": "940e3e15a13ed9cb0bf9eb2f53a03084f0b78f27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6a93035c",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 829,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-11T13:52:54Z",
+      "side": 1,
+      "message": "Forgot to remove?",
+      "revId": "940e3e15a13ed9cb0bf9eb2f53a03084f0b78f27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ea771306",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-11T13:52:54Z",
+      "side": 1,
+      "message": "After renaming would be:\n\n ssh-agent\u003djenkins_jobs.modules.wrappers:ssh_agent",
+      "revId": "940e3e15a13ed9cb0bf9eb2f53a03084f0b78f27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ea2ab32d",
+        "filename": "tests/wrappers/fixtures/sshagent001.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-11T13:52:54Z",
+      "side": 1,
+      "message": "This file should be called \t\ntests/wrappers/fixtures/sshagent001.yaml otherwise the test doesn\u0027t run.",
+      "revId": "940e3e15a13ed9cb0bf9eb2f53a03084f0b78f27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_aac27b51",
+        "filename": "tests/wrappers/fixtures/sshagent001.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-11T13:52:54Z",
+      "side": 1,
+      "message": "prefer ssh-agent here as previously mentioned.",
+      "revId": "940e3e15a13ed9cb0bf9eb2f53a03084f0b78f27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
