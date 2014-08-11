@@ -808,6 +808,25 @@ def sauce_ondemand(parser, xml_parent, data):
     XML.SubElement(sauce, 'options').text = options
 
 
+def ssh_agent(parser, xml_parent, data):
+    """yaml: ssh-agent
+    Make an SSH Private key available to a job via an ssh-agent
+    Requires the Jenkins `SSH Agent Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/SSH+Agent+Plugin>`_
+
+    :arg string user: UUID of an SSH key uploaded to jenkins via
+        Manage Jenkins -> Manage Credentials
+
+    Example::
+
+    .. literalinclude:: /../../tests/wrappers/fixtures/ssh-agent001.yaml
+
+    """
+    sshagent = XML.SubElement(xml_parent, 'com.cloudbees.jenkins.plugins.'
+                              'sshagent.SSHAgentBuildWrapper')
+    XML.SubElement(sshagent, 'user').text = data.get('user', '')
+
+
 def pathignore(parser, xml_parent, data):
     """yaml: pathignore
     This plugin allows SCM-triggered jobs to ignore
