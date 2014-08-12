@@ -50,6 +50,23 @@
       "revId": "3bda1217ce2609edde855bce0e6d73ce91d7922f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_fe131957",
+        "filename": "tests/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-08-12T18:36:51Z",
+      "side": 1,
+      "message": "This is implicitly testing by checking final xml output at the end, but I was wondering if there would be a benefit to adding a subset of tests to verify the yaml after this step?",
+      "revId": "3bda1217ce2609edde855bce0e6d73ce91d7922f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
