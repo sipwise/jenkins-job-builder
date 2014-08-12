@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_d813cd00",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-12T18:02:41Z",
+      "side": 1,
+      "message": "The \u0027(required)\u0027 isn\u0027t needed and risks confusion, required is assumed unless marked \u0027(optional)\u0027, otherwise all options that are required should be suffixed with this string.",
+      "revId": "87bb75d87dd4bbc7d98251310789aef0d4bd71b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2b066a85",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-12T18:02:41Z",
+      "side": 1,
+      "message": "This doesn\u0027t read too well, I dug around to see if there was a convention that was readable and it would seem the above should read:\n\n (relative to workspace, optional)",
+      "revId": "87bb75d87dd4bbc7d98251310789aef0d4bd71b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
