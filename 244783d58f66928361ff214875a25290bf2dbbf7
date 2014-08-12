@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_04bed0ae",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 826,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-12T17:58:04Z",
+      "side": 1,
+      "message": "This will generate a KeyError if \u0027user\u0027 is not a valid key for the hash. You can see this by using the following as an example snippet:\n\n wrappers:\n   - ssh-agent\n\nOr\n\n wrappers:\n   - ssh-agent:\n       users: \"4349e3eb-b7e5-4ecc-8398-e2971af22111\"\n\nThe only way this approach will cause the correct exception to be raised is if you have the following yaml definition:\n\n wrappers:\n   - ssh-agent:\n\n\nPlease change to use the following construct as it covers all cases:\n\n try:\n     XML.SubElement(sshagent, \u0027user\u0027).text \u003d data[\u0027user\u0027]\n except KeyError:\n     raise JenkinsJobsException(\"\u0027user\u0027 is required by ssh-agent\")",
+      "revId": "244783d58f66928361ff214875a25290bf2dbbf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
