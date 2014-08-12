@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+2: Clark Boylan <cboylan@sapwetik.org>
+Code-Review+2: Khai Do <zaro0508@gmail.com>
+Workflow+1: Khai Do <zaro0508@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 12 Aug 2014 19:41:05 +0000
+Reviewed-on: https://review.openstack.org/105620
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
