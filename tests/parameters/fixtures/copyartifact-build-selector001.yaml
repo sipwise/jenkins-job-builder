@@ -1,0 +1,5 @@
+parameters:
+  - copyartifact-build-selector:
+      name: BUILD_SELECTOR
+      default: last-successful
+      description: 'Which build from upstream to copy artifacts from'

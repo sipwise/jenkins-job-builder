@@ -42,6 +42,7 @@ import jenkins_jobs.modules.base
 from jenkins_jobs.modules import hudson_model
 from jenkins_jobs.modules.helpers import config_file_provider_builder
 from jenkins_jobs.modules.helpers import config_file_provider_settings
+from jenkins_jobs.modules.helpers import copyartifact_build_selector
 from jenkins_jobs.errors import (JenkinsJobsException,
                                  MissingAttributeError,
                                  InvalidAttributeError)
@@ -137,7 +138,10 @@ def copyartifact(parser, xml_parent, data):
     # Warning: this only works with copy artifact version 1.26+,
     # for copy artifact version 1.25- the 'projectName' element needs
     # to be used instead of 'project'
-    XML.SubElement(t, 'project').text = data["project"]
+    try:
+        XML.SubElement(t, 'project').text = data["project"]
+    except KeyError:
+        raise MissingAttributeError('project')
     XML.SubElement(t, 'filter').text = data.get("filter", "")
     XML.SubElement(t, 'target').text = data.get("target", "")
     flatten = data.get("flatten", False)
@@ -145,45 +149,7 @@ def copyartifact(parser, xml_parent, data):
     optional = data.get('optional', False)
     XML.SubElement(t, 'optional').text = str(optional).lower()
     XML.SubElement(t, 'parameters').text = data.get("parameter-filters", "")
-    select = data.get('which-build', 'last-successful')
-    selectdict = {'last-successful': 'StatusBuildSelector',
-                  'last-completed': 'LastCompletedBuildSelector',
-                  'specific-build': 'SpecificBuildSelector',
-                  'last-saved': 'SavedBuildSelector',
-                  'upstream-build': 'TriggeredBuildSelector',
-                  'permalink': 'PermalinkBuildSelector',
-                  'workspace-latest': 'WorkspaceSelector',
-                  'build-param': 'ParameterizedBuildSelector'}
-    if select not in selectdict:
-        raise InvalidAttributeError('which-build',
-                                    select,
-                                    selectdict.keys())
-    permalink = data.get('permalink', 'last')
-    permalinkdict = {'last': 'lastBuild',
-                     'last-stable': 'lastStableBuild',
-                     'last-successful': 'lastSuccessfulBuild',
-                     'last-failed': 'lastFailedBuild',
-                     'last-unstable': 'lastUnstableBuild',
-                     'last-unsuccessful': 'lastUnsuccessfulBuild'}
-    if permalink not in permalinkdict:
-        raise InvalidAttributeError('permalink',
-                                    permalink,
-                                    permalinkdict.keys())
-    selector = XML.SubElement(t, 'selector',
-                              {'class': 'hudson.plugins.copyartifact.' +
-                               selectdict[select]})
-    if select == 'specific-build':
-        XML.SubElement(selector, 'buildNumber').text = data['build-number']
-    if select == 'last-successful':
-        XML.SubElement(selector, 'stable').text = str(
-            data.get('stable', False)).lower()
-    if select == 'upstream-build':
-        XML.SubElement(selector, 'fallbackToLastSuccessful').text = str(
-            data.get('fallback-to-last-successful', False)).lower()
-    if select == 'permalink':
-        XML.SubElement(selector, 'id').text = permalinkdict[permalink]
-    if select == 'build-param':
-        XML.SubElement(selector, 'parameterName').text = data['param']
+    copyartifact_build_selector(t, data)
 
 
 def change_assembly_version(parser, xml_parent, data):
