@@ -141,7 +141,14 @@ def copyartifact(parser, xml_parent, data):
     optional = data.get('optional', False)
     XML.SubElement(t, 'optional').text = str(optional).lower()
     XML.SubElement(t, 'parameters').text = data.get("parameter-filters", "")
-    select = data.get('which-build', 'last-successful')
+    _copyartifact_build_selector(parser, t, data)
+
+
+def _copyartifact_build_selector(parser, xml_parent, data,
+                                 select_key='which-build',
+                                 select_tag='selector'):
+
+    select = data.get(select_key, 'last-successful')
     selectdict = {'last-successful': 'StatusBuildSelector',
                   'specific-build': 'SpecificBuildSelector',
                   'last-saved': 'SavedBuildSelector',
@@ -150,10 +157,9 @@ def copyartifact(parser, xml_parent, data):
                   'workspace-latest': 'WorkspaceSelector',
                   'build-param': 'ParameterizedBuildSelector'}
     if select not in selectdict:
-        raise JenkinsJobsException("which-build entered is not valid must be "
-                                   "one of: last-successful, specific-build, "
-                                   "last-saved, upstream-build, permalink, "
-                                   "workspace-latest, or build-param")
+        raise JenkinsJobsException("%s entered is not valid must be one of: "
+                                   % (select_key, ",".join(selectdict[:-1]),
+                                      selectdict[-1]))
     permalink = data.get('permalink', 'last')
     permalinkdict = {'last': 'lastBuild',
                      'last-stable': 'lastStableBuild',
@@ -166,7 +172,7 @@ def copyartifact(parser, xml_parent, data):
                                    "one of: last, last-stable, "
                                    "last-successful, last-failed, "
                                    "last-unstable, or last-unsuccessful")
-    selector = XML.SubElement(t, 'selector',
+    selector = XML.SubElement(xml_parent, select_tag,
                               {'class': 'hudson.plugins.copyartifact.' +
                                selectdict[select]})
     if select == 'specific-build':
