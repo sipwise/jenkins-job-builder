@@ -36,6 +36,7 @@ Example::
 import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 from jenkins_jobs.errors import JenkinsJobsException
+from jenkins_jobs.modules.builders import _copyartifact_build_selector
 
 
 def base_param(parser, xml_parent, data, do_default, ptype):
@@ -568,6 +569,42 @@ def matrix_combinations_param(parser, xml_parent, data):
             combination_filter
 
     return pdef
+
+
+def copyartifact_build_selector_param(parser, xml_parent, data):
+    """yaml: copyartifact-build-selector-param
+
+    Control via a build parameter, which build the copyartifact plugin should
+    copy when it is configured to use 'build-param'. Requires the Jenkins
+    `Copy Artifact plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Copy+Artifact+Plugin>`_
+
+    :arg str name: name of the build parameter to store the selection in
+    :arg str description: a description of the parameter (optional)
+    :arg str default: which to provide as the default value in the UI. See
+                      which-build param of :py:func:`~builders.copyartifact`
+                      from the builders module for the available values.
+
+    Example:
+
+    .. literalinclude:: \
+    /../../tests/parameters/fixtures/copyartifact-build-selector001.yaml
+       :language: yaml
+
+    """
+
+    t = XML.SubElement(xml_parent, 'hudson.plugins.copyartifact.'
+                       'BuildSelectorParameter')
+    try:
+        name = data['name']
+    except KeyError:
+        raise JenkinsJobsException("copyartifact-build-selector-param "
+                                   "requires 'name' to be set.")
+
+    XML.SubElement(t, 'name').text = name
+    XML.SubElement(t, 'description').text = data.get('description', '')
+
+    _copyartifact_build_selector(parser, t, data, 'default', 'defaultSelector')
 
 
 class Parameters(jenkins_jobs.modules.base.Base):
