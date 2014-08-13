@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_15187882",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 12476
+      },
+      "writtenOn": "2014-08-13T16:03:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_d813cd00",
+      "revId": "87bb75d87dd4bbc7d98251310789aef0d4bd71b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_2b066a85",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-12T18:02:41Z",
       "side": 1,
       "message": "This doesn\u0027t read too well, I dug around to see if there was a convention that was readable and it would seem the above should read:\n\n (relative to workspace, optional)",
+      "revId": "87bb75d87dd4bbc7d98251310789aef0d4bd71b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_350d7c41",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 12476
+      },
+      "writtenOn": "2014-08-13T16:03:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_2b066a85",
       "revId": "87bb75d87dd4bbc7d98251310789aef0d4bd71b4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
