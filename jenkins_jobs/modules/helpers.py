@@ -14,6 +14,7 @@
 
 import xml.etree.ElementTree as XML
 
+from jenkins_jobs.errors import InvalidAttributeError
 from jenkins_jobs.errors import JenkinsJobsException
 
 
@@ -156,6 +157,50 @@ def config_file_provider_settings(xml_parent, data):
     else:
         XML.SubElement(xml_parent, 'globalSettings',
                        {'class': settings['default-global-settings']})
+
+
+def copyartifact_build_selector(xml_parent, data, select_key='which-build',
+                                select_tag='selector'):
+
+    select = data.get(select_key, 'last-successful')
+    selectdict = {'last-successful': 'StatusBuildSelector',
+                  'last-completed': 'LastCompletedBuildSelector',
+                  'specific-build': 'SpecificBuildSelector',
+                  'last-saved': 'SavedBuildSelector',
+                  'upstream-build': 'TriggeredBuildSelector',
+                  'permalink': 'PermalinkBuildSelector',
+                  'workspace-latest': 'WorkspaceSelector',
+                  'build-param': 'ParameterizedBuildSelector'}
+    if select not in selectdict:
+        raise InvalidAttributeError('which-build',
+                                    select,
+                                    selectdict.keys())
+    permalink = data.get('permalink', 'last')
+    permalinkdict = {'last': 'lastBuild',
+                     'last-stable': 'lastStableBuild',
+                     'last-successful': 'lastSuccessfulBuild',
+                     'last-failed': 'lastFailedBuild',
+                     'last-unstable': 'lastUnstableBuild',
+                     'last-unsuccessful': 'lastUnsuccessfulBuild'}
+    if permalink not in permalinkdict:
+        raise InvalidAttributeError('permalink',
+                                    permalink,
+                                    permalinkdict.keys())
+    selector = XML.SubElement(xml_parent, select_tag,
+                              {'class': 'hudson.plugins.copyartifact.' +
+                               selectdict[select]})
+    if select == 'specific-build':
+        XML.SubElement(selector, 'buildNumber').text = data['build-number']
+    if select == 'last-successful':
+        XML.SubElement(selector, 'stable').text = str(
+            data.get('stable', False)).lower()
+    if select == 'upstream-build':
+        XML.SubElement(selector, 'fallbackToLastSuccessful').text = str(
+            data.get('fallback-to-last-successful', False)).lower()
+    if select == 'permalink':
+        XML.SubElement(selector, 'id').text = permalinkdict[permalink]
+    if select == 'build-param':
+        XML.SubElement(selector, 'parameterName').text = data['param']
 
 
 def findbugs_settings(xml_parent, data):
