@@ -16,6 +16,24 @@
       "revId": "244783d58f66928361ff214875a25290bf2dbbf7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2aaa841b",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 826,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-13T13:43:43Z",
+      "side": 1,
+      "message": "Quick discussion highlighted that the last case of:\n\n  wrappers:\n    - ssh-agent:\n\nCan probably be ignored for now since it should be fixed in the dispatch functions for all entry points.\n\nSo I think just focus on ensuring the KeyError will return a sensible message to the user.",
+      "parentUuid": "baada198_04bed0ae",
+      "revId": "244783d58f66928361ff214875a25290bf2dbbf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
