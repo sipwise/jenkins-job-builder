@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_de51ce0e",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 12873
+      },
+      "writtenOn": "2014-08-13T12:03:04Z",
+      "side": 1,
+      "message": "you don\u0027t need this +\nco \u003d XML.SubElement(ext, \u0027hudson.plugins.git.extensions.impl.\u0027\n                    \u0027CheckoutOption\u0027)\nwill do the same work",
+      "revId": "a285ad827390702af2b5f38bf38a0d0bbbe9de39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
