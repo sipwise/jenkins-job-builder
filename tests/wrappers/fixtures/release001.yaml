@@ -1,0 +1,15 @@
+wrappers:
+  - release:
+      keep-forever: false
+      parameters:
+          - string:
+              name: RELEASE_BRANCH
+              default: ''
+              description: Git branch to release from.
+          - copyartifact-build-selector:
+              name: BUILD_SELECTOR
+              default: last-saved
+      post-success:
+          - shell: |
+              #!/bin/bash
+              copy_build_artefacts.sh
