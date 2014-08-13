@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9ab29df4_9724c4c7",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3557,
+      "author": {
+        "id": 12856
+      },
+      "writtenOn": "2014-08-13T19:52:03Z",
+      "side": 1,
+      "message": "Done, they are indeed all optional",
+      "parentUuid": "baada198_e54bc45c",
+      "revId": "e5d10cb6be8b9b6770ec09a2ae0a2bad6cb533dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_65117452",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-11T14:06:50Z",
       "side": 1,
       "message": "Convention is to use \u0027(default false)\u0027, granted there are a few variations in this file dating from before we tried to stick to one approach.",
+      "revId": "e5d10cb6be8b9b6770ec09a2ae0a2bad6cb533dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ab29df4_97dcc476",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3559,
+      "author": {
+        "id": 12856
+      },
+      "writtenOn": "2014-08-13T19:52:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_65117452",
       "revId": "e5d10cb6be8b9b6770ec09a2ae0a2bad6cb533dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9ab29df4_b7d9c885",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3561,
+      "author": {
+        "id": 12856
+      },
+      "writtenOn": "2014-08-13T19:52:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_0528b883",
+      "revId": "e5d10cb6be8b9b6770ec09a2ae0a2bad6cb533dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_2504dc12",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2014-08-11T14:06:50Z",
       "side": 1,
       "message": "This will cause an exception if the key \u0027pattern\u0027 is not defined, should be:\n\n if \u0027pattern\u0027 not in data:",
+      "revId": "e5d10cb6be8b9b6770ec09a2ae0a2bad6cb533dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ab29df4_b75aa84e",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3572,
+      "author": {
+        "id": 12856
+      },
+      "writtenOn": "2014-08-13T19:52:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_2504dc12",
       "revId": "e5d10cb6be8b9b6770ec09a2ae0a2bad6cb533dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9ab29df4_975da44b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3573,
+      "author": {
+        "id": 12856
+      },
+      "writtenOn": "2014-08-13T19:52:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_0a336713",
+      "revId": "e5d10cb6be8b9b6770ec09a2ae0a2bad6cb533dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_65497431",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
@@ -98,6 +188,24 @@
       "writtenOn": "2014-08-11T14:06:50Z",
       "side": 1,
       "message": "Seems like you could use a loop here to iterate over the thresholds for the same entries by just using a prefix.",
+      "revId": "e5d10cb6be8b9b6770ec09a2ae0a2bad6cb533dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ab29df4_c0abd4d4",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3593,
+      "author": {
+        "id": 12856
+      },
+      "writtenOn": "2014-08-13T19:52:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_65497431",
       "revId": "e5d10cb6be8b9b6770ec09a2ae0a2bad6cb533dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
