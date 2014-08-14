@@ -16,6 +16,24 @@
       "revId": "2e264d43abae95e0a048c35e97a8e0f0b42fecf6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_89900997",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 827,
+      "author": {
+        "id": 12873
+      },
+      "writtenOn": "2014-08-14T14:51:28Z",
+      "side": 1,
+      "message": "sorry i meant to put this comment below if statement",
+      "parentUuid": "7ac7a964_4edb57ed",
+      "revId": "2e264d43abae95e0a048c35e97a8e0f0b42fecf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
