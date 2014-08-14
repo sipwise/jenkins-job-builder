@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ac7a964_73e2ccd6",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2014-08-14T09:19:52Z",
+      "side": 1,
+      "message": "please use the test as example:\n\n.. literalinclude:: /../../tests/wrappers/fixtures/ownership001.yaml",
+      "revId": "29ae9688f19581601cb2a3e72cdbbc5c681d8ac9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
