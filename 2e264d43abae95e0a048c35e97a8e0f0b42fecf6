@@ -34,6 +34,40 @@
       "revId": "2e264d43abae95e0a048c35e97a8e0f0b42fecf6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_d49b78c7",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 835,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-14T15:24:37Z",
+      "side": 1,
+      "message": "As previously stated, you can ignore the test case that was resulting in \u0027data\u0027 being \u0027None\u0027 which would generate the TypeError since that potential issue is common to all modules and should probably be solved via the ModuleRegistry dispatch method.",
+      "revId": "2e264d43abae95e0a048c35e97a8e0f0b42fecf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_547cc820",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 836,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-14T15:24:37Z",
+      "side": 1,
+      "message": "Either of the following two approaches. First as suggested by Ilia:\n\n user \u003d data.get(\u0027user\u0027, None)\n if user:\n     XML.SubElement(sshagent, \u0027user\u0027).text \u003d user\n else:\n     raise JenkinsJobsException(\"\u0027user\u0027 is required by ssh-agent\")\n\nOr\n\n try:\n     XML.SubElement(sshagent, \u0027user\u0027).text \u003d data[\u0027user\u0027]\n except KeyError:\n     raise JenkinsJobsException(\"\u0027user\u0027 is required by ssh-agent\")\n\nThe first catches the both \"user \u003d \u0027\u0027\" and \"user \u003d None\", thanks Ilia, so that seems like a better pattern in this case.",
+      "revId": "2e264d43abae95e0a048c35e97a8e0f0b42fecf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
