@@ -1,0 +1,15 @@
+- builder:
+    name: echo-test
+    builders:
+      - shell: echo {name}
+
+- job-template:
+    name: '{name}-test'
+    builders:
+      - shell: echo {name}
+      - echo-test
+
+- project:
+    name: project-name
+    jobs:
+      - '{name}-test'
