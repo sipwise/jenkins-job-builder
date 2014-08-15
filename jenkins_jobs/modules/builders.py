@@ -183,6 +183,32 @@ def copyartifact(parser, xml_parent, data):
         XML.SubElement(selector, 'parameterName').text = data['param']
 
 
+def change_assembly_version(parser, xml_parent, data):
+    """yaml: change-assembly-version
+    Change the assembly version.
+    Requires the Jenkins `Change Assembly Version.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Change+Assembly+Version>`_
+
+    :arg str version: Set the new version number for replace (default 1.0.0)
+    :arg str assemblyFile: The file name to search (default AssemblyInfo.cs)
+
+    Example::
+
+      builders:
+        - change-assembly-version:
+             version: "1.2.3"
+             assemblyFile: "AssemblyInfo"
+
+
+    """
+    cav_builder_tag = 'org.jenkinsci.plugins.changeassemblyversion.'    \
+        'ChangeAssemblyVersion'
+    cav = XML.SubElement(xml_parent, cav_builder_tag)
+    XML.SubElement(cav, 'task').text = data.get('version', '1.0.0')
+    XML.SubElement(cav, 'assemblyFile').text = str(
+        data.get('assemblyFile', 'AssemblyInfo.cs'))
+
+
 def ant(parser, xml_parent, data):
     """yaml: ant
     Execute an ant target.  Requires the Jenkins `Ant Plugin.
