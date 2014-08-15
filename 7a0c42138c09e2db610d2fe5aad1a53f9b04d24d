@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ac7a964_7d425211",
+        "filename": "tests/yamlparser/fixtures/templates003.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-08-15T20:01:24Z",
+      "side": 1,
+      "message": "to pass the {name} into the macro, i think you need this..\n\n- echo-test:\n       name: \u0027{name}\u0027",
+      "revId": "7a0c42138c09e2db610d2fe5aad1a53f9b04d24d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
