@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_c80028ad",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 7069
+      },
+      "writtenOn": "2014-08-19T01:41:58Z",
+      "side": 1,
+      "message": "So I agree it\u0027s a difference if people are consuming this code. However we aren\u0027t really breaking an API as this isn\u0027t published as one. We aren\u0027t versioning or exposing this datastructure in any particular way.\n\nThat said, you make a good point and we should at least note this in case we break things for people.",
+      "parentUuid": "baada198_a4a2d697",
+      "revId": "3bda1217ce2609edde855bce0e6d73ce91d7922f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_c4feea37",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-18T23:50:30Z",
       "side": 1,
       "message": "I\u0027ve very tempted to suggest that we actually add a yaml attribute to this class and rename it to just \u0027Job\u0027. That way we can retrieve either the yaml or xml from the same list of jobs depending on what output format we want instead of storing two separate lists.\n\nCould possibly add a \u0027format\u0027 argument to both \u0027output\u0027 and \u0027md5\u0027 methods which default to \u0027xml\u0027 to control the default behaviour while still allowing requesting the yaml output to be printed out in a pretty format.\n\nSome of this could be added in the future if desired if we also add the ability to print the yaml generated from the JJB CLI.",
+      "revId": "3bda1217ce2609edde855bce0e6d73ce91d7922f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_c81748ec",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 7069
+      },
+      "writtenOn": "2014-08-19T01:41:58Z",
+      "side": 1,
+      "message": "I would actually like to work things into two steps.\n\n(0: Raw jjb yaml)\n1: expanded jjb yaml (ie full job descriptions)\n2: converted jjb yaml to xml\n\nIf somebody only wanted to consume the expanded yaml there is no point computing the xml. In theory if you pass the expanded yaml to a parser it can be converted into xml without knowing anything specific about jjb\u0027s yaml language.\n\nAs such I\u0027d actually like to remove xml_jobs from the YamlParser above but it was too tightly coupled to do on first iteration.",
+      "parentUuid": "baada198_c4feea37",
       "revId": "3bda1217ce2609edde855bce0e6d73ce91d7922f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +100,24 @@
       "writtenOn": "2014-08-12T18:36:51Z",
       "side": 1,
       "message": "This is implicitly testing by checking final xml output at the end, but I was wondering if there would be a benefit to adding a subset of tests to verify the yaml after this step?",
+      "revId": "3bda1217ce2609edde855bce0e6d73ce91d7922f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a8f12ccf",
+        "filename": "tests/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 7069
+      },
+      "writtenOn": "2014-08-19T01:41:58Z",
+      "side": 1,
+      "message": "Absolutely, that\u0027d be very useful. However this is an intermediate patch to separate the two out and checking the xml validates that the intermediate steps are working. At least for now.",
+      "parentUuid": "baada198_fe131957",
       "revId": "3bda1217ce2609edde855bce0e6d73ce91d7922f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
