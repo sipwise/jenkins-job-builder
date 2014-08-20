@@ -24,6 +24,12 @@
             </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.FilePath>
           </filePaths>
         </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.GerritProject>
+        <topics>
+          <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.Topic>
+            <compareType>ANT</compareType>
+            <pattern>refactor-xy*</pattern>
+          </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.Topic>
+        </topics>
       </gerritProjects>
       <skipVote>
         <onSuccessful>true</onSuccessful>
