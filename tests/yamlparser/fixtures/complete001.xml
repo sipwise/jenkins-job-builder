@@ -62,10 +62,10 @@
         </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.GerritProject>
       </gerritProjects>
       <skipVote>
-        <onSuccessful>false</onSuccessful>
         <onFailed>false</onFailed>
-        <onUnstable>false</onUnstable>
         <onNotBuilt>false</onNotBuilt>
+        <onSuccessful>false</onSuccessful>
+        <onUnstable>false</onUnstable>
       </skipVote>
       <silentMode>false</silentMode>
       <escapeQuotes>true</escapeQuotes>

@@ -22,10 +22,10 @@
         </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.data.GerritProject>
       </gerritProjects>
       <skipVote>
-        <onSuccessful>true</onSuccessful>
         <onFailed>true</onFailed>
-        <onUnstable>true</onUnstable>
         <onNotBuilt>true</onNotBuilt>
+        <onSuccessful>true</onSuccessful>
+        <onUnstable>true</onUnstable>
       </skipVote>
       <silentMode>false</silentMode>
       <escapeQuotes>false</escapeQuotes>
