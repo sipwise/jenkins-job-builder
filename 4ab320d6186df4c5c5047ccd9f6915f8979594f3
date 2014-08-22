@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_8392ea49",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-08-22T19:35:58Z",
+      "side": 1,
+      "message": "nit: Docs refer to yaml files as job definition files now.  So how about \".. Jenkins Job Builder will search for job definition files recursively\"?",
+      "revId": "4ab320d6186df4c5c5047ccd9f6915f8979594f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
