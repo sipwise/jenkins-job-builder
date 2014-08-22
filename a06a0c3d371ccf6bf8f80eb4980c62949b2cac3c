@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_ff9ed805",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-08-22T15:05:37Z",
+      "side": 1,
+      "message": "would be better if you could reference one of the tests you provided with a literalinclude.  example here: http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/modules/publishers.py#n88",
+      "revId": "a06a0c3d371ccf6bf8f80eb4980c62949b2cac3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
