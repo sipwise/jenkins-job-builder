@@ -16,6 +16,24 @@
       "revId": "646d502a59edfd782b86cfeaa66f303d6e45c322",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_04dee0dc",
+        "filename": "doc/source/definition.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-08-22T21:32:19Z",
+      "side": 1,
+      "message": "Ah that file has been removed when I reverted Joa change https://review.openstack.org/#/c/105156/\n\nWill amend.",
+      "parentUuid": "1abeadc6_a4052c12",
+      "revId": "646d502a59edfd782b86cfeaa66f303d6e45c322",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
