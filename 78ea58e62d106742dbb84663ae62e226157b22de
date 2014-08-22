@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_7ebd61d7",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 818,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-08-22T20:05:35Z",
+      "side": 1,
+      "message": "please add \u0027(required)\u0027 at the end to indicate that this is a required param.",
+      "revId": "78ea58e62d106742dbb84663ae62e226157b22de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1e1e2d0c",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 821,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-08-22T20:05:35Z",
+      "side": 1,
+      "message": "this will not render correctly due to double colon.  Change it to \u0027Example:\u0027 will fix the problem.  You can check the gate-jenkins-job-builder-docs test job to verify.",
+      "revId": "78ea58e62d106742dbb84663ae62e226157b22de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
