@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_3114f7e7",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1025,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-23T00:00:19Z",
+      "side": 1,
+      "message": "Recently came to my attention that the correct convention is that any argument where the absence of will result in an exception being raised should be marked as \u0027(required)\u0027.",
+      "revId": "888a3224e2cb0d6ba432727336764f2d32134ffb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
