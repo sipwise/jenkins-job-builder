@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_e2d521ba",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3578,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-25T16:23:19Z",
+      "side": 1,
+      "message": "Can use \"data[\u0027pattern\u0027]\" here since already established that the member exists.\n\nGuess we should really to standardize on a convention through out the project as to whether to use try/except and attempt to access the data member through key value and raise a suitable exception on KeyError, or use a data.get() with a default value and check if set, or check if the key is in the given dict.",
+      "revId": "30d5fc127151df394607390d272690f6927e38a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
