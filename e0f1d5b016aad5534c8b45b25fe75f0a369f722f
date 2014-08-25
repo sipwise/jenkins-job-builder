@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_8b98186c",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2014-08-25T09:31:10Z",
+      "side": 1,
+      "message": "why not use sorted() here to have it same way as publishers.py, instead of OrderedDict (with those \"ugly\" imports :])",
+      "revId": "e0f1d5b016aad5534c8b45b25fe75f0a369f722f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
