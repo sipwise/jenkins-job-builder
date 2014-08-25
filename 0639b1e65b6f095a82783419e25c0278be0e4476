@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_7298116b",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2014-08-25T08:02:03Z",
+      "side": 1,
+      "message": "after switching to popitem, should the condition here\nbe \"greater-or-equal\" then one instead?\n\nif so (if you will touch it) imho using also just len(item) (without .items() call) could be nicer.",
+      "revId": "0639b1e65b6f095a82783419e25c0278be0e4476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b27549ce",
+        "filename": "jenkins_jobs/modules/zuul.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2014-08-25T08:02:03Z",
+      "side": 1,
+      "message": "why is this list() wrap needed please?",
+      "range": {
+        "startLine": 155,
+        "startChar": 16,
+        "endLine": 155,
+        "endChar": 20
+      },
+      "revId": "0639b1e65b6f095a82783419e25c0278be0e4476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_751f1b5c",
+        "filename": "requirements.txt",
+        "patchSetId": 26
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2014-08-25T08:02:03Z",
+      "side": 1,
+      "message": "0.3.3 should be here?\n\n(based on how i understood previous discussion in comments)",
+      "range": {
+        "startLine": 4,
+        "startChar": 17,
+        "endLine": 4,
+        "endChar": 18
+      },
+      "revId": "0639b1e65b6f095a82783419e25c0278be0e4476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
