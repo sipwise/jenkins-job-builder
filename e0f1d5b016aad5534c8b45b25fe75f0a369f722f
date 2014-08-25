@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_b12ff9f5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 679
+      },
+      "writtenOn": "2014-08-25T15:18:54Z",
+      "side": 1,
+      "message": "\"by yaml will have it is order retained\"?  s/it\u0027s/its/ (English femtonit ;)",
+      "revId": "e0f1d5b016aad5534c8b45b25fe75f0a369f722f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_8b98186c",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 7
@@ -13,6 +30,24 @@
       "writtenOn": "2014-08-25T09:31:10Z",
       "side": 1,
       "message": "why not use sorted() here to have it same way as publishers.py, instead of OrderedDict (with those \"ugly\" imports :])",
+      "revId": "e0f1d5b016aad5534c8b45b25fe75f0a369f722f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_31fe8939",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 679
+      },
+      "writtenOn": "2014-08-25T15:18:54Z",
+      "side": 1,
+      "message": "Well, I think he\u0027s specifically wanting to use them in the order in which they\u0027re declared, which isn\u0027t alphabetical order.  That said, there\u0027s no need to use OrderedDict here:\n\n    outcomes \u003d [\n        (\u0027successful\u0027, \u0027onSuccessful\u0027),\n        (\u0027failed\u0027, \u0027onFailed\u0027),\n        (\u0027unstable\u0027, \u0027onUnstable\u0027),\n        (\u0027notbuilt\u0027, \u0027onNotBuilt\u0027),\n    ]\n    …\n    for result_kind, tag_name in outcomes:\n        …",
+      "parentUuid": "1abeadc6_8b98186c",
       "revId": "e0f1d5b016aad5534c8b45b25fe75f0a369f722f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
