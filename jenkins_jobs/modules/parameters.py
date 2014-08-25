@@ -35,6 +35,7 @@ Example::
 
 import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
+from jenkins_jobs.errors import JenkinsJobsException
 
 
 def base_param(parser, xml_parent, data, do_default, ptype):
@@ -437,6 +438,79 @@ def dynamic_scriptler_param_common(parser, xml_parent, data, ptype):
             XML.SubElement(parameterXML, 'value').text = parameter['value']
     XML.SubElement(pdef, 'readonlyInputField').text = str(data.get(
         'read-only', False)).lower()
+
+
+def extended_choice_param(parser, xml_parent, data):
+    """yaml: extended-choice
+    Creates an extended choice parameter where values can be read from a file
+    Requires the Jenkins `Extended Choice Parameter Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/
+    Extended+Choice+Parameter+plugin>`_
+
+    :arg string name: name of the parameter
+    :arg string description: description of the parameter
+        (optional, default '')
+    :arg string property-file: location of property file to read from
+        (optional, default '')
+    :arg string property-key: key for the property-file (optional, default '')
+    :arg bool quote-value: whether to put quotes around the property
+        when passing to Jenkins (optional, default false)
+    :arg string visible-items: number of items to show in the list
+        (optional, default 5)
+    :arg string type: type of select (optional, default single-select)
+    :arg string value: comma separated list of values for the single select
+        or multi-select box (optional, default '')
+    :arg string default-value: used to set the initial selection of the
+        single-select or multi-select box (optional, default '')
+    :arg string default-property-file: location of property file when default
+        value needs to come from a property file (optional, default '')
+    :arg string default-property-key: key for the default property file
+        (optional, default '')
+
+    Example::
+
+      parameters:
+        - extended-choice:
+            name: FOO
+            description: A foo parameter
+            property-file: /home/foo/property.prop
+            property-key: key
+            quote-value: true
+            visible-items: 10
+            type: multi-select
+            value: foo,bar,select
+            default-value: foo
+            default-property-file: /home/property.prop
+            default-property-key: fookey
+    """
+    pdef = base_param(parser, xml_parent, data, False,
+                      'com.cwctravel.hudson.plugins.'
+                      'extended__choice__parameter.'
+                      'ExtendedChoiceParameterDefinition')
+    XML.SubElement(pdef, 'name').text = data['name']
+    XML.SubElement(pdef, 'description').text = data.get('description', '')
+    XML.SubElement(pdef, 'quoteValue').text = str(data.get('quote-value',
+                                                  False)).lower()
+    XML.SubElement(pdef, 'visibleItemCount').text = data.get(
+        'visible-items', '5')
+    choice = data.get('type', 'single-select')
+    choicedict = {'single-select': 'PT_SINGLE_SELECT',
+                  'multi-select': 'PT_MULTI_SELECT',
+                  'radio': 'PT_RADIO',
+                  'checkbox': 'PT_CHECKBOX'}
+    if choice not in choicedict:
+        raise JenkinsJobsException("Type entered is not valid, must be one "
+                                   "of: single-select, multi-select, radio, "
+                                   "or checkbox")
+    XML.SubElement(pdef, 'type').text = choicedict[choice]
+    XML.SubElement(pdef, 'value').text = data.get('value', '')
+    XML.SubElement(pdef, 'propertyFile').text = data.get('property-file', '')
+    XML.SubElement(pdef, 'propertyKey').text = data.get('property-key', '')
+    XML.SubElement(pdef, 'defaultValue').text = data.get('default-value', '')
+    XML.SubElement(pdef, 'defaultPropertyFile').text = data.get(
+        'default-property-file', '')
+    XML.SubElement(pdef, 'defaultPropertyKey').text = data.get(
+        'default-property-key', '')
 
 
 class Parameters(jenkins_jobs.modules.base.Base):
