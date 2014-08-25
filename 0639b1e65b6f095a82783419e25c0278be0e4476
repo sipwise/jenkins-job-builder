@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_9194bde9",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-25T16:03:37Z",
+      "side": 1,
+      "message": "Good catch, had not spotted that in the conversion.",
+      "parentUuid": "1abeadc6_7298116b",
+      "revId": "0639b1e65b6f095a82783419e25c0278be0e4476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_b27549ce",
         "filename": "jenkins_jobs/modules/zuul.py",
         "patchSetId": 26
@@ -42,6 +60,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_315a0951",
+        "filename": "jenkins_jobs/modules/zuul.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-25T16:03:37Z",
+      "side": 1,
+      "message": "values is an iterator in python 3, and you cannot combine iterators. However I wonder if itertools.chain() might work better here rather than converting to a list.",
+      "parentUuid": "1abeadc6_b27549ce",
+      "revId": "0639b1e65b6f095a82783419e25c0278be0e4476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_751f1b5c",
         "filename": "requirements.txt",
         "patchSetId": 26
@@ -59,6 +95,24 @@
         "endLine": 4,
         "endChar": 18
       },
+      "revId": "0639b1e65b6f095a82783419e25c0278be0e4476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_2492c99f",
+        "filename": "requirements.txt",
+        "patchSetId": 26
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-25T16:03:37Z",
+      "side": 1,
+      "message": "I\u0027ve found that it works fine with 0.3.1, but yes probably better to bump based on previous comments.",
+      "parentUuid": "1abeadc6_751f1b5c",
       "revId": "0639b1e65b6f095a82783419e25c0278be0e4476",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
