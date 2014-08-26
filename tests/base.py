@@ -134,7 +134,7 @@ class SingleJobTestCase(BaseTestCase):
             return
 
         xml_filepath = os.path.join(self.fixtures_path, self.out_filename)
-        expected_xml = u"%s" % open(xml_filepath, 'r').read()
+        expected_xml = u"%s" % codecs.open(xml_filepath, 'r', 'utf-8').read()
 
         yaml_filepath = os.path.join(self.fixtures_path, self.in_filename)
 
@@ -158,7 +158,7 @@ class SingleJobTestCase(BaseTestCase):
 
         self.assertThat(
             pretty_xml,
-            testtools.matchers.DocTestMatches(expected_xml,
+            testtools.matchers.DocTestMatches(expected_xml.encode('utf-8'),
                                               doctest.ELLIPSIS |
                                               doctest.NORMALIZE_WHITESPACE |
                                               doctest.REPORT_NDIFF)
