@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_0d8bfb68",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 10540
+      },
+      "writtenOn": "2014-08-26T18:13:08Z",
+      "side": 1,
+      "message": "I\u0027m not sure what a test for this would look like.  Could you point me at something similar?",
+      "parentUuid": "1abeadc6_2049cc8b",
+      "revId": "9aa086c0e5dbaa7136a3d086c0c90e7672a0500f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_6bf48587",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_6da54f03",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 10540
+      },
+      "writtenOn": "2014-08-26T18:13:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_6bf48587",
+      "revId": "9aa086c0e5dbaa7136a3d086c0c90e7672a0500f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_40da48ea",
         "filename": "jenkins_jobs/modules/properties.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2014-08-25T20:00:19Z",
       "side": 1,
       "message": "It should be possible to dispatch directly to the parameters module and remove the following code at the same time, so that it is managed in a single point with something along the lines of:\n\n parser.registry.dispatch(\u0027parameter\u0027, parser, xml_parent,\n                          {\u0027extended-choice-param\u0027: data})\n\nIf you do add this, probably should perform a search here for an existing xml element matching \u0027parameterDefinitions\u0027 and use it as the parent, and only define new tags if none found in order to fix the bug fully.",
+      "revId": "9aa086c0e5dbaa7136a3d086c0c90e7672a0500f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ad3927da",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 10540
+      },
+      "writtenOn": "2014-08-26T18:13:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_40da48ea",
       "revId": "9aa086c0e5dbaa7136a3d086c0c90e7672a0500f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
