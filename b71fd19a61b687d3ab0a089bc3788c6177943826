@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_0cc85473",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2014-08-26T23:13:39Z",
+      "side": 1,
+      "message": "So this isn\u0027t actually working like I thought it would but I went ahead and pushed a new patchset with tests to prove this doesn\u0027t work. If anyone knows why and wants to push a new patchset with code that actually works go for it. I just thought I could fix this quickly and all I could do quickly was reproduce the failure in our test suite. This is useful but not the end result we want.",
+      "revId": "b71fd19a61b687d3ab0a089bc3788c6177943826",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
