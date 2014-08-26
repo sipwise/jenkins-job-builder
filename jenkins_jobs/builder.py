@@ -464,7 +464,7 @@ class XmlJob(object):
         return hashlib.md5(self.output()).hexdigest()
 
     def output(self):
-        out = minidom.parseString(XML.tostring(self.xml))
+        out = minidom.parseString(XML.tostring(self.xml, encoding='UTF-8'))
         return out.toprettyxml(indent='  ', encoding='utf-8')
 
 
