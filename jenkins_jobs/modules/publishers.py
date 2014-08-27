@@ -3603,6 +3603,33 @@ def valgrind(parser, xml_parent, data):
         data.get('publish-if-failed', False)).lower()
 
 
+def scanbuild(parser, xml_parent, data):
+    """yaml: scanbuild
+    Publish results from the Clang scan-build static analyzer.
+
+    The scan-build report has to be generated in the
+    ${WORKSPACE}/clangScanBuildReports directory for the publisher to find it.
+
+    Requires the Jenkins `Clang Scan-Build Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Clang+Scan-Build+Plugin>`_
+
+    :arg int threshold: Mark build as unstable if the number of bugs exceeds a
+        threshold (default: do not report build as unstable)
+
+    Example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/scanbuild001.yaml
+
+    """
+    p = XML.SubElement(
+        xml_parent,
+        'jenkins.plugins.clangscanbuild.publisher.ClangScanBuildPublisher')
+
+    XML.SubElement(p, 'bugThreshold').text = str(data.get('threshold', 0))
+    XML.SubElement(p, 'markBuildUnstableWhenThresholdIsExceeded').text = \
+        str('threshold' in data).lower()
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
