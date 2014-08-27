@@ -1,0 +1,3 @@
+publishers:
+  - scanbuild:
+      threshold: 1
