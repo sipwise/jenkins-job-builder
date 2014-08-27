@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_1f030f0e",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 2834
+      },
+      "writtenOn": "2014-08-27T02:55:01Z",
+      "side": 1,
+      "message": "This seems a little clunky and long.  How about\n\nif not isinstance(options.path, list):\n    options.path \u003d [options.path]",
+      "revId": "0f5baaeb41b3eb60e909fe9b008c82a6b3c2a91c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
