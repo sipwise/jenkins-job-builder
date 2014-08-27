@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_e4ab0d87",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-08-27T16:50:33Z",
+      "side": 1,
+      "message": "Would it make sense to give an explanation as to why this was deprecated in favor of the parameters one?",
+      "revId": "6466a25f548833c274f4841f90dd1d6bca3fd381",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
