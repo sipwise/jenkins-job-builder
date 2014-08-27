@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_581d79bd",
+        "filename": "tests/base.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-08-27T20:30:38Z",
+      "side": 1,
+      "message": "A previous patchset did something similar https://review.openstack.org/#/c/64610/3/tests/base.py\n\nWe would need a way to catch all cases of codecs.open() not being used :/",
+      "revId": "103b8e107ed9bfbcd494642b09540c0bce19c25c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
