@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_6ff98c4d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-08-27T23:04:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_b123d9a5",
+      "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_b15af927",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-04T23:44:34Z",
       "side": 1,
       "message": "I think it would be better to move all the threading code into a separate file and then import the decorator.\n\nIf this is moved to a separate file, and you feel there is a clear benefit to recording the time take you could add them in the time taken as debug log statements within the parallelize decorator instead of having it in the actually update_jobs method. That way they will be outputted for any usage instead of having to be added into the calling function.",
+      "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e57f7d15",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-08-27T23:04:48Z",
+      "side": 1,
+      "message": "Well, the idea between the timing logs is to profile the specific execution of the update jobs, not really interested in logging any possible parallelized function.\n\nI have no strong opinion about it, so if it bothers you I can remove them.",
+      "parentUuid": "baada198_b15af927",
       "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_0fb9f878",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-08-27T23:04:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_7165c1b3",
+      "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_d1420d3d",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 11
@@ -64,6 +118,24 @@
       "writtenOn": "2014-07-04T23:44:34Z",
       "side": 1,
       "message": "With everything squashed up it\u0027s hard to read through this, a blank line here will help.",
+      "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6fa7cc50",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-08-27T23:04:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_d1420d3d",
       "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_8fa4284c",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-08-27T23:04:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_b15bd9f4",
+      "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_f170f173",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 11
@@ -98,6 +188,24 @@
       "writtenOn": "2014-07-04T23:44:34Z",
       "side": 1,
       "message": "s/threads/workers/g",
+      "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_af648422",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-08-27T23:04:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_f170f173",
       "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_e5969d3d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-08-27T23:04:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_3146e94f",
+      "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_5176fda4",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 11
@@ -132,6 +258,24 @@
       "writtenOn": "2014-07-04T23:44:34Z",
       "side": 1,
       "message": "And here.",
+      "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6f550c1d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-08-27T23:04:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_5176fda4",
       "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_ef0f5c37",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 738,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-08-27T23:04:48Z",
+      "side": 1,
+      "message": "As I said before, I prefer having the info to not having it, and I find it potentially useful for it to be here. I\u0027ll remove if you have a strong opinion against.",
+      "parentUuid": "baada198_519d1dbb",
+      "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_71d7814b",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 11
@@ -166,6 +328,24 @@
       "writtenOn": "2014-07-04T23:44:34Z",
       "side": 1,
       "message": "Maybe avoid mixing changes?",
+      "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_8245df44",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-08-27T23:04:48Z",
+      "side": 1,
+      "message": "Done\n\nIt seemed a too small change to be on it\u0027s own patch, and evident enough to be included in any.",
+      "parentUuid": "baada198_71d7814b",
       "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_025aaf29",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 791,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-08-27T23:04:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_11bc8505",
+      "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_31b98915",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 11
@@ -200,6 +398,24 @@
       "writtenOn": "2014-07-04T23:44:34Z",
       "side": 1,
       "message": "Is there any real benefit to monitoring the time taken here?",
+      "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_0271cfa7",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 796,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-08-27T23:04:48Z",
+      "side": 1,
+      "message": "Yes, at least for us, it helps troubleshoot connectivity issues, and get a look on what made the run slow down.\n\nIt\u0027s a debug statement, so it does not \u0027bother\u0027 when running by default.",
+      "parentUuid": "baada198_31b98915",
       "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_c2a197f9",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-08-27T23:04:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_713ea18d",
+      "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_b144b91b",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 11
@@ -234,6 +468,24 @@
       "writtenOn": "2014-07-04T23:44:34Z",
       "side": 1,
       "message": "Think it would be useful to switch to \u0027n_workers\u0027.",
+      "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_02a8efd9",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 803,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-08-27T23:04:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_b144b91b",
       "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_22b08b42",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 816,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-08-27T23:04:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_3150a9d3",
+      "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_31ec29f3",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 11
@@ -274,6 +544,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_e23e938a",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 819,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-08-27T23:04:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_31ec29f3",
+      "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_d1fa0dbc",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 11
@@ -285,6 +573,24 @@
       "writtenOn": "2014-07-04T23:44:34Z",
       "side": 1,
       "message": "Maybe switch to use \u0027--workers\u0027, that way if the backend is ever changed to use multi-processing instead of multi-threading or a combination of the two there is no need to change the arguments or API.",
+      "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6217e3ee",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-08-27T23:04:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_d1fa0dbc",
       "revId": "d0afe0055a9b5834c616a7d706c303114fca8571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
