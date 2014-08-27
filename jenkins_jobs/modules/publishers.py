@@ -3731,6 +3731,35 @@ def pmd(parser, xml_parent, data):
     build_trends_publisher('[PMD] ', xml_element, data)
 
 
+def scan_build(parser, xml_parent, data):
+    """yaml: scan-build
+    Publishes results from the Clang scan-build static analyzer.
+
+    The scan-build report has to be generated in the directory
+    ``${WORKSPACE}/clangScanBuildReports`` for the publisher to find it.
+
+    Requires the Jenkins `Clang Scan-Build Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Clang+Scan-Build+Plugin>`_
+
+    :arg int threshold: Mark build as unstable if the number of bugs exceeds a
+        threshold (default: do not report build as unstable)
+
+    Example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/scan-build001.yaml
+
+    """
+    p = XML.SubElement(
+        xml_parent,
+        'jenkins.plugins.clangscanbuild.publisher.ClangScanBuildPublisher')
+
+    enabled = 'threshold' in data
+    XML.SubElement(p, 'markBuildUnstableWhenThresholdIsExceeded').text = \
+        str(enabled).lower()
+    if enabled:
+        XML.SubElement(p, 'bugThreshold').text = str(data.get('threshold'))
+
+
 def create_publishers(parser, action):
     dummy_parent = XML.Element("dummy")
     parser.registry.dispatch('publisher', parser, dummy_parent, action)

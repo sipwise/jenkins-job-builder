@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <publishers>
+    <jenkins.plugins.clangscanbuild.publisher.ClangScanBuildPublisher>
+      <markBuildUnstableWhenThresholdIsExceeded>false</markBuildUnstableWhenThresholdIsExceeded>
+    </jenkins.plugins.clangscanbuild.publisher.ClangScanBuildPublisher>
+  </publishers>
+</project>
