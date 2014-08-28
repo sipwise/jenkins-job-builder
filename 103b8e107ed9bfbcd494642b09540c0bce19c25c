@@ -16,6 +16,24 @@
       "revId": "103b8e107ed9bfbcd494642b09540c0bce19c25c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_936426ba",
+        "filename": "tests/base.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2014-08-28T21:40:45Z",
+      "side": 1,
+      "message": "A quick git grep shows that there is probably additional cleanup to be done, but this covers the use case that was broken in the bug. We should do additional cleanup in subsequent patches (and add test cases to cover them).",
+      "parentUuid": "1abeadc6_581d79bd",
+      "revId": "103b8e107ed9bfbcd494642b09540c0bce19c25c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
