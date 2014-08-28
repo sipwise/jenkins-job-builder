@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_65897f25",
+        "filename": "tests/parallel/test_parallel.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6039
+      },
+      "writtenOn": "2014-08-28T23:58:17Z",
+      "side": 1,
+      "message": "N.B.: this is not guaranteed to sleep for a full `secs` seconds, it is only guaranteed to not sleep for more than `secs` seconds.",
+      "revId": "db8fbd1b8a4dd85de75f8ef96b874e521128e511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_c5b6d3f8",
+        "filename": "tests/parallel/test_parallel.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6039
+      },
+      "writtenOn": "2014-08-28T23:58:17Z",
+      "side": 1,
+      "message": "Why not use n_workers\u003d0?",
+      "revId": "db8fbd1b8a4dd85de75f8ef96b874e521128e511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
