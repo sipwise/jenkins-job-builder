@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <builders>
+    <EnvInjectBuilder>
+      <info>
+        <scriptFilePath>script.sh</scriptFilePath>
+        <scriptContent>script content</scriptContent>
+      </info>
+    </EnvInjectBuilder>
+  </builders>
+</project>

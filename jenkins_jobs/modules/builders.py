@@ -395,6 +395,10 @@ def inject(parser, xml_parent, data):
         info, 'propertiesFilePath', data.get('properties-file'))
     jenkins_jobs.modules.base.add_nonblank_xml_subelement(
         info, 'propertiesContent', data.get('properties-content'))
+    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
+        info, 'scriptFilePath', data.get('script-file'))
+    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
+        info, 'scriptContent', data.get('script-content'))
 
 
 def artifact_resolver(parser, xml_parent, data):

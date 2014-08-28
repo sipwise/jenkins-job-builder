@@ -1,0 +1,4 @@
+builders:
+  - inject:
+      script-file: script.sh
+      script-content: script content
