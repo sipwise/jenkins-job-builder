@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_638ceed7",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 609,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-29T17:19:46Z",
+      "side": 1,
+      "message": "You don\u0027t make use of the \u0027fn\u0027 parameter when calling, so what is the intention of including it in the signature?",
+      "revId": "0c7edb367c634feac921b97cd3a5f48f943d19de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_c33942f3",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 615,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-29T17:19:46Z",
+      "side": 1,
+      "message": "This seems like a copy and paste, what else are you thinking that you are solving here? Looking to use a glob to get multiple job names from the yaml files? Except you don\u0027t provide a way to use that capability.\n\nAdditionally if you\u0027ve passed the glob_name to generateXML, you don\u0027t need to re-filter the list of jobs generated since generateXML will already ignore those jobs that are not matched.\n\nThat\u0027s a bug in the delete_job method.",
+      "revId": "0c7edb367c634feac921b97cd3a5f48f943d19de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1e3e2db8",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 621,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-29T17:19:46Z",
+      "side": 1,
+      "message": "For a command such as this, it does not seem like an exceptional state to find that job names specified do not exist on the remote.\n\nSeems more likely that for such a call it should return True if exists and False if not rather than raising an exception. Question would be, if the glob matches multiple jobs from the yaml, what\u0027s the correct behaviour? Log errors for each one that does not exist and return true only if all exist and false otherwise?\n\ni.e.\n\n     all_exist \u003d True\n     for job in jobs:\n         if not self.jenkins.is_job(job):\n              all_exist \u003d False\n              logger.info(\"\u0027{0}\u0027 does not exist\".format(job.name))\n\n    return all_exist\n\nObviously if you\u0027d want to log or output which do not exist and just wish to return True/False, you can use python\u0027s internal function \u0027all()\u0027 to achieve this in one line.",
+      "revId": "0c7edb367c634feac921b97cd3a5f48f943d19de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3e53e9e2",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-29T17:19:46Z",
+      "side": 1,
+      "message": "JJB has the capability to test the command line behaviour now, please look to add a test under tests/cmd/ to show the correct behaviour.",
+      "revId": "0c7edb367c634feac921b97cd3a5f48f943d19de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
