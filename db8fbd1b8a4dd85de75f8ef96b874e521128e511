@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_1f847409",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-29T14:02:09Z",
+      "side": 1,
+      "message": "This essentially means that if only one job failed out of several hundred, the cache won\u0027t be updated.\n\nShould we do it that way? Or should we simply raise the exception from within the parallel decorator if it\u0027s not being caught by the function being processed.",
+      "revId": "db8fbd1b8a4dd85de75f8ef96b874e521128e511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7faba874",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-29T14:02:09Z",
+      "side": 1,
+      "message": "Any reason not to do this as part of the job update inside the parallel_update_job method?\n\nPresumably if the call to \u0027self.jenkins.update_job(job.name, job.output())\u0027 in the parallel_update_job method succeeds, we can just update the cache.",
+      "revId": "db8fbd1b8a4dd85de75f8ef96b874e521128e511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_df683cf7",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 707,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-29T14:02:09Z",
+      "side": 1,
+      "message": "I\u0027m wondering if it would be better to move this to be handled by a call to atexit with the CacheStorage object?\n\nThe more I think about it, the better it seems to try to have the CacheStorage object handle how the cache is saved. I\u0027ll submit a proposed patch to change the current behaviour here rather than try to discuss mixing it in with this change.",
+      "revId": "db8fbd1b8a4dd85de75f8ef96b874e521128e511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_65897f25",
         "filename": "tests/parallel/test_parallel.py",
         "patchSetId": 12
@@ -31,6 +82,24 @@
       "side": 1,
       "message": "Yes, I know, and it might break on really slow machines or if stopped during the tests. Not sure if there\u0027s a sane alternative, I\u0027m open to suggestions.",
       "parentUuid": "1abeadc6_65897f25",
+      "revId": "db8fbd1b8a4dd85de75f8ef96b874e521128e511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1acc82ba",
+        "filename": "tests/parallel/test_parallel.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-29T14:02:09Z",
+      "side": 1,
+      "message": "Would the following work here?\n\n def wait(secs):\n    end \u003d begin \u003d time.time()\n    remainder \u003d secs\n    while slept \u003c secs:\n        time.sleep(remainder)\n        end \u003d time.time()\n        slept \u003d end - begin\n        remainder \u003d secs - slept",
+      "parentUuid": "1abeadc6_397b1a7c",
       "revId": "db8fbd1b8a4dd85de75f8ef96b874e521128e511",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
