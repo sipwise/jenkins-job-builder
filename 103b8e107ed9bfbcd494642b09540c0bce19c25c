@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_7ec9e124",
+        "filename": "tests/base.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-29T18:37:07Z",
+      "side": 1,
+      "message": "Should we try to keep where the encoding/decoding is being done similar between BaseTestCase and SingleJobTestCase?",
+      "revId": "103b8e107ed9bfbcd494642b09540c0bce19c25c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_5eeb45a3",
         "filename": "tests/yamlparser/fixtures/include-rawunicode001.yaml",
         "patchSetId": 3
