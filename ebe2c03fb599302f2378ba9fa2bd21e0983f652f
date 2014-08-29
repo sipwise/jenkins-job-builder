@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_69a68dac",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-29T17:57:41Z",
+      "side": 1,
+      "message": "Please add a blank line after the subject as its generally expected by git tools. Otherwise the next line gets treated as part of the subject and will be included if you run \u0027git log --oneline\u0027.",
+      "revId": "ebe2c03fb599302f2378ba9fa2bd21e0983f652f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_c9fc0175",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-29T17:57:41Z",
+      "side": 1,
+      "message": "Please use hyphen\u0027s as the separator instead of \u0027_\u0027 as it is the convention in JJB. Thanks.",
+      "revId": "ebe2c03fb599302f2378ba9fa2bd21e0983f652f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_69d4cde8",
+        "filename": "tests/wrappers/fixtures/ownership001.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-29T17:57:41Z",
+      "side": 1,
+      "message": "Please use hyphen\u0027s as the separator as this is the convention through out JJB.\n\ni.e.\n\n job-variables: true\n node-variables:true",
+      "revId": "ebe2c03fb599302f2378ba9fa2bd21e0983f652f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
