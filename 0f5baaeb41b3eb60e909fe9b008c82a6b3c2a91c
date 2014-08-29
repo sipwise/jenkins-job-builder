@@ -16,6 +16,24 @@
       "revId": "0f5baaeb41b3eb60e909fe9b008c82a6b3c2a91c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_be39b9f3",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-29T17:39:48Z",
+      "side": 1,
+      "message": "That\u0027s not quite the same behaviour of the following code, comment is a bit misleading.\n\nIf the recursive options are enabled, it needs to expand the path which will return a list, otherwise it should turn the single item into a list.",
+      "parentUuid": "1abeadc6_1f030f0e",
+      "revId": "0f5baaeb41b3eb60e909fe9b008c82a6b3c2a91c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
