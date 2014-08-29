@@ -98,3 +98,13 @@ class CmdTests(testtools.TestCase):
         config = cmd.setup_config_settings(args)
         self.assertEqual(config.get('jenkins', 'url'),
                          "http://test-jenkins.with.non.default.url:8080/")
+
+    def test_exist_job(self):
+        """
+        Run exist mode
+        """
+        args = self.parser.parse_args(['exist', 'foo-job'])
+        args.output_dir = mock.MagicMock()
+        config = ConfigParser.ConfigParser()
+        config.readfp(cStringIO.StringIO(cmd.DEFAULT_CONF))
+        cmd.execute(args, config)   # probably better to fail here
