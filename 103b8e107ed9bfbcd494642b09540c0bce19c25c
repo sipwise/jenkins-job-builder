@@ -34,6 +34,40 @@
       "revId": "103b8e107ed9bfbcd494642b09540c0bce19c25c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5eeb45a3",
+        "filename": "tests/yamlparser/fixtures/include-rawunicode001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-08-29T17:30:30Z",
+      "side": 1,
+      "message": "It looks like this is the only module required for this test. Could you please minimize this test?",
+      "revId": "103b8e107ed9bfbcd494642b09540c0bce19c25c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_9e307d57",
+        "filename": "tests/yamlparser/fixtures/unicode001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-08-29T17:30:30Z",
+      "side": 1,
+      "message": "It looks like this is the only module required for this test. Could you please minimize this test?",
+      "revId": "103b8e107ed9bfbcd494642b09540c0bce19c25c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
