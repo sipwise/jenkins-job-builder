@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_e3363e50",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-29T17:00:45Z",
+      "side": 1,
+      "message": "Take the yaml code here and place it into a file under tests/parameters/fixtures/extended-choice001.yaml and add the corresponding XML code that should be generated to tests/parameters/fixtures/extended-choice001.xml.\n\nYou can then replace the above snippet with:\n\n Example:\n\n .. literalinclude:: /../../tests/parameters/fixtures/extended-choice001.yaml\n\nThis ensures any changes made to the test will be reflected as an example in the documentation.",
+      "revId": "6466a25f548833c274f4841f90dd1d6bca3fd381",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_e4ab0d87",
         "filename": "jenkins_jobs/modules/properties.py",
         "patchSetId": 2
