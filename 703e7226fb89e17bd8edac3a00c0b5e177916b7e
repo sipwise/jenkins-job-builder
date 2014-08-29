@@ -78,6 +78,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_1e938da3",
+        "filename": "etc/jenkins_jobs.ini-sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2014-08-29T17:14:54Z",
+      "side": 1,
+      "message": "I would even consider going a step further and not make this config option toggleable. If JJB can detect duplicate jobs it should error on duplicates. This isn\u0027t backward compat so we can bump the major version number and let people know about the change and how to clean up their configs.\n\nThe reason I say this is having duplicate jobs means one job will win. Which job wins isn\u0027t going to be clear to users so if you are in a position where you have duplicates you may be getting very confusing and hard to debug results so failing and notifying the user is desirable.",
+      "parentUuid": "baada198_cd477f76",
+      "revId": "703e7226fb89e17bd8edac3a00c0b5e177916b7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_ea435a3c",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 5
