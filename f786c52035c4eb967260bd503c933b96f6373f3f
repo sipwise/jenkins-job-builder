@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_89d5a91d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-29T17:53:19Z",
+      "side": 1,
+      "message": "Tend to use \u0027-\u0027 instead of camel case for the yaml definitions, so think it would be nice to retain that convention here as well.",
+      "revId": "f786c52035c4eb967260bd503c933b96f6373f3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a9bfc5ce",
+        "filename": "tests/builders/fixtures/changeassemblyversion001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-29T17:53:19Z",
+      "side": 1,
+      "message": "Prefer that you used \u0027-\u0027 instead of camelcase here, i.e. assembly-file instead of assemblyFile.",
+      "revId": "f786c52035c4eb967260bd503c933b96f6373f3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
