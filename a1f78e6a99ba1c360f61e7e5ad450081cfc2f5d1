@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_899769eb",
+        "filename": "tests/wrappers/fixtures/locks001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-29T18:33:39Z",
+      "side": 1,
+      "message": "\u0027!!seq []\u0027 is not needed here, evaluates correctly without.",
+      "revId": "a1f78e6a99ba1c360f61e7e5ad450081cfc2f5d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
