@@ -136,6 +136,18 @@ arguments after the job definition path. To update Foo1 and Foo2 run::
 
   jenkins-jobs update /path/to/defs Foo1 Foo2
 
+Exist mode
+^^^^^^^^^^
+
+In order to know if a job is already in jenkins, you can run the job builder in exist mode.
+
+You can run the command with one or more jobs name, it will fail at the first job not in jenkins.::
+
+  jenkins-jobs exist foo
+
+or::
+
+  jenkins-jobs exist foo bar
 
 .. rubric:: Footnotes
 .. [#f1] The cache default location is at ``~/.cache/jenkins_jobs``, which

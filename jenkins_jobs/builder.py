@@ -606,6 +606,20 @@ class Builder(object):
         for job in jobs:
             self.delete_job(job['name'])
 
+    def exist_job(self, glob_name, fn=None):
+        if fn:
+            self.load_files(fn)
+            self.parser.generateXML(glob_name)
+            jobs = [j.name
+                    for j in self.parser.jobs
+                    if matches(j.name, [glob_name])]
+        else:
+            jobs = [glob_name]
+        for job in jobs:
+            if not self.jenkins.is_job(job):
+                raise JenkinsJobsException(
+                    "Job {0} does not exist".format(job))
+
     def update_job(self, input_fn, names=None, output=None):
         self.load_files(input_fn)
         self.parser.generateXML(names)
