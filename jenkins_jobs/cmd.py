@@ -62,6 +62,8 @@ def create_parser():
     parser_test.add_argument('-o', dest='output_dir', default=sys.stdout,
                              help='path to output XML')
     parser_test.add_argument('name', help='name(s) of job(s)', nargs='*')
+    parser_exist = subparser.add_parser('exist')
+    parser_exist.add_argument('name', help='name of job', nargs='+')
     parser_delete = subparser.add_parser('delete')
     parser_delete.add_argument('name', help='name of job', nargs='+')
     parser_delete.add_argument('-p', '--path', default=None,
@@ -183,6 +185,9 @@ def execute(options, config):
                 '(including those not managed by Jenkins Job Builder)')
         logger.info("Deleting all jobs")
         builder.delete_all_jobs()
+    elif options.command == 'exist':
+        if not builder.exist_job(options.names):
+            sys.exit(1)
     elif options.command == 'update':
         logger.info("Updating jobs in {0} ({1})".format(
             options.path, options.names))
