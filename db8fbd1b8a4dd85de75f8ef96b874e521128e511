@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_397b1a7c",
+        "filename": "tests/parallel/test_parallel.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-08-29T08:08:38Z",
+      "side": 1,
+      "message": "Yes, I know, and it might break on really slow machines or if stopped during the tests. Not sure if there\u0027s a sane alternative, I\u0027m open to suggestions.",
+      "parentUuid": "1abeadc6_65897f25",
+      "revId": "db8fbd1b8a4dd85de75f8ef96b874e521128e511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_c5b6d3f8",
         "filename": "tests/parallel/test_parallel.py",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-28T23:58:17Z",
       "side": 1,
       "message": "Why not use n_workers\u003d0?",
+      "revId": "db8fbd1b8a4dd85de75f8ef96b874e521128e511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_794d923d",
+        "filename": "tests/parallel/test_parallel.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-08-29T08:08:38Z",
+      "side": 1,
+      "message": "Because that means that I do not know a priori how many threads it will be using, it might be one or 100.\nThat way I can ensure that on a standard machine under standard load it will take a little more than one second (I\u0027m testing for less than 5 though).\n\nI also don\u0027t want to increment too much the time it takes to run the tests.",
+      "parentUuid": "1abeadc6_c5b6d3f8",
       "revId": "db8fbd1b8a4dd85de75f8ef96b874e521128e511",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
