@@ -31,6 +31,7 @@ import logging
 import copy
 import itertools
 import fnmatch
+import atexit
 from jenkins_jobs.errors import JenkinsJobsException
 import local_yaml
 
@@ -469,6 +470,11 @@ class XmlJob(object):
 
 
 class CacheStorage(object):
+    # ensure each instance of the class has a reference to the module
+    # so that is available to be used when the atexit registered
+    # function fires
+    _yaml = yaml
+
     def __init__(self, jenkins_url, flush=False):
         cache_dir = self.get_cache_dir()
         # One cache per remote Jenkins URL:
@@ -477,9 +483,10 @@ class CacheStorage(object):
             cache_dir, 'cache-host-jobs-' + host_vary + '.yml')
         if flush or not os.path.isfile(self.cachefilename):
             self.data = {}
-            return
-        with file(self.cachefilename, 'r') as yfile:
-            self.data = yaml.load(yfile)
+        else:
+            with file(self.cachefilename, 'r') as yfile:
+                self.data = yaml.load(yfile)
+        atexit.register(self._save)
         logger.debug("Using cache: '{0}'".format(self.cachefilename))
 
     @staticmethod
@@ -496,9 +503,6 @@ class CacheStorage(object):
 
     def set(self, job, md5):
         self.data[job] = md5
-        yfile = file(self.cachefilename, 'w')
-        yaml.dump(self.data, yfile)
-        yfile.close()
 
     def is_cached(self, job):
         if job in self.data:
@@ -509,6 +513,10 @@ class CacheStorage(object):
         if job in self.data and self.data[job] == md5:
             return False
         return True
+
+    def _save(self):
+        with open(self.cachefilename, 'w') as yfile:
+            self._yaml.dump(self.data, yfile)
 
 
 class Jenkins(object):
