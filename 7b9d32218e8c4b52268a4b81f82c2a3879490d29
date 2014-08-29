@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_e46f24c2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-08-29T18:26:07Z",
+      "side": 1,
+      "message": "Rather than state questions, I think it makes the commit messages easier if you follow the general rule of just explaining why a change is necessary and describing it\u0027s intent.\n\nThink you can add the additional information as a comment in gerrit looking for feedback.",
+      "revId": "7b9d32218e8c4b52268a4b81f82c2a3879490d29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
