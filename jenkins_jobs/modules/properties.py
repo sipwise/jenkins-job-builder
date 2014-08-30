@@ -504,6 +504,64 @@ def heavy_job(parser, xml_parent, data):
         data.get('weight', 1))
 
 
+def slack_notification(parser, xml_parent, data):
+    """yaml: slack-notification
+    Send notifications to `Slack <https://slack.com/>`_.
+
+    Requires the Jenkins `Slack Plugin.
+    <https://github.com/jenkinsci/slack-plugin>`_
+
+    :arg str team: Your team's Slack subdomain.
+         If you sign in to slack at https://example.slack.com/,
+         your subdomain is 'example'.
+         This overrides the global setting. (default: empty)
+    :arg str token: The integration token to be used to send notifications
+         to Slack. You can copy this from the settings page within Slack.
+         This overrides the global setting. (default: empty)
+    :arg str room: Specify channels to send notifications (default: empty)
+    :arg bool start: Send notifications to channels when a
+        build start (default: true)
+    :arg bool success: Send notifications to channels when a
+        build success (default: true)
+    :arg bool aborted: Send notifications to channels when a
+        build aborted (default: true)
+    :arg bool not-built: Send notifications to channels when a
+        build not built (default: true)
+    :arg bool unstable: Send notifications to channels when a
+        build unstable (default: true)
+    :arg bool failure: Send notifications to channels when a
+        build failure (default: true)
+    :arg bool back-to-normal: Send notifications to channels when a
+        build back to normal (default: true)
+   :arg bool repeated-failure: Send notifications to channels when a
+        repeated failure (default: true)
+   :arg bool include-test-summary: Include test summary (default: true)
+   :arg bool show-commit-list: Show commit list (default: true)
+
+    Example:
+
+    .. literalinclude:: \
+            /../../tests/properties/fixtures/slack-notification001.yaml
+    """
+    slack = XML.SubElement(xml_parent,
+                           'jenkins.plugins.slack.'
+                           'SlackNotifier_-SlackJobProperty')
+
+    XML.SubElement(slack, 'teamDomain').text = data.get('team')
+    XML.SubElement(slack, 'token').text = data.get('token')
+    XML.SubElement(slack, 'room').text = data.get('room')
+    XML.SubElement(slack, 'startNotification').text = str(data.get('start', True)).lower()
+    XML.SubElement(slack, 'notifySuccess').text = str(data.get('success', True)).lower()
+    XML.SubElement(slack, 'notifyAborted').text = str(data.get('aborted', True)).lower()
+    XML.SubElement(slack, 'notifyNotBuilt').text = str(data.get('not-built', True)).lower()
+    XML.SubElement(slack, 'notifyUnstable').text = str(data.get('unstable', True)).lower()
+    XML.SubElement(slack, 'notifyFailure').text = str(data.get('failure', True)).lower()
+    XML.SubElement(slack, 'notifyBackToNormal').text = str(data.get('back-to-normal', True)).lower()
+    XML.SubElement(slack, 'notifyRepeatedFailure').text = str(data.get('repeated-failure', True)).lower()
+    XML.SubElement(slack, 'includeTestSummary').text = str(data.get('include-test-summary', True)).lower()
+    XML.SubElement(slack, 'showCommitList').text = str(data.get('show-commit-list', True)).lower()
+
+
 def slave_utilization(parser, xml_parent, data):
     """yaml: slave-utilization
     This plugin allows you to specify the percentage of a slave's capacity a
