@@ -2698,6 +2698,35 @@ def warnings(parser, xml_parent, data):
     XML.SubElement(warnings, 'defaultEncoding').text = encoding
 
 
+def slack_notification(parser, xml_parent, data):
+    """yaml: slack-notification
+    Send notifications to `Slack <https://slack.com/>`_.
+
+    Requires the Jenkins `Slack Plugin.
+    <https://github.com/jenkinsci/slack-plugin>`_
+
+    :arg str team: Your team's Slack subdomain.
+         If you sign in to slack at https://example.slack.com/,
+         your subdomain is 'example'.
+         This overrides the global setting. (default: empty)
+    :arg str token: The integration token to be used to send notifications
+         to Slack. You can copy this from the settings page within Slack.
+         This overrides the global setting. (default: empty)
+    :arg str build-server-url: Specify the URL for your Server installation,
+         e.g. http://yourhost.yourdomain/hudson/. (default: empty)
+
+    Example:
+
+    .. literalinclude:: \
+            /../../tests/publishers/fixtures/slack-notification001.yaml
+    """
+    top = XML.SubElement(xml_parent,
+                         'jenkins.plugins.slack.SlackNotifier')
+    XML.SubElement(top, 'teamDomain').text = data.get('team')
+    XML.SubElement(top, 'authToken').text = data.get('token')
+    XML.SubElement(top, 'buildServerUrl').text = data.get('build-server-url')
+
+
 def sloccount(parser, xml_parent, data):
     """yaml: sloccount
     Generates the trend report for SLOCCount

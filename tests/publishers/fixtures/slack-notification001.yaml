@@ -1,0 +1,5 @@
+publishers:
+  - slack:
+      team: myteam
+      token: mytoken
+      build-server-url: http://my-build-server.sample/
