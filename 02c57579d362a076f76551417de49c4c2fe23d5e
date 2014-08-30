@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_188f0d25",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-08-30T21:09:28Z",
+      "side": 1,
+      "message": "The text sounds like the option is True by default which is not the case. I would slightly rephrase it in a way similar to `keep_descriptions` just above. Ie:\n\n By default `jenkins-jobs` will abort ....\n\nAnd at the end add a sentence such as:\n\n When this option is set to True, only a warning is emitted.",
+      "revId": "02c57579d362a076f76551417de49c4c2fe23d5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
