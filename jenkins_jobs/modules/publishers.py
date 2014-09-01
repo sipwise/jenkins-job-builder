@@ -3603,6 +3603,103 @@ def valgrind(parser, xml_parent, data):
         data.get('publish-if-failed', False)).lower()
 
 
+def pmd(parser, xml_parent, data):
+    """yaml: pmd
+    Publish trend reports with PMD.
+    Requires the Jenkins `PMD Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/PMD+Plugin>`_
+
+    The PMD component accepts a dictionary with the
+    following values:
+
+    :arg str pattern: report filename pattern
+    :arg bool canRunOnFailed: also runs for failed builds
+     (instead of just stable or unstable builds)
+    :arg bool shouldDetectModules:
+    :arg int healthy: sunny threshold
+    :arg int unHealthy: stormy threshold
+    :arg str healthThreshold: threshold priority for health status
+     (high: only high, normal: high and normal, low: all)
+    :arg dict thresholds:
+        :thresholds:
+            * **unstable** (`dict`)
+                :unstable: * **totalAll** (`int`)
+                           * **totalHigh** (`int`)
+                           * **totalNormal** (`int`)
+                           * **totalLow** (`int`)
+            * **failed** (`dict`)
+                :failed: * **totalAll** (`int`)
+                         * **totalHigh** (`int`)
+                         * **totalNormal** (`int`)
+                         * **totalLow** (`int`)
+    :arg str defaultEncoding: encoding for parsing or showing files
+     (empty will use platform default)
+
+    Example:
+
+    .. literalinclude::  /../../tests/publishers/fixtures/pmd001.yaml
+
+    Full example:
+
+    .. literalinclude::  /../../tests/publishers/fixtures/pmd002.yaml
+
+    """
+    pmd = XML.SubElement(xml_parent,
+                         'hudson.plugins.pmd.'
+                         'PmdPublisher')
+
+    XML.SubElement(pmd, 'healthy').text = str(
+        data.get('healthy', ''))
+    XML.SubElement(pmd, 'unHealthy').text = str(
+        data.get('unHealthy', ''))
+    XML.SubElement(pmd, 'thresholdLimit').text = \
+        data.get('healthThreshold', 'low')
+
+    XML.SubElement(pmd, 'pluginName').text = '[PMD] '
+
+    XML.SubElement(pmd, 'defaultEncoding').text = \
+        data.get('defaultEncoding', '')
+
+    XML.SubElement(pmd, 'canRunOnFailed').text = str(
+        data.get('canRunOnFailed', False)).lower()
+
+    XML.SubElement(pmd, 'useStableBuildAsReference').text = 'false'
+
+    XML.SubElement(pmd, 'useDeltaValues').text = 'false'
+
+    dthresholds = data.get('thresholds', {})
+    dunstable = dthresholds.get('unstable', {})
+    dfailed = dthresholds.get('failed', {})
+    thresholds = XML.SubElement(pmd, 'thresholds')
+
+    XML.SubElement(thresholds, 'unstableTotalAll').text = str(
+        dunstable.get('totalAll', ''))
+    XML.SubElement(thresholds, 'unstableTotalHigh').text = str(
+        dunstable.get('totalHigh', ''))
+    XML.SubElement(thresholds, 'unstableTotalNormal').text = str(
+        dunstable.get('totalNormal', ''))
+    XML.SubElement(thresholds, 'unstableTotalLow').text = str(
+        dunstable.get('totalLow', ''))
+
+    XML.SubElement(thresholds, 'failedTotalAll').text = str(
+        dfailed.get('totalAll', ''))
+    XML.SubElement(thresholds, 'failedTotalHigh').text = str(
+        dfailed.get('totalHigh', ''))
+    XML.SubElement(thresholds, 'failedTotalNormal').text = str(
+        dfailed.get('totalNormal', ''))
+    XML.SubElement(thresholds, 'failedTotalLow').text = str(
+        dfailed.get('totalLow', ''))
+
+    XML.SubElement(pmd, 'shouldDetectModules').text = \
+        str(data.get('shouldDetectModules', False)).lower()
+
+    XML.SubElement(pmd, 'dontComputeNew').text = 'true'
+
+    XML.SubElement(pmd, 'doNotResolveRelativePaths').text = 'false'
+
+    XML.SubElement(pmd, 'pattern').text = data.get('pattern', '')
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
