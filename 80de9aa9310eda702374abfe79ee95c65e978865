@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_84036b0e",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-01T15:08:17Z",
+      "side": 1,
+      "message": "Please add the default value to this entry as well, i.e. \u0027(default false)\u0027",
+      "revId": "80de9aa9310eda702374abfe79ee95c65e978865",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_642f67a2",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-01T15:08:17Z",
+      "side": 1,
+      "message": "Test for data not being set to None should be done at a higher level such as the ModuleRegistry dispatch method. Currently all modules are assuming that data is a valid dict.\n\nSo please drop the if/else and just rely on the default values being return from data.get().",
+      "revId": "80de9aa9310eda702374abfe79ee95c65e978865",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
