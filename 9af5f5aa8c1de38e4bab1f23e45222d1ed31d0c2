@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_8b261eb9",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-01T14:04:30Z",
+      "side": 1,
+      "message": "if/else is probably not necessary.   The defaults will get set from the data.get method",
+      "revId": "9af5f5aa8c1de38e4bab1f23e45222d1ed31d0c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f8edc28c",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-01T14:04:30Z",
+      "side": 1,
+      "message": "parameter name does not match one in doc above?",
+      "revId": "9af5f5aa8c1de38e4bab1f23e45222d1ed31d0c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
