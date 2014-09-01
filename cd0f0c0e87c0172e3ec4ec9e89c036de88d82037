@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_eea41859",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3609,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-01T14:49:13Z",
+      "side": 1,
+      "message": "could you please add parameter default info?",
+      "revId": "cd0f0c0e87c0172e3ec4ec9e89c036de88d82037",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_692f42a2",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3620,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-01T14:49:13Z",
+      "side": 1,
+      "message": "I\u0027m not sure what this mean, could you please clarify?  Does this mean, by default, report unstable if there is at least 1 bug found?  Or does 0 turn off report of instability?  I think the code implements the latter but the documentation indicates the former.",
+      "revId": "cd0f0c0e87c0172e3ec4ec9e89c036de88d82037",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
