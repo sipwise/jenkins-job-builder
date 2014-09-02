@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_4347721d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3616,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-02T18:10:30Z",
+      "side": 1,
+      "message": "No camel case please, use hyphen\u0027s for separation such as \u0027can-run-on-failed\u0027.\n\nPlease convert all of the args to use JJB\u0027s convention. I know this isn\u0027t your fault, it\u0027s a mistake with the checkstyle code.",
+      "revId": "0e88900ce98464b9797bf7db6fd42f22322400c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_c3ed2227",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3619,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-02T18:10:30Z",
+      "side": 1,
+      "message": "Regarding the comments below, adding \u0027(optional)\u0027 to the end of the above line is sufficient to keep the documentation clear. Otherwise it might seem like it must be provided.",
+      "revId": "0e88900ce98464b9797bf7db6fd42f22322400c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_5cf91e7f",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 4
@@ -31,6 +65,41 @@
       "side": 1,
       "message": "I copied the checkstyle publisher, both of which uses the analysis core plugin (https://github.com/jenkinsci/analysis-core-plugin)\n\nA unconfigured plugin configured in Jenkins produces the following XML:\n  \u003cpublishers\u003e\n    \u003chudson.plugins.pmd.PmdPublisher\u003e\n      \u003chealthy\u003e\u003c/healthy\u003e\n      \u003cunHealthy\u003e\u003c/unHealthy\u003e\n      \u003cthresholdLimit\u003elow\u003c/thresholdLimit\u003e\n      \u003cpluginName\u003e[PMD] \u003c/pluginName\u003e\n      \u003cdefaultEncoding\u003e\u003c/defaultEncoding\u003e\n      \u003ccanRunOnFailed\u003efalse\u003c/canRunOnFailed\u003e\n      \u003cuseStableBuildAsReference\u003efalse\u003c/useStableBuildAsReference\u003e\n      \u003cuseDeltaValues\u003efalse\u003c/useDeltaValues\u003e\n      \u003cthresholds\u003e\n        \u003cunstableTotalAll\u003e\u003c/unstableTotalAll\u003e\n        \u003cunstableTotalHigh\u003e\u003c/unstableTotalHigh\u003e\n        \u003cunstableTotalNormal\u003e\u003c/unstableTotalNormal\u003e\n        \u003cunstableTotalLow\u003e\u003c/unstableTotalLow\u003e\n        \u003cfailedTotalAll\u003e\u003c/failedTotalAll\u003e\n        \u003cfailedTotalHigh\u003e\u003c/failedTotalHigh\u003e\n        \u003cfailedTotalNormal\u003e\u003c/failedTotalNormal\u003e\n        \u003cfailedTotalLow\u003e\u003c/failedTotalLow\u003e\n      \u003c/thresholds\u003e\n      \u003cshouldDetectModules\u003efalse\u003c/shouldDetectModules\u003e\n      \u003cdontComputeNew\u003etrue\u003c/dontComputeNew\u003e\n      \u003cdoNotResolveRelativePaths\u003etrue\u003c/doNotResolveRelativePaths\u003e\n      \u003cpattern\u003e\u003c/pattern\u003e\n    \u003c/hudson.plugins.pmd.PmdPublisher\u003e\n  \u003c/publishers\u003e\n\nI could detail the boolean defaults, but I would rather use the Jenkins plugins\u0027 default XML as defaults then make up some defaults.\nI did however notice that the Jenkins plugin has doNotResolveRelativePaths as default true, not false, so I\u0027ll fix that as well.",
       "parentUuid": "fa98f980_5cf91e7f",
+      "revId": "0e88900ce98464b9797bf7db6fd42f22322400c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_6830d501",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3652,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-02T18:10:30Z",
+      "side": 1,
+      "message": "I\u0027m guessing Ilia was referring that you should specify the defaults in the docstring above for each of the args.\n\nThis is so that users will know what is set by default from just reading the documentation rather than needing to read the code. For those that contain no value just mark the argument as \"(optional)\" instead of specifying \"(default \u0027\u0027)\"",
+      "parentUuid": "fa98f980_37b1d08f",
+      "revId": "0e88900ce98464b9797bf7db6fd42f22322400c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_63ae3687",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3691,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-02T18:10:30Z",
+      "side": 1,
+      "message": "This can be refactored into a loop, see Id5d460a8432b2ab875e8e7063f459ef15b942284 for an example of how to accomplish this.\n\nIn fact if both of this and the checkstyle plugins are using the core analysis plugin this seems like a good opportunity to use a helper function and have both call the same function and pass in the \u0027dthreshholds\u0027 data along with the thresholds XML element as the parent element.\n\nThere is code in the triggers module in \u0027gerrit_handle_legacy_configuration\u0027 that can be used to provide a converter in order to allow the old format in checkstyle to use both the old camelcase style and corrected style.\n\nIf you just want to do this one correctly and then look at submitting a subsequent patch to to have the checkstyle code make use of a common helper function and add the conversion function at that point, that would also work.",
       "revId": "0e88900ce98464b9797bf7db6fd42f22322400c2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
