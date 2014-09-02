@@ -16,6 +16,24 @@
       "revId": "688caf0f95a9b5283da7c07fbb33b91ad5dd8c00",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_9a3d51be",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 11295
+      },
+      "writtenOn": "2014-09-02T10:38:08Z",
+      "side": 1,
+      "message": "Sorry for the delay!! I changed it in path #10. Is this more preferable?",
+      "parentUuid": "baada198_fbee79ec",
+      "revId": "688caf0f95a9b5283da7c07fbb33b91ad5dd8c00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
