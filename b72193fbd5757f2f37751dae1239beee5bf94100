@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_ad1bcb1a",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-09-02T06:07:52Z",
+      "side": 1,
+      "message": "nit: unnecessary extra spaces",
+      "range": {
+        "startLine": 202,
+        "startChar": 68,
+        "endLine": 202,
+        "endChar": 72
+      },
+      "revId": "b72193fbd5757f2f37751dae1239beee5bf94100",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
