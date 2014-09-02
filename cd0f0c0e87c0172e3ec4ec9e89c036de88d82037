@@ -33,6 +33,24 @@
       "revId": "cd0f0c0e87c0172e3ec4ec9e89c036de88d82037",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_db3c2ae5",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3620,
+      "author": {
+        "id": 12856
+      },
+      "writtenOn": "2014-09-02T19:19:28Z",
+      "side": 1,
+      "message": "I tried to clarify it in patch set 2 using the default parameter.\nPlease let me know if that\u0027s the desired way.\n\nWhen the argument \u0027threshold\u0027 is set to a number, it enables the check (and the build will be marked unstable if that number is exceeded). If threshold is omitted, the build won\u0027t be set to unstable.\nIn the config.xml, this is achieved with 2 different XML elements that are always present. bugThreshold contains the number (and is set to 0 by default if the check is disabled in the Jenkins configuration web interface). markBuildUnstableWhenThresholdIsExceeded is set to true or false to enable or disable the check.",
+      "parentUuid": "fa98f980_692f42a2",
+      "revId": "cd0f0c0e87c0172e3ec4ec9e89c036de88d82037",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
