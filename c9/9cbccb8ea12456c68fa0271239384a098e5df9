@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+1: Kevin L. Mitchell <kevin.mitchell@rackspace.com>
+Code-Review+2: Marc Abramowitz <marc@marc-abramowitz.com>
+Workflow+1: Marc Abramowitz <marc@marc-abramowitz.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 02 Sep 2014 19:06:13 +0000
+Reviewed-on: https://review.openstack.org/107063
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
