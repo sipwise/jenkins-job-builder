@@ -16,6 +16,24 @@
       "revId": "0e88900ce98464b9797bf7db6fd42f22322400c2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_37b1d08f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3652,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-09-02T16:27:01Z",
+      "side": 1,
+      "message": "I copied the checkstyle publisher, both of which uses the analysis core plugin (https://github.com/jenkinsci/analysis-core-plugin)\n\nA unconfigured plugin configured in Jenkins produces the following XML:\n  \u003cpublishers\u003e\n    \u003chudson.plugins.pmd.PmdPublisher\u003e\n      \u003chealthy\u003e\u003c/healthy\u003e\n      \u003cunHealthy\u003e\u003c/unHealthy\u003e\n      \u003cthresholdLimit\u003elow\u003c/thresholdLimit\u003e\n      \u003cpluginName\u003e[PMD] \u003c/pluginName\u003e\n      \u003cdefaultEncoding\u003e\u003c/defaultEncoding\u003e\n      \u003ccanRunOnFailed\u003efalse\u003c/canRunOnFailed\u003e\n      \u003cuseStableBuildAsReference\u003efalse\u003c/useStableBuildAsReference\u003e\n      \u003cuseDeltaValues\u003efalse\u003c/useDeltaValues\u003e\n      \u003cthresholds\u003e\n        \u003cunstableTotalAll\u003e\u003c/unstableTotalAll\u003e\n        \u003cunstableTotalHigh\u003e\u003c/unstableTotalHigh\u003e\n        \u003cunstableTotalNormal\u003e\u003c/unstableTotalNormal\u003e\n        \u003cunstableTotalLow\u003e\u003c/unstableTotalLow\u003e\n        \u003cfailedTotalAll\u003e\u003c/failedTotalAll\u003e\n        \u003cfailedTotalHigh\u003e\u003c/failedTotalHigh\u003e\n        \u003cfailedTotalNormal\u003e\u003c/failedTotalNormal\u003e\n        \u003cfailedTotalLow\u003e\u003c/failedTotalLow\u003e\n      \u003c/thresholds\u003e\n      \u003cshouldDetectModules\u003efalse\u003c/shouldDetectModules\u003e\n      \u003cdontComputeNew\u003etrue\u003c/dontComputeNew\u003e\n      \u003cdoNotResolveRelativePaths\u003etrue\u003c/doNotResolveRelativePaths\u003e\n      \u003cpattern\u003e\u003c/pattern\u003e\n    \u003c/hudson.plugins.pmd.PmdPublisher\u003e\n  \u003c/publishers\u003e\n\nI could detail the boolean defaults, but I would rather use the Jenkins plugins\u0027 default XML as defaults then make up some defaults.\nI did however notice that the Jenkins plugin has doNotResolveRelativePaths as default true, not false, so I\u0027ll fix that as well.",
+      "parentUuid": "fa98f980_5cf91e7f",
+      "revId": "0e88900ce98464b9797bf7db6fd42f22322400c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
