@@ -3603,6 +3603,122 @@ def valgrind(parser, xml_parent, data):
         data.get('publish-if-failed', False)).lower()
 
 
+def build_trends_publisher(plugin_name, tag_name, xml_parent, data):
+    """Helper to create various trend publishers.
+    """
+
+    def append_thresholds(element, statuses, data):
+        """Appends the status thresholds.
+        """
+
+        for status in statuses:
+            status_data = data.get(status, {})
+
+            limits = [
+                ('total-all', 'TotalAll'),
+                ('total-high', 'TotalHigh'),
+                ('total-normal', 'TotalNormal'),
+                ('total-low', 'TotalLow')]
+
+            for config_key, tag_suffix in limits:
+                tag_name = status + tag_suffix
+                XML.SubElement(element, tag_name).text = str(
+                    status_data.get(config_key, ''))
+
+    settings = [
+        ('healthy', 'healthy'),
+        ('unhealthy', 'unHealthy'),
+        ('health-threshold', 'thresholdLimit'),
+        ('plugin-name', 'pluginName'),
+        ('default-encoding', 'defaultEncoding'),
+        ('can-run-on-failed', 'canRunOnFailed'),
+        ('use-stable-build-as-reference', 'useStableBuildAsReference'),
+        ('use-delta-values', 'useDeltaValues'),
+        ('thresholds', 'thresholds'),
+        ('should-detect-modules', 'shouldDetectModules'),
+        ('dont-compute-new', 'dontComputeNew'),
+        ('do-not-resolve-relative-paths', 'doNotResolveRelativePaths'),
+        ('pattern', 'pattern')]
+
+    defaults = {
+        'healthy': '',
+        'unhealthy': '',
+        'health-threshold': 'low',
+        'plugin-name': plugin_name,
+        'default-encoding': '',
+        'can-run-on-failed': 'false',
+        'use-stable-build-as-reference': 'false',
+        'use-delta-values': 'false',
+        'should-detect-modules': 'false',
+        'dont-compute-new': 'true',
+        'do-not-resolve-relative-paths': 'false',
+        'pattern': ''
+    }
+
+    xml_element = XML.SubElement(xml_parent, tag_name)
+    for config_key, tag_name in settings:
+        xml_config = XML.SubElement(xml_element, tag_name)
+
+        if config_key == 'thresholds':
+            append_thresholds(
+                xml_config, ['unstable', 'failed'], data.get(config_key, {}))
+        else:
+            config_value = data.get(config_key, defaults[config_key])
+            if config_value is False or config_value is True:
+                xml_config.text = str(config_value).lower()
+            else:
+                xml_config.text = str(config_value)
+
+
+def pmd(parser, xml_parent, data):
+    """yaml: pmd
+    Publish trend reports with PMD.
+    Requires the Jenkins `PMD Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/PMD+Plugin>`_
+
+    The PMD component accepts a dictionary with the following values:
+
+    :arg str pattern: Report filename pattern
+    :arg bool can-run-on-failed: Also runs for failed builds, instead of just
+      stable or unstable builds (default false)
+    :arg bool should-detect-modules: Determines if Ant or Maven modules should
+      be detected for all files that contain warnings (default false)
+    :arg int healthy: sunny threshold (optional)
+    :arg int unhealthy: stormy threshold (optional)
+    :arg str health-threshold: threshold priority for health status
+      (default 'low')
+    :arg dict thresholds: Mark build as failed or unstable if the number of
+      errors exceeds a threshold. (optional)
+
+        :thresholds:
+            * **unstable** (`dict`)
+                :unstable: * **total-all** (`int`)
+                           * **total-high** (`int`)
+                           * **total-normal** (`int`)
+                           * **total-low** (`int`)
+            * **failed** (`dict`)
+                :failed: * **total-all** (`int`)
+                         * **total-high** (`int`)
+                         * **total-normal** (`int`)
+                         * **total-low** (`int`)
+    :arg str default-encoding: Encoding for parsing or showing files (optional)
+
+    Example:
+
+    .. literalinclude::  /../../tests/publishers/fixtures/pmd001.yaml
+
+    Full example:
+
+    .. literalinclude::  /../../tests/publishers/fixtures/pmd002.yaml
+
+    """
+
+    build_trends_publisher('[PMD] ',
+                           'hudson.plugins.pmd.PmdPublisher',
+                           xml_parent,
+                           data)
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
