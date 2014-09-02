@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_c21992d8",
+        "filename": "tests/publishers/fixtures/scanbuild002.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-02T22:59:58Z",
+      "side": 1,
+      "message": "The parameter description is \"Mark build as unstable if the number of bugs exceed  threshold (default: do not report build as unstable)\"\n\nIf 0 is the threshold doesn\u0027t that mean that this plugin should mark a build is unstalbe if there is 1 or more bugs?\n\nLet me know if i\u0027m off but IMO the description is inconsistent with the implementation.",
+      "revId": "67cd93c108e1bab993fa66dbce3a67ec60d9af32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
