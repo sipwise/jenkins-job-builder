@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_28216d4d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-02T17:40:06Z",
+      "side": 1,
+      "message": "Almost perfect, but we both missed adding a \u0027s\u0027 here... only noticed that when reviewing the resulting doc.",
+      "revId": "86b5da0217042d13c1aa6a1ca3fe9aed9ff67fca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
