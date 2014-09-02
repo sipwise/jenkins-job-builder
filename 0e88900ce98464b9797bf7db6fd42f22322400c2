@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_5cf91e7f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3652,
+      "author": {
+        "id": 12873
+      },
+      "writtenOn": "2014-09-02T14:53:44Z",
+      "side": 1,
+      "message": "can you pls add default values here and below to pydocs?",
+      "revId": "0e88900ce98464b9797bf7db6fd42f22322400c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
