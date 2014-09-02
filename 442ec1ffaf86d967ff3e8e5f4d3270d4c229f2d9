@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_1cadd69c",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 12873
+      },
+      "writtenOn": "2014-09-02T14:49:16Z",
+      "side": 1,
+      "message": "You don\u0027t have else here.\nSo why not:\nif self.config and self.config.has_section(\u0027job_builder\u0027) and \\\n      self.config.has_option(\u0027job_builder\u0027, \u0027keep_descriptions\u0027):\n   keep_desc \u003d self.config.getboolean(\u0027job_builder\u0027,\t143\n\t\t\t\u0027keep_descriptions\u0027",
+      "revId": "442ec1ffaf86d967ff3e8e5f4d3270d4c229f2d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_dc90ae45",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 12873
+      },
+      "writtenOn": "2014-09-02T14:49:16Z",
+      "side": 1,
+      "message": "return \u0027\u0027.join([\"\\n\\n\", MAGIC_MANAGE_STRING])",
+      "revId": "442ec1ffaf86d967ff3e8e5f4d3270d4c229f2d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
