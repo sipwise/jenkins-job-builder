@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_de931159",
+        "filename": "tests/duplicates/fixtures/duplicates001.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-03T16:24:34Z",
+      "side": 1,
+      "message": "looks like the xml result has this job but i\u0027m concerned whether this is consistent?  Might it not pick the job with git-review.git on some random run?",
+      "revId": "73c59feb77d71a33e8e9b6e28f64784eb1af20d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
