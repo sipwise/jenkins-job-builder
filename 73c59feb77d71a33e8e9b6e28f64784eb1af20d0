@@ -16,6 +16,24 @@
       "revId": "73c59feb77d71a33e8e9b6e28f64784eb1af20d0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_e793e458",
+        "filename": "tests/duplicates/fixtures/duplicates001.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-03T17:51:18Z",
+      "side": 1,
+      "message": "Since templates are always processed after jobs it means that duplicates due to template expansion will always override job definitions.\n\nI\u0027m still wondering whether we should say that specific job definitions should override template expanded jobs.",
+      "parentUuid": "fa98f980_de931159",
+      "revId": "73c59feb77d71a33e8e9b6e28f64784eb1af20d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
