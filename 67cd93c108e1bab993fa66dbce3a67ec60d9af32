@@ -16,6 +16,24 @@
       "revId": "67cd93c108e1bab993fa66dbce3a67ec60d9af32",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_2506c186",
+        "filename": "tests/publishers/fixtures/scanbuild002.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 12856
+      },
+      "writtenOn": "2014-09-03T19:56:34Z",
+      "side": 1,
+      "message": "I\u0027ll try to clarify again:\n\nIf you do not specify \u0027threshold\u0027 in the YAML file: \u0027markBuildUnstableWhenThresholdIsExceeded\u0027 is set to \u0027false\u0027. The build will not be set to unstable since this disables the feature completely. I only set \u0027bugThreshold\u0027 to 0 in order to mimic the behavior of the Jenkins Web UI. The value is ignored by the plugin.\n\nIf you do specify \u0027threshold\u0027 in the yaml file, then \u0027markBuildUnstableWhenThresholdIsExceeded\u0027 is set to \u0027true\u0027 and now the plugin does evaluate the \u0027bugThreshold\u0027 value. As you mentioned the 0 means now that the build is set unstable for 1 or more bugs.\n\nDoes that help? Maybe you can suggest then how I should change the description.\nWould a comment help in the code, explaining that the 0 is ignored in the default case.",
+      "parentUuid": "fa98f980_c21992d8",
+      "revId": "67cd93c108e1bab993fa66dbce3a67ec60d9af32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
