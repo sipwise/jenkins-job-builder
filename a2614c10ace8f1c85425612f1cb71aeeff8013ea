@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_96c15756",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 12873
+      },
+      "writtenOn": "2014-09-04T08:24:44Z",
+      "side": 1,
+      "message": "not backward compatible with py2.6:\nhttps://docs.python.org/2.7/library/collections.html#collections.OrderedDict",
+      "revId": "a2614c10ace8f1c85425612f1cb71aeeff8013ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
