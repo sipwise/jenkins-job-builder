@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_e1ebadd9",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3606,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-09-04T15:27:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_c3d5d4e5",
+      "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_831e6c0a",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-04T13:52:51Z",
       "side": 1,
       "message": "Any reason not to just have the defaults as a third element of the tuples above? See the git function in the scm module for the same idea.",
+      "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_a1e5250a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3656,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-09-04T15:27:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_831e6c0a",
       "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_81eae1d8",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3658,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-09-04T15:27:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_833d8c2d",
+      "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_2399406e",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2014-09-04T13:52:51Z",
       "side": 1,
       "message": "If you put the defaults into settings, you can unpack all three values here.\n\n for config_key, tag_name, default in settings:",
+      "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_21da154c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3659,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-09-04T15:27:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_2399406e",
       "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_8123c154",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3667,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-09-04T15:27:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_c3a4f44c",
+      "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_a3f0d0c9",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 6
@@ -98,6 +188,24 @@
       "writtenOn": "2014-09-04T13:52:51Z",
       "side": 1,
       "message": "Is this an optional argument? code suggests so, in which case should have \u0027(optional)\u0027 appended.",
+      "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_8923edbb",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3681,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-09-04T15:27:59Z",
+      "side": 1,
+      "message": "It is optional, but without it you won\u0027t get anything in Jenkins.",
+      "parentUuid": "fa98f980_a3f0d0c9",
       "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_3409782c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3691,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-09-04T15:27:59Z",
+      "side": 1,
+      "message": "The elements are there, but the checkstyle publisher had them hard coded.\nI guess I could add them as they are now supported.",
+      "parentUuid": "fa98f980_c3707442",
+      "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_836bcc1c",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 6
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_e1664dba",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3715,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-09-04T15:27:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_836bcc1c",
+      "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_0ec1c353",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 6
@@ -149,6 +293,24 @@
       "writtenOn": "2014-09-04T13:52:51Z",
       "side": 1,
       "message": "Just a general query on this one as I\u0027m not familiar with the output generated by this plugin when used in jenkins, is the space required here? Is that just how it appears in the resulting XML from jenkins when using it by default?",
+      "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_d4174c43",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3716,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-09-04T15:27:59Z",
+      "side": 1,
+      "message": "Yeah, the space is in the XML outputted by Jenkins.",
+      "parentUuid": "fa98f980_0ec1c353",
       "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
