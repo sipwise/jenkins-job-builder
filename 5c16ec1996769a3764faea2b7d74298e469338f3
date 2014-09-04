@@ -331,6 +331,24 @@
       "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_24894375",
+        "filename": "setup.cfg",
+        "patchSetId": 6
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-09-04T15:44:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_ce141beb",
+      "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
