@@ -16,6 +16,23 @@
       "revId": "a2614c10ace8f1c85425612f1cb71aeeff8013ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_56e0cf95",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3629,
+      "author": {
+        "id": 13159
+      },
+      "writtenOn": "2014-09-04T08:41:32Z",
+      "side": 1,
+      "message": "As you only use this for iterating over it you don\u0027t need ordereddict, a simple list of tuples would work.",
+      "revId": "a2614c10ace8f1c85425612f1cb71aeeff8013ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
