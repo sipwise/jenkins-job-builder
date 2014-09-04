@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_c3d5d4e5",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3606,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-04T13:52:51Z",
+      "side": 1,
+      "message": "It looks to me like you don\u0027t need the tag_name here if you left the first xml_element to be defined in the calling function.",
+      "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_831e6c0a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3656,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-04T13:52:51Z",
+      "side": 1,
+      "message": "Any reason not to just have the defaults as a third element of the tuples above? See the git function in the scm module for the same idea.",
+      "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_833d8c2d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3658,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-04T13:52:51Z",
+      "side": 1,
+      "message": "Think you should leave this line in the calling function.",
+      "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_2399406e",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3659,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-04T13:52:51Z",
+      "side": 1,
+      "message": "If you put the defaults into settings, you can unpack all three values here.\n\n for config_key, tag_name, default in settings:",
+      "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_c3a4f44c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3667,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-04T13:52:51Z",
+      "side": 1,
+      "message": "I would be tempted to make the defaults defined above match the type you are expecting so that you can test:\n\n if isinstance(default, bool):\n     xml_config.text \u003d str(config_value).lower()\n else:\n     xml_config.text \u003d str(config_value)\n\nThat way you control any type conversion based on the defined settings instead of what might be passed in. Same idea as in the git scm code.",
+      "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_a3f0d0c9",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3681,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-04T13:52:51Z",
+      "side": 1,
+      "message": "Is this an optional argument? code suggests so, in which case should have \u0027(optional)\u0027 appended.",
+      "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_c3707442",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3691,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-04T13:52:51Z",
+      "side": 1,
+      "message": "Looks like we\u0027re missing \u0027use-stable-build-as-reference\u0027, \u0027use-delta-values\u0027, \u0027dont-compute-new\u0027, and \u0027do-not-resolve-relative-paths\u0027 from the list of arguments.",
+      "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_836bcc1c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3715,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-04T13:52:51Z",
+      "side": 1,
+      "message": "If you put the initial xml tag here, you can remove an argument from the function you call subsequently.\n\n pmd_xml \u003d XML.SubElement(xml_parent, tag_name)\n build_trends_publisher(\u0027[PMD] \u0027, pmd_xml, data)",
+      "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_0ec1c353",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3716,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-04T13:52:51Z",
+      "side": 1,
+      "message": "Just a general query on this one as I\u0027m not familiar with the output generated by this plugin when used in jenkins, is the space required here? Is that just how it appears in the resulting XML from jenkins when using it by default?",
+      "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_ce141beb",
+        "filename": "setup.cfg",
+        "patchSetId": 6
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-04T13:52:51Z",
+      "side": 1,
+      "message": "Not sure how I missed this before, could you make sure to keep this in alphabetical order please.",
+      "revId": "5c16ec1996769a3764faea2b7d74298e469338f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
