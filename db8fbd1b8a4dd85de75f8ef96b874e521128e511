@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_d509fd95",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-09-05T09:05:26Z",
+      "side": 1,
+      "message": "I think it\u0027s better to update all the successful caches, and after that, then raise the exception, that way all the jobs that were updated correctly will be updated in the cache (probably that\u0027s what I thought when I did not raise directly in the threaded app).\n\nWhat do you think?",
+      "parentUuid": "1abeadc6_1f847409",
+      "revId": "db8fbd1b8a4dd85de75f8ef96b874e521128e511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_7faba874",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 12
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_b52d6100",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-09-05T09:05:26Z",
+      "side": 1,
+      "message": "Because I\u0027m not sure of the thread safety of the cache itself, that way only one thread updated the cache at any time.",
+      "parentUuid": "1abeadc6_7faba874",
+      "revId": "db8fbd1b8a4dd85de75f8ef96b874e521128e511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_df683cf7",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 12
@@ -47,6 +83,24 @@
       "writtenOn": "2014-08-29T14:02:09Z",
       "side": 1,
       "message": "I\u0027m wondering if it would be better to move this to be handled by a call to atexit with the CacheStorage object?\n\nThe more I think about it, the better it seems to try to have the CacheStorage object handle how the cache is saved. I\u0027ll submit a proposed patch to change the current behaviour here rather than try to discuss mixing it in with this change.",
+      "revId": "db8fbd1b8a4dd85de75f8ef96b874e521128e511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b0ebaf11",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 707,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-09-05T09:05:26Z",
+      "side": 1,
+      "message": "In this specific case I agree on the atexit, but if you leave the saving to the cache, you have to still let the code that uses the cache to have a way to ensure that the cache is saved before continuing. Mmm, well, in this case I will not care, as I know (at least in the current execution) that noone is going to read the file before I finish.\n\nLet\u0027s discuss it on the new change though",
+      "parentUuid": "1abeadc6_df683cf7",
       "revId": "db8fbd1b8a4dd85de75f8ef96b874e521128e511",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -100,6 +154,24 @@
       "side": 1,
       "message": "Would the following work here?\n\n def wait(secs):\n    end \u003d begin \u003d time.time()\n    remainder \u003d secs\n    while slept \u003c secs:\n        time.sleep(remainder)\n        end \u003d time.time()\n        slept \u003d end - begin\n        remainder \u003d secs - slept",
       "parentUuid": "1abeadc6_397b1a7c",
+      "revId": "db8fbd1b8a4dd85de75f8ef96b874e521128e511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_35979149",
+        "filename": "tests/parallel/test_parallel.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-09-05T09:05:26Z",
+      "side": 1,
+      "message": "I don\u0027t think so, because I\u0027m using very small values (actually 1) for the sleep function, and you are using the sleep function also, so in the best case it\u0027s the same. For big values of secs, it might be better, but it does not ensure either that it won\u0027t sleep more than it you specified, as it\u0027s relying on the same process (it just uses slices of one second each time it sleeps instead of sleeping the whole way through).",
+      "parentUuid": "1abeadc6_1acc82ba",
       "revId": "db8fbd1b8a4dd85de75f8ef96b874e521128e511",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
