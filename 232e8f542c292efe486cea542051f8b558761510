@@ -16,6 +16,24 @@
       "revId": "232e8f542c292efe486cea542051f8b558761510",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_5764e2e4",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-08T14:42:55Z",
+      "side": 1,
+      "message": "I don\u0027t see any reason to, you\u0027ve already used the logger to output that information, and aside from the confirmation, none of the other commands output directly to the console.\n\nIf changing it for one, should change it for all of them.",
+      "parentUuid": "fa98f980_8c51e210",
+      "revId": "232e8f542c292efe486cea542051f8b558761510",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
