@@ -34,6 +34,24 @@
       "revId": "0f5baaeb41b3eb60e909fe9b008c82a6b3c2a91c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_04b05bf3",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 2834
+      },
+      "writtenOn": "2014-09-08T18:55:57Z",
+      "side": 1,
+      "message": "yup makes sense - may be worth modifying the comments - most devs take comments as \"gospel\" since the dev went to the trouble of writing the comment in the first place :)\n\nHow about:\n# Ensure options.path is a list independent of settings of recursive options",
+      "parentUuid": "1abeadc6_be39b9f3",
+      "revId": "0f5baaeb41b3eb60e909fe9b008c82a6b3c2a91c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
