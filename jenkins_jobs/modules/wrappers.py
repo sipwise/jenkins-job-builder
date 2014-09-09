@@ -24,7 +24,7 @@ Wrappers can alter the way the build is run as well as the build output.
 
 import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
-from jenkins_jobs.errors import JenkinsJobsException
+from jenkins_jobs.errors import JenkinsJobsException, YAMLFormatError
 from jenkins_jobs.modules.builders import create_builders
 
 
@@ -1085,6 +1085,60 @@ def ssh_agent_credentials(parser, xml_parent, data):
         XML.SubElement(entry_xml, 'user').text = data['user']
     except KeyError:
         raise JenkinsJobsException("Missing 'user' for ssh-agent-credentials")
+
+
+def credentials_binding(parser, xml_parent, data):
+    """yaml: credentials-binding
+    Binds credentials to environment variables using the credentials binding
+    plugin for jenkins.
+
+    Requires the Jenkins `Credentials Binding Plugin
+    <https://wiki.jenkins-ci.org/display/JENKINS/Credentials+Binding+Plugin>`_
+    version 1.1 or greater.
+
+    :arg list binding-type: List of each bindings to create.  Bindings may be
+                            of type `zip-file`, `file`, `username-password`,
+                            or `text`
+
+        :Parameters: * **credential-id** (`str`) UUID of the credential being
+                                                 referenced
+                     * **variable** (`str`) Environment variable where the
+                                            credential will be stored
+
+    Example:
+
+    .. literalinclude::
+            /../../tests/wrappers/fixtures/credentials_binding.yaml
+
+    """
+    entry_xml = XML.SubElement(
+        xml_parent,
+        'org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper',
+        attrib={'plugin': 'credentials-binding@1.1'})
+    bindings_xml = XML.SubElement(entry_xml, 'bindings')
+    binding_types = {
+        'zip-file': 'org.jenkinsci.plugins.credentialsbinding.impl.'
+                    'ZipFileBinding',
+        'file': 'org.jenkinsci.plugins.credentialsbinding.impl.FileBinding',
+        'username-password': 'org.jenkinsci.plugins.credentialsbinding.impl.'
+                             'UsernamePasswordBinding',
+        'text': 'org.jenkinsci.plugins.credentialsbinding.impl.StringBinding'
+    }
+    if not data:
+        raise YAMLFormatError('At least one binding-type must be specified ' +
+                              'for the credentials-binding element')
+    for binding in data:
+        for binding_type, params in binding.items():
+            if binding_type not in binding_types.keys():
+                raise YAMLFormatError('binding-type must be one of %r' %
+                                      binding_types.keys())
+
+            binding_xml = XML.SubElement(bindings_xml,
+                                         binding_types[binding_type])
+            variable_xml = XML.SubElement(binding_xml, 'variable')
+            variable_xml.text = params.get('variable')
+            credential_xml = XML.SubElement(binding_xml, 'credentialsId')
+            credential_xml.text = params.get('credential-id')
 
 
 class Wrappers(jenkins_jobs.modules.base.Base):
