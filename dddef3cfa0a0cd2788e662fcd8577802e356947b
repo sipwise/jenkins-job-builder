@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_66e2cf02",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3627,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-10T14:01:59Z",
+      "side": 1,
+      "message": "You can use \u0027extend\u0027 to include the second set instead of multiple calls to append:\n\n limits.extend([\n     (\u0027new-all\u0027, \u0027NewAll\u0027),\n     (\u0027new-high\u0027, \u0027NewHigh\u0027),\n     (\u0027new-normal\u0027, \u0027NewNormal\u0027),\n     (\u0027new-low\u0027, \u0027NewLow\u0027)]\n\nOnly worth changing if you make the other change about making pattern a required parameter.\n\nBoth lists could be moved outside the loop and a new one created from them depending on the value of only_totals, but don\u0027t think there is enough benefit to justify the reduced readability.",
+      "revId": "dddef3cfa0a0cd2788e662fcd8577802e356947b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_2687e7d8",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3648,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-10T14:01:59Z",
+      "side": 1,
+      "message": "Have a suggestion on how to make this required in a comment on the docstring.",
+      "revId": "dddef3cfa0a0cd2788e662fcd8577802e356947b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_e377919d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3654,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-10T14:01:59Z",
+      "side": 1,
+      "message": "This could be moved outside of the loop. Sorry didn\u0027t spot it before.\n\nAlthough unless it\u0027s likely to be controlled dynamically you could just put it into the append_thresholds function.",
+      "revId": "dddef3cfa0a0cd2788e662fcd8577802e356947b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_a346694d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3677,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-10T14:01:59Z",
+      "side": 1,
+      "message": "Based on you\u0027re previous comment, this is required to have any effect, so potentially I\u0027d be open to making it required and explicitly triggering an exception in the code if not defined.\n\nI think that could be accomplished by setting the default value to \u0027None\u0027 and for the case where a default is None, testing the following in the helper function:\n\n val \u003d data.get(config_key, default)\n if default is None and not val:\n     raise JenkinsJobException(\"%s must have a non-empty value\" % config_key)\n\nUntested",
+      "revId": "dddef3cfa0a0cd2788e662fcd8577802e356947b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_e6f15f6b",
+        "filename": "setup.cfg",
+        "patchSetId": 7
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-10T14:01:59Z",
+      "side": 1,
+      "message": "Did you mean to move this one?\n\nKnow it\u0027s more correct to have \u0027post-\u0027 before \u0027postb\u0027, just curious that you were aware of it.",
+      "revId": "dddef3cfa0a0cd2788e662fcd8577802e356947b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
