@@ -52,6 +52,24 @@
       "revId": "0f5baaeb41b3eb60e909fe9b008c82a6b3c2a91c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_37f9d0c8",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-10T16:19:41Z",
+      "side": 1,
+      "message": "I did change it ;-), presume the updated version looked fine.",
+      "parentUuid": "fa98f980_04b05bf3",
+      "revId": "0f5baaeb41b3eb60e909fe9b008c82a6b3c2a91c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
