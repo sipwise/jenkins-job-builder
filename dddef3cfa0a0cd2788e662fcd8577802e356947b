@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_dc88ae24",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3627,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-09-10T14:52:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_66e2cf02",
+      "revId": "dddef3cfa0a0cd2788e662fcd8577802e356947b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_2687e7d8",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 7
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_9c9f065f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3654,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-09-10T14:52:53Z",
+      "side": 1,
+      "message": "Sure, I\u0027ll remove statuses and use it direct in the for loop in append_thresholds.",
+      "parentUuid": "fa98f980_e377919d",
+      "revId": "dddef3cfa0a0cd2788e662fcd8577802e356947b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_a346694d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 7
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_5c959e3e",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3677,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-09-10T14:52:53Z",
+      "side": 1,
+      "message": "See my comment on the pull request itself.",
+      "parentUuid": "fa98f980_a346694d",
+      "revId": "dddef3cfa0a0cd2788e662fcd8577802e356947b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_e6f15f6b",
         "filename": "setup.cfg",
         "patchSetId": 7
@@ -81,6 +135,24 @@
       "writtenOn": "2014-09-10T14:01:59Z",
       "side": 1,
       "message": "Did you mean to move this one?\n\nKnow it\u0027s more correct to have \u0027post-\u0027 before \u0027postb\u0027, just curious that you were aware of it.",
+      "revId": "dddef3cfa0a0cd2788e662fcd8577802e356947b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_3c5c5aed",
+        "filename": "setup.cfg",
+        "patchSetId": 7
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-09-10T14:52:53Z",
+      "side": 1,
+      "message": "I selected all lines starting with p and sorted it using sublime text.\nSo I did notice it. :)",
+      "parentUuid": "fa98f980_e6f15f6b",
       "revId": "dddef3cfa0a0cd2788e662fcd8577802e356947b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
