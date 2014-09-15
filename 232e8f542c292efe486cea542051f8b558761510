@@ -52,6 +52,23 @@
       "revId": "232e8f542c292efe486cea542051f8b558761510",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_a2a97f91",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-15T19:35:43Z",
+      "side": 1,
+      "message": "how about a test for the converse?  \u0027test_existing_job_exist_mode\u0027 ?",
+      "revId": "232e8f542c292efe486cea542051f8b558761510",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
