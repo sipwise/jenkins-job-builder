@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_e637f8e2",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3683,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-09-16T19:22:14Z",
+      "side": 1,
+      "message": "Alright, will do",
+      "parentUuid": "fa98f980_08fa5043",
+      "revId": "72eb85d2937872933ce78044480dc0aac8c248d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_43cef9b8",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_6624e8b2",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3688,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-09-16T19:22:14Z",
+      "side": 1,
+      "message": "Do you mean if they specify a thresholds but not unstable or failed?",
+      "parentUuid": "fa98f980_43cef9b8",
+      "revId": "72eb85d2937872933ce78044480dc0aac8c248d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_e8718cdf",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 8
@@ -47,6 +83,24 @@
       "writtenOn": "2014-09-16T17:17:18Z",
       "side": 1,
       "message": "any reason for the extra space in first param?",
+      "revId": "72eb85d2937872933ce78044480dc0aac8c248d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_c623d4a5",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3731,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-09-16T19:22:14Z",
+      "side": 1,
+      "message": "That\u0027s just how the XML looks like, don\u0027t ask me why. :P",
+      "parentUuid": "fa98f980_e8718cdf",
       "revId": "72eb85d2937872933ce78044480dc0aac8c248d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
