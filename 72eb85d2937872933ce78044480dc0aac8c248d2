@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_08fa5043",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3683,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-16T17:17:18Z",
+      "side": 1,
+      "message": "What are the other valid options for this param, med and high? would be nice to list those.  Also could you please validate the options for health-threshold somewhere?  if user didn\u0027t specify one of the valid options then probably should throw JenkinsJobsException",
+      "revId": "72eb85d2937872933ce78044480dc0aac8c248d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_43cef9b8",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3688,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-16T17:17:18Z",
+      "side": 1,
+      "message": "here\u0027s another place to check for valid options unstable and failed.  Would it be possible to validate that user specifies one of these?",
+      "revId": "72eb85d2937872933ce78044480dc0aac8c248d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_e8718cdf",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3731,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-16T17:17:18Z",
+      "side": 1,
+      "message": "any reason for the extra space in first param?",
+      "revId": "72eb85d2937872933ce78044480dc0aac8c248d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
