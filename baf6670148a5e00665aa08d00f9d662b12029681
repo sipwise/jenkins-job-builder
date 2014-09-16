@@ -16,6 +16,24 @@
       "revId": "baf6670148a5e00665aa08d00f9d662b12029681",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_9542d066",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-16T23:42:27Z",
+      "side": 1,
+      "message": "I believe JJB treats all input parameters values as strings",
+      "parentUuid": "fa98f980_3ce75e48",
+      "revId": "baf6670148a5e00665aa08d00f9d662b12029681",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
