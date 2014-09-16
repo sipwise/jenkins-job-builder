@@ -702,26 +702,17 @@ def jclouds(parser, xml_parent, data):
     :arg bool stop-on-terminate: Whether or not to suspend instead of terminate
                                  the instance (default: False).
 
-    Example::
+    Example:
 
-      wrappers:
-        - jclouds:
-            single-use: True
-            instances:
-              - jenkins-dev-slave:
-                  cloud-name: mycloud1
-                  count: 1
-                  stop-on-terminate: True
-              - jenkins-test-slave:
-                  cloud-name: mycloud2
-                  count: 2
-                  stop-on-terminate: False
+    .. literalinclude:: /../../tests/wrappers/fixtures/jclouds001.yaml
+       :language: yaml
+
     """
-    buildWrapper = XML.SubElement(xml_parent,
-                                  'jenkins.plugins.jclouds.compute.'
-                                  'JCloudsBuildWrapper')
-    instances = XML.SubElement(buildWrapper, 'instancesToRun')
     if 'instances' in data:
+        buildWrapper = XML.SubElement(xml_parent,
+                                      'jenkins.plugins.jclouds.compute.'
+                                      'JCloudsBuildWrapper')
+        instances = XML.SubElement(buildWrapper, 'instancesToRun')
         for foo in data['instances']:
             for template, params in foo.items():
                 instance = XML.SubElement(instances,
