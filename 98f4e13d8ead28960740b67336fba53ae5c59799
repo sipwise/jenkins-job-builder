@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_a958638b",
+        "filename": "tests/duplicates/fixtures/duplicates001.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-16T20:45:02Z",
+      "side": 1,
+      "message": "how about prepend this set of test files with \u0027allow\u0027?  so rename this test file to \u0027allow_duplicates001.yaml\u0027 ?",
+      "revId": "98f4e13d8ead28960740b67336fba53ae5c59799",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_89bf1f60",
+        "filename": "tests/duplicates/fixtures/exception_projects003.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-16T20:45:02Z",
+      "side": 1,
+      "message": "how about duplicate this same test except with allow_duplicates\u003dTrue ?",
+      "revId": "98f4e13d8ead28960740b67336fba53ae5c59799",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
