@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_fa5a441c",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 11295
+      },
+      "writtenOn": "2014-09-16T07:25:54Z",
+      "side": 1,
+      "message": "Something along with the text in patch 12?",
+      "parentUuid": "fa98f980_8c6834f6",
+      "revId": "b5da25e638c52579b48cb136abf4d91b73258d50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_cc6ebcff",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-15T18:08:38Z",
       "side": 1,
       "message": "maybe add \u0027:language: yaml\u0027 here?",
+      "revId": "b5da25e638c52579b48cb136abf4d91b73258d50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_1a9d48bc",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 11295
+      },
+      "writtenOn": "2014-09-16T07:25:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_cc6ebcff",
       "revId": "b5da25e638c52579b48cb136abf4d91b73258d50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_3aa04cf3",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 11295
+      },
+      "writtenOn": "2014-09-16T07:25:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_8c9af411",
+      "revId": "b5da25e638c52579b48cb136abf4d91b73258d50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_ac9df80b",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 11
@@ -64,6 +118,24 @@
       "writtenOn": "2014-09-15T18:08:38Z",
       "side": 1,
       "message": "i think it would be better to make the message match the param \u0027validation-fail\u0027",
+      "revId": "b5da25e638c52579b48cb136abf4d91b73258d50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_7aa65410",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 11295
+      },
+      "writtenOn": "2014-09-16T07:25:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_ac9df80b",
       "revId": "b5da25e638c52579b48cb136abf4d91b73258d50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
