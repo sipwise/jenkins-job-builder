@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_8cec822b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3688,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-09-17T09:13:17Z",
+      "side": 1,
+      "message": "Hrm.. not specifying anything should give:\n\u003cthresholds\u003e\n    \u003cunstableTotalAll/\u003e\n    \u003cunstableTotalHigh/\u003e\n    \u003cunstableTotalNormal/\u003e\n    \u003cunstableTotalLow/\u003e\n    \u003cfailedTotalAll/\u003e\n    \u003cfailedTotalHigh/\u003e\n    \u003cfailedTotalNormal/\u003e\n    \u003cfailedTotalLow/\u003e\n\u003c/thresholds\u003e\n\nAnd I use defaults to produce that output in any case, so to differentiate between what is defaulted and what is user input I would have to rewrite a lot.\nI don\u0027t think that it is worth it.",
+      "parentUuid": "fa98f980_c985a708",
+      "revId": "72eb85d2937872933ce78044480dc0aac8c248d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_e8718cdf",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 8
