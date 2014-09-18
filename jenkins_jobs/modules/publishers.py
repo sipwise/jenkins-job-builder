@@ -1850,6 +1850,82 @@ def sonar(parser, xml_parent, data):
             data_triggers.get('skip-when-envvar-defined', '')
 
 
+def sounds(parser, xml_parent, data):
+    """yaml: sounds
+    Play audio clips locally through sound hardware,
+    remotely by piping them through an operating system command,
+    or simultaneously through all browsers on a Jenkins page.
+
+    Requires the Jenkins `Jenkins Sounds plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Jenkins+Sounds+plugin>`_
+
+    :arg dict success: Play on success
+
+        :success:
+            * **sound** (`str`) Sound name
+            * **from** (`list`) Previous build result (default is all)
+                :from values:
+                    * **success**
+                    * **unstable**
+                    * **failure**
+                    * **not_built**
+                    * **aborted**
+
+    :arg dict unstable: Play on unstable.
+      Specifying sound and conditions see above.
+    :arg dict failure: Play on failure.
+      Specifying sound and conditions see above.
+    :arg dict not_built: Play on not built.
+      Specifying sound and conditions see above.
+    :arg dict aborted: Play on aborted.
+      Specifying sound and conditions see above.
+
+    Minimal example using defaults:
+
+    .. literalinclude::  /../../tests/publishers/fixtures/sounds001.yaml
+
+    Full example:
+
+    .. literalinclude::  /../../tests/publishers/fixtures/sounds003.yaml
+    """
+
+    dict = {'success': hudson_model.SUCCESS,
+            'unstable': hudson_model.UNSTABLE,
+            'failure': hudson_model.FAILURE,
+            'not_build': hudson_model.NOTBUILD,
+            'aborted': hudson_model.ABORTED}
+    sounds = XML.SubElement(xml_parent, 'net.hurstfrost.hudson.'
+                                        'sounds.HudsonSoundsNotifier')
+    events = XML.SubElement(sounds, 'soundEvents')
+    for k, v in data.items():
+        if k not in dict:
+            raise ValueError('build status must be one of: %r' % list(dict.keys()))
+
+        event = XML.SubElement(events,
+                               'net.hurstfrost.hudson.sounds.'
+                               'HudsonSoundsNotifier_-SoundEvent')
+        XML.SubElement(event, 'soundId').text = v['sound']
+        to_result = XML.SubElement(event, 'toResult')
+        XML.SubElement(to_result, 'name').text = k.upper()
+        XML.SubElement(to_result, 'ordinal').text = dict[k]['ordinal']
+        XML.SubElement(to_result, 'color').text = dict[k]['color']
+        XML.SubElement(to_result, 'completeBuild').text \
+            = str(dict[k]['complete']).lower()
+
+        from_results = XML.SubElement(event, 'fromResults')
+        results = ['not_build', 'success', 'aborted', 'failure', 'unstable']
+        if 'from' in v:
+            results = v['from']
+        for result in results:
+            from_result = XML.SubElement(from_results, 'hudson.model.Result')
+            XML.SubElement(from_result, 'name').text = result.upper()
+            XML.SubElement(from_result, 'ordinal').text \
+                = dict[result]['ordinal']
+            XML.SubElement(from_result, 'color').text = dict[result]['color']
+            XML.SubElement(from_result, 'completeBuild').text \
+                = str(dict[result]['complete']).lower()
+
+
 def performance(parser, xml_parent, data):
     """yaml: performance
     Publish performance test results from jmeter and junit.
