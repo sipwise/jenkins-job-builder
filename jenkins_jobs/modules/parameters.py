@@ -439,6 +439,28 @@ def dynamic_scriptler_param_common(parser, xml_parent, data, ptype):
         'read-only', False)).lower()
 
 
+def extended_choice_param(parser, xml_parent, data):
+    pdef = XML.SubElement(xml_parent,
+                          'com.cwctravel.hudson.plugins.'
+                          'extended__choice__parameter.'
+                          'ExtendedChoiceParameterDefinition',
+                          {'plugin': 'extended-choice-parameter@0.30'})
+    XML.SubElement(pdef, 'name').text = data['name']
+    XML.SubElement(pdef, 'description').text = data.get('description', '')
+    XML.SubElement(pdef, 'value').text = data.get('value', '')
+    XML.SubElement(pdef, 'type').text = data.get('type', '')
+    XML.SubElement(pdef, 'visibleItemCount').text = data.get(
+        'visibleItemCount', '5')
+    XML.SubElement(pdef, 'multiSelectDelimiter').text = data.get(
+        'multiSelectDelimiter', ',')
+    XML.SubElement(pdef, 'quoteValue').text = 'false'
+    XML.SubElement(pdef, 'defaultValue').text = ''
+    XML.SubElement(pdef, 'defaultPropertyFile').text = ''
+    XML.SubElement(pdef, 'defaultPropertyKey').text = ''
+    XML.SubElement(pdef, 'propertyKey').text = ''
+    XML.SubElement(pdef, 'propertyFile').text = ''
+
+
 class Parameters(jenkins_jobs.modules.base.Base):
     sequence = 21
 
