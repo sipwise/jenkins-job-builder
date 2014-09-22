@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_af176ca2",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-22T20:33:49Z",
+      "side": 1,
+      "message": "I assume this extends the choice parameters so would it make sense to move this right below the choice_param module that\u0027s in this file?\n\nAlso could you please add some documentation for this module?  Something similar to the choice_param module would be nice.",
+      "revId": "9637a111b1e7b4cb7beeb80de962922ad5404c65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
