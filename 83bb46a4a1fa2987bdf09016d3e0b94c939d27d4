@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_d9cac2a0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-22T19:20:24Z",
+      "side": 1,
+      "message": "0.3.3/0.3.4",
+      "revId": "83bb46a4a1fa2987bdf09016d3e0b94c939d27d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_39acaeed",
+        "filename": "requirements.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-22T19:20:24Z",
+      "side": 1,
+      "message": "actually version 0.3.4 would be better. version 0.3.3 had a bug with pbr.",
+      "revId": "83bb46a4a1fa2987bdf09016d3e0b94c939d27d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
