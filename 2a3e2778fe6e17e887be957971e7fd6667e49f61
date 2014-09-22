@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_56bea100",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1111,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-22T18:38:26Z",
+      "side": 1,
+      "message": "please add \u0027:language: yaml\u0027 here.",
+      "revId": "2a3e2778fe6e17e887be957971e7fd6667e49f61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_d66e11c9",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1117,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-22T18:38:26Z",
+      "side": 1,
+      "message": "does this work without specifying the version?  I would prefer not to have the version so that it will continue to work for users using versions greater than 1.1",
+      "revId": "2a3e2778fe6e17e887be957971e7fd6667e49f61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_1696d994",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1133,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-22T18:38:26Z",
+      "side": 1,
+      "message": "why not use  JenkinsJobsException ?",
+      "revId": "2a3e2778fe6e17e887be957971e7fd6667e49f61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
