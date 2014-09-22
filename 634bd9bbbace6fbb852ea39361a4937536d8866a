@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_dc68f5f7",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-22T17:14:20Z",
+      "side": 1,
+      "message": "It wasn\u0027t apparent to me that the parameters below are sub params of \u0027files\u0027.  could you please update the documentation so that they are sub parameters instead?  A good example to follow is the logstash module in this file (\u0027redis\u0027 param).",
+      "revId": "634bd9bbbace6fbb852ea39361a4937536d8866a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
