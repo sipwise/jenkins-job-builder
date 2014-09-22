@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_562061f7",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2406,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-22T19:05:42Z",
+      "side": 1,
+      "message": "maybe throw a JenkinsJobsException if k is not in script_types ?",
+      "revId": "c9ed6891cf292e00c454ab8c0aa6041c88b1aac9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
