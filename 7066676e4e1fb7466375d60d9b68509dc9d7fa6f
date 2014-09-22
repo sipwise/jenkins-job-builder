@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_25139d5d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1920,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-22T21:23:29Z",
+      "side": 1,
+      "message": "would it make sense to check that v is a valid results value similar to the check for success, unstable, failure, etc..?",
+      "revId": "7066676e4e1fb7466375d60d9b68509dc9d7fa6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_2520fd48",
+        "filename": "tests/publishers/fixtures/sounds001.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-22T21:23:29Z",
+      "side": 1,
+      "message": "indentation",
+      "revId": "7066676e4e1fb7466375d60d9b68509dc9d7fa6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_6503e5b8",
+        "filename": "tests/publishers/fixtures/sounds003.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-22T21:23:29Z",
+      "side": 1,
+      "message": "Just curious, is the intention that the sounds should play in order that they appear on this list?",
+      "revId": "7066676e4e1fb7466375d60d9b68509dc9d7fa6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
