@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_f7d12bfc",
+        "filename": "tests/yamlparser/fixtures/lazy-load-jobs001.xml",
+        "patchSetId": 15
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-23T19:18:58Z",
+      "side": 1,
+      "message": "using include-raw here but the resulting xml is no different than when using include-raw-escape.  The docs clearly state that there should be something different between the two.  Your commit message seems to indicate that there\u0027s an exception for this use case but it\u0027s not documented so I think it will be confusing.  Maybe the solution is to just add some more documentation to clarify this situation?",
+      "revId": "f8b3914dc9848b6e3eb83b76e15f4fe72c6ea62d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_374ad3c5",
+        "filename": "tests/yamlparser/fixtures/lazy-load-jobs001.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-23T19:18:58Z",
+      "side": 1,
+      "message": "in lazy-load-jobs002.yaml it\u0027s \u0027lazy-load-scripts/echo_vars_{version}.sh\u0027 which makes more sense but this also works?",
+      "revId": "f8b3914dc9848b6e3eb83b76e15f4fe72c6ea62d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
