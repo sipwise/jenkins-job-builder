@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da9df570_4f6a1cb4",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 13324
+      },
+      "writtenOn": "2014-09-25T17:46:34Z",
+      "side": 1,
+      "message": "different modules have differently documented defaults, is there any standard?",
+      "parentUuid": "da9df570_395e0a77",
+      "revId": "c50fdcab27eda79356df1787ae442cb53ff5273f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_b972fa0e",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 4
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "da9df570_2fa958df",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 13324
+      },
+      "writtenOn": "2014-09-25T17:46:34Z",
+      "side": 1,
+      "message": "good idea, thanks",
+      "parentUuid": "da9df570_1943066d",
+      "revId": "c50fdcab27eda79356df1787ae442cb53ff5273f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_7925f207",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 4
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "da9df570_0f25745b",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 13324
+      },
+      "writtenOn": "2014-09-25T17:46:34Z",
+      "side": 1,
+      "message": "no default, the value is not optional. \n\ngood idea to check the value, is there any way to include the list with valid values in param documentation?",
+      "parentUuid": "da9df570_7925f207",
+      "revId": "c50fdcab27eda79356df1787ae442cb53ff5273f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_798892c5",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 4
@@ -81,6 +135,24 @@
       "writtenOn": "2014-09-25T16:39:26Z",
       "side": 1,
       "message": "why not support these param as well?",
+      "revId": "c50fdcab27eda79356df1787ae442cb53ff5273f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_0f6c9407",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 13324
+      },
+      "writtenOn": "2014-09-25T17:46:34Z",
+      "side": 1,
+      "message": "I\u0027ll add support for \"defaultValue\" since I implemented \"value\", but I don\u0027t need other params for my usecase and I\u0027m not even sure how to use them (no idea what\u0027s \"quoteValue\" for)",
+      "parentUuid": "da9df570_798892c5",
       "revId": "c50fdcab27eda79356df1787ae442cb53ff5273f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
