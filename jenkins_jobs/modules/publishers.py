@@ -745,6 +745,8 @@ def ftp(parser, xml_parent, data):
     :arg str remove-prefix: prefix to remove from uploaded file paths
       (optional)
     :arg bool fail-on-error: fail the build if an error occurs (default false).
+    :arg bool flatten: only create files on the server, don't create
+      directories (default false).
 
     Example::
 
@@ -1191,6 +1193,8 @@ def ssh(parser, xml_parent, data):
     :arg bool fail-on-error: fail the build if an error occurs (default false).
     :arg bool always-publish-from-master: transfer the files through the master
       before being sent to the remote server (defaults false)
+    :arg bool flatten: only create files on the server, don't create
+      directories (default false).
 
     Example::
 
@@ -1720,7 +1724,7 @@ def base_publish_over(xml_parent, data, console_prefix,
         data.get('remove-prefix', '')
     XML.SubElement(transfersset, 'remoteDirectorySDF').text = \
         str(data.get('target-is-date-format', False)).lower()
-    XML.SubElement(transfersset, 'flatten').text = 'false'
+    XML.SubElement(transfersset, 'flatten').text = data.get('flatten', 'false')
     XML.SubElement(transfersset, 'cleanRemote').text = \
         str(data.get('clean-remote', False)).lower()
 
@@ -1754,6 +1758,8 @@ def cifs(parser, xml_parent, data):
     :arg str remove-prefix: prefix to remove from uploaded file paths
       (optional)
     :arg bool fail-on-error: fail the build if an error occurs (default false).
+    :arg bool flatten: only create files on the server, don't create
+      directories (default false).
 
     Example::
 
