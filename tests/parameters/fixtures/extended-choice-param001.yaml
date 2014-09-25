@@ -1,0 +1,18 @@
+parameters:
+  - dynamic-choice:
+      name: OPTIONS
+      description: "Available options"
+      script: "['optionA', 'optionB']"
+      remote: false
+      read-only: false
+parameters:
+  - extended-choice:
+      name: OPTIONS
+      description: "Available options"
+      type: 'PT_CHECKBOX'
+      value: |
+        OptionA,
+        OptionB,
+        OptionC
+      visible-item-count: "2"
+

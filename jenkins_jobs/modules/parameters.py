@@ -197,6 +197,57 @@ def choice_param(parser, xml_parent, data):
         XML.SubElement(a, 'string').text = choice
 
 
+def extended_choice_param(parser, xml_parent, data):
+    """yaml: extended-choice
+    Extended Choice Parameter
+    Requires the Jenkins `Extended Choice Parameter Plug-in.
+    <https://wiki.jenkins-ci.org/display/JENKINS/
+    Extended+Choice+Parameter+plugin>`_
+
+    :arg str name: the name of the parameter
+    :arg str description: a description of the parameter (optional)
+    :arg str type: parameter select type. Can be PT_SINGLE_SELECT,
+        PT_MULTI_SELECT, PT_RADIO, PT_CHECKBOX, PT_TEXTBOX
+    :arg str value: comma separated list of values
+    :arg str visible-item-count: number of lines to render for multi-select
+        (default 5)
+    :arg str multi-select-delimiter: value between selections when the
+        parameter is a multi-select (default ,)
+
+    Example::
+
+      parameters:
+        - extended-choice:
+            name: OPTIONS
+            description: "Available options"
+            type: 'PT_CHECKBOX'
+            value: |
+              OptionA,
+              OptionB,
+              OptionC
+            visible-item-count: "2"
+    """
+    pdef = XML.SubElement(xml_parent,
+                          'com.cwctravel.hudson.plugins.'
+                          'extended__choice__parameter.'
+                          'ExtendedChoiceParameterDefinition',
+                          {'plugin': 'extended-choice-parameter@0.30'})
+    XML.SubElement(pdef, 'name').text = data['name']
+    XML.SubElement(pdef, 'description').text = data.get('description', '')
+    XML.SubElement(pdef, 'type').text = data.get('type', '')
+    XML.SubElement(pdef, 'value').text = data.get('value', '')
+    XML.SubElement(pdef, 'visibleItemCount').text = data.get(
+        'visible-item-count', '5')
+    XML.SubElement(pdef, 'multiSelectDelimiter').text = data.get(
+        'multi-select-delimiter', ',')
+    XML.SubElement(pdef, 'quoteValue').text = 'false'
+    XML.SubElement(pdef, 'defaultValue').text = ''
+    XML.SubElement(pdef, 'defaultPropertyFile').text = ''
+    XML.SubElement(pdef, 'defaultPropertyKey').text = ''
+    XML.SubElement(pdef, 'propertyKey').text = ''
+    XML.SubElement(pdef, 'propertyFile').text = ''
+
+
 def validating_string_param(parser, xml_parent, data):
     """yaml: validating-string
     A validating string parameter
