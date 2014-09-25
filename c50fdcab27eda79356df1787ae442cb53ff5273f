@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_395e0a77",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-25T16:39:26Z",
+      "side": 1,
+      "message": "default: 5",
+      "revId": "c50fdcab27eda79356df1787ae442cb53ff5273f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_b972fa0e",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-25T16:39:26Z",
+      "side": 1,
+      "message": "default: ,",
+      "revId": "c50fdcab27eda79356df1787ae442cb53ff5273f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_1943066d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-25T16:39:26Z",
+      "side": 1,
+      "message": "could you please replace this example with your test case by using a literalinclude that way the example won\u0027t get outdated?  here\u0027s an example of what i mean: http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/modules/builders.py#n55",
+      "revId": "c50fdcab27eda79356df1787ae442cb53ff5273f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_7925f207",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-25T16:39:26Z",
+      "side": 1,
+      "message": "Shouldn\u0027t there be a default value for this?\n\nAlso would be nice to check that the user supplied type is valid. Here\u0027s an example of what i mean: http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/modules/publishers.py#n335",
+      "revId": "c50fdcab27eda79356df1787ae442cb53ff5273f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_798892c5",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-25T16:39:26Z",
+      "side": 1,
+      "message": "why not support these param as well?",
+      "revId": "c50fdcab27eda79356df1787ae442cb53ff5273f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
