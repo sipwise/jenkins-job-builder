@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_ebbba40c",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-26T16:51:56Z",
+      "side": 1,
+      "message": "convention is to usually put a parens around defaults, like (default 5)",
+      "revId": "858d8715c1853301c32ca8285ece507972e2ecbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_6b7a5478",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-09-26T16:51:56Z",
+      "side": 1,
+      "message": "does this work without the version number?  we prefer to not include the version number so this module will continue to work on upgrades.",
+      "revId": "858d8715c1853301c32ca8285ece507972e2ecbf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
