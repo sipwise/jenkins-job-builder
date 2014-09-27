@@ -36,6 +36,7 @@ import jenkins_jobs.modules.base
 from jenkins_jobs.modules import hudson_model
 import logging
 import re
+import collections
 
 
 def gerrit_handle_legacy_configuration(data):
@@ -69,6 +70,7 @@ def gerrit_handle_legacy_configuration(data):
         'failureMessage',
         'skipVote',
     ])
+
     for project in data['projects']:
         convert_dict(project, [
             'projectCompareType',
@@ -77,33 +79,57 @@ def gerrit_handle_legacy_configuration(data):
             'branchPattern',
         ])
 
+    old_format_events = collections.OrderedDict(
+        (key, should_register) for key, should_register in data.iteritems()
+        if key.startswith('trigger-on-'))
+    trigger_on = data.setdefault('trigger-on', [])
+    if old_format_events and trigger_on:
+        raise ValueError(
+            'Both, the new format (trigger-on) and old format (trigger-on-*) '
+            'gerrit events format found. Please use either the new or the old '
+            'format of trigger events definition.')
+
+    trigger_on.extend(event_name[len('trigger-on-'):]
+                      for event_name, should_register
+                      in old_format_events.iteritems() if should_register)
+
+    for idx, event in enumerate(trigger_on):
+        if event == 'comment-added-event':
+            trigger_on[idx] = events = collections.OrderedDict()
+            events['comment-added-event'] = collections.OrderedDict((
+                ('approval-category', data['trigger-approval-category']),
+                ('approval-value', data['trigger-approval-value'])
+            ))
+
 
 def build_gerrit_triggers(xml_parent, data):
     available_simple_triggers = {
-        'trigger-on-change-abandoned-event': 'PluginChangeAbandonedEvent',
-        'trigger-on-change-merged-event': 'PluginChangeMergedEvent',
-        'trigger-on-change-restored-event': 'PluginChangeRestoredEvent',
-        'trigger-on-draft-published-event': 'PluginDraftPublishedEvent',
-        'trigger-on-patchset-uploaded-event': 'PluginPatchsetCreatedEvent',
-        'trigger-on-ref-updated-event': 'PluginRefUpdatedEvent',
+        'change-abandoned-event': 'PluginChangeAbandonedEvent',
+        'change-merged-event': 'PluginChangeMergedEvent',
+        'change-restored-event': 'PluginChangeRestoredEvent',
+        'draft-published-event': 'PluginDraftPublishedEvent',
+        'patchset-uploaded-event': 'PluginPatchsetCreatedEvent',
+        'ref-updated-event': 'PluginRefUpdatedEvent',
     }
     tag_namespace = 'com.sonyericsson.hudson.plugins.gerrit.trigger.'   \
         'hudsontrigger.events'
 
     trigger_on_events = XML.SubElement(xml_parent, 'triggerOnEvents')
-    for config_key, tag_name in available_simple_triggers.iteritems():
-        if data.get(config_key, False):
+
+    for event in data.get('trigger-on', []):
+        if isinstance(event, basestring):
+            tag_name = available_simple_triggers[event]
             XML.SubElement(trigger_on_events,
                            '%s.%s' % (tag_namespace, tag_name))
-
-    if data.get('trigger-on-comment-added-event', False):
-        cadded = XML.SubElement(trigger_on_events,
-                                '%s.%s' % (tag_namespace,
-                                           'PluginCommentAddedEvent'))
-        XML.SubElement(cadded, 'verdictCategory').text = \
-            data['trigger-approval-category']
-        XML.SubElement(cadded, 'commentAddedTriggerApprovalValue').text = \
-            str(data['trigger-approval-value'])
+        else:
+            comment_added_event = event['comment-added-event']
+            cadded = XML.SubElement(
+                trigger_on_events,
+                '%s.%s' % (tag_namespace, 'PluginCommentAddedEvent'))
+            XML.SubElement(cadded, 'verdictCategory').text = \
+                comment_added_event['approval-category']
+            XML.SubElement(cadded, 'commentAddedTriggerApprovalValue').text = \
+                str(comment_added_event['approval-value'])
 
 
 def build_gerrit_skip_votes(xml_parent, data):
@@ -123,22 +149,74 @@ def build_gerrit_skip_votes(xml_parent, data):
 
 def gerrit(parser, xml_parent, data):
     """yaml: gerrit
+
     Trigger on a Gerrit event.
     Requires the Jenkins `Gerrit Trigger Plugin
     <wiki.jenkins-ci.org/display/JENKINS/Gerrit+Trigger>`_ version >= 2.6.0.
 
-    :arg bool trigger-on-patchset-uploaded-event: Trigger on patchset upload
+    :arg list trigger-on: Events to react on. Please use either the new
+      **trigger-on**, or the old **trigger-on-*** events definitions. You
+      cannot use both at once.
+
+      :Trigger on:
+         * **patchset-updated-event** -- Trigger on patchset upload.
+         * **change-abandoned-event** -- Trigger on patchset abandoned.
+           Requires Gerrit Trigger Plugin version >= 2.8.0.
+         * **change-merged-event** -- Trigger on change merged
+         * **change-restored-event** -- Trigger on change restored. Requires
+           Gerrit Trigger Plugin version >= 2.8.0
+         * **draft-published-event** -- Trigger on draft published event.
+         * **ref-updated-event** -- Trigger on ref-updated.
+         * **comment-added-event** (`dict`) -- Trigger on comment added.
+
+           :Comment added:
+               * **approval-category** (`str`) -- Approval (verdict) category
+                 (for example 'APRV', 'CRVW', 'VRIF' -- see `Gerrit access
+                 control
+                 <http://gerrit.googlecode.com/svn/documentation/2.1/
+                 access-control.html#categories>`_
+
+               * **approval-value** -- Approval value for the comment added.
+
+    :arg bool trigger-on-patchset-uploaded-event: Trigger on patchset upload.
+
+        .. deprecated:: 0.7.0
+
     :arg bool trigger-on-change-abandoned-event: Trigger on change abandoned.
         Requires Gerrit Trigger Plugin version >= 2.8.0
+
+        .. deprecated:: 0.7.0
+
     :arg bool trigger-on-change-merged-event: Trigger on change merged
+
+        .. deprecated:: 0.7.0
+
     :arg bool trigger-on-change-restored-event: Trigger on change restored.
         Requires Gerrit Trigger Plugin version >= 2.8.0
+
+        .. deprecated:: 0.7.0
+
     :arg bool trigger-on-comment-added-event: Trigger on comment added
+
+        .. deprecated:: 0.7.0
+
     :arg bool trigger-on-draft-published-event: Trigger on draft published
         event
+
+        .. deprecated:: 0.7.0
+
     :arg bool trigger-on-ref-updated-event: Trigger on ref-updated
+
+        .. deprecated:: 0.7.0
+
     :arg str trigger-approval-category: Approval category for comment added
+
+        .. deprecated:: 0.7.0
+
     :arg int trigger-approval-value: Approval value for comment added
+
+        .. deprecated:: 0.7.0
+
     :arg bool override-votes: Override default vote values
     :arg int gerrit-build-successful-verified-value: Successful ''Verified''
         value
@@ -226,6 +304,7 @@ def gerrit(parser, xml_parent, data):
     Example:
 
     .. literalinclude:: /../../tests/triggers/fixtures/gerrit004.yaml
+
     """
 
     logger = logging.getLogger("%s:gerrit" % __name__)
