@@ -91,6 +91,24 @@ def build_gerrit_triggers(xml_parent, data):
         'hudsontrigger.events'
 
     trigger_on_events = XML.SubElement(xml_parent, 'triggerOnEvents')
+
+    # New events specification, allowing mulitple events of same kind.
+    for event in data.get('trigger-on', []):
+        if isinstance(event, basestring):
+            tag_name = available_simple_triggers['trigger-on-%s' % event]
+            XML.SubElement(trigger_on_events,
+                           '%s.%s' % (tag_namespace, tag_name))
+        else:
+            comment_added_event = event['comment-added-event']
+            cadded = XML.SubElement(
+                trigger_on_events,
+                '%s.%s' % (tag_namespace, 'PluginCommentAddedEvent'))
+            XML.SubElement(cadded, 'verdictCategory').text = \
+                comment_added_event['approval-category']
+            XML.SubElement(cadded, 'commentAddedTriggerApprovalValue').text = \
+                str(comment_added_event['approval-value'])
+
+    # Legacy events specification.
     for config_key, tag_name in available_simple_triggers.iteritems():
         if data.get(config_key, False):
             XML.SubElement(trigger_on_events,
