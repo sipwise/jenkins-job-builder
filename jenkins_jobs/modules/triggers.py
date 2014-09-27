@@ -91,6 +91,24 @@ def build_gerrit_triggers(xml_parent, data):
         'hudsontrigger.events'
 
     trigger_on_events = XML.SubElement(xml_parent, 'triggerOnEvents')
+
+    # New events specification, allowing mulitple events of same kind.
+    for event in data.get('trigger-on', []):
+        if isinstance(event, basestring):
+            tag_name = available_simple_triggers['trigger-on-%s' % event]
+            XML.SubElement(trigger_on_events,
+                           '%s.%s' % (tag_namespace, tag_name))
+        else:
+            comment_added_event = event['comment-added-event']
+            cadded = XML.SubElement(
+                trigger_on_events,
+                '%s.%s' % (tag_namespace, 'PluginCommentAddedEvent'))
+            XML.SubElement(cadded, 'verdictCategory').text = \
+                comment_added_event['approval-category']
+            XML.SubElement(cadded, 'commentAddedTriggerApprovalValue').text = \
+                str(comment_added_event['approval-value'])
+
+    # Legacy events specification.
     for config_key, tag_name in available_simple_triggers.iteritems():
         if data.get(config_key, False):
             XML.SubElement(trigger_on_events,
@@ -127,6 +145,26 @@ def gerrit(parser, xml_parent, data):
     Requires the Jenkins `Gerrit Trigger Plugin
     <wiki.jenkins-ci.org/display/JENKINS/Gerrit+Trigger>`_ version >= 2.6.0.
 
+    :arg list trigger-on: list of events to react on (additive to the events
+                          below).
+      :Trigger on:
+         * **patchset-updated-event** -- Trigger on patchset upload.
+         * **change-abandoned-event** -- Trigger on patchset abandoned.
+                                         Requires Gerrit Trigger Plugin
+                                         version >= 2.8.0.
+         * **change-merged-event** -- Trigger on change merged
+         * **change-restored-event** -- Trigger on change restored.
+                                        Requires Gerrit Trigger Plugin
+                                        version >= 2.8.0
+         * **draft-published-event** -- Trigger on draft published event.
+         * **ref-updated-event** -- Trigger on ref-updated.
+         * **comment-added-event** (`dict`) -- Trigger on comment added.
+           :Comment added:
+               * **approval-category** (`str`) -- Approval (verdict) category
+                                                  (for example 'APRV', 'CRVW',
+                                                  'VRIF' -- see `Access
+                                                  controlls`_.
+               * **approval-value** -- Approval value for the comment added.
     :arg bool trigger-on-patchset-uploaded-event: Trigger on patchset upload
     :arg bool trigger-on-change-abandoned-event: Trigger on change abandoned.
         Requires Gerrit Trigger Plugin version >= 2.8.0
@@ -226,6 +264,9 @@ def gerrit(parser, xml_parent, data):
     Example:
 
     .. literalinclude:: /../../tests/triggers/fixtures/gerrit004.yaml
+
+    .. _Access controls link: http://gerrit.googlecode.com/svn/documentation/
+                              2.1/access-control.html#categories
     """
 
     logger = logging.getLogger("%s:gerrit" % __name__)
