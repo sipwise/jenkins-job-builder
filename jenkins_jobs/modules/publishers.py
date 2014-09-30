@@ -28,6 +28,7 @@ the build is complete.
 
 import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
+from jenkins_jobs.modules import helpers
 from jenkins_jobs.modules import hudson_model
 from jenkins_jobs.modules.helpers import build_trends_publisher
 from jenkins_jobs.modules.helpers import cloudformation_init
@@ -295,9 +296,18 @@ def trigger_parameterized_builds(parser, xml_parent, data):
     :arg bool svn-revision: Pass svn revision to the triggered job (optional)
     :arg bool include-upstream: Include/pass through Upstream SVN Revisons.
         Only valid when 'svn-revision' is true. (default false)
-    :arg bool git-revision: Pass git revision to the other job (optional)
+    :arg dict git-revision: Passes git revision to the triggered job
+        (optional).
+
+        * **combine-queued-commits** (bool): Whether to combine queued git
+          hashes or not (default false)
+
     :arg bool combine-queued-commits: Combine Queued git hashes. Only valid
         when 'git-revision' is true. (default false)
+
+        .. deprecated:: 1.4.0. Please use `combine-queued-commits` under the
+            `git-revision` argument instead.
+
     :arg dict boolean-parameters: Pass boolean parameters to the downstream
         jobs. Specify the name and boolean value mapping of the parameters.
         (optional)
@@ -328,6 +338,7 @@ def trigger_parameterized_builds(parser, xml_parent, data):
         /../../tests/publishers/fixtures/trigger_parameterized_builds003.yaml
        :language: yaml
     """
+    logger = logging.getLogger("%s:trigger-parameterized-builds" % __name__)
     pt_prefix = 'hudson.plugins.parameterizedtrigger.'
     tbuilder = XML.SubElement(xml_parent, pt_prefix + 'BuildTrigger')
     configs = XML.SubElement(tbuilder, 'configs')
@@ -351,12 +362,21 @@ def trigger_parameterized_builds(parser, xml_parent, data):
                 properties = XML.SubElement(params, 'properties')
                 properties.text = project_def['predefined-parameters']
 
-            if 'git-revision' in project_def and project_def['git-revision']:
-                params = XML.SubElement(tconfigs,
-                                        'hudson.plugins.git.'
-                                        'GitRevisionBuildParameters')
-                XML.SubElement(params, 'combineQueuedCommits').text = str(
-                    project_def.get('combine-queued-commits', False)).lower()
+            if(project_def.get('git-revision')):
+                if 'combine-queued-commits' in project_def:
+                    logger.warn(
+                        "'combine-queued-commit' has moved to reside under "
+                        "'git-revision' configuration, please update your "
+                        "configs as support for this will be removed."
+                    )
+                    git_revision = {
+                        'combine-queued-commits':
+                        project_def['combine-queued-commits']
+                    }
+                else:
+                    git_revision = project_def['git-revision']
+                helpers.append_git_revision_config(tconfigs, git_revision)
+
             if 'property-file' in project_def and project_def['property-file']:
                 params = XML.SubElement(tconfigs,
                                         pt_prefix + 'FileBuildParameters')
