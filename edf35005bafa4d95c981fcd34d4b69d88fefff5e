@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_cc6da006",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-30T13:32:39Z",
+      "side": 1,
+      "message": "These don\u0027t follow quite the same format as the other similar entries.\n\nWould have expected\n\n :Parameter: * **file-id** (`str`)\\\n The identifier for the managed config file\n :Parameter: * **target** (`str`)\\\n Define where the file should be created (optional)\n :Parameter: * **variable** (`str`)\\\n Define an environment variable to be used (optional)",
+      "revId": "edf35005bafa4d95c981fcd34d4b69d88fefff5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_c7049917",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-30T13:32:39Z",
+      "side": 1,
+      "message": "Should we raise a specific error if \u0027file-id\u0027 not found as it seems like it should be required, but by using \u0027.get(..)\u0027, if it\u0027s not defined, \u0027None\u0027 gets returned.",
+      "revId": "edf35005bafa4d95c981fcd34d4b69d88fefff5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_87b6113c",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-30T13:32:39Z",
+      "side": 1,
+      "message": "The use of a separate \u0027file\u0027 entry is necessary to have a list. Instead if you use:\n\n for file in files:\n     xml_file \u003d XML.SubElement(xml_files, \u0027org.jenkinsci.plugins.\u0027\n                               \u0027configfiles.buildwrapper.ManagedFile\u0027)\n     XML.SubElement(xml_file, \u0027fileId\u0027).text \u003d \\\n         file.get(\u0027file-id\u0027)\n     XML.SubElement(xml_file, \u0027targetLocation\u0027).text \u003d \\\n         file.get(\u0027target\u0027, \u0027\u0027)\n     XML.SubElement(xml_file, \u0027variable\u0027).text \u003d \\\n         file.get(\u0027variable\u0027, \u0027\u0027)\n\n\nYou should be able to use the following yaml:\n\n wrappers:\n   - config-file-provider:\n       files:\n         - file-id: org.jenkinsci.plugins.configfiles.custom.CustomConfig1234\n         - file-id: org.jenkinsci.plugins.configfiles.custom.CustomConfig5678\n           target: /foo.txt\n           variable: varName\n\nAs this is more in line with other uses within JJB, I think it\u0027ll be easier to follow.",
+      "revId": "edf35005bafa4d95c981fcd34d4b69d88fefff5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_c72bb980",
+        "filename": "tests/wrappers/fixtures/config-file-provider001.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-30T13:32:39Z",
+      "side": 1,
+      "message": "This doesn\u0027t match the documentation but matches the code.\n\nI would have expected:\n\n wrappers:\n   - config-file-provider:\n       files:\n           - file-id: org.jenkinsci.plugins.configfiles.custom.CustomConfig1409250932722\n             target: tmp/bar.txt\n             variable: varname",
+      "revId": "edf35005bafa4d95c981fcd34d4b69d88fefff5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
