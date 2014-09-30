@@ -30,6 +30,7 @@ import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 from jenkins_jobs.modules import hudson_model
 from jenkins_jobs.errors import JenkinsJobsException
+import jenkins_jobs.modules.subconfigs.git_revision as git_revision
 import logging
 import sys
 import random
@@ -167,7 +168,12 @@ def trigger_parameterized_builds(parser, xml_parent, data):
     :arg bool current-parameters: Whether to include the parameters passed
       to the current build to the triggered job (optional)
     :arg bool svn-revision: Pass svn revision to the triggered job (optional)
-    :arg bool git-revision: Pass git revision to the other job (optional)
+    :arg bool git-revision: Pass git revision to the triggered job (optional).
+      You can also configure the combineQueuedCommits option:
+
+      :combine-queued-commits (bool): Whether to combine
+        queued git hashes or not (optional, default false)
+
     :arg str condition: when to trigger the other job (default 'ALWAYS')
     :arg str property-file: Use properties from file (optional)
     :arg bool fail-on-missing: Blocks the triggering of the downstream jobs
@@ -187,7 +193,8 @@ def trigger_parameterized_builds(parser, xml_parent, data):
               fail-on-missing: true
             - project: yet_another_job
               predefined-parameters: foo=bar
-              git-revision: true
+              git-revision:
+                combine-queued-commits: true
               restrict-matrix-project: label=="x86"
 
     """
@@ -214,12 +221,10 @@ def trigger_parameterized_builds(parser, xml_parent, data):
                 properties = XML.SubElement(params, 'properties')
                 properties.text = project_def['predefined-parameters']
 
-            if 'git-revision' in project_def and project_def['git-revision']:
-                params = XML.SubElement(tconfigs,
-                                        'hudson.plugins.git.'
-                                        'GitRevisionBuildParameters')
-                properties = XML.SubElement(params, 'combineQueuedCommits')
-                properties.text = 'false'
+            if(project_def.get('git-revision')):
+                git_revision.appendXmlConfig(tconfigs,
+                                             project_def['git-revision'])
+
             if 'property-file' in project_def and project_def['property-file']:
                 params = XML.SubElement(tconfigs,
                                         'hudson.plugins.parameterizedtrigger.'
