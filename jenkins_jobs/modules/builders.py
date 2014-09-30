@@ -41,6 +41,7 @@ import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 from jenkins_jobs.modules import hudson_model
 from jenkins_jobs.errors import JenkinsJobsException
+import jenkins_jobs.modules.subconfigs.git_revision as git_revision
 import logging
 
 logger = logging.getLogger(__name__)
@@ -294,6 +295,13 @@ def trigger_builds(parser, xml_parent, data):
       triggered job.
     :arg bool svn-revision: Whether to pass the svn revision
       to the triggered job
+    :arg bool git-revision: Whether to pass the git revision
+      to the triggered job. You can also configure the
+      combineQueuedCommits option:
+
+      :combine-queued-commits (bool): Whether to combine
+        queued git hashes or not (optional, default false)
+
     :arg bool block: whether to wait for the triggered jobs
       to finish or not (default false)
     :arg bool same-node: Use the same node for the triggered builds that was
@@ -358,6 +366,10 @@ def trigger_builds(parser, xml_parent, data):
             XML.SubElement(tconfigs,
                            'hudson.plugins.parameterizedtrigger.'
                            'SubversionRevisionBuildParameters')
+
+        if(project_def.get('git-revision')):
+            git_revision.appendXmlConfig(tconfigs, project_def['git-revision'])
+
         if(project_def.get('same-node')):
             XML.SubElement(tconfigs,
                            'hudson.plugins.parameterizedtrigger.'
