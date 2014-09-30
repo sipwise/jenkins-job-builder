@@ -1,0 +1,5 @@
+builders:
+  - trigger-builds:
+    - project: "build_started"
+      git-revision:
+        combine-queued-commits: true
