@@ -7,6 +7,9 @@
           <configs>
             <hudson.plugins.parameterizedtrigger.CurrentBuildParameters/>
             <hudson.plugins.parameterizedtrigger.SubversionRevisionBuildParameters/>
+            <hudson.plugins.git.GitRevisionBuildParameters>
+              <combineQueuedCommits>true</combineQueuedCommits>
+            </hudson.plugins.git.GitRevisionBuildParameters>
             <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
               <properties>FOO=&quot;bar&quot;</properties>
             </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>

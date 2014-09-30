@@ -5,4 +5,6 @@ builders:
         FOO="bar"
       current-parameters: true
       svn-revision: true
+      git-revision:
+        combine-queued-commits: true
       block: true
