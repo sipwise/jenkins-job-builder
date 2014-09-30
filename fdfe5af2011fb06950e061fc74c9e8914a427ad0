@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_c79ad913",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1106,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-30T13:49:24Z",
+      "side": 1,
+      "message": "Formatting of these doc strings are wrapped slightly differently in the generated docs in comparison to others. See http://docs-draft.openstack.org/84/120184/7/check/gate-jenkins-job-builder-docs/e63c727/doc/build/html/wrappers.html.\n\nThink it just needs \u0027\\\u0027 appended to the end of each line that has a continuation line afterwards to fix.",
+      "revId": "fdfe5af2011fb06950e061fc74c9e8914a427ad0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
