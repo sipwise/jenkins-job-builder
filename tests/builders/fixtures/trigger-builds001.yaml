@@ -5,4 +5,5 @@ builders:
         FOO="bar"
       current-parameters: true
       svn-revision: true
+      git-revision: true
       block: true
