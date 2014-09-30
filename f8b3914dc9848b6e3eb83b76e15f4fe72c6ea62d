@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_02604f31",
+        "filename": "tests/yamlparser/fixtures/lazy-load-jobs001.xml",
+        "patchSetId": 15
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-30T14:17:17Z",
+      "side": 1,
+      "message": "I\u0027ll have a think about whether I make the code work in a more obvious way here or add the necessary documentation.",
+      "parentUuid": "da9df570_f7d12bfc",
+      "revId": "f8b3914dc9848b6e3eb83b76e15f4fe72c6ea62d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_374ad3c5",
         "filename": "tests/yamlparser/fixtures/lazy-load-jobs001.yaml",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-23T19:18:58Z",
       "side": 1,
       "message": "in lazy-load-jobs002.yaml it\u0027s \u0027lazy-load-scripts/echo_vars_{version}.sh\u0027 which makes more sense but this also works?",
+      "revId": "f8b3914dc9848b6e3eb83b76e15f4fe72c6ea62d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_227c7320",
+        "filename": "tests/yamlparser/fixtures/lazy-load-jobs001.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-30T14:17:17Z",
+      "side": 1,
+      "message": "It does, but only because I also set the search path in the corresponding conf file - https://review.openstack.org/#/c/63580/15/tests/yamlparser/fixtures/lazy-load-jobs001.conf:\n\n [job_builder]\n include_path\u003dtests/yamlparser/fixtures/lazy-load-scripts",
+      "parentUuid": "da9df570_374ad3c5",
       "revId": "f8b3914dc9848b6e3eb83b76e15f4fe72c6ea62d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
