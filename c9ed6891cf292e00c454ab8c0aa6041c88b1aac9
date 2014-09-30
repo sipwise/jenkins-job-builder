@@ -16,6 +16,24 @@
       "revId": "c9ed6891cf292e00c454ab8c0aa6041c88b1aac9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_24a1dcf8",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2406,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-30T16:39:38Z",
+      "side": 1,
+      "message": "Problem is there are other entries that are not build steps that are still valid keys :/\n\nSo without restructuring the yaml format supported or checking for all the other possible entries, it\u0027s a bit hard to determine if there is an unsupported script type included.",
+      "parentUuid": "da9df570_562061f7",
+      "revId": "c9ed6891cf292e00c454ab8c0aa6041c88b1aac9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
