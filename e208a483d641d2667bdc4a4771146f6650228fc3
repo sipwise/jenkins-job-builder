@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_e2a50b05",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-30T14:00:00Z",
+      "side": 1,
+      "message": "I think that if supporting a new format it\u0027s important to convert entries using the legacy format to the new specification, log if the old trigger format is present, and error if there entries for both new and old encountered.",
+      "revId": "e208a483d641d2667bdc4a4771146f6650228fc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_c279e794",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-30T14:00:00Z",
+      "side": 1,
+      "message": "Seems like this could cause confusing behaviour to be defined without JJB erroring. Consider:\n\n trigger-on:\n     trigger-on-patchset-uploaded-event: False\n     patchset-uploaded-event: True\n\nNote you don\u0027t check to see what the value is for the events in the new specification as done in the legacy version.",
+      "revId": "e208a483d641d2667bdc4a4771146f6650228fc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
