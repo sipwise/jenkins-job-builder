@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_acbf7ccf",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-30T13:05:31Z",
+      "side": 1,
+      "message": "This is configurable via the UI, so it should be configurable here as well.",
+      "revId": "9ecafd65f75584e02c174ab5c61c8f076c4edbe3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
