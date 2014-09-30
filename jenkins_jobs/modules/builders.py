@@ -294,6 +294,13 @@ def trigger_builds(parser, xml_parent, data):
       triggered job.
     :arg bool svn-revision: Whether to pass the svn revision
       to the triggered job
+    :arg bool git-revision: Whether to pass the git revision
+      to the triggered job. Do not specify boolean value
+      if you specify combine-queued-commits.
+
+      :combine-queued-commits (bool): Whether to combine
+        queued git hashes or not (optional, default false)
+
     :arg bool block: whether to wait for the triggered jobs
       to finish or not (default false)
     :arg bool same-node: Use the same node for the triggered builds that was
@@ -358,6 +365,22 @@ def trigger_builds(parser, xml_parent, data):
             XML.SubElement(tconfigs,
                            'hudson.plugins.parameterizedtrigger.'
                            'SubversionRevisionBuildParameters')
+        if(project_def.get('git-revision')):
+            params = XML.SubElement(tconfigs,
+                                    'hudson.plugins.git.'
+                                    'GitRevisionBuildParameters')
+
+            combineQueuedCommits = 'false'
+            try:
+                # If git-revision is a boolean, the get() will
+                # throw an AttributeError
+                if project_def['git-revision'].get('combine-queued-commits'):
+                    combineQueuedCommits = 'true'
+            except AttributeError:
+                pass
+
+            properties = XML.SubElement(params, 'combineQueuedCommits')
+            properties.text = combineQueuedCommits
         if(project_def.get('same-node')):
             XML.SubElement(tconfigs,
                            'hudson.plugins.parameterizedtrigger.'
