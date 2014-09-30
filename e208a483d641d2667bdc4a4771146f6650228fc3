@@ -33,6 +33,24 @@
       "revId": "e208a483d641d2667bdc4a4771146f6650228fc3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_e4bb540c",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-09-30T16:41:50Z",
+      "side": 1,
+      "message": "Just spotted I constructed the yaml wrong, should be:\n\n trigger-on:\n      patchset-uploaded-event: True\n trigger-on-patchset-uploaded-event: False",
+      "parentUuid": "baa201ad_c279e794",
+      "revId": "e208a483d641d2667bdc4a4771146f6650228fc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
