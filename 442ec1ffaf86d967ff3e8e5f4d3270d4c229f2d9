@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_8e837703",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 7069
+      },
+      "writtenOn": "2014-10-01T09:31:42Z",
+      "side": 1,
+      "message": "This was just taken from below and moved into it\u0027s own section. It\u0027s a nit but I\u0027ve fixed it up anyway.",
+      "parentUuid": "fa98f980_1cadd69c",
+      "revId": "442ec1ffaf86d967ff3e8e5f4d3270d4c229f2d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_dc90ae45",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-02T14:49:16Z",
       "side": 1,
       "message": "return \u0027\u0027.join([\"\\n\\n\", MAGIC_MANAGE_STRING])",
+      "revId": "442ec1ffaf86d967ff3e8e5f4d3270d4c229f2d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_6ebad3c1",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 7069
+      },
+      "writtenOn": "2014-10-01T09:31:42Z",
+      "side": 1,
+      "message": "Again this was just moved here from elsewhere. There is nothing wrong with concatenating strings like this as far as I know. Is there any reason to use a join which doesn\u0027t read nearly as well?",
+      "parentUuid": "fa98f980_dc90ae45",
       "revId": "442ec1ffaf86d967ff3e8e5f4d3270d4c229f2d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
