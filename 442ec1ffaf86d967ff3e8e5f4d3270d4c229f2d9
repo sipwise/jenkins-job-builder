@@ -69,6 +69,24 @@
       "revId": "442ec1ffaf86d967ff3e8e5f4d3270d4c229f2d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_319bca73",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 12873
+      },
+      "writtenOn": "2014-10-01T10:17:09Z",
+      "side": 1,
+      "message": "on second thought in this case its ok. as you wrote its more readable.\nIn general concatenation with \u0027+\u0027 is slowest method (http://www.skymind.com/~ocrow/python_string/).\nIn this case, we are speaking about concatenation of only 2 strings so it is not important and readability is much more important - so you are right here",
+      "parentUuid": "baa201ad_6ebad3c1",
+      "revId": "442ec1ffaf86d967ff3e8e5f4d3270d4c229f2d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
