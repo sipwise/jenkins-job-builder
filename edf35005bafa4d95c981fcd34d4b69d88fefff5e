@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_1de8970f",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 12934
+      },
+      "writtenOn": "2014-10-01T12:48:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_cc6da006",
+      "revId": "edf35005bafa4d95c981fcd34d4b69d88fefff5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_c7049917",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-30T13:32:39Z",
       "side": 1,
       "message": "Should we raise a specific error if \u0027file-id\u0027 not found as it seems like it should be required, but by using \u0027.get(..)\u0027, if it\u0027s not defined, \u0027None\u0027 gets returned.",
+      "revId": "edf35005bafa4d95c981fcd34d4b69d88fefff5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_3de39b34",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 12934
+      },
+      "writtenOn": "2014-10-01T12:48:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_c7049917",
       "revId": "edf35005bafa4d95c981fcd34d4b69d88fefff5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_5dd13f56",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 12934
+      },
+      "writtenOn": "2014-10-01T12:48:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_87b6113c",
+      "revId": "edf35005bafa4d95c981fcd34d4b69d88fefff5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_c72bb980",
         "filename": "tests/wrappers/fixtures/config-file-provider001.yaml",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2014-09-30T13:32:39Z",
       "side": 1,
       "message": "This doesn\u0027t match the documentation but matches the code.\n\nI would have expected:\n\n wrappers:\n   - config-file-provider:\n       files:\n           - file-id: org.jenkinsci.plugins.configfiles.custom.CustomConfig1409250932722\n             target: tmp/bar.txt\n             variable: varname",
+      "revId": "edf35005bafa4d95c981fcd34d4b69d88fefff5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_bdceabb2",
+        "filename": "tests/wrappers/fixtures/config-file-provider001.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 12934
+      },
+      "writtenOn": "2014-10-01T12:48:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_c72bb980",
       "revId": "edf35005bafa4d95c981fcd34d4b69d88fefff5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
