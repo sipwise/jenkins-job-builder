@@ -306,6 +306,11 @@ def authorization(parser, xml_parent, data):
     Specifies an authorization matrix
 
     The available rights are:
+      credentials-create
+      credentials-update
+      credentials-view
+      credentials-delete
+      credentials-managedomains
       job-delete
       job-configure
       job-read
@@ -314,6 +319,7 @@ def authorization(parser, xml_parent, data):
       job-build
       job-workspace
       job-cancel
+      job-release
       run-delete
       run-update
       scm-tag
@@ -323,6 +329,11 @@ def authorization(parser, xml_parent, data):
       properties:
         - authorization:
             admin:
+              - credentials-create
+              - credentials-update
+              - credentials-view
+              - credentials-delete
+              - credentials-managedomains
               - job-delete
               - job-configure
               - job-read
@@ -330,6 +341,7 @@ def authorization(parser, xml_parent, data):
               - job-build
               - job-workspace
               - job-cancel
+              - job-release
               - run-delete
               - run-update
               - scm-tag
@@ -340,6 +352,16 @@ def authorization(parser, xml_parent, data):
     """
 
     mapping = {
+        'credentials-create':
+        'com.cloudbees.plugins.credentials.CredentialsProvider.Create',
+        'credentials-update':
+        'com.cloudbees.plugins.credentials.CredentialsProvider.Update',
+        'credentials-view':
+        'com.cloudbees.plugins.credentials.CredentialsProvider.View',
+        'credentials-delete':
+        'com.cloudbees.plugins.credentials.CredentialsProvider.Delete',
+        'credentials-managedomains':
+        'com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains',
         'job-delete': 'hudson.model.Item.Delete',
         'job-configure': 'hudson.model.Item.Configure',
         'job-read': 'hudson.model.Item.Read',
@@ -348,6 +370,7 @@ def authorization(parser, xml_parent, data):
         'job-build': 'hudson.model.Item.Build',
         'job-workspace': 'hudson.model.Item.Workspace',
         'job-cancel': 'hudson.model.Item.Cancel',
+        'job-release': 'hudson.model.Item.Release',
         'run-delete': 'hudson.model.Run.Delete',
         'run-update': 'hudson.model.Run.Update',
         'scm-tag': 'hudson.scm.SCM.Tag'
