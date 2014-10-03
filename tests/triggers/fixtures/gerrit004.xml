@@ -44,16 +44,26 @@
       <triggerConfigURL>http://myhost/mytrigger</triggerConfigURL>
       <allowTriggeringUnreviewedPatches>true</allowTriggeringUnreviewedPatches>
       <triggerOnEvents>
+        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginDraftPublishedEvent/>
+        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginChangeRestoredEvent/>
+        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginPatchsetCreatedEvent/>
+        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginRefUpdatedEvent/>
+        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginChangeMergedEvent/>
+        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginChangeAbandonedEvent/>
         <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginCommentAddedEvent>
           <verdictCategory>APRV</verdictCategory>
           <commentAddedTriggerApprovalValue>1</commentAddedTriggerApprovalValue>
         </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginCommentAddedEvent>
       </triggerOnEvents>
+      <gerritBuildSuccessfulVerifiedValue>2</gerritBuildSuccessfulVerifiedValue>
+      <gerritBuildFailedVerifiedValue>-2</gerritBuildFailedVerifiedValue>
+      <gerritBuildSuccessfulCodeReviewValue>1</gerritBuildSuccessfulCodeReviewValue>
+      <gerritBuildFailedCodeReviewValue>-1</gerritBuildFailedCodeReviewValue>
       <buildStartMessage/>
-      <buildFailureMessage/>
-      <buildSuccessfulMessage/>
-      <buildUnstableMessage/>
-      <customUrl/>
+      <buildFailureMessage>failure message</buildFailureMessage>
+      <buildSuccessfulMessage>success message</buildSuccessfulMessage>
+      <buildUnstableMessage>unstable message</buildUnstableMessage>
+      <customUrl>http://mygerrit</customUrl>
       <serverName>my-server</serverName>
     </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritTrigger>
   </triggers>

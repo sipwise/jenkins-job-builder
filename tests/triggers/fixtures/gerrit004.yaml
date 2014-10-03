@@ -1,8 +1,22 @@
 triggers:
   - gerrit:
+      trigger-on-patchset-uploaded-event: true
+      trigger-on-change-abandoned-event: true
+      trigger-on-change-merged-event: true
+      trigger-on-change-restored-event: true
       trigger-on-comment-added-event: true
+      trigger-on-draft-published-event: true
+      trigger-on-ref-updated-event: true
       trigger-approval-category: 'APRV'
       trigger-approval-value: 1
+      override-votes: true
+      gerrit-build-successful-verified-value: 2
+      gerrit-build-failed-verified-value: -2
+      gerrit-build-successful-codereview-value: 1
+      gerrit-build-failed-codereview-value: -1
+      failure-message: 'failure message'
+      successful-message: 'success message'
+      unstable-message: 'unstable message'
       projects:
         - project-compare-type: 'PLAIN'
           project-pattern: 'test-project'
@@ -28,4 +42,5 @@ triggers:
       dynamic-trigger-enabled: true
       dynamic-trigger-url: http://myhost/mytrigger
       trigger-for-unreviewed-patches: true
+      custom-url: http://mygerrit
       server-name: my-server
