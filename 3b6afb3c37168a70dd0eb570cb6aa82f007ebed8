@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_47f3f79d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-03T11:21:22Z",
+      "side": 1,
+      "message": "Should this use the os.path.sep to allow use of ; on windows and : on unix?\n\nMight want to poke someone in IRC to see whether there is an interest in only supporting one format or allowing OS specific behaviour here.",
+      "revId": "3b6afb3c37168a70dd0eb570cb6aa82f007ebed8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_a72f43f5",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-03T11:21:22Z",
+      "side": 1,
+      "message": "change/remove comment as needed as it no longer makes sense here.",
+      "revId": "3b6afb3c37168a70dd0eb570cb6aa82f007ebed8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
