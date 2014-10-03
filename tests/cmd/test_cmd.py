@@ -69,6 +69,20 @@ class CmdTests(testtools.TestCase):
         config.readfp(cStringIO.StringIO(cmd.DEFAULT_CONF))
         cmd.execute(args, config)   # probably better to fail here
 
+    def test_multi_path(self):
+        """
+        Run test mode and pass a valid job name
+        """
+        path_list = [os.path.join(self.fixtures_path, 'multipath'),
+                     self.fixtures_path]
+        multipath = os.pathsep.join(path_list)
+        args = self.parser.parse_args(['test', multipath])
+        args.output_dir = mock.MagicMock()
+        config = ConfigParser.ConfigParser()
+        config.readfp(cStringIO.StringIO(cmd.DEFAULT_CONF))
+        cmd.execute(args, config)
+        self.assertEqual(args.path, path_list)
+
     def test_console_output(self):
         """
         Run test mode and verify that resulting XML gets sent to the console.
