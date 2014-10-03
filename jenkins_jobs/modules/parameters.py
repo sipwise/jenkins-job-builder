@@ -128,7 +128,6 @@ def file_param(parser, xml_parent, data):
     base_param(parser, xml_parent, data, False,
                'hudson.model.FileParameterDefinition')
 
-
 def text_param(parser, xml_parent, data):
     """yaml: text
     A text parameter.
@@ -195,6 +194,27 @@ def choice_param(parser, xml_parent, data):
     a = XML.SubElement(choices, 'a', {'class': 'string-array'})
     for choice in data['choices']:
         XML.SubElement(a, 'string').text = choice
+
+
+def run_parameter(parser, xml_parent, data, ptype):
+    """yaml: choice
+    A run parameter.
+
+    :arg str name: the name of the parameter
+    :arg str project-name: the name of job from which the user can pick runs
+    :arg str description: a description of the parameter (optional)
+
+    Example::
+
+      parameters:
+        - run:
+            name: FOO
+            project-name: "foo-build"
+            description: "Select a foo-build for promotion"
+    """
+    pdef = base_param(parser, xml_parent, data, False,
+                      'hudson.model.RunParameterDefinition')
+    XML.SubElement(pdef, 'projectName').text = data['project-name']
 
 
 def validating_string_param(parser, xml_parent, data):
@@ -437,7 +457,6 @@ def dynamic_scriptler_param_common(parser, xml_parent, data, ptype):
             XML.SubElement(parameterXML, 'value').text = parameter['value']
     XML.SubElement(pdef, 'readonlyInputField').text = str(data.get(
         'read-only', False)).lower()
-
 
 class Parameters(jenkins_jobs.modules.base.Base):
     sequence = 21
