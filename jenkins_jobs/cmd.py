@@ -193,12 +193,13 @@ def execute(options, config):
         # take colon-delimited list of paths
         options.path = options.path.split(":")
 
+        do_recurse = (getattr(options, 'recursive', False) or
+                      config.getboolean('job_builder', 'recursive'))
+
         paths = []
-        is_recursive = getattr(options, 'recursive', False)
         for path in options.path:
             # expand or convert options.path to a list
-            if (is_recursive or config.getboolean('job_builder', 'recursive')) \
-                    and os.path.isdir(path):
+            if do_recurse and os.path.isdir(path):
                 paths.extend(recurse_path(path))
             else:
                 paths.append(path)
