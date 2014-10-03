@@ -316,9 +316,9 @@ def gerrit(parser, xml_parent, data):
                                 ('gerrit-build-failed-verified-value',
                                  'gerritBuildFailedVerifiedValue'),
                                 ('gerrit-build-successful-codereview-value',
-                                 'gerritBuildSuccessfulCodereviewValue'),
+                                 'gerritBuildSuccessfulCodeReviewValue'),
                                 ('gerrit-build-failed-codereview-value',
-                                 'gerritBuildFaiedCodeReviewValue')]:
+                                 'gerritBuildFailedCodeReviewValue')]:
             if data.get(yamlkey) is not None:
                 # str(int(x)) makes input values like '+1' work
                 XML.SubElement(gtrig, xmlkey).text = str(
