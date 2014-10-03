@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_c759a7ff",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-03T11:00:36Z",
+      "side": 1,
+      "message": "It will also mean that \u0027git-revision: true\u0027 will result in combineQueuedCommits \u003d false.\n\nYou also aren\u0027t checking the actually boolean values being set and assuming that simply setting the value means they must be true.\n\nSuggest adding more test cases to cover the different variations to see what I mean.",
+      "revId": "77a5d57702b4cef58490445257a5d55831d3fe19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
