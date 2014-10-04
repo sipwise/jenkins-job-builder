@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_b84cafc9",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3732,
+      "author": {
+        "id": 13494
+      },
+      "writtenOn": "2014-10-04T11:30:35Z",
+      "side": 1,
+      "message": "I would call this publisher \"scan-build\" (method name \"scan_build\"), since that is how the tool is usually referred to.",
+      "revId": "722c5785d2f56f031dcc3bc4829d983e6c6d5b0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_d84973b8",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3734,
+      "author": {
+        "id": 13494
+      },
+      "writtenOn": "2014-10-04T11:30:35Z",
+      "side": 1,
+      "message": "Most publisher descriptions use third person, hence\n\n\"Publish\" -\u003e \"Publishes\"",
+      "revId": "722c5785d2f56f031dcc3bc4829d983e6c6d5b0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_78dde7df",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3737,
+      "author": {
+        "id": 13494
+      },
+      "writtenOn": "2014-10-04T11:30:35Z",
+      "side": 1,
+      "message": "Put `` `` around the directory?\n\nPut \"directory\" before the directory?  Reads better to me that way.",
+      "revId": "722c5785d2f56f031dcc3bc4829d983e6c6d5b0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
