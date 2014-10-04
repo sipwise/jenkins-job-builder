@@ -649,15 +649,14 @@ class Builder(object):
                         raise
                     continue
 
-                output_dir = output
+                output_dir = os.path.join(output, job.name)
 
                 try:
                     os.makedirs(output_dir)
                 except OSError:
                     if not os.path.isdir(output_dir):
                         raise
-
-                output_fn = os.path.join(output_dir, job.name)
+                output_fn = os.path.join(output_dir, 'config.xml')
                 logger.debug("Writing XML to '{0}'".format(output_fn))
                 f = open(output_fn, 'w')
                 f.write(job.output())
