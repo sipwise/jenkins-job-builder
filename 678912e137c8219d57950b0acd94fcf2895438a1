@@ -16,6 +16,24 @@
       "revId": "678912e137c8219d57950b0acd94fcf2895438a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_66e613b2",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-06T16:28:11Z",
+      "side": 1,
+      "message": "That\u0027s because the specific bug does not exist in vanilla python for python \u003e\u003d 2.7.0. Last time it was traced to the fact that the user had PyXML installed which replaced the default XML implementation which re-introduced the issue.\n\nIf there is some specific vendor release of python that also causes this odd behaviour, then we should capture that so we know what to test against.",
+      "parentUuid": "baa201ad_91db324e",
+      "revId": "678912e137c8219d57950b0acd94fcf2895438a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
