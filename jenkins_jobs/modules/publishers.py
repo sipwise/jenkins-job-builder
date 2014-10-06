@@ -1068,60 +1068,44 @@ def checkstyle(parser, xml_parent, data):
     .. literalinclude::  /../../tests/publishers/fixtures/checkstyle002.yaml
 
     """
-    checkstyle = XML.SubElement(xml_parent,
-                                'hudson.plugins.checkstyle.'
-                                'CheckStylePublisher')
+    def convert_settings(lookup, data):
+        """Helper to convert settings from one key to another
+        """
 
-    XML.SubElement(checkstyle, 'healthy').text = str(
-        data.get('healthy', ''))
-    XML.SubElement(checkstyle, 'unHealthy').text = str(
-        data.get('unHealthy', ''))
-    XML.SubElement(checkstyle, 'thresholdLimit').text = \
-        data.get('healthThreshold', 'low')
+        for old_key, value in data.iteritems():
+            if old_key not in lookup:
+                # Key does not need to be converted
+                continue
 
-    XML.SubElement(checkstyle, 'pluginName').text = '[CHECKSTYLE] '
+            # Insert value if key does not already exists
+            data.setdefault(lookup[old_key], value)
 
-    XML.SubElement(checkstyle, 'defaultEncoding').text = \
-        data.get('defaultEncoding', '')
+            del data[old_key]
 
-    XML.SubElement(checkstyle, 'canRunOnFailed').text = str(
-        data.get('canRunOnFailed', False)).lower()
+    xml_element = XML.SubElement(xml_parent,
+                                 'hudson.plugins.checkstyle.'
+                                 'CheckStylePublisher')
 
-    XML.SubElement(checkstyle, 'useStableBuildAsReference').text = 'false'
+    # Convert old style yaml to new style
+    convert_settings({
+        'unHealthy': 'unhealthy',
+        'thresHoldLimit': 'threshold-limit',
+        'healthThreshold': 'health-threshold',
+        'defaultEncoding': 'default-encoding',
+        'canRunOnFailed': 'can-run-on-failed',
+        'shouldDetectModules': 'should-detect-modules'
+    }, data)
 
-    XML.SubElement(checkstyle, 'useDeltaValues').text = 'false'
+    threshold_data = data.get('thresholds', {})
+    for threshold in ['unstable', 'failed']:
+        convert_settings({
+            'totalAll': 'total-all',
+            'totalHigh': 'total-high',
+            'totalNormal': 'total-normal',
+            'totalLow': 'total-low'
+        }, threshold_data.get(threshold, {}))
 
-    dthresholds = data.get('thresholds', {})
-    dunstable = dthresholds.get('unstable', {})
-    dfailed = dthresholds.get('failed', {})
-    thresholds = XML.SubElement(checkstyle, 'thresholds')
-
-    XML.SubElement(thresholds, 'unstableTotalAll').text = str(
-        dunstable.get('totalAll', ''))
-    XML.SubElement(thresholds, 'unstableTotalHigh').text = str(
-        dunstable.get('totalHigh', ''))
-    XML.SubElement(thresholds, 'unstableTotalNormal').text = str(
-        dunstable.get('totalNormal', ''))
-    XML.SubElement(thresholds, 'unstableTotalLow').text = str(
-        dunstable.get('totalLow', ''))
-
-    XML.SubElement(thresholds, 'failedTotalAll').text = str(
-        dfailed.get('totalAll', ''))
-    XML.SubElement(thresholds, 'failedTotalHigh').text = str(
-        dfailed.get('totalHigh', ''))
-    XML.SubElement(thresholds, 'failedTotalNormal').text = str(
-        dfailed.get('totalNormal', ''))
-    XML.SubElement(thresholds, 'failedTotalLow').text = str(
-        dfailed.get('totalLow', ''))
-
-    XML.SubElement(checkstyle, 'shouldDetectModules').text = \
-        str(data.get('shouldDetectModules', False)).lower()
-
-    XML.SubElement(checkstyle, 'dontComputeNew').text = 'true'
-
-    XML.SubElement(checkstyle, 'doNotResolveRelativePaths').text = 'false'
-
-    XML.SubElement(checkstyle, 'pattern').text = data.get('pattern', '')
+    build_trends_publisher('[CHECKSTYLE] ', xml_element, data)
 
 
 def scp(parser, xml_parent, data):
