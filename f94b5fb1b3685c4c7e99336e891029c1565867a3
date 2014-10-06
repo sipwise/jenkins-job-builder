@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_327b61f6",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1081,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-10-06T19:08:42Z",
+      "side": 1,
+      "message": "Might be able to do it using __doc__, unsure though.",
+      "parentUuid": "baa201ad_97ea3faa",
+      "revId": "f94b5fb1b3685c4c7e99336e891029c1565867a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_d7e5a709",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_92f6cdf7",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1092,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-10-06T19:08:42Z",
+      "side": 1,
+      "message": "Well I thought about that, but I cannot use it since unHealthy would then become un-healthy. :(\n\nAnd I prefer to stick with backward compatibility.",
+      "parentUuid": "baa201ad_d7e5a709",
+      "revId": "f94b5fb1b3685c4c7e99336e891029c1565867a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_3760b3a4",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2014-10-06T18:16:59Z",
       "side": 1,
       "message": "I don\u0027t think this was supported from reading the previous code. Copy \u0027n\u0027 paste mistake?",
+      "revId": "f94b5fb1b3685c4c7e99336e891029c1565867a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_f29c796c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1113,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-10-06T19:08:42Z",
+      "side": 1,
+      "message": "I read the code, not the pydoc.. :/\n\nBut yeah, it should be \u0027healthThreshold\u0027: \u0027health-threshold\u0027",
+      "parentUuid": "baa201ad_3760b3a4",
       "revId": "f94b5fb1b3685c4c7e99336e891029c1565867a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
