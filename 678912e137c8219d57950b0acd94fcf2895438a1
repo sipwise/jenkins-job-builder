@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_91db324e",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-10-06T15:05:36Z",
+      "side": 1,
+      "message": "That used to be python \u003c\u003d 2.7.3 on https://review.openstack.org/#/c/71266/ . I had an user running 2.7.3 and facing the whitespace issue :-/\n\nProposed at https://review.openstack.org/126318",
+      "revId": "678912e137c8219d57950b0acd94fcf2895438a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
