@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_97ea3faa",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1081,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-06T18:16:59Z",
+      "side": 1,
+      "message": "Wonder if there is anyway to cross-reference this info between the pmd and checkstyle functions? Maintain in one place so no need to worry about getting out of sync?\n\nDon\u0027t know enough about sphinx to know exactly how to do it, but maybe ask in IRC?",
+      "revId": "f94b5fb1b3685c4c7e99336e891029c1565867a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_d7e5a709",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1092,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-06T18:16:59Z",
+      "side": 1,
+      "message": "jenkins_jobs/modules/triggers.py has code around converting between oldstyle yaml and hyphenized. Probably better to try and reuse that where possible by perhaps moving it to the base.py and then calling it from here as well.",
+      "revId": "f94b5fb1b3685c4c7e99336e891029c1565867a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_3760b3a4",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1113,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-06T18:16:59Z",
+      "side": 1,
+      "message": "I don\u0027t think this was supported from reading the previous code. Copy \u0027n\u0027 paste mistake?",
+      "revId": "f94b5fb1b3685c4c7e99336e891029c1565867a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
