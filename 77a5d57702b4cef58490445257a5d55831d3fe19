@@ -16,6 +16,24 @@
       "revId": "77a5d57702b4cef58490445257a5d55831d3fe19",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_a8c37687",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 13446
+      },
+      "writtenOn": "2014-10-06T08:32:27Z",
+      "side": 1,
+      "message": "Hello Darragh, and thanks for taking the time to review my changes!\n\nRegarding your comments; first, about \u0027git-revision: true\u0027 resulting in combineQueuedCommits\u003dfalse. I would consider this a sensible default when you don\u0027t explicitly configure it. Do you agree?\n\nRegarding not checking the boolean values: this is precisely how the other configs work (e.g. see above, \u0027svn-revision\u0027 or \u0027current-parameters). It seems that the value \u0027false\u0027 will result in the .get() returning False, all other values (\u0027true\u0027, \u0027blabla\u0027, etc) result in the .get() returning True. I chose to mimic the behaviour of the rest of the code, but if you feel I should do explicit checking I could do that.",
+      "parentUuid": "baa201ad_c759a7ff",
+      "revId": "77a5d57702b4cef58490445257a5d55831d3fe19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
