@@ -72,6 +72,41 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_0ee1bcd0",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1092,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-07T19:43:15Z",
+      "side": 1,
+      "message": "that\u0027s annoying, didn\u0027t spot that one. guess you could convert that single one explicitly and then send the rest to the common conversion function ;)\n\nCan do a subsequent patch to convert the one in the trigger module into a proper helper, which took a dict where the value if set was used as the new name to convert to, otherwise it just dehypenated based on the camelcase.",
+      "parentUuid": "baa201ad_92f6cdf7",
+      "revId": "f94b5fb1b3685c4c7e99336e891029c1565867a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_6e38883d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1104,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-07T19:43:15Z",
+      "side": 1,
+      "message": "If not using the common conversion as part of this patch, I would still follow it\u0027s convention of testing if the key was in lookup instead of not in and trying to continue.\n\nAlso do like the use of setdefault to make sure to not overwrite the value if the new key already exists in the dict.",
+      "revId": "f94b5fb1b3685c4c7e99336e891029c1565867a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_3760b3a4",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -101,6 +136,24 @@
       "side": 1,
       "message": "I read the code, not the pydoc.. :/\n\nBut yeah, it should be \u0027healthThreshold\u0027: \u0027health-threshold\u0027",
       "parentUuid": "baa201ad_3760b3a4",
+      "revId": "f94b5fb1b3685c4c7e99336e891029c1565867a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_0ebe1cd5",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1113,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-07T19:43:15Z",
+      "side": 1,
+      "message": "well you already have healthThreshold below, so I think you just need to ignore the \"thresHoldLimit\" one.",
+      "parentUuid": "baa201ad_f29c796c",
       "revId": "f94b5fb1b3685c4c7e99336e891029c1565867a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
