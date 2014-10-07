@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_09937650",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-07T20:08:54Z",
+      "side": 1,
+      "message": "shouldn\u0027t be an \u0027\u003d\u0027 sign here! 2.7.3 has the fix, only versions \u003c 2.7.3 are missing it.",
+      "revId": "9bccce5153bebb2a0fecdd3543c5d1f8eec84bd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
