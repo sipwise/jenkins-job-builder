@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_7875ae62",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-10-07T20:27:38Z",
+      "side": 1,
+      "message": "In the non-recursive case:\n\n  The unit test I wrote actually validates that the order of paths in the\n  os.pathsep-delimited list passed in the CLI arguments is preserved because it\n  checks against the original array used to generate the test args. That means\n  if a user writes something like:\n\n  jenkins-jobs --conf path/to/conf test path/one:path/two\n\n  `options.path` will end up with the contents `[\u0027path/one\u0027, \u0027path/two\u0027]` rather\n  than `[\u0027path/two\u0027, \u0027path/one\u0027]` as I believe you are suggesting.\n\nIn the recursive case:\n\n  I am not familiar enough with the behavior of `recurse_path` to be certain of\n  the order of the paths it returns but I can say that it recurses into the\n  given list of directories and the results appended to `options.path` in the\n  order those top-level directories are specified on the command line. I will\n  add a unit test to validate this behavior.\n\nPlease let me know if I misunderstood your comment.",
+      "parentUuid": "baa201ad_f550c70c",
+      "revId": "d5fb726f6c49b9e9e9287856ec01f8d38389bbee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_0299931f",
         "filename": "tests/cmd/test_cmd.py",
         "patchSetId": 5
@@ -65,6 +83,24 @@
       "writtenOn": "2014-10-07T17:48:00Z",
       "side": 1,
       "message": "This is testing the default recursive\u003dFalse path, so would it be possible to test the recursive\u003dTrue path as well?",
+      "revId": "d5fb726f6c49b9e9e9287856ec01f8d38389bbee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_049fdbb5",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-10-07T20:27:38Z",
+      "side": 1,
+      "message": "It didn\u0027t seem necessary? The recurse_path method is tested independently in another the unit test named `test_recursive_path_option`. If you really think it\u0027s necessary despite that I\u0027m willing to add another unit test, but I know there is at least one patch in review by Darragh Bailey that modifies `recurse_path`.",
+      "parentUuid": "baa201ad_0299931f",
       "revId": "d5fb726f6c49b9e9e9287856ec01f8d38389bbee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
