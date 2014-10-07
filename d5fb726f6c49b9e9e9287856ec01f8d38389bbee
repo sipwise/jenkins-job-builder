@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_ff66e828",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-07T17:48:00Z",
+      "side": 1,
+      "message": "on windows the delimiter is a \u0027;\u0027 and i think your implementation handles that so maybe just \u0027take a list of paths\u0027?",
+      "revId": "d5fb726f6c49b9e9e9287856ec01f8d38389bbee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_f550c70c",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-07T17:48:00Z",
+      "side": 1,
+      "message": "I believe this will place the path on the list in reverse order.  I\u0027m thinking that it would be better if the dirs are placed in the path in it\u0027s hierarchical order?\n\nfor example if the path is \u0027/foo/bar\u0027 wouldn\u0027t we want \u0027path\u003d/foo:/foo/bar\u0027 instead of \u0027path\u003d/foo/bar:/foo\u0027 ?",
+      "revId": "d5fb726f6c49b9e9e9287856ec01f8d38389bbee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_0299931f",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-07T17:48:00Z",
+      "side": 1,
+      "message": "This is testing the default recursive\u003dFalse path, so would it be possible to test the recursive\u003dTrue path as well?",
+      "revId": "d5fb726f6c49b9e9e9287856ec01f8d38389bbee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
