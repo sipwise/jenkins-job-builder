@@ -16,6 +16,24 @@
       "revId": "550f7547e3dc1dcad7ec3d67fdcbaf6261c93760",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_565c274b",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 4325
+      },
+      "writtenOn": "2014-10-08T11:47:18Z",
+      "side": 1,
+      "message": "That\u0027s true. The version is detected by pbr from the git tag. I have the code installed using \n\n pip install --user -e .\n\nand apparently the latest tag that my patch is depening on is 0.7.0.\n\nThe question is, what is the next future version?",
+      "parentUuid": "baa201ad_566b471d",
+      "revId": "550f7547e3dc1dcad7ec3d67fdcbaf6261c93760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
