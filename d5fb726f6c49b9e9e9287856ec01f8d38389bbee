@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_dfaf557b",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-08T05:35:04Z",
+      "side": 1,
+      "message": "Sorry I should have put my initial comment in the do_recursive path but yeah, I am referring to the latter case.  I might be wrong about the resulting order however it would still be nice to have a test case for it :)",
+      "parentUuid": "baa201ad_7875ae62",
+      "revId": "d5fb726f6c49b9e9e9287856ec01f8d38389bbee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_0299931f",
         "filename": "tests/cmd/test_cmd.py",
         "patchSetId": 5
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "It didn\u0027t seem necessary? The recurse_path method is tested independently in another the unit test named `test_recursive_path_option`. If you really think it\u0027s necessary despite that I\u0027m willing to add another unit test, but I know there is at least one patch in review by Darragh Bailey that modifies `recurse_path`.",
       "parentUuid": "baa201ad_0299931f",
+      "revId": "d5fb726f6c49b9e9e9287856ec01f8d38389bbee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_3f8781b6",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-08T05:35:04Z",
+      "side": 1,
+      "message": "ahh, thanks for pointing out the \u0027test_recursive_path_option\u0027, I didn\u0027t notice that one.  \n\nSo it seems like recursive \u0026 multi-path are 2 different features and here is the coverage I see:\n* recursive\u003dFalse \u0026 single path \u003d\u003e this is the default\n* recursive\u003dFalse \u0026 multiple paths \u003d\u003e covered by test_multi_path\n* recursive\u003dTrue \u0026 single path \u003d\u003e covered by test_recursive_path\n* recursive\u003dTrue \u0026 multiple paths \u003d\u003e ??",
+      "parentUuid": "baa201ad_049fdbb5",
       "revId": "d5fb726f6c49b9e9e9287856ec01f8d38389bbee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
