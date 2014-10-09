@@ -11,12 +11,12 @@ from jenkins_jobs import cmd
 # attempting to create the cache directory multiple times as the tests
 # are run in parallel.  Stub out the CacheStorage to ensure that each
 # test can safely create the cache directory without risk of interference.
-@mock.patch('jenkins_jobs.builder.CacheStorage', mock.MagicMock)
 class CmdTests(testtools.TestCase):
 
     fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
     parser = cmd.create_parser()
 
+    @mock.patch('jenkins_jobs.builder.CacheStorage', mock.MagicMock)
     def test_with_empty_args(self):
         """
         User passes no args, should fail with SystemExit
@@ -24,6 +24,7 @@ class CmdTests(testtools.TestCase):
         with mock.patch('sys.stderr'):
             self.assertRaises(SystemExit, self.parser.parse_args, [])
 
+    @mock.patch('jenkins_jobs.builder.CacheStorage', mock.MagicMock)
     def test_non_existing_config_dir(self):
         """
         Run test mode and pass a non-existing configuration directory
@@ -33,6 +34,7 @@ class CmdTests(testtools.TestCase):
         config.readfp(cStringIO.StringIO(cmd.DEFAULT_CONF))
         self.assertRaises(IOError, cmd.execute, args, config)
 
+    @mock.patch('jenkins_jobs.builder.CacheStorage', mock.MagicMock)
     def test_non_existing_config_file(self):
         """
         Run test mode and pass a non-existing configuration file
@@ -42,6 +44,7 @@ class CmdTests(testtools.TestCase):
         config.readfp(cStringIO.StringIO(cmd.DEFAULT_CONF))
         self.assertRaises(IOError, cmd.execute, args, config)
 
+    @mock.patch('jenkins_jobs.builder.CacheStorage', mock.MagicMock)
     def test_non_existing_job(self):
         """
         Run test mode and pass a non-existing job name
@@ -56,6 +59,7 @@ class CmdTests(testtools.TestCase):
         config.readfp(cStringIO.StringIO(cmd.DEFAULT_CONF))
         cmd.execute(args, config)   # probably better to fail here
 
+    @mock.patch('jenkins_jobs.builder.CacheStorage', mock.MagicMock)
     def test_valid_job(self):
         """
         Run test mode and pass a valid job name
@@ -69,6 +73,7 @@ class CmdTests(testtools.TestCase):
         config.readfp(cStringIO.StringIO(cmd.DEFAULT_CONF))
         cmd.execute(args, config)   # probably better to fail here
 
+    @mock.patch('jenkins_jobs.builder.CacheStorage', mock.MagicMock)
     def test_console_output(self):
         """
         Run test mode and verify that resulting XML gets sent to the console.
@@ -84,6 +89,7 @@ class CmdTests(testtools.TestCase):
                                           'utf-8').read()
         self.assertEqual(console_out.getvalue(), xml_content)
 
+    @mock.patch('jenkins_jobs.builder.CacheStorage', mock.MagicMock)
     def test_config_with_test(self):
         """
         Run test mode and pass a config file
@@ -99,6 +105,7 @@ class CmdTests(testtools.TestCase):
         self.assertEqual(config.get('jenkins', 'url'),
                          "http://test-jenkins.with.non.default.url:8080/")
 
+    @mock.patch('jenkins_jobs.builder.CacheStorage', mock.MagicMock)
     @mock.patch('jenkins_jobs.cmd.Builder.update_job')
     @mock.patch('jenkins_jobs.cmd.os.path.isdir')
     @mock.patch('jenkins_jobs.cmd.os.walk')
@@ -132,3 +139,29 @@ class CmdTests(testtools.TestCase):
         cmd.execute(args, config)   # probably better to fail here
 
         update_job_mock.assert_called_with(paths, [], output=args.output_dir)
+
+    @mock.patch('jenkins_jobs.builder.CacheStorage.is_cached')
+    @mock.patch('jenkins_jobs.builder.Jenkins.delete_job')
+    def test_delete_single_job(self, delete_job_mock, is_cached_mock):
+        """
+        Test handling the deletion of a single jenkins job.
+        """
+
+        is_cached_mock.return_value = False
+        args = self.parser.parse_args(['delete', 'test_job'])
+        config = ConfigParser.ConfigParser()
+        config.readfp(cStringIO.StringIO(cmd.DEFAULT_CONF))
+        cmd.execute(args, config)  # passes if executed without error
+
+    @mock.patch('jenkins_jobs.builder.CacheStorage.is_cached')
+    @mock.patch('jenkins_jobs.builder.Jenkins.delete_job')
+    def test_delete_multiple_jobs(self, delete_job_mock, is_cached_mock):
+        """
+        Test handling the deletion of multiple jenkins jobs.
+        """
+
+        is_cached_mock.return_value = False
+        args = self.parser.parse_args(['delete', 'test_job1', 'test_job2'])
+        config = ConfigParser.ConfigParser()
+        config.readfp(cStringIO.StringIO(cmd.DEFAULT_CONF))
+        cmd.execute(args, config)  # passes if executed without error
