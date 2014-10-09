@@ -4,6 +4,8 @@
         <hudson.tasks.ArtifactArchiver>
             <artifacts>*.tar.gz</artifacts>
             <latestOnly>false</latestOnly>
+            <onlyIfSuccessful>true</onlyIfSuccessful>
+            <fingerprint>true</fingerprint>
             <allowEmptyArchive>true</allowEmptyArchive>
         </hudson.tasks.ArtifactArchiver>
     </publishers>
