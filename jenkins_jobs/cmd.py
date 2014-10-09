@@ -198,7 +198,7 @@ def execute(options, config):
             or config.getboolean('job_builder', 'recursive')) and \
                 os.path.isdir(options.path):
             options.path = recurse_path(options.path)
-        else:
+        elif options.path is not None:
             options.path = [options.path]
 
     if options.command == 'delete':
