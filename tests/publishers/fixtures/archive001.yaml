@@ -2,3 +2,5 @@ publishers:
   - archive:
       artifacts: '*.tar.gz'
       allow-empty: 'true'
+      only-successful: 'true'
+      fingerprint: 'true'

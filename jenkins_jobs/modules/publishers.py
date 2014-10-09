@@ -43,6 +43,8 @@ def archive(parser, xml_parent, data):
     :arg str excludes: path specifier for artifacts to exclude
     :arg bool latest-only: only keep the artifacts from the latest
       successful build
+    :arg bool only-successful: archive artifacts only if build is successful
+    :arg bool fingerprint: record artifacts fingerprint
     :arg bool allow-empty:  pass the build if no artifacts are
       found (default false)
 
@@ -70,10 +72,18 @@ def archive(parser, xml_parent, data):
     else:
         latest.text = 'false'
 
+    if 'only-successful' in data:
+        only_successful = XML.SubElement(archiver, 'onlyIfSuccessful')
+        only_successful.text = str(data.get('only-successful')).lower()
+
+    if 'fingerprint' in data:
+        fingerprint = XML.SubElement(archiver, 'fingerprint')
+        fingerprint.text = str(data.get('fingerprint')).lower()
+
     if 'allow-empty' in data:
         empty = XML.SubElement(archiver, 'allowEmptyArchive')
         # Default behavior is to fail the build.
-        empty.text = str(data.get('allow-empty', False)).lower()
+        empty.text = str(data.get('allow-empty')).lower()
 
 
 def blame_upstream(parser, xml_parent, data):
