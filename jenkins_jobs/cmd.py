@@ -193,13 +193,14 @@ def execute(options, config):
                     "Reading configuration from STDIN. Press %s to end input.",
                     key)
 
-        # expand or convert options.path to a list
-        if (getattr(options, 'recursive', False)
-            or config.getboolean('job_builder', 'recursive')) and \
-                os.path.isdir(options.path):
-            options.path = recurse_path(options.path)
-        else:
-            options.path = [options.path]
+        # expand or convert options.path to a lis
+        if options.path is not None:
+          if (getattr(options, 'recursive', False)
+              or config.getboolean('job_builder', 'recursive')) and \
+                  os.path.isdir(options.path):
+              options.path = recurse_path(options.path)
+          else:
+              options.path = [options.path]
 
     if options.command == 'delete':
         for job in options.name:

@@ -132,3 +132,39 @@ class CmdTests(testtools.TestCase):
         cmd.execute(args, config)   # probably better to fail here
 
         update_job_mock.assert_called_with(paths, [], output=args.output_dir)
+
+
+# Tests for JJB delete command.
+# These tests are in a separate class because the CacheStorage cannot be
+# completely mocked out for these tests to work.
+class CmdTestsDelete(testtools.TestCase):
+
+    fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
+    parser = cmd.create_parser()
+
+    @mock.patch('jenkins_jobs.builder.CacheStorage.is_cached')
+    @mock.patch('jenkins_jobs.cmd.Builder.delete_job')
+    def test_delete_single_job(self, delete_job_mock, is_cached_mock):
+        """
+        Test handling the deletion of a single jenkins job.
+        """
+
+        is_cached_mock.return_value = False
+        args = self.parser.parse_args(['delete', 'test_job'])
+        config = ConfigParser.ConfigParser()
+        config.readfp(cStringIO.StringIO(cmd.DEFAULT_CONF))
+        cmd.execute(args, config)  # passes if executed without error
+
+    @mock.patch('jenkins_jobs.builder.CacheStorage.is_cached')
+    @mock.patch('jenkins_jobs.cmd.Builder.delete_job')
+    def test_delete_multiple_jobs(self, delete_job_mock, is_cached_mock):
+        """
+        Test handling the deletion of multiple jenkins jobs.
+        """
+
+        is_cached_mock.return_value = False
+        args = self.parser.parse_args(['delete', 'test_job1', 'test_job2'])
+        config = ConfigParser.ConfigParser()
+        config.readfp(cStringIO.StringIO(cmd.DEFAULT_CONF))
+        cmd.execute(args, config)  # passes if executed without error
+
