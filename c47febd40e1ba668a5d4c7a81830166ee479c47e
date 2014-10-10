@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_4c1ff0b7",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6039
+      },
+      "writtenOn": "2014-10-10T18:12:05Z",
+      "side": 1,
+      "message": "We don\u0027t need to pass a default value to .get() since we have already checked for the key\u0027s existence.",
+      "revId": "c47febd40e1ba668a5d4c7a81830166ee479c47e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
