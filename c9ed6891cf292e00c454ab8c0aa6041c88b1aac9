@@ -34,6 +34,24 @@
       "revId": "c9ed6891cf292e00c454ab8c0aa6041c88b1aac9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_2a499a8b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2406,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-12T14:44:14Z",
+      "side": 1,
+      "message": "Ahh.  I didn\u0027t notice that there could be valid keys.  Probably just be more trouble than it\u0027s worth in this case.",
+      "parentUuid": "baa201ad_24a1dcf8",
+      "revId": "c9ed6891cf292e00c454ab8c0aa6041c88b1aac9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
