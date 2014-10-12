@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_0a35b645",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-12T13:18:25Z",
+      "side": 1,
+      "message": "could you please document that only-successful, fingerprint and allow-empty are optional params?",
+      "revId": "b1f532cb71f04b257d7f9078992759c380fd5001",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
