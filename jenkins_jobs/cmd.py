@@ -20,6 +20,7 @@ import os
 import platform
 import sys
 import cStringIO
+import jenkins_jobs.version
 
 from jenkins_jobs.builder import Builder
 from jenkins_jobs.errors import JenkinsJobsException
@@ -99,6 +100,9 @@ def create_parser():
     parser.add_argument(
         '--flush-cache', action='store_true', dest='flush_cache',
         default=False, help='flush all the cache entries before updating')
+    parser.add_argument('--version', dest='version', action='version',
+                        version=version(),
+                        help='show version')
 
     return parser
 
@@ -219,6 +223,12 @@ def execute(options, config):
     elif options.command == 'test':
         builder.update_job(options.path, options.name,
                            output=options.output_dir)
+
+
+def version():
+    return "Jenkins Job Builder version: %s" % \
+        jenkins_jobs.version.version_info.version_string()
+
 
 if __name__ == '__main__':
     sys.path.insert(0, '.')
