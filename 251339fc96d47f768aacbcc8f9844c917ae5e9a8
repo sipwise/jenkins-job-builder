@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_6a22c202",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-12T14:33:53Z",
+      "side": 1,
+      "message": "please use newline at 70 chars.",
+      "revId": "251339fc96d47f768aacbcc8f9844c917ae5e9a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_2ad6fac5",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3757,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-12T14:33:53Z",
+      "side": 1,
+      "message": "I think this is the first time i\u0027ve seen the use of a table to document sub params,  really like it :)",
+      "revId": "251339fc96d47f768aacbcc8f9844c917ae5e9a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_8a4d26c7",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3808,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-12T14:33:53Z",
+      "side": 1,
+      "message": "I think it would be helpful to throw JenkinsJobsException if user specified an invalid conditional-kind.",
+      "revId": "251339fc96d47f768aacbcc8f9844c917ae5e9a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_ea995220",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3907,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-12T14:33:53Z",
+      "side": 1,
+      "message": "I think it would be helpful to check that the user specified a valid evaluation.",
+      "revId": "251339fc96d47f768aacbcc8f9844c917ae5e9a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_0a9f7604",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3908,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-12T14:33:53Z",
+      "side": 1,
+      "message": "why not just use the key from the evaluation_classes dict for the default?",
+      "revId": "251339fc96d47f768aacbcc8f9844c917ae5e9a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
