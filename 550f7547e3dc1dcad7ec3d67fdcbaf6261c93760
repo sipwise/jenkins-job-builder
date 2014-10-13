@@ -34,6 +34,24 @@
       "revId": "550f7547e3dc1dcad7ec3d67fdcbaf6261c93760",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_c871f778",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-13T22:04:48Z",
+      "side": 1,
+      "message": "You can look up past tags here: http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/refs/\n\nTarget for next tag is most likely 1.0.0",
+      "parentUuid": "baa201ad_565c274b",
+      "revId": "550f7547e3dc1dcad7ec3d67fdcbaf6261c93760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
