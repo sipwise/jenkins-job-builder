@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_6082d001",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-10-13T15:51:25Z",
+      "side": 1,
+      "message": "I\u0027d prefer this look something like:\n\ndef recurse_path(root, excludes\u003dNone):\n    if excludes is None:\n        excludes \u003d []\n\nI\u0027m fairly certain it won\u0027t make a huge difference in this case because I can\u0027t imagine why we would ever mutate the value of `excludes` in this function. However, as far as python programming practices go I think this would set a bad example for impressionable new pythonistas who don\u0027t understand the issues surrounding mutable default arguments.\n\nFor reference: http://docs.python-guide.org/en/latest/writing/gotchas/",
+      "revId": "d0f2e5e964a777f5840004b5ae56402b6dcd5515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_60a57003",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-10-13T15:51:25Z",
+      "side": 1,
+      "message": "This should probably split on `os.pathsep`.",
+      "revId": "d0f2e5e964a777f5840004b5ae56402b6dcd5515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_e076c005",
+        "filename": "tests/cmd/test_recursive.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-10-13T15:51:25Z",
+      "side": 1,
+      "message": "I don\u0027t see os.listdir used in jenkins_jobs.cmd.recurse_path. Is that the function used by os.walk to get directories?",
+      "revId": "d0f2e5e964a777f5840004b5ae56402b6dcd5515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
