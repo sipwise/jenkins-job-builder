@@ -16,6 +16,24 @@
       "revId": "60d71cce1e3cb293f162e9ef521f113b299e252d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_b57b0d28",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3909,
+      "author": {
+        "id": 13519
+      },
+      "writtenOn": "2014-10-13T20:33:47Z",
+      "side": 1,
+      "message": "No problem!\n\nI can change this back to the way it was in patch set 2.  The only problem with that implementation is it doesn\u0027t handle the case where someone enters a value for \u0027on-evaluation-failure\u0027 that is not in the evaluation_classes dict  very well.  For example, if someone enters, \u0027on-evaluation-failure: do-nothing\u0027, the error it throws is something like this:\n\nKeyError: \u0027do-nothing\u0027\n\nWith patch set 3, it would look something like:\n\njenkins_jobs.errors.JenkinsJobsException: on-evaluation-failure value specified is not valid.  Must be one of: [\u0027fail\u0027, \u0027run-and-mark-unstable\u0027, \u0027run\u0027, \u0027mark-unstable\u0027, \u0027dont-run\u0027]\n\nIf the former error message from patch set 2 is acceptable, I\u0027ll gladly change it back.\n\nLet me know your thoughts.",
+      "parentUuid": "baa201ad_372c854a",
+      "revId": "60d71cce1e3cb293f162e9ef521f113b299e252d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
