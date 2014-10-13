@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_46bf9960",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3810,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-13T22:34:45Z",
+      "side": 1,
+      "message": "Think you can put the base value of the class \u0027org.jenkins_ci.plugins.run_condition\u0027 into a variable at the top of this function definition and reuse.\n\nGiven you do something similar later on for the loop at the end, it seems like it would be consistent to apply the same approach here.",
+      "revId": "c80821ecc358f9a0b38a15981608ec057920a87b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_a65da54a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3908,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-13T22:34:45Z",
+      "side": 1,
+      "message": "Any reason in putting these two definitions inside the for loop? I guess that python may optimize them to really be outside of the loop, but it seems like there would be no loss in readability in putting them outside explicitly.",
+      "revId": "c80821ecc358f9a0b38a15981608ec057920a87b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
