@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_255541c6",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-13T10:45:57Z",
+      "side": 1,
+      "message": "Maybe change this to \"getattr(options, \u0027path\u0027, False)\" since we should really skip this section unless path has been set to something that needs processing.",
+      "revId": "14b475da26d2b3d15dc518d36808bd03ddcf3a67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_85b98dcd",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-13T10:45:57Z",
+      "side": 1,
+      "message": "Think you meant to use:\n\n @mock.patch(\u0027jenkins_jobs.cmd.Builder.delete_job\u0027)\n\nAs mocking \u0027jenkins_jobs.builder.Jenkins.delete_job\u0027 isn\u0027t what gets called. You have to mock the instance imported into the cmd file.\n\nThat would remove the need for changing the CacheStorage mock at the top and applying it individually to each method.",
+      "revId": "14b475da26d2b3d15dc518d36808bd03ddcf3a67",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
