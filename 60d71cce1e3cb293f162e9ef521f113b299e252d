@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_372c854a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3909,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-13T19:33:22Z",
+      "side": 1,
+      "message": "sorry to be unclear, What I was suggesting is:\nevaluation_classes[cond_action.get(\u0027on-evaluation-failure\u0027, evaluation_class.keys()[0])\n\nNow that i see it, that\u0027s a really bad suggestion, Sorry :(\n\nI prefer the implementation in the last patch set for setting the default value here, it\u0027s the simplest and easiest to read.",
+      "revId": "60d71cce1e3cb293f162e9ef521f113b299e252d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
