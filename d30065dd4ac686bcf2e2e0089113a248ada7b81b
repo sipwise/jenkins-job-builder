@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_64a3b69e",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-13T23:05:54Z",
+      "side": 1,
+      "message": "Thinking there is still a benefit to entering the block started by the \"hasattr(options, \u0027path\u0027)\" test?\n\nNot a blocking concern, just thought that it would be better to avoid entering the entire block unless the path attribute wasn\u0027t None.",
+      "revId": "d30065dd4ac686bcf2e2e0089113a248ada7b81b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_44af9294",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-13T23:05:54Z",
+      "side": 1,
+      "message": "I believe the only reason that it looked like you couldn\u0027t completely mock out the CacheStorage object was due to the mistake with mocking the delete_job method on the Builder object.\n\nEssentially as long as you mock that method correctly, the only part of the CacheStorage object that gets touched is the initialization, which is why the mocking of the entire object was added.\n\nAlso probably a good idea anyway to avoid letting it do anything to the filesystem ;)",
+      "revId": "d30065dd4ac686bcf2e2e0089113a248ada7b81b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
