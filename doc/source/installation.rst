@@ -101,10 +101,6 @@ Builder by running ``jenkins-jobs``.  You won't be able to do anything
 useful just yet without a configuration which is discussed in the next
 section.
 
-Usage
-^^^^^
-.. program-output:: jenkins-jobs --help
-
 Test Mode
 ^^^^^^^^^
 Once you have a configuration defined, you can run the job builder in test mode.
@@ -144,10 +140,6 @@ Deleting Jobs
 ^^^^^^^^^^^^^
 Jenkins job builder supports deleting jobs from Jenkins.
 
-To delete all jobs at once::
-
-  jenkins-jobs delete-all
-
 To delete a specific job::
 
   jenkins-jobs delete Foo1
@@ -158,10 +150,23 @@ arguments after the command::
   jenkins-jobs delete Foo1 Foo2
 
 The ``update`` command contains a ``delete-old`` option to remove obsolete
-jobs.  Obsolete jobs are jobs which are not managed by JJB. To delete
-obsolete jobs run::
+jobs.  Obsolete jobs are *all* jobs not managed by JJB, even jobs which
+were *never* managed by JJB::
 
   jenkins-jobs update --delete-old /path/to/defs
+
+There is also a command to delete **all** jobs.
+**WARNING**: Use with caution::
+
+  jenkins-jobs delete-all
+
+Command Reference
+^^^^^^^^^^^^^^^^^
+.. program-output:: jenkins-jobs --help
+.. program-output:: jenkins-jobs test --help
+.. program-output:: jenkins-jobs update --help
+.. program-output:: jenkins-jobs delete-all --help
+.. program-output:: jenkins-jobs delete --help
 
 .. rubric:: Footnotes
 .. [#f1] The cache default location is at ``~/.cache/jenkins_jobs``, which
