@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_e3808a8d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3808,
+      "author": {
+        "id": 13519
+      },
+      "writtenOn": "2014-10-13T16:35:15Z",
+      "side": 1,
+      "message": "This has been addressed in Patch Set 3.  An exception will now be thrown if none of the condition-kind values match.",
+      "parentUuid": "baa201ad_8a4d26c7",
+      "revId": "251339fc96d47f768aacbcc8f9844c917ae5e9a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_ea995220",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -70,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_63449a74",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3907,
+      "author": {
+        "id": 13519
+      },
+      "writtenOn": "2014-10-13T16:35:15Z",
+      "side": 1,
+      "message": "This has been addresses in patch set 3.  An exception is now thrown if the specified evaluation value does not match a key in the evaluation_classes dict.",
+      "parentUuid": "baa201ad_ea995220",
+      "revId": "251339fc96d47f768aacbcc8f9844c917ae5e9a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_0a9f7604",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -81,6 +117,24 @@
       "writtenOn": "2014-10-12T14:33:53Z",
       "side": 1,
       "message": "why not just use the key from the evaluation_classes dict for the default?",
+      "revId": "251339fc96d47f768aacbcc8f9844c917ae5e9a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_2e027909",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3908,
+      "author": {
+        "id": 13519
+      },
+      "writtenOn": "2014-10-13T16:35:15Z",
+      "side": 1,
+      "message": "I tried to address this in patch set 3 by making the setting of the default evaluation_class more explicit.",
+      "parentUuid": "baa201ad_0a9f7604",
       "revId": "251339fc96d47f768aacbcc8f9844c917ae5e9a8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
