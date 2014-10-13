@@ -101,10 +101,6 @@ Builder by running ``jenkins-jobs``.  You won't be able to do anything
 useful just yet without a configuration which is discussed in the next
 section.
 
-Usage
-^^^^^
-.. program-output:: jenkins-jobs --help
-
 Test Mode
 ^^^^^^^^^
 Once you have a configuration defined, you can run the job builder in test mode.
@@ -163,6 +159,14 @@ There is also a command to delete **all** jobs.
 **WARNING**: Use with caution::
 
   jenkins-jobs delete-all
+
+Command Reference
+^^^^^^^^^^^^^^^^^
+.. program-output:: jenkins-jobs --help
+.. program-output:: jenkins-jobs test --help
+.. program-output:: jenkins-jobs update --help
+.. program-output:: jenkins-jobs delete-all --help
+.. program-output:: jenkins-jobs delete --help
 
 .. rubric:: Footnotes
 .. [#f1] The cache default location is at ``~/.cache/jenkins_jobs``, which
