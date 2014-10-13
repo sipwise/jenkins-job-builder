@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_084f74bf",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-13T12:10:00Z",
+      "side": 1,
+      "message": "should probably use the following to be compatible:\n\ntry:\n    from collections import OrderedDict\nexcept ImportError:\n    from ordereddict import OrderedDict",
+      "revId": "1daaaa920d32e5cf7c6a142cf9d56a5de243b98e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_48497cb6",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-13T12:10:00Z",
+      "side": 1,
+      "message": "best use \"data.items()\" to be compatible with both python 2 \u0026 3.",
+      "revId": "1daaaa920d32e5cf7c6a142cf9d56a5de243b98e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_68ee408d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-13T12:10:00Z",
+      "side": 1,
+      "message": "JenkinsJobsException is probably more appropriate.",
+      "revId": "1daaaa920d32e5cf7c6a142cf9d56a5de243b98e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_28fc383e",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-13T12:10:00Z",
+      "side": 1,
+      "message": "Use .items() to remain compatible with different versions of python.",
+      "revId": "1daaaa920d32e5cf7c6a142cf9d56a5de243b98e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_e35b31f4",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-13T12:10:00Z",
+      "side": 1,
+      "message": "I don\u0027t think basestring is python3 compatible, so it might be easier to just check if event has the attribute \u0027format\u0027 to determine if it should be treated like a string or not.",
+      "revId": "1daaaa920d32e5cf7c6a142cf9d56a5de243b98e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
