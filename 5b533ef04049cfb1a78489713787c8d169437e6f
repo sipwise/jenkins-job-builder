@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_c77c4775",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-14T18:18:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_cbbe3400",
+      "revId": "5b533ef04049cfb1a78489713787c8d169437e6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_4b3a4499",
         "filename": "doc/source/installation.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-10-13T21:33:52Z",
       "side": 1,
       "message": "Similarly, may want to call out that this really means *all* jobs not managed by JJB, not just jobs which were managed by JJB at one point in the past and later became obsolete, but even jobs which were *never* managed by JJB.",
+      "revId": "5b533ef04049cfb1a78489713787c8d169437e6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_e77f8b64",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-14T18:18:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_4b3a4499",
       "revId": "5b533ef04049cfb1a78489713787c8d169437e6f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
