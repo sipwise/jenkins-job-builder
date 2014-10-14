@@ -3433,7 +3433,7 @@ def artifact_deployer(parser, xml_parent, data):
                               'org.jenkinsci.plugins.artifactdeployer.'
                               'ArtifactDeployerPublisher')
     if data is None or 'entries' not in data:
-        raise Exception('entries field is missing')
+        raise JenkinsJobsException('entries field is missing')
     elif data.get('entries', None) is None:
         entries = XML.SubElement(deployer, 'entries', {'class': 'empty-list'})
     else:
@@ -3461,6 +3461,79 @@ def artifact_deployer(parser, xml_parent, data):
                 entry.get('groovy-script')
     deploy_if_fail = str(data.get('deploy-if-fail', False)).lower()
     XML.SubElement(deployer, 'deployEvenBuildFail').text = deploy_if_fail
+
+
+def s3(parser, xml_parent, data):
+    """yaml: s3
+    Upload build artifacts to Amazon S3.
+
+    Requires the Jenkins `S3 plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/S3+Plugin>`_
+
+    :arg str s3-profile: Globally-defined S3 profile to use
+    :arg list entries:
+      :entries:
+        * **destination-bucket** (`str`) - Destination S3 bucket
+        * **source-files** (`str`) - Source files (Ant glob syntax)
+        * **storage-class** (`str`) - S3 storage class; one of "STANDARD"
+          or "REDUCED_REDUNDANCY"
+        * **bucket-region** (`str`) - S3 bucket region (capitalized with
+          underscores)
+        * **upload-on-failure** (`bool`) - Upload files even if the build
+          failed (Default: False)
+        * **upload-from-slave** (`bool`) - Perform the upload directly from
+          the Jenkins slave rather than the master node. (Default: False)
+        * **managed-artifacts** (`bool`) - Let Jenkins fully manage the
+          published artifacts, similar to when artifacts are published to
+          the Jenkins master. (Default: False)
+    :arg list metadata-tags:
+      :metadata-tags:
+        * **key** Metadata key for files from this build. It will be
+          prefixed by "x-amz-meta-" when uploaded to S3. Can contain macros
+          (e.g. environment variables).
+        * **value** Metadata value associated with the key. Can contain macros.
+
+    Example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/s3001.yaml
+       :language: yaml
+    """
+    deployer = XML.SubElement(xml_parent,
+                              'hudson.plugins.s3.S3BucketPublisher')
+    if data is None or not data.get('entries'):
+        raise JenkinsJobsException('No filesets defined.')
+
+    XML.SubElement(deployer, 'profileName').text = data.get('s3-profile')
+
+    entries = XML.SubElement(deployer, 'entries')
+
+    for entry in data.get('entries'):
+        fileset = XML.SubElement(entries, 'hudson.plugins.s3.Entry')
+
+        # xml keys -> yaml keys
+        settings = [('bucket', 'destination-bucket', ''),
+                    ('sourceFile', 'source-files', ''),
+                    ('storageClass', 'storage-class', ''),
+                    ('selectedRegion', 'bucket-region', ''),
+                    ('noUploadOnFailure', 'upload-on-failure', False),
+                    ('uploadFromSlave', 'upload-from-slave', False),
+                    ('managedArtifacts', 'managed-artifacts', False)]
+
+        for xml_key, yaml_key, default in settings:
+            xml_config = XML.SubElement(fileset, xml_key)
+            config_value = entry.get(yaml_key, default)
+            if xml_key == 'noUploadOnFailure':
+                xml_config.text = str(not config_value).lower()
+            elif isinstance(default, bool):
+                xml_config.text = str(config_value).lower()
+            else:
+                xml_config.text = str(config_value)
+
+    metadata = XML.SubElement(deployer, 'userMetadata')
+    for tag in data.get('metadata-tags', []):
+        pair = XML.SubElement(metadata, 'hudson.plugins.s3.MetadataPair')
+        XML.SubElement(pair, 'key').text = tag.get('key')
+        XML.SubElement(pair, 'value').text = tag.get('value')
 
 
 def ruby_metrics(parser, xml_parent, data):
