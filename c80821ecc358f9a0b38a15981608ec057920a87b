@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_76b98f14",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3810,
+      "author": {
+        "id": 13519
+      },
+      "writtenOn": "2014-10-14T16:48:57Z",
+      "side": 1,
+      "message": "Thanks for the suggestion!  This will be fixed in the next patch set.",
+      "parentUuid": "baa201ad_46bf9960",
+      "revId": "c80821ecc358f9a0b38a15981608ec057920a87b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_a65da54a",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-10-13T22:34:45Z",
       "side": 1,
       "message": "Any reason in putting these two definitions inside the for loop? I guess that python may optimize them to really be outside of the loop, but it seems like there would be no loss in readability in putting them outside explicitly.",
+      "revId": "c80821ecc358f9a0b38a15981608ec057920a87b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_965ef3e7",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3908,
+      "author": {
+        "id": 13519
+      },
+      "writtenOn": "2014-10-14T16:48:57Z",
+      "side": 1,
+      "message": "I agree these two definitions do not need to be inside the for loop.  They will be moved out in the next patch set.  Thanks for the suggestion!",
+      "parentUuid": "baa201ad_a65da54a",
       "revId": "c80821ecc358f9a0b38a15981608ec057920a87b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
