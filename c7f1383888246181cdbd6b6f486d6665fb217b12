@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_89d5f1e6",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-14T21:19:46Z",
+      "side": 1,
+      "message": "nit: how about rewording to let user know that the parser can accept a list of paths?",
+      "revId": "c7f1383888246181cdbd6b6f486d6665fb217b12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_e9fbdd78",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-14T21:19:46Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "c7f1383888246181cdbd6b6f486d6665fb217b12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_a91395b6",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-14T21:19:46Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "c7f1383888246181cdbd6b6f486d6665fb217b12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
