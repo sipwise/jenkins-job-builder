@@ -179,15 +179,24 @@ class YamlParser(object):
             return job
         return self.applyDefaults(job)
 
-    def applyDefaults(self, data):
-        whichdefaults = data.get('defaults', 'global')
-        defaults = self.data.get('defaults', {}).get(whichdefaults, {})
-        if defaults == {} and whichdefaults != 'global':
-            raise JenkinsJobsException("Unknown defaults set: '{0}'"
-                                       .format(whichdefaults))
+    def applyDefaults(self, jobbish):
+        whichdefaults = jobbish.get('defaults', 'global')
+
+        if not isinstance(whichdefaults, list):
+            whichdefaults = [whichdefaults]
+
+        all_defaults = []
+        for whichdefault in whichdefaults:
+            defaults = self.data.get('defaults', {}).get(whichdefault, {})
+            if defaults == {} and whichdefaults != 'global':
+                raise JenkinsJobsException("Unknown defaults set: '{0}'"
+                                           .format(whichdefaults))
+            all_defaults.append(defaults)
+
         newdata = {}
-        newdata.update(defaults)
-        newdata.update(data)
+        for defaults in all_defaults:
+            newdata.update(defaults)
+        newdata.update(jobbish)
         return newdata
 
     def generateXML(self, jobs_filter=None):
