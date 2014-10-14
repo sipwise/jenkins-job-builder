@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_c618c6d5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-14T20:43:38Z",
+      "side": 1,
+      "message": "should be \u0027- job-template:\u0027",
+      "revId": "0ff2eaf655863a4ff510ce2622072624fec2fe20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_e6806ac1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-14T20:43:38Z",
+      "side": 1,
+      "message": "According to the current docs, \u0027global\u0027 defaults will get set for all projects.  So shouldn\u0027t \u0027global\u0027 just be implicitly here?",
+      "revId": "0ff2eaf655863a4ff510ce2622072624fec2fe20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
