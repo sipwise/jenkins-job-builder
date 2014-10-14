@@ -3463,6 +3463,69 @@ def artifact_deployer(parser, xml_parent, data):
     XML.SubElement(deployer, 'deployEvenBuildFail').text = deploy_if_fail
 
 
+def s3(parser, xml_parent, data):
+    """yaml: s3
+    Upload build artifacts to Amazon S3.
+
+    Requires the Jenkins `S3 plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/S3+Plugin>`_
+
+    :arg str s3-profile: Globally-defined S3 profile to use
+    :arg list entries:
+      :entries:
+        * **destination-bucket** (`str`) - Destination S3 bucket
+        * **source-files** (`str`) - Source files (Ant glob syntax)
+        * **storage-class** (`str`) - S3 storage class; one of "STANDARD"
+          or "REDUCED_REDUNDANCY"
+        * **bucket-region** (`str`) - S3 bucket region (capitalized with
+          underscores)
+        * **upload-on-failure** (`bool`) - Upload files even if the build
+          failed (Default: False)
+        * **upload-from-slave** (`bool`) - Perform the upload directly from
+          the Jenkins slave rather than the master node. (Default: False)
+        * **managed-artifacts** (`bool`) - Let Jenkins fully manage the
+          published artifacts, similar to when artifacts are published to
+          the Jenkins master.
+    :arg list metadata-tags:
+      :metadata-tags:
+        * **key** Metadata key for files from this build. It will be
+          prefixed by "x-amz-meta-" when uploaded to S3. Can contain macros
+          (e.g. environment variables).
+        * **value** Metadata value associated with the key. Can contain macros.
+
+    Example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/s3001.yaml
+    """
+    deployer = XML.SubElement(xml_parent,
+                              'hudson.plugins.s3.S3BucketPublisher')
+    if data is None or not data.get('entries'):
+        raise Exception('No filesets defined.')
+
+    XML.SubElement(deployer, 'profileName').text = data.get('s3-profile')
+    entries = XML.SubElement(deployer, 'entries')
+    for entry in data.get('entries'):
+        fileset = XML.SubElement(entries, 'hudson.plugins.s3.Entry')
+
+        for xml_key, yaml_key in [('bucket', 'destination-bucket'),
+                                  ('sourceFile', 'source-files'),
+                                  ('storageClass', 'storage-class'),
+                                  ('selectedRegion', 'bucket-region')]:
+            XML.SubElement(fileset, xml_key).text = entry.get(yaml_key)
+        XML.SubElement(fileset, 'noUploadOnFailure').text = str(
+            not entry.get('upload-on-failure', True)).lower()
+        XML.SubElement(fileset, 'uploadFromSlave').text = str(
+            entry.get('upload-from-slave', False)).lower()
+        XML.SubElement(fileset, 'managedArtifacts').text = str(
+            entry.get('managed-artifacts', False)).lower()
+
+    metadata = XML.SubElement(deployer, 'userMetadata')
+    for tag in data.get('metadata-tags', []):
+        pair = XML.SubElement(metadata, 'hudson.plugins.s3.MetadataPair')
+        XML.SubElement(pair, 'key').text = tag.get('key')
+        XML.SubElement(pair, 'value').text = tag.get('value')
+
+
 def ruby_metrics(parser, xml_parent, data):
     """yaml: ruby-metrics
     Rcov plugin parses rcov html report files and
