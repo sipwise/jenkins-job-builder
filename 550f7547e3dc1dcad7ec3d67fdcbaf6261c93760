@@ -52,6 +52,24 @@
       "revId": "550f7547e3dc1dcad7ec3d67fdcbaf6261c93760",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_8124d60d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 4325
+      },
+      "writtenOn": "2014-10-15T12:12:41Z",
+      "side": 1,
+      "message": "Well, I was joking wit psedlak about is it going to be 1.0.0 or 0.10.0?",
+      "parentUuid": "baa201ad_c871f778",
+      "revId": "550f7547e3dc1dcad7ec3d67fdcbaf6261c93760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
