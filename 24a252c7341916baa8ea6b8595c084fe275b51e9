@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_386fb1fd",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-16T17:01:19Z",
+      "side": 1,
+      "message": "So as mentioned before this is exposed as part of the API, since it\u0027s the only way of getting to the jobs. There is no alternative except to directly access the data members if you wish to get the resultant XML.\n\nExample is line 79 of https://github.com/stackforge/turbo-hipster/blob/master/turbo_hipster/task_plugins/jjb_runner/task.py",
+      "revId": "24a252c7341916baa8ea6b8595c084fe275b51e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_bb163b47",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-16T17:01:19Z",
+      "side": 1,
+      "message": "I mentioned before my concern about not having generateXML() call expandYaml() by default. This will break turbo-hipster see https://github.com/stackforge/turbo-hipster/blob/master/turbo_hipster/task_plugins/jjb_runner/task.py line 74.",
+      "revId": "24a252c7341916baa8ea6b8595c084fe275b51e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
