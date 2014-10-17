@@ -34,6 +34,24 @@
       "revId": "4a219171458ac0261325803149108264edcc2ead",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_7318681e",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 12100
+      },
+      "writtenOn": "2014-10-17T09:50:42Z",
+      "side": 1,
+      "message": "take a look at tests/builders/fixtures/inject.* which has xml and yaml files that test that each parameter in the yaml makes it through to the xml correctly",
+      "parentUuid": "baa201ad_b30730c9",
+      "revId": "4a219171458ac0261325803149108264edcc2ead",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
