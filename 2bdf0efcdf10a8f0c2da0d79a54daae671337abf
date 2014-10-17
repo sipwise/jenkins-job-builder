@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_143c582e",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 13164
+      },
+      "writtenOn": "2014-10-17T18:20:32Z",
+      "side": 1,
+      "message": "Works for me",
+      "parentUuid": "baa201ad_96ebefa2",
+      "revId": "2bdf0efcdf10a8f0c2da0d79a54daae671337abf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_96420fa9",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-10-17T17:33:33Z",
       "side": 1,
       "message": "would it be possible to make this example and your test to target multiple nodes?  can you do something like \u0027node-label-foo || node-label-bar\u0027?",
+      "revId": "2bdf0efcdf10a8f0c2da0d79a54daae671337abf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_f440b4a6",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 13164
+      },
+      "writtenOn": "2014-10-17T18:20:32Z",
+      "side": 1,
+      "message": "Just verified and \u0027node-foo || node-bar\u0027 works great so I\u0027ll update the docs \u0026 push a new patch",
+      "parentUuid": "baa201ad_96420fa9",
       "revId": "2bdf0efcdf10a8f0c2da0d79a54daae671337abf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
