@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "baa201ad_80f00992",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-17T16:05:59Z",
+      "side": 1,
+      "message": "We like to keep commit msg commits to less than 80 chars.",
+      "revId": "9a363aafb5e9603d1b235d9fcd4939a68cc59274",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_80d9e923",
+        "filename": "doc/source/definition.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-17T16:05:59Z",
+      "side": 1,
+      "message": "maybe just change this to \u0027node: NodeLabel1 || NodeLabel2\u0027 ?",
+      "revId": "9a363aafb5e9603d1b235d9fcd4939a68cc59274",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_aa2dee90",
         "filename": "jenkins_jobs/modules/general.py",
         "patchSetId": 1
@@ -13,6 +47,24 @@
       "writtenOn": "2014-10-17T14:53:16Z",
       "side": 1,
       "message": "It seems that \u0027assigned-node\u0027 has the same functionality as the \u0027node\u0027. Though \u0027node\u0027 parameter is not documented in the docs it is supported in the code. Shouldn\u0027t we just change the docs?",
+      "revId": "9a363aafb5e9603d1b235d9fcd4939a68cc59274",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_80c2c931",
+        "filename": "jenkins_jobs/modules/general.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-17T16:05:59Z",
+      "side": 1,
+      "message": "Yes, Aleksandra is corret.  Fix is to just update the docs.   Wow!",
+      "parentUuid": "baa201ad_aa2dee90",
       "revId": "9a363aafb5e9603d1b235d9fcd4939a68cc59274",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
