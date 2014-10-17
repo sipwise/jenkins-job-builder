@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_b3ebb011",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-10-17T09:43:40Z",
+      "side": 1,
+      "message": "their",
+      "range": {
+        "startLine": 172,
+        "startChar": 39,
+        "endLine": 172,
+        "endChar": 43
+      },
+      "revId": "a2a96e814a7184e5fef44d3b5d3eb6a5c45f0178",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_d3ee7421",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-10-17T09:43:40Z",
+      "side": 1,
+      "message": "their",
+      "range": {
+        "startLine": 176,
+        "startChar": 39,
+        "endLine": 176,
+        "endChar": 43
+      },
+      "revId": "a2a96e814a7184e5fef44d3b5d3eb6a5c45f0178",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
