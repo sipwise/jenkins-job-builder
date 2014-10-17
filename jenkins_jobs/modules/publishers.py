@@ -161,6 +161,11 @@ def trigger_parameterized_builds(parser, xml_parent, data):
     <https://wiki.jenkins-ci.org/display/JENKINS/
     Parameterized+Trigger+Plugin>`_
 
+    Use of the `node-label-name` or `node-label` parameters
+    requires the Jenkins `NodeLabel Parameter Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/NodeLabel+Parameter+P
+    lugin>`_
+
     :arg str project: name of the job to trigger
     :arg str predefined-parameters: parameters to pass to the other
       job (optional)
@@ -174,6 +179,10 @@ def trigger_parameterized_builds(parser, xml_parent, data):
       if any of the files are not found in the workspace (default 'False')
     :arg str restrict-matrix-project: Filter that restricts the subset
         of the combinations that the downstream project will run (optional)
+    :arg str node-label-name: Specify the Name for the NodeLabel parameter.
+      (optional)
+    :arg str node-label: Specify the Node for the NodeLabel parameter.
+      (optional)
 
     Example::
 
@@ -189,6 +198,10 @@ def trigger_parameterized_builds(parser, xml_parent, data):
               predefined-parameters: foo=bar
               git-revision: true
               restrict-matrix-project: label=="x86"
+            - project: yet_another_job_2
+              node-label-name: foo
+            - project: yet_another_job_3
+              node-label: node-label-foo || node-label-bar
 
     """
     tbuilder = XML.SubElement(xml_parent,
@@ -205,7 +218,9 @@ def trigger_parameterized_builds(parser, xml_parent, data):
             or 'property-file' in project_def
             or 'current-parameters' in project_def
             or 'svn-revision' in project_def
-            or 'restrict-matrix-project' in project_def):
+            or 'restrict-matrix-project' in project_def
+            or 'node-label-name' in project_def
+            or 'node-label' in project_def):
 
             if 'predefined-parameters' in project_def:
                 params = XML.SubElement(tconfigs,
@@ -245,6 +260,19 @@ def trigger_parameterized_builds(parser, xml_parent, data):
                                         'matrix.MatrixSubsetBuildParameters')
                 XML.SubElement(subset, 'filter').text = \
                     project_def['restrict-matrix-project']
+            if 'node-label-name' in project_def or \
+               'node-label' in project_def:
+                params = XML.SubElement(tconfigs,
+                                        'org.jvnet.jenkins.plugins.'
+                                        'nodelabelparameter.'
+                                        'parameterizedtrigger.'
+                                        'NodeLabelBuildParameter')
+                name = XML.SubElement(params, 'name')
+                if 'node-label-name' in project_def:
+                    name.text = project_def['node-label-name']
+                label = XML.SubElement(params, 'nodeLabel')
+                if 'node-label' in project_def:
+                    label.text = project_def['node-label']
         else:
             tconfigs.set('class', 'java.util.Collections$EmptyList')
         projects = XML.SubElement(tconfig, 'projects')
