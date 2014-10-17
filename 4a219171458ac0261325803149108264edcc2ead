@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_f37a9875",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 12100
+      },
+      "writtenOn": "2014-10-17T09:42:52Z",
+      "side": 1,
+      "message": "Could you add these params to the test fixtures so they get tested",
+      "revId": "4a219171458ac0261325803149108264edcc2ead",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
