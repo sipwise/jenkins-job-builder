@@ -2,3 +2,4 @@ properties:
   - inject:
       keep-build-variables: true
       keep-system-variables: true
+      override-build-parameters: false
