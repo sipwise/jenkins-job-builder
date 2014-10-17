@@ -213,7 +213,7 @@ def throttle(parser, xml_parent, data):
 
 def inject(parser, xml_parent, data):
     """yaml: inject
-    Allows you to inject evironment variables into the build.
+    Allows you to inject environment variables into the build.
     Requires the Jenkins `Env Inject Plugin.
     <https://wiki.jenkins-ci.org/display/JENKINS/EnvInject+Plugin>`_
 
@@ -226,6 +226,8 @@ def inject(parser, xml_parent, data):
     :arg bool enabled: injection enabled (default true)
     :arg bool keep-system-variables: keep system variables (default true)
     :arg bool keep-build-variables: keep build variable (default true)
+    :arg bool override-build-parameters: override build parameters
+    (default false)
 
     Example::
 
@@ -256,6 +258,8 @@ def inject(parser, xml_parent, data):
         data.get('keep-system-variables', True)).lower()
     XML.SubElement(inject, 'keepBuildVariables').text = str(
         data.get('keep-build-variables', True)).lower()
+    XML.SubElement(inject, 'overrideBuildParameters').text = str(
+        data.get('override-build-parameters', False)).lower()
 
 
 def authenticated_build(parser, xml_parent, data):
