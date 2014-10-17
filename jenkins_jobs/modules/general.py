@@ -70,6 +70,8 @@ class General(jenkins_jobs.modules.base.Base):
                 XML.SubElement(xml, 'disabled').text = 'false'
         if 'display-name' in data:
             XML.SubElement(xml, 'displayName').text = data['display-name']
+        if 'assigned-node' in data:
+            XML.SubElement(xml, 'assignedNode').text = data['assigned-node']
         if data.get('block-downstream'):
             XML.SubElement(xml,
                            'blockBuildWhenDownstreamBuilding').text = 'true'
