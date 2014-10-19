@@ -23,9 +23,12 @@ Wrappers can alter the way the build is run as well as the build output.
 """
 
 import xml.etree.ElementTree as XML
+import logging
 import jenkins_jobs.modules.base
 from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.modules.builders import create_builders
+
+logger = logging.getLogger(__name__)
 
 
 def ci_skip(parser, xml_parent, data):
@@ -165,6 +168,54 @@ def timeout(parser, xml_parent, data):
 
     .. literalinclude:: /../../tests/wrappers/fixtures/timeout003.yaml
     """
+    version = data.get('version', None)
+    if version == "1.14":
+        return __timeout_114(parser, xml_parent, data)
+    else:
+        return __timeout(parser, xml_parent, data)
+
+
+def __timeout_114(parser, xml_parent, data):
+    prefix = 'hudson.plugins.build__timeout.'
+    strategy = data.get('type', 'absolute')
+
+    twrapper = XML.SubElement(xml_parent, prefix + 'BuildTimeoutWrapper')
+
+    if strategy == "absolute":
+        XML.SubElement(twrapper, 'timeoutMinutes').text = str(
+            data.get('timeout', 3))
+    elif strategy == "no-activity":
+        strategy_element = XML.SubElement(twrapper, 'strategy',
+                                          {'class':
+                                           "hudson.plugins.build_timeout."
+                                           "impl.NoActivityTimeOutStrategy"})
+        XML.SubElement(strategy_element, 'timeoutSecondsString').text = str(
+            data.get('timeout', 180))
+
+    timeout_env_var = data.get('timeout-var')
+    if timeout_env_var:
+        XML.SubElement(twrapper, 'timeoutEnvVar').text = str(timeout_env_var)
+
+    actions = data.get('actions', [])
+    if len(actions) > 0:
+        operation_list = XML.SubElement(twrapper, 'operationList')
+
+    for action in actions:
+        fmt_str = prefix + "operations.{0}Operation"
+        if action == "abort":
+            XML.SubElement(operation_list, fmt_str.format("Abort"))
+        elif action == "fail":
+            XML.SubElement(operation_list, fmt_str.format("Fail"))
+        elif action == "write-description":
+            XML.SubElement(operation_list,
+                           fmt_str.format("WriteDesription")).text = str(
+                data.get('description', ''))
+        else:
+            logger.warning("Unsupported BuiltTimeoutWraper plugin action:"
+                           " {0}".format(action))
+
+
+def __timeout(parser, xml_parent, data):
     twrapper = XML.SubElement(xml_parent,
                               'hudson.plugins.build__timeout.'
                               'BuildTimeoutWrapper')
