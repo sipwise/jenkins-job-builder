@@ -1,0 +1,6 @@
+- longName: 'Jenkins build timeout plugin'
+  shortName: 'build-timeout'
+  version: "1.14"
+- longName: 'Derp Plugin'
+  shortName: 'build-timeout'
+  version: "0.0"
