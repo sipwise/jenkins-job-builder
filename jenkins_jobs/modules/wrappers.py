@@ -24,9 +24,14 @@ Wrappers can alter the way the build is run as well as the build output.
 
 import logging
 import xml.etree.ElementTree as XML
+import pkg_resources
 import jenkins_jobs.modules.base
 from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.modules.builders import create_builders
+
+logger = logging.getLogger(__name__)
+
+DEFAULT_TIMEOUT_SEC = 60
 
 
 def ci_skip(parser, xml_parent, data):
@@ -142,50 +147,139 @@ def timeout(parser, xml_parent, data):
     <https://wiki.jenkins-ci.org/display/JENKINS/Build-timeout+Plugin>`_
 
     :arg bool fail: Mark the build as failed (default false)
+    :arg bool abort: Mark the build as aborted (default false)
     :arg bool write-description: Write a message in the description
         (default false)
     :arg int timeout: Abort the build after this number of minutes (default 3)
     :arg str timeout-var: Export an environment variable to reference the
         timeout value (optional)
     :arg str type: Timeout type to use (default absolute)
+    :type values:
+      * **likely-stuck**
+      * **no-activity**
+      * **elastic**
+      * **absolute**
     :arg int elastic-percentage: Percentage of the three most recent builds
         where to declare a timeout (default 0)
+    :arg int elastic-number-builds: Number of builds to consider computing
+        average duration. (default 3)
     :arg int elastic-default-timeout: Timeout to use if there were no previous
         builds (default 3)
 
-    :type values:
-     * **likely-stuck**
-     * **elastic**
-     * **absolute**
+    Example (Version < 1.14):
 
-    Example:
+    .. literalinclude:: /../../tests/wrappers/fixtures/timeout/timeout001.yaml
 
-    .. literalinclude:: /../../tests/wrappers/fixtures/timeout001.yaml
+    .. literalinclude:: /../../tests/wrappers/fixtures/timeout/timeout002.yaml
 
-    .. literalinclude:: /../../tests/wrappers/fixtures/timeout002.yaml
+    .. literalinclude:: /../../tests/wrappers/fixtures/timeout/timeout003.yaml
 
-    .. literalinclude:: /../../tests/wrappers/fixtures/timeout003.yaml
+    Example (Version >= 1.14):
+
+    .. literalinclude:: \
+    /../../tests/wrappers/fixtures/timeout/version-1.14/absolute001.yaml
+
+    .. literalinclude:: \
+    /../../tests/wrappers/fixtures/timeout/version-1.14/no-activity001.yaml
+
+    .. literalinclude:: \
+    /../../tests/wrappers/fixtures/timeout/version-1.14/likely-stuck001.yaml
+
+    .. literalinclude:: \
+    /../../tests/wrappers/fixtures/timeout/version-1.14/elastic001.yaml
+
     """
-    twrapper = XML.SubElement(xml_parent,
-                              'hudson.plugins.build__timeout.'
-                              'BuildTimeoutWrapper')
-    XML.SubElement(twrapper, 'timeoutMinutes').text = str(
-        data.get('timeout', 3))
+    prefix = 'hudson.plugins.build__timeout.'
+    twrapper = XML.SubElement(xml_parent, prefix + 'BuildTimeoutWrapper')
+
+    plugin_info = parser.registry.get_plugin_info(
+        "Jenkins build timeout plugin")
+    version = pkg_resources.parse_version(plugin_info.get("version", "0"))
+
+    if version >= pkg_resources.parse_version("1.14"):
+        strategy = data.get('type', 'absolute')
+        if strategy == "absolute":
+            strategy_element = XML.SubElement(
+                twrapper, 'strategy',
+                {'class': "hudson.plugins.build_timeout."
+                          "impl.AbsoluteTimeOutStrategy"})
+            XML.SubElement(strategy_element, 'timeoutMinutes')\
+                .text = str(data.get('timeout', 3))
+        elif strategy == "no-activity":
+            strategy_element = XML.SubElement(
+                twrapper, 'strategy',
+                {'class': "hudson.plugins.build_timeout."
+                          "impl.NoActivityTimeOutStrategy"})
+            XML.SubElement(strategy_element, 'timeoutSecondsString')\
+                .text = str(DEFAULT_TIMEOUT_SEC * data.get('timeout', 3))
+        elif strategy == "likely-stuck":
+            strategy_element = XML.SubElement(
+                twrapper, 'strategy',
+                {'class': "hudson.plugins.build_timeout."
+                          "impl.LikelyStuckTimeOutStrategy"})
+            XML.SubElement(strategy_element, 'timeoutMinutes')\
+                .text = str(data.get('timeout', 3))
+        elif strategy == "elastic":
+            strategy_element = XML.SubElement(
+                twrapper, 'strategy',
+                {'class': "hudson.plugins.build_timeout."
+                          "impl.ElasticTimeOutStrategy"})
+            XML.SubElement(strategy_element, 'timeoutPercentage')\
+                .text = str(data.get('elastic-percentage', 0))
+            XML.SubElement(strategy_element, 'numberOfBuilds')\
+                .text = str(data.get('elastic-number-builds', 0))
+            XML.SubElement(strategy_element, 'timeoutMinutesElasticDefault')\
+                .text = str(data.get('elastic-default-timeout', 3))
+
+        actions = []
+
+        for action in ['fail', 'abort']:
+            if str(data.get(action, 'false')).lower() == 'true':
+                actions.append(action)
+
+        description = data.get('write-description', None)
+        if description is not None:
+            actions.append('write-description')
+
+        if len(actions) == 0:
+            actions.append("abort")
+
+        operation_list = XML.SubElement(twrapper, 'operationList')
+
+        for action in actions:
+            fmt_str = prefix + "operations.{0}Operation"
+            if action == "abort":
+                XML.SubElement(operation_list, fmt_str.format("Abort"))
+            elif action == "fail":
+                XML.SubElement(operation_list, fmt_str.format("Fail"))
+            elif action == "write-description":
+                write_description = XML.SubElement(
+                    operation_list, fmt_str.format("WriteDescription"))
+                XML.SubElement(write_description, "description")\
+                    .text = description
+            else:
+                raise JenkinsJobsException("Unsupported BuiltTimeoutWrapper "
+                                           "plugin action: {0}".format(action))
+    else:
+        XML.SubElement(twrapper, 'timeoutMinutes')\
+            .text = str(data.get('timeout', 3))
+        XML.SubElement(twrapper, 'failBuild')\
+            .text = str(data.get('fail', 'false')).lower()
+        XML.SubElement(twrapper, 'writingDescription')\
+            .text = str(data.get('write-description', 'false')).lower()
+        XML.SubElement(twrapper, 'timeoutPercentage')\
+            .text = str(data.get('elastic-percentage', 0))
+        XML.SubElement(twrapper, 'timeoutMinutesElasticDefault')\
+            .text = str(data.get('elastic-default-timeout', 3))
+
+        tout_type = str(data.get('type', 'absolute')).lower()
+        if tout_type == 'likely-stuck':
+            tout_type = 'likelyStuck'
+        XML.SubElement(twrapper, 'timeoutType').text = tout_type
+
     timeout_env_var = data.get('timeout-var')
     if timeout_env_var:
         XML.SubElement(twrapper, 'timeoutEnvVar').text = str(timeout_env_var)
-    XML.SubElement(twrapper, 'failBuild').text = str(
-        data.get('fail', 'false')).lower()
-    XML.SubElement(twrapper, 'writingDescription').text = str(
-        data.get('write-description', 'false')).lower()
-    XML.SubElement(twrapper, 'timeoutPercentage').text = str(
-        data.get('elastic-percentage', 0))
-    XML.SubElement(twrapper, 'timeoutMinutesElasticDefault').text = str(
-        data.get('elastic-default-timeout', 3))
-    tout_type = str(data.get('type', 'absolute')).lower()
-    if tout_type == 'likely-stuck':
-        tout_type = 'likelyStuck'
-    XML.SubElement(twrapper, 'timeoutType').text = tout_type
 
 
 def timestamps(parser, xml_parent, data):
