@@ -15,6 +15,7 @@
 
 import os
 import mock
+import re
 from testtools import TestCase, ExpectedException
 from testscenarios.testcase import TestWithScenarios
 from tests.base import get_scenarios, SingleJobTestCase
@@ -29,7 +30,7 @@ class TestCaseModuleDuplicates(TestWithScenarios, TestCase,
     @mock.patch('jenkins_jobs.builder.logger', autospec=True)
     def test_yaml_snippet(self, mock_logger):
 
-        if self.in_filename.startswith("exception_"):
+        if re.search("exception_", self.in_filename):
             with ExpectedException(JenkinsJobsException, "^Duplicate .*"):
                 super(TestCaseModuleDuplicates, self).test_yaml_snippet()
         else:
