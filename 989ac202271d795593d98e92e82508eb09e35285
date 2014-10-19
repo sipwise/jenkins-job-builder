@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_4e870662",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-19T13:34:14Z",
+      "side": 1,
+      "message": "we rather want to query jenkins for the plugin version rather than get it from the yaml definition.  however that wouldr require this change  https://review.openstack.org/#/c/123932/",
+      "revId": "989ac202271d795593d98e92e82508eb09e35285",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
