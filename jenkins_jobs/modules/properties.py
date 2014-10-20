@@ -213,7 +213,7 @@ def throttle(parser, xml_parent, data):
 
 def inject(parser, xml_parent, data):
     """yaml: inject
-    Allows you to inject evironment variables into the build.
+    Allows you to inject environment variables into the build.
     Requires the Jenkins `Env Inject Plugin.
     <https://wiki.jenkins-ci.org/display/JENKINS/EnvInject+Plugin>`_
 

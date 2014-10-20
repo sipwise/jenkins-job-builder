@@ -1,0 +1,4 @@
+properties:
+  - inject:
+      keep-build-variables: true
+      keep-system-variables: true
