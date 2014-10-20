@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_ed81804b",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-20T20:14:43Z",
+      "side": 1,
+      "message": "could we check that the specified event is one of the valid events?  if not raise a JenkinsJobsException?",
+      "revId": "1df0a2a72441150a5a7ea47ccb75c309f721779c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_4a58b256",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-20T20:14:43Z",
+      "side": 1,
+      "message": "Both Jenkins and Gerrit call this a \u0027patchset-created\u0027 event.  why not use that?",
+      "revId": "1df0a2a72441150a5a7ea47ccb75c309f721779c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_34791530",
+        "filename": "tests/triggers/fixtures/gerrit004.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-20T20:14:43Z",
+      "side": 1,
+      "message": "this test will appear in the docs.  would you mind adding another trigger in this example so an example of this feature is represented in the docs?",
+      "revId": "1df0a2a72441150a5a7ea47ccb75c309f721779c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
