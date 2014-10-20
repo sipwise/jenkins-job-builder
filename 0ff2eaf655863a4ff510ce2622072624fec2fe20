@@ -33,6 +33,58 @@
       "revId": "0ff2eaf655863a4ff510ce2622072624fec2fe20",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_ca2bd92e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-10-20T09:25:50Z",
+      "side": 1,
+      "message": "\u0027global\u0027 is a fallback whenever there is no default section.  In other term: setting a defaults discard the \u0027global\u0027 default and thus would need to be explicitly set in the list.\n\nRelevant code in jenkins_jobs/builder.py  YamlParser.applyDefaults():\n\n def applyDefaults(self, data):\n     whichdefaults \u003d data.get(\u0027defaults\u0027, \u0027global\u0027)\n     defaults \u003d self.data.get(\u0027defaults\u0027, {}).get(whichdefaults, {})",
+      "parentUuid": "baa201ad_e6806ac1",
+      "revId": "0ff2eaf655863a4ff510ce2622072624fec2fe20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_6ab66dde",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-10-20T09:25:50Z",
+      "side": 1,
+      "message": "should be the item whichdefault , not the array :D",
+      "revId": "0ff2eaf655863a4ff510ce2622072624fec2fe20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_cab599ce",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-10-20T09:25:50Z",
+      "side": 1,
+      "message": "should be the item whichdefault , not the array :D",
+      "revId": "0ff2eaf655863a4ff510ce2622072624fec2fe20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
