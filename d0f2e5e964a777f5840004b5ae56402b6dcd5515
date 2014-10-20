@@ -104,6 +104,24 @@
       "revId": "d0f2e5e964a777f5840004b5ae56402b6dcd5515",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_e07359af",
+        "filename": "tests/cmd/test_recursive.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-20T15:22:29Z",
+      "side": 1,
+      "message": "I\u0027ve reworked this to use a helper function, cause I think it\u0027s important to test that we are correctly manipulating the dirs list returned by os.walk().",
+      "parentUuid": "baa201ad_eed5d1e5",
+      "revId": "d0f2e5e964a777f5840004b5ae56402b6dcd5515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
