@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_3ef56c83",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-20T23:01:50Z",
+      "side": 1,
+      "message": "I would easily get this mixed up with path and exclude options.  Now I think we should rename this option to something more specific to yaml tag feature, like tag_include_path or yaml_tag_includes.  Would be nice as a follow on change :)",
+      "revId": "485080c78d4189d173f5f853beb9f6a68b9268f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_e8824eff",
+        "filename": "etc/jenkins_jobs.ini-sample",
+        "patchSetId": 10
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-20T23:01:50Z",
+      "side": 1,
+      "message": "Would it be possible to include a better example, maybe something like the include_path, which has the colon delimited path?",
+      "revId": "485080c78d4189d173f5f853beb9f6a68b9268f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_be94fc37",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-20T23:01:50Z",
+      "side": 1,
+      "message": "this default is confusing to me.  my interpretation, from reading the doc, is that this will (by default) exclude all files in the current path?",
+      "revId": "485080c78d4189d173f5f853beb9f6a68b9268f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_c8174aa2",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-20T23:01:50Z",
+      "side": 1,
+      "message": "how about add some description in docs with an example usage?    something similar to this? https://review.openstack.org/#/c/125854/10/doc/source/installation.rst",
+      "revId": "485080c78d4189d173f5f853beb9f6a68b9268f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_bea6bcbf",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-20T23:01:50Z",
+      "side": 1,
+      "message": "Is this appending to excludes already defined in [jenkins_job]?  Wouldn\u0027t you want to override instead?",
+      "revId": "485080c78d4189d173f5f853beb9f6a68b9268f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
