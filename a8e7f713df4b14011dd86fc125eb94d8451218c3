@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_1415f6f0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-20T16:56:32Z",
+      "side": 1,
+      "message": "remove extra space.",
+      "revId": "a8e7f713df4b14011dd86fc125eb94d8451218c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_74f1e2cc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-20T16:56:32Z",
+      "side": 1,
+      "message": "commit message should only contain the description of the fix at hand.  You don\u0027t need to keep a history of all your git updates Gerrit does that for us.",
+      "revId": "a8e7f713df4b14011dd86fc125eb94d8451218c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_d4bfeece",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-20T16:56:32Z",
+      "side": 1,
+      "message": "please remove this",
+      "revId": "a8e7f713df4b14011dd86fc125eb94d8451218c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_74e72241",
+        "filename": "doc/source/definition.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-20T16:56:32Z",
+      "side": 1,
+      "message": "please remove these extra spaces",
+      "revId": "a8e7f713df4b14011dd86fc125eb94d8451218c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_746c829d",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-20T16:56:32Z",
+      "side": 1,
+      "message": "unrelated change, please keep changes to match commit message description.  also this is already fixed in change I63cb324f2",
+      "revId": "a8e7f713df4b14011dd86fc125eb94d8451218c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
