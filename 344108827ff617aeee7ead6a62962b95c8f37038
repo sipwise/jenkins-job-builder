@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_fb214db5",
+        "filename": "jenkins_jobs/modules/subconfigs/git_revision.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-20T11:30:58Z",
+      "side": 1,
+      "message": "I think that you could just leave this in one of the existing two modules rather than moving it out to a separate module.",
+      "revId": "344108827ff617aeee7ead6a62962b95c8f37038",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
