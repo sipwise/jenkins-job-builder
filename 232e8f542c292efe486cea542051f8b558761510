@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9aa7fdbe_154b425a",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 612,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-10-20T09:49:07Z",
+      "side": 1,
+      "message": "That ultimately rely on python-jenkins get_job_name() which means the loop will do one connection / API query per job.\n\nInstead, I would grab the whole list of job names using the jenkins.get_info() method:\n\n [job[\u0027name\u0027] for job in self.jenkins.get_info()[\u0027jobs\u0027]]\n\nWhich yields a list of job names defined on the remote Jenkins instance. Would be much faster.",
+      "revId": "232e8f542c292efe486cea542051f8b558761510",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_8c51e210",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 4
