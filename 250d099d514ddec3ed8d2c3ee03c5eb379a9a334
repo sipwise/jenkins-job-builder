@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_60375ce4",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3488,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-20T19:13:58Z",
+      "side": 1,
+      "message": "specify default value?",
+      "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_254ac680",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3498,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-20T19:13:58Z",
+      "side": 1,
+      "message": "could you please add \u0027language:yaml\u0027 here?",
+      "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_65220ebb",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3503,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-20T19:13:58Z",
+      "side": 1,
+      "message": "could you please use JenkinsJobsException instead?",
+      "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_e0042c17",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3508,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-20T19:13:58Z",
+      "side": 1,
+      "message": "this seems static, maybe should be outside of the for loop?",
+      "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_e0d50c44",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3510,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-20T19:13:58Z",
+      "side": 1,
+      "message": "might be nicer to assign this list to a variable and then use it in the for loop?",
+      "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_00277065",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3515,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-20T19:13:58Z",
+      "side": 1,
+      "message": "might be nicer if you just add these bool params to the list and then use isinstance() to check that it\u0027s bool type?  you can find an example of this in the publishers.build_trends_publisher",
+      "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_e0526c12",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3524,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-20T19:13:58Z",
+      "side": 1,
+      "message": "same here, outside of the for loop?",
+      "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_a08dc47d",
+        "filename": "setup.cfg",
+        "patchSetId": 5
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-20T19:13:58Z",
+      "side": 1,
+      "message": "could you please put in alphabetical order?",
+      "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_6093dca3",
+        "filename": "tests/publishers/fixtures/s3001.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-20T19:13:58Z",
+      "side": 1,
+      "message": "does this work?  I might be wrong, but I think Jenkins requires double braces when referencing variables?  i.e. ${{BUILD_ID}} ?",
+      "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
