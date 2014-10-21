@@ -15,14 +15,9 @@
 """
 Enable hipchat notification of build execution.
 
-Example::
+Example:
 
-  - job:
-      name: test_job
-      hipchat:
-        enabled: true
-        room:  Testjob Build Notifications
-        start-notify: true
+.. literalinclude:: /../../tests/hipchat/fixtures/hipchat001.yaml
 
 In the jenkins UI specification, the hipchat plugin must be explicitly
 selected as a publisher.  This is not required (or supported) here - use the
@@ -46,7 +41,7 @@ import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 import jenkins_jobs.errors
 import logging
-from six.moves import configparser
+import ConfigParser
 import sys
 
 logger = logging.getLogger(__name__)
@@ -73,8 +68,8 @@ class HipChat(jenkins_jobs.modules.base.Base):
                 if self.authToken == '':
                     raise jenkins_jobs.errors.JenkinsJobsException(
                         "Hipchat authtoken must not be a blank string")
-            except (configparser.NoSectionError,
-                    jenkins_jobs.errors.JenkinsJobsException) as e:
+            except (ConfigParser.NoSectionError,
+                    jenkins_jobs.errors.JenkinsJobsException), e:
                 logger.fatal("The configuration file needs a hipchat section" +
                              " containing authtoken:\n{0}".format(e))
                 sys.exit(1)
@@ -98,7 +93,24 @@ class HipChat(jenkins_jobs.modules.base.Base):
         XML.SubElement(pdefhip, 'room').text = hipchat['room']
         XML.SubElement(pdefhip, 'startNotification').text = str(
             hipchat.get('start-notify', False)).lower()
-
+        if hipchat.get('notify-success'):
+            XML.SubElement(pdefhip, 'notifySuccess').text = str(
+                hipchat.get('notify-success')).lower()
+        if hipchat.get('notify-aborted'):
+            XML.SubElement(pdefhip, 'notifyAborted').text = str(
+                hipchat.get('notify-aborted')).lower()
+        if hipchat.get('notify-not-built'):
+            XML.SubElement(pdefhip, 'notifyNotBuilt').text = str(
+                hipchat.get('notify-not-built')).lower()
+        if hipchat.get('notify-unstable'):
+            XML.SubElement(pdefhip, 'notifyUnstable').text = str(
+                hipchat.get('notify-unstable')).lower()
+        if hipchat.get('notify-failure'):
+            XML.SubElement(pdefhip, 'notifyFailure').text = str(
+                hipchat.get('notify-failure')).lower()
+        if hipchat.get('notify-back-to-normal'):
+            XML.SubElement(pdefhip, 'notifyBackToNormal').text = str(
+                hipchat.get('notify-back-to-normal')).lower()
         publishers = xml_parent.find('publishers')
         if publishers is None:
             publishers = XML.SubElement(xml_parent, 'publishers')
