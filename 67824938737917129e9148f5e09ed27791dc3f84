@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_fc3122a3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-21T09:51:20Z",
+      "side": 1,
+      "message": "Please describe the code change not what fixes you made based on reviews.\n\nTrying to understand this commit message in the context of looking at git-log is meaningless.\n\nIf someone wishes to see the previous revisions of your patch, the comments made and fixes to it, they can look in gerrit. The final patch accepted though should stand by itself and not require someone to look in gerrit to understand what the commit message is referring to.",
+      "revId": "67824938737917129e9148f5e09ed27791dc3f84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
