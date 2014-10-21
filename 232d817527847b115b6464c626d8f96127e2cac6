@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_4d835556",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-21T14:25:05Z",
+      "side": 1,
+      "message": "This looks good, but could you add the remaining info here into one of the yaml tests and then use literalinclude here. There is an example just below for the \u0027trigger\u0027 function.\n\nDon\u0027t forget to remove the second \u0027:\u0027 from the \u0027Example::\u0027 string above when making this change, otherwise sphinx doesn\u0027t format the page correctly.",
+      "revId": "232d817527847b115b6464c626d8f96127e2cac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
