@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_8db53df0",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-21T14:33:15Z",
+      "side": 1,
+      "message": "Need to keep \u0027configparser\u0027 from the six.moves module to handle python 3 compatibility.",
+      "revId": "57642414a7b682ff4f25979cbaea91c9f5a5d75a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
