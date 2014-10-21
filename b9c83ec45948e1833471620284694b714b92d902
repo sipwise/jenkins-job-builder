@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_3c880a1f",
+        "filename": "tests/properties/fixtures/inject001.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-21T09:57:03Z",
+      "side": 1,
+      "message": "Is it worth just extending this ever so slightly to show how to pass two environment variables?\n\n properties-content: |\n   FOO\u003dbar\n   BAZ\u003dfoobar",
+      "revId": "b9c83ec45948e1833471620284694b714b92d902",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
