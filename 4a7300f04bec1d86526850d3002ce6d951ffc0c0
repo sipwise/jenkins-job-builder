@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_43425811",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-10-21T03:18:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa7fdbe_a0c14430",
+      "revId": "4a7300f04bec1d86526850d3002ce6d951ffc0c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_4026d817",
         "filename": "tests/properties/fixtures/inject001.yaml",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-10-20T19:25:46Z",
       "side": 1,
       "message": "since these params default to \u0027true\u0027, maybe a better test in this case is to not specify these params and let the code take care of adding them automatically?",
+      "revId": "4a7300f04bec1d86526850d3002ce6d951ffc0c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_035f70e6",
+        "filename": "tests/properties/fixtures/inject001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-10-21T03:18:45Z",
+      "side": 1,
+      "message": "I can\u0027t get it to work with the params completely removed.  It seems I need to have at least one param defined.",
+      "parentUuid": "9aa7fdbe_4026d817",
       "revId": "4a7300f04bec1d86526850d3002ce6d951ffc0c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
