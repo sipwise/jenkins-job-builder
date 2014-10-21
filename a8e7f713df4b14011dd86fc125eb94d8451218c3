@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_ccf9154f",
+        "filename": "doc/source/definition.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 13672
+      },
+      "writtenOn": "2014-10-21T07:32:08Z",
+      "side": 1,
+      "message": "OK. I\u0027ll remove these spaces.",
+      "parentUuid": "9aa7fdbe_74e72241",
+      "revId": "a8e7f713df4b14011dd86fc125eb94d8451218c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_746c829d",
         "filename": "doc/source/installation.rst",
         "patchSetId": 3
@@ -81,6 +99,24 @@
       "writtenOn": "2014-10-20T16:56:32Z",
       "side": 1,
       "message": "unrelated change, please keep changes to match commit message description.  also this is already fixed in change I63cb324f2",
+      "revId": "a8e7f713df4b14011dd86fc125eb94d8451218c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_2ce9c180",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 13672
+      },
+      "writtenOn": "2014-10-21T07:32:08Z",
+      "side": 1,
+      "message": "OK. I\u0027ll remove this.",
+      "parentUuid": "9aa7fdbe_746c829d",
       "revId": "a8e7f713df4b14011dd86fc125eb94d8451218c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
