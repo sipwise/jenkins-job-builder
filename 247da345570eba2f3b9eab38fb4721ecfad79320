@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_3c600a32",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-21T10:09:34Z",
+      "side": 1,
+      "message": "Here\u0027s the problem, looks like the addition of this change has triggered one of the dict hash random order issues we missed for the python 3 compat.\n\nIdeally we should take the order of the yaml when looking these up and that appears to be what the re-work of this piece of code does in Idec0f2b07479c0611497126e984c13adf543ffc0",
+      "revId": "247da345570eba2f3b9eab38fb4721ecfad79320",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
