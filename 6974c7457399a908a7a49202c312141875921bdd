@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_4b542254",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-21T13:21:39Z",
+      "side": 1,
+      "message": "extra whitespace.",
+      "revId": "6974c7457399a908a7a49202c312141875921bdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_8bfc4a40",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-21T13:21:39Z",
+      "side": 1,
+      "message": "Please understand that this part of the commit message makes no sense to someone just viewing the git log.\n\nThey would have to view gerrit, and if they are viewing gerrit, they can already look at what changed between each patchset and the feedback given each time.",
+      "revId": "6974c7457399a908a7a49202c312141875921bdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
