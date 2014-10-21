@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_6d62d9ae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-21T14:28:56Z",
+      "side": 1,
+      "message": "You were on the right track initially. Here\u0027s what I would expect as the comment message:\n\n Added description for node attribute.\n\n \"node\" attribute of Job allow specify labels of jenkins\n builders where the job can be executed.\n\n Change-Id: Icb2a72a3d6340b1f9d9bdcc27e2e9691b1752c24",
+      "revId": "ee1fb41ff43bb076588f91faf7129933c5f9ee53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
