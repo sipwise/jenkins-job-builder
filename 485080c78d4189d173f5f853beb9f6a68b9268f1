@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_3a21d8fb",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-21T21:17:56Z",
+      "side": 1,
+      "message": "i think a separate section called \u0027yaml_loader\u0027 would still be confusing because the tags feature and general jjb both load/parse yaml files.  I think it should be absolutely clear which feature this option is for.  ATM i think it\u0027s more clear with a very specific name although i could be persuaded otherwise.",
+      "parentUuid": "9aa7fdbe_ad8761d6",
+      "revId": "485080c78d4189d173f5f853beb9f6a68b9268f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_e8824eff",
         "filename": "etc/jenkins_jobs.ini-sample",
         "patchSetId": 10
@@ -89,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_fadbd0ea",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-21T21:17:56Z",
+      "side": 1,
+      "message": "Yes, simple globbing was not mentioned in the docs so i guess I assume regex.  Anyways a few examples would clear it up pretty nicely.",
+      "parentUuid": "9aa7fdbe_8db7fd85",
+      "revId": "485080c78d4189d173f5f853beb9f6a68b9268f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_c8174aa2",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 10
@@ -124,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_7aefe087",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-21T21:17:56Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "9aa7fdbe_d03a7acc",
+      "revId": "485080c78d4189d173f5f853beb9f6a68b9268f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_bea6bcbf",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 10
@@ -153,6 +207,24 @@
       "side": 1,
       "message": "In two minds here, it seems convenient to be able to have a set of predefined excludes to which you temporarily add one, but guess to properly support that, would also need a method of overriding existing ones as well.\n\nStart with just overriding completely for now? or look at providing an additional command line only option to permit appending to existing excludes?",
       "parentUuid": "9aa7fdbe_bea6bcbf",
+      "revId": "485080c78d4189d173f5f853beb9f6a68b9268f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_5a021c0c",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-21T21:17:56Z",
+      "side": 1,
+      "message": "Coming from a user\u0027s perspective, i would just override for the following reasons:\n* Consistent with the other options in the default section, even though they are bools.\n* I typically prefer to override in the command line, when i pass in something to the command line i want it to be absolute. \n* I think it might be difficult for me to debug because I usually have no idea what state I\u0027ve left my default settings on last use.",
+      "parentUuid": "9aa7fdbe_f00e9e31",
       "revId": "485080c78d4189d173f5f853beb9f6a68b9268f1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
