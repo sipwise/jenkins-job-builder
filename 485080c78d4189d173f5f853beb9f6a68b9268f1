@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_ad8761d6",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-21T14:50:39Z",
+      "side": 1,
+      "message": "yeah, I originally had this under a different section header called \u0027yaml\u0027 and/or \u0027yaml_loader\u0027, so I\u0027m wondering do we need to reconsider separating out behaviour that is specific to controlling yaml loading from those jjb is using to decide which files to parse?",
+      "parentUuid": "9aa7fdbe_3ef56c83",
+      "revId": "485080c78d4189d173f5f853beb9f6a68b9268f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_e8824eff",
         "filename": "etc/jenkins_jobs.ini-sample",
         "patchSetId": 10
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_8db7fd85",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-21T14:50:39Z",
+      "side": 1,
+      "message": "Just files with a leading \u0027.\u0027. It uses simple globing instead of regex matching. So I should change the doc?",
+      "parentUuid": "9aa7fdbe_be94fc37",
+      "revId": "485080c78d4189d173f5f853beb9f6a68b9268f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_c8174aa2",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 10
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_d03a7acc",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-21T14:50:39Z",
+      "side": 1,
+      "message": "Looks like could do to add a bit on the recursive option as well since excludes complements it.",
+      "parentUuid": "9aa7fdbe_c8174aa2",
+      "revId": "485080c78d4189d173f5f853beb9f6a68b9268f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_bea6bcbf",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 10
@@ -81,6 +135,24 @@
       "writtenOn": "2014-10-20T23:01:50Z",
       "side": 1,
       "message": "Is this appending to excludes already defined in [jenkins_job]?  Wouldn\u0027t you want to override instead?",
+      "revId": "485080c78d4189d173f5f853beb9f6a68b9268f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_f00e9e31",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-21T14:50:39Z",
+      "side": 1,
+      "message": "In two minds here, it seems convenient to be able to have a set of predefined excludes to which you temporarily add one, but guess to properly support that, would also need a method of overriding existing ones as well.\n\nStart with just overriding completely for now? or look at providing an additional command line only option to permit appending to existing excludes?",
+      "parentUuid": "9aa7fdbe_bea6bcbf",
       "revId": "485080c78d4189d173f5f853beb9f6a68b9268f1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
