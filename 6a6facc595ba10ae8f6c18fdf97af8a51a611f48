@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_6ebabd6f",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-22T03:56:10Z",
+      "side": 1,
+      "message": "please remove extra \u0027:\u0027, should just be \u0027Example:\u0027",
+      "revId": "6a6facc595ba10ae8f6c18fdf97af8a51a611f48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_2ec0b5df",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-22T03:56:10Z",
+      "side": 1,
+      "message": "please add \u0027:language: yaml\u0027 here.",
+      "revId": "6a6facc595ba10ae8f6c18fdf97af8a51a611f48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
