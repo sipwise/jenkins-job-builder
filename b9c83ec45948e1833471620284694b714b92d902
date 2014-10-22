@@ -16,6 +16,24 @@
       "revId": "b9c83ec45948e1833471620284694b714b92d902",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_48b171e0",
+        "filename": "tests/properties/fixtures/inject001.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-10-22T01:36:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa7fdbe_3c880a1f",
+      "revId": "b9c83ec45948e1833471620284694b714b92d902",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
