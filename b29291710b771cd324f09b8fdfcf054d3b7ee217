@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_45d4f71f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-10-22T06:12:00Z",
+      "side": 1,
+      "message": "supports",
+      "range": {
+        "startLine": 9,
+        "startChar": 40,
+        "endLine": 9,
+        "endChar": 47
+      },
+      "revId": "b29291710b771cd324f09b8fdfcf054d3b7ee217",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_e51b2b1a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-10-22T06:12:00Z",
+      "side": 1,
+      "message": "Jenkins",
+      "range": {
+        "startLine": 9,
+        "startChar": 18,
+        "endLine": 9,
+        "endChar": 24
+      },
+      "revId": "b29291710b771cd324f09b8fdfcf054d3b7ee217",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_65d73b24",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-10-22T06:12:00Z",
+      "side": 1,
+      "message": "following",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 8
+      },
+      "revId": "b29291710b771cd324f09b8fdfcf054d3b7ee217",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_a5e12300",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-10-22T06:12:00Z",
+      "side": 1,
+      "message": "Add `:language: yaml`",
+      "revId": "b29291710b771cd324f09b8fdfcf054d3b7ee217",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
