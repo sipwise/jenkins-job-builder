@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_29033343",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-22T21:19:02Z",
+      "side": 1,
+      "message": "that is true.  There are legacy examples that have not been converted to tests, in those cases its two colons, but if you use a literalinclude it\u0027s just one colon otherwise sphinx will not render it correctly.",
+      "parentUuid": "9aa7fdbe_22ba890a",
+      "revId": "6a6facc595ba10ae8f6c18fdf97af8a51a611f48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_2ec0b5df",
         "filename": "jenkins_jobs/modules/properties.py",
         "patchSetId": 3
