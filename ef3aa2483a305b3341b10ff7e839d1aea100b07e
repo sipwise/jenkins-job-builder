@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_a8f3bd9d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-10-22T01:40:53Z",
+      "side": 1,
+      "message": "\"only on exit\"?",
+      "range": {
+        "startLine": 9,
+        "startChar": 48,
+        "endLine": 9,
+        "endChar": 57
+      },
+      "revId": "ef3aa2483a305b3341b10ff7e839d1aea100b07e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_c8f2c199",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-10-22T01:40:53Z",
+      "side": 1,
+      "message": "it is",
+      "range": {
+        "startLine": 521,
+        "startChar": 14,
+        "endLine": 521,
+        "endChar": 16
+      },
+      "revId": "ef3aa2483a305b3341b10ff7e839d1aea100b07e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_082cc901",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-10-22T01:40:53Z",
+      "side": 1,
+      "message": "What if `open` or `dump` raises an exception?",
+      "range": {
+        "startLine": 567,
+        "startChar": 0,
+        "endLine": 568,
+        "endChar": 49
+      },
+      "revId": "ef3aa2483a305b3341b10ff7e839d1aea100b07e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
