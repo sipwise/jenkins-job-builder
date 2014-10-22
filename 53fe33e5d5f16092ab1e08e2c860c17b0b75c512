@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_a4c82a23",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-22T22:05:22Z",
+      "side": 1,
+      "message": "would it be possible to add some documentation, similar to the other modules, about the available parameters that the user can specify?  Otherwise when users look at the documentation they will not know what parameters are available for them to use.  I don\u0027t mind if it\u0027s in this change or a subsequent change.",
+      "revId": "53fe33e5d5f16092ab1e08e2c860c17b0b75c512",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
