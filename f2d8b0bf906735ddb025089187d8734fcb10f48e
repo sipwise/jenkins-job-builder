@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_84ede6f1",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1484,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-22T21:54:33Z",
+      "side": 1,
+      "message": "don\u0027t you mean \u0027combine-queued-commits\u0027 here?  also shouldn\u0027t it be \u0027.. is not a boolean\u0027?  Also i think this will always be true because all params are actually treated as strings in JJB.",
+      "revId": "f2d8b0bf906735ddb025089187d8734fcb10f48e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_a4b74ad7",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-22T21:54:33Z",
+      "side": 1,
+      "message": "since you created a few tests for this would you mind replacing this example with one or more of your tests?  you can literalinclude them in.  There are many examples of literalinclude in this file.",
+      "revId": "f2d8b0bf906735ddb025089187d8734fcb10f48e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
