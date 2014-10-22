@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9aa7fdbe_37cc7cbc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 9624
+      },
+      "writtenOn": "2014-10-22T12:27:13Z",
+      "side": 1,
+      "message": "This is the change that broke for me:\nhttps://review.openstack.org/#/c/127844/\nBoth reverting ^^ or using this patch set 9 resolve the issue, so seems it fixes 2 issues!",
+      "revId": "b4ae091d55965ada99061f1c87b9a9bba1493476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_48e891b4",
         "filename": "/COMMIT_MSG",
         "patchSetId": 9
