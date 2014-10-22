@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_80c6bb47",
+        "filename": "jenkins_jobs/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2014-10-22T16:04:02Z",
+      "side": 1,
+      "message": "The argument to VersionInfo needs to be the dist name, not the package name. For this project:\n\n  $ python setup.py --name\n  jenkins-job-builder\n\nSo replace \u0027jenkins_jobs\u0027 with \u0027jenkins-job-builder\u0027.",
+      "revId": "6cb10ea4454fef9a814914f53862c12fc76a548f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
