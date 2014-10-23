@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_4af5c5c9",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3488,
+      "author": {
+        "id": 6814
+      },
+      "writtenOn": "2014-10-23T00:37:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa7fdbe_60375ce4",
+      "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_254ac680",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2014-10-20T19:13:58Z",
       "side": 1,
       "message": "could you please add \u0027language:yaml\u0027 here?",
+      "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_8affada9",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3498,
+      "author": {
+        "id": 6814
+      },
+      "writtenOn": "2014-10-23T00:37:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa7fdbe_254ac680",
       "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_4a1ce513",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3503,
+      "author": {
+        "id": 6814
+      },
+      "writtenOn": "2014-10-23T00:37:32Z",
+      "side": 1,
+      "message": "Done. I also fixed the other instance where this was missing.",
+      "parentUuid": "9aa7fdbe_65220ebb",
+      "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_e0042c17",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2014-10-20T19:13:58Z",
       "side": 1,
       "message": "this seems static, maybe should be outside of the for loop?",
+      "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_6aa0c99f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3508,
+      "author": {
+        "id": 6814
+      },
+      "writtenOn": "2014-10-23T00:37:32Z",
+      "side": 1,
+      "message": "There should be a \u003chudson.plugins.s3.Entry\u003e tag for each fileset in the \"entries\" list, so this needs to be within the loop.",
+      "parentUuid": "9aa7fdbe_e0042c17",
       "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_eab119e2",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3510,
+      "author": {
+        "id": 6814
+      },
+      "writtenOn": "2014-10-23T00:37:32Z",
+      "side": 1,
+      "message": "Sure, changed.",
+      "parentUuid": "9aa7fdbe_e0d50c44",
+      "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_00277065",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 5
@@ -98,6 +188,24 @@
       "writtenOn": "2014-10-20T19:13:58Z",
       "side": 1,
       "message": "might be nicer if you just add these bool params to the list and then use isinstance() to check that it\u0027s bool type?  you can find an example of this in the publishers.build_trends_publisher",
+      "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_9e9c4ec2",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3515,
+      "author": {
+        "id": 6814
+      },
+      "writtenOn": "2014-10-23T00:37:32Z",
+      "side": 1,
+      "message": "you\u0027re right, that is nicer. Changed!",
+      "parentUuid": "9aa7fdbe_00277065",
       "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_9e836e55",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3524,
+      "author": {
+        "id": 6814
+      },
+      "writtenOn": "2014-10-23T00:37:32Z",
+      "side": 1,
+      "message": "Same as above, there should be a MetadataPair subelement for each element in userMetadata, so this goes in the loop.  Please correct me if I\u0027m badly misunderstanding something about the XML library, though :)",
+      "parentUuid": "9aa7fdbe_e0526c12",
+      "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_a08dc47d",
         "filename": "setup.cfg",
         "patchSetId": 5
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_8a8c0d81",
+        "filename": "setup.cfg",
+        "patchSetId": 5
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6814
+      },
+      "writtenOn": "2014-10-23T00:37:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa7fdbe_a08dc47d",
+      "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_6093dca3",
         "filename": "tests/publishers/fixtures/s3001.yaml",
         "patchSetId": 5
@@ -149,6 +293,24 @@
       "writtenOn": "2014-10-20T19:13:58Z",
       "side": 1,
       "message": "does this work?  I might be wrong, but I think Jenkins requires double braces when referencing variables?  i.e. ${{BUILD_ID}} ?",
+      "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_aa38f1a0",
+        "filename": "tests/publishers/fixtures/s3001.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6814
+      },
+      "writtenOn": "2014-10-23T00:37:32Z",
+      "side": 1,
+      "message": "Jenkins is fine with ${BUILD_ID} (I have jobs set up this way - it works), or just $BUILD_ID for that matter.  I believe the double brackets are used to escape the brackets in the yaml template to prevent jenkins-job-builder from treating it as a template variable in need of expansion, and it\u0027s only necessary (iirc) if there are other custom template variables present. If you prefer, I can tweak the fixture example to avoid ambiguity.",
+      "parentUuid": "9aa7fdbe_6093dca3",
       "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
