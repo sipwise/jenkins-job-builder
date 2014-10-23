@@ -247,6 +247,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_f7bc86de",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3524,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-23T18:35:32Z",
+      "side": 1,
+      "message": "yup, you are correct.",
+      "parentUuid": "9aa7fdbe_9e836e55",
+      "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_a08dc47d",
         "filename": "setup.cfg",
         "patchSetId": 5
@@ -311,6 +329,24 @@
       "side": 1,
       "message": "Jenkins is fine with ${BUILD_ID} (I have jobs set up this way - it works), or just $BUILD_ID for that matter.  I believe the double brackets are used to escape the brackets in the yaml template to prevent jenkins-job-builder from treating it as a template variable in need of expansion, and it\u0027s only necessary (iirc) if there are other custom template variables present. If you prefer, I can tweak the fixture example to avoid ambiguity.",
       "parentUuid": "9aa7fdbe_6093dca3",
+      "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_b774be36",
+        "filename": "tests/publishers/fixtures/s3001.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-23T18:35:32Z",
+      "side": 1,
+      "message": "works for me",
+      "parentUuid": "9aa7fdbe_aa38f1a0",
       "revId": "250d099d514ddec3ed8d2c3ee03c5eb379a9a334",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
