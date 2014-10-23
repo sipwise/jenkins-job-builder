@@ -2230,6 +2230,47 @@ def html_publisher(parser, xml_parent, data):
     XML.SubElement(ptarget, 'wrapperName').text = "htmlpublisher-wrapper.html"
 
 
+def rich_text_publisher(parser, xml_parent, data):
+    """yaml: rich_text_publisher
+    This plugin puts custom rich text message to the Build pages and Job main
+    page.
+
+    Requires the Jenkins `Rich Text Publisher Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Rich+Text+Publisher+Plugin>`_
+
+    :arg str stable-text: The stable text
+    :arg str unstable-text: The unstable text if different from stable
+    :arg str failed-text: The failed text if different from stable
+    :arg str parser-name: HTML, Confluence or WikiText
+
+
+    Example::
+
+        publishers:
+            - rich-text-publisher:
+                stable-text: "some text"
+                parser-name: HTML
+    """
+
+    parsers = ['HTML', 'Confluence', 'WikiText']
+    parser_name = data['parser-name']
+    if not parser_name in parsers:
+        raise ValueError('parser-name must be one of: %r' % parsers)
+
+    reporter = XML.SubElement(
+        xml_parent,
+        'org.korosoft.jenkins.plugin.rtp.RichTextPublisher')
+    XML.SubElement(reporter, 'stableText').text = data['stable-text']
+    XML.SubElement(reporter, 'unstableText').text =\
+        data.get('unstable-text', '')
+    XML.SubElement(reporter, 'failedText').text = data.get('failed-text', '')
+    XML.SubElement(reporter, 'unstableAsStable').text =\
+        'True' if data.get('unstable-text', '') else 'False'
+    XML.SubElement(reporter, 'failedAsStable').text =\
+        'True' if data.get('failed-text', '') else 'False'
+    XML.SubElement(reporter, 'parserName').text = parser_name
+
+
 def tap(parser, xml_parent, data):
     """yaml: tap
     Adds support to TAP test result files
