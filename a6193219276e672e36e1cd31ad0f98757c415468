@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_1a9e8ab9",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2249,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-24T00:06:36Z",
+      "side": 1,
+      "message": "could you please replace this example with a literalinclude to your test?  that way it will always get tested and won\u0027t become outdated.  There are many examples of literalinclude usage in this file.",
+      "revId": "a6193219276e672e36e1cd31ad0f98757c415468",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_fa50e6d5",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2257,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-24T00:06:36Z",
+      "side": 1,
+      "message": "IMO this would be more clear \u0027if parser_name not in parsers:\u0027",
+      "revId": "a6193219276e672e36e1cd31ad0f98757c415468",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_1ad3ea60",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2258,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-24T00:06:36Z",
+      "side": 1,
+      "message": "could you pleas use JenkinsJobsException instead?",
+      "revId": "a6193219276e672e36e1cd31ad0f98757c415468",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_9ac6fa98",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2268,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-24T00:06:36Z",
+      "side": 1,
+      "message": "could you please add a test for this param that will exercise both paths?",
+      "revId": "a6193219276e672e36e1cd31ad0f98757c415468",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_3a7c2e83",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-24T00:06:36Z",
+      "side": 1,
+      "message": "could you please put in alphabetical order?",
+      "revId": "a6193219276e672e36e1cd31ad0f98757c415468",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
