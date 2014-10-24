@@ -84,6 +84,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_21187e74",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-24T17:53:51Z",
+      "side": 1,
+      "message": "This can be solved by converting old yaml to a new format similar to how the gerrit triggers are handled, however I\u0027m happy enough if that is done as a subsequent patch.",
+      "parentUuid": "9aa7fdbe_9dfa7473",
+      "revId": "34eacbe5023884a356087bf67dd807c1f94e3848",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_1d076483",
         "filename": "jenkins_jobs/modules/hipchat_notif.py",
         "patchSetId": 5
