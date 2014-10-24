@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_182a0090",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 10992
+      },
+      "writtenOn": "2014-10-24T16:57:01Z",
+      "side": 1,
+      "message": "Will fix this in next patch.",
+      "parentUuid": "9aa7fdbe_fdd620f0",
+      "revId": "34eacbe5023884a356087bf67dd807c1f94e3848",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_9dfa7473",
         "filename": "jenkins_jobs/modules/hipchat_notif.py",
         "patchSetId": 5
@@ -42,6 +60,24 @@
         "endLine": 24,
         "endChar": 10
       },
+      "revId": "34eacbe5023884a356087bf67dd807c1f94e3848",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_5867284d",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 10992
+      },
+      "writtenOn": "2014-10-24T16:57:01Z",
+      "side": 1,
+      "message": "These 2 parameters (room and start-notify) existed before this change. If we rename them now, we\u0027ll break backward compatibility.",
+      "parentUuid": "9aa7fdbe_9dfa7473",
       "revId": "34eacbe5023884a356087bf67dd807c1f94e3848",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_58ce482f",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 10992
+      },
+      "writtenOn": "2014-10-24T16:57:01Z",
+      "side": 1,
+      "message": "Please refer to my note above.",
+      "parentUuid": "9aa7fdbe_1d076483",
+      "revId": "34eacbe5023884a356087bf67dd807c1f94e3848",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_7d023070",
         "filename": "jenkins_jobs/modules/hipchat_notif.py",
         "patchSetId": 5
@@ -88,6 +142,24 @@
         "endLine": 39,
         "endChar": 75
       },
+      "revId": "34eacbe5023884a356087bf67dd807c1f94e3848",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_b87814c5",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 10992
+      },
+      "writtenOn": "2014-10-24T16:57:01Z",
+      "side": 1,
+      "message": "Default values do not exist. If field is not mentioned in YAML, it will not be propagated to XML. Jenkins behavior in this case will depend on HipChat plugin version:\n\n* For plugin \u003c 0.1.5, all build end result codes will be reported.\n* For plugin \u003e\u003d 0.1.5, only explicitly selected result codes will be reported.",
+      "parentUuid": "9aa7fdbe_7d023070",
       "revId": "34eacbe5023884a356087bf67dd807c1f94e3848",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
