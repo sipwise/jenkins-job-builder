@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_1bc3e757",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 12100
+      },
+      "writtenOn": "2014-10-24T09:49:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_becff927",
+      "revId": "4b84bc86326253869007d132218daa6ed13fc3cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_7ef00167",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-29T17:36:10Z",
       "side": 1,
       "message": "there an existing test case, so maybe would be better to just add these params to the existing inject.yaml so that it will show up in the example docs?",
+      "revId": "4b84bc86326253869007d132218daa6ed13fc3cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_3ba34bb3",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 12100
+      },
+      "writtenOn": "2014-10-24T09:49:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_7ef00167",
       "revId": "4b84bc86326253869007d132218daa6ed13fc3cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
