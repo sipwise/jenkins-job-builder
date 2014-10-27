@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_4338f4d2",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3756,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-27T17:43:55Z",
+      "side": 1,
+      "message": "David, This confused me as well, take a look at my questions from PS #1 \u0026 PS #2.      So I believe 0 enables the threshold and that\u0027s by design.  If the threshold is set to 0 then this plugin is enabled and will report for any thresholds greater than 0.  \n\nChristian, Since the current implementation has already confused 2 reviewers I think I would +1 David\u0027s suggestion.",
+      "parentUuid": "9aa7fdbe_5d16234d",
+      "revId": "cc3d1d396028dfa2384e11a6fd3959a56e36acbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_9d1c0b6c",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 6
@@ -42,6 +60,24 @@
         "endLine": 3760,
         "endChar": 75
       },
+      "revId": "cc3d1d396028dfa2384e11a6fd3959a56e36acbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_63bdf801",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3760,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-27T17:43:55Z",
+      "side": 1,
+      "message": "good point.",
+      "parentUuid": "9aa7fdbe_9d1c0b6c",
       "revId": "cc3d1d396028dfa2384e11a6fd3959a56e36acbe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
