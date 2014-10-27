@@ -4025,6 +4025,37 @@ def downstream_ext(parser, xml_parent, data):
         data.get('only-on-local-scm-change', False)).lower()
 
 
+def slack(parser, xml_parent, data):
+    """yaml: slack
+    Requires the Jenkins :jenkins-wiki:`Slack Notification Plugin \
+              <Slack+Plugin>`.
+
+    :Parameters:
+      * **room** *(str)*: name of Slack room to post messages to. \
+              Note that this can include names of channels OR \
+              channel id numbers, e.g. "#builds", and that multiple \
+              values may appear comma separated.
+      * **team-domain** *(str)*: Your team's Slack subdomain
+      * **auth-token** *(str)*: The integration token to be used \
+              to send notifications to Slack
+      * **build-server-url** *(str)*: Optionally specify the URL \
+              for your Server installation
+
+    Example:
+
+    .. literalinclude:: \
+            /../../tests/publishers/fixtures/slack.yaml
+
+    """
+    slack = XML.SubElement(xml_parent, 'jenkins.plugins'
+                                       '.slack.SlackNotifier')
+    XML.SubElement(slack, 'teamDomain').text = data.get('team-domain', '')
+    XML.SubElement(slack, 'authToken').text = data.get('auth-token', '')
+    XML.SubElement(slack, 'buildServerUrl').text = \
+        data.get('build-server-url', '/')
+    XML.SubElement(slack, 'room').text = data.get('room', '')
+
+
 def create_publishers(parser, action):
     dummy_parent = XML.Element("dummy")
     parser.registry.dispatch('publisher', parser, dummy_parent, action)
