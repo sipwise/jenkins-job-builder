@@ -641,6 +641,29 @@ def zeromq_event(parser, xml_parent, data):
                                'ZMQEventPublisher.HudsonNotificationProperty')
     XML.SubElement(zmq_event, 'enabled').text = 'true'
 
+def slack(parser, xml_parent, data):
+    """yaml: slack
+    This is a Jenkins plugin that will notify Slack.
+
+    Requires the Jenkins `Slack Notification Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Slack+Plugin>`_
+
+    Example:
+
+    .. literalinclude:: \
+            /../../tests/properties/fixtures/slack.yaml
+
+    """
+    slack = XML.SubElement(xml_parent, 'jenkins.plugins'
+                           '.slack.SlackNotifier_-SlackJobProperty')
+    XML.SubElement(slack, 'room').text = data.get('room', '')
+    XML.SubElement(slack, 'startNotification').text = str(data.get('onStart', False)).lower()
+    XML.SubElement(slack, 'notifySuccess').text = str(data.get('onSuccess', False)).lower()
+    XML.SubElement(slack, 'notifyAborted').text = str(data.get('onAborted', False)).lower()
+    XML.SubElement(slack, 'notifyNotBuilt').text = str(data.get('onNotBuilt', False)).lower()
+    XML.SubElement(slack, 'notifyUnstable').text = str(data.get('onUnstable', False)).lower()
+    XML.SubElement(slack, 'notifyFailure').text = str(data.get('onFailure', False)).lower()
+    XML.SubElement(slack, 'notifyBackToNormal').text = str(data.get('onNormal', False)).lower()
 
 class Properties(jenkins_jobs.modules.base.Base):
     sequence = 20

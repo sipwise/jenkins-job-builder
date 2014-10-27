@@ -1,0 +1,5 @@
+properties:
+  - slack:
+      room: '#builds'
+      onSuccess: true
+      onFailure: true

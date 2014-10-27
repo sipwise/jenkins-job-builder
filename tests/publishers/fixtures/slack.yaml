@@ -1,0 +1,5 @@
+publishers:
+  - slack:
+      room: '#builds'
+      teamDomain: 'teamname'
+      authToken: 'yourauthtoken'
