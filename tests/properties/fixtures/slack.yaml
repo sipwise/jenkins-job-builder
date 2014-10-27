@@ -1,0 +1,5 @@
+properties:
+  - slack:
+      room: '#builds'
+      notify-success: true
+      notify-failure: true
