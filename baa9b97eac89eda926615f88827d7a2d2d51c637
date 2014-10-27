@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_e3dc8848",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2247,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-27T18:00:43Z",
+      "side": 1,
+      "message": "should only be one colon here otherwise sphinx will not renter correctly.  you can check the doc test result to see the generated sphinx docs.  so please change it to \u0027Example:\u0027",
+      "revId": "baa9b97eac89eda926615f88827d7a2d2d51c637",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_23ea10db",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2249,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-27T18:00:43Z",
+      "side": 1,
+      "message": "please add \u0027:language:yaml\u0027 here",
+      "revId": "baa9b97eac89eda926615f88827d7a2d2d51c637",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_030fcc88",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2256,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-27T18:00:43Z",
+      "side": 1,
+      "message": "this will print each parser on a separate line.  you\u0027ll want to join them so it will be all in one line.  So something like..\n\nraise JenkinsJobsException(\u0027parser-name must be one of: %r\u0027 %\", \".join(parsers))",
+      "revId": "baa9b97eac89eda926615f88827d7a2d2d51c637",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
