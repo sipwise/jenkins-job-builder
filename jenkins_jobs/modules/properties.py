@@ -576,6 +576,57 @@ def zeromq_event(parser, xml_parent, data):
     XML.SubElement(zmq_event, 'enabled').text = 'true'
 
 
+def slack(parser, xml_parent, data):
+    """yaml: slack
+    This is a Jenkins plugin that will notify Slack.
+
+    Requires the Jenkins :jenkins-wiki:`Slack Notification Plugin \
+            <Slack+Plugin>`.
+
+    :arg str room: name of Slack room to post messages to. \
+              Note that this can include names of channels OR \
+              channel id numbers, e.g. "#builds", and that multiple \
+              values may appear comma separated.
+    :arg bool start-notify: post messages about build start \
+              event (default: False)
+    :arg bool notify-success: post messages about successful \
+              build event (default: False)
+    :arg bool notify-aborted: post messages about aborted \
+              build event (default: False)
+    :arg bool notify-not-built: post messages about build \
+              set to NOT_BUILT status (default: False)
+    :arg bool notify-unstable: post messages about unstable \
+              build event (default: False)
+    :arg bool notify-failure:  post messages about build \
+              failure event (default: False)
+    :arg bool notify-back-to-normal: post messages about \
+              build being back to normal after being unstable or failed \
+              (default: False)
+
+    Example:
+
+    .. literalinclude:: /../../tests/properties/fixtures/slack.yaml
+
+    """
+    slack = XML.SubElement(xml_parent, 'jenkins.plugins'
+                           '.slack.SlackNotifier_-SlackJobProperty')
+    XML.SubElement(slack, 'room').text = data.get('room', '')
+    XML.SubElement(slack, 'startNotification').text = str(
+        data.get('notify-start', False)).lower()
+    XML.SubElement(slack, 'notifySuccess').text = str(
+        data.get('notify-success', False)).lower()
+    XML.SubElement(slack, 'notifyAborted').text = str(
+        data.get('notify-aborted', False)).lower()
+    XML.SubElement(slack, 'notifyNotBuilt').text = str(
+        data.get('notify-not-built', False)).lower()
+    XML.SubElement(slack, 'notifyUnstable').text = str(
+        data.get('notify-unstable', False)).lower()
+    XML.SubElement(slack, 'notifyFailure').text = str(
+        data.get('notify-failure', False)).lower()
+    XML.SubElement(slack, 'notifyBackToNormal').text = str(
+        data.get('notify-back-to-normal', False)).lower()
+
+
 class Properties(jenkins_jobs.modules.base.Base):
     sequence = 20
 
