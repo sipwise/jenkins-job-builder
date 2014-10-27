@@ -4025,6 +4025,47 @@ def downstream_ext(parser, xml_parent, data):
         data.get('only-on-local-scm-change', False)).lower()
 
 
+def slack(parser, xml_parent, data):
+    """yaml: slack
+    Requires the Jenkins :jenkins-wiki:`Slack Notification Plugin
+    <Slack+Plugin>`.
+
+    :arg str room: name of Slack room to post messages to.
+              Note that this can include names of channels OR
+              channel id numbers, e.g. "#builds", and that multiple
+              values may appear comma separated.
+    :arg str team-domain: Your team's Slack subdomain
+    :arg str auth-token: The integration token to be used
+              to send notifications to Slack
+    :arg str build-server-url: Optionally specify the URL
+              for your Server installation (default: / )
+
+    Example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/slack.yaml
+
+    """
+    slack = XML.SubElement(xml_parent, 'jenkins.plugins'
+                                       '.slack.SlackNotifier')
+    if 'team-domain' not in data:
+            raise JenkinsJobsException('Missing team-domain option in \
+                    Slack publisher')
+    XML.SubElement(slack, 'teamDomain').text = data['team-domain']
+
+    if 'auth-token' not in data:
+            raise JenkinsJobsException('Missing auth-token option in \
+                    Slack publisher')
+    XML.SubElement(slack, 'authToken').text = data['auth-token']
+
+    XML.SubElement(slack, 'buildServerUrl').text = \
+        data.get('build-server-url', '/')
+
+    if 'room' not in data:
+            raise JenkinsJobsException('Missing room option in Slack \
+                    publisher')
+    XML.SubElement(slack, 'room').text = data['room']
+
+
 def create_publishers(parser, action):
     dummy_parent = XML.Element("dummy")
     parser.registry.dispatch('publisher', parser, dummy_parent, action)
