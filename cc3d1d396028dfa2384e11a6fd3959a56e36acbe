@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_5d16234d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3756,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-10-27T01:52:56Z",
+      "side": 1,
+      "message": "This will set it to enabled for all values of threshold, even 0.\n\nWould it be better to have an explicit `enabled` parameter that defaults to true?",
+      "range": {
+        "startLine": 3756,
+        "startChar": 4,
+        "endLine": 3756,
+        "endChar": 33
+      },
+      "revId": "cc3d1d396028dfa2384e11a6fd3959a56e36acbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_9d1c0b6c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3760,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-10-27T01:52:56Z",
+      "side": 1,
+      "message": "What if the threshold value is not an integer?",
+      "range": {
+        "startLine": 3760,
+        "startChar": 49,
+        "endLine": 3760,
+        "endChar": 75
+      },
+      "revId": "cc3d1d396028dfa2384e11a6fd3959a56e36acbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
