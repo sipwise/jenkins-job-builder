@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_bea7f3bb",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3436,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-27T18:15:57Z",
+      "side": 1,
+      "message": "not relevant  to this change.  I would upload a separate change for this.",
+      "revId": "88a2fe849a3c5c6dd12b233c2bcf93f8b6f46367",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_fe117b04",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3527,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-27T18:15:57Z",
+      "side": 1,
+      "message": "does this not handle all bool cases?  why the special one on the \u0027if\u0027 line?",
+      "revId": "88a2fe849a3c5c6dd12b233c2bcf93f8b6f46367",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
