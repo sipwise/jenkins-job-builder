@@ -3744,6 +3744,7 @@ def pmd(parser, xml_parent, data):
 
     build_trends_publisher('[PMD] ', xml_element, data)
 
+
 def slack(parser, xml_parent, data):
     """yaml: slack
     This is a Jenkins plugin that will notify Slack.
@@ -3763,6 +3764,7 @@ def slack(parser, xml_parent, data):
     XML.SubElement(slack, 'authToken').text = data.get('authToken', '')
     XML.SubElement(slack, 'buildServerUrl').text = data.get('buildServerUrl', '/')
     XML.SubElement(slack, 'room').text = data.get('room', '')
+
 
 def create_publishers(parser, action):
     dummy_parent = XML.Element("dummy")
