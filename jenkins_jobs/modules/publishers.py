@@ -3762,7 +3762,8 @@ def slack(parser, xml_parent, data):
                                        '.slack.SlackNotifier')
     XML.SubElement(slack, 'teamDomain').text = data.get('teamDomain', '')
     XML.SubElement(slack, 'authToken').text = data.get('authToken', '')
-    XML.SubElement(slack, 'buildServerUrl').text = data.get('buildServerUrl', '/')
+    XML.SubElement(slack, 'buildServerUrl').text = data.get('buildServerUrl',
+                                                            '/')
     XML.SubElement(slack, 'room').text = data.get('room', '')
 
 
