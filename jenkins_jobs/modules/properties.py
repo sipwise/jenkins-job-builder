@@ -641,6 +641,7 @@ def zeromq_event(parser, xml_parent, data):
                                'ZMQEventPublisher.HudsonNotificationProperty')
     XML.SubElement(zmq_event, 'enabled').text = 'true'
 
+
 def slack(parser, xml_parent, data):
     """yaml: slack
     This is a Jenkins plugin that will notify Slack.
@@ -664,6 +665,7 @@ def slack(parser, xml_parent, data):
     XML.SubElement(slack, 'notifyUnstable').text = str(data.get('onUnstable', False)).lower()
     XML.SubElement(slack, 'notifyFailure').text = str(data.get('onFailure', False)).lower()
     XML.SubElement(slack, 'notifyBackToNormal').text = str(data.get('onNormal', False)).lower()
+
 
 class Properties(jenkins_jobs.modules.base.Base):
     sequence = 20
