@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_b2df1539",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-28T11:05:12Z",
+      "side": 1,
+      "message": "I wonder if it would be better to deprecate \u0027name\u0027 and emit a warning to the user to convert to using \u0027names\u0027 instead if name is set?\n\nAlso what if both are defined? Either should insert/append name to names or error out and tell the user to convert.",
+      "revId": "d281a6038e8884b04527ea8ca3de7511ece6668a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
