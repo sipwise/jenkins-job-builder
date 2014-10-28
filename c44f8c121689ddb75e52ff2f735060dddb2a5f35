@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_d2cc996c",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 589,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-28T11:17:53Z",
+      "side": 1,
+      "message": "Could you add a link for the doxygen plugin - https://wiki.jenkins-ci.org/display/JENKINS/Doxygen+Plugin see other examples within this file.",
+      "revId": "c44f8c121689ddb75e52ff2f735060dddb2a5f35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_32dfa5d7",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 609,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-28T11:17:53Z",
+      "side": 1,
+      "message": "So what happens if doxyfilePath and/or installationName are set to \u0027None\u0027? As this could be case with data.get(\"\u003ckey\u003e\") as it will return None if the requested key is unset and the str() wrapper will convert None to the string \"None\".\n\nSeems like it might be a good idea to either have a sensible default or to raise an exception at this point.",
+      "revId": "c44f8c121689ddb75e52ff2f735060dddb2a5f35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_52bfc960",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3356,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-28T11:17:53Z",
+      "side": 1,
+      "message": "So what happens if runOnChild is set to \u0027None\u0027? As this could be case with data.get(\"slave\") as it will return None if slave is unset and the str() wrapper will convert None to the string \"None\". Seems like it might be a good idea to either have a sensible default or to raise an exception at this point.",
+      "revId": "c44f8c121689ddb75e52ff2f735060dddb2a5f35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
