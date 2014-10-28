@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_4170d53f",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 650,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-28T14:08:26Z",
+      "side": 1,
+      "message": "Should include a description of the args and their defaults here, see this file and others for existing examples.",
+      "revId": "4fd6bd3cb9783d857a7fd06f4f182ad9655ec23b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_e1d0e920",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-28T14:08:26Z",
+      "side": 1,
+      "message": "Please use hyphenated parameters for the yaml variables. Should be plenty of examples.\n\nProbably can drop the \u0027on\u0027 prefix in general.",
+      "revId": "4fd6bd3cb9783d857a7fd06f4f182ad9655ec23b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_e17e2918",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3753,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-28T14:08:26Z",
+      "side": 1,
+      "message": "Should include a description of the args and their defaults here, see this file and others for existing examples.",
+      "revId": "4fd6bd3cb9783d857a7fd06f4f182ad9655ec23b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_01932d5b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3763,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-28T14:08:26Z",
+      "side": 1,
+      "message": "Please use hyphenated yaml names.",
+      "revId": "4fd6bd3cb9783d857a7fd06f4f182ad9655ec23b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_21acb18b",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-28T14:08:26Z",
+      "side": 1,
+      "message": "Please keep this in alphabetical order",
+      "revId": "4fd6bd3cb9783d857a7fd06f4f182ad9655ec23b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_41a7f5a6",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-28T14:08:26Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "4fd6bd3cb9783d857a7fd06f4f182ad9655ec23b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
