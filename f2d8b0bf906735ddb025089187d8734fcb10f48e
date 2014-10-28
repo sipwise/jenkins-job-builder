@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_ff6a4618",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1484,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-28T10:49:28Z",
+      "side": 1,
+      "message": "AttributeError is throw when trying to treat a non-dict as a dict. So think the comment is right though might be better to change \u0027git-revision\u0027 or note it\u0027s expected to be what is passed as configDef.\n\nI believe the logic is as follows:\n\nif git-revision is set to anything other than a dict\nwill get an attribute error here and combineQueuedCommits will be set to \u0027false\u0027.\n\nif git-revision is set to False, such as:\n\n git-revision: False\n\nThen this function will never be called in the first place.\n\nWhat should happen if git-revision is set to \u0027False\u0027 or \u0027True\u0027 as in strings instead of booleans? I notice that none of the other if statements distinguish as to whether the user set a string or boolean in the yaml code, so if they used:\n\n svn-revision: \u0027False\u0027\n\nThe other code would still set \u0027SubversionRevisionBuildParameters\u0027.\n\n\nBtw, the yaml can pass booleans as well as strings, so not everything in JJB is treated as a string. For templates its a little more convoluted since you must use \u0027{obj:\u003ckey\u003e}\u0027 format, but still possible to convert.",
+      "parentUuid": "9aa7fdbe_84ede6f1",
+      "revId": "f2d8b0bf906735ddb025089187d8734fcb10f48e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_a4b74ad7",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 6
