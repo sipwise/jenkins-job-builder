@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_01008d32",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-28T14:16:29Z",
+      "side": 1,
+      "message": "This is not in keeping with the existing style. Please look at the existing code for an idea of how to do this.\n\nslave_utilization contains a perfect example just above.",
+      "revId": "17b8658be8dc9bd3b5645c50e66d83ca9d602e4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
