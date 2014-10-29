@@ -230,3 +230,28 @@ class CmdTests(testtools.TestCase):
         config = configparser.ConfigParser()
         config.readfp(StringIO(cmd.DEFAULT_CONF))
         cmd.execute(args, config)  # passes if executed without error
+
+
+# This test class has dependencies on the CacheStorage
+class CmdTests2(testtools.TestCase):
+
+    fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
+    parser = cmd.create_parser()
+
+    @mock.patch('jenkins_jobs.builder.Jenkins.delete_job')
+    def test_delete_using_glob_params(self, delete_job_mock):
+        """
+        Test handling the deletion of multiple Jenkins jobs using the glob
+        parameters feature.
+        """
+
+        args = self.parser.parse_args(['delete',
+                                       '--path',
+                                       os.path.join(self.fixtures_path,
+                                                    'cmd-002.yaml'),
+                                       '*bar*'])
+        config = configparser.ConfigParser()
+        config.readfp(StringIO(cmd.DEFAULT_CONF))
+        cmd.execute(args, config)
+        delete_job_mock.assert_any_call('bar001')
+        delete_job_mock.assert_any_call('bar002')
