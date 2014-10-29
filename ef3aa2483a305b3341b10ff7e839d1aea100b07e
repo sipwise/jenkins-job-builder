@@ -68,6 +68,23 @@
       "revId": "ef3aa2483a305b3341b10ff7e839d1aea100b07e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_e310c3aa",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-10-29T18:45:14Z",
+      "side": 1,
+      "message": "Good point, probably would be good to catch and report.",
+      "revId": "ef3aa2483a305b3341b10ff7e839d1aea100b07e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
