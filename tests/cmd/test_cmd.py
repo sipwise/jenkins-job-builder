@@ -230,3 +230,19 @@ class CmdTests(testtools.TestCase):
         config = configparser.ConfigParser()
         config.readfp(StringIO(cmd.DEFAULT_CONF))
         cmd.execute(args, config)  # passes if executed without error
+
+    @mock.patch('jenkins_jobs.cmd.Builder.delete_job')
+    def test_delete_using_glob_params(self, delete_job_mock):
+        """
+        Test handling the deletion of multiple Jenkins jobs using the glob
+        parameters feature.
+        """
+
+        args = self.parser.parse_args(['delete',
+                                       '--path',
+                                       os.path.join(self.fixtures_path,
+                                                    'cmd-002.yaml'),
+                                       '*bar*'])
+        config = configparser.ConfigParser()
+        config.readfp(StringIO(cmd.DEFAULT_CONF))
+        cmd.execute(args, config)  # passes if executed without error
