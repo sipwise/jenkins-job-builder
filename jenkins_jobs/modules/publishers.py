@@ -3770,6 +3770,7 @@ def doxygen(parser, xml_parent, data):
     Requires the Jenkins :jenkins-wiki:`Doxygen Plugin <Doxygen+Plugin>`.
 
     :arg str doxyfile: The doxyfile path
+    :arg str slave: The node or label to pull the doxygen HTML files from
     :arg bool keepall: Retain doxygen generation for each successful build
         (default: false)
     :arg str folder: Folder where you run doxygen (default: '')
@@ -3780,12 +3781,13 @@ def doxygen(parser, xml_parent, data):
        :language: yaml
     """
     p = XML.SubElement(xml_parent, 'hudson.plugins.doxygen.DoxygenArchiver')
-    if not data['doxyfile']:
-        raise JenkinsJobsException("The path to a doxyfile must be specified.")
-    XML.SubElement(p, 'doxyfilePath').text = str(data.get("doxyfile"))
-    XML.SubElement(p, 'keepAll').text = str(data.get("keepall", False)).lower()
+    if not data.get('doxyfile'):
+        raise JenkinsJobsException('The path to a doxyfile must be specified.')
+    XML.SubElement(p, 'doxyfilePath').text = str(data.get('doxyfile'))
+    XML.SubElement(p, 'runOnChild').text = str(data.get('slave', ''))
+    XML.SubElement(p, 'keepAll').text = str(data.get('keepall', False)).lower()
     XML.SubElement(p, 'folderWhereYouRunDoxygen').text = \
-        str(data.get("folder", ""))
+        str(data.get('folder', ''))
 
 
 def sitemonitor(parser, xml_parent, data):
