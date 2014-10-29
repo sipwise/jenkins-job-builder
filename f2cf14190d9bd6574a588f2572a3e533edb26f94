@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_038867c5",
+        "filename": "setup.cfg",
+        "patchSetId": 8
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-29T19:18:20Z",
+      "side": 1,
+      "message": "Please keep alphabetical order here.",
+      "revId": "f2cf14190d9bd6574a588f2572a3e533edb26f94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_4380af8b",
+        "filename": "tests/parameters/fixtures/extended-choice-param001.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-10-29T19:18:20Z",
+      "side": 1,
+      "message": "Does this work as expected? Would seem like it\u0027ll include the newline character as part of the value when \u0027OptionB\u0027 and \u0027OptionC\u0027 are selected. Probably not an issue, but might just mean this isn\u0027t a great example for end users.",
+      "revId": "f2cf14190d9bd6574a588f2572a3e533edb26f94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
