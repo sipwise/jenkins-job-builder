@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8c0949_25581256",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-10-30T14:43:18Z",
+      "side": 1,
+      "message": "Apparently sphinx literalinclude can\u0027t be applied additional parameters such as :language: yaml.  The documentation generated shows it is not syntax highlighted:\n\nhttp://docs-draft.openstack.org/35/131335/2/check/gate-jenkins-job-builder-docs/5bf0e8b/doc/build/html/wrappers.html#wrappers.port-allocator\n\nSo I would drop the line.",
+      "revId": "daf28dce9c523cf7592362aa36a2b137f823691e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_052236b9",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-10-30T14:43:18Z",
+      "side": 1,
+      "message": "Brian Saville wrote:\n\u003e Is there an accepted way to message the deprecation? Do I just print a warning message using \u0027print\u0027 or logger, etc?\n\nIndeed we use logger.warn() :)",
+      "revId": "daf28dce9c523cf7592362aa36a2b137f823691e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
