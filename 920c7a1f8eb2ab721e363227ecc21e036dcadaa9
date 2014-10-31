@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8c0949_9b467bbe",
+        "filename": "jenkins_jobs/modules/general.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-10-31T06:17:24Z",
+      "side": 1,
+      "message": "has",
+      "range": {
+        "startLine": 18,
+        "startChar": 52,
+        "endLine": 18,
+        "endChar": 56
+      },
+      "revId": "920c7a1f8eb2ab721e363227ecc21e036dcadaa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
