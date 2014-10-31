@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a8c0949_1cd19efb",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4325
+      },
+      "writtenOn": "2014-10-31T14:05:59Z",
+      "side": 1,
+      "message": "Well I think this should be a job for some yaml grammar checker, but whatever...",
+      "parentUuid": "9aa7fdbe_ed81804b",
+      "revId": "1df0a2a72441150a5a7ea47ccb75c309f721779c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_4a58b256",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 13
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "7a8c0949_3248412d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 4325
+      },
+      "writtenOn": "2014-10-31T14:05:59Z",
+      "side": 1,
+      "message": "Done.\n\nI have made them aliases of each other.",
+      "parentUuid": "9aa7fdbe_a9b1a890",
+      "revId": "1df0a2a72441150a5a7ea47ccb75c309f721779c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_c95c2c4e",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 13
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "7a8c0949_f246b922",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 4325
+      },
+      "writtenOn": "2014-10-31T14:05:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa7fdbe_c95c2c4e",
+      "revId": "1df0a2a72441150a5a7ea47ccb75c309f721779c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_34791530",
         "filename": "tests/triggers/fixtures/gerrit004.yaml",
         "patchSetId": 13
@@ -82,6 +136,24 @@
       "writtenOn": "2014-10-20T20:14:43Z",
       "side": 1,
       "message": "this test will appear in the docs.  would you mind adding another trigger in this example so an example of this feature is represented in the docs?",
+      "revId": "1df0a2a72441150a5a7ea47ccb75c309f721779c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_d241bd0c",
+        "filename": "tests/triggers/fixtures/gerrit004.yaml",
+        "patchSetId": 13
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4325
+      },
+      "writtenOn": "2014-10-31T14:05:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa7fdbe_34791530",
       "revId": "1df0a2a72441150a5a7ea47ccb75c309f721779c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
