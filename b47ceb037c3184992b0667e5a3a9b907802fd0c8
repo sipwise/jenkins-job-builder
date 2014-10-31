@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8c0949_fb83ffc9",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1033,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-10-31T06:20:21Z",
+      "side": 1,
+      "message": "Missing period at the end of the sentence.",
+      "range": {
+        "startLine": 1033,
+        "startChar": 52,
+        "endLine": 1033,
+        "endChar": 57
+      },
+      "revId": "b47ceb037c3184992b0667e5a3a9b907802fd0c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
