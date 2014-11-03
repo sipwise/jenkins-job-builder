@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8c0949_c6200a4c",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-03T17:46:58Z",
+      "side": 1,
+      "message": "If just old_formats_events is set should emit a deprecation warning via the logging module here.\n\nThat way sometime after we release 1.0 we can strip all this compatibility code and clean things up :)",
+      "revId": "ed56442e0bf12fc10e946ed9a86f0dd161e916e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_e66d069b",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-03T17:46:58Z",
+      "side": 1,
+      "message": "Need to emit a warning via logging if the user is using this one, otherwise they won\u0027t know its been deprecated until its been removed.",
+      "revId": "ed56442e0bf12fc10e946ed9a86f0dd161e916e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
