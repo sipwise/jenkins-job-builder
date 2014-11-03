@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8c0949_6c7d77e7",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1042,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-11-03T15:41:24Z",
+      "side": 1,
+      "message": "The version of the plugin is needed here? How does this affect jenkins? I know that it will fill it with the current one if not passed, but not sure how it handles already set ones, I have to check.",
+      "revId": "112d857e347b0a4fb91317f2ee9cfd6c07925e5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
