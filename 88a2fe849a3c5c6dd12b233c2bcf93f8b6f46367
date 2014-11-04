@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a8c0949_d4f26699",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3436,
+      "author": {
+        "id": 6814
+      },
+      "writtenOn": "2014-11-04T22:01:04Z",
+      "side": 1,
+      "message": "ok.",
+      "parentUuid": "9aa7fdbe_bea7f3bb",
+      "revId": "88a2fe849a3c5c6dd12b233c2bcf93f8b6f46367",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_fe117b04",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2014-10-27T18:15:57Z",
       "side": 1,
       "message": "does this not handle all bool cases?  why the special one on the \u0027if\u0027 line?",
+      "revId": "88a2fe849a3c5c6dd12b233c2bcf93f8b6f46367",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_b43a3a32",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3527,
+      "author": {
+        "id": 6814
+      },
+      "writtenOn": "2014-11-04T22:01:04Z",
+      "side": 1,
+      "message": "The value of `upload-on-failure` from the yaml document needs to be inverted before being stored as `\u003cnoUploadOnFailure\u003e` in the XML.  I believe it is more straightforward to document this way (\"do this thing? T/F\") and less prone to inducing user mistakes compared to the underlying doubly-negated \"don\u0027t not do this thing? F/T\" structure.",
+      "parentUuid": "9aa7fdbe_fe117b04",
       "revId": "88a2fe849a3c5c6dd12b233c2bcf93f8b6f46367",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
