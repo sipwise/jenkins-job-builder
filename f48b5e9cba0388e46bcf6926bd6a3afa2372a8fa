@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8c0949_5c9b0272",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-04T15:14:57Z",
+      "side": 1,
+      "message": "I know I picked up on the import style in the other files, but I think this needs to be cleaned up separately rather than in this change, so I suggest only worrying about entirely new files you are introducing.\n\nJust in case you\u0027re wondering if this should be fixed up as well.",
+      "revId": "f48b5e9cba0388e46bcf6926bd6a3afa2372a8fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_81c8a123",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-04T15:14:57Z",
+      "side": 1,
+      "message": "I could be wrong, but I don\u0027t think this is needed any more. Think the filtering is now already done by expandYaml().",
+      "revId": "f48b5e9cba0388e46bcf6926bd6a3afa2372a8fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_c1e9c981",
+        "filename": "jenkins_jobs/parallel.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-04T15:14:57Z",
+      "side": 1,
+      "message": "Was pointed out to me recently that imports should be done as the following with blank lines between each grouping, essentially http://docs.openstack.org/developer/hacking/#import-order-template:\n\n import system\n\n import third-party\n\n import project\n\n try/except imports\n\nThe last one isn\u0027t codified, but based on discussions with the person that wanted it this way in order projects, I think I agree that it\u0027s probably better instead of trying to mix that in with the other import groups\nSo looks like this should be something like:\n\n from functools import wraps\n import logging\n from multiprocessing import cpu_count\n import threading\n import traceback\n\n try:\n     import Queue as queue\n except ImportError:\n     import queue\n\nAware that JJB is not good at following this convention, so wouldn\u0027t normally suggest, but believe there is a small change to be made anyway so think this can be fixed at the same time.",
+      "revId": "f48b5e9cba0388e46bcf6926bd6a3afa2372a8fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_1cab3ad7",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-04T15:14:57Z",
+      "side": 1,
+      "message": "This doesn\u0027t appear to be needed.",
+      "revId": "f48b5e9cba0388e46bcf6926bd6a3afa2372a8fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_9cd48a48",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-04T15:14:57Z",
+      "side": 1,
+      "message": "Same here, you can remove this and the associated entries.",
+      "revId": "f48b5e9cba0388e46bcf6926bd6a3afa2372a8fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_1cca5a6e",
+        "filename": "tests/parallel/test_parallel.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-04T15:14:57Z",
+      "side": 1,
+      "message": "Never really looked to closely at this before, but probably better to try and follow OpenStacks hacking style guide here: http://docs.openstack.org/developer/hacking/#import-order-template\n\n from multiprocessing import cpu_count\n import time\n \n from mock import patch\n from testtools import TestCase\n from testtools.matchers import Equals, LessThan\n\n from jenkins_jobs.parallel import parallelize",
+      "revId": "f48b5e9cba0388e46bcf6926bd6a3afa2372a8fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
