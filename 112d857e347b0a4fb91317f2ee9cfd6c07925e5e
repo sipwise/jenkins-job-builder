@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a8c0949_ea904e97",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1027,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-05T16:00:39Z",
+      "side": 1,
+      "message": "is this a required param?  if so it would be good to check that this param is defined.",
+      "revId": "112d857e347b0a4fb91317f2ee9cfd6c07925e5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_8a80aa47",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1029,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-05T16:00:39Z",
+      "side": 1,
+      "message": "should this be int type?",
+      "revId": "112d857e347b0a4fb91317f2ee9cfd6c07925e5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_4a86c266",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1031,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-05T16:00:39Z",
+      "side": 1,
+      "message": "should this be \u0027int\u0027 type?",
+      "revId": "112d857e347b0a4fb91317f2ee9cfd6c07925e5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8c0949_6c7d77e7",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 2
@@ -13,6 +64,40 @@
       "writtenOn": "2014-11-03T15:41:24Z",
       "side": 1,
       "message": "The version of the plugin is needed here? How does this affect jenkins? I know that it will fill it with the current one if not passed, but not sure how it handles already set ones, I have to check.",
+      "revId": "112d857e347b0a4fb91317f2ee9cfd6c07925e5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_8aa98ae1",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1042,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-05T16:00:39Z",
+      "side": 1,
+      "message": "we prefer to not have version number so that the module will work with multiple versions of the plugin.  could you please remove the version number and verify whether the generated xml will work without it?",
+      "revId": "112d857e347b0a4fb91317f2ee9cfd6c07925e5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_2aea560f",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1045,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-05T16:00:39Z",
+      "side": 1,
+      "message": "shouldn\u0027t this default to some int?",
       "revId": "112d857e347b0a4fb91317f2ee9cfd6c07925e5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
