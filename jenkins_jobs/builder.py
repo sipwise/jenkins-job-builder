@@ -131,12 +131,13 @@ def matches(what, glob_patterns):
 
 
 class YamlParser(object):
-    def __init__(self, config=None):
+    def __init__(self, config=None, plugins_info=None):
         self.data = {}
         self.jobs = []
         self.xml_jobs = []
         self.config = config
         self.registry = ModuleRegistry(self.config)
+        self.registry.plugins_info = plugins_info
         self.path = ["."]
         if self.config:
             if config.has_section('job_builder') and \
@@ -406,11 +407,12 @@ class YamlParser(object):
 class ModuleRegistry(object):
     entry_points_cache = {}
 
-    def __init__(self, config):
+    def __init__(self, config, plugins_info=None):
         self.modules = []
         self.modules_by_component_type = {}
         self.handlers = {}
         self.global_config = config
+        self.plugins_info = plugins_info
 
         for entrypoint in pkg_resources.iter_entry_points(
                 group='jenkins_jobs.modules'):
@@ -426,6 +428,12 @@ class ModuleRegistry(object):
         if not cat_dict:
             self.handlers[category] = cat_dict
         cat_dict[name] = method
+
+    def get_plugins_info(self, plugin_long_name):
+        if (self.plugins_info is not None
+                and plugin_long_name in self.plugins_info):
+            return self.plugins_info[plugin_long_name]
+        return None
 
     def getHandler(self, category, name):
         return self.handlers[category][name]
@@ -590,6 +598,12 @@ class Jenkins(object):
             logger.info("Deleting jenkins job {0}".format(job_name))
             self.jenkins.delete_job(job_name)
 
+    def get_plugins_info(self):
+        plugins_list = self.jenkins.get_plugins_info()
+        plugins_dict = dict([(v['longName'], v) for v in plugins_list])
+        logger.debug("Jenkins Plugin Info {0}".format(pformat(plugins_list)))
+        return plugins_dict
+
     def get_jobs(self):
         return self.jenkins.get_jobs()
 
@@ -606,14 +620,19 @@ class Jenkins(object):
 
 class Builder(object):
     def __init__(self, jenkins_url, jenkins_user, jenkins_password,
-                 config=None, ignore_cache=False, flush_cache=False):
+                 config=None, ignore_cache=False, flush_cache=False,
+                 plugins_info=None):
         self.jenkins = Jenkins(jenkins_url, jenkins_user, jenkins_password)
+        self.plugins_info = plugins_info
         self.cache = CacheStorage(jenkins_url, flush=flush_cache)
         self.global_config = config
         self.ignore_cache = ignore_cache
 
+        if self.plugins_info is None:
+            self.plugins_info = self.jenkins.get_plugins_info()
+
     def load_files(self, fn):
-        self.parser = YamlParser(self.global_config)
+        self.parser = YamlParser(self.global_config, self.plugins_info)
 
         # handle deprecated behavior
         if not hasattr(fn, '__iter__'):
