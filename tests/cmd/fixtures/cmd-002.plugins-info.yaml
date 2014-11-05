@@ -1,0 +1,4 @@
+'Jenkins HipChat Plugin':
+  longName: 'Jenkins HipChat Plugin'
+  shortName: 'hipchat'
+  version: '0.1.8'
