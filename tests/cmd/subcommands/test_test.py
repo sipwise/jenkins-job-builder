@@ -12,6 +12,7 @@ import tests.utils.mocks as jjb_mocks
 # are run in parallel.  Stub out the CacheStorage to ensure that each
 # test can safely create the cache directory without risk of interference.
 @mock.patch('jenkins_jobs.builder.CacheStorage', mock.MagicMock)
+@mock.patch('jenkins_jobs.builder.Jenkins.get_plugins_info', mock.MagicMock)
 class TestTests(CmdTestsBase):
 
     def test_non_existing_config_dir(self):
@@ -50,6 +51,27 @@ class TestTests(CmdTestsBase):
                                        'foo-job'])
         args.output_dir = mock.MagicMock()
         cmd.execute(args, self.config)   # probably better to fail here
+
+    def test_plugins_info_option(self):
+        """
+        Run test mode and passing a valid plugins_info YAML file.
+        """
+        console_out = io.BytesIO()
+        with mock.patch('sys.stdout', console_out):
+            cmd.main(['--conf',
+                      os.path.join(self.fixtures_path,
+                                   'cmd-002.conf'),
+                      'test',
+                      '-p',
+                      os.path.join(self.fixtures_path,
+                                   'cmd-002.plugins-info.yaml'),
+                      os.path.join(self.fixtures_path,
+                                   'cmd-002.yaml')])
+
+        xml_content = codecs.open(os.path.join(self.fixtures_path,
+                                               'cmd-002.xml'),
+                                  'r', 'utf-8').read()
+        self.assertEqual(console_out.getvalue().decode('utf-8'), xml_content)
 
     @mock.patch('jenkins_jobs.cmd.Builder.update_job')
     def test_multi_path(self, update_job_mock):
