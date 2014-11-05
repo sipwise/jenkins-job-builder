@@ -94,6 +94,11 @@ class HipChat(jenkins_jobs.modules.base.Base):
                              " containing authtoken:\n{0}".format(e))
                 sys.exit(1)
             self.jenkinsUrl = self.registry.global_config.get('jenkins', 'url')
+            try:
+                self.sendAs = self.registry.global_config.get('jenkins',
+                                                              'send-as')
+            except configparser.NoOptionError:
+                self.sendAs = "Jenkins"
 
     def gen_xml(self, parser, xml_parent, data):
         hipchat = data.get('hipchat')
@@ -104,6 +109,20 @@ class HipChat(jenkins_jobs.modules.base.Base):
                 "Missing hipchat 'room' specifier")
         self._load_global_data()
 
+        plugins_info = self.registry.\
+            get_plugins_info("Jenkins HipChat Plugin")
+
+        if plugins_info is None:
+            return self.__gen_xml(parser, xml_parent, data)
+
+        version = plugins_info["version"]
+
+        if version == "0.1.8":
+            return self.__gen_xml_018(parser, xml_parent, data)
+        return self.__gen_xml(parser, xml_parent, data)
+
+    def __common(self, parser, xml_parent, data):
+        hipchat = data.get('hipchat')
         properties = xml_parent.find('properties')
         if properties is None:
             properties = XML.SubElement(xml_parent, 'properties')
@@ -131,6 +150,24 @@ class HipChat(jenkins_jobs.modules.base.Base):
         if hipchat.get('notify-back-to-normal'):
             XML.SubElement(pdefhip, 'notifyBackToNormal').text = str(
                 hipchat.get('notify-back-to-normal')).lower()
+
+    def __gen_xml_018(self, parser, xml_parent, data):
+        self.__common(parser, xml_parent, data)
+
+        publishers = xml_parent.find('publishers')
+        if publishers is None:
+            publishers = XML.SubElement(xml_parent, 'publishers')
+        hippub = XML.SubElement(publishers,
+                                'jenkins.plugins.hipchat.HipChatNotifier')
+        XML.SubElement(hippub, 'buildServerUrl').text = self.jenkinsUrl
+        XML.SubElement(hippub, 'authToken').text = self.authToken
+        XML.SubElement(hippub, 'sendAs').text = self.sendAs
+        # The room specified here is the default room.  The default is
+        # redundant in this case since a room must be specified.  Leave empty.
+        XML.SubElement(hippub, 'room').text = ''
+
+    def __gen_xml(self, parser, xml_parent, data):
+        self.__common(parser, xml_parent, data)
 
         publishers = xml_parent.find('publishers')
         if publishers is None:
