@@ -64,7 +64,7 @@ class General(jenkins_jobs.modules.base.Base):
         XML.SubElement(xml, 'keepDependencies').text = 'false'
         disabled = data.get('disabled', None)
         if disabled is not None:
-            if disabled:
+            if disabled is True or disabled in ['true', 'True']:
                 XML.SubElement(xml, 'disabled').text = 'true'
             else:
                 XML.SubElement(xml, 'disabled').text = 'false'
