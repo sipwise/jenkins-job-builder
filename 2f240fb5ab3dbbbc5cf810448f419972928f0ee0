@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8c0949_c77d32e9",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-06T23:57:38Z",
+      "side": 1,
+      "message": "Seems like some duplication here, does the following achieve the same result?\n\n try:\n     result \u003d re.match(\u0027^{obj:(?P\u003ckey\u003e\\w+)}$\u0027, obj)\n     if result is not None:\n         ret \u003d paramdict[result.group(\"key\")]\n     else:\n         if allow_empty:\n             ret \u003d CustomFormatter().format(obj, **paramdict)\n         else:\n             ret \u003d obj.format(**paramdict)\n except KeyError as exc:\n     ....",
+      "revId": "2f240fb5ab3dbbbc5cf810448f419972928f0ee0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_27dc36e4",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-06T23:57:38Z",
+      "side": 1,
+      "message": "I think you should use the specific call for converting to booleans:\n\n self.config.getboolean(\u0027job_builder\u0027, \u0027allow_empty_variables\u0027)",
+      "revId": "2f240fb5ab3dbbbc5cf810448f419972928f0ee0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_a7ef4686",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-06T23:57:38Z",
+      "side": 1,
+      "message": "Use the same construct here to check for section and item existing first? and then use the \u0027getboolean()\u0027 method.",
+      "revId": "2f240fb5ab3dbbbc5cf810448f419972928f0ee0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_47fea239",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-06T23:57:38Z",
+      "side": 1,
+      "message": "s/is/are/?",
+      "revId": "2f240fb5ab3dbbbc5cf810448f419972928f0ee0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
