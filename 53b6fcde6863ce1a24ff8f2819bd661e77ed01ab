@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8c0949_aa30f8e8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-11-06T13:07:47Z",
+      "side": 1,
+      "message": "Nit: add a blank line between the subject and the body.",
+      "revId": "53b6fcde6863ce1a24ff8f2819bd661e77ed01ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
