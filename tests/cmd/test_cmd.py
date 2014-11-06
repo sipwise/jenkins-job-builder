@@ -12,6 +12,7 @@ from jenkins_jobs import cmd
 # are run in parallel.  Stub out the CacheStorage to ensure that each
 # test can safely create the cache directory without risk of interference.
 @mock.patch('jenkins_jobs.builder.CacheStorage', mock.MagicMock)
+@mock.patch('jenkins_jobs.builder.Jenkins.get_plugins_info', mock.MagicMock)
 class CmdTests(testtools.TestCase):
 
     fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
