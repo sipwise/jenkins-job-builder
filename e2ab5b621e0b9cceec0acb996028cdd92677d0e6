@@ -16,6 +16,24 @@
       "revId": "e2ab5b621e0b9cceec0acb996028cdd92677d0e6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_b6ab6ed5",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-11-07T23:10:45Z",
+      "side": 1,
+      "message": "Having version information is important for test mode if JJB is to produce the same output for test mode as it would for update mode, so it might be a good idea to at least warn users who try to run JJB in test mode without a jenkins server specified.\n\nI think the solution then should maybe be to only call the python_jenkins module\u0027s get_plugins_info if there is a server available--if there is no server available, then indicate such, maybe with a None return value when requesting info for the given plugin.\n\nThe ModuleRegistry object should then have a method, \"get_plugin_version(long_name)\" that will either return a string or None depending on availability of a jenkins server and the plugin specified by long_name. This method would be available for use by modules to request version information based on the longName of the plugin. Modules would then be required to implement behavior to handle unspecified/default or generic versions (versions for which no special behavior is required).\n\nWhat do you think about that?",
+      "parentUuid": "7a8c0949_1e413da9",
+      "revId": "e2ab5b621e0b9cceec0acb996028cdd92677d0e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
