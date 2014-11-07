@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_f0b5fe31",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 10540
+      },
+      "writtenOn": "2014-11-07T17:42:42Z",
+      "side": 1,
+      "message": "Need to wrap this with a str() call, because the YAML data may be a native integer type.  Doesn\u0027t make sense to require the YAML data be quoted if avoidable.",
+      "revId": "59f02c8f5a359508f547d8220fd96386760fe22a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_70810e4a",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 10540
+      },
+      "writtenOn": "2014-11-07T17:42:42Z",
+      "side": 1,
+      "message": "Also accept visible-item-count, since we want to be compatible with the previous version of this, but also be compatible with the misplaced version in properties.",
+      "revId": "59f02c8f5a359508f547d8220fd96386760fe22a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_f08c1e82",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 10540
+      },
+      "writtenOn": "2014-11-07T17:42:42Z",
+      "side": 1,
+      "message": "We want to default to the same names as the version in properties.py, but still allow the bare names for backwards compatibility with the previous config.",
+      "revId": "59f02c8f5a359508f547d8220fd96386760fe22a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_10e9aa1a",
+        "filename": "tests/parameters/fixtures/extended-choice-param001.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 10540
+      },
+      "writtenOn": "2014-11-07T17:42:42Z",
+      "side": 1,
+      "message": "This is just updated due to the new ordering, the source file is still the same.",
+      "revId": "59f02c8f5a359508f547d8220fd96386760fe22a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
