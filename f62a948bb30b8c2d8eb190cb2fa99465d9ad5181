@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8c0949_ad3807a1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-11-07T05:27:03Z",
+      "side": 1,
+      "message": "Can you add a unit test to cover this case?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 28
+      },
+      "revId": "f62a948bb30b8c2d8eb190cb2fa99465d9ad5181",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_4dc0837c",
+        "filename": "jenkins_jobs/modules/general.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-11-07T05:27:03Z",
+      "side": 1,
+      "message": "Use \u003d\u003d to compare strings rather than \u0027is\u0027.\n\nAn alternative way to write this would be:\n\n if disabled is True or disabled in [\u0027true\u0027, \u0027True\u0027]:",
+      "range": {
+        "startLine": 67,
+        "startChar": 35,
+        "endLine": 67,
+        "endChar": 75
+      },
+      "revId": "f62a948bb30b8c2d8eb190cb2fa99465d9ad5181",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
