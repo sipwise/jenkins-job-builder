@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8c0949_1e413da9",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-07T13:53:21Z",
+      "side": 1,
+      "message": "This will run on execution of any jjb command.  In test mode we do not need to point jjb to a running jenkins therefore it will most likely  fail when a user runs in test mode.",
+      "revId": "e2ab5b621e0b9cceec0acb996028cdd92677d0e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
