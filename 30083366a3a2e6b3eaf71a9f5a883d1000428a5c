@@ -22,6 +22,24 @@
       "revId": "30083366a3a2e6b3eaf71a9f5a883d1000428a5c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_a9f2b46c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-07T12:34:38Z",
+      "side": 1,
+      "message": "Should really be on object deletion, which would mainly occur on exit. Thanks for the catch.",
+      "parentUuid": "7a8c0949_edcbefa2",
+      "revId": "30083366a3a2e6b3eaf71a9f5a883d1000428a5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
