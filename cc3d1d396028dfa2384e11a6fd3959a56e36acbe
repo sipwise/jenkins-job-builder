@@ -43,6 +43,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_67ab0e8a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3756,
+      "author": {
+        "id": 12856
+      },
+      "writtenOn": "2014-11-08T17:11:17Z",
+      "side": 1,
+      "message": "Yes, 0 enabled it and would warn if #bugs \u003e 0. I\u0027ve implemented it that way so that it works similar to other plugins like warnings or valgrind. Maybe it should be changed there as well then.\n\nI\u0027ll push a new changeset with 2 options in a second: mark-unstable and threshold. This has however the downside, that you need to set 2 variables now in order to enable the feature. Those who don\u0027t want to use it will anyways not set anything and just use the default.",
+      "parentUuid": "9aa7fdbe_4338f4d2",
+      "revId": "cc3d1d396028dfa2384e11a6fd3959a56e36acbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_9d1c0b6c",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 6
