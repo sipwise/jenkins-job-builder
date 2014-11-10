@@ -58,6 +58,7 @@ CFP Example:
 """
 
 import xml.etree.ElementTree as XML
+
 import jenkins_jobs.modules.base
 from jenkins_jobs.modules.helpers import config_file_provider_settings
 

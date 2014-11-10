@@ -1,9 +1,10 @@
-import os
-import io
+
 import codecs
-import yaml
+import io
+import os
 
 import jenkins
+import yaml
 
 from jenkins_jobs import cmd
 from jenkins_jobs.errors import JenkinsJobsException

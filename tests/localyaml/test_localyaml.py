@@ -15,13 +15,16 @@
 # under the License.
 
 import os
+
+from testscenarios.testcase import TestWithScenarios
 from testtools import ExpectedException
 from testtools.matchers import MismatchError
 from testtools import TestCase
-from testscenarios.testcase import TestWithScenarios
 
 from jenkins_jobs import builder
-from tests.base import get_scenarios, JsonTestCase, YamlTestCase
+from tests.base import get_scenarios
+from tests.base import JsonTestCase
+from tests.base import YamlTestCase
 
 
 def _exclude_scenarios(input_filename):

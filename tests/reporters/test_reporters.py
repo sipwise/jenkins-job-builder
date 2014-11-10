@@ -15,10 +15,12 @@
 # under the License.
 
 import os
-from testtools import TestCase
+from tests.base import BaseTestCase
+from tests.base import get_scenarios
 from testscenarios.testcase import TestWithScenarios
+from testtools import TestCase
+
 from jenkins_jobs.modules import reporters
-from tests.base import get_scenarios, BaseTestCase
 
 
 class TestCaseModuleReporters(TestWithScenarios, TestCase, BaseTestCase):

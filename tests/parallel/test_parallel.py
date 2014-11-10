@@ -12,17 +12,14 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from testtools import (
-    TestCase,
-)
-from testtools.matchers import (
-    Equals,
-    LessThan,
-)
-from jenkins_jobs.parallel import parallelize
-import time
 from mock import patch
 from multiprocessing import cpu_count
+from testtools.matchers import Equals
+from testtools.matchers import LessThan
+from testtools import TestCase
+import time
+
+from jenkins_jobs.parallel import parallelize
 
 
 class TestCaseParallel(TestCase):
