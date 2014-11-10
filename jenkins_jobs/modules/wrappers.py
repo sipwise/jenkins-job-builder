@@ -23,12 +23,13 @@ Wrappers can alter the way the build is run as well as the build output.
 """
 
 import logging
-import xml.etree.ElementTree as XML
 import pkg_resources
+import xml.etree.ElementTree as XML
+
+from jenkins_jobs.errors import InvalidAttributeError
+from jenkins_jobs.errors import JenkinsJobsException
+from jenkins_jobs.errors import MissingAttributeError
 import jenkins_jobs.modules.base
-from jenkins_jobs.errors import (JenkinsJobsException,
-                                 InvalidAttributeError,
-                                 MissingAttributeError)
 from jenkins_jobs.modules.builders import create_builders
 from jenkins_jobs.modules.helpers import config_file_provider_builder
 

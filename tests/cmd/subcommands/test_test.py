@@ -1,5 +1,5 @@
-import os
 import io
+import os
 import yaml
 
 import jenkins
