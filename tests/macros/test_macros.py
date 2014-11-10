@@ -16,8 +16,10 @@
 # under the License.
 
 import os
-from testtools import TestCase
+
 from testscenarios.testcase import TestWithScenarios
+from testtools import TestCase
+
 from tests.base import get_scenarios, SingleJobTestCase
 
 

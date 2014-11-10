@@ -78,16 +78,18 @@ Example:
 """
 
 import codecs
-try:
-    from collections import OrderedDict
-except ImportError:
-    from ordereddict import OrderedDict
 import functools
 import logging
 import re
 import os
+
 import yaml
 from yaml.constructor import BaseConstructor
+
+try:
+    from collections import OrderedDict
+except ImportError:
+    from ordereddict import OrderedDict
 
 logger = logging.getLogger(__name__)
 

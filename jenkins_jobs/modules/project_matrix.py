@@ -104,6 +104,7 @@ Example using user-defined axis::
 
 
 import xml.etree.ElementTree as XML
+
 import jenkins_jobs.modules.base
 
 
