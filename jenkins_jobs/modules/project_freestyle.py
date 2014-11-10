@@ -29,6 +29,7 @@ Example::
 
 
 import xml.etree.ElementTree as XML
+
 import jenkins_jobs.modules.base
 
 

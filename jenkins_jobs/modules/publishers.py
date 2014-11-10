@@ -25,14 +25,14 @@ the build is complete.
   :Entry Point: jenkins_jobs.publishers
 """
 
-
+import logging
+import random
+import sys
 import xml.etree.ElementTree as XML
+
+from jenkins_jobs.errors import JenkinsJobsException
 import jenkins_jobs.modules.base
 from jenkins_jobs.modules import hudson_model
-from jenkins_jobs.errors import JenkinsJobsException
-import logging
-import sys
-import random
 
 
 def archive(parser, xml_parent, data):
