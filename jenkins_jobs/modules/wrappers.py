@@ -24,8 +24,9 @@ Wrappers can alter the way the build is run as well as the build output.
 
 import logging
 import xml.etree.ElementTree as XML
-import jenkins_jobs.modules.base
+
 from jenkins_jobs.errors import JenkinsJobsException
+import jenkins_jobs.modules.base
 from jenkins_jobs.modules.builders import create_builders
 
 

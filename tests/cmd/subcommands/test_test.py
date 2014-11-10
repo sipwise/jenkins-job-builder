@@ -1,14 +1,15 @@
-import os
-import io
+
 import codecs
-import yaml
+import io
+import os
 
 import jenkins
+import yaml
 
 from jenkins_jobs import cmd
 from jenkins_jobs.errors import JenkinsJobsException
-from tests.cmd.test_cmd import CmdTestsBase
 from tests.base import mock
+from tests.cmd.test_cmd import CmdTestsBase
 
 
 os_walk_return_values = {

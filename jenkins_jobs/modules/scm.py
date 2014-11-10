@@ -33,8 +33,9 @@ Example of multiple repositories in a single job:
 
 import logging
 import xml.etree.ElementTree as XML
-import jenkins_jobs.modules.base
+
 from jenkins_jobs.errors import JenkinsJobsException
+import jenkins_jobs.modules.base
 
 
 def git(parser, xml_parent, data):

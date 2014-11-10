@@ -18,28 +18,32 @@
 # under the License.
 
 import codecs
-import logging
-import os
-import re
 import doctest
 import json
+import logging
 import operator
+import os
+import re
+import xml.etree.ElementTree as XML
+
+from six.moves import configparser
 import testtools
 from testtools.content import text_content
-import xml.etree.ElementTree as XML
-from six.moves import configparser
+
+from jenkins_jobs.builder import XmlJob
+from jenkins_jobs.builder import YamlParser
+import jenkins_jobs.local_yaml as yaml
+from jenkins_jobs.modules import project_flow
+from jenkins_jobs.modules import project_matrix
+from jenkins_jobs.modules import project_maven
+from jenkins_jobs.modules import project_multijob
+
 # This dance deals with the fact that we want unittest.mock if
 # we're on Python 3.4 and later, and non-stdlib mock otherwise.
 try:
     from unittest import mock
 except ImportError:
     import mock  # noqa
-import jenkins_jobs.local_yaml as yaml
-from jenkins_jobs.builder import XmlJob, YamlParser
-from jenkins_jobs.modules import (project_flow,
-                                  project_matrix,
-                                  project_maven,
-                                  project_multijob)
 
 
 def get_scenarios(fixtures_path, in_ext='yaml', out_ext='xml',

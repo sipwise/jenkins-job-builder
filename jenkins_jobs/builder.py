@@ -15,25 +15,28 @@
 
 # Manage jobs in Jenkins server
 
+import copy
 import errno
-import os
-import operator
-import sys
+import fnmatch
 import hashlib
-import yaml
-import xml.etree.ElementTree as XML
+import itertools
+import logging
+import operator
+import os
+from pprint import pformat
+import re
+import sys
 import xml
 from xml.dom import minidom
+import xml.etree.ElementTree as XML
+
 import jenkins
-import re
 import pkg_resources
-from pprint import pformat
-import logging
-import copy
-import itertools
-import fnmatch
+import yaml
+
 from jenkins_jobs.errors import JenkinsJobsException
 import jenkins_jobs.local_yaml as local_yaml
+
 
 logger = logging.getLogger(__name__)
 MAGIC_MANAGE_STRING = "<!-- Managed by Jenkins Job Builder -->"
