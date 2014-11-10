@@ -30,12 +30,13 @@ Example::
 """
 
 
-import xml.etree.ElementTree as XML
-from jenkins_jobs.errors import JenkinsJobsException
-import jenkins_jobs.modules.base
-from jenkins_jobs.modules import hudson_model
 import logging
 import re
+import xml.etree.ElementTree as XML
+
+from jenkins_jobs.errors import JenkinsJobsException
+from jenkins_jobs.modules import hudson_model
+import jenkins_jobs.modules.base
 
 
 def gerrit_handle_legacy_configuration(data):

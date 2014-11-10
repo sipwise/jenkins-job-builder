@@ -18,17 +18,19 @@
 # under the License.
 
 import codecs
-import logging
-import os
-import re
 import doctest
 import json
+import logging
 import operator
-import testtools
+import os
+import re
 import xml.etree.ElementTree as XML
+
 from six.moves import configparser
-import jenkins_jobs.local_yaml as yaml
+import testtools
+
 from jenkins_jobs.builder import XmlJob, YamlParser, ModuleRegistry
+import jenkins_jobs.local_yaml as yaml
 from jenkins_jobs.modules import (project_flow,
                                   project_matrix,
                                   project_maven,

@@ -37,11 +37,12 @@ Example::
 """
 
 
-import xml.etree.ElementTree as XML
-import jenkins_jobs.modules.base
-from jenkins_jobs.modules import hudson_model
-from jenkins_jobs.errors import JenkinsJobsException
 import logging
+import xml.etree.ElementTree as XML
+
+from jenkins_jobs.errors import JenkinsJobsException
+from jenkins_jobs.modules import hudson_model
+import jenkins_jobs.modules.base
 
 logger = logging.getLogger(__name__)
 

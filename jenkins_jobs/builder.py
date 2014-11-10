@@ -15,25 +15,31 @@
 
 # Manage jobs in Jenkins server
 
+import copy
 import errno
-import os
-import operator
-import sys
+import fnmatch
+from functools import wraps
 import hashlib
-import yaml
+import itertools
 import json
-import xml.etree.ElementTree as XML
+import logging
+from multiprocessing import cpu_count
+from multiprocessing.pool import ThreadPool
+import operator
+import os
+from pprint import pformat
+import re
+import sys
+import time
 import xml
 from xml.dom import minidom
+import xml.etree.ElementTree as XML
+
 import jenkins
-import re
 import pkg_resources
-from pprint import pformat
-import logging
-import copy
-import itertools
-import fnmatch
 import six
+import yaml
+
 from jenkins_jobs.errors import JenkinsJobsException
 import jenkins_jobs.local_yaml as local_yaml
 
