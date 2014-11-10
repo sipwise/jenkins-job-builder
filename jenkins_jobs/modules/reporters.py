@@ -33,8 +33,9 @@ Example::
 
 
 import xml.etree.ElementTree as XML
-import jenkins_jobs.modules.base
+
 from jenkins_jobs.errors import JenkinsJobsException
+import jenkins_jobs.modules.base
 
 
 def email(parser, xml_parent, data):

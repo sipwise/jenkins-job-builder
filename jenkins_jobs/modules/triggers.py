@@ -30,13 +30,16 @@ Example::
 """
 
 
-import six
+import logging
+import re
 import xml.etree.ElementTree as XML
+
+import six
+
 from jenkins_jobs.errors import JenkinsJobsException
 import jenkins_jobs.modules.base
 from jenkins_jobs.modules import hudson_model
-import logging
-import re
+
 try:
     from collections import OrderedDict
 except ImportError:

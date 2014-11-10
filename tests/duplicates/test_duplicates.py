@@ -14,11 +14,15 @@
 # under the License.
 
 import os
+
 import mock
-from testtools import TestCase, ExpectedException
 from testscenarios.testcase import TestWithScenarios
-from tests.base import get_scenarios, SingleJobTestCase
+from testtools import ExpectedException
+from testtools import TestCase
+
 from jenkins_jobs.errors import JenkinsJobsException
+from tests.base import get_scenarios
+from tests.base import SingleJobTestCase
 
 
 class TestCaseModuleDuplicates(TestWithScenarios, TestCase,

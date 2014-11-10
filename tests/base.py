@@ -18,21 +18,25 @@
 # under the License.
 
 import codecs
-import logging
-import os
-import re
 import doctest
 import json
+import logging
 import operator
-import testtools
+import os
+import re
 import xml.etree.ElementTree as XML
+
 from six.moves import configparser
+import testtools
+
+from jenkins_jobs.builder import ModuleRegistry
+from jenkins_jobs.builder import XmlJob
+from jenkins_jobs.builder import YamlParser
 import jenkins_jobs.local_yaml as yaml
-from jenkins_jobs.builder import XmlJob, YamlParser, ModuleRegistry
-from jenkins_jobs.modules import (project_flow,
-                                  project_matrix,
-                                  project_maven,
-                                  project_multijob)
+from jenkins_jobs.modules import project_flow
+from jenkins_jobs.modules import project_matrix
+from jenkins_jobs.modules import project_maven
+from jenkins_jobs.modules import project_multijob
 
 
 def get_scenarios(fixtures_path, in_ext='yaml', out_ext='xml'):

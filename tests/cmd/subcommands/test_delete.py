@@ -1,5 +1,7 @@
 import os
+
 import mock
+
 from jenkins_jobs import cmd
 from tests.cmd.test_cmd import CmdTestsBase
 
