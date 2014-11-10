@@ -1,0 +1,327 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_b0b0c0f5",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-11-10T15:42:14Z",
+      "side": 1,
+      "message": "The guide explicitly says one import per line",
+      "revId": "a588e4feaa84b2a6653965c854ea648bfe498875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_b0cfe0af",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-11-10T15:42:14Z",
+      "side": 1,
+      "message": "I don\u0027t see any reference to try-except for the imports in the hack guide, but looks reasonable to me to put them here.\n\nMaybe two lines between imports and logger?",
+      "revId": "a588e4feaa84b2a6653965c854ea648bfe498875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_30d8501d",
+        "filename": "jenkins_jobs/sphinx/yaml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-11-10T15:42:14Z",
+      "side": 1,
+      "message": "multiple imports per line",
+      "revId": "a588e4feaa84b2a6653965c854ea648bfe498875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_90fe646a",
+        "filename": "tests/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-11-10T15:42:14Z",
+      "side": 1,
+      "message": "multiple imports per line",
+      "revId": "a588e4feaa84b2a6653965c854ea648bfe498875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_502b1ceb",
+        "filename": "tests/builders/test_builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-11-10T15:42:14Z",
+      "side": 1,
+      "message": "multiple imports per line",
+      "revId": "a588e4feaa84b2a6653965c854ea648bfe498875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_701738a4",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-11-10T15:42:14Z",
+      "side": 1,
+      "message": "multiple imports per line",
+      "revId": "a588e4feaa84b2a6653965c854ea648bfe498875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_f0224800",
+        "filename": "tests/duplicates/test_duplicates.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-11-10T15:42:14Z",
+      "side": 1,
+      "message": "multiple imports per line",
+      "revId": "a588e4feaa84b2a6653965c854ea648bfe498875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_301db0be",
+        "filename": "tests/general/test_general.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-11-10T15:42:14Z",
+      "side": 1,
+      "message": "multiple imports per line",
+      "revId": "a588e4feaa84b2a6653965c854ea648bfe498875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_707e58e6",
+        "filename": "tests/hipchat/test_hipchat.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-11-10T15:42:14Z",
+      "side": 1,
+      "message": "multiple import per line",
+      "revId": "a588e4feaa84b2a6653965c854ea648bfe498875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_9083c4cb",
+        "filename": "tests/localyaml/test_localyaml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-11-10T15:42:14Z",
+      "side": 1,
+      "message": "multiple imports per line",
+      "revId": "a588e4feaa84b2a6653965c854ea648bfe498875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_f0696826",
+        "filename": "tests/macros/test_macros.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-11-10T15:42:14Z",
+      "side": 1,
+      "message": "multiple imports per line (mipl)",
+      "revId": "a588e4feaa84b2a6653965c854ea648bfe498875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_3074d0fc",
+        "filename": "tests/notifications/test_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-11-10T15:42:14Z",
+      "side": 1,
+      "message": "mipl",
+      "revId": "a588e4feaa84b2a6653965c854ea648bfe498875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_70657844",
+        "filename": "tests/parameters/test_parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-11-10T15:42:14Z",
+      "side": 1,
+      "message": "mipl",
+      "revId": "a588e4feaa84b2a6653965c854ea648bfe498875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_b05fe071",
+        "filename": "tests/properties/test_properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-11-10T15:42:14Z",
+      "side": 1,
+      "message": "mipl",
+      "revId": "a588e4feaa84b2a6653965c854ea648bfe498875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_f0508860",
+        "filename": "tests/publishers/test_publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-11-10T15:42:14Z",
+      "side": 1,
+      "message": "mipl",
+      "revId": "a588e4feaa84b2a6653965c854ea648bfe498875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_104ef4c1",
+        "filename": "tests/scm/test_scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-11-10T15:42:14Z",
+      "side": 1,
+      "message": "mipl",
+      "revId": "a588e4feaa84b2a6653965c854ea648bfe498875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_70cc9836",
+        "filename": "tests/triggers/test_triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-11-10T15:42:14Z",
+      "side": 1,
+      "message": "mipl",
+      "revId": "a588e4feaa84b2a6653965c854ea648bfe498875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_30e210a0",
+        "filename": "tests/wrappers/test_wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-11-10T15:42:14Z",
+      "side": 1,
+      "message": "mipl",
+      "revId": "a588e4feaa84b2a6653965c854ea648bfe498875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_50eebc8c",
+        "filename": "tests/yamlparser/test_yamlparser.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2014-11-10T15:42:14Z",
+      "side": 1,
+      "message": "mipl",
+      "revId": "a588e4feaa84b2a6653965c854ea648bfe498875",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
