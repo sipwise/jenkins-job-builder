@@ -1173,6 +1173,37 @@ def credentials_binding(parser, xml_parent, data):
             credential_xml.text = params.get('credential-id')
 
 
+def custom_tools(parser, xml_parent, data):
+    """yaml: custom-tools
+    Requires the Jenkins Custom Tools Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Custom+Tools+Plugin>`_
+
+    Example:
+
+    .. literalinclude:: /../../tests/wrappers/fixtures/custom-tools001.yaml
+    """
+    base = 'com.cloudbees.jenkins.plugins.customtools'
+    wrapper = XML.SubElement(xml_parent,
+                             base + ".CustomToolInstallWrapper")
+
+    wrapper_tools = XML.SubElement(wrapper, 'selectedTools')
+    tools = data.get('tools', [])
+    tool_node = base + '.CustomToolInstallWrapper_-SelectedTool'
+    for tool in tools:
+        tool_wrapper = XML.SubElement(wrapper_tools, tool_node)
+        XML.SubElement(tool_wrapper, 'name').text = str(tool)
+
+    opts = XML.SubElement(wrapper,
+                          'multiconfigOptions')
+    skip_install = str(data.get('skip-master-install', 'false'))
+    XML.SubElement(opts,
+                   'skipMasterInstallation').text = skip_install
+
+    convert_home = str(data.get('convert-homes-to-upper', 'false'))
+    XML.SubElement(wrapper,
+                   'convertHomesToUppercase').text = convert_home
+
+
 class Wrappers(jenkins_jobs.modules.base.Base):
     sequence = 80
 
