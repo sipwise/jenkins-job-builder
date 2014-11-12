@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_524e7f97",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-12T18:41:45Z",
+      "side": 1,
+      "message": "Please limit lines to 72 characters or less, as otherwise this messes with various ui\u0027s in displaying the message and makes it harder to read.",
+      "revId": "148a2f160ab98f11651ae21c6ab1dcfbb3143983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_92eb87af",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-12T18:41:45Z",
+      "side": 1,
+      "message": "The previous code would generate code compatible with both old and new plugin provided you didn\u0027t need to use the new names.\n\nThis new code will mean that existing yaml will no longer generate XML compatible with the old plugin.\n\nLooks to me like the most reasonable fix would be to change the if statements to see if the returned value is not \u0027None\u0027. That way the user can at least set it to False to disable.\n\nProbably the most compatible solution until we can support retrieving the actually plugin version and then control the XML being generated depending on what is compatible with the target version of the plugin.",
+      "revId": "148a2f160ab98f11651ae21c6ab1dcfbb3143983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_1245d7b2",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-12T18:41:45Z",
+      "side": 1,
+      "message": "It makes more sense to convert from \u0027start-notify\u0027 to use \u0027notify-start\u0027 instead to be consistent with the others as it is more consistent with the plugin and how it describes the different settings in the UI.\n\nJust need to be able to support both \u0027notify-start\u0027 and \u0027start-notify\u0027 values and log a deprecation warning on encountering \u0027start-notify\u0027.",
+      "revId": "148a2f160ab98f11651ae21c6ab1dcfbb3143983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
