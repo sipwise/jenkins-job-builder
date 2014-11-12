@@ -48,58 +48,14 @@ Requires the Jenkins `dynamic axis Plugin.
 
 Example::
 
- - job:
-    name: matrix-test
-    project-type: matrix
-    execution-strategy:
-      combination-filter: |
-        !(os=="fedora11" && arch=="amd64")
-      sequential: true
-      touchstone:
-        expr: 'os == "fedora11"'
-        result: unstable
-    axes:
-      - axis:
-         type: label-expression
-         name: os
-         values:
-          - ubuntu12.04
-          - fedora11
-      - axis:
-         type: label-expression
-         name: arch
-         values:
-          - amd64
-          - i386
-      - axis:
-         type: slave
-         name: nodes
-         values:
-          - node1
-          - node2
-      - axis:
-         type: dynamic
-         name: config
-         values:
-          - config_list
-    builders:
-      - shell: make && make check
+  .. literalinclude::  /../../tests/general/fixtures/matrix-axis001.yaml
+    :language: yaml
 
-Example using user-defined axis::
+  .. literalinclude::  /../../tests/general/fixtures/matrix-axis002.yaml
+    :language: yaml
 
- - job:
-    name: matrix-user-defined
-    project-type: matrix
-    axes:
-      - axis:
-        type: user-defined
-        name: database
-        values:
-         - mysql
-         - postgresql
-         - sqlite
-    builders:
-     - shell: make "$database"
+  .. literalinclude::  /../../tests/general/fixtures/matrix-axis003.yaml
+    :language: yaml
 """
 
 
@@ -116,6 +72,8 @@ class Matrix(jenkins_jobs.modules.base.Base):
         'user-defined': 'hudson.matrix.TextAxis',
         'slave': 'hudson.matrix.LabelAxis',
         'dynamic': 'ca.silvermaplesolutions.jenkins.plugins.daxis.DynamicAxis',
+        'python': 'jenkins.plugins.shiningpanda.matrix.PythonAxis',
+        'tox': 'jenkins.plugins.shiningpanda.matrix.ToxAxis',
     }
 
     def root_xml(self, data):
@@ -148,15 +106,21 @@ class Matrix(jenkins_jobs.modules.base.Base):
         ax_root = XML.SubElement(root, 'axes')
         for axis_ in data.get('axes', []):
             axis = axis_['axis']
-            if axis['type'] not in self.supported_axis:
+            axis_type = axis['type']
+            if axis_type not in self.supported_axis:
                 raise ValueError('Only %s axes types are supported'
                                  % self.supported_axis.keys())
-            axis_name = self.supported_axis.get(axis['type'])
+            axis_name = self.supported_axis.get(axis_type)
             lbl_root = XML.SubElement(ax_root, axis_name)
-            name, values = axis['name'], axis['values']
-            XML.SubElement(lbl_root, 'name').text = str(name)
+            name, values = axis.get('name', ''), axis.get('values', [''])
+            if axis_type == 'python':
+                XML.SubElement(lbl_root, 'name').text = 'PYTHON'
+            elif axis_type == 'tox':
+                XML.SubElement(lbl_root, 'name').text = 'TOXENV'
+            else:
+                XML.SubElement(lbl_root, 'name').text = str(name)
             v_root = XML.SubElement(lbl_root, 'values')
-            if axis['type'] == "dynamic":
+            if axis_type == "dynamic":
                 XML.SubElement(v_root, 'string').text = str(values[0])
                 XML.SubElement(lbl_root, 'varName').text = str(values[0])
                 v_root = XML.SubElement(lbl_root, 'axisValues')
