@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_952451b0",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1180,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-12T18:46:19Z",
+      "side": 1,
+      "message": "Please add a list of the expected/supported params here to be included in the generated docs.",
+      "revId": "3a1943b6e0455a7bd9e827ab03b1602aa68d380c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_f534b5df",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-12T18:46:19Z",
+      "side": 1,
+      "message": "Please keep this list in alphabetical order.",
+      "revId": "3a1943b6e0455a7bd9e827ab03b1602aa68d380c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_5551090d",
+        "filename": "tests/wrappers/fixtures/custom-tools001.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-12T18:46:19Z",
+      "side": 1,
+      "message": "Remove the extra white space at the end please.",
+      "revId": "3a1943b6e0455a7bd9e827ab03b1602aa68d380c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_7558c532",
+        "filename": "tests/wrappers/fixtures/custom-tools001.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-12T18:46:19Z",
+      "side": 1,
+      "message": "Please remove the extra whitespace.\n\nAlso seems like it would make sense to include two tests, one to show all the supported options set to be included as an inline example in the docs, and a second one like this to check the setting of the default values.",
+      "revId": "3a1943b6e0455a7bd9e827ab03b1602aa68d380c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
