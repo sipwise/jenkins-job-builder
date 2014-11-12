@@ -219,6 +219,16 @@ remoteName/\*')
             xe.text = str(val).lower()
         else:
             xe.text = val
+            
+    exts = XML.SubElement(scm, 'extensions')
+    if 'changelog-against' in data:
+        node = 'hudson.plugins.git.extensions.impl.ChangelogToBranch'
+        ext = XML.SubElement(exts, node)
+        opts = XML.SubElement(ext, 'options')
+        change_remote = data['changelog-against'].get('remote', 'origin')
+        change_branch = data['changelog-against'].get('branch', 'master')
+        XML.SubElement(opts, 'compareRemote').text = change_remote
+        XML.SubElement(opts, 'compareTarget').text = change_branch
 
     if 'local-branch' in data:
         XML.SubElement(scm, 'localBranch').text = data['local-branch']
