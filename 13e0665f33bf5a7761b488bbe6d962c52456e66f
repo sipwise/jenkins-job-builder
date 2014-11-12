@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_352d5d47",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-12T18:57:41Z",
+      "side": 1,
+      "message": "Would it be better to mock the Jenkins.delete_job and allow the Builder.delete_job to parse the yaml. Would mean we could then test that the correct list of jobs were called to be deleted.",
+      "revId": "13e0665f33bf5a7761b488bbe6d962c52456e66f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_b5c4ed92",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-12T18:57:41Z",
+      "side": 1,
+      "message": "Assuming switching which method is mocked to allow testing which jobs are actually deleted with the glob, the following would be correct method to use I imagine?\n\n delete_job_mock.assert_has_calls([\u0027bar001\u0027, \u0027bar002\u0027], any_order\u003dTrue)\n\nMight be overkill in some cases, but seems like for checking that the glob matching is working it might be a good idea here.",
+      "revId": "13e0665f33bf5a7761b488bbe6d962c52456e66f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
