@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_4c25fba9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-12T23:56:57Z",
+      "side": 1,
+      "message": "\u0027(MAINT)\u0027 seems unnecessary.",
+      "revId": "9559f2e99657887d6a4c1e7e3a862966e7a7a0e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_cc300beb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-12T23:56:57Z",
+      "side": 1,
+      "message": "s/fixutres/fixtures/",
+      "revId": "9559f2e99657887d6a4c1e7e3a862966e7a7a0e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_898515af",
+        "filename": "tests/utils/mocks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-12T23:56:57Z",
+      "side": 1,
+      "message": "This seems a little too specific to the cmd line tests test, not really sure it\u0027s beneficial to be moving it out to a separate utils area, maybe keep it under the cmd subdir.",
+      "revId": "9559f2e99657887d6a4c1e7e3a862966e7a7a0e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
