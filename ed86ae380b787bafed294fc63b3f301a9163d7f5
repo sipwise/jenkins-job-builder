@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_9ce0cc97",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-11-13T23:25:09Z",
+      "side": 1,
+      "message": "I do have a strong opinion on it. Previous to this commit I found it be obnoxiously difficult to read this part of the code.\n\nI feel pretty strongly that if I have a difficult time reading code like this, there will be others with similar difficulty. If you feel strongly enough to block this review, I will change this so that it simply separates the various subparsers by newlines.",
+      "parentUuid": "5a890539_8c67bfb6",
+      "revId": "ed86ae380b787bafed294fc63b3f301a9163d7f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_2c97ab49",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 6
@@ -64,6 +82,24 @@
       "writtenOn": "2014-11-13T20:45:35Z",
       "side": 1,
       "message": "you can use \"getattr(options, \u0027plugins_info_path\u0027)\"",
+      "revId": "ed86ae380b787bafed294fc63b3f301a9163d7f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_5c24a4c4",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-11-13T23:25:09Z",
+      "side": 1,
+      "message": "The convention for being explicit about the default value for \"getattr\" had been established prior to this commit. Please refer to line 196 in the base version of jenkins_jobs/builder.py or line 219 in the patched version (12 lines below).\n\nI\u0027d prefer to stick with the established convention.",
+      "parentUuid": "5a890539_2c97ab49",
       "revId": "ed86ae380b787bafed294fc63b3f301a9163d7f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
