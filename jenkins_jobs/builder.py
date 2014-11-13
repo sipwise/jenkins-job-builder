@@ -229,6 +229,13 @@ class YamlParser(object):
             job["description"] = description + \
                 self.get_managed_string().lstrip()
 
+    def getfullname(self, data):
+
+        if 'folder' in data:
+            return "%s/%s" % (data['folder'], data['name'])
+
+        return data['name']
+
     def expandYaml(self, jobs_filter=None):
         changed = True
         while changed:
@@ -239,13 +246,15 @@ class YamlParser(object):
                         changed = True
 
         for job in self.data.get('job', {}).values():
-            if jobs_filter and not matches(job['name'], jobs_filter):
-                logger.debug("Ignoring job {0}".format(job['name']))
+            job['fullname'] = self.getfullname(job)
+            if jobs_filter and not matches(job['fullname'], jobs_filter):
+                logger.debug("Ignoring job {0}".format(job['fullname']))
                 continue
-            logger.debug("Expanding job '{0}'".format(job['name']))
+            logger.debug("Expanding job '{0}'".format(job['fullname']))
             job = self.applyDefaults(job)
             self.formatDescription(job)
             self.jobs.append(job)
+
         for project in self.data.get('project', {}).values():
             logger.debug("Expanding project '{0}'".format(project['name']))
             # use a set to check for duplicate job references in projects
@@ -259,7 +268,20 @@ class YamlParser(object):
                 else:
                     jobname = jobspec
                     jobparams = {}
+
+                # established that the reference job/group/template is unique
                 job = self.getJob(jobname)
+                group = self.getJobGroup(jobname)
+                template = self.getJobTemplate(jobname)
+                if len([i for i in [job, group, template] if i]) > 1:
+                    logger.warn(
+                        "Referenced job '%s' exists in more than one of the "
+                        "'job', 'job-group', and/or 'job-template' groups. "
+                        "Will use the first returned in the above order, "
+                        "which may not be what you desired. Recommendation is "
+                        "to ensure names are unique across jobs, groups and "
+                        "templates." % jobname)
+
                 if job:
                     # Just naming an existing defined job
                     if jobname in seen:
@@ -268,8 +290,8 @@ class YamlParser(object):
                                               jobname, project['name']))
                     seen.add(jobname)
                     continue
+
                 # see if it's a job group
-                group = self.getJobGroup(jobname)
                 if group:
                     for group_jobspec in group['jobs']:
                         if isinstance(group_jobspec, dict):
@@ -302,8 +324,8 @@ class YamlParser(object):
                             self.expandYamlForTemplateJob(d, template,
                                                           jobs_filter)
                     continue
+
                 # see if it's a template
-                template = self.getJobTemplate(jobname)
                 if template:
                     d = {}
                     d.update(project)
@@ -313,15 +335,16 @@ class YamlParser(object):
                     raise JenkinsJobsException("Failed to find suitable "
                                                "template named '{0}'"
                                                .format(jobname))
+
         # check for duplicate generated jobs
         seen = set()
         # walk the list in reverse so that last definition wins
         for job in self.jobs[::-1]:
-            if job['name'] in seen:
+            if job['fullname'] in seen:
                 self._handle_dups("Duplicate definitions for job '{0}' "
-                                  "specified".format(job['name']))
+                                  "specified".format(job['fullname']))
                 self.jobs.remove(job)
-            seen.add(job['name'])
+            seen.add(job['fullname'])
 
     def expandYamlForTemplateJob(self, project, template, jobs_filter=None):
         dimensions = []
@@ -348,6 +371,7 @@ class YamlParser(object):
 
             params.update(expanded_values)
             expanded = deep_format(template, params)
+            expanded['fullname'] = self.getfullname(expanded)
 
             # Keep track of the resulting expansions to avoid
             # regenerating the exact same job.  Whenever a project has
@@ -368,7 +392,7 @@ class YamlParser(object):
             if checksum not in checksums:
                 # We also want to skip expansion whenever the user did
                 # not ask for that job.
-                job_name = expanded.get('name')
+                job_name = expanded.get('fullname')
                 if jobs_filter and not matches(job_name, jobs_filter):
                     continue
 
@@ -394,7 +418,7 @@ class YamlParser(object):
             mod = Mod(self.registry)
             xml = mod.root_xml(data)
             self.gen_xml(xml, data)
-            job = XmlJob(xml, data['name'])
+            job = XmlJob(xml, data['name'], data['fullname'])
             return job
 
     def gen_xml(self, xml, data):
@@ -511,9 +535,10 @@ class ModuleRegistry(object):
 
 
 class XmlJob(object):
-    def __init__(self, xml, name):
+    def __init__(self, xml, name, fullname):
         self.xml = xml
         self.name = name
+        self.fullname = fullname
 
     def md5(self):
         return hashlib.md5(self.output()).hexdigest()
@@ -650,22 +675,22 @@ class Builder(object):
     def delete_old_managed(self, keep):
         jobs = self.jenkins.get_jobs()
         for job in jobs:
-            if job['name'] not in keep and \
-                    self.jenkins.is_managed(job['name']):
+            if job['fullname'] not in keep and \
+                    self.jenkins.is_managed(job['fullname']):
                 logger.info("Removing obsolete jenkins job {0}"
-                            .format(job['name']))
-                self.delete_job(job['name'])
+                            .format(job['fullname']))
+                self.delete_job(job['fullname'])
             else:
                 logger.debug("Ignoring unmanaged jenkins job %s",
-                             job['name'])
+                             job['fullname'])
 
     def delete_job(self, glob_name, fn=None):
         if fn:
             self.load_files(fn)
             self.parser.expandYaml(glob_name)
-            jobs = [j['name']
+            jobs = [j['fullname']
                     for j in self.parser.jobs
-                    if matches(j['name'], [glob_name])]
+                    if matches(j['fullname'], [glob_name])]
         else:
             jobs = [glob_name]
 
@@ -679,17 +704,17 @@ class Builder(object):
     def delete_all_jobs(self):
         jobs = self.jenkins.get_jobs()
         for job in jobs:
-            self.delete_job(job['name'])
+            self.delete_job(job['fullname'])
 
     def update_job(self, input_fn, names=None, output=None):
         self.load_files(input_fn)
         self.parser.expandYaml(names)
         self.parser.generateXML()
 
-        self.parser.xml_jobs.sort(key=operator.attrgetter('name'))
+        self.parser.xml_jobs.sort(key=operator.attrgetter('fullname'))
 
         for job in self.parser.xml_jobs:
-            if names and not matches(job.name, names):
+            if names and not matches(job.fullname, names):
                 continue
             if output:
                 if hasattr(output, 'write'):
@@ -706,29 +731,28 @@ class Builder(object):
                         raise
                     continue
 
-                output_dir = output
-
+                output_fn = os.path.join(output,
+                                         os.path.normpath(job.fullname))
+                output_dir = os.path.dirname(output_fn)
                 try:
                     os.makedirs(output_dir)
                 except OSError:
                     if not os.path.isdir(output_dir):
                         raise
 
-                output_fn = os.path.join(output_dir, job.name)
                 logger.debug("Writing XML to '{0}'".format(output_fn))
-                f = open(output_fn, 'w')
-                f.write(job.output())
-                f.close()
+                with open(output_fn, 'w') as f:
+                    f.write(job.output())
                 continue
             md5 = job.md5()
-            if (self.jenkins.is_job(job.name)
-                    and not self.cache.is_cached(job.name)):
-                old_md5 = self.jenkins.get_job_md5(job.name)
-                self.cache.set(job.name, old_md5)
+            if (self.jenkins.is_job(job.fullname)
+                    and not self.cache.is_cached(job.fullname)):
+                old_md5 = self.jenkins.get_job_md5(job.fullname)
+                self.cache.set(job.fullname, old_md5)
 
-            if self.cache.has_changed(job.name, md5) or self.ignore_cache:
-                self.jenkins.update_job(job.name, job.output())
-                self.cache.set(job.name, md5)
+            if self.cache.has_changed(job.fullname, md5) or self.ignore_cache:
+                self.jenkins.update_job(job.fullname, job.output())
+                self.cache.set(job.fullname, md5)
             else:
-                logger.debug("'{0}' has not changed".format(job.name))
+                logger.debug("'{0}' has not changed".format(job.fullname))
         return self.parser.xml_jobs
