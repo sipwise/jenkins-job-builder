@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_35cf0fb2",
+        "filename": "tests/cmd/test_recurse_path.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-11-13T08:22:58Z",
+      "side": 1,
+      "message": "os.path.join(top, name) is more idiomatic.",
+      "revId": "911fdcffc2525e4369c747d51a0fe44b258237f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
