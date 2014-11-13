@@ -50,6 +50,24 @@
       "revId": "9559f2e99657887d6a4c1e7e3a862966e7a7a0e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_352b8f31",
+        "filename": "tests/utils/mocks.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-11-13T17:22:53Z",
+      "side": 1,
+      "message": "I believe it is at least beneficial for everything in the cmd subdir. In fact, my intention currently is to move your fake_os_walk into this file or one like it within the cmd sudir once https://review.openstack.org/#/c/68895/ is merged. Then I will replace the use of os_walk_side_effects with fake_os_walk since I like what you\u0027ve written and would prefer more consistency across unit tests.\n\nKeeping it in a separate \"utils\" directory makes it clear that this is useful for mocking `os.walk` wherever that functions might be used--not just for the cmd unit tests. It also establishes a convention for such generally useful code.\n\nPlease let me know if you still think this utils module should sit in the cmd subdir, I just wanted to make my case for leaving it here before I go to the trouble of moving it.",
+      "parentUuid": "5a890539_898515af",
+      "revId": "9559f2e99657887d6a4c1e7e3a862966e7a7a0e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
