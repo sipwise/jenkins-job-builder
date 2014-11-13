@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_bd32ef5c",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-11-13T19:02:31Z",
+      "side": 1,
+      "message": "What do you think about converting all \"version\" keys in the plugins_info data structure to tuples like this so the conversion doesn\u0027t have to take place on a per-module basis?",
+      "parentUuid": "5a890539_0c0a13d2",
+      "revId": "ce8e737aeaadc4a44909110ea695565ca43854c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_8ce36304",
         "filename": "jenkins_jobs/modules/hipchat_notif.py",
         "patchSetId": 5
@@ -104,6 +122,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_a83002e9",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-11-13T19:02:31Z",
+      "side": 1,
+      "message": "\"sendAs\" doesn\u0027t really make a big difference, the big difference between 0.1.8 and earlier versions is \"buildServerUrl\" vs \"jenkinsUrl\"\n\nI think checking the version on a per-setting basis leads to messy, difficult-to-reason-about code. I\u0027d rather A) duplicate some code or B) factor out more of the \"common\" bits into the \"common\" method.\n\nThe problem with option B here is that it again becomes difficult to reason about the generated XML since less XML is generated in-line.",
+      "parentUuid": "5a890539_cc164bf1",
+      "revId": "ce8e737aeaadc4a44909110ea695565ca43854c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_ccb56b32",
         "filename": "tests/base.py",
         "patchSetId": 5
@@ -115,6 +151,41 @@
       "writtenOn": "2014-11-13T00:24:18Z",
       "side": 1,
       "message": "Think you should set the base class of this one to Testcase when adding these calls to \u0027self.addDetail()\u0027 since technically they are not defined by any instance of this class.\n\nAlso seems like you should be adding this to the SingleJobTestCase as well.",
+      "revId": "ce8e737aeaadc4a44909110ea695565ca43854c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_e0804cf9",
+        "filename": "tests/base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-11-13T19:02:31Z",
+      "side": 1,
+      "message": "This class is never used in any context except a multiple inheritance situation where it is preceded by testtools.TestCase. If you look further on in the file, you see another method from testtools.TestCase such as line 152 where \"assertThat\" is used.\n\nI believe that a design decision was made when this test framework was configured such that BaseTestCase would always be used in multiple inheritance situations where testtools.TestCase always precedes it to avoid strange instance initialization errors that look like:\n\nTraceback (most recent call last):\n  File \"/usr/lib/python2.7/runpy.py\", line 162, in _run_module_as_main\n    \"__main__\", fname, loader, pkg_name)\n  File \"/usr/lib/python2.7/runpy.py\", line 72, in _run_code\n    exec code in run_globals\n  File \"/home/wayne/projects/jenkins-job-builder/.tox/py27/lib/python2.7/site-packages/subunit/run.py\", line 145, in \u003cmodule\u003e\n    main()\n  File \"/home/wayne/projects/jenkins-job-builder/.tox/py27/lib/python2.7/site-packages/subunit/run.py\", line 141, in main\n    stdout\u003dstdout, exit\u003dFalse)\n  File \"/home/wayne/projects/jenkins-job-builder/.tox/py27/local/lib/python2.7/site-packages/testtools/run.py\", line 218, in __init__\n    self.parseArgs(argv)\n  File \"/home/wayne/projects/jenkins-job-builder/.tox/py27/local/lib/python2.7/site-packages/testtools/run.py\", line 257, in parseArgs\n    self._do_discovery(argv[2:])\n  File \"/home/wayne/projects/jenkins-job-builder/.tox/py27/local/lib/python2.7/site-packages/testtools/run.py\", line 377, in _do_discovery\n    self.test \u003d sorted_tests(loaded)\n  File \"/home/wayne/projects/jenkins-job-builder/.tox/py27/local/lib/python2.7/site-packages/testtools/testsuite.py\", line 314, in sorted_tests\n    raise ValueError(\u0027Duplicate test id detected: %s\u0027 % (test_id,))\nValueError: Duplicate test id detected: tests.base.BaseTestCase.test_yaml_snippet\nrunning\u003dOS_STDOUT_CAPTURE\u003d${OS_STDOUT_CAPTURE:-1} OS_STDERR_CAPTURE\u003d${OS_STDERR_CAPTURE:-1} OS_LOG_CAPTURE\u003d${OS_LOG_CAPTURE:-1} ${PYTHON:-python} -m subunit.run discover -t ./ tests --list \nNon-zero exit code (1) from test listing.\n\nThis Duplicate test id detected problem seems to be due to the way subclasses of TestCase are initialized. I will ping Felipe Reyes, who appears to have been the original author of BaseTestCase to see if he has any input here.\n\nJust to be clear, I found this problem when I actually attempted to rearrange the inheritance structure as you suggested. I have these changes stashed and ready to bring out again if you have suggestions for how to get around the Duplicate test id problem.",
+      "parentUuid": "5a890539_ccb56b32",
+      "revId": "ce8e737aeaadc4a44909110ea695565ca43854c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_a0b804c9",
+        "filename": "tests/base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-11-13T19:02:31Z",
+      "side": 1,
+      "message": "Here is another instance of a TestCase method being used which supports my response to your comment in which I indicated that BaseTestCase seems designed to always be used in multiple inheritance setups where testtools.TestCase precedes it.",
       "revId": "ce8e737aeaadc4a44909110ea695565ca43854c2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
