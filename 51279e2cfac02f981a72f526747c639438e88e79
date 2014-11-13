@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_8c3b6337",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 538,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-13T00:33:53Z",
+      "side": 1,
+      "message": "Would be good to raise a sensible JenkinsJobsException if \u0027name\u0027 isn\u0027t in data instead of letting a KeyError being triggered here.",
+      "revId": "51279e2cfac02f981a72f526747c639438e88e79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
