@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_8c69a327",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3820,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-13T00:44:18Z",
+      "side": 1,
+      "message": "Does this cause any problems on upload, or will it just be ignored by jenkins?\n\nI notice the other reviewers asked a question on this, but I didn\u0027t see an answer indicating whether it would cause problems.",
+      "revId": "786fa4641634adc5039554b5d2fbbb08da0b559e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
