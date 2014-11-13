@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_2cf50fee",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-13T00:24:18Z",
+      "side": 1,
+      "message": "Why not add \"send-as\u003dJenkins\" here and you can avoid needing to catch the configparser.NoOptionError.",
+      "revId": "ce8e737aeaadc4a44909110ea695565ca43854c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_0cd5b342",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-13T00:24:18Z",
+      "side": 1,
+      "message": "Think you can just have a single blank line and then the subparser comment. Don\u0027t think there is really any need to add the extra comment lines. Following with a single leading blank line is sufficient and doesn\u0027t start adding another style of comments.\n\n # Subparser: update",
+      "revId": "ce8e737aeaadc4a44909110ea695565ca43854c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_ccbacb09",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-13T00:24:18Z",
+      "side": 1,
+      "message": "You can use the default configuration to remove the need to catch the exception.\n\nAlthough it seems like this should be under the hipchat section instead rather than the jenkins section, in which case the try/except makes sense since it\u0027s not useful to specify defaults for each and every plugin that could be installed.",
+      "revId": "ce8e737aeaadc4a44909110ea695565ca43854c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_0c0a13d2",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-13T00:24:18Z",
+      "side": 1,
+      "message": "This should probably convert version to a tuple and do a \u003e\u003d comparison otherwise you\u0027ll likely get the wrong result.",
+      "revId": "ce8e737aeaadc4a44909110ea695565ca43854c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_8ce36304",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-13T00:24:18Z",
+      "side": 1,
+      "message": "All of the following settings are only valid with the newer hipchat plugin. Not sure which version, but seems like you could have a single if statement checking if the plugin version is new enough and then use a default of False instead of needing to check if each key is set.",
+      "revId": "ce8e737aeaadc4a44909110ea695565ca43854c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_cc164bf1",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-13T00:24:18Z",
+      "side": 1,
+      "message": "You\u0027re duplicating a lot of code here for a single setting in the difference. Seems like simply testing the version before setting \u0027sendAs\u0027 would be better.",
+      "revId": "ce8e737aeaadc4a44909110ea695565ca43854c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_ccb56b32",
+        "filename": "tests/base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-13T00:24:18Z",
+      "side": 1,
+      "message": "Think you should set the base class of this one to Testcase when adding these calls to \u0027self.addDetail()\u0027 since technically they are not defined by any instance of this class.\n\nAlso seems like you should be adding this to the SingleJobTestCase as well.",
+      "revId": "ce8e737aeaadc4a44909110ea695565ca43854c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
