@@ -72,7 +72,7 @@ def archive(parser, xml_parent, data):
 
     if 'allow-empty' in data:
         empty = XML.SubElement(archiver, 'allowEmptyArchive')
-        # Default behavior is to fail the build.
+        # Default behavior is to fail the runForMatrixParentbuild.
         empty.text = str(data.get('allow-empty', False)).lower()
 
 
@@ -1697,18 +1697,70 @@ def groovy_postbuild(parser, xml_parent, data):
     Requires the Jenkins `Groovy Postbuild Plugin
     <https://wiki.jenkins-ci.org/display/JENKINS/Groovy+Postbuild+Plugin>`_
 
-    :Parameter: the groovy script to execute
+    WARNING: Please pay attention on version of plugin you have installed.
+    there were incompatible changes between 1.x and 2.x .
+    Please see home page of this plugin for full information including
+    migration process.
+
+    :arg str script: The groovy script to execute
+    :arg list classpath: List of additional classpaths
+    :arg str on-failure: In case of script failure leave build as it is
+                         for "nothing" option, mark build as unstable
+                         for "unstable" and mark job as failure for "failed"
+                         (default is "nothing")
+    :arg bool matrix-parent: Run script for matrix parent only (>=1.9)
+                             (default false)
+    :arg bool sandbox: Execute script inside of groovy sandbox (>=2.0)
+                       (default false)
+    :arg float version: Indicate version of your plugin (default 0.0)
 
     Example::
 
-      publishers:
-        - groovy-postbuild: "manager.buildFailure()"
-
+    .. literalinclude:: \
+            /../../tests/publishers/fixtures/groovy_postbuild001.yaml
+       :language: yaml
     """
-    root_tag = 'org.jvnet.hudson.plugins.groovypostbuild.'\
-        'GroovyPostbuildRecorder'
+    root_tag = (
+        'org.jvnet.hudson.plugins.groovypostbuild.GroovyPostbuildRecorder'
+    )
     groovy = XML.SubElement(xml_parent, root_tag)
-    XML.SubElement(groovy, 'groovyScript').text = data
+
+    behavior = data.get('on-failure')
+    XML.SubElement(groovy, 'behaviour').text = {
+        'unstable': '1',
+        'failed': '2',
+    }.get(behavior, '0')
+
+    version = float(data.get('version', 0.0))
+    if version >= 1.9:
+        XML.SubElement(
+            groovy,
+            'runForMatrixParent',
+        ).text = str(data.get('matrix-parent', False)).lower()
+
+    classpaths = data.get('classpath', list())
+    if version < 2.0:
+        XML.SubElement(groovy, 'groovyScript').text = data.get('script')
+        if version >= 1.6 and classpaths:
+            classpath = XML.SubElement(groovy, 'classpath')
+            for path in classpaths:
+                script_path = XML.SubElement(
+                    classpath,
+                    'org.jvnet.hudson.plugins.groovypostbuild.'
+                    'GroovyScriptPath',
+                )
+                XML.SubElement(script_path, 'path').text = path
+    else:
+        script = XML.SubElement(groovy, 'script')
+        XML.SubElement(script, 'script').text = data.get('script')
+        XML.SubElement(script, 'sandbox').text = str(
+            data.get('sandbox', False)
+        ).lower()
+        if classpaths:
+            classpath = XML.SubElement(script, 'classpath')
+            for path in classpaths:
+                script_path = XML.SubElement(classpath, 'entry')
+                XML.SubElement(script_path, 'url').text = path
 
 
 def base_publish_over(xml_parent, data, console_prefix,
