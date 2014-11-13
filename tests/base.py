@@ -41,28 +41,37 @@ def get_scenarios(fixtures_path, in_ext='yaml', out_ext='xml'):
         - content of the fixture output file (aka expected)
     """
     scenarios = []
-    files = os.listdir(fixtures_path)
-    input_files = [f for f in files if re.match(r'.*\.{0}$'.format(in_ext), f)]
+    filelist = {}
+    for root, _, files in os.walk(fixtures_path):
+        for fn in files:
+            if fn in filelist:
+                filelist[fn].append(
+                    os.path.join(os.path.relpath(root, fixtures_path), fn))
+            else:
+                filelist[fn] = [
+                    os.path.join(os.path.relpath(root, fixtures_path), fn)]
+    input_files = [f for f in filelist
+                   if re.match(r'.*\.{0}$'.format(in_ext), f)]
 
     for input_filename in input_files:
         output_candidate = re.sub(r'\.{0}$'.format(in_ext),
                                   '.{0}'.format(out_ext), input_filename)
         # Make sure the input file has a output counterpart
-        if output_candidate not in files:
+        if output_candidate not in filelist:
             raise Exception(
                 "No {0} file named '{1}' to match {2} file '{3}'"
                 .format(out_ext.upper(), output_candidate,
                         in_ext.upper(), input_filename))
 
         conf_candidate = re.sub(r'\.yaml$', '.conf', input_filename)
-        # If present, add the configuration file
-        if conf_candidate not in files:
-            conf_candidate = None
-
+        conf_filename = filelist.get(conf_candidate, None)
+        if conf_filename:
+            conf_filename = conf_filename[0]
         scenarios.append((input_filename, {
             'in_filename': input_filename,
-            'out_filename': output_candidate,
-            'conf_filename': conf_candidate,
+            'out_filenames': filelist[output_candidate],
+            # If present, add the configuration file
+            'conf_filename': conf_filename,
         }))
 
     return scenarios
@@ -80,8 +89,11 @@ class BaseTestCase(object):
 
     def _read_utf8_content(self):
         # Read XML content, assuming it is unicode encoded
-        xml_filepath = os.path.join(self.fixtures_path, self.out_filename)
-        xml_content = u"%s" % codecs.open(xml_filepath, 'r', 'utf-8').read()
+        xml_content = ""
+        for f in sorted(self.out_filenames):
+            xml_filepath = os.path.join(self.fixtures_path, f)
+            xml_content += u"%s" % codecs.open(xml_filepath, 'r',
+                                               'utf-8').read()
         return xml_content
 
     def _read_yaml_content(self):
@@ -91,7 +103,7 @@ class BaseTestCase(object):
         return yaml_content
 
     def test_yaml_snippet(self):
-        if not self.out_filename or not self.in_filename:
+        if not self.out_filenames or not self.in_filename:
             return
 
         expected_xml = self._read_utf8_content()
@@ -118,7 +130,22 @@ class BaseTestCase(object):
         pub.gen_xml(parser, xml_project, yaml_content)
 
         # Prettify generated XML
-        pretty_xml = XmlJob(xml_project, 'fixturejob').output().decode('utf-8')
+        pretty_xml = XmlJob(xml_project, 'fixturejob', yaml_content
+                            ).output().decode('utf-8')
+
+        # check output file is under correct path
+        if 'name' in yaml_content:
+            # split using '/' since fullname uses URL path separator
+            expected_folders = [os.path.sep.join(
+                parser.getfullname(yaml_content).split("/")[:-1]) or '.']
+            actual_folders = [os.path.dirname(f) for f in self.out_filenames]
+
+            self.assertEquals(
+                expected_folders, actual_folders,
+                "Output file under wrong path, was '%s', should be '%s'" %
+                (os.path.join(self.fixtures_path, self.out_filenames[0]),
+                 os.path.join(self.fixtures_path, expected_folders[0],
+                              os.path.basename(self.out_filenames[0]))))
 
         self.assertThat(
             pretty_xml,
@@ -149,7 +176,7 @@ class SingleJobTestCase(BaseTestCase):
         parser.expandYaml()
         parser.generateXML()
 
-        parser.xml_jobs.sort(key=operator.attrgetter('name'))
+        parser.xml_jobs.sort(key=operator.attrgetter('fullname'))
 
         # Prettify generated XML
         pretty_xml = u"\n".join(job.output().decode('utf-8')
