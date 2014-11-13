@@ -1497,3 +1497,127 @@ def managed_script(parser, xml_parent, data):
     args = XML.SubElement(ms, 'buildStepArgs')
     for arg in data.get('args', []):
         XML.SubElement(args, 'string').text = arg
+
+
+def cmake(parser, xml_parent, data):
+    """yaml: cmake
+    Execute a CMake target. Requires the Hudson `cmakebuilder Plugin.
+    <http://wiki.hudson-ci.org/display/HUDSON/cmakebuilder+Plugin>`_
+
+    :arg str source-dir: the source code directory relative to the $WORKSPACE
+        directory.
+    :arg str build-dir: the directory where the project will be built in.
+        Relative to the $WORKSPACE directory.
+    :arg list install-dir: the directory where the project will be installed
+        in. Relative to the workspace directory. Results in
+        "-DCMAKE_INSTALL_PREFIX=<install-dir>"
+    :arg list build-type: The CMAKE_BUILD_TYPE. Custom types different than the
+        ones specified here can also be defined. This results on the following
+        being added to the CMake command line: -DCMAKE_BUILD_TYPE=<build-type>.
+
+        :type Default options:
+            * **Debug**
+            * **Release**
+            * **RelWithDebInfo**
+            * **MinSizeRel**
+
+    :arg list generator: The makefile generator (e.g. Unix Makefiles). Here's a
+        list of possible generators:
+
+        :type values:
+            * **Borland Makefiles**
+            * **CodeBlocks - MinGW Makefiles**
+            * **CodeBlocks - Unix Makefiles**
+            * **Eclipse CDT4 - MinGW Makefiles**
+            * **Eclipse CDT4 - NMake Makefiles**
+            * **Eclipse CDT4 - Unix Makefiles**
+            * **MSYS Makefiles**
+            * **MinGW Makefiles**
+            * **NMake Makefiles**
+            * **Unix Makefiles**
+            * **Visual Studio 6**
+            * **Visual Studio 7 .NET 2003**
+            * **Visual Studio 8 2005**
+            * **Visual Studio 8 2005 Win64**
+            * **Visual Studio 9 2008**
+            * **Visual Studio 9 2008 Win64**
+            * **Watcom WMake**
+
+    :arg str make-command: The make command (e.g. gmake, make, nmake).
+    :arg str install-command: The install command (e.g. make install).
+    :arg str preload-script: Optional path to preload script file. This will be
+        added to cmake call as: "-C <preload-script>"
+    :arg str other-arguments: Other arguments to be added to the cmake call.
+    :arg str custom-cmake-path: Job specific path to cmake executable.
+        Overrides global setting. This can only be overridden by the
+        environment variable CMAKE_EXECUTABLE.
+    :arg bool clean-build-dir: If true, delete the build dir before each build
+        (default: false).
+    :arg bool clean-install-dir: If true, delete the install dir before each
+        build (default: false).
+
+    Example:
+
+    .. literalinclude:: ../../tests/builders/fixtures/cmake-common.yaml
+       :language: yaml
+    """
+
+    from collections import defaultdict
+    DEFAULT_BUILD_TYPES = ['Debug', 'Release', 'RelWithDebInfo', 'MinSizeRel']
+
+    cmake = XML.SubElement(xml_parent, 'hudson.plugins.cmake.CmakeBuilder')
+
+    data = defaultdict(str, data)
+
+    source_dir = XML.SubElement(cmake, 'sourceDir')
+    source_dir.text = data['source-dir']
+
+    build_dir = XML.SubElement(cmake, 'buildDir')
+    build_dir.text = data['build-dir']
+
+    install_dir = XML.SubElement(cmake, 'installDir')
+    install_dir.text = data['install-dir']
+
+    build_type = XML.SubElement(cmake, 'buildType')
+    other_build_type = XML.SubElement(cmake, 'otherBuildType')
+
+    if(data['build-type'] not in DEFAULT_BUILD_TYPES):
+        build_type.text = 'Debug'
+        other_build_type.text = data['build-type']
+    else:
+        build_type.text = data['build-type']
+        other_build_type.text = ''
+
+    generator = XML.SubElement(cmake, 'generator')
+    if(data['generator'] == ''):
+        data['generator'] = "Unix Makefiles"
+    generator.text = data['generator']
+
+    make_command = XML.SubElement(cmake, 'makeCommand')
+    if(data['make-command'] == ''):
+        data['make-command'] = 'make'
+    make_command.text = data['make-command']
+
+    install_command = XML.SubElement(cmake, 'installCommand')
+    if(data['install-command'] == ''):
+        data['install-command'] = 'make install'
+    install_command.text = data['install-command']
+
+    preload_script = XML.SubElement(cmake, 'preloadScript')
+    preload_script.text = data['preload-script']
+
+    other_cmake_args = XML.SubElement(cmake, 'cmakeArgs')
+    other_cmake_args.text = data['other-arguments']
+
+    custom_cmake_path = XML.SubElement(cmake, 'projectCmakePath')
+    custom_cmake_path.text = data['custom-cmake-path']
+
+    clean_build_dir = XML.SubElement(cmake, 'cleanBuild')
+    clean_build_dir.text = str(data['clean-build-dir'] or 'false').lower()
+
+    clean_install_dir = XML.SubElement(cmake, 'cleanInstallDir')
+    clean_install_dir.text = str(data['clean-install-dir'] or 'false').lower()
+
+    # The plugin generates this tag, but there doesn't seem to be anything
+    # that can be configurable by it. Let's keep it to mantain compatibility:
+    XML.SubElement(cmake, 'builderImpl')
