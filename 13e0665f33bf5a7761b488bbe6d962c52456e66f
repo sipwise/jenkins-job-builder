@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_66a65912",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-13T22:17:44Z",
+      "side": 1,
+      "message": "yes, you are correct.",
+      "parentUuid": "5a890539_352d5d47",
+      "revId": "13e0665f33bf5a7761b488bbe6d962c52456e66f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_b5c4ed92",
         "filename": "tests/cmd/test_cmd.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-12T18:57:41Z",
       "side": 1,
       "message": "Assuming switching which method is mocked to allow testing which jobs are actually deleted with the glob, the following would be correct method to use I imagine?\n\n delete_job_mock.assert_has_calls([\u0027bar001\u0027, \u0027bar002\u0027], any_order\u003dTrue)\n\nMight be overkill in some cases, but seems like for checking that the glob matching is working it might be a good idea here.",
+      "revId": "13e0665f33bf5a7761b488bbe6d962c52456e66f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_c665231f",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-13T22:17:44Z",
+      "side": 1,
+      "message": "Thanks Darragh!  I tried to do this before but gave up because i couldn\u0027t figure out how to validate that the glob extracted the correct jobs.  \n\nI tried as you suggested using the assert_has_calls method but that always fails for me.  I stepped thru the method and I think there\u0027s a bug in there and that\u0027s why it always asserts.  Instead I used assert_any_call method and that seems to work as expected.",
+      "parentUuid": "5a890539_b5c4ed92",
       "revId": "13e0665f33bf5a7761b488bbe6d962c52456e66f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
