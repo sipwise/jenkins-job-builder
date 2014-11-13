@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_cc1c8bc4",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-13T00:37:23Z",
+      "side": 1,
+      "message": "Could you add this new param to the test so it shows up in the documentation as part of the example?",
+      "revId": "e7fb99efcd06cf63e161a8bb663c61436fd3e437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
