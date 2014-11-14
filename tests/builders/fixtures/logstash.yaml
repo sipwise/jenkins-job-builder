@@ -1,0 +1,4 @@
+builders:
+  - logstash:
+      max-log-lines: 1
+      can-fail-job: true
