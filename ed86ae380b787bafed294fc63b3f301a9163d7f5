@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_9e76eed5",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 2424
+      },
+      "writtenOn": "2014-11-14T13:38:27Z",
+      "side": 1,
+      "message": "Wayne, I understand, I leave it at your will :)",
+      "parentUuid": "5a890539_9ce0cc97",
+      "revId": "ed86ae380b787bafed294fc63b3f301a9163d7f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_2c97ab49",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 6
@@ -100,6 +118,24 @@
       "side": 1,
       "message": "The convention for being explicit about the default value for \"getattr\" had been established prior to this commit. Please refer to line 196 in the base version of jenkins_jobs/builder.py or line 219 in the patched version (12 lines below).\n\nI\u0027d prefer to stick with the established convention.",
       "parentUuid": "5a890539_2c97ab49",
+      "revId": "ed86ae380b787bafed294fc63b3f301a9163d7f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_de7cf6b7",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 2424
+      },
+      "writtenOn": "2014-11-14T13:38:27Z",
+      "side": 1,
+      "message": "OK, ignore my comment on this.",
+      "parentUuid": "5a890539_5c24a4c4",
       "revId": "ed86ae380b787bafed294fc63b3f301a9163d7f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
