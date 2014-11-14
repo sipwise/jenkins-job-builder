@@ -36,6 +36,40 @@
     },
     {
       "key": {
+        "uuid": "5a890539_c155f650",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-14T14:38:07Z",
+      "side": 1,
+      "message": "bit dubious about this, seems like a hipchat plugin specific setting so possibly should go underneath than section.\n\nPossibly could allow for checking for the plugin specific one and defaulting to a generic option for sending user when not otherwise defined.",
+      "revId": "ed86ae380b787bafed294fc63b3f301a9163d7f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_7956bc5d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-14T14:38:07Z",
+      "side": 1,
+      "message": "Since \u0027-p\u0027 is used for path in the delete subcommand, could you see if there is another option or instead just provide a long option without a short one.\n\nUnless the options are identical I\u0027d prefer to have separate short options if possible.",
+      "revId": "ed86ae380b787bafed294fc63b3f301a9163d7f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_8c67bfb6",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 6
@@ -89,6 +123,41 @@
     },
     {
       "key": {
+        "uuid": "5a890539_0149be5f",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-14T14:38:07Z",
+      "side": 1,
+      "message": "It still follows a style no where else in this code base which is possibly why you\u0027re getting people see it as being a bit out of place. The extra blank line after each comment before the next block of code is what looks odd at first glance.\n\nI think it\u0027s reasonable to add in the comments and breaking up code by whitespace but prefer sticking with the comment should become just before the code it references and not be followed by additional whitespace.\n\ni.e. the following makes more sense to me. \n\n parser_test.add_argument(\u0027-o\u0027, dest\u003d\u0027output_dir\u0027, default\u003dsys.stdout,\n                          help\u003d\u0027path to output XML\u0027)\n parser_test.add_argument(\u0027name\u0027, help\u003d\u0027name(s) of job(s)\u0027, nargs\u003d\u0027*\u0027)\n\n # subparser: delete \n parser_delete \u003d subparser.add_parser(\u0027delete\u0027)\n parser_delete.add_argument(\u0027name\u0027, help\u003d\u0027name of job\u0027, nargs\u003d\u0027+\u0027)\n ...\n\nThe comment is clearly associated with the next block of code and is not just hanging by itself.",
+      "parentUuid": "5a890539_9e76eed5",
+      "revId": "ed86ae380b787bafed294fc63b3f301a9163d7f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_c13b36cf",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-14T14:38:07Z",
+      "side": 1,
+      "message": "You should probably add one in as well identifying this as the start of the parent parser and end of the delete-all subparser.",
+      "revId": "ed86ae380b787bafed294fc63b3f301a9163d7f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_2c97ab49",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 6
@@ -136,6 +205,41 @@
       "side": 1,
       "message": "OK, ignore my comment on this.",
       "parentUuid": "5a890539_5c24a4c4",
+      "revId": "ed86ae380b787bafed294fc63b3f301a9163d7f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_e11e720b",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-14T14:38:07Z",
+      "side": 1,
+      "message": "Not really about being explicit.\n\nIf \u0027plugins_info_path\u0027 is not set on options at all and you don\u0027t provide a default value, AttributeError is raised. Since it\u0027s only available for the test subcommand, it would trigger an exception on the other subcommands if you didn\u0027t set a default.\n\nNot sure of the need for \u0027is not None\u0027 on the end though, I can\u0027t see any of the values that could otherwise evaluate for false where you would actually want to execute this block of code.",
+      "parentUuid": "5a890539_de7cf6b7",
+      "revId": "ed86ae380b787bafed294fc63b3f301a9163d7f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_81584e8b",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-14T14:38:07Z",
+      "side": 1,
+      "message": "This isn\u0027t going to behaviour correctly for various versions of the hipchat plugin.\n\nConsider comparing against \"0.1.9\" which will evaluate as newer but not meet your criteria, or \"0.1.10\" which will be considered older with string comparisons which would fail a \"\u003e\u003d\" comparison.\n\nI think the best thing is to split these changes and focus on adding a helper function to retrieve the version of a plugin and return it as a tuple.\n\nAlso would need to add  some simple tests to ensure that those adding version specific code will get the correct behaviour for the main expected comparison operators i.e. at least some of \u003c, \u003c\u003d, \u003d\u003d, \u003e\u003d, \u003e.",
       "revId": "ed86ae380b787bafed294fc63b3f301a9163d7f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
