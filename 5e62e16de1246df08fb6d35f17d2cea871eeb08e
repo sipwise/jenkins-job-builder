@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_72fec4af",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3899,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-14T23:51:09Z",
+      "side": 1,
+      "message": "Based on your response for the earlier path, a warning is definitely needed, think it needs a little more text to explain why it\u0027s an issue to the end user.\n\nDebating whether it\u0027s worth raising an exception at this point and refusing to continue, instead of letting users think that the job will still work, since we also use warnings for deprecated settings that we still support. So there might be an expectation that the job will behave as if the threshold was set correctly if only warning is emitted.",
+      "revId": "5e62e16de1246df08fb6d35f17d2cea871eeb08e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
