@@ -131,12 +131,12 @@ def matches(what, glob_patterns):
 
 
 class YamlParser(object):
-    def __init__(self, config=None):
+    def __init__(self, config=None, plugins_info=None):
         self.data = {}
         self.jobs = []
         self.xml_jobs = []
         self.config = config
-        self.registry = ModuleRegistry(self.config)
+        self.registry = ModuleRegistry(self.config, plugins_info)
         self.path = ["."]
         if self.config:
             if config.has_section('job_builder') and \
@@ -406,11 +406,16 @@ class YamlParser(object):
 class ModuleRegistry(object):
     entry_points_cache = {}
 
-    def __init__(self, config):
+    def __init__(self, config, plugins_list=None):
         self.modules = []
         self.modules_by_component_type = {}
         self.handlers = {}
         self.global_config = config
+
+        if plugins_list is None:
+            self.plugins_dict = {}
+        else:
+            self.plugins_dict = self._get_plugins_info_dict(plugins_list)
 
         for entrypoint in pkg_resources.iter_entry_points(
                 group='jenkins_jobs.modules'):
@@ -420,6 +425,27 @@ class ModuleRegistry(object):
             self.modules.sort(key=operator.attrgetter('sequence'))
             if mod.component_type is not None:
                 self.modules_by_component_type[mod.component_type] = mod
+
+    @staticmethod
+    def _get_plugins_info_dict(plugins_list):
+        """
+        Return a dictionary that maps the longName of each plugin to its
+        plugin_info dictionary.
+        """
+        def mutate_plugin_info(plugin_info):
+            """
+            We perform mutations on a single member of plugin_info here,
+            then return a tuple of the longName of the plugin and the mutated
+            plugin_info.
+            """
+            version = plugin_info.get('version', '0')
+            plugin_info['version'] = version
+            return (plugin_info['longName'], plugin_info)
+
+        return dict([mutate_plugin_info(v) for v in plugins_list])
+
+    def get_plugin_info(self, plugin_long_name):
+        return self.plugins_dict.get(plugin_long_name, {})
 
     def registerHandler(self, category, name, method):
         cat_dict = self.handlers.get(category, {})
@@ -612,6 +638,15 @@ class Jenkins(object):
             logger.info("Deleting jenkins job {0}".format(job_name))
             self.jenkins.delete_job(job_name)
 
+    def get_plugins_info(self):
+        """ Return a dictionary that maps the longName of each plugin to its
+        plugin_info dictionary.
+        """
+        plugins_list = self.jenkins.get_plugins_info()
+        logger.debug("Jenkins Plugin Info {0}".format(pformat(plugins_list)))
+
+        return plugins_list
+
     def get_jobs(self):
         return self.jenkins.get_jobs()
 
@@ -628,14 +663,20 @@ class Jenkins(object):
 
 class Builder(object):
     def __init__(self, jenkins_url, jenkins_user, jenkins_password,
-                 config=None, ignore_cache=False, flush_cache=False):
+                 config=None, ignore_cache=False, flush_cache=False,
+                 plugins_list=None):
         self.jenkins = Jenkins(jenkins_url, jenkins_user, jenkins_password)
         self.cache = CacheStorage(jenkins_url, flush=flush_cache)
         self.global_config = config
         self.ignore_cache = ignore_cache
 
+        if plugins_list is None:
+            self.plugins_list = self.jenkins.get_plugins_info()
+        else:
+            self.plugins_list = plugins_list
+
     def load_files(self, fn):
-        self.parser = YamlParser(self.global_config)
+        self.parser = YamlParser(self.global_config, self.plugins_list)
 
         # handle deprecated behavior
         if not hasattr(fn, '__iter__'):
