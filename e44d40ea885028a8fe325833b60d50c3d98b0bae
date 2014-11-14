@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_3998b469",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-14T13:44:26Z",
+      "side": 1,
+      "message": "Not really, just need to change how we\u0027re mocking CacheStorage.\n\nLooks like using the setUp \u0026 tearDown methods will help here since we need an actual mock created with the autospec functionality.\n\nI think it\u0027s important to ensure that for most tests except those that test CacheStorage directly, that we fully mock the class to avoid writing out additional files unexpectedly.",
+      "revId": "e44d40ea885028a8fe325833b60d50c3d98b0bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_a8945043",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-14T13:44:26Z",
+      "side": 1,
+      "message": "I think this can miss additional calls, so if the code were to pass in additional jobs it wouldn\u0027t spot that the extra calls.\n\nDiscovered that we just need to properly define the calls being passed in when using \u0027assert_has_calls\u0027.",
+      "revId": "e44d40ea885028a8fe325833b60d50c3d98b0bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
