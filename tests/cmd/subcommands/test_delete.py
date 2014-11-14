@@ -4,6 +4,7 @@ from jenkins_jobs import cmd
 from tests.cmd.test_cmd import CmdTestsBase
 
 
+@mock.patch('jenkins_jobs.builder.Jenkins.get_plugins_info', mock.MagicMock)
 class DeleteTests(CmdTestsBase):
 
     @mock.patch('jenkins_jobs.cmd.Builder.delete_job')

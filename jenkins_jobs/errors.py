@@ -7,3 +7,7 @@ class JenkinsJobsException(Exception):
 
 class YAMLFormatError(JenkinsJobsException):
     pass
+
+
+class PluginInfoError(JenkinsJobsException):
+    pass
