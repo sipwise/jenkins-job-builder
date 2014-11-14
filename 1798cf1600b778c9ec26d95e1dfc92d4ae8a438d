@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_4a3836ef",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-14T18:13:05Z",
+      "side": 1,
+      "message": "is that a space after self. ?",
+      "revId": "1798cf1600b778c9ec26d95e1dfc92d4ae8a438d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_800cbf3c",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-14T18:13:05Z",
+      "side": 1,
+      "message": "I don\u0027t think this checks that additional calls are invalid.  I think assert_has_calls only checks that items in the expected list is in the actual list.  It doesn\u0027t check that the actual list contains additional items that are not expected.  \n\nSo in other words, I believe this test should fail if the globbed feature adds \u0027baz001\u0027 as a job, however this check will not assert on this condition.  Maybe we need to do a try catch assert_has_calls(\u0027baz001\u0027) ?  or maybe that should be in a separate test?",
+      "revId": "1798cf1600b778c9ec26d95e1dfc92d4ae8a438d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
