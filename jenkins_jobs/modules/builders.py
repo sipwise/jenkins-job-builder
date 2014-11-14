@@ -1497,3 +1497,29 @@ def managed_script(parser, xml_parent, data):
     args = XML.SubElement(ms, 'buildStepArgs')
     for arg in data.get('args', []):
         XML.SubElement(args, 'string').text = arg
+
+
+def logstash(parser, xml_parent, data):
+    """yaml: logstash
+    This step allows dumping Jenkins console log to Logstash
+    Requires the Jenkins `logstash plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Logstash+Plugin>`_
+
+    :arg int max-log-lines: Maximum number of console lines to dump (Required)
+    :arg bool can-fail-job: Fail the job if the step fails (default: false)
+
+    Example:
+
+    .. literalinclude:: /../../tests/builders/fixtures/logstash.yaml
+       :language: yaml
+    """
+    logstash = XML.SubElement(xml_parent,
+                              'jenkins.plugins.logstash.LogstashNotifier')
+    try:
+        max_log_lines = XML.SubElement(logstash, 'maxLines')
+        max_log_lines.text = str(data['max-log-lines'])
+    except KeyError:
+        raise JenkinsJobsException('A max number of log lines is required ' +
+                                   'for logstash')
+    can_fail_job = XML.SubElement(logstash, 'failBuild')
+    can_fail_job.text = str(data.get('can-fail-job', False)).lower()
