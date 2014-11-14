@@ -2,6 +2,7 @@ import os
 import io
 import codecs
 import mock
+import yaml
 from jenkins_jobs import cmd
 from tests.cmd.test_cmd import CmdTestsBase
 
@@ -38,6 +39,7 @@ def os_walk_side_effects(path_name, topdown):
     return os_walk_return_values[path_name]
 
 
+@mock.patch('jenkins_jobs.builder.Jenkins.get_plugins_info', mock.MagicMock)
 class TestTests(CmdTestsBase):
 
     def test_non_existing_config_dir(self):
@@ -154,3 +156,27 @@ class TestTests(CmdTestsBase):
         config = cmd.setup_config_settings(args)
         self.assertEqual(config.get('jenkins', 'url'),
                          "http://test-jenkins.with.non.default.url:8080/")
+
+    @mock.patch('jenkins_jobs.builder.YamlParser.generateXML')
+    @mock.patch('jenkins_jobs.builder.ModuleRegistry')
+    def test_plugins_info_stub_option(self, registry_mock, generateXML_mock):
+        """
+        Test handling of recursive path option
+        """
+        console_out = io.BytesIO()
+        plugins_info_stub_yaml_file = os.path.join(self.fixtures_path,
+                                                   'plugins-info.yaml')
+        with mock.patch('sys.stdout', console_out):
+            args = ['--conf',
+                    os.path.join(self.fixtures_path, 'cmd-001.conf'),
+                    'test',
+                    '-p',
+                    plugins_info_stub_yaml_file,
+                    os.path.join(self.fixtures_path, 'cmd-001.yaml')]
+            args = self.parser.parse_args(args)
+            cmd.execute(args, self.config)   # probably better to fail here
+
+        with open(plugins_info_stub_yaml_file, 'r') as yaml_file:
+            plugins_info_list = yaml.load(yaml_file)
+
+        registry_mock.assert_called_with(self.config, plugins_info_list)
