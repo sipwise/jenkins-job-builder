@@ -16,6 +16,24 @@
       "revId": "911fdcffc2525e4369c747d51a0fe44b258237f6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_8fd2275a",
+        "filename": "tests/cmd/test_recurse_path.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-14T22:33:35Z",
+      "side": 1,
+      "message": "It is, bit in this case though it would break the tests on Windows unless all the test data is modified to use os.path.join() as well when constructing the paths.\n\nThough might be worth a comment to explain why the standard approach would cause a problem.",
+      "parentUuid": "5a890539_35cf0fb2",
+      "revId": "911fdcffc2525e4369c747d51a0fe44b258237f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
