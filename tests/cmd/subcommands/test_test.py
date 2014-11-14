@@ -12,6 +12,7 @@ import tests.utils.mocks as jjb_mocks
 # are run in parallel.  Stub out the CacheStorage to ensure that each
 # test can safely create the cache directory without risk of interference.
 @mock.patch('jenkins_jobs.builder.CacheStorage', mock.MagicMock)
+@mock.patch('jenkins_jobs.builder.Jenkins.get_plugins_info', mock.MagicMock)
 class TestTests(CmdTestsBase):
 
     def test_non_existing_config_dir(self):
