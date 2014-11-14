@@ -94,6 +94,7 @@ class HipChat(jenkins_jobs.modules.base.Base):
                              " containing authtoken:\n{0}".format(e))
                 sys.exit(1)
             self.jenkinsUrl = self.registry.global_config.get('jenkins', 'url')
+            self.sendAs = self.registry.global_config.get('jenkins', 'send-as')
 
     def gen_xml(self, parser, xml_parent, data):
         hipchat = data.get('hipchat')
@@ -137,7 +138,19 @@ class HipChat(jenkins_jobs.modules.base.Base):
             publishers = XML.SubElement(xml_parent, 'publishers')
         hippub = XML.SubElement(publishers,
                                 'jenkins.plugins.hipchat.HipChatNotifier')
-        XML.SubElement(hippub, 'jenkinsUrl').text = self.jenkinsUrl
+
+        try:
+            version_comparison = self.registry.cmp_plugin_version(
+                "Jenkins HipChat Plugin", "0.1.8")
+        except jenkins_jobs.errors.PluginInfoError:
+            version_comparison = -1
+
+        if version_comparison >= 0:
+            XML.SubElement(hippub, 'buildServerUrl').text = self.jenkinsUrl
+            XML.SubElement(hippub, 'sendAs').text = self.sendAs
+        else:
+            XML.SubElement(hippub, 'jenkinsUrl').text = self.jenkinsUrl
+
         XML.SubElement(hippub, 'authToken').text = self.authToken
         # The room specified here is the default room.  The default is
         # redundant in this case since a room must be specified.  Leave empty.
