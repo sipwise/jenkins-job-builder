@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_2f6cd334",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-14T23:29:14Z",
+      "side": 1,
+      "message": "Hadn\u0027t thought about that version strings could be alphanumeric, doh!\n\nThinking there had to be an easier way than this in that surely someone had already solved the conversion of version strings to compare properly taking into account all the different characters that are valid.\n\nAnd it appears they did, have a look at \u0027parse_version\u0027 from the pkg_resources module. Since we already import it, there\u0027s no extra requirement :-)\n\nFollowing returns the expected:\n\n \u003e\u003e\u003e from pkg_resources import parse_version\n \u003e\u003e\u003e parse_version(\"1.1.2a\") \u003c parse_version(\"1.1.10a\")\n True",
+      "revId": "e2c2cf11f152951e27a988ce773b0551435658ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_cfb42f84",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-14T23:29:14Z",
+      "side": 1,
+      "message": "Was thinking more along the lines of passing the args just through the parser and then calling an included helper version. Course given that I forgot about letters being acceptable pieces of version strings, it might look something more like:\n\n compare_versions(\"1.4.6a\", plugin_info[\u0027dummy\u0027][\u0027version\u0027], \"\u003e\u003d\")\n\nwhere the compare_versions uses the operator module to map between \"\u003e\u003d\" and operator.ge which can then be called with the versions after parsing them.\n\nThis would allow testing the basic functionality for comparing against plugin versions without needing to check the resulting XML output.",
+      "revId": "e2c2cf11f152951e27a988ce773b0551435658ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
