@@ -37,6 +37,7 @@ allow_duplicates=False
 
 [jenkins]
 url=http://localhost:8080/
+send-as=Jenkins
 user=
 password=
 
@@ -72,7 +73,6 @@ def create_parser():
                                       dest='command')
 
     # subparser: update
-
     parser_update = subparser.add_parser('update', parents=[recursive_parser])
     parser_update.add_argument('path', help='colon-separated list of paths to'
                                             ' YAML files or directories')
@@ -82,7 +82,6 @@ def create_parser():
                                dest='delete_old', default=False,)
 
     # subparser: test
-
     parser_test = subparser.add_parser('test', parents=[recursive_parser])
     parser_test.add_argument('path', help='colon-separated list of paths to'
                                           ' YAML files or directories',
@@ -94,7 +93,6 @@ def create_parser():
     parser_test.add_argument('name', help='name(s) of job(s)', nargs='*')
 
     # subparser: delete
-
     parser_delete = subparser.add_parser('delete')
     parser_delete.add_argument('name', help='name of job', nargs='+')
     parser_delete.add_argument('-p', '--path', default=None,
@@ -102,7 +100,6 @@ def create_parser():
                                     ' YAML files or directories')
 
     # subparser: delete-all
-
     subparser.add_parser('delete-all',
                          help='delete *ALL* jobs from Jenkins server, '
                          'including those not managed by Jenkins Job '
