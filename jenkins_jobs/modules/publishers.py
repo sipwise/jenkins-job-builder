@@ -1004,7 +1004,7 @@ def violations(parser, xml_parent, data):
 
     Valid systems are:
 
-      checkstyle, codenarc, cpd, cpplint, csslint, findbugs, fxcop,
+      checkstyle, codenarc, cpd, cpplint, csslint, findbugs, fxcop, perlcritic
       gendarme, jcreport, jslint, pep8, pmd, pylint, simian, stylecop
 
     Example::
@@ -1042,6 +1042,7 @@ def violations(parser, xml_parent, data):
         'pmd',
         'pylint',
         'simian',
+        'perlcritic',
         'stylecop']:
         _violations_add_entry(configs, name, data.get(name, {}))
 
