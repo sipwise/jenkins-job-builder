@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a890539_6f523268",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-17T18:50:23Z",
+      "side": 1,
+      "message": "nit: to be consistent with the other modules, should use \u0027str\u0027 instead of \u0027string\u0027",
+      "revId": "59f02c8f5a359508f547d8220fd96386760fe22a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_f0b5fe31",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 4
