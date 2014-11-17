@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_68f6b6fa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-11-17T13:26:29Z",
+      "side": 1,
+      "message": "nit: subject line is too long.",
+      "revId": "d6e85fcfddccb3aaa40f741de7c76c929e25ebe8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_48f3ba09",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1045,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2014-11-17T13:26:29Z",
+      "side": 1,
+      "message": "nit: the list is in alphabetical order, so this should be between \u0027pep8\u0027 and \u0027pmd\u0027.",
+      "range": {
+        "startLine": 1045,
+        "startChar": 9,
+        "endLine": 1045,
+        "endChar": 19
+      },
+      "revId": "d6e85fcfddccb3aaa40f741de7c76c929e25ebe8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
