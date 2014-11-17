@@ -838,6 +838,10 @@ def xunit(parser, xml_parent, data):
     'unstable', 'unstablenew', 'failure', 'failurenew'. Omitting a \
     value will resort on xUnit default value (should be 0).
 
+    :arg int test-time-margin: Give the report time margin value (default to \
+    3000) in ms, before to fail if not new (unless the option 'Fail the build \
+    if test results were not updated this run' is checked).
+
     :arg dict types: per framework configuration. The key should be \
     one of the internal types we support:\
     'aunit', 'boosttest', 'checktype', 'cpptest', 'cppunit', 'ctest', \
@@ -964,6 +968,10 @@ def xunit(parser, xml_parent, data):
         thresholdmode = '2'
     XML.SubElement(xunit, 'thresholdMode').text = \
         thresholdmode
+
+    extra_config = XML.SubElement(xunit, 'extraConfiguration')
+    XML.SubElement(extra_config, 'testTimeMargin').text = \
+        str(data.get('test-time-margin', '3000'))
 
 
 def _violations_add_entry(xml_parent, name, data):
