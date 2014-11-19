@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_2bab5e8a",
+        "filename": "requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-19T23:54:18Z",
+      "side": 0,
+      "message": "It\u0027s not however part of 2.6.",
+      "revId": "b016470212b49c01ef15ffb0bdee0ad2deadb922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
