@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_7f8344cc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-21T15:50:45Z",
+      "side": 1,
+      "message": "Guessing you forgot to remove the references here.",
+      "revId": "25e3cf6af841c536f4ec45f3dbf38c8e7926d6e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_1f2a4090",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-21T15:50:45Z",
+      "side": 1,
+      "message": "I wonder is there any benefit in keeping this with the test_recursive_multi_path test as well?\n\nOnly spotted it when considering whether we could remove the os_walk_mock.return_value entry and make use of the function you\u0027ve moved out to be separate.",
+      "revId": "25e3cf6af841c536f4ec45f3dbf38c8e7926d6e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_7fd184cc",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-21T15:50:45Z",
+      "side": 1,
+      "message": "Good catch, forgot to move the comment when I refactored this for one of the other tests.",
+      "revId": "25e3cf6af841c536f4ec45f3dbf38c8e7926d6e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
