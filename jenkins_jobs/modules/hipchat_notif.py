@@ -99,9 +99,6 @@ class HipChat(jenkins_jobs.modules.base.Base):
         hipchat = data.get('hipchat')
         if not hipchat or not hipchat.get('enabled', True):
             return
-        if('room' not in hipchat):
-            raise jenkins_jobs.errors.YAMLFormatError(
-                "Missing hipchat 'room' specifier")
         self._load_global_data()
 
         properties = xml_parent.find('properties')
@@ -110,25 +107,30 @@ class HipChat(jenkins_jobs.modules.base.Base):
         pdefhip = XML.SubElement(properties,
                                  'jenkins.plugins.hipchat.'
                                  'HipChatNotifier_-HipChatJobProperty')
-        XML.SubElement(pdefhip, 'room').text = hipchat['room']
-        XML.SubElement(pdefhip, 'startNotification').text = str(
-            hipchat.get('start-notify', False)).lower()
-        if hipchat.get('notify-success'):
+        XML.SubElement(pdefhip, 'room').text = hipchat.get('room', '')
+        # Handle backwards compatibility 'start-notify' but all add an element
+        # of standardization with notify-*
+        if hipchat.get('start-notify') is not None or \
+           hipchat.get('notify-start') is not None:
+            value = hipchat.get('start-notify') or hipchat.get('notify-start')
+            value = str(value).lower()
+            XML.SubElement(pdefhip, 'startNotification').text = value
+        if hipchat.get('notify-success') is not None:
             XML.SubElement(pdefhip, 'notifySuccess').text = str(
                 hipchat.get('notify-success')).lower()
-        if hipchat.get('notify-aborted'):
+        if hipchat.get('notify-aborted') is not None:
             XML.SubElement(pdefhip, 'notifyAborted').text = str(
                 hipchat.get('notify-aborted')).lower()
-        if hipchat.get('notify-not-built'):
+        if hipchat.get('notify-not-built') is not None:
             XML.SubElement(pdefhip, 'notifyNotBuilt').text = str(
                 hipchat.get('notify-not-built')).lower()
-        if hipchat.get('notify-unstable'):
+        if hipchat.get('notify-unstable') is not None:
             XML.SubElement(pdefhip, 'notifyUnstable').text = str(
                 hipchat.get('notify-unstable')).lower()
-        if hipchat.get('notify-failure'):
+        if hipchat.get('notify-failure') is not None:
             XML.SubElement(pdefhip, 'notifyFailure').text = str(
                 hipchat.get('notify-failure')).lower()
-        if hipchat.get('notify-back-to-normal'):
+        if hipchat.get('notify-back-to-normal') is not None:
             XML.SubElement(pdefhip, 'notifyBackToNormal').text = str(
                 hipchat.get('notify-back-to-normal')).lower()
 
