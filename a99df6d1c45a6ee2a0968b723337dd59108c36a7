@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_e3793683",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1181,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-21T17:03:20Z",
+      "side": 1,
+      "message": "Please add \u0027(optional)\u0027 to the end of this setting to denote it does not require to be set, assuming this is the case.",
+      "revId": "a99df6d1c45a6ee2a0968b723337dd59108c36a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_03f642f9",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1182,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-21T17:03:20Z",
+      "side": 1,
+      "message": "Please add the default value here \"(default \u0027false\u0027)\".",
+      "revId": "a99df6d1c45a6ee2a0968b723337dd59108c36a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_63e4663c",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1183,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-21T17:03:20Z",
+      "side": 1,
+      "message": "Same here, just follow the other examples in the file.",
+      "revId": "a99df6d1c45a6ee2a0968b723337dd59108c36a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_43492a30",
+        "filename": "tests/wrappers/fixtures/custom-tools001.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-21T17:03:20Z",
+      "side": 1,
+      "message": "Seems like it would be a good idea to test with different values to the defaults?",
+      "revId": "a99df6d1c45a6ee2a0968b723337dd59108c36a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_83b87212",
+        "filename": "tests/wrappers/fixtures/custom-tools001.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-21T17:03:20Z",
+      "side": 1,
+      "message": "Could you remove this whitespace while fixing up please.",
+      "revId": "a99df6d1c45a6ee2a0968b723337dd59108c36a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
