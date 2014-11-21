@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_7de16729",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-21T16:56:17Z",
+      "side": 1,
+      "message": "Also need the param\u0027s updated here. Please add in the \u0027notify-start\u0027 and also mark room as having a default value of \u0027\u0027.",
+      "revId": "435fca02d633c89a70ddd822dbe25220f9a741a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_9d38d3a1",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-21T16:56:17Z",
+      "side": 1,
+      "message": "If you decide to add in the version specific check, guess the defaults for all of these should become false.",
+      "revId": "435fca02d633c89a70ddd822dbe25220f9a741a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_1d978391",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-21T16:56:17Z",
+      "side": 1,
+      "message": "Simple, think it\u0027s worth marking use of \u0027start-notify\u0027 as deprecated here. Slight change in logic to check for just that key before using logger.warn() to notify the user that it\u0027s time to look at updating their yaml conf.",
+      "revId": "435fca02d633c89a70ddd822dbe25220f9a741a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_dd06db1b",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-21T16:56:17Z",
+      "side": 1,
+      "message": "With support for version specific XMl coming down the road I\u0027ve a feeling this piece may be perfect for some clean-up.\n\nCould you review  I834dc05465ea5a24e3743f400837482a82e02e7 and see if the version comparison would allow you to isolate these settings so that you could drop most of the if statements and simply output False for all the values to auto disable them if not set for the versions of the plugin that support these settings?\n\nThink that would give your original preferred behaviour of false if not set instead of requiring the yaml config to explicitly contain \u0027false\u0027 and reduce the code here.",
+      "revId": "435fca02d633c89a70ddd822dbe25220f9a741a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
