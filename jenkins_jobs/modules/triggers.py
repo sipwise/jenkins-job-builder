@@ -64,6 +64,7 @@ def gerrit_handle_legacy_configuration(data):
         'triggerOnChangeMergedEvent',
         'triggerOnChangeRestoredEvent',
         'triggerOnCommentAddedEvent',
+        'triggerOnCommentAddedContainsEvent',
         'triggerOnDraftPublishedEvent',
         'triggerOnRefUpdatedEvent',
         'triggerApprovalCategory',
@@ -110,6 +111,13 @@ def build_gerrit_triggers(xml_parent, data):
         XML.SubElement(cadded, 'commentAddedTriggerApprovalValue').text = \
             str(data['trigger-approval-value'])
 
+    if data.get('trigger-on-comment-added-contains-event', False):
+        caddedc = XML.SubElement(trigger_on_events,
+                                '%s.%s' % (tag_namespace,
+                                           'PluginCommentAddedContainsEvent'))
+        XML.SubElement(caddedc, 'commentAddedCommentContains').text = \
+            data['trigger-comment-contains-value']
+
 
 def build_gerrit_skip_votes(xml_parent, data):
     outcomes = [('successful', 'onSuccessful'),
@@ -139,11 +147,15 @@ def gerrit(parser, xml_parent, data):
     :arg bool trigger-on-change-restored-event: Trigger on change restored.
         Requires Gerrit Trigger Plugin version >= 2.8.0
     :arg bool trigger-on-comment-added-event: Trigger on comment added
+    :arg bool trigger-on-comment-added-regex-event: Trigger on comment added
+        contains Regular Expression
     :arg bool trigger-on-draft-published-event: Trigger on draft published
         event
     :arg bool trigger-on-ref-updated-event: Trigger on ref-updated
     :arg str trigger-approval-category: Approval category for comment added
     :arg int trigger-approval-value: Approval value for comment added
+    :arg str trigger-comment-contains-value: Comment contains Regular
+        Expression value
     :arg bool override-votes: Override default vote values
     :arg int gerrit-build-successful-verified-value: Successful ''Verified''
         value
