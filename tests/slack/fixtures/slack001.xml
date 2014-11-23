@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <properties>
+    <jenkins.plugins.slack.SlackNotifier_-SlackJobProperty>
+      <room>#myroom</room>
+      <startNotification>true</startNotification>
+      <notifySuccess>true</notifySuccess>
+      <notifyAborted>true</notifyAborted>
+      <notifyNotBuilt>true</notifyNotBuilt>
+      <notifyUnstable>true</notifyUnstable>
+      <notifyFailure>true</notifyFailure>
+      <notifyBackToNormal>true</notifyBackToNormal>
+    </jenkins.plugins.slack.SlackNotifier_-SlackJobProperty>
+  </properties>
+  <publishers>
+    <jenkins.plugins.slack.SlackNotifier>
+      <teamDomain>team_domain</teamDomain>
+      <buildServerUrl>url</buildServerUrl>
+      <authToken>token</authToken>
+      <room/>
+    </jenkins.plugins.slack.SlackNotifier>
+  </publishers>
+</project>
