@@ -37,10 +37,10 @@ try:
 except ImportError:
     import mock  # noqa
 
-from jenkins_jobs.cmd import DEFAULT_CONF
 import jenkins_jobs.local_yaml as yaml
 from jenkins_jobs.parser import YamlParser
 from jenkins_jobs.xml_config import XmlJob
+from jenkins_jobs.cmd import DEFAULT_CONF
 from jenkins_jobs.modules import (project_flow,
                                   project_matrix,
                                   project_maven,
