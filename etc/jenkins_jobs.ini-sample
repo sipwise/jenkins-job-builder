@@ -14,3 +14,7 @@ url=https://jenkins.example.com
 
 [hipchat]
 authtoken=dummy
+
+[slack]
+token=dummy
+teamDomain=teamdomain

@@ -41,6 +41,10 @@ password=
 
 [hipchat]
 authtoken=dummy
+
+[slack]
+token=dummy
+teamDomain=teamdomain
 """
 
 
