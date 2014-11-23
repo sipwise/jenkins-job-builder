@@ -47,6 +47,10 @@ query_plugins_info=True
 [hipchat]
 authtoken=dummy
 send-as=Jenkins
+
+[slack]
+auth_token=dummy
+team_domain=dummy
 """
 
 

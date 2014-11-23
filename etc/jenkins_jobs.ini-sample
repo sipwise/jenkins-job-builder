@@ -16,3 +16,7 @@ query_plugins_info=False
 
 [hipchat]
 authtoken=dummy
+
+[slack]
+token=dummy
+team_domain=team_domain
