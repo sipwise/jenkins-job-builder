@@ -401,6 +401,7 @@ The bulk of the job definitions come from the following modules.
    project_matrix
    builders
    hipchat
+   slack
    metadata
    notifications
    parameters

@@ -37,10 +37,10 @@ try:
 except ImportError:
     import mock  # noqa
 
-from jenkins_jobs.cmd import DEFAULT_CONF
 import jenkins_jobs.local_yaml as yaml
 from jenkins_jobs.parser import YamlParser
 from jenkins_jobs.xml_config import XmlJob
+from jenkins_jobs.cmd import DEFAULT_CONF
 from jenkins_jobs.modules import (project_flow,
                                   project_matrix,
                                   project_maven,
@@ -179,6 +179,15 @@ class BaseTestCase(object):
                                               doctest.ELLIPSIS |
                                               doctest.REPORT_NDIFF)
         )
+
+
+class EnsureConfigParserBaseTestCase(BaseTestCase):
+    def _get_config(self):
+        if self.conf_filename is not None:
+            return super(EnsureConfigParserBaseTestCase, self)._get_config()
+        config = configparser.ConfigParser()
+        config.readfp(StringIO(DEFAULT_CONF))
+        return config
 
 
 class SingleJobTestCase(BaseTestCase):
