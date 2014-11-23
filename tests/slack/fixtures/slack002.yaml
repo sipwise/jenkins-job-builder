@@ -1,0 +1,4 @@
+slack:
+  enabled: true
+  room: myroom
+  notify-start: true
