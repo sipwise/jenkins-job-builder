@@ -39,6 +39,7 @@ except ImportError:
 import jenkins_jobs.local_yaml as yaml
 from jenkins_jobs.parser import YamlParser
 from jenkins_jobs.xml_config import XmlJob
+from jenkins_jobs.cmd import DEFAULT_CONF
 from jenkins_jobs.modules import (project_flow,
                                   project_matrix,
                                   project_maven,
@@ -119,15 +120,20 @@ class BaseTestCase(object):
             yaml_content = yaml.load(yaml_file)
         return yaml_content
 
-    def test_yaml_snippet(self):
-        if not self.in_filename:
-            return
-
+    def _get_config(self):
         if self.conf_filename is not None:
             config = configparser.ConfigParser()
             config.readfp(io.open(self.conf_filename, 'r', encoding='utf-8'))
         else:
             config = {}
+        return config
+
+    def test_yaml_snippet(self):
+        if not self.in_filename:
+            return
+
+        # Use a callback here to enable derivation and easier overriding.
+        config = self._get_config()
 
         expected_xml = self._read_utf8_content()
         yaml_content = self._read_yaml_content(self.in_filename)
@@ -174,6 +180,15 @@ class BaseTestCase(object):
                                               doctest.NORMALIZE_WHITESPACE |
                                               doctest.REPORT_NDIFF)
         )
+
+
+class EnsureConfigParserBaseTestCase(BaseTestCase):
+    def _get_config(self):
+        if self.conf_filename is not None:
+            return super(EnsureConfigParserBaseTestCase, self)._get_config()
+        config = configparser.ConfigParser()
+        config.readfp(StringIO(DEFAULT_CONF))
+        return config
 
 
 class SingleJobTestCase(BaseTestCase):
