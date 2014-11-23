@@ -5,6 +5,7 @@
 .test
 .testrepository
 .tox
+*.iml
 AUTHORS
 build/*
 ChangeLog
