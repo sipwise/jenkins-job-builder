@@ -20,3 +20,7 @@ authtoken=dummy
 [stash]
 username=user
 password=pass
+
+[slack]
+auth_token=dummy
+team_domain=dummy
