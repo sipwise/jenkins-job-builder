@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_ad424b0c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1081,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-11-26T09:08:06Z",
+      "side": 1,
+      "message": "Do we really want to people to look at a different methods doc when using this one?\n\nAnd what if they diverge in the future and someone forget to update in both places?",
+      "parentUuid": "baa201ad_0855bfc5",
+      "revId": "f94b5fb1b3685c4c7e99336e891029c1565867a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_d7e5a709",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -108,6 +126,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_cdcf977d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1092,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-11-26T09:08:06Z",
+      "side": 1,
+      "message": "Would that live in a helpers.py file or where do you imagine it going?",
+      "parentUuid": "baa201ad_0ee1bcd0",
+      "revId": "f94b5fb1b3685c4c7e99336e891029c1565867a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_6e38883d",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -119,6 +155,24 @@
       "writtenOn": "2014-10-07T19:43:15Z",
       "side": 1,
       "message": "If not using the common conversion as part of this patch, I would still follow it\u0027s convention of testing if the key was in lookup instead of not in and trying to continue.\n\nAlso do like the use of setdefault to make sure to not overwrite the value if the new key already exists in the dict.",
+      "revId": "f94b5fb1b3685c4c7e99336e891029c1565867a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_5c118c5b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1104,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-11-26T09:08:06Z",
+      "side": 1,
+      "message": "Alright, will do.",
+      "parentUuid": "baa201ad_6e38883d",
       "revId": "f94b5fb1b3685c4c7e99336e891029c1565867a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -172,6 +226,24 @@
       "side": 1,
       "message": "well you already have healthThreshold below, so I think you just need to ignore the \"thresHoldLimit\" one.",
       "parentUuid": "baa201ad_f29c796c",
+      "revId": "f94b5fb1b3685c4c7e99336e891029c1565867a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_9c0e9439",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1113,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-11-26T09:08:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_0ebe1cd5",
       "revId": "f94b5fb1b3685c4c7e99336e891029c1565867a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
