@@ -7,3 +7,6 @@ publishers:
       node-label-name: NodeLabelName
     - project: 'test-project-just-node'
       node-label: NodeLabelNode || NodeBar
+    - project: 'test-project-same-node'
+      node-parameters: true
+      current-parameters: true
