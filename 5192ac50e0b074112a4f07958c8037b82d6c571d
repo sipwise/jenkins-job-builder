@@ -16,6 +16,24 @@
       "revId": "5192ac50e0b074112a4f07958c8037b82d6c571d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_2a42c1aa",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3794,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2014-11-26T08:42:10Z",
+      "side": 1,
+      "message": "Fair enough, just kept it to 2 as the other publishers had it like that. :)",
+      "parentUuid": "baa201ad_88fe0f6a",
+      "revId": "5192ac50e0b074112a4f07958c8037b82d6c571d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
