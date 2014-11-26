@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_8a971a3a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3884,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-26T22:22:49Z",
+      "side": 1,
+      "message": "Wondering since all this does it reuse all the same settings for the checkstyle plugin is the following a suitable alternative to repeating the same information in multiple places.\n\n Refer to the :py:func:`checkstyle` module documentation for details on the\n params used for this module.",
+      "revId": "9922a3bc43a42dc8032c4a3d5e5fa5d05ddc1201",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
