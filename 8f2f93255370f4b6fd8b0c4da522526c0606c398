@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_f6d26dfe",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-11-26T04:42:35Z",
+      "side": 1,
+      "message": "@Darragh I believe in one of your comments on https://review.openstack.org/132927 you suggested that I write a version comparison function, which is what you see here. I think it actually ends up being pretty awkward... especially as additional version comparisons are introduced in various modules. I\u0027m also not sure there is really a clean way to compare to different versions with a function on the ModuleRegistry class.\n\nI\u0027ll probably modify this patch to look something like \n\njenkins_version \u003d self.registry.get_plugin_info(\"Jenkins Hipchat Plugin\").get(\u0027version\u0027, 0)\njenkins_version \u003d pkg_resources.parse_version(jenkins_version)\n\nif jenkins_version \u003e\u003d pkg_resources.parse_version(\"0.1.8\"):\n  do_something()\nelse:\n  do_something_else()\n\nLet me know what you think of that.",
+      "revId": "8f2f93255370f4b6fd8b0c4da522526c0606c398",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
