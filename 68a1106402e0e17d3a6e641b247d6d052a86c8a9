@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_054cfdc7",
+        "filename": ".gitignore",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-26T23:36:26Z",
+      "side": 1,
+      "message": "Not clear what this ignore is for?",
+      "revId": "68a1106402e0e17d3a6e641b247d6d052a86c8a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_e5be1100",
+        "filename": "etc/jenkins_jobs.ini-sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-26T23:36:26Z",
+      "side": 1,
+      "message": "Please avoid camelcase, and switch to \u0027team_domain\u0027 instead.",
+      "revId": "68a1106402e0e17d3a6e641b247d6d052a86c8a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_05bcfd05",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-26T23:36:26Z",
+      "side": 1,
+      "message": "s/teamDomain/team_domain/",
+      "revId": "68a1106402e0e17d3a6e641b247d6d052a86c8a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_255019d4",
+        "filename": "jenkins_jobs/modules/slack_notif.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-26T23:36:26Z",
+      "side": 1,
+      "message": "Supposed to be replacing \u0027start-notify\u0027 in the hipchat code with \u0027notify-start\u0027 to be more consistent. Think it\u0027s best to start with the most consistent one here since it\u0027s a clean slate.",
+      "revId": "68a1106402e0e17d3a6e641b247d6d052a86c8a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_a59c095f",
+        "filename": "jenkins_jobs/modules/slack_notif.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-26T23:36:26Z",
+      "side": 1,
+      "message": "Switch to buildServerUrl?",
+      "revId": "68a1106402e0e17d3a6e641b247d6d052a86c8a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_0574fd34",
+        "filename": "jenkins_jobs/modules/slack_notif.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-26T23:36:26Z",
+      "side": 1,
+      "message": "Think it would be better if we could get rid of the sys.exit(1) here, probably shouldn\u0027t have been using it in the hipchat module but it\u0027s never been cleaned up. Just stick to raising the necessary exceptions to be caught at the top level.",
+      "revId": "68a1106402e0e17d3a6e641b247d6d052a86c8a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_25a81977",
+        "filename": "jenkins_jobs/modules/slack_notif.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-26T23:36:26Z",
+      "side": 1,
+      "message": "Maybe check for whether self.teamDomain is set for this second try/except block?",
+      "revId": "68a1106402e0e17d3a6e641b247d6d052a86c8a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_25e01996",
+        "filename": "jenkins_jobs/modules/slack_notif.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-26T23:36:26Z",
+      "side": 1,
+      "message": "Maybe switch start-notify to notify-start to be consistent with the other settings.",
+      "revId": "68a1106402e0e17d3a6e641b247d6d052a86c8a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_c5e4b510",
+        "filename": "jenkins_jobs/modules/slack_notif.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-26T23:36:26Z",
+      "side": 1,
+      "message": "Think you can switch to using the following format:\n\n XML.SubElement(pdefslack, \u0027notifyBackToNormal\u0027).text \u003d str(\n     slack.get(\u0027notify-back-to-normal\u0027, False)).lower()",
+      "revId": "68a1106402e0e17d3a6e641b247d6d052a86c8a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_a586c9d9",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-26T23:36:26Z",
+      "side": 1,
+      "message": "Please keep this in alphabetical order.",
+      "revId": "68a1106402e0e17d3a6e641b247d6d052a86c8a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
