@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_a02317a6",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1181,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-26T23:53:56Z",
+      "side": 1,
+      "message": "Think this needs to be either marked as optional, or should raise an exception further down when checking to see if it\u0027s not set.",
+      "revId": "2db8bdca2cd59c5353de7da5d319f45efbc9fce6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
