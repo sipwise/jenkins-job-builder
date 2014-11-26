@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_0ae32aa5",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-26T23:00:37Z",
+      "side": 1,
+      "message": "You don\u0027t need to add this, since this wasn\u0027t part of the old format, no need to do any conversion.",
+      "revId": "568f2a1f081a42b7f9e6d648b03b4b2385148296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_ea589e59",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-26T23:00:37Z",
+      "side": 1,
+      "message": "Thinking that it\u0027s likely there will be more settings to be checked for this type of check?",
+      "revId": "568f2a1f081a42b7f9e6d648b03b4b2385148296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
