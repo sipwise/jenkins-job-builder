@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_ea209efa",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-26T22:38:37Z",
+      "side": 1,
+      "message": "As the documentation generated mentions the version this is deprecated since, I think that 1.0 is probably still acceptable here. I\u0027ll poke IRC to confirm, but it\u0027s the only question remaining about what\u0027s the best value here.",
+      "revId": "f6e864c2dded9b7ba52c7f973f5467883d2e8509",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
