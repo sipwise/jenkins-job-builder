@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_45f7ced4",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1287,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-27T15:50:25Z",
+      "side": 1,
+      "message": "could you please indicate that this param is optional?",
+      "revId": "0c5aef74875ae8fd1378151b46d13380a00c6ee8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
