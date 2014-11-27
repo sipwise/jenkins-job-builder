@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_c4eaf2ab",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-11-27T06:09:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_4f4d4499",
+      "revId": "36c11d1d370d5d51a90374b2e52739195802c80d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_ef03500e",
         "filename": "tests/publishers/fixtures/trigger_parameterized_builds002.yaml",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-26T21:38:53Z",
       "side": 1,
       "message": "very minor nit, but could you either include this in the 001 file so that it appears in the documentation examples or add a similar one to the 001 file as well so that the examples contain all of the different settings.",
+      "revId": "36c11d1d370d5d51a90374b2e52739195802c80d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_a4e5e6dd",
+        "filename": "tests/publishers/fixtures/trigger_parameterized_builds002.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-11-27T06:09:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_ef03500e",
       "revId": "36c11d1d370d5d51a90374b2e52739195802c80d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
