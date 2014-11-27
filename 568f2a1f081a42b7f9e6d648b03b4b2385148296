@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_8097fb39",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2014-11-27T00:39:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_0ae32aa5",
+      "revId": "568f2a1f081a42b7f9e6d648b03b4b2385148296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_ea589e59",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-26T23:00:37Z",
       "side": 1,
       "message": "Thinking that it\u0027s likely there will be more settings to be checked for this type of check?",
+      "revId": "568f2a1f081a42b7f9e6d648b03b4b2385148296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_20d647f2",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2014-11-27T00:39:08Z",
+      "side": 1,
+      "message": "Yep, although I\u0027m fine with any option so if you prefer I could change this one.",
+      "parentUuid": "5a890539_ea589e59",
       "revId": "568f2a1f081a42b7f9e6d648b03b4b2385148296",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
