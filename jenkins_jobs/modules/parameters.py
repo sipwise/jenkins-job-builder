@@ -171,6 +171,43 @@ def label_param(parser, xml_parent, data):
                'LabelParameterDefinition')
 
 
+def node_param(parser, xml_parent, data):
+    """yaml: node
+    Defines a list of nodes where this job could potentially be executed on.
+
+    :arg str name: the name of the parameter
+    :arg str description: a description of the parameter (optional)
+    :arg list default-nodes: The nodes used when job gets triggered
+        by anything else then manually
+    :arg list allowed-slaves: The nodes available for selection
+        when job gets triggered manually. Empty means 'All'.
+    :arg bool ignore-offline-nodes: Ignore nodes not online or not having
+        executors (default false)
+
+    Example:
+
+    .. literalinclude::  /../../tests/parameters/fixtures/node-param001.yaml
+       :language: yaml
+
+    """
+    pdef = base_param(parser, xml_parent, data, False,
+                      'org.jvnet.jenkins.plugins.nodelabelparameter.'
+                      'NodeParameterDefinition')
+    default = XML.SubElement(pdef, 'defaultSlaves')
+    if 'default-slaves' in data:
+        for slave in data['default-slaves']:
+            XML.SubElement(default, 'string').text = slave
+    allowed = XML.SubElement(pdef, 'allowedSlaves')
+    if 'allowed-slaves' in data:
+        for slave in data['allowed-slaves']:
+            XML.SubElement(allowed, 'string').text = slave
+    XML.SubElement(pdef, 'ignoreOfflineNodes').text = str(
+        data.get('ignore-offline-nodes', False)).lower()
+
+    XML.SubElement(pdef, 'triggerIfResult').text = \
+        'multiSelectionDisallowed'
+
+
 def choice_param(parser, xml_parent, data):
     """yaml: choice
     A single selection parameter.
