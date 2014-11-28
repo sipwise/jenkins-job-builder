@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_d99ab96d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-28T13:21:04Z",
+      "side": 1,
+      "message": "Is it an error in jenkins if you leave this empty? Presumably so, in which case it would be good to trigger a JenkinsJobException in the code with a helpful message to the user if it\u0027s not set.",
+      "revId": "7d4a82bc727fd65851c1b1963717572c1b6e8548",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_19d7e124",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-28T13:21:04Z",
+      "side": 1,
+      "message": "Please add \u0027(default false)\u0027.",
+      "revId": "7d4a82bc727fd65851c1b1963717572c1b6e8548",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_f9d13530",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-28T13:21:04Z",
+      "side": 1,
+      "message": "Please use a literalinclude statement to inline the example directly from the unit test you\u0027ve added. See extended_choice_param or run_param for an example of how to do this.\n\nThis helps keep the examples in line with any changes to the unit tests.",
+      "revId": "7d4a82bc727fd65851c1b1963717572c1b6e8548",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_f92f75a5",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-28T13:21:04Z",
+      "side": 1,
+      "message": "Prefer if you triggered a JenkinsJobException here if \u0027allowed-slaves\u0027 is not set with an instructive message to the end user, assuming that this is not an optional setting and must be specified.",
+      "revId": "7d4a82bc727fd65851c1b1963717572c1b6e8548",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_59eb29b0",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-11-28T13:21:04Z",
+      "side": 1,
+      "message": "Please retain alphabetical order here and move it to after matrix-combinations.",
+      "revId": "7d4a82bc727fd65851c1b1963717572c1b6e8548",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
