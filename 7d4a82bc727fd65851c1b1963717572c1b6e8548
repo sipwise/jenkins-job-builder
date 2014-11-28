@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_974715bc",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-11-28T17:44:04Z",
+      "side": 1,
+      "message": "No. Empty means \u0027All available\u0027. I will add comment and will fix code.",
+      "parentUuid": "5a890539_d99ab96d",
+      "revId": "7d4a82bc727fd65851c1b1963717572c1b6e8548",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_19d7e124",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-28T13:21:04Z",
       "side": 1,
       "message": "Please add \u0027(default false)\u0027.",
+      "revId": "7d4a82bc727fd65851c1b1963717572c1b6e8548",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_b7a5f148",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-11-28T17:44:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_19d7e124",
       "revId": "7d4a82bc727fd65851c1b1963717572c1b6e8548",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_7759c95a",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-11-28T17:44:04Z",
+      "side": 1,
+      "message": "Good way! \nDone.",
+      "parentUuid": "5a890539_f9d13530",
+      "revId": "7d4a82bc727fd65851c1b1963717572c1b6e8548",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_f92f75a5",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 1
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_d72fdda5",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-11-28T17:44:04Z",
+      "side": 1,
+      "message": "Logic changed.",
+      "parentUuid": "5a890539_f92f75a5",
+      "revId": "7d4a82bc727fd65851c1b1963717572c1b6e8548",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_59eb29b0",
         "filename": "setup.cfg",
         "patchSetId": 1
@@ -81,6 +153,24 @@
       "writtenOn": "2014-11-28T13:21:04Z",
       "side": 1,
       "message": "Please retain alphabetical order here and move it to after matrix-combinations.",
+      "revId": "7d4a82bc727fd65851c1b1963717572c1b6e8548",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_57a12d94",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-11-28T17:44:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_59eb29b0",
       "revId": "7d4a82bc727fd65851c1b1963717572c1b6e8548",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
