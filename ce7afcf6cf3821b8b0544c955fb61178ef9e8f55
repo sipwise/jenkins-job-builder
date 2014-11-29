@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_99402309",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-29T17:19:52Z",
+      "side": 1,
+      "message": "The logstash plugin docs indicate that it has either a \u0027Buildwrapper\u0027 or \u0027Post-Build\u0027 action so I\u0027m wondering if this should be in either wrapper or publisher section instead?",
+      "revId": "ce7afcf6cf3821b8b0544c955fb61178ef9e8f55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
