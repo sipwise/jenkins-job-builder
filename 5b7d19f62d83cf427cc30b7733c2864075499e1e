@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_996d83cf",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-29T16:35:09Z",
+      "side": 1,
+      "message": "mabye replace this comment with a reference to the opestack hacking guidlines? http://docs.openstack.org/developer/hacking/",
+      "revId": "5b7d19f62d83cf427cc30b7733c2864075499e1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
