@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_f9a847db",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 841,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-29T16:58:41Z",
+      "side": 1,
+      "message": "for consistency, arg should be \u0027int\u0027 instead of \u0027str\u0027",
+      "revId": "ec1055d3827b31882189ece79241f18e2da138f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_198fd376",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 843,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-29T16:58:41Z",
+      "side": 1,
+      "message": "Wow, this description is confusing but maybe just that I don\u0027t use this plugin.  Anyways I see that it\u0027s from the jenkins plugin itself so I guess we should keep it as-is, otherwise i would have asked for clarification :)",
+      "revId": "ec1055d3827b31882189ece79241f18e2da138f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
