@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_0e2062f7",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1507,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-30T15:50:40Z",
+      "side": 1,
+      "message": "is there a default location? same question with the rest of the params.",
+      "revId": "51f564fe9359343c5847c53d31126870b09b8f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_ce5c9a80",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1518,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-30T15:50:40Z",
+      "side": 1,
+      "message": "how can there be multiple defaults?  code below indicates to me that \u0027Debug\u0027 is the default option, not the others.",
+      "revId": "51f564fe9359343c5847c53d31126870b09b8f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_ced3bad3",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1537,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-30T15:50:40Z",
+      "side": 1,
+      "message": "indicate that this is the default?",
+      "revId": "51f564fe9359343c5847c53d31126870b09b8f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_2ee43eab",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1546,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-30T15:50:40Z",
+      "side": 1,
+      "message": "indicate that \u0027make\u0027 is the default?",
+      "revId": "51f564fe9359343c5847c53d31126870b09b8f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_6ebba675",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1548,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-30T15:50:40Z",
+      "side": 1,
+      "message": "this and below params are optional? for consistency could you please add \u0027(optional)\u0027 to the end of the description?",
+      "revId": "51f564fe9359343c5847c53d31126870b09b8f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_8e1452a0",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1565,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-30T15:50:40Z",
+      "side": 1,
+      "message": "we prefer imports to be grouped at the top of the file.",
+      "revId": "51f564fe9359343c5847c53d31126870b09b8f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_9128f786",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1566,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-30T15:50:40Z",
+      "side": 1,
+      "message": "maybe should rename to \u0027BUILD_TYPES\u0027?",
+      "revId": "51f564fe9359343c5847c53d31126870b09b8f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_ce465a7b",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1607,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-30T15:50:40Z",
+      "side": 1,
+      "message": "probably should do a check for existence of the param if it\u0027s optional.  something like..\n\nif data(\u0027preload-script\u0027):\n      preload_script \u003d XML.SubElement(cmake, \u0027preloadScript\u0027)\n      preload_script.text \u003d data[\u0027preload-script\u0027]",
+      "revId": "51f564fe9359343c5847c53d31126870b09b8f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_110de735",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1616,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-30T15:50:40Z",
+      "side": 1,
+      "message": "data.get method allows you to pass in default value so you can just do this..\n\nclean_build_dir.text \u003d str(data.get(\u0027clean-build-dir\u0027, False)).lower()",
+      "revId": "51f564fe9359343c5847c53d31126870b09b8f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
