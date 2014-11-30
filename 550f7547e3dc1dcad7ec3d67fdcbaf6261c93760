@@ -70,6 +70,24 @@
       "revId": "550f7547e3dc1dcad7ec3d67fdcbaf6261c93760",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_31766307",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-30T17:00:49Z",
+      "side": 1,
+      "message": "already created a 1.0.0 release. next one will most likely be 1.1.0",
+      "parentUuid": "baa201ad_8124d60d",
+      "revId": "550f7547e3dc1dcad7ec3d67fdcbaf6261c93760",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
