@@ -46,60 +46,11 @@ Requires the Jenkins `dynamic axis Plugin.
             * **name** (`str`) -- name of the axis
             * **values** (`list`) -- values of the axis
 
-Example::
+Example:
 
- - job:
-    name: matrix-test
-    project-type: matrix
-    execution-strategy:
-      combination-filter: |
-        !(os=="fedora11" && arch=="amd64")
-      sequential: true
-      touchstone:
-        expr: 'os == "fedora11"'
-        result: unstable
-    axes:
-      - axis:
-         type: label-expression
-         name: os
-         values:
-          - ubuntu12.04
-          - fedora11
-      - axis:
-         type: label-expression
-         name: arch
-         values:
-          - amd64
-          - i386
-      - axis:
-         type: slave
-         name: nodes
-         values:
-          - node1
-          - node2
-      - axis:
-         type: dynamic
-         name: config
-         values:
-          - config_list
-    builders:
-      - shell: make && make check
+  .. literalinclude::  /../../tests/yamlparser/fixtures/project-matrix001.yaml
+    :language: yaml
 
-Example using user-defined axis::
-
- - job:
-    name: matrix-user-defined
-    project-type: matrix
-    axes:
-      - axis:
-        type: user-defined
-        name: database
-        values:
-         - mysql
-         - postgresql
-         - sqlite
-    builders:
-     - shell: make "$database"
 """
 
 
