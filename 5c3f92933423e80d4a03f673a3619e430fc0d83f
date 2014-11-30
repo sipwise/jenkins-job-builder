@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_118fa72f",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-11-30T16:42:40Z",
+      "side": 1,
+      "message": "would it make sense to add this warning from the jenkins pluign wiki? \n\n\"Restrict where this project can be run, \nIf your using a node or label parameter to run your job on a particular node, you should not use the option \"Restrict where this project can be run\" in the job configuration - it will not have any effect to the selection of your node anymore!\"",
+      "revId": "5c3f92933423e80d4a03f673a3619e430fc0d83f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
