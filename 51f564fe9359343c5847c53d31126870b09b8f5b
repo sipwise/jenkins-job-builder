@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_c2ab8273",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1507,
+      "author": {
+        "id": 13967
+      },
+      "writtenOn": "2014-12-01T13:20:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_0e2062f7",
+      "revId": "51f564fe9359343c5847c53d31126870b09b8f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_ce5c9a80",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-30T15:50:40Z",
       "side": 1,
       "message": "how can there be multiple defaults?  code below indicates to me that \u0027Debug\u0027 is the default option, not the others.",
+      "revId": "51f564fe9359343c5847c53d31126870b09b8f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_22dfe60d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1518,
+      "author": {
+        "id": 13967
+      },
+      "writtenOn": "2014-12-01T13:20:27Z",
+      "side": 1,
+      "message": "Done. Now the documentation specifies that the provided list is only the default types of the CMake plugin, but the user can set his own build type if he wants.",
+      "parentUuid": "5a890539_ce5c9a80",
       "revId": "51f564fe9359343c5847c53d31126870b09b8f5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_42e6b2e9",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1537,
+      "author": {
+        "id": 13967
+      },
+      "writtenOn": "2014-12-01T13:20:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_ced3bad3",
+      "revId": "51f564fe9359343c5847c53d31126870b09b8f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_2ee43eab",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2014-11-30T15:50:40Z",
       "side": 1,
       "message": "indicate that \u0027make\u0027 is the default?",
+      "revId": "51f564fe9359343c5847c53d31126870b09b8f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_62e9eeb6",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1546,
+      "author": {
+        "id": 13967
+      },
+      "writtenOn": "2014-12-01T13:20:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_2ee43eab",
       "revId": "51f564fe9359343c5847c53d31126870b09b8f5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_a238363c",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1548,
+      "author": {
+        "id": 13967
+      },
+      "writtenOn": "2014-12-01T13:20:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_6ebba675",
+      "revId": "51f564fe9359343c5847c53d31126870b09b8f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_8e1452a0",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 4
@@ -98,6 +188,24 @@
       "writtenOn": "2014-11-30T15:50:40Z",
       "side": 1,
       "message": "we prefer imports to be grouped at the top of the file.",
+      "revId": "51f564fe9359343c5847c53d31126870b09b8f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_c21e22bb",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1565,
+      "author": {
+        "id": 13967
+      },
+      "writtenOn": "2014-12-01T13:20:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_8e1452a0",
       "revId": "51f564fe9359343c5847c53d31126870b09b8f5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_e2195ed2",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1566,
+      "author": {
+        "id": 13967
+      },
+      "writtenOn": "2014-12-01T13:20:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_9128f786",
+      "revId": "51f564fe9359343c5847c53d31126870b09b8f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_ce465a7b",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 4
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_0d73fbb4",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1607,
+      "author": {
+        "id": 13967
+      },
+      "writtenOn": "2014-12-01T13:20:27Z",
+      "side": 1,
+      "message": "\"data\" is an instance of defaultdict[1] that returns empty strings[2] as the default value for keys that don\u0027t exist in the dict. This makes it easy to create optional parameters in the resulting XML.\n\nI added a comment to the defaultdict call to make this clearer.\n\n* 1: https://docs.python.org/2/library/collections.html#collections.defaultdict;\n* 2: check line 1570 of this file;",
+      "parentUuid": "5a890539_ce465a7b",
+      "revId": "51f564fe9359343c5847c53d31126870b09b8f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_110de735",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 4
@@ -149,6 +293,24 @@
       "writtenOn": "2014-11-30T15:50:40Z",
       "side": 1,
       "message": "data.get method allows you to pass in default value so you can just do this..\n\nclean_build_dir.text \u003d str(data.get(\u0027clean-build-dir\u0027, False)).lower()",
+      "revId": "51f564fe9359343c5847c53d31126870b09b8f5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_8d38cbd5",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1616,
+      "author": {
+        "id": 13967
+      },
+      "writtenOn": "2014-12-01T13:20:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_110de735",
       "revId": "51f564fe9359343c5847c53d31126870b09b8f5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
