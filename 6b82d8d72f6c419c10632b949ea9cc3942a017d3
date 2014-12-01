@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_88f18697",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-01T22:50:58Z",
+      "side": 1,
+      "message": "Do you need to define this mock here since it\u0027s already in the setup of CmdTestBase?",
+      "revId": "6b82d8d72f6c419c10632b949ea9cc3942a017d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
