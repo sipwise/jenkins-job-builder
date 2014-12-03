@@ -16,6 +16,24 @@
       "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_9bd89b1f",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-12-03T19:32:46Z",
+      "side": 0,
+      "message": "This actually belongs in the dependent \"plugins_info\" commit but got mixed up when I had to re-separate the hipchat notifier functionality into this separate commit.\n\nI don\u0027t think it\u0027s important enough to rearrange into the other commit and I am strongly averse to removing from this commit since the only reason I deleted these lines was to satisfy a previous nitpick.",
+      "parentUuid": "5a890539_5604667d",
+      "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
