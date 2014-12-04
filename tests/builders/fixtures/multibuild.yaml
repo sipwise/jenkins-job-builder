@@ -32,3 +32,12 @@ builders:
         - name: PhaseThreeJobA
           current-parameters: true
           kill-phase-on: FAILURE
+  - multijob:
+      name: TestRetry
+      condition: ALWAYS
+      projects:
+        - name: TestRetry
+          current-parameters: true
+          kill-phase-on: FAILURE
+          retry: 3
+          parsing-rules-path: test

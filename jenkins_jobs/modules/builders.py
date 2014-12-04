@@ -1582,6 +1582,9 @@ def multijob(parser, xml_parent, data):
             * **restrict-matrix-project** (`str`) -- Filter that
               restricts the subset of the combinations that the
               downstream project will run (optional)
+            * **retry** (`int`) -- The maximum retry for this build. (optional)
+            * **parsing-rules-path** (`str`) -- Parsing rules file path
+              (required if **retry** set)
 
     Example:
 
@@ -1613,6 +1616,17 @@ def multijob(parser, xml_parent, data):
         # Pass through the current build params
         currParams = str(project.get('current-parameters', False)).lower()
         XML.SubElement(phaseJob, 'currParams').text = currParams
+
+        # Retry job
+        if project.get('retry'):
+            try:
+                XML.SubElement(phaseJob, 'parsingRulesPath').text = str(
+                    project['parsing-rules-path'])
+                XML.SubElement(phaseJob, 'maxRetries').text = str(
+                    project['retry'])
+                XML.SubElement(phaseJob, 'enableRetryStrategy').text = "true"
+            except KeyError as e:
+                raise MissingAttributeError(e.args[0])
 
         # Pass through other params
         configs = XML.SubElement(phaseJob, 'configs')
