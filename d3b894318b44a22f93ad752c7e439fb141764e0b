@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_daf8224c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2446,
+      "author": {
+        "id": 7069
+      },
+      "writtenOn": "2014-12-05T02:16:09Z",
+      "side": 1,
+      "message": "s/succeed/succeeded",
+      "revId": "d3b894318b44a22f93ad752c7e439fb141764e0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_9a893acc",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2449,
+      "author": {
+        "id": 7069
+      },
+      "writtenOn": "2014-12-05T02:16:09Z",
+      "side": 1,
+      "message": "s/fail/failed",
+      "revId": "d3b894318b44a22f93ad752c7e439fb141764e0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_5ab35299",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2527,
+      "author": {
+        "id": 7069
+      },
+      "writtenOn": "2014-12-05T02:16:09Z",
+      "side": 1,
+      "message": "The new format should take precedence over the old one.",
+      "revId": "d3b894318b44a22f93ad752c7e439fb141764e0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_7ab64e8a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2534,
+      "author": {
+        "id": 7069
+      },
+      "writtenOn": "2014-12-05T02:16:09Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "d3b894318b44a22f93ad752c7e439fb141764e0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
