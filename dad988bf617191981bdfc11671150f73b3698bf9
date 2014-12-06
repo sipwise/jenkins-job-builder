@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_2f63a5b2",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-06T21:08:41Z",
+      "side": 1,
+      "message": "I think it\u0027s safer to use short name because I not every plugin contains a long name.  Maybe we can support both?  Users might define both short name and long name in the same yaml file.   Or maybe if it\u0027s just for testing maybe settle on just short name?",
+      "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_0f0509c2",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-06T21:08:41Z",
+      "side": 1,
+      "message": "maybe param should just be \u0027plugin_name\u0027?  to handle either short or long name?",
+      "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_afe31504",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 674,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-06T21:08:41Z",
+      "side": 1,
+      "message": "I would be concerned that querying jenkins returns something different from the list that comes from the user since processing both is done with the same code.  I think we need test cases for these two paths.",
+      "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_6f720de7",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-06T21:08:41Z",
+      "side": 1,
+      "message": "I\u0027m not sure I see the purpose for this setting.  if there is one could you please add it to the documentation?",
+      "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_efeefdb3",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-06T21:08:41Z",
+      "side": 1,
+      "message": "I think maven convention for is typically 1.0.1-alpha  \n\nmaybe add that one?",
+      "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_cff14197",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-06T21:08:41Z",
+      "side": 1,
+      "message": "in the maven world lots of versions are stuck in the perpetual SNAPSHOT state so a good test would be:\n\n(s8, dict(v1\u003d\u00271.0-SNAPSHOT\u0027, op\u003d\u0027__lt__\u0027, v2\u003d\u00271.0\u0027))\n\n(s9, dict(v1\u003d\u00271.0\u0027, op\u003d\u0027__lt__\u0027, v2\u003d\u00271.1-SNAPSHOT\u0027))",
+      "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_2f09e595",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-06T21:08:41Z",
+      "side": 1,
+      "message": "can we replace this name with something that\u0027s not similar to the other ones used for testing?  It will help others know that it\u0027s not meant to be found.",
+      "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
