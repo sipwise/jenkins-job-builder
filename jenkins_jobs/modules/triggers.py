@@ -123,7 +123,6 @@ def build_gerrit_triggers(xml_parent, data):
         'change-restored-event': 'PluginChangeRestoredEvent',
         'draft-published-event': 'PluginDraftPublishedEvent',
         'patchset-uploaded-event': 'PluginPatchsetCreatedEvent',
-        'patchset-created-event': 'PluginPatchsetCreatedEvent',
         'ref-updated-event': 'PluginRefUpdatedEvent',
     }
     tag_namespace = 'com.sonyericsson.hudson.plugins.gerrit.trigger.'   \
@@ -140,7 +139,8 @@ def build_gerrit_triggers(xml_parent, data):
 
             if not tag_name:
                 known = ', '.join(available_simple_triggers.keys()
-                                  + ['comment-added-event',
+                                  + ['patchset-created-event',
+                                     'comment-added-event',
                                      'comment-added-contains-event'])
                 msg = ("The event '%s' under 'trigger-on' is not one of the "
                        "known: %s.") % (event, known)
@@ -148,6 +148,18 @@ def build_gerrit_triggers(xml_parent, data):
             XML.SubElement(trigger_on_events,
                            '%s.%s' % (tag_namespace, tag_name))
         else:
+            if 'patchset-created-event' in event.keys():
+                patchset_created_event = event['patchset-created-event']
+                patch_created = XML.SubElement(
+                    trigger_on_events,
+                    '%s.%s' % (tag_namespace, 'PluginPatchsetCreatedEvent'))
+                XML.SubElement(patch_created, 'excludeDrafts').text = \
+                    patchset_created_event['exclude-drafts']
+                XML.SubElement(patch_created, 'excludeTrivialRebase').text = \
+                    patchset_created_event['exclude-trivial-rebase']
+                XML.SubElement(patch_created, 'excludeNoCodeChange').text = \
+                    patchset_created_event['exclude-no-code-change']
+
             if 'comment-added-event' in event.keys():
                 comment_added_event = event['comment-added-event']
                 cadded = XML.SubElement(
@@ -197,7 +209,19 @@ def gerrit(parser, xml_parent, data):
       cannot use both at once.
 
       :Trigger on:
-         * **patchset-created-event** -- Trigger upon patchset creation.
+         * **patchset-created-event** (`dict`) -- Trigger upon patchset
+                                                  creation.
+
+           :Patchset created:
+               * **exclude-drafts** (`str`) -- true|false exclude drafts
+               * **exclude-trivial-rebase** (`str`) -- true|false exclude
+                                                       trivial rebase
+               * **exclude-no-code-change** (`str`) -- true|false exclude
+                                                       no code change
+
+           Exclude drafts|trivial-rebase|no-code-change needs
+           Gerrit Trigger v2.12.0
+
          * **patchset-uploaded-event** -- Trigger upon patchset creation
            (this is a alias for `patchset-created-event`).
 
