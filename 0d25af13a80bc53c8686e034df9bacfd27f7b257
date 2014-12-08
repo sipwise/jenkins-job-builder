@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_7e046f15",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 7069
+      },
+      "writtenOn": "2014-12-08T05:26:18Z",
+      "side": 1,
+      "message": "what happens if they are both set?",
+      "revId": "0d25af13a80bc53c8686e034df9bacfd27f7b257",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
