@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_85fc5440",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-08T19:27:13Z",
+      "side": 1,
+      "message": "we should really either change this name to \u0027timeout type values\u0027 or move it next to the \u0027type\u0027 parameter so users know which param these types are referencing.",
+      "revId": "a503e3b10e771d0abb166b85dccafd73b227e12a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_65cbe872",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-08T19:27:13Z",
+      "side": 1,
+      "message": "This line is repeated 4 times.  Maybe should move it outside of the conditional block?",
+      "revId": "a503e3b10e771d0abb166b85dccafd73b227e12a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_85db741a",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-08T19:27:13Z",
+      "side": 1,
+      "message": "maybe create a constant DEFAULT_TIMEOUT for this?  then DEFAULT_TIMEOUT_SEC * 3 for the seconds?",
+      "revId": "a503e3b10e771d0abb166b85dccafd73b227e12a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d7444f76",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-08T19:27:13Z",
+      "side": 1,
+      "message": "maybe move the timeout_env_var block below this block so you don\u0027t have to make this check twice?",
+      "revId": "a503e3b10e771d0abb166b85dccafd73b227e12a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_455eec46",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-08T19:27:13Z",
+      "side": 1,
+      "message": "where\u0027s abort?  I don\u0027t see it in the params list.",
+      "revId": "a503e3b10e771d0abb166b85dccafd73b227e12a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_97ff2701",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-08T19:27:13Z",
+      "side": 1,
+      "message": "\u0027is_present\u0027 name seems misleading, maybe should be action_setting?",
+      "revId": "a503e3b10e771d0abb166b85dccafd73b227e12a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_57c85f74",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-08T19:27:13Z",
+      "side": 1,
+      "message": "hmm, why not JenkinsJobsException for this case?  I think users would prefer jjb to not run at all in this case otherwise jjb might be running something that the user might not expect.",
+      "revId": "a503e3b10e771d0abb166b85dccafd73b227e12a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_fa2bf22d",
+        "filename": "tests/wrappers/fixtures/timeout/version-1.14/plugins_info.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-08T19:27:13Z",
+      "side": 1,
+      "message": "Is there a purpose for defining this?  I don\u0027t see it used in the tests.",
+      "revId": "a503e3b10e771d0abb166b85dccafd73b227e12a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
