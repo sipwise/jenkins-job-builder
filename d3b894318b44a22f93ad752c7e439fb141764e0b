@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "3a961159_f33df0bc",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2457,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-12-08T10:58:38Z",
+      "side": 1,
+      "message": "You might want to update that last paragraph which warn about the awkward parameters.",
+      "revId": "d3b894318b44a22f93ad752c7e439fb141764e0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_5ab35299",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
