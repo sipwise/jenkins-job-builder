@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_93dd8c45",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-12-08T11:17:42Z",
+      "side": 1,
+      "message": "With this patch, the module now supports some more axis, so that should be rephrased. Something like:\n\n The mode also supports axis types provided by Jenkins plugins:\n \n * ``dynamic``: requires the Jenkins `dynamic axis Plugin.\n   \u003chttps://wiki.jenkins-ci.org/display/JENKINS/DynamicAxis+Plugin\u003e`_\n\n * ``python`` and ``tox``: require the Jenkins `ShiningPanda Plugin.\n   \u003chttps://wiki.jenkins-ci.org/display/JENKINS/ShiningPanda+Plugin\u003e`_",
+      "revId": "4ec9e065d1a3d4d109ced70b97f8403e23db0d16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d3a2b499",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-12-08T11:17:42Z",
+      "side": 1,
+      "message": "That file contains an example usage for the dynamic plugin. We are loosing the previously available example which shows an extensive usage.\n\nI would copy the old example to a new file matrix-axis000.yaml and use it as the first example.\n\n\nmatrix-axis001.yaml can be removed since it just shows how to use the dynamic axis.  matrix-axis002.yaml shows both user defined and dynamic axis.",
+      "revId": "4ec9e065d1a3d4d109ced70b97f8403e23db0d16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_73bbc0c4",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-12-08T11:17:42Z",
+      "side": 1,
+      "message": "Literalinclude does not support passing a language, should drop the line:\n\n :language: yaml",
+      "revId": "4ec9e065d1a3d4d109ced70b97f8403e23db0d16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f3917053",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-12-08T11:17:42Z",
+      "side": 1,
+      "message": "You dropped the introduction line:\n\n\tExample using user-defined axis and the dynamic one provided by the Jenkins Dynamic Axis Plugin::",
+      "revId": "4ec9e065d1a3d4d109ced70b97f8403e23db0d16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_93b02cdf",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-12-08T11:17:42Z",
+      "side": 1,
+      "message": "Literalinclude does not support passing a language, should drop the line:\n\n :language: yaml",
+      "revId": "4ec9e065d1a3d4d109ced70b97f8403e23db0d16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_53a164a8",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-12-08T11:17:42Z",
+      "side": 1,
+      "message": "Please insert a line above matrix-axis003.yaml that it is an example usage for the ShiningPanda plugin:\n\n Example usage of `python` and `tox` axis provided by the ShiningPanda plugin::",
+      "revId": "4ec9e065d1a3d4d109ced70b97f8403e23db0d16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b3b528cf",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2014-12-08T11:17:42Z",
+      "side": 1,
+      "message": "Literalinclude does not support passing a language, should drop the line:\n\n :language: yaml",
+      "revId": "4ec9e065d1a3d4d109ced70b97f8403e23db0d16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
