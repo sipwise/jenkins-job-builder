@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_ca41ef3a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 14220
+      },
+      "writtenOn": "2014-12-09T11:45:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_498998ea",
+      "revId": "ad6f2b6a15e91ddb3708bc1c76564b4646f8a82b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_8909c033",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-12-09T06:22:15Z",
       "side": 1,
       "message": "code below sets the default to \u0027default\u0027 not \u0027branch\u0027",
+      "revId": "ad6f2b6a15e91ddb3708bc1c76564b4646f8a82b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_27f8ec48",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 14220
+      },
+      "writtenOn": "2014-12-09T11:45:01Z",
+      "side": 1,
+      "message": "Good catch, Done.",
+      "parentUuid": "3a961159_8909c033",
       "revId": "ad6f2b6a15e91ddb3708bc1c76564b4646f8a82b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_6799141f",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 14220
+      },
+      "writtenOn": "2014-12-09T11:45:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_8c3c6e31",
+      "revId": "ad6f2b6a15e91ddb3708bc1c76564b4646f8a82b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_c955881e",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 2
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_87a0c044",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 716,
+      "author": {
+        "id": 14220
+      },
+      "writtenOn": "2014-12-09T11:45:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_c955881e",
+      "revId": "ad6f2b6a15e91ddb3708bc1c76564b4646f8a82b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_4c9fe652",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 2
@@ -81,6 +153,24 @@
       "writtenOn": "2014-12-09T06:22:15Z",
       "side": 1,
       "message": "why not just move this line and next line inside of the above if block?  it seems like you only want to define add xm if \u0027modules\u0027 param is defined.",
+      "revId": "ad6f2b6a15e91ddb3708bc1c76564b4646f8a82b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_8a0a871f",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 736,
+      "author": {
+        "id": 14220
+      },
+      "writtenOn": "2014-12-09T11:45:01Z",
+      "side": 1,
+      "message": "Not done. The Jenkins final XML always have a modules element even if empty. I assumed it was better to mimic that, but I’m happy to change it.",
+      "parentUuid": "3a961159_4c9fe652",
       "revId": "ad6f2b6a15e91ddb3708bc1c76564b4646f8a82b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
