@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_89f620d6",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1068,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-09T05:42:56Z",
+      "side": 1,
+      "message": "looks like this param is optional, for consistency could you please add \u0027(optional)\u0027 to the doc?",
+      "revId": "5e0289b0146894a41cf5d64e82caeb4766db68cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_09a790be",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1073,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-09T05:42:56Z",
+      "side": 1,
+      "message": "could you also please add a new test for this param or add it to the existing test?",
+      "revId": "5e0289b0146894a41cf5d64e82caeb4766db68cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_a9559cc7",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1100,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-09T05:42:56Z",
+      "side": 1,
+      "message": "what if user doesn\u0027t pass in parsing-rules-path?  probably should either check that user passes in a match set of params or need to set a default for this?",
+      "revId": "5e0289b0146894a41cf5d64e82caeb4766db68cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
