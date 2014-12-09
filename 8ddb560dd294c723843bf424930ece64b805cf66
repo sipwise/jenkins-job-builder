@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_08323110",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 7069
+      },
+      "writtenOn": "2014-12-09T00:53:07Z",
+      "side": 1,
+      "message": "suggestion: consider calling it \u0027exclude[d]_path[s]\u0027 to be more consistent with \u0027include_path\u0027",
+      "revId": "8ddb560dd294c723843bf424930ece64b805cf66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_2837ed00",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 12
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 7069
+      },
+      "writtenOn": "2014-12-09T00:53:07Z",
+      "side": 1,
+      "message": "You\u0027re using : to separate paths here as well as the include_path and exclude options in the config file. However, the CLI for multiple excludes uses -x multiple times. For consistency it would be better if the CLI also took a list separated by columns.",
+      "revId": "8ddb560dd294c723843bf424930ece64b805cf66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
