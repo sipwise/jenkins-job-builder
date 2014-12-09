@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_498998ea",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-09T06:22:15Z",
+      "side": 1,
+      "message": "using the change id would be better because it will automatically link in commit message.",
+      "revId": "ad6f2b6a15e91ddb3708bc1c76564b4646f8a82b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_8909c033",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-09T06:22:15Z",
+      "side": 1,
+      "message": "code below sets the default to \u0027default\u0027 not \u0027branch\u0027",
+      "revId": "ad6f2b6a15e91ddb3708bc1c76564b4646f8a82b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_8c3c6e31",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-09T06:22:15Z",
+      "side": 1,
+      "message": "maybe should let use know that this is required if there is a \u0027browser\u0027 value?",
+      "revId": "ad6f2b6a15e91ddb3708bc1c76564b4646f8a82b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_c955881e",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 716,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-09T06:22:15Z",
+      "side": 1,
+      "message": "Would be better to use use JenkinsJobsException",
+      "revId": "ad6f2b6a15e91ddb3708bc1c76564b4646f8a82b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_4c9fe652",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 736,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-09T06:22:15Z",
+      "side": 1,
+      "message": "why not just move this line and next line inside of the above if block?  it seems like you only want to define add xm if \u0027modules\u0027 param is defined.",
+      "revId": "ad6f2b6a15e91ddb3708bc1c76564b4646f8a82b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
