@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_e8d4d721",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7069
+      },
+      "writtenOn": "2014-12-10T04:06:41Z",
+      "side": 1,
+      "message": "wouldn\u0027t this be required?",
+      "revId": "5ed8d0b908c8537071d2a22ba011804d6e161b9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_08d84352",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 7069
+      },
+      "writtenOn": "2014-12-10T04:06:41Z",
+      "side": 1,
+      "message": "Probably want to raise an error where this isn\u0027t set rather than defaulting to no room",
+      "revId": "5ed8d0b908c8537071d2a22ba011804d6e161b9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_28dfbf3c",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 7069
+      },
+      "writtenOn": "2014-12-10T04:06:41Z",
+      "side": 1,
+      "message": "what if these are both set?",
+      "revId": "5ed8d0b908c8537071d2a22ba011804d6e161b9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
