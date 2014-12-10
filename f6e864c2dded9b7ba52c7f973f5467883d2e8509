@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a961159_b04cd09f",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-10T23:45:50Z",
+      "side": 1,
+      "message": "isn\u0027t trigger-approval-* an old format as well?",
+      "revId": "f6e864c2dded9b7ba52c7f973f5467883d2e8509",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_ea209efa",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 18
@@ -13,6 +30,41 @@
       "writtenOn": "2014-11-26T22:38:37Z",
       "side": 1,
       "message": "As the documentation generated mentions the version this is deprecated since, I think that 1.0 is probably still acceptable here. I\u0027ll poke IRC to confirm, but it\u0027s the only question remaining about what\u0027s the best value here.",
+      "revId": "f6e864c2dded9b7ba52c7f973f5467883d2e8509",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_2bb15547",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-10T23:45:50Z",
+      "side": 1,
+      "message": "next version will be 1.1.0 , i\u0027ll make a note to include this change so should probably be 1.1.0 here.",
+      "parentUuid": "5a890539_ea209efa",
+      "revId": "f6e864c2dded9b7ba52c7f973f5467883d2e8509",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_2bc6b59a",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-10T23:45:50Z",
+      "side": 1,
+      "message": "Maybe make a general note to users that the trigger-on-* parameters below have been deprecated, use the new trigger-on parameter instead?",
       "revId": "f6e864c2dded9b7ba52c7f973f5467883d2e8509",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
