@@ -104,6 +104,24 @@
       "revId": "5ed8d0b908c8537071d2a22ba011804d6e161b9d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_4f620d3f",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 12509
+      },
+      "writtenOn": "2014-12-11T18:30:24Z",
+      "side": 1,
+      "message": "i applogize that did not translate very well if you run those tests in a python interpreter you\u0027ll see what i mean.",
+      "parentUuid": "3a961159_4fb84dc8",
+      "revId": "5ed8d0b908c8537071d2a22ba011804d6e161b9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
