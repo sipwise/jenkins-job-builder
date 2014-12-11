@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_f939e0f2",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2446,
+      "author": {
+        "id": 7069
+      },
+      "writtenOn": "2014-12-11T04:02:36Z",
+      "side": 1,
+      "message": "The indentation here appears to be aligned to \u0027execute-on\u0027 (below). The indentation for that paragraph is based on the param argument. For consistency this should indented 41cols",
+      "revId": "da313700e1f6ed2c089e3d8004969e5e2a1eba8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_193f8cd7",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2449,
+      "author": {
+        "id": 7069
+      },
+      "writtenOn": "2014-12-11T04:02:36Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "da313700e1f6ed2c089e3d8004969e5e2a1eba8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
