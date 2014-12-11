@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_496cd408",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4325
+      },
+      "writtenOn": "2014-12-11T14:44:40Z",
+      "side": 1,
+      "message": "Yes, but having it there without trigger-on-comment-added-event didn\u0027t work anyway. I do not think it is worthy to complicate the code even more than it is now.",
+      "parentUuid": "3a961159_b04cd09f",
+      "revId": "f6e864c2dded9b7ba52c7f973f5467883d2e8509",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_ea209efa",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 18
@@ -65,6 +83,24 @@
       "writtenOn": "2014-12-10T23:45:50Z",
       "side": 1,
       "message": "Maybe make a general note to users that the trigger-on-* parameters below have been deprecated, use the new trigger-on parameter instead?",
+      "revId": "f6e864c2dded9b7ba52c7f973f5467883d2e8509",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_4943f46b",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 4325
+      },
+      "writtenOn": "2014-12-11T14:44:40Z",
+      "side": 1,
+      "message": "This is not a bad idea.",
+      "parentUuid": "3a961159_2bc6b59a",
       "revId": "f6e864c2dded9b7ba52c7f973f5467883d2e8509",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
