@@ -192,6 +192,24 @@
       "revId": "ad6f2b6a15e91ddb3708bc1c76564b4646f8a82b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_6ecef6b5",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 736,
+      "author": {
+        "id": 14220
+      },
+      "writtenOn": "2014-12-11T14:00:48Z",
+      "side": 1,
+      "message": "Done, indeed much more compact.",
+      "parentUuid": "3a961159_b6f4fecf",
+      "revId": "ad6f2b6a15e91ddb3708bc1c76564b4646f8a82b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
