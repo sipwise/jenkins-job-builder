@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_ef1e590b",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 12509
+      },
+      "writtenOn": "2014-12-11T18:29:05Z",
+      "side": 1,
+      "message": "a default value of an empty string is a valid value, see my other comment.",
+      "parentUuid": "3a961159_e8d4d721",
+      "revId": "5ed8d0b908c8537071d2a22ba011804d6e161b9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_08d84352",
         "filename": "jenkins_jobs/modules/hipchat_notif.py",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_8f0dd5ea",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 12509
+      },
+      "writtenOn": "2014-12-11T18:29:05Z",
+      "side": 1,
+      "message": "No we don\u0027t because a blank value is a valid option.  Jenkins will use the default room specified in is master configuration.  Meaning if you want all jobs to post to a specific default room, unless otherwise specified in the JJB config, the current plugin implementation doesn\u0027t not allow you to do that.\n\nYou have a miss-understanding of the plugins inner workings, a blank value for room doesn\u0027t actually mean its not going to post to a room, it means it will use the default room as specified in the jenkins master configuration for the hipchat plugin.",
+      "parentUuid": "3a961159_08d84352",
+      "revId": "5ed8d0b908c8537071d2a22ba011804d6e161b9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_28dfbf3c",
         "filename": "jenkins_jobs/modules/hipchat_notif.py",
         "patchSetId": 6
@@ -47,6 +83,24 @@
       "writtenOn": "2014-12-10T04:06:41Z",
       "side": 1,
       "message": "what if these are both set?",
+      "revId": "5ed8d0b908c8537071d2a22ba011804d6e161b9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_4fb84dc8",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 12509
+      },
+      "writtenOn": "2014-12-11T18:29:05Z",
+      "side": 1,
+      "message": "you are correct but if we wrap its return value in a string and set a default option of a blank string we get what we want.\n\nsee:\n\nv \u003d False or True\nv\nTrue\nv \u003d \u0027False\u0027 or \u0027True\u0027\nv\n\u0027False\u0027\nv \u003d \u0027\u0027 or \u0027True\u0027\nv\n\u0027True\u0027\nv \u003d \u0027\u0027 or \u0027\u0027\nv\n\u0027\u0027\n\nit will be in my next patchset",
+      "parentUuid": "3a961159_28dfbf3c",
       "revId": "5ed8d0b908c8537071d2a22ba011804d6e161b9d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
