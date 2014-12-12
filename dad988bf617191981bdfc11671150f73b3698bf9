@@ -104,6 +104,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_8fd4ceec",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-12-12T17:57:59Z",
+      "side": 1,
+      "message": "As I mentioned in IRC yesterday, with the current way that version string comparisons are done (using pkg_resources.parse_version(version_string) to build a tuple that sorts in a roughly correct manner) this does not work because pkg_resources.parse_version(\"1.0-SNAPSHOT\") is actually considered greater than pkg_resources.parse_version(\"1.0\"). This does not match Maven-style version ordering which considers anything with \"-SNAPSHOT\" to be less than the X.Y.Z version prefix.\n\nSo there are a few implementations that I considered to support Maven-style version string ordering:\n\n1) mutate an \"X.Y.Z-SNAPSHOT\" style into \"X.Y.Z.preview\"\n\nThis is my preferred solution because it causes a plugin with version \"X.Y.Z-SNAPSHOT\" to be sorted as less than \"X.Y.Z\", so when writing a module, pkg_resources.parse_version(plugin[\u0027version\u0027]) \u003c pkg_resources.parse_version(\"X.Y.Z\") works as one might expect if the plugin[\u0027version\u0027] \u003d\u003d \"X.Y.Z-SNAPSHOT\" is True.\n\nHowever, the comparison pkg_resources.parse_version(plugin[\u0027version\u0027]) \u003d\u003d pkg_resources.parse_version(\"X.Y.Z-SNAPSHOT\") would return False since JJB representation of the plugin version was mutated into \"X.Y.Z.preview\" as mentioned earlier.\n\nThis is still my preferred solution though because we really should reject any patches that attempt to do a direct comparison against a \"-SNAPSHOT\" version of a plugin since \"SNAPSHOT\" is inherently unstable. \n\nThis could pretty easily be documented.\n\n2) Make our own MavenVersion class with __cmp__ implemented to correctly sort versions the way Maven prefers.\n\nThis is probably the most wholesome approach but it seems unnecessary for the previously-mentioned reason that we really should not support output that is directly conditional on \"-SNAPSHOT\" version.\n\n3) The final option which would be simpler than (2) and still more wholesome than (1) would be to write our own parse_version function which mutates all versions passed to it from a \"X.Y.Z-SNAPSHOT\" to \"X.Y.Z.preview\" as proposed in (1).\n\nI don\u0027t have any objection to doing this, but again I don\u0027t see any poinnt to supporting an version comparison API that allows a bad practice like directly comparing against a \"-SNAPSHOT\" version string.",
+      "parentUuid": "3a961159_cff14197",
+      "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_2f09e595",
         "filename": "tests/moduleregistry/test_moduleregistry.py",
         "patchSetId": 17
