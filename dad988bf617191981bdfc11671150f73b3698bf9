@@ -122,6 +122,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_ea8aa062",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-12T18:12:25Z",
+      "side": 1,
+      "message": "I\u0027m inclined to choose the documentation option for the following reasons:\n\n* Keeps this functionality simple\n* The Jenkins manage plugin page do not provide SNAPSHOT versions so users typically will not even install snapshots.  The only way to install Snapshot version is to manually upload it.\n* I agree with Wayne, JJB module should not be used with SNAPSHOT versions of Jenkins plugins.",
+      "parentUuid": "3a961159_8fd4ceec",
+      "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_2f09e595",
         "filename": "tests/moduleregistry/test_moduleregistry.py",
         "patchSetId": 17
