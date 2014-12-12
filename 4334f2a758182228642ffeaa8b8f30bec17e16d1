@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_2adae84b",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1520,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-12T18:26:10Z",
+      "side": 1,
+      "message": "nit: \"do not be restricted to this list\"/\"not restricted to this list\"",
+      "revId": "4334f2a758182228642ffeaa8b8f30bec17e16d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ca0244b3",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1521,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-12T18:26:10Z",
+      "side": 1,
+      "message": "nit: you/your",
+      "revId": "4334f2a758182228642ffeaa8b8f30bec17e16d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
