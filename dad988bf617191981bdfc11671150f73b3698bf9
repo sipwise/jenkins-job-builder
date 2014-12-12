@@ -140,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_c9640fbb",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-12-12T20:00:59Z",
+      "side": 1,
+      "message": "Okay, so you are saying don\u0027t go with (1), (2), or (3)--just document the lack of support for -SNAPSHOT versions?",
+      "parentUuid": "3a961159_ea8aa062",
+      "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_2f09e595",
         "filename": "tests/moduleregistry/test_moduleregistry.py",
         "patchSetId": 17
