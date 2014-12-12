@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+2: Khai Do <zaro0508@gmail.com>
+Workflow+1: Khai Do <zaro0508@gmail.com>
+Code-Review+2: Joshua Hesketh <joshua.hesketh@rackspace.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 12 Dec 2014 18:00:01 +0000
+Reviewed-on: https://review.openstack.org/134011
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
