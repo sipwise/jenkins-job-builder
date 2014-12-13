@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_5294378a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2446,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-12-13T21:08:43Z",
+      "side": 1,
+      "message": "Reading the comments from patch set one it appeared the intend was to change to the following:\n\n :arg bool script-only-if-success: Scripts and builders are run only if\n                                   the build succeeded (default True)\n\nIn other words it looks to me like it was suggesting changing the description for the param instead of the param itself.",
+      "revId": "2b622d5183057cedd34a5de4326cf12683e54d59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b2ec7b2b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2449,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-12-13T21:08:43Z",
+      "side": 1,
+      "message": "Similarly here\n\n :arg bool script-only-if-failure: Scripts and builders are run only if the\n                                   build failed (default False)",
+      "revId": "2b622d5183057cedd34a5de4326cf12683e54d59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_72e69345",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2531,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-12-13T21:08:43Z",
+      "side": 1,
+      "message": "Could get rid of the if/else statement here by using the following:\n\n success_xml.text \u003d str(data.get(\u0027script-only-if-succeeded\u0027,\n                                 data.get(\u0027onsuccess\u0027, True))).lower()\n\n\nJust a thought, not needed as there\u0027s nothing wrong with the current approach.",
+      "revId": "2b622d5183057cedd34a5de4326cf12683e54d59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
