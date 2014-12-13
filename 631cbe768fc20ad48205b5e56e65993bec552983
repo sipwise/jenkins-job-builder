@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_e38ba9bd",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-12-13T20:26:36Z",
+      "side": 1,
+      "message": "Took a couple of reads to parse this sentence so I\u0027m wondering if there is any risk of it being misunderstood?\n\ns/then/other than/ ?",
+      "revId": "631cbe768fc20ad48205b5e56e65993bec552983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
