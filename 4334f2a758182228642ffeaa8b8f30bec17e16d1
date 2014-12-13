@@ -33,6 +33,74 @@
       "revId": "4334f2a758182228642ffeaa8b8f30bec17e16d1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_32b24b4c",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1576,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-12-13T20:56:31Z",
+      "side": 1,
+      "message": "By using this you won\u0027t get any exceptions generated for the required types.",
+      "revId": "4334f2a758182228642ffeaa8b8f30bec17e16d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_326b2bb8",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1605,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-12-13T20:56:31Z",
+      "side": 1,
+      "message": "This could be replaced with:\n\n XML.SubElement(cmake, \u0027makeCommand\u0027).text \u003d data.get(\u0027make-command\u0027, \u0027make\u0027)",
+      "revId": "4334f2a758182228642ffeaa8b8f30bec17e16d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_52ad17e8",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1610,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-12-13T20:56:31Z",
+      "side": 1,
+      "message": "Here:\n\n XML.SubElement(cmake, \u0027installCommand\u0027).text \u003d data.get(\u0027install-command\u0027, \u0027make install\u0027)",
+      "revId": "4334f2a758182228642ffeaa8b8f30bec17e16d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b2855b5b",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1613,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2014-12-13T20:56:31Z",
+      "side": 1,
+      "message": "And here:\n\n XML.SubElement(cmake, \u0027preloadScript\u0027).text \u003d data.get(\u0027preload-script\u0027, \u0027\u0027)",
+      "revId": "4334f2a758182228642ffeaa8b8f30bec17e16d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
