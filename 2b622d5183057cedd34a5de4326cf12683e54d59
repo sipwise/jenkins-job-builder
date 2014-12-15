@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_152516ae",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2446,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-15T17:57:15Z",
+      "side": 1,
+      "message": "hmm, not sure but both name and description match now.  Also i think past tense makes more sense for both.",
+      "parentUuid": "3a961159_5294378a",
+      "revId": "2b622d5183057cedd34a5de4326cf12683e54d59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_b2ec7b2b",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-12-13T21:08:43Z",
       "side": 1,
       "message": "Similarly here\n\n :arg bool script-only-if-failure: Scripts and builders are run only if the\n                                   build failed (default False)",
+      "revId": "2b622d5183057cedd34a5de4326cf12683e54d59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_953826d6",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2449,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-15T17:57:15Z",
+      "side": 1,
+      "message": "ditto.",
+      "parentUuid": "3a961159_b2ec7b2b",
       "revId": "2b622d5183057cedd34a5de4326cf12683e54d59",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
