@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_0d261c68",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-12-15T17:17:22Z",
+      "side": 1,
+      "message": "I think the repetition is necessary because of the variation in XML element class for the strategy type. We can\u0027t simply create the strategy element after the conditional block using a string set in the conditional block because of the need for the strategy element when adding strategy-dependent subelements.\n\nIf the class on the strategy element doesn\u0027t matter than I\u0027d be fine with creating it outside of this conditional block.",
+      "parentUuid": "3a961159_65cbe872",
+      "revId": "a503e3b10e771d0abb166b85dccafd73b227e12a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_85db741a",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 6
@@ -47,6 +65,24 @@
       "writtenOn": "2014-12-08T19:27:13Z",
       "side": 1,
       "message": "maybe create a constant DEFAULT_TIMEOUT for this?  then DEFAULT_TIMEOUT_SEC * 3 for the seconds?",
+      "revId": "a503e3b10e771d0abb166b85dccafd73b227e12a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_6f5ccdee",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-12-15T17:17:22Z",
+      "side": 1,
+      "message": "Are you suggesting that we normalize the timeout value to always be in units of minutes?",
+      "parentUuid": "3a961159_85db741a",
       "revId": "a503e3b10e771d0abb166b85dccafd73b227e12a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
