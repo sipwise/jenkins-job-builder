@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_60aa1a87",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-15T18:51:29Z",
+      "side": 1,
+      "message": "would be better to use a literalinclude and reference the test you created as doc.  There are lots of examples of that in publishers.py.",
+      "revId": "d0df901cd7db8fe106743bd3f1d914ad7b484953",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_40e19ecf",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-15T18:51:29Z",
+      "side": 1,
+      "message": "I think this example is for the dyanmic axis plugin above.  I would move this above the ShingingPanda description and example.  Also, probably not required for this change but a nice follow on change would be to make this example a test and use literalinclude to reference the test as documentation.",
+      "revId": "d0df901cd7db8fe106743bd3f1d914ad7b484953",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_a0cfa256",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-15T18:51:29Z",
+      "side": 1,
+      "message": "Also, probably not required for this change but a nice follow on change would be to make this example a test and use literalinclude to reference the test as documentation.",
+      "revId": "d0df901cd7db8fe106743bd3f1d914ad7b484953",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
