@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_56d40147",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-12-15T21:09:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_2f63a5b2",
+      "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_0f0509c2",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 17
@@ -30,6 +48,24 @@
       "writtenOn": "2014-12-06T21:08:41Z",
       "side": 1,
       "message": "maybe param should just be \u0027plugin_name\u0027?  to handle either short or long name?",
+      "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_36cf75b5",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-12-15T21:09:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_0f0509c2",
       "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_16e35934",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 674,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-12-15T21:09:38Z",
+      "side": 1,
+      "message": "I\u0027m not exactly sure what you mean here. In https://review.openstack.org/#/c/132927/17/tests/cmd/subcommands/test_test.py we have one testcase that validates the \u0027-p\u0027 option for the \u0027test\u0027 subcommand which is intended to override/circumvent querying the configured jenkins service for plugin_info.\n\nThe code path at line 674 here is validated by all the other testcases against the \u0027test\u0027 subcommand, where the actual call the python-jenkins\u0027 get_plugins_info is stubbed to return a fixture value.",
+      "parentUuid": "3a961159_afe31504",
+      "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_6f720de7",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 17
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_96ce69b3",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-12-15T21:09:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_6f720de7",
+      "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_efeefdb3",
         "filename": "tests/moduleregistry/test_moduleregistry.py",
         "patchSetId": 17
@@ -81,6 +153,24 @@
       "writtenOn": "2014-12-06T21:08:41Z",
       "side": 1,
       "message": "I think maven convention for is typically 1.0.1-alpha  \n\nmaybe add that one?",
+      "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b6c28584",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-12-15T21:09:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_efeefdb3",
       "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -158,6 +248,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_f6bc0d09",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-12-15T21:09:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_c9640fbb",
+      "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_2f09e595",
         "filename": "tests/moduleregistry/test_moduleregistry.py",
         "patchSetId": 17
@@ -169,6 +277,24 @@
       "writtenOn": "2014-12-06T21:08:41Z",
       "side": 1,
       "message": "can we replace this name with something that\u0027s not similar to the other ones used for testing?  It will help others know that it\u0027s not meant to be found.",
+      "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_16ba790a",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-12-15T21:09:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_2f09e595",
       "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
