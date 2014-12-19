@@ -347,6 +347,7 @@ class YamlParser(object):
                     expanded_values[k] = v
 
             params.update(expanded_values)
+            params = deep_format(params, params)
             expanded = deep_format(template, params)
 
             # Keep track of the resulting expansions to avoid
