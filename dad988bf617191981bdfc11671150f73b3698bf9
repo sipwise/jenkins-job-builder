@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_e3daf876",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 674,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-19T19:09:10Z",
+      "side": 1,
+      "message": "Sorry, I think i was unclear.  I meant we should test the variability of the self.plugin_list data because the data you get from the self.jenkins.get_plugins_info() contains more info than the one from plugins-info.yaml file.  Looking at your test_moduleregistry tests again I see that your validating the required data (shortName, longName, version) so I\u0027m good with that.",
+      "parentUuid": "3a961159_16e35934",
+      "revId": "dad988bf617191981bdfc11671150f73b3698bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_6f720de7",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 17
