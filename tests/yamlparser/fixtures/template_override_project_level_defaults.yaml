@@ -32,6 +32,7 @@
 
 - defaults:
     name: testdefaults
+    recipients: herp@the.derp
     publishers:
       - email-ext:
           recipients: '{recipients}'

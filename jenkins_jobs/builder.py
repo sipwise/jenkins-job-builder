@@ -325,8 +325,11 @@ class YamlParser(object):
 
     def expandYamlForTemplateJob(self, project, template, jobs_filter=None):
         dimensions = []
+        # reject keys that are not useful during yaml expansion
+        for k in ['jobs']:
+            project.pop(k)
         for (k, v) in project.items():
-            if type(v) == list and k not in ['jobs']:
+            if type(v) == list:
                 dimensions.append(zip([k] * len(v), v))
         # XXX somewhat hackish to ensure we actually have a single
         # pass through the loop
@@ -347,6 +350,7 @@ class YamlParser(object):
                     expanded_values[k] = v
 
             params.update(expanded_values)
+            params = deep_format(params, params)
             expanded = deep_format(template, params)
 
             # Keep track of the resulting expansions to avoid
