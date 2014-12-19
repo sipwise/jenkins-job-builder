@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_03c5445b",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 715,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-19T19:29:20Z",
+      "side": 1,
+      "message": "it sems like self.jenkins.get_plugins_info() will always return a list because jenkins has pre-installed core plugins, but the list from plugins-info.yaml may only contain a single plugin, not a list of plugins.  Should we maybe force this into a list object so that it\u0027s the same type for processing in the ModuleRegistry class?",
+      "revId": "c40e34d9b3c6c27b16db9deef29567f8de95010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_0373844e",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-19T19:29:20Z",
+      "side": 1,
+      "message": "long names typically have spaces in them.",
+      "revId": "c40e34d9b3c6c27b16db9deef29567f8de95010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_c3a33c9c",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-19T19:29:20Z",
+      "side": 1,
+      "message": "add longName as well?",
+      "revId": "c40e34d9b3c6c27b16db9deef29567f8de95010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_e48897c8",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-19T19:29:20Z",
+      "side": 1,
+      "message": "since it looks like there\u0027s support for longName, should you maybe add a test for that as well?",
+      "revId": "c40e34d9b3c6c27b16db9deef29567f8de95010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
