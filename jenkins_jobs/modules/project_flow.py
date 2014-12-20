@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Copyright (C) 2013 eNovance SAS <licensing@enovance.com>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,17 +22,20 @@ the :ref:`Job` definition.
 Requires the Jenkins `Build Flow Plugin.
 <https://wiki.jenkins-ci.org/display/JENKINS/Build+Flow+Plugin>`_
 
-Example::
+Using it for job-template you have to be to escape the curly
+braces by doubling them in dsl:  { -> {{, otherwise it will
+expend to python str.format(). Check below job-template example.
 
-  job:
-    name: test_job
-    project-type: flow
-    dsl: |
-      build("job1")
-      parallel (
-        { build("job2a") },
-        { build("job2b") }
-      )
+Job example:
+
+    .. literalinclude::
+      /../../tests/yamlparser/fixtures/project_flow_template001.yaml
+
+Job template example:
+
+    .. literalinclude::
+      /../../tests/yamlparser/fixtures/project_flow_template002.yaml
+
 """
 
 import xml.etree.ElementTree as XML
