@@ -21,6 +21,10 @@ the :ref:`Job` definition.
 Requires the Jenkins `Build Flow Plugin.
 <https://wiki.jenkins-ci.org/display/JENKINS/Build+Flow+Plugin>`_
 
+Using it for job-template you have to be to escape the curly
+braces by doubling them in dsl:  { -> {{, otherwise it will
+expend to python str.format(). Check below job-template example.
+
 Example::
 
   job:
@@ -32,6 +36,17 @@ Example::
         { build("job2a") },
         { build("job2b") }
       )
+
+  job-template:
+      name: '{name}-test'
+      project-type: flow
+      dsl: |
+        build("job1")
+        parallel (
+          {{ build("job2a") }},
+          {{ build("job2b") }}
+        )
+        build("job2c")
 """
 
 import xml.etree.ElementTree as XML
