@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_a9c6ed65",
+        "filename": "jenkins_jobs/modules/project_flow.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-22T18:05:37Z",
+      "side": 1,
+      "message": "Since your doing this would you mind making this example a test and then using a literalinclude to inject it as docs?  This would keep the example from bit rotting.  We have many examples in the code now\n\nhere\u0027s one example:  http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/modules/publishers.py#n423\n\nan example of a complete definition test is here: http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/tests/yamlparser/fixtures/complete001.yaml",
+      "revId": "76362d6393423144307c079e3bbd7503a8d67a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
