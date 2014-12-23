@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_26978049",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 715,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-12-23T03:06:23Z",
+      "side": 1,
+      "message": "Yo, I just uploaded a new patch set with error checking and a unit test that validates that the syntax used in plugins-info.yaml does actually lead to the creation of a single-element list. \n\nhttp://www.yaml.org/spec/1.2/spec.html#id2797382 for further reference.",
+      "parentUuid": "3a961159_60116f03",
+      "revId": "c40e34d9b3c6c27b16db9deef29567f8de95010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_0373844e",
         "filename": "tests/moduleregistry/test_moduleregistry.py",
         "patchSetId": 18
@@ -66,6 +84,24 @@
       "writtenOn": "2014-12-19T19:29:20Z",
       "side": 1,
       "message": "long names typically have spaces in them.",
+      "revId": "c40e34d9b3c6c27b16db9deef29567f8de95010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_86eaf4d5",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-12-23T03:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_0373844e",
       "revId": "c40e34d9b3c6c27b16db9deef29567f8de95010e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -100,6 +136,24 @@
       "writtenOn": "2014-12-23T00:09:22Z",
       "side": 1,
       "message": "In one of your previous comments I had been given the impression that longName isn\u0027t guaranteed to be available for plugins so I left it out in one of the examples.",
+      "parentUuid": "3a961159_c3a33c9c",
+      "revId": "c40e34d9b3c6c27b16db9deef29567f8de95010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_a6bc50dd",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-12-23T03:06:23Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "3a961159_c3a33c9c",
       "revId": "c40e34d9b3c6c27b16db9deef29567f8de95010e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -154,6 +208,24 @@
       "side": 1,
       "message": "yes, that is correct.  shortName required, longName optional.  It\u0027s great that you have a test for the required, but don\u0027t we also want to test the optional as well since that\u0027s supported?",
       "parentUuid": "3a961159_4fd026c9",
+      "revId": "c40e34d9b3c6c27b16db9deef29567f8de95010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_06dfe43a",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-12-23T03:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_80c65b98",
       "revId": "c40e34d9b3c6c27b16db9deef29567f8de95010e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
