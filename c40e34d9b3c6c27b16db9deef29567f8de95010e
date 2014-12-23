@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_60116f03",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 715,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-23T01:11:31Z",
+      "side": 1,
+      "message": "i believe the plugin_list from the plugin-info.yaml file will be a dict not a list. it\u0027s only a list if there are multiple plugins listed in that file.\n\nmy suggestion was to simply turn plugins_list into a list before, so if you get a single dict then just make that a list object contain one dict?\n\nso can we just turn {\u0027foo\u0027:\u0027bar\u0027} into [{\u0027foo\u0027:\u0027bar}] ?  if multiple plugins are in the plugins-info.yaml then it\u0027s already a list.",
+      "parentUuid": "3a961159_cf189620",
+      "revId": "c40e34d9b3c6c27b16db9deef29567f8de95010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_0373844e",
         "filename": "tests/moduleregistry/test_moduleregistry.py",
         "patchSetId": 18
@@ -118,6 +136,24 @@
       "side": 1,
       "message": "My understanding based on one of your previous comments is that longName is optional, shortName required. Maybe I will modify this test to check both plugin_info[\u0027shortName\u0027] and plugin_info[\u0027longName\u0027].",
       "parentUuid": "3a961159_e48897c8",
+      "revId": "c40e34d9b3c6c27b16db9deef29567f8de95010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_80c65b98",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-23T01:11:31Z",
+      "side": 1,
+      "message": "yes, that is correct.  shortName required, longName optional.  It\u0027s great that you have a test for the required, but don\u0027t we also want to test the optional as well since that\u0027s supported?",
+      "parentUuid": "3a961159_4fd026c9",
       "revId": "c40e34d9b3c6c27b16db9deef29567f8de95010e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
