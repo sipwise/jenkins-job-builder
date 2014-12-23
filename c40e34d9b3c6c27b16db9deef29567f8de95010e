@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_cf189620",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 715,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-12-23T00:09:22Z",
+      "side": 1,
+      "message": "Well the contents of plugins-info.yaml is still a list, it just has a single entry. If it wasn\u0027t a list then the __get_plugins_info_dict method would puke since it uses a list comprehension over the given plugins_list.\n\nSo maybe the behavior you want here is to check that isinstance(plugins_list, list) \u003d\u003d True? And a corresponding unit test to pass a yaml file with non-list contents to the `test` subcommand?\n\nThis instance checking and subsequent exception should probably go in cmd.py...unless you think we should also be validating the return value of self.jenkins.get_plugins_info() here.\n\nCan we rely on the jenkins-python module\u0027s get_plugins_info method to always return a list?",
+      "parentUuid": "3a961159_03c5445b",
+      "revId": "c40e34d9b3c6c27b16db9deef29567f8de95010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_0373844e",
         "filename": "tests/moduleregistry/test_moduleregistry.py",
         "patchSetId": 18
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_cfefb6e7",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-12-23T00:09:22Z",
+      "side": 1,
+      "message": "In one of your previous comments I had been given the impression that longName isn\u0027t guaranteed to be available for plugins so I left it out in one of the examples.",
+      "parentUuid": "3a961159_c3a33c9c",
+      "revId": "c40e34d9b3c6c27b16db9deef29567f8de95010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_e48897c8",
         "filename": "tests/moduleregistry/test_moduleregistry.py",
         "patchSetId": 18
@@ -64,6 +100,24 @@
       "writtenOn": "2014-12-19T19:29:20Z",
       "side": 1,
       "message": "since it looks like there\u0027s support for longName, should you maybe add a test for that as well?",
+      "revId": "c40e34d9b3c6c27b16db9deef29567f8de95010e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_4fd026c9",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-12-23T00:09:22Z",
+      "side": 1,
+      "message": "My understanding based on one of your previous comments is that longName is optional, shortName required. Maybe I will modify this test to check both plugin_info[\u0027shortName\u0027] and plugin_info[\u0027longName\u0027].",
+      "parentUuid": "3a961159_e48897c8",
       "revId": "c40e34d9b3c6c27b16db9deef29567f8de95010e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
