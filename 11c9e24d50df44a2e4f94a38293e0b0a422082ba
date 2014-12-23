@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_a691b048",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2014-12-23T03:06:31Z",
+      "side": 1,
+      "message": "@Khai\nIs this what you had in mind?",
+      "revId": "11c9e24d50df44a2e4f94a38293e0b0a422082ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
