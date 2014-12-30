@@ -16,6 +16,24 @@
       "revId": "104244b833e0281c358e83c1ab5c5c9098f9af63",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f97043dc",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2014-12-30T21:50:27Z",
+      "side": 1,
+      "message": "should be the openstack docs, not the jjb sphinx doc.  The documentation is already referenced in the readme and appears on https://pypi.python.org/pypi/jenkins-job-builder/1.1.0",
+      "parentUuid": "3a961159_33990a7a",
+      "revId": "104244b833e0281c358e83c1ab5c5c9098f9af63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
