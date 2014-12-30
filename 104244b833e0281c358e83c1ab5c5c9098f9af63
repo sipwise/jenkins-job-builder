@@ -34,6 +34,24 @@
       "revId": "104244b833e0281c358e83c1ab5c5c9098f9af63",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_6b5f1a76",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6609
+      },
+      "writtenOn": "2014-12-30T23:12:15Z",
+      "side": 1,
+      "message": "Alright, wfm.",
+      "parentUuid": "3a961159_f97043dc",
+      "revId": "104244b833e0281c358e83c1ab5c5c9098f9af63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
