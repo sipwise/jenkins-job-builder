@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_33990a7a",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6609
+      },
+      "writtenOn": "2014-12-30T19:17:23Z",
+      "side": 1,
+      "message": "Is it this or http://ci.openstack.org/jenkins-job-builder/ ?",
+      "revId": "104244b833e0281c358e83c1ab5c5c9098f9af63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
