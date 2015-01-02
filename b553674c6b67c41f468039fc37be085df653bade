@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_cb6635bb",
+        "filename": "requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-02T20:00:54Z",
+      "side": 1,
+      "message": "Does this mean that every pip installation will automatically install all test dependencies as well?",
+      "revId": "b553674c6b67c41f468039fc37be085df653bade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
