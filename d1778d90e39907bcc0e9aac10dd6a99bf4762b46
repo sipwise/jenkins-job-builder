@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_1db95bcb",
+        "filename": ".gitignore",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-03T23:37:50Z",
+      "side": 1,
+      "message": "This seems like a tool specific exclude and not related to the project itself.\n\nI\u0027m in two minds about whether we should include IDE specific excludes or not. Not enough against it to reject the change though.",
+      "revId": "d1778d90e39907bcc0e9aac10dd6a99bf4762b46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_3db0d7dc",
+        "filename": "jenkins_jobs/modules/slack_notif.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-03T23:37:50Z",
+      "side": 1,
+      "message": "Not planning to update self.teamDomain if self.authToken has already been set?\n\nShouldn\u0027t be an issue based on how the code is currently written, but might trip someone up later.",
+      "revId": "d1778d90e39907bcc0e9aac10dd6a99bf4762b46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
