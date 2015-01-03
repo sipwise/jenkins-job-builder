@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_ddbef3ad",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-03T23:53:43Z",
+      "side": 1,
+      "message": "While it doesn\u0027t appear to be an issue in this case, not completely sure, note that this will modify the original dictionary passed in by the calling function.",
+      "revId": "c01152ba36a13c24d75c79585cdc1691ee3c233f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
