@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_a85c841a",
+        "filename": ".gitignore",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 14073
+      },
+      "writtenOn": "2015-01-04T10:55:32Z",
+      "side": 1,
+      "message": "I see, but since I saw *.swp in the .gitignore file, which is a vim file pattern I assumed that you put the IDE excludes in it.",
+      "parentUuid": "3a961159_1db95bcb",
+      "revId": "d1778d90e39907bcc0e9aac10dd6a99bf4762b46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_3db0d7dc",
         "filename": "jenkins_jobs/modules/slack_notif.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-03T23:37:50Z",
       "side": 1,
       "message": "Not planning to update self.teamDomain if self.authToken has already been set?\n\nShouldn\u0027t be an issue based on how the code is currently written, but might trip someone up later.",
+      "revId": "d1778d90e39907bcc0e9aac10dd6a99bf4762b46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_68a9bcdc",
+        "filename": "jenkins_jobs/modules/slack_notif.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 14073
+      },
+      "writtenOn": "2015-01-04T10:55:32Z",
+      "side": 1,
+      "message": "I understand, I just thought that the if (not self.authToken): was enough and the add of the other if will add only verbosity.\n\nI can add it if you think it\u0027s better",
+      "parentUuid": "3a961159_3db0d7dc",
       "revId": "d1778d90e39907bcc0e9aac10dd6a99bf4762b46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
