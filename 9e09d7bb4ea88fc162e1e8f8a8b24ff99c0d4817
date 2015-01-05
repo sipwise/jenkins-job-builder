@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_a962bf13",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1106
+      },
+      "writtenOn": "2015-01-05T11:46:52Z",
+      "side": 1,
+      "message": "\"example\" instead of \"Example\"",
+      "revId": "9e09d7bb4ea88fc162e1e8f8a8b24ff99c0d4817",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_89a4234c",
+        "filename": "jenkins_jobs/modules/project_flow.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1106
+      },
+      "writtenOn": "2015-01-05T11:46:52Z",
+      "side": 1,
+      "message": "\"DSL\" instead of \"dsl\"",
+      "revId": "9e09d7bb4ea88fc162e1e8f8a8b24ff99c0d4817",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
