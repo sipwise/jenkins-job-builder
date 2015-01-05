@@ -16,6 +16,24 @@
       "revId": "ce7afcf6cf3821b8b0544c955fb61178ef9e8f55",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_30454715",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6039
+      },
+      "writtenOn": "2015-01-05T16:24:41Z",
+      "side": 1,
+      "message": "Yes, this should be adding a post-build action as a publisher rather than a builder. It doesn\u0027t appear to be supporting the wrapper part of the plugin.",
+      "parentUuid": "5a890539_99402309",
+      "revId": "ce7afcf6cf3821b8b0544c955fb61178ef9e8f55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
