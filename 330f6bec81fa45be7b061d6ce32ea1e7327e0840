@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_23234ea8",
+        "filename": "jenkins_jobs/modules/project_flow.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6133
+      },
+      "writtenOn": "2015-01-05T09:12:53Z",
+      "side": 1,
+      "message": "I would fix the grammar here:\n\nIn order to use it for job-template you have to escape the curly braces by doubling them in the dsl: { -\u003e {{ , otherwise it will be interpreted by the python str.format() command.",
+      "revId": "330f6bec81fa45be7b061d6ce32ea1e7327e0840",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
