@@ -74,8 +74,11 @@ class HipChat(jenkins_jobs.modules.base.Base):
     sequence = 80
 
     def __init__(self, registry):
+        self.hipchatServer = ''
         self.authToken = None
-        self.jenkinsUrl = None
+        self.jenkinsUrl = ''
+        self.defaultRoom = ''
+        self.sendAs = ''
         self.registry = registry
 
     def _load_global_data(self):
@@ -96,7 +99,10 @@ class HipChat(jenkins_jobs.modules.base.Base):
                 logger.fatal("The configuration file needs a hipchat section" +
                              " containing authtoken:\n{0}".format(e))
                 sys.exit(1)
+            self.hipchatServer = self.registry.global_config.get('jenkins', 'apiurl')
             self.jenkinsUrl = self.registry.global_config.get('jenkins', 'url')
+            self.defaultRoom = self.registry.global_config.get('jenkins', 'room')
+            self.sendAs = self.registry.global_config.get('jenkins', 'sendas')
 
     def gen_xml(self, parser, xml_parent, data):
         logger = logging.getLogger("%s:HipChat" % __name__)
@@ -148,8 +154,8 @@ class HipChat(jenkins_jobs.modules.base.Base):
             publishers = XML.SubElement(xml_parent, 'publishers')
         hippub = XML.SubElement(publishers,
                                 'jenkins.plugins.hipchat.HipChatNotifier')
-        XML.SubElement(hippub, 'jenkinsUrl').text = self.jenkinsUrl
+        XML.SubElement(hippub, 'server').text = self.hipchatServer
         XML.SubElement(hippub, 'authToken').text = self.authToken
-        # The room specified here is the default room.  The default is
-        # redundant in this case since a room must be specified.  Leave empty.
-        XML.SubElement(hippub, 'room').text = ''
+        XML.SubElement(hippub, 'buildServerUrl').text = self.jenkinsUrl
+        XML.SubElement(hippub, 'room').text = self.defaultRoom
+        XML.SubElement(hippub, 'sendAs').text = self.sendAs
