@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_18bb7b10",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7069
+      },
+      "writtenOn": "2015-01-10T21:35:16Z",
+      "side": 0,
+      "message": "Could possibly keep this around with a depreciated note.",
+      "revId": "445c73a298e87b0cf2b04577814d2fd863ca3882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
