@@ -284,6 +284,11 @@ def trigger_builds(parser, xml_parent, data):
     :arg str project: the Jenkins project to trigger
     :arg str predefined-parameters:
       key/value pairs to be passed to the job (optional)
+    :arg list bool-parameters:
+
+      :Bool: * **name** (`str`) -- Parameter name
+             * **value** (`bool`) -- Value to set (default false)
+
     :arg str property-file:
       Pass properties from file to the other job (optional)
     :arg bool property-file-fail-on-missing:
@@ -379,6 +384,24 @@ def trigger_builds(parser, xml_parent, data):
                                     'PredefinedBuildParameters')
             properties = XML.SubElement(params, 'properties')
             properties.text = project_def['predefined-parameters']
+
+        if 'bool-parameters' in project_def:
+            params = XML.SubElement(tconfigs,
+                                    'hudson.plugins.parameterizedtrigger.'
+                                    'BooleanParameters')
+            configs = XML.SubElement(params, 'configs')
+            for bool_param in project_def['bool-parameters']:
+                param_name = bool_param['name']
+                param_value = bool_param.get('value', False)
+
+                param = XML.SubElement(configs,
+                                       'hudson.plugins.parameterizedtrigger.'
+                                       'BooleanParameterConfig')
+                name = XML.SubElement(param, 'name')
+                name.text = str(param_name)
+                name = XML.SubElement(param, 'value')
+                name.text = str(param_value).lower()
+
         if(len(list(tconfigs)) == 0):
             tconfigs.set('class', 'java.util.Collections$EmptyList')
 
