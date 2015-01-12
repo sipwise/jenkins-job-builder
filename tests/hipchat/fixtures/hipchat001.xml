@@ -14,9 +14,11 @@
   </properties>
   <publishers>
     <jenkins.plugins.hipchat.HipChatNotifier>
-      <jenkinsUrl>url</jenkinsUrl>
+      <server>apiurl</server>
       <authToken>authtoken</authToken>
-      <room/>
+      <buildServerUrl>url</buildServerUrl>
+      <room>room</room>
+      <sendAs>sendas</sendAs>
     </jenkins.plugins.hipchat.HipChatNotifier>
   </publishers>
 </project>
