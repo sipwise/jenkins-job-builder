@@ -1497,3 +1497,138 @@ def managed_script(parser, xml_parent, data):
     args = XML.SubElement(ms, 'buildStepArgs')
     for arg in data.get('args', []):
         XML.SubElement(args, 'string').text = arg
+
+
+def xcode(parser, xml_parent, data):
+    """yaml: xcode
+    This step allows to execute an xcode build step. Requires the Jenkins
+    `Xcode Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Xcode+Plugin>`_
+
+    :arg str developer-profile: the jenkins credential id for a
+        ios developer profile.
+    :arg bool clean-build: if true will delete the build directories
+        before invoking the build.
+    :arg bool clean-test-reports: UNKNOWN.
+    :arg bool archive: if true will generate an xcarchive of the specified
+        scheme. A workspace and scheme are are also needed for archives.
+    :arg str configuration: This is the name of the configuration
+        as defined in the Xcode project.
+    :arg str configuration-directory: The value to use for
+        CONFIGURATION_BUILD_DIR setting.
+    :arg str target: Leave empty for all targets.
+    :arg str sdk: Leave empty for default SDK.
+    :arg str symroot: Leave empty for default SYMROOT.
+    :arg str project-path: Relative path within the workspace
+        that contains the xcode project file(s).
+    :arg str project-file: Only needed if there is more than one
+        project file in the Xcode Project Directory.
+    :arg str build-arguments: Extra commandline arguments provided
+        to the xcode builder.
+    :arg str schema: Only needed if you want to compile for a
+        specific schema instead of a target.
+    :arg str workspace: Only needed if you want to compile a
+        workspace instead of a project.
+    :arg str profile: The relative path to the mobileprovision to embed,
+        leave blank for no embedded profile.
+    :arg str codesign-id: Override the code signing identity specified
+        in the project.
+    :arg bool allow-failing: if true will prevent this build step from
+        failing if xcodebuild exits with a non-zero return code.
+    :arg str version-technical: The value to use for CFBundleVersion.
+        Leave blank to use project's technical number.
+    :arg str version-marketing: The value to use for
+        CFBundleShortVersionString. Leave blank to use project's
+        marketing number.
+    :arg str ipa-version: A pattern for the ipa file name. You may use
+        ${VERSION} and ${BUILD_DATE} (yyyy.MM.dd) in this string.
+    :arg str ipa-output: The output directory for the .ipa file,
+        relative to the build directory.
+    :arg str keychain-name: The globally configured keychain to unlock for
+        this build.
+    :arg str keychain-path: The path of the keychain to use to sign the IPA.
+    :arg str keychain-password: The password to use to unlock the keychain.
+    :arg str keychain-unlock: Unlocks the keychain during use.
+
+    Example:
+
+    .. literalinclude:: /../../tests/builders/fixtures/xcode.yaml
+       :language: yaml
+
+    """
+
+    if data.get('developer-profile'):
+        profile = XML.SubElement(xml_parent, 'au.com.rayh.'
+                                 'DeveloperProfileLoader')
+        profile_id = XML.SubElement(profile, 'id')
+        profile_id.text = str(data.get('developer-profile'))
+
+    xcode = XML.SubElement(xml_parent, 'au.com.rayh.XCodeBuilder')
+
+    clean_build = XML.SubElement(xcode, 'cleanBeforeBuild')
+    clean_build.text = str(data.get('clean-build', False)).lower()
+    clean_test_reports = XML.SubElement(xcode, 'cleanTestReports')
+    clean_test_reports.text = str(data.get('clean-test-reports',
+                                           False)).lower()
+    archive = XML.SubElement(xcode, 'generateArchive')
+    archive.text = str(data.get('archive', False)).lower()
+
+    configuration = XML.SubElement(xcode, 'configuration')
+    configuration.text = str(data.get('configuration', 'Release'))
+    build_dir = XML.SubElement(xcode, 'configurationBuildDir')
+    build_dir.text = str(data.get('configuration-directory', ''))
+    target = XML.SubElement(xcode, 'target')
+    target.text = str(data.get('target', ''))
+    sdk = XML.SubElement(xcode, 'sdk')
+    sdk.text = str(data.get('sdk', ''))
+    symroot = XML.SubElement(xcode, 'symRoot')
+    symroot.text = str(data.get('symroot', ''))
+
+    project_path = XML.SubElement(xcode, 'xcodeProjectPath')
+    project_path.text = str(data.get('project-path', ''))
+    project_file = XML.SubElement(xcode, 'xcodeProjectFile')
+    project_file.text = str(data.get('project-file', ''))
+    arguments = XML.SubElement(xcode, 'xcodebuildArguments')
+    arguments.text = str(data.get('build-arguments', ''))
+    schema = XML.SubElement(xcode, 'xcodeSchema')
+    schema.text = str(data.get('schema', ''))
+    workspace = XML.SubElement(xcode, 'xcodeWorkspaceFile')
+    workspace.text = str(data.get('workspace', ''))
+    profile = XML.SubElement(xcode, 'embeddedProfileFile')
+    profile.text = str(data.get('profile', ''))
+
+    codesign_id = XML.SubElement(xcode, 'codeSigningIdentity')
+    codesign_id.text = str(data.get('codesign-id', ''))
+    allow_failing = XML.SubElement(xcode, 'allowFailingBuildResults')
+    allow_failing.text = str(data.get('allow-failing', False)).lower()
+
+    version = XML.SubElement(xcode, 'provideApplicationVersion')
+    version_technical = XML.SubElement(xcode,
+                                       'cfBundleVersionValue')
+    version_marketing = XML.SubElement(xcode,
+                                       'cfBundleShortVersionStringValue')
+    if data.get('version-technical') or data.get('version-marketing'):
+        version.text = 'true'
+        version_technical.text = data.get('version-technical', '')
+        version_marketing.text = data.get('version-marketing', '')
+    else:
+        version.text = 'false'
+
+    ipa = XML.SubElement(xcode, 'buildIpa')
+    ipa_name = XML.SubElement(xcode, 'ipaName')
+    ipa_name.text = data.get('ipa-version', '')
+    ipa_output = XML.SubElement(xcode, 'ipaOutputDirectory')
+    ipa_output.text = str(data.get('ipa-output', ''))
+    if data.get('ipa-version'):
+        ipa.text = 'true'
+    else:
+        ipa.text = 'false'
+
+    keychain_name = XML.SubElement(xcode, 'keychainName')
+    keychain_name.text = str(data.get('keychain-name', ''))
+    keychain_path = XML.SubElement(xcode, 'keychainPath')
+    keychain_path.text = str(data.get('keychain-path', ''))
+    keychain_password = XML.SubElement(xcode, 'keychainPwd')
+    keychain_password.text = str(data.get('keychain-password', ''))
+    keychain_unlock = XML.SubElement(xcode, 'unlockKeychain')
+    keychain_unlock.text = str(data.get('keychain-unlock', False)).lower()
