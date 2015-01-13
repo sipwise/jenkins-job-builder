@@ -1256,6 +1256,134 @@ def custom_tools(parser, xml_parent, data):
                    'convertHomesToUppercase').text = convert_home
 
 
+def android_emulator(parser, xml_parent, data):
+    """yaml: android-emulator
+    Automates many Android development tasks including SDK installation,
+    build file generation, emulator creation and launch,
+    APK (un)installation...
+    Requires the Jenkins `Android Emulator Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Android+Emulator+Plugin>`_
+
+    :arg str avd: Enter the name of an existing Android emulator configuration.
+        If this is exclusive with the 'os' arg.
+    :arg str os: Can be an OS version,
+        target name or SDK add-on,
+        e.g. "2.1" or "android-7".
+    :arg str screen-density: Density in dots-per-inch (dpi) or as an alias,
+        e.g. "160" or "mdpi". (default mdpi)
+    :arg str screen-resolution: Can be either a named resolution or explicit
+        size, e.g. "WVGA" or "480x800". (default WVGA)
+    :arg str locale: Must be a language and country pair that will exist
+        on the emulator version being run. The values correspond to
+        ISO 639-1 and ISO 3166 language and country codes, respectively.
+    :arg str target-abi: Should be the name of the ABI / system image
+        to be used, e.g "armeabi" or "x86". If empty the default ABI
+        for the select platform will be used. You only need to define
+        this field if you have more than one system image per
+        Android platform installed.
+    :arg str sd-card: Should be a numeric value followed by the suffix
+        'K' or 'M', for kilobytes or megabytes, respectively.
+        e.g. "32M" or "10240K".
+    :arg bool wipe: if true, the emulator will have its user data reset at
+        start-up, as if the emulator was newly-created. Any modifications
+        made to the system partition will remain untouched, as well as any
+        SD cards and their contents that may exist.  This is equivalent to
+        running the Android emulator command with the -wipe-data option.
+    :arg bool show-window: if true, the Android emulator user interface will
+        be displayed on screen during the build. Disabling this is useful,
+        for example, on Linux machines that do not have a graphical user
+        interface.
+    :arg bool snapshot: Enabling snapshots allows the emulator to start up much
+        faster, becoming ready for use in a matter of seconds.
+        The first time an emulator is started with snapshots enabled,
+        the plugin waits until the emulator has finished booting, unlocks
+        the screen, and then saves the emulator state to disk.
+        For subsequent builds, the emulator is started directly from this
+        stored state. This means that Android has already finished booting,
+        is sitting on the home screen, with the screen unlocked;
+        i.e. ready for use.
+        At the end of a build, the emulator state is not persisted to the
+        snapshotfile - subsequent jobs will always start from the same,
+        clean state that was stored at the start of the first
+        snapshot-enabled build.
+        Should the emulator already have snapshots in place, these will be
+        neither read nor overwritten - the plugin always writes its state
+        to a separate snapshot file called "jenkins".
+        Note: Using snapshots will consume around 150-200MB of disk space
+        on the build slave, for each emulator.
+    :arg bool delete: if true, the Android emulator being run will be
+        deleted when the build ends.
+        This means permanantly erasing all of its files, snapshots
+        and metadata from disk on the current build machine.
+    :arg int startup-delay: Wait this many seconds before attempting
+        to start the emulator
+    :arg str commandline-options: Will be given when starting the
+        Android emulator executable
+    :arg str exe: The emulator executable. Changing the default should
+        not be necessary, but there are some bugs in the SDK which might
+        prevent the default from working
+    :arg list hardware-properties: Adding custom hardware properties allows
+        you to override the default values for an AVD.
+        For example, you can alter the amount of RAM available to each process
+        (via the vm.heapSize property), or you can alter physical features of
+        the emulated device, such as the presence of a keyboard.
+
+        :Parameter: * **key** (`str`) hardware property name
+                    * **value** (`str`) hardware property value
+
+    Example:
+
+    .. literalinclude:: /../../tests/wrappers/fixtures/android001.yaml
+    """
+    root = XML.SubElement(xml_parent,
+                          'hudson.plugins.android__emulator.AndroidEmulator')
+
+    if data.get('avd') and data.get('os'):
+        raise JenkinsJobsException("'avd' and 'os' options are "
+                                   "exclusive, please pick one only")
+
+    if data.get('avd'):
+        avd = XML.SubElement(root, 'avdName')
+        avd.text = str(data.get('avd'))
+
+    if data.get('os'):
+        os = XML.SubElement(root, 'osVersion')
+        os.text = str(data['os'])
+        screen_density = XML.SubElement(root, 'screenDensity')
+        screen_density.text = str(data.get('screen-density', 'mdpi'))
+        screen_res = XML.SubElement(root, 'screenResolution')
+        screen_res.text = str(data.get('screen-resolution', 'WVGA'))
+        locale = XML.SubElement(root, 'deviceLocale')
+        locale.text = str(data.get('locale', 'en_US'))
+        abi = XML.SubElement(root, 'targetAbi')
+        abi.text = str(data.get('target-abi', ''))
+        sd_card = XML.SubElement(root, 'sdCardSize')
+        sd_card.text = str(data.get('sd-card', ''))
+    hardware = XML.SubElement(root, 'hardwareProperties')
+    for prop in data.get('hardware-properties', []):
+        prop_node = XML.SubElement(hardware,
+                                   'hudson.plugins.android__emulator'
+                                   '.AndroidEmulator_-HardwareProperty')
+        key = XML.SubElement(prop_node, 'key')
+        key.text = str(prop['key'])
+        value = XML.SubElement(prop_node, 'value')
+        value.text = str(prop['value'])
+    wipe = XML.SubElement(root, 'wipeData')
+    wipe.text = str(data.get('wipe', False)).lower()
+    show = XML.SubElement(root, 'showWindow')
+    show.text = str(data.get('show-window', False)).lower()
+    snapshot = XML.SubElement(root, 'useSnapshots')
+    snapshot.text = str(data.get('snapshot', False)).lower()
+    delete = XML.SubElement(root, 'deleteAfterBuild')
+    delete.text = str(data.get('delete', False)).lower()
+    delay = XML.SubElement(root, 'startupDelay')
+    delay.text = str(data.get('startup-delay', 0))
+    options = XML.SubElement(root, 'commandLineOptions')
+    options.text = str(data.get('commandline-options', ''))
+    exe = XML.SubElement(root, 'executable')
+    exe.text = str(data.get('exe', ''))
+
+
 class Wrappers(jenkins_jobs.modules.base.Base):
     sequence = 80
 
