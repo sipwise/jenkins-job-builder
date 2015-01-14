@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_d4007e02",
+        "filename": "tests/builders/fixtures/xcode.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6133
+      },
+      "writtenOn": "2015-01-14T08:00:02Z",
+      "side": 1,
+      "message": "ugly whitespace here",
+      "revId": "85971d9effb8871465093e0f530ff679653be2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
