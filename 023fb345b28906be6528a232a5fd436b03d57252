@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_fd81e5c3",
+        "filename": "tests/yamlparser/fixtures/template_override_project_level_defaults.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-01-14T04:23:23Z",
+      "side": 1,
+      "message": "If testdefaults is set on a job-template that doesn\u0027t define \u0027recipients\u0027 or override the \u0027publishers\u0027 item, deep format of that job-template will fail.",
+      "revId": "023fb345b28906be6528a232a5fd436b03d57252",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
