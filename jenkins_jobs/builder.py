@@ -381,26 +381,48 @@ class YamlParser(object):
         # project does not otherwise have a description.
         return "\n\n" + MAGIC_MANAGE_STRING
 
-    def generateXML(self):
-        for job in self.jobs:
-            self.xml_jobs.append(self.getXMLForJob(job))
 
-    def getXMLForJob(self, data):
-        kind = data.get('project-type', 'freestyle')
+class FauxParser:
+    """
+    Essentially a stub class to emulate the old spaghetti code yaml parser that
+    did so much more than parse yaml....
+    """
 
-        for ep in pkg_resources.iter_entry_points(
-                group='jenkins_jobs.projects', name=kind):
-            Mod = ep.load()
-            mod = Mod(self.registry)
-            xml = mod.root_xml(data)
-            self.gen_xml(xml, data)
-            job = XmlJob(xml, data['name'])
-            return job
+    def __init__(self):
+        self.registry = None
+        self.data = None
 
-    def gen_xml(self, xml, data):
-        for module in self.registry.modules:
-            if hasattr(module, 'gen_xml'):
-                module.gen_xml(self, xml, data)
+def generateXML(raw_yaml_data, registry, jobs):
+    """
+    Given a list of jobs and a module registry, generate a list of XmlJob's
+    representing each job.
+    """
+    xmljobs = []
+    for job in jobs:
+        xmljobs.append(getXMLForJob(raw_yaml_data, registry, job))
+    return xmljobs
+
+def getXMLForJob(raw_yaml_data, registry, job):
+    kind = job.get('project-type', 'freestyle')
+
+    faux_parser = FauxParser()
+    setattr(faux_parser, "registry", registry)
+    setattr(faux_parser, "data", raw_yaml_data)
+
+    for ep in pkg_resources.iter_entry_points(
+            group='jenkins_jobs.projects', name=kind):
+        Mod = ep.load()
+        mod = Mod(registry)
+        xml = mod.root_xml(job)
+        gen_xml(faux_parser, xml, job)
+        xmljob = XmlJob(xml, job['name'])
+        return xmljob
+
+
+def gen_xml(parser, xml, data):
+    for module in parser.registry.modules:
+        if hasattr(module, 'gen_xml'):
+            module.gen_xml(parser, xml, data)
 
 
 class ModuleRegistry(object):
@@ -496,7 +518,8 @@ class ModuleRegistry(object):
             func(parser, xml_parent, component_data)
         else:
             # Otherwise, see if it's defined as a macro
-            component = parser.data.get(component_type, {}).get(name)
+            thing = parser.data.get(component_type, {})
+            component = thing.get(name)
             if component:
                 for b in component[component_list_type]:
                     # Pass component_data in as template data to this function
@@ -706,11 +729,11 @@ class Builder(object):
     def update_job(self, input_fn, names=None, output=None):
         self.load_files(input_fn)
         self.parser.expandYaml(names)
-        self.parser.generateXML()
+        xmljobs = generateXML(self.parser.data, self.parser.registry, self.parser.jobs)
 
-        self.parser.xml_jobs.sort(key=operator.attrgetter('name'))
+        xmljobs.sort(key=operator.attrgetter('name'))
 
-        for job in self.parser.xml_jobs:
+        for job in xmljobs:
             if names and not matches(job.name, names):
                 continue
             if output:
@@ -753,4 +776,4 @@ class Builder(object):
                 self.cache.set(job.name, md5)
             else:
                 logger.debug("'{0}' has not changed".format(job.name))
-        return self.parser.xml_jobs
+        return xmljobs

@@ -28,7 +28,7 @@ import testtools
 import xml.etree.ElementTree as XML
 from six.moves import configparser
 import jenkins_jobs.local_yaml as yaml
-from jenkins_jobs.builder import XmlJob, YamlParser, ModuleRegistry
+from jenkins_jobs.builder import XmlJob, YamlParser, ModuleRegistry, generateXML
 from jenkins_jobs.modules import (project_flow,
                                   project_matrix,
                                   project_maven,
@@ -147,13 +147,13 @@ class SingleJobTestCase(BaseTestCase):
 
         # Generate the XML tree
         parser.expandYaml()
-        parser.generateXML()
+        xmljobs = generateXML(parser.data, parser.registry, parser.jobs)
 
-        parser.xml_jobs.sort(key=operator.attrgetter('name'))
+        xmljobs.sort(key=operator.attrgetter('name'))
 
         # Prettify generated XML
         pretty_xml = u"\n".join(job.output().decode('utf-8')
-                                for job in parser.xml_jobs)
+                                for job in xmljobs)
 
         self.assertThat(
             pretty_xml,
