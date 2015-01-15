@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_b763aaa9",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1106
+      },
+      "writtenOn": "2015-01-15T22:04:13Z",
+      "side": 1,
+      "message": "Shouldn\u0027t be \u0027notify-start\u0027 instead of \u0027start-notify\u0027?\n\nLater in the code you refer to start-notify, lines 117 onwards",
+      "revId": "ac3d0626b6b96c5a663be47461692dcbd5875f5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
