@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.cloudbees.plugins.flow.BuildFlow>
+  <dsl/>
+  <dslFile>/tmp/test.flow</dslFile>
+  <buildNeedsWorkspace>true</buildNeedsWorkspace>
+  <actions/>
+  <keepDependencies>false</keepDependencies>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <concurrentBuild>false</concurrentBuild>
+  <canRoam>true</canRoam>
+</com.cloudbees.plugins.flow.BuildFlow>
