@@ -37,6 +37,41 @@
     },
     {
       "key": {
+        "uuid": "3a961159_0195fc3e",
+        "filename": ".gitignore",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-16T19:11:23Z",
+      "side": 1,
+      "message": "Seems to be comment enough. I\u0027ve not too concerned about it, doesn\u0027t seem to be any harm in including it.",
+      "parentUuid": "3a961159_a85c841a",
+      "revId": "d1778d90e39907bcc0e9aac10dd6a99bf4762b46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_e198f06a",
+        "filename": "jenkins_jobs/modules/slack_notif.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-16T19:11:23Z",
+      "side": 1,
+      "message": "As suggested by Yolanda, worth including a link here similar to the other modules referencing the plugin.\n\nGuess have to use https://github.com/jenkinsci/slack-plugin since it\u0027s not yet listed in the Jenkins wiki.",
+      "revId": "d1778d90e39907bcc0e9aac10dd6a99bf4762b46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_3db0d7dc",
         "filename": "jenkins_jobs/modules/slack_notif.py",
         "patchSetId": 3
@@ -66,6 +101,58 @@
       "side": 1,
       "message": "I understand, I just thought that the if (not self.authToken): was enough and the add of the other if will add only verbosity.\n\nI can add it if you think it\u0027s better",
       "parentUuid": "3a961159_3db0d7dc",
+      "revId": "d1778d90e39907bcc0e9aac10dd6a99bf4762b46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_41c0e42a",
+        "filename": "jenkins_jobs/modules/slack_notif.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-16T19:11:23Z",
+      "side": 1,
+      "message": "Should be fine.",
+      "parentUuid": "3a961159_68a9bcdc",
+      "revId": "d1778d90e39907bcc0e9aac10dd6a99bf4762b46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_c1e3f4d5",
+        "filename": "jenkins_jobs/modules/slack_notif.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-16T19:11:23Z",
+      "side": 1,
+      "message": "Just spotted that the comment isn\u0027t right",
+      "revId": "d1778d90e39907bcc0e9aac10dd6a99bf4762b46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_a17c28ec",
+        "filename": "jenkins_jobs/modules/slack_notif.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-16T19:11:23Z",
+      "side": 1,
+      "message": "Forgot to ask, someone spotted that for the hipchat plugin this is not actually an error, since a blank or missing room means to use the global configuration default room.\n\nI believe a fix is in the line for this, but it might be worth confirming whether this is also true of slack.",
       "revId": "d1778d90e39907bcc0e9aac10dd6a99bf4762b46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
