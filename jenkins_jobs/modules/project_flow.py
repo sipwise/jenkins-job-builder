@@ -63,6 +63,9 @@ class Flow(jenkins_jobs.modules.base.Base):
             XML.SubElement(xml_parent, 'dsl').text = data['dsl']
         else:
             XML.SubElement(xml_parent, 'dsl').text = ''
+        if 'dslFile' in data:
+            XML.SubElement(xml_parent, 'dslFile').text = data['dslFile']
+            XML.SubElement(xml_parent, 'buildNeedsWorkspace').text = 'true'
 
         needs_workspace = data.get('needs-workspace', False)
         XML.SubElement(xml_parent, 'buildNeedsWorkspace').text = str(
