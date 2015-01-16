@@ -34,6 +34,24 @@
       "revId": "9922a3bc43a42dc8032c4a3d5e5fa5d05ddc1201",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_05051d79",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3884,
+      "author": {
+        "id": 13123
+      },
+      "writtenOn": "2015-01-16T08:31:21Z",
+      "side": 1,
+      "message": "Do you still think I should refer to the checkstyle module doc?",
+      "parentUuid": "5a890539_6592214d",
+      "revId": "9922a3bc43a42dc8032c4a3d5e5fa5d05ddc1201",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
