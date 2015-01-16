@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_8cba03df",
+        "filename": "tests/parameters/fixtures/node-param001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-16T19:32:37Z",
+      "side": 1,
+      "message": "Since false is the default value, seems like it would be better to set this to true (for the docs) and add a second yaml file to verify the default behaviour.",
+      "revId": "ff9bcae69ea92ec12b647d2b5121dba99dd1ef56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
