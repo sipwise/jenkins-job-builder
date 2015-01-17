@@ -43,7 +43,6 @@
         <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
         <authorOrCommitter>false</authorOrCommitter>
         <clean>false</clean>
-        <wipeOutWorkspace>true</wipeOutWorkspace>
         <pruneBranches>false</pruneBranches>
         <remotePoll>false</remotePoll>
         <gitTool>Default</gitTool>
@@ -56,7 +55,9 @@
         <scmName/>
         <useShallowClone>false</useShallowClone>
         <ignoreNotifyCommit>false</ignoreNotifyCommit>
-        <extensions/>
+        <extensions>
+          <hudson.plugins.git.extensions.impl.WipeWorkspace/>
+        </extensions>
       </scm>
     </scms>
   </scm>
