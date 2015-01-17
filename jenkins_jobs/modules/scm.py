@@ -74,8 +74,10 @@ remoteName/\*')
     :arg bool clean: Clean after checkout (default false)
     :arg bool fastpoll: Use fast remote polling (default false)
     :arg bool disable-submodules: Disable submodules (default false)
+        .. deprecated:: 1.1.1. Please use submodule extension.
     :arg bool recursive-submodules: Recursively update submodules (default
       false)
+        .. deprecated:: 1.1.1. Please use submodule extension.
     :arg bool use-author: Use author rather than committer in Jenkin's build
       changeset (default false)
     :arg str git-tool: The name of the Git installation to use (default
@@ -105,6 +107,20 @@ remoteName/\*')
                     create changelog against (default 'origin')
                 * **branch** (`string`) - name of the branch to create
                     create changelog against (default 'master')
+
+        :arg dict submodule:
+            :submodule:
+                * **disable** (`bool`) - By disabling support for submodules
+                    you can still keep using basic git plugin functionality
+                    and just have Jenkins to ignore submodules completely as
+                    if they didn't exist.
+                * **recursive** (`bool`) - Retrieve all submodules recursively
+                    (uses '--recursive' option which requires git>=1.6.5)
+                * **tracking** (`bool`) - Retrieve the tip of the configured
+                    branch in .gitmodules (Uses '--remote' option which
+                    requires git>=1.8.2)
+                * **timeout** (`int`) - Specify a timeout (in minutes) for
+                    submodules operations (default: 10).
 
         :arg str timeout: Timeout for git commands in minutes (optional)
 
@@ -242,6 +258,17 @@ remoteName/\*')
         change_branch = data['changelog-against'].get('branch', 'master')
         XML.SubElement(opts, 'compareRemote').text = change_remote
         XML.SubElement(opts, 'compareTarget').text = change_branch
+    if 'submodule' in data:
+        ext_name = 'hudson.plugins.git.extensions.impl.SubmoduleOption'
+        ext = XML.SubElement(exts_node, ext_name)
+        submodule_disable = str(data['submodule'].get('disable', False)).lower()
+        submodule_recursive = str(data['submodule'].get('recursive', False)).lower()
+        submodule_tracking = str(data['submodule'].get('tracking', False)).lower()
+        submodule_timeout = str(data['submodule'].get('timeout', 10))
+        XML.SubElement(ext, 'disableSubmodules').text = submodule_disable
+        XML.SubElement(ext, 'recursiveSubmodules').text = submodule_recursive
+        XML.SubElement(ext, 'trackingSubmodules').text = submodule_tracking
+        XML.SubElement(ext, 'timeout').text = submodule_timeout
     if 'timeout' in data:
         co = XML.SubElement(exts_node,
                             'hudson.plugins.git.extensions.impl.'
