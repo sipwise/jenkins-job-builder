@@ -29,9 +29,9 @@ import xml.etree.ElementTree as XML
 from six.moves import configparser
 import jenkins_jobs.local_yaml as yaml
 from jenkins_jobs.builder import (XmlJob,
-                                  YamlParser,
                                   ModuleRegistry,
                                   generateXML)
+from jenkins_jobs.yml.parser import YamlParser
 from jenkins_jobs.modules import (project_flow,
                                   project_matrix,
                                   project_maven,
@@ -115,7 +115,8 @@ class BaseTestCase(object):
         else:
             xml_project = XML.Element('project')
         parser = YamlParser()
-        pub = self.klass(ModuleRegistry({}))
+        parser.registry = ModuleRegistry({})
+        pub = self.klass(parser.registry)
 
         # Generate the XML tree directly with modules/general
         pub.gen_xml(parser, xml_project, yaml_content)
@@ -146,11 +147,12 @@ class SingleJobTestCase(BaseTestCase):
         else:
             config = None
         parser = YamlParser(config)
+        registry = ModuleRegistry(config)
         parser.parse(yaml_filepath)
 
         # Generate the XML tree
-        parser.expandYaml()
-        xmljobs = generateXML(parser.data, parser.registry, parser.jobs)
+        parser.expandYaml(registry)
+        xmljobs = generateXML(parser.data, registry, parser.jobs)
 
         xmljobs.sort(key=operator.attrgetter('name'))
 
