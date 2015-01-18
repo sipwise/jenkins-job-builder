@@ -112,7 +112,8 @@ class BaseTestCase(object):
         else:
             xml_project = XML.Element('project')
         parser = YamlParser()
-        pub = self.klass(ModuleRegistry({}))
+        parser.registry = ModuleRegistry({})
+        pub = self.klass(parser.registry)
 
         # Generate the XML tree directly with modules/general
         pub.gen_xml(parser, xml_project, yaml_content)
@@ -143,11 +144,12 @@ class SingleJobTestCase(BaseTestCase):
         else:
             config = None
         parser = YamlParser(config)
+        registry = ModuleRegistry(config)
         parser.parse(yaml_filepath)
 
         # Generate the XML tree
-        parser.expandYaml()
-        xmljobs = generateXML(parser.data, parser.registry, parser.jobs)
+        parser.expandYaml(registry)
+        xmljobs = generateXML(parser.data, registry, parser.jobs)
 
         xmljobs.sort(key=operator.attrgetter('name'))
 
