@@ -23,7 +23,6 @@
     <recursiveSubmodules>false</recursiveSubmodules>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
     <authorOrCommitter>false</authorOrCommitter>
-    <clean>false</clean>
     <pruneBranches>false</pruneBranches>
     <remotePoll>false</remotePoll>
     <gitTool>Default</gitTool>
