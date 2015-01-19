@@ -350,41 +350,7 @@ class Builder(object):
         self.global_config = config
         self.ignore_cache = ignore_cache
         self.registry = ModuleRegistry(self.global_config)
-
-    def load_files(self, fn):
         self.parser = YamlParser(self.global_config)
-
-        # handle deprecated behavior
-        if not hasattr(fn, '__iter__'):
-            logger.warning(
-                'Passing single elements for the `fn` argument in '
-                'Builder.load_files is deprecated. Please update your code '
-                'to use a list as support for automatic conversion will be '
-                'removed in a future version.')
-            fn = [fn]
-
-        files_to_process = []
-        for path in fn:
-            if os.path.isdir(path):
-                files_to_process.extend([os.path.join(path, f)
-                                         for f in os.listdir(path)
-                                         if (f.endswith('.yml')
-                                             or f.endswith('.yaml'))])
-            else:
-                files_to_process.append(path)
-
-        for in_file in files_to_process:
-            # use of ask-for-permissions instead of ask-for-forgiveness
-            # performs better when low use cases.
-            if hasattr(in_file, 'name'):
-                fname = in_file.name
-            else:
-                fname = in_file
-            logger.debug("Parsing YAML file {0}".format(fname))
-            if hasattr(in_file, 'read'):
-                self.parser.parse_fp(in_file)
-            else:
-                self.parser.parse(in_file)
 
     def delete_old_managed(self, keep):
         jobs = self.jenkins.get_jobs()
@@ -400,7 +366,7 @@ class Builder(object):
 
     def delete_job(self, glob_name, fn=None):
         if fn:
-            self.load_files(fn)
+            self.parser.load_files(fn)
             self.parser.expandYaml(self.registry, glob_name)
             jobs = [j['name']
                     for j in self.parser.jobs
@@ -421,7 +387,7 @@ class Builder(object):
             self.delete_job(job['name'])
 
     def update_job(self, input_fn, names=None, output=None):
-        self.load_files(input_fn)
+        self.parser.load_files(input_fn)
         self.parser.expandYaml(self.registry, names)
         xmljobs = generateXML(self.parser.data,
                               self.registry, self.parser.jobs)

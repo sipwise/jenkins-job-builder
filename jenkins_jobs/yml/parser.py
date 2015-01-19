@@ -21,6 +21,7 @@ import logging
 import copy
 import itertools
 import re
+import os
 from pprint import pformat
 
 import six
@@ -321,3 +322,40 @@ class YamlParser(object):
         # The \n\n is not hard coded, because they get stripped if the
         # project does not otherwise have a description.
         return "\n\n" + MAGIC_MANAGE_STRING
+
+    def load_files(self, file_list):
+        """
+        Given a list of paths, load and parse all yaml files in each path.
+        """
+
+        # handle deprecated behavior
+        if not hasattr(file_list, '__iter__'):
+            logger.warning(
+                'Passing single elements for the `file_list` argument in '
+                'Builder.load_files is deprecated. Please update your code '
+                'to use a list as support for automatic conversion will be '
+                'removed in a future version.')
+            file_list = [file_list]
+
+        files_to_process = []
+        for path in file_list:
+            if os.path.isdir(path):
+                files_to_process.extend([os.path.join(path, f)
+                                         for f in os.listdir(path)
+                                         if (f.endswith('.yml')
+                                             or f.endswith('.yaml'))])
+            else:
+                files_to_process.append(path)
+
+        for in_file in files_to_process:
+            # use of ask-for-permissions instead of ask-for-forgiveness
+            # performs better when low use cases.
+            if hasattr(in_file, 'name'):
+                fname = in_file.name
+            else:
+                fname = in_file
+            logger.debug("Parsing YAML file {0}".format(fname))
+            if hasattr(in_file, 'read'):
+                self.parse_fp(in_file)
+            else:
+                self.parse(in_file)
