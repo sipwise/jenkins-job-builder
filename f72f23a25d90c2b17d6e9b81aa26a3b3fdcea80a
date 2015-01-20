@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_114d2c73",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-01-20T20:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_1036dde8",
+      "revId": "f72f23a25d90c2b17d6e9b81aa26a3b3fdcea80a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_6dde6edc",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-20T12:23:08Z",
       "side": 1,
       "message": "I know both styles are present, but could you convert these to follow this one:\n\n XML.SubElement(ext, \u0027disableSubmodules\u0027).text \u003d str(\n     data[\u0027submodule\u0027].get(\u0027disable\u0027, False)).lower()\n\nIt appears to be more prevalent and I\u0027d prefer to try and stick to one style as much as possible.",
+      "revId": "f72f23a25d90c2b17d6e9b81aa26a3b3fdcea80a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_6ecf6fb1",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-01-20T20:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_6dde6edc",
       "revId": "f72f23a25d90c2b17d6e9b81aa26a3b3fdcea80a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
