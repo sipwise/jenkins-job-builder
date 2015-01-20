@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_d07e151b",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-20T12:37:09Z",
+      "side": 1,
+      "message": "Seems more concise and is still seems clear to write:\n\n XML.SubElement(param, \u0027name\u0027).text \u003d str(bool_param[\u0027name\u0027])\n XML.SubElement(param, \u0027value\u0027).text \u003d str(\n     bool_param.get(\u0027value\u0027, False)).lower()",
+      "revId": "a7c36da89a83f7db2eba2b49b6167368c53e2b97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
