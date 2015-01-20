@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_1a78be2b",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-20T11:38:12Z",
+      "side": 1,
+      "message": "This appears to be an optional parameter, could you add the \u0027(optional)\u0027 after it, see other examples through out this file.\n\nWould also be good to have a second test to show that the artifactPattern and Patterns tags are still added although empty.",
+      "revId": "a0c96b98ba8330f057387111c19b6f9b5df21da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_facbf2a1",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-20T11:38:12Z",
+      "side": 1,
+      "message": "Need to use a single colon here to format the example below correctly. \u0027::\u0027 for inline \u0027:\u0027 when followed by an include.",
+      "revId": "a0c96b98ba8330f057387111c19b6f9b5df21da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_da5476c8",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-20T11:38:12Z",
+      "side": 1,
+      "message": "Since you\u0027ll need to fix the above, please change this to wrap using the start so as to avoid breaking the line unnecessarily.\n\n         .. literalinclude:: \\\n             ../../tests/wrappers/fixtures/m2-repository-cleanup.yaml",
+      "revId": "a0c96b98ba8330f057387111c19b6f9b5df21da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7a6542ae",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-20T11:38:12Z",
+      "side": 1,
+      "message": "Please avoid setting the version part of the plugin attribute.",
+      "revId": "a0c96b98ba8330f057387111c19b6f9b5df21da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
