@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_adde960e",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-20T12:29:56Z",
+      "side": 0,
+      "message": "Removing this would break backwards compatibility with the older installations. Is it possible to leave it in and for the XML to work correctly with the newer versions?",
+      "revId": "f72f23a25d90c2b17d6e9b81aa26a3b3fdcea80a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

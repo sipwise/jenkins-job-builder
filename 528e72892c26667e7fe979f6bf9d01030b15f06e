@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_4dee12b7",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-20T12:29:56Z",
+      "side": 1,
+      "message": "more concise:\n\n wipe_workspace \u003d str(data.get(\u0027wipe-workspace\u0027, True)).lower()",
+      "revId": "528e72892c26667e7fe979f6bf9d01030b15f06e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
