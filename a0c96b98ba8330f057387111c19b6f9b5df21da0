@@ -67,6 +67,24 @@
       "revId": "a0c96b98ba8330f057387111c19b6f9b5df21da0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_dfcc56c1",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-01-20T18:11:34Z",
+      "side": 1,
+      "message": "What should I set here then? \n\nJust: m2repo.set(\"plugin\", \"m2-repo-reaper\")\n?",
+      "parentUuid": "3a961159_7a6542ae",
+      "revId": "a0c96b98ba8330f057387111c19b6f9b5df21da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
