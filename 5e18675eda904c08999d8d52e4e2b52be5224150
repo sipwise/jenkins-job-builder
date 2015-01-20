@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_94bbafe3",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-01-20T03:01:47Z",
+      "side": 1,
+      "message": "Sounds good, one problem I have with this change though is that the line length becomes \u003e79 characters failing the pep8 checker.\n\nHow do get past the pep8 checker?",
+      "parentUuid": "3a961159_94380fa1",
+      "revId": "5e18675eda904c08999d8d52e4e2b52be5224150",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_f46dd39b",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-20T02:54:35Z",
       "side": 1,
       "message": "This is kinda confusing...why are there two different XML elements that get the patterns? I\u0027m mostly just curious, I don\u0027t see anything inherently wrong with this..",
+      "revId": "5e18675eda904c08999d8d52e4e2b52be5224150",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d427f761",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-01-20T03:01:47Z",
+      "side": 1,
+      "message": "I don\u0027t know but this is the XML that the plugin produces. I\u0027m creating this patch based on the output of the XML produced by the plugin when I configure this setting in the UI. Not knowing the internals of the Jenkins Plugin itself I\u0027d rather make sure that we produce the same configuration that the plugin expects to ensure it works correctly.",
+      "parentUuid": "3a961159_f46dd39b",
       "revId": "5e18675eda904c08999d8d52e4e2b52be5224150",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
