@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_eb224653",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-20T13:04:46Z",
+      "side": 1,
+      "message": "These should be converted to bools with default values, it doesn\u0027t make sense to have required and be strings when they can only contain true or false.\n\nAnd although there is a good mix of styles lets just standardize on avoiding the \u0027\\\u0027 at the end and instead use:\n\n XML.SubElement(patch_created, \u0027excludeNoCodeChange\u0027).text \u003d str(\n     patchset_created_event.get(\u0027exclude-no-code-change\u0027, False)).lower()",
+      "revId": "37be9c8901e782c77522b4661ddfa5bd26866747",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ab33dec2",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-20T13:04:46Z",
+      "side": 1,
+      "message": "Seems like these should be bools, with a true or false default, which makes more sense since they likely should be optional instead of required.",
+      "revId": "37be9c8901e782c77522b4661ddfa5bd26866747",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
