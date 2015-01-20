@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_94380fa1",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-01-20T02:54:35Z",
+      "side": 1,
+      "message": "For the example you can instead use:\n.. literalinclude:: ../../tests/wrappers/fixtures/m2-repository-cleanup.yaml\n\nThat way if the yaml fixture ever changes the documentation changes accordingly.",
+      "revId": "5e18675eda904c08999d8d52e4e2b52be5224150",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f46dd39b",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-01-20T02:54:35Z",
+      "side": 1,
+      "message": "This is kinda confusing...why are there two different XML elements that get the patterns? I\u0027m mostly just curious, I don\u0027t see anything inherently wrong with this..",
+      "revId": "5e18675eda904c08999d8d52e4e2b52be5224150",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
