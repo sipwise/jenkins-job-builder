@@ -16,6 +16,24 @@
       "revId": "f72f23a25d90c2b17d6e9b81aa26a3b3fdcea80a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ff059279",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-01-20T18:21:24Z",
+      "side": 0,
+      "message": "I think we could however how much older do we need to go back and support?\n\nFWIW The Jenkins LTS release I\u0027ve been using to test this supports both formats.",
+      "parentUuid": "3a961159_adde960e",
+      "revId": "f72f23a25d90c2b17d6e9b81aa26a3b3fdcea80a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
