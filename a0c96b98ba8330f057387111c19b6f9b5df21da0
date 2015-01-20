@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_0bddfd14",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-01-20T19:56:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_1a78be2b",
+      "revId": "a0c96b98ba8330f057387111c19b6f9b5df21da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_facbf2a1",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_2be2b9d5",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-01-20T19:56:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_facbf2a1",
+      "revId": "a0c96b98ba8330f057387111c19b6f9b5df21da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_da5476c8",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2015-01-20T11:38:12Z",
       "side": 1,
       "message": "Since you\u0027ll need to fix the above, please change this to wrap using the start so as to avoid breaking the line unnecessarily.\n\n         .. literalinclude:: \\\n             ../../tests/wrappers/fixtures/m2-repository-cleanup.yaml",
+      "revId": "a0c96b98ba8330f057387111c19b6f9b5df21da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_4be705e5",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-01-20T19:56:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_da5476c8",
       "revId": "a0c96b98ba8330f057387111c19b6f9b5df21da0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -82,6 +136,24 @@
       "side": 1,
       "message": "What should I set here then? \n\nJust: m2repo.set(\"plugin\", \"m2-repo-reaper\")\n?",
       "parentUuid": "3a961159_7a6542ae",
+      "revId": "a0c96b98ba8330f057387111c19b6f9b5df21da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_6becc1c8",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-01-20T19:56:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_dfcc56c1",
       "revId": "a0c96b98ba8330f057387111c19b6f9b5df21da0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
