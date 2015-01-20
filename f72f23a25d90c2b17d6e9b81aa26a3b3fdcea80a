@@ -34,6 +34,24 @@
       "revId": "f72f23a25d90c2b17d6e9b81aa26a3b3fdcea80a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_343136a3",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-01-20T21:25:36Z",
+      "side": 0,
+      "message": "I added back wipe-workspace so that it co-exists with the new extension.",
+      "parentUuid": "3a961159_ff059279",
+      "revId": "f72f23a25d90c2b17d6e9b81aa26a3b3fdcea80a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
