@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_3deac274",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-01-20T19:14:54Z",
+      "side": 1,
+      "message": "Darragh, the problem with your suggestion is it puts us over the max line length limit of 79 characters. For the line you\u0027re using as an example it is already at 78 characters. If i added the str( to the line as you suggest it puts us at 81 characters failing the PEP8 checker.\n\nIt\u0027s frustrating as I feel this project\u0027s max line limit is too low and causes developers to have to write code in such a way that causes it to be less readable.",
+      "parentUuid": "3a961159_eb224653",
+      "revId": "37be9c8901e782c77522b4661ddfa5bd26866747",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_ab33dec2",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-20T13:04:46Z",
       "side": 1,
       "message": "Seems like these should be bools, with a true or false default, which makes more sense since they likely should be optional instead of required.",
+      "revId": "37be9c8901e782c77522b4661ddfa5bd26866747",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_dd91bef8",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-01-20T19:14:54Z",
+      "side": 1,
+      "message": "I will make the change to bool.",
+      "parentUuid": "3a961159_ab33dec2",
       "revId": "37be9c8901e782c77522b4661ddfa5bd26866747",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
