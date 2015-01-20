@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_a2685189",
+        "filename": "doc/source/slack.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-01-20T18:35:07Z",
+      "side": 1,
+      "message": "nit: too many \u0027\u003d\u0027 here.",
+      "revId": "dfd91bb98f73857251ef53f4de21be6fa5d710bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
