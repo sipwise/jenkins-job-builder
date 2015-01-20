@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_0d47aa1f",
+        "filename": "jenkins_jobs/modules/project_flow.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-20T12:00:46Z",
+      "side": 1,
+      "message": "Don\u0027t forget to remove the second colon here when switching the below example to be brought in via a literalinclude.",
+      "revId": "075493b13b912dce49655348d4e07ec67332940c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_cd3da290",
+        "filename": "jenkins_jobs/modules/project_flow.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-20T12:00:46Z",
+      "side": 1,
+      "message": "With this update, would you mind extracting this example and place it as a test under tests/yamlparser/fixtures to be able to use the full syntax. Then add your dslFile entry to this as well so that the doc example will be based on the unit test.\n\nThere are lots of examples of how to use literalinclude to take care of this.",
+      "revId": "075493b13b912dce49655348d4e07ec67332940c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
