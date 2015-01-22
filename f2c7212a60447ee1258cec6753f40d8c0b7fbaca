@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_42eebfb5",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-01-22T15:22:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_2c8c4f7f",
+      "revId": "f2c7212a60447ee1258cec6753f40d8c0b7fbaca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_0cf233d2",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_22f3739f",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-01-22T15:22:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_0cf233d2",
+      "revId": "f2c7212a60447ee1258cec6753f40d8c0b7fbaca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_cc72eb7b",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2015-01-22T12:45:03Z",
       "side": 1,
       "message": "Probably should switch this around. Put it before the if statement above. At this point should say:\n\n logger.warn(\"\u0027{0}\u0027 is deprecated and will be ignored in favour of \u0027submodule\u0027\".format(optname))\n\nOtherwise they may not realise that no only are the only settings deprecated, they won\u0027t be applied once they define the submodule section.",
+      "revId": "f2c7212a60447ee1258cec6753f40d8c0b7fbaca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_e2f88b7e",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-01-22T15:22:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_cc72eb7b",
       "revId": "f2c7212a60447ee1258cec6753f40d8c0b7fbaca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
