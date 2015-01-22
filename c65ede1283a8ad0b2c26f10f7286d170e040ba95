@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_bb214aa1",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-22T16:22:29Z",
+      "side": 1,
+      "message": "I like your solution to the line length problem ;)",
+      "revId": "c65ede1283a8ad0b2c26f10f7286d170e040ba95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
