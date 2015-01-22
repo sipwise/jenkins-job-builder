@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_2c8c4f7f",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-22T12:45:03Z",
+      "side": 1,
+      "message": "you\u0027re looping here unnecessarily, since you\u0027ve already checked if optname is in submodule_cfgs, you only need to check if optname is in data.\n\nso this section would be (from top if):\n\n if optname in submodule_cfgs and optname in data:\n     if \u0027submodule\u0027 in data:\n         # ignoring this setting warning\n         logger.warn(....)\n         continue\n\n     # deprecated warning, please convert\n     logger.warn(....)",
+      "revId": "f2c7212a60447ee1258cec6753f40d8c0b7fbaca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_0cf233d2",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-22T12:45:03Z",
+      "side": 1,
+      "message": "This just needs to say:\n\n logger.warn(\"\u0027{0}\u0027 is deprecated, please convert to use the \"\n             \"\u0027submodule\u0027 section instead as support for this top \"\n             \"level option will be removed in a future release\"\n             .format(optname))\n\nBtw, if you use double quotes to surround the message, you won\u0027t have to escape the single quotes.",
+      "revId": "f2c7212a60447ee1258cec6753f40d8c0b7fbaca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_cc72eb7b",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-22T12:45:03Z",
+      "side": 1,
+      "message": "Probably should switch this around. Put it before the if statement above. At this point should say:\n\n logger.warn(\"\u0027{0}\u0027 is deprecated and will be ignored in favour of \u0027submodule\u0027\".format(optname))\n\nOtherwise they may not realise that no only are the only settings deprecated, they won\u0027t be applied once they define the submodule section.",
+      "revId": "f2c7212a60447ee1258cec6753f40d8c0b7fbaca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
