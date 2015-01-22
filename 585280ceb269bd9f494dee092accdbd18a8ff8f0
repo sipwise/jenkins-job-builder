@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_608f33cd",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-22T16:17:22Z",
+      "side": 1,
+      "message": "Missing the \u0027and optname in data\u0027 as this will now fire the deprecation warning even if the user hasn\u0027t set either of \u0027disable-submodules\u0027 or \u0027recursive-submodules\u0027. Needs the extra \u0027and\u0027 to catch this.",
+      "revId": "585280ceb269bd9f494dee092accdbd18a8ff8f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
