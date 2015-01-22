@@ -34,6 +34,24 @@
       "revId": "585280ceb269bd9f494dee092accdbd18a8ff8f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_3b6d5a99",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-01-22T16:25:17Z",
+      "side": 1,
+      "message": "Actually I disagree with this change after running the test suite again with my changes.\n\nThis change adds back the sections:\n\n    +     \u003cdisableSubmodules\u003efalse\u003c/disableSubmodules\u003e\n    +     \u003crecursiveSubmodules\u003efalse\u003c/recursiveSubmodules\u003e\n\nSo my original code removes these unnecessary sections if the user configures the \"submodule\" extension but does not list the old configuration setings.\n\nHowever after adding the \"and\" into the if statement these sections are no longer ignored in my test and are added to the final XML.",
+      "parentUuid": "1a930d6b_5b3066e8",
+      "revId": "585280ceb269bd9f494dee092accdbd18a8ff8f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
