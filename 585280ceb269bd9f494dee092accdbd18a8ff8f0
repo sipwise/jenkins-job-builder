@@ -52,6 +52,24 @@
       "revId": "585280ceb269bd9f494dee092accdbd18a8ff8f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_bbe86ab5",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-22T16:34:37Z",
+      "side": 1,
+      "message": "hmm, in that case need the \u0027if\u0027 statement just to wrap the second warning message so, otherwise it\u0027s always outputted since \u0027disable-submodules\u0027 \u0026 \u0027recursive-submodules\u0027 are always encountered on every iteration.\n\nThat should mean the message only appears if the user explicitly set these, the sections disappear if they moved to the new submodule format, and are still set by default as originally defined without causing any extra noise until we\u0027re ready to strip them out.",
+      "parentUuid": "1a930d6b_3b6d5a99",
+      "revId": "585280ceb269bd9f494dee092accdbd18a8ff8f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
