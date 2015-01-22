@@ -52,6 +52,24 @@
       "revId": "f72f23a25d90c2b17d6e9b81aa26a3b3fdcea80a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_aca3df4d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-22T12:55:58Z",
+      "side": 0,
+      "message": "If it\u0027s been supported in LTS for longer than 12 months then could probably drop it. Just wasn\u0027t sure how far back support for the newer format exists.",
+      "parentUuid": "1a930d6b_343136a3",
+      "revId": "f72f23a25d90c2b17d6e9b81aa26a3b3fdcea80a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
