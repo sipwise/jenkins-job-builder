@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_82cb471d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-01-22T15:27:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_d8af01e2",
+      "revId": "c15bebc849fc1b4087b492eafa963f2598e2e556",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_78d44d47",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-22T14:07:09Z",
       "side": 1,
       "message": "I think once the support for plugin versions is merged (very close) we can look at handling the \u0027wipe-workspace\u0027 setting in a version specific manner if we don\u0027t just remove this entry.",
+      "revId": "c15bebc849fc1b4087b492eafa963f2598e2e556",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_424a3fad",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-01-22T15:27:28Z",
+      "side": 1,
+      "message": "Great! Do you have a link to the bug or Gerrit patch I can follow regarding this change?",
+      "parentUuid": "1a930d6b_78d44d47",
       "revId": "c15bebc849fc1b4087b492eafa963f2598e2e556",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
