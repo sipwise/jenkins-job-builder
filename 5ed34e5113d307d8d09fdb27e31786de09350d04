@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_56e11d99",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-22T17:11:36Z",
+      "side": 1,
+      "message": "Wondering if this should be stripped from what is sent into this function instead of modifying it here?",
+      "revId": "5ed34e5113d307d8d09fdb27e31786de09350d04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_b1588b33",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-22T17:11:36Z",
+      "side": 1,
+      "message": "Ok, so this definitely solves the problem, just wondering if it should really be solved in the deep_format by supporting the ability to not require everything to be interpolated if passed a third parameter that toggles the behaviour?\n\nHave a look at Iad9f0e522725e6fd6681cd62d3e36f69baf09585.",
+      "revId": "5ed34e5113d307d8d09fdb27e31786de09350d04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
