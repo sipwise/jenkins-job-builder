@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_e6f428d1",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-22T11:51:59Z",
+      "side": 1,
+      "message": "With the more concise code, forgot to remove the above two lines, hence the pep8 error on unused variables.",
+      "revId": "5301f3d86bfcbade43f6985a74c392176873dcfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
