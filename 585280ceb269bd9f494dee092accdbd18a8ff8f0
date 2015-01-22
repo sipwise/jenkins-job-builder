@@ -16,6 +16,24 @@
       "revId": "585280ceb269bd9f494dee092accdbd18a8ff8f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_5b3066e8",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-01-22T16:19:23Z",
+      "side": 1,
+      "message": "Woops, sorry totally missed that. I\u0027ll fix it shortly.",
+      "parentUuid": "1a930d6b_608f33cd",
+      "revId": "585280ceb269bd9f494dee092accdbd18a8ff8f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
