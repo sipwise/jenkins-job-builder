@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_8f20daf8",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-22T11:24:15Z",
+      "side": 1,
+      "message": "Something about this doesn\u0027t seem right given that you\u0027ve gone to the trouble of using pkg_resources.parse_version to deal with string style versions.\n\nMaybe it should just be:\n\n m \u003d re.match(\"(.*)-(?:SNAPSHOT|BETA)\", version)\n\n if m:\n     version\u003d\"{0}.preview\".format(m.group(1))\n\nor just in one line:\n\n plugin_info[\u0027version\u0027] \u003d re.sub(r\u0027(.*)-(?:SNAPSHOT|BETA)\u0027,\n                                 r\u0027\\g\u003c1\u003e.preview\u0027, version)",
+      "revId": "7cd2cbae078732b4ee02ac585681163215585193",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_af4bd6ae",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-22T11:24:15Z",
+      "side": 1,
+      "message": "Unless you\u0027re testing the output, you shouldn\u0027t need this.",
+      "revId": "7cd2cbae078732b4ee02ac585681163215585193",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_0fd22ad2",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-22T11:24:15Z",
+      "side": 1,
+      "message": "Believe you can drop the \u0027console_out\u0027 argument, assuming all you care about is to avoid spurious output triggered by the test from being printed to the console during the test.",
+      "revId": "7cd2cbae078732b4ee02ac585681163215585193",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_2fee0689",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-22T11:24:15Z",
+      "side": 1,
+      "message": "Probably only need this last line within the context of mock.patch().",
+      "revId": "7cd2cbae078732b4ee02ac585681163215585193",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_cf9582e5",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-22T11:24:15Z",
+      "side": 1,
+      "message": "See above comments.",
+      "revId": "7cd2cbae078732b4ee02ac585681163215585193",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_0fa06a42",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-22T11:24:15Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "7cd2cbae078732b4ee02ac585681163215585193",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_4f8992c9",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-22T11:24:15Z",
+      "side": 1,
+      "message": "And here, probably don\u0027t need any of this inside the mock context.",
+      "revId": "7cd2cbae078732b4ee02ac585681163215585193",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_6fad6e31",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-22T11:24:15Z",
+      "side": 1,
+      "message": "FYI \u0027self.assertIn(\"must contain a Yaml list\", str(e))\u0027?\n\nNot important to fix, just noting that you probably didn\u0027t need the regex version.",
+      "revId": "7cd2cbae078732b4ee02ac585681163215585193",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_4f543254",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-22T11:24:15Z",
+      "side": 1,
+      "message": "One scenario that I think should be added:\n\n(\u0027s13\u0027, dict(v1\u003d\u00271.0a-SNAPSHOT\u0027, op\u0027__lt__\u0027, v2\u003d\u00271.0a\u0027))",
+      "revId": "7cd2cbae078732b4ee02ac585681163215585193",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
