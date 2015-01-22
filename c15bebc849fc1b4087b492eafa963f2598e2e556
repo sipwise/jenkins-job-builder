@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_d8af01e2",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-22T14:07:09Z",
+      "side": 1,
+      "message": "Seems unnecessary since the \u0027extensions\u0027 aren\u0027t under a separate section in the yaml.\n\nI think it\u0027s ok to simply move this down in docstring to the extensions section without marking it deprecated in the documentation.",
+      "revId": "c15bebc849fc1b4087b492eafa963f2598e2e556",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_78d44d47",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-22T14:07:09Z",
+      "side": 1,
+      "message": "I think once the support for plugin versions is merged (very close) we can look at handling the \u0027wipe-workspace\u0027 setting in a version specific manner if we don\u0027t just remove this entry.",
+      "revId": "c15bebc849fc1b4087b492eafa963f2598e2e556",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
