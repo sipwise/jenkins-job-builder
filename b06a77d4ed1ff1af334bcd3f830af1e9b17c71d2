@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_9f4ffabc",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-23T11:50:18Z",
+      "side": 1,
+      "message": "This is a little on the verbose side. Just needs enough to be able to correctly associate the setting with the corresponding option in Jenkins. For exact behaviour of how these options affect builds, people should still be referring to the Jenkins documentation and help tips.\n\n **after** (`bool`) - Clean the workspace after checkout\n **before** (`bool`) - Clean the workspace before checkout\n\nShould be sufficient.",
+      "revId": "b06a77d4ed1ff1af334bcd3f830af1e9b17c71d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_712d4346",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-23T11:50:18Z",
+      "side": 1,
+      "message": "Log a deprecation warning so that end users are aware?",
+      "revId": "b06a77d4ed1ff1af334bcd3f830af1e9b17c71d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
