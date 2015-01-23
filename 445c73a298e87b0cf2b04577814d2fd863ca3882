@@ -16,6 +16,24 @@
       "revId": "445c73a298e87b0cf2b04577814d2fd863ca3882",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_15112b05",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-23T12:29:03Z",
+      "side": 0,
+      "message": "That\u0027s a reasonable point. There are a few examples of how to add a deprecated note.",
+      "parentUuid": "3a961159_18bb7b10",
+      "revId": "445c73a298e87b0cf2b04577814d2fd863ca3882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a930d6b_35b0e7f3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-23T12:29:03Z",
+      "side": 1,
+      "message": "minor nit on the whitespace (since there is something else to be fixed)",
+      "revId": "ac3d0626b6b96c5a663be47461692dcbd5875f5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_d5896327",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-23T12:29:03Z",
+      "side": 1,
+      "message": "Missing a space after the \u0027.\u0027 (again only since there is a tweak to be made).",
+      "revId": "ac3d0626b6b96c5a663be47461692dcbd5875f5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_b763aaa9",
         "filename": "jenkins_jobs/modules/hipchat_notif.py",
         "patchSetId": 10
@@ -13,6 +47,24 @@
       "writtenOn": "2015-01-15T22:04:13Z",
       "side": 1,
       "message": "Shouldn\u0027t be \u0027notify-start\u0027 instead of \u0027start-notify\u0027?\n\nLater in the code you refer to start-notify, lines 117 onwards",
+      "revId": "ac3d0626b6b96c5a663be47461692dcbd5875f5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_5521f34b",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-23T12:29:03Z",
+      "side": 1,
+      "message": "\u0027notify-start\u0027 is the preferred name to align with all the other settings, but it also supports \u0027start-notify\u0027 in the code as a fallback if \u0027notify-start\u0027 is not set.\n\nJoshua\u0027s suggestion makes sense though, could leave the old docstring in place and just add a deprecated note to it.",
+      "parentUuid": "3a961159_b763aaa9",
       "revId": "ac3d0626b6b96c5a663be47461692dcbd5875f5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
