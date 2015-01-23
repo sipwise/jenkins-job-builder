@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_eda6930f",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-01-23T14:33:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_9f4ffabc",
+      "revId": "b06a77d4ed1ff1af334bcd3f830af1e9b17c71d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_712d4346",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-23T11:50:18Z",
       "side": 1,
       "message": "Log a deprecation warning so that end users are aware?",
+      "revId": "b06a77d4ed1ff1af334bcd3f830af1e9b17c71d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_0daaffd3",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-01-23T14:33:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_712d4346",
       "revId": "b06a77d4ed1ff1af334bcd3f830af1e9b17c71d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
