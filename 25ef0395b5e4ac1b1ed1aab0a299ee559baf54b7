@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_ba9be470",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1508,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-23T12:20:09Z",
+      "side": 1,
+      "message": "If this is required, then not setting it should raise an exception. Also since we don\u0027t use \u0027**\u0027 around it anywhere else, think it\u0027s better to match up with existing documentation by just having \u0027(required).\n\nAlso to avoid needing to match exactly the Jenkins plugin documentation, skip adding what the final result will be unless it\u0027s something that is being added by the code below. It\u0027s reasonable to expect that users to refer to the plugin documentation for how the settings should affect their builds and that JJB\u0027s documentation isn\u0027t there to tell them that, but to tell them which options in Jenkins these settings control.\n\nSame for the entries below.",
+      "revId": "25ef0395b5e4ac1b1ed1aab0a299ee559baf54b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_7af41c87",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1548,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-23T12:20:09Z",
+      "side": 1,
+      "message": "Try to match the existing style closely so that it\u0027s easy for people to skim the docs, please use \u0027(default make)\u0027 or \u0027(default: make)\u0027.\n\nSame for the other options.",
+      "revId": "25ef0395b5e4ac1b1ed1aab0a299ee559baf54b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_fa4e4c95",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1575,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-23T12:20:09Z",
+      "side": 1,
+      "message": "Not clear if is this required or not?\n\nYou\u0027ve removed the defaultdict because it would make it impossible to spot when required options were not set by the yaml.\n\nSo it seems this should probably use something like the following (if required):\n\n try:\n     XML.SubElement(cmake, \u0027sourceDir\u0027).text \u003d data[\u0027source-dir\u0027]\n except KeyError:\n     raise JenkinsJobsException(\"\u0027source-dir\u0027 must be set for cmake builder\")\n\nOr it should say in the docstring \"(default \u0027\u0027)\" alongside the option.",
+      "revId": "25ef0395b5e4ac1b1ed1aab0a299ee559baf54b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_da199089",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1585,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-23T12:20:09Z",
+      "side": 1,
+      "message": "Same here, should either raise an exception if the user forgot to set it, or say there is a default value of \u0027\u0027 in the docstring above.",
+      "revId": "25ef0395b5e4ac1b1ed1aab0a299ee559baf54b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_da38b0a2",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1612,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-23T12:20:09Z",
+      "side": 1,
+      "message": "This isn\u0027t quite right:\n\n clean_build_dir.text \u003d str(data.get(\u0027clean-build-dir\u0027, False)).lower()",
+      "revId": "25ef0395b5e4ac1b1ed1aab0a299ee559baf54b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_3a461424",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1616,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-23T12:20:09Z",
+      "side": 1,
+      "message": "Same problem here.",
+      "revId": "25ef0395b5e4ac1b1ed1aab0a299ee559baf54b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_f52adf7c",
+        "filename": "tests/builders/fixtures/cmake-common.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-23T12:20:09Z",
+      "side": 1,
+      "message": "To see the problem with the \"data.get(\u0027clean-build-dir\u0027 or False)\" you currently have, remove these two settings above and compare the output.",
+      "revId": "25ef0395b5e4ac1b1ed1aab0a299ee559baf54b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_55149343",
+        "filename": "tests/builders/fixtures/cmake-complete.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-23T12:20:09Z",
+      "side": 1,
+      "message": "Should remove the quotes around the \u0027true\u0027 values, since these should get passed through as bools and converted.",
+      "revId": "25ef0395b5e4ac1b1ed1aab0a299ee559baf54b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
