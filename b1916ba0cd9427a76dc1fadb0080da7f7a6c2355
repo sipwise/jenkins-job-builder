@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_e22d9eff",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-25T17:32:18Z",
+      "side": 1,
+      "message": "As long as the realpath (resolves symlinks) of the files are different they are treated as unique. Can\u0027t see how that would occur if the real files are in different directories.\n\n\nSay you had the following folder structure:\n\n macros.yaml\n defaults.yaml\n reviewgatejobs/\n     \u003cfiles\u003e\n publishjobs/\n     \u003cfiles\u003e\n mirrorjobs/\n     \u003cfiles\u003e\n deployjobs/\n     \u003cfiles\u003e\n\nIf you just want to process any of the directories separately while still picking up the common macros and defaults, if you add the exclude path functionality you can carefully exclude everything you don\u0027t want, but that means any automated job could behave incorrectly if more jobs that should not be included are added at the top level or in another new sub-folder.\n\nTo work around this, we create symlinks under each sub directory to allow you to work with just a single set of jobs without impacting the others and without needing complex scripts to process the paths. Just point and pull the trigger. However if you then want to work at the top-level, every symlink will result in a duplicate group entry definition and you can\u0027t spot where you have duplicate jobs at a top level cause you\u0027ll always have to turn it off.\n\n\nI think this allows a little more flexibility around how to be able to manage lots of JJB yaml files.",
+      "parentUuid": "1a930d6b_42ce72b5",
+      "revId": "b1916ba0cd9427a76dc1fadb0080da7f7a6c2355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_e2ebde10",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 1
