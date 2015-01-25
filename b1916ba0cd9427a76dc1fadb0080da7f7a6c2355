@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_42ce72b5",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-01-25T16:33:01Z",
+      "side": 1,
+      "message": "What if you had multiple definition files (with the same name) in different directories but are not duplicates (they have different yaml definitions in them)?  Wouldn\u0027t we want to include both sets for processing?  \n\n\nMight not be ideal but maybe the work around for this problem is to just pass the \u0027allow_duplicates\u0027 flag in the jjb config file?  But then again I\u0027m not sure why you would want to allow symlinks to duplicate files.",
+      "revId": "b1916ba0cd9427a76dc1fadb0080da7f7a6c2355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_e2ebde10",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 668,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-01-25T16:33:01Z",
+      "side": 1,
+      "message": "nit: the term we use in JJB docs is \u0027yaml definitions\u0027.  please change to match.",
+      "revId": "b1916ba0cd9427a76dc1fadb0080da7f7a6c2355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
