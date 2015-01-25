@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_b9c3c887",
+        "filename": "tests/yamlparser/fixtures/template_override_project_level_defaults.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-01-25T23:21:21Z",
+      "side": 1,
+      "message": "I don\u0027t think it\u0027s necessary, in fact it\u0027s a little less confusing since this list of publishers overrides the defaults. If both the defaults used here and the job-template itself have the same publisher the XML for this \"production_bar\" job will look very similar to what it would look like if the job-template did not override the defaults.",
+      "parentUuid": "1a930d6b_821f7a07",
+      "revId": "023fb345b28906be6528a232a5fd436b03d57252",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_e2d59e1c",
         "filename": "tests/yamlparser/fixtures/template_override_project_level_defaults.yaml",
         "patchSetId": 1
