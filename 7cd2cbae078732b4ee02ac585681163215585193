@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_d93254f1",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-01-25T23:08:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_8f20daf8",
+      "revId": "7cd2cbae078732b4ee02ac585681163215585193",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_af4bd6ae",
         "filename": "tests/cmd/subcommands/test_test.py",
         "patchSetId": 21
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-22T11:24:15Z",
       "side": 1,
       "message": "Unless you\u0027re testing the output, you shouldn\u0027t need this.",
+      "revId": "7cd2cbae078732b4ee02ac585681163215585193",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_960edb39",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-01-25T23:08:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_af4bd6ae",
       "revId": "7cd2cbae078732b4ee02ac585681163215585193",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_b60bd728",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-01-25T23:08:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_0fd22ad2",
+      "revId": "7cd2cbae078732b4ee02ac585681163215585193",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_2fee0689",
         "filename": "tests/cmd/subcommands/test_test.py",
         "patchSetId": 21
@@ -64,6 +118,24 @@
       "writtenOn": "2015-01-22T11:24:15Z",
       "side": 1,
       "message": "Probably only need this last line within the context of mock.patch().",
+      "revId": "7cd2cbae078732b4ee02ac585681163215585193",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_f601df06",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-01-25T23:08:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_2fee0689",
       "revId": "7cd2cbae078732b4ee02ac585681163215585193",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -149,6 +221,24 @@
       "writtenOn": "2015-01-22T11:24:15Z",
       "side": 1,
       "message": "One scenario that I think should be added:\n\n(\u0027s13\u0027, dict(v1\u003d\u00271.0a-SNAPSHOT\u0027, op\u0027__lt__\u0027, v2\u003d\u00271.0a\u0027))",
+      "revId": "7cd2cbae078732b4ee02ac585681163215585193",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_596d84cb",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-01-25T23:08:58Z",
+      "side": 1,
+      "message": "We\u0027ve already discussed in previous patchsets why this won\u0027t work without writing an entirely new \"MavenVersion\" class.\n\nIn fact, I explicitly added a test scenario, \u0027s10\u0027, that tests essentially the opposite of the proposed scenario.",
+      "parentUuid": "1a930d6b_4f543254",
       "revId": "7cd2cbae078732b4ee02ac585681163215585193",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
