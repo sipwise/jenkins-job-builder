@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_c95d027b",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2015-01-26T20:28:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8c0949_c77d32e9",
+      "revId": "2f240fb5ab3dbbbc5cf810448f419972928f0ee0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8c0949_27dc36e4",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-06T23:57:38Z",
       "side": 1,
       "message": "I think you should use the specific call for converting to booleans:\n\n self.config.getboolean(\u0027job_builder\u0027, \u0027allow_empty_variables\u0027)",
+      "revId": "2f240fb5ab3dbbbc5cf810448f419972928f0ee0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_09538a6b",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2015-01-26T20:28:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8c0949_27dc36e4",
       "revId": "2f240fb5ab3dbbbc5cf810448f419972928f0ee0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_294cc6c7",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2015-01-26T20:28:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8c0949_a7ef4686",
+      "revId": "2f240fb5ab3dbbbc5cf810448f419972928f0ee0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8c0949_47fea239",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2014-11-06T23:57:38Z",
       "side": 1,
       "message": "s/is/are/?",
+      "revId": "2f240fb5ab3dbbbc5cf810448f419972928f0ee0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_c9d422bf",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2015-01-26T20:28:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8c0949_47fea239",
       "revId": "2f240fb5ab3dbbbc5cf810448f419972928f0ee0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
