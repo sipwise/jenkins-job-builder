@@ -242,6 +242,24 @@
       "revId": "7cd2cbae078732b4ee02ac585681163215585193",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_141e56bb",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-26T13:04:45Z",
+      "side": 1,
+      "message": "I\u0027m not sure this scenario is considered the reverse of s10. It merely builds on s10 to also check that if the version string contains alphabetical characters that the regex can still correctly replace \u0027-SNAPSHOT\u0027 with \u0027.preview\u0027.\n\nWith the updated regex: \"1.0a-SNAPSHOT \u003c 1.0a\" evaluates as true since it actually compares \"1.0a.preview \u003c 1.0a\".\n\nWith the previous regex it would evaluate as false because instead of actually comparing \"1.0a.preview \u003c 1.0a\" it ended up comparing \"1.0a-SNAPSHOT \u003c 1.0a\", which as you\u0027ve pointed out isn\u0027t handled by pkg_resources parse_version correctly, as the \"-SNAPSHOT\" version suffix didn\u0027t get removed by the regex replace.",
+      "parentUuid": "1a930d6b_596d84cb",
+      "revId": "7cd2cbae078732b4ee02ac585681163215585193",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
