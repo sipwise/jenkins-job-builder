@@ -3926,6 +3926,25 @@ def scan_build(parser, xml_parent, data):
     XML.SubElement(p, 'bugThreshold').text = threshold
 
 
+def shining_panda(parser, xml_parent, data):
+    """yaml: shining-panda
+    Publish coverage.py results. Requires the Jenkins `ShiningPanda Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/ShiningPanda+Plugin>`_.
+
+    :arg str html_reports_directory: path to coverage.py html results
+
+    Example:
+
+    .. literalinclude::  /../../tests/publishers/fixtures/shiningpanda001.yaml
+       :language: yaml
+    """
+    shining_panda_plugin = XML.SubElement(
+        xml_parent,
+        'jenkins.plugins.shiningpanda.publishers.CoveragePublisher')
+    html_dir = data.get('html_reports_directory')
+    XML.SubElement(shining_panda_plugin, 'htmlDir').text = html_dir
+
+
 def create_publishers(parser, action):
     dummy_parent = XML.Element("dummy")
     parser.registry.dispatch('publisher', parser, dummy_parent, action)

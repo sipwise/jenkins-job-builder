@@ -1,0 +1,3 @@
+publishers:
+  - shining-panda:
+      html_reports_directory: /foo/bar/coveragepy_html_report/
