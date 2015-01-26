@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_c80a7225",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 768,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-26T13:19:06Z",
+      "side": 1,
+      "message": "If it succeeds without error it will return True and the code that checks the results will then be able to confirm that no error occurred.\n\nIf it doesn\u0027t reach the \u0027return True\u0027 statement due to an exception occurring, the exception will get stored in the results and parsed later by update_jobs code. Essentially it\u0027s a way of ensuring that exceptions that occur in the threads for jobs get raised in the main thread and propagated back to the calling function otherwise they will be missed.",
+      "parentUuid": "1a930d6b_62c54d3b",
+      "revId": "62381ac4f869a725395176c9ff79aa82ca3b8749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_82d799ec",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_ebb6483d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-26T13:19:06Z",
+      "side": 1,
+      "message": "Because we want the default behaviour to be single threaded, that way it requires explicit user input to enable the threaded behaviour. If they use any number \u003e1 to enabling threading we should restrict that the number of workers to that limit, so that leaves numbers \u003c\u003d 0 to trigger auto detection unless you add a separate option.\n\nCould add \u0027(default: 1)\u0027 to the help to make it explicit.",
+      "parentUuid": "1a930d6b_82d799ec",
+      "revId": "62381ac4f869a725395176c9ff79aa82ca3b8749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_a27ad5ee",
         "filename": "jenkins_jobs/parallel.py",
         "patchSetId": 6
@@ -47,6 +83,24 @@
       "writtenOn": "2015-01-23T15:50:10Z",
       "side": 1,
       "message": "why that small wait? can you move it to a config setting so it can be updated if needed?",
+      "revId": "62381ac4f869a725395176c9ff79aa82ca3b8749",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_8bb784f4",
+        "filename": "jenkins_jobs/parallel.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-26T13:19:06Z",
+      "side": 1,
+      "message": "So that the main thread doesn\u0027t keep trying to check every millisecond, but is responsive to a user attempting to Ctrl+C the process.\n\nToo long a wait and it won\u0027t see the interrupt, too short and it\u0027s hogging the CPU.\n\nNot sure it\u0027s particularly useful to make configurable, it can be looked at if we think the general approach is better than the other alternative.",
+      "parentUuid": "1a930d6b_a27ad5ee",
       "revId": "62381ac4f869a725395176c9ff79aa82ca3b8749",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
