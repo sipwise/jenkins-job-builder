@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_6997aeec",
+        "filename": "jenkins_jobs/parallel.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2015-01-26T20:33:01Z",
+      "side": 1,
+      "message": "It forces you to pass the parameters, making sure you pass at least two of them.\n\nIs not a critical feature, but it\u0027s nice though, to remark that those are required, when using it.",
+      "parentUuid": "1a930d6b_19f13c6b",
+      "revId": "d8ed8e0eed718d64eb7c922e7e0035457bebba47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_8c15ec41",
         "filename": "jenkins_jobs/parallel.py",
         "patchSetId": 18
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-26T18:31:18Z",
       "side": 1,
       "message": "Instead of using TaskFunc,\n\ndict(ord\u003dn_ord, func\u003dfunc, args\u003dargs, kwargs\u003df_kwargs)",
+      "revId": "d8ed8e0eed718d64eb7c922e7e0035457bebba47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_a9b43682",
+        "filename": "jenkins_jobs/parallel.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2015-01-26T20:33:01Z",
+      "side": 1,
+      "message": "Answered above",
+      "parentUuid": "1a930d6b_8c15ec41",
       "revId": "d8ed8e0eed718d64eb7c922e7e0035457bebba47",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
