@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_fd96fc4a",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-01-26T18:43:36Z",
+      "side": 1,
+      "message": "I must be missing something but I don\u0027t see the purpose of \u0027BETA\u0027?  Doesn\u0027t look like it hurts here but no tests to verify either?",
+      "revId": "f16128bd330535b923c33f7399c6412a50eafe94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
