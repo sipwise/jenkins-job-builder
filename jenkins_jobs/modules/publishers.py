@@ -32,6 +32,7 @@ from jenkins_jobs.modules import hudson_model
 from jenkins_jobs.errors import JenkinsJobsException
 import logging
 import sys
+import os
 import random
 
 
@@ -3924,6 +3925,29 @@ def scan_build(parser, xml_parent, data):
     XML.SubElement(p, 'markBuildUnstableWhenThresholdIsExceeded').text = \
         str(data.get('mark-unstable', False)).lower()
     XML.SubElement(p, 'bugThreshold').text = threshold
+
+
+def shining_panda(parser, xml_parent, data):
+    """yaml: shining-panda
+    Publish coverage.py results. Requires the Jenkins `ShiningPanda Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/ShiningPanda+Plugin>`_.
+
+    :arg str html-reports-directory: path to coverage.py html results,
+         should be a relative path to $WORKSPACE
+
+    Example:
+
+    .. literalinclude::  /../../tests/publishers/fixtures/shiningpanda001.yaml
+       :language: yaml
+    """
+    html_dir = data.get('html-reports-directory')
+    if html_dir is None or html_dir.startswith(os.sep):
+        raise JenkinsJobsException("'html-reports-directory' parameter should "
+                                   "be set with relative path to $WORKSPACE")
+    shining_panda_plugin = XML.SubElement(
+        xml_parent,
+        'jenkins.plugins.shiningpanda.publishers.CoveragePublisher')
+    XML.SubElement(shining_panda_plugin, 'htmlDir').text = html_dir
 
 
 def create_publishers(parser, action):
