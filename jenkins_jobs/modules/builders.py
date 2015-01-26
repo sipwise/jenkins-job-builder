@@ -1511,3 +1511,72 @@ def managed_script(parser, xml_parent, data):
     args = XML.SubElement(ms, 'buildStepArgs')
     for arg in data.get('args', []):
         XML.SubElement(args, 'string').text = arg
+
+
+def dsl(parser, xml_parent, data):
+    """yaml: dsl
+    Process Job DSL
+
+    Requires the Jenkins `Job DSL plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Job+DSL+Plugin>`_
+
+    :arg str script-text: dsl script which is Groovy code (Required if target
+        is not specified)
+    :arg str target: Newline separated list of DSL scripts, located in the
+        Workspace. Can use wildcards like 'jobs/\*\*/\*.groovy' (Required
+        if script-text is not specified)
+    :arg str ignore-existing: Ignore previously generated jobs and views
+    :arg str removed-job-action: Specifies what to do when a previously
+        generated job is not referenced anymore (IGNORE (Default), DISABLE,
+        DELETE)
+    :arg str removed-view-action: Specifies what to do when a previously
+        generated view is not referenced anymore (IGNORE (Default), DELETE)
+    :arg str lookup-strategy: Determines how relative job names in DSL
+        scripts are interpreted (JENKINS_ROOT (Default), SEED_JOB)
+    :arg str additional-classpath: Newline separated list of additional
+        classpath entries for the Job DSL scripts. All entries must be
+        relative to the workspace root, e.g. build/classes/main.
+
+    Example:
+
+    .. literalinclude:: /../../tests/builders/fixtures/dsl.yaml
+       :language: yaml
+
+    """
+
+    dsl = XML.SubElement(xml_parent,
+                         'javaposse.jobdsl.plugin.ExecuteDslScripts')
+
+    if data.get('script-text'):
+        XML.SubElement(dsl, 'scriptText').text = data.get('script-text')
+        XML.SubElement(dsl, 'usingScriptText').text = 'true'
+    elif data.get('target'):
+        XML.SubElement(dsl, 'target').text = data.get('target')
+        XML.SubElement(dsl, 'usingScriptText').text = 'false'
+    else:
+        raise JenkinsJobsException("You must specify either script-text or "
+                                   "a target")
+
+    XML.SubElement(dsl, 'ignoreExisting').text = data.get(
+        'ignore-existing', 'false')
+
+    removedJobAction = data.get('removed-job-action', 'IGNORE')
+    if removedJobAction not in ['IGNORE', 'DISABLE', 'DELETE']:
+        raise JenkinsJobsException("You must specify either IGNORE, DISABLE "
+                                   "or DELETE for removed-job-action")
+    XML.SubElement(dsl, 'removedJobAction').text = removedJobAction
+
+    removedViewAction = data.get('removed-view-action', 'IGNORE')
+    if removedViewAction not in ['IGNORE', 'DELETE']:
+        raise JenkinsJobsException("You must specify either IGNORE "
+                                   "or DELETE for removed-view-action")
+    XML.SubElement(dsl, 'removedViewAction').text = removedViewAction
+
+    lookupStrategy = data.get('lookup-strategy', 'JENKINS_ROOT')
+    if lookupStrategy not in ['JENKINS_ROOT', 'SEED_JOB']:
+        raise JenkinsJobsException("You must specify either JENKINS_ROOT "
+                                   "or SEED_JOB for lookup-strategy")
+    XML.SubElement(dsl, 'lookupStrategy').text = lookupStrategy
+
+    XML.SubElement(dsl, 'additionalClasspath').text = data.get(
+        'additional-classpath')
