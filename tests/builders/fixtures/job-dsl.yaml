@@ -1,0 +1,3 @@
+builders:
+  - job-dsl:
+      script-text: "job { name 'dsljob' }"
