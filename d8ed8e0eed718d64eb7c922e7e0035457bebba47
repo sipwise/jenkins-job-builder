@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_19f13c6b",
+        "filename": "jenkins_jobs/parallel.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-01-26T18:31:18Z",
+      "side": 1,
+      "message": "I don\u0027t see the point in this since it is used just like a dict and doesn\u0027t provide non-dict API to its handling contexts.",
+      "revId": "d8ed8e0eed718d64eb7c922e7e0035457bebba47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_8c15ec41",
+        "filename": "jenkins_jobs/parallel.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-01-26T18:31:18Z",
+      "side": 1,
+      "message": "Instead of using TaskFunc,\n\ndict(ord\u003dn_ord, func\u003dfunc, args\u003dargs, kwargs\u003df_kwargs)",
+      "revId": "d8ed8e0eed718d64eb7c922e7e0035457bebba47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
