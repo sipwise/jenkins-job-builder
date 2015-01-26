@@ -1,6 +1,7 @@
 - job-template:
     name: '{name}-unit-tests'
     project-type: flow
+    build-needs-workspace: true
     dsl: |
         build("job1")
         parallel (

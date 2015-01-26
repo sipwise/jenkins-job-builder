@@ -26,6 +26,9 @@ In order to use it for job-template you have to escape the curly braces by
 doubling them in the DSL: { -> {{ , otherwise it will be interpreted by the
 python str.format() command.
 
+:arg str dsl: The sequence of jobs to be built.
+:arg bool build-needs-workspace: This build needs a workspace (default: False)
+
 Job example:
 
     .. literalinclude::
@@ -51,5 +54,9 @@ class Flow(jenkins_jobs.modules.base.Base):
             XML.SubElement(xml_parent, 'dsl').text = data['dsl']
         else:
             XML.SubElement(xml_parent, 'dsl').text = ''
+
+        if 'build-needs-workspace' in data:
+            XML.SubElement(xml_parent, 'buildNeedsWorkspace').text = str(
+                data.get('build-needs-workspace', False)).lower()
 
         return xml_parent
