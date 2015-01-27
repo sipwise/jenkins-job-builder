@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_0d2d4d95",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-27T00:39:38Z",
+      "side": 1,
+      "message": "Are you aware of six.moves?\n\n from six.moves.urllib import error\n\nThen you can use:\n\n except error.URLError:",
+      "revId": "9faa54b93e0e5a7beae27a41f8476eb7071fda1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
