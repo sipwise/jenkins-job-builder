@@ -1,0 +1,11 @@
+builders:
+  - trigger-builds:
+    - project:
+        - "foo"
+        - "bar"
+        - "baz"
+      predefined-parameters:
+        FOO="bar"
+      current-parameters: true
+      svn-revision: true
+      block: true
