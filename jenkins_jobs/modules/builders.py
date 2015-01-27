@@ -274,6 +274,113 @@ def ant(parser, xml_parent, data):
     XML.SubElement(ant, 'antName').text = data.get('ant-name', 'default')
 
 
+def trigger_remote(parser, xml_parent, data):
+    """yaml: trigger-remote
+    Trigger build of job on remote Jenkins instance.
+    Requires the Jenkins `Parameterized Remote Trigger Plugin
+    <https://wiki.jenkins-ci.org/display/JENKINS/
+    Parameterized+Remote+Trigger+Plugin>_`
+
+    Please note that this plugin requires system configuration on the Jenkins
+    Master that is unavailable from individual job views; specifically, one
+    must add remote jenkins servers whose 'Display Name' field are what make up
+    valid fields on the `remote-jenkins-name` attribute below.
+
+    :arg str remote-jenkins-name: the remote Jenkins server
+    :arg str job: the Jenkins project to trigger on the remote Jenkins server
+    :arg bool should-not-fail-build:
+      if true, remote job failure will not lead current job to fail
+      (default false)
+    :arg bool prevent-remote-build-queue:
+      if true, wait to trigger remote builds until no other builds
+      (default false)
+    :arg bool block: whether to wait for the trigger jobs to finish or not
+      (default true)
+    :arg str poll-interval: polling interval in seconds for checking statues of
+      triggered remote job, only necessary if current job is configured to
+      block
+      (default 10)
+    :arg str connection-retry-limit: number of connection attempts to remote
+      Jenkins server before giving up.
+      (default 5)
+    :arg str api-token: if the remote job has defined an api token, set its
+      value here
+      (optional)
+    :arg str predefined-parameters: predefined parameters to send to the remote
+      job when triggering it
+      (optional)
+    :arg str property-file: file in workspace of current job containing
+      additional parameters to be set on remote job
+      (optional)
+
+    Example:
+
+    .. literalinclude:: \
+    /../../tests/builders/fixtures/trigger-remote/trigger-remote001.yaml
+       :language: yaml
+    """
+    triggerr = XML.SubElement(xml_parent,
+                              'org.jenkinsci.plugins.'
+                              'ParameterizedRemoteTrigger.'
+                              'RemoteBuildConfiguration')
+    remote_jenkins_name = XML.SubElement(triggerr, 'remoteJenkinsName')
+    token = XML.SubElement(triggerr, 'token')
+    job = XML.SubElement(triggerr, 'job')
+    should_not_fail_build = XML.SubElement(triggerr, 'shouldNotFailBuild')
+    poll_interval = XML.SubElement(triggerr, 'pollInterval')
+    conn_retry_limit = XML.SubElement(triggerr, 'connectionRetryLimit')
+    prevent_remote_build_queue = XML.SubElement(triggerr,
+                                                'preventRemoteBuildQueue')
+    block = XML.SubElement(triggerr, 'blockBuildUntilComplete')
+    parameters = XML.SubElement(triggerr, 'parameters')
+    parameter_list = XML.SubElement(triggerr, 'parameterList')
+    load_property_file = XML.SubElement(triggerr, 'loadParamsFromFile')
+    property_file = XML.SubElement(triggerr, 'parameterFile')
+
+    for attribute in ['job', 'remote-jenkins-name']:
+        if attribute not in data or data[attribute] == '':
+            logger.debug("Required attribute, {0}, missing - skipping"
+                         " trigger-remote".format(attribute))
+            return
+
+    remote_jenkins_name.text = data.get('remote-jenkins-name')
+    token.text = data.get('token', '')
+    job.text = data.get('job')
+    poll_interval.text = str(data.get('poll-interval', 10))
+    conn_retry_limit.text = str(data.get('connection-retry-limit', 5))
+
+    if 'predefined-parameters' in data and data['predefined-parameters'] != '':
+        parameters.text = data.get('predefined-parameters')
+        params_list = parameters.text.split("\n")
+
+        for param in params_list:
+            if param == '':
+                continue
+            tmp = XML.SubElement(parameter_list, 'string')
+            tmp.text = param
+
+    if 'property-file' in data and data['property-file'] != '':
+        property_file.text = data.get('property-file')
+        load_property_file.text = 'true'
+    else:
+        load_property_file.text = 'false'
+
+    if data.get('prevent-remote-build-queue', False):
+        prevent_remote_build_queue.text = 'true'
+    else:
+        prevent_remote_build_queue.text = 'false'
+
+    if data.get('block', True):
+        block.text = 'true'
+    else:
+        block.text = 'false'
+
+    if data.get('should-fail-build', True):
+        should_not_fail_build.text = 'false'
+    else:
+        should_not_fail_build.text = 'true'
+
+
 def trigger_builds(parser, xml_parent, data):
     """yaml: trigger-builds
     Trigger builds of other jobs.
