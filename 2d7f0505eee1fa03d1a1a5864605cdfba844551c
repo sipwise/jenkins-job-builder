@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a930d6b_f9a09e91",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 692,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-27T18:19:24Z",
+      "side": 1,
+      "message": "If you \u0027raise RuntimeError\u0027 at this point it\u0027ll show that the test doesn\u0027t ignore other exceptions and only match on URLError.",
+      "revId": "2d7f0505eee1fa03d1a1a5864605cdfba844551c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_33fb317a",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 29
@@ -13,6 +30,41 @@
       "writtenOn": "2015-01-27T14:47:10Z",
       "side": 1,
       "message": "should this be in a \u0027if options.command \u003d\u003d \u0027test\u0027:\u0027 block since it only applies to test mode?",
+      "revId": "2d7f0505eee1fa03d1a1a5864605cdfba844551c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_ecb8e376",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-27T18:19:24Z",
+      "side": 1,
+      "message": "This approach would probably makes it a little easier to provide a plugins_info file via argument parser when unit testing the update command, although we\u0027ve yet to add such tests.\n\nGuess either approach works for me, either if check if this is the test comand and then the option attribute will exist, or check if the attribute exists and allow it to be passed in via the function args without assuming how it has been parsed on command line.",
+      "parentUuid": "1a930d6b_33fb317a",
+      "revId": "2d7f0505eee1fa03d1a1a5864605cdfba844551c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_79a74ebd",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-27T18:19:24Z",
+      "side": 1,
+      "message": "Good idea, but I don\u0027t think this works as intended. If you force get_plugins_info_mock in jenkins_jobs.builder.Jenkins to always raise a RuntimeError and this test doesn\u0027t pass as it appears it is intended.\n\nI suspect that the following construct would be required:\n\n            try:\n                cmd.main([\u0027test\u0027, os.path.join(self.fixtures_path,\n                                               \u0027cmd-001.yaml\u0027)])\n            except error.URLError:\n                self.fail(\"error.URLError propagated to main\")\n            except:\n                # only care that URLError does not get propagated\n                pass\n\nAlternatively if you decide that any exception raised at this point is an issue, you can just run \n\n         with mock.patch(\u0027sys.stdout\u0027):\n            cmd.main([\u0027test\u0027, os.path.join(self.fixtures_path,\n                                           \u0027cmd-001.yaml\u0027)])\n\nWhich will fail if any exception is raised. So far I can\u0027t see of an easy wait to only fail if certain exceptions are raised using the assert calls.",
       "revId": "2d7f0505eee1fa03d1a1a5864605cdfba844551c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
