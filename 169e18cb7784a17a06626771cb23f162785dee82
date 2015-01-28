@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa81d914_2c02bb3e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1106
+      },
+      "writtenOn": "2015-01-28T11:31:37Z",
+      "side": 1,
+      "message": "While there\u0027s no closed-loop process for Storyboard-\u003eGerrit now, I think you should still stick to the convention of using \u0027Closes-Bug\u0027 instead of \u0027fix\u0027:\n\nhttps://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "169e18cb7784a17a06626771cb23f162785dee82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_c411f9ad",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 3
