@@ -1,0 +1,46 @@
+- wrapper:
+    name: build-timeout
+    wrappers:
+      - timeout:
+          timeout: '{timeout}'
+          timeout-var: 'BUILD_TIMEOUT'
+          fail: true
+
+- defaults:
+    name: 'global'
+    logrotate:
+      numToKeep: 50
+      artifactNumToKeep: -1
+    concurrent: false
+    disabled: false
+    wrappers:
+      - timestamps
+      - mask-passwords
+      - ansicolor:
+          colormap: xterm
+      - build-timeout:
+          timeout: 30
+
+- job:
+    name: 'test-deep-merge-job'
+    project-type: freestyle
+    logrotate:
+      daysToKeep: 15
+      artifactDaysToKeep: -1
+    wrappers:
+      - timestamps
+      - ansicolor:
+          colormap: xterm
+
+- job:
+    name: 'test-deep-merge-job-override'
+    project-type: freestyle
+    logrotate:
+      daysToKeep: 15
+      artifactDaysToKeep: -1
+    wrappers:
+      - timestamps
+      - ansicolor:
+          colormap: custom
+      - build-timeout:
+          timeout: 65
