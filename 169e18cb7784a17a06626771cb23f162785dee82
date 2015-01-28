@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_c411f9ad",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 12873
+      },
+      "writtenOn": "2015-01-28T10:02:25Z",
+      "side": 1,
+      "message": "maybe:\nmap(lambda x:  data[x] \u003d updated_data[x], self._findDiffKey(data, updated_data))\n\nwill be much faster",
+      "revId": "169e18cb7784a17a06626771cb23f162785dee82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_04d871ee",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 12873
+      },
+      "writtenOn": "2015-01-28T10:02:25Z",
+      "side": 1,
+      "message": "looks like some pep8 stuff\nalmost no indentation between lines 252 and 253. according to pep8 it seems that you need one more tab on line 252.",
+      "revId": "169e18cb7784a17a06626771cb23f162785dee82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_c4ed798d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 12873
+      },
+      "writtenOn": "2015-01-28T10:02:25Z",
+      "side": 1,
+      "message": "you assume that [] \u003d\u003d False\nso why not:\nreturn list(set(data.keys()).intersection(set(updated_data.keys())))",
+      "revId": "169e18cb7784a17a06626771cb23f162785dee82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
