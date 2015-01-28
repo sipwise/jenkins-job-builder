@@ -82,3 +82,19 @@ class Base(object):
         """
 
         pass
+
+    def render_macro(self, parser, data):
+        """Render the macros based on YAML data.
+
+        :arg YAMLParser parser: the global YAML Parser
+        :arg dict data: the YAML data structure
+        """
+
+        component_data = dict()
+        data_list = list()
+        for wrap in data.get(self.component_list_type, []):
+            data_list.append(self.registry.dismacro(self.component_type,
+                                                    parser,
+                                                    wrap))
+        component_data[self.component_list_type] = data_list
+        return component_data
