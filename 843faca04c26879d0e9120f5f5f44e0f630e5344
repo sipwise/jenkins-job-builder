@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_65ccdd36",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-28T00:30:24Z",
+      "side": 1,
+      "message": "Tempted about adding a constructor to take the allow_empty arg and put the logic in is class.",
+      "revId": "843faca04c26879d0e9120f5f5f44e0f630e5344",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_a5bb3571",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-28T00:30:24Z",
+      "side": 1,
+      "message": "I.e.\n\n except KeyError:\n     if self.allow_empty:\n         return \u0027\u0027\n     raise",
+      "revId": "843faca04c26879d0e9120f5f5f44e0f630e5344",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_0506c120",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-28T00:30:24Z",
+      "side": 1,
+      "message": "Does the about suggestion make this a little simpler?",
+      "revId": "843faca04c26879d0e9120f5f5f44e0f630e5344",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_a05c0327",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-28T00:30:24Z",
+      "side": 1,
+      "message": "Doesn\u0027t look this option is being processed later?\n\nAnd it looks like this was in the previous patches so not sure how I missed it before.",
+      "revId": "843faca04c26879d0e9120f5f5f44e0f630e5344",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
