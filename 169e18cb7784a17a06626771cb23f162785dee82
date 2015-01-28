@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_35267e17",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-28T13:09:47Z",
+      "side": 1,
+      "message": "Probably not going to behave like you would expect across python 2 and 3.\n\nSuggest just checking to see if data or updated_data have the method \u0027format\u0027 and treat it like a string if they do.\n\nSame goes for the other places where you check for string.",
+      "revId": "169e18cb7784a17a06626771cb23f162785dee82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_c411f9ad",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 3
@@ -36,6 +53,74 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_95ef2ab0",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-28T13:09:47Z",
+      "side": 1,
+      "message": "Try and avoid camelcase for variables as they otherwise appear to be classes.",
+      "revId": "169e18cb7784a17a06626771cb23f162785dee82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_8076063d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-28T13:09:47Z",
+      "side": 1,
+      "message": "This part is where I think some unit tests would be useful to assess where there are cases where should only care about whether the attr is a string type or not.",
+      "revId": "169e18cb7784a17a06626771cb23f162785dee82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_4095ee3e",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-28T13:09:47Z",
+      "side": 1,
+      "message": "Might be better to test for \u0027hasattr(attr, __iter__)\u0027 provided you put this after the check for a dict and using if/elif checks. If something should be treated like a dict no need to check if it\u0027s behaves like a list as well.",
+      "revId": "169e18cb7784a17a06626771cb23f162785dee82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_35259ec2",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-28T13:09:47Z",
+      "side": 1,
+      "message": "OrderedDict is a superclass of dict, so either check for isinstance(dict) or check if \u0027hasattr(ele, \u0027keys\u0027)\u0027 to see if the object provides an interface to be interacted with like a dictionary.\n\nSimilarly for the other checks if the item is a dict.\n\nThis removes the need to know about the specific implementation of a dict we are using.",
+      "revId": "169e18cb7784a17a06626771cb23f162785dee82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_04d871ee",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 3
@@ -47,6 +132,23 @@
       "writtenOn": "2015-01-28T10:02:25Z",
       "side": 1,
       "message": "looks like some pep8 stuff\nalmost no indentation between lines 252 and 253. according to pep8 it seems that you need one more tab on line 252.",
+      "revId": "169e18cb7784a17a06626771cb23f162785dee82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_f53b06e9",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-28T13:09:47Z",
+      "side": 1,
+      "message": "This is essentially a duplicate of _findCommonKey, why not just use that directly since you only call _hasCommonKey once.",
       "revId": "169e18cb7784a17a06626771cb23f162785dee82",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
