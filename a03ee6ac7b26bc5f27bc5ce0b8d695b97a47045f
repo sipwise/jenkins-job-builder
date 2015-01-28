@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_24e73542",
+        "filename": "setup.cfg",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 12873
+      },
+      "writtenOn": "2015-01-28T09:43:12Z",
+      "side": 1,
+      "message": "please remove this white character",
+      "revId": "a03ee6ac7b26bc5f27bc5ce0b8d695b97a47045f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
