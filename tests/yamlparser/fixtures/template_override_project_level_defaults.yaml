@@ -29,5 +29,5 @@
 - defaults:
     name: testdefaults
     publishers:
-      - email-ext:
+      - email:
           recipients: '{recipients}'

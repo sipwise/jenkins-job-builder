@@ -12,30 +12,11 @@
   <scm class="hudson.scm.NullSCM"/>
   <builders/>
   <publishers>
-    <hudson.plugins.emailext.ExtendedEmailPublisher>
-      <recipientList>dev@example.com</recipientList>
-      <configuredTriggers>
-        <hudson.plugins.emailext.plugins.trigger.FailureTrigger>
-          <email>
-            <recipientList/>
-            <subject>$PROJECT_DEFAULT_SUBJECT</subject>
-            <body>$PROJECT_DEFAULT_CONTENT</body>
-            <sendToRequester>false</sendToRequester>
-            <sendToDevelopers>false</sendToDevelopers>
-            <includeCulprits>false</includeCulprits>
-            <sendToRecipientList>true</sendToRecipientList>
-          </email>
-        </hudson.plugins.emailext.plugins.trigger.FailureTrigger>
-      </configuredTriggers>
-      <contentType>default</contentType>
-      <defaultSubject>$DEFAULT_SUBJECT</defaultSubject>
-      <defaultContent>$DEFAULT_CONTENT</defaultContent>
-      <attachmentsPattern/>
-      <presendScript/>
-      <attachBuildLog>false</attachBuildLog>
-      <saveOutput>false</saveOutput>
-      <replyTo>$DEFAULT_REPLYTO</replyTo>
-    </hudson.plugins.emailext.ExtendedEmailPublisher>
+    <hudson.tasks.Mailer>
+      <recipients>dev@example.com</recipients>
+      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>false</sendToIndividuals>
+    </hudson.tasks.Mailer>
   </publishers>
   <buildWrappers/>
 </project>

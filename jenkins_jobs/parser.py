@@ -140,8 +140,58 @@ class YamlParser(object):
 
         newdata = {}
         newdata.update(defaults)
-        newdata.update(data)
+
+        if newdata == {}:
+            newdata.update(data)
+        else:
+            self.deepUpdate(newdata, data)
         return newdata
+
+    def deepUpdate(self, data, updated_data):
+        if hasattr(data, 'format') or hasattr(updated_data, 'format'):
+            return None
+
+        common_keys = self._findCommonKey(data, updated_data)
+        for common_key in common_keys:
+            self._deepUpdate(common_key, data, updated_data)
+
+        diff_keys = self._findDiffKey(data, updated_data)
+        for diff_key in diff_keys:
+            data[diff_key] = updated_data[diff_key]
+
+    def _deepUpdate(self, common_key, data, updated_data):
+        attr = data[common_key]
+        updated_attr = updated_data[common_key]
+
+        if hasattr(attr, 'format') and hasattr(updated_attr, 'format'):
+            data[common_key] = updated_attr
+            return None
+
+        if hasattr(attr, 'keys'):
+            self.deepUpdate(attr, updated_attr)
+            return None
+
+        if hasattr(attr, '__iter__'):
+            for ele in updated_attr:
+                if hasattr(ele, 'format') and ele not in attr:
+                    attr.append(ele)
+                if hasattr(ele, 'keys'):
+                    for od in attr:
+                        if hasattr(od, 'keys') and \
+                                self._findCommonKey(od, ele):
+                            self.deepUpdate(od, ele)
+                            break
+                    else:
+                        attr.append(ele)
+            return None
+
+        return None
+
+    def _findCommonKey(self, data, updated_data):
+        return list(set(data.keys()).intersection(set(updated_data.keys())))
+
+    def _findDiffKey(self, data, updated_data):
+        return list(set(updated_data.keys()).difference(set(data.keys())))
 
     def formatDescription(self, job):
         if self.keep_desc:
