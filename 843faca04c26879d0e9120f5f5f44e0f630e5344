@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_f43cd395",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2015-01-28T19:34:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_65ccdd36",
+      "revId": "843faca04c26879d0e9120f5f5f44e0f630e5344",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_a5bb3571",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-28T00:30:24Z",
       "side": 1,
       "message": "I.e.\n\n except KeyError:\n     if self.allow_empty:\n         return \u0027\u0027\n     raise",
+      "revId": "843faca04c26879d0e9120f5f5f44e0f630e5344",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_d437cfae",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2015-01-28T19:34:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_a5bb3571",
       "revId": "843faca04c26879d0e9120f5f5f44e0f630e5344",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_94be37fe",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2015-01-28T19:34:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_0506c120",
+      "revId": "843faca04c26879d0e9120f5f5f44e0f630e5344",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_a05c0327",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2015-01-28T00:30:24Z",
       "side": 1,
       "message": "Doesn\u0027t look this option is being processed later?\n\nAnd it looks like this was in the previous patches so not sure how I missed it before.",
+      "revId": "843faca04c26879d0e9120f5f5f44e0f630e5344",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_f40a13d1",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2015-01-28T19:34:52Z",
+      "side": 1,
+      "message": "Oops, that\u0027s a big one.\n\nDone and tested personally.",
+      "parentUuid": "fa81d914_a05c0327",
       "revId": "843faca04c26879d0e9120f5f5f44e0f630e5344",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
