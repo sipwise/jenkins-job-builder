@@ -36,6 +36,7 @@ import fnmatch
 import six
 from jenkins_jobs.errors import JenkinsJobsException
 import jenkins_jobs.local_yaml as local_yaml
+from collections import OrderedDict
 
 logger = logging.getLogger(__name__)
 MAGIC_MANAGE_STRING = "<!-- Managed by Jenkins Job Builder -->"
@@ -217,8 +218,53 @@ class YamlParser(object):
                                        .format(whichdefaults))
         newdata = {}
         newdata.update(defaults)
-        newdata.update(data)
+        self.deepUpdate(newdata, data)
+        # newdata.update(data)
         return newdata
+
+    def deepUpdate(self, data, updated_data):
+        if hasattr(data, 'format') or hasattr(updated_data, 'format'):
+            return None
+
+        map(lambda x: data.__setitem__(x, updated_data[x]),
+            self._findDiffKey(data, updated_data))
+
+        map(lambda x: self._deepUpdate(x, data, updated_data),
+            self._findCommonKey(data, updated_data))
+
+    def _deepUpdate(self, common_key, data, updated_data):
+        attr = data[common_key]
+        updated_attr = updated_data[common_key]
+
+        if hasattr(attr, 'format') and hasattr(updated_attr, 'format'):
+            data[common_key] = updated_attr
+            return None
+
+        if hasattr(attr, 'keys'):
+            self.deepUpdate(attr, updated_attr)
+            return None
+
+        if hasattr(attr, '__iter__'):
+            for ele in updated_attr:
+                if hasattr(ele, 'format') and ele not in attr:
+                    attr.append(ele)
+                if hasattr(ele, 'keys'):
+                    for od in attr:
+                        if hasattr(od, 'keys') and \
+                                self._findCommonKey(od, ele):
+                            self.deepUpdate(od, ele)
+                            break
+                    else:
+                        attr.append(ele)
+            return None
+
+        return None
+
+    def _findCommonKey(self, data, updated_data):
+        return list(set(data.keys()).intersection(set(updated_data.keys())))
+
+    def _findDiffKey(self, data, updated_data):
+        return list(set(updated_data.keys()).difference(set(data.keys())))
 
     def formatDescription(self, job):
         if self.keep_desc:
