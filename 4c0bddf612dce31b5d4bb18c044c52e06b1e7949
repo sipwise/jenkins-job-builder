@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_07abecd6",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3934,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-28T23:19:02Z",
+      "side": 1,
+      "message": "Default style is to use hyphenated options in the yaml.\n\nIs there a default value for this setting? Or is an empty tag sufficient?\n\nIf it\u0027s to be required, it should raise an exception if it\u0027s not set, if it should have a default value (including blank), then it\u0027s good to add a test for the default value and a \"(default \u0027\u0027)\" to the end of the docstring above to make the intent clear.",
+      "revId": "4c0bddf612dce31b5d4bb18c044c52e06b1e7949",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_07476c1e",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3945,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-28T23:19:02Z",
+      "side": 1,
+      "message": "Prefer the following style as it\u0027s generally more common:\n\n XML.SubElement(shining_panda_plugin, \u0027htmlDir\u0027).text \u003d str(\n     data.get(\u0027html-reports-directory\u0027, \u0027\u0027))",
+      "revId": "4c0bddf612dce31b5d4bb18c044c52e06b1e7949",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
