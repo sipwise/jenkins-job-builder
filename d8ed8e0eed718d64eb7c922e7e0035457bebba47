@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_146fa7c6",
+        "filename": "jenkins_jobs/parallel.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2015-01-28T19:29:28Z",
+      "side": 1,
+      "message": "It also adds the default values for args and kwargs.\n\nI think that while it\u0027s not being used here (or could be easily avoided) it\u0027s a good behavior in order to allow more generic usage in the future.",
+      "parentUuid": "1a930d6b_6997aeec",
+      "revId": "d8ed8e0eed718d64eb7c922e7e0035457bebba47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_8c15ec41",
         "filename": "jenkins_jobs/parallel.py",
         "patchSetId": 18
