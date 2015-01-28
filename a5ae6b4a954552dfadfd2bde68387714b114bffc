@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_3add8d71",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 695,
+      "author": {
+        "id": 12873
+      },
+      "writtenOn": "2015-01-28T12:09:39Z",
+      "side": 1,
+      "message": "pep8: \u0027ghprb.GhprbBranch\u0027 should be moved right below first parenthesis",
+      "revId": "a5ae6b4a954552dfadfd2bde68387714b114bffc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
