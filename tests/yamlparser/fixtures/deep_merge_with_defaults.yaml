@@ -1,0 +1,25 @@
+- defaults:
+    name: 'global'
+    logrotate:
+      numToKeep: 50
+      artifactNumToKeep: -1
+    concurrent: false
+    disabled: false
+    wrappers:
+      - timestamps
+      - mask-passwords
+      - ansicolor:
+          colormap: xterm
+
+- job:
+    name: 'test-deep-merge-job'
+    project-type: freestyle
+    logrotate:
+      daysToKeep: 15
+      artifactDaysToKeep: -1
+    wrappers:
+      - timestamps
+      - inject-passwords:
+          global: true
+      - ansicolor:
+          colormap: xterm
