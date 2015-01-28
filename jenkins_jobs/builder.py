@@ -334,10 +334,14 @@ class YamlParser(object):
 
     def expandYamlForTemplateJob(self, project, template, jobs_filter=None):
         dimensions = []
+        template_name = template['name']
         # reject keys that are not useful during yaml expansion
         for k in ['jobs']:
             project.pop(k)
         for (k, v) in project.items():
+            tmpk = '{{{0}}}'.format(k)
+            if tmpk not in template_name:
+                continue
             if type(v) == list:
                 dimensions.append(zip([k] * len(v), v))
         # XXX somewhat hackish to ensure we actually have a single
