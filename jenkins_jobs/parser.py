@@ -60,6 +60,7 @@ class YamlParser(object):
                 self.path = config.get('job_builder',
                                        'include_path').split(':')
         self.keep_desc = self.get_keep_desc()
+        self.merge_defaults = self.get_merge_defaults()
 
     def get_keep_desc(self):
         keep_desc = False
@@ -68,6 +69,14 @@ class YamlParser(object):
             keep_desc = self.config.getboolean('job_builder',
                                                'keep_descriptions')
         return keep_desc
+
+    def get_merge_defaults(self):
+        merge_defaults = False
+        if self.config and self.config.has_section('job_builder') and \
+                self.config.has_option('job_builder', 'merge_defaults'):
+            merge_defaults = self.config.getboolean('job_builder',
+                                                    'merge_defaults')
+        return merge_defaults
 
     def parse_fp(self, fp):
         # wrap provided file streams to ensure correct encoding used
@@ -143,8 +152,60 @@ class YamlParser(object):
 
         newdata = {}
         newdata.update(defaults)
-        newdata.update(data)
+
+        if self.merge_defaults:
+            self.deepUpdate(newdata, data)
+        else:
+            newdata.update(data)
         return newdata
+
+    def deepUpdate(self, newdata, data):
+        if newdata == {}:
+            newdata.update(data)
+            return
+
+        if hasattr(newdata, 'format') or (hasattr(data, 'format') or
+                                          hasattr(newdata, '__int__') or
+                                          hasattr(data, '__int__')):
+            return
+
+        common_keys = self._findCommonKey(newdata, data)
+        for common_key in common_keys:
+            self._deepUpdate(common_key, newdata, data)
+
+        diff_keys = self._findDiffKey(newdata, data)
+        for diff_key in diff_keys:
+            newdata[diff_key] = data[diff_key]
+
+    def _deepUpdate(self, common_key, data, updated_data):
+        attr = data[common_key]
+        updated_attr = updated_data[common_key]
+
+        if hasattr(attr, 'format') or (hasattr(updated_attr, 'format') or
+                                       hasattr(attr, '__int__') or
+                                       hasattr(updated_attr, '__int__')):
+            data[common_key] = updated_attr
+        elif hasattr(attr, 'keys'):
+            self.deepUpdate(attr, updated_attr)
+        elif hasattr(attr, '__iter__'):
+            for ele in updated_attr:
+                if hasattr(ele, 'format') and ele not in attr:
+                    attr.append(ele)
+                    continue
+                if hasattr(ele, 'keys'):
+                    for od in attr:
+                        if hasattr(od, 'keys') and \
+                                self._findCommonKey(od, ele):
+                            self.deepUpdate(od, ele)
+                            break
+                    else:
+                        attr.append(ele)
+
+    def _findCommonKey(self, data, updated_data):
+        return list(set(data.keys()).intersection(set(updated_data.keys())))
+
+    def _findDiffKey(self, data, updated_data):
+        return list(set(updated_data.keys()).difference(set(data.keys())))
 
     def formatDescription(self, job):
         if self.keep_desc:
