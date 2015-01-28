@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_556f7292",
+        "filename": "tests/builders/fixtures/dsl.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6133
+      },
+      "writtenOn": "2015-01-28T12:40:58Z",
+      "side": 1,
+      "message": "I\u0027d prefer that the yaml matches the equivalent xml one",
+      "revId": "30773df88a57f2318a5289d8c32c385f09b753be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
