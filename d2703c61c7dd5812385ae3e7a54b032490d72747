@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_49ad2131",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 12873
+      },
+      "writtenOn": "2015-01-28T11:06:14Z",
+      "side": 1,
+      "message": "why not?\nif tmpk in template_name and type(v) \u003d\u003d list:",
+      "revId": "d2703c61c7dd5812385ae3e7a54b032490d72747",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
