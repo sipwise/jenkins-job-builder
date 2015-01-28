@@ -12,7 +12,7 @@
   <scm class="hudson.scm.NullSCM"/>
   <builders/>
   <publishers>
-    <hudson.plugins.emailext.ExtendedEmailPublisher>
+  <hudson.plugins.emailext.ExtendedEmailPublisher>
       <recipientList>dev@example.com</recipientList>
       <configuredTriggers>
         <hudson.plugins.emailext.plugins.trigger.FailureTrigger>
