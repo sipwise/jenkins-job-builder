@@ -177,6 +177,53 @@ class ModuleRegistry(object):
                                        "for component type: '{1}'.".
                                        format(name, component_type))
 
+    def dismacro(self, component_type,
+                 parser, component, template_data={}):
+        """This is a method that you can call from your implementation of
+        Base.render_macro or component.  It allows modules to define a type
+        of component, and benefit from extensibility via Python
+        entry points and Jenkins Job Builder :ref:`Macros <macro>`.
+
+        :arg string component_type: the name of the component
+          (e.g., `builder`)
+        :arg YAMLParser parser: the global YAML Parser
+        :arg dict template_data: values that should be interpolated into
+          the component definition
+
+        See :py:class:`jenkins_jobs.modules.base.Base` for how to register
+        components of a module.
+
+        See the Publishers module for a simple example of how to use
+        this method.
+        """
+
+        component_list_type = self._get_component_list_type(component_type)
+
+        if isinstance(component, dict):
+            name, component_data = self._component_init(component,
+                                                        template_data)
+        else:
+            # The component is a simple string name, eg "run-tests"
+            name = component
+            component_data = component
+
+        eps = self._search_entry_points(component_list_type,
+                                        component_type, name)
+
+        if name not in eps:
+            # see if it's defined as a macro
+            component = parser.data.get(component_type, {}).get(name)
+            if component:
+                for b in component[component_list_type]:
+                    # Pass component_data in as template data to this function
+                    # so that if the macro is invoked with arguments,
+                    # the arguments are interpolated into the real defn.
+                    name, component_data = self.dismacro(component_type,
+                                                         parser, b,
+                                                         component_data)
+
+        return name, component_data
+
     def _get_component_list_type(self, component_type):
         if component_type not in self.modules_by_component_type:
             raise JenkinsJobsException("Unknown component type: "
