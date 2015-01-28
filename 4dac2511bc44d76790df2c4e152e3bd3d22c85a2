@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_f941203a",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1508,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-28T23:34:16Z",
+      "side": 1,
+      "message": "Prefer if you can stick to a similar docstring style as the others and skip the spaces between the args.",
+      "revId": "4dac2511bc44d76790df2c4e152e3bd3d22c85a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_99866464",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1512,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-28T23:34:16Z",
+      "side": 1,
+      "message": "Good to see that you\u0027ve got the exception, worth adding to the docstring that either the script-text or target setting is required.",
+      "revId": "4dac2511bc44d76790df2c4e152e3bd3d22c85a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_993bc49b",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1517,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-28T23:34:16Z",
+      "side": 1,
+      "message": "Are these the only valid values?\n\nIf that\u0027s the case it would be good to test that it\u0027s at least one of these specified and raise an exception otherwise, and indicate which is the default in the docstring.\n\nSimilarly for the other args.",
+      "revId": "4dac2511bc44d76790df2c4e152e3bd3d22c85a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
