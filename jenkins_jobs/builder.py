@@ -334,17 +334,23 @@ class YamlParser(object):
 
     def expandYamlForTemplateJob(self, project, template, jobs_filter=None):
         dimensions = []
+        template_name = template['name']
         # reject keys that are not useful during yaml expansion
         for k in ['jobs']:
             project.pop(k)
         for (k, v) in project.items():
+            tmpk = '{{{0}}}'.format(k)
+            if tmpk not in template_name:
+                logger.debug("Variable %s not in name %s, rejecting from job"
+                             " matrix expansion.", tmpk, template_name)
+                continue
             if type(v) == list:
                 dimensions.append(zip([k] * len(v), v))
         # XXX somewhat hackish to ensure we actually have a single
         # pass through the loop
         if len(dimensions) == 0:
             dimensions = [(("", ""),)]
-        checksums = set([])
+
         for values in itertools.product(*dimensions):
             params = copy.deepcopy(project)
             params = self.applyDefaults(params, template)
@@ -362,32 +368,8 @@ class YamlParser(object):
             params = deep_format(params, params)
             expanded = deep_format(template, params)
 
-            # Keep track of the resulting expansions to avoid
-            # regenerating the exact same job.  Whenever a project has
-            # different values for a parameter and that parameter is not
-            # used in the template, we ended up regenerating the exact
-            # same job.
-            # To achieve that we serialize the expanded template making
-            # sure the dict keys are always in the same order. Then we
-            # record the checksum in an unordered unique set which let
-            # us guarantee a group of parameters will not be added a
-            # second time.
-            uniq = json.dumps(expanded, sort_keys=True)
-            if six.PY3:
-                uniq = uniq.encode('utf-8')
-            checksum = hashlib.md5(uniq).hexdigest()
-
-            # Lookup the checksum
-            if checksum not in checksums:
-                # We also want to skip expansion whenever the user did
-                # not ask for that job.
-                job_name = expanded.get('name')
-                if jobs_filter and not matches(job_name, jobs_filter):
-                    continue
-
-                self.formatDescription(expanded)
-                self.jobs.append(expanded)
-                checksums.add(checksum)
+            self.formatDescription(expanded)
+            self.jobs.append(expanded)
 
     def get_managed_string(self):
         # The \n\n is not hard coded, because they get stripped if the
