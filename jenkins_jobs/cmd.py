@@ -20,6 +20,7 @@ import os
 import platform
 import sys
 import yaml
+from jenkins import DEFAULT_CONN_TIMEOUT
 import jenkins_jobs.version
 
 from jenkins_jobs.builder import Builder
@@ -201,6 +202,13 @@ def execute(options, config):
     except (TypeError, configparser.NoOptionError):
         password = None
 
+    timeout = int(DEFAULT_CONN_TIMEOUT)
+    try:
+        timeout = config.getint('jenkins', 'timeout')
+    except (TypeError, configparser.NoOptionError):
+        pass
+    logger.debug("Jenkins Connection timeout set to %d seconds", timeout)
+
     plugins_info = None
 
     if getattr(options, 'plugins_info_path', None) is not None:
@@ -213,6 +221,7 @@ def execute(options, config):
     builder = Builder(config.get('jenkins', 'url'),
                       user,
                       password,
+                      timeout,
                       config,
                       ignore_cache=ignore_cache,
                       flush_cache=options.flush_cache,

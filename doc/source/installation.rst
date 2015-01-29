@@ -98,6 +98,8 @@ jenkins section
 **url**
   The base URL for your Jenkins installation.
 
+**timeout**
+  (Optional) The connection timeout to the Jenkins server.
 
 Running
 -------
