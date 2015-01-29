@@ -224,6 +224,12 @@ def execute(options, config):
     except (TypeError, configparser.NoOptionError):
         password = None
 
+    timeout = None
+    try:
+        timeout = config.getint('jenkins', 'timeout')
+    except (TypeError, configparser.NoOptionError):
+        pass
+
     plugins_info = None
 
     if getattr(options, 'plugins_info_path', None) is not None:
@@ -236,6 +242,7 @@ def execute(options, config):
     builder = Builder(config.get('jenkins', 'url'),
                       user,
                       password,
+                      timeout,
                       config,
                       ignore_cache=ignore_cache,
                       flush_cache=options.flush_cache,
