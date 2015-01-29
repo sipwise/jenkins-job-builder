@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_4eede78a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3944,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-29T12:53:51Z",
+      "side": 1,
+      "message": "If you\u0027re going to check for absolute paths, should really use os.path.isabs(html_dir) as it strips the leading driver letters on Windows before checking if the path has a leading backslash.\n\nIn any case I did some testing of the plugin and confirmed the following:\n* html-reports-directory is optional, the default path of \"cover\" is used if no path set\n* absolute paths are not invalid, though they may result in the build failing because \u0027/cover/\u0027 may not exist or contain the expected report files, but the plugin allows for absolute paths so we should as well. Only need JJB to error if the plugin would reject the configuration XML being uploaded.\n\nIn this case the following is the standard pattern:\n\n if \u0027html-reports-directory\u0027 in data:\n     XML.SubElement(shining_panda_plugin, \u0027htmlDir\u0027).text \u003d str(\n         data[\u0027html-reports-directory\u0027])\n\nOr the following:\n\n html_dir \u003d data.get(\u0027html-reports-directory\u0027)\n if html_dir:\n     XML.SubElement(shining_panda_plugin, \u0027htmlDir\u0027).text \u003d html_dir\n\n\nJust need to record in the docstring that the arg is \"(optional)\" and the plugin uses an internal default path if not set.",
+      "revId": "4d8fe3f03f38bb88731a54f52af28b9bdcf1731c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
