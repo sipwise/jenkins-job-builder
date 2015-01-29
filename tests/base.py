@@ -27,6 +27,16 @@ import operator
 import testtools
 import xml.etree.ElementTree as XML
 from six.moves import configparser
+# This dance deals with the fact that we want mock from six.moves if
+# we're on Python 2.x, from unittest if we're on 3.x before 3.3, and
+# from stdlib in 3.3 and later.
+try:
+    from six.moves import mock
+except ImportError:
+    try:
+        from unittest import mock
+    except ImportError:
+        import mock
 import jenkins_jobs.local_yaml as yaml
 from jenkins_jobs.builder import XmlJob, YamlParser, ModuleRegistry
 from jenkins_jobs.modules import (project_flow,
