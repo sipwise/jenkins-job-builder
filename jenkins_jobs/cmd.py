@@ -39,6 +39,7 @@ allow_duplicates=False
 url=http://localhost:8080/
 user=
 password=
+timeout=120
 
 [hipchat]
 authtoken=dummy
@@ -210,9 +211,12 @@ def execute(options, config):
             raise JenkinsJobsException("{0} must contain a Yaml list!"
                                        .format(options.plugins_info_path))
 
+    timeout = config.getint('jenkins', 'timeout')
+
     builder = Builder(config.get('jenkins', 'url'),
                       user,
                       password,
+                      timeout,
                       config,
                       ignore_cache=ignore_cache,
                       flush_cache=options.flush_cache,
