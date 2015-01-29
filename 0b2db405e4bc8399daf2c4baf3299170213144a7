@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_ef686ebc",
+        "filename": "README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-29T00:21:20Z",
+      "side": 1,
+      "message": "Something seems a little off about the formatting when this gets included into the index.rst file.\n\nThe \"Developers\", \"Writing a patch\" and \"Installing without setup.py\" all end up appearing at a higher level than \"README\" in the contents on the left of the page.\n\nIs it worth tweaking README to be a section header and the others to be subsection headers instead to match up correctly in the index.rst while changing the \"Jenkins Job Builder\" there to be a document header as README is here currently?",
+      "revId": "0b2db405e4bc8399daf2c4baf3299170213144a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
