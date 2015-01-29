@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_ed807648",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-29T01:07:45Z",
+      "side": 1,
+      "message": "Looks like this needs to be updated to note that matrix project has been split from the core jenkins and is now made available via a plugin.\n\nWould you mind adding the note that it requires a plugin now?",
+      "revId": "8f6e5b53f844601b6950abbc2a17cee88287b9e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_2d644ee4",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-29T01:07:45Z",
+      "side": 1,
+      "message": "This format is used to indicate plugins that extend the axes supported, but it looks like this is actually an additional axis that the core matrix project type supports out of the box. So perhaps should update the doc above to indicate that it\u0027s now 4 axes that are supported?",
+      "revId": "8f6e5b53f844601b6950abbc2a17cee88287b9e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
