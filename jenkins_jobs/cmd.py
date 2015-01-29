@@ -38,6 +38,7 @@ allow_duplicates=False
 url=http://localhost:8080/
 user=
 password=
+timeout=120
 
 [hipchat]
 authtoken=dummy
@@ -189,6 +190,7 @@ def execute(options, config):
     builder = Builder(config.get('jenkins', 'url'),
                       user,
                       password,
+                      config.get('jenkins', 'timeout'),
                       config,
                       ignore_cache=ignore_cache,
                       flush_cache=options.flush_cache)
