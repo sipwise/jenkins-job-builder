@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa81d914_9d50f35f",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-29T14:05:20Z",
+      "side": 1,
+      "message": "Why not have a proper constructor above and then:\n\n faux_parser \u003d FauxParser(registry, data)",
+      "revId": "407e578fb720942628aa3c2633aa95bcefb2904e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_88d26ffe",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-01-29T14:05:20Z",
+      "side": 1,
+      "message": "I\u0027d be very tempted to create a class XmlBuilder to contain these three methods, and have FauxParser as a nested class that is created at instantiation for a parser attribute instead of creating a separate instance for every job XML generated.",
+      "revId": "407e578fb720942628aa3c2633aa95bcefb2904e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_efe78e10",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 2
