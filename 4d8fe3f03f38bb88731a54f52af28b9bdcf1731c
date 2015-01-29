@@ -16,6 +16,24 @@
       "revId": "4d8fe3f03f38bb88731a54f52af28b9bdcf1731c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_dd7d0bb3",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3944,
+      "author": {
+        "id": 12873
+      },
+      "writtenOn": "2015-01-29T13:48:16Z",
+      "side": 1,
+      "message": "Hi Darragh \nThanks for throughout review :)\nIt seems that I did my local tests with outdated plugin version...\nwill change it",
+      "parentUuid": "fa81d914_4eede78a",
+      "revId": "4d8fe3f03f38bb88731a54f52af28b9bdcf1731c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
