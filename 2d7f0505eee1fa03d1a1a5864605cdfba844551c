@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_7da0f1f4",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-01-31T20:12:28Z",
+      "side": 1,
+      "message": "I guess I didn\u0027t think of it as only applying to test mode, although that is the only use case that I can currently think of. In the future someone might want to re-use this option as Darragh suggested...for example, imagine someone implements a \"lint\" subcommand that based on a set of organizational rules runs various checks against the given yaml configs; that subcommand may also need it.\n\nI don\u0027t have any strong objections to revising the logic here, someone just nees to make it clear to me that it is necessary for the patch to pass review.",
+      "parentUuid": "1a930d6b_ecb8e376",
+      "revId": "2d7f0505eee1fa03d1a1a5864605cdfba844551c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_79a74ebd",
         "filename": "tests/cmd/subcommands/test_test.py",
         "patchSetId": 29
@@ -65,6 +83,24 @@
       "writtenOn": "2015-01-27T18:19:24Z",
       "side": 1,
       "message": "Good idea, but I don\u0027t think this works as intended. If you force get_plugins_info_mock in jenkins_jobs.builder.Jenkins to always raise a RuntimeError and this test doesn\u0027t pass as it appears it is intended.\n\nI suspect that the following construct would be required:\n\n            try:\n                cmd.main([\u0027test\u0027, os.path.join(self.fixtures_path,\n                                               \u0027cmd-001.yaml\u0027)])\n            except error.URLError:\n                self.fail(\"error.URLError propagated to main\")\n            except:\n                # only care that URLError does not get propagated\n                pass\n\nAlternatively if you decide that any exception raised at this point is an issue, you can just run \n\n         with mock.patch(\u0027sys.stdout\u0027):\n            cmd.main([\u0027test\u0027, os.path.join(self.fixtures_path,\n                                           \u0027cmd-001.yaml\u0027)])\n\nWhich will fail if any exception is raised. So far I can\u0027t see of an easy wait to only fail if certain exceptions are raised using the assert calls.",
+      "revId": "2d7f0505eee1fa03d1a1a5864605cdfba844551c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_1d4e15c2",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-01-31T20:12:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_79a74ebd",
       "revId": "2d7f0505eee1fa03d1a1a5864605cdfba844551c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
