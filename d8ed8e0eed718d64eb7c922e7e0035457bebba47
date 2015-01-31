@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_5a8fb323",
+        "filename": "jenkins_jobs/parallel.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-01-31T17:39:17Z",
+      "side": 1,
+      "message": "Okay, I\u0027m not going to block this review based on my opinion here but I am curious what generic usage you anticipate for this class?",
+      "parentUuid": "fa81d914_146fa7c6",
+      "revId": "d8ed8e0eed718d64eb7c922e7e0035457bebba47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_8c15ec41",
         "filename": "jenkins_jobs/parallel.py",
         "patchSetId": 18
