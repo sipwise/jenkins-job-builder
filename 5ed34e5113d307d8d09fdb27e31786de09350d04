@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_60b686de",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-01-31T23:00:04Z",
+      "side": 1,
+      "message": "The reason I did it here was to avoid duplicating code since expandYamlForTemplateJob is used in more than one place.\n\nI can\u0027t think of use for having this key in the project dictionary at this point anyway...",
+      "parentUuid": "1a930d6b_56e11d99",
+      "revId": "5ed34e5113d307d8d09fdb27e31786de09350d04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_b1588b33",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-22T17:11:36Z",
       "side": 1,
       "message": "Ok, so this definitely solves the problem, just wondering if it should really be solved in the deep_format by supporting the ability to not require everything to be interpolated if passed a third parameter that toggles the behaviour?\n\nHave a look at Iad9f0e522725e6fd6681cd62d3e36f69baf09585.",
+      "revId": "5ed34e5113d307d8d09fdb27e31786de09350d04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_40c1822d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-01-31T23:00:04Z",
+      "side": 1,
+      "message": "If you look at the applyDefaults method, there is some logic there used to exclude values from the given override dict that is pretty specific to defaults. It is convenient to do this here because anywhere else we would have to go to the trouble of obtaining the defaults again.\n\nI\u0027m not sure I like the idea of moving this logic into deep_format because then that function would have to care about defaults in addition to its main purpose which is formatting parameterized strings.\n\nThe logic would actually look quite different and I\u0027m having some difficulty playing out the scenario you suggest in my head. Essentially we need to exclude values from the defaults before the params update on top of the defaults. If we try to exclude values from the params after they have been updated on top of the defaults then we may be excluding values which belong there before we even get to (or as you say, during) deep_format.\n\nPlease let me know if that makes sense or requires additional explanation, or if you see a hole in my reasoning.",
+      "parentUuid": "1a930d6b_b1588b33",
       "revId": "5ed34e5113d307d8d09fdb27e31786de09350d04",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
