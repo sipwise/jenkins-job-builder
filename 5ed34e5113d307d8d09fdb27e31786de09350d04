@@ -69,6 +69,24 @@
       "revId": "5ed34e5113d307d8d09fdb27e31786de09350d04",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_89b7ecd7",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-02T23:09:34Z",
+      "side": 1,
+      "message": "Darragh, can you think of a use case where you may not want this functionality?",
+      "parentUuid": "1a930d6b_b1588b33",
+      "revId": "5ed34e5113d307d8d09fdb27e31786de09350d04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
