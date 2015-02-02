@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_90be35d3",
+        "filename": "setup.cfg",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-02T21:36:37Z",
+      "side": 1,
+      "message": "I think this would be more consistent to how we handle dependencies in requirements.txt if these were defined in a separate file.  Would it be possible to reference a .spec file instead?  https://docs.python.org/2/distutils/builtdist.html",
+      "revId": "7844653fc7473f26a0d2e64fa03126c517456894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
