@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_d279a3fd",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-02-02T16:32:51Z",
+      "side": 1,
+      "message": "This concerns me quite a bit given that my use of defaults up to now has always been based on the non-deep update behavior. That is to say, I expect keys in my jobs/job-templates to completely override keys in my defaults.\n\nWith this new behavior wherever I was previously overriding defaults in my job templates I will have to explicitly override every subkey. I would like to see it made optional, either through the command line or the jjb configuration file. The default behavior should remain the same.",
+      "revId": "34c67aca1c19dc7890923e7f5960c644e2a56a1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
