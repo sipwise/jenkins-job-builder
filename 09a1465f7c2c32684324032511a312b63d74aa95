@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_3a4c8870",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-02T21:22:29Z",
+      "side": 1,
+      "message": "spelling \u0027w\u0027 should be \u0027e\u0027",
+      "revId": "09a1465f7c2c32684324032511a312b63d74aa95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_3d0482bf",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-02T21:22:29Z",
+      "side": 1,
+      "message": "Might be nice to report which keys got set to empty?  maybe when running in debug?",
+      "revId": "09a1465f7c2c32684324032511a312b63d74aa95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_7cb7ded8",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 8
@@ -13,6 +47,23 @@
       "writtenOn": "2015-01-29T00:05:15Z",
       "side": 1,
       "message": "One option for the default values might be to follow this idea.\n\n replace with object: \"^{obj:(?P\u003ckey\u003e\\w+)}$\"\n replace with default: \"^{(?!obj)(?P\u003ckey\u003e\\w+):(?P\u003cdefault\u003e\\w*)}$\"\n\nAs a bonus, if the number of groups matched is only 1, then there is an empty default value which can signal an optional value even when allow_empty\u003dFalse.\n\nThis would allow people to specify optionals interspersed with required ones, although I think it would probably all need to be moved into the CustomFormatter.",
+      "revId": "09a1465f7c2c32684324032511a312b63d74aa95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e63fbc23",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-02T21:22:29Z",
+      "side": 1,
+      "message": "IMO it might be better to treat this option as a boolean instead of string so that it\u0027s more consistent with some of the other options.  Also setting default\u003d\u0027False\u0027 would make it easier on JJB newbies reading this code.",
       "revId": "09a1465f7c2c32684324032511a312b63d74aa95",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
