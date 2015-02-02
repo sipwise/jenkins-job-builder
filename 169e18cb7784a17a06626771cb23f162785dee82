@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_42f6cfd8",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 11223
+      },
+      "writtenOn": "2015-02-02T11:52:31Z",
+      "side": 1,
+      "message": "Built-in function map() varies from Python 2 to Python 3. I\u0027ve tried to adopt your advice in patchset 4 and 5. But testr tests in Python 3 environment failed. Actually the return value of map() has changed from list object to map object.",
+      "parentUuid": "fa81d914_c411f9ad",
+      "revId": "169e18cb7784a17a06626771cb23f162785dee82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_95ef2ab0",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 3
