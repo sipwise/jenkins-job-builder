@@ -16,6 +16,24 @@
       "revId": "34c67aca1c19dc7890923e7f5960c644e2a56a1e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_3303ca0e",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 11223
+      },
+      "writtenOn": "2015-02-03T02:51:57Z",
+      "side": 1,
+      "message": "Your scenario can be simple implemented by setting customized defaults name in defaults section.\n\nSuch as,\n\n-defaults\n    name: global\n    xxxx:xxxxxx\n\n-defaults\n    name: customized\n    xxxx:xxxxxx\n\n-job\n    name: job_name\n    defaults: customized\n\nActually, I think the purpose of defaults is used to specify some attributes that are not included/set in the jobs\u0027 configuration. So deep update behavior is reasonable.",
+      "parentUuid": "da86d52c_d279a3fd",
+      "revId": "34c67aca1c19dc7890923e7f5960c644e2a56a1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
