@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_81408ea6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13967
+      },
+      "writtenOn": "2015-02-03T12:15:47Z",
+      "side": 1,
+      "message": "The correct form would be \"CMake\".",
+      "range": {
+        "startLine": 7,
+        "startChar": 55,
+        "endLine": 7,
+        "endChar": 59
+      },
+      "revId": "84b5e93587c042ddfc7291021a1fe3455efc380c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
