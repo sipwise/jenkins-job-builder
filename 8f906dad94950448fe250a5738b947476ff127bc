@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_85718ce2",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 7069
+      },
+      "writtenOn": "2015-02-03T02:07:55Z",
+      "side": 1,
+      "message": "I\u0027d suggest we call this self.module_registry",
+      "revId": "8f906dad94950448fe250a5738b947476ff127bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
