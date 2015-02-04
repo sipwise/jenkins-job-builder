@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_21d090c8",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-04T12:05:40Z",
+      "side": 1,
+      "message": "With the various changes missed that \u0027patchset-created-event\u0027 was still in the available_simple_triggers.\n\nTurns out that\u0027s fine, it just results in the old format, but it results in this error message incorrect.",
+      "revId": "b147938ddf311b850558bf20d604e8ddfe02867c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
