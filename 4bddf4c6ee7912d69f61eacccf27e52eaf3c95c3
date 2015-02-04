@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_1015979b",
+        "filename": "jenkins_jobs/modules/project_flow.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-04T12:46:34Z",
+      "side": 1,
+      "message": "FYI, you can use the \u0027!include-raw-escaped\u0027 yaml tag to inline the DSL from an external file and it will automatically be escaped.",
+      "revId": "4bddf4c6ee7912d69f61eacccf27e52eaf3c95c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
