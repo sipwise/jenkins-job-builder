@@ -1639,3 +1639,17 @@ def cmake(parser, xml_parent, data):
     # The plugin generates this tag, but there doesn't seem to be anything
     # that can be configurable by it. Let's keep it to mantain compatibility:
     XML.SubElement(cmake, 'builderImpl')
+
+
+def github_notifier(parser, xml_parent, data):
+    """yaml: github-notifier
+    Set pending build status on Github commit.
+    Requires the Jenkins `Github Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/GitHub+Plugin>`_
+
+    Example:
+
+    .. literalinclude:: /../../tests/builders/fixtures/github-notifier.yaml
+    """
+    XML.SubElement(xml_parent,
+                   'com.cloudbees.jenkins.GitHubSetCommitStatusBuilder')
