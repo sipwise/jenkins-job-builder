@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_702a532d",
+        "filename": "tests/duplicates/test_duplicates.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-04T12:40:28Z",
+      "side": 1,
+      "message": "Better to be a little more strict here?\n\n if os.path.basename(filename).startswith(\"exception_\"):",
+      "revId": "9d3f23a9fc6029602d3ffd9222a82ea2d1a7d6fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
