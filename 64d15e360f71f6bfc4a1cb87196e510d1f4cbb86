@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_58ce4d2f",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-02-04T16:00:18Z",
+      "side": 1,
+      "message": "An kind reviewer recently pointed out six.moves to me in a different patch:\n\nfrom six.moves.urllib import error\n\nThen:\n\nexcept error.URLError:",
+      "revId": "64d15e360f71f6bfc4a1cb87196e510d1f4cbb86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
