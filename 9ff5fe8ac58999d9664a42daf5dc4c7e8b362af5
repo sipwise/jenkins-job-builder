@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_bc710746",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-04T12:34:06Z",
+      "side": 1,
+      "message": "Forgot to update the fail message and comment below?",
+      "revId": "9ff5fe8ac58999d9664a42daf5dc4c7e8b362af5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
