@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_855315e1",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2015-02-04T02:41:01Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be removed? otherwise we will set both options together.",
+      "revId": "68648aa4856a5de64122ba7ab6c7330df7452a8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_255c29ed",
+        "filename": "tests/duplicates/fixtures/allow_duplicates001.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2015-02-04T02:41:01Z",
+      "side": 1,
+      "message": "This points out that it is set twice.",
+      "revId": "68648aa4856a5de64122ba7ab6c7330df7452a8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
