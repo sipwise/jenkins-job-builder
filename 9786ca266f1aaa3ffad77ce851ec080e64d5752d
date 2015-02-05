@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_142f15f8",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-02-05T15:10:10Z",
+      "side": 1,
+      "message": "No it\u0027s because I put it on the next line after the (dict) since I considered that to be part of the quote. But I\u0027ll remove the (dict) part since it might be confusing.",
+      "parentUuid": "da86d52c_5070c2db",
+      "revId": "9786ca266f1aaa3ffad77ce851ec080e64d5752d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_900a3a24",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-05T11:47:17Z",
       "side": 1,
       "message": "I need to be clearer with my comments.\n\nWith patchset-created-event in the available_simple_triggers.keys() this error message will list \u0027patcheset-created-event\u0027 twice when it fires.\n\nJust needs to be removed and retain the previous contents.",
+      "revId": "9786ca266f1aaa3ffad77ce851ec080e64d5752d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_b43d692d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-02-05T15:10:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_900a3a24",
       "revId": "9786ca266f1aaa3ffad77ce851ec080e64d5752d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
