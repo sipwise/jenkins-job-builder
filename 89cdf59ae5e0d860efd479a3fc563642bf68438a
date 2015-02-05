@@ -16,6 +16,24 @@
       "revId": "89cdf59ae5e0d860efd479a3fc563642bf68438a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_bd98db6a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 9943
+      },
+      "writtenOn": "2015-02-05T22:13:38Z",
+      "side": 1,
+      "message": "I\u0027m not that found in python3 yet but on Debian Jessie I see:\n\n$ python3\nPython 3.4.2 (default, Oct  8 2014, 10:45:20) \n[GCC 4.9.1] on linux\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\npy\u003e open(\u0027/etc/passwd\u0027)\n\u003c_io.TextIOWrapper name\u003d\u0027/etc/passwd\u0027 mode\u003d\u0027r\u0027 encoding\u003d\u0027UTF-8\u0027\u003e\npy\u003e file(\u0027/etc/passwd\u0027)\nTraceback (most recent call last):\n  File \"\u003cstdin\u003e\", line 1, in \u003cmodule\u003e\nNameError: name \u0027file\u0027 is not defined",
+      "parentUuid": "da86d52c_9df6b85b",
+      "revId": "89cdf59ae5e0d860efd479a3fc563642bf68438a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
