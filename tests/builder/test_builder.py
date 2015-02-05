@@ -28,7 +28,7 @@ class TestCaseTestBuilder(TestCase):
             'http://jenkins.example.com',
             'doesnot', 'matter',
             jenkins_timeout=1,
-            plugins_list=[],
+            plugins_list=['plugin1', 'plugin2'],
         )
         TestCase.setUp(self)
 
@@ -55,3 +55,13 @@ class TestCaseTestBuilder(TestCase):
     def test_wait_for_jenkins_failure(self, jenkins_mock):
         "Bail out of a jenkins with a permanent error"
         self.assertRaises(JenkinsException, self.builder.wait_for_jenkins, 1)
+
+    def test_plugins_list(self):
+        self.assertEqual(self.builder.plugins_list, ['plugin1', 'plugin2'])
+
+    @mock.patch.object(jenkins_jobs.builder.Jenkins, 'get_plugins_info',
+                       return_value=['p1', 'p2'])
+    def test_plugins_list_from_jenkins(self, jenkins_mock):
+        # Trigger fetching the plugins from jenkins when accessing the property
+        self.builder._plugins_list = None
+        self.assertEqual(self.builder.plugins_list, ['p1', 'p2'])
