@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_10800abf",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-05T11:39:34Z",
+      "side": 1,
+      "message": "any reason not to use config.getint(\u0027jenkins\u0027, \u0027timeout\u0027) ?",
+      "revId": "4fe9eb18961521a84e04872f80b398aff8f7cf1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
