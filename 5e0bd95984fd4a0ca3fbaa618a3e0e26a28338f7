@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_786bda1d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 769,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-05T18:39:37Z",
+      "side": 1,
+      "message": "Do you mean it\u0027s a bad idea in the general, like it should be changed in python-jenkins or JJB to something else? \n\nSetting to 1 sec for this change sounds ok to me.   You\u0027ll probably want to rebase this change on top of  the one i referenced earlier.",
+      "parentUuid": "da86d52c_1667224e",
+      "revId": "5e0bd95984fd4a0ca3fbaa618a3e0e26a28338f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_721a3c7e",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 4
@@ -136,6 +154,24 @@
       "side": 1,
       "message": "Maybe I misunderstand your concern but the \u00271\u0027 becomes the argument to wait_for_jenkins() through assertRaises.",
       "parentUuid": "da86d52c_fd143d45",
+      "revId": "5e0bd95984fd4a0ca3fbaa618a3e0e26a28338f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_38a2424b",
+        "filename": "tests/builder/test_builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-05T18:39:37Z",
+      "side": 1,
+      "message": "sorry, i missed that.",
+      "parentUuid": "da86d52c_0a67f226",
       "revId": "5e0bd95984fd4a0ca3fbaa618a3e0e26a28338f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
