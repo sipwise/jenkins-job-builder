@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_634882b3",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1313,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-05T23:25:42Z",
+      "side": 1,
+      "message": "This looks like a reproduction of the plugin help, I don\u0027t think we need that level of detail. Think it\u0027s best to just be able to correctly associate these settings with the options in the plugin and leave the details of how they work to be documented by the plugin.",
+      "revId": "44b8fca2f40e42f732fbda137d7d708b497c9e31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_a3d6fa4c",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1332,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-05T23:25:42Z",
+      "side": 1,
+      "message": "Do these need to be unique? What happens if someone defines the same key twice?\n\nAs long as Jenkins doesn\u0027t complain and reject an update if that occurs, it\u0027s not a problem.",
+      "revId": "44b8fca2f40e42f732fbda137d7d708b497c9e31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_c3576ec8",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1343,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-05T23:25:42Z",
+      "side": 1,
+      "message": "Is one of them required? As in will Jenkins have a problem if neither is defined.",
+      "revId": "44b8fca2f40e42f732fbda137d7d708b497c9e31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_63eb22dc",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1384,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-05T23:25:42Z",
+      "side": 1,
+      "message": "For most of these seems like they could just use the following style:\n\n XML.SubElement(root, \u0027executable\u0027).text \u003d str(data.get(\u0027exe\u0027, \u0027\u0027))\n\nNo need to have the intermediate variables in most cases.",
+      "revId": "44b8fca2f40e42f732fbda137d7d708b497c9e31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
