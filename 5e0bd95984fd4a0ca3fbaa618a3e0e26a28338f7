@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_ddcdb9b8",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 769,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-05T01:09:38Z",
+      "side": 1,
+      "message": "When I set a 5 sec timeout it takes much longer for this to tell me that \"Jenkins did not come up in 5 seconds\".  I think the request in the python-jenkins lib is adding on another timeout which makes it longer than expected.  Take a look at change I3dfe9139469 to help adjust the the underlying connection timeout.",
+      "revId": "5e0bd95984fd4a0ca3fbaa618a3e0e26a28338f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_721a3c7e",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 777,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-05T01:09:38Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem to handle the case where Jenkins hasn\u0027t even been started yet.  The scenario would be:\n 1. Jenkins server currently stopped\n 2. run JJB with --wait 30\n 3. start Jenkins server\n\nIn this case a connection will be attempted and python-jenkins will immediately throw a JenkinsException (connection refused) and JJB will exit.  In this case shouldn\u0027t we re-try to connect for 30 seconds?",
+      "revId": "5e0bd95984fd4a0ca3fbaa618a3e0e26a28338f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_52e0d895",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-05T01:09:38Z",
+      "side": 1,
+      "message": "default of 0 is like not passing \u0027--wait\u0027  at all.  Wouldn\u0027t it be better to set the default to something like 10 or 20?  That way users can just use --wait without having to specify a time at all?",
+      "revId": "5e0bd95984fd4a0ca3fbaa618a3e0e26a28338f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_fd143d45",
+        "filename": "tests/builder/test_builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-05T01:09:38Z",
+      "side": 1,
+      "message": "maybe it doesn\u0027t matter, but don\u0027t you need to pass a value to  self.builder.wait_for_jenkins ?",
+      "revId": "5e0bd95984fd4a0ca3fbaa618a3e0e26a28338f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
