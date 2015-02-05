@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_9bf16897",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 867,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-05T19:02:30Z",
+      "side": 1,
+      "message": "I don\u0027t think you need to catch this exception now because python-jenkins is already doing it and raising a JenkinsException.  http://git.openstack.org/cgit/stackforge/python-jenkins/tree/jenkins/__init__.py#n253",
+      "revId": "f468368312d63dc19b78811abe07e7258c7b04b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_5b70d00a",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 871,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-05T19:02:30Z",
+      "side": 1,
+      "message": "I\u0027m thinking it would be better to move this exception to the python-jenkins jenkins_open() method instead (referenced in above comment).",
+      "revId": "f468368312d63dc19b78811abe07e7258c7b04b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
