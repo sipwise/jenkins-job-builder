@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_fef5ce50",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1314,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-06T16:02:51Z",
+      "side": 1,
+      "message": "Remove the check and just go with a one liner?\n\n XML.SubElement(mailer, \u0027recipients\u0027).text \u003d data.get(\u0027recipients\u0027)",
+      "revId": "cb04126a7b5e5e5781b12bfee1954ec622af6ced",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
