@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_b1a1d647",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 9943
+      },
+      "writtenOn": "2015-02-06T10:47:33Z",
+      "side": 1,
+      "message": "Shouldn\u0027t we make this optional and only override the python-jenkins default if we see fit?",
+      "revId": "d1515113a66b3f859f37d06a0700a584406b9341",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
