@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_890bd0d4",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 875,
+      "author": {
+        "id": 6039
+      },
+      "writtenOn": "2015-02-06T04:15:49Z",
+      "side": 1,
+      "message": "While this probably won\u0027t cause any serious errors, time.sleep(1) does not guarantee a minimum sleep time and may wake up early. It would be more accurate to get the system time before the loop and continually check the difference with the current time.\n\nAlso, some back-off wouldn\u0027t be terrible.",
+      "revId": "f41b97c74d71d66f988b68410ddc91e7d97c2e26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
