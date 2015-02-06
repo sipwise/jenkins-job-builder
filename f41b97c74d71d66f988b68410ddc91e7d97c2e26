@@ -16,6 +16,24 @@
       "revId": "f41b97c74d71d66f988b68410ddc91e7d97c2e26",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_311a46c6",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 875,
+      "author": {
+        "id": 9943
+      },
+      "writtenOn": "2015-02-06T10:43:40Z",
+      "side": 1,
+      "message": "I went for just \"sleep\" since it\u0027s good enough, we basically want to retry frequently.\n\nDidn\u0027t add a back-off since we expect jenkins to become ready eventually so trying less during the end of the waiting period makes us wait longer than we\u0027d need to.",
+      "parentUuid": "da86d52c_890bd0d4",
+      "revId": "f41b97c74d71d66f988b68410ddc91e7d97c2e26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
