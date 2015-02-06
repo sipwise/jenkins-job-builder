@@ -688,12 +688,12 @@ class Jenkins(object):
             logger.info("Deleting jenkins job {0}".format(job_name))
             self.jenkins.delete_job(job_name)
 
-    def get_plugins_info(self):
+    def get_plugin_info(self):
         """ Return a list of plugin_info dicts, one for each plugin on the
         Jenkins instance.
         """
         try:
-            plugins_list = self.jenkins.get_plugins_info()
+            plugins_list = self.jenkins.get_plugin_info()
         except jenkins.JenkinsException as e:
             if re.search("Connection refused", str(e)):
                 logger.warn("Unable to retrieve Jenkins Plugin Info from {0},"
@@ -732,7 +732,7 @@ class Builder(object):
         self.ignore_cache = ignore_cache
 
         if plugins_list is None:
-            self.plugins_list = self.jenkins.get_plugins_info()
+            self.plugins_list = self.jenkins.get_plugin_info()
         else:
             self.plugins_list = plugins_list
 

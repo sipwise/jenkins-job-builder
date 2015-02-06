@@ -43,7 +43,7 @@ def os_walk_side_effects(path_name, topdown):
     return os_walk_return_values[path_name]
 
 
-@mock.patch('jenkins_jobs.builder.Jenkins.get_plugins_info', mock.MagicMock)
+@mock.patch('jenkins_jobs.builder.Jenkins.get_plugin_info', mock.MagicMock)
 class TestTests(CmdTestsBase):
 
     def test_non_existing_config_dir(self):
@@ -212,12 +212,12 @@ class TestTests(CmdTestsBase):
 class TestJenkinsGetPluginInfoError(CmdTestsBase):
     """ This test class is used for testing the 'test' subcommand when we want
     to validate its behavior without mocking
-    jenkins_jobs.builder.Jenkins.get_plugins_info
+    jenkins_jobs.builder.Jenkins.get_plugin_info
     """
 
-    @mock.patch('jenkins.Jenkins.get_plugins_info')
+    @mock.patch('jenkins.Jenkins.get_plugin_info')
     def test_console_output_jenkins_connection_failure_warning(
-            self, get_plugins_info_mock):
+            self, get_plugin_info_mock):
         """
         Run test mode and verify that failed Jenkins connection attempt
         exception does not bubble out of cmd.main. Ideally, we would also test
@@ -226,7 +226,7 @@ class TestJenkinsGetPluginInfoError(CmdTestsBase):
         suite.
         """
 
-        get_plugins_info_mock.side_effect = \
+        get_plugin_info_mock.side_effect = \
             jenkins.JenkinsException("Connection refused")
         with mock.patch('sys.stdout'):
             try:
