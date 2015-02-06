@@ -34,6 +34,24 @@
       "revId": "f41b97c74d71d66f988b68410ddc91e7d97c2e26",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_141c5069",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 875,
+      "author": {
+        "id": 6133
+      },
+      "writtenOn": "2015-02-06T10:55:54Z",
+      "side": 1,
+      "message": "In othere cases i\u0027d go for some async tasks, but as we cannot do more if jenkins is not up, is good for me.",
+      "parentUuid": "da86d52c_311a46c6",
+      "revId": "f41b97c74d71d66f988b68410ddc91e7d97c2e26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
