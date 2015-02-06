@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_1e92a24b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-06T15:59:23Z",
+      "side": 1,
+      "message": "\u0027Bugfix\u0027 was slightly confusing initially as I looked for what unittest bug it was fixing.\n\nMaybe \u0027Correct pollscm trigger docs and convert example to unittest\u0027.",
+      "revId": "033053f290e1a23a19bbdb6de9e737715b027e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_9ed05220",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-06T15:59:23Z",
+      "side": 1,
+      "message": "Since your moving the example to a unit test to fix the docstring, would you mind changing this to use \u0027:arg\u0027 in the same way as the other functions.",
+      "revId": "033053f290e1a23a19bbdb6de9e737715b027e02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
