@@ -1308,8 +1308,7 @@ def email(parser, xml_parent, data):
     # TODO: raise exception if this is applied to a maven job
     mailer = XML.SubElement(xml_parent,
                             'hudson.tasks.Mailer')
-    if 'recipients' in data:
-        XML.SubElement(mailer, 'recipients').text = data['recipients']
+    XML.SubElement(mailer, 'recipients').text = data.get('recipients', '')
 
     # Note the logic reversal (included here to match the GUI
     if data.get('notify-every-unstable-build', True):
