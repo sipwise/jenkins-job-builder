@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_fdddf3e0",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-06T15:51:20Z",
+      "side": 1,
+      "message": "Ah, didn\u0027t spot that! Don\u0027t think there was anything wrong with saying (dict), just that since the name of the setting is \u0027patchset-created-event\u0027 the quotes should surround that.",
+      "parentUuid": "da86d52c_142f15f8",
+      "revId": "9786ca266f1aaa3ffad77ce851ec080e64d5752d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_900a3a24",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 11
