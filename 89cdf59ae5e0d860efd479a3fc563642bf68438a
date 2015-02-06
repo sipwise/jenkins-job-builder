@@ -34,6 +34,24 @@
       "revId": "89cdf59ae5e0d860efd479a3fc563642bf68438a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_46c38c37",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-06T00:39:05Z",
+      "side": 1,
+      "message": "I think the unit tests miss this because we don\u0027t test the cachefile handling behaviour and mock CacheStorage out for most tests.\n\nIf you add the following to the tests/cachestorage/test_cachestorage.py it tickles the problem on python 3.\n\n    @mock.patch(\u0027jenkins_jobs.builder.CacheStorage.get_cache_dir\u0027,\n                lambda x: \u0027/bad/file\u0027)\n    def test_cache_file(self):\n        \"\"\"\n        Test providing a cachefile.\n        \"\"\"\n        test_file \u003d os.path.abspath(__file__)\n        with mock.patch(\u0027os.path.join\u0027, return_value\u003dtest_file):\n            with mock.patch(\u0027yaml.load\u0027):\n                jenkins_jobs.builder.CacheStorage(\"dummy\").data \u003d None",
+      "parentUuid": "da86d52c_bd98db6a",
+      "revId": "89cdf59ae5e0d860efd479a3fc563642bf68438a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
