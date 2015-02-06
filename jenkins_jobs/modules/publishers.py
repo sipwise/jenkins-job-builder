@@ -1310,6 +1310,8 @@ def email(parser, xml_parent, data):
                             'hudson.tasks.Mailer')
     if 'recipients' in data:
         XML.SubElement(mailer, 'recipients').text = data['recipients']
+    else:
+        XML.SubElement(mailer, 'recipients').text = ''
 
     # Note the logic reversal (included here to match the GUI
     if data.get('notify-every-unstable-build', True):
