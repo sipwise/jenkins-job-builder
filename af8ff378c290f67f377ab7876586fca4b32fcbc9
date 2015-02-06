@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_32c6b117",
+        "filename": "tests/yamlparser/fixtures/expand-yaml-for-template-job/dimensionality-test001.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-02-06T21:09:31Z",
+      "side": 1,
+      "message": "Without this patch, the expandYamlForTemplateJob method will attempt to create a job for each value in this platform_axis element. This will lead to duplicate job sometime after job expansion is finished.",
+      "revId": "af8ff378c290f67f377ab7876586fca4b32fcbc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
