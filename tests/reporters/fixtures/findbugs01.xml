@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<maven2-moduleset>
+  <reporters>
+    <hudson.plugins.findbugs.FindBugsReporter plugin="findbugs">
+      <healthy>80</healthy>
+      <unHealthy>10</unHealthy>
+      <pluginName>[FINDBUGS] </pluginName>
+      <thresholdLimit>low</thresholdLimit>
+      <canRunOnFailed>true</canRunOnFailed>
+      <dontComputeNew>false</dontComputeNew>
+      <useDeltaValues>true</useDeltaValues>
+      <usePreviousBuildAsReference>true</usePreviousBuildAsReference>
+      <useStableBuildAsReference>true</useStableBuildAsReference>
+      <thresholds plugin="analysis-core">
+        <unstableTotalAll>90</unstableTotalAll>
+        <unstableTotalHigh>80</unstableTotalHigh>
+        <unstableTotalNormal>80</unstableTotalNormal>
+        <unstableTotalLow>20</unstableTotalLow>
+        <failedTotalAll>80</failedTotalAll>
+        <failedTotalHigh>70</failedTotalHigh>
+        <failedTotalNormal>40</failedTotalNormal>
+        <failedTotalLow>10</failedTotalLow>
+        <unstableNewAll>95</unstableNewAll>
+        <unstableNewHigh>85</unstableNewHigh>
+        <unstableNewNormal>85</unstableNewNormal>
+        <unstableNewLow>25</unstableNewLow>
+        <failedNewAll>85</failedNewAll>
+        <failedNewHigh>75</failedNewHigh>
+        <failedNewNormal>45</failedNewNormal>
+        <failedNewLow>15</failedNewLow>
+      </thresholds>
+      <isRankActivated>true</isRankActivated>
+      <includePattern>f,d,e,.*</includePattern>
+      <excludePattern>a,c,d,.*</excludePattern>
+    </hudson.plugins.findbugs.FindBugsReporter>
+  </reporters>
+</maven2-moduleset>
