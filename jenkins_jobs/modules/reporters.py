@@ -69,6 +69,168 @@ def email(parser, xml_parent, data):
     XML.SubElement(mailer, 'perModuleEmail').text = 'true'
 
 
+def findbugs(parser, xml_parent, data):
+    """yaml: findbugs
+    FindBugs reporting for builds
+
+    :arg bool rank-priority: Use rank as priority (default: false)
+    :arg str include-files: Comma separated list of files to include.
+                            (Optional)
+    :arg str exclude-files: Comma separated list of files to exclude.
+                            (Optional)
+    :arg bool run-always: Weather or not to run plug-in on failed builds.
+                          (default: false)
+    :arg int healthy-threshold: Percent threshhold for a healthy build.
+                                (optional)
+    :arg int unhealthy-threshold: Percent threshold for an unhealthy build.
+                                  (optional)
+    :arg str health-priorities: Determines which warning priorities should be
+                                considered when evaluating the build health.
+                                options: low, normal, high (default: low)
+    :arg bool compute-new-warnings: Compute new warnings based on reference
+                                    build. (Default: false)
+    :arg bool use-delta-values: Use delta for new warnings. (Default: false)
+    :arg bool use-previous-build: Use previous build as reference.
+                                  (Default: false)
+    :arg bool use-stable-only: Use stable builds only as reference.
+                               (Default: false)
+    :arg dict thresholds:
+        :thresholds:
+            * **unstable-all** (`int`) - Unstable all threshold. (Optional)
+            * **unstable-high** (`int`) - Unstable high threshold. (Optional)
+            * **unstable-normal** (`int`) - Unstable normal threshold.
+                                            (Optional)
+            * **unstable-low** (`int`) - Unstable low threshold. (Optional)
+            * **failed-all** (`int`) - Failed all threshold. (Optional)
+            * **failed-high** (`int`) - Failed high threshold. (Optional)
+            * **failed-normal** (`int`) - Failed normal threshold. (Optional)
+            * **failed-low** (`int`) - Failed low threshold. (Optional)
+            * **unstable-new-all** (`int`) - Unstable new all threshold.
+                                             (Optional)
+            * **unstable-new-high** (`int`) - Unstable new high threshold.
+                                              (Optional)
+            * **unstable-new-normal** (`int`) - Unstable new normal threshold.
+                                                (Optional)
+            * **unstable-new-low** (`int`) - Unstable new low threshold.
+                                             (Optional)
+            * **failed-new-all** (`int`) - Failed new all threshold.
+                                           (Optional)
+            * **failed-new-high** (`int`) - Failed new high threshold.
+                                            (Optional)
+            * **failed-new-normal** (`int`) - Failed new normal threshold.
+                                              (Optional)
+            * **failed-new-low** (`int`) - Failed new low threshold.
+                                           (Optional)
+
+    Minimal Example::
+
+      reporters:
+        - findbugs
+
+    Full Example:
+
+    .. literalinclude::  /../../tests/reporters/fixtures/findbugs01.yaml
+
+    """
+    findbugs = XML.SubElement(xml_parent,
+                              'hudson.plugins.findbugs.FindBugsReporter')
+    findbugs.set('plugin', 'findbugs')
+
+    supported_health_priorities = ['low', 'normal', 'high']
+
+    # Health related
+    healthy_threshold = str(data.get('healthy-threshold', ''))
+    XML.SubElement(findbugs, 'healthy').text = healthy_threshold
+    unhealthy_threshold = str(data.get('unhealthy-threshold', ''))
+    XML.SubElement(findbugs, 'unHealthy').text = unhealthy_threshold
+    XML.SubElement(findbugs, 'pluginName').text = '[FINDBUGS] '
+    health_priorities = data.get('health-priorities', 'low').lower()
+    if health_priorities not in supported_health_priorities:
+        raise jenkins_jobs.errors.JenkinsJobsException(
+            "Choice should be one of the following options: %s." %
+            ", ".join(supported_health_priorities))
+    XML.SubElement(findbugs, 'thresholdLimit').text = health_priorities
+    run_always = str(data.get('run-always', False)).lower()
+    XML.SubElement(findbugs, 'canRunOnFailed').text = run_always
+
+    compute_new_warnings = data.get('compute-new-warnings', False)
+    XML.SubElement(findbugs, 'dontComputeNew').text = str(
+        not compute_new_warnings).lower()
+
+    use_delta_values = str(data.get('use-delta-values', False)).lower()
+    use_previous_build = str(data.get('use-previous-build', False)).lower()
+    use_stable_only = str(data.get('use-stable-only', False)).lower()
+    if not compute_new_warnings:
+        use_delta_values = 'false'
+        use_previous_build = 'false'
+        use_stable_only = 'false'
+    XML.SubElement(findbugs, 'useDeltaValues').text = use_delta_values
+    XML.SubElement(findbugs,
+                   'usePreviousBuildAsReference').text = use_previous_build
+    XML.SubElement(findbugs,
+                   'useStableBuildAsReference').text = use_stable_only
+
+    # Status Thresholds
+    if 'thresholds' in data:
+        tdata = data['thresholds']
+        thresholds = XML.SubElement(findbugs, 'thresholds')
+        thresholds.set('plugin', 'analysis-core')
+
+        unstable_all = str(tdata.get('unstable-all', ''))
+        XML.SubElement(thresholds, 'unstableTotalAll').text = unstable_all
+        unstable_high = str(tdata.get('unstable-high', ''))
+        XML.SubElement(thresholds, 'unstableTotalHigh').text = unstable_high
+        unstable_normal = str(tdata.get('unstable-high', ''))
+        XML.SubElement(thresholds,
+                       'unstableTotalNormal').text = unstable_normal
+        unstable_low = str(tdata.get('unstable-low', ''))
+        XML.SubElement(thresholds, 'unstableTotalLow').text = unstable_low
+
+        failed_all = str(tdata.get('failed-all', ''))
+        XML.SubElement(thresholds, 'failedTotalAll').text = failed_all
+        failed_high = str(tdata.get('failed-high', ''))
+        XML.SubElement(thresholds, 'failedTotalHigh').text = failed_high
+        failed_normal = str(tdata.get('failed-normal', ''))
+        XML.SubElement(thresholds, 'failedTotalNormal').text = failed_normal
+        failed_low = str(tdata.get('failed-low', ''))
+        XML.SubElement(thresholds, 'failedTotalLow').text = failed_low
+
+        if compute_new_warnings:
+            unstable_new_all = str(tdata.get('unstable-new-all', ''))
+            XML.SubElement(thresholds, 'unstableNewAll').text = \
+                unstable_new_all
+            unstable_new_high = str(tdata.get('unstable-new-high', ''))
+            XML.SubElement(thresholds, 'unstableNewHigh').text = \
+                unstable_new_high
+            unstable_new_normal = str(tdata.get('unstable-new-high', ''))
+            XML.SubElement(thresholds,
+                           'unstableNewNormal').text = unstable_new_normal
+            unstable_new_low = str(tdata.get('unstable-new-low', ''))
+            XML.SubElement(thresholds, 'unstableNewLow').text = \
+                unstable_new_low
+
+            failed_new_all = str(tdata.get('failed-new-all', ''))
+            XML.SubElement(thresholds, 'failedNewAll').text = \
+                failed_new_all
+            failed_new_high = str(tdata.get('failed-new-high', ''))
+            XML.SubElement(thresholds, 'failedNewHigh').text = \
+                failed_new_high
+            failed_new_normal = str(tdata.get('failed-new-normal', ''))
+            XML.SubElement(thresholds, 'failedNewNormal').text = \
+                failed_new_normal
+            failed_new_low = str(tdata.get('failed-new-low', ''))
+            XML.SubElement(thresholds, 'failedNewLow').text = \
+                failed_new_low
+
+    # General Options
+    rank_priority = str(data.get('rank-priority', False)).lower()
+    XML.SubElement(findbugs, 'isRankActivated').text = rank_priority
+    include_files = data.get('include-files', '')
+    XML.SubElement(findbugs, 'includePattern').text = include_files
+    exclude_files = data.get('exclude-files', '')
+    XML.SubElement(findbugs, 'excludePattern').text = exclude_files
+
+
 class Reporters(jenkins_jobs.modules.base.Base):
     sequence = 55
 
