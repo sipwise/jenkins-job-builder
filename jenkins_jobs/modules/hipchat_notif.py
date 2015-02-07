@@ -22,6 +22,8 @@ Enable HipChat notifications of build execution.
     reported in HipChat room. For later plugin versions, explicit notify-*
     setting is required (see below).
   * **room** *(str)*: name of HipChat room to post messages to
+    .. deprecated:: 1.1.0  Please use 'rooms'.
+  * **rooms** *(list)*: list of HipChat rooms to post messages to
   * **start-notify** *(bool)*: post messages about build start event
   * **notify-success** *(bool)*: post messages about successful build event
     (Jenkins HipChat plugin >= 0.1.5)
@@ -112,7 +114,13 @@ class HipChat(jenkins_jobs.modules.base.Base):
         pdefhip = XML.SubElement(properties,
                                  'jenkins.plugins.hipchat.'
                                  'HipChatNotifier_-HipChatJobProperty')
-        XML.SubElement(pdefhip, 'room').text = hipchat['room']
+
+        room = XML.SubElement(pdefhip, 'room')
+        if isinstance(hipchat['room'], list):
+            room.text = ",".join(hipchat['room'])
+        else:
+            room.text = hipchat['room']
+
         XML.SubElement(pdefhip, 'startNotification').text = str(
             hipchat.get('start-notify', False)).lower()
         if hipchat.get('notify-success'):
