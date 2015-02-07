@@ -1,0 +1,31 @@
+reporters:
+    - findbugs:
+        rank-priority: true
+        include-files: 'f,d,e,.*'
+        exclude-files: 'a,c,d,.*'
+        run-always: true
+        healthy-threshold: 80
+        unhealthy-threshold: 10
+        use-delta-values: true
+        health-priority: 'high'
+        thresholds:
+            unstable-all: 90
+            unstable-high: 80
+            unstable-normal: 50
+            unstable-low: 20
+            failed-all: 80
+            failed-high: 70
+            failed-normal: 40
+            failed-low: 10
+            unstable-new-all: 95
+            unstable-new-high: 85
+            unstable-new-normal: 55
+            unstable-new-low: 25
+            failed-new-all: 85
+            failed-new-high: 75
+            failed-new-normal: 45
+            failed-new-low: 15
+        compute-new-warnings: true
+        use-delta-values: true
+        use-previous-build: true
+        use-stable-only: true
