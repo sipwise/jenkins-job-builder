@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<maven2-moduleset>
+  <reporters>
+    <hudson.plugins.findbugs.FindBugsReporter plugin="findbugs">
+      <healthy/>
+      <unHealthy/>
+      <pluginName>[FINDBUGS] </pluginName>
+      <thresholdLimit>low</thresholdLimit>
+      <canRunOnFailed>false</canRunOnFailed>
+      <dontComputeNew>true</dontComputeNew>
+      <useDeltaValues>false</useDeltaValues>
+      <usePreviousBuildAsReference>false</usePreviousBuildAsReference>
+      <useStableBuildAsReference>false</useStableBuildAsReference>
+      <isRankActivated>false</isRankActivated>
+      <includePattern/>
+      <excludePattern/>
+    </hudson.plugins.findbugs.FindBugsReporter>
+  </reporters>
+</maven2-moduleset>
