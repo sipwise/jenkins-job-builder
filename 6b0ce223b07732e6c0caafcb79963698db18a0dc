@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_2e3a7d98",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-10T01:59:36Z",
+      "side": 1,
+      "message": "Uploaded a suggested change for python-jenkins that might simplify some of this, have a look at If43bb945f55c6fb9f8a6595091eace12e4630ffa and see if you like the idea of converting this to the following after it lands:\n\n plugin_info \u003d self.registry.get_plugin_info(\"Jenkins HipChat Plugin\")\n\n if plugin_info[\u0027version\u0027] \u003e\u003d \"0.1.8\":\n\nthe plugin object returned provides comparison capabilities using pkg_resources.parse_version so we can keep the code easier to read in JJB.",
+      "revId": "6b0ce223b07732e6c0caafcb79963698db18a0dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
