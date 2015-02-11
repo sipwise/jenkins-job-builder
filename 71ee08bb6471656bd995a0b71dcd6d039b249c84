@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_c5b6bbf8",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-11T23:16:02Z",
+      "side": 1,
+      "message": "maybe just deprecate this param instead of keeping it around?",
+      "revId": "71ee08bb6471656bd995a0b71dcd6d039b249c84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_c5addb9c",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-11T23:16:02Z",
+      "side": 1,
+      "message": "call this one \u0027rooms\u0027 instead?",
+      "revId": "71ee08bb6471656bd995a0b71dcd6d039b249c84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
