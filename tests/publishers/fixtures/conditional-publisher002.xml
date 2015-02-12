@@ -8,18 +8,27 @@
             <command>ls file*</command>
           </condition>
           <runner class="org.jenkins_ci.plugins.run_condition.BuildStepRunner$DontRun"/>
-          <publisher class="com.michelin.cio.hudson.plugins.copytoslave.CopyToMasterNotifier">
-            <includes>file1,file2*.txt</includes>
-            <excludes>file2bad.txt</excludes>
-            <destinationFolder/>
-          </publisher>
+          <publisherList>
+            <com.michelin.cio.hudson.plugins.copytoslave.CopyToMasterNotifier>
+              <includes>file1,file2*.txt</includes>
+              <excludes>file2bad.txt</excludes>
+              <destinationFolder/>
+            </com.michelin.cio.hudson.plugins.copytoslave.CopyToMasterNotifier>
+          </publisherList>
         </org.jenkins__ci.plugins.flexible__publish.ConditionalPublisher>
         <org.jenkins__ci.plugins.flexible__publish.ConditionalPublisher>
           <condition class="org.jenkins_ci.plugins.run_condition.core.AlwaysRun"/>
           <runner class="org.jenkins_ci.plugins.run_condition.BuildStepRunner$RunUnstable"/>
-          <publisher class="hudson.tasks.test.AggregatedTestResultPublisher">
-            <includeFailedBuilds>true</includeFailedBuilds>
-          </publisher>
+          <publisherList>
+            <hudson.tasks.ArtifactArchiver>
+              <artifacts>**/**</artifacts>
+              <latestOnly>false</latestOnly>
+              <allowEmptyArchive>true</allowEmptyArchive>
+            </hudson.tasks.ArtifactArchiver>
+            <hudson.tasks.test.AggregatedTestResultPublisher>
+              <includeFailedBuilds>true</includeFailedBuilds>
+            </hudson.tasks.test.AggregatedTestResultPublisher>
+          </publisherList>
         </org.jenkins__ci.plugins.flexible__publish.ConditionalPublisher>
       </publishers>
     </org.jenkins__ci.plugins.flexible__publish.FlexiblePublisher>
