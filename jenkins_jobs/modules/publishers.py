@@ -4074,8 +4074,9 @@ def conditional_publisher(parser, xml_parent, data):
 
     def publish_action(parent, action):
         for edited_node in create_publishers(parser, action):
-            edited_node.set('class', edited_node.tag)
-            edited_node.tag = 'publisher'
+            if not has_multiple_actions:
+                edited_node.set('class', edited_node.tag)
+                edited_node.tag = 'publisher'
             parent.append(edited_node)
 
     flex_publisher_tag = 'org.jenkins__ci.plugins.flexible__publish.'    \
@@ -4114,14 +4115,16 @@ def conditional_publisher(parser, xml_parent, data):
         if 'action' in cond_action:
             actions = cond_action['action']
 
-            # Flexible Publish will overwrite action if more than one is
-            # specified.  Limit the action list to one element.
-            if len(actions) is not 1:
-                    raise JenkinsJobsException("Only one action may be "
-                                               "specified for each condition.")
+            has_multiple_actions = len(actions) > 1
 
+            action_parent = cond_publisher
+
+            # support for multiple actions per condition was added in
+            # Flexible Publish v0.13
+            if has_multiple_actions:
+                action_parent = XML.SubElement(cond_publisher, 'publisherList')
             for action in actions:
-                publish_action(cond_publisher, action)
+                publish_action(action_parent, action)
         else:
             raise JenkinsJobsException('action must be set for each condition')
 

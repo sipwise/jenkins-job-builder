@@ -13,6 +13,9 @@ publishers:
         - condition-kind: always
           on-evaluation-failure: run-and-mark-unstable
           action:
+              - archive:
+                  artifacts: '**/**'
+                  allow-empty: 'true'
               - aggregate-tests:
                   include-failed-builds: true
 
