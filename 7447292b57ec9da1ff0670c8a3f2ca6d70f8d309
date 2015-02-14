@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_380e6c33",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-14T20:59:28Z",
+      "side": 0,
+      "message": "I think these lines were dropped accidentally and should be included.\n\nA quick test against the existing openstack jobs showed that this function has changed from expanding just those jobs that match the filter to expanding all jobs.\n\nSince the filter gets applied again before outputting the resulting XML files it doesn\u0027t show up in tests, however I think it might be better to only include those jobs that match the filter rather than relying on them being excluded later.",
+      "revId": "7447292b57ec9da1ff0670c8a3f2ca6d70f8d309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
