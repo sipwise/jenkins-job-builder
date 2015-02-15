@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_27400407",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-15T15:06:38Z",
+      "side": 1,
+      "message": "DEFAULT_TIMEOUT_SEC seems a bit of a misnomer, it\u0027s really the number of seconds in a minute rather than a default setting/value. Please rename the constant to show that is the case SECS_PER_MIN or something similar.",
+      "revId": "8547664eef26bc3476ae58835fc1b87ddd01440e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_27c9e4ac",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-15T15:06:38Z",
+      "side": 1,
+      "message": "Alternative to avoid the continuation slashes.\n\n XML.SubElement(strategy_element, \u0027timeoutSecondsString\u0027\n                ).text \u003d str(timeout_sec)\n\nYou can apply this to any line that it\u0027s too long to use break the line as follows:\n\n XML.SubElement(strategy_element, \u0027timeoutMinutes\u0027).text \u003d str(\n     data.get(\u0027timeout\u0027, 3))",
+      "revId": "8547664eef26bc3476ae58835fc1b87ddd01440e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_07d4e045",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-15T15:06:38Z",
+      "side": 1,
+      "message": "I don\u0027t see a test case covering having the \u0027write-description\u0027 set but without either \u0027abort\u0027 or \u0027fail\u0027 set.\n\nMy initial thought would be that the idea here is that either abort or fail is set is required and writing the description is an optional additional action, so this should be above the description check.\n\nCould you add an inline comment here to clarify..",
+      "revId": "8547664eef26bc3476ae58835fc1b87ddd01440e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
