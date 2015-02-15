@@ -1,8 +1,7 @@
 publishers:
   - build-publisher:
-      name: servername
       publish-unstable-builds: true
-      publish-failed-builds: false
+      publish-failed-builds: true
       days-to-keep: -1
       num-to-keep: 100
       artifact-days-to-keep: -1
