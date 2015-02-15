@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_02be8ed4",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1732,
+      "author": {
+        "id": 6133
+      },
+      "writtenOn": "2015-02-15T18:03:28Z",
+      "side": 1,
+      "message": "why only 2 first digits? what if the version grows to more in the future?",
+      "revId": "4e418c87c7dddbe122e502d390ed4ddbef0fc8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_42b886e5",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1745,
+      "author": {
+        "id": 6133
+      },
+      "writtenOn": "2015-02-15T18:03:28Z",
+      "side": 1,
+      "message": "i\u0027m not confortable with all these hardcoded version numbers, i\u0027d rather move them to meaninful constants",
+      "revId": "4e418c87c7dddbe122e502d390ed4ddbef0fc8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
