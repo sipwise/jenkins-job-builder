@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_9c2027b2",
+        "filename": "jenkins_jobs/modules/reporters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-15T14:21:28Z",
+      "side": 1,
+      "message": "Take a look at importing the build_trends_publisher from the publishers file as it covers all of the common options for the plugins that use the analysis core plugin.\n\nWill mean renaming a number of these options below, but I think that makes more sense than adding a new format for the same options just because this is limited to maven projects.",
+      "revId": "75b1d31c3fd416616a755c550cc2fac21353ee2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_dc2a9f8f",
+        "filename": "jenkins_jobs/modules/reporters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-15T14:21:28Z",
+      "side": 1,
+      "message": "Add link to the plugin wiki page.",
+      "revId": "75b1d31c3fd416616a755c550cc2fac21353ee2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
