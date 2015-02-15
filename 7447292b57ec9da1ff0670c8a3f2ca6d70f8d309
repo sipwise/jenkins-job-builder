@@ -16,6 +16,24 @@
       "revId": "7447292b57ec9da1ff0670c8a3f2ca6d70f8d309",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_163b389d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-02-15T17:10:10Z",
+      "side": 0,
+      "message": "You are right, it was mostly by accident that I removed this block of code but I had strong suspicion that it was unnecessary and I have been continuing to use the jobs_glob to great effect from the command line. I started to re-add it as you suggest but came up with what I feel might be a legitimate code quality concern regarding first the fact that it doesn\u0027t quite make sense that we are even applying a \"filter\" here, and second the fact that we are hard-coding a glob-based matching function.\n\nIf we could just let the yaml parser worry about the details of parsing/expanding yaml and return a list of jobs without bother about how those jobs should be filtered, life would be somewhat easier for folks who would prefer, for example, to filter based on regexes rather than shell globs. With the current hard-coded \"matches\" function it will be difficult to implement regexes for consumers of the yamlparser class... i imagine the required change would look something like:\n\nif jobs_glob and self.config.filter_type \u003d\u003d \"glob\" and matches_glob(job_name, jobs_glob):\n\nIf the yamlparser is going to take care of filtering, it should take a function of type (lists -\u003e lists) rather than a glob; alternatively, it could take a function that acts as a test for membership which would then be used in a list comprehension. But again it seems to me like filtering within the yamlparser is an API faux pas.\n\nSo are you saying that openstack\u0027s usecase for JJB depends on the jobs_glob being matched here? The only way I can imagine that happening is if someone is using the YamlParser directly imported from a JJB module rather than using the packaged command line tool...as I mentioned before, I am using this patch on a regular basis on the command line and JJB correctly expands the expected jobs.",
+      "parentUuid": "da86d52c_380e6c33",
+      "revId": "7447292b57ec9da1ff0670c8a3f2ca6d70f8d309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
