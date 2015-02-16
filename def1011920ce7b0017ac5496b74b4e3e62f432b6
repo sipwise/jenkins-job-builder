@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_908e4378",
+        "filename": "tests/publishers/fixtures/build-publisher001.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6133
+      },
+      "writtenOn": "2015-02-16T06:45:53Z",
+      "side": 1,
+      "message": "extra whitespaces...",
+      "revId": "def1011920ce7b0017ac5496b74b4e3e62f432b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
