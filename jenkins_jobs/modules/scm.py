@@ -44,7 +44,9 @@ def git(parser, xml_parent, data):
     <https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin>`_
 
     :arg str url: URL of the git repository
-    :arg str credentials-id: ID of credentials to use to connect (optional)
+    :arg str credentials-id: ID of credentials to use to connect, which is the
+last field(a 32-digit hexadecimal code) of the path of URL visible after you
+clicked the credential under Jenkins Global credentials. (optional)
     :arg str refspec: refspec to fetch (default '+refs/heads/\*:refs/remotes/\
 remoteName/\*')
     :arg str name: name to fetch (default 'origin')
@@ -53,8 +55,9 @@ remoteName/\*')
 
         :Remote: * **url** (`string`) - url of remote repo
                  * **refspec** (`string`) - refspec to fetch (optional)
-                 * **credentials-id** - ID of credentials to use to connect
-                     (optional)
+                 * **credentials-id** - ID of credentials to use to connect,
+which is the last field of the path of URL(32-digit hexadecimal code) visible
+after you clicked the credential under Jenkins Global credentials. (optional)
     :arg list(str) branches: list of branch specifiers to build (default '**')
     :arg list(str) excluded-users: list of users to ignore revisions from
       when polling for changes. (if polling is enabled, optional)
