@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_34b3c64e",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1732,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2015-02-16T10:00:28Z",
+      "side": 1,
+      "message": "the thing is I don\u0027t know how to safely compare two versions.\nmy fist idea was compare tuples of integers. but I hit case where version string doesn\u0027t contain numbers only (for example \u00271.2.preview \u0027).\n\nmaybe the proper way is change code in builder.py to convert version into named tuple as it is done with python version (sys.version_info)\n\nor I am open to any other idea.",
+      "parentUuid": "da86d52c_02be8ed4",
+      "revId": "4e418c87c7dddbe122e502d390ed4ddbef0fc8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_42b886e5",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-15T18:03:28Z",
       "side": 1,
       "message": "i\u0027m not confortable with all these hardcoded version numbers, i\u0027d rather move them to meaninful constants",
+      "revId": "4e418c87c7dddbe122e502d390ed4ddbef0fc8a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_3499067a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1745,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2015-02-16T10:00:28Z",
+      "side": 1,
+      "message": "there are features which are introduced by specific version of Groovy Postbuild Plugin. like \"Support run for matrix parent\" in 1.9, \"Introduced Script Security Plugin\" in 2.0, \"restrict access to internal objects\" in 1.6.\n\nI can add comment per each case, or create predicate per each one.",
+      "parentUuid": "da86d52c_42b886e5",
       "revId": "4e418c87c7dddbe122e502d390ed4ddbef0fc8a0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
