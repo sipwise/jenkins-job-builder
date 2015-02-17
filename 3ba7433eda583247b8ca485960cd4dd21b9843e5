@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_050f253a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4125,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-17T22:44:33Z",
+      "side": 1,
+      "message": "A test with the plugin shows that this tag is used for both single and multiple actions from v0.13.\n\nSupport was added recently to allow for checking the version of the plugin, looks like you need to add that here and check whether plugin installed is \u003e\u003d 0.13 and then use the publishList otherwise retain the existing behaviour of throwing an error if len of actions \u003e 1.\n\nTake a look at I834dc05465ea5a24e3743f400837482a82e02e70 for a way of testing against multiple plugin versions.",
+      "revId": "3ba7433eda583247b8ca485960cd4dd21b9843e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
