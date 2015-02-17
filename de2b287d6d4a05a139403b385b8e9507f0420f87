@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_585bc453",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3328,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-17T23:09:01Z",
+      "side": 0,
+      "message": "The existing plugin has an \u0027Advanced\u0027 button when configuring which provides access to an option where you can choose to \u0027discard old builds\u0027, when you enable this it provides access to additional options to set days-to-keep and num-to-keep.",
+      "revId": "de2b287d6d4a05a139403b385b8e9507f0420f87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_3bdd2a71",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3332,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-17T23:09:01Z",
+      "side": 0,
+      "message": "These two appear to be hardcoded to \u0027-1\u0027 always once the option  to discard old builds is set.",
+      "revId": "de2b287d6d4a05a139403b385b8e9507f0420f87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

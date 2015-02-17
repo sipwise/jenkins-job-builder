@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_db632eaf",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3298,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-17T23:09:01Z",
+      "side": 1,
+      "message": "Looks like you should add the options days-to-keep and num-to-keep as well.",
+      "revId": "3372c0666eafcecd82b3cd2409b6e4ebd6ef790e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
