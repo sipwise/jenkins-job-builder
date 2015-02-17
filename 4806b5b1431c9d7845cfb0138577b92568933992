@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_31a70b0d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1294,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-17T23:57:11Z",
+      "side": 1,
+      "message": "Is there a reason for the \u0027?\u0027 at the end of this line? Same for the one below?",
+      "revId": "4806b5b1431c9d7845cfb0138577b92568933992",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
