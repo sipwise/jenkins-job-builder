@@ -1192,6 +1192,32 @@ def ssh_agent_credentials(parser, xml_parent, data):
         raise JenkinsJobsException("Missing 'user' for ssh-agent-credentials")
 
 
+def ssh_agent_credential_list(parser, xml_parent, data):
+    """yaml: ssh-agent-credential-list
+    Sets up the list of users for the ssh agent plugin for jenkins.
+
+    Requires the Jenkins `SSH-Agent Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/SSH-Agent-Plugin>`_
+
+    :arg list of str: The user id of the jenkins user credentials (required)
+
+    Example:
+
+    .. literalinclude::
+            /../../tests/wrappers/fixtures/ssh-agent-credential-list001.yaml
+
+    """
+
+    ssh_agent_xml = XML.SubElement(
+        xml_parent,
+        'com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper')
+
+    entry_xml = XML.SubElement(ssh_agent_xml, 'credentialIds')
+
+    for user in data:
+        XML.SubElement(entry_xml, 'string').text = user
+
+
 def credentials_binding(parser, xml_parent, data):
     """yaml: credentials-binding
     Binds credentials to environment variables using the credentials binding
