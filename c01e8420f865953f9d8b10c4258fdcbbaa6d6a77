@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_c5ffcdff",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-17T22:22:47Z",
+      "side": 1,
+      "message": "minor nit,  s/field(/field (/",
+      "revId": "c01e8420f865953f9d8b10c4258fdcbbaa6d6a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_653e21ba",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-17T22:22:47Z",
+      "side": 1,
+      "message": "Please retain the existing formatting style by indenting properly on the following line as is done for the other entries such as \u0027excluded-users\u0027.",
+      "revId": "c01e8420f865953f9d8b10c4258fdcbbaa6d6a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_6548e12d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-17T22:22:47Z",
+      "side": 1,
+      "message": "I suspect that the slash was used here because when you indent the line sphinx retains a single white space which would be incorrect in this case, however you could also fix this line to match the other style using the following format:\n\n     :arg str refspec: refspec to fetch (default\n       \u0027+refs/heads/\\*:refs/remotes/remoteName/\\*\u0027)",
+      "revId": "c01e8420f865953f9d8b10c4258fdcbbaa6d6a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_25598935",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-17T22:22:47Z",
+      "side": 1,
+      "message": "Please retain the existing formatting style by indenting properly on the following line as is done for the other entries such as \u0027excluded-users\u0027.",
+      "revId": "c01e8420f865953f9d8b10c4258fdcbbaa6d6a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
