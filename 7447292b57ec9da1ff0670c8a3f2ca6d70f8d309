@@ -34,6 +34,23 @@
       "revId": "7447292b57ec9da1ff0670c8a3f2ca6d70f8d309",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_c2826351",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-17T22:08:40Z",
+      "side": 0,
+      "message": "Doing the filtering within the expandYaml function makes more sense than expanding every single job to XML and then filtering.",
+      "revId": "7447292b57ec9da1ff0670c8a3f2ca6d70f8d309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
