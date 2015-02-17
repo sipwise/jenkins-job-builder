@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_76097930",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1305,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-17T23:52:26Z",
+      "side": 1,
+      "message": "Since you\u0027ve added the test cases would you mind replacing this doc string with a literalinclude of one of the test examples.\n\nWatch out for changing \u0027Example::\u0027 to \u0027Example:\u0027 above when doing so.",
+      "revId": "6170c45514163a48cf8eccb9c56dd5f9a55f6334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
