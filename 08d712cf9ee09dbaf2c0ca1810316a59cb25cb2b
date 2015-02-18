@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_92c170e6",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1688,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-18T19:42:34Z",
+      "side": 1,
+      "message": "would be better and more consistent with reset of code base to do this:\n\nXML.SubElement(dsl, \u0027ignoreExisting\u0027).text \u003d str(data.get(\u0027ignore-existing\u0027, False)).lower()",
+      "revId": "08d712cf9ee09dbaf2c0ca1810316a59cb25cb2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_7d820d53",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1694,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-18T19:42:34Z",
+      "side": 1,
+      "message": "Would be better to define a supported set then join the list here:\n\nsupported_actions \u003d [\u0027IGNORE\u0027, \u0027DISABLE\u0027, \u0027DELETE\u0027]\n\nraise JenkinsJobsException(\"remove-job-action must be one of %s\" %  \n\", \".join(supported_actions))",
+      "revId": "08d712cf9ee09dbaf2c0ca1810316a59cb25cb2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_ddf4d9f2",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1700,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-18T19:42:34Z",
+      "side": 1,
+      "message": "same here as well.",
+      "revId": "08d712cf9ee09dbaf2c0ca1810316a59cb25cb2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_1dc11180",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1706,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-18T19:42:34Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "08d712cf9ee09dbaf2c0ca1810316a59cb25cb2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
