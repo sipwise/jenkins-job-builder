@@ -16,6 +16,24 @@
       "revId": "4806b5b1431c9d7845cfb0138577b92568933992",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_b1a69ba9",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1294,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-02-18T00:13:38Z",
+      "side": 1,
+      "message": "not really - basically a copy of the string used in jenkins ui.\n\nI also noticed most write default: false (the colon) so I fixed these two in next push.",
+      "parentUuid": "da86d52c_31a70b0d",
+      "revId": "4806b5b1431c9d7845cfb0138577b92568933992",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
