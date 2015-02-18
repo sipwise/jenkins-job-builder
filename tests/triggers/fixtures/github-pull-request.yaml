@@ -15,3 +15,4 @@ triggers:
       github-hooks: true
       permit-all: false
       auto-close-on-fail: false
+      allow-whitelist-orgs-as-admins: true
