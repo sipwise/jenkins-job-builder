@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_319b8b67",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-18T00:12:07Z",
+      "side": 1,
+      "message": "It may be better to use \"hasattr(project_def[\u0027project\u0027], \u0027__iter__\u0027)\" to avoid the hardcoding against classes.\n\nI can\u0027t think of where it\u0027s likely that we could end up with a sequence type collection from the yaml parser that would not be sub classed from \"list\", but it does seem to be generally preferable to avoid \u0027isinstance\u0027 except as a last resort.",
+      "revId": "89e81b35005b30b0cc8b18697cd5e29b459bc5c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
