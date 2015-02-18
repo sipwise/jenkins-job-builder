@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_5bbc6c6c",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-18T22:42:23Z",
+      "side": 1,
+      "message": "wouldn\u0027t it be more appropriate to put this in reporters section since it\u0027s report to github?  Also isn\u0027t it a post-build step?",
+      "revId": "a18ffed989e8ec1795dfadbac4786e6f2babc00e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
