@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_6037bdb0",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-18T22:05:34Z",
+      "side": 1,
+      "message": "could you please specify the default similar to \u0027parameters\u0027 in counterbuild?",
+      "revId": "9039eaa09b7dd99dc6c0a5686d1d0838e572abca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
