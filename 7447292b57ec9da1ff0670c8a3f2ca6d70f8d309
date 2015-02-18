@@ -51,6 +51,24 @@
       "revId": "7447292b57ec9da1ff0670c8a3f2ca6d70f8d309",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_cce9b21b",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-02-18T00:36:46Z",
+      "side": 0,
+      "message": "I see what you\u0027re saying now...based on your last feedback, it wasn\u0027t clear to me that you were talking about XML generation when you said \"expanding all jobs\".\n\nAnyway, the performance benefit of avoiding that XML generation is fairly negligible for my use case (even when filtering hundreds of jobs down to two or three) so I will probably postpone splitting the patch as you suggest for a while. Not sure when I\u0027ll get to it.",
+      "parentUuid": "da86d52c_c2826351",
+      "revId": "7447292b57ec9da1ff0670c8a3f2ca6d70f8d309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
