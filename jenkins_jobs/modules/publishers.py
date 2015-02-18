@@ -859,44 +859,36 @@ def xunit(parser, xml_parent, data):
     Publish tests results. Requires the Jenkins :jenkins-wiki:`xUnit Plugin
     <xUnit+Plugin>`.
 
-    :arg str thresholdmode: whether thresholds represents an absolute \
-    number of tests or a percentage. Either 'number' or 'percent', will \
-    default to 'number' if omitted.
+    :arg str thresholdmode: whether thresholds represents an absolute number
+        of tests or a percentage. Either 'number' or 'percent', will default
+        to 'number' if omitted.
+    :arg dict thresholds: list containing the thresholds for both 'failed' and
+        'skipped' tests. Each entry should in turn have a list of "threshold
+        name: values". The threshold names are 'unstable', 'unstablenew',
+        'failure', 'failurenew'. Omitting a value will resort on xUnit default
+        value (should be 0).
+    :arg int test-time-margin: Give the report time margin value (default to
+        3000) in ms, before to fail if not new (unless the option 'Fail the
+        build if test results were not updated this run' is checked).
+    :arg dict types: Frameworks to configure, and options. Supports the
+        following: aunit, boosttest, checktype, cpptest, cppunit, ctest,
+        embunit, fpcunit, junit, mstest, nunit, phpunit, tusar, unittest,
+        valgrind.
 
-    :arg dict thresholds: list containing the thresholds for both \
-    'failed' and 'skipped' tests. Each entry should in turn have a \
-    list of "threshold name: values". The threshold names are \
-    'unstable', 'unstablenew', 'failure', 'failurenew'. Omitting a \
-    value will resort on xUnit default value (should be 0).
+            The 'custom' type is not supported.
 
-    :arg int test-time-margin: Give the report time margin value (default to \
-    3000) in ms, before to fail if not new (unless the option 'Fail the build \
-    if test results were not updated this run' is checked).
+        :types: each type can be configured using the following parameters
 
-    :arg dict types: per framework configuration. The key should be \
-    one of the internal types we support:\
-    'aunit', 'boosttest', 'checktype', 'cpptest', 'cppunit', 'ctest', \
-    'embunit', 'fpcunit', 'junit', 'mstest', 'nunit', 'phpunit', 'tusar', \
-    'unittest', 'valgrind'.
-
-    The 'custom' type is not supported.
-
-    Each framework type can be configured using the following parameters:
-
-    :arg str pattern: An Ant pattern to look for Junit result files, \
-    relative to the workspace root.
-
-    :arg bool requireupdate: fail the build whenever fresh tests \
-    results have not been found (default: true).
-
-    :arg bool deleteoutput: delete temporary JUnit files (default: true)
-
-    :arg bool skip-if-no-test-files: Skip parsing this xUnit type report if \
-    there are no test reports files (default: false).
-
-    :arg bool stoponerror: Fail the build whenever an error occur during \
-    a result file processing (default: true).
-
+            * **pattern** (`str`): An Ant pattern to look for Junit result
+              files, relative to the workspace root.
+            * **requireupdate** (`bool`): fail the build whenever fresh tests
+              results have not been found (default: true).
+            * **deleteoutput** (`bool`): delete temporary JUnit files
+              (default: true).
+            * **skip-if-no-test-files** (`bool`): Skip parsing this xUnit type
+              report if there are no test reports files (default: false).
+            * **stoponerror** (`bool`): Fail the build whenever an error occur
+              during a result file processing (default: true).
 
     Example:
 
