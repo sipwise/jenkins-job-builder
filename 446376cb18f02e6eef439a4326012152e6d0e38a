@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_d5865664",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-19T12:25:42Z",
+      "side": 1,
+      "message": "Looks like there is a subtle formatting gotcha with sphinx here, need to reduce the indent on each line by 2 spaces. It\u0027s wrong in a few places so guess we\u0027re frequently forgetting to check the resulting layout :-(\n\nTake a look at the resulting http://docs-draft.openstack.org/41/156141/4/check/gate-jenkins-job-builder-docs/b4a4680//doc/build/html/scm.html for what I mean. The additional three lines don\u0027t quite flow as I\u0027d expect.\n\nYou can check the resulting changes locally by running:\n\n tox -edocs\n firefox doc/build/html/scm.html\n\nHowever since it was already broken in the same manner before and we need to fix it in multiple places, I\u0027m going to go with this can be fixed in a subsequent patch which sorts out the odd doc formatting across the entire file.",
+      "revId": "446376cb18f02e6eef439a4326012152e6d0e38a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
