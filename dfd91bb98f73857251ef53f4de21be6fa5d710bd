@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_69893c25",
+        "filename": ".gitignore",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 14073
+      },
+      "writtenOn": "2015-02-19T20:46:31Z",
+      "side": 1,
+      "message": "As already discussed, .*.swp is vim related so this is the same thing, but I will remove it...",
+      "parentUuid": "da86d52c_0ca37c00",
+      "revId": "dfd91bb98f73857251ef53f4de21be6fa5d710bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_a2685189",
         "filename": "doc/source/slack.rst",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-20T18:35:07Z",
       "side": 1,
       "message": "nit: too many \u0027\u003d\u0027 here.",
+      "revId": "dfd91bb98f73857251ef53f4de21be6fa5d710bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_496e3865",
+        "filename": "doc/source/slack.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 14073
+      },
+      "writtenOn": "2015-02-19T20:46:31Z",
+      "side": 1,
+      "message": "Copied from the hipchat.rst, fixed only in slack.rst for now",
+      "parentUuid": "3a961159_a2685189",
       "revId": "dfd91bb98f73857251ef53f4de21be6fa5d710bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_69de9c12",
+        "filename": "jenkins_jobs/modules/slack_notif.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 14073
+      },
+      "writtenOn": "2015-02-19T20:46:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_2cf4c0ef",
+      "revId": "dfd91bb98f73857251ef53f4de21be6fa5d710bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_ccd16458",
         "filename": "jenkins_jobs/modules/slack_notif.py",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2015-02-19T16:06:50Z",
       "side": 1,
       "message": "Unneeded ()",
+      "revId": "dfd91bb98f73857251ef53f4de21be6fa5d710bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_89e110d2",
+        "filename": "jenkins_jobs/modules/slack_notif.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 14073
+      },
+      "writtenOn": "2015-02-19T20:46:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_ccd16458",
       "revId": "dfd91bb98f73857251ef53f4de21be6fa5d710bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
