@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_fb16e4a5",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-19T15:19:16Z",
+      "side": 1,
+      "message": "Do you want to add a note that these only apply if block is true?",
+      "revId": "54f197e6bb93f77c8a7279a191ff80524c912928",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_9bc16831",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-19T15:19:16Z",
+      "side": 1,
+      "message": "The combination of optional and a default value doesn\u0027t make sense to me here, seems like it should be one or the other. Either the setting is optional in which case nothing is defined if it\u0027s not set, or it has a default that is set if the yaml doesn\u0027t define it but set\u0027s block-thresholds.\n\nBased on my reading of the code, it seems like the \u0027optional\u0027 tag is wrong for these three settings, they all have a default value.",
+      "revId": "54f197e6bb93f77c8a7279a191ff80524c912928",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_5bcff07e",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-19T15:19:16Z",
+      "side": 1,
+      "message": "typo s/srt/str/",
+      "revId": "54f197e6bb93f77c8a7279a191ff80524c912928",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_bbc0ec4a",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-19T15:19:16Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "54f197e6bb93f77c8a7279a191ff80524c912928",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_3bd23cd1",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-19T15:19:16Z",
+      "side": 1,
+      "message": "FYI, for the docstrings output to format you don\u0027t need the trailing slashes, just that the subsequent lines should only be indented by 2 characters from the previous line in order for a continuation to occur.",
+      "revId": "54f197e6bb93f77c8a7279a191ff80524c912928",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_29d2f7ff",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-19T15:19:16Z",
+      "side": 1,
+      "message": "Might be better to unpack the three values you need using:\n\n for toptname, txmltag, tvalue in supported_thresholds:\n\nWould make the code easier to follow instead of needing to refer back to which index is what.",
+      "revId": "54f197e6bb93f77c8a7279a191ff80524c912928",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_5bfa90bd",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-19T15:19:16Z",
+      "side": 1,
+      "message": "Probably no need for the extra use of \u0027str\u0027 in most of this. Since threshold_value is coming from a pre-defined lookup table, you can ensure that it will be getting a string in the first place.\n\nHere\u0027s the same code using named vars instead of the indicies access and with the str calls stripped.\n\n thrsh \u003d project_def.get(\u0027block-thresholds\u0027, False)\n for toptname, txmltag, tvalue in supported_thresholds:\n     if thrsh:\n         tvalue \u003d thrsh.get(toptname, tvalue)\n     if tvalue.lower() \u003d\u003d supported_threshold_values[0]:\n         continue\n     if tvalue.upper() not in supported_threshold_values:\n         raise JenkinsJobsException(\n             \"threshold value must be one of (%s)\" %\n             \", \".join(supported_threshold_values))\n     th \u003d XML.SubElement(block, txmltag)\n     XML.SubElement(th, \u0027name\u0027).text \u003d hudson_model.THRESHOLDS[\n          tvalue.upper()][\u0027name\u0027]\n     XML.SubElement(th, \u0027ordinal\u0027).text \u003d hudson_model.THRESHOLDS[\n          tvalue.upper()][\u0027ordinal\u0027]\n     XML.SubElement(th, \u0027color\u0027).text \u003d hudson_model.THRESHOLDS[\n           tvalue.upper()][\u0027color\u0027]",
+      "revId": "54f197e6bb93f77c8a7279a191ff80524c912928",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
