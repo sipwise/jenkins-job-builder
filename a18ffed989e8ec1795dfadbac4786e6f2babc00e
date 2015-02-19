@@ -16,6 +16,24 @@
       "revId": "a18ffed989e8ec1795dfadbac4786e6f2babc00e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_2a63d6b1",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 14673
+      },
+      "writtenOn": "2015-02-19T06:42:24Z",
+      "side": 1,
+      "message": "I\u0027m not too sure to be honest. The feature I\u0027m adding is the first one described in this changelog: https://wiki.jenkins-ci.org/display/JENKINS/GitHub+Plugin#GitHubPlugin-Version1.10%28Nov17%2C2014%29\n\nWhich, under jenkins, is a build step. I guess you could move it around and make it happen before or after another build step, since it\u0027s sending a \u0027pending\u0027 status to the github status API. In which case, location does matter.\n\nIt\u0027s definitely not a post-build step as it\u0027s supposed to report a \u0027pending\u0027 status to github before your builds build.",
+      "parentUuid": "da86d52c_5bbc6c6c",
+      "revId": "a18ffed989e8ec1795dfadbac4786e6f2babc00e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
