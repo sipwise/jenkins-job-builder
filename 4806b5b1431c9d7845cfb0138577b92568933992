@@ -34,6 +34,40 @@
       "revId": "4806b5b1431c9d7845cfb0138577b92568933992",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e4001c03",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1307,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-19T00:32:27Z",
+      "side": 1,
+      "message": "should be python bool type False instead of \u0027false\u0027",
+      "revId": "4806b5b1431c9d7845cfb0138577b92568933992",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_64142c44",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1309,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-19T00:32:27Z",
+      "side": 1,
+      "message": "should be python bool type True instead of \u0027true\u0027",
+      "revId": "4806b5b1431c9d7845cfb0138577b92568933992",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
