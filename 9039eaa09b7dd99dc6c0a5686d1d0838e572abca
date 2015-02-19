@@ -16,6 +16,24 @@
       "revId": "9039eaa09b7dd99dc6c0a5686d1d0838e572abca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_0a9d32bc",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 13505
+      },
+      "writtenOn": "2015-02-19T06:06:00Z",
+      "side": 1,
+      "message": "I\u0027m not sure it\u0027s the right way, \u0027node-label\u0027 is a mandatory parameter for this factory, so it\u0027s closer to \u0027from\u0027, \u0027to\u0027 and \u0027step\u0027 in counterbuild, which don\u0027t have defaults.",
+      "parentUuid": "da86d52c_6037bdb0",
+      "revId": "9039eaa09b7dd99dc6c0a5686d1d0838e572abca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
