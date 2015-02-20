@@ -16,6 +16,24 @@
       "revId": "b6a6f39319ab1550b61661fb7deee37c9af81b30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3afcb43e",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 10423
+      },
+      "writtenOn": "2015-02-20T14:47:31Z",
+      "side": 1,
+      "message": "see http://pyyaml.org/browser/pyyaml/trunk/lib/yaml/loader.py\n\nIs there any better way to do this?",
+      "parentUuid": "ba7be1f8_4fb60fde",
+      "revId": "b6a6f39319ab1550b61661fb7deee37c9af81b30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
