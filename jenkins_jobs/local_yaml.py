@@ -87,14 +87,38 @@ import logging
 import re
 import os
 import yaml
-from yaml.constructor import BaseConstructor
+from yaml.reader import Reader
+from yaml.scanner import Scanner
+from yaml.parser import Parser
+from yaml.composer import Composer
+from yaml.constructor import Constructor, BaseConstructor
+from yaml.resolver import Resolver
 
 logger = logging.getLogger(__name__)
 
+class LocalComposer(Composer):
+    """Keep Anchors between includes in order to use Alias from parent"""
+    anchors = {}
+
+    def __init__(self):
+        self.anchors = LocalComposer.anchors
+
+    def compose_document(self):
+        # Drop the DOCUMENT-START event.
+        self.get_event()
+
+        # Compose the root node.
+        node = self.compose_node(None, None)
+
+        # Drop the DOCUMENT-END event.
+        self.get_event()
+
+        #self.anchors = {}
+        return node
 
 class OrderedConstructor(BaseConstructor):
     """The default constructor class for PyYAML loading uses standard python
-    dictionaries which can have randomized ordering enabled (default in
+    dictionaries which can have randomized   ordering enabled (default in
     CPython from version 3.3). The order of the XML elements being outputted
     is both important for tests and for ensuring predictable generation based
     on the source. This subclass overrides this behaviour to ensure that all
@@ -128,8 +152,18 @@ class OrderedConstructor(BaseConstructor):
             mapping[key] = value
         data.update(mapping)
 
+class LocalAnchorLoader(Reader, Scanner, Parser, LocalComposer, Constructor, Resolver):
+    """Subclass for yaml.Loader which keeps Alias between calls"""
 
-class LocalLoader(OrderedConstructor, yaml.Loader):
+    def __init__(self, stream):
+        Reader.__init__(self, stream)
+        Scanner.__init__(self)
+        Parser.__init__(self)
+        LocalComposer.__init__(self)
+        Constructor.__init__(self)
+        Resolver.__init__(self)
+
+class LocalLoader(OrderedConstructor, LocalAnchorLoader):
     """Subclass for yaml.Loader which handles the local tags 'include',
     'include-raw' and 'include-raw-escaped' to specify a file to include data
     from and whether to parse it as additional yaml, treat it as a data blob
