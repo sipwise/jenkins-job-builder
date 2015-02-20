@@ -1,0 +1,22 @@
+# vim: sw=4 ts=4 et
+- default:
+    name: default-timeout-wrapper
+    timeout: &timeout
+      fail: true
+      elastic-percentage: 150
+      elastic-default-timeout: 90
+      type: elastic
+
+- wrapper: !include include002_1.yaml.inc
+- wrapper: !include include002_2.yaml.inc
+- wrapper: !include include002_3.yaml.inc
+
+- job:
+    name: test-job-1
+    wrappers:
+      !include include002.yaml.inc
+    properties:
+      - inject:
+          keep-build-variables: true
+          keep-system-variables: true
+

@@ -87,7 +87,12 @@ import logging
 import re
 import os
 import yaml
-from yaml.constructor import BaseConstructor
+from yaml.reader import Reader
+from yaml.scanner import Scanner
+from yaml.parser import Parser
+from yaml.composer import Composer
+from yaml.constructor import Constructor, BaseConstructor
+from yaml.resolver import Resolver
 
 logger = logging.getLogger(__name__)
 
@@ -129,7 +134,31 @@ class OrderedConstructor(BaseConstructor):
         data.update(mapping)
 
 
-class LocalLoader(OrderedConstructor, yaml.Loader):
+class LocalAnchorLoader(yaml.Loader):
+    """Subclass for yaml.Loader which keeps Alias between calls"""
+    anchors = {}
+
+    def __init__(self, *args, **kwargs):
+        super(LocalAnchorLoader, self).__init__(*args, **kwargs)
+        self.anchors = LocalAnchorLoader.anchors
+
+    @classmethod
+    def reset_anchors(cls):
+        cls.anchors = {}
+
+    # override the default composer to skip resetting the anchors at the
+    # end of the current document
+    def compose_document(self):
+        # Drop the DOCUMENT-START event.
+        self.get_event()
+        # Compose the root node.
+        node = self.compose_node(None, None)
+        # Drop the DOCUMENT-END event.
+        self.get_event()
+        return node
+
+
+class LocalLoader(OrderedConstructor, LocalAnchorLoader):
     """Subclass for yaml.Loader which handles the local tags 'include',
     'include-raw' and 'include-raw-escaped' to specify a file to include data
     from and whether to parse it as additional yaml, treat it as a data blob
@@ -228,4 +257,5 @@ class LocalLoader(OrderedConstructor, yaml.Loader):
 
 
 def load(stream, **kwargs):
+    LocalAnchorLoader.reset_anchors()
     return yaml.load(stream, functools.partial(LocalLoader, **kwargs))
