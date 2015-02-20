@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_081dfcbd",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1703,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-20T05:40:00Z",
+      "side": 1,
+      "message": "typo removed-view-actions/removed-view-action",
+      "revId": "96b480b04271db2df3258d27d031dc1bd3ba9245",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
