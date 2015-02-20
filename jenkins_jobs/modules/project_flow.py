@@ -36,6 +36,10 @@ Job template example:
     .. literalinclude::
       /../../tests/yamlparser/fixtures/project_flow_template002.yaml
 
+Job example including a DSL file:
+    .. literalinclude::
+    /../../tests/yamlparser/fixtures/project_flow_template003.yaml
+
 """
 
 import xml.etree.ElementTree as XML
@@ -51,5 +55,17 @@ class Flow(jenkins_jobs.modules.base.Base):
             XML.SubElement(xml_parent, 'dsl').text = data['dsl']
         else:
             XML.SubElement(xml_parent, 'dsl').text = ''
+
+        needs_workspace = data.get('needs-workspace', None)
+        if needs_workspace is not None:
+            if needs_workspace:
+                XML.SubElement(xml_parent,
+                               'buildNeedsWorkspace').text = 'true'
+                if 'dsl-file' in data:
+                    XML.SubElement(xml_parent,
+                                   'dslFile').text = data['dsl-file']
+            else:
+                XML.SubElement(xml_parent,
+                               'buildNeedsWorkspace').text = 'false'
 
         return xml_parent
