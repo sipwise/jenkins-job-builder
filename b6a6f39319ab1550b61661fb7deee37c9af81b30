@@ -34,6 +34,40 @@
       "revId": "b6a6f39319ab1550b61661fb7deee37c9af81b30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_7a054cc1",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-20T18:52:12Z",
+      "side": 1,
+      "message": "Seems like you could just subclass the Loader and LocalComposer classes.\n\n class LocalAnchorLoader(LocalComposer, yaml.Loader):\n     \"\"\"Subclass for yaml.Loader which keeps Alias between calls\"\"\"\n\n     def __init__(self, *args, **kwargs):\n         yaml.Loader.__init__(self, *args, **kwargs)\n         LocalComposer.__init__(self)\n\nYou probably don\u0027t even need to subclass the Composer class except for copying how the yaml library combines the multiple classes to get the desired functionality.\n\nYou could just do the following:\n\n class LocalAnchorLoader(yaml.Loader):\n     \"\"\"Subclass for yaml.Loader which keeps Alias between calls\"\"\"\n\n     anchors \u003d {}\n\n     def __init__(self, *args, **kwargs):\n         super(LocalAnchorLoader, self).__init__(*args, **kwargs)\n         self.anchors \u003d LocalAnchorLoader.anchors\n\n     # override the default composer to skip resetting the anchors at the\n     # end of the current document\n     def compose_document(self):\n         # Drop the DOCUMENT-START event.\n         self.get_event()\n\n         # Compose the root node.\n         node \u003d self.compose_node(None, None)\n\n         # Drop the DOCUMENT-END event.\n         self.get_event()\n\n         return node",
+      "revId": "b6a6f39319ab1550b61661fb7deee37c9af81b30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_9a1760a3",
+        "filename": "tests/yamlparser/fixtures/include002_2.yaml.inc",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-20T18:52:12Z",
+      "side": 1,
+      "message": "You probably should only have one reference to the timeout anchor across the three files you\u0027re including.",
+      "revId": "b6a6f39319ab1550b61661fb7deee37c9af81b30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
