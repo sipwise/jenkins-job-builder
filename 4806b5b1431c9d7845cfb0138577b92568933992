@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_3db1f2f8",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1307,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-02-21T11:35:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_e4001c03",
+      "revId": "4806b5b1431c9d7845cfb0138577b92568933992",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_64142c44",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 2
@@ -65,6 +83,24 @@
       "writtenOn": "2015-02-19T00:32:27Z",
       "side": 1,
       "message": "should be python bool type True instead of \u0027true\u0027",
+      "revId": "4806b5b1431c9d7845cfb0138577b92568933992",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_5d95c63e",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1309,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-02-21T11:35:27Z",
+      "side": 1,
+      "message": "fixed it in this method. \n\np.s. found about 10 other places of this pattern but that should be different patch I reckon.",
+      "parentUuid": "da86d52c_64142c44",
       "revId": "4806b5b1431c9d7845cfb0138577b92568933992",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
