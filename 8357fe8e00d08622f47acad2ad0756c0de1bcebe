@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_56e76312",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3301,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-21T19:55:45Z",
+      "side": 1,
+      "message": "If you indent this line by two characters the trailing \u0027 \\\u0027 in the preceding line is unneeded. You can run \u0027tox -edocs \u0026\u0026 firefox doc/build/html/publishers.html\u0027 to check the results locally to ensure the documentation is formatting correctly.\n\nUsing the indent also makes it slightly easier to see when lines are a continuation of the previous line rather than needing to check if the preceding line ended in a \u0027\\\u0027.",
+      "revId": "8357fe8e00d08622f47acad2ad0756c0de1bcebe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_56204349",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3303,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-21T19:55:45Z",
+      "side": 1,
+      "message": "Sorry I missed this before, when you switch from an inline example to using the literalinclude method you need to change this line to \u0027Example:\u0027 for it to render correctly.\n\nCheck http://docs-draft.openstack.org/91/156091/5/check/gate-jenkins-job-builder-docs/69c9504//doc/build/html/publishers.html to see the problem, instead of showing the contents of the file it treats the lines as inline code.",
+      "revId": "8357fe8e00d08622f47acad2ad0756c0de1bcebe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d6ba73e0",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3323,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-21T19:55:45Z",
+      "side": 1,
+      "message": "Should include a comment here just so it\u0027s clear in the future that this is intentional.",
+      "revId": "8357fe8e00d08622f47acad2ad0756c0de1bcebe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
