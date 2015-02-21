@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_9df2de98",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3298,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-02-21T11:44:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_be353ff8",
+      "revId": "60bbf6b86c015437298c97a5795e7265f3d3c6db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_7efe6707",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_7df52a82",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3317,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-02-21T11:44:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_7efe6707",
+      "revId": "60bbf6b86c015437298c97a5795e7265f3d3c6db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_5e7e03b0",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2015-02-19T14:04:11Z",
       "side": 1,
       "message": "These last two options appear to be always set to -1 by Jenkins no matter what the value of of \u0027daysToKeep\u0027 or \u0027numToKeep\u0027 get set to, hence my comment in the previous change. I suspect this is because the plugin is reusing the artifact keeping code from Jenkin\u0027s core but explicitly decides to only set \u0027daysToKeep\u0027 and \u0027numToKeep\u0027, so Jenkins sets \u0027artifactDaysToKeep\u0027 and \u0027artifactNumToKeep\u0027 to -1 in the XML.\n\nWhile we could do lots of testing to verify no unexpected behaviour in this case, I think it\u0027s generally better to match the Jenkin\u0027s behaviour, so I would simply hardcoded them both to \u0027-1\u0027 always and only look to have \u0027days-to-keep\u0027 and \u0027num-to-keep\u0027 configurable.\n\n XML.SubElement(logrotator, \u0027artifactDaysToKeep\u0027).text \u003d \"-1\"\n XML.SubElement(logrotator, \u0027artifactNumToKeep\u0027).text \u003d \"-1\"",
+      "revId": "60bbf6b86c015437298c97a5795e7265f3d3c6db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_5df8667c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3326,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-02-21T11:44:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_5e7e03b0",
       "revId": "60bbf6b86c015437298c97a5795e7265f3d3c6db",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
