@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_56d1d5f9",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3328,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-02-21T11:45:09Z",
+      "side": 0,
+      "message": "gawd - I thought I double checked that. I\u0027ll fix this.",
+      "parentUuid": "da86d52c_585bc453",
+      "revId": "de2b287d6d4a05a139403b385b8e9507f0420f87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_3bdd2a71",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-17T23:09:01Z",
       "side": 0,
       "message": "These two appear to be hardcoded to \u0027-1\u0027 always once the option  to discard old builds is set.",
+      "revId": "de2b287d6d4a05a139403b385b8e9507f0420f87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f1a653c0",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3332,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-02-21T11:45:09Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "da86d52c_3bdd2a71",
       "revId": "de2b287d6d4a05a139403b385b8e9507f0420f87",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
