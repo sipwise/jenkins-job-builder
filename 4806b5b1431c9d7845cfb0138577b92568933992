@@ -122,6 +122,24 @@
       "revId": "4806b5b1431c9d7845cfb0138577b92568933992",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_713c7130",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1309,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-22T01:16:51Z",
+      "side": 1,
+      "message": "Yes, would be a nice contribution :)",
+      "parentUuid": "ba7be1f8_5d95c63e",
+      "revId": "4806b5b1431c9d7845cfb0138577b92568933992",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
