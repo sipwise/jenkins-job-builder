@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_c2d38d36",
+        "filename": "jenkins_jobs/modules/project_flow.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6133
+      },
+      "writtenOn": "2015-02-22T08:44:50Z",
+      "side": 1,
+      "message": "Why this double conditional here? Can\u0027t we just ignore the buildNeedsWorkspace parameter if it\u0027s False?",
+      "revId": "5a5d21942f93db9b97ab5ab1413e533bd10d9d48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
