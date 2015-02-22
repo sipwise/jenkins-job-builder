@@ -4044,6 +4044,60 @@ def shining_panda(parser, xml_parent, data):
             data['html-reports-directory'])
 
 
+def downstream_ext(parser, xml_parent, data):
+    """yaml: downstream-ext
+    Trigger multiple downstream jobs when job is complated and \
+    condition is met.
+
+    Requires the Jenkins `Downstream-Ext Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Downstream-Ext+Plugin>`_
+
+
+    :arg list projects: Projects to build (optional)
+    :arg string comparison used for criteria.\
+    One of 'equal-or-over', 'equal-or-under', 'equal'
+    :arg string criteria Trigger downstream job if build results meets \
+    condition. One of 'success', 'unstable', 'failure' or\
+    'aborted' (default: 'success')
+    :arg bool only-on-scm-change Trigger only if downstream project\
+    has SCM changes
+    :arg bool only-on-local-scm-change Trigger only if current project\
+    has SCM changes
+
+    """
+
+    condition_to_xml = {
+        "equal-or-over": "AND_HIGHER",
+        "equal-or-under": "AND_LOWER",
+        "equal": "EQUAL"
+    }
+
+    p = XML.SubElement(xml_parent,
+                       'hudson.plugins.downstream__ext.DownstreamTrigger')
+
+    if 'projects' not in data:
+        raise JenkinsJobsException("Missing list of downstream projects.")
+
+    XML.SubElement(p, 'childProjects').text = ','.join(data['projects'])
+
+    th = XML.SubElement(p, 'threshold')
+
+    wr_threshold = hudson_model.THRESHOLDS[
+        data.get('criteria', 'success').upper()]
+    XML.SubElement(th, "name").text = wr_threshold['name']
+    XML.SubElement(th, "ordinal").text = wr_threshold['ordinal']
+    XML.SubElement(th, "color").text = wr_threshold['color']
+    XML.SubElement(th, "completeBuild").text = \
+        str(wr_threshold['complete']).lower()
+
+    XML.SubElement(p, 'thresholdStrategy').text = condition_to_xml[
+        data.get('condition', 'equal-or-over')]
+    XML.SubElement(p, 'onlyIfSCMChanges').text = \
+        str(data.get('only-on-scm-change', False)).lower()
+    XML.SubElement(p, 'onlyIfLocalSCMChanges').text = \
+        str(data.get('only-on-local-scm-change', False)).lower()
+
+
 def create_publishers(parser, action):
     dummy_parent = XML.Element("dummy")
     parser.registry.dispatch('publisher', parser, dummy_parent, action)
