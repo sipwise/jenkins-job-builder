@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_c64ffabb",
+        "filename": ".gitignore",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-23T22:12:25Z",
+      "side": 1,
+      "message": "this change is not related,  i would prefer it to be a separate change.",
+      "revId": "b7f62205804ba0bb8e31eb5800c6760b2bfd33e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c6e61ab4",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4049,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-23T22:12:25Z",
+      "side": 1,
+      "message": "typo: complated/completed\n\nI don\u0027t think you need these \u0027\\\u0027 in the docstring.\n\n\u0027job\u0027 should be \u0027a job\u0027?",
+      "revId": "b7f62205804ba0bb8e31eb5800c6760b2bfd33e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_81696cc0",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4055,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-23T22:12:25Z",
+      "side": 1,
+      "message": "doc is contradictory to the code.  code implements this as a required param.",
+      "revId": "b7f62205804ba0bb8e31eb5800c6760b2bfd33e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_26361604",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4056,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-23T22:12:25Z",
+      "side": 1,
+      "message": "extra line not needed.",
+      "revId": "b7f62205804ba0bb8e31eb5800c6760b2bfd33e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c6ab7a1b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4057,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-23T22:12:25Z",
+      "side": 1,
+      "message": "please specify the param and place a colon after it.  looks like this is missing in docs for the other params as well.\n\nplease specify the default value.",
+      "revId": "b7f62205804ba0bb8e31eb5800c6760b2bfd33e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_81140c45",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4062,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-23T22:12:25Z",
+      "side": 1,
+      "message": "please specify the default for this and next param.",
+      "revId": "b7f62205804ba0bb8e31eb5800c6760b2bfd33e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_2130c055",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4086,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-23T22:12:25Z",
+      "side": 1,
+      "message": "I think it would be good to check that the user specified a valid criteria otherwise raise a JenkinsJobsException.",
+      "revId": "b7f62205804ba0bb8e31eb5800c6760b2bfd33e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a150305f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4093,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-23T22:12:25Z",
+      "side": 1,
+      "message": "I think it would be good to check that the user specified a valid condition otherwise raise a JenkinsJobsException.\n\nAlso I was wondering why make users specify equal-* values instead of having them specify AND_HIGHER, AND_LOWER, and EQUAL directly?",
+      "revId": "b7f62205804ba0bb8e31eb5800c6760b2bfd33e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
