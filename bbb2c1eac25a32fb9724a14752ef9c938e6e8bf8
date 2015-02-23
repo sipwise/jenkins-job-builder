@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_13adcf9c",
+        "filename": "tests/publishers/fixtures/trigger_parameterized_builds/project-list001.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-23T22:27:43Z",
+      "side": 1,
+      "message": "Looks like test is a copy and past of trigger_parameterized_builds001.yaml  with this section added.  Instead of creating a new test why not just add this section to trigger_parameterized_builds001.yaml so that it will appear in the docs?",
+      "revId": "bbb2c1eac25a32fb9724a14752ef9c938e6e8bf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
