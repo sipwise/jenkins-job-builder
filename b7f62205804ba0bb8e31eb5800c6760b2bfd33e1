@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_a91656ef",
+        "filename": ".gitignore",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-02-23T23:37:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_c64ffabb",
+      "revId": "b7f62205804ba0bb8e31eb5800c6760b2bfd33e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_c6e61ab4",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-23T22:12:25Z",
       "side": 1,
       "message": "typo: complated/completed\n\nI don\u0027t think you need these \u0027\\\u0027 in the docstring.\n\n\u0027job\u0027 should be \u0027a job\u0027?",
+      "revId": "b7f62205804ba0bb8e31eb5800c6760b2bfd33e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c961ca3a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4049,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-02-23T23:37:01Z",
+      "side": 1,
+      "message": "fixed. and yes you are right - seems \\ is not needed here.",
+      "parentUuid": "ba7be1f8_c6e61ab4",
       "revId": "b7f62205804ba0bb8e31eb5800c6760b2bfd33e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_295fc673",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4055,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-02-23T23:37:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_81696cc0",
+      "revId": "b7f62205804ba0bb8e31eb5800c6760b2bfd33e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_26361604",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2015-02-23T22:12:25Z",
       "side": 1,
       "message": "extra line not needed.",
+      "revId": "b7f62205804ba0bb8e31eb5800c6760b2bfd33e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a9f8164a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4056,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-02-23T23:37:01Z",
+      "side": 1,
+      "message": "running tox does not catch this but \u0027tox -edoc\u0027 results in failure if I do not have this extra line.\n\n\"WARNING: Field list ends without a blank line; unexpected unindent.\"",
+      "parentUuid": "ba7be1f8_26361604",
       "revId": "b7f62205804ba0bb8e31eb5800c6760b2bfd33e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_e94e8e95",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4057,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-02-23T23:37:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_c6ab7a1b",
+      "revId": "b7f62205804ba0bb8e31eb5800c6760b2bfd33e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_81140c45",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -98,6 +188,24 @@
       "writtenOn": "2015-02-23T22:12:25Z",
       "side": 1,
       "message": "please specify the default for this and next param.",
+      "revId": "b7f62205804ba0bb8e31eb5800c6760b2bfd33e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c94b8a85",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4062,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-02-23T23:37:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_81140c45",
       "revId": "b7f62205804ba0bb8e31eb5800c6760b2bfd33e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_ec03fc0a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4086,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-02-23T23:37:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_2130c055",
+      "revId": "b7f62205804ba0bb8e31eb5800c6760b2bfd33e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_a150305f",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -132,6 +258,41 @@
       "writtenOn": "2015-02-23T22:12:25Z",
       "side": 1,
       "message": "I think it would be good to check that the user specified a valid condition otherwise raise a JenkinsJobsException.\n\nAlso I was wondering why make users specify equal-* values instead of having them specify AND_HIGHER, AND_LOWER, and EQUAL directly?",
+      "revId": "b7f62205804ba0bb8e31eb5800c6760b2bfd33e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_4cb08843",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4093,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-02-23T23:37:01Z",
+      "side": 1,
+      "message": "checked for valid values.\n\nI used the names as they show up in the UI not as the internal constants in the xml. Seemed that was what is used mostly elsewhere ?",
+      "parentUuid": "ba7be1f8_a150305f",
+      "revId": "b7f62205804ba0bb8e31eb5800c6760b2bfd33e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a94576b4",
+        "filename": "tests/publishers/fixtures/downstream-ext001.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-02-23T23:37:01Z",
+      "side": 1,
+      "message": "removed this whitespace.",
       "revId": "b7f62205804ba0bb8e31eb5800c6760b2bfd33e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
