@@ -43,7 +43,8 @@ from jenkins_jobs.modules import (project_flow,
 
 
 def get_scenarios(fixtures_path, in_ext='yaml', out_ext='xml',
-                  plugins_info_ext='plugins_info.yaml'):
+                  plugins_info_ext='plugins_info.yaml',
+                  filter_func=None):
     """Returns a list of scenarios, each scenario being described
     by two parameters (yaml and xml filenames by default).
         - content of the fixture output file (aka expected)
@@ -57,6 +58,9 @@ def get_scenarios(fixtures_path, in_ext='yaml', out_ext='xml',
 
     for input_filename in input_files:
         if input_filename.endswith(plugins_info_ext):
+            continue
+
+        if callable(filter_func) and filter_func(input_filename):
             continue
 
         output_candidate = re.sub(r'\.{0}$'.format(in_ext),
