@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_f39f655d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-23T19:23:44Z",
+      "side": 1,
+      "message": "minor nit, since the below needs some fixes, just start the description on the same line in all cases rather than starting on subsequent line for some and not for others.",
+      "revId": "b33163b94d36ced966def2cd861a32bf6f187995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_ae54a654",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-23T19:23:44Z",
+      "side": 1,
+      "message": "@khai I think Wayne\u0027s approach here to put the default/optional flag on the next line, properly indented so it appears in the docs on the same line makes things a little more readable.\n\nDo we want to adopt this as a standard approach?",
+      "revId": "b33163b94d36ced966def2cd861a32bf6f187995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_b85eac43",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-23T19:23:44Z",
+      "side": 1,
+      "message": "I\u0027m not seeing any clear benefit from separating the tags from the assignment of their attributes. Seems to result in more verbose code, so maybe stick with the predominate style of just setting the XML tag name and value at the same time (unless you were considering using a look up table here?).",
+      "revId": "b33163b94d36ced966def2cd861a32bf6f187995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_58677025",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-23T19:23:44Z",
+      "side": 1,
+      "message": "If these settings are really required, then should raise an exception.\n\nOtherwise this could allow a job to be reconfigured in incorrectly modifying the job configuration instead of aborting and having the user correct it.\n\nCould do this test at the start before even creating the first parent tag.",
+      "revId": "b33163b94d36ced966def2cd861a32bf6f187995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_4f7325b1",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-23T19:23:44Z",
+      "side": 1,
+      "message": "The plugin uses a space delimiter here for the resulting parameters, I presume you\u0027ve confirmed that it doesn\u0027t matter if it\u0027s a new line character instead?",
+      "revId": "b33163b94d36ced966def2cd861a32bf6f187995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_f3904597",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-23T19:23:44Z",
+      "side": 1,
+      "message": "You could just use the following:\n\n property_file.text \u003d data.get(\u0027property-file\u0027, \u0027\u0027)\n load_property_file.text \u003d str(data.get(\u0027property-file\u0027) !\u003d \u0027\u0027).lower()\n\nThough this is probably where I\u0027d do the following if I was creating the tags and setting their values at the same time:\n\n file \u003d data.get(\u0027property-file\u0027, \u0027\u0027)\n XML.SubElement(triggerr, \u0027parameterFile\u0027).text \u003d file\n XML.SubElement(triggerr, \u0027loadParamsFromFile\u0027).text \u003d str(file !\u003d \u0027\u0027).lower()",
+      "revId": "b33163b94d36ced966def2cd861a32bf6f187995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_8e160254",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-23T19:23:44Z",
+      "side": 1,
+      "message": "From checking the plugin looks like this should default to False.",
+      "revId": "b33163b94d36ced966def2cd861a32bf6f187995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d31b411a",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-23T19:23:44Z",
+      "side": 1,
+      "message": "Example following the existing style for the last three entries.\n\n XML.SubElement(triggerr, \u0027preventRemoteBuildQueue\u0027).text \u003d str(\n     data.get(\u0027prevent-remote-build-queue\u0027, False)).lower()\n XML.SubElement(triggerr, \u0027blockBuildUntilComplete\u0027).text \u003d str(\n     data.get(\u0027block\u0027, True)).lower()\n XML.SubElement(triggerr, \u0027shouldNotFailBuild\u0027).text \u003d str(\n     date.get(\u0027should-fail-build\u0027, True)).lower()\n\nThink it\u0027s better to stick we the current adopted style unless there is a clear reason for separation of the XML tags and value setting?",
+      "revId": "b33163b94d36ced966def2cd861a32bf6f187995",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
