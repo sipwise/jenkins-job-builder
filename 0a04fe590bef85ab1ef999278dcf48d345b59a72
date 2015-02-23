@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_ef2cd904",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 997,
+      "author": {
+        "id": 11952
+      },
+      "writtenOn": "2015-02-23T19:33:15Z",
+      "side": 1,
+      "message": "as well as",
+      "revId": "0a04fe590bef85ab1ef999278dcf48d345b59a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_4f3a4537",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1001,
+      "author": {
+        "id": 11952
+      },
+      "writtenOn": "2015-02-23T19:33:15Z",
+      "side": 1,
+      "message": "as well as",
+      "revId": "0a04fe590bef85ab1ef999278dcf48d345b59a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_cf739513",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1025,
+      "author": {
+        "id": 11952
+      },
+      "writtenOn": "2015-02-23T19:33:15Z",
+      "side": 1,
+      "message": "default (, \u0027\u0027) -- not really needed, since line 1023 already determines that settings is in data.",
+      "revId": "0a04fe590bef85ab1ef999278dcf48d345b59a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_2f5c317e",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1048,
+      "author": {
+        "id": 11952
+      },
+      "writtenOn": "2015-02-23T19:33:15Z",
+      "side": 1,
+      "message": "default (, \u0027\u0027) -- not really needed, since line 1046 already determines that settings is in data.",
+      "revId": "0a04fe590bef85ab1ef999278dcf48d345b59a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
