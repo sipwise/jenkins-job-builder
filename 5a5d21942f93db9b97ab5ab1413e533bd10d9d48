@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_b265c01f",
+        "filename": "jenkins_jobs/modules/project_flow.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 15215
+      },
+      "writtenOn": "2015-02-24T14:51:39Z",
+      "side": 1,
+      "message": "Agreed, but should I enroll it inside this same commit?",
+      "parentUuid": "ba7be1f8_5ea01c9f",
+      "revId": "5a5d21942f93db9b97ab5ab1413e533bd10d9d48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_c2d38d36",
         "filename": "jenkins_jobs/modules/project_flow.py",
         "patchSetId": 2
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "The question here is what does the plugin do?\n\nA quick test locally indicates that buildNeedsWorkspace is always set, by default to false, and only true if you ticked the checkbox in the UI.\n\nSo should look to match that behaviour.",
       "parentUuid": "ba7be1f8_d9729f7b",
+      "revId": "5a5d21942f93db9b97ab5ab1413e533bd10d9d48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_ad8ac518",
+        "filename": "jenkins_jobs/modules/project_flow.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 15215
+      },
+      "writtenOn": "2015-02-24T14:51:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_3eca886e",
       "revId": "5a5d21942f93db9b97ab5ab1413e533bd10d9d48",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
