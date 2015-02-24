@@ -51,6 +51,24 @@
       "revId": "80c6ecf053ccb4f92b8ef409cf01882e78c52095",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_df515c37",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-02-24T15:13:57Z",
+      "side": 0,
+      "message": "Ah, for some reason I was thinking that like 264 below would still be reached but I can see how it would be skipped now. Will update patch with improved commit message.",
+      "parentUuid": "ba7be1f8_592116fa",
+      "revId": "80c6ecf053ccb4f92b8ef409cf01882e78c52095",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
