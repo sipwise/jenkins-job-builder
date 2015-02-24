@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_f8b47683",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-24T16:13:47Z",
+      "side": 1,
+      "message": "This results in the following:\n\n* if old optname and submodule not in data\n    no warnings\n* if old optname not in data submodule in data\n    no warnings\n* if old optname in data and submodule not in data\n    deprecation warning emitted\n* if old optname is defined in data and submodule also\n    deprecation warning emitted\n    optname ignored in favor submodule\n\nNow there is a chance that someone might think that the it should still support the old option even if they\u0027ve partially converted to using the submodule format.\n\nHowever, I think that since they are getting a warning about it being deprecated and are mixing old and new formats, that it\u0027s ok for it to not explicitly warn about silently ignoring the option if the submodule section is defined.",
+      "revId": "58500a3031d64c4d33a2d9ba47621a79952eff87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
