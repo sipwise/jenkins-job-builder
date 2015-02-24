@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_947a73ef",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3321,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-24T10:59:20Z",
+      "side": 1,
+      "message": "Avoid double comment characters, just a single \u0027#\u0027 will do. Will result in errors with more recent versions of the hacking style checker (have a patch to send in) so better not adding additional errors ;)\n\nProbably should have these just above the two lines that the comment applies to. I\u0027m sure most people would work it out quickly, but better to have it beside the bottom two lines. So\n\n XML.SubElement(logrotator, \u0027daysToKeep\u0027).text \u003d \\\n     str(data.get(\u0027days-to-keep\u0027, -1))\n XML.SubElement(logrotator, \u0027numToKeep\u0027).text \u003d \\\n     str(data.get(\u0027num-to-keep\u0027, -1))\n # hardcoded following to -1 to emulate what the build\n # publisher plugin behaviour.\n XML.SubElement(logrotator, \u0027artifactDaysToKeep\u0027).text \u003d \"-1\"\n XML.SubElement(logrotator, \u0027artifactNumToKeep\u0027).text \u003d \"-1\"",
+      "revId": "9c490aed0c379276747e3f97aef847cd066fae12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
