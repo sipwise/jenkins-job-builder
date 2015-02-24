@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba7be1f8_5ea01c9f",
+        "filename": "jenkins_jobs/modules/project_flow.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-24T10:19:54Z",
+      "side": 1,
+      "message": "Can be replaced with a more concise form:\n\n XML.SubElement(xml_parent, \u0027dsl\u0027).text \u003d data.get(\u0027dsl\u0027, \u0027\u0027)\n\nThis is a more common pattern through out the code base and generally the if/else approach is only uses if there is additional behaviour to be managed besides the setting of the XML tag (such as the case below with dsl-file).",
+      "revId": "5a5d21942f93db9b97ab5ab1413e533bd10d9d48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_c2d38d36",
         "filename": "jenkins_jobs/modules/project_flow.py",
         "patchSetId": 2
@@ -31,6 +48,24 @@
       "side": 1,
       "message": "The motivation was to include the \u0027buildNeedsWorkspace\u0027 element only if explicitly stated if it should be true or false.\n\nAnyway, I\u0027ve tried to send XML without \u0027buildNeedsWorkspace\u0027 element to a job which previously had it. It looks like Jenkins looks up somewhere (?) the previous value of the missing element and adds it back on the next run (or when viewing the configuration in the GUI).\n\nThis double conditional was inspired by the \u0027disabled\u0027 option, which seems to work the same way.\n\n\nPlease advice what should be the correct behaviour:\n\n1) Include the \u0027buildNeedsWorkspace\u0027 element no matter what, defaulting to \u0027false\u0027. (This would mean adding this element in the flow tests as well and in real configurations too)\n\n2) Leave it up to Jenkins to fill in the missing elements. This is similar behaviour as with the \u0027disabled\u0027 option.",
       "parentUuid": "ba7be1f8_c2d38d36",
+      "revId": "5a5d21942f93db9b97ab5ab1413e533bd10d9d48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3eca886e",
+        "filename": "jenkins_jobs/modules/project_flow.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-24T10:19:54Z",
+      "side": 1,
+      "message": "The question here is what does the plugin do?\n\nA quick test locally indicates that buildNeedsWorkspace is always set, by default to false, and only true if you ticked the checkbox in the UI.\n\nSo should look to match that behaviour.",
+      "parentUuid": "ba7be1f8_d9729f7b",
       "revId": "5a5d21942f93db9b97ab5ab1413e533bd10d9d48",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
