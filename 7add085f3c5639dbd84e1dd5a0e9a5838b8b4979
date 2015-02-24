@@ -16,6 +16,24 @@
       "revId": "7add085f3c5639dbd84e1dd5a0e9a5838b8b4979",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_2ae5c6dc",
+        "filename": "README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-24T21:32:40Z",
+      "side": 1,
+      "message": "That\u0027s annoying since linkcheck can\u0027t seem to handle this url, it reports it broken.\n\nI can fudge it for this one by changing this to an inline code block?\n\nOr add an explicit ignore for the url via doc/source/conf.py file with something like the following:\n\n linkcheck_ignore \u003d [r\u0027https://git.openstack.org/openstack\u0027]",
+      "parentUuid": "ba7be1f8_ea2f2e86",
+      "revId": "7add085f3c5639dbd84e1dd5a0e9a5838b8b4979",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
