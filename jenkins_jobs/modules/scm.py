@@ -257,8 +257,6 @@ remoteName/\*')
         submodule_cfgs = ['disable-submodules', 'recursive-submodules']
         if optname in submodule_cfgs:
             if 'submodule' in data:
-                logger.warn("'{0}' is deprecated and will be ignored in "
-                            "favour of 'submodule'".format(optname))
                 continue
 
             if optname in data:
