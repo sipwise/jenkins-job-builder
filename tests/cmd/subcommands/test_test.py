@@ -236,3 +236,13 @@ class TestJenkinsGetPluginInfoError(CmdTestsBase):
                 self.fail("jenkins.JenkinsException propagated to main")
             except:
                 pass  # only care about jenkins.JenkinsException for now
+
+    @mock.patch('jenkins.Jenkins.get_plugins_info')
+    def test_skip_plugin_retrieval_if_no_config_provided(
+            self, get_plugins_info_mock):
+        """
+        Verify that retrieval of information from jenkins instance about it's
+        plugins will be skipped when run in test mode.
+        """
+        cmd.main(['test', os.path.join(self.fixtures_path, 'cmd-001.yaml')])
+        self.assertFalse(get_plugins_info_mock.called)
