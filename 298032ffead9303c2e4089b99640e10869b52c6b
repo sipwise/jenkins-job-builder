@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_1eb3eb0a",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-24T18:42:04Z",
+      "side": 1,
+      "message": "should this be change to \u0027list\u0027 instead of \u0027str\u0027?",
+      "revId": "298032ffead9303c2e4089b99640e10869b52c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_7e94e742",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-24T18:42:04Z",
+      "side": 1,
+      "message": "maybe add an example with a list of projects or just add that to this test?",
+      "revId": "298032ffead9303c2e4089b99640e10869b52c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
