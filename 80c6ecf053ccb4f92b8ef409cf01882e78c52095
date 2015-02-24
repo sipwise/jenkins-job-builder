@@ -33,6 +33,24 @@
       "revId": "80c6ecf053ccb4f92b8ef409cf01882e78c52095",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_592116fa",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-24T10:44:52Z",
+      "side": 0,
+      "message": "Would it be better to wrap this with an additional check \u0027if optname in data\u0027 so that the end user still sees the warning if they have the obsolete settings in their yaml, but it silently continues if it\u0027s just coming from the mapping and they have submodule defined?",
+      "parentUuid": "ba7be1f8_84aed083",
+      "revId": "80c6ecf053ccb4f92b8ef409cf01882e78c52095",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
