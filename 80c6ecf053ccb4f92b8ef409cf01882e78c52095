@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_64cabc6f",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-02-24T04:23:42Z",
+      "side": 0,
+      "message": "Every pass through \"mapping\" will hit the situation where \n optname \u003d\u003d \u0027disable-submodules\u0027\nand\n optname \u003d\u003d \u0027recursive-submodules\u0027",
+      "revId": "80c6ecf053ccb4f92b8ef409cf01882e78c52095",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_84aed083",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-02-24T04:23:42Z",
+      "side": 0,
+      "message": "As a consequence of the tautology mentioned in my comment on line 258, if I follow the advice of the the log message in line 265 and start using the \u0027submodule\u0027 expansion key where I was previously using \u0027disable-submodules\u0027 and \u0027recursive-submodules\u0027, then I get this mysterious message.\n\nAfter the patch including this new functionality was merged on January 17, there is no way I can stop getting some kind of message telling me about submodules without changing log verbosity which I am not particularly inclined to do.",
+      "revId": "80c6ecf053ccb4f92b8ef409cf01882e78c52095",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
