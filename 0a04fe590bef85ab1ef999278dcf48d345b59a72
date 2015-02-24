@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_14cbe353",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 997,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-24T12:55:24Z",
+      "side": 1,
+      "message": "I think this is intended as an example, so perhaps it should be worded as:\n\n It is possible to provide a ConfigFileProvider settings file, such as\n org.jenkinsci.plugins.configfiles.maven.MavenSettingsConfig0123456789012",
+      "parentUuid": "ba7be1f8_ef2cd904",
+      "revId": "0a04fe590bef85ab1ef999278dcf48d345b59a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_4f3a4537",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-23T19:33:15Z",
       "side": 1,
       "message": "as well as",
+      "revId": "0a04fe590bef85ab1ef999278dcf48d345b59a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_54f39b9d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1001,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-24T12:55:24Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "ba7be1f8_4f3a4537",
       "revId": "0a04fe590bef85ab1ef999278dcf48d345b59a72",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_54dc7b12",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1025,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-24T12:55:24Z",
+      "side": 1,
+      "message": "Good catch, a simple str(data[\u0027settings\u0027]) is sufficient here, think it\u0027s just because it was in the original patch which was ported.",
+      "parentUuid": "ba7be1f8_cf739513",
+      "revId": "0a04fe590bef85ab1ef999278dcf48d345b59a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_2f5c317e",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2015-02-23T19:33:15Z",
       "side": 1,
       "message": "default (, \u0027\u0027) -- not really needed, since line 1046 already determines that settings is in data.",
+      "revId": "0a04fe590bef85ab1ef999278dcf48d345b59a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_14f92380",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1048,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-02-24T12:55:24Z",
+      "side": 1,
+      "message": "and str(data[\u0027global-settings\u0027]) here",
+      "parentUuid": "ba7be1f8_2f5c317e",
       "revId": "0a04fe590bef85ab1ef999278dcf48d345b59a72",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
