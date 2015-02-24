@@ -98,6 +98,11 @@ jenkins section
 **url**
   The base URL for your Jenkins installation.
 
+**query_plugins_info**
+  Whether to query the jenkins instance when a configuration file is provided.
+  If no configuration file is provided, `jenkins-jobs` will ignore this setting
+  and skip querying for plugin information. True by default.
+
 
 Running
 -------
