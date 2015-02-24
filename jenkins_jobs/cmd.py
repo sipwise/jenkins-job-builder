@@ -209,6 +209,9 @@ def execute(options, config):
         if not isinstance(plugins_info, list):
             raise JenkinsJobsException("{0} must contain a Yaml list!"
                                        .format(options.plugins_info_path))
+    elif options.command == 'test':
+        logger.debug("Not requiring plugin info for test output generation")
+        plugins_info = {}
 
     builder = Builder(config.get('jenkins', 'url'),
                       user,
