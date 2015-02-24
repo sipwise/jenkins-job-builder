@@ -41,6 +41,7 @@ allow_duplicates=False
 url=http://localhost:8080/
 user=
 password=
+query_plugins_info=True
 
 [hipchat]
 authtoken=dummy
@@ -232,6 +233,10 @@ def execute(options, config):
         if not isinstance(plugins_info, list):
             raise JenkinsJobsException("{0} must contain a Yaml list!"
                                        .format(options.plugins_info_path))
+    elif (not options.conf or not
+          config.getboolean("jenkins", "query_plugins_info")):
+        logger.debug("Skipping plugin info retrieval")
+        plugins_info = {}
 
     builder = Builder(config.get('jenkins', 'url'),
                       user,
