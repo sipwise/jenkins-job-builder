@@ -34,6 +34,24 @@
       "revId": "7add085f3c5639dbd84e1dd5a0e9a5838b8b4979",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_6a5ede77",
+        "filename": "README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-24T21:36:29Z",
+      "side": 1,
+      "message": "i think i would prefer inline code block.",
+      "parentUuid": "ba7be1f8_2ae5c6dc",
+      "revId": "7add085f3c5639dbd84e1dd5a0e9a5838b8b4979",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
