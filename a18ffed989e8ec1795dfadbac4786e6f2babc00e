@@ -34,6 +34,24 @@
       "revId": "a18ffed989e8ec1795dfadbac4786e6f2babc00e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_64c6189c",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-24T19:20:58Z",
+      "side": 1,
+      "message": "cool, makes sense to be in builders then.",
+      "parentUuid": "da86d52c_2a63d6b1",
+      "revId": "a18ffed989e8ec1795dfadbac4786e6f2babc00e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
