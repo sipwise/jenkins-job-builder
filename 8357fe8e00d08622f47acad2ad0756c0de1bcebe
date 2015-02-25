@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_7078e88f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3301,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-02-25T22:36:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_56e76312",
+      "revId": "8357fe8e00d08622f47acad2ad0756c0de1bcebe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_56204349",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_b07260ab",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3303,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-02-25T22:36:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_56204349",
+      "revId": "8357fe8e00d08622f47acad2ad0756c0de1bcebe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_d6ba73e0",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2015-02-21T19:55:45Z",
       "side": 1,
       "message": "Should include a comment here just so it\u0027s clear in the future that this is intentional.",
+      "revId": "8357fe8e00d08622f47acad2ad0756c0de1bcebe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d068b4bc",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3323,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-02-25T22:36:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_d6ba73e0",
       "revId": "8357fe8e00d08622f47acad2ad0756c0de1bcebe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
