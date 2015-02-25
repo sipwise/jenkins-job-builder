@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_69f50156",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 997,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-02-25T04:44:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_14cbe353",
+      "revId": "0a04fe590bef85ab1ef999278dcf48d345b59a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_4f3a4537",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 1
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "see above",
       "parentUuid": "ba7be1f8_4f3a4537",
+      "revId": "0a04fe590bef85ab1ef999278dcf48d345b59a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_89e6b5ae",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1001,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-02-25T04:44:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_54f39b9d",
       "revId": "0a04fe590bef85ab1ef999278dcf48d345b59a72",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -107,6 +143,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_a9eb7976",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1025,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-02-25T04:44:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_54dc7b12",
+      "revId": "0a04fe590bef85ab1ef999278dcf48d345b59a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_2f5c317e",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 1
@@ -136,6 +190,24 @@
       "side": 1,
       "message": "and str(data[\u0027global-settings\u0027]) here",
       "parentUuid": "ba7be1f8_2f5c317e",
+      "revId": "0a04fe590bef85ab1ef999278dcf48d345b59a72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_e9001136",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1048,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-02-25T04:44:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_14f92380",
       "revId": "0a04fe590bef85ab1ef999278dcf48d345b59a72",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
