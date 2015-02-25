@@ -16,6 +16,24 @@
       "revId": "9c490aed0c379276747e3f97aef847cd066fae12",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_9bec0dbd",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3321,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-02-25T22:36:32Z",
+      "side": 1,
+      "message": "Fixed and I also fixed the only other ## in the file; just to have it cleaned up.",
+      "parentUuid": "ba7be1f8_947a73ef",
+      "revId": "9c490aed0c379276747e3f97aef847cd066fae12",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
