@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_6f9b6c72",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1176,
+      "author": {
+        "id": 6631
+      },
+      "writtenOn": "2015-02-25T00:29:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_3bdf0f3d",
+      "revId": "72f0160e57301a54190f5131eb245b9b4c4aab07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_dbeef3b3",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_8f898028",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1214,
+      "author": {
+        "id": 6631
+      },
+      "writtenOn": "2015-02-25T00:29:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_dbeef3b3",
+      "revId": "72f0160e57301a54190f5131eb245b9b4c4aab07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_9b69db27",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 6
@@ -47,6 +83,24 @@
       "writtenOn": "2015-02-23T21:26:41Z",
       "side": 1,
       "message": "maybe put \u0027users\u0027 ahead of \u0027user\u0027 since the latter has been deprecated?  That way if both are defined we use \u0027users\u0027 and ignore \u0027user\u0027.",
+      "revId": "72f0160e57301a54190f5131eb245b9b4c4aab07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_af8c8436",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1220,
+      "author": {
+        "id": 6631
+      },
+      "writtenOn": "2015-02-25T00:29:43Z",
+      "side": 1,
+      "message": "Yes, it will not break backward compatibility. Old yamls will be work with old SSH-Agent plugin if it installed.\n\nDone",
+      "parentUuid": "ba7be1f8_9b69db27",
       "revId": "72f0160e57301a54190f5131eb245b9b4c4aab07",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
