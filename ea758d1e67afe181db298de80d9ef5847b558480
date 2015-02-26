@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_bd3a7332",
+        "filename": "jenkins_jobs/modules/project_flow.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-26T22:21:38Z",
+      "side": 1,
+      "message": "Please add a description for the params..\n\n:arg str dsl: \u003cyour_description\u003e\n:arg bool needs-workspace: \u003cyour_description\u003e (default: False)\n:arg str dsl-file: \u003cyour_description\u003e",
+      "revId": "ea758d1e67afe181db298de80d9ef5847b558480",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_fda86b79",
+        "filename": "jenkins_jobs/modules/project_flow.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-26T22:21:38Z",
+      "side": 1,
+      "message": "For consistency this line should be:\n \nXML.SubElement(xml_parent, \u0027buildNeedsWorkspace\u0027).text \u003d \nstr(data.get(\u0027needs-workspace\u0027, False)).lower()\n\n\u0027false\u0027 would be the default.",
+      "revId": "ea758d1e67afe181db298de80d9ef5847b558480",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_1ddc5f18",
+        "filename": "jenkins_jobs/modules/project_flow.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-02-26T22:21:38Z",
+      "side": 1,
+      "message": "put the line i suggested above and you won\u0027t need this else.",
+      "revId": "ea758d1e67afe181db298de80d9ef5847b558480",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
