@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_a8c87057",
+        "filename": "jenkins_jobs/modules/project_flow.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 15215
+      },
+      "writtenOn": "2015-02-27T00:08:15Z",
+      "side": 1,
+      "message": "Well, the \u0027dslFile\u0027 element is included below only if the \u0027needs-workspace\u0027 evaluates to true, so I think it makes sense to have the if/else here.\n\nIn the Jenkins UI, the field \"Read DSL from file\" is disabled when \"Flow run needs a workspace\" is not checked, and the resulting XML does not have the \u0027dslFile\u0027 element then.",
+      "parentUuid": "ba7be1f8_fda86b79",
+      "revId": "ea758d1e67afe181db298de80d9ef5847b558480",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_1ddc5f18",
         "filename": "jenkins_jobs/modules/project_flow.py",
         "patchSetId": 3
