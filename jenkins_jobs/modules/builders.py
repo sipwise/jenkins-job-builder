@@ -76,6 +76,7 @@ def python(parser, xml_parent, data):
 
     """
     python = XML.SubElement(xml_parent, 'hudson.plugins.python.Python')
+
     XML.SubElement(python, 'command').text = data
 
 
