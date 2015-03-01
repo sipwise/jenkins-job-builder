@@ -214,6 +214,34 @@ the generic macro ``add``.  Whenever you forget a parameter from a macro,
 it will not be expanded and left as is, which will most probably cause havoc in
 your Jenkins builds.
 
+.. _raw:
+
+Raw config
+^^^^^^^^^^
+
+It is possible, but not recommended, to use `raw` within a module to
+inject raw xml into the job configs.
+
+This is relevant in the case there is no apropriate module for a
+Jenkins plugin you use or the module does not exactly as you expect it to do.
+
+For example:
+
+.. literalinclude: /../../tests/wrappers/fixtures/raw001.yaml
+
+Is the raw way of adding support for the `xvnc` wrapper.
+
+To get the apropriate xml to use you would need to create/edit a job
+in Jenkins and grab the relevant raw xml segment from the
+`config.xml`.
+
+The xml string can refer to variables just like anything else and as
+such can be parameterized like anything else.
+
+Note: If you have a need to use `raw` please consider submitting a patch to
+add or fix the module that will remove your need to use `raw`.
+
+
 .. _defaults:
 
 Defaults
