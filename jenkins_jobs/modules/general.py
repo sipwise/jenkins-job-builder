@@ -162,3 +162,24 @@ class General(jenkins_jobs.modules.base.Base):
             lr_adays.text = str(logrotate.get('artifactDaysToKeep', -1))
             lr_anum = XML.SubElement(lr_xml, 'artifactNumToKeep')
             lr_anum.text = str(logrotate.get('artifactNumToKeep', -1))
+
+
+def raw(parser, xml_parent, data):
+    """yaml: raw
+    Insert raw xml to jenkins builds as fall-back if specific support
+      not yet available.
+
+    Allow using jenkins-job-builder for custom plugins where there are no
+       specific support yet or if built-in plugin is not generating
+       exact result yet.
+
+    :arg str xml: raw xml to be inserted into the section (required).
+
+    Example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/raw001.yaml
+
+    """
+
+    root = XML.fromstring(data.get('xml'))
+    xml_parent.append(root)
