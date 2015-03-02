@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_d9b6e689",
+        "filename": "jenkins_jobs/common/functions.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-02T18:18:46Z",
+      "side": 1,
+      "message": "I\u0027d be more included to keep this code under the modules area since it isn\u0027t exactly a common utility function, it\u0027s plugin configuration code that is common to a few areas.",
+      "revId": "e795b40e7b9e3c11b1d28fa65be25b8897b116d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3e9e0855",
+        "filename": "jenkins_jobs/common/functions.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-02T18:18:46Z",
+      "side": 1,
+      "message": "Should correct this to \"str(data[\u0027settings\u0027])\", no need for .get() here.",
+      "revId": "e795b40e7b9e3c11b1d28fa65be25b8897b116d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_5ead7c87",
+        "filename": "jenkins_jobs/common/functions.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-02T18:18:46Z",
+      "side": 1,
+      "message": "Should correct this to \"str(data[\u0027global-settings\u0027])\", no need for .get() here.",
+      "revId": "e795b40e7b9e3c11b1d28fa65be25b8897b116d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
