@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_02971b3b",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-02T23:27:18Z",
+      "side": 1,
+      "message": "@Khai - Does this updated documentation explain how the behaviour for !include-raw and !include-raw-escape behaviour when used with variable substitution in job templates better?",
+      "revId": "7c450d9a20cbf21216a166f994a08cdc52c7314c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
