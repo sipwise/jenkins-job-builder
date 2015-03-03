@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_03c28f84",
+        "filename": "jenkins_jobs/modules/project_flow.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-03T19:24:25Z",
+      "side": 1,
+      "message": "This would be simpler..\n\nneeds_workspace \u003d data.get(\u0027needs-workspace\u0027, False)\nXML.SubElement(xml_parent, \u0027buildNeedsWorkspace\u0027).text \u003d str(needs_workspace).lower()\n\nif needs_workspace and \u0027dsl-file\u0027 in data:\n       XML.SubElement(xml_parent,\u0027dslFile\u0027).text \u003d data[\u0027dsl-file\u0027]",
+      "revId": "e44032e4fa7bbc2febd42fea8a481ad734d75c78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
