@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_6100a301",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1047,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-03T19:50:49Z",
+      "side": 1,
+      "message": "The config file plugin isn\u0027t a core plugin so maybe tell users that it\u0027s required for the settings params?  something similar to how it\u0027s done here: http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/modules/project_matrix.py",
+      "revId": "8d6050ee66480f00c6ea29bdb81199deb128ff2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
