@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_c0ceb02c",
+        "filename": "doc/source/publishers.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2015-03-03T18:01:42Z",
+      "side": 1,
+      "message": "Since this is specific to the SCP plugin, it should probably go in that section of the doc which is in the jenkins_jobs/modules/publishers.py in the scp function docstring.",
+      "revId": "5f47b3407d787619fef2f044dd102d98773b4dc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
