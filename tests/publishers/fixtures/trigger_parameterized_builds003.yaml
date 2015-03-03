@@ -1,0 +1,12 @@
+publishers:
+  - trigger-parameterized-builds:
+    - project: 'foo-project-without-combined-commits'
+      git-revision: true
+      combine-queued-commits: false
+    - project: 'foo-project-correctly-specified-with-combined-commits'
+      git-revision: true
+      combine-queued-commits: true
+    - project: 'foo-project-incorrectly-specified-with-combined-commits'
+      git-revision: false
+      combine-queued-commits: true
+

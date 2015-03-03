@@ -189,6 +189,10 @@ def trigger_parameterized_builds(parser, xml_parent, data):
       (optional)
     :arg str node-label: Specify the Node for the NodeLabel parameter.
       (optional)
+    :arg bool combine-queued-commits: Cause all revisions to be be ignored
+      apart from the last one if a build is already in the queue (requires
+      the Jenkins `Git Plugin
+      <https://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin>`_).
 
     Example:
 
@@ -227,7 +231,8 @@ def trigger_parameterized_builds(parser, xml_parent, data):
                                         'hudson.plugins.git.'
                                         'GitRevisionBuildParameters')
                 properties = XML.SubElement(params, 'combineQueuedCommits')
-                properties.text = 'false'
+                properties.text = str(project_def.get('combine-queued-commits',
+                                                      False)).lower()
             if 'property-file' in project_def and project_def['property-file']:
                 params = XML.SubElement(tconfigs,
                                         'hudson.plugins.parameterizedtrigger.'
