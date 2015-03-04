@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_b66d1f07",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-04T17:52:18Z",
+      "side": 1,
+      "message": "how about? \".. jenkins instance for plugin info ..\"",
+      "revId": "8c94c384d5fbf35e09fb8786e4595d461293c0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_1686ebb9",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-04T17:52:18Z",
+      "side": 1,
+      "message": "Doesn\u0027t flow well to me.  How about, \"If a configuration file is not provided the `jenkins-jobs test` command will ignore this setting..\"",
+      "revId": "8c94c384d5fbf35e09fb8786e4595d461293c0ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
