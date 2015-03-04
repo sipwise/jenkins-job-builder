@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_47e42f3b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4069,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-04T18:36:31Z",
+      "side": 1,
+      "message": "If you remove the unneeded conditions list below, I\u0027d just call this dict conditions, no need to say it\u0027s translating to XML.",
+      "revId": "2165b5d2d88d5f2edf27e8343806889774e8bb8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e7e60316",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4090,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-04T18:36:31Z",
+      "side": 1,
+      "message": "This seems oddly indented? I\u0027m surprised an error is throw, probably a good idea to align it with the more expected indent anyway.",
+      "revId": "2165b5d2d88d5f2edf27e8343806889774e8bb8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_a7824bfe",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4098,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-04T18:36:31Z",
+      "side": 1,
+      "message": "Minor nit, since I\u0027m asking for another fix would you mind avoiding the backslash and instead break on the \u0027str(\u0027 which is more in line with how the rest of the code here breaks statements across lines as well.\n\n XML.SubElement(th, \"completeBuild\").text \u003d str(\n     wr_threshold[\u0027complete\u0027]).lower()",
+      "revId": "2165b5d2d88d5f2edf27e8343806889774e8bb8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_67e9331a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4100,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-04T18:36:31Z",
+      "side": 1,
+      "message": "Not needed, you can just use \u0027condition_to_xml.keys()\u0027 below in your check and error message and that way the list of valid entries is maintained in a single place.",
+      "revId": "2165b5d2d88d5f2edf27e8343806889774e8bb8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_27765b3f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4110,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-04T18:36:31Z",
+      "side": 1,
+      "message": "As mentioned above for these two \u0027\\\u0027 as well.",
+      "revId": "2165b5d2d88d5f2edf27e8343806889774e8bb8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_87946738",
+        "filename": "setup.cfg",
+        "patchSetId": 4
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-04T18:36:31Z",
+      "side": 1,
+      "message": "Please keep this in alphabetical order, thanks.",
+      "revId": "2165b5d2d88d5f2edf27e8343806889774e8bb8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
