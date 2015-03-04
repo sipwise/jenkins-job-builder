@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_2c064021",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-04T18:24:03Z",
+      "side": 1,
+      "message": "Probably should reference the wiki here with:\n\n `Git Plugin \u003chttps://wiki.jenkins-ci.org/display/JENKINS/Git+Plugin\u003e`_",
+      "revId": "2d58446961c8e7d25f8e46f8280b5758f65f3de4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
