@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_8c9acc12",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1487,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-04T18:20:16Z",
+      "side": 1,
+      "message": "Didn\u0027t need to do that since it was already covered by the other change, wasn just asking for the one below so that both could land independently without causing a need for rework/rebase in either case.",
+      "revId": "df564f7112146ab7792c03eb9449485814d98184",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_2c4e40c2",
+        "filename": "tests/publishers/fixtures/build-publisher002.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-04T18:20:16Z",
+      "side": 1,
+      "message": "Oddly enough I thought our tests were white space sensitive. I guess not since the tab is passing here.",
+      "revId": "df564f7112146ab7792c03eb9449485814d98184",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
