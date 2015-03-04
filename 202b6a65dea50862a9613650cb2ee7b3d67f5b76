@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_c0a0fbf6",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-04T23:35:05Z",
+      "side": 1,
+      "message": "you are referring to this in slack_notif.py as \u0027authtoken\u0027",
+      "revId": "202b6a65dea50862a9613650cb2ee7b3d67f5b76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_60e74f41",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-04T23:35:05Z",
+      "side": 1,
+      "message": "would it make more sense to make this \u0027team_domain\u003ddummy\u0027 as well so users don\u0027t confuse it as being a valid string?",
+      "revId": "202b6a65dea50862a9613650cb2ee7b3d67f5b76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_c73183ee",
         "filename": "jenkins_jobs/modules/slack_notif.py",
         "patchSetId": 8
@@ -19,6 +53,91 @@
         "endLine": 1,
         "endChar": 16
       },
+      "revId": "202b6a65dea50862a9613650cb2ee7b3d67f5b76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8531b50d",
+        "filename": "jenkins_jobs/modules/slack_notif.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-04T23:35:05Z",
+      "side": 1,
+      "message": "nit: python convention is to use underscore for variables, so \u0027auth_token\u0027 would be better. same for the others.",
+      "revId": "202b6a65dea50862a9613650cb2ee7b3d67f5b76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_652cc1ac",
+        "filename": "jenkins_jobs/modules/slack_notif.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-04T23:35:05Z",
+      "side": 1,
+      "message": "shouldn\u0027t this refer to \u0027token\u0027 instead of \u0027authtoken\u0027?",
+      "revId": "202b6a65dea50862a9613650cb2ee7b3d67f5b76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_c512cd61",
+        "filename": "jenkins_jobs/modules/slack_notif.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-04T23:35:05Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "202b6a65dea50862a9613650cb2ee7b3d67f5b76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_c0047b17",
+        "filename": "jenkins_jobs/modules/slack_notif.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-04T23:35:05Z",
+      "side": 1,
+      "message": "nit: teamDomain/team_domain",
+      "revId": "202b6a65dea50862a9613650cb2ee7b3d67f5b76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_002693b7",
+        "filename": "jenkins_jobs/modules/slack_notif.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-04T23:35:05Z",
+      "side": 1,
+      "message": "maybe initialized team_domain above to None then you can just do \u0027if not team_domain:\u0027 here?",
       "revId": "202b6a65dea50862a9613650cb2ee7b3d67f5b76",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
