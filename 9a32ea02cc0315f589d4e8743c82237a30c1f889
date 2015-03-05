@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_8a9d195c",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2015-03-05T15:22:56Z",
+      "side": 1,
+      "message": "The string format in this exception has several errors (the join is not on a list -- i think it wants .keys(); the third item in the tuple doesn\u0027t make sense, and there is only one specifier in the format string).",
+      "revId": "9a32ea02cc0315f589d4e8743c82237a30c1f889",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
