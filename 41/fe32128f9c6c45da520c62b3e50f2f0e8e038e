@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+1: yolanda.robla <info@ysoft.biz>
+Code-Review+2: Khai Do <zaro0508@gmail.com>
+Workflow+1: Khai Do <zaro0508@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 05 Mar 2015 17:35:03 +0000
+Reviewed-on: https://review.openstack.org/161750
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
