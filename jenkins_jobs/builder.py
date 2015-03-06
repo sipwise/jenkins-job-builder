@@ -669,7 +669,7 @@ class Jenkins(object):
 
     def delete_job(self, job_name):
         if self.is_job(job_name):
-            logger.info("Deleting jenkins job {0}".format(job_name))
+            logger.debug("Deleting jenkins job {0}".format(job_name))
             self.jenkins.delete_job(job_name)
 
     def get_plugins_info(self):
@@ -775,7 +775,7 @@ class Builder(object):
         for job in jobs:
             if job['name'] not in keep and \
                     self.jenkins.is_managed(job['name']):
-                logger.info("Removing obsolete jenkins job {0}"
+                logger.debug("Removing obsolete jenkins job {0}"
                             .format(job['name']))
                 self.delete_job(job['name'])
                 deleted_jobs += 1
@@ -795,7 +795,7 @@ class Builder(object):
             jobs = [jobs_glob]
 
         if jobs is not None:
-            logger.info("Removing jenkins job(s): %s" % ", ".join(jobs))
+            logger.debug("Removing jenkins job(s): %s" % ", ".join(jobs))
         for job in jobs:
             self.jenkins.delete_job(job)
             if(self.cache.is_cached(job)):
@@ -856,6 +856,7 @@ class Builder(object):
 
             if self.cache.has_changed(job.name, md5) or self.ignore_cache:
                 self.jenkins.update_job(job.name, job.output())
+                logger.debug("Created job: '{0}'".format(job.name))
                 updated_jobs += 1
                 self.cache.set(job.name, md5)
             else:
