@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_95c5e38f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4069,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-03-07T10:37:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_47e42f3b",
+      "revId": "2165b5d2d88d5f2edf27e8343806889774e8bb8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_e7e60316",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-04T18:36:31Z",
       "side": 1,
       "message": "This seems oddly indented? I\u0027m surprised an error is throw, probably a good idea to align it with the more expected indent anyway.",
+      "revId": "2165b5d2d88d5f2edf27e8343806889774e8bb8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f5e1bf2a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4090,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-03-07T10:37:46Z",
+      "side": 1,
+      "message": "copied indention from other places similar config are handled and exceptions are thrown.\n\nBut i\u0027ve pushed one that is split even more to let it be indented \"normally\" but still be under linewidth",
+      "parentUuid": "9a80dd14_e7e60316",
       "revId": "2165b5d2d88d5f2edf27e8343806889774e8bb8c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_35d7d74c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4098,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-03-07T10:37:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_a7824bfe",
+      "revId": "2165b5d2d88d5f2edf27e8343806889774e8bb8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_67e9331a",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2015-03-04T18:36:31Z",
       "side": 1,
       "message": "Not needed, you can just use \u0027condition_to_xml.keys()\u0027 below in your check and error message and that way the list of valid entries is maintained in a single place.",
+      "revId": "2165b5d2d88d5f2edf27e8343806889774e8bb8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_55c8cba7",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4100,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-03-07T10:37:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_67e9331a",
       "revId": "2165b5d2d88d5f2edf27e8343806889774e8bb8c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_b5c2e782",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4110,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-03-07T10:37:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_27765b3f",
+      "revId": "2165b5d2d88d5f2edf27e8343806889774e8bb8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_87946738",
         "filename": "setup.cfg",
         "patchSetId": 4
@@ -98,6 +188,24 @@
       "writtenOn": "2015-03-04T18:36:31Z",
       "side": 1,
       "message": "Please keep this in alphabetical order, thanks.",
+      "revId": "2165b5d2d88d5f2edf27e8343806889774e8bb8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d5bbdb0c",
+        "filename": "setup.cfg",
+        "patchSetId": 4
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-03-07T10:37:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_87946738",
       "revId": "2165b5d2d88d5f2edf27e8343806889774e8bb8c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
