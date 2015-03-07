@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_a6f9df81",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-07T18:34:55Z",
+      "side": 1,
+      "message": "nit: wouldn\u0027t it be better for \u0027never\u0027 to be \u0027NEVER\u0027 so it\u0027s consistent with the rest of the options?",
+      "revId": "d76fa3da74eed616e3187968fc3411b039fa1801",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
