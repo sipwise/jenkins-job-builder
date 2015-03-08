@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_2b94d341",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 9943
+      },
+      "writtenOn": "2015-03-08T07:48:05Z",
+      "side": 1,
+      "message": "I think we need to change this default as well?",
+      "revId": "071f8c9020fa6cbc7b7f64bb040b91dc25a298a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
