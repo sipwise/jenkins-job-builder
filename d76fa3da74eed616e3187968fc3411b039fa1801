@@ -34,6 +34,24 @@
       "revId": "d76fa3da74eed616e3187968fc3411b039fa1801",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_5929cb35",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2015-03-09T11:39:46Z",
+      "side": 1,
+      "message": "Also it seems the plugin code expects it to be lower.\n\nhttps://github.com/jenkinsci/parameterized-trigger-plugin/blob/master/src/main/java/hudson/plugins/parameterizedtrigger/BlockingBehaviour.java#L60",
+      "parentUuid": "9a80dd14_ae4d1fc6",
+      "revId": "d76fa3da74eed616e3187968fc3411b039fa1801",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
