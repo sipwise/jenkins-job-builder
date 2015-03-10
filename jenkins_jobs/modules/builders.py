@@ -295,6 +295,8 @@ def trigger_builds(parser, xml_parent, data):
       triggered job.
     :arg bool svn-revision: Whether to pass the svn revision
       to the triggered job
+    :arg bool git-revision: Whether to pass the git commit
+      to the triggered job
     :arg bool block: whether to wait for the triggered jobs
       to finish or not (default false)
     :arg dict block-thresholds: Fail builds and/or mark as failed or unstable
@@ -348,9 +350,14 @@ def trigger_builds(parser, xml_parent, data):
 
     Examples:
 
-    Basic usage.
+    Basic usage with passing svn revision through.
 
     .. literalinclude:: /../../tests/builders/fixtures/trigger-builds001.yaml
+       :language: yaml
+
+    Basic usage with passing git commit through.
+
+    .. literalinclude:: /../../tests/builders/fixtures/trigger-builds006.yaml
        :language: yaml
 
     Example with all supported parameter factories.
@@ -379,6 +386,12 @@ def trigger_builds(parser, xml_parent, data):
             XML.SubElement(tconfigs,
                            'hudson.plugins.parameterizedtrigger.'
                            'SubversionRevisionBuildParameters')
+        if(project_def.get('git-revision')):
+            params = XML.SubElement(tconfigs,
+                                    'hudson.plugins.git.'
+                                    'GitRevisionBuildParameters')
+            combine = XML.SubElement(params, 'combineQueuedCommits')
+            combine.text = 'false'
         if(project_def.get('same-node')):
             XML.SubElement(tconfigs,
                            'hudson.plugins.parameterizedtrigger.'
