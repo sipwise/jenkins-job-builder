@@ -29,7 +29,11 @@ Example::
 
     notifications:
       - http:
+          format: XML
+          event: completed
           url: http://example.com/jenkins_endpoint
+          timeout: 20000
+
 """
 
 
@@ -43,7 +47,15 @@ def http_endpoint(parser, xml_parent, data):
     Requires the Jenkins :jenkins-wiki:`Notification Plugin
     <Notification+Plugin>`.
 
+    :arg str format: notification payload format, JSON (default) or XML
+    :arg str event: job events that trigger notifications: started,
+        completed, finalized or all (default)
     :arg str url: URL of the endpoint
+    :arg str timeout: Timeout in milliseconds for sending notification
+        request (30 seconds by default)
+    :arg str log: Number lines of log messages to send (0 by default).
+        Use -1 for all (use with caution).
+
 
     Example::
 
@@ -54,8 +66,14 @@ def http_endpoint(parser, xml_parent, data):
     endpoint_element = XML.SubElement(xml_parent,
                                       'com.tikal.hudson.plugins.notification.'
                                       'Endpoint')
+    XML.SubElement(endpoint_element, 'format').text = data.get('format',
+                                                               'JSON')
     XML.SubElement(endpoint_element, 'protocol').text = 'HTTP'
+    XML.SubElement(endpoint_element, 'event').text = data.get('event', 'all')
+    XML.SubElement(endpoint_element, 'timeout').text = data.get('timeout',
+                                                                '30000')
     XML.SubElement(endpoint_element, 'url').text = data['url']
+    XML.SubElement(endpoint_element, 'loglines').text = data.get('log', '0')
 
 
 class Notifications(jenkins_jobs.modules.base.Base):
