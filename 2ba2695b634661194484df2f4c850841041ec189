@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_dc939f5a",
+        "filename": "jenkins_jobs/modules/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-03-10T19:24:27Z",
+      "side": 1,
+      "message": "I believe there is a preset list of possible options. Maybe we should add a checker to ensure the user entered a valid selection and notify them via logger if not.\n\nFor examples on how to use the logger:\n https://review.openstack.org/#/c/148057/\n\nProbably worth normalizing the input with str.lower() (or str.upper()) too to make it case insensitve depending on which case the Jenkins Plugin expects.",
+      "revId": "2ba2695b634661194484df2f4c850841041ec189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_7cbab3c1",
+        "filename": "jenkins_jobs/modules/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-03-10T19:24:27Z",
+      "side": 1,
+      "message": "I know you didn\u0027t write this part but might as well improve this here too.",
+      "revId": "2ba2695b634661194484df2f4c850841041ec189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_5cdc0f19",
+        "filename": "jenkins_jobs/modules/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-03-10T19:24:27Z",
+      "side": 1,
+      "message": "See above comment.",
+      "revId": "2ba2695b634661194484df2f4c850841041ec189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
