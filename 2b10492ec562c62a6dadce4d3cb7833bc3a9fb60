@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_ded28e33",
+        "filename": "jenkins_jobs/modules/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-03-11T14:01:08Z",
+      "side": 1,
+      "message": "According to PEP8 you should import standard libraries first, 3rd party 2nd and then local application modules last. I would move logging to the top of the list.\n\nhttps://www.python.org/dev/peps/pep-0008/#imports",
+      "revId": "2b10492ec562c62a6dadce4d3cb7833bc3a9fb60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
