@@ -2153,16 +2153,14 @@ def maven_deploy(parser, xml_parent, data):
       (default true)
     :arg bool deploy-unstable: Deploy even if the build is unstable
       (default false)
+    :arg str release-env-var: If the given variable name is set to "true",
+      the deploy steps is skipped. (optional)
 
 
-    Example::
+    Example:
 
-      publishers:
-        - maven-deploy:
-            id: example
-            url: http://repo.example.com/maven2/
-            unique-version: true
-            deploy-unstable: false
+    .. literalinclude::  /../../tests/publishers/fixtures/maven-deploy001.yaml
+       :language: yaml
     """
 
     p = XML.SubElement(xml_parent, 'hudson.maven.RedeployPublisher')
@@ -2174,6 +2172,8 @@ def maven_deploy(parser, xml_parent, data):
         data.get('unique-version', True)).lower()
     XML.SubElement(p, 'evenIfUnstable').text = str(
         data.get('deploy-unstable', False)).lower()
+    if 'release-env-var' in data:
+        XML.SubElement(p, 'releaseEnvVar').text = data['release-env-var']
 
 
 def text_finder(parser, xml_parent, data):
