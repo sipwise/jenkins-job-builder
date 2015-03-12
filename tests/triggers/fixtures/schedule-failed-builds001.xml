@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <triggers class="vector">
+    <com.progress.hudson.ScheduleFailedBuildsTrigger>
+      <spec>* * * * *</spec>
+    </com.progress.hudson.ScheduleFailedBuildsTrigger>
+  </triggers>
+</project>
