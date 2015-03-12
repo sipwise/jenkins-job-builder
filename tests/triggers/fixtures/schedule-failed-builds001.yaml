@@ -1,0 +1,2 @@
+triggers:
+  - schedule-failed-builds: "* * * * *"

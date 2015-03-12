@@ -756,6 +756,28 @@ def pollurl(parser, xml_parent, data):
                                            *content_type[0:3])
 
 
+def schedule_failed_builds(parser, xml_parent, data):
+    """yaml: schedule-failed-builds
+    Trigger builds after failure.
+
+    Requires the Jenkins :jenkins-wiki:`Retry Failed Builds Plugin
+    <Retry+Failed+Builds+Plugin>`.
+
+    :arg str spec: when to retry failed builds (cron syntax)
+
+    Example::
+    .. literalinclude:: \
+    /../../tests/triggers/fixtures/schedule-failed-builds001.yaml
+      :language: yaml
+
+      triggers:
+        - schedule-failed-builds: "* * * * *"
+    """
+    sfbtrig = XML.SubElement(xml_parent,
+        'com.progress.hudson.ScheduleFailedBuildsTrigger')
+    XML.SubElement(sfbtrig, 'spec').text = data
+
+
 def timed(parser, xml_parent, data):
     """yaml: timed
     Trigger builds at certain times.
