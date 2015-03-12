@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_f737304b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2156,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-12T18:43:17Z",
+      "side": 1,
+      "message": "Does this accept any arbitrary string?  The example you provided sets this to \u0027TIMER\u0027 so is there a valid set?",
+      "revId": "9419cb2b61cf902886e8c88511bec58b148b2035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f75c907f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2176,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-12T18:43:17Z",
+      "side": 1,
+      "message": "maybe set a default in case use doesn\u0027t provide,  maybe data.get[\u0027release-env-var\u0027, \u0027\u0027]  instead?",
+      "revId": "9419cb2b61cf902886e8c88511bec58b148b2035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
