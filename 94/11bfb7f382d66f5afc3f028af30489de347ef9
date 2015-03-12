@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+2: Darragh Bailey <daragh.bailey@gmail.com>
+Code-Review+1: yolanda.robla <info@ysoft.biz>
+Code-Review+2: Khai Do <zaro0508@gmail.com>
+Workflow+1: Khai Do <zaro0508@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 12 Mar 2015 18:49:35 +0000
+Reviewed-on: https://review.openstack.org/158083
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
