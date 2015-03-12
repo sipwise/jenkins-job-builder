@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_7a4885b3",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2156,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2015-03-12T19:05:22Z",
+      "side": 1,
+      "message": "Looks like it\u0027s the case. TIMER is a variable used in our build pipeline to not trigger a deployment if an upstream job was trigged by a timer (and not a commit).",
+      "parentUuid": "9a80dd14_f737304b",
+      "revId": "9419cb2b61cf902886e8c88511bec58b148b2035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_f75c907f",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-12T18:43:17Z",
       "side": 1,
       "message": "maybe set a default in case use doesn\u0027t provide,  maybe data.get[\u0027release-env-var\u0027, \u0027\u0027]  instead?",
+      "revId": "9419cb2b61cf902886e8c88511bec58b148b2035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_fa6f15fa",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2176,
+      "author": {
+        "id": 7156
+      },
+      "writtenOn": "2015-03-12T19:05:22Z",
+      "side": 1,
+      "message": "The XML element is missing from config.xml if I provide none. I\u0027m not sure if providing an empty string is a good idea.",
+      "parentUuid": "9a80dd14_f75c907f",
       "revId": "9419cb2b61cf902886e8c88511bec58b148b2035",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
