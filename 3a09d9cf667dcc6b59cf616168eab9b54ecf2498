@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_e7966793",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-13T18:53:22Z",
+      "side": 1,
+      "message": "please shorten, subject should be less than 50 chars",
+      "revId": "3a09d9cf667dcc6b59cf616168eab9b54ecf2498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_478ad364",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-13T18:53:22Z",
+      "side": 1,
+      "message": "shorten these as well, should be less than 80 chars",
+      "revId": "3a09d9cf667dcc6b59cf616168eab9b54ecf2498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_22eeaded",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3306,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-13T18:53:22Z",
+      "side": 1,
+      "message": "i would suggest deleting build-publisher001.yaml and reference build-publisher002.yaml  instead.",
+      "revId": "3a09d9cf667dcc6b59cf616168eab9b54ecf2498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_07f61b8f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3318,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-13T18:53:22Z",
+      "side": 1,
+      "message": "These won\u0027t get set to -1 if user doesn\u0027t add this to their yaml job definition so are these params optional?  The docs above seems to indicate that these might be required however the build-publisher001.yaml shows that it\u0027s optional.",
+      "revId": "3a09d9cf667dcc6b59cf616168eab9b54ecf2498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
