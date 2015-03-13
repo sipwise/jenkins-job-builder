@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_841e896e",
+        "filename": "tests/publishers/fixtures/conditional-publisher002.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-13T18:26:30Z",
+      "side": 1,
+      "message": "I adding to this example is a bit confusing.   The existing example already shows how to configure multiple actions (the legacy way).  The reference to this example (in publishers.py) says it requires ver 0.13 of the plugin but that\u0027s not entirely true, only the actions list requires the newer version of the plugin.\n\nI would suggest creating a separate minimal test for this change:\n\n    publishers:\n        - conditional-publisher:\n\t- condition-kind: always\n\t    on-evaluation-failure: run-and-mark-unstable\n\t    action:\n\t        - archive:\n\t\t    artifacts: \u0027**/**\u0027\n\t\t    allow-empty: \u0027true\u0027\n\t\t- aggregate-tests:\n\t\t    include-failed-builds: true\n\n\nThen maybe literalinclude the new example and just provide a link to the legacy example for people who don\u0027t want to upgrade their existing plugin?",
+      "revId": "4d0800bc381b81e69bd9c566c5019c2790e111e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
