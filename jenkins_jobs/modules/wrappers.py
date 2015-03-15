@@ -27,6 +27,7 @@ import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.modules.builders import create_builders
+from jenkins_jobs.modules.helpers import config_file_provider_builder
 
 
 def ci_skip(parser, xml_parent, data):
@@ -80,23 +81,9 @@ def config_file_provider(parser, xml_parent, data):
     /../../tests/wrappers/fixtures/config-file-provider003.yaml
        :language: yaml
     """
-    top = XML.SubElement(xml_parent, 'org.jenkinsci.plugins.configfiles.'
+    cfp = XML.SubElement(xml_parent, 'org.jenkinsci.plugins.configfiles.'
                          'buildwrapper.ConfigFileBuildWrapper')
-    xml_files = XML.SubElement(top, 'managedFiles')
-
-    files = data.get('files', [])
-    for file in files:
-        xml_file = XML.SubElement(xml_files, 'org.jenkinsci.plugins.'
-                                  'configfiles.buildwrapper.ManagedFile')
-        file_id = file.get('file-id')
-        if file_id is None:
-            raise JenkinsJobsException("file-id is required for each "
-                                       "managed configuration file")
-        XML.SubElement(xml_file, 'fileId').text = str(file_id)
-        XML.SubElement(xml_file, 'targetLocation').text = \
-            file.get('target', '')
-        XML.SubElement(xml_file, 'variable').text = \
-            file.get('variable', '')
+    config_file_provider_builder(cfp, data)
 
 
 def logfilesize(parser, xml_parent, data):
