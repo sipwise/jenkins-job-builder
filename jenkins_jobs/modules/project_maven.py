@@ -43,6 +43,8 @@ in the :ref:`Job` definition.
     * **global-settings** (`str`): Path to custom maven global settings file.
       It is possible to provide a ConfigFileProvider settings file as well
       see CFP Example below. (optional)
+    * **run-post-steps** (`str`): Under what conditions to run the post
+      build steps (sucess, failure, unstable)
 
 Requires the Jenkins `Config File Provider Plugin
 <https://wiki.jenkins-ci.org/display/JENKINS/Config+File+Provider+Plugin>`_
@@ -72,6 +74,14 @@ class Maven(jenkins_jobs.modules.base.Base):
         'hudson.maven.local_repo.PerJobLocalRepositoryLocator',
         'local-to-executor':
         'hudson.maven.local_repo.PerExecutorLocalRepositoryLocator',
+    }
+    choices_run_post_steps = {
+        'success':
+        {'name': 'SUCCESS', 'ordinal': '0', 'color': 'BLUE'},
+        'unstable':
+        {'name': 'UNSTABLE', 'ordinal': '1', 'color': 'YELLOW'},
+        'failure':
+        {'name': 'FAILURE', 'ordinal': '2', 'color': 'red'},
     }
 
     def root_xml(self, data):
@@ -123,8 +133,18 @@ class Maven(jenkins_jobs.modules.base.Base):
         config_file_provider_settings(xml_parent, data['maven'])
 
         run_post_steps = XML.SubElement(xml_parent, 'runPostStepsIfResult')
-        XML.SubElement(run_post_steps, 'name').text = 'FAILURE'
-        XML.SubElement(run_post_steps, 'ordinal').text = '2'
-        XML.SubElement(run_post_steps, 'color').text = 'red'
+
+        run_post = data['maven'].get('run-post-steps', 'failure')
+        if run_post not in self.choices_run_post_steps.keys():
+            raise ValueError('run-post-steps "%s" must be one of "%s"' %
+                             (run_post,
+                              ", ".join(self.choices_run_post_steps.keys())))
+
+        XML.SubElement(run_post_steps, 'name').text = \
+            self.choices_run_post_steps[run_post]['name']
+        XML.SubElement(run_post_steps, 'ordinal').text = \
+            self.choices_run_post_steps[run_post]['ordinal']
+        XML.SubElement(run_post_steps, 'color').text = \
+            self.choices_run_post_steps[run_post]['color']
 
         return xml_parent
