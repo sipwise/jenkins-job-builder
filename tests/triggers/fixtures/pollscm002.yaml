@@ -1,0 +1,4 @@
+triggers:
+  - pollscm: 
+      cron: "*/15 * * * *"
+      ignore-post-commit-hooks: true

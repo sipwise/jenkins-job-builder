@@ -507,6 +507,10 @@ def pollscm(parser, xml_parent, data):
     Poll the SCM to determine if there has been a change.
 
     :arg string pollscm: the polling interval (cron syntax)
+           .. deprecated:: 1.1.0  Please use cron argument
+
+    :arg string cron: cron syntax of when to run (default '')
+    :arg bool ignore-post-commit-hooks: ignore post commit hooks
 
     Example:
 
@@ -515,7 +519,13 @@ def pollscm(parser, xml_parent, data):
     """
 
     scmtrig = XML.SubElement(xml_parent, 'hudson.triggers.SCMTrigger')
-    XML.SubElement(scmtrig, 'spec').text = data
+    if type(data) == str:
+        XML.SubElement(scmtrig, 'spec').text = data
+        logger.warn("pollscm string format is deprecated please use 'spec'")
+    else:
+        XML.SubElement(scmtrig, 'spec').text = data.get('cron', '')
+        XML.SubElement(scmtrig, 'ignorePostCommitHooks').text = str(
+            data.get('ignore-post-commit-hooks', 'false')).lower()
 
 
 def build_pollurl_content_type(xml_parent, entries, prefix,
