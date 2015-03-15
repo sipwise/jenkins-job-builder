@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_e55568fa",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3306,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-03-15T00:49:25Z",
+      "side": 1,
+      "message": "Okey referring more complete example but I do like to keep 001.yaml to have test for defaults being honored.",
+      "parentUuid": "9a80dd14_22eeaded",
+      "revId": "3a09d9cf667dcc6b59cf616168eab9b54ecf2498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_07f61b8f",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 8
@@ -64,6 +82,24 @@
       "writtenOn": "2015-03-13T18:53:22Z",
       "side": 1,
       "message": "These won\u0027t get set to -1 if user doesn\u0027t add this to their yaml job definition so are these params optional?  The docs above seems to indicate that these might be required however the build-publisher001.yaml shows that it\u0027s optional.",
+      "revId": "3a09d9cf667dcc6b59cf616168eab9b54ecf2498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_25430043",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3318,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-03-15T00:49:25Z",
+      "side": 1,
+      "message": "they all have documented defaults. looking in publisher module I did not find any thing stating both \u0027optional\u0027 and \u0027default\u0027 values. So I assume if a field has default value stated it is also optional.\n\nam I wrong on that ?  \n\nI guess technically these two are more optional than defaulted to -1 since by not stating them we let jenkins decide the default. I\u0027ll update the docs to say optional for these.",
+      "parentUuid": "9a80dd14_07f61b8f",
       "revId": "3a09d9cf667dcc6b59cf616168eab9b54ecf2498",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
