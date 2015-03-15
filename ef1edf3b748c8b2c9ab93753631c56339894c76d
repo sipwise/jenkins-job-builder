@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_b0de47d8",
+        "filename": "jenkins_jobs/modules/project_maven.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6133
+      },
+      "writtenOn": "2015-03-15T18:44:44Z",
+      "side": 1,
+      "message": "Can we skip that conditional and add these definitions into some dict?",
+      "revId": "ef1edf3b748c8b2c9ab93753631c56339894c76d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
