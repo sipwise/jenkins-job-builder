@@ -43,6 +43,8 @@ in the :ref:`Job` definition.
     * **global-settings** (`str`): Path to custom maven global settings file.
       It is possible to provide a ConfigFileProvider settings file as well
       see CFP Example below. (optional)
+    * **run-post-steps** (`str`): Under what conditions to run the post
+      build steps (sucess, failure, unstable)
 
 Requires the Jenkins `Config File Provider Plugin
 <https://wiki.jenkins-ci.org/display/JENKINS/Config+File+Provider+Plugin>`_
@@ -73,6 +75,11 @@ class Maven(jenkins_jobs.modules.base.Base):
         'local-to-executor':
         'hudson.maven.local_repo.PerExecutorLocalRepositoryLocator',
     }
+    choices_run_post_steps = (
+        'success',
+        'unstable',
+        'failure',
+    )
 
     def root_xml(self, data):
         xml_parent = XML.Element('maven2-moduleset')
@@ -123,8 +130,26 @@ class Maven(jenkins_jobs.modules.base.Base):
         config_file_provider_settings(xml_parent, data['maven'])
 
         run_post_steps = XML.SubElement(xml_parent, 'runPostStepsIfResult')
-        XML.SubElement(run_post_steps, 'name').text = 'FAILURE'
-        XML.SubElement(run_post_steps, 'ordinal').text = '2'
-        XML.SubElement(run_post_steps, 'color').text = 'red'
+
+        run_post = data['maven'].get('run-post-steps', 'failure')
+        if run_post == 'failure':
+            run_post_name = 'FAILURE'
+            run_post_ordinal = '2'
+            run_post_color = 'red'
+        elif run_post == 'success':
+            run_post_name = 'SUCCESS'
+            run_post_ordinal = '0'
+            run_post_color = 'BLUE'
+        elif run_post == 'unstable':
+            run_post_name = 'UNSTABLE'
+            run_post_ordinal = '1'
+            run_post_color = 'YELLOW'
+        else:
+            raise ValueError('run-post-steps must be one of "%s"' %
+                             ", ".join(self.choices_run_post_steps))
+
+        XML.SubElement(run_post_steps, 'name').text = run_post_name
+        XML.SubElement(run_post_steps, 'ordinal').text = run_post_ordinal
+        XML.SubElement(run_post_steps, 'color').text = run_post_color
 
         return xml_parent
