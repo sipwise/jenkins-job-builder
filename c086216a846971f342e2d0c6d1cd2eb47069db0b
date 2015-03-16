@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_4a97f33a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1712,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-16T17:26:14Z",
+      "side": 1,
+      "message": "probably should include (\u003e\u003d1.6) to be consistent with the other plugin version specific settings.",
+      "revId": "c086216a846971f342e2d0c6d1cd2eb47069db0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
