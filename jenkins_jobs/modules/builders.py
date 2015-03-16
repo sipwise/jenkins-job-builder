@@ -1134,6 +1134,10 @@ def multijob(parser, xml_parent, data):
     XML.SubElement(builder, 'phaseName').text = data['name']
 
     condition = data.get('condition', 'SUCCESSFUL')
+    conditions_available = 'SUCCESSFUL UNSTABLE COMPLETED FAILURE'.split()
+    if condition not in conditions_available:
+        raise JenkinsJobsException('Multijob condition must be one of: %s.'
+                                   % ', '.join(conditions_available))
     XML.SubElement(builder, 'continuationCondition').text = condition
 
     phaseJobs = XML.SubElement(builder, 'phaseJobs')
