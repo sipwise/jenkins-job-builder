@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_dc22bfb9",
+        "filename": "jenkins_jobs/modules/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2015-03-16T23:10:58Z",
+      "side": 1,
+      "message": "Does this preserve the behavior that the plugin would\u0027ve chosen with the old code not setting this value?",
+      "revId": "8ec9a6b775a8d5f46a5fb26b1e3001c1cb9f79b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_5cba4f72",
+        "filename": "jenkins_jobs/modules/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2015-03-16T23:10:58Z",
+      "side": 1,
+      "message": "This should likely raise an exception right? Otherwise it will continue with the broken config. -1 for this.",
+      "revId": "8ec9a6b775a8d5f46a5fb26b1e3001c1cb9f79b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_3c2afb90",
+        "filename": "jenkins_jobs/modules/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2015-03-16T23:10:58Z",
+      "side": 1,
+      "message": "Does this preserve the behavior that the plugin would\u0027ve chosen with the old code not setting this value?",
+      "revId": "8ec9a6b775a8d5f46a5fb26b1e3001c1cb9f79b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_7cbf1361",
+        "filename": "jenkins_jobs/modules/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2015-03-16T23:10:58Z",
+      "side": 1,
+      "message": "See above comment. -1 for this.",
+      "revId": "8ec9a6b775a8d5f46a5fb26b1e3001c1cb9f79b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_7c1b9380",
+        "filename": "jenkins_jobs/modules/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2015-03-16T23:10:58Z",
+      "side": 1,
+      "message": "Does this preserve the behavior that the plugin would\u0027ve chosen with the old code not setting this value?",
+      "revId": "8ec9a6b775a8d5f46a5fb26b1e3001c1cb9f79b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_5c2fafa7",
+        "filename": "jenkins_jobs/modules/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2015-03-16T23:10:58Z",
+      "side": 1,
+      "message": "Does this preserve the behavior that the plugin would\u0027ve chosen with the old code not setting this value?",
+      "revId": "8ec9a6b775a8d5f46a5fb26b1e3001c1cb9f79b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
