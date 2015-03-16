@@ -1100,7 +1100,9 @@ def multijob(parser, xml_parent, data):
     :py:class:`jenkins_jobs.modules.project_multijob.MultiJob` projects.
 
     :arg str name: MultiJob phase name
-    :arg str condition: when to trigger the other job (default 'SUCCESSFUL')
+    :arg str condition: when to trigger the other job (default 'SUCCESSFUL').
+        Can be: SUCCESSFUL UNSTABLE COMPLETED FAILURE.
+
     :arg list projects: list of projects to include in the MultiJob phase
 
       :Project: * **name** (`str`) -- Project name
@@ -1134,6 +1136,10 @@ def multijob(parser, xml_parent, data):
     XML.SubElement(builder, 'phaseName').text = data['name']
 
     condition = data.get('condition', 'SUCCESSFUL')
+    conditions_available = 'SUCCESSFUL UNSTABLE COMPLETED FAILURE'.split()
+    if condition not in conditions_available:
+        raise JenkinsJobsException('Multijob condition must be one of: %s.'
+                                   % ', '.join(conditions_available))
     XML.SubElement(builder, 'continuationCondition').text = condition
 
     phaseJobs = XML.SubElement(builder, 'phaseJobs')
