@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_2900ed34",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1139,
+      "author": {
+        "id": 6890
+      },
+      "writtenOn": "2015-03-17T09:45:50Z",
+      "side": 1,
+      "message": "Agree with yolanda.robla, I would prefer ordinary list of strings...",
+      "revId": "1f5583b57a376e168301c56c9ff1a430525e4606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
