@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_ba9afd11",
+        "filename": "jenkins_jobs/modules/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-18T21:47:48Z",
+      "side": 1,
+      "message": "I would suggest you remove this example because it\u0027s redundant to the one below.",
+      "revId": "dcbb4b58bef39a15def0acaa17ba9e4c847d2ff5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_1a7789d5",
+        "filename": "jenkins_jobs/modules/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-18T21:47:48Z",
+      "side": 1,
+      "message": "Keep this example, but I would suggest to use a literalinclude to reference the test you created.  You can find many examples of literalinclude in publishers.py.  Also don\u0027t forget that there should only be one colon after Example when using a literalinclude.",
+      "revId": "dcbb4b58bef39a15def0acaa17ba9e4c847d2ff5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
