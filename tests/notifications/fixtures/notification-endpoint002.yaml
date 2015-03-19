@@ -1,0 +1,7 @@
+notifications:
+  - notification:
+      url: http://example.com/jenkins_endpoint
+      format: xml
+      event: finalized
+      timeout: 100
+      loglines: 20

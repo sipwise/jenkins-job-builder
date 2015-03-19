@@ -1,0 +1,15 @@
+notifications:
+  - notification:
+      url: http://example.com/jenkins_endpoint
+      protocol: udp
+      format: json
+      event: finalized
+      timeout: 1000
+      loglines: 2
+  - notification:
+      url: http://example.com/jenkins_endpoint
+      protocol: tcp
+      format: xml
+      event: all
+      timeout: 100
+      loglines: 20
