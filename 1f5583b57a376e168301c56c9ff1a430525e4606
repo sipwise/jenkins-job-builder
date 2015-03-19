@@ -16,6 +16,24 @@
       "revId": "1f5583b57a376e168301c56c9ff1a430525e4606",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f52c5f95",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1139,
+      "author": {
+        "id": 6133
+      },
+      "writtenOn": "2015-03-19T15:52:58Z",
+      "side": 1,
+      "message": "Thanks for updating that. It\u0027s a matter of consistency around the code, and keeping things as simple as possible.",
+      "parentUuid": "9a80dd14_2900ed34",
+      "revId": "1f5583b57a376e168301c56c9ff1a430525e4606",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
