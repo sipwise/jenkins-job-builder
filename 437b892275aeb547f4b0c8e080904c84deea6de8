@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_0ca11346",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4102,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-19T00:42:20Z",
+      "side": 1,
+      "message": "Just realized you didn\u0027t need to change this since the iterable of a dict is always it\u0027s keys.",
+      "revId": "437b892275aeb547f4b0c8e080904c84deea6de8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
