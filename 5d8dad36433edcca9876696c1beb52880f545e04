@@ -16,6 +16,23 @@
       "revId": "5d8dad36433edcca9876696c1beb52880f545e04",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_20d33bd6",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-19T01:12:00Z",
+      "side": 1,
+      "message": "I\u0027m wondering if this should be implemented as a sub-option to git-revision, see how the clean option for the git scm in the scm module has two sub-options and contains backward support for when it was simply a bool.\n\nSeems to make sense as it\u0027s really only applicable to the git-revision rather than to anything else (probably cause it comes from the git plugin).",
+      "revId": "5d8dad36433edcca9876696c1beb52880f545e04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
