@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_e08da332",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-19T01:04:26Z",
+      "side": 1,
+      "message": "Could you this link to use the :jenkins-wiki: format as at the top of the docstring.",
+      "revId": "5d8dad36433edcca9876696c1beb52880f545e04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
