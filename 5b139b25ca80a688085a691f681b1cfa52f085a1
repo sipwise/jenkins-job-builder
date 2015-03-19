@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_4cc14b7f",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-19T23:08:52Z",
+      "side": 1,
+      "message": "Must have landed the wiki links change in the mean time, could you update the link here to use \":jenkins-wiki:`Parameterized Remote Trigger Plugin \u003cParameterized+Remote+Trigger+Plugin\u003e`\".\n\nIn any case it currently doesn\u0027t generate a link and instead is just outputted as a text string.",
+      "revId": "5b139b25ca80a688085a691f681b1cfa52f085a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_9198bc76",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-19T23:08:52Z",
+      "side": 1,
+      "message": "Try to avoid using trailing slashes unnecessarily, I know there is a mix of styles but there is a pep8 guideline on only using these where python\u0027s implied line continuation inside parentheses is not possible.\n\nSee https://www.python.org/dev/peps/pep-0008/#maximum-line-length\n\nAlso mentioned in http://docs.openstack.org/developer/hacking/.\n\nThere doesn\u0027t appear to be a test for this (probably difficult to establish via code what scenarios constitute valid last resort), but following this guideline keeps us more consistent with the existing code base style.\n\nFew other occurances below.",
+      "revId": "5b139b25ca80a688085a691f681b1cfa52f085a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d187945f",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-19T23:08:52Z",
+      "side": 1,
+      "message": "Forgot to mention it should be a JenkinsJobException, and in this case the message would change since it\u0027s no longer skipping setting this section, it\u0027s going to throw an error and abort.",
+      "revId": "5b139b25ca80a688085a691f681b1cfa52f085a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

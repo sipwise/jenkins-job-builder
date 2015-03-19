@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_110bec24",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-19T23:08:52Z",
+      "side": 0,
+      "message": "Did you intend to drop this? Just can\u0027t see anything relating to it in the previous patches or commit message.",
+      "revId": "b059ac4ff07dec438b8fc8bf0cba6ada6f2d7ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
