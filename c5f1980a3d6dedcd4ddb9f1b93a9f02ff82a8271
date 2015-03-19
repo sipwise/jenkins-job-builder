@@ -33,6 +33,23 @@
       "revId": "c5f1980a3d6dedcd4ddb9f1b93a9f02ff82a8271",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_40d10ffa",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-19T01:06:48Z",
+      "side": 1,
+      "message": "Ib652265c80c1c902084241db17da32da162cd48b adds support for setting combine-queued-commits, perhaps this should be updated to match. or indeed it should be tweaked to support setting combine-queued-commits as a sub-option to git-revision.",
+      "revId": "c5f1980a3d6dedcd4ddb9f1b93a9f02ff82a8271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
