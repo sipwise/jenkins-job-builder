@@ -43,7 +43,17 @@ def http_endpoint(parser, xml_parent, data):
     Requires the Jenkins :jenkins-wiki:`Notification Plugin
     <Notification+Plugin>`.
 
-    :arg str url: URL of the endpoint
+    :arg str protocol: protocol to use for sending notification messages,
+        HTTP, TCP or UDP (default HTTP)
+    :arg str format: notification payload format, JSON or XML (default JSON)
+    :arg str url: URL to send notifications to. It takes the form of
+        "http://host" for HTTP protocol, and "host:port" for TCP and UDP
+        protocols (required)
+    :arg str event: job events that trigger notifications started, completed,
+        finzlized or all (default all)
+    :arg int timeout: timeout in milliseconds for sending notification request
+        (default 30000)
+    :arg int loglines: number of loglines to send in payload (default 0)
 
     Example::
 
@@ -54,8 +64,16 @@ def http_endpoint(parser, xml_parent, data):
     endpoint_element = XML.SubElement(xml_parent,
                                       'com.tikal.hudson.plugins.notification.'
                                       'Endpoint')
-    XML.SubElement(endpoint_element, 'protocol').text = 'HTTP'
+    XML.SubElement(endpoint_element, 'protocol').text = data.get(
+        'protocol', 'HTTP').upper()
+    XML.SubElement(endpoint_element, 'format').text = data.get(
+        'format', 'JSON').upper()
     XML.SubElement(endpoint_element, 'url').text = data['url']
+    XML.SubElement(endpoint_element, 'event').text = data.get('event', 'all')
+    XML.SubElement(endpoint_element, 'timeout').text = str(
+        data.get('timeout', 30000))
+    XML.SubElement(endpoint_element, 'loglines').text = str(
+        data.get('loglines', 0))
 
 
 class Notifications(jenkins_jobs.modules.base.Base):
