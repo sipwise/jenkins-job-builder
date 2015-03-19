@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <properties>
+    <com.tikal.hudson.plugins.notification.HudsonNotificationProperty>
+      <endpoints>
+        <com.tikal.hudson.plugins.notification.Endpoint>
+          <protocol>UDP</protocol>
+          <format>JSON</format>
+          <url>http://example.com/jenkins_endpoint</url>
+          <event>finalized</event>
+          <timeout>1000</timeout>
+          <loglines>2</loglines>
+        </com.tikal.hudson.plugins.notification.Endpoint>
+        <com.tikal.hudson.plugins.notification.Endpoint>
+          <protocol>TCP</protocol>
+          <format>XML</format>
+          <url>http://example.com/jenkins_endpoint</url>
+          <event>all</event>
+          <timeout>100</timeout>
+          <loglines>20</loglines>
+        </com.tikal.hudson.plugins.notification.Endpoint>
+      </endpoints>
+    </com.tikal.hudson.plugins.notification.HudsonNotificationProperty>
+  </properties>
+</project>
