@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_ac31e70c",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 787,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-19T00:47:13Z",
+      "side": 1,
+      "message": "Since this takes a glob pattern should we also be reporting the stat for this method?",
+      "revId": "7e68eeb273e3de8b469064249d13f6925f86bdb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
