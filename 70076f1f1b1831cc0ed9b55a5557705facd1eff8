@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_2c7c1720",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1104,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-19T00:34:27Z",
+      "side": 1,
+      "message": "the \u0027(default ..)\u0027 should be moved to the end of the following line, always should be after the rest of the text so the generated docs are consistent.\n\nPlease also add single quotes around each of the options to make it explicit in the docs as to the valid values, basically same as \u0027kill-phase-on\u0027 with the optional/default marker at the end.",
+      "revId": "70076f1f1b1831cc0ed9b55a5557705facd1eff8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
