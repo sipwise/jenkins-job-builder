@@ -5,7 +5,11 @@
       <endpoints>
         <com.tikal.hudson.plugins.notification.Endpoint>
           <protocol>HTTP</protocol>
+          <format>XML</format>
           <url>http://example.com/jenkins_endpoint</url>
+          <event>finalized</event>
+          <timeout>100</timeout>
+          <loglines>20</loglines>
         </com.tikal.hudson.plugins.notification.Endpoint>
       </endpoints>
     </com.tikal.hudson.plugins.notification.HudsonNotificationProperty>
