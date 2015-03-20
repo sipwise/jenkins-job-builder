@@ -496,10 +496,10 @@ def coverage(parser, xml_parent, data):
     Requires the Jenkins :jenkins-wiki:`Cobertura Coverage Plugin
     <Cobertura+Plugin>`.
 
-    Example::
+    Example:
 
-      publishers:
-        - coverage
+    .. literalinclude:: /../../tests/publishers/fixtures/coverage001.yaml
+       :language: yaml
     """
     logger = logging.getLogger(__name__)
     logger.warn("Coverage function is deprecated. Switch to cobertura.")
@@ -589,30 +589,10 @@ def cobertura(parser, xml_parent, data):
                 * **unhealthy** (`int`): Unhealthy threshold (default 0)
                 * **failing** (`int`): Failing threshold (default 0)
 
-    Example::
+    Example:
 
-      publishers:
-        - cobertura:
-             report-file: "/reports/cobertura/coverage.xml"
-             only-stable: "true"
-             fail-no-reports: "true"
-             fail-unhealthy: "true"
-             fail-unstable: "true"
-             health-auto-update: "true"
-             stability-auto-update: "true"
-             zoom-coverage-chart: "true"
-             source-encoding: "Big5"
-             targets:
-                  - files:
-                      healthy: 10
-                      unhealthy: 20
-                      failing: 30
-                  - method:
-                      healthy: 50
-                      unhealthy: 40
-                      failing: 30
-
-
+    .. literalinclude:: /../../tests/publishers/fixtures/cobertura001.yaml
+       :language: yaml
     """
     cobertura = XML.SubElement(xml_parent,
                                'hudson.plugins.cobertura.CoberturaPublisher')
@@ -637,7 +617,7 @@ def cobertura(parser, xml_parent, data):
         'class': 'enum-map',
         'enum-type': 'hudson.plugins.cobertura.targets.CoverageMetric'})
     for item in data['targets']:
-        item_name = item.keys()[0]
+        item_name = next(iter(item.keys()))
         item_values = item.get(item_name, 0)
         entry = XML.SubElement(targets, 'entry')
         XML.SubElement(entry,
@@ -649,7 +629,7 @@ def cobertura(parser, xml_parent, data):
         'class': 'enum-map',
         'enum-type': 'hudson.plugins.cobertura.targets.CoverageMetric'})
     for item in data['targets']:
-        item_name = item.keys()[0]
+        item_name = next(iter(item.keys()))
         item_values = item.get(item_name, 0)
         entry = XML.SubElement(targets, 'entry')
         XML.SubElement(entry, 'hudson.plugins.cobertura.targets.'
@@ -661,7 +641,7 @@ def cobertura(parser, xml_parent, data):
         'class': 'enum-map',
         'enum-type': 'hudson.plugins.cobertura.targets.CoverageMetric'})
     for item in data['targets']:
-        item_name = item.keys()[0]
+        item_name = next(iter(item.keys()))
         item_values = item.get(item_name, 0)
         entry = XML.SubElement(targets, 'entry')
         XML.SubElement(entry, 'hudson.plugins.cobertura.targets.'
@@ -696,22 +676,10 @@ def jacoco(parser, xml_parent, data):
                 * **healthy** (`int`): Healthy threshold (default 0)
                 * **unhealthy** (`int`): Unhealthy threshold (default 0)
 
-    Example::
+    Example:
 
-      publishers:
-        - jacoco:
-            exec-pattern: "**/**.exec"
-            class-pattern: "**/classes"
-            source-pattern: "**/src/main/java"
-            status-update: true
-            targets:
-              - branch:
-                  healthy: 10
-                  unhealthy: 20
-              - method:
-                  healthy: 50
-                  unhealthy: 40
-
+    .. literalinclude:: /../../tests/publishers/fixtures/jacoco001.yaml
+       :language: yaml
     """
 
     jacoco = XML.SubElement(xml_parent,
@@ -737,7 +705,7 @@ def jacoco(parser, xml_parent, data):
                  'class']
 
     for item in data['targets']:
-        item_name = item.keys()[0]
+        item_name = next(iter(item.keys()))
         if item_name not in itemsList:
             raise JenkinsJobsException("item entered is not valid must be "
                                        "one of: %s" % ",".join(itemsList))
@@ -1015,15 +983,10 @@ def violations(parser, xml_parent, data):
       gendarme, jcreport, jslint, pep8, perlcritic, pmd, pylint,
       simian, stylecop
 
-    Example::
+    Example:
 
-      publishers:
-        - violations:
-            pep8:
-              min: 0
-              max: 1
-              unstable: 1
-              pattern: '**/pep8.txt'
+    .. literalinclude::  /../../tests/publishers/fixtures/violations001.yaml
+       :language: yaml
     """
     violations = XML.SubElement(xml_parent,
                                 'hudson.plugins.violations.'
@@ -1352,10 +1315,10 @@ def claim_build(parser, xml_parent, data):
     Claim build failures
     Requires the Jenkins :jenkins-wiki:`Claim Plugin <Claim+plugin>`.
 
-    Example::
+    Example:
 
-      publishers:
-        - claim-build
+    .. literalinclude::  /../../tests/publishers/fixtures/claim-build001.yaml
+       :language: yaml
     """
 
     XML.SubElement(xml_parent, 'hudson.plugins.claim.ClaimPublisher')
@@ -1529,12 +1492,10 @@ def fingerprint(parser, xml_parent, data):
     :arg bool record-artifacts: fingerprint all archived artifacts
         (default false)
 
-    Example::
+    Example:
 
-      publishers:
-        - fingerprint:
-            files: builddir/test*.xml
-            record-artifacts: false
+    .. literalinclude::  /../../tests/publishers/fixtures/fingerprint001.yaml
+       :language: yaml
     """
     finger = XML.SubElement(xml_parent, 'hudson.tasks.Fingerprinter')
     XML.SubElement(finger, 'targets').text = data.get('files', '')
@@ -1548,11 +1509,11 @@ def aggregate_tests(parser, xml_parent, data):
 
     :arg bool include-failed-builds: whether to include failed builds
 
-    Example::
+    Example:
 
-      publishers:
-        - aggregate-tests:
-            include-failed-builds: true
+    .. literalinclude::
+        /../../tests/publishers/fixtures/aggregate-tests001.yaml
+       :language: yaml
     """
     agg = XML.SubElement(xml_parent,
                          'hudson.tasks.test.AggregatedTestResultPublisher')
@@ -1588,29 +1549,10 @@ def cppcheck(parser, xml_parent, data):
 
     for more optional parameters see the example
 
-    Example::
+    Example:
 
-      publishers:
-        - cppcheck:
-            pattern: "**/cppcheck.xml"
-            # the rest is optional
-            # build status (new) error count thresholds
-            thresholds:
-              unstable: 5
-              new-unstable: 5
-              failure: 7
-              new-failure: 3
-              # severities which count towards the threshold, default all true
-              severity:
-                error: true
-                warning: true
-                information: false
-            graph:
-              xysize: [500, 200]
-              # which errors to display, default only sum
-              display:
-                sum: false
-                error: true
+    .. literalinclude::  /../../tests/publishers/fixtures/cppcheck001.yaml
+       :language: yaml
     """
     cppextbase = XML.SubElement(xml_parent,
                                 'org.jenkinsci.plugins.cppcheck.'
@@ -1672,13 +1614,10 @@ def logparser(parser, xml_parent, data):
     :arg bool unstable-on-warning: mark build unstable on warning
     :arg bool fail-on-error: mark build failed on error
 
-    Example::
+    Example:
 
-      publishers:
-        - logparser:
-            parse-rules: "/path/to/parserules"
-            unstable-on-warning: true
-            fail-on-error: true
+    .. literalinclude::  /../../tests/publishers/fixtures/logparser001.yaml
+       :language: yaml
     """
 
     clog = XML.SubElement(xml_parent,
@@ -1703,15 +1642,11 @@ def copy_to_master(parser, xml_parent, data):
                              If left blank they will be copied into the
                              workspace of the current job
 
-    Example::
+    Example:
 
-      publishers:
-        - copy-to-master:
-            includes:
-              - file1
-              - file2*.txt
-            excludes:
-              - file2bad.txt
+    .. literalinclude::
+        /../../tests/publishers/fixtures/copy-to-master001.yaml
+       :language: yaml
     """
     p = 'com.michelin.cio.hudson.plugins.copytoslave.CopyToMasterNotifier'
     cm = XML.SubElement(xml_parent, p)
@@ -1731,10 +1666,10 @@ def jira(parser, xml_parent, data):
     Update relevant JIRA issues
     Requires the Jenkins :jenkins-wiki:`JIRA Plugin <JIRA+Plugin>`.
 
-    Example::
+    Example:
 
-      publishers:
-        - jira
+    .. literalinclude:: /../../tests/publishers/fixtures/jira001.yaml
+       :language: yaml
     """
     XML.SubElement(xml_parent, 'hudson.plugins.jira.JiraIssueUpdater')
 
@@ -1747,11 +1682,11 @@ def groovy_postbuild(parser, xml_parent, data):
 
     :Parameter: the groovy script to execute
 
-    Example::
+    Example:
 
-      publishers:
-        - groovy-postbuild: "manager.buildFailure()"
-
+    .. literalinclude::
+        /../../tests/publishers/fixtures/groovy-postbuild001.yaml
+       :language: yaml
     """
     root_tag = 'org.jvnet.hudson.plugins.groovypostbuild.'\
         'GroovyPostbuildRecorder'
@@ -1881,19 +1816,10 @@ def sonar(parser, xml_parent, data):
     This publisher supports the post-build action exposed by the Jenkins
     Sonar Plugin, which is triggering a Sonar Analysis with Maven.
 
-    Example::
+    Example:
 
-      publishers:
-        - sonar:
-            jdk: MyJdk
-            branch: myBranch
-            language: java
-            maven-opts: -DskipTests
-            additional-properties: -DsonarHostURL=http://example.com/
-            skip-global-triggers:
-                skip-when-scm-change: true
-                skip-when-upstream-build: true
-                skip-when-envvar-defined: SKIP_SONAR
+    .. literalinclude:: /../../tests/publishers/fixtures/sonar001.yaml
+       :language: yaml
     """
     sonar = XML.SubElement(xml_parent, 'hudson.plugins.sonar.SonarPublisher')
     if 'jdk' in data:
@@ -1931,33 +1857,16 @@ def performance(parser, xml_parent, data):
        :(jmeter or junit): (`dict` or `str`): Specify a custom report file
          (optional; jmeter default \**/*.jtl, junit default **/TEST-\*.xml)
 
-    Examples::
+    Examples:
 
-      publishers:
-        - performance:
-            failed-threshold: 85
-            unstable-threshold: -1
-            report:
-               - jmeter: "/special/file.jtl"
-               - junit: "/special/file.xml"
+    .. literalinclude:: /../../tests/publishers/fixtures/performance001.yaml
+       :language: yaml
 
-      publishers:
-        - performance:
-            failed-threshold: 85
-            unstable-threshold: -1
-            report:
-               - jmeter
-               - junit
+    .. literalinclude:: /../../tests/publishers/fixtures/performance002.yaml
+       :language: yaml
 
-      publishers:
-        - performance:
-            failed-threshold: 85
-            unstable-threshold: -1
-            report:
-               - jmeter: "/special/file.jtl"
-               - junit: "/special/file.xml"
-               - jmeter
-               - junit
+    .. literalinclude:: /../../tests/publishers/fixtures/performance003.yaml
+       :language: yaml
     """
     logger = logging.getLogger(__name__)
 
@@ -1970,7 +1879,7 @@ def performance(parser, xml_parent, data):
     parsers = XML.SubElement(perf, 'parsers')
     for item in data['report']:
         if isinstance(item, dict):
-            item_name = item.keys()[0]
+            item_name = next(iter(item.keys()))
             item_values = item.get(item_name, None)
             if item_name == 'jmeter':
                 jmhold = XML.SubElement(parsers, 'hudson.plugins.performance.'
@@ -2005,13 +1914,10 @@ def join_trigger(parser, xml_parent, data):
 
     :arg list projects: list of projects to trigger
 
-    Example::
+    Example:
 
-      publishers:
-        - join-trigger:
-            projects:
-              - project-one
-              - project-two
+    .. literalinclude:: /../../tests/publishers/fixtures/join-trigger001.yaml
+       :language: yaml
     """
     jointrigger = XML.SubElement(xml_parent, 'join.JoinTrigger')
 
@@ -2054,17 +1960,10 @@ def jabber(parser, xml_parent, data):
           * **summary-build** -- Summary and build parameters
           * **summary-scm-fail** -- Summary, SCM changes, and failed tests
 
-    Example::
+    Example:
 
-      publishers:
-        - jabber:
-            notify-on-build-start: true
-            group-targets:
-              - "foo-room@conference-2-fooserver.foo.com"
-            individual-targets:
-              - "foo-user@conference-2-fooserver.foo.com"
-            strategy: all
-            message: summary-scm
+    .. literalinclude:: /../../tests/publishers/fixtures/jabber001.yaml
+       :language: yaml
     """
     j = XML.SubElement(xml_parent, 'hudson.plugins.jabber.im.transport.'
                        'JabberPublisher')
@@ -2136,15 +2035,11 @@ def workspace_cleanup(parser, xml_parent, data):
     :arg bool fail-build: Fail the build if the cleanup fails (default: true)
     :arg bool clean-parent: Cleanup matrix parent workspace (default: false)
 
-    Example::
+    Example:
 
-      publishers:
-        - workspace-cleanup:
-            include:
-              - "*.zip"
-            clean-if:
-              - success: true
-              - not-built: false
+    .. literalinclude::
+        /../../tests/publishers/fixtures/workspace-cleanup001.yaml
+       :language: yaml
     """
 
     p = XML.SubElement(xml_parent,
@@ -2168,14 +2063,16 @@ def workspace_cleanup(parser, xml_parent, data):
     XML.SubElement(p, 'cleanupMatrixParent').text = \
         str(data.get("clean-parent", False)).lower()
 
-    mask = {'success': 'cleanWhenSuccess', 'unstable': 'cleanWhenUnstable',
-            'failure': 'cleanWhenFailure', 'not-built': 'cleanWhenNotBuilt',
-            'aborted': 'cleanWhenAborted'}
+    mask = [('success', 'cleanWhenSuccess'),
+            ('unstable', 'cleanWhenUnstable'),
+            ('failure', 'cleanWhenFailure'),
+            ('not-built', 'cleanWhenNotBuilt'),
+            ('aborted', 'cleanWhenAborted')]
     clean = data.get('clean-if', [])
     cdict = dict()
     for d in clean:
         cdict.update(d)
-    for k, v in mask.iteritems():
+    for k, v in mask:
         XML.SubElement(p, v).text = str(cdict.pop(k, True)).lower()
 
     if len(cdict) > 0:
@@ -2199,14 +2096,10 @@ def maven_deploy(parser, xml_parent, data):
       (default false)
 
 
-    Example::
+    Example:
 
-      publishers:
-        - maven-deploy:
-            id: example
-            url: http://repo.example.com/maven2/
-            unique-version: true
-            deploy-unstable: false
+    .. literalinclude:: /../../tests/publishers/fixtures/maven-deploy001.yaml
+       :language: yaml
     """
 
     p = XML.SubElement(xml_parent, 'hudson.maven.RedeployPublisher')
@@ -2238,15 +2131,10 @@ def text_finder(parser, xml_parent, data):
               Set build unstable instead of failing the build (default False)
 
 
-    Example::
+    Example:
 
-        publishers:
-            - text-finder:
-                regexp: "some string"
-                fileset: "file.txt"
-                also-check-console-output: true
-                succeed-if-found: false
-                unstable-if-found: false
+    .. literalinclude:: /../../tests/publishers/fixtures/text-finder001.yaml
+       :language: yaml
     """
 
     finder = XML.SubElement(xml_parent,
@@ -2276,15 +2164,10 @@ def html_publisher(parser, xml_parent, data):
     :arg bool allow-missing: Allow missing HTML reports (Default False)
 
 
-    Example::
+    Example:
 
-        publishers:
-            - html-publisher:
-                name: "some name"
-                dir: "path/"
-                files: "index.html"
-                keep-all: true
-                allow-missing: true
+    .. literalinclude:: /../../tests/publishers/fixtures/html-publisher001.yaml
+       :language: yaml
     """
 
     reporter = XML.SubElement(xml_parent, 'htmlpublisher.HtmlPublisher')
@@ -2358,12 +2241,10 @@ def tap(parser, xml_parent, data):
     :arg bool todo-is-failure: Handle TODO's as failures (Default True)
 
 
-    Example::
+    Example:
 
-        publishers:
-            - tap:
-                results: puiparts.tap
-                todo-is-failure: false
+    .. literalinclude:: /../../tests/publishers/fixtures/tap001.yaml
+       :language: yaml
     """
 
     tap = XML.SubElement(xml_parent, 'org.tap4j.plugin.TapPublisher')
@@ -2412,21 +2293,10 @@ def post_tasks(parser, xml_parent, data):
         (default 'false')
     :arg str task[script]: Shell script to run (default '')
 
-    Example::
+    Example:
 
-        publishers:
-            - post-tasks:
-                - matches:
-                    - log-text: line to match
-                      operator: AND
-                    - log-text: line to match
-                      operator: OR
-                    - log-text: line to match
-                      operator: AND
-                  escalate-status: false
-                  run-if-job-successful:false
-                  script: |
-                    echo "Here goes the task script"
+    .. literalinclude:: /../../tests/publishers/fixtures/post-tasks001.yaml
+       :language: yaml
     """
 
     pb_xml = XML.SubElement(xml_parent,
@@ -2586,11 +2456,10 @@ def xml_summary(parser, xml_parent, data):
 
     :arg str files: Files to parse (default '')
 
-    Example::
+    Example:
 
-        publishers:
-            - xml-summary:
-                files: '*_summary_report.xml'
+    .. literalinclude:: /../../tests/publishers/fixtures/xml-summary001.yaml
+       :language: yaml
     """
 
     summary = XML.SubElement(xml_parent,
@@ -2624,21 +2493,10 @@ def robot(parser, xml_parent, data):
         checking the thresholds (default true)
     :arg list other-files: list other files to archive (default '')
 
-    Example::
+    Example:
 
-        - publishers:
-            - robot:
-                output-path: reports/robot
-                log-file-link: report.html
-                report-html: report.html
-                log-html: log.html
-                output-xml: output.xml
-                pass-threshold: 80.0
-                unstable-threshold: 60.0
-                only-critical: false
-                other-files:
-                    - extra-file1.html
-                    - extra-file2.txt
+    .. literalinclude:: /../../tests/publishers/fixtures/robot001.yaml
+       :language: yaml
     """
     parent = XML.SubElement(xml_parent, 'hudson.plugins.robot.RobotPublisher')
     XML.SubElement(parent, 'outputPath').text = data['output-path']
@@ -2756,51 +2614,10 @@ def warnings(parser, xml_parent, data):
     :arg str default-encoding: Default encoding when parsing or showing files
         Leave empty to use default encoding of platform (default '')
 
-    Example::
+    Example:
 
-      publishers:
-        - warnings:
-            console-log-parsers:
-              - FxCop
-              - CodeAnalysis
-            workspace-file-scanners:
-              - file-pattern: '**/*.out'
-                scanner: 'AcuCobol Compiler'
-              - file-pattern: '**/*.warnings'
-                scanner: FxCop
-            files-to-include: '[a-zA-Z]\.java,[a-zA-Z]\.cpp'
-            files-to-ignore: '[a-zA-Z]\.html,[a-zA-Z]\.js'
-            run-always: true
-            detect-modules: true
-            resolve-relative-paths: true
-            health-threshold-high: 50
-            health-threshold-low: 25
-            health-priorities: high-and-normal
-            total-thresholds:
-                unstable:
-                    total-all: 90
-                    total-high: 90
-                    total-normal: 40
-                    total-low: 30
-                failed:
-                    total-all: 100
-                    total-high: 100
-                    total-normal: 50
-                    total-low: 40
-            new-thresholds:
-                unstable:
-                    new-all: 100
-                    new-high: 50
-                    new-normal: 30
-                    new-low: 10
-                failed:
-                    new-all: 100
-                    new-high: 60
-                    new-normal: 50
-                    new-low: 40
-            use-delta-for-new-warnings: true
-            only-use-stable-builds-as-reference: true
-            default-encoding: ISO-8859-9
+    .. literalinclude:: /../../tests/publishers/fixtures/warnings001.yaml
+       :language: yaml
     """
 
     warnings = XML.SubElement(xml_parent,
@@ -2887,13 +2704,10 @@ def sloccount(parser, xml_parent, data):
     :arg str charset: The character encoding to be used to read the SLOCCount
                       result files. (default: 'UTF-8')
 
-    Example::
+    Example:
 
-      publishers:
-        - sloccount:
-            report-files: sloccount.sc
-            charset: UTF-8
-
+    .. literalinclude:: /../../tests/publishers/fixtures/sloccount001.yaml
+       :language: yaml
     """
     top = XML.SubElement(xml_parent,
                          'hudson.plugins.sloccount.SloccountPublisher')
@@ -3079,37 +2893,10 @@ def plot(parser, xml_parent, data):
                 Xpath which selects the values that should be plotted.
 
 
-    Example::
+    Example:
 
-      publishers:
-        - plot:
-            - title: MyPlot
-              yaxis: Y
-              group: PlotGroup
-              num-builds: ''
-              style: line
-              use-description: false
-              series:
-                  - file: graph-me-second.properties
-                    label: MyLabel
-                    format: properties
-                  - file: graph-me-first.csv
-                    url: 'http://srv1'
-                    inclusion-flag: 'off'
-                    display-table: true
-                    format: csv
-            - title: MyPlot2
-              yaxis: Y
-              group: PlotGroup
-              style: line
-              use-description: false
-              series:
-                  - file: graph-me-third.xml
-                    url: 'http://srv2'
-                    format: xml
-                    xpath-type: 'node'
-                    xpath: '/*'
-
+    .. literalinclude:: /../../tests/publishers/fixtures/plot004.yaml
+       :language: yaml
     """
     top = XML.SubElement(xml_parent, 'hudson.plugins.plot.PlotPublisher')
     plots = XML.SubElement(top, 'plots')
@@ -3222,30 +3009,10 @@ def git(parser, xml_parent, data):
                  (Default: False)
 
 
-    Example::
+    Example:
 
-        publishers:
-            - git:
-                push-merge: true
-                push-only-if-success: false
-                tags:
-                    - tag:
-                        remote: tagremotename
-                        name: tagname
-                        message: "some tag message"
-                        create-tag: true
-                        update-tag: true
-                branches:
-                    - branch:
-                        remote: branchremotename
-                        name: "some/branch"
-                notes:
-                    - note:
-                        remote: remotename
-                        message: "some note to push"
-                        namespace: commits
-                        replace-note: true
-
+    .. literalinclude:: /../../tests/publishers/fixtures/git001.yaml
+       :language: yaml
     """
     mappings = [('push-merge', 'pushMerge', False),
                 ('push-only-if-success', 'pushOnlyIfSuccess', True)]
