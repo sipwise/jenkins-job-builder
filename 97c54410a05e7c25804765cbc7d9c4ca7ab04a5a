@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a75e904_f5732213",
+        "filename": "doc/source/definition.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-21T13:40:01Z",
+      "side": 1,
+      "message": "still not displaying and I\u0027ve worked out why, it\u0027s missing a second \u0027:\u0027.\n\nI\u0027ve experimented with a few options and it seems that the following is the way to be able to include the docstring from the raw function directly here:\n\nhttp://stackoverflow.com/questions/7825263/including-docstring-in-sphinx-documentation\n\nMight be possible to get a suitable function implemented to do the needed but would probably take a bit of work to get right.",
+      "revId": "97c54410a05e7c25804765cbc7d9c4ca7ab04a5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a75e904_e06b5e83",
+        "filename": "jenkins_jobs/modules/general.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-21T13:40:01Z",
+      "side": 1,
+      "message": "Watch the whitespace here, should start at the same point and not be indented. Tempted to suggest wiping this out and just document directly in definition for now with a comment here explaining it\u0027s not possible to reference in a suitable manner.",
+      "revId": "97c54410a05e7c25804765cbc7d9c4ca7ab04a5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
