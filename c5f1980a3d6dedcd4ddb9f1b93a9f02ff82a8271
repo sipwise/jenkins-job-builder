@@ -104,6 +104,24 @@
       "revId": "c5f1980a3d6dedcd4ddb9f1b93a9f02ff82a8271",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_83f71e8c",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-21T17:44:51Z",
+      "side": 1,
+      "message": "Indeed best left to the other change.",
+      "parentUuid": "9a80dd14_69e7d712",
+      "revId": "c5f1980a3d6dedcd4ddb9f1b93a9f02ff82a8271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
