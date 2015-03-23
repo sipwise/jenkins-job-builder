@@ -16,6 +16,24 @@
       "revId": "67b5f90e514780d8fb442c9c3c2133698a72ac33",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_54c1432d",
+        "filename": "setup.cfg",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 14673
+      },
+      "writtenOn": "2015-03-23T11:45:34Z",
+      "side": 1,
+      "message": "That is a good idea. I\u0027ll do that. Do you have an example for the wording I should use in the log message?",
+      "parentUuid": "1a6ced46_e561add4",
+      "revId": "67b5f90e514780d8fb442c9c3c2133698a72ac33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
