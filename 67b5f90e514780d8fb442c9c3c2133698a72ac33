@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_e561add4",
+        "filename": "setup.cfg",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-23T01:48:32Z",
+      "side": 1,
+      "message": "This breaks backwards compatibility, should point both \u0027notification\u0027 and \u0027http\u0027 at the jenkins.modules.notifications:notification_endpoint to retain backwards compatibility although it\u0027s probably better to point to separate functions and have the http_endpoint call notification_endpoint after logging a warning about users needing to switch definitions.",
+      "revId": "67b5f90e514780d8fb442c9c3c2133698a72ac33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
