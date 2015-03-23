@@ -3985,6 +3985,23 @@ def conditional_publisher(parser, xml_parent, data):
             raise JenkinsJobsException('action must be set for each condition')
 
 
+def display_upstream_changes(parser, xml_parent, data):
+    """yaml: display-upstream-changes
+    Display SCM changes of upstream jobs. Requires the Jenkins
+    :jenkins-wiki:`Display Upstream Changes Plugin
+    <Display+Upstream+Changes+Plugin>`.
+
+    Example:
+
+    .. literalinclude:: \
+    /../../tests/publishers/fixtures/display-upstream-changes.yaml
+    """
+    XML.SubElement(
+        xml_parent,
+        'jenkins.plugins.displayupstreamchanges.'
+        'DisplayUpstreamChangesRecorder')
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
