@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_65ddbd42",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1248,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-23T01:41:15Z",
+      "side": 1,
+      "message": "Trailing backslash should be unnecessary if you just change the indentation on the following line to be only two spaces in from where the line above starts.",
+      "revId": "be55646fbbc81a7bb4b0157ba8f8b2fac5795499",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_45d8c153",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1256,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-23T01:41:15Z",
+      "side": 1,
+      "message": "Be good to fix up the formatting here, see http://docs-draft.openstack.org/04/164504/3/check/gate-jenkins-job-builder-docs/7ccafd6//doc/build/html/builders.html#builders.config-file-provider and compare it to http://docs-draft.openstack.org/04/164504/3/check/gate-jenkins-job-builder-docs/7ccafd6//doc/build/html/builders.html#builders.managed-script or http://docs-draft.openstack.org/04/164504/3/check/gate-jenkins-job-builder-docs/7ccafd6//doc/build/html/builders.html#builders.multijob\n\nI think following either of subsequent versions make for a better documentation so would be good to fix this up rather than just duplicating.\n\nAlso, should be possible to remove the backslashes by just indenting the subsequent lines properly.",
+      "revId": "be55646fbbc81a7bb4b0157ba8f8b2fac5795499",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_a5f895c5",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-23T01:41:15Z",
+      "side": 1,
+      "message": "Would be good to remove some of the unnecessary backslashes while doing this.",
+      "revId": "be55646fbbc81a7bb4b0157ba8f8b2fac5795499",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_45bfe1d0",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-23T01:41:15Z",
+      "side": 1,
+      "message": "Would suggest taking the opportunity to fix up the documentation here to bring it more in line with how sub-options are documented elsewhere. See comments for the builders section.",
+      "revId": "be55646fbbc81a7bb4b0157ba8f8b2fac5795499",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
