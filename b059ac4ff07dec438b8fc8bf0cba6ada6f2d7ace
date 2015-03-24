@@ -16,6 +16,24 @@
       "revId": "b059ac4ff07dec438b8fc8bf0cba6ada6f2d7ace",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a75e904_8fe65d15",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-03-24T05:24:03Z",
+      "side": 0,
+      "message": "I had to turn on debug output after annotating the jenkins_open function with debug timestamps so I could determine the amount of time spent in connections made to Jenkins while splitting jobs.\n\nThis was printing thousands of meaningless messages...",
+      "parentUuid": "9a80dd14_110bec24",
+      "revId": "b059ac4ff07dec438b8fc8bf0cba6ada6f2d7ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

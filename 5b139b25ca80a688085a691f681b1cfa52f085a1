@@ -50,6 +50,24 @@
       "revId": "5b139b25ca80a688085a691f681b1cfa52f085a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a75e904_cff055cc",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-03-24T05:24:03Z",
+      "side": 1,
+      "message": "d\u0027oh. my brain is so scattered lately.",
+      "parentUuid": "9a80dd14_d187945f",
+      "revId": "5b139b25ca80a688085a691f681b1cfa52f085a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
