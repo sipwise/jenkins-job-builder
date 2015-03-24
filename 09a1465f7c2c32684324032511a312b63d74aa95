@@ -67,6 +67,24 @@
       "revId": "09a1465f7c2c32684324032511a312b63d74aa95",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_b54a2cc3",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2015-03-24T18:20:23Z",
+      "side": 1,
+      "message": "It\u0027s none here to differentiate between True, False and not specified. So when not specified we try the config, but when specified (True or False) we override any config file parameter with the passed value.",
+      "parentUuid": "da86d52c_e63fbc23",
+      "revId": "09a1465f7c2c32684324032511a312b63d74aa95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
