@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a6ced46_d177dcd2",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-03-24T06:05:13Z",
+      "side": 1,
+      "message": "What are the units this variable uses? What is the default value? How does one disable the connection timeout entirely?",
+      "revId": "071f8c9020fa6cbc7b7f64bb040b91dc25a298a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_2b94d341",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 8
@@ -31,6 +48,24 @@
       "side": 1,
       "message": "Maybe I\u0027m missing something but i don\u0027t see why that its necessary.  The only place that the Builder object is created is in cmd.py which just passes the timeout down to the Jenkins object which will let python-jenkins.Jenkins set it to whatever it\u0027s default is.",
       "parentUuid": "9a80dd14_2b94d341",
+      "revId": "071f8c9020fa6cbc7b7f64bb040b91dc25a298a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_71baa8c1",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-03-24T06:05:13Z",
+      "side": 1,
+      "message": "I agree this probably isn\u0027t necessary since python-jenkins sets a default.",
+      "parentUuid": "9a80dd14_334b1361",
       "revId": "071f8c9020fa6cbc7b7f64bb040b91dc25a298a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
