@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_ae7dbae9",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2015-03-24T12:46:56Z",
+      "side": 1,
+      "message": "It\u0027s not just focused on those two methods, it just happens to be the place where it works best for the first patch",
+      "parentUuid": "da86d52c_ec536337",
+      "revId": "d8ed8e0eed718d64eb7c922e7e0035457bebba47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_8fc2d984",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 18
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-06T17:40:41Z",
       "side": 1,
       "message": "would be nice to parallel delete as well. it looks like the jenkins issue about deadlock on parallel deletion (referenced by Antoine in PS 1) was fixed in ver 1.509?",
+      "revId": "d8ed8e0eed718d64eb7c922e7e0035457bebba47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_8e5f1675",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2015-03-24T12:46:56Z",
+      "side": 1,
+      "message": "I think that would be good enough for a new patch",
+      "parentUuid": "da86d52c_8fc2d984",
       "revId": "d8ed8e0eed718d64eb7c922e7e0035457bebba47",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -101,6 +137,24 @@
       "side": 1,
       "message": "Okay, I\u0027m not going to block this review based on my opinion here but I am curious what generic usage you anticipate for this class?",
       "parentUuid": "fa81d914_146fa7c6",
+      "revId": "d8ed8e0eed718d64eb7c922e7e0035457bebba47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_eed5f2b9",
+        "filename": "jenkins_jobs/parallel.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2015-03-24T12:46:56Z",
+      "side": 1,
+      "message": "I\u0027ve used it already in another scripts, adding some extra logic just subclassing",
+      "parentUuid": "da86d52c_5a8fb323",
       "revId": "d8ed8e0eed718d64eb7c922e7e0035457bebba47",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
