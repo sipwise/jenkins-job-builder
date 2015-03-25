@@ -87,6 +87,24 @@
       "revId": "071f8c9020fa6cbc7b7f64bb040b91dc25a298a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_3fb19247",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 9943
+      },
+      "writtenOn": "2015-03-25T14:39:33Z",
+      "side": 1,
+      "message": "python-jenkins _doesn\u0027t_ set the default None which is different from socket._GLOBAL_DEFAULT_TIMEOUT. Khai is right that it\u0027s irrelevanthere since cmd.py passed in a value but given that I wonder why jenkins_timeout then has a default value at all. It\u0027s inconsistent.",
+      "parentUuid": "1a6ced46_71baa8c1",
+      "revId": "071f8c9020fa6cbc7b7f64bb040b91dc25a298a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
