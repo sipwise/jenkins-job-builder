@@ -19,6 +19,7 @@ import fnmatch
 import logging
 import os
 import platform
+import socket
 import sys
 import yaml
 import jenkins_jobs.version
@@ -228,6 +229,18 @@ def execute(options, config):
     except (TypeError, configparser.NoOptionError):
         password = None
 
+    # None -- no timeout, blocking mode; same as setblocking(True)
+    # 0.0 -- non-blocking mode; same as setblocking(False) <--- default
+    # > 0 -- timeout mode; operations time out after timeout seconds
+    # < 0 -- illegal; raises an exception
+    # to retain the default must use "timeout=socket._GLOBAL_DEFAULT_TIMEOUT"
+    # or not set timeout at all.
+    timeout = socket._GLOBAL_DEFAULT_TIMEOUT
+    try:
+        timeout = config.getint('jenkins', 'timeout')
+    except (TypeError, configparser.NoOptionError):
+        pass
+
     plugins_info = None
 
     if getattr(options, 'plugins_info_path', None) is not None:
@@ -250,6 +263,7 @@ def execute(options, config):
                       user,
                       password,
                       config,
+                      jenkins_timeout=timeout,
                       ignore_cache=ignore_cache,
                       flush_cache=options.flush_cache,
                       plugins_list=plugins_info)

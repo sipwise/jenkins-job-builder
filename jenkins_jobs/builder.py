@@ -18,6 +18,7 @@
 import errno
 import os
 import operator
+import socket
 import sys
 import hashlib
 import yaml
@@ -138,8 +139,9 @@ class CacheStorage(object):
 
 
 class Jenkins(object):
-    def __init__(self, url, user, password):
-        self.jenkins = jenkins.Jenkins(url, user, password)
+    def __init__(self, url, user, password,
+                 timeout=socket._GLOBAL_DEFAULT_TIMEOUT):
+        self.jenkins = jenkins.Jenkins(url, user, password, timeout)
 
     def update_job(self, job_name, xml):
         if self.is_job(job_name):
@@ -197,9 +199,10 @@ class Jenkins(object):
 
 class Builder(object):
     def __init__(self, jenkins_url, jenkins_user, jenkins_password,
-                 config=None, ignore_cache=False, flush_cache=False,
-                 plugins_list=None):
-        self.jenkins = Jenkins(jenkins_url, jenkins_user, jenkins_password)
+                 config=None, jenkins_timeout=socket._GLOBAL_DEFAULT_TIMEOUT,
+                 ignore_cache=False, flush_cache=False, plugins_list=None):
+        self.jenkins = Jenkins(jenkins_url, jenkins_user, jenkins_password,
+                               jenkins_timeout)
         self.cache = CacheStorage(jenkins_url, flush=flush_cache)
         self.global_config = config
         self.ignore_cache = ignore_cache
