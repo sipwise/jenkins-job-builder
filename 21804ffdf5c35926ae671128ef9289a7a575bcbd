@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa963961_4431ec0a",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 651,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-26T20:54:13Z",
+      "side": 1,
+      "message": "If we wanted to abstract from the socket private member and only set timeout when it\u0027s set by the user, we could do something such as:\n\n JENKINS_TIMEOUT \u003d object()",
+      "revId": "21804ffdf5c35926ae671128ef9289a7a575bcbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_8406d41e",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 654,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-26T20:54:13Z",
+      "side": 1,
+      "message": "Then here use:\n\n timeout \u003d JENKINS_TIMEOUT\n\nand:\n\n if timeout !\u003d JENKINS_TIMEOUT:\n     self.jenkins \u003d jenkins.Jenkins(url, user, password, timeout)\n else:\n     self.jenkins \u003d jenkins.Jenkins(url, user, password)\n\nSimilarly use this elsewhere.",
+      "revId": "21804ffdf5c35926ae671128ef9289a7a575bcbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
