@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_6cf7c159",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6133
+      },
+      "writtenOn": "2015-03-26T11:33:07Z",
+      "side": 1,
+      "message": "should this be rooms?",
+      "revId": "6106c338a493f6b2467b81d8bad6d690f5036138",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
