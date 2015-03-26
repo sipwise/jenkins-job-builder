@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "fa963961_fd6c200a",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-26T18:17:46Z",
+      "side": 1,
+      "message": "Actually I think workers only applies to the update command on this patch.  In any case I  think adding this sub menu item to a command where it has no affect will be confusing to users because they would expected that setting the sub menu will do something.  I would suggest only adding this sub menu to update for this change.",
+      "parentUuid": "da86d52c_ae7dbae9",
+      "revId": "d8ed8e0eed718d64eb7c922e7e0035457bebba47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_8fc2d984",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 18
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "I think that would be good enough for a new patch",
       "parentUuid": "da86d52c_8fc2d984",
+      "revId": "d8ed8e0eed718d64eb7c922e7e0035457bebba47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_9d74f4cf",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-26T18:17:46Z",
+      "side": 1,
+      "message": "ok. i\u0027m cool with that.",
+      "parentUuid": "da86d52c_8e5f1675",
       "revId": "d8ed8e0eed718d64eb7c922e7e0035457bebba47",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
