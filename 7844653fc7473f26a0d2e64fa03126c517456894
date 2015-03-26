@@ -34,6 +34,24 @@
       "revId": "7844653fc7473f26a0d2e64fa03126c517456894",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_715404ff",
+        "filename": "setup.cfg",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-26T04:32:59Z",
+      "side": 1,
+      "message": "Thanks for the reference Guido, but I\u0027m not sure what you mean.  Although I think your point is that configuring this in setup.cfg is the better way to go.  I have limited knowledge about packaging so I\u0027ll defer judgement to another reviewer.",
+      "parentUuid": "da86d52c_c1960f94",
+      "revId": "7844653fc7473f26a0d2e64fa03126c517456894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
