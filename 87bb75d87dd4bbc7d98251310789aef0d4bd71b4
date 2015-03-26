@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_b1e03cfb",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-26T04:50:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_e62b6c80",
+      "revId": "87bb75d87dd4bbc7d98251310789aef0d4bd71b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_2b066a85",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 11
@@ -102,6 +120,24 @@
       "side": 1,
       "message": "therefore IMO this should one should also be stated as a required param.",
       "parentUuid": "baada198_2b066a85",
+      "revId": "87bb75d87dd4bbc7d98251310789aef0d4bd71b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_d1e858e4",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-03-26T04:50:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_c69bd0c7",
       "revId": "87bb75d87dd4bbc7d98251310789aef0d4bd71b4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
