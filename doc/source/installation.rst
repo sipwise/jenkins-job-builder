@@ -106,6 +106,9 @@ jenkins section
 **url**
   The base URL for your Jenkins installation.
 
+**timeout**
+  (Optional) The connection timeout (in seconds) to the Jenkins server.
+  By default this is set to the system configured socket timeout.
 
 Running
 -------
