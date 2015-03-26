@@ -33,6 +33,24 @@
       "revId": "21804ffdf5c35926ae671128ef9289a7a575bcbd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_452686bb",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 654,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-03-26T22:05:44Z",
+      "side": 1,
+      "message": "I thought about something like this also, but I think it may be important to explicitly set _some_ default, even if it\u0027s None, since the default behavior of the library may change (which may be a little pessimistic).\n\nIf we are worried about accessing private members in the socket library, what about using https://docs.python.org/3/library/socket.html#socket.getdefaulttimeout instead? Apologies if I missed some previous discussion about this...",
+      "parentUuid": "fa963961_8406d41e",
+      "revId": "21804ffdf5c35926ae671128ef9289a7a575bcbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
