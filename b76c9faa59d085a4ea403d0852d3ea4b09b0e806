@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa963961_0a55144f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-27T14:47:52Z",
+      "side": 1,
+      "message": "Might be worth adding a date or commit reference from the zuul project so it\u0027s clear it\u0027s been a while, seems v 2.0.0 release of zuul had the change, so I\u0027m happy enough it\u0027s been a while and there\u0027s probably no need to deprecate first.\n\nI think https://review.openstack.org/gitweb?p\u003dopenstack-infra/zuul.git;a\u003dcommitdiff;h\u003dc225b4dcf4fa259eb0ce651438cb7e5f8fc4a525 is the change to merge in the gearman support and drop jenkins_endpoint",
+      "revId": "b76c9faa59d085a4ea403d0852d3ea4b09b0e806",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
