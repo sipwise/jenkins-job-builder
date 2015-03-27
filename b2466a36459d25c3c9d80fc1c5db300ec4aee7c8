@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa963961_2f490a8c",
+        "filename": "jenkins_jobs/errors.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-27T14:31:19Z",
+      "side": 1,
+      "message": "I suspect it\u0027s a little bit overkill, but would it be worth using introspection here to automatically determine the module_name so that devs raising the exception don\u0027t have to include that information each time?\n\nFollowing would do the trick using the inspect module.\n\n if module_name \u003d\u003d None:\n     frame \u003d inspect.currentframe().f_back\n     while frame and frame.f_code.co_name !\u003d \u0027run\u0027:\n         if frame.f_code.co_name \u003d\u003d \"dispatch\":\n             data \u003d frame.f_locals\n             module_name \u003d \"%s.%s\" % (data[\u0027component_type\u0027], data[\u0027name\u0027])\n             break\n         frame \u003d frame.f_back",
+      "revId": "b2466a36459d25c3c9d80fc1c5db300ec4aee7c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_148addbf",
+        "filename": "jenkins_jobs/errors.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-27T14:31:19Z",
+      "side": 1,
+      "message": "Copy\u0027n\u0027paste error, should be InvalidAttributeError.",
+      "revId": "b2466a36459d25c3c9d80fc1c5db300ec4aee7c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
