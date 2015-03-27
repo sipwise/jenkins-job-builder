@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa963961_b91d6cbf",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-27T13:47:20Z",
+      "side": 1,
+      "message": "Is there a reason to check types here? Since you are changing the setting name it\u0027s probably not unreasonable to infer the new type.",
+      "revId": "c5500d14a49b907df3d267e8943291f6da7a867c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
