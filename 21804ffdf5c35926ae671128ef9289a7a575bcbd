@@ -51,6 +51,24 @@
       "revId": "21804ffdf5c35926ae671128ef9289a7a575bcbd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_c834dcdf",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 654,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-27T12:27:26Z",
+      "side": 1,
+      "message": "If there is no default timeout set socket.getdefaulttimeout() returns None which results in a different behaviour to what happens when no timeout is set. Hence the use of socket._GLOBAL_DEFAULT_TIMEOUT which is not None.\n\nMy understanding of the C library behind socket.py and socket.py is that if you pass in a timeout of anything other than socket._GLOBAL_DEFAULT_TIMEOUT the settimeout method will be called on the socket option and with the following args will take various actions on the socket:\n\n   None -- no timeout, blocking mode; same as setblocking(True)\n   0.0  -- non-blocking mode; same as setblocking(False)\n   \u003e 0  -- timeout mode; operations time out after timeout seconds\n   \u003c 0  -- illegal; raises an exception\n\nSo you pass in a timeout\u003dsocket.getdefaulttimeout(), this will always enable blocking mode, where as timeout\u003dsocket._GLOBAL_DEFAULT_TIMEOUT will result in non-blocking mode or immediate return, timeout \u003e 0 means block until timeout reached.\n\nSo either must avoid setting a timeout if it\u0027s not provided, or ensure that we use the default of socket._GLOBAL_DEFAULT_TIMEOUT and only override if replaced in order to allow for existing default behaviour and still allow for timeouts.",
+      "parentUuid": "fa963961_452686bb",
+      "revId": "21804ffdf5c35926ae671128ef9289a7a575bcbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
