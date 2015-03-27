@@ -34,6 +34,24 @@
       "revId": "34c67aca1c19dc7890923e7f5960c644e2a56a1e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_4d046c14",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-03-27T00:01:33Z",
+      "side": 1,
+      "message": "I shouldn\u0027t have to change the way I am using JJB to accommodate such a radical change in the way that defaults are applied, which is why I suggest that this be configured globally with the default behavior remaining the same.\n\nI would be open to changing the default behavior at the next major version bump, but I don\u0027t have the time (assuming this patch were to be merged) to re-organize my JJB configuration which is currently managing just over 400 jobs spanning around 30 different projects.",
+      "parentUuid": "da86d52c_3303ca0e",
+      "revId": "34c67aca1c19dc7890923e7f5960c644e2a56a1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
