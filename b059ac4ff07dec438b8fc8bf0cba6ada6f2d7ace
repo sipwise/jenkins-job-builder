@@ -34,6 +34,24 @@
       "revId": "b059ac4ff07dec438b8fc8bf0cba6ada6f2d7ace",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_4aa55c02",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-03-27T14:34:32Z",
+      "side": 0,
+      "message": "Sure, makes sense, just a good argument for mentioning something like that in the commit message as otherwise it\u0027s not obvious how it\u0027s linked to the rest of the change.",
+      "parentUuid": "7a75e904_8fe65d15",
+      "revId": "b059ac4ff07dec438b8fc8bf0cba6ada6f2d7ace",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
