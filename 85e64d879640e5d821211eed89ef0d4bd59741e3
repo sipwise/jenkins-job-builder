@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_1d2c6449",
+        "filename": "jenkins_jobs/modules/project_maven.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-01T17:14:21Z",
+      "side": 1,
+      "message": "Please look at using the predefined values from jenkins_jobs/modules/hudson_model.py, should just need to import it and use below instead of carrying multiple definitions.",
+      "revId": "85e64d879640e5d821211eed89ef0d4bd59741e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_dddcbc48",
+        "filename": "tests/general/fixtures/project-maven005.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-01T17:14:21Z",
+      "side": 1,
+      "message": "minor nit, good to remove the excess whitespace along with the other fixup.",
+      "revId": "85e64d879640e5d821211eed89ef0d4bd59741e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
