@@ -52,6 +52,23 @@
       "revId": "7844653fc7473f26a0d2e64fa03126c517456894",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_3de4c839",
+        "filename": "setup.cfg",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-01T17:09:39Z",
+      "side": 1,
+      "message": "Appears incomplete, missing a python-ordereddict\n\nSeems like it would be a good enhancement for pbr to support supplying the requires list to bdist_rpm from the requirements.txt with an additional capability of translating to append \u0027python-\u0027 to any package name (like fpm) not starting with it unless specifically overridden.",
+      "revId": "7844653fc7473f26a0d2e64fa03126c517456894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
