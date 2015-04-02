@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_768374cd",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-02T10:33:21Z",
+      "side": 1,
+      "message": "This was wrong in the first place, since this was really a default string parameter, and when put beside cron \u0026 ignore-post-commit-hooks it suggests the wrong behaviour.",
+      "revId": "8a59de3d1b607743d712471beeca777f166999b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_30b05443",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-02T10:33:21Z",
+      "side": 1,
+      "message": "This is displaying as literal text instead of being converted to a directive. I think the requirement is blank space before and after and indented by two spaces from the preceding paragraph it refers to. Check out the gerrit triggers and by running.\n\n tox -e docs \u0026\u0026 \u003cbrowser\u003e doc/build/html/triggers.html#triggers.pollscm",
+      "revId": "8a59de3d1b607743d712471beeca777f166999b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_902ba082",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-02T10:33:21Z",
+      "side": 1,
+      "message": "just needs the \"(default false)\" added, if you overrun the line length, on the next line indenting by two spaces from where the previous line starts should be sufficient to ensure proper continuation with needing to use \u0027\\\u0027.",
+      "revId": "8a59de3d1b607743d712471beeca777f166999b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_b660dc36",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 514,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-02T10:33:21Z",
+      "side": 1,
+      "message": "I think the following produces about the best results we can hope for in the documentation:\n\n    :Parameter: *(string)* the polling interval (cron syntax)\n \n      .. deprecated:: 1.1.0 use cron argument\n\n    :arg string cron: cron syntax of when to run (default \u0027\u0027)\n    :arg bool ignore-post-commit-hooks: ignore post commit hooks (default false)\n\nCould always put in a line before each saying \u0027Old style\u0027/\u0027New style\u0027 but with the deprecated tag I\u0027m not sure that makes it any better.",
+      "revId": "8a59de3d1b607743d712471beeca777f166999b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
