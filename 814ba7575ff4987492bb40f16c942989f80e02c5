@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_a504287e",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-02T09:21:18Z",
+      "side": 1,
+      "message": "We should really decide on a convention around the config options, either we can assume the sections/options exist if the config has been specified, or we always need to check as done here.\n\nShould really wrap the section with \u0027(..)\u0027 to avoid the \u0027\\\u0027 which is a pep8 recommendation (and in the hacking guide). Not sure how I missed this before.",
+      "revId": "814ba7575ff4987492bb40f16c942989f80e02c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_45031c74",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-02T09:21:18Z",
+      "side": 1,
+      "message": "As above.",
+      "revId": "814ba7575ff4987492bb40f16c942989f80e02c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
