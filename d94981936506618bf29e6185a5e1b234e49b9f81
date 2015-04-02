@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_b15ea6e7",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1809,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-02T11:04:22Z",
+      "side": 1,
+      "message": "Should raise an exception based on JenkinsJobBuilder, actually would be nice to rebase onto I5cb79c05d791091694731f2034d9205f7eeb76b4 and use the MissingAttributeError exception here.",
+      "revId": "d94981936506618bf29e6185a5e1b234e49b9f81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_5173dab1",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1816,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-02T11:04:22Z",
+      "side": 1,
+      "message": "Should raise an exception not just log an error since this may not be seen in amongst large numbers of jobs, InvalidAttributeError from I5cb79c05d791091694731f2034d9205f7eeb76b4 would be nice and clear.",
+      "revId": "d94981936506618bf29e6185a5e1b234e49b9f81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_316e1630",
+        "filename": "setup.cfg",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-02T11:04:22Z",
+      "side": 1,
+      "message": "alphabetical order please.",
+      "revId": "d94981936506618bf29e6185a5e1b234e49b9f81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
