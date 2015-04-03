@@ -1,0 +1,15 @@
+properties:
+  - slack:
+      team: 'myteam'
+      token: 'mytoken'
+      room: '#builds'
+      start: false
+      success: false
+      aborted: false
+      not-built: false
+      unstable: false
+      failure: false
+      back-to-normal: false
+      repeated-failure: false
+      include-test-summary: false
+      show-commit-list: false
