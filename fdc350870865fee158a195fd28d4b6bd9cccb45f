@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_576f122b",
+        "filename": "doc/source/definition.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-03T19:14:28Z",
+      "side": 1,
+      "message": "nit: \u0027there/where there\u0027 or just remove \u0027the\u0027",
+      "revId": "fdc350870865fee158a195fd28d4b6bd9cccb45f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_57ddd2de",
+        "filename": "doc/source/definition.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-03T19:14:28Z",
+      "side": 1,
+      "message": "nit: remove \u0027you use\u0027 \n nit: the module/the JJB module \n nit: does not/does not do  or \u0027does not behave\u0027",
+      "revId": "fdc350870865fee158a195fd28d4b6bd9cccb45f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_f74506b3",
+        "filename": "tests/publishers/fixtures/raw001.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-03T19:14:28Z",
+      "side": 1,
+      "message": "please remove whitespace",
+      "revId": "fdc350870865fee158a195fd28d4b6bd9cccb45f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
