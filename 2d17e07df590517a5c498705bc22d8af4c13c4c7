@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_1ea1fca9",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4066,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-06T16:15:55Z",
+      "side": 1,
+      "message": "Should add \"Example:\" here",
+      "revId": "2d17e07df590517a5c498705bc22d8af4c13c4c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
