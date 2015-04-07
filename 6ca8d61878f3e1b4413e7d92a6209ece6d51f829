@@ -16,6 +16,24 @@
       "revId": "6ca8d61878f3e1b4413e7d92a6209ece6d51f829",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_e131f40c",
+        "filename": "tests/yamlparser/fixtures/complete-raw001.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-04-07T14:29:26Z",
+      "side": 1,
+      "message": "Good point - for now I was thinking jenkins only support a single SCM but I can see it does have some notion of multiple scm.\n\nHow about I remove this support for now and make that happen in seperate change ? (scm is not where I wpould expect the most use of raw)",
+      "parentUuid": "9aa53dc9_f679b8fd",
+      "revId": "6ca8d61878f3e1b4413e7d92a6209ece6d51f829",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
