@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_62dcc2e4",
+        "filename": "jenkins_jobs/errors.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-07T15:13:31Z",
+      "side": 1,
+      "message": "Good to have some feedback on the comment here in the previous patchset:\n\nWould it be worth using introspection here to automatically determine the module_name so that devs raising the exception don\u0027t have to include that information each time?\n\nFollowing would do the trick using the inspect module.\n\n if module_name \u003d\u003d None:\n     frame \u003d inspect.currentframe().f_back\n     while frame and frame.f_code.co_name !\u003d \u0027run\u0027:\n         if frame.f_code.co_name \u003d\u003d \"dispatch\":\n             data \u003d frame.f_locals\n             module_name \u003d \"%s.%s\" % (data[\u0027component_type\u0027], data[\u0027name\u0027])\n             break\n         frame \u003d frame.f_back",
+      "revId": "cd28b14b72993901e5316b3331843a418d78011d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
