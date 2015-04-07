@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_f679b8fd",
+        "filename": "tests/yamlparser/fixtures/complete-raw001.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-07T14:09:29Z",
+      "side": 1,
+      "message": "Does this work?  shouldn\u0027t this be inside of an \u003cscm\u003e\u003c/scm\u003e element similar to the others?   when defining an scm you get this in the xml:\n\n  \u003cscm class\u003d\"hudson.plugins.git.GitSCM\"\u003e\n     ..\n  \u003c/scm\u003e\n\nOR \n\n  \u003cscm class\u003d\"hudson.scm.SubversionSCM\"\u003e\n     ..\n  \u003c/scm\u003e\n\nIt doesn\u0027t look like this would go inside of the scm element.",
+      "revId": "6ca8d61878f3e1b4413e7d92a6209ece6d51f829",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
