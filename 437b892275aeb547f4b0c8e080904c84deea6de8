@@ -87,6 +87,24 @@
       "revId": "437b892275aeb547f4b0c8e080904c84deea6de8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_4f8a02c1",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4102,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-07T16:12:02Z",
+      "side": 1,
+      "message": "It\u0027s correct, it was just also correct before.\n\nFor dictionaries:\n\n if key in dict:\n\nis the same as:\n\n if key in dict.keys():",
+      "parentUuid": "9a80dd14_70acfd88",
+      "revId": "437b892275aeb547f4b0c8e080904c84deea6de8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
