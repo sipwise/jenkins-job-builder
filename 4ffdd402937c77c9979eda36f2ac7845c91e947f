@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_c204ae16",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1874,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-07T14:59:53Z",
+      "side": 1,
+      "message": "You probably don\u0027t need the log statement at all at this point.",
+      "revId": "4ffdd402937c77c9979eda36f2ac7845c91e947f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
