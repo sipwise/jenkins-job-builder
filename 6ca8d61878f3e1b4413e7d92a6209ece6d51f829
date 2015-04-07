@@ -52,6 +52,24 @@
       "revId": "6ca8d61878f3e1b4413e7d92a6209ece6d51f829",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_a563efb0",
+        "filename": "tests/yamlparser/fixtures/complete-raw001.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-07T16:36:33Z",
+      "side": 1,
+      "message": "I\u0027m fine with not supporting SCM but I think the documentation should be updated to reflect this.",
+      "parentUuid": "9aa53dc9_e131f40c",
+      "revId": "6ca8d61878f3e1b4413e7d92a6209ece6d51f829",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
