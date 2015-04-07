@@ -34,6 +34,24 @@
       "revId": "6ca8d61878f3e1b4413e7d92a6209ece6d51f829",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_167897f1",
+        "filename": "tests/yamlparser/fixtures/complete-raw001.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-07T15:25:10Z",
+      "side": 1,
+      "message": "This is because jenkins doesn\u0027t by default have a wrapper for a set of SCM, but as it assumes a single SCM entry it instead defines the scm type entry at the same level as the reporters/triggers/builders/wrappers/etc.\n\nSo if I was to defined an SCM raw the following that would be inserted at this point:\n\n \u003cscm class\u003d\"hudson.plugins.repo.RepoScm\" plugin\u003d\"repo@1.5\"\u003e\n   \u003cmanifestRepositoryUrl\u003ehttps://gerrit.hpcloud.net/p/automation/manifest.git\u003c/manifestRepositoryUrl\u003e\n   \u003cmanifestFile\u003ejenkins.xml\u003c/manifestFile\u003e\n   \u003cjobs\u003e5\u003c/jobs\u003e\n   \u003ccurrentBranch\u003etrue\u003c/currentBranch\u003e\n   \u003cquiet\u003etrue\u003c/quiet\u003e\n \u003c/scm\u003e\n\nWhich is the same as if you were to use raw in the builders section to define the following:\n\n \u003chudson.plugins.parameterizedtrigger.TriggerBuilder plugin\u003d\"parameterized-trigger@2.17\"\u003e\n   \u003cconfigs\u003e\n   ...\n   \u003c/configs\u003e\n \u003c/hudson.plugins.parameterizedtrigger.TriggerBuilder\u003e\n\nJust that in the case of the SCM entry there is no wrapping \u0027\u003cscm\u003e..\u003c/scm\u003e\u0027 tag as you would have with the builders \u0027\u003cbuilders\u003e...\u003c/builders\u003e\u0027, unless you happen to be using the multiple scm plugin.\n\nI don\u0027t think anything else can be done at this point until jenkins changes it\u0027s approach to the SCM\u0027s defined for each job.",
+      "parentUuid": "9aa53dc9_e131f40c",
+      "revId": "6ca8d61878f3e1b4413e7d92a6209ece6d51f829",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
