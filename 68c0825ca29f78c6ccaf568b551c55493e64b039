@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_441440f4",
+        "filename": "tests/yamlparser/fixtures/complete-raw002.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-04-07T08:03:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa53dc9_fe64184a",
+      "revId": "68c0825ca29f78c6ccaf568b551c55493e64b039",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_7e86c8ba",
         "filename": "tests/yamlparser/fixtures/complete-raw002.yaml",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-06T16:38:12Z",
       "side": 1,
       "message": "how about reporters?\n\nAlso I\u0027m not sure if these would apply but it might be nice to add raw for zuul, hipchat, and metadata?  Here is the list of modules:  http://ci.openstack.org/jenkins-job-builder/definition.html?highlight\u003dhipchat#modules",
+      "revId": "68c0825ca29f78c6ccaf568b551c55493e64b039",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_44e20005",
+        "filename": "tests/yamlparser/fixtures/complete-raw002.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-04-07T08:03:45Z",
+      "side": 1,
+      "message": "i initially left out reporters in test since it required maven. Now i\u0027ve enabled maven in the test so it has the full list.\n\nI *think* zuul, hiphat and metdata would require something similar to what is needed for project (custom logic for insertion at the proper location) thus I would prefer to leave that out until I can have enough proper time to test and verify it.\n\nI believe with the current from `raw` support is already very useful so I would prefer that goes in rather than waiting for all the special cases to be covered.",
+      "parentUuid": "9aa53dc9_7e86c8ba",
       "revId": "68c0825ca29f78c6ccaf568b551c55493e64b039",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
