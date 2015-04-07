@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_60ea6b11",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4009,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2015-04-07T20:49:18Z",
+      "side": 1,
+      "message": "Should report-file and report-directory both be required parameters (jjb can raise an error if they are both not set), or will the jenkins scoverage plugin do the correct thing when their content is \"\" ?",
+      "revId": "91667b58a94524284a9f3a4ab3088a84f2570021",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
