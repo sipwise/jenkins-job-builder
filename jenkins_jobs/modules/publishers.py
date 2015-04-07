@@ -1701,7 +1701,9 @@ def groovy_postbuild(parser, xml_parent, data):
     XML.SubElement(groovy, 'groovyScript').text = data
 
 
-def base_publish_over(xml_parent, data, console_prefix, plugin_tag, publisher_tag,transferset_tag, reference_plugin_tag):
+def base_publish_over(xml_parent, data, console_prefix,
+                      plugin_tag, publisher_tag,
+                      transferset_tag, reference_plugin_tag):
     outer = XML.SubElement(xml_parent, plugin_tag)
     XML.SubElement(outer, 'consolePrefix').text = console_prefix
     delegate = XML.SubElement(outer, 'delegate')
@@ -3982,6 +3984,7 @@ def conditional_publisher(parser, xml_parent, data):
         else:
             raise JenkinsJobsException('action must be set for each condition')
 
+
 def scoverage(parser, xml_parent, data):
     """yaml: scoverage
     Publish scoverage results as a trend graph.
@@ -3989,17 +3992,22 @@ def scoverage(parser, xml_parent, data):
 
     :arg str report-directory: This is a directory that specifies the locations
                           where the xml scoverage report is generated
-    :arg str report-file: This is a file name that is given to the xml scoverage
-                          report.
+    :arg str report-file: This is a file name that is given to the xml
+                          scoverage report.
 
     Example:
 
     .. literalinclude::  /../../tests/publishers/fixtures/scoverage001.yaml
        :language: yaml
     """
-    scoverage = XML.SubElement(xml_parent, 'org.jenkinsci.plugins.scoverage.ScoveragePublisher')
-    XML.SubElement(scoverage, 'reportDirectory').text = str(data.get(['report-directory'], ''))
-    XML.SubElement(scoverage, 'reportFile').text = str(data.get(['report-file'], ''))
+    scoverage = XML.SubElement(
+        xml_parent,
+        'org.jenkinsci.plugins.scoverage.ScoveragePublisher')
+    XML.SubElement(scoverage, 'reportDirectory').text = str(
+        data.get('report-directory', ''))
+    XML.SubElement(scoverage, 'reportFile').text = str(
+        data.get('report-file', ''))
+
 
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
