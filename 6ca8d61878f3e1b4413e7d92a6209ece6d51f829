@@ -88,6 +88,24 @@
       "revId": "6ca8d61878f3e1b4413e7d92a6209ece6d51f829",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_d85a1650",
+        "filename": "tests/yamlparser/fixtures/complete-raw001.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-08T23:39:59Z",
+      "side": 1,
+      "message": "I have Jenkins LTS 1.565.3 install and I\u0027m not seeing that.  Do you need an additional plugin for it to work like that? or does it only work like this on newer versions of Jenkins?\n\nAlso are you saying that the xml is only like that when user specifies multiple scms?  What if users specifies a single scm and use the raw with it?",
+      "parentUuid": "9aa53dc9_64d48d46",
+      "revId": "6ca8d61878f3e1b4413e7d92a6209ece6d51f829",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
