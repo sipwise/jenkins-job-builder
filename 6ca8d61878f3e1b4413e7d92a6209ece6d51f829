@@ -70,6 +70,24 @@
       "revId": "6ca8d61878f3e1b4413e7d92a6209ece6d51f829",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_64d48d46",
+        "filename": "tests/yamlparser/fixtures/complete-raw001.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-04-08T21:02:04Z",
+      "side": 1,
+      "message": "So looking into this I think what we got now is correct.\n\nMultiple scm is done like this in in jenkins:\n\n```\n\u003cscm class\u003d\"org.jenkinsci.plugins.multiplescms.MultiSCM\" plugin\u003d\"multiple-scms@0.4\"\u003e\n```\n\nthus by adding `raw` support users can actually go add multiscm support to their project before we have native support for it which is the whole intention here.",
+      "parentUuid": "9aa53dc9_a563efb0",
+      "revId": "6ca8d61878f3e1b4413e7d92a6209ece6d51f829",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
