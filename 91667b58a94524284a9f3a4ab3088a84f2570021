@@ -16,6 +16,24 @@
       "revId": "91667b58a94524284a9f3a4ab3088a84f2570021",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_19fbedc2",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4009,
+      "author": {
+        "id": 15889
+      },
+      "writtenOn": "2015-04-08T18:17:10Z",
+      "side": 1,
+      "message": "From what I can tell, if report-file\u0027s content is set to \"\", the ScoveragePublisher.java code will automatically default the name of the report file to \"scoverage.xml\", so the plugin should work correctly if the YAML file doesn\u0027t include report-file. As for if report-directory is not set, I\u0027m still trying to determine if passing in an empty string will cause any errors, or if such a case is handled by the scoverage plugin (so far, I\u0027m seeing that it\u0027ll just treat the empty string as an invalid path and just print out a line saying \"ERROR: cannot find scoverage report\". I haven\u0027t completely determined if this behavior is due to the empty string, though, so I\u0027ll get back to you on that).",
+      "parentUuid": "9aa53dc9_60ea6b11",
+      "revId": "91667b58a94524284a9f3a4ab3088a84f2570021",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
