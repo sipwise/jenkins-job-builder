@@ -15,13 +15,16 @@
 # under the License.
 
 import mock
+import os.path
+import shutil
+import tempfile
 
 import jenkins_jobs.builder
 
 from testtools import TestCase
 
 
-class TestCaseTestBuilder(TestCase):
+class BuilderPluginListTests(TestCase):
     def setUp(self):
         self.builder = jenkins_jobs.builder.Builder(
             'http://jenkins.example.com',
@@ -39,3 +42,47 @@ class TestCaseTestBuilder(TestCase):
         # Trigger fetching the plugins from jenkins when accessing the property
         self.builder._plugins_list = None
         self.assertEqual(self.builder.plugins_list, ['p1', 'p2'])
+
+
+class BuilderUpdateJobTests(TestCase):
+    def setUp(self):
+        self.yaml_fn = os.path.join(os.path.dirname(__file__), 'job.yaml')
+        self.xml_fn = os.path.join(os.path.dirname(__file__), 'job.xml')
+        self.builder = jenkins_jobs.builder.Builder(
+            'http://jenkins.example.com',
+            'doesnot', 'matter',
+            plugins_list=[],
+        )
+        TestCase.setUp(self)
+
+    def check_xml(self, outfp):
+        with open(self.xml_fn) as fp:
+            expected = fp.read()
+
+        xml = outfp.read()
+        self.assertEqual(xml, expected)
+
+    def test_update_job_open_file(self):
+        with tempfile.NamedTemporaryFile(mode='w+') as tmpfile:
+            jobs, updated_jobs = self.builder.update_job([self.yaml_fn],
+                                                         output=tmpfile)
+            self.assertEqual(len(jobs), 1)
+            self.assertEqual(jobs[0].name, 'foo-job')
+            self.assertEqual(updated_jobs, 0)
+
+            tmpfile.seek(0)
+            self.check_xml(tmpfile)
+
+    def test_update_job_directory(self):
+        tmpdir = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, tmpdir)
+
+        jobs, updated_jobs = self.builder.update_job([self.yaml_fn],
+                                                     output=tmpdir)
+        self.assertEqual(len(jobs), 1)
+        self.assertEqual(jobs[0].name, 'foo-job')
+        self.assertEqual(updated_jobs, 0)
+
+        outfn = os.path.join(tmpdir, 'foo-job')
+        with open(outfn) as outfp:
+            self.check_xml(outfp)
