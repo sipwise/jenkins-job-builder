@@ -15,24 +15,27 @@
 
 # Manage jobs in Jenkins server
 
-import errno
-import os
-import operator
-import sys
-import hashlib
-import yaml
-import xml.etree.ElementTree as XML
-import xml
-from xml.dom import minidom
-import jenkins
-import re
-import pkg_resources
 from pprint import pformat
-import logging
-import copy
-import itertools
-import fnmatch
 from string import Formatter
+from xml.dom import minidom
+import copy
+import errno
+import fnmatch
+import hashlib
+import itertools
+import logging
+import operator
+import os
+import pkg_resources
+import re
+import six
+import sys
+import xml
+import xml.etree.ElementTree as XML
+import yaml
+
+import jenkins
+
 from jenkins_jobs.errors import JenkinsJobsException
 import jenkins_jobs.local_yaml as local_yaml
 
@@ -853,10 +856,14 @@ class Builder(object):
                 continue
             if output:
                 if hasattr(output, 'write'):
-                    # `output` is a file-like object
+                    # `output` is a text file-like object (ex: sys.stdout)
                     logger.debug("Writing XML to '{0}'".format(output))
+                    xml = job.output()
+                    if six.PY3:
+                        # output is a text file, write() expects unicode
+                        xml = xml.decode('utf-8')
                     try:
-                        output.write(job.output())
+                        output.write(xml)
                     except IOError as exc:
                         if exc.errno == errno.EPIPE:
                             # EPIPE could happen if piping output to something
@@ -876,7 +883,7 @@ class Builder(object):
 
                 output_fn = os.path.join(output_dir, job.name)
                 logger.debug("Writing XML to '{0}'".format(output_fn))
-                f = open(output_fn, 'w')
+                f = open(output_fn, 'wb')
                 f.write(job.output())
                 f.close()
                 continue
