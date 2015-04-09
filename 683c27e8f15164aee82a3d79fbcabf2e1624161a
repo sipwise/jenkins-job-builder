@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_0da5b445",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2015-04-09T23:38:22Z",
+      "side": 1,
+      "message": "why move all of these?",
+      "revId": "683c27e8f15164aee82a3d79fbcabf2e1624161a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_6d79e0c7",
+        "filename": "tests/builder/test_builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2015-04-09T23:38:22Z",
+      "side": 1,
+      "message": "Not really a fan of moving imports unrelated to current change...",
+      "revId": "683c27e8f15164aee82a3d79fbcabf2e1624161a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_0d2a5490",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2015-04-09T23:38:22Z",
+      "side": 1,
+      "message": "This import is no longer necessary. However I am not clear why six.StringIO is being preferred to io.StringIO here? can that be explained?",
+      "revId": "683c27e8f15164aee82a3d79fbcabf2e1624161a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_6db20096",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 4146
+      },
+      "writtenOn": "2015-04-09T23:38:22Z",
+      "side": 1,
+      "message": "py34 should go first so that the testrepository db is compatible with both py3k and python2.",
+      "revId": "683c27e8f15164aee82a3d79fbcabf2e1624161a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
