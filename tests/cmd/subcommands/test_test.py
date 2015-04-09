@@ -1,9 +1,9 @@
 import os
-import io
 import codecs
 import yaml
 
 import jenkins
+import six
 
 from jenkins_jobs import cmd
 from jenkins_jobs.errors import JenkinsJobsException
@@ -169,14 +169,17 @@ class TestTests(CmdTestsBase):
         Run test mode and verify that resulting XML gets sent to the console.
         """
 
-        console_out = io.BytesIO()
+        console_out = six.StringIO()
         with mock.patch('sys.stdout', console_out):
             cmd.main(['test', os.path.join(self.fixtures_path,
                       'cmd-001.yaml')])
         xml_content = codecs.open(os.path.join(self.fixtures_path,
                                                'cmd-001.xml'),
                                   'r', 'utf-8').read()
-        self.assertEqual(console_out.getvalue().decode('utf-8'), xml_content)
+        value = console_out.getvalue()
+        if isinstance(value, six.binary_type):
+            value = value.decode('utf-8')
+        self.assertEqual(value, xml_content)
 
     def test_config_with_test(self):
         """
