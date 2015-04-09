@@ -318,8 +318,10 @@ class Builder(object):
                     # `output` is a file-like object
                     logger.info("Job name:  %s", job.name)
                     logger.debug("Writing XML to '{0}'".format(output))
+                    # output is a text file, write() expects unicode
+                    xml = job.output().decode('utf-8')
                     try:
-                        output.write(job.output())
+                        output.write(xml)
                     except IOError as exc:
                         if exc.errno == errno.EPIPE:
                             # EPIPE could happen if piping output to something
@@ -331,9 +333,8 @@ class Builder(object):
 
                 output_fn = os.path.join(output, job.name)
                 logger.debug("Writing XML to '{0}'".format(output_fn))
-                f = open(output_fn, 'w')
-                f.write(job.output())
-                f.close()
+                with open(output_fn, 'wb') as f:
+                    f.write(job.output())
                 continue
             md5 = job.md5()
             if (self.jenkins.is_job(job.name)

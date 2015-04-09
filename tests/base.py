@@ -114,7 +114,7 @@ class BaseTestCase(object):
         return xml_content
 
     def _read_yaml_content(self, filename):
-        with open(filename, 'r') as yaml_file:
+        with codecs.open(filename, 'r', 'utf-8') as yaml_file:
             yaml_content = yaml.load(yaml_file)
         return yaml_content
 

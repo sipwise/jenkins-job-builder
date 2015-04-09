@@ -15,6 +15,7 @@
 
 # Manage JJB yaml feature implementation
 
+import codecs
 import copy
 import fnmatch
 import itertools
@@ -96,7 +97,7 @@ class YamlParser(object):
                 self.data[cls] = group
 
     def parse(self, fn):
-        with open(fn) as fp:
+        with codecs.open(fn, 'r', 'utf-8') as fp:
             self.parse_fp(fp)
 
     def _handle_dups(self, message):
