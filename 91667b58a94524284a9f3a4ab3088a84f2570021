@@ -34,6 +34,24 @@
       "revId": "91667b58a94524284a9f3a4ab3088a84f2570021",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_284a4484",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4009,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2015-04-10T21:43:57Z",
+      "side": 1,
+      "message": "It sounds like this is a safe assumption at any rate.",
+      "parentUuid": "9aa53dc9_19fbedc2",
+      "revId": "91667b58a94524284a9f3a4ab3088a84f2570021",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
