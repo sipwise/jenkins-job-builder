@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_2cd7514c",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 9107
+      },
+      "writtenOn": "2015-04-10T09:07:58Z",
+      "side": 1,
+      "message": "Oh, it\u0027s an old habbit from OpenStack Coding Style:\nhttp://docs.openstack.org/developer/hacking/#imports\n\njenkins is a third-party library, right? If it\u0027s the case, it should be put in a separated group of imports.",
+      "parentUuid": "9aa53dc9_0da5b445",
+      "revId": "683c27e8f15164aee82a3d79fbcabf2e1624161a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_6d79e0c7",
         "filename": "tests/builder/test_builder.py",
         "patchSetId": 1
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_ac712178",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 9107
+      },
+      "writtenOn": "2015-04-10T09:07:58Z",
+      "side": 1,
+      "message": "\u003e This import is no longer necessary.\n\nOops, I missed the warning; \"tox -e pep8\" failed because tox installs python3, hacking requires flake8 2.0 but flake8 2.0 is not fully compatible with Python 3.\n\n\u003e However I am not clear why six.StringIO is being preferred to io.StringIO here? can that be explained?\n\nOn Python 3, sys.stdout is a text file: using io.BytesIO for sys.stdout is wrong. On Python 2, sys.stdout is a binary file: using io.StringIO for sys.stdout is wrong. six.StringIO avoids the usage of \"if six.PY3:\".",
+      "parentUuid": "9aa53dc9_0d2a5490",
+      "revId": "683c27e8f15164aee82a3d79fbcabf2e1624161a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_6db20096",
         "filename": "tox.ini",
         "patchSetId": 1
@@ -64,6 +100,24 @@
       "writtenOn": "2015-04-09T23:38:22Z",
       "side": 1,
       "message": "py34 should go first so that the testrepository db is compatible with both py3k and python2.",
+      "revId": "683c27e8f15164aee82a3d79fbcabf2e1624161a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_6c6799b7",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 9107
+      },
+      "writtenOn": "2015-04-10T09:07:58Z",
+      "side": 1,
+      "message": "Oh, crap, I forgot this annoying bug :-) Thanks for the tip.",
+      "parentUuid": "9aa53dc9_6db20096",
       "revId": "683c27e8f15164aee82a3d79fbcabf2e1624161a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
