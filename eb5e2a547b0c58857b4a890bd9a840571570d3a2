@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_2bcb2120",
+        "filename": "tests/yamlparser/fixtures/complete001.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2015-04-14T06:30:06Z",
+      "side": 1,
+      "message": "This is usually 0",
+      "range": {
+        "startLine": 46,
+        "startChar": 46,
+        "endLine": 46,
+        "endChar": 48
+      },
+      "revId": "eb5e2a547b0c58857b4a890bd9a840571570d3a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_0bd2a5d2",
+        "filename": "tests/yamlparser/fixtures/complete001.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2015-04-14T06:30:06Z",
+      "side": 1,
+      "message": "0",
+      "range": {
+        "startLine": 51,
+        "startChar": 48,
+        "endLine": 51,
+        "endChar": 50
+      },
+      "revId": "eb5e2a547b0c58857b4a890bd9a840571570d3a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
