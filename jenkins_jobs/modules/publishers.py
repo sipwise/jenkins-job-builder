@@ -4009,6 +4009,22 @@ def scoverage(parser, xml_parent, data):
         data.get('report-file', ''))
 
 
+def gatling(parser, xml_parent, data):
+    """yaml: gatling
+    Publish gatling results as a trend graph
+    Requires the Jenkins :jenkins-wiki:`Gatling Plugin <Gatling+Plugin>`.
+
+    Example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/gatling001.yaml
+       :language: yaml
+    """
+    gatling = XML.SubElement(
+        xml_parent,
+        'io.gatling.jenkins.GatlingPublisher')
+    XML.SubElement(gatling, 'enabled').text = 'true'
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
