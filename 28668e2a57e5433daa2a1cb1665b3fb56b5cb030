@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_2961a605",
+        "filename": "README.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6133
+      },
+      "writtenOn": "2015-04-15T17:11:37Z",
+      "side": 1,
+      "message": "extra newline here",
+      "revId": "28668e2a57e5433daa2a1cb1665b3fb56b5cb030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
