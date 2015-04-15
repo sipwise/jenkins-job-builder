@@ -1308,7 +1308,6 @@ def custom_tools(parser, xml_parent, data):
                    'convertHomesToUppercase').text = convert_home
 
 
-<<<<<<< HEAD
 def xvnc(parser, xml_parent, data):
     """yaml: xvnc
     Enable xvnc during the build.
@@ -1351,7 +1350,8 @@ def job_log_logger(parser, xml_parent, data):
                          'JobLogLoggerBuildWrapper')
     XML.SubElement(top, 'suppressEmpty').text = str(
         data.get('suppress-empty', True)).lower()
-=======
+
+
 def artifactory(parser, xml_parent, data):
     """ yaml: artifactory
     Requires the Artifactory plugin.
@@ -1441,7 +1441,6 @@ def generic_artifactory(parser, xml_parent, data):
         str(data.get('discard-build-artifacts', True)).lower()
     XML.SubElement(artifactory, 'multiConfProject').text = \
         str(data.get('multi-conf-project', False)).lower()
->>>>>>> ca1b2c3... Artifactory plugin
 
 
 class Wrappers(jenkins_jobs.modules.base.Base):
