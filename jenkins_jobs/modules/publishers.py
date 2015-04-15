@@ -4055,6 +4055,73 @@ def scoverage(parser, xml_parent, data):
         data.get('report-file', ''))
 
 
+def hipchat(parser, xml_parent, data):
+    """yaml: hipchat
+    Publisher that sends hipchat notifications on job events
+    Requires the Jenkins :jenkins-wiki:`Hipchat Plugin <Hipchat+Plugin>`.
+
+    The only works for the hipchat plugin >=1.9
+    Please see documentation for older plugin version
+    http://ci.openstack.org/jenkins-job-builder/hipchat.html
+
+    :arg str token: This will override the default auth token
+    :arg str room: This will override the default room to send messages to
+                          deprecated:: 1.2.0  Please use 'rooms'.
+    :arg list rooms: list of HipChat rooms to post messages to
+    :arg bool notify-start: post messages about build start event
+    :arg bool notify-success: post messages about successful build event
+    :arg bool notify-aborted: post messages about aborted build event
+    :arg bool notify-not-built: post messages about build set to NOT_BUILT.
+                          This status code is used in a multi-stage build
+                          where a problem in earlier stage prevented
+                          later stages from building.
+    :arg bool notify-unstable: post messages about unstable build event
+    :arg bool notify-failure:  post messages about build failure event
+    :arg bool notify-back-to-normal: post messages about build being back to
+                          normal after being unstable or failed
+    :arg str start-message: This will override the default start message
+    :arg str complete-message: This will override the default complete message
+
+    Example:
+
+    .. literalinclude::  /../../tests/publishers/fixtures/hipchat001.yaml
+       :language: yaml
+    """
+    hipchat = XML.SubElement(
+        xml_parent,
+        'jenkins.plugins.hipchat.HipChatNotifier')
+    XML.SubElement(hipchat, 'token').text = str(
+        data.get('token', ''))
+
+    room = XML.SubElement(hipchat, 'room')
+    if 'rooms' in data.keys():
+        room.text = ",".join(data['rooms'])
+    elif 'room' in data:
+        room.text = str(data['room'])
+    else:
+        raise JenkinsJobsException(
+            "Must specify either 'room' or 'rooms' in hipchat config.")
+
+    XML.SubElement(hipchat, 'startNotification').text = str(
+        data.get('notify-start', 'false')).lower()
+    XML.SubElement(hipchat, 'notifySuccess').text = str(
+        data.get('notify-success', 'false')).lower()
+    XML.SubElement(hipchat, 'notifyAborted').text = str(
+        data.get('notify-aborted', 'false')).lower()
+    XML.SubElement(hipchat, 'notifyNotBuilt').text = str(
+        data.get('notify-not-built', 'false')).lower()
+    XML.SubElement(hipchat, 'notifyUnstable').text = str(
+        data.get('notify-unstable', 'false')).lower()
+    XML.SubElement(hipchat, 'notifyFailure').text = str(
+        data.get('notify-failure', 'false')).lower()
+    XML.SubElement(hipchat, 'notifyBackToNormal').text = str(
+        data.get('notify-back-to-normal', 'false')).lower()
+    XML.SubElement(hipchat, 'startJobMessage').text = str(
+        data.get('start-message', ''))
+    XML.SubElement(hipchat, 'completeJobMessage').text = str(
+        data.get('complete-message', ''))
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
