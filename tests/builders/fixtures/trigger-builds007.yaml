@@ -1,0 +1,7 @@
+builders:
+  - trigger-builds:
+    - project: "build_started"
+      property-file: propfile.txt
+      node-label-parameter:
+        name: paramname
+        node-label: test-label

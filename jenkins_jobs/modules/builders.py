@@ -285,6 +285,11 @@ def trigger_builds(parser, xml_parent, data):
     :arg str project: the Jenkins project to trigger
     :arg str predefined-parameters:
       key/value pairs to be passed to the job (optional)
+    :arg dict node-label-parameter: Set or override label of a triggered job
+
+      * **name** (`str`) -- Parameter name
+      * **node-label** (`str`) -- Label of the node where build should be
+        triggered
     :arg list bool-parameters:
 
       :Bool: * **name** (`str`) -- Parameter name
@@ -401,6 +406,18 @@ def trigger_builds(parser, xml_parent, data):
             XML.SubElement(tconfigs,
                            'hudson.plugins.parameterizedtrigger.'
                            'NodeParameters')
+
+        if 'node-label-parameter' in project_def:
+            params = XML.SubElement(tconfigs,
+                                    'org.jvnet.jenkins.plugins.'
+                                    'nodelabelparameter.'
+                                    'parameterizedtrigger.'
+                                    'NodeLabelBuildParameter')
+            nameProperty = XML.SubElement(params, 'name')
+            nameProperty.text = project_def['node-label-parameter']['name']
+            nodeLabel = XML.SubElement(params, 'nodeLabel')
+            nodeLabel.text = project_def['node-label-parameter']['node-label']
+
         if 'property-file' in project_def:
             params = XML.SubElement(tconfigs,
                                     'hudson.plugins.parameterizedtrigger.'
