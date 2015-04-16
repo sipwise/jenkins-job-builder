@@ -1741,7 +1741,7 @@ def dsl(parser, xml_parent, data):
 
     :arg str script-text: dsl script which is Groovy code (Required if target
         is not specified)
-    :arg str target: Newline separated list of DSL scripts, located in the
+    :arg str targets: Newline separated list of DSL scripts, located in the
         Workspace. Can use wildcards like 'jobs/\*\*/\*.groovy' (Required
         if script-text is not specified)
     :arg str ignore-existing: Ignore previously generated jobs and views
@@ -1769,8 +1769,8 @@ def dsl(parser, xml_parent, data):
     if data.get('script-text'):
         XML.SubElement(dsl, 'scriptText').text = data.get('script-text')
         XML.SubElement(dsl, 'usingScriptText').text = 'true'
-    elif data.get('target'):
-        XML.SubElement(dsl, 'target').text = data.get('target')
+    elif data.get('targets'):
+        XML.SubElement(dsl, 'targets').text = data.get('targets')
         XML.SubElement(dsl, 'usingScriptText').text = 'false'
     else:
         raise JenkinsJobsException("You must specify either script-text or "
