@@ -1,6 +1,7 @@
 builders:
   - dsl:
       script-text: "job { name 'dsljob' }"
+      targets: 'jobs/\*\*/\*.groovy'
       ignore-existing: "true"
       removed-job-action: "DISABLE"
       removed-view-action: "DELETE"
