@@ -253,22 +253,53 @@ def trigger_parameterized_builds(parser, xml_parent, data):
                                  'hudson.plugins.parameterizedtrigger.'
                                  'BuildTriggerConfig')
         tconfigs = XML.SubElement(tconfig, 'configs')
-        if ('predefined-parameters' in project_def
-            or 'git-revision' in project_def
-            or 'property-file' in project_def
-            or 'current-parameters' in project_def
-            or 'node-parameters' in project_def
-            or 'svn-revision' in project_def
-            or 'restrict-matrix-project' in project_def
-            or 'node-label-name' in project_def
-            or 'node-label' in project_def):
+        general_settings = ['git-revision', 'node-parameters', 'svn-revision',
+                            'restrict-matrix-project', 'node-label-name',
+                            'node-label']
+        parameter_settings = ['predefined-parameters', 'property-file',
+                              'current-parameters']
+        parameter_order = list(parameter_settings)
+        if 'parameter-order' in project_def:
+            parameter_order = project_def['parameter-order']
+            if not all(key in parameter_order for key in parameter_settings):
+                message = "All of {0} must be present in {1}".format(
+                    ', '.join("'{0}'".format(value)
+                              for value in parameter_settings),
+                    'publishers.trigger-parameterized-builds.'
+                    'parameter-order')
+                raise JenkinsJobsException(message)
 
-            if 'predefined-parameters' in project_def:
-                params = XML.SubElement(tconfigs,
-                                        'hudson.plugins.parameterizedtrigger.'
-                                        'PredefinedBuildParameters')
-                properties = XML.SubElement(params, 'properties')
-                properties.text = project_def['predefined-parameters']
+        if (any(key in project_def for key in parameter_settings) or
+                any(key in project_def for key in general_settings)):
+            for key in parameter_order:
+                if key not in project_def:
+                    continue
+
+                if key == 'predefined-parameters':
+                    params = XML.SubElement(tconfigs,
+                                            'hudson.plugins.'
+                                            'parameterizedtrigger.'
+                                            'PredefinedBuildParameters')
+                    properties = XML.SubElement(params, 'properties')
+                    properties.text = project_def['predefined-parameters']
+
+                if key == 'property-file':
+                    params = XML.SubElement(tconfigs,
+                                            'hudson.plugins.'
+                                            'parameterizedtrigger.'
+                                            'FileBuildParameters')
+                    properties = XML.SubElement(params, 'propertiesFile')
+                    properties.text = project_def['property-file']
+                    failOnMissing = XML.SubElement(params,
+                                                   'failTriggerOnMissing')
+                    failOnMissing.text = str(project_def.get('fail-on-missing',
+                                                             False)).lower()
+
+                if (key == 'current-parameters' and
+                        project_def['current-parameters']):
+                    XML.SubElement(tconfigs,
+                                   'hudson.plugins.parameterizedtrigger.'
+                                   'CurrentBuildParameters')
 
             if 'git-revision' in project_def and project_def['git-revision']:
                 params = XML.SubElement(tconfigs,
@@ -276,20 +307,6 @@ def trigger_parameterized_builds(parser, xml_parent, data):
                                         'GitRevisionBuildParameters')
                 properties = XML.SubElement(params, 'combineQueuedCommits')
                 properties.text = 'false'
-            if 'property-file' in project_def and project_def['property-file']:
-                params = XML.SubElement(tconfigs,
-                                        'hudson.plugins.parameterizedtrigger.'
-                                        'FileBuildParameters')
-                properties = XML.SubElement(params, 'propertiesFile')
-                properties.text = project_def['property-file']
-                failOnMissing = XML.SubElement(params, 'failTriggerOnMissing')
-                failOnMissing.text = str(project_def.get('fail-on-missing',
-                                                         False)).lower()
-            if ('current-parameters' in project_def
-                and project_def['current-parameters']):
-                XML.SubElement(tconfigs,
-                               'hudson.plugins.parameterizedtrigger.'
-                               'CurrentBuildParameters')
             if ('node-parameters' in project_def
                 and project_def['node-parameters']):
                 XML.SubElement(tconfigs,
@@ -321,6 +338,7 @@ def trigger_parameterized_builds(parser, xml_parent, data):
                     label.text = project_def['node-label']
         else:
             tconfigs.set('class', 'java.util.Collections$EmptyList')
+
         projects = XML.SubElement(tconfig, 'projects')
 
         if isinstance(project_def['project'], list):
