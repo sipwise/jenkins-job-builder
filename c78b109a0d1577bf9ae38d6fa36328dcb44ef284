@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ab451fb_20111bad",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-17T19:04:19Z",
+      "side": 1,
+      "message": "Could you please add documentation for this?  right place is probably in installation.rst\n\nAlso would hipchat section be more appropriate place for this param?",
+      "revId": "c78b109a0d1577bf9ae38d6fa36328dcb44ef284",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
