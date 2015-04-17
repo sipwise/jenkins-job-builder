@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ab451fb_b2b45af2",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-17T21:28:04Z",
+      "side": 1,
+      "message": "nit: add \u0027(optional)\u0027?",
+      "revId": "0fa30a8c9a360bf8d9016e07f531597d972e6ae0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
