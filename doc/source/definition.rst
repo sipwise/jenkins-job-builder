@@ -65,6 +65,37 @@ define a template that you can use to create jobs with a `Project`_
 definition.  It's name will depend on what is supplied to the
 `Project`_.
 
+Sometimes it is useful to have the same job name format used even
+where the template contents may vary. `Ids` provide a mechanism to
+support such use cases in addition to simplifying referencing
+templates when the name contains the more complex substitution with
+default values.
+
+
+Default Values for Template Variables
+"""""""""""""""""""""""""""""""""""""
+
+To facilitate reuse of templates with many variables that can be
+substituted, but where in most cases the same or no value is needed,
+it is possible to specify defaults for the variables using `|` in
+between the braces to separate the `name` and the default value e.g.,
+``{name|common}`` will substitute the variable `name` or if not
+set, will use the string 'common' instead.
+
+This can be used to provide common settings for particular templates.
+For example::
+
+  - job-template:
+      name: 'python-{name}-unit-tests'
+      builders:
+        - shining-panda:
+            build-environment: '{build_environment|python}'
+            python-version: '{python_version|System-CPython-3.4}'
+
+To use a default value for a variable in the name would be uncommon
+unless it was in addition to another variable. `Ids`_ simplify such
+use cases.
+
 .. _project:
 
 Project
@@ -256,6 +287,23 @@ least a ``name``).  Thus embedded-shell within a ``job-template`` should
 always use ``{{`` to achieve a literal ``{``.  A generic builder will need
 to consider the correct quoting based on its use of parameters.
 
+
+.. _ids:
+
+Item ID's
+^^^^^^^^^
+
+It's possible to assign an `id` to any of the blocks and then use that
+to reference it instead of the name. This has two primary functions:
+
+* A unique identifier where you wish to use the same naming format for
+  multiple templates. This allows to follow a naming scheme while
+  still using multiple templates to handle subtle variables in job
+  requirements.
+* Provides a simpler name for a `job-template` where you have multiple
+  variables including default values in the name and don't wish to have
+  to include this information in every use. This also makes changing
+  the template output name without impacting references.
 
 .. _raw:
 
