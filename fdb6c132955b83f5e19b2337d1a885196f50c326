@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ab451fb_a0bbeb0d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4018,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-17T18:48:21Z",
+      "side": 1,
+      "message": "I presume empty values are sufficient here? and we don\u0027t need to disable the setting of the XML to avoid overriding the defaults and preventing the plugin from taking the global settings?",
+      "revId": "fdb6c132955b83f5e19b2337d1a885196f50c326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
