@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ab451fb_55818a49",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2140,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-17T17:11:54Z",
+      "side": 1,
+      "message": "Missing a lot of params from the list below for what should be described here.\n\nWhere the description would wrap to the second line, simply indenting the next line by two characters will cause it to be displayed correctly. See maven_deploy() above.",
+      "revId": "a807ab6a8b78aaab322689e4a9dc9dc0e34770db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_353b9ed3",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2152,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-17T17:11:54Z",
+      "side": 1,
+      "message": "Please use literalinclude with the fixtures files so the generated docs remain in sync with the tests.\n\nProbably better to have two tests, one setting the non default values and the other just using the defaults where possible.",
+      "revId": "a807ab6a8b78aaab322689e4a9dc9dc0e34770db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_950a72d1",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2195,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-17T17:11:54Z",
+      "side": 1,
+      "message": "A lookup table and loop might be cleaner for all of these.",
+      "revId": "a807ab6a8b78aaab322689e4a9dc9dc0e34770db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_15f782d4",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2203,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-17T17:11:54Z",
+      "side": 1,
+      "message": "Are none of these controllable?",
+      "revId": "a807ab6a8b78aaab322689e4a9dc9dc0e34770db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_f55536c6",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2210,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-17T17:11:54Z",
+      "side": 1,
+      "message": "Seems like these 4 are required and should raise JenkinsJobsExceptions if not found. Or rebase onto the change that allows raising of MissingAttributeError exceptions.\n\nTry to avoid slashes where possible (actually a pep8 recommendation).",
+      "revId": "a807ab6a8b78aaab322689e4a9dc9dc0e34770db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_d5c59a5b",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1443,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-17T17:11:54Z",
+      "side": 1,
+      "message": "Pretty much the same comments made for publishers.py apply here, convert to unit tests, document additional params/args, raise correct exception for required settings and avoid slashes.",
+      "revId": "a807ab6a8b78aaab322689e4a9dc9dc0e34770db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_1593025d",
+        "filename": "setup.cfg",
+        "patchSetId": 10
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-17T17:11:54Z",
+      "side": 1,
+      "message": "file is maintained in alphabetical order, please retain.",
+      "revId": "a807ab6a8b78aaab322689e4a9dc9dc0e34770db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
