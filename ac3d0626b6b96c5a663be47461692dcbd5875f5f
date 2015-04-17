@@ -68,6 +68,24 @@
       "revId": "ac3d0626b6b96c5a663be47461692dcbd5875f5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_7d4a2c85",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-17T18:42:51Z",
+      "side": 1,
+      "message": "+1, please add \u0027start-notify (str): deprecated, please use notify-start instead.\u0027",
+      "parentUuid": "1a930d6b_5521f34b",
+      "revId": "ac3d0626b6b96c5a663be47461692dcbd5875f5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
