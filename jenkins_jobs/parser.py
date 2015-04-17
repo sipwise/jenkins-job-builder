@@ -22,6 +22,8 @@ import itertools
 import logging
 import pkg_resources
 
+import multi_key_dict
+
 import jenkins_jobs.local_yaml as local_yaml
 from jenkins_jobs.constants import MAGIC_MANAGE_STRING
 from jenkins_jobs.errors import JenkinsJobsException
@@ -78,7 +80,7 @@ class YamlParser(object):
                                           cls=type(data)))
             for item in data:
                 cls, dfn = next(iter(item.items()))
-                group = self.data.get(cls, {})
+                group = self.data.get(cls, multi_key_dict.multi_key_dict())
                 if len(item.items()) > 1:
                     n = None
                     for k, v in item.items():
@@ -89,11 +91,18 @@ class YamlParser(object):
                     raise JenkinsJobsException("Syntax error, for item "
                                                "named '{0}'. Missing indent?"
                                                .format(n))
-                name = dfn['name']
-                if name in group:
-                    self._handle_dups("Duplicate entry found in '{0}: '{1}' "
-                                      "already defined".format(fp.name, name))
-                group[name] = dfn
+                # allow any entry to specify an id that can also be used
+                names = [dfn['name']]
+                id = dfn.get('id')
+                if id:
+                    names.append(id)
+                for entry in names:
+                    # multi_key_dict does not yet support 'in' check.
+                    if group.get(entry):
+                        self._handle_dups(
+                            "Duplicate entry found in '{0}: '{1}' already "
+                            "defined".format(fp.name, entry))
+                group[names] = dfn
                 self.data[cls] = group
 
     def parse(self, fn):

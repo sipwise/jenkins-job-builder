@@ -1,3 +1,4 @@
+multi_key_dict
 ordereddict
 six>=1.5.2
 PyYAML
