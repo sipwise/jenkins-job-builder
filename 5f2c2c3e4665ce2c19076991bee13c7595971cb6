@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ab451fb_dac14930",
+        "filename": "tests/errors/test_exceptions.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-17T16:56:14Z",
+      "side": 1,
+      "message": "May not have been aware but you can suppress pep8 warnings for specific lines via an inline comment of \u0027noqa\u0027\n\n component_type \u003d \"type\"  # noqa\n\nJust needs two spaces before the comment character.",
+      "revId": "5f2c2c3e4665ce2c19076991bee13c7595971cb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
