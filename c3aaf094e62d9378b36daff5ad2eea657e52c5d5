@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ab451fb_ef2fa99f",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-17T16:36:55Z",
+      "side": 1,
+      "message": "I\u0027m sorry I used this format now, think it might have been better to use the \"!\u003cname\u003e:\" format below and then just switch handling depending on whether it was a SequenceNode or ScalarNode.\n\nOh, well, another patch to rewrite this and add some logging deprecate entries will solve this.",
+      "revId": "c3aaf094e62d9378b36daff5ad2eea657e52c5d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_2fb11190",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-17T16:36:55Z",
+      "side": 1,
+      "message": "What about a standard yaml one?",
+      "revId": "c3aaf094e62d9378b36daff5ad2eea657e52c5d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_6fd159cd",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-17T16:36:55Z",
+      "side": 1,
+      "message": "Wonder if it might be a good idea to join the files using a newline character since I\u0027ve come across a few files that are missing a newline at the end which I presume may cause an issue in some edge cases.\n\n return \"\\n\".join(self._include_raw_tag(loader, scalar_node)\n                  for scalar_node in node.value)",
+      "revId": "c3aaf094e62d9378b36daff5ad2eea657e52c5d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
