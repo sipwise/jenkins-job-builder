@@ -34,11 +34,7 @@ def deep_format(obj, paramdict, allow_empty=False):
     # example, is problematic).
     if hasattr(obj, 'format'):
         try:
-            result = re.match('^{obj:(?P<key>\w+)}$', obj)
-            if result is not None:
-                ret = paramdict[result.group("key")]
-            else:
-                ret = CustomFormatter(allow_empty).format(obj, **paramdict)
+            ret = CustomFormatter(allow_empty).format(obj, **paramdict)
         except KeyError as exc:
             missing_key = exc.message
             desc = "%s parameter missing to format %s\nGiven:\n%s" % (
@@ -69,9 +65,39 @@ class CustomFormatter(Formatter):
     Custom formatter to allow non-existing key references when formatting a
     string
     """
+    _expr = '{({{)*(?:obj:)?(?P<key>\w+)(?::(?P<default>[\w\s]*))?}(}})*'
+
     def __init__(self, allow_empty=False):
         super(CustomFormatter, self).__init__()
         self.allow_empty = allow_empty
+
+    def vformat(self, format_string, args, kwargs):
+        matcher = re.compile(self._expr)
+
+        # special case of returning the object if the entire string
+        # matches a single parameter
+        result = re.match('^%s$' % self._expr, format_string)
+        if result is not None:
+            try:
+                return kwargs[result.group("key")]
+            except KeyError:
+                pass
+
+        # handle multiple fields within string via a callback to re.sub()
+        def re_replace(match):
+            key = match.group("key")
+            default = match.group("default")
+
+            if default is not None:
+                if key not in kwargs:
+                    return default
+                else:
+                    return "{%s}" % key
+            return match.group(0)
+
+        format_string = matcher.sub(re_replace, format_string)
+
+        return Formatter.vformat(self, format_string, args, kwargs)
 
     def get_value(self, key, args, kwargs):
         try:
