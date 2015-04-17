@@ -1,0 +1,17 @@
+- project:
+    name: template_variable_defaults
+    jobs:
+        - 'template_variable_defaults_{num}':
+            num: 1
+            disabled: true
+        - 'template_variable_defaults_{num}':
+            test_var: Goodbye World
+            num: 2
+
+- job-template:
+    name: 'template_variable_defaults_{num}'
+    disabled: '{obj:disabled:false}'
+    builders:
+      - shell: |
+         echo "Variable: {test_var:Hello World}"
+         echo "Allow empty Variable: {test_var:}"
