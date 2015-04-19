@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "dac4157f_c524ddb0",
+        "filename": "tests/yamlparser/fixtures/complete001.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2015-04-19T17:32:50Z",
+      "side": 1,
+      "message": "That\u0027s the default value too, that\u0027s why I did not use it, but ok, whatevere",
+      "parentUuid": "7aaa499b_2bcb2120",
+      "revId": "eb5e2a547b0c58857b4a890bd9a840571570d3a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aaa499b_0bd2a5d2",
         "filename": "tests/yamlparser/fixtures/complete001.yaml",
         "patchSetId": 2
