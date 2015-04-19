@@ -116,6 +116,19 @@ additional variables can be specified for project variables. Example:
 
 .. literalinclude::  /../../tests/yamlparser/fixtures/templates002.yaml
 
+You can also specify some varaible combinations to exclude from the matrix with
+the ``exclude`` keyword, to avoid generating jobs for those combinations. You
+can specify all the variables of the combination or only a subset, if you
+specify a subset, any value of the omited variable will match:
+
+.. literalinclude:: /../../tests/yamlparser/fixtures/template_exclude.yaml
+
+The above example will omit the jobs:
+
+ * build-axe1val1-axe2val1-axe3val2
+ * build-axe1val1-axe2val2-axe3val1
+ * build-axe1val2-axe2val2-axe3val1
+
 Job Group
 ^^^^^^^^^
 
