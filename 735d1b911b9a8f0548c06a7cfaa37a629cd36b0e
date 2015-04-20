@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_b731f6a4",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1361,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-20T22:20:31Z",
+      "side": 1,
+      "message": "please use \u0027:jenkins-wiki:\u0027 reference",
+      "revId": "735d1b911b9a8f0548c06a7cfaa37a629cd36b0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_97b032df",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1362,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-20T22:20:31Z",
+      "side": 1,
+      "message": "Could you please label the optional parameters with \u0027(optional)\u0027 at the end of the sentence?",
+      "revId": "735d1b911b9a8f0548c06a7cfaa37a629cd36b0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_97995271",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1432,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-20T22:20:31Z",
+      "side": 1,
+      "message": "I would suggest using android003.yaml as the example since it makes use of more parameters.",
+      "revId": "735d1b911b9a8f0548c06a7cfaa37a629cd36b0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
