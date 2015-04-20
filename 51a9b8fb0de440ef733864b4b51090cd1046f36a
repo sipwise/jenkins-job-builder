@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_6c8a71c1",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2105,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-20T22:01:29Z",
+      "side": 1,
+      "message": "I think this description is slightly confusing because it doesn\u0027t necessarily need to be set to \u0027true\u0027.  You have it set to \u0027TIMER\u0027 on your test.  Maybe just  remove \"true\" and say that this param just need to be set to something?",
+      "revId": "51a9b8fb0de440ef733864b4b51090cd1046f36a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
