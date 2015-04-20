@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_174c226f",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1855,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-20T22:09:02Z",
+      "side": 1,
+      "message": "could you change to \u0027:jenkins-wiki:\u0027 reference.  there are examples of this reference this file.",
+      "revId": "f0349c6947adbe42912e71b2ec5f0be34c069013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_b7045615",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1856,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-20T22:09:02Z",
+      "side": 1,
+      "message": "I assume not all of these parameters are required?  could you please mark the ones that are optional with \u0027(optional)\u0027 at the of the description?",
+      "revId": "f0349c6947adbe42912e71b2ec5f0be34c069013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_77aa3ed6",
+        "filename": "tests/builders/fixtures/xcode.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-20T22:09:02Z",
+      "side": 1,
+      "message": "is this needed?",
+      "revId": "f0349c6947adbe42912e71b2ec5f0be34c069013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_b779f695",
+        "filename": "tests/builders/fixtures/xcode.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-20T22:09:02Z",
+      "side": 1,
+      "message": "remove trailing spaces",
+      "revId": "f0349c6947adbe42912e71b2ec5f0be34c069013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
