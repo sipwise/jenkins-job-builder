@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_b758df57",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4044,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-04-20T18:03:46Z",
+      "side": 1,
+      "message": "There is another patch in-progress to support a \"rooms\" key for version 1.8.0 of the plugin:\nI8c840fdebd58ed4dd22c6a5cafa549bfaf5357 \n\nI\u0027d like to see that functionality implemented here since it  helps to avoid breaking hipchat reporting when adding or changing hipchat rooms.",
+      "revId": "beb3f9df3f2e066fb731d06be52f4f715a7be6a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
