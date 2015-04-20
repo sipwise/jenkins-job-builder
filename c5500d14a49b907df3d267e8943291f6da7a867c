@@ -16,6 +16,24 @@
       "revId": "c5500d14a49b907df3d267e8943291f6da7a867c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_69e8317d",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-04-20T15:44:21Z",
+      "side": 1,
+      "message": "No particular reason, I have removed the type checks now.",
+      "parentUuid": "fa963961_b91d6cbf",
+      "revId": "c5500d14a49b907df3d267e8943291f6da7a867c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
