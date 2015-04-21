@@ -283,6 +283,11 @@ def authorization(parser, xml_parent, data):
     Specifies an authorization matrix
 
     The available rights are:
+      credentials-create
+      credentials-update
+      credentials-delete
+      credentials-view
+      credentials-manage-domains
       job-delete
       job-configure
       job-read
@@ -317,6 +322,11 @@ def authorization(parser, xml_parent, data):
     """
 
     mapping = {
+        'credentials-create': 'com.cloudbees.plugins.credentials.CredentialsProvider.Create',
+        'credentials-update': 'com.cloudbees.plugins.credentials.CredentialsProvider.Update',
+        'credentials-delete': 'com.cloudbees.plugins.credentials.CredentialsProvider.Delete',
+        'credentials-view': 'com.cloudbees.plugins.credentials.CredentialsProvider.View',
+        'credentials-manage-domains': 'com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains',
         'job-delete': 'hudson.model.Item.Delete',
         'job-configure': 'hudson.model.Item.Configure',
         'job-read': 'hudson.model.Item.Read',
@@ -327,7 +337,7 @@ def authorization(parser, xml_parent, data):
         'job-cancel': 'hudson.model.Item.Cancel',
         'run-delete': 'hudson.model.Run.Delete',
         'run-update': 'hudson.model.Run.Update',
-        'scm-tag': 'hudson.scm.SCM.Tag'
+        'scm-tag': 'hudson.scm.SCM.Tag',
     }
 
     if data:
