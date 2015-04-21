@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_2c0690ce",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1855,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-21T17:59:31Z",
+      "side": 1,
+      "message": "Listing the valid stages would help users reading the doc.",
+      "revId": "78b334dd034cc8a7187003ec298054d11227d859",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_0ced0c25",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1870,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-21T17:59:31Z",
+      "side": 1,
+      "message": "We prefer to use JenkinsJobsException or YAMLFormatError in errors.py",
+      "revId": "78b334dd034cc8a7187003ec298054d11227d859",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_ec99b86f",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1873,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-21T17:59:31Z",
+      "side": 1,
+      "message": "Nothing wrong with this but was just wondering why param name is so different from xml element name?  Sometimes that makes it harder for users to map JJB params to Jenkins plugin params.",
+      "revId": "78b334dd034cc8a7187003ec298054d11227d859",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_cc295439",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1877,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-21T17:59:31Z",
+      "side": 1,
+      "message": "maybe change this variable name to \u0027SUPPORTED_STAGES\u0027?",
+      "revId": "78b334dd034cc8a7187003ec298054d11227d859",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_ec41b80c",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1880,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-21T17:59:31Z",
+      "side": 1,
+      "message": "Again, use one of the exceptions in errors.py and just pass this message into the exception instead of having this extra log message.",
+      "revId": "78b334dd034cc8a7187003ec298054d11227d859",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
