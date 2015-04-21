@@ -16,6 +16,24 @@
       "revId": "5f2c2c3e4665ce2c19076991bee13c7595971cb6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_626371dd",
+        "filename": "tests/errors/test_exceptions.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-21T18:34:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ab451fb_dac14930",
+      "revId": "5f2c2c3e4665ce2c19076991bee13c7595971cb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
