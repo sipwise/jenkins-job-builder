@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_17ef50b1",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1373,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-21T22:38:45Z",
+      "side": 1,
+      "message": "nit: we usually specify \u0027int\u0027 for params that are supposed to be numbers.",
+      "revId": "f5031f32c314898d4f5dd21f4dcd01cae985c8e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_57d828ef",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1397,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-21T22:38:45Z",
+      "side": 1,
+      "message": "i think you can do this:\n\n  if display_name in data:\n    XML.SubElement(xwrapper, \u0027displayName\u0027).text \u003d  str(data.get(\u0027display-name\u0027, \u0027\u0027))",
+      "revId": "f5031f32c314898d4f5dd21f4dcd01cae985c8e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
