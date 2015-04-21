@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "dac4157f_a74cfb42",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1870,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-04-21T18:08:59Z",
+      "side": 1,
+      "message": "BTW This comes from the patch that\u0027s not yet merged that this patch depends on.",
+      "parentUuid": "dac4157f_6c300802",
+      "revId": "78b334dd034cc8a7187003ec298054d11227d859",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dac4157f_ec99b86f",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 7
