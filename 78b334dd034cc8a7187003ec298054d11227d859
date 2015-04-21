@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dac4157f_cc471476",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1855,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-04-21T18:04:51Z",
+      "side": 1,
+      "message": "Sure, I will add that.",
+      "parentUuid": "dac4157f_2c0690ce",
+      "revId": "78b334dd034cc8a7187003ec298054d11227d859",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dac4157f_0ced0c25",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-21T17:59:31Z",
       "side": 1,
       "message": "We prefer to use JenkinsJobsException or YAMLFormatError in errors.py",
+      "revId": "78b334dd034cc8a7187003ec298054d11227d859",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_6c300802",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1870,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-04-21T18:04:51Z",
+      "side": 1,
+      "message": "MissingAttributeError comes from error.py too and it was recommended that I use it as it\u0027s more accurate.",
+      "parentUuid": "dac4157f_0ced0c25",
       "revId": "78b334dd034cc8a7187003ec298054d11227d859",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "dac4157f_e720b39d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1873,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-04-21T18:04:51Z",
+      "side": 1,
+      "message": "I don\u0027t know why sonatype calls it billofmaterialstoken in the backend but everywhere in the frontend they call this \"Application Name\" so we decided over IRC that application-name was the least confusing of the 2 and since billOfMaterialsToken only ever appears in XML and no where else this would be the least confusing route.",
+      "parentUuid": "dac4157f_ec99b86f",
+      "revId": "78b334dd034cc8a7187003ec298054d11227d859",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dac4157f_cc295439",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 7
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "dac4157f_a73bdbd0",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1877,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-04-21T18:04:51Z",
+      "side": 1,
+      "message": "Sure.",
+      "parentUuid": "dac4157f_cc295439",
+      "revId": "78b334dd034cc8a7187003ec298054d11227d859",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dac4157f_ec41b80c",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 7
@@ -81,6 +153,24 @@
       "writtenOn": "2015-04-21T17:59:31Z",
       "side": 1,
       "message": "Again, use one of the exceptions in errors.py and just pass this message into the exception instead of having this extra log message.",
+      "revId": "78b334dd034cc8a7187003ec298054d11227d859",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_873697e5",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1880,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-04-21T18:04:51Z",
+      "side": 1,
+      "message": "Sure I will remove this since the InvalidAttributesError already covers the same message.",
+      "parentUuid": "dac4157f_ec41b80c",
       "revId": "78b334dd034cc8a7187003ec298054d11227d859",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
