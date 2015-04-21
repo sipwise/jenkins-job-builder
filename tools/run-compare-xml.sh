@@ -22,7 +22,7 @@ mkdir -p .test/old/out
 mkdir -p .test/new/config
 mkdir -p .test/new/out
 cd .test
-/usr/zuul-env/bin/zuul-cloner --cache-dir /opt/git git://git.openstack.org/openstack-infra project-config
+/usr/zuul-env/bin/zuul-cloner -m run-compare-clonemap.yaml --cache-dir /opt/git git://git.openstack.org openstack-infra/project-config
 cp project-config/jenkins/jobs/* old/config
 cp project-config/jenkins/jobs/* new/config
 cd ..
