@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_2801ae6a",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-22T17:03:15Z",
+      "side": 1,
+      "message": "The use in this file of matches is unnecessary if we removed the superfluous uses.",
+      "revId": "b93f065a291a963ee9f81db124c30d153690ec8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_e8f856c5",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-22T17:03:15Z",
+      "side": 1,
+      "message": "Use of matches() here is obsolete since it\u0027s already applied by expandYaml(jobs_glob).",
+      "revId": "b93f065a291a963ee9f81db124c30d153690ec8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_680c46ed",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-22T17:03:15Z",
+      "side": 1,
+      "message": "Use of matches() here is obsolete since it\u0027s already applied by expandYaml(jobs_glob).",
+      "revId": "b93f065a291a963ee9f81db124c30d153690ec8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_e8dcd674",
+        "filename": "jenkins_jobs/formatter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-22T17:03:15Z",
+      "side": 1,
+      "message": "Be tempted to have the deep_format function included in this file.",
+      "revId": "b93f065a291a963ee9f81db124c30d153690ec8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_e86cd636",
+        "filename": "jenkins_jobs/formatter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-22T17:03:15Z",
+      "side": 1,
+      "message": "Comment?",
+      "revId": "b93f065a291a963ee9f81db124c30d153690ec8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_6880c6c0",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-22T17:03:15Z",
+      "side": 1,
+      "message": "Comment?",
+      "revId": "b93f065a291a963ee9f81db124c30d153690ec8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_887b1af5",
+        "filename": "jenkins_jobs/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-22T17:03:15Z",
+      "side": 1,
+      "message": "Comment?",
+      "revId": "b93f065a291a963ee9f81db124c30d153690ec8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_a8ec9ef3",
+        "filename": "jenkins_jobs/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-22T17:03:15Z",
+      "side": 1,
+      "message": "Think it would be worth placing this in the formatter file and keeping it with the CustomFormatter class. It really is very tightly linked to the template formatting rather than being a standard utility.",
+      "revId": "b93f065a291a963ee9f81db124c30d153690ec8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_688fa62a",
+        "filename": "jenkins_jobs/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-22T17:03:15Z",
+      "side": 1,
+      "message": "Outside of the two unnecessary calls to this in the Builder class this appears to only be used by the YamlParser class, is it worth separating or should we keep it with that class?",
+      "revId": "b93f065a291a963ee9f81db124c30d153690ec8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_4897423a",
+        "filename": "jenkins_jobs/xml_config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-22T17:03:15Z",
+      "side": 1,
+      "message": "Would it be better to call this \u0027xmljob.py\u0027?",
+      "revId": "b93f065a291a963ee9f81db124c30d153690ec8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_c8747237",
+        "filename": "jenkins_jobs/xml_config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-22T17:03:15Z",
+      "side": 1,
+      "message": "\"yaml feature implementation\" \u003d\u003e \"XML Job\"?",
+      "revId": "b93f065a291a963ee9f81db124c30d153690ec8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
