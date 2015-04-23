@@ -1432,6 +1432,17 @@ def email(parser, xml_parent, data):
     XML.SubElement(mailer, 'sendToIndividuals').text = str(
         data.get('send-to-individuals', False)).lower()
 
+def display_upstream_changes(parser, xml_parent, data):
+    """yaml: display_upstream_changes
+    Displays all upstream changes on a build's summary page.
+
+    Example:
+
+    .. literalinclude::  /../../tests/publishers/fixtures/display_upstream_changes001.yaml
+       :language: yaml
+    """
+
+    XML.SubElement(xml_parent, 'jenkins.plugins.displayupstreamchanges.DisplayUpstreamChangesRecorder')
 
 def claim_build(parser, xml_parent, data):
     """yaml: claim-build
