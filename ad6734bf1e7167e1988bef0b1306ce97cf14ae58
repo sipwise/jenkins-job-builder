@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bab921fb_43aaecd5",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4010,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2015-04-23T13:06:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab921fb_38b61e3e",
+      "revId": "ad6734bf1e7167e1988bef0b1306ce97cf14ae58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab921fb_98964a93",
         "filename": "tests/publishers/fixtures/gatling001.xml",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-22T21:48:02Z",
       "side": 1,
       "message": "should remove the version info otherwise upgrades might not work.",
+      "revId": "ad6734bf1e7167e1988bef0b1306ce97cf14ae58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_c3b6fc3c",
+        "filename": "tests/publishers/fixtures/gatling001.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2015-04-23T13:06:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab921fb_98964a93",
       "revId": "ad6734bf1e7167e1988bef0b1306ce97cf14ae58",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
