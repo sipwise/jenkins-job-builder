@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab921fb_a05545c7",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-23T09:37:25Z",
+      "side": 1,
+      "message": "Doesn\u0027t display quite right, check http://docs-draft.openstack.org/31/153831/6/check/gate-jenkins-job-builder-docs/ed0c6dc//doc/build/html/hipchat.html\n\nJust needs a blank line before and after the directive to format correctly.",
+      "revId": "df9c89eef4018f7b180186374fc5cd632bcb9bd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
