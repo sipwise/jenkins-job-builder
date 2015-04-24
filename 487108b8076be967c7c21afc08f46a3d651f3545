@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab921fb_69a57cb3",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-24T19:23:09Z",
+      "side": 1,
+      "message": "I could be wrong, but a quick test suggests that this works fine on python 2.7 as well, so I see no reason not to write out as unicode all the time.",
+      "revId": "487108b8076be967c7c21afc08f46a3d651f3545",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
