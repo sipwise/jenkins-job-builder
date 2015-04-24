@@ -40,8 +40,6 @@ allow_empty_variables=False
 
 [jenkins]
 url=http://localhost:8080/
-user=
-password=
 query_plugins_info=True
 
 [hipchat]
@@ -217,16 +215,29 @@ def execute(options, config):
     elif config.has_option('job_builder', 'ignore_cache'):
         ignore_cache = config.getboolean('job_builder', 'ignore_cache')
 
-    # workaround for python 2.6 interpolation error
-    # https://bugs.launchpad.net/openstack-ci/+bug/1259631
+    # Jenkins supports full access as an anonymous user. To enable must pass
+    # 'None' as the value for user and password to python-jenkins.
     try:
         user = config.get('jenkins', 'user')
     except (TypeError, configparser.NoOptionError):
         user = None
+
     try:
         password = config.get('jenkins', 'password')
     except (TypeError, configparser.NoOptionError):
         password = None
+
+    # Inform the user as to what is likely to happen, as they may specify
+    # a real jenkins instance in test mode to get the plugin info to check
+    # the XML generated.
+    if user is None and password is None:
+        logger.info("Will use anonymous access to jenkins if needed")
+    elif user is not None and password is None:
+        logger.error("User provided without password, authentication is "
+                     "unlikely to work!")
+    elif user is None and password is not None:
+        logger.error("Password provided without a user to use, authentication "
+                     "is unlikely to work!")
 
     plugins_info = None
 
