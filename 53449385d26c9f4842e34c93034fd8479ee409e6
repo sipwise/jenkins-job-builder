@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab921fb_f57ce8ec",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6133
+      },
+      "writtenOn": "2015-04-24T05:58:52Z",
+      "side": 1,
+      "message": "you could just remove that line",
+      "revId": "53449385d26c9f4842e34c93034fd8479ee409e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
