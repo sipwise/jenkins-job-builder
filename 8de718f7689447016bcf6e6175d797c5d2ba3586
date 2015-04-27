@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9abe1de1_b4f919cb",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6133
+      },
+      "writtenOn": "2015-04-27T13:12:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abe1de1_ec08ef93",
+      "revId": "8de718f7689447016bcf6e6175d797c5d2ba3586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abe1de1_ac39d743",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 23
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-27T11:31:09Z",
       "side": 1,
       "message": "Unless we use multiple processes I don\u0027t think this can be made parallel and faster, in fact it\u0027s probably much faster due to the GIL to just to leave it as a standard method.",
+      "revId": "8de718f7689447016bcf6e6175d797c5d2ba3586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_b4959941",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 6133
+      },
+      "writtenOn": "2015-04-27T13:12:55Z",
+      "side": 1,
+      "message": "that\u0027s part of the original change, so i prefer don\u0027t touching that on this rebase.",
+      "parentUuid": "9abe1de1_ac39d743",
       "revId": "8de718f7689447016bcf6e6175d797c5d2ba3586",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "9abe1de1_94a05592",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 6133
+      },
+      "writtenOn": "2015-04-27T13:12:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abe1de1_cc9e4b07",
+      "revId": "8de718f7689447016bcf6e6175d797c5d2ba3586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abe1de1_80101750",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 23
@@ -115,6 +169,24 @@
       "writtenOn": "2015-04-27T11:31:09Z",
       "side": 1,
       "message": "Since cmd.py reports the number of jobs updated, I\u0027m not sure this is of much use any more. Do we get enough from the total time taken and number of jobs updated from cmd.py?",
+      "revId": "8de718f7689447016bcf6e6175d797c5d2ba3586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_f4af917b",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 6133
+      },
+      "writtenOn": "2015-04-27T13:12:55Z",
+      "side": 1,
+      "message": "I prefer leaving that for future iterations",
+      "parentUuid": "9abe1de1_80101750",
       "revId": "8de718f7689447016bcf6e6175d797c5d2ba3586",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
