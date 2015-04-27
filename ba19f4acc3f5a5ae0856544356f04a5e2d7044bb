@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ad32947_8c3cd030",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-27T18:17:13Z",
+      "side": 1,
+      "message": "Still missing the n_workers option here",
+      "revId": "ba19f4acc3f5a5ae0856544356f04a5e2d7044bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
