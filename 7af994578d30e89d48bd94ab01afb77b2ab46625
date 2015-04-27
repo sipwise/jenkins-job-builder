@@ -87,6 +87,23 @@
     },
     {
       "key": {
+        "uuid": "7ad32947_6403c810",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1501,
+      "author": {
+        "id": 16099
+      },
+      "writtenOn": "2015-04-27T19:55:18Z",
+      "side": 1,
+      "message": "It is just comma or space-separated list of patterns.",
+      "revId": "7af994578d30e89d48bd94ab01afb77b2ab46625",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ad32947_621a9b19",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 15
@@ -98,6 +115,24 @@
       "writtenOn": "2015-04-27T19:01:40Z",
       "side": 1,
       "message": "I would recommend interpreting a list value here instead of a string.",
+      "revId": "7af994578d30e89d48bd94ab01afb77b2ab46625",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_47268ebb",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1506,
+      "author": {
+        "id": 16099
+      },
+      "writtenOn": "2015-04-27T19:55:18Z",
+      "side": 1,
+      "message": "As above.",
+      "parentUuid": "7ad32947_621a9b19",
       "revId": "7af994578d30e89d48bd94ab01afb77b2ab46625",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +156,24 @@
     },
     {
       "key": {
+        "uuid": "7ad32947_474d6e71",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1510,
+      "author": {
+        "id": 16099
+      },
+      "writtenOn": "2015-04-27T19:55:18Z",
+      "side": 1,
+      "message": "As above.",
+      "parentUuid": "7ad32947_82e4970d",
+      "revId": "7af994578d30e89d48bd94ab01afb77b2ab46625",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ad32947_e2258b5c",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 15
@@ -132,6 +185,24 @@
       "writtenOn": "2015-04-27T19:01:40Z",
       "side": 1,
       "message": "It seems strange to me to hard-code values here, but I\u0027m also not familiar with the plugin usage.\n\nI would recommend interpreting a list value here instead of a string.",
+      "revId": "7af994578d30e89d48bd94ab01afb77b2ab46625",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_87902697",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1512,
+      "author": {
+        "id": 16099
+      },
+      "writtenOn": "2015-04-27T19:55:18Z",
+      "side": 1,
+      "message": "I know it looks strange but it is default value for this element.",
+      "parentUuid": "7ad32947_e2258b5c",
       "revId": "7af994578d30e89d48bd94ab01afb77b2ab46625",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
