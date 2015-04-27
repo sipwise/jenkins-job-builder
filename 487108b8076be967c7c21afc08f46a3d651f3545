@@ -16,6 +16,24 @@
       "revId": "487108b8076be967c7c21afc08f46a3d651f3545",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_40be8400",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 9107
+      },
+      "writtenOn": "2015-04-27T09:37:22Z",
+      "side": 1,
+      "message": "On Python 2, sys.stdout and print() expect bytes. sys.stdout.write(unicode) depends on the stdout encoding, if it is ASCII (try by setting env var LC_ALL\u003dC), you can get Unicode errors. I prefer to only modify Python 3, unicode is only required on Python 3. On Python 2, bytes (str type) is the \"natural\" type.",
+      "parentUuid": "bab921fb_69a57cb3",
+      "revId": "487108b8076be967c7c21afc08f46a3d651f3545",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
