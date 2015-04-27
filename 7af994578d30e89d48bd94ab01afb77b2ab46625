@@ -104,6 +104,24 @@
     },
     {
       "key": {
+        "uuid": "7ad32947_ca6d0534",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1501,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-04-27T20:44:07Z",
+      "side": 1,
+      "message": "I\u0027m actually not sure in this case, it probably differs from one setting to another, which is a good reason for explicitly using lists in the JJB YAML--that way JJB users don\u0027t have to worry about how entries are delimited.\n\nI know I\u0027ve been bitten in the past by job configs that were comma-delimited and where whitespace on either side of the comma was significant for the value next to it.",
+      "parentUuid": "7ad32947_6403c810",
+      "revId": "7af994578d30e89d48bd94ab01afb77b2ab46625",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ad32947_621a9b19",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 15
