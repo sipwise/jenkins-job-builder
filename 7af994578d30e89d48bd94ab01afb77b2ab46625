@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ad32947_a2ce7381",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2409,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-04-27T19:01:40Z",
+      "side": 1,
+      "message": "I would recommend interpreting a list value here instead of a string.",
+      "revId": "7af994578d30e89d48bd94ab01afb77b2ab46625",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_62c85b75",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2411,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-04-27T19:01:40Z",
+      "side": 1,
+      "message": "I would recommend interpreting a list value here instead of a string.",
+      "revId": "7af994578d30e89d48bd94ab01afb77b2ab46625",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_42c55f59",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2415,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-04-27T19:01:40Z",
+      "side": 1,
+      "message": "I would recommend interpreting a list value here instead of a string.",
+      "revId": "7af994578d30e89d48bd94ab01afb77b2ab46625",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_22a143aa",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2417,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-04-27T19:01:40Z",
+      "side": 1,
+      "message": "I would recommend interpreting a list value here instead of a string.",
+      "revId": "7af994578d30e89d48bd94ab01afb77b2ab46625",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_02d88752",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1501,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-04-27T19:01:40Z",
+      "side": 1,
+      "message": "I would recommend interpreting a list value here instead of a string.",
+      "revId": "7af994578d30e89d48bd94ab01afb77b2ab46625",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_621a9b19",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1506,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-04-27T19:01:40Z",
+      "side": 1,
+      "message": "I would recommend interpreting a list value here instead of a string.",
+      "revId": "7af994578d30e89d48bd94ab01afb77b2ab46625",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_82e4970d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1510,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-04-27T19:01:40Z",
+      "side": 1,
+      "message": "I would recommend interpreting a list value here instead of a string.",
+      "revId": "7af994578d30e89d48bd94ab01afb77b2ab46625",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_e2258b5c",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1512,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-04-27T19:01:40Z",
+      "side": 1,
+      "message": "It seems strange to me to hard-code values here, but I\u0027m also not familiar with the plugin usage.\n\nI would recommend interpreting a list value here instead of a string.",
+      "revId": "7af994578d30e89d48bd94ab01afb77b2ab46625",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
