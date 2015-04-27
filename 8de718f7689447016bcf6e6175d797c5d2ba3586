@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abe1de1_ec08ef93",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-27T11:31:09Z",
+      "side": 1,
+      "message": "Since the split has clean up some of the imports, lets try and keep things in a nice order. Should move this down one.",
+      "revId": "8de718f7689447016bcf6e6175d797c5d2ba3586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_ac39d743",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-27T11:31:09Z",
+      "side": 1,
+      "message": "Unless we use multiple processes I don\u0027t think this can be made parallel and faster, in fact it\u0027s probably much faster due to the GIL to just to leave it as a standard method.",
+      "revId": "8de718f7689447016bcf6e6175d797c5d2ba3586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_0cc7a313",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-27T11:31:09Z",
+      "side": 1,
+      "message": "Missing:\n\n jobs \u003d self.parser.xml_jobs\n\nAlso may not need updated_jobs any more depending on how we want to return the number of jobs updated.",
+      "revId": "8de718f7689447016bcf6e6175d797c5d2ba3586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_6c517f62",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-27T11:31:09Z",
+      "side": 1,
+      "message": "Should be:\n\n if output:\n     for job in jobs:",
+      "revId": "8de718f7689447016bcf6e6175d797c5d2ba3586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_0cee838b",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-27T11:31:09Z",
+      "side": 1,
+      "message": "Need to return:\n\n jobs, len(jobs)",
+      "revId": "8de718f7689447016bcf6e6175d797c5d2ba3586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_cc9e4b07",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-27T11:31:09Z",
+      "side": 1,
+      "message": "With the change to cmd to output the number of jobs modified, we can probably skip this logging message now.",
+      "revId": "8de718f7689447016bcf6e6175d797c5d2ba3586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_80101750",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-27T11:31:09Z",
+      "side": 1,
+      "message": "Since cmd.py reports the number of jobs updated, I\u0027m not sure this is of much use any more. Do we get enough from the total time taken and number of jobs updated from cmd.py?",
+      "revId": "8de718f7689447016bcf6e6175d797c5d2ba3586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_803ed7b6",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-04-27T11:31:09Z",
+      "side": 1,
+      "message": "Rebase missed n_workers from here.",
+      "revId": "8de718f7689447016bcf6e6175d797c5d2ba3586",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
