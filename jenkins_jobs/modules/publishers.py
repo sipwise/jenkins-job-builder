@@ -1966,7 +1966,10 @@ def join_trigger(parser, xml_parent, data):
     """yaml: join-trigger
     Trigger a job after all the immediate downstream jobs have completed
 
+    :arg bool even-if-unstable: if true jobs will trigger even if some
+        downstream jobs are marked as unstable
     :arg list projects: list of projects to trigger
+    :arg list publishers: list of projects to trigger
 
     Example:
 
@@ -1975,9 +1978,16 @@ def join_trigger(parser, xml_parent, data):
     """
     jointrigger = XML.SubElement(xml_parent, 'join.JoinTrigger')
 
-    # Simple Project List
     joinProjectsText = ','.join(data.get('projects', ['']))
     XML.SubElement(jointrigger, 'joinProjects').text = joinProjectsText
+
+    publishers = XML.SubElement(jointrigger, 'joinPublishers')
+    for pub in data.get('publishers', []):
+        for edited_node in create_publishers(parser, pub):
+            publishers.append(edited_node)
+
+    unstable = str(data.get('even-if-unstable', 'false')).lower()
+    XML.SubElement(jointrigger, 'evenIfDownstreamUnstable').text = unstable
 
 
 def jabber(parser, xml_parent, data):
