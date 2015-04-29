@@ -22,6 +22,7 @@ import platform
 import sys
 import yaml
 import jenkins_jobs.version
+import ssl
 
 from jenkins_jobs.builder import Builder
 from jenkins_jobs.errors import JenkinsJobsException
@@ -43,6 +44,7 @@ url=http://localhost:8080/
 user=
 password=
 query_plugins_info=True
+no_check_certificate=False
 
 [hipchat]
 authtoken=dummy
@@ -216,6 +218,25 @@ def execute(options, config):
         ignore_cache = config.getboolean('jenkins', 'ignore_cache')
     elif config.has_option('job_builder', 'ignore_cache'):
         ignore_cache = config.getboolean('job_builder', 'ignore_cache')
+
+    nocertcheck = False
+    try:
+        nocertcheck = config.getboolean('jenkins', 'no_check_certificate')
+    except (TypeError, configparser.NoOptionError):
+        nocertcheck = False
+
+    if nocertcheck:
+        if hasattr(ssl, "_create_unverified_context"):
+            logger.warn('Certificate check explicitly disabled'
+                        ' in [jenkins] section.'
+                        ' Communication with jenkins server is'
+                        ' not certified.')
+            ssl._create_default_https_context = ssl._create_unverified_context
+        else:
+            logger.warn('Python 2.7.9+ or 3.4.3+ required for'
+                        ' no_check_certificate option in [jenkins]'
+                        ' section. Ignoring option and running with'
+                        ' default certificate check')
 
     # workaround for python 2.6 interpolation error
     # https://bugs.launchpad.net/openstack-ci/+bug/1259631
