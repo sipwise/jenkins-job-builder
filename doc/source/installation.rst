@@ -114,6 +114,14 @@ jenkins section
 **url**
   The base URL for your Jenkins installation.
 
+**no_check_certificate**
+  Don't check the server certificate against the available certificate
+  authorities. This is useful if your jenkins server has a self-signed
+  or non-public known certificate and you have no option to install a
+  global certificate. Should only be used if no other alternative
+  available. Only takes effect if running with a Python version
+  that supports disabling certificate check..
+
 **query_plugins_info**
   Whether to query the Jenkins instance for plugin info when a configuration
   file is provided. If a configuration file is not provided `jenkins-jobs` will
