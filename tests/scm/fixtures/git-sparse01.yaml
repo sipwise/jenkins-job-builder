@@ -1,0 +1,11 @@
+scm:
+    - git:
+        url: https://github.com/openstack-infra/jenkins-job-builder.git
+        sparse:
+            paths: 
+                - /test/
+                - /example/
+            restrictions:
+                included: test/*
+                excluded: example/*
+

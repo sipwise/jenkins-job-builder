@@ -320,6 +320,29 @@ remoteName/\*')
                             'hudson.plugins.git.extensions.impl.'
                             'CheckoutOption')
         XML.SubElement(co, 'timeout').text = str(data['timeout'])
+    if 'sparse' in data:
+        sparse = data['sparse']
+        ext_name = 'hudson.plugins.git.extensions.impl.SparseCheckoutPaths'
+        ext = XML.SubElement(exts_node, ext_name)
+        ext = XML.SubElement(ext, 'sparseCheckoutPaths')
+        if 'paths' in sparse:
+            for path in data['sparse']['paths']:
+                ext_name = \
+                    'hudson.plugins.git.extensions.impl.SparseCheckoutPath'
+                sub_ext = XML.SubElement(ext, ext_name)
+                XML.SubElement(sub_ext, 'path').text = path
+
+        if 'restrictions' in sparse:
+            restrictions = sparse['restrictions']
+            ext_name = 'hudson.plugins.git.extensions.impl.PathRestriction'
+            ext = XML.SubElement(exts_node, ext_name)
+            if 'included' in restrictions:
+                XML.SubElement(ext, 'includedRegions').text = \
+                    restrictions['included']
+            if 'excluded' in restrictions:
+                XML.SubElement(ext, 'excludedRegions').text = \
+                    restrictions['excluded']
+
     # By default we wipe the workspace
     wipe_workspace = str(data.get('wipe-workspace', True)).lower()
     if wipe_workspace == 'true':
