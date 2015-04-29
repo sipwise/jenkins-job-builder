@@ -74,12 +74,7 @@ def ownership(parser, xml_parent, data):
 
     Example::
 
-        properties:
-         - ownership:
-            owner: abraverm
-            co-owners:
-             - lbednar
-             - edolinin
+    .. literalinclude:: /../../tests/properties/fixtures/ownership.yaml
     """
     ownership_plugin = \
         XML.SubElement(xml_parent,
