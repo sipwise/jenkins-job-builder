@@ -1,6 +1,8 @@
 import io
 import os
 import yaml
+import logging
+import ssl
 
 import jenkins
 
@@ -8,6 +10,7 @@ from jenkins_jobs import cmd
 from jenkins_jobs.errors import JenkinsJobsException
 from mock import patch
 from tests.base import mock
+from tests.base import mock_called_with_args
 from tests.cmd.test_cmd import CmdTestsBase
 from tests.cmd.test_recurse_path import fake_os_walk
 
@@ -374,3 +377,40 @@ class TestJenkinsGetPluginInfoError(CmdTestsBase):
                       'test',
                       os.path.join(self.fixtures_path, 'cmd-001.yaml')])
         self.assertFalse(get_plugins_info_mock.called)
+
+    def test_disable_check_cert(self):
+        """
+        Verify ssl certificate is disabled and warning printed.
+        """
+        with mock.patch('jenkins_jobs.cmd.logger') as mock_logger:
+            cmd.main(['--conf',
+                      os.path.join(self.fixtures_path,
+                                   'cert-check.conf'),
+                      'test',
+                      os.path.join(self.fixtures_path, 'cmd-001.yaml')])
+
+            if hasattr(ssl, "_create_unverified_context"):
+                mock_called_with_args(
+                    mock_logger.info,
+                    'Certificate check explicitly disabled in [jenkins] '
+                    'section. Communication with jenkins server is not '
+                    'certified.')
+            else:
+                mock_logger.warn.assert_called_once_with(
+                    'Python 2.7.9+ or 3.4.3+ required for'
+                    ' no_check_certificate option in [jenkins]'
+                    ' section. Ignoring option and running with'
+                    ' default certificate check')
+
+    def test_no_warning_on_no_disable_check_cert(self):
+        """
+        Verify when ssl certificate is not set we do not print warning.
+        """
+        logger = logging.getLogger()
+        with mock.patch.object(logger, 'warn') as mock_warn:
+            cmd.main(['--conf',
+                      os.path.join(self.fixtures_path,
+                                   'no-cert-check.conf'),
+                      'test',
+                      os.path.join(self.fixtures_path, 'cmd-001.yaml')])
+            assert not mock_warn.called, 'no warning should have been called'

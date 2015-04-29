@@ -19,6 +19,7 @@ import io
 import logging
 import os
 import platform
+import ssl
 import sys
 import yaml
 
@@ -46,6 +47,7 @@ allow_empty_variables=False
 [jenkins]
 url=http://localhost:8080/
 query_plugins_info=True
+no_check_certificate=False
 
 [hipchat]
 authtoken=dummy
@@ -246,6 +248,23 @@ def execute(options, config):
         ignore_cache = config.getboolean('jenkins', 'ignore_cache')
     elif config.has_option('job_builder', 'ignore_cache'):
         ignore_cache = config.getboolean('job_builder', 'ignore_cache')
+
+    try:
+        nocertcheck = config.getboolean('jenkins', 'no_check_certificate')
+    except (TypeError, configparser.NoOptionError):
+        nocertcheck = False
+
+    if nocertcheck:
+        if hasattr(ssl, "_create_unverified_context"):
+            logger.info('Certificate check explicitly disabled in [jenkins] '
+                        'section. Communication with jenkins server is not '
+                        'certified.')
+            ssl._create_default_https_context = ssl._create_unverified_context
+        else:
+            logger.warn('Python 2.7.9+ or 3.4.3+ required for '
+                        'no_check_certificate option in [jenkins] section. '
+                        'Ignoring option and running with default certificate '
+                        'check.')
 
     # Jenkins supports access as an anonymous user, which can be used to
     # ensure read-only behaviour when querying the version of plugins

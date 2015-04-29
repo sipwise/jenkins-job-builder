@@ -99,6 +99,26 @@ def get_scenarios(fixtures_path, in_ext='yaml', out_ext='xml',
     return scenarios
 
 
+def mock_called_with_args(mocked, args, times=1):
+    """Helper to check if called with given args a number of times
+
+    Mock doesn't allow you to test that it has been called with specific
+    arguments a number of times, while also ignoring all other calls with
+    different arguments.
+    """
+
+    count = 0
+    expected_call = mock.call(args)
+    for mock_call in mocked.mock_calls:
+        if mock_call == expected_call:
+            count += 1
+
+    if count != times:
+        raise AssertionError(
+            "Expected '%s' to have been called with args '%s', '%s' times"
+            % (mocked._mock_name or 'mock', count))
+
+
 class LoggingFixture(object):
 
     def setUp(self):

@@ -75,6 +75,14 @@ jenkins section
   (Optional) The connection timeout (in seconds) to the Jenkins server.
   By default this is set to the system configured socket timeout.
 
+**no_check_certificate**
+  Don't check the server certificate against the available certificate
+  authorities. This is useful if your jenkins server has a self-signed
+  or non-public known certificate and you have no option to install a
+  global certificate. Should only be used if no other alternative
+  available. Only takes effect if running with a Python version
+  that supports disabling certificate check. False by default.
+
 **query_plugins_info**
   Whether to query the Jenkins instance for plugin info. If no configuration
   files are found (either in the default paths or given through the
