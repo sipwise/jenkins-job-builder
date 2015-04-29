@@ -43,6 +43,7 @@ url=http://localhost:8080/
 user=
 password=
 query_plugins_info=True
+no_check_certificate=True
 
 [hipchat]
 authtoken=dummy
@@ -185,6 +186,7 @@ def setup_config_settings(options):
         if os.path.isfile(localconf):
             conf = localconf
     config = configparser.ConfigParser()
+
     # Load default config always
     config.readfp(StringIO(DEFAULT_CONF))
     if os.path.isfile(conf):
@@ -217,6 +219,17 @@ def execute(options, config):
     elif config.has_option('job_builder', 'ignore_cache'):
         ignore_cache = config.getboolean('job_builder', 'ignore_cache')
 
+    certcheck = True
+    try:
+        nocertcheck = config.get('jenkins','no_check_certificate')
+    except (TypeError, configparser.NoOptionError):
+        nocertcheck = True
+
+    if nocertcheck:
+        logger.warn('Certificate check explicitly disabled in [jenkins] section.'
+                    ' Communication with jenkins server is not certified.')
+        import ssl
+        ssl._create_default_https_context = ssl._create_unverified_context
     # workaround for python 2.6 interpolation error
     # https://bugs.launchpad.net/openstack-ci/+bug/1259631
     try:
