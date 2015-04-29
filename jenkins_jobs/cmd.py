@@ -23,6 +23,7 @@ import platform
 import sys
 import yaml
 import jenkins_jobs.version
+import ssl
 
 from jenkins_jobs.builder import Builder
 from jenkins_jobs.errors import JenkinsJobsException
@@ -42,6 +43,7 @@ allow_empty_variables=False
 [jenkins]
 url=http://localhost:8080/
 query_plugins_info=True
+no_check_certificate=False
 
 [hipchat]
 authtoken=dummy
@@ -217,6 +219,26 @@ def execute(options, config):
     elif config.has_option('job_builder', 'ignore_cache'):
         ignore_cache = config.getboolean('job_builder', 'ignore_cache')
 
+    nocertcheck = False
+    try:
+        nocertcheck = config.getboolean('jenkins', 'no_check_certificate')
+    except (TypeError, configparser.NoOptionError):
+        nocertcheck = False
+
+    if nocertcheck:
+        if hasattr(ssl, "_create_unverified_context"):
+            logger.warn('Certificate check explicitly disabled'
+                        ' in [jenkins] section.'
+                        ' Communication with jenkins server is'
+                        ' not certified.')
+            ssl._create_default_https_context = ssl._create_unverified_context
+        else:
+            logger.warn('Python 2.7.9+ or 3.4.3+ required for'
+                        ' no_check_certificate option in [jenkins]'
+                        ' section. Ignoring option and running with'
+                        ' default certificate check')
+
+
     # Jenkins supports access as an anonymous user, which can be used to
     # ensure read-only behaviour when querying the version of plugins
     # installed for test mode to generate XML output matching what will be
@@ -224,6 +246,8 @@ def execute(options, config):
     # to python-jenkins
     #
     # catching 'TypeError' is a workaround for python 2.6 interpolation error
+
+    # workaround for python 2.6 interpolation error
     # https://bugs.launchpad.net/openstack-ci/+bug/1259631
     try:
         user = config.get('jenkins', 'user')
