@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_1b946d35",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 33
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-30T17:48:27Z",
+      "side": 1,
+      "message": "Since test mode will always use 1 this does not apply to test mode.  Probably should move to updating jobs section?",
+      "revId": "0891d3fba685a3e3925579d61b9f9303ee1768d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_9ba07d92",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 33
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-30T17:48:27Z",
+      "side": 1,
+      "message": "*test/update and remove \u0027-o /path/to/output\u0027",
+      "revId": "0891d3fba685a3e3925579d61b9f9303ee1768d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_1ba6adc1",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-04-30T17:48:27Z",
+      "side": 1,
+      "message": "We should validate that n_workers is \u003e\u003d 0 either somewhere in this file or in update_jobs method.",
+      "revId": "0891d3fba685a3e3925579d61b9f9303ee1768d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
