@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3acd31a7_015cf449",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-04-30T09:34:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3acd31a7_72e25ba1",
+      "revId": "4c71d0f6c71f82ae87814b1dd18e40accf78bb19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3acd31a7_d277efd2",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 6
@@ -47,6 +65,24 @@
       "writtenOn": "2015-04-30T07:23:24Z",
       "side": 1,
       "message": "is that an option only available for python 2.7.9?",
+      "revId": "4c71d0f6c71f82ae87814b1dd18e40accf78bb19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_cc3193ee",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-04-30T09:34:12Z",
+      "side": 1,
+      "message": "It was my initial understanding it required 2.7.9 and above and all tests passed on my machine.\n\nBut it seems the Python3 tests on openstack uses an older version and its Python 3 version does not support it.\n\nApparently it needs Python 3.4.3+ or 2.7.9+ to work.\n\nThus instead of using explicit version check I use the hasattr() check.\n\nI\u0027m pushing an update that just states this version of Python does not support it and tell that a newer version of python is needed.",
+      "parentUuid": "3acd31a7_d277efd2",
       "revId": "4c71d0f6c71f82ae87814b1dd18e40accf78bb19",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
