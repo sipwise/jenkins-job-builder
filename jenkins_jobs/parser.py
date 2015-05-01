@@ -216,9 +216,9 @@ class YamlParser(object):
                         # Allow a group to override parameters set by a project
                         d = {}
                         d.update(project)
-                        d.update(jobparams)
                         d.update(group)
                         d.update(group_jobparams)
+                        d.update(jobparams)
                         # Except name, since the group's name is not useful
                         d['name'] = project['name']
                         if template:
