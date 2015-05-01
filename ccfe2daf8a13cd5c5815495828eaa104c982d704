@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_823b34d1",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1713,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-01T18:47:55Z",
+      "side": 1,
+      "message": "nit: should this be \u0027groovy_postbuild\u0027 instead?",
+      "revId": "ccfe2daf8a13cd5c5815495828eaa104c982d704",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_b1033b0f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1717,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-01T18:47:55Z",
+      "side": 1,
+      "message": "nit: depricated/deprecated",
+      "revId": "ccfe2daf8a13cd5c5815495828eaa104c982d704",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
