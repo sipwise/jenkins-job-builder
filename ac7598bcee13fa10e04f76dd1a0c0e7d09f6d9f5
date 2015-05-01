@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_b77f9065",
+        "filename": "doc/source/definition.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-01T18:09:01Z",
+      "side": 1,
+      "message": "I think referencing the \u0027complete-raw001.yaml\u0027 would be better.",
+      "revId": "ac7598bcee13fa10e04f76dd1a0c0e7d09f6d9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_f41bc67e",
+        "filename": "tests/scm/fixtures/raw001.xml",
+        "patchSetId": 10
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-01T18:09:01Z",
+      "side": 1,
+      "message": "is that a tab?  spaces would be preferable.",
+      "revId": "ac7598bcee13fa10e04f76dd1a0c0e7d09f6d9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_f7ece82a",
+        "filename": "tests/yamlparser/fixtures/complete-raw001.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-01T18:09:01Z",
+      "side": 1,
+      "message": "maybe add a comment telling why this xml is slightly different than the others?",
+      "revId": "ac7598bcee13fa10e04f76dd1a0c0e7d09f6d9f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
