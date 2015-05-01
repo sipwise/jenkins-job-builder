@@ -1,0 +1,22 @@
+- project:
+    name: override-job-group
+    jobs:
+      - run_app_version:
+          version: 1.2
+
+- job-group:
+    name: run_app_version
+    version: 1.1
+    jobs:
+      - 'job_{num}':
+          num: 1
+      - 'job_{num}':
+          num: 2
+          version: 1.3
+
+- job-template:
+    name: 'job_{num}'
+    builders:
+      - shell: |
+          #!/bin/bash
+          echo "run version {version}"
