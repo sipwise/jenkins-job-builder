@@ -1,0 +1,49 @@
+- project:
+    name: version-from-job-set
+    version: 0.5
+    jobs:
+      - group-version:
+          prefix: override-group-job
+          version: 2.0
+
+- project:
+    name: version-from-group-default
+    version: 0.5
+    prefix: group
+    jobs:
+      - group-version
+
+- project:
+    name: version-from-project
+    version: 0.5
+    prefix: project
+    jobs:
+      - 'job_{prefix}_{num}':
+          num: 0
+
+- project:
+    name: version-from-job
+    version: 0.5
+    prefix: job
+    jobs:
+      - 'job_{prefix}_{num}':
+          num: 0
+          version: 0.9
+
+- job-group:
+    name: group-version
+    version: 1.0
+    jobs:
+      - 'job_{prefix}_{num}':
+          num: 1
+      - 'job_{prefix}_{num}':
+          num: 2
+          version: 1.1
+
+- job-template:
+    name: 'job_{prefix}_{num}'
+    builders:
+      - shell: |
+          #!/bin/bash
+          echo "job name = job_{prefix}_{num}"
+          echo "run version {version}"
