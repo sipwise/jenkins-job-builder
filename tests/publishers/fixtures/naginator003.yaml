@@ -1,0 +1,8 @@
+- job:
+    name: naginator
+    description: Deploys Artifacts to Nexus
+    project-type: freestyle
+    publishers:
+      - naginator:
+          fixed-delay: 30
+          max-failed-builds: 6

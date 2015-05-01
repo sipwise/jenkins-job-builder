@@ -1,0 +1,11 @@
+- job:
+    name: naginator
+    description: Deploys Artifacts to Nexus
+    project-type: freestyle
+    publishers:
+      - naginator:
+          rerun-unstable-builds: true
+          progressive-delay-increment: 5
+          progressive-delay-maximum: 15
+          max-failed-builds: 6
+          regular-expression: foo

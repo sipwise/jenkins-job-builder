@@ -1,0 +1,6 @@
+- job:
+    name: naginator
+    description: Deploys Artifacts to Nexus
+    project-type: freestyle
+    publishers:
+      - naginator
