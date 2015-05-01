@@ -4196,6 +4196,69 @@ def scoverage(parser, xml_parent, data):
         data.get('report-file', ''))
 
 
+def naginator(parser, xml_parent, data):
+    """yaml: naginator
+    Automatically reschedule a build after a build failure
+    Requires the Jenkins :jenkins-wiki:`Naginator Plugin <Naginator+Plugin>`.
+
+    :arg bool rerun-unstable-builds: Rerun build for unstable builds as well
+                          as failures (default False)
+    :arg str fixed-delay: Fixed delay before retrying build (cannot be used
+                          with progressive-delay-increment or
+                          progressive-delay-maximum.  This is the default
+                          delay type.  Default 0)
+    :arg str progressive-delay-increment: Progressive delay before retrying
+                          build increment (cannot be used when fixed-delay
+                          is being used)
+    :arg str progressive-delay-maximum: Progressive delay before retrying
+                          maximum delay (cannot be used when fixed-delay
+                          is being used)
+    :arg str max-failed-builds: Maximum number of successive failed builds
+                          (Default 0)
+    :arg str regular-expression: Only rerun build if regular expression is
+                          found in output (Default '')
+
+    Example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/naginator001.yaml
+        :language: yaml
+    """
+    logger = logging.getLogger(__name__)
+    naginator = XML.SubElement(xml_parent,
+                               'com.chikli.hudson.plugin.naginator.\
+                               NaginatorPublisher')
+    XML.SubElement(naginator, 'regexpForRerun').text = str(
+        data.get('regular-expression', ''))
+    if 'regular-expression' in data:
+        XML.SubElement(naginator, 'checkRegexp').text = 'true'
+    else:
+        XML.SubElement(naginator, 'checkRegexp').text = 'false'
+    XML.SubElement(naginator, 'rerunIfUnstable').text = str(
+        data.get('rerun-unstable-builds', False)).lower()
+    if ('fixed-delay' in data and ('progressive-delay-increment' in data or
+        'progressive-delay-maximum' in data)):
+        logger.fatal("You cannot specify both fixed and progressive delays")
+        sys.exit(1)
+    if 'progressive-delay-increment' not in data or \
+        'progressive-delay-maximum' not in data:
+        delay = XML.SubElement(naginator, 'delay', {'class':
+                               'com.chikli.hudson.plugin.naginator.\
+                               FixedDelay'})
+        XML.SubElement(delay, 'delay').text = str(
+            data.get('fixed-delay', '0'))
+    if 'progressive-delay-increment' in data or 'progressive-delay-maximum' \
+        in data:
+        delay = XML.SubElement(naginator, 'delay', {'class':
+                               'com.chikli.hudson.plugin.naginator.\
+                               ProgressiveDelay'})
+        XML.SubElement(delay, 'increment').text = str(
+            data.get('progressive-delay-increment', '0'))
+        XML.SubElement(delay, 'max').text = str(
+            data.get('progressive-delay-maximum', '0'))
+    XML.SubElement(naginator, 'maxSchedule').text = str(
+        data.get('max-failed-builds', '0'))
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
