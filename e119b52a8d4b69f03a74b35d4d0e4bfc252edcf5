@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_65739416",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1438,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-01T00:14:37Z",
+      "side": 1,
+      "message": "Doesn\u0027t this require the \u0027Display Upstream Changes Plugin\u0027? if so, could you please specify similar to how it\u0027s done in the module below?",
+      "revId": "e119b52a8d4b69f03a74b35d4d0e4bfc252edcf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
