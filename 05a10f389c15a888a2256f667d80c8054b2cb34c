@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_e5856407",
+        "filename": "etc/jenkins_jobs.ini-sample",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-01T00:05:52Z",
+      "side": 1,
+      "message": "should probably be \u0027dummy\u0027 to match what\u0027s in cmd.py",
+      "revId": "05a10f389c15a888a2256f667d80c8054b2cb34c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
