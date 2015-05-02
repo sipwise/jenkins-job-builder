@@ -59,6 +59,8 @@ def build_trends_publisher(plugin_name, xml_element, data):
         ('default-encoding', 'defaultEncoding', ''),
         ('can-run-on-failed', 'canRunOnFailed', False),
         ('use-stable-build-as-reference', 'useStableBuildAsReference', False),
+        ('use-previous-build-as-reference',
+         'usePreviousBuildAsReference', False),
         ('use-delta-values', 'useDeltaValues', False),
         ('thresholds', 'thresholds', {}),
         ('should-detect-modules', 'shouldDetectModules', False),
@@ -126,8 +128,8 @@ def config_file_provider_settings(xml_parent, data):
     if 'settings' in data:
         # Support for Config File Provider
         settings_file = str(data['settings'])
-        if settings_file.startswith(
-            'org.jenkinsci.plugins.configfiles.maven.MavenSettingsConfig'):
+        text = 'org.jenkinsci.plugins.configfiles.maven.MavenSettingsConfig'
+        if settings_file.startswith(text):
             lsettings = XML.SubElement(
                 xml_parent, 'settings',
                 {'class': settings['config-file-provider-settings']})
@@ -213,10 +215,6 @@ def findbugs_settings(xml_parent, data):
     XML.SubElement(xml_parent, 'includePattern').text = include_files
     exclude_files = data.get('exclude-files', '')
     XML.SubElement(xml_parent, 'excludePattern').text = exclude_files
-    use_previous_build = str(data.get('use-previous-build-as-reference',
-                                      False)).lower()
-    XML.SubElement(xml_parent,
-                   'usePreviousBuildAsReference').text = use_previous_build
 
 
 def get_value_from_yaml_or_config_file(key, section, data, parser):
