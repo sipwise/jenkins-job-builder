@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_80afa293",
+        "filename": "doc/source/definition.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-02T22:42:43Z",
+      "side": 1,
+      "message": "pls remove trailing white space",
+      "revId": "c3575061bb301b6b546aa1fac5721dec86c9810c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
