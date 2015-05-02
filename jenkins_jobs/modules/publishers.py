@@ -3363,6 +3363,96 @@ def stash(parser, xml_parent, data):
         data.get('include-build-number', False)).lower()
 
 
+def dependency_check(parser, xml_parent, data):
+    """yaml: dependency-check
+    Dependency-Check is an open source utility that identifies project
+    dependencies and checks if there are any known, publicly disclosed,
+    vulnerabilities.
+
+    Requires the Jenkins :jenkins-wiki:`OWASP Dependency-Check Plugin
+    <OWASP+Dependency-Check+Plugin>`.
+
+    :arg str healthy: Report health as 100% when the number of warnings is less
+        than this value
+    :arg str un-healthy: Report health as 0% when the number of warnings is
+        greater than this value
+    :arg str threshold-limit: determines which warning priorities should be
+        considered when evaluating the build stability and health (Default low)
+    :arg str default-encoding: the default encoding to be used when reading
+        and parsing files
+    :arg bool can-run-on-failed: determines whether the plug-in can run for
+        failed builds, too (Default false)
+    :arg bool use-previous-build-as-reference: determines whether to always
+        use the previous build as the reference build (Default false)
+    :arg bool use-stable-build-as-reference: determines whether only stable
+        builds should be used as reference builds or not (Default false)
+    :arg bool use-delta-values: determines whether the absolute annotations
+        delta or the actual annotations set difference should be used to
+            evaluate the build stability (Default false)
+    :arg str unstable-total-all: annotation threshold
+    :arg str unstable-total-high: annotation threshold
+    :arg str unstable-total-normal: annotation threshold
+    :arg str unstable-total-low: annotation threshold
+    :arg str failed-total-all: annotation threshold
+    :arg str failed-total-high: annotation threshold
+    :arg str failed-total-normal: annotation threshold
+    :arg str failed-total-low: annotation threshold
+    :arg bool should-detect-modules: determines whether module names should
+        be derived from Maven POM or Ant build files (Default false)
+    :arg str pattern: Ant file-set pattern to scan for PMD files
+
+    Example:
+
+    .. literalinclude::
+        /../../tests/publishers/fixtures/dependency-check001.yaml
+       :language: yaml
+    """
+
+    dependency_check = XML.SubElement(
+        xml_parent,
+        'org.jenkinsci.plugins.DependencyCheck.DependencyCheckPublisher')
+
+    XML.SubElement(dependency_check, 'healthy').text = data.get('healthy', '')
+    XML.SubElement(dependency_check, 'unHealthy').text = \
+        data.get('un-healthy', '')
+    XML.SubElement(dependency_check, 'thresholdLimit').text = \
+        data.get('threshold-limit', 'low')
+    XML.SubElement(dependency_check, 'pluginName').text = '[DependencyCheck]'
+    XML.SubElement(dependency_check, 'defaultEncoding').text = \
+        data.get('default-encoding', '')
+    XML.SubElement(dependency_check, 'canRunOnFailed').text = \
+        data.get('can-run-on-failed', False)
+    XML.SubElement(dependency_check, 'usePreviousBuildAsReference').text = \
+        data.get('use-previous-build-as-reference', False)
+    XML.SubElement(dependency_check, 'useStableBuildAsReference').text = \
+        data.get('use-stable-build-as-reference', False)
+    XML.SubElement(dependency_check, 'useDeltaValues').text = \
+        data.get('use-delta-values', False)
+
+    # thresholds
+    thresholds = XML.SubElement(dependency_check, 'thresholds')
+    XML.SubElement(thresholds, 'unstableTotalAll').text = \
+        data.get('unstable-total-all', '')
+    XML.SubElement(thresholds, 'unstableTotalHigh').text = \
+        data.get('unstable-total-high', '')
+    XML.SubElement(thresholds, 'unstableTotalNormal').text = \
+        data.get('unstable-total-normal', '')
+    XML.SubElement(thresholds, 'unstableTotalLow').text = \
+        data.get('unstable-total-low', '')
+    XML.SubElement(thresholds, 'failedTotalAll').text = \
+        data.get('failed-total-all', '')
+    XML.SubElement(thresholds, 'failedTotalHigh').text = \
+        data.get('failed-total-high', '')
+    XML.SubElement(thresholds, 'failedTotalNormal').text = \
+        data.get('failed-total-normal', '')
+    XML.SubElement(thresholds, 'failedTotalLow').text = \
+        data.get('failed-total-low', '')
+
+    XML.SubElement(dependency_check, 'shouldDetectModules').text = \
+        data.get('should-detect-modules', False)
+    XML.SubElement(dependency_check, 'pattern').text = data.get('pattern', '')
+
+
 def description_setter(parser, xml_parent, data):
     """yaml: description-setter
     This plugin sets the description for each build,
