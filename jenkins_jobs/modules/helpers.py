@@ -170,3 +170,22 @@ def findbugs_settings(xml_parent, data):
                                       False)).lower()
     XML.SubElement(xml_parent,
                    'usePreviousBuildAsReference').text = use_previous_build
+
+
+def thresholds_settings(xml_parent, data):
+    XML.SubElement(xml_parent, 'unstableTotalAll').text = \
+        data.get('unstable-total-all', '')
+    XML.SubElement(xml_parent, 'unstableTotalHigh').text = \
+        data.get('unstable-total-high', '')
+    XML.SubElement(xml_parent, 'unstableTotalNormal').text = \
+        data.get('unstable-total-normal', '')
+    XML.SubElement(xml_parent, 'unstableTotalLow').text = \
+        data.get('unstable-total-low', '')
+    XML.SubElement(xml_parent, 'failedTotalAll').text = \
+        data.get('failed-total-all', '')
+    XML.SubElement(xml_parent, 'failedTotalHigh').text = \
+        data.get('failed-total-high', '')
+    XML.SubElement(xml_parent, 'failedTotalNormal').text = \
+        data.get('failed-total-normal', '')
+    XML.SubElement(xml_parent, 'failedTotalLow').text = \
+        data.get('failed-total-low', '')

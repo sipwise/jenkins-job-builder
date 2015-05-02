@@ -31,6 +31,7 @@ import jenkins_jobs.modules.base
 from jenkins_jobs.modules import hudson_model
 from jenkins_jobs.modules.helpers import build_trends_publisher
 from jenkins_jobs.modules.helpers import findbugs_settings
+from jenkins_jobs.modules.helpers import thresholds_settings
 from jenkins_jobs.errors import JenkinsJobsException
 import logging
 import pkg_resources
@@ -3361,6 +3362,81 @@ def stash(parser, xml_parent, data):
     XML.SubElement(top, 'commitSha1').text = data.get('commit-sha1', '')
     XML.SubElement(top, 'includeBuildNumberInKey').text = str(
         data.get('include-build-number', False)).lower()
+
+
+def dependency_check(parser, xml_parent, data):
+    """yaml: dependency-check
+    Dependency-Check is an open source utility that identifies project
+    dependencies and checks if there are any known, publicly disclosed,
+    vulnerabilities.
+
+    Requires the Jenkins :jenkins-wiki:`OWASP Dependency-Check Plugin
+    <OWASP+Dependency-Check+Plugin>`.
+
+    :arg str healthy: Report health as 100% when the number of warnings is less
+        than this value
+    :arg str un-healthy: Report health as 0% when the number of warnings is
+        greater than this value
+    :arg str threshold-limit: determines which warning priorities should be
+        considered when evaluating the build stability and health (Default low)
+    :arg str default-encoding: the default encoding to be used when reading
+        and parsing files
+    :arg bool can-run-on-failed: determines whether the plug-in can run for
+        failed builds, too (Default false)
+    :arg bool use-previous-build-as-reference: determines whether to always
+        use the previous build as the reference build (Default false)
+    :arg bool use-stable-build-as-reference: determines whether only stable
+        builds should be used as reference builds or not (Default false)
+    :arg bool use-delta-values: determines whether the absolute annotations
+        delta or the actual annotations set difference should be used to
+        evaluate the build stability (Default false)
+    :arg str unstable-total-all: annotation threshold
+    :arg str unstable-total-high: annotation threshold
+    :arg str unstable-total-normal: annotation threshold
+    :arg str unstable-total-low: annotation threshold
+    :arg str failed-total-all: annotation threshold
+    :arg str failed-total-high: annotation threshold
+    :arg str failed-total-normal: annotation threshold
+    :arg str failed-total-low: annotation threshold
+    :arg bool should-detect-modules: determines whether module names should
+        be derived from Maven POM or Ant build files (Default false)
+    :arg str pattern: Ant file-set pattern to scan for PMD files
+
+    Example:
+
+    .. literalinclude::
+        /../../tests/publishers/fixtures/dependency-check001.yaml
+       :language: yaml
+    """
+
+    dependency_check = XML.SubElement(
+        xml_parent,
+        'org.jenkinsci.plugins.DependencyCheck.DependencyCheckPublisher')
+
+    XML.SubElement(dependency_check, 'healthy').text = data.get('healthy', '')
+    XML.SubElement(dependency_check, 'unHealthy').text = \
+        data.get('un-healthy', '')
+    XML.SubElement(dependency_check, 'thresholdLimit').text = \
+        data.get('threshold-limit', 'low')
+    XML.SubElement(dependency_check, 'pluginName').text = '[DependencyCheck]'
+    XML.SubElement(dependency_check, 'defaultEncoding').text = \
+        data.get('default-encoding', '')
+    XML.SubElement(dependency_check, 'canRunOnFailed').text = \
+        str(data.get('can-run-on-failed', False)).lower()
+    XML.SubElement(dependency_check, 'usePreviousBuildAsReference').text = \
+        str(data.get('use-previous-build-as-reference', False)).lower()
+    XML.SubElement(dependency_check, 'useStableBuildAsReference').text = \
+        str(data.get('use-stable-build-as-reference', False)).lower()
+    XML.SubElement(dependency_check, 'useDeltaValues').text = \
+        str(data.get('use-delta-values', False)).lower()
+
+    # thresholds
+    thresholds = XML.SubElement(dependency_check, 'thresholds')
+    thresholds_settings(thresholds, data)
+
+    XML.SubElement(dependency_check, 'shouldDetectModules').text = \
+        str(data.get('should-detect-modules', False)).lower()
+    XML.SubElement(dependency_check, 'pattern').text = data.get('pattern', '')
 
 
 def description_setter(parser, xml_parent, data):

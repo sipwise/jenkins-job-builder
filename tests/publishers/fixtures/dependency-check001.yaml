@@ -1,0 +1,3 @@
+publishers:
+  - dependency-check:
+      pattern: '**/dependency-check-report.xml'
