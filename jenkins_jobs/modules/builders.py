@@ -1076,6 +1076,31 @@ def conditional_step(parser, xml_parent, data):
         build_step(steps_parent, step)
 
 
+def maven_builder(parser, xml_parent, data):
+    """yaml: maven-builder
+    Execute Maven3 builder
+
+    :arg str name: Name of maven installation from the configuration
+    :arg str pom: Location of pom.xml (default 'pom.xml')
+    :arg str goals: Goals to execute
+    :arg str maven-opts: Additional options for maven (optional)
+
+    Requires the Jenkins `Config File Provider Plugin
+    <https://wiki.jenkins-ci.org/display/JENKINS/Config+File+Provider+Plugin>`_
+    for the Config File Provider "settings" and "global-settings" config.
+
+    Example:
+
+    .. literalinclude:: /../../tests/builders/fixtures/maven-builder001.yaml
+       :language: yaml
+    """
+    maven = XML.SubElement(xml_parent, 'org.jfrog.hudson.maven3.Maven3Builder')
+    XML.SubElement(maven, 'mavenName').text = data['name']
+    XML.SubElement(maven, 'rootPom').text = data.get('pom', 'pom.xml')
+    XML.SubElement(maven, 'goals').text = data['goals']
+    XML.SubElement(maven, 'mavenOpts').text = data.get('maven-opts', '')
+
+
 def maven_target(parser, xml_parent, data):
     """yaml: maven-target
     Execute top-level Maven targets
