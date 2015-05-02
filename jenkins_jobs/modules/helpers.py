@@ -76,6 +76,13 @@ def build_trends_publisher(plugin_name, xml_element, data):
         elif key == 'health-threshold' and config_value not in thresholds:
             raise JenkinsJobsException("health-threshold must be one of %s" %
                                        ", ".join(thresholds))
+        elif key == 'use-stable-build-as-reference' \
+                and '[DependencyCheck]' in plugin_name:
+                XML.SubElement(xml_element, 'usePreviousBuildAsReference') \
+                    .text = \
+                    str(data.get('use-previous-build-as-reference', False)) \
+                    .lower()
+                xml_config.text = str(config_value).lower()
         else:
             if isinstance(default, bool):
                 xml_config.text = str(config_value).lower()
@@ -122,8 +129,8 @@ def config_file_provider_settings(xml_parent, data):
     if 'settings' in data:
         # Support for Config File Provider
         settings_file = str(data['settings'])
-        if settings_file.startswith(
-            'org.jenkinsci.plugins.configfiles.maven.MavenSettingsConfig'):
+        text = 'org.jenkinsci.plugins.configfiles.maven.MavenSettingsConfig'
+        if settings_file.startswith(text):
             lsettings = XML.SubElement(
                 xml_parent, 'settings',
                 {'class': settings['config-file-provider-settings']})
