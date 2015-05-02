@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <builders>
+    <org.jenkinsci.plugins.DependencyCheck.DependencyCheckPublisher>
+      <healthy />
+      <unHealthy />
+      <thresholdLimit>low</thresholdLimit>
+      <pluginName>[DependencyCheck]</pluginName>
+      <defaultEncoding />
+      <canRunOnFailed>false</canRunOnFailed>
+      <usePreviousBuildAsReference>false</usePreviousBuildAsReference>
+      <useStableBuildAsReference>false</useStableBuildAsReference>
+      <useDeltaValues>false</useDeltaValues>
+      <thresholds>
+        <unstableTotalAll />
+        <unstableTotalHigh />
+        <unstableTotalNormal />
+        <unstableTotalLow />
+        <failedTotalAll />
+        <failedTotalHigh />
+        <failedTotalNormal />
+        <failedTotalLow />
+      </thresholds>
+      <shouldDetectModules>false</shouldDetectModules>
+      <pattern>**/dependency-check-report.xml</pattern>
+    </org.jenkinsci.plugins.DependencyCheck.DependencyCheckPublisher>
+  </builders>
+</project>
