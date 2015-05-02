@@ -1190,6 +1190,8 @@ def checkstyle(parser, xml_parent, data):
     :arg bool do-not-resolve-relative-paths: (default false)
     :arg bool dont-compute-new: If set to false, computes new warnings based on
       the reference build (default true)
+    :arg bool use-previous-build-as-reference: determines whether to always
+        use the previous build as the reference build (Default false)
     :arg bool use-stable-build-as-reference: The number of new warnings will be
       calculated based on the last stable build, allowing reverts of unstable
       builds where the number of warnings was decreased. (default false)
@@ -3363,6 +3365,59 @@ def stash(parser, xml_parent, data):
         data.get('include-build-number', False)).lower()
 
 
+def dependency_check(parser, xml_parent, data):
+    """yaml: dependency-check
+    Dependency-Check is an open source utility that identifies project
+    dependencies and checks if there are any known, publicly disclosed,
+    vulnerabilities.
+
+    Requires the Jenkins :jenkins-wiki:`OWASP Dependency-Check Plugin
+    <OWASP+Dependency-Check+Plugin>`.
+
+    :arg str healthy: Report health as 100% when the number of warnings is less
+        than this value
+    :arg str unhealthy: Report health as 0% when the number of warnings is
+        greater than this value
+    :arg str health-threshold: determines which warning priorities should be
+        considered when evaluating the build stability and health (Default low)
+    :arg str default-encoding: the default encoding to be used when reading
+        and parsing files
+    :arg bool can-run-on-failed: determines whether the plug-in can run for
+        failed builds, too (Default false)
+    :arg bool use-previous-build-as-reference: determines whether to always
+        use the previous build as the reference build (Default false)
+    :arg bool use-stable-build-as-reference: determines whether only stable
+        builds should be used as reference builds or not (Default false)
+    :arg bool use-delta-values: determines whether the absolute annotations
+        delta or the actual annotations set difference should be used to
+        evaluate the build stability (Default false)
+    :arg str unstable-total-all: annotation threshold
+    :arg str unstable-total-high: annotation threshold
+    :arg str unstable-total-normal: annotation threshold
+    :arg str unstable-total-low: annotation threshold
+    :arg str failed-total-all: annotation threshold
+    :arg str failed-total-high: annotation threshold
+    :arg str failed-total-normal: annotation threshold
+    :arg str failed-total-low: annotation threshold
+    :arg bool should-detect-modules: determines whether module names should
+        be derived from Maven POM or Ant build files (Default false)
+    :arg str pattern: Ant file-set pattern to scan for PMD files
+
+    Example:
+
+    .. literalinclude::
+        /../../tests/publishers/fixtures/dependency-check001.yaml
+       :language: yaml
+    """
+
+    dependency_check = XML.SubElement(
+        xml_parent,
+        'org.jenkinsci.plugins.DependencyCheck.DependencyCheckPublisher')
+
+    # trends
+    build_trends_publisher('[DEPENDENCYCHECK] ', dependency_check, data)
+
+
 def description_setter(parser, xml_parent, data):
     """yaml: description-setter
     This plugin sets the description for each build,
@@ -3795,6 +3850,8 @@ def pmd(parser, xml_parent, data):
     :arg bool do-not-resolve-relative-paths: (default false)
     :arg bool dont-compute-new: If set to false, computes new warnings based on
       the reference build (default true)
+    :arg bool use-previous-build-as-reference: determines whether to always
+        use the previous build as the reference build (Default false)
     :arg bool use-stable-build-as-reference: The number of new warnings will be
       calculated based on the last stable build, allowing reverts of unstable
       builds where the number of warnings was decreased. (default false)
@@ -3899,6 +3956,8 @@ def dry(parser, xml_parent, data):
     :arg bool do-not-resolve-relative-paths: (default false)
     :arg bool dont-compute-new: If set to false, computes new warnings based on
       the reference build (default true)
+    :arg bool use-previous-build-as-reference: determines whether to always
+        use the previous build as the reference build (Default false)
     :arg bool use-stable-build-as-reference: The number of new warnings will be
       calculated based on the last stable build, allowing reverts of unstable
       builds where the number of warnings was decreased. (default false)
