@@ -106,6 +106,24 @@
       "revId": "6ca8d61878f3e1b4413e7d92a6209ece6d51f829",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_03b36e99",
+        "filename": "tests/yamlparser/fixtures/complete-raw001.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-05-03T09:48:31Z",
+      "side": 1,
+      "message": "Yes, you need to install multiple scm plugin for it to work.\n\nBasically with single scm you get:\n\n```\n\u003cscm class\u003d\"someprovider\"\u003e\n   ...\n\u003c/scm\u003e\n```\n\nwith multiple you get:\n```\n\u003cscm class\u003d\"org.jenkinsci.plugins.multiplescms.MultiSCM\"\u003e\n  \u003cscms\u003e\n    \u003cscm class\u003d\"someprovider\"\u003e\n      ...\n     \u003c/scm\u003e\n    \u003cscm class\u003d\"someotherprovider\"\u003e\n      ...\n     \u003c/scm\u003e   \n  \u003c/scms\u003e\n\u003c/scm\u003e\n```\n\nwhich fits into how raw is implemented now.\n\nI\u0027ll update this review with tests for the multiple scm case so its more explicit.",
+      "parentUuid": "9aa53dc9_d85a1650",
+      "revId": "6ca8d61878f3e1b4413e7d92a6209ece6d51f829",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
