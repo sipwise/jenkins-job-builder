@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3acd31a7_277e8e19",
+        "filename": "etc/jenkins_jobs.ini-sample",
+        "patchSetId": 11
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-04T15:54:09Z",
+      "side": 1,
+      "message": "auth_token? Should match what you check for.",
+      "revId": "9f407575e9903c80d9e25b02fdf9d8de96aa1ce1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_07a0328f",
+        "filename": "tests/slack/fixtures/slack001.xml",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-04T15:54:09Z",
+      "side": 1,
+      "message": "Should this be \u0027dummy\u0027 and same for teamDomain above?",
+      "revId": "9f407575e9903c80d9e25b02fdf9d8de96aa1ce1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_e71bf619",
+        "filename": "tests/slack/fixtures/slack002.xml",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-04T15:54:09Z",
+      "side": 1,
+      "message": "Should this not be \u0027dummy\u0027? or am I missing something on where it gets set to \u0027auth_token\u0027 for the tests?",
+      "revId": "9f407575e9903c80d9e25b02fdf9d8de96aa1ce1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
