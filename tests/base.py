@@ -122,11 +122,9 @@ class BaseTestCase(object):
         if not self.in_filename:
             return
 
+        config = configparser.ConfigParser()
         if self.conf_filename is not None:
-            config = configparser.ConfigParser()
             config.readfp(open(self.conf_filename))
-        else:
-            config = {}
 
         expected_xml = self._read_utf8_content()
         yaml_content = self._read_yaml_content(self.in_filename)
