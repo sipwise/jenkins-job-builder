@@ -14,8 +14,8 @@
   </properties>
   <publishers>
     <jenkins.plugins.hipchat.HipChatNotifier>
-      <jenkinsUrl>url</jenkinsUrl>
-      <authToken>authtoken</authToken>
+      <jenkinsUrl>http://localhost:8080/</jenkinsUrl>
+      <authToken>dummy</authToken>
       <room/>
     </jenkins.plugins.hipchat.HipChatNotifier>
   </publishers>
