@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <builders>
+    <org.jenkinsci.plugins.beakerbuilderBeakerBuilder>
+      <JobSource class="org.jenkinsci.plugins.beakerbuilder.FileJobSource">
+        <jobPath>test.xml</jobPath>
+      </JobSource>
+      <downloadFiles>true</downloadFiles>
+    </org.jenkinsci.plugins.beakerbuilderBeakerBuilder>
+  </builders>
+</project>
