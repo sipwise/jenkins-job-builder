@@ -19,14 +19,12 @@ import copy
 import fnmatch
 import itertools
 import logging
-import pkg_resources
 
 import jenkins_jobs.local_yaml as local_yaml
 from jenkins_jobs.constants import MAGIC_MANAGE_STRING
 from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.registry import ModuleRegistry
 from jenkins_jobs.formatter import deep_format
-from jenkins_jobs.xml_config import XmlJob
 
 logger = logging.getLogger(__name__)
 
@@ -48,7 +46,6 @@ class YamlParser(object):
     def __init__(self, config=None, plugins_info=None):
         self.data = {}
         self.jobs = []
-        self.xml_jobs = []
         self.config = config
         self.registry = ModuleRegistry(self.config, plugins_info)
         self.path = ["."]
@@ -246,6 +243,8 @@ class YamlParser(object):
                 self.jobs.remove(job)
             seen.add(job['name'])
 
+        return self.jobs
+
     def expandYamlForTemplateJob(self, project, template, jobs_glob=None):
         dimensions = []
         template_name = template['name']
@@ -299,24 +298,3 @@ class YamlParser(object):
         # The \n\n is not hard coded, because they get stripped if the
         # project does not otherwise have a description.
         return "\n\n" + MAGIC_MANAGE_STRING
-
-    def generateXML(self):
-        for job in self.jobs:
-            self.xml_jobs.append(self.getXMLForJob(job))
-
-    def getXMLForJob(self, data):
-        kind = data.get('project-type', 'freestyle')
-
-        for ep in pkg_resources.iter_entry_points(
-                group='jenkins_jobs.projects', name=kind):
-            Mod = ep.load()
-            mod = Mod(self.registry)
-            xml = mod.root_xml(data)
-            self.gen_xml(xml, data)
-            job = XmlJob(xml, data['name'])
-            return job
-
-    def gen_xml(self, xml, data):
-        for module in self.registry.modules:
-            if hasattr(module, 'gen_xml'):
-                module.gen_xml(self, xml, data)

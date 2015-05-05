@@ -38,7 +38,7 @@ except ImportError:
     import mock  # noqa
 import jenkins_jobs.local_yaml as yaml
 from jenkins_jobs.parser import YamlParser
-from jenkins_jobs.xml_config import XmlJob
+from jenkins_jobs.xml_config import XmlJob, XmlBuilder
 from jenkins_jobs.modules import (project_flow,
                                   project_matrix,
                                   project_maven,
@@ -186,14 +186,15 @@ class SingleJobTestCase(BaseTestCase):
         parser.parse(self.in_filename)
 
         # Generate the XML tree
-        parser.expandYaml()
-        parser.generateXML()
+        jobs = parser.expandYaml()
+        xml_builder = XmlBuilder(parser.registry, data=parser.data)
+        xml_jobs = xml_builder.generateXML(jobs)
 
-        parser.xml_jobs.sort(key=operator.attrgetter('name'))
+        xml_jobs.sort(key=operator.attrgetter('name'))
 
         # Prettify generated XML
         pretty_xml = u"\n".join(job.output().decode('utf-8')
-                                for job in parser.xml_jobs)
+                                for job in xml_jobs)
 
         self.assertThat(
             pretty_xml,

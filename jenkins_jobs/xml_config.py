@@ -18,6 +18,7 @@
 import hashlib
 from xml.dom import minidom
 import xml.etree.ElementTree as XML
+import pkg_resources
 
 
 class XmlJob(object):
@@ -31,3 +32,45 @@ class XmlJob(object):
     def output(self):
         out = minidom.parseString(XML.tostring(self.xml, encoding='UTF-8'))
         return out.toprettyxml(indent='  ', encoding='utf-8')
+
+
+class XmlBuilder(object):
+    """
+    This class is intended to provide an API for generating Jenkins config XML
+    given a list of well-structured python dictionaries which map to specific
+    Jenkins configuration settings.
+    """
+
+    def __init__(self, module_registry, data=None):
+        self.registry = module_registry
+        if not data:
+            self.data = {}
+        else:
+            self.data = data
+
+    def generateXML(self, jobs):
+        """ Take a list of python dictionaries.
+            Return a list of XmlJob objects.
+        """
+        xml_jobs = []
+        for job in jobs:
+            xml_jobs.append(self.__getXMLForJob(job))
+
+        return xml_jobs
+
+    def __getXMLForJob(self, data):
+        kind = data.get('project-type', 'freestyle')
+
+        for ep in pkg_resources.iter_entry_points(
+                group='jenkins_jobs.projects', name=kind):
+            Mod = ep.load()
+            mod = Mod(self.registry)
+            xml = mod.root_xml(data)
+            self.__gen_xml(xml, data)
+            job = XmlJob(xml, data['name'])
+            return job
+
+    def __gen_xml(self, xml, data):
+        for module in self.registry.modules:
+            if hasattr(module, 'gen_xml'):
+                module.gen_xml(self, xml, data)
