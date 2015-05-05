@@ -21,10 +21,14 @@ import os
 import platform
 import sys
 import yaml
-import jenkins_jobs.version
 
 from jenkins_jobs.builder import Builder
 from jenkins_jobs.errors import JenkinsJobsException
+from jenkins_jobs.cli.subcommands import update as cli_update
+from jenkins_jobs.cli.subcommands import delete as cli_delete
+from jenkins_jobs.cli.subcommands import test as cli_test
+from jenkins_jobs.cli.subcommands import delete_all as cli_delete_all
+import jenkins_jobs.cli
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
@@ -86,71 +90,22 @@ def recurse_path(root, excludes=None):
 def create_parser():
 
     parser = argparse.ArgumentParser()
-    recursive_parser = argparse.ArgumentParser(add_help=False)
-    recursive_parser.add_argument('-r', '--recursive', action='store_true',
-                                  dest='recursive', default=False,
-                                  help='look for yaml files recursively')
-    recursive_parser.add_argument('-x', '--exclude', dest='exclude',
-                                  action='append', default=[],
-                                  help='paths to exclude when using recursive'
-                                       ' search, uses standard globbing.')
+    parser, recursive_parser = jenkins_jobs.cli.parse(parser, [])
+
     subparser = parser.add_subparsers(help='update, test or delete job',
                                       dest='command')
 
     # subparser: update
-    parser_update = subparser.add_parser('update', parents=[recursive_parser])
-    parser_update.add_argument('path', help='colon-separated list of paths to'
-                                            ' YAML files or directories')
-    parser_update.add_argument('names', help='name(s) of job(s)', nargs='*')
-    parser_update.add_argument('--delete-old', help='delete obsolete jobs',
-                               action='store_true',
-                               dest='delete_old', default=False,)
-    parser_update.add_argument('--workers', dest='n_workers', type=int,
-                               default=1, help='number of workers to use, 0 '
-                               'for autodetection and 1 for just one worker.')
+    cli_update.parse(subparser, [recursive_parser])
 
     # subparser: test
-    parser_test = subparser.add_parser('test', parents=[recursive_parser])
-    parser_test.add_argument('path', help='colon-separated list of paths to'
-                                          ' YAML files or directories',
-                             nargs='?', default=sys.stdin)
-    parser_test.add_argument('-p', dest='plugins_info_path', default=None,
-                             help='path to plugin info YAML file')
-    parser_test.add_argument('-o', dest='output_dir', default=sys.stdout,
-                             help='path to output XML')
-    parser_test.add_argument('name', help='name(s) of job(s)', nargs='*')
+    cli_test.parse(subparser, [recursive_parser])
 
     # subparser: delete
-    parser_delete = subparser.add_parser('delete', parents=[recursive_parser])
-    parser_delete.add_argument('name', help='name of job', nargs='+')
-    parser_delete.add_argument('-p', '--path', default=None,
-                               help='colon-separated list of paths to'
-                                    ' YAML files or directories')
+    cli_delete.parse(subparser, [recursive_parser])
 
     # subparser: delete-all
-    subparser.add_parser('delete-all',
-                         help='delete *ALL* jobs from Jenkins server, '
-                         'including those not managed by Jenkins Job '
-                         'Builder.')
-    parser.add_argument('--conf', dest='conf', help='configuration file')
-    parser.add_argument('-l', '--log_level', dest='log_level', default='info',
-                        help="log level (default: %(default)s)")
-    parser.add_argument(
-        '--ignore-cache', action='store_true',
-        dest='ignore_cache', default=False,
-        help='ignore the cache and update the jobs anyhow (that will only '
-             'flush the specified jobs cache)')
-    parser.add_argument(
-        '--flush-cache', action='store_true', dest='flush_cache',
-        default=False, help='flush all the cache entries before updating')
-    parser.add_argument('--version', dest='version', action='version',
-                        version=version(),
-                        help='show version')
-    parser.add_argument(
-        '--allow-empty-variables', action='store_true',
-        dest='allow_empty_variables', default=None,
-        help='Don\'t fail if any of the variables inside any string are not '
-        'defined, replace with empty string instead')
+    cli_delete_all.parse(subparser, [recursive_parser])
 
     return parser
 
@@ -311,10 +266,6 @@ def execute(options, config):
                             output=options.output_dir,
                             n_workers=1)
 
-
-def version():
-    return "Jenkins Job Builder version: %s" % \
-        jenkins_jobs.version.version_info.version_string()
 
 
 if __name__ == '__main__':
