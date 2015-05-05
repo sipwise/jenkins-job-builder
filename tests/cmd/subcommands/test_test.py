@@ -5,6 +5,7 @@ import yaml
 
 import jenkins
 
+import jenkins_jobs.config
 from jenkins_jobs import cmd
 from jenkins_jobs.errors import JenkinsJobsException
 from tests.base import mock
@@ -189,7 +190,7 @@ class TestTests(CmdTestsBase):
                                        os.path.join(self.fixtures_path,
                                                     'cmd-001.yaml'),
                                        'foo-job'])
-        config = cmd.setup_config_settings(args)
+        config = jenkins_jobs.config.load(args)
         self.assertEqual(config.get('jenkins', 'url'),
                          "http://test-jenkins.with.non.default.url:8080/")
 

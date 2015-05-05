@@ -4,8 +4,8 @@ from testtools.content import text_content
 from testscenarios.testcase import TestWithScenarios
 from six.moves import configparser, StringIO
 
-from jenkins_jobs import cmd
 from jenkins_jobs.registry import ModuleRegistry
+import jenkins_jobs.config
 
 
 class ModuleRegistryPluginInfoTestsWithScenarios(TestWithScenarios,
@@ -30,7 +30,7 @@ class ModuleRegistryPluginInfoTestsWithScenarios(TestWithScenarios,
         super(ModuleRegistryPluginInfoTestsWithScenarios, self).setUp()
 
         config = configparser.ConfigParser()
-        config.readfp(StringIO(cmd.DEFAULT_CONF))
+        config.readfp(StringIO(jenkins_jobs.config.DEFAULT_CONF))
 
         plugin_info = [{'shortName': "HerpDerpPlugin",
                         'longName': "Blah Blah Blah Plugin"

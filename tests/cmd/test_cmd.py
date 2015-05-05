@@ -2,6 +2,7 @@ import os
 from six.moves import configparser, StringIO
 import testtools
 from jenkins_jobs import cmd
+import jenkins_jobs.config
 from tests.base import mock
 
 
@@ -23,7 +24,7 @@ class CmdTestsBase(testtools.TestCase):
         self.cache_patch.start()
 
         self.config = configparser.ConfigParser()
-        self.config.readfp(StringIO(cmd.DEFAULT_CONF))
+        self.config.readfp(StringIO(jenkins_jobs.config.DEFAULT_CONF))
 
     def tearDown(self):
         self.cache_patch.stop()

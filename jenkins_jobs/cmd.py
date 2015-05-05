@@ -14,7 +14,6 @@
 # under the License.
 
 import argparse
-from six.moves import configparser, StringIO
 import fnmatch
 import logging
 import os
@@ -22,36 +21,19 @@ import platform
 import sys
 import yaml
 
+from six.moves import configparser
+
 from jenkins_jobs.builder import Builder
-from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.cli.subcommands import update as cli_update
 from jenkins_jobs.cli.subcommands import delete as cli_delete
 from jenkins_jobs.cli.subcommands import test as cli_test
 from jenkins_jobs.cli.subcommands import delete_all as cli_delete_all
 import jenkins_jobs.cli
+import jenkins_jobs.config
+from jenkins_jobs.errors import JenkinsJobsException
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
-
-DEFAULT_CONF = """
-[job_builder]
-keep_descriptions=False
-ignore_cache=False
-recursive=False
-exclude=.*
-allow_duplicates=False
-allow_empty_variables=False
-
-[jenkins]
-url=http://localhost:8080/
-user=
-password=
-query_plugins_info=True
-
-[hipchat]
-authtoken=dummy
-send-as=Jenkins
-"""
 
 
 def confirm(question):
@@ -95,16 +77,12 @@ def create_parser():
     subparser = parser.add_subparsers(help='update, test or delete job',
                                       dest='command')
 
-    # subparser: update
     cli_update.parse(subparser, [recursive_parser])
 
-    # subparser: test
     cli_test.parse(subparser, [recursive_parser])
 
-    # subparser: delete
     cli_delete.parse(subparser, [recursive_parser])
 
-    # subparser: delete-all
     cli_delete_all.parse(subparser, [recursive_parser])
 
     return parser
@@ -127,39 +105,11 @@ def main(argv=None):
                                     logger.getEffectiveLevel())
         logger.setLevel(options.log_level)
 
-    config = setup_config_settings(options)
+    config = jenkins_jobs.config.load(options)
     execute(options, config)
 
 
-def setup_config_settings(options):
-
-    conf = '/etc/jenkins_jobs/jenkins_jobs.ini'
-    if options.conf:
-        conf = options.conf
-    else:
-        # Fallback to script directory
-        localconf = os.path.join(os.path.dirname(__file__),
-                                 'jenkins_jobs.ini')
-        if os.path.isfile(localconf):
-            conf = localconf
-    config = configparser.ConfigParser()
-    # Load default config always
-    config.readfp(StringIO(DEFAULT_CONF))
-    if os.path.isfile(conf):
-        logger.debug("Reading config from {0}".format(conf))
-        conffp = open(conf, 'r')
-        config.readfp(conffp)
-    elif options.command == 'test':
-        logger.debug("Not requiring config for test output generation")
-    else:
-        raise JenkinsJobsException(
-            "A valid configuration file is required when not run as a test"
-            "\n{0} is not a valid .ini file".format(conf))
-
-    return config
-
-
-def execute(options, config):
+def munge_config_options(options, config):
     logger.debug("Config: {0}".format(config))
 
     # check the ignore_cache setting: first from command line,
@@ -204,14 +154,6 @@ def execute(options, config):
                    'allow_empty_variables',
                    str(options.allow_empty_variables))
 
-    builder = Builder(config.get('jenkins', 'url'),
-                      user,
-                      password,
-                      config,
-                      ignore_cache=ignore_cache,
-                      flush_cache=options.flush_cache,
-                      plugins_list=plugins_info)
-
     if getattr(options, 'path', None):
         if options.path == sys.stdin:
             logger.debug("Input file is stdin")
@@ -237,6 +179,21 @@ def execute(options, config):
             else:
                 paths.append(path)
         options.path = paths
+
+    builder = Builder(config.get('jenkins', 'url'),
+                      user,
+                      password,
+                      config,
+                      ignore_cache=ignore_cache,
+                      flush_cache=options.flush_cache,
+                      plugins_list=plugins_info)
+
+    return builder, options, config
+
+
+def execute(options, config):
+
+    builder, options, config = munge_config_options(options, config)
 
     if options.command == 'delete':
         for job in options.name:
@@ -265,7 +222,6 @@ def execute(options, config):
         builder.update_jobs(options.path, options.name,
                             output=options.output_dir,
                             n_workers=1)
-
 
 
 if __name__ == '__main__':
