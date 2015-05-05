@@ -16,6 +16,24 @@
       "revId": "9a32ea02cc0315f589d4e8743c82237a30c1f889",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3acd31a7_4716034d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-05T15:07:21Z",
+      "side": 1,
+      "message": "Done, code has been moved to the helpers module along with the other common functions that generate xml for multiple modules and has been replaced with an exception that knows how to correct print an error message for invalid attributes.",
+      "parentUuid": "9a80dd14_8a9d195c",
+      "revId": "9a32ea02cc0315f589d4e8743c82237a30c1f889",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
