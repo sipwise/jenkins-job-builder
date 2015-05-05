@@ -1,7 +1,6 @@
 import os
-from six.moves import configparser, StringIO
 import testtools
-from jenkins_jobs import cmd
+from jenkins_jobs.cli import entry
 from tests.base import LoggingFixture
 from tests.base import mock
 
@@ -9,7 +8,6 @@ from tests.base import mock
 class CmdTestsBase(LoggingFixture, testtools.TestCase):
 
     fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
-    parser = cmd.create_parser()
 
     def setUp(self):
         super(CmdTestsBase, self).setUp()
@@ -24,8 +22,8 @@ class CmdTestsBase(LoggingFixture, testtools.TestCase):
         self.cache_mock = cache_patch.start()
         self.addCleanup(cache_patch.stop)
 
-        self.config = configparser.ConfigParser()
-        self.config.readfp(StringIO(cmd.DEFAULT_CONF))
+        self.default_config_file = os.path.join(self.fixtures_path,
+                                                'empty_builder.ini')
 
 
 class CmdTests(CmdTestsBase):
@@ -35,4 +33,4 @@ class CmdTests(CmdTestsBase):
         User passes no args, should fail with SystemExit
         """
         with mock.patch('sys.stderr'):
-            self.assertRaises(SystemExit, cmd.main, [])
+            self.assertRaises(SystemExit, entry.JenkinsJobs, [])
