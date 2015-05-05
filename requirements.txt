@@ -3,3 +3,4 @@ six>=1.5.2
 PyYAML
 python-jenkins>=0.4.8
 pbr>=0.8.2,<2.0
+stevedore==1.8.0
