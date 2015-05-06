@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aca2d91_07bbef73",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-06T14:36:14Z",
+      "side": 1,
+      "message": "This is where the problem was triggered, we changed from returning all jobs parsed to only returning those changed. Question is should we still continue to return all jobs parsed here or only those updated?",
+      "revId": "0fbebb88e4046885a0f3279a6538c1129e3fa44f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
