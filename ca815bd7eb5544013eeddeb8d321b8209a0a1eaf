@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aca2d91_563e52b9",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1953,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-06T01:26:11Z",
+      "side": 1,
+      "message": "Just need to wrap this with a try/except and raise a MissingAttributeError when \u0027repo-name\u0027 is not in data:\n\n try:\n     XML.SubElement(db, \u0027repoName\u0027).text \u003d str(data[\u0027repo-name\u0027])\n except KeyError:\n     raise MissingAttributeError(\u0027repo-name\u0027)",
+      "revId": "ca815bd7eb5544013eeddeb8d321b8209a0a1eaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
