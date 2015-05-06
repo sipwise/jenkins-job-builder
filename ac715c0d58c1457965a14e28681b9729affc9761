@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aca2d91_2bf90d81",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-06T17:26:24Z",
+      "side": 1,
+      "message": "Definitely not testing this code path as otherwise the tests would have failed with this change.",
+      "revId": "ac715c0d58c1457965a14e28681b9729affc9761",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
