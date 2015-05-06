@@ -258,9 +258,11 @@ class Builder(object):
             else:
                 self.parser.parse(in_file)
 
-    def delete_old_managed(self, keep):
+    def delete_old_managed(self, keep=None):
         jobs = self.jenkins.get_jobs()
         deleted_jobs = 0
+        if keep is None:
+            keep = [job.name for job in self.parser.xml_jobs]
         for job in jobs:
             if job['name'] not in keep and \
                     self.jenkins.is_managed(job['name']):
@@ -347,4 +349,4 @@ class Builder(object):
                 self.cache.set(job.name, md5)
             else:
                 logger.debug("'{0}' has not changed".format(job.name))
-        return self.parser.xml_jobs, updated_jobs
+        return updated_jobs
