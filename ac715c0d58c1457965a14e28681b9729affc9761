@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "1aca2d91_25322311",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-07T21:12:06Z",
+      "side": 1,
+      "message": "Seems like a good change to me, Builder object by default should have a clear idea of what jobs should be kept. In fact I\u0027d almost be tempted to suggest removing the \u0027keep\u0027 param altogether.",
+      "revId": "ac715c0d58c1457965a14e28681b9729affc9761",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_65949be1",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-07T21:12:06Z",
+      "side": 1,
+      "message": "I think it\u0027s still useful to return list of jobs modified or changed here.",
+      "revId": "ac715c0d58c1457965a14e28681b9729affc9761",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aca2d91_2bf90d81",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 1
