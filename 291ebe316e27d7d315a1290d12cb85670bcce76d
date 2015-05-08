@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aca2d91_f2ccc66b",
+        "filename": "jenkins_jobs/formatter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-08T20:35:30Z",
+      "side": 1,
+      "message": "So the main question I expect around here is how what to use as the placeholder for separating the variable name from the default value.\n\nAt the moment it\u0027s using \u0027:\u0027 here, but I think that \u0027|\u0027 would also be acceptable and only requires changing the regex slightly.",
+      "revId": "291ebe316e27d7d315a1290d12cb85670bcce76d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
