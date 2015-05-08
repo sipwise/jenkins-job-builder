@@ -140,6 +140,7 @@ class CacheStorage(object):
 class Jenkins(object):
     def __init__(self, url, user, password):
         self.jenkins = jenkins.Jenkins(url, user, password)
+        self.jobs = None
 
     def update_job(self, job_name, xml):
         if self.is_job(job_name):
@@ -149,7 +150,15 @@ class Jenkins(object):
             logger.info("Creating jenkins job {0}".format(job_name))
             self.jenkins.create_job(job_name, xml)
 
+    def _get_job_list(self):
+        return set(job.name for job in self.get_jobs())
+
     def is_job(self, job_name):
+        # first use cache
+        if job_name in self._get_job_list():
+            return True
+
+        # if not exists, use jenkins
         return self.jenkins.job_exists(job_name)
 
     def get_job_md5(self, job_name):
@@ -181,8 +190,10 @@ class Jenkins(object):
 
         return plugins_list
 
-    def get_jobs(self):
-        return self.jenkins.get_jobs()
+    def get_jobs(self, cache=True):
+        if self.jobs is None:
+            self.jobs = self.jenkins.get_jobs()
+        return self.jobs
 
     def is_managed(self, job_name):
         xml = self.jenkins.get_job_config(job_name)
