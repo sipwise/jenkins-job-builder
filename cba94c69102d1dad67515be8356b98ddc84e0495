@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aca2d91_3acc6769",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-08T13:16:59Z",
+      "side": 1,
+      "message": "Might be worth to retain the ability to return the original data as a cache instead of building just a list (depends on whether to return the cached jobs list below or not). Possibly might be worth doing something like\n\n return {job.name: job for (job) in self.jenkins.get_jobs()}\n\nAt the very least, if it makes sense to keep get_jobs() as is and not cache the job objects themselves use a set:\n\n return set(job.name for job in self.get_jobs())\n\nThat way the check if the \u0027job_name\u0027 is in self.jobs will work as expected below without needing to search a list each time (hash lookups are generally better) and if it\u0027s better to cache the objects as well (looks like only the delete functions would benefit) could use the dict comprehension also change \u0027get_jobs() to return \u0027self.jobs.values()\u0027 and take an optional argument to force refreshing of the cache by calling this method if set to True.\n\nBtw, don\u0027t forget to move this down, generally better to keep the __init__ at the top for consistency. I\u0027d probably put it alongside the get_jobs call or if making it private, first one after the __init__ method.\n\nAlso if you have \u0027get_jobs()\u0027 as the main entry point consider making this a private method by calling it \u0027_get_job_list()\u0027 to be used by the object itself.",
+      "revId": "cba94c69102d1dad67515be8356b98ddc84e0495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_daffb3a8",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-08T13:16:59Z",
+      "side": 1,
+      "message": "Should we modify the usage here as well to use cached data unless explicitly requested not to.",
+      "revId": "cba94c69102d1dad67515be8356b98ddc84e0495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
