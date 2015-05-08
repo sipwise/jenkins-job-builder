@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aca2d91_60a0f243",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-08T14:20:31Z",
+      "side": 1,
+      "message": "Think there may be some confusion here, this will result in recreating the set each time is_job() is called.\n\nThe options as I see them:\n\n* keep get_jobs() as it was and populate self.jobs (or other named var) on first access using set() i.e. check if None and create set then return set.\n* modify get_jobs() to use cached data and store the cache in a variable using a dict comprehsion so that you can lookup the hash for the name and return the dict.values() when someone wishes to iterate over the list of jobs and calls get_jobs().\n\nIn either case to do lazy evaluation I would use a property decorator with the following:\n\n @property\n def jobs(self):\n     if self._jobs \u003d None:\n         # populate as needed\n     return self._jobs\n\nThere are ways to replace the function with the evaluated contents at runtime for even lower overhead see http://stackoverflow.com/questions/3012421/python-lazy-property-decorator but I\u0027m not sure optimizing the lazy evaluation in this case is quite worth it.\n\nBelieve https://pypi.python.org/pypi/lazy implements the most optimized version under a BSD license if we decide it\u0027s of interest in the future.",
+      "revId": "8b9acbde7bb565a8a0ae92a3987124c58b2f44b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_6bcb33a6",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-08T14:20:31Z",
+      "side": 1,
+      "message": "Seems like you should move the check on the property to be inside a lazy property evaluator and use the value of cache to determine whether return the cached value or refresh and return latest.",
+      "revId": "8b9acbde7bb565a8a0ae92a3987124c58b2f44b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
