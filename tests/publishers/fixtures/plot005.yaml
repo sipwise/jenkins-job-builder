@@ -1,0 +1,15 @@
+publishers:
+  - plot:
+      - title: 'Keep Records'
+        group: 'keepRecords'
+        yaxis: Y
+        csv-file-name: 'persisted.csv'
+        keep-records: true
+        num-builds: '1440'
+        series:
+            - file: 'data.csv'
+              label: ''
+              url: ''
+              format: 'csv'
+              display-table: false
+              inclusion-flag: 'off'

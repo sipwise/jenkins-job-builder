@@ -4,8 +4,8 @@
     <hudson.plugins.plot.PlotPublisher>
       <plots>
         <hudson.plugins.plot.Plot>
-          <title>Sample graph</title>
-          <yaxis/>
+          <title>Keep Records</title>
+          <yaxis>Y</yaxis>
           <csvFileName>persisted.csv</csvFileName>
           <series>
             <hudson.plugins.plot.CSVSeries>
@@ -17,10 +17,10 @@
               <fileType>csv</fileType>
             </hudson.plugins.plot.CSVSeries>
           </series>
-          <group>bench</group>
+          <group>keepRecords</group>
           <useDescr>false</useDescr>
-          <keepRecords>false</keepRecords>
-          <numBuilds/>
+          <keepRecords>true</keepRecords>
+          <numBuilds>1440</numBuilds>
           <style>line</style>
         </hudson.plugins.plot.Plot>
       </plots>
