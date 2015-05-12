@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a0c5dc1_75d82bf0",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-12T10:47:20Z",
+      "side": 1,
+      "message": "Probably need to invalidate jobs_list as well at this point or it\u0027ll never regenerate the set for the new list of jobs.",
+      "revId": "082b81542c8ff31a00379c502a7c8883702e942e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
