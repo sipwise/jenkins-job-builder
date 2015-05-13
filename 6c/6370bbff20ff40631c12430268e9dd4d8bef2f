@@ -1,0 +1,10 @@
+Code-Review+2: Monty Taylor <mordred@inaugust.com>
+Workflow+1: Monty Taylor <mordred@inaugust.com>
+Verified+2: Jenkins
+Code-Review+2: Darragh Bailey <daragh.bailey@gmail.com>
+Code-Review+1: Ricardo Carrillo Cruz <ricardo.carrillo.cruz@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 13 May 2015 12:06:40 +0000
+Reviewed-on: https://review.openstack.org/181364
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
