@@ -1,0 +1,5 @@
+project-type: maven
+reporters:
+  - logstash:
+      max-lines: 2000
+      fail-build: true
