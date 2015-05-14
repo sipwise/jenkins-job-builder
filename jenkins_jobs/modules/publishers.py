@@ -4283,6 +4283,34 @@ def display_upstream_changes(parser, xml_parent, data):
         'DisplayUpstreamChangesRecorder')
 
 
+def logstash(parser, xml_parent, data):
+    """yaml: logstash
+    Send logs to logstash
+
+    :arg num max-lines: The maximum number of log lines to send to Logstash.
+        ( default 1000 )
+    :arg bool fail-build: Mark build as failed if this step fails.
+        ( default false )
+
+    Minimal Example:
+
+    .. literalinclude::  /../../tests/publishers/fixtures/logstash-min.yaml
+
+    Full Example:
+
+    .. literalinclude::  /../../tests/publishers/fixtures/logstash-full.yaml
+
+    """
+
+    logstash = XML.SubElement(xml_parent,
+                              'jenkins.plugins.logstash.LogstashNotifier')
+    XML.SubElement(logstash, 'maxLines').text = str(
+        data.get('max-lines', 1000))
+
+    XML.SubElement(logstash, 'failBuild').text = str(
+        data.get('fail-build', False))
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
