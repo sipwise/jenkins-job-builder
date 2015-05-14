@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_36e8597c",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1864,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-14T23:43:19Z",
+      "side": 1,
+      "message": "These look like required parameters?  then probably check for it by adding..\n\n  try :\n     XML.SubElement(builder, \u0027siteName\u0027).text \u003d str(data[\u0027ssh-user-ip\u0027])\n  except KeyError:\n     raise MissingAttributeError(\u0027ssh-user-ip\u0027)",
+      "revId": "464dc690dbe4e38ff97378671645d73200535c71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
