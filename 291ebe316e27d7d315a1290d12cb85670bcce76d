@@ -16,6 +16,23 @@
       "revId": "291ebe316e27d7d315a1290d12cb85670bcce76d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_5b654043",
+        "filename": "tests/yamlparser/fixtures/default_template_variables.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-14T23:22:43Z",
+      "side": 1,
+      "message": "shouldn\u0027t this say \u0027Goodbye World:Hello World\u0027?",
+      "revId": "291ebe316e27d7d315a1290d12cb85670bcce76d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
