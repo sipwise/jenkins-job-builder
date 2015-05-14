@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_c9675524",
+        "filename": "tests/yamlparser/fixtures/include002.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-14T00:28:15Z",
+      "side": 1,
+      "message": "properties doesn\u0027t seem necessary for this test. could we remove?",
+      "revId": "d445e89c930fb229ff4e659fdc9e72590f84bc28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_c93075a1",
+        "filename": "tests/yamlparser/fixtures/include002.yaml.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-14T00:28:15Z",
+      "side": 1,
+      "message": "do we need \u0027copy-files\u0027 for this test? It doesn\u0027t seem related to this fix.",
+      "revId": "d445e89c930fb229ff4e659fdc9e72590f84bc28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_091d6dbd",
+        "filename": "tests/yamlparser/fixtures/include002_2.yaml.inc",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-14T00:28:15Z",
+      "side": 1,
+      "message": "Only 1 \u0027pre-scm-buildstep\u0027 step is needed for this test so maybe remove the reset so it\u0027s easier to follow what the output should look like?",
+      "revId": "d445e89c930fb229ff4e659fdc9e72590f84bc28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
