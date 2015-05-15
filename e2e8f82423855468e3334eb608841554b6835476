@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_9394b137",
+        "filename": "jenkins_jobs/modules/reporters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 16360
+      },
+      "writtenOn": "2015-05-15T09:59:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a016987_a0175fec",
+      "revId": "e2e8f82423855468e3334eb608841554b6835476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_40266b69",
         "filename": "jenkins_jobs/modules/reporters.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_93e271d4",
+        "filename": "jenkins_jobs/modules/reporters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 16360
+      },
+      "writtenOn": "2015-05-15T09:59:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a016987_40266b69",
+      "revId": "e2e8f82423855468e3334eb608841554b6835476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_608de730",
         "filename": "tests/reporters/fixtures/logstash-min.yaml",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2015-05-14T22:40:06Z",
       "side": 1,
       "message": "default project type is freestyle.  since maven is already tested in your full yaml test then maybe just remove this to test freestyle?",
+      "revId": "e2e8f82423855468e3334eb608841554b6835476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_b38fad22",
+        "filename": "tests/reporters/fixtures/logstash-min.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 16360
+      },
+      "writtenOn": "2015-05-15T09:59:57Z",
+      "side": 1,
+      "message": "Reporters can only used with maven projects at the moment. I will be sending a separate patch to remove that constraint.",
+      "parentUuid": "7a016987_608de730",
       "revId": "e2e8f82423855468e3334eb608841554b6835476",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
