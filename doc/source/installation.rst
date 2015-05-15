@@ -95,6 +95,11 @@ job_builder section
   allowing you to use those strings without having to define all the keys it
   might be using.
 
+**fail_on_encoding_error**
+  (Optional) When processing definitions containing characters in a encoding
+  not handled by the system encoding this setting controls whether just an
+  error is logged or if JJB will abort. True by default.
+
 
 jenkins section
 ^^^^^^^^^^^^^^^

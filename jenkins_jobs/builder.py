@@ -250,7 +250,7 @@ class Builder(object):
 
         files_to_process = []
         for path in fn:
-            if os.path.isdir(path):
+            if not hasattr(path, 'read') and os.path.isdir(path):
                 files_to_process.extend([os.path.join(path, f)
                                          for f in os.listdir(path)
                                          if (f.endswith('.yml')
@@ -262,6 +262,9 @@ class Builder(object):
         # definitions of macros and templates when loading all from top-level
         unique_files = []
         for f in files_to_process:
+            if hasattr(f, 'read'):
+                unique_files.append(f)
+                continue
             rpf = os.path.realpath(f)
             if rpf not in unique_files:
                 unique_files.append(rpf)
@@ -344,7 +347,7 @@ class Builder(object):
                     logger.info("Job name:  %s", job.name)
                     logger.debug("Writing XML to '{0}'".format(output))
                     # output is a text file, write() expects unicode
-                    xml = job.output().decode('utf-8')
+                    xml = job.output()
                     try:
                         output.write(xml)
                     except IOError as exc:
@@ -359,7 +362,7 @@ class Builder(object):
                 output_fn = os.path.join(output, job.name)
                 logger.debug("Writing XML to '{0}'".format(output_fn))
                 with codecs.open(output_fn, 'w', 'utf-8') as f:
-                    f.write(job.output().decode('utf-8'))
+                    f.write(job.output())
                 continue
             md5 = job.md5()
             if (self.jenkins.is_job(job.name)

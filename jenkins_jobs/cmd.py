@@ -15,6 +15,7 @@
 
 import argparse
 import codecs
+import locale
 from six.moves import configparser, StringIO
 import fnmatch
 import logging
@@ -38,6 +39,7 @@ recursive=False
 exclude=.*
 allow_duplicates=False
 allow_empty_variables=False
+fail_on_encoding_error=True
 
 [jenkins]
 url=http://localhost:8080/
@@ -82,6 +84,30 @@ def recurse_path(root, excludes=None):
         pathlist.extend([os.path.join(root, path) for path in dirs])
 
     return pathlist
+
+
+def wrap_stream(stream, fail_on_error=True):
+
+    replace_handler = codecs.lookup_error('replace')
+
+    def _handle_error(exception):
+        logger.error("Encoding Error: problem in converting for stdin/stdout. "
+                     "Please check the input/output for encoding mistakes.")
+        if fail_on_error:
+            return codecs.lookup_error('strict')(exception)
+
+        # skipping logging error message after the first time
+        codecs.register_error('custom', replace_handler)
+
+        return replace_handler(exception)
+
+    codecs.register_error('custom', _handle_error)
+    encoding = stream.encoding or locale.getpreferredencoding()
+
+    if hasattr(stream, 'buffer'):
+        stream = stream.buffer
+
+    return codecs.EncodedFile(stream, 'utf-8', encoding, 'custom')
 
 
 def create_parser():
@@ -256,7 +282,7 @@ def execute(options, config):
                       plugins_list=plugins_info)
 
     if getattr(options, 'path', None):
-        if options.path == sys.stdin:
+        if hasattr(options.path, 'read'):
             logger.debug("Input file is stdin")
             if options.path.isatty():
                 key = 'CTRL+Z' if platform.system() == 'Windows' else 'CTRL+D'
@@ -264,22 +290,35 @@ def execute(options, config):
                     "Reading configuration from STDIN. Press %s to end input.",
                     key)
 
-        # take list of paths
-        options.path = options.path.split(os.pathsep)
+            options.path = [wrap_stream(
+                options.path, config.getboolean(
+                    'job_builder', 'fail_on_encoding_error'))]
 
-        do_recurse = (getattr(options, 'recursive', False) or
-                      config.getboolean('job_builder', 'recursive'))
+        else:
+            # take list of paths
+            options.path = options.path.split(os.pathsep)
 
-        excludes = [e for elist in options.exclude
-                    for e in elist.split(os.pathsep)] or \
-            config.get('job_builder', 'exclude').split(os.pathsep)
-        paths = []
-        for path in options.path:
-            if do_recurse and os.path.isdir(path):
-                paths.extend(recurse_path(path, excludes))
-            else:
-                paths.append(path)
-        options.path = paths
+            do_recurse = (getattr(options, 'recursive', False) or
+                          config.getboolean('job_builder', 'recursive'))
+
+            excludes = [e for elist in options.exclude
+                        for e in elist.split(os.pathsep)] or \
+                config.get('job_builder', 'exclude').split(os.pathsep)
+            paths = []
+            for path in options.path:
+                if do_recurse and os.path.isdir(path):
+                    paths.extend(recurse_path(path, excludes))
+                else:
+                    paths.append(path)
+            options.path = paths
+
+    # if output is a writer type object, make sure to wrap it in an codecs
+    # writer object to ensure python 2 handling of unicode matches python 3
+    if getattr(options, 'output_dir', None):
+        if hasattr(options.output_dir, 'write'):
+            options.output_dir = wrap_stream(
+                options.output_dir, config.getboolean(
+                    'job_builder', 'fail_on_encoding_error'))
 
     if options.command == 'delete':
         for job in options.name:

@@ -5,6 +5,7 @@ include_path=.:scripts:~/git/
 recursive=False
 exclude=.*:manual:./development
 allow_duplicates=False
+fail_on_encoding_error=True
 
 [jenkins]
 user=jenkins
