@@ -203,7 +203,7 @@ class LocalLoader(OrderedConstructor, yaml.Loader):
 
     def _include_tag(self, loader, node):
         filename = self._find_file(loader.construct_yaml_str(node))
-        with open(filename, 'r') as f:
+        with codecs.open(filename, 'r', 'utf-8') as f:
             data = yaml.load(f, functools.partial(LocalLoader,
                                                   search_path=self.search_path
                                                   ))

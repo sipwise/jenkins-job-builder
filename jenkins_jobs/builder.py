@@ -15,6 +15,7 @@
 
 # Manage jobs in Jenkins server
 
+import codecs
 import errno
 import os
 import operator
@@ -89,7 +90,7 @@ class CacheStorage(object):
         if flush or not os.path.isfile(self.cachefilename):
             self.data = {}
         else:
-            with open(self.cachefilename, 'r') as yfile:
+            with codecs.open(self.cachefilename, 'r', 'utf-8') as yfile:
                 self.data = yaml.load(yfile)
         logger.debug("Using cache: '{0}'".format(self.cachefilename))
 
@@ -123,7 +124,7 @@ class CacheStorage(object):
         # due to an exception occurring in the __init__
         if getattr(self, 'data', None) is not None:
             try:
-                with open(self.cachefilename, 'w') as yfile:
+                with codecs.open(self.cachefilename, 'w', 'utf-8') as yfile:
                     self._yaml.dump(self.data, yfile)
             except Exception as e:
                 self._logger.error("Failed to write to cache file '%s' on "
@@ -355,7 +356,7 @@ class Builder(object):
 
                 output_fn = os.path.join(output, job.name)
                 logger.debug("Writing XML to '{0}'".format(output_fn))
-                f = open(output_fn, 'w')
+                f = codecs.open(output_fn, 'w', 'utf-8')
                 f.write(job.output())
                 f.close()
                 continue

@@ -114,7 +114,7 @@ class BaseTestCase(object):
         return xml_content
 
     def _read_yaml_content(self, filename):
-        with open(filename, 'r') as yaml_file:
+        with codecs.open(filename, 'r', 'utf-8') as yaml_file:
             yaml_content = yaml.load(yaml_file)
         return yaml_content
 
@@ -124,7 +124,7 @@ class BaseTestCase(object):
 
         if self.conf_filename is not None:
             config = configparser.ConfigParser()
-            config.readfp(open(self.conf_filename))
+            config.readfp(codecs.open(self.conf_filename, 'r', 'utf-8'))
         else:
             config = {}
 
