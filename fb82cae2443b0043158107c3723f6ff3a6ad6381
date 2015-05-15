@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_b07c2a73",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-05-15T20:40:17Z",
+      "side": 1,
+      "message": "How do you check the system configured socket timeout?\n\nMaybe it\u0027s worth documenting how to check so that the user can find an clear answer to what the timeout is?",
+      "revId": "fb82cae2443b0043158107c3723f6ff3a6ad6381",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
