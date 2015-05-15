@@ -208,7 +208,8 @@ class TestTests(CmdTestsBase):
         with mock.patch('sys.stdout'):
             cmd.execute(args, self.config)   # probably better to fail here
 
-        with open(plugins_info_stub_yaml_file, 'r') as yaml_file:
+        with codecs.open(plugins_info_stub_yaml_file,
+                         'r', 'utf-8') as yaml_file:
             plugins_info_list = yaml.load(yaml_file)
 
         registry_mock.assert_called_with(self.config, plugins_info_list)
