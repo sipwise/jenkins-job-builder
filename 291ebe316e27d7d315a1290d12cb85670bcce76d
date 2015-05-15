@@ -33,6 +33,24 @@
       "revId": "291ebe316e27d7d315a1290d12cb85670bcce76d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_ae2174b6",
+        "filename": "tests/yamlparser/fixtures/default_template_variables.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-15T16:29:10Z",
+      "side": 1,
+      "message": "Should only say one or the other, not both. \u0027Goodbye World\u0027 is the provided value, while \u0027Hello World\u0027 is the default to be used if no value was provided.",
+      "parentUuid": "7a016987_5b654043",
+      "revId": "291ebe316e27d7d315a1290d12cb85670bcce76d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
