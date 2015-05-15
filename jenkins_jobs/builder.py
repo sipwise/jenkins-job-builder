@@ -32,6 +32,7 @@ import logging
 
 from jenkins_jobs.constants import MAGIC_MANAGE_STRING
 from jenkins_jobs.parser import YamlParser
+from jenkins_jobs import utils
 
 logger = logging.getLogger(__name__)
 
@@ -239,8 +240,9 @@ class Builder(object):
     def load_files(self, fn):
         self.parser = YamlParser(self.global_config, self.plugins_list)
 
-        # handle deprecated behavior
-        if not hasattr(fn, '__iter__'):
+        # handle deprecated behavior, and check that it's not a file like
+        # object as these may implement the '__iter__' attribute.
+        if not hasattr(fn, '__iter__') or hasattr(fn, 'read'):
             logger.warning(
                 'Passing single elements for the `fn` argument in '
                 'Builder.load_files is deprecated. Please update your code '
@@ -250,7 +252,7 @@ class Builder(object):
 
         files_to_process = []
         for path in fn:
-            if os.path.isdir(path):
+            if not hasattr(path, 'read') and os.path.isdir(path):
                 files_to_process.extend([os.path.join(path, f)
                                          for f in os.listdir(path)
                                          if (f.endswith('.yml')
@@ -262,6 +264,9 @@ class Builder(object):
         # definitions of macros and templates when loading all from top-level
         unique_files = []
         for f in files_to_process:
+            if hasattr(f, 'read'):
+                unique_files.append(f)
+                continue
             rpf = os.path.realpath(f)
             if rpf not in unique_files:
                 unique_files.append(rpf)
@@ -343,8 +348,9 @@ class Builder(object):
                     # `output` is a file-like object
                     logger.info("Job name:  %s", job.name)
                     logger.debug("Writing XML to '{0}'".format(output))
-                    # output is a text file, write() expects unicode
-                    xml = job.output().decode('utf-8')
+                    xml = job.output()
+                    # handle writing out unicode
+                    output = utils.wrap_stream(output)
                     try:
                         output.write(xml)
                     except IOError as exc:
