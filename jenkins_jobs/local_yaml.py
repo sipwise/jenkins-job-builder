@@ -183,18 +183,18 @@ class LocalLoader(OrderedConstructor, LocalAnchorLoader):
 
         # use the load function provided in this module
         import local_yaml
-        data = local_yaml.load(open(fn))
+        data = local_yaml.load(codecs.open(fn, 'r', 'utf-8'))
 
 
         # Loading by providing the alternate class to the default yaml load
         from local_yaml import LocalLoader
-        data = yaml.load(open(fn), LocalLoader)
+        data = yaml.load(codecs.open(fn, 'r', 'utf-8'), LocalLoader)
 
         # Loading with a search path
         from local_yaml import LocalLoader
         import functools
-        data = yaml.load(open(fn), functools.partial(LocalLoader,
-                        search_path=['path']))
+        data = yaml.load(codecs.open(fn, 'r', 'utf-8'),
+                         functools.partial(LocalLoader, search_path=['path']))
 
     """
 
@@ -243,7 +243,7 @@ class LocalLoader(OrderedConstructor, LocalAnchorLoader):
 
     def _include_tag(self, loader, node):
         filename = self._find_file(loader.construct_yaml_str(node))
-        with open(filename, 'r') as f:
+        with codecs.open(filename, 'r', 'utf-8') as f:
             data = yaml.load(f, functools.partial(LocalLoader,
                                                   search_path=self.search_path
                                                   ))
