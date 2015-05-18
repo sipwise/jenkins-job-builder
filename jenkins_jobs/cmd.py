@@ -37,6 +37,7 @@ recursive=False
 exclude=.*
 allow_duplicates=False
 allow_empty_variables=False
+waite_time=0
 
 [jenkins]
 url=http://localhost:8080/
@@ -227,6 +228,10 @@ def execute(options, config):
         password = config.get('jenkins', 'password')
     except (TypeError, configparser.NoOptionError):
         password = None
+    try:
+        wait_time = config.getint('job_builder', 'wait_time')
+    except (TypeError, configparser.NoOptionError):
+        wait_time = 0
 
     plugins_info = None
 
@@ -253,6 +258,11 @@ def execute(options, config):
                       ignore_cache=ignore_cache,
                       flush_cache=options.flush_cache,
                       plugins_list=plugins_info)
+
+    if wait_time > 0:
+        if not builder.wait_for_normal_op(wait_time):
+            raise JenkinsJobsException("Tiomeout occurs at waiting for "
+                                       "jenkins!")
 
     if getattr(options, 'path', None):
         if options.path == sys.stdin:

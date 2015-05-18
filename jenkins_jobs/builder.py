@@ -143,6 +143,9 @@ class Jenkins(object):
         self._jobs = None
         self._job_list = None
 
+    def wait_for_normal_op(self, timeout):
+        return self.jenkins.wait_for_normal_op(timeout)
+
     @property
     def jobs(self):
         if self._jobs is None:
@@ -228,6 +231,9 @@ class Builder(object):
         self.global_config = config
         self.ignore_cache = ignore_cache
         self._plugins_list = plugins_list
+
+    def wait_for_normal_op(self, timeout):
+        return self.jenkins.wait_for_normal_op(timeout)
 
     @property
     def plugins_list(self):
