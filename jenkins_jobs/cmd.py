@@ -20,7 +20,9 @@ import logging
 import os
 import platform
 import sys
+import time
 import yaml
+import jenkins
 import jenkins_jobs.version
 
 from jenkins_jobs.builder import Builder
@@ -37,6 +39,8 @@ recursive=False
 exclude=.*
 allow_duplicates=False
 allow_empty_variables=False
+cmd_tries=0
+cmd_sleep=0
 
 [jenkins]
 url=http://localhost:8080/
@@ -227,6 +231,14 @@ def execute(options, config):
         password = config.get('jenkins', 'password')
     except (TypeError, configparser.NoOptionError):
         password = None
+    try:
+        cmd_tries = int(config.get('job_builder', 'cmd_tries'))
+    except (TypeError, configparser.NoOptionError):
+        cmd_tries = 0
+    try:
+        cmd_sleep = int(config.get('job_builder', 'cmd_sleep'))
+    except (TypeError, configparser.NoOptionError):
+        cmd_sleep = 5
 
     plugins_info = None
 
@@ -280,27 +292,37 @@ def execute(options, config):
                 paths.append(path)
         options.path = paths
 
-    if options.command == 'delete':
-        for job in options.name:
-            builder.delete_job(job, options.path)
-    elif options.command == 'delete-all':
-        confirm('Sure you want to delete *ALL* jobs from Jenkins server?\n'
-                '(including those not managed by Jenkins Job Builder)')
-        logger.info("Deleting all jobs")
-        builder.delete_all_jobs()
-    elif options.command == 'update':
-        logger.info("Updating jobs in {0} ({1})".format(
-            options.path, options.names))
-        jobs, num_updated_jobs = builder.update_job(options.path,
-                                                    options.names)
-        logger.info("Number of jobs updated: %d", num_updated_jobs)
-        if options.delete_old:
-            num_deleted_jobs = builder.delete_old_managed(
-                keep=[x.name for x in jobs])
-            logger.info("Number of jobs deleted: %d", num_deleted_jobs)
-    elif options.command == 'test':
-        builder.update_job(options.path, options.name,
-                           output=options.output_dir)
+    try_count = 0
+    while True:
+        try:
+            if options.command == 'delete':
+                for job in options.name:
+                    builder.delete_job(job, options.path)
+            elif options.command == 'delete-all':
+                confirm('Sure you want to delete *ALL* jobs from '
+                        'Jenkins server?\n'
+                        '(including those not managed by Jenkins Job Builder)')
+                logger.info("Deleting all jobs")
+                builder.delete_all_jobs()
+            elif options.command == 'update':
+                logger.info("Updating jobs in {0} ({1})".format(
+                    options.path, options.names))
+                jobs, num_updated_jobs = builder.update_job(options.path,
+                                                            options.names)
+                logger.info("Number of jobs updated: %d", num_updated_jobs)
+                if options.delete_old:
+                    num_deleted_jobs = builder.delete_old_managed(
+                        keep=[x.name for x in jobs])
+                    logger.info("Number of jobs deleted: %d", num_deleted_jobs)
+            elif options.command == 'test':
+                builder.update_job(options.path, options.name,
+                                   output=options.output_dir)
+            break
+        except jenkins.JenkinsException:
+            try_count += 1
+            if cmd_tries == 0 or try_count > cmd_tries:
+                raise
+            time.sleep(cmd_sleep)
 
 
 def version():
