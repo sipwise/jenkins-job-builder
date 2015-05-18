@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_27a9fbdf",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4288,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-18T15:01:16Z",
+      "side": 1,
+      "message": "could you please provide a little more info? and reference the plugin required for this module?",
+      "revId": "be113a7c3fc3309c3bd5fdb7ce85bf3aa75c216f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_e73d23bc",
+        "filename": "setup.cfg",
+        "patchSetId": 3
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-18T15:01:16Z",
+      "side": 1,
+      "message": "please place in alphabetical order",
+      "revId": "be113a7c3fc3309c3bd5fdb7ce85bf3aa75c216f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
