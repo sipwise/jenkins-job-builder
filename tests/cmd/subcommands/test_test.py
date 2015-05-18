@@ -85,6 +85,56 @@ class TestTests(CmdTestsBase):
         cmd.execute(args, self.config)   # probably better to fail here
 
     @mock.patch('jenkins_jobs.cmd.Builder.update_job')
+    def test_fail_at_retry_out_of_command_execution(self, update_job_mock):
+        """
+        Run test mode and retry out of command execution by JenkinsException
+        """
+        update_job_mock.side_effect = jenkins.JenkinsException()
+        args = self.parser.parse_args(['test',
+                                       os.path.join(self.fixtures_path,
+                                                    'cmd-001.yaml'),
+                                       'foo-job'])
+        self.config.set('job_builder', 'cmd_tries', '1')
+        self.assertRaises(jenkins.JenkinsException, cmd.execute,
+                          args, self.config)
+        self.assertEqual(update_job_mock.call_count, 2)
+
+    @mock.patch('jenkins_jobs.cmd.Builder.update_job')
+    def test_fail_at_no_retry_of_command_execution(self, update_job_mock):
+        """
+        Run test mode and fail at no retry of command execution with
+        exception else JenkinsException
+        """
+        update_job_mock.side_effect = IOError()
+        args = self.parser.parse_args(['test',
+                                       os.path.join(self.fixtures_path,
+                                                    'cmd-001.yaml'),
+                                       'foo-job'])
+        self.assertRaises(IOError, cmd.execute,
+                          args, self.config)
+        self.assertEqual(update_job_mock.call_count, 1)
+
+    def _fake_update_job(self, input_fn, jobs_glob=None, output=None):
+        self.cmd_retry_count += 1
+        if self.cmd_retry_count <= 1:
+            raise jenkins.JenkinsException
+        return True
+
+    def test_succeed_after_retry_of_command_execution(self):
+        """
+        Run test mode and succeed after retry of command execution
+        """
+        self.cmd_retry_count = 0
+        with mock.patch('jenkins_jobs.cmd.Builder.update_job',
+                        new=self._fake_update_job):
+            args = self.parser.parse_args(['test',
+                                           os.path.join(self.fixtures_path,
+                                                        'cmd-001.yaml'),
+                                           'foo-job'])
+            cmd.execute(args, self.config)
+            self.assertEqual(self.cmd_retry_count, 2)
+
+    @mock.patch('jenkins_jobs.cmd.Builder.update_job')
     def test_multi_path(self, update_job_mock):
         """
         Run test mode and pass multiple paths.
