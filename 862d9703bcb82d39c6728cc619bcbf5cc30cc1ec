@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_3d70e0db",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-19T11:15:42Z",
+      "side": 1,
+      "message": "The six.moves kind of threw me.",
+      "parentUuid": "7a016987_4cf66fd8",
+      "revId": "862d9703bcb82d39c6728cc619bcbf5cc30cc1ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_2c0573bb",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-05-17T18:11:03Z",
       "side": 1,
       "message": "Why do we want to permit *not* failing on encoding errors? Is there a use case for that?",
+      "revId": "862d9703bcb82d39c6728cc619bcbf5cc30cc1ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_601eab60",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-19T11:15:42Z",
+      "side": 1,
+      "message": "Might be useful for people running a different encoding on their console where they just want to see what in general is being outputted, without needing to change it to get the command to run. Not particularly wedded to it so I can remove and add it back in if someone finds it useful in the future.",
+      "parentUuid": "7a016987_2c0573bb",
       "revId": "862d9703bcb82d39c6728cc619bcbf5cc30cc1ec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
