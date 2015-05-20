@@ -20,10 +20,11 @@ import fnmatch
 import itertools
 import logging
 import pkg_resources
+import six
 
 import jenkins_jobs.local_yaml as local_yaml
 from jenkins_jobs.constants import MAGIC_MANAGE_STRING
-from jenkins_jobs.errors import JenkinsJobsException
+from jenkins_jobs.errors import JenkinsJobsException, YAMLStructureError
 from jenkins_jobs.registry import ModuleRegistry
 from jenkins_jobs.formatter import deep_format
 from jenkins_jobs.xml_config import XmlJob
@@ -42,6 +43,33 @@ def matches(what, glob_patterns):
     """
     return any(fnmatch.fnmatch(what, glob_pattern)
                for glob_pattern in glob_patterns)
+
+
+def get_the_only_one_item(collection):
+    '''
+    Return one item from the collection, checking whether it is the only
+    one in there.
+    '''
+    items = collection.iteritems()
+    cls, dfn = next(items)
+
+    # Check we had only one item in the collection.
+    try:
+        next(items)
+    except StopIteration:
+        pass
+    else:
+        # ... no, we didn't have only one item, let's find the name of what we
+        # are dealing with.
+        err = YAMLStructureError(
+            "Expected only one item to be in the collection. "
+            "Perhaps you are missing an indent.")
+        for k, v in collection.items():
+            if k == "name":
+                raise err.item_name(v)
+        else:
+            raise err
+    return cls, dfn
 
 
 class YamlParser(object):
@@ -71,23 +99,17 @@ class YamlParser(object):
         data = local_yaml.load(fp, search_path=self.path)
         if data:
             if not isinstance(data, list):
-                raise JenkinsJobsException(
-                    "The topmost collection in file '{fname}' must be a list,"
-                    " not a {cls}".format(fname=getattr(fp, 'name', fp),
-                                          cls=type(data)))
+                raise YAMLStructureError(
+                    "The topmost collection must be a list, not a {cls}"
+                    .format(cls=type(data))
+                ).file_name(getattr(fp, 'name', fp))
             for item in data:
-                cls, dfn = next(iter(item.items()))
-                group = self.data.get(cls, {})
-                if len(item.items()) > 1:
-                    n = None
-                    for k, v in item.items():
-                        if k == "name":
-                            n = v
-                            break
-                    # Syntax error
-                    raise JenkinsJobsException("Syntax error, for item "
-                                               "named '{0}'. Missing indent?"
-                                               .format(n))
+                try:
+                    cls, dfn = get_the_only_one_item(item)
+                except YAMLStructureError as err:
+                    err.file_name(fp.name).near(item)
+                    six.reraise(type(err), err)
+                group = self.data.setdefault(cls, {})
                 name = dfn['name']
                 if name in group:
                     self._handle_dups("Duplicate entry found in '{0}: '{1}' "
