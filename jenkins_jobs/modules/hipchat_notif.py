@@ -100,7 +100,7 @@ class HipChat(jenkins_jobs.modules.base.Base):
         if not hipchat or not hipchat.get('enabled', True):
             return
         if('room' not in hipchat):
-            raise jenkins_jobs.errors.YAMLFormatError(
+            raise jenkins_jobs.errors.YAMLStructureError(
                 "Missing hipchat 'room' specifier")
         self._load_global_data()
 
