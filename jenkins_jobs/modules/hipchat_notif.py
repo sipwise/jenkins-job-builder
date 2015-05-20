@@ -121,7 +121,7 @@ class HipChat(jenkins_jobs.modules.base.Base):
             logger.warn("'room' is deprecated, please use 'rooms'")
             room.text = hipchat['room']
         else:
-            raise jenkins_jobs.errors.YAMLFormatError(
+            raise jenkins_jobs.errors.YAMLStructureError(
                 "Must specify either 'room' or 'rooms' in hipchat config.")
 
         XML.SubElement(pdefhip, 'startNotification').text = str(
