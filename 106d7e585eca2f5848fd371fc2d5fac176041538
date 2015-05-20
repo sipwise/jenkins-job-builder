@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_c914514e",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 6133
+      },
+      "writtenOn": "2015-05-20T13:57:30Z",
+      "side": 1,
+      "message": "how is that related to this change?",
+      "revId": "106d7e585eca2f5848fd371fc2d5fac176041538",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
