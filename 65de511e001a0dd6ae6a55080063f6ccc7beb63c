@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_00323e5f",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-20T11:31:50Z",
+      "side": 1,
+      "message": "Doesn\u0027t hurt to show following a pattern that will work consistently on python 2 \u0026 3.",
+      "parentUuid": "7a016987_a1a377ff",
+      "revId": "65de511e001a0dd6ae6a55080063f6ccc7beb63c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_01b5ab2f",
         "filename": "tests/base.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-05-20T01:03:32Z",
       "side": 1,
       "message": "need codec here?",
+      "revId": "65de511e001a0dd6ae6a55080063f6ccc7beb63c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_4044b6b5",
+        "filename": "tests/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-20T11:31:50Z",
+      "side": 1,
+      "message": "Yes, probably only show up if loading a file containing unicode characters but, better to be consistent.",
+      "parentUuid": "7a016987_01b5ab2f",
       "revId": "65de511e001a0dd6ae6a55080063f6ccc7beb63c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
