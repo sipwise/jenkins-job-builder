@@ -1,0 +1,7 @@
+- project:
+  # The code bellow should be indented more.
+  name: missing_indent
+  version:
+      - 1.1
+  jobs:
+      - 'missing_indent_1.1'
