@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_a1a377ff",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-20T01:03:32Z",
+      "side": 1,
+      "message": "should these examples use the codec lib as well?",
+      "revId": "65de511e001a0dd6ae6a55080063f6ccc7beb63c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_01b5ab2f",
+        "filename": "tests/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-20T01:03:32Z",
+      "side": 1,
+      "message": "need codec here?",
+      "revId": "65de511e001a0dd6ae6a55080063f6ccc7beb63c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
