@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_e4bef6ac",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-05-21T16:30:55Z",
+      "side": 1,
+      "message": "I think example should be kept as well since it is an example and has no relation to unittests.",
+      "revId": "f83794e6051beb294fb7c408fb5cf089dbdca763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
