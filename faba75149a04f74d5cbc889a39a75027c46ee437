@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_04c8f272",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-05-21T16:38:18Z",
+      "side": 1,
+      "message": "I actually find this commit message somewhat confusing. Would you mind clarifying your terminology with an annotated complete example similar to:\n\n  - project:\n    name: \u0027p\u0027\n    key: \u0027value-p\u0027          # \u003c- project parameter\n    jobs:\n      - \u0027jg\u0027:\n        key: \u0027value-p-i1\u0027   # \u003c- project instance parameter\n      - \u0027jt\u0027:\n        key: \u0027value-p-i2\u0027   # \u003c- project instance parameter\n      - \u0027j\u0027\n\n  - job-group:\n    name: \u0027jg\u0027\n    key: \u0027value-jg\u0027         # \u003c- job-group parameter\n    jobs:\n      - \u0027jt\u0027:\n        key: \u0027value-jg-i\u0027   # \u003c- job-group instance parameter\n\n  - job-template:\n    name: \u0027jt\u0027\n    key: \u0027value-jt\u0027         # \u003c- job-template parameter\n\n  - job:\n    name: \u0027j\u0027\n\n  - defaults:\n    name: \u0027d\u0027\n    key: \u0027value-d\u0027          # \u003c- defaults parameter\n\nThen show that the current override order from least to greatest precedence is:\n\n  defaults parameter -\u003e job-template parameter -\u003e project parameter -\u003e project instance parameter -\u003e job-group parameter -\u003e job-group instance parameter\n\nAnd that what this patch does is change the order to:\n\n  defaults parameter -\u003e job-template parameter -\u003e project parameter -\u003e job-group parameter -\u003e job-group instance parameter -\u003e project instance parameter\n\nWhen we talked about this in IRC several weeks ago this is the order I was trying to describe:\n\n  defaults parameter -\u003e job-template parameter -\u003e job-group parameter -\u003e job-group instance parameter -\u003e project parameter -\u003e project instance parameter\n\nI indicated how to change this with a comment on the builder.py patch.",
+      "revId": "faba75149a04f74d5cbc889a39a75027c46ee437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_4145bc43",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-05-21T16:38:18Z",
+      "side": 1,
+      "message": "I would take this on step further and also move the \"project\":\n\n  d \u003d {}\n  d.update(group)\n  d.update(group_jobparams)\n  d.update(project)\n  d.update(jobparams)\n\nAnd probably remove the comment about \"allow a group to override parameters set by a project\".",
+      "revId": "faba75149a04f74d5cbc889a39a75027c46ee437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
