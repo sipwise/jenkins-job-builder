@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_ac344efb",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-22T16:28:00Z",
+      "side": 1,
+      "message": "Should use iter(collection.items()) to be python 3 and 2 compatible since iteritems() no longer exists in python 3.\n\nAlternatively six provides a wrapper for obtaining the items in compatible way.",
+      "revId": "40b483e6ee10246c6b8b4b442406543a415d3f0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
