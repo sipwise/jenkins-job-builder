@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_39a409b8",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-05-24T22:05:21Z",
+      "side": 1,
+      "message": "I\u0027m fairly certain this doesn\u0027t have any effect. Default application actually happens within the \"expandYamlForTemplateJob\" method, just before the parameters handled here are merged on top of the job-template parameters.",
+      "revId": "4546cae5dfc46fada6cd59d48359a7c4d4ab3156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
