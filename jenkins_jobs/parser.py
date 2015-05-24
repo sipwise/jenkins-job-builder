@@ -215,6 +215,7 @@ class YamlParser(object):
                         template = self.getJobTemplate(group_jobname)
                         # Allow a group to override parameters set by a project
                         d = {}
+                        d = self.applyDefaults(d)
                         d.update(project)
                         d.update(jobparams)
                         d.update(group)
@@ -229,6 +230,7 @@ class YamlParser(object):
                 template = self.getJobTemplate(jobname)
                 if template:
                     d = {}
+                    d = self.applyDefaults(d)
                     d.update(project)
                     d.update(jobparams)
                     self.expandYamlForTemplateJob(d, template, jobs_glob)

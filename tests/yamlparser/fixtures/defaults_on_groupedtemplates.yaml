@@ -1,0 +1,18 @@
+- defaults:
+    name: global
+    confversion: 'v0.42'
+    fooversion: 'v0.10'
+- project:
+    name: project
+    confversion: 'v0.52'
+    jobs:
+        - job-group
+- job-group:
+    name: job-group
+    fooversion: 'v0.15'
+    jobs:
+     - job-template
+- job-template:
+    name: job-template
+    builders:
+        - shell: "echo 'confVersion: {confversion} & fooVersion: {fooversion}'"

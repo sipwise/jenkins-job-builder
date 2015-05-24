@@ -343,6 +343,16 @@ Custom Yaml Tags
 .. automodule:: jenkins_jobs.local_yaml
 
 
+Custom Yaml Tags
+----------------
+
+The defaults are propagated to job templates and grouped jobs/
+Users can override the default values in project and job-group definitions.
+
+For example
+
+.. literalinclude::  /../../tests/yamlparser/fixtures/defaults_on_groupedtemplates.yaml
+
 Modules
 -------
 
