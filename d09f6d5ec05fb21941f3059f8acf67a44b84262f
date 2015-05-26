@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_91f04dcb",
+        "filename": "jenkins_jobs/modules/project_maven.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 10354
+      },
+      "writtenOn": "2015-05-26T13:12:23Z",
+      "side": 1,
+      "message": "This looks like you\u0027re changing the current implied default of true that JJB uses to what is probably the default of the plugin of false. Am I correct here? This probably should match what has been implied in the past otherwise JJB templates for folks will switch from the currently expected configuration when they upgrade.",
+      "revId": "d09f6d5ec05fb21941f3059f8acf67a44b84262f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
