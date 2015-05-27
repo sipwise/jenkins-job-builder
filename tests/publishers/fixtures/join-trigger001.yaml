@@ -3,3 +3,7 @@ publishers:
       projects:
         - project-one
         - project-two
+      publishers:
+        - publisher-one
+        - publisher-two
+      even-if-unstable: true
