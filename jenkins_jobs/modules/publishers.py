@@ -2108,6 +2108,9 @@ def join_trigger(parser, xml_parent, data):
     Trigger a job after all the immediate downstream jobs have completed
 
     :arg list projects: list of projects to trigger
+    :arg list publishers: list of publishers to trigger
+    :arg boolean even-if-unstable: whether to trigger when downstream
+        are unstable (default false)
 
     Example:
 
@@ -2117,8 +2120,16 @@ def join_trigger(parser, xml_parent, data):
     jointrigger = XML.SubElement(xml_parent, 'join.JoinTrigger')
 
     # Simple Project List
-    joinProjectsText = ','.join(data.get('projects', ['']))
-    XML.SubElement(jointrigger, 'joinProjects').text = joinProjectsText
+    joinprojectstext = ','.join(data.get('projects', ['']))
+    XML.SubElement(jointrigger, 'joinProjects').text = joinprojectstext
+
+    # Simple publishers List
+    joinpublisherstext = ','.join(data.get('publishers', ['']))
+    XML.SubElement(jointrigger, 'joinPublishers').text = joinpublisherstext
+
+    # Even if downstream unstable
+    XML.SubElement(jointrigger, 'evenIfDownstreamUnstable').text = str(
+        data.get('even-if-unstable', False)).lower()
 
 
 def jabber(parser, xml_parent, data):
