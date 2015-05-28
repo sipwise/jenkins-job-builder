@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_ad66fa26",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2112,
+      "author": {
+        "id": 16360
+      },
+      "writtenOn": "2015-05-28T07:56:45Z",
+      "side": 1,
+      "message": "You talk here about upstream being unstable but the setting talk about downstream being unstable.\nCould you clarify this?",
+      "revId": "3e4e977f16c17bbad3b3569766eb7c4e7ffb2c5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_2d21eab4",
+        "filename": "tests/publishers/fixtures/join-trigger001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 16360
+      },
+      "writtenOn": "2015-05-28T07:56:45Z",
+      "side": 1,
+      "message": "this setting defaults to false, could you add a test ensuring that setting it to true also works?",
+      "revId": "3e4e977f16c17bbad3b3569766eb7c4e7ffb2c5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
