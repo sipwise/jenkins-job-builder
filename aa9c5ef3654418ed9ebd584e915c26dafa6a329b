@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_c020cdf9",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 609,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-05-28T14:25:41Z",
+      "side": 1,
+      "message": "I believe this can be fit on one line, no need for the break here.",
+      "revId": "aa9c5ef3654418ed9ebd584e915c26dafa6a329b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_e03aa933",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4047,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-05-28T14:25:41Z",
+      "side": 1,
+      "message": "I believe this can be fit on one line",
+      "revId": "aa9c5ef3654418ed9ebd584e915c26dafa6a329b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
