@@ -69,6 +69,23 @@
       "revId": "5aa4287f2f7063e532dbcee40adc5ed23caf3e3a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_28c67849",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 16360
+      },
+      "writtenOn": "2015-05-28T08:15:00Z",
+      "side": 1,
+      "message": "this is a non backwards compatible change. Are we okay with this?",
+      "revId": "5aa4287f2f7063e532dbcee40adc5ed23caf3e3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
