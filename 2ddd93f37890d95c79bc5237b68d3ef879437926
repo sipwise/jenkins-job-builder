@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_fa0edf30",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1970,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-28T12:28:25Z",
+      "side": 1,
+      "message": "Please include the default vaue as well.",
+      "revId": "2ddd93f37890d95c79bc5237b68d3ef879437926",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_af7ca7b5",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1972,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-28T12:28:25Z",
+      "side": 1,
+      "message": "This is a little more than a list of projects to trigger, it\u0027s a list of publisher definitions to trigger and join on, where the user should refer to the publisher documentation on how to define.\n\nThink it\u0027s worth calling that out a little bit more.",
+      "revId": "2ddd93f37890d95c79bc5237b68d3ef879437926",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_ef205fb2",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1976,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-05-28T12:28:25Z",
+      "side": 1,
+      "message": "Should either switch to using the 002 example or make the 001 one more complete by including at least one publisher as it wouldn\u0027t be clear otherwise from the docs as to how to use this.",
+      "revId": "2ddd93f37890d95c79bc5237b68d3ef879437926",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
