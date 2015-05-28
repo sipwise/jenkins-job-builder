@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_223c33c7",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-28T22:59:17Z",
+      "side": 1,
+      "message": "could you please specify the default value for these?",
+      "revId": "68476dbd41c72207ba3084eb82fb8f0382f41f9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_42704fa4",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 613,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-28T22:59:17Z",
+      "side": 1,
+      "message": "is this a required param?  or is it ok to leave empty?  if it\u0027s required then might be nice to check that is set",
+      "revId": "68476dbd41c72207ba3084eb82fb8f0382f41f9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_22d0b31e",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4033,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-28T22:59:17Z",
+      "side": 1,
+      "message": "I don\u0027t believe you need all this rst formatting here or in the properties module.  I would just reformat this section to be consistent the other functions already in this file.  You can build docs locally with \u0027tox -edocs\u0027 or you can check the test results by clicking on \u0027gate-jenkins-job-builder-docs\u0027 link on the Gerrit UI.",
+      "revId": "68476dbd41c72207ba3084eb82fb8f0382f41f9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_e2b61b3d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4034,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-28T22:59:17Z",
+      "side": 1,
+      "message": "are any of these params required?  if so please check to make sure user specifies it.",
+      "revId": "68476dbd41c72207ba3084eb82fb8f0382f41f9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
