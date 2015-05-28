@@ -34,6 +34,24 @@
       "revId": "51a9b8fb0de440ef733864b4b51090cd1046f36a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_02c93759",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2105,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-28T23:01:46Z",
+      "side": 1,
+      "message": "then i guess it\u0027s ok to leave as-is",
+      "parentUuid": "dac4157f_0c2d35a7",
+      "revId": "51a9b8fb0de440ef733864b4b51090cd1046f36a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
