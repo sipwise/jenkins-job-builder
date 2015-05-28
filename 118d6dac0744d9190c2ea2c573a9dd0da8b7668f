@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_640eb88d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-28T23:34:15Z",
+      "side": 1,
+      "message": "nit: s/joint/join",
+      "revId": "118d6dac0744d9190c2ea2c573a9dd0da8b7668f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_84577459",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2112,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-28T23:34:15Z",
+      "side": 1,
+      "message": "nit: please indicate the default",
+      "revId": "118d6dac0744d9190c2ea2c573a9dd0da8b7668f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
