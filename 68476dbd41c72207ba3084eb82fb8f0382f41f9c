@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a016987_e2905bef",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-28T23:08:04Z",
+      "side": 1,
+      "message": "Don\u0027t need this, we want to keep commit message to contain info on the change.  You additions are automatically saved to Gerrit as a patch.  This is one way that the Gerrit workflow is different from pull requests :)",
+      "revId": "68476dbd41c72207ba3084eb82fb8f0382f41f9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_6280ebbf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-28T23:08:04Z",
+      "side": 1,
+      "message": "add here\n  Co-Authored-By: \u003cyour_name\u003e \u003cyour_email\u003e",
+      "revId": "68476dbd41c72207ba3084eb82fb8f0382f41f9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_223c33c7",
         "filename": "jenkins_jobs/modules/properties.py",
         "patchSetId": 3
