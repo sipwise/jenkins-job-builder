@@ -16,6 +16,24 @@
       "revId": "cb2311b6086c61766ab88d24da0bf1f90ac72bb3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_9dc57b8f",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 615,
+      "author": {
+        "id": 16360
+      },
+      "writtenOn": "2015-05-29T10:53:08Z",
+      "side": 1,
+      "message": "By the looks of it he does a JenkinsJobException before it for doxyfile and install keys if they don\u0027t exist ?",
+      "parentUuid": "5a890539_721b24ca",
+      "revId": "cb2311b6086c61766ab88d24da0bf1f90ac72bb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
