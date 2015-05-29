@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_1de4d5dd",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4030,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-29T20:59:11Z",
+      "side": 1,
+      "message": "don\u0027t need all these backslashes to continue line.",
+      "revId": "fc062b3cc464daa8e44963134bc851c2ed4902d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_5ddecd11",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4051,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-29T20:59:11Z",
+      "side": 1,
+      "message": "I don\u0027t think you need to escape the single quotes if you surround it with double quotes.\n\n  \"Missing \u0027team-domain\u0027 option in Slack publisher\"\n\nor just don\u0027t bother single quoting \u0027team-domain\u0027",
+      "revId": "fc062b3cc464daa8e44963134bc851c2ed4902d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
