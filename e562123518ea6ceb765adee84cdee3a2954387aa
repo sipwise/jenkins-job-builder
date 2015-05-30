@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_c739bca5",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1098,
+      "author": {
+        "id": 16360
+      },
+      "writtenOn": "2015-05-30T15:39:19Z",
+      "side": 1,
+      "message": "This seems to be a mandatory setting. If so please error reporting in case the user doesn\u0027t set it.",
+      "revId": "e562123518ea6ceb765adee84cdee3a2954387aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_a73c8093",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1100,
+      "author": {
+        "id": 16360
+      },
+      "writtenOn": "2015-05-30T15:39:19Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "e562123518ea6ceb765adee84cdee3a2954387aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
