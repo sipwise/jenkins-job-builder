@@ -16,6 +16,24 @@
       "revId": "a50c7239a376048bfa5d1131b188cbbe992a44c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_5b0fe436",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4362,
+      "author": {
+        "id": 15273
+      },
+      "writtenOn": "2015-05-31T20:17:14Z",
+      "side": 1,
+      "message": "No, it\u0027s not really a required field, it can be left empty (and empty element is used).\n\nSee the example:\n```\n\u003cpublishers\u003e\n    \u003corg.jenkinsci.plugins.imagegallery.ImageGalleryRecorder plugin\u003d\"image-gallery@1.0\"\u003e\n      \u003cimageGalleries\u003e\n        \u003corg.jenkinsci.plugins.imagegallery.imagegallery.ArchivedImagesGallery\u003e\n          \u003ctitle /\u003e\n          \u003cincludes\u003e*.png\u003c/includes\u003e\n          \u003cmarkBuildAsUnstableIfNoArchivesFound\u003efalse\u003c/markBuildAsUnstableIfNoArchivesFound\u003e\n        \u003c/org.jenkinsci.plugins.imagegallery.imagegallery.ArchivedImagesGallery\u003e\n      \u003c/imageGalleries\u003e\n    \u003c/org.jenkinsci.plugins.imagegallery.ImageGalleryRecorder\u003e\n  \u003c/publishers\u003e\n```",
+      "parentUuid": "7a016987_b7d96b58",
+      "revId": "a50c7239a376048bfa5d1131b188cbbe992a44c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
