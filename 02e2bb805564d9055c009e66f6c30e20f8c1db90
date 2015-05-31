@@ -86,6 +86,24 @@
       "revId": "02e2bb805564d9055c009e66f6c30e20f8c1db90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_084800b2",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-05-31T15:14:53Z",
+      "side": 1,
+      "message": "I\u0027m still confused by this warning. it sounds very contradictory because it\u0027s saying that \u0027certificate check explicitly disabled\u0027 but will most likely run with certificate check enabled? \n\nMaybe just drop the the first line and reword to something like this?\n  \n  Python 2.7.9+ or 3.4.3+ required for no_check_certificate option in [jenkins] section. Ignoring option and running with default certificate check.",
+      "parentUuid": "7a016987_61367852",
+      "revId": "02e2bb805564d9055c009e66f6c30e20f8c1db90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
