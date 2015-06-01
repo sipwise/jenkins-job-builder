@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a016987_e7049f18",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1102,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-06-01T14:05:06Z",
+      "side": 1,
+      "message": "This should be:\n  try:\n      XML.SubElement(maven, \u0027mavenName\u0027).text \u003d data[\u0027name\u0027]\n  except KeyError:\n      raise MissingAttributeError(\u0027name\u0027)\n\n  try:\n      XML.SubElement(maven, \u0027goals\u0027).text \u003d data[\u0027goals\u0027]\n  except KeyError:\n      raise MissingAttributeError(\u0027goals\u0027)\n\nThe reason is that \"MissingAttributeError\" takes a list as its first argument to represent cases when parameters are nested within multiple dictionaries, not to represent cases where there are multiple individual parameters that could be mising.\n\nSeparating the parameters into multiple try blocks also more concretely identifies the actual missing parameter and should reduce confusion for the user debugging their config files.\n\nAnother option would be to create a dictionary where keys are the XML subelement names and values are the YAML keys, ie:\n  { \u0027mavenName\u0027: \u0027name\u0027,\n    \u0027goals\u0027: \u0027goals\u0027,\n  }\n\nAnd then loop over this dictionary if you want to reduce the number of try blocks used.",
+      "revId": "4e8e810fa0f85657ba8e94a94e6416d927ff1481",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
