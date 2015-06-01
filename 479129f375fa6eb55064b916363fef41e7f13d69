@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_f803f00b",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-01T21:37:15Z",
+      "side": 1,
+      "message": "Setting default to True when no option is specified?  Seems inconsistent with the description for this.",
+      "revId": "479129f375fa6eb55064b916363fef41e7f13d69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
