@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_36fb0f7b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4342,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2015-06-01T13:07:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a016987_c42d6c47",
+      "revId": "a69102defff22c83ecb4eb0a12e2565024dd44ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_c4d1ec58",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7a016987_6924085f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4374,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2015-06-01T13:07:18Z",
+      "side": 1,
+      "message": "I don\u0027t know which error to throw, neither seem to work in this case.  Its not an invalid attribute nor is it a missing attribute.  It\u0027s specify two attributes that can\u0027t be specified at the same time.",
+      "parentUuid": "7a016987_c4d1ec58",
+      "revId": "a69102defff22c83ecb4eb0a12e2565024dd44ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_c489ec27",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 8
@@ -47,6 +83,24 @@
       "writtenOn": "2015-05-28T23:28:49Z",
       "side": 1,
       "message": "would an \u0027else\u0027 not have the same effect? would be easier to read.",
+      "revId": "a69102defff22c83ecb4eb0a12e2565024dd44ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a016987_16f6d38e",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4383,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2015-06-01T13:07:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a016987_c489ec27",
       "revId": "a69102defff22c83ecb4eb0a12e2565024dd44ab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
