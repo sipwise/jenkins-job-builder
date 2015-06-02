@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_109f92b5",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2720,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-02T22:11:22Z",
+      "side": 1,
+      "message": "doc says default is true so what\u0027s up with the \u0027not\u0027 her?  the test yaml and xml are not consistent.",
+      "revId": "b115d5904c51acd15b2457fc949839353051ce0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
