@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_d7bc626e",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1217,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-06-02T16:01:04Z",
+      "side": 1,
+      "message": "I know you\u0027re just following the existing pattern but I believe if the indent is at the right level the trailing \"\\\" is not needed. I think we should clean up the trailing \"\\\"s since you\u0027re modifying this part of the code.",
+      "revId": "5ff15d353874bcf630bf50cf5690165948030338",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_d7634219",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1230,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-06-02T16:01:04Z",
+      "side": 1,
+      "message": "Trailing \"\\\" here too.",
+      "revId": "5ff15d353874bcf630bf50cf5690165948030338",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
