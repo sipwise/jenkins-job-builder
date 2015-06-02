@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_c57edbad",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2123,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-02T21:35:48Z",
+      "side": 1,
+      "message": "maybe better to use underscore to separate the words instead of just making it all the same case?  python convention is to typically use underscores.",
+      "revId": "379f1205a3f4286d19931458af8c731bf283b17c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
