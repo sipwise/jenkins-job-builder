@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_16d78a24",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1878,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-02T23:32:44Z",
+      "side": 1,
+      "message": "Looks like you missed this one.\n\nI believe you can make the try/except encompassing both parameters relatively simple using the following:\n\n try:\n     XML.SubElement(builder, \u0027siteName\u0027).text \u003d str(data[\u0027ssh-user-ip\u0027])\n     XML.SubElement(builder, \u0027command\u0027).text \u003d str(data[\u0027command\u0027])\n except KeyError as e:\n     raise MissingAttributeError(e.args[0])\n\nUsage of e.args[0] to get the key name appears to work consistently on python 2.6, 2.7, 3.3 \u0026 3.4.",
+      "revId": "31ed230209e36d69e21b3a5c0e1da44f37dad30c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
