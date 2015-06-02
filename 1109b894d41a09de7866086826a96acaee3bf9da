@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_90f4a287",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3375,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-02T22:27:56Z",
+      "side": 1,
+      "message": "append_thresholds in helpers.py sets some of the same params.  Would it make sense to reuse that? or at least make these param names consistent with that helper?",
+      "revId": "1109b894d41a09de7866086826a96acaee3bf9da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
