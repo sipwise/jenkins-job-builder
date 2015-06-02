@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_b8a7a14e",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4398,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-06-02T12:48:57Z",
+      "side": 1,
+      "message": "This should be\n  InvalidAttributeError(\u0027gallery-type\u0027, gallery_type, gallery_type_dict.keys())\n\nSee the constructor for this exception here:\nhttps://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/errors.py#n34",
+      "revId": "0e9ed3cb9307c633b818b53250eaaee3db9a97c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
