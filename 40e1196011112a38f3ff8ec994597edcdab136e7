@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_302dee46",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4051,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-02T22:18:52Z",
+      "side": 1,
+      "message": "I don\u0027t think you need these back slashes either.",
+      "revId": "40e1196011112a38f3ff8ec994597edcdab136e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
