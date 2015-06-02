@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5afe65bd_fa1aa36d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1217,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-06-02T16:02:36Z",
+      "side": 1,
+      "message": "Please follow the same formatting style as your other 2 open patches.",
+      "parentUuid": "5afe65bd_d7bc626e",
+      "revId": "5ff15d353874bcf630bf50cf5690165948030338",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5afe65bd_d7634219",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 1
