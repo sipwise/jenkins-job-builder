@@ -33,6 +33,24 @@
       "revId": "3dbf9bac6d21ba855df719071f0722f204597abe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_58e636b5",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2720,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-03T13:14:39Z",
+      "side": 1,
+      "message": "For every option, there can be a prefix enable- or disable- functionality. In the Jenkins UI, the option is that of disable because archiving is true by default, and they want the checkbox unchecked by default. \n\nHaving enable and disable would make it more confusing IMHO, because throughout the code, we have functionality without enable/disable in the keywords. For instance, here - https://github.com/openstack-infra/jenkins-job-builder/blob/master/jenkins_jobs/modules/project_maven.py#L138\nAlso, it makes the keyword longer.\n\nSo, that\u0027s why I thought that the keyword should not include enable or disable. Nevertheless, the default behavior matches that in the Jenkins UI.\n\nI hope this makes sense.",
+      "parentUuid": "5afe65bd_184e7e6f",
+      "revId": "3dbf9bac6d21ba855df719071f0722f204597abe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
