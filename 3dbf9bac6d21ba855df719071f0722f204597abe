@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5afe65bd_ddd1f8ce",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-06-03T13:00:26Z",
+      "side": 1,
+      "message": "Can you please be more explicit in first line of the commit message?\n\n\"Improvement...\" is not clear enough when looked in the git log.",
+      "revId": "3dbf9bac6d21ba855df719071f0722f204597abe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_184e7e6f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2720,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-06-03T13:00:26Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be consistent with what is in the generated job xml?\n\nInstead of having \"archive-output-xml\" in yml, wouldn\u0027t it be better to have whatever is in xml as well; such as disable-archive-output?",
+      "revId": "3dbf9bac6d21ba855df719071f0722f204597abe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
