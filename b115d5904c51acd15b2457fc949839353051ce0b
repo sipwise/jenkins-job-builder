@@ -16,6 +16,24 @@
       "revId": "b115d5904c51acd15b2457fc949839353051ce0b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_1a2c3601",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2720,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-03T12:32:16Z",
+      "side": 1,
+      "message": "Sorry, I wrote incorrectly in the doc. Please see the new patch set. I have fixed this now.",
+      "parentUuid": "5afe65bd_109f92b5",
+      "revId": "b115d5904c51acd15b2457fc949839353051ce0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
