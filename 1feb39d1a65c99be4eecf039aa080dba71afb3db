@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5afe65bd_b99f824f",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-06-03T04:55:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab921fb_407ad025",
+      "revId": "1feb39d1a65c99be4eecf039aa080dba71afb3db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab921fb_c01700a2",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 18
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-23T18:15:53Z",
       "side": 1,
       "message": "I assume these elastic params only apply to elastic strategy so maybe specify that or make it appear as a subset of values for the \u0027elastic\u0027 value in the docs?",
+      "revId": "1feb39d1a65c99be4eecf039aa080dba71afb3db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_99ae0684",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-06-03T04:55:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab921fb_c01700a2",
       "revId": "1feb39d1a65c99be4eecf039aa080dba71afb3db",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5afe65bd_59b76ed8",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-06-03T04:55:21Z",
+      "side": 1,
+      "message": "Why would the short name be safer?",
+      "parentUuid": "bab921fb_75b914e9",
+      "revId": "1feb39d1a65c99be4eecf039aa080dba71afb3db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab921fb_e0b684db",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 18
@@ -64,6 +118,24 @@
       "writtenOn": "2015-04-23T18:15:53Z",
       "side": 1,
       "message": "would be good to validate that user provided a valid strategy.",
+      "revId": "1feb39d1a65c99be4eecf039aa080dba71afb3db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_992166fe",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-06-03T04:55:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bab921fb_e0b684db",
       "revId": "1feb39d1a65c99be4eecf039aa080dba71afb3db",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
