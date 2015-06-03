@@ -16,6 +16,24 @@
       "revId": "106d7e585eca2f5848fd371fc2d5fac176041538",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_d75f90e3",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-03T14:47:29Z",
+      "side": 1,
+      "message": "Without it you get a type exception since python requires the argument to os.path.isdir(path) to be a string and raises an exception when it\u0027s a file object.\n\nI discovered we had broken the capability to perform the following simple test when trying to add tests to check the use of stdin for passing in yaml to check that we were correctly wrapping the file objects to deal with codec translation.\n\n  cat \u003cyamlfile\u003e | jenkins-jobs test | less",
+      "parentUuid": "7a016987_c914514e",
+      "revId": "106d7e585eca2f5848fd371fc2d5fac176041538",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
