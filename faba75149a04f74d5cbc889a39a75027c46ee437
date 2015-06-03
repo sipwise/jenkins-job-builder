@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5afe65bd_733b5539",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-03T14:14:48Z",
+      "side": 1,
+      "message": "The poor terminology is definitely a problem I\u0027ll look to correct this.\n\nI don\u0027t believe the idea of a job-template parameter exists in JJB, if you define a key at that level it never gets picked up within the template or any macros it references. Unless that is something you\u0027d like to see added?\n\nSo perhaps current behaviour is better described as (dropped parameter for sake of brevity):\n\n defaults -\u003e project -\u003e project instance -\u003e job-group -\u003e job-group instance\n\n\nI think that:\n\n defaults -\u003e project -\u003e job-group -\u003e job-group instance  -\u003e project instance\n\nmight be more consistent and useful than:\n\n defaults -\u003e job-group -\u003e job-group instance -\u003e project -\u003e project instance\n\nCourse both are better than the current situation :)\n\n\nThe difference being at the level at which the knowledge about what is the best value to use varies and whether you consider the project params and job-group params more global defaults with the instance ones being specific overrides. Projects can include multiple job groups, where the job-group and it\u0027s job may know more about what values should be used than the project, and with the second one i think there is a greater chance of ending up having to override the same param at both the project and project instance level to get the desired behaviour.\n\n\nThink the hierarchy can be shown as:\n\n - project\n     - project instance\n\n - project\n     - job-group\n         - job-group instance\n             - project instance\n\nTo be consistent I think we need to either have parent always override child or child override parent levels. One or the other. The problem at the moment is with the second item above, the job-group params are overridden by job-group instance params and the result overrides both the project instance and project level params.\n\n\nI\u0027m assuming here of course based on some experiments additionally with nested job-groups that it seems better to treat project params as a project level defaults so you can have something like the following:\n\n defaults -\u003e\n   project (consider default) params -\u003e\n     job-group level 1 (consider default) params -\u003e\n       job-group level 2 (consider default) params -\u003e\n         job level 2 instance params -\u003e\n           job level 1 instance params -\u003e\n             project instance params\n\nEssentially the RHS always overrides LHS, no matter how deep you job in levels around grouping data.\n\n\nI\u0027m not sure with the alternative precedence you proposed what would be the correct order that would make sense and be consistent when considering the possibility of nested job-groups.",
+      "parentUuid": "7a016987_04c8f272",
+      "revId": "faba75149a04f74d5cbc889a39a75027c46ee437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_4145bc43",
         "filename": "jenkins_jobs/parser.py",
         "patchSetId": 2
