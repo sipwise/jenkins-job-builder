@@ -16,6 +16,24 @@
       "revId": "31ed230209e36d69e21b3a5c0e1da44f37dad30c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5afe65bd_2c30ee9d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1878,
+      "author": {
+        "id": 12873
+      },
+      "writtenOn": "2015-06-03T05:17:07Z",
+      "side": 1,
+      "message": "Thanks for your review! somehow I missed it ...",
+      "parentUuid": "5afe65bd_16d78a24",
+      "revId": "31ed230209e36d69e21b3a5c0e1da44f37dad30c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
