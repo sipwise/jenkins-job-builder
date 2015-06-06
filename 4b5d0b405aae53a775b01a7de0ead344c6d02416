@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_e4efa1ae",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-06T12:23:34Z",
+      "side": 1,
+      "message": "Used set in the original implementation cause we had a large number of includes which resulted in a large number of paths being added to search through.\n\nMight be worth checking this out to see what happens when maybe a 100+ includes are in place, imagine it\u0027s unlikely to result in a performance issue as the first path the file is found under will be used, but if it is we can always look to switching using an ordered set our the keys of an ordered dict to solve.",
+      "revId": "4b5d0b405aae53a775b01a7de0ead344c6d02416",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
