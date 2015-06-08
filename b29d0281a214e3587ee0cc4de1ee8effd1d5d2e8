@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_d051cdd9",
+        "filename": "tests/yamlparser/fixtures/template_override_project_level_defaults.xml",
+        "patchSetId": 13
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-06-08T19:03:43Z",
+      "side": 1,
+      "message": "Was this unintent unindentional?",
+      "revId": "b29d0281a214e3587ee0cc4de1ee8effd1d5d2e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
