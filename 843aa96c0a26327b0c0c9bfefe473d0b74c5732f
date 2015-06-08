@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_321b9e1d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4347,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-08T10:58:58Z",
+      "side": 1,
+      "message": "Text here needs only be indented by \u0027four\u0027 spaces from the previous line for continuation to occur.\n\n    :arg bool unstable-if-no-artifacts: mark build as unstable\n        if no archived artifacts were found (default False)\n    :arg str includes: include pattern (valid for archived-images-gallery\n        gallery)\n    :arg str base-root-folder: base root dir (valid for comparative gallery)\n    :arg int image-inner-width: width of the image displayed in the inner\n        gallery popup (valid for comparative gallery, optional)",
+      "revId": "843aa96c0a26327b0c0c9bfefe473d0b74c5732f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_12a9c27b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4370,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-08T10:58:58Z",
+      "side": 1,
+      "message": "Seems like this function is a carry over from the earlier approach and after moving the common lines in the multi if statement to the start, you can just put these inline instead of having a dedicated inner function, since there only needs to be one call to insert these.",
+      "revId": "843aa96c0a26327b0c0c9bfefe473d0b74c5732f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_726916be",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4386,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-08T10:58:58Z",
+      "side": 1,
+      "message": "Seems unnecessary as you are always defining it as the first part of each of the if statements below, and also the line that you use to define it below, is common to all three valid gallery types so that can also be placed before the if statements.",
+      "revId": "843aa96c0a26327b0c0c9bfefe473d0b74c5732f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_d208cadb",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4389,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-08T10:58:58Z",
+      "side": 1,
+      "message": "btw, when moving this can you change where you break lines so that each key/value starts on a new line as that makes it much easier to read.\n\ni.e.\n\n    galleries \u003d {\n        \u0027archived-images-gallery\u0027: package_prefix + \u0027imagegallery.\u0027\n            \u0027ArchivedImagesGallery\u0027,\n        \u0027in-folder-comparative-gallery\u0027: package_prefix + \u0027comparative.\u0027\n            \u0027InFolderComparativeArchivedImagesGallery\u0027,\n        \u0027multiple-folder-comparative-gallery\u0027: package_prefix + \u0027comparative\u0027\n            \u0027.MultipleFolderComparativeArchivedImagesGallery\u0027\n    }",
+      "revId": "843aa96c0a26327b0c0c9bfefe473d0b74c5732f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_47077e1c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4394,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-08T10:58:58Z",
+      "side": 1,
+      "message": "Move the dict definition outside of the loop, and you could probably call it gallery_types or galleries, it\u0027s not hugely useful to include \u0027_dict\u0027 in the naming.",
+      "revId": "843aa96c0a26327b0c0c9bfefe473d0b74c5732f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_72423640",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4403,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-08T10:58:58Z",
+      "side": 1,
+      "message": "These two lines are common to all three, so just place them above the if statements and remove the duplicate lines.",
+      "revId": "843aa96c0a26327b0c0c9bfefe473d0b74c5732f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_52d97a82",
+        "filename": "tests/publishers/fixtures/image-gallery001.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-08T10:58:58Z",
+      "side": 1,
+      "message": "Maybe only set this once to true so that it\u0027s clear to the user that \u0027false\u0027 is the default and only needs to be set to true when you need to override the default. Aligns better with your documentation.",
+      "revId": "843aa96c0a26327b0c0c9bfefe473d0b74c5732f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
