@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_f5bc9007",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T14:18:53Z",
+      "side": 1,
+      "message": "Seems more like add \"creation\" support?",
+      "revId": "10d21b81c1025a2c74366759a636ed8c68b8ad48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_55448419",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T14:18:53Z",
+      "side": 1,
+      "message": "Can you tidy up the commit message to wrap the lines at 72 characters?",
+      "revId": "10d21b81c1025a2c74366759a636ed8c68b8ad48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_3ade97dd",
+        "filename": "jenkins_jobs/modules/project_folder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T14:18:53Z",
+      "side": 1,
+      "message": "Is the version required? if not, please avoid including it.",
+      "revId": "10d21b81c1025a2c74366759a636ed8c68b8ad48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_3ab3379a",
+        "filename": "jenkins_jobs/modules/project_folder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T14:18:53Z",
+      "side": 1,
+      "message": "No need to use the \u0027\\\u0027.\n\n         attributes \u003d {\n            \"class\": \"com.cloudbees.hudson.plugins.folder.\"\n                     \"icons.StockFolderIcon\"\n        }",
+      "revId": "10d21b81c1025a2c74366759a636ed8c68b8ad48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_fa4c7fc9",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T14:18:53Z",
+      "side": 1,
+      "message": "keep alphabetical order please.",
+      "revId": "10d21b81c1025a2c74366759a636ed8c68b8ad48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
