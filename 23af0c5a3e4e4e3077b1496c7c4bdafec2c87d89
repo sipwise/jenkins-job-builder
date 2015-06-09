@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3afb71cf_3b233958",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 969,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-06-09T15:03:21Z",
+      "side": 1,
+      "message": "I think it would be more clear if you said \"Monday - Friday\" here rather than \"Not a weekend\".",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_8aa8a48e",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -53,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_db72e510",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1089,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-06-09T15:03:21Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "3afb71cf_8fc316ed",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_af6012a6",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -98,6 +133,24 @@
       "writtenOn": "2015-06-09T12:21:09Z",
       "side": 1,
       "message": "I know we\u0027ve let a few uses of \u0027\\\u0027 appear in this file, but you can just use () for string continuation in python.\n\nReplace with:\n\n            day_selector_class_prefix \u003d (\u0027org.jenkins_ci.plugins.\u0027\n                \u0027run_condition.core.DayCondition$\u0027)\n\nOr use the core_prefix suggestion above and use:\n\n            day_selector_class_prefix \u003d core_prefix + \u0027DayCondition$\u0027",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_5beb9578",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1107,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-06-09T15:03:21Z",
+      "side": 1,
+      "message": "My preference would be for the core_prefix as that\u0027s cleaner imo.",
+      "parentUuid": "3afb71cf_6f6c5ad0",
       "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
