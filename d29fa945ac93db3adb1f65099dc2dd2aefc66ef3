@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_03e37334",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-06-09T15:46:21Z",
+      "side": 1,
+      "message": "No need to talk in the first person in your commit message. Simply \"Add support for the Hipchat plugin v1.9.0 publisher\" as the subject line should be sufficient, no need for a body here imo.\n\n See for examples on good commit message styling: http://chris.beams.io/posts/git-commit/",
+      "revId": "d29fa945ac93db3adb1f65099dc2dd2aefc66ef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_63c7c796",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4355,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-06-09T15:46:21Z",
+      "side": 1,
+      "message": "I would list this as \"Requires Hipchat plugin \u003e\u003d1.9. Maybe combine it with the above message so that this doc is a little shorter?",
+      "revId": "d29fa945ac93db3adb1f65099dc2dd2aefc66ef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
