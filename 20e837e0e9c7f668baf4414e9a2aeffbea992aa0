@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_ef716345",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T14:07:14Z",
+      "side": 1,
+      "message": "use \u0027config.getint()\u0027 instead of \u0027int(config.get())\u0027.",
+      "revId": "20e837e0e9c7f668baf4414e9a2aeffbea992aa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_cf1467a1",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T14:07:14Z",
+      "side": 1,
+      "message": "Seems like the wrong place to solve, especially since syntax errors in the yaml will also result in retries which cannot work. This needs to be more selective in performing the retries in communicating with Jenkins, and avoid including the parsing and expansion errors which should always cause a fatal exit.\n\nI would look at changing this to exist inside the Builder or Jenkins object classes in the builder.py file.",
+      "revId": "20e837e0e9c7f668baf4414e9a2aeffbea992aa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
