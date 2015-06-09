@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_a3cfff27",
+        "filename": "tools/run-compare-xml.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-06-09T15:50:50Z",
+      "side": 1,
+      "message": "Seems hardcoded. What if the user installed zuul in a different directory?",
+      "revId": "d4ddd8a1d7e7213f20ed03f6c7f79525112c4fe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
