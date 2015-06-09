@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_540a517a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 4352,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T11:47:53Z",
+      "side": 1,
+      "message": "You only need to increment by two or four characters for a continuation with sphinx. So:\n\n    :arg bool rerun-unstable-builds: Rerun build for unstable builds as well\n        as failures (default False)\n    :arg str fixed-delay: Fixed delay before retrying build (cannot be used\n        with progressive-delay-increment or progressive-delay-maximum.\n        This is the default delay type.  (Default 0)\n    :arg str progressive-delay-increment: Progressive delay before retrying\t\n        build increment (cannot be used when fixed-delay is being used)\n    :arg str progressive-delay-maximum: Progressive delay before retrying\n        maximum delay (cannot be used when fixed-delay is being used)\n    :arg str max-failed-builds: Maximum number of successive failed builds\n        (Default 0)\n    :arg str regular-expression: Only rerun build if regular expression is\n        found in output (Default \u0027\u0027)",
+      "revId": "26f1da4d3944de4781f8808f62fbd6382e23140f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_9460c9a6",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 4367,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T11:47:53Z",
+      "side": 1,
+      "message": "Just convert the bool result of whether the key is in the dict to a string:\n\n    XML.SubElement(naginator, \u0027checkRegexp\u0027).text \u003d str(\n        \u0027regular-expression\u0027 in d).lower()",
+      "revId": "26f1da4d3944de4781f8808f62fbd6382e23140f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_34b7d5f6",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 4371,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T11:47:53Z",
+      "side": 1,
+      "message": "Since you will be checking progressive-delay-* a second time I would go with the following:\n\n    progressive_delay \u003d (\u0027progressive-delay-increment\u0027 in data or\n                         \u0027progressive-delay-maximum\u0027 in data)\n    if \u0027fixed-delay\u0027 in data and progressive_delay:\n\nThen further on down you can replace the lines:\n\n    if \u0027progressive-delay-increment\u0027 not in data or \\\n            \u0027progressive-delay-maximum\u0027 not in data:\n\nwith:\n\n    if not progressive_delay:",
+      "revId": "26f1da4d3944de4781f8808f62fbd6382e23140f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_74daed4d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 4373,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T11:47:53Z",
+      "side": 1,
+      "message": "This won\u0027t result in the expected string, the \u0027\\\u0027 isn\u0027t a line continuation at this point since it\u0027s inside the string.\n\nWhat this should be:\n\n         raise JenkinsJobsException(\"You cannot specify both fixed \"\n                                    \"and progressive delays\")",
+      "revId": "26f1da4d3944de4781f8808f62fbd6382e23140f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_942e8941",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 4374,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T11:47:53Z",
+      "side": 1,
+      "message": "Just use brackets, pep8 generally recommended against using \u0027\\\u0027.\n\n if (\u0027progressive-delay-increment\u0027 not in data or\n       \u0027progressive-delay-maximum\u0027 not in data):\n\nHowever if you follow one of the above suggestions, this can be replaced with:\n\n    if not progressive_delay:",
+      "revId": "26f1da4d3944de4781f8808f62fbd6382e23140f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
