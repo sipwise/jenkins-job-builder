@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_5804b116",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-09T17:54:08Z",
+      "side": 1,
+      "message": "Just to note that this statement is not actually true.  I believe current functionality is that jjb will use anonymous as long as jenkins master is setup for that wether you pass None or any string for user and password.  so user\u003dUSER and password\u003dPASS will just allow jjb to connect to jenkins anonymously.  The logging below does not handle this case.",
+      "revId": "ebd0d9e0b122c8234712c958a44e6018a80c4585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
