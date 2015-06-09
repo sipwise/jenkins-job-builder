@@ -16,6 +16,24 @@
       "revId": "d4ddd8a1d7e7213f20ed03f6c7f79525112c4fe1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_5c4268af",
+        "filename": "tools/run-compare-xml.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-09T16:43:48Z",
+      "side": 1,
+      "message": "IMO this change is a slight improvement and doesn\u0027t make this script worse therefore your request can be done in a follow on change.",
+      "parentUuid": "3afb71cf_a3cfff27",
+      "revId": "d4ddd8a1d7e7213f20ed03f6c7f79525112c4fe1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
