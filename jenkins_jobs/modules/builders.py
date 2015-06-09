@@ -930,6 +930,57 @@ def conditional_step(parser, xml_parent, data):
                        representation of true
 
                          :condition-expression: Expression to expand
+    build-cause        Run if the current build has a specific cause
+                       (e.g triggered by SCM or timer).
+
+                         :cause: The cause why the build was triggered.
+                           Following causes are supported:
+                             USER_CAUSE: build was triggered by a manual
+                               interaction. (default)
+                             SCM_CAUSE: build was triggered by a SCM change.
+                             TIMER_CAUSE: build was triggered by a timer.
+                             CLI_CAUSE: build was triggered by via CLI
+                               interface.
+                             REMOTE_CAUSE: build was triggered via remote
+                               interface.
+                             UPSTREAM_CAUSE: build was triggered by an
+                               upstream project.
+                           Following supported if XTrigger plugin installed:
+                             FS_CAUSE: build was triggered by a file system
+                               change (FSTrigger Plugin).
+                             URL_CAUSE: build was triggered by a URL change
+                               (URLTrigger Plugin)
+                             IVY_CAUSE: build triggered by an Ivy dependency
+                               version has change (IvyTrigger Plugin)
+                             SCRIPT_CAUSE: build was triggered by a script
+                               (ScriptTrigger Plugin)
+                             BUILDRESULT_CAUSE: build was triggered by a result
+                               of an other job (BuildResultTrigger Plugin)
+                         :exclusive-cause: (bool) There might by multiple
+                           casues causing a build to be triggered, with this
+                           true, the cause must be the only one causing this
+                           build this build to be triggered. (default False)
+    day-of-week        Only run on specific days of the week.
+
+                         :day-selector: Days you want the build to run on.
+                           Following values are supported:
+                             weekend: Saturday and Sunday (default)
+                             weekday: Not a weekend
+                             select-days: True for days for which the build
+                               should run.
+                               SUN: Run on Sunday (default False)
+                               MON: Run on Monday (default False)
+                               TUES: Run on Tuesday (default False)
+                               WED: Run on Wednesday (default False)
+                               THURS: Run on Thursday (default False)
+                               FRI: Run on Friday (default False)
+                               SAT: Run on Saturday (default False)
+                         :use-build-time: (bool) Use the build time instead of
+                           the the time that the condition is evaluated.
+                           (default False)
+    execution-node     Run only on selected nodes.
+
+                         :nodes: (list) List of nodes to execute on.
     strings-match      Run the step if two strings match
 
                          :condition-string1: First string
@@ -958,11 +1009,54 @@ def conditional_step(parser, xml_parent, data):
                            relative, it will be considered relative to
                            either `workspace`, `artifact-directory`,
                            or `jenkins-home`. Default is `workspace`.
+    files-match        Run if one or more files match the selectors.
+
+                         :include-pattern: Includes Patterns. Separate multiple
+                         patterns with a comma
+                         :exclude-pattern: Excludes Patterns. Separate multiple
+                         patterns with a comma
+                         :condition-basedir: Accepted values are `workspace`,
+                           `artifact-directory`, or `jenkins-home`.
+                           Default is `workspace`.
+    num-comp           Run if the numerical comparison is true.
+
+                         :lhs: Left Hand Side. Must evaluate to a number.
+                           (required)
+                         :rhs: Right Hand Side. Must evaluate to a number.
+                           (required)
+                         :comparator: Accepted values are `less-than`,
+                           `greater-than`, `equal`, `not-equal`,
+                           `less-than-equal`, `greater-than-equal`.
+                           Default is `less-than`.
+    regex-match        Run if the Expression matches the Label.
+
+                         :regex: The regular expression used to match the label
+                         :label: The label that will be tested by the regular
+                           expression
+    time               Only run during a certain period of the day.
+
+                         :earliest-hour: Starting hour
+                         :earliest-min: Starting min
+                         :latest-hour: Ending hour
+                         :latest-min: Ending min
+                         :use-build-time: (bool) Use the build time instead of
+                           the the time that the condition is evaluated.
+                           (default False)
     not                Run the step if the inverse of the condition-operand
                        is true
 
                          :condition-operand: Condition to evaluate.  Can be
                            any supported conditional-step condition.
+    and                Run the step if logical and of all conditional-operands
+                       is true
+
+                         :condition-operands: (list) Conditions to evaluate.
+                         Can be any supported conditional-step condition.
+    or                 Run the step if logical or of all conditional-operands
+                       is true
+
+                         :condition-operands: (list) Conditions to evaluate.
+                         Can be any supported conditional-step condition.
     ================== ====================================================
 
     Example:
@@ -988,6 +1082,60 @@ def conditional_step(parser, xml_parent, data):
                      'org.jenkins_ci.plugins.run_condition.core.'
                      'BooleanCondition')
             XML.SubElement(ctag, "token").text = cdata['condition-expression']
+        elif kind == "build-cause":
+            ctag.set('class',
+                     'org.jenkins_ci.plugins.run_condition.core.'
+                     'CauseCondition')
+            cause_list = ('USER_CAUSE', 'SCM_CAUSE', 'TIMER_CAUSE',
+                          'CLI_CAUSE', 'REMOTE_CAUSE', 'UPSTREAM_CAUSE',
+                          'FS_CAUSE', 'URL_CAUSE', 'IVY_CAUSE',
+                          'SCRIPT_CAUSE', 'BUILDRESULT_CAUSE')
+            cause_name = cdata.get('cause', 'USER_CAUSE')
+            if cause_name not in cause_list:
+                raise JenkinsJobsException(
+                    "cause must be one of %s" %
+                    ", ".join(cause_list))
+            XML.SubElement(ctag, "buildCause").text = cause_name
+            XML.SubElement(ctag, "exclusiveCause").text = str(cdata.get(
+                'exclusive-cause', False)).lower()
+        elif kind == "day-of-week":
+            ctag.set('class',
+                     'org.jenkins_ci.plugins.run_condition.core.'
+                     'DayCondition')
+            day_selector_class_prefix = 'org.jenkins_ci.plugins.'    \
+                'run_condition.core.DayCondition$'
+            day_selector_classes = {
+                'weekend': day_selector_class_prefix + 'Weekend',
+                'weekday': day_selector_class_prefix + 'Weekday',
+                'select-days': day_selector_class_prefix + 'SelectDays',
+            }
+            day_selector = cdata.get('day-selector', 'weekend')
+            if day_selector not in day_selector_classes:
+                raise JenkinsJobsException(
+                    "day-selector must be one of %s" %
+                    ", ".join(day_selector_classes.keys()))
+            day_selector_tag = XML.SubElement(ctag, "daySelector")
+            day_selector_tag.set('class', day_selector_classes[day_selector])
+            if day_selector == "select-days":
+                days_tag = XML.SubElement(day_selector_tag, "days")
+                day_tag_text = 'org.jenkins__ci.plugins.run__condition.'    \
+                    'core.DayCondition_-Day'
+                days = ['SUN', 'MON', 'TUES', 'WED', 'THURS', 'FRI', 'SAT']
+                for day_no in range(len(days)):
+                    day_tag = XML.SubElement(days_tag, day_tag_text)
+                    XML.SubElement(day_tag, "day").text = str(day_no + 1)
+                    XML.SubElement(day_tag, "selected").text = str(cdata.get(
+                        days[day_no], False)).lower()
+            XML.SubElement(ctag, "useBuildTime").text = str(cdata.get(
+                'use-build-time', False)).lower()
+        elif kind == "execution-node":
+            ctag.set('class',
+                     'org.jenkins_ci.plugins.run_condition.core.'
+                     'NodeCondition')
+            allowed_nodes_tag = XML.SubElement(ctag, "allowedNodes")
+            for node in cdata.get("nodes"):
+                node_tag = XML.SubElement(allowed_nodes_tag, "string")
+                node_tag.text = node
         elif kind == "strings-match":
             ctag.set('class',
                      'org.jenkins_ci.plugins.run_condition.core.'
@@ -1035,30 +1183,94 @@ def conditional_step(parser, xml_parent, data):
                      'org.jenkins_ci.plugins.run_condition.contributed.'
                      'BatchFileCondition')
             XML.SubElement(ctag, "command").text = cdata['condition-command']
-        elif kind == "file-exists":
+        elif kind == "file-exists" or kind == "files-match":
+            if kind == "file-exists":
+                ctag.set('class',
+                         'org.jenkins_ci.plugins.run_condition.core.'
+                         'FileExistsCondition')
+                XML.SubElement(ctag, "file").text = cdata['condition-filename']
+            else:
+                ctag.set('class',
+                         'org.jenkins_ci.plugins.run_condition.core.'
+                         'FilesMatchCondition')
+                XML.SubElement(ctag, "includes").text = \
+                    cdata['include-pattern']
+                XML.SubElement(ctag, "excludes").text = \
+                    cdata['exclude-pattern']
+            basedir_class_prefix = 'org.jenkins_ci.plugins.run_condition.'  \
+                'common.BaseDirectory$'
+            basedir_classes = {
+                'workspace': basedir_class_prefix + 'Workspace',
+                'artifact-directory': basedir_class_prefix + 'ArtifactsDir',
+                'jenkins-home': basedir_class_prefix + 'JenkinsHome'
+            }
+            basedir = cdata.get('condition-basedir', 'workspace')
+            if basedir not in basedir_classes:
+                raise JenkinsJobsException(
+                    "condition-basedir must be one of %s" %
+                    ", ".join(basedir_classes.keys()))
+            XML.SubElement(ctag, "baseDir").set('class',
+                                                basedir_classes[basedir])
+        elif kind == "num-comp":
             ctag.set('class',
                      'org.jenkins_ci.plugins.run_condition.core.'
-                     'FileExistsCondition')
-            XML.SubElement(ctag, "file").text = cdata['condition-filename']
-            basedir = cdata.get('condition-basedir', 'workspace')
-            basedir_tag = XML.SubElement(ctag, "baseDir")
-            if "workspace" == basedir:
-                basedir_tag.set('class',
-                                'org.jenkins_ci.plugins.run_condition.common.'
-                                'BaseDirectory$Workspace')
-            elif "artifact-directory" == basedir:
-                basedir_tag.set('class',
-                                'org.jenkins_ci.plugins.run_condition.common.'
-                                'BaseDirectory$ArtifactsDir')
-            elif "jenkins-home" == basedir:
-                basedir_tag.set('class',
-                                'org.jenkins_ci.plugins.run_condition.common.'
-                                'BaseDirectory$JenkinsHome')
+                     'NumericalComparisonCondition')
+            XML.SubElement(ctag, "lhs").text = cdata['lhs']
+            XML.SubElement(ctag, "rhs").text = cdata['rhs']
+            comp_class_prefix = 'org.jenkins_ci.plugins.'   \
+                'run_condition.core.NumericalComparisonCondition$'
+            comp_classes = {
+                'less-than': comp_class_prefix + 'LessThan',
+                'greater-than': comp_class_prefix + 'GreaterThan',
+                'equal': comp_class_prefix + 'EqualTo',
+                'not-equal': comp_class_prefix + 'NotEqualTo',
+                'less-than-equal': comp_class_prefix + 'LessThanOrEqualTo',
+                'greater-than-equal': comp_class_prefix +
+                'GreaterThanOrEqualTo'
+            }
+            comp = cdata.get('comparator', 'less-than')
+            if comp not in comp_classes:
+                raise JenkinsJobsException(
+                    "comparator must be one of %s" %
+                    ", ".join(comp_classes.keys()))
+            XML.SubElement(ctag, "comparator").set('class',
+                                                   comp_classes[comp])
+        elif kind == "regex-match":
+            ctag.set('class',
+                     'org.jenkins_ci.plugins.run_condition.core.'
+                     'ExpressionCondition')
+            XML.SubElement(ctag, "expression").text = cdata['regex']
+            XML.SubElement(ctag, "label").text = cdata['label']
+        elif kind == "time":
+            ctag.set('class',
+                     'org.jenkins_ci.plugins.run_condition.core.'
+                     'TimeCondition')
+            XML.SubElement(ctag, "earliestHours").text = cdata['earliest-hour']
+            XML.SubElement(ctag, "earliestMinutes").text = \
+                cdata['earliest-min']
+            XML.SubElement(ctag, "latestHours").text = cdata['latest-hour']
+            XML.SubElement(ctag, "latestMinutes").text = cdata['latest-min']
+            XML.SubElement(ctag, "useBuildTime").text = str(cdata.get(
+                'use-build-time', False)).lower()
         elif kind == "not":
             ctag.set('class',
                      'org.jenkins_ci.plugins.run_condition.logic.Not')
             notcondition = cdata['condition-operand']
             build_condition(notcondition, ctag)
+        elif kind == "and" or "or":
+            if kind == "and":
+                ctag.set('class',
+                         'org.jenkins_ci.plugins.run_condition.logic.And')
+            else:
+                ctag.set('class',
+                         'org.jenkins_ci.plugins.run_condition.logic.Or')
+            conditions_tag = XML.SubElement(ctag, "conditions")
+            container_tag_text = 'org.jenkins__ci.plugins.run__condition.'    \
+                'logic.ConditionContainer'
+            for condition in cdata['condition-operands']:
+                conditions_container_tag = XML.SubElement(conditions_tag,
+                                                          container_tag_text)
+                build_condition(condition, conditions_container_tag)
 
     def build_step(parent, step):
         for edited_node in create_builders(parser, step):
