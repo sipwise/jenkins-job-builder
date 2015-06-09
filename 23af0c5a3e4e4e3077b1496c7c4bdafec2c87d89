@@ -1,0 +1,412 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_8aa8a48e",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1027,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "You have required here, but not on a number of others that will result in an exception.\n\nJust need to update the various options you\u0027re adding throughout this docstring to note if they are are required, optional or have a default value.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_2acd3066",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1031,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "Use \"(default \u0027less-than\u0027)\" since it\u0027s a convention to place the required, optional or default in brackets.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_8fc316ed",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1089,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "I think with the amount of times \u0027org.jenkins_ci.plugins.run_condition.core.\u0027 is showing up below it should be stored in a variable outside of the if/else statements.\n\ni.e\n\n\t        core_prefix \u003d \u0027org.jenkins_ci.plugins.run_condition.core.\u0027\n\nAnd do the same for any other uses of \u0027org.jenkins_ci.plugins.run_condition.core.\u0027.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_af6012a6",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1098,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "Please replace with InvalidAttributeError, would become:\n\n raise InvalidAttributeError(\u0027cause\u0027, cause_name, cause_list)",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_6f9d7a09",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1104,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "See suggestiong on use of core_prefix.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_6f6c5ad0",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1107,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "I know we\u0027ve let a few uses of \u0027\\\u0027 appear in this file, but you can just use () for string continuation in python.\n\nReplace with:\n\n            day_selector_class_prefix \u003d (\u0027org.jenkins_ci.plugins.\u0027\n                \u0027run_condition.core.DayCondition$\u0027)\n\nOr use the core_prefix suggestion above and use:\n\n            day_selector_class_prefix \u003d core_prefix + \u0027DayCondition$\u0027",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_4f5bdef6",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1117,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "Same as above about InvalidAttributeError",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_0f7cc61d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1122,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "Looks like a typo here, \u0027__\u0027 instead of \u0027_\u0027 in two places.\n\nSeems like a good argument to have a common variable store \u0027org.jenkins_ci.plugins.run_condition.core.\u0027 and reuse it instead of trying to include it everywhere.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_2f98a277",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1123,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "DayCondition_-Day looks odd, should it just be DayCondition?",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_8f96763d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1134,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "See suggestiong on use of core_prefix.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_aff01268",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1190,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "See suggestiong on use of core_prefix.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_efe3aaa2",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1192,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "Needs try/except with raise of MissingAttributeError, unless this is optional in which case should provide a default and update the docstring.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_8f67964c",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1196,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "See suggestiong on use of core_prefix.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_4f863edc",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1200,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "Should use try/except and raise MissingAttributeError if you get a key error. Also you didn\u0027t need the preceding \u0027\\\u0027 here, would have fit on one line.\n\nUnless these are optional? Which should be indicated in the documentation docstring above as well:\n\nIn this case the following should work:\n\n                try:\n                    XML.SubElement(ctag, \"includes\").text \u003d cdata[\u0027include-pattern\u0027]\n                    XML.SubElement(ctag, \"excludes\").text \u003d cdata[\u0027exclude-pattern\u0027]\n                except KeyError as e:\n                    raise MissingAttributesError(e.args[0])",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_0f02863d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1201,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "See suggestiong on use of core_prefix or use brackets to avoid use of \u0027\\\u0027.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_aa4fe069",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1212,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "Same as above about InvalidAttributeError",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_aa8a4019",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1220,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "Should use try/except and raise MissingAttributeError if you get a key error since you\u0027ve noted these are required above in the docstring.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_8a6544b6",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1222,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "See suggestiong on use of core_prefix or use brackets to avoid use of \u0027\\\u0027.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_8a0c24ee",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1236,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "Same as above about InvalidAttributeError.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_ea0158b0",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1241,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "See suggestiong on use of core_prefix.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_cafe9cad",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1247,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "See suggestiong on use of core_prefix.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_6adb2850",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1253,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "Should use try/except and raise MissingAttributeError if you get a key error, unless some of these four are optional and in which case should provide a default value and update the docstring to note they are optional or provide their default value.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_2f0f8238",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1264,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "See suggestiong on use of core_prefix though in this case it would be logic_prefix and be:\n\n logic_prefix \u003d \u0027org.jenkins_ci.plugins.run_condition.logic.\u0027",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_4a0cec3a",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1269,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T12:21:09Z",
+      "side": 1,
+      "message": "See suggestiong on use of core_prefix or use brackets to avoid use of \u0027\\\u0027.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
