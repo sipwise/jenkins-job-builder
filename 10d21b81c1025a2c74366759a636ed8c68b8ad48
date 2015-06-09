@@ -36,6 +36,40 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_ed1a887c",
+        "filename": "jenkins_jobs/modules/project_folder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-06-09T15:39:01Z",
+      "side": 1,
+      "message": "Copyright should be updated. It is 2015 now. I\u0027m guessing you copied this from another file. Since you work for Cisco I\u0027m guessing the copyright should either be to Cisco or to you.\n\nFor example:\n\nCopyright (C) 2015 Jerome Hourquebie \u003cjhourque@cisco.com\u003e \n\n\nPlease adjust accordingly.",
+      "revId": "10d21b81c1025a2c74366759a636ed8c68b8ad48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_d0387ff1",
+        "filename": "jenkins_jobs/modules/project_folder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-06-09T15:39:01Z",
+      "side": 1,
+      "message": "Trailing \\ is unnecessary.",
+      "revId": "10d21b81c1025a2c74366759a636ed8c68b8ad48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_3ade97dd",
         "filename": "jenkins_jobs/modules/project_folder.py",
         "patchSetId": 1
