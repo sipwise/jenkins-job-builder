@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_4c988578",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3180,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-09T13:36:13Z",
+      "side": 1,
+      "message": "I would say not to use the \u0027\\\u0027 here, but I think that should be a follow on patch to clean up this file completely.",
+      "revId": "e6714f92af6493619dcb483241d39c07447fa793",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
