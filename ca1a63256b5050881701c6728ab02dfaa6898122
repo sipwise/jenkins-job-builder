@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_dee529a4",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-09T18:36:30Z",
+      "side": 1,
+      "message": "would it make sense to make this a common function as well?  looks like your plugin uses the same params.",
+      "revId": "ca1a63256b5050881701c6728ab02dfaa6898122",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
