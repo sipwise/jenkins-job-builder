@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_6ddf9f0d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1223,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T01:14:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_4f3d17c3",
+      "revId": "d6d81aa3d15187fbb6eda9b826201912e57e12c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_0f339ff7",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_8dbf7ba9",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1235,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T01:14:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_0f339ff7",
+      "revId": "d6d81aa3d15187fbb6eda9b826201912e57e12c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_ec8e11cf",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2015-06-09T13:47:39Z",
       "side": 1,
       "message": "Are these required or not? This suggests not, the docstring suggests they are required and show raise a MissingAttributeError if not found?\n\nSo should use a try/except and raise a MissingAttributeError if a KeyError is hit?\n\n    try:\n        XML.SubElement(binding_xml, \u0027usernameVariable\u0027\n            ).text \u003d params[\u0027username\u0027]\n        XML.SubElement(binding_xml, \u0027passwordVariable\u0027\n            ).text \u003d params[\u0027password\u0027]\n    except KeyError as e:\n        raise MissingAttributeError(e.args[0])",
+      "revId": "d6d81aa3d15187fbb6eda9b826201912e57e12c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_adc23732",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1275,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T01:14:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_ec8e11cf",
       "revId": "d6d81aa3d15187fbb6eda9b826201912e57e12c2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
