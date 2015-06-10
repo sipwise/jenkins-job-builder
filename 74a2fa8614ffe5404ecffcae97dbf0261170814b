@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_106cac9a",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-10T17:15:32Z",
+      "side": 1,
+      "message": "Appears unnecessary since you return on the next line.",
+      "revId": "74a2fa8614ffe5404ecffcae97dbf0261170814b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_d00854dc",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-10T17:15:32Z",
+      "side": 1,
+      "message": "You can probably drop the None statement for all of the returns.",
+      "revId": "74a2fa8614ffe5404ecffcae97dbf0261170814b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
