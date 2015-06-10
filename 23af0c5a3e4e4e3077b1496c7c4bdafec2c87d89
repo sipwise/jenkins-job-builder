@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_ea4db53e",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 969,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_3b233958",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_8aa8a48e",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_8a5081d5",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1027,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_8aa8a48e",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_2acd3066",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2015-06-09T12:21:09Z",
       "side": 1,
       "message": "Use \"(default \u0027less-than\u0027)\" since it\u0027s a convention to place the required, optional or default in brackets.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_6a60a5a5",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1031,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_2acd3066",
       "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_ca71d977",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1089,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_db72e510",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_af6012a6",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -105,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_8a6761b6",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1098,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_af6012a6",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_6f9d7a09",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -116,6 +206,24 @@
       "writtenOn": "2015-06-09T12:21:09Z",
       "side": 1,
       "message": "See suggestiong on use of core_prefix.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_6a0785ca",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1104,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_6f9d7a09",
       "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -157,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_eafb75bf",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1107,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_5beb9578",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_4f5bdef6",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -168,6 +294,24 @@
       "writtenOn": "2015-06-09T12:21:09Z",
       "side": 1,
       "message": "Same as above about InvalidAttributeError",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_6a2e6544",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1117,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_4f5bdef6",
       "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -208,6 +352,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_0ae011f9",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1123,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "I cross checked with the XML created on Jenkins using the UI. It is org.jenkins__ci.plugins.run__condition.core.DayCondition_-Day only. No typo here or before.",
+      "parentUuid": "3afb71cf_2f98a277",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_8f96763d",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -219,6 +381,24 @@
       "writtenOn": "2015-06-09T12:21:09Z",
       "side": 1,
       "message": "See suggestiong on use of core_prefix.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_6abc25dc",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1134,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_8f96763d",
       "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -242,6 +422,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_4ac16953",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1190,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_aff01268",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_efe3aaa2",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -253,6 +451,24 @@
       "writtenOn": "2015-06-09T12:21:09Z",
       "side": 1,
       "message": "Needs try/except with raise of MissingAttributeError, unless this is optional in which case should provide a default and update the docstring.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_2ab2ad06",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1192,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_efe3aaa2",
       "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -276,6 +492,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_0ab7f1f5",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1196,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_8f67964c",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_4f863edc",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -287,6 +521,24 @@
       "writtenOn": "2015-06-09T12:21:09Z",
       "side": 1,
       "message": "Should use try/except and raise MissingAttributeError if you get a key error. Also you didn\u0027t need the preceding \u0027\\\u0027 here, would have fit on one line.\n\nUnless these are optional? Which should be indicated in the documentation docstring above as well:\n\nIn this case the following should work:\n\n                try:\n                    XML.SubElement(ctag, \"includes\").text \u003d cdata[\u0027include-pattern\u0027]\n                    XML.SubElement(ctag, \"excludes\").text \u003d cdata[\u0027exclude-pattern\u0027]\n                except KeyError as e:\n                    raise MissingAttributesError(e.args[0])",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_ead01521",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1200,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_4f863edc",
       "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -310,6 +562,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_aac69d65",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1201,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_0f02863d",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_aa4fe069",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -321,6 +591,24 @@
       "writtenOn": "2015-06-09T12:21:09Z",
       "side": 1,
       "message": "Same as above about InvalidAttributeError",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_ca7b1927",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1212,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_aa4fe069",
       "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -344,6 +632,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_aa745d35",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1220,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_aa8a4019",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_8a6544b6",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -355,6 +661,24 @@
       "writtenOn": "2015-06-09T12:21:09Z",
       "side": 1,
       "message": "See suggestiong on use of core_prefix or use brackets to avoid use of \u0027\\\u0027.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_8a71a146",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1222,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_8a6544b6",
       "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -378,6 +702,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_6a91c546",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1236,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_8a0c24ee",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_ea0158b0",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -389,6 +731,24 @@
       "writtenOn": "2015-06-09T12:21:09Z",
       "side": 1,
       "message": "See suggestiong on use of core_prefix.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_8abf61a9",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1241,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_ea0158b0",
       "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -412,6 +772,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_6adf850d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1247,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_cafe9cad",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_6adb2850",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -423,6 +801,24 @@
       "writtenOn": "2015-06-09T12:21:09Z",
       "side": 1,
       "message": "Should use try/except and raise MissingAttributeError if you get a key error, unless some of these four are optional and in which case should provide a default value and update the docstring to note they are optional or provide their default value.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_4ae4c9df",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1253,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_6adb2850",
       "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -446,6 +842,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_2ae50ddb",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1264,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_2f0f8238",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_4a0cec3a",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -457,6 +871,24 @@
       "writtenOn": "2015-06-09T12:21:09Z",
       "side": 1,
       "message": "See suggestiong on use of core_prefix or use brackets to avoid use of \u0027\\\u0027.",
+      "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_8ad641ef",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1269,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-10T00:48:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_4a0cec3a",
       "revId": "23af0c5a3e4e4e3077b1496c7c4bdafec2c87d89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
