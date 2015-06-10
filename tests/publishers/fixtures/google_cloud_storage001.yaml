@@ -1,0 +1,15 @@
+publishers:
+    - google-cloud-storage:
+        credentials-id: 'myCredentials'
+        uploads:
+            - expiring-elements-upload:
+                bucket-name: 'gs://myBucket'
+                days-to-retain: 7
+            - build-log-upload:
+                log-name: 'console.log'
+                storage-location: 'gs://myBucket'
+                upload-for-failed-jobs: true
+            - classic-upload:
+                file-pattern: 'target/*.war'
+                storage-location: 'gs://myBucket'
+                share-publicly: true
