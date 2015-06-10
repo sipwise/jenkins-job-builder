@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_510e9ce5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 16230
+      },
+      "writtenOn": "2015-06-10T15:38:54Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "3afb71cf_f5bc9007",
+      "revId": "10d21b81c1025a2c74366759a636ed8c68b8ad48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_55448419",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_0e06c551",
+        "filename": "jenkins_jobs/modules/project_folder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 16230
+      },
+      "writtenOn": "2015-06-10T15:38:54Z",
+      "side": 1,
+      "message": "you are right, thanks.",
+      "parentUuid": "3afb71cf_ed1a887c",
+      "revId": "10d21b81c1025a2c74366759a636ed8c68b8ad48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_d0387ff1",
         "filename": "jenkins_jobs/modules/project_folder.py",
         "patchSetId": 1
@@ -64,6 +100,24 @@
       "writtenOn": "2015-06-09T15:39:01Z",
       "side": 1,
       "message": "Trailing \\ is unnecessary.",
+      "revId": "10d21b81c1025a2c74366759a636ed8c68b8ad48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_8e34f5fb",
+        "filename": "jenkins_jobs/modules/project_folder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 16230
+      },
+      "writtenOn": "2015-06-10T15:38:54Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "3afb71cf_d0387ff1",
       "revId": "10d21b81c1025a2c74366759a636ed8c68b8ad48",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_91ec142b",
+        "filename": "jenkins_jobs/modules/project_folder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 16230
+      },
+      "writtenOn": "2015-06-10T15:38:54Z",
+      "side": 1,
+      "message": "you are right it is not mandatory",
+      "parentUuid": "3afb71cf_3ade97dd",
+      "revId": "10d21b81c1025a2c74366759a636ed8c68b8ad48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_3ab3379a",
         "filename": "jenkins_jobs/modules/project_folder.py",
         "patchSetId": 1
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "3afb71cf_31cc40ba",
+        "filename": "jenkins_jobs/modules/project_folder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 16230
+      },
+      "writtenOn": "2015-06-10T15:38:54Z",
+      "side": 1,
+      "message": "thanks a lot for the tips, it was a nightmare to fix this for pep8 :o)",
+      "parentUuid": "3afb71cf_3ab3379a",
+      "revId": "10d21b81c1025a2c74366759a636ed8c68b8ad48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_fa4c7fc9",
         "filename": "setup.cfg",
         "patchSetId": 1
@@ -115,6 +205,24 @@
       "writtenOn": "2015-06-09T14:18:53Z",
       "side": 1,
       "message": "keep alphabetical order please.",
+      "revId": "10d21b81c1025a2c74366759a636ed8c68b8ad48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_ee524966",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 16230
+      },
+      "writtenOn": "2015-06-10T15:38:54Z",
+      "side": 1,
+      "message": "ok",
+      "parentUuid": "3afb71cf_fa4c7fc9",
       "revId": "10d21b81c1025a2c74366759a636ed8c68b8ad48",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
