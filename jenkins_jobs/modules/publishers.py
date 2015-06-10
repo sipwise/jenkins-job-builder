@@ -4364,6 +4364,181 @@ def logstash(parser, xml_parent, data):
         data.get('fail-build', False))
 
 
+def google_cloud_storage(parser, xml_parent, data):
+    """yaml: google_cloud_storage
+    Upload build artifacts to Google Cloud Storage.
+
+    Requires the Jenkins :jenkins-wiki:`Google Cloud Storage plugin
+    <Google+Cloud+Storage+Plugin>`.
+
+    Apart from the requirement of installing Google Cloud Storage Plugin
+    itself, installation of Google OAuth Credentials and addition of required
+    credentials to use with Google Cloud Storage are required.
+
+    :arg str credentials-id: The set of Google credentials registered with
+        the Jenkins Credential Manager for authenticating with your project.
+        (required)
+
+    :arg list uploads: List of upload actions to be performed. (required)
+
+        :uploads:
+            * **Bucket with expiring elements lifecycle**
+                :arg upload-type str: Type of the upload. Must be set to
+                    expiring-elements. (required)
+                :arg bucket-name str: Name of the bucket to store artifacts.
+                    (required)
+                :arg days-to-retain int: Number of days after which the
+                    artifact gets deleted. (required)
+
+            * **Build Log Upload**
+                :arg upload-type str: Type of the upload. Must be set to
+                    build-log-upload. (required)
+                :arg log-name str: Name of the file which Jenkins build log
+                    is stored under. (required)
+                :arg storage-location str: Name of the bucket to store
+                    artifacts. (required)
+                :arg share-publicly bool: Whether to share uploaded artifact
+                    publicly. (default false)
+                :arg upload-for-failed-jobs bool: Whether to upload artifacts
+                    even if the build fails. (default false)
+
+            * **Classic Upload**
+                :arg upload-type str: Type of the upload. Must be set to
+                    build-log-upload. (required)
+                :arg file-pattern str: Ant style globs to match a set of
+                    files to upload. (required)
+                :arg storage-location str: Name of the bucket to store
+                    artifacts. (required)
+                :arg share-publicly bool: Whether to share uploaded artifact
+                    publicly. (default false)
+                :arg upload-for-failed-jobs: Whether to upload artifacts even
+                    if the build fails. (default false)
+
+    .. literalinclude::
+        /../../tests/publishers/fixtures/google_cloud_storage001.yaml
+       :language: yaml
+    """
+
+    def expiring_elements_upload(upload, upload_element, type_count):
+        """Handle expiring elements upload action
+        """
+
+        xml_element = XML.SubElement(upload_element, 'com.google.'
+                                     'jenkins.plugins.storage.'
+                                     'ExpiringBucketLifecycleManager')
+
+        if 'bucket-name' not in upload:
+            raise JenkinsJobsException('bucket-name parameter is missing')
+        XML.SubElement(xml_element, 'bucketNameWithVars').text = str(
+            upload['bucket-name'])
+
+        XML.SubElement(xml_element, 'sharedPublicly').text = 'false'
+        XML.SubElement(xml_element, 'forFailedJobs').text = 'false'
+
+        if type_count.count('expiring-elements') > 1:
+            XML.SubElement(xml_element, 'module',
+                           {'reference': '../../com.google.jenkins.plugins.'
+                            'storage.ExpiringBucketLifecycleManager/module'})
+        else:
+            XML.SubElement(xml_element, 'module')
+
+        if 'days-to-retain' not in upload:
+            raise JenkinsJobsException('days-to-retain is missing')
+        XML.SubElement(xml_element, 'bucketObjectTTL').text = str(
+            upload['days-to-retain'])
+
+    def build_log_upload(upload, upload_element, type_count):
+        """Handle build log upload action
+        """
+
+        xml_element = XML.SubElement(upload_element, 'com.google.jenkins.'
+                                     'plugins.storage.StdoutUpload')
+
+        if 'storage-location' not in upload:
+            raise JenkinsJobsException('storage-location parameter is missing')
+        XML.SubElement(xml_element, 'bucketNameWithVars').text = str(
+            upload['storage-location'])
+
+        XML.SubElement(xml_element, 'sharedPublicly').text = str(
+            upload.get('share-publicly', False)).lower()
+
+        XML.SubElement(xml_element, 'forFailedJobs').text = str(
+            upload.get('upload-for-failed-jobs', False)).lower()
+
+        if type_count.count('build-log-upload') > 1:
+            XML.SubElement(xml_element, 'module',
+                           {'reference': '../../com.google.jenkins.plugins.'
+                            'storage.StdoutUpload/module'})
+        else:
+            XML.SubElement(xml_element, 'module')
+
+        if 'log-name' not in upload:
+            raise JenkinsJobsException('log-name is missing')
+        XML.SubElement(xml_element, 'logName').text = str(upload['log-name'])
+
+    def classic_upload(xml_element, upload_properties, type_count):
+        """Handle classic upload action
+        """
+
+        xml_element = XML.SubElement(upload_element, 'com.google.jenkins.'
+                                     'plugins.storage.ClassicUpload')
+
+        if 'storage-location' not in upload:
+            raise JenkinsJobsException('storage-location parameter is missing')
+        XML.SubElement(xml_element, 'bucketNameWithVars').text = str(
+            upload['storage-location'])
+
+        XML.SubElement(xml_element, 'sharedPublicly').text = str(
+            upload.get('share-publicly', False)).lower()
+
+        XML.SubElement(xml_element, 'forFailedJobs').text = str(
+            upload.get('upload-for-failed-jobs', False)).lower()
+
+        if type_count.count('classic-upload') > 1:
+            XML.SubElement(xml_element, 'module',
+                           {'reference': '../../com.google.jenkins.plugins.'
+                            'storage.ClassicUpload/module'})
+        else:
+            XML.SubElement(xml_element, 'module')
+
+        if 'file-pattern' not in upload:
+            raise JenkinsJobsException('file-pattern is missing')
+        XML.SubElement(xml_element, 'sourceGlobWithVars').text = str(
+            upload['file-pattern'])
+
+    uploader = XML.SubElement(xml_parent,
+                              'com.google.jenkins.plugins.storage.'
+                              'GoogleCloudStorageUploader',
+                              {'plugin': 'google-storage-plugin@0.8'})
+
+    if 'credentials-id' not in data:
+        raise JenkinsJobsException('credentials-id parameter is missing')
+    XML.SubElement(uploader, 'credentialsId').text = data.get(
+        'credentials-id')
+
+    type_count = []
+
+    upload_element = XML.SubElement(uploader, 'uploads')
+
+    uploads = data['uploads']
+    for upload_action in uploads:
+        for k, v in upload_action.items():
+            upload = upload_action[k]
+            if 'upload-type' not in upload:
+                raise JenkinsJobsException('upload-type parameter is missing')
+
+            type_count.append(upload['upload-type'])
+
+            if upload['upload-type'] == 'expiring-elements':
+                expiring_elements_upload(upload, upload_element, type_count)
+            elif upload['upload-type'] == 'build-log-upload':
+                build_log_upload(upload, upload_element, type_count)
+            elif upload['upload-type'] == 'classic-upload':
+                classic_upload(upload, upload_element, type_count)
+            else:
+                raise JenkinsJobsException('unsupported upload-type')
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
