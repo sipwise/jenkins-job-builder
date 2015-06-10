@@ -1,0 +1,30 @@
+publishers:
+    - google-cloud-storage:
+        credentials-id: 'myCredentials'
+        uploads:
+            - expiring-elements-upload:
+                bucket-name: 'gs://myBucket'
+                days-to-retain: 7
+            - build-log-upload:
+                log-name: 'console.log'
+                storage-location: 'gs://myBucket'
+                share-publicly: 'true'
+                upload-for-failed-jobs: 'true'
+            - classic-upload:
+                upload-type: 'classic-upload'
+                file-pattern: 'target/*.war'
+                storage-location: 'gs://myBucket'
+            - expiring-elements-upload:
+                upload-type: 'expiring-elements'
+                bucket-name: 'gs://myBucket/artifacts/'
+                days-to-retain: 7
+            - build-log-upload:
+                upload-type: 'build-log-upload'
+                log-name: 'console.log'
+                storage-location: 'gs://myBucket/artifacts/'
+            - classic-upload:
+                upload-type: 'classic-upload'
+                file-pattern: 'target/*.war'
+                storage-location: 'gs://myBucket/artifacts/'
+                share-publicly: 'true'
+                upload-for-failed-jobs: 'true'
