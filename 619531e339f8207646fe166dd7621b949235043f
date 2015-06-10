@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_9f3ad297",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-10T20:10:10Z",
+      "side": 1,
+      "message": "this doesn\u0027t match with code below.  from the test and code it looks like your intention is actually \u0027should-fail-build\u0027.  probably need to update description as well.  Wondering why you flipped the logic for this param?",
+      "revId": "619531e339f8207646fe166dd7621b949235043f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_1f8022f4",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-10T20:10:10Z",
+      "side": 1,
+      "message": "why not allow user to configure this param?",
+      "revId": "619531e339f8207646fe166dd7621b949235043f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
