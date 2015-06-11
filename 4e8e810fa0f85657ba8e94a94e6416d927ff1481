@@ -16,6 +16,24 @@
       "revId": "4e8e810fa0f85657ba8e94a94e6416d927ff1481",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_9c752465",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1102,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-11T10:56:44Z",
+      "side": 1,
+      "message": "The other alternative is\n\n    try:\n        XML.SubElement(maven, \u0027mavenName\u0027).text \u003d data[\u0027name\u0027]\n        XML.SubElement(maven, \u0027goals\u0027).text \u003d data[\u0027goals\u0027]\n    except KeyError as e:\n        raise MissingAttributeError(e.args[0])\n\nSince for KeyError in both python 2 \u0026 3, e.args[0] is the key name that triggered the exception.",
+      "parentUuid": "7a016987_e7049f18",
+      "revId": "4e8e810fa0f85657ba8e94a94e6416d927ff1481",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
