@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_67577626",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-11T13:49:09Z",
+      "side": 1,
+      "message": "Rather than using an explicit parameter order, since we are using ordered dicts to preserve the order from the yaml, why don\u0027t we just fix the code to use that order instead of a hardcoded one?\n\n    for project_def in data:\n        tconfig \u003d XML.SubElement(configs,\n                                 \u0027hudson.plugins.parameterizedtrigger.\u0027\n                                 \u0027BuildTriggerConfig\u0027)\n        tconfigs \u003d XML.SubElement(tconfig, \u0027configs\u0027)\n\n        for param_type, param_value in project_def.items():\n            if param_type \u003d\u003d \u0027predefined-parameters\u0027:\n                params \u003d XML.SubElement(tconfigs,\n                                        \u0027hudson.plugins.parameterizedtrigger.\u0027\n                                        \u0027PredefinedBuildParameters\u0027)\n                properties \u003d XML.SubElement(params, \u0027properties\u0027)\n                properties.text \u003d project_def[\u0027predefined-parameters\u0027]\n            elsif param_type \u003d\u003d \u0027current-parameters\u0027 and param_value:\n                XML.SubElement(tconfigs,\n                               \u0027hudson.plugins.parameterizedtrigger.\u0027\n                               \u0027CurrentBuildParameters\u0027)\n            elsif ....:\n                ... # other param types\n            else:\n                raise InvalidAttributeError(param_type, ...)\n        else:\n            # no items to loop over so empty set\n            tconfigs.set(\u0027class\u0027, \u0027java.util.Collections$EmptyList\u0027)\n\n\nSince I believe there is a concern around retaining backwards compatibility, which is why I\u0027m guessing the new option was created instead of rewriting this code to use the order from the defined input I think we could use a config option to control the behaviour and match the existing by default, log a warning that the new behaviour will become the default for v2.0?, and change the inner for loop above to the following:\n\n        # JJB V1 order\n        key_order \u003d [\u0027predefined-parameters\u0027, \u0027git-revision\u0027,\n                     \u0027property-file\u0027, \u0027current-parameters\u0027,\n                     \u0027node-parameters\u0027, \u0027svn-revision\u0027,\n                     \u0027restrict-matrix-project\u0027, \u0027node-label-name\u0027,\n                     \u0027node-label\u0027]\n        # might need to manipulate the last two so that only one\n        # entry is added when both are defined. Alternatively you\n        # can check if the XML tag is already in tconfig and update\n        # the XML element as needed for either item.\n\n        # to be removed in V2\n        if parser.config.get(\u0027trigger-parameterized-builds\u0027,\n                             \u0027param_order_from_yaml\u0027):\n            key_order \u003d project_def.keys()\n        else:\n            logger.warn(\"Using deprecated order for parameter sets in \"\n                        \"triggered-parameterized-builds. V2 will use the \"\n                        \"order from the defined yaml in the future. Set the \"\n                        \"config option \u0027trigger-parameterized-builds.\"\n                        \"param_order_from_yaml\u0027 to and change the input \"\n                        \"job configuration to the desired order before the \"\n                        \"future release default changes.\")\n\n        for param_type in key_order:\n            param_value \u003d project_def.get(param_type)\n            if param_value is None:\n                continue",
+      "revId": "94671287a2f421fe12379f73bb095ef09152590b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_c7a06a44",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-11T13:49:09Z",
+      "side": 1,
+      "message": "Seems like this may change over time, after all what\u0027s to stop additional parameter sets being affected by the ordering?",
+      "revId": "94671287a2f421fe12379f73bb095ef09152590b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_3e80608a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-11T13:49:09Z",
+      "side": 1,
+      "message": "This node-label might be a bit messy to be able to accept the ordering from yaml so that we loop over the input order. But I think it will be worth it to ensure that the order comes from yaml instead of trying to manage the order through a separate parameter.",
+      "revId": "94671287a2f421fe12379f73bb095ef09152590b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
