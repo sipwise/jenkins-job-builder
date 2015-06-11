@@ -16,6 +16,24 @@
       "revId": "ebd0d9e0b122c8234712c958a44e6018a80c4585",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_43980e6a",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-11T09:31:58Z",
+      "side": 1,
+      "message": "I think I\u0027ve correctly updated the comment in the latest patch to better explain where it helps to enable full anonymous access when using a real jenkins.",
+      "parentUuid": "3afb71cf_5804b116",
+      "revId": "ebd0d9e0b122c8234712c958a44e6018a80c4585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

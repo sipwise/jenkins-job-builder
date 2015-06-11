@@ -16,6 +16,24 @@
       "revId": "f6a8cfede534b56db8e7685d7ba0e1d8f5cbf2e3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_43dc8e45",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-11T09:31:58Z",
+      "side": 0,
+      "message": "I couldn\u0027t seem to reproduce, perhaps I\u0027m not testing with an old enough ConfigParser, I\u0027ll re-add the comment with the mention that the inclusion of \u0027TypeError\u0027 in the except is there for the interpolation issue.",
+      "parentUuid": "3afb71cf_3801f506",
+      "revId": "f6a8cfede534b56db8e7685d7ba0e1d8f5cbf2e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
