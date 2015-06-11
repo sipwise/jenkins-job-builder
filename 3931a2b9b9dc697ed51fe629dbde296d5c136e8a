@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afb71cf_68cce288",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1952,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-11T12:40:37Z",
+      "side": 1,
+      "message": "Looks like me may have some candidates for more specific exceptions in the future. I\u0027ve a feeling there are a few of these around the code.",
+      "revId": "3931a2b9b9dc697ed51fe629dbde296d5c136e8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
