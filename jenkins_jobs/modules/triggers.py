@@ -780,6 +780,42 @@ def gitlab_merge_request(parser, xml_parent, data):
     XML.SubElement(ghprb, '__cron').text = data.get('cron')
     XML.SubElement(ghprb, '__projectPath').text = data.get('project-path')
 
+def gitlab(parser, xml_parent, data):
+    """yaml: gitlab
+    Makes Jenkins act like a GitlabCI server
+    Requires the Jenkins :jenkins-wiki:`Gitlab Plugin.
+    <Gitlab+Plugin>`.
+
+    :arg bool trigger-push: Build on Push Events
+    :arg bool trigger-mergerequest: Build on Merge Request Events
+    :arg bool trigger-open-mergerequest-push: Rebuild open Merge Requests on Push Events
+    :arg bool ci-skip: Enable [ci-skip]
+    :arg bool set-build-description: Set build description to build cause (eg. Merge request or Git Push )
+    :arg bool add-note-mergerequest: Add note with build status on merge requests
+    :arg bool add-vote-mergerequest: Vote added to note with build status on merge requests
+    :arg bool allow-all-branches: Allow all branches (Ignoring Filtered Branches)
+
+    Example:
+
+    .. literalinclude:: \
+        /../../tests/triggers/fixtures/gitlab.yaml
+    """
+    gitlab = XML.SubElement(xml_parent, 'com.dabsquared.gitlabjenkins.'
+                           'GitLabPushTrigger')
+
+    XML.SubElement(gitlab, 'spec').text = ''
+    XML.SubElement(gitlab, 'triggerOnPush').text = data.get('trigger-push')
+    XML.SubElement(gitlab, 'triggerOnMergeRequest').text = data.get('trigger-mergerequest')
+    XML.SubElement(gitlab, 'triggerOpenMergeRequestOnPush').text = data.get('trigger-open-mergerequest-push')
+    XML.SubElement(gitlab, 'ciSkip').text = data.get('ci-skip')
+    XML.SubElement(gitlab, 'setBuildDescription').text = data.get('set-build-description')
+    XML.SubElement(gitlab, 'addNoteOnMergeRequest').text = data.get('add-note-mergerequest')
+    XML.SubElement(gitlab, 'addVoteOnMergeRequest').text = data.get('vote-note-mergerequest')
+    XML.SubElement(gitlab, 'allowAllBranches').text = data.get('allow-all-branches')
+
+    allowed_branches = XML.SubElement(gitlab, 'allowedBranches')
+    for allowed_branch in data['allowed-branches']:
+      XML.SubElement(allowed_branches).text = allowed_branch
 
 def build_result(parser, xml_parent, data):
     """yaml: build-result

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <triggers class="vector">
+      <com.dabsquared.gitlabjenkins.GitLabPushTrigger>
+          <spec></spec>
+          <triggerOnPush>true</triggerOnPush>
+          <triggerOnMergeRequest>true</triggerOnMergeRequest>
+          <triggerOpenMergeRequestOnPush>true</triggerOpenMergeRequestOnPush>
+          <ciSkip>true</ciSkip>
+          <setBuildDescription>true</setBuildDescription>
+          <addNoteOnMergeRequest>true</addNoteOnMergeRequest>
+          <addVoteOnMergeRequest>true</addVoteOnMergeRequest>
+          <allowAllBranches>true</allowAllBranches>
+          <allowedBranches/>
+      </com.dabsquared.gitlabjenkins.GitLabPushTrigger>
+  </triggers>
+</project>
