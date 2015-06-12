@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1af86dd1_cd8986cc",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-12T14:34:22Z",
+      "side": 1,
+      "message": "That\u0027s intentional, the ones indented more show the contents of the files referenced from the file above it.\n\nI think it helps to distinguish between the yaml definition and the showing the contents of the files being included, not attached to it though.\n\nSee http://docs-draft.openstack.org/70/180370/4/check/gate-jenkins-job-builder-docs/f6a1af4//doc/build/html/definition.html#definitions for the resulting output.",
+      "parentUuid": "1af86dd1_77b6e13e",
+      "revId": "745b83b21e64dd228773884fc95179019e70aff1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1af86dd1_37874963",
         "filename": "jenkins_jobs/local_yaml.py",
         "patchSetId": 4
