@@ -11,7 +11,10 @@
           <addNoteOnMergeRequest>true</addNoteOnMergeRequest>
           <addVoteOnMergeRequest>true</addVoteOnMergeRequest>
           <allowAllBranches>true</allowAllBranches>
-          <allowedBranches/>
+          <allowedBranches>
+              <branch>test1</branch>
+              <branch>test2</branch>
+          </allowedBranches>
       </com.dabsquared.gitlabjenkins.GitLabPushTrigger>
   </triggers>
 </project>

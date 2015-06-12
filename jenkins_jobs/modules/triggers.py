@@ -815,7 +815,7 @@ def gitlab(parser, xml_parent, data):
 
     allowed_branches = XML.SubElement(gitlab, 'allowedBranches')
     for allowed_branch in data['allowed-branches']:
-      XML.SubElement(allowed_branches).text = allowed_branch
+      XML.SubElement(allowed_branches, 'branch').text = allowed_branch
 
 def build_result(parser, xml_parent, data):
     """yaml: build-result
