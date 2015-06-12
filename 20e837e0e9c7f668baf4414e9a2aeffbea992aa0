@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1af86dd1_60818b8f",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 8344
+      },
+      "writtenOn": "2015-06-12T06:02:29Z",
+      "side": 1,
+      "message": "I will fix this.",
+      "parentUuid": "3afb71cf_ef716345",
+      "revId": "20e837e0e9c7f668baf4414e9a2aeffbea992aa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_cf1467a1",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 5
