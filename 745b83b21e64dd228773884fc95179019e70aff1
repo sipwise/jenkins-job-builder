@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1af86dd1_e8e1d0ff",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-06-12T14:42:27Z",
+      "side": 1,
+      "message": "Ah ok thanks for the clarification.",
+      "parentUuid": "1af86dd1_cd8986cc",
+      "revId": "745b83b21e64dd228773884fc95179019e70aff1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1af86dd1_37874963",
         "filename": "jenkins_jobs/local_yaml.py",
         "patchSetId": 4
