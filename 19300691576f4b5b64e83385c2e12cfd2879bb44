@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_0d5a0484",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-06-14T23:07:06Z",
+      "side": 1,
+      "message": "Instead of entering the full https... URL you can shorting it with an entry similar to this.\n\nRequires the Jenkins :jenkins-wiki:`Sidebar Plugin \u003cSidebar+Plugin\u003e`.",
+      "revId": "19300691576f4b5b64e83385c2e12cfd2879bb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_ad4bd8af",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-06-14T23:07:06Z",
+      "side": 1,
+      "message": "Typo? should there be a colon at the end? For example: \n\n     - sidebar:",
+      "revId": "19300691576f4b5b64e83385c2e12cfd2879bb44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
