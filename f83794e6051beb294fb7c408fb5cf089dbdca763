@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa32b979_4a68f5f5",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-14T15:19:15Z",
+      "side": 1,
+      "message": "double colon won\u0027t work with literalinclude, but \u0027Example:\u0027 will work.  you can view the generated docs from this change by clicking on the docs test result on the gerrit UI.",
+      "revId": "f83794e6051beb294fb7c408fb5cf089dbdca763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_e4bef6ac",
         "filename": "jenkins_jobs/modules/properties.py",
         "patchSetId": 1
@@ -13,6 +30,24 @@
       "writtenOn": "2015-05-21T16:30:55Z",
       "side": 1,
       "message": "I think example should be kept as well since it is an example and has no relation to unittests.",
+      "revId": "f83794e6051beb294fb7c408fb5cf089dbdca763",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_6a81398f",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-14T15:19:15Z",
+      "side": 1,
+      "message": "All tests appear in the JJB docs as examples so this change will test the this property and document it as well.",
+      "parentUuid": "7a016987_e4bef6ac",
       "revId": "f83794e6051beb294fb7c408fb5cf089dbdca763",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
