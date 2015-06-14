@@ -33,7 +33,7 @@ Example of multiple repositories in a single job:
 import logging
 import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
-from jenkins_jobs.errors import JenkinsJobsException
+from jenkins_jobs.errors import JenkinsJobsException, InvalidAttributeError
 
 
 def git(parser, xml_parent, data):
@@ -68,6 +68,11 @@ remoteName/\*')
             * **remote** (`string`) - name of repo that contains branch to
                 merge to (default 'origin')
             * **branch** (`string`) - name of the branch to merge to
+            * **strategy** (`string`) - merge strategy. Can be one of
+                'default', 'resolve', 'recursive', 'octopus', 'ours',
+                'subtree'. (default 'default')
+            * **fast-forward-mode** (`string`) - merge fast-forward mode.
+                Can be one of 'FF', 'FF_ONLY' or 'NO_FF'. (default 'FF')
     :arg str basedir: location relative to the workspace root to clone to
              (default: workspace)
     :arg bool skip-tag: Skip tagging (default false)
@@ -102,6 +107,7 @@ remoteName/\*')
       default '0.0')
     :arg str project-name: project name in Gitblit and ViewGit repobrowser
       (optional)
+    :arg str repo-name: repository name in phabricator repobrowser (optional)
     :arg str choosing-strategy: Jenkins class for selecting what to build
       (default 'default')
     :arg str git-config-name: Configure name for Git clone (optional)
@@ -120,6 +126,20 @@ remoteName/\*')
             :clean:
                 * **after** (`bool`) - Clean the workspace after checkout
                 * **before** (`bool`) - Clean the workspace before checkout
+
+        :arg dict polling-ignore-messages:
+            :polling-ignore-messages:
+                * **excluded-commit-messages** (`string`) - Revisions committed
+                    with messages matching this pattern will be ignored.
+                    (optional)
+
+        :arg bool polling-using-workspace: Force polling using workspace.
+            (default false)
+
+        :arg dict sparse-checkout:
+            :sparse-checkout:
+                * **paths** (`list`) - List of paths to sparse checkout.
+                    (optional)
 
         :arg dict submodule:
             :submodule:
@@ -141,15 +161,22 @@ remoteName/\*')
 
     :browser values:
         :auto:
+        :assemblaweb:
         :bitbucketweb:
         :cgit:
         :fisheye:
         :gitblit:
         :githubweb:
+        :gitiles:
         :gitlab:
+        :gitlist:
         :gitoriousweb:
         :gitweb:
+        :kiln:
+        :microsoft-tfs-2013:
+        :phabricator:
         :redmineweb:
+        :rhodecode:
         :stash:
         :viewgit:
 
@@ -234,11 +261,23 @@ remoteName/\*')
         XML.SubElement(scm, 'excludedRegions').text = exclude_string
     if 'merge' in data:
         merge = data['merge']
+        merge_strategies = ['default', 'resolve', 'recursive', 'octopus',
+                            'ours', 'subtree']
+        fast_forward_modes = ['FF', 'FF_ONLY', 'NO_FF']
         name = merge.get('remote', 'origin')
         branch = merge['branch']
         urc = XML.SubElement(scm, 'userMergeOptions')
         XML.SubElement(urc, 'mergeRemote').text = name
         XML.SubElement(urc, 'mergeTarget').text = branch
+        strategy = merge.get('strategy', 'default')
+        if strategy not in merge_strategies:
+            raise InvalidAttributeError('strategy', strategy, merge_strategies)
+        XML.SubElement(urc, 'mergeStrategy').text = strategy
+        fast_forward_mode = merge.get('fast-forward-mode', 'FF')
+        if fast_forward_mode not in fast_forward_modes:
+            raise InvalidAttributeError('fast-forward-mode', fast_forward_mode,
+                                        fast_forward_modes)
+        XML.SubElement(urc, 'fastForwardMode').text = fast_forward_mode
 
     try:
         choosing_strategy = choosing_strategies[data.get('choosing-strategy',
@@ -278,8 +317,9 @@ remoteName/\*')
         XML.SubElement(scm, 'localBranch').text = data['local-branch']
 
     exts_node = XML.SubElement(scm, 'extensions')
+    impl_prefix = 'hudson.plugins.git.extensions.impl.'
     if 'changelog-against' in data:
-        ext_name = 'hudson.plugins.git.extensions.impl.ChangelogToBranch'
+        ext_name = impl_prefix + 'ChangelogToBranch'
         ext = XML.SubElement(exts_node, ext_name)
         opts = XML.SubElement(ext, 'options')
         change_remote = data['changelog-against'].get('remote', 'origin')
@@ -299,13 +339,28 @@ remoteName/\*')
             clean_after = data['clean'].get('after', False)
             clean_before = data['clean'].get('before', False)
         if clean_after:
-            ext_name = 'hudson.plugins.git.extensions.impl.CleanCheckout'
+            ext_name = impl_prefix + 'CleanCheckout'
             ext = XML.SubElement(exts_node, ext_name)
         if clean_before:
-            ext_name = 'hudson.plugins.git.extensions.impl.CleanBeforeCheckout'
+            ext_name = impl_prefix + 'CleanBeforeCheckout'
             ext = XML.SubElement(exts_node, ext_name)
+    if 'polling-ignore-messages' in data:
+        ext_name = impl_prefix + 'MessageExclusion'
+        ext = XML.SubElement(exts_node, ext_name)
+        XML.SubElement(ext, 'excludedMessage').text = data[
+            'polling-ignore-messages'].get('excluded-commit-messages', '')
+    if 'sparse-checkout' in data:
+        ext_name = impl_prefix + 'SparseCheckoutPaths'
+        ext = XML.SubElement(exts_node, ext_name)
+        sparse_co = XML.SubElement(ext, 'sparseCheckoutPaths')
+        sparse_paths = data['sparse-checkout'].get('paths')
+        if sparse_paths is not None:
+            path_tagname = impl_prefix + 'SparseCheckoutPath'
+            for path in sparse_paths:
+                path_tag = XML.SubElement(sparse_co, path_tagname)
+                XML.SubElement(path_tag, 'path').text = path
     if 'submodule' in data:
-        ext_name = 'hudson.plugins.git.extensions.impl.SubmoduleOption'
+        ext_name = impl_prefix + 'SubmoduleOption'
         ext = XML.SubElement(exts_node, ext_name)
         XML.SubElement(ext, 'disableSubmodules').text = str(
             data['submodule'].get('disable', False)).lower()
@@ -316,27 +371,37 @@ remoteName/\*')
         XML.SubElement(ext, 'timeout').text = str(
             data['submodule'].get('timeout', 10))
     if 'timeout' in data:
-        co = XML.SubElement(exts_node,
-                            'hudson.plugins.git.extensions.impl.'
-                            'CheckoutOption')
+        co = XML.SubElement(exts_node, impl_prefix + 'CheckoutOption')
         XML.SubElement(co, 'timeout').text = str(data['timeout'])
+    polling_using_workspace = str(data.get('polling-using-workspace',
+                                           False)).lower()
+    if polling_using_workspace == 'true':
+        ext_name = impl_prefix + 'DisableRemotePoll'
+        ext = XML.SubElement(exts_node, ext_name)
     # By default we wipe the workspace
     wipe_workspace = str(data.get('wipe-workspace', True)).lower()
     if wipe_workspace == 'true':
-        ext_name = 'hudson.plugins.git.extensions.impl.WipeWorkspace'
+        ext_name = impl_prefix + 'WipeWorkspace'
         ext = XML.SubElement(exts_node, ext_name)
 
     browser = data.get('browser', 'auto')
     browserdict = {'auto': 'auto',
+                   'assemblaweb': 'AssemblaWeb',
                    'bitbucketweb': 'BitbucketWeb',
                    'cgit': 'CGit',
                    'fisheye': 'FisheyeGitRepositoryBrowser',
                    'gitblit': 'GitBlitRepositoryBrowser',
                    'githubweb': 'GithubWeb',
+                   'gitiles': 'Gitiles',
                    'gitlab': 'GitLab',
+                   'gitlist': 'GitList',
                    'gitoriousweb': 'GitoriousWeb',
                    'gitweb': 'GitWeb',
+                   'kiln': 'KilnGit',
+                   'microsoft-tfs-2013': 'TFS2013GitRepositoryBrowser',
+                   'phabricator': 'Phabricator',
                    'redmineweb': 'RedmineWeb',
+                   'rhodecode': 'RhodeCode',
                    'stash': 'Stash',
                    'viewgit': 'ViewGitWeb'}
     if browser not in browserdict:
@@ -355,6 +420,9 @@ remoteName/\*')
         if browser == 'gitlab':
             XML.SubElement(bc, 'version').text = str(
                 data.get('browser-version', '0.0'))
+        if browser == 'phabricator':
+            XML.SubElement(bc, 'repo').text = str(
+                data.get('repo-name', ''))
 
 
 def repo(parser, xml_parent, data):
