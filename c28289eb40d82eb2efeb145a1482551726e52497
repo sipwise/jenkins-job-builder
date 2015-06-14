@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_ca22c5b9",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1487,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-14T15:30:55Z",
+      "side": 1,
+      "message": "Would it make sense to move this to the base_email_ext method?  Also would you even need this if you just set \u0027sent-to\u0027 to an empty recipients list?",
+      "revId": "c28289eb40d82eb2efeb145a1482551726e52497",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
