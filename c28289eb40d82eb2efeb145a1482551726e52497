@@ -16,6 +16,24 @@
       "revId": "c28289eb40d82eb2efeb145a1482551726e52497",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_046976be",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1487,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-15T06:48:22Z",
+      "side": 1,
+      "message": "Sure, we can move it to the base_email_ext method. Since this is a basic functionality, it would make sense there.\n\nI do not have practical experience with this plugin, but I am guessing that this option is there for the scenario when you do not want to alter the recipient list, even for testing purposes. The switch transition from testing would be a simple checkbox (or a simple variable, in this case) away.",
+      "parentUuid": "fa32b979_ca22c5b9",
+      "revId": "c28289eb40d82eb2efeb145a1482551726e52497",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
