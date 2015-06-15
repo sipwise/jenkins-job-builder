@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa32b979_8c49168e",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2340,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-15T17:07:13Z",
+      "side": 1,
+      "message": "double colon won\u0027t render correctly in sphinx.  This should be just\n\n   \u0027Example:\u0027  \n\nYou can check the sphinx generated docs for this change by clicking on the docs test results on the Gerrit UI.",
+      "revId": "7af994578d30e89d48bd94ab01afb77b2ab46625",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ad32947_a2ce7381",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 15
@@ -64,6 +81,23 @@
       "writtenOn": "2015-04-27T19:01:40Z",
       "side": 1,
       "message": "I would recommend interpreting a list value here instead of a string.",
+      "revId": "7af994578d30e89d48bd94ab01afb77b2ab46625",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_c76857f8",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1408,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-15T17:07:13Z",
+      "side": 1,
+      "message": "Since wrappers.artifactory, wrappers.generic_artifactory and publishers.artifactory all share this params list I would suggest moving this code into a method in helpers.py so it can be shared in all three functions.",
       "revId": "7af994578d30e89d48bd94ab01afb77b2ab46625",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
