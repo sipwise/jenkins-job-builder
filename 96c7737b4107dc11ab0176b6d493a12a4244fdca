@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_c6638019",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-06-15T14:56:31Z",
+      "side": 1,
+      "message": "Instead of entering the whole wiki URL you can shorten it with:\n\nRequires the Jenkins :jenkins-wiki:`Live-Screenshot Plugin \u003cLiveScreenshot+Plugin\u003e`.",
+      "revId": "96c7737b4107dc11ab0176b6d493a12a4244fdca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
