@@ -2662,6 +2662,8 @@ def xml_summary(parser, xml_parent, data):
     <Summary+Display+Plugin>`.
 
     :arg str files: Files to parse (default '')
+    :arg str shownOnProjectPage: Dispkay summary on project page
+        (default 'false')
 
     Example:
 
@@ -2673,6 +2675,8 @@ def xml_summary(parser, xml_parent, data):
                              'hudson.plugins.summary__report.'
                              'ACIPluginPublisher')
     XML.SubElement(summary, 'name').text = data['files']
+    XML.SubElement(summary, 'shownOnProjectPage').text = str(
+        data.get('shownOnProjectPage', 'false'))
 
 
 def robot(parser, xml_parent, data):
