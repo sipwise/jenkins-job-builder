@@ -1,0 +1,3 @@
+wrappers:
+    - live-screenshot:
+        full-size: my_screenshot.png
