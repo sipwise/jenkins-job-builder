@@ -16,6 +16,24 @@
       "revId": "fb82cae2443b0043158107c3723f6ff3a6ad6381",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_dd7ca774",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-15T18:20:14Z",
+      "side": 1,
+      "message": "I think it\u0027s different depending on the system and I think users can look that up for whichever distribution they are using.",
+      "parentUuid": "7a016987_b07c2a73",
+      "revId": "fb82cae2443b0043158107c3723f6ff3a6ad6381",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
