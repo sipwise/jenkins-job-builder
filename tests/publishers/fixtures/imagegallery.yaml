@@ -1,0 +1,5 @@
+publishers:
+    - imagegallery:
+        title: 'my favorite pics'
+        includes: 'results/*.png'
+        image-width: 300

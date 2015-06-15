@@ -208,6 +208,44 @@ def emotional_jenkins(parser, xml_parent, data):
                    'EmotionalJenkinsPublisher')
 
 
+def imagegallery(parser, xml_parent, data):
+    """yaml: imagegallery
+    Build image gallery
+
+    :arg str title: gallery title
+    :arg str includes: path specifier for artifacts to include
+    :arg str image-width: image width in pixels
+
+    Example::
+
+      publishers:
+        - imagegallery:
+            title: 'my favorite pics'
+            includes: 'results/*.png'
+            image-width: 300
+
+    """
+    gallery_recorder = XML.SubElement(
+        xml_parent,
+        'org.jenkinsci.plugins.imagegallery.ImageGalleryRecorder'
+    )
+    galleries = XML.SubElement(gallery_recorder, 'imageGalleries')
+    # FIXME: the plugin supports several galleries at once
+    gallery = XML.SubElement(
+        galleries,
+        'org.jenkinsci.plugins.imagegallery.imagegallery.ArchivedImagesGallery'
+    )
+    XML.SubElement(gallery, 'title').text = str(
+        data.get('title', ''))
+    XML.SubElement(gallery, 'includes').text = str(
+        data.get('includes', ''))
+    XML.SubElement(gallery, 'imageWidth').text = str(
+        data.get('image-width', ''))
+    # FIXME: this should be an option:
+    XML.SubElement(gallery,
+                   'markBuildAsUnstableIfNoArchivesFound').text = 'false'
+
+
 def trigger_parameterized_builds(parser, xml_parent, data):
     """yaml: trigger-parameterized-builds
     Trigger parameterized builds of other jobs.

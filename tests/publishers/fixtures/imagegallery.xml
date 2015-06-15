@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <publishers>
+    <org.jenkinsci.plugins.imagegallery.ImageGalleryRecorder>
+      <imageGalleries>
+        <org.jenkinsci.plugins.imagegallery.imagegallery.ArchivedImagesGallery>
+          <title>my favorite pics</title>
+          <includes>results/*.png</includes>
+          <imageWidth>300</imageWidth>
+          <markBuildAsUnstableIfNoArchivesFound>false</markBuildAsUnstableIfNoArchivesFound>
+        </org.jenkinsci.plugins.imagegallery.imagegallery.ArchivedImagesGallery>
+      </imageGalleries>
+    </org.jenkinsci.plugins.imagegallery.ImageGalleryRecorder>
+  </publishers>
+</project>
