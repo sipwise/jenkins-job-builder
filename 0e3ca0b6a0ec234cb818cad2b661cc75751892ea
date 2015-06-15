@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_816ec2c7",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-06-15T15:00:25Z",
+      "side": 1,
+      "message": "I think this is still a typo. According to your unittests there should be a colon at the end here.\n\n- sidebar:",
+      "revId": "0e3ca0b6a0ec234cb818cad2b661cc75751892ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
