@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_70f6bcd8",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-06-16T12:13:52Z",
+      "side": 1,
+      "message": "Would be good to document if this is required or optional. From the code it looks optional, if so suffix the description with (optional).",
+      "revId": "efe940136b9907f651a30ae247d0404b34505136",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
