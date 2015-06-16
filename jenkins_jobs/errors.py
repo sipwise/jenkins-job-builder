@@ -63,7 +63,3 @@ class MissingAttributeError(ModuleError):
                 missing_attribute, module)
 
         super(MissingAttributeError, self).__init__(message)
-
-
-class YAMLFormatError(JenkinsJobsException):
-    pass

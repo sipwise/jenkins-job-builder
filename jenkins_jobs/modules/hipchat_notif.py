@@ -63,7 +63,7 @@ Example:
 
 import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
-import jenkins_jobs.errors
+from jenkins_jobs import errors
 import logging
 import pkg_resources
 from six.moves import configparser
@@ -121,8 +121,7 @@ class HipChat(jenkins_jobs.modules.base.Base):
             logger.warn("'room' is deprecated, please use 'rooms'")
             room.text = hipchat['room']
         else:
-            raise jenkins_jobs.errors.YAMLFormatError(
-                "Must specify either 'room' or 'rooms' in hipchat config.")
+            raise errors.MissingAttributeError(['room', 'rooms'])
 
         XML.SubElement(pdefhip, 'startNotification').text = str(
             hipchat.get('start-notify', False)).lower()

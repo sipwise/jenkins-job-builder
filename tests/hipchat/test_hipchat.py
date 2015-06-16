@@ -14,12 +14,25 @@
 
 import os
 from testscenarios.testcase import TestWithScenarios
+from testtools import ExpectedException
 from testtools import TestCase
+
+from jenkins_jobs import errors
 from jenkins_jobs.modules import hipchat_notif
 from tests.base import get_scenarios, BaseTestCase
+from tests.base import mock
 
 
-class TestCaseModulePublishers(TestWithScenarios, TestCase, BaseTestCase):
+class TestCaseModuleHipChat(TestWithScenarios, TestCase, BaseTestCase):
     fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
     scenarios = get_scenarios(fixtures_path)
     klass = hipchat_notif.HipChat
+
+    @mock.patch('jenkins_jobs.modules.hipchat_notif.logger', autospec=True)
+    def test_yaml_snippet(self, mock_logger):
+
+        if os.path.basename(self.in_filename).startswith("exception_missing_"):
+            with ExpectedException(errors.MissingAttributeError, ".* 'hipchat'$"):
+                super(TestCaseModuleHipChat, self).test_yaml_snippet()
+        else:
+            super(TestCaseModuleHipChat, self).test_yaml_snippet()
