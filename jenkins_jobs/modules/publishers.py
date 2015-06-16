@@ -222,7 +222,7 @@ def trigger_parameterized_builds(parser, xml_parent, data):
 
     :arg list project: list the jobs to trigger, will generate comma-separated
       string containing the named jobs.
-    :arg str predefined-parameters: parameters to pass to the other
+    :arg list predefined-parameters: parameters to pass to the other
       job (optional)
     :arg bool current-parameters: Whether to include the parameters passed
       to the current build to the triggered job (optional)
