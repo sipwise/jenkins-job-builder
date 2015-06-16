@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_56237805",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-16T10:20:55Z",
+      "side": 1,
+      "message": "This should be replaced with MissingAttributeError, I can fix that and rebase this on top.",
+      "revId": "f1b926a9e4377e8d95d650c64a7fcd7610bbd3f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
