@@ -16,6 +16,24 @@
       "revId": "4b5d0b405aae53a775b01a7de0ead344c6d02416",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afb71cf_c21c8315",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 9614
+      },
+      "writtenOn": "2015-06-17T03:43:20Z",
+      "side": 1,
+      "message": "I actually did see some funky behavior during the test suite where the same path is added multiple times...but with set() it simply gets ignored where I believe at least if something set by the user it should be added to the front of search_path.\n\nThats why I changed it to list()\n\nTo get more than 100 includes sounds very unlikely does it not ?",
+      "parentUuid": "3afb71cf_e4efa1ae",
+      "revId": "4b5d0b405aae53a775b01a7de0ead344c6d02416",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
