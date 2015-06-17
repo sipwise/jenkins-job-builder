@@ -4364,6 +4364,54 @@ def logstash(parser, xml_parent, data):
         data.get('fail-build', False))
 
 
+def disable_failed_job(parser, xml_parent, data):
+    """yaml: disable-failed-job
+    Automatically disable failed jobs.
+
+    Requires the Jenkins :jenkins-wiki:`Disable Failed Job Plugin
+    <Disable+Failed+Job+Plugin>`.
+
+    :arg str when-to-disable: The condition to disable the job. (required)
+        Possible values are
+
+        * **Only Failure**
+        * **Failure and Unstable**
+        * **Unstable**
+
+    :arg int no-of-failures: Number of consecutive failures to disable the
+        job. (optional)
+
+    Example:
+
+    .. literalinclude::
+        /../../tests/publishers/fixtures/disable-failed-job001.yaml
+       :language: yaml
+    """
+
+    xml_element = XML.SubElement(xml_parent, 'disableFailedJob.'
+                                 'disableFailedJob.DisableFailedJob',
+                                 {'plugin': 'disable-failed-job@1.11'})
+
+    valid_conditions = ['Only Failure',
+                        'Failure and Unstable',
+                        'Only Unstable']
+
+    if 'when-to-disable' not in data:
+        raise JenkinsJobsException('when-to-disable is missing')
+
+    disable_condition = str(data.get('when-to-disable'))
+    if disable_condition not in valid_conditions:
+        raise JenkinsJobsException('when-to-disable is not valid')
+    XML.SubElement(xml_element, 'whenDisable').text = disable_condition
+
+    if 'no-of-failures' in data:
+        XML.SubElement(xml_element, 'failureTimes').text = str(data.get(
+            'no-of-failures'))
+        XML.SubElement(xml_element, 'optionalBrockChecked').text = 'true'
+    else:
+        XML.SubElement(xml_element, 'optionalBrockChecked').text = 'false'
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
