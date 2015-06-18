@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_102a74db",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 4339,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-18T02:12:20Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be an int?",
+      "revId": "c0325b5fa266337c6014478c10a08c1bf7836288",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_30253808",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 4342,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-18T02:12:20Z",
+      "side": 1,
+      "message": "shouln\u0027t this be an int? and the default?",
+      "revId": "c0325b5fa266337c6014478c10a08c1bf7836288",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_d01f2cb5",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 4344,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-18T02:12:20Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be an int? and the default?",
+      "revId": "c0325b5fa266337c6014478c10a08c1bf7836288",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_f01a70c5",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 4346,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-18T02:12:20Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be an int?",
+      "revId": "c0325b5fa266337c6014478c10a08c1bf7836288",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
