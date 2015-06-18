@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_62b8bd75",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4395,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-18T13:39:57Z",
+      "side": 1,
+      "message": "How about we just have this support \u0027rooms\u0027 and get rid of \u0027room\u0027 since this is now a clean implementation under publishers which requires a yaml change to switch to using in the first place.\n\nI\u0027d be tempted to consolidate the two entries into one, but I\u0027m just as happy if that comes as a second patch instead of trying to get it all working in one go.\n\nThink if we want to keep the \u0027room\u0027 attribute to make it easier to consolidate that we should at least log a warning, so users know to switch.",
+      "revId": "5509c6d76752b771e22c577f037e694d64cdee0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_e2992d7a",
+        "filename": "tests/publishers/fixtures/hipchat001.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-18T13:39:57Z",
+      "side": 1,
+      "message": "Extra whitespace.",
+      "revId": "5509c6d76752b771e22c577f037e694d64cdee0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
