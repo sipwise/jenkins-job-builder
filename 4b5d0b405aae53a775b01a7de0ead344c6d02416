@@ -34,6 +34,24 @@
       "revId": "4b5d0b405aae53a775b01a7de0ead344c6d02416",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_40632642",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-18T17:33:39Z",
+      "side": 1,
+      "message": "Indeed it does, which is why I\u0027m happy enough to use this as is and we can switch to an ordered set in the future if it proves to be a problem.",
+      "parentUuid": "3afb71cf_c21c8315",
+      "revId": "4b5d0b405aae53a775b01a7de0ead344c6d02416",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
