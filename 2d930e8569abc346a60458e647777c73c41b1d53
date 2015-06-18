@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_fa077fc7",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-06-18T22:03:36Z",
+      "side": 1,
+      "message": "how about ignore-commits-with-messages since it is the commit what is ignored, not the message?\n\nalso, this could be converted to list to support multiple patterns.",
+      "revId": "2d930e8569abc346a60458e647777c73c41b1d53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_f71a387c",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-06-18T22:03:36Z",
+      "side": 1,
+      "message": "shouldn\u0027t this match to what\u0027s in plugin configuration so the parameter could be stated more explicitly in jjb yaml file?\n\nforce-polling-using-workspace",
+      "revId": "2d930e8569abc346a60458e647777c73c41b1d53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_7d16094d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-06-18T22:03:36Z",
+      "side": 1,
+      "message": "the current implementation supports only one pattern as oppose to what plugin supports, multiple patterns. Could this be improved to support same behavior - if not, this limitation could be stated in help if it is not stated already.",
+      "revId": "2d930e8569abc346a60458e647777c73c41b1d53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_5d5c6518",
+        "filename": "tests/scm/fixtures/git-polling-ignore-messages01.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-06-18T22:03:36Z",
+      "side": 1,
+      "message": "regarding multiple pattern support, this could be like\n\n        polling-ignore-messages:\n            - excluded-commit-messages: \"(?s).*FOO.*\"\n            - excluded-commit-messages: \"(?s).*BAR.*\"\n\nor even\n\n        polling-ignore-messages:\n            - \"(?s).*FOO.*\"\n            - \"(?s).*BAR.*\"",
+      "revId": "2d930e8569abc346a60458e647777c73c41b1d53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
