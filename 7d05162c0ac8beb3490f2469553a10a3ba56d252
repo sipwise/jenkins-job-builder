@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_9005cb15",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-19T18:12:36Z",
+      "side": 1,
+      "message": "FYI, indenting the second line by either 2 or 4 characters from the preceding line is sufficient to trigger a continuation without needing the \u0027\\\u0027. Pretty certain it\u0027s 4.",
+      "revId": "7d05162c0ac8beb3490f2469553a10a3ba56d252",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_8b1cbc6b",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-19T18:12:36Z",
+      "side": 1,
+      "message": "Only suggestion I would make is to set a variable to \u0027hudson.plugins.build_timeout.impl.\u0027 and put that at the top of this if/elif/elif set of statements and then just use that to tidy this up a little.",
+      "revId": "7d05162c0ac8beb3490f2469553a10a3ba56d252",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
