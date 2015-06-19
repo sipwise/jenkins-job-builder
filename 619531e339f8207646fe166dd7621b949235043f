@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_ff23cda5",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-06-19T15:56:25Z",
+      "side": 1,
+      "message": "I don\u0027t know it\u0027s been so long since the last time I looked at this code. I will align the code with this documentation since this matches the XML wording.\n\nFor what it\u0027s worth the default value when adding a remote trigger parameterized job is to fail if the remote job fails which is how the default for this module is currently set up.",
+      "parentUuid": "3afb71cf_9f3ad297",
+      "revId": "619531e339f8207646fe166dd7621b949235043f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_1f8022f4",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2015-06-10T20:10:10Z",
       "side": 1,
       "message": "why not allow user to configure this param?",
+      "revId": "619531e339f8207646fe166dd7621b949235043f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_24eda88e",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-06-19T15:56:25Z",
+      "side": 1,
+      "message": "Because I didn\u0027t have time to debug all the valid values that could go here. I think the current state of this module represents a pretty reasonable start, anyone who wants to set overrideAuth to some other value could submit a patch.",
+      "parentUuid": "3afb71cf_1f8022f4",
       "revId": "619531e339f8207646fe166dd7621b949235043f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
