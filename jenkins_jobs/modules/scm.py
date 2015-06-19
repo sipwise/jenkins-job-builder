@@ -121,6 +121,18 @@ remoteName/\*')
                 * **after** (`bool`) - Clean the workspace after checkout
                 * **before** (`bool`) - Clean the workspace before checkout
 
+        :arg list(str) sparse-checkout-paths:
+            Whitelist of paths for sparse checkout
+
+        :arg dict polling-path-restriction:
+            :polling-path-restriction:
+                * **included-regions** list(str) - Regular expression
+                    of paths that will trigger a build
+                * **excluded-regions** list(str) - Regular expression
+                    of paths that will not trigger a build. See git
+                    plugin documentation for combinging inclusion and
+                    exclusion rules
+
         :arg dict submodule:
             :submodule:
                 * **disable** (`bool`) - By disabling support for submodules
@@ -320,6 +332,27 @@ remoteName/\*')
                             'hudson.plugins.git.extensions.impl.'
                             'CheckoutOption')
         XML.SubElement(co, 'timeout').text = str(data['timeout'])
+    if 'sparse-checkout-paths' in data:
+        ext_name = XML.SubElement(exts_node,
+                                  'hudson.plugins.git.extensions.impl.'
+                                  'SparseCheckoutPaths')
+        ext = XML.SubElement(ext_name, 'sparseCheckoutPaths')
+        for path in data['sparse-checkout-paths']:
+            pspec = XML.SubElement(ext, 'hudson.plugins.git.extensions.impl.'
+                                   'SparseCheckoutPath')
+            XML.SubElement(pspec, 'path').text = path
+    if 'polling-path-restriction' in data:
+        ext_name = XML.SubElement(exts_node,
+                                  'hudson.plugins.git.extensions.impl.'
+                                  'PathRestriction')
+        if 'included-regions' in data['polling-path-restriction']:
+            ext = XML.SubElement(ext_name, 'includedRegions')
+            regions = data['polling-path-restriction']['included-regions']
+            ext.text = '\n'.join(regions)
+        if 'excluded-regions' in data['polling-path-restriction']:
+            ext = XML.SubElement(ext_name, 'excludedRegions')
+            regions = data['polling-path-restriction']['excluded-regions']
+            ext.text = '\n'.join(regions)
     # By default we wipe the workspace
     wipe_workspace = str(data.get('wipe-workspace', True)).lower()
     if wipe_workspace == 'true':
