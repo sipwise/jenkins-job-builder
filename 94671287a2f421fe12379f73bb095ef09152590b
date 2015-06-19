@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_eafc6974",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-06-19T16:16:05Z",
+      "side": 1,
+      "message": "With all the munging that goes on in JJB between reading yaml data in (yes, initially as OrderedDicts) and this module actually receiving that data, the \"OrderedDict\" type (or at least its ordering) is no longer available.\n\nI suspect that a rewrite of the YamlParser would be required to retain ordering from YAML to XML generation in a way that doesn\u0027t amount to a series of inconspicuous hacks.",
+      "parentUuid": "3afb71cf_67577626",
+      "revId": "94671287a2f421fe12379f73bb095ef09152590b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_c7a06a44",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-06-11T13:49:09Z",
       "side": 1,
       "message": "Seems like this may change over time, after all what\u0027s to stop additional parameter sets being affected by the ordering?",
+      "revId": "94671287a2f421fe12379f73bb095ef09152590b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_0a48ad86",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-06-19T16:16:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3afb71cf_c7a06a44",
       "revId": "94671287a2f421fe12379f73bb095ef09152590b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
