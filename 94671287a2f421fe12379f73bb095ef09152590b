@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_b7c4895f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-19T17:17:39Z",
+      "side": 1,
+      "message": "The type of project_def at this point is collections.OrderedDict, I\u0027ve confirmed this. What might have thrown you is the type of data is a list.",
+      "parentUuid": "fa32b979_eafc6974",
+      "revId": "94671287a2f421fe12379f73bb095ef09152590b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3afb71cf_c7a06a44",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 6
