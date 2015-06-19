@@ -47,6 +47,9 @@ query_plugins_info=True
 [hipchat]
 authtoken=dummy
 send-as=Jenkins
+
+[future_behaviour]
+param_order_from_yaml=False
 """
 
 
