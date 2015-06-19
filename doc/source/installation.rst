@@ -139,6 +139,19 @@ hipchat section
 __ https://www.hipchat.com/docs/apiv2/auth
 
 
+__future__ section
+^^^^^^^^^^^^^^^^^^
+
+This section is to control enabling of beta features or behaviour changes that
+deviate from previously released behaviour in ways that may require effort to
+convert existing JJB configs to adopt. This essentially will act as a method
+to share these new behaviours while under active development so they can be
+changed ahead of releases.
+
+**param_order_from_yaml**
+  Used to switch on using the order of the parameters are defined in yaml to
+  control the order of corresponding XML elements being written out.
+
 
 Running
 -------
