@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_7d5d5b14",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-22T10:12:25Z",
+      "side": 1,
+      "message": "I probably would have gone with:\n\n    XML.SubElement(triggerr, \u0027shouldNotFailBuild\u0027).text \u003d str(\n        data.get(\u0027should-not-fail-build\u0027, False)).lower()\n\nbut it\u0027s not that important. Doesn\u0027t affect the behaviour.",
+      "revId": "493e82d5824fe371011061d62ff76fd67a561181",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
