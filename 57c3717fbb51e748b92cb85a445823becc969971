@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_40caea1b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4379,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-06-22T11:28:10Z",
+      "side": 1,
+      "message": "Thanks for quick update as I was doing the change. So I skip this one for the moment.\nIt would be good to know the one to use as aligning them could perhaps be easy to grab tasks for new contributors like me to get to know the codebase better while doing the alignment.",
+      "parentUuid": "fa32b979_00b382ea",
+      "revId": "57c3717fbb51e748b92cb85a445823becc969971",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_007142a8",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
@@ -48,6 +66,24 @@
       "writtenOn": "2015-06-22T10:37:32Z",
       "side": 1,
       "message": "Unless it\u0027s necessary for your plugin to work, please avoid specifying the version in the XML (never appeared to be required for any others).",
+      "revId": "57c3717fbb51e748b92cb85a445823becc969971",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_8eeca3f4",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4393,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-06-22T11:28:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa32b979_007142a8",
       "revId": "57c3717fbb51e748b92cb85a445823becc969971",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_2eba37e2",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4400,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-06-22T11:28:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa32b979_3fd7f524",
+      "revId": "57c3717fbb51e748b92cb85a445823becc969971",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_1f879113",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
@@ -82,6 +136,24 @@
       "writtenOn": "2015-06-22T10:37:32Z",
       "side": 1,
       "message": "Please use \"InvalidAttributeError(\u0027when-to-disable\u0027, disable_condition, valid_conditions)\" as the exception as that will report both the current value and the expected valid conditions.",
+      "revId": "57c3717fbb51e748b92cb85a445823becc969971",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_4ebd3bd6",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4404,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-06-22T11:28:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa32b979_1f879113",
       "revId": "57c3717fbb51e748b92cb85a445823becc969971",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
