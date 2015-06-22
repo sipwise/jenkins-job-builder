@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_c3ab641d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4382,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-22T11:57:44Z",
+      "side": 1,
+      "message": "The \u0027-upload\u0027 seems unnecessary, for the sake of brevity maybe drop that from the naming of these arguments?",
+      "revId": "20ccd4949d934bb74bdb3e6cccc405aa664513a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_03a2ac4b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4383,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-22T11:57:44Z",
+      "side": 1,
+      "message": "Seems like a bad name, these aren\u0027t values but parameters, I would suggest values makes sense for lists or multiple choice values for an argument.\n\ngoing to have to tidy the different formats for arguments at some stage, maybe just call these \u0027params\u0027 instead since they are key/value arguments to the specific upload type as opposed to values for the upload type.",
+      "revId": "20ccd4949d934bb74bdb3e6cccc405aa664513a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_e343086b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4513,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-22T11:57:44Z",
+      "side": 1,
+      "message": "Should be able to ignore the \u0027@0.8\u0027 version part.",
+      "revId": "20ccd4949d934bb74bdb3e6cccc405aa664513a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_2eff9702",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4518,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-22T11:57:44Z",
+      "side": 1,
+      "message": "Change to use MissingAttributeError please, can use a \u0027try/except\u0027 clause here and pass \u0027e.args[0]\u0027 into the exception.\n\nSame for the usages above for any required arguments.\n\n    try:\n        XML.SubElement(uploader, \u0027credentialsId\u0027).text \u003d data[\u0027credentials-id\u0027]\n    except KeyError as e:\n        raise MissingAttributeError(e.args[0])",
+      "revId": "20ccd4949d934bb74bdb3e6cccc405aa664513a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_ae3ac7cb",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4536,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-22T11:57:44Z",
+      "side": 1,
+      "message": "Please use \"InvalidAttributeError(\u0027uploads\u0027, \u0027upload-type\u0027, [list of valid types])\" here.",
+      "revId": "20ccd4949d934bb74bdb3e6cccc405aa664513a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
