@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa32b979_60be0e01",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4379,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-22T10:40:47Z",
+      "side": 1,
+      "message": "Bit hesitant about this, as it displays reasonably well, but I think consistency in the docs is a little more important, so to change to displaying the valid values for an option this way, we would need to change them all. Please see http://docs-draft.openstack.org/20/192720/1/check/gate-jenkins-job-builder-docs/86500b7//doc/build/html/publishers.html#publishers.downstream-ext for the format used currently and adjust this to match.",
+      "revId": "57c3717fbb51e748b92cb85a445823becc969971",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_007142a8",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
