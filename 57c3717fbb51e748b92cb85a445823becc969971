@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_007142a8",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4393,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-22T10:37:32Z",
+      "side": 1,
+      "message": "Unless it\u0027s necessary for your plugin to work, please avoid specifying the version in the XML (never appeared to be required for any others).",
+      "revId": "57c3717fbb51e748b92cb85a445823becc969971",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_3fd7f524",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4400,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-22T10:37:32Z",
+      "side": 1,
+      "message": "Please raise \"MissingAttributeError(\u0027when-to-disable\u0027)\"\n\nCan do this by:\n\ntry:\n    disable_condition \u003d str(data[\u0027when-to-disable\u0027])\nexcept KeyError as e:\n    raise MissingAttributeError(e.args[0])",
+      "revId": "57c3717fbb51e748b92cb85a445823becc969971",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_1f879113",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4404,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-22T10:37:32Z",
+      "side": 1,
+      "message": "Please use \"InvalidAttributeError(\u0027when-to-disable\u0027, disable_condition, valid_conditions)\" as the exception as that will report both the current value and the expected valid conditions.",
+      "revId": "57c3717fbb51e748b92cb85a445823becc969971",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
