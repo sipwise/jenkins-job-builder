@@ -17,7 +17,14 @@
       <buildServerUrl>green</buildServerUrl>
       <sendAs>Jenkins</sendAs>
       <authToken>blue</authToken>
-      <room/>
+      <room>My Room</room>
+      <startNotification>true</startNotification>
+      <notifySuccess>true</notifySuccess>
+      <notifyAborted>true</notifyAborted>
+      <notifyNotBuilt>true</notifyNotBuilt>
+      <notifyUnstable>true</notifyUnstable>
+      <notifyFailure>true</notifyFailure>
+      <notifyBackToNormal>true</notifyBackToNormal>
     </jenkins.plugins.hipchat.HipChatNotifier>
   </publishers>
 </project>

@@ -16,7 +16,14 @@
     <jenkins.plugins.hipchat.HipChatNotifier>
       <jenkinsUrl>url</jenkinsUrl>
       <authToken>authtoken</authToken>
-      <room/>
+      <room>My Room</room>
+      <startNotification>true</startNotification>
+      <notifySuccess>true</notifySuccess>
+      <notifyAborted>true</notifyAborted>
+      <notifyNotBuilt>true</notifyNotBuilt>
+      <notifyUnstable>true</notifyUnstable>
+      <notifyFailure>true</notifyFailure>
+      <notifyBackToNormal>true</notifyBackToNormal>
     </jenkins.plugins.hipchat.HipChatNotifier>
   </publishers>
 </project>
