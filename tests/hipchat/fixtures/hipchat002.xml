@@ -8,9 +8,10 @@
   </properties>
   <publishers>
     <jenkins.plugins.hipchat.HipChatNotifier>
+      <startNotification>true</startNotification>
       <jenkinsUrl>url</jenkinsUrl>
       <authToken>authtoken</authToken>
-      <room/>
+      <room>My Room</room>
     </jenkins.plugins.hipchat.HipChatNotifier>
   </publishers>
 </project>

@@ -3,20 +3,27 @@
   <properties>
     <jenkins.plugins.hipchat.HipChatNotifier_-HipChatJobProperty>
       <room>My Room,Your Room</room>
-      <startNotification>true</startNotification>
-      <notifySuccess>true</notifySuccess>
-      <notifyAborted>true</notifyAborted>
       <notifyNotBuilt>true</notifyNotBuilt>
-      <notifyUnstable>true</notifyUnstable>
-      <notifyFailure>true</notifyFailure>
       <notifyBackToNormal>true</notifyBackToNormal>
+      <startNotification>true</startNotification>
+      <notifyFailure>true</notifyFailure>
+      <notifyAborted>true</notifyAborted>
+      <notifySuccess>true</notifySuccess>
+      <notifyUnstable>true</notifyUnstable>
     </jenkins.plugins.hipchat.HipChatNotifier_-HipChatJobProperty>
   </properties>
   <publishers>
     <jenkins.plugins.hipchat.HipChatNotifier>
+      <notifyNotBuilt>true</notifyNotBuilt>
+      <notifyBackToNormal>true</notifyBackToNormal>
+      <startNotification>true</startNotification>
+      <notifyFailure>true</notifyFailure>
+      <notifyAborted>true</notifyAborted>
+      <notifySuccess>true</notifySuccess>
+      <notifyUnstable>true</notifyUnstable>
       <jenkinsUrl>url</jenkinsUrl>
       <authToken>authtoken</authToken>
-      <room/>
+      <room>My Room,Your Room</room>
     </jenkins.plugins.hipchat.HipChatNotifier>
   </publishers>
 </project>
