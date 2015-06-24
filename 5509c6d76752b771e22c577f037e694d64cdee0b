@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_c37a0f24",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4395,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-06-24T13:08:24Z",
+      "side": 1,
+      "message": "I agree that it makes sense to dispense with \u0027room\u0027 in favor of \u0027rooms\u0027.",
+      "parentUuid": "fa32b979_62b8bd75",
+      "revId": "5509c6d76752b771e22c577f037e694d64cdee0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_e2992d7a",
         "filename": "tests/publishers/fixtures/hipchat001.yaml",
         "patchSetId": 7
