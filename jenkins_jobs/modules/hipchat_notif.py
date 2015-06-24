@@ -124,32 +124,33 @@ class HipChat(jenkins_jobs.modules.base.Base):
             raise jenkins_jobs.errors.YAMLFormatError(
                 "Must specify either 'room' or 'rooms' in hipchat config.")
 
-        XML.SubElement(pdefhip, 'startNotification').text = str(
-            hipchat.get('start-notify', False)).lower()
-        if hipchat.get('notify-success'):
-            XML.SubElement(pdefhip, 'notifySuccess').text = str(
-                hipchat.get('notify-success')).lower()
-        if hipchat.get('notify-aborted'):
-            XML.SubElement(pdefhip, 'notifyAborted').text = str(
-                hipchat.get('notify-aborted')).lower()
-        if hipchat.get('notify-not-built'):
-            XML.SubElement(pdefhip, 'notifyNotBuilt').text = str(
-                hipchat.get('notify-not-built')).lower()
-        if hipchat.get('notify-unstable'):
-            XML.SubElement(pdefhip, 'notifyUnstable').text = str(
-                hipchat.get('notify-unstable')).lower()
-        if hipchat.get('notify-failure'):
-            XML.SubElement(pdefhip, 'notifyFailure').text = str(
-                hipchat.get('notify-failure')).lower()
-        if hipchat.get('notify-back-to-normal'):
-            XML.SubElement(pdefhip, 'notifyBackToNormal').text = str(
-                hipchat.get('notify-back-to-normal')).lower()
-
         publishers = xml_parent.find('publishers')
         if publishers is None:
             publishers = XML.SubElement(xml_parent, 'publishers')
         hippub = XML.SubElement(publishers,
                                 'jenkins.plugins.hipchat.HipChatNotifier')
+
+        def translate_to_xml(parent, source, target, optional=True):
+            if not optional or hipchat.get(source):
+                XML.SubElement(parent, target).text = str(
+                    hipchat.get(source, False)
+                ).lower()
+
+        yaml2xmlkeys = {
+            'start-notify': ('startNotification', False),
+            'notify-success': ('notifySuccess', True),
+            'notify-aborted': ('notifyAborted', True),
+            'notify-not-built': ('notifyNotBuilt', True),
+            'notify-unstable': ('notifyUnstable', True),
+            'notify-failure': ('notifyFailure', True),
+            'notify-back-to-normal': ('notifyBackToNormal', True)
+        }
+
+        for xmlparent in [hippub, pdefhip]:
+            for yamlkey, xmlkey in yaml2xmlkeys.items():
+                xmloptional = xmlkey[1]
+                xmlkey = xmlkey[0]
+                translate_to_xml(xmlparent, yamlkey, xmlkey, xmloptional)
 
         plugin_info = self.registry.get_plugin_info("Jenkins HipChat Plugin")
         version = pkg_resources.parse_version(plugin_info.get('version', '0'))
@@ -163,4 +164,4 @@ class HipChat(jenkins_jobs.modules.base.Base):
         XML.SubElement(hippub, 'authToken').text = self.authToken
         # The room specified here is the default room.  The default is
         # redundant in this case since a room must be specified.  Leave empty.
-        XML.SubElement(hippub, 'room').text = ''
+        XML.SubElement(hippub, 'room').text = room.text
