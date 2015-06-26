@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_f2d3e65d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-26T17:38:05Z",
+      "side": 1,
+      "message": "In this case, this should only be indented by two spaces from the previous line to enable correct line continuation in the documentation.\n\nThe changelog-against entries don\u0027t format correctly.",
+      "revId": "e6c8838fa4959493e629309433881acc80be2745",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_efb9bfcc",
+        "filename": "tests/scm/fixtures/git-ignore-commits-with-messages01.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-26T17:38:05Z",
+      "side": 1,
+      "message": "Normally expect to see a wrapper tag around these, presume this is not a mistake in that the \u003cexcludedMessage\u003e tags didn\u0027t need to be together?",
+      "revId": "e6c8838fa4959493e629309433881acc80be2745",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
