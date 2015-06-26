@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_ecca2d1a",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-26T17:07:41Z",
+      "side": 1,
+      "message": "Please replace the lines above with:\n\n    Example:\n\n    .. literalinclude:: /../../tests/wrappers/fixtures/live_screenshot.yaml\n\nYou\u0027ve already added the test, might as well have it inlined automatically instead of needing to maintain it in two places.",
+      "revId": "d64b5e648f628f2352b95393cba5961815ff5783",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_8cb4c182",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-26T17:07:41Z",
+      "side": 1,
+      "message": "Similarly move this to a unit test and include inline:\n\n    This is equivalent to:\n\n    .. literalinclude:: /../../tests/wrappers/fixtures/live_screenshot_min.yaml\n\nThis will ensure the docs always show the same as what we are testing and if the code and test are updated, the example in the docs will be the same.",
+      "revId": "d64b5e648f628f2352b95393cba5961815ff5783",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
