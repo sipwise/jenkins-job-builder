@@ -34,6 +34,24 @@
       "revId": "c28289eb40d82eb2efeb145a1482551726e52497",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_adcaed18",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1487,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-26T13:22:36Z",
+      "side": 1,
+      "message": "Isn\u0027t base_email_ext method run for every trigger type? We need disable-publisher only once, as a global setting. Correct me, but it would be wrong to keep it in the base_email_ext method.",
+      "parentUuid": "fa32b979_ca22c5b9",
+      "revId": "c28289eb40d82eb2efeb145a1482551726e52497",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
