@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_f2b9a6cc",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-26T17:50:07Z",
+      "side": 1,
+      "message": "We could define a default object internal to this project and reference that instead?\n\nWould remove the need to know about socket._GLOBAL_DEFAULT_TIMEOUT.\n\ninstead:\n\n    DEFAULT_TIMEOUT \u003d object()\n\n    class Jenkins(object):\n        def __init__(self, url, user, password, timeout\u003dDEFAULT_TIMEOUT):\n\n            if timeout !\u003d DEFAULT_TIMEOUT:\n                self.jenkins \u003d jenkins.Jenkins(url, user, password, timeout\u003dtimeout)\n            else:\n                self.jenkins \u003d jenkins.Jenkins(url, user, password)",
+      "revId": "e5003ab166a88d0ce55164eab7ad3a21b7982578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_92a93a93",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-26T17:50:07Z",
+      "side": 1,
+      "message": "I don\u0027t see how this could work, we\u0027re not actually passing it down to the jenkins api.",
+      "revId": "e5003ab166a88d0ce55164eab7ad3a21b7982578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_32c06e2a",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-26T17:50:07Z",
+      "side": 1,
+      "message": "See above about using an object internal to this API instead of needing to know about a private object of a module.",
+      "revId": "e5003ab166a88d0ce55164eab7ad3a21b7982578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_92e5badd",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-26T17:50:07Z",
+      "side": 1,
+      "message": "So is a float allowed? or only ints?",
+      "revId": "e5003ab166a88d0ce55164eab7ad3a21b7982578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_5225f207",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-26T17:50:07Z",
+      "side": 1,
+      "message": "Use an internal object reference? See comments in builder.",
+      "revId": "e5003ab166a88d0ce55164eab7ad3a21b7982578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_32738e17",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-26T17:50:07Z",
+      "side": 1,
+      "message": "See above question on whether only ints allowed or if only positive floats supported. Since you mention \u00270.0\u0027 as a valid value above any float will trigger an exception when converting to an int.",
+      "revId": "e5003ab166a88d0ce55164eab7ad3a21b7982578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
