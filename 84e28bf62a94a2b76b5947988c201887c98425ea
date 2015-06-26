@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_0680888a",
+        "filename": "tests/cmd/subcommands/test_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-26T19:39:56Z",
+      "side": 1,
+      "message": "I\u0027m having a difficult time understanding this test.  Could you please add a description of the scenario that you are testing?  It will help contributors maintain this test.\n\nNot real sure, but It looks like your testing update 4 jobs (from cmd-002.yaml) on the 1st command then update 2 jobs (with --delete-old) on the second command  which will delete 2 old jobs?",
+      "revId": "84e28bf62a94a2b76b5947988c201887c98425ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_e67c84ed",
+        "filename": "tests/cmd/subcommands/test_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-26T19:39:56Z",
+      "side": 1,
+      "message": "You added \u0027update-001.yaml\u0027  but i don\u0027t see it used, should this and above test use it?",
+      "revId": "84e28bf62a94a2b76b5947988c201887c98425ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
