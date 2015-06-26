@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_ed1555e5",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-26T13:15:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa32b979_fa077fc7",
+      "revId": "2d930e8569abc346a60458e647777c73c41b1d53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_f71a387c",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-06-18T22:03:36Z",
       "side": 1,
       "message": "shouldn\u0027t this match to what\u0027s in plugin configuration so the parameter could be stated more explicitly in jjb yaml file?\n\nforce-polling-using-workspace",
+      "revId": "2d930e8569abc346a60458e647777c73c41b1d53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_8dd12932",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-26T13:15:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa32b979_f71a387c",
       "revId": "2d930e8569abc346a60458e647777c73c41b1d53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_4ddb2150",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-26T13:15:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa32b979_7d16094d",
+      "revId": "2d930e8569abc346a60458e647777c73c41b1d53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_5d5c6518",
         "filename": "tests/scm/fixtures/git-polling-ignore-messages01.yaml",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2015-06-18T22:03:36Z",
       "side": 1,
       "message": "regarding multiple pattern support, this could be like\n\n        polling-ignore-messages:\n            - excluded-commit-messages: \"(?s).*FOO.*\"\n            - excluded-commit-messages: \"(?s).*BAR.*\"\n\nor even\n\n        polling-ignore-messages:\n            - \"(?s).*FOO.*\"\n            - \"(?s).*BAR.*\"",
+      "revId": "2d930e8569abc346a60458e647777c73c41b1d53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_0d1f590a",
+        "filename": "tests/scm/fixtures/git-polling-ignore-messages01.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-06-26T13:15:54Z",
+      "side": 1,
+      "message": "Right, the second one is better",
+      "parentUuid": "fa32b979_5d5c6518",
       "revId": "2d930e8569abc346a60458e647777c73c41b1d53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
