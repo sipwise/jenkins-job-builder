@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_da7102e0",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 831,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-06-27T20:02:55Z",
+      "side": 1,
+      "message": "I\u0027m not sure what should go here and didn\u0027t find any other examples so str may be good enough. But technically this isn\u0027t a string since you\u0027re accepting a number with a decimal point.",
+      "revId": "673e6045148a55c8c83343067b8171593ff86fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
