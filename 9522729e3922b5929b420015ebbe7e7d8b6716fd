@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_3a490e8f",
+        "filename": "tests/publishers/fixtures/join-trigger001.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-06-27T20:04:59Z",
+      "side": 1,
+      "message": "Trailing whitespace.",
+      "revId": "9522729e3922b5929b420015ebbe7e7d8b6716fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
