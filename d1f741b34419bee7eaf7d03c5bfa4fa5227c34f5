@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa32b979_cf1aa518",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 885,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-27T13:52:43Z",
+      "side": 1,
+      "message": "There is a function to test whether an object is a type of list which I think would be better used here.\n\nmight be worth rolling a change to use that function here, but not critical.",
+      "revId": "d1f741b34419bee7eaf7d03c5bfa4fa5227c34f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
