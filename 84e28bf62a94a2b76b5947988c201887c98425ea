@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_c83cd5e3",
+        "filename": "tests/cmd/subcommands/test_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-28T13:46:58Z",
+      "side": 1,
+      "message": "Adding additional comment to the docstring.\n\nTests 4 jobs, where only two trigger update_job being called by mocking the has_changed() result to say False for two jobs which ensures that update_job is only called when that method returns True. Additionally since the --delete-old option is passed \u0027get_jobs()\u0027 is mocked to return 2 additional jobs which are not in the yaml definition passed to trigger the behaviour of deleting any extra jobs not listed. This tests that the code in cmd.py only deletes the additional jobs and verifies which ones it will attempt to remove.",
+      "parentUuid": "fa32b979_0680888a",
+      "revId": "84e28bf62a94a2b76b5947988c201887c98425ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_e67c84ed",
         "filename": "tests/cmd/subcommands/test_update.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-06-26T19:39:56Z",
       "side": 1,
       "message": "You added \u0027update-001.yaml\u0027  but i don\u0027t see it used, should this and above test use it?",
+      "revId": "84e28bf62a94a2b76b5947988c201887c98425ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_48520537",
+        "filename": "tests/cmd/subcommands/test_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-28T13:46:58Z",
+      "side": 1,
+      "message": "Accidental include, that file wasn\u0027t doing anything.",
+      "parentUuid": "fa32b979_e67c84ed",
       "revId": "84e28bf62a94a2b76b5947988c201887c98425ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
