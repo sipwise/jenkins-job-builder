@@ -16,6 +16,24 @@
       "revId": "673e6045148a55c8c83343067b8171593ff86fda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_285804fa",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 831,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-29T22:34:46Z",
+      "side": 1,
+      "message": "Since all configs are read from file every param is treated as strings but we usually set these to a more compatible type mostly for documentation.  This helps users know what to pass in without having to look at the code.  in this case it probably should be float.\n\nnit: name is kinda long, might help users to shorten otherwise could result in typos.",
+      "parentUuid": "fa32b979_da7102e0",
+      "revId": "673e6045148a55c8c83343067b8171593ff86fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
