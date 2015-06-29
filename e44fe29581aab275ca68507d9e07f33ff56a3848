@@ -33,6 +33,24 @@
       "revId": "e44fe29581aab275ca68507d9e07f33ff56a3848",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_76460dc1",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-29T13:02:00Z",
+      "side": 1,
+      "message": "I believe the file above of :py:func:`~builders.copyartifact` creates a link for the user to view the documentation instead of duplicating it here. Is that sufficient?",
+      "parentUuid": "7a016987_070146af",
+      "revId": "e44fe29581aab275ca68507d9e07f33ff56a3848",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
