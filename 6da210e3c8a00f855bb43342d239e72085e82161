@@ -34,6 +34,24 @@
       "revId": "6da210e3c8a00f855bb43342d239e72085e82161",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_c8688abd",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-06-29T15:26:38Z",
+      "side": 1,
+      "message": "Ah, I hadn\u0027t realized they don\u0027t mind multiple imports on a from statement. In my opinion though I think it\u0027s better to have multiple lines even with from statements but I\u0027ll leave that decision to you.",
+      "parentUuid": "ba3cc151_2c8fd124",
+      "revId": "6da210e3c8a00f855bb43342d239e72085e82161",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
