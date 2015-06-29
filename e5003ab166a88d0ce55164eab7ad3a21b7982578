@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa32b979_e94774ba",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-29T21:48:30Z",
+      "side": 1,
+      "message": "This doesn\u0027t work.  urlopen doesn\u0027t seem to want to accept an object.  The documentation seems to indicate that the default is None, https://docs.python.org/2/library/socket.html    (look at socket. getdefaulttimeout)\n\n\nTest with python-jenkins..\n\n\u003e\u003e\u003e import jenkins\n\u003e\u003e\u003e import socket\n\u003e\u003e\u003e mytimeout\u003dobject()\n\u003e\u003e\u003e j \u003d jenkins.Jenkins(\"http://localhost:8080\",timeout\u003dmytimeout)\n\u003e\u003e\u003e j.get_info()\nTraceback (most recent call last):\n  File \"\u003cstdin\u003e\", line 1, in \u003cmodule\u003e\n  File \"jenkins/__init__.py\", line 389, in get_info\n    Request(self.server + INFO)))\n  File \"jenkins/__init__.py\", line 279, in jenkins_open\n    self.maybe_add_crumb(req)\n  File \"jenkins/__init__.py\", line 197, in maybe_add_crumb\n    self.server + CRUMB_URL), add_crumb\u003dFalse)\n  File \"jenkins/__init__.py\", line 280, in jenkins_open\n    response \u003d urlopen(req, timeout\u003dself.timeout).read()\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py\", line 127, in urlopen\n    return _opener.open(url, data, timeout)\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py\", line 404, in open\n    response \u003d self._open(req, data)\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py\", line 422, in _open\n    \u0027_open\u0027, req)\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py\", line 382, in _call_chain\n    result \u003d func(*args)\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py\", line 1214, in http_open\n    return self.do_open(httplib.HTTPConnection, req)\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py\", line 1181, in do_open\n    h.request(req.get_method(), req.get_selector(), req.data, headers)\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py\", line 973, in request\n    self._send_request(method, url, body, headers)\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py\", line 1007, in _send_request\n    self.endheaders(body)\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py\", line 969, in endheaders\n    self._send_output(message_body)\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py\", line 829, in _send_output\n    self.send(msg)\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py\", line 791, in send\n    self.connect()\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/httplib.py\", line 772, in connect\n    self.timeout, self.source_address)\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py\", line 559, in create_connection\n    sock.settimeout(timeout)\n  File \"/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py\", line 224, in meth\n    return getattr(self._sock,name)(*args)\nTypeError: a float is required",
+      "parentUuid": "fa32b979_f2b9a6cc",
+      "revId": "e5003ab166a88d0ce55164eab7ad3a21b7982578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_92a93a93",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2015-06-26T17:50:07Z",
       "side": 1,
       "message": "I don\u0027t see how this could work, we\u0027re not actually passing it down to the jenkins api.",
+      "revId": "e5003ab166a88d0ce55164eab7ad3a21b7982578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_890fc887",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-29T21:48:30Z",
+      "side": 1,
+      "message": "rebase booboo.  fixed now.",
+      "parentUuid": "fa32b979_92a93a93",
       "revId": "e5003ab166a88d0ce55164eab7ad3a21b7982578",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +100,24 @@
       "writtenOn": "2015-06-26T17:50:07Z",
       "side": 1,
       "message": "So is a float allowed? or only ints?",
+      "revId": "e5003ab166a88d0ce55164eab7ad3a21b7982578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa32b979_2794a342",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-29T21:48:30Z",
+      "side": 1,
+      "message": "timeout param is specified as ``int`` everywhere so should be int. Done.",
+      "parentUuid": "fa32b979_92e5badd",
       "revId": "e5003ab166a88d0ce55164eab7ad3a21b7982578",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
