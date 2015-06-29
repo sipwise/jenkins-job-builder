@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa32b979_ce32e05e",
+        "filename": "tests/cmd/subcommands/test_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-06-29T03:01:43Z",
+      "side": 1,
+      "message": "I don\u0027t find this test particularly objectionable, but in I1f2e8c85654413f49d6a5fa61cd8d0c8b5ef5e03 I am proposing to simplify the Builder object\u0027s API--will you be open to changing this call signature at that time? Just curious as I am getting ready to begin doing some of the 2.x API work.",
+      "revId": "84e28bf62a94a2b76b5947988c201887c98425ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_0680888a",
         "filename": "tests/cmd/subcommands/test_update.py",
         "patchSetId": 3
