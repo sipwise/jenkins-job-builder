@@ -25,6 +25,7 @@ import jenkins
 import re
 from pprint import pformat
 import logging
+import getpass
 
 from jenkins_jobs.constants import MAGIC_MANAGE_STRING
 from jenkins_jobs.parser import YamlParser
@@ -102,12 +103,21 @@ class Jenkins(object):
         self.jenkins = jenkins.Jenkins(url, user, password)
         self._jobs = None
         self._job_list = None
+        self.user = user
+        self.url = url
 
     @property
     def jobs(self):
         if self._jobs is None:
             # populate jobs
-            self._jobs = self.jenkins.get_jobs()
+            try:
+                self._jobs = self.jenkins.get_jobs()
+            except jenkins.JenkinsException as exception:
+                if '[401]' in exception.message:
+                    self.set_credentials()
+                    return self.jobs
+                    pass
+                raise
 
         return self._jobs
 
@@ -131,7 +141,20 @@ class Jenkins(object):
             return True
 
         # if not exists, use jenkins
-        return self.jenkins.job_exists(job_name)
+        try:
+            return self.jenkins.job_exists(job_name)
+        except jenkins.JenkinsException as exception:
+            if '[401]' in exception.message:
+                self.set_credentials()
+                return self.is_job(job_name)
+                pass
+            raise
+
+    def set_credentials(self):
+        if not self.user:
+            self.user = raw_input("Username: ")
+        password = getpass.getpass()
+        self.jenkins = jenkins.Jenkins(self.url, self.user, password)
 
     def get_job_md5(self, job_name):
         xml = self.jenkins.get_job_config(job_name)
