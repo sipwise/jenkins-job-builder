@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_487308b2",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-29T22:26:18Z",
+      "side": 1,
+      "message": "above description states that this is optional but this code does not makes it optional.  If you want it to be optional you\u0027ll want to ignore the param, like so..\n\n  if \u0027directory\u0027 in data:\n       XML.SubElement(root, \u0027javadocDir\u0027).text \u003d data.get(\u0027directory\u0027, \u0027\u0027)\n\nThis also means that it won\u0027t get written to jenkins xml if use does not specify so you\u0027ll want to make sure that\u0027s ok with jenkins as well.",
+      "revId": "dbf7b25cb65f2183e7979ce2de941eabc60eb222",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_a8909496",
+        "filename": "tests/publishers/fixtures/javadoc001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-29T22:26:18Z",
+      "side": 1,
+      "message": "to check that this param is optional just remote this and rerun the test.",
+      "revId": "dbf7b25cb65f2183e7979ce2de941eabc60eb222",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
