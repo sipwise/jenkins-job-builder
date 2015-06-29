@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_b679dc95",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-06-29T18:49:17Z",
+      "side": 1,
+      "message": "Minor nit, but would be good to list these alphabetically.",
+      "revId": "20c710e42c00aadaf563441e3006832cd4d9cbf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
