@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_6979f92e",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-30T22:02:42Z",
+      "side": 1,
+      "message": "I don\u0027t think we want the special case here because other modules in publishers.py will also want to configure on use-stable-build-as-reference param.  It looks like the findbugs one sets on this param as well.",
+      "revId": "0274508e67120e0a0f3d5f02858f80c292a77042",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
