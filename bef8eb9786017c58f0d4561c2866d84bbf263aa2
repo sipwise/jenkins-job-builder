@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_fb12b6b3",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 970,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-30T19:45:41Z",
+      "side": 1,
+      "message": "would like to see a test/example for this.  I can\u0027t really tell from documentation how the specific days should be set.  Maybe an example to run on SUN and another example to run on a combination of days, MON and FRI?",
+      "revId": "bef8eb9786017c58f0d4561c2866d84bbf263aa2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_768a3bc1",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1036,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-30T19:45:41Z",
+      "side": 1,
+      "message": "would like to see a test/example for this one.",
+      "revId": "bef8eb9786017c58f0d4561c2866d84bbf263aa2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_16c08fdf",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1042,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-30T19:45:41Z",
+      "side": 1,
+      "message": "would like to see a test/example for this one.",
+      "revId": "bef8eb9786017c58f0d4561c2866d84bbf263aa2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_343cacc7",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1077,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-30T19:45:41Z",
+      "side": 1,
+      "message": "could you please add some of your tests here?",
+      "revId": "bef8eb9786017c58f0d4561c2866d84bbf263aa2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_1b4e7a96",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1126,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-30T19:45:41Z",
+      "side": 1,
+      "message": "what if it\u0027s not in range? just ignore?",
+      "revId": "bef8eb9786017c58f0d4561c2866d84bbf263aa2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
