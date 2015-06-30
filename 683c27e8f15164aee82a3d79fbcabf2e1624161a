@@ -121,6 +121,24 @@
       "revId": "683c27e8f15164aee82a3d79fbcabf2e1624161a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_f485eb06",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-30T17:24:58Z",
+      "side": 1,
+      "message": "Clark\u0027s concern doesn\u0027t seem like it was addressed in the latest patch?",
+      "parentUuid": "9aa53dc9_6c6799b7",
+      "revId": "683c27e8f15164aee82a3d79fbcabf2e1624161a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
