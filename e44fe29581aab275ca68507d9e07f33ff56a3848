@@ -51,6 +51,24 @@
       "revId": "e44fe29581aab275ca68507d9e07f33ff56a3848",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_e00c453d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-06-30T18:39:54Z",
+      "side": 1,
+      "message": "Ahh.  I didn\u0027t notice that trick, nice!  Looks good but the param name \u0027default\u0027 is slightly confusing.  why not use \u0027which-build\u0027 which would match the referenced doc and what appears on the jenkins UI?",
+      "parentUuid": "ba3cc151_76460dc1",
+      "revId": "e44fe29581aab275ca68507d9e07f33ff56a3848",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
