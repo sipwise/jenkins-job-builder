@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_b4067ccc",
+        "filename": "tests/cmd/subcommands/test_update.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-06-30T19:49:34Z",
+      "side": 1,
+      "message": "Sounds like a separate discussion, this patch is just to enable testing what\u0027s currently there. If we change the api signature then we\u0027ll have to change the test, unless we also decide to provide some compatibility methods in place to delay branching.\n\nIn any case, I\u0027m not adverse to changing the api, just in this case I think this should test the existing functionality so we can look at landing the parallel patch without breaking anything else.",
+      "parentUuid": "fa32b979_ce32e05e",
+      "revId": "84e28bf62a94a2b76b5947988c201887c98425ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_0680888a",
         "filename": "tests/cmd/subcommands/test_update.py",
         "patchSetId": 3
