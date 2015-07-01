@@ -139,6 +139,24 @@
       "revId": "683c27e8f15164aee82a3d79fbcabf2e1624161a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_d0545322",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 9107
+      },
+      "writtenOn": "2015-07-01T08:35:47Z",
+      "side": 1,
+      "message": "Fixed in patch set 11.",
+      "parentUuid": "9aa53dc9_6db20096",
+      "revId": "683c27e8f15164aee82a3d79fbcabf2e1624161a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
