@@ -16,6 +16,24 @@
       "revId": "0274508e67120e0a0f3d5f02858f80c292a77042",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_e143a011",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 16099
+      },
+      "writtenOn": "2015-07-01T23:42:39Z",
+      "side": 1,
+      "message": "This is not true. I know that it is hack but only this plugin have this property. If I remote this condition those publishers: PMD, FINDBUGS, DRY, CHECKSTYLE will have new element in xml output file (and tests will not work any more for them):\n\u003cusePreviousBuildAsReference\u003efalse\u003c/usePreviousBuildAsReference\u003e\n\nAnd for sure findbugs don\u0027t have this property. Check out code -\u003e\nhttps://github.com/hudson3-plugins/findbugs-plugin/blob/master/plugin/src/main/java/hudson/plugins/findbugs/FindBugsPublisher.java",
+      "parentUuid": "ba3cc151_6979f92e",
+      "revId": "0274508e67120e0a0f3d5f02858f80c292a77042",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
