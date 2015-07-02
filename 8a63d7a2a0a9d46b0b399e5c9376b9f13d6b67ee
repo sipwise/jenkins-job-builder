@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_41fd7b6c",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-07-02T19:56:34Z",
+      "side": 1,
+      "message": "short name would be better because I think it\u0027s less likely to change but it\u0027s just my hunch and i have no data to back that up.  Only commenting from my experience developing jenkins plugins n:)",
+      "revId": "8a63d7a2a0a9d46b0b399e5c9376b9f13d6b67ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
