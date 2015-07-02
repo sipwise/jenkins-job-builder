@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_66e0cdcd",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-07-02T23:58:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_01b4537d",
+      "revId": "493e82d5824fe371011061d62ff76fd67a561181",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_440ee9e5",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-02T20:16:07Z",
       "side": 1,
       "message": "doesn\u0027t look like code handles this param?",
+      "revId": "493e82d5824fe371011061d62ff76fd67a561181",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_86e391d8",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-07-02T23:58:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_440ee9e5",
       "revId": "493e82d5824fe371011061d62ff76fd67a561181",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +100,24 @@
       "writtenOn": "2015-07-02T20:16:07Z",
       "side": 1,
       "message": "would be better to use Darragh\u0027s version since it\u0027s kinda the convention now.  Hopefully it will prevent others jjb devs from deviating from that convention.  Also I think JJB can pass object types around so also better to get as a bool.",
+      "parentUuid": "fa32b979_7d5d5b14",
+      "revId": "493e82d5824fe371011061d62ff76fd67a561181",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_26e645e8",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-07-02T23:58:20Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "fa32b979_7d5d5b14",
       "revId": "493e82d5824fe371011061d62ff76fd67a561181",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
