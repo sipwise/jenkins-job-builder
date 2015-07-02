@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_6f666b52",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2665,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-07-02T19:32:10Z",
+      "side": 1,
+      "message": "should be \u0027bool\u0027 type.",
+      "revId": "2ed2fd70e0d1380dd80a42e4d2f31d0cd6759126",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
