@@ -34,6 +34,24 @@
       "revId": "0274508e67120e0a0f3d5f02858f80c292a77042",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_eb6b48b5",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-07-02T23:02:57Z",
+      "side": 1,
+      "message": "hmm, very odd.  The documentation (in here) for findbugs says its available and even the test in \u0027tests/publishers/fixtures/findbugs01.yaml\u0027 sets this param.  If you do git grep \u0027use-stable-build-as-reference\u0027 you\u0027ll see that it\u0027s specified in other modules as well.  I believe you that it\u0027s not supported in findbugs and that might an error in the findbugs jjb module but I\u0027m not sure if that\u0027s the case with the other modules that claim support for this param.   \n\n\nI believe what happens is that if a param is made available in the jjb module but  actually _not_ supported in the plugin then jenkins will just ignore the extra xml.  So it\u0027s probably better to just include in all cases and let jenkins ignore if it doesn\u0027t know about the xml.",
+      "parentUuid": "ba3cc151_e143a011",
+      "revId": "0274508e67120e0a0f3d5f02858f80c292a77042",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
