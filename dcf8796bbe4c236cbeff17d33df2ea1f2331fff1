@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_2005b112",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-03T13:45:19Z",
+      "side": 1,
+      "message": "You don\u0027t need the \"\\\" if you did instead:\n\n     ... \u003d str(\n project_def.get(\u0027trigger-with-no-params\u0027, False)).lower()",
+      "revId": "dcf8796bbe4c236cbeff17d33df2ea1f2331fff1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_73115151",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1978,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-03T13:45:19Z",
+      "side": 1,
+      "message": "This blank line is unnecessary and IMO makes it more clear that :language: yaml is affecting the above literalinclude if there was no blank line between them.",
+      "revId": "dcf8796bbe4c236cbeff17d33df2ea1f2331fff1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_f387a15e",
+        "filename": "tests/publishers/fixtures/join-trigger001.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-03T13:45:19Z",
+      "side": 1,
+      "message": "Since this is a list. We should test with at least 2 or 3 entries to prove that the list is properly parsed.",
+      "revId": "dcf8796bbe4c236cbeff17d33df2ea1f2331fff1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
