@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_305422c8",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1972,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-03T12:24:45Z",
+      "side": 1,
+      "message": "Think the comment from patch 3 was missed, it\u0027s not a list of \u0027projects\u0027, but a list of \u0027publishers\u0027 that you are adding support for. Really should change the word here so it\u0027s clear.",
+      "revId": "b43ca0a863b972ec8c2ed3f72db39e0e06a9d3b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
