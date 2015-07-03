@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_d384dd5e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-03T15:33:31Z",
+      "side": 1,
+      "message": "Been a while, but I think I favoured codecs.open() initially cause it seemed to behave more consistently from python 2.6 to 3.4, but I think a subsequent patch showed that the handling of stdin/stdout was incorrect. So converted to io.open() and also tested against the change that used codecs stream reader/writer to handle input/output and it all appears to behave correctly.",
+      "parentUuid": "ba3cc151_e40e723a",
+      "revId": "78dec9c9d4ac4dfaebc1f7d23fb07526a7933bed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_7f2d0b94",
         "filename": "/COMMIT_MSG",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_567f5b14",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-03T15:33:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_7f2d0b94",
+      "revId": "78dec9c9d4ac4dfaebc1f7d23fb07526a7933bed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_7f33cbab",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2015-07-01T12:35:24Z",
       "side": 1,
       "message": "Hum, are you sure that the configparser module of Python 2 handles well Unicode?\n\nThere is a backport of configparser from Python 3 to Python 2.6+: https://pypi.python.org/pypi/configparser\n\nA quick check on Google tells me that ConfigParser of Python 2 accepts Unicode file with readfp(), but there are issues to *write* a configuration file in Unicode.",
+      "revId": "78dec9c9d4ac4dfaebc1f7d23fb07526a7933bed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_93241560",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-03T15:33:31Z",
+      "side": 1,
+      "message": "The unit tests are reading in conf files using the same construct, so relatively confident that reading them will work as expected.\n\nMigrating to the backported configparser is attractive since it would avoid needing to handle some of the broken behaviour on older python versions. Seems like a good suggestion for a subsequent change.",
+      "parentUuid": "ba3cc151_7f33cbab",
       "revId": "78dec9c9d4ac4dfaebc1f7d23fb07526a7933bed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
