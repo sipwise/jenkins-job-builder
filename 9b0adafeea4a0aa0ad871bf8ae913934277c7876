@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_564ae956",
+        "filename": "tests/yamlparser/fixtures/trigger_parameterized_builds/parameter-override-ordering-002.conf",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-04T20:50:51Z",
+      "side": 1,
+      "message": "I changed the name of the section header. Looks like I forgot to mention that!",
+      "revId": "9b0adafeea4a0aa0ad871bf8ae913934277c7876",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
