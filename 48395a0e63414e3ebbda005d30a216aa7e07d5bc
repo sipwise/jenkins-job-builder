@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_a3f0bdca",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 960,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-06T13:19:07Z",
+      "side": 1,
+      "message": "Forgot a \u0027str(\u0027 here?",
+      "revId": "48395a0e63414e3ebbda005d30a216aa7e07d5bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_e37b2528",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 978,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-06T13:19:07Z",
+      "side": 1,
+      "message": "Forgot a \"str(\" here too?",
+      "revId": "48395a0e63414e3ebbda005d30a216aa7e07d5bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
