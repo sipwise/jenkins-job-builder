@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_3cecca8e",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 960,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-06T14:14:25Z",
+      "side": 1,
+      "message": "Nope, not needed. The result was previously a string, use of () uses python\u0027s implicit string concatenation between them across multiple lines.",
+      "parentUuid": "ba3cc151_a3f0bdca",
+      "revId": "48395a0e63414e3ebbda005d30a216aa7e07d5bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_e37b2528",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-06T13:19:07Z",
       "side": 1,
       "message": "Forgot a \"str(\" here too?",
+      "revId": "48395a0e63414e3ebbda005d30a216aa7e07d5bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_9cfb9647",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 978,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-06T14:14:25Z",
+      "side": 1,
+      "message": "See above.",
+      "parentUuid": "ba3cc151_e37b2528",
       "revId": "48395a0e63414e3ebbda005d30a216aa7e07d5bc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
