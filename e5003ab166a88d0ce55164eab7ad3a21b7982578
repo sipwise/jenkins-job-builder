@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_14739d81",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-07T15:40:11Z",
+      "side": 1,
+      "message": "You wouldn\u0027t actually pass the object down to the python-jenkins library, instead it\u0027s used to determine if you init the class with or without the timeout param.\n\nIf you have:\n\n    DEFAULT_TIMEOUT \u003d object()\n\n    class Jenkins(object):\n        def __init__(self, url, user, password, timeout\u003dDEFAULT_TIMEOUT):\n\n            if timeout !\u003d DEFAULT_TIMEOUT:\n                self.jenkins \u003d jenkins.Jenkins(url, user, password, timeout\u003dtimeout)\n            else:\n                self.jenkins \u003d jenkins.Jenkins(url, user, password)\n\nThen if the caller doesn\u0027t set the timeout when creating the JJB Jenkins object, i.e.:\n\n    j \u003d Jenkins(\"http://localhost:8080\", \"user\", \"password\")\n\nThe if condition evaluates as:\n\n            if DEFAULT_TIMEOUT !\u003d DEFAULT_TIMEOUT:\n                # get\u0027s ignored\n                self.jenkins \u003d jenkins.Jenkins(url, user, password, timeout\u003dtimeout)\n            else:\n               # this is the default path\n                self.jenkins \u003d jenkins.Jenkins(url, user, password)\n\nIf the timeout is being set explicitly, then the value being passed at init time must be valid i.e.:\n\n    j \u003d Jenkins(\"http://localhost:8080\", \"user\", \"password\", 300)\n\n\nIt\u0027s essentially the same construct as what is inside the socket module for how it determines if timeout has been set by the user or not.\n\nThe only difference is that we\u0027re never exposed to socket changing it\u0027s internal behaviour or constant definitions. Marginal benefit.",
+      "parentUuid": "fa32b979_e94774ba",
+      "revId": "e5003ab166a88d0ce55164eab7ad3a21b7982578",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_92a93a93",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 14
