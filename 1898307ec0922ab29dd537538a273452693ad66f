@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_6f3b36ec",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-07-07T16:03:18Z",
+      "side": 1,
+      "message": "how about .testrepository and .testr.conf ?",
+      "revId": "1898307ec0922ab29dd537538a273452693ad66f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
