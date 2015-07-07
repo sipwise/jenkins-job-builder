@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_e94d099a",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-07T15:41:35Z",
+      "side": 1,
+      "message": "Only issue here is that it\u0027s not possible to actually select a timeout of None with the current ConfigParser. I think we\u0027ll have to switch to the backported configparser for python 2.6 to be able to use allow_empty\u003dTrue, which was added in python 2.7, in order to fully support configuration of the timeout.\n\nSomething for a future change, if desired.",
+      "revId": "23db8faaf25444a5c627f8397886ebfdb0152f4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
