@@ -16,6 +16,24 @@
       "revId": "1898307ec0922ab29dd537538a273452693ad66f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_6cb33dea",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-07T17:51:01Z",
+      "side": 1,
+      "message": "They don\u0027t appear to contain any python code, where as the clone of the openstack-infra/project-config under .test can and does.",
+      "parentUuid": "ba3cc151_6f3b36ec",
+      "revId": "1898307ec0922ab29dd537538a273452693ad66f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
