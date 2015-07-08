@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_62d0fdf6",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-08T12:59:06Z",
+      "side": 1,
+      "message": "Need to get away from testing for specific base types and instead check for the desired functionality. i.e. has it a format method, if so it should be treated as a plain string.",
+      "revId": "01a7b78c4c9f288bb5b6d8c2ce7d89f5b89b2ce5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_8232e15c",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-08T12:59:06Z",
+      "side": 1,
+      "message": "Should check for the desired functionality instead of base class type.",
+      "revId": "01a7b78c4c9f288bb5b6d8c2ce7d89f5b89b2ce5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
