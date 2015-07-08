@@ -305,6 +305,11 @@ def authorization(parser, xml_parent, data):
     Specifies an authorization matrix
 
     The available rights are:
+      credentials-create
+      credentials-update
+      credentials-delete
+      credentials-view
+      credentials-manage-domains
       job-delete
       job-configure
       job-read
@@ -313,32 +318,27 @@ def authorization(parser, xml_parent, data):
       job-build
       job-workspace
       job-cancel
+      job-status
       run-delete
       run-update
       scm-tag
+      ownership-jobs
 
-    Example::
+    Example:
 
-      properties:
-        - authorization:
-            admin:
-              - job-delete
-              - job-configure
-              - job-read
-              - job-discover
-              - job-build
-              - job-workspace
-              - job-cancel
-              - run-delete
-              - run-update
-              - scm-tag
-            anonymous:
-              - job-discover
-              - job-read
-              - job-extended-read
+    .. literalinclude:: /../../tests/properties/fixtures/authorization.yaml
+       :language: yaml
     """
 
+    credentials = 'com.cloudbees.plugins.credentials.CredentialsProvider.'
+    ownership = 'com.synopsys.arc.jenkins.plugins.ownership.OwnershipPlugin.'
+
     mapping = {
+        'credentials-create': ''.join((credentials, 'Create')),
+        'credentials-update': ''.join((credentials, 'Update')),
+        'credentials-delete': ''.join((credentials, 'Delete')),
+        'credentials-view': ''.join((credentials, 'View')),
+        'credentials-manage-domains': ''.join((credentials, 'ManageDomains')),
         'job-delete': 'hudson.model.Item.Delete',
         'job-configure': 'hudson.model.Item.Configure',
         'job-read': 'hudson.model.Item.Read',
@@ -346,10 +346,12 @@ def authorization(parser, xml_parent, data):
         'job-discover': 'hudson.model.Item.Discover',
         'job-build': 'hudson.model.Item.Build',
         'job-workspace': 'hudson.model.Item.Workspace',
+        'job-status': 'hudson.model.Item.ViewStatus',
         'job-cancel': 'hudson.model.Item.Cancel',
         'run-delete': 'hudson.model.Run.Delete',
         'run-update': 'hudson.model.Run.Update',
-        'scm-tag': 'hudson.scm.SCM.Tag'
+        'scm-tag': 'hudson.scm.SCM.Tag',
+        'ownership-jobs': ''.join((ownership, 'Jobs')),
     }
 
     if data:

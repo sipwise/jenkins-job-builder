@@ -1,5 +1,23 @@
 properties:
     - authorization:
+        admin:
+            - job-delete
+            - job-configure
+            - job-read
+            - job-discover
+            - job-build
+            - job-workspace
+            - job-cancel
+            - job-status
+            - run-delete
+            - run-update
+            - scm-tag
+            - ownership-jobs
+            - credentials-create
+            - credentials-update
+            - credentials-delete
+            - credentials-view
+            - credentials-manage-domains
         anonymous:
             - job-read
             - job-extended-read
