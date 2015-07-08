@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_3d79b6c8",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-07-08T13:23:47Z",
+      "side": 1,
+      "message": "I\u0027ve changed this. Also, double checked that not specifying directory is okay with jenkins",
+      "parentUuid": "ba3cc151_487308b2",
+      "revId": "dbf7b25cb65f2183e7979ce2de941eabc60eb222",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_a8909496",
         "filename": "tests/publishers/fixtures/javadoc001.yaml",
         "patchSetId": 1
