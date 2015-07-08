@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_fda7ce4d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 885,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-08T13:17:09Z",
+      "side": 1,
+      "message": "I think it\u0027s definitely time we added a helper function to ensure that instead of testing if an object is a list, it checks if it should be treated as a list.",
+      "revId": "833fa2b92829d4a544a851237270620c475daf3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
