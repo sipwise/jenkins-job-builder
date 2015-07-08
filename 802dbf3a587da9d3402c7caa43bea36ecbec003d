@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_3860e400",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-08T13:34:13Z",
+      "side": 1,
+      "message": "Could probably just say:\n\n Update to the original author\u0027s patch is limited to moving the one line\n from setup.py to setup.cfg, fixing some pep8 errors, and adding a unit test.\n\nNo need for anything else.",
+      "revId": "802dbf3a587da9d3402c7caa43bea36ecbec003d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_d8953833",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-08T13:34:13Z",
+      "side": 1,
+      "message": "You probably don\u0027t need to add \u0027me (Philip Hands)\u0027, the sentence and intent since makes sense without that.",
+      "revId": "802dbf3a587da9d3402c7caa43bea36ecbec003d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_1d2ab290",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-08T13:34:13Z",
+      "side": 1,
+      "message": "should only be one \u0027:\u0027, otherwise it fails to render the literalinclude below. Can checkout the resulting docs generated.",
+      "revId": "802dbf3a587da9d3402c7caa43bea36ecbec003d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_38b1c447",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-08T13:34:13Z",
+      "side": 1,
+      "message": "Possibly needs a comment explaining the reason, at least a unit test with more than one sidebar entry specified so the handling of previous sidebar xml tags is exercised..",
+      "revId": "802dbf3a587da9d3402c7caa43bea36ecbec003d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_980b3024",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-08T13:34:13Z",
+      "side": 1,
+      "message": "Looks like there was no need to move any of these to the subsequent line.",
+      "revId": "802dbf3a587da9d3402c7caa43bea36ecbec003d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_781d0c61",
+        "filename": "setup.cfg",
+        "patchSetId": 4
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-08T13:34:13Z",
+      "side": 1,
+      "message": "Please keep this in alphabetica order, just needs to be moved one up.",
+      "revId": "802dbf3a587da9d3402c7caa43bea36ecbec003d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
