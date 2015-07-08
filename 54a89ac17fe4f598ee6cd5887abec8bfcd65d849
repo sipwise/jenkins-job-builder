@@ -16,6 +16,24 @@
       "revId": "54a89ac17fe4f598ee6cd5887abec8bfcd65d849",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_fa7846c6",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-07-08T05:57:24Z",
+      "side": 1,
+      "message": "yes, i\u0027ve tried removing it but pep8 complains.  I couln\u0027t figure out a way to make pep8 happy without it so leaving as is.",
+      "parentUuid": "ba3cc151_d2f8d37e",
+      "revId": "54a89ac17fe4f598ee6cd5887abec8bfcd65d849",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
