@@ -19,7 +19,7 @@ import logging
 import operator
 import pkg_resources
 import re
-import yaml
+import collections
 
 from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.formatter import CustomFormatter
@@ -138,6 +138,28 @@ class ModuleRegistry(object):
         See the Publishers module for a simple example of how to use
         this method.
         """
+        def _format_component(component, template_data, format_func):
+            """
+            A helper function traverse through nested containers recursively
+            and format all strings.
+            """
+            if isinstance(component, collections.Container):
+                if isinstance(component, str):
+                    component = format_func(component, **template_data)
+                elif isinstance(component, list):
+                    for idx, sub_comp in enumerate(component):
+                        component[idx] = _format_component(
+                            sub_comp, template_data, format_func)
+                elif (isinstance(component, collections.OrderedDict) or
+                      isinstance(component, dict)):
+                    for key, sub_comp in component.items():
+                        component[key] = _format_component(
+                            sub_comp, template_data, format_func)
+                else:
+                    raise JenkinsJobsException(
+                        "Unexpected container type: '{0}' for component {1}."
+                        .format(type(component), component))
+            return component
 
         if component_type not in self.modules_by_component_type:
             raise JenkinsJobsException("Unknown component type: "
@@ -152,16 +174,15 @@ class ModuleRegistry(object):
             if template_data:
                 # Template data contains values that should be interpolated
                 # into the component definition
-                s = yaml.dump(component_data, default_flow_style=False)
                 allow_empty_variables = self.global_config \
                     and self.global_config.has_section('job_builder') \
                     and self.global_config.has_option(
                         'job_builder', 'allow_empty_variables') \
                     and self.global_config.getboolean(
                         'job_builder', 'allow_empty_variables')
-                s = CustomFormatter(
-                    allow_empty_variables).format(s, **template_data)
-                component_data = yaml.load(s)
+                format_func = CustomFormatter(allow_empty_variables).format
+                component_data = _format_component(
+                    component_data, template_data, format_func)
         else:
             # The component is a simple string name, eg "run-tests"
             name = component
