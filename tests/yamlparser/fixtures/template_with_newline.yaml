@@ -1,0 +1,21 @@
+- builder:
+    name: shell-lines
+    builders:
+        - shell: '{lines}'
+
+- job-template:
+    name: '{name}'
+    builders:
+        - shell-lines:
+            lines: '{lines}'
+
+- project:
+   name: project-name
+   lines: |
+       line1
+           line2
+
+       line3
+   jobs:
+       - '{name}'
+
