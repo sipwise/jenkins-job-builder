@@ -2,6 +2,46 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba3cc151_22bf55ab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-08T12:59:38Z",
+      "side": 1,
+      "message": "typo: component",
+      "range": {
+        "startLine": 12,
+        "startChar": 48,
+        "endLine": 12,
+        "endChar": 49
+      },
+      "revId": "01a7b78c4c9f288bb5b6d8c2ce7d89f5b89b2ce5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_021ed1ba",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-08T12:59:38Z",
+      "side": 1,
+      "message": "Please import alphabetically. Collections should be moved to the top.",
+      "revId": "01a7b78c4c9f288bb5b6d8c2ce7d89f5b89b2ce5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_62d0fdf6",
         "filename": "jenkins_jobs/registry.py",
         "patchSetId": 1
