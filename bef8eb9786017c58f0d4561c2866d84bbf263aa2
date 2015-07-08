@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_2953c03a",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 970,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-07-08T12:17:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_fb12b6b3",
+      "revId": "bef8eb9786017c58f0d4561c2866d84bbf263aa2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_768a3bc1",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_a93d90de",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1036,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-07-08T12:17:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_768a3bc1",
+      "revId": "bef8eb9786017c58f0d4561c2866d84bbf263aa2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_16c08fdf",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2015-06-30T19:45:41Z",
       "side": 1,
       "message": "would like to see a test/example for this one.",
+      "revId": "bef8eb9786017c58f0d4561c2866d84bbf263aa2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_292ae090",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1042,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-07-08T12:17:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_16c08fdf",
       "revId": "bef8eb9786017c58f0d4561c2866d84bbf263aa2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +135,24 @@
       "writtenOn": "2015-06-30T19:45:41Z",
       "side": 1,
       "message": "what if it\u0027s not in range? just ignore?",
+      "revId": "bef8eb9786017c58f0d4561c2866d84bbf263aa2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_29e0a095",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1126,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-07-08T12:17:30Z",
+      "side": 1,
+      "message": "I am iterating over the possible days here. For each, there has to be a day tag. If the day is selected, \"selected\" for that day would be true. So, it can\u0027t go beyond the range, because the days list is predefined here.",
+      "parentUuid": "ba3cc151_1b4e7a96",
       "revId": "bef8eb9786017c58f0d4561c2866d84bbf263aa2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
