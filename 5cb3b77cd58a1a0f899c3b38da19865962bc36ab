@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_3fbb9cc5",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-09T16:34:23Z",
+      "side": 1,
+      "message": "use, \u0027if hasattr(component, \u0027format\u0027):\" to check whether it should be treated as a string or not, instead of checking the base type.",
+      "revId": "5cb3b77cd58a1a0f899c3b38da19865962bc36ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
