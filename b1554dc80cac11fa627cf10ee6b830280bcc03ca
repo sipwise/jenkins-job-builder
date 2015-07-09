@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_303189a2",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4555,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-09T16:59:07Z",
+      "side": 1,
+      "message": "Please use a more specific exception from errors.py [1]. I think MissingAttributeError is likely what you want here.\n\n[1] https://review.openstack.org/gitweb?p\u003dopenstack-infra/jenkins-job-builder.git;a\u003dblob;f\u003djenkins_jobs/errors.py;h\u003df776d430c3ce044d4bdef8a8cf8ffcc360ecf4aa;hb\u003dHEAD",
+      "revId": "b1554dc80cac11fa627cf10ee6b830280bcc03ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
