@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_be97b546",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-09T14:49:53Z",
+      "side": 1,
+      "message": "Unnecessary pass",
+      "revId": "9440e5500b95a813ee6fe8d7c96520c67681c8f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_1e5b4187",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-09T14:49:53Z",
+      "side": 1,
+      "message": "Should raise a specific exception. Consider adding a new exception to errors.py\n\nhttps://review.openstack.org/gitweb?p\u003dopenstack-infra/jenkins-job-builder.git;a\u003dblob;f\u003djenkins_jobs/errors.py;h\u003df776d430c3ce044d4bdef8a8cf8ffcc360ecf4aa;hb\u003dHEAD",
+      "revId": "9440e5500b95a813ee6fe8d7c96520c67681c8f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_7e4ccdc7",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-09T14:49:53Z",
+      "side": 1,
+      "message": "unnecessary pass",
+      "revId": "9440e5500b95a813ee6fe8d7c96520c67681c8f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_1ea02141",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-09T14:49:53Z",
+      "side": 1,
+      "message": "Same as above consider adding a new exception type to errors.py",
+      "revId": "9440e5500b95a813ee6fe8d7c96520c67681c8f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
