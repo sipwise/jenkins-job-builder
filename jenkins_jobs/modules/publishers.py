@@ -4506,6 +4506,78 @@ def naginator(parser, xml_parent, data):
         data.get('max-failed-builds', '0'))
 
 
+def flowdock(parser, xml_parent, data):
+    """yaml: flowdock
+    This plugin publishes job build results to a Flowdock flow.
+
+    Requires the Jenkins `Flowdock Plugin
+    <https://github.com/jenkinsci/flowdock-plugin>`_
+
+    :arg str token: API token for the targeted flow.
+      (required)
+    :arg str tags: Comma-separated list of tags to incude in message
+      (default "")
+    :arg bool chat-notification: Send chat notification when build fails
+      (default true)
+    :arg bool notify-success: Send notification on build success
+      (default true)
+    :arg bool notify-failure: Send notification on build failure
+      (default true)
+    :arg bool notify-fixed: Send notification when build is fixed
+      (default true)
+    :arg bool notify-unstable: Send notification when build is unstable
+      (default false)
+    :arg bool notify-aborted: Send notification when build was aborted
+      (default false)
+    :arg bool notify-notbuilt: Send notification when build did not occur
+      (default false)
+
+    Example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/flowdock001.yaml
+       :language: yaml
+    """
+
+    state_map = {
+        "Success": {"default": True, "text": "SUCCESS"},
+        "Failure": {"default": True, "text": "FAILURE"},
+        "Fixed": {"default": True, "text": "FIXED"},
+        "Unstable": {"default": False, "text": "UNSTABLE"},
+        "Aborted": {"default": False, "text": "ABORTED"},
+        "NotBuilt": {"default": False, "text": "NOT_BUILT"}
+    }
+
+    parent = XML.SubElement(xml_parent,
+                            'com.flowdock.jenkins.FlowdockNotifier')
+
+    # Raise exception if token was not specified
+    if 'token' not in data:
+        raise JenkinsJobsException("A flowdock token must be specified.")
+
+    XML.SubElement(parent, 'flowToken').text = data['token']
+    XML.SubElement(parent, 'notificationTags').text = data.get('tags', "")
+    XML.SubElement(parent, 'chatNotification').text = str(
+        data.get('chat-notification', True)
+    ).lower()
+
+    nm = XML.SubElement(parent, 'notifyMap')
+
+    for state, v in state_map.items():
+        # Create the child notification entry
+        XML.SubElement(parent, "notify%s" % state).text = str(
+            data.get("notify-%s" % state.lower(), v['default'])
+        ).lower()
+
+        # Build the Entry element tree within notifyMap
+        entry = XML.SubElement(nm, 'entry')
+        XML.SubElement(entry, 'com.flowdock.jenkins.BuildResult').text = str(
+            v['text']
+        )
+        XML.SubElement(entry, 'boolean').text = str(
+            data.get("notify-%s" % state.lower(), v['default'])
+        ).lower()
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
