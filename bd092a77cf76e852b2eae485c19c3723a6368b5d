@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_6d071082",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-10T13:31:49Z",
+      "side": 1,
+      "message": "In other files we imported using\n(InvalidAttributeError,\n JenkinsJobsException)\n\nMaybe we should standardize on this format so that it\u0027s easy to add and remove lines.",
+      "revId": "bd092a77cf76e852b2eae485c19c3723a6368b5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
