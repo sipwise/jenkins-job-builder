@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_43b9b178",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4525,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-07-10T17:08:45Z",
+      "side": 1,
+      "message": "nit: initially i thought this \u0027no on failures\u0027.  might be worth renaming but not a big deal.",
+      "revId": "40b01c6dae4bb8a46093f103225bba6ea2c585b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
