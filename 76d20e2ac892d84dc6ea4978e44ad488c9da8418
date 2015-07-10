@@ -16,6 +16,24 @@
       "revId": "76d20e2ac892d84dc6ea4978e44ad488c9da8418",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_cd716a46",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 16099
+      },
+      "writtenOn": "2015-07-10T19:17:08Z",
+      "side": 1,
+      "message": "True but this modification is needed to cover all configurations possibilities for this plugin.",
+      "parentUuid": "ba3cc151_c1d86e82",
+      "revId": "76d20e2ac892d84dc6ea4978e44ad488c9da8418",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
