@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_9bec15f5",
+        "filename": "jenkins_jobs/modules/general.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T10:24:38Z",
+      "side": 1,
+      "message": "Generally I\u0027d recommend to avoid using \u0027\\\u0027 unnecessarily, but since it\u0027s already in this file, I don\u0027t think it makes much difference.",
+      "revId": "6325169dfc686a6f5e21bd615b947663768e8587",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_db77fd39",
+        "filename": "tests/general/fixtures/custom-workspace001.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T10:24:38Z",
+      "side": 1,
+      "message": "Would you mind adding the child-workspace here to show that the code correct checks which project-type it is before adding in the corresponding xml.\n\n child-workspace: bar",
+      "revId": "6325169dfc686a6f5e21bd615b947663768e8587",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
