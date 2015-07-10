@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_797cb6eb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T12:21:03Z",
+      "side": 1,
+      "message": "Not removed, support is still there, but yes the documentation should reflect the deprecation.",
+      "revId": "4d0684600f44a0481c22bbe52eef7a8982e439b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_7907d681",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T12:21:03Z",
+      "side": 1,
+      "message": "Need a blank line before and after the deprecated identifier to format correctly.\n\nCompare how the ones for the trigger-on above versus here in the outputted documentation: http://docs-draft.openstack.org/63/199663/3/check/gate-jenkins-job-builder-docs/d922533//doc/build/html/triggers.html\n\nCan test by running \u0027tox -e docs\u0027 locally followed by firefox doc/build/html/triggers.html to review.",
+      "revId": "4d0684600f44a0481c22bbe52eef7a8982e439b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
