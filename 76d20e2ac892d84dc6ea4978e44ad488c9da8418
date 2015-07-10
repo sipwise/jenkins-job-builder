@@ -34,6 +34,24 @@
       "revId": "76d20e2ac892d84dc6ea4978e44ad488c9da8418",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_8207a817",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-07-10T21:31:47Z",
+      "side": 1,
+      "message": "I would prefer a separate change for this.  Also i think you forgot to add this param to the docs above.  would also be nice to add this to one of the tests as well.",
+      "parentUuid": "ba3cc151_cd716a46",
+      "revId": "76d20e2ac892d84dc6ea4978e44ad488c9da8418",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
