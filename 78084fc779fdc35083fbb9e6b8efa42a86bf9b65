@@ -1,0 +1,344 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_8cc37d57",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T11:36:12Z",
+      "side": 1,
+      "message": "Should be possible to format without needing the \u0027\\\u0027.",
+      "revId": "78084fc779fdc35083fbb9e6b8efa42a86bf9b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_accc418b",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T11:36:12Z",
+      "side": 1,
+      "message": "I would use [\u0027*password*\u0027, \u0027*secret*\u0027] as the default to be clear.",
+      "revId": "78084fc779fdc35083fbb9e6b8efa42a86bf9b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_6c18791f",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T11:36:12Z",
+      "side": 1,
+      "message": "Just use [] instead of [\u0027\u0027]",
+      "revId": "78084fc779fdc35083fbb9e6b8efa42a86bf9b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_acf6818e",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T11:36:12Z",
+      "side": 1,
+      "message": "I would suggest that for the artifactory env-var and deployment patterns that you go with the following data structure in the yaml:\n\n    deployment-patterns:\n        include-patterns:\n            - pattern1\n            - pattern2\n            - pattern3\n        exclude-patterns:\n            - pattern1\n\n    env-var-patterns:\n        include-patterns:\n            - pattern1\n            - pattern2\n            - pattern3\n        exclude-patterns:\n            - pattern1\n\nThen for both deployment-patterns and env-var-patterns just call the same common function to handle the include/exclude patterns as well as defaults.",
+      "revId": "78084fc779fdc35083fbb9e6b8efa42a86bf9b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_21d11a30",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T11:36:12Z",
+      "side": 1,
+      "message": "Please don\u0027t use slashes for line continuation. Do the same as in the publishers, one per line or use brackets to handle multiple lines.",
+      "revId": "78084fc779fdc35083fbb9e6b8efa42a86bf9b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_819a666d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1517,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T11:36:12Z",
+      "side": 1,
+      "message": "Include the link to the wiki page for the docs, :jenkins-wiki:`Artifactory Plugin \u003cArtifactory+Plugin\u003e`",
+      "revId": "78084fc779fdc35083fbb9e6b8efa42a86bf9b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_a1cc4a8b",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1520,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T11:36:12Z",
+      "side": 1,
+      "message": "Try and stick to the same format for the default, either (default: ...) or (default ...), mixing both looks odd in the docs.",
+      "revId": "78084fc779fdc35083fbb9e6b8efa42a86bf9b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_814906ba",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1525,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T11:36:12Z",
+      "side": 1,
+      "message": "This appears to be optional rather than having a default, where if it\u0027s not set, the two options below are used.",
+      "revId": "78084fc779fdc35083fbb9e6b8efa42a86bf9b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_e1ced22c",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1527,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T11:36:12Z",
+      "side": 1,
+      "message": "Should note these are only set if repo-key is not defined.",
+      "revId": "78084fc779fdc35083fbb9e6b8efa42a86bf9b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_a1cf6a56",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1545,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T11:36:12Z",
+      "side": 1,
+      "message": "Please avoid slashes for line continuation.\n\nEither:\n\n        XML.SubElement(details, \u0027downloadRepositoryKey\u0027\n                       ).text \u003d data[\u0027repo-key\u0027]\n\nOr:\n\n        XML.SubElement(\n            details, \u0027downloadRepositoryKey\u0027).text \u003d data[\u0027repo-key\u0027]\n\nwill take care of the formatting.",
+      "revId": "78084fc779fdc35083fbb9e6b8efa42a86bf9b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_c1770e3a",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1556,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T11:36:12Z",
+      "side": 1,
+      "message": "Include link for the jenkins wiki.",
+      "revId": "78084fc779fdc35083fbb9e6b8efa42a86bf9b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_c1fdce3c",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1564,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T11:36:12Z",
+      "side": 1,
+      "message": "This does strike me as odd that in the one above it was either repo-key or snapshot-repo-key, whereas here both will have a default set by the code.",
+      "revId": "78084fc779fdc35083fbb9e6b8efa42a86bf9b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_81a58648",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1567,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T11:36:12Z",
+      "side": 1,
+      "message": "This doesn\u0027t match what you have below, either this should be a list and you are picking the comma separation to be used below to convert to a string, or this is a string and the code below should treat it as already formatted by the user.\n\nI\u0027d go with option one, I think it is cleaner in yaml to specify as a list.",
+      "revId": "78084fc779fdc35083fbb9e6b8efa42a86bf9b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_414d3e98",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1569,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T11:36:12Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "78084fc779fdc35083fbb9e6b8efa42a86bf9b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_e141f264",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1572,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T11:36:12Z",
+      "side": 1,
+      "message": "And here.",
+      "revId": "78084fc779fdc35083fbb9e6b8efa42a86bf9b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_21483a8a",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1610,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T11:36:12Z",
+      "side": 1,
+      "message": "the \u0027\u0027 inside the [] are unnecessary, in python \u0027,\u0027.join([]) returns an empty string.",
+      "revId": "78084fc779fdc35083fbb9e6b8efa42a86bf9b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_8c2ffd87",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1614,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T11:36:12Z",
+      "side": 1,
+      "message": "Please remove \u0027\\\u0027 use:\n\n    XML.SubElement(artifactory, \u0027matrixParams\u0027).text \u003d (\n        \u0027,\u0027.join(data.get(\u0027matrix-params\u0027, [])))",
+      "revId": "78084fc779fdc35083fbb9e6b8efa42a86bf9b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_4c02550b",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1623,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T11:36:12Z",
+      "side": 1,
+      "message": "Please avoid use of \u0027\\\u0027 (it\u0027s actually stated in PEP8 to be avoided except in exception circumstances), it should be possible to format all of these to avoid it\u0027s use.\n\n    XML.SubElement(artifactory, \u0027deployBuildInfo\u0027).text \u003d str(\n        data.get(\u0027deploy-build-info\u0027, False)).lower()",
+      "revId": "78084fc779fdc35083fbb9e6b8efa42a86bf9b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_acad21ec",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1714,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T11:36:12Z",
+      "side": 1,
+      "message": "Recommend stating to use a list here and for any other place you will be producing a space or comma separated string constructed from multiple items.",
+      "revId": "78084fc779fdc35083fbb9e6b8efa42a86bf9b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_ccd8a582",
+        "filename": "tests/wrappers/fixtures/artifactory001.yaml",
+        "patchSetId": 18
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T11:36:12Z",
+      "side": 1,
+      "message": "Maybe use \u0027artifactory.example.net\u0027, seems better than having a reference to an internal resource appearing in examples.",
+      "revId": "78084fc779fdc35083fbb9e6b8efa42a86bf9b65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
