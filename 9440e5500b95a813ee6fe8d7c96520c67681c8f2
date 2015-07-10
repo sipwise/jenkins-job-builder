@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "ba3cc151_a87c26b6",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-10T13:52:51Z",
+      "side": 1,
+      "message": "Maybe not if it\u0027s the same behaviour as before, let\u0027s leave it to see if other reviewers think otherwise.",
+      "parentUuid": "ba3cc151_bdb1d803",
+      "revId": "9440e5500b95a813ee6fe8d7c96520c67681c8f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_7e4ccdc7",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 1
