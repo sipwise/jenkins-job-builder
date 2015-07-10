@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_c1d86e82",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T11:00:16Z",
+      "side": 1,
+      "message": "Unexpected addition, but since it\u0027s related to the below I think it\u0027s alright to include in the same change.",
+      "revId": "76d20e2ac892d84dc6ea4978e44ad488c9da8418",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
