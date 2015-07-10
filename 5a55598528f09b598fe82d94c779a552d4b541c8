@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_4db80ce9",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 934,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T13:33:50Z",
+      "side": 1,
+      "message": "typo, should be \u0027str\u0027.",
+      "revId": "5a55598528f09b598fe82d94c779a552d4b541c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_6dcab01c",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1006,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T13:33:50Z",
+      "side": 1,
+      "message": "Seems like some of the code here and in the script() function above should be moved into a common helper function and called from both.\n\nThough that could probably be a future patch.",
+      "revId": "5a55598528f09b598fe82d94c779a552d4b541c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
