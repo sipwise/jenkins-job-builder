@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_e7c7c296",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1022,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T12:04:52Z",
+      "side": 1,
+      "message": "I would suggest going with lists here for the two patterns and join them together in the code with commas.",
+      "revId": "3520a718b7a7a4fbbc7f1aa94f0a28ff11e2d43a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_e757c258",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1095,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T12:04:52Z",
+      "side": 1,
+      "message": "Try to avoid adding more \u0027\\\u0027 for line continuations, just indent by 4 spaces from the line above to perform a continuation without needing a slash at the end of the preceding line.",
+      "revId": "3520a718b7a7a4fbbc7f1aa94f0a28ff11e2d43a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_67c2d236",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1144,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T12:04:52Z",
+      "side": 1,
+      "message": "I missed this previously, but would suggest using enumerate, avoids the need to add the + 1 and gives you the day and day_no at the same time.:\n\n    for day_no, day in enumerate(days, 1):\n        day_tag \u003d XML.SubElement(days_tag, day_tag_text)\n        XML.SubElement(day_tag, \"day\").text \u003d str(day_no)\n        XML.SubElement(day_tag, \"selected\").text \u003d str(cdata.get(\n            day, False)).lower()",
+      "revId": "3520a718b7a7a4fbbc7f1aa94f0a28ff11e2d43a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_67041218",
+        "filename": "tests/builders/fixtures/conditional-step-day-of-week003.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T12:04:52Z",
+      "side": 1,
+      "message": "I think move these under another identifier.\n\n builders:\n      - conditional-step:\n          condition-kind: day-of-week\n          day-selector: select-days\n          days:\n              MON: true\n              FRI: true\n\nThat will also allow adding logic to the code to raise an exception if any of the days listed are note recognised.",
+      "revId": "3520a718b7a7a4fbbc7f1aa94f0a28ff11e2d43a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_07474678",
+        "filename": "tests/builders/fixtures/conditional-step-or.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T12:04:52Z",
+      "side": 1,
+      "message": "Missed this previously, but one of the changes that I recall reviewing a while back was about converting such items to use lists and doing the comma join in the code. I think it\u0027s a good idea to follow this as it\u0027s much cleaner when adding numerous patterns to be able to specify them as a list of individual items.\n\nDocstring would just need to note that since the separator is hardcoded as a \u0027,\u0027, any use of that in the patterns would likely need escaping.",
+      "revId": "3520a718b7a7a4fbbc7f1aa94f0a28ff11e2d43a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
