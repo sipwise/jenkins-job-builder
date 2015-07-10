@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba3cc151_f91be61a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-10T12:12:01Z",
+      "side": 1,
+      "message": "nit, since you\u0027ve already checked that the key exists, you can just use:\n\n        XML.SubElement(root, \u0027javadocDir\u0027).text \u003d data[\u0027directory\u0027]",
+      "revId": "2c1a31a93e7f0850a64c5e272b38a3e1b801f70e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
