@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_4426a069",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4575,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-07-12T19:09:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_d9529068",
+      "revId": "fba8418d0e480880ddda6ea2850b631527dc28fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_d924d00f",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-10T17:59:31Z",
       "side": 1,
       "message": "type_count.count?  would be better as types.count",
+      "revId": "fba8418d0e480880ddda6ea2850b631527dc28fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_241efc0c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4582,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-07-12T19:09:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_d924d00f",
       "revId": "fba8418d0e480880ddda6ea2850b631527dc28fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_c41ab017",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4669,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-07-12T19:09:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_998e4878",
+      "revId": "fba8418d0e480880ddda6ea2850b631527dc28fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_f9e2f400",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 9
@@ -64,6 +118,24 @@
       "writtenOn": "2015-07-10T17:59:31Z",
       "side": 1,
       "message": "why not just reuse the valid_upload_types var like so?\n\n  if upload_type \u003d\u003d valid_upload_types[0]:",
+      "revId": "fba8418d0e480880ddda6ea2850b631527dc28fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_e417b4eb",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4678,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-07-12T19:09:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba3cc151_f9e2f400",
       "revId": "fba8418d0e480880ddda6ea2850b631527dc28fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
