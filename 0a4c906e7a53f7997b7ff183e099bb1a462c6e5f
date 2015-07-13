@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_9914f8f5",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 972,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-13T10:25:47Z",
+      "side": 1,
+      "message": "Forgot to modify the way \u0027days\u0027 is listed here to show that it is at the same level as day-selector, and the days are defined under it.",
+      "revId": "0a4c906e7a53f7997b7ff183e099bb1a462c6e5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_995cf826",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1021,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-13T10:25:47Z",
+      "side": 1,
+      "message": "\u0027(list str)\u0027 makes more sense, it\u0027s list of strings.",
+      "revId": "0a4c906e7a53f7997b7ff183e099bb1a462c6e5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
