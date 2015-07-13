@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_87f3380a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2028,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-13T09:29:58Z",
+      "side": 1,
+      "message": "Looks like you just need to reword this for the docs to read clearly as this one does not have a \"CFP Example\" below, it just has \"Example\".\n\nProbably just needs to be:\n\n    :arg str settings: Path to use as user settings.xml. It is possible to\n      provide a ConfigFileProvider settings file, see Example below. (optional)",
+      "revId": "7ef48063ffa1938cde7d75894953abc7f7b84d49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_47de906e",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2031,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-13T09:29:58Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "7ef48063ffa1938cde7d75894953abc7f7b84d49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_67495431",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2034,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-13T09:29:58Z",
+      "side": 1,
+      "message": "Please use the custom \u0027:jenkins-wiki:\u0027 directive here. Should be a few examples already in this file. Note the sonar one above only uses the full link since it\u0027s to a site other than the jenkins-wiki.",
+      "revId": "7ef48063ffa1938cde7d75894953abc7f7b84d49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
