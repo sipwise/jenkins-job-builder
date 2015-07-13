@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_2b4ea96f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2008,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2015-07-13T13:12:08Z",
+      "side": 0,
+      "message": "While at it, this point to a 404 page:\n\n All Codehaus services have been terminated.\n\nFrom the source repo at https://github.com/SonarSource/jenkins-sonar-plugin  it seems the canonical URL is now http://redirect.sonarsource.com/plugins/jenkins.html\n\nSeems the plugin is slightly different though as it seems to rely on a Saas service.",
+      "revId": "8839388aa3220ea2644e551321f0b569a04a4116",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
