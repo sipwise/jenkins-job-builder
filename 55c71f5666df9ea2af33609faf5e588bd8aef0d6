@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_a9b97830",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 4625,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-07-13T07:01:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_f01d2abe",
+      "revId": "55c71f5666df9ea2af33609faf5e588bd8aef0d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_f04beaae",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-12T23:20:14Z",
       "side": 1,
       "message": "sorry i didn\u0027t point out these on last review but would be better to use MissingAttributesError.",
+      "revId": "55c71f5666df9ea2af33609faf5e588bd8aef0d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_09942489",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 4640,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-07-13T07:01:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_f04beaae",
       "revId": "55c71f5666df9ea2af33609faf5e588bd8aef0d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_89d59444",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 4652,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-07-13T07:01:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_90c7fe11",
+      "revId": "55c71f5666df9ea2af33609faf5e588bd8aef0d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_b0cc8236",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 10
@@ -64,6 +118,24 @@
       "writtenOn": "2015-07-12T23:20:14Z",
       "side": 1,
       "message": "and here",
+      "revId": "55c71f5666df9ea2af33609faf5e588bd8aef0d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_29ca48a2",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 4670,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-07-13T07:01:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_b0cc8236",
       "revId": "55c71f5666df9ea2af33609faf5e588bd8aef0d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_09c2e485",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 4682,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-07-13T07:01:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_70d6fac6",
+      "revId": "55c71f5666df9ea2af33609faf5e588bd8aef0d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_10dc4ee3",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 10
@@ -98,6 +188,24 @@
       "writtenOn": "2015-07-12T23:20:14Z",
       "side": 1,
       "message": "and here",
+      "revId": "55c71f5666df9ea2af33609faf5e588bd8aef0d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_a9be58fd",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 4700,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-07-13T07:01:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_10dc4ee3",
       "revId": "55c71f5666df9ea2af33609faf5e588bd8aef0d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
