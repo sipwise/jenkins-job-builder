@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_e926a015",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4566,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-07-13T07:13:49Z",
+      "side": 1,
+      "message": "I\u0027m not sure if there a specific reason to point to github though. These normally point to Jenkins\u0027 own plugins page.\n\nhttps://wiki.jenkins-ci.org/display/JENKINS/Flowdock+Plugin",
+      "revId": "4e5a4d29d6a4b183f7c6363ad6a610921311a21d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_c9c15c30",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4595,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-07-13T07:13:49Z",
+      "side": 1,
+      "message": "Parameter name should be sufficient here.\n\n  raise MissingAttributeError(\u0027token\u0027)\n\nhttp://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/modules/builders.py#n1704",
+      "revId": "4e5a4d29d6a4b183f7c6363ad6a610921311a21d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_495f8c72",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4636,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-07-13T07:13:49Z",
+      "side": 1,
+      "message": "can these be put under a function instead of repeating same statements with different parameters over and over again?",
+      "revId": "4e5a4d29d6a4b183f7c6363ad6a610921311a21d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_89ccb436",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4650,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-07-13T07:13:49Z",
+      "side": 1,
+      "message": "same for this one as well; putting them under a function would be neat.",
+      "revId": "4e5a4d29d6a4b183f7c6363ad6a610921311a21d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
