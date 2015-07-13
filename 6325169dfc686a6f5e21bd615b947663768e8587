@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_dc7ef3e3",
+        "filename": "jenkins_jobs/modules/general.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-13T09:23:01Z",
+      "side": 1,
+      "message": "There are many other approaches in python that trigger a line continuation without needing the \u0027\\\u0027. All of the following are valid:\n\n            # this is the preferred convention through out most of this project.\n            XML.SubElement(xml, \u0027childCustomWorkspace\u0027).text \u003d str(\n                data[\u0027child-workspace\u0027])\n\n            XML.SubElement(xml, \u0027childCustomWorkspace\u0027).text \u003d str(data[\n                \u0027child-workspace\u0027])\n\n            XML.SubElement(xml, \u0027childCustomWorkspace\u0027\n                           ).text \u003d str(data[\u0027child-workspace\u0027])\n\n            # this one is still probably too long\n            XML.SubElement(\n                xml,\u0027childCustomWorkspace\u0027).text \u003d str(data[\u0027child-workspace\u0027])\n\n\nHowever since it\u0027s used on multiple other lines, around it, it\u0027s better to match the existing style or fix all the other lines at the same time. In this case a future patch is how we should fix this.",
+      "parentUuid": "9a41bdd9_a9fc183f",
+      "revId": "6325169dfc686a6f5e21bd615b947663768e8587",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba3cc151_db77fd39",
         "filename": "tests/general/fixtures/custom-workspace001.yaml",
         "patchSetId": 5
