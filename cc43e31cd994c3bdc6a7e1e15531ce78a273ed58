@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_0b396541",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 958,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2015-07-13T13:18:35Z",
+      "side": 1,
+      "message": "Looking at the resulting doc, all the parameters ends up a a long paragraph which makes it hard to figure out ( http://docs-draft.openstack.org/90/189590/6/check/gate-jenkins-job-builder-docs/cba9cc4//doc/build/html/builders.html#builders.conditional-step )\n\nMaybe make them a nice list instead?",
+      "revId": "cc43e31cd994c3bdc6a7e1e15531ce78a273ed58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_8b4575b4",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 982,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2015-07-13T13:18:35Z",
+      "side": 1,
+      "message": "Ditto, could use a list to have the doc easier to read.",
+      "revId": "cc43e31cd994c3bdc6a7e1e15531ce78a273ed58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
