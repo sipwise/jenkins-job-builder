@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_ec9f845d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 4727,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-13T10:46:10Z",
+      "side": 1,
+      "message": "So realised we could make the below a little more concise.\n\n            if upload_type not in valid_upload_types:\n                raise InvalidAttributeError(\u0027uploads\u0027, upload_type,\n                                            valid_upload_types)\n            else:\n                locals()[upload_type.replace(\u0027-\u0027, \u0027_\u0027)](\n                    properties, upload_element, types)\n\nI\u0027m in two minds whether that\u0027s actually better or worse than what\u0027s below ;)",
+      "revId": "3e3c3baf7e6dab63c17df0a84e0a8572567b5617",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_cc0ac0d2",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 4735,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-13T10:46:10Z",
+      "side": 1,
+      "message": "should be InvalidAttributeError(\u0027uploads\u0027, upload_type, valid_upload_types)\n\nGuess we should really look into improving the infrastructure for fixtures around testing exceptions.",
+      "revId": "3e3c3baf7e6dab63c17df0a84e0a8572567b5617",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
