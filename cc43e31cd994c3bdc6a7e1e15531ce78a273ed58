@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_b64c5943",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 958,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-07-13T14:54:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_0b396541",
+      "revId": "cc43e31cd994c3bdc6a7e1e15531ce78a273ed58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_8b4575b4",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-13T13:18:35Z",
       "side": 1,
       "message": "Ditto, could use a list to have the doc easier to read.",
+      "revId": "cc43e31cd994c3bdc6a7e1e15531ce78a273ed58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_365fe9e6",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 982,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-07-13T14:54:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a41bdd9_8b4575b4",
       "revId": "cc43e31cd994c3bdc6a7e1e15531ce78a273ed58",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
