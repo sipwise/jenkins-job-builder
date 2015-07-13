@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_829fa602",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-13T10:15:58Z",
+      "side": 1,
+      "message": "Generally you should be using the api token instead of your password.",
+      "revId": "735ae2ab150acc3d52be98ee4f344e5bd1365d8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_c24a8e83",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-13T10:15:58Z",
+      "side": 1,
+      "message": "redundant, since is_job would first call, self.job_list(), which in turn calls self.jobs().",
+      "revId": "735ae2ab150acc3d52be98ee4f344e5bd1365d8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_e7bb24c3",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-13T10:15:58Z",
+      "side": 1,
+      "message": "I\u0027m hesitant about the implementation of this. For an API, if there is credential issues, we shouldn\u0027t immediately look to try and interface with the user since we may be executed by another tool using the API directly and it may not wish to ask the user.",
+      "revId": "735ae2ab150acc3d52be98ee4f344e5bd1365d8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
