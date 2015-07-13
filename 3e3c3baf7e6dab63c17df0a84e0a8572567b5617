@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_8cf4a187",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 4727,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-07-13T16:56:24Z",
+      "side": 1,
+      "message": "I prefer more explicit (less tricky) approach, but meh..",
+      "parentUuid": "9a41bdd9_f770a8de",
+      "revId": "3e3c3baf7e6dab63c17df0a84e0a8572567b5617",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_cc0ac0d2",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 11
