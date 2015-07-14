@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_75c1b053",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-14T14:23:30Z",
+      "side": 1,
+      "message": "Please use MissingAttributeError from JJB errors.py module. For example:\n\n raise MissingAttributeError(\u0027file\u0027)",
+      "revId": "67d2123c3290ab46cf925d6a7d7f7c1cdbb473ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
