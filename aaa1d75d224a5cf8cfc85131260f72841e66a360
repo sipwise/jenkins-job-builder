@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_d878f6c6",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-14T13:28:41Z",
+      "side": 1,
+      "message": "Is this required or optional. or does it default to something?\n\nIf it\u0027s required or optional you should end the description with something like (required) or (optional) to let the user know.\n\nIf it instead defaults to something then: (default: default-file)",
+      "revId": "aaa1d75d224a5cf8cfc85131260f72841e66a360",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_5832a611",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-14T13:28:41Z",
+      "side": 1,
+      "message": "This implies that the default is blank. Is blank a valid default for this setting?",
+      "revId": "aaa1d75d224a5cf8cfc85131260f72841e66a360",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
