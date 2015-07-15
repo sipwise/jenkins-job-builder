@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <publishers>
+    <com.syncapse.jenkinsci.plugins.awscloudformationwrapper.CloudFormationPostBuildNotifier>
+      <stacks>
+        <com.syncapse.jenkinsci.plugins.awscloudformationwrapper.PostBuildStackBean>
+          <stackName>foo</stackName>
+          <description>Build the foo stack</description>
+          <cloudFormationRecipe>foo.json</cloudFormationRecipe>
+          <parameters>Key1=foo,Key2=fuu</parameters>
+          <timeout>3600</timeout>
+          <awsAccessKey>$AWS_ACCESS_KEY</awsAccessKey>
+          <awsSecretKey>$AWS_SECRET_KEY</awsSecretKey>
+          <sleep>5</sleep>
+          <awsRegion>US_WEST_Oregon</awsRegion>
+        </com.syncapse.jenkinsci.plugins.awscloudformationwrapper.PostBuildStackBean>
+        <com.syncapse.jenkinsci.plugins.awscloudformationwrapper.PostBuildStackBean>
+          <stackName>bar</stackName>
+          <description>Build the bar stack</description>
+          <cloudFormationRecipe>bar.json</cloudFormationRecipe>
+          <parameters>Key1=bar;Key2=baa</parameters>
+          <timeout>3600</timeout>
+          <awsAccessKey>$AWS_ACCESS_KEY</awsAccessKey>
+          <awsSecretKey>$AWS_SECRET_KEY</awsSecretKey>
+          <sleep>0</sleep>
+          <awsRegion>US_WEST_Northern_California</awsRegion>
+        </com.syncapse.jenkinsci.plugins.awscloudformationwrapper.PostBuildStackBean>
+      </stacks>
+    </com.syncapse.jenkinsci.plugins.awscloudformationwrapper.CloudFormationPostBuildNotifier>
+    <com.syncapse.jenkinsci.plugins.awscloudformationwrapper.CloudFormationNotifier>
+      <stacks>
+        <com.syncapse.jenkinsci.plugins.awscloudformationwrapper.SimpleStackBean>
+          <stackName>foo</stackName>
+          <awsAccessKey>$AWS_ACCESS_KEY</awsAccessKey>
+          <awsSecretKey>$AWS_SECRET_KEY</awsSecretKey>
+          <isPrefixSelected>true</isPrefixSelected>
+          <awsRegion>US_WEST_Oregon</awsRegion>
+        </com.syncapse.jenkinsci.plugins.awscloudformationwrapper.SimpleStackBean>
+        <com.syncapse.jenkinsci.plugins.awscloudformationwrapper.SimpleStackBean>
+          <stackName>bar</stackName>
+          <awsAccessKey>$AWS_ACCESS_KEY</awsAccessKey>
+          <awsSecretKey>$AWS_SECRET_KEY</awsSecretKey>
+          <isPrefixSelected>false</isPrefixSelected>
+          <awsRegion>US_WEST_Northern_California</awsRegion>
+        </com.syncapse.jenkinsci.plugins.awscloudformationwrapper.SimpleStackBean>
+      </stacks>
+    </com.syncapse.jenkinsci.plugins.awscloudformationwrapper.CloudFormationNotifier>
+  </publishers>
+</project>

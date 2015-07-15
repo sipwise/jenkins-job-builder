@@ -2143,3 +2143,71 @@ def beaker(parser, xml_parent, data):
 
     XML.SubElement(beaker, 'downloadFiles').text = str(data.get(
         'download-logs', False)).lower()
+
+
+def cloudformation(parser, xml_parent, data):
+    """yaml: cloudformation
+    Create cloudformation stacks before running a build and optionally
+    delete them at the end.  Requires the Jenkins :jenkins-wiki:`AWS
+    Cloudformation Plugin <AWS+Cloudformation+Plugin>`.
+
+    :arg str name: The name of the stack
+    :arg str description: Description of the stack (default '')
+    :arg str recipe: The cloudformation recipe file
+    :arg str parameters: A comma separated list of key/value pairs to pass
+        into the recipe ie: key1=value,key2=value (default '')
+    :arg int timeout: Number of seconds to wait before giving up creating
+        a stack (default 0)
+    :arg str access-key: The Amazon API Access Key
+    :arg str secret-key: The Amazon API Secret Key
+    :arg int sleep: Number of seconds to wait before continuing to the
+        next step (default 0)
+    :arg array region: The region to run cloudformation in
+    :region values:
+      * **us-east-1**
+      * **us-west-1**
+      * **us-west-2**
+      * **eu-central-1**
+      * **eu-west-1**
+      * **ap-southeast-1**
+      * **ap-southeast-2**
+      * **ap-northeast-1**
+      * **sa-east-1**
+
+    Example:
+
+    .. literalinclude:: ../../tests/builders/fixtures/cloudformation.yaml
+        :language: yaml
+    """
+    cloudformation = XML.SubElement(xml_parent, 'com.syncapse.jenkinsci.'
+                                                'plugins.'
+                                                'awscloudformationwrapper.'
+                                                'CloudFormationBuildStep')
+    stacks = XML.SubElement(cloudformation, 'stacks')
+    for stack in data.get('stacks', []):
+        step = XML.SubElement(stacks, 'com.syncapse.jenkinsci.plugins.'
+                                      'awscloudformationwrapper.'
+                                      'PostBuildStackBean')
+        XML.SubElement(step, 'stackName').text = stack['name']
+        XML.SubElement(step, 'description').text = stack.get('description', '')
+        XML.SubElement(step, 'cloudFormationRecipe').text = stack['recipe']
+        XML.SubElement(step, 'parameters').text = stack.get('parameters', '')
+        XML.SubElement(step, 'timeout').text = str(stack.get('timeout', '0'))
+        XML.SubElement(step, 'awsAccessKey').text = stack['access-key']
+        XML.SubElement(step, 'awsSecretKey').text = stack['secret-key']
+        XML.SubElement(step, 'sleep').text = str(stack.get('sleep', '0'))
+        region_dict = {'us-east-1': 'US_East_Northern_Virginia',
+                       'us-west-1': 'US_WEST_Northern_California',
+                       'us-west-2': 'US_WEST_Oregon',
+                       'eu-central-1': 'EU_Frankfurt',
+                       'eu-west-1': 'EU_Ireland',
+                       'ap-southeast-1': 'Asia_Pacific_Singapore',
+                       'ap-southeast-2': 'Asia_Pacific_Sydney',
+                       'ap-northeast-1': 'Asia_Pacific_Tokyo',
+                       'sa-east-1': 'South_America_Sao_Paulo'}
+        region = stack['region']
+        if region not in region_dict:
+            raise JenkinsJobsException("Region entered: " + region + " is not "
+                                       "valid, must be one of: %s" %
+                                       ", ".join(region_dict.keys()))
+        XML.SubElement(step, 'awsRegion').text = region_dict.get(region)
