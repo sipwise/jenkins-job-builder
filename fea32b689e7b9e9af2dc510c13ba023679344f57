@@ -1,0 +1,197 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a41bdd9_30d0d6f5",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4780,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-15T14:34:22Z",
+      "side": 1,
+      "message": "rooms sounds like it\u0027s optional so please mark it optional in the docs.",
+      "revId": "fea32b689e7b9e9af2dc510c13ba023679344f57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_f0eb4eda",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4793,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-15T14:34:22Z",
+      "side": 1,
+      "message": "Should list all above parameters if they are (optional) or have a default value by appending to the end of the description. (default: false) for example.",
+      "revId": "fea32b689e7b9e9af2dc510c13ba023679344f57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_70b2dee6",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4804,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-15T14:34:22Z",
+      "side": 1,
+      "message": "Is the token required or will it work with a blank value?",
+      "revId": "fea32b689e7b9e9af2dc510c13ba023679344f57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_90a442ba",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4810,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-15T14:34:22Z",
+      "side": 1,
+      "message": "Looks like this defaults to false. Should mention that in the documentation above.",
+      "revId": "fea32b689e7b9e9af2dc510c13ba023679344f57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_50aa3a86",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4812,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-15T14:34:22Z",
+      "side": 1,
+      "message": "Looks like this defaults to false. Should mention that in the documentation above.",
+      "revId": "fea32b689e7b9e9af2dc510c13ba023679344f57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_1099127c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4814,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-15T14:34:22Z",
+      "side": 1,
+      "message": "Looks like this defaults to false. Should mention that in the documentation above.",
+      "revId": "fea32b689e7b9e9af2dc510c13ba023679344f57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_d09e4a62",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4816,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-15T14:34:22Z",
+      "side": 1,
+      "message": "Looks like this defaults to false. Should mention that in the documentation above.",
+      "revId": "fea32b689e7b9e9af2dc510c13ba023679344f57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_908be21e",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4818,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-15T14:34:22Z",
+      "side": 1,
+      "message": "Looks like this defaults to false. Should mention that in the documentation above.",
+      "revId": "fea32b689e7b9e9af2dc510c13ba023679344f57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_5081daf9",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4820,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-15T14:34:22Z",
+      "side": 1,
+      "message": "Looks like this defaults to false. Should mention that in the documentation above.",
+      "revId": "fea32b689e7b9e9af2dc510c13ba023679344f57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_70841e0a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4822,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-15T14:34:22Z",
+      "side": 1,
+      "message": "Looks like this defaults to false. Should mention that in the documentation above.",
+      "revId": "fea32b689e7b9e9af2dc510c13ba023679344f57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_f0ecaebc",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4826,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-15T14:34:22Z",
+      "side": 1,
+      "message": "In the above documentation you mention that overriding start-message and complete-message overrides the default messages. However here it looks like are overriding those values with default of blank. Will this override the messages?",
+      "range": {
+        "startLine": 4826,
+        "startChar": 40,
+        "endLine": 4826,
+        "endChar": 41
+      },
+      "revId": "fea32b689e7b9e9af2dc510c13ba023679344f57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
