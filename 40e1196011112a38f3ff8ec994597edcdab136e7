@@ -16,6 +16,24 @@
       "revId": "40e1196011112a38f3ff8ec994597edcdab136e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_b54a9d24",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4051,
+      "author": {
+        "id": 16360
+      },
+      "writtenOn": "2015-07-15T12:49:39Z",
+      "side": 1,
+      "message": "./jenkins_jobs/modules/publishers.py:4051:80: E501 line too long (87 \u003e 79 characters)\n            raise JenkinsJobsException(\u0027Missing team-domain option in Slack publisher\u0027)\n\nIts required :-)\ncould you change your vote?",
+      "parentUuid": "5afe65bd_302dee46",
+      "revId": "40e1196011112a38f3ff8ec994597edcdab136e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
