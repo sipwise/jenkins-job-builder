@@ -351,6 +351,15 @@ def gerrit(parser, xml_parent, data):
                               * **pattern** (`str`) -- File path pattern to
                                 match
 
+                * **forbidden-file-paths** (`list`) -- List of file paths to
+                  skip triggering (optional)
+
+                  :Forbidden File Path: * **compare-type** (`str`) --
+                                ''PLAIN'', ''ANT'' or ''REG_EXP'' (optional)
+                                (default ''PLAIN'')
+                              * **pattern** (`str`) -- File path pattern to
+                                match
+
                 * **topics** (`list`) -- List of topics to match
                   (optional)
 
@@ -464,6 +473,10 @@ def gerrit(parser, xml_parent, data):
                 branch['branch-compare-type']
             XML.SubElement(gbranch, 'pattern').text = branch['branch-pattern']
 
+        valid_compare_types = ['PLAIN',
+                               'ANT',
+                               'REG_EXP']
+
         project_file_paths = project.get('file-paths', [])
         if project_file_paths:
             fps_tag = XML.SubElement(gproj, 'filePaths')
@@ -475,6 +488,22 @@ def gerrit(parser, xml_parent, data):
                 XML.SubElement(fp_tag, 'compareType').text = \
                     file_path.get('compare-type', 'PLAIN')
                 XML.SubElement(fp_tag, 'pattern').text = file_path['pattern']
+
+        project_forbidden_file_paths = project.get('forbidden-file-paths', [])
+        if project_forbidden_file_paths:
+            ffps_tag = XML.SubElement(gproj, 'forbiddenFilePaths')
+            for forbidden_file_path in project_forbidden_file_paths:
+                ffp_tag = XML.SubElement(ffps_tag,
+                                         'com.sonyericsson.hudson.plugins.'
+                                         'gerrit.trigger.hudsontrigger.data.'
+                                         'FilePath')
+                compare_type = forbidden_file_path.get('compare-type', 'PLAIN')
+                if compare_type not in valid_compare_types:
+                    raise InvalidAttributeError('compare-type', compare_type,
+                                                valid_compare_types)
+                XML.SubElement(ffp_tag, 'compareType').text = compare_type
+                XML.SubElement(ffp_tag, 'pattern').text = \
+                    forbidden_file_path['pattern']
 
         topics = project.get('topics', [])
         if topics:
