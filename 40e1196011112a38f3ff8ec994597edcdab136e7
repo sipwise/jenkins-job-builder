@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a41bdd9_d0a96a25",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 584,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-15T14:37:19Z",
+      "side": 1,
+      "message": "I believe you can avoid using the trailing \\ if the next line is at the same level as the Requires or indented by 2 or 4 spaces.",
+      "revId": "40e1196011112a38f3ff8ec994597edcdab136e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_706f3efc",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 589,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-07-15T14:37:19Z",
+      "side": 1,
+      "message": "You can avoid the trailing \\s by indenting by 2 or 4 spaces from the \":arg  str...\" line.",
+      "revId": "40e1196011112a38f3ff8ec994597edcdab136e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5afe65bd_302dee46",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 7
