@@ -34,6 +34,24 @@
       "revId": "40e1196011112a38f3ff8ec994597edcdab136e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a41bdd9_704423b6",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4051,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-15T13:38:05Z",
+      "side": 1,
+      "message": "It\u0027s possible to avoid it and the \u0027\\\u0027 is incorrect in this case as well since it\u0027s inside the string that is being raised as an exception. Btw, your indent looks incorrect as well, should just be 4 spaces not 8.\n\ncode should be:\n\n    if \u0027team-domain\u0027 not in data:\n        raise JenkinsJobsException(\u0027Missing team-domain option in \u0027\n                                   \u0027Slack publisher\u0027)\n\nor following the latest convention:\n\n    try:\n        XML.SubElement(slack, \u0027teamDomain\u0027).text \u003d data[\u0027team-domain\u0027]\n        XML.SubElement(slack, \u0027authToken\u0027).text \u003d data[\u0027auth-token\u0027]\n    except KeyError as e:\n        raise MissingAttributeException(e.args[0])\n\nDepending on whether you can safely reorder the remaining items you could also include the \"data[\u0027room\u0027]\" one above as well.",
+      "parentUuid": "9a41bdd9_b54a9d24",
+      "revId": "40e1196011112a38f3ff8ec994597edcdab136e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
