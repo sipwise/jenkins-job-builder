@@ -32,6 +32,9 @@ from jenkins_jobs.modules import hudson_model
 from jenkins_jobs.modules.helpers import build_trends_publisher
 from jenkins_jobs.modules.helpers import config_file_provider_settings
 from jenkins_jobs.modules.helpers import findbugs_settings
+from jenkins_jobs.modules.helpers import cloudformation_region_dict
+from jenkins_jobs.modules.helpers import cloudformation_init
+from jenkins_jobs.modules.helpers import cloudformation_stack
 from jenkins_jobs.errors import (InvalidAttributeError,
                                  JenkinsJobsException,
                                  MissingAttributeError)
@@ -4860,6 +4863,72 @@ def flowdock(parser, xml_parent, data):
     gen_setting('Unstable', False)
     gen_setting('Aborted', False)
     gen_setting('NotBuilt', False)
+
+
+def cloudformation(parser, xml_parent, data):
+    """yaml: cloudformation
+    Create cloudformation stacks before running a build and optionally
+    delete them at the end.  Requires the Jenkins :jenkins-wiki:`AWS
+    Cloudformation Plugin <AWS+Cloudformation+Plugin>`.
+
+    :arg list create-stacks: List of stacks to create
+        :arg str name: The name of the stack
+        :arg str description: Description of the stack (default '')
+        :arg str recipe: The cloudformation recipe file
+        :arg str parameters: A comma separated list of key/value pairs to pass
+            into the recipe ie: key1=value,key2=value (default '')
+        :arg int timeout: Number of seconds to wait before giving up creating
+            a stack (default 0)
+        :arg str access-key: The Amazon API Access Key
+        :arg str secret-key: The Amazon API Secret Key
+        :arg int sleep: Number of seconds to wait before continuing to the
+            next step (default 0)
+        :arg array region: The region to run cloudformation in
+        :region values:
+          * **us-east-1**
+          * **us-west-1**
+          * **us-west-2**
+          * **eu-central-1**
+          * **eu-west-1**
+          * **ap-southeast-1**
+          * **ap-southeast-2**
+          * **ap-northeast-1**
+          * **sa-east-1**
+    :arg list delete-stacks: List of stacks to delete
+        :arg list name: The names of the stacks to delete
+        :arg str access-key: The Amazon API Access Key
+        :arg str secret-key: The Amazon API Secret Key
+        :arg bool prefix: If selected the tear down process will look for the
+            stack that Starts with the stack name with the oldest creation
+            date and will delete it.  (default False)
+        :arg array region: The region to run cloudformation in
+        :region values:
+          * **us-east-1**
+          * **us-west-1**
+          * **us-west-2**
+          * **eu-central-1**
+          * **eu-west-1**
+          * **ap-southeast-1**
+          * **ap-southeast-2**
+          * **ap-northeast-1**
+          * **sa-east-1**
+
+    Example:
+
+    .. literalinclude:: ../../tests/builders/fixtures/cloudformation.yaml
+        :language: yaml
+    """
+    region_dict = cloudformation_region_dict()
+    stacks = cloudformation_init(xml_parent, data, 'CloudFormationPostBuild'
+                                 'Notifier')
+    for stack in data.get('create-stacks', []):
+        cloudformation_stack(xml_parent, stack, 'PostBuildStackBean',
+                                    stacks, region_dict)
+    delete_stacks = cloudformation_init(xml_parent, data, 'CloudFormation'
+                                                          'Notifier')
+    for delete_stack in data.get('delete-stacks', []):
+        cloudformation_stack(xml_parent, delete_stack, 'SimpleStackBean',
+                             delete_stacks, region_dict)
 
 
 class Publishers(jenkins_jobs.modules.base.Base):
