@@ -423,6 +423,17 @@ def gerrit(parser, xml_parent, data):
 
     """
 
+    def get_compare_type(config_item, default_compare_type):
+        valid_compare_types = ['PLAIN',
+                               'ANT',
+                               'REG_EXP']
+
+        compare_type = config_item.get('compare-type', default_compare_type)
+        if compare_type not in valid_compare_types:
+            raise InvalidAttributeError('compare-type', compare_type,
+                                        valid_compare_types)
+        return compare_type
+
     gerrit_handle_legacy_configuration(data)
 
     projects = data['projects']
@@ -435,8 +446,8 @@ def gerrit(parser, xml_parent, data):
         gproj = XML.SubElement(gprojects,
                                'com.sonyericsson.hudson.plugins.gerrit.'
                                'trigger.hudsontrigger.data.GerritProject')
-        XML.SubElement(gproj, 'compareType').text = \
-            project['project-compare-type']
+        compare_type = get_compare_type(gproj, project['project-compare-type'])
+        XML.SubElement(gproj, 'compareType').text = compare_type
         XML.SubElement(gproj, 'pattern').text = project['project-pattern']
 
         branches = XML.SubElement(gproj, 'branches')
@@ -460,8 +471,9 @@ def gerrit(parser, xml_parent, data):
             gbranch = XML.SubElement(
                 branches, 'com.sonyericsson.hudson.plugins.'
                 'gerrit.trigger.hudsontrigger.data.Branch')
-            XML.SubElement(gbranch, 'compareType').text = \
-                branch['branch-compare-type']
+            compare_type = get_compare_type(gbranch,
+                                            branch['branch-compare-type'])
+            XML.SubElement(gbranch, 'compareType').text = compare_type
             XML.SubElement(gbranch, 'pattern').text = branch['branch-pattern']
 
         project_file_paths = project.get('file-paths', [])
@@ -472,8 +484,8 @@ def gerrit(parser, xml_parent, data):
                                         'com.sonyericsson.hudson.plugins.'
                                         'gerrit.trigger.hudsontrigger.data.'
                                         'FilePath')
-                XML.SubElement(fp_tag, 'compareType').text = \
-                    file_path.get('compare-type', 'PLAIN')
+                compare_type = get_compare_type(file_path, 'PLAIN')
+                XML.SubElement(fp_tag, 'compareType').text = compare_type
                 XML.SubElement(fp_tag, 'pattern').text = file_path['pattern']
 
         topics = project.get('topics', [])
@@ -484,8 +496,8 @@ def gerrit(parser, xml_parent, data):
                                            'com.sonyericsson.hudson.plugins.'
                                            'gerrit.trigger.hudsontrigger.data.'
                                            'Topic')
-                XML.SubElement(topic_tag, 'compareType').text = \
-                    topic.get('compare-type', 'PLAIN')
+                compare_type = get_compare_type(topic, 'PLAIN')
+                XML.SubElement(topic_tag, 'compareType').text = compare_type
                 XML.SubElement(topic_tag, 'pattern').text = topic['pattern']
 
     build_gerrit_skip_votes(gtrig, data)
