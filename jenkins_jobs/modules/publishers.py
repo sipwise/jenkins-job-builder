@@ -563,6 +563,130 @@ def trigger(parser, xml_parent, data):
     tcolor.text = hudson_model.THRESHOLDS[threshold]['color']
 
 
+def trigger_manual(parser, xml_parent, data):
+    """yaml: trigger-manual
+    Trigger parameterized builds of other jobs manually.
+    Requires the Jenkins :jenkins-wiki:`Build Pipeline Plugin
+    <Build+Pipeline+Plugin>`.
+
+    Use of the `node-label-name` or `node-label` parameters
+    requires the Jenkins :jenkins-wiki:`NodeLabel Parameter Plugin
+    <NodeLabel+Parameter+Plugin>`.
+    Note: 'node-parameters' overrides the Node that the triggered
+    project is tied to.
+
+    :arg list project: list the jobs to trigger, will generate comma-separated
+      string containing the named jobs.
+    :arg str predefined-parameters: parameters to pass to the other
+      job (optional)
+    :arg bool current-parameters: Whether to include the parameters passed
+      to the current build to the triggered job (optional)
+    :arg bool node-parameters: Use the same Node for the triggered builds
+      that was used for this build. (optional)
+    :arg bool svn-revision: Pass svn revision to the triggered job (optional)
+    :arg bool git-revision: Pass git revision to the other job (optional)
+    :arg str condition: when to trigger the other job (default 'ALWAYS')
+    :arg str property-file: Use properties from file (optional)
+    :arg bool fail-on-missing: Blocks the triggering of the downstream jobs
+      if any of the files are not found in the workspace (default 'False')
+    :arg str restrict-matrix-project: Filter that restricts the subset
+        of the combinations that the downstream project will run (optional)
+    :arg str node-label-name: Specify the Name for the NodeLabel parameter.
+      (optional)
+    :arg str node-label: Specify the Node for the NodeLabel parameter.
+      (optional)
+
+    Example:
+
+    .. literalinclude::
+        /../../tests/publishers/fixtures/trigger_manual001.yaml
+       :language: yaml
+    """
+    tbuilder = XML.SubElement(xml_parent,
+                              'au.com.centrumsystems.hudson.plugin.'
+                              'buildpipeline.trigger.BuildPipelineTrigger',
+                              {'plugin': 'build-pipeline-plugin'})
+
+    configs = XML.SubElement(tbuilder, 'configs')
+
+    XML.SubElement(
+        tbuilder,
+        'downstreamProjectNames').text = ", ".join(map(str,
+                                                       data['project']))
+
+    if ('predefined-parameters' in data
+            or 'git-revision' in data
+            or 'property-file' in data
+            or 'current-parameters' in data
+            or 'node-parameters' in data
+            or 'svn-revision' in data
+            or 'restrict-matrix-project' in data
+            or 'node-label-name' in data
+            or 'node-label' in data):
+
+        if 'predefined-parameters' in data:
+            params = XML.SubElement(configs,
+                                    'hudson.plugins.parameterizedtrigger.'
+                                    'PredefinedBuildParameters')
+            properties = XML.SubElement(params, 'properties')
+            properties.text = data['predefined-parameters']
+
+        if 'git-revision' in data:
+            params = XML.SubElement(configs,
+                                    'hudson.plugins.git.'
+                                    'GitRevisionBuildParameters')
+            properties = XML.SubElement(params, 'combineQueuedCommits')
+            properties.text = 'false'
+
+        if 'property-file' in data:
+            params = XML.SubElement(configs,
+                                    'hudson.plugins.parameterizedtrigger.'
+                                    'FileBuildParameters')
+            properties = XML.SubElement(params, 'propertiesFile')
+            properties.text = data['property-file']
+            failOnMissing = XML.SubElement(params, 'failTriggerOnMissing')
+            failOnMissing.text = str(data.get('fail-on-missing',
+                                              False)).lower()
+        if 'current-parameters' in data:
+            XML.SubElement(configs,
+                           'hudson.plugins.parameterizedtrigger.'
+                           'CurrentBuildParameters')
+        if 'node-parameters' in data:
+            XML.SubElement(configs,
+                           'hudson.plugins.parameterizedtrigger.'
+                           'NodeParameters')
+        if 'svn-revision' in data:
+            XML.SubElement(configs,
+                           'hudson.plugins.parameterizedtrigger.'
+                           'SubversionRevisionBuildParameters')
+        if 'restrict-matrix-project' in data:
+            subset = XML.SubElement(configs,
+                                    'hudson.plugins.parameterizedtrigger.'
+                                    'matrix.MatrixSubsetBuildParameters')
+            XML.SubElement(subset, 'filter').text = \
+                data['restrict-matrix-project']
+        if 'node-label-name' in data:
+            params = XML.SubElement(configs,
+                                    'org.jvnet.jenkins.plugins.'
+                                    'nodelabelparameter.'
+                                    'parameterizedtrigger.'
+                                    'NodeLabelBuildParameter')
+            name = XML.SubElement(params, 'name')
+            if 'node-label-name' in data:
+                name.text = data['node-label-name']
+            label = XML.SubElement(params, 'nodeLabel')
+            if 'node-label' in data:
+                label.text = data['node-label']
+    else:
+        configs.set('class', 'java.util.Collections$EmptyList')
+
+    condition = XML.SubElement(configs, 'condition')
+    condition.text = configs.get('condition', 'ALWAYS')
+    trigger_with_no_params = XML.SubElement(configs,
+                                            'triggerWithNoParameters')
+    trigger_with_no_params.text = 'false'
+
+
 def clone_workspace(parser, xml_parent, data):
     """yaml: clone-workspace
     Archive the workspace from builds of one project and reuse them as the SCM
