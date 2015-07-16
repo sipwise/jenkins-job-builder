@@ -1,0 +1,17 @@
+# Test for the defaults, only xml-location is required
+publishers:
+  - trigger-manual:
+      projects:
+          - 'job-b'
+          - 'job-c'
+      predefined-parameters: |
+          foo=bar
+          bar=foo
+      git-revision: true
+      property-file: test.txt
+      fail-on-missing: true
+      current-parameters: true
+      node-parameters: true
+      svn-revision: true
+      restrict-matrix-project: label=="x86"
+      node-label-name: foo
