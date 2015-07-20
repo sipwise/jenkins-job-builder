@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_1ad23101",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-07-20T13:54:11Z",
+      "side": 1,
+      "message": "hmm, wonder what this means?",
+      "revId": "74864c9019777895f0382a6d2ccc72931f7ef255",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1a7d511c",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-07-20T13:54:11Z",
+      "side": 1,
+      "message": "Thanks for adding the test.  Would you mind replacing this example with a literalinclude to your test?  There are example usages of literalinclude in this file.",
+      "revId": "74864c9019777895f0382a6d2ccc72931f7ef255",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
