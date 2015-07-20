@@ -16,6 +16,24 @@
       "revId": "00882165188874d4536933f095c91c8ecc256b7b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_9c170c51",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4816,
+      "author": {
+        "id": 13673
+      },
+      "writtenOn": "2015-07-20T19:15:53Z",
+      "side": 1,
+      "message": "Flowdock uses tokens to identify the flow (or room) to send notification events. So each token is tied to a room. With this being the case, I\u0027ve had requirements for different jobs to report to different \"flows\" / rooms. That\u0027s why I think the Flowdock plugin allows for separate tokens for each job. Not sure that having a global default would be valid in most cases.",
+      "parentUuid": "3a50d1a3_6f5db9e8",
+      "revId": "00882165188874d4536933f095c91c8ecc256b7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
