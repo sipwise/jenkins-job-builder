@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_6f5db9e8",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4816,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-20T13:34:23Z",
+      "side": 1,
+      "message": "Is this something users would want to store outside of the job definitions?\n\nBelieve it should be possible to duplicate something like https://review.openstack.org/gitweb?p\u003dopenstack-infra/jenkins-job-builder.git;a\u003dblob;f\u003djenkins_jobs/modules/hipchat_notif.py;h\u003d18e1202c93d24d1a840b6980174dfffdc40c8434;hb\u003d00882165188874d4536933f095c91c8ecc256b7b#l90 but to retrieve the config from the parser object via parser.registry.global_config()",
+      "revId": "00882165188874d4536933f095c91c8ecc256b7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
