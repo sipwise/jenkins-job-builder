@@ -34,6 +34,24 @@
       "revId": "00882165188874d4536933f095c91c8ecc256b7b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_0eb897e4",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4816,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-21T01:09:37Z",
+      "side": 1,
+      "message": "Thanks for the explanation. Guess this probably isn\u0027t quite the same as exposing some of the other tokens. If someone is concerned they can look to propose a way of referencing them outside of the job definitions.",
+      "parentUuid": "3a50d1a3_9c170c51",
+      "revId": "00882165188874d4536933f095c91c8ecc256b7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
