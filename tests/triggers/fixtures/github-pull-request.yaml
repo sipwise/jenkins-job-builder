@@ -19,3 +19,4 @@ triggers:
       white-list-target-branches:
         - master
         - testing
+      commit-status-context: custom-status-context

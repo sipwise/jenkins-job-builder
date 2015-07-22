@@ -748,6 +748,8 @@ def github_pull_request(parser, xml_parent, data):
         allows you to selectively test pull requests destined for these
         branches only. Supports regular expressions (e.g. 'master',
         'feature-.*'). (optional)
+    :arg string commit-status-context: Context to tag a build on GitHub
+        (default default)
 
 
     Example:
@@ -784,6 +786,14 @@ def github_pull_request(parser, xml_parent, data):
             be = XML.SubElement(ghprb_wltb, 'org.jenkinsci.plugins.'
                                 'ghprb.GhprbBranch')
             XML.SubElement(be, 'branch').text = str(branch)
+
+    if data.get('commit-status-context'):
+        extensions = XML.SubElement(ghprb, 'extensions')
+        extension_tag = ('org.jenkinsci.plugins.ghprb.extensions'
+                         '.status.GhprbSimpleStatus')
+        extension_status = XML.SubElement(extensions, extension_tag)
+        status = XML.SubElement(extension_status, 'commitStatusContext')
+        status.text = str(data.get('commit-status-context'))
 
 
 def gitlab_merge_request(parser, xml_parent, data):
