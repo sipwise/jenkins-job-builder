@@ -4862,6 +4862,56 @@ def flowdock(parser, xml_parent, data):
     gen_setting('NotBuilt', False)
 
 
+def whitesource(parser, xml_parent, data):
+    """yaml: whitesource
+    This plugin brings automatic open source management to Jenkins users.
+
+    Requires the Jenkins :jenkins-wiki:`Whitesource Plugin
+    <Whitesource+Plugin>`.
+
+    :arg str product-token: Product name or token to update (Default '')
+    :arg str version: Product version (Default '')
+    :arg str override-token: Override the api token from the global config
+        (Default '')
+    :arg str project-token: Token uniquely identifying the project to update
+        (Default '')
+    :arg str includes: comma, space, or line separated list of libraries
+        (Default '')
+    :arg str excludes: comma, space, or line separated list of libraries
+        (Default '')
+    :arg str policies: Whether to override the global settings.  Valid values:
+        global, enable, disable (Default 'global')
+
+    Example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/whitesource001.yaml
+       :language: yaml
+    """
+
+    policies = ['global', 'enable', 'disable']
+    policies_value = str(data.get('policies', 'global').lower())
+    if policies_value not in policies:
+        raise JenkinsJobsException('policies value ' + policies_value +
+                                   ' not valid, must be one of: %s' %
+                                   ", ".join(policies))
+    whitesource = XML.SubElement(xml_parent, 'org.whitesource.jenkins.'
+                                             'WhiteSourcePublisher')
+    XML.SubElement(whitesource, 'jobCheckPolicies').text = policies_value
+    XML.SubElement(whitesource, 'jobApiToken').text = data.get(
+        'override-token', '')
+    XML.SubElement(whitesource, 'product').text = data.get(
+        'product-token', '')
+    XML.SubElement(whitesource, 'productVersion').text = data.get(
+        'version', '')
+    XML.SubElement(whitesource, 'projectToken').text = data.get(
+        'project-token', '')
+    XML.SubElement(whitesource, 'libIncludes').text = data.get(
+        'includes', '')
+    XML.SubElement(whitesource, 'libExcludes').text = data.get(
+        'excludes', '')
+    XML.SubElement(whitesource, 'ignorePomModules').text = 'false'
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
