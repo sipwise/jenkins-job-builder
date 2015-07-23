@@ -89,6 +89,7 @@ class UpdateTests(CmdTestsBase):
         b_inst = builder_mock.return_value
         b_inst.plugins_list = builder_obj.plugins_list
         b_inst.update_job.side_effect = builder_obj.update_job
+        b_inst.update_view.side_effect = builder_obj.update_view
         b_inst.delete_old_managed.side_effect = builder_obj.delete_old_managed
 
         def _get_jobs():
