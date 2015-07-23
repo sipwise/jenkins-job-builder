@@ -25,6 +25,25 @@ class DeleteTests(CmdTestsBase):
         args = self.parser.parse_args(['delete', 'test_job1', 'test_job2'])
         cmd.execute(args, self.config)  # passes if executed without error
 
+    @mock.patch('jenkins_jobs.cmd.Builder.delete_view')
+    def test_delete_single_view(self, delete_view_mock):
+        """
+        Test handling the deletion of a single Jenkins view.
+        """
+
+        args = self.parser.parse_args(['delete', '--view', 'test_view'])
+        cmd.execute(args, self.config)  # passes if executed without error
+
+    @mock.patch('jenkins_jobs.cmd.Builder.delete_view')
+    def test_delete_multiple_views(self, delete_view_mock):
+        """
+        Test handling the deletion of multiple Jenkins jobs.
+        """
+
+        args = self.parser.parse_args(['delete', '--view', 'test_view1',
+                                      'test_view2'])
+        cmd.execute(args, self.config)  # passes if executed without error
+
     @mock.patch('jenkins_jobs.builder.Jenkins.delete_job')
     def test_delete_using_glob_params(self, delete_job_mock):
         """
