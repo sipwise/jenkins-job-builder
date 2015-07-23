@@ -134,6 +134,23 @@ the Job Templates in the Job Group will be realized.  For example:
 Would cause the jobs `project-name-unit-tests` and `project-name-perf-tests` to be created
 in Jenkins.
 
+.. _views:
+
+Views
+^^^^^
+
+A view is a particular way of displaying a specific set of jobs. To
+create a view, you must define a view in a YAML file and have a variable called view-type with a valid value. It looks like this::
+
+  - view:
+      name: view-name
+      view-type: list
+
+Without specifying the variable view-type, the YAML file will be
+treated as a `Job`_.
+
+Views are processed differently than Jobs and therefore will not work within a `Project`_ or a `Job Template`_.
+
 .. _macro:
 
 Macro
@@ -411,6 +428,8 @@ The bulk of the job definitions come from the following modules.
    reporters
    scm
    triggers
+   view_list
+   view_pipeline
    wrappers
    zuul
 
