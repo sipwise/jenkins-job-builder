@@ -31,7 +31,7 @@ class UpdateTests(CmdTestsBase):
         Test update_job is called
         """
         # don't care about the value returned here
-        update_job_mock.return_value = ([], 0)
+        update_job_mock.return_value = ([], [], 0, 0)
 
         path = os.path.join(self.fixtures_path, 'cmd-002.yaml')
         args = self.parser.parse_args(['update', path])

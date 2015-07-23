@@ -49,6 +49,7 @@ class YamlParser(object):
         self.data = {}
         self.jobs = []
         self.xml_jobs = []
+        self.xml_views = []
         self.config = config
         self.registry = ModuleRegistry(self.config, plugins_info)
         self.path = ["."]
@@ -307,19 +308,49 @@ class YamlParser(object):
 
     def generateXML(self):
         for job in self.jobs:
-            self.xml_jobs.append(self.getXMLForJob(job))
+            view_type = job.get('view-type', None)
+            project_type = job.get('project-type', None)
+            returned_xml = self.getXMLForJob(job)
+            if view_type is None:
+                self.xml_jobs.append(returned_xml)
+            elif project_type is None:
+                self.xml_views.append(returned_xml)
+            else:
+                name = job.get('name', None)
+                raise JenkinsJobsException("Incompatible values in item '{0}'"
+                                           ": 'view-type' and 'project-type'"
+                                           "both defined".format(name))
 
-    def getXMLForJob(self, data):
-        kind = data.get('project-type', 'freestyle')
-
-        for ep in pkg_resources.iter_entry_points(
-                group='jenkins_jobs.projects', name=kind):
+    def create_xml(self, data, group, name):
+        for ep in pkg_resources.iter_entry_points(group=group,
+                                                  name=name):
             Mod = ep.load()
             mod = Mod(self.registry)
             xml = mod.root_xml(data)
             self.gen_xml(xml, data)
             job = XmlJob(xml, data['name'])
             return job
+
+    def getXMLForJob(self, data):
+        view_type = data.get('view-type', None)
+        project_type = data.get('project-type', None)
+
+        if view_type is None:
+            if project_type is None:
+                project_type = 'freestyle'
+            job = self.create_xml(data=data, group='jenkins_jobs.projects',
+                                  name=project_type)
+            return job
+
+        elif project_type is None:
+            view = self.create_xml(data=data, group='jenkins_jobs.views',
+                                   name=view_type)
+            return view
+        else:
+            name = job.get('name', None)
+            raise JenkinsJobsException("Incompatible values given in job"
+                                       " {0}': 'view-type' and 'project-"
+                                       "type' both defined".format(name))
 
     def gen_xml(self, xml, data):
         for module in self.registry.modules:

@@ -60,6 +60,28 @@ To add a new module, define a class that inherits from
    :undoc-members:
    :private-members:
 
+.. _modules_for_views:
+
+Modules for Views
+-----------------
+
+Similar to jobs, views can be implented in modules.
+
+To add a new module, define a class that inherits from
+:py:class:`jenkins_jobs.modules.base_view.BaseView`, and add it to the ``jenkins_jobs.modules`` entry point in your setup.py.
+
+.. autoclass:: jenkins_jobs.modules.base_view.BaseView
+    :members:
+    :undoc-members:
+    :private-members:
+
+Then add a new view test case to :py:class:`tests.base.BaseTestCase`.
+
+.. autoclass:: jenkins_jobs.modules.base_view.BaseView
+    :members:
+    :undoc-members:
+    :private-members:
+
 .. _component:
 
 Components

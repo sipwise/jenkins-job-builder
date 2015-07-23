@@ -119,16 +119,29 @@ def create_parser():
 
     # subparser: delete
     parser_delete = subparser.add_parser('delete', parents=[recursive_parser])
+    parser_delete.add_argument('-v', '--views', help='delete views',
+                               action='store_true', dest='del_views',
+                               default=False,)
     parser_delete.add_argument('name', help='name of job', nargs='+')
     parser_delete.add_argument('-p', '--path', default=None,
                                help='colon-separated list of paths to'
                                     ' YAML files or directories')
 
     # subparser: delete-all
-    subparser.add_parser('delete-all',
-                         help='delete *ALL* jobs from Jenkins server, '
-                         'including those not managed by Jenkins Job '
-                         'Builder.')
+    parser_delete_all = subparser.add_parser('delete-all',
+                                             help='delete *ALL* jobs from '
+                                             'Jenkins server, including those '
+                                             'not managed by Jenkins Job '
+                                             'Builder.')
+    parser_delete_all.add_argument('-j', '--jobs',
+                                   help='delete only Jobs',
+                                   action='store_true', dest='only_jobs',
+                                   default=False,)
+    parser_delete_all.add_argument('-v', '--views',
+                                   help='delete only Views',
+                                   action='store_true', dest='only_views',
+                                   default=False,)
+
     parser.add_argument('--conf', dest='conf', help='configuration file')
     parser.add_argument('-l', '--log_level', dest='log_level', default='info',
                         help="log level (default: %(default)s)")
@@ -281,19 +294,46 @@ def execute(options, config):
         options.path = paths
 
     if options.command == 'delete':
-        for job in options.name:
-            builder.delete_job(job, options.path)
+        if options.del_views:
+            for view in options.name:
+                builder.delete_view(view, options.path)
+        else:
+            for job in options.name:
+                builder.delete_job(job, options.path)
+
     elif options.command == 'delete-all':
-        confirm('Sure you want to delete *ALL* jobs from Jenkins server?\n'
-                '(including those not managed by Jenkins Job Builder)')
-        logger.info("Deleting all jobs")
-        builder.delete_all_jobs()
+        deleting_jobs = False
+        deleting_views = False
+        if options.only_jobs == options.only_views:
+            # if (delete-all --jobs --views) or (delete-all)
+            # Equivalent of {NOT(--jobs XOR --views)} only passes if both
+            # subparameters are true or both false
+            reach = 'jobs AND views'
+            deleting_jobs = True
+            deleting_views = True
+        elif options.only_jobs and not options.only_views:
+            reach = 'jobs'
+            deleting_jobs = True
+        elif options.only_views and not options.only_jobs:
+            reach = 'views'
+            deleting_views = True
+        confirm('Sure you want to delete *ALL* %s from Jenkins server?\n'
+                '(including those not managed by Jenkins Job Builder)', reach)
+        if deleting_jobs:
+            logger.info("Deleting all jobs")
+            builder.delete_all_jobs()
+        if deleting_views:
+            logger.info("Deleting all views")
+            builder.delete_all_views()
+
     elif options.command == 'update':
         logger.info("Updating jobs in {0} ({1})".format(
             options.path, options.names))
-        jobs, num_updated_jobs = builder.update_job(options.path,
-                                                    options.names)
-        logger.info("Number of jobs updated: %d", num_updated_jobs)
+        jobs, views, num_updated_jobs, num_updated_views = builder.update_job(
+            options.path,
+            options.names)
+        logger.info("%d jobs updated, %d views updated", num_updated_jobs,
+                    num_updated_views)
         if options.delete_old:
             num_deleted_jobs = builder.delete_old_managed()
             logger.info("Number of jobs deleted: %d", num_deleted_jobs)

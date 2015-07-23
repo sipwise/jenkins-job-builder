@@ -102,6 +102,8 @@ class Jenkins(object):
         self.jenkins = jenkins.Jenkins(url, user, password)
         self._jobs = None
         self._job_list = None
+        self._views = None
+        self._view_list = None
 
     @property
     def jobs(self):
@@ -116,6 +118,20 @@ class Jenkins(object):
         if self._job_list is None:
             self._job_list = set(job['name'] for job in self.jobs)
         return self._job_list
+
+    @property
+    def views(self):
+        if self._views is None:
+            # populate views
+            self._views = self.jenkins.get_views()
+
+        return self._views
+
+    @property
+    def view_list(self):
+        if self._view_list is None:
+            self._view_list = set(view['name'] for view in self.views)
+        return self._view_list
 
     def update_job(self, job_name, xml):
         if self.is_job(job_name):
@@ -142,6 +158,31 @@ class Jenkins(object):
             logger.info("Deleting jenkins job {0}".format(job_name))
             self.jenkins.delete_job(job_name)
 
+    def delete_view(self, view_name):
+        if self.is_view(view_name):
+            logger.info("Deleting jenkins job {0}".format(view_name))
+            self.jenkins.delete_view(view_name)
+
+    def update_view(self, view_name, xml):
+        if self.is_view(view_name):
+            logger.info("Reconfiguring jenkins view {0}".format(view_name))
+            self.jenkins.reconfig_view(view_name, xml)
+        else:
+            logger.info("Creating jenkins view {0}".format(view_name))
+            self.jenkins.create_view(view_name, xml)
+
+    def is_view(self, view_name):
+        # first use cache
+        if view_name in self.view_list:
+            return True
+
+        # if not exists, use jenkins
+        return self.jenkins.view_exists(view_name)
+
+    def get_view_md5(self, view_name):
+        xml = self.jenkins.get_view_config(view_name)
+        return hashlib.md5(xml).hexdigest()
+
     def get_plugins_info(self):
         """ Return a list of plugin_info dicts, one for each plugin on the
         Jenkins instance.
@@ -167,6 +208,12 @@ class Jenkins(object):
             self._jobs = None
             self._job_list = None
         return self.jobs
+
+    def get_views(self, cache=True):
+        if not cache:
+            self._views = None
+            self._view_list = None
+        return self.views
 
     def is_managed(self, job_name):
         xml = self.jenkins.get_job_config(job_name)
@@ -274,19 +321,65 @@ class Builder(object):
             if(self.cache.is_cached(job)):
                 self.cache.set(job, '')
 
+    def delete_view(self, jobs_glob, fn=None):
+        if fn:
+            self.load_files(fn)
+            self.parser.expandYaml([jobs_glob])
+            views = [j['name'] for j in self.parser.views]
+        else:
+            views = [jobs_glob]
+
+        if views is not None:
+            logger.info("Removing jenkins view(s): %s" % ", ".join(views))
+        for view in views:
+            self.jenkins.delete_view(view)
+            if self.cache.is_cached(view):
+                self.cache.set(view, '')
+
     def delete_all_jobs(self):
         jobs = self.jenkins.get_jobs()
         logger.info("Number of jobs to delete:  %d", len(jobs))
         for job in jobs:
             self.delete_job(job['name'])
 
+    def delete_all_views(self):
+        views = self.jenkins.get_views()
+        logger.info("Number of views to delete:  %d", len(views))
+        for view in views:
+            self.delete_view(view['name'])
+
+    def write_xml(self, item, output, kind):
+        if hasattr(output, 'write'):
+            # `output` is a file-like object
+            logger.info("%s name:  %s", kind, item.name)
+            logger.debug("Writing XML to '{0}'".format(output))
+            try:
+                output.write(item.output())
+            except IOError as exc:
+                if exc.errno == errno.EPIPE:
+                    # EPIPE could happen if piping output to something
+                    # that doesn't read the whole input (e.g.: the UNIX
+                    # `head` command)
+                    return True
+                raise
+            return False
+
+        output_fn = os.path.join(output, item.name)
+        logger.debug("Writing XML to '{0}'".format(output_fn))
+        f = open(output_fn, 'w')
+        f.write(item.output())
+        f.close()
+        return False
+
     def update_job(self, input_fn, jobs_glob=None, output=None):
         self.load_files(input_fn)
         self.parser.expandYaml(jobs_glob)
         self.parser.generateXML()
 
-        logger.info("Number of jobs generated:  %d", len(self.parser.xml_jobs))
+        logger.info("%d jobs and %d views generated.",
+                    len(self.parser.xml_jobs), len(self.parser.xml_views))
         self.parser.xml_jobs.sort(key=operator.attrgetter('name'))
+        self.parser.xml_views.sort(key=operator.attrgetter('name'))
 
         if (output and not hasattr(output, 'write')
                 and not os.path.isdir(output)):
@@ -298,28 +391,12 @@ class Builder(object):
                     raise
 
         updated_jobs = 0
+        updated_views = 0
+
         for job in self.parser.xml_jobs:
             if output:
-                if hasattr(output, 'write'):
-                    # `output` is a file-like object
-                    logger.info("Job name:  %s", job.name)
-                    logger.debug("Writing XML to '{0}'".format(output))
-                    try:
-                        output.write(job.output())
-                    except IOError as exc:
-                        if exc.errno == errno.EPIPE:
-                            # EPIPE could happen if piping output to something
-                            # that doesn't read the whole input (e.g.: the UNIX
-                            # `head` command)
-                            return
-                        raise
-                    continue
-
-                output_fn = os.path.join(output, job.name)
-                logger.debug("Writing XML to '{0}'".format(output_fn))
-                f = open(output_fn, 'w')
-                f.write(job.output())
-                f.close()
+                if self.write_xml(item=job, output=output, kind='Job'):
+                    return
                 continue
             md5 = job.md5()
             if (self.jenkins.is_job(job.name)
@@ -332,5 +409,25 @@ class Builder(object):
                 updated_jobs += 1
                 self.cache.set(job.name, md5)
             else:
-                logger.debug("'{0}' has not changed".format(job.name))
-        return self.parser.xml_jobs, updated_jobs
+                logger.debug("Job: '{0}' has not changed".format(job.name))
+
+        for view in self.parser.xml_views:
+            if output:
+                if self.write_xml(item=view, output=output, kind='View'):
+                    return
+                continue
+            md5 = view.md5()
+            if (self.jenkins.is_view(view.name)
+                    and not self.cache.is_cached(view.name)):
+                old_md5 = self.jenkins.get_view_md5(view.name)
+                self.cache.set(view.name, old_md5)
+            if self.cache.has_changed(view.name, md5) or self.ignore_cache:
+                self.jenkins.update_view(view.name, view.output())
+                updated_views += 1
+                self.cache.set(view.name, md5)
+            else:
+                logger.debug("View: '{0}' has not changed".format(view.name))
+
+        xml_jobs = self.parser.xml_jobs
+        xml_views = self.parser.xml_views
+        return xml_jobs, xml_views, updated_jobs, updated_views

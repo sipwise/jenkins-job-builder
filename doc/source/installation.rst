@@ -170,15 +170,15 @@ When you're satisfied with the generated XML from the test, you can run::
 
   jenkins-jobs update /path/to/defs
 
-which will upload the job definitions to Jenkins if needed.  Jenkins Job
-Builder maintains, for each host, a cache [#f1]_ of previously configured jobs,
-so that you can run that command as often as you like, and it will only
-update the jobs configurations in Jenkins if the defined definitions has
-changed since the last time it was run.  Note: if you modify a job
-directly in Jenkins, jenkins-jobs will not know about it and will not
-update it.
+which will upload the job and view definitions to Jenkins if needed.  Jenkins
+Job Builder maintains, for each host, a cache [#f1]_ of previously configured
+jobs and views, so that you can run that command as often as you like, and it
+will only update the configurations in Jenkins if the defined definitions has
+changed since the last time it was run.  Note: if you modify a job or view
+directly in Jenkins, jenkins-jobs will not know about it and will not update
+it.
 
-To update a specific list of jobs, simply pass them as additional
+To update a specific list of jobs/views, simply pass them as additional
 arguments after the job definition path. To update Foo1 and Foo2 run::
 
   jenkins-jobs update /path/to/defs Foo1 Foo2
@@ -249,9 +249,9 @@ to be processed. Absolute paths are denoted by starting from the root,
 relative by containing the path separator, and patterns by having neither.
 Patterns use simple shell globing to match directories.
 
-Deleting Jobs
-^^^^^^^^^^^^^
-Jenkins Job Builder supports deleting jobs from Jenkins.
+Deleting Jobs/Views
+^^^^^^^^^^^^^^^^^^^
+Jenkins Job Builder supports deleting jobs and views from Jenkins.
 
 To delete a specific job::
 
@@ -262,23 +262,38 @@ arguments after the command::
 
   jenkins-jobs delete Foo1 Foo2
 
+To delete a specific view or a list of views, simply add the argument --views
+after the command::
+
+  jenkins-jobs delete --views Foo1
+
 The ``update`` command includes a ``delete-old`` option to remove obsolete
 jobs.  Obsolete jobs are *all* jobs not managed by JJB, even jobs which
 were *never* managed by JJB::
 
   jenkins-jobs update --delete-old /path/to/defs
 
-There is also a command to delete **all** jobs.
-**WARNING**: Use with caution::
+There is also a command to delete **all** jobs and/or views.
+**WARNING**: Use with caution.
+
+To delete **all** jobs and views::
 
   jenkins-jobs delete-all
+
+To delete **all** jobs::
+
+  jenkins-jobs delete-all -j
+
+To delete **all** views::
+
+  jenkins-jobs delete-all -v
 
 Globbed Parameters
 ^^^^^^^^^^^^^^^^^^
 Jenkins job builder supports globbed parameters to identify jobs from a set of
 definition files.  This feature only supports JJB managed jobs.
 
-To update jobs that only have 'foo' in their name::
+To update jobs/views that only have 'foo' in their name::
 
   jenkins-jobs update ./myjobs \*foo\*
 
