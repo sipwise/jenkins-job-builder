@@ -53,3 +53,16 @@ class XmlJob(object):
     def output(self):
         out = minidom.parseString(XML.tostring(self.xml, encoding='UTF-8'))
         return out.toprettyxml(indent='  ', encoding='utf-8')
+
+
+class XmlView(object):
+    def __init__(self, xml, name):
+        self.xml = xml
+        self.name = name
+
+    def md5(self):
+        return hashlib.md5(self.output()).hexdigest()
+
+    def output(self):
+        out = minidom.parseString(XML.tostring(self.xml, encoding='UTF-8'))
+        return out.toprettyxml(indent='  ', encoding='utf-8')
