@@ -40,13 +40,16 @@ except ImportError:
 
 from jenkins_jobs.cmd import DEFAULT_CONF
 import jenkins_jobs.local_yaml as yaml
+from jenkins_jobs.errors import InvalidAttributeError
 from jenkins_jobs.parser import YamlParser
 from jenkins_jobs.xml_config import XmlJob
 from jenkins_jobs.modules import (project_flow,
                                   project_matrix,
                                   project_maven,
                                   project_multijob,
-                                  project_externaljob)
+                                  project_externaljob,
+                                  view_list,
+                                  view_pipeline)
 
 
 def get_scenarios(fixtures_path, in_ext='yaml', out_ext='xml',
@@ -156,6 +159,15 @@ class BaseTestCase(LoggingFixture):
                 project = project_multijob.MultiJob(None)
             elif (yaml_content['project-type'] == "externaljob"):
                 project = project_externaljob.ExternalJob(None)
+
+        if 'view-type' in yaml_content:
+            if yaml_content['view-type'] == "list":
+                project = view_list.List(None)
+            elif yaml_content['view-type'] == "pipeline":
+                project = view_pipeline.Pipeline(None)
+            else:
+                raise InvalidAttributeError(
+                    'view-type', yaml_content['view-type'])
 
         if project:
             xml_project = project.root_xml(yaml_content)
