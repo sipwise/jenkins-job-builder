@@ -42,7 +42,9 @@ from jenkins_jobs.xml_config import XmlJob
 from jenkins_jobs.modules import (project_flow,
                                   project_matrix,
                                   project_maven,
-                                  project_multijob)
+                                  project_multijob,
+                                  view_list,
+                                  view_pipeline)
 
 
 def get_scenarios(fixtures_path, in_ext='yaml', out_ext='xml',
@@ -140,6 +142,12 @@ class BaseTestCase(object):
                 project = project_flow.Flow(None)
             elif (yaml_content['project-type'] == "multijob"):
                 project = project_multijob.MultiJob(None)
+
+        if 'view-type' in yaml_content:
+            if yaml_content['view-type'] == "list":
+                project = view_list.List(None)
+            elif yaml_content['view-type'] == "pipeline":
+                project = view_pipeline.Pipeline(None)
 
         if project:
             xml_project = project.root_xml(yaml_content)
