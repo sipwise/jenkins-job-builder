@@ -15,9 +15,18 @@
 
 # Manage Jenkins XML config file output.
 
+import errno
 import hashlib
+import io
+import logging
+import os
 from xml.dom import minidom
 import xml.etree.ElementTree as XML
+
+from jenkins_jobs import utils
+
+
+logger = logging.getLogger(__name__)
 
 
 def remove_ignorable_whitespace(node):
@@ -42,7 +51,7 @@ def remove_ignorable_whitespace(node):
         remove_ignorable_whitespace(child)
 
 
-class XmlJob(object):
+class JenkinsXmlConfig(object):
     def __init__(self, xml, name):
         self.xml = xml
         self.name = name
@@ -53,3 +62,34 @@ class XmlJob(object):
     def output(self):
         out = minidom.parseString(XML.tostring(self.xml, encoding='UTF-8'))
         return out.toprettyxml(indent='  ', encoding='utf-8')
+
+    def write_xml(self, output):
+        if hasattr(output, 'write'):
+            # `output` is a file-like object
+            logger.info("%s name:  %s", self.kind, self.name)
+            logger.debug("Writing XML to '{0}'".format(output))
+            output = utils.wrap_stream(output)
+            try:
+                output.write(self.output())
+            except IOError as exc:
+                if exc.errno == errno.EPIPE:
+                    # EPIPE could happen if piping output to something
+                    # that doesn't read the whole input (e.g.: the UNIX
+                    # `head` command)
+                    return True
+                raise
+            return False
+
+        output_fn = os.path.join(output, self.name)
+        logger.debug("Writing XML to '{0}'".format(output_fn))
+        with io.open(output_fn, 'w', encoding='utf-8') as f:
+            f.write(self.output().decode('utf-8'))
+        return False
+
+
+class XmlJob(JenkinsXmlConfig):
+    kind = 'Job'
+
+
+class XmlView(JenkinsXmlConfig):
+    kind = 'View'
