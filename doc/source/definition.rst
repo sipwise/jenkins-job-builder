@@ -365,6 +365,8 @@ The bulk of the job definitions come from the following modules.
    reporters
    scm
    triggers
+   view_list
+   view_pipeline
    wrappers
    zuul
 
