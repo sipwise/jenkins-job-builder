@@ -62,10 +62,12 @@ class UpdateTests(CmdTestsBase):
 
     @mock.patch('jenkins_jobs.builder.Jenkins.is_job', return_value=True)
     @mock.patch('jenkins_jobs.builder.Jenkins.get_jobs')
+    @mock.patch('jenkins_jobs.builder.Jenkins.get_views')
     @mock.patch('jenkins_jobs.builder.Builder.delete_job')
     @mock.patch('jenkins_jobs.cmd.Builder')
     def test_update_jobs_and_delete_old(self, builder_mock, delete_job_mock,
-                                        get_jobs_mock, is_job_mock):
+                                        get_jobs_mock, get_views_mock,
+                                        is_job_mock):
         """
         Test update behaviour with --delete-old option
 
@@ -79,6 +81,8 @@ class UpdateTests(CmdTestsBase):
         # set up some test data
         jobs = ['old_job001', 'old_job002']
         extra_jobs = [{'name': name} for name in jobs]
+        views = ['old_view001', 'old_view002']
+        extra_views = [{'name': name} for name in views]
 
         builder_obj = builder.Builder('http://jenkins.example.com',
                                       'doesnot', 'matter',
@@ -89,11 +93,16 @@ class UpdateTests(CmdTestsBase):
         b_inst = builder_mock.return_value
         b_inst.plugins_list = builder_obj.plugins_list
         b_inst.update_job.side_effect = builder_obj.update_job
+        b_inst.update_view.side_effect = builder_obj.update_view
         b_inst.delete_old_managed.side_effect = builder_obj.delete_old_managed
 
         def _get_jobs():
             return builder_obj.parser.jobs + extra_jobs
         get_jobs_mock.side_effect = _get_jobs
+
+        def _get_views():
+            return builder_obj.parser.views + extra_views
+        get_views_mock.side_effect = _get_views
 
         # override cache to ensure Jenkins.update_job called a limited number
         # of times
