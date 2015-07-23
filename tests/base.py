@@ -34,12 +34,14 @@ from testtools.content import text_content
 from yaml import safe_dump
 
 from jenkins_jobs.cmd import DEFAULT_CONF
+from jenkins_jobs.errors import InvalidAttributeError
 import jenkins_jobs.local_yaml as yaml
 from jenkins_jobs.modules import project_externaljob
 from jenkins_jobs.modules import project_flow
 from jenkins_jobs.modules import project_matrix
 from jenkins_jobs.modules import project_maven
 from jenkins_jobs.modules import project_multijob
+from jenkins_jobs.modules import views
 from jenkins_jobs.parser import YamlParser
 from jenkins_jobs.xml_config import XmlJob
 
@@ -171,6 +173,15 @@ class BaseTestCase(LoggingFixture):
                 project = project_multijob.MultiJob(parser.registry)
             elif (yaml_content['project-type'] == "externaljob"):
                 project = project_externaljob.ExternalJob(parser.registry)
+
+        if 'view-type' in yaml_content:
+            if yaml_content['view-type'] == "list":
+                project = views.List(None)
+            elif yaml_content['view-type'] == "pipeline":
+                project = views.Pipeline(None)
+            else:
+                raise InvalidAttributeError(
+                    'view-type', yaml_content['view-type'])
 
         if project:
             xml_project = project.root_xml(yaml_content)

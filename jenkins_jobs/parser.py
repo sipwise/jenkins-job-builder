@@ -29,6 +29,7 @@ import jenkins_jobs.local_yaml as local_yaml
 from jenkins_jobs.registry import ModuleRegistry
 from jenkins_jobs import utils
 from jenkins_jobs.xml_config import XmlJob
+from jenkins_jobs.xml_config import XmlView
 
 logger = logging.getLogger(__name__)
 
@@ -73,7 +74,9 @@ class YamlParser(object):
     def __init__(self, config=None, plugins_info=None):
         self.data = {}
         self.jobs = []
+        self.views = []
         self.xml_jobs = []
+        self.xml_views = []
         self.config = config
         self.registry = ModuleRegistry(self.config, plugins_info)
         self.path = ["."]
@@ -197,6 +200,10 @@ class YamlParser(object):
             job = self.applyDefaults(job)
             self.formatDescription(job)
             self.jobs.append(job)
+        for view in self.data.get('view', {}).values():
+            logger.debug("Expanding view '{0}'".format(view['name']))
+            self.formatDescription(view)
+            self.views.append(view)
         for project in self.data.get('project', {}).values():
             logger.debug("Expanding project '{0}'".format(project['name']))
             # use a set to check for duplicate job references in projects
@@ -340,6 +347,8 @@ class YamlParser(object):
     def generateXML(self):
         for job in self.jobs:
             self.xml_jobs.append(self.getXMLForJob(job))
+        for view in self.views:
+            self.xml_views.append(self.getXMLForView(view))
 
     def getXMLForJob(self, data):
         kind = data.get('project-type', 'freestyle')
@@ -352,6 +361,18 @@ class YamlParser(object):
             self.gen_xml(xml, data)
             job = XmlJob(xml, data['name'])
             return job
+
+    def getXMLForView(self, data):
+        kind = data.get('view-type', 'list')
+
+        for ep in pkg_resources.iter_entry_points(
+                group='jenkins_jobs.views', name=kind):
+            Mod = ep.load()
+            mod = Mod(self.registry)
+            xml = mod.root_xml(data)
+            self.gen_xml(xml, data)
+            view = XmlView(xml, data['name'])
+            return view
 
     def gen_xml(self, xml, data):
         for module in self.registry.modules:
