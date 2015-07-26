@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_c9b61ff9",
+        "filename": "tests/hipchat/fixtures/hipchat002.conf",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-07-26T16:13:19Z",
+      "side": 1,
+      "message": "nit: This param doesn\u0027t get applied when authtoken is set:  http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/modules/hipchat_notif.py#n109\n\nWhat the intention to test that it doesn\u0027t get set?\n\nAlso would probably be good to update the docs in a separate change to indicate the above.",
+      "revId": "3004b9485ba8bc2f0799ac8dcb7cc39a6128ba87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
