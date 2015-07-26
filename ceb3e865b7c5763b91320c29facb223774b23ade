@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_af495ab9",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1191,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-07-26T04:43:46Z",
+      "side": 1,
+      "message": "add \u0027use-previous-build-as-reference\u0027 here?",
+      "revId": "ceb3e865b7c5763b91320c29facb223774b23ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_6fca721c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 3416,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-07-26T04:43:46Z",
+      "side": 1,
+      "message": "I\u0027m not sure if it matter but looks like other places use all caps for the first param, so maybe should change it to \u0027[DEPENDENCYCHECK]\u0027?",
+      "revId": "ceb3e865b7c5763b91320c29facb223774b23ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_cf54e655",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 3849,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-07-26T04:43:46Z",
+      "side": 1,
+      "message": "add \u0027use-previous-build-as-reference\u0027 here?",
+      "revId": "ceb3e865b7c5763b91320c29facb223774b23ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_ef4f62bc",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 3953,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-07-26T04:43:46Z",
+      "side": 1,
+      "message": "add \u0027use-previous-build-as-reference\u0027 here?",
+      "revId": "ceb3e865b7c5763b91320c29facb223774b23ade",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
