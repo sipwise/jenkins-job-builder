@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_e4151ce5",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 760,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-07-27T15:32:31Z",
+      "side": 0,
+      "message": "nit: this one is basically the same as the 1st example.  not sure it adds any value.",
+      "revId": "b7f491897ccd6df2ca5d34e079c153cfdf15a1f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
