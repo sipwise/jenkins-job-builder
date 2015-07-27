@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_5b85e3aa",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-27T09:31:05Z",
+      "side": 1,
+      "message": "Failure to provide an authtoken to the old hipchat plugin code (there is a new implementation as a standard publisher that is able to use the globally defined authtoken internally in jenkins) will result in an exception being thrown. So this can only be used provided authtoken is provided.\n\nI believe there is just some confusion on the code at http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/modules/hipchat_notif.py#n95\n\nself.authtoken is never set on instantiation, so on the first call through _load_global_data it will attempt to retrieve it from the config and throw an exception if not set. Subsequent calls skip this and use the previously loaded value.",
+      "revId": "100503a235c03084803d8b4d667b7cbc7860829c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
