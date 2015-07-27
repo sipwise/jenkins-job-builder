@@ -156,6 +156,24 @@
       "revId": "bef8eb9786017c58f0d4561c2866d84bbf263aa2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_b3b99ccd",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1126,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-07-27T14:42:53Z",
+      "side": 1,
+      "message": "sorry, for some reason i thought this was an if statement.",
+      "parentUuid": "ba3cc151_29e0a095",
+      "revId": "bef8eb9786017c58f0d4561c2866d84bbf263aa2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
