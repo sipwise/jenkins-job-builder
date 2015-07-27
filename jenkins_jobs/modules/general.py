@@ -95,6 +95,7 @@ Example:
 
 import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
+from jenkins_jobs.xml_config import remove_ignorable_whitespace
 
 
 class General(jenkins_jobs.modules.base.Base):
@@ -167,5 +168,6 @@ class General(jenkins_jobs.modules.base.Base):
 def raw(parser, xml_parent, data):
     # documented in definition.rst since includes and docs is not working well
     # For cross cutting method like this
-    root = XML.fromstring(data.get('xml'))
+    root = XML.XML(data.get('xml'))
+    remove_ignorable_whitespace(root)
     xml_parent.append(root)

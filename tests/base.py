@@ -168,7 +168,6 @@ class BaseTestCase(object):
             pretty_xml,
             testtools.matchers.DocTestMatches(expected_xml,
                                               doctest.ELLIPSIS |
-                                              doctest.NORMALIZE_WHITESPACE |
                                               doctest.REPORT_NDIFF)
         )
 
@@ -199,7 +198,6 @@ class SingleJobTestCase(BaseTestCase):
             pretty_xml,
             testtools.matchers.DocTestMatches(expected_xml,
                                               doctest.ELLIPSIS |
-                                              doctest.NORMALIZE_WHITESPACE |
                                               doctest.REPORT_NDIFF)
         )
 
@@ -217,7 +215,6 @@ class JsonTestCase(BaseTestCase):
             pretty_json,
             testtools.matchers.DocTestMatches(expected_json,
                                               doctest.ELLIPSIS |
-                                              doctest.NORMALIZE_WHITESPACE |
                                               doctest.REPORT_NDIFF)
         )
 
@@ -239,6 +236,5 @@ class YamlTestCase(BaseTestCase):
             pretty_yaml,
             testtools.matchers.DocTestMatches(expected_yaml,
                                               doctest.ELLIPSIS |
-                                              doctest.NORMALIZE_WHITESPACE |
                                               doctest.REPORT_NDIFF)
         )
