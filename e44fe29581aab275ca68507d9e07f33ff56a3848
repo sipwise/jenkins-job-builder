@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a41bdd9_965c9eee",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-27T01:20:57Z",
+      "side": 1,
+      "message": "Change in the copyartifact_build_selector_param code to use \u0027which-build\u0027 instead of default means there is no longer any need to use the select_key since it is now always \u0027which-build\u0027, so this is now correct.",
+      "parentUuid": "7a016987_e7b3ca4b",
+      "revId": "e44fe29581aab275ca68507d9e07f33ff56a3848",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a016987_070146af",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 8
