@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a50d1a3_5ce3a033",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-27T09:36:45Z",
+      "side": 1,
+      "message": "Any chance you could quickly fix up the commit message to have a blank line between the subject and body instead of trying to wrap the line as this causes some fun displaying logs at times.",
+      "revId": "c28289eb40d82eb2efeb145a1482551726e52497",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_ca22c5b9",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
