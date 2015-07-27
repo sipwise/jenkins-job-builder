@@ -16,6 +16,24 @@
       "revId": "3004b9485ba8bc2f0799ac8dcb7cc39a6128ba87",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_95b3440a",
+        "filename": "tests/hipchat/fixtures/hipchat002.conf",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-27T01:14:17Z",
+      "side": 1,
+      "message": "self.authToken is not set when the class is instantiated, so it essentially implements a lazy lookup of the global configuration for \u0027hipchat.authoken\u0027 and the other configuration settings at the same time.\n\nSo send-as will still be used.",
+      "parentUuid": "3a50d1a3_c9b61ff9",
+      "revId": "3004b9485ba8bc2f0799ac8dcb7cc39a6128ba87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
