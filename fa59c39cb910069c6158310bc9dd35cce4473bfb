@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_bf907d96",
+        "filename": "jenkins_jobs/modules/general.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-27T15:46:09Z",
+      "side": 1,
+      "message": "I\u0027m wondering should I move this to the tests, or possibly move the raw tests to a separate set of tests.\n\nWithout this, the actually XML outputted for tests/yamlparser/fixtures/complete-raw001.yaml would be:\n\n  \u003cscm\u003e\n\n\n    \u003cscmraw/\u003e\n\n\n  \u003c/scm\u003e\n\nInstead of:\n\n  \u003cscm\u003e\n    \u003cscmraw/\u003e\n  \u003c/scm\u003e\n\n\nThe second one is what Jenkins would expect, bug since we were never testing for significant whitespace in the output, we never noticed how the XML would get fudged for this special raw xml handling mechanism.",
+      "revId": "fa59c39cb910069c6158310bc9dd35cce4473bfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
