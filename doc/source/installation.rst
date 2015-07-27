@@ -124,9 +124,6 @@ jenkins section
 hipchat section
 ^^^^^^^^^^^^^^^
 
-**send-as**
-  This is the hipchat user name that will be used when sending notifications.
-
 **authtoken**
   The API token necessary to send messages to hipchat.  This can be generated in
   the hipchat web interface by a user with administrative access for your
@@ -138,6 +135,9 @@ hipchat section
 
 __ https://www.hipchat.com/docs/apiv2/auth
 
+**send-as**
+  This is the hipchat user name that will be used when sending notifications.
+  (only applies if authtoken is not provided).
 
 
 Running
