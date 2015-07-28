@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_822e458a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-07-28T19:14:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_5ce3a033",
+      "revId": "c28289eb40d82eb2efeb145a1482551726e52497",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa32b979_ca22c5b9",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
