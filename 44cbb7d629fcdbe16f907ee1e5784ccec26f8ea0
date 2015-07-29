@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_82c59e3e",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4881,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-29T23:53:16Z",
+      "side": 1,
+      "message": "Both of these may work better if we have the user specify them as a list and then join them together here for them. This makes it much easier working with larger lists of patterns instead of trying to manage long strings.\n\nCourse that means adding one/two specific options to cover the separator as just \u0027separator\u0027 of \u0027comma\u0027, \u0027space\u0027, or \u0027newline\u0027 or separate separators for includes and excludes.\n\nI think one is enough.",
+      "revId": "44cbb7d629fcdbe16f907ee1e5784ccec26f8ea0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_e229023c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4896,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-29T23:53:16Z",
+      "side": 1,
+      "message": "Please replace the exception with:\n\n    raise InvalidAttributeError(\u0027policies\u0027, policies_values, policies)",
+      "revId": "44cbb7d629fcdbe16f907ee1e5784ccec26f8ea0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_022f4e3f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4912,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-29T23:53:16Z",
+      "side": 1,
+      "message": "Should this be configurable?",
+      "revId": "44cbb7d629fcdbe16f907ee1e5784ccec26f8ea0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
