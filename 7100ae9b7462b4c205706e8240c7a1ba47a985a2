@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_02342ef9",
+        "filename": "tests/publishers/fixtures/rundeck002.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-29T23:58:46Z",
+      "side": 1,
+      "message": "I presume that this could be specified using:\n\n    options: |\n        STUFF_FOR_THE_JOB\u003dstuff\n        ANOTHER_VAR\u003dmore_stuff\n\nAs in, it\u0027s only newlines that are supported to separate the properties so no need to worry about other separators?",
+      "revId": "7100ae9b7462b4c205706e8240c7a1ba47a985a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
