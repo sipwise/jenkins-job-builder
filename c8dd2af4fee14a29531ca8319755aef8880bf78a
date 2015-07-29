@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_0202ee09",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2187,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-29T23:37:24Z",
+      "side": 1,
+      "message": "From looking at the two additions, looks like this could be placed into a common helper function and referenced here and in the publishers modules to reuse the code.",
+      "revId": "c8dd2af4fee14a29531ca8319755aef8880bf78a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1ffa4744",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2197,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-29T23:37:24Z",
+      "side": 1,
+      "message": "For any of the required parameters where you are accessing them directly, should use something like the following:\n\n    try:\n        XML.SubElement(step, \u0027stackName\u0027).text \u003d stack[\u0027name\u0027]\n        ..... \u003cmore\u003e\n    except KeyError as e:\n        raise MissingAttributeException(e.args[0])\n\nThat way, the exception will print out some additional information. May need to look at adding the ability to report the parent attribute name as well.",
+      "revId": "c8dd2af4fee14a29531ca8319755aef8880bf78a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_ffc99b26",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2207,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-29T23:37:24Z",
+      "side": 1,
+      "message": "Should really move this outside of the loop.",
+      "revId": "c8dd2af4fee14a29531ca8319755aef8880bf78a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_7fab4b1f",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2208,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-29T23:37:24Z",
+      "side": 1,
+      "message": "See the try/except with raise MissingAttributeError here if region is required.",
+      "revId": "c8dd2af4fee14a29531ca8319755aef8880bf78a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_bfb8f376",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2212,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-29T23:37:24Z",
+      "side": 1,
+      "message": "Should use \u0027InvalidAttributeError(\u0027region\u0027, region, region_dict.keys())\u0027 here.",
+      "revId": "c8dd2af4fee14a29531ca8319755aef8880bf78a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_5f23efbe",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4884,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-29T23:37:24Z",
+      "side": 1,
+      "message": "Need to distinguish this as being unique to the delete-stacks set of options.",
+      "revId": "c8dd2af4fee14a29531ca8319755aef8880bf78a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_9f417766",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4916,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-29T23:37:24Z",
+      "side": 1,
+      "message": "Not obvious from the docstring that all the stacks must be under a \u0027stacks\u0027 entry. Same about the delete-stacks below. Should distinguish both of these in the docstring.\n\nEverything un the stacks could probably be moved into a helper function and called to build each set by just passing in the unique part of the XML tag.",
+      "revId": "c8dd2af4fee14a29531ca8319755aef8880bf78a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
