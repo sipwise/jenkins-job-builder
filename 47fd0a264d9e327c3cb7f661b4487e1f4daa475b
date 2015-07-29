@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_fcf0c968",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-29T23:18:28Z",
+      "side": 1,
+      "message": "Have a look at https://review.openstack.org/#/c/200574/2/jenkins_jobs/modules/scm.py for the reformat of the doc strings for SCM for the suggested way of formatting these types of sub option lists.\n\nDoesn\u0027t appear to make any difference for the resulting docs, but I think it probably makes the docstring itself a little easier to read.",
+      "revId": "47fd0a264d9e327c3cb7f661b4487e1f4daa475b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_dc2e2dab",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-29T23:18:28Z",
+      "side": 1,
+      "message": "MissingAttributeError or are you concerned about indicating it must not be an empty list as well?",
+      "revId": "47fd0a264d9e327c3cb7f661b4487e1f4daa475b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_7c2039b1",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-29T23:18:28Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "47fd0a264d9e327c3cb7f661b4487e1f4daa475b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_dffcdf0e",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 526,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-29T23:18:28Z",
+      "side": 1,
+      "message": "Assuming the answer for the previous two will take care of this one as well.",
+      "revId": "47fd0a264d9e327c3cb7f661b4487e1f4daa475b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
