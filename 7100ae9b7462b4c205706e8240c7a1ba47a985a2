@@ -16,6 +16,24 @@
       "revId": "7100ae9b7462b4c205706e8240c7a1ba47a985a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_5b3991d7",
+        "filename": "tests/publishers/fixtures/rundeck002.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 17537
+      },
+      "writtenOn": "2015-07-30T20:35:17Z",
+      "side": 1,
+      "message": "This is correct - i\u0027ll upload another patch using that example.",
+      "parentUuid": "3a50d1a3_02342ef9",
+      "revId": "7100ae9b7462b4c205706e8240c7a1ba47a985a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
