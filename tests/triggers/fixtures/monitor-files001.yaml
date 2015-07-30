@@ -1,0 +1,20 @@
+triggers:
+  - monitor-files:
+      cron: '* * * * *'
+      files:
+          - path: 'path1'
+            strategy: 'IGNORE'
+          - path: 'path2'
+            check-content:
+                - simple: true
+                - properties:
+                    - all-keys: false
+                      keys:
+                          - prop1
+                          - prop2
+                - xml:
+                    - 'xpath1'
+                    - 'xpath2'
+                - text:
+                    - 'regex1'
+            ignore-modificaton-date: false
