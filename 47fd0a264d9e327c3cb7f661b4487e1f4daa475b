@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_a377793a",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-07-30T03:20:12Z",
+      "side": 1,
+      "message": "Sure, I will change these.",
+      "parentUuid": "3a50d1a3_fcf0c968",
+      "revId": "47fd0a264d9e327c3cb7f661b4487e1f4daa475b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_dc2e2dab",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-29T23:18:28Z",
       "side": 1,
       "message": "MissingAttributeError or are you concerned about indicating it must not be an empty list as well?",
+      "revId": "47fd0a264d9e327c3cb7f661b4487e1f4daa475b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_23bda9d7",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-07-30T03:20:12Z",
+      "side": 1,
+      "message": "Yes. I was aware of MissingAttributeError. I was concerned about the empty list.\n\nI thought over of having an exception for empty list, but I could not comprehend the required behavior when the list is empty and none of the arguments under the list is required. Should it assume that those arguments are set as default, in which case it should accept it. Or should it throw an exception?\n\nIn this case, there is a required argument under the list, hence the list cannot be empty. So, I used JenkinsJobsException to declare this behavior.",
+      "parentUuid": "3a50d1a3_dc2e2dab",
       "revId": "47fd0a264d9e327c3cb7f661b4487e1f4daa475b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_e3b6e1f8",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-07-30T03:20:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_7c2039b1",
+      "revId": "47fd0a264d9e327c3cb7f661b4487e1f4daa475b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_dffcdf0e",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2015-07-29T23:18:28Z",
       "side": 1,
       "message": "Assuming the answer for the previous two will take care of this one as well.",
+      "revId": "47fd0a264d9e327c3cb7f661b4487e1f4daa475b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_c3b16503",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 526,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-07-30T03:20:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_dffcdf0e",
       "revId": "47fd0a264d9e327c3cb7f661b4487e1f4daa475b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
