@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_c3f08500",
+        "filename": "jenkins_jobs/modules/project_externaljob.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-07-30T03:01:22Z",
+      "side": 1,
+      "message": "Should the year be changed to 2015?\nI\u0027m sorry, I am pretty weak at this, just copied this from previous files",
+      "parentUuid": "3a50d1a3_82bfdefb",
+      "revId": "c8a0a89abf4bb6a41f1b5100eec137c4187024cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_02d3ce60",
         "filename": "jenkins_jobs/modules/project_externaljob.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-29T23:43:42Z",
       "side": 1,
       "message": "Probably would read better as \u0027External Job Project\u0027 in the documentation, \u0027ExternalJob\u0027 looks a little odd.",
+      "revId": "c8a0a89abf4bb6a41f1b5100eec137c4187024cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_e3f581ed",
+        "filename": "jenkins_jobs/modules/project_externaljob.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-07-30T03:01:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_02d3ce60",
       "revId": "c8a0a89abf4bb6a41f1b5100eec137c4187024cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
