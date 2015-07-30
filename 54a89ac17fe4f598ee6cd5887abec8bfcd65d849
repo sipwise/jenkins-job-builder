@@ -34,6 +34,24 @@
       "revId": "54a89ac17fe4f598ee6cd5887abec8bfcd65d849",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba3cc151_bcb6363c",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-30T00:00:14Z",
+      "side": 1,
+      "message": "Python supports implicit concatenation between \u0027()\u0027\n\n        script \u003d (\u0027for(job in jenkins.model.Jenkins.theInstance.getProjects())\u0027\n                  \u0027    { job.delete(); }\u0027)\n\nOtherwise that slash gets passed as part of the script being sent to jenkins as it stands.\n\n;)",
+      "parentUuid": "ba3cc151_fa7846c6",
+      "revId": "54a89ac17fe4f598ee6cd5887abec8bfcd65d849",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
