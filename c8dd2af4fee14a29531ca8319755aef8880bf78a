@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_8f76d73d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2187,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2015-07-31T13:10:03Z",
+      "side": 1,
+      "message": "Off the top of my head I\u0027m not certain how to do this, so I will need to investigate it more.",
+      "parentUuid": "3a50d1a3_0202ee09",
+      "revId": "c8dd2af4fee14a29531ca8319755aef8880bf78a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_1ffa4744",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-29T23:37:24Z",
       "side": 1,
       "message": "For any of the required parameters where you are accessing them directly, should use something like the following:\n\n    try:\n        XML.SubElement(step, \u0027stackName\u0027).text \u003d stack[\u0027name\u0027]\n        ..... \u003cmore\u003e\n    except KeyError as e:\n        raise MissingAttributeException(e.args[0])\n\nThat way, the exception will print out some additional information. May need to look at adding the ability to report the parent attribute name as well.",
+      "revId": "c8dd2af4fee14a29531ca8319755aef8880bf78a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_cf429f0f",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2197,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2015-07-31T13:10:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_1ffa4744",
       "revId": "c8dd2af4fee14a29531ca8319755aef8880bf78a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_0f6087a3",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2207,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2015-07-31T13:10:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_ffc99b26",
+      "revId": "c8dd2af4fee14a29531ca8319755aef8880bf78a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_7fab4b1f",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 3
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_cfde1f3e",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2208,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2015-07-31T13:10:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_7fab4b1f",
+      "revId": "c8dd2af4fee14a29531ca8319755aef8880bf78a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_bfb8f376",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 3
@@ -81,6 +153,24 @@
       "writtenOn": "2015-07-29T23:37:24Z",
       "side": 1,
       "message": "Should use \u0027InvalidAttributeError(\u0027region\u0027, region, region_dict.keys())\u0027 here.",
+      "revId": "c8dd2af4fee14a29531ca8319755aef8880bf78a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_0fa3a7b2",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2212,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2015-07-31T13:10:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_bfb8f376",
       "revId": "c8dd2af4fee14a29531ca8319755aef8880bf78a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
