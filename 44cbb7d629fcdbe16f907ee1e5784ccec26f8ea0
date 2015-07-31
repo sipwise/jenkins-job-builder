@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_2ce471aa",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4881,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2015-07-31T12:56:42Z",
+      "side": 1,
+      "message": "I didn\u0027t fully understand what you were saying about the one/two specific options, so I just made it a list.",
+      "parentUuid": "3a50d1a3_82c59e3e",
+      "revId": "44cbb7d629fcdbe16f907ee1e5784ccec26f8ea0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_e229023c",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-07-29T23:53:16Z",
       "side": 1,
       "message": "Please replace the exception with:\n\n    raise InvalidAttributeError(\u0027policies\u0027, policies_values, policies)",
+      "revId": "44cbb7d629fcdbe16f907ee1e5784ccec26f8ea0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_46df5cd6",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4896,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2015-07-31T12:56:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_e229023c",
       "revId": "44cbb7d629fcdbe16f907ee1e5784ccec26f8ea0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
