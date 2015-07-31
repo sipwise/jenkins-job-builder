@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a50d1a3_97391edb",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-07-31T06:00:40Z",
+      "side": 1,
+      "message": "nit: description is missing the type, should be \u0027:arg bool only-if-success:\u0027",
+      "revId": "476756dd04c26917c300303f57201c14f1fc84c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_573396f6",
+        "filename": "tests/publishers/fixtures/archive002.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-07-31T06:00:40Z",
+      "side": 1,
+      "message": "nit: i don\u0027t believe bools need to be in quotes.",
+      "revId": "476756dd04c26917c300303f57201c14f1fc84c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
