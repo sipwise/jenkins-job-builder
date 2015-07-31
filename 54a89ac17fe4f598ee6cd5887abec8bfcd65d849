@@ -52,6 +52,24 @@
       "revId": "54a89ac17fe4f598ee6cd5887abec8bfcd65d849",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_1fc42090",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-07-31T19:47:07Z",
+      "side": 1,
+      "message": "I completely forgot about that.  Thanks. Done",
+      "parentUuid": "ba3cc151_bcb6363c",
+      "revId": "54a89ac17fe4f598ee6cd5887abec8bfcd65d849",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
