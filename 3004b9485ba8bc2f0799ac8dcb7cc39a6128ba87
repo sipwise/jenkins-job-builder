@@ -34,6 +34,24 @@
       "revId": "3004b9485ba8bc2f0799ac8dcb7cc39a6128ba87",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_8de7adab",
+        "filename": "tests/hipchat/fixtures/hipchat002.conf",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-07-31T19:34:08Z",
+      "side": 1,
+      "message": "Although I forgot it won\u0027t be used unless the plugin is reported to be newer that 0.1.8.",
+      "parentUuid": "3a50d1a3_95b3440a",
+      "revId": "3004b9485ba8bc2f0799ac8dcb7cc39a6128ba87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
