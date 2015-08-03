@@ -1,0 +1,5 @@
+hipchat:
+  enabled: true
+  notify-start: true
+  start-message: "project_start" 
+  completed-message: "project_completed" 
