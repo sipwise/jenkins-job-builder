@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f043fc6a",
+        "filename": "tests/hipchat/fixtures/hipchat005.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-08-03T19:05:00Z",
+      "side": 1,
+      "message": "trailing whitespace on lines 4 and 5",
+      "revId": "175555e6d15b9aa6ad510f328570ed01096f8b33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
