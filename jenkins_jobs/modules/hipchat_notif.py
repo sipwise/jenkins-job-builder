@@ -48,6 +48,11 @@ Enable HipChat notifications of build execution.
   * **notify-back-to-normal** *(bool)*: post messages about build being back to
     normal after being unstable or failed (Jenkins HipChat plugin >= 0.1.5)
     (default false)
+  * **start-message** *(string)*: Message to send when starting job
+    (default none)
+  * **completed-message** *(string)*: Message to send when the job
+    completes (default none)
+
 
 Example:
 
@@ -116,15 +121,25 @@ class HipChat(jenkins_jobs.modules.base.Base):
 
         plugin_info = self.registry.get_plugin_info("Jenkins HipChat Plugin")
         version = pkg_resources.parse_version(plugin_info.get('version', '0'))
+        # If the version isn't available from jenkins (i.e. query plugins is
+        # turned off) then set a flag and assume we're using the latest.
+        no_version = (version == pkg_resources.parse_version('0'))
 
-        properties = xml_parent.find('properties')
-        if properties is None:
-            properties = XML.SubElement(xml_parent, 'properties')
-        pdefhip = XML.SubElement(properties,
-                                 'jenkins.plugins.hipchat.'
-                                 'HipChatNotifier_-HipChatJobProperty')
+        if no_version or version >= pkg_resources.parse_version("0.1.9"):
+            publishers = xml_parent.find('publishers')
+            if publishers is None:
+                publishers = XML.SubElement(xml_parent, 'publishers')
+            defhip = XML.SubElement(publishers,
+                                    'jenkins.plugins.hipchat.HipChatNotifier')
+        else:
+            properties = xml_parent.find('properties')
+            if properties is None:
+                properties = XML.SubElement(xml_parent, 'properties')
+            defhip = XML.SubElement(properties,
+                                    'jenkins.plugins.hipchat.'
+                                    'HipChatNotifier_-HipChatJobProperty')
 
-        room = XML.SubElement(pdefhip, 'room')
+        room = XML.SubElement(defhip, 'room')
         if 'rooms' in hipchat:
             room.text = ",".join(hipchat['rooms'])
         elif 'room' in hipchat:
@@ -136,37 +151,46 @@ class HipChat(jenkins_jobs.modules.base.Base):
         if hipchat.get('start-notify'):
             logger.warn("'start-notify' is deprecated, please use "
                         "'notify-start'")
-        XML.SubElement(pdefhip, 'startNotification').text = str(
+        XML.SubElement(defhip, 'startNotification').text = str(
             hipchat.get('notify-start', hipchat.get('start-notify',
                                                     False))).lower()
 
-        if version >= pkg_resources.parse_version("0.1.5"):
-            XML.SubElement(pdefhip, 'notifySuccess').text = str(
+        if no_version or version >= pkg_resources.parse_version("0.1.5"):
+            XML.SubElement(defhip, 'notifySuccess').text = str(
                 hipchat.get('notify-success', False)).lower()
-            XML.SubElement(pdefhip, 'notifyAborted').text = str(
+            XML.SubElement(defhip, 'notifyAborted').text = str(
                 hipchat.get('notify-aborted', False)).lower()
-            XML.SubElement(pdefhip, 'notifyNotBuilt').text = str(
+            XML.SubElement(defhip, 'notifyNotBuilt').text = str(
                 hipchat.get('notify-not-built', False)).lower()
-            XML.SubElement(pdefhip, 'notifyUnstable').text = str(
+            XML.SubElement(defhip, 'notifyUnstable').text = str(
                 hipchat.get('notify-unstable', False)).lower()
-            XML.SubElement(pdefhip, 'notifyFailure').text = str(
+            XML.SubElement(defhip, 'notifyFailure').text = str(
                 hipchat.get('notify-failure', False)).lower()
-            XML.SubElement(pdefhip, 'notifyBackToNormal').text = str(
+            XML.SubElement(defhip, 'notifyBackToNormal').text = str(
                 hipchat.get('notify-back-to-normal', False)).lower()
 
-        publishers = xml_parent.find('publishers')
-        if publishers is None:
-            publishers = XML.SubElement(xml_parent, 'publishers')
-        hippub = XML.SubElement(publishers,
-                                'jenkins.plugins.hipchat.HipChatNotifier')
-
-        if version >= pkg_resources.parse_version("0.1.8"):
-            XML.SubElement(hippub, 'buildServerUrl').text = self.jenkinsUrl
-            XML.SubElement(hippub, 'sendAs').text = self.sendAs
+        if no_version or version >= pkg_resources.parse_version("0.1.9"):
+            XML.SubElement(defhip, 'buildServerUrl').text = self.jenkinsUrl
+            XML.SubElement(defhip, 'sendAs').text = self.sendAs
+            XML.SubElement(defhip, 'token').text = self.authToken
+            if hipchat.get('start-message'):
+                XML.SubElement(defhip, 'startJobMessage').text = str(
+                    hipchat.get('start-message'))
+            if hipchat.get('completed-message'):
+                XML.SubElement(defhip, 'completeJobMessage').text = str(
+                    hipchat.get('completed-message'))
         else:
-            XML.SubElement(hippub, 'jenkinsUrl').text = self.jenkinsUrl
+            publishers = xml_parent.find('publishers')
+            if publishers is None:
+                publishers = XML.SubElement(xml_parent, 'publishers')
+            pubhip = XML.SubElement(publishers,
+                                    'jenkins.plugins.hipchat.HipChatNotifier')
 
-        XML.SubElement(hippub, 'authToken').text = self.authToken
-        # The room specified here is the default room.  The default is
-        # redundant in this case since a room must be specified.  Leave empty.
-        XML.SubElement(hippub, 'room').text = ''
+            if version >= pkg_resources.parse_version("0.1.8"):
+                XML.SubElement(pubhip, 'buildServerUrl').text = self.jenkinsUrl
+                XML.SubElement(pubhip, 'sendAs').text = self.sendAs
+            else:
+                XML.SubElement(pubhip, 'jenkinsUrl').text = self.jenkinsUrl
+
+            XML.SubElement(pubhip, 'authToken').text = self.authToken
+            XML.SubElement(pubhip, 'room').text = ''

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <publishers>
+    <jenkins.plugins.hipchat.HipChatNotifier>
+      <room/>
+      <startNotification>true</startNotification>
+      <notifySuccess>false</notifySuccess>
+      <notifyAborted>false</notifyAborted>
+      <notifyNotBuilt>false</notifyNotBuilt>
+      <notifyUnstable>false</notifyUnstable>
+      <notifyFailure>false</notifyFailure>
+      <notifyBackToNormal>false</notifyBackToNormal>
+      <buildServerUrl>url</buildServerUrl>
+      <sendAs>send-as</sendAs>
+      <token>authtoken</token>
+      <startJobMessage>project_start</startJobMessage>
+      <completeJobMessage>project_completed</completeJobMessage>
+    </jenkins.plugins.hipchat.HipChatNotifier>
+  </publishers>
+</project>
