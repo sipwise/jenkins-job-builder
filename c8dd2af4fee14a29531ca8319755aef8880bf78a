@@ -194,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "3a50d1a3_d599ccd1",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4884,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2015-08-03T13:33:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_5f23efbe",
+      "revId": "c8dd2af4fee14a29531ca8319755aef8880bf78a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_9f417766",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 3
@@ -205,6 +223,24 @@
       "writtenOn": "2015-07-29T23:37:24Z",
       "side": 1,
       "message": "Not obvious from the docstring that all the stacks must be under a \u0027stacks\u0027 entry. Same about the delete-stacks below. Should distinguish both of these in the docstring.\n\nEverything un the stacks could probably be moved into a helper function and called to build each set by just passing in the unique part of the XML tag.",
+      "revId": "c8dd2af4fee14a29531ca8319755aef8880bf78a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a50d1a3_8ab75a84",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4916,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2015-08-03T13:33:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a50d1a3_9f417766",
       "revId": "c8dd2af4fee14a29531ca8319755aef8880bf78a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
