@@ -15,6 +15,10 @@
 """
 Enable HipChat notifications of build execution.
 
+Supports hipchat plugin versions < 1.9. Will automatically redirect to the
+publishers module for newer versions, but still recommended that you convert
+to the newer module.
+
 :Parameters:
   * **enabled** *(bool)*: general cut off switch. If not explicitly set to
     ``true``, no hipchat parameters are written to XML. For Jenkins HipChat
@@ -48,6 +52,7 @@ Enable HipChat notifications of build execution.
   * **notify-back-to-normal** *(bool)*: post messages about build being back to
     normal after being unstable or failed (Jenkins HipChat plugin >= 0.1.5)
     (default false)
+
 
 Example:
 
@@ -117,59 +122,75 @@ class HipChat(jenkins_jobs.modules.base.Base):
             return
         self._load_global_data()
 
+        # convert for compatibility before dispatch
+        if 'room' in hipchat:
+            if 'rooms' in hipchat:
+                logger.warn("Ignoring deprecated 'room' as 'rooms' also "
+                            "defined.")
+            else:
+                logger.warn("'room' is deprecated, please use 'rooms'")
+                hipchat['rooms'] = [hipchat['room']]
+
         plugin_info = self.registry.get_plugin_info("Jenkins HipChat Plugin")
         version = pkg_resources.parse_version(plugin_info.get('version', '0'))
 
-        properties = xml_parent.find('properties')
-        if properties is None:
-            properties = XML.SubElement(xml_parent, 'properties')
-        pdefhip = XML.SubElement(properties,
-                                 'jenkins.plugins.hipchat.'
-                                 'HipChatNotifier_-HipChatJobProperty')
+        if version >= pkg_resources.parse_version("0.1.9"):
+            publishers = xml_parent.find('publishers')
+            if publishers is None:
+                publishers = XML.SubElement(xml_parent, 'publishers')
 
-        room = XML.SubElement(pdefhip, 'room')
+            logger.warn(
+                "'hipchat' module supports the old plugin versions <1.9, "
+                "newer versions are supported via the 'publishers' module. "
+                "Please upgrade you job definition")
+            return self.registry.dispatch('publisher', parser, publishers,
+                                          data)
+        else:
+            properties = xml_parent.find('properties')
+            if properties is None:
+                properties = XML.SubElement(xml_parent, 'properties')
+            defhip = XML.SubElement(properties,
+                                    'jenkins.plugins.hipchat.'
+                                    'HipChatNotifier_-HipChatJobProperty')
+
+        room = XML.SubElement(defhip, 'room')
         if 'rooms' in hipchat:
             room.text = ",".join(hipchat['rooms'])
-        elif 'room' in hipchat:
-            logger.warn("'room' is deprecated, please use 'rooms'")
-            room.text = hipchat['room']
 
         # Handle backwards compatibility 'start-notify' but all add an element
         # of standardization with notify-*
         if hipchat.get('start-notify'):
             logger.warn("'start-notify' is deprecated, please use "
                         "'notify-start'")
-        XML.SubElement(pdefhip, 'startNotification').text = str(
+        XML.SubElement(defhip, 'startNotification').text = str(
             hipchat.get('notify-start', hipchat.get('start-notify',
                                                     False))).lower()
 
         if version >= pkg_resources.parse_version("0.1.5"):
-            XML.SubElement(pdefhip, 'notifySuccess').text = str(
+            XML.SubElement(defhip, 'notifySuccess').text = str(
                 hipchat.get('notify-success', False)).lower()
-            XML.SubElement(pdefhip, 'notifyAborted').text = str(
+            XML.SubElement(defhip, 'notifyAborted').text = str(
                 hipchat.get('notify-aborted', False)).lower()
-            XML.SubElement(pdefhip, 'notifyNotBuilt').text = str(
+            XML.SubElement(defhip, 'notifyNotBuilt').text = str(
                 hipchat.get('notify-not-built', False)).lower()
-            XML.SubElement(pdefhip, 'notifyUnstable').text = str(
+            XML.SubElement(defhip, 'notifyUnstable').text = str(
                 hipchat.get('notify-unstable', False)).lower()
-            XML.SubElement(pdefhip, 'notifyFailure').text = str(
+            XML.SubElement(defhip, 'notifyFailure').text = str(
                 hipchat.get('notify-failure', False)).lower()
-            XML.SubElement(pdefhip, 'notifyBackToNormal').text = str(
+            XML.SubElement(defhip, 'notifyBackToNormal').text = str(
                 hipchat.get('notify-back-to-normal', False)).lower()
 
         publishers = xml_parent.find('publishers')
         if publishers is None:
             publishers = XML.SubElement(xml_parent, 'publishers')
-        hippub = XML.SubElement(publishers,
+        pubhip = XML.SubElement(publishers,
                                 'jenkins.plugins.hipchat.HipChatNotifier')
 
         if version >= pkg_resources.parse_version("0.1.8"):
-            XML.SubElement(hippub, 'buildServerUrl').text = self.jenkinsUrl
-            XML.SubElement(hippub, 'sendAs').text = self.sendAs
+            XML.SubElement(pubhip, 'buildServerUrl').text = self.jenkinsUrl
+            XML.SubElement(pubhip, 'sendAs').text = self.sendAs
         else:
-            XML.SubElement(hippub, 'jenkinsUrl').text = self.jenkinsUrl
+            XML.SubElement(pubhip, 'jenkinsUrl').text = self.jenkinsUrl
 
-        XML.SubElement(hippub, 'authToken').text = self.authToken
-        # The room specified here is the default room.  The default is
-        # redundant in this case since a room must be specified.  Leave empty.
-        XML.SubElement(hippub, 'room').text = ''
+        XML.SubElement(pubhip, 'authToken').text = self.authToken
+        XML.SubElement(pubhip, 'room').text = ''
