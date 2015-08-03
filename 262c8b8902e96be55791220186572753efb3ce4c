@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_9e1f395b",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2015-08-03T13:55:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_5b72237e",
+      "revId": "262c8b8902e96be55791220186572753efb3ce4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_1bb9fb2e",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_fe2afd7d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2156,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2015-08-03T13:55:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_1bb9fb2e",
+      "revId": "262c8b8902e96be55791220186572753efb3ce4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_9b574bca",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2015-08-03T13:44:24Z",
       "side": 1,
       "message": "Imports should be in alphabetical order when possible",
+      "revId": "262c8b8902e96be55791220186572753efb3ce4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_5e41b138",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2015-08-03T13:55:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_9b574bca",
       "revId": "262c8b8902e96be55791220186572753efb3ce4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
