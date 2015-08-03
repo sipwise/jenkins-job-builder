@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_1c2b1fed",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2168,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-08-03T20:52:19Z",
+      "side": 1,
+      "message": "Do we need to support the original target?\n\nThis change sounds like it will break anyone who\u0027s currently using this plugin.",
+      "revId": "df552e925ea2488959ddb504384e0dc2e24c3e52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
