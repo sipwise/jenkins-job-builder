@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_ce5dc17a",
+        "filename": "jenkins_jobs/modules/view_pipeline.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 16968
+      },
+      "writtenOn": "2015-08-04T18:57:10Z",
+      "side": 1,
+      "message": "Dawid you mentioned not to specify the version. Can you please clarify? In Jenkins, when a build-pipeline view is created, that part gets added to the XML code. Does jenkins automatically detect the version if \"@1.4.3\" is not there?",
+      "revId": "363608504775d5d2b4dddcd28930367b8f767e59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
