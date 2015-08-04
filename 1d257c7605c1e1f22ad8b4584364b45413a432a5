@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_e56fb390",
+        "filename": "jenkins_jobs/modules/view_pipeline.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 16099
+      },
+      "writtenOn": "2015-08-04T01:18:47Z",
+      "side": 1,
+      "message": "You shouldn\u0027t provide plugin version. au.com.centrumsystems.hudson.plugin.buildpipeline.BuildPipelineView will be enough.",
+      "revId": "1d257c7605c1e1f22ad8b4584364b45413a432a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_653163a2",
+        "filename": "jenkins_jobs/modules/view_pipeline.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 16099
+      },
+      "writtenOn": "2015-08-04T01:18:47Z",
+      "side": 1,
+      "message": "name, description, filter-executors, filter-queue and properties are similar in other views. Can you create helper method for this?",
+      "revId": "1d257c7605c1e1f22ad8b4584364b45413a432a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
