@@ -16,6 +16,24 @@
       "revId": "363608504775d5d2b4dddcd28930367b8f767e59",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_b4cd24b9",
+        "filename": "jenkins_jobs/modules/view_pipeline.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 16099
+      },
+      "writtenOn": "2015-08-04T19:30:41Z",
+      "side": 1,
+      "message": "You don\u0027t have to provide plugin version at all.",
+      "parentUuid": "1a4dcd0f_ce5dc17a",
+      "revId": "363608504775d5d2b4dddcd28930367b8f767e59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
