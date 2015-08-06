@@ -1,0 +1,344 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_3b8505ce",
+        "filename": "doc/source/definition.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-06T22:02:18Z",
+      "side": 1,
+      "message": "seems like there is a new views definition that needs to be described along with the job definition.  Could you please add that?  Also we should be explicit when describing what will and will not work with views.  For example should you be able to define a project and add a list of views to it?",
+      "revId": "a51218f74ed0e0b2148947504c9402c235589fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_dddae316",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-06T22:02:18Z",
+      "side": 1,
+      "message": "I think it would be better to pass in a job and view option, similar to what you\u0027ve done for delete-all, because it doesn\u0027t make sense to have a new command for each new item that JJB supports.  I foresee support for Jenkins folders in the soonish future.",
+      "revId": "a51218f74ed0e0b2148947504c9402c235589fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_36df61da",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-06T22:02:18Z",
+      "side": 1,
+      "message": "This jenkins object is referring to the one in this file, not the one in python-jenkins.  You\u0027ll need to add this method to the builder.Jenkins class.",
+      "revId": "a51218f74ed0e0b2148947504c9402c235589fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f5932e59",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-06T22:02:18Z",
+      "side": 1,
+      "message": "job param is no longer just a job so how about changing it to \u0027item\u0027?",
+      "revId": "a51218f74ed0e0b2148947504c9402c235589fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_d11e476f",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-06T22:02:18Z",
+      "side": 1,
+      "message": "we are no longer updating just jobs?  might be better to create a seperate update_view method?",
+      "revId": "a51218f74ed0e0b2148947504c9402c235589fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_91599f37",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-06T22:02:18Z",
+      "side": 1,
+      "message": "I would prefer we distinguish between job vs views.  Maybe something like..\n\n  \"10 jobs and 3 views generated.\"",
+      "revId": "a51218f74ed0e0b2148947504c9402c235589fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_958f4a74",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-06T22:02:18Z",
+      "side": 1,
+      "message": "Keep separate from jobs so change to updated_views? and need to initialize it.",
+      "revId": "a51218f74ed0e0b2148947504c9402c235589fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_75539e17",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-06T22:02:18Z",
+      "side": 1,
+      "message": "Would be good to identify which item here.",
+      "revId": "a51218f74ed0e0b2148947504c9402c235589fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_b5e1262c",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-06T22:02:18Z",
+      "side": 1,
+      "message": "should this return updated_views as well?",
+      "revId": "a51218f74ed0e0b2148947504c9402c235589fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_364f6138",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-06T22:02:18Z",
+      "side": 1,
+      "message": "I think what you are doing is..\n\n  delete-all                                        --\u003e deletes both jobs and views\n  delete-all --only-jobs                      --\u003e deletes only jobs\n  delete-all --only-views                    --\u003e deletes only views\n  delete-all --only-jobs --only-views  --\u003e ignore?\n\n\nIMO, removing \u0027only\u0027 would be more intuitive when used with the delete-all command:\n  delete-all                        --\u003e deletes both jobs and views\n  delete-all --jobs              --\u003e deletes only jobs\n  delete-all --views            --\u003e deletes only views\n  delete-all --jobs --views  --\u003e same as the 1st one.\n\n\nThe other option that i prefer the most is to just have one delete command with options but this is probably out of scope for this change.  So something like:\n\n  delete  --all                          --\u003e deletes both jobs and views\n  delete  --all--jobs                 --\u003e deletes only jobs\n  delete  --all--views               --\u003e deletes only views\n  delete  --all-jobs --all-views  --\u003e same as the 1st one.\n  delete  --job job1 job2         --\u003e deletes job1 and job2\n  delete  --view view1 view2  --\u003e deletes view1 and view2",
+      "revId": "a51218f74ed0e0b2148947504c9402c235589fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_a5925d4a",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-06T22:02:18Z",
+      "side": 1,
+      "message": "This seems to mean that you need to set \u0027--only-views\u0027 and it will delete both jobs and views?",
+      "revId": "a51218f74ed0e0b2148947504c9402c235589fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_58d33760",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-06T22:02:18Z",
+      "side": 1,
+      "message": "what if someone defines both a project-type and a view-type param?  looks like this is gonna assume it\u0027s a view-type but shouldn\u0027t that be an invalid case?",
+      "revId": "a51218f74ed0e0b2148947504c9402c235589fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_b8a7dba5",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-06T22:02:18Z",
+      "side": 1,
+      "message": "the below logic is a bit confusing and seems like it can be simplified.",
+      "revId": "a51218f74ed0e0b2148947504c9402c235589fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_d8fbc777",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-06T22:02:18Z",
+      "side": 1,
+      "message": "again this doesn\u0027t take into considering invalid cases, like defining multiple types.",
+      "revId": "a51218f74ed0e0b2148947504c9402c235589fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_d8cd0767",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-06T22:02:18Z",
+      "side": 1,
+      "message": "can\u0027t this just go with \u0027if view_type is None\u0027 above?",
+      "revId": "a51218f74ed0e0b2148947504c9402c235589fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_b8befbab",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-06T22:02:18Z",
+      "side": 1,
+      "message": "can\u0027t this just go with the else above?  also why do you need variable to pass to the name?  can\u0027t you just use kind?",
+      "revId": "a51218f74ed0e0b2148947504c9402c235589fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_d8f19196",
+        "filename": "tests/view_list/fixtures/list_view001.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-06T22:02:18Z",
+      "side": 1,
+      "message": "more consistent if this was  \u0027job-name\u0027",
+      "revId": "a51218f74ed0e0b2148947504c9402c235589fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_b81845d4",
+        "filename": "tests/view_list/fixtures/list_view001.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-06T22:02:18Z",
+      "side": 1,
+      "message": "more consistent if this was \u0027status-filter\u0027",
+      "revId": "a51218f74ed0e0b2148947504c9402c235589fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f8becdac",
+        "filename": "tests/view_pipeline/fixtures/pipeline_view001.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-06T22:02:18Z",
+      "side": 1,
+      "message": "param name convention is to use \u0027-\u0027 instead of camel case.",
+      "revId": "a51218f74ed0e0b2148947504c9402c235589fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f8d56de4",
+        "filename": "tests/view_pipeline/fixtures/pipeline_view002.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-06T22:02:18Z",
+      "side": 1,
+      "message": "convention for param name is to use \u0027-\u0027 instead of camel case",
+      "revId": "a51218f74ed0e0b2148947504c9402c235589fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
