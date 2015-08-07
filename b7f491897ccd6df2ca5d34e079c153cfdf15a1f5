@@ -16,6 +16,24 @@
       "revId": "b7f491897ccd6df2ca5d34e079c153cfdf15a1f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_337f57e1",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 760,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-07T10:30:55Z",
+      "side": 0,
+      "message": "Could remove it from the examples, though it does ensure exercising of the empty else around web-access so should probably remain as a test.",
+      "parentUuid": "3a50d1a3_e4151ce5",
+      "revId": "b7f491897ccd6df2ca5d34e079c153cfdf15a1f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
