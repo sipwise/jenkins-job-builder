@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_48eca5ba",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-07T14:11:18Z",
+      "side": 1,
+      "message": "I probably would have been inclined to go with:\n\n        XML.SubElement(gproj, \u0027compareType\u0027).text \u003d get_compare_type(\n            gproj, project[\u0027project-compare-type\u0027])\n\nbut I think that\u0027s just personal style",
+      "revId": "c7815738a9e44be29fff18eacae940a5dc5ccd89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
