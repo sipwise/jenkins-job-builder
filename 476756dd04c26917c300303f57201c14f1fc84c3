@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_50fbf946",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-07T10:12:24Z",
+      "side": 1,
+      "message": "Can\u0027t believe I missed that, usually I\u0027m a sticklier for docstrings :p",
+      "parentUuid": "3a50d1a3_97391edb",
+      "revId": "476756dd04c26917c300303f57201c14f1fc84c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a50d1a3_573396f6",
         "filename": "tests/publishers/fixtures/archive002.yaml",
         "patchSetId": 2
