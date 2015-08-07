@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_66b3df4d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 997,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-07T14:03:40Z",
+      "side": 1,
+      "message": "After looking though this I\u0027m going to change the suggested format for sub options under I696389516dbd4e0960986666e32fab93e515710e to follow the same format in the code for both a list of values as well as sub options. I think this shows that now moving to indent on the next line makes reading multi level sub options more difficult that is necessary in the source code once the 80 character limit is applied.",
+      "revId": "e2e130d6be2ef20c9bd85f76ee4156eb449d392a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f3456f6e",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1082,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-07T14:03:40Z",
+      "side": 1,
+      "message": "When updating the docstring above, it might be worth adding just a few blank lines in the code below just to separate some of the blocks to make it a little easier to read as it\u0027s quite long.",
+      "revId": "e2e130d6be2ef20c9bd85f76ee4156eb449d392a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_b35cc74b",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1088,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-07T14:03:40Z",
+      "side": 1,
+      "message": "Maybe one blank line here here.",
+      "revId": "e2e130d6be2ef20c9bd85f76ee4156eb449d392a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_d33953f3",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1096,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-07T14:03:40Z",
+      "side": 1,
+      "message": "Another here.",
+      "revId": "e2e130d6be2ef20c9bd85f76ee4156eb449d392a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_532ea3a5",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1103,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-07T14:03:40Z",
+      "side": 1,
+      "message": "Maybe one here before starting the content block or just after the strategy lines above.",
+      "revId": "e2e130d6be2ef20c9bd85f76ee4156eb449d392a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_ed7b43f3",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1111,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-07T14:03:40Z",
+      "side": 1,
+      "message": "Almost tempted to suggest just checking if \"len(content_type) \u003d\u003d 1\" as better to avoid maintaining a separate list, or maybe have has_key_content_types generated automatically using:\n\n has_key_content_types \u003d [k\n                          for k, v in valid_content_types.items()\n                          if len(v) \u003d\u003d 1]\n\nMaybe build the list above so we only need to manage editing one dict to add/remove types?",
+      "revId": "e2e130d6be2ef20c9bd85f76ee4156eb449d392a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_2d2e0ba5",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1117,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-07T14:03:40Z",
+      "side": 1,
+      "message": "I think we need to add a dedicated exception type of where we\u0027re missing additional data under an item as opposed to it being missing, although that\u0027s a separate change I feel.",
+      "revId": "e2e130d6be2ef20c9bd85f76ee4156eb449d392a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
