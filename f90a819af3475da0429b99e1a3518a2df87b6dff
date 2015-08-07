@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_ae077116",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-07T17:32:57Z",
+      "side": 1,
+      "message": "Reading the doc strings this default appears to be incorrect.",
+      "revId": "f90a819af3475da0429b99e1a3518a2df87b6dff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_4e990d78",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-07T17:32:57Z",
+      "side": 1,
+      "message": "Looking back at the coments on PS18 I don\u0027t see anything covering the suggestion to switch to managing the include/exclude patterns as sub options to deployment/env-var.",
+      "revId": "f90a819af3475da0429b99e1a3518a2df87b6dff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_c25bb184",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-07T17:32:57Z",
+      "side": 1,
+      "message": "Taking a closer look at the plugin wiki page suggests this controls whether the options around the deployment-patterns-{include,exclude} have any effect?\n\nSeems like this should look to ignore those options if this is not set to true.",
+      "revId": "f90a819af3475da0429b99e1a3518a2df87b6dff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_823849d4",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-07T17:32:57Z",
+      "side": 1,
+      "message": "Taking a closer look at the plugin wiki page suggests this controls whether the option below has any effect. Is that correct?",
+      "revId": "f90a819af3475da0429b99e1a3518a2df87b6dff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_cee99d80",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 2388,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-07T17:32:57Z",
+      "side": 1,
+      "message": "Needs to switch to using the same format as the other entries:\n\n :jenkins-wiki: `Artifactory Plugin \u003cArtifactory+Plugin\u003e`.",
+      "revId": "f90a819af3475da0429b99e1a3518a2df87b6dff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_4e8a6d65",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 2481,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-07T17:32:57Z",
+      "side": 1,
+      "message": "This doesn\u0027t format in the resulting docs correctly, needs to be a single \u0027:\u0027.",
+      "revId": "f90a819af3475da0429b99e1a3518a2df87b6dff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_4e4fcd33",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 2483,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-07T17:32:57Z",
+      "side": 1,
+      "message": "A closer look suggests this should have two examples here, the second one exercising most if not all of the options, which will also ensure that the code in the helpers is all run.",
+      "revId": "f90a819af3475da0429b99e1a3518a2df87b6dff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f39d62bc",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 1572,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-07T17:32:57Z",
+      "side": 1,
+      "message": "You\u0027re duplicating some text here so the produced doc looks a little odd, should be:\n\n Wrapper for non-Maven projects. Requires the\n :jenkins-wiki:`Artifactory Plugin \u003cArtifactory+Plugin\u003e`",
+      "revId": "f90a819af3475da0429b99e1a3518a2df87b6dff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_93adfeea",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 1617,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-07T17:32:57Z",
+      "side": 1,
+      "message": "You\u0027re duplicating some text here so the produced doc looks a little odd, should be:\n\n Wrapper for non-Maven projects. Requires the\n :jenkins-wiki:`Artifactory Plugin \u003cArtifactory+Plugin\u003e`",
+      "revId": "f90a819af3475da0429b99e1a3518a2df87b6dff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_ce58bd33",
+        "filename": "tests/publishers/fixtures/artifactory01.xml",
+        "patchSetId": 21
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-07T17:32:57Z",
+      "side": 1,
+      "message": "As mentioned in comments on helper.py, this appears to be incorrect, or at least inconsistent with the docstring.",
+      "revId": "f90a819af3475da0429b99e1a3518a2df87b6dff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
