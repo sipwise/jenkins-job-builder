@@ -274,6 +274,40 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_0a5791ca",
+        "filename": "setup.cfg",
+        "patchSetId": 9
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-07T00:07:46Z",
+      "side": 1,
+      "message": "i think this should be \u0027jenkins_jobs.modules.view_list:List\u0027",
+      "revId": "a51218f74ed0e0b2148947504c9402c235589fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_8a02c1b2",
+        "filename": "setup.cfg",
+        "patchSetId": 9
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-07T00:07:46Z",
+      "side": 1,
+      "message": "i think this should be \u0027jenkins_jobs.modules.view_pipeline:Pipeline\u0027",
+      "revId": "a51218f74ed0e0b2148947504c9402c235589fd0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_d8f19196",
         "filename": "tests/view_list/fixtures/list_view001.yaml",
         "patchSetId": 9
