@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_025e5045",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 970,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-08-09T14:50:50Z",
+      "side": 1,
+      "message": "Yes, it seems odd. I think this should have been a required field. But it does not say so in the Jenkins UI and accepts a blank path field. The documentation also does not state required/not required and the behaviour when this field is empty.",
+      "parentUuid": "1a4dcd0f_133a5b99",
+      "revId": "800f43771bae2593fa3d0e558c78e63b8b5a685c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_1361fba8",
         "filename": "setup.cfg",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-07T10:26:27Z",
       "side": 1,
       "message": "Some be one down for alphabetical order ;)",
+      "revId": "800f43771bae2593fa3d0e558c78e63b8b5a685c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_42b5387c",
+        "filename": "setup.cfg",
+        "patchSetId": 3
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-08-09T14:50:50Z",
+      "side": 1,
+      "message": "Ah, my bad!",
+      "parentUuid": "1a4dcd0f_1361fba8",
       "revId": "800f43771bae2593fa3d0e558c78e63b8b5a685c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
