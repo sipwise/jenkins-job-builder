@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f28189fc",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 679
+      },
+      "writtenOn": "2015-08-10T15:54:12Z",
+      "side": 1,
+      "message": "You might consider using monospace font on the section names, e.g.:\n\n    ``job_builder`` section\n    ^^^^^^^^^^^^^^^^^^^^^^^",
+      "revId": "3f89121250c976382f91658b76ae148420a808b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_32a131aa",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 679
+      },
+      "writtenOn": "2015-08-10T15:54:12Z",
+      "side": 1,
+      "message": "The comma after \"True\" is superfluous; the one after \"string\" should (of course) remain.",
+      "revId": "3f89121250c976382f91658b76ae148420a808b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f2e669e7",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 679
+      },
+      "writtenOn": "2015-08-10T15:54:12Z",
+      "side": 1,
+      "message": "I feel like there should be something after \"configuration\".  Maybe this rephrasing:\n\n\"You won\u0027t be able to do anything useful just yet without a configuration; that is discussed in the next section.\"",
+      "revId": "3f89121250c976382f91658b76ae148420a808b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_d2f32d9e",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 679
+      },
+      "writtenOn": "2015-08-10T15:54:12Z",
+      "side": 1,
+      "message": "s/them/the job names/",
+      "revId": "3f89121250c976382f91658b76ae148420a808b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_7277b902",
+        "filename": "doc/source/quick-start.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 679
+      },
+      "writtenOn": "2015-08-10T15:54:12Z",
+      "side": 1,
+      "message": "s/thru/through/",
+      "revId": "3f89121250c976382f91658b76ae148420a808b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_3295b1e3",
+        "filename": "doc/source/quick-start.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 679
+      },
+      "writtenOn": "2015-08-10T15:54:12Z",
+      "side": 1,
+      "message": "I like to put the double-colon at the end of sentences like this.  As far as I know, it\u0027s valid RST.  In any case, something is needed here; maybe a colon, like you use on line 33.",
+      "revId": "3f89121250c976382f91658b76ae148420a808b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_52bf1d60",
+        "filename": "doc/source/quick-start.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 679
+      },
+      "writtenOn": "2015-08-10T15:54:12Z",
+      "side": 1,
+      "message": "s/configurations/configuration/\n\nI suggest s/folder, update/folder; you may update/",
+      "revId": "3f89121250c976382f91658b76ae148420a808b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
