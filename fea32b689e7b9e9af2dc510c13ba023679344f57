@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_0b62d7d8",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4804,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-10T11:01:41Z",
+      "side": 1,
+      "message": "Will use the global token by default, this just allows a job specific override.",
+      "parentUuid": "9a41bdd9_70b2dee6",
+      "revId": "fea32b689e7b9e9af2dc510c13ba023679344f57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a41bdd9_90a442ba",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 8
@@ -189,6 +207,24 @@
         "endLine": 4826,
         "endChar": 41
       },
+      "revId": "fea32b689e7b9e9af2dc510c13ba023679344f57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_ab488388",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4826,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-10T11:01:41Z",
+      "side": 1,
+      "message": "I believe blank messages are ignored here, similar to the auth token above, though it won\u0027t hurt to make these fully optional.",
+      "parentUuid": "9a41bdd9_f0ecaebc",
       "revId": "fea32b689e7b9e9af2dc510c13ba023679344f57",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
