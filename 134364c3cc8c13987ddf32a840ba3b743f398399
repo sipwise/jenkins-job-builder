@@ -16,6 +16,24 @@
       "revId": "134364c3cc8c13987ddf32a840ba3b743f398399",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_8e901950",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 16497
+      },
+      "writtenOn": "2015-08-10T19:00:32Z",
+      "side": 1,
+      "message": "The reason is to mimic how the extended choice parameter plugins does, in the GUI, user type the list of choice either by space separated or comma separated, or using another char as specified by \"multi\u003dselect-delimiter\". Look at https://wiki.jenkins-ci.org/display/JENKINS/Extended+Choice+Parameter+plugin for details",
+      "parentUuid": "1a4dcd0f_e1aa15d2",
+      "revId": "134364c3cc8c13987ddf32a840ba3b743f398399",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
