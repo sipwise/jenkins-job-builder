@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_0b771ba0",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-08-10T18:23:07Z",
+      "side": 1,
+      "message": "An \"xor\" infix operator would be nice...\n\n  elif user is None xor password is None",
+      "revId": "19f1e536b9c06ada73b097c4b180645d2c33d247",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
