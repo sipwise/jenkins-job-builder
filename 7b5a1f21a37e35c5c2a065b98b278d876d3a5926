@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_3a527fde",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-10T10:53:18Z",
+      "side": 1,
+      "message": "This changes the existing behaviour in what is produced for anyone currently using the hipchat functionality, which is why the ability to specify a second config containing plugins and their versions were created.\n\nIt may make more sense in the long term to switch, but generally I don\u0027t think we want to change existing behaviour without a major version release, so either retail the old behaviour or hide this behind a config option such as __future__.plugin_version_defaults_to_latest and we can start switch all plugin specific behaviour to follow that until we do a major release where that becomes the default.",
+      "revId": "7b5a1f21a37e35c5c2a065b98b278d876d3a5926",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
