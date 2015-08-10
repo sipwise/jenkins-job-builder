@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_e1aa15d2",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-08-10T17:08:14Z",
+      "side": 1,
+      "message": "Would be good to take a list of strings as input from the user and then join that in the code to generate a comma separated list in the XML",
+      "revId": "134364c3cc8c13987ddf32a840ba3b743f398399",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
