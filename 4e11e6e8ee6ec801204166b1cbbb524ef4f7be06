@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_ecfde5b1",
+        "filename": "doc/source/quick-start.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 679
+      },
+      "writtenOn": "2015-08-11T19:20:32Z",
+      "side": 1,
+      "message": "Maybe this rephrase would work a bit better:\n\n    **Caution**: JJB caches Jenkins job information locally.  Changes\n    made using the Jenkins UI will not update that cache, which may\n    lead to confusion.  See :ref:`updating-jobs` for more information.",
+      "revId": "4e11e6e8ee6ec801204166b1cbbb524ef4f7be06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
