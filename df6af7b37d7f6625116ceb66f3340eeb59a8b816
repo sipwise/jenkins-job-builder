@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_126407e3",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T14:18:40Z",
+      "side": 1,
+      "message": "There appears to be some inconsistency around the commands here.\n\nI would suggest that all should following the idea you have for your delete-all command below:\n\n jenkins-jobs \u003ccommand\u003e                    -\u003e applies to both jobs + views\n jenkins-jobs \u003ccommand\u003e -v|--views-only    -\u003e applies to views only\n jenkins-jobs \u003ccommand\u003e -j|--jobs-only     -\u003e applies to jobs only",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_725eabea",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T14:18:40Z",
+      "side": 1,
+      "message": "I think we made a mistake previously where we should have invalided the local cached object if it was found on jenkins. Or decided on a strategy around a timelimit or ability to decide whether to force a refresh at this point if there was a cache miss.\n\nseparate change though.",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_c146cb4e",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T14:18:40Z",
+      "side": 1,
+      "message": "views_glob?",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_e14bc729",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T14:18:40Z",
+      "side": 1,
+      "message": "Lets not overload update_job to be used to update views as well. Lets put them in separate methods, and then have a common method to call both of them if needed.",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_81076380",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T14:18:40Z",
+      "side": 1,
+      "message": "I think that either we should make these options really \u0027only\u0027 options and have them as a mutally exclusive group, or have --[skip-]views and --[skip-]jobs options instead to make it clear that they either can or cannot be used together respectively.\n\nI think also realistically these should be selectable on all of the commands they could apply to, that includes test \u0026 update. Which can be done by creating a parent parser as done for the recursive options above.",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_d7952940",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T14:18:40Z",
+      "side": 1,
+      "message": "given the names of these attributes, if both are \u0027True\u0027 this should really abort as an error condition since how can you delete \u0027only\u0027 of both.",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_b1d508e6",
+        "filename": "jenkins_jobs/modules/base_view.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T14:18:40Z",
+      "side": 1,
+      "message": "Seems like this entire class/file is unnecessary?\n\nOr at the very least the handling below is being duplicated in both list and pipeline view classes and you should be subclassing from this class instead of the directly from the base class.\n\nThe alternative is to mirror the General class, add a sequence number to this class and maybe tweak both this and the General class to ensure they are only applied for Views or Jobs and not both.\n\nBtw, this also means that you should stick a view only setting into a job definition and a job only setting into a view definition and have the tests confirm that these do not get applied to the resulting XML.",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_cbe825e5",
+        "filename": "jenkins_jobs/modules/base_view.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T14:18:40Z",
+      "side": 1,
+      "message": "Lets avoid the camel case for variable names. Really prefer not to see another style variation being introduced into the project.\n\nThat goes for the other files as well.",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_ce6913c0",
+        "filename": "jenkins_jobs/modules/view_pipeline.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T14:18:40Z",
+      "side": 1,
+      "message": "Is the version really needed? otherwise these are generally not included anywhere in JJB.\n\nUltimately we may have to revisit that, in case we should be specifying the minimum XML version it\u0027s compatible with for any Jenkins internal XML updating for plugins to fire when given an older definition, but until then keep with the existing approach of not including the version.",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_2e8517ce",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T14:18:40Z",
+      "side": 1,
+      "message": "Lets not overload these methods, create a separate one for views and call it from above in the generateXML() method depending which one should be used.",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_6e50ff32",
+        "filename": "tests/base.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T14:18:40Z",
+      "side": 1,
+      "message": "We should probably throw an exception here if it\u0027s not recognised. That\u0027s also missing from above.\n\nWonder if we could look up the entry points here as well, seems like it might be useful to help exercise the top level entry points. Also missing from the jobs above.\n\nI\u0027ll look at fixing the issues with the jobs part separately so as this patch remains purely about the views.",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_510604cf",
+        "filename": "tests/view_list/fixtures/list_view001.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T14:18:40Z",
+      "side": 1,
+      "message": "What happens during view creation if these jobs don\u0027t exist? Does it reject it, or just silently ignore the missing jobs?\n\nI\u0027ve a feeling that we may want to do some additional checking to make sure such jobs are known and warn the user if they don\u0027t exist, but as long as it\u0027s not going to prevent the view from being created that can be an add on patch.\n\n\nCould be interesting to also add support to jobs to declare which view(s) they should appear in ;), another future improvement.",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
