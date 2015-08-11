@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_b7e2d39e",
+        "filename": "tests/base.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T15:41:49Z",
+      "side": 1,
+      "message": "rebasing onto I6abb85f0363a48f220914c52b74e5a5fb65b0faa should take care of the config issues since we should really always use a ConfigParser object and avoid use of the dict as a alternative default above.",
+      "revId": "999eca484d7e2f9e11ff9ba951937fa4b7bd8d1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
