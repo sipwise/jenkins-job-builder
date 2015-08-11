@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_39fb127d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4879,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T17:26:31Z",
+      "side": 1,
+      "message": "Think both of these should now be marked as optional instead of \u0027\u0027 which would be correct for a string, but not a list.\n\nJust meant that if you wished to allow users to control the separator to be used, that an additional option to be used by JJB would have to be added here to allow that to override the selected one.\n\nSince you\u0027ve decided to use \u0027 \u0027 as the separator, should call this out in the docstring so that the user knows what to expect.",
+      "revId": "873e87f8e6d08214098383e668f6729ec3aef2ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_b99082ee",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4913,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T17:26:31Z",
+      "side": 1,
+      "message": "the loop doesn\u0027t seem necessary, if the XML elements should be defined when empty:\n\n    XML.SubElement(whitesource, \u0027libIncludes\u0027).text \u003d \u0027 \u0027.join(\n        data.get(\u0027includes\u0027, [])\n    XML.SubElement(whitesource, \u0027libExcludes\u0027).text \u003d \u0027 \u0027.join(\n        data.get(\u0027excludes\u0027, [])\n\nOr if they should be skipped completely:\n\n    if \u0027includes\u0027 in data:\n        XML.SubElement(whitesource, \u0027libIncludes\u0027).text \u003d \u0027 \u0027.join(\n            data[\u0027includes\u0027])\n    if \u0027excludes\u0027 in data:\n        XML.SubElement(whitesource, \u0027libExcludes\u0027).text \u003d \u0027 \u0027.join(\n            data[\u0027excludes\u0027])\n\n\nWe should probably add a helper at some stage that can be provided the data to lookup, name/key to find, and separator string to use. Where it can throw an error if the data retrieved is not in a list-type container.",
+      "revId": "873e87f8e6d08214098383e668f6729ec3aef2ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_f9b12a90",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4914,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T17:26:31Z",
+      "side": 1,
+      "message": "Should this be configurable? Didn\u0027t see an answer from previously.",
+      "revId": "873e87f8e6d08214098383e668f6729ec3aef2ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
