@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_beb6283c",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 839,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T16:55:06Z",
+      "side": 1,
+      "message": "Can you add the defaults to each of these please. \"(default \u0027False\u0027)\" to the end of each should be sufficient.\n\nFiltered Branches would be what in this case? What is handled by the below options?",
+      "revId": "164ab133e61ae2c2ce439162ce1d404e8480f665",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_fe97d08d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 845,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T16:55:06Z",
+      "side": 1,
+      "message": "Just indent the following line by four spaces from the start of the previous to avoid needing the \u0027\\\u0027 for continuation.",
+      "revId": "164ab133e61ae2c2ce439162ce1d404e8480f665",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_be8dc87d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T16:55:06Z",
+      "side": 1,
+      "message": "Somewhat more conventional to use (\u0027yaml\u0027, \u0027XML\u0027) as the mappings, so better to stick with that.",
+      "revId": "164ab133e61ae2c2ce439162ce1d404e8480f665",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_3ec77899",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 869,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T16:55:06Z",
+      "side": 1,
+      "message": "Don\u0027t see a default here, which will result in \u0027None\u0027 being used if nothing is specified by the user for the boolean options.\n\nForgot \u0027False\u0027 as the second argument to the \u0027get()\u0027 call?\n\nSuggest looking at the mapping used for git and probably dealing with iterable based items separately.",
+      "revId": "164ab133e61ae2c2ce439162ce1d404e8480f665",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_3e5538c1",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 874,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T16:55:06Z",
+      "side": 1,
+      "message": "You\u0027re duplicating the retrieval of value here.",
+      "revId": "164ab133e61ae2c2ce439162ce1d404e8480f665",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_fefa70bc",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T16:55:06Z",
+      "side": 1,
+      "message": "Try to keep to alphabetical ordering.",
+      "revId": "164ab133e61ae2c2ce439162ce1d404e8480f665",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_7ea2e0af",
+        "filename": "tests/triggers/fixtures/gitlab.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T16:55:06Z",
+      "side": 1,
+      "message": "This seems like a noticeable departure from the previous version, did you test against a newer version of the plugin?",
+      "revId": "164ab133e61ae2c2ce439162ce1d404e8480f665",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_7e2d0045",
+        "filename": "tests/triggers/fixtures/gitlab.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T16:55:06Z",
+      "side": 1,
+      "message": "I\u0027d suggest adding a second example that is intended to use the bare minimum to exercise the defaults.",
+      "revId": "164ab133e61ae2c2ce439162ce1d404e8480f665",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
