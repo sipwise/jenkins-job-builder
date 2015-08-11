@@ -818,6 +818,55 @@ def gitlab_merge_request(parser, xml_parent, data):
     XML.SubElement(ghprb, '__projectPath').text = data.get('project-path')
 
 
+def gitlab(parser, xml_parent, data):
+    """yaml: gitlab
+    Makes Jenkins act like a GitlabCI server
+    Requires the Jenkins :jenkins-wiki:`Gitlab Plugin.
+    <Gitlab+Plugin>`.
+
+    :arg bool trigger-push: Build on Push Events
+    :arg bool trigger-mergerequest: Build on Merge Request Events
+    :arg bool trigger-open-mergerequest-push: Rebuild open Merge Requests on
+        Push Events
+    :arg bool ci-skip: Enable [ci-skip]
+    :arg bool set-build-description: Set build description to build cause
+        (eg. Merge request or Git Push )
+    :arg bool add-note-mergerequest: Add note with build status on
+        merge requests
+    :arg bool add-vote-mergerequest: Vote added to note with build status
+        on merge requests
+    :arg bool allow-all-branches: Allow all branches (Ignoring Filtered
+        Branches)
+
+    Example:
+
+    .. literalinclude:: \
+        /../../tests/triggers/fixtures/gitlab.yaml
+    """
+    gitlab = XML.SubElement(
+        xml_parent, 'com.dabsquared.gitlabjenkins.GitLabPushTrigger'
+    )
+    mapping = (
+        ('triggerOnPush', 'trigger-push'),
+        ('triggerOnMergeRequest', 'trigger-mergerequest'),
+        ('triggerOpenMergeRequestOnPush', 'trigger-open-mergerequest-push'),
+        ('ciSkip', 'ci-skip'),
+        ('setBuildDescription', 'set-build-description'),
+        ('addNoteOnMergeRequest', 'add-note-mergerequest'),
+        ('addVoteOnMergeRequest', 'add-vote-mergerequest'),
+        ('allowAllBranches', 'allow-all-branches'),
+    )
+
+    XML.SubElement(gitlab, 'spec').text = ''
+
+    for xml_name, data_src in mapping:
+        XML.SubElement(gitlab, xml_name).text = str(data.get(data_src)).lower()
+
+    allowed_branches = XML.SubElement(gitlab, 'allowedBranches')
+    for allowed_branch in data['allowed-branches']:
+        XML.SubElement(allowed_branches, 'branch').text = allowed_branch
+
+
 def build_result(parser, xml_parent, data):
     """yaml: build-result
     Configure jobB to monitor jobA build result. A build is scheduled if there
