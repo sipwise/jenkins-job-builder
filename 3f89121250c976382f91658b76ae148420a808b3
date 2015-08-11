@@ -122,6 +122,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_f9cb6a51",
+        "filename": "doc/source/quick-start.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 679
+      },
+      "writtenOn": "2015-08-11T17:17:52Z",
+      "side": 1,
+      "message": "Perhaps.  The real problem here is that this line needs to end with some sort of punctuation.  As I say, a trailing colon, like is used on line 33, would be appropriate if the double colon isn\u0027t moved.",
+      "parentUuid": "1a4dcd0f_de29b49c",
+      "revId": "3f89121250c976382f91658b76ae148420a808b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_52bf1d60",
         "filename": "doc/source/quick-start.rst",
         "patchSetId": 3
