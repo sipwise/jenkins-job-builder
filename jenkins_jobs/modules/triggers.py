@@ -818,6 +818,68 @@ def gitlab_merge_request(parser, xml_parent, data):
     XML.SubElement(ghprb, '__projectPath').text = data.get('project-path')
 
 
+def gitlab(parser, xml_parent, data):
+    """yaml: gitlab
+    Makes Jenkins act like a GitlabCI server
+    Requires the Jenkins :jenkins-wiki:`Gitlab Plugin.
+    <Gitlab+Plugin>`.
+
+    :arg bool trigger-push: Build on Push Events (default: true)
+    :arg bool trigger-mergerequest: Build on Merge Request Events (default:
+        True)
+    :arg bool trigger-open-mergerequest-push: Rebuild open Merge Requests on
+        Push Events (default: True)
+    :arg bool ci-skip: Enable [ci-skip] (default True)
+    :arg bool set-build-description: Set build description to build cause
+        (eg. Merge request or Git Push ) (default: True)
+    :arg bool add-note-mergerequest: Add note with build status on
+        merge requests (default: True)
+    :arg bool add-vote-mergerequest: Vote added to note with build status
+        on merge requests (default: True)
+    :arg bool allow-all-branches: Allow all branches (Ignoring Filtered
+        Branches) (default: False)
+    :arg list include-branches: Defined list of branches to include
+    :arg list exclude-branches: Defined list of branches to exclude
+
+    Example:
+
+    .. literalinclude::
+        /../../tests/triggers/fixtures/gitlab001.yaml
+    """
+    def _add_xml(elem, name, value):
+        XML.SubElement(elem, name).text = value
+
+    gitlab = XML.SubElement(
+        xml_parent, 'com.dabsquared.gitlabjenkins.GitLabPushTrigger'
+    )
+
+    bool_mapping = (
+        ('trigger-push', 'triggerOnPush', True),
+        ('trigger-mergerequest', 'triggerOnMergeRequest', True),
+        ('trigger-open-mergerequest-push', 'triggerOpenMergeRequestOnPush',
+            True),
+        ('ci-skip', 'ciSkip', True),
+        ('set-build-description', 'setBuildDescription', True),
+        ('add-note-mergerequest', 'addNoteOnMergeRequest', True),
+        ('add-vote-mergerequest', 'addVoteOnMergeRequest', True),
+        ('allow-all-branches', 'allowAllBranches', False),
+    )
+    list_mapping = (
+        ('include-branches', 'includeBranchesSpec', []),
+        ('exclude-branches', 'excludeBranchesSpec', []),
+    )
+
+    XML.SubElement(gitlab, 'spec').text = ''
+
+    for yaml_name, xml_name, default_val in bool_mapping:
+        value = str(data.get(yaml_name, default_val)).lower()
+        _add_xml(gitlab, xml_name, value)
+
+    for yaml_name, xml_name, default_val in list_mapping:
+        value = ', '.join(data.get(yaml_name, default_val))
+        _add_xml(gitlab, xml_name, value)
+
+
 def build_result(parser, xml_parent, data):
     """yaml: build-result
     Configure jobB to monitor jobA build result. A build is scheduled if there
