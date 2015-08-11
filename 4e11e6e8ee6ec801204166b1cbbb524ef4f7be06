@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a4dcd0f_ac3d9d90",
+        "filename": "doc/source/quick-start.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-11T19:21:38Z",
+      "side": 1,
+      "message": "This one looks a little out of place now, but doesn\u0027t impact the resulting documentation.",
+      "revId": "4e11e6e8ee6ec801204166b1cbbb524ef4f7be06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_ecfde5b1",
         "filename": "doc/source/quick-start.rst",
         "patchSetId": 4
