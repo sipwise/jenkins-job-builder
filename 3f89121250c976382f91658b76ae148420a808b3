@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_e0ef2eaf",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-11T18:59:42Z",
+      "side": 1,
+      "message": "Good idea, but changing to monospace would require updating all other sections for consistency so I\u0027ll leave this for another change.",
+      "parentUuid": "1a4dcd0f_f28189fc",
+      "revId": "3f89121250c976382f91658b76ae148420a808b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_32a131aa",
         "filename": "doc/source/execution.rst",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-10T15:54:12Z",
       "side": 1,
       "message": "The comma after \"True\" is superfluous; the one after \"string\" should (of course) remain.",
+      "revId": "3f89121250c976382f91658b76ae148420a808b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_20faf675",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-11T18:59:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_32a131aa",
       "revId": "3f89121250c976382f91658b76ae148420a808b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_e01deebe",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-11T18:59:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_f2e669e7",
+      "revId": "3f89121250c976382f91658b76ae148420a808b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_d2f32d9e",
         "filename": "doc/source/execution.rst",
         "patchSetId": 3
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_00725a11",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-11T18:59:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_d2f32d9e",
+      "revId": "3f89121250c976382f91658b76ae148420a808b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_7277b902",
         "filename": "doc/source/quick-start.rst",
         "patchSetId": 3
@@ -81,6 +153,24 @@
       "writtenOn": "2015-08-10T15:54:12Z",
       "side": 1,
       "message": "s/thru/through/",
+      "revId": "3f89121250c976382f91658b76ae148420a808b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_e04baeaf",
+        "filename": "doc/source/quick-start.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-11T18:59:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_7277b902",
       "revId": "3f89121250c976382f91658b76ae148420a808b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -140,6 +230,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_a0c84623",
+        "filename": "doc/source/quick-start.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-11T18:59:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_3295b1e3",
+      "revId": "3f89121250c976382f91658b76ae148420a808b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_52bf1d60",
         "filename": "doc/source/quick-start.rst",
         "patchSetId": 3
@@ -151,6 +259,24 @@
       "writtenOn": "2015-08-10T15:54:12Z",
       "side": 1,
       "message": "s/configurations/configuration/\n\nI suggest s/folder, update/folder; you may update/",
+      "revId": "3f89121250c976382f91658b76ae148420a808b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_405dc245",
+        "filename": "doc/source/quick-start.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-11T18:59:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_52bf1d60",
       "revId": "3f89121250c976382f91658b76ae148420a808b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
