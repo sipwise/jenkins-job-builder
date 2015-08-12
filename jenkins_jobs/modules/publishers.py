@@ -35,6 +35,7 @@ from jenkins_jobs.modules.helpers import findbugs_settings
 from jenkins_jobs.errors import (InvalidAttributeError,
                                  JenkinsJobsException,
                                  MissingAttributeError)
+from six.moves import configparser
 import logging
 import pkg_resources
 import sys
@@ -3463,13 +3464,31 @@ def stash(parser, xml_parent, data):
     .. literalinclude:: /../../tests/publishers/fixtures/stash001.yaml
        :language: yaml
     """
+    logger = logging.getLogger(__name__)
+
+    def _get_value_from_yaml_or_config_file(value):
+        result = data.get(value, '')
+        if result == '':
+            try:
+                result = parser.config.get(
+                    'stash_publisher', value
+                )
+            except (configparser.NoSectionError, configparser.NoOptionError,
+                    jenkins_jobs.errors.JenkinsJobsException) as e:
+                logger.warning("You didn't set a stash " + value +
+                               " neither in the yaml job definition or in" +
+                               " the stash_publisher section, blank default" +
+                               " value will be applied:\n{0}".format(e))
+        return result
 
     top = XML.SubElement(xml_parent,
                          'org.jenkinsci.plugins.stashNotifier.StashNotifier')
 
     XML.SubElement(top, 'stashServerBaseUrl').text = data.get('url', '')
-    XML.SubElement(top, 'stashUserName').text = data.get('username', '')
-    XML.SubElement(top, 'stashUserPassword').text = data.get('password', '')
+    XML.SubElement(top, 'stashUserName').text = \
+        _get_value_from_yaml_or_config_file('username')
+    XML.SubElement(top, 'stashUserPassword').text = \
+        _get_value_from_yaml_or_config_file('password')
     XML.SubElement(top, 'ignoreUnverifiedSSLPeer').text = str(
         data.get('ignore-ssl', False)).lower()
     XML.SubElement(top, 'commitSha1').text = data.get('commit-sha1', '')
