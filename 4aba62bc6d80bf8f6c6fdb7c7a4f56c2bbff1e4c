@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_2a287132",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-08-12T11:08:07Z",
+      "side": 1,
+      "message": "missing dot.",
+      "revId": "4aba62bc6d80bf8f6c6fdb7c7a4f56c2bbff1e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_8aee65eb",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-08-12T11:08:07Z",
+      "side": 1,
+      "message": "I couldn\u0027t get this \"any time\". Could it be rephrased to make it clear?",
+      "revId": "4aba62bc6d80bf8f6c6fdb7c7a4f56c2bbff1e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_ea936959",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-08-12T11:08:07Z",
+      "side": 1,
+      "message": "could perhaps be \"that has not been declared in the input yaml file\"",
+      "revId": "4aba62bc6d80bf8f6c6fdb7c7a4f56c2bbff1e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_aad561e5",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-08-12T11:08:07Z",
+      "side": 1,
+      "message": "can we have YAML consistent all over the document, either all uppercase or lowercase.",
+      "revId": "4aba62bc6d80bf8f6c6fdb7c7a4f56c2bbff1e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_eaf6098e",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-08-12T11:08:07Z",
+      "side": 1,
+      "message": "not just upload but also create/reconfigure jobs.",
+      "revId": "4aba62bc6d80bf8f6c6fdb7c7a4f56c2bbff1e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_ead929f4",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-08-12T11:08:07Z",
+      "side": 1,
+      "message": "I think the sentence starting with \"Obsolete jobs...\" can be moved after delete-old example since this paragraph talks about delete-old and then obsolete jobs.",
+      "revId": "4aba62bc6d80bf8f6c6fdb7c7a4f56c2bbff1e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_cadead6c",
+        "filename": "doc/source/quick-start.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-08-12T11:08:07Z",
+      "side": 1,
+      "message": "JJB creates Jenkins XML configuration file -\u003e JJB creates Jenkins job XML configuration file\n\nshould it say \"creates/reconfigures the job using the generated job XML configuration file\" instead of \"just uploads\" to define what JJB really does. (or deploys the job)\n\nconvienant -\u003e convenient",
+      "revId": "4aba62bc6d80bf8f6c6fdb7c7a4f56c2bbff1e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_0a3ed58a",
+        "filename": "doc/source/quick-start.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-08-12T11:08:07Z",
+      "side": 1,
+      "message": "This should perhaps be creating/reconfiguring/deploying jobs instead of uploading.",
+      "revId": "4aba62bc6d80bf8f6c6fdb7c7a4f56c2bbff1e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
