@@ -565,16 +565,42 @@ def pollscm(parser, xml_parent, data):
     """yaml: pollscm
     Poll the SCM to determine if there has been a change.
 
-    :arg string pollscm: the polling interval (cron syntax)
+    :arg string cron: the polling interval (cron syntax)
+    :arg bool ignore-post-commit-hooks: Ignore changes notified by SCM
+        post-commit hooks. This can be useful if you want to prevent
+        some long-running jobs (e.g. reports) starting because of every
+        commit, but still want to run them periodic if SCM changes have
+        occurred. Note that this option needs to be supported by the SCM
+        plugin, too! The subversion-plugin supports this since version
+        1.44. (default false)
 
     Example:
 
     .. literalinclude:: /../../tests/triggers/fixtures/pollscm001.yaml
+    .. literalinclude:: /../../tests/triggers/fixtures/pollscm002.yaml
        :language: yaml
     """
 
+    # To keep backward compatibility
+    if type(data) == type(str()):
+        logger.warn("Your pollscm usage is deprecated, please use"
+                    " the syntax described in the documentation"
+                    " instead")
+        cron = data
+        ipch = False
+    elif data is None:
+        logger.warn("Empty pollscm trigger doesn't make sense")
+        cron = ''
+        ipch = False
+    else:
+        cron = str(data.get('cron', ''))
+        ipch = str(data.get('ignore-post-commit-hooks', False)).lower()
+        if cron == '':
+            logger.warn("No cron expression defined in pollscm")
+
     scmtrig = XML.SubElement(xml_parent, 'hudson.triggers.SCMTrigger')
-    XML.SubElement(scmtrig, 'spec').text = data
+    XML.SubElement(scmtrig, 'spec').text = cron
+    XML.SubElement(scmtrig, 'ignorePostCommitHooks').text = ipch
 
 
 def build_pollurl_content_type(xml_parent, entries, prefix,
