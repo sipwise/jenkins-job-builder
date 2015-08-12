@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_db798694",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-12T19:04:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_2a287132",
+      "revId": "4aba62bc6d80bf8f6c6fdb7c7a4f56c2bbff1e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_8aee65eb",
         "filename": "doc/source/execution.rst",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-12T11:08:07Z",
       "side": 1,
       "message": "I couldn\u0027t get this \"any time\". Could it be rephrased to make it clear?",
+      "revId": "4aba62bc6d80bf8f6c6fdb7c7a4f56c2bbff1e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_dba0a6f6",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-12T19:04:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_8aee65eb",
       "revId": "4aba62bc6d80bf8f6c6fdb7c7a4f56c2bbff1e4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_9b7d3e6f",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-12T19:04:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_ea936959",
+      "revId": "4aba62bc6d80bf8f6c6fdb7c7a4f56c2bbff1e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_aad561e5",
         "filename": "doc/source/execution.rst",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2015-08-12T11:08:07Z",
       "side": 1,
       "message": "can we have YAML consistent all over the document, either all uppercase or lowercase.",
+      "revId": "4aba62bc6d80bf8f6c6fdb7c7a4f56c2bbff1e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_1b8a8e64",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-12T19:04:26Z",
+      "side": 1,
+      "message": "I think that should be a separate change, which you are welcome to do :)",
+      "parentUuid": "1a4dcd0f_aad561e5",
       "revId": "4aba62bc6d80bf8f6c6fdb7c7a4f56c2bbff1e4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_5bdb367c",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-12T19:04:26Z",
+      "side": 1,
+      "message": "I like it as-is",
+      "parentUuid": "1a4dcd0f_eaf6098e",
+      "revId": "4aba62bc6d80bf8f6c6fdb7c7a4f56c2bbff1e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_ead929f4",
         "filename": "doc/source/execution.rst",
         "patchSetId": 5
@@ -98,6 +188,24 @@
       "writtenOn": "2015-08-12T11:08:07Z",
       "side": 1,
       "message": "I think the sentence starting with \"Obsolete jobs...\" can be moved after delete-old example since this paragraph talks about delete-old and then obsolete jobs.",
+      "revId": "4aba62bc6d80bf8f6c6fdb7c7a4f56c2bbff1e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_bb391aa6",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-12T19:04:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_ead929f4",
       "revId": "4aba62bc6d80bf8f6c6fdb7c7a4f56c2bbff1e4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_600a0328",
+        "filename": "doc/source/quick-start.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-12T19:04:26Z",
+      "side": 1,
+      "message": "I like it as is better since i want to emphasize JJB\u0027s ability to upload the configuration files to Jenkins.  Fixed the spelling though.",
+      "parentUuid": "1a4dcd0f_cadead6c",
+      "revId": "4aba62bc6d80bf8f6c6fdb7c7a4f56c2bbff1e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_0a3ed58a",
         "filename": "doc/source/quick-start.rst",
         "patchSetId": 5
@@ -132,6 +258,24 @@
       "writtenOn": "2015-08-12T11:08:07Z",
       "side": 1,
       "message": "This should perhaps be creating/reconfiguring/deploying jobs instead of uploading.",
+      "revId": "4aba62bc6d80bf8f6c6fdb7c7a4f56c2bbff1e4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_bb283a87",
+        "filename": "doc/source/quick-start.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-12T19:04:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_0a3ed58a",
       "revId": "4aba62bc6d80bf8f6c6fdb7c7a4f56c2bbff1e4c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
