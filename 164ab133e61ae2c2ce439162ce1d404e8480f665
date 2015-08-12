@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_bd7dae6e",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 845,
+      "author": {
+        "id": 17855
+      },
+      "writtenOn": "2015-08-12T14:31:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_fe97d08d",
+      "revId": "164ab133e61ae2c2ce439162ce1d404e8480f665",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_be8dc87d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 2
@@ -47,6 +65,24 @@
       "writtenOn": "2015-08-11T16:55:06Z",
       "side": 1,
       "message": "Somewhat more conventional to use (\u0027yaml\u0027, \u0027XML\u0027) as the mappings, so better to stick with that.",
+      "revId": "164ab133e61ae2c2ce439162ce1d404e8480f665",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_1d8dc27b",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 17855
+      },
+      "writtenOn": "2015-08-12T14:31:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_be8dc87d",
       "revId": "164ab133e61ae2c2ce439162ce1d404e8480f665",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_54c55759",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 869,
+      "author": {
+        "id": 17855
+      },
+      "writtenOn": "2015-08-12T14:31:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_3ec77899",
+      "revId": "164ab133e61ae2c2ce439162ce1d404e8480f665",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_3e5538c1",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 2
@@ -81,6 +135,24 @@
       "writtenOn": "2015-08-11T16:55:06Z",
       "side": 1,
       "message": "You\u0027re duplicating the retrieval of value here.",
+      "revId": "164ab133e61ae2c2ce439162ce1d404e8480f665",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_b4ccdb89",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 874,
+      "author": {
+        "id": 17855
+      },
+      "writtenOn": "2015-08-12T14:31:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_3e5538c1",
       "revId": "164ab133e61ae2c2ce439162ce1d404e8480f665",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_d495e731",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 17855
+      },
+      "writtenOn": "2015-08-12T14:31:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_fefa70bc",
+      "revId": "164ab133e61ae2c2ce439162ce1d404e8480f665",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_7ea2e0af",
         "filename": "tests/triggers/fixtures/gitlab.xml",
         "patchSetId": 2
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_54031710",
+        "filename": "tests/triggers/fixtures/gitlab.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 17855
+      },
+      "writtenOn": "2015-08-12T14:31:21Z",
+      "side": 1,
+      "message": "https://github.com/jenkinsci/gitlab-plugin/commit/4eaf7cabe6c644625426b59b178df71ca0c72459\n\nSee that commit for more input on those fields.",
+      "parentUuid": "1a4dcd0f_7ea2e0af",
+      "revId": "164ab133e61ae2c2ce439162ce1d404e8480f665",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_7e2d0045",
         "filename": "tests/triggers/fixtures/gitlab.yaml",
         "patchSetId": 2
@@ -132,6 +240,24 @@
       "writtenOn": "2015-08-11T16:55:06Z",
       "side": 1,
       "message": "I\u0027d suggest adding a second example that is intended to use the bare minimum to exercise the defaults.",
+      "revId": "164ab133e61ae2c2ce439162ce1d404e8480f665",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_6f451e41",
+        "filename": "tests/triggers/fixtures/gitlab.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 17855
+      },
+      "writtenOn": "2015-08-12T14:31:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_7e2d0045",
       "revId": "164ab133e61ae2c2ce439162ce1d404e8480f665",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
