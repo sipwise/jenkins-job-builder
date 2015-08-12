@@ -3,7 +3,8 @@
   <triggers class="vector">
     <hudson.triggers.SCMTrigger>
       <spec>*/15 * * * *</spec>
-      <ignorePostCommitHooks>false</ignorePostCommitHooks>
+      <spec>*/30 * * * *</spec>
+      <ignorePostCommitHooks>true</ignorePostCommitHooks>
     </hudson.triggers.SCMTrigger>
   </triggers>
 </project>
