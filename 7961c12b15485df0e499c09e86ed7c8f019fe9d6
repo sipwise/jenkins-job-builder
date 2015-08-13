@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a4dcd0f_e65a8f81",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 16418
+      },
+      "writtenOn": "2015-08-13T13:04:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_775bb086",
+      "revId": "7961c12b15485df0e499c09e86ed7c8f019fe9d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_974c3c9f",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-12T15:51:39Z",
       "side": 1,
       "message": "Is this required or optional? Does it really still work with a default value of blank?",
+      "revId": "7961c12b15485df0e499c09e86ed7c8f019fe9d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_fce461e0",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 16418
+      },
+      "writtenOn": "2015-08-13T13:04:42Z",
+      "side": 1,
+      "message": "Actually, if you set, for instance ignore-post-commit-hooks to true and miss the cron part, it will still work but will never be scheduled so what\u0027s the point of that ?\nYour question however made me think a little deeply about the backward compatibility (which is maybe your concern) and I\u0027m working on a patch to still support it, will send it soon",
+      "parentUuid": "1a4dcd0f_974c3c9f",
       "revId": "7961c12b15485df0e499c09e86ed7c8f019fe9d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
