@@ -356,6 +356,7 @@ The bulk of the job definitions come from the following modules.
    project_freestyle
    project_maven
    project_matrix
+   project_multijob
    builders
    hipchat
    metadata
