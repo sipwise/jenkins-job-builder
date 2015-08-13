@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_d07280e3",
+        "filename": "doc/source/definition.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-13T22:21:15Z",
+      "side": 1,
+      "message": "Might be better to glob project_* instead.\n\n  .. toctree::\n     :maxdepth: 2\n     :glob:\n\n     project_*\n     builders\n     hipchat\n     metadata\n     notifications\n     parameters\n     properties\n     publishers\n     reporters\n     scm\n     triggers\n     wrappers\n     zuul",
+      "revId": "1c0f9048f9a6dfde17964756d94cf6acd19e3fbd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
