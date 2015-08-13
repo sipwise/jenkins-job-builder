@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_c43e4f8b",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-08-13T18:39:43Z",
+      "side": 1,
+      "message": "It would be better to raise an exception using MissingAttributeException in errors.py if you\u0027re going to throw an error.",
+      "revId": "c06a95713c3d978634e9f98c01c2bc62be77e9f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_64b97b15",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-08-13T18:39:43Z",
+      "side": 1,
+      "message": "It would be better to raise an exception using MissingAttributeException in errors.py if you\u0027re going to throw an error.",
+      "revId": "c06a95713c3d978634e9f98c01c2bc62be77e9f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
