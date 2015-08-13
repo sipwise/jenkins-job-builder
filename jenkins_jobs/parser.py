@@ -137,30 +137,37 @@ class YamlParser(object):
             logger.warn(message)
 
     def getJob(self, name):
-        job = self.data.get('job', {}).get(name, None)
-        if not job:
-            return job
-        return self.applyDefaults(job)
+        return self.data.get('job', {}).get(name, None)
 
     def getJobGroup(self, name):
         return self.data.get('job-group', {}).get(name, None)
 
     def getJobTemplate(self, name):
-        job = self.data.get('job-template', {}).get(name, None)
-        if not job:
-            return job
-        return self.applyDefaults(job)
+        return self.data.get('job-template', {}).get(name, None)
 
     def applyDefaults(self, data, override_dict=None):
         if override_dict is None:
             override_dict = {}
 
+        def get_defaults(defaults_name):
+            defaults_dict = self.data.get('defaults', {})
+            defaults = copy.deepcopy(defaults_dict.get(defaults_name, {}))
+
+            if defaults == {} and defaults_name != 'global':
+                raise JenkinsJobsException("Unknown defaults set: '{0}'"
+                                           .format(defaults_name))
+
+            return defaults
+
         whichdefaults = data.get('defaults', 'global')
-        defaults = copy.deepcopy(self.data.get('defaults',
-                                 {}).get(whichdefaults, {}))
-        if defaults == {} and whichdefaults != 'global':
-            raise JenkinsJobsException("Unknown defaults set: '{0}'"
-                                       .format(whichdefaults))
+
+        if isinstance(whichdefaults, list):
+            defaults = {}
+            for name in whichdefaults:
+                tmp_defaults = get_defaults(name)
+                defaults.update(tmp_defaults)
+        else:
+            defaults = get_defaults(whichdefaults)
 
         for key in override_dict.keys():
             if key in defaults.keys():
@@ -277,6 +284,20 @@ class YamlParser(object):
     def expandYamlForTemplateJob(self, project, template, jobs_glob=None):
         dimensions = []
         template_name = template['name']
+
+        # project or job-group defaults should always override template
+        # defaults if they exist.
+        project_defaults = project.get('defaults', ['global'])
+        template_defaults = template.get('defaults', [])
+
+        if not isinstance(project_defaults, list):
+            project_defaults = [project_defaults]
+
+        if not isinstance(template_defaults, list):
+            template_defaults = [template_defaults]
+
+        defaults = template_defaults + project_defaults
+
         # reject keys that are not useful during yaml expansion
         for k in ['jobs']:
             project.pop(k)
@@ -292,8 +313,11 @@ class YamlParser(object):
         if len(dimensions) == 0:
             dimensions = [(("", ""),)]
 
+        template = self.applyDefaults(template)
+
         for values in itertools.product(*dimensions):
             params = copy.deepcopy(project)
+            params['defaults'] = defaults
             params = self.applyDefaults(params, template)
 
             expanded_values = {}
