@@ -6,7 +6,7 @@ Jenkins Job Builder
 Contents
 ========
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    quick-start
    installation
