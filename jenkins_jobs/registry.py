@@ -15,6 +15,10 @@
 
 # Manage Jenkins plugin module registry.
 
+try:
+    from collections import OrderedDict
+except ImportError:
+    from ordereddict import OrderedDict
 import logging
 import operator
 import pkg_resources
@@ -149,7 +153,8 @@ class ModuleRegistry(object):
         if isinstance(component, dict):
             # The component is a singleton dictionary of name: dict(args)
             name, component_data = next(iter(component.items()))
-            if template_data:
+            if template_data or \
+               isinstance(component, OrderedDict) and 'shell' in component:
                 # Template data contains values that should be interpolated
                 # into the component definition
                 s = yaml.dump(component_data, default_flow_style=False)
