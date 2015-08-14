@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_1c144c4b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3469,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-14T22:30:24Z",
+      "side": 1,
+      "message": "would be nice if you could make this method more generic and put it in  helpers.py so it can be used by other plugins.  However that\u0027s probably outside the scope of this change.\n\nI would at least change \u0027value\u0027 to \u0027param\u0027 or \u0027key\u0027 since your actually getting the value of the \u0027value\u0027.  sorry i can\u0027t explain it any better.",
+      "revId": "5a1314c5298fd990dcd8c9f0b28b60c19be33fcf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
