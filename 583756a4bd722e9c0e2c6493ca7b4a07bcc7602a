@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a4dcd0f_3fdc9a17",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-14T22:45:17Z",
+      "side": 1,
+      "message": "i would keep the pollscm and describe it as deprecated. something like..\n\n  :arg string pollscm: deprecated, use cron\n\nis this a required param?",
+      "revId": "583756a4bd722e9c0e2c6493ca7b4a07bcc7602a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_bff74a8b",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-14T22:45:17Z",
+      "side": 1,
+      "message": "if it doesn\u0027t make sense then shouldn\u0027t if throw an exception saying something is missing?  Also if you just check this first you probably don\u0027t need an elif here.",
+      "revId": "583756a4bd722e9c0e2c6493ca7b4a07bcc7602a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a4dcd0f_5f14069e",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-14T22:45:17Z",
+      "side": 1,
+      "message": "why do you need to warn here?  if it\u0027s a required param then throw an exception and tell user to fix their yaml.  Seems like failing is better than allowing something to be setup incorrectly.",
+      "revId": "583756a4bd722e9c0e2c6493ca7b4a07bcc7602a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
