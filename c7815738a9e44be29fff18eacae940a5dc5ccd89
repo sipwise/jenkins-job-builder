@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_3d2b8584",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-08-17T18:25:18Z",
+      "side": 1,
+      "message": "This is opposite of introducing a default value - it actually sets the value of the project-compare-type and/or branch-compare-type to whatever is set by user and validates that value against the valid types. One thing that is possible to do is changing the wording in the method and calling it something else rather than default_compare_type.\n\nAnother thing I want to point out that introducing a default value for project-compare-type and/or branch-compare-type causes issues as there is no default value for these arguments and must explicitly set by the user and then that value gets validated by the method.",
+      "parentUuid": "fa1b9901_8e55bd1e",
+      "revId": "c7815738a9e44be29fff18eacae940a5dc5ccd89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_2e31110c",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_3d52a514",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-08-17T18:25:18Z",
+      "side": 1,
+      "message": "same as the first comment.",
+      "parentUuid": "fa1b9901_2e31110c",
+      "revId": "c7815738a9e44be29fff18eacae940a5dc5ccd89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_ee9eb906",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2015-08-17T16:39:50Z",
       "side": 1,
       "message": "I might be missing something but I don\u0027t think passing project[\u0027project-compare-type\u0027] for the default makes sense  here.  Shouldn\u0027t you pass some static string for the default compare type, like \u0027PLAIN\u0027?",
+      "revId": "c7815738a9e44be29fff18eacae940a5dc5ccd89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_9d41713c",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-08-17T18:25:18Z",
+      "side": 1,
+      "message": "same as the first comment.",
+      "parentUuid": "fa1b9901_ee9eb906",
       "revId": "c7815738a9e44be29fff18eacae940a5dc5ccd89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +135,24 @@
       "writtenOn": "2015-08-17T16:39:50Z",
       "side": 1,
       "message": "same here.",
+      "revId": "c7815738a9e44be29fff18eacae940a5dc5ccd89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_bd3eb5b6",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-08-17T18:25:18Z",
+      "side": 1,
+      "message": "same as the first comment.",
+      "parentUuid": "fa1b9901_ce8655b9",
       "revId": "c7815738a9e44be29fff18eacae940a5dc5ccd89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
