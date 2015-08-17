@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_e9fec104",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 16418
+      },
+      "writtenOn": "2015-08-17T12:07:07Z",
+      "side": 1,
+      "message": "Yes it is required, if empty it will just not do the job so yes definitively required. Added the deprecated usage in the documentation",
+      "parentUuid": "1a4dcd0f_3fdc9a17",
+      "revId": "583756a4bd722e9c0e2c6493ca7b4a07bcc7602a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_bff74a8b",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_6913915d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 592,
+      "author": {
+        "id": 16418
+      },
+      "writtenOn": "2015-08-17T12:07:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_bff74a8b",
+      "revId": "583756a4bd722e9c0e2c6493ca7b4a07bcc7602a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_5f14069e",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2015-08-14T22:45:17Z",
       "side": 1,
       "message": "why do you need to warn here?  if it\u0027s a required param then throw an exception and tell user to fix their yaml.  Seems like failing is better than allowing something to be setup incorrectly.",
+      "revId": "583756a4bd722e9c0e2c6493ca7b4a07bcc7602a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_89106550",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 16418
+      },
+      "writtenOn": "2015-08-17T12:07:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_5f14069e",
       "revId": "583756a4bd722e9c0e2c6493ca7b4a07bcc7602a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
