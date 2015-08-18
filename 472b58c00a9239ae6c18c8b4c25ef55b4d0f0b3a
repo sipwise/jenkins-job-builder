@@ -16,6 +16,24 @@
       "revId": "472b58c00a9239ae6c18c8b4c25ef55b4d0f0b3a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_6d3028e9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-08-18T22:51:20Z",
+      "side": 1,
+      "message": "Can we trigger that it comments on these and sets their status as Merged when the change lands? I am not aware of any behaviours that are currently present",
+      "parentUuid": "fa1b9901_fa7070de",
+      "revId": "472b58c00a9239ae6c18c8b4c25ef55b4d0f0b3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
