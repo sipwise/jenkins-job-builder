@@ -1,0 +1,259 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_65736281",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2401,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T21:48:32Z",
+      "side": 1,
+      "message": "Should include \u0027(required)\u0027 at the end.",
+      "revId": "3076c6c936ce10fd3c93d3a4fd63f6d1bb9193bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_c5b90e7b",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2405,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T21:48:32Z",
+      "side": 1,
+      "message": "Mentioned this in another change, it\u0027s probably more useful to have this as a list of strings and use \u0027,\u0027.join(parameters) in the code, makes it easy to add/remove parameters for users.",
+      "revId": "3076c6c936ce10fd3c93d3a4fd63f6d1bb9193bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_c5126e09",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2409,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T21:48:32Z",
+      "side": 1,
+      "message": "both access-key and secret key should include \u0027(required)\u0027 at the end.",
+      "revId": "3076c6c936ce10fd3c93d3a4fd63f6d1bb9193bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_856eb694",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2412,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T21:48:32Z",
+      "side": 1,
+      "message": "Should include \u0027(required)\u0027 at the end.",
+      "revId": "3076c6c936ce10fd3c93d3a4fd63f6d1bb9193bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_c5cd8eb8",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2413,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T21:48:32Z",
+      "side": 1,
+      "message": "Should indent the region values, see the new formatting for `browser values` that I standardized for the SCM module https://review.openstack.org/gitweb?p\u003dopenstack-infra/jenkins-job-builder.git;a\u003dblob;f\u003djenkins_jobs/modules/scm.py;h\u003d42d4b55ed232a220dff49746b5a168ccc52ab97f;hb\u003db5867a4e5aa63ff0b4a1d99a2dea656917a7c5ca#l112",
+      "revId": "3076c6c936ce10fd3c93d3a4fd63f6d1bb9193bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_6521224d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2427,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T21:48:32Z",
+      "side": 1,
+      "message": "this just needs to be tweaked slightly to enable the proper yaml syntax highlighting. Should read:\n\n    .. literalinclude:: ../../tests/builders/fixtures/cloudformation.yaml\n       :language: yaml\n\nNote the language line is indented just one space less than currently so that the \u0027:\u0027 lines up with the start of the literalinclude.\n\nIf you take a look at http://docs-draft.openstack.org/00/202300/11/check/gate-jenkins-job-builder-docs/264d8f0//doc/build/html/builders.html you\u0027ll see that most other examples have proper highlighting, but this one doesn\u0027t.",
+      "revId": "3076c6c936ce10fd3c93d3a4fd63f6d1bb9193bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_8591d654",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T21:48:32Z",
+      "side": 1,
+      "message": "Don\u0027t be afraid to switch to the following format where it makes sense:\n\n    cloudformation \u003d XML.SubElement(\n        xml_parent, \u0027com.syncapse.jenkinsci.plugins.\u0027\n                    \u0027awscloudformationwrapper.\u0027 + xml_tag)",
+      "revId": "3076c6c936ce10fd3c93d3a4fd63f6d1bb9193bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_8578f62c",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T21:48:32Z",
+      "side": 1,
+      "message": "Ditto.",
+      "revId": "3076c6c936ce10fd3c93d3a4fd63f6d1bb9193bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_a53bbaea",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T21:48:32Z",
+      "side": 1,
+      "message": "Only change that I really think is needed is to switch parameters to a list and concatenate here using:\n\n    XML.SubElement(step, \u0027parameters\u0027).text \u003d \u0027,\u0027.join(\n        stack.get(\u0027parameters\u0027, []))",
+      "revId": "3076c6c936ce10fd3c93d3a4fd63f6d1bb9193bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_6555a24e",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 4897,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T21:48:32Z",
+      "side": 1,
+      "message": "Please add \u0027(required)\u0027 to the end of this option.",
+      "revId": "3076c6c936ce10fd3c93d3a4fd63f6d1bb9193bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_05cb861f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 4905,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T21:48:32Z",
+      "side": 1,
+      "message": "\u0027(required)\u0027 for both.",
+      "revId": "3076c6c936ce10fd3c93d3a4fd63f6d1bb9193bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_e560d237",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 4909,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T21:48:32Z",
+      "side": 1,
+      "message": "Take a look at the docstring recommended in the builders and also https://review.openstack.org/gitweb?p\u003dopenstack-infra/jenkins-job-builder.git;a\u003dblob;f\u003djenkins_jobs/modules/scm.py;h\u003d42d4b55ed232a220dff49746b5a168ccc52ab97f;hb\u003db5867a4e5aa63ff0b4a1d99a2dea656917a7c5ca#l59 which should help you format most of this so it\u0027s consistent with the documentation.",
+      "revId": "3076c6c936ce10fd3c93d3a4fd63f6d1bb9193bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_e5b692db",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 4925,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T21:48:32Z",
+      "side": 1,
+      "message": "Add the \u0027(required)\u0027 string to each of these.",
+      "revId": "3076c6c936ce10fd3c93d3a4fd63f6d1bb9193bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_05086690",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 4944,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T21:48:32Z",
+      "side": 1,
+      "message": "Wrong example :p, should be the one from the publishers.",
+      "revId": "3076c6c936ce10fd3c93d3a4fd63f6d1bb9193bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_45a97e7a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 4945,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T21:48:32Z",
+      "side": 1,
+      "message": "As mentioned in the builders.",
+      "revId": "3076c6c936ce10fd3c93d3a4fd63f6d1bb9193bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
