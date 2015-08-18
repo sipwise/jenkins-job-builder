@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_cd0ff4df",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T22:59:34Z",
+      "side": 1,
+      "message": "Of course a change to how boolean-parameters are defined would affect here as well.",
+      "revId": "c498d122da7f181cb93f983de2a339fdae7d21a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_cd5854fd",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T22:59:34Z",
+      "side": 1,
+      "message": "So if you decide to switch based on my question in the yaml file about what should happen if the same boolean parameter is listed twice.\n\n                for name, value in params_list.items():\n                    param_tag \u003d XML.SubElement(config_tag, param_tag_text)\n                    XML.SubElement(param_tag, \u0027name\u0027).text \u003d name\n                    XML.SubElement(param_tag, \u0027value\u0027).text \u003d str(\n                        value or False).lower()\n\nI think the \u0027value or False\u0027 takes care of an empty string or None to correctly evaluate as the string \u0027false\u0027 subsequently.",
+      "revId": "c498d122da7f181cb93f983de2a339fdae7d21a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_0d4e4c6f",
+        "filename": "tests/publishers/fixtures/trigger_parameterized_builds003.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T22:59:34Z",
+      "side": 1,
+      "message": "Suggestion, would the following be better?:\n\n        boolean-paramters:\n            p1: true\n            p2: false\n\nI ask since, what would be the correct thing to output if someone specified the same boolean parameter twice?\n\nSwitching to the mapping format instead of a sequence prevents this from happening.",
+      "revId": "c498d122da7f181cb93f983de2a339fdae7d21a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
