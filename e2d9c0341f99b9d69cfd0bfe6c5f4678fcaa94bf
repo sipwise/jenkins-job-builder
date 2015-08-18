@@ -16,6 +16,24 @@
       "revId": "e2d9c0341f99b9d69cfd0bfe6c5f4678fcaa94bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_17bdfd67",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-08-18T22:17:09Z",
+      "side": 1,
+      "message": "Yes, makes sense. Sorry to have missed this. I remember you pointed this out in another patch.",
+      "parentUuid": "fa1b9901_f7b729f3",
+      "revId": "e2d9c0341f99b9d69cfd0bfe6c5f4678fcaa94bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
