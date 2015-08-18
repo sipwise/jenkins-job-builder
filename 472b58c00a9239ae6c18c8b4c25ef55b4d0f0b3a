@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_fa7070de",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T22:44:04Z",
+      "side": 1,
+      "message": "should these be placed into the footer in a specific format to trigger any automated behaviour when the change lands?",
+      "revId": "472b58c00a9239ae6c18c8b4c25ef55b4d0f0b3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
