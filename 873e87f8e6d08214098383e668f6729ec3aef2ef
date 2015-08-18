@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_5099576d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4879,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2015-08-18T13:08:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_39fb127d",
+      "revId": "873e87f8e6d08214098383e668f6729ec3aef2ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_b99082ee",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_1040bfa4",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4913,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2015-08-18T13:08:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_b99082ee",
+      "revId": "873e87f8e6d08214098383e668f6729ec3aef2ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_f9b12a90",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2015-08-11T17:26:31Z",
       "side": 1,
       "message": "Should this be configurable? Didn\u0027t see an answer from previously.",
+      "revId": "873e87f8e6d08214098383e668f6729ec3aef2ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_505877fa",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4914,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2015-08-18T13:08:46Z",
+      "side": 1,
+      "message": "It is not configurable for a freestyle build.  It is only available to a maven build.  Sorry, didn\u0027t see your question before.",
+      "parentUuid": "1a4dcd0f_f9b12a90",
       "revId": "873e87f8e6d08214098383e668f6729ec3aef2ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
