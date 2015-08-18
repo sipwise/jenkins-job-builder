@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_3a03480f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 3401,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T22:22:40Z",
+      "side": 1,
+      "message": "These don\u0027t look right, particularly looking at the other build trends publishers.\n\nShould it be?\n\n        :thresholds:\n            * **unstable** (`dict`)\n                :unstable: *\n                    **total-all** (`int`)\n                    * **total-high** (`int`)\n                    * **total-normal** (`int`)\n                    * **total-low** (`int`)\n                    * **new-all** (`int`)\n                    * **new-high** (`int`)\n                    * **new-normal** (`int`)\n                    * **new-low** (`int`)\n\n            * **failed** (`dict`)\n                :failed: \n                    * **total-all** (`int`)\n                    * **total-high** (`int`)\n                    * **total-normal** (`int`)\n                    * **total-low** (`int`)\n                    * **new-all** (`int`)\n                    * **new-high** (`int`)\n                    * **new-normal** (`int`)\n                    * **new-low** (`int`)\n\n\nSeems like this should just be a copy and paste of one of the other sections?",
+      "revId": "1f22d3229767bed0b2cb8d49df7110ded2a92f85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_daa56c04",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 3404,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T22:22:40Z",
+      "side": 1,
+      "message": "Seems like this should be something other than \u0027PMD\u0027?",
+      "revId": "1f22d3229767bed0b2cb8d49df7110ded2a92f85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
