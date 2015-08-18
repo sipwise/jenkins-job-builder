@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_9aa4d4a6",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T22:39:56Z",
+      "side": 1,
+      "message": "It appears that it was missed that there were two questions around this area, one about whether there was a reason for not handling the include/exclude patterns as lists that were concatenated together, and a second one about the defaults being used for the exclude-deployment-patterns did not line up with the specified default in the docstring.\n\nI don\u0027t know whether it would have been better to keep the old format in order to have a different default or consolidate, hence I didn\u0027t specify which one and just asked if you had considered the approach. Keep in mind that not every suggestion needs be followed, just that if you\u0027re doing something different, that the review may need you to just provide a little more information so they can understand the reason for the difference.\n\nIn any case, looks like either the docstring needs to change or need a way to override the defaults easily.\n\nI would recommend avoiding using default params in this case, due to some odd behaviour would mutable default params.\n\nWould have to be something like:\n\ndef include_exclude_patterns(xml_parent, data, yaml_prefix,\n                             xml_elem_name, exclude_defaults\u003dNone):\n    if exclude_defaults is None:\n        exclude_defaults \u003d [\u0027*password*\u0027, \u0027*secret*\u0027]\n    ....\n    XML.SubElement(xml_element, \u0027excludePatterns\u0027).text \u003d \u0027,\u0027.join(\n        data.get(yaml_prefix + \u0027-exclude-patterns\u0027, exclude_defaults)",
+      "revId": "9609f971bc9b07dfbc3d176dc2e4ee801754dafb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_1ad4441e",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 2489,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T22:39:56Z",
+      "side": 1,
+      "message": "This default doesn\u0027t appear to get used.",
+      "revId": "9609f971bc9b07dfbc3d176dc2e4ee801754dafb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
