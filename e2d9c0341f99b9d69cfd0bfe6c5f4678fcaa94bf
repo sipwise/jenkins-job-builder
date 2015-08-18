@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_f7b729f3",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T22:11:08Z",
+      "side": 1,
+      "message": "Meant changing to the following which is a little easier to read in the source:\n\n    :arg list repos: List of CVS repositories. (required)\n\n        :Repos:\n            * **root** (`str`) -- The CVS connection string Jenkins uses to\n              connect to the server. The format is :protocol:user@host:path\n              (required)\n            * **locations** (`list`) -- List of locations. (required)\n\n                :Locations:\n                    * **type** (`str`) -- Type of location.\n\n                        :supported values:\n                            * **HEAD** - (default)\n                            * **BRANCH**\n                            * **TAG**\n                    * **name** (`str`) -- Name of location. Only valid\n                      in case of \u0027BRANCH\u0027 or \u0027TAG\u0027 location type. (default \u0027\u0027)\n                    * **use-head** (`bool`) -- Use Head if not found. Only\n                      valid in case of \u0027BRANCH\u0027 or \u0027TAG\u0027 location type. (default false)\n                    * **modules** (`list`) -- List of modules. (required)\n\n                        :Modules:\n                            * **remote** -- The name of the module in the\n                              repository at CVSROOT. (required)\n                            * **local-name** --  The name to be applied to this\n                              module in the local workspace. If blank, the remote\n                              module name will be used. (default \u0027\u0027)\n            * **excluded-regions** (`list str`) -- Patterns for excluding\n              regions. (optional)\n            * **compression-level** (`int`) -- Compression level. Must be a\n              number between -1 and 9 inclusive. Choose -1 for System\n              Default. (default -1)\n\n\nDoes this make sense?",
+      "revId": "e2d9c0341f99b9d69cfd0bfe6c5f4678fcaa94bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
