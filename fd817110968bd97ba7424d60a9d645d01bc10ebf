@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_0b007400",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-18T23:51:56Z",
+      "side": 1,
+      "message": "I\u0027m in two minds here since this adds an extra step to clicking through to the module documentation, since there are two \u0027Modules\u0027 you can end up going to the wrong one. See http://docs-draft.openstack.org/66/212666/3/check/gate-jenkins-job-builder-docs/2a46751//doc/build/html/#contents\n\nWondering if you meant to change this? Does it deal with another issue?",
+      "revId": "fd817110968bd97ba7424d60a9d645d01bc10ebf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
