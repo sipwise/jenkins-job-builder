@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_7e80c246",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2015-08-19T08:36:29Z",
+      "side": 1,
+      "message": "nit: add a space after \"field\" before the opening parenthesis.",
+      "range": {
+        "startLine": 53,
+        "startChar": 13,
+        "endLine": 53,
+        "endChar": 18
+      },
+      "revId": "b5867a4e5aa63ff0b4a1d99a2dea656917a7c5ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_5e105e01",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2015-08-19T08:36:29Z",
+      "side": 1,
+      "message": "Other examples use a normal single quote mark rather than a backtick.",
+      "range": {
+        "startLine": 142,
+        "startChar": 22,
+        "endLine": 142,
+        "endChar": 23
+      },
+      "revId": "b5867a4e5aa63ff0b4a1d99a2dea656917a7c5ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_5e27fe63",
+        "filename": "tests/scm/fixtures/tfs-001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2015-08-19T08:36:29Z",
+      "side": 1,
+      "message": "nit: trailing blank line",
+      "revId": "b5867a4e5aa63ff0b4a1d99a2dea656917a7c5ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
