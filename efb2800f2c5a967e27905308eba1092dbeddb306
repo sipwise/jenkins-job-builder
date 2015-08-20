@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_3428e685",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-20T11:20:03Z",
+      "side": 1,
+      "message": "I believe the documentation was incorrect before, pollscm didn\u0027t exist as an arg to the pollscm entry. Not quite sure how to phase it though.\n\nAfter all for the old format you don\u0027t use the following which is what would be suggested:\n\n    triggers:\n        - pollscm:\n            pollscm: \"string interval\"",
+      "revId": "efb2800f2c5a967e27905308eba1092dbeddb306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_d7964fef",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-20T11:20:03Z",
+      "side": 1,
+      "message": "Try and avoid reproducing the original documentation from the plugin. The first and last sentences should be sufficient. If someone needs to understand how the plugin will behave, better they read the plugin documentation so that and changes to the plugin behaviour don\u0027t require a resync of the docstring here.",
+      "revId": "efb2800f2c5a967e27905308eba1092dbeddb306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_52048d48",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-20T11:20:03Z",
+      "side": 1,
+      "message": "Should be \u0027false\u0027.",
+      "revId": "efb2800f2c5a967e27905308eba1092dbeddb306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_f2660150",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-20T11:20:03Z",
+      "side": 1,
+      "message": "MissingAttributeError is expecting the name of the attribute rather than a message.",
+      "revId": "efb2800f2c5a967e27905308eba1092dbeddb306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_1275b5f8",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-20T11:20:03Z",
+      "side": 1,
+      "message": "I think the following might be slightly better, but very little difference. Main concern is around the strict type comparison.\n\n    try:\n        cron \u003d data[\u0027cron\u0027]\n        ipch \u003d str(data.get(\u0027ignore-post-commit-hooks\u0027, False)).lower()\n    except KeyError as e:\n        # ensure specific error on the attribute not being set is raised\n        # for new format\n        raise MissingAttributeError(e.arg[0])\n    except TypeError:\n        # backward compatibility\n        logger.warn(\"Your pollscm usage is deprecated, please use\"\n                    \" the syntax described in the documentation\"\n                    \" instead\")\n        cron \u003d data\n        ipch \u003d \"false\"\n\n    if not cron:\n        # deals with an empty value being specified, although could be\n        # expanded to deal with \u0027\u0027 and None separately if you think that\n        # a NoneType for the old syntax should be checked for separately\n        raise InvalidAttributeError(\u0027cron\u0027, cron)\n    \n    scmtrig \u003d XML.SubElement(xml_parent, \u0027hudson.triggers.SCMTrigger\u0027)\n    XML.SubElement(scmtrig, \u0027spec\u0027).text \u003d cron\n    XML.SubElement(scmtrig, \u0027ignorePostCommitHooks\u0027).text \u003d ipch",
+      "revId": "efb2800f2c5a967e27905308eba1092dbeddb306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
