@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_d7eacf0e",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1620,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-20T10:35:46Z",
+      "side": 1,
+      "message": "This looks like a reproduction of the plugin help, I don\u0027t think we need that level of detail. Think it\u0027s best to just be able to correctly associate these settings with the options in the plugin and leave the details of how they work to be documented by the plugin.",
+      "revId": "8c3962f6e810689819812edbfcaa0ad3d032fce6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_b7addb9c",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1639,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-20T10:35:46Z",
+      "side": 1,
+      "message": "Do these need to be unique? What happens if someone defines the same key twice?\n\nAs long as Jenkins doesn\u0027t complain and reject an update if that occurs, it\u0027s not a problem.\n\nHowever I\u0027d recommend switching to a dictionary and using a loop below such as:\n\n    for prop_name, prop_value in data.get(\u0027hardware-properties\u0027, {}).items():\n        prop_node \u003d XML.SubElement(hardware,\n        .....",
+      "revId": "8c3962f6e810689819812edbfcaa0ad3d032fce6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_77a2e39a",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1650,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-20T10:35:46Z",
+      "side": 1,
+      "message": "Is one of them required? As in will Jenkins have a problem if neither is defined.\n\nIf so make sure to update the docstring above to indicate one of them is required and raise an exception if neither is set.",
+      "revId": "8c3962f6e810689819812edbfcaa0ad3d032fce6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_d7de4f10",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1691,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-20T10:35:46Z",
+      "side": 1,
+      "message": "For most of these seems like they could just use the following style:\n\n XML.SubElement(root, \u0027executable\u0027).text \u003d str(data.get(\u0027exe\u0027, \u0027\u0027))\n\nNo need to have the intermediate variables in most cases. This better matches the existing coding style throughout JJB.",
+      "revId": "8c3962f6e810689819812edbfcaa0ad3d032fce6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
