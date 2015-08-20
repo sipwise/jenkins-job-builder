@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_bc84e20a",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-20T10:19:25Z",
+      "side": 1,
+      "message": "I see a new candidate for a docstring formatting update ;p. Don\u0027t try and change for this patch, should be done separately.",
+      "revId": "65cb720febbb9ce641f368ea482559e31720c263",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_5c4106a8",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-20T10:19:25Z",
+      "side": 1,
+      "message": "Lets try to avoid adding more \u0027\\\u0027 for line continuations unless no other choice.\n\nEither of the following formats should deal with this\n\n                XML.SubElement(\n                    ffp_tag, \u0027pattern\u0027).text \u003d forbidden_file_path[\u0027pattern\u0027]\n\n                XML.SubElement(ffp_tag, \u0027pattern\u0027\n                               ).text \u003d forbidden_file_path[\u0027pattern\u0027]\n\nGiven there are already some here, I\u0027ll look to do a subsequent clean up rather than require it for this patch.",
+      "revId": "65cb720febbb9ce641f368ea482559e31720c263",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
