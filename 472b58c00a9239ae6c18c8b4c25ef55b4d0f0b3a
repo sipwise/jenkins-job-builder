@@ -34,6 +34,24 @@
       "revId": "472b58c00a9239ae6c18c8b4c25ef55b4d0f0b3a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_b76ab8b1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-20T11:28:54Z",
+      "side": 1,
+      "message": "There isn\u0027t but it appears you can switch to using the following format in the commit message for automatic linkage:\n\n story: #2000240\n story: #2000229\n story: #2000211\n\nIt appears that triggers some trackingids behaviour as well so you can search using \u0027tr:2000240\u0027 in gerrit\u0027s search bar to find related issues.",
+      "parentUuid": "fa1b9901_6d3028e9",
+      "revId": "472b58c00a9239ae6c18c8b4c25ef55b4d0f0b3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
