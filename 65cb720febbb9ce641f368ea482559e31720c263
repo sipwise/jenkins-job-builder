@@ -33,6 +33,24 @@
       "revId": "65cb720febbb9ce641f368ea482559e31720c263",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_d4396ad8",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-08-20T11:11:40Z",
+      "side": 1,
+      "message": "Thanks for the hints. Will keep this in mind while working on other patches.",
+      "parentUuid": "fa1b9901_5c4106a8",
+      "revId": "65cb720febbb9ce641f368ea482559e31720c263",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
