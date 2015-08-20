@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_bc7e2268",
+        "filename": "etc/jenkins_jobs.ini-sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-20T10:08:23Z",
+      "side": 1,
+      "message": "@Khai is this a naming scheme we want to follow in general in the future for plugin specific configuration settings? \"\u003cname\u003e_\u003cmodule\u003e\"\n\nOr should we continue to follow \u003cname\u003e and assume settings there used by the same plugin under multiple modules would be common to each one?",
+      "revId": "18881a7282d423412924ac304bebd4515e6b0a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_81af3529",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3476,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-20T10:08:23Z",
+      "side": 1,
+      "message": "Generally given that it\u0027s a pep8 recommendation to avoid \u0027\\\u0027 except when absolutely necessary I would prefer to see one of the following formats:\n\n    XML.SubElement(\n        top, \u0027stashUserName\u0027).text \u003d get_value_from_yaml_or_config_file(\n            \u0027username\u0027, \u0027stash_publisher\u0027, data, parser)\n\n    XML.SubElement(top, \u0027stashUserName\u0027\n                   ).text \u003d get_value_from_yaml_or_config_file(\n                       \u0027username\u0027, \u0027stash_publisher\u0027, data, parser)",
+      "revId": "18881a7282d423412924ac304bebd4515e6b0a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
