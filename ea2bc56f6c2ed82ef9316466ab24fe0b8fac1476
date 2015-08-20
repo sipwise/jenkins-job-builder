@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa1b9901_8eebf277",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2015-08-20T02:36:54Z",
+      "side": 1,
+      "message": "Might be better to reword this to something like \"If not specified, no timeout is set and the default system socket timeout will be used\".",
+      "range": {
+        "startLine": 76,
+        "startChar": 2,
+        "endLine": 76,
+        "endChar": 65
+      },
+      "revId": "ea2bc56f6c2ed82ef9316466ab24fe0b8fac1476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
