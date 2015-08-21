@@ -4884,6 +4884,52 @@ def flowdock(parser, xml_parent, data):
     gen_setting('NotBuilt', False)
 
 
+def phabricator(parser, xml_parent, data):
+    """yaml: phabricator
+    Integrate with `Phabricator <http://phabricator.org/>`_
+
+    Requires the Jenkins :jenkins-wiki:`Phabricator Plugin
+    <Phabricator+Plugin>`.
+
+    :arg bool comment-on-success: Post a *comment* when the build
+      succeeds (default: false).
+    :arg bool uberalls-enabled: Integrate with uberalls (default:
+      true).
+    :arg str comment-file: Include contents of given file if
+      commenting is enabled (default: .phabricator-comment).
+    :arg int comment-size: Maximum comment character length (default:
+      1000)
+    :arg bool comment-with-console-link-on-failure: Post a *comment*
+      when the build fails (default: false).
+
+    Example:
+
+    .. literalinclude::
+        /../../tests/publishers/fixtures/phabricator001.yaml
+       :language: yaml
+    """
+
+    root = XML.SubElement(xml_parent,
+                          'com.uber.jenkins.phabricator.PhabricatorNotifier')
+
+    if 'comment-on-success' in data:
+        XML.SubElement(root, 'commentOnSuccess').text = \
+            str(data.get('comment-on-success', False)).lower()
+    if 'uberalls-enabled' in data:
+        XML.SubElement(root, 'uberallsEnabled').text = \
+            str(data.get('uberalls-enabled', True)).lower()
+    if 'comment-file' in data:
+        XML.SubElement(root, 'commentFile').text = \
+            data.get('comment-file', '.phabricator-comment')
+    if 'comment-size' in data:
+        XML.SubElement(root, 'commentSize').text = \
+            data.get('comment-size', 1000)
+    if 'comment-with-console-link-on-failure' in data:
+        XML.SubElement(root, 'commentWithConsoleLinkOnFailure').text = \
+            str(data.get('comment-with-console-link-on-failure',
+                         False)).lower()
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
