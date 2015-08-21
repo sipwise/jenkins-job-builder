@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_ebbec763",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 569,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-21T13:17:16Z",
+      "side": 1,
+      "message": "Oops, didn\u0027t spot Khai\u0027s comment.\n\nI think we need something to indicate the old behaviour is deprecated, not sure what, and I guess without something better we should probably keep the old string.",
+      "parentUuid": "fa1b9901_3aa3efb3",
+      "revId": "efb2800f2c5a967e27905308eba1092dbeddb306",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_d7964fef",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 5
