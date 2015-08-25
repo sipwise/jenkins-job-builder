@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_8a3d3091",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-25T16:38:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_7e80c246",
+      "revId": "b5867a4e5aa63ff0b4a1d99a2dea656917a7c5ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_5e105e01",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 3
@@ -48,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "fa1b9901_8a6450b9",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-25T16:38:44Z",
+      "side": 1,
+      "message": "i kinda like the use of backticks here. keeping it as-is",
+      "parentUuid": "fa1b9901_5e105e01",
+      "revId": "b5867a4e5aa63ff0b4a1d99a2dea656917a7c5ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_5e27fe63",
         "filename": "tests/scm/fixtures/tfs-001.yaml",
         "patchSetId": 3
@@ -59,6 +95,24 @@
       "writtenOn": "2015-08-19T08:36:29Z",
       "side": 1,
       "message": "nit: trailing blank line",
+      "revId": "b5867a4e5aa63ff0b4a1d99a2dea656917a7c5ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa1b9901_8a3210a6",
+        "filename": "tests/scm/fixtures/tfs-001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-25T16:38:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa1b9901_5e27fe63",
       "revId": "b5867a4e5aa63ff0b4a1d99a2dea656917a7c5ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
