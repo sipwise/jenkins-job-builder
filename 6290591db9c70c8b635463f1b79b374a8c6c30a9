@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_2cccbe34",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4903,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-26T20:51:32Z",
+      "side": 1,
+      "message": "The docstring doesn\u0027t align with the code below. Either these have default values and the xml should contain the default if the yaml doesn\u0027t set a value, or they are all optional as the code below checks whether they exist in the yaml and skips setting the xml if they are not.",
+      "revId": "6290591db9c70c8b635463f1b79b374a8c6c30a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_6cf9564d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4917,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-26T20:51:32Z",
+      "side": 1,
+      "message": "If testing if the option is set, no need for a default value. Use one or the other. If default remove the if check, otherwise set the docstring for these as optional and use data[\u0027comment-on-success\u0027]",
+      "revId": "6290591db9c70c8b635463f1b79b374a8c6c30a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_0c045a7c",
+        "filename": "tests/publishers/fixtures/phabricator001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-08-26T20:51:32Z",
+      "side": 1,
+      "message": "I think this needs to change from the defaults for all settings.",
+      "revId": "6290591db9c70c8b635463f1b79b374a8c6c30a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
