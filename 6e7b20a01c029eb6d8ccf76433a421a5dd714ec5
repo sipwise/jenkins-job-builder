@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_852573ac",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4901,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-08-27T14:28:12Z",
+      "side": 1,
+      "message": "Should add a test for comment-file.",
+      "revId": "6e7b20a01c029eb6d8ccf76433a421a5dd714ec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_0532c3f1",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4903,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-08-27T14:28:12Z",
+      "side": 1,
+      "message": "Should add a test for comment-size.",
+      "revId": "6e7b20a01c029eb6d8ccf76433a421a5dd714ec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_65a5bf02",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4905,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-08-27T14:28:12Z",
+      "side": 1,
+      "message": "According to your code all of the above options are \"optional\" is that right?\n\nIf so please document that they are optional by appending (optional) to the description.\n\nFor example:\n\n :arg bool comment-with-console-link-on-failure: Post a *comment*\n   when the build fails. (optional)",
+      "revId": "6e7b20a01c029eb6d8ccf76433a421a5dd714ec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_a5ff5700",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4921,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-08-27T14:28:12Z",
+      "side": 1,
+      "message": "I\u0027ve seen in other patches that we\u0027ve been recommending avoiding the use of \"\\\" when possible. If you desire you can change this line as follows so that you don\u0027t need the \\:\n\n ... .text \u003d str(\n     data.get(\u0027comment-on-success\u0027)).lower()",
+      "revId": "6e7b20a01c029eb6d8ccf76433a421a5dd714ec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_65f37f0b",
+        "filename": "tests/publishers/fixtures/phabricator001.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-08-27T14:28:12Z",
+      "side": 1,
+      "message": "Missing 2 tests here for \"comment-file\" and \"comment-size\".",
+      "revId": "6e7b20a01c029eb6d8ccf76433a421a5dd714ec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
