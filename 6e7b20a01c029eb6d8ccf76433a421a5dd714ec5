@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_c54feb90",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4901,
+      "author": {
+        "id": 16946
+      },
+      "writtenOn": "2015-08-27T14:44:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_852573ac",
+      "revId": "6e7b20a01c029eb6d8ccf76433a421a5dd714ec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_0532c3f1",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-08-27T14:28:12Z",
       "side": 1,
       "message": "Should add a test for comment-size.",
+      "revId": "6e7b20a01c029eb6d8ccf76433a421a5dd714ec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_8549f38d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4903,
+      "author": {
+        "id": 16946
+      },
+      "writtenOn": "2015-08-27T14:44:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_0532c3f1",
       "revId": "6e7b20a01c029eb6d8ccf76433a421a5dd714ec5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_e558ef58",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4905,
+      "author": {
+        "id": 16946
+      },
+      "writtenOn": "2015-08-27T14:44:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_65a5bf02",
+      "revId": "6e7b20a01c029eb6d8ccf76433a421a5dd714ec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_a5ff5700",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_20149542",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4921,
+      "author": {
+        "id": 16946
+      },
+      "writtenOn": "2015-08-27T14:44:33Z",
+      "side": 1,
+      "message": "Is there a style guide separate from the included pep8/flake?  There are a lot of backslashes in the file already.",
+      "parentUuid": "da20952f_a5ff5700",
+      "revId": "6e7b20a01c029eb6d8ccf76433a421a5dd714ec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_65f37f0b",
         "filename": "tests/publishers/fixtures/phabricator001.yaml",
         "patchSetId": 2
@@ -81,6 +153,24 @@
       "writtenOn": "2015-08-27T14:28:12Z",
       "side": 1,
       "message": "Missing 2 tests here for \"comment-file\" and \"comment-size\".",
+      "revId": "6e7b20a01c029eb6d8ccf76433a421a5dd714ec5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_e581cf90",
+        "filename": "tests/publishers/fixtures/phabricator001.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16946
+      },
+      "writtenOn": "2015-08-27T14:44:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_65f37f0b",
       "revId": "6e7b20a01c029eb6d8ccf76433a421a5dd714ec5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
