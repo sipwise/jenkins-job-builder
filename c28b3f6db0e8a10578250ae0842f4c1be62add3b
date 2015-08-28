@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_bcc2c032",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4131,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-28T22:51:33Z",
+      "side": 1,
+      "message": "is this a required param?  if so could you please document that?",
+      "revId": "c28b3f6db0e8a10578250ae0842f4c1be62add3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_dcbf74a8",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4163,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-28T22:51:33Z",
+      "side": 1,
+      "message": "this param and the rest below it has default settings.  Could you please document the defaults above?",
+      "revId": "c28b3f6db0e8a10578250ae0842f4c1be62add3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_fcd35802",
+        "filename": "tests/publishers/fixtures/rundeck001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-28T22:51:33Z",
+      "side": 1,
+      "message": "please remove",
+      "revId": "c28b3f6db0e8a10578250ae0842f4c1be62add3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
