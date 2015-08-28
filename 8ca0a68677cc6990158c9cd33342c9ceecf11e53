@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_3cc8f0a7",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 796,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-28T22:36:12Z",
+      "side": 1,
+      "message": "docs above says the default for this is \u0027default\u0027?  if so \u0027default\u0027 should be set, like so..\n\n  status.text \u003d str(data.get(\u0027commit-status-context\u0027, \u0027default\u0027))",
+      "revId": "8ca0a68677cc6990158c9cd33342c9ceecf11e53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
