@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da20952f_1947304c",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 841,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-29T15:35:21Z",
+      "side": 1,
+      "message": "add (\u0027default: []\u0027) to the end?",
+      "revId": "0b502dc4004f3b7642960b5f518278e032cc1f5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_2c1f0e5c",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 5
@@ -19,6 +36,23 @@
         "endLine": 858,
         "endChar": 30
       },
+      "revId": "0b502dc4004f3b7642960b5f518278e032cc1f5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_39447448",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 858,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-08-29T15:35:21Z",
+      "side": 1,
+      "message": "+1 on David\u0027s suggestion for this and other params with name \u0027mergerequests\u0027.",
       "revId": "0b502dc4004f3b7642960b5f518278e032cc1f5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
