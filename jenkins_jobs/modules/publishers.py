@@ -931,6 +931,26 @@ def junit(parser, xml_parent, data):
                        'hudson.plugins.measurement__plots.TestDataPublisher')
 
 
+def cucumber_testresult(parser, xml_parent, data):
+    """yaml: cucumber
+    Publish cucumber test results.
+    Requires the Jenkins :jenkins-wiki:`cucumber testresult
+    <Cucumber+Test+Result+Plugin>`.
+
+    :arg str results: results filename
+
+    Example:
+
+    .. literalinclude::  /../../tests/publishers/fixtures/cucumber_testresult.yaml
+       :language: yaml
+
+    """
+    cucumber_result = XML.SubElement(xml_parent,
+                                 'org.jenkinsci.plugins.cucumber.'
+                                 'jsontestsupport.CucumberTestResultArchiver')
+    XML.SubElement(cucumber_result, 'testResults').text = data['results']
+
+
 def xunit(parser, xml_parent, data):
     """yaml: xunit
     Publish tests results. Requires the Jenkins :jenkins-wiki:`xUnit Plugin
