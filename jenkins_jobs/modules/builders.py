@@ -96,6 +96,8 @@ def copyartifact(parser, xml_parent, data):
     :arg bool optional: If the artifact is missing (for any reason) and
         optional is true, the build won't fail because of this builder
         (default: false)
+    :arg bool do-not-fingerprint: Disable automatic fingerprinting of copied
+        artifacts (default: false)
     :arg str which-build: which build to get artifacts from
         (optional, default last-successful)
     :arg str build-number: specifies the build number to get when
@@ -144,6 +146,9 @@ def copyartifact(parser, xml_parent, data):
     XML.SubElement(t, 'flatten').text = str(flatten).lower()
     optional = data.get('optional', False)
     XML.SubElement(t, 'optional').text = str(optional).lower()
+    do_not_fingerprint = data.get('do-not-fingerprint', False)
+    XML.SubElement(t, 'doNotFingerprintArtifacts').text = \
+        str(do_not_fingerprint).lower()
     XML.SubElement(t, 'parameters').text = data.get("parameter-filters", "")
     select = data.get('which-build', 'last-successful')
     selectdict = {'last-successful': 'StatusBuildSelector',

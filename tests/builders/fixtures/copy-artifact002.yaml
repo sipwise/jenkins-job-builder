@@ -6,4 +6,5 @@ builders:
       which-build: last-completed
       optional: true
       flatten: true
+      do-not-fingerprint: true
       parameter-filters: PUBLISH=true
