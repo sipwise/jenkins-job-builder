@@ -415,6 +415,12 @@ def build_blocker(parser, xml_parent, data):
     :arg list blocking-jobs: One regular expression per line
         to select blocking jobs by their names. (required)
 
+    :arg str block-level: block build globally ('GLOBAL') or per node ('NODE')
+        (optional) (default 'GLOBAL')
+
+    :arg str block-level: scan build queue for all builds ('ALL') or only
+        buildable builds ('BUILDABLE') (optional) (default 'DISABLED'))
+
 
     Example::
 
@@ -438,6 +444,22 @@ def build_blocker(parser, xml_parent, data):
     for value in data['blocking-jobs']:
         jobs = jobs + value + '\n'
     XML.SubElement(blocker, 'blockingJobs').text = jobs
+
+    block_level_list = ('GLOBAL', 'NODE')
+    block_level = data.get('block-level', 'GLOBAL')
+    if block_level not in block_level_list:
+        raise JenkinsJobsException(
+            'build-blocker block-level must be one of: %s'
+            + ','.join(block_level_list))
+    XML.SubElement(blocker, 'blockLevel').text = block_level
+
+    queue_scanning_list = ('DISABLED', 'ALL', 'BUILDABLE')
+    queue_scanning = data.get('queue-scanning', 'DISABLED')
+    if queue_scanning not in queue_scanning_list:
+        raise JenkinsJobsException(
+            'build-blocker queue-scanning must be one of: %s'
+            + ','.join(queue_scanning_list))
+    XML.SubElement(blocker, 'scanQueueFor').text = queue_scanning
 
 
 def copyartifact(parser, xml_parent, data):
