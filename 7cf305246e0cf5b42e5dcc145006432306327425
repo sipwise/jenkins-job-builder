@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_6eaec999",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 9921
+      },
+      "writtenOn": "2015-09-03T13:53:29Z",
+      "side": 1,
+      "message": "Fair enough. Should I also change \"use-build-blocker\" above to maintain consistency?",
+      "parentUuid": "da20952f_6b0f9b88",
+      "revId": "7cf305246e0cf5b42e5dcc145006432306327425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_6b86bbdc",
         "filename": "jenkins_jobs/modules/properties.py",
         "patchSetId": 1
@@ -47,6 +65,24 @@
       "writtenOn": "2015-09-03T13:36:11Z",
       "side": 1,
       "message": "Should throw the InvalidAttributeError exception from errors.py.",
+      "revId": "7cf305246e0cf5b42e5dcc145006432306327425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_4ee745e4",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 9921
+      },
+      "writtenOn": "2015-09-03T13:53:29Z",
+      "side": 1,
+      "message": "Been away for a while, had no idea that existed... ^^\u0027 Will do.",
+      "parentUuid": "da20952f_0b8a9fbf",
       "revId": "7cf305246e0cf5b42e5dcc145006432306327425",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
