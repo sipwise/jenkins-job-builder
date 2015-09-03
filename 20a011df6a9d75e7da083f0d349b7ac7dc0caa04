@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_3f58fdf9",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-09-03T14:39:37Z",
+      "side": 1,
+      "message": "This and the above configuration are both called \"block-level\" did you mean to call this one queue-scanning?",
+      "revId": "20a011df6a9d75e7da083f0d349b7ac7dc0caa04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
