@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_7401bc69",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-09-03T14:27:14Z",
+      "side": 1,
+      "message": "Yes might as well since you\u0027re editing this, thanks.",
+      "parentUuid": "da20952f_6eaec999",
+      "revId": "7cf305246e0cf5b42e5dcc145006432306327425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_6b86bbdc",
         "filename": "jenkins_jobs/modules/properties.py",
         "patchSetId": 1
