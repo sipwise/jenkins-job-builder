@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_fce9ee7f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 940,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-04T22:44:04Z",
+      "side": 1,
+      "message": "could you please specify that this is a required param?",
+      "revId": "784a447e53348fb1236e6d5f2649737c519157b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_1cbdc267",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 953,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-04T22:44:04Z",
+      "side": 1,
+      "message": "please check that the param is provided otherwise throw MissingAttributeError.  You can look at the jdepend module in this file as an example.",
+      "revId": "784a447e53348fb1236e6d5f2649737c519157b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
