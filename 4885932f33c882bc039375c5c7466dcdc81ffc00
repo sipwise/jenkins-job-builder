@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_9fe8e4e3",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4969,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-04T23:13:35Z",
+      "side": 1,
+      "message": "code actually has defaults of \u0027[]\u0027 for includes and excludes.  should it be doc as \u0027(default: [])\u0027 instead?",
+      "revId": "4885932f33c882bc039375c5c7466dcdc81ffc00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
