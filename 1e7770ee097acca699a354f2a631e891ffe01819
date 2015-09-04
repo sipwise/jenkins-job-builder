@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_5f524cdf",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4981,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-04T23:05:41Z",
+      "side": 1,
+      "message": "I don\u0027t think this is necessary, there are already if checks for every param.",
+      "revId": "1e7770ee097acca699a354f2a631e891ffe01819",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_9f97848f",
+        "filename": "tests/publishers/fixtures/phabricator002.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-04T23:05:41Z",
+      "side": 1,
+      "message": "nit: don\u0027t need the colon at the end, can just be \u0027- phabricator\u0027",
+      "revId": "1e7770ee097acca699a354f2a631e891ffe01819",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
