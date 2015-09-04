@@ -16,6 +16,24 @@
       "revId": "4885932f33c882bc039375c5c7466dcdc81ffc00",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_7f71500b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4969,
+      "author": {
+        "id": 5955
+      },
+      "writtenOn": "2015-09-04T23:28:28Z",
+      "side": 1,
+      "message": "Darragh Bailey\t commented on patch set 4 that they should be marked as optional:\n\"Think both of these should now be marked as optional instead of \u0027\u0027 which would be correct for a string, but not a list.\"",
+      "parentUuid": "da20952f_9fe8e4e3",
+      "revId": "4885932f33c882bc039375c5c7466dcdc81ffc00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
