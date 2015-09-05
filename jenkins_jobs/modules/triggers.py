@@ -771,6 +771,22 @@ def timed(parser, xml_parent, data):
     XML.SubElement(scmtrig, 'spec').text = data
 
 
+def bitbucket(parser, xml_parent, data):
+    """yaml: bitbucket
+    Trigger a job when bitbucket repository is pushed to.
+    Requires the Jenkins :jenkins-wiki:`BitBucket Plugin
+    <BitBucket+Plugin>`.
+
+    Example::
+
+      triggers:
+        - bitbucket
+    """
+    bbtrig = XML.SubElement(xml_parent, 'com.cloudbees.jenkins.'
+                            'plugins.GitHubPushTrigger')
+    XML.SubElement(bbtrig, 'spec').text = ''
+
+
 def github(parser, xml_parent, data):
     """yaml: github
     Trigger a job when github repository is pushed to.
