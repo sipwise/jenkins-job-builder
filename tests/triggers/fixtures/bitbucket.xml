@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <triggers class="vector">
+    <com.cloudbees.jenkins.plugins.BitBucketTrigger>true</com.cloudbees.jenkins.plugins.BitBucketTrigger>
+  </triggers>
+</project>
