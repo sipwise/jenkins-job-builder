@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_8513aa64",
+        "filename": "tests/base.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-05T21:43:12Z",
+      "side": 1,
+      "message": "Shouldn\u0027t need to move this line at all.",
+      "revId": "775bd4afae1ffa4254783551fe95411eb3884659",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_a51a6e7b",
+        "filename": "tests/base.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-05T21:43:12Z",
+      "side": 1,
+      "message": "Don\u0027t see why this is needed? It wasn\u0027t present before and essentially duplicates the functionality of the parent method.",
+      "revId": "775bd4afae1ffa4254783551fe95411eb3884659",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_0529da9a",
+        "filename": "tests/slack/test_slack.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-05T21:43:12Z",
+      "side": 1,
+      "message": "Not sure why you\u0027ve added this in now?",
+      "revId": "775bd4afae1ffa4254783551fe95411eb3884659",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
