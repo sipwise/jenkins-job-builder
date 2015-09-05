@@ -34,6 +34,24 @@
       "revId": "4885932f33c882bc039375c5c7466dcdc81ffc00",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_c5c1a2e5",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4969,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-05T21:29:36Z",
+      "side": 1,
+      "message": "That may have been a mistake on my part, wasn\u0027t sure we had a convention for empty lists and figured marking as optional was a reasonable alternative to including any specific list notation.",
+      "parentUuid": "da20952f_7f71500b",
+      "revId": "4885932f33c882bc039375c5c7466dcdc81ffc00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
