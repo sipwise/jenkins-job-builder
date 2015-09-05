@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_856e4afe",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-05T21:34:27Z",
+      "side": 1,
+      "message": "s/list/dict/, think this just got accidentally overlooked.",
+      "revId": "4baa5d56b5a3fe610c056c7096900f7fa0c9edde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
