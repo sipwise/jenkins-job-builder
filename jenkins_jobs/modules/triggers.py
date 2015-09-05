@@ -786,6 +786,21 @@ def github(parser, xml_parent, data):
     XML.SubElement(ghtrig, 'spec').text = ''
 
 
+def bitbucket(parser, xml_parent, data):
+    """yaml: github
+    Trigger a job when bitbucket repository is pushed to.
+    Requires the Jenkins :jenkins-wiki:`BitBucket Plugin <BitBucket+Plugin>`.
+
+    Example::
+
+      triggers:
+        - bitbucket
+    """
+    bitbuckettrig = XML.SubElement(xml_parent, 'com.cloudbees.jenkins.plugins'
+                            'GitHubPushTrigger')
+    XML.SubElement(bitbuckettrig, 'spec').text = ''
+
+
 def github_pull_request(parser, xml_parent, data):
     """yaml: github-pull-request
     Build pull requests in github and report results.
