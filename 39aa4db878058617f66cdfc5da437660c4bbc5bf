@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_a4f4a7f0",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 787,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-09-06T14:11:48Z",
+      "side": 1,
+      "message": "I haven\u0027t used the bitbucket plugin so am trusting you to be the expert here, if you cannot get it to work without the spec than maybe it\u0027s needed. My advice would be to go into Jenkins and create a job that only has the bitbucket section defined and save it. Then look at the config.xml file for the job in Jenkins and inspect what it created. You solution\u0027s final xml output should match or be very similar.\n\nRepeat this as necessary for each configurable option in for this plugin in Jenkins.\n\nFWIW my typical workflow when creating a new plugin is to do this and save the XML as a test fixutre and then create a YAML that\u0027ll configure all configurable options in the XML and then writing the code last so that I know I\u0027ve caught all configurable options in Jenkins.\n\nHope this helps.",
+      "parentUuid": "da20952f_29007001",
+      "revId": "39aa4db878058617f66cdfc5da437660c4bbc5bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_69dbc87c",
         "filename": "setup.cfg",
         "patchSetId": 12
