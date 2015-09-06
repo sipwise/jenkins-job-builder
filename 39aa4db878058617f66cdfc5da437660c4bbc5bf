@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_a45907ff",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 787,
+      "author": {
+        "id": 18260
+      },
+      "writtenOn": "2015-09-06T14:23:36Z",
+      "side": 1,
+      "message": "Thank you for the insight in your workflow. I created an empty Jenkins job and checked the plugin\u0027s checkbox I mentioned earlier. This is the genereated snippet in the config.xml:\n\n  \u003ctriggers\u003e\n    \u003ccom.cloudbees.jenkins.plugins.BitBucketTrigger plugin\u003d\"bitbucket@1.1.2\"\u003e\n      \u003cspec\u003e\u003c/spec\u003e\n    \u003c/com.cloudbees.jenkins.plugins.BitBucketTrigger\u003e\n  \u003c/triggers\u003e\n\nI guess this means that we really need the empty \"spec\".",
+      "parentUuid": "da20952f_a4f4a7f0",
+      "revId": "39aa4db878058617f66cdfc5da437660c4bbc5bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_69dbc87c",
         "filename": "setup.cfg",
         "patchSetId": 12
