@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_c91a147d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 783,
+      "author": {
+        "id": 18260
+      },
+      "writtenOn": "2015-09-06T13:51:48Z",
+      "side": 1,
+      "message": "I copied and adapted the configuration form the \"github\" code snippet - please have a look at lines 791 - 799. Unfortunatelly (as I do not know anything about Python) don\u0027t know how to implement your suggested solution. Maybe my solution (which is also used for e.g. the github plugin as mentioned earlier) is good enough for the moment or someone else can help here?",
+      "parentUuid": "da20952f_c9ebf411",
+      "revId": "39aa4db878058617f66cdfc5da437660c4bbc5bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_a9f480f0",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 12
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_29007001",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 787,
+      "author": {
+        "id": 18260
+      },
+      "writtenOn": "2015-09-06T13:51:48Z",
+      "side": 1,
+      "message": "The plugin only adds a checkbox. I am not sure what this \"spec\" is in detail but i found some other code that had an empty \"spec\". Without this empty \"spec\" I could not get it to work.",
+      "parentUuid": "da20952f_a9f480f0",
+      "revId": "39aa4db878058617f66cdfc5da437660c4bbc5bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_69dbc87c",
         "filename": "setup.cfg",
         "patchSetId": 12
@@ -47,6 +83,24 @@
       "writtenOn": "2015-09-06T12:27:18Z",
       "side": 1,
       "message": "This list is in alphabetical order. Please move this to the top of the list.",
+      "revId": "39aa4db878058617f66cdfc5da437660c4bbc5bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_c4019b06",
+        "filename": "setup.cfg",
+        "patchSetId": 12
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 18260
+      },
+      "writtenOn": "2015-09-06T13:51:48Z",
+      "side": 1,
+      "message": "ok, i will do that in a minute. thx.",
+      "parentUuid": "da20952f_69dbc87c",
       "revId": "39aa4db878058617f66cdfc5da437660c4bbc5bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
