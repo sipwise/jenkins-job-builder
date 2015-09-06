@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_c9ebf411",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 783,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-09-06T12:27:18Z",
+      "side": 1,
+      "message": "You should use \".. literalinclude:: /path/to/your/test.yaml\". This way you\u0027re not redocumenting code and the example comes directly from your unit test code.",
+      "revId": "39aa4db878058617f66cdfc5da437660c4bbc5bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_a9f480f0",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 787,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-09-06T12:27:18Z",
+      "side": 1,
+      "message": "Seems strange that there\u0027s a blank spec. Is this really not configurable in the plugin?",
+      "revId": "39aa4db878058617f66cdfc5da437660c4bbc5bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_69dbc87c",
+        "filename": "setup.cfg",
+        "patchSetId": 12
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-09-06T12:27:18Z",
+      "side": 1,
+      "message": "This list is in alphabetical order. Please move this to the top of the list.",
+      "revId": "39aa4db878058617f66cdfc5da437660c4bbc5bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
