@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_4444ab48",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 783,
+      "author": {
+        "id": 18260
+      },
+      "writtenOn": "2015-09-06T14:01:32Z",
+      "side": 1,
+      "message": "ok, that was easier than I thought it would be - did it with patch set 14. thx for the hint, makes sense.",
+      "parentUuid": "da20952f_c9ebf411",
+      "revId": "39aa4db878058617f66cdfc5da437660c4bbc5bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_a9f480f0",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 12
