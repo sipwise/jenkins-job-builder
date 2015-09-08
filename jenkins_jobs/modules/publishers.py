@@ -287,7 +287,9 @@ def trigger_parameterized_builds(parser, xml_parent, data):
       that was used for this build. (optional)
     :arg bool svn-revision: Pass svn revision to the triggered job (optional)
     :arg bool git-revision: Pass git revision to the other job (optional)
-    :arg str condition: when to trigger the other job (default 'ALWAYS')
+    :arg str condition: when to trigger the other job. Can be: 'SUCCESS',
+      'UNSTABLE', 'FAILED_OR_BETTER', 'UNSTABLE_OR_BETTER',
+      'UNSTABLE_OR_WORSE', 'FAILED', 'ALWAYS'. (default: 'ALWAYS')
     :arg str property-file: Use properties from file (optional)
     :arg bool fail-on-missing: Blocks the triggering of the downstream jobs
       if any of the files are not found in the workspace (default 'False')
