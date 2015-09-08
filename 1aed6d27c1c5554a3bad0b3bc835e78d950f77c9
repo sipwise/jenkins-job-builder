@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_f50afc26",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 5020,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-08T21:22:28Z",
+      "side": 1,
+      "message": "Since this will need a rebase to apply, would you mind removing the slashes and following the dominant style of:\n\n    if \u0027comment-with-console-link-on-failure\u0027 in data:\n        XML.SubElement(root, \u0027commentWithConsoleLinkOnFailure\u0027).text \u003d str(\n            data[\u0027comment-with-console-link-on-failure\u0027]).lower()\n\nIf you are checking for membership, no need to use \u0027data.get()\u0027 to protect from the key not being present.",
+      "revId": "1aed6d27c1c5554a3bad0b3bc835e78d950f77c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
