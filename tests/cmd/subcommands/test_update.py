@@ -104,17 +104,17 @@ class UpdateTests(CmdTestsBase):
     @mock.patch('jenkins_jobs.builder.Jenkins.is_job', return_value=True)
     @mock.patch('jenkins_jobs.builder.Jenkins.get_jobs')
     @mock.patch('jenkins_jobs.builder.Builder.delete_job')
-    def test_update_jobs_and_enforce_jobs(self, delete_job_mock, get_jobs_mock,
+    def test_update_jobs_and_delete_unmanaged(self, delete_job_mock, get_jobs_mock,
                                           is_job_mock):
         """
-        Test update behaviour with --enforce-jobs option
+        Test update behaviour with --delete-unmanaged option
 
-        Test update of jobs with the --enforce-jobs option enabled, where only
-        some jobs result in has_changed() to limit the number of times
+        Test update of jobs with the --delete-unmanaged option enabled, where
+        only some jobs result in has_changed() to limit the number of times
         update_job is called, and have the get_jobs() method return additional
-        jobs not in the input yaml to test that the code in cmd will call
-        enforce_jobs() where the keep arg equals everything except those extra
-        jobs after update_job() when '--delete-old' is set.
+        jobs with and without the MAGIC_MANAGE_STRING. From there,
+        delete_unmanaged should only delete the job without the
+        MAGIC_MANAGE_STRING as a way to enforce the use of JJB.
         """
         jobs = ['unmanaged_job001', 'unmanaged_job002']
         extra_jobs = [{'name': name,
