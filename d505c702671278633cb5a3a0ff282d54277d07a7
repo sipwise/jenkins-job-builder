@@ -33,6 +33,24 @@
       "revId": "d505c702671278633cb5a3a0ff282d54277d07a7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_c424ed0f",
+        "filename": "tests/triggers/fixtures/bitbucket.xml",
+        "patchSetId": 14
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-09-08T19:27:47Z",
+      "side": 1,
+      "message": "I looked into this before. Both are valid XML and JJB actually creates \u003cspec/\u003e when no parameters are defined.",
+      "parentUuid": "da20952f_4403fdbe",
+      "revId": "d505c702671278633cb5a3a0ff282d54277d07a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
