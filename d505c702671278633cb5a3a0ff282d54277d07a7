@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_04074519",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 780,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-08T19:19:38Z",
+      "side": 1,
+      "message": "two colons does not render correctly when used before a literalinclude.  please use one colon, i.e. \u0027Example:\u0027",
+      "revId": "d505c702671278633cb5a3a0ff282d54277d07a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_4403fdbe",
+        "filename": "tests/triggers/fixtures/bitbucket.xml",
+        "patchSetId": 14
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-08T19:19:38Z",
+      "side": 1,
+      "message": "not sure if this makes a difference, but shouldn\u0027t be \u0027\u003cspec\u003e\u003c/spec\u003e\u0027 ?",
+      "revId": "d505c702671278633cb5a3a0ff282d54277d07a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
