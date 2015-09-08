@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da20952f_1a5d5e79",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 4978,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-08T20:42:31Z",
+      "side": 1,
+      "message": "nit: should probably be \u0027str\u0027 instead of \u0027array\u0027",
+      "revId": "7de0dc598ed1a5da65086fc0eee95233feba6e33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da20952f_3a02a273",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 5000,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-08T20:42:31Z",
+      "side": 1,
+      "message": "ditto here",
+      "revId": "7de0dc598ed1a5da65086fc0eee95233feba6e33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
