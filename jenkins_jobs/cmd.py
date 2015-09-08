@@ -104,6 +104,10 @@ def create_parser():
     parser_update.add_argument('--delete-old', help='delete obsolete jobs',
                                action='store_true',
                                dest='delete_old', default=False,)
+    parser_update.add_argument('--delete-unmanaged',
+                               help='delete jobs not managed by JJB',
+                               action='store_true',
+                               dest='delete_unmanaged', default=False,)
 
     # subparser: test
     parser_test = subparser.add_parser('test', parents=[recursive_parser])
@@ -331,6 +335,9 @@ def execute(options, config):
         logger.info("Number of jobs updated: %d", num_updated_jobs)
         if options.delete_old:
             num_deleted_jobs = builder.delete_old_managed()
+            logger.info("Number of jobs deleted: %d", num_deleted_jobs)
+        if options.delete_unmanaged:
+            num_deleted_jobs = builder.delete_unmanaged()
             logger.info("Number of jobs deleted: %d", num_deleted_jobs)
     elif options.command == 'test':
         builder.update_job(options.path, options.name,

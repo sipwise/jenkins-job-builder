@@ -258,6 +258,7 @@ class Builder(object):
                 self.parser.parse(in_file)
 
     def delete_old_managed(self, keep=None):
+        # Deletes old jobs managed by JJB.
         jobs = self.jenkins.get_jobs()
         deleted_jobs = 0
         if keep is None:
@@ -271,6 +272,23 @@ class Builder(object):
                 deleted_jobs += 1
             else:
                 logger.debug("Ignoring unmanaged jenkins job %s",
+                             job['name'])
+        return deleted_jobs
+
+    def delete_unmanaged(self, keep=[]):
+        # Deletes jobs NOT managed by JJB.
+        jobs = self.jenkins.get_jobs()
+        deleted_jobs = 0
+
+        for job in jobs:
+            managed = self.jenkins.is_managed(job['name'])
+            if job['name'] not in keep and not managed:
+                logger.debug("Destroying unmanaged job %s",
+                             job['name'])
+                self.delete_job(job['name'])
+                deleted_jobs += 1
+            else:
+                logger.debug("Ignoring managed jenkins job %s",
                              job['name'])
         return deleted_jobs
 
