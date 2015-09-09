@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_b280044b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4931,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-09T10:04:12Z",
+      "side": 1,
+      "message": "As I understand how the old plugin worked, the inclusion of the token was a bit of hack since the \u003c1.9 always copied copied the global config into the job config. From \u003d\u003e1.9, the hipchat plugin now correctly uses the global settings and this becomes a per-job override instead of needing to duplicate the same config information.\n\nProbably makes upgrading/migrating easier if we still support retrieving the token from the config file, provided we log a warning about how the common token should be stored in the jenkins general configuration and this is only a per job override, so in general it should only need to be set via the job configuration.",
+      "parentUuid": "fa1b9901_b64bbdb0",
+      "revId": "099e8ca6cac5875d6ea238139ccd2223689691eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_f85cc31a",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 9
