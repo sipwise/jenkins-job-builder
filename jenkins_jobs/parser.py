@@ -136,8 +136,7 @@ class YamlParser(object):
                                        .format(whichdefaults))
 
         for key in override_dict.keys():
-            if key in defaults.keys():
-                defaults[key] = override_dict[key]
+            defaults[key] = override_dict[key]
 
         newdata = {}
         newdata.update(defaults)
