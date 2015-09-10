@@ -5124,12 +5124,13 @@ def hipchat(parser, xml_parent, data):
     """yaml: hipchat
     Publisher that sends hipchat notifications on job events
     Requires the Jenkins :jenkins-wiki:`Hipchat Plugin
-    <Hipchat+Plugin>` version >=1.9
+    <Hipchat+Plugin>` version >=0.1.9
 
     Please see documentation for older plugin version
     http://docs.openstack.org/infra/jenkins-job-builder/hipchat.html
 
     :arg str token: This will override the default auth token (optional)
+    :arg str server: This will override the default server address (optional)
     :arg list rooms: list of HipChat rooms to post messages to, overrides
         global default (optional)
     :arg bool notify-start: post messages about build start event
@@ -5162,6 +5163,8 @@ def hipchat(parser, xml_parent, data):
         'jenkins.plugins.hipchat.HipChatNotifier')
     XML.SubElement(hipchat, 'token').text = str(
         data.get('token', ''))
+    XML.SubElement(hipchat, 'server').text = str(
+        data.get('server', ''))
 
     if 'rooms' in data:
         XML.SubElement(hipchat, 'room').text = str(

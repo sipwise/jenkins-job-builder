@@ -3,6 +3,7 @@
   <publishers>
     <jenkins.plugins.hipchat.HipChatNotifier>
       <token>auth</token>
+      <server>server</server>
       <room>room1,room2</room>
       <startNotification>true</startNotification>
       <notifySuccess>false</notifySuccess>

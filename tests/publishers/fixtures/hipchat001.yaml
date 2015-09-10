@@ -1,6 +1,7 @@
 publishers:
   - hipchat:
       token: auth
+      server: server
       rooms:
         - room1
         - room2
