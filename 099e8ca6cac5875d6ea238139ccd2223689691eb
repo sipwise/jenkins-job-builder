@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "da20952f_6c4828b4",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4931,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-10T05:02:05Z",
+      "side": 1,
+      "message": "ahh, thanks for the explanation.  I\u0027m ok with it as-is and will leave making it easier to migrate up to the implementer of this module.",
+      "parentUuid": "da20952f_b280044b",
+      "revId": "099e8ca6cac5875d6ea238139ccd2223689691eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa1b9901_f85cc31a",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 9
