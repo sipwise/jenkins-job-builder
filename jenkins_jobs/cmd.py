@@ -258,7 +258,7 @@ def execute(options, config):
     elif (not options.conf or not
           config.getboolean("jenkins", "query_plugins_info")):
         logger.debug("Skipping plugin info retrieval")
-        plugins_info = {}
+        plugins_info = None
 
     if options.allow_empty_variables is not None:
         config.set('job_builder',
