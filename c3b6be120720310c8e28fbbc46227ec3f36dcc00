@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_b2e7d0ab",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5167,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-12T17:37:03Z",
+      "side": 1,
+      "message": "There is a helper function, that I think has been merged, that supports getting a setting from either the ini config or job definition. I think that would be very useful here, and probably best to defaulting to not setting the xml tag if the option isn\u0027t set as really the plugin should be looking up the Jenkins global configuration for this info instead of setting in individual job configs.\n\nI\u0027d expect they\u0027ll fix that soon enough similar to the change in behavior around how they handle the api token now as well.",
+      "revId": "c3b6be120720310c8e28fbbc46227ec3f36dcc00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
