@@ -255,7 +255,7 @@ def execute(options, config):
         if not isinstance(plugins_info, list):
             raise JenkinsJobsException("{0} must contain a Yaml list!"
                                        .format(options.plugins_info_path))
-    elif (not options.conf or not
+    elif (options.command == 'test' or not
           config.getboolean("jenkins", "query_plugins_info")):
         logger.debug("Skipping plugin info retrieval")
         plugins_info = {}
