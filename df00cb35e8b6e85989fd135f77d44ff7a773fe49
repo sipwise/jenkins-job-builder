@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_b9519410",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 930,
+      "author": {
+        "id": 13292
+      },
+      "writtenOn": "2015-09-15T20:29:51Z",
+      "side": 1,
+      "message": "nit space",
+      "revId": "df00cb35e8b6e85989fd135f77d44ff7a773fe49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_59587832",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 955,
+      "author": {
+        "id": 13292
+      },
+      "writtenOn": "2015-09-15T20:29:51Z",
+      "side": 1,
+      "message": "nit space",
+      "revId": "df00cb35e8b6e85989fd135f77d44ff7a773fe49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
