@@ -1781,16 +1781,21 @@ def aggregate_flow_tests(parser, xml_parent, data):
     <https://wiki.jenkins-ci.org/display/JENKINS/
     Build+Flow+Test+Aggregator+Plugin>`_
 
+    :arg bool show-test-results-trend: whether to show test results
+                                       trend graph
+
     Example:
 
     .. literalinclude:: \
-    /../../tests/publishers/fixtures/aggregate-flow-tests.yaml
+    /../../tests/publishers/fixtures/aggregate-flow-tests002.yaml
        :language: yaml
 
     """
-    XML.SubElement(xml_parent,
-                   'org.zeroturnaround.jenkins.'
-                   'flowbuildtestaggregator.FlowTestAggregator')
+    aggregate_flow_tests = \
+        XML.SubElement(xml_parent, 'org.zeroturnaround.jenkins.'
+                       'flowbuildtestaggregator.FlowTestAggregator')
+    XML.SubElement(aggregate_flow_tests, 'showTestResultTrend').text = \
+        str(data.get('show-test-results-trend', False)).lower()
 
 
 def cppcheck(parser, xml_parent, data):
