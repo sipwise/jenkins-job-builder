@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_2c24f6c2",
+        "filename": "jenkins_jobs/formatter.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-18T00:36:41Z",
+      "side": 1,
+      "message": "technically these are bug fixes, we should always use the original collection type class when creating new instances.",
+      "revId": "82c3ff16c16e4a437caaea173e4e334fad00391a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
