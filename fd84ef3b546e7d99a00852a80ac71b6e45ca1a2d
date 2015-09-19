@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_2e3598f6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-19T17:18:21Z",
+      "side": 1,
+      "message": "It should be possible to also check in test mode so that users can establish what the actual job xml would be when using the appropriate plugin version info, otherwise you cannot establish this before uploading for real.",
+      "revId": "fd84ef3b546e7d99a00852a80ac71b6e45ca1a2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
