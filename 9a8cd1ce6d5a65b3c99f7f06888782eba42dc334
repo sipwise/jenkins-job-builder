@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_fb10ae5b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-21T09:24:36Z",
+      "side": 1,
+      "message": "I\u0027d like to see more details here about the change. And also should link to the story board issues with \u0027story: \u003cid\u003e\u0027",
+      "revId": "9a8cd1ce6d5a65b3c99f7f06888782eba42dc334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_9b45f2b4",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-21T09:24:36Z",
+      "side": 1,
+      "message": "This assumes that people will run the update to add this tag into the managed jobs before any deletion commands. Perhaps we should check for both, with a warning outputted on encountering jobs that have the old magic string but not the new XML attribute, stating that they are being ignored.",
+      "revId": "9a8cd1ce6d5a65b3c99f7f06888782eba42dc334",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
