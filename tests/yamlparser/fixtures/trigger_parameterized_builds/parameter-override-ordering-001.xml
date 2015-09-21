@@ -2,6 +2,9 @@
 <project>
   <actions/>
   <description>testing macro trigger-parameterized-builds order v1.0&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <jjb>
+    <managed>true</managed>
+  </jjb>
   <keepDependencies>false</keepDependencies>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
@@ -79,6 +82,9 @@ print(&quot;Doing something cool with python&quot;)
 <project>
   <actions/>
   <description>testing macro trigger-parameterized-builds order v1.2&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <jjb>
+    <managed>true</managed>
+  </jjb>
   <keepDependencies>false</keepDependencies>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>

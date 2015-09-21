@@ -123,6 +123,15 @@ class General(jenkins_jobs.modules.base.Base):
         if desc_text is not None:
             description = XML.SubElement(xml, 'description')
             description.text = desc_text
+        jjb = data.get('jjb', None)
+        if jjb is not None:
+            jjb_xml = XML.SubElement(xml, 'jjb')
+
+            jjb_managed = jjb.get('managed', 'true')
+            jjb_managed_xml = XML.SubElement(jjb_xml, 'managed')
+
+            jjb_managed_xml.text = jjb_managed
+
         XML.SubElement(xml, 'keepDependencies').text = 'false'
         disabled = data.get('disabled', None)
         if disabled is not None:

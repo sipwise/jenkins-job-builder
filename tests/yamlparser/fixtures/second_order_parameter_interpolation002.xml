@@ -2,6 +2,9 @@
 <project>
   <actions/>
   <description>&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <jjb>
+    <managed>true</managed>
+  </jjb>
   <keepDependencies>false</keepDependencies>
   <displayName>experimental p2 bar</displayName>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
@@ -34,6 +37,9 @@
 <project>
   <actions/>
   <description>&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <jjb>
+    <managed>true</managed>
+  </jjb>
   <keepDependencies>false</keepDependencies>
   <displayName>experimental p2 foo</displayName>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
@@ -66,6 +72,9 @@
 <project>
   <actions/>
   <description>&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <jjb>
+    <managed>true</managed>
+  </jjb>
   <keepDependencies>false</keepDependencies>
   <displayName>production p1 bar</displayName>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
@@ -98,6 +107,9 @@
 <project>
   <actions/>
   <description>&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <jjb>
+    <managed>true</managed>
+  </jjb>
   <keepDependencies>false</keepDependencies>
   <displayName>production p1 foo</displayName>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>

@@ -180,6 +180,13 @@ class YamlParser(object):
             job["description"] = description + \
                 self.get_managed_string().lstrip()
 
+    def injectManagedAttribute(self, job):
+        jjb_attr = job.get("jjb", None)
+        if jjb_attr is None:
+            job['jjb'] = {}
+
+        job['jjb']['managed'] = 'true'
+
     def expandYaml(self, jobs_glob=None):
         changed = True
         while changed:
@@ -196,6 +203,7 @@ class YamlParser(object):
             logger.debug("Expanding job '{0}'".format(job['name']))
             job = self.applyDefaults(job)
             self.formatDescription(job)
+            self.injectManagedAttribute(job)
             self.jobs.append(job)
         for project in self.data.get('project', {}).values():
             logger.debug("Expanding project '{0}'".format(project['name']))
@@ -330,6 +338,7 @@ class YamlParser(object):
                 continue
 
             self.formatDescription(expanded)
+            self.injectManagedAttribute(expanded)
             self.jobs.append(expanded)
 
     def get_managed_string(self):
@@ -343,7 +352,6 @@ class YamlParser(object):
 
     def getXMLForJob(self, data):
         kind = data.get('project-type', 'freestyle')
-
         for ep in pkg_resources.iter_entry_points(
                 group='jenkins_jobs.projects', name=kind):
             Mod = ep.load()

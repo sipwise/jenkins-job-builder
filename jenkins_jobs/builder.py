@@ -199,6 +199,16 @@ class Jenkins(object):
         return self.jobs
 
     def is_managed(self, job_name):
+        xml = XML.fromstring(self.jenkins.get_job_config(job_name))
+        try:
+            jjb_attr = xml.find('jjb', None)
+            jjb_managed = jjb_attr.find('managed')
+            return jjb_managed.text == 'true'
+        except (TypeError, AttributeError):
+            pass
+        return False
+
+    def is_legacy_managed(self, job_name):
         xml = self.jenkins.get_job_config(job_name)
         try:
             out = XML.fromstring(xml)
@@ -284,6 +294,14 @@ class Builder(object):
             keep = [job.name for job in self.parser.xml_jobs]
         for job in jobs:
             if job['name'] not in keep:
+                if (self.jenkins.is_legacy_managed(job['name'])
+                        and not self.jenkins.is_managed(job['name'])):
+
+                    logger.warning("{0} is using a legacy format and will be"
+                                   "skipped. Run update without delete-old"
+                                   "to update before trying delete-old again."
+                                   .format(job['name']))
+                    continue
                 if self.jenkins.is_managed(job['name']):
                     logger.info("Removing obsolete jenkins job {0}"
                                 .format(job['name']))

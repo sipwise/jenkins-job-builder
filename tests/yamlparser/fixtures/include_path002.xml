@@ -2,6 +2,9 @@
 <project>
   <actions/>
   <description>from other include path&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <jjb>
+    <managed>true</managed>
+  </jjb>
   <keepDependencies>false</keepDependencies>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>

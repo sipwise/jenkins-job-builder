@@ -2,6 +2,9 @@
 <project>
   <actions/>
   <description>Do not edit this job through the web!&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <jjb>
+    <managed>true</managed>
+  </jjb>
   <keepDependencies>false</keepDependencies>
   <disabled>false</disabled>
   <displayName>Fancy job name</displayName>
