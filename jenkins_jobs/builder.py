@@ -27,7 +27,6 @@ import re
 from pprint import pformat
 import logging
 
-from jenkins_jobs.constants import MAGIC_MANAGE_STRING
 from jenkins_jobs.parser import YamlParser
 
 logger = logging.getLogger(__name__)
@@ -171,11 +170,11 @@ class Jenkins(object):
         return self.jobs
 
     def is_managed(self, job_name):
-        xml = self.jenkins.get_job_config(job_name)
+        xml = XML.fromstring(self.jenkins.get_job_config(job_name))
         try:
-            out = XML.fromstring(xml)
-            description = out.find(".//description").text
-            return description.endswith(MAGIC_MANAGE_STRING)
+            jjb_attr = xml.find('jjb', None)
+            jjb_managed = jjb_attr.find('managed')
+            return jjb_managed.text == 'true'
         except (TypeError, AttributeError):
             pass
         return False
