@@ -83,9 +83,11 @@ class UpdateTests(CmdTestsBase):
         args = self.parser.parse_args(['update', '--delete-old', path])
 
         with mock.patch('jenkins_jobs.builder.Jenkins.update_job') as update:
-            with mock.patch('jenkins_jobs.builder.Jenkins.is_managed',
+            with mock.patch('jenkins_jobs.builder.Jenkins.is_legacy_managed',
                             return_value=True):
-                cmd.execute(args, self.config)
+                with mock.patch('jenkins_jobs.builder.Jenkins.is_managed',
+                                return_value=True):
+                    cmd.execute(args, self.config)
             self.assertEquals(2, update.call_count,
                               "Expected Jenkins.update_job to be called '%d' "
                               "times, got '%d' calls instead.\n"

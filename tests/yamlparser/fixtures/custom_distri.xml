@@ -22,6 +22,9 @@
   </axes>
   <actions/>
   <description>&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <jjb>
+    <managed>true</managed>
+  </jjb>
   <keepDependencies>false</keepDependencies>
   <disabled>true</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
