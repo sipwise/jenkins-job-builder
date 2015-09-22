@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_92460220",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 9369
+      },
+      "writtenOn": "2015-09-22T06:41:47Z",
+      "side": 1,
+      "message": "Your commit message does not follow the guidelines set out for them: have a read through https://wiki.openstack.org/wiki/GitCommitMessages , but broadly you want a short description on one line, ideally less than 50 characters, and then 1 or more paragraphs that fully describe the changes.",
+      "revId": "79d89393385d0fe8b08875d9ca5c3bbfd62a16cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
