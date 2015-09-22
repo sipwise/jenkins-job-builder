@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_08edc8ee",
+        "filename": "tests/missing_indent/test_missing_indents.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-22T17:10:39Z",
+      "side": 1,
+      "message": "We should probably remove this, and go with change to capture all logging so we can output what was logged when a failure occurs. see https://review.openstack.org/226107",
+      "revId": "d8df3741ae0eea968df5335df481a653f801c0f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
