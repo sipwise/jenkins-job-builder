@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba15a1d1_3348065c",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 830,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-23T17:55:30Z",
+      "side": 1,
+      "message": "nit: missing type info for this and the rest of the new params?\n\nalso looks like all new params are optional?  please add \u0027(optional)\u0027 to the end of the description.",
+      "revId": "47a2e1a45c05d388cef102f81fb64d419351b373",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_f3ba8ee0",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 862,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-23T17:55:30Z",
+      "side": 1,
+      "message": "can also be written as..\n\n  if \u0027build-desc-template\u0027 in data:\n      XML.SubElement(ghprb, \u0027buildDescTemplate\u0027).text \u003d str(\n         data.get(\u0027build-desc-template\u0027, \u0027\u0027))",
+      "revId": "47a2e1a45c05d388cef102f81fb64d419351b373",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
