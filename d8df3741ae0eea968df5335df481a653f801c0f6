@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba15a1d1_5ef6e15d",
+        "filename": "tests/missing_indent/fixtures/exception_projects001.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-23T22:13:52Z",
+      "side": 1,
+      "message": "This job definition is missing a \u0027job-template\u0027 section to be valid.  If this test doesn\u0027t fail due to YAMLStructureError then it will still fail due to the missing template.  I think this test case should have only 2 outcomes, either YAMLStructureError OR JJB processes it without errors.   Therefore I suggest going with a simpler test.  something like this..\n\n- job:\n  # The code below is incorrectly indented.\n  # It should be indented more.\n  name: \u0027missing_indent\u0027\n  builders:\n    - shell: \u0027echo {name}\u0027\n\n\nThis test will check for the invalid yaml case while there are already many existing tests that process valid yaml.",
+      "revId": "d8df3741ae0eea968df5335df481a653f801c0f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_79d2df01",
+        "filename": "tests/missing_indent/fixtures/exception_projects002.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-23T22:13:52Z",
+      "side": 1,
+      "message": "I don\u0027t think this test is necessary.  looks like there are 3 things wrong with this job definition:\n\n  1. missing job-template \n  2. invalid indentation\n  3. missing \u0027name\u0027 attribute\n\nI don\u0027t think this is a valid test for #1 and #3.  #2 is already covered in exception_projects001.yaml  \n\nso do we need this test?\n\nMaybe consider replacing this test with the following to exercise the \"The topmost collection must be a list, not a {cls}\" condition.\n\n# the \u0027job\u0027 should be a yaml list\njob:\n    name: \u0027definition_not_a_list\u0027\n    builders:\n      - shell: \u0027echo {name}\u0027",
+      "revId": "d8df3741ae0eea968df5335df481a653f801c0f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_08edc8ee",
         "filename": "tests/missing_indent/test_missing_indents.py",
         "patchSetId": 5
