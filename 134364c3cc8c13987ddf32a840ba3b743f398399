@@ -34,6 +34,23 @@
       "revId": "134364c3cc8c13987ddf32a840ba3b743f398399",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_195cf97b",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-23T23:39:29Z",
+      "side": 1,
+      "message": "nit: as implemented these params are set by default.  Optional means that the xml will not get added if the param is not defined.  These are always added with a default of \u0027\u0027.  Looks like the others in here are set like this as well so would be good to clean this up but can be done in a follow on change.",
+      "revId": "134364c3cc8c13987ddf32a840ba3b743f398399",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
