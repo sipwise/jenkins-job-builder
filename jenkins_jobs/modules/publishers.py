@@ -35,7 +35,8 @@ from jenkins_jobs.modules.helpers import cloudformation_region_dict
 from jenkins_jobs.modules.helpers import cloudformation_stack
 from jenkins_jobs.modules.helpers import config_file_provider_settings
 from jenkins_jobs.modules.helpers import findbugs_settings
-from jenkins_jobs.modules.helpers import get_value_from_yaml_or_config_file
+from jenkins_jobs.modules.helpers import (get_value_from_yaml_or_config_file,
+                                          yaml_or_config_file_has_value)
 from jenkins_jobs.errors import (InvalidAttributeError,
                                  JenkinsJobsException,
                                  MissingAttributeError)
@@ -3540,28 +3541,43 @@ def stash(parser, xml_parent, data):
     <StashNotifier+Plugin>`.
 
     :arg string url: Base url of Stash Server (Default: "")
-    :arg string username: Username of Stash Server (Default: "")
-    :arg string password: Password of Stash Server (Default: "")
+    :arg string username: Username of Stash Server
+    :arg string password: Password of Stash Server
+    :arg string credentials-id: Password of Stash Server (Default: "")
     :arg bool   ignore-ssl: Ignore unverified SSL certificate (Default: False)
     :arg string commit-sha1: Commit SHA1 to notify (Default: "")
     :arg bool   include-build-number: Include build number in key
                 (Default: False)
 
-    Example:
+    Example for stash notifier < 1.9:
 
     .. literalinclude:: /../../tests/publishers/fixtures/stash001.yaml
+       :language: yaml
+
+    Example for stash notifier >= 1.9:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/stash003.yaml
        :language: yaml
     """
     top = XML.SubElement(xml_parent,
                          'org.jenkinsci.plugins.stashNotifier.StashNotifier')
 
     XML.SubElement(top, 'stashServerBaseUrl').text = data.get('url', '')
-    XML.SubElement(top, 'stashUserName'
-                   ).text = get_value_from_yaml_or_config_file(
-                       'username', 'stash', data, parser)
-    XML.SubElement(top, 'stashUserPassword'
-                   ).text = get_value_from_yaml_or_config_file(
-                       'password', 'stash', data, parser)
+
+    def has_value(key):
+        return yaml_or_config_file_has_value(key, 'stash', data, parser)
+
+    def add_value_from(jenkins_key, jjb_key):
+        XML.SubElement(top, jenkins_key,
+                       ).text = get_value_from_yaml_or_config_file(
+                           jjb_key, 'stash', data, parser)
+
+    if has_value('username') and has_value('password'):
+        add_value_from('stashUserName', 'username')
+        add_value_from('stashUserPassword', 'password')
+    else:
+        add_value_from('credentialsId', 'credentials-id')
+
     XML.SubElement(top, 'ignoreUnverifiedSSLPeer').text = str(
         data.get('ignore-ssl', False)).lower()
     XML.SubElement(top, 'commitSha1').text = data.get('commit-sha1', '')
