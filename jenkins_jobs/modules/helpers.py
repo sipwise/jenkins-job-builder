@@ -219,6 +219,19 @@ def findbugs_settings(xml_parent, data):
                    'usePreviousBuildAsReference').text = use_previous_build
 
 
+def yaml_or_config_file_has_value(key, section, data, parser):
+    """Determine if the data or config has a value for the provided key."""
+    result = data.get(key, None)
+    if result:
+        return True
+
+    try:
+        return bool(parser.config.get(section, key))
+    except (configparser.NoSectionError, configparser.NoOptionError,
+            JenkinsJobsException):
+        return False
+
+
 def get_value_from_yaml_or_config_file(key, section, data, parser):
     logger = logging.getLogger(__name__)
     result = data.get(key, '')
