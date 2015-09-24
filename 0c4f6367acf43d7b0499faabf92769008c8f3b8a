@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_d97146e2",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-24T17:10:53Z",
+      "side": 1,
+      "message": "nit: \u0027ignore\u0027 seems slightly vague.  maybe change ignore to \u0027keeping\u0027 or \u0027not removing\u0027?",
+      "revId": "0c4f6367acf43d7b0499faabf92769008c8f3b8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_99742ed0",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-24T17:10:53Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "0c4f6367acf43d7b0499faabf92769008c8f3b8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
