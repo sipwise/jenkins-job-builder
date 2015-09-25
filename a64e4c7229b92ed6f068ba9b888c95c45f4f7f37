@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_423d112a",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-25T19:03:58Z",
+      "side": 1,
+      "message": "How about rebase on top of change:  I41e809a775ec9d0786  and consolidating delete_old_managed with this method?  \n\nmaybe rename method to \u0027delete_jobs(self, keep\u003dNone)\u0027 and allow \u0027keep\u0027 to take either \u0027unmanaged\u0027, \u0027old\u0027?",
+      "revId": "a64e4c7229b92ed6f068ba9b888c95c45f4f7f37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
