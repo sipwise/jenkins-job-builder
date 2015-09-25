@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_331e2d0d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1060,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-25T20:42:22Z",
+      "side": 1,
+      "message": "The examples shows these and below as attributes of path param so shouldn\u0027t these be shown as a level below path?",
+      "revId": "e7cb687d25ef0c663c5ef1250ddd3c9621bca4ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_b330fd57",
+        "filename": "tests/triggers/fixtures/monitor-files002.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-25T20:42:22Z",
+      "side": 1,
+      "message": "This exact same example is already in monitor-files001.yaml, any reason to have it again?",
+      "revId": "e7cb687d25ef0c663c5ef1250ddd3c9621bca4ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_b3947d37",
+        "filename": "tests/triggers/fixtures/monitor-files002.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-25T20:42:22Z",
+      "side": 1,
+      "message": "duplicate param?",
+      "revId": "e7cb687d25ef0c663c5ef1250ddd3c9621bca4ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
