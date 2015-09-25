@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_5175e1c8",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-25T17:48:51Z",
+      "side": 1,
+      "message": "Unless there\u0027s a better option I think I would agree with Darragh\u0027s comment..  \"I think perhaps for one release we need to allow jobs be regarded as managed if either the MAGIC string or the new attribute appear. Output a warning message about the upcoming change in behaviour and then for the next release remove support for the old magic string check.\"",
+      "revId": "4164f24ad25775953db7c44b39c40e7c0df99ef5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_e0786180",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-25T17:48:51Z",
+      "side": 1,
+      "message": "i don\u0027t see anything different in this file.",
+      "revId": "4164f24ad25775953db7c44b39c40e7c0df99ef5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba15a1d1_a0e829e3",
+        "filename": "tests/cmd/fixtures/cmd-001.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-25T17:48:51Z",
+      "side": 1,
+      "message": "This tag will get removed when users save job from the Jenkins UI.  So we should change the default job description.  Maybe change it to something along these lines.. \n\n\"!-- Initially created by Jenkins Job Builder.  Any subsequent updates to this job using the Jenkins UI will invalidate JJB\u0027s ability to manage this job. --\u0026gt;",
+      "revId": "4164f24ad25775953db7c44b39c40e7c0df99ef5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
