@@ -16,6 +16,24 @@
       "revId": "a64e4c7229b92ed6f068ba9b888c95c45f4f7f37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_ada64c51",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-09-27T02:19:31Z",
+      "side": 1,
+      "message": "Is this \"keep\" necessary? Where is it being used?",
+      "parentUuid": "9a1a9d01_423d112a",
+      "revId": "a64e4c7229b92ed6f068ba9b888c95c45f4f7f37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
