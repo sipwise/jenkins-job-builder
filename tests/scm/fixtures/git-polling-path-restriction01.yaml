@@ -3,4 +3,6 @@ scm:
       url: https://github.com/openstack-infra/jenkins-job-builder.git
       included-regions:
         - jenkins_jobs
+        # This null should be ignored by the scm module
+        - null
         - tests
