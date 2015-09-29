@@ -1,0 +1,12 @@
+Verified+2: Jenkins
+Code-Review+2: Khai Do <zaro0508@gmail.com>
+Code-Review+1: Ari <ari@redhat.com>
+Code-Review+1: Jaime Flynn <jflynn@redhat.com>
+Code-Review+2: Thanh Ha <zxiiro@gmail.com>
+Workflow+1: Thanh Ha <zxiiro@gmail.com>
+Code-Review+1: Jonathan Lebon <jlebon@redhat.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 29 Sep 2015 17:51:23 +0000
+Reviewed-on: https://review.openstack.org/222690
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
