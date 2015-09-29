@@ -33,6 +33,24 @@
       "revId": "0c4f6367acf43d7b0499faabf92769008c8f3b8a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_a0411765",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-29T17:58:39Z",
+      "side": 1,
+      "message": "I\u0027ve used different wording for the two to make it a little easier to grep logged output to distinguish between the three different types.",
+      "parentUuid": "9a1a9d01_99742ed0",
+      "revId": "0c4f6367acf43d7b0499faabf92769008c8f3b8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
