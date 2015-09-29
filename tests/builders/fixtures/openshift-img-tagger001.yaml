@@ -1,0 +1,7 @@
+builders:
+  - openshift-img-tagger:
+      api-url: https://openshift.example.local.url
+      test-tag: origin-nodejs-sample:latest
+      prod-tag: origin-nodejs-sample:prod
+      name-space: test5
+      auth-token: ose-tok

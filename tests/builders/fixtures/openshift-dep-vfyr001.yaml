@@ -1,0 +1,6 @@
+builders:
+  - openshift-dep-vfyr:
+      api-url: https://openshift.example.local.url
+      dep-cfg: frontend
+      name-space: test6
+      auth-token: ose-access

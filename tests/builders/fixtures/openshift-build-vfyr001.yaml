@@ -1,0 +1,5 @@
+builders:
+  - openshift-build-vfyr:
+      api-url: https://openshift.example.local.url
+      bld-cfg: frontend
+      auth-token: ose-key2
