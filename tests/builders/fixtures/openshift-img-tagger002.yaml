@@ -1,0 +1,3 @@
+builders:
+  - openshift-img-tagger:
+      auth-token: ose-key-img2

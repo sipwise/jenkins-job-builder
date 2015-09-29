@@ -1,0 +1,3 @@
+builders:
+  - openshift-builder:
+      auth-token: ose-builder2

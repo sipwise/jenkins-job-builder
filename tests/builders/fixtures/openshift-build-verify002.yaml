@@ -1,0 +1,3 @@
+builders:
+  - openshift-build-verify:
+      auth-token: ose-key-buildv2

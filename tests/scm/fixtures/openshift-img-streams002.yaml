@@ -1,0 +1,3 @@
+scm:
+  - openshift-img-streams:
+      auth-token: ose-key-img-streams2

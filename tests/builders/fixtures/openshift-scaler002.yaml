@@ -1,0 +1,3 @@
+builders:
+  - openshift-scaler:
+      auth-token: ose-key-scaler2

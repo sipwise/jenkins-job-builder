@@ -1,0 +1,3 @@
+builders:
+  - openshift-svc-verify:
+      auth-token: ose-key-svc-verify2
