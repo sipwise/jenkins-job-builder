@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_c440d636",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2416,
+      "author": {
+        "id": 18146
+      },
+      "writtenOn": "2015-09-29T21:30:57Z",
+      "side": 1,
+      "message": "Not sure if problem: elsewhere in this project \u0027string\u0027 is used as the type for arguments.",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_e4795a83",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2422,
+      "author": {
+        "id": 18146
+      },
+      "writtenOn": "2015-09-29T21:30:57Z",
+      "side": 1,
+      "message": "nit: \u0027namespace\u0027 not \u0027name-space\u0027",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_de018339",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 4
@@ -319,6 +353,23 @@
       "writtenOn": "2015-09-29T20:51:35Z",
       "side": 1,
       "message": "Missing required/optional/default",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_64046a17",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2674,
+      "author": {
+        "id": 18146
+      },
+      "writtenOn": "2015-09-29T21:30:57Z",
+      "side": 1,
+      "message": "Nit: \u0027namespace\u0027 not \u0027nameSpace\u0027, make sure docs and field name in code match.",
       "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
