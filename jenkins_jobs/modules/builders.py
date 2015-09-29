@@ -2405,3 +2405,271 @@ def cloudformation(parser, xml_parent, data):
     for stack in data:
         cloudformation_stack(xml_parent, stack, 'PostBuildStackBean', stacks,
                              region_dict)
+
+
+def openshift_builder(parser, xml_parent, data):
+    """yaml: openshift-builder
+    perform builds in openShift for the job.
+    Requires the Jenkins `OpenShift Plugin
+    <Openshift+Plugin - https://www.openshift.com/>`.
+
+    :arg str api-url: this would be the value you specify if you leverage the
+                      --server option on the OpenShift `oc` command.
+                      (default: https://openshift.default.svc.cluster.local)
+    :arg str bld-cfg: The value here should be whatever was the output
+                      form `oc project` when you created the BuildConfig you
+                      want to run a Build on (default: frontend)
+    :arg str name-space: If you run `oc get bc` for the project listed in
+                         "nameSpace", that is the value you want to put here.
+                         (default: test)
+    :arg str auth-token: The value here is what you supply with the --token
+                         option when invoking the OpenShift `oc` command.
+    :arg bool follow-log: The equivalent of using the --follow option with the
+                         `oc start-build` command.
+
+    Example:
+
+    .. literalinclude:: ../../tests/builders/fixtures/openshift-builder001.yaml
+       :language: yaml
+    """
+    osb = XML.SubElement(xml_parent,
+                         'com.openshift.'
+                         'openshiftjenkinsbuildutils.OpenShiftBuilder')
+    XML.SubElement(osb, 'apiURL').text = \
+        str(data.get('api-url',
+                     'https://openshift.default.svc.cluster.local'))
+    XML.SubElement(osb, 'bldCfg').text = str(data.get("bld-cfg", 'frontend'))
+    XML.SubElement(osb, 'nameSpace').text = \
+        str(data.get("name-space", 'test'))
+    XML.SubElement(osb, 'authToken').text = str(data.get("auth-token", ''))
+    followlog = data.get("follow-log", True)
+    XML.SubElement(osb, 'followLog').text = str(followlog).lower()
+
+
+def openshift_scaler(parser, xml_parent, data):
+    """yaml: openshift-scaler
+    scale deployments in OpenShift for the job.
+    Requires the Jenkins `OpenShift Plugin
+    <Openshift+Plugin - https://www.openshift.com/>`.
+
+    :arg str api-url: this would be the value you specify if you leverage the
+                      --server option on the OpenShift `oc` command.
+                      (default: https://openshift.default.svc.cluster.local)
+    :arg str dep-cfg: The value here should be whatever was the output
+                      form `oc project` when you created the BuildConfig you
+                      want to run a Build on (default: frontend)
+    :arg str name-space: If you run `oc get bc` for the project listed in
+                         "nameSpace", that is the value you want to put here.
+                         (default: test)
+    :arg str replica-count: The value here should be whatever the number
+                            of pods you want started for the deployment.
+    :arg str auth-token: The value here is what you supply with the --token
+                         option when invoking the OpenShift `oc` command.
+
+    Example:
+
+    .. literalinclude:: ../../tests/builders/fixtures/openshift-scaler001.yaml
+       :language: yaml
+    """
+    osb = XML.SubElement(xml_parent,
+                         'com.openshift.'
+                         'openshiftjenkinsbuildutils.OpenShiftScaler')
+    XML.SubElement(osb, 'apiURL').text = \
+        str(data.get('api-url',
+                     'https://openshift.default.svc.cluster.local'))
+    XML.SubElement(osb, 'depCfg').text = str(data.get("dep-cfg", 'frontend'))
+    XML.SubElement(osb, 'nameSpace').text = \
+        str(data.get("name-space", 'test'))
+    XML.SubElement(osb, 'replicaCount').text = \
+        str(data.get("replica-count", 0))
+    XML.SubElement(osb, 'authToken').text = str(data.get("auth-token", ''))
+
+
+def openshift_deployer(parser, xml_parent, data):
+    """yaml: openshift-deployer
+    start a deployment in OpenShift for the job.
+    Requires the Jenkins `OpenShift Plugin
+    <Openshift+Plugin - https://www.openshift.com/>`.
+
+    :arg str api-url: this would be the value you specify if you leverage the
+                      --server option on the OpenShift `oc` command.
+                      (default: https://openshift.default.svc.cluster.local)
+    :arg str dep-cfg: The value here should be whatever was the output
+                      form `oc project` when you created the BuildConfig you
+                      want to run a Build on (default: frontend)
+    :arg str name-space: If you run `oc get bc` for the project listed in
+                         "nameSpace", that is the value you want to put here.
+                         (default: test)
+    :arg str auth-token: The value here is what you supply with the --token
+                         option when invoking the OpenShift `oc` command.
+
+    Example:
+
+    .. literalinclude::
+        ../../tests/builders/fixtures/openshift-deployer001.yaml
+       :language: yaml
+    """
+    osb = XML.SubElement(xml_parent,
+                         'com.openshift.'
+                         'openshiftjenkinsbuildutils.OpenShiftDeployer')
+    XML.SubElement(osb, 'apiURL').text = \
+        str(data.get('api-url',
+                     'https://openshift.default.svc.cluster.local'))
+    XML.SubElement(osb, 'depCfg').text = str(data.get("dep-cfg", 'frontend'))
+    XML.SubElement(osb, 'nameSpace').text = \
+        str(data.get("name-space", 'test'))
+    XML.SubElement(osb, 'authToken').text = str(data.get("auth-token", ''))
+
+
+def openshift_svc_vfyr(parser, xml_parent, data):
+    """yaml: openshift-svc-vfyr
+    verify a service is up in OpenShift for the job.
+    Requires the Jenkins `OpenShift Plugin
+    <Openshift+Plugin - https://www.openshift.com/>`.
+
+    :arg str api-url: this would be the value you specify if you leverage the
+                      --server option on the OpenShift `oc` command.
+                      (default: https://openshift.default.svc.cluster.local)
+    :arg str svc-name: The equivalent to the name supplied to a
+                       `oc get service` command line invocation.
+                       (default: frontend)
+    :arg str name-space: If you run `oc get bc` for the project listed in
+                         "nameSpace", that is the value you want to put here.
+                         (default: test)
+    :arg str auth-token: The value here is what you supply with the --token
+                         option when invoking the OpenShift `oc` command.
+
+    Example:
+
+    .. literalinclude::
+        ../../tests/builders/fixtures/openshift-svc-vfyr001.yaml
+       :language: yaml
+    """
+    osb = XML.SubElement(xml_parent,
+                         'com.openshift.'
+                         'openshiftjenkinsbuildutils.OpenShiftServiceVerifier')
+    XML.SubElement(osb, 'apiURL').text = \
+        str(data.get('api-url',
+                     'https://openshift.default.svc.cluster.local'))
+    XML.SubElement(osb, 'svcName').text = str(data.get("svc-name", 'frontend'))
+    XML.SubElement(osb, 'nameSpace').text = \
+        str(data.get("name-space", 'test'))
+    XML.SubElement(osb, 'authToken').text = str(data.get("auth-token", ''))
+
+
+def openshift_img_tagger(parser, xml_parent, data):
+    """yaml: openshift-img-tagger
+    verify a service is up in OpenShift for the job.
+    Requires the Jenkins `OpenShift Plugin
+    <Openshift+Plugin - https://www.openshift.com/>`.
+
+    :arg str api-url: this would be the value you specify if you leverage the
+                      --server option on the OpenShift `oc` command.
+                      (default: https://openshift.default.svc.cluster.local)
+    :arg str test-tag: The equivalent to the name supplied to a
+                       `oc get service` command line invocation.
+                       (default: origin-nodejs-sample:latest)
+    :arg str prod-tag: The equivalent to the name supplied to a
+                       `oc get service` command line invocation.
+                       (default: origin-nodejs-sample:prod)
+    :arg str name-space: If you run `oc get bc` for the project listed in
+                         "nameSpace", that is the value you want to put here.
+                         (default: test)
+    :arg str auth-token: The value here is what you supply with the --token
+                         option when invoking the OpenShift `oc` command.
+
+    Example:
+
+    .. literalinclude::
+        ../../tests/builders/fixtures/openshift-img-tagger001.yaml
+       :language: yaml
+    """
+    osb = XML.SubElement(xml_parent,
+                         'com.openshift.'
+                         'openshiftjenkinsbuildutils.OpenShiftImageTagger')
+    XML.SubElement(osb, 'apiURL').text = \
+        str(data.get('api-url',
+                     'https://openshift.default.svc.cluster.local'))
+    XML.SubElement(osb, 'testTag').text = \
+        str(data.get("test-tag", 'origin-nodejs-sample:latest'))
+    XML.SubElement(osb, 'prodTag').text = \
+        str(data.get("prod-tag", 'origin-nodejs-sample:prod'))
+    XML.SubElement(osb, 'nameSpace').text = \
+        str(data.get("name-space", 'test'))
+    XML.SubElement(osb, 'authToken').text = str(data.get("auth-token", ''))
+
+
+def openshift_dep_vfyr(parser, xml_parent, data):
+    """yaml: openshift-dep-vfry
+    scale deployments in OpenShift for the job.
+    Requires the Jenkins `OpenShift Plugin
+    <Openshift+Plugin - https://www.openshift.com/>`.
+
+    :arg str api-url: this would be the value you specify if you leverage the
+                      --server option on the OpenShift `oc` command.
+                      (default: https://openshift.default.svc.cluster.local)
+    :arg str dep-cfg: The value here should be whatever was the output
+                      form `oc project` when you created the BuildConfig you
+                      want to run a Build on (default: frontend)
+    :arg str name-space: If you run `oc get bc` for the project listed in
+                         "nameSpace", that is the value you want to put here.
+                         (default: test)
+    :arg str replica-count: The value here should be whatever the number
+                            of pods you want started for the deployment.
+    :arg str auth-token: The value here is what you supply with the --token
+                         option when invoking the OpenShift `oc` command.
+
+    Example:
+
+    .. literalinclude:: ../../tests/builders/fixtures/openshift-dep-vfyr001.yaml
+       :language: yaml
+    """
+    osb = XML.SubElement(xml_parent,
+                         'com.openshift.'
+                         'openshiftjenkinsbuildutils.'
+                         'OpenShiftDeploymentVerifier')
+    XML.SubElement(osb, 'apiURL').text = \
+        str(data.get('api-url',
+                     'https://openshift.default.svc.cluster.local'))
+    XML.SubElement(osb, 'depCfg').text = str(data.get("dep-cfg", 'frontend'))
+    XML.SubElement(osb, 'nameSpace').text = \
+        str(data.get("name-space", 'test'))
+    XML.SubElement(osb, 'replicaCount').text = \
+        str(data.get("replica-count", 0))
+    XML.SubElement(osb, 'authToken').text = str(data.get("auth-token", ''))
+
+
+def openshift_build_vfyr(parser, xml_parent, data):
+    """yaml: openshift-build-vfyr
+    perform builds in openShift for the job.
+    Requires the Jenkins `OpenShift Plugin
+    <Openshift+Plugin - https://www.openshift.com/>`.
+
+    :arg str api-url: this would be the value you specify if you leverage the
+                      --server option on the OpenShift `oc` command.
+                      (default: https://openshift.default.svc.cluster.local)
+    :arg str bld-cfg: The value here should be whatever was the output
+                      form `oc project` when you created the BuildConfig you
+                      want to run a Build on (default: frontend)
+    :arg str name-space: If you run `oc get bc` for the project listed in
+                         "nameSpace", that is the value you want to put here.
+                         (default: test)
+    :arg str auth-token: The value here is what you supply with the --token
+                         option when invoking the OpenShift `oc` command.
+
+    Example:
+
+    .. literalinclude::
+        ../../tests/builders/fixtures/openshift-build-vfyr001.yaml
+       :language: yaml
+    """
+    osb = XML.SubElement(xml_parent,
+                         'com.openshift.'
+                         'openshiftjenkinsbuildutils.OpenShiftBuildVerifier')
+    XML.SubElement(osb, 'apiURL').text = \
+        str(data.get('api-url',
+                     'https://openshift.default.svc.cluster.local'))
+    XML.SubElement(osb, 'bldCfg').text = str(data.get("bld-cfg", 'frontend'))
+    XML.SubElement(osb, 'nameSpace').text = \
+        str(data.get("name-space", 'test'))
+    XML.SubElement(osb, 'authToken').text = str(data.get("auth-token", ''))
