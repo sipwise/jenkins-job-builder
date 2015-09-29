@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_9b06c21a",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-29T18:05:47Z",
+      "side": 1,
+      "message": "Looks like this is handled by having two separate methods to check.",
+      "parentUuid": "9a1a9d01_5175e1c8",
+      "revId": "4164f24ad25775953db7c44b39c40e7c0df99ef5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_5b434a42",
+        "filename": "jenkins_jobs/modules/general.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-29T18:05:47Z",
+      "side": 1,
+      "message": "When changing the description for the MAGIC_MANAGE_STRING constant, you\u0027ll need to update the doc string here.",
+      "revId": "4164f24ad25775953db7c44b39c40e7c0df99ef5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_e0786180",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 5
@@ -47,6 +82,24 @@
       "writtenOn": "2015-09-25T17:48:51Z",
       "side": 1,
       "message": "This tag will get removed when users save job from the Jenkins UI.  So we should change the default job description.  Maybe change it to something along these lines.. \n\n\"!-- Initially created by Jenkins Job Builder.  Any subsequent updates to this job using the Jenkins UI will invalidate JJB\u0027s ability to manage this job. --\u0026gt;",
+      "revId": "4164f24ad25775953db7c44b39c40e7c0df99ef5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_9b6b22b9",
+        "filename": "tests/cmd/fixtures/cmd-001.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-29T18:05:47Z",
+      "side": 1,
+      "message": "FYI, stored in the \u0027constants.py\u0027 file.",
+      "parentUuid": "ba15a1d1_a0e829e3",
       "revId": "4164f24ad25775953db7c44b39c40e7c0df99ef5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

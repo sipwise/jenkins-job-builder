@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_fb2c9e9a",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-29T18:05:47Z",
+      "side": 0,
+      "message": "Agreed, see if you can drop this whitespace change.",
+      "revId": "6a8223e05b173e8cc750b02195cd16748e6ccd41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
