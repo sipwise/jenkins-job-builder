@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a1a9d01_2958b489",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 830,
+      "author": {
+        "id": 18146
+      },
+      "writtenOn": "2015-09-29T05:51:23Z",
+      "side": 1,
+      "message": "Thanks!\n\nFixed in next patch set.",
+      "parentUuid": "ba15a1d1_3348065c",
+      "revId": "47a2e1a45c05d388cef102f81fb64d419351b373",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba15a1d1_f3ba8ee0",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-09-23T17:55:30Z",
       "side": 1,
       "message": "can also be written as..\n\n  if \u0027build-desc-template\u0027 in data:\n      XML.SubElement(ghprb, \u0027buildDescTemplate\u0027).text \u003d str(\n         data.get(\u0027build-desc-template\u0027, \u0027\u0027))",
+      "revId": "47a2e1a45c05d388cef102f81fb64d419351b373",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_49d408bc",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 862,
+      "author": {
+        "id": 18146
+      },
+      "writtenOn": "2015-09-29T05:51:23Z",
+      "side": 1,
+      "message": "Both styles are already used in the code, so I picked the convention I preferred :)\n\nI will change this if you would prefer, but I tend to put this in the category of subjective and I have a strong personal subjective inclination toward this style.  Let me know if you would prefer that I change it before merge.",
+      "parentUuid": "ba15a1d1_f3ba8ee0",
       "revId": "47a2e1a45c05d388cef102f81fb64d419351b373",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
