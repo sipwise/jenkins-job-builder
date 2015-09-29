@@ -177,7 +177,7 @@ class BaseTestCase(LoggingFixture):
         pub = self.klass(parser.registry)
 
         # Generate the XML tree directly with modules/general
-        pub.gen_xml(parser, xml_project, yaml_content)
+        pub.gen_xml(parser, xml_project, pub.materialize_job(yaml_content))
 
         # Prettify generated XML
         pretty_xml = XmlJob(xml_project, 'fixturejob').output().decode('utf-8')

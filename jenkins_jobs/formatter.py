@@ -38,7 +38,12 @@ def deep_format(obj, paramdict, allow_empty=False):
             if result is not None:
                 ret = paramdict[result.group("key")]
             else:
-                ret = CustomFormatter(allow_empty).format(obj, **paramdict)
+                formatter = CustomFormatter(allow_empty)
+                fields = tuple(formatter.parse(obj))
+                if (len(fields) == 1 and fields[0][1] in paramdict and
+                        paramdict[fields[0][1]] is None):
+                    return None
+                return formatter.format(obj, **paramdict)
         except KeyError as exc:
             missing_key = exc.message
             desc = "%s parameter missing to format %s\nGiven:\n%s" % (

@@ -14,6 +14,7 @@
 
 # Base class for a jenkins_jobs module
 
+import collections
 import xml.etree.ElementTree as XML
 
 
@@ -70,6 +71,18 @@ class Base(object):
 
         return False
 
+    def materialize_job(self, job_data):
+        """This method is called on individual jobs **after**
+        templating.  It must return a copy and not modify the job in
+        place.  By overridding this method, the module may create its
+        own self-contained "view" of a job's configuration before XML
+        is generated.
+
+        :arg dict job_data: The post-template YAML data structure
+        :rtype: dict: Modified copy of job_data
+        """
+        return job_data
+
     def gen_xml(self, parser, xml_parent, data):
         """Update the XML element tree based on YAML data.  Override
         this method to add elements to the XML output.  Create new
@@ -82,3 +95,26 @@ class Base(object):
         """
 
         pass
+
+    def strip_none(self, obj):
+        """ Strip ``None`` values from a nested object made up of
+        basic objects (dicts, lists, etc) and return a new None-free
+        object..  Provided as a potential helper to handle_data.
+
+        :arg obj: The object to strip
+        """
+        if isinstance(obj, collections.OrderedDict):
+            return collections.OrderedDict([(k, self.strip_none(v)) for
+                                            k, v in obj.items()])
+        elif isinstance(obj, dict):
+            return {k: self.strip_none(v) for k, v in obj.items()}
+        elif isinstance(obj, list):
+            return [self.strip_none(item) for item in obj if item is not None]
+        elif isinstance(obj, tuple):
+            return tuple(self.strip_none(item) for
+                         item in obj if item is not None)
+        elif isinstance(obj, set):
+            return {self.strip_none(item) for
+                    item in obj if item is not None}
+        else:
+            return obj

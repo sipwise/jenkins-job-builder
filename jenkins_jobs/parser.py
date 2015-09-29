@@ -355,5 +355,7 @@ class YamlParser(object):
 
     def gen_xml(self, xml, data):
         for module in self.registry.modules:
+            if hasattr(module, 'materialize_job'):
+                data = module.materialize_job(data)
             if hasattr(module, 'gen_xml'):
                 module.gen_xml(self, xml, data)

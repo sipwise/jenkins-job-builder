@@ -1195,6 +1195,9 @@ class SCM(jenkins_jobs.modules.base.Base):
     component_type = 'scm'
     component_list_type = 'scm'
 
+    def materialize_job(self, job_data):
+        return self.strip_none(job_data)
+
     def gen_xml(self, parser, xml_parent, data):
         scms_parent = XML.Element('scms')
         for scm in data.get('scm', []):
