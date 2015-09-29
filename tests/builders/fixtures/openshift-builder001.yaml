@@ -1,0 +1,7 @@
+builders:
+  - openshift-builder:
+      api-url: https://openshift.example.local.url/
+      bld-cfg: front
+      name-space: test9
+      auth-token: ose-builder1
+      follow-log: false

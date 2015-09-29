@@ -1,0 +1,6 @@
+builders:
+  - openshift-svc-verify:
+      api-url: https://openshift.default.svc.cluster.local
+      svc-name: frontend
+      name-space: test
+      auth-token: ose-key-svc-verify2

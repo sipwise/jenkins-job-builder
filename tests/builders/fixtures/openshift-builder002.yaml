@@ -1,0 +1,7 @@
+builders:
+  - openshift-builder:
+      api-url: https://openshift.default.svc.cluster.local
+      bld-cfg: frontend
+      name-space: test
+      auth-token: ose-builder2
+      follow-log: true

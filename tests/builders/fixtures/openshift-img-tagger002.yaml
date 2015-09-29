@@ -1,0 +1,7 @@
+builders:
+  - openshift-img-tagger:
+      api-url: https://openshift.default.svc.cluster.local
+      test-tag: origin-nodejs-sample:latest
+      prod-tag: origin-nodejs-sample:prod
+      name-space: test
+      auth-token: ose-key-img2
