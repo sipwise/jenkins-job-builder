@@ -1,0 +1,378 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_9ec30b57",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2412,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-09-29T20:51:35Z",
+      "side": 1,
+      "message": "- Perform\n- OpenShift",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_de018339",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2426,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-09-29T20:51:35Z",
+      "side": 1,
+      "message": "Missing required/optional/default",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_7efab744",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2428,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-09-29T20:51:35Z",
+      "side": 1,
+      "message": "Missing default: true?",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_1e705bdb",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2451,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-09-29T20:51:35Z",
+      "side": 1,
+      "message": "Scale",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_e91db362",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2465,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-09-29T20:51:35Z",
+      "side": 1,
+      "message": "Missing (default: 0) ?",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_693203f4",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2467,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-09-29T20:51:35Z",
+      "side": 1,
+      "message": "Missing required/optional/default",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_e9f053ff",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2490,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-09-29T20:51:35Z",
+      "side": 1,
+      "message": "Start",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_4954dffd",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2504,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-09-29T20:51:35Z",
+      "side": 1,
+      "message": "Missing required/optional/default",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_09e027f9",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2525,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-09-29T20:51:35Z",
+      "side": 1,
+      "message": "Is e.g. \"openshift-svc-verify\" too long? I feel like \"vfyr\" is not very intuitive/legible.",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_c9dc6f75",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2526,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-09-29T20:51:35Z",
+      "side": 1,
+      "message": "Verify",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_497b7f8c",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2540,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-09-29T20:51:35Z",
+      "side": 1,
+      "message": "Missing required/optional/default",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_49d7ff4a",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2562,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-09-29T20:51:35Z",
+      "side": 1,
+      "message": "Is this the correct description?",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_09a827da",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2579,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-09-29T20:51:35Z",
+      "side": 1,
+      "message": "Missing required/optional/default",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_49a85f8d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2603,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-09-29T20:51:35Z",
+      "side": 1,
+      "message": "How about \"openshift-dep-verify\" ?",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_29608ba4",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2604,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-09-29T20:51:35Z",
+      "side": 1,
+      "message": "Is this the correct description?",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_a9b1fb48",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2620,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-09-29T20:51:35Z",
+      "side": 1,
+      "message": "Missing required/optional/default",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_e9fb7379",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2644,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-09-29T20:51:35Z",
+      "side": 1,
+      "message": "How about \"openshift-build-verify\" ?",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_c9d0eff8",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2645,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-09-29T20:51:35Z",
+      "side": 1,
+      "message": "Is this the correct description?",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_c9aeafe5",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2659,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-09-29T20:51:35Z",
+      "side": 1,
+      "message": "Missing required/optional/default",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_c9530f6a",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1051,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-09-29T20:51:35Z",
+      "side": 1,
+      "message": "Would it be possible to reword this blurb? It\u0027s not clear what this does, but that may just be because I\u0027m not super familiar with OpenShift. Does it trigger a new build when a new image is detected?",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_894437b7",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1062,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-09-29T20:51:35Z",
+      "side": 1,
+      "message": "Is that really the default? Seems very... specific.",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_894997b9",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1073,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-09-29T20:51:35Z",
+      "side": 1,
+      "message": "Missing required/optional/default",
+      "revId": "a1fe98efffebc9ac162c4b5759c0f6b459e616ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
