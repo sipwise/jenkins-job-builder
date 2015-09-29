@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_31e23730",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1785,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-29T18:46:26Z",
+      "side": 1,
+      "message": "Indenting by four on the second line allows for continuation as well. This would align better with the scm module which is currently the standard to follow.",
+      "revId": "bd571676fede68491ddf3f4243f98cf96a2f3507",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_d14e5b6e",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1798,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-29T18:46:26Z",
+      "side": 1,
+      "message": "Please avoid use of \u0027\\\u0027, it\u0027s generally recommended in pep8 to avoid unless absolutely required and we try to avoid mixing in additional coding styles. Although the use \u0027\\\u0027 is already present in this module, we are trying to reduce it as much as possible and prefer to avoid adding addition unnecessary uses.\n\nFollowing avoids this.\n\n    agg_flow \u003d XML.SubElement(xml_parent,\n                              \u0027org.zeroturnaround.jenkins.\u0027\n                              \u0027flowbuildtestaggregator.FlowTestAggregator\u0027)\n\nor\n\n    agg_flow \u003d XML.SubElement(\n        xml_parent, \u0027org.zeroturnaround.jenkins.\u0027\n        \u0027flowbuildtestaggregator.FlowTestAggregator\u0027)\n\nand\n\n    XML.SubElement(agg_flow, \u0027showTestResultTrend\u0027).text \u003d str(\n        data.get(\u0027show-test-results-trend\u0027, True)).lower()\n\n\nAdditionally what happens if this is outputted for older versions of the plugin? As long as it is silently ignored, should be fine, just want to check that it doesn\u0027t break older installations since this changes the default output.",
+      "revId": "bd571676fede68491ddf3f4243f98cf96a2f3507",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
