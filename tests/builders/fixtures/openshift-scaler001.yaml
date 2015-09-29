@@ -1,0 +1,6 @@
+builders:
+  - openshift-scaler:
+      api-url: https://openshift.example.local.url
+      dep-cfg: frontend
+      name-space: test2
+      auth-token: ose-key

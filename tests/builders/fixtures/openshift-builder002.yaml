@@ -1,0 +1,4 @@
+builders:
+  - openshift-builder:
+      bld-cfg: frontend
+      auth-token: ose1
