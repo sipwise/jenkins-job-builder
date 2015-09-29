@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_f1cd9f31",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3546,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-29T19:04:37Z",
+      "side": 1,
+      "message": "This seems more like the id of the credentials to use than the password",
+      "revId": "139f2041906cd22b26dfd766f03261e3bb87ddf4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_555476fd",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3559,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-29T19:04:37Z",
+      "side": 1,
+      "message": "Do we need to prevent use of credentials-id for older versions?",
+      "revId": "139f2041906cd22b26dfd766f03261e3bb87ddf4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_3153173b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3575,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-29T19:04:37Z",
+      "side": 1,
+      "message": "What happens if credentials-id is defined on the job but username/password is in the config file? Seems like we need to decide in what order things should override here first.\n\nFor users I would suggest that existing of settings on jobs should be taken in preference to the config file which means that you need to check for both the username/password and the credentials-id being defined on the job first, then check if either is in the config file.\n\nOtherwise how do I set credentials for specific jobs? it\u0027ll work as long as not of these settings are in the config file.",
+      "revId": "139f2041906cd22b26dfd766f03261e3bb87ddf4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_d132db0f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3579,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-29T19:04:37Z",
+      "side": 1,
+      "message": "Also it seems like it would be better to encourage using credentials-id in preference to username/password and should check for credentials-id first?\n\n\nI think the best order of preference is:\n\n* credentials-id on job\n* username/password on job\n* credentials-id in config file\n* username/password in config file",
+      "revId": "139f2041906cd22b26dfd766f03261e3bb87ddf4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
