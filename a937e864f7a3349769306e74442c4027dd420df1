@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_91b1c303",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1887,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-29T18:50:48Z",
+      "side": 1,
+      "message": "\u0027\\\u0027 is unnecessary here. the four space indentation on th next line will be correctly interpreted as a line continuable.\n\nPrefer to avoid use of this as it generally is recommended against in pep8 requirements and people copy n paste existing code.",
+      "revId": "a937e864f7a3349769306e74442c4027dd420df1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_b1b647f7",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1891,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-29T18:50:48Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "a937e864f7a3349769306e74442c4027dd420df1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
