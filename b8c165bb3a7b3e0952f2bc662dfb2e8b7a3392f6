@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_0749d9cf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-30T12:13:11Z",
+      "side": 1,
+      "message": "Need to leave a blank line between subject and body for git commits.",
+      "revId": "b8c165bb3a7b3e0952f2bc662dfb2e8b7a3392f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_a7b26de3",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2414,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-30T12:13:11Z",
+      "side": 1,
+      "message": "Link generation is not working, see http://docs-draft.openstack.org/00/229100/5/check/gate-jenkins-job-builder-docs/a29d0c5//doc/build/html/builders.html#builders.openshift-builder for output.\n\nIf this is the OpenShift Deployer plugin, the following would work:\n\n :jenkins-wiki:`OpenShift Deployer Plugin \u003cOpenShift+Deployer+Plugin\u003e`\n\n\nHowever I\u0027m wondering if this is in fact a different plugin that is not listed on the jenkins wiki?\n\nhttps://github.com/openshift/jenkins-cloud-plugin/tree/master/src/main/resources/hudson/plugins/openshift\n\n\nIn either case you need to update the link used to either use the special macro created for JJB or use sphinx standard link creation and instead of referencing the landing page for openshift, reference somewhere that has docs on the plugin.",
+      "revId": "b8c165bb3a7b3e0952f2bc662dfb2e8b7a3392f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_e7a145f9",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2430,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-30T12:13:11Z",
+      "side": 1,
+      "message": "Follow existing examples in the scm module for formatting of the docstrings.",
+      "revId": "b8c165bb3a7b3e0952f2bc662dfb2e8b7a3392f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_278bbd69",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2440,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-30T12:13:11Z",
+      "side": 1,
+      "message": "Please avoid use of \u0027\\\u0027 for line continuation. Aware there are some in the project, but we\u0027re looking to reduce that in line with pep8 recommendation to avoid usage unless no alternative.\n\nFollowing example should be sufficient to follow the preferred project style:\n\n    XML.SubElement(osb, \u0027apiURL\u0027).text \u003d str(\n        data.get(\u0027api-url\u0027, \u0027https://openshift.default.svc.cluster.local\u0027))",
+      "revId": "b8c165bb3a7b3e0952f2bc662dfb2e8b7a3392f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_6caf5a2a",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1057,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-30T12:13:11Z",
+      "side": 1,
+      "message": "Link generation doesn\u0027t work, please reference examples in this module to create link for the jenkins wiki page for the plugin, and subsequently create a separate link entry to the openshift site.\n\nSee http://docs-draft.openstack.org/00/229100/5/check/gate-jenkins-job-builder-docs/a29d0c5//doc/build/html/scm.html#scm.openshift-img-streams for the output.\n\nYou can use \u0027tox -e docs \u0026\u0026 firefox doc/build/html/scm.html\u0027 to test locally.",
+      "revId": "b8c165bb3a7b3e0952f2bc662dfb2e8b7a3392f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_4c71360e",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1075,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-30T12:13:11Z",
+      "side": 1,
+      "message": "Please follow existing docstring formatting already present in this file. Each subsequent line that should be a continuation of the previous should be indented by four spaces from the first line.",
+      "revId": "b8c165bb3a7b3e0952f2bc662dfb2e8b7a3392f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_c7ca011b",
+        "filename": "tests/builders/fixtures/openshift-svc-vfyr001.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-30T12:13:11Z",
+      "side": 1,
+      "message": "Just use .example as the ending domain to adhere to rfc.",
+      "revId": "b8c165bb3a7b3e0952f2bc662dfb2e8b7a3392f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_27e09d95",
+        "filename": "tests/builders/fixtures/openshift-svc-vfyr001.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-30T12:13:11Z",
+      "side": 1,
+      "message": "need separate tests to exercise defaults from overriding settings.",
+      "revId": "b8c165bb3a7b3e0952f2bc662dfb2e8b7a3392f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_271bbdcb",
+        "filename": "tests/scm/fixtures/openshift-img-streams001.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-09-30T12:13:11Z",
+      "side": 1,
+      "message": "These are mostly just specifying the defaults. Need two examples, one with the minimal amount of settings to exercise the defaults and one that overrides all the defaults to something else.",
+      "revId": "b8c165bb3a7b3e0952f2bc662dfb2e8b7a3392f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
