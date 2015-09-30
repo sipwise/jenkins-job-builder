@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_aae53609",
+        "filename": "tests/publishers/fixtures/artifactory02.yaml",
+        "patchSetId": 26
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-09-30T21:44:19Z",
+      "side": 1,
+      "message": "this doesn\u0027t provide much value to the user looking at this example.  I would prefer you put something rather than just an empty list.  maybe can be done as a follow on change ;)",
+      "revId": "a39c4d85d1e0f91a5d0fe0432992d37689998478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
