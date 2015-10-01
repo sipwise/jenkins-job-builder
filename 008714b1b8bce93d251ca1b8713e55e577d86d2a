@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_4b5f8e75",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1782,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-10-01T21:44:18Z",
+      "side": 1,
+      "message": "Oops, missed this. Should use the custom sphinx macro we have for links to Jenkins wiki.\n\n :jenkins-wiki:`Build Flow Test Aggregator Plugin\n \u003cBuild+Flow+Test+Aggregator+Plugin\u003e`",
+      "revId": "008714b1b8bce93d251ca1b8713e55e577d86d2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_abe18a9c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1789,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-10-01T21:44:18Z",
+      "side": 1,
+      "message": "Forgot this occurrence of \\, same as the other documentation, just need the next line to be invented by for spaces and it\u0027ll be treated as a continuation and formatted correctly.",
+      "revId": "008714b1b8bce93d251ca1b8713e55e577d86d2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
