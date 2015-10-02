@@ -1,0 +1,18 @@
+- project:
+    name: dev
+    OS_USERNAME: 'demo'
+
+    jobs:
+      - '{name}-openstack'
+
+- parameter:
+    name: openstack-params
+    parameters:
+      - string:
+          name: OS_USERNAME
+          default: '{OS_USERNAME}'
+
+- job-template:
+    name: '{name}-openstack'
+    parameters:
+        - openstack-params
