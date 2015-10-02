@@ -142,6 +142,21 @@ class YamlParser(object):
         newdata = {}
         newdata.update(defaults)
         newdata.update(data)
+
+        macros = self.data.keys()
+        logger.debug('macros: {}'.format(macros))
+        for macro in macros:
+            macro_group = '{}s'.format(macro)
+            if macro_group not in data:
+                continue
+            newmembers = []
+            for member in data.get(macro_group, {}):
+                if isinstance(member, str):
+                    newmembers.extend(self.data[macro][member][macro_group])
+                else:
+                    newmembers.append(member)
+                newdata.update({macro_group: newmembers})
+
         return newdata
 
     def formatDescription(self, job):
