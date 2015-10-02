@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a1a9d01_9d62a815",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-10-02T15:41:17Z",
+      "side": 1,
+      "message": "This looks specific to a single module, if you came up with a generic approach to allow all project variables to apply to macros referenced in templates it would be useful to remove the need to specify additional variables/values.",
+      "revId": "6a42abb5b0082d6738e9e42a1e89cdb0830e2f17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_bd644c49",
+        "filename": "tests/yamlparser/fixtures/external-parameter-group-defaults001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-10-02T15:41:17Z",
+      "side": 1,
+      "message": "Needs to be the following:\n\n        - openstack-params:\n            OS_USERNAME: \u0027{OS_USERNAME}\u0027\n\nSubstitution occurs on various levels. You need to specify the variables to be passed to the macro, it won\u0027t automatically receive all project variables passed through.",
+      "revId": "6a42abb5b0082d6738e9e42a1e89cdb0830e2f17",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
