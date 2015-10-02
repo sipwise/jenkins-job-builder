@@ -139,9 +139,20 @@ class YamlParser(object):
             if key in defaults.keys():
                 defaults[key] = override_dict[key]
 
+        parameters = data.get('parameters', {})
+        newparams = []
+        for parameter in parameters:
+            if isinstance(parameter, str):
+                newparams.extend(self.data.get('parameter').get(parameter).get('parameters'))
+            else:
+                newparams.append(parameter)
+
         newdata = {}
         newdata.update(defaults)
         newdata.update(data)
+        if data.get('parameters', False) != False:
+            newdata.update({'parameters': newparams})
+
         return newdata
 
     def formatDescription(self, job):
