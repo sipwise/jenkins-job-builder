@@ -33,6 +33,23 @@
       "revId": "008714b1b8bce93d251ca1b8713e55e577d86d2a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a1a9d01_0272d07c",
+        "filename": "tests/publishers/fixtures/aggregate-flow-tests.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-10-02T04:05:30Z",
+      "side": 1,
+      "message": "This one has no associated yaml file. Is this intentional? (I\u0027m not sure if the test runs without being paired with a yaml)",
+      "revId": "008714b1b8bce93d251ca1b8713e55e577d86d2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
