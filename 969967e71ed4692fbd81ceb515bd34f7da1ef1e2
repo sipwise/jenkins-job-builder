@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_64a904df",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1084,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-10-07T17:36:18Z",
+      "side": 1,
+      "message": "Looks like \u0027:language: yaml\u0027 is indented one space too many, it applies to the literalinclude and appears to require being aligned with the start of that to take affect.\n\nFollowing is correct:\n\n    .. literalinclude::\n        ../../tests/scm/fixtures/openshift-img-streams002.yaml\n       :language: yaml\n\nI\u0027m not sure it\u0027ll actually affect these examples because of the way the strings are not enclosed with quotes, but if you\u0027re changing the below, wouldn\u0027t hurt to tweak this.\n\nSame is true for the one above, but looks like all the ones in the builder class are correct.",
+      "revId": "969967e71ed4692fbd81ceb515bd34f7da1ef1e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_04dff069",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1106,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-10-07T17:36:18Z",
+      "side": 1,
+      "message": "This is all nice a tidy now, would you consider moving this to the helper module and calling it something like \u0027convert_mapping_to_xml\u0027 and then importing that method into this module and the builders module?",
+      "revId": "969967e71ed4692fbd81ceb515bd34f7da1ef1e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
