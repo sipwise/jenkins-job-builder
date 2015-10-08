@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_54cc8569",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-10-08T16:42:49Z",
+      "side": 1,
+      "message": "Actually, yes it would be good to fix this to point to the story board instead.\n\nSimply putting the following along side the Change-Id entry below (without any blank lines between them allows searching gerrit for tr:2000374 as well as fixing the link.\n\n story: 2000374",
+      "revId": "4077f69235b676d1121daaf20fd3ec72b6cdd87c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
