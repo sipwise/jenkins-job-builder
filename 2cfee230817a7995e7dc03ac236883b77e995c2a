@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_96545dfe",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-10-08T18:36:39Z",
+      "side": 1,
+      "message": "I\u0027m not sure if I fully understand the context under which this helper function is meant to be used, but what if you actually want an empty element there? E.g. \u003cmy-element/\u003e ? Maybe check for None instead to know if to skip, and otherwise, if it\u0027s empty string, emit an empty XML element.",
+      "revId": "2cfee230817a7995e7dc03ac236883b77e995c2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
