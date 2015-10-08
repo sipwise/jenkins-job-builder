@@ -395,3 +395,18 @@ def artifactory_repository(xml_parent, data, target):
             'deploy-snapshot-repo-key', '')
         XML.SubElement(xml_parent, 'dynamicMode').text = str(
             data.get('deploy-dynamic-mode', False)).lower()
+
+
+def convert_mapping_to_xml(parent, data, mapping):
+
+    for elem in mapping:
+        (optname, xmlname, val) = elem
+        val = data.get(optname, val)
+        # Skip adding xml entry if default is empty string
+        # and no value given
+        if not val and elem[2] is '':
+            continue
+        if str(val).lower() == 'true' or str(val).lower() == 'false':
+            val = str(val).lower()
+        xe = XML.SubElement(parent, xmlname)
+        xe.text = str(val)
