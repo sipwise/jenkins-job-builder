@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_085d5a46",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-10-09T17:07:53Z",
+      "side": 1,
+      "message": "Seems like we should raise an error if spec is not defined. So\n\n try:\n     XML.SubElement(sfbtrig, \u0027spec\u0027).text \u003d data[\u0027spec\u0027]\n except KeyError as e:\n     raise MissingAttributeError(e)\n\nAlternatively if the plugin provides a default for the user to modify on activating the trigger, there should be a default schedule matching that:\n\n try:\n     spec \u003d data[\u0027spec\u0027]\n except KeyError, AttributeError:\n     spec \u003d \"* * * * *\"  # or whatever default the plugin provides.\n\n XML.SubElement(sfbtrig, \u0027spec\u0027).text \u003d spec\n\nThis would necessitate a tweak to the docstring above in this case to describe the default value.\n\nWhat I don\u0027t think we should accept is the existing output of one of the examples which has no value and results in just the parent tag appearing with no spec defined, unless of course that happens to match the plugin behaviour?\n\nIf you select the plugin, and don\u0027t provide/modify a schedule and then save the job, what XML is generated?",
+      "revId": "26fa116fabd2bb97c84a8181be7a70a39fd4f9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_c829a29c",
+        "filename": "tests/triggers/fixtures/schedule-failed-builds001.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-10-09T17:07:53Z",
+      "side": 1,
+      "message": "Seems like we should trigger an exception if the user is getting XML like this. If there is no schedule defined, then don\u0027t add the tag.",
+      "revId": "26fa116fabd2bb97c84a8181be7a70a39fd4f9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
