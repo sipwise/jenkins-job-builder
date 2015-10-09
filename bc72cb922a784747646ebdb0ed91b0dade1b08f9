@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_cd71b40d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1097,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-10-09T15:40:44Z",
+      "side": 1,
+      "message": "Seems like you need to change this to None to retain the existing XML behaviour. Similarly for the publishers. That should remove the excess XML tag from the test output.",
+      "revId": "bc72cb922a784747646ebdb0ed91b0dade1b08f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
