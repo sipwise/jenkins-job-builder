@@ -16,6 +16,24 @@
       "revId": "6b89c6777c5e04e919688c41a8e1d27cc1e810f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2fa921_fc7a3323",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 766,
+      "author": {
+        "id": 18637
+      },
+      "writtenOn": "2015-10-09T11:31:45Z",
+      "side": 1,
+      "message": "Hm yes, I see what you mean.  I\u0027m using the data as the spec value, without an explicit spec parameter/key in the input.\n\nIn the latest patch, I\u0027ve put this into an optional key and added a second test so we have one with and one without the parameter.  I hope that\u0027s clearer.",
+      "parentUuid": "7a2fa921_07325df2",
+      "revId": "6b89c6777c5e04e919688c41a8e1d27cc1e810f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
