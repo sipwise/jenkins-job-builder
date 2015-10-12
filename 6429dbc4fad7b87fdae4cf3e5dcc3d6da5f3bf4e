@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a2fa921_1a232107",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-10-12T17:22:17Z",
+      "side": 1,
+      "message": "Seems like we\u0027re missing a test, or our tests are doing the decoding already when they should not be.",
+      "revId": "6429dbc4fad7b87fdae4cf3e5dcc3d6da5f3bf4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
