@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a2ca52d_4a78acf2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 13295
+      },
+      "writtenOn": "2015-10-14T22:32:01Z",
+      "side": 1,
+      "message": "You may want to update your email, since you\u0027ve left Rackspace.",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_126407e3",
         "filename": "doc/source/installation.rst",
         "patchSetId": 10
@@ -19,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_4ae66cb5",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 13295
+      },
+      "writtenOn": "2015-10-14T22:32:01Z",
+      "side": 1,
+      "message": "I\u0027m not very sure of how this project works overall, but how could this ever be populated if self._views is None?\n\nget_views below either returns None or self.views.",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_725eabea",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 10
@@ -30,6 +64,23 @@
       "writtenOn": "2015-08-11T14:18:40Z",
       "side": 1,
       "message": "I think we made a mistake previously where we should have invalided the local cached object if it was found on jenkins. Or decided on a strategy around a timelimit or ability to decide whether to force a refresh at this point if there was a cache miss.\n\nseparate change though.",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_0aef1488",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 13295
+      },
+      "writtenOn": "2015-10-14T22:32:01Z",
+      "side": 1,
+      "message": "Should this be self._views? Sorry if I don\u0027t have enough context on this patch.",
       "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
