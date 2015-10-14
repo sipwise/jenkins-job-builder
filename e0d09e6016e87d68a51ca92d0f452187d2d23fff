@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_cd9ff601",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1151,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-10-14T23:18:07Z",
+      "side": 1,
+      "message": "Should use InvalidAttributeException instead.\n\n    raise InvalidAttributeException(\u0027browser\u0027, browser,\n                                    browser_name_to_class.keys())",
+      "revId": "e0d09e6016e87d68a51ca92d0f452187d2d23fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
