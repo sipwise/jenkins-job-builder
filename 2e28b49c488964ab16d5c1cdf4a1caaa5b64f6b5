@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_32cb5474",
+        "filename": "jenkins_jobs/modules/slack_notif.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2015-10-15T11:12:33Z",
+      "side": 1,
+      "message": "Is this correct?",
+      "revId": "2e28b49c488964ab16d5c1cdf4a1caaa5b64f6b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_12973849",
+        "filename": "tests/slack/test_slack.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2015-10-15T11:12:33Z",
+      "side": 1,
+      "message": "Is this correct?",
+      "revId": "2e28b49c488964ab16d5c1cdf4a1caaa5b64f6b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
