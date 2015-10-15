@@ -1,0 +1,3 @@
+properties:
+    - rebuild:
+        auto-rebuild: true
