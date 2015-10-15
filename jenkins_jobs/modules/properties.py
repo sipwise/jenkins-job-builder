@@ -616,6 +616,31 @@ def zeromq_event(parser, xml_parent, data):
     XML.SubElement(zmq_event, 'enabled').text = 'true'
 
 
+def rebuild(parser, xml_parent, data):
+    """yaml: rebuild
+    Requires the Jenkins :jenkins-wiki:`Rebuild Plugin
+    <Rebuild+Plugin>`.
+
+    :arg str auto-rebuild: Rebuild without asking for parameters
+        (default: False)
+    :arg str rebuild-disabled: Disable rebuilding for this job
+        (default: False)
+
+    Example:
+
+    .. literalinclude:: \
+            /../../tests/properties/fixtures/rebuild.yaml
+    """
+    if data:
+        rebuild_el = XML.SubElement(xml_parent,
+                                    'com.sonyericsson.rebuild.RebuildSettings')
+
+        XML.SubElement(rebuild_el, 'autoRebuild').text = str(
+            data.get('auto-rebuild', False)).lower()
+        XML.SubElement(rebuild_el, 'rebuildDisabled').text = str(
+            data.get('rebuild-disabled', False)).lower()
+
+
 class Properties(jenkins_jobs.modules.base.Base):
     sequence = 20
 
