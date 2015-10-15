@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_594ce39d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1469,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2015-10-15T16:17:42Z",
+      "side": 1,
+      "message": "s/list/str/ ?",
+      "revId": "cca0a1477876cc7e54fadcba09b4f8ecd62fcc8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
