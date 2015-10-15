@@ -1461,6 +1461,29 @@ def custom_tools(parser, xml_parent, data):
                    'convertHomesToUppercase').text = convert_home
 
 
+def nodejs_installator(parser, xml_parent, data):
+    """yaml: nodejs-installator
+    Requires the Jenkins :jenkins-wiki:`NodeJS Plugin
+    <NodeJS+Plugin>`.
+
+    :arg str name: nodejs installation name
+
+    Example:
+
+    .. literalinclude::
+            /../../tests/wrappers/fixtures/nodejs-installator001.yaml
+    """
+    npm_node = XML.SubElement(xml_parent,
+                              'jenkins.plugins.nodejs.tools.'
+                              'NpmPackagesBuildWrapper')
+
+    name = data.get('name', '')
+    if not str(name):
+        raise JenkinsJobsException('npm-installator must have a name '
+                                   'parameter.')
+    XML.SubElement(npm_node, 'nodeJSInstallationName').text = name
+
+
 def xvnc(parser, xml_parent, data):
     """yaml: xvnc
     Enable xvnc during the build.
