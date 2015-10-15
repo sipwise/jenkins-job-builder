@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a2ca52d_f924cfc5",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 626,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2015-10-15T16:18:57Z",
+      "side": 1,
+      "message": "Both of these are `bool`s rather than `str`s, no?",
+      "revId": "e8bd8f8818f909a69fb08f75c6f22e2ae7abb301",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
