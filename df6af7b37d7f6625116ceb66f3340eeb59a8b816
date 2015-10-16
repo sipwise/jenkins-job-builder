@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "5a2ca52d_c111b105",
+        "filename": "doc/source/definition.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2015-10-16T11:59:29Z",
+      "side": 1,
+      "message": "The configuration for views seems a little strange. In order to configure a pipeline view, I had to use:\n\n    - job:\n        name: MyViewName\n        view-type: pipeline\n        first-job: MyFirstJob\n\nbut my assumption was that it would be configured using a \u0027view\u0027 key, a la:\n\n    - view:\n        name: MyViewName\n        view-type: pipeline\n        first-job: MyFirstJob\n\nThis made sense to me because views and jobs aren\u0027t really the same sort of object in Jenkins; it\u0027s not clear why jenkins-job-builder should treat them as such...\n\n(Even if we stick with the job key, the example above should be amended to be a full example including the \u0027- job:\u0027 line)",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_126407e3",
         "filename": "doc/source/installation.rst",
         "patchSetId": 10
@@ -217,6 +234,23 @@
       "writtenOn": "2015-08-11T14:18:40Z",
       "side": 1,
       "message": "Lets not overload these methods, create a separate one for views and call it from above in the generateXML() method depending which one should be used.",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a2ca52d_26567b2a",
+        "filename": "setup.cfg",
+        "patchSetId": 10
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2015-10-16T11:59:29Z",
+      "side": 1,
+      "message": "There isn\u0027t anything named `BuildPipeline` in `jenkins_job.modules.view_pipeline`.\n\nPerhaps `s/BuildPipeline/Pipeline/` on this line (or the opposite in that file)?",
       "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
