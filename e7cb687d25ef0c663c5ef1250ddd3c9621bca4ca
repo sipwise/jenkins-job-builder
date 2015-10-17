@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_175556c5",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1060,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-10-17T20:44:55Z",
+      "side": 1,
+      "message": "They show that they are under the \u0027files\u0027 parameter\nSee this - https://review.openstack.org/#/c/203364/5/tests/triggers/fixtures/monitor-files001.yaml\n\nOr am I missing something?",
+      "parentUuid": "9a1a9d01_331e2d0d",
+      "revId": "e7cb687d25ef0c663c5ef1250ddd3c9621bca4ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_b330fd57",
         "filename": "tests/triggers/fixtures/monitor-files002.yaml",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a29b11f_37bbb210",
+        "filename": "tests/triggers/fixtures/monitor-files002.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-10-17T20:44:55Z",
+      "side": 1,
+      "message": "Right. I have removed monitor-files001.yaml now",
+      "parentUuid": "9a1a9d01_b330fd57",
+      "revId": "e7cb687d25ef0c663c5ef1250ddd3c9621bca4ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a1a9d01_b3947d37",
         "filename": "tests/triggers/fixtures/monitor-files002.yaml",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2015-09-25T20:42:22Z",
       "side": 1,
       "message": "duplicate param?",
+      "revId": "e7cb687d25ef0c663c5ef1250ddd3c9621bca4ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_77484a2e",
+        "filename": "tests/triggers/fixtures/monitor-files002.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 15461
+      },
+      "writtenOn": "2015-10-17T20:44:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a1a9d01_b3947d37",
       "revId": "e7cb687d25ef0c663c5ef1250ddd3c9621bca4ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
