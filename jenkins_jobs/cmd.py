@@ -190,6 +190,11 @@ def setup_config_settings(options):
                                  'jenkins_jobs.ini')
         if os.path.isfile(localconf):
             conf = localconf
+        # Fallback to user directory
+        userconf = os.path.join(os.path.expanduser('~'), '.config',
+                                'jenkins_jobs', 'jenkins_jobs.ini')
+        if os.path.isfile(userconf):
+            conf = userconf
     config = configparser.ConfigParser()
     # Load default config always
     config.readfp(StringIO(DEFAULT_CONF))

@@ -9,7 +9,6 @@
 AUTHORS
 build/*
 ChangeLog
-config
 output
 etc/jenkins_jobs.ini
 dist/*
