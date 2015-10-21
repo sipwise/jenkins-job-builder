@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_b9e09397",
+        "filename": "tests/publishers/fixtures/plot005.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-10-21T02:36:26Z",
+      "side": 1,
+      "message": "These tabs need to be changed to 2 space indents.",
+      "revId": "6ef8df1adf11143b43b5a44226ec56c4cb4f25a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
