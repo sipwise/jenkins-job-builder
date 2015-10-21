@@ -16,6 +16,24 @@
       "revId": "6ef8df1adf11143b43b5a44226ec56c4cb4f25a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a29b11f_1aa2af4b",
+        "filename": "tests/publishers/fixtures/plot005.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 18260
+      },
+      "writtenOn": "2015-10-21T17:49:32Z",
+      "side": 1,
+      "message": "Thx for the info. Sorry for the mistake. I uploaded patch set 2 in which I used spaces instead of tabs.",
+      "parentUuid": "3a29b11f_b9e09397",
+      "revId": "6ef8df1adf11143b43b5a44226ec56c4cb4f25a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
