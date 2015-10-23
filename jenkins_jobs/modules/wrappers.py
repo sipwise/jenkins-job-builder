@@ -1918,6 +1918,71 @@ def artifactory_maven_freestyle(parser, xml_parent, data):
     artifactory_optional_props(artifactory, data, 'wrappers')
 
 
+def version_number(parser, xml_parent, data):
+    """yaml: version-number
+    Generate a version number for the build using a format string. See the
+    wiki page for more detailed descriptions of options.
+
+    Requires the Jenkins :jenkins-wiki:`version number plugin
+    <Version+Number+Plugin>`.
+
+    :arg str variable-name: Name of environment variable to assign version
+                            number to (required)
+    :arg str format-string: Format string used to generate version number
+                            (required)
+    :arg bool skip-failed-builds: If the build fails, DO NOT increment any
+                                  auto-incrementing component of the version
+                                  number (default: false)
+    :arg bool display-name: Use the version number for the build display
+                            name (default: false)
+    :arg str start-date: The date the project began as a UTC timestamp
+                         (default 1970-1-1 00:00:00.0 UTC)
+    :arg int builds-today: The number of builds that have been executed
+                           today (optional)
+    :arg int builds-this-month: The number of builds that have been executed
+                                since the start of the month (optional)
+    :arg int builds-this-year: The number of builds that have been executed
+                               since the start of the year (optional)
+    :arg int builds-all-time: The number of builds that have been executed
+                              since the start of the project (optional)
+
+    Example:
+
+    .. literalinclude:: /../../tests/wrappers/fixtures/version-number001.yaml
+
+    """
+    xwrapper = XML.SubElement(
+        xml_parent, 'org.jvnet.hudson.tools.versionnumber.VersionNumberBuilder'
+    )
+
+    # check for required parameters
+    for key in ('variable-name', 'format-string'):
+        if key not in data:
+            raise JenkinsJobsException(
+                'missing parameter {0} for version-number wrapper'.format(key)
+            )
+
+    # fill in requirements
+    XML.SubElement(xwrapper, 'environmentVariableName').text = str(
+        data.get('variable-name'))
+    XML.SubElement(xwrapper, 'versionNumberString').text = str(
+        data.get('format-string'))
+    XML.SubElement(xwrapper, 'skipFailedBuilds').text = str(
+        data.get('skip-failed-builds', False)).lower()
+    XML.SubElement(xwrapper, 'useAsBuildDisplayName').text = str(
+        data.get('display-name', False)).lower()
+    XML.SubElement(xwrapper, 'projectStartDate').text = str(
+        data.get('start-date', '1970-1-1 00:00:00.0 UTC'))
+    XML.SubElement(xwrapper, 'oBuildsToday').text = str(
+        data.get('builds-today', '-1'))
+    XML.SubElement(xwrapper, 'oBuildsThisMonth').text = str(
+        data.get('builds-this-month', '-1'))
+    XML.SubElement(xwrapper, 'oBuildsThisYear').text = str(
+        data.get('builds-this-year', '-1'))
+    XML.SubElement(xwrapper, 'oBuildsAllTime').text = str(
+        data.get('builds-all-time', '-1'))
+
+
 class Wrappers(jenkins_jobs.modules.base.Base):
     sequence = 80
 
