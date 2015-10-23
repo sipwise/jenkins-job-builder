@@ -38,6 +38,7 @@ recursive=False
 exclude=.*
 allow_duplicates=False
 allow_empty_variables=False
+config_from_file=False
 
 [jenkins]
 url=http://localhost:8080/
@@ -190,6 +191,7 @@ def setup_config_settings(options):
         logger.debug("Reading config from {0}".format(conf))
         conffp = io.open(conf, 'r', encoding='utf-8')
         config.readfp(conffp)
+        config.set('job_builder', 'config_from_file', str(True))
     elif options.command == 'test':
         logger.debug("Not requiring config for test output generation")
     else:
@@ -270,7 +272,7 @@ def execute(options, config):
         if not isinstance(plugins_info, list):
             raise JenkinsJobsException("{0} must contain a Yaml list!"
                                        .format(options.plugins_info_path))
-    elif (not options.conf or not
+    elif (not config.getboolean("job_builder", "config_from_file") or not
           config.getboolean("jenkins", "query_plugins_info")):
         logger.debug("Skipping plugin info retrieval")
         plugins_info = {}
