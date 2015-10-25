@@ -655,8 +655,9 @@ def copy_to_slave(parser, xml_parent, data):
     :arg list excludes: list of file patterns to exclude
     :arg bool flatten: flatten directory structure
     :arg str relative-to: base location of includes/excludes,
-                          must be userContent ($JENKINS_HOME/userContent)
-                          home ($JENKINS_HOME) or workspace
+                          must be home ($JENKINS_HOME), somewhereElse
+                          ($JENKINS_HOME/copyToSlave), userContent
+                          ($JENKINS_HOME/userContent) or workspace
     :arg bool include-ant-excludes: exclude ant's default excludes
 
     Example::
@@ -680,7 +681,7 @@ def copy_to_slave(parser, xml_parent, data):
         str(data.get('include-ant-excludes', False)).lower()
 
     rel = str(data.get('relative-to', 'userContent'))
-    opt = ('userContent', 'home', 'workspace')
+    opt = ('home', 'somewhereElse', 'userContent', 'workspace')
     if rel not in opt:
         raise ValueError('relative-to must be one of %r' % opt)
     XML.SubElement(cs, 'relativeTo').text = rel
