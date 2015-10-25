@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a29b11f_52d41f46",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-10-25T14:39:26Z",
+      "side": 1,
+      "message": "I think the simplest solution, is to set options.conf to the default config file in this case, removes the need for the extra options.\n\nRemoves the need for all the other changes as well.",
+      "revId": "fce3dedcfa2d1d6c75bb4170800285309ebb70f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
