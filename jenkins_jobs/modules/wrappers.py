@@ -651,13 +651,16 @@ def copy_to_slave(parser, xml_parent, data):
     Requires the Jenkins :jenkins-wiki:`Copy To Slave Plugin
     <Copy+To+Slave+Plugin>`.
 
-    :arg list includes: list of file patterns to copy
-    :arg list excludes: list of file patterns to exclude
-    :arg bool flatten: flatten directory structure
+    :arg list includes: list of file patterns to copy (optional)
+    :arg list excludes: list of file patterns to exclude (optional)
+    :arg bool flatten: flatten directory structure (Default: False)
     :arg str relative-to: base location of includes/excludes,
-                          must be userContent ($JENKINS_HOME/userContent)
-                          home ($JENKINS_HOME) or workspace
+                          must be home ($JENKINS_HOME), somewhereElse
+                          ($JENKINS_HOME/copyToSlave), userContent
+                          ($JENKINS_HOME/userContent) or workspace
+                          (Default: userContent)
     :arg bool include-ant-excludes: exclude ant's default excludes
+        (Default: False)
 
     Example::
 
@@ -680,7 +683,7 @@ def copy_to_slave(parser, xml_parent, data):
         str(data.get('include-ant-excludes', False)).lower()
 
     rel = str(data.get('relative-to', 'userContent'))
-    opt = ('userContent', 'home', 'workspace')
+    opt = ('home', 'somewhereElse', 'userContent', 'workspace')
     if rel not in opt:
         raise ValueError('relative-to must be one of %r' % opt)
     XML.SubElement(cs, 'relativeTo').text = rel

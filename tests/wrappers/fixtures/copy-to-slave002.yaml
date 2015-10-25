@@ -1,0 +1,11 @@
+wrappers:
+    - copy-to-slave:
+        includes:
+            - 'some-include1'
+            - 'some-include2'
+        excludes:
+            - 'some-exclude1'
+            - 'some-exclude2'
+        flatten: True
+        relative-to: 'somewhereElse'
+        include-ant-excludes: True
