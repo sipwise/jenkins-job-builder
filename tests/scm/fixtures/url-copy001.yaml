@@ -1,0 +1,4 @@
+scm:
+    - url-copy:
+        url-list:
+            - 'https://release-lab.veracode.local/jenkins/jnlpJars/jenkins-cli.jar'

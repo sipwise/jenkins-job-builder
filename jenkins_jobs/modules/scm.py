@@ -1100,6 +1100,35 @@ def openshift_img_streams(parser, xml_parent, data):
     convert_mapping_to_xml(scm, data, mapping)
 
 
+def url_copy(parser, xml_parent, data):
+    """yaml: url-copy
+    Watch for changes in, and download an artifact from a particular url.
+    Requires the Jenkins :jenkins-wiki:`URL SCM <URL+SCM>`_
+
+    :arg list url-list: List of URLs to copy. (required)
+    :arg bool clear-workspace: If set to true, clear the workspace before
+        downloading the artifact(s) specified in url-list. (default: false)
+
+    Example:
+    .. literalinclude::
+        ../../tests/scm/fixtures/url-copy001.yaml
+       :language: yaml
+    """
+
+    if 'url-list' not in data.keys():
+        raise JenkinsJobsException('url-copy requires url-list parameter')
+
+    scm = XML.SubElement(xml_parent, 'scm', {'class':
+                         'hudson.plugins.URLSCM.URLSCM'})
+    urls = XML.SubElement(scm, 'urls')
+    for data_url in data['url-list']:
+        url_tuple = XML.SubElement(urls,
+                                   'hudson.plugins.URLSCM.URLSCM_-URLTuple')
+        XML.SubElement(url_tuple, 'urlString').text = data_url
+    XML.SubElement(scm, 'clearWorkspace').text = data.get('clear-workspace',
+                                                          'false').lower()
+
+
 class SCM(jenkins_jobs.modules.base.Base):
     sequence = 30
 
