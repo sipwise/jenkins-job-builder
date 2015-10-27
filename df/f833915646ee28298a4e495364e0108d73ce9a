@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+2: Joshua Hesketh <joshua.hesketh@rackspace.com>
+Code-Review+2: Thanh Ha <zxiiro@gmail.com>
+Workflow+1: Thanh Ha <zxiiro@gmail.com>
+Code-Review+1: mostwanted <most.wanted@gmx.at>
+Submitted-by: Jenkins
+Submitted-at: Tue, 27 Oct 2015 22:47:30 +0000
+Reviewed-on: https://review.openstack.org/236981
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
