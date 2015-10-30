@@ -39,10 +39,7 @@ from jenkins_jobs.errors import (InvalidAttributeError,
                                  MissingAttributeError)
 import logging
 import re
-try:
-    from collections import OrderedDict
-except ImportError:
-    from ordereddict import OrderedDict
+from collections import OrderedDict
 
 logger = logging.getLogger(str(__name__))
 
