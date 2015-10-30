@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_4b589732",
+        "filename": "requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2015-10-30T13:17:16Z",
+      "side": 1,
+      "message": "Environment markers such as this are only supported from pip version 6.0.\n\nHow do older versions of pip behave with this?",
+      "range": {
+        "startLine": 1,
+        "startChar": 11,
+        "endLine": 1,
+        "endChar": 33
+      },
+      "revId": "f4d51f3747440b60cbbcc034e8d66609d1f33ac9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
