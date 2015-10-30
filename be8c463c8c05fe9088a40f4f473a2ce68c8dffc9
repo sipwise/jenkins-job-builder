@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a26ad4f_8b830f56",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2015-10-30T13:19:24Z",
+      "side": 1,
+      "message": "nit: plugin",
+      "range": {
+        "startLine": 7,
+        "startChar": 14,
+        "endLine": 7,
+        "endChar": 21
+      },
+      "revId": "be8c463c8c05fe9088a40f4f473a2ce68c8dffc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
