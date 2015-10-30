@@ -1,4 +1,4 @@
-ordereddict
+ordereddict;python_version=='2.6'
 six>=1.5.2
 PyYAML
 python-jenkins>=0.4.8
