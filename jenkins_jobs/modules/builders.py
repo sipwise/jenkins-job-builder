@@ -2728,3 +2728,31 @@ def openshift_svc_verify(parser, xml_parent, data):
     ]
 
     convert_mapping_to_xml(osb, data, mapping)
+
+
+def runscope(parser, xml_parent, data):
+    """yaml: runscope
+    Execute a Runscope test.
+    Requires the Jenkins `Runscope Plugin.
+    <https://wiki.jenkins-ci.org/display/JENKINS/Runscope+Plugin>`_
+
+    :arg str test-trigger-url: Trigger URL for test.
+    :arg str access-token: OAuth Personal Access token.
+    :arg int timeout: Timeout for test duration (in seconds). Default: 60
+
+    Example:
+
+    .. literalinclude:: /../../tests/builders/fixtures/runscope.yaml
+    """
+    runscope = XML.SubElement(xml_parent,
+                              'com.runscope.jenkins.Runscope.RunscopeBuilder')
+    try:
+        XML.SubElement(runscope, 'triggerEndPoint').text = data[
+            "test-trigger-url"]
+    except KeyError:
+        raise MissingAttributeError('triggerEndPoint')
+    try:
+        XML.SubElement(runscope, 'accessToken').text = data["access-token"]
+    except KeyError:
+        raise MissingAttributeError('accessToken')
+    XML.SubElement(runscope, 'timeout').text = str(data.get('timeout', '60'))
