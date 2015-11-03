@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_cc2423b1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-11-03T12:25:37Z",
+      "side": 1,
+      "message": "Change the commit message to describe the change, use the following wiki page as a guide to what is expected: https://wiki.openstack.org/wiki/GitCommitMessages#Information_in_commit_messages\n\nPut simply it should be possible for anyone reading the git commit log to have a reasonable understanding on what this commit was intended to achieve.",
+      "revId": "5c8646e2e6afff6ac9c640732a7377b96b83efea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_01367403",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1103,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-11-03T12:25:37Z",
+      "side": 1,
+      "message": "Just call this \u0027url\u0027, the _copy part appears unrelated to the plugin name. Same applies to where you have used \u0027url-copy\u0027 elsewhere.\n\nThis is a url scm, that it would have to copy the changes it spots to the workspace is no different than any other scm. Just that checkout is copying of the file, instead of a repository.",
+      "revId": "5c8646e2e6afff6ac9c640732a7377b96b83efea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_acf2ff04",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1108,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-11-03T12:25:37Z",
+      "side": 1,
+      "message": "Seems like this should be \u0027watch\u0027 instead of \u0027copy\u0027 since the plugin suggests it looks at each url to watch for changes.",
+      "revId": "5c8646e2e6afff6ac9c640732a7377b96b83efea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_c1baac6e",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1118,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-11-03T12:25:37Z",
+      "side": 1,
+      "message": "no need to specify \u0027keys()\u0027, which would return a list on python 2, better to just check membership. Should also raise the correct exception.\n\n    if \u0027url-list\u0027 not in data:\n        raise MissingAttributeException(\u0027url-list\u0027)",
+      "revId": "5c8646e2e6afff6ac9c640732a7377b96b83efea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_e149f08f",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1129,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-11-03T12:25:37Z",
+      "side": 1,
+      "message": "Should convert to a string first, as this could return a bool, which you cannot call lower() on directly.\n\n    XML.SubElement(scm, \u0027clearWorkspace\u0027).text \u003d str(\n        data.get(\u0027clear-workspace\u0027, False)).lower()",
+      "revId": "5c8646e2e6afff6ac9c640732a7377b96b83efea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
