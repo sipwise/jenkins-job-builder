@@ -1,0 +1,12 @@
+Verified+2: Jenkins
+Code-Review+2: Darragh Bailey <daragh.bailey@gmail.com>
+Workflow+1: Darragh Bailey <daragh.bailey@gmail.com>
+Code-Review+2: Joshua Hesketh <joshua.hesketh@rackspace.com>
+Code-Review+1: Dong Ma <winterma.dong@gmail.com>
+Code-Review+1: David Pursehouse <david.pursehouse@sonymobile.com>
+Code-Review+1: Jonathan Lebon <jlebon@redhat.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 03 Nov 2015 12:46:08 +0000
+Reviewed-on: https://review.openstack.org/239085
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
