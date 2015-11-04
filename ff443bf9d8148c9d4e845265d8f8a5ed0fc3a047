@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_24d11fce",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-11-04T08:03:11Z",
+      "side": 1,
+      "message": "You do not need to check data here.",
+      "revId": "ff443bf9d8148c9d4e845265d8f8a5ed0fc3a047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_e4db17ec",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 635,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-11-04T08:03:11Z",
+      "side": 1,
+      "message": "and you can perhaps rename this to rebuild_element",
+      "revId": "ff443bf9d8148c9d4e845265d8f8a5ed0fc3a047",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
