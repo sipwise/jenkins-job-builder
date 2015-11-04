@@ -4,3 +4,5 @@ properties:
       categories:
         - cat1
         - cat2
+      matrixbuilds: false
+      matrixconfigs: true
