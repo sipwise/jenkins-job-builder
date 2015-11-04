@@ -168,6 +168,8 @@ def throttle(parser, xml_parent, data):
     :arg bool enabled: whether throttling is enabled (default True)
     :arg str option: throttle `project` or `category`
     :arg list categories: multiproject throttle categories
+    :arg bool matrixbuilds: throttle matrix master builds (default True)
+    :arg bool matrixconfigs: throttle matrix config builds (default False)
 
     Example::
 
@@ -200,6 +202,12 @@ def throttle(parser, xml_parent, data):
 
     XML.SubElement(throttle, 'throttleOption').text = data.get('option')
     XML.SubElement(throttle, 'configVersion').text = '1'
+
+    matrixopt = XML.SubElement(throttle, 'matrixOptions')
+    XML.SubElement(matrixopt, 'throttleMatrixBuilds').text = str(
+        data.get('matrixbuilds', True)).lower()
+    XML.SubElement(matrixopt, 'throttleMatrixConfigurations').text = str(
+        data.get('matrixconfigs', False)).lower()
 
 
 def sidebar(parser, xml_parent, data):
