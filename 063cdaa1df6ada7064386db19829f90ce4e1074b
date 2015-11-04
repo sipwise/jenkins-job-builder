@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_84d80b55",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1961,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-11-04T07:44:38Z",
+      "side": 1,
+      "message": "You can use MissingAttributeError if the required arguments variable-name and format-string are not set and do the check and assignment together.\n\nSomething like this perhaps?\n\n    try: \n        XML.SubElement(xwrapper, \u0027environmentVariableName\u0027).text \u003d str( \n            data[\u0027variable-name\u0027])\n        XML.SubElement(xwrapper, \u0027versionNumberString\u0027).text \u003d str( \n            data[\u0027format-string\u0027])\n    except KeyError as e:\n        raise MissingAttributeError(\"\u0027%s\u0027\" % e.args[0])",
+      "revId": "063cdaa1df6ada7064386db19829f90ce4e1074b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
