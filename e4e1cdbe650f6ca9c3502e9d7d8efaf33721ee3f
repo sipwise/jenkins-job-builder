@@ -16,6 +16,23 @@
       "revId": "e4e1cdbe650f6ca9c3502e9d7d8efaf33721ee3f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_0923d6be",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2738,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-11-04T07:25:34Z",
+      "side": 1,
+      "message": "You can explicitly state that the arguments test-trigger-url and access-token are required.",
+      "revId": "e4e1cdbe650f6ca9c3502e9d7d8efaf33721ee3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
