@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa80f949_7f41f10a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2015-11-04T09:51:13Z",
+      "side": 1,
+      "message": "I would prefer \"Add support for useMatrixChild in parameterized trigger\" or something like that.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 47
+      },
+      "revId": "a79d4fd82a02d889f42775a87bc0e13dc76f7662",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_dfd57d43",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2015-11-04T09:51:13Z",
+      "side": 1,
+      "message": "A",
+      "range": {
+        "startLine": 312,
+        "startChar": 46,
+        "endLine": 312,
+        "endChar": 47
+      },
+      "revId": "a79d4fd82a02d889f42775a87bc0e13dc76f7662",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa80f949_5fdbcd7c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2015-11-04T09:51:13Z",
+      "side": 1,
+      "message": "parameters",
+      "range": {
+        "startLine": 378,
+        "startChar": 34,
+        "endLine": 378,
+        "endChar": 43
+      },
+      "revId": "a79d4fd82a02d889f42775a87bc0e13dc76f7662",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
