@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_ced092cc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2015-11-07T14:39:15Z",
+      "side": 1,
+      "message": "please remove the dot.",
+      "revId": "af2511a2a6bd04d5dd6420dbbdaa21f478d9a2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
