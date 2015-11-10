@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_320d9737",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-11-10T16:15:31Z",
+      "side": 1,
+      "message": "Should add to your existing test setting this value to a non-default value too.",
+      "revId": "04636a97e76ba075bf89b779c93eb042844ebe30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
