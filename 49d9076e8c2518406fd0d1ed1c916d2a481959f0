@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_5b5aab2b",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-11-10T20:00:46Z",
+      "side": 1,
+      "message": "Please avoid using \u0027\\\u0027, in general its against pep8 recommendations. Instead follow the existing style of:\n\n    XML.SubElement(matrixopt, \u0027throttleMatrixBuilds\u0027).text \u003d str(\n        data.get(\u0027matrixbuilds\u0027, True)).lower()\n\nSame below.",
+      "revId": "49d9076e8c2518406fd0d1ed1c916d2a481959f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
