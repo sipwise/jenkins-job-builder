@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_bb9157f3",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-11-10T20:20:54Z",
+      "side": 1,
+      "message": "I\u0027d reformat this as:\n\n                    if (macro in self.data and member in self.data[macro]\n                            and macro_group in self.data[macro][member]):\n\nNote the second line is another 4 spaces in from what is here. Makes it easier to distinguish from the subsequent line. Also the \u0027( )\u0027 can be used to remove the need for \u0027\\\u0027.",
+      "revId": "64b418b64a04d11c0c952eebb668f6cbfb37d70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
