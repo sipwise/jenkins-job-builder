@@ -16,6 +16,75 @@
       "revId": "af2511a2a6bd04d5dd6420dbbdaa21f478d9a2af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_5bcdcbb5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-11-10T20:13:49Z",
+      "side": 1,
+      "message": "Does it cause any problems?",
+      "parentUuid": "da85f559_ced092cc",
+      "revId": "af2511a2a6bd04d5dd6420dbbdaa21f478d9a2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_1ba3c39e",
+        "filename": "tests/cmd/subcommands/test_update.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-11-10T20:13:49Z",
+      "side": 1,
+      "message": "To avoid the \u0027\\\u0027 you can do the following:\n\n        with mock.patch(\u0027jenkins_jobs.builder.Jenkins.update_job\u0027\n                ) as update_job_mock:",
+      "revId": "af2511a2a6bd04d5dd6420dbbdaa21f478d9a2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_3ba9e790",
+        "filename": "tests/cmd/subcommands/test_update.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-11-10T20:13:49Z",
+      "side": 1,
+      "message": "You\u0027ve already mocked this in the function signature, should be able to remove this entry and a level of nesting and just use delete_job_mock.",
+      "revId": "af2511a2a6bd04d5dd6420dbbdaa21f478d9a2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_fbfa7f74",
+        "filename": "tests/cmd/subcommands/test_update.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-11-10T20:13:49Z",
+      "side": 1,
+      "message": "The \u0027\\\u0027 here is inside the string, which won\u0027t format as you\u0027d expect, and unnecessary in any case.\n\nJust format something like follows instead:\n\n                    self.assertEquals(\n                        1, delete_job.call_count,\n                        \"Expected Builder.delete_job to be called \u0027%d\u0027 \"\n                        \"times got \u0027%d\u0027 calls instead.\\nCalled with: %s\"\n                        % (1, delete_job.call_count, delete_job.mock_calls))\n\nSame below.",
+      "revId": "af2511a2a6bd04d5dd6420dbbdaa21f478d9a2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
