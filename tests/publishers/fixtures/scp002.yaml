@@ -1,0 +1,12 @@
+publishers:
+  - scp:
+      site: 'example.com'
+      files:
+        - target: 'dest/dir'
+          sources:
+            - 'base/source/dir/**'
+            - 'base/target/dir/**'
+            - 'logs/**/*.log'
+          keep-hierarchy: true
+          copy-console: true
+          copy-after-failure: true

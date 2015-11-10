@@ -4,5 +4,3 @@ publishers:
       files:
         - target: 'dest/dir'
           source: 'base/source/dir/**'
-          keep-hierarchy: true
-          copy-after-failure: true

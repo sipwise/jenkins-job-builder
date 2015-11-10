@@ -1400,6 +1400,11 @@ def scp(parser, xml_parent, data):
     :arg str site: name of the scp site
     :arg str target: destination directory
     :arg str source: source path specifier
+
+    .. deprecated: 1.4.0. please use sources argument
+
+    :arg list sources: list of source paths specifier which will be joined
+      by a ',' delimiter.
     :arg bool keep-hierarchy: keep the file hierarchy when uploading
       (default false)
     :arg bool copy-after-failure: copy files even if the job fails
@@ -1409,9 +1414,10 @@ def scp(parser, xml_parent, data):
 
     Example:
 
-    .. literalinclude:: /../../tests/publishers/fixtures/scp001.yaml
+    .. literalinclude:: /../../tests/publishers/fixtures/scp002.yaml
        :language: yaml
     """
+    logger = logging.getLogger("%s:scp" % __name__)
     site = data['site']
     scp = XML.SubElement(xml_parent,
                          'be.certipost.hudson.plugin.SCPRepositoryPublisher')
@@ -1420,7 +1426,19 @@ def scp(parser, xml_parent, data):
     for entry in data['files']:
         entry_e = XML.SubElement(entries, 'be.certipost.hudson.plugin.Entry')
         XML.SubElement(entry_e, 'filePath').text = entry['target']
-        XML.SubElement(entry_e, 'sourceFile').text = entry.get('source', '')
+        # handle backwards compatibility
+        sources = entry.get('sources', [])
+        if 'source' in entry:
+            if not sources:
+                logger.warn(
+                    "'source' is deprecated, please use 'sources' instead")
+                sources = [entry['source']]
+            else:
+                logger.warn(
+                    "Both 'sources' and deprecated 'source' defined, using "
+                    "'sources' in preference, please remove references to "
+                    "'source'")
+        XML.SubElement(entry_e, 'sourceFile').text = ','.join(sources)
         if entry.get('keep-hierarchy', False):
             XML.SubElement(entry_e, 'keepHierarchy').text = 'true'
         else:
