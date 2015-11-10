@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_84a2f8fb",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1483,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-11-10T18:09:03Z",
+      "side": 1,
+      "message": "Please switch to:\n\n    try:\n        XML.SubElement(npm_node, \u0027nodeJSInstallationName\u0027).text \u003d data[\u0027name\u0027]\n    except KeyError as e:\n        raise MissingAttributeError(e.args[0])\n\nThis will ensure the correct exception is raised which will also tell the user the correct name of the module which should be \u0027nodejs-installator\u0027 in this case instead of npm-installator.",
+      "revId": "b376684204df231d7358f0937c05ef612ff1acdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
