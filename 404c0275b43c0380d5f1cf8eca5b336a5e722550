@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_6d9e9508",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-11-11T22:51:22Z",
+      "side": 1,
+      "message": "Please remove the last line, because once this change merges the link will point to valid code instead of the mistake you referenced.",
+      "revId": "404c0275b43c0380d5f1cf8eca5b336a5e722550",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
