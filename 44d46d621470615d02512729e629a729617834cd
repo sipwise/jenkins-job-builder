@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_7858c78a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2015-11-11T04:11:03Z",
+      "side": 1,
+      "message": "You should use: \"Story: 1387060\" link your change to the Storyboard.",
+      "revId": "44d46d621470615d02512729e629a729617834cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_18e17b9a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2015-11-11T04:11:03Z",
+      "side": 1,
+      "message": "Same as up",
+      "revId": "44d46d621470615d02512729e629a729617834cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
