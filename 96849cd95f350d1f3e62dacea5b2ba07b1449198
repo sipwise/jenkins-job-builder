@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da85f559_55a1c144",
+        "filename": "tests/config/test_config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 18918
+      },
+      "writtenOn": "2015-11-12T10:56:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da85f559_f0605e03",
+      "revId": "96849cd95f350d1f3e62dacea5b2ba07b1449198",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_2481ccc3",
         "filename": "tests/config/test_config.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-10T19:58:51Z",
       "side": 1,
       "message": "Tests should not look to modify the system environment. Currently the only reason this is passing is that this test is not getting executed.\n\nYou need to set up mocks so that the check for whether the system config file exists will return the mock.",
+      "revId": "96849cd95f350d1f3e62dacea5b2ba07b1449198",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da85f559_d5f6115c",
+        "filename": "tests/config/test_config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 18918
+      },
+      "writtenOn": "2015-11-12T10:56:39Z",
+      "side": 1,
+      "message": "Thanks for the hint. But how can I actually mock file access to an absolute path? What I\u0027m trying to do is to intercept setup_config_settings()\u0027s accessing of the config file. As it looks at different location for the config file now, how can I fake these to be present or not in Python?",
+      "parentUuid": "da85f559_2481ccc3",
       "revId": "96849cd95f350d1f3e62dacea5b2ba07b1449198",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
