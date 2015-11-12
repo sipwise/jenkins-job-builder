@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_1be4aca9",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2945,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-11-12T18:31:33Z",
+      "side": 1,
+      "message": "Lets not add more \u0027\\\u0027 into these files unnecessarily:\n\n    XML.SubElement(pbs_xml, \u0027markBuildUnstable\u0027).text \u003d str(\n        data.get(\u0027mark-unstable-if-failed\u0027, False)).lower()",
+      "revId": "e9693272b26c1cfd8fe85dde47fc376a5ca7a55f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
