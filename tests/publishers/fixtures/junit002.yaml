@@ -8,3 +8,5 @@ publishers:
     claim-build: true
     measurement-plots: true
     flaky-test-reports: true
+    allow-empty-results: true
+
