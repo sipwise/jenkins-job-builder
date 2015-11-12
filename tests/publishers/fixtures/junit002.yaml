@@ -6,3 +6,4 @@ publishers:
     test-stability: true
     claim-build: true
     measurement-plots: true
+    allow-empty-results: true
