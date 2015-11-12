@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_db65c41d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1619,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-11-12T18:34:03Z",
+      "side": 1,
+      "message": "Please avoid \u0027\\\u0027 unnecessarily as it\u0027s generally recommended against in the pep8 guidelines.\n\nFollowing should fit, in addition no need for the \u0027get()\u0027 a second time since you\u0027ve already confirmed it\u0027s not None.\n\n            XML.SubElement(subset,\n                \u0027filter\u0027).text \u003d project[\u0027restrict-matrix-project\u0027]",
+      "revId": "ca2af41b42143951aa49f6db078a4543a2ac52f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
