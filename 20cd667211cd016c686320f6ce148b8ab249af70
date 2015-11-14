@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_fc6cf009",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-11-14T21:04:10Z",
+      "side": 1,
+      "message": "I suspect we would need some mechanism to register validation to be executed across the final result, so not exactly straight forward.",
+      "revId": "20cd667211cd016c686320f6ce148b8ab249af70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
