@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_bcb0a88c",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-11-14T21:00:44Z",
+      "side": 1,
+      "message": "There\u0027s no need to add extra variables here:\n\n    matrixopt \u003d XML.SubElement(throttle, \u0027matrixOptions\u0027)\n    XML.SubElement(matrixopt, \u0027throttleMatrixBuilds\u0027).text \u003d str(\n        data.get(\u0027matrixbuilds\u0027, True)).lower()\n    XML.SubElement(matrixopt, \u0027throttleMatrixConfigurations\u0027).text \u003d str(\n        data.get(\u0027matrixconfigs\u0027, False)).lower()\n\nThis follows the main coding style through out the project.",
+      "revId": "cf234fa5a42d2da3fe76f6b5b665c04a03a28f09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
