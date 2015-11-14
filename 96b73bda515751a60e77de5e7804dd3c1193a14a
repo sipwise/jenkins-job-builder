@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da85f559_3c603835",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1204,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-11-14T20:51:14Z",
+      "side": 1,
+      "message": "I think this can be simplified:\n\n    result \u003d str(data.get(\u0027result\u0027, \u0027success\u0027)).upper()",
+      "revId": "96b73bda515751a60e77de5e7804dd3c1193a14a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
