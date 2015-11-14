@@ -34,7 +34,9 @@ Example::
 
 import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
-from jenkins_jobs.errors import InvalidAttributeError, JenkinsJobsException
+from jenkins_jobs.errors import InvalidAttributeError
+from jenkins_jobs.errors import JenkinsJobsException
+from jenkins_jobs.errors import MissingAttributeError
 import logging
 
 
@@ -131,8 +133,10 @@ def github(parser, xml_parent, data):
     github = XML.SubElement(xml_parent,
                             'com.coravy.hudson.plugins.github.'
                             'GithubProjectProperty')
-    github_url = XML.SubElement(github, 'projectUrl')
-    github_url.text = data['url']
+    try:
+        XML.SubElement(github, 'projectUrl').text = data['url']
+    except KeyError as e:
+        raise MissingAttributeError(e.arg[0])
 
 
 def least_load(parser, xml_parent, data):
@@ -181,17 +185,20 @@ def throttle(parser, xml_parent, data):
         data.get('max-total', '0'))
     # TODO: What's "categories"?
     # XML.SubElement(throttle, 'categories')
-    if data.get('enabled', True):
-        XML.SubElement(throttle, 'throttleEnabled').text = 'true'
-    else:
-        XML.SubElement(throttle, 'throttleEnabled').text = 'false'
+    XML.SubElement(throttle, 'throttleEnabled').text = str(
+        data.get('enabled', True)).lower()
     cat = data.get('categories', [])
     if cat:
         cn = XML.SubElement(throttle, 'categories')
         for c in cat:
             XML.SubElement(cn, 'string').text = str(c)
 
-    XML.SubElement(throttle, 'throttleOption').text = data.get('option')
+    options_list = ('category', 'project')
+    option = data.get('option')
+    if option not in options_list:
+        raise InvalidAttributeError('option', option, options_list)
+
+    XML.SubElement(throttle, 'throttleOption').text = option
     XML.SubElement(throttle, 'configVersion').text = '1'
 
 
@@ -343,7 +350,10 @@ def authorization(parser, xml_parent, data):
         for (username, perms) in data.items():
             for perm in perms:
                 pe = XML.SubElement(matrix, 'permission')
-                pe.text = "{0}:{1}".format(mapping[perm], username)
+                try:
+                    pe.text = "{0}:{1}".format(mapping[perm], username)
+                except KeyError:
+                    raise InvalidAttributeError(username, perm, mapping.keys())
 
 
 def extended_choice(parser, xml_parent, data):
@@ -381,8 +391,11 @@ def priority_sorter(parser, xml_parent, data):
     priority_sorter_tag = XML.SubElement(xml_parent,
                                          'hudson.queueSorter.'
                                          'PrioritySorterJobProperty')
-    XML.SubElement(priority_sorter_tag, 'priority').text = str(
-        data['priority'])
+    try:
+        XML.SubElement(priority_sorter_tag, 'priority').text = str(
+            data['priority'])
+    except KeyError as e:
+        raise MissingAttributeError(e.arg[0])
 
 
 def build_blocker(parser, xml_parent, data):
