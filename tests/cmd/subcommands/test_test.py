@@ -1,6 +1,10 @@
 import io
 import os
+import shutil
+import tempfile
 import yaml
+
+from testtools.matchers import FileExists
 
 import jenkins
 
@@ -124,7 +128,8 @@ class TestTests(CmdTestsBase):
         self.assertEqual(args.path, path_list)
         update_jobs_mock.assert_called_with(path_list, [],
                                             output=args.output_dir,
-                                            n_workers=mock.ANY)
+                                            n_workers=mock.ANY,
+                                            config_xml=False)
 
     @mock.patch('jenkins_jobs.cmd.Builder.update_jobs')
     @mock.patch('jenkins_jobs.cmd.os.path.isdir')
@@ -151,7 +156,8 @@ class TestTests(CmdTestsBase):
         cmd.execute(args, self.config)
 
         update_jobs_mock.assert_called_with(paths, [], output=args.output_dir,
-                                            n_workers=mock.ANY)
+                                            n_workers=mock.ANY,
+                                            config_xml=False)
 
         args = self.parser.parse_args(['test', multipath])
         args.output_dir = mock.MagicMock()
@@ -159,7 +165,8 @@ class TestTests(CmdTestsBase):
         cmd.execute(args, self.config)
 
         update_jobs_mock.assert_called_with(paths, [], output=args.output_dir,
-                                            n_workers=mock.ANY)
+                                            n_workers=mock.ANY,
+                                            config_xml=False)
 
     @mock.patch('jenkins_jobs.cmd.Builder.update_jobs')
     @mock.patch('jenkins_jobs.cmd.os.path.isdir')
@@ -188,7 +195,8 @@ class TestTests(CmdTestsBase):
         cmd.execute(args, self.config)
 
         update_jobs_mock.assert_called_with(paths, [], output=args.output_dir,
-                                            n_workers=mock.ANY)
+                                            n_workers=mock.ANY,
+                                            config_xml=False)
 
     def test_console_output(self):
         """
@@ -202,6 +210,29 @@ class TestTests(CmdTestsBase):
         xml_content = io.open(os.path.join(self.fixtures_path, 'cmd-001.xml'),
                               'r', encoding='utf-8').read()
         self.assertEqual(console_out.getvalue().decode('utf-8'), xml_content)
+
+    def test_output_dir(self):
+        """
+        Run test mode with output to directory and verify that output files are
+        generated.
+        """
+        tmpdir = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, tmpdir)
+        cmd.main(['test', os.path.join(self.fixtures_path, 'cmd-001.yaml'),
+                  '-o', tmpdir])
+        self.expectThat(os.path.join(tmpdir, 'foo-job'), FileExists())
+
+    def test_output_dir_config_xml(self):
+        """
+        Run test mode with output to directory in "config.xml" mode and verify
+        that output files are generated.
+        """
+        tmpdir = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, tmpdir)
+        cmd.main(['test', os.path.join(self.fixtures_path, 'cmd-001.yaml'),
+                  '-o', tmpdir, '--config-xml'])
+        self.expectThat(os.path.join(tmpdir, 'foo-job', 'config.xml'),
+                        FileExists())
 
     def test_stream_input_output_utf8_encoding(self):
         """
