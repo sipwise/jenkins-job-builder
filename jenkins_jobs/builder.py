@@ -311,7 +311,7 @@ class Builder(object):
         # Need to clear the JJB cache after deletion
         self.cache.clear()
 
-    def update_job(self, input_fn, jobs_glob=None, output=None):
+    def update_job(self, input_fn, jobs_glob=None, output=None, config_xml=False):
         self.load_files(input_fn)
         self.parser.expandYaml(jobs_glob)
         self.parser.generateXML()
@@ -347,7 +347,17 @@ class Builder(object):
                         raise
                     continue
 
-                output_fn = os.path.join(output, job.name)
+                if config_xml:
+                    output_dir = os.path.join(output, job.name)
+                    logger.info("Creating directory %s" % output_dir)
+                    try:
+                        os.makedirs(output_dir)
+                    except OSError:
+                        if not os.path.isdir(output_dir):
+                            raise
+                    output_fn = os.path.join(output_dir, 'config.xml')
+                else:
+                    output_fn = os.path.join(output, job.name)
                 logger.debug("Writing XML to '{0}'".format(output_fn))
                 with io.open(output_fn, 'w', encoding='utf-8') as f:
                     f.write(job.output().decode('utf-8'))

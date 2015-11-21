@@ -110,6 +110,9 @@ def create_parser():
     parser_test.add_argument('path', help='colon-separated list of paths to'
                                           ' YAML files or directories',
                              nargs='?', default=sys.stdin)
+    parser_test.add_argument('--config-xml', action='store_true',
+                             dest='config_xml', default=False,
+                             help='use alternative output file layout using config.xml files')
     parser_test.add_argument('-p', dest='plugins_info_path', default=None,
                              help='path to plugin info YAML file')
     parser_test.add_argument('-o', dest='output_dir', default=sys.stdout,
@@ -335,7 +338,8 @@ def execute(options, config):
             logger.info("Number of jobs deleted: %d", num_deleted_jobs)
     elif options.command == 'test':
         builder.update_job(options.path, options.name,
-                           output=options.output_dir)
+                           output=options.output_dir,
+                           config_xml=options.config_xml)
 
 
 def version():
