@@ -1,6 +1,10 @@
 import io
 import os
+import shutil
+import tempfile
 import yaml
+
+from testtools.matchers import FileExists
 
 import jenkins
 
@@ -98,7 +102,7 @@ class TestTests(CmdTestsBase):
 
         cmd.execute(args, self.config)
         self.assertEqual(args.path, path_list)
-        update_job_mock.assert_called_with(path_list, [],
+        update_job_mock.assert_called_with(path_list, [], config_xml=False,
                                            output=args.output_dir)
 
     @mock.patch('jenkins_jobs.cmd.Builder.update_job')
@@ -125,14 +129,16 @@ class TestTests(CmdTestsBase):
 
         cmd.execute(args, self.config)
 
-        update_job_mock.assert_called_with(paths, [], output=args.output_dir)
+        update_job_mock.assert_called_with(paths, [], config_xml=False,
+                                           output=args.output_dir)
 
         args = self.parser.parse_args(['test', multipath])
         args.output_dir = mock.MagicMock()
         self.config.set('job_builder', 'recursive', 'True')
         cmd.execute(args, self.config)
 
-        update_job_mock.assert_called_with(paths, [], output=args.output_dir)
+        update_job_mock.assert_called_with(paths, [], config_xml=False,
+                                           output=args.output_dir)
 
     @mock.patch('jenkins_jobs.cmd.Builder.update_job')
     @mock.patch('jenkins_jobs.cmd.os.path.isdir')
@@ -160,7 +166,8 @@ class TestTests(CmdTestsBase):
 
         cmd.execute(args, self.config)
 
-        update_job_mock.assert_called_with(paths, [], output=args.output_dir)
+        update_job_mock.assert_called_with(paths, [], config_xml=False,
+                                           output=args.output_dir)
 
     def test_console_output(self):
         """
@@ -174,6 +181,29 @@ class TestTests(CmdTestsBase):
         xml_content = io.open(os.path.join(self.fixtures_path, 'cmd-001.xml'),
                               'r', encoding='utf-8').read()
         self.assertEqual(console_out.getvalue().decode('utf-8'), xml_content)
+
+    def test_output_dir(self):
+        """
+        Run test mode with output to directory and verify that output files are
+        generated.
+        """
+        tmpdir = tempfile.mkdtemp()
+        cmd.main(['test', os.path.join(self.fixtures_path, 'cmd-001.yaml'),
+                  '-o', tmpdir])
+        self.expectThat(os.path.join(tmpdir, 'foo-job'), FileExists())
+        shutil.rmtree(tmpdir)
+
+    def test_output_dir_config_xml(self):
+        """
+        Run test mode with output to directory in "config.xml" mode and verify
+        that output files are generated.
+        """
+        tmpdir = tempfile.mkdtemp()
+        cmd.main(['test', os.path.join(self.fixtures_path, 'cmd-001.yaml'),
+                  '-o', tmpdir, '--config-xml'])
+        self.expectThat(os.path.join(tmpdir, 'foo-job', 'config.xml'),
+                        FileExists())
+        shutil.rmtree(tmpdir)
 
     def test_stream_input_output_utf8_encoding(self):
         """
