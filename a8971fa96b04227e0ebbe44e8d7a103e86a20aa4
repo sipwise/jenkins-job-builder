@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba8a016a_0bb07242",
+        "filename": "jenkins_jobs/modules/project_workflow.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-11-23T18:42:32Z",
+      "side": 1,
+      "message": "Just need to wrap this with a try/except clause to raise the correct exception.\n\n    try:\n        XML.SubElement(xml_definition, \u0027script\u0027).text \u003d data[\u0027dsl\u0027]\n    except KeyError as e:\n        raise MissingAttributeError(e.arg[0])",
+      "revId": "a8971fa96b04227e0ebbe44e8d7a103e86a20aa4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_0b971291",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-11-23T18:42:32Z",
+      "side": 1,
+      "message": "While related, default here is to retain alphabetical ordering.",
+      "revId": "a8971fa96b04227e0ebbe44e8d7a103e86a20aa4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
