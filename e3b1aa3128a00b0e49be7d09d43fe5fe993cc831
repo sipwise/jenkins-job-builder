@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba8a016a_68728b13",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 11223
+      },
+      "writtenOn": "2015-11-23T06:52:16Z",
+      "side": 1,
+      "message": "Good suggestion",
+      "parentUuid": "da85f559_4276fb70",
+      "revId": "e3b1aa3128a00b0e49be7d09d43fe5fe993cc831",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da85f559_6271bf75",
         "filename": "jenkins_jobs/parser.py",
         "patchSetId": 17
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-12T00:39:02Z",
       "side": 1,
       "message": "The variable naming here is confusing. The \u0027data\u0027 above maps to \u0027updated_data\u0027 here, and the \u0027newdata\u0027 above maps to \u0027data\u0027 here. This makes it hard to follow the logic because we go from data being the variable with partial new information to data being the variable with the final values. If you don\u0027t want to reuse the names data and newdata, then it might be easier to follow the logic if neither of these parameters are called date (nor newdata).",
+      "revId": "e3b1aa3128a00b0e49be7d09d43fe5fe993cc831",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba8a016a_c88297c8",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 11223
+      },
+      "writtenOn": "2015-11-23T06:52:16Z",
+      "side": 1,
+      "message": "yeah, thanks for your better advice here.",
+      "parentUuid": "da85f559_6271bf75",
       "revId": "e3b1aa3128a00b0e49be7d09d43fe5fe993cc831",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
