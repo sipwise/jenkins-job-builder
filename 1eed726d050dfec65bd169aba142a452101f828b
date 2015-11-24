@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_83c81776",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 20
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-11-24T17:56:39Z",
+      "side": 1,
+      "message": "Just discovered this references the wrong thing, should be:\n\n story: 2000137\n\nwhich in turn removes the need to link to the story explicitly above.",
+      "revId": "1eed726d050dfec65bd169aba142a452101f828b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
