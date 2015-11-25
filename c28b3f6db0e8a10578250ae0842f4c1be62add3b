@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_627db1b0",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4131,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2015-11-25T16:24:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_bcc2c032",
+      "revId": "c28b3f6db0e8a10578250ae0842f4c1be62add3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_dcbf74a8",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_8278d5c5",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4163,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2015-11-25T16:24:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_dcbf74a8",
+      "revId": "c28b3f6db0e8a10578250ae0842f4c1be62add3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da20952f_fcd35802",
         "filename": "tests/publishers/fixtures/rundeck001.yaml",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2015-08-28T22:51:33Z",
       "side": 1,
       "message": "please remove",
+      "revId": "c28b3f6db0e8a10578250ae0842f4c1be62add3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_42598d59",
+        "filename": "tests/publishers/fixtures/rundeck001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2015-11-25T16:24:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da20952f_fcd35802",
       "revId": "c28b3f6db0e8a10578250ae0842f4c1be62add3b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
