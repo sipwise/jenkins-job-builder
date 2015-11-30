@@ -95,6 +95,10 @@ Example:
       history. It adds the ``logrotate`` attribute to the :ref:`Job`
       definition. All logrotate attributes default to "-1" (keep forever).
 
+    * **folder**:
+      The folder attribute allows you to specify which Jenkins folder to
+      upload the job to, requires the `CloudBees Folders Plugin.
+      <https://wiki.jenkins-ci.org/display/JENKINS/CloudBees+Folders+Plugin>`_
 """
 
 import xml.etree.ElementTree as XML

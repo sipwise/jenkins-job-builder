@@ -155,6 +155,12 @@ class YamlParser(object):
             job["description"] = description + \
                 self.get_managed_string().lstrip()
 
+    def getfullname(self, data):
+        if 'folder' in data:
+            return "%s/%s" % (data['folder'], data['name'])
+
+        return data['name']
+
     def expandYaml(self, jobs_glob=None):
         changed = True
         while changed:
@@ -165,10 +171,11 @@ class YamlParser(object):
                         changed = True
 
         for job in self.data.get('job', {}).values():
-            if jobs_glob and not matches(job['name'], jobs_glob):
-                logger.debug("Ignoring job {0}".format(job['name']))
+            job['fullname'] = self.getfullname(job)
+            if jobs_glob and not matches(job['fullname'], jobs_glob):
+                logger.debug("Ignoring job {0}".format(job['fullname']))
                 continue
-            logger.debug("Expanding job '{0}'".format(job['name']))
+            logger.debug("Expanding job '{0}'".format(job['fullname']))
             job = self.applyDefaults(job)
             self.formatDescription(job)
             self.jobs.append(job)
@@ -185,7 +192,12 @@ class YamlParser(object):
                 else:
                     jobname = jobspec
                     jobparams = {}
+
+                # established that the reference job/group/template is unique
                 job = self.getJob(jobname)
+                group = self.getJobGroup(jobname)
+                template = self.getJobTemplate(jobname)
+
                 if job:
                     # Just naming an existing defined job
                     if jobname in seen:
@@ -195,7 +207,6 @@ class YamlParser(object):
                     seen.add(jobname)
                     continue
                 # see if it's a job group
-                group = self.getJobGroup(jobname)
                 if group:
                     for group_jobspec in group['jobs']:
                         if isinstance(group_jobspec, dict):
@@ -228,8 +239,8 @@ class YamlParser(object):
                             self.expandYamlForTemplateJob(d, template,
                                                           jobs_glob)
                     continue
+
                 # see if it's a template
-                template = self.getJobTemplate(jobname)
                 if template:
                     d = {}
                     d.update(project)
@@ -243,11 +254,11 @@ class YamlParser(object):
         seen = set()
         # walk the list in reverse so that last definition wins
         for job in self.jobs[::-1]:
-            if job['name'] in seen:
+            if job['fullname'] in seen:
                 self._handle_dups("Duplicate definitions for job '{0}' "
-                                  "specified".format(job['name']))
+                                  "specified".format(job['fullname']))
                 self.jobs.remove(job)
-            seen.add(job['name'])
+            seen.add(job['fullname'])
 
     def expandYamlForTemplateJob(self, project, template, jobs_glob=None):
         dimensions = []
@@ -283,6 +294,7 @@ class YamlParser(object):
 
             params.update(expanded_values)
             params = deep_format(params, params)
+
             allow_empty_variables = self.config \
                 and self.config.has_section('job_builder') \
                 and self.config.has_option(
@@ -296,8 +308,9 @@ class YamlParser(object):
 
             params['template-name'] = template_name
             expanded = deep_format(template, params, allow_empty_variables)
+            expanded['fullname'] = self.getfullname(expanded)
 
-            job_name = expanded.get('name')
+            job_name = expanded.get('fullname')
             if jobs_glob and not matches(job_name, jobs_glob):
                 continue
 
@@ -322,7 +335,7 @@ class YamlParser(object):
             mod = Mod(self.registry)
             xml = mod.root_xml(data)
             self.gen_xml(xml, data)
-            job = XmlJob(xml, data['name'])
+            job = XmlJob(xml, data['name'], data['fullname'])
             return job
 
     def gen_xml(self, xml, data):
