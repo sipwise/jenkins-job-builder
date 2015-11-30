@@ -180,6 +180,12 @@ class YamlParser(object):
             job["description"] = description + \
                 self.get_managed_string().lstrip()
 
+    def getfullname(self, data):
+        if 'folder' in data:
+            return "%s/%s" % (data['folder'], data['name'])
+
+        return data['name']
+
     def expandYaml(self, jobs_glob=None):
         changed = True
         while changed:
@@ -190,6 +196,7 @@ class YamlParser(object):
                         changed = True
 
         for job in self.data.get('job', {}).values():
+            job['name'] = self.getfullname(job)
             if jobs_glob and not matches(job['name'], jobs_glob):
                 logger.debug("Ignoring job {0}".format(job['name']))
                 continue
@@ -324,6 +331,7 @@ class YamlParser(object):
 
             params['template-name'] = template_name
             expanded = deep_format(template, params, allow_empty_variables)
+            expanded['name'] = self.getfullname(expanded)
 
             job_name = expanded.get('name')
             if jobs_glob and not matches(job_name, jobs_glob):

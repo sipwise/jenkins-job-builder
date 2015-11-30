@@ -76,9 +76,10 @@ class UpdateTests(CmdTestsBase):
         delete_job() after update_job() when '--delete-old' is set but only
         for the extra jobs.
         """
-        # set up some test data
+        # set up some test data to be returned by python-jenkins as it
+        # uses 'fullname' for the full folder + name info.
         jobs = ['old_job001', 'old_job002']
-        extra_jobs = [{'name': name} for name in jobs]
+        extra_jenkins_jobs = [{'fullname': name} for name in jobs]
 
         builder_obj = builder.Builder('http://jenkins.example.com',
                                       'doesnot', 'matter',
@@ -92,7 +93,8 @@ class UpdateTests(CmdTestsBase):
         b_inst.delete_old_managed.side_effect = builder_obj.delete_old_managed
 
         def _get_jobs():
-            return builder_obj.parser.jobs + extra_jobs
+            return ([{'fullname': job['name']}
+                     for job in builder_obj.parser.jobs] + extra_jenkins_jobs)
         get_jobs_mock.side_effect = _get_jobs
 
         # override cache to ensure Jenkins.update_job called a limited number
