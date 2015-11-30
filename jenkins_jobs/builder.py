@@ -129,14 +129,14 @@ class Jenkins(object):
     def jobs(self):
         if self._jobs is None:
             # populate jobs
-            self._jobs = self.jenkins.get_jobs()
+            self._jobs = self.jenkins.get_all_jobs()
 
         return self._jobs
 
     @property
     def job_list(self):
         if self._job_list is None:
-            self._job_list = set(job['name'] for job in self.jobs)
+            self._job_list = set(job['fullname'] for job in self.jobs)
         return self._job_list
 
     @parallelize
@@ -281,26 +281,26 @@ class Builder(object):
         jobs = self.jenkins.get_jobs()
         deleted_jobs = 0
         if keep is None:
-            keep = [job.name for job in self.parser.xml_jobs]
+            keep = [job.fullname for job in self.parser.xml_jobs]
         for job in jobs:
-            if job['name'] not in keep:
-                if self.jenkins.is_managed(job['name']):
+            if job['fullname'] not in keep:
+                if self.jenkins.is_managed(job['fullname']):
                     logger.info("Removing obsolete jenkins job {0}"
-                                .format(job['name']))
-                    self.delete_job(job['name'])
+                                .format(job['fullname']))
+                    self.delete_job(job['fullname'])
                     deleted_jobs += 1
                 else:
                     logger.info("Not deleting unmanaged jenkins job %s",
-                                job['name'])
+                                job['fullname'])
             else:
-                logger.debug("Keeping job %s", job['name'])
+                logger.debug("Keeping job %s", job['fullname'])
         return deleted_jobs
 
     def delete_job(self, jobs_glob, fn=None):
         if fn:
             self.load_files(fn)
             self.parser.expandYaml([jobs_glob])
-            jobs = [j['name'] for j in self.parser.jobs]
+            jobs = [j['fullname'] for j in self.parser.jobs]
         else:
             jobs = [jobs_glob]
 
@@ -338,7 +338,7 @@ class Builder(object):
                       len(self.parser.jobs), str(step - orig))
 
         logger.info("Number of jobs generated:  %d", len(self.parser.xml_jobs))
-        self.parser.xml_jobs.sort(key=operator.attrgetter('name'))
+        self.parser.xml_jobs.sort(key=operator.attrgetter('fullname'))
 
         if (output and not hasattr(output, 'write')
                 and not os.path.isdir(output)):
@@ -367,7 +367,7 @@ class Builder(object):
                         raise
                     continue
 
-                output_fn = os.path.join(output, job.name)
+                output_fn = os.path.join(output, os.path.normpath(job.name))
                 logger.debug("Writing XML to '{0}'".format(output_fn))
                 with io.open(output_fn, 'w', encoding='utf-8') as f:
                     f.write(job.output().decode('utf-8'))
@@ -414,8 +414,8 @@ class Builder(object):
 
     @parallelize
     def parallel_update_job(self, job):
-        self.jenkins.update_job(job.name, job.output().decode('utf-8'))
-        return (job.name, job.md5())
+        self.jenkins.update_job(job.fullname, job.output().decode('utf-8'))
+        return (job.fullname, job.md5())
 
     def update_job(self, input_fn, jobs_glob=None, output=None):
         logging.warn('Current update_job function signature is deprecated and '

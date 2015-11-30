@@ -43,9 +43,10 @@ def remove_ignorable_whitespace(node):
 
 
 class XmlJob(object):
-    def __init__(self, xml, name):
+    def __init__(self, xml, name, fullname):
         self.xml = xml
         self.name = name
+        self.fullname = fullname
 
     def md5(self):
         return hashlib.md5(self.output()).hexdigest()
