@@ -217,6 +217,12 @@ class YamlParser(object):
             job["description"] = description + \
                 self._get_managed_string().lstrip()
 
+    def _getfullname(self, data):
+        if 'folder' in data:
+            return "%s/%s" % (data['folder'], data['name'])
+
+        return data['name']
+
     def expandYaml(self, registry, jobs_glob=None):
         changed = True
         while changed:
@@ -227,6 +233,7 @@ class YamlParser(object):
                         changed = True
 
         for job in self.data.get('job', {}).values():
+            job['name'] = self._getfullname(job)
             if jobs_glob and not matches(job['name'], jobs_glob):
                 logger.debug("Ignoring job {0}".format(job['name']))
                 continue
@@ -357,6 +364,7 @@ class YamlParser(object):
             expanded = deep_format(
                 template, params,
                 self.jjb_config.yamlparser['allow_empty_variables'])
+            expanded['name'] = self._getfullname(expanded)
 
             job_name = expanded.get('name')
             if jobs_glob and not matches(job_name, jobs_glob):

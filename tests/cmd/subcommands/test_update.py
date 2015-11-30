@@ -30,7 +30,7 @@ from tests.cmd.test_cmd import CmdTestsBase
 class UpdateTests(CmdTestsBase):
 
     @mock.patch('jenkins_jobs.builder.jenkins.Jenkins.job_exists')
-    @mock.patch('jenkins_jobs.builder.jenkins.Jenkins.get_jobs')
+    @mock.patch('jenkins_jobs.builder.jenkins.Jenkins.get_all_jobs')
     @mock.patch('jenkins_jobs.builder.jenkins.Jenkins.reconfig_job')
     def test_update_jobs(self,
                          jenkins_reconfig_job,
@@ -72,14 +72,14 @@ class UpdateTests(CmdTestsBase):
                                    six.text_type))
 
     @mock.patch('jenkins_jobs.builder.jenkins.Jenkins.job_exists')
-    @mock.patch('jenkins_jobs.builder.jenkins.Jenkins.get_jobs')
+    @mock.patch('jenkins_jobs.builder.jenkins.Jenkins.get_all_jobs')
     @mock.patch('jenkins_jobs.builder.jenkins.Jenkins.reconfig_job')
     @mock.patch('jenkins_jobs.builder.jenkins.Jenkins.delete_job')
     def test_update_jobs_and_delete_old(self,
                                         jenkins_delete_job,
                                         jenkins_reconfig_job,
-                                        jenkins_get_jobs,
-                                        jenkins_job_exists, ):
+                                        jenkins_get_all_jobs,
+                                        jenkins_job_exists):
         """
         Test update behaviour with --delete-old option
 
@@ -92,22 +92,23 @@ class UpdateTests(CmdTestsBase):
         * mock out a call to jenkins.Jenkins.job_exists() to always return
           True.
         """
+        yaml_jobs = ['bar001', 'bar002', 'baz001', 'bam001']
         jobs = ['old_job001', 'old_job002', 'unmanaged']
-        extra_jobs = [{'name': name} for name in jobs]
 
         path = os.path.join(self.fixtures_path, 'cmd-002.yaml')
         args = ['--conf', self.default_config_file, 'update', '--delete-old',
                 path]
 
-        jenkins_get_jobs.return_value = extra_jobs
+        def _get_all_jobs():
+            return ([{'fullname': name} for name in yaml_jobs + jobs])
+        jenkins_get_all_jobs.side_effect = _get_all_jobs
 
         with mock.patch('jenkins_jobs.builder.JenkinsManager.is_managed',
                         side_effect=(lambda name: name != 'unmanaged')):
             self.execute_jenkins_jobs_with_args(args)
 
         jenkins_reconfig_job.assert_has_calls(
-            [mock.call(job_name, mock.ANY)
-             for job_name in ['bar001', 'bar002', 'baz001', 'bam001']],
+            [mock.call(job_name, mock.ANY) for job_name in yaml_jobs],
             any_order=True
         )
         jenkins_delete_job.assert_has_calls(
