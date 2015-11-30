@@ -278,11 +278,11 @@ class Builder(object):
         if keep is None:
             keep = [job.name for job in self.parser.xml_jobs]
         for job in jobs:
-            if job['name'] not in keep and \
-                    self.jenkins.is_managed(job['name']):
+            if job['fullname'] not in keep and \
+                    self.jenkins.is_managed(job['fullname']):
                 logger.info("Removing obsolete jenkins job {0}"
-                            .format(job['name']))
-                self.delete_job(job['name'])
+                            .format(job['fullname']))
+                self.delete_job(job['fullname'])
                 deleted_jobs += 1
             else:
                 logger.debug("Ignoring unmanaged jenkins job %s",
@@ -293,7 +293,7 @@ class Builder(object):
         if fn:
             self.load_files(fn)
             self.parser.expandYaml([jobs_glob])
-            jobs = [j['name'] for j in self.parser.jobs]
+            jobs = [j['fullname'] for j in self.parser.jobs]
         else:
             jobs = [jobs_glob]
 
@@ -317,7 +317,7 @@ class Builder(object):
         self.parser.generateXML()
 
         logger.info("Number of jobs generated:  %d", len(self.parser.xml_jobs))
-        self.parser.xml_jobs.sort(key=operator.attrgetter('name'))
+        self.parser.xml_jobs.sort(key=operator.attrgetter('fullname'))
 
         if (output and not hasattr(output, 'write')
                 and not os.path.isdir(output)):
@@ -347,21 +347,22 @@ class Builder(object):
                         raise
                     continue
 
-                output_fn = os.path.join(output, job.name)
+                output_fn = os.path.join(output, os.path.normpath(job.name))
                 logger.debug("Writing XML to '{0}'".format(output_fn))
                 with io.open(output_fn, 'w', encoding='utf-8') as f:
                     f.write(job.output().decode('utf-8'))
                 continue
             md5 = job.md5()
-            if (self.jenkins.is_job(job.name)
-                    and not self.cache.is_cached(job.name)):
-                old_md5 = self.jenkins.get_job_md5(job.name)
-                self.cache.set(job.name, old_md5)
+            if (self.jenkins.is_job(job.fullname)
+                    and not self.cache.is_cached(job.fullname)):
+                old_md5 = self.jenkins.get_job_md5(job.fullname)
+                self.cache.set(job.fullname, old_md5)
 
-            if self.cache.has_changed(job.name, md5) or self.ignore_cache:
-                self.jenkins.update_job(job.name, job.output().decode('utf-8'))
+            if self.cache.has_changed(job.fullname, md5) or self.ignore_cache:
+                self.jenkins.update_job(job.fullname,
+                                        job.output().decode('utf-8'))
                 updated_jobs += 1
-                self.cache.set(job.name, md5)
+                self.cache.set(job.fullname, md5)
             else:
-                logger.debug("'{0}' has not changed".format(job.name))
+                logger.debug("'{0}' has not changed".format(job.fullname))
         return self.parser.xml_jobs, updated_jobs

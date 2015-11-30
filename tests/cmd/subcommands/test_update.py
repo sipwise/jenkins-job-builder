@@ -78,7 +78,7 @@ class UpdateTests(CmdTestsBase):
         """
         # set up some test data
         jobs = ['old_job001', 'old_job002']
-        extra_jobs = [{'name': name} for name in jobs]
+        extra_jobs = [{'name': name, 'fullname': name} for name in jobs]
 
         builder_obj = builder.Builder('http://jenkins.example.com',
                                       'doesnot', 'matter',
