@@ -1,0 +1,4 @@
+publishers:
+- cucumber_reports:
+    plugin-url-path: https://jenkins.internel/jenkins/ 
+   
