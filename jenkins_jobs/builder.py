@@ -129,14 +129,15 @@ class Jenkins(object):
     def jobs(self):
         if self._jobs is None:
             # populate jobs
-            self._jobs = self.jenkins.get_jobs()
+            self._jobs = self.jenkins.get_all_jobs()
 
         return self._jobs
 
     @property
     def job_list(self):
         if self._job_list is None:
-            self._job_list = set(job['name'] for job in self.jobs)
+            # python-jenkins uses 'fullname' for folder/name combination
+            self._job_list = set(job['fullname'] for job in self.jobs)
         return self._job_list
 
     @parallelize
@@ -281,19 +282,21 @@ class Builder(object):
         jobs = self.jenkins.get_jobs()
         deleted_jobs = 0
         if keep is None:
+            # JJB stores the fullname as the name attribute
             keep = [job.name for job in self.parser.xml_jobs]
         for job in jobs:
-            if job['name'] not in keep:
-                if self.jenkins.is_managed(job['name']):
+            # python-jenkins stores the folder and name as 'fullname'
+            if job['fullname'] not in keep:
+                if self.jenkins.is_managed(job['fullname']):
                     logger.info("Removing obsolete jenkins job {0}"
-                                .format(job['name']))
-                    self.delete_job(job['name'])
+                                .format(job['fullname']))
+                    self.delete_job(job['fullname'])
                     deleted_jobs += 1
                 else:
                     logger.info("Not deleting unmanaged jenkins job %s",
-                                job['name'])
+                                job['fullname'])
             else:
-                logger.debug("Keeping job %s", job['name'])
+                logger.debug("Keeping job %s", job['fullname'])
         return deleted_jobs
 
     def delete_job(self, jobs_glob, fn=None):
@@ -367,7 +370,7 @@ class Builder(object):
                         raise
                     continue
 
-                output_fn = os.path.join(output, job.name)
+                output_fn = os.path.join(output, os.path.normpath(job.name))
                 logger.debug("Writing XML to '{0}'".format(output_fn))
                 with io.open(output_fn, 'w', encoding='utf-8') as f:
                     f.write(job.output().decode('utf-8'))
