@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_a6773bd3",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1976,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-01T15:15:35Z",
+      "side": 1,
+      "message": "Looks like this is optional? If so please add \"(optional)\" at the end to state that it is so.",
+      "revId": "f0c9c57f235b8eae315a03fa5fde0110e54c4413",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_26126bb5",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1981,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-01T15:15:35Z",
+      "side": 1,
+      "message": "There\u0027s enough room to fit this line without using the \\ above. Please combine the 2 lines.",
+      "revId": "f0c9c57f235b8eae315a03fa5fde0110e54c4413",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
