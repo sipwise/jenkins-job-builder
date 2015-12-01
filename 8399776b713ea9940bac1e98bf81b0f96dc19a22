@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_c2590237",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-01T17:02:51Z",
+      "side": 1,
+      "message": "Minor nit, lets keep these in alphabetical order rather than trying to group related.",
+      "revId": "8399776b713ea9940bac1e98bf81b0f96dc19a22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
