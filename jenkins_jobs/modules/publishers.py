@@ -120,9 +120,9 @@ def blame_upstream(parser, xml_parent, data):
 
 
 def jclouds(parser, xml_parent, data):
-    """yaml: JClouds Cloud Storage Settings
-    provides a way to store artifacts on JClouds supported storage providers.
-    Requires the Jenkins `JClouds Plugin.
+    """yaml: jclouds
+    JClouds Cloud Storage Settings provides a way to store artifacts on
+    JClouds supported storage providers. Requires the Jenkins `JClouds Plugin.
     <https://wiki.jenkins-ci.org/display/JENKINS/JClouds+Plugin>`_
 
     JClouds Cloud Storage Settings must be configured for the Jenkins instance.
@@ -978,7 +978,7 @@ def junit(parser, xml_parent, data):
 
 
 def cucumber_testresult(parser, xml_parent, data):
-    """yaml: cucumber
+    """yaml: cucumber_testresult
     Publish cucumber test results.
     Requires the Jenkins :jenkins-wiki:`cucumber testresult
     <Cucumber+Test+Result+Plugin>`.
@@ -2704,7 +2704,7 @@ def html_publisher(parser, xml_parent, data):
 
 
 def rich_text_publisher(parser, xml_parent, data):
-    """yaml: rich_text_publisher
+    """yaml: rich-text-publisher
     This plugin puts custom rich text message to the Build pages and Job main
     page.
 
