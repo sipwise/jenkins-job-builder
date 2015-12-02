@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_953a3697",
+        "filename": "doc/source/definition.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-02T05:04:12Z",
+      "side": 1,
+      "message": "I figured out how to change the key to be \"- view:\" so am supporting that method now as it is more obvious.",
+      "parentUuid": "9a8ffd7b_d6b9a92f",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_126407e3",
         "filename": "doc/source/installation.rst",
         "patchSetId": 10
