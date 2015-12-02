@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_d6b9a92f",
+        "filename": "doc/source/definition.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-02T04:22:54Z",
+      "side": 1,
+      "message": "I updated to list the \"- job:\" key. I haven\u0027t figured out how to make it become a view key yet but something to keep in mind while reviewing this patch.",
+      "parentUuid": "5a2ca52d_c111b105",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_126407e3",
         "filename": "doc/source/installation.rst",
         "patchSetId": 10
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_3647d51e",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-02T04:22:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_126407e3",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_4ae66cb5",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 10
@@ -64,6 +100,24 @@
       "writtenOn": "2015-10-14T22:32:01Z",
       "side": 1,
       "message": "I\u0027m not very sure of how this project works overall, but how could this ever be populated if self._views is None?\n\nget_views below either returns None or self.views.",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_f1e2b72e",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-02T04:22:54Z",
+      "side": 1,
+      "message": "This is probably fine. I just realized if you look at the \"jobs\" methods they are designed the same way.",
+      "parentUuid": "5a2ca52d_4ae66cb5",
       "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_76123d0b",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-02T04:22:54Z",
+      "side": 1,
+      "message": "If you look at the jobs related methods they are designed the same way so I think this is probably fine.",
+      "parentUuid": "5a2ca52d_0aef1488",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_c146cb4e",
         "filename": "jenkins_jobs/builder.py",
         "patchSetId": 10
@@ -115,6 +187,24 @@
       "writtenOn": "2015-08-11T14:18:40Z",
       "side": 1,
       "message": "views_glob?",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_b62f453d",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-02T04:22:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_c146cb4e",
       "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +228,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_b6d66525",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-02T04:22:54Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "1a4dcd0f_e14bc729",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_81076380",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 10
@@ -155,6 +263,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_b615059c",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-02T04:22:54Z",
+      "side": 1,
+      "message": "I consolidated the command to be --jobs-only and --views-only. Still need to create a parent parser though.",
+      "parentUuid": "1a4dcd0f_81076380",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_d7952940",
         "filename": "jenkins_jobs/cmd.py",
         "patchSetId": 10
@@ -166,6 +292,24 @@
       "writtenOn": "2015-08-11T14:18:40Z",
       "side": 1,
       "message": "given the names of these attributes, if both are \u0027True\u0027 this should really abort as an error condition since how can you delete \u0027only\u0027 of both.",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_d6f2099a",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-02T04:22:54Z",
+      "side": 1,
+      "message": "Made it throw a JenkinsJobsException",
+      "parentUuid": "1a4dcd0f_d7952940",
       "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +367,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_b67c25ec",
+        "filename": "jenkins_jobs/modules/view_pipeline.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-02T04:22:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_ce6913c0",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_2e8517ce",
         "filename": "jenkins_jobs/parser.py",
         "patchSetId": 10
@@ -251,6 +413,24 @@
       "writtenOn": "2015-10-16T11:59:29Z",
       "side": 1,
       "message": "There isn\u0027t anything named `BuildPipeline` in `jenkins_job.modules.view_pipeline`.\n\nPerhaps `s/BuildPipeline/Pipeline/` on this line (or the opposite in that file)?",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_d64e89c0",
+        "filename": "setup.cfg",
+        "patchSetId": 10
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-02T04:22:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a2ca52d_26567b2a",
       "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
