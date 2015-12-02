@@ -1441,8 +1441,8 @@ def maven_builder(parser, xml_parent, data):
     maven = XML.SubElement(xml_parent, 'org.jfrog.hudson.maven3.Maven3Builder')
 
     required = {
-        'mavenName': 'name',
         'goals': 'goals',
+        'mavenName': 'name',
     }
 
     for key in required:
