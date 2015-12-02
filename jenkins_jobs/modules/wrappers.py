@@ -1653,7 +1653,7 @@ def android_emulator(parser, xml_parent, data):
 
 
 def artifactory_maven(parser, xml_parent, data):
-    """ yaml: artifactory-maven
+    """yaml: artifactory-maven
     Wrapper for non-Maven projects. Requires the
     :jenkins-wiki:`Artifactory Plugin <Artifactory+Plugin>`
 
@@ -1698,7 +1698,7 @@ def artifactory_maven(parser, xml_parent, data):
 
 
 def artifactory_generic(parser, xml_parent, data):
-    """ yaml: artifactory-generic
+    """yaml: artifactory-generic
     Wrapper for non-Maven projects. Requires the
     :jenkins-wiki:`Artifactory Plugin <Artifactory+Plugin>`
 
@@ -1775,7 +1775,7 @@ def artifactory_generic(parser, xml_parent, data):
 
 
 def artifactory_maven_freestyle(parser, xml_parent, data):
-    """ yaml: artifactory-maven-freestyle
+    """yaml: artifactory-maven-freestyle
     Wrapper for Free Stype projects. Requires the Artifactory plugin.
     Requires :jenkins-wiki:`Artifactory Plugin <Artifactory+Plugin>`
 
