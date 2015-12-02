@@ -1337,7 +1337,7 @@ def checkstyle(parser, xml_parent, data):
         """Helper to convert settings from one key to another
         """
 
-        for old_key, value in data.items():
+        for old_key, value in dict(data).items():
             if old_key in lookup:
                 # Insert value if key does not already exists
                 data.setdefault(lookup[old_key], value)
