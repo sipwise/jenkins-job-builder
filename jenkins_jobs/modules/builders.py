@@ -1440,16 +1440,17 @@ def maven_builder(parser, xml_parent, data):
     """
     maven = XML.SubElement(xml_parent, 'org.jfrog.hudson.maven3.Maven3Builder')
 
-    required = {
-        'mavenName': 'name',
-        'goals': 'goals',
-    }
+    name = XML.SubElement(maven, 'mavenName')
+    try:
+        name.text = data['name']
+    except KeyError:
+        raise MissingAttributeError('name')
 
-    for key in required:
-        try:
-            XML.SubElement(maven, key).text = data[required[key]]
-        except KeyError:
-            raise MissingAttributeError(required[key])
+    goals = XML.SubElement(maven, 'goals')
+    try:
+        goals.text = data['goals']
+    except KeyError:
+        raise MissingAttributeError('goals')
 
     XML.SubElement(maven, 'rootPom').text = data.get('pom', 'pom.xml')
     XML.SubElement(maven, 'mavenOpts').text = data.get('maven-opts', '')
