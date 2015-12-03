@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_9a372ae3",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 661,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-03T18:36:20Z",
+      "side": 1,
+      "message": "Since you\u0027re modifying this a fair bit, change to indent by four spaces instead:\n\n    :arg str relative-to: base location of includes/excludes,\n        must be home ($JENKINS_HOME), somewhereElse\n        ($JENKINS_HOME/copyToSlave), userContent \n        ($JENKINS_HOME/userContent) or workspace.\n        (default: userContent)",
+      "revId": "41afbd51b1f3d2a719142b97c444ea4f870bca16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_3ab9562f",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-03T18:36:20Z",
+      "side": 1,
+      "message": "Since you\u0027ve added a test, could you switch this to use \u0027literalinclude\u0027 as many of the other docstrings would have to inline the unit test as an example (and change the Example line then to have a single \u0027:\u0027).\n\nRecommend rebuilding the docs locally to check the final result.",
+      "revId": "41afbd51b1f3d2a719142b97c444ea4f870bca16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
