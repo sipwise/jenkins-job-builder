@@ -16,6 +16,24 @@
       "revId": "3790bfe0ee5bb03c237d2ab917df0a73ff0aaf76",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_3ff148ce",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 623,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-03T18:19:07Z",
+      "side": 1,
+      "message": "It should match the entrypoint name used in job definitions. Currently this needs to be \u0027copyartifact-build-selector\u0027 for definitions using it to be dispatched to the correct function.\n\nIn this module, all of the function names are suffixed with \u0027_param\u0027, arguably this is wrong, and we should update them all to match the entrypoint name with \u0027-\u0027 replaced with \u0027_\u0027, but I think that is a separate change if we are to do so.",
+      "parentUuid": "9a8ffd7b_729b0967",
+      "revId": "3790bfe0ee5bb03c237d2ab917df0a73ff0aaf76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
