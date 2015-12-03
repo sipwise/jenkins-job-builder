@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a8ffd7b_22a74a0c",
+        "filename": "tests/publishers/fixtures/cucumber_reports001.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2015-12-03T05:21:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_07c7b898",
+      "revId": "6e41c6e9eb44c1dd94d2483185dcc463f7a5913c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_c7c5308e",
         "filename": "tests/publishers/fixtures/cucumber_reports002.yaml",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-12-03T04:49:19Z",
       "side": 1,
       "message": "Please cleanup the trailing whitespace in this file.",
+      "revId": "6e41c6e9eb44c1dd94d2483185dcc463f7a5913c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_c2b0be45",
+        "filename": "tests/publishers/fixtures/cucumber_reports002.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2015-12-03T05:21:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_c7c5308e",
       "revId": "6e41c6e9eb44c1dd94d2483185dcc463f7a5913c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
