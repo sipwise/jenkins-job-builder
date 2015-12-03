@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_71e4dc3a",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1445,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-03T21:15:26Z",
+      "side": 1,
+      "message": "The solution is to order based on the yaml inputted instead of mapping keys.",
+      "revId": "7d0823a2c24c89b63fb7071113a327cd4bbc26d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
