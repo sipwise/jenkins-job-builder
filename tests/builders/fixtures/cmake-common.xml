@@ -5,6 +5,7 @@
       <sourceDir>path/to/source</sourceDir>
       <buildDir>path/to/build</buildDir>
       <installDir>path/to/install</installDir>
+      <installationName>InSearchPath</installationName>
       <buildType>Debug</buildType>
       <otherBuildType/>
       <generator>Unix Makefiles</generator>

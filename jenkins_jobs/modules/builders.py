@@ -2019,6 +2019,8 @@ def cmake(parser, xml_parent, data):
         Relative to the workspace directory. (optional)
     :arg list install-dir: The directory where the project will be installed
         in, relative to the workspace directory. (optional)
+    :arg str installation-name: the name of CMake installation as defined in
+        the global configuration. (default: InSearchPath)
     :arg list build-type: Sets the "build type" option. A custom type different
         than the default ones specified on the CMake plugin can also be set,
         which will be automatically used in the "Other Build Type" option of
@@ -2083,6 +2085,9 @@ def cmake(parser, xml_parent, data):
 
     install_dir = XML.SubElement(cmake, 'installDir')
     install_dir.text = data.get('install-dir', '')
+
+    installation_name = XML.SubElement(cmake, 'installationName')
+    installation_name.text = data.get('installation-name', 'InSearchPath')
 
     # The options buildType and otherBuildType work together on the CMake
     # plugin:

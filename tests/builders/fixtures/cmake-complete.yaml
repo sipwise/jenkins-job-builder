@@ -3,6 +3,7 @@ builders:
       source-dir: 'path/to/source'
       build-dir: 'path/to/build'
       install-dir: 'path/to/install'
+      installation-name: 'In /opt'
       build-type: 'CustomReleaseType'
       generator: 'NMake Makefiles'
       make-command: '/usr/bin/make'

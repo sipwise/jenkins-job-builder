@@ -5,6 +5,7 @@
       <sourceDir>path/to/source</sourceDir>
       <buildDir>path/to/build</buildDir>
       <installDir>path/to/install</installDir>
+      <installationName>In /opt</installationName>
       <buildType>Debug</buildType>
       <otherBuildType>CustomReleaseType</otherBuildType>
       <generator>NMake Makefiles</generator>
