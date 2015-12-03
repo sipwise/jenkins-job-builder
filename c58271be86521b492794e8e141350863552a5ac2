@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_9fddd972",
+        "filename": "tests/yamlparser/fixtures/deep_merge_with_defaults.yaml",
+        "patchSetId": 21
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-03T19:18:31Z",
+      "side": 1,
+      "message": "We need a second test that uses \u0027timeout\u0027 directly here instead to demostrate how the deep merge will apply build-timeout macro and then it gets expanded to override the defined timeout.",
+      "revId": "c58271be86521b492794e8e141350863552a5ac2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
