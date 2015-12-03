@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_a24bd82a",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-03T19:45:14Z",
+      "side": 1,
+      "message": "Just realised that we shouldn\u0027t need this, but I made a mistake in how I setup the LoggingFixture mixin class in the base tests. This already captures logging so it should have been possible to inspect whether it contains the relevant logging messages.\n\nif it current saved the fixture under a variable, could have inspected it here instead of needing to mock the logger. That way any errors here would still result in the log messages appearing along side the output instead of being captured by separately this mock.",
+      "revId": "389eefeb06505cd03cdbf8321e811a643a424cae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
