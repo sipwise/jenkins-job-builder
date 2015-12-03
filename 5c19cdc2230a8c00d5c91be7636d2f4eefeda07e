@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a8ffd7b_c721b04e",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-03T04:54:39Z",
+      "side": 1,
+      "message": "I feel like this parameter should be \"matrix-builds\" so that it stands out more. This is generally the format we\u0027ve named these parameters in other modules including this one \"max-total\" above.",
+      "revId": "5c19cdc2230a8c00d5c91be7636d2f4eefeda07e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a8ffd7b_871728ed",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-03T04:54:39Z",
+      "side": 1,
+      "message": "I feel like this parameter should be \"matrix-configs\" so that it stands out more.",
+      "revId": "5c19cdc2230a8c00d5c91be7636d2f4eefeda07e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
