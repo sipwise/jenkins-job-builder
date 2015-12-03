@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_bfe698e6",
+        "filename": "setup.cfg",
+        "patchSetId": 4
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-03T18:23:45Z",
+      "side": 1,
+      "message": "This is wrong, it should be:\n\n    cucumber-reports\u003djenkins_jobs.modules.publishers:cucumber_reports\n\nthe entry point afterwards is actually incorrect given the style adopted for all the other entry points.\n\nThis will impact all the tests for this as well.",
+      "revId": "8a9f46e5fb22a9abdca97132c358a6f886135cc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
