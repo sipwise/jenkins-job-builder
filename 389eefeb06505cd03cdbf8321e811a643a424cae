@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a740942_45c1dee3",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-12-03T20:19:40Z",
+      "side": 1,
+      "message": "I\u0027m not sure i like this messages at warning level.  We run JJB (by default) at info level so this would get sent to console on every use.  I think it would be better if this was logger.debug() instead.",
+      "revId": "389eefeb06505cd03cdbf8321e811a643a424cae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_a24bd82a",
         "filename": "tests/cmd/subcommands/test_test.py",
         "patchSetId": 13
