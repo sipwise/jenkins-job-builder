@@ -1,0 +1,8 @@
+Verified+2: Jenkins
+Code-Review+2: yolanda.robla <info@ysoft.biz>
+Workflow+1: yolanda.robla <info@ysoft.biz>
+Submitted-by: Jenkins
+Submitted-at: Fri, 04 Dec 2015 09:29:24 +0000
+Reviewed-on: https://review.openstack.org/253396
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
