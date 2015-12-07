@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_bddff20b",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2015-12-07T20:51:34Z",
+      "side": 1,
+      "message": "The failure in test_stream_output_ascii_encoding_invalid_char is due to this method. There is something missing when it got refactored from update_job method, most notably the decoding of the job.",
+      "revId": "962c33fa7c95afa7c00a31dd0bf6c5a5c1d9c0a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
