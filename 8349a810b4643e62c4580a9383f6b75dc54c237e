@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_567dbd6c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 981,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2015-12-07T03:48:17Z",
+      "side": 1,
+      "message": "if this should adopt with other styles:\n cucumber-testresult",
+      "revId": "8349a810b4643e62c4580a9383f6b75dc54c237e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
