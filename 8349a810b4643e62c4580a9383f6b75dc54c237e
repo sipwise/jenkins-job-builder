@@ -16,6 +16,24 @@
       "revId": "8349a810b4643e62c4580a9383f6b75dc54c237e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_f2df0067",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 981,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-07T13:05:43Z",
+      "side": 1,
+      "message": "That\u0027s correct, probably better kept as a separate change since this change should just ensure that the entry points are exactly the same as currently defined in the setup.cfg.\n\nBelieve you agree with this given, https://review.openstack.org/253282. Either this merges first and that patch should be updated to correct this name, or your patch lands first and I\u0027ll fix up the conflict here.",
+      "parentUuid": "7a740942_567dbd6c",
+      "revId": "8349a810b4643e62c4580a9383f6b75dc54c237e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
