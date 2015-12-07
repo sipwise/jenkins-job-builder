@@ -486,6 +486,24 @@
       "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_db2b1593",
+        "filename": "tests/view_list/fixtures/list_view001.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-07T06:14:44Z",
+      "side": 1,
+      "message": "Just tested this, looks like Jenkins successfully creates the views so even if the job does not exist it\u0027s silently ignored.",
+      "parentUuid": "1a4dcd0f_510604cf",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
