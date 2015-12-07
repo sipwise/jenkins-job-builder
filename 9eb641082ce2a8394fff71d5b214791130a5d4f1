@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_f39862c2",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-07T14:02:13Z",
+      "side": 1,
+      "message": "Going to move this out to a separate patch and re-include the warning message, it\u0027s something that shouldn\u0027t have been mixed in with this change in first place.",
+      "revId": "9eb641082ce2a8394fff71d5b214791130a5d4f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
