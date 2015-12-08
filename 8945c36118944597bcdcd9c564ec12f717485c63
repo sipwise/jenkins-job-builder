@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_5604a816",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-12-08T01:37:37Z",
+      "side": 1,
+      "message": "TODO: ensure this is not visible to external users of the module, or if it is find a way to return an object that can be easily used in version comparisons rather than a string.",
+      "revId": "8945c36118944597bcdcd9c564ec12f717485c63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_9143fa41",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-12-08T01:37:37Z",
+      "side": 1,
+      "message": "This class and its methods need appropriate docstrings describing their purpose.",
+      "revId": "8945c36118944597bcdcd9c564ec12f717485c63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_d63898f0",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-12-08T01:37:37Z",
+      "side": 1,
+      "message": "TODO: find a way to avoid setting this as a property, or if we do set it as a property make it invisible to external users of the class. Making it available as a property will only tempt users of the JenkinsJobs class to become too intimate with its implementation.",
+      "revId": "8945c36118944597bcdcd9c564ec12f717485c63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_513272f3",
+        "filename": "jenkins_jobs/cli/subcommand/delete.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-12-08T01:37:37Z",
+      "side": 1,
+      "message": "TODO: raise NotImplementedError\n\n(implementation is planned for a future patchset that refactors jenkins_jobs.builder.Builder and jenkins_jobs.cmd into these subcommand modules)",
+      "revId": "8945c36118944597bcdcd9c564ec12f717485c63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_91153a41",
+        "filename": "jenkins_jobs/cli/subcommand/delete_all.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-12-08T01:37:37Z",
+      "side": 1,
+      "message": "TODO: raise NotImplementedError",
+      "revId": "8945c36118944597bcdcd9c564ec12f717485c63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_d106621b",
+        "filename": "jenkins_jobs/cli/subcommand/test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-12-08T01:37:37Z",
+      "side": 1,
+      "message": "TODO: raise NotImplementedError",
+      "revId": "8945c36118944597bcdcd9c564ec12f717485c63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_3106c61d",
+        "filename": "jenkins_jobs/cli/subcommand/update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-12-08T01:37:37Z",
+      "side": 1,
+      "message": "TODO: raise NotImplementedError",
+      "revId": "8945c36118944597bcdcd9c564ec12f717485c63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_b66cec35",
+        "filename": "tests/cmd/subcommands/test_delete.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-12-08T01:37:37Z",
+      "side": 1,
+      "message": "After thinking about it a little, calling the execute method directly is the wrong approach. It continues to tie these tests to the implementation of the command line parsing and execution code--next time someone comes around to refactor entry.JenkinsJobs they will have to touch all the same tests that I touched with this current patchset.\n\nI will be updating this patchset to add a method to CmdTestsBase that simply takes a list of arguments and manages the setup and execute of JenkinsJob in one place.",
+      "revId": "8945c36118944597bcdcd9c564ec12f717485c63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_768e84d1",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-12-08T01:37:37Z",
+      "side": 1,
+      "message": "@Darragh, can you think of a way to avoid mocking the output_dir here and elsewhere? I think this ties the test too strongly to implementation details of command line parsing. (tests in my opinion shouldn\u0027t care if JenkinsJobs object has an \"options\" property or how JenkinsJobs even deals with the output directory).\n\nActually, now that I look at this test again, I am a little confused...it doesn\u0027t appear that we are checking JJB\u0027s behavior in this situation, just executing it. Shoule we be checking that an exception is raised or that stderr receives a specific message?",
+      "revId": "8945c36118944597bcdcd9c564ec12f717485c63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
