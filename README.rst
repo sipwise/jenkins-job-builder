@@ -9,7 +9,7 @@ similarly configured jobs is easy.
 
 To install::
 
-    $ sudo python setup.py install
+    $ sudo pip install jenkins-job-builder
 
 Online documentation:
 
