@@ -9,7 +9,7 @@ similarly configured jobs is easy.
 
 To install::
 
-    $ sudo python setup.py install
+    $ sudo pip install jenkins-job-builder
 
 Online documentation:
 
@@ -28,6 +28,10 @@ Repository:
 Cloning::
 
     git clone https://git.openstack.org/openstack-infra/jenkins-job-builder
+
+Installation for development::
+
+    $ pip install -e .
 
 Patches are submitted via Gerrit at:
 
