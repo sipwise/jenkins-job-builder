@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_ab0f332d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1453,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-09T17:08:30Z",
+      "side": 1,
+      "message": "Since the KeyError exception contains the keyname that causes the error, we can keep this a little simpler with the following:\n\n    try:\n        XML.SubElement(maven, \u0027mavenName\u0027).text \u003d data[\u0027name\u0027]\n        XML.SubElement(maven, \u0027goals\u0027).text \u003d data[\u0027goals\u0027]\n    except KeyError as e:\n        # exception will contain the missing key name\n        raise MissingAttributeError(e.arg[0])",
+      "revId": "bf4d10e4e31c44239adbc8a603efd668115a398a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
