@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_2e3db58e",
+        "filename": "tests/yamlparser/fixtures/deep_merge_macros_with_defaults.yaml",
+        "patchSetId": 22
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 11223
+      },
+      "writtenOn": "2015-12-09T05:56:31Z",
+      "side": 1,
+      "message": "Here \"timeout\" is explicitly used instead of using the above macro \"build-timeout\". So that applyDefaults() failed to well handle them and merge them. Your suggestion is good that we have to do macro expansion of everything before generating the XML instead of both at the same time. I\u0027ve tried several ways to fix this bug and found a nicer way which will add a new method gen_macro() in jenkins_jobs.modules.base.Base and its children class.\n\nIt seems that fixing this small bug will involve a little bit more code changes.\n\nWill upload this new patchset asap.",
+      "revId": "079b3e7581267020d2b608cf7f016a0da01ff45f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
