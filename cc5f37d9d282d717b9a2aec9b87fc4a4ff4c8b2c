@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_296276ae",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2015-12-09T14:40:36Z",
+      "side": 1,
+      "message": "Our CI scripts do not use tox -e docs, they use \"python setup.py build_sphinx\" directly.",
+      "revId": "cc5f37d9d282d717b9a2aec9b87fc4a4ff4c8b2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
