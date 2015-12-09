@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_70a61a55",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1340,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-09T17:07:25Z",
+      "side": 1,
+      "message": "We should probably rewrite this as:\n\n    for old_key in list(data.keys()):\n        if old_key in lookup:\n            data.setdefault(lookup[old_key], data[old_key])\n            del data[old_key]\n\nAt least that way we don\u0027t unpack and read values that have no relevance, assuming that most of the time we don\u0027t need to do the conversion.",
+      "revId": "747c28e463846a8b704a52cb7f7e66e2216dfa08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
