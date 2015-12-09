@@ -593,6 +593,8 @@ def delivery_pipeline(parser, xml_parent, data):
                               'PipelineProperty')
     XML.SubElement(pipeline, 'stageName').text = data.get('stage', '')
     XML.SubElement(pipeline, 'taskName').text = data.get('task', '')
+    XML.SubElement(pipeline, 'descriptionTemplate').text = str(
+        data.get('task-description', ''))
 
 
 def zeromq_event(parser, xml_parent, data):
