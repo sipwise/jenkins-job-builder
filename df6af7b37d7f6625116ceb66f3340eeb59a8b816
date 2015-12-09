@@ -351,6 +351,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_06b6a3f8",
+        "filename": "jenkins_jobs/modules/base_view.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-09T04:18:42Z",
+      "side": 1,
+      "message": "Done. I removed this file since it wasn\u0027t being used by anything AFAICT",
+      "parentUuid": "1a4dcd0f_b1d508e6",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a4dcd0f_cbe825e5",
         "filename": "jenkins_jobs/modules/base_view.py",
         "patchSetId": 10
@@ -420,6 +438,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_e6b27705",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-09T04:18:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a4dcd0f_2e8517ce",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a2ca52d_26567b2a",
         "filename": "setup.cfg",
         "patchSetId": 10
@@ -466,6 +502,24 @@
       "writtenOn": "2015-08-11T14:18:40Z",
       "side": 1,
       "message": "We should probably throw an exception here if it\u0027s not recognised. That\u0027s also missing from above.\n\nWonder if we could look up the entry points here as well, seems like it might be useful to help exercise the top level entry points. Also missing from the jobs above.\n\nI\u0027ll look at fixing the issues with the jobs part separately so as this patch remains purely about the views.",
+      "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_0600e364",
+        "filename": "tests/base.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-09T04:18:42Z",
+      "side": 1,
+      "message": "I added an else statement to throw InvalidAttributeError if a valid type is not found.",
+      "parentUuid": "1a4dcd0f_6e50ff32",
       "revId": "df6af7b37d7f6625116ceb66f3340eeb59a8b816",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
