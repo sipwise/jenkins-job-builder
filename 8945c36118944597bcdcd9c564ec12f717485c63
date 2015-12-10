@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a740942_43e75612",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-10T16:22:22Z",
+      "side": 1,
+      "message": "pkg_resources.parse_version() comes to mind. Not the first time we\u0027ll have used it either.\n\nCould also name the function __version__() to give the hint that it should be considered internal only.",
+      "parentUuid": "7a740942_5604a816",
+      "revId": "8945c36118944597bcdcd9c564ec12f717485c63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_9143fa41",
         "filename": "jenkins_jobs/cli/entry.py",
         "patchSetId": 4
