@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_a322baa1",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-10T16:14:15Z",
+      "side": 1,
+      "message": "I guess it might be nice to also support having this controllable via a config option as well, but that could be added as a subsequent patch.",
+      "revId": "e746f7aefe5bfff334b926338146fbc31fd837d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
