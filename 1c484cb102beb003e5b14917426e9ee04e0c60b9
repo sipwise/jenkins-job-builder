@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_23f7aa5a",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 582,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-10T17:49:34Z",
+      "side": 1,
+      "message": "Could you add in the docstring entry as well, thanks.",
+      "revId": "1c484cb102beb003e5b14917426e9ee04e0c60b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_b4818ffd",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-10T17:49:34Z",
+      "side": 1,
+      "message": "On first glance, \u0027description\u0027 seems like it\u0027s reasonable here.",
+      "revId": "1c484cb102beb003e5b14917426e9ee04e0c60b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
