@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a740942_6a3a5ecf",
+        "filename": "tests/publishers/fixtures/cucumber_reports001.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-10T18:11:59Z",
+      "side": 1,
+      "message": "Please use .example or .test for the domain name in inline with https://tools.ietf.org/html/rfc2606\n\nSince this is used for both test and documentation either is valid.",
+      "revId": "29252cca05f692606cb46ba2bce3c948ea3fe012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a740942_8a630add",
+        "filename": "tests/publishers/fixtures/cucumber_reports002.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-10T18:11:59Z",
+      "side": 1,
+      "message": "As mentioned for the other example, better to remain inline with https://tools.ietf.org/html/rfc2606",
+      "revId": "29252cca05f692606cb46ba2bce3c948ea3fe012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
