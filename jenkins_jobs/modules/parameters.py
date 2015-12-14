@@ -654,6 +654,73 @@ def copyartifact_build_selector_param(parser, xml_parent, data):
     copyartifact_build_selector(t, data, 'defaultSelector')
 
 
+def maven_metadata_param(parser, xml_parent, data):
+    """yaml: maven-metadata-param
+    This parameter allows the resolution of maven artifact versions
+    by contacting the repository and reading the maven-metadata.xml.
+    Requires the Jenkins :jenkins-wiki:`Maven Metadata Plugin
+    <Maven+Metadata+Plugin>`.
+
+    :arg str name: name of the parameter
+    :arg str description: description of the parameter (optional, default '')
+    :arg str repository-base-url: (optional, default '')
+    :arg str repository-username: (optional, default '')
+    :arg str repository-password: (optional, default '')
+    :arg str artifact-group-id: (optional, default '')
+    :arg str artifact-id: (optional, default '')
+    :arg str packaging: (optional, default '')
+    :arg str versions-filter: Specify a regular expression which will be used
+        to filter the versions which are actually displayed when triggering a
+        new build. (optional, default '')
+    :arg str default-value: For features such as SVN polling a default value
+        is required. If job will only be started manually, this field is not
+        necessary. There are 4 special default values which will be evaluated
+        at runtime (optional, default '')
+    :arg str maximum-versions-to-display: The maximum number of versions to
+        display in the drop-down. Any non-number value as well as 0 or negative
+        values will default to all. (optional, default 0)
+    :arg str sorting-order: Ascending or Descending
+        (optional, default Descending)
+
+    Example:
+
+    .. literalinclude:: \
+    /../../tests/parameters/fixtures/maven-metadata-param001.yaml
+       :language: yaml
+
+    """
+    pdef = base_param(parser, xml_parent, data, False,
+                      'eu.markov.jenkins.plugin.mvnmeta.'
+                      'MavenMetadataParameterDefinition')
+    XML.SubElement(pdef, 'repoBaseUrl').text = data.get('repository-base-url',
+                                                        '')
+    XML.SubElement(pdef, 'groupId').text = data.get('artifact-group-id', '')
+    XML.SubElement(pdef, 'artifactId').text = data.get('artifact-id', '')
+    XML.SubElement(pdef, 'packaging').text = data.get('packaging', '')
+    XML.SubElement(pdef, 'defaultValue').text = data.get('default-value', '')
+    XML.SubElement(pdef, 'versionFilter').text = data.get('versions-filter',
+                                                          '')
+
+    sort_order = data.get('sorting-order', 'Descending')
+    sort_dict = {'Descending': 'DESC',
+                 'Ascending': 'ASC',
+                 'descending': 'DESC',
+                 'ascending': 'ASC',
+                 'DESC': 'DESC',
+                 'ASC': 'ASC'}
+
+    if sort_order in sort_dict:
+        XML.SubElement(pdef, 'sortOrder').text = sort_dict[sort_order]
+    else:
+        raise JenkinsJobsException("sorting-order entered is not valid, "
+                                   "must be one of: Descending or Ascending")
+
+    XML.SubElement(pdef, 'maxVersions').text = str(data.get(
+        'maximum-versions-to-display', 0))
+    XML.SubElement(pdef, 'username').text = data.get('repository-username', '')
+    XML.SubElement(pdef, 'password').text = data.get('repository-password', '')
+
+
 class Parameters(jenkins_jobs.modules.base.Base):
     sequence = 21
 
