@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <eu.markov.jenkins.plugin.mvnmeta.MavenMetadataParameterDefinition>
+          <name>maven metadata param</name>
+          <description/>
+          <repoBaseUrl>http://nexus.example.com</repoBaseUrl>
+          <groupId>com.example</groupId>
+          <artifactId>example</artifactId>
+          <packaging/>
+          <defaultValue/>
+          <versionFilter/>
+          <sortOrder>DESC</sortOrder>
+          <maxVersions>5</maxVersions>
+          <username/>
+          <password/>
+        </eu.markov.jenkins.plugin.mvnmeta.MavenMetadataParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+</project>

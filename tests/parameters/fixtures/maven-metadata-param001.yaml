@@ -1,0 +1,7 @@
+parameters:
+  - maven-metadata:
+      name: 'maven metadata param'
+      repository-base-url: 'http://nexus.example.com'
+      artifact-group-id: 'com.example'
+      artifact-id: 'example'
+      maximum-versions-to-display: "5"
