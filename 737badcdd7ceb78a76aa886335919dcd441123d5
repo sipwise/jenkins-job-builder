@@ -16,6 +16,23 @@
       "revId": "737badcdd7ceb78a76aa886335919dcd441123d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_2ad82653",
+        "filename": "README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2015-12-14T21:07:20Z",
+      "side": 1,
+      "message": "More likely, it\u0027s missing a recommendation to create and activate a virtualenv before running this command. Also while `pip install .` is more line `python setup.py install` the -e here makes it work more like `python setup.py develop` instead (uses \"editable\" mode where python files are linked instead of copied and so can be manipulated without needing to reinstall them).",
+      "revId": "737badcdd7ceb78a76aa886335919dcd441123d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
