@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a710552_a5da0977",
+        "filename": "README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-14T21:25:37Z",
+      "side": 1,
+      "message": "In my opinion you should never use sudo to pip install as this advice breaks some distros as pip install by default goes to where the distro\u0027s package manager also installs things to.\n\nI feel like using the --user parameter without sudo is better advice.\n\n    pip install --user jenkins-job-builder\n\n\n https://www.python.org/dev/peps/pep-0370/",
+      "revId": "737badcdd7ceb78a76aa886335919dcd441123d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a710552_8fadac33",
         "filename": "README.rst",
         "patchSetId": 2
