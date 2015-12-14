@@ -50,6 +50,24 @@
       "revId": "737badcdd7ceb78a76aa886335919dcd441123d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_4ac81275",
+        "filename": "README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 8736
+      },
+      "writtenOn": "2015-12-14T22:15:55Z",
+      "side": 1,
+      "message": "I think the only difference between \u0027python setup develop\u0027 and \u0027pip install -e .\u0027 is pip uses wheel.  I left off the sudo because I assumed anyone doing this was going to be running in a venv",
+      "parentUuid": "5a710552_8fadac33",
+      "revId": "737badcdd7ceb78a76aa886335919dcd441123d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
