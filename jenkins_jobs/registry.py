@@ -140,33 +140,120 @@ class ModuleRegistry(object):
         this method.
         """
 
+        component_list_type = self._get_component_list_type(component_type)
+
+        if isinstance(component, dict):
+            name, component_data = self._component_init(component,
+                                                        template_data)
+        else:
+            # The component is a simple string name, eg "run-tests"
+            name = component
+            component_data = {}
+
+        eps = self._search_entry_points(component_list_type,
+                                        component_type, name)
+
+        # check for macro first
+        component = parser.data.get(component_type, {}).get(name)
+        if component:
+            if name in eps and name not in self.masked_warned:
+                # Warn only once for each macro
+                self.masked_warned[name] = True
+                logger.warn("You have a macro ('%s') defined for '%s' "
+                            "component type that is masking an inbuilt "
+                            "definition" % (name, component_type))
+
+            for b in component[component_list_type]:
+                # Pass component_data in as template data to this function
+                # so that if the macro is invoked with arguments,
+                # the arguments are interpolated into the real defn.
+                self.dispatch(component_type,
+                              parser, xml_parent, b, component_data)
+        elif name in eps:
+            func = eps[name].load()
+            func(parser, xml_parent, component_data)
+        else:
+            raise JenkinsJobsException("Unknown entry point or macro '{0}' "
+                                       "for component type: '{1}'.".
+                                       format(name, component_type))
+
+    def dismacro(self, component_type,
+                 parser, component, template_data={}):
+        """This is a method that you can call from your implementation of
+        Base.render_macro or component.  It allows modules to define a type
+        of component, and benefit from extensibility via Python
+        entry points and Jenkins Job Builder :ref:`Macros <macro>`.
+
+        :arg string component_type: the name of the component
+          (e.g., `builder`)
+        :arg YAMLParser parser: the global YAML Parser
+        :arg dict template_data: values that should be interpolated into
+          the component definition
+
+        See :py:class:`jenkins_jobs.modules.base.Base` for how to register
+        components of a module.
+
+        See the Publishers module for a simple example of how to use
+        this method.
+        """
+
+        component_list_type = self._get_component_list_type(component_type)
+
+        if isinstance(component, dict):
+            name, component_data = self._component_init(component,
+                                                        template_data)
+        else:
+            # The component is a simple string name, eg "run-tests"
+            name = component
+            component_data = component
+
+        eps = self._search_entry_points(component_list_type,
+                                        component_type, name)
+
+        if name not in eps:
+            # see if it's defined as a macro
+            component = parser.data.get(component_type, {}).get(name)
+            if component:
+                for b in component[component_list_type]:
+                    # Pass component_data in as template data to this function
+                    # so that if the macro is invoked with arguments,
+                    # the arguments are interpolated into the real defn.
+                    name, component_data = self.dismacro(component_type,
+                                                         parser, b,
+                                                         component_data)
+
+        return name, component_data
+
+    def _get_component_list_type(self, component_type):
         if component_type not in self.modules_by_component_type:
             raise JenkinsJobsException("Unknown component type: "
                                        "'{0}'.".format(component_type))
 
         entry_point = self.modules_by_component_type[component_type]
         component_list_type = entry_point.load().component_list_type
+        return component_list_type
 
-        if isinstance(component, dict):
-            # The component is a singleton dictionary of name: dict(args)
-            name, component_data = next(iter(component.items()))
-            if template_data:
-                # Template data contains values that should be interpolated
-                # into the component definition
-                allow_empty_variables = self.global_config \
-                    and self.global_config.has_section('job_builder') \
-                    and self.global_config.has_option(
-                        'job_builder', 'allow_empty_variables') \
-                    and self.global_config.getboolean(
-                        'job_builder', 'allow_empty_variables')
+    def _component_init(self, component, template_data={}):
+        # The component is a singleton dictionary of name: dict(args)
+        name, component_data = next(iter(component.items()))
+        if template_data:
+            # Template data contains values that should be interpolated
+            # into the component definition
+            allow_empty_variables = self.global_config \
+                and self.global_config.has_section('job_builder') \
+                and self.global_config.has_option(
+                    'job_builder', 'allow_empty_variables') \
+                and self.global_config.getboolean(
+                    'job_builder', 'allow_empty_variables')
 
-                component_data = deep_format(
-                    component_data, template_data, allow_empty_variables)
-        else:
-            # The component is a simple string name, eg "run-tests"
-            name = component
-            component_data = {}
+            component_data = deep_format(
+                component_data, template_data, allow_empty_variables)
+        return name, component_data
 
+    def _search_entry_points(self, component_list_type,
+                             component_type, name):
+
+        entry_point = self.modules_by_component_type[component_type]
         # Look for a component function defined in an entry point
         eps = ModuleRegistry.entry_points_cache.get(component_list_type)
         if eps is None:
@@ -223,27 +310,4 @@ class ModuleRegistry(object):
             ModuleRegistry.entry_points_cache[component_list_type] = eps
             logger.debug("Cached entry point group %s = %s",
                          component_list_type, eps)
-
-        # check for macro first
-        component = parser.data.get(component_type, {}).get(name)
-        if component:
-            if name in eps and name not in self.masked_warned:
-                # Warn only once for each macro
-                self.masked_warned[name] = True
-                logger.warn("You have a macro ('%s') defined for '%s' "
-                            "component type that is masking an inbuilt "
-                            "definition" % (name, component_type))
-
-            for b in component[component_list_type]:
-                # Pass component_data in as template data to this function
-                # so that if the macro is invoked with arguments,
-                # the arguments are interpolated into the real defn.
-                self.dispatch(component_type,
-                              parser, xml_parent, b, component_data)
-        elif name in eps:
-            func = eps[name].load()
-            func(parser, xml_parent, component_data)
-        else:
-            raise JenkinsJobsException("Unknown entry point or macro '{0}' "
-                                       "for component type: '{1}'.".
-                                       format(name, component_type))
+        return eps
