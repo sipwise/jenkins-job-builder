@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a710552_8fadac33",
+        "filename": "README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 18374
+      },
+      "writtenOn": "2015-12-14T20:57:06Z",
+      "side": 1,
+      "message": "As someone who doesn\u0027t have a lot of experience with pip, is this the exact equivalent of `sudo python setup.py install` ?\n\nAlso, isn\u0027t this missing a sudo?",
+      "revId": "737badcdd7ceb78a76aa886335919dcd441123d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
