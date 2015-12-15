@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a710552_d2556bc6",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-15T15:49:12Z",
+      "side": 1,
+      "message": "Can you add a test for the non-default version of all the above parameters?",
+      "revId": "4c707a652a7c7201ad6dc872cec3bae05b8535cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_32114f53",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-15T15:49:12Z",
+      "side": 1,
+      "message": "This list is alphabetically sorted.",
+      "revId": "4c707a652a7c7201ad6dc872cec3bae05b8535cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
