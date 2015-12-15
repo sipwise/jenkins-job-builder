@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a710552_876ca79d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 658,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2015-12-15T03:35:53Z",
+      "side": 1,
+      "message": "This should match the entrypoint name used in job definitions, it should be \u0027maven-metadata\u0027",
+      "revId": "64dcc9e7295850df78badd7a0f27c644a18cf0a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a710552_e7a00b93",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 666,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2015-12-15T03:35:53Z",
+      "side": 1,
+      "message": "Suggest adding short description about the parameters",
+      "revId": "64dcc9e7295850df78badd7a0f27c644a18cf0a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
