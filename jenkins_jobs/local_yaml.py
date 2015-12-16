@@ -18,6 +18,36 @@
 """Custom application specific yamls tags are supported to provide
 enhancements when reading yaml configuration.
 
+Action Tags
+^^^^^^^^^^^
+
+These allow manipulation of data being stored in one layout in the source
+yaml for convenience and/or clarity, to another format to be processed by
+the targeted module instead of requiring all modules in JJB being capable
+of supporting multiple input formats.
+
+The tag ``!join:`` will treat the first element of the following list as
+the delimiter to use, when joining the remaining elements into a string
+and returning a single string to be consumed by the specified module option.
+
+Where the resulting Jenkins option is expecting a delimited string of
+arguments, this allows the user defining the job to choose to use a list
+to manage the inputs for easy diffing between changes, and to control the
+delimiter string between the various options available.
+
+Generic Example:
+
+    .. literalinclude:: /../../tests/localyaml/fixtures/joinlists.yaml
+
+Extended Params Example:
+
+    .. literalinclude::
+        /../../tests/parameters/fixtures/extended-choice-param003.yaml
+
+
+Inclusion Tags
+^^^^^^^^^^^^^^
+
 These allow inclusion of arbitrary files as a method of having blocks of data
 managed separately to the yaml job configurations. A specific usage of this is
 inlining scripts contained in separate files, although such tags may also be
@@ -236,6 +266,25 @@ class LocalLoader(OrderedConstructor, LocalAnchorLoader):
 class BaseYAMLObject(YAMLObject):
     yaml_loader = LocalLoader
     yaml_dumper = yaml.Dumper
+
+
+class YamlListJoin(BaseYAMLObject):
+    yaml_tag = u'!join:'
+
+    @classmethod
+    def from_yaml(cls, loader, node):
+        if isinstance(node, yaml.SequenceNode):
+            delimiter = node.value[0].value
+            if not isinstance(node.value[1], yaml.SequenceNode):
+                raise yaml.constructor.ConstructorError(
+                    None, None, "expected sequence node for join data, but "
+                                "found %s" % node.value[1].id, node.start_mark)
+
+            return delimiter.join((v.value for v in node.value[1].value))
+        else:
+            raise yaml.constructor.ConstructorError(
+                None, None, "expected sequence node, but found %s" % node.id,
+                node.start_mark)
 
 
 class YamlInclude(BaseYAMLObject):
