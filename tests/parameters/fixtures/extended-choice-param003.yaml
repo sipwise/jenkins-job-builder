@@ -11,3 +11,28 @@ parameters:
       description-property-file: /home/foo/bar.properties
       description-property-key: bar_desc
       value-description: bar1, bar2, bar3
+  - extended-choice:
+      name: OPTIONS_CHECKBOX
+      type: checkbox
+      value: !join:
+        - ','
+        -
+            - OptionA
+            - OptionB
+            - OptionC
+      visible-items: 2
+  - extended-choice:
+      name: MULTISELECTOPTIONS
+      description: "Available options"
+      property-key: key
+      quote-value: true
+      type: multi-select
+      value: !join:
+        - '|'
+        -
+            - foo
+            - bar
+            - select
+      visible-items: 2
+      multi-select-delimiter: '|'
+      default-value: foo
