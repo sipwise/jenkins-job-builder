@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a7e1126_02db5eed",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1616,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-18T13:14:58Z",
+      "side": 1,
+      "message": "Generally I would recommend the style of:\n\n    XML.SubElement(phaseJob, \u0027abortAllJob\u0027).text \u003d str(\n        project.get(\u0027abort-all-job\u0027, False)).lower()\n\nBut better to keep this in line with the style in this function.",
+      "revId": "191964610914d964779fcf9609f131ab394e9315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
