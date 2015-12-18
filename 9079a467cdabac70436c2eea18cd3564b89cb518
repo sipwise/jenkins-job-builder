@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a7e1126_df276fc8",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-18T13:11:59Z",
+      "side": 1,
+      "message": "option or default? just one or the other. If it\u0027s optional, there should be no default provided in the code if it\u0027s not set. If there\u0027s a default, no need for optional to be stated.\n\nSame goes for the remainder. From the code, unless some of these should not result in XML being outputted, just have the default.",
+      "revId": "9079a467cdabac70436c2eea18cd3564b89cb518",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_9f91e7f3",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 692,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-18T13:11:59Z",
+      "side": 1,
+      "message": "nit, with the rebase you could remove the \u0027\\\u0027 by simply indenting the the following line by four spaces.",
+      "revId": "9079a467cdabac70436c2eea18cd3564b89cb518",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_7fa8bb8d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 715,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-18T13:11:59Z",
+      "side": 1,
+      "message": "You state both below and in the docstring that only \u0027Ascending or Descending\u0027 are valid. So really this should just be:\n\n    sort_map \u003d {\n        \u0027Descending\u0027: \u0027DESC\u0027,\n        \u0027Ascending\u0027: \u0027ASC\u0027\n    }\n    sort_map_lower \u003d {k.lower():v for k,v in sort_map.items()}\n\nBetter using something to do case insensitive matching than needing to ensure that anyone changing these doesn\u0027t accidentally munge the mapped values and it gets missed.",
+      "revId": "9079a467cdabac70436c2eea18cd3564b89cb518",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_9f4c87c9",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 721,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-18T13:11:59Z",
+      "side": 1,
+      "message": "Please use the InvalidAttributeException, which also supports receiving a list of the valid inputs allowed.\n\nYou can then just provide the keys() as the collection.\n\nThe more common idiom is to use try/except where possible, such as the following:\n\n    try:\n        XML.SubElement(pdef, \u0027sortOrder\u0027).text \u003d sort_map_lower[sort_order]\n    except KeyError as e:\n        raise InvalidAttributeError(e.arg[0], sort_order, sort_dict.keys())\n\nMain thing is to change to raise the more appropriate exception class.\nIt already knows how to display the right message including the name of the module the user was calling. Should be a few examples in the code now that can be used to check that I\u0027ve gotten the above right ;)",
+      "revId": "9079a467cdabac70436c2eea18cd3564b89cb518",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_9fe56739",
+        "filename": "jenkins_jobs/xml_config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-18T13:11:59Z",
+      "side": 1,
+      "message": "You\u0027ve already mentioned in change https://review.openstack.org/243768 that you\u0027ll rebase this patch on top of that and remove this change.\n\nGenerally it\u0027s better not to mix in changes anyway, just in case we need to revert for some reason (has happened a few times), the revert ends up removing more than just the problem.\n\nIt also might be unclear to someone reviewing as to why it was related. Would be clear enough in this case, just a good habit to have though.",
+      "revId": "9079a467cdabac70436c2eea18cd3564b89cb518",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
