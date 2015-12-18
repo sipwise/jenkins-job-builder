@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a7e1126_858f5829",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 16419
+      },
+      "writtenOn": "2015-12-18T13:33:01Z",
+      "side": 1,
+      "message": "Isn\u0027t this the same as in the \"extended_choice_param\" method, above in this code ?",
+      "parentUuid": "3a7e1126_df276fc8",
+      "revId": "9079a467cdabac70436c2eea18cd3564b89cb518",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_9f91e7f3",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 4
