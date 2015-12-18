@@ -34,6 +34,24 @@
       "revId": "cc5f37d9d282d717b9a2aec9b87fc4a4ff4c8b2c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_e68bbf66",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-18T14:49:44Z",
+      "side": 1,
+      "message": "Unless you meant that I should either modify the existing script or add a new one to execute \u0027python setup.py build_sphinx -b linkcheck\u0027 via venv?",
+      "parentUuid": "3a7e1126_5115ae46",
+      "revId": "cc5f37d9d282d717b9a2aec9b87fc4a4ff4c8b2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
