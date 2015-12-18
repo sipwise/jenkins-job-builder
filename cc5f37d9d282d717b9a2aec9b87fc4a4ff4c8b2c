@@ -52,6 +52,42 @@
       "revId": "cc5f37d9d282d717b9a2aec9b87fc4a4ff4c8b2c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_19af4ce3",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2015-12-18T15:02:44Z",
+      "side": 1,
+      "message": "That might be usefull - but it\u0027s not called this way from our own CI scripts this way and I thought that was your motivation for this change.",
+      "parentUuid": "3a7e1126_5115ae46",
+      "revId": "cc5f37d9d282d717b9a2aec9b87fc4a4ff4c8b2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_39f1e801",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2015-12-18T15:02:44Z",
+      "side": 1,
+      "message": "For CI integration, I would consider that approach...",
+      "parentUuid": "3a7e1126_e68bbf66",
+      "revId": "cc5f37d9d282d717b9a2aec9b87fc4a4ff4c8b2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
