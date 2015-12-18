@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a7e1126_5c44e219",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1136,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-18T15:14:32Z",
+      "side": 1,
+      "message": "Looks like clean_tree and lightweight_checkout has default values. Can you document that they are False by default?\n\nAlso I think URL is required, will the user be notified if they do not enter anything for URL?",
+      "revId": "fdb28addf3db9c3d7f64bcdb202a7560a9e2dbaa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
