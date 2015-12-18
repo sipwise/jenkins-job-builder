@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a7e1126_b2672d4c",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1113,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-18T15:48:49Z",
+      "side": 1,
+      "message": "Typically we just use the format: (default: false)",
+      "revId": "7db578dcb62d2c1c276cd54c6f5b0fd7bec5bac2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_f24935b8",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1116,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-18T15:48:49Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "7db578dcb62d2c1c276cd54c6f5b0fd7bec5bac2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
