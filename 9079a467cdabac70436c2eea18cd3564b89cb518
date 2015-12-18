@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a7e1126_23969993",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 16418
+      },
+      "writtenOn": "2015-12-18T16:59:52Z",
+      "side": 1,
+      "message": "I based my docstring on the extended_choice_param, that\u0027s from there that I got this (optional, default \u0027\u0027) comment. Do you want me to change that ?\n\nIn a way it is optional, if you don\u0027t set it, it will just be left blank, and that\u0027s why the default is an empty string",
+      "parentUuid": "3a7e1126_858f5829",
+      "revId": "9079a467cdabac70436c2eea18cd3564b89cb518",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_9f91e7f3",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 4
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "3a7e1126_e38bb166",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 692,
+      "author": {
+        "id": 16418
+      },
+      "writtenOn": "2015-12-18T16:59:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a7e1126_9f91e7f3",
+      "revId": "9079a467cdabac70436c2eea18cd3564b89cb518",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_7fa8bb8d",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 4
@@ -65,6 +101,24 @@
       "writtenOn": "2015-12-18T13:11:59Z",
       "side": 1,
       "message": "You state both below and in the docstring that only \u0027Ascending or Descending\u0027 are valid. So really this should just be:\n\n    sort_map \u003d {\n        \u0027Descending\u0027: \u0027DESC\u0027,\n        \u0027Ascending\u0027: \u0027ASC\u0027\n    }\n    sort_map_lower \u003d {k.lower():v for k,v in sort_map.items()}\n\nBetter using something to do case insensitive matching than needing to ensure that anyone changing these doesn\u0027t accidentally munge the mapped values and it gets missed.",
+      "revId": "9079a467cdabac70436c2eea18cd3564b89cb518",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_c301d5b0",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 715,
+      "author": {
+        "id": 16418
+      },
+      "writtenOn": "2015-12-18T16:59:52Z",
+      "side": 1,
+      "message": "I also based this on the extended_choice_param method written above (see line 327 to 336). Do you want me to update the docstring ?",
+      "parentUuid": "3a7e1126_7fa8bb8d",
       "revId": "9079a467cdabac70436c2eea18cd3564b89cb518",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -99,6 +153,24 @@
       "writtenOn": "2015-12-18T13:11:59Z",
       "side": 1,
       "message": "You\u0027ve already mentioned in change https://review.openstack.org/243768 that you\u0027ll rebase this patch on top of that and remove this change.\n\nGenerally it\u0027s better not to mix in changes anyway, just in case we need to revert for some reason (has happened a few times), the revert ends up removing more than just the problem.\n\nIt also might be unclear to someone reviewing as to why it was related. Would be clear enough in this case, just a good habit to have though.",
+      "revId": "9079a467cdabac70436c2eea18cd3564b89cb518",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_f1ccda6b",
+        "filename": "jenkins_jobs/xml_config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 16418
+      },
+      "writtenOn": "2015-12-18T16:59:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a7e1126_9fe56739",
       "revId": "9079a467cdabac70436c2eea18cd3564b89cb518",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
