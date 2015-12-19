@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a7e1126_5a04c916",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1113,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-19T15:50:13Z",
+      "side": 1,
+      "message": "FYI, when splitting docstrings across multiple lines there is no need to start the arg description on the second line:\n\n    :arg bool clean-tree: clean up the workspace (using bzr)\n        before pulling the branch. (default false)",
+      "revId": "976faf53ced164245d68660694fd1681133fd957",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_3a38ddee",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1140,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-19T15:50:13Z",
+      "side": 1,
+      "message": "Please use hypen separated words for the yaml definition instead of pure snake case.",
+      "revId": "976faf53ced164245d68660694fd1681133fd957",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
