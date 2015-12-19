@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a7e1126_758bd668",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-19T16:11:16Z",
+      "side": 1,
+      "message": "Just following up, the example being followed is an outlier and one we should fix. The majority of the project documentation follows the convention of:\n\n* required: needed for the resulting XML to work and will result in an JJB exception if not set\n* optional: JJB will skip defining the XML altogether as it is not needed if the yaml setting is not given.\n* default: XML will be added with a default value if no yaml setting defined.\n\nI think it\u0027s better to stay with the main usage, and we can patch the other docstring using this to conform to the same style.",
+      "revId": "6748ab954b9bc8d204e4ee4cf031cfc3ef35dcf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
