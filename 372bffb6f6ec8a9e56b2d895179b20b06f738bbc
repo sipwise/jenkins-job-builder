@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a7e1126_357b0e8e",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-19T16:03:22Z",
+      "side": 1,
+      "message": "Seems like we the added test could include all of these in a single go.",
+      "revId": "372bffb6f6ec8a9e56b2d895179b20b06f738bbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_5549fa5e",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-19T16:03:22Z",
+      "side": 1,
+      "message": "copy\u0027n\u0027paste mistake with \u0027\\\u0027? looks like you already have the indentation afterwards to not require this?",
+      "range": {
+        "startLine": 347,
+        "startChar": 24,
+        "endLine": 347,
+        "endChar": 25
+      },
+      "revId": "372bffb6f6ec8a9e56b2d895179b20b06f738bbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
