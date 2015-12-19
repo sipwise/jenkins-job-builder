@@ -55,6 +55,42 @@
     },
     {
       "key": {
+        "uuid": "3a7e1126_5aab6975",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-19T14:50:02Z",
+      "side": 1,
+      "message": "Which also needs to be fixed to conform with the general usage through out the docs.",
+      "parentUuid": "3a7e1126_858f5829",
+      "revId": "9079a467cdabac70436c2eea18cd3564b89cb518",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_9aa551a3",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2015-12-19T14:50:02Z",
+      "side": 1,
+      "message": "Unforunately extended_choice_param is a bit of an outlier in terms of the doc string.\n\nThe main usage throughout the project follows:\n* required: will throw an exception if missing, used for settings that must be defined in order for the XML to work on jenkins\n* optional: does not set any of the associated XML unless given\n* default: always sets the XML using a default value unless you override",
+      "parentUuid": "3a7e1126_23969993",
+      "revId": "9079a467cdabac70436c2eea18cd3564b89cb518",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a7e1126_9f91e7f3",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 4
