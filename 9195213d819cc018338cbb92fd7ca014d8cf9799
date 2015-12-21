@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a7e1126_ada1c8f9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-21T16:59:57Z",
+      "side": 1,
+      "message": "Just an FYI, you should avoid putting personal comments in a commit message. Instead leave discussion in the comments section. Commit messages should explain why and what is being changed using present tense, imperative-style.",
+      "revId": "9195213d819cc018338cbb92fd7ca014d8cf9799",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
