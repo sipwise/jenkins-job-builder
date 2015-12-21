@@ -16,6 +16,24 @@
       "revId": "6748ab954b9bc8d204e4ee4cf031cfc3ef35dcf9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_687f6aab",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 16418
+      },
+      "writtenOn": "2015-12-21T08:29:50Z",
+      "side": 1,
+      "message": "Ok got it, thanks for the explanation, fixed in the next patchset",
+      "parentUuid": "3a7e1126_758bd668",
+      "revId": "6748ab954b9bc8d204e4ee4cf031cfc3ef35dcf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
