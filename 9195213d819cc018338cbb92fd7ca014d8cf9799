@@ -16,6 +16,24 @@
       "revId": "9195213d819cc018338cbb92fd7ca014d8cf9799",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a7e1126_d06b6eef",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 16418
+      },
+      "writtenOn": "2015-12-22T08:25:53Z",
+      "side": 1,
+      "message": "You\u0027re right sorry, I uploaded a new patch set with corrected commit message",
+      "parentUuid": "3a7e1126_ada1c8f9",
+      "revId": "9195213d819cc018338cbb92fd7ca014d8cf9799",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
