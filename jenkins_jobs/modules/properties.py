@@ -305,18 +305,25 @@ def authorization(parser, xml_parent, data):
     Specifies an authorization matrix
 
     The available rights are:
+      creds-create
+      creds-delete
+      creds-update
+      creds-domain
+      creds-view
+      ownership-jobs
       job-delete
       job-configure
       job-read
       job-extended-read
       job-discover
       job-build
+      job-move
       job-workspace
+      job-status
       job-cancel
       run-delete
       run-update
       scm-tag
-
     Example::
 
       properties:
@@ -329,6 +336,8 @@ def authorization(parser, xml_parent, data):
               - job-build
               - job-workspace
               - job-cancel
+              - job-status
+              - ownership-jobs
               - run-delete
               - run-update
               - scm-tag
@@ -338,7 +347,26 @@ def authorization(parser, xml_parent, data):
               - job-extended-read
     """
 
+    def cbp(authz):
+
+        return '.'.join([
+            'com.cloudbees.plugins',
+            authz,
+        ])
+
+    def csajp(authz):
+        return '.'.join([
+            'com.synopsys.arc.jenkins.plugins',
+            authz,
+        ])
+
     mapping = {
+        'creds-create': cbp('credentials.CredentialsProvider.Create'),
+        'creds-delete': cbp('credentials.CredentialsProvider.Delete'),
+        'creds-update': cbp('credentials.CredentialsProvider.Update'),
+        'creds-domain': cbp('credentials.CredentialsProvider.ManageDomains'),
+        'creds-view': cbp('credentials.CredentialsProvider.View'),
+        'ownership-jobs': csajp('ownership.OwnershipPlugin.Jobs'),
         'job-delete': 'hudson.model.Item.Delete',
         'job-configure': 'hudson.model.Item.Configure',
         'job-read': 'hudson.model.Item.Read',
@@ -346,6 +374,8 @@ def authorization(parser, xml_parent, data):
         'job-discover': 'hudson.model.Item.Discover',
         'job-build': 'hudson.model.Item.Build',
         'job-workspace': 'hudson.model.Item.Workspace',
+        'job-move': 'hudson.model.Item.Move',
+        'job-status': 'hudson.model.Item.ViewStatus',
         'job-cancel': 'hudson.model.Item.Cancel',
         'run-delete': 'hudson.model.Run.Delete',
         'run-update': 'hudson.model.Run.Update',

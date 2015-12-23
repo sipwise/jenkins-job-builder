@@ -4,6 +4,11 @@
     <hudson.security.AuthorizationMatrixProperty>
       <permission>hudson.model.Item.Read:anonymous</permission>
       <permission>hudson.model.Item.ExtendedRead:anonymous</permission>
+      <permission>hudson.model.Item.ViewStatus:admin</permission>
+      <permission>hudson.model.Item.Move:admin</permission>
+      <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:admin</permission>
+      <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View:admin</permission>
+      <permission>com.synopsys.arc.jenkins.plugins.ownership.OwnershipPlugin.Jobs:admin</permission>
     </hudson.security.AuthorizationMatrixProperty>
   </properties>
 </project>

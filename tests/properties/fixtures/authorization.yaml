@@ -3,3 +3,9 @@ properties:
         anonymous:
             - job-read
             - job-extended-read
+        admin:
+            - job-status
+            - job-move
+            - creds-domain
+            - creds-view
+            - ownership-jobs
