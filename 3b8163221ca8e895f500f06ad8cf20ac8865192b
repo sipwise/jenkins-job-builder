@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a7b0d38_c93f2624",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 19706
+      },
+      "writtenOn": "2015-12-23T02:15:46Z",
+      "side": 0,
+      "message": "this order is roughly similar to what is happening in the auth. matrix in the jenkins web ui.",
+      "revId": "3b8163221ca8e895f500f06ad8cf20ac8865192b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
