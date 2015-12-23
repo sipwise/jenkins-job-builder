@@ -22,6 +22,30 @@
       "revId": "a47331e548ee7ce8a396718e45d2eaa7f8b012fb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_5f1d2472",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2015-12-23T04:00:44Z",
+      "side": 1,
+      "message": "I incorporated your change and some of the ideas into this patch and added you as a co-author.",
+      "parentUuid": "1a7b0d38_1cb00af4",
+      "range": {
+        "startLine": 332,
+        "startChar": 9,
+        "endLine": 332,
+        "endChar": 20
+      },
+      "revId": "a47331e548ee7ce8a396718e45d2eaa7f8b012fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
