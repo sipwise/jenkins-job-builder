@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a7b0d38_9217fea2",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 16418
+      },
+      "writtenOn": "2015-12-23T08:25:20Z",
+      "side": 1,
+      "message": "You got a typo in your \"valid_policies\" tuple (should be \"by-day\" instead of \"by_day\")",
+      "revId": "8ebf22f7019c8d80e1289616db6b4f009f5255c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_d273464c",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 16418
+      },
+      "writtenOn": "2015-12-23T08:25:20Z",
+      "side": 1,
+      "message": "Looks like the \"dont_keep_failed\" argument can be kept on the same line, therefore avoiding backslash at the end of the line (same occurs for below lines)",
+      "revId": "8ebf22f7019c8d80e1289616db6b4f009f5255c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_32b08add",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 16418
+      },
+      "writtenOn": "2015-12-23T08:25:20Z",
+      "side": 1,
+      "message": "IMHO, would be better to have something like \"...text \u003d str(...\" and the rest on the new line to avoid backslash at the end of the line",
+      "revId": "8ebf22f7019c8d80e1289616db6b4f009f5255c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
