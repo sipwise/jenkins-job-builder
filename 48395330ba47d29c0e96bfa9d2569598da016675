@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a7b0d38_864c8443",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-12-23T22:39:49Z",
+      "side": 1,
+      "message": ":(:(:( I really dislike direct access to the config file here but I can\u0027t think of a way to avoid it before the big JJB 2.0 refactor (which will replace references to parser entirely throughout the modules).",
+      "revId": "48395330ba47d29c0e96bfa9d2569598da016675",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a7b0d38_46569cd3",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-12-23T22:39:49Z",
+      "side": 1,
+      "message": "Any reason not to use a block string here?",
+      "revId": "48395330ba47d29c0e96bfa9d2569598da016675",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
