@@ -13,22 +13,16 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import argparse
 import logging
 import sys
 
-import jenkins_jobs.version
 from jenkins_jobs import cmd
+from jenkins_jobs.cli.parser import create_parser
+from jenkins_jobs.config import JJBConfig
 
-from stevedore import extension
 
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger()
-
-
-def __version__():
-    return "Jenkins Job Builder version: %s" % \
-        jenkins_jobs.version.version_info.version_string()
+logger = logging.getLogger(__name__)
 
 
 class JenkinsJobs(object):
@@ -51,72 +45,23 @@ class JenkinsJobs(object):
     def __init__(self, args=None):
         if args is None:
             args = []
-        parser = self._create_parser()
-        self._options = parser.parse_args(args)
+        parser = create_parser()
+        options = parser.parse_args(args)
 
-        if not self._options.command:
+        self.jjb_config = JJBConfig(arguments=options)
+        self.jjb_config.do_magical_things()
+
+        if not options.command:
             parser.error("Must specify a 'command' to be performed")
 
-        if (self._options.log_level is not None):
-            self._options.log_level = getattr(logging,
-                                              self._options.log_level.upper(),
-                                              logger.getEffectiveLevel())
-            logger.setLevel(self._options.log_level)
-
-        self.__config_file_values = cmd.setup_config_settings(self._options)
-
-    def _create_parser(self):
-        parser = argparse.ArgumentParser()
-        parser.add_argument('--conf', dest='conf', help='configuration file')
-        parser.add_argument('-l',
-                            '--log_level',
-                            dest='log_level',
-                            default='info',
-                            help="log level (default: %(default)s)")
-        parser.add_argument(
-            '--ignore-cache',
-            action='store_true',
-            dest='ignore_cache',
-            default=False,
-            help='ignore the cache and update the jobs anyhow (that will only '
-            'flush the specified jobs cache)')
-        parser.add_argument(
-            '--flush-cache',
-            action='store_true',
-            dest='flush_cache',
-            default=False,
-            help='flush all the cache entries before updating')
-        parser.add_argument('--version',
-                            dest='version',
-                            action='version',
-                            version=__version__(),
-                            help='show version')
-        parser.add_argument(
-            '--allow-empty-variables',
-            action='store_true',
-            dest='allow_empty_variables',
-            default=None,
-            help='''Don\'t fail if any of the variables inside any string are
-            not defined, replace with empty string instead.
-            ''')
-
-        subparser = parser.add_subparsers(help='update, test or delete job',
-                                          dest='command')
-
-        extension_manager = extension.ExtensionManager(
-            namespace='jjb.cli.subcommands',
-            invoke_on_load=True,
-        )
-
-        def parse_subcommand_args(ext, subparser):
-            ext.obj.parse_args(subparser)
-
-        extension_manager.map(parse_subcommand_args, subparser)
-
-        return parser
+        if (options.log_level is not None):
+            options.log_level = getattr(logging,
+                                        options.log_level.upper(),
+                                        logger.getEffectiveLevel())
+            logger.setLevel(options.log_level)
 
     def execute(self):
-        jenkins_jobs.cmd.execute(self._options, self.__config_file_values)
+        cmd.execute(self.jjb_config)
 
 
 def main():

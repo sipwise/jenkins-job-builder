@@ -28,7 +28,6 @@ import operator
 import testtools
 from testtools.content import text_content
 import xml.etree.ElementTree as XML
-from six.moves import configparser
 from six.moves import StringIO
 from yaml import safe_dump
 # This dance deals with the fact that we want unittest.mock if
@@ -38,7 +37,7 @@ try:
 except ImportError:
     import mock  # noqa
 
-from jenkins_jobs.cmd import DEFAULT_CONF
+from jenkins_jobs.config import JJBConfig
 import jenkins_jobs.local_yaml as yaml
 from jenkins_jobs.parser import YamlParser
 from jenkins_jobs.xml_config import XmlJob
@@ -129,12 +128,9 @@ class BaseTestCase(LoggingFixture):
         return yaml_content
 
     def _get_config(self):
-        config = configparser.ConfigParser()
-        config.readfp(StringIO(DEFAULT_CONF))
-        if self.conf_filename is not None:
-            with io.open(self.conf_filename, 'r', encoding='utf-8') as cf:
-                config.readfp(cf)
-        return config
+        jjb_config = JJBConfig(self.conf_filename)
+
+        return jjb_config.config_parser
 
     def test_yaml_snippet(self):
         if not self.in_filename:
