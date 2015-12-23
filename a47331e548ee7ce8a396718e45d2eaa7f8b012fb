@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a7b0d38_1cb00af4",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 19706
+      },
+      "writtenOn": "2015-12-23T02:51:03Z",
+      "side": 1,
+      "message": "there are 2 authorizations more that should go here,\nplease refer to my patch: https://review.openstack.org/#/c/260857/2\n\nAnd I\u0027ll abandon it asap.",
+      "range": {
+        "startLine": 332,
+        "startChar": 9,
+        "endLine": 332,
+        "endChar": 20
+      },
+      "revId": "a47331e548ee7ce8a396718e45d2eaa7f8b012fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
