@@ -438,6 +438,61 @@ def append_git_revision_config(parent, config_def):
     XML.SubElement(params, 'combineQueuedCommits').text = combine_commits
 
 
+def test_fairy(xml_element, data):
+    xml_element.set('plugin', 'TestFairy')
+
+    mappings = [
+        ('apikey', 'apiKey', None),
+        ('appfile', 'appFile', None),
+        ('tester-groups', 'testersGroups', ''),
+        ('notify-testers', 'notifyTesters', True),
+        ('autoupdate', 'autoUpdate', True)]
+
+    convert_mapping_to_xml(xml_element, data, mappings, fail_required=True)
+
+    ############################
+    # Advanced Project options #
+    ############################
+
+    metrics_mappings = [
+        ('cpu', 'cpu', True),
+        ('memory', 'memory', True),
+        ('logs', 'logs', True),
+        ('network', 'network', False),
+        ('phone-signal', 'phoneSignal', False),
+        ('wifi', 'wifi', False),
+        ('gps', 'gps', False),
+        ('battery', 'battery', False),
+        ('opengl', 'openGl', False)]
+
+    # Session
+    XML.SubElement(xml_element, 'maxDuration').text = data.get(
+        'max-duration', '10m')
+    XML.SubElement(xml_element, 'recordOnBackground').text = str(
+        data.get('record-on-background', False)).lower()
+    XML.SubElement(xml_element, 'dataOnlyWifi').text = str(
+        data.get('data-only-wifi', False)).lower()
+
+    # Video
+    XML.SubElement(xml_element, 'isVideoEnabled').text = str(
+        data.get('video-enabled', True)).lower()
+    XML.SubElement(xml_element, 'screenshotInterval').text = data.get(
+        'screenshot-interval', '1')
+    XML.SubElement(xml_element, 'videoQuality').text = data.get(
+        'video-quality', 'high')
+
+    # Metrics
+    convert_mapping_to_xml(
+        xml_element,
+        data,
+        metrics_mappings,
+        fail_required=True)
+
+    # Advanced Options
+    XML.SubElement(xml_element, 'advancedOptions').text = data.get(
+        'advanced-options', '')
+
+
 def convert_mapping_to_xml(parent, data, mapping, fail_required=False):
     """Convert mapping to XML
 
