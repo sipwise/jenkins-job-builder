@@ -1,0 +1,5 @@
+publishers:
+  - test-fairy-android:
+      apikey: apikey
+      appfile: /tmp/appfile.apk
+      keystorepath: /tmp/keystorefile
