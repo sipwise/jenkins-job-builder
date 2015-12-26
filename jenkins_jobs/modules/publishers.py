@@ -2697,6 +2697,112 @@ def artifactory(parser, xml_parent, data):
     artifactory_env_vars_patterns(artifactory, data)
 
 
+def test_fairy_android(parser, xml_parent, data):
+    """yaml: test-fairy-android
+    This plugin helps you to upload Android APKs or iOS IPA files to
+    www.testfairy.com
+
+    Requires the Jenkins :jenkins-wiki:`Test Fairy Plugin
+    <TestFairy+Plugin>`.
+
+    :arg str apikey: TestFairy API_KEY. Find it in your TestFairy account
+        settings.
+
+    Example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/test-fairy-android-minimal.yaml  # noqa
+       :language: yaml
+
+    .. literalinclude:: /../../tests/publishers/fixtures/test-fairy-android001.yaml  # noqa
+       :language: yaml
+    """
+    test_fairy = XML.SubElement(
+        xml_parent, 'org.jenkinsci.plugins.testfairy.TestFairyAndroidRecorder')
+    test_fairy.set('plugin', 'TestFairy')
+
+    try:
+        apikey = data['apikey']
+    except KeyError as e:
+        raise MissingAttributeError(e.args[0])
+    XML.SubElement(test_fairy, 'apiKey').text = apikey
+
+    try:
+        appfile = data['appfile']
+    except KeyError as e:
+        raise MissingAttributeError(e.args[0])
+    XML.SubElement(test_fairy, 'appFile').text = appfile
+
+    XML.SubElement(test_fairy, 'mappingFile').text = data.get(
+        'proguardfile', '')
+    XML.SubElement(test_fairy, 'testersGroups').text = data.get(
+        'tester-groups', '')
+    XML.SubElement(test_fairy, 'notifyTesters').text = str(
+        data.get('notify-testers', True)).lower()
+    XML.SubElement(test_fairy, 'autoUpdate').text = str(
+        data.get('autoupdate', True)).lower()
+
+    try:
+        keystorepath = data['keystorepath']
+    except KeyError as e:
+        raise MissingAttributeError(e.args[0])
+    XML.SubElement(test_fairy, 'keystorePath').text = keystorepath
+
+    XML.SubElement(test_fairy, 'storepass').text = data.get('storepass',
+        'android')
+    XML.SubElement(test_fairy, 'alias').text = data.get('alias',
+        'androiddebugkey')
+    XML.SubElement(test_fairy, 'keypass').text = data.get('keypass',
+        '')
+
+    ############################
+    # Advanced Project options #
+    ############################
+
+    # Session
+    XML.SubElement(test_fairy, 'maxDuration').text = data.get(
+        'maxduration', '10m')
+    XML.SubElement(test_fairy, 'recordOnBackground').text = str(
+        data.get('record-on-background', False)).lower()
+    XML.SubElement(test_fairy, 'dataOnlyWifi').text = str(
+        data.get('data-only-wifi', False)).lower()
+
+    # Video
+    XML.SubElement(test_fairy, 'isVideoEnabled').text = str(
+        data.get('video-enabled', True)).lower()
+    XML.SubElement(test_fairy, 'screenshotInterval').text = data.get(
+        'screenshot-interval', '1')
+    XML.SubElement(test_fairy, 'videoQuality').text = data.get(
+        'video-quality', 'high')
+
+    # Metrics
+    XML.SubElement(test_fairy, 'cpu').text = str(
+        data.get('cpu', True)).lower()
+    XML.SubElement(test_fairy, 'memory').text = str(
+        data.get('memory', True)).lower()
+    XML.SubElement(test_fairy, 'logs').text = str(
+        data.get('logs', True)).lower()
+    XML.SubElement(test_fairy, 'network').text = str(
+        data.get('network', True)).lower()
+    XML.SubElement(test_fairy, 'phoneSignal').text = str(
+        data.get('phone-signal', True)).lower()
+    XML.SubElement(test_fairy, 'wifi').text = str(
+        data.get('wifi', True)).lower()
+    XML.SubElement(test_fairy, 'gps').text = str(
+        data.get('gps', False)).lower()
+    XML.SubElement(test_fairy, 'battery').text = str(
+        data.get('battery', False)).lower()
+    XML.SubElement(test_fairy, 'openGl').text = str(
+        data.get('opengl', False)).lower()
+
+    # Options
+    XML.SubElement(test_fairy, 'advancedOptions').text = data.get(
+        'advanced-options', '')
+
+
+
+
+
+
 def text_finder(parser, xml_parent, data):
     """yaml: text-finder
     This plugin lets you search keywords in the files you specified and
