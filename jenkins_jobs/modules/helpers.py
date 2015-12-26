@@ -417,3 +417,18 @@ def convert_mapping_to_xml(parent, data, mapping):
             val = str(val).lower()
         xe = XML.SubElement(parent, xmlname)
         xe.text = str(val)
+
+
+def convert_mapping_to_xml_fail_required(entity, entity_xml, child_mapping):
+    """Convert mapping to XML and fail on required attributes.
+
+    Required attributes are those that have mapping value of None.
+    """
+    for prop in child_mapping:
+        opt, xmlopt, default_val = prop[:3]
+        val = entity.get(opt, default_val)
+        if val is None:
+            raise MissingAttributeError(opt)
+        if type(val) == bool:
+            val = str(val).lower()
+        XML.SubElement(entity_xml, xmlopt).text = val
