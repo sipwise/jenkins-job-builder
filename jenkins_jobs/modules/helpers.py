@@ -404,16 +404,31 @@ def artifactory_repository(xml_parent, data, target):
             data.get('deploy-dynamic-mode', False)).lower()
 
 
-def convert_mapping_to_xml(parent, data, mapping):
+def convert_mapping_to_xml(parent, data, mapping, fail_required=False):
+    """Convert mapping to XML
 
+    If fail_required is True then raise MissingAttributeError when user does
+    not pass a value for a required parameter.
+
+    (Deprecated) If fail_required is False parameter is optional. Logic will
+    skip configuring the XML tag.
+    """
     for elem in mapping:
         (optname, xmlname, val) = elem
         val = data.get(optname, val)
+
+        # Use fail_required setting to allow support for optional parameters
+        # we will phase this out in the future as we rework plugins so that
+        # optional parameters use a default setting instead.
+        if val is None and fail_required is True:
+            raise MissingAttributeError(optname)
+
+        # (Deprecated) in the future we will default to fail_required True
         # if no value is provided then continue else leave it
         # up to the user if they want to use an empty XML tag
-        if val is None:
+        if val is None and fail_required is False:
             continue
-        if str(val).lower() == 'true' or str(val).lower() == 'false':
+
+        if type(val) == bool:
             val = str(val).lower()
-        xe = XML.SubElement(parent, xmlname)
-        xe.text = str(val)
+        XML.SubElement(parent, xmlname).text = str(val)
