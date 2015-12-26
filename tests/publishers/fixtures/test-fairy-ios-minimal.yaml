@@ -1,0 +1,4 @@
+publishers:
+  - test-fairy-ios:
+      apikey: apikey
+      appfile: /tmp/appfile.ipa
