@@ -1,0 +1,8 @@
+publishers:
+  - test-fairy-ios:
+      apikey: apikey
+      appfile: /tmp/appfile.ipa
+      dSYM-file: /tmp/dsym.zip
+      tester-groups: testergroups
+      notify-testers: true
+      autoupdate: true
