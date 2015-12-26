@@ -2697,6 +2697,137 @@ def artifactory(parser, xml_parent, data):
     artifactory_env_vars_patterns(artifactory, data)
 
 
+def test_fairy_android(parser, xml_parent, data):
+    """yaml: test-fairy-android
+    This plugin helps you to upload Android APKs or iOS IPA files to
+    www.testfairy.com
+
+    Requires the Jenkins :jenkins-wiki:`Test Fairy Plugin
+    <TestFairy+Plugin>`.
+
+    :arg str apikey: TestFairy API_KEY. Find it in your TestFairy account
+        settings
+    :arg str appfile: Path to App file (.apk). For example:
+        $WORKSPACE/[YOUR_FILE_NAME].apk or full path to the apk file
+    :arg str proguardfile: Path to Proguard file. Path of mapping.txt from your
+        proguard output directory (optional)
+    :arg str tester-groups: Tester groups to notify (optional)
+    :arg bool notify-testers: Send email with changelogs to testers (default
+        False)
+    :arg bool autoupdate: Automatic update (default False)
+    :arg str keystorepath: Path to Keystore file
+    :arg str storepass: Password for the keystore (default android)
+    :arg str alias: alias for key (default androiddebugkey)
+    :arg str keypass: password for the key (optional)
+    :arg str max-duration: Duration of the session (default 10m)
+    :arg bool record-on-background: Record on background (default False)
+    :arg bool data-only-wifi: Record data only in wifi (default False)
+    :arg bool video-enabled: Record video (default True)
+    :arg str screenshot-interval: Time interval between screenshots (default 1)
+    :arg str video-quality: Video quality (default high)
+    :arg bool cpu: Enable CPU metrics (default True)
+    :arg bool memory: Enable memory metrics (default True)
+    :arg bool logs: Enable logs metrics (default True)
+    :arg bool network: Enable network metrics (default True)
+    :arg bool phone-signal: Enable phone signal metrics (default True)
+    :arg bool wifi: Enable wifi metrics (default True)
+    :arg bool gps: Enable gps metrics (default False)
+    :arg bool battery: Enable battery metrics (default False)
+    :arg bool opengl: Enable opengl metrics (default False)
+
+    Example:
+
+    .. literalinclude::
+       /../../tests/publishers/fixtures/test-fairy-android-minimal.yaml
+       :language: yaml
+
+    .. literalinclude::
+       /../../tests/publishers/fixtures/test-fairy-android001.yaml
+       :language: yaml
+    """
+    test_fairy = XML.SubElement(
+        xml_parent, 'org.jenkinsci.plugins.testfairy.TestFairyAndroidRecorder')
+    test_fairy.set('plugin', 'TestFairy')
+
+    try:
+        apikey = data['apikey']
+    except KeyError as e:
+        raise MissingAttributeError(e.args[0])
+    XML.SubElement(test_fairy, 'apiKey').text = apikey
+
+    try:
+        appfile = data['appfile']
+    except KeyError as e:
+        raise MissingAttributeError(e.args[0])
+    XML.SubElement(test_fairy, 'appFile').text = appfile
+
+    XML.SubElement(test_fairy, 'mappingFile').text = data.get(
+        'proguardfile', '')
+    XML.SubElement(test_fairy, 'testersGroups').text = data.get(
+        'tester-groups', '')
+    XML.SubElement(test_fairy, 'notifyTesters').text = str(
+        data.get('notify-testers', True)).lower()
+    XML.SubElement(test_fairy, 'autoUpdate').text = str(
+        data.get('autoupdate', True)).lower()
+
+    try:
+        keystorepath = data['keystorepath']
+    except KeyError as e:
+        raise MissingAttributeError(e.args[0])
+    XML.SubElement(test_fairy, 'keystorePath').text = keystorepath
+
+    XML.SubElement(test_fairy, 'storepass').text = data.get(
+        'storepass', 'android')
+    XML.SubElement(test_fairy, 'alias').text = data.get(
+        'alias', 'androiddebugkey')
+    XML.SubElement(test_fairy, 'keypass').text = data.get(
+        'keypass', '')
+
+    ############################
+    # Advanced Project options #
+    ############################
+
+    # Session
+    XML.SubElement(test_fairy, 'maxDuration').text = data.get(
+        'max-duration', '10m')
+    XML.SubElement(test_fairy, 'recordOnBackground').text = str(
+        data.get('record-on-background', False)).lower()
+    XML.SubElement(test_fairy, 'dataOnlyWifi').text = str(
+        data.get('data-only-wifi', False)).lower()
+
+    # Video
+    XML.SubElement(test_fairy, 'isVideoEnabled').text = str(
+        data.get('video-enabled', True)).lower()
+    XML.SubElement(test_fairy, 'screenshotInterval').text = data.get(
+        'screenshot-interval', '1')
+    XML.SubElement(test_fairy, 'videoQuality').text = data.get(
+        'video-quality', 'high')
+
+    # Metrics
+    XML.SubElement(test_fairy, 'cpu').text = str(
+        data.get('cpu', True)).lower()
+    XML.SubElement(test_fairy, 'memory').text = str(
+        data.get('memory', True)).lower()
+    XML.SubElement(test_fairy, 'logs').text = str(
+        data.get('logs', True)).lower()
+    XML.SubElement(test_fairy, 'network').text = str(
+        data.get('network', True)).lower()
+    XML.SubElement(test_fairy, 'phoneSignal').text = str(
+        data.get('phone-signal', True)).lower()
+    XML.SubElement(test_fairy, 'wifi').text = str(
+        data.get('wifi', True)).lower()
+    XML.SubElement(test_fairy, 'gps').text = str(
+        data.get('gps', False)).lower()
+    XML.SubElement(test_fairy, 'battery').text = str(
+        data.get('battery', False)).lower()
+    XML.SubElement(test_fairy, 'openGl').text = str(
+        data.get('opengl', False)).lower()
+
+    # Options
+    XML.SubElement(test_fairy, 'advancedOptions').text = data.get(
+        'advanced-options', '')
+
+
 def text_finder(parser, xml_parent, data):
     """yaml: text-finder
     This plugin lets you search keywords in the files you specified and
