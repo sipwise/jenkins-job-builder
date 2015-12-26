@@ -2697,6 +2697,55 @@ def artifactory(parser, xml_parent, data):
     artifactory_env_vars_patterns(artifactory, data)
 
 
+def test_fairy_android(parser, xml_parent, data):
+    """yaml: test-fairy-android
+    This plugin helps you to upload Android APKs or iOS IPA files to
+    www.testfairy.com
+
+    Requires the Jenkins :jenkins-wiki:`Test Fairy Plugin
+    <TestFairy+Plugin>`.
+    """
+    test_fairy = XML.SubElement(
+        xml_parent, 'org.jenkinsci.plugins.testfairy.TestFairyAndroidRecorder')
+    test_fairy.set('plugin', 'TestFairy')
+
+    try:
+        apikey = data['apikey']
+    except KeyError as e:
+        raise MissingAttributeError(e.args[0])
+    XML.SubElement(test_fairy, 'apiKey').text = apikey
+
+    try:
+        appfile = data['appfile']
+    except KeyError as e:
+        raise MissingAttributeError(e.args[0])
+    XML.SubElement(test_fairy, 'appFile').text = appfile
+
+    XML.SubElement(test_fairy, 'mappingFile').text = data.get(
+        'proguardfile', '')
+    XML.SubElement(test_fairy, 'testersGroups').text = data.get(
+        'tester-groups', '')
+    XML.SubElement(test_fairy, 'notifyTesters').text = str(
+        data.get('notify-testers', True)).lower()
+    XML.SubElement(test_fairy, 'autoUpdate').text = str(
+        data.get('autoupdate', True)).lower()
+    XML.SubElement(test_fairy, 'maxDuration').text = data.get('maxduration')
+
+    try:
+        keystorepath = data['keystorepath']
+    except KeyError as e:
+        raise MissingAttributeError(e.args[0])
+    XML.SubElement(test_fairy, 'keystorePath').text = keystorepath
+
+    XML.SubElement(test_fairy, 'storepass').text = data.get('storepass',
+        'android')
+    XML.SubElement(test_fairy, 'alias').text = data.get('alias',
+        'androiddebugkey')
+    XML.SubElement(test_fairy, 'keypass').text = data.get('keypass',
+        '')
+
+
+
 def text_finder(parser, xml_parent, data):
     """yaml: text-finder
     This plugin lets you search keywords in the files you specified and
