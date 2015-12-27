@@ -2,9 +2,8 @@ import testtools as tt
 import pkg_resources
 from testtools.content import text_content
 from testscenarios.testcase import TestWithScenarios
-from six.moves import configparser, StringIO
 
-from jenkins_jobs import cmd
+from jenkins_jobs.config import JJBConfig
 from jenkins_jobs.registry import ModuleRegistry
 from tests.base import LoggingFixture
 
@@ -31,8 +30,9 @@ class ModuleRegistryPluginInfoTestsWithScenarios(TestWithScenarios,
     def setUp(self):
         super(ModuleRegistryPluginInfoTestsWithScenarios, self).setUp()
 
-        config = configparser.ConfigParser()
-        config.readfp(StringIO(cmd.DEFAULT_CONF))
+        jjb_config = JJBConfig()
+        jjb_config.do_magical_things()
+        config = jjb_config.config_parser
 
         plugin_info = [{'shortName': "HerpDerpPlugin",
                         'longName': "Blah Blah Blah Plugin"
