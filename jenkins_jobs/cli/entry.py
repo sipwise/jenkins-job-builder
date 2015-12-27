@@ -21,8 +21,8 @@ import sys
 
 import yaml
 
+from jenkins_jobs.builder import Builder
 from jenkins_jobs.cli.parser import create_parser
-from jenkins_jobs import cmd
 from jenkins_jobs.config import JJBConfig
 from jenkins_jobs import utils
 from jenkins_jobs import version
@@ -73,12 +73,20 @@ class JenkinsJobs(object):
         self._parse_additional()
         self.jjb_config.validate()
 
+    def _set_config(self, target, option):
+        """
+        Sets the option in target only if the given option was explicitly set
+        """
+        opt_val = getattr(self.options, option, None)
+        if opt_val is not None:
+            target[option] = opt_val
+
     def _parse_additional(self):
-        for opt in ['ignore_cache', 'user', 'password',
-                    'allow_empty_variables']:
-            opt_val = getattr(self.options, opt, None)
-            if opt_val is not None:
-                setattr(self.jjb_config, opt, opt_val)
+
+        self._set_config(self.jjb_config.builder, 'ignore_cache')
+        self._set_config(self.jjb_config.yamlparser, 'allow_empty_variables')
+        self._set_config(self.jjb_config.jenkins, 'user')
+        self._set_config(self.jjb_config.jenkins, 'password')
 
         if getattr(self.options, 'plugins_info_path', None) is not None:
             with io.open(self.options.plugins_info_path, 'r',
@@ -87,7 +95,7 @@ class JenkinsJobs(object):
             if not isinstance(plugins_info, list):
                 self.parser.error("{0} must contain a Yaml list!".format(
                                   self.options.plugins_info_path))
-            self.jjb_config.plugins_info = plugins_info
+            self.jjb_config.builder['plugins_info'] = plugins_info
 
         if getattr(self.options, 'path', None):
             if hasattr(self.options.path, 'read'):
@@ -118,7 +126,39 @@ class JenkinsJobs(object):
                 self.options.path = paths
 
     def execute(self):
-        cmd.execute(self.options, self.jjb_config)
+        options = self.options
+        builder = Builder(self.jjb_config)
+
+        if options.command == 'delete':
+            for job in options.name:
+                builder.delete_job(job, options.path)
+        elif options.command == 'delete-all':
+            if not utils.confirm(
+                    'Sure you want to delete *ALL* jobs from Jenkins '
+                    'server?\n(including those not managed by Jenkins '
+                    'Job Builder)'):
+                sys.exit('Aborted')
+
+            logger.info("Deleting all jobs")
+            builder.delete_all_jobs()
+        elif options.command == 'update':
+            if options.n_workers < 0:
+                self.parser.error(
+                    'Number of workers must be equal or greater than 0')
+
+            logger.info("Updating jobs in {0} ({1})".format(
+                options.path, options.names))
+            jobs, num_updated_jobs = builder.update_jobs(
+                options.path, options.names,
+                n_workers=options.n_workers)
+            logger.info("Number of jobs updated: %d", num_updated_jobs)
+            if options.delete_old:
+                num_deleted_jobs = builder.delete_old_managed()
+                logger.info("Number of jobs deleted: %d", num_deleted_jobs)
+        elif options.command == 'test':
+            builder.update_jobs(options.path, options.name,
+                                output=options.output_dir,
+                                n_workers=1)
 
 
 def main():

@@ -18,6 +18,7 @@ import os
 import six
 
 from jenkins_jobs import builder
+from jenkins_jobs.config import JJBConfig
 from tests.base import mock
 from tests.cmd.test_cmd import CmdTestsBase
 
@@ -25,7 +26,7 @@ from tests.cmd.test_cmd import CmdTestsBase
 @mock.patch('jenkins_jobs.builder.Jenkins.get_plugins_info', mock.MagicMock)
 class UpdateTests(CmdTestsBase):
 
-    @mock.patch('jenkins_jobs.cmd.Builder.update_jobs')
+    @mock.patch('jenkins_jobs.cli.entry.Builder.update_jobs')
     def test_update_jobs(self, update_jobs_mock):
         """
         Test update_job is called
@@ -62,7 +63,7 @@ class UpdateTests(CmdTestsBase):
     @mock.patch('jenkins_jobs.builder.Jenkins.is_job', return_value=True)
     @mock.patch('jenkins_jobs.builder.Jenkins.get_jobs')
     @mock.patch('jenkins_jobs.builder.Builder.delete_job')
-    @mock.patch('jenkins_jobs.cmd.Builder')
+    @mock.patch('jenkins_jobs.cli.entry.Builder')
     def test_update_jobs_and_delete_old(self, builder_mock, delete_job_mock,
                                         get_jobs_mock, is_job_mock):
         """
@@ -79,9 +80,13 @@ class UpdateTests(CmdTestsBase):
         jobs = ['old_job001', 'old_job002', 'unmanaged']
         extra_jobs = [{'name': name} for name in jobs]
 
-        builder_obj = builder.Builder('http://jenkins.example.com',
-                                      'doesnot', 'matter',
-                                      plugins_list={})
+        jjb_config = JJBConfig()
+        jjb_config.jenkins['url'] = 'http://example.com'
+        jjb_config.jenkins['user'] = 'doesnot'
+        jjb_config.jenkins['password'] = 'matter'
+        jjb_config.builder['plugins_info'] = []
+        jjb_config.validate()
+        builder_obj = builder.Builder(jjb_config)
 
         # get the instance created by mock and redirect some of the method
         # mocks to call real methods on a the above test object.
@@ -132,7 +137,8 @@ class UpdateTests(CmdTestsBase):
         path = os.path.join(self.fixtures_path, 'cmd-002.yaml')
         args = ['--conf', self.default_config_file, 'update', path]
 
-        with mock.patch('jenkins_jobs.cmd.Builder.update_job') as update_mock:
+        with mock.patch(
+            'jenkins_jobs.cli.entry.Builder.update_job') as update_mock:
             update_mock.return_value = ([], 0)
             self.execute_jenkins_jobs_with_args(args)
         # unless the timeout is set, should only call with 3 arguments
@@ -152,7 +158,8 @@ class UpdateTests(CmdTestsBase):
                                    'non-default-timeout.ini')
         args = ['--conf', config_file, 'update', path]
 
-        with mock.patch('jenkins_jobs.cmd.Builder.update_job') as update_mock:
+        with mock.patch(
+            'jenkins_jobs.cli.entry.Builder.update_job') as update_mock:
             update_mock.return_value = ([], 0)
             self.execute_jenkins_jobs_with_args(args)
         # when timeout is set, the fourth argument to the Jenkins api init
