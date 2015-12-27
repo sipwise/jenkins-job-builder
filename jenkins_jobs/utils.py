@@ -19,6 +19,7 @@ import codecs
 import fnmatch
 import locale
 import os.path
+import sys
 
 
 def wrap_stream(stream, encoding='utf-8'):
@@ -62,3 +63,9 @@ def recurse_path(root, excludes=None):
         pathlist.extend([os.path.join(root, path) for path in dirs])
 
     return pathlist
+
+
+def confirm(question):
+    answer = input('%s (Y/N): ' % question).upper().strip()
+    if not answer == 'Y':
+        sys.exit('Aborted')
