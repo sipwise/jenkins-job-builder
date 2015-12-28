@@ -18,6 +18,7 @@ import os
 import six
 
 from jenkins_jobs import builder
+from jenkins_jobs.config import JJBConfig
 from tests.base import mock
 from tests.cmd.test_cmd import CmdTestsBase
 
@@ -79,9 +80,13 @@ class UpdateTests(CmdTestsBase):
         jobs = ['old_job001', 'old_job002']
         extra_jobs = [{'name': name} for name in jobs]
 
-        builder_obj = builder.Builder('http://jenkins.example.com',
-                                      'doesnot', 'matter',
-                                      plugins_list={})
+        jjb_config = JJBConfig()
+        jjb_config.do_magical_things()
+        jjb_config.jenkins['url'] = 'http://example.com'
+        jjb_config.jenkins['user'] = 'doesnot'
+        jjb_config.jenkins['password'] = 'matter'
+        jjb_config.builder['plugins_list'] = []
+        builder_obj = builder.Builder(jjb_config)
 
         # get the instance created by mock and redirect some of the method
         # mocks to call real methods on a the above test object.
