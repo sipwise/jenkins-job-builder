@@ -15,6 +15,7 @@
 
 # Manage JJB Configuration sources, defaults, and access.
 
+from collections import defaultdict
 import io
 import logging
 import platform
@@ -129,6 +130,11 @@ class JJBConfig(object):
 
         self.config_parser = config_parser
         self.arguments = arguments
+
+        self.jenkins = defaultdict(None)
+        self.builder = defaultdict(None)
+        self.yamlparser = defaultdict(None)
+        self.hipchat = defaultdict(None)
 
     def __init_defaults(self):
         """ Initialize default configuration values using DEFAULT_CONF
@@ -266,9 +272,68 @@ class JJBConfig(object):
                         paths.append(path)
                 options.path = paths
 
+        # Temporary measure to ensure config_parser and arguments are available
+        # on an intermediate basis while moving stuff around
         self.config_parser = config
         self.arguments = options
 
+        # The way we want to do things moving forward:
+        self.jenkins['url'] = config.get('jenkins', 'url')
+        self.jenkins['user'] = self.user
+        self.jenkins['password'] = self.password
+        self.jenkins['timeout'] = self.timeout
+
+        self.builder['ignore_cache'] = self.ignore_cache
+        self.builder['flush_cache'] = self.arguments.flush_cache
+        self.builder['plugins_info'] = self.plugins_info
+
+        # keep descriptions ? (used by yamlparser)
+        keep_desc = False
+        if config and config.has_section('job_builder') and \
+                config.has_option('job_builder', 'keep_descriptions'):
+            keep_desc = config.getboolean('job_builder',
+                                          'keep_descriptions')
+        self.yamlparser['keep_descriptions'] = keep_desc
+
+        # figure out the include path (used by yamlparser)
+        path = ["."]
+        if config and config.has_section('job_builder') and \
+           config.has_option('job_builder', 'include_path'):
+            path = config.get('job_builder',
+                              'include_path').split(':')
+        self.yamlparser['include_path'] = path
+
+        # allow duplicates?
+        allow_duplicates = False
+        if config and config.has_option('job_builder', 'allow_duplicates'):
+            allow_duplicates = config.getboolean('job_builder',
+                                                 'allow_duplicates')
+        self.yamlparser['allow_duplicates'] = allow_duplicates
+
+        # allow empty variables?
+        self.yamlparser['allow_empty_variables'] = (
+            config and config.has_section('job_builder') and
+            config.has_option('job_builder', 'allow_empty_variables') and
+            config.getboolean('job_builder', 'allow_empty_variables'))
+
+    def get_module_config(self, section, key):
+        """ Given a section name and a key value, return the value assigned to
+        the key in the JJB .ini file if it exists, otherwise emit a warning
+        indicating that the value is not set. Default value returned if no
+        value is set in the file will be a blank string.
+        """
+        result = ''
+        try:
+            result = self.config_parser.get(
+                section, key
+            )
+        except (configparser.NoSectionError, configparser.NoOptionError,
+                JenkinsJobsException) as e:
+            logger.warning("You didn't set a " + key +
+                           " neither in the yaml job definition nor in" +
+                           " the " + section + " section, blank default" +
+                           " value will be applied:\n{0}".format(e))
+        return result
 
 __all__ = [
     JJBConfig
