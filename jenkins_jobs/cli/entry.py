@@ -74,10 +74,10 @@ class JenkinsJobs(object):
         self.jjb_config.validate()
 
     def _parse_additional(self):
-        self.jjb_config.ignore_cache = self.options.ignore_cache
-        self.jjb_config.user = self.options.user
-        self.jjb_config.password = self.options.password
-        self.jjb_config.allow_empty_variables = (
+        self.jjb_config.builder['ignore_cache'] = self.options.ignore_cache
+        self.jjb_config.jenkins['user'] = self.options.user
+        self.jjb_config.jenkins['password'] = self.options.password
+        self.jjb_config.yamlparser['allow_empty_variables'] = (
             self.options.allow_empty_variables)
 
         if getattr(self.options, 'plugins_info_path', None) is not None:
@@ -87,7 +87,7 @@ class JenkinsJobs(object):
             if not isinstance(plugins_info, list):
                 self.parser.error("{0} must contain a Yaml list!".format(
                                   self.options.plugins_info_path))
-            self.jjb_config.plugins_info = plugins_info
+            self.jjb_config.builder['plugins_info'] = plugins_info
 
         if getattr(self.options, 'path', None):
             if hasattr(self.options.path, 'read'):
@@ -118,17 +118,8 @@ class JenkinsJobs(object):
                 self.options.path = paths
 
     def execute(self):
-        config = self.jjb_config.config_parser
         options = self.options
-
-        builder = Builder(config.get('jenkins', 'url'),
-                          self.jjb_config.user,
-                          self.jjb_config.password,
-                          self.jjb_config.config_parser,
-                          jenkins_timeout=self.jjb_config.timeout,
-                          ignore_cache=self.jjb_config.ignore_cache,
-                          flush_cache=options.flush_cache,
-                          plugins_list=self.jjb_config.plugins_info)
+        builder = Builder(self.jjb_config)
 
         if options.command == 'delete':
             for job in options.name:
