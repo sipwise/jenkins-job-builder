@@ -63,17 +63,8 @@ class JenkinsJobs(object):
             logger.setLevel(options.log_level)
 
     def execute(self):
-        config = self.jjb_config.config_parser
         options = self.jjb_config.arguments
-
-        builder = Builder(config.get('jenkins', 'url'),
-                          self.jjb_config.user,
-                          self.jjb_config.password,
-                          self.jjb_config.config_parser,
-                          jenkins_timeout=self.jjb_config.timeout,
-                          ignore_cache=self.jjb_config.ignore_cache,
-                          flush_cache=options.flush_cache,
-                          plugins_list=self.jjb_config.plugins_info)
+        builder = Builder(self.jjb_config)
 
         if options.command == 'delete':
             for job in options.name:
