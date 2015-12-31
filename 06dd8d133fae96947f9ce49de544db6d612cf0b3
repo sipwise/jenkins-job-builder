@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_609e1958",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2015-12-31T15:21:56Z",
+      "side": 1,
+      "message": "I\u0027d like to see some unit tests for this function that directly validate its behavior in specific circumstances rather than relying on indirect validation through the localyaml test scenarios introduced in the dependent commit.",
+      "revId": "06dd8d133fae96947f9ce49de544db6d612cf0b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
