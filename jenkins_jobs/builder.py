@@ -228,8 +228,6 @@ class Builder(object):
     def delete_old_managed(self, keep=None):
         jobs = self.jenkins.get_jobs()
         deleted_jobs = 0
-        if keep is None:
-            keep = [job.name for job in self.parser.xml_jobs]
         for job in jobs:
             if job['name'] not in keep and \
                     self.jenkins.is_managed(job['name']):
@@ -277,21 +275,11 @@ class Builder(object):
             logger.debug("'{0}' has not changed".format(job.name))
         return changed
 
-    def update_jobs(self, input_fn, jobs_glob=None, output=None,
-                    n_workers=None):
+    def update_jobs(self, xml_jobs, output=None, n_workers=None):
         orig = time.time()
 
-        self.parser = YamlParser(self.jjb_config, self.plugins_list)
-        self.parser.load_files(input_fn)
-
-        self.parser.expandYaml(jobs_glob)
-        self.parser.generateXML()
-        step = time.time()
-        logging.debug('%d XML files generated in %ss',
-                      len(self.parser.jobs), str(step - orig))
-
-        logger.info("Number of jobs generated:  %d", len(self.parser.xml_jobs))
-        self.parser.xml_jobs.sort(key=operator.attrgetter('name'))
+        logger.info("Number of jobs generated:  %d", len(xml_jobs))
+        xml_jobs.sort(key=operator.attrgetter('name'))
 
         if (output and not hasattr(output, 'write')
                 and not os.path.isdir(output)):
@@ -303,7 +291,7 @@ class Builder(object):
                     raise
 
         if output:
-            for job in self.parser.xml_jobs:
+            for job in xml_jobs:
                 if hasattr(output, 'write'):
                     # `output` is a file-like object
                     logger.info("Job name:  %s", job.name)
@@ -324,13 +312,13 @@ class Builder(object):
                 logger.debug("Writing XML to '{0}'".format(output_fn))
                 with io.open(output_fn, 'w', encoding='utf-8') as f:
                     f.write(job.output().decode('utf-8'))
-            return self.parser.xml_jobs, len(self.parser.xml_jobs)
+            return xml_jobs, len(xml_jobs)
 
         # Filter out the jobs that did not change
         logging.debug('Filtering %d jobs for changed jobs',
-                      len(self.parser.xml_jobs))
+                      len(xml_jobs))
         step = time.time()
-        jobs = [job for job in self.parser.xml_jobs
+        jobs = [job for job in xml_jobs
                 if self.changed(job)]
         logging.debug("Filtered for changed jobs in %ss",
                       (time.time() - step))
