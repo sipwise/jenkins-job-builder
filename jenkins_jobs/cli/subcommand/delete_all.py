@@ -1,5 +1,28 @@
+#!/usr/bin/env python
+# Copyright (C) 2015 Wayne Warren
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
 
+
+import logging
+
+from jenkins_jobs import utils
+from jenkins_jobs.builder import Builder
 import jenkins_jobs.cli.subcommand.base as base
+
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 
 class DeleteAllSubCommand(base.BaseSubCommand):
@@ -13,5 +36,11 @@ class DeleteAllSubCommand(base.BaseSubCommand):
         self.parse_option_exclude(delete_all)
         self.parse_option_recursive(delete_all)
 
-    def execute(self, config):
-        raise NotImplementedError
+    def execute(self, jjb_config):
+        builder = Builder(jjb_config)
+
+        utils.confirm('''Sure you want to delete *ALL* jobs from Jenkins
+                      server?\n (including those not managed by Jenkins Job
+                      Builder)''')
+        logger.info("Deleting all jobs")
+        builder.delete_all_jobs()
