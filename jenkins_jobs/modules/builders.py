@@ -55,7 +55,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-def shell(parser, xml_parent, data):
+def shell(registry, xml_parent, data):
     """yaml: shell
     Execute a shell command.
 
@@ -71,7 +71,7 @@ def shell(parser, xml_parent, data):
     XML.SubElement(shell, 'command').text = data
 
 
-def python(parser, xml_parent, data):
+def python(registry, xml_parent, data):
     """yaml: python
     Execute a python command. Requires the Jenkins :jenkins-wiki:`Python plugin
     <Python+Plugin>`.
@@ -88,7 +88,7 @@ def python(parser, xml_parent, data):
     XML.SubElement(python, 'command').text = data
 
 
-def copyartifact(parser, xml_parent, data):
+def copyartifact(registry, xml_parent, data):
     """yaml: copyartifact
 
     Copy artifact from another project. Requires the :jenkins-wiki:`Copy
@@ -170,7 +170,7 @@ def copyartifact(parser, xml_parent, data):
     copyartifact_build_selector(t, data)
 
 
-def change_assembly_version(parser, xml_parent, data):
+def change_assembly_version(registry, xml_parent, data):
     """yaml: change-assembly-version
     Change the assembly version.
     Requires the Jenkins :jenkins-wiki:`Change Assembly Version
@@ -194,7 +194,7 @@ def change_assembly_version(parser, xml_parent, data):
         data.get('assembly-file', 'AssemblyInfo.cs'))
 
 
-def ant(parser, xml_parent, data):
+def ant(registry, xml_parent, data):
     """yaml: ant
     Execute an ant target. Requires the Jenkins :jenkins-wiki:`Ant Plugin
     <Ant+Plugin>`.
@@ -261,7 +261,7 @@ def ant(parser, xml_parent, data):
     XML.SubElement(ant, 'antName').text = data.get('ant-name', 'default')
 
 
-def trigger_remote(parser, xml_parent, data):
+def trigger_remote(registry, xml_parent, data):
     """yaml: trigger-remote
     Trigger build of job on remote Jenkins instance.
 
@@ -353,7 +353,7 @@ def trigger_remote(parser, xml_parent, data):
     XML.SubElement(triggerr, 'overrideAuth').text = "false"
 
 
-def trigger_builds(parser, xml_parent, data):
+def trigger_builds(registry, xml_parent, data):
     """yaml: trigger-builds
     Trigger builds of other jobs.
     Requires the Jenkins :jenkins-wiki:`Parameterized Trigger Plugin
@@ -671,7 +671,7 @@ def trigger_builds(parser, xml_parent, data):
         xml_parent.remove(tbuilder)
 
 
-def builders_from(parser, xml_parent, data):
+def builders_from(registry, xml_parent, data):
     """yaml: builders-from
     Use builders from another project.
     Requires the Jenkins :jenkins-wiki:`Template Project Plugin
@@ -689,7 +689,7 @@ def builders_from(parser, xml_parent, data):
     XML.SubElement(pbs, 'projectName').text = data
 
 
-def inject(parser, xml_parent, data):
+def inject(registry, xml_parent, data):
     """yaml: inject
     Inject an environment for the job.
     Requires the Jenkins :jenkins-wiki:`EnvInject Plugin
@@ -717,7 +717,7 @@ def inject(parser, xml_parent, data):
         info, 'scriptContent', data.get('script-content'))
 
 
-def artifact_resolver(parser, xml_parent, data):
+def artifact_resolver(registry, xml_parent, data):
     """yaml: artifact-resolver
     Allows one to resolve artifacts from a maven repository like nexus
     (without having maven installed)
@@ -773,7 +773,7 @@ def artifact_resolver(parser, xml_parent, data):
     XML.SubElement(ar, 'releaseChecksumPolicy').text = 'warn'
 
 
-def gradle(parser, xml_parent, data):
+def gradle(registry, xml_parent, data):
     """yaml: gradle
     Execute gradle tasks. Requires the Jenkins :jenkins-wiki:`Gradle Plugin
     <Gradle+Plugin>`.
@@ -836,7 +836,7 @@ def _groovy_common_scriptSource(data):
     return scriptSource
 
 
-def groovy(parser, xml_parent, data):
+def groovy(registry, xml_parent, data):
     """yaml: groovy
     Execute a groovy script or command.
     Requires the Jenkins :jenkins-wiki:`Groovy Plugin <Groovy+plugin>`.
@@ -880,7 +880,7 @@ def groovy(parser, xml_parent, data):
     XML.SubElement(groovy, 'classPath').text = str(data.get('class-path', ""))
 
 
-def system_groovy(parser, xml_parent, data):
+def system_groovy(registry, xml_parent, data):
     """yaml: system-groovy
     Execute a system groovy script or command.
     Requires the Jenkins :jenkins-wiki:`Groovy Plugin <Groovy+plugin>`.
@@ -911,7 +911,7 @@ def system_groovy(parser, xml_parent, data):
         data.get('class-path', ""))
 
 
-def batch(parser, xml_parent, data):
+def batch(registry, xml_parent, data):
     """yaml: batch
     Execute a batch command.
 
@@ -926,7 +926,7 @@ def batch(parser, xml_parent, data):
     XML.SubElement(batch, 'command').text = data
 
 
-def powershell(parser, xml_parent, data):
+def powershell(registry, xml_parent, data):
     """yaml: powershell
     Execute a powershell command. Requires the :jenkins-wiki:`Powershell Plugin
     <PowerShell+Plugin>`.
@@ -942,7 +942,7 @@ def powershell(parser, xml_parent, data):
     XML.SubElement(ps, 'command').text = data
 
 
-def msbuild(parser, xml_parent, data):
+def msbuild(registry, xml_parent, data):
     """yaml: msbuild
     Build .NET project using msbuild. Requires the :jenkins-wiki:`Jenkins
     MSBuild Plugin <MSBuild+Plugin>`.
@@ -974,13 +974,13 @@ def msbuild(parser, xml_parent, data):
         data.get('continue-on-build-failure', False)).lower()
 
 
-def create_builders(parser, step):
+def create_builders(registry, step):
     dummy_parent = XML.Element("dummy")
-    parser.registry.dispatch('builder', parser, dummy_parent, step)
+    registry.dispatch('builder', dummy_parent, step)
     return list(dummy_parent)
 
 
-def conditional_step(parser, xml_parent, data):
+def conditional_step(registry, xml_parent, data):
     """yaml: conditional-step
     Conditionally execute some build steps. Requires the Jenkins
     :jenkins-wiki:`Conditional BuildStep Plugin
@@ -1385,7 +1385,7 @@ def conditional_step(parser, xml_parent, data):
                 build_condition(condition, conditions_container_tag)
 
     def build_step(parent, step):
-        for edited_node in create_builders(parser, step):
+        for edited_node in create_builders(registry, step):
             if not has_multiple_steps:
                 edited_node.set('class', edited_node.tag)
                 edited_node.tag = 'buildStep'
@@ -1425,7 +1425,7 @@ def conditional_step(parser, xml_parent, data):
         build_step(steps_parent, step)
 
 
-def maven_builder(parser, xml_parent, data):
+def maven_builder(registry, xml_parent, data):
     """yaml: maven-builder
     Execute Maven3 builder
 
@@ -1456,7 +1456,7 @@ def maven_builder(parser, xml_parent, data):
     XML.SubElement(maven, 'mavenOpts').text = data.get('maven-opts', '')
 
 
-def maven_target(parser, xml_parent, data):
+def maven_target(registry, xml_parent, data):
     """yaml: maven-target
     Execute top-level Maven targets
 
@@ -1506,7 +1506,7 @@ def maven_target(parser, xml_parent, data):
     config_file_provider_settings(maven, data)
 
 
-def multijob(parser, xml_parent, data):
+def multijob(registry, xml_parent, data):
     """yaml: multijob
     Define a multijob phase. Requires the Jenkins
     :jenkins-wiki:`Multijob Plugin <Multijob+Plugin>`.
@@ -1658,7 +1658,7 @@ def multijob(parser, xml_parent, data):
             ).text = kill_status
 
 
-def config_file_provider(parser, xml_parent, data):
+def config_file_provider(registry, xml_parent, data):
     """yaml: config-file-provider
     Provide configuration files (i.e., settings.xml for maven etc.)
     which will be copied to the job's workspace.
@@ -1689,7 +1689,7 @@ def config_file_provider(parser, xml_parent, data):
     config_file_provider_builder(cfp, data)
 
 
-def grails(parser, xml_parent, data):
+def grails(registry, xml_parent, data):
     """yaml: grails
     Execute a grails build step. Requires the :jenkins-wiki:`Jenkins Grails
     Plugin <Grails+Plugin>`.
@@ -1755,7 +1755,7 @@ def grails(parser, xml_parent, data):
         data.get('refresh-dependencies', False)).lower()
 
 
-def sbt(parser, xml_parent, data):
+def sbt(registry, xml_parent, data):
     """yaml: sbt
     Execute a sbt build step. Requires the Jenkins :jenkins-wiki:`Sbt Plugin
     <sbt+plugin>`.
@@ -1789,7 +1789,7 @@ def sbt(parser, xml_parent, data):
         'subdir-path', '')
 
 
-def critical_block_start(parser, xml_parent, data):
+def critical_block_start(registry, xml_parent, data):
     """yaml: critical-block-start
     Designate the start of a critical block. Must be used in conjuction with
     critical-block-end.
@@ -1810,7 +1810,7 @@ def critical_block_start(parser, xml_parent, data):
     cbs.set('plugin', 'Exclusion')
 
 
-def critical_block_end(parser, xml_parent, data):
+def critical_block_end(registry, xml_parent, data):
     """yaml: critical-block-end
     Designate the end of a critical block. Must be used in conjuction with
     critical-block-start.
@@ -1837,14 +1837,13 @@ class Builders(jenkins_jobs.modules.base.Base):
     component_type = 'builder'
     component_list_type = 'builders'
 
-    def gen_xml(self, parser, xml_parent, data):
+    def gen_xml(self, xml_parent, data):
 
         for alias in ['prebuilders', 'builders', 'postbuilders']:
             if alias in data:
                 builders = XML.SubElement(xml_parent, alias)
                 for builder in data[alias]:
-                    self.registry.dispatch('builder', parser, builders,
-                                           builder)
+                    self.registry.dispatch('builder', builders, builder)
 
         # Make sure freestyle projects always have a <builders> entry
         # or Jenkins v1.472 (at least) will NPE.
@@ -1853,7 +1852,7 @@ class Builders(jenkins_jobs.modules.base.Base):
             XML.SubElement(xml_parent, 'builders')
 
 
-def shining_panda(parser, xml_parent, data):
+def shining_panda(registry, xml_parent, data):
     """yaml: shining-panda
     Execute a command inside various python environments. Requires the Jenkins
     :jenkins-wiki:`ShiningPanda plugin <ShiningPanda+Plugin>`.
@@ -1970,7 +1969,7 @@ def shining_panda(parser, xml_parent, data):
     XML.SubElement(t, 'ignoreExitCode').text = str(ignore_exit_code).lower()
 
 
-def tox(parser, xml_parent, data):
+def tox(registry, xml_parent, data):
     """yaml: tox
     Use tox to build a multi-configuration project. Requires the Jenkins
     :jenkins-wiki:`ShiningPanda plugin <ShiningPanda+Plugin>`.
@@ -1996,7 +1995,7 @@ def tox(parser, xml_parent, data):
         XML.SubElement(t, 'toxenvPattern').text = pattern
 
 
-def managed_script(parser, xml_parent, data):
+def managed_script(registry, xml_parent, data):
     """yaml: managed-script
     This step allows to reference and execute a centrally managed
     script within your build. Requires the Jenkins
@@ -2040,7 +2039,7 @@ def managed_script(parser, xml_parent, data):
         XML.SubElement(args, 'string').text = arg
 
 
-def cmake(parser, xml_parent, data):
+def cmake(registry, xml_parent, data):
     """yaml: cmake
     Execute a CMake target. Requires the Hudson `cmakebuilder Plugin.
     <http://wiki.hudson-ci.org/display/HUDSON/cmakebuilder+Plugin>`_
@@ -2167,7 +2166,7 @@ def cmake(parser, xml_parent, data):
     XML.SubElement(cmake, 'builderImpl')
 
 
-def dsl(parser, xml_parent, data):
+def dsl(registry, xml_parent, data):
     """yaml: dsl
     Process Job DSL
 
@@ -2247,7 +2246,7 @@ def dsl(parser, xml_parent, data):
         'additional-classpath')
 
 
-def github_notifier(parser, xml_parent, data):
+def github_notifier(registry, xml_parent, data):
     """yaml: github-notifier
     Set pending build status on Github commit.
     Requires the Jenkins :jenkins-wiki:`Github Plugin <GitHub+Plugin>`.
@@ -2261,7 +2260,7 @@ def github_notifier(parser, xml_parent, data):
                    'com.cloudbees.jenkins.GitHubSetCommitStatusBuilder')
 
 
-def ssh_builder(parser, xml_parent, data):
+def ssh_builder(registry, xml_parent, data):
     """yaml: ssh-builder
     Executes command on remote host
     Requires the Jenkins `SSH plugin.
@@ -2285,7 +2284,7 @@ def ssh_builder(parser, xml_parent, data):
         raise MissingAttributeError("'%s'" % e.args[0])
 
 
-def sonar(parser, xml_parent, data):
+def sonar(registry, xml_parent, data):
     """yaml: sonar
     Invoke standalone Sonar analysis.
     Requires the Jenkins `Sonar Plugin.
@@ -2314,7 +2313,7 @@ def sonar(parser, xml_parent, data):
         XML.SubElement(sonar, 'jdk').text = data['jdk']
 
 
-def sonatype_clm(parser, xml_parent, data):
+def sonatype_clm(registry, xml_parent, data):
     """yaml: sonatype-clm
     Requires the Jenkins :jenkins-wiki:`Sonatype CLM Plugin
     <Sonatype+CLM+%28formerly+Insight+for+CI%29>`.
@@ -2368,7 +2367,7 @@ def sonatype_clm(parser, xml_parent, data):
         data.get('advanced-options', '')).lower()
 
 
-def beaker(parser, xml_parent, data):
+def beaker(registry, xml_parent, data):
     """yaml: beaker
     Execute a beaker build step. Requires the Jenkins :jenkins-wiki:`Beaker
     Builder Plugin <Beaker+Builder+Plugin>`.
@@ -2407,7 +2406,7 @@ def beaker(parser, xml_parent, data):
         'download-logs', False)).lower()
 
 
-def cloudformation(parser, xml_parent, data):
+def cloudformation(registry, xml_parent, data):
     """yaml: cloudformation
     Create cloudformation stacks before running a build and optionally
     delete them at the end.  Requires the Jenkins :jenkins-wiki:`AWS
@@ -2450,7 +2449,7 @@ def cloudformation(parser, xml_parent, data):
                              region_dict)
 
 
-def openshift_build_verify(parser, xml_parent, data):
+def openshift_build_verify(registry, xml_parent, data):
     """yaml: openshift-build-verify
     Performs the equivalent of an 'oc get builds` command invocation for the
     provided buildConfig key provided; once the list of builds are obtained,
@@ -2496,7 +2495,7 @@ def openshift_build_verify(parser, xml_parent, data):
     convert_mapping_to_xml(osb, data, mapping)
 
 
-def openshift_builder(parser, xml_parent, data):
+def openshift_builder(registry, xml_parent, data):
     """yaml: openshift-builder
     Perform builds in OpenShift for the job.
     Requires the Jenkins `OpenShift3 Plugin
@@ -2541,7 +2540,7 @@ def openshift_builder(parser, xml_parent, data):
     convert_mapping_to_xml(osb, data, mapping)
 
 
-def openshift_dep_verify(parser, xml_parent, data):
+def openshift_dep_verify(registry, xml_parent, data):
     """yaml: openshift-dep-verify
     Determines whether the expected set of DeploymentConfig's,
     ReplicationController's, and active replicas are present based on prior
@@ -2591,7 +2590,7 @@ def openshift_dep_verify(parser, xml_parent, data):
     convert_mapping_to_xml(osb, data, mapping)
 
 
-def openshift_deployer(parser, xml_parent, data):
+def openshift_deployer(registry, xml_parent, data):
     """yaml: openshift-deployer
     Start a deployment in OpenShift for the job.
     Requires the Jenkins `OpenShift3 Plugin
@@ -2635,7 +2634,7 @@ def openshift_deployer(parser, xml_parent, data):
     convert_mapping_to_xml(osb, data, mapping)
 
 
-def openshift_img_tagger(parser, xml_parent, data):
+def openshift_img_tagger(registry, xml_parent, data):
     """yaml: openshift-img-tagger
     Performs the equivalent of an oc tag command invocation in order to
     manipulate tags for images in OpenShift ImageStream's
@@ -2684,7 +2683,7 @@ def openshift_img_tagger(parser, xml_parent, data):
     convert_mapping_to_xml(osb, data, mapping)
 
 
-def openshift_scaler(parser, xml_parent, data):
+def openshift_scaler(registry, xml_parent, data):
     """yaml: openshift-scaler
     Scale deployments in OpenShift for the job.
     Requires the Jenkins `OpenShift3 Plugin
@@ -2729,7 +2728,7 @@ def openshift_scaler(parser, xml_parent, data):
     convert_mapping_to_xml(osb, data, mapping)
 
 
-def openshift_svc_verify(parser, xml_parent, data):
+def openshift_svc_verify(registry, xml_parent, data):
     """yaml: openshift-svc-verify
     Verify a service is up in OpenShift for the job.
     Requires the Jenkins `OpenShift3 Plugin
@@ -2772,7 +2771,7 @@ def openshift_svc_verify(parser, xml_parent, data):
     convert_mapping_to_xml(osb, data, mapping)
 
 
-def runscope(parser, xml_parent, data):
+def runscope(registry, xml_parent, data):
     """yaml: runscope
     Execute a Runscope test.
     Requires the Jenkins `Runscope Plugin.

@@ -109,7 +109,7 @@ class HipChat(jenkins_jobs.modules.base.Base):
             self.jenkinsUrl = jjb_config.jenkins['url']
             self.sendAs = jjb_config.get_module_config('hipchat', 'send-as')
 
-    def gen_xml(self, parser, xml_parent, data):
+    def gen_xml(self, xml_parent, data):
         hipchat = data.get('hipchat')
         if not hipchat or not hipchat.get('enabled', True):
             return

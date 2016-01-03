@@ -40,6 +40,7 @@ except ImportError:
 from jenkins_jobs.config import JJBConfig
 import jenkins_jobs.local_yaml as yaml
 from jenkins_jobs.parser import YamlParser
+from jenkins_jobs.registry import ModuleRegistry
 from jenkins_jobs.xml_config import XmlJob
 from jenkins_jobs.modules import (project_flow,
                                   project_matrix,
@@ -167,12 +168,15 @@ class BaseTestCase(LoggingFixture):
             self.addDetail("plugins-info",
                            text_content(str(plugins_info)))
 
-        parser = YamlParser(jjb_config, plugins_info)
+        parser = YamlParser(jjb_config)
+        parser.load_files(jjb_config.arguments.path)
+        registry = ModuleRegistry(jjb_config, plugins_info)
+        registry.set_parser_data(parser.data)
 
-        pub = self.klass(parser.registry)
+        pub = self.klass(registry)
 
         # Generate the XML tree directly with modules/general
-        pub.gen_xml(parser, xml_project, yaml_content)
+        pub.gen_xml(xml_project, yaml_content)
 
         # Prettify generated XML
         pretty_xml = XmlJob(xml_project, 'fixturejob').output().decode('utf-8')
@@ -194,9 +198,11 @@ class SingleJobTestCase(BaseTestCase):
         parser = YamlParser(config)
         parser.parse(self.in_filename)
 
+        registry = ModuleRegistry(config)
+        registry.set_parser_data(parser.data)
         # Generate the XML tree
-        parser.expandYaml()
-        parser.generateXML()
+        parser.expandYaml(registry)
+        parser.generateXML(registry)
 
         parser.xml_jobs.sort(key=operator.attrgetter('name'))
 
