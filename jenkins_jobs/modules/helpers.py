@@ -242,9 +242,8 @@ def findbugs_settings(xml_parent, data):
     XML.SubElement(xml_parent, 'excludePattern').text = exclude_files
 
 
-def get_value_from_yaml_or_config_file(key, section, data, parser):
+def get_value_from_yaml_or_config_file(key, section, data, jjb_config):
     result = data.get(key, '')
-    jjb_config = parser.jjb_config
     if result == '':
         result = jjb_config.get_module_config(section, key)
     return result

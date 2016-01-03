@@ -43,7 +43,7 @@ logger = logging.getLogger(__name__)
 MIN_TO_SEC = 60
 
 
-def docker_custom_build_env(parser, xml_parent, data):
+def docker_custom_build_env(registry, xml_parent, data):
     """yaml: docker-custom-build-env
     Allows the definition of a build environment for a job using a Docker
     container.
@@ -154,7 +154,7 @@ def docker_custom_build_env(parser, xml_parent, data):
     XML.SubElement(entry_xml, 'net').text = data.get('net', 'bridge')
 
 
-def ci_skip(parser, xml_parent, data):
+def ci_skip(registry, xml_parent, data):
     """yaml: ci-skip
     Skip making a build for certain push.
     Just add [ci skip] into your commit's message to let Jenkins know,
@@ -182,7 +182,7 @@ def ci_skip(parser, xml_parent, data):
     })
 
 
-def config_file_provider(parser, xml_parent, data):
+def config_file_provider(registry, xml_parent, data):
     """yaml: config-file-provider
     Provide configuration files (i.e., settings.xml for maven etc.)
     which will be copied to the job's workspace.
@@ -211,7 +211,7 @@ def config_file_provider(parser, xml_parent, data):
     config_file_provider_builder(cfp, data)
 
 
-def logfilesize(parser, xml_parent, data):
+def logfilesize(registry, xml_parent, data):
     """yaml: logfilesize
     Abort the build if its logfile becomes too big.
     Requires the Jenkins :jenkins-wiki:`Logfilesizechecker Plugin
@@ -246,7 +246,7 @@ def logfilesize(parser, xml_parent, data):
         data.get('fail', 'false')).lower()
 
 
-def timeout(parser, xml_parent, data):
+def timeout(registry, xml_parent, data):
     """yaml: timeout
     Abort the build if it runs too long.
     Requires the Jenkins :jenkins-wiki:`Build Timeout Plugin
@@ -310,7 +310,7 @@ def timeout(parser, xml_parent, data):
     prefix = 'hudson.plugins.build__timeout.'
     twrapper = XML.SubElement(xml_parent, prefix + 'BuildTimeoutWrapper')
 
-    plugin_info = parser.registry.get_plugin_info(
+    plugin_info = registry.get_plugin_info(
         "Jenkins build timeout plugin")
     version = pkg_resources.parse_version(plugin_info.get("version", "0"))
 
@@ -425,7 +425,7 @@ def timeout(parser, xml_parent, data):
         XML.SubElement(twrapper, 'timeoutType').text = tout_type
 
 
-def timestamps(parser, xml_parent, data):
+def timestamps(registry, xml_parent, data):
     """yaml: timestamps
     Add timestamps to the console log.
     Requires the Jenkins :jenkins-wiki:`Timestamper Plugin <Timestamper>`.
@@ -439,7 +439,7 @@ def timestamps(parser, xml_parent, data):
                    'hudson.plugins.timestamper.TimestamperBuildWrapper')
 
 
-def ansicolor(parser, xml_parent, data):
+def ansicolor(registry, xml_parent, data):
     """yaml: ansicolor
     Translate ANSI color codes to HTML in the console log.
     Requires the Jenkins :jenkins-wiki:`Ansi Color Plugin <AnsiColor+Plugin>`.
@@ -466,7 +466,7 @@ def ansicolor(parser, xml_parent, data):
         XML.SubElement(cwrapper, 'colorMapName').text = colormap
 
 
-def build_keeper(parser, xml_parent, data):
+def build_keeper(registry, xml_parent, data):
     """yaml: build-keeper
     Keep builds based on specific policy.
     Requires the Jenkins :jenkins-wiki:`Build Keeper Plugin
@@ -539,7 +539,7 @@ def build_keeper(parser, xml_parent, data):
         InvalidAttributeError('policy', policy, valid_policies)
 
 
-def live_screenshot(parser, xml_parent, data):
+def live_screenshot(registry, xml_parent, data):
     """yaml: live-screenshot
     Show live screenshots of running jobs in the job list.
     Requires the Jenkins :jenkins-wiki:`Live-Screenshot Plugin
@@ -567,7 +567,7 @@ def live_screenshot(parser, xml_parent, data):
         'thumbnail', 'screenshot-thumb.png')
 
 
-def mask_passwords(parser, xml_parent, data):
+def mask_passwords(registry, xml_parent, data):
     """yaml: mask-passwords
     Hide passwords in the console log.
     Requires the Jenkins :jenkins-wiki:`Mask Passwords Plugin
@@ -583,7 +583,7 @@ def mask_passwords(parser, xml_parent, data):
                    'MaskPasswordsBuildWrapper')
 
 
-def workspace_cleanup(parser, xml_parent, data):
+def workspace_cleanup(registry, xml_parent, data):
     """yaml: workspace-cleanup (pre-build)
 
     Requires the Jenkins :jenkins-wiki:`Workspace Cleanup Plugin
@@ -632,7 +632,7 @@ def workspace_cleanup(parser, xml_parent, data):
         data.get('external-deletion-command', ''))
 
 
-def m2_repository_cleanup(parser, xml_parent, data):
+def m2_repository_cleanup(registry, xml_parent, data):
     """yaml: m2-repository-cleanup
     Configure M2 Repository Cleanup
     Requires the Jenkins :jenkins-wiki:`M2 Repository Cleanup
@@ -660,7 +660,7 @@ def m2_repository_cleanup(parser, xml_parent, data):
         XML.SubElement(p, 'string').text = pattern
 
 
-def rvm_env(parser, xml_parent, data):
+def rvm_env(registry, xml_parent, data):
     """yaml: rvm-env
     Set the RVM implementation
     Requires the Jenkins :jenkins-wiki:`Rvm Plugin <RVM+Plugin>`.
@@ -699,7 +699,7 @@ def rvm_env(parser, xml_parent, data):
                     'ruby-class': 'String'}).text = "rvm"
 
 
-def rbenv(parser, xml_parent, data):
+def rbenv(registry, xml_parent, data):
     """yaml: rbenv
     Set the rbenv implementation.
     Requires the Jenkins :jenkins-wiki:`rbenv plugin <rbenv+plugin>`.
@@ -784,7 +784,7 @@ def rbenv(parser, xml_parent, data):
                     'pluginid': 'rbenv'})
 
 
-def build_name(parser, xml_parent, data):
+def build_name(registry, xml_parent, data):
     """yaml: build-name
     Set the name of the build
     Requires the Jenkins :jenkins-wiki:`Build Name Setter Plugin
@@ -806,7 +806,7 @@ def build_name(parser, xml_parent, data):
     XML.SubElement(bsetter, 'template').text = data['name']
 
 
-def port_allocator(parser, xml_parent, data):
+def port_allocator(registry, xml_parent, data):
     """yaml: port-allocator
     Assign unique TCP port numbers
     Requires the Jenkins :jenkins-wiki:`Port Allocator Plugin
@@ -837,7 +837,7 @@ def port_allocator(parser, xml_parent, data):
         XML.SubElement(dpt, 'name').text = name
 
 
-def locks(parser, xml_parent, data):
+def locks(registry, xml_parent, data):
     """yaml: locks
     Control parallel execution of jobs.
     Requires the Jenkins :jenkins-wiki:`Locks and Latches Plugin
@@ -862,7 +862,7 @@ def locks(parser, xml_parent, data):
             XML.SubElement(lockwrapper, 'name').text = lock
 
 
-def copy_to_slave(parser, xml_parent, data):
+def copy_to_slave(registry, xml_parent, data):
     """yaml: copy-to-slave
     Copy files to slave before build
     Requires the Jenkins :jenkins-wiki:`Copy To Slave Plugin
@@ -908,7 +908,7 @@ def copy_to_slave(parser, xml_parent, data):
     XML.SubElement(cs, 'hudsonHomeRelative').text = 'false'
 
 
-def inject(parser, xml_parent, data):
+def inject(registry, xml_parent, data):
     """yaml: inject
     Add or override environment variables to the whole build process
     Requires the Jenkins :jenkins-wiki:`EnvInject Plugin <EnvInject+Plugin>`.
@@ -940,7 +940,7 @@ def inject(parser, xml_parent, data):
     XML.SubElement(info, 'loadFilesFromMaster').text = 'false'
 
 
-def inject_ownership_variables(parser, xml_parent, data):
+def inject_ownership_variables(registry, xml_parent, data):
     """yaml: inject-ownership-variables
     Inject ownership variables to the build as environment variables.
     Requires the Jenkins :jenkins-wiki:`EnvInject Plugin <EnvInject+Plugin>`
@@ -964,7 +964,7 @@ def inject_ownership_variables(parser, xml_parent, data):
         str(data.get('job-variables', False)).lower()
 
 
-def inject_passwords(parser, xml_parent, data):
+def inject_passwords(registry, xml_parent, data):
     """yaml: inject-passwords
     Inject passwords to the build as environment variables.
     Requires the Jenkins :jenkins-wiki:`EnvInject Plugin <EnvInject+Plugin>`.
@@ -995,7 +995,7 @@ def inject_passwords(parser, xml_parent, data):
             XML.SubElement(entry, 'value').text = password['password']
 
 
-def env_file(parser, xml_parent, data):
+def env_file(registry, xml_parent, data):
     """yaml: env-file
     Add or override environment variables to the whole build process
     Requires the Jenkins :jenkins-wiki:`Environment File Plugin
@@ -1015,7 +1015,7 @@ def env_file(parser, xml_parent, data):
         eib, 'filePath', data.get('properties-file'))
 
 
-def env_script(parser, xml_parent, data):
+def env_script(registry, xml_parent, data):
     """yaml: env-script
     Add or override environment variables to the whole build process.
     Requires the Jenkins :jenkins-wiki:`Environment Script Plugin
@@ -1054,7 +1054,7 @@ def env_script(parser, xml_parent, data):
     XML.SubElement(el, 'onlyRunOnParent').text = only_on_parent
 
 
-def jclouds(parser, xml_parent, data):
+def jclouds(registry, xml_parent, data):
     """yaml: jclouds
     Uses JClouds to provide slave launching on most of the currently
     usable Cloud infrastructures.
@@ -1108,7 +1108,7 @@ def jclouds(parser, xml_parent, data):
                        'JCloudsOneOffSlave')
 
 
-def openstack(parser, xml_parent, data):
+def openstack(registry, xml_parent, data):
     """yaml: openstack
     Provision slaves from OpenStack on demand.  Requires the Jenkins
     :jenkins-wiki:`Openstack Cloud Plugin <Openstack+Cloud+Plugin>`.
@@ -1169,7 +1169,7 @@ def openstack(parser, xml_parent, data):
         XML.SubElement(xml_parent, tag_prefix + 'JCloudsOneOffSlave')
 
 
-def build_user_vars(parser, xml_parent, data):
+def build_user_vars(registry, xml_parent, data):
     """yaml: build-user-vars
     Set environment variables to the value of the user that started the build.
     Requires the Jenkins :jenkins-wiki:`Build User Vars Plugin
@@ -1183,7 +1183,7 @@ def build_user_vars(parser, xml_parent, data):
     XML.SubElement(xml_parent, 'org.jenkinsci.plugins.builduser.BuildUser')
 
 
-def release(parser, xml_parent, data):
+def release(registry, xml_parent, data):
     """yaml: release
     Add release build configuration
     Requires the Jenkins :jenkins-wiki:`Release Plugin <Release+Plugin>`.
@@ -1219,7 +1219,7 @@ def release(parser, xml_parent, data):
     if parameters:
         pdef = XML.SubElement(relwrap, 'parameterDefinitions')
         for param in parameters:
-            parser.registry.dispatch('parameter', parser, pdef, param)
+            registry.dispatch('parameter', pdef, param)
 
     builder_steps = {
         'pre-build': 'preBuildSteps',
@@ -1229,13 +1229,12 @@ def release(parser, xml_parent, data):
     }
     for step in builder_steps.keys():
         for builder in data.get(step, []):
-            parser.registry.dispatch('builder', parser,
-                                     XML.SubElement(relwrap,
-                                                    builder_steps[step]),
-                                     builder)
+            registry.dispatch('builder',
+                              XML.SubElement(relwrap, builder_steps[step]),
+                              builder)
 
 
-def sauce_ondemand(parser, xml_parent, data):
+def sauce_ondemand(registry, xml_parent, data):
     """yaml: sauce-ondemand
     Allows you to integrate Sauce OnDemand with Jenkins.  You can
     automate the setup and tear down of Sauce Connect and integrate
@@ -1339,7 +1338,7 @@ def sauce_ondemand(parser, xml_parent, data):
     XML.SubElement(sauce, 'options').text = options
 
 
-def pathignore(parser, xml_parent, data):
+def pathignore(registry, xml_parent, data):
     """yaml: pathignore
     This plugin allows SCM-triggered jobs to ignore
     build requests if only certain paths have changed.
@@ -1375,7 +1374,7 @@ def pathignore(parser, xml_parent, data):
     })
 
 
-def pre_scm_buildstep(parser, xml_parent, data):
+def pre_scm_buildstep(registry, xml_parent, data):
     """yaml: pre-scm-buildstep
     Execute a Build Step before running the SCM
     Requires the Jenkins :jenkins-wiki:`pre-scm-buildstep <pre-scm-buildstep>`.
@@ -1405,11 +1404,11 @@ def pre_scm_buildstep(parser, xml_parent, data):
                          'PreSCMBuildStepsWrapper')
     bs = XML.SubElement(bsp, 'buildSteps')
     for step in data:
-        for edited_node in create_builders(parser, step):
+        for edited_node in create_builders(registry, step):
             bs.append(edited_node)
 
 
-def logstash(parser, xml_parent, data):
+def logstash(registry, xml_parent, data):
     """yaml: logstash build wrapper
     Dump the Jenkins console output to Logstash
     Requires the Jenkins :jenkins-wiki:`logstash plugin <Logstash+Plugin>`.
@@ -1468,7 +1467,7 @@ def logstash(parser, xml_parent, data):
         key_sub_element.text = str(redis_config.get('key', 'logstash'))
 
 
-def mongo_db(parser, xml_parent, data):
+def mongo_db(registry, xml_parent, data):
     """yaml: mongo-db build wrapper
     Initalizes a MongoDB database while running the build.
     Requires the Jenkins :jenkins-wiki:`MongoDB plugin <MongoDB+Plugin>`.
@@ -1502,7 +1501,7 @@ def mongo_db(parser, xml_parent, data):
         'start-timeout', '0'))
 
 
-def delivery_pipeline(parser, xml_parent, data):
+def delivery_pipeline(registry, xml_parent, data):
     """yaml: delivery-pipeline
     If enabled the job will create a version based on the template.
     The version will be set to the environment variable PIPELINE_VERSION and
@@ -1530,7 +1529,7 @@ def delivery_pipeline(parser, xml_parent, data):
         'set-display-name', False)).lower()
 
 
-def matrix_tie_parent(parser, xml_parent, data):
+def matrix_tie_parent(registry, xml_parent, data):
     """yaml: matrix-tie-parent
     Tie parent to a node.
     Requires the Jenkins :jenkins-wiki:`Matrix Tie Parent Plugin
@@ -1550,7 +1549,7 @@ def matrix_tie_parent(parser, xml_parent, data):
     XML.SubElement(mtp, 'labelName').text = data['node']
 
 
-def exclusion(parser, xml_parent, data):
+def exclusion(registry, xml_parent, data):
     """yaml: exclusion
     Add a resource to use for critical sections to establish a mutex on. If
     another job specifies the same resource, the second job will wait for the
@@ -1577,7 +1576,7 @@ def exclusion(parser, xml_parent, data):
         XML.SubElement(dit, 'name').text = str(resource).upper()
 
 
-def ssh_agent_credentials(parser, xml_parent, data):
+def ssh_agent_credentials(registry, xml_parent, data):
     """yaml: ssh-agent-credentials
     Sets up the user for the ssh agent plugin for jenkins.
 
@@ -1645,7 +1644,7 @@ def ssh_agent_credentials(parser, xml_parent, data):
         XML.SubElement(entry_xml, xml_key).text = user
 
 
-def credentials_binding(parser, xml_parent, data):
+def credentials_binding(registry, xml_parent, data):
     """yaml: credentials-binding
     Binds credentials to environment variables using the credentials binding
     plugin for jenkins.
@@ -1728,7 +1727,7 @@ def credentials_binding(parser, xml_parent, data):
             credential_xml.text = params.get('credential-id')
 
 
-def custom_tools(parser, xml_parent, data):
+def custom_tools(registry, xml_parent, data):
     """yaml: custom-tools
     Requires the Jenkins :jenkins-wiki:`Custom Tools Plugin
     <Custom+Tools+Plugin>`.
@@ -1766,7 +1765,7 @@ def custom_tools(parser, xml_parent, data):
                    'convertHomesToUppercase').text = convert_home
 
 
-def nodejs_installator(parser, xml_parent, data):
+def nodejs_installator(registry, xml_parent, data):
     """yaml: nodejs-installator
     Requires the Jenkins :jenkins-wiki:`NodeJS Plugin
     <NodeJS+Plugin>`.
@@ -1788,7 +1787,7 @@ def nodejs_installator(parser, xml_parent, data):
         raise MissingAttributeError(e.args[0])
 
 
-def xvnc(parser, xml_parent, data):
+def xvnc(registry, xml_parent, data):
     """yaml: xvnc
     Enable xvnc during the build.
     Requires the Jenkins :jenkins-wiki:`xvnc plugin <Xvnc+Plugin>`.
@@ -1811,7 +1810,7 @@ def xvnc(parser, xml_parent, data):
         data.get('xauthority', True)).lower()
 
 
-def job_log_logger(parser, xml_parent, data):
+def job_log_logger(registry, xml_parent, data):
     """yaml: job-log-logger
     Enable writing the job log to the underlying logging system.
     Requires the Jenkins :jenkins-wiki:`Job Log Logger plugin
@@ -1832,7 +1831,7 @@ def job_log_logger(parser, xml_parent, data):
         data.get('suppress-empty', True)).lower()
 
 
-def xvfb(parser, xml_parent, data):
+def xvfb(registry, xml_parent, data):
     """yaml: xvfb
     Enable xvfb during the build.
     Requires the Jenkins :jenkins-wiki:`Xvfb Plugin <Xvfb+Plugin>`.
@@ -1893,7 +1892,7 @@ def xvfb(parser, xml_parent, data):
         'shutdown-with-build', False)).lower()
 
 
-def android_emulator(parser, xml_parent, data):
+def android_emulator(registry, xml_parent, data):
     """yaml: android-emulator
     Automates many Android development tasks including SDK installation,
     build file generation, emulator creation and launch,
@@ -1979,7 +1978,7 @@ def android_emulator(parser, xml_parent, data):
     XML.SubElement(root, 'executable').text = str(data.get('exe', ''))
 
 
-def artifactory_maven(parser, xml_parent, data):
+def artifactory_maven(registry, xml_parent, data):
     """yaml: artifactory-maven
     Wrapper for non-Maven projects. Requires the
     :jenkins-wiki:`Artifactory Plugin <Artifactory+Plugin>`
@@ -2024,7 +2023,7 @@ def artifactory_maven(parser, xml_parent, data):
                 'release-repo-key', '')
 
 
-def artifactory_generic(parser, xml_parent, data):
+def artifactory_generic(registry, xml_parent, data):
     """yaml: artifactory-generic
     Wrapper for non-Maven projects. Requires the
     :jenkins-wiki:`Artifactory Plugin <Artifactory+Plugin>`
@@ -2083,7 +2082,7 @@ def artifactory_generic(parser, xml_parent, data):
     artifactory_common_details(details, data)
 
     # Get plugin information to maintain backwards compatibility
-    info = parser.registry.get_plugin_info('artifactory')
+    info = registry.get_plugin_info('artifactory')
     version = pkg_resources.parse_version(info.get('version', '0'))
 
     if version >= pkg_resources.parse_version('2.3.0'):
@@ -2120,7 +2119,7 @@ def artifactory_generic(parser, xml_parent, data):
     artifactory_env_vars_patterns(artifactory, data)
 
 
-def artifactory_maven_freestyle(parser, xml_parent, data):
+def artifactory_maven_freestyle(registry, xml_parent, data):
     """yaml: artifactory-maven-freestyle
     Wrapper for Free Stype projects. Requires the Artifactory plugin.
     Requires :jenkins-wiki:`Artifactory Plugin <Artifactory+Plugin>`
@@ -2270,8 +2269,8 @@ class Wrappers(jenkins_jobs.modules.base.Base):
     component_type = 'wrapper'
     component_list_type = 'wrappers'
 
-    def gen_xml(self, parser, xml_parent, data):
+    def gen_xml(self, xml_parent, data):
         wrappers = XML.SubElement(xml_parent, 'buildWrappers')
 
         for wrap in data.get('wrappers', []):
-            self.registry.dispatch('wrapper', parser, wrappers, wrap)
+            self.registry.dispatch('wrapper', wrappers, wrap)
