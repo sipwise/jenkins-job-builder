@@ -135,10 +135,11 @@ ZUUL_POST_PARAMETERS = [
 class Zuul(jenkins_jobs.modules.base.Base):
     sequence = 0
 
-    def handle_data(self, parser):
+    def handle_data(self, yamlparser_dict):
         changed = False
-        jobs = itertools.chain(parser.data.get('job', {}).values(),
-                               parser.data.get('job-template', {}).values())
+        jobs = itertools.chain(
+            yamlparser_dict.get('job', {}).values(),
+            yamlparser_dict.get('job-template', {}).values())
         for job in jobs:
             triggers = job.get('triggers')
             if not triggers:
