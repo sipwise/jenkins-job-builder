@@ -42,6 +42,7 @@ import jenkins_jobs.local_yaml as yaml
 from jenkins_jobs.parser import YamlParser
 from jenkins_jobs.registry import ModuleRegistry
 from jenkins_jobs.xml_config import XmlJob
+from jenkins_jobs.xml_config import XmlJobGenerator
 from jenkins_jobs.modules import (project_flow,
                                   project_matrix,
                                   project_maven,
@@ -200,15 +201,17 @@ class SingleJobTestCase(BaseTestCase):
 
         registry = ModuleRegistry(config)
         registry.set_parser_data(parser.data)
-        # Generate the XML tree
-        parser.expandYaml(registry)
-        parser.generateXML(registry)
+        job_data_list = parser.expandYaml(registry)
 
-        parser.xml_jobs.sort(key=operator.attrgetter('name'))
+        # Generate the XML tree
+        xml_generator = XmlJobGenerator(registry)
+        xml_jobs = xml_generator.generateXML(job_data_list)
+
+        xml_jobs.sort(key=operator.attrgetter('name'))
 
         # Prettify generated XML
         pretty_xml = u"\n".join(job.output().decode('utf-8')
-                                for job in parser.xml_jobs)
+                                for job in xml_jobs)
 
         self.assertThat(
             pretty_xml,

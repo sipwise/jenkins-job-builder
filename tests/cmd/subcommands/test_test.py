@@ -148,7 +148,8 @@ class TestTests(CmdTestsBase):
                     e = self.assertRaises(UnicodeError, jenkins_jobs.execute)
         self.assertIn("'ascii' codec can't encode character", str(e))
 
-    @mock.patch('jenkins_jobs.cli.subcommand.update.YamlParser.generateXML')
+    @mock.patch(
+        'jenkins_jobs.cli.subcommand.update.XmlJobGenerator.generateXML')
     @mock.patch('jenkins_jobs.cli.subcommand.update.ModuleRegistry')
     def test_plugins_info_stub_option(self, registry_mock, generateXML_mock):
         """
@@ -173,7 +174,8 @@ class TestTests(CmdTestsBase):
         registry_mock.assert_called_with(mock.ANY,
                                          plugins_info_list)
 
-    @mock.patch('jenkins_jobs.cli.subcommand.update.YamlParser.generateXML')
+    @mock.patch(
+        'jenkins_jobs.cli.subcommand.update.XmlJobGenerator.generateXML')
     @mock.patch('jenkins_jobs.cli.subcommand.update.ModuleRegistry')
     def test_bogus_plugins_info_stub_option(self, registry_mock,
                                             generateXML_mock):
