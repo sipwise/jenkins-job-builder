@@ -40,7 +40,7 @@ from jenkins_jobs.errors import MissingAttributeError
 from jenkins_jobs.modules.helpers import copyartifact_build_selector
 
 
-def base_param(parser, xml_parent, data, do_default, ptype):
+def base_param(registry, xml_parent, data, do_default, ptype):
     pdef = XML.SubElement(xml_parent, ptype)
     XML.SubElement(pdef, 'name').text = data['name']
     XML.SubElement(pdef, 'description').text = data.get('description', '')
@@ -53,7 +53,7 @@ def base_param(parser, xml_parent, data, do_default, ptype):
     return pdef
 
 
-def string_param(parser, xml_parent, data):
+def string_param(registry, xml_parent, data):
     """yaml: string
     A string parameter.
 
@@ -69,11 +69,11 @@ def string_param(parser, xml_parent, data):
             default: bar
             description: "A parameter named FOO, defaults to 'bar'."
     """
-    base_param(parser, xml_parent, data, True,
+    base_param(registry, xml_parent, data, True,
                'hudson.model.StringParameterDefinition')
 
 
-def password_param(parser, xml_parent, data):
+def password_param(registry, xml_parent, data):
     """yaml: password
     A password parameter.
 
@@ -89,11 +89,11 @@ def password_param(parser, xml_parent, data):
             default: 1HSC0Ts6E161FysGf+e1xasgsHkgleLh09JUTYnipPvw=
             description: "A parameter named FOO."
     """
-    base_param(parser, xml_parent, data, True,
+    base_param(registry, xml_parent, data, True,
                'hudson.model.PasswordParameterDefinition')
 
 
-def bool_param(parser, xml_parent, data):
+def bool_param(registry, xml_parent, data):
     """yaml: bool
     A boolean parameter.
 
@@ -110,11 +110,11 @@ def bool_param(parser, xml_parent, data):
             description: "A parameter named FOO, defaults to 'false'."
     """
     data['default'] = str(data.get('default', False)).lower()
-    base_param(parser, xml_parent, data, True,
+    base_param(registry, xml_parent, data, True,
                'hudson.model.BooleanParameterDefinition')
 
 
-def file_param(parser, xml_parent, data):
+def file_param(registry, xml_parent, data):
     """yaml: file
     A file parameter.
 
@@ -128,11 +128,11 @@ def file_param(parser, xml_parent, data):
             name: test.txt
             description: "Upload test.txt."
     """
-    base_param(parser, xml_parent, data, False,
+    base_param(registry, xml_parent, data, False,
                'hudson.model.FileParameterDefinition')
 
 
-def text_param(parser, xml_parent, data):
+def text_param(registry, xml_parent, data):
     """yaml: text
     A text parameter.
 
@@ -148,11 +148,11 @@ def text_param(parser, xml_parent, data):
             default: bar
             description: "A parameter named FOO, defaults to 'bar'."
     """
-    base_param(parser, xml_parent, data, True,
+    base_param(registry, xml_parent, data, True,
                'hudson.model.TextParameterDefinition')
 
 
-def label_param(parser, xml_parent, data):
+def label_param(registry, xml_parent, data):
     """yaml: label
     A node label parameter.
 
@@ -168,12 +168,12 @@ def label_param(parser, xml_parent, data):
             default: precise
             description: "The node on which to run the job"
     """
-    base_param(parser, xml_parent, data, True,
+    base_param(registry, xml_parent, data, True,
                'org.jvnet.jenkins.plugins.nodelabelparameter.'
                'LabelParameterDefinition')
 
 
-def node_param(parser, xml_parent, data):
+def node_param(registry, xml_parent, data):
     """yaml: node
     Defines a list of nodes where this job could potentially be executed on.
     Restrict where this project can be run, If your using a node or label
@@ -201,7 +201,7 @@ def node_param(parser, xml_parent, data):
        :language: yaml
 
     """
-    pdef = base_param(parser, xml_parent, data, False,
+    pdef = base_param(registry, xml_parent, data, False,
                       'org.jvnet.jenkins.plugins.nodelabelparameter.'
                       'NodeParameterDefinition')
     default = XML.SubElement(pdef, 'defaultSlaves')
@@ -227,7 +227,7 @@ def node_param(parser, xml_parent, data):
         data.get('allowed-multiselect', False)).lower()
 
 
-def choice_param(parser, xml_parent, data):
+def choice_param(registry, xml_parent, data):
     """yaml: choice
     A single selection parameter.
 
@@ -245,7 +245,7 @@ def choice_param(parser, xml_parent, data):
               - glance
             description: "On which project to run?"
     """
-    pdef = base_param(parser, xml_parent, data, False,
+    pdef = base_param(registry, xml_parent, data, False,
                       'hudson.model.ChoiceParameterDefinition')
     choices = XML.SubElement(pdef, 'choices',
                              {'class': 'java.util.Arrays$ArrayList'})
@@ -254,7 +254,7 @@ def choice_param(parser, xml_parent, data):
         XML.SubElement(a, 'string').text = choice
 
 
-def run_param(parser, xml_parent, data):
+def run_param(registry, xml_parent, data):
     """yaml: run
     A run parameter.
 
@@ -268,12 +268,12 @@ def run_param(parser, xml_parent, data):
        :language: yaml
 
     """
-    pdef = base_param(parser, xml_parent, data, False,
+    pdef = base_param(registry, xml_parent, data, False,
                       'hudson.model.RunParameterDefinition')
     XML.SubElement(pdef, 'projectName').text = data['project-name']
 
 
-def extended_choice_param(parser, xml_parent, data):
+def extended_choice_param(registry, xml_parent, data):
     """yaml: extended-choice
     Creates an extended choice parameter where values can be read from a file
     Requires the Jenkins :jenkins-wiki:`Extended Choice Parameter Plugin
@@ -309,7 +309,7 @@ def extended_choice_param(parser, xml_parent, data):
        :language: yaml
 
     """
-    pdef = base_param(parser, xml_parent, data, False,
+    pdef = base_param(registry, xml_parent, data, False,
                       'com.cwctravel.hudson.plugins.'
                       'extended__choice__parameter.'
                       'ExtendedChoiceParameterDefinition')
@@ -349,7 +349,7 @@ def extended_choice_param(parser, xml_parent, data):
         'default-property-key', '')
 
 
-def validating_string_param(parser, xml_parent, data):
+def validating_string_param(registry, xml_parent, data):
     """yaml: validating-string
     A validating string parameter
     Requires the Jenkins :jenkins-wiki:`Validating String Plugin
@@ -371,14 +371,14 @@ def validating_string_param(parser, xml_parent, data):
             regex: [A-Za-z]*
             msg: Your entered value failed validation
     """
-    pdef = base_param(parser, xml_parent, data, True,
+    pdef = base_param(registry, xml_parent, data, True,
                       'hudson.plugins.validating__string__parameter.'
                       'ValidatingStringParameterDefinition')
     XML.SubElement(pdef, 'regex').text = data['regex']
     XML.SubElement(pdef, 'failedValidationMessage').text = data['msg']
 
 
-def svn_tags_param(parser, xml_parent, data):
+def svn_tags_param(registry, xml_parent, data):
     """yaml: svn-tags
     A svn tag parameter
     Requires the Jenkins :jenkins-wiki:`Parameterized Trigger Plugin
@@ -400,7 +400,7 @@ def svn_tags_param(parser, xml_parent, data):
             url: http://svn.example.com/repo
             filter: [A-za-z0-9]*
     """
-    pdef = base_param(parser, xml_parent, data, True,
+    pdef = base_param(registry, xml_parent, data, True,
                       'hudson.scm.listtagsparameter.'
                       'ListSubversionTagsParameterDefinition')
     XML.SubElement(pdef, 'tagsDir').text = data['url']
@@ -411,7 +411,7 @@ def svn_tags_param(parser, xml_parent, data):
     XML.SubElement(pdef, 'uuid').text = "1-1-1-1-1"
 
 
-def dynamic_choice_param(parser, xml_parent, data):
+def dynamic_choice_param(registry, xml_parent, data):
     """yaml: dynamic-choice
     Dynamic Choice Parameter
     Requires the Jenkins :jenkins-wiki:`Jenkins Dynamic Parameter Plug-in
@@ -436,10 +436,11 @@ def dynamic_choice_param(parser, xml_parent, data):
             remote: false
             read-only: false
     """
-    dynamic_param_common(parser, xml_parent, data, 'ChoiceParameterDefinition')
+    dynamic_param_common(registry, xml_parent, data,
+                         'ChoiceParameterDefinition')
 
 
-def dynamic_string_param(parser, xml_parent, data):
+def dynamic_string_param(registry, xml_parent, data):
     """yaml: dynamic-string
     Dynamic Parameter
     Requires the Jenkins :jenkins-wiki:`Jenkins Dynamic Parameter Plug-in
@@ -464,10 +465,11 @@ def dynamic_string_param(parser, xml_parent, data):
             remote: false
             read-only: false
     """
-    dynamic_param_common(parser, xml_parent, data, 'StringParameterDefinition')
+    dynamic_param_common(registry, xml_parent, data,
+                         'StringParameterDefinition')
 
 
-def dynamic_choice_scriptler_param(parser, xml_parent, data):
+def dynamic_choice_scriptler_param(registry, xml_parent, data):
     """yaml: dynamic-choice-scriptler
     Dynamic Choice Parameter (Scriptler)
     Requires the Jenkins :jenkins-wiki:`Jenkins Dynamic Parameter Plug-in
@@ -500,11 +502,11 @@ def dynamic_choice_scriptler_param(parser, xml_parent, data):
             remote: false
             read-only: false
     """
-    dynamic_scriptler_param_common(parser, xml_parent, data,
+    dynamic_scriptler_param_common(registry, xml_parent, data,
                                    'ScriptlerChoiceParameterDefinition')
 
 
-def dynamic_string_scriptler_param(parser, xml_parent, data):
+def dynamic_string_scriptler_param(registry, xml_parent, data):
     """yaml: dynamic-string-scriptler
     Dynamic Parameter (Scriptler)
     Requires the Jenkins :jenkins-wiki:`Jenkins Dynamic Parameter Plug-in
@@ -537,12 +539,12 @@ def dynamic_string_scriptler_param(parser, xml_parent, data):
             remote: false
             read-only: false
     """
-    dynamic_scriptler_param_common(parser, xml_parent, data,
+    dynamic_scriptler_param_common(registry, xml_parent, data,
                                    'ScriptlerStringParameterDefinition')
 
 
-def dynamic_param_common(parser, xml_parent, data, ptype):
-    pdef = base_param(parser, xml_parent, data, False,
+def dynamic_param_common(registry, xml_parent, data, ptype):
+    pdef = base_param(registry, xml_parent, data, False,
                       'com.seitenbau.jenkins.plugins.dynamicparameter.'
                       + ptype)
     XML.SubElement(pdef, '__remote').text = str(
@@ -562,8 +564,8 @@ def dynamic_param_common(parser, xml_parent, data, ptype):
         data.get('read-only', False)).lower()
 
 
-def dynamic_scriptler_param_common(parser, xml_parent, data, ptype):
-    pdef = base_param(parser, xml_parent, data, False,
+def dynamic_scriptler_param_common(registry, xml_parent, data, ptype):
+    pdef = base_param(registry, xml_parent, data, False,
                       'com.seitenbau.jenkins.plugins.dynamicparameter.'
                       'scriptler.' + ptype)
     XML.SubElement(pdef, '__remote').text = str(
@@ -585,7 +587,7 @@ def dynamic_scriptler_param_common(parser, xml_parent, data, ptype):
         'read-only', False)).lower()
 
 
-def matrix_combinations_param(parser, xml_parent, data):
+def matrix_combinations_param(registry, xml_parent, data):
     """yaml: matrix-combinations
     Matrix combinations parameter
     Requires the Jenkins :jenkins-wiki:`Matrix Combinations Plugin
@@ -619,7 +621,7 @@ def matrix_combinations_param(parser, xml_parent, data):
     return pdef
 
 
-def copyartifact_build_selector_param(parser, xml_parent, data):
+def copyartifact_build_selector_param(registry, xml_parent, data):
     """yaml: copyartifact-build-selector
 
     Control via a build parameter, which build the copyartifact plugin should
@@ -660,7 +662,7 @@ class Parameters(jenkins_jobs.modules.base.Base):
     component_type = 'parameter'
     component_list_type = 'parameters'
 
-    def gen_xml(self, parser, xml_parent, data):
+    def gen_xml(self, xml_parent, data):
         properties = xml_parent.find('properties')
         if properties is None:
             properties = XML.SubElement(xml_parent, 'properties')
@@ -681,5 +683,4 @@ class Parameters(jenkins_jobs.modules.base.Base):
             if pdefs is None:
                 pdefs = XML.SubElement(pdefp, 'parameterDefinitions')
             for param in parameters:
-                self.registry.dispatch('parameter',
-                                       parser, pdefs, param)
+                self.registry.dispatch('parameter', pdefs, param)
