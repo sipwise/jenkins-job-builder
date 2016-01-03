@@ -206,7 +206,7 @@ def build_gerrit_skip_votes(xml_parent, data):
             XML.SubElement(skip_vote_node, tag_name).text = 'false'
 
 
-def gerrit(parser, xml_parent, data):
+def gerrit(registry, xml_parent, data):
     """yaml: gerrit
 
     Trigger on a Gerrit event.
@@ -620,7 +620,7 @@ def gerrit(parser, xml_parent, data):
         data.get('server-name', '__ANY__'))
 
 
-def pollscm(parser, xml_parent, data):
+def pollscm(registry, xml_parent, data):
     """yaml: pollscm
     Poll the SCM to determine if there has been a change.
 
@@ -677,7 +677,7 @@ def build_content_type(xml_parent, entries, namespace, collection_suffix,
             XML.SubElement(content_entry, element_name).text = entry
 
 
-def pollurl(parser, xml_parent, data):
+def pollurl(registry, xml_parent, data):
     """yaml: pollurl
     Trigger when the HTTP response from a URL changes.
     Requires the Jenkins :jenkins-wiki:`URLTrigger Plugin <URLTrigger+Plugin>`.
@@ -779,7 +779,7 @@ def pollurl(parser, xml_parent, data):
                                    'ContentEntry', *content_type[0:3])
 
 
-def timed(parser, xml_parent, data):
+def timed(registry, xml_parent, data):
     """yaml: timed
     Trigger builds at certain times.
 
@@ -794,7 +794,7 @@ def timed(parser, xml_parent, data):
     XML.SubElement(scmtrig, 'spec').text = data
 
 
-def bitbucket(parser, xml_parent, data):
+def bitbucket(registry, xml_parent, data):
     """yaml: bitbucket
     Trigger a job when bitbucket repository is pushed to.
     Requires the Jenkins :jenkins-wiki:`BitBucket Plugin
@@ -809,7 +809,7 @@ def bitbucket(parser, xml_parent, data):
     XML.SubElement(bbtrig, 'spec').text = ''
 
 
-def github(parser, xml_parent, data):
+def github(registry, xml_parent, data):
     """yaml: github
     Trigger a job when github repository is pushed to.
     Requires the Jenkins :jenkins-wiki:`GitHub Plugin <GitHub+Plugin>`.
@@ -824,7 +824,7 @@ def github(parser, xml_parent, data):
     XML.SubElement(ghtrig, 'spec').text = ''
 
 
-def github_pull_request(parser, xml_parent, data):
+def github_pull_request(registry, xml_parent, data):
     """yaml: github-pull-request
     Build pull requests in github and report results.
     Requires the Jenkins :jenkins-wiki:`GitHub Pull Request Builder Plugin
@@ -1031,7 +1031,7 @@ def github_pull_request(parser, xml_parent, data):
             XML.SubElement(error_comment_elem, 'result').text = 'ERROR'
 
 
-def gitlab_merge_request(parser, xml_parent, data):
+def gitlab_merge_request(registry, xml_parent, data):
     """yaml: gitlab-merge-request
     Build merge requests in gitlab and report results.
     Requires the Jenkins :jenkins-wiki:`Gitlab MergeRequest Builder Plugin.
@@ -1063,7 +1063,7 @@ def gitlab_merge_request(parser, xml_parent, data):
     XML.SubElement(ghprb, '__projectPath').text = data.get('project-path')
 
 
-def gitlab(parser, xml_parent, data):
+def gitlab(registry, xml_parent, data):
     """yaml: gitlab
     Makes Jenkins act like a GitlabCI server
     Requires the Jenkins :jenkins-wiki:`Gitlab Plugin.
@@ -1129,7 +1129,7 @@ def gitlab(parser, xml_parent, data):
         _add_xml(gitlab, xml_name, value)
 
 
-def build_result(parser, xml_parent, data):
+def build_result(registry, xml_parent, data):
     """yaml: build-result
     Configure jobB to monitor jobA build result. A build is scheduled if there
     is a new build result that matches your criteria (unstable, failure, ...).
@@ -1196,7 +1196,7 @@ def build_result(parser, xml_parent, data):
             XML.SubElement(model_checked, 'checked').text = result_dict[result]
 
 
-def reverse(parser, xml_parent, data):
+def reverse(registry, xml_parent, data):
     """yaml: reverse
     This trigger can be configured in the UI using the checkbox with the
     following text: 'Build after other projects are built'.
@@ -1251,7 +1251,7 @@ def reverse(parser, xml_parent, data):
         str(hudson_model.THRESHOLDS[result]['complete']).lower()
 
 
-def monitor_folders(parser, xml_parent, data):
+def monitor_folders(registry, xml_parent, data):
     """yaml: monitor-folders
     Configure Jenkins to monitor folders.
     Requires the Jenkins :jenkins-wiki:`Filesystem Trigger Plugin
@@ -1294,7 +1294,7 @@ def monitor_folders(parser, xml_parent, data):
         not data.get('check-fewer', True)).lower()
 
 
-def monitor_files(parser, xml_parent, data):
+def monitor_files(registry, xml_parent, data):
     """yaml: monitor-files
     Configure Jenkins to monitor files.
     Requires the Jenkins :jenkins-wiki:`Filesystem Trigger Plugin
@@ -1438,7 +1438,7 @@ def monitor_files(parser, xml_parent, data):
                 file_info.get('ignore-modificaton-date', True)).lower()
 
 
-def ivy(parser, xml_parent, data):
+def ivy(registry, xml_parent, data):
     """yaml: ivy
     Poll with an Ivy script
     Requires the Jenkins :jenkins-wiki:`IvyTrigger Plugin
@@ -1486,7 +1486,7 @@ def ivy(parser, xml_parent, data):
         XML.SubElement(it, 'triggerLabel').text = label
 
 
-def script(parser, xml_parent, data):
+def script(registry, xml_parent, data):
     """yaml: script
     Triggers the job using shell or batch script.
     Requires the Jenkins :jenkins-wiki:`ScriptTrigger Plugin
@@ -1531,7 +1531,7 @@ def script(parser, xml_parent, data):
         XML.SubElement(st, 'triggerLabel').text = label
 
 
-def groovy_script(parser, xml_parent, data):
+def groovy_script(registry, xml_parent, data):
     """yaml: groovy-script
     Triggers the job using a groovy script.
     Requires the Jenkins :jenkins-wiki:`ScriptTrigger Plugin
@@ -1583,7 +1583,7 @@ def groovy_script(parser, xml_parent, data):
         XML.SubElement(gst, 'triggerLabel').text = label
 
 
-def rabbitmq(parser, xml_parent, data):
+def rabbitmq(registry, xml_parent, data):
     """yaml: rabbitmq
     This plugin triggers build using remote build message in RabbitMQ queue.
     Requires the Jenkins :jenkins-wiki:`RabbitMQ Build Trigger Plugin
@@ -1617,11 +1617,11 @@ class Triggers(jenkins_jobs.modules.base.Base):
     component_type = 'trigger'
     component_list_type = 'triggers'
 
-    def gen_xml(self, parser, xml_parent, data):
+    def gen_xml(self, xml_parent, data):
         triggers = data.get('triggers', [])
         if not triggers:
             return
 
         trig_e = XML.SubElement(xml_parent, 'triggers', {'class': 'vector'})
         for trigger in triggers:
-            self.registry.dispatch('trigger', parser, trig_e, trigger)
+            self.registry.dispatch('trigger', trig_e, trigger)
