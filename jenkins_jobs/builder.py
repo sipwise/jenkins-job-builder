@@ -373,3 +373,8 @@ class Builder(object):
                      'will change in future versions to the signature of the '
                      'new parallel_update_job')
         return self.update_jobs(input_fn, jobs_glob, output)
+
+
+__all__ = [
+    Jenkins
+]
