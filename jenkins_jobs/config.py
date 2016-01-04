@@ -21,6 +21,8 @@ import logging
 import os
 
 from six.moves import configparser, StringIO
+from six import PY2
+from six import PY3
 
 from jenkins_jobs import builder
 from jenkins_jobs.errors import JJBConfigException
@@ -111,7 +113,12 @@ class JJBConfig(object):
                                 "config values.".format(conf))
 
         if config_fp is not None:
-            config_parser.readfp(config_fp)
+            if PY2:
+                config_parser.readfp(config_fp)
+            elif PY3:
+                config_parser.read_file(config_fp)
+            else:
+                raise JJBConfigException("""Unsupported Python version!""")
 
         self.config_parser = config_parser
 
@@ -135,7 +142,12 @@ class JJBConfig(object):
         """
         config = configparser.ConfigParser()
         # Load default config always
-        config.readfp(StringIO(DEFAULT_CONF))
+        if PY2:
+            config.readfp(StringIO(DEFAULT_CONF))
+        elif PY3:
+            config.read_file(StringIO(DEFAULT_CONF))
+        else:
+            raise JJBConfigException("""Unsupported Python version!""")
         return config
 
     def _read_config_file(self, config_filename):
