@@ -122,7 +122,7 @@ class JJBConfig(object):
                 if config_file_required:
                     raise e
                 else:
-                    logger.warn("""Config file, {0}, not found. Using default
+                    logger.warning("""Config file, {0}, not found. Using default
                     config values.""".format(conf))
 
         if config_fp is not None:
@@ -252,7 +252,7 @@ class JJBConfig(object):
                         key = 'CTRL+Z'
                     else:
                         key = 'CTRL+D'
-                    logger.warn("""Reading configuration from STDIN. Press %s
+                    logger.warning("""Reading configuration from STDIN. Press %s
                     to end input.""", key)
             else:
                 # take list of paths

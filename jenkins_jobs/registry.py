@@ -227,9 +227,10 @@ class ModuleRegistry(object):
         component = self.parser_data.get(component_type, {}).get(name)
         if component:
             if name in eps:
-                logger.warn("You have a macro ('%s') defined for '%s' "
-                            "component type that is masking an inbuilt "
-                            "definition" % (name, component_type))
+                logger.warning(
+                    "You have a macro ('%s') defined for '%s' "
+                    "component type that is masking an inbuilt "
+                    "definition" % (name, component_type))
 
             for b in component[component_list_type]:
                 # Pass component_data in as template data to this function

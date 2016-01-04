@@ -80,7 +80,7 @@ def archive(registry, xml_parent, data):
     # backward compatibility
     latest_only = data.get('latest_only', False)
     if 'latest_only' in data:
-        logger.warn('latest_only is deprecated please use latest-only')
+        logger.warning('latest_only is deprecated please use latest-only')
     if 'latest-only' in data:
         latest_only = data['latest-only']
     if latest_only:
@@ -668,7 +668,7 @@ def coverage(registry, xml_parent, data):
        :language: yaml
     """
     logger = logging.getLogger(__name__)
-    logger.warn("Coverage function is deprecated. Switch to cobertura.")
+    logger.warning("Coverage function is deprecated. Switch to cobertura.")
 
     cobertura = XML.SubElement(xml_parent,
                                'hudson.plugins.cobertura.CoberturaPublisher')
@@ -1153,8 +1153,8 @@ def xunit(registry, xml_parent, data):
     for configured_type in data['types']:
         type_name = next(iter(configured_type.keys()))
         if type_name not in implemented_types:
-            logger.warn("Requested xUnit type '%s' is not yet supported",
-                        type_name)
+            logger.warning("Requested xUnit type '%s' is not yet supported",
+                           type_name)
         else:
             # Append for generation
             supported_types.append(configured_type)
@@ -1181,7 +1181,7 @@ def xunit(registry, xml_parent, data):
     xmlthresholds = XML.SubElement(xunit, 'thresholds')
     for t in data.get('thresholds', []):
         if not ('failed' in t or 'skipped' in t):
-            logger.warn(
+            logger.warning(
                 "Unrecognized threshold, should be 'failed' or 'skipped'")
             continue
         elname = ("org.jenkinsci.plugins.xunit.threshold.%sThreshold" %
@@ -2050,7 +2050,7 @@ def groovy_postbuild(registry, xml_parent, data):
     logger = logging.getLogger("%s:groovy-postbuild" % __name__)
     # Backward compatibility with old format
     if isinstance(data, six.string_types):
-        logger.warn(
+        logger.warning(
             "You use depricated configuration, please follow documentation "
             "to change configuration. It is not going to be supported in "
             "future releases!"

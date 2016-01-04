@@ -129,14 +129,14 @@ class HipChat(jenkins_jobs.modules.base.Base):
         if 'rooms' in hipchat:
             room.text = ",".join(hipchat['rooms'])
         elif 'room' in hipchat:
-            logger.warn("'room' is deprecated, please use 'rooms'")
+            logger.warning("'room' is deprecated, please use 'rooms'")
             room.text = hipchat['room']
 
         # Handle backwards compatibility 'start-notify' but all add an element
         # of standardization with notify-*
         if hipchat.get('start-notify'):
-            logger.warn("'start-notify' is deprecated, please use "
-                        "'notify-start'")
+            logger.warning("'start-notify' is deprecated, please use "
+                           "'notify-start'")
         XML.SubElement(pdefhip, 'startNotification').text = str(
             hipchat.get('notify-start', hipchat.get('start-notify',
                                                     False))).lower()
