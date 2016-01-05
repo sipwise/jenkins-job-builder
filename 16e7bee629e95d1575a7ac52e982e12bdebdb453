@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa69d971_4a65c11b",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-01-05T21:05:17Z",
+      "side": 1,
+      "message": "I\u0027m curious why this function exists on the Builder class. It seems to me like it would be a better fit for the XmlJob and XmlView classes (or rather, the higher-level JenkinsXmlConfig object I have suggested in this series of comments).\n\nI don\u0027t see any usage of Builder attributes or methods within this method so I suspect moving it would not be too difficult.",
+      "revId": "16e7bee629e95d1575a7ac52e982e12bdebdb453",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_0a8109c3",
+        "filename": "jenkins_jobs/xml_config.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-01-05T21:05:17Z",
+      "side": 1,
+      "message": "I understand the desire to make these distinct object types since their behavior may differ in the future but the current implementation is an exact copy of XmlJob so my preference is that XmlView either subclass XmlJob or create a parent class they can both inherit from, maybe call it XmlConfig or JenkinsXmlConfig.\n\nIn the 2.x series I have currently factored out a \"XmlJobGenerator\" out of the YamlParser but I would change that to \"XmlConfigGenerator\" and handle generating either XmlJob or XmlView from that.",
+      "revId": "16e7bee629e95d1575a7ac52e982e12bdebdb453",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa69d971_4ad5c119",
+        "filename": "tests/cmd/subcommands/test_delete.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-01-05T21:05:17Z",
+      "side": 1,
+      "message": "This test doesn\u0027t look like it is really checking anything. I\u0027d like to see it at least validate that calls are being made to the underlying jenkins_jobs.cmd.jenkins.Jenkins methods.\n\nIt\u0027d also be nice to validate what JJB is supposed to do when a specified view doesn\u0027t exist.",
+      "revId": "16e7bee629e95d1575a7ac52e982e12bdebdb453",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
