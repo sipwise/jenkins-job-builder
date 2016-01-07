@@ -1,0 +1,10 @@
+Code-Review+2: Darragh Bailey <daragh.bailey@gmail.com>
+Code-Review+1: Dong Ma <winterma.dong@gmail.com>
+Code-Review+2: Antoine Musso <hashar@free.fr>
+Workflow+1: Antoine Musso <hashar@free.fr>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Thu, 07 Jan 2016 11:05:37 +0000
+Reviewed-on: https://review.openstack.org/239250
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
