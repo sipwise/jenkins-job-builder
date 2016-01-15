@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_cdcbc2a2",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2489,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-01-15T17:53:27Z",
+      "side": 1,
+      "message": "Would backwards compatibility be a concern here?\n\nI would imagine this means people using the old plugin will break if the upgrade to this version.",
+      "revId": "96065cc4e4bbe34a3471485458effa25d3b91474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
