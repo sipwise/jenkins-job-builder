@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_f99a0813",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 775,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-01-15T19:20:55Z",
+      "side": 1,
+      "message": "Remove this parameter from builders as this parameter only use on publisher",
+      "parentUuid": "9a8ffd7b_e7add4e9",
+      "revId": "293df594a4e54b4cd999053f418ac0ac3063f416",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_a7b34c4c",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-12-03T04:47:32Z",
       "side": 1,
       "message": "I think this parameter should be changed to \"ignore-failure\" to be more clear.",
+      "revId": "293df594a4e54b4cd999053f418ac0ac3063f416",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_7987f8b4",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-01-15T19:20:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_a7b34c4c",
       "revId": "293df594a4e54b4cd999053f418ac0ac3063f416",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da6ed579_19927cf6",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-01-15T19:20:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a8ffd7b_47838056",
+      "revId": "293df594a4e54b4cd999053f418ac0ac3063f416",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a8ffd7b_277e7c6a",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 3
@@ -64,6 +118,24 @@
       "writtenOn": "2015-12-03T04:47:32Z",
       "side": 1,
       "message": "In the documentation pydoc above it mentions a keepall parameter but there is none in the code.",
+      "revId": "293df594a4e54b4cd999053f418ac0ac3063f416",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_79ae182f",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-01-15T19:20:55Z",
+      "side": 1,
+      "message": "Remove the keepall parameter in the documentation",
+      "parentUuid": "9a8ffd7b_277e7c6a",
       "revId": "293df594a4e54b4cd999053f418ac0ac3063f416",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
