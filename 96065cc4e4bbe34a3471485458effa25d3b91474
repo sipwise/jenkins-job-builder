@@ -16,6 +16,24 @@
       "revId": "96065cc4e4bbe34a3471485458effa25d3b91474",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_8d7aaa22",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2489,
+      "author": {
+        "id": 13292
+      },
+      "writtenOn": "2016-01-15T17:58:38Z",
+      "side": 1,
+      "message": "No since this is the one that was released on Jenkins the former was one from a separate repo and had to be installed manually",
+      "parentUuid": "da6ed579_cdcbc2a2",
+      "revId": "96065cc4e4bbe34a3471485458effa25d3b91474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
