@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_f43993f3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-01-16T20:01:54Z",
+      "side": 1,
+      "message": "Small nitpick, commit message should be written in present-tense, imperative-style",
+      "revId": "a202e0110b0d9c49d1fd8adc02a0d19a6e64dbfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
