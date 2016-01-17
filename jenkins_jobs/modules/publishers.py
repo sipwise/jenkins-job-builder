@@ -5329,6 +5329,56 @@ def clamav(parser, xml_parent, data):
         data.get('excludes', ''))
 
 
+def testselector(parser, xml_parent, data):
+    """yaml: testselector
+    This plugin allows you to choose specific tests you want to run.
+
+    Requires the Jenkins :jenkins-wiki:`Tests Selector Plugin
+    <Tests+Selector+Plugin>`.
+
+    :arg str name: name of the environment variable in which selected tests are saved
+      (required)
+    :arg str description: Description
+      (default "")
+    :arg str properties-file: Contain all your tests
+      (required)
+    :arg bool enable-field: Imply if the test is enabled or not
+      (default "")
+    :arg bool groupby: Plugin will group the tests by
+      (default "")
+    :arg bool field-sperator: Separate between the fields in the tests tree
+      (default "")
+    :arg bool show-fields: Shown in the tests tree
+      (default "")
+    :arg bool multiplicity-field: Set to the amount of times the test should run
+      (default "")
+
+    Example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/testselector001.yaml
+       :language: yaml
+    """
+
+    testselector = XML.SubElement(xml_parent, 'il.ac.technion.jenkins.plugins'
+                                              'TestExecuter')
+    XML.SubElement(testselector, 'name').text = data.get(
+        'name', '')
+    XML.SubElement(testselector, 'description').text = data.get(
+        'description', '')
+    XML.SubElement(testselector, 'propertiesFilePath').text = data.get(
+        'properties-file', '')
+    XML.SubElement(testselector, 'enableField').text = data.get(
+        'enable-field', '')
+    XML.SubElement(testselector, 'groupBy').text = data.get(
+        'groupby', '')
+    XML.SubElement(testselector, 'fieldSeparator').text = data.get(
+        'field-separator', '')
+    XML.SubElement(testselector, 'showFields').text = data.get(
+        'show-fields', '')
+    XML.SubElement(testselector, 'multiplicityField').text = data.get(
+        'multiplicity-field', '')
+
+
 def cloudformation(parser, xml_parent, data):
     """yaml: cloudformation
     Create cloudformation stacks before running a build and optionally
