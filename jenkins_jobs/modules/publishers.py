@@ -5329,6 +5329,38 @@ def clamav(parser, xml_parent, data):
         data.get('excludes', ''))
 
 
+def testselector(parser, xml_parent, data):
+    """yaml: testselector
+    This plugin brings automatic open source management to Jenkins users.
+
+    Requires the Jenkins :jenkins-wiki:`Tests Selector Plugin
+    <Tests+Selector+Plugin>`.
+    Example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/testselector001.yaml
+       :language: yaml
+    """
+
+    testselector = XML.SubElement(xml_parent, 'il.ac.technion.jenkins.plugins'
+                                              'TestExecuter')
+    XML.SubElement(testselector, 'name').text = data.get(
+        'name', '')
+    XML.SubElement(testselector, 'description').text = data.get(
+        'description', '')
+    XML.SubElement(testselector, 'propertiesFilePath').text = data.get(
+        'properties-file', '')
+    XML.SubElement(testselector, 'enableField').text = data.get(
+        'enable-field', '')
+    XML.SubElement(testselector, 'groupBy').text = data.get(
+        'groupby', '')
+    XML.SubElement(testselector, 'fieldSeparator').text = data.get(
+        'field-separator', '')
+    XML.SubElement(testselector, 'showFields').text = data.get(
+        'show-fields', '')
+    XML.SubElement(testselector, 'multiplicityField').text = data.get(
+        'multiplicity-field', '')
+
+
 def cloudformation(parser, xml_parent, data):
     """yaml: cloudformation
     Create cloudformation stacks before running a build and optionally
