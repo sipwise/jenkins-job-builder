@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da6ed579_e24a2327",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-01-18T02:11:52Z",
+      "side": 1,
+      "message": "Just need to say \"Add\" in the present tense. It\u0027s best practice to write your commit messages using present-tense, imperative-style writing.",
+      "revId": "8d7db264ec4f4e196a251c196bddc772247fe6a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da6ed579_e240e337",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -36,6 +53,40 @@
       "writtenOn": "2016-01-18T01:52:53Z",
       "side": 1,
       "message": "You are missing documentation for your plugin\u0027s parameters",
+      "revId": "8d7db264ec4f4e196a251c196bddc772247fe6a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_a2bd0b04",
+        "filename": "setup.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-01-18T02:11:52Z",
+      "side": 1,
+      "message": "No need for any changes in this file.",
+      "revId": "8d7db264ec4f4e196a251c196bddc772247fe6a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_02c17780",
+        "filename": "tests/publishers/fixtures/example.properties",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-01-18T02:11:52Z",
+      "side": 1,
+      "message": "No need to add this file. It should be removed altogether.",
       "revId": "8d7db264ec4f4e196a251c196bddc772247fe6a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
