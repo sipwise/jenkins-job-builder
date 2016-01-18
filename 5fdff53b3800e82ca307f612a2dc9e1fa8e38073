@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_d8127058",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-01-18T03:34:30Z",
+      "side": 1,
+      "message": "Should describe what the values of entity, entity_xml and child_mapping are in the docstring below.",
+      "revId": "5fdff53b3800e82ca307f612a2dc9e1fa8e38073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
