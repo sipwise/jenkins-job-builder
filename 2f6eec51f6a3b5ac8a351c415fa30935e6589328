@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba63e191_88e617e7",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-01-18T16:54:21Z",
+      "side": 1,
+      "message": "From the code, the default should be \u0027\u0027, same as below",
+      "revId": "2f6eec51f6a3b5ac8a351c415fa30935e6589328",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
