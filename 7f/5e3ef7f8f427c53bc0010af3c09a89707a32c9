@@ -1,0 +1,10 @@
+Code-Review+2: Thanh Ha <zxiiro@gmail.com>
+Code-Review+1: Dong Ma <winterma.dong@gmail.com>
+Code-Review+2: Antoine Musso <hashar@free.fr>
+Workflow+1: Antoine Musso <hashar@free.fr>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Mon, 18 Jan 2016 14:38:19 +0000
+Reviewed-on: https://review.openstack.org/255280
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
