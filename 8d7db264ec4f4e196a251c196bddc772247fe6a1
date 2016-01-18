@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_e240e337",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5334,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-01-18T01:52:53Z",
+      "side": 1,
+      "message": "This description does not look accurate to what the plugin should do",
+      "range": {
+        "startLine": 5334,
+        "startChar": 4,
+        "endLine": 5334,
+        "endChar": 73
+      },
+      "revId": "8d7db264ec4f4e196a251c196bddc772247fe6a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_42244fae",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5337,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-01-18T01:52:53Z",
+      "side": 1,
+      "message": "You are missing documentation for your plugin\u0027s parameters",
+      "revId": "8d7db264ec4f4e196a251c196bddc772247fe6a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_420d2f36",
+        "filename": "tests/publishers/fixtures/example.properties",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-01-18T01:52:53Z",
+      "side": 1,
+      "message": "This line is too long",
+      "revId": "8d7db264ec4f4e196a251c196bddc772247fe6a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
