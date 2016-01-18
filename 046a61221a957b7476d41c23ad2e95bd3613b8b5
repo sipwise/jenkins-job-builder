@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_9d9e2a62",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 5365,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-01-18T03:10:30Z",
+      "side": 1,
+      "message": "According to your documentation \"name\" is required so we should throw a MissingAttributeError if it\u0027s not there and not provide a default of a blank string. For example:\n\n    try:\n        name \u003d str(data[\u0027name\u0027])\n    except KeyError as e:\n        raise MissingAttributeError(e.args[0])",
+      "revId": "046a61221a957b7476d41c23ad2e95bd3613b8b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_bd9bee71",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 5369,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-01-18T03:10:30Z",
+      "side": 1,
+      "message": "Same as the name field above.",
+      "revId": "046a61221a957b7476d41c23ad2e95bd3613b8b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
