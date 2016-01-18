@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6ed579_8476b33c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 5346,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-01-18T15:39:38Z",
+      "side": 1,
+      "message": "Sorry didn\u0027t catch this one earlier. This is a boolean value so the default should be a boolean value. Typically we want to mimic the behaviour of what the Jenkins Plugin does in Jenkins. Does this field normally default to true or false?",
+      "revId": "80098c9142c92f26ee766aea96cc8b5f1b37a0b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_2401076b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 5347,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-01-18T15:39:38Z",
+      "side": 1,
+      "message": "Is this really a bool?",
+      "revId": "80098c9142c92f26ee766aea96cc8b5f1b37a0b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_0435e344",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 5349,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-01-18T15:39:38Z",
+      "side": 1,
+      "message": "Is this really a bool?",
+      "revId": "80098c9142c92f26ee766aea96cc8b5f1b37a0b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_c43fcb23",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 5351,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-01-18T15:39:38Z",
+      "side": 1,
+      "message": "Is this really a bool?",
+      "revId": "80098c9142c92f26ee766aea96cc8b5f1b37a0b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6ed579_6415bf99",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 5353,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-01-18T15:39:38Z",
+      "side": 1,
+      "message": "Is this really a bool?",
+      "revId": "80098c9142c92f26ee766aea96cc8b5f1b37a0b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
