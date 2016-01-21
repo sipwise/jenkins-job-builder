@@ -1,0 +1,11 @@
+Code-Review+2: Thanh Ha <zxiiro@gmail.com>
+Code-Review+1: Dong Ma <winterma.dong@gmail.com>
+Code-Review+1: Michael Prokop <openstack.org@michael-prokop.at>
+Code-Review+2: Darragh Bailey <daragh.bailey@gmail.com>
+Workflow+1: Darragh Bailey <daragh.bailey@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Thu, 21 Jan 2016 14:54:01 +0000
+Reviewed-on: https://review.openstack.org/266087
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
