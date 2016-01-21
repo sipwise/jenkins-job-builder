@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_cc27f610",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-01-21T14:56:17Z",
+      "side": 1,
+      "message": "I believe our style now is to have individual import lines for each item. Can you revert this change and add the new InvalideAttributeError as it\u0027s on import statement?",
+      "revId": "b35b9bfaa217dc585bcc3349895e8422070a930c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
