@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_4556625d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-01-21T23:27:08Z",
+      "side": 1,
+      "message": "Not sure if this is the best style, but since we already have some in this format to handle option specific additional options, seems reasonable to continue unless someone can suggest a better format?",
+      "revId": "e43e23ce7101b2b1c1cda9941446ad9ea6a3e6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_45b2e295",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-01-21T23:27:08Z",
+      "side": 1,
+      "message": "probably just tidy this up to align with common indentation.",
+      "revId": "e43e23ce7101b2b1c1cda9941446ad9ea6a3e6e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
