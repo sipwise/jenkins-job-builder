@@ -16,6 +16,23 @@
       "revId": "5fdff53b3800e82ca307f612a2dc9e1fa8e38073",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_001ff85f",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-01-21T23:32:48Z",
+      "side": 1,
+      "message": "It should be possible to combine this and the function above into a single mapping method.\n\nWould be great if over time we could simplify a lot of the common logic by simply having many functions just call the same mapping method.",
+      "revId": "5fdff53b3800e82ca307f612a2dc9e1fa8e38073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
