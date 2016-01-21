@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_80cbe8a4",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3896,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-01-21T23:36:46Z",
+      "side": 1,
+      "message": "Just need a fallback mechanism to support retrieval data in the older format. Project check if \u0027keepall\u0027 is defined, and map it to \u0027keep-all\u0027 if that is not defined, include a warning for keepall being used, and a second one if both keepall and keep-all are set in saying that the value of keepall will be ignored in preference to keep-all.\n\nBit cumbersome, important for backwards compatibility.",
+      "revId": "4f114477c0f55ce1a888733db9ab32855c1eaae6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
