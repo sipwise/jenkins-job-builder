@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_7b21e2fa",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 813,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-01-21T14:38:44Z",
+      "side": 1,
+      "message": "Unfortunately this format doesn\u0027t show up in the docs at all.\n\nSee https://review.openstack.org/gitweb?p\u003dopenstack-infra/jenkins-job-builder.git;a\u003dblob;f\u003djenkins_jobs/modules/scm.py;h\u003d07eb414cc34cc1e6c80e8f84476a35a17587177c;hb\u003dd26293fe2fa9ca91afbe82db986a106eb28c8c10#l115 for a format that will work here.\n\nAlso I think to maintain consistency will all other settings where you are selecting a set of supported values to use mappings and check if the selected one is valid as well.\n\nBasically:\n\n    :arg str script-type: The script type\n        :script-types supported:\n            * **unix-script** (default)\n            * **power-shell**\n            * **batch-script**\n\n\nAnd in the code to have a list of valid values:\n\n    valid_script_types \u003d [\n        \u0027unix-script\u0027,\n        \u0027power-shell\u0027,\n        \u0027batch-script\u0027\n    ]\n\nUse the first one as the default, use a call to:\n\n    if script_type and script_type not in valid_script_types:\n        raise InvalidAttributeError(\u0027script-type\u0027, script_type, valid_script_types)\n    script_type_comps \u003d script_type.split(\u0027-\u0027)\n    script_type_value \u003d script_type_comps[0] + \"\".join(x.title() for x in script_type_comps[1:])\n\nOr use a dict to translate.\n\nGenerally I would recommend using what appears in the UI as the option values for users to specify, and then translate to the Java/XML specific values in the module.\n\nEssentially something similar to clone_workspace in the publishers module.",
+      "range": {
+        "startLine": 813,
+        "startChar": 12,
+        "endLine": 813,
+        "endChar": 23
+      },
+      "revId": "e2d09cc0e6f83c1385852402678279d6d6ee5016",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
