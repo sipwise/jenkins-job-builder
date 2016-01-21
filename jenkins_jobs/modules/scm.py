@@ -117,7 +117,7 @@ def git(parser, xml_parent, data):
         :browsers supported:
             * **auto** - (default)
             * **assemblaweb** - https://www.assembla.com/
-            * **bitbucketweb** - https://www.bitbucket.org/
+            * **bitbucketweb** - https://bitbucket.org/
             * **cgit** - http://git.zx2c4.com/cgit/about/
             * **fisheye** - https://www.atlassian.com/software/fisheye
             * **gitblit** - http://gitblit.com/
@@ -971,7 +971,7 @@ def hg(self, xml_parent, data):
 
         :browsers supported:
             * **auto** - (default)
-            * **bitbucketweb** - https://www.bitbucket.org/
+            * **bitbucketweb** - https://bitbucket.org/
             * **fisheye** - https://www.atlassian.com/software/fisheye
             * **googlecode** - https://code.google.com/
             * **hgweb** - https://www.selenic.com/hg/help/hgweb
