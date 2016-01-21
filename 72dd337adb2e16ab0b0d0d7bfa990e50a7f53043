@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_5b93be4f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 5371,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-01-21T14:05:50Z",
+      "side": 1,
+      "message": "You can consolidate the above statements, they don\u0027t need to be separate.\n\n try:\n     name \u003d str(data[\u0027name\u0027])\n     propertiesfile \u003d str(data[\u0027properties-file\u0027])\n except KeyError as e:\n     raise MissingAttributeError(e.args[0])\n\nI\u0027ll leave it for a day if you get a chance to tidy it up, otherwise guess we can do a cleanup patch at a later stage since the docstrings for this module need some consolidation as well.",
+      "revId": "72dd337adb2e16ab0b0d0d7bfa990e50a7f53043",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
