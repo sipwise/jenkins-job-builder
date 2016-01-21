@@ -116,9 +116,9 @@ def git(parser, xml_parent, data):
 
         :browsers supported:
             * **auto** - (default)
-            * **assemblaweb** - https://www.assembla.com/
-            * **bitbucketweb** - https://www.bitbucket.org/
-            * **cgit** - http://git.zx2c4.com/cgit/about/
+            * **assemblaweb** - https://www.assembla.com/home
+            * **bitbucketweb** - https://bitbucket.org/
+            * **cgit** - https://git.zx2c4.com/cgit/about/
             * **fisheye** - https://www.atlassian.com/software/fisheye
             * **gitblit** - http://gitblit.com/
             * **githubweb** - https://github.com/
@@ -132,7 +132,7 @@ def git(parser, xml_parent, data):
             * **phabricator** - http://phabricator.org/
             * **redmineweb** - http://www.redmine.org/
             * **rhodecode** - https://rhodecode.com/
-            * **stash** - https://www.atlassian.com/software/stash
+            * **stash** - https://www.atlassian.com/software/bitbucket/server
             * **viewgit** - http://viewgit.fealdia.org/
     :arg str browser-url: url for the repository browser (required if browser
         is not 'auto', no default)
@@ -990,7 +990,7 @@ def hg(self, xml_parent, data):
 
         :browsers supported:
             * **auto** - (default)
-            * **bitbucketweb** - https://www.bitbucket.org/
+            * **bitbucketweb** - https://bitbucket.org/
             * **fisheye** - https://www.atlassian.com/software/fisheye
             * **googlecode** - https://code.google.com/
             * **hgweb** - https://www.selenic.com/hg/help/hgweb

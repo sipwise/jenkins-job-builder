@@ -1219,7 +1219,7 @@ def monitor_folders(parser, xml_parent, data):
     """yaml: monitor-folders
     Configure Jenkins to monitor folders.
     Requires the Jenkins :jenkins-wiki:`Filesystem Trigger Plugin
-    <FSTriggerPlugin>`.
+    <FSTrigger+Plugin>`.
 
     :arg str path: Folder path to poll. (optional)
     :arg list includes: Fileset includes setting that specifies the list of
@@ -1262,7 +1262,7 @@ def monitor_files(parser, xml_parent, data):
     """yaml: monitor-files
     Configure Jenkins to monitor files.
     Requires the Jenkins :jenkins-wiki:`Filesystem Trigger Plugin
-    <FSTriggerPlugin>`.
+    <FSTrigger+Plugin>`.
 
     :arg list files: List of files to monitor
 
