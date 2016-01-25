@@ -16,6 +16,24 @@
       "revId": "96b73bda515751a60e77de5e7804dd3c1193a14a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_ebd6e44d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1204,
+      "author": {
+        "id": 19147
+      },
+      "writtenOn": "2016-01-25T06:38:13Z",
+      "side": 1,
+      "message": "Looks good, thanks for the tip",
+      "parentUuid": "da85f559_3c603835",
+      "revId": "96b73bda515751a60e77de5e7804dd3c1193a14a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
