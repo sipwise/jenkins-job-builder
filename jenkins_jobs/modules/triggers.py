@@ -84,13 +84,14 @@ def gerrit_handle_legacy_configuration(data):
         'skipVote',
     ])
 
-    for project in data['projects']:
-        convert_dict(project, [
-            'projectCompareType',
-            'projectPattern',
-            'branchCompareType',
-            'branchPattern',
-        ])
+    if 'projects' in data:
+        for project in data['projects']:
+            convert_dict(project, [
+                'projectCompareType',
+                'projectPattern',
+                'branchCompareType',
+                'branchPattern',
+            ])
 
     old_format_events = OrderedDict(
         (key, should_register) for key, should_register in six.iteritems(data)
@@ -447,7 +448,10 @@ def gerrit(parser, xml_parent, data):
 
     gerrit_handle_legacy_configuration(data)
 
-    projects = data['projects']
+    if 'projects' in data:
+        projects = data['projects']
+    else:
+        projects = []
     gtrig = XML.SubElement(xml_parent,
                            'com.sonyericsson.hudson.plugins.gerrit.trigger.'
                            'hudsontrigger.GerritTrigger')
