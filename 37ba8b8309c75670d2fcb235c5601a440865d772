@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a68dd71_991e700a",
+        "filename": "jenkins_jobs/xml_config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-01-26T00:33:19Z",
+      "side": 1,
+      "message": "This looks wrong to me.\n\nLooking around at all the other changes throughout the library, it looks like this patch replaces all uses of \"name\" with \"fullname\" so I\u0027m a little confused why we would keep \"name\" around...?\n\nIt also feels wrong to have two different required parameters for this constructor, both of which are actually the name of the job.",
+      "revId": "37ba8b8309c75670d2fcb235c5601a440865d772",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_d9a6280e",
+        "filename": "tests/general/fixtures/folders001.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-01-26T00:33:19Z",
+      "side": 1,
+      "message": "It seems to me like it would be simpler to use an approach like:\n  name: folders/test-folder\n  project-type: freestyle\n\nWhere the folder is determined by the \"dirname\" of name value.\n\nThis would also avoid the need to pass a \"fullname\" to the XmlJob constructor. Instead, we could create \"dirname\" and \"basename\" properties on the XmlJob object.",
+      "revId": "37ba8b8309c75670d2fcb235c5601a440865d772",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
