@@ -102,6 +102,24 @@
       "revId": "37ba8b8309c75670d2fcb235c5601a440865d772",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a68dd71_c542bb0e",
+        "filename": "tests/yamlparser/fixtures/folders001.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-01-26T03:10:43Z",
+      "side": 1,
+      "message": "Okay, I just noticed that the test class was rewritten to handle creation and checking of \"folder-ified\" test output directories, so nevermind.",
+      "parentUuid": "9a68dd71_9924300d",
+      "revId": "37ba8b8309c75670d2fcb235c5601a440865d772",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
