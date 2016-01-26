@@ -69,7 +69,7 @@ def rabbitmq(parser, xml_parent, data):
         'org.jenkinsci.plugins.rabbitmqbuildtrigger.'
         'RemoteBuildTrigger')
 
-    spec = XML.SubElement(rabbitmq, 'spec').text = ''
+    XML.SubElement(rabbitmq, 'spec').text = ''
 
     XML.SubElement(rabbitmq, 'remoteBuildToken').text = str(
         data.get('token'))
