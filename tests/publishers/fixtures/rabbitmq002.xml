@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <publishers>
+    <org.jenkinsci.plugins.rabbitmqbuildtrigger.RemoteBuildPublisher>
+      <brokerName>some_exchange</brokerName>
+      <routingKey>org.jenkinsci.plugins.rabbitmqbuildtrigger</routingKey>
+    </org.jenkinsci.plugins.rabbitmqbuildtrigger.RemoteBuildPublisher>
+  </publishers>
+</project>

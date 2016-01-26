@@ -39,6 +39,81 @@ from jenkins_jobs.errors import JenkinsJobsException
 import jenkins_jobs.modules.base
 
 
+def rabbitmq(parser, xml_parent, data):
+    """yaml: rabbitmq
+    This plugin connects to RabbitMQ, consumes messages in queue, then notifies
+    it to listener.
+
+    Requires the Jenkins :jenkins-wiki:`RabbitMQ Consumer Plugin
+    <RabbitMQ+Consumer+Plugin>`.
+
+    :arg bool enabled: whether the consumer is enabled (optional, default true)
+    :arg str uri: valid `amqp uri <http://www.rabbitmq.com/uri-spec.html>`
+    :arg str user: rabbitmq username
+    :arg str password: rabbitmq password
+    :arg int reconnect: time in milliseconds to reconnect (default 60000)
+    :arg bool debug: enable debug listeners (optional, default false)
+    :arg list queues: list of queues to consume from
+
+    Example:
+
+    .. literalinclude:: /../../tests/properties/fixtures/rabbitmq.yaml
+       :language: yaml
+    """
+
+    rabbitmq = XML.SubElement(
+        xml_parent,
+        'org.jenkinsci.plugins.rabbitmqconsumer.'
+        'GlobalRabbitmqConfiguration')
+
+    validator = XML.SubElement(rabbitmq, 'urlValidator')
+    XML.SubElement(validator, 'options').text = '8'
+
+    allowed = XML.SubElement(validator, 'allowedSchemes')
+    XML.SubElement(allowed, 'string').text = 'amqps'
+    XML.SubElement(allowed, 'string').text = 'amqp'
+
+    if data.get('enabled', True) is False:
+        XML.SubElement(rabbitmq, 'enableConsumer').text = 'false'
+    else:
+        XML.SubElement(rabbitmq, 'enableConsumer').text = 'true'
+
+    XML.SubElement(rabbitmq, 'serviceUri').text = str(
+        data.get('uri'))
+
+    XML.SubElement(rabbitmq, 'userName').text = str(
+        data.get('user', ''))
+
+    XML.SubElement(rabbitmq, 'userPassword').text = str(
+        data.get('password', ''))
+
+    XML.SubElement(rabbitmq, 'watchdogPeriod').text = str(
+        data.get('reconnect', '60000'))
+
+    queues = data.get('queues')
+    if queues:
+        consume_items = XML.SubElement(rabbitmq, 'consumeItems')
+
+        for queue in queues:
+
+            consume_item = XML.SubElement(
+                consume_items,
+                'org.jenkinsci.plugins.rabbitmqconsumer.'
+                'RabbitmqConsumeItem')
+
+            q = queue.get('queue')
+            XML.SubElement(consume_item, 'appId').text = str(
+                q.get('appid', '-'))
+
+            XML.SubElement(consume_item, 'queueName').text = str(
+                q.get('name'))
+
+    if data.get('debug', True) is True:
+        XML.SubElement(rabbitmq, 'enableDebug').text = 'true'
+    else:
+        XML.SubElement(rabbitmq, 'enableDebug').text = 'false'
+
+
 def builds_chain_fingerprinter(parser, xml_parent, data):
     """yaml: builds-chain-fingerprinter
     Builds chain fingerprinter.

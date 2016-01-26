@@ -52,6 +52,33 @@ from jenkins_jobs.modules.helpers import get_value_from_yaml_or_config_file
 from jenkins_jobs.modules.helpers import convert_mapping_to_xml
 
 
+def rabbitmq(parser, xml_parent, data):
+    """yaml: rabbitmq
+    This plugin publishes build information to a RabbitMQ queue.
+    Requires the Jenkins :jenkins-wiki:`RabbitMQ Build Trigger Plugin
+    <RabbitMQ+Build+Trigger+Plugin>`.
+
+    :arg str exchange: the rabbitmq exchange to publish to
+    :arg str routingkey: message routing key
+        (default: org.jenkinsci.plugins.rabbitmqbuildtrigger)
+
+    Example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/rabbitmq.yaml
+    """
+
+    rabbitmq = XML.SubElement(
+        xml_parent,
+        'org.jenkinsci.plugins.rabbitmqbuildtrigger.'
+        'RemoteBuildPublisher')
+
+    XML.SubElement(rabbitmq, 'brokerName').text = str(
+        data.get('exchange'))
+
+    XML.SubElement(rabbitmq, 'routingKey').text = str(
+        data.get('routingkey', 'org.jenkinsci.plugins.rabbitmqbuildtrigger'))
+
+
 def archive(parser, xml_parent, data):
     """yaml: archive
     Archive build artifacts

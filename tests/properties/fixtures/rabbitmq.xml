@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <properties>
+    <org.jenkinsci.plugins.rabbitmqconsumer.GlobalRabbitmqConfiguration>
+      <urlValidator>
+        <options>8</options>
+        <allowedSchemes>
+          <string>amqps</string>
+          <string>amqp</string>
+        </allowedSchemes>
+      </urlValidator>
+      <enableConsumer>true</enableConsumer>
+      <serviceUri>amqp://host/content</serviceUri>
+      <userName>aUser</userName>
+      <userPassword>aPassword</userPassword>
+      <watchdogPeriod>60000</watchdogPeriod>
+      <consumeItems>
+        <org.jenkinsci.plugins.rabbitmqconsumer.RabbitmqConsumeItem>
+          <appId>-</appId>
+          <queueName>content_builder</queueName>
+        </org.jenkinsci.plugins.rabbitmqconsumer.RabbitmqConsumeItem>
+        <org.jenkinsci.plugins.rabbitmqconsumer.RabbitmqConsumeItem>
+          <appId>remote-build</appId>
+          <queueName>app_maker</queueName>
+        </org.jenkinsci.plugins.rabbitmqconsumer.RabbitmqConsumeItem>
+      </consumeItems>
+      <enableDebug>false</enableDebug>
+    </org.jenkinsci.plugins.rabbitmqconsumer.GlobalRabbitmqConfiguration>
+  </properties>
+</project>

@@ -1,0 +1,4 @@
+publishers:
+  - rabbitmq:
+      exchange: 'some_exchange'
+      routingkey: 'a.routing.key'

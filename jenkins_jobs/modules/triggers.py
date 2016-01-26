@@ -49,6 +49,32 @@ except ImportError:
 logger = logging.getLogger(str(__name__))
 
 
+def rabbitmq(parser, xml_parent, data):
+    """yaml: rabbitmq
+    This plugin triggers build using remote build message in RabbitMQ queue.
+    Requires the Jenkins :jenkins-wiki:`RabbitMQ Build Trigger Plugin
+    <RabbitMQ+Build+Trigger+Plugin>`.
+
+    :arg str token: the build token expected in the message queue
+
+    Example:
+
+    .. literalinclude:: /../../tests/triggers/fixtures/rabbitmq.yaml
+    """
+
+    data = data if data else {}
+
+    rabbitmq = XML.SubElement(
+        xml_parent,
+        'org.jenkinsci.plugins.rabbitmqbuildtrigger.'
+        'RemoteBuildTrigger')
+
+    spec = XML.SubElement(rabbitmq, 'spec').text = ''
+
+    XML.SubElement(rabbitmq, 'remoteBuildToken').text = str(
+        data.get('token'))
+
+
 def gerrit_handle_legacy_configuration(data):
     hyphenizer = re.compile("[A-Z]")
 

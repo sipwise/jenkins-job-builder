@@ -1,0 +1,14 @@
+properties:
+  - rabbitmq:
+      enabled: true
+      uri: 'amqp://host/content'
+      user: 'aUser'
+      password: 'aPassword'
+      reconnect: 60000
+      debug: false
+      queues:
+        - queue:
+            name: 'content_builder'
+        - queue:
+            appid: 'remote-build'
+            name: 'app_maker'
