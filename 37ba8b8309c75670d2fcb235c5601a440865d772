@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "9a68dd71_9952f065",
+        "filename": "tests/general/fixtures/folders001.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-01-26T00:40:36Z",
+      "side": 1,
+      "message": "FYI, I\u0027m not saying that we would need \"dirname\" or \"basename\" properties on the XmlJob object--only if for some reason elsewhere in the code we actually care about either of those pieces of the job name.",
+      "parentUuid": "9a68dd71_d9a6280e",
+      "revId": "37ba8b8309c75670d2fcb235c5601a440865d772",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a68dd71_9924300d",
         "filename": "tests/yamlparser/fixtures/folders001.yaml",
         "patchSetId": 5
