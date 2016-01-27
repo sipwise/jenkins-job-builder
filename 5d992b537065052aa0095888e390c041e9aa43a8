@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_ff5e3f44",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5719,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-01-27T22:13:53Z",
+      "side": 1,
+      "message": "According to your documentation this is a bool and not a string value.",
+      "revId": "5d992b537065052aa0095888e390c041e9aa43a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_bf58c757",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5722,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-01-27T22:13:53Z",
+      "side": 1,
+      "message": "str should be bool. Also missing t in default.",
+      "revId": "5d992b537065052aa0095888e390c041e9aa43a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_9f1dcb75",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5745,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-01-27T22:13:53Z",
+      "side": 1,
+      "message": "xnl should be xml?",
+      "revId": "5d992b537065052aa0095888e390c041e9aa43a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
