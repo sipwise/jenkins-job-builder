@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_ad4def73",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5719,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2016-01-28T08:59:37Z",
+      "side": 1,
+      "message": "I looked at what the other publishers do, and there they use str even if they use false and true (see the one above this one).\n\nLet me know if I should keep the style of the code or change it",
+      "parentUuid": "7a5de9d1_ff5e3f44",
+      "revId": "5d992b537065052aa0095888e390c041e9aa43a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_bf58c757",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7a5de9d1_cdee2b22",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5722,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2016-01-28T08:59:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_bf58c757",
+      "revId": "5d992b537065052aa0095888e390c041e9aa43a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a5de9d1_9f1dcb75",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2016-01-27T22:13:53Z",
       "side": 1,
       "message": "xnl should be xml?",
+      "revId": "5d992b537065052aa0095888e390c041e9aa43a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_8df833e7",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5745,
+      "author": {
+        "id": 8212
+      },
+      "writtenOn": "2016-01-28T08:59:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a5de9d1_9f1dcb75",
       "revId": "5d992b537065052aa0095888e390c041e9aa43a8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
