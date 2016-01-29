@@ -16,6 +16,24 @@
       "revId": "c4b6debc421951aadfac2d7a52e4d0b60b33eb6b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_6a60efa5",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-01-29T16:19:31Z",
+      "side": 1,
+      "message": "It\u0027s coming from the python-jenkins API, which added in \u0027fullname\u0027 so as not to modify the existing \u0027name\u0027 attribute that was being returned.\n\nIn hindsight, probably could have had get_all_jobs() do that.",
+      "parentUuid": "7a5de9d1_4dff6634",
+      "revId": "c4b6debc421951aadfac2d7a52e4d0b60b33eb6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
