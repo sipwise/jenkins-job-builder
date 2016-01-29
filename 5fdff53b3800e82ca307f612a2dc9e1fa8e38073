@@ -51,6 +51,24 @@
       "revId": "5fdff53b3800e82ca307f612a2dc9e1fa8e38073",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_3eb0eb89",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-01-29T18:28:36Z",
+      "side": 1,
+      "message": "I think ultimately, would want to be able to support the following:\n\n * required attributes\n * attributes whose value must be in a given set\n * taking attribute order from yaml by default\n * plugin version specific mappings\n * nested mappings\n * callback functions for complex decisions\n\nThe first two are of the main importance here, some of the others may necessitate a significant rewrite of the method each time to get it right, but this should be treated as an internal to JJB method and be freely changed as an implementation detail.\n\nSo to start with I think we need a mapping that follows the existing ideas, and allows for the following information to be optional without adding lots of elements:\n\n * default values\n * optional attributes (skip if None)\n * required attribute (MissingAttributeError)\n * specific values allowed (InvalidAttributeError)\n\nI\u0027m thinking the following might cover these:\n\n - [yaml name, xml name, val, extra xml attrs, callback]\n\nAdd some special internal state objects for val to jenkins_jobs/modules/base.py\n\n - REQUIRED \u003d object()\n - OPTIONAL \u003d object()\n\nif default_val \u003d\u003d base.OPTIONAL, ignore if not defined\nif default_val \u003d\u003d base.REQUIRED:\n  if callback defined, call it and raise the result as an exception\n  else raise MissingAttributeError(attr)\nelse set the default value\n\nAlternatively add another state object, which is a class this time:\n\n - MUST_MATCH(sequence of valid values)\n\nand raise an InvalidAttributeError if attribute val is not within, although this one is a little trickier since possibly also want to allow a default and only check if the user provided.\n\n\nMaybe the following might work better:\n\n - [attr name, xml name, default val, xml callback, attr callback]\n\nWhere we provide a standard callback wrapper for applying extra xml attrs, and standard callbacks for Required and MustMatch, which then the absence of such callbacks reflects either an attribute with a default value or an optional if \u0027default val\u0027 is None.\n\n\nThoughts?\n\n\nI probably need to think about it more myself, and either put or seen an initial implementation to be more sure.",
+      "parentUuid": "7a5de9d1_6de822b5",
+      "revId": "5fdff53b3800e82ca307f612a2dc9e1fa8e38073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
