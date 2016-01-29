@@ -74,7 +74,7 @@ CFP Example:
 
     .. literalinclude:: /../../tests/general/fixtures/project-maven003.yaml
 """
-
+import pkg_resources
 import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 from jenkins_jobs.modules import hudson_model
@@ -98,6 +98,11 @@ class Maven(jenkins_jobs.modules.base.Base):
         xml_parent = XML.Element('maven2-moduleset')
         if 'maven' not in data:
             return xml_parent
+
+        # determine version of plugin
+        plugin_info = self.registry.get_plugin_info("Maven Integration plugin")
+        version = pkg_resources.parse_version(plugin_info.get('version', '0'))
+
         if 'root-module' in data['maven']:
             root_module = XML.SubElement(xml_parent, 'rootModule')
             XML.SubElement(root_module, 'groupId').text = \
@@ -139,6 +144,9 @@ class Maven(jenkins_jobs.modules.base.Base):
             not data['maven'].get('automatic-site-archiving', True)).lower()
         XML.SubElement(xml_parent, 'fingerprintingDisabled').text = str(
             not data['maven'].get('automatic-fingerprinting', True)).lower()
+        if (version > pkg_resources.parse_version('0') and
+                version < pkg_resources.parse_version('2.0.1')):
+            XML.SubElement(xml_parent, 'perModuleEmail').text = 'true'
         XML.SubElement(xml_parent, 'archivingDisabled').text = str(
             not data['maven'].get('automatic-archiving', True)).lower()
         XML.SubElement(xml_parent, 'resolveDependencies').text = str(
