@@ -44,6 +44,7 @@ from jenkins_jobs.modules import hudson_model
 logger = logging.getLogger(str(__name__))
 
 
+
 def gerrit_handle_legacy_configuration(data):
     hyphenizer = re.compile("[A-Z]")
 
@@ -1557,6 +1558,34 @@ def groovy_script(parser, xml_parent, data):
     if label:
         XML.SubElement(gst, 'triggerLabel').text = label
     XML.SubElement(gst, 'spec').text = str(data.get('cron', ''))
+
+
+def rabbitmq(parser, xml_parent, data):
+    """yaml: rabbitmq
+    This plugin triggers build using remote build message in RabbitMQ queue.
+    Requires the Jenkins :jenkins-wiki:`RabbitMQ Build Trigger Plugin
+    <RabbitMQ+Build+Trigger+Plugin>`.
+
+    :arg str token: the build token expected in the message queue (required)
+
+    Example:
+
+    .. literalinclude:: /../../tests/triggers/fixtures/rabbitmq.yaml
+       :language: yaml
+    """
+
+    rabbitmq = XML.SubElement(
+        xml_parent,
+        'org.jenkinsci.plugins.rabbitmqbuildtrigger.'
+        'RemoteBuildTrigger')
+
+    XML.SubElement(rabbitmq, 'spec').text = ''
+
+    try:
+        XML.SubElement(rabbitmq, 'remoteBuildToken').text = str(
+            data.get('token'))
+    except KeyError as e:
+        raise MissingAttributeError(e.arg[0])
 
 
 class Triggers(jenkins_jobs.modules.base.Base):
