@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_4dff6634",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-01-29T01:05:23Z",
+      "side": 1,
+      "message": "Where is the \u0027fullname\u0027 key coming from in this patchset? Previously it was being set here:\nhttps://review.openstack.org/gitweb?p\u003dopenstack-infra/jenkins-job-builder.git;a\u003dblob;f\u003djenkins_jobs/parser.py;h\u003dc504e607eb3a7fe6af466b0c75843fe0dde5f912;hb\u003d37ba8b8309c75670d2fcb235c5601a440865d772#l174\n\nBut I don\u0027t see that in this patchset...",
+      "revId": "c4b6debc421951aadfac2d7a52e4d0b60b33eb6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
