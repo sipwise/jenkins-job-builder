@@ -33,6 +33,24 @@
       "revId": "5fdff53b3800e82ca307f612a2dc9e1fa8e38073",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_6de822b5",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-01-29T00:57:36Z",
+      "side": 1,
+      "message": "I agree, it seems like \"fail_required\" could be an optional parameter to the existing method with a default value of False.",
+      "parentUuid": "9a68dd71_001ff85f",
+      "revId": "5fdff53b3800e82ca307f612a2dc9e1fa8e38073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
