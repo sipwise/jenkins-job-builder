@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_f28cf180",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5715,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-01-29T00:14:43Z",
+      "side": 1,
+      "message": "suggested adding the plugin info like:\n\nRequires the Jenkins :jenkins-wiki:`GitHub pull request builder plugin \u003cGitHub+pull+request+builder+plugin\u003e",
+      "revId": "428d9b34bbd595253475d06b65d8d3df4b098980",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_12c66d9a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5723,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-01-29T00:14:43Z",
+      "side": 1,
+      "message": "this parameter should be (optional)",
+      "revId": "428d9b34bbd595253475d06b65d8d3df4b098980",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
