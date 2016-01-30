@@ -69,6 +69,24 @@
       "revId": "5fdff53b3800e82ca307f612a2dc9e1fa8e38073",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_a0f82ac4",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-01-30T00:47:27Z",
+      "side": 1,
+      "message": "I like the idea of adding an extra parameter:\n\n * fail_required\u003dtrue|false (default: false)\n\nI think for this patch adding the above parameter would be sufficient to get this merged.\n\nThe other ideas are really good ideas too but in my opinion should be a 2nd patch. Kien would you be willing to explore the additional improvements listed by Wayne?\n\nI agree that the mapping should be improved to support:\n\n * default values\n * optional attributes (skip if None)\n * required attribute (MissingAttributeError)\n * specific values allowed (InvalidAttributeError)\n\nThese enhancements will make adding support for new features incredibly simple and code review will be quicker for new plugins and will have high impact on the productivity of JJB in my opinion.\n\nNested mappings is worth looking into too for plugins that have these, maybe this is a 3rd improvement patch.\n\nI need to think more about the callback option though. I\u0027m not yet seeing the value in it. Wayne do you have a specific example you can describe where it would be useful?",
+      "parentUuid": "7a5de9d1_3eb0eb89",
+      "revId": "5fdff53b3800e82ca307f612a2dc9e1fa8e38073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
