@@ -105,6 +105,24 @@
       "revId": "5fdff53b3800e82ca307f612a2dc9e1fa8e38073",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_5a227e53",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-01-30T15:51:00Z",
+      "side": 1,
+      "message": "Maybe a crazy idea but what if we did:\n\n OPTIONAL \u003d None\n REQUIRED \u003d MissingAttributeError\n # otherwise\n DEFAULT \u003d \u003cmapping_value\u003e\n\nThis would allow us to not need an additional parameter and at the same time reuse the same 3rd mapping field to determine if a value is the default value, an optional value, or a required value.\n\nExisting code will continue to work but in the future we can recommend folks use the special keyword OPTIONAL instead of None (maps to the same None value) but is clearer when read by a human. We can then check for REQUIRED attributes by checking if that field is MissingAttributeError class type.\n\nThoughts?",
+      "parentUuid": "7a5de9d1_40eff6e8",
+      "revId": "5fdff53b3800e82ca307f612a2dc9e1fa8e38073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
