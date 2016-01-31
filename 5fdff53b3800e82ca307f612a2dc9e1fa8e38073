@@ -123,6 +123,24 @@
       "revId": "5fdff53b3800e82ca307f612a2dc9e1fa8e38073",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a5de9d1_1d01556a",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-01-31T20:16:56Z",
+      "side": 1,
+      "message": "The callback should allow handling of conditional sections, as well as nested sections, could pass in a reference to the same function again along with a predefined mapping dict to handle nested/conditional sections. Possible handle some edge cases as well such as what XML to output if handling a list of stuff that should use \u0027emptyList\u0027 in the XML instead of just closing the element name.\n\nWith Thanh\u0027s suggestion though I think we can wait until we need it to work out that additional capability.\n\nI think the only piece to close out on for the third mapping parameter to handle values that must be one of given set.\n\nDo we just want to have a custom container for the InvalidAttributeError?\n\ni.e.\n\n Optional \u003d object()  # could just use None instead for this\n Required \u003d object()  # raise MissingAttribute exception if not attr\n class MustMatch(object):\n     def __init__(valid, default_pos\u003d0):\n         self.valid \u003d valid\n         self.default \u003d valid[default_pos]\n MustMatch([\u003clist-of-valid\u003e])\n \u003cdefault\u003e\n\nOnly concern is that then the default option, which should be the most common, only falls out after checking whether the default doesn\u0027t match all the other options which makes the code a little bit more expensive to execute.\n\nI\u0027d nearly do out the code to using callbacks to raise exceptions and compare to what would fallout from the above just to compare.",
+      "parentUuid": "7a5de9d1_5a227e53",
+      "revId": "5fdff53b3800e82ca307f612a2dc9e1fa8e38073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
