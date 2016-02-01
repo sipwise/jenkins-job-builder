@@ -55,7 +55,7 @@ def rabbitmq(parser, xml_parent, data):
     Requires the Jenkins :jenkins-wiki:`RabbitMQ Build Trigger Plugin
     <RabbitMQ+Build+Trigger+Plugin>`.
 
-    :arg str token: the build token expected in the message queue
+    :arg str token: the build token expected in the message queue (required)
 
     Example:
 
@@ -71,8 +71,12 @@ def rabbitmq(parser, xml_parent, data):
 
     XML.SubElement(rabbitmq, 'spec').text = ''
 
-    XML.SubElement(rabbitmq, 'remoteBuildToken').text = str(
-        data.get('token'))
+    job_token = data.get('token', None)
+
+    if job_token is None:
+        raise MissingAttributeError('token')
+
+    XML.SubElement(rabbitmq, 'remoteBuildToken').text = str(job_token)
 
 
 def gerrit_handle_legacy_configuration(data):
