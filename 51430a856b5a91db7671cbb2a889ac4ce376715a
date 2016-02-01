@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a5de9d1_25be7365",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-02-01T01:29:37Z",
+      "side": 1,
+      "message": "Is token required?\n\nIf it\u0027s required we should probably raise a MissingAttributeError if the user forgets to pass it.",
+      "revId": "51430a856b5a91db7671cbb2a889ac4ce376715a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
