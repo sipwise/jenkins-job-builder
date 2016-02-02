@@ -1,0 +1,16 @@
+publishers:
+  - hockeyapp:
+      api-token: "bsdgxsh"
+      file-path: "./here"
+      app-id: "823yhudejcsljdf8w3a8ri"
+      symbols: "mapping.txt"
+      packed-libraries: "arch.so"
+      release-notes:
+          use-change-log: True
+      restrict-downloads-to-tags:
+        - "tag/2"
+        - "newtag"
+      notify-team: True
+      delete-old-versions: "5"
+      enable-debug-mode: True
+      fail-gracefully: True

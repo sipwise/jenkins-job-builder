@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <publishers>
+    <hockeyapp.HockeyappRecorder>
+      <applications>
+        <hockeyapp.HockeyappApplication>
+          <uploadMethod class="net.hockeyapp.jenkins.uploadMethod.VersionCreation">
+            <appId>823yhudejcsljdf8w3a8ri</appId>
+          </uploadMethod>
+          <filePath>./here</filePath>
+          <dsymPath>mapping.txt</dsymPath>
+          <libsPath>arch.so</libsPath>
+          <releaseNotesMethod class="net.hockeyapp.jenkins.releaseNotes.ChangelogReleaseNotes"/>
+          <downloadAllowed>false</downloadAllowed>
+          <tags>tag/2,newtag</tags>
+          <notifyTeam>true</notifyTeam>
+          <oldVersionHolder>
+            <numberOldVersions>5</numberOldVersions>
+          </oldVersionHolder>
+        </hockeyapp.HockeyappApplication>
+      </applications>
+      <debugMode>true</debugMode>
+      <failGracefully>true</failGracefully>
+      <baseUrl/>
+    </hockeyapp.HockeyappRecorder>
+  </publishers>
+</project>
