@@ -3,19 +3,29 @@
   <builders>
     <hudson.plugins.cmake.CmakeBuilder>
       <sourceDir>path/to/source</sourceDir>
-      <buildDir>path/to/build</buildDir>
-      <installDir>path/to/install</installDir>
-      <buildType>Debug</buildType>
-      <otherBuildType>CustomReleaseType</otherBuildType>
+      <workingDir>path/to/build</workingDir>
+      <buildType>CustomReleaseType</buildType>
       <generator>NMake Makefiles</generator>
-      <makeCommand>/usr/bin/make</makeCommand>
-      <installCommand>make new-install</installCommand>
+      <installationName>CMake custom install</installationName>
       <preloadScript>path/to/source/cmake.preload</preloadScript>
-      <cmakeArgs>-DCMAKE_FIND_ROOT_PATH=&quot;path/to/something/else&quot;</cmakeArgs>
-      <projectCmakePath>/usr/bin/cmake</projectCmakePath>
+      <toolArgs>-DCMAKE_FIND_ROOT_PATH=&quot;path/to/something/else&quot;</toolArgs>
       <cleanBuild>true</cleanBuild>
-      <cleanInstallDir>true</cleanInstallDir>
-      <builderImpl/>
+      <toolSteps>
+        <hudson.plugins.cmake.BuildToolStep>
+          <withCmake>true</withCmake>
+          <args>clean</args>
+          <vars>DESTDIR=${WORKSPACE}/artifacts/dir
+URL=http://www.example.org/
+</vars>
+        </hudson.plugins.cmake.BuildToolStep>
+        <hudson.plugins.cmake.BuildToolStep>
+          <withCmake>false</withCmake>
+          <args>test</args>
+          <vars>RESTRICT=&quot;TRUE&quot;
+TARGET=&quot;NONE&quot;
+</vars>
+        </hudson.plugins.cmake.BuildToolStep>
+      </toolSteps>
     </hudson.plugins.cmake.CmakeBuilder>
   </builders>
 </project>

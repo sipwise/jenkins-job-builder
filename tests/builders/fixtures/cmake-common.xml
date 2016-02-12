@@ -3,19 +3,14 @@
   <builders>
     <hudson.plugins.cmake.CmakeBuilder>
       <sourceDir>path/to/source</sourceDir>
-      <buildDir>path/to/build</buildDir>
-      <installDir>path/to/install</installDir>
+      <workingDir>path/to/build</workingDir>
       <buildType>Debug</buildType>
-      <otherBuildType/>
       <generator>Unix Makefiles</generator>
-      <makeCommand>make</makeCommand>
-      <installCommand>make install</installCommand>
+      <installationName>InSearchPath</installationName>
       <preloadScript/>
-      <cmakeArgs/>
-      <projectCmakePath/>
+      <toolArgs/>
       <cleanBuild>false</cleanBuild>
-      <cleanInstallDir>false</cleanInstallDir>
-      <builderImpl/>
+      <toolSteps/>
     </hudson.plugins.cmake.CmakeBuilder>
   </builders>
 </project>
