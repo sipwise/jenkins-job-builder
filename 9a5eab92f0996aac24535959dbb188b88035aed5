@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a54edaf_381dedbd",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3349,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-02-13T13:20:12Z",
+      "side": 1,
+      "message": "Instead of a trailing \\ you can avoid it by starting it with a trailing str(\n\n(See the stable-builds-as-reference example below)",
+      "revId": "9a5eab92f0996aac24535959dbb188b88035aed5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
