@@ -16,6 +16,24 @@
       "revId": "55256a9a0d3b0934b66bf20c0bd3ae8792493a8c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_da3fc023",
+        "filename": "tests/scm/fixtures/repo001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13967
+      },
+      "writtenOn": "2016-02-15T15:23:34Z",
+      "side": 1,
+      "message": "I agree. I\u0027ll submit new changes for this and the other cases you replied to. Thanks!",
+      "parentUuid": "dae33548_3c886c22",
+      "revId": "55256a9a0d3b0934b66bf20c0bd3ae8792493a8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
