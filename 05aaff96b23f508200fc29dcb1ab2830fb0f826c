@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_dcc5005c",
+        "filename": "tests/scm/fixtures/repo001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-02-15T14:42:12Z",
+      "side": 1,
+      "message": "We already test the default: false value. Can we change this one to test true?",
+      "revId": "05aaff96b23f508200fc29dcb1ab2830fb0f826c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
