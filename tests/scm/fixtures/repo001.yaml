@@ -15,6 +15,7 @@ scm:
       force-sync: false
       no-tags: false
       trace: false
+      show-all-changes: false
       local-manifest: |
         <?xml version="1.0" encoding="UTF-8"?>
         <manifest>
