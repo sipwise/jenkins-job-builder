@@ -8,6 +8,7 @@ scm:
       repo-url: https://internal.net/projects/repo
       mirror-dir: ~/git/project/
       jobs: 3
+      depth: 1
       current-branch: false
       quiet: false
       force-sync: true
