@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_2157cf58",
+        "filename": "jenkins_jobs/modules/general.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-02-18T23:02:50Z",
+      "side": 1,
+      "message": "I think need to add something to limit this to only outputting once, otherwise it can be very spammy for older installations.\n\nSomething as simple as a class member called logrotate_warn set to False initially, and check if it\u0027s set to true here, output the warning if not and then set it to true.\n\nProbably be nicer to also retrieve the jenkins version and not to complain unless the version is \u003e\u003d 1.637. The lib python-jenkins can make that available, we just don\u0027t retrieve it and store it as part of the registry similar to the plugin version info.\n\nHowever, I think just changing the warning to only output once per run would be sufficient for now.",
+      "revId": "df848b0b68dc3d7925653a162b53ec72292c06d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
