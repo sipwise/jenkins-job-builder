@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_417bf3bd",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-02-18T23:19:15Z",
+      "side": 1,
+      "message": "Seems unnecessary unless we were to do it for all functions. And in any case it won\u0027t protect from the wrong type being passed in, only if you pass in \"\", None, False, [] or {}.\n\nThis pattern also can lead to some less than clear behaviour:\n\n \u003e\u003e\u003e data \u003d {}\n \u003e\u003e\u003e def add_data(d):\n ...     d \u003d d if d else {}\n ...     d[\u0027hello\u0027] \u003d \"world\"\n ...     return d\n ... \n \u003e\u003e\u003e add_data(data)\n {\u0027hello\u0027: \u0027world\u0027}\n \u003e\u003e\u003e data\n {}\n \u003e\u003e\u003e data[\u0027b\u0027] \u003d \"c\"\n \u003e\u003e\u003e add_data(data)\n {\u0027b\u0027: \u0027c\u0027, \u0027hello\u0027: \u0027world\u0027}\n \u003e\u003e\u003e data\n {\u0027b\u0027: \u0027c\u0027, \u0027hello\u0027: \u0027world\u0027}\n\nIf really requires knowning what\u0027s going to happen about being treated as falsey and thus modifying a new object instead of the one passed in each time.\n\nThis can be useful at times, but given the less than clear behaviour for new users, I\u0027d prefer not to see this pattern being included unless there is an actual need for it.",
+      "revId": "23e80ef1500558427fae4626873121d95fa74e13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_41ae52e8",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-02-18T23:19:15Z",
+      "side": 1,
+      "message": "Wonder if you\u0027re aware that the above lines can be expressed as:\n\n try:\n     \n    XML.SubElement(rabbitmq, \u0027remoteBuildToken\u0027).text \u003d str(data[\u0027token\u0027])\n except KeyError as e:\n    raise MissingAttributeError(e.arg[0])\n\nWhich is generally better performing in python.",
+      "revId": "23e80ef1500558427fae4626873121d95fa74e13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
