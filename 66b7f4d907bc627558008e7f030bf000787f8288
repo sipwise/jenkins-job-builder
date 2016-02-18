@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_c1ec2295",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-02-18T23:43:35Z",
+      "side": 1,
+      "message": "Had a question about whether we should check the plugin version on another review, same thing applies here.\n\nThanh, think we should just allow new parameters that require specific versions as long as the functionality is available for a certain length of time, or check the version of the plugin and warn the user for a few releases of JJB?",
+      "revId": "66b7f4d907bc627558008e7f030bf000787f8288",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
