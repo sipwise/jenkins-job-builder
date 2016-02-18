@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_a5ccab89",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2886,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-02-18T12:54:10Z",
+      "side": 1,
+      "message": "miss (default \u0027\u0027)",
+      "revId": "dce7de48a6a988d71fb0a865ed764689232c2b83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dae33548_aa23d8bb",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2901,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-02-18T12:54:10Z",
+      "side": 1,
+      "message": "Instead of a trailing \\ you can avoid it by starting it with a trailing data[",
+      "revId": "dce7de48a6a988d71fb0a865ed764689232c2b83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
