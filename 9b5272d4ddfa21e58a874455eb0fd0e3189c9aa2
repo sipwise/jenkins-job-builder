@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dae33548_416c9236",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-02-18T23:38:31Z",
+      "side": 1,
+      "message": "Will this be silently ignored by older versions of the plugin?\n\nIdeally we should probably check, since we have the capability, and then only enable the settings for the versions that support it.\n\nThanh, if the older plugin can safely ignore this value, is it reasonable not to warn the user about it not being ignored or still output it into the produced XML but then for it to be ignored on upload?",
+      "revId": "9b5272d4ddfa21e58a874455eb0fd0e3189c9aa2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
