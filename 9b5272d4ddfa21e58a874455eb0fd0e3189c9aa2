@@ -16,6 +16,24 @@
       "revId": "9b5272d4ddfa21e58a874455eb0fd0e3189c9aa2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bae84128_3d533de3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-02-20T05:10:20Z",
+      "side": 1,
+      "message": "In other plugins I worked on I found that Jenkins does not configure options that are not valid and does not appear to have any adverse effects on the use of the plugin so I think risk is minimal here. So I would say yes, this is silently ignored by Jenkins.\n\nI agree though that from a user perspective if an option is not valid because they are using an older plugin we should probably warn the user that they should upgrade if they need that feature. How easy is it to detect the plugin version in JJB?\n\nIf it\u0027s significant work I\u0027d say we let this go through patch go through and we can come back and add that support in future patches.",
+      "parentUuid": "dae33548_416c9236",
+      "revId": "9b5272d4ddfa21e58a874455eb0fd0e3189c9aa2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
