@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_e1227951",
+        "filename": "tests/yamlparser/fixtures/template_default_variables.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-02-23T01:48:51Z",
+      "side": 1,
+      "message": "I\u0027m a little confused about this one. Can you clarify?\n\nSo with disabled_var: above as empty. Does this mean disabled: does not get set at all when it\u0027s converted to XML?",
+      "revId": "a54e623dc79d1ac3b9b38148e012735cedc8b3ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
