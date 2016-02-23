@@ -26,6 +26,9 @@ def wrap_stream(stream, encoding='utf-8'):
     except AttributeError:
         stream_enc = locale.getpreferredencoding()
 
+    if stream_enc is None:
+        stream_enc = locale.getpreferredencoding()
+
     if hasattr(stream, 'buffer'):
         stream = stream.buffer
 
