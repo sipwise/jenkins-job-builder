@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_22619105",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-02-24T17:32:05Z",
+      "side": 1,
+      "message": "I think it should actually be \"Topic Path\" based on what I see as the input values. What do you think?",
+      "revId": "bd658fe564f5459f07ec0212f0adc49fc74de884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
