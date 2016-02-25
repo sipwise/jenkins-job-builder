@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aed3d3a_fed578b9",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-02-25T19:40:00Z",
+      "side": 1,
+      "message": "Not sure I grok this in comparing it to the existing code.\n\nSince it doesn\u0027t yet exist, why would it be deprecated already?",
+      "revId": "d30242052bff00110532c33d19d7153707e553ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
