@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bae84128_3c087591",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-02-25T06:19:11Z",
+      "side": 1,
+      "message": "why added \u0027*\u0027 here?",
+      "revId": "7e02657f857fef7e6fc21faa2c040c5e1dc5b56c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
