@@ -1,0 +1,11 @@
+Code-Review+2: Thanh Ha <zxiiro@gmail.com>
+Code-Review+1: Dong Ma <winterma.dong@gmail.com>
+Code-Review+2: Darragh Bailey <daragh.bailey@gmail.com>
+Code-Review+1: David Caro <david@dcaro.es>
+Workflow+1: Thanh Ha <zxiiro@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 26 Feb 2016 15:24:07 +0000
+Reviewed-on: https://review.openstack.org/273167
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
