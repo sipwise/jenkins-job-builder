@@ -10,11 +10,14 @@ publishers:
                 storage-location: 'gs://myBucket'
                 upload-for-failed-jobs: true
                 share-publicly: true
+                strip-prefix: 'path/to/'
             - classic:
                 file-pattern: 'target/*.war'
                 storage-location: 'gs://myBucket'
                 upload-for-failed-jobs: true
+                strip-prefix: 'path/to/'
             - classic:
                 file-pattern: '**/build/*.iso'
                 storage-location: 'gs://myBucket/artifacts/'
                 share-publicly: true
+                strip-prefix: 'path/to/'
