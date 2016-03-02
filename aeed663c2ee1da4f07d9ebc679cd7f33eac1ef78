@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_8b8fa022",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-03-02T03:26:05Z",
+      "side": 1,
+      "message": "Instead of a trailing \\ you can avoid it by starting it with a trailing str(",
+      "range": {
+        "startLine": 73,
+        "startChar": 60,
+        "endLine": 73,
+        "endChar": 61
+      },
+      "revId": "aeed663c2ee1da4f07d9ebc679cd7f33eac1ef78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
