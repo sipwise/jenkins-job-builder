@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7af24918_a9ccaf6a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5161,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-03-03T14:55:17Z",
+      "side": 1,
+      "message": "if this param should be (optional)?",
+      "revId": "7a39360e1566c50ea57f0cc061e838f4198e2583",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7af24918_e9f07793",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5174,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-03-03T14:55:17Z",
+      "side": 1,
+      "message": "Same as above, if this param should be (optional)?",
+      "revId": "7a39360e1566c50ea57f0cc061e838f4198e2583",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
