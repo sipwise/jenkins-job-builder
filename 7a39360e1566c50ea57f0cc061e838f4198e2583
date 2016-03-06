@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7af24918_6c16c056",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5161,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-03-06T16:21:49Z",
+      "side": 1,
+      "message": "I\u0027d prefer parameters to not be (optional) and default to something. In the case of string defaulting to \u0027\u0027 as the code is doing here is the right thing in my opinion. See discussion on mailing list for explanation of why:\n\nhttp://lists.openstack.org/pipermail/openstack-infra/2016-February/003746.html",
+      "parentUuid": "7af24918_a9ccaf6a",
+      "revId": "7a39360e1566c50ea57f0cc061e838f4198e2583",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7af24918_e9f07793",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
