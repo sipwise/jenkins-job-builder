@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5aef4532_6488a023",
+        "filename": "README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-03-07T17:18:15Z",
+      "side": 1,
+      "message": "Agreed, though the above is no worse than the existing advice. If the patch author takes up the suggestion below for the development, would be better to switch the above to your suggestion.",
+      "parentUuid": "5a710552_a5da0977",
+      "revId": "737badcdd7ceb78a76aa886335919dcd441123d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a710552_8fadac33",
         "filename": "README.rst",
         "patchSetId": 2
@@ -65,6 +83,24 @@
       "side": 1,
       "message": "I think the only difference between \u0027python setup develop\u0027 and \u0027pip install -e .\u0027 is pip uses wheel.  I left off the sudo because I assumed anyone doing this was going to be running in a venv",
       "parentUuid": "5a710552_8fadac33",
+      "revId": "737badcdd7ceb78a76aa886335919dcd441123d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_393a4437",
+        "filename": "README.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-03-07T17:18:15Z",
+      "side": 1,
+      "message": "I think all that\u0027s required is to switch to specifying use of virtualenv to start with.\n\n$ virtualenv .venv\n$ source .venv/bin/activate\n$ pip install -r test-requirements.txt -e .\n\nThat way we\u0027re telling users to use virtualenv by default, and this sets up an environment suitable for running tests against the development tree as well.\n\nThere doesn\u0027t appear to be a standard approach across openstack projects besides some having a tools/install_venv.py script included to do the above.\n\nI think the above would be a reasonable start.",
+      "parentUuid": "5a710552_4ac81275",
       "revId": "737badcdd7ceb78a76aa886335919dcd441123d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
