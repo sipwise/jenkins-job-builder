@@ -33,6 +33,24 @@
       "revId": "ff5d733629057c47f3ed157e7c689b7239bf8053",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_dfcb4d1d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-03-07T13:52:47Z",
+      "side": 1,
+      "message": "+1, I think this is a good idea and would make it more clear when you can use an option.",
+      "parentUuid": "5aef4532_15175f52",
+      "revId": "ff5d733629057c47f3ed157e7c689b7239bf8053",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
