@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_7ec79245",
+        "filename": "tests/publishers/fixtures/post-tasks002.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-03-07T16:40:28Z",
+      "side": 1,
+      "message": "So was there a reason that this couldn\u0027t just be left blank?\n\nCause simply adding this here means now we have one component that handles \u0027null\u0027 values from yaml and none of the others do.",
+      "revId": "2a7df4a27a7e1ab1634068e8e58c9923c9e4527e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
