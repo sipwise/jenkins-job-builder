@@ -205,10 +205,6 @@ class ModuleRegistry(object):
                     "Adding auto EP '%s=%s:%s'" %
                     (ep_name, entry_point.module_name, func_ep.__name__))
 
-            # load from explicitly defined entry points
-            module_eps.extend(list(pkg_resources.iter_entry_points(
-                group='jenkins_jobs.{0}'.format(component_list_type))))
-
             eps = {}
             for module_ep in module_eps:
                 if module_ep.name in eps:
