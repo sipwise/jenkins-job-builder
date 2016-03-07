@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5aef4532_12cc7088",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1566,
+      "author": {
+        "id": 20885
+      },
+      "writtenOn": "2016-03-07T22:41:30Z",
+      "side": 1,
+      "message": "I used the same somment as for node-parameters of:\nhttp://docs.openstack.org/infra/jenkins-job-builder/publishers.html#publishers.trigger-parameterized-builds\nI think it makes sense as is - when active, the same node will be used for the triggered build.",
+      "parentUuid": "5aef4532_5a92b458",
+      "revId": "99583eccc4cd23f25c67010c780f0715386f7148",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_f5b913ee",
         "filename": "tests/builders/fixtures/multibuild.yaml",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2016-03-07T11:41:55Z",
       "side": 1,
       "message": "I recall with paramterized triggered build the order of various parameter sets was significant, is that true of this one as well?\n\nThis is purely information, I have a change that enables using the order from the yaml to control this behaviour via a config option. Since we already have an implicit order here doesn\u0027t match sense to change it here, we can do it via a subsequent patch that builds on https://review.openstack.org/193660.",
+      "revId": "99583eccc4cd23f25c67010c780f0715386f7148",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_f2e744e2",
+        "filename": "tests/builders/fixtures/multibuild.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 20885
+      },
+      "writtenOn": "2016-03-07T22:41:30Z",
+      "side": 1,
+      "message": "Not sure if that answers your question but looking at the correcponding multibuild.xml I see the follwoing order: \n1/ currParams\n2/ nodeParameters\n3/ predefinedBuildParameters\nSo I would be tempted to say that the order in yaml file is not respected..",
+      "parentUuid": "5aef4532_f5b913ee",
       "revId": "99583eccc4cd23f25c67010c780f0715386f7148",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
