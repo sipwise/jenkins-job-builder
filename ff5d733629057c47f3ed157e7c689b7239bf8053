@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_b5f2eb98",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-03-07T11:51:39Z",
+      "side": 1,
+      "message": "I\u0027m generally wary of making these comments to wordy, as really the users should refer to the plugin documentation itself for the exact behaviour.\n\nMight be more concise to say:\n\n Allow build to be triggered provided the event\n contains at least one file path that does not\n match the forbidden file paths. Otherwise skipped\n if any match. (optional)",
+      "revId": "ff5d733629057c47f3ed157e7c689b7239bf8053",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_15175f52",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-03-07T11:51:39Z",
+      "side": 1,
+      "message": "@Thanh do we want to require adding in the version required to the docstring on options that are supported by later versions of plugins? Seems like that might be a reasonable solution to avoid needing to check in each plugin for the version required on newer functionality and warning the user about it requiring a newer version of a plugin.",
+      "revId": "ff5d733629057c47f3ed157e7c689b7239bf8053",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
