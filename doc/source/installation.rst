@@ -3,7 +3,9 @@ Installation
 
 To install Jenkins Job Builder from source, run::
 
-  sudo python setup.py install
+  sudo pip install .
+
+Do not use ``sudo python setup.py install`` as this may create inconsistencies.
 
 Alternatively, the current release can be installed from pypi::
 
