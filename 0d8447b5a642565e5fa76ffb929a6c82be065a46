@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_eacab74e",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1997,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-03-07T18:05:49Z",
+      "side": 1,
+      "message": "Should use the following macro here:\n\n :jenkins-wiki:`CMake Plugin \u003cCMake+Plugin\u003e`.",
+      "revId": "0d8447b5a642565e5fa76ffb929a6c82be065a46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_f54bbc29",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2058,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-03-07T18:05:49Z",
+      "side": 1,
+      "message": "In general the changes are fine, however we need to retain compatibility with the older plugins where we have released support. Take a look at the timeout wrapper and gerrit trigger modules where we retrieve the plugin version and then produce different XML output depending on which version of the plugin is available in the jenkins master.\n\nThere are also tests for those that configure the test to see different versions of the plugin to check that the output is correct.\n\nTechnically the checks which involve the following code:\n\n    plugin_info \u003d parser.registry.get_plugin_info(\n        \"Jenkins build timeout plugin\")\n    version \u003d pkg_resources.parse_version(plugin_info.get(\"version\", \"0\"))\n\n    if version \u003e\u003d pkg_resources.parse_version(\"1.14\"):\n\nCan be simplified to:\n\n    plugin_info \u003d parser.registry.get_plugin_info(\n        \"Jenkins build timeout plugin\")\n    version \u003d plugin_info.get(\"version\", \"0\")\n\n    # python-jenkins plugins have a version object to handle this\n    if version \u003e\u003d \"1.14\":\n\nprovided we depend on 0.4.9 or newer of python-jenkins.",
+      "revId": "0d8447b5a642565e5fa76ffb929a6c82be065a46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_4a092b95",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2069,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-03-07T18:05:49Z",
+      "side": 1,
+      "message": "Ideally switch to the more common style as you\u0027re changing almost the whole code for this plugin:\n\n    working_dir \u003d XML.SubElement(cmake, \u0027workingDir\u0027).text \u003d str(\n        data.get(\u0027working-dir\u0027, \u0027\u0027))",
+      "revId": "0d8447b5a642565e5fa76ffb929a6c82be065a46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
