@@ -16,6 +16,23 @@
       "revId": "a202e0110b0d9c49d1fd8adc02a0d19a6e64dbfd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_6affc701",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-03-07T17:44:27Z",
+      "side": 1,
+      "message": "Seems a very verbose way of doing this. Would suggest converting to the following:\n\n    valid_policies \u003d {\n        \u0027by-day\u0027: \u0027ByDayPolicy\u0027,\n        \u0027keep-since\u0027: \u0027KeepSincePolicy\u0027,\n        \u0027build-number\u0027: \u0027BuildNumberPolicy\u0027,\n        \u0027keep-first-failed\u0027: \u0027KeepFirstFailedPolicy\u0027\n    }\n    plugin_class \u003d \u0027org.jenkins_ci.plugins.build_keeper.\u0027\n\n    policy \u003d data.get(\u0027policy\u0027)\n    if policy not in valid_policies:\n        InvalidAttributeError(\u0027policy\u0027, policy, valid_policies)\n\n    policy_element \u003d XML.SubElement(\n        root, \u0027policy\u0027,\n        {\u0027class\u0027: plugin_class + valid_policies[policy]})\n\n    if policy \u003d\u003d \u0027keep-first-failed\u0027:\n        XML.SubElement(policy_element, \u0027numberOfFails\u0027).text \u003d str(\n            data.get(\u0027number-of-fails\u0027, 0))\n    else:\n        XML.SubElement(policy_element, \u0027buildPeriod\u0027).text \u003d str(\n            data.get(\u0027build-period\u0027, 0))\n        XML.SubElement(policy_element, \u0027dontKeepFailed\u0027).text \u003d str(\n            data.get(\u0027dont-keep-failed\u0027, False)).lower()",
+      "revId": "a202e0110b0d9c49d1fd8adc02a0d19a6e64dbfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
