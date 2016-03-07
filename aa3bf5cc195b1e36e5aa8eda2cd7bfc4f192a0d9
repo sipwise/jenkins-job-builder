@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_b5993471",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-03-07T18:09:05Z",
+      "side": 1,
+      "message": "We should probably remove this function, since we dropped it\u0027s usage when we migrated to using parallel uploads. During our testing we discovered that it was quicker to just let jenkins work out if there were any differences instead of trying to be too smart about it. Especially since Jenkins will nearly always return slightly different XML than that uploaded.",
+      "revId": "aa3bf5cc195b1e36e5aa8eda2cd7bfc4f192a0d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
