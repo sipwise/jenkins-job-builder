@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_702b3aec",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-03-07T18:29:52Z",
+      "side": 1,
+      "message": "Any reason to prefer explicit checking the keys over using \u0027.get()\u0027?:\n\n    projects \u003d data.get(\u0027projects\u0027, [])",
+      "revId": "a9450617d1d3d08bdf2bf718a245583d43e26654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
