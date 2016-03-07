@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_5a92b458",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1566,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-03-07T11:41:55Z",
+      "side": 1,
+      "message": "Should this be - \u0027Use the same Node parameters for\u0027?\n\nI think also maybe rephrase to match the other parameter settings.\n\n\u0027Pass Node parameters to the other job\u0027.\n\nWe can go through the lot subsequently to rephrase if needed.",
+      "revId": "99583eccc4cd23f25c67010c780f0715386f7148",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_f5b913ee",
+        "filename": "tests/builders/fixtures/multibuild.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-03-07T11:41:55Z",
+      "side": 1,
+      "message": "I recall with paramterized triggered build the order of various parameter sets was significant, is that true of this one as well?\n\nThis is purely information, I have a change that enables using the order from the yaml to control this behaviour via a config option. Since we already have an implicit order here doesn\u0027t match sense to change it here, we can do it via a subsequent patch that builds on https://review.openstack.org/193660.",
+      "revId": "99583eccc4cd23f25c67010c780f0715386f7148",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
