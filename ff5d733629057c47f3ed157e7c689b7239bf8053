@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5aef4532_43875f0f",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-03-07T16:19:22Z",
+      "side": 1,
+      "message": "Based on a quick chat I think it\u0027s worth adding \u0027Requires plugin version \u003e\u003d 2.16.0\u0027 to the end of the above text before the \u0027(optional)\u0027 string. We\u0027ll look to follow that idea in the future.\n\nUp to you whether you feel the suggested wording is clear while being more concise or you want to keep the existing wording.",
+      "parentUuid": "5aef4532_b5f2eb98",
+      "revId": "ff5d733629057c47f3ed157e7c689b7239bf8053",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_15175f52",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 3
