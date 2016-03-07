@@ -16,6 +16,24 @@
       "revId": "bd658fe564f5459f07ec0212f0adc49fc74de884",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aef4532_75604c36",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-03-07T18:13:10Z",
+      "side": 1,
+      "message": "@Thanh can you elaborate on what you mean by the input values?\n\nIs that because gerrit supports topics containing \u0027/\u0027 in the name?",
+      "parentUuid": "bae84128_22619105",
+      "revId": "bd658fe564f5459f07ec0212f0adc49fc74de884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
