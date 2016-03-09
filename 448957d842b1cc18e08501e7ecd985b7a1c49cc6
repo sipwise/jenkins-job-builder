@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_301f80b8",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-03-09T14:58:19Z",
+      "side": 1,
+      "message": "I think optional is an incorrect statement here. According to your code and unit tests it\u0027s actually (default: false).\n\nI\u0027d prefer defaults getting set rather than (optional) parameters anyway as we\u0027ve found out that optional commands are indeterministic in Jenkins. Can we change the docs here to state that it\u0027s (default: false) as the code is doing?",
+      "revId": "448957d842b1cc18e08501e7ecd985b7a1c49cc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
