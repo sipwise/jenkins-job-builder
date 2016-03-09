@@ -683,6 +683,7 @@ def slack(parser, xml_parent, data):
         ('notify-unstable', 'notifyUnstable', False),
         ('notify-failure', 'notifyFailure', False),
         ('notify-back-to-normal', 'notifyBackToNormal', False),
+        ('notify-repeated-failure', 'notifyRepeatedFailure', False),
         ('include-test-summary', 'includeTestSummary', False),
         ('include-custom-message', 'includeCustomMessage', False),
         ('custom-message', 'customMessage', ''),
