@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aef4532_d001fc39",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-03-09T14:59:29Z",
+      "side": 1,
+      "message": "Looks good but can you add a docstring for this parameter?",
+      "revId": "e189d06b7857bfdf1f5eb89ed2fc1eebfb80bc8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
