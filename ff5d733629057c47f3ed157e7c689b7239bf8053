@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5aef4532_8a9c615e",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 19078
+      },
+      "writtenOn": "2016-03-09T14:30:18Z",
+      "side": 1,
+      "message": "TBH, I\u0027d rather keep the existing wording because a) the proposed wording is not more concise or easier to understand, and b) the language was taken verbatim from the plugin documentation. This minimizes the risk of contradiction and the confusion.",
+      "parentUuid": "5aef4532_43875f0f",
+      "revId": "ff5d733629057c47f3ed157e7c689b7239bf8053",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aef4532_15175f52",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 3
