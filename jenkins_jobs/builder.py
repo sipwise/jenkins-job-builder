@@ -16,6 +16,7 @@
 # Manage jobs in Jenkins server
 
 import errno
+import fcntl
 import hashlib
 import io
 import logging
@@ -45,6 +46,7 @@ class CacheStorage(object):
     # modules so that they are available to be used when the destructor
     # is being called since python will not guarantee that it won't have
     # removed global module references during teardown.
+    _fcntl = fcntl
     _logger = logger
     _os = os
     _tempfile = tempfile
@@ -56,12 +58,38 @@ class CacheStorage(object):
         host_vary = re.sub('[^A-Za-z0-9\-\~]', '_', jenkins_url)
         self.cachefilename = os.path.join(
             cache_dir, 'cache-host-jobs-' + host_vary + '.yml')
+
+        # generate named lockfile if not exists, and lock it
+        while not self._lock():
+            time.sleep(1)
+
         if flush or not os.path.isfile(self.cachefilename):
             self.data = {}
         else:
             with io.open(self.cachefilename, 'r', encoding='utf-8') as yfile:
                 self.data = yaml.load(yfile)
         logger.debug("Using cache: '{0}'".format(self.cachefilename))
+
+    def _lock(self):
+        path = "%s.lock" % self.cachefilename
+        self._lockfile = open(path, 'w')
+
+        try:
+            self._fcntl.lockf(self._lockfile,
+                              self._fcntl.LOCK_EX | self._fcntl.LOCK_NB)
+        except IOError:
+            return False
+        return True
+
+    def _unlock(self):
+        if getattr(self, 'lockfile', None) is not None:
+            try:
+                self._fcntl.lockf(self._lockfile, self._fcntl.LOCK_UN)
+                self._lockfile.close()
+            except IOError:
+                pass
+
+            self._lockfile = None
 
     @staticmethod
     def get_cache_dir():
@@ -128,6 +156,7 @@ class CacheStorage(object):
             except Exception as e:
                 self._logger.error("Failed to write to cache file '%s' on "
                                    "exit: %s" % (self.cachefilename, e))
+        self._unlock()
 
 
 class Jenkins(object):
