@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3afc51ec_f8f535cb",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-03-14T15:17:50Z",
+      "side": 1,
+      "message": "I\u0027d be included to put the \u0027lock\u0027 reference at the end of the filename and wouldn\u0027t bother with hiding it, assuming it\u0027s already using the standard cache dirs it\u0027s already under a hidden path, so no need to make the file hidden as well. Seems to be more conventional, and easier to associate with the cache file that way.\n\nMinor style nit, might want to put these below the __init__() and prefix them with \u0027_\u0027 to mark them as intended to be for private usage. Probably should have done that for a few other methods in this as well but we didn\u0027t think of that at the time.",
+      "revId": "05e1f617f20eb26a2133298088ed99396f616430",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afc51ec_f25d537a",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-03-14T15:17:50Z",
+      "side": 1,
+      "message": "Need to preserve the fcntl import, same situation as the logger and yaml imports above.",
+      "revId": "05e1f617f20eb26a2133298088ed99396f616430",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3afc51ec_5831c904",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-03-14T15:17:50Z",
+      "side": 1,
+      "message": "Does this exception swallow file not existing errors as well?\n\nSince it can be called via the destructor before the object is fully initialized, it may need to check that self.lockfile has been fully initialized similar to how \u0027save\u0027 checks that self.data can be accessed.",
+      "revId": "05e1f617f20eb26a2133298088ed99396f616430",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
