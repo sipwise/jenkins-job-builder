@@ -16,6 +16,7 @@
 # Manage jobs in Jenkins server
 
 import errno
+import fcntl
 import hashlib
 import io
 import logging
@@ -47,6 +48,7 @@ class CacheStorage(object):
     # removed global module references during teardown.
     _yaml = yaml
     _logger = logger
+    _fcntl = fcntl
 
     def __init__(self, jenkins_url, flush=False):
         cache_dir = self.get_cache_dir()
@@ -54,12 +56,38 @@ class CacheStorage(object):
         host_vary = re.sub('[^A-Za-z0-9\-\~]', '_', jenkins_url)
         self.cachefilename = os.path.join(
             cache_dir, 'cache-host-jobs-' + host_vary + '.yml')
+
+        # generate named lockfile if not exists, and lock it
+        while not self._lock(cache_dir, host_vary):
+            time.sleep(1)
+
         if flush or not os.path.isfile(self.cachefilename):
             self.data = {}
         else:
             with io.open(self.cachefilename, 'r', encoding='utf-8') as yfile:
                 self.data = yaml.load(yfile)
         logger.debug("Using cache: '{0}'".format(self.cachefilename))
+
+    def _lock(self, cache_dir, jenkins_master):
+        path = os.path.join(cache_dir, "lock-jjb.%s" % jenkins_master)
+        self._lockfile = open(path, 'w')
+
+        try:
+            self._fcntl.lockf(self._lockfile,
+                              self._fcntl.LOCK_EX | self._fcntl.LOCK_NB)
+        except IOError:
+            return False
+        return True
+
+    def _unlock(self):
+        if getattr(self, 'lockfile', None) is not None:
+            try:
+                self._fcntl.lockf(self._lockfile, self._fcntl.LOCK_UN)
+                self._lockfile.close()
+            except IOError:
+                pass
+
+            self._lockfile = None
 
     @staticmethod
     def get_cache_dir():
@@ -114,6 +142,7 @@ class CacheStorage(object):
 
     def __del__(self):
         self.save()
+        self._unlock()
 
 
 class Jenkins(object):
