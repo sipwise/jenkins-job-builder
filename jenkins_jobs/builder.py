@@ -28,9 +28,11 @@ import time
 import xml.etree.ElementTree as XML
 import yaml
 
+import fasteners
 import jenkins
 
 from jenkins_jobs.constants import MAGIC_MANAGE_STRING
+from jenkins_jobs import errors
 from jenkins_jobs.parallel import parallelize
 from jenkins_jobs import utils
 
@@ -56,12 +58,30 @@ class CacheStorage(object):
         host_vary = re.sub('[^A-Za-z0-9\-\~]', '_', jenkins_url)
         self.cachefilename = os.path.join(
             cache_dir, 'cache-host-jobs-' + host_vary + '.yml')
+
+        # generate named lockfile if not exists, and lock it
+        self._locked = self._lock()
+        if not self._locked:
+            raise errors.JenkinsJobsException(
+                "Unable to lock cache for '%s'" % jenkins_url)
+
         if flush or not os.path.isfile(self.cachefilename):
             self.data = {}
         else:
             with io.open(self.cachefilename, 'r', encoding='utf-8') as yfile:
                 self.data = yaml.load(yfile)
         logger.debug("Using cache: '{0}'".format(self.cachefilename))
+
+    def _lock(self):
+        self._fastener = fasteners.InterProcessLock("%s.lock" % self.cachefilename)
+
+        return self._fastener.acquire(delay=1, max_delay=2, timeout=60)
+
+    def _unlock(self):
+        if getattr(self, '_locked', False):
+            if getattr(self, '_fastener', None) is not None:
+                self._fastener.release()
+            self._locked = None
 
     @staticmethod
     def get_cache_dir():
@@ -128,6 +148,7 @@ class CacheStorage(object):
             except Exception as e:
                 self._logger.error("Failed to write to cache file '%s' on "
                                    "exit: %s" % (self.cachefilename, e))
+        self._unlock()
 
 
 class Jenkins(object):
