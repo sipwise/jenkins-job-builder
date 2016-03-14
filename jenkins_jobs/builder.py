@@ -16,6 +16,7 @@
 # Manage jobs in Jenkins server
 
 import errno
+import fcntl
 import hashlib
 import io
 import logging
@@ -48,12 +49,34 @@ class CacheStorage(object):
     _yaml = yaml
     _logger = logger
 
+    def lock(self, cache_dir, jenkins_master):
+        path = os.path.join(cache_dir, ".jjb-lock.%s" % jenkins_master)
+        self.lockfile = open(path, 'w')
+
+        try:
+            fcntl.lockf(self.lockfile, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except IOError:
+            return False
+        return True
+
+    def unlock(self):
+        try:
+            fcntl.lockf(self.lockfile, fcntl.LOCK_UN)
+            self.lockfile.close()
+        except IOError:
+            pass
+
     def __init__(self, jenkins_url, flush=False):
         cache_dir = self.get_cache_dir()
         # One cache per remote Jenkins URL:
         host_vary = re.sub('[^A-Za-z0-9\-\~]', '_', jenkins_url)
         self.cachefilename = os.path.join(
             cache_dir, 'cache-host-jobs-' + host_vary + '.yml')
+
+        # generate named lockfile if not exists, and lock it
+        while not self.lock(cache_dir, host_vary):
+            time.sleep(1)
+
         if flush or not os.path.isfile(self.cachefilename):
             self.data = {}
         else:
@@ -111,6 +134,7 @@ class CacheStorage(object):
                 self._logger.info("Cache saved")
                 self._logger.debug("Cache written out to '%s'" %
                                    self.cachefilename)
+        self.unlock()
 
     def __del__(self):
         self.save()
