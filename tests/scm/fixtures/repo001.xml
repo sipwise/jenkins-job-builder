@@ -23,5 +23,8 @@
     remote=&quot;gerrit&quot; revision=&quot;master&quot; /&gt;
 &lt;/manifest&gt;
 </localManifest>
+    <ignoreProjects class="linked-hash-set">
+      <string>unimportant-project</string>
+    </ignoreProjects>
   </scm>
 </project>
