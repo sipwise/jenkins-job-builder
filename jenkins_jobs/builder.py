@@ -70,10 +70,10 @@ class CacheStorage(object):
 
     def _lock(self, cache_dir, jenkins_master):
         path = os.path.join(cache_dir, "lock-jjb.%s" % jenkins_master)
-        self.lockfile = open(path, 'w')
+        self._lockfile = open(path, 'w')
 
         try:
-            self._fcntl.lockf(self.lockfile,
+            self._fcntl.lockf(self._lockfile,
                               self._fcntl.LOCK_EX | self._fcntl.LOCK_NB)
         except IOError:
             return False
@@ -82,10 +82,12 @@ class CacheStorage(object):
     def _unlock(self):
         if getattr(self, 'lockfile', None) is not None:
             try:
-                self._fcntl.lockf(self.lockfile, self._fcntl.LOCK_UN)
-                self.lockfile.close()
+                self._fcntl.lockf(self._lockfile, self._fcntl.LOCK_UN)
+                self._lockfile.close()
             except IOError:
                 pass
+
+            self._lockfile = None
 
     @staticmethod
     def get_cache_dir():
@@ -137,10 +139,10 @@ class CacheStorage(object):
                 self._logger.info("Cache saved")
                 self._logger.debug("Cache written out to '%s'" %
                                    self.cachefilename)
-        self._unlock()
 
     def __del__(self):
         self.save()
+        self._unlock()
 
 
 class Jenkins(object):
