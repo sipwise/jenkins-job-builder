@@ -645,6 +645,13 @@ def repo(parser, xml_parent, data):
         else:
             xe.text = str(val)
 
+    # ignore-changes does not follow the same pattern of the other parameters,
+    # so process it here:
+    ip = XML.SubElement(scm, 'ignoreProjects', {'class': 'linked-hash-set'})
+    ignored_projects = data.get('ignore-changes', [''])
+    for ignored_project in ignored_projects:
+        XML.SubElement(ip, 'string').text = str(ignored_project)
+
 
 def store(parser, xml_parent, data):
     """yaml: store
