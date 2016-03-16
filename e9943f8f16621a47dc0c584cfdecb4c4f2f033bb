@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1af94dfe_6ecce435",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2016-03-16T10:14:05Z",
+      "side": 1,
+      "message": "could you please add comment for the third default location, which is the local dir (./jenkins_jobs.ini)?",
+      "revId": "e9943f8f16621a47dc0c584cfdecb4c4f2f033bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1af94dfe_2e75bcf8",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2016-03-16T10:14:05Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this check before localconf so that the search order is like this..\n  global (/etc/..) -\u003e home (~/..) -\u003e local (./..)",
+      "revId": "e9943f8f16621a47dc0c584cfdecb4c4f2f033bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
