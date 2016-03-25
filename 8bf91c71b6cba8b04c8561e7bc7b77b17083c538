@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da0c15f0_a51457f5",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 18918
+      },
+      "writtenOn": "2016-03-25T20:13:09Z",
+      "side": 1,
+      "message": "Style: Shouldn\u0027t this rather be called \"get_config_file()\"?",
+      "revId": "8bf91c71b6cba8b04c8561e7bc7b77b17083c538",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_a52bb72f",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 18918
+      },
+      "writtenOn": "2016-03-25T20:13:09Z",
+      "side": 1,
+      "message": "Missing \"is\"?",
+      "range": {
+        "startLine": 59,
+        "startChar": 69,
+        "endLine": 59,
+        "endChar": 70
+      },
+      "revId": "8bf91c71b6cba8b04c8561e7bc7b77b17083c538",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
