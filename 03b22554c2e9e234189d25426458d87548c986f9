@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da0c15f0_3516b055",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 20
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 18918
+      },
+      "writtenOn": "2016-03-26T07:21:28Z",
+      "side": 1,
+      "message": "This paragraph does not longer apply as the test is now added\nto the \"tests/cmd\" directory. Either we drop this paragraph\nand also the modification to .gitignore, or we move the test\nindeed to a new file in \"tests/config\".",
+      "revId": "03b22554c2e9e234189d25426458d87548c986f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
