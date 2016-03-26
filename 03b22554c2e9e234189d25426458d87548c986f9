@@ -16,6 +16,24 @@
       "revId": "03b22554c2e9e234189d25426458d87548c986f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da0c15f0_16d1f257",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 20
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2016-03-26T12:55:35Z",
+      "side": 1,
+      "message": "i\u0027m fine with test as is.  could you please make the necessary fix? thanks.",
+      "parentUuid": "da0c15f0_3516b055",
+      "revId": "03b22554c2e9e234189d25426458d87548c986f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
