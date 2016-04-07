@@ -109,11 +109,21 @@ def gerrit_handle_legacy_configuration(data):
 
     for idx, event in enumerate(trigger_on):
         if event == 'comment-added-event':
-            trigger_on[idx] = events = OrderedDict()
-            events['comment-added-event'] = OrderedDict((
-                ('approval-category', data['trigger-approval-category']),
-                ('approval-value', data['trigger-approval-value'])
-            ))
+            if (
+                'trigger-approval-category' in data and
+                'trigger-approval-value' in data
+            ):
+                trigger_on[idx] = events = OrderedDict()
+                events['comment-added-event'] = OrderedDict((
+                    ('approval-category', data['trigger-approval-category']),
+                    ('approval-value', data['trigger-approval-value'])
+                ))
+            else:
+                raise JenkinsJobsException(
+                    'The comment-added-event trigger requires which approval '
+                    'category and value you want to trigger the job. '
+                    'It should be specified by the approval-category '
+                    'and approval-value properties.')
 
 
 def build_gerrit_triggers(xml_parent, data):
