@@ -1,0 +1,11 @@
+wrappers:
+  - openstack:
+      instances:
+        - jenkins-dev-slave:
+            cloud-name: mycloud1
+            count: 1
+        - jenkins-test-slave:
+            cloud-name: mycloud2
+            manual-template: True
+            count: 2
+      single-use: True
