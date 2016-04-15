@@ -892,6 +892,80 @@ def jclouds(parser, xml_parent, data):
                        'JCloudsOneOffSlave')
 
 
+def openstack(parser, xml_parent, data):
+    """yaml: openstack
+    Provision slaves from OpenStack on demand.  Requires the Jenkins
+    :jenkins-wiki:`Openstack Cloud Plugin <Openstack+Cloud+Plugin>`.
+
+    :arg list instances: List of instances to be launched at the beginning of
+        the build.
+
+        :instances:
+            * **cloud-name** (`str`) -- The name of the cloud profile which
+              contains the specified cloud instance template (required).
+            * **template-name** (`str`) -- The name of the cloud instance
+              template to create an instance from(required).
+            * **manual-template** (`bool`) -- If True, instance template name
+              will be put in 'Specify Template Name as String' option. Not
+              specifying or specifying False, instance template name will be
+              put in 'Select Template from List' option. To use parameter
+              replacement, set this to True.  (default: False)
+            * **count** (`int`) -- How many instances to create (default: 1).
+
+    :arg bool single-use: Whether or not to terminate the slave after use
+        (default: False).
+
+    Example:
+
+    .. literalinclude:: /../../tests/wrappers/fixtures/openstack001.yaml
+    """
+    if 'instances' in data:
+        j_p_o_c_j_clouds_build_wrapper = XML.SubElement(
+            xml_parent,
+            'jenkins.plugins.openstack.compute.JCloudsBuildWrapper',
+        )
+        instances_to_run = XML.SubElement(
+            j_p_o_c_j_clouds_build_wrapper, 'instancesToRun',
+        )
+
+        for instance in data['instances']:
+            j_p_o_c_instances_to_run = XML.SubElement(
+                instances_to_run,
+                'jenkins.plugins.openstack.compute.InstancesToRun',
+            )
+
+            cloud_name = XML.SubElement(
+                j_p_o_c_instances_to_run, 'cloudName',
+            )
+            try:
+                cloud_name.text = instance['cloud-name']
+            except KeyError as exception:
+                raise MissingAttributeError(exception.args[0])
+
+            if instance.get('manual-template', False):
+                template_name = XML.SubElement(
+                    j_p_o_c_instances_to_run, 'manualTemplateName',
+                )
+            else:
+                template_name = XML.SubElement(
+                    j_p_o_c_instances_to_run, 'templateName',
+                )
+            try:
+                template_name.text = instance['template-name']
+            except KeyError as exception:
+                raise MissingAttributeError(exception.args[0])
+
+            count = XML.SubElement(
+                j_p_o_c_instances_to_run, 'count',
+            )
+            count.text = str(instance.get('count', 1))
+
+    if data.get('single-use', False):
+        XML.SubElement(
+            xml_parent, 'jenkins.plugins.openstack.compute.JCloudsOneOffSlave',
+        )
+
+
 def build_user_vars(parser, xml_parent, data):
     """yaml: build-user-vars
     Set environment variables to the value of the user that started the build.
