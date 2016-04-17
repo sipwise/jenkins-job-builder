@@ -1,0 +1,5 @@
+builders:
+  - update-build-name:
+      file: version.txt
+      macro: '#${BUILD_NUMBER}'
+      macroFirst: false
