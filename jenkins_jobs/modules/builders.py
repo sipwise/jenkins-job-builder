@@ -1821,6 +1821,34 @@ def sbt(parser, xml_parent, data):
         'subdir-path', '')
 
 
+def update_build_name(parser, xml_parent, data):
+    """yaml: update-build-name
+    Updates the build name as build step.
+    Requires the Jenkins :jenkins-wiki:`Build Name Setter Plugin
+    <Build+Name+Setter+Plugin>`.
+
+    :arg str file: update build name with the content of this file
+    :arg str macro: update build name with the result of this macro
+    :arg bool macroFirst: if both file and macro are defined,
+        use macro first (default false)
+
+    Example:
+
+    .. literalinclude:: ../../tests/builders/fixtures/update_build_name.yaml
+       :language: yaml
+    """
+    node = XML.SubElement(xml_parent, 'org.jenkinsci.plugins.buildnameupdater.'
+                                      'BuildNameUpdater')
+    file = data.get('file', '')
+    macro = data.get('macro', '')
+    macroFirst = data.get('macroFirst', False)
+    XML.SubElement(node, 'buildName').text = file
+    XML.SubElement(node, 'macroTemplate').text = macro
+    XML.SubElement(node, 'fromFile').text = 'true' if file else 'false'
+    XML.SubElement(node, 'fromMacro').text = 'true' if macro else 'false'
+    XML.SubElement(node, 'macroFirst').text = str(macroFirst).lower()
+
+
 def critical_block_start(parser, xml_parent, data):
     """yaml: critical-block-start
     Designate the start of a critical block. Must be used in conjuction with
