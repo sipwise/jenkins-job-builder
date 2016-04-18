@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_2d913753",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 18918
+      },
+      "writtenOn": "2016-04-18T13:25:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_0d6f1bc6",
+      "revId": "54f33eb958e051f43c58cc3e6eda1c5dcd7192a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_ad3a6796",
         "filename": "tests/cmd/subcommands/test_test.py",
         "patchSetId": 22
@@ -30,6 +48,30 @@
       "writtenOn": "2016-04-18T13:22:34Z",
       "side": 1,
       "message": "assertEquals is deprecated in favor of assertEqual [1].  assertEqual is used in other places in this file.\n\n[1] https://docs.python.org/2/library/unittest.html#deprecated-aliases",
+      "range": {
+        "startLine": 54,
+        "startChar": 13,
+        "endLine": 54,
+        "endChar": 25
+      },
+      "revId": "54f33eb958e051f43c58cc3e6eda1c5dcd7192a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_6d9b2f73",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 18918
+      },
+      "writtenOn": "2016-04-18T13:25:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_ad3a6796",
       "range": {
         "startLine": 54,
         "startChar": 13,
