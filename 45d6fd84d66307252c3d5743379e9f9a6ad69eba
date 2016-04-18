@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_c1bfbef9",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1753,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-04-18T09:24:59Z",
+      "side": 1,
+      "message": "E501 line too long (80 \u003e 79 characters)\npep8 test failed",
+      "revId": "45d6fd84d66307252c3d5743379e9f9a6ad69eba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
