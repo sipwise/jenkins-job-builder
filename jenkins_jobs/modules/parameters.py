@@ -74,6 +74,30 @@ def string_param(parser, xml_parent, data):
                'hudson.model.StringParameterDefinition')
 
 
+def promoted_param(parser, xml_parent, data):
+    """yaml: promoted build
+    A promoted build parameter.
+
+    :arg str name: the name of the parameter
+    :arg str project-name: the job from which the user can pick runs
+    :arg str promotion-name: promotion process to choose from
+    :arg str description: a description of the parameter (optional)
+
+    Example:
+
+    .. literalinclude:: \
+    /../../tests/parameters/fixtures/promoted-build-param001.yaml
+       :language: yaml
+
+    """
+    pdef = base_param(parser, xml_parent, data, False,
+                      'hudson.plugins.promoted__builds.parameters.'
+                      'PromotedBuildParameterDefinition')
+    XML.SubElement(pdef, 'projectName').text = data['project-name']
+    XML.SubElement(pdef, 'promotionProcessName').text = data.get(
+        'promotion-name', None)
+
+
 def password_param(parser, xml_parent, data):
     """yaml: password
     A password parameter.
