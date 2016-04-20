@@ -2933,3 +2933,36 @@ def description_setter(parser, xml_parent, data):
     if 'description' in data:
         XML.SubElement(descriptionsetter, 'description').text = data[
             'description']
+
+
+def build_name(parser, xml_parent, data):
+    """yaml: build-name
+    Define BuildName options which allows your build name to be
+    updated during the build process.
+
+    :arg str name: Name of BuildNameUpdater (default 'version.txt')
+    :arg str template: Macro Template string (optional)
+    :arg bool file: Read from named file (default false) (optional)
+    :arg bool macro: Read from macro template (default false) (optional)
+    :arg bool macro-first: Insert macro first (default false) (optional)
+
+    Requires the Jenkins `Build Name Setter Plugin
+    <https://wiki.jenkins-ci.org/display/JENKINS/Build+Name+Setter+Plugin>`.
+
+    Example:
+
+    .. literalinclude:: /../../tests/builders/fixtures/bupdater-builder001.yaml
+       :language: yaml
+    """
+    bupdater = XML.SubElement(
+        xml_parent,
+        'org.jenkinsci.plugins.buildnameupdater.BuildNameUpdater')
+    XML.SubElement(bupdater, 'buildName').text = data.get(
+        'name', 'version.txt')
+    XML.SubElement(bupdater, 'macroTemplate').text = data.get('template', '')
+    fromFile = str(data.get('file', False)).lower()
+    XML.SubElement(bupdater, 'fromFile').text = fromFile
+    fromMacro = str(data.get('macro', False)).lower()
+    XML.SubElement(bupdater, 'fromMacro').text = fromMacro
+    macroFirst = str(data.get('macro-first', False)).lower()
+    XML.SubElement(bupdater, 'macroFirst').text = macroFirst
