@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_a4b2ec49",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 903,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-04-20T23:52:53Z",
+      "side": 1,
+      "message": "Just (required) is enough. no need to say \"no default\".",
+      "revId": "eeb616efc31093dd0db6170a029890aadfabe817",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_e46184d4",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 906,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-04-20T23:52:53Z",
+      "side": 1,
+      "message": "typo: put\n\nalso should have a space after \"in \u0027select .... \"",
+      "revId": "eeb616efc31093dd0db6170a029890aadfabe817",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_04d6404e",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 909,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-04-20T23:52:53Z",
+      "side": 1,
+      "message": "Seems like cloud-name, manual-template and count are all sub parameters of instances. I\u0027m not sure how best to document that. Waiting for other reviewers to comment.",
+      "revId": "eeb616efc31093dd0db6170a029890aadfabe817",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_c48a8863",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 954,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-04-20T23:52:53Z",
+      "side": 1,
+      "message": "According to your docs single-use is False by default so we should state here:\n\ndata.get(\u0027single-use\u0027, False)\n\nto be clear.",
+      "revId": "eeb616efc31093dd0db6170a029890aadfabe817",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
