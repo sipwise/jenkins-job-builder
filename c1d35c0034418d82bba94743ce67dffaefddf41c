@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_09d666f0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2016-04-20T18:25:29Z",
+      "side": 1,
+      "message": "please limit the first line 50 characters and leave an empty line between first and subsequent lines.\n\nhttps://wiki.openstack.org/wiki/GitCommitMessages#Summary_of_Git_commit_message_structure",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 28
+      },
+      "revId": "c1d35c0034418d82bba94743ce67dffaefddf41c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_c93d8e2c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2016-04-20T18:25:29Z",
+      "side": 1,
+      "message": "the link doesn\u0027t seem to be working.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 20
+      },
+      "revId": "c1d35c0034418d82bba94743ce67dffaefddf41c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_a9dc9246",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2937,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2016-04-20T18:25:29Z",
+      "side": 1,
+      "message": "Wouldn\u0027t it be better to name this something like build_name_setter ?",
+      "range": {
+        "startLine": 2937,
+        "startChar": 0,
+        "endLine": 2937,
+        "endChar": 41
+      },
+      "revId": "c1d35c0034418d82bba94743ce67dffaefddf41c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_899b9665",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2949,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2016-04-20T18:25:29Z",
+      "side": 1,
+      "message": "this could be moved to description, under yaml: build-name.",
+      "range": {
+        "startLine": 2949,
+        "startChar": 4,
+        "endLine": 2949,
+        "endChar": 62
+      },
+      "revId": "c1d35c0034418d82bba94743ce67dffaefddf41c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_49bcdeba",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2956,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2016-04-20T18:25:29Z",
+      "side": 1,
+      "message": "this can be named better I think since this is not buildname.",
+      "range": {
+        "startLine": 2956,
+        "startChar": 4,
+        "endLine": 2956,
+        "endChar": 13
+      },
+      "revId": "c1d35c0034418d82bba94743ce67dffaefddf41c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
