@@ -2933,3 +2933,30 @@ def description_setter(parser, xml_parent, data):
     if 'description' in data:
         XML.SubElement(descriptionsetter, 'description').text = data[
             'description']
+
+def build_name(parser, xml_parent, data):
+    """yaml: build-name
+    Define BuildName options
+
+    :arg str name: Name of BuildNameUpdater (default 'version.txt')
+    :arg str template: Macro Template string (optional)
+    :arg str file: Read from named file (default 'false') (optional)
+    :arg str macro: Read from macro template (default 'false') (optional)
+    :arg str macro-first: Insert macro first (default 'false') (optional)
+
+    Requires the Jenkins `Build Name Setter Plugin
+    <https://wiki.jenkins-ci.org/display/JENKINS/Build+Name+Setter+Plugin>`_
+    allows your build name to be set during the build process.
+
+    Example:
+
+    .. literalinclude:: /../../tests/builders/fixtures/buildname-builder001.yaml
+       :language: yaml
+    """
+    buildname = XML.SubElement(xml_parent, 'org.jenkinsci.plugins.buildnameupdater.BuildNameUpdater')
+
+    XML.SubElement(buildname, 'buildName').text = data.get('name', 'version.txt')
+    XML.SubElement(buildname, 'macroTemplate').text = data.get('template', '')
+    XML.SubElement(buildname, 'fromFile').text = data.get('file', 'false')
+    XML.SubElement(buildname, 'fromMacro').text = data.get('macro', 'false')
+    XML.SubElement(buildname, 'macroFirst').text = data.get('macro-first', 'false')
