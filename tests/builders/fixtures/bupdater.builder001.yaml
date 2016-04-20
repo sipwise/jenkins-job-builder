@@ -1,0 +1,4 @@
+builders:
+      - build-name:
+          name: 'version.txt'
+          file: true
