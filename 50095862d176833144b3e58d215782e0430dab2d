@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_e534b8fc",
+        "filename": "doc/source/installation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-21T16:27:44Z",
+      "side": 1,
+      "message": "It\u0027s unclear here as to why recommend \u0027sudo pip install .\u0027 over \u0027sudo python setup.py install\u0027.\n\nBoth will shadow system packages.\n\nI\u0027d be inclined to recommend either:\n\n pip install --user .\n\n python setup.py install --user",
+      "revId": "50095862d176833144b3e58d215782e0430dab2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
