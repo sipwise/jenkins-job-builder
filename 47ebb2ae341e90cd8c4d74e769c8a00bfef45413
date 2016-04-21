@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_abe1ef9c",
+        "filename": "tests/scm/fixtures/repo001.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-21T16:48:15Z",
+      "side": 1,
+      "message": "Please add a second project here, just to ensure we exercise the loop.",
+      "revId": "47ebb2ae341e90cd8c4d74e769c8a00bfef45413",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
