@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_d985215a",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-21T17:34:04Z",
+      "side": 1,
+      "message": "Should probably use a MissingAttributeError exception here, which can be done as:\n\n try:\n     events[\u0027comment-added-event\u0027] \u003d OrderedDict((\n         (\u0027approval-category\u0027, data[\u0027trigger-approval-category\u0027]),\n         (\u0027approval-value\u0027, data[\u0027trigger-approval-value\u0027])\n     ))\n except KeyError as:\n     MissingAttributeError(e)\n\nAlthough I think we probably need a way to pass a custom message to be included when that exception occurs, so that could be an additional enhancement.\n\nI\u0027d still prefer to switch to using the try/except approach and raise the JenkinsJobException message as you have above.\n\nso:\n\n  try:\n     events[\u0027comment-added-event\u0027] \u003d OrderedDict((\n         (\u0027approval-category\u0027, data[\u0027trigger-approval-category\u0027]),\n         (\u0027approval-value\u0027, data[\u0027trigger-approval-value\u0027])\n     ))\n except KeyError:\n     raise JenkinsJobsException(\n         \u0027The comment-added-event trigger requires which approval \u0027\n         \u0027category and value you want to trigger the job. \u0027\n         \u0027It should be specified by the approval-category \u0027\n         \u0027and approval-value properties.\u0027)\n\n\nAt least that way if we improve the custom exceptions it\u0027s a straight swap in.",
+      "revId": "380ee39b6d210bc7a62797633184a17ad063f3ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
