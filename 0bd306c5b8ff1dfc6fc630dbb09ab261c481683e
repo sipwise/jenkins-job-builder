@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_59f591c9",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-21T17:25:00Z",
+      "side": 1,
+      "message": "Seems like it might be tidier to do:\n\n user \u003d options.user\n if not user:\n     try:\n         ....\n\n\n\nI think we might want to switch this around in the future to tidy up how we determine when to get options from the command line or config file to something like the following pattern anyway:\n\n if not options.user:\n     try:\n         options.user \u003d config.get(\u0027jenkins\u0027, \u0027user\u0027)\n     except (TypeError, configparser.NoOptionError):\n         pass\n\nSo we can do all of that at the same time.",
+      "revId": "0bd306c5b8ff1dfc6fc630dbb09ab261c481683e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
