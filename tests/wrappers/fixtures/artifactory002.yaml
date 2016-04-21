@@ -3,8 +3,7 @@ wrappers:
       url: http://artifactory.example.net/artifactory
       name: 'test'
       deploy-build-info: true
-      repo-key: 'release-repo'
-      snapshot-repo-key: 'snapshot-repo'
+      key-from-select: 'repo'
       deploy-pattern:
       - '*.zip=>results'
       resolve-pattern:

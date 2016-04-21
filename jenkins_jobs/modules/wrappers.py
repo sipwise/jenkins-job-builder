@@ -1757,8 +1757,9 @@ def artifactory_generic(parser, xml_parent, data):
     :arg str name: Artifactory user with permissions use for
         connected to the selected Artifactory Server
         (default '')
-    :arg str repo-key: Release repository name (default '')
-    :arg str snapshot-repo-key: Snapshots repository name (default '')
+    :arg str key-from-select: Repository key to use (default '')
+    :arg str key-from-text: Repository key to use that can be configured
+        dynamically using Jenkins variables (default '')
     :arg list deploy-pattern: List of patterns for mappings
         build artifacts to published artifacts. Supports Ant-style wildcards
         mapping to target directories. E.g.: */*.zip=>dir (default [])
@@ -1800,9 +1801,13 @@ def artifactory_generic(parser, xml_parent, data):
     details = XML.SubElement(artifactory, 'details')
     artifactory_common_details(details, data)
 
-    XML.SubElement(details, 'repositoryKey').text = data.get('repo-key', '')
-    XML.SubElement(details, 'snapshotsRepositoryKey').text = data.get(
-        'snapshot-repo-key', '')
+    deployReleaseRepository = XML.SubElement(details, 'deployReleaseRepository')
+    XML.SubElement(deployReleaseRepository, 'keyFromText').text = data.get(
+        'key-from-text', '')
+    XML.SubElement(deployReleaseRepository, 'keyFromSelect').text = data.get(
+        'key-from-select', '')
+    XML.SubElement(deployReleaseRepository, 'dynamicMode').text = str(
+        'key-from-text' in data.keys()).lower()
 
     XML.SubElement(artifactory, 'deployPattern').text = ','.join(data.get(
         'deploy-pattern', []))
