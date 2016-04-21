@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_79afad2b",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-21T17:30:58Z",
+      "side": 1,
+      "message": "Should indicate what plugin is required for this, see extended_choice_parameter below.\n\nMost of the parameters are pretty old so they are not following best practice for JJB.",
+      "revId": "1d82dae27b7895583bdc839506994a21826ce3c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_d91b617f",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-21T17:30:58Z",
+      "side": 1,
+      "message": "Needs to be marked as \u0027(Required)\u0027\n\nAnd we should really sort out the use of it in the generic function above to wrap that with the appropriate try/except, but that\u0027s a separate fix.",
+      "revId": "1d82dae27b7895583bdc839506994a21826ce3c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_f961fd12",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-21T17:30:58Z",
+      "side": 1,
+      "message": "Needs to be marked as \u0027(Required)\u0027",
+      "revId": "1d82dae27b7895583bdc839506994a21826ce3c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_59d751bf",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-21T17:30:58Z",
+      "side": 1,
+      "message": "No need for the \u0027\\\u0027, just indent the following line by 4 spaces.",
+      "revId": "1d82dae27b7895583bdc839506994a21826ce3c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_795ded47",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-21T17:30:58Z",
+      "side": 1,
+      "message": "Should wrap with a try/except\n\n try:\n     .... \u003d data[\u0027project-name\u0027]\n except KeyError as e:\n     raise MissingAttributeError(e)",
+      "revId": "1d82dae27b7895583bdc839506994a21826ce3c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
