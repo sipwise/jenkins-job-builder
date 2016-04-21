@@ -52,6 +52,24 @@
       "revId": "bd658fe564f5459f07ec0212f0adc49fc74de884",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_a84a95aa",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-21T16:31:13Z",
+      "side": 1,
+      "message": "As we already use \u0027Branch\u0027 instead of \u0027Branch Path\u0027, I think we can live with the idea that someone familiar with how a topic in Gerrit works should be reasonably familiar with the idea that it can have \u0027/\u0027 and be considered similar to branches.",
+      "parentUuid": "5aef4532_00fd3f3a",
+      "revId": "bd658fe564f5459f07ec0212f0adc49fc74de884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
