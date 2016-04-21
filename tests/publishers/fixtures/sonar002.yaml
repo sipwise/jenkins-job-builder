@@ -12,4 +12,6 @@ publishers:
         skip-when-upstream-build: true
         skip-when-envvar-defined: SKIP_SONAR
       settings: org.jenkinsci.plugins.configfiles.maven.MavenSettingsConfig0123456789012
+      settings-type: cfp
       global-settings: org.jenkinsci.plugins.configfiles.maven.GlobalMavenSettingsConfig0123456789012
+      global-settings-type: cfp
