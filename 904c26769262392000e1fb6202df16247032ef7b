@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_afa8a978",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 575,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-22T16:20:28Z",
+      "side": 1,
+      "message": "Accidental removal of the docstring argument for \u0027ignore-projects\u0027?",
+      "revId": "904c26769262392000e1fb6202df16247032ef7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_efb8e1c9",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 651,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-22T16:20:28Z",
+      "side": 1,
+      "message": "ignore-projects?",
+      "revId": "904c26769262392000e1fb6202df16247032ef7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_ef910148",
+        "filename": "tests/scm/fixtures/repo001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-22T16:20:28Z",
+      "side": 1,
+      "message": "Did you mean to change the name here of \u0027ignore-projects\u0027 to \u0027ignore-changes\u0027?",
+      "revId": "904c26769262392000e1fb6202df16247032ef7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
