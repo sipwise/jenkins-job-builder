@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a122d0e_0a954be3",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1832,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-22T16:46:09Z",
+      "side": 1,
+      "message": "Missed this avoid camelcase of settings should use \u0027macro-first\u0027.",
+      "revId": "c1ba722c597685546cf2a42ff5d6e57fa466c3a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_7c3652b5",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 3
