@@ -2949,9 +2949,14 @@ def build_name(parser, xml_parent, data):
     Requires the Jenkins `Build Name Setter Plugin
     <https://wiki.jenkins-ci.org/display/JENKINS/Build+Name+Setter+Plugin>`.
 
-    Example:
+    File Example:
 
     .. literalinclude:: /../../tests/builders/fixtures/bupdater-builder001.yaml
+       :language: yaml
+
+    Macro Example:
+
+    .. literalinclude:: /../../tests/builders/fixtures/bupdater-builder002.yaml
        :language: yaml
     """
     bupdater = XML.SubElement(
@@ -2959,7 +2964,8 @@ def build_name(parser, xml_parent, data):
         'org.jenkinsci.plugins.buildnameupdater.BuildNameUpdater')
     XML.SubElement(bupdater, 'buildName').text = data.get(
         'name', 'version.txt')
-    XML.SubElement(bupdater, 'macroTemplate').text = data.get('template', '')
+    XML.SubElement(bupdater, 'macroTemplate').text = data.get(
+        'template', '')
     fromFile = str(data.get('file', False)).lower()
     XML.SubElement(bupdater, 'fromFile').text = fromFile
     fromMacro = str(data.get('macro', False)).lower()

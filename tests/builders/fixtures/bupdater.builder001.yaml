@@ -1,4 +1,4 @@
 builders:
       - build-name:
-          template: '#${{BUILD_NUMBER}}'
-          macro: 'true'
+          name: 'version.txt'
+          file: true

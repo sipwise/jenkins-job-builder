@@ -3,9 +3,9 @@
   <builders>
     <org.jenkinsci.plugins.buildnameupdater.BuildNameUpdater>
       <buildName>version.txt</buildName>
-      <macroTemplate/>
-      <fromFile>true</fromFile>
-      <fromMacro>false</fromMacro>
+      <macroTemplate>#${BUILD_NUMBER}</macroTemplate>
+      <fromFile>false</fromFile>
+      <fromMacro>true</fromMacro>
       <macroFirst>false</macroFirst>
     </org.jenkinsci.plugins.buildnameupdater.BuildNameUpdater>
   </builders>
