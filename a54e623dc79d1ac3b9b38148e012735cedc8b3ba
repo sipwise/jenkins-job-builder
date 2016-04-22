@@ -34,6 +34,24 @@
       "revId": "a54e623dc79d1ac3b9b38148e012735cedc8b3ba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_cb6d22ce",
+        "filename": "tests/yamlparser/fixtures/template_default_variables.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-04-22T13:41:44Z",
+      "side": 1,
+      "message": "Interesting, I didn\u0027t realize you could do that. That\u0027s handy.",
+      "parentUuid": "1a122d0e_8f35fff8",
+      "revId": "a54e623dc79d1ac3b9b38148e012735cedc8b3ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
