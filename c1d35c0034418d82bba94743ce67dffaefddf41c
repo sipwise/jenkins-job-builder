@@ -71,6 +71,30 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_924a6d54",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2937,
+      "author": {
+        "id": 21126
+      },
+      "writtenOn": "2016-04-22T20:26:19Z",
+      "side": 1,
+      "message": "I\u0027m following the existing naming convention used by wrappers:\n\nhttps://review.openstack.org/gitweb?p\u003dopenstack-infra/jenkins-job-builder.git;a\u003dblob;f\u003djenkins_jobs/modules/wrappers.py;h\u003dada8b07a20ed281dd814aec36b985db5edb1c521;hb\u003dc1d35c0034418d82bba94743ce67dffaefddf41c#l571",
+      "parentUuid": "1a122d0e_a9dc9246",
+      "range": {
+        "startLine": 2937,
+        "startChar": 0,
+        "endLine": 2937,
+        "endChar": 41
+      },
+      "revId": "c1d35c0034418d82bba94743ce67dffaefddf41c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_899b9665",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -94,6 +118,30 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_e8ec8d2b",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2949,
+      "author": {
+        "id": 21126
+      },
+      "writtenOn": "2016-04-22T20:26:19Z",
+      "side": 1,
+      "message": "moved",
+      "parentUuid": "1a122d0e_899b9665",
+      "range": {
+        "startLine": 2949,
+        "startChar": 4,
+        "endLine": 2949,
+        "endChar": 62
+      },
+      "revId": "c1d35c0034418d82bba94743ce67dffaefddf41c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_49bcdeba",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -105,6 +153,30 @@
       "writtenOn": "2016-04-20T18:25:29Z",
       "side": 1,
       "message": "this can be named better I think since this is not buildname.",
+      "range": {
+        "startLine": 2956,
+        "startChar": 4,
+        "endLine": 2956,
+        "endChar": 13
+      },
+      "revId": "c1d35c0034418d82bba94743ce67dffaefddf41c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_c8e6f143",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2956,
+      "author": {
+        "id": 21126
+      },
+      "writtenOn": "2016-04-22T20:26:19Z",
+      "side": 1,
+      "message": "Renamed to bupdater",
+      "parentUuid": "1a122d0e_49bcdeba",
       "range": {
         "startLine": 2956,
         "startChar": 4,
