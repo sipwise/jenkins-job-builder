@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_e8f584cb",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2117,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-22T13:28:45Z",
+      "side": 1,
+      "message": "Made a very minor adjustment here to the formatting, I think this way displays better in the resulting docs.",
+      "revId": "d010783166ff512c926e80ecfbb424656ce5deb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_882b3033",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2145,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-22T13:28:45Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "d010783166ff512c926e80ecfbb424656ce5deb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
