@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_f2af387b",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-22T11:06:00Z",
+      "side": 1,
+      "message": "Forgot to remove?",
+      "revId": "ddbe1ed9a8c9022df9ecaedfeaa8e1a3c058fbb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
