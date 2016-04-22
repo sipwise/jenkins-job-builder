@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_0386e8b8",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-22T12:20:23Z",
+      "side": 1,
+      "message": "I prefer the location this is placed in here, so updated the patch to the remove the one that got added from elsewhere.",
+      "revId": "0e501d35517be9340e78f5cae56152db5ca0445e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
