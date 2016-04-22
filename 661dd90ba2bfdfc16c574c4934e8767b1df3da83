@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_95ddfc72",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2939,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-22T16:56:36Z",
+      "side": 1,
+      "message": "I prefer the naming used for https://review.openstack.org/306834\n\nMore descriptive.",
+      "revId": "661dd90ba2bfdfc16c574c4934e8767b1df3da83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_f528b087",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2944,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-22T16:56:36Z",
+      "side": 1,
+      "message": "Not very intuitive that this is actually a file, except from default value.\n\nJust checked the code and this really is the default.",
+      "revId": "661dd90ba2bfdfc16c574c4934e8767b1df3da83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_556ec4c9",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2945,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-22T16:56:36Z",
+      "side": 1,
+      "message": "code indicates that there is a default for this value as well, see https://github.com/jenkinsci/build-name-setter-plugin/blob/master/src/main/resources/org/jenkinsci/plugins/buildnameupdater/BuildNameUpdater/config.jelly",
+      "revId": "661dd90ba2bfdfc16c574c4934e8767b1df3da83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_ea656f1d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2948,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-22T16:56:36Z",
+      "side": 1,
+      "message": "no need for the \u0027(optional)\u0027, default is sufficient.",
+      "revId": "661dd90ba2bfdfc16c574c4934e8767b1df3da83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_95afbce2",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2951,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-22T16:56:36Z",
+      "side": 1,
+      "message": "There is a dedicated macro used for the wiki links, please use \u0027:jenkins-wiki:\u0027, see examples throughout the code.",
+      "revId": "661dd90ba2bfdfc16c574c4934e8767b1df3da83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_f5d2705a",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2975,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-22T16:56:36Z",
+      "side": 1,
+      "message": "Unless there is a reason to retain the value please following the convention:\n\n XML.SubElement(bupdater, \u0027macroFirst\u0027).text \u003d str(\n     data.get(\u0027macro-first\u0027, False)).lower()",
+      "revId": "661dd90ba2bfdfc16c574c4934e8767b1df3da83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
