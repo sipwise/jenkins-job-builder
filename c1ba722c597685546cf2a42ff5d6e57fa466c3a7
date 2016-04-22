@@ -87,6 +87,23 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_6508a82e",
+        "filename": "tests/builders/fixtures/update_build_name.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 21126
+      },
+      "writtenOn": "2016-04-22T20:42:44Z",
+      "side": 1,
+      "message": "While this helps pass tests the value here would need to be macro: \u0027#${{BUILD_NUMBER}}\u0027 because the {} need to be escaped",
+      "revId": "c1ba722c597685546cf2a42ff5d6e57fa466c3a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_5c99d61e",
         "filename": "tests/builders/fixtures/update_build_name.yaml",
         "patchSetId": 3
