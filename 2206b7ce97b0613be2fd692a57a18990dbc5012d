@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_fea095a7",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 966,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-22T15:33:43Z",
+      "side": 1,
+      "message": "The formatting/style of this makes it quite hard to read compared to all the other modules and code.\n\nCompare this to:\n\n    tag_prefix \u003d \u0027jenkins.plugins.openstack.compute.\u0027\n    if \u0027instances\u0027 in data:\n        clouds_build_wrapper \u003d XML.SubElement(\n            xml_parent, tag_prefix + \u0027JCloudsBuildWrapper\u0027)\n        instances_wrapper \u003d XML.SubElement(\n            clouds_build_wrapper, \u0027instancesToRun\u0027)\n\n        for instance in data[\u0027instances\u0027]:\n            instances_to_run \u003d XML.SubElement(\n                instances_wrapper, tag_prefix + \u0027InstancesToRun\u0027)\n\n            try:\n                XML.SubElement(instances_to_run, \u0027cloudName\u0027).text \u003d (\n                    instance[\u0027cloud-name\u0027])\n            except KeyError as exception:\n                raise MissingAttributeError(exception.args[0])\n\n            try:\n                template_name \u003d instance[\u0027template-name\u0027]\n            except KeyError as exception:\n                raise MissingAttributeError(exception.args[0])\n\n            if instance.get(\u0027manual-template\u0027, False):\n                XML.SubElement(instances_to_run,\n                               \u0027manualTemplateName\u0027).text \u003d template_name\n            else:\n                XML.SubElement(instances_to_run,\n                               \u0027templateName\u0027).text \u003d template_name\n\n            XML.SubElement(instances_to_run, \u0027count\u0027).text \u003d str(\n                instance.get(\u0027count\u0027, 1))\n\n    if data.get(\u0027single-use\u0027, False):\n        XML.SubElement(xml_parent, tag_prefix + \u0027JCloudsOneOffSlave\u0027)",
+      "revId": "2206b7ce97b0613be2fd692a57a18990dbc5012d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
