@@ -16,6 +16,24 @@
       "revId": "a54e623dc79d1ac3b9b38148e012735cedc8b3ba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_8f35fff8",
+        "filename": "tests/yamlparser/fixtures/template_default_variables.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-22T10:49:44Z",
+      "side": 1,
+      "message": "It\u0027s set to an empty value, which yaml converts to None, and as such the code then skips setting the option altogether.",
+      "parentUuid": "bae84128_e1227951",
+      "revId": "a54e623dc79d1ac3b9b38148e012735cedc8b3ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
