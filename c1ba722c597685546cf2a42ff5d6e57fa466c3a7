@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_7c3652b5",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1842,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-22T14:56:32Z",
+      "side": 1,
+      "message": "Generally not good to shadow system builtins. Usually better to make the name distinct, since that means a typo in the future would not result in weird output appearing because you\u0027re reading the class type into a variable rather than an undefined variable.\n\nUsage here is small enough and unlikely that I don\u0027t feel too strongly either way and it\u0027s not the first time we\u0027ve used it either.",
+      "revId": "c1ba722c597685546cf2a42ff5d6e57fa466c3a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_5c99d61e",
+        "filename": "tests/builders/fixtures/update_build_name.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-22T14:56:32Z",
+      "side": 1,
+      "message": "Should really test the non default value of it and the default value in separate tests.",
+      "revId": "c1ba722c597685546cf2a42ff5d6e57fa466c3a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
