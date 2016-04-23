@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_8a2ae48e",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-23T18:06:39Z",
+      "side": 1,
+      "message": "Just made a slight tweak to ensure the tmpdir is cleanup even if we don\u0027t reach the end of the test.",
+      "revId": "3567735d947953a5a0b1a05dc526fb18fdc31159",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
