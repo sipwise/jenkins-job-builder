@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_60a3299f",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-23T23:21:34Z",
+      "side": 1,
+      "message": "just an FYI, the MissingAttributeError knows to expect that it\u0027s a key name in the exception and will extract it correctly, so you just need to pass the exception to it.",
+      "revId": "3da732e01eaed2b0d1805cf36b6f22daceb08169",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
