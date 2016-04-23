@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_078374cd",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1871,
+      "author": {
+        "id": 11722
+      },
+      "writtenOn": "2016-04-23T06:09:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_01d1bbfb",
+      "revId": "707efddf9d7421f88169be05df119760204ce71f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_4176133f",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2016-04-22T14:30:00Z",
       "side": 1,
       "message": "While fixing the other minor issues, lets keep this consistent with the majority of code:\n\n * for continuation line indent by four spaces from the previous\n * Use \"(default false)\" instead of \"(defaults to False)\"\n\nIf changing the comment from where it\u0027s been copied from, should either remain identical, or change to be consistent with the majority of the codebase.",
+      "revId": "707efddf9d7421f88169be05df119760204ce71f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_e78598cf",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1887,
+      "author": {
+        "id": 11722
+      },
+      "writtenOn": "2016-04-23T06:09:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_4176133f",
       "revId": "707efddf9d7421f88169be05df119760204ce71f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_476d6c31",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1889,
+      "author": {
+        "id": 11722
+      },
+      "writtenOn": "2016-04-23T06:09:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_41c8d374",
+      "revId": "707efddf9d7421f88169be05df119760204ce71f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_e1ac7f37",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2016-04-22T14:30:00Z",
       "side": 1,
       "message": "Wow, just wow, that this is needed.",
+      "revId": "707efddf9d7421f88169be05df119760204ce71f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_c7785cfb",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2172,
+      "author": {
+        "id": 11722
+      },
+      "writtenOn": "2016-04-23T06:09:19Z",
+      "side": 1,
+      "message": "yeah, it\u0027s odd... and cause unnecessary pain",
+      "parentUuid": "1a122d0e_e1ac7f37",
       "revId": "707efddf9d7421f88169be05df119760204ce71f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
