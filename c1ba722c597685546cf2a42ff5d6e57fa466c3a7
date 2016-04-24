@@ -104,6 +104,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_fbcc08bd",
+        "filename": "tests/builders/fixtures/update_build_name.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-24T00:55:18Z",
+      "side": 1,
+      "message": "Only when you use it directly in a template, or in a macro that takes arguments, since macros are applied after the template is formatted, and are only formatted if you pass args.\n\nSo the following doesn\u0027t need escaping:\n\n - builder:\n     name: git-checkout\n     builders:\n       - shell: \u0027git co ${build_branch}\u0027\n\n - job-template:\n     name: \u0027{name}-{pyver}\u0027\n     builders:\n       - git-checkout\n\nbut if you change the job-template to use:\n\n - job-template:\n     name: \u0027{name}-{pyver}\u0027\n     builders:\n       - git-checkout:\n           some_other_arg: some_value\n\nThen JJB will format the macro since you\u0027ve now passed an argument to the macro. Which really makes no sense unless you construct the macro to take arguments.",
+      "parentUuid": "1a122d0e_6508a82e",
+      "revId": "c1ba722c597685546cf2a42ff5d6e57fa466c3a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_5c99d61e",
         "filename": "tests/builders/fixtures/update_build_name.yaml",
         "patchSetId": 3
