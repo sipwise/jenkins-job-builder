@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a122d0e_3b0e8032",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-24T00:19:41Z",
+      "side": 1,
+      "message": "Forgot to mention you can use \u0027Story: 2000560\u0027 in the footer and it\u0027ll automatically linked correctly.",
+      "revId": "c619468a9b46f1294a31c86cf8f3655a51c6910a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_00b99579",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 6
