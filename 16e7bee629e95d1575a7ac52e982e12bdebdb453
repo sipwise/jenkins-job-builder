@@ -84,6 +84,24 @@
       "revId": "16e7bee629e95d1575a7ac52e982e12bdebdb453",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_4eed77ee",
+        "filename": "tests/cmd/subcommands/test_delete.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 9921
+      },
+      "writtenOn": "2016-04-24T16:51:38Z",
+      "side": 1,
+      "message": "These tests\u0027 behaviour seems to be exactly the same as the Jobs\u0027 ones. Do we need different handling for the views or are all of them (Views -and- Jobs) broken?",
+      "parentUuid": "fa69d971_4ad5c119",
+      "revId": "16e7bee629e95d1575a7ac52e982e12bdebdb453",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
