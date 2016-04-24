@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_e56d8605",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2939,
+      "author": {
+        "id": 21126
+      },
+      "writtenOn": "2016-04-24T13:33:10Z",
+      "side": 1,
+      "message": "I would prefer the wrapper matched as well if you could queue up that patch. Not sure how to make backwards compatibility work or I would have done it in the same Change set.\n\nThis has been renamed",
+      "parentUuid": "1a122d0e_c0979de9",
+      "revId": "661dd90ba2bfdfc16c574c4934e8767b1df3da83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_f528b087",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 5
