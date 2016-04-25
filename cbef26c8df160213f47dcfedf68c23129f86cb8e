@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_307cc3ea",
+        "filename": "jenkins_jobs/modules/base.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-25T16:54:16Z",
+      "side": 1,
+      "message": "I think there is probably a better way to get the original object class to reuse it instead of needing to inspect specific classes and create them.\n\ne.g.\n\n    if isinstance(obj, dict):\n        return type(obj)((k, self.strip_none(v)) for\n                         k, v in obj.items())",
+      "revId": "cbef26c8df160213f47dcfedf68c23129f86cb8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_10fd473a",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1199,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-25T16:54:16Z",
+      "side": 1,
+      "message": "I think this is the part that concerns we, needing to add this to all modules. I think we should look at this feature as applying it everywhere or not at all.",
+      "revId": "cbef26c8df160213f47dcfedf68c23129f86cb8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_f0e08b98",
+        "filename": "tests/scm/fixtures/git-polling-path-restriction01.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-25T16:54:16Z",
+      "side": 1,
+      "message": "I\u0027d probably want to experiment a little first with a template variable first just to be sure this really has a use case.\n\nProbably a more complex example is needed here to fully exercise this.",
+      "revId": "cbef26c8df160213f47dcfedf68c23129f86cb8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
