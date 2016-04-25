@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_f2cc1d63",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-25T11:45:12Z",
+      "side": 1,
+      "message": "This is wrong, it will attempt to expand every macro that is a \u0027shell\u0027 component, irrespective of whether it should have substitution performed on it or not.\n\nSo this appears to be an attempt to force expansion of all \u0027shell\u0027 macros.\n\nSeems to me JJB is behaving as expected, if you don\u0027t provide some argument to a macro, it assumes you want the macro to be passed through as is.",
+      "revId": "4023978685a85fbc76794b9820dfac0edf1b600f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
