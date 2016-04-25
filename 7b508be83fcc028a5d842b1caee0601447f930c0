@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_3a4ae7c5",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-25T13:13:44Z",
+      "side": 1,
+      "message": "I wonder if we should change this to use:\n\n whichdefaults \u003d data.get(\u0027defaults\u0027, override_dict.get(\u0027defaults\u0027, \u0027global\u0027))\n\n\nThis would ensure the order of which defaults to use when expanding project params are:\n\n project specified -\u003e template specified -\u003e global\n\nRight now, for where applyDefaults is called below it\u0027s just:\n\n project specified or global",
+      "revId": "7b508be83fcc028a5d842b1caee0601447f930c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_da2133fe",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-25T13:13:44Z",
+      "side": 1,
+      "message": "In any case, this is definitely not correct, since it results in template data being put into the params instead of just custom defaults specified in the template.",
+      "revId": "7b508be83fcc028a5d842b1caee0601447f930c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_5ab9a3ca",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-25T13:13:44Z",
+      "side": 1,
+      "message": "I wonder if the problem is actually here.\n\n\u0027params\u0027 can only have a value for the defaults to use based on the project, which may result in it using the \u0027global\u0027 of defaults above and then overwriting that with any option that appears in the template.\n\n\nShould the code be checking whether \u0027defaults\u0027 is defined for the template, or rather in the override dict in applyDefaults, and using that to determine which set of defaults to use?",
+      "revId": "7b508be83fcc028a5d842b1caee0601447f930c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
