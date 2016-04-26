@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_e43b96cf",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-26T16:16:37Z",
+      "side": 1,
+      "message": "At the same time, needing to go to debug to be told that security has been reduced seems poor. I\u0027d generally go for option of least surprise, so perhaps info as we have other messages that will always output, so that if someone doesn\u0027t care to see this they can limit logging to warn?",
+      "parentUuid": "7a740942_45c1dee3",
+      "revId": "389eefeb06505cd03cdbf8321e811a643a424cae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a740942_a24bd82a",
         "filename": "tests/cmd/subcommands/test_test.py",
         "patchSetId": 13
