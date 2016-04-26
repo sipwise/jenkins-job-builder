@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_81d9ef59",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-04-26T19:17:37Z",
+      "side": 1,
+      "message": "you already added the example file, why not instead the example content with the file path",
+      "revId": "a15994bb43d4befc3aa23fcd64630b21cab452af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
