@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
   <publishers>
-    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin">
+    <com.google.jenkins.plugins.storage.GoogleCloudStorageUploader plugin="google-storage-plugin@0.10">
       <credentialsId>myCredentials</credentialsId>
       <uploads>
         <com.google.jenkins.plugins.storage.ExpiringBucketLifecycleManager>
