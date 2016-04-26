@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_c90af325",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-26T16:14:45Z",
+      "side": 1,
+      "message": "Part of me wonders if we should change this to \u0027check_certificate\u0027, default to true and then tell the user to set it to \u0027False\u0027 if want to disable the default behaviour.\n\nDouble negatives aren\u0027t always the easiest for people to wrap their heads around, since it tends to be something that is spoken language dependent.",
+      "revId": "bd25fd83403a2d0baedec42e4269b7df42407796",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
