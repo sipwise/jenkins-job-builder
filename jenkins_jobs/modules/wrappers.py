@@ -571,6 +571,10 @@ def workspace_cleanup(parser, xml_parent, data):
     :arg list include: list of files to be included
     :arg list exclude: list of files to be excluded
     :arg bool dirmatch: Apply pattern to directories too (default: false)
+    :arg str check-parameter: boolean environment variable to check to
+                              determine whether to actually clean up
+    :arg str external-deletion-command: external deletion command to run
+                                        against files and directories
 
     Example::
 
@@ -578,11 +582,12 @@ def workspace_cleanup(parser, xml_parent, data):
         - workspace-cleanup:
             include:
               - "*.zip"
+            external-deletion-command: "shred -u %s"
     """
 
     p = XML.SubElement(xml_parent,
                        'hudson.plugins.ws__cleanup.PreBuildCleanup')
-    p.set("plugin", "ws-cleanup@0.14")
+    p.set("plugin", "ws-cleanup@0.28")
     if "include" in data or "exclude" in data:
         patterns = XML.SubElement(p, 'patterns')
 
@@ -598,6 +603,12 @@ def workspace_cleanup(parser, xml_parent, data):
 
     deldirs = XML.SubElement(p, 'deleteDirs')
     deldirs.text = str(data.get("dirmatch", False)).lower()
+
+    XML.SubElement(p, 'cleanupParameter').text = str(
+        data.get('check-parameter', ''))
+
+    XML.SubElement(p, 'externalDelete').text = str(
+        data.get('external-deletion-command', ''))
 
 
 def m2_repository_cleanup(parser, xml_parent, data):
