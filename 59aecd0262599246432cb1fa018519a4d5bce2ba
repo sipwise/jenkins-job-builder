@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_483dcb2b",
+        "filename": "jenkins_jobs/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-04-30T11:11:50Z",
+      "side": 1,
+      "message": "If this change is really needed I think we should replace this line with:\n\n stream_enc \u003d None\n\nSo to have only one call to get the preferred encoding.",
+      "revId": "59aecd0262599246432cb1fa018519a4d5bce2ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
