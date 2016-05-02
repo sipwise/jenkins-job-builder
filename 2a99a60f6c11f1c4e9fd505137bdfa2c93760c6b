@@ -16,6 +16,24 @@
       "revId": "2a99a60f6c11f1c4e9fd505137bdfa2c93760c6b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_ac429366",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5334,
+      "author": {
+        "id": 21597
+      },
+      "writtenOn": "2016-05-02T21:01:19Z",
+      "side": 1,
+      "message": "wasn\u0027t sure if we wanted to try to track when various new fields were added to plugins. reverted.",
+      "parentUuid": "1a122d0e_c860bb10",
+      "revId": "2a99a60f6c11f1c4e9fd505137bdfa2c93760c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
