@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_a00e1730",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2571,
+      "author": {
+        "id": 21597
+      },
+      "writtenOn": "2016-05-02T21:06:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_c82efbaa",
+      "revId": "82b31ee9ed51f2bbc6184e7e1e4e83558d40a8f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_a84c5f9e",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2016-04-30T11:46:12Z",
       "side": 1,
       "message": "Not sure how this plugin version sneaked in previously, could you remove it altogether, so as to only list the plugin name.",
+      "revId": "82b31ee9ed51f2bbc6184e7e1e4e83558d40a8f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_e0180f78",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2582,
+      "author": {
+        "id": 21597
+      },
+      "writtenOn": "2016-05-02T21:06:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_a84c5f9e",
       "revId": "82b31ee9ed51f2bbc6184e7e1e4e83558d40a8f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a122d0e_0c2bc795",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 21597
+      },
+      "writtenOn": "2016-05-02T21:06:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_28596f5c",
+      "revId": "82b31ee9ed51f2bbc6184e7e1e4e83558d40a8f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_0842b368",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2016-04-30T11:46:12Z",
       "side": 1,
       "message": "Same here.",
+      "revId": "82b31ee9ed51f2bbc6184e7e1e4e83558d40a8f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_6c16bb59",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 21597
+      },
+      "writtenOn": "2016-05-02T21:06:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a122d0e_0842b368",
       "revId": "82b31ee9ed51f2bbc6184e7e1e4e83558d40a8f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
