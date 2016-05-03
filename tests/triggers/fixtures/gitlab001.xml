@@ -5,7 +5,7 @@
       <spec/>
       <triggerOnPush>true</triggerOnPush>
       <triggerOnMergeRequest>true</triggerOnMergeRequest>
-      <triggerOpenMergeRequestOnPush>true</triggerOpenMergeRequestOnPush>
+      <triggerOpenMergeRequestOnPush>never</triggerOpenMergeRequestOnPush>
       <ciSkip>true</ciSkip>
       <setBuildDescription>true</setBuildDescription>
       <addNoteOnMergeRequest>true</addNoteOnMergeRequest>

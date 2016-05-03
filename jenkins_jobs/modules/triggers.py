@@ -1072,8 +1072,13 @@ def gitlab(parser, xml_parent, data):
     :arg bool trigger-push: Build on Push Events (default true)
     :arg bool trigger-merge-request: Build on Merge Request Events (default
         True)
-    :arg bool trigger-open-merge-request-push: Rebuild open Merge Requests on
-        Push Events (default true)
+    :arg str trigger-open-merge-request-push: Rebuild open Merge Requests on
+        Push Events (default never)
+
+        :trigger-open-merge-request-push values:
+            * **never**
+            * **source**
+            * **both**
     :arg bool ci-skip: Enable [ci-skip] (default true)
     :arg bool set-build-description: Set build description to build cause
         (eg. Merge request or Git Push ) (default true)
@@ -1100,29 +1105,26 @@ def gitlab(parser, xml_parent, data):
     gitlab = XML.SubElement(
         xml_parent, 'com.dabsquared.gitlabjenkins.GitLabPushTrigger'
     )
+    valid_merge_request = ['never', 'source', 'both']
 
-    bool_mapping = (
+    XML.SubElement(gitlab, 'spec').text = ''
+    bool_mapping = [
         ('trigger-push', 'triggerOnPush', True),
         ('trigger-merge-request', 'triggerOnMergeRequest', True),
         ('trigger-open-merge-request-push', 'triggerOpenMergeRequestOnPush',
-            True),
+         'never', valid_merge_request),
         ('ci-skip', 'ciSkip', True),
         ('set-build-description', 'setBuildDescription', True),
         ('add-note-merge-request', 'addNoteOnMergeRequest', True),
         ('add-vote-merge-request', 'addVoteOnMergeRequest', True),
         ('add-ci-message', 'addCiMessage', False),
         ('allow-all-branches', 'allowAllBranches', False),
-    )
+    ]
     list_mapping = (
         ('include-branches', 'includeBranchesSpec', []),
         ('exclude-branches', 'excludeBranchesSpec', []),
     )
-
-    XML.SubElement(gitlab, 'spec').text = ''
-
-    for yaml_name, xml_name, default_val in bool_mapping:
-        value = str(data.get(yaml_name, default_val)).lower()
-        _add_xml(gitlab, xml_name, value)
+    convert_mapping_to_xml(gitlab, data, bool_mapping, fail_required=True)
 
     for yaml_name, xml_name, default_val in list_mapping:
         value = ', '.join(data.get(yaml_name, default_val))
