@@ -1,5 +1,7 @@
 triggers:
   - gitlab:
+      trigger-open-merge-request-push: 'source'
+      ci-skip: false
       include-branches:
         - 'master'
       exclude-branches:

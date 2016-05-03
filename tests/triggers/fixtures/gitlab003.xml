@@ -5,8 +5,8 @@
       <spec/>
       <triggerOnPush>true</triggerOnPush>
       <triggerOnMergeRequest>true</triggerOnMergeRequest>
-      <triggerOpenMergeRequestOnPush>true</triggerOpenMergeRequestOnPush>
-      <ciSkip>true</ciSkip>
+      <triggerOpenMergeRequestOnPush>source</triggerOpenMergeRequestOnPush>
+      <ciSkip>false</ciSkip>
       <setBuildDescription>true</setBuildDescription>
       <addNoteOnMergeRequest>true</addNoteOnMergeRequest>
       <addVoteOnMergeRequest>true</addVoteOnMergeRequest>

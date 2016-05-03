@@ -1061,8 +1061,8 @@ def gitlab(parser, xml_parent, data):
     :arg bool trigger-push: Build on Push Events (default: true)
     :arg bool trigger-merge-request: Build on Merge Request Events (default:
         True)
-    :arg bool trigger-open-merge-request-push: Rebuild open Merge Requests on
-        Push Events (default: True)
+    :arg string trigger-open-merge-request-push: Rebuild open Merge Requests on
+        Push Events (default: never)
     :arg bool ci-skip: Enable [ci-skip] (default True)
     :arg bool set-build-description: Set build description to build cause
         (eg. Merge request or Git Push ) (default: True)
@@ -1090,32 +1090,30 @@ def gitlab(parser, xml_parent, data):
         xml_parent, 'com.dabsquared.gitlabjenkins.GitLabPushTrigger'
     )
 
-    bool_mapping = (
-        ('trigger-push', 'triggerOnPush', True),
-        ('trigger-merge-request', 'triggerOnMergeRequest', True),
-        ('trigger-open-merge-request-push', 'triggerOpenMergeRequestOnPush',
-            True),
-        ('ci-skip', 'ciSkip', True),
-        ('set-build-description', 'setBuildDescription', True),
-        ('add-note-merge-request', 'addNoteOnMergeRequest', True),
-        ('add-vote-merge-request', 'addVoteOnMergeRequest', True),
-        ('add-ci-message', 'addCiMessage', False),
-        ('allow-all-branches', 'allowAllBranches', False),
-    )
-    list_mapping = (
-        ('include-branches', 'includeBranchesSpec', []),
-        ('exclude-branches', 'excludeBranchesSpec', []),
-    )
-
     XML.SubElement(gitlab, 'spec').text = ''
 
-    for yaml_name, xml_name, default_val in bool_mapping:
-        value = str(data.get(yaml_name, default_val)).lower()
-        _add_xml(gitlab, xml_name, value)
-
-    for yaml_name, xml_name, default_val in list_mapping:
-        value = ', '.join(data.get(yaml_name, default_val))
-        _add_xml(gitlab, xml_name, value)
+    XML.SubElement(gitlab, 'triggerOnPush').text = str(
+        data.get('trigger-push', True)).lower()
+    XML.SubElement(gitlab, 'triggerOnMergeRequest').text = str(
+        data.get('trigger-merge-request', True)).lower()
+    XML.SubElement(gitlab, 'triggerOpenMergeRequestOnPush').text = str(
+        data.get('trigger-open-merge-request-push', 'never'))
+    XML.SubElement(gitlab, 'ciSkip').text = str(
+        data.get('ci-skip', True)).lower()
+    XML.SubElement(gitlab, 'setBuildDescription').text = str(
+        data.get('set-build-description', True)).lower()
+    XML.SubElement(gitlab, 'addNoteOnMergeRequest').text = str(
+        data.get('add-note-merge-request', True)).lower()
+    XML.SubElement(gitlab, 'addVoteOnMergeRequest').text = str(
+        data.get('add-vote-merge-request', True)).lower()
+    XML.SubElement(gitlab, 'addCiMessage').text = str(
+        data.get('add-ci-message', False)).lower()
+    XML.SubElement(gitlab, 'allowAllBranches').text = str(
+        data.get('allow-all-branches', False)).lower()
+    XML.SubElement(gitlab, 'includeBranchesSpec').text = ', '.join(
+        data.get('include-branches', []))
+    XML.SubElement(gitlab, 'excludeBranchesSpec').text = ', '.join(
+        data.get('exclude-branches', []))
 
 
 def build_result(parser, xml_parent, data):
