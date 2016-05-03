@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_ea2d6f46",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 2812,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-03T16:36:11Z",
+      "side": 1,
+      "message": "Creating separate entry points for the same plugin, for different configuration profiles seems just enough of a departure from the general approach of everything else that I think a little stop a think here is worth it.\n\nIt feels like, that these should be one entry point with the android/ios specific options called out, similar to how all other modules that have multiple possible subsets of configurations work.",
+      "revId": "acd65a4ddbee3d554e0b0a5344e78bccb6d0ad6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
