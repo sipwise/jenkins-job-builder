@@ -34,6 +34,24 @@
       "revId": "2a99a60f6c11f1c4e9fd505137bdfa2c93760c6b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a122d0e_2fdf793b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5334,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-03T16:09:28Z",
+      "side": 1,
+      "message": "something I think worth raising though with jenkins devs. I wonder if we would be better setting this, but then I suspect that if you have an older version of the plugin installed than appears in the configuration, that it might prevent it from ignoring the unknown elements.",
+      "parentUuid": "1a122d0e_ac429366",
+      "revId": "2a99a60f6c11f1c4e9fd505137bdfa2c93760c6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
