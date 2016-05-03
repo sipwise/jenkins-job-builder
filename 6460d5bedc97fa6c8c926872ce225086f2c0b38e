@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a122d0e_95dcdc75",
+        "filename": "tests/builders/fixtures/xcode.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-03T16:45:18Z",
+      "side": 1,
+      "message": "Since this looks a little odd given the inputs would associate this directly with the section below, I think probably need to explicitly check this just to be sure unless the original author has a chance to elaborate on this.",
+      "revId": "6460d5bedc97fa6c8c926872ce225086f2c0b38e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
