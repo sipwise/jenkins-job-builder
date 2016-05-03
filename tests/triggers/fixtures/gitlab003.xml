@@ -5,11 +5,11 @@
       <spec/>
       <triggerOnPush>true</triggerOnPush>
       <triggerOnMergeRequest>true</triggerOnMergeRequest>
-      <triggerOpenMergeRequestOnPush>true</triggerOpenMergeRequestOnPush>
-      <ciSkip>true</ciSkip>
-      <setBuildDescription>true</setBuildDescription>
-      <addNoteOnMergeRequest>true</addNoteOnMergeRequest>
-      <addVoteOnMergeRequest>true</addVoteOnMergeRequest>
+      <triggerOpenMergeRequestOnPush>source</triggerOpenMergeRequestOnPush>
+      <ciSkip>false</ciSkip>
+      <setBuildDescription>false</setBuildDescription>
+      <addNoteOnMergeRequest>false</addNoteOnMergeRequest>
+      <addVoteOnMergeRequest>false</addVoteOnMergeRequest>
       <addCiMessage>false</addCiMessage>
       <allowAllBranches>false</allowAllBranches>
       <includeBranchesSpec>master</includeBranchesSpec>
