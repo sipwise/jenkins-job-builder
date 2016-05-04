@@ -1284,3 +1284,20 @@ class SCM(jenkins_jobs.modules.base.Base):
                     pass
 
             xml_parent.append(scms_parent)
+
+
+class WorkflowSCM(jenkins_jobs.modules.base.Base):
+    sequence = 23
+
+    component_type = 'workflow-scm'
+    component_list_type = 'workflow-scm'
+
+    def gen_xml(self, xml_parent, data):
+        definition_parent = xml_parent.find('definition')
+        workflow_dict = data.get(self.component_type, {})
+        scm = workflow_dict.get('scm')
+        if scm:
+            self.registry.dispatch('scm', definition_parent, scm)
+            XML.SubElement(definition_parent, 'scriptPath'
+                           ).text = workflow_dict.get('script-path',
+                                                      'Jenkinsfile')
