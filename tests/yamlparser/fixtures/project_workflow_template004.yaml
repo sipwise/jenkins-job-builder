@@ -1,0 +1,14 @@
+- scm:
+    name: test-job-scm
+    scm:
+      - hg:
+         url: http://hg.example.org/test_job
+         clean: true
+
+- job:
+    name: test-job
+    project-type: workflow
+    workflow-scm:
+      scm: test-job-scm
+      script-path: Jenkinsfile.groovy
+

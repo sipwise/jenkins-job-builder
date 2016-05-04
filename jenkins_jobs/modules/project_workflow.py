@@ -21,50 +21,84 @@
 The workflow Project module handles creating Jenkins workflow projects.
 You may specify ``workflow`` in the ``project-type`` attribute of
 the :ref:`Job` definition.
-For now only inline scripts are supported.
 
-Requires the Jenkins :jenkins-wiki:`Workflow Plugin <Workflow+Plugin>`.
+Requires the Jenkins :jenkins-wiki:`Workflow Plugin <Workflow+Plugin>` or the
+:jenkins-wiki:`Pipeline Plugin <Pipeline+Plugin>`:
 
-In order to use it for job-template you have to escape the curly braces by
-doubling them in the DSL: { -> {{ , otherwise it will be interpreted by the
-python str.format() command.
+* with the former (Workflow Plugin), you must write the flow steps in DSL
+  within the job's configuration
+* with the later (Pipeline Plugin) you can benefit from the new Jenkins
+  "`Pipeline as code`_" feature. In other words you can configure your job
+  inside a Groovy file lying with the source code.
+
+In order to write an inline script within a job-template you have to escape the
+curly braces by doubling them in the DSL: { -> {{ , otherwise it will be
+interpreted by the python str.format() command.
 
 :Job Parameters:
-    * **dsl** (`str`): The DSL content.
     * **sandbox** (`bool`): If the script should run in a sandbox (default
       false)
+    * **dsl** (`str`): The DSL content or,
+    * **workflow-scm** (`str`): in case "Pipeline as code" feature is used.
+      Then you should specify:
 
-Job example:
+        * **scm**: reference to an ``scm`` component describing the source code
+          repository
+        * **script-name**: name of the Groovy file containing the job's steps
+          (optional, default: ``Jenkinsfile``)
+
+Note that ``dsl`` and ``workflow-scm`` parameters are mutually exclusive.
+
+Inline DSL job example:
 
     .. literalinclude::
       /../../tests/yamlparser/fixtures/project_workflow_template001.yaml
 
-Job template example:
+Inline DSL job template example:
 
     .. literalinclude::
       /../../tests/yamlparser/fixtures/project_workflow_template002.yaml
 
+"Pipeline as code" example:
+
+    .. literalinclude::
+      /../../tests/yamlparser/fixtures/project_workflow_template004.yaml
+
+"Pipeline as code" example using templates:
+
+    .. literalinclude::
+      /../../tests/yamlparser/fixtures/project_workflow_template005.yaml
+
+.. _Pipeline as code: https://jenkins.io/solutions/pipeline/
+
 """
 import xml.etree.ElementTree as XML
 
-from jenkins_jobs.errors import MissingAttributeError
+from jenkins_jobs.errors import JenkinsJobsException
 import jenkins_jobs.modules.base
 
 
 class Workflow(jenkins_jobs.modules.base.Base):
     sequence = 0
+    error_msg = ("You cannot declare both 'dsl' and 'workflow-scm' on a "
+                 "workflow job")
 
     def root_xml(self, data):
         xml_parent = XML.Element('flow-definition',
                                  {'plugin': 'workflow-job'})
-        xml_definition = XML.SubElement(xml_parent, 'definition',
-                                        {'plugin': 'workflow-cps',
-                                         'class': 'org.jenkinsci.plugins.'
-                                         'workflow.cps.CpsFlowDefinition'})
-        try:
+        if 'dsl' in data and 'workflow-scm' in data:
+            raise JenkinsJobsException(self.error_msg)
+        if 'dsl' in data:
+            xml_definition = XML.SubElement(xml_parent, 'definition',
+                                            {'plugin': 'workflow-cps',
+                                             'class': 'org.jenkinsci.plugins.'
+                                             'workflow.cps.CpsFlowDefinition'})
             XML.SubElement(xml_definition, 'script').text = data['dsl']
-        except KeyError as e:
-            raise MissingAttributeError(e.arg[0])
+        else:
+            xml_definition = XML.SubElement(xml_parent, 'definition', {
+                'plugin': 'workflow-cps',
+                'class': 'org.jenkinsci.plugins.workflow.cps.'
+                'CpsScmFlowDefinition'})
 
         needs_workspace = data.get('sandbox', False)
         XML.SubElement(xml_definition, 'sandbox').text = str(
