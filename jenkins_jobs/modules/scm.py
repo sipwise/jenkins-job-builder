@@ -1241,3 +1241,19 @@ class SCM(jenkins_jobs.modules.base.Base):
             xml_attribs = {'class': class_name}
             xml_parent = XML.SubElement(xml_parent, 'scm', xml_attribs)
             xml_parent.append(scms_parent)
+
+
+class WorkflowSCM(jenkins_jobs.modules.base.Base):
+    sequence = 23
+
+    component_type = 'workflow-scm'
+    component_list_type = 'workflow-scm'
+
+    def gen_xml(self, parser, xml_parent, data):
+        definition_parent = xml_parent.find('definition')
+        workflow_dict = data.get(self.component_type, {})
+        scm = workflow_dict.get('scm')
+        if scm:
+            self.registry.dispatch('scm', parser, definition_parent, scm)
+            XML.SubElement(definition_parent, 'scriptPath').text = \
+                workflow_dict.get('script-path', 'Jenkinsfile')
