@@ -1,0 +1,3 @@
+publishers:
+  - email:
+      notify-every-unstable-build: false
