@@ -1724,9 +1724,12 @@ def pipeline(parser, xml_parent, data):
 def email(parser, xml_parent, data):
     """yaml: email
     Email notifications on build failure.
+    Requires the Jenkins :jenkins-wiki:`mailer Plugin
+    <mailer+Plugin>`.
+
 
     :arg str recipients: Space separated list of recipient email addresses
-      (optional)
+      (required)
     :arg bool notify-every-unstable-build: Send an email for every
       unstable build (default true)
     :arg bool send-to-individuals: Send an email to the individual
@@ -1734,13 +1737,19 @@ def email(parser, xml_parent, data):
 
     Example:
 
-    .. literalinclude::  /../../tests/publishers/fixtures/email001.yaml
+    .. literalinclude::
+       /../../tests/publishers/fixtures/email-minimal.yaml
+       :language: yaml
+
+    .. literalinclude::  /../../tests/publishers/fixtures/email-complete.yaml
        :language: yaml
     """
 
     # TODO: raise exception if this is applied to a maven job
     mailer = XML.SubElement(xml_parent,
                             'hudson.tasks.Mailer')
+    if 'recipients' not in data:
+        raise MissingAttributeError('recipients')
     XML.SubElement(mailer, 'recipients').text = data.get('recipients', '')
 
     # Note the logic reversal (included here to match the GUI
