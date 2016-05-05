@@ -1,3 +1,5 @@
 publishers:
   - email:
-      recipients: foo@example.com bar@example.com
+      recipients: foo@example.com
+      notify-every-unstable-build: true
+      send-to-individuals: false
