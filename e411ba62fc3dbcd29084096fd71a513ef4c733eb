@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_1bf93981",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2090,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-06T19:46:34Z",
+      "side": 1,
+      "message": "Spotted a bug here when reviewing the generated docs, missing use of the :jenkins-wiki: macro to perform the correct expansion.",
+      "revId": "e411ba62fc3dbcd29084096fd71a513ef4c733eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
