@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_ecbaabe0",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2190,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-05-07T15:48:13Z",
+      "side": 1,
+      "message": "This looks like it needs to be an int, instead of a str after looking at the xml and yaml files.",
+      "range": {
+        "startLine": 2190,
+        "startChar": 9,
+        "endLine": 2190,
+        "endChar": 12
+      },
+      "revId": "71e4986ca4449f7745d9beea249f54ff2d50a654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_6c96bb4d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2200,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-05-07T15:48:13Z",
+      "side": 1,
+      "message": "You can specify the default option for these boolean arguments. Looking at your code, I assume the default option is false?",
+      "range": {
+        "startLine": 2196,
+        "startChar": 4,
+        "endLine": 2200,
+        "endChar": 76
+      },
+      "revId": "71e4986ca4449f7745d9beea249f54ff2d50a654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_cc8b671d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2203,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-05-07T15:48:13Z",
+      "side": 1,
+      "message": "Probably a good idea to test this.",
+      "range": {
+        "startLine": 2203,
+        "startChar": 0,
+        "endLine": 2203,
+        "endChar": 68
+      },
+      "revId": "71e4986ca4449f7745d9beea249f54ff2d50a654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
