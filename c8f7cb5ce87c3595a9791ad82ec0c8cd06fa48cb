@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_88730280",
+        "filename": "tests/yamlparser/fixtures/lazy-load-jobs-multi001.xml",
+        "patchSetId": 23
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-05-08T16:01:23Z",
+      "side": 1,
+      "message": "typo: something",
+      "revId": "c8f7cb5ce87c3595a9791ad82ec0c8cd06fa48cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
