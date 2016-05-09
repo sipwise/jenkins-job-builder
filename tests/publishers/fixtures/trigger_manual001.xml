@@ -17,7 +17,9 @@ bar=foo
         </hudson.plugins.parameterizedtrigger.FileBuildParameters>
         <hudson.plugins.parameterizedtrigger.CurrentBuildParameters/>
         <hudson.plugins.parameterizedtrigger.NodeParameters/>
-        <hudson.plugins.parameterizedtrigger.SubversionRevisionBuildParameters/>
+        <hudson.plugins.parameterizedtrigger.SubversionRevisionBuildParameters>
+          <includeUpstreamParameters>false</includeUpstreamParameters>
+        </hudson.plugins.parameterizedtrigger.SubversionRevisionBuildParameters>
         <hudson.plugins.parameterizedtrigger.matrix.MatrixSubsetBuildParameters>
           <filter>label==&quot;x86&quot;</filter>
         </hudson.plugins.parameterizedtrigger.matrix.MatrixSubsetBuildParameters>
