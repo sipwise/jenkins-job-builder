@@ -16,6 +16,24 @@
       "revId": "c8f7cb5ce87c3595a9791ad82ec0c8cd06fa48cb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_cbe84db7",
+        "filename": "tests/yamlparser/fixtures/lazy-load-jobs-multi001.xml",
+        "patchSetId": 23
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-09T14:29:25Z",
+      "side": 1,
+      "message": "Good spot. Unfortunately it\u0027s coming from a file that is being included here, but not part of this commit, so probably better fixed separately. Seems a few instances of it have leaked in.",
+      "parentUuid": "dab17558_88730280",
+      "revId": "c8f7cb5ce87c3595a9791ad82ec0c8cd06fa48cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
