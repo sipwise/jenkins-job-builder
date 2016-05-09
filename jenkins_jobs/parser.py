@@ -353,6 +353,8 @@ class YamlParser(object):
             job = XmlJob(xml, data['name'])
             return job
 
+        raise JenkinsJobsException("Unrecognized project type: '%s'" % kind)
+
     def gen_xml(self, xml, data):
         for module in self.registry.modules:
             if hasattr(module, 'gen_xml'):
