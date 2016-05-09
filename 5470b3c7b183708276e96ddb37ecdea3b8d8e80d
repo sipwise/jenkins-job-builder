@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_a36d3b9a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1727,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-09T10:29:06Z",
+      "side": 1,
+      "message": "if you change the below code might fix the case for \u0027mailer\u0027 here to be \u0027Mailer\u0027.",
+      "revId": "5470b3c7b183708276e96ddb37ecdea3b8d8e80d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_03452716",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1753,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-09T10:29:06Z",
+      "side": 1,
+      "message": "Lets fix up the lines around this to be explicit. So if the attribute \u0027recipients\u0027 must be specified, there should be no need for a get, instead we can retrieve with a direct access.\n\nGenerally in python should aim for \"Easier to Ask Forgiveness than Permission\" instead of \"Look before you Leap\", with some exceptions depending on whether it makes readability worse, though my preference is to pick whichever approach is optimal for the majority case.\n\nI think in this case, EAFP will allow for readability and it should be more common that recipients is defined than not defined.\n\n try:\n     XML.SubElement(mailer, \u0027recipients\u0027).text \u003d data[\u0027recipients\u0027]\n except KeyError as e:\n     raise MissingAttributeError(e)",
+      "revId": "5470b3c7b183708276e96ddb37ecdea3b8d8e80d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
