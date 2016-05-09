@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_e522a200",
+        "filename": "tests/publishers/fixtures/trigger_manual001.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-09T13:54:53Z",
+      "side": 1,
+      "message": "Definitely need to check that this is correct for the trigger-manual plugin.",
+      "revId": "3ad4db11d201538bc3001edaf4f612a78c87289a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
