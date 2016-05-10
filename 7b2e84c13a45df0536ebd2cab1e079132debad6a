@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_3261773a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2419,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-05-10T01:48:49Z",
+      "side": 1,
+      "message": "Something small but for naming file conventions, should we have the minimal example file name to be \u0027sounds-minimal.yaml\u0027 and the full example to be \u0027sounds-complete.yaml\u0027?\n\nEverything else can follow the usual naming scheme that we\u0027ve been using.",
+      "range": {
+        "startLine": 2419,
+        "startChar": 58,
+        "endLine": 2419,
+        "endChar": 72
+      },
+      "revId": "7b2e84c13a45df0536ebd2cab1e079132debad6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
