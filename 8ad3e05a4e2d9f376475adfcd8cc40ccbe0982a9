@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_060991dd",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-05-10T04:05:15Z",
+      "side": 1,
+      "message": "remain a trailing \\",
+      "revId": "8ad3e05a4e2d9f376475adfcd8cc40ccbe0982a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
