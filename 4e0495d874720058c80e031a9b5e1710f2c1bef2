@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_bfc967ae",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 748,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-05-11T05:17:05Z",
+      "side": 1,
+      "message": "With the convert_mapping... function below you can just set default of None for the required attribute and it will raise the MissingAttributeError.",
+      "revId": "4e0495d874720058c80e031a9b5e1710f2c1bef2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_9ff583ee",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 753,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-05-11T05:17:05Z",
+      "side": 1,
+      "message": "No need for .upper() if you just set the default to GET, NOT_SET, etc...",
+      "revId": "4e0495d874720058c80e031a9b5e1710f2c1bef2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
