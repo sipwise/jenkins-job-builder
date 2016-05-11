@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <builders>
+    <jenkins.plugins.http__request.HttpRequest plugin="http_request">
+      <url>http://example.com/jenkinsTest</url>
+      <httpMode>GET</httpMode>
+      <contentType>APPLICATION_OCTETSTREAM</contentType>
+      <acceptType>APPLICATION_OCTETSTREAM</acceptType>
+      <outputFile/>
+      <consoleLogResponseBody>false</consoleLogResponseBody>
+      <passBuildParameters>false</passBuildParameters>
+      <timeout>0</timeout>
+      <validResponseCodes/>
+      <validResponseContent/>
+      <authentication>authenticationkey</authentication>
+    </jenkins.plugins.http__request.HttpRequest>
+  </builders>
+</project>

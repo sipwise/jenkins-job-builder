@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <builders>
+    <jenkins.plugins.http__request.HttpRequest plugin="http_request">
+      <url>http://example.com/jenkinsTest</url>
+      <httpMode>DELETE</httpMode>
+      <contentType>APPLICATION_TAR</contentType>
+      <acceptType>APPLICATION_TAR</acceptType>
+      <outputFile/>
+      <consoleLogResponseBody>false</consoleLogResponseBody>
+      <passBuildParameters>false</passBuildParameters>
+      <timeout>0</timeout>
+      <validResponseCodes>100:399</validResponseCodes>
+      <validResponseContent/>
+    </jenkins.plugins.http__request.HttpRequest>
+  </builders>
+</project>
