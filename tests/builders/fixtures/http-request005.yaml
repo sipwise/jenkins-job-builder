@@ -1,0 +1,6 @@
+builders:
+  - http-request:
+      url: http://example.com/jenkinsTest
+      mode: GET
+      content-type: APPLICATION_OCTETSTREAM
+      accept-type: APPLICATION_OCTETSTREAM

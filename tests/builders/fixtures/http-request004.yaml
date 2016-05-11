@@ -1,0 +1,6 @@
+builders:
+  - http-request:
+      url: http://example.com/jenkinsTest
+      mode: HEAD
+      content-type: APPLICATION_ZIP
+      accept-type: APPLICATION_ZIP

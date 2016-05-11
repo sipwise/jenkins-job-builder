@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <builders>
+    <jenkins.plugins.http__request.HttpRequest plugin="http_request">
+      <url>http://example.com/jenkinsTest</url>
+      <httpMode>PUT</httpMode>
+      <contentType>APPLICATION_JSON</contentType>
+      <acceptType>APPLICATION_JSON</acceptType>
+      <outputFile>response_file.txt</outputFile>
+      <consoleLogResponseBody>true</consoleLogResponseBody>
+      <passBuildParameters>true</passBuildParameters>
+      <timeout>10</timeout>
+      <validResponseCodes>123,404,500</validResponseCodes>
+      <validResponseContent>foo</validResponseContent>
+      <customHeaders>
+        <pair>
+          <name>header</name>
+          <value>value</value>
+        </pair>
+      </customHeaders>
+    </jenkins.plugins.http__request.HttpRequest>
+  </builders>
+</project>

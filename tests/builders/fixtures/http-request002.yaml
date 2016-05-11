@@ -1,0 +1,14 @@
+builders:
+  - http-request:
+      url: http://example.com/jenkinsTest
+      mode: PUT
+      pass-build: true
+      content-type: APPLICATION_JSON
+      accept-type: APPLICATION_JSON
+      output-file: response_file.txt
+      console-log: true
+      time-out: 10
+      valid-response-codes: 123,404,500
+      valid-response-content: foo
+      header-name: header
+      header-value: value

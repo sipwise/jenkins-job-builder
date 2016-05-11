@@ -1,0 +1,7 @@
+builders:
+  - http-request:
+      url: http://example.com/jenkinsTest
+      mode: DELETE
+      content-type: APPLICATION_TAR
+      accept-type: APPLICATION_TAR
+      valid-response-codes: 100:399

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <builders>
+    <jenkins.plugins.http__request.HttpRequest plugin="http_request">
+      <url>http://example.com/jenkinsTest</url>
+      <httpMode>POST</httpMode>
+      <contentType>TEXT_HTML</contentType>
+      <acceptType>TEXT_HTML</acceptType>
+      <outputFile>response_file.txt</outputFile>
+      <consoleLogResponseBody>false</consoleLogResponseBody>
+      <passBuildParameters>true</passBuildParameters>
+      <timeout>10</timeout>
+      <validResponseCodes>123</validResponseCodes>
+      <validResponseContent>foo</validResponseContent>
+    </jenkins.plugins.http__request.HttpRequest>
+  </builders>
+</project>
