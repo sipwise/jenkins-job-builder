@@ -1,0 +1,7 @@
+builders:
+  - http-request:
+      url: http://example.com/jenkinsTest
+      mode: GET
+      content-type: NOT_SET
+      accept-type: NOT_SET
+      pass-build: false
