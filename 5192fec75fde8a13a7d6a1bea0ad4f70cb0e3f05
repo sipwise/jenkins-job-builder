@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_c89ee162",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1728,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-12T12:25:22Z",
+      "side": 1,
+      "message": "Think you misunderstood, I was saying that you should uppercase the \u0027m\u0027 of the \u0027mailer Plugin\u0027 in the above line to be consistent, not to lower case this line.\n\nBoth \u0027mailer\u0027 should be \u0027Mailer\u0027.",
+      "revId": "5192fec75fde8a13a7d6a1bea0ad4f70cb0e3f05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
