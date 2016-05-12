@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_0273aab5",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-12T11:52:00Z",
+      "side": 1,
+      "message": "Is there a set of valid options for video-quality?\n\nThought this probably touches on the issue of how convert_mapping_to_xml should be expanded to managed options where the value must be one from a list.\n\nCould put a TODO here if that\u0027s the case, and maybe a TODO in convert_mapping_to_xml to reference here in case we forget when modifying convert_mapping_to_xml.",
+      "revId": "ac7bb0e7a400faa18be78170291738ca664f2d5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_9f2b7594",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-12T11:52:00Z",
+      "side": 1,
+      "message": "Little bit surprised that you didn\u0027t just create one mappings with comments added before starting each set of elements.\n\ne.g.:\n\n mappings \u003d [\n     # general\n     (\u0027apikey\u0027, \u0027apiKey\u0027, None),\n     (\u0027appfile\u0027, \u0027appFile\u0027, None),\n     (\u0027tester-groups\u0027, \u0027testersGroups\u0027, \u0027\u0027),\n     (\u0027notify-testers\u0027, \u0027notifyTesters\u0027, True),\n     (\u0027autoupdate\u0027, \u0027autoUpdate\u0027, True),\n\n     # session\n     (\u0027max-duration\u0027, \u0027maxDuration\u0027, \u002710m\u0027),\n     (\u0027record-on-background\u0027, \u0027recordOnBackground\u0027, False),\n     (\u0027data-only-wifi\u0027, \u0027dataOnlyWifi\u0027, False),\n\n     # video\n     (\u0027video-enabled\u0027, \u0027isVideoEnabled\u0027, True),\n     (\u0027screenshot-interval\u0027, \u0027screenshotInterval\u0027, \u00271\u0027),\n     (\u0027video-quality\u0027, \u0027videoQuality\u0027, \u0027high\u0027),\n\n     # metrics\n     (\u0027cpu\u0027, \u0027cpu\u0027, True),\n     (\u0027memory\u0027, \u0027memory\u0027, True),\n     (\u0027logs\u0027, \u0027logs\u0027, True),\n     (\u0027network\u0027, \u0027network\u0027, False),\n     (\u0027phone-signal\u0027, \u0027phoneSignal\u0027, False),\n     (\u0027wifi\u0027, \u0027wifi\u0027, False),\n     (\u0027gps\u0027, \u0027gps\u0027, False),\n     (\u0027battery\u0027, \u0027battery\u0027, False),\n     (\u0027opengl\u0027, \u0027openGl\u0027, False),\n\n     # advanced options\n     (\u0027advanced-options\u0027, \u0027advancedOptions\u0027, \u0027\u0027)\n ]\n\n convert_mapping_to_xml(xml_element, data, mappings, fail_required\u003dTrue)",
+      "revId": "ac7bb0e7a400faa18be78170291738ca664f2d5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_c25402cc",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-12T11:52:00Z",
+      "side": 1,
+      "message": "The number of imports are getting a little much here.\n\nI think it\u0027s time to just import the helpers module and reference using that. Though it should probably be done as a separate patch to fix up all references in one go.",
+      "revId": "ac7bb0e7a400faa18be78170291738ca664f2d5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_a28c5e80",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 2886,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-12T11:52:00Z",
+      "side": 1,
+      "message": "The if/else construct should probably be:\n\n if platform \u003d\u003d \u0027android\u0027:\n     ...\n elsif platform \u003d\u003d \u0027ios\u0027:\n     ...\n else:\n     # complain about invalid value.\n     raise InvalidAttributeError(...)\n\nOtherwise any typo defaults to the ios behaviour.",
+      "revId": "ac7bb0e7a400faa18be78170291738ca664f2d5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
