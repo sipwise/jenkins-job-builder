@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_f88473d3",
+        "filename": "tests/builders/fixtures/http-request-minimal.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-05-12T00:39:40Z",
+      "side": 1,
+      "message": "According to your code all the only required parameter is \"url\" so in a minimal example you only need to pass url.",
+      "revId": "6ab81e7c90553e6ea21c418486173604593d9866",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
