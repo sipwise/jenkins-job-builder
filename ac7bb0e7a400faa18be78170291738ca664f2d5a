@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dab17558_80d62def",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-05-13T15:17:38Z",
+      "side": 1,
+      "message": "Yes, there is a set of valid options for video-quality. \n\nExpanding convert_mapping_to_xml to manage options where the value must be from a list is a good idea. I\u0027ll look into this in the near future.",
+      "parentUuid": "dab17558_0273aab5",
+      "revId": "ac7bb0e7a400faa18be78170291738ca664f2d5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_9f2b7594",
         "filename": "jenkins_jobs/modules/helpers.py",
         "patchSetId": 18
@@ -30,6 +48,24 @@
       "writtenOn": "2016-05-12T11:52:00Z",
       "side": 1,
       "message": "Little bit surprised that you didn\u0027t just create one mappings with comments added before starting each set of elements.\n\ne.g.:\n\n mappings \u003d [\n     # general\n     (\u0027apikey\u0027, \u0027apiKey\u0027, None),\n     (\u0027appfile\u0027, \u0027appFile\u0027, None),\n     (\u0027tester-groups\u0027, \u0027testersGroups\u0027, \u0027\u0027),\n     (\u0027notify-testers\u0027, \u0027notifyTesters\u0027, True),\n     (\u0027autoupdate\u0027, \u0027autoUpdate\u0027, True),\n\n     # session\n     (\u0027max-duration\u0027, \u0027maxDuration\u0027, \u002710m\u0027),\n     (\u0027record-on-background\u0027, \u0027recordOnBackground\u0027, False),\n     (\u0027data-only-wifi\u0027, \u0027dataOnlyWifi\u0027, False),\n\n     # video\n     (\u0027video-enabled\u0027, \u0027isVideoEnabled\u0027, True),\n     (\u0027screenshot-interval\u0027, \u0027screenshotInterval\u0027, \u00271\u0027),\n     (\u0027video-quality\u0027, \u0027videoQuality\u0027, \u0027high\u0027),\n\n     # metrics\n     (\u0027cpu\u0027, \u0027cpu\u0027, True),\n     (\u0027memory\u0027, \u0027memory\u0027, True),\n     (\u0027logs\u0027, \u0027logs\u0027, True),\n     (\u0027network\u0027, \u0027network\u0027, False),\n     (\u0027phone-signal\u0027, \u0027phoneSignal\u0027, False),\n     (\u0027wifi\u0027, \u0027wifi\u0027, False),\n     (\u0027gps\u0027, \u0027gps\u0027, False),\n     (\u0027battery\u0027, \u0027battery\u0027, False),\n     (\u0027opengl\u0027, \u0027openGl\u0027, False),\n\n     # advanced options\n     (\u0027advanced-options\u0027, \u0027advancedOptions\u0027, \u0027\u0027)\n ]\n\n convert_mapping_to_xml(xml_element, data, mappings, fail_required\u003dTrue)",
+      "revId": "ac7bb0e7a400faa18be78170291738ca664f2d5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_20fe616b",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-05-13T15:17:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_9f2b7594",
       "revId": "ac7bb0e7a400faa18be78170291738ca664f2d5a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +100,24 @@
       "writtenOn": "2016-05-12T11:52:00Z",
       "side": 1,
       "message": "The if/else construct should probably be:\n\n if platform \u003d\u003d \u0027android\u0027:\n     ...\n elsif platform \u003d\u003d \u0027ios\u0027:\n     ...\n else:\n     # complain about invalid value.\n     raise InvalidAttributeError(...)\n\nOtherwise any typo defaults to the ios behaviour.",
+      "revId": "ac7bb0e7a400faa18be78170291738ca664f2d5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_40f3a59f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 2886,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-05-13T15:17:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dab17558_a28c5e80",
       "revId": "ac7bb0e7a400faa18be78170291738ca664f2d5a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
