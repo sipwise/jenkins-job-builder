@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_7181628f",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 708,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-13T15:08:08Z",
+      "side": 1,
+      "message": "This doesn\u0027t display properly in the docs, see http://docs-draft.openstack.org/62/314862/9/check/gate-jenkins-job-builder-docs/56ccb2b//doc/build/html/builders.html#builders.http-request\n\nIf you change it to be indented similar to how you did `:custom-header:` below should look fine:\n\n    :arg str mode: The http mode of the request (default GET)\n        :mode values:\n            * **GET**\n            * **POST**\n            * **PUT**\n            * **DELETE**\n            * **HEAD**",
+      "revId": "d7dfee616994967d77e416b645f7884148124fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_b130ea08",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 721,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-13T15:08:08Z",
+      "side": 1,
+      "message": "Same here, though I would just put the header of the acceptable values to be:\n\n     :content-type and accept-type values:",
+      "revId": "d7dfee616994967d77e416b645f7884148124fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_ecdc5548",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 784,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-13T15:08:08Z",
+      "side": 1,
+      "message": "You don\u0027t need to test if they are in the dict and then use \u0027get\u0027, that\u0027s somewhat doubling up on the checks:\n\nI\u0027d suggest using one of the following patterns:\n\n    if data.get(\u0027mode\u0027, valid_modes[0]) not in valid_modes:\n\nOr\n\n    if \u0027mode\u0027 in data and data[\u0027mode\u0027] not in valid_modes:\n\n\nThe other thing, we should consider moving this type of checking into the convert_mapping_to_xml() methods. I presume that\u0027s something that\u0027s been considered for the future?",
+      "revId": "d7dfee616994967d77e416b645f7884148124fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_6c4985d0",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 801,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-13T15:08:08Z",
+      "side": 1,
+      "message": "Nit: Normally wouldn\u0027t worry about this, but since the docstring needs fixing, I think split the preceding function rather than on a key retrieval, it makes it a little harder to spot that the \u0027authentication-key\u0027 is dict key currently.\n\ne.g. one of the following formats:\n\n    XML.SubElement(http_request, \u0027authentication\u0027\n                   ).text \u003d data[\u0027authentication-key\u0027]\n\n    XML.SubElement(http_request,\n                   \u0027authentication\u0027).text \u003d data[\u0027authentication-key\u0027]\n\n    XML.SubElement(\n        http_request, \u0027authentication\u0027).text \u003d data[\u0027authentication-key\u0027]\n\n    XML.SubElement(\n        http_request,\n        \u0027authentication\u0027).text \u003d data[\u0027authentication-key\u0027]\n\n    XML.SubElement(\n        http_request,\n        \u0027authentication\u0027\n    ).text \u003d data[\u0027authentication-key\u0027]\n\n\nI think just avoid splitting on a data type symbol even though it\u0027s allowed.",
+      "revId": "d7dfee616994967d77e416b645f7884148124fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_ccb87178",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 810,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-13T15:08:08Z",
+      "side": 1,
+      "message": "Can define this mapping outside of the loop. Python might optimize it automatically to do so, but probably doesn\u0027t hurt to ensure that we\u0027re not redefining the variable on every iteration.",
+      "revId": "d7dfee616994967d77e416b645f7884148124fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
