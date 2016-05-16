@@ -33,6 +33,24 @@
       "revId": "d15c571ef7df76d77b0303a164041c4a052f015a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_ebefc3ae",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1157,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-16T17:55:06Z",
+      "side": 1,
+      "message": "I think that\u0027s my fault, the example I provided didn\u0027t tidy up the blocks. Sorry about that.",
+      "parentUuid": "dab17558_eb106402",
+      "revId": "d15c571ef7df76d77b0303a164041c4a052f015a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
