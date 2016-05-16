@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_17d358d6",
+        "filename": "tools/test-openstack-config.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-05-16T15:11:22Z",
+      "side": 1,
+      "message": "Are you sure this does what you expect? `-l` is the long listing format option so you would get output that looks like this:\n\n    total 84\n    drwxr-xr-x  3 wayne wayne  4096 Oct 10  2015 doc\n    drwxr-xr-x  2 wayne wayne  4096 Oct 10  2015 etc\n    drwxr-xr-x  5 wayne wayne  4096 Feb 23 15:31 jenkins_jobs\n    -rw-r--r--  1 wayne wayne 11358 Oct 10  2015 LICENSE\n    -rw-r--r--  1 wayne wayne   128 Oct 10  2015 MANIFEST.in\n    -rw-r--r--  1 wayne wayne  2431 Oct 10  2015 README.rst\n    -rw-r--r--  1 wayne wayne    77 Nov  3  2015 requirements.txt\n    drwxr-xr-x  2 wayne wayne  4096 Oct 10  2015 samples\n    -rw-r--r--  1 wayne wayne 15141 Oct 10  2015 setup.cfg\n    -rw-r--r--  1 wayne wayne   686 Oct 10  2015 setup.py\n    -rw-r--r--  1 wayne wayne   180 Oct 10  2015 test-requirements.txt\n    drwxr-xr-x 22 wayne wayne  4096 Oct 10  2015 tests\n    drwxr-xr-x  2 wayne wayne  4096 Oct 10  2015 tools\n    -rw-r--r--  1 wayne wayne  1377 Oct 10  2015 tox.ini\n\nWhich seems like it would lead to funky results in the loop at line 33.",
+      "revId": "37129cbbae0a4a005f1ab9f3b9be1d4269cf22a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
