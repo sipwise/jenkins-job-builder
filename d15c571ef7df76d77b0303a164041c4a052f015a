@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab17558_eb106402",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1157,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-05-16T17:28:50Z",
+      "side": 1,
+      "message": "I think if you moved this line into the try: block of the above try block you can reduce the amount of lines of code.",
+      "revId": "d15c571ef7df76d77b0303a164041c4a052f015a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
