@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "dab17558_cbdda015",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-05-16T17:31:00Z",
+      "side": 1,
+      "message": "\"Add\". Commits should be written in present-tense, imperative-style.",
+      "revId": "d15c571ef7df76d77b0303a164041c4a052f015a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_eb106402",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 6
