@@ -16,6 +16,24 @@
       "revId": "37129cbbae0a4a005f1ab9f3b9be1d4269cf22a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab17558_ea6027d1",
+        "filename": "tools/test-openstack-config.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-17T15:25:52Z",
+      "side": 1,
+      "message": "Guess gerrit doesn\u0027t make this very clear, it\u0027s \u0027-1\u0027 (digit one) rather than \u0027-l\u0027 (letter l), so it\u0027ll list 1 config file per line rather than the long format.",
+      "parentUuid": "dab17558_17d358d6",
+      "revId": "37129cbbae0a4a005f1ab9f3b9be1d4269cf22a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
