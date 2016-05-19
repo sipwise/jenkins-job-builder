@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "bab6814e_1569c78b",
+        "filename": "tools/configs/non-defaults.conf",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2016-05-19T16:56:27Z",
+      "side": 1,
+      "message": "why not test keep_descriptions?",
+      "revId": "37129cbbae0a4a005f1ab9f3b9be1d4269cf22a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab17558_17d358d6",
         "filename": "tools/test-openstack-config.sh",
         "patchSetId": 3
