@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_1fbba80f",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2016-05-19T16:23:24Z",
+      "side": 1,
+      "message": "seeing these errors in tests.. \n\nException AttributeError: \"\u0027CacheStorage\u0027 object has no attribute \u0027_unlock\u0027\" in \u003cbound method CacheStorage.__del__ of \u003cjenkins_jobs.builder.CacheStorage object at 0x109f5c810\u003e\u003e ignored\n\n\nCheck out the latest py27 and py34 builds..\n\nhttp://logs.openstack.org/89/314789/2/check/gate-jenkins-job-builder-python27/57d78ea/console.html",
+      "revId": "1050f9eeaa21caa81362bcfe19fa0944f6291407",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
