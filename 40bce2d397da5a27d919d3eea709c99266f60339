@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_ef153de5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-05-20T01:51:56Z",
+      "side": 1,
+      "message": "What\u0027s the bug number related for?",
+      "revId": "40bce2d397da5a27d919d3eea709c99266f60339",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_0f2ec1a4",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2211,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-05-20T01:51:56Z",
+      "side": 1,
+      "message": "jjb doesn\u0027t set the plugin version information unless there is a reason to add",
+      "revId": "40bce2d397da5a27d919d3eea709c99266f60339",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
