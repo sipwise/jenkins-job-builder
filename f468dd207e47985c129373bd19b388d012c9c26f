@@ -16,6 +16,24 @@
       "revId": "f468dd207e47985c129373bd19b388d012c9c26f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_a3fb1ec0",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2016-05-20T21:44:24Z",
+      "side": 1,
+      "message": "Done. removed since next line has provides redundant info.",
+      "parentUuid": "bab6814e_1576ce05",
+      "revId": "f468dd207e47985c129373bd19b388d012c9c26f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
