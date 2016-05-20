@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_1576ce05",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2016-05-20T02:51:20Z",
+      "side": 1,
+      "message": "sorry i didn\u0027t notice this earlier but do we want to see this on every update and delete?  might be better to in at debug level?",
+      "revId": "f468dd207e47985c129373bd19b388d012c9c26f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
