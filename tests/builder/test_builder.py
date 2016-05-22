@@ -34,7 +34,7 @@ class TestCaseTestBuilder(LoggingFixture, TestCase):
     def test_plugins_list(self):
         self.assertEqual(self.builder.plugins_list, ['plugin1', 'plugin2'])
 
-    @mock.patch.object(jenkins_jobs.builder.jenkins.Jenkins,
+    @mock.patch.object(jenkins_jobs.builder.Jenkins,
                        'get_plugins_info', return_value=['p1', 'p2'])
     def test_plugins_list_from_jenkins(self, jenkins_mock):
         # Trigger fetching the plugins from jenkins when accessing the property
