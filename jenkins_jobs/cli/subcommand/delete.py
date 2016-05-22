@@ -54,4 +54,4 @@ class DeleteSubCommand(base.BaseSubCommand):
             else:
                 jobs = [jobs_glob]
 
-            builder.delete_job(jobs)
+            builder.delete_jobs(jobs)
