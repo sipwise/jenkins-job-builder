@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_6d3d958e",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-05-22T03:44:50Z",
+      "side": 0,
+      "message": "This and the other multi path tests were moved to their own test class below.",
+      "revId": "008082568c5fbcc3263155b332435cf1d905e5de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_8d3a7997",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-05-22T03:44:50Z",
+      "side": 0,
+      "message": "I don\u0027t recall exactly why I removed this, but it was probably because it was somewhat redundant with all the other tests in this test class (the tests just above and below this test in the file also pass the --conf argument to the test subcommand).",
+      "revId": "008082568c5fbcc3263155b332435cf1d905e5de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
