@@ -124,37 +124,37 @@ class CacheStorage(object):
                                    "exit: %s" % (self.cachefilename, e))
 
 
-class Jenkins(object):
+class Jenkins(jenkins.Jenkins):
     def __init__(self, url, user, password, timeout=_DEFAULT_TIMEOUT):
         if timeout != _DEFAULT_TIMEOUT:
-            self.jenkins = jenkins.Jenkins(url, user, password, timeout)
+            super(Jenkins, self).__init__(url, user, password, timeout)
         else:
-            self.jenkins = jenkins.Jenkins(url, user, password)
+            super(Jenkins, self).__init__(url, user, password)
         self._jobs = None
         self._job_list = None
 
     @property
-    def jobs(self):
+    def __jobs(self):
         if self._jobs is None:
             # populate jobs
-            self._jobs = self.jenkins.get_jobs()
+            self._jobs = super(Jenkins, self).get_jobs()
 
         return self._jobs
 
     @property
     def job_list(self):
         if self._job_list is None:
-            self._job_list = set(job['name'] for job in self.jobs)
+            self._job_list = set(job['name'] for job in self.__jobs)
         return self._job_list
 
     @parallelize
     def update_job(self, job_name, xml):
         if self.is_job(job_name):
             logger.info("Reconfiguring jenkins job {0}".format(job_name))
-            self.jenkins.reconfig_job(job_name, xml)
+            self.reconfig_job(job_name, xml)
         else:
             logger.info("Creating jenkins job {0}".format(job_name))
-            self.jenkins.create_job(job_name, xml)
+            self.create_job(job_name, xml)
 
     def is_job(self, job_name):
         # first use cache
@@ -162,36 +162,36 @@ class Jenkins(object):
             return True
 
         # if not exists, use jenkins
-        return self.jenkins.job_exists(job_name)
+        return self.job_exists(job_name)
 
     def get_job_md5(self, job_name):
-        xml = self.jenkins.get_job_config(job_name)
+        xml = self.get_job_config(job_name)
         return hashlib.md5(xml.encode('utf-8')).hexdigest()
 
     def delete_job(self, job_name):
         if self.is_job(job_name):
             logger.info("Deleting jenkins job {0}".format(job_name))
-            self.jenkins.delete_job(job_name)
+            super(Jenkins, self).delete_job(job_name)
 
     def delete_all_jobs(self):
         # execute a groovy script to delete all jobs is much faster than
         # using the doDelete REST endpoint to delete one job at a time.
         script = ('for(job in jenkins.model.Jenkins.theInstance.getAllItems())'
                   '       { job.delete(); }')
-        self.jenkins.run_script(script)
+        self.run_script(script)
 
     def get_plugins_info(self):
         """ Return a list of plugin_info dicts, one for each plugin on the
         Jenkins instance.
         """
         try:
-            plugins_list = self.jenkins.get_plugins_info()
+            plugins_list = super(Jenkins, self).get_plugins_info()
         except jenkins.JenkinsException as e:
             if re.search("Connection refused", str(e)):
                 logger.warning(
                     "Unable to retrieve Jenkins Plugin Info from {0},"
                     " using default empty plugins info list.".format(
-                        self.jenkins.server))
+                        self.server))
                 plugins_list = [{'shortName': '',
                                  'version': '',
                                  'longName': ''}]
@@ -205,10 +205,10 @@ class Jenkins(object):
         if not cache:
             self._jobs = None
             self._job_list = None
-        return self.jobs
+        return self.__jobs
 
     def is_managed(self, job_name):
-        xml = self.jenkins.get_job_config(job_name)
+        xml = self.get_job_config(job_name)
         try:
             out = XML.fromstring(xml)
             description = out.find(".//description").text

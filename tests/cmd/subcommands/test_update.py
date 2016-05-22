@@ -24,6 +24,8 @@ import six
 from tests.base import mock
 from tests.cmd.test_cmd import CmdTestsBase
 
+from jenkins_jobs import builder
+
 
 @mock.patch('jenkins_jobs.builder.Jenkins.get_plugins_info', mock.MagicMock)
 class UpdateTests(CmdTestsBase):
@@ -111,7 +113,7 @@ class UpdateTests(CmdTestsBase):
         jenkins_delete_job.assert_has_calls([mock.call(job_name)
                                              for job_name in jobs])
 
-    @mock.patch('jenkins_jobs.builder.jenkins.Jenkins')
+    @mock.patch('jenkins_jobs.builder.Jenkins')
     def test_update_timeout_not_set(self, jenkins_mock):
         """Check that timeout is left unset
 
@@ -128,9 +130,12 @@ class UpdateTests(CmdTestsBase):
             self.execute_jenkins_jobs_with_args(args)
         # unless the timeout is set, should only call with 3 arguments
         # (url, user, password)
-        self.assertEqual(len(jenkins_mock.call_args[0]), 3)
+        jenkins_mock.assert_called_with(mock.ANY,
+                                        mock.ANY,
+                                        mock.ANY,
+                                        builder._DEFAULT_TIMEOUT)
 
-    @mock.patch('jenkins_jobs.builder.jenkins.Jenkins')
+    @mock.patch('jenkins_jobs.builder.Jenkins')
     def test_update_timeout_set(self, jenkins_mock):
         """Check that timeout is set correctly
 
@@ -149,4 +154,7 @@ class UpdateTests(CmdTestsBase):
             self.execute_jenkins_jobs_with_args(args)
         # when timeout is set, the fourth argument to the Jenkins api init
         # should be the value specified from the config
-        self.assertEqual(jenkins_mock.call_args[0][3], 0.2)
+        jenkins_mock.assert_called_with(mock.ANY,
+                                        mock.ANY,
+                                        mock.ANY,
+                                        0.2)
