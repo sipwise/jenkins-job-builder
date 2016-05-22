@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_3253e83a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-05-22T03:37:35Z",
+      "side": 1,
+      "message": "@Darragh\n\nThis is something I ran into while rebasing that wasn\u0027t here when I originally refactored the API earlier this year. I don\u0027t really like the fact that module code is directly reading values from the config_parser since, ideally, module code shouldn\u0027t care where this value comes from (even if the most logical place seems to be the builder.conf).\n\nTwo solutions I can think of include:\n\nAdd a \"futures\" section to JJBConfig so this would be\n    if jjb_config.future[\u0027param_order_from_yaml\u0027]:\n\nWait did I say two solutions? I meant one. As far as this particular setting is concerned, we are going to wait for JJB 3.x to make \"param_order_from_yaml\" the default behavior, right?",
+      "revId": "5d5ee68a503a6c5c133688fb52fb233d859d4245",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
