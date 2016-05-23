@@ -55,24 +55,24 @@ class Jenkins(jenkins.Jenkins):
         self.cache = JobCache(jjb_config.jenkins['url'],
                               flush=jjb_config.builder['flush_cache'])
 
-        self._plugins_list = jjb_config.builder['plugins_info']
-        self._jobs = None
-        self._job_list = None
+        self.__plugins_list = jjb_config.builder['plugins_info']
+        self.__jobs = None
+        self.__job_list = None
         self.__jjb_config = jjb_config
 
     @property
-    def __jobs(self):
-        if self._jobs is None:
+    def jobs(self):
+        if self.__jobs is None:
             # populate jobs
-            self._jobs = super(Jenkins, self).get_jobs()
+            self.__jobs = super(Jenkins, self).get_jobs()
 
-        return self._jobs
+        return self.__jobs
 
     @property
     def job_list(self):
-        if self._job_list is None:
-            self._job_list = set(job['name'] for job in self.__jobs)
-        return self._job_list
+        if self.__job_list is None:
+            self.__job_list = set(job['name'] for job in self.jobs)
+        return self.__job_list
 
     @parallelize
     def update_job(self, job_name, xml):
@@ -130,9 +130,9 @@ class Jenkins(jenkins.Jenkins):
 
     def get_jobs(self, cache=True):
         if not cache:
-            self._jobs = None
-            self._job_list = None
-        return self.__jobs
+            self.__jobs = None
+            self.__job_list = None
+        return self.jobs
 
     def is_managed(self, job_name):
         xml = self.get_job_config(job_name)
@@ -146,9 +146,9 @@ class Jenkins(jenkins.Jenkins):
 
     @property
     def plugins_list(self):
-        if self._plugins_list is None:
-            self._plugins_list = self.get_plugins_info()
-        return self._plugins_list
+        if self.__plugins_list is None:
+            self.__plugins_list = self.get_plugins_info()
+        return self.__plugins_list
 
     def delete_old_managed(self, keep=None):
         jobs = self.get_jobs()
