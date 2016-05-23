@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_afc3c736",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-23T17:15:26Z",
+      "side": 1,
+      "message": "Is this because we\u0027re not accessing it anyway directly? Therefore don\u0027t expose it?\n\nChanged in https://review.openstack.org/#/c/319756/1/jenkins_jobs/builder.py to be consistent across the properties, so no need to worry about it here.",
+      "revId": "271ab6ac5ff05c195af01f4b1a11e8781300e1e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_4f6b3b1e",
+        "filename": "tests/cmd/subcommands/test_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-23T17:15:26Z",
+      "side": 1,
+      "message": "Looks like the comment needs to be updated here to align with the code.",
+      "revId": "271ab6ac5ff05c195af01f4b1a11e8781300e1e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
