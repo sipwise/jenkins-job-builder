@@ -29,7 +29,7 @@ class TestCaseTestBuilder(LoggingFixture, TestCase):
         jjb_config = JJBConfig()
         jjb_config.do_magical_things()
         jjb_config.builder['plugins_info'] = ['plugin1', 'plugin2']
-        self.builder = jenkins_jobs.builder.Builder(jjb_config)
+        self.builder = jenkins_jobs.builder.Jenkins(jjb_config)
 
     def test_plugins_list(self):
         self.assertEqual(self.builder.plugins_list, ['plugin1', 'plugin2'])
