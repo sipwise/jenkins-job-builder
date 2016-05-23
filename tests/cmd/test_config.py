@@ -7,7 +7,8 @@ from tests.base import mock
 from tests.cmd.test_cmd import CmdTestsBase
 
 
-@mock.patch('jenkins_jobs.builder.Jenkins.get_plugins_info', mock.MagicMock)
+@mock.patch('jenkins_jobs.builder.JenkinsManager.get_plugins_info',
+            mock.MagicMock)
 class TestConfigs(CmdTestsBase):
 
     global_conf = '/etc/jenkins_jobs/jenkins_jobs.ini'
