@@ -113,8 +113,9 @@ class UpdateTests(CmdTestsBase):
         jenkins_delete_job.assert_has_calls([mock.call(job_name)
                                              for job_name in jobs])
 
-    @mock.patch('jenkins_jobs.builder.Jenkins')
-    def test_update_timeout_not_set(self, jenkins_mock):
+    @mock.patch('jenkins_jobs.cli.subcommand.update.Jenkins')
+    def test_update_timeout_not_set(self,
+                                    jenkins_mock):
         """Check that timeout is left unset
 
         Test that the Jenkins object has the timeout set on it only when
@@ -124,14 +125,17 @@ class UpdateTests(CmdTestsBase):
         path = os.path.join(self.fixtures_path, 'cmd-002.yaml')
         args = ['--conf', self.default_config_file, 'update', path]
 
+        jenkins_instance_mock = mock.MagicMock()
+        jenkins_mock.return_value = jenkins_instance_mock
+        jenkins_instance_mock.update_jobs.return_value = ([], 0)
         self.execute_jenkins_jobs_with_args(args)
-        jenkins_mock.assert_called_with(mock.ANY,
-                                        mock.ANY,
-                                        mock.ANY,
-                                        builder._DEFAULT_TIMEOUT)
+        jjb_config = jenkins_mock.call_args[0][0]
+        self.assertEquals(jjb_config.jenkins['timeout'],
+                          builder._DEFAULT_TIMEOUT)
 
-    @mock.patch('jenkins_jobs.builder.Jenkins')
-    def test_update_timeout_set(self, jenkins_mock):
+    @mock.patch('jenkins_jobs.cli.subcommand.update.Jenkins')
+    def test_update_timeout_set(self,
+                                jenkins_mock):
         """Check that timeout is set correctly
 
         Test that the Jenkins object has the timeout set on it only when
@@ -143,10 +147,9 @@ class UpdateTests(CmdTestsBase):
                                    'non-default-timeout.ini')
         args = ['--conf', config_file, 'update', path]
 
+        jenkins_instance_mock = mock.MagicMock()
+        jenkins_mock.return_value = jenkins_instance_mock
+        jenkins_instance_mock.update_jobs.return_value = ([], 0)
         self.execute_jenkins_jobs_with_args(args)
-        # when timeout is set, the fourth argument to the Jenkins api init
-        # should be the value specified from the config
-        jenkins_mock.assert_called_with(mock.ANY,
-                                        mock.ANY,
-                                        mock.ANY,
-                                        0.2)
+        jjb_config = jenkins_mock.call_args[0][0]
+        self.assertEquals(jjb_config.jenkins['timeout'], 0.2)
