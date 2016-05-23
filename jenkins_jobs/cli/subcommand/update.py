@@ -17,7 +17,7 @@ import logging
 import sys
 import time
 
-from jenkins_jobs.builder import Builder
+from jenkins_jobs.builder import Jenkins
 from jenkins_jobs.parser import YamlParser
 from jenkins_jobs.registry import ModuleRegistry
 from jenkins_jobs.xml_config import XmlJobGenerator
@@ -65,7 +65,7 @@ class UpdateSubCommand(base.BaseSubCommand):
 
     def _generate_xmljobs(self, jjb_config=None):
         options = jjb_config.arguments
-        builder = Builder(jjb_config)
+        builder = Jenkins(jjb_config)
 
         logger.info("Updating jobs in {0} ({1})".format(
             options.path, options.names))
@@ -100,8 +100,7 @@ class UpdateSubCommand(base.BaseSubCommand):
         builder, xml_jobs = self._generate_xmljobs(jjb_config)
 
         jobs, num_updated_jobs = builder.update_jobs(
-            xml_jobs,
-            n_workers=options.n_workers)
+            xml_jobs, n_workers=options.n_workers)
         logger.info("Number of jobs updated: %d", num_updated_jobs)
 
         if options.delete_old:
