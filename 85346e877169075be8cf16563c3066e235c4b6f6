@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_5c59e55a",
+        "filename": "tools/test-openstack-config.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2016-05-24T22:14:05Z",
+      "side": 1,
+      "message": "nit: use of local variable \u0027config\u0027 and test config folder directory \u0027.test/run-conf/config\u0027 is slightly confusing.  might be nice to rename one of those.",
+      "revId": "85346e877169075be8cf16563c3066e235c4b6f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_579ede54",
+        "filename": "tools/test-openstack-config.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2016-05-24T22:14:05Z",
+      "side": 1,
+      "message": "I assume we expect the generated xml to be different so shouldn\u0027t we \u0027exit 1\u0027 here to flag that it\u0027s a potential problem?",
+      "revId": "85346e877169075be8cf16563c3066e235c4b6f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
