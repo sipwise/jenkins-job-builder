@@ -69,6 +69,24 @@
       "revId": "37129cbbae0a4a005f1ab9f3b9be1d4269cf22a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_0fb6083d",
+        "filename": "tools/test-openstack-config.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-05-24T18:50:16Z",
+      "side": 1,
+      "message": "Ah, whoops--I was comparing the `1` here with an `l` in my terminal which looks very much like the `1` here.",
+      "parentUuid": "bab6814e_be71c5e2",
+      "revId": "37129cbbae0a4a005f1ab9f3b9be1d4269cf22a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
