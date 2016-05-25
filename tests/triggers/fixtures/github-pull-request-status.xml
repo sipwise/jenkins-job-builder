@@ -22,6 +22,7 @@ org2</orgslist>
           <triggeredStatus>triggered status message</triggeredStatus>
           <startedStatus>started status message</startedStatus>
           <statusUrl>http://example.com/status</statusUrl>
+          <addTestResults>true</addTestResults>
           <completedStatus>
             <org.jenkinsci.plugins.ghprb.extensions.comments.GhprbBuildResultMessage>
               <message>success status!</message>

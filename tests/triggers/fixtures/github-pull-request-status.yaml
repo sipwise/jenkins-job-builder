@@ -20,6 +20,7 @@ triggers:
       triggered-status: 'triggered status message'
       started-status: 'started status message'
       status-url: 'http://example.com/status'
+      status-add-test-results: true
       success-status: 'success status!'
       failure-status: 'failure status :('
       error-status: 'error status?!'
