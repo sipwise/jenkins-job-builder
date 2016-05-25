@@ -1,0 +1,20 @@
+publishers:
+  - jacoco:
+      exec-pattern: '**/**.exec'
+      class-pattern: '**/classes'
+      source-pattern: '**/src/main/java'
+      update-build-status: true
+      inclusion-pattern: '**/*.class'
+      exclusion-pattern: '**/*Test*.class'
+      maximum-instruction-coverage: 7
+      minimum-instruction-coverage: 1
+      maximum-branch-coverage: 8
+      minimum-branch-coverage: 2
+      maximum-complexity-coverage: 9
+      minimum-complexity-coverage: 3
+      maximum-line-coverage: 10
+      minimum-line-coverage: 4
+      maximum-method-coverage: 11
+      minimum-method-coverage: 5
+      maximum-class-coverage: 12
+      minimum-class-coverage: 6
