@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "bab6814e_1dd62dc3",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-05-25T06:20:48Z",
+      "side": 1,
+      "message": "This method name doesn\u0027t make sense to me, is it supposed to be a portmonteau of \"dispatch\" and \"macro\"? could you come up with something more descriptive?",
+      "revId": "d18dd8789644fe7db4cd8d4f88a9dfaf993e41b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab6814e_fd9ec905",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-05-25T06:20:48Z",
+      "side": 1,
+      "message": "Where is \"Base.render_macro\"? In a later commit?",
+      "revId": "d18dd8789644fe7db4cd8d4f88a9dfaf993e41b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab6814e_5e644448",
         "filename": "jenkins_jobs/registry.py",
         "patchSetId": 3
