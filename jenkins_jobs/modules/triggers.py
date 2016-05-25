@@ -858,6 +858,8 @@ def github_pull_request(parser, xml_parent, data):
     :arg string started-status: the status comment to set when the build has
         been started (optional)
     :arg string status-url: the status URL to set (optional)
+    :arg bool status-add-test-results: add test result one-liner to status
+        message (optional)
     :arg string success-status: the status message to set if the job succeeds
         (optional)
     :arg string failure-status: the status message to set if the job fails
@@ -921,6 +923,7 @@ def github_pull_request(parser, xml_parent, data):
     triggered_status = data.get('triggered-status', '')
     started_status = data.get('started-status', '')
     status_url = data.get('status-url', '')
+    status_add_test_results = data.get('status-add-test-results', '')
     success_status = data.get('success-status', '')
     failure_status = data.get('failure-status', '')
     error_status = data.get('error-status', '')
@@ -931,6 +934,7 @@ def github_pull_request(parser, xml_parent, data):
         triggered_status or
         started_status or
         status_url or
+        status_add_test_results or
         success_status or
         failure_status or
         error_status
@@ -967,6 +971,9 @@ def github_pull_request(parser, xml_parent, data):
         if status_url:
             XML.SubElement(simple_status, 'statusUrl').text = str(
                 status_url)
+        if status_add_test_results:
+            XML.SubElement(simple_status, 'addTestResults').text = str(
+                status_add_test_results).lower()
 
         if requires_status_message:
             completed_elem = XML.SubElement(simple_status, 'completedStatus')
