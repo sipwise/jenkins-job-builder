@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_5e644448",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-05-25T05:28:21Z",
+      "side": 1,
+      "message": "My preference is to use double underscores--no reason to make these usable in an API even if there is a convention of \"internal use\" associated with single underscores.",
+      "revId": "d18dd8789644fe7db4cd8d4f88a9dfaf993e41b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
