@@ -6,3 +6,4 @@ publishers:
     test-stability: true
     claim-build: true
     measurement-plots: true
+    flaky-test-reports: true

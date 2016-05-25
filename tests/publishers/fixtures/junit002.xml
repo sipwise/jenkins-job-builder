@@ -9,6 +9,7 @@
         <de.esailors.jenkins.teststability.StabilityTestDataPublisher/>
         <hudson.plugins.claim.ClaimTestDataPublisher/>
         <hudson.plugins.measurement__plots.TestDataPublisher/>
+        <com.google.jenkins.flakyTestHandler.plugin.JUnitFlakyTestDataPublisher/>
       </testDataPublishers>
     </hudson.tasks.junit.JUnitResultArchiver>
   </publishers>

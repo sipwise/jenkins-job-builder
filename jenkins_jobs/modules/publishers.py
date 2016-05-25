@@ -1052,6 +1052,9 @@ def junit(parser, xml_parent, data):
     :arg bool measurement-plots: Create measurement plots (default false)
         Requires the Jenkins :jenkins-wiki:`Measurement Plots Plugin
         <Measurement+Plots+Plugin>`.
+    :arg bool flaky-test-reports: Publish flaky test reports (default false).
+        Requires the Jenkins :jenkins-wiki:`Flaky Test Handler Plugin
+        <Flaky+Test+Handler+Plugin>`.
 
     Minimal example using defaults:
 
@@ -1081,6 +1084,10 @@ def junit(parser, xml_parent, data):
     if str(data.get('measurement-plots', False)).lower() == 'true':
         XML.SubElement(datapublisher,
                        'hudson.plugins.measurement__plots.TestDataPublisher')
+    if str(data.get('flaky-test-reports', False)).lower() == 'true':
+        XML.SubElement(datapublisher,
+                       'com.google.jenkins.flakyTestHandler.plugin'
+                       '.JUnitFlakyTestDataPublisher')
 
 
 def cucumber_reports(parser, xml_parent, data):
