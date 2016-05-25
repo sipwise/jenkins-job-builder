@@ -927,68 +927,76 @@ def jacoco(parser, xml_parent, data):
     Requires the Jenkins :jenkins-wiki:`JaCoCo Plugin <JaCoCo+Plugin>`.
 
     :arg str exec-pattern: This is a file name pattern that can be used to
-                          locate the jacoco report files (default
-                          ``**/**.exec``)
+      locate the jacoco report files (default: **/**.exec)
     :arg str class-pattern: This is a file name pattern that can be used
-                          to locate class files (default ``**/classes``)
+      to locate class files (default: **/classes)
     :arg str source-pattern: This is a file name pattern that can be used
-                          to locate source files (default ``**/src/main/java``)
+      to locate source files (default: **/src/main/java)
     :arg bool update-build-status: Update the build according to the results
-                          (default False)
+      (default: False)
     :arg str inclusion-pattern: This is a file name pattern that can be used
-                          to include certain class files (optional)
+      to include certain class files (default: '')
     :arg str exclusion-pattern: This is a file name pattern that can be used
-                          to exclude certain class files (optional)
-    :arg dict targets:
-
-           :targets: (instruction, branch, complexity, line, method, class)
-
-                * **healthy** (`int`): Healthy threshold (default 0)
-                * **unhealthy** (`int`): Unhealthy threshold (default 0)
+      to exclude certain class files (default: '')
+    :arg int maximum-instruction-coverage: Report health as 100% when
+      coverage is greater than (default: 0)
+    :arg int minimum-instruction-coverage: Report health as 0% when
+      coverage is less than (default: 0)
+    :arg int maximum-branch-coverage: Report health as 100% when
+      coverage is greater than (default: 0)
+    :arg int minimum-branch-coverage: Report health as 0% when
+      coverage is less than (default: 0)
+    :arg int maximum-complexity-coverage: Report health as 100% when
+      coverage is greater than (default: 0)
+    :arg int minimum-complexity-coverage-coverage: Report health as 0% when
+      coverage is less than (default: 0)
+    :arg int maximum-line-coverage-coverage: Report health as 100% when
+      coverage is greater than (default: 0)
+    :arg int minimum-line-coverage-coverage: Report health as 0% when
+      coverage is less than (default: 0)
+    :arg int maximum-method-coverage-coverage: Report health as 100% when
+      coverage is greater than (default: 0)
+    :arg int minimum-method-coverage: Report health as 0% when
+      coverage is less than (default: 0)
+    :arg int maximum-class-coverage: Report health as 100% when
+      coverage is greater than (default: 0)
+    :arg int minimum-class-coverage: Report health as 0% when
+      coverage is less than (default: 0)
 
     Example:
 
-    .. literalinclude:: /../../tests/publishers/fixtures/jacoco001.yaml
+    .. literalinclude:: /../../tests/publishers/fixtures/jacoco-minimal.yaml
+       :language: yaml
+
+    .. literalinclude:: /../../tests/publishers/fixtures/jacoco-complete.yaml
        :language: yaml
     """
 
     jacoco = XML.SubElement(xml_parent,
                             'hudson.plugins.jacoco.JacocoPublisher')
-    XML.SubElement(jacoco, 'execPattern').text = data.get(
-        'exec-pattern', '**/**.exec')
-    XML.SubElement(jacoco, 'classPattern').text = data.get(
-        'class-pattern', '**/classes')
-    XML.SubElement(jacoco, 'sourcePattern').text = data.get(
-        'source-pattern', '**/src/main/java')
-    XML.SubElement(jacoco, 'changeBuildStatus').text = data.get(
-        'update-build-status', False)
-    XML.SubElement(jacoco, 'inclusionPattern').text = data.get(
-        'inclusion-pattern', '')
-    XML.SubElement(jacoco, 'exclusionPattern').text = data.get(
-        'exclusion-pattern', '')
+    jacoco.set('plugin', 'jacoco')
 
-    itemsList = ['instruction',
-                 'branch',
-                 'complexity',
-                 'line',
-                 'method',
-                 'class']
-
-    for item in data['targets']:
-        item_name = next(iter(item.keys()))
-        if item_name not in itemsList:
-            raise JenkinsJobsException("item entered is not valid must be "
-                                       "one of: %s" % ",".join(itemsList))
-        item_values = item.get(item_name, 0)
-
-        XML.SubElement(jacoco,
-                       'maximum' +
-                       item_name.capitalize() +
-                       'Coverage').text = str(item_values.get('healthy', 0))
-        XML.SubElement(jacoco,
-                       'minimum' +
-                       item_name.capitalize() +
-                       'Coverage').text = str(item_values.get('unhealthy', 0))
+    mappings = [
+        ('exec-pattern', 'execPattern', '**/**.exec'),
+        ('class-pattern', 'classPattern', '**/classes'),
+        ('source-pattern', 'sourcePattern', '**/src/main/java'),
+        ('update-build-status', 'changeBuildStatus', False),
+        ('inclusion-pattern', 'inclusionPattern', ''),
+        ('exclusion-pattern', 'exclusionPattern', ''),
+        ('maximum-instruction-coverage', 'maximumInstructionCoverage', 0),
+        ('minimum-instruction-coverage', 'minimumInstructionCoverage', 0),
+        ('maximum-branch-coverage', 'maximumBranchCoverage', 0),
+        ('minimum-branch-coverage', 'minimumBranchCoverage', 0),
+        ('maximum-complexity-coverage', 'maximumComplexityCoverage', 0),
+        ('minimum-complexity-coverage', 'minimumComplexityCoverage', 0),
+        ('maximum-line-coverage', 'maximumLineCoverage', 0),
+        ('minimum-line-coverage', 'minimumLineCoverage', 0),
+        ('maximum-method-coverage', 'maximumMethodCoverage', 0),
+        ('minimum-method-coverage', 'minimumMethodCoverage', 0),
+        ('maximum-class-coverage', 'maximumClassCoverage', 0),
+        ('minimum-class-coverage', 'minimumClassCoverage', 0)
+    ]
+    convert_mapping_to_xml(jacoco, data, mappings, fail_required=True)
 
 
 def ftp(parser, xml_parent, data):
