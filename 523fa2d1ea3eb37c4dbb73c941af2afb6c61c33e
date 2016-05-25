@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_8a4da374",
+        "filename": "tools/run-compare-configs.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-05-25T11:16:53Z",
+      "side": 1,
+      "message": "So if we want to return a different message from the jobs whether there have been changes, would need to make sure that there is an \u0027exit 1\u0027 triggered by the above loop.",
+      "revId": "523fa2d1ea3eb37c4dbb73c941af2afb6c61c33e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
