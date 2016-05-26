@@ -1127,41 +1127,41 @@ def build_result(parser, xml_parent, data):
 
     :arg list groups: List groups of jobs and results to monitor for
     :arg list jobs: The jobs to monitor (required)
-    :arg list results: Build results to monitor for (default success)
+    :arg list results: Build results to monitor for the selected job (required)
+
+        :results values:
+            * **SUCCESS**
+            * **UNSTABLE**
+            * **FAILURE**
+            * **NOT_BUILT**
+            * **ABORTED**
     :arg bool combine: Combine all job information.  A build will be
-        scheduled only if all conditions are met (default false)
+        scheduled only if all conditions are met (default: false)
     :arg str cron: The cron syntax with which to poll the jobs for the
-        supplied result (default '')
+        supplied result (default: '')
 
-    Example::
+    Minimal Example:
 
-      triggers:
-        - build-result:
-            combine: true
-            cron: '* * * * *'
-            groups:
-              - jobs:
-                  - foo
-                  - example
-                results:
-                  - unstable
-              - jobs:
-                  - foo2
-                results:
-                  - not-built
-                  - aborted
+    .. literalinclude::
+        /../../tests/triggers/fixtures/build-result-minimal.yaml
+
+    Full Example:
+
+    .. literalinclude::
+        /../../tests/triggers/fixtures/build-result-complete.yaml
     """
     brt = XML.SubElement(xml_parent, 'org.jenkinsci.plugins.'
                          'buildresulttrigger.BuildResultTrigger')
+    brt.set('plugin', 'buildresult-trigger')
     XML.SubElement(brt, 'spec').text = data.get('cron', '')
     XML.SubElement(brt, 'combinedJobs').text = str(
         data.get('combine', False)).lower()
     jobs_info = XML.SubElement(brt, 'jobsInfo')
-    result_dict = {'success': 'SUCCESS',
-                   'unstable': 'UNSTABLE',
-                   'failure': 'FAILURE',
-                   'not-built': 'NOT_BUILT',
-                   'aborted': 'ABORTED'}
+    valid_results = ['SUCCESS',
+                     'UNSTABLE',
+                     'FAILURE',
+                     'NOT_BUILT',
+                     'ABORTED']
     for group in data['groups']:
         brti = XML.SubElement(jobs_info, 'org.jenkinsci.plugins.'
                               'buildresulttrigger.model.'
@@ -1170,19 +1170,18 @@ def build_result(parser, xml_parent, data):
             raise jenkins_jobs.errors.\
                 JenkinsJobsException('Jobs is missing and a required'
                                      ' element')
-        jobs_string = ",".join(group['jobs'])
-        XML.SubElement(brti, 'jobNames').text = jobs_string
+        XML.SubElement(brti, 'jobNames').text = group['jobs']
         checked_results = XML.SubElement(brti, 'checkedResults')
-        for result in group.get('results', ['success']):
-            if result not in result_dict:
-                raise jenkins_jobs.errors.\
-                    JenkinsJobsException('Result entered is not valid,'
-                                         ' must be one of: '
-                                         + ', '.join(result_dict.keys()))
+        for result in group['results']:
+            if result not in valid_results:
+                raise InvalidAttributeError('results', result, valid_results)
             model_checked = XML.SubElement(checked_results, 'org.jenkinsci.'
                                            'plugins.buildresulttrigger.model.'
                                            'CheckedResult')
-            XML.SubElement(model_checked, 'checked').text = result_dict[result]
+            # Need upper().replace() to maintain backward compatibility with
+            # previous versions where it used the old format '-'
+            XML.SubElement(model_checked, 'checked').text = \
+                result.upper().replace('-', '_')
 
 
 def reverse(parser, xml_parent, data):
