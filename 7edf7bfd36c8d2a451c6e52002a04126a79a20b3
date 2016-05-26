@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab6814e_79c5745a",
+        "filename": "tools/run-compare-configs.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-05-26T14:07:45Z",
+      "side": 1,
+      "message": "Typo: command",
+      "revId": "7edf7bfd36c8d2a451c6e52002a04126a79a20b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
