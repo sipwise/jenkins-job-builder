@@ -3246,3 +3246,157 @@ def build_name_setter(parser, xml_parent, data):
         data.get('macro', False)).lower()
     XML.SubElement(build_name_setter, 'macroFirst').text = str(
         data.get('macro-first', False)).lower()
+
+
+def ansible_playbook(parser, xml_parent, data):
+    """yaml: ansible-playbook
+    This plugin allows to execute Ansible tasks as a job build step.
+    Requires the Jenkins :jenkins-wiki:`Ansible Plugin <Ansible+Plugin>`.
+
+    :arg str playbook: Path to the ansible playbook file. The path can be
+        absolute or relative to the job workspace.
+    :arg str inventory-type: The inventory file form (default `path`)
+
+        :inventory-type values:
+            * **path**
+            * **content**
+
+    :arg dict inventory: Inventory data, depends on inventory-typie
+
+        :inventory-type == path:
+            * **path** (`str`) -- Path to inventory file.
+
+        :inventory-type == content:
+            * **content** (`str`) -- Content of inventory file.
+            * **dynamic** (`bool`) -- Dynamic inventory is used (default false)
+
+    :arg str hosts: Further limit selected hosts to an additional pattern
+        (optional)
+    :arg str tags-to-run: Only run plays and tasks tagged with these values
+        (optional)
+    :arg str tags-to-skip: Only run plays and tasks whose tags do not match
+        these values (optional)
+    :arg str task-to-start-at: Start the playbook at the task matching this
+        name (optional)
+    :arg int workers: Specify number of parallel processes to use (optional)
+    :arg str credentials-id: The ID of credentials for the SSH connections.
+        Only private key authentication is supported (optional)
+    :arg bool sudo: Run operations with sudo. It works only when the remote
+        user is sudoer with nopasswd option (default false)
+    :arg str sudo-user: Desired sudo user. "root" is used when this field is
+        empty. (optional)
+    :arg bool unbuffered-output: Skip standard output buffering for the ansible
+        process. The ansible output is directly rendered into the Jenkins
+        console. This option can be usefull for long running operations.
+        (default true)
+    :arg bool colorized-output: Check this box to allow ansible to render ANSI
+        color codes in the Jenkins console. (default true)
+    :arg bool host-key-checking: Check this box to enforce the validation of
+        the hosts SSH server keys. (default false)
+    :arg str additional-parameters: Any additional parameters to pass to the
+        ansible command. (optional)
+    :arg list variables: List of extra variables to be passed to ansible.
+        (optional)
+
+        :variable item:
+            * **name** (`str`) -- Name of variable
+            * **value** (`str`) -- Desired value
+            * **hidden** (`bool`) -- Hide variable in build log (default false)
+
+    Example:
+
+    .. literalinclude::
+        /../../tests/builders/fixtures/ansible-playbook001.yaml
+       :language: yaml
+
+    OR
+
+    .. literalinclude::
+        /../../tests/builders/fixtures/ansible-playbook002.yaml
+       :language: yaml
+    """
+    plugin = XML.SubElement(
+        xml_parent,
+        'org.jenkinsci.plugins.ansible.AnsiblePlaybookBuilder')
+    XML.SubElement(plugin, "playbook").text = str(data.get('playbook'))
+
+    inventory_types = ('path', 'content')
+    inventory_type = str(
+        data.get('inventory-type', inventory_types[0])).lower()
+    if inventory_type not in ('path', 'content'):
+        raise InvalidAttributeError(
+            "ansible-playbook.inventory-type",
+            inventory_type, inventory_types)
+
+    inventory = XML.SubElement(plugin, 'inventory')
+    if inventory_type == 'path':
+        inventory.set(
+            "class", "org.jenkinsci.plugins.ansible.InventoryPath")
+        path = data.get('inventory', {}).get('path')
+        if not path:
+            raise MissingAttributeError('inventory.path', 'ansible-playbook')
+        XML.SubElement(inventory, 'path').text = path
+    else:
+        inventory.set(
+            "class", "org.jenkinsci.plugins.ansible.InventoryContent")
+        content = data.get('inventory', {}).get('content')
+        if not content:
+            raise MissingAttributeError(
+                'inventory.content', 'ansible-playbook')
+        XML.SubElement(inventory, 'content').text = content
+        if data.get('inventory', {}).get('dynamic', False):
+            XML.SubElement(inventory, 'dynamic').text = 'true'
+        else:
+            XML.SubElement(inventory, 'dynamic').text = 'false'
+    XML.SubElement(plugin, 'limit').text = data.get('hosts', '')
+    XML.SubElement(plugin, 'tags').text = data.get('tags-to-run', '')
+    XML.SubElement(plugin, 'skippedTags').text = data.get('tags-to-skip', '')
+    XML.SubElement(plugin, 'startAtTask').text = data.get(
+        'task-to-start-at', '')
+    XML.SubElement(plugin, 'credentialsId').text = data.get(
+        'credentials-id', '')
+    if data.get('sudo', False):
+        XML.SubElement(plugin, 'sudo').text = 'true'
+        XML.SubElement(plugin, 'sudoUser').text = data.get('sudo-user', "")
+    else:
+        XML.SubElement(plugin, 'sudo').text = 'false'
+    XML.SubElement(plugin, 'forks').text = str(data.get('workers', '0'))
+    if data.get('unbuffered-output', True):
+        XML.SubElement(plugin, 'unbufferedOutput').text = 'true'
+    else:
+        XML.SubElement(plugin, 'unbufferedOutput').text = 'false'
+    if data.get('colorized-output', True):
+        XML.SubElement(plugin, 'colorizedOutput').text = 'true'
+    else:
+        XML.SubElement(plugin, 'colorizedOutput').text = 'false'
+    if data.get('host-key-checking', False):
+        XML.SubElement(plugin, 'hostKeyChecking').text = 'true'
+    else:
+        XML.SubElement(plugin, 'hostKeyChecking').text = 'false'
+    XML.SubElement(plugin, 'additionalParameters').text = str(
+        data.get('additional-parameters', ''))
+    # Following option is not available from UI
+    XML.SubElement(plugin, 'copyCredentialsInWorkspace').text = 'false'
+    variables = data.get("variables", [])
+    if variables:
+        if not isinstance(variables, list):
+            raise InvalidAttributeError(
+                "ansible-playbook.variables",
+                variables, "list(dict(name, value, hidden))")
+        variables_elm = XML.SubElement(plugin, "extraVars")
+        for values in variables:
+            if not isinstance(values, dict):
+                raise InvalidAttributeError(
+                    "ansible-playbook.variables.ITEM",
+                    values, "dict(name, value, hidden)")
+            if 'name' not in values:
+                raise MissingAttributeError(
+                    'variables.ITEM.name', 'ansible-playbook')
+            value_elm = XML.SubElement(
+                variables_elm, "org.jenkinsci.plugins.ansible.ExtraVar")
+            XML.SubElement(value_elm, "key").text = values.get('name')
+            XML.SubElement(value_elm, "value").text = values.get('value', '')
+            if values.get('hidden', False):
+                XML.SubElement(value_elm, "hidden").text = "true"
+            else:
+                XML.SubElement(value_elm, "hidden").text = "false"

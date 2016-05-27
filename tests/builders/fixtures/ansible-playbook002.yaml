@@ -1,0 +1,10 @@
+---
+builders:
+  - ansible-playbook:
+      playbook: "path/to/playbook.yml"
+      inventory-type: "content"
+      inventory:
+        content: |
+          [all]
+          machine01.example.com
+          machine02.example.com
