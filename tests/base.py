@@ -126,8 +126,9 @@ class BaseTestCase(LoggingFixture):
         return xml_content
 
     def _read_yaml_content(self, filename):
+        search_path = [os.path.normpath(os.path.dirname(filename))]
         with io.open(filename, 'r', encoding='utf-8') as yaml_file:
-            yaml_content = yaml.load(yaml_file)
+            yaml_content = yaml.load(yaml_file, search_path=search_path)
         return yaml_content
 
     def _get_config(self):
@@ -198,6 +199,7 @@ class SingleJobTestCase(BaseTestCase):
         expected_xml = self._read_utf8_content()
 
         parser = YamlParser(config)
+        parser.path = [os.path.normpath(os.path.dirname(self.in_filename))]
         parser.parse(self.in_filename)
 
         # Generate the XML tree

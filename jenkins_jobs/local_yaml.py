@@ -99,6 +99,13 @@ import os
 import re
 
 import yaml
+try:
+    from yaml import CLoader as Loader
+    from yaml import CDumper as Dumper
+except ImportError:
+    from yaml import Loader
+    from yaml import Dumper
+
 from yaml.constructor import BaseConstructor
 from yaml import YAMLObject
 
@@ -145,7 +152,7 @@ class OrderedConstructor(BaseConstructor):
         data.update(mapping)
 
 
-class LocalAnchorLoader(yaml.Loader):
+class LocalAnchorLoader(Loader):
     """Subclass for yaml.Loader which keeps Alias between calls"""
     anchors = {}
 
@@ -220,10 +227,6 @@ class LocalLoader(OrderedConstructor, LocalAnchorLoader):
         # keys returned is consistent across multiple python versions
         self.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG,
                              type(self).construct_yaml_map)
-
-        if hasattr(self.stream, 'name'):
-            self.search_path.append(os.path.normpath(
-                os.path.dirname(self.stream.name)))
         self.search_path.append(os.path.normpath(os.path.curdir))
 
     def _escape(self, data):
@@ -232,7 +235,7 @@ class LocalLoader(OrderedConstructor, LocalAnchorLoader):
 
 class BaseYAMLObject(YAMLObject):
     yaml_loader = LocalLoader
-    yaml_dumper = yaml.Dumper
+    yaml_dumper = Dumper
 
 
 class YamlInclude(BaseYAMLObject):
@@ -322,4 +325,4 @@ class YamlIncludeRawEscapeDeprecated(DeprecatedTag):
 
 def load(stream, **kwargs):
     LocalAnchorLoader.reset_anchors()
-    return yaml.load(stream, functools.partial(LocalLoader, **kwargs))
+    return yaml.load(stream, Loader=functools.partial(LocalLoader, **kwargs))
