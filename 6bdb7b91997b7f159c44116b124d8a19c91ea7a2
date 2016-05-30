@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9abb7d3a_4fa584b3",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2016-05-30T19:25:48Z",
+      "side": 1,
+      "message": "Wrapped that in () to avoid the trailing slash.",
+      "revId": "6bdb7b91997b7f159c44116b124d8a19c91ea7a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_d8821bc8",
         "filename": "jenkins_jobs/modules/project_matrix.py",
         "patchSetId": 2
@@ -19,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9abb7d3a_0f69bc8b",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2016-05-30T19:25:48Z",
+      "side": 1,
+      "message": "InvalidAttributeError is nice when you have a parameter. In this case it is a list of parameters eg either:\n\n execution-strategy:\n   ..\n\nOr\n\n  yaml-strategy:\n    ..\n\nThe default is the built-in Jenkins matrix execution strategy, when one adds \u0027execution-strategy\u0027, it is to refine it is behavior.\n\nOn the same vein I have added the \u0027yaml-strategy\u0027 in parallel.\n\n\nI thought about refactoring the module to something in line with an axis definition:\n\n\n strategy:\n   type: default\n   combination-filter: ...\n\nor for yaml:\n\n  strategy:\n    type: yaml\n    exclude-key: ...\n\nThen I thought it would be easier to keep backward compatibility and add the YAML one in parallel.",
+      "parentUuid": "1a122d0e_d8821bc8",
+      "revId": "6bdb7b91997b7f159c44116b124d8a19c91ea7a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a122d0e_d8433b6b",
         "filename": "jenkins_jobs/modules/project_matrix.py",
         "patchSetId": 2
@@ -30,6 +65,24 @@
       "writtenOn": "2016-04-22T12:06:51Z",
       "side": 1,
       "message": "In two minds here whether we should clean up this code since your moving it, to:\n\n * use proper variable naming\n * use JJB specific exceptions\n * use color/ordinals from jenkins_jobs/modules/hudson_model.py\n * avoid unnecessary use of \u0027\\\u0027\n\nCan always do it as a follow on.",
+      "revId": "6bdb7b91997b7f159c44116b124d8a19c91ea7a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_8f164c53",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2016-05-30T19:25:48Z",
+      "side": 1,
+      "message": "That is unrelated to the YAML support for sure :)",
+      "parentUuid": "1a122d0e_d8433b6b",
       "revId": "6bdb7b91997b7f159c44116b124d8a19c91ea7a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
