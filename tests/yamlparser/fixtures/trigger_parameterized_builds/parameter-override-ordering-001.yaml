@@ -12,7 +12,7 @@
     publishers:
       - trigger-parameterized-builds:
         - project: first_job
-          predefined-parameters: BUILD_NUM=${BUILD_NUMBER}
+          predefined-parameters: BUILD_NUM=${{BUILD_NUMBER}}
           property-file: default_version.prop
           current-parameters: true
         - project: second_job
@@ -25,7 +25,7 @@
     publishers:
       - trigger-parameterized-builds:
         - project: 1.2_first_job
-          predefined-parameters: BUILD_NUM=${BUILD_NUMBER}
+          predefined-parameters: BUILD_NUM=${{BUILD_NUMBER}}
           current-parameters: true
           property-file: version.prop
         - project: 1.2_second_job
