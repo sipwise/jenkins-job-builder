@@ -42,7 +42,7 @@ print(&quot;Doing something cool with python&quot;)
         <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
           <configs>
             <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
-              <properties>BUILD_NUM=${BUILD_NUMBER}</properties>
+              <properties>BUILD_NUM=${{BUILD_NUMBER}}</properties>
             </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
             <hudson.plugins.parameterizedtrigger.FileBuildParameters>
               <propertiesFile>default_version.prop</propertiesFile>
@@ -119,7 +119,7 @@ print(&quot;Doing something cool with python&quot;)
         <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
           <configs>
             <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
-              <properties>BUILD_NUM=${BUILD_NUMBER}</properties>
+              <properties>BUILD_NUM=${{BUILD_NUMBER}}</properties>
             </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
             <hudson.plugins.parameterizedtrigger.CurrentBuildParameters/>
             <hudson.plugins.parameterizedtrigger.FileBuildParameters>
