@@ -118,6 +118,7 @@ def copyartifact(parser, xml_parent, data):
             * **workspace-latest**
             * **build-param**
             * **downstream-build**
+            * **multijob-build**
 
     :arg str build-number: specifies the build number to get when
         when specific-build is specified as which-build
