@@ -96,6 +96,9 @@ def copyartifact(parser, xml_parent, data):
     Copy artifact from another project. Requires the :jenkins-wiki:`Copy
     Artifact plugin <Copy+Artifact+Plugin>`.
 
+    Please note using the multijob-build for which-build argument requires
+    the :jenkins-wiki:`Multijob plugin <Multijob+Plugin>`
+
     :arg str project: Project to copy from
     :arg str filter: what files to copy
     :arg str target: Target base directory for copy, blank means use workspace
@@ -118,6 +121,7 @@ def copyartifact(parser, xml_parent, data):
             * **workspace-latest**
             * **build-param**
             * **downstream-build**
+            * **multijob-build**
 
     :arg str build-number: specifies the build number to get when
         when specific-build is specified as which-build
