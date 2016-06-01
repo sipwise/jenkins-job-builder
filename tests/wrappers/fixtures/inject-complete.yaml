@@ -1,0 +1,7 @@
+wrappers:
+  - inject:
+      properties-file: /usr/local/foo
+      properties-content: PATH=/foo/bar
+      script-file: /usr/local/foo.sh
+      script-content: echo $PATH
+      groovy-content: foo.groovy

@@ -35,6 +35,7 @@ import logging
 import pkg_resources
 import xml.etree.ElementTree as XML
 
+from jenkins_jobs.modules.helpers import convert_mapping_to_xml
 from jenkins_jobs.errors import InvalidAttributeError
 from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.errors import MissingAttributeError
@@ -244,11 +245,11 @@ def inject(parser, xml_parent, data):
     Allows you to inject environment variables into the build.
     Requires the Jenkins :jenkins-wiki:`Env Inject Plugin <EnvInject+Plugin>`.
 
-    :arg str properties-file: file to read with properties (optional)
-    :arg str properties-content: key=value properties (optional)
-    :arg str script-file: file with script to run (optional)
-    :arg str script-content: script to run (optional)
-    :arg str groovy-content: groovy script to run (optional)
+    :arg str properties-file: file to read with properties (default '')
+    :arg str properties-content: key=value properties (default '')
+    :arg str script-file: file with script to run (default '')
+    :arg str script-content: script to run (default '')
+    :arg str groovy-content: groovy script to run (default '')
     :arg bool load-from-master: load files from master (default false)
     :arg bool enabled: injection enabled (default true)
     :arg bool keep-system-variables: keep system variables (default true)
@@ -258,35 +259,31 @@ def inject(parser, xml_parent, data):
 
     Example:
 
-    .. literalinclude:: /../../tests/properties/fixtures/inject001.yaml
+    .. literalinclude:: /../../tests/properties/fixtures/inject-complete.yaml
        :language: yaml
-
     """
     inject = XML.SubElement(xml_parent,
                             'EnvInjectJobProperty')
+    inject.set('plugin', 'envinject')
     info = XML.SubElement(inject, 'info')
 
-    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
-        info, 'propertiesFilePath', data.get('properties-file'))
-    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
-        info, 'propertiesContent', data.get('properties-content'))
-    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
-        info, 'scriptFilePath', data.get('script-file'))
-    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
-        info, 'scriptContent', data.get('script-content'))
-    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
-        info, 'groovyScriptContent', data.get('groovy-content'))
+    info_mappings = [
+        ('properties-file', 'propertiesFilePath', ''),
+        ('properties-content', 'propertiesContent', ''),
+        ('script-file', 'scriptFilePath', ''),
+        ('script-content', 'scriptContent', ''),
+        ('groovy-content', 'groovyScriptContent', ''),
+        ('load-from-master', 'loadFilesFromMaster', False),
+    ]
+    convert_mapping_to_xml(info, data, info_mappings, fail_required=True)
 
-    XML.SubElement(info, 'loadFilesFromMaster').text = str(
-        data.get('load-from-master', False)).lower()
-    XML.SubElement(inject, 'on').text = str(
-        data.get('enabled', True)).lower()
-    XML.SubElement(inject, 'keepJenkinsSystemVariables').text = str(
-        data.get('keep-system-variables', True)).lower()
-    XML.SubElement(inject, 'keepBuildVariables').text = str(
-        data.get('keep-build-variables', True)).lower()
-    XML.SubElement(inject, 'overrideBuildParameters').text = str(
-        data.get('override-build-parameters', False)).lower()
+    mappings = [
+        ('enabled', 'on', True),
+        ('keep-system-variables', 'keepJenkinsSystemVariables', True),
+        ('keep-build-variables', 'keepBuildVariables', True),
+        ('override-build-parameters', 'overrideBuildParameters', False),
+    ]
+    convert_mapping_to_xml(inject, data, mappings, fail_required=True)
 
 
 def authenticated_build(parser, xml_parent, data):

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <properties>
+    <EnvInjectJobProperty plugin="envinject">
+      <info>
+        <propertiesFilePath>/usr/local/foo</propertiesFilePath>
+        <propertiesContent>FOO=bar</propertiesContent>
+        <scriptFilePath>/usr/local/bar.sh</scriptFilePath>
+        <scriptContent>echo $PATH</scriptContent>
+        <groovyScriptContent>bar.groovy</groovyScriptContent>
+        <loadFilesFromMaster>true</loadFilesFromMaster>
+      </info>
+      <on>true</on>
+      <keepJenkinsSystemVariables>false</keepJenkinsSystemVariables>
+      <keepBuildVariables>false</keepBuildVariables>
+      <overrideBuildParameters>true</overrideBuildParameters>
+    </EnvInjectJobProperty>
+  </properties>
+</project>
