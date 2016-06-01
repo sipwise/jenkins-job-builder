@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_46efbd1d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-01T17:09:30Z",
+      "side": 1,
+      "message": "libxml?",
+      "revId": "8a024c087c8bac038872a34de9a3761f69086b00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_862245a1",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-01T17:09:30Z",
+      "side": 1,
+      "message": "Do conditional imports last, otherwise it makes it too hard to read.",
+      "revId": "8a024c087c8bac038872a34de9a3761f69086b00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_37a741be",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-01T17:09:30Z",
+      "side": 1,
+      "message": "This is where we might have the most trouble, it\u0027s not clear to me how to prevent libyaml from discarding the anchors loaded at the start of each document as has been done here, and is the main thing that breaks the tests.",
+      "revId": "8a024c087c8bac038872a34de9a3761f69086b00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_662f613f",
+        "filename": "tests/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-01T17:09:30Z",
+      "side": 1,
+      "message": "Why change this here?\n\nIs this just to test because you didn\u0027t know how to find the alternative to \u0027stream\u0027 with the libyaml approach?",
+      "revId": "8a024c087c8bac038872a34de9a3761f69086b00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_41e327d9",
+        "filename": "tests/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-01T17:09:30Z",
+      "side": 1,
+      "message": "Same here, why are you changing this?",
+      "revId": "8a024c087c8bac038872a34de9a3761f69086b00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

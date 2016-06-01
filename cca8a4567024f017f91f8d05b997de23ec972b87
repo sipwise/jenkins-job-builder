@@ -16,6 +16,24 @@
       "revId": "cca8a4567024f017f91f8d05b997de23ec972b87",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_eb0f9a34",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-01T17:09:30Z",
+      "side": 0,
+      "message": "The BaseLoader class in PyYaml is constructed from a Reader object among others.\n\nThe Reader class defines the stream attribute, which was being implicitly used.\n\nSounds like for use of the CLoader need to add it as an explicit arg and set a local attr before calling super(LocalLoader, self).__init__(stream, *args, **kwargs)\n\nI did a quick test, and there are still problems with how the anchors being inherited across calls are reset with the include tags, so looks like there would be a bit of work to ensure it behaves as it did before.",
+      "parentUuid": "9abb7d3a_26569d29",
+      "revId": "cca8a4567024f017f91f8d05b997de23ec972b87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
