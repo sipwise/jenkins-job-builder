@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abb7d3a_6bd3aa60",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2016-06-01T15:50:23Z",
+      "side": 1,
+      "message": "Should point that multijob-build requires the \"Multijob plugin\" https://wiki.jenkins-ci.org/display/JENKINS/Multijob+Plugin",
+      "revId": "cd456c3f003f9b6600de08a0e930def03a9f1577",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_2bf1a2cd",
+        "filename": "tests/builders/fixtures/copy-artifact004.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2016-06-01T15:50:23Z",
+      "side": 1,
+      "message": "Looks like one can also pass other sub selectors such as \u0027last-successful\u0027 or \u0027specific-build\u0027.  Maybe add one of them in the yaml fixture ?  That would verify the XML is appropriately attached under the MultiJobBuildSelector element.",
+      "revId": "cd456c3f003f9b6600de08a0e930def03a9f1577",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
