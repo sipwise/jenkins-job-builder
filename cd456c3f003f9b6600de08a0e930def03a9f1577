@@ -33,6 +33,24 @@
       "revId": "cd456c3f003f9b6600de08a0e930def03a9f1577",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_f3366c01",
+        "filename": "tests/builders/fixtures/copy-artifact004.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 13292
+      },
+      "writtenOn": "2016-06-01T17:25:29Z",
+      "side": 1,
+      "message": "The logic is already in the helper class that only if certain selectors are picked sub selectors are used so this is already covered.",
+      "parentUuid": "9abb7d3a_2bf1a2cd",
+      "revId": "cd456c3f003f9b6600de08a0e930def03a9f1577",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
