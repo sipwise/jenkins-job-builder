@@ -141,7 +141,7 @@ echo &quot;Doing somethin cool with zsh&quot;
           <targets>target1 target2</targets>
           <antName>Standard Ant</antName>
         </hudson.tasks.Ant>
-        <EnvInjectBuilder>
+        <EnvInjectBuilder plugin="envinject">
           <info>
             <propertiesFilePath>example.prop</propertiesFilePath>
             <propertiesContent>EXAMPLE=foo-bar</propertiesContent>
