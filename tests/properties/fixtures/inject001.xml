@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
   <properties>
-    <EnvInjectJobProperty>
+    <EnvInjectJobProperty plugin="envinject">
       <info>
+        <propertiesFilePath/>
         <propertiesContent>FOO=bar
 BAZ=foobar
 </propertiesContent>
+        <scriptFilePath/>
+        <scriptContent/>
+        <groovyScriptContent/>
         <loadFilesFromMaster>false</loadFilesFromMaster>
       </info>
       <on>true</on>

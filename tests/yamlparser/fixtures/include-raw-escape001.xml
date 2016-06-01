@@ -11,8 +11,13 @@
   <assignedNode>my-test-node</assignedNode>
   <canRoam>false</canRoam>
   <properties>
-    <EnvInjectJobProperty>
+    <EnvInjectJobProperty plugin="envinject">
       <info>
+        <propertiesFilePath/>
+        <propertiesContent/>
+        <scriptFilePath/>
+        <scriptContent/>
+        <groovyScriptContent/>
         <loadFilesFromMaster>false</loadFilesFromMaster>
       </info>
       <on>true</on>
