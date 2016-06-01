@@ -3,9 +3,13 @@
   <properties>
     <EnvInjectJobProperty>
       <info>
+        <propertiesFilePath/>
         <propertiesContent>FOO=bar
 BAZ=foobar
 </propertiesContent>
+        <scriptFilePath/>
+        <scriptContent/>
+        <groovyScriptContent/>
         <loadFilesFromMaster>false</loadFilesFromMaster>
       </info>
       <on>true</on>
