@@ -1,0 +1,12 @@
+properties:
+  - inject:
+      properties-file: /usr/local/foo
+      properties-content: FOO=bar
+      script-file: /usr/local/bar.sh
+      script-content: echo $PATH
+      groovy-content: bar.groovy
+      load-from-master: true
+      enabled: true
+      keep-system-variables: false
+      keep-build-variables: false
+      override-build-parameters: true

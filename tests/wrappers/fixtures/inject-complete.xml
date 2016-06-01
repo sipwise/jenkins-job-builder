@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <buildWrappers>
+    <EnvInjectBuildWrapper plugin="envinject">
+      <info>
+        <propertiesFilePath>/usr/local/foo</propertiesFilePath>
+        <propertiesContent>PATH=/foo/bar</propertiesContent>
+        <scriptFilePath>/usr/local/foo.sh</scriptFilePath>
+        <scriptContent>echo $PATH</scriptContent>
+        <groovyScriptContent>foo.groovy</groovyScriptContent>
+      </info>
+    </EnvInjectBuildWrapper>
+  </buildWrappers>
+</project>

@@ -8,8 +8,13 @@
   <concurrentBuild>false</concurrentBuild>
   <canRoam>true</canRoam>
   <properties>
-    <EnvInjectJobProperty>
+    <EnvInjectJobProperty plugin="envinject">
       <info>
+        <propertiesFilePath/>
+        <propertiesContent/>
+        <scriptFilePath/>
+        <scriptContent/>
+        <groovyScriptContent/>
         <loadFilesFromMaster>false</loadFilesFromMaster>
       </info>
       <on>true</on>
@@ -46,7 +51,7 @@ echo &quot;Doing somethin cool with zsh&quot;
           <targets>target1 target2</targets>
           <antName>default</antName>
         </hudson.tasks.Ant>
-        <EnvInjectBuilder>
+        <EnvInjectBuilder plugin="envinject">
           <info>
             <propertiesFilePath>example.prop</propertiesFilePath>
             <propertiesContent>EXAMPLE=foo-bar</propertiesContent>

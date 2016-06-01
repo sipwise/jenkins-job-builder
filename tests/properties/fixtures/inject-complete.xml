@@ -3,12 +3,12 @@
   <properties>
     <EnvInjectJobProperty plugin="envinject">
       <info>
-        <propertiesFilePath/>
-        <propertiesContent/>
-        <scriptFilePath/>
-        <scriptContent/>
-        <groovyScriptContent/>
-        <loadFilesFromMaster>false</loadFilesFromMaster>
+        <propertiesFilePath>/usr/local/foo</propertiesFilePath>
+        <propertiesContent>FOO=bar</propertiesContent>
+        <scriptFilePath>/usr/local/bar.sh</scriptFilePath>
+        <scriptContent>echo $PATH</scriptContent>
+        <groovyScriptContent>bar.groovy</groovyScriptContent>
+        <loadFilesFromMaster>true</loadFilesFromMaster>
       </info>
       <on>true</on>
       <keepJenkinsSystemVariables>false</keepJenkinsSystemVariables>
