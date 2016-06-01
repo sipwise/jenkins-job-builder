@@ -35,6 +35,7 @@ import logging
 import pkg_resources
 import xml.etree.ElementTree as XML
 
+from jenkins_jobs.modules.helpers import convert_mapping_to_xml
 from jenkins_jobs.errors import InvalidAttributeError
 from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.errors import MissingAttributeError
@@ -279,14 +280,14 @@ def inject(parser, xml_parent, data):
 
     XML.SubElement(info, 'loadFilesFromMaster').text = str(
         data.get('load-from-master', False)).lower()
-    XML.SubElement(inject, 'on').text = str(
-        data.get('enabled', True)).lower()
-    XML.SubElement(inject, 'keepJenkinsSystemVariables').text = str(
-        data.get('keep-system-variables', True)).lower()
-    XML.SubElement(inject, 'keepBuildVariables').text = str(
-        data.get('keep-build-variables', True)).lower()
-    XML.SubElement(inject, 'overrideBuildParameters').text = str(
-        data.get('override-build-parameters', False)).lower()
+
+    mappings = [
+        ('enabled', 'on', True),
+        ('keep-system-variables', 'keepJenkinsSystemVariables', True),
+        ('keep-build-variables', 'keepBuildVariables', True),
+        ('override-build-parameters', 'overrideBuildParameters', False),
+    ]
+    convert_mapping_to_xml(inject, data, mappings, fail_required=True)
 
 
 def authenticated_build(parser, xml_parent, data):
