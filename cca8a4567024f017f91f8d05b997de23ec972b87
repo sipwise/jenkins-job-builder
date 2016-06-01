@@ -34,6 +34,24 @@
       "revId": "cca8a4567024f017f91f8d05b997de23ec972b87",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_b3dfc4d4",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 4162
+      },
+      "writtenOn": "2016-06-01T17:22:54Z",
+      "side": 0,
+      "message": "Right, that\u0027s what I was seeing too.",
+      "parentUuid": "9abb7d3a_eb0f9a34",
+      "revId": "cca8a4567024f017f91f8d05b997de23ec972b87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
