@@ -913,10 +913,10 @@ def inject(parser, xml_parent, data):
     Add or override environment variables to the whole build process
     Requires the Jenkins :jenkins-wiki:`EnvInject Plugin <EnvInject+Plugin>`.
 
-    :arg str properties-file: path to the properties file (default '')
-    :arg str properties-content: key value pair of properties (default '')
-    :arg str script-file: path to the script file (default '')
-    :arg str script-content: contents of a script (default '')
+    :arg str properties-file: the name of the property file (default: '')
+    :arg str properties-content: the properties content (default: '')
+    :arg str script-file: the name of a script file to run (default: '')
+    :arg str script-content: the script content (default: '')
 
     Example::
 
@@ -929,15 +929,14 @@ def inject(parser, xml_parent, data):
     """
     eib = XML.SubElement(xml_parent, 'EnvInjectBuildWrapper')
     info = XML.SubElement(eib, 'info')
-    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
-        info, 'propertiesFilePath', data.get('properties-file'))
-    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
-        info, 'propertiesContent', data.get('properties-content'))
-    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
-        info, 'scriptFilePath', data.get('script-file'))
-    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
-        info, 'scriptContent', data.get('script-content'))
-    XML.SubElement(info, 'loadFilesFromMaster').text = 'false'
+    info_mappings = [
+        ('properties-file', 'propertiesFilePath', ''),
+        ('properties-content', 'propertiesContent', ''),
+        ('script-file', 'scriptFilePath', ''),
+        ('script-content', 'scriptContent', ''),
+        ('groovy-content', 'groovyScriptContent', ''),
+    ]
+    convert_mapping_to_xml(info, data, info_mappings, fail_required=True)
 
 
 def inject_ownership_variables(parser, xml_parent, data):

@@ -819,10 +819,8 @@ def inject(parser, xml_parent, data):
     Requires the Jenkins :jenkins-wiki:`EnvInject Plugin
     <EnvInject+Plugin>`.
 
-    :arg str properties-file: the name of the property file (optional)
-    :arg str properties-content: the properties content (optional)
-    :arg str script-file: the name of a script file to run (optional)
-    :arg str script-content: the script content (optional)
+    :arg str properties-file: the name of the property file (default: '')
+    :arg str properties-content: the properties content (default: '')
 
     Example:
 
@@ -831,14 +829,11 @@ def inject(parser, xml_parent, data):
     """
     eib = XML.SubElement(xml_parent, 'EnvInjectBuilder')
     info = XML.SubElement(eib, 'info')
-    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
-        info, 'propertiesFilePath', data.get('properties-file'))
-    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
-        info, 'propertiesContent', data.get('properties-content'))
-    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
-        info, 'scriptFilePath', data.get('script-file'))
-    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
-        info, 'scriptContent', data.get('script-content'))
+    info_mappings = [
+        ('properties-file', 'propertiesFilePath', ''),
+        ('properties-content', 'propertiesContent', ''),
+    ]
+    convert_mapping_to_xml(info, data, info_mappings, fail_required=True)
 
 
 def artifact_resolver(parser, xml_parent, data):

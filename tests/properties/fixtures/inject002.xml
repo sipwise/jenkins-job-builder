@@ -3,6 +3,11 @@
   <properties>
     <EnvInjectJobProperty>
       <info>
+        <propertiesFilePath/>
+        <propertiesContent/>
+        <scriptFilePath/>
+        <scriptContent/>
+        <groovyScriptContent/>
         <loadFilesFromMaster>false</loadFilesFromMaster>
       </info>
       <on>true</on>
