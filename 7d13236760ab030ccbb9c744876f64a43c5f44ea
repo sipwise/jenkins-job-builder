@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_5a68bf87",
+        "filename": "tests/builders/fixtures/sonatype-clm-complete.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2016-06-06T22:31:24Z",
+      "side": 0,
+      "message": "I\u0027m wondering if this is something that worked for an older version of jenkins?  Wondering if we care to check that the new xml will continue to work with older versions?  if it doesn\u0027t work then this is no longer backwards compatible.",
+      "revId": "7d13236760ab030ccbb9c744876f64a43c5f44ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
