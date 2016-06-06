@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_10de2111",
+        "filename": "tests/builders/fixtures/sonatype-clm-minimal.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-06-06T19:18:14Z",
+      "side": 1,
+      "message": "value, username, and password are optional so do not need to be included in a minimal test.",
+      "revId": "b35491300fb779d05e682bdc55c430bbb17ad119",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
