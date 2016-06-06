@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7aa08908_70220503",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2643,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-06-06T19:20:59Z",
+      "side": 1,
+      "message": "It would be cleaner if you changed all the mappings to a single mapping and used comments to separate them, for example:\n\n mappings \u003d [\n    # Application\n    \u0027value\u0027, \u0027value\u0027, \u0027list\u0027),\n    (\u0027application-name\u0027, \u0027applicationId\u0027, None),\n\n    # Path\n    (\u0027scan-targets\u0027, \u0027scanTargets\u0027, \u0027\u0027),\n    (\u0027module-excludes\u0027, \u0027moduleExcludes\u0027, \u0027\u0027),\n    (\u0027advanced-options\u0027, \u0027scanProperties\u0027, \u0027\u0027),\n\n    # General\n    (\u0027fail-on-clm-server-failure\u0027, \u0027failOnClmServerFailures\u0027, False),\n    (\u0027stage\u0027, \u0027stageId\u0027, \u0027build\u0027),\n    (\u0027username\u0027, \u0027username\u0027, \u0027\u0027),\n    (\u0027password\u0027, \u0027password\u0027, \u0027\u0027),\n ]",
+      "revId": "b35491300fb779d05e682bdc55c430bbb17ad119",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_10de2111",
         "filename": "tests/builders/fixtures/sonatype-clm-minimal.yaml",
         "patchSetId": 2
