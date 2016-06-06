@@ -1,0 +1,6 @@
+builders:
+    - sonatype-clm:
+        value: manual
+        application-name: jenkins-job-builder
+        username: bar
+        password: VZRDDnnwLaV2qfmmZk2IX8nKxiUplMhNNeLkuPnuwabOlt2rSB4o6eP0oi/janw1
