@@ -16,6 +16,24 @@
       "revId": "7a12526fa89c830d164e6f844bd4ff223724792d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_7cc65e4a",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 21597
+      },
+      "writtenOn": "2016-06-06T20:40:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_237155e1",
+      "revId": "7a12526fa89c830d164e6f844bd4ff223724792d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
