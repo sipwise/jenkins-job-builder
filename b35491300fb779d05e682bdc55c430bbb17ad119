@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_a35ee50f",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2609,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-06-06T19:29:03Z",
+      "side": 1,
+      "message": "This sets the default to [\u0027list\u0027, \u0027manual\u0027] which does not work. You only need data.get(\u0027value\u0027) here.",
+      "revId": "b35491300fb779d05e682bdc55c430bbb17ad119",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_70220503",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
