@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_06dee710",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2602,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-06-06T19:58:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_90b17192",
+      "revId": "b35491300fb779d05e682bdc55c430bbb17ad119",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_a35ee50f",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2016-06-06T19:29:03Z",
       "side": 1,
       "message": "This sets the default to [\u0027list\u0027, \u0027manual\u0027] which does not work. You only need data.get(\u0027value\u0027) here.",
+      "revId": "b35491300fb779d05e682bdc55c430bbb17ad119",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_66c6cb4a",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2609,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-06-06T19:58:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_a35ee50f",
       "revId": "b35491300fb779d05e682bdc55c430bbb17ad119",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_669feb50",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2643,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-06-06T19:58:47Z",
+      "side": 1,
+      "message": "The Application and Path are XML sub elements so I couldn\u0027t make it like so.",
+      "parentUuid": "7aa08908_70220503",
+      "revId": "b35491300fb779d05e682bdc55c430bbb17ad119",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_10de2111",
         "filename": "tests/builders/fixtures/sonatype-clm-minimal.yaml",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2016-06-06T19:18:14Z",
       "side": 1,
       "message": "value, username, and password are optional so do not need to be included in a minimal test.",
+      "revId": "b35491300fb779d05e682bdc55c430bbb17ad119",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_46e8efb4",
+        "filename": "tests/builders/fixtures/sonatype-clm-minimal.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-06-06T19:58:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_10de2111",
       "revId": "b35491300fb779d05e682bdc55c430bbb17ad119",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
