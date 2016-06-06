@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7aa08908_90b17192",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2602,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-06-06T19:24:56Z",
+      "side": 1,
+      "message": "Need to update the examples to include minimal and complete.",
+      "revId": "b35491300fb779d05e682bdc55c430bbb17ad119",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_70220503",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
