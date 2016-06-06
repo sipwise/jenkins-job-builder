@@ -1654,8 +1654,8 @@ def credentials_binding(parser, xml_parent, data):
     <Credentials+Binding+Plugin>` version 1.1 or greater.
 
     :arg list binding-type: List of each bindings to create.  Bindings may be
-      of type `zip-file`, `file`, `username-password`, `text` or
-      `username-password-separated`.
+      of type `zip-file`, `file`, `username-password`, `text`,
+      `username-password-separated` or `amazon-web-services`.
       username-password sets a variable to the username and password given in
       the credentials, separated by a colon.
       username-password-separated sets one variable to the username and one
@@ -1671,6 +1671,12 @@ def credentials_binding(parser, xml_parent, data):
                      * **password** (`str`) Environment variable for the
                        password (Required for binding-type
                        username-password-separated)
+                     * **access-key** (`str`) Environment variable for the
+                       access key (Required for binding-type
+                       amazon-web-services)
+                     * **secret-key** (`str`) Environment variable for the
+                       access secret key (Required for binding-type
+                       amazon-web-services)
 
     Example:
 
@@ -1699,7 +1705,10 @@ def credentials_binding(parser, xml_parent, data):
         'username-password-separated': 'org.jenkinsci.plugins.'
                                        'credentialsbinding.impl.'
                                        'UsernamePasswordMultiBinding',
-        'text': 'org.jenkinsci.plugins.credentialsbinding.impl.StringBinding'
+        'text': 'org.jenkinsci.plugins.credentialsbinding.impl.StringBinding',
+        'amazon-web-services':
+            'com.cloudbees.jenkins.plugins.awscredentials'
+            '.AmazonWebServicesCredentialsBinding'
     }
     if not data:
         raise JenkinsJobsException('At least one binding-type must be '
@@ -1719,6 +1728,14 @@ def credentials_binding(parser, xml_parent, data):
                                    ).text = params['username']
                     XML.SubElement(binding_xml, 'passwordVariable'
                                    ).text = params['password']
+                except KeyError as e:
+                    raise MissingAttributeError(e.args[0])
+            elif binding_type == 'amazon-web-services':
+                try:
+                    XML.SubElement(binding_xml, 'accessKeyVariable'
+                                   ).text = params['access-key']
+                    XML.SubElement(binding_xml, 'secretKeyVariable'
+                                   ).text = params['secret-key']
                 except KeyError as e:
                     raise MissingAttributeError(e.args[0])
             else:
