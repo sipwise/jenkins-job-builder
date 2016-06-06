@@ -16,6 +16,24 @@
       "revId": "7d13236760ab030ccbb9c744876f64a43c5f44ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_fafecb69",
+        "filename": "tests/builders/fixtures/sonatype-clm-complete.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-06-06T22:36:16Z",
+      "side": 0,
+      "message": "Personally I don\u0027t think keeping backwards compatibility is worth the effort. This is a proprietary plugin from Sonatype and they want you on the latest version of the plugin to use with their service. Because of the xml change CLM is actually broken for those using this plugin at the moment.",
+      "parentUuid": "7aa08908_5a68bf87",
+      "revId": "7d13236760ab030ccbb9c744876f64a43c5f44ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
