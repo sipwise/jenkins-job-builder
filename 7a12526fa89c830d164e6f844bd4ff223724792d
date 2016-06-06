@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_237155e1",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-06-06T19:46:33Z",
+      "side": 1,
+      "message": "Our next release will be 1.6.0.",
+      "revId": "7a12526fa89c830d164e6f844bd4ff223724792d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
