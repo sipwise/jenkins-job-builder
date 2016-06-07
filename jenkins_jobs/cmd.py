@@ -111,6 +111,9 @@ def create_parser():
     parser_update.add_argument('--delete-old', help='delete obsolete jobs',
                                action='store_true',
                                dest='delete_old', default=False,)
+    parser_update.add_argument('-p', '--plugin-info', dest='plugins_info_path',
+                               default=None,
+                               help='path to plugin info YAML file')
     parser_update.add_argument('--workers', dest='n_workers', type=int,
                                default=1, help='number of workers to use, 0 '
                                'for autodetection and 1 for just one worker.')
@@ -120,7 +123,8 @@ def create_parser():
     parser_test.add_argument('path', help='colon-separated list of paths to'
                                           ' YAML files or directories',
                              nargs='?', default=sys.stdin)
-    parser_test.add_argument('-p', dest='plugins_info_path', default=None,
+    parser_test.add_argument('-p', '--plugin-info', dest='plugins_info_path',
+                             default=None,
                              help='path to plugin info YAML file')
     parser_test.add_argument('-o', dest='output_dir', default=sys.stdout,
                              help='path to output XML')
