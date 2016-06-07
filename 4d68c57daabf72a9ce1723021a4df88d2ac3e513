@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_55398940",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1094,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-06-07T13:50:00Z",
+      "side": 1,
+      "message": "No need to check for true in my opinion since you\u0027re passing false as a default. Just set the setting and let the default take over if the user does not provide the input.\n\nWe\u0027ve found that Jenkins is unclear what not passing XML means as for some plugins it means to keep the previous setting, so I would prefer we explicitly set the setting to something if the user does not provide the input.",
+      "revId": "4d68c57daabf72a9ce1723021a4df88d2ac3e513",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
