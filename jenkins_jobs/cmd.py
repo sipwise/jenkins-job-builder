@@ -111,6 +111,12 @@ def create_parser():
     parser_update.add_argument('--delete-old', help='delete obsolete jobs',
                                action='store_true',
                                dest='delete_old', default=False,)
+    parser_update.add_argument('-p', '--plugin-info', dest='plugins_info_path',
+                               default=None,
+                               help='path to plugin info YAML file. Can be '
+                               'used to provide previously retrieved plugins '
+                               'info when connecting credentials don\'t have '
+                               'permissions to query.')
     parser_update.add_argument('--workers', dest='n_workers', type=int,
                                default=1, help='number of workers to use, 0 '
                                'for autodetection and 1 for just one worker.')
@@ -120,7 +126,8 @@ def create_parser():
     parser_test.add_argument('path', help='colon-separated list of paths to'
                                           ' YAML files or directories',
                              nargs='?', default=sys.stdin)
-    parser_test.add_argument('-p', dest='plugins_info_path', default=None,
+    parser_test.add_argument('-p', '--plugin-info', dest='plugins_info_path',
+                             default=None,
                              help='path to plugin info YAML file')
     parser_test.add_argument('-o', dest='output_dir', default=sys.stdout,
                              help='path to output XML')
@@ -166,6 +173,14 @@ def create_parser():
         help='Password or API token to use for authenticating towards '
         'Jenkins. This overrides the password specified in the '
         'configuration file.')
+
+    # subparser: generate-plugins-info
+    parser_generate_plugins_info = subparser.add_parser(
+        'generate-plugins-info',
+        help='Generate plugins_info.yaml by querying Jenkins server.')
+    parser_generate_plugins_info.add_argument(
+        '-f', '--file', dest='plugins_info_file',
+        help='file to save output to.')
 
     return parser
 
@@ -379,6 +394,23 @@ def execute(options, config):
                             output=options.output_dir,
                             n_workers=1)
 
+    elif options.command == 'generate-plugins-info':
+        plugin_data = builder.jenkins.get_plugins_info()
+        plugins_info = []
+        for plugin in plugin_data:
+            info = {
+                'longName': plugin['longName'],
+                'shortName': plugin['shortName'],
+                'version': str(plugin['version']),
+            }
+            plugins_info.append(info)
+
+        if options.plugins_info_file:
+            with open(options.plugins_info_file, 'w') as outfile:
+                outfile.write(yaml.dump(plugins_info))
+            logger.info("Generated {} file".format(options.plugins_info_file))
+        else:
+            print(yaml.dump(plugins_info))
 
 def version():
     return "Jenkins Job Builder version: %s" % \
