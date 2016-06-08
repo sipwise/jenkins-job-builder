@@ -33,6 +33,24 @@
       "revId": "008082568c5fbcc3263155b332435cf1d905e5de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_d6f25105",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-08T16:20:03Z",
+      "side": 0,
+      "message": "Makes sense, do we have a test somewhere to check what happens without a default config file?",
+      "parentUuid": "bab6814e_8d3a7997",
+      "revId": "008082568c5fbcc3263155b332435cf1d905e5de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

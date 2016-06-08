@@ -1,0 +1,310 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_22ceeb62",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-08T16:20:03Z",
+      "side": 1,
+      "message": "Probably should be avoid the jenkins_jobs imports?",
+      "revId": "e14556318375dca0a7c16c3ec9eecb861b79530f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_6293d3fa",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-08T16:20:03Z",
+      "side": 1,
+      "message": "Seems like this should only be in one place within JJB, perhaps just the cmd.py, and if something else is reusing this outside of cmd.py then it is up to that module to define the logging config.",
+      "revId": "e14556318375dca0a7c16c3ec9eecb861b79530f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_841fec59",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-08T16:20:03Z",
+      "side": 1,
+      "message": "I\u0027d be inclined to move this into the class, not as a class attribute, but logger is only needed change it\u0027s level within the class below, so probably better not to define it on the module except for use in something like cmd.py.",
+      "revId": "e14556318375dca0a7c16c3ec9eecb861b79530f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_7149e7cf",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-08T16:20:03Z",
+      "side": 1,
+      "message": "I\u0027m not sure it\u0027s a good idea to use \u0027__\u0027 here.\n\nIt means that any subclass that overrides __init__ will likely need to replace the execute method to avoid some interesting behaviour about how __ affects usage in subclasses.\n\nConsider the following:\n\n class Private(object):\n\n     def __init__(self):\n\n         self.__very_private \u003d \"hello \"\n\n     def execute(self):\n\n         print(self.__very_private + \"world\")\n\n\n class PrivateSubclass(Private):\n\n     def __init__(self):\n         super(PrivateSubclass, self).__init__()\n         self.__very_private \u003d \"goodbye \"\n\n\n a \u003d PrivateSubclass()\n a.execute()\n\n\nThe output is: \"hello world\"\n\nIf you replace \u0027__very_private\u0027 with \u0027_very_private\u0027 the output changes to: \"goodbye world\"\n\nUse of \u0027__\u0027 should be for something that is very specific to a class implementation, and I\u0027m not sure this is something that is that specific.",
+      "revId": "e14556318375dca0a7c16c3ec9eecb861b79530f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_b60ea589",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-08T16:20:03Z",
+      "side": 1,
+      "message": "Be would being consistent with the code style here rather than having some indented and some not.",
+      "revId": "e14556318375dca0a7c16c3ec9eecb861b79530f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_36d635f1",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-08T16:20:03Z",
+      "side": 1,
+      "message": "I\u0027d have to check this out, but on first glance this seems like it would result in a multiline output instead of following the width of the console.\n\nShould be able to use the following format:\n\n help\u003d\u0027The Jenkins user to use for authentication. This overrides \u0027\n      \u0027the user specified in the configuration file.\u0027",
+      "revId": "e14556318375dca0a7c16c3ec9eecb861b79530f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_87889172",
+        "filename": "jenkins_jobs/cli/subcommand/base.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-08T16:20:03Z",
+      "side": 1,
+      "message": "License and copyright?",
+      "revId": "e14556318375dca0a7c16c3ec9eecb861b79530f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_0795c185",
+        "filename": "jenkins_jobs/cli/subcommand/base.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-08T16:20:03Z",
+      "side": 1,
+      "message": "huh?",
+      "revId": "e14556318375dca0a7c16c3ec9eecb861b79530f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_82323fa5",
+        "filename": "jenkins_jobs/cli/subcommand/base.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-08T16:20:03Z",
+      "side": 1,
+      "message": "This method and the following result in a change in behaviour of what the CLI supports as inputs. I think it would be better to combine them as the recursive/exclude options are intended to complement one another and exclude doesn\u0027t make sense by itself without the recursive option since why would you need to specify additional paths to exclude from being processed if you didn\u0027t include them through the recursive option walking the entire tree.",
+      "revId": "e14556318375dca0a7c16c3ec9eecb861b79530f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_e7c995ad",
+        "filename": "jenkins_jobs/cli/subcommand/base.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-08T16:20:03Z",
+      "side": 1,
+      "message": "for consistency with above lets keep short and long options on the same line.",
+      "revId": "e14556318375dca0a7c16c3ec9eecb861b79530f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_870b71d5",
+        "filename": "jenkins_jobs/cli/subcommand/base.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-08T16:20:03Z",
+      "side": 1,
+      "message": "You can use standard quotes and python will automatically concatenate strings on subsequent lines until a comma or closing bracket is encountered.",
+      "revId": "e14556318375dca0a7c16c3ec9eecb861b79530f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_27a71dab",
+        "filename": "jenkins_jobs/cli/subcommand/delete.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-08T16:20:03Z",
+      "side": 1,
+      "message": "This is a change in behaviour from before, you\u0027re removing the ability to process the given paths recursively.",
+      "revId": "e14556318375dca0a7c16c3ec9eecb861b79530f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_c20e078b",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-08T16:20:03Z",
+      "side": 1,
+      "message": "So do we need this in both cli.entry and here? Seems like it should only be in one place.",
+      "revId": "e14556318375dca0a7c16c3ec9eecb861b79530f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_64eac075",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-08T16:20:03Z",
+      "side": 1,
+      "message": "Would it be easier to have [\u0027--conf\u0027, self.default_config_file, \u0027test\u0027] as a base args that we add to for each test rather than repeating it everywhere.",
+      "revId": "e14556318375dca0a7c16c3ec9eecb861b79530f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_4415049a",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-08T16:20:03Z",
+      "side": 1,
+      "message": "replace with execute_jenkins_jobs_with_args(args)?",
+      "revId": "e14556318375dca0a7c16c3ec9eecb861b79530f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_071dbe65",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-08T16:20:03Z",
+      "side": 1,
+      "message": "To me this seems much more difficult to assert whether the behaviour is correct for the recursive/exclude than before.\n\nIf it was felt that building the result from the input dynamically isn\u0027t explicit enough, it could have been explicitly listed as to what the correct output should be.\n\nI might take a look at rewriting just these tests to see if it\u0027s possible to see if they can be made explicit without needing to generate the output files and applying them to all subcommands that use the recursive parser to ensure the behaviour is correctly included.",
+      "revId": "e14556318375dca0a7c16c3ec9eecb861b79530f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_8781aefd",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-08T16:20:03Z",
+      "side": 1,
+      "message": "Previously this also checked that using \u0027:\u0027 as a path separator worked to provide multiple excludes. Possibly that should move to being done by the dedicated tests for recursive/exclude path checking.",
+      "revId": "e14556318375dca0a7c16c3ec9eecb861b79530f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_649be066",
+        "filename": "tests/cmd/subcommands/test_update.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-08T16:20:03Z",
+      "side": 1,
+      "message": "Be temped to have a self.default_args \u003d [\u0027--conf\u0027, self.default_config_file, \u0027update\u0027] for this class and then just append the unique part for each usage:\n\n self.execute_jenkins_jobs_with_args(self.default_args + [path])",
+      "revId": "e14556318375dca0a7c16c3ec9eecb861b79530f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
