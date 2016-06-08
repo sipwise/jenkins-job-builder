@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_701ee10c",
+        "filename": "tests/publishers/fixtures/jacoco-minimal.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-06-08T23:51:27Z",
+      "side": 1,
+      "message": "I think the minimal should be just:\n\n - jacoco\n\nAccording to the jacoco plugin the defaults are as you listed above so I think the code should set that as the default and allow the user to not have to specify those values.",
+      "revId": "fc66d2ddd2900d21ef73421104f57c174fb22461",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
