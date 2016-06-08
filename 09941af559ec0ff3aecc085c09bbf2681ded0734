@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_70f701d3",
+        "filename": "tests/publishers/fixtures/cucumber-reports-minimal.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-06-08T23:49:26Z",
+      "side": 1,
+      "message": "According to the code I think the minimal is actually just:\n\n - cucumber-reports\n\nCan you give that a try?",
+      "revId": "09941af559ec0ff3aecc085c09bbf2681ded0734",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
