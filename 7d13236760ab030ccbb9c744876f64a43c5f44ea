@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_b5295b9d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 825,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-06-08T23:37:08Z",
+      "side": 0,
+      "message": "What happened to the script-* options? are they no longer existing?\n\nPerhaps we want to provide backwards compatability for these options if the user is using an older version of the plugin.",
+      "revId": "7d13236760ab030ccbb9c744876f64a43c5f44ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
