@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_b0b3294c",
+        "filename": "tests/triggers/fixtures/build-result-complete.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-06-08T23:45:32Z",
+      "side": 1,
+      "message": "Instead of \" -status: SUCCESS\" it would be better to have it just be a list:\n\n results:\n - SUCCESS\n - NOT_BUILT\n\nThis also looks like a behaviour change though because the old code allowed users to enter \"not-built\". To maintain backwards compatability we can do something clever like:\n\n str.upper().replace(\u0027-\u0027, \u0027_\u0027)",
+      "revId": "8c673b9021e6c34359c1ca68b4150e22cac0b3d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
