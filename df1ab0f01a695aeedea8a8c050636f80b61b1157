@@ -52,6 +52,42 @@
       "revId": "df1ab0f01a695aeedea8a8c050636f80b61b1157",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_c3d1b431",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-09T12:01:25Z",
+      "side": 1,
+      "message": "Probably not, just unsure about what else could trigger an OSError here and whether it\u0027s better to bail unless it\u0027s a condition we know about and can handle.\n\nBut belt and braces is probably fine for this, we can revisit after a 1.6.1 release.",
+      "parentUuid": "7aa08908_fde573dc",
+      "revId": "df1ab0f01a695aeedea8a8c050636f80b61b1157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_8354ccca",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-09T12:01:25Z",
+      "side": 1,
+      "message": "Not ecstatic about having code that will behave differently on different platforms, but guess it\u0027s a reasonable compromise to keep the atomic behaviour on Unix based OS\u0027s.",
+      "parentUuid": "7aa08908_dd44f71c",
+      "revId": "df1ab0f01a695aeedea8a8c050636f80b61b1157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
