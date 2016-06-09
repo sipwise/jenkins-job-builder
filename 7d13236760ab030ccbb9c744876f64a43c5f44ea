@@ -16,6 +16,24 @@
       "revId": "7d13236760ab030ccbb9c744876f64a43c5f44ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_ce5ef878",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 825,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-06-09T13:12:23Z",
+      "side": 0,
+      "message": "I don\u0027t know if these were an option in the first place. I can\u0027t seem to find a patch where it mentions that they removed these options. I also went through a few previous versions myself and it seems like the script-* options were never there in the first place.",
+      "parentUuid": "7aa08908_b5295b9d",
+      "revId": "7d13236760ab030ccbb9c744876f64a43c5f44ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
