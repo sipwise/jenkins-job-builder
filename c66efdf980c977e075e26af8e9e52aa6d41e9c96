@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_7011c151",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3371,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-06-09T00:38:20Z",
+      "side": 1,
+      "message": "These if-else statements can be just one statement each I believe.\n\nFor instance,\nXML.SubElement(plugin, \u0027unbufferedOutput\u0027).text \u003d data.get(\u0027unbuffered-output\u0027, True).lower()",
+      "range": {
+        "startLine": 3364,
+        "startChar": 4,
+        "endLine": 3371,
+        "endChar": 64
+      },
+      "revId": "c66efdf980c977e075e26af8e9e52aa6d41e9c96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_d0751532",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3373,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-06-09T00:38:20Z",
+      "side": 1,
+      "message": "I am not familiar with this syntax. Is this reverse logic?",
+      "range": {
+        "startLine": 3372,
+        "startChar": 3,
+        "endLine": 3373,
+        "endChar": 63
+      },
+      "revId": "c66efdf980c977e075e26af8e9e52aa6d41e9c96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
