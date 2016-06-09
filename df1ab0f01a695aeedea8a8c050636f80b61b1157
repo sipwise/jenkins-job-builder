@@ -16,6 +16,24 @@
       "revId": "df1ab0f01a695aeedea8a8c050636f80b61b1157",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_dd44f71c",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 18918
+      },
+      "writtenOn": "2016-06-09T11:18:41Z",
+      "side": 1,
+      "message": "Quoting my mail to the mailing list on that:\n\n\"I decided to catch the exception instead of always deleting the dst file first to keep it being an atomic operation on Unix.\"",
+      "parentUuid": "7aa08908_aeba976f",
+      "revId": "df1ab0f01a695aeedea8a8c050636f80b61b1157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
