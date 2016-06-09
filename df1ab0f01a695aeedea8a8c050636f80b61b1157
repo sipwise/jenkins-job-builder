@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_aeba976f",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-09T10:02:26Z",
+      "side": 1,
+      "message": "I wonder if we should check the errno to only do this if it\u0027s an errno.EEXIST?\n\n except OSError as ose:\n     if ose.errno !\u003d errno.EEXIST:\n         raise ose\n     # On Windows if dst exists, os.rename will raise an\n     # exception, so remove and retry\n     self._os.remove(self.cachefilename)\n         self._os.rename(tfile.name, self.cachefilename)\n\nOr perhaps we should just do a remove and rename by default? and just ensure that the dst file is always explicitly removed instead of trying to handle a platform specific behaviour?",
+      "revId": "df1ab0f01a695aeedea8a8c050636f80b61b1157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
