@@ -110,7 +110,13 @@ class CacheStorage(object):
         tfile.flush()
         self._os.fsync(tfile.fileno())
         tfile.close()
-        self._os.rename(tfile.name, self.cachefilename)
+        try:
+            self._os.rename(tfile.name, self.cachefilename)
+        except OSError:
+            # On Windows, if dst already exists, OSError will be raised even
+            # if it is a file. So in that case remove the file first and try again.
+            self._os.remove(self.cachefilename)
+            self._os.rename(tfile.name, self.cachefilename)
 
         self._logger.debug("Cache written out to '%s'" % self.cachefilename)
 
