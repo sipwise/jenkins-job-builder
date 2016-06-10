@@ -1,0 +1,9 @@
+triggers:
+  - monitor-folders:
+      path: pathname
+      includes: pattern1,pattern2
+      excludes: pattern1
+      exclude-check-date: true
+      exclude-check-content: true
+      exclude-check-fewer: true
+      cron: H/15 * * * *

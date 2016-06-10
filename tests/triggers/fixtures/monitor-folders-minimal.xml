@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <triggers class="vector">
+    <org.jenkinsci.plugins.fstrigger.triggers.FolderContentTrigger plugin="fstrigger">
+      <path/>
+      <includes/>
+      <excludes/>
+      <spec/>
+      <excludeCheckLastModificationDate>false</excludeCheckLastModificationDate>
+      <excludeCheckContent>false</excludeCheckContent>
+      <excludeCheckFewerOrMoreFiles>false</excludeCheckFewerOrMoreFiles>
+    </org.jenkinsci.plugins.fstrigger.triggers.FolderContentTrigger>
+  </triggers>
+</project>
