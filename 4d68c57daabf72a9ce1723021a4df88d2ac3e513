@@ -16,6 +16,24 @@
       "revId": "4d68c57daabf72a9ce1723021a4df88d2ac3e513",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_a479b2fe",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1094,
+      "author": {
+        "id": 21597
+      },
+      "writtenOn": "2016-06-10T20:59:57Z",
+      "side": 1,
+      "message": "I just copied the pattern used by the previous few options.\n\nThese extensions are all enabled by including the XML tag and disabled by excluding it, as far as I can tell. There\u0027s no way to explicitly set the extension to disabled.",
+      "parentUuid": "7aa08908_55398940",
+      "revId": "4d68c57daabf72a9ce1723021a4df88d2ac3e513",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
