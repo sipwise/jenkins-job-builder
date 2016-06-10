@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_1942b33e",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3339,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-06-10T20:21:41Z",
+      "side": 1,
+      "message": "Small nitpick but I am wondering if it would be better to have an elif statement for \u0027content\u0027 and then have an else statement for the InvalidAttributeError that you have above.",
+      "range": {
+        "startLine": 3339,
+        "startChar": 4,
+        "endLine": 3339,
+        "endChar": 9
+      },
+      "revId": "7d48a1d2c65561fc9a3bb46d0ddd020b3f6de95c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
