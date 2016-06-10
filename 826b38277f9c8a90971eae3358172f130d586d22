@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_e840c109",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1182,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-06-10T15:02:09Z",
+      "side": 1,
+      "message": "Should add a note to mention that the .upper().replace() is needed to maintain backwards compatability with the previous version of JJB where it was using the old \u0027-\u0027 format.",
+      "revId": "826b38277f9c8a90971eae3358172f130d586d22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
