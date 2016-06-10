@@ -40,6 +40,7 @@ from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.errors import MissingAttributeError
 import jenkins_jobs.modules.base
 from jenkins_jobs.modules import hudson_model
+from jenkins_jobs.modules.helpers import convert_mapping_to_xml
 
 logger = logging.getLogger(str(__name__))
 
@@ -1246,35 +1247,43 @@ def monitor_folders(parser, xml_parent, data):
     Requires the Jenkins :jenkins-wiki:`Filesystem Trigger Plugin
     <FSTrigger+Plugin>`.
 
-    :arg str path: Folder path to poll. (optional)
+    :arg str path: Folder path to poll. (default '')
     :arg list includes: Fileset includes setting that specifies the list of
       includes files. Basedir of the fileset is relative to the workspace
-      root. If no value is set, all files are used. (optional)
+      root. If no value is set, all files are used. (default '')
     :arg str excludes: The 'excludes' pattern. A file that matches this mask
       will not be polled even if it matches the mask specified in 'includes'
-      section. (optional)
+      section. (default '')
     :arg bool check-modification-date: Check last modification date.
       (default true)
     :arg bool check-content: Check content. (default true)
-    :arg bool check-fewer: Check fewer or more files (default true)
+    :arg bool check-fewer: Check fewer files (default true)
     :arg str cron: cron syntax of when to run (default '')
 
-    Example:
+    Full Example:
 
-    .. literalinclude:: /../../tests/triggers/fixtures/monitor_folders.yaml
+    .. literalinclude::
+       /../../tests/triggers/fixtures/monitor-folders-full.yaml
+       :language: yaml
+
+    Minimal Example:
+
+    .. literalinclude::
+       /../../tests/triggers/fixtures/monitor-folders-minimal.yaml
+       :language: yaml
     """
     ft = XML.SubElement(xml_parent, ('org.jenkinsci.plugins.fstrigger.'
                                      'triggers.FolderContentTrigger'))
-    path = data.get('path')
-    if path:
-        XML.SubElement(ft, 'path').text = path
-    includes = data.get('includes')
-    if includes:
-        XML.SubElement(ft, 'includes').text = ",".join(includes)
-    excludes = data.get('excludes')
-    if excludes:
-        XML.SubElement(ft, 'excludes').text = excludes
-    XML.SubElement(ft, 'spec').text = data.get('cron', '')
+    ft.set('plugin', 'fstrigger')
+
+    mappings = [
+        ('path', 'path', ''),
+        ('includes', 'includes', ''),
+        ('excludes', 'excludes', ''),
+        ('cron', 'spec', ''),
+    ]
+    convert_mapping_to_xml(ft, data, mappings, fail_required=True)
+
     XML.SubElement(ft, 'excludeCheckLastModificationDate').text = str(
         not data.get('check-modification-date', True)).lower()
     XML.SubElement(ft, 'excludeCheckContent').text = str(

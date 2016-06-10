@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
   <triggers class="vector">
-    <org.jenkinsci.plugins.fstrigger.triggers.FolderContentTrigger>
+    <org.jenkinsci.plugins.fstrigger.triggers.FolderContentTrigger plugin="fstrigger">
       <path>pathname</path>
       <includes>pattern1,pattern2</includes>
       <excludes>pattern1</excludes>
