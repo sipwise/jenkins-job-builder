@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_f51a3516",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1183,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-06-12T03:21:02Z",
+      "side": 1,
+      "message": "still remain a \\ trailing here",
+      "range": {
+        "startLine": 1183,
+        "startChar": 60,
+        "endLine": 1183,
+        "endChar": 61
+      },
+      "revId": "2dff357f56cd4404b773a444bb9437d5c8c0dd8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
