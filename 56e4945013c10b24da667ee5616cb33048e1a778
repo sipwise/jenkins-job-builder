@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_15b9c1cb",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1102,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-06-12T03:35:25Z",
+      "side": 1,
+      "message": "if we should upper the first character to keep consistent? same below",
+      "revId": "56e4945013c10b24da667ee5616cb33048e1a778",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
