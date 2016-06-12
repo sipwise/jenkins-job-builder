@@ -34,6 +34,24 @@
       "revId": "4d68c57daabf72a9ce1723021a4df88d2ac3e513",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_0d608dce",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1094,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-06-12T23:13:51Z",
+      "side": 1,
+      "message": "Ah I just realized I misunderstood the code the first item I lokoed at this, I thought XML.SubElement was setting a value but I guess it\u0027s not.",
+      "parentUuid": "7aa08908_a479b2fe",
+      "revId": "4d68c57daabf72a9ce1723021a4df88d2ac3e513",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
