@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "7aa08908_424d4d71",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-06-12T01:38:59Z",
+      "side": 1,
+      "message": "use \u0027Story:2000631\u0027 link to the storyborad",
+      "revId": "f85fa026d3d1192794f8238ecd878a8006281fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_82f3b509",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-06-12T01:38:59Z",
+      "side": 1,
+      "message": "the \u0027name\u0027 parameter didn\u0027t implement in code",
+      "revId": "f85fa026d3d1192794f8238ecd878a8006281fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_59f39b9e",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 2
@@ -13,6 +47,108 @@
       "writtenOn": "2016-06-10T20:34:33Z",
       "side": 1,
       "message": "Does not seem like documentation is complete.",
+      "revId": "f85fa026d3d1192794f8238ecd878a8006281fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_82a57505",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-06-12T01:38:59Z",
+      "side": 1,
+      "message": "suggest use the separate test file and link the test file as example, for example:\n\n    .. literalinclude::  /../../tests/parameters/fixtures/run-param001.yaml\n       :language: yaml",
+      "revId": "f85fa026d3d1192794f8238ecd878a8006281fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_42826d53",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-06-12T01:38:59Z",
+      "side": 1,
+      "message": "missing the \u0027type\u0027 parameter docstring",
+      "revId": "f85fa026d3d1192794f8238ecd878a8006281fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_2285a158",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-06-12T01:38:59Z",
+      "side": 1,
+      "message": "the docstring here is \u0027default\u0027",
+      "revId": "f85fa026d3d1192794f8238ecd878a8006281fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_627fa966",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-06-12T01:38:59Z",
+      "side": 1,
+      "message": "missing \u0027branchFilter\u0027 docstring",
+      "revId": "f85fa026d3d1192794f8238ecd878a8006281fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_a291919c",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-06-12T01:38:59Z",
+      "side": 1,
+      "message": "missing \u0027sortMode\u0027 docstring",
+      "revId": "f85fa026d3d1192794f8238ecd878a8006281fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_e28b9966",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-06-12T01:38:59Z",
+      "side": 1,
+      "message": "missing \u0027quickFilterEnabled\u0027 doctring",
       "revId": "f85fa026d3d1192794f8238ecd878a8006281fce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
