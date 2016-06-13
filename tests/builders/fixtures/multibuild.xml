@@ -75,5 +75,20 @@
         </com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
       </phaseJobs>
     </com.tikal.jenkins.plugins.multijob.MultiJobBuilder>
+    <com.tikal.jenkins.plugins.multijob.MultiJobBuilder>
+      <phaseName>PhaseFour</phaseName>
+      <continuationCondition>SUCCESSFUL</continuationCondition>
+      <phaseJobs>
+        <com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
+          <jobName>PhaseFourJobA</jobName>
+          <currParams>false</currParams>
+          <configs/>
+          <abortAllJob>false</abortAllJob>
+          <parsingRulesPath>/PhaseFour/PhaseFourRetry.prop</parsingRulesPath>
+          <maxRetries>3</maxRetries>
+          <enableRetryStrategy>true</enableRetryStrategy>
+        </com.tikal.jenkins.plugins.multijob.PhaseJobsConfig>
+      </phaseJobs>
+    </com.tikal.jenkins.plugins.multijob.MultiJobBuilder>
   </builders>
 </project>
