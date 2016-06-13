@@ -1715,6 +1715,10 @@ def multijob(parser, xml_parent, data):
             * **restrict-matrix-project** (`str`) -- Filter that
               restricts the subset of the combinations that the
               downstream project will run (optional)
+            * **retry** (`dict`): Enable retry strategy
+                :retry:
+                    * **max-retry** (`int`) -- Max number of retries
+                    * **strategy-path** (`str`) -- Parsing rules path
 
     Example:
 
@@ -1797,6 +1801,20 @@ def multijob(parser, xml_parent, data):
         # Abort all other job
         abortAllJob = str(project.get('abort-all-job', False)).lower()
         XML.SubElement(phaseJob, 'abortAllJob').text = abortAllJob
+
+        retry = project.get('retry', False)
+        if retry:
+            XML.SubElement(phaseJob, 'enableRetryStrategy').text = 'true'
+            try:
+                max_retry = int(retry.get('max-retry'))
+                XML.SubElement(phaseJob, 'maxRetries').text = str(max_retry)
+            except KeyError:
+                raise MissingAttributeError('max-retry')
+            try:
+                rules_path = str(retry.get('strategy-path'))
+                XML.SubElement(phaseJob, 'parsingRulesPath').text = rules_path
+            except KeyError:
+                raise MissingAttributeError('strategy-path')
 
         # Restrict matrix jobs to a subset
         if project.get('restrict-matrix-project') is not None:
