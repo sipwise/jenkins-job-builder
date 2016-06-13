@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_10887a70",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1626,
+      "author": {
+        "id": 21595
+      },
+      "writtenOn": "2016-06-13T20:53:10Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem like retry is optional as indicated",
+      "range": {
+        "startLine": 1625,
+        "startChar": 16,
+        "endLine": 1626,
+        "endChar": 37
+      },
+      "revId": "cc6c0af7ab6511d703ec3dfd813782d102a91aa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
