@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_22fc0471",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2016-06-14T23:47:33Z",
+      "side": 1,
+      "message": "This feature is just getting the plugin info and optionally outputting it to a file so how about just \u0027get-plugins-info\u0027 instead?",
+      "revId": "67bd3658f2818bd2247ebcd260d51ab9bcfe078c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_3723a806",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2016-06-14T23:47:33Z",
+      "side": 1,
+      "message": "would it make sense to change this to \u0027-o OUTPUT_DIR\u0027 so it\u0027s consistent with test command?",
+      "revId": "67bd3658f2818bd2247ebcd260d51ab9bcfe078c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_82b7b81f",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2016-06-14T23:47:33Z",
+      "side": 1,
+      "message": "I see that the yaml output contains \u0027!!python/unicode\u0027  for longName and shortName but not version so should we convert longName and shortName to str as well?",
+      "revId": "67bd3658f2818bd2247ebcd260d51ab9bcfe078c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_421dd00d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2016-06-14T23:47:33Z",
+      "side": 1,
+      "message": "need an extra blank line her to make pep8 happy",
+      "revId": "67bd3658f2818bd2247ebcd260d51ab9bcfe078c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
