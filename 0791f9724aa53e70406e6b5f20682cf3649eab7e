@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_b4604402",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-14T17:41:20Z",
+      "side": 1,
+      "message": "The single element list does strike me as unusual here, given the result of what it generates.",
+      "revId": "0791f9724aa53e70406e6b5f20682cf3649eab7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_945b8853",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-14T17:41:20Z",
+      "side": 1,
+      "message": "Might be work checking if we need to include a special type of tag when this is empty such as:\n\nhttp://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/modules/builders.py?id\u003d6e4b760655a7128600e9541875380f07793ccbb0#n548\n\nRather than an empty string entry as added to the multi scm by this (which does seem a little odd).",
+      "revId": "0791f9724aa53e70406e6b5f20682cf3649eab7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
