@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_c9e0d928",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-14T17:16:45Z",
+      "side": 1,
+      "message": "It might be worth use considering switching to your suggestion of:\n\n strategy: ....\n\nUsing a transformation method to convert old style to new style similar to gerrit and other places we\u0027ve switched formats.",
+      "revId": "9d8adbf23d8912286753e5fd20b66c6a66ff1684",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
