@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_4a9d0dbb",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-14T13:19:46Z",
+      "side": 1,
+      "message": "nit s/isn\u0027t/aren\u0027t/, singular/plural.\n\nProbably wouldn\u0027t use \u0027spoof\u0027, maybe rephrase to:\n\n Can be used to provide previous retrieved plugins info when\n connecting credentials don\u0027t have permissions to query.\n\nThat way if Jenkins changes it behaviour around permissions, by allowing a different set of permissions to retrieve information on the plugins installed, the text here will still be applicable.",
+      "revId": "4782f04c0fc3f840e83b716f47db6c8ab17cfacd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_6d45836d",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-14T13:19:46Z",
+      "side": 1,
+      "message": "best not to replace parser_update, although it has no effect here, it\u0027s still probably better to avoid it.\n\nparser_generate_plugins_info seems more appropriate.",
+      "revId": "4782f04c0fc3f840e83b716f47db6c8ab17cfacd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_ea4799a0",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-14T13:19:46Z",
+      "side": 1,
+      "message": "Don\u0027t need the \u0027recursive_parser\u0027 here, there\u0027s no yaml files to be parsed.\n\nBe inclined to provide the ability for an option to specify the file name, or print to stdout.",
+      "revId": "4782f04c0fc3f840e83b716f47db6c8ab17cfacd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_6ab72985",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-14T13:19:46Z",
+      "side": 1,
+      "message": "Do we need to filter the plugin info at all? What happens if you just dump it directly to yaml?\n\nThe existing yaml files in the tests are just the minimal plugin info subset of info used in the code.\n\nThis may not be python 2/3 compatible, just from familiarity with the patterns we needed in the CacheStorage or Builder classes when writing out the file correctly for various encodings.\n\nTesting shows that the resulting yaml file in python2 contains \u0027!!python/unicode\u0027 entries. I\u0027d need to spend some time testing but I suspect that may cause problems in the code looking to compare plugin names.\n\nWhich suggests we need a test to exercise the command code with a dummy plugins response. Which would of course be easier if we could switch it to use stdout and capture it.",
+      "revId": "4782f04c0fc3f840e83b716f47db6c8ab17cfacd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
