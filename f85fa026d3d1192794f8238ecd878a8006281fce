@@ -36,6 +36,41 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_dd041b19",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-14T16:18:46Z",
+      "side": 1,
+      "message": "Handled by base_param",
+      "parentUuid": "7aa08908_82f3b509",
+      "revId": "f85fa026d3d1192794f8238ecd878a8006281fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_40215e9d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-14T16:18:46Z",
+      "side": 1,
+      "message": "Example describes using \u0027filter\u0027 you document as tagFilter.\n\nIn generate prefer snake-case to camelCase for the yaml attributes here, so suggest switching to \u0027tag-filter\u0027 in documentation and code, since you also specify \u0027branchFilter\u0027 in the code which would need to be \u0027branch-filter\u0027.\n\nSomething to apply to the items below such as branchFilter, sortMode and quickFilterEnable when updating.",
+      "revId": "f85fa026d3d1192794f8238ecd878a8006281fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_59f39b9e",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 2
@@ -104,6 +139,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_607a9a78",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-14T16:18:46Z",
+      "side": 1,
+      "message": "And also use of default is handled by base_param. so no need for it to be included here at all.",
+      "parentUuid": "7aa08908_2285a158",
+      "revId": "f85fa026d3d1192794f8238ecd878a8006281fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_627fa966",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 2
@@ -132,6 +185,24 @@
       "writtenOn": "2016-06-12T01:38:59Z",
       "side": 1,
       "message": "missing \u0027sortMode\u0027 docstring",
+      "revId": "f85fa026d3d1192794f8238ecd878a8006281fce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_c0b70e1f",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-14T16:18:46Z",
+      "side": 1,
+      "message": "Should include all valid values if there is only a subset that can be choosen, and also check whether the selected one is in the list of valid options.",
+      "parentUuid": "7aa08908_a291919c",
       "revId": "f85fa026d3d1192794f8238ecd878a8006281fce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
