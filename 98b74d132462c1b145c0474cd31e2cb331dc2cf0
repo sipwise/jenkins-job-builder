@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_f960d2a6",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 823,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-15T15:17:57Z",
+      "side": 1,
+      "message": "Lets stick without the \u0027:\u0027 being added to default. There\u0027s less than 200 instances of \u0027(default: ...)\u0027 compared to almost 1000 of \u0027(default ...)\u0027.",
+      "revId": "98b74d132462c1b145c0474cd31e2cb331dc2cf0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_79e22203",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-15T15:17:57Z",
+      "side": 1,
+      "message": "Same comment about use of \u0027:\u0027, similarly for \u0027False\u0027 and \u0027True\u0027, \u0027false\u0027 and \u0027true\u0027 are more common in the current docstrings, so lets just default to the second format, particular since they are just going to be converted to lower case strings as opposed to the uppercase booleans when outputted in the XML.\n\nOr we need to make a decision to go through and clean up all the occurrences we are changing from.",
+      "revId": "98b74d132462c1b145c0474cd31e2cb331dc2cf0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_39153a49",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-15T15:17:57Z",
+      "side": 1,
+      "message": "Only use \u0027Full\u0027 or \u0027Minimal\u0027 where you are distinguishing between examples, otherwise it\u0027s just an example. Seeing \u0027Full\u0027 suggests there is another example that should be appearing as well.",
+      "revId": "98b74d132462c1b145c0474cd31e2cb331dc2cf0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_797222e5",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 977,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-15T15:17:57Z",
+      "side": 1,
+      "message": "Are you giving a minimal example? if not, then it\u0027s just an \u0027Example\u0027 otherwise I would be looking around to see what other example you are giving.",
+      "revId": "98b74d132462c1b145c0474cd31e2cb331dc2cf0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_d9a87623",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 979,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-15T15:17:57Z",
+      "side": 1,
+      "message": "can you mark this as with :language: yaml so it shows up nicer in the docs.",
+      "revId": "98b74d132462c1b145c0474cd31e2cb331dc2cf0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_3c5a482b",
+        "filename": "tests/wrappers/fixtures/passwords-complete.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-15T15:17:57Z",
+      "side": 1,
+      "message": "When updating could you reformat this to align with the other yaml examples, it did stand out a bit in the generated docs as being formatted differently.\n\nWe probably have a few other examples where we should be doing the same, but no harm in not making it worse.",
+      "revId": "98b74d132462c1b145c0474cd31e2cb331dc2cf0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
