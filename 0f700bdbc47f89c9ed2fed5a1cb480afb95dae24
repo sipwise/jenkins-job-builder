@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_ed0768c7",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3257,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2016-06-15T16:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_bac79843",
+      "revId": "0f700bdbc47f89c9ed2fed5a1cb480afb95dae24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_daa8a122",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2016-06-14T16:06:51Z",
       "side": 1,
       "message": "\u0027Optional\u0027 is used for items that do not appear in the resulting output if not set, in this case you are default to \u00270\u0027 below.\n\nSame goes for all the other optional entries, they mostly appear to be \"(default \u0027\u0027)\" rather than optional.",
+      "revId": "0f700bdbc47f89c9ed2fed5a1cb480afb95dae24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_cdc26c34",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3281,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2016-06-15T16:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_daa8a122",
       "revId": "0f700bdbc47f89c9ed2fed5a1cb480afb95dae24",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_cd1eecba",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3321,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2016-06-15T16:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_fa7ac0b8",
+      "revId": "0f700bdbc47f89c9ed2fed5a1cb480afb95dae24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_b5acc9ed",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2016-06-14T16:06:51Z",
       "side": 1,
       "message": "You shouldn\u0027t need to specify the module.",
+      "revId": "0f700bdbc47f89c9ed2fed5a1cb480afb95dae24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_0d5e3479",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3333,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2016-06-15T16:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_b5acc9ed",
       "revId": "0f700bdbc47f89c9ed2fed5a1cb480afb95dae24",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_ed1ac87b",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3334,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2016-06-15T16:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_d597d545",
+      "revId": "0f700bdbc47f89c9ed2fed5a1cb480afb95dae24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_7021cf9d",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 5
@@ -98,6 +188,24 @@
       "writtenOn": "2016-06-14T16:06:51Z",
       "side": 1,
       "message": "You\u0027ve correctly converted below for items using true/false, just need to apply it here.",
+      "revId": "0f700bdbc47f89c9ed2fed5a1cb480afb95dae24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_f22aa48f",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3346,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2016-06-15T16:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_7021cf9d",
       "revId": "0f700bdbc47f89c9ed2fed5a1cb480afb95dae24",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_0880e248",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3349,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2016-06-15T16:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_d0a523a2",
+      "revId": "0f700bdbc47f89c9ed2fed5a1cb480afb95dae24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_30d58742",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 5
@@ -132,6 +258,24 @@
       "writtenOn": "2016-06-14T16:06:51Z",
       "side": 1,
       "message": "Probably better to use the is_sequence function from the errors module, we can move it to the utils module later. That way if we\u0027re using a different container type as long as it\u0027s list like, the code will behave the same.",
+      "revId": "0f700bdbc47f89c9ed2fed5a1cb480afb95dae24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_88f7b2d3",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3376,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2016-06-15T16:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_30d58742",
       "revId": "0f700bdbc47f89c9ed2fed5a1cb480afb95dae24",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_68f406cf",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3378,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2016-06-15T16:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_f0fc9fb6",
+      "revId": "0f700bdbc47f89c9ed2fed5a1cb480afb95dae24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_fa8c7d36",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 5
@@ -166,6 +328,24 @@
       "writtenOn": "2016-06-14T16:06:51Z",
       "side": 1,
       "message": "Should probably just check that keys is a supported attribute.",
+      "revId": "0f700bdbc47f89c9ed2fed5a1cb480afb95dae24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_c8c25a34",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3382,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2016-06-15T16:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_fa8c7d36",
       "revId": "0f700bdbc47f89c9ed2fed5a1cb480afb95dae24",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_e862b63c",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3384,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2016-06-15T16:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_1a2ea942",
+      "revId": "0f700bdbc47f89c9ed2fed5a1cb480afb95dae24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_3a0d658f",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 5
@@ -200,6 +398,24 @@
       "writtenOn": "2016-06-14T16:06:51Z",
       "side": 1,
       "message": "Same here about \u0027ansible-playbook\u0027 and data representation, \"variables[][\u0027name\u0027]\" would be clear. If you really want to tell them which one, use enumerate about and include the index value outputted.",
+      "revId": "0f700bdbc47f89c9ed2fed5a1cb480afb95dae24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_48e66ab1",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3388,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2016-06-15T16:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_3a0d658f",
       "revId": "0f700bdbc47f89c9ed2fed5a1cb480afb95dae24",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_08baa271",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3391,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2016-06-15T16:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_f0ebffa1",
+      "revId": "0f700bdbc47f89c9ed2fed5a1cb480afb95dae24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_90e55bdd",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 5
@@ -240,6 +474,24 @@
     },
     {
       "key": {
+        "uuid": "7aa08908_48b4aa81",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3396,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2016-06-15T16:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_90e55bdd",
+      "revId": "0f700bdbc47f89c9ed2fed5a1cb480afb95dae24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_5d802bf7",
         "filename": "tests/builders/fixtures/ansible-playbook001.yaml",
         "patchSetId": 5
@@ -251,6 +503,24 @@
       "writtenOn": "2016-06-14T16:06:51Z",
       "side": 1,
       "message": "One of the two examples needs to test all the non-default values, both as an aid to documentation and to exercise the code to allow comparing default to non-default.",
+      "revId": "0f700bdbc47f89c9ed2fed5a1cb480afb95dae24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_d20a0827",
+        "filename": "tests/builders/fixtures/ansible-playbook001.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2016-06-15T16:53:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_5d802bf7",
       "revId": "0f700bdbc47f89c9ed2fed5a1cb480afb95dae24",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
