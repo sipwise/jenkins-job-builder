@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_918ec8ce",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2185,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-15T14:36:58Z",
+      "side": 1,
+      "message": "Doesn\u0027t make sense to repeat the same thing twice in the docs. You can remove \"Requires the M2 Release plugin.\" since you\u0027re also saying the same below once it\u0027s rendered and becomes \"Requires M2 Release Plugin\"",
+      "revId": "d0d7982620f7bda305ac28354f5b9990fb60a918",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_117018dc",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2189,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-15T14:36:58Z",
+      "side": 1,
+      "message": "Should both denote default values. Btw, what actually happens if it\u0027s just a blank string being passed through?",
+      "revId": "d0d7982620f7bda305ac28354f5b9990fb60a918",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_71235cbf",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2200,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-15T14:36:58Z",
+      "side": 1,
+      "message": "Again, these should all be marked as \"(default \u0027\u0027)\" if that\u0027s what they should be.",
+      "revId": "d0d7982620f7bda305ac28354f5b9990fb60a918",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_83915b9d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2228,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-15T14:36:58Z",
+      "side": 1,
+      "message": "Each of these \u0027env-var\u0027s really seem more like values than names of environment variables as is suggested by the docstring. Think changing the name and/or docstring would be a good idea here to make it clearer as to what they should contain. I\u0027d probably be only able to guess based on the example as what they are.\n\nBut then reading the help https://github.com/jenkinsci/m2release-plugin/blob/master/src/main/webapp/help-projectConfig-scmPasswordEnvVar.html for one of these suggests that actually they should contain variable names, which means the tests should be updated to indicate that it\u0027s ENV names not values.",
+      "revId": "d0d7982620f7bda305ac28354f5b9990fb60a918",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_63a9cf90",
+        "filename": "tests/wrappers/fixtures/maven-release001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-15T14:36:58Z",
+      "side": 1,
+      "message": "This env-var makes sense.",
+      "revId": "d0d7982620f7bda305ac28354f5b9990fb60a918",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_4385b305",
+        "filename": "tests/wrappers/fixtures/maven-release001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-15T14:36:58Z",
+      "side": 1,
+      "message": "However this one does not, RELEASE_TEST_USER would be clearer assuming it should be the name of an environment variable that contains the value to be used.",
+      "revId": "d0d7982620f7bda305ac28354f5b9990fb60a918",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_c3a8837a",
+        "filename": "tests/wrappers/fixtures/maven-release002.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-15T14:36:58Z",
+      "side": 1,
+      "message": "As mentioned before, these don\u0027t align with the current docstring description, and the help suggests it should be the variable name rather than the contents supplied.",
+      "revId": "d0d7982620f7bda305ac28354f5b9990fb60a918",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
