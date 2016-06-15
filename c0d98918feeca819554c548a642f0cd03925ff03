@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_119c985c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 930,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-15T14:23:55Z",
+      "side": 1,
+      "message": "If you have a chance could we go with 4 space indents rather than 2, makes it easier to move towards the same style through out all the docstrings.",
+      "revId": "c0d98918feeca819554c548a642f0cd03925ff03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_914408b8",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 957,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-15T14:23:55Z",
+      "side": 1,
+      "message": "naming is off compared to the code.",
+      "revId": "c0d98918feeca819554c548a642f0cd03925ff03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aa08908_911b68ca",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 999,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-15T14:23:55Z",
+      "side": 1,
+      "message": "This is not a switch to use the mapping function, this is changing the support input format.",
+      "revId": "c0d98918feeca819554c548a642f0cd03925ff03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
