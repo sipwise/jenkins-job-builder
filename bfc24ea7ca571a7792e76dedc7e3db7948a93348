@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_c3e08399",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-06-15T14:42:32Z",
+      "side": 1,
+      "message": "Do you need to point \u0027STABLE\u0027 at \u0027SUCCESS\u0027 threshold in the hudson_model as well, because it currently doesn\u0027t appear.",
+      "revId": "bfc24ea7ca571a7792e76dedc7e3db7948a93348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
