@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_f459de5c",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-06-16T02:27:25Z",
+      "side": 1,
+      "message": "i thought should add \u0027require gitlab plugin\u0027",
+      "revId": "605e89651c3c2b9669083a4b79240dd7b1896df6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
