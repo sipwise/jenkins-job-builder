@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_54f0b2c9",
+        "filename": "tests/publishers/fixtures/jacoco001.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-06-16T01:59:38Z",
+      "side": 1,
+      "message": "Changed status-update to update-build-status because status-update was not an option. I believe the original intent was update-build-status.",
+      "range": {
+        "startLine": 6,
+        "startChar": 6,
+        "endLine": 6,
+        "endChar": 25
+      },
+      "revId": "c73dbd8bc73f7e50bc8fe17b95b86ed0f24df8bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
