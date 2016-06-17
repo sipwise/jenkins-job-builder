@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aa08908_ef86cbb7",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-06-17T14:28:57Z",
+      "side": 1,
+      "message": "What happens if someone:\n\n1. Sets this config \u0026 upload job\n2. Unset this config \u0026 reupload job\n\nDoes the previous setting stick or does it get removed/reverted to whatever the default for the plugin is?\n\nWe\u0027ve found in the past that \"optional\" settings have very different meaning depending on the Jenkins plugin and that unconfiguring a setting sometimes means to reset to a default of the plugin and other times it means to keep the previously configured setting. We\u0027re starting to prefer setting defaults rather than optional settings in cases where unsetting a setting keeps the previously configured setting so that JJB can be more deterministic in what happens if a setting is unset.",
+      "revId": "453219c72ffd9bfa4781ba268a8b57b206f9b0d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
