@@ -40,6 +40,7 @@ from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.errors import MissingAttributeError
 import jenkins_jobs.modules.base
 from jenkins_jobs.modules import hudson_model
+from jenkins_jobs.modules.helpers import convert_mapping_to_xml
 
 logger = logging.getLogger(str(__name__))
 
@@ -1494,24 +1495,24 @@ def script(parser, xml_parent, data):
 
     .. literalinclude:: /../../tests/triggers/fixtures/script001.yaml
     """
-    data = data if data else {}
     st = XML.SubElement(
         xml_parent,
         'org.jenkinsci.plugins.scripttrigger.ScriptTrigger'
     )
+    st.set('plugin', 'scripttrigger')
     label = data.get('label')
+    mappings = [
+        ('script', 'script', ''),
+        ('script-file-path', 'scriptFilePath', ''),
+        ('cron', 'spec', ''),
+        ('enable-concurrent', 'enableConcurrentBuild', False),
+        ('exit-code', 'exitCode', 0)
+    ]
+    convert_mapping_to_xml(st, data, mappings, fail_required=True)
 
-    XML.SubElement(st, 'script').text = str(data.get('script', ''))
-    if 'script-file-path' in data:
-        XML.SubElement(st, 'scriptFilePath').text = str(
-            data.get('script-file-path'))
-    XML.SubElement(st, 'spec').text = str(data.get('cron', ''))
     XML.SubElement(st, 'labelRestriction').text = str(bool(label)).lower()
     if label:
         XML.SubElement(st, 'triggerLabel').text = label
-    XML.SubElement(st, 'enableConcurrentBuild').text = str(
-        data.get('enable-concurrent', False)).lower()
-    XML.SubElement(st, 'exitCode').text = str(data.get('exit-code', 0))
 
 
 def groovy_script(parser, xml_parent, data):
