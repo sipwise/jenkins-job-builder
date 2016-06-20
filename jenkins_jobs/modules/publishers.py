@@ -3325,40 +3325,46 @@ def robot(parser, xml_parent, data):
         (default 'log.html')
     :arg str output-xml: Name of the xml file containing robot output
         (default 'output.xml')
-    :arg str pass-threshold: Minimum percentage of passed tests to consider
+    :arg float pass-threshold: Minimum percentage of passed tests to consider
         the build successful (default 0.0)
-    :arg str unstable-threshold: Minimum percentage of passed test to
+    :arg float unstable-threshold: Minimum percentage of passed test to
         consider the build as not failed (default 0.0)
+    :arg bool enable-cache: Enable cache for test results (default true)
     :arg bool only-critical: Take only critical tests into account when
         checking the thresholds (default true)
     :arg list other-files: list other files to archive (default '')
     :arg bool archive-output-xml: Archive output xml file to server
         (default true)
 
-    Example:
+    Full Example:
 
-    .. literalinclude:: /../../tests/publishers/fixtures/robot001.yaml
+    .. literalinclude:: /../../tests/publishers/fixtures/robot-full.yaml
+       :language: yaml
+
+    Minimal Example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/robot-minimal.yaml
        :language: yaml
     """
     parent = XML.SubElement(xml_parent, 'hudson.plugins.robot.RobotPublisher')
-    XML.SubElement(parent, 'outputPath').text = data['output-path']
-    XML.SubElement(parent, 'logFileLink').text = str(
-        data.get('log-file-link', ''))
-    XML.SubElement(parent, 'reportFileName').text = str(
-        data.get('report-html', 'report.html'))
-    XML.SubElement(parent, 'logFileName').text = str(
-        data.get('log-html', 'log.html'))
-    XML.SubElement(parent, 'outputFileName').text = str(
-        data.get('output-xml', 'output.xml'))
-    XML.SubElement(parent, 'passThreshold').text = str(
-        data.get('pass-threshold', 0.0))
-    XML.SubElement(parent, 'unstableThreshold').text = str(
-        data.get('unstable-threshold', 0.0))
-    XML.SubElement(parent, 'onlyCritical').text = str(
-        data.get('only-critical', True)).lower()
-    other_files = XML.SubElement(parent, 'otherFiles')
-    for other_file in data['other-files']:
-        XML.SubElement(other_files, 'string').text = str(other_file)
+    parent.set('plugin', 'robot')
+    mappings = [
+        ('output-path', 'outputPath', ''),
+        ('log-file-link', 'logFileLink', ''),
+        ('report-html', 'reportFileName', 'report.html'),
+        ('log-html', 'logFileName', 'log.html'),
+        ('output-xml', 'outputFileName', 'output.xml'),
+        ('pass-threshold', 'passThreshold', 0.0),
+        ('unstable-threshold', 'unstableThreshold', 0.0),
+        ('enable-cache', 'enableCache', True),
+        ('only-critical', 'onlyCritical', True),
+    ]
+    convert_mapping_to_xml(parent, data, mappings, fail_required=True)
+
+    if 'other-files' in data:
+        other_files = XML.SubElement(parent, 'otherFiles')
+        for other_file in data['other-files']:
+            XML.SubElement(other_files, 'string').text = str(other_file)
     XML.SubElement(parent, 'disableArchiveOutput').text = str(
         not data.get('archive-output-xml', True)).lower()
 

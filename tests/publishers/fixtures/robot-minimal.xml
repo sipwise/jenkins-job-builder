@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <publishers>
+    <hudson.plugins.robot.RobotPublisher plugin="robot">
+      <outputPath/>
+      <logFileLink/>
+      <reportFileName>report.html</reportFileName>
+      <logFileName>log.html</logFileName>
+      <outputFileName>output.xml</outputFileName>
+      <passThreshold>0.0</passThreshold>
+      <unstableThreshold>0.0</unstableThreshold>
+      <enableCache>true</enableCache>
+      <onlyCritical>true</onlyCritical>
+      <disableArchiveOutput>false</disableArchiveOutput>
+    </hudson.plugins.robot.RobotPublisher>
+  </publishers>
+</project>
