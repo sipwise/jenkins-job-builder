@@ -3341,21 +3341,18 @@ def robot(parser, xml_parent, data):
        :language: yaml
     """
     parent = XML.SubElement(xml_parent, 'hudson.plugins.robot.RobotPublisher')
-    XML.SubElement(parent, 'outputPath').text = data['output-path']
-    XML.SubElement(parent, 'logFileLink').text = str(
-        data.get('log-file-link', ''))
-    XML.SubElement(parent, 'reportFileName').text = str(
-        data.get('report-html', 'report.html'))
-    XML.SubElement(parent, 'logFileName').text = str(
-        data.get('log-html', 'log.html'))
-    XML.SubElement(parent, 'outputFileName').text = str(
-        data.get('output-xml', 'output.xml'))
-    XML.SubElement(parent, 'passThreshold').text = str(
-        data.get('pass-threshold', 0.0))
-    XML.SubElement(parent, 'unstableThreshold').text = str(
-        data.get('unstable-threshold', 0.0))
-    XML.SubElement(parent, 'onlyCritical').text = str(
-        data.get('only-critical', True)).lower()
+    mappings = [
+        ('output-path', 'outputPath', ''),
+        ('log-file-link', 'logFileLink', ''),
+        ('report-html', 'reportFileName', 'report.html'),
+        ('log-html', 'logFileName', 'log.html'),
+        ('output-xml', 'outputFileName', 'output.xml'),
+        ('pass-threshold', 'passThreshold', 0.0),
+        ('unstable-threshold', 'unstableThreshold', 0.0),
+        ('only-critical', 'onlyCritical', True),
+    ]
+    convert_mapping_to_xml(parent, data, mappings, fail_required=True)
+
     other_files = XML.SubElement(parent, 'otherFiles')
     for other_file in data['other-files']:
         XML.SubElement(other_files, 'string').text = str(other_file)
