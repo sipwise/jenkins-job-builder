@@ -30,6 +30,8 @@ Example::
 """
 
 import logging
+import operator
+import pkg_resources
 import re
 import xml.etree.ElementTree as XML
 
@@ -40,6 +42,7 @@ from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.errors import MissingAttributeError
 import jenkins_jobs.modules.base
 from jenkins_jobs.modules import hudson_model
+from jenkins_jobs.modules.helpers import convert_mapping_to_xml
 
 logger = logging.getLogger(str(__name__))
 
@@ -1064,68 +1067,149 @@ def gitlab_merge_request(parser, xml_parent, data):
 
 def gitlab(parser, xml_parent, data):
     """yaml: gitlab
-    Makes Jenkins act like a GitlabCI server
-    Requires the Jenkins :jenkins-wiki:`Gitlab Plugin.
+    Makes Jenkins act like a GitLab CI server
+    Requires the Jenkins :jenkins-wiki:`Gitlab Plugin
     <Gitlab+Plugin>`.
 
     :arg bool trigger-push: Build on Push Events (default true)
     :arg bool trigger-merge-request: Build on Merge Request Events (default
-        True)
+        true)
     :arg bool trigger-open-merge-request-push: Rebuild open Merge Requests on
-        Push Events (default True)
-    :arg bool ci-skip: Enable [ci-skip] (default True)
+        Push Events (default true)
+    :arg bool ci-skip: Enable skipping builds of commits that contain
+        [ci-skip] in the commit message (default True)
     :arg bool set-build-description: Set build description to build cause
-        (eg. Merge request or Git Push ) (default True)
+        (eg. Merge request or Git Push) (default True)
     :arg bool add-note-merge-request: Add note with build status on
         merge requests (default True)
     :arg bool add-vote-merge-request: Vote added to note with build status
         on merge requests (default True)
     :arg bool add-ci-message: Add CI build status (default False)
-    :arg bool allow-all-branches: Allow all branches (Ignoring Filtered
-        Branches) (default False)
-    :arg list include-branches: Defined list of branches to include
-        (default [])
-    :arg list exclude-branches: Defined list of branches to exclude
-        (default [])
+    :arg bool accept-merge-request-on-success: Automatically accept the Merge
+        Request if the build is successful (default False)
+    :arg string branch-filter-type: Filter branches that can trigger a build.
+        Valid values and their additional attributes are described in the
+        `branch filter type`_ table (optional).
 
-    Example:
+    .. _`branch filter type`:
+
+    ================== ====================================================
+    Branch filter type Description
+    ================== ====================================================
+    All                All branches are allowed to trigger this job.
+    NameBasedFilter    Filter branches by name.
+                       List source branches that are allowed to trigger a
+                       build from a Push event or a Merge Request event. If
+                       both fields are left empty, all branches are allowed
+                       to trigger this job. For Merge Request events only
+                       the target branch name is filtered out by the
+                       include and exclude lists.
+
+                         * **filter-include-branches** (`list`) -- Defined
+                           list of branches to include (default [])
+                         * **filter-exclude-branches** (`list`) -- Defined
+                           list of branches to exclude (default [])
+
+    RegexBasedFilter   Filter branches by regex
+                       The target branch regex allows to limit the execution of
+                       this job to certain branches. Any branch matching the
+                       specified pattern triggers the job. No filtering is
+                       performed if the field is left empty.
+
+                         * **filter-branch-regex** (`str`) -- Regular
+                           expression to select branches. (default '')
+    ================== ====================================================
+
+    Examples:
 
     .. literalinclude::
         /../../tests/triggers/fixtures/gitlab001.yaml
+
+    .. literalinclude::
+        /../../tests/triggers/fixtures/gitlab002.yaml
+
+    .. literalinclude::
+        /../../tests/triggers/fixtures/gitlab003.yaml
     """
     def _add_xml(elem, name, value):
         XML.SubElement(elem, name).text = value
 
-    gitlab = XML.SubElement(
+    plugin_info = parser.registry.get_plugin_info('GitLab Plugin')
+    plugin_ver = pkg_resources.parse_version(plugin_info.get(
+        'version', '0'))
+
+    plugin = XML.SubElement(
         xml_parent, 'com.dabsquared.gitlabjenkins.GitLabPushTrigger'
     )
 
-    bool_mapping = (
+    mapping = [
         ('trigger-push', 'triggerOnPush', True),
         ('trigger-merge-request', 'triggerOnMergeRequest', True),
-        ('trigger-open-merge-request-push', 'triggerOpenMergeRequestOnPush',
-            True),
         ('ci-skip', 'ciSkip', True),
         ('set-build-description', 'setBuildDescription', True),
         ('add-note-merge-request', 'addNoteOnMergeRequest', True),
-        ('add-vote-merge-request', 'addVoteOnMergeRequest', True),
-        ('add-ci-message', 'addCiMessage', False),
-        ('allow-all-branches', 'allowAllBranches', False),
-    )
-    list_mapping = (
-        ('include-branches', 'includeBranchesSpec', []),
-        ('exclude-branches', 'excludeBranchesSpec', []),
-    )
+    ]
 
-    XML.SubElement(gitlab, 'spec').text = ''
+    gitlab.plugin_ver = plugin_ver
+    gitlab.mapping = mapping
 
-    for yaml_name, xml_name, default_val in bool_mapping:
-        value = str(data.get(yaml_name, default_val)).lower()
-        _add_xml(gitlab, xml_name, value)
+    def _add_to_mapping(mapping_entry, version, opr=operator.ge):
+        if opr(gitlab.plugin_ver, pkg_resources.parse_version(version)):
+            gitlab.mapping.append(mapping_entry)
+        elif mapping_entry[0] in data:
+            logger.warn("%s invalid with plugin version %s, ignoring" %
+                        (mapping_entry[0], gitlab.plugin_ver))
 
-    for yaml_name, xml_name, default_val in list_mapping:
-        value = ', '.join(data.get(yaml_name, default_val))
-        _add_xml(gitlab, xml_name, value)
+    if plugin_ver < pkg_resources.parse_version('1.1.26'):
+        mapping += [('trigger-open-merge-request-push',
+                     'triggerOpenMergeRequestOnPush', True)]
+    else:
+        mapping += [('trigger-open-merge-request-push',
+                     'triggerOpenMergeRequestOnPush',
+                     'never', ['never', 'source', 'both'])]
+
+    _add_to_mapping(('add-vote-merge-request',
+                     'addVoteOnMergeRequest', True), '1.1.27')
+    _add_to_mapping(('accept-merge-request-on-success',
+                     'acceptMergeRequestOnSuccess', False), '1.1.27')
+    _add_to_mapping(('allow-all-branches', 'allowAllBranches', False),
+                    '1.1.29', operator.lt)
+    _add_to_mapping(('trigger-note-request', 'triggerOnNoteRequest', True),
+                    '1.2.4')
+    _add_to_mapping(('note-regex', 'noteRegex',
+                     'Jenkins please retry a build'), '1.2.4')
+    _add_to_mapping(('work-in-progress-skip',
+                     'skipWorkInProgressMergeRequest', True), '1.2.4')
+
+    if (plugin_ver >= pkg_resources.parse_version('1.1.28') and
+            plugin_ver < pkg_resources.parse_version('1.2.0')):
+        mapping += [('add-ci-message', 'addCiMessage', False)]
+    elif 'add-ci-message' in data:
+        if plugin_ver < pkg_resources.parse_version('1.1.28'):
+            warning = "ignoring"
+        else:
+            warning = "use gitlab-notifier instead"
+        logger.warn("add-ci-message invalid with plugin version %s, %s"
+                    % (gitlab.plugin_ver, warning))
+
+    if (plugin_ver >= pkg_resources.parse_version('1.1.29') and
+            plugin_ver < pkg_resources.parse_version('1.2.0')):
+        if data.get('branch-filter-type', '') == 'All':
+            data['branch-filter-type'] = ''
+        mapping += [('branch-filter-type', 'branchFilterName',
+                     '', ['', 'NameBasedFilter', 'RegexBasedFilter'])]
+    elif plugin_ver >= pkg_resources.parse_version('1.2.0'):
+        mapping += [('branch-filter-type', 'branchFilterType',
+                     'All', ['All', 'NameBasedFilter', 'RegexBasedFilter'])]
+
+    mapping += [
+        ('filter-include-branches', 'includeBranchesSpec', []),
+        ('filter-exclude-branches', 'excludeBranchesSpec', []),
+        ('filter-branch-regex', 'targetBranchRegex', ''),
+    ]
+
+    XML.SubElement(plugin, 'spec').text = ''
+    convert_mapping_to_xml(plugin, data, mapping, fail_required=True)
 
 
 def build_result(parser, xml_parent, data):

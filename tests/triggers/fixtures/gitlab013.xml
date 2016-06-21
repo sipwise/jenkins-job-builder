@@ -9,7 +9,12 @@
       <setBuildDescription>true</setBuildDescription>
       <addNoteOnMergeRequest>true</addNoteOnMergeRequest>
       <triggerOpenMergeRequestOnPush>never</triggerOpenMergeRequestOnPush>
-      <allowAllBranches>false</allowAllBranches>
+      <addVoteOnMergeRequest>true</addVoteOnMergeRequest>
+      <acceptMergeRequestOnSuccess>false</acceptMergeRequestOnSuccess>
+      <triggerOnNoteRequest>true</triggerOnNoteRequest>
+      <noteRegex>Jenkins please retry a build</noteRegex>
+      <skipWorkInProgressMergeRequest>true</skipWorkInProgressMergeRequest>
+      <branchFilterType>All</branchFilterType>
       <includeBranchesSpec/>
       <excludeBranchesSpec/>
       <targetBranchRegex/>

@@ -2,11 +2,14 @@ triggers:
   - gitlab:
       trigger-push: false
       trigger-merge-request: false
-      trigger-open-merge-request-push: false
+      trigger-open-merge-request-push: both
       ci-skip: false
       set-build-description: false
       add-note-merge-request: false
-      allow-all-branches: true
+      add-vote-merge-request: false
+      accept-merge-request-on-success: true
+      add-ci-message: true
+      branch-filter-type: All
       filter-include-branches:
           - include1
           - include2

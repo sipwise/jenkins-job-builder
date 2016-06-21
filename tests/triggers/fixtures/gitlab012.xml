@@ -8,11 +8,13 @@
       <ciSkip>false</ciSkip>
       <setBuildDescription>false</setBuildDescription>
       <addNoteOnMergeRequest>false</addNoteOnMergeRequest>
-      <triggerOpenMergeRequestOnPush>false</triggerOpenMergeRequestOnPush>
-      <allowAllBranches>true</allowAllBranches>
+      <triggerOpenMergeRequestOnPush>both</triggerOpenMergeRequestOnPush>
+      <addVoteOnMergeRequest>false</addVoteOnMergeRequest>
+      <acceptMergeRequestOnSuccess>true</acceptMergeRequestOnSuccess>
+      <branchFilterType>RegexBasedFilter</branchFilterType>
       <includeBranchesSpec>include1, include2</includeBranchesSpec>
       <excludeBranchesSpec>exclude1, exclude2</excludeBranchesSpec>
-      <targetBranchRegex/>
+      <targetBranchRegex>(.*debug.*|.*release.*)</targetBranchRegex>
     </com.dabsquared.gitlabjenkins.GitLabPushTrigger>
   </triggers>
 </project>
