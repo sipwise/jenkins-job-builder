@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_5de75c12",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1813,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-06-21T20:17:00Z",
+      "side": 1,
+      "message": "Just wondering, do we need this to be False? From what I can tell, this can be 0 and we wouldn\u0027t need the try and except keyerror and if-else at the bottom.",
+      "range": {
+        "startLine": 1813,
+        "startChar": 47,
+        "endLine": 1813,
+        "endChar": 52
+      },
+      "revId": "fde30142464dfc534342eabc291682c03937f520",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
