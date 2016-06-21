@@ -8,8 +8,11 @@
       <ciSkip>false</ciSkip>
       <setBuildDescription>false</setBuildDescription>
       <addNoteOnMergeRequest>false</addNoteOnMergeRequest>
-      <triggerOpenMergeRequestOnPush>false</triggerOpenMergeRequestOnPush>
+      <triggerOpenMergeRequestOnPush>both</triggerOpenMergeRequestOnPush>
+      <addVoteOnMergeRequest>false</addVoteOnMergeRequest>
+      <acceptMergeRequestOnSuccess>true</acceptMergeRequestOnSuccess>
       <allowAllBranches>true</allowAllBranches>
+      <addCiMessage>true</addCiMessage>
       <includeBranchesSpec>include1, include2</includeBranchesSpec>
       <excludeBranchesSpec>exclude1, exclude2</excludeBranchesSpec>
       <targetBranchRegex/>

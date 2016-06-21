@@ -2,7 +2,7 @@ triggers:
   - gitlab:
       trigger-push: false
       trigger-merge-request: false
-      trigger-open-merge-request-push: false
+      trigger-open-merge-request-push: both
       ci-skip: false
       set-build-description: false
       add-note-merge-request: false

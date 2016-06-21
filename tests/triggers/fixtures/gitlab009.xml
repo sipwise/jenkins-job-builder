@@ -9,7 +9,10 @@
       <setBuildDescription>true</setBuildDescription>
       <addNoteOnMergeRequest>true</addNoteOnMergeRequest>
       <triggerOpenMergeRequestOnPush>never</triggerOpenMergeRequestOnPush>
-      <allowAllBranches>false</allowAllBranches>
+      <addVoteOnMergeRequest>true</addVoteOnMergeRequest>
+      <acceptMergeRequestOnSuccess>false</acceptMergeRequestOnSuccess>
+      <addCiMessage>false</addCiMessage>
+      <branchFilterName/>
       <includeBranchesSpec/>
       <excludeBranchesSpec/>
       <targetBranchRegex/>

@@ -494,7 +494,10 @@ def convert_mapping_to_xml(parent, data, mapping, fail_required=False):
     value for all paramters that are not required instead.
     """
     for elem in mapping:
-        (optname, xmlname, val) = elem
+        # Allow mapping to have an optional fourth element with allowed values
+        elem = elem + (None,)
+        (optname, xmlname, val, allowed) = elem[:4]
+
         val = data.get(optname, val)
 
         # Use fail_required setting to allow support for optional parameters
@@ -509,6 +512,12 @@ def convert_mapping_to_xml(parent, data, mapping, fail_required=False):
         if val is None and fail_required is False:
             continue
 
+        # Optionally validate allowed values
+        if allowed is not None and val not in allowed:
+            raise InvalidAttributeError(optname, val, allowed)
+
         if type(val) == bool:
             val = str(val).lower()
+        elif type(val) == list:
+            val = ', '.join(val)
         XML.SubElement(parent, xmlname).text = str(val)
