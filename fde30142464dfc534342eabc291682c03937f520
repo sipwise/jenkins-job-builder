@@ -22,6 +22,30 @@
       "revId": "fde30142464dfc534342eabc291682c03937f520",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_78c5065a",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1813,
+      "author": {
+        "id": 21595
+      },
+      "writtenOn": "2016-06-21T20:27:57Z",
+      "side": 1,
+      "message": "You are correct, this was an issue while I was developing this. Didn\u0027t account for max-retry being an optional argument first. I will correct this.",
+      "parentUuid": "3aaa91ec_5de75c12",
+      "range": {
+        "startLine": 1813,
+        "startChar": 47,
+        "endLine": 1813,
+        "endChar": 52
+      },
+      "revId": "fde30142464dfc534342eabc291682c03937f520",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
