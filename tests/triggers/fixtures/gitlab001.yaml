@@ -2,17 +2,11 @@ triggers:
   - gitlab:
       trigger-push: true
       trigger-merge-request: true
-      trigger-open-merge-request-push: true
+      trigger-open-merge-request-push: never
       ci-skip: true
       set-build-description: true
       add-note-merge-request: true
       add-vote-merge-request: true
       add-ci-message: true
-      allow-all-branches: true
-      include-branches:
-        - 'master'
-        - 'master2'
-        - 'local-test'
-      exclude-branches:
-        - 'broken-test'
-        - 'master-foo'
+      accept-merge-request-on-success: true
+      branch-filter-type: All

@@ -1,6 +1,7 @@
 triggers:
   - gitlab:
-      include-branches:
+      branch-filter-type: NameBasedFilter
+      filter-include-branches:
         - 'master'
-      exclude-branches:
+      filter-exclude-branches:
         - 'feature'

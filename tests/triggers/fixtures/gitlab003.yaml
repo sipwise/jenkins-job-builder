@@ -1,8 +1,4 @@
 triggers:
   - gitlab:
-      include-branches:
-        - 'master'
-      exclude-branches:
-        - 'baz'
-        - 'foo'
-        - 'fnord'
+      branch-filter-type: RegexBasedFilter
+      filter-branch-regex: '(.*debug.*|.*release.*)'

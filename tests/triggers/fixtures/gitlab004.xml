@@ -12,9 +12,9 @@
       <addCiMessage>false</addCiMessage>
       <acceptMergeRequestOnSuccess>false</acceptMergeRequestOnSuccess>
       <triggerOpenMergeRequestOnPush>never</triggerOpenMergeRequestOnPush>
-      <branchFilterType>NameBasedFilter</branchFilterType>
-      <includeBranchesSpec>master</includeBranchesSpec>
-      <excludeBranchesSpec>feature</excludeBranchesSpec>
+      <branchFilterType>All</branchFilterType>
+      <includeBranchesSpec/>
+      <excludeBranchesSpec/>
       <targetBranchRegex/>
     </com.dabsquared.gitlabjenkins.GitLabPushTrigger>
   </triggers>

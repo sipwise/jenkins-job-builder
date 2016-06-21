@@ -1054,8 +1054,8 @@ def gitlab_merge_request(parser, xml_parent, data):
 
 def gitlab(parser, xml_parent, data):
     """yaml: gitlab
-    Makes Jenkins act like a GitlabCI server
-    Requires the Jenkins :jenkins-wiki:`Gitlab Plugin.
+    Makes Jenkins act like a GitLab CI server
+    Requires the Jenkins :jenkins-wiki:`Gitlab Plugin
     <Gitlab+Plugin>`.
 
     :arg bool trigger-push: Build on Push Events (default true)
@@ -1063,25 +1063,60 @@ def gitlab(parser, xml_parent, data):
         True)
     :arg bool trigger-open-merge-request-push: Rebuild open Merge Requests on
         Push Events (default True)
-    :arg bool ci-skip: Enable [ci-skip] (default True)
+    :arg bool ci-skip: Enable skipping builds of commits that contain
+        [ci-skip] in the commit message (default True)
     :arg bool set-build-description: Set build description to build cause
-        (eg. Merge request or Git Push ) (default True)
+        (eg. Merge request or Git Push) (default True)
     :arg bool add-note-merge-request: Add note with build status on
         merge requests (default True)
     :arg bool add-vote-merge-request: Vote added to note with build status
         on merge requests (default True)
     :arg bool add-ci-message: Add CI build status (default False)
-    :arg bool allow-all-branches: Allow all branches (Ignoring Filtered
-        Branches) (default False)
-    :arg list include-branches: Defined list of branches to include
-        (default [])
-    :arg list exclude-branches: Defined list of branches to exclude
-        (default [])
+    :arg bool accept-merge-request-on-success: Automatically accept the Merge
+        Request if the build is successful (default False)
+    :arg string branch-filter-type: Filter branches that can trigger a build.
+        Valid values and their additional attributes are described in the
+        `branch filter type`_ table (optional).
 
-    Example:
+    .. _`branch filter type`:
+
+    ================== ====================================================
+    Branch filter type Description
+    ================== ====================================================
+    All                All branches are allowed to trigger this job.
+    NameBasedFilter    Filter branches by name.
+                       List source branches that are allowed to trigger a
+                       build from a Push event or a Merge Request event. If
+                       both fields are left empty, all branches are allowed
+                       to trigger this job. For Merge Request events only
+                       the target branch name is filtered out by the
+                       include and exclude lists.
+
+                         * **filter-include-branches** (`list`) -- Defined
+                           list of branches to include (default [])
+                         * **filter-exclude-branches** (`list`) -- Defined
+                           list of branches to exclude (default [])
+
+    RegexBasedFilter   Filter branches by regex
+                       The target branch regex allows to limit the execution of
+                       this job to certain branches. Any branch matching the
+                       specified pattern triggers the job. No filtering is
+                       performed if the field is left empty.
+
+                         * **filter-branch-regex** (`str`) -- Regular
+                           expression to select branches. (default '')
+    ================== ====================================================
+
+    Examples:
 
     .. literalinclude::
         /../../tests/triggers/fixtures/gitlab001.yaml
+
+    .. literalinclude::
+        /../../tests/triggers/fixtures/gitlab002.yaml
+
+    .. literalinclude::
+        /../../tests/triggers/fixtures/gitlab003.yaml
     """
     def _add_xml(elem, name, value):
         XML.SubElement(elem, name).text = value
@@ -1093,18 +1128,32 @@ def gitlab(parser, xml_parent, data):
     bool_mapping = (
         ('trigger-push', 'triggerOnPush', True),
         ('trigger-merge-request', 'triggerOnMergeRequest', True),
-        ('trigger-open-merge-request-push', 'triggerOpenMergeRequestOnPush',
-            True),
         ('ci-skip', 'ciSkip', True),
         ('set-build-description', 'setBuildDescription', True),
         ('add-note-merge-request', 'addNoteOnMergeRequest', True),
         ('add-vote-merge-request', 'addVoteOnMergeRequest', True),
         ('add-ci-message', 'addCiMessage', False),
-        ('allow-all-branches', 'allowAllBranches', False),
+        ('accept-merge-request-on-success', 'acceptMergeRequestOnSuccess',
+         False),
     )
+
+    enum_mapping = (
+        ('trigger-open-merge-request-push', 'triggerOpenMergeRequestOnPush',
+         ['never', 'source', 'both'], 'never'),
+        ('branch-filter-type', 'branchFilterType',
+         ['All', 'NameBasedFilter', 'RegexBasedFilter'], 'All')
+    )
+
     list_mapping = (
-        ('include-branches', 'includeBranchesSpec', []),
-        ('exclude-branches', 'excludeBranchesSpec', []),
+        ('filter-include-branches', 'includeBranchesSpec', [],
+         ('branch-filter-type', 'NameBasedFilter')),
+        ('filter-exclude-branches', 'excludeBranchesSpec', [],
+         ('branch-filter-type', 'NameBasedFilter'))
+    )
+
+    string_mapping = (
+        ('filter-branch-regex', 'targetBranchRegex', '',
+         ('branch-filter-type', 'RegexBasedFilter')),
     )
 
     XML.SubElement(gitlab, 'spec').text = ''
@@ -1113,8 +1162,31 @@ def gitlab(parser, xml_parent, data):
         value = str(data.get(yaml_name, default_val)).lower()
         _add_xml(gitlab, xml_name, value)
 
-    for yaml_name, xml_name, default_val in list_mapping:
+    for yaml_name, xml_name, valid_val, default_val in enum_mapping:
+        value = data.get(yaml_name, default_val)
+        if value not in valid_val:
+            raise JenkinsJobsException("%s must be one of %s" %
+                                       yaml_name, ", ".join(valid_val))
+        _add_xml(gitlab, xml_name, value)
+
+    for yaml_name, xml_name, default_val, dependency in list_mapping:
+        if dependency is not None and data.get(yaml_name):
+            dependent_option, dependent_value = dependency
+            if not data.get(dependent_option) == dependent_value:
+                raise JenkinsJobsException("%s is only valid if %s is %s" %
+                                           (yaml_name, dependent_option,
+                                            dependent_value))
         value = ', '.join(data.get(yaml_name, default_val))
+        _add_xml(gitlab, xml_name, value)
+
+    for yaml_name, xml_name, default_val, dependency in string_mapping:
+        if dependency is not None and data.get(yaml_name):
+            dependent_option, dependent_value = dependency
+            if not data.get(dependent_option) == dependent_value:
+                raise JenkinsJobsException("%s is only valid if %s is %s" %
+                                           (yaml_name, dependent_option,
+                                            dependent_value))
+        value = data.get(yaml_name, default_val)
         _add_xml(gitlab, xml_name, value)
 
 

@@ -5,15 +5,17 @@
       <spec/>
       <triggerOnPush>true</triggerOnPush>
       <triggerOnMergeRequest>true</triggerOnMergeRequest>
-      <triggerOpenMergeRequestOnPush>true</triggerOpenMergeRequestOnPush>
       <ciSkip>true</ciSkip>
       <setBuildDescription>true</setBuildDescription>
       <addNoteOnMergeRequest>true</addNoteOnMergeRequest>
       <addVoteOnMergeRequest>true</addVoteOnMergeRequest>
       <addCiMessage>true</addCiMessage>
-      <allowAllBranches>true</allowAllBranches>
-      <includeBranchesSpec>master, master2, local-test</includeBranchesSpec>
-      <excludeBranchesSpec>broken-test, master-foo</excludeBranchesSpec>
+      <acceptMergeRequestOnSuccess>true</acceptMergeRequestOnSuccess>
+      <triggerOpenMergeRequestOnPush>never</triggerOpenMergeRequestOnPush>
+      <branchFilterType>All</branchFilterType>
+      <includeBranchesSpec/>
+      <excludeBranchesSpec/>
+      <targetBranchRegex/>
     </com.dabsquared.gitlabjenkins.GitLabPushTrigger>
   </triggers>
 </project>
