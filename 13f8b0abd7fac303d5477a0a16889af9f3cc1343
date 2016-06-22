@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_93ca42a0",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5283,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-06-22T04:52:23Z",
+      "side": 1,
+      "message": "suggest use \u0027false\u0027 here to make docstring consistent, there is another patch(https://review.openstack.org/#/c/331220/) to change all docstring \u0027False\u0027 to \u0027false\u0027",
+      "range": {
+        "startLine": 5283,
+        "startChar": 24,
+        "endLine": 5283,
+        "endChar": 29
+      },
+      "revId": "13f8b0abd7fac303d5477a0a16889af9f3cc1343",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
