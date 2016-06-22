@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_93f865e7",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1703,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-06-22T14:05:38Z",
+      "side": 1,
+      "message": "Should say (default false) to be inline with the other examples format style.",
+      "revId": "8126494d33f407a15421d9adabe190329d3d6bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_739b39ca",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1706,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-06-22T14:05:38Z",
+      "side": 1,
+      "message": "What about a test for the file-encoding too?",
+      "revId": "8126494d33f407a15421d9adabe190329d3d6bde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
