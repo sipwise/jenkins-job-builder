@@ -7,6 +7,7 @@
       <project>sonar-project.properties</project>
       <properties>sonar.views.list=myview1,myview2</properties>
       <javaOpts>-Xmx512m</javaOpts>
+      <additionalArguments>-X</additionalArguments>
     </hudson.plugins.sonar.SonarRunnerBuilder>
   </builders>
 </project>
