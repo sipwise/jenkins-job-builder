@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_e58191fc",
+        "filename": "jenkins_jobs/modules/general.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-06-24T20:18:59Z",
+      "side": 1,
+      "message": "Not sure if this was intentional but \"use\" was removed here.",
+      "revId": "d60e0386ddb6292f92de53e60bc37dbedce139e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
