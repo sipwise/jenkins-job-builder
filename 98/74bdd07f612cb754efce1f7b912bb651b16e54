@@ -1,0 +1,10 @@
+Code-Review+2: Thanh Ha <zxiiro@gmail.com>
+Code-Review+1: Kien Ha <kienha9922@gmail.com>
+Code-Review+2: Wayne Warren <waynr+launchpad@sdf.org>
+Workflow+1: Wayne Warren <waynr+launchpad@sdf.org>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Fri, 24 Jun 2016 18:39:51 +0000
+Reviewed-on: https://review.openstack.org/321300
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
