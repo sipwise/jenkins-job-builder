@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_dc6f8bfa",
+        "filename": "jenkins_jobs/formatter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 13896
+      },
+      "writtenOn": "2016-06-28T16:16:00Z",
+      "side": 1,
+      "message": "I\u0027m using an auto-pep8 emacs plugin.  When I save, it places newlines in various places which makes pep8 happy.",
+      "parentUuid": "3aaa91ec_17e117d1",
+      "revId": "b12d2d13231cfba738c361bb86362ee808516804",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_d7c02f2d",
         "filename": "jenkins_jobs/formatter.py",
         "patchSetId": 1
