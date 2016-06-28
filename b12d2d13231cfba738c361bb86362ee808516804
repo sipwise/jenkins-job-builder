@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_b1b9f67b",
+        "filename": "jenkins_jobs/formatter.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-06-28T22:33:23Z",
+      "side": 1,
+      "message": "That doesn\u0027t sound right to me. The 2 newlines introduced here shouldn\u0027t cause a pep8 failure.",
+      "parentUuid": "3aaa91ec_dc6f8bfa",
+      "revId": "b12d2d13231cfba738c361bb86362ee808516804",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_d7c02f2d",
         "filename": "jenkins_jobs/formatter.py",
         "patchSetId": 1
