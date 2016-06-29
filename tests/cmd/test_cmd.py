@@ -2,14 +2,13 @@ import os
 
 from six.moves import configparser
 from six.moves import StringIO
-import testtools
 
 from jenkins_jobs import cmd
-from tests.base import LoggingFixture
+from tests import base
 from tests.base import mock
 
 
-class CmdTestsBase(LoggingFixture, testtools.TestCase):
+class CmdTestsBase(base.BaseTestCase):
 
     fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
     parser = cmd.create_parser()
