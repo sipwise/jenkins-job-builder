@@ -15,13 +15,12 @@
 # under the License.
 
 import jenkins_jobs.builder
-from tests.base import LoggingFixture
+from tests import base
 from tests.base import mock
-from testtools import TestCase
 
 
 @mock.patch('jenkins_jobs.builder.CacheStorage', mock.MagicMock)
-class TestCaseTestBuilder(LoggingFixture, TestCase):
+class TestCaseTestBuilder(base.BaseTestCase):
     def setUp(self):
         super(TestCaseTestBuilder, self).setUp()
         self.builder = jenkins_jobs.builder.Builder(
