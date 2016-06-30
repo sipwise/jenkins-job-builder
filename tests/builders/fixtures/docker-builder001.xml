@@ -11,6 +11,8 @@
       <skipTagLatest>false</skipTagLatest>
       <skipPush>false</skipPush>
       <dockerfilePath>/tmp/</dockerfilePath>
+      <server plugin="docker-commons"/>
+      <registry plugin="docker-commons"/>
     </com.cloudbees.dockerpublish.DockerBuilder>
   </builders>
 </project>
