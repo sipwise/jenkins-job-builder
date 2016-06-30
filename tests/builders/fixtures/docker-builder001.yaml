@@ -9,4 +9,9 @@ builders:
         skip-latest: false
         skip-tag: false
         file-path: '/tmp/'
+        registry:
+          - url: 'https://registry.example.org'
+            credentials-id: 'registry-docker'
+        server:
+          - uri: 'unix:///var/run/docker.sock'
 
