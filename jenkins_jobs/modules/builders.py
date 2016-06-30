@@ -3208,6 +3208,12 @@ def docker_build_publish(parse, xml_parent, data):
 
     :arg str repo-name: Name of repository to push to.
     :arg str repo-tag: Tag for image. (default '')
+    :arg dict server:
+        * **uri** (str): Define the docker server to use. (default '')
+        * **credentials-id** (str): ID of credentials to use to connect (optional)
+    :arg dict registry: use registry to push to
+        * **url** (str) repository url to use (when empty: https://index.docker.io/v1/)
+        * **credentials-id** (str): ID of credentials to use to connect (optional)
     :arg bool no-cache: If build should be cached. (default false)
     :arg bool no-force-pull: Don't update the source image before building when
         it exists locally. (default false)
@@ -3246,6 +3252,23 @@ def docker_build_publish(parse, xml_parent, data):
     XML.SubElement(db, 'dockerfilePath').text = str(
         data.get('file-path', ''))
 
+    server = XML.SubElement(db, 'server')
+    server.set('plugin', 'docker-commons')
+    if 'server' in data:
+        server_data = data['server']
+        if 'credentials-id' in server_data:
+            XML.SubElement(server, 'credentialsId').text = server_data['credentials-id']
+        if 'uri' in server_data:
+            XML.SubElement(server, 'uri').text = server_data['uri']
+
+    registry = XML.SubElement(db, 'registry')
+    registry.set('plugin', 'docker-commons')
+    if 'registry' in data:
+        registry_data = data['registry']
+        if 'credentials-id' in registry_data:
+            XML.SubElement(registry, 'credentialsId').text = registry_data['credentials-id']
+        if 'url' in registry_data:
+            XML.SubElement(registry, 'url').text = registry_data['url']
 
 def build_name_setter(parser, xml_parent, data):
     """yaml: build-name-setter
