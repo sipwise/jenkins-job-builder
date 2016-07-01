@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_6fe38da5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-01T13:38:06Z",
+      "side": 1,
+      "message": "Rather than describing impetus for why you are personally doing this, better to focus on why does the attribute need to be set in terms of functionality or issues within JJB it adds/fixes.\n\nThat will allow anyone looking through the code/log in the future to understand why the change was made.",
+      "revId": "7ad9621e2efa769ebd36b61d5ae6fb43b0a8e68a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
