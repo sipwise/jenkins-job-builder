@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_b534a2ac",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-01T14:42:01Z",
+      "side": 1,
+      "message": "I thought I\u0027d used this before, so I took a look at the code. There appears to be a suggestion at https://github.com/jenkinsci/copyartifact-plugin/blob/1f34b2557f8bbf182e9cd97184685df364e8fff7/src/main/java/hudson/plugins/copyartifact/CopyArtifactPermissionProperty.java#L86 that the code stores projectNameList as a string and splits it up internally.\n\nIt certainly suggests that it would be saved to the config as a list of strings, but the UI interface would pass it through as a single string. I wonder if that is where the original confusion came from.",
+      "revId": "5548ac51d7ceae9c7563d56636bc1d76881e3cea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
