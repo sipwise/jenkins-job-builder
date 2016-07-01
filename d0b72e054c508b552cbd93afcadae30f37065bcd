@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_9691a9f4",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-01T16:02:51Z",
+      "side": 1,
+      "message": "Just looking at this, I wonder if we should instead be implementing an execute method in each of the commands where we\u0027ve created a subparser for each and delegating to that for what should be done for a given subcommand.\n\nOr is that part of a future patch?",
+      "revId": "d0b72e054c508b552cbd93afcadae30f37065bcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_367275e4",
+        "filename": "jenkins_jobs/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-01T16:02:51Z",
+      "side": 1,
+      "message": "Seems like this should return True or False and leave it to the caller to decide whether it\u0027s exit hard, or do something else. If we\u0027re going to make it a bit of reusable functionality.",
+      "revId": "d0b72e054c508b552cbd93afcadae30f37065bcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_f63d8dde",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-01T16:02:51Z",
+      "side": 1,
+      "message": "Looking at this, I have to wonder is there any reason we don\u0027t have the JJBConfig constructor do the magical things until we\u0027ve a better alternative?",
+      "revId": "d0b72e054c508b552cbd93afcadae30f37065bcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
