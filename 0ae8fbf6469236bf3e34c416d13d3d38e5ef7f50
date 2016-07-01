@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_9bb1fb49",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3256,
+      "author": {
+        "id": 22542
+      },
+      "writtenOn": "2016-07-01T00:26:11Z",
+      "side": 1,
+      "message": "i\u0027m unsure, because the test should be extended. The xml of the plugin shows also these xml tags when no credential or server/registry is give.",
+      "parentUuid": "3aaa91ec_3c8d6431",
+      "range": {
+        "startLine": 3255,
+        "startChar": 4,
+        "endLine": 3256,
+        "endChar": 42
+      },
+      "revId": "0ae8fbf6469236bf3e34c416d13d3d38e5ef7f50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_5c915046",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_7bac0fed",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3265,
+      "author": {
+        "id": 22542
+      },
+      "writtenOn": "2016-07-01T00:26:11Z",
+      "side": 1,
+      "message": "same..",
+      "parentUuid": "3aaa91ec_5c915046",
+      "range": {
+        "startLine": 3264,
+        "startChar": 4,
+        "endLine": 3265,
+        "endChar": 44
+      },
+      "revId": "0ae8fbf6469236bf3e34c416d13d3d38e5ef7f50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_bca03491",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 1
@@ -59,6 +107,24 @@
       "writtenOn": "2016-06-30T22:08:00Z",
       "side": 1,
       "message": "Missing two new lines here. You\u0027ll need to add one more here.",
+      "revId": "0ae8fbf6469236bf3e34c416d13d3d38e5ef7f50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_dbb70338",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3272,
+      "author": {
+        "id": 22542
+      },
+      "writtenOn": "2016-07-01T00:26:11Z",
+      "side": 1,
+      "message": "will add one then",
+      "parentUuid": "3aaa91ec_bca03491",
       "revId": "0ae8fbf6469236bf3e34c416d13d3d38e5ef7f50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
