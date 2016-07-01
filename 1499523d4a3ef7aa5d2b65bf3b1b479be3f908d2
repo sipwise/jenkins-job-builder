@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_b3a317b1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-01T15:56:18Z",
+      "side": 1,
+      "message": "Last two paragraphs are useful intro to this change, but the final might not make a huge amount of sense in the future.",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_a6911a49",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-01T15:56:18Z",
+      "side": 1,
+      "message": "I\u0027ve commented on this line before, shouldn\u0027t be adding it to every module.",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_664452b7",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-01T15:56:18Z",
+      "side": 1,
+      "message": "__ has a certain side effects in python that can make usage with subclassing more awkward lets not use it, a single \u0027_\u0027 is sufficient.",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_e6d322d4",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-01T15:56:18Z",
+      "side": 1,
+      "message": "This seems like a bad idea, why would a config object create a command line parser. Is this to work with the initial migration and is it re-factored in a later patch?\n\nOr something that potentially needs to be done subsequently?",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_6149dcb7",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-01T15:56:18Z",
+      "side": 1,
+      "message": "Lets not do multiline exceptions like this, use that we can split strings across multiple lines within function calls and brackets.\n\n    raise JJBConfigException(\n        \"A valid configuration file is required.\\n\"\n        \"{0} is not valid.\".format(config_filename))",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_f3111f06",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-01T15:56:18Z",
+      "side": 1,
+      "message": "I think by convention this should be at the top.",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_41f780d4",
+        "filename": "tests/cmd/test_cmd.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-01T15:56:18Z",
+      "side": 1,
+      "message": "So we haven\u0027t been testing this at all, oops.",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3aaa91ec_a18aa418",
+        "filename": "tests/cmd/test_config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-01T15:56:18Z",
+      "side": 1,
+      "message": "Why explicitly return anything except for \u0027path \u003d\u003d self.global_conf\u0027? Since by default the function will return \u0027None\u0027.\n\nIf needed, just place a default \u0027return False\u0027 at the end of the side_effect.\n\nSince you\u0027re not able to distinguish between False and None anyway with the existing functionality.",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
