@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_cece03b4",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1718,
+      "author": {
+        "id": 21595
+      },
+      "writtenOn": "2016-07-01T23:08:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_d6e7bbe0",
+      "revId": "9538f6d1749498863019334595f889fa941bd4f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_b6066fcb",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_eec93fae",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1720,
+      "author": {
+        "id": 21595
+      },
+      "writtenOn": "2016-07-01T23:08:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_b6066fcb",
+      "revId": "9538f6d1749498863019334595f889fa941bd4f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_76c24735",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2016-07-01T12:59:27Z",
       "side": 1,
       "message": "If not setting this should raise an exception, should mark it as \"(required)\".",
+      "revId": "9538f6d1749498863019334595f889fa941bd4f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_4ebb330f",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1721,
+      "author": {
+        "id": 21595
+      },
+      "writtenOn": "2016-07-01T23:08:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_76c24735",
       "revId": "9538f6d1749498863019334595f889fa941bd4f8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_6ec8af75",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1809,
+      "author": {
+        "id": 21595
+      },
+      "writtenOn": "2016-07-01T23:08:28Z",
+      "side": 1,
+      "message": "Thank you for catching this.",
+      "parentUuid": "3aaa91ec_f6e597a3",
+      "revId": "9538f6d1749498863019334595f889fa941bd4f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_d6ab3b86",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 3
@@ -98,6 +170,24 @@
       "writtenOn": "2016-07-01T12:59:27Z",
       "side": 1,
       "message": "To be clear, this means that if retry is not enabled, this entry does not appear in the XML with a \u0027false\u0027 value?",
+      "revId": "9538f6d1749498863019334595f889fa941bd4f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_4e48535c",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1815,
+      "author": {
+        "id": 21595
+      },
+      "writtenOn": "2016-07-01T23:08:28Z",
+      "side": 1,
+      "message": "You are correct, it should be false if not specified as true. I will fix this. By default Jenkins will create           \u003cenableRetryStrategy\u003efalse\u003c/enableRetryStrategy\u003e\nhowever it is not necessary and is treated as this even wouthout specification.",
+      "parentUuid": "3aaa91ec_d6ab3b86",
       "revId": "9538f6d1749498863019334595f889fa941bd4f8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
