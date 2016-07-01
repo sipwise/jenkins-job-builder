@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_c2f0af93",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3256,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-07-01T05:51:58Z",
+      "side": 1,
+      "message": "We could make a minimal and full example for this.",
+      "parentUuid": "3aaa91ec_9bb1fb49",
+      "range": {
+        "startLine": 3255,
+        "startChar": 4,
+        "endLine": 3256,
+        "endChar": 42
+      },
+      "revId": "0ae8fbf6469236bf3e34c416d13d3d38e5ef7f50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_5c915046",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 1
