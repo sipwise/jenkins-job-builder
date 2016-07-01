@@ -70,6 +70,23 @@
     },
     {
       "key": {
+        "uuid": "3aaa91ec_e97012a7",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-01T16:04:09Z",
+      "side": 1,
+      "message": "It seems like we should just call do_magical_things here for now, rather than exposing that function elsewhere.",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_6149dcb7",
         "filename": "jenkins_jobs/config.py",
         "patchSetId": 2
