@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3aaa91ec_87ab4774",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-01T12:43:16Z",
+      "side": 1,
+      "message": "While I understand the desire to get recognition for what you\u0027ve done, this isn\u0027t something that should be in commit messages.\n\nIf we need to find them we can simply search for \u0027project:openstack-infra/jenkins-job-builder owner:\"Kien Ha\"\u0027\n\nOr look up stackalytics.",
+      "revId": "d65715ce0f0b9783efbdf16b74b9102fed4bf790",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
