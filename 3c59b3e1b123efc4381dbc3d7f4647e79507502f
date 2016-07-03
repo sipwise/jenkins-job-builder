@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_0c1481f3",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1740,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-07-03T13:40:12Z",
+      "side": 1,
+      "message": "use (default 0), the (optional) is not needed.",
+      "revId": "3c59b3e1b123efc4381dbc3d7f4647e79507502f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
