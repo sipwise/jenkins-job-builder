@@ -480,7 +480,8 @@ def test_fairy_common(xml_element, data):
     convert_mapping_to_xml(xml_element, data, mappings, fail_required=True)
 
 
-def convert_mapping_to_xml(parent, data, mapping, fail_required=False):
+def convert_mapping_to_xml(
+        parent, data, mapping, fail_required=False, valid_options=None):
     """Convert mapping to XML
 
     fail_required affects the last parameter of the mapping field when it's
@@ -508,6 +509,11 @@ def convert_mapping_to_xml(parent, data, mapping, fail_required=False):
         # up to the user if they want to use an empty XML tag
         if val is None and fail_required is False:
             continue
+
+        if valid_options is not None:
+            if optname in valid_options and val not in valid_options[optname]:
+                raise InvalidAttributeError(
+                    optname, val, valid_options[optname])
 
         if type(val) == bool:
             val = str(val).lower()
