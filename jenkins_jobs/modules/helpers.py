@@ -480,7 +480,8 @@ def test_fairy_common(xml_element, data):
     convert_mapping_to_xml(xml_element, data, mappings, fail_required=True)
 
 
-def convert_mapping_to_xml(parent, data, mapping, fail_required=False):
+def convert_mapping_to_xml(
+        parent, data, mapping, fail_required=False, valid_options=None):
     """Convert mapping to XML
 
     fail_required affects the last parameter of the mapping field when it's
@@ -492,6 +493,12 @@ def convert_mapping_to_xml(parent, data, mapping, fail_required=False):
     configuring the XML tag for the parameter. We recommend for new plugins to
     set fail_required=True and instead of optional parameters provide a default
     value for all paramters that are not required instead.
+
+    valid_options provides a way to check if the value the user input is from a
+    list of available options. valid_options takes in a dictionary where the
+    'keys' are the yaml attributes and the 'values' are from a list of
+    supported values. When the user pass a value that is not supported from the
+    list, it raise an InvalidAttributeError.
     """
     for elem in mapping:
         (optname, xmlname, val) = elem
@@ -508,6 +515,11 @@ def convert_mapping_to_xml(parent, data, mapping, fail_required=False):
         # up to the user if they want to use an empty XML tag
         if val is None and fail_required is False:
             continue
+
+        if valid_options:
+            if optname in valid_options and val not in valid_options[optname]:
+                raise InvalidAttributeError(
+                    optname, val, valid_options[optname])
 
         if type(val) == bool:
             val = str(val).lower()
