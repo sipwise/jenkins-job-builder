@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_50cb691e",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 496,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-07-05T14:44:57Z",
+      "side": 1,
+      "message": "Can you provide an additional paragraph in the docstring to explain how to use valid_options?",
+      "revId": "56938de76d8994a60df64419f8b0c2a52acfc115",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
