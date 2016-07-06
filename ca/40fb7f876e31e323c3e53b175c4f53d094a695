@@ -1,0 +1,9 @@
+Code-Review+1: Kien Ha <kienha9922@gmail.com>
+Code-Review+2: Thanh Ha <zxiiro@gmail.com>
+Workflow+1: Thanh Ha <zxiiro@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Wed, 06 Jul 2016 01:11:27 +0000
+Reviewed-on: https://review.openstack.org/336274
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
