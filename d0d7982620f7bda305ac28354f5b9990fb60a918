@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_2a80cfbf",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2185,
+      "author": {
+        "id": 21746
+      },
+      "writtenOn": "2016-07-06T01:46:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_918ec8ce",
+      "revId": "d0d7982620f7bda305ac28354f5b9990fb60a918",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_117018dc",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2016-06-15T14:36:58Z",
       "side": 1,
       "message": "Should both denote default values. Btw, what actually happens if it\u0027s just a blank string being passed through?",
+      "revId": "d0d7982620f7bda305ac28354f5b9990fb60a918",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_aa6cbf35",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2189,
+      "author": {
+        "id": 21746
+      },
+      "writtenOn": "2016-07-06T01:46:31Z",
+      "side": 1,
+      "message": "Done. It defaults to https://github.com/jenkinsci/m2release-plugin/blob/78023d940d1bdc34fe2225a9c7d41fb99167cabb/src/main/java/org/jvnet/hudson/plugins/m2release/M2ReleaseBuildWrapper.java#L462",
+      "parentUuid": "7aa08908_117018dc",
       "revId": "d0d7982620f7bda305ac28354f5b9990fb60a918",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_ea724710",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2200,
+      "author": {
+        "id": 21746
+      },
+      "writtenOn": "2016-07-06T01:46:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_71235cbf",
+      "revId": "d0d7982620f7bda305ac28354f5b9990fb60a918",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_83915b9d",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 3
@@ -64,6 +118,24 @@
       "writtenOn": "2016-06-15T14:36:58Z",
       "side": 1,
       "message": "Each of these \u0027env-var\u0027s really seem more like values than names of environment variables as is suggested by the docstring. Think changing the name and/or docstring would be a good idea here to make it clearer as to what they should contain. I\u0027d probably be only able to guess based on the example as what they are.\n\nBut then reading the help https://github.com/jenkinsci/m2release-plugin/blob/master/src/main/webapp/help-projectConfig-scmPasswordEnvVar.html for one of these suggests that actually they should contain variable names, which means the tests should be updated to indicate that it\u0027s ENV names not values.",
+      "revId": "d0d7982620f7bda305ac28354f5b9990fb60a918",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_eae08798",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2228,
+      "author": {
+        "id": 21746
+      },
+      "writtenOn": "2016-07-06T01:46:31Z",
+      "side": 1,
+      "message": "Thanks! that made me read the docs over and over again and it seems like the plugin will make available in the env variable names that you give it, the values of the SCM username or password that are passed from the Perform Maven Release form on the action UI. I\u0027ve fixed the tests to reflect this",
+      "parentUuid": "7aa08908_83915b9d",
       "revId": "d0d7982620f7bda305ac28354f5b9990fb60a918",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_6aebf778",
+        "filename": "tests/wrappers/fixtures/maven-release001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 21746
+      },
+      "writtenOn": "2016-07-06T01:46:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_4385b305",
+      "revId": "d0d7982620f7bda305ac28354f5b9990fb60a918",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aa08908_c3a8837a",
         "filename": "tests/wrappers/fixtures/maven-release002.yaml",
         "patchSetId": 3
@@ -115,6 +205,24 @@
       "writtenOn": "2016-06-15T14:36:58Z",
       "side": 1,
       "message": "As mentioned before, these don\u0027t align with the current docstring description, and the help suggests it should be the variable name rather than the contents supplied.",
+      "revId": "d0d7982620f7bda305ac28354f5b9990fb60a918",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_0afb5348",
+        "filename": "tests/wrappers/fixtures/maven-release002.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 21746
+      },
+      "writtenOn": "2016-07-06T01:46:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aa08908_c3a8837a",
       "revId": "d0d7982620f7bda305ac28354f5b9990fb60a918",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
