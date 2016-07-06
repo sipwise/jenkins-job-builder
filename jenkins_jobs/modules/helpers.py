@@ -448,6 +448,8 @@ def append_git_revision_config(parent, config_def):
 
 def test_fairy_common(xml_element, data):
     xml_element.set('plugin', 'TestFairy')
+    valid_video_quality = ['high', 'medium', 'low']
+    dicts = {'video-quality': valid_video_quality}
 
     mappings = [
         # General
@@ -477,7 +479,8 @@ def test_fairy_common(xml_element, data):
         # Advanced options
         ('advanced-options', 'advancedOptions', '')
     ]
-    convert_mapping_to_xml(xml_element, data, mappings, fail_required=True)
+    convert_mapping_to_xml(
+        xml_element, data, mappings, fail_required=True, valid_options=dicts)
 
 
 def convert_mapping_to_xml(
