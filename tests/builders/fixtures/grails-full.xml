@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
   <builders>
-    <com.g2one.hudson.grails.GrailsBuilder>
+    <com.g2one.hudson.grails.GrailsBuilder plugin="grails">
       <targets>war ear</targets>
       <name>grails-2.2.2</name>
       <grailsWorkDir>./grails-work</grailsWorkDir>
@@ -10,9 +10,9 @@
       <serverPort>8003</serverPort>
       <properties>program.name=foo</properties>
       <forceUpgrade>true</forceUpgrade>
-      <nonInteractive>true</nonInteractive>
+      <nonInteractive>false</nonInteractive>
       <useWrapper>true</useWrapper>
-      <plainOutput>true</plainOutput>
+      <plainOutput>false</plainOutput>
       <stackTrace>true</stackTrace>
       <verbose>true</verbose>
       <refreshDependencies>true</refreshDependencies>
