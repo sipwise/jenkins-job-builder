@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_b9c97fae",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1896,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-07-06T22:59:53Z",
+      "side": 1,
+      "message": "Why are we changing the default behaviour here? This will impact users of this plugin by surprise. I would leave it the old way unless you have a good reason to change it.",
+      "revId": "e4e395c6b8a4f78b5491b8022ddd20de6f22d812",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_99cc83bc",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1908,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-07-06T22:59:53Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "e4e395c6b8a4f78b5491b8022ddd20de6f22d812",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
