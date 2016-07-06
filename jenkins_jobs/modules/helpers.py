@@ -448,6 +448,15 @@ def append_git_revision_config(parent, config_def):
 
 def test_fairy_common(xml_element, data):
     xml_element.set('plugin', 'TestFairy')
+    valid_max_duration = ['10m', '60m', '300m', '1440m']
+    valid_screenshot_interval = [1, 2, 5]
+    valid_video_quality = ['high', 'medium', 'low']
+
+    dicts = {
+        'max-duration': valid_max_duration,
+        'screenshot-interval': valid_screenshot_interval,
+        'video-quality': valid_video_quality,
+    }
 
     mappings = [
         # General
@@ -462,7 +471,7 @@ def test_fairy_common(xml_element, data):
         ('data-only-wifi', 'dataOnlyWifi', False),
         # Video
         ('video-enabled', 'isVideoEnabled', True),
-        ('screenshot-interval', 'screenshotInterval', '1'),
+        ('screenshot-interval', 'screenshotInterval', 1),
         ('video-quality', 'videoQuality', 'high'),
         # Metrics
         ('cpu', 'cpu', True),
@@ -477,7 +486,8 @@ def test_fairy_common(xml_element, data):
         # Advanced options
         ('advanced-options', 'advancedOptions', '')
     ]
-    convert_mapping_to_xml(xml_element, data, mappings, fail_required=True)
+    convert_mapping_to_xml(
+        xml_element, data, mappings, fail_required=True, valid_options=dicts)
 
 
 def convert_mapping_to_xml(
