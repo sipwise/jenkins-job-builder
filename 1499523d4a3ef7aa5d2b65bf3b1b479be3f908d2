@@ -104,6 +104,91 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_255c197c",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-07T16:00:00Z",
+      "side": 1,
+      "message": "I think I know what was causing me to feel something was wrong here.\n\nThe setting of the config option from options should be done by the parser as part of an extra parse options step since these are command line interface specific rather than config related.\n\nBasically if options.ignore_cache is set, we should have the parser then add that to the instance of this config class it created.\n\nPerhaps that is the plan later after the disentanglement is done, we can probably achieve it here right now as well.",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_296d13cc",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-07T16:00:00Z",
+      "side": 1,
+      "message": "I think that the \"options.*\" should look to override setting the jenkins.user and jenkins.password config settings from the parser class, and we could probably add a magic method to this cass to take care of unset config options which is really only needed for python 2.6 compatibility, but probably doesn\u0027t hurt to try and retain.",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_c59275f5",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-07T16:00:00Z",
+      "side": 1,
+      "message": "Seems like this should be in a validate method to check that the config is sane.",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_e56851f7",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-07T16:00:00Z",
+      "side": 1,
+      "message": "Similar here, a validate method for the config class would make sense for this.",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_e9014b06",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-07T16:00:00Z",
+      "side": 1,
+      "message": "I think this also needs to be split up between config and parser, where the parser sets options.path based on what the config object exposes and we probably should move some of this code to be callable as part the config object setup.",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_f3111f06",
         "filename": "jenkins_jobs/config.py",
         "patchSetId": 2
