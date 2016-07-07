@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_cc1467ea",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-07T14:37:51Z",
+      "side": 1,
+      "message": "On first glance this seems like it should be added to the mapping rather than creating another set of inputs to be passed in and looked up.",
+      "revId": "a5d640c23d892d9a48e6616134eb020478325fa2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
