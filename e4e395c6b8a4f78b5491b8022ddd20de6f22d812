@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_95b9dfce",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1896,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-07-07T04:47:13Z",
+      "side": 1,
+      "message": "I couldn\u0027t find a version where this was default to false. I tried looking around in the previous versions and either it was not supported at the time or it simply was default true.\n\nShould I change this back to false? I feel like this was a mistake when grails support was introduced.",
+      "parentUuid": "1aa78d24_b9c97fae",
+      "revId": "e4e395c6b8a4f78b5491b8022ddd20de6f22d812",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_99cc83bc",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 3
