@@ -39,6 +39,7 @@ from jenkins_jobs.errors import InvalidAttributeError
 from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.errors import MissingAttributeError
 import jenkins_jobs.modules.base
+from jenkins_jobs.modules.helpers import convert_mapping_to_xml
 
 
 def builds_chain_fingerprinter(parser, xml_parent, data):
@@ -780,6 +781,12 @@ def rebuild(parser, xml_parent, data):
 
 def build_discarder(parser, xml_parent, data):
     """yaml: build-discarder
+    This plugin provides a post-build step where you can discard old build
+    results in detailed configuration (ex. keep only builds with specified
+    status).
+
+    Requires the Jenkins :jenkins-wiki:`Discard Old Build plugin
+    <Discard+Old+Build+plugin>`.
 
     :arg int days-to-keep: Number of days to keep builds for (default -1)
     :arg int num-to-keep: Number of builds to keep (default -1)
@@ -802,14 +809,14 @@ def build_discarder(parser, xml_parent, data):
                               'jenkins.model.BuildDiscarderProperty')
     strategy = XML.SubElement(base_sub, 'strategy')
     strategy.set('class', 'hudson.tasks.LogRotator')
-    days = XML.SubElement(strategy, 'daysToKeep')
-    days.text = str(data.get('days-to-keep', -1))
-    num = XML.SubElement(strategy, 'numToKeep')
-    num.text = str(data.get('num-to-keep', -1))
-    adays = XML.SubElement(strategy, 'artifactDaysToKeep')
-    adays.text = str(data.get('artifact-days-to-keep', -1))
-    anum = XML.SubElement(strategy, 'artifactNumToKeep')
-    anum.text = str(data.get('artifact-num-to-keep', -1))
+
+    mappings = [
+        ('days-to-keep', 'daysToKeep', -1),
+        ('num-to-keep', 'numToKeep', -1),
+        ('artifact-days-to-keep', 'artifactDaysToKeep', -1),
+        ('artifact-num-to-keep', 'artifactNumToKeep', -1),
+    ]
+    convert_mapping_to_xml(strategy, data, mappings, fail_required=True)
 
 
 class Properties(jenkins_jobs.modules.base.Base):
