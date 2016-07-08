@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_be3621e5",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-07-08T13:37:42Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "3aaa91ec_bb013370",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_3bf6e390",
         "filename": "jenkins_jobs/cli/entry.py",
         "patchSetId": 10
@@ -200,6 +218,57 @@
       "writtenOn": "2016-07-01T14:56:38Z",
       "side": 1,
       "message": "This is a change in behaviour from before, you\u0027re removing the ability to process the given paths recursively for the delete command.",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_feff09a8",
+        "filename": "jenkins_jobs/cli/subcommand/delete_all.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-07-08T13:37:42Z",
+      "side": 1,
+      "message": "Like the other files I think we should indent at 4 spaces here to cut down on the number of lines the help needs to be.",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_7e2af92d",
+        "filename": "jenkins_jobs/cli/subcommand/test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-07-08T13:37:42Z",
+      "side": 1,
+      "message": "Indent at 4 spaces like the other files.",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_3ea511b5",
+        "filename": "jenkins_jobs/cli/subcommand/update.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-07-08T13:37:42Z",
+      "side": 1,
+      "message": "Indent at 4 spaces",
       "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
