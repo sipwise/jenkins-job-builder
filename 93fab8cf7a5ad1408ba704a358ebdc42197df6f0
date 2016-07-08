@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_897171e3",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-07-08T14:03:17Z",
+      "side": 1,
+      "message": "I think unless we have a lot of different types we should keep it all in one place so that it\u0027s easier to find.",
+      "parentUuid": "1aa78d24_a95d5a4a",
+      "revId": "93fab8cf7a5ad1408ba704a358ebdc42197df6f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_26623917",
         "filename": "jenkins_jobs/config.py",
         "patchSetId": 2
