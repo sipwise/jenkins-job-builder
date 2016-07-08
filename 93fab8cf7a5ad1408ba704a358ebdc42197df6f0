@@ -85,6 +85,52 @@
       "revId": "93fab8cf7a5ad1408ba704a358ebdc42197df6f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_645f0c76",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-07-08T14:15:03Z",
+      "side": 1,
+      "message": "Trailing \\ here",
+      "range": {
+        "startLine": 304,
+        "startChar": 60,
+        "endLine": 304,
+        "endChar": 61
+      },
+      "revId": "93fab8cf7a5ad1408ba704a358ebdc42197df6f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_845e7874",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-07-08T14:15:03Z",
+      "side": 1,
+      "message": "Same comment",
+      "range": {
+        "startLine": 312,
+        "startChar": 60,
+        "endLine": 312,
+        "endChar": 61
+      },
+      "revId": "93fab8cf7a5ad1408ba704a358ebdc42197df6f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
