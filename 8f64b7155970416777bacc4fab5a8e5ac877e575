@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_b0800048",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3087,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-07-08T17:44:08Z",
+      "side": 1,
+      "message": "If these are new options we should document which version of the Jenkins plugin introduced them.",
+      "revId": "8f64b7155970416777bacc4fab5a8e5ac877e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
