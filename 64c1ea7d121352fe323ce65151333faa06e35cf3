@@ -37,6 +37,42 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_38b9a4ed",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-08T16:57:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_be3621e5",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_d8ed00f1",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-08T16:57:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_bb013370",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_3bf6e390",
         "filename": "jenkins_jobs/cli/entry.py",
         "patchSetId": 10
@@ -48,6 +84,24 @@
       "writtenOn": "2016-07-01T14:56:38Z",
       "side": 1,
       "message": "Seems like this should only be in one place within JJB, perhaps just the cmd.py, and if something else is reusing this outside of cmd.py then it is up to that module to define the logging config.",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_98d9b886",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-08T16:57:37Z",
+      "side": 1,
+      "message": "cmd.py is completely removed in https://review.openstack.org/#/c/319610, do you have a different suggestion for where to put this?",
+      "parentUuid": "3aaa91ec_3bf6e390",
       "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_98e37805",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-08T16:57:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_bb2813f0",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_db851fd0",
         "filename": "jenkins_jobs/cli/entry.py",
         "patchSetId": 10
@@ -88,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_bb710e7a",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-08T16:57:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_db851fd0",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_bbebf37a",
         "filename": "jenkins_jobs/cli/entry.py",
         "patchSetId": 10
@@ -99,6 +189,24 @@
       "writtenOn": "2016-07-01T14:56:38Z",
       "side": 1,
       "message": "Prefer being consistent with the code style above rather than having some indented and some not.",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_bbe62e14",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-08T16:57:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_bbebf37a",
       "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -139,6 +247,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_079f2560",
+        "filename": "jenkins_jobs/cli/subcommand/base.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-08T16:57:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_c64a665b",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_c671c6ad",
         "filename": "jenkins_jobs/cli/subcommand/base.py",
         "patchSetId": 10
@@ -150,6 +276,24 @@
       "writtenOn": "2016-07-01T14:56:38Z",
       "side": 1,
       "message": "\u0027maricals\u0027? should be \"wonderful\" as well.",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_07c4453e",
+        "filename": "jenkins_jobs/cli/subcommand/base.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-08T16:57:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_c671c6ad",
       "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -173,6 +317,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_62d537b8",
+        "filename": "jenkins_jobs/cli/subcommand/base.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-08T16:57:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_066c6ecf",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_466676ef",
         "filename": "jenkins_jobs/cli/subcommand/base.py",
         "patchSetId": 10
@@ -184,6 +346,24 @@
       "writtenOn": "2016-07-01T14:56:38Z",
       "side": 1,
       "message": "for consistency with above lets keep short and long options on the same line.",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_62ec1790",
+        "filename": "jenkins_jobs/cli/subcommand/base.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-08T16:57:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_466676ef",
       "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -224,6 +404,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_dda96a7d",
+        "filename": "jenkins_jobs/cli/subcommand/delete.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-08T16:57:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_a6847a5d",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_feff09a8",
         "filename": "jenkins_jobs/cli/subcommand/delete_all.py",
         "patchSetId": 10
@@ -235,6 +433,24 @@
       "writtenOn": "2016-07-08T13:37:42Z",
       "side": 1,
       "message": "Like the other files I think we should indent at 4 spaces here to cut down on the number of lines the help needs to be.",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_dd8cca81",
+        "filename": "jenkins_jobs/cli/subcommand/delete_all.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-08T16:57:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_feff09a8",
       "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -258,6 +474,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_3de86e16",
+        "filename": "jenkins_jobs/cli/subcommand/test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-08T16:57:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_7e2af92d",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_3ea511b5",
         "filename": "jenkins_jobs/cli/subcommand/update.py",
         "patchSetId": 10
@@ -269,6 +503,24 @@
       "writtenOn": "2016-07-08T13:37:42Z",
       "side": 1,
       "message": "Indent at 4 spaces",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_9dd9a286",
+        "filename": "jenkins_jobs/cli/subcommand/update.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-08T16:57:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_3ea511b5",
       "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -292,6 +544,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_fdda6616",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-08T16:57:37Z",
+      "side": 1,
+      "message": "No, but this file is removed entirely in https://review.openstack.org/#/c/319610",
+      "parentUuid": "3aaa91ec_46db167e",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_46c2f687",
         "filename": "tests/cmd/subcommands/test_test.py",
         "patchSetId": 10
@@ -303,6 +573,24 @@
       "writtenOn": "2016-07-01T14:56:38Z",
       "side": 1,
       "message": "Would it be easier to have [\u0027--conf\u0027, self.default_config_file, \u0027test\u0027] as a base args that we add to for each test rather than repeating it everywhere.",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_043c3e2e",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-08T16:57:37Z",
+      "side": 1,
+      "message": "I like keeping the full list of arguments visible at the test case level personally. It might just be me being lazy though; I wouldn\u0027t oppose you making this change.",
+      "parentUuid": "3aaa91ec_46c2f687",
       "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -326,6 +614,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_6449c2d0",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-08T16:57:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_c63426ae",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_666732b8",
         "filename": "tests/cmd/subcommands/test_test.py",
         "patchSetId": 10
@@ -343,6 +649,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_e7e654e7",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-08T16:57:37Z",
+      "side": 1,
+      "message": "I don\u0027t know if it would be a good idea to replace these new tests with tests that take the same approach as the old. \n\nThe old tests tied what we were actually testing too strongly to a particular way of implementing the behavior, which made it seriously difficult to refactor the API. They were, in fact, testing the API more than they were the CLI. \n\nThe new tests concern themselves strictly with the CLI\u0027s inputs (command line arguments and directories with files) and outputs (directories containing XML files); they only mock out portions of the API that would otherwise be attempting to make network calls.\n\nIf the change you want to make is, in effect, to validate an API, my suggestion would be for you to write //unit// tests that explicitly validate that API while leaving these (let\u0027s call them \"acceptance\") acceptance tests as they are. \n\nBut ultimately, the improvements made to these tests (the missing colon-separated excludes test notwithstanding) were mostly a convenience necessary for the sake of refactoring--I won\u0027t push too hard if you want to replace them entirely with a different approach later on.",
+      "parentUuid": "3aaa91ec_666732b8",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_e6116206",
         "filename": "tests/cmd/subcommands/test_test.py",
         "patchSetId": 10
@@ -354,6 +678,24 @@
       "writtenOn": "2016-07-01T14:56:38Z",
       "side": 1,
       "message": "Previously this also checked that using \u0027:\u0027 as a path separator worked to provide multiple excludes. Possibly that should move to being done by the dedicated tests for recursive/exclude path checking.",
+      "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_87cb101e",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-08T16:57:37Z",
+      "side": 1,
+      "message": "+1 to dedicated tests for this purpose. As per my comment above, I\u0027ll leave it to you to decide if those should be implemented as \"unit\" or \"acceptance\" tests. (assuming we agree to my previous assertion that \"unit\" tests target API users and \"acceptance\" tests target CLI users)",
+      "parentUuid": "3aaa91ec_e6116206",
       "revId": "64c1ea7d121352fe323ce65151333faa06e35cf3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
