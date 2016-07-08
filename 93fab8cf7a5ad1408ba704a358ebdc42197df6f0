@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_697a7bbe",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-08T10:11:56Z",
+      "side": 1,
+      "message": "Part of me is wondering whether this is a good idea?\n\nYes it means we only need to pass a config object, but it also hides the API implementation from the function signature.\n\nPerhaps keep the existing multi argument constructor in place, and create a classmethod that takes the config object and creates a Builder() instance from it and then returns it.\n\nProvides the simplity of using a single config object in most cases, with the explicitness of still showing the full set of arguments required as part of the API.",
+      "revId": "93fab8cf7a5ad1408ba704a358ebdc42197df6f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_a95d5a4a",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-08T10:11:56Z",
+      "side": 1,
+      "message": "As a general design, should we keep all exception classes in the same errors module? Or perhaps we should have two error modules, one for modules and one for the internal engine?",
+      "revId": "93fab8cf7a5ad1408ba704a358ebdc42197df6f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_26623917",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-08T10:11:56Z",
+      "side": 1,
+      "message": "I wonder if we should really just make these wrappers to the different seconds of the config parser and accept that we need to rename the sections in the config files.\n\nThen instead of some of the code below, have a mapping mechanism that converts existing configs to the new namespaces without needing to create additional objects to hold the same information that is inside the config object returned from configparser.\n\nIn that vein we also want a different name than yamlparser for one of the namespaces. It\u0027s not the worst, but it isn\u0027t necessarily clear as to what it affects, I\u0027d be more likely to suggest job_parser as a better section name that is easier to document.\n\nCourse what would be the naming can be tackled after we land this patch, so just interested in thoughts around having some the namespaces above be light weight objects that are mainly accessors of the configparser items where possible?\n\nGoing to leave the comment here so I can look back later, but looking at the code below not sure it\u0027s really practical to have light weight accessors of the config parser object, would need something to tell use what the correct type of the data coming from configparser should be.",
+      "revId": "93fab8cf7a5ad1408ba704a358ebdc42197df6f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_86d7adbe",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-08T10:11:56Z",
+      "side": 1,
+      "message": "I think the suggested changes around separating the parser logic and having it set the config values where necessary based on it parsing the command line should be done first and then we can re-review this section.",
+      "revId": "93fab8cf7a5ad1408ba704a358ebdc42197df6f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
