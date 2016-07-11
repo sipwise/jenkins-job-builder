@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_24ff7fab",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-11T11:49:04Z",
+      "side": 1,
+      "message": "If necessary we could add something like a NullLogger such as is present in python 3.1+ to suppress log messages where no logging is configured, but the basicConfig call should really only occur at the application logging configuration, which is probably limited to entry.",
+      "parentUuid": "3aaa91ec_a6911a49",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_664452b7",
         "filename": "jenkins_jobs/config.py",
         "patchSetId": 2
@@ -104,6 +122,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_a481ea4f",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-11T11:49:04Z",
+      "side": 1,
+      "message": "Well, maybe in a subsequent patch where it\u0027s called setup_defaults() instead and is just used to get the",
+      "parentUuid": "3aaa91ec_e97012a7",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_6149dcb7",
         "filename": "jenkins_jobs/config.py",
         "patchSetId": 2
@@ -115,6 +151,24 @@
       "writtenOn": "2016-07-01T15:56:18Z",
       "side": 1,
       "message": "Lets not do multiline exceptions like this, use that we can split strings across multiple lines within function calls and brackets.\n\n    raise JJBConfigException(\n        \"A valid configuration file is required.\\n\"\n        \"{0} is not valid.\".format(config_filename))",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_c4b67b89",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-11T11:49:04Z",
+      "side": 1,
+      "message": "For reference, multiline in exceptions and logging messages retain the added newlines and extra spaces, so adding a test to search for any part of the message that gets split would fail unless you did some additional processing.\n\nIt also means that it will display oddly when outputted to the console (for exceptions) and/or log files.\n\nSince we could confirm that argparser has a formatter that takes care of multiline strings, and sphinx appears to only ever use the formatter rather than trying to retrieve such information directly, it\u0027s only a preference for argparser.\n\nIn this case, it has a substantive effect, which could also impact trying to grep for messages.\n\nI think we can apply a rule of thumb for all remaining patches:\n * argparser -\u003e use multiline for help to be consistent\n * logging -\u003e don\u0027t use multiline unless passing it through \n   something line textwrap.dedent or another library to\n   handle correcting the formatting (cannot rely on having\n   our own formatter be used)\n * exceptions don\u0027t use multiline strings (except where the\n   formatting matches exactly what you\u0027d want to see\n   outputted)",
+      "parentUuid": "3aaa91ec_6149dcb7",
       "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
