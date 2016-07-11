@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <publishers>
+    <jenkins.plugins.clangscanbuild.publisher.ClangScanBuildPublisher>
+      <markBuildUnstableWhenThresholdIsExceeded>true</markBuildUnstableWhenThresholdIsExceeded>
+      <bugThreshold>50</bugThreshold>
+      <clangexcludedpaths>external-lib</clangexcludedpaths>
+      <reportFolderName>scan-build-report</reportFolderName>
+    </jenkins.plugins.clangscanbuild.publisher.ClangScanBuildPublisher>
+  </publishers>
+</project>
