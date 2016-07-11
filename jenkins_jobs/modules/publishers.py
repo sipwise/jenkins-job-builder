@@ -4669,27 +4669,29 @@ def scan_build(parser, xml_parent, data):
     :arg string report-folder: Folder where generated reports are located
         (default 'clangScanBuildReports')
 
-    Example:
+    Full Example:
 
-    .. literalinclude:: /../../tests/publishers/fixtures/scan-build001.yaml
+    .. literalinclude:: /../../tests/publishers/fixtures/scan-build-full.yaml
+       :language: yaml
+
+    Minimal Example:
+
+    .. literalinclude::
+       /../../tests/publishers/fixtures/scan-build-minimal.yaml
        :language: yaml
     """
-    threshold = str(data.get('threshold', 0))
-    if not threshold.isdigit():
-        raise JenkinsJobsException("Invalid value '%s' for threshold. "
-                                   "Numeric value expected." % threshold)
-
     p = XML.SubElement(
         xml_parent,
         'jenkins.plugins.clangscanbuild.publisher.ClangScanBuildPublisher')
+    p.set('plugin', 'clang-scanbuild')
 
-    XML.SubElement(p, 'markBuildUnstableWhenThresholdIsExceeded').text = \
-        str(data.get('mark-unstable', False)).lower()
-    XML.SubElement(p, 'bugThreshold').text = threshold
-    XML.SubElement(p, 'clangexcludedpaths').text = str(
-        data.get('exclude-paths', ''))
-    XML.SubElement(p, 'reportFolderName').text = str(
-        data.get('report-folder', 'clangScanBuildReports'))
+    mappings = [
+        ('mark-unstable', 'markBuildUnstableWhenThresholdIsExceeded', False),
+        ('threshold', 'bugThreshold', 0),
+        ('exclude-paths', 'clangexcludedpaths', ''),
+        ('report-folder', 'reportFolderName', 'clangScanBuildReports'),
+    ]
+    helpers.convert_mapping_to_xml(p, data, mappings, fail_required=True)
 
 
 def dry(parser, xml_parent, data):
