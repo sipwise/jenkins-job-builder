@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_e5eb50a2",
+        "filename": "tests/yamlparser/exceptions/incorrect_template_dimensions.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-07-12T23:54:52Z",
+      "side": 1,
+      "message": "Missing two space indentation here.",
+      "revId": "e5a720a93b3952d4cd20d24a912231eb96ae93e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
