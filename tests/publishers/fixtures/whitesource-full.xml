@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
   <publishers>
-    <org.whitesource.jenkins.WhiteSourcePublisher>
+    <org.whitesource.jenkins.WhiteSourcePublisher plugin="whitesource">
       <jobCheckPolicies>enable</jobCheckPolicies>
       <jobApiToken>1231424523412</jobApiToken>
       <product>abcdefghijklmnopqrstuvwxyzabcdef</product>
@@ -9,6 +9,7 @@
       <projectToken>sd;fkljsdfkljasdfkj</projectToken>
       <libIncludes>lib/*.jar test/lib/*.jar</libIncludes>
       <libExcludes>lib/ant*.jar test/lib/ant*.jar</libExcludes>
+      <requesterEmail>foo@email.com</requesterEmail>
       <ignorePomModules>false</ignorePomModules>
     </org.whitesource.jenkins.WhiteSourcePublisher>
   </publishers>

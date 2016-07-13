@@ -11,3 +11,4 @@ publishers:
       excludes:
         - lib/ant*.jar
         - test/lib/ant*.jar
+      requester-email: foo@email.com
