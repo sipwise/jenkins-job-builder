@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_0fb5b7eb",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1119,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-07-13T13:53:54Z",
+      "side": 0,
+      "message": "Mapping to what I was referring to.",
+      "range": {
+        "startLine": 1104,
+        "startChar": 4,
+        "endLine": 1119,
+        "endChar": 5
+      },
+      "revId": "d6add35e72c6c2beb44b1be57f589d79f98f5551",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
