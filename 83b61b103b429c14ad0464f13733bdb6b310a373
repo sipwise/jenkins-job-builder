@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_7128b986",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1076,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-07-13T05:39:40Z",
+      "side": 1,
+      "message": "Is there a list of options that the user can choose from? If there is, we should make it so that the user can only choose from that list.",
+      "range": {
+        "startLine": 1076,
+        "startChar": 30,
+        "endLine": 1076,
+        "endChar": 35
+      },
+      "revId": "83b61b103b429c14ad0464f13733bdb6b310a373",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
