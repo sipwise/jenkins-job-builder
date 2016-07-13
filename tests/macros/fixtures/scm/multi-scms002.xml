@@ -27,6 +27,7 @@
         <noTags>false</noTags>
         <trace>false</trace>
         <showAllChanges>false</showAllChanges>
+        <localManifest/>
       </hudson.plugins.repo.RepoScm>
       <hudson.plugins.git.GitSCM>
         <configVersion>2</configVersion>

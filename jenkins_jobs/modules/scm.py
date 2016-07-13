@@ -611,17 +611,17 @@ def repo(parser, xml_parent, data):
     Specifies the repo SCM repository for this job.
     Requires the Jenkins :jenkins-wiki:`Repo Plugin <Repo+Plugin>`.
 
-    :arg str manifest-url: URL of the repo manifest
-    :arg str manifest-branch: The branch of the manifest to use (optional)
+    :arg str manifest-url: URL of the repo manifest (required)
+    :arg str manifest-branch: The branch of the manifest to use (default '')
     :arg str manifest-file: Initial manifest file to use when initialising
-        (optional)
+        (default '')
     :arg str manifest-group: Only retrieve those projects in the manifest
-        tagged with the provided group name (optional)
+        tagged with the provided group name (default '')
     :arg str destination-dir: Location relative to the workspace root to clone
-        under (optional)
-    :arg str repo-url: custom url to retrieve the repo application (optional)
+        under (default '')
+    :arg str repo-url: custom url to retrieve the repo application (default '')
     :arg str mirror-dir: Path to mirror directory to reference when
-        initialising (optional)
+        initialising (default '')
     :arg int jobs: Number of projects to fetch simultaneously (default 0)
     :arg int depth: Specify the depth in history to sync from the source. The
         default is to sync all of the history. Use 1 to just sync the most
@@ -641,7 +641,7 @@ def repo(parser, xml_parent, data):
     :arg bool show-all-changes: When this is checked --first-parent is no
         longer passed to git log when determining changesets (default false)
     :arg str local-manifest: Contents of .repo/local_manifest.xml, written
-        prior to calling sync (optional)
+        prior to calling sync (default '')
 
     Example:
 
@@ -651,14 +651,9 @@ def repo(parser, xml_parent, data):
     scm = XML.SubElement(xml_parent,
                          'scm', {'class': 'hudson.plugins.repo.RepoScm'})
 
-    if 'manifest-url' in data:
-        XML.SubElement(scm, 'manifestRepositoryUrl').text = \
-            data['manifest-url']
-    else:
-        raise JenkinsJobsException("Must specify a manifest url")
-
     mapping = [
         # option, xml name, default value
+        ('manifest-url', 'manifestRepositoryUrl', None),
         ("manifest-branch", 'manifestBranch', ''),
         ("manifest-file", 'manifestFile', ''),
         ("manifest-group", 'manifestGroup', ''),
@@ -676,18 +671,7 @@ def repo(parser, xml_parent, data):
         ("show-all-changes", 'showAllChanges', False),
         ("local-manifest", 'localManifest', ''),
     ]
-
-    for elem in mapping:
-        (optname, xmlname, val) = elem
-        val = data.get(optname, val)
-        # Skip adding xml entry if default is empty string and no value given
-        if not val and elem[2] is '':
-            continue
-        xe = XML.SubElement(scm, xmlname)
-        if type(elem[2]) == bool:
-            xe.text = str(val).lower()
-        else:
-            xe.text = str(val)
+    convert_mapping_to_xml(scm, data, mapping, fail_required=True)
 
 
 def store(parser, xml_parent, data):
