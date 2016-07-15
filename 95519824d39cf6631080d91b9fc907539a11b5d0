@@ -16,6 +16,24 @@
       "revId": "95519824d39cf6631080d91b9fc907539a11b5d0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_89b783d6",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5155,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-07-15T05:41:16Z",
+      "side": 1,
+      "message": "Nice catch, did not even notice this.",
+      "parentUuid": "1aa78d24_586607bc",
+      "revId": "95519824d39cf6631080d91b9fc907539a11b5d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
