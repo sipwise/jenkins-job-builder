@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_98ea2f0d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5701,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-07-15T03:25:39Z",
+      "side": 1,
+      "message": "For includes and excludes, it would be good document how the list is created. Is it comma-separated?",
+      "revId": "0d045f64cffd597e9191d1471c8d8b5cd2f896a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
