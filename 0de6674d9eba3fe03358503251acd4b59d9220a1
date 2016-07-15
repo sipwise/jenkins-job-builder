@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad55976_e5a02da8",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1076,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-07-15T18:01:31Z",
+      "side": 1,
+      "message": "I think behaviour changed here. We should make sure to support the old and the new versions.",
+      "revId": "0de6674d9eba3fe03358503251acd4b59d9220a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
