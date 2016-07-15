@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_586607bc",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5155,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-07-15T03:30:11Z",
+      "side": 1,
+      "message": "Since you\u0027re updating here I\u0027d update the documentation to use 4 space indent so that we don\u0027t need 3 lines here. (Same with the one below too)",
+      "revId": "95519824d39cf6631080d91b9fc907539a11b5d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
