@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fad55976_1310364e",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2651,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-07-15T15:06:04Z",
+      "side": 1,
+      "message": "The full test should test the non default value of stage",
+      "revId": "53baa489725ff1110f41c1ef644a83fbbe59e744",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
