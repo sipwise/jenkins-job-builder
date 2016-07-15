@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1aa78d24_a9f22804",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3211,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-07-15T14:24:58Z",
+      "side": 1,
+      "message": "You need to check the output doc format, it\u0027s not correct.\nhttp://docs-draft.openstack.org/76/336276/3/check/gate-jenkins-job-builder-docs/10972fc//doc/build/html/builders.html#builders.docker-build-publish",
+      "revId": "2cdcffefec503c02f77964ea86f1d18c68ce0df6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aa78d24_493904a3",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3217,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-07-15T14:24:58Z",
+      "side": 1,
+      "message": "should be \u0027(default: \u0027 not \u0027(when empty:\u0027",
+      "revId": "2cdcffefec503c02f77964ea86f1d18c68ce0df6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_aa360fb2",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3259,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-07-15T14:24:58Z",
+      "side": 1,
+      "message": "Seems you didn\u0027t address the coments Kien mentioned",
+      "revId": "2cdcffefec503c02f77964ea86f1d18c68ce0df6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fad55976_eae647e7",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3263,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-07-15T14:24:58Z",
+      "side": 1,
+      "message": "please don\u0027t use trailing \\",
+      "range": {
+        "startLine": 3263,
+        "startChar": 59,
+        "endLine": 3263,
+        "endChar": 60
+      },
+      "revId": "2cdcffefec503c02f77964ea86f1d18c68ce0df6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
