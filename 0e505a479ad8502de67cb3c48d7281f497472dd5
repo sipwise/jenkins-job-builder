@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_56bf10fb",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1076,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-07-18T18:39:34Z",
+      "side": 1,
+      "message": "I was not sure how to document this part so if anyone has a suggestion, please feel free to tell me.",
+      "range": {
+        "startLine": 1076,
+        "startChar": 9,
+        "endLine": 1076,
+        "endChar": 17
+      },
+      "revId": "0e505a479ad8502de67cb3c48d7281f497472dd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
