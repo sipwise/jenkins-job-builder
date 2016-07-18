@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_5509bd94",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 6262,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2016-07-18T23:13:45Z",
+      "side": 1,
+      "message": "this is a bool type?  shouldn\u0027t default either be true or false?",
+      "revId": "692f9280df3085fa9734a1068fdb9f981bc62c68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
