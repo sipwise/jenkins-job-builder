@@ -16,6 +16,24 @@
       "revId": "692f9280df3085fa9734a1068fdb9f981bc62c68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_d0377be1",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 6262,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-07-18T23:28:28Z",
+      "side": 1,
+      "message": "I went ahead and double checked this. Turns out that this isn\u0027t a bool, but rather a str. Thanks for catching this.",
+      "parentUuid": "dada55a8_5509bd94",
+      "revId": "692f9280df3085fa9734a1068fdb9f981bc62c68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
