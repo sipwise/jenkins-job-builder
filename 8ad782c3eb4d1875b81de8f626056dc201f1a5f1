@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_4d646de3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-19T14:32:39Z",
+      "side": 1,
+      "message": "I\u0027d been assuming the commit messages for those changes with this message would get updated to just reflect the change itself?",
+      "revId": "8ad782c3eb4d1875b81de8f626056dc201f1a5f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
