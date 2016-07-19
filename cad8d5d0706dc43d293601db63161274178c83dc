@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_b02aa22a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4305,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-19T14:59:18Z",
+      "side": 1,
+      "message": "Nice job on noting the version the options appear from, thanks :)",
+      "revId": "cad8d5d0706dc43d293601db63161274178c83dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_70082a92",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4321,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-19T14:59:18Z",
+      "side": 1,
+      "message": "This suggests a scenario where we may want to update the convert_mapping_to_xml to support a dict for the valid values, in addition to a list, so that if it\u0027s a dict, the value it checks for is the key, and the resulting xml uses the corresponding value from the dict for that key.",
+      "revId": "cad8d5d0706dc43d293601db63161274178c83dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
