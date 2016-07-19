@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_cda05d46",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1892,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-19T14:51:19Z",
+      "side": 1,
+      "message": "Minor I would put (Default) in quotes to indicate it\u0027s a string \u0027(Default)\u0027 for consistency with all the other entries.",
+      "revId": "26b420d298427d73c15ffb36af89a081df839f20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_ed73a1e5",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1897,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-19T14:51:19Z",
+      "side": 1,
+      "message": "This is a change in behaviour, before targets was required and would trigger an error if missing, now we\u0027re defaulting it to \u0027\u0027.",
+      "revId": "26b420d298427d73c15ffb36af89a081df839f20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_0d60b500",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1931,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-19T14:51:19Z",
+      "side": 1,
+      "message": "I\u0027m not sure this is correct, someone will need to review the plugin itself as previously it would throw an exception if not provided a value for \u0027targets\u0027.",
+      "revId": "26b420d298427d73c15ffb36af89a081df839f20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
