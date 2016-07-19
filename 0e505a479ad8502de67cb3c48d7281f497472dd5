@@ -22,6 +22,30 @@
       "revId": "0e505a479ad8502de67cb3c48d7281f497472dd5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_17e8c9b3",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1076,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-07-19T13:47:29Z",
+      "side": 1,
+      "message": "Set the arg to str and mention in the description that if you\u0027re using an older version of the plugin \u003c 1.1.26 that it accepts true|false instead of never|source|both",
+      "parentUuid": "dada55a8_56bf10fb",
+      "range": {
+        "startLine": 1076,
+        "startChar": 9,
+        "endLine": 1076,
+        "endChar": 17
+      },
+      "revId": "0e505a479ad8502de67cb3c48d7281f497472dd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
