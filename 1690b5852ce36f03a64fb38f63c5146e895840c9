@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_acf402f2",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5701,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-19T17:09:44Z",
+      "side": 1,
+      "message": "This is only required if a particular system configuration option is not set. Perhaps retain the existing behaviour where the default is \u0027\u0027, and document that it\u0027s not possible for JJB to query whether a system configuration setting is set or not.\n\nCourse, maybe we should see if that is an enhancement that could be added.",
+      "revId": "1690b5852ce36f03a64fb38f63c5146e895840c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
