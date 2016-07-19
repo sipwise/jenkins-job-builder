@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_d673c9e5",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5898,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-19T16:45:39Z",
+      "side": 1,
+      "message": "I think this would require a callback function support in the convert mapping function to handle supporting where there is additional transformation of the data. In this case it would probably be something like:\n\n    (\u0027includes\u0027, \u0027libIncludes\u0027, [], lambda x: \u0027 \u0027.join(x))\n\nThough we would need to decide whether it is a good idea to have both the valid values and callback functions occupy the fourth element slot.",
+      "revId": "6a33cb44db049a72e2258b012a1b2f5c3655075f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_b6e9f582",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5901,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-19T16:45:39Z",
+      "side": 1,
+      "message": "Here\u0027s another enhancement, how do we define entries that are hardcoded? As in are not controllable by user job definition input?\n\nSeems like it would be useful to be able to put all of these into the mapping.",
+      "revId": "6a33cb44db049a72e2258b012a1b2f5c3655075f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
