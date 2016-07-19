@@ -33,6 +33,24 @@
       "revId": "0791f9724aa53e70406e6b5f20682cf3649eab7e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_d9501a61",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-19T17:00:13Z",
+      "side": 1,
+      "message": "Explained further by patch author, so I\u0027m happy to land as is.",
+      "parentUuid": "7aa08908_945b8853",
+      "revId": "0791f9724aa53e70406e6b5f20682cf3649eab7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
