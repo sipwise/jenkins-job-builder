@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_6d6211af",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-19T14:35:20Z",
+      "side": 1,
+      "message": "This seems fine over all, but probably could have included a reason here, even if that is \"just for consistency\".",
+      "revId": "1eec43ff9fff0af83faf28e4f1e79cff21df24b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
