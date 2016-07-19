@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_3978562a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-19T16:55:31Z",
+      "side": 1,
+      "message": "Might be better to have the additions as a second patch on top of the conversions in future.",
+      "revId": "99e6b5f89c23bc9d0973f02ece02d7fbbf5452c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
