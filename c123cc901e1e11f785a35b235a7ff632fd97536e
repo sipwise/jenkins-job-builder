@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_e7af1028",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-20T11:12:57Z",
+      "side": 0,
+      "message": "I\u0027d be in favour of renaming this object though, since really it should be a JenkinsManager rather than Jenkins api++ since we are trying to manage jenkins, particularly if we look to implement the ability to create views and folders in the future (patches available).",
+      "revId": "c123cc901e1e11f785a35b235a7ff632fd97536e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

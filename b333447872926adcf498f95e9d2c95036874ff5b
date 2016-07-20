@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_47f1bc94",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-20T11:12:57Z",
+      "side": 1,
+      "message": "In this case, with jenkins.Jenkins being an external class, which is not necessarily written with the consideration of it being subclassed by importing libraries I think we need to consider long term maintenance here, as well as the fact there actually exists a second jenkins api implementation in python that does have separation of views, folders, etc.\n\nI\u0027d be more inclined to follow advice from http://www.javaworld.com/javaworld/jw-08-2003/jw-0801-toolbox.html\nhttp://stackoverflow.com/questions/20847727/python-inheritance-versus-composition\nhttp://learnpythonthehardway.org/book/ex44.html\n\nThey all suggest that in this case composition is more favourable.\n\nAs with everything, exceptions can make sense, but I\u0027m not seeing that there is a tangible benefit it to coupling so tightly.",
+      "revId": "b333447872926adcf498f95e9d2c95036874ff5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_47489ccc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-20T11:12:57Z",
+      "side": 1,
+      "message": "Took a bit of reading to understand that the Additionally part is really independent of the inheritance change. Maybe a blank line between to help make it clear they are separate concerns?",
+      "revId": "b333447872926adcf498f95e9d2c95036874ff5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_a7a23849",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-20T11:12:57Z",
+      "side": 1,
+      "message": "Not sure inheritance makes sense here, not extending the jenkins api really, which is where it would make sense to subclass, utilising it, more a consumer of the object.\n\nLooking at the code below, there doesn\u0027t appear to be a benefit to using inheritance here in that it\u0027s not going to reduce code duplication.\n\nThe cost is that we now export the python-jenkins api directly, and potentially we may shadow parent objects since the inherited object is not under the direct control of this project.\n\nUnless we sure that the inherited class is written with the intention of being subclassed, I would favour containment when dealing with classes imported from external libraries.\n\nI\u0027m aware there are times when you bend the rules, when it makes sense, but there doesn\u0027t appear to be a great argument for it here.\n\nAnd looking ahead to merging of this class with the Builder one below, I really think that composition makes more sense here. We should be a user of the jenkins api, not an extender.",
+      "revId": "b333447872926adcf498f95e9d2c95036874ff5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_676a00f0",
+        "filename": "tests/cmd/subcommands/test_update.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-20T11:12:57Z",
+      "side": 1,
+      "message": "typo? assume you meant \u0027is not set\u0027.",
+      "revId": "b333447872926adcf498f95e9d2c95036874ff5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
