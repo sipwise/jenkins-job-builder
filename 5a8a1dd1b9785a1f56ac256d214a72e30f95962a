@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_caf13103",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-20T11:17:31Z",
+      "side": 1,
+      "message": "I\u0027ve commented on the inheritance in an earlier patch, so I\u0027ll just reference the suggestion here about naming this object more appropriately.\n\nReally it\u0027s a JenkinsManager rather than a jenkins object, and this is very clear at this point, where we are managing a cache object and jenkins plugin_info.\n\nIn fact I think this highlights the fact this is a consumer of the jenkins api rather than an extender.",
+      "revId": "5a8a1dd1b9785a1f56ac256d214a72e30f95962a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
