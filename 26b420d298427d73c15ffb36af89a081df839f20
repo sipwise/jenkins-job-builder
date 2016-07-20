@@ -50,6 +50,24 @@
       "revId": "26b420d298427d73c15ffb36af89a081df839f20",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_19f57b56",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1931,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-07-20T05:37:48Z",
+      "side": 1,
+      "message": "I went ahead and took a look myself. I think what happened was as I was documenting above, I added their default values as they were available beside their options. From JJB,\nTargets: \"Specify target(s) to run separated by spaces (optional).\"\n\nAFAIK, the targets option was always optional. But since grails wouldn\u0027t do much without a target, it was made required here.",
+      "parentUuid": "dada55a8_0d60b500",
+      "revId": "26b420d298427d73c15ffb36af89a081df839f20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
