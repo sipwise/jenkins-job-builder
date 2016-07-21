@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1aa78d24_675b892f",
+        "filename": "jenkins_jobs/cli/parser.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-21T08:13:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_be08e12e",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_a6911a49",
         "filename": "jenkins_jobs/config.py",
         "patchSetId": 2
@@ -71,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_47934afa",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-21T08:13:16Z",
+      "side": 1,
+      "message": "I was just about to address this but it looks like you already did. In the future when you address your own comment could you go back and mark it as \"Done\" or indicate such in a patch-level comment?",
+      "parentUuid": "1aa78d24_24ff7fab",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_664452b7",
         "filename": "jenkins_jobs/config.py",
         "patchSetId": 2
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_67c2ceea",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-21T08:13:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_664452b7",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_e6d322d4",
         "filename": "jenkins_jobs/config.py",
         "patchSetId": 2
@@ -99,6 +153,24 @@
       "writtenOn": "2016-07-01T15:56:18Z",
       "side": 1,
       "message": "This seems like a bad idea, why would a config object create a command line parser. Is this to work with the initial migration and is it re-factored in a later patch?\n\nOr something that potentially needs to be done subsequently?",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_8a29c78c",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-21T08:13:16Z",
+      "side": 1,
+      "message": "Because much of the original config/argument munging assumed access to an argparser in order to access default values for configuration options.\n\nAs a user of the JJB API, I don\u0027t want to have to create an argparser that looks like JJB CLI\u0027s argparser just to use the JJBConfig.\n\nAs the person maintaining this branch for the past seven months with no clear idea of when/if anyone else would look at it, I did not want to make significant structural changes to the way config file values and argparser values were munged until other cores started reviewing the code and complained about the jankery necessary to maintain the previous jankery.\n\nNow that we\u0027ve begun merging some of this code into master branch and future changes to argparser and configuration file code will likely be based on this commit, I\u0027d say it\u0027s fine to undo some of this janky shit to move default value setting from the argparser code to the JJBConfig, which it looks like you\u0027ve been kind enough to do in https://review.openstack.org/#/c/344742/\n\nIt\u0027s worth mentioning that we can probably also now move the contents of jenkins_jobs/cli/parser.py into jenkins_jobs/cli/entry.py but probably not absolutely necessary.",
+      "parentUuid": "3aaa91ec_e6d322d4",
       "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -140,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_cafd7f6f",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-21T08:13:16Z",
+      "side": 1,
+      "message": "It looks like you\u0027ve addressed this in the following patch.",
+      "parentUuid": "1aa78d24_a481ea4f",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_6149dcb7",
         "filename": "jenkins_jobs/config.py",
         "patchSetId": 2
@@ -175,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_6a18d3d3",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-21T08:13:16Z",
+      "side": 1,
+      "message": "sounds wonderful",
+      "parentUuid": "1aa78d24_c4b67b89",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_255c197c",
         "filename": "jenkins_jobs/config.py",
         "patchSetId": 2
@@ -186,6 +294,24 @@
       "writtenOn": "2016-07-07T16:00:00Z",
       "side": 1,
       "message": "I think I know what was causing me to feel something was wrong here.\n\nThe setting of the config option from options should be done by the parser as part of an extra parse options step since these are command line interface specific rather than config related.\n\nBasically if options.ignore_cache is set, we should have the parser then add that to the instance of this config class it created.\n\nPerhaps that is the plan later after the disentanglement is done, we can probably achieve it here right now as well.",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_15dfbcd9",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-21T08:13:16Z",
+      "side": 1,
+      "message": "You\u0027re talking about code that existed before this API rewrite. I left it in this state to simplify porting changes from master branch before we got to this review process.\n\nI really care about two things:\n* Is JJBConfig usable without instantiating the JenkinsJobs class? \n* Is the code as it is written in this patch structured in such a way that it is easier to refactor than it was before?\n\nThe former issue appears to be addressed since you added default configuration settings for at least some of the important values.\n\nThe latter I think is true given that it didn\u0027t seem to take much time/effort in the next patch to get this into a state you find more agreeable. (although maybe something that we have never tested could be broken)",
+      "parentUuid": "1aa78d24_255c197c",
       "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -209,6 +335,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_158dfcd5",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-21T08:13:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_296d13cc",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_c59275f5",
         "filename": "jenkins_jobs/config.py",
         "patchSetId": 2
@@ -220,6 +364,24 @@
       "writtenOn": "2016-07-07T16:00:00Z",
       "side": 1,
       "message": "Seems like this should be in a validate method to check that the config is sane.",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_d59ec405",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-21T08:13:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_c59275f5",
       "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -243,6 +405,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_5593f4f9",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-21T08:13:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_e56851f7",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_e9014b06",
         "filename": "jenkins_jobs/config.py",
         "patchSetId": 2
@@ -260,6 +440,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_95344cfc",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-21T08:13:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_e9014b06",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_f3111f06",
         "filename": "jenkins_jobs/config.py",
         "patchSetId": 2
@@ -271,6 +469,24 @@
       "writtenOn": "2016-07-01T15:56:18Z",
       "side": 1,
       "message": "I think by convention this should be at the top.",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_5581348e",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-21T08:13:16Z",
+      "side": 1,
+      "message": "I wasn\u0027t aware there was a convention, I see https://www.python.org/dev/peps/pep-0008/#module-level-dunder-names now though. Good call.",
+      "parentUuid": "3aaa91ec_f3111f06",
       "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -305,6 +521,24 @@
       "writtenOn": "2016-07-01T15:56:18Z",
       "side": 1,
       "message": "Why explicitly return anything except for \u0027path \u003d\u003d self.global_conf\u0027? Since by default the function will return \u0027None\u0027.\n\nIf needed, just place a default \u0027return False\u0027 at the end of the side_effect.\n\nSince you\u0027re not able to distinguish between False and None anyway with the existing functionality.",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_7518b8d3",
+        "filename": "tests/cmd/test_config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-21T08:13:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_a18aa418",
       "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
