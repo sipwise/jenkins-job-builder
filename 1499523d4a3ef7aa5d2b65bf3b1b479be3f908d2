@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_3bf1fccd",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-21T13:49:29Z",
+      "side": 1,
+      "message": "Sorry, yes, I should have followed up on these.",
+      "parentUuid": "dada55a8_47934afa",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_664452b7",
         "filename": "jenkins_jobs/config.py",
         "patchSetId": 2
@@ -487,6 +505,24 @@
       "side": 1,
       "message": "I wasn\u0027t aware there was a convention, I see https://www.python.org/dev/peps/pep-0008/#module-level-dunder-names now though. Good call.",
       "parentUuid": "3aaa91ec_f3111f06",
+      "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_bbfdec6f",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-21T13:49:29Z",
+      "side": 1,
+      "message": "you know, I couldn\u0027t find that when I first looked, was just going by all the other libraries. I\u0027ll check if I actually moved it to the right place, thanks for finding the actual reference.",
+      "parentUuid": "dada55a8_5581348e",
       "revId": "1499523d4a3ef7aa5d2b65bf3b1b479be3f908d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
