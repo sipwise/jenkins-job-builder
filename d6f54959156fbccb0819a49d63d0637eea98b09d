@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_952f2c3e",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-07-21T08:19:57Z",
+      "side": 1,
+      "message": "The problem with this isn\u0027t that you are setting these default values here, but that there is a risk that the values here will diverge from the values set in the argparser: https://review.openstack.org/gitweb?p\u003dopenstack-infra/jenkins-job-builder.git;a\u003dblob;f\u003djenkins_jobs/cli/parser.py;h\u003dca1e009c8c2dff55a633ab9493f0c6b1d529c466;hb\u003dd6f54959156fbccb0819a49d63d0637eea98b09d#l46\n\nWhile the code right now is probably in a satisfactory enough state (although we haven\u0027t written tests for JJBConfig yet so it\u0027s hard for me to tell immediately without trying it out using the derivative project I started a while back), this may lead to difficulties moving forward.\n\nI would recommend removing the default values in the argparser and then adding logic to JenkinsJobs._parse_additional to only override these if no value is set in the corresponding argparser value so that these are the authoritative defaults.",
+      "revId": "d6f54959156fbccb0819a49d63d0637eea98b09d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
