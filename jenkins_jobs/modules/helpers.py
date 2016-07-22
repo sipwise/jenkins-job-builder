@@ -589,7 +589,7 @@ def trigger_project(tconfigs, project_def, param_order=None):
                     mapping, fail_required=True)
 
 
-def convert_mapping_to_xml(parent, data, mapping, fail_required=False):
+def convert_mapping_to_xml(parent, data, mapping, fail_required=True):
     """Convert mapping to XML
 
     fail_required affects the last parameter of the mapping field when it's
