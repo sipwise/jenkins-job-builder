@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "dada55a8_e0d2f25a",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-07-22T00:36:36Z",
+      "side": 1,
+      "message": "This parse additional seems to be the cause. it\u0027s overriding what\u0027s already set previously with None. Thus losing the configuration we got from the user\u0027s configuration file.",
+      "revId": "d6f54959156fbccb0819a49d63d0637eea98b09d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_952f2c3e",
         "filename": "jenkins_jobs/config.py",
         "patchSetId": 1
