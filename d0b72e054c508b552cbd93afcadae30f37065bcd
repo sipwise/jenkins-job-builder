@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_dd07bd7f",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-22T12:43:54Z",
+      "side": 1,
+      "message": "Done in a future patch.",
+      "parentUuid": "3aaa91ec_9691a9f4",
+      "revId": "d0b72e054c508b552cbd93afcadae30f37065bcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_367275e4",
         "filename": "jenkins_jobs/utils.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_7df7b18c",
+        "filename": "jenkins_jobs/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-22T12:43:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_367275e4",
+      "revId": "d0b72e054c508b552cbd93afcadae30f37065bcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3aaa91ec_f63d8dde",
         "filename": "tests/moduleregistry/test_moduleregistry.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2016-07-01T16:02:51Z",
       "side": 1,
       "message": "Looking at this, I have to wonder is there any reason we don\u0027t have the JJBConfig constructor do the magical things until we\u0027ve a better alternative?",
+      "revId": "d0b72e054c508b552cbd93afcadae30f37065bcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_bdf12998",
+        "filename": "tests/moduleregistry/test_moduleregistry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-22T12:43:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aaa91ec_f63d8dde",
       "revId": "d0b72e054c508b552cbd93afcadae30f37065bcd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
