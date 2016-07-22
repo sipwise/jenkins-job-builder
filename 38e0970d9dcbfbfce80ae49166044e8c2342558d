@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_06ce22b4",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-07-22T13:31:44Z",
+      "side": 1,
+      "message": "Whitespace here. You can remove this whitespace to align doc with others.",
+      "revId": "38e0970d9dcbfbfce80ae49166044e8c2342558d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
