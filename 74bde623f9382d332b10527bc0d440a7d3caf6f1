@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_0078caf7",
+        "filename": "jenkins_jobs/modules/hipchat_notif.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-22T13:00:41Z",
+      "side": 1,
+      "message": "Looks like the hipchat attributes should be populated in the config object or perhaps we should come up with a namespace for all plugin specific settings to be placed under?\n\nCan config_parser handled named sections such as:\n\n [plugin \"hipchat\"]\n authtoken\u003d...\n send-as\u003d...\n\nWould given great separation between JJB internal options which are in sections without names:\n\n [yamlparser]\n [jenkins]\n [etc.]\n\nfor the V2 release we would have to support both specifications in the config object for hipchat, but we could use that to convert and warn users to update their config.",
+      "revId": "74bde623f9382d332b10527bc0d440a7d3caf6f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
