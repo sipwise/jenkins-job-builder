@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_5430b607",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-22T18:09:51Z",
+      "side": 1,
+      "message": "We should rename this \u0027delete_jobs()\u0027 at some point to make the api more consistent.\n\nAnd it appears that is done in a later change.",
+      "revId": "acc1f3029bca823f9ed0005e9755b40a7457c629",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
