@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_dacded87",
+        "filename": "jenkins_jobs/modules/base.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-22T18:44:06Z",
+      "side": 1,
+      "message": "seems a bit inconsistent to start adding the data type to the variable name?",
+      "revId": "cf91a01a9dbcf014f7af6e21dd662a3eb716e643",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
