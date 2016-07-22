@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_5d858dab",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-22T12:51:27Z",
+      "side": 1,
+      "message": "Going to address via a patch at the end of the patch series, added as TODO entry in the etherpad.",
+      "parentUuid": "1aa78d24_697a7bbe",
+      "revId": "93fab8cf7a5ad1408ba704a358ebdc42197df6f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_a95d5a4a",
         "filename": "jenkins_jobs/config.py",
         "patchSetId": 2
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_3d6c1908",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-22T12:51:27Z",
+      "side": 1,
+      "message": "Forgot to fix this in an earlier patch, adding a note to the etherpad to address.",
+      "parentUuid": "1aa78d24_897171e3",
+      "revId": "93fab8cf7a5ad1408ba704a358ebdc42197df6f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_26623917",
         "filename": "jenkins_jobs/config.py",
         "patchSetId": 2
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_401f625b",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-22T12:51:27Z",
+      "side": 1,
+      "message": "While it might be possible to do this in some cases it does seem to cause more issues than it solves, in that handling processing for complex options becomes more difficult, and it kind of breaks the idea of the configparser doing one thing well.",
+      "parentUuid": "1aa78d24_26623917",
+      "revId": "93fab8cf7a5ad1408ba704a358ebdc42197df6f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_86d7adbe",
         "filename": "jenkins_jobs/config.py",
         "patchSetId": 2
@@ -82,6 +136,24 @@
       "writtenOn": "2016-07-08T10:11:56Z",
       "side": 1,
       "message": "I think the suggested changes around separating the parser logic and having it set the config values where necessary based on it parsing the command line should be done first and then we can re-review this section.",
+      "revId": "93fab8cf7a5ad1408ba704a358ebdc42197df6f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_80dcba75",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-22T12:51:27Z",
+      "side": 1,
+      "message": "I\u0027ve looked around enough through the patch set that I think probably best to finish the API rework first and then we can revisit this as something to be looked at before releasing V2.",
+      "parentUuid": "1aa78d24_86d7adbe",
       "revId": "93fab8cf7a5ad1408ba704a358ebdc42197df6f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -111,6 +183,30 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_20722eae",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-22T12:51:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_645f0c76",
+      "range": {
+        "startLine": 304,
+        "startChar": 60,
+        "endLine": 304,
+        "endChar": 61
+      },
+      "revId": "93fab8cf7a5ad1408ba704a358ebdc42197df6f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1aa78d24_845e7874",
         "filename": "jenkins_jobs/config.py",
         "patchSetId": 2
@@ -122,6 +218,30 @@
       "writtenOn": "2016-07-08T14:15:03Z",
       "side": 1,
       "message": "Same comment",
+      "range": {
+        "startLine": 312,
+        "startChar": 60,
+        "endLine": 312,
+        "endChar": 61
+      },
+      "revId": "93fab8cf7a5ad1408ba704a358ebdc42197df6f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_606426e5",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-22T12:51:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1aa78d24_845e7874",
       "range": {
         "startLine": 312,
         "startChar": 60,
