@@ -2935,16 +2935,14 @@ def test_fairy(parser, xml_parent, data):
             ('storepass', 'storepass', 'android'),
             ('alias', 'alias', 'androiddebugkey'),
             ('keypass', 'keypass', '')]
-        helpers.convert_mapping_to_xml(
-            root, data, mappings, fail_required=True)
+        helpers.convert_mapping_to_xml(root, data, mappings)
     elif platform == 'ios':
         root = XML.SubElement(
             xml_parent, 'org.jenkinsci.plugins.testfairy.TestFairyIosRecorder')
         helpers.test_fairy_common(root, data)
 
         mappings = [('dSYM-file', 'mappingFile', '')]
-        helpers.convert_mapping_to_xml(
-            root, data, mappings, fail_required=True)
+        helpers.convert_mapping_to_xml(root, data, mappings)
     else:
         raise InvalidAttributeError('platform', platform, valid_platforms)
 
@@ -3119,7 +3117,7 @@ def tap(parser, xml_parent, data):
         ('verbose', 'verbose', True),
         ('show-only-failures', 'showOnlyFailures', False),
     ]
-    helpers.convert_mapping_to_xml(tap, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(tap, data, mappings)
 
 
 def post_tasks(parser, xml_parent, data):
@@ -3852,8 +3850,7 @@ def plot(parser, xml_parent, data):
             ('logarithmic-yaxis', 'logarithmic', False),
             ('keep-records', 'keepRecords', False),
             ('num-builds', 'numBuilds', '')]
-        helpers.convert_mapping_to_xml(
-            plugin, plot, mappings, fail_required=True)
+        helpers.convert_mapping_to_xml(plugin, plot, mappings)
 
         style_list = ['area', 'bar', 'bar3d', 'line', 'line3d', 'stackedArea',
                       'stackedbar', 'stackedbar3d', 'waterfall']
@@ -4335,8 +4332,7 @@ def testng(parser, xml_parent, data):
         ('failed-skips', 'failedSkips', 100),
         ('failed-fails', 'failedFails', 100),
     ]
-    helpers.convert_mapping_to_xml(
-        reporter, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(reporter, data, mappings)
 
     if threshold_mode == 'number':
         XML.SubElement(reporter, 'thresholdMode').text = str(1)
@@ -4734,7 +4730,7 @@ def scan_build(parser, xml_parent, data):
         ('exclude-paths', 'clangexcludedpaths', ''),
         ('report-folder', 'reportFolderName', 'clangScanBuildReports'),
     ]
-    helpers.convert_mapping_to_xml(p, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(p, data, mappings)
 
 
 def dry(parser, xml_parent, data):
@@ -4812,8 +4808,7 @@ def dry(parser, xml_parent, data):
     settings = [
         ('high-threshold', 'highThreshold', 50),
         ('normal-threshold', 'normalThreshold', 25)]
-    helpers.convert_mapping_to_xml(
-        xml_element, data, settings, fail_required=True)
+    helpers.convert_mapping_to_xml(xml_element, data, settings)
 
 
 def shining_panda(parser, xml_parent, data):
@@ -4955,7 +4950,7 @@ def rundeck(parser, xml_parent, data):
         ('wait-for-rundeck', 'shouldWaitForRundeckJob', False),
         ('fail-the-build', 'shouldFailTheBuild', False),
     ]
-    helpers.convert_mapping_to_xml(p, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(p, data, mappings)
 
 
 def create_publishers(parser, action):
@@ -5210,8 +5205,7 @@ def scoverage(parser, xml_parent, data):
         ('report-directory', 'reportDir', None),
         ('report-file', 'reportFile', None),
     ]
-    helpers.convert_mapping_to_xml(
-        scoverage, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(scoverage, data, mappings)
 
 
 def display_upstream_changes(parser, xml_parent, data):
@@ -5940,8 +5934,7 @@ def whitesource(parser, xml_parent, data):
         ('project-token', 'projectToken', ''),
         ('requester-email', 'requesterEmail', ''),
     ]
-    helpers.convert_mapping_to_xml(
-        whitesource, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(whitesource, data, mappings)
 
     XML.SubElement(whitesource, 'libIncludes').text = ' '.join(
         data.get('includes', []))
@@ -6250,7 +6243,7 @@ def openshift_build_canceller(parser, xml_parent, data):
         ("auth-token", 'authToken', ''),
         ("verbose", 'verbose', False),
     ]
-    helpers.convert_mapping_to_xml(osb, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(osb, data, mapping)
 
 
 def openshift_deploy_canceller(parser, xml_parent, data):
@@ -6298,7 +6291,7 @@ def openshift_deploy_canceller(parser, xml_parent, data):
         ("auth-token", 'authToken', ''),
         ("verbose", 'verbose', False),
     ]
-    helpers.convert_mapping_to_xml(osb, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(osb, data, mapping)
 
 
 def github_pull_request_merge(parser, xml_parent, data):
@@ -6344,7 +6337,7 @@ def github_pull_request_merge(parser, xml_parent, data):
         ("delete-on-merge", 'deleteOnMerge', 'false'),
     ]
 
-    helpers.convert_mapping_to_xml(osb, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(osb, data, mapping)
 
 
 class Publishers(jenkins_jobs.modules.base.Base):

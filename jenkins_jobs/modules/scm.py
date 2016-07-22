@@ -1178,7 +1178,7 @@ def openshift_img_streams(parser, xml_parent, data):
         ("auth-token", 'authToken', ''),
         ("verbose", 'verbose', False),
     ]
-    convert_mapping_to_xml(scm, data, mapping, fail_required=True)
+    convert_mapping_to_xml(scm, data, mapping)
 
 
 def bzr(parser, xml_parent, data):
@@ -1217,7 +1217,7 @@ def bzr(parser, xml_parent, data):
     ]
     scm_element = XML.SubElement(
         xml_parent, 'scm', {'class': 'hudson.plugins.bazaar.BazaarSCM'})
-    convert_mapping_to_xml(scm_element, data, mapping, fail_required=True)
+    convert_mapping_to_xml(scm_element, data, mapping)
 
     browser_name_to_class = {
         'loggerhead': 'Loggerhead',

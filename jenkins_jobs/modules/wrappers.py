@@ -243,7 +243,7 @@ def logfilesize(parser, xml_parent, data):
         ('size', 'maxLogSize', 128),
         ('fail', 'failBuild', False),
     ]
-    convert_mapping_to_xml(lfswrapper, data, mapping, fail_required=True)
+    convert_mapping_to_xml(lfswrapper, data, mapping)
 
 
 def timeout(parser, xml_parent, data):
@@ -568,7 +568,7 @@ def live_screenshot(parser, xml_parent, data):
         ('full-size', 'fullscreenFilename', 'screenshot.png'),
         ('thumbnail', 'thumbnailFilename', 'screenshot-thumb.png'),
     ]
-    convert_mapping_to_xml(live, data, mapping, fail_required=True)
+    convert_mapping_to_xml(live, data, mapping)
 
 
 def mask_passwords(parser, xml_parent, data):
@@ -1504,7 +1504,7 @@ def mongo_db(parser, xml_parent, data):
         ('startup-params', 'parameters', ''),
         ('start-timeout', 'startTimeout', 0),
     ]
-    convert_mapping_to_xml(mongodb, data, mapping, fail_required=True)
+    convert_mapping_to_xml(mongodb, data, mapping)
 
 
 def delivery_pipeline(parser, xml_parent, data):

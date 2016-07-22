@@ -556,7 +556,7 @@ def gerrit(parser, xml_parent, data):
         ('readable-message', 'readableMessage', False),
         ('dependency-jobs', 'dependencyJobsNames', ''),
     ]
-    convert_mapping_to_xml(gtrig, data, general_mappings, fail_required=True)
+    convert_mapping_to_xml(gtrig, data, general_mappings)
     notification_levels = ['NONE', 'OWNER', 'OWNER_REVIEWERS', 'ALL',
                            'SERVER_DEFAULT']
     notification_level = data.get('notification-level', 'SERVER_DEFAULT')
@@ -610,7 +610,7 @@ def gerrit(parser, xml_parent, data):
         ('custom-url', 'customUrl', ''),
         ('server-name', 'serverName', '__ANY__'),
     ]
-    convert_mapping_to_xml(gtrig, data, message_mappings, fail_required=True)
+    convert_mapping_to_xml(gtrig, data, message_mappings)
 
 
 def pollscm(parser, xml_parent, data):
@@ -1517,7 +1517,7 @@ def script(parser, xml_parent, data):
         ('enable-concurrent', 'enableConcurrentBuild', False),
         ('exit-code', 'exitCode', 0)
     ]
-    convert_mapping_to_xml(st, data, mappings, fail_required=True)
+    convert_mapping_to_xml(st, data, mappings)
 
     XML.SubElement(st, 'labelRestriction').text = str(bool(label)).lower()
     if label:
@@ -1568,7 +1568,7 @@ def groovy_script(parser, xml_parent, data):
         ('enable-concurrent', 'enableConcurrentBuild', False),
         ('cron', 'spec', ''),
     ]
-    convert_mapping_to_xml(gst, data, mappings, fail_required=True)
+    convert_mapping_to_xml(gst, data, mappings)
 
     label = data.get('label')
     XML.SubElement(gst, 'labelRestriction').text = str(bool(label)).lower()
