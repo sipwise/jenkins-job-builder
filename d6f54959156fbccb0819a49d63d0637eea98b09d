@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "dada55a8_9d726548",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-22T12:40:55Z",
+      "side": 1,
+      "message": "Correct, similar as mentioned by Wayne, this should check each option and only set the config option if the option has been set on the command line.\n\nHave a fix ready. Just need to add a test case.",
+      "parentUuid": "dada55a8_a0bd9a03",
+      "revId": "d6f54959156fbccb0819a49d63d0637eea98b09d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dada55a8_952f2c3e",
         "filename": "jenkins_jobs/config.py",
         "patchSetId": 1
