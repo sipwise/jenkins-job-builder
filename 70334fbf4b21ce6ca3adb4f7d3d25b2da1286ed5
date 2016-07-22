@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_9471977a",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-22T15:32:34Z",
+      "side": 0,
+      "message": "One of things missed here, is to ensure the flush_cache option is read from the parser and set on the config object.",
+      "revId": "70334fbf4b21ce6ca3adb4f7d3d25b2da1286ed5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

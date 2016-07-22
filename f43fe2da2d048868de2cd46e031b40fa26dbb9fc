@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_741ce313",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-22T15:32:34Z",
+      "side": 1,
+      "message": "Looks like we\u0027re missing handling flush_cache here. Think this matches the original patch behaviour, just when switching to using the config object to create the builder and removing the explict API usage in cmd, the use of options.flush_cache wasn\u0027t changed. Can be done with a follow on patch.",
+      "revId": "f43fe2da2d048868de2cd46e031b40fa26dbb9fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_740fc32e",
+        "filename": "tests/cmd/test_config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-22T15:32:34Z",
+      "side": 1,
+      "message": "I think this is the second area I had to change.",
+      "revId": "f43fe2da2d048868de2cd46e031b40fa26dbb9fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
