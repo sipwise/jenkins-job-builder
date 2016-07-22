@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_9a0ed5e3",
+        "filename": "jenkins_jobs/cli/subcommand/update.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-22T18:40:19Z",
+      "side": 1,
+      "message": "Probably should be moved to a \u0027validate()\u0027 method and call parser.error() instead in such cases. Added to list of todos.",
+      "revId": "93686e998e89af5daf71f82e30b4aafa4948a81d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
