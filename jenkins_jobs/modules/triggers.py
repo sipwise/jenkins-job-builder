@@ -560,7 +560,7 @@ def gerrit(registry, xml_parent, data):
         ('readable-message', 'readableMessage', False),
         ('dependency-jobs', 'dependencyJobsNames', ''),
     ]
-    convert_mapping_to_xml(gtrig, data, general_mappings, fail_required=True)
+    convert_mapping_to_xml(gtrig, data, general_mappings)
     notification_levels = ['NONE', 'OWNER', 'OWNER_REVIEWERS', 'ALL',
                            'SERVER_DEFAULT']
     notification_level = data.get('notification-level', 'SERVER_DEFAULT')
@@ -614,7 +614,7 @@ def gerrit(registry, xml_parent, data):
         ('custom-url', 'customUrl', ''),
         ('server-name', 'serverName', '__ANY__'),
     ]
-    convert_mapping_to_xml(gtrig, data, message_mappings, fail_required=True)
+    convert_mapping_to_xml(gtrig, data, message_mappings)
 
 
 def pollscm(registry, xml_parent, data):
@@ -1169,12 +1169,12 @@ def gitlab(registry, xml_parent, data):
         mapping = [
             ('trigger-open-merge-request-push',
              'triggerOpenMergeRequestOnPush', 'never', valid_merge_request)]
-        convert_mapping_to_xml(gitlab, data, mapping, fail_required=True)
+        convert_mapping_to_xml(gitlab, data, mapping)
     else:
         mapping = [
             ('trigger-open-merge-request-push',
              'triggerOpenMergeRequestOnPush', True)]
-        convert_mapping_to_xml(gitlab, data, mapping, fail_required=True)
+        convert_mapping_to_xml(gitlab, data, mapping)
 
     if plugin_ver == pkg_resources.parse_version('1.1.29'):
         if data.get('branch-filter-type', '') == 'All':
@@ -1182,12 +1182,12 @@ def gitlab(registry, xml_parent, data):
         valid_filters = ['', 'NameBasedFilter', 'RegexBasedFilter']
         mapping = [
             ('branch-filter-type', 'branchFilterName', '', valid_filters)]
-        convert_mapping_to_xml(gitlab, data, mapping, fail_required=True)
+        convert_mapping_to_xml(gitlab, data, mapping)
     else:
         valid_filters = ['All', 'NameBasedFilter', 'RegexBasedFilter']
         mapping = [
             ('branch-filter-type', 'branchFilterType', 'All', valid_filters)]
-        convert_mapping_to_xml(gitlab, data, mapping, fail_required=True)
+        convert_mapping_to_xml(gitlab, data, mapping)
 
     XML.SubElement(gitlab, 'spec').text = ''
     mapping = [
@@ -1211,7 +1211,7 @@ def gitlab(registry, xml_parent, data):
         ('include-branches', 'includeBranchesSpec', []),
         ('exclude-branches', 'excludeBranchesSpec', []),
     )
-    convert_mapping_to_xml(gitlab, data, mapping, fail_required=True)
+    convert_mapping_to_xml(gitlab, data, mapping)
 
     for yaml_name, xml_name, default_val in list_mapping:
         value = ', '.join(data.get(yaml_name, default_val))
@@ -1613,7 +1613,7 @@ def script(registry, xml_parent, data):
         ('enable-concurrent', 'enableConcurrentBuild', False),
         ('exit-code', 'exitCode', 0)
     ]
-    convert_mapping_to_xml(st, data, mappings, fail_required=True)
+    convert_mapping_to_xml(st, data, mappings)
 
     XML.SubElement(st, 'labelRestriction').text = str(bool(label)).lower()
     if label:
@@ -1664,7 +1664,7 @@ def groovy_script(registry, xml_parent, data):
         ('enable-concurrent', 'enableConcurrentBuild', False),
         ('cron', 'spec', ''),
     ]
-    convert_mapping_to_xml(gst, data, mappings, fail_required=True)
+    convert_mapping_to_xml(gst, data, mappings)
 
     label = data.get('label')
     XML.SubElement(gst, 'labelRestriction').text = str(bool(label)).lower()
