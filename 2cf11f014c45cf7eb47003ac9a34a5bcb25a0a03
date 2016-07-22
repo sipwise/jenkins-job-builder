@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_86b5f232",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-22T13:27:57Z",
+      "side": 1,
+      "message": "Guess I missed this multiline string, the warning will be displayed oddly in the console with this format.",
+      "revId": "2cf11f014c45cf7eb47003ac9a34a5bcb25a0a03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
