@@ -205,6 +205,35 @@ def change_assembly_version(parser, xml_parent, data):
         data.get('assembly-file', 'AssemblyInfo.cs'))
 
 
+def fingerprint(parser, xml_parent, data):
+    """yaml: create-fingerprint
+    Adds the ability to generate fingerprints as build steps instead of waiting
+    for a build to complete. Requires the Jenkins :jenkins-wiki:`Fingerprint
+    Plugin <Fingerprint+Plugin>`.
+
+    :arg str targets: Files to fingerprint (required)
+
+    Full Example:
+
+    .. literalinclude::
+        /../../tests/builders/fixtures/fingerprint-full.yaml
+       :language: yaml
+
+    Minimal Example:
+
+    .. literalinclude::
+        /../../tests/builders/fixtures/fingerprint-minimal.yaml
+       :language: yaml
+    """
+
+    fingerprint = XML.SubElement(
+        xml_parent, 'hudson.plugins.createfingerprint.CreateFingerprint')
+    fingerprint.set('plugin', 'create-fingerprint')
+
+    mapping = [('targets', 'targets', None)]
+    convert_mapping_to_xml(fingerprint, data, mapping, fail_required=True)
+
+
 def ant(parser, xml_parent, data):
     """yaml: ant
     Execute an ant target. Requires the Jenkins :jenkins-wiki:`Ant Plugin
