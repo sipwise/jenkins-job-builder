@@ -1,0 +1,3 @@
+builders:
+  - create-fingerprint:
+      targets: module/dist/**/*.zip
