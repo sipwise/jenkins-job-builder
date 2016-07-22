@@ -822,7 +822,7 @@ def http_request(parser, xml_parent, data):
         ('time-out', 'timeout', 0),
         ('valid-response-codes', 'validResponseCodes', ''),
         ('valid-response-content', 'validResponseContent', '')]
-    convert_mapping_to_xml(http_request, data, mappings, fail_required=True)
+    convert_mapping_to_xml(http_request, data, mappings)
 
     if 'authentication-key' in data:
         XML.SubElement(
@@ -836,10 +836,7 @@ def http_request(parser, xml_parent, data):
         ]
         for customhead in data['custom-headers']:
             pair = XML.SubElement(customHeader, 'pair')
-            convert_mapping_to_xml(pair,
-                                   customhead,
-                                   header_mappings,
-                                   fail_required=True)
+            convert_mapping_to_xml(pair, customhead, header_mappings)
 
 
 def inject(parser, xml_parent, data):
@@ -2626,7 +2623,7 @@ def scan_build(parser, xml_parent, data):
          '-derivedDataPath $WORKSPACE/build'),
         ('report-folder', 'outputFolderName', 'clangScanBuildReports'),
     ]
-    convert_mapping_to_xml(p, data, mappings, fail_required=True)
+    convert_mapping_to_xml(p, data, mappings)
 
 
 def ssh_builder(parser, xml_parent, data):
@@ -2686,7 +2683,7 @@ def sonar(parser, xml_parent, data):
         ('java-opts', 'javaOpts', ''),
         ('additional-arguments', 'additionalArguments', ''),
     ]
-    convert_mapping_to_xml(sonar, data, mappings, fail_required=True)
+    convert_mapping_to_xml(sonar, data, mappings)
     if 'jdk' in data:
         XML.SubElement(sonar, 'jdk').text = data['jdk']
 
@@ -2739,8 +2736,7 @@ def sonatype_clm(parser, xml_parent, data):
         ('value', 'value', 'list', SUPPORTED_VALUES),
         ('application-name', 'applicationId', None),
     ]
-    convert_mapping_to_xml(
-        application_select, data, application_mappings, fail_required=True)
+    convert_mapping_to_xml(application_select, data, application_mappings)
 
     path = XML.SubElement(clm, 'pathConfig')
     path_mappings = [
@@ -2748,7 +2744,7 @@ def sonatype_clm(parser, xml_parent, data):
         ('module-excludes', 'moduleExcludes', ''),
         ('advanced-options', 'scanProperties', ''),
     ]
-    convert_mapping_to_xml(path, data, path_mappings, fail_required=True)
+    convert_mapping_to_xml(path, data, path_mappings)
 
     mappings = [
         ('fail-on-clm-server-failure', 'failOnClmServerFailures', False),
@@ -2756,7 +2752,7 @@ def sonatype_clm(parser, xml_parent, data):
         ('username', 'username', ''),
         ('password', 'password', ''),
     ]
-    convert_mapping_to_xml(clm, data, mappings, fail_required=True)
+    convert_mapping_to_xml(clm, data, mappings)
 
 
 def beaker(parser, xml_parent, data):
@@ -2887,7 +2883,7 @@ def openshift_build_verify(parser, xml_parent, data):
         ("auth-token", 'authToken', ''),
         ("verbose", 'verbose', False),
     ]
-    convert_mapping_to_xml(osb, data, mapping, fail_required=True)
+    convert_mapping_to_xml(osb, data, mapping)
 
 
 def openshift_builder(parser, xml_parent, data):
@@ -2943,7 +2939,7 @@ def openshift_builder(parser, xml_parent, data):
         ("build-name", 'buildName', ''),
         ("show-build-logs", 'showBuildLogs', False),
     ]
-    convert_mapping_to_xml(osb, data, mapping, fail_required=True)
+    convert_mapping_to_xml(osb, data, mapping)
 
 
 def openshift_creator(parser, xml_parent, data):
@@ -2991,7 +2987,7 @@ def openshift_creator(parser, xml_parent, data):
         ("auth-token", 'authToken', ''),
         ("verbose", 'verbose', False),
     ]
-    convert_mapping_to_xml(osb, data, mapping, fail_required=True)
+    convert_mapping_to_xml(osb, data, mapping)
 
 
 def openshift_dep_verify(parser, xml_parent, data):
@@ -3042,7 +3038,7 @@ def openshift_dep_verify(parser, xml_parent, data):
         ("auth-token", 'authToken', ''),
         ("verbose", 'verbose', False),
     ]
-    convert_mapping_to_xml(osb, data, mapping, fail_required=True)
+    convert_mapping_to_xml(osb, data, mapping)
 
 
 def openshift_deployer(parser, xml_parent, data):
@@ -3088,7 +3084,7 @@ def openshift_deployer(parser, xml_parent, data):
         ("auth-token", 'authToken', ''),
         ("verbose", 'verbose', False),
     ]
-    convert_mapping_to_xml(osb, data, mapping, fail_required=True)
+    convert_mapping_to_xml(osb, data, mapping)
 
 
 def openshift_img_tagger(parser, xml_parent, data):
@@ -3139,7 +3135,7 @@ def openshift_img_tagger(parser, xml_parent, data):
         ("auth-token", 'authToken', ''),
         ("verbose", 'verbose', False),
     ]
-    convert_mapping_to_xml(osb, data, mapping, fail_required=True)
+    convert_mapping_to_xml(osb, data, mapping)
 
 
 def openshift_scaler(parser, xml_parent, data):
@@ -3186,7 +3182,7 @@ def openshift_scaler(parser, xml_parent, data):
         ("auth-token", 'authToken', ''),
         ("verbose", 'verbose', False),
     ]
-    convert_mapping_to_xml(osb, data, mapping, fail_required=True)
+    convert_mapping_to_xml(osb, data, mapping)
 
 
 def openshift_svc_verify(parser, xml_parent, data):
@@ -3231,7 +3227,7 @@ def openshift_svc_verify(parser, xml_parent, data):
         ("auth-token", 'authToken', ''),
         ("verbose", 'verbose', False),
     ]
-    convert_mapping_to_xml(osb, data, mapping, fail_required=True)
+    convert_mapping_to_xml(osb, data, mapping)
 
 
 def runscope(parser, xml_parent, data):
