@@ -243,7 +243,7 @@ def logfilesize(registry, xml_parent, data):
         ('size', 'maxLogSize', 128),
         ('fail', 'failBuild', False),
     ]
-    convert_mapping_to_xml(lfswrapper, data, mapping, fail_required=True)
+    convert_mapping_to_xml(lfswrapper, data, mapping)
 
 
 def timeout(registry, xml_parent, data):
@@ -568,7 +568,7 @@ def live_screenshot(registry, xml_parent, data):
         ('full-size', 'fullscreenFilename', 'screenshot.png'),
         ('thumbnail', 'thumbnailFilename', 'screenshot-thumb.png'),
     ]
-    convert_mapping_to_xml(live, data, mapping, fail_required=True)
+    convert_mapping_to_xml(live, data, mapping)
 
 
 def mask_passwords(registry, xml_parent, data):
@@ -1494,7 +1494,7 @@ def mongo_db(registry, xml_parent, data):
         ('startup-params', 'parameters', ''),
         ('start-timeout', 'startTimeout', 0),
     ]
-    convert_mapping_to_xml(mongodb, data, mapping, fail_required=True)
+    convert_mapping_to_xml(mongodb, data, mapping)
 
 
 def delivery_pipeline(registry, xml_parent, data):
@@ -1531,7 +1531,7 @@ def delivery_pipeline(registry, xml_parent, data):
         ('version-template', 'versionTemplate', ''),
         ('set-display-name', 'updateDisplayName', False),
     ]
-    convert_mapping_to_xml(pvc, data, mapping, fail_required=True)
+    convert_mapping_to_xml(pvc, data, mapping)
 
 
 def matrix_tie_parent(registry, xml_parent, data):
@@ -1841,7 +1841,7 @@ def xvnc(registry, xml_parent, data):
         ('screenshot', 'takeScreenshot', False),
         ('xauthority', 'useXauthority', True),
     ]
-    convert_mapping_to_xml(xwrapper, data, mapping, fail_required=True)
+    convert_mapping_to_xml(xwrapper, data, mapping)
 
 
 def job_log_logger(registry, xml_parent, data):
@@ -2340,7 +2340,7 @@ def maven_release(registry, xml_parent, data):
         ('scm-user-env-var', 'scmUserEnvVar', ''),
         ('scm-password-env-var', 'scmPasswordEnvVar', ''),
     ]
-    convert_mapping_to_xml(mvn_release, data, mapping, fail_required=True)
+    convert_mapping_to_xml(mvn_release, data, mapping)
 
 
 class Wrappers(jenkins_jobs.modules.base.Base):

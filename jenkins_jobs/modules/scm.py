@@ -675,7 +675,7 @@ def repo(registry, xml_parent, data):
         ('show-all-changes', 'showAllChanges', False),
         ('local-manifest', 'localManifest', ''),
     ]
-    convert_mapping_to_xml(scm, data, mapping, fail_required=True)
+    convert_mapping_to_xml(scm, data, mapping)
 
     # ignore-projects does not follow the same pattern of the other parameters,
     # so process it here:
@@ -1164,7 +1164,7 @@ def openshift_img_streams(registry, xml_parent, data):
         ("auth-token", 'authToken', ''),
         ("verbose", 'verbose', False),
     ]
-    convert_mapping_to_xml(scm, data, mapping, fail_required=True)
+    convert_mapping_to_xml(scm, data, mapping)
 
 
 def bzr(registry, xml_parent, data):
@@ -1203,7 +1203,7 @@ def bzr(registry, xml_parent, data):
     ]
     scm_element = XML.SubElement(
         xml_parent, 'scm', {'class': 'hudson.plugins.bazaar.BazaarSCM'})
-    convert_mapping_to_xml(scm_element, data, mapping, fail_required=True)
+    convert_mapping_to_xml(scm_element, data, mapping)
 
     browser_name_to_class = {
         'loggerhead': 'Loggerhead',
