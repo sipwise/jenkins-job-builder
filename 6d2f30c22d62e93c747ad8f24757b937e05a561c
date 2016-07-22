@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_f950cc0c",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2016-07-22T15:06:11Z",
+      "side": 1,
+      "message": "Should we catch the case when jobs is string ? Eg a single job being asked for deletion. A typical mistake would be:\n\n delete_jobs(\u0027mybuilder\u0027)\n\nAnd maybe add a convenience method  delete_job(job)  (singular)\n\nThat is a random idea really.",
+      "revId": "6d2f30c22d62e93c747ad8f24757b937e05a561c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
