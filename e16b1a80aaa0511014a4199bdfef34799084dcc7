@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_d95dff49",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-22T17:53:31Z",
+      "side": 0,
+      "message": "This looks like a behavioural change, as opposed to altering the API. If someone was to call delete_old_managed() without any arguments, after calling update_jobs() they might have a reasonable expectation that it doesn\u0027t go a delete the jobs they just updated. It seems a bit of an inconvenience to have to supply the information on what jobs were updated.\n\nPerhaps we can add an internal state dict, for the last set of jobs updated through update_jobs() and have this use it, if not provided with someone other than None?\n\nProbably a separate change.",
+      "revId": "e16b1a80aaa0511014a4199bdfef34799084dcc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
