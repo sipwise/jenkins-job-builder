@@ -38,8 +38,7 @@ class TestCaseTestHelpers(base.BaseTestCase):
         convert_mapping_to_xml(
             default_root,
             default_data,
-            default_mappings,
-            fail_required=True)
+            default_mappings)
         result = default_root.find('defaultString').text
         self.assertThat(result, Equals('default'))
 
@@ -52,8 +51,7 @@ class TestCaseTestHelpers(base.BaseTestCase):
         convert_mapping_to_xml(
             user_input_root,
             user_input_data,
-            user_input_mappings,
-            fail_required=True)
+            user_input_mappings)
         result = user_input_root.find('userInputString').text
         self.assertThat(result, Equals('hello'))
 
@@ -66,8 +64,7 @@ class TestCaseTestHelpers(base.BaseTestCase):
                           convert_mapping_to_xml,
                           required_root,
                           required_data,
-                          required_mappings,
-                          fail_required=True)
+                          required_mappings)
 
         # Test invalid user input for list
         user_input_root = XML.Element('testUserInput')

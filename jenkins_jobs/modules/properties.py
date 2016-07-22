@@ -733,7 +733,7 @@ def delivery_pipeline(registry, xml_parent, data):
         ('task', 'taskName', ''),
         ('description', 'descriptionTemplate', ''),
     ]
-    helpers.convert_mapping_to_xml(pipeline, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(pipeline, data, mapping)
 
 
 def zeromq_event(registry, xml_parent, data):

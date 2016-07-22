@@ -291,8 +291,7 @@ def hue_light(registry, xml_parent, data):
     lightId = XML.SubElement(hue_light, 'lightId')
 
     id_mapping = [('light-id', 'string', None)]
-    helpers.convert_mapping_to_xml(
-        lightId, data, id_mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(lightId, data, id_mapping)
 
     build_mapping = [
         ('pre-build', 'preBuild', 'blue'),
@@ -300,8 +299,7 @@ def hue_light(registry, xml_parent, data):
         ('unstable-build', 'unstableBuild', 'yellow'),
         ('bad-build', 'badBuild', 'red'),
     ]
-    helpers.convert_mapping_to_xml(
-        hue_light, data, build_mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(hue_light, data, build_mapping)
 
 
 def campfire(registry, xml_parent, data):
@@ -438,8 +436,7 @@ def codecover(registry, xml_parent, data):
         ('min-condition', 'minCondition', 0),
         ('max-condition', 'maxCondition', 50),
     ]
-    helpers.convert_mapping_to_xml(
-        health_report, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(health_report, data, mapping)
 
 
 def emotional_jenkins(registry, xml_parent, data):
@@ -1040,8 +1037,7 @@ def cobertura(registry, xml_parent, data):
         ('zoom-coverage-chart', 'zoomCoverageChart', False),
         ('fail-no-reports', 'failNoReports', False),
     ]
-    helpers.convert_mapping_to_xml(
-        cobertura, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(cobertura, data, mapping)
 
     healthy = XML.SubElement(cobertura, 'healthyTarget')
     targets = XML.SubElement(healthy, 'targets', {
@@ -1393,8 +1389,7 @@ def cucumber_reports(registry, xml_parent, data):
         ('ignore-failed-tests', 'ignoreFailedTests', False),
         ('parallel-testing', 'parallelTesting', False)
     ]
-    helpers.convert_mapping_to_xml(
-        cucumber_reports, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(cucumber_reports, data, mappings)
 
 
 def cucumber_testresult(registry, xml_parent, data):
@@ -2578,7 +2573,7 @@ def growl(registry, xml_parent, data):
         ('ip', 'IP', None),
         ('notify-only-on-fail-or-recovery', 'onlyOnFailureOrRecovery', False),
     ]
-    helpers.convert_mapping_to_xml(growl, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(growl, data, mapping)
 
 
 def groovy_postbuild(registry, xml_parent, data):
@@ -3483,16 +3478,14 @@ def test_fairy(registry, xml_parent, data):
             ('storepass', 'storepass', 'android'),
             ('alias', 'alias', 'androiddebugkey'),
             ('keypass', 'keypass', '')]
-        helpers.convert_mapping_to_xml(
-            root, data, mappings, fail_required=True)
+        helpers.convert_mapping_to_xml(root, data, mappings)
     elif platform == 'ios':
         root = XML.SubElement(
             xml_parent, 'org.jenkinsci.plugins.testfairy.TestFairyIosRecorder')
         helpers.test_fairy_common(root, data)
 
         mappings = [('dSYM-file', 'mappingFile', '')]
-        helpers.convert_mapping_to_xml(
-            root, data, mappings, fail_required=True)
+        helpers.convert_mapping_to_xml(root, data, mappings)
     else:
         raise InvalidAttributeError('platform', platform, valid_platforms)
 
@@ -3570,7 +3563,7 @@ def html_publisher(registry, xml_parent, data):
         ('keep-all', 'keepAll', False),
         ('allow-missing', 'allowMissing', False),
     ]
-    helpers.convert_mapping_to_xml(ptarget, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(ptarget, data, mapping)
     XML.SubElement(ptarget, 'wrapperName').text = "htmlpublisher-wrapper.html"
 
 
@@ -3676,7 +3669,7 @@ def tap(registry, xml_parent, data):
         ('verbose', 'verbose', True),
         ('show-only-failures', 'showOnlyFailures', False),
     ]
-    helpers.convert_mapping_to_xml(tap, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(tap, data, mappings)
 
 
 def post_tasks(registry, xml_parent, data):
@@ -4600,6 +4593,23 @@ def plot(registry, xml_parent, data):
                     subserie, serie, plot_xml_mappings, fail_required=True)
             XML.SubElement(subserie, 'fileType').text = serie.get('format')
 
+        mappings = [
+            ('group', 'group', None),
+            ('use-description', 'useDescr', False),
+            ('exclude-zero-yaxis', 'exclZero', False),
+            ('logarithmic-yaxis', 'logarithmic', False),
+            ('keep-records', 'keepRecords', False),
+            ('num-builds', 'numBuilds', '')]
+        helpers.convert_mapping_to_xml(plugin, plot, mappings)
+
+        style_list = ['area', 'bar', 'bar3d', 'line', 'line3d', 'stackedArea',
+                      'stackedbar', 'stackedbar3d', 'waterfall']
+        style = plot.get('style', 'line')
+        if style not in style_list:
+            raise JenkinsJobsException("style entered is not valid, must be "
+                                       "one of: %s" % ", ".join(style_list))
+        XML.SubElement(plugin, 'style').text = style
+
 
 def git(registry, xml_parent, data):
     """yaml: git
@@ -4674,7 +4684,7 @@ def git(registry, xml_parent, data):
 
     top = XML.SubElement(xml_parent, 'hudson.plugins.git.GitPublisher')
     XML.SubElement(top, 'configVersion').text = '2'
-    helpers.convert_mapping_to_xml(top, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(top, data, mappings)
 
     tags = data.get('tags', [])
     if tags:
@@ -4684,7 +4694,7 @@ def git(registry, xml_parent, data):
                 xml_tags,
                 'hudson.plugins.git.GitPublisher_-TagToPush')
             helpers.convert_mapping_to_xml(
-                xml_tag, tag['tag'], tag_mappings, fail_required=True)
+                xml_tag, tag['tag'], tag_mappings)
 
     branches = data.get('branches', [])
     if branches:
@@ -4695,8 +4705,7 @@ def git(registry, xml_parent, data):
                 'hudson.plugins.git.GitPublisher_-BranchToPush')
             helpers.convert_mapping_to_xml(xml_branch,
                                            branch['branch'],
-                                           branch_mappings,
-                                           fail_required=True)
+                                           branch_mappings)
 
     notes = data.get('notes', [])
     if notes:
@@ -4706,7 +4715,7 @@ def git(registry, xml_parent, data):
                 xml_notes,
                 'hudson.plugins.git.GitPublisher_-NoteToPush')
             helpers.convert_mapping_to_xml(
-                xml_note, note['note'], note_mappings, fail_required=True)
+                xml_note, note['note'], note_mappings)
 
 
 def github_notifier(registry, xml_parent, data):
@@ -5130,8 +5139,7 @@ def testng(registry, xml_parent, data):
         ('failed-fails', 'failedFails', 100),
         ('threshold-mode', 'thresholdMode', 'percentage', threshold_modes)
     ]
-    helpers.convert_mapping_to_xml(
-        reporter, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(reporter, data, mappings)
 
 
 def artifact_deployer(registry, xml_parent, data):
@@ -5533,7 +5541,7 @@ def scan_build(registry, xml_parent, data):
         ('exclude-paths', 'clangexcludedpaths', ''),
         ('report-folder', 'reportFolderName', 'clangScanBuildReports'),
     ]
-    helpers.convert_mapping_to_xml(p, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(p, data, mappings)
 
 
 def dry(registry, xml_parent, data):
@@ -5611,8 +5619,7 @@ def dry(registry, xml_parent, data):
     settings = [
         ('high-threshold', 'highThreshold', 50),
         ('normal-threshold', 'normalThreshold', 25)]
-    helpers.convert_mapping_to_xml(
-        xml_element, data, settings, fail_required=True)
+    helpers.convert_mapping_to_xml(xml_element, data, settings)
 
 
 def shining_panda(registry, xml_parent, data):
@@ -5750,7 +5757,7 @@ def rundeck(registry, xml_parent, data):
         ('wait-for-rundeck', 'shouldWaitForRundeckJob', False),
         ('fail-the-build', 'shouldFailTheBuild', False),
     ]
-    helpers.convert_mapping_to_xml(p, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(p, data, mappings)
 
 
 def create_publishers(registry, action):
@@ -6032,8 +6039,7 @@ def scoverage(registry, xml_parent, data):
         ('report-directory', 'reportDir', None),
         ('report-file', 'reportFile', None),
     ]
-    helpers.convert_mapping_to_xml(
-        scoverage, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(scoverage, data, mappings)
 
 
 def display_upstream_changes(registry, xml_parent, data):
@@ -6099,7 +6105,7 @@ def logstash(registry, xml_parent, data):
         ('max-lines', 'maxLines', 1000),
         ('fail-build', 'failBuild', False),
     ]
-    helpers.convert_mapping_to_xml(logstash, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(logstash, data, mapping)
 
 
 def image_gallery(registry, xml_parent, data):
@@ -6541,7 +6547,7 @@ def clamav(registry, xml_parent, data):
         ('includes', 'includes', ''),
         ('excludes', 'excludes', ''),
     ]
-    helpers.convert_mapping_to_xml(clamav, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(clamav, data, mappings)
 
 
 def testselector(registry, xml_parent, data):
@@ -6710,8 +6716,7 @@ def whitesource(registry, xml_parent, data):
         ('project-token', 'projectToken', ''),
         ('requester-email', 'requesterEmail', ''),
     ]
-    helpers.convert_mapping_to_xml(
-        whitesource, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(whitesource, data, mappings)
 
     XML.SubElement(whitesource, 'libIncludes').text = ' '.join(
         data.get('includes', []))
@@ -7078,7 +7083,7 @@ def openshift_build_canceller(registry, xml_parent, data):
         ("auth-token", 'authToken', ''),
         ("verbose", 'verbose', False),
     ]
-    helpers.convert_mapping_to_xml(osb, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(osb, data, mapping)
 
 
 def openshift_deploy_canceller(registry, xml_parent, data):
@@ -7126,7 +7131,7 @@ def openshift_deploy_canceller(registry, xml_parent, data):
         ("auth-token", 'authToken', ''),
         ("verbose", 'verbose', False),
     ]
-    helpers.convert_mapping_to_xml(osb, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(osb, data, mapping)
 
 
 def github_pull_request_merge(registry, xml_parent, data):
@@ -7172,7 +7177,7 @@ def github_pull_request_merge(registry, xml_parent, data):
         ("delete-on-merge", 'deleteOnMerge', 'false'),
     ]
 
-    helpers.convert_mapping_to_xml(osb, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(osb, data, mapping)
 
 
 def chuck_norris(registry, xml_parent, data):

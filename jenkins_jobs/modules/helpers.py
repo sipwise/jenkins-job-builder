@@ -102,7 +102,7 @@ def config_file_provider_builder(xml_parent, data):
             ('target', 'targetLocation', ''),
             ('variable', 'variable', ''),
         ]
-        convert_mapping_to_xml(xml_file, file, mapping, fail_required=True)
+        convert_mapping_to_xml(xml_file, file, mapping)
 
 
 def config_file_provider_settings(xml_parent, data):
@@ -246,7 +246,7 @@ def findbugs_settings(xml_parent, data):
         ('include-files', 'includePattern', ''),
         ('exclude-files', 'excludePattern', ''),
     ]
-    convert_mapping_to_xml(xml_parent, data, mapping, fail_required=True)
+    convert_mapping_to_xml(xml_parent, data, mapping)
 
 
 def get_value_from_yaml_or_config_file(key, section, data, jjb_config):
@@ -461,7 +461,7 @@ def test_fairy_common(xml_element, data):
         # Advanced options
         ('advanced-options', 'advancedOptions', '')
     ]
-    convert_mapping_to_xml(xml_element, data, mappings, fail_required=True)
+    convert_mapping_to_xml(xml_element, data, mappings)
 
 
 def trigger_get_parameter_order(registry, plugin):
@@ -589,18 +589,11 @@ def trigger_project(tconfigs, project_def, param_order=None):
                     mapping, fail_required=True)
 
 
-def convert_mapping_to_xml(parent, data, mapping, fail_required=False):
+def convert_mapping_to_xml(parent, data, mapping):
     """Convert mapping to XML
 
-    fail_required affects the last parameter of the mapping field when it's
-    parameter is set to 'None'. When fail_required is True then a 'None' value
-    represents a required configuration so will raise a MissingAttributeError
-    if the user does not provide the configuration.
-
-    If fail_required is False parameter is treated as optional. Logic will skip
-    configuring the XML tag for the parameter. We recommend for new plugins to
-    set fail_required=True and instead of optional parameters provide a default
-    value for all paramters that are not required instead.
+    'None' value represents a required configuration so will raise a
+    MissingAttributeError if the user does not provide the configuration.
 
     valid_options provides a way to check if the value the user input is from a
     list of available options. When the user pass a value that is not supported
@@ -623,17 +616,8 @@ def convert_mapping_to_xml(parent, data, mapping, fail_required=False):
             if type(elem[3]) is dict:
                 valid_dict = elem[3]
 
-        # Use fail_required setting to allow support for optional parameters
-        # we will phase this out in the future as we rework plugins so that
-        # optional parameters use a default setting instead.
-        if val is None and fail_required is True:
+        if val is None:
             raise MissingAttributeError(optname)
-
-        # (Deprecated) in the future we will default to fail_required True
-        # if no value is provided then continue else leave it
-        # up to the user if they want to use an empty XML tag
-        if val is None and fail_required is False:
-            continue
 
         if valid_dict:
             if val not in valid_dict:

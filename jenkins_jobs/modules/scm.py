@@ -677,7 +677,7 @@ def repo(registry, xml_parent, data):
         ('trace', 'trace', False),
         ('show-all-changes', 'showAllChanges', False),
     ]
-    convert_mapping_to_xml(scm, data, mapping, fail_required=True)
+    convert_mapping_to_xml(scm, data, mapping)
 
     optional_mapping = [
         # option, xml name, default value
@@ -1172,7 +1172,7 @@ def openshift_img_streams(registry, xml_parent, data):
         ("auth-token", 'authToken', ''),
         ("verbose", 'verbose', False),
     ]
-    convert_mapping_to_xml(scm, data, mapping, fail_required=True)
+    convert_mapping_to_xml(scm, data, mapping)
 
 
 def bzr(registry, xml_parent, data):
@@ -1211,7 +1211,7 @@ def bzr(registry, xml_parent, data):
     ]
     scm_element = XML.SubElement(
         xml_parent, 'scm', {'class': 'hudson.plugins.bazaar.BazaarSCM'})
-    convert_mapping_to_xml(scm_element, data, mapping, fail_required=True)
+    convert_mapping_to_xml(scm_element, data, mapping)
 
     browser_name_to_class = {
         'loggerhead': 'Loggerhead',
