@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_88597391",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-22T16:45:50Z",
+      "side": 1,
+      "message": "The improved way of setting things that I modified (and had only intended to modify the last time)",
+      "revId": "4f04de1f9ad706971f12508dacee5332df0a3a11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_48edbb8d",
+        "filename": "tests/cmd/test_config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-22T16:45:50Z",
+      "side": 1,
+      "message": "Fix up the tests to check values overridden correctly or not, also the only intended change previously.",
+      "revId": "4f04de1f9ad706971f12508dacee5332df0a3a11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
