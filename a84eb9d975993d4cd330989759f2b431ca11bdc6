@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_653a4636",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-07-24T15:06:14Z",
+      "side": 1,
+      "message": "I thought the function name should be create_fingerprint to adopt the same style",
+      "revId": "a84eb9d975993d4cd330989759f2b431ca11bdc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
