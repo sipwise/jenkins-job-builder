@@ -16,6 +16,24 @@
       "revId": "a84eb9d975993d4cd330989759f2b431ca11bdc6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_a5a55e48",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-07-24T15:28:30Z",
+      "side": 1,
+      "message": "Ah good catch. Personally I think simply calling it fingerprint is fine and the yaml below should be \"fingerprint\" since I think usually we name these after the plugin name.",
+      "parentUuid": "dada55a8_653a4636",
+      "revId": "a84eb9d975993d4cd330989759f2b431ca11bdc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
