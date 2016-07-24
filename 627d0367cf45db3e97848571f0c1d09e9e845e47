@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_4582a201",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1879,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-07-24T14:41:44Z",
+      "side": 1,
+      "message": "if we need \u0027\u0027 for the default str value?",
+      "range": {
+        "startLine": 1879,
+        "startChar": 58,
+        "endLine": 1879,
+        "endChar": 69
+      },
+      "revId": "627d0367cf45db3e97848571f0c1d09e9e845e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
