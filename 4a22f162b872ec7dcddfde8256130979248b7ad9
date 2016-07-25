@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dada55a8_30f87249",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-25T14:41:02Z",
+      "side": 1,
+      "message": "Don\u0027t think InvalidAttributeError correctly converts the sequence provided to just get the keys in this case. so valid_dict, most likely needs to become valid_dict.keys().\n\nProbably need to extend some of the tests to support testing some exceptions a bit easier in general. In this case it should be possible to just check that output of the exception in the added test case contains the expected string.",
+      "revId": "4a22f162b872ec7dcddfde8256130979248b7ad9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dada55a8_f0209ab2",
+        "filename": "tests/modules/test_helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-07-25T14:41:02Z",
+      "side": 1,
+      "message": "Add an additional test here to ensure that the exception will only ever contain the keys the user is expected to use, and not the values they get mapped to by the convert function.",
+      "revId": "4a22f162b872ec7dcddfde8256130979248b7ad9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
