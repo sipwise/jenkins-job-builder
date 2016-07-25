@@ -39,6 +39,7 @@ from jenkins_jobs.errors import InvalidAttributeError
 from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.errors import MissingAttributeError
 import jenkins_jobs.modules.base
+from jenkins_jobs.modules.helpers import convert_mapping_to_xml
 
 
 def builds_chain_fingerprinter(parser, xml_parent, data):
@@ -755,27 +756,35 @@ def slack(parser, xml_parent, data):
 
 def rebuild(parser, xml_parent, data):
     """yaml: rebuild
-    Requires the Jenkins :jenkins-wiki:`Rebuild Plugin
-    <Rebuild+Plugin>`.
+    This plug-in allows the user to rebuild a parametrized build without
+    entering the parameters again.It will also allow the user to edit the
+    parameters before rebuilding.
+    Requires the Jenkins :jenkins-wiki:`Rebuild Plugin <Rebuild+Plugin>`.
 
     :arg bool auto-rebuild: Rebuild without asking for parameters
         (default false)
     :arg bool rebuild-disabled: Disable rebuilding for this job
         (default false)
 
-    Example:
+    Full Example:
 
-    .. literalinclude::
-        /../../tests/properties/fixtures/rebuild.yaml
+    .. literalinclude:: /../../tests/properties/fixtures/rebuild-full.yaml
+       :language: yaml
+
+    Minimal Example:
+
+    .. literalinclude:: /../../tests/properties/fixtures/rebuild-minimal.yaml
        :language: yaml
     """
     sub_element = XML.SubElement(xml_parent,
                                  'com.sonyericsson.rebuild.RebuildSettings')
+    sub_element.set('plugin', 'rebuild')
 
-    XML.SubElement(sub_element, 'autoRebuild').text = str(
-        data.get('auto-rebuild', False)).lower()
-    XML.SubElement(sub_element, 'rebuildDisabled').text = str(
-        data.get('rebuild-disabled', False)).lower()
+    mapping = [
+        ('auto-rebuild', 'autoRebuild', False),
+        ('rebuild-disabled', 'rebuildDisabled', False),
+    ]
+    convert_mapping_to_xml(sub_element, data, mapping, fail_required=True)
 
 
 def build_discarder(parser, xml_parent, data):
