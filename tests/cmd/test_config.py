@@ -33,7 +33,7 @@ class TestConfigs(CmdTestsBase):
             m_isfile.side_effect = side_effect
 
             with patch('io.open', return_value=conffp) as m_open:
-                entry.JenkinsJobs(args, config_file_required=True)
+                entry.JenkinsJobs(args)
                 m_open.assert_called_with(self.global_conf, 'r',
                                           encoding='utf-8')
 
@@ -53,7 +53,7 @@ class TestConfigs(CmdTestsBase):
 
             m_isfile.side_effect = side_effect
             with patch('io.open', return_value=conffp) as m_open:
-                entry.JenkinsJobs(args, config_file_required=True)
+                entry.JenkinsJobs(args)
                 m_open.assert_called_with(self.user_conf, 'r',
                                           encoding='utf-8')
 
