@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_5489e9c9",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1051,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-07-27T18:32:52Z",
+      "side": 1,
+      "message": "Please list the minimal example first.",
+      "revId": "aef300c29ccc0fbebc8a7fbfef285ed737ebe27e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
