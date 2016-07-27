@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_540c4942",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-07-27T18:37:44Z",
+      "side": 1,
+      "message": "Please list minimal example first.",
+      "revId": "9847801af1f5cfeb6ec708db1e80eb43031e355e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_74034d10",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1530,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-07-27T18:37:44Z",
+      "side": 1,
+      "message": "Please list minimal example first.",
+      "revId": "9847801af1f5cfeb6ec708db1e80eb43031e355e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
