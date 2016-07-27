@@ -92,6 +92,9 @@ class JJBConfig(object):
             conf = config_filename
 
         elif config_file_required:
+            raise JJBConfigException("""A valid configuration file is required.
+                \nNo configuration file passed.""")
+        else:
             if os.path.isfile(local_conf):
                 conf = local_conf
             elif os.path.isfile(user_conf):
