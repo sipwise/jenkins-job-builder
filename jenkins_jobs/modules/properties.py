@@ -39,6 +39,7 @@ from jenkins_jobs.errors import InvalidAttributeError
 from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.errors import MissingAttributeError
 import jenkins_jobs.modules.base
+from jenkins_jobs.modules.helpers import convert_mapping_to_xml
 
 
 def builds_chain_fingerprinter(parser, xml_parent, data):
@@ -118,6 +119,35 @@ def promoted_build(parser, xml_parent, data):
         active_processes = XML.SubElement(promoted, 'activeProcessNames')
         for n in names:
             XML.SubElement(active_processes, 'string').text = str(n)
+
+
+def gitbucket(parser, xml_parent, data):
+    """yaml: gitbucket
+    Integrate GitBucket to Jenkins.
+    Requires the Jenkins :jenkins-wiki:`GitBucket Plugin <GitBucket+Plugin>`.
+
+    :arg str url: GitBucket URL to issue (required)
+    :arg bool link-enabled: Enable hyperlink to issue (default false)
+
+    Minimal Example:
+
+    .. literalinclude:: /../../tests/properties/fixtures/gitbucket-minimal.yaml
+       :language: yaml
+
+    Full Example:
+
+    .. literalinclude:: /../../tests/properties/fixtures/gitbucket-full.yaml
+       :language: yaml
+    """
+    gitbucket = XML.SubElement(
+        xml_parent, 'org.jenkinsci.plugins.gitbucket.GitBucketProjectProperty')
+    gitbucket.set('plugin', 'gitbucket')
+
+    mapping = [
+        ('url', 'url', None),
+        ('link-enabled', 'linkEnabled', False),
+    ]
+    convert_mapping_to_xml(gitbucket, data, mapping, fail_required=True)
 
 
 def github(parser, xml_parent, data):
