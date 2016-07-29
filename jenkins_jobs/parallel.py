@@ -15,59 +15,18 @@
 
 # Parallel execution helper functions and classes
 
-from functools import wraps
+from concurrent import futures
 import logging
 from multiprocessing import cpu_count
-import threading
 import traceback
 
-try:
-    import Queue as queue
-except ImportError:
-    import queue
+import six
 
 logger = logging.getLogger(__name__)
 
 
-class TaskFunc(dict):
-    """
-    Simple class to wrap around the information needed to run a function.
-    """
-    def __init__(self, n_ord, func, args=None, kwargs=None):
-        self['func'] = func
-        self['args'] = args or []
-        self['kwargs'] = kwargs or {}
-        self['ord'] = n_ord
-
-
-class Worker(threading.Thread):
-    """
-    Class that actually does the work, gets a TaskFunc through the queue,
-    runs its function with the passed parameters and returns the result
-    If the string 'done' is passed instead of a TaskFunc instance, the thread
-    will end.
-    """
-    def __init__(self, in_queue, out_queue):
-        threading.Thread.__init__(self)
-        self.in_queue = in_queue
-        self.out_queue = out_queue
-
-    def run(self):
-        while True:
-            task = self.in_queue.get()
-            if task == 'done':
-                return
-            try:
-                res = task['func'](*task['args'],
-                                   **task['kwargs'])
-            except Exception as exc:
-                res = exc
-                traceback.print_exc()
-            self.out_queue.put((task['ord'], res))
-
-
 def parallelize(func):
-    @wraps(func)
+    @six.wraps(func)
     def parallelized(*args, **kwargs):
         """
         This function will spawn workers and run the decorated function in
@@ -115,37 +74,28 @@ def parallelize(func):
         # If no number of workers passed or passed 0
         if not n_workers:
             n_workers = cpu_count()
-        logging.debug("Running parallel %d workers", n_workers)
-        worker_pool = []
-        in_queue = queue.Queue()
-        out_queue = queue.Queue()
-        for n_worker in range(n_workers):
-            new_worker = Worker(in_queue, out_queue)
-            new_worker.setDaemon(True)
-            logging.debug("Spawning worker %d", n_worker)
-            new_worker.start()
-            worker_pool.append(new_worker)
+        logging.debug("Running (up to) parallel %d workers", n_workers)
 
-        # Feed the workers
-        n_ord = 0
-        for f_kwargs in p_kwargs:
-            f_kwargs.update(kwargs)
-            in_queue.put(TaskFunc(n_ord, func, args, f_kwargs))
-            n_ord += 1
-        for _ in range(n_workers):
-            in_queue.put('done')
+        futs = []
+        with futures.ThreadPoolExecutor(max_workers=n_workers) as executor:
+            # Feed the workers
+            for f_kwargs in p_kwargs:
+                f_kwargs.update(kwargs)
+                futs.append(executor.submit(func, *args, **f_kwargs))
+            # Wait for the results
+            logging.debug("Waiting for workers to finish processing")
+            futures.wait(futs)
 
-        # Wait for the results
-        logging.debug("Waiting for workers to finish processing")
         results = []
-        for _ in p_kwargs:
-            new_res = out_queue.get()
-            results.append(new_res)
-        # cleanup
-        for worker in worker_pool:
-            worker.join()
-        # Reorder the results
-        results = [r[1] for r in sorted(results)]
+        for fut in futs:
+            try:
+                res = fut.result()
+            except Exception as exc:
+                # This is somewhat not right (as we just lost telling
+                # the caller their thing failed, oh well I guess)...
+                res = exc
+                traceback.print_exc()
+            results.append(res)
         logging.debug("Parallel task finished")
         return results
     return parallelized

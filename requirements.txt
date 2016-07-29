@@ -3,3 +3,4 @@ PyYAML
 python-jenkins>=0.4.8
 pbr>=1.0.0,<2.0
 stevedore==1.8.0
+futures>=3.0;python_version=='2.7' or python_version=='2.6' # BSD
