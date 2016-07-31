@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <buildWrappers>
+    <org.jenkinsci.plugins.preSCMbuildstep.PreSCMBuildStepsWrapper>
+      <buildSteps>
+        <hudson.tasks.Shell>
+          <command>#!/bin/bash
+echo &quot;Doing something cool&quot;
+</command>
+        </hudson.tasks.Shell>
+        <hudson.tasks.Shell>
+          <command>#!/bin/zsh
+echo &quot;Doing something cool with zsh&quot;
+</command>
+        </hudson.tasks.Shell>
+      </buildSteps>
+      <failOnError>true</failOnError>
+    </org.jenkinsci.plugins.preSCMbuildstep.PreSCMBuildStepsWrapper>
+  </buildWrappers>
+</project>
