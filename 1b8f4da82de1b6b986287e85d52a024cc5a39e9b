@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_5eedeeb5",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1109,
+      "author": {
+        "id": 12856
+      },
+      "writtenOn": "2016-07-31T14:07:09Z",
+      "side": 1,
+      "message": "triggers",
+      "range": {
+        "startLine": 1109,
+        "startChar": 21,
+        "endLine": 1109,
+        "endChar": 31
+      },
+      "revId": "1b8f4da82de1b6b986287e85d52a024cc5a39e9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_5e44ceb5",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1110,
+      "author": {
+        "id": 12856
+      },
+      "writtenOn": "2016-07-31T14:07:09Z",
+      "side": 1,
+      "message": "Does it make sense to specify this for the full example above as well for consistency?",
+      "range": {
+        "startLine": 1110,
+        "startChar": 8,
+        "endLine": 1110,
+        "endChar": 23
+      },
+      "revId": "1b8f4da82de1b6b986287e85d52a024cc5a39e9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_be2cea02",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1115,
+      "author": {
+        "id": 12856
+      },
+      "writtenOn": "2016-07-31T14:07:09Z",
+      "side": 1,
+      "message": "triggers",
+      "range": {
+        "startLine": 1115,
+        "startChar": 21,
+        "endLine": 1115,
+        "endChar": 31
+      },
+      "revId": "1b8f4da82de1b6b986287e85d52a024cc5a39e9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
