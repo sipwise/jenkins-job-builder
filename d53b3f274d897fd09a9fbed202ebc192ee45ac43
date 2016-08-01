@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_407ea719",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1398,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-08-01T01:58:40Z",
+      "side": 1,
+      "message": "Looks like a behaviour change here. We should check the version and only use the new XML style in the version of the plugin that supports it.\n\nTake a look at this example for how to check versions.\n\nhttps://github.com/openstack-infra/jenkins-job-builder/blob/master/jenkins_jobs/modules/publishers.py#L6124-L6139",
+      "revId": "d53b3f274d897fd09a9fbed202ebc192ee45ac43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
