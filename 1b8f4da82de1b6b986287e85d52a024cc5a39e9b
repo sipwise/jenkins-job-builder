@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "bacf61ea_5d6cb49b",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1109,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-08-01T13:53:26Z",
+      "side": 1,
+      "message": "I don\u0027t know what happened. On my screen, it was actually triggers. Thanks for pointing this out.",
+      "parentUuid": "bacf61ea_5eedeeb5",
+      "range": {
+        "startLine": 1109,
+        "startChar": 21,
+        "endLine": 1109,
+        "endChar": 31
+      },
+      "revId": "1b8f4da82de1b6b986287e85d52a024cc5a39e9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bacf61ea_5e44ceb5",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 9
@@ -82,6 +106,30 @@
       "writtenOn": "2016-07-31T14:59:44Z",
       "side": 1,
       "message": "\u0027gitlab-plugin\u0027. With \u0027Gitlab Plugin\u0027 I only get 0.",
+      "range": {
+        "startLine": 1124,
+        "startChar": 51,
+        "endLine": 1124,
+        "endChar": 64
+      },
+      "revId": "1b8f4da82de1b6b986287e85d52a024cc5a39e9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_bdb690f6",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1124,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-08-01T13:53:26Z",
+      "side": 1,
+      "message": "Interesting, because it works for me if I use the long name \u0027Gitlab Plugin\u0027 or \u0027gitlab\u0027. I do feel like it is better to use the short name here however.",
+      "parentUuid": "bacf61ea_7132a3f3",
       "range": {
         "startLine": 1124,
         "startChar": 51,
