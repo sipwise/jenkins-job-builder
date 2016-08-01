@@ -91,6 +91,52 @@
       "revId": "1b8f4da82de1b6b986287e85d52a024cc5a39e9b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_ec1b5571",
+        "filename": "tests/triggers/fixtures/gitlab004.plugins_info.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 12856
+      },
+      "writtenOn": "2016-08-01T05:00:03Z",
+      "side": 1,
+      "message": "gitlab-plugin",
+      "range": {
+        "startLine": 2,
+        "startChar": 14,
+        "endLine": 2,
+        "endChar": 20
+      },
+      "revId": "1b8f4da82de1b6b986287e85d52a024cc5a39e9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_cc181178",
+        "filename": "tests/triggers/fixtures/gitlab005.plugins_info.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 12856
+      },
+      "writtenOn": "2016-08-01T05:00:03Z",
+      "side": 1,
+      "message": "gitlab-plugin",
+      "range": {
+        "startLine": 2,
+        "startChar": 14,
+        "endLine": 2,
+        "endChar": 20
+      },
+      "revId": "1b8f4da82de1b6b986287e85d52a024cc5a39e9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
