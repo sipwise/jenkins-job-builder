@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_c0227ba2",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1388,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-08-01T14:17:30Z",
+      "side": 1,
+      "message": "Typo, should be \u0027\u003e\u003d\u0027",
+      "range": {
+        "startLine": 1388,
+        "startChar": 16,
+        "endLine": 1388,
+        "endChar": 18
+      },
+      "revId": "98d728b33c362383328ba2a837b8e7e64ec81dff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_40b96b14",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1426,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-08-01T14:17:30Z",
+      "side": 1,
+      "message": "Trailing \\ here. Probably replace it with\n\nXML.SubElement(bsp, \u0027failOnError\u0027).text \u003d (\n    str(data.get(\u0027failOnError\u0027, False)).lower())\n\nor something similar.",
+      "range": {
+        "startLine": 1426,
+        "startChar": 50,
+        "endLine": 1426,
+        "endChar": 51
+      },
+      "revId": "98d728b33c362383328ba2a837b8e7e64ec81dff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_8031a35c",
+        "filename": "tests/wrappers/fixtures/pre-scm-buildstep001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-08-01T14:17:30Z",
+      "side": 1,
+      "message": "2 space indentation for consistency with everything else.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 5
+      },
+      "revId": "98d728b33c362383328ba2a837b8e7e64ec81dff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_401b2bca",
+        "filename": "tests/wrappers/fixtures/pre-scm-buildstep002.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-08-01T14:17:30Z",
+      "side": 1,
+      "message": "same comment.",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 5
+      },
+      "revId": "98d728b33c362383328ba2a837b8e7e64ec81dff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_2071d70f",
+        "filename": "tests/yamlparser/fixtures/complete001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-08-01T14:17:30Z",
+      "side": 1,
+      "message": "Same comment",
+      "range": {
+        "startLine": 15,
+        "startChar": 10,
+        "endLine": 15,
+        "endChar": 12
+      },
+      "revId": "98d728b33c362383328ba2a837b8e7e64ec81dff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
