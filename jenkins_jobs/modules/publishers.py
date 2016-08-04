@@ -641,6 +641,40 @@ def clone_workspace(parser, xml_parent, data):
     override_default_excludes_elem.text = override_default_excludes_str
 
 
+def cloud_foundry(parser, xml_parent, data):
+    """yaml: cloudfoundry
+    Pushes a project to Cloud Foundry or a CF-based platform (e.g. Stackato) at
+    the end of a build. Requires the Jenkins :jenkins-wiki:`Cloud Foundry
+    Plugin <Cloud+Foundry+Plugin>`.
+
+    :arg str target: The API endpoint of the platform you want to push to.
+        This is the URL you use to access the platform, possibly with ".api"
+        added. (required)
+    :arg str organization: An org is a development account that an individual
+        or multiple collaborators can own and use. (required)
+    :arg str space: Provide users with access to a shared location for
+        application development, deployment, and maintenance. (required)
+    :arg bool self-signed: Allow self-signed SSL certificates from the target.
+        (default false)
+    :arg reset-app: Delete app before pushing app's configurations (default
+        false)
+    :arg int timeout: The time in seconds before the Cloud Foundry plugin stops
+        fetching logs and marks the build a failure. (default 120)
+    :arg str create-services: Create services automatically (default '')
+
+    Minimal example:
+
+    .. literalinclude::
+       /../../tests/publishers/fixtures/cloudfoundry-minimal.yaml
+       :language: yaml
+
+    Full example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/cloudfoundry-full.yaml
+       :language: yaml
+    """
+
+
 def cloverphp(parser, xml_parent, data):
     """yaml: cloverphp
     Capture code coverage reports from PHPUnit
