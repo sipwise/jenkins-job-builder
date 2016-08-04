@@ -760,6 +760,37 @@ def maven_metadata_param(parser, xml_parent, data):
     XML.SubElement(pdef, 'password').text = data.get('repository-password', '')
 
 
+def random_string_param(parser, xml_parent, data):
+    """yaml: random-string
+    This parameter generates a random string and passes it to the
+    build, preventing Jenkins from combining queued builds.
+    Requires the Jenkins :jenkins-wiki:`Random String Parameter Plugin
+    <Random+String+Parameter+Plugin>`.
+
+    :arg str name: Name of the parameter
+    :arg str description: Description of the parameter (default '')
+    :arg str failed-validation-message: Failure message to display for invalid
+        input (default '')
+
+    Example:
+      parameters:
+        - random-string:
+            name: job-string
+            description: "A random string passed to the job."
+    """
+    element_name = 'hudson.plugins.random__string__parameter.' \
+                   'RandomStringParameterDefinition'
+    pdef = XML.SubElement(xml_parent, element_name)
+    if 'name' not in data:
+        raise JenkinsJobsException('random-string must have a name parameter.')
+    XML.SubElement(pdef, 'name').text = data['name']
+    XML.SubElement(pdef, 'description').text = data.get('description', '')
+    XML.SubElement(pdef, 'failedValidationMessage').text = data.get(
+        'failed-validation-message', '')
+
+    return pdef
+
+
 class Parameters(jenkins_jobs.modules.base.Base):
     sequence = 21
 

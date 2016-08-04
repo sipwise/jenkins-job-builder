@@ -1,0 +1,4 @@
+parameters:
+  - random-string:
+      name: job-string
+      description: "A random string passed to the job"
