@@ -1,0 +1,9 @@
+publishers:
+  - cloudfoundry:
+      target: https://api.stackato-rkw2.local
+      organization: AS
+      space: SimpleSpace
+      credentials-id: 123
+      self-signed: true
+      reset-app: true
+      timeout: 240

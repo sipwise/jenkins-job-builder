@@ -641,6 +641,113 @@ def clone_workspace(parser, xml_parent, data):
     override_default_excludes_elem.text = override_default_excludes_str
 
 
+def cloud_foundry(parser, xml_parent, data):
+    """yaml: cloudfoundry
+    Pushes a project to Cloud Foundry or a CF-based platform (e.g. Stackato) at
+    the end of a build. Requires the Jenkins :jenkins-wiki:`Cloud Foundry
+    Plugin <Cloud+Foundry+Plugin>`.
+
+    :arg str target: The API endpoint of the platform you want to push to.
+        This is the URL you use to access the platform, possibly with ".api"
+        added. (required)
+    :arg str organization: An org is a development account that an individual
+        or multiple collaborators can own and use. (required)
+    :arg str space: Provide users with access to a shared location for
+        application development, deployment, and maintenance. (required)
+    :arg str credentials-id: credentials-id of the user (required)
+    :arg bool self-signed: Allow self-signed SSL certificates from the target
+        (default false)
+    :arg reset-app: Delete app before pushing app's configurations (default
+        false)
+    :arg int plugin-timeout: The time in seconds before the Cloud Foundry plugin stops
+        fetching logs and marks the build a failure. (default 120)
+    :arg str create-services: Create services automatically (default '')
+    :arg str value: Select to **read** configuration from manifest file
+        or to **enter** configuration in Jenkins (default 'manifestFile')
+    :arg str manifest-file: Path to manifest file (default 'manifest.yml')
+    :arg str app-name: The application's name (default to Jenkins build name)
+    :arg int memory: The application's memory usage in MB (default 512)
+    :arg str host-name: The hostname of the URI to access your application
+        (default to app-name)
+    :arg int instances: Number of instances of your application on creation
+        (default 1)
+    :arg int manifest-timeout: The time in seconds before the health-manager
+        gives up on starting the application (default 60)
+    :arg bool no-route: If true, no URI path will be created to access the
+        application (default false)
+    :arg str app-path: Path to application (default '')
+    :arg build-pack: If your application requires a custom buildpack, you can
+        use this to specify its URL or name (default '')
+    :arg str stack: If your application requires a custom stack, you can use
+        this to specify its name. (default '')
+    :arg str command: Set a custom start command for your application
+        (default '')
+    :arg str domain: The domain of the URI to access your application
+        (default '')
+
+    Minimal example:
+
+    .. literalinclude::
+       /../../tests/publishers/fixtures/cloudfoundry-minimal.yaml
+       :language: yaml
+
+    Full example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/cloudfoundry-full.yaml
+       :language: yaml
+    """
+    cloud_foundry = XML.SubElement(
+        xml_parent, 'com.hpe.cloudfoundryjenkins.CloudFoundryPushPublisher')
+    cloud_foundry.set('plugin', 'cloudfoundry')
+
+    mapping = [
+        ('target', 'target', None),
+        ('organization', 'organization', None),
+        ('space', 'cloudSpace', None),
+        ('credentials-id', 'credentialsId', None),
+        ('self-signed', 'selfSigned', False),
+        ('reset-app', 'resetIfExists', False),
+        ('timeout', 'pluginTimeout', 120),
+        ('create-services', 'servicesToCreate', ''),
+    ]
+    helpers.convert_mapping_to_xml(cloud_foundry, data, mapping, fail_required=True)
+    XML.SubElement(cloud_foundry, 'appURIs').text = ''
+
+    value = data.get('value', 'manifestFile')
+    valid_values = ['manifestFile', 'jenkinsConfig']
+    manifest = XML.SubElement(cloud_foundry, 'manifestChoice')
+    if value == 'manifestFile':
+        manifest_mapping = [
+            ('value', 'value', 'manifestFile'),
+            ('manifest-file', 'manifestFile', 'manifest.yml'),
+            ('memory', 'memory', 0),
+            ('instances', 'instances', 0),
+            ('manifest-timeout', 'timeout', 0),
+            ('no-route', 'noRoute', False),
+        ]
+        helpers.convert_mapping_to_xml(manifest, data, manifest_mapping, fail_required=True)
+
+    elif value == 'jenkinsConfig':
+        manifest_mapping = [
+            ('value', 'value', 'jenkinsConfig'),
+            ('manifest-file', 'manifestFile', 'manifest.yml'),
+            ('app-name', 'appName', ''),
+            ('memory', 'memory', 512),
+            ('host-name', 'hostName', ''),
+            ('instances', 'instances', 1),
+            ('manifest-timeout', 'timeout', 60),
+            ('no-route', 'noRoute', False),
+            ('app-path', 'appPath', ''),
+            ('build-pack', 'buildpack', ''),
+            ('stack', 'stack', ''),
+            ('command', 'command', ''),
+            ('domain', 'domain', ''),
+        ]
+        helpers.convert_mapping_to_xml(manifest, data, manifest_mapping, fail_required=True)
+    else:
+        raise InvalidAttributeError('value', value, valid_values)
+
+
 def cloverphp(parser, xml_parent, data):
     """yaml: cloverphp
     Capture code coverage reports from PHPUnit
