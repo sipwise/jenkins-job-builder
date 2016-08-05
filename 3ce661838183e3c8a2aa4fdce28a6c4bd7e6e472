@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_f2eaeed6",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-05T18:51:02Z",
+      "side": 1,
+      "message": "Given the problems this caused, I\u0027m guessing we aren\u0027t actually testing the CLI correctly here, and this isn\u0027t the list of the names of jobs we thought it was.",
+      "revId": "3ce661838183e3c8a2aa4fdce28a6c4bd7e6e472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
