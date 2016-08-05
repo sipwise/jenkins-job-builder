@@ -1,0 +1,30 @@
+builders:
+  - xcode:
+      clean-before-build: true
+      allow-failing-build-results: true
+      build-xcarchive: true
+      configuration: Debug
+      build-ipa: true
+      ipa-name: myApp
+      ipa-dir: /path/to/ipa
+      manifest-plist-url: 'http://www.foo.com/adhoc'
+      bundle-id-override: true
+      bundle-id: com.company.myApp
+      info-plist-path: ${WORKSPACE}/myAppProject/myApp-Info.plist
+      code-signing-identity: "iPhone Distribution: ..."
+      embedded-profile: /path/to/mobileprovision
+      unlock-keychain: true
+      keychain-path: ${HOME}/Library/Keychains/login.keychain
+      keychain-password: password
+      clean-test-reports: true
+      scheme: myApp iOS
+      sdk: iphoneos
+      symroot: ${WORKSPACE}
+      xcodebuild-args: "-destination 'platform=iOS,id=123456789'"
+      workspace: myWorkspace
+      project-path: /path/to/project
+      project-file: myProject.xcodeproj
+      build-dir: ${WORKSPACE}/build
+      version-override: true
+      marketing-version: "1.0"
+      technical-version: ${BUILD_NUMBER}

@@ -3373,3 +3373,129 @@ def build_name_setter(parser, xml_parent, data):
         data.get('macro', False)).lower()
     XML.SubElement(build_name_setter, 'macroFirst').text = str(
         data.get('macro-first', False)).lower()
+
+
+def xcode(parser, xml_parent, data):
+    """yaml: xcode
+    Builds an xcode project using xcode command-line tools.
+    Requires the Jenkins :jenkins-wiki:`Xcode Plugin <Xcode+Plugin>`
+
+    :arg str target: Target to build. Leave empty for all targets. (Default '')
+    :arg bool target-is-regex: If true, interprets the target
+        as regex. (Default false)
+    :arg bool clean-before-build: If true, deletes the build directories before
+        invoking the build. (Default false)
+    :arg bool allow-failing-build-results: If true, it will cause the
+        build step to succeed even if the xcodebuild fails. (Default false)
+    :arg bool build-xcarchive: If true, an xcarchive
+        is generated. (Default false)
+    :arg str configuration: The configuration used to build.
+        (Default 'Release')
+    :arg bool build-ipa: If true, an ipa is generated. (Default false)
+    :arg str ipa-name: The filename for the generated ipa. (Default '')
+    :arg str ipa-dir: The output directory for the generated ipa. Relative to
+        the build directory. (Default '')
+    :arg str manifest-plist-url: The base URL to use for creating a Manifest
+        Plist. If omitted, no Manifest Plist will be generated. (Default '')
+    :arg bool bundle-id-override: If true, allows you to supple a
+        new bundle id. (Default false)
+    :arg str bundle-id: The desired bundle id. (Default '')
+    :arg str info-plist-path: The path to the info.plist file to be
+        updated with the new bundle id. (Default '')
+    :arg str code-signing-identity: Override the code signing identity
+        in the project. (Default '')
+    :arg str embedded-profile: The relative path to the mobileprovision
+        to embed. Leave blank for no embedded profile. (Default '')
+    :arg bool unlock-keychain: If true, the keychain will try to
+        be unlocked. (Default false)
+    :arg str keychain-name: The name of the globally configured
+        keychain to use. (Default '')
+    :arg str keychain-path: Path to the keychain used to sign
+        the ipa. (Default '')
+    :arg str keychain-password: The password used to unlock the
+        keychain. (Default '')
+    :arg bool clean-test-reports: If true, deletes the test-reports
+        directory. (Default false)
+    :arg str scheme: The specific scheme to compile. (Default '')
+    :arg str sdk: The sdk to build again. Leave empty for default
+        SDK. (Default '')
+    :arg str symroot: The SYMROOT path to use. Leave empty for default
+        SYMROOT. (Default '')
+    :arg str xcodebuild-args: Additional xcodebuild arguments. (Default '')
+    :arg str workspace: Will compile a workspace instead of a
+        target. (Default '')
+    :arg str project-path: The relative path to the xcode project. (Default '')
+    :arg str project-file: Specifies the specific project to build.
+        (Default '')
+    :arg str build-dir: The path for the build output. (Default '')
+    :arg bool version-override: If true, overrides the project's
+        CFBundleShortVersionString and CFBundleVersion. (Default false)
+    :arg str marketing-version: Sets the value of
+        CFBundleShortVersionString. (Default '')
+    :arg str technical-version: Sets the value of CFBundleVersion. (Default '')
+
+    Minimal Example:
+
+    .. literalinclude:: /../../tests/builders/fixtures/xcode001.yaml
+       :language: yaml
+
+    Full Example:
+
+    .. literalinclude:: /../../tests/builders/fixtures/xcode002.yaml
+       :language: yaml
+    """
+
+    xcode = XML.SubElement(xml_parent, 'au.com.rayh.XCodeBuilder')
+    XML.SubElement(xcode, 'cleanBeforeBuild').text = str(
+        data.get('clean-before-build', False)).lower()
+    XML.SubElement(xcode, 'cleanTestReports').text = str(
+        data.get('clean-test-reports', False)).lower()
+    XML.SubElement(xcode, 'configuration').text = data.get(
+        'configuration', 'Release')
+    XML.SubElement(xcode, 'target').text = data.get('target', '')
+    XML.SubElement(xcode, 'sdk').text = data.get('sdk', '')
+    XML.SubElement(xcode, 'symRoot').text = data.get('symroot', '')
+    XML.SubElement(xcode, 'configurationBuildDir').text = data.get(
+        'build-dir', '')
+    XML.SubElement(xcode, 'xcodeProjectPath').text = data.get(
+        'project-path', '')
+    XML.SubElement(xcode, 'xcodeProjectFile').text = data.get(
+        'project-file', '')
+    XML.SubElement(xcode, 'xcodebuildArguments').text = data.get(
+        'xcodebuild-args', '')
+    XML.SubElement(xcode, 'xcodeSchema').text = data.get('scheme', '')
+    XML.SubElement(xcode, 'xcodeWorkspaceFile').text = data.get(
+        'workspace', '')
+    XML.SubElement(xcode, 'embeddedProfileFile').text = data.get(
+        'embedded-profile', '')
+    XML.SubElement(xcode, 'cfBundleVersionValue').text = data.get(
+        'technical-version', '')
+    XML.SubElement(xcode, 'cfBundleShortVersionStringValue').text = data.get(
+        'marketing-version', '')
+    XML.SubElement(xcode, 'buildIpa').text = str(
+        data.get('build-ipa', False)).lower()
+    XML.SubElement(xcode, 'generateArchive').text = str(
+        data.get('build-xcarchive', False)).lower()
+    XML.SubElement(xcode, 'unlockKeychain').text = str(
+        data.get('unlock-keychain', False)).lower()
+    XML.SubElement(xcode, 'keychainName').text = data.get('keychain-name', '')
+    XML.SubElement(xcode, 'keychainPath').text = data.get('keychain-path', '')
+    XML.SubElement(xcode, 'keychainPwd').text = data.get(
+        'keychain-password', '')
+    XML.SubElement(xcode, 'codeSigningIdentity').text = data.get(
+        'code-signing-identity', '')
+    XML.SubElement(xcode, 'allowFailingBuildResults').text = str(
+        data.get('allow-failing-build-results', False)).lower()
+    XML.SubElement(xcode, 'ipaName').text = data.get('ipa-name', '')
+    XML.SubElement(xcode, 'ipaOutputDirectory').text = data.get('ipa-dir', '')
+    XML.SubElement(xcode, 'provideApplicationVersion').text = str(
+        data.get('version-override', False)).lower()
+    XML.SubElement(xcode, 'changeBundleID').text = str(
+        data.get('bundle-id-override', False)).lower()
+    XML.SubElement(xcode, 'bundleID').text = data.get('bundle-id', '')
+    XML.SubElement(xcode, 'bundleIDInfoPlistPath').text = data.get(
+        'info-plist-path', '')
+    XML.SubElement(xcode, 'interpretTargetAsRegEx').text = str(
+        data.get('target-is-regex', False)).lower()
+    XML.SubElement(xcode, 'ipaManifestPlistUrl').text = data.get(
+        'manifest-plist-url', '')

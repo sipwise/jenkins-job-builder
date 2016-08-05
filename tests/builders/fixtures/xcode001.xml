@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <builders>
+    <au.com.rayh.XCodeBuilder>
+      <cleanBeforeBuild>false</cleanBeforeBuild>
+      <cleanTestReports>false</cleanTestReports>
+      <configuration>Release</configuration>
+      <target/>
+      <sdk/>
+      <symRoot/>
+      <configurationBuildDir/>
+      <xcodeProjectPath/>
+      <xcodeProjectFile/>
+      <xcodebuildArguments/>
+      <xcodeSchema/>
+      <xcodeWorkspaceFile/>
+      <embeddedProfileFile/>
+      <cfBundleVersionValue/>
+      <cfBundleShortVersionStringValue/>
+      <buildIpa>false</buildIpa>
+      <generateArchive>false</generateArchive>
+      <unlockKeychain>false</unlockKeychain>
+      <keychainName/>
+      <keychainPath/>
+      <keychainPwd/>
+      <codeSigningIdentity/>
+      <allowFailingBuildResults>false</allowFailingBuildResults>
+      <ipaName/>
+      <ipaOutputDirectory/>
+      <provideApplicationVersion>false</provideApplicationVersion>
+      <changeBundleID>false</changeBundleID>
+      <bundleID/>
+      <bundleIDInfoPlistPath/>
+      <interpretTargetAsRegEx>false</interpretTargetAsRegEx>
+      <ipaManifestPlistUrl/>
+    </au.com.rayh.XCodeBuilder>
+  </builders>
+</project>

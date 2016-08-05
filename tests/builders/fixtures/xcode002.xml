@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+<builders>
+  <au.com.rayh.XCodeBuilder>
+    <cleanBeforeBuild>true</cleanBeforeBuild>
+    <cleanTestReports>true</cleanTestReports>
+    <configuration>Debug</configuration>
+    <target/>
+    <sdk>iphoneos</sdk>
+    <symRoot>${WORKSPACE}</symRoot>
+    <configurationBuildDir>${WORKSPACE}/build</configurationBuildDir>
+    <xcodeProjectPath>/path/to/project</xcodeProjectPath>
+    <xcodeProjectFile>myProject.xcodeproj</xcodeProjectFile>
+    <xcodebuildArguments>-destination 'platform=iOS,id=123456789'</xcodebuildArguments>
+    <xcodeSchema>myApp iOS</xcodeSchema>
+    <xcodeWorkspaceFile>myWorkspace</xcodeWorkspaceFile>
+    <embeddedProfileFile>path/to/mobileprovision</embeddedProfileFile>
+    <cfBundleVersionValue>${BUILD_NUMBER}</cfBundleVersionValue>
+    <cfBundleShortVersionStringValue>1.0</cfBundleShortVersionStringValue>
+    <buildIpa>true</buildIpa>
+    <generateArchive>true</generateArchive>
+    <unlockKeychain>true</unlockKeychain>
+    <keychainName/>
+    <keychainPath>${HOME}/Library/Keychains/login.keychain</keychainPath>
+    <keychainPwd>password</keychainPwd>
+    <codeSigningIdentity>iPhone Distribution: ...</codeSigningIdentity>
+    <allowFailingBuildResults>true</allowFailingBuildResults>
+    <ipaName>myApp</ipaName>
+    <ipaOutputDirectory>path/to/ipa</ipaOutputDirectory>
+    <provideApplicationVersion>true</provideApplicationVersion>
+    <changeBundleID>true</changeBundleID>
+    <bundleID>com.company.myApp</bundleID>
+    <bundleIDInfoPlistPath>${WORKSPACE}/myAppProject/myApp-Info.plist</bundleIDInfoPlistPath>
+    <interpretTargetAsRegEx>false</interpretTargetAsRegEx>
+    <ipaManifestPlistUrl>http://www.foo.com/adhoc</ipaManifestPlistUrl>
+  </au.com.rayh.XCodeBuilder>
+</builders>
+</project>
