@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_bbe99c1c",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-08-05T05:24:32Z",
+      "side": 1,
+      "message": "I think this should be as shown below to make the example doc appear nicely.\n\nExample::\n\n      parameters:\n        - random-string:\n            name: job-string\n            description: \"A random string passed to the job.\"",
+      "range": {
+        "startLine": 774,
+        "startChar": 0,
+        "endLine": 779,
+        "endChar": 61
+      },
+      "revId": "4e1562171f890f2f77333b8347eb4e95db0f820f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_db42900e",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 781,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-08-05T05:24:32Z",
+      "side": 1,
+      "message": "Should remove trailing \u0027\\\u0027 here.",
+      "range": {
+        "startLine": 781,
+        "startChar": 63,
+        "endLine": 781,
+        "endChar": 64
+      },
+      "revId": "4e1562171f890f2f77333b8347eb4e95db0f820f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
