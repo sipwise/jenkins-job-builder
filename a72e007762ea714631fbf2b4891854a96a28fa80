@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_a0583232",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 792,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-08-05T13:45:45Z",
+      "side": 1,
+      "message": "I could be wrong but this return statement looks like it isn\u0027t needed.",
+      "range": {
+        "startLine": 792,
+        "startChar": 4,
+        "endLine": 792,
+        "endChar": 15
+      },
+      "revId": "a72e007762ea714631fbf2b4891854a96a28fa80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
