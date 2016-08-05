@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bacf61ea_e6108250",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-05T14:16:39Z",
+      "side": 0,
+      "message": "Seems to be suggesting that it\u0027s not interesting to know that the reason a job wasn\u0027t removed, is that it\u0027s no longer managed by JJB? I think maybe we should keep this behaviour since we also have a change to add XML tags to the jobs that get removed if some edits via the UI and saves the job. In such a case, the decision not to remove the job and just ignoring it complete might be confusing.\n\n(Copied from earlier comment)",
+      "revId": "3ce661838183e3c8a2aa4fdce28a6c4bd7e6e472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
