@@ -16,6 +16,24 @@
       "revId": "fdefcc0b544639c9b029da1f12995862f103a86d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_a77b21f4",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-08-05T16:07:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dada55a8_ba3d99bd",
+      "revId": "fdefcc0b544639c9b029da1f12995862f103a86d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
