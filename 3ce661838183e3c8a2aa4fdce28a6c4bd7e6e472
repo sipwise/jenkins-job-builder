@@ -16,6 +16,24 @@
       "revId": "3ce661838183e3c8a2aa4fdce28a6c4bd7e6e472",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bacf61ea_66c132e4",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-08-05T14:28:37Z",
+      "side": 0,
+      "message": "I think it would be handy to know which jobs are unmanaged / ignored too.",
+      "parentUuid": "bacf61ea_e6108250",
+      "revId": "3ce661838183e3c8a2aa4fdce28a6c4bd7e6e472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
