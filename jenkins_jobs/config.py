@@ -118,7 +118,7 @@ class JJBConfig(object):
             elif PY3:
                 config_parser.read_file(config_fp)
             else:
-                raise JJBConfigException("""Unsupported Python version!""")
+                raise JJBConfigException("Unsupported Python version!")
 
         self.config_parser = config_parser
 
@@ -147,7 +147,7 @@ class JJBConfig(object):
         elif PY3:
             config.read_file(StringIO(DEFAULT_CONF))
         else:
-            raise JJBConfigException("""Unsupported Python version!""")
+            raise JJBConfigException("Unsupported Python version!")
         return config
 
     def _read_config_file(self, config_filename):
@@ -159,8 +159,9 @@ class JJBConfig(object):
             logger.debug("Reading config from {0}".format(config_filename))
             config_fp = io.open(config_filename, 'r', encoding='utf-8')
         else:
-            raise JJBConfigException("""A valid configuration file is required.
-                \n{0} is not valid.""".format(config_filename))
+            raise JJBConfigException(
+                "A valid configuration file is required. "
+                "\n{0} is not valid.".format(config_filename))
 
         return config_fp
 
@@ -171,10 +172,10 @@ class JJBConfig(object):
 
         # check the ignore_cache setting
         if config.has_option('jenkins', 'ignore_cache'):
-            logging.warn('''ignore_cache option should be moved to the
-                          [job_builder] section in the config file, the one
-                          specified in the [jenkins] section will be ignored in
-                          the future''')
+            logging.warn("ignore_cache option should be moved to the "
+                         "[job_builder] section in the config file, the "
+                         "one specified in the [jenkins] section will be "
+                         "ignored in the future")
             self.ignore_cache = config.getboolean('jenkins', 'ignore_cache')
         elif config.has_option('job_builder', 'ignore_cache'):
             self.ignore_cache = config.getboolean('job_builder',
