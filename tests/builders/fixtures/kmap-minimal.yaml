@@ -1,0 +1,9 @@
+builders:
+  - kmap:
+      username: username
+      password: password
+      url: http://foo.com/kmap-client/
+      categories: categories
+      file-path: ${WORKSPACE}/path/to/file.extension
+      app-name: AppName
+      version: b${BUILD_NUMBER}_r${SVN_REVISION}
