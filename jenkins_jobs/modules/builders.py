@@ -3250,13 +3250,14 @@ def runscope(parser, xml_parent, data):
     """
     runscope = XML.SubElement(xml_parent,
                               'com.runscope.jenkins.Runscope.RunscopeBuilder')
-    try:
-        XML.SubElement(runscope, 'triggerEndPoint').text = data[
-            "test-trigger-url"]
-        XML.SubElement(runscope, 'accessToken').text = data["access-token"]
-    except KeyError as e:
-        raise MissingAttributeError(e.args[0])
-    XML.SubElement(runscope, 'timeout').text = str(data.get('timeout', '60'))
+    runscope.set('plugin', 'runscope')
+
+    mapping = [
+        ('test-trigger-url', 'triggerEndPoint', None),
+        ('access-token', 'accessToken', None),
+        ('timeout', 'timeout', 60),
+    ]
+    convert_mapping_to_xml(runscope, data, mapping, fail_required=True)
 
 
 def description_setter(parser, xml_parent, data):
