@@ -48,6 +48,8 @@ def email(parser, xml_parent, data):
       unstable build (default true)
     :arg bool send-to-individuals: Send an email to the individual
       who broke the build (default false)
+    :arg bool notify-for-every-module: Send an email for each module.
+      (default true)
 
     Example::
 
@@ -67,8 +69,10 @@ def email(parser, xml_parent, data):
         XML.SubElement(mailer, 'dontNotifyEveryUnstableBuild').text = 'true'
     XML.SubElement(mailer, 'sendToIndividuals').text = str(
         data.get('send-to-individuals', False)).lower()
-    # TODO: figure out what this is:
-    XML.SubElement(mailer, 'perModuleEmail').text = 'true'
+    if data.get('notify-for-every-module', True):
+        XML.SubElement(mailer, 'perModuleEmail').text = 'true'
+    else:
+        XML.SubElement(mailer, 'perModuleEmail').text = 'false'
 
 
 def findbugs(parser, xml_parent, data):
