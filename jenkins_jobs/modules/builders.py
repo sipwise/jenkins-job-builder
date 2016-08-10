@@ -205,6 +205,110 @@ def change_assembly_version(parser, xml_parent, data):
         data.get('assembly-file', 'AssemblyInfo.cs'))
 
 
+def ansible(parser, xml_parent, data):
+    """yaml: ansible
+    Execute an Ansible Playbook target. Requires the Jenkins
+    :jenkins-wiki:`Ansible Plugin <Ansible+Plugin>`.
+
+    :arg str playbook: path to the ansible playbook file. The path can be
+        absolute or relative to the job workspace.
+    :arg str inventory-file: path to a static or dynamic inventory file.
+    :arg str inventory-content: inline inventory file.
+    :arg bool dynamic-inventory: define whether the inventory content should be
+        handled as a dynamic inventory. (default false)
+    :arg str ansible-name: name of the Ansible installation. (optional)
+    :arg str limit: limit selected hosts to an additional pattern. (optional)
+    :arg str tags: only run plays and tasks tagged with these values.
+        (optional)
+    :arg str skipped-tags: (optional)
+    :arg str start-at-task: start the playbook at the task matching this name.
+        (optional)
+    :arg str credentials-id: ID of credential to use to connect, which is the
+        last field (a 32-digit hexadecimal code) of the path of URL visible
+        after you clicked the credential under Jenkins Global credentials.
+        (optional)
+    :arg bool sudo: run operations with sudo. (default false)
+    :arg str sudo-user: if sudo is enabled, the desired sudo user. (default
+        'root')
+    :arg int forks: specify number of parallel processes to use. (default 5)
+    :arg bool unbuffered-output: skip standard output buffering for the ansible
+        process. (default true)
+    :arg bool colorized-output: render ANSI color codes in the Jenkins console.
+        (default false)
+    :arg bool host-key-checking: enforce the validation of the hosts SSH server
+        keys. (default false)
+    :arg dict extra-vars: dictionary of key/value pairs to pass to ansible as
+        extra variables (optional)
+    :arg str additional-parameters: any additional parameters to pass to the
+        ansible command. (optional)
+    :arg bool copy-credentials: copy credentials in the workspace. (default
+        false)
+
+
+    Example:
+
+    .. literalinclude:: ../../tests/builders/fixtures/ansible001.yaml
+       :language: yaml
+    """
+    ansible = XML.SubElement(
+        xml_parent, 'org.jenkinsci.plugins.ansible.AnsiblePlaybookBuilder')
+
+    try:
+        XML.SubElement(ansible, 'playbook').text = data["playbook"]
+    except KeyError:
+        raise MissingAttributeError('playbook')
+
+    inventory_file = data.get('inventory-file')
+    inventory_content = data.get('inventory-content')
+
+    if inventory_file is not None and inventory_content is not None:
+        raise jenkins_jobs.errors.JenkinsJobsException(
+            "You can set either inventory-file or inventory-content, not both")
+
+    inventory = XML.SubElement(ansible, 'inventory')
+
+    if inventory_file is not None:
+        inventory.set('class', 'org.jenkinsci.plugins.ansible.InventoryPath')
+        XML.SubElement(inventory, 'path').text = data.get('inventory-file')
+    elif inventory_content is not None:
+        inventory.set('class',
+                      'org.jenkinsci.plugins.ansible.InventoryContent')
+        XML.SubElement(inventory, 'content').text = data.get(
+            'inventory-content')
+        XML.SubElement(inventory, 'dynamic').text = str(
+            data.get('dynamic-inventory', False)).lower()
+    else:
+        raise MissingAttributeError("inventory-file or inventory-content")
+
+    XML.SubElement(ansible, 'ansibleName').text = data.get('ansible-name')
+    XML.SubElement(ansible, 'limit').text = data.get('limit')
+    XML.SubElement(ansible, 'tags').text = data.get('tags')
+    XML.SubElement(ansible, 'skippedTags').text = data.get('skipped-tags')
+    XML.SubElement(ansible, 'startAtTask').text = data.get('start-at-task')
+    XML.SubElement(ansible, 'credentialsId').text = data.get('credentials-id')
+    XML.SubElement(ansible, 'sudo').text = str(data.get('sudo', False)).lower()
+    XML.SubElement(ansible, 'sudoUser').text = data.get('sudo-user', 'root')
+    XML.SubElement(ansible, 'forks').text = data.get('forks', '5')
+    XML.SubElement(ansible, 'unbufferedOutput').text = str(data.get(
+        'unbuffered-output', True)).lower()
+    XML.SubElement(ansible, 'colorizedOutput').text = str(data.get(
+        'colorized-output', False)).lower()
+    XML.SubElement(ansible, 'hostKeyChecking').text = str(data.get(
+        'host-key-checking', False)).lower()
+    XML.SubElement(ansible, 'additionalParameters').text = data.get(
+        'additional-parameters')
+    XML.SubElement(ansible, 'copyCredentialsInWorkspace').text = str(data.get(
+        'copy-credentials', False)).lower()
+
+    extraVars = XML.SubElement(ansible, 'extraVars')
+    for k, v in data.get('extra-vars', {}).items():
+        extraVar = XML.SubElement(extraVars,
+                                  'org.jenkinsci.plugins.ansible.ExtraVar')
+        XML.SubElement(extraVar, 'key').text = k
+        XML.SubElement(extraVar, 'value').text = v
+        XML.SubElement(extraVar, 'hidden').text = 'false'
+
+
 def ant(parser, xml_parent, data):
     """yaml: ant
     Execute an ant target. Requires the Jenkins :jenkins-wiki:`Ant Plugin

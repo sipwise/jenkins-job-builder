@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <builders>
+    <org.jenkinsci.plugins.ansible.AnsiblePlaybookBuilder>
+      <playbook>myPlaybook.yml</playbook>
+      <inventory class="org.jenkinsci.plugins.ansible.InventoryContent">
+        <content>web.server.com</content>
+        <dynamic>false</dynamic>
+      </inventory>
+      <ansibleName/>
+      <limit/>
+      <tags/>
+      <skippedTags/>
+      <startAtTask/>
+      <credentialsId/>
+      <sudo>false</sudo>
+      <sudoUser>root</sudoUser>
+      <forks>5</forks>
+      <unbufferedOutput>true</unbufferedOutput>
+      <colorizedOutput>false</colorizedOutput>
+      <hostKeyChecking>false</hostKeyChecking>
+      <additionalParameters/>
+      <copyCredentialsInWorkspace>false</copyCredentialsInWorkspace>
+      <extraVars>
+        <org.jenkinsci.plugins.ansible.ExtraVar>
+          <key>foo</key>
+          <value>bar</value>
+          <hidden>false</hidden>
+        </org.jenkinsci.plugins.ansible.ExtraVar>
+      </extraVars>
+    </org.jenkinsci.plugins.ansible.AnsiblePlaybookBuilder>
+  </builders>
+</project>
