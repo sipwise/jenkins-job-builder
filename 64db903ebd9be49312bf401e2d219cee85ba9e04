@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_59d70223",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1629,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-08-10T02:08:30Z",
+      "side": 1,
+      "message": "Actually thinking from a usability perspective perhaps we can split it up smartly into fields. For example:\n\n - parameterized-timer:\n     \u0027@midnight\u0027:\n         - PARAM1\u003dvalue1\n         - PARAM2\u003dvalue2\n     \u0027@hourly\u0027:\n         - PARAM1\u003dvalue1\n         - PARAM2\u003dvalue2\n\nor maybe there\u0027s a smarter way to do this in a usable way. I\u0027d be curious to hear what other reviewers think.",
+      "revId": "64db903ebd9be49312bf401e2d219cee85ba9e04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
