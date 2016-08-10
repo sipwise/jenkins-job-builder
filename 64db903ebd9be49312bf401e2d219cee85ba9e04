@@ -16,6 +16,24 @@
       "revId": "64db903ebd9be49312bf401e2d219cee85ba9e04",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_261665a7",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1629,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2016-08-10T07:23:21Z",
+      "side": 1,
+      "message": "This looks logical but then doing this in this way will take away the natural way of configuring parameterized timer trigger as shown on plugin documentation - just like cron with the parameters, all in one timer line.",
+      "parentUuid": "9ad45d7e_59d70223",
+      "revId": "64db903ebd9be49312bf401e2d219cee85ba9e04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
