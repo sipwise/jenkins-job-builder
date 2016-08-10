@@ -1,0 +1,6 @@
+builders:
+  - ansible:
+      playbook: 'myPlaybook.yml'
+      inventory-content: 'web.server.com'
+      extra-vars:
+        'foo': 'bar'
