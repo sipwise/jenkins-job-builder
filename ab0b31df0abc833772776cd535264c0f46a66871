@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9ad45d7e_f8d4a220",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3366,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2016-08-11T09:41:54Z",
+      "side": 1,
+      "message": "I didn\u0027t noticed that, but I can simply change it.",
+      "parentUuid": "9ad45d7e_044f996b",
+      "revId": "ab0b31df0abc833772776cd535264c0f46a66871",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ad45d7e_047679a3",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2016-08-11T08:33:07Z",
       "side": 1,
       "message": "colorizedOutput is set to False by default, why True?",
+      "revId": "ab0b31df0abc833772776cd535264c0f46a66871",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ad45d7e_38dbda50",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3370,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2016-08-11T09:41:54Z",
+      "side": 1,
+      "message": "I didn\u0027t noticed that, but I can simply change it.",
+      "parentUuid": "9ad45d7e_047679a3",
       "revId": "ab0b31df0abc833772776cd535264c0f46a66871",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
