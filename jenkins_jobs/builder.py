@@ -18,7 +18,6 @@
 import errno
 import hashlib
 import io
-import logging
 import operator
 import os
 from pprint import pformat
@@ -33,6 +32,7 @@ import jenkins
 from jenkins_jobs.constants import MAGIC_MANAGE_STRING
 from jenkins_jobs.parallel import parallelize
 from jenkins_jobs import utils
+from oslo_log import log as logging
 
 
 logger = logging.getLogger(__name__)

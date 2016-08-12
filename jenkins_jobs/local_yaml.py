@@ -94,7 +94,6 @@ character.
 
 import functools
 import io
-import logging
 import os
 import re
 
@@ -103,6 +102,7 @@ from yaml.constructor import BaseConstructor
 from yaml import YAMLObject
 
 from collections import OrderedDict
+from oslo_log import log as logging
 
 
 logger = logging.getLogger(__name__)

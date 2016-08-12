@@ -13,7 +13,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import logging
 import sys
 import time
 
@@ -21,6 +20,7 @@ from jenkins_jobs.builder import Builder
 from jenkins_jobs.parser import YamlParser
 from jenkins_jobs.errors import JenkinsJobsException
 import jenkins_jobs.cli.subcommand.base as base
+from oslo_log import log as logging
 
 
 logger = logging.getLogger(__name__)

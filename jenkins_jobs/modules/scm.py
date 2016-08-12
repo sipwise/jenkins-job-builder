@@ -36,7 +36,6 @@ Example of an empty ``scm``:
     .. literalinclude:: /../../tests/scm/fixtures/empty.yaml
 """
 
-import logging
 import xml.etree.ElementTree as XML
 
 from jenkins_jobs.errors import InvalidAttributeError
@@ -44,6 +43,7 @@ from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.errors import MissingAttributeError
 import jenkins_jobs.modules.base
 from jenkins_jobs.modules.helpers import convert_mapping_to_xml
+from oslo_log import log as logging
 
 
 def git(parser, xml_parent, data):

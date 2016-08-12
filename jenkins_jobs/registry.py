@@ -15,7 +15,6 @@
 
 # Manage Jenkins plugin module registry.
 
-import logging
 import operator
 import pkg_resources
 import re
@@ -23,6 +22,7 @@ import types
 
 from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.formatter import deep_format
+from oslo_log import log as logging
 
 logger = logging.getLogger(__name__)
 

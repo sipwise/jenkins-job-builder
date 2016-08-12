@@ -13,10 +13,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import logging
 import sys
 
 import jenkins_jobs.cli.subcommand.update as update
+from oslo_log import log as logging
 
 
 logger = logging.getLogger(__name__)

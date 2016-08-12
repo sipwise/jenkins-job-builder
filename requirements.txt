@@ -3,3 +3,4 @@ PyYAML
 python-jenkins>=0.4.8
 pbr>=1.0.0,<2.0
 stevedore==1.8.0
+oslo.log>=3.14.0 # Apache-2.0
