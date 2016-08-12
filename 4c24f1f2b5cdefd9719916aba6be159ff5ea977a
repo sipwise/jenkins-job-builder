@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_e1be7c63",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1849,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-08-12T02:26:44Z",
+      "side": 1,
+      "message": "Please edit the XML files to reflect this change.",
+      "range": {
+        "startLine": 1849,
+        "startChar": 14,
+        "endLine": 1849,
+        "endChar": 26
+      },
+      "revId": "4c24f1f2b5cdefd9719916aba6be159ff5ea977a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
