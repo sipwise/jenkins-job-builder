@@ -31,7 +31,6 @@ Example::
           url: https://github.com/openstack-infra/jenkins-job-builder/
 """
 
-import logging
 import pkg_resources
 import xml.etree.ElementTree as XML
 
@@ -39,6 +38,7 @@ from jenkins_jobs.errors import InvalidAttributeError
 from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.errors import MissingAttributeError
 import jenkins_jobs.modules.base
+from oslo_log import log as logging
 
 
 def builds_chain_fingerprinter(parser, xml_parent, data):

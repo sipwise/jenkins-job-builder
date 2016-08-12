@@ -19,7 +19,6 @@ import copy
 import fnmatch
 import io
 import itertools
-import logging
 import os
 import pkg_resources
 
@@ -30,6 +29,7 @@ import jenkins_jobs.local_yaml as local_yaml
 from jenkins_jobs.registry import ModuleRegistry
 from jenkins_jobs import utils
 from jenkins_jobs.xml_config import XmlJob
+from oslo_log import log as logging
 
 logger = logging.getLogger(__name__)
 

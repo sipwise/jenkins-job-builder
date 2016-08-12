@@ -25,7 +25,6 @@ the build is complete.
   :Entry Point: jenkins_jobs.publishers
 """
 
-import logging
 import pkg_resources
 import random
 import sys
@@ -39,6 +38,7 @@ from jenkins_jobs.errors import MissingAttributeError
 import jenkins_jobs.modules.base
 from jenkins_jobs.modules import hudson_model
 import jenkins_jobs.modules.helpers as helpers
+from oslo_log import log as logging
 
 
 def archive(parser, xml_parent, data):

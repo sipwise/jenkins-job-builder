@@ -36,7 +36,6 @@ Example::
 
 """
 
-import logging
 import xml.etree.ElementTree as XML
 
 from jenkins_jobs.errors import InvalidAttributeError
@@ -53,6 +52,7 @@ from jenkins_jobs.modules.helpers import config_file_provider_settings
 from jenkins_jobs.modules.helpers import convert_mapping_to_xml
 from jenkins_jobs.modules.helpers import copyartifact_build_selector
 from jenkins_jobs.modules import hudson_model
+from oslo_log import log as logging
 
 logger = logging.getLogger(__name__)
 

@@ -15,7 +15,6 @@
 
 import io
 import os
-import logging
 import platform
 import sys
 
@@ -26,6 +25,7 @@ from jenkins_jobs.cli.parser import create_parser
 from jenkins_jobs.config import JJBConfig
 from jenkins_jobs import utils
 from jenkins_jobs import version
+from oslo_log import log as logging
 
 logger = logging.getLogger()
 

@@ -14,12 +14,12 @@
 # under the License.
 
 
-import logging
 import sys
 
 from jenkins_jobs import utils
 from jenkins_jobs.builder import Builder
 import jenkins_jobs.cli.subcommand.base as base
+from oslo_log import log as logging
 
 
 logger = logging.getLogger(__name__)
