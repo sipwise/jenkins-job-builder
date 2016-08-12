@@ -170,7 +170,7 @@ class General(jenkins_jobs.modules.base.Base):
 
         if 'logrotate' in data:
             if not self.logrotate_warn_issued:
-                logging.warn('logrotate is deprecated on jenkins>=1.637, use '
+                logging.warning('logrotate is deprecated on jenkins>=1.637, use '
                              'the property build-discarder on newer jenkins '
                              'instead')
                 self.logrotate_warn_issued = True

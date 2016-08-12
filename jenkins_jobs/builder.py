@@ -194,7 +194,7 @@ class Jenkins(object):
             plugins_list = self.jenkins.get_plugins_info()
         except jenkins.JenkinsException as e:
             if re.search("Connection refused", str(e)):
-                logger.warn("Unable to retrieve Jenkins Plugin Info from {0},"
+                logger.warning("Unable to retrieve Jenkins Plugin Info from {0},"
                             " using default empty plugins info list.".format(
                                 self.jenkins.server))
                 plugins_list = [{'shortName': '',
