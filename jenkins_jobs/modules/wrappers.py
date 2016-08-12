@@ -22,7 +22,6 @@ Wrappers can alter the way the build is run as well as the build output.
 
 """
 
-import logging
 import pkg_resources
 import xml.etree.ElementTree as XML
 
@@ -38,6 +37,7 @@ from jenkins_jobs.modules.helpers import artifactory_optional_props
 from jenkins_jobs.modules.helpers import artifactory_repository
 from jenkins_jobs.modules.helpers import config_file_provider_builder
 from jenkins_jobs.modules.helpers import convert_mapping_to_xml
+from oslo_log import log as logging
 
 logger = logging.getLogger(__name__)
 

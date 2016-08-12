@@ -16,10 +16,11 @@
 # Parallel execution helper functions and classes
 
 from functools import wraps
-import logging
 from multiprocessing import cpu_count
 import threading
 import traceback
+
+from oslo_log import log as logging
 
 try:
     import Queue as queue

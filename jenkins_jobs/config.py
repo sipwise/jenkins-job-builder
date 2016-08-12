@@ -17,7 +17,6 @@
 
 from collections import defaultdict
 import io
-import logging
 import os
 
 from six.moves import configparser, StringIO
@@ -25,6 +24,7 @@ from six.moves import configparser, StringIO
 from jenkins_jobs import builder
 from jenkins_jobs.errors import JJBConfigException
 from jenkins_jobs.errors import JenkinsJobsException
+from oslo_log import log as logging
 
 __all__ = [
     "JJBConfig"

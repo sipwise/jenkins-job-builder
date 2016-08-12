@@ -20,7 +20,6 @@
 import doctest
 import io
 import json
-import logging
 import operator
 import os
 import re
@@ -41,6 +40,7 @@ from jenkins_jobs.modules import project_maven
 from jenkins_jobs.modules import project_multijob
 from jenkins_jobs.parser import YamlParser
 from jenkins_jobs.xml_config import XmlJob
+from oslo_log import log as logging
 
 # This dance deals with the fact that we want unittest.mock if
 # we're on Python 3.4 and later, and non-stdlib mock otherwise.
