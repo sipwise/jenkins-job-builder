@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_33b58a7d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3338,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-08-12T01:31:06Z",
+      "side": 1,
+      "message": "No need to have this extra whitespace here. The syntax is 2 newlines between plugins.",
+      "revId": "5cf70288840811f92b7db860eeda732c7008362b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
