@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ad45d7e_61de0cde",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 775,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-08-12T02:23:57Z",
+      "side": 1,
+      "message": "Need to remove one \u0027:\u0027, otherwise the test file cannot included",
+      "range": {
+        "startLine": 775,
+        "startChar": 12,
+        "endLine": 775,
+        "endChar": 13
+      },
+      "revId": "0cb37af70e544c8a019f3817020490c49e42ea19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
