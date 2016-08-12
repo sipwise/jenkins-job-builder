@@ -2501,11 +2501,11 @@ def dsl(parser, xml_parent, data):
 
     if 'target' in data:
         if 'targets' not in data:
-            logger.warn("Converting from old format of 'target' to new "
+            logger.warning("Converting from old format of 'target' to new "
                         "name 'targets', please update your job definitions.")
             data['targets'] = data['target']
         else:
-            logger.warn("Ignoring old argument 'target' in favour of new "
+            logger.warning("Ignoring old argument 'target' in favour of new "
                         "format argument 'targets', please remove old "
                         "format.")
 
