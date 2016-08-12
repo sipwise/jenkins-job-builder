@@ -300,7 +300,7 @@ class DeprecatedTag(BaseYAMLObject):
 
     @classmethod
     def from_yaml(cls, loader, node):
-        logger.warn("tag '%s' is deprecated, switch to using '%s'",
+        logger.warning("tag '%s' is deprecated, switch to using '%s'",
                     cls.yaml_tag, cls._new.yaml_tag)
         return cls._new.from_yaml(loader, node)
 
