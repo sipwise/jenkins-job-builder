@@ -1,8 +1,10 @@
 publishers:
   - sonar:
+      installation-name: MySonar
       jdk: MyJdk
       branch: myBranch
       language: java
+      maven-installation-name: Maven3.3.3
       maven-opts: -DskipTests
       additional-properties: -DsonarHostURL=http://example.com/
       skip-global-triggers:
