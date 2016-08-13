@@ -1604,6 +1604,58 @@ def rabbitmq(parser, xml_parent, data):
         raise MissingAttributeError(e.arg[0])
 
 
+def stash_pullrequest_builder(parser, xml_parent, data):
+    """yaml: stash-pullrequest-builder
+    Build pull requests in stash and report results.
+    Requires the Jenkins :jenkins-wiki:`Stash Pullrequest Builder Plugin
+    <Stashpullrequestbuilderplugin>`.
+
+    :arg string cron: The cron syntax with which to poll the jobs for the
+        supplied result (default '') (example * * * * *)
+    :arg string stash-host: the host name of the stash server
+    :arg string credentials-id: ID of credential to use to connect, which is
+        the last field (a 32-digit hexadecimal code) of the path of URL visible
+        after you clicked the credential under Jenkins Global credentials.
+        (optional)
+    :arg string project-code: the name of the stash project
+    :arg string repository-name: the name of the repository within the project
+    :arg string ci-skip-phrases: phrase to skip triggering a build via a
+        comment on the pull request
+    :arg string ci-build-phrases: phrase to trigger a build via a comment
+        on the pull request
+    :arg bool check-destination-commit: if a build should be triggered when
+        the destination branch has a newer commit
+    :arg bool check-mergeable: build only if the source branch can be merged
+        with the target branch
+    :arg bool check-not-conflicted: build only if Stash reports no conflicts
+    :arg bool only-build-on-comment: only build when asked (ci-build-phrases)
+
+    Example:
+    .. literalinclude::
+    /../../tests/triggers/fixtures/stash-pullrequest-builder.yaml
+
+    """
+    stprb = XML.SubElement(xml_parent,
+                           'stashpullrequestbuilder.stashpullrequestbuilder.'
+                           'StashBuildTrigger')
+    # the plugin itself fills both spec and cron with the cron parameter
+    XML.SubElement(stprb, 'spec').text = data.get('cron')
+    XML.SubElement(stprb, 'cron').text = data.get('cron')
+    XML.SubElement(stprb, 'stashHost').text = data.get('stash-host')
+    XML.SubElement(stprb, 'credentialsId').text = data.get('credentials-id')
+    XML.SubElement(stprb, 'projectCode').text = data.get('project-code')
+    XML.SubElement(stprb, 'repositoryName').text = data.get('repository-name')
+    XML.SubElement(stprb, 'ciSkipPhrases').text = data.get('ci-skip-phrases')
+    XML.SubElement(stprb, 'ciBuildPhrases').text = data.get('ci-build-phrases')
+    XML.SubElement(stprb, 'checkDestinationCommit').text = data.get(
+        'check-destination-commit')
+    XML.SubElement(stprb, 'checkMergeable').text = data.get('check-mergeable')
+    XML.SubElement(stprb, 'checkNotConflicted').text = data.get(
+        'check-not-conflicted')
+    XML.SubElement(stprb, 'onlyBuildOnComment').text = data.get(
+        'only-build-on-comment')
+
+
 class Triggers(jenkins_jobs.modules.base.Base):
     sequence = 50
 

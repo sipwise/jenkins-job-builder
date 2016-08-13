@@ -1,0 +1,13 @@
+triggers:
+     - stash-pullrequest-builder:
+         cron: '* * * * *'
+         stash-host: 'http://localhost:7990/'
+         credentials-id: 'local-git-credentials'
+         project-code: 'JJD'
+         repository-name: 'jenkinsjobdefinitions'
+         ci-skip-phrases: 'SKIP THIS'
+         ci-build-phrases: 'test this please'
+         check-destination-commit: 'true'
+         check-mergeable: 'false'
+         check-not-conflicted: 'false'
+         only-build-on-comment: 'false'

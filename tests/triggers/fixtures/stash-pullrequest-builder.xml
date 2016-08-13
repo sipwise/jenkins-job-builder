@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <triggers class="vector">
+    <stashpullrequestbuilder.stashpullrequestbuilder.StashBuildTrigger>
+      <spec>* * * * *</spec>
+      <cron>* * * * *</cron>
+      <stashHost>http://localhost:7990/</stashHost>
+      <credentialsId>local-git-credentials</credentialsId>
+      <projectCode>JJD</projectCode>
+      <repositoryName>jenkinsjobdefinitions</repositoryName>
+      <ciSkipPhrases>SKIP THIS</ciSkipPhrases>
+      <ciBuildPhrases>test this please</ciBuildPhrases>
+      <checkDestinationCommit>true</checkDestinationCommit>
+      <checkMergeable>false</checkMergeable>
+      <checkNotConflicted>false</checkNotConflicted>
+      <onlyBuildOnComment>false</onlyBuildOnComment>
+    </stashpullrequestbuilder.stashpullrequestbuilder.StashBuildTrigger>
+  </triggers>
+</project>
