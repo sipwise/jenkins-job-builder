@@ -1950,11 +1950,11 @@ def email_ext(parser, xml_parent, data):
     if data.get('not-built', False):
         base_email_ext(parser, ctrigger, data, 'NotBuiltTrigger')
     if data.get('aborted', False):
-        base_email_ext(parser, ctrigger, data, 'AbortedTrigger')
+        base_email_create(parser, ctrigger, data.get('aborted'), 'AbortedTrigger')
     if data.get('regression', False):
         base_email_ext(parser, ctrigger, data, 'RegressionTrigger')
-    if data.get('failure', True):
-        base_email_ext(parser, ctrigger, data, 'FailureTrigger')
+    if data.get('failure', False):
+        base_email_create(parser, ctrigger, data.get('failure'), 'FailureTrigger')
     if data.get('second-failure', False):
         base_email_ext(parser, ctrigger, data, 'SecondFailureTrigger')
     if data.get('improvement', False):
@@ -1962,9 +1962,9 @@ def email_ext(parser, xml_parent, data):
     if data.get('still-failing', False):
         base_email_ext(parser, ctrigger, data, 'StillFailingTrigger')
     if data.get('success', False):
-        base_email_ext(parser, ctrigger, data, 'SuccessTrigger')
+        base_email_create(parser, ctrigger, data.get('success'), 'SuccessTrigger')
     if data.get('fixed', False):
-        base_email_ext(parser, ctrigger, data, 'FixedTrigger')
+        base_email_create(parser, ctrigger, data.get('fixed'), 'FixedTrigger')
     if data.get('still-unstable', False):
         base_email_ext(parser, ctrigger, data, 'StillUnstableTrigger')
     if data.get('pre-build', False):
