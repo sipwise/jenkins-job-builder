@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_676c4c9d",
+        "filename": "tests/publishers/fixtures/email-ext002.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-08-13T20:52:49Z",
+      "side": 1,
+      "message": "Please make one of the tests test the non-default version so that we can make sure the setting actually gets configured.",
+      "revId": "473f853d309e0a279f76b5a6d968fdd40f0e168b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
