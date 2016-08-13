@@ -760,6 +760,26 @@ def maven_metadata_param(parser, xml_parent, data):
     XML.SubElement(pdef, 'password').text = data.get('repository-password', '')
 
 
+def hidden_param(parser, xml_parent, data):
+    """yaml: hidden
+    A hidden string parameter.
+
+    :arg str name: the name of the parameter
+    :arg str default: the default value of the parameter (optional)
+    :arg str description: a description of the parameter (optional)
+
+    Example::
+
+    parameters:
+      - hidden:
+          name: FOO
+          default: bar
+          description: "A parameter named FOO, defaults to 'bar'."
+    """
+    base_param(parser, xml_parent, data, True,
+               'com.wangyin.parameter.WHideParameterDefinition')
+
+
 class Parameters(jenkins_jobs.modules.base.Base):
     sequence = 21
 
