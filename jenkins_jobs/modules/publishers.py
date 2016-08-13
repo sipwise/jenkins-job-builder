@@ -1792,6 +1792,69 @@ def claim_build(parser, xml_parent, data):
     XML.SubElement(xml_parent, 'hudson.plugins.claim.ClaimPublisher')
 
 
+def base_email_create(parset, xml_parent, data, ttype):
+    logger = logging.getLogger(__name__)
+    trigger = XML.SubElement(xml_parent,
+                             'hudson.plugins.emailext.plugins.trigger.'
+                             + ttype)
+    email = XML.SubElement(trigger, 'email')
+
+    email_config = {}
+    email_config.setdefault('recipientlist', '')
+    email_config.setdefault('subject', '$DEFAULT_SUBJECT')
+    email_config.setdefault('body', '${DEFAULT_CONTENT}')
+    email_config.setdefault('attachments', '')
+    email_config.setdefault('attach-build-log', 'false')
+    email_config.setdefault('compress-log', 'false')
+    email_config.setdefault('reply-to', '$DEFAULT_REPLYTO')
+    email_config.setdefault('content-type', 'default')
+
+    for email_option in data:
+        if 'recipientlist' in email_option:
+            email_config['recipientlist'] = \
+                email_option.get('recipientlist')
+        elif 'subject' in email_option:
+            email_config['subject'] = \
+                email_option.get('subject')
+        elif 'body' in email_option:
+            email_config['body'] = \
+                email_option.get('body')
+        elif 'attachments' in email_option:
+            email_config['attachments'] = \
+                email_option.get('attachments')
+        elif 'attach-build-log' in email_option:
+            email_config['attach-build-log'] = \
+                str(email_option.get('attach-build-log')).lower()
+        elif 'compress-log' in email_option:
+            email_config['compress-log'] = \
+                str(email_option.get('compress-log')).lower()
+        elif 'reply-to' in email_option:
+            email_config['reply-to'] = \
+                email_option.get('reply-to')
+        elif 'content-type' in email_option:
+            email_config['content-type'] = \
+                email_option.get('content-type')
+        else:
+            logger.warn("Dont' support %s currently", email_option.keys())
+
+    XML.SubElement(email, 'recipientList').text = \
+        email_config['recipientlist']
+    XML.SubElement(email, 'subject').text = \
+        email_config['subject']
+    XML.SubElement(email, 'body').text = \
+        email_config['body']
+    XML.SubElement(email, 'attachmentsPattern').text = \
+        email_config['attachments']
+    XML.SubElement(email, 'attachBuildLog').text = \
+        email_config['attach-build-log']
+    XML.SubElement(email, 'compressBuildLog').text = \
+        email_config['compress-log']
+    XML.SubElement(email, 'replyTo').text = \
+        email_config['reply-to']
+    XML.SubElement(email, 'contentType').text = \
+        email_config['content-type']
+
+
 def base_email_ext(parser, xml_parent, data, ttype):
     trigger = XML.SubElement(xml_parent,
                              'hudson.plugins.emailext.plugins.trigger.'
