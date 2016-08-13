@@ -2,11 +2,13 @@
 <project>
   <publishers>
     <hudson.plugins.sonar.SonarPublisher>
+      <installationName>MySonar</installationName>
       <jdk>MyJdk</jdk>
       <branch>myBranch</branch>
       <language>java</language>
       <rootPom>pom.xml</rootPom>
       <usePrivateRepository>false</usePrivateRepository>
+      <mavenInstallationName>Maven3.3.3</mavenInstallationName>
       <mavenOpts>-DskipTests</mavenOpts>
       <jobAdditionalProperties>-DsonarHostURL=http://example.com/</jobAdditionalProperties>
       <triggers>

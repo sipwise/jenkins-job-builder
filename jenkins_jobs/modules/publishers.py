@@ -2358,12 +2358,15 @@ def sonar(parser, xml_parent, data):
     <http://docs.sonarqube.org/display/SONAR/\
         Analyzing+with+SonarQube+Scanner+for+Jenkins>`_
 
+    :arg str installation-name: name of the Sonar instance to use (optional)
     :arg str jdk: JDK to use (inherited from the job if omitted). (optional)
     :arg str branch: branch onto which the analysis will be posted (optional)
     :arg str language: source code language (optional)
     :arg str root-pom: Root POM (default 'pom.xml')
     :arg bool private-maven-repo: If true, use private Maven repository.
       (default false)
+    :arg str maven-installation-name: the name of the Maven installation
+      to use (optional)
     :arg str maven-opts: options given to maven (optional)
     :arg str additional-properties: sonar analysis parameters (optional)
     :arg dict skip-global-triggers:
@@ -2392,6 +2395,9 @@ def sonar(parser, xml_parent, data):
        :language: yaml
     """
     sonar = XML.SubElement(xml_parent, 'hudson.plugins.sonar.SonarPublisher')
+    if 'installation-name' in data:
+        XML.SubElement(sonar, 'installationName').text = data[
+            'installation-name']
     if 'jdk' in data:
         XML.SubElement(sonar, 'jdk').text = data['jdk']
     XML.SubElement(sonar, 'branch').text = data.get('branch', '')
@@ -2399,6 +2405,9 @@ def sonar(parser, xml_parent, data):
     XML.SubElement(sonar, 'rootPom').text = data.get('root-pom', 'pom.xml')
     XML.SubElement(sonar, 'usePrivateRepository').text = str(
         data.get('private-maven-repo', False)).lower()
+    if 'maven-installation-name' in data:
+        XML.SubElement(sonar, 'mavenInstallationName').text = data[
+            'maven-installation-name']
     XML.SubElement(sonar, 'mavenOpts').text = data.get('maven-opts', '')
     XML.SubElement(sonar, 'jobAdditionalProperties').text = \
         data.get('additional-properties', '')
