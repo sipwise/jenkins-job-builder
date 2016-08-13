@@ -431,6 +431,7 @@ def svn_tags_param(parser, xml_parent, data):
     :arg str description: a description of the parameter (optional)
     :arg str url: the url to list tags from
     :arg str filter: the regular expression to filter tags
+    :arg str credentials-id: the credentials-id for svn credentials
 
     Example::
 
@@ -441,12 +442,15 @@ def svn_tags_param(parser, xml_parent, data):
             description: A parameter named BRANCH_NAME default is release
             url: http://svn.example.com/repo
             filter: [A-za-z0-9]*
+            credentials-id: asdasd-asdasd-asdasd-asdasds
     """
     pdef = base_param(parser, xml_parent, data, True,
                       'hudson.scm.listtagsparameter.'
                       'ListSubversionTagsParameterDefinition')
     XML.SubElement(pdef, 'tagsDir').text = data['url']
     XML.SubElement(pdef, 'tagsFilter').text = data.get('filter', None)
+    XML.SubElement(pdef, 'credentialsId').text = data.get(
+        'credentials-id', None)
     XML.SubElement(pdef, 'reverseByDate').text = "true"
     XML.SubElement(pdef, 'reverseByName').text = "false"
     XML.SubElement(pdef, 'maxTags').text = "100"
