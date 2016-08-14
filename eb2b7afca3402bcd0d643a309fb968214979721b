@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_0df659d7",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-08-14T01:31:08Z",
+      "side": 1,
+      "message": "Suggest to move the test example into separate test file, like \n    .. literalinclude::\n       /../../tests/parameters/fixtures/maven-metadata-param001.yaml\n       :language: yaml",
+      "range": {
+        "startLine": 771,
+        "startChar": 0,
+        "endLine": 778,
+        "endChar": 7
+      },
+      "revId": "eb2b7afca3402bcd0d643a309fb968214979721b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
