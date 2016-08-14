@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_ed577dc8",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1624,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-08-14T01:25:40Z",
+      "side": 1,
+      "message": "please update the doc string with consistent style, for example:\n:arg string spec: shot phrase to describe this parameter (defalut \u0027* * * * *\u0027/required)\nsame as below",
+      "range": {
+        "startLine": 1613,
+        "startChar": 0,
+        "endLine": 1624,
+        "endChar": 40
+      },
+      "revId": "4c479e6b1ff21e1e80d484c2a84883902ef65c38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_2d72357d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1626,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-08-14T01:25:40Z",
+      "side": 1,
+      "message": "Need to remove one \u0027:\u0027, otherwise the test file cannot included",
+      "range": {
+        "startLine": 1626,
+        "startChar": 12,
+        "endLine": 1626,
+        "endChar": 13
+      },
+      "revId": "4c479e6b1ff21e1e80d484c2a84883902ef65c38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_6d6c2d9d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1627,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-08-14T01:25:40Z",
+      "side": 1,
+      "message": "Should remove trailing \u0027\\\u0027 here.",
+      "range": {
+        "startLine": 1627,
+        "startChar": 24,
+        "endLine": 1627,
+        "endChar": 25
+      },
+      "revId": "4c479e6b1ff21e1e80d484c2a84883902ef65c38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
