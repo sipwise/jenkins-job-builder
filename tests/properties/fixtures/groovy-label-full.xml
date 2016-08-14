@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <properties>
+    <jp.ikedam.jenkins.plugins.groovy__label__assignment.GroovyLabelAssignmentProperty plugin="groovy-label-assignment">
+      <secureGroovyScript plugin="script-security">
+        <script>groovy-script</script>
+        <sandbox>true</sandbox>
+        <classpath>
+          <entry>
+            <url>file:/path/to/file</url>
+          </entry>
+          <entry>
+            <url>file:/foo/bar</url>
+          </entry>
+        </classpath>
+      </secureGroovyScript>
+    </jp.ikedam.jenkins.plugins.groovy__label__assignment.GroovyLabelAssignmentProperty>
+  </properties>
+</project>

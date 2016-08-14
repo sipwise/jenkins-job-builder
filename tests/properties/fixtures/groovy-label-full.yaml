@@ -1,0 +1,7 @@
+properties:
+  - groovy-label:
+      script: groovy-script
+      sandbox: true
+      entries:
+        - url: path/to/file
+        - url: foo/bar

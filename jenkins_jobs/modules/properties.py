@@ -163,6 +163,55 @@ def gitlab(registry, xml_parent, data):
         raise MissingAttributeError(e)
 
 
+def groovy_label(registry, xml_parent, data):
+    """yaml: groovy-label
+    Provides "Groovy script to restrict where this project can be run" in job
+    configuration pages. Requires the Jenkins :jenkins-wiki:`Groovy Label
+    Assignment plugin <Groovy+Label+Assignment+plugin>`.
+
+    :arg str script: Content of the groovy script. The value returned from the
+        script is treated as a label expression. (default '')
+    :arg bool sandbox: Run this Groovy script in a sandbox with limited
+        abilities (default false)
+    :arg list entries: List of classpath entries
+
+        :entry:
+            * **url** (`str`) -- A path or URL to a JAR file (default '')
+
+    Minimal Example:
+
+    .. literalinclude::
+       /../../tests/properties/fixtures/groovy-label-minimal.yaml
+       :language: yaml
+
+    Full Example:
+
+    .. literalinclude:: /../../tests/properties/fixtures/groovy-label-full.yaml
+       :language: yaml
+    """
+    groovy_label = XML.SubElement(
+        xml_parent,
+        'jp.ikedam.jenkins.plugins.groovy__label__assignment.'
+        'GroovyLabelAssignmentProperty')
+    groovy_label.set('plugin', 'groovy-label-assignment')
+    groovy_security = XML.SubElement(groovy_label, 'secureGroovyScript')
+    groovy_security.set('plugin', 'script-security')
+
+    mapping = [
+        ('script', 'script', ''),
+        ('sandbox', 'sandbox', False),
+    ]
+    helpers.convert_mapping_to_xml(
+        groovy_security, data, mapping, fail_required=True)
+
+    if 'entries' in data:
+        class_path = XML.SubElement(groovy_security, 'classpath')
+        for entry in data['entries']:
+            xml_child = XML.SubElement(class_path, 'entry')
+            url = entry.get('url', '')
+            XML.SubElement(xml_child, 'url').text = 'file:/' + url
+
+
 def least_load(registry, xml_parent, data):
     """yaml: least-load
     Enables the Least Load Plugin.
