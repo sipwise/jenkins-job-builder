@@ -16,6 +16,24 @@
       "revId": "473f853d309e0a279f76b5a6d968fdd40f0e168b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_4d8df17a",
+        "filename": "tests/publishers/fixtures/email-ext002.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 23136
+      },
+      "writtenOn": "2016-08-14T01:08:02Z",
+      "side": 1,
+      "message": "1) If compress-log option is not configured, the publishers.py will configure it to be false as default value.\n2) This patch has been verified and worked well when setting compress-log to be true. We solved the compressBuildLog problem after using this patch during building our own system.\n3) What\u0027s your meaning of the non-default version test?",
+      "parentUuid": "3ac371cc_676c4c9d",
+      "revId": "473f853d309e0a279f76b5a6d968fdd40f0e168b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
