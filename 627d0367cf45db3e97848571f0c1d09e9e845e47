@@ -22,6 +22,30 @@
       "revId": "627d0367cf45db3e97848571f0c1d09e9e845e47",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_b45e4143",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1879,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-15T16:10:48Z",
+      "side": 1,
+      "message": "no worse than before, but I\u0027d be inclined to agree.",
+      "parentUuid": "dada55a8_4582a201",
+      "range": {
+        "startLine": 1879,
+        "startChar": 58,
+        "endLine": 1879,
+        "endChar": 69
+      },
+      "revId": "627d0367cf45db3e97848571f0c1d09e9e845e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
