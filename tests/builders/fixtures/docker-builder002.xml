@@ -11,9 +11,6 @@
       <skipTagLatest>false</skipTagLatest>
       <skipPush>false</skipPush>
       <dockerfilePath>/tmp/</dockerfilePath>
-      <registry plugin="docker-commons">
-        <credentialsId>e0823c5a-60a9-11e6-ba0b-c7893318d9d9</credentialsId>
-      </registry>
     </com.cloudbees.dockerpublish.DockerBuilder>
   </builders>
 </project>

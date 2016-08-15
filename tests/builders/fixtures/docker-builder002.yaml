@@ -10,5 +10,4 @@ builders:
         skip-tag: false
         file-path: '/tmp/'
         build-context: '/tmp/'
-        credentials-id: 'e0823c5a-60a9-11e6-ba0b-c7893318d9d9'
 
