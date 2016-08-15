@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_6e9a3516",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-15T17:23:56Z",
+      "side": 1,
+      "message": "lets flesh out the description here to cover why this is the way to go, that way rather than needing someone to recall why, it\u0027ll be possible to look back in history.\n\nAs I recall, if optional settings were previously set and then removed, in not using blank XML tags for the optional settings, Jenkins would fail to remove the settings in the target job.\n\nHowever this was some what inconsistent, so it might be worth trying to find some examples where this was the case and reference them in this commit message before we close off on this issue.\n\nI suspect a story was also created on this, so might be worth checking storyboard.",
+      "revId": "5ce24504007f705dbf5f47abad5145e6668ee3c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
