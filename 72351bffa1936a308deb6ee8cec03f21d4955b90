@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_372de2fe",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 772,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-08-16T23:36:47Z",
+      "side": 1,
+      "message": "We should test this option too while we\u0027re at it.",
+      "range": {
+        "startLine": 772,
+        "startChar": 13,
+        "endLine": 772,
+        "endChar": 38
+      },
+      "revId": "72351bffa1936a308deb6ee8cec03f21d4955b90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
