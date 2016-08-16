@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_77f11a01",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 767,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-08-16T23:25:51Z",
+      "side": 1,
+      "message": "This does not show up properly in the docs.\n\nShould be:\nRequires the Jenkins :jenkins-wiki:`Hidden Parameter Plugin \u003cHidden+Parameter+Plugin\u003e`.",
+      "range": {
+        "startLine": 766,
+        "startChar": 4,
+        "endLine": 767,
+        "endChar": 35
+      },
+      "revId": "d4662151d2044ad19b4a2e93f26b7044aae5e3b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
