@@ -34,6 +34,24 @@
       "revId": "473f853d309e0a279f76b5a6d968fdd40f0e168b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_0eda4f17",
+        "filename": "tests/publishers/fixtures/email-ext002.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-08-17T02:49:32Z",
+      "side": 1,
+      "message": "By Virtue of your code calling: \n\n    data.get(\u0027compress-log\u0027, False)\n\n\"compress-log: false\" is already default so if the user doesn\u0027t pass anything it will be default. In software testing it is best practice to test a non-default option meaning we should test the setting to be \"compress-log: true\" otherwise we\u0027re not really testing if the option properly gets set or not as if you typo\u0027d the configuration the default option takes over and still passes the test. So explicitly testing the true option will ensure that this option is properly tested.",
+      "parentUuid": "3ac371cc_4d8df17a",
+      "revId": "473f853d309e0a279f76b5a6d968fdd40f0e168b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
