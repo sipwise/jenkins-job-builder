@@ -52,6 +52,24 @@
       "revId": "473f853d309e0a279f76b5a6d968fdd40f0e168b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_49060187",
+        "filename": "tests/publishers/fixtures/email-ext002.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 23136
+      },
+      "writtenOn": "2016-08-17T03:34:50Z",
+      "side": 1,
+      "message": "1) Ur suggestion is right.\n2) However, the default behavior of \"attach-build-log\" is also \"false\" in publishers.py. The test configuration is also \"false\"\n3) If setting the compress-log in the configuration to be true, it seems to be very strange for developers though it won\u0027t cause bad effects in the configured job.",
+      "parentUuid": "3ac371cc_0eda4f17",
+      "revId": "473f853d309e0a279f76b5a6d968fdd40f0e168b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
