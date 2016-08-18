@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_a7480ecd",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-18T15:17:10Z",
+      "side": 1,
+      "message": "Lets do the import on the module level, it\u0027s just a little bit tidier and we haven\u0027t already good any other functions from helpers imported here so might try to move forward with the tidier approach.",
+      "revId": "c3f083e475cd1d30bbb8d3a0bf2c4999bee443f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
