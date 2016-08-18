@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_a8045a14",
+        "filename": "tests/builders/fixtures/publish-over-ssh.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-18T16:14:01Z",
+      "side": 1,
+      "message": "Just confirmed, this is exactly how it is done, no idea why, but it is.",
+      "revId": "8a656871d5790040412c9e4bed24fde423a484ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
