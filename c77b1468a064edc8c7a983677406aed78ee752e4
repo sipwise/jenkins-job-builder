@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_391e020c",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-18T15:23:58Z",
+      "side": 1,
+      "message": "I wonder if this will conflict with one of the other patches that changes here as well?\n\nAnd since I asked to switch to import the module instead of the function from the module, guess that applies here too.",
+      "revId": "c77b1468a064edc8c7a983677406aed78ee752e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
