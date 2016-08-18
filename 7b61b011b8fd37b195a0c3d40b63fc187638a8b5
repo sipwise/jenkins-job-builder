@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_3cf6f08e",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1173,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-18T15:37:23Z",
+      "side": 1,
+      "message": "This took me a few readings to grasp, that really implicitly what would be happening if we had supported all the flags present previously would be:\n\n if plugin_ver \u003c pkg_resources.parse_version(\u00271.1.29\u0027):\n      # use old flag\n elif plugin_ver \u003d\u003d pkg_resources.parse_version(\u00271.1.29\u0027):\n      # use name changed to for 1.1.29\n elif plugin_ver \u003e pkg_resources.parse_version(\u00271.1.29\u0027):\n      # use name changed to for 1.2.0+\n\nHowever since we never supported the old flag, and jenkins will ignore XML tags not recognized this can be shorted to:\n\n if plugin_ver \u003d\u003d pkg_resources.parse_version(\u00271.1.29\u0027):\n      # use name changed to for 1.1.29\n else:\n     # use name changed to for 1.2.0+\n     # if \u003c1.1.29 this will simply be ignored",
+      "revId": "7b61b011b8fd37b195a0c3d40b63fc187638a8b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
