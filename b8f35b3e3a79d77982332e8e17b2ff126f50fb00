@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_cf65601e",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-18T15:49:02Z",
+      "side": 1,
+      "message": "Same thing as other reviews for properties, can we get this converted to just import the module like in most of the other files.",
+      "revId": "b8f35b3e3a79d77982332e8e17b2ff126f50fb00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
