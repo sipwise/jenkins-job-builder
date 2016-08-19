@@ -309,3 +309,6 @@ class JJBConfig(object):
                            " the " + section + " section, blank default" +
                            " value will be applied:\n{0}".format(e))
         return result
+
+    def get_plugin_config(self, plugin, key):
+        return self.get_module_config('plugin "{}"'.format(plugin), key)
