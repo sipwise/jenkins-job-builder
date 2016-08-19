@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_fd8b961c",
+        "filename": "jenkins_jobs/modules/reporters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-08-19T01:58:59Z",
+      "side": 1,
+      "message": "No need for an if-statement you can change this into 2 lines with:\n\n XML.SubElement(mailer, \u0027perModuleEmail\u0027).text \u003d str(\n     data.get(\u0027notify-for-every-module\u0027, True)).lower()\n\nDo we have confirmation of if this is a valid setting that configures something?\n\n(I\u0027m just trying to understand the TODO: figure out what this is comment)",
+      "revId": "1ba5e0af848656cbf6bfc587eeb7004ed8fbc8cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
