@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_72798f2f",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-08-19T16:37:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac06dbe_219b4bcb",
+      "revId": "a9c80ae1b811e7d4538b4b28250f81b666f62d11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_a1af3be2",
         "filename": "jenkins_jobs/parser.py",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2016-08-19T15:44:59Z",
       "side": 1,
       "message": "These are supposed to be at the top of file according to pep8.",
+      "revId": "a9c80ae1b811e7d4538b4b28250f81b666f62d11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_d276833d",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-08-19T16:37:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac06dbe_a1af3be2",
       "revId": "a9c80ae1b811e7d4538b4b28250f81b666f62d11",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_b273074d",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-08-19T16:37:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac06dbe_e1b93330",
+      "revId": "a9c80ae1b811e7d4538b4b28250f81b666f62d11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_01872f62",
         "filename": "jenkins_jobs/xml_config.py",
         "patchSetId": 12
@@ -64,6 +118,24 @@
       "writtenOn": "2016-08-19T15:44:59Z",
       "side": 1,
       "message": "These are supposed to be at the top of file according to pep8.",
+      "revId": "a9c80ae1b811e7d4538b4b28250f81b666f62d11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_f293bf4d",
+        "filename": "jenkins_jobs/xml_config.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-08-19T16:37:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1ac06dbe_01872f62",
       "revId": "a9c80ae1b811e7d4538b4b28250f81b666f62d11",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
