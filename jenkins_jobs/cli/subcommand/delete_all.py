@@ -50,7 +50,7 @@ class DeleteAllSubCommand(base.BaseSubCommand):
         )
 
     def execute(self, options, jjb_config):
-        builder = JenkinsManager(jjb_config)
+        builder = JenkinsManager.create_from_config(jjb_config)
 
         reach = set()
         if options.del_jobs and options.del_views:
