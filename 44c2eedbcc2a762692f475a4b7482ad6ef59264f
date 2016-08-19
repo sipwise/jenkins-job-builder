@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_5ee8e27c",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-19T15:41:40Z",
+      "side": 1,
+      "message": "do we need this? Can we just assume, if not PY2, use newer api supported by python 3.4 and newer?",
+      "revId": "44c2eedbcc2a762692f475a4b7482ad6ef59264f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_9e209a4b",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-19T15:41:40Z",
+      "side": 1,
+      "message": "This seems to only appear in 3.2 and newer, along with read_string, which would save us needing to create the StringIO object.\n\nSince we\u0027re assuming python 3.4+ compatibility, can probably switch to using read_string instead.",
+      "revId": "44c2eedbcc2a762692f475a4b7482ad6ef59264f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_fe670e23",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-19T15:41:40Z",
+      "side": 1,
+      "message": "As mentioned above? I don\u0027t think we need to worry above other versions of python besides python 2 or python 3.4+ really.",
+      "revId": "44c2eedbcc2a762692f475a4b7482ad6ef59264f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_3e49a68c",
+        "filename": "jenkins_jobs/modules/general.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-19T15:41:40Z",
+      "side": 1,
+      "message": "Needs to be single quotes here, recall \"\"\" will retain the newlines and leading space when written out by logging.",
+      "revId": "44c2eedbcc2a762692f475a4b7482ad6ef59264f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
