@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ac371cc_b04dc6c6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-08-19T01:16:42Z",
+      "side": 1,
+      "message": "Needs a blank line after the first line.",
+      "revId": "8f75f5ed37a2f1d6eac20a48b86fc6e1c95eb443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ac371cc_b092e6f4",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1656,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-08-19T01:16:42Z",
+      "side": 1,
+      "message": "Do these parameters have default values? or are they all required?\n\nIf they are required we should raise a MissingAttribute exception when they are not provided. Consider using the convert_mapping_to_xml helper function in the helpers module as it makes the code a lot easier.",
+      "revId": "8f75f5ed37a2f1d6eac20a48b86fc6e1c95eb443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
