@@ -38,7 +38,7 @@ class DeleteSubCommand(base.BaseSubCommand):
             directories''')
 
     def execute(self, options, jjb_config):
-        builder = JenkinsManager(jjb_config)
+        builder = JenkinsManager.create_from_config(jjb_config)
 
         fn = options.path
 

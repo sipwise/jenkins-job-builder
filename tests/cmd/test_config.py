@@ -111,7 +111,8 @@ class TestConfigs(CmdTestsBase):
         self.assertEqual(
             jjb_config.yamlparser['allow_empty_variables'], True)
 
-    @mock.patch('jenkins_jobs.cli.subcommand.update.JenkinsManager')
+    @mock.patch('jenkins_jobs.cli.subcommand.update.JenkinsManager'
+                '.create_from_config')
     def test_update_timeout_not_set(self, jenkins_mock):
         """Check that timeout is left unset
 
@@ -132,7 +133,8 @@ class TestConfigs(CmdTestsBase):
         self.assertEquals(jjb_config.jenkins['timeout'],
                           builder._DEFAULT_TIMEOUT)
 
-    @mock.patch('jenkins_jobs.cli.subcommand.update.JenkinsManager')
+    @mock.patch('jenkins_jobs.cli.subcommand.update.JenkinsManager'
+                '.create_from_config')
     def test_update_timeout_set(self, jenkins_mock):
         """Check that timeout is set correctly
 

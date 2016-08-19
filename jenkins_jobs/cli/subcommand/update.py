@@ -66,7 +66,7 @@ class UpdateSubCommand(base.BaseSubCommand):
             just one worker.''')
 
     def _generate_xmljobs(self, options, jjb_config=None):
-        builder = JenkinsManager(jjb_config)
+        builder = JenkinsManager.create_from_config(jjb_config)
 
         logger.info("Updating jobs in {0} ({1})".format(
             options.path, options.names))
