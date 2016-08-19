@@ -39,18 +39,14 @@ class DeleteSubCommand(base.BaseSubCommand):
 
     def execute(self, options, jjb_config):
         builder = Builder(jjb_config)
-
         fn = options.path
-
         registry = ModuleRegistry(jjb_config, builder.plugins_list)
-        for jobs_glob in options.name:
-            parser = YamlParser(jjb_config)
 
-            if fn:
-                parser.load_files(fn)
-                parser.expandYaml(registry, [jobs_glob])
-                jobs = [j['name'] for j in parser.jobs]
-            else:
-                jobs = [jobs_glob]
+        if fn:
+            parser.load_files(fn)
+            parser.expandYaml(registry, options.name)
+            jobs = [j['name'] for j in parser.jobs]
+        else:
+            jobs = options.name
 
-            builder.delete_job(jobs)
+        builder.delete_job(jobs)
