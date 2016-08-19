@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_a1f8db7d",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-08-19T15:51:53Z",
+      "side": 1,
+      "message": "I imagine that it would be helpful for users in The Future when it comes to Python 4.x to do this (assuming the read_file method is removed in that major version bump) rather than let them figure out on their own that the method is missing because it\u0027s not longer supported in whatever version of python they are using.\n\nBut for that matter, a similar argument could be made for every standard library function and it would be absurd to wrap ever function call with a python version check.\n\nSo yeah, I agree raising the exception is probably not necessary.",
+      "parentUuid": "1ac06dbe_5ee8e27c",
+      "revId": "44c2eedbcc2a762692f475a4b7482ad6ef59264f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_9e209a4b",
         "filename": "jenkins_jobs/config.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2016-08-19T15:41:40Z",
       "side": 1,
       "message": "This seems to only appear in 3.2 and newer, along with read_string, which would save us needing to create the StringIO object.\n\nSince we\u0027re assuming python 3.4+ compatibility, can probably switch to using read_string instead.",
+      "revId": "44c2eedbcc2a762692f475a4b7482ad6ef59264f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_813cbf30",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-08-19T15:51:53Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "1ac06dbe_9e209a4b",
       "revId": "44c2eedbcc2a762692f475a4b7482ad6ef59264f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1ac06dbe_21122bb5",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-08-19T15:51:53Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "1ac06dbe_fe670e23",
+      "revId": "44c2eedbcc2a762692f475a4b7482ad6ef59264f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1ac06dbe_3e49a68c",
         "filename": "jenkins_jobs/modules/general.py",
         "patchSetId": 13
@@ -64,6 +118,24 @@
       "writtenOn": "2016-08-19T15:41:40Z",
       "side": 1,
       "message": "Needs to be single quotes here, recall \"\"\" will retain the newlines and leading space when written out by logging.",
+      "revId": "44c2eedbcc2a762692f475a4b7482ad6ef59264f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_21606b35",
+        "filename": "jenkins_jobs/modules/general.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-08-19T15:51:53Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "1ac06dbe_3e49a68c",
       "revId": "44c2eedbcc2a762692f475a4b7482ad6ef59264f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
