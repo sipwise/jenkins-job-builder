@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_24e87e7c",
+        "filename": "jenkins_jobs/cli/subcommand/delete.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-19T15:16:51Z",
+      "side": 1,
+      "message": "How did I miss that this is being done inside a loop? This looks like we could just pass the entire \u0027options.name\u0027 as a list to parser.expandYaml below and avoid this loop altogether. Another TODO I think.",
+      "revId": "ae1fb60f16fe4910d1c1e480368aa756eff4befa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_cfa543b6",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-19T15:16:51Z",
+      "side": 1,
+      "message": "This and the methods below is the area that makes me wonder if we\u0027re really separating them, or just pretending we\u0027re separating them, since it\u0027s required to be able to do anything.\n\nI guess more info for a use case or where a parser would need different registers during it\u0027s lifetime would help here, otherwise might be worth allowing it to be a class attribute but allow it to be provided instead of created as it was previously.",
+      "revId": "ae1fb60f16fe4910d1c1e480368aa756eff4befa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
