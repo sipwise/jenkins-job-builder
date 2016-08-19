@@ -14,8 +14,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from jenkins_jobs import builder as jbuilder
 from jenkins_jobs.config import JJBConfig
-import jenkins_jobs.builder
 from tests.base import LoggingFixture
 from tests.base import mock
 
@@ -31,13 +31,13 @@ class TestCaseTestBuilder(LoggingFixture, TestCase):
 
     def test_plugins_list(self):
         self.jjb_config.builder['plugins_info'] = ['plugin1', 'plugin2']
-        self.builder = jenkins_jobs.builder.JenkinsManager(self.jjb_config)
+        self.builder = jbuilder.JenkinsManager(self.jjb_config)
         self.assertEqual(self.builder.plugins_list, ['plugin1', 'plugin2'])
 
-    @mock.patch.object(jenkins_jobs.builder.jenkins.Jenkins,
+    @mock.patch.object(jbuilder.jenkins.Jenkins,
                        'get_plugins_info', return_value=['p1', 'p2'])
     def test_plugins_list_from_jenkins(self, jenkins_mock):
         # Trigger fetching the plugins from jenkins when accessing the property
         self.jjb_config.builder['plugins_info'] = None
-        self.builder = jenkins_jobs.builder.JenkinsManager(self.jjb_config)
+        self.builder = jbuilder.JenkinsManager(self.jjb_config)
         self.assertEqual(self.builder.plugins_list, ['p1', 'p2'])
