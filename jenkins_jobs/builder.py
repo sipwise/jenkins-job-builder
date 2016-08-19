@@ -224,16 +224,26 @@ class Jenkins(object):
 
 
 class Builder(object):
-    def __init__(self, jjb_config):
-        self.jenkins = Jenkins(jjb_config.jenkins['url'],
-                               jjb_config.jenkins['user'],
-                               jjb_config.jenkins['password'],
-                               jjb_config.jenkins['timeout'])
-        self.cache = CacheStorage(jjb_config.jenkins['url'],
-                                  flush=jjb_config.builder['flush_cache'])
-        self._plugins_list = jjb_config.builder['plugins_info']
+    def __init__(self, jenkins_url, jenkins_user, jenkins_password,
+                 jenkins_timeout=_DEFAULT_TIMEOUT, ignore_cache=False,
+                 flush_cache=False, plugins_list=None):
+        self.jenkins = Jenkins(jenkins_url, jenkins_user, jenkins_password,
+                               jenkins_timeout)
+        self._ignore_cache = ignore_cache
+        self.cache = CacheStorage(jenkins_url, flush=flush_cache)
+        self._plugins_list = plugins_list
 
-        self.jjb_config = jjb_config
+    @classmethod
+    def create_from_config(cls, jjb_config):
+        return cls(
+            jjb_config.jenkins['url'],
+            jjb_config.jenkins['user'],
+            jjb_config.jenkins['password'],
+            jjb_config.jenkins['timeout'],
+            ignore_cache=jjb_config.builder['ignore_cache'],
+            flush_cache=jjb_config.builder['flush_cache'],
+            plugins_list=jjb_config.builder['plugins_info']
+        )
 
     @property
     def plugins_list(self):
@@ -278,7 +288,7 @@ class Builder(object):
     def changed(self, job):
         md5 = job.md5()
 
-        changed = (self.jjb_config.builder['ignore_cache'] or
+        changed = (self._ignore_cache or
                    self.cache.has_changed(job.name, md5))
         if not changed:
             logger.debug("'{0}' has not changed".format(job.name))

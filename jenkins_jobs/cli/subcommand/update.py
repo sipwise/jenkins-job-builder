@@ -66,7 +66,7 @@ class UpdateSubCommand(base.BaseSubCommand):
             just one worker.''')
 
     def _generate_xmljobs(self, options, jjb_config=None):
-        builder = Builder(jjb_config)
+        builder = Builder.create_from_config(jjb_config)
 
         logger.info("Updating jobs in {0} ({1})".format(
             options.path, options.names))

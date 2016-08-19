@@ -38,7 +38,7 @@ class DeleteSubCommand(base.BaseSubCommand):
             directories''')
 
     def execute(self, options, jjb_config):
-        builder = Builder(jjb_config)
+        builder = Builder.create_from_config(jjb_config)
 
         fn = options.path
 
