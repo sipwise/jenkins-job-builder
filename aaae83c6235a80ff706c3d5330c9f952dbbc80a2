@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ac06dbe_5e20e29b",
+        "filename": "jenkins_jobs/xml_config.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-19T15:29:46Z",
+      "side": 1,
+      "message": "I think this needs to go back to single \u0027_\u0027, but let\u0027s do that with a post fixup rather than forcing this series to be rebased again.\n\nThe name mangling behaviour is full of pit falls when applying it to methods, lets not make it unnecessarily difficult for advanced callers to subclass this class and discover that they need to rewrite the generateXML() method for it to work correctly.",
+      "revId": "aaae83c6235a80ff706c3d5330c9f952dbbc80a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
