@@ -34,6 +34,24 @@
       "revId": "7f8a33ca3b8e26c2d765a4ae683541e93f2891a1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ac06dbe_e8f57983",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1303,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-08-20T06:31:24Z",
+      "side": 1,
+      "message": "Exactly this. I\u0027ve been thinking if it\u0027s possible to workaround this NOT logic inside of convert xml somehow as I\u0027ve encountered this a few times now. No luck.",
+      "parentUuid": "3ac371cc_b372ed47",
+      "revId": "7f8a33ca3b8e26c2d765a4ae683541e93f2891a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
