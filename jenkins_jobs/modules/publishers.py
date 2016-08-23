@@ -2148,7 +2148,7 @@ def logparser(registry, xml_parent, data):
     """yaml: logparser
     Requires the Jenkins :jenkins-wiki:`Log Parser Plugin <Log+Parser+Plugin>`.
 
-    :arg str parse-rules: full path to parse rules
+    :arg str parse-rules: path to parse rules
     :arg bool unstable-on-warning: mark build unstable on warning
     :arg bool fail-on-error: mark build failed on error
 
@@ -2164,8 +2164,8 @@ def logparser(registry, xml_parent, data):
         str(data.get('unstable-on-warning', False)).lower()
     XML.SubElement(clog, 'failBuildOnError').text = \
         str(data.get('fail-on-error', False)).lower()
-    # v1.08: this must be the full path, the name of the rules is not enough
-    XML.SubElement(clog, 'parsingRulesPath').text = data.get('parse-rules', '')
+    XML.SubElement(clog, 'useProjectRule').text = 'true'
+    XML.SubElement(clog, 'projectRulePath').text = data.get('parse-rules', '')
 
 
 def copy_to_master(registry, xml_parent, data):
