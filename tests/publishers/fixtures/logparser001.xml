@@ -4,7 +4,8 @@
     <hudson.plugins.logparser.LogParserPublisher>
       <unstableOnWarning>true</unstableOnWarning>
       <failBuildOnError>true</failBuildOnError>
-      <parsingRulesPath>/path/to/parserules</parsingRulesPath>
+      <useProjectRule>true</useProjectRule>
+      <projectRulePath>/path/to/parserules</projectRulePath>
     </hudson.plugins.logparser.LogParserPublisher>
   </publishers>
 </project>
