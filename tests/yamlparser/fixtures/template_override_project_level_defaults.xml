@@ -18,12 +18,14 @@
         <hudson.plugins.emailext.plugins.trigger.FailureTrigger>
           <email>
             <recipientList/>
-            <subject>$PROJECT_DEFAULT_SUBJECT</subject>
-            <body>$PROJECT_DEFAULT_CONTENT</body>
-            <sendToRequester>false</sendToRequester>
-            <sendToDevelopers>false</sendToDevelopers>
-            <includeCulprits>false</includeCulprits>
-            <sendToRecipientList>true</sendToRecipientList>
+            <subject>$DEFAULT_SUBJECT</subject>
+            <body>$DEFAULT_CONTENT</body>
+            <attachmentsPattern/>
+            <attachBuildLog>false</attachBuildLog>
+            <compressBuildLog>false</compressBuildLog>
+            <replyTo>$DEFAULT_REPLYTO</replyTo>
+            <contentType>default</contentType>
+            <recipientProviders/>
           </email>
         </hudson.plugins.emailext.plugins.trigger.FailureTrigger>
       </configuredTriggers>
