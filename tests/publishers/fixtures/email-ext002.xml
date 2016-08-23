@@ -6,13 +6,23 @@
       <configuredTriggers>
         <hudson.plugins.emailext.plugins.trigger.FailureTrigger>
           <email>
-            <recipientList/>
+            <recipientList>$BUILD_USER_EMAIL, cc:$DEFAULT_RECIPIENTS</recipientList>
             <subject>$PROJECT_DEFAULT_SUBJECT</subject>
-            <body>$PROJECT_DEFAULT_CONTENT</body>
-            <sendToRequester>false</sendToRequester>
-            <sendToDevelopers>false</sendToDevelopers>
-            <includeCulprits>false</includeCulprits>
-            <sendToRecipientList>true</sendToRecipientList>
+            <body>Hi, pls check log</body>
+            <attachmentsPattern/>
+            <attachBuildLog>true</attachBuildLog>
+            <compressBuildLog>true</compressBuildLog>
+            <replyTo>$PROJECT_DEFAULT_REPLYTO</replyTo>
+            <contentType>default</contentType>
+            <recipientProviders>
+              <hudson.plugins.emailext.plugins.recipients.CulpritsRecipientProvider/>
+              <hudson.plugins.emailext.plugins.recipients.DevelopersRecipientProvider/>
+              <hudson.plugins.emailext.plugins.recipients.ListRecipientProvider/>
+              <hudson.plugins.emailext.plugins.recipients.RequesterRecipientProvider/>
+              <hudson.plugins.emailext.plugins.recipients.FailingTestSuspectsRecipientProvider/>
+              <hudson.plugins.emailext.plugins.recipients.FirstFailingBuildSuspectsRecipientProvider/>
+              <hudson.plugins.emailext.plugins.recipients.UpstreamComitterRecipientProvider/>
+            </recipientProviders>
           </email>
         </hudson.plugins.emailext.plugins.trigger.FailureTrigger>
       </configuredTriggers>
