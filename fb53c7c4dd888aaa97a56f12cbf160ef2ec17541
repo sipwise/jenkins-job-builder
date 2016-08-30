@@ -22,6 +22,30 @@
       "revId": "fb53c7c4dd888aaa97a56f12cbf160ef2ec17541",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_c298c21e",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1709,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2016-08-30T23:07:38Z",
+      "side": 1,
+      "message": "This was based on the existing timed trigger\n\n    triggers:\n      - timed: \"@midnight\"\n\nBut what you say makes sense as well. Would something like below be ok?\n\n    triggers:\n      - parameterized-timer: \n             cron: \"@midnight % PARAM\u003dvalue\"",
+      "parentUuid": "fa7ab95a_60d531e3",
+      "range": {
+        "startLine": 1709,
+        "startChar": 5,
+        "endLine": 1709,
+        "endChar": 14
+      },
+      "revId": "fb53c7c4dd888aaa97a56f12cbf160ef2ec17541",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
