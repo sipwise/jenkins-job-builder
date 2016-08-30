@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_60d531e3",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1709,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-08-30T22:28:21Z",
+      "side": 1,
+      "message": "I think we should add an optional parameter here such as \u0027cron\u0027 to keep this consistent with all the other plugins. As well, if this plugin ever does introduce a new feature, we would not have to break backward compatibility.",
+      "range": {
+        "startLine": 1709,
+        "startChar": 5,
+        "endLine": 1709,
+        "endChar": 14
+      },
+      "revId": "fb53c7c4dd888aaa97a56f12cbf160ef2ec17541",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
