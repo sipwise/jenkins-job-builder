@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_8cb5e1d1",
+        "filename": "tests/publishers/fixtures/email-ext001.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-08-31T15:02:55Z",
+      "side": 1,
+      "message": "Rather than changing existing test scenarios, I would prefer if you add a new one to make it clear that we are not changing the behavior of the code in a way that will harmfully surprise others who may be using this feature.\n\nIf this is being changed because you are introducing backwards-incompatible behavior change to the config generation for this plugin then you should introduce that new behavior in such a way that the new behavior is optional during a deprecation period with the default behavior remaining the same as before.",
+      "revId": "1390875b659fa64b294bfbea2532a310d4bf50f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

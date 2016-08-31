@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_0c89d1ca",
+        "filename": "tests/publishers/fixtures/email-ext001.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2016-08-31T15:02:55Z",
+      "side": 0,
+      "message": "The difference in XML between old and new here makes me wonder if the changes you are making are targeting a newer version of the Extended Email Publisher plugin...? If so, it is possible to make the generated XML conditional on the version of the plugin you are writing for.",
+      "revId": "c73cb4686a060be402d963f1401fa96bb9a8efc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
