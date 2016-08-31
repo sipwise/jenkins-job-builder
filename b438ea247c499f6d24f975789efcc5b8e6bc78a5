@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_4d5da1eb",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-31T12:55:17Z",
+      "side": 1,
+      "message": "Perhaps just stick to keeping with a single underscore, \u0027__\u0027 invokes name mangling rather than being directly mappable to \u0027private\u0027 in other OO languages.",
+      "revId": "b438ea247c499f6d24f975789efcc5b8e6bc78a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_cdcd3188",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-31T12:55:17Z",
+      "side": 1,
+      "message": "As above, though less concerned about this one since I\u0027m assuming it will disappear with a subsequent patch anyway? No reason not to simply have the contents of this method done in the delete_all_jobs method below.",
+      "revId": "b438ea247c499f6d24f975789efcc5b8e6bc78a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_cd3e1129",
+        "filename": "tests/cmd/subcommands/test_test.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-31T12:55:17Z",
+      "side": 1,
+      "message": "I\u0027ve a feeling the mock.MagicMock is not actually required, but that\u0027s a separate investigation and patch if that turns out to be true.",
+      "revId": "b438ea247c499f6d24f975789efcc5b8e6bc78a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_cdae11e7",
+        "filename": "tests/cmd/subcommands/test_update.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-31T12:55:17Z",
+      "side": 1,
+      "message": "minor nit, only if changing this patch need worry, I\u0027m guessing this was an accidental newline added.",
+      "revId": "b438ea247c499f6d24f975789efcc5b8e6bc78a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_2d313ded",
+        "filename": "tests/cmd/subcommands/test_update.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-31T12:55:17Z",
+      "side": 1,
+      "message": "You can replace these three lines with a single one:\n\n jenkins_mock.return_value.update_jobs.return_value \u003d ([], 0)\n\nThe default return_value of jenkins_mock is a mock.MagicMock() object, so unless need something different can just access that directly through return_value and then add a mocked method with a return value directly onto it.",
+      "revId": "b438ea247c499f6d24f975789efcc5b8e6bc78a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_d26cf038",
+        "filename": "tests/cmd/subcommands/test_update.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-31T12:55:17Z",
+      "side": 1,
+      "message": "I\u0027m wondering is this testing what should be tested here? \n\nThis checks that the config object has the correct value set, before it checked whether the object used to communicate with jenkins was created with the timeout parameter, which made sure that the logic inside the JenkinsManager constructor object was exercised.\n\nPerhaps we want to plan to move that part of the test to those dedicated to testing the JenkinsManager object? I\u0027m ok with that and keeping this for checking that the option in the config file updates the timeout correctly here.\n\nThough potentially that too should go to a set of tests dedicated on testing the config processing.\n\nBased on comments previously I\u0027m just a little wary of ending up with lots of unit tests exercising individual objects when possibly better on having something closer to functional tests for the subcommands.\n\nThoughts?\n\nPretty happy to let this land as is, and follow up based on what is suggested as future improvements.",
+      "revId": "b438ea247c499f6d24f975789efcc5b8e6bc78a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_6d9fc5b4",
+        "filename": "tests/cmd/subcommands/test_update.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-31T12:55:17Z",
+      "side": 1,
+      "message": "accidental newline?",
+      "revId": "b438ea247c499f6d24f975789efcc5b8e6bc78a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_8d6de9ce",
+        "filename": "tests/cmd/subcommands/test_update.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-31T12:55:17Z",
+      "side": 1,
+      "message": "As above can replace these three lines with a single one:\n\n jenkins_mock.return_value.update_jobs.return_value \u003d ([], 0)",
+      "revId": "b438ea247c499f6d24f975789efcc5b8e6bc78a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
