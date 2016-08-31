@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_c176e0d7",
+        "filename": "tests/cmd/subcommands/test_update.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-08-31T12:55:39Z",
+      "side": 1,
+      "message": "Seems like we dropped the assertion here from an earlier patch when reworking the series.\n\n        # when timeout is set, the fourth argument to builder.Jenkins should be\n        # the JJB default value\n        jenkins_mock.assert_called_with(mock.ANY,\n                                        mock.ANY,\n                                        mock.ANY)\n\nThough since the test is corrected in https://review.openstack.org/#/c/319754, lets avoid adding additional work here to get these landed.",
+      "revId": "1fe7709923162f924390d7687092ce0eeecccbfc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
