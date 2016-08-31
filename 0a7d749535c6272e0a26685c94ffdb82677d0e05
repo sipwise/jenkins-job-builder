@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_2f812a4e",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1709,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-08-31T14:38:29Z",
+      "side": 1,
+      "message": "Should be \u0027str\u0027 instead of \u0027string\u0027",
+      "range": {
+        "startLine": 1709,
+        "startChar": 9,
+        "endLine": 1709,
+        "endChar": 15
+      },
+      "revId": "0a7d749535c6272e0a26685c94ffdb82677d0e05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_cf1c3e16",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1710,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-08-31T14:38:29Z",
+      "side": 1,
+      "message": "I think the convention here would be 4 space indentation, instead of 2.",
+      "revId": "0a7d749535c6272e0a26685c94ffdb82677d0e05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
