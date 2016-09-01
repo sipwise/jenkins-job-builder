@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa7ab95a_cb1b081b",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3695,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-09-01T14:43:55Z",
+      "side": 1,
+      "message": "Maybe single quotes for consistency.",
+      "range": {
+        "startLine": 3695,
+        "startChar": 31,
+        "endLine": 3695,
+        "endChar": 41
+      },
+      "revId": "eb64ec0d93f8eb9ee68cd063566c9c1f53eedd97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_5e4dfb97",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3735,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-09-01T14:43:55Z",
+      "side": 1,
+      "message": "Maybe single quotes instead of double for consistency.",
+      "range": {
+        "startLine": 3735,
+        "startChar": 72,
+        "endLine": 3735,
+        "endChar": 74
+      },
+      "revId": "eb64ec0d93f8eb9ee68cd063566c9c1f53eedd97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_cb3ce8c1",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3765,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-09-01T14:43:55Z",
+      "side": 1,
+      "message": "single quotes for consistency",
+      "range": {
+        "startLine": 3765,
+        "startChar": 38,
+        "endLine": 3765,
+        "endChar": 43
+      },
+      "revId": "eb64ec0d93f8eb9ee68cd063566c9c1f53eedd97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_cb6308dc",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3766,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-09-01T14:43:55Z",
+      "side": 1,
+      "message": "Same comment",
+      "range": {
+        "startLine": 3766,
+        "startChar": 38,
+        "endLine": 3766,
+        "endChar": 45
+      },
+      "revId": "eb64ec0d93f8eb9ee68cd063566c9c1f53eedd97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa7ab95a_0b5ed011",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3767,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-09-01T14:43:55Z",
+      "side": 1,
+      "message": "Same comment",
+      "range": {
+        "startLine": 3767,
+        "startChar": 38,
+        "endLine": 3767,
+        "endChar": 46
+      },
+      "revId": "eb64ec0d93f8eb9ee68cd063566c9c1f53eedd97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
