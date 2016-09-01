@@ -8,26 +8,21 @@ publishers:
       attach-build-log: false
       compress-log: false
       attachments: "*/foo*.log"
-      always: true
-      unstable: true
-      first-failure: true
-      not-built: true
-      aborted: true
-      regression: true
-      failure: true
-      second-failure: true
-      improvement: true
-      still-failing: true
-      success: true
-      fixed: true
-      still-unstable: true
-      pre-build: true
+      always:
+      unstable:
+      first-failure:
+      not-built:
+      aborted:
+      regression:
+      failure:
+      second-failure:
+      improvement:
+      still-failing:
+      success:
+      fixed:
+      still-unstable:
+      pre-build:
       matrix-trigger: only-configurations
       presend-script: "cancel=true"
       postsend-script: "cancel=true"
       save-output: true
-      send-to:
-        - developers
-        - requester
-        - culprits
-        - recipients
