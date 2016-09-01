@@ -1843,27 +1843,98 @@ def claim_build(registry, xml_parent, data):
 
 
 def base_email_ext(registry, xml_parent, data, ttype):
+    logger = logging.getLogger("%s: email-ext plugin" % __name__)
     trigger = XML.SubElement(xml_parent,
                              'hudson.plugins.emailext.plugins.trigger.'
                              + ttype)
     email = XML.SubElement(trigger, 'email')
-    XML.SubElement(email, 'recipientList').text = ''
-    XML.SubElement(email, 'subject').text = '$PROJECT_DEFAULT_SUBJECT'
-    XML.SubElement(email, 'body').text = '$PROJECT_DEFAULT_CONTENT'
-    if 'send-to' in data:
-        XML.SubElement(email, 'sendToDevelopers').text = \
-            str('developers' in data['send-to']).lower()
-        XML.SubElement(email, 'sendToRequester').text = \
-            str('requester' in data['send-to']).lower()
-        XML.SubElement(email, 'includeCulprits').text = \
-            str('culprits' in data['send-to']).lower()
-        XML.SubElement(email, 'sendToRecipientList').text = \
-            str('recipients' in data['send-to']).lower()
-    else:
-        XML.SubElement(email, 'sendToRequester').text = 'false'
-        XML.SubElement(email, 'sendToDevelopers').text = 'false'
-        XML.SubElement(email, 'includeCulprits').text = 'false'
-        XML.SubElement(email, 'sendToRecipientList').text = 'true'
+
+    email_config = {}
+    email_config.setdefault('recipients', '')
+    email_config.setdefault('subject', '$PROJECT_DEFAULT_SUBJECT')
+    email_config.setdefault('body', '$PROJECT_DEFAULT_CONTENT')
+    email_config.setdefault('attachments', '')
+    email_config.setdefault('attach-build-log', 'false')
+    email_config.setdefault('compress-log', 'false')
+    email_config.setdefault('reply-to', '$PROJECT_DEFAULT_REPLYTO')
+    email_config.setdefault('content-type', 'default')
+
+    if data is None:
+        data = []
+
+    send_to_item = []
+    for email_option in data:
+        if 'recipients' in email_option:
+            email_config['recipients'] = email_option.get('recipients')
+        elif 'subject' in email_option:
+            email_config['subject'] = email_option.get('subject')
+        elif 'body' in email_option:
+            email_config['body'] = email_option.get('body')
+        elif 'attachments' in email_option:
+            email_config['attachments'] = email_option.get('attachments')
+        elif 'attach-build-log' in email_option:
+            email_config['attach-build-log'] = \
+                str(email_option.get('attach-build-log')).lower()
+        elif 'compress-log' in email_option:
+            email_config['compress-log'] = \
+                str(email_option.get('compress-log')).lower()
+        elif 'reply-to' in email_option:
+            email_config['reply-to'] = email_option.get('reply-to')
+        elif 'content-type' in email_option:
+            email_config['content-type'] = email_option.get('content-type')
+        elif 'send-to' in email_option:
+            send_to_item = email_option.get('send-to')
+        else:
+            logger.warn("Not support %s currently", email_option.keys())
+
+    XML.SubElement(email, 'recipientList').text = \
+        email_config['recipients']
+    XML.SubElement(email, 'subject').text = email_config['subject']
+    XML.SubElement(email, 'body').text = email_config['body']
+    XML.SubElement(email, 'attachmentsPattern').text = \
+        email_config['attachments']
+    XML.SubElement(email, 'attachBuildLog').text = \
+        email_config['attach-build-log']
+    XML.SubElement(email, 'compressBuildLog').text = \
+        email_config['compress-log']
+    XML.SubElement(email, 'replyTo').text = email_config['reply-to']
+    XML.SubElement(email, 'contentType').text = email_config['content-type']
+
+    recipient_providers = XML.SubElement(email, 'recipientProviders')
+    st_prefix = 'hudson.plugins.emailext.plugins.recipients.'
+    if send_to_item:
+        if 'culprits' in send_to_item:
+            XML.SubElement(recipient_providers,
+                           st_prefix + 'CulpritsRecipientProvider')
+            send_to_item.remove('culprits')
+        if 'developers' in send_to_item:
+            XML.SubElement(recipient_providers,
+                           st_prefix + 'DevelopersRecipientProvider')
+            send_to_item.remove('developers')
+        if 'recipientlist' in send_to_item:
+            XML.SubElement(recipient_providers,
+                           st_prefix + 'ListRecipientProvider')
+            send_to_item.remove('recipientlist')
+        if 'requestor' in send_to_item:
+            XML.SubElement(recipient_providers,
+                           st_prefix + 'RequesterRecipientProvider')
+            send_to_item.remove('requestor')
+        if 'testfail' in send_to_item:
+            XML.SubElement(recipient_providers,
+                           st_prefix + 'FailingTestSuspectsRecipientProvider')
+            send_to_item.remove('testfail')
+        if 'buildfail' in send_to_item:
+            XML.SubElement(recipient_providers, st_prefix +
+                           'FirstFailingBuildSuspectsRecipientProvider')
+            send_to_item.remove('buildfail')
+        if 'committers' in send_to_item:
+            XML.SubElement(recipient_providers,
+                           st_prefix + 'UpstreamComitterRecipientProvider')
+            send_to_item.remove('committers')
+
+    if send_to_item:
+        raise JenkinsJobsException('some of given send-to items' +
+                                   'are not supported :%s' % send_to_item)
 
 
 def email_ext(registry, xml_parent, data):
@@ -1892,25 +1963,20 @@ def email_ext(registry, xml_parent, data):
     :arg bool attach-build-log: Include build log in the email (default false)
     :arg bool compress-log: Compress build log in the email (default false)
     :arg str attachments: pattern of files to include as attachment (optional)
-    :arg bool always: Send an email for every result (default false)
-    :arg bool unstable: Send an email for an unstable result (default false)
-    :arg bool first-failure: Send an email for just the first failure
-        (default false)
-    :arg bool not-built: Send an email if not built (default false)
-    :arg bool aborted: Send an email if the build is aborted (default false)
-    :arg bool regression: Send an email if there is a regression
-        (default false)
-    :arg bool failure: Send an email if the build fails (default true)
-    :arg bool second-failure: Send an email for the second failure
-        (default false)
-    :arg bool improvement: Send an email if the build improves (default false)
-    :arg bool still-failing: Send an email if the build is still failing
-        (default false)
-    :arg bool success: Send an email for a successful build (default false)
-    :arg bool fixed: Send an email if the build is fixed (default false)
-    :arg bool still-unstable: Send an email if the build is still unstable
-        (default false)
-    :arg bool pre-build: Send an email before the build (default false)
+    :arg list always: Send an email with configuration
+    :arg list unstable: Send an email for an unstable result
+    :arg list first-failure: Send an email for just the first failure
+    :arg list not-built: Send an email if not built
+    :arg list aborted: Send an email if the build is aborted
+    :arg list regression: Send an email if there is a regression
+    :arg list failure: Send an email if the build fails
+    :arg list second-failure: Send an email for the second failure
+    :arg list improvement: Send an email if the build improves
+    :arg list still-failing: Send an email if the build is still failing
+    :arg list success: Send an email for a successful build
+    :arg list fixed: Send an email if the build is fixed
+    :arg list still-unstable: Send an email if the build is still unstable
+    :arg list pre-build: Send an email before the build
     :arg str presend-script: A Groovy script executed prior sending the mail.
         (default '')
     :arg str postsend-script: A Goovy script executed after sending the email.
@@ -1922,13 +1988,6 @@ def email_ext(registry, xml_parent, data):
             * **both**
             * **only-parent**
             * **only-configurations**
-    :arg list send-to: list of recipients from the predefined groups
-
-        :send-to values:
-            * **developers** (disabled by default)
-            * **requester** (disabled by default)
-            * **culprits** (disabled by default)
-            * **recipients** (enabled by default)
 
     Example:
 
@@ -1943,34 +2002,48 @@ def email_ext(registry, xml_parent, data):
     else:
         XML.SubElement(emailext, 'recipientList').text = '$DEFAULT_RECIPIENTS'
     ctrigger = XML.SubElement(emailext, 'configuredTriggers')
-    if data.get('always', False):
-        base_email_ext(registry, ctrigger, data, 'AlwaysTrigger')
-    if data.get('unstable', False):
-        base_email_ext(registry, ctrigger, data, 'UnstableTrigger')
-    if data.get('first-failure', False):
-        base_email_ext(registry, ctrigger, data, 'FirstFailureTrigger')
-    if data.get('not-built', False):
-        base_email_ext(registry, ctrigger, data, 'NotBuiltTrigger')
-    if data.get('aborted', False):
-        base_email_ext(registry, ctrigger, data, 'AbortedTrigger')
-    if data.get('regression', False):
-        base_email_ext(registry, ctrigger, data, 'RegressionTrigger')
-    if data.get('failure', True):
-        base_email_ext(registry, ctrigger, data, 'FailureTrigger')
-    if data.get('second-failure', False):
-        base_email_ext(registry, ctrigger, data, 'SecondFailureTrigger')
-    if data.get('improvement', False):
-        base_email_ext(registry, ctrigger, data, 'ImprovementTrigger')
-    if data.get('still-failing', False):
-        base_email_ext(registry, ctrigger, data, 'StillFailingTrigger')
-    if data.get('success', False):
-        base_email_ext(registry, ctrigger, data, 'SuccessTrigger')
-    if data.get('fixed', False):
-        base_email_ext(registry, ctrigger, data, 'FixedTrigger')
-    if data.get('still-unstable', False):
-        base_email_ext(registry, ctrigger, data, 'StillUnstableTrigger')
-    if data.get('pre-build', False):
-        base_email_ext(registry, ctrigger, data, 'PreBuildTrigger')
+    if 'always' in data:
+        base_email_ext(registry, ctrigger,
+                       data.get('always'), 'AlwaysTrigger')
+    if 'unstable' in data:
+        base_email_ext(registry, ctrigger,
+                       data.get('unstable'), 'UnstableTrigger')
+    if 'first-failure' in data:
+        base_email_ext(registry, ctrigger,
+                       data.get('first-failure'), 'FirstFailureTrigger')
+    if 'not-built' in data:
+        base_email_ext(registry, ctrigger,
+                       data.get('not-build'), 'NotBuiltTrigger')
+    if 'aborted' in data:
+        base_email_ext(registry, ctrigger,
+                       data.get('aborted'), 'AbortedTrigger')
+    if 'regression' in data:
+        base_email_ext(registry, ctrigger,
+                       data.get('regression'), 'RegressionTrigger')
+    if 'failure' in data:
+        base_email_ext(registry, ctrigger,
+                       data.get('failure'), 'FailureTrigger')
+    if 'second-failure' in data:
+        base_email_ext(registry, ctrigger,
+                       data.get('second-failure'), 'SecondFailureTrigger')
+    if 'improvement' in data:
+        base_email_ext(registry, ctrigger,
+                       data.get('improvement'), 'ImprovementTrigger')
+    if 'still-failing' in data:
+        base_email_ext(registry, ctrigger,
+                       data.get('still-failing'), 'StillFailingTrigger')
+    if 'success' in data:
+        base_email_ext(registry, ctrigger,
+                       data.get('success'), 'SuccessTrigger')
+    if 'fixed' in data:
+        base_email_ext(registry, ctrigger,
+                       data.get('fixed'), 'FixedTrigger')
+    if 'still-unstable' in data:
+        base_email_ext(registry, ctrigger,
+                       data.get('still-unstable'), 'StillUnstableTrigger')
+    if 'pre-build' in data:
+        base_email_ext(registry, ctrigger,
+                       data.get('pre-build'), 'PreBuildTrigger')
 
     content_type_mime = {
         'text': 'text/plain',

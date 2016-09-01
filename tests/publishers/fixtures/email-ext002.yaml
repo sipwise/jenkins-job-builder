@@ -6,4 +6,19 @@ publishers:
       attach-build-log: true
       compress-log: true
       attachments: "*/foo*.log"
+      failure:
+        - recipients: $BUILD_USER_EMAIL, cc:$DEFAULT_RECIPIENTS
+        - reply-to: $DEFAULT_REPLYTO
+        - subject: $DEFAULT_SUBJECT
+        - body: Hi, pls check log
+        - attach-build-log: True
+        - compress-log: True
+        - send-to:
+           - culprits
+           - developers
+           - recipientlist
+           - requestor
+           - testfail
+           - buildfail
+           - committers
       matrix-trigger: only-configurations

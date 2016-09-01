@@ -31,3 +31,4 @@
     publishers:
       - email-ext:
           recipients: '{recipients}'
+          failure:
