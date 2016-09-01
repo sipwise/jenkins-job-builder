@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "fa7ab95a_c463f5db",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3695,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2016-09-01T15:05:38Z",
+      "side": 1,
+      "message": "I think I covered them all.",
+      "parentUuid": "fa7ab95a_cb1b081b",
+      "range": {
+        "startLine": 3695,
+        "startChar": 31,
+        "endLine": 3695,
+        "endChar": 41
+      },
+      "revId": "eb64ec0d93f8eb9ee68cd063566c9c1f53eedd97",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7ab95a_5e4dfb97",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 8
