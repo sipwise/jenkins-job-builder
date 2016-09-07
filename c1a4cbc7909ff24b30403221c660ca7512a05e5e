@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_7c252207",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 931,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-09-07T18:19:11Z",
+      "side": 1,
+      "message": "i thought should add \u0027\u0027 for the default string parameter",
+      "range": {
+        "startLine": 931,
+        "startChar": 48,
+        "endLine": 931,
+        "endChar": 58
+      },
+      "revId": "c1a4cbc7909ff24b30403221c660ca7512a05e5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a89bdaa_3ceabaac",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-09-07T18:19:11Z",
+      "side": 1,
+      "message": "this should be \u0027false\u0027 to make consistent",
+      "range": {
+        "startLine": 937,
+        "startChar": 17,
+        "endLine": 937,
+        "endChar": 18
+      },
+      "revId": "c1a4cbc7909ff24b30403221c660ca7512a05e5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
