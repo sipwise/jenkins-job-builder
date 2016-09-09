@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a89bdaa_cbb8d8eb",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 786,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-09-09T00:10:05Z",
+      "side": 1,
+      "message": "I think this should be registry now and not parser.",
+      "range": {
+        "startLine": 786,
+        "startChar": 24,
+        "endLine": 786,
+        "endChar": 30
+      },
+      "revId": "b10104354b74c44cef882a47e6dba5549fd8b82e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
