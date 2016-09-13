@@ -22,6 +22,29 @@
       "revId": "3e41494b2fdd073e611cfe1fa5bc086ef3b5811a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_2102483f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1106,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-09-13T17:44:55Z",
+      "side": 1,
+      "message": "Kien makes a good point. This should probably be set to None to ensure the previous behaviour and make \"results\" a required field.",
+      "range": {
+        "startLine": 1106,
+        "startChar": 35,
+        "endLine": 1106,
+        "endChar": 37
+      },
+      "revId": "3e41494b2fdd073e611cfe1fa5bc086ef3b5811a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
