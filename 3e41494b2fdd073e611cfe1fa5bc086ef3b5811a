@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_413cb42f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1069,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-09-13T17:43:04Z",
+      "side": 1,
+      "message": "I think this would be changing the existing behaviour of junit. Before the build would fail if \u0027results\u0027 is not passed.",
+      "range": {
+        "startLine": 1069,
+        "startChar": 40,
+        "endLine": 1069,
+        "endChar": 50
+      },
+      "revId": "3e41494b2fdd073e611cfe1fa5bc086ef3b5811a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
