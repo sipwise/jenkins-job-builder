@@ -6,6 +6,8 @@
 .testrepository
 .tox
 .idea
+.eggs
+.venv
 AUTHORS
 build/*
 ChangeLog
