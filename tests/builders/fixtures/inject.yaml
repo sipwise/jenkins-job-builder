@@ -4,3 +4,4 @@ builders:
       properties-content: EXAMPLE=foo-bar
       script-file: script.sh
       script-content: script content
+      groovy-script-content: groovy script content

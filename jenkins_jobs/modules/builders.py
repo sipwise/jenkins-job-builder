@@ -861,6 +861,7 @@ def inject(registry, xml_parent, data):
     :arg str properties-content: the properties content (optional)
     :arg str script-file: the name of a script file to run (optional)
     :arg str script-content: the script content (optional)
+    :arg str groovy-script-content: the groovy script content (optional)
 
     Example:
 
@@ -877,6 +878,8 @@ def inject(registry, xml_parent, data):
         info, 'scriptFilePath', data.get('script-file'))
     jenkins_jobs.modules.base.add_nonblank_xml_subelement(
         info, 'scriptContent', data.get('script-content'))
+    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
+        info, 'groovyScriptContent', data.get('groovy-script-content'))
 
 
 def kmap(registry, xml_parent, data):
