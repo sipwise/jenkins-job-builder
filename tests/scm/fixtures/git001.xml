@@ -23,11 +23,11 @@
     <remotePoll>false</remotePoll>
     <gitTool>Default</gitTool>
     <submoduleCfg class="list"/>
-    <reference/>
     <gitConfigName/>
     <gitConfigEmail/>
     <extensions>
       <hudson.plugins.git.extensions.impl.CloneOption>
+        <reference/>
         <shallow>false</shallow>
         <timeout>20</timeout>
       </hudson.plugins.git.extensions.impl.CloneOption>

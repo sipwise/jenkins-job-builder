@@ -21,12 +21,12 @@
     <remotePoll>false</remotePoll>
     <gitTool>Default</gitTool>
     <submoduleCfg class="list"/>
-    <reference/>
     <gitConfigName/>
     <gitConfigEmail/>
     <extensions>
       <hudson.plugins.git.extensions.impl.CleanCheckout/>
       <hudson.plugins.git.extensions.impl.CloneOption>
+        <reference/>
         <shallow>true</shallow>
       </hudson.plugins.git.extensions.impl.CloneOption>
       <hudson.plugins.git.extensions.impl.WipeWorkspace/>

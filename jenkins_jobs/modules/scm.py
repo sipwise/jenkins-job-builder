@@ -214,7 +214,6 @@ def git(registry, xml_parent, data):
         # XXX does this option still exist?
         ("git-tool", 'gitTool', "Default"),
         (None, 'submoduleCfg', '', {'class': 'list'}),
-        ('reference-repo', 'reference', ''),
         ("git-config-name", 'gitConfigName', ''),
         ("git-config-email", 'gitConfigEmail', ''),
     ]
@@ -371,8 +370,9 @@ def git(registry, xml_parent, data):
     if 'scm-name' in data:
         ext = XML.SubElement(exts_node, impl_prefix + 'ScmName')
         XML.SubElement(ext, 'name').text = str(data['scm-name'])
-    if 'shallow-clone' in data or 'timeout' in data:
+    if any(key in data for key in ('shallow-clone', 'reference-repo', 'timeout')):
         clo = XML.SubElement(exts_node, impl_prefix + 'CloneOption')
+        XML.SubElement(clo, 'reference').text = data.get('reference-repo', '')
         XML.SubElement(clo, 'shallow').text = str(
             data.get('shallow-clone', False)).lower()
         if 'timeout' in data:

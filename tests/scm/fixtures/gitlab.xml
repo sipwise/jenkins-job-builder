@@ -20,7 +20,6 @@
     <remotePoll>false</remotePoll>
     <gitTool>Default</gitTool>
     <submoduleCfg class="list"/>
-    <reference/>
     <gitConfigName/>
     <gitConfigEmail/>
     <extensions>
