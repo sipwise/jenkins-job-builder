@@ -1,0 +1,20 @@
+publishers:
+  - sounds-notifier:
+      sound-events:
+        - sound-id: 'EXPLODE'
+          to-result: 'FAILURE'
+          from-results:
+            - 'FAILURE'
+            - 'ABORTED'
+            - 'UNSTABLE'
+            - 'SUCCESS'
+            - 'NOT_BUILT'
+        - sound-id: 'Giggle'
+          to-result: 'SUCCESS'
+          from-results:
+            - 'FAILURE'
+            - 'ABORTED'
+        - sound-id: 'bicyclebell'
+          to-result: 'UNSTABLE'
+          from-results:
+            - 'SUCCESS'

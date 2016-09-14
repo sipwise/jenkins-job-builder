@@ -525,3 +525,19 @@ def convert_mapping_to_xml(parent, data, mapping, fail_required=False):
             XML.SubElement(parent, xmlname).text = str(valid_dict[val])
         else:
             XML.SubElement(parent, xmlname).text = str(val)
+
+
+def build_result(xml_parent, attr, result):
+    result_dict = {'SUCCESS': (0, 'BLUE', 'true'),
+                   'UNSTABLE': (1, 'YELLOW', 'true'),
+                   'FAILURE': (2, 'RED', 'true'),
+                   'NOT_BUILT': (3, 'NOTBUILT', 'false'),
+                   'ABORTED': (4, 'ABORTED', 'false')}
+
+    if result not in result_dict:
+        raise InvalidAttributeError(attr, result, result_dict.keys())
+
+    XML.SubElement(xml_parent, 'name').text = result
+    XML.SubElement(xml_parent, 'ordinal').text = str(result_dict[result][0])
+    XML.SubElement(xml_parent, 'color').text = result_dict[result][1]
+    XML.SubElement(xml_parent, 'completeBuild').text = result_dict[result][2]

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <publishers>
+    <net.hurstfrost.hudson.sounds.HudsonSoundsNotifier>
+      <soundEvents/>
+    </net.hurstfrost.hudson.sounds.HudsonSoundsNotifier>
+  </publishers>
+</project>
