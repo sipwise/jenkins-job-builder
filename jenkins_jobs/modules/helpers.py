@@ -17,6 +17,7 @@ import xml.etree.ElementTree as XML
 from jenkins_jobs.errors import InvalidAttributeError
 from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.errors import MissingAttributeError
+from jenkins_jobs.modules.hudson_model import THRESHOLDS
 
 
 def build_trends_publisher(plugin_name, xml_element, data):
@@ -548,3 +549,17 @@ def jms_messaging_common(parent, subelement, data):
         ("msg-content", 'messageContent', ''),
     ]
     convert_mapping_to_xml(namespace, data, mapping, fail_required=True)
+
+
+def build_result(xml_parent, attr, result):
+    result_dict = THRESHOLDS
+
+    if result not in result_dict:
+        raise InvalidAttributeError(attr, result, result_dict.keys())
+
+    XML.SubElement(xml_parent, 'name').text = result
+    XML.SubElement(xml_parent, 'ordinal').text = \
+        str(result_dict[result]['ordinal'])
+    XML.SubElement(xml_parent, 'color').text = result_dict[result]['color']
+    XML.SubElement(xml_parent, 'completeBuild').text = \
+        str(result_dict[result]['complete']).lower()
