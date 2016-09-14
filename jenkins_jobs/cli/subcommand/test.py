@@ -45,6 +45,10 @@ class TestSubCommand(update.UpdateSubCommand):
 
     def execute(self, options, jjb_config):
 
-        builder, xml_jobs = self._generate_xmljobs(options, jjb_config)
+        builder, xml_jobs, xml_views = self._generate_xmljobs(
+            options, jjb_config)
 
         builder.update_jobs(xml_jobs, output=options.output_dir, n_workers=1)
+        # TODO: Figure out if there's value to outputting views to a file.
+        #       Views are normally stored in Jenkins main config.xml
+        builder.update_views(xml_views, output=sys.stdout, n_workers=1)
