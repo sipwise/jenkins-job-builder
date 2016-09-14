@@ -6829,6 +6829,81 @@ def chuck_norris(registry, xml_parent, data):
     return XML.SubElement(chuck, "factGenerator")
 
 
+def sounds_notifier(registry, xml_parent, data):
+    """yaml: sounds-notifier
+
+    Publisher that plays different sounds depending on the build result
+    as well as on the result of the previous build
+
+    :arg list sound-events: List of defined sound events
+
+        :sound-events attributes:
+            * **arg str sound-id** - The identifier of the sound to play for
+             this sound event (Required)
+            * **arg str to-result** - The result of the job required to trigger
+             this sound event (Required)
+            * **arg list from-results** - A list of results from old builds
+             required to trigger this sound event (Required)
+
+                :result values:
+                    * **SUCCESS**
+                    * **UNSTABLE**
+                    * **FAILURE**
+                    * **NOT_BUILT**
+                    * **ABORTED**
+
+    Full Example:
+
+    .. literalinclude::
+        ../../tests/publishers/fixtures/sounds-notifier001.yaml
+       :language: yaml
+
+    Minimal Example:
+
+    .. literalinclude::
+        ../../tests/publishers/fixtures/sounds-notifier002.yaml
+       :language: yaml
+    """
+    def _check_required_values(sound_event):
+        if sound_event.get('sound-id', None) is None:
+            raise MissingAttributeError('sound-id')
+        if sound_event.get('to-result', None) is None:
+            raise MissingAttributeError('to-result')
+        if sound_event.get('from-results', None) is None:
+            raise MissingAttributeError('from-results')
+
+    def _add_sound_id(sound_event_xml, sound_event):
+        XML.SubElement(sound_event_xml, 'soundId').text = str(
+            sound_event['sound-id'])
+
+    def _add_to_result(sound_event_xml, sound_event):
+        to_result = XML.SubElement(sound_event_xml, 'toResult')
+        helpers.build_result(to_result, 'to-result',
+                             sound_event['to-result'])
+
+    def _add_from_results(sound_event_xml, sound_event):
+        from_results = XML.SubElement(sound_event_xml, 'fromResults')
+        for from_result in sound_event['from-results']:
+            from_result_xml = XML.SubElement(from_results,
+                                             'hudson.model.Result')
+            helpers.build_result(from_result_xml, 'from-result', from_result)
+
+    sounds_xml = XML.SubElement(
+        xml_parent,
+        'net.hurstfrost.hudson.sounds.HudsonSoundsNotifier')
+    sound_events_xml = XML.SubElement(sounds_xml, 'soundEvents')
+
+    for sound_event in (data.get('sound-events') or []):
+        _check_required_values(sound_event)
+
+        sound_event_xml = XML.SubElement(sound_events_xml,
+                                         'net.hurstfrost.hudson.sounds.'
+                                         + 'HudsonSoundsNotifier_-SoundEvent')
+        _add_sound_id(sound_event_xml, sound_event)
+        _add_to_result(sound_event_xml, sound_event)
+        _add_from_results(sound_event_xml, sound_event)
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
