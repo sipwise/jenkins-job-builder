@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_d0a68c52",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1204,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-09-14T17:28:06Z",
+      "side": 1,
+      "message": "I think it would be better if we had minimal example show first, and then full example. For consistency, and from a user\u0027s standpoint, they are more likely interested in the least numbers of options needed to set to use the plugin.",
+      "revId": "7cfafad9de6c79d5fba54edc8b8794f69145d440",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
