@@ -32,7 +32,8 @@ class TestCaseJobCache(LoggingFixture, testtools.TestCase):
 
         with mock.patch('jenkins_jobs.builder.JobCache.save') as save_mock:
             with mock.patch('os.path.isfile', return_value=False):
-                jenkins_jobs.builder.JobCache("dummy")
+                with mock.patch('jenkins_jobs.builder.JobCache._lock'):
+                    jenkins_jobs.builder.JobCache("dummy")
             save_mock.assert_called_with()
 
     @mock.patch('jenkins_jobs.builder.JobCache.get_cache_dir',
