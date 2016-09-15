@@ -6435,6 +6435,145 @@ def github_pull_request_merge(registry, xml_parent, data):
     helpers.convert_mapping_to_xml(osb, data, mapping, fail_required=True)
 
 
+def hockeyapp(registry, xml_parent, data):
+    """yaml: hockeyapp
+    This action publishes a build to HockeyApp.
+    Requires the Jenkins :jenkins-wiki:`HockeyApp Plugin <HockeyApp+Plugin>`.
+
+    :arg list(dict) applications: list of applications to publish (at least
+        one is required)
+
+        :Application:
+            * **api-token** (`str`) - API token associated with your account
+            * **file-path** (`str`) - Path of the build file to upload
+            * **notify-team** (`bool`) - Notify the team after upload
+              (default false)
+            * **download-allowed** (`bool`) - Whether to allow downloads
+              (default false)
+            * **upload** (`dict`) - Upload configuration
+
+                :Upload:
+                    * **type** (`str`) - Type of upload
+                      (possible: app, version)
+                    * **app-id** (`str`) - App ID (types: version)
+
+            * **release-notes** (`dict`) - Release notes configuration
+              (default none)
+
+                :Release notes:
+                    * **type** (`str`) - Type of release notes (possible: none,
+                        changelog, file, manual)
+                    * **file-name** (`str`) - File with release notes (types:
+                        file)
+                    * **notes** (`str`) - The release notes (types: manual)
+                    * **markdown** (`bool`) - Whether the release notes should
+                        be interpreted as markdown (default false; types:
+                        file, manual)
+
+    :arg bool fail-gracefully: Whether to fail the entire build if the upload
+        fails (default false)
+
+    Full Example:
+
+    .. literalinclude::
+        ../../tests/publishers/fixtures/hockeyapp002.yaml
+       :language: yaml
+
+    Minimal Example:
+
+    .. literalinclude::
+        ../../tests/publishers/fixtures/hockeyapp003.yaml
+       :language: yaml
+    """
+
+    def configure_component(parent_xml, app, key, config_types,
+                            element_name, package_name):
+        """Configures a component that has multiple types and where each type
+        may have additional parameters."""
+        config = app.get(key)
+
+        if not config:
+            config_type = config_types[0]
+        else:
+            for ct in config_types:
+                t, _, _ = ct
+                if t == config.get('type'):
+                    config_type = ct
+                    break
+            else:
+                raise JenkinsJobsException("missing or invalid type for: "
+                                           "%s" % key)
+
+        _, class_name, params_mapping = config_type
+        node = XML.SubElement(parent_xml, element_name, {
+            'class': '%s.%s' % (package_name, class_name),
+        })
+
+        if params_mapping:
+            helpers.convert_mapping_to_xml(node, config, params_mapping,
+                                           fail_required=True)
+
+    osb = XML.SubElement(xml_parent, 'hockeyapp.HockeyappRecorder', {
+        'schemaVersion': '2',
+    })
+
+    apps = XML.SubElement(osb, 'applications')
+
+    mapping = [
+        ('fail-gracefully', 'failGracefully', 'false'),
+        ('', 'debugMode', 'false'),
+    ]
+
+    application_mapping = [
+        ('api-token', 'apiToken', None),
+        ('file-path', 'filePath', None),
+        ('notify-team', 'notifyTeam', 'false'),
+        ('download-allowed', 'downloadAllowed', 'false'),
+    ]
+
+    upload_types = [
+        ('app', 'AppCreation', []),
+        ('version', 'VersionCreation', [
+            ('app-id', 'appId', None),
+        ]),
+    ]
+
+    release_notes_types = [
+        ('none', 'NoReleaseNotes', []),
+        ('changelog', 'ChangelogReleaseNotes', []),
+        ('file', 'FileReleaseNotes', [
+            ('file-name', 'fileName', None),
+            ('markdown', 'isMarkdown', 'false'),
+        ]),
+        ('manual', 'ManualReleaseNotes', [
+            ('notes', 'releaseNotes', None),
+            ('markdown', 'isMarkdown', 'false'),
+        ]),
+    ]
+
+    if 'applications' not in data:
+        raise MissingAttributeError('applications')
+
+    helpers.convert_mapping_to_xml(osb, data, mapping, fail_required=True)
+
+    for application in data['applications']:
+        node = XML.SubElement(apps, 'hockeyapp.HockeyappApplication', {
+            'schemaVersion': '1',
+        })
+
+        helpers.convert_mapping_to_xml(node, application, application_mapping,
+                                       fail_required=True)
+
+        configure_component(node, application, 'release-notes',
+                            release_notes_types,
+                            'releaseNotesMethod',
+                            'net.hockeyapp.jenkins.releaseNotes')
+
+        configure_component(node, application, 'upload', upload_types,
+                            'uploadMethod',
+                            'net.hockeyapp.jenkins.uploadMethod')
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
