@@ -1,0 +1,5 @@
+publishers:
+  - hockeyapp:
+      applications:
+        - api-token: 'abcd1234'
+          file-path: build/iphone.ipa
