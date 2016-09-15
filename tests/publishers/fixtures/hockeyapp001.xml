@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <publishers>
+    <hockeyapp.HockeyappRecorder schemaVersion="2">
+      <applications>
+        <hockeyapp.HockeyappApplication schemaVersion="1">
+          <apiToken>abcd1234</apiToken>
+          <filePath>build/android.apk</filePath>
+          <notifyTeam>false</notifyTeam>
+          <downloadAllowed>true</downloadAllowed>
+          <releaseNotesMethod class="net.hockeyapp.jenkins.releaseNotes.NoReleaseNotes"/>
+          <uploadMethod class="net.hockeyapp.jenkins.uploadMethod.AppCreation"/>
+        </hockeyapp.HockeyappApplication>
+      </applications>
+      <failGracefully>false</failGracefully>
+      <debugMode>false</debugMode>
+    </hockeyapp.HockeyappRecorder>
+  </publishers>
+</project>

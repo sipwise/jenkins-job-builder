@@ -1,0 +1,9 @@
+publishers:
+  - hockeyapp:
+      applications:
+        - api-token: 'abcd1234'
+          upload:
+            type: app
+          file-path: build/android.apk
+          download-allowed: true
+          notify-team: false

@@ -1,0 +1,14 @@
+publishers:
+  - hockeyapp:
+      applications:
+        - api-token: 'abcd1234'
+          file-path: build/android.apk
+          download-allowed: true
+          upload:
+            type: version
+            app-id: 'app123'
+          release-notes:
+            type: file
+            file-name: 'release-notes.txt'
+            markdown: true
+
