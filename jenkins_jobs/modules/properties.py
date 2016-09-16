@@ -805,6 +805,45 @@ def build_discarder(registry, xml_parent, data):
     anum.text = str(data.get('artifact-num-to-keep', -1))
 
 
+def lockable_resources(registry, xml_parent, data):
+    """yaml: lockable-resources
+    Requires the Jenkins :jenkins-wiki:`Lockable Resources Plugin
+    <Lockable+Resources+Plugin>`.
+
+    :arg str resources: List of required resources, space separated.
+    :arg str label: If you have created a pool of resources, i.e. a label,
+        you can take it into use here. The build will select the resource(s)
+        from the pool that includes all resources sharing the given label.
+        Either Label or Resources field must be empty.
+    :arg str var-name: Name for the Jenkins variable to store the reserved
+        resources in. Leave empty to disable.
+    :arg int number: Number of resources to request, empty value or 0 means
+        all. This is useful, if you have a pool of similar resources,
+        from which you want one or more to be reserved.
+
+    Example:
+
+    .. literalinclude::
+        /../../tests/properties/fixtures/lockable_resources001.yaml
+       :language: yaml
+
+    .. literalinclude::
+        /../../tests/properties/fixtures/lockable_resources002.yaml
+       :language: yaml
+    """
+    lockable_resources = XML.SubElement(
+        xml_parent,
+        'org.jenkins.plugins.lockableresources.RequiredResourcesProperty')
+    mapping = [
+        ('resources', 'resourceNames', ''),
+        ('var-name', 'resourceNamesVar', ''),
+        ('number', 'resourceNumber', ''),
+        ('label', 'labelName', ''),
+    ]
+    helpers.convert_mapping_to_xml(
+        lockable_resources, data, mapping, fail_required=True)
+
+
 class Properties(jenkins_jobs.modules.base.Base):
     sequence = 20
 
