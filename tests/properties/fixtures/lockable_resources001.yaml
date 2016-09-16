@@ -1,0 +1,5 @@
+---
+properties:
+  - lockable-resources:
+      resources: "the-resource"
+      var-name: "REQUIRED_RESOURCE"
