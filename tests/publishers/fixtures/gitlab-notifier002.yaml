@@ -1,0 +1,4 @@
+publishers:
+  - gitlab-notifier:
+      name: "test name"
+      mark-unstable-as-success: True
