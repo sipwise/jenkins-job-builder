@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_fe0e928a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-09-16T13:55:20Z",
+      "side": 1,
+      "message": "While it increases the amount of time for the unit tests, I don\u0027t think it really impacts the overall performance much, and additionally the upload of jobs to a jenkins master is far more intensive.",
+      "revId": "966442049a3a58ce6bb0c369d4aa08ee5e43f7bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_fee932b8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-09-16T13:55:20Z",
+      "side": 1,
+      "message": "we can use multiprocessing since this will be a cpu intensive process, and besides I think that there would be a benefit for the testing against the provided infra jobs to be able to expand and generate the xml for jobs in parallel across multiple CPU, just from an efficiency of a test.",
+      "revId": "966442049a3a58ce6bb0c369d4aa08ee5e43f7bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_00283885",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-09-16T13:55:20Z",
+      "side": 1,
+      "message": "If amending this change maybe some tidy up of the commit message would be in order, just to be concise and focus on the reason for this change.\n\n \n Move macro expansion into YamlParser.\n\n Introduce the registry.MacroRegistry class to handle:\n  * registration of macro types via setuptools\u0027 entrypoints\n  * registration of individual macros for lookup by component list type\n  * expansion of macros references during YAML \"parsing\"\n\n Consequence is a reduction in performance due to moving the expansion\n of macros from inline XML generation, to requiring multiple passes\n over macro component lists. This decrease in efficiency results in\n approx ~30-50% increase in unit test time. Since this will allow\n for jobs to be expanded from templates/macros in parallel with future\n changes, it is a reasonable short term trade-off as the most\n expensive task is updating the definitions on the remote master\n by an order of magnitude.\n\nI think everything else is useful in our conversations around design but probably overly verbose for the commit message here. Perhaps move those to a spec?",
+      "revId": "966442049a3a58ce6bb0c369d4aa08ee5e43f7bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_40c880a8",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-09-16T13:55:20Z",
+      "side": 1,
+      "message": "lets remove the use of \u0027__\u0027, I spent some time talking in the python IRC, and there is not one good usage example of use of \u0027__\u0027 available anywhere, it doesn\u0027t prevent subclasses from accessing these methods. And even the one possible usage to prevent accidental clobbering of internal class state by subclasses is questionable.",
+      "revId": "966442049a3a58ce6bb0c369d4aa08ee5e43f7bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_830e1239",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-09-16T13:55:20Z",
+      "side": 1,
+      "message": "Same here and below about use of \u0027__\u0027.",
+      "revId": "966442049a3a58ce6bb0c369d4aa08ee5e43f7bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_86d38003",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-09-16T13:55:20Z",
+      "side": 1,
+      "message": "My first thought on this was that it seems inefficient to loop over the available types, instead of looping over what is defined within the job to see if it\u0027s a macro assuming we can establish type and name efficiently, but thinking that maybe we could leave looking at that for a future improvement in performance.",
+      "revId": "966442049a3a58ce6bb0c369d4aa08ee5e43f7bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_665d9478",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-09-16T13:55:20Z",
+      "side": 1,
+      "message": "Are you sure we need this, since down below the elements from this are used as arguments to a dict update, will that not copy them anyway?\n\nDid some testing against the infra job configs and couldn\u0027t see any problem with skipping the deepcopy here. Though we could also make that part of an efficiency patch instead to avoid the need to revert this should some other issue show up as it\u0027s relatively hard to be certain without knowning exactly what is being passed around here.",
+      "revId": "966442049a3a58ce6bb0c369d4aa08ee5e43f7bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_26654cb4",
+        "filename": "setup.cfg",
+        "patchSetId": 11
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-09-16T13:55:20Z",
+      "side": 1,
+      "message": "If macros follow modules, lets build this list by using the modules list above instead of adding a new list that will have to be kept in sync with the one above it.",
+      "revId": "966442049a3a58ce6bb0c369d4aa08ee5e43f7bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_a6cddc86",
+        "filename": "tests/yamlparser/fixtures/trigger_parameterized_builds/parameter-override-ordering-001.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-09-16T13:55:20Z",
+      "side": 1,
+      "message": "Is this an intentional modification? It shows that without a \u0027:\u0027 following the macro entry below that substitution within the macro does not occur, but that was the same as before anyway?",
+      "revId": "966442049a3a58ce6bb0c369d4aa08ee5e43f7bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
