@@ -4069,14 +4069,22 @@ def gitlab_notifier(registry, xml_parent, data):
     Set build status on GitLab commit.
     Requires the Jenkins :jenkins-wiki:`GitLab Plugin <GitLab+Plugin>`.
 
+    :arg string name: Name of the build in GitLab. (optional)
+    :arg string mark-unstable-builds-as-success: Mark unstable builds as
+                                                 success (default False)
+
     Example:
 
     .. literalinclude:: /../../tests/publishers/fixtures/gitlab-notifier.yaml
        :language: yaml
     """
-    XML.SubElement(
+    parent = XML.SubElement(
         xml_parent,
         'com.dabsquared.gitlabjenkins.publisher.GitLabCommitStatusPublisher')
+    if 'name' in data:
+        XML.SubElement(parent, 'name').text = data.get('name')
+    XML.SubElement(parent, 'markUnstableAsSuccess').text = str(
+        data.get('mark-unstable-as-success', False)).lower()
 
 
 def zulip(registry, xml_parent, data):
