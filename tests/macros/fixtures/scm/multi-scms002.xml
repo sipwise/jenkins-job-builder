@@ -27,7 +27,6 @@
         <noTags>false</noTags>
         <trace>false</trace>
         <showAllChanges>false</showAllChanges>
-        <localManifest/>
         <ignoreProjects class="linked-hash-set">
           <string/>
         </ignoreProjects>
