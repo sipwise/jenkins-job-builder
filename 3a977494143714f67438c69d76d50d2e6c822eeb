@@ -139,6 +139,30 @@
     },
     {
       "key": {
+        "uuid": "7a8ec9b2_7e673bb7",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 838,
+      "author": {
+        "id": 6789
+      },
+      "writtenOn": "2016-09-20T16:37:44Z",
+      "side": 1,
+      "message": "actually \u0027resources\u0027 \u0026 \u0027label\u0027 are mutual exclusive.\nso I will add extra check for that and raise Exception.\n\nDo you think I should add new exception for such case under jenkins_jobs.errors.py ?",
+      "parentUuid": "7a8ec9b2_0fc3dc57",
+      "range": {
+        "startLine": 838,
+        "startChar": 38,
+        "endLine": 838,
+        "endChar": 41
+      },
+      "revId": "3a977494143714f67438c69d76d50d2e6c822eeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_ef195023",
         "filename": "jenkins_jobs/modules/properties.py",
         "patchSetId": 2
