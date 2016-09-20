@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8ec9b2_175b9955",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 723,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-09-20T09:53:12Z",
+      "side": 1,
+      "message": "should be \u0027\u0027 base on the code",
+      "range": {
+        "startLine": 723,
+        "startChar": 55,
+        "endLine": 723,
+        "endChar": 76
+      },
+      "revId": "97e0ff7ccdcb1bf536e8b6f0fc865635c4b78a00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8ec9b2_17ff1935",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 726,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-09-20T09:53:12Z",
+      "side": 1,
+      "message": "should be \u0027\u0027 base on the code",
+      "range": {
+        "startLine": 726,
+        "startChar": 17,
+        "endLine": 726,
+        "endChar": 28
+      },
+      "revId": "97e0ff7ccdcb1bf536e8b6f0fc865635c4b78a00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
