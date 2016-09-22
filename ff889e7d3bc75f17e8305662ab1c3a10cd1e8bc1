@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_4a4aeb84",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1304,
+      "author": {
+        "id": 7012
+      },
+      "writtenOn": "2016-09-22T15:29:41Z",
+      "side": 1,
+      "message": "You\u0027ll need to modify the format of this line in order to pass the pep8 tests.\n\nSee the log at:\nhttp://logs.openstack.org/44/323744/2/check/gate-jenkins-job-builder-pep8-ubuntu-xenial/2a22c6f/console.html.gz#_2016-09-16_12_10_12_452351",
+      "revId": "ff889e7d3bc75f17e8305662ab1c3a10cd1e8bc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
