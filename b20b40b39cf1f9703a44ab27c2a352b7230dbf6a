@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_6ad5e741",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7012
+      },
+      "writtenOn": "2016-09-22T15:21:49Z",
+      "side": 1,
+      "message": "Please include additional details in an additional paragraph.",
+      "revId": "b20b40b39cf1f9703a44ab27c2a352b7230dbf6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_6aeec723",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6449,
+      "author": {
+        "id": 7012
+      },
+      "writtenOn": "2016-09-22T15:21:49Z",
+      "side": 1,
+      "message": "Several of these lines are longer than 79 characters (see the pep8 results at http://logs.openstack.org/78/371178/1/check/gate-jenkins-job-builder-pep8-ubuntu-xenial/d87402e/console.html.gz#_2016-09-15_22_08_02_463550).  You\u0027ll need to modify these lines so that they meet the \u003c80 constraint.",
+      "revId": "b20b40b39cf1f9703a44ab27c2a352b7230dbf6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
