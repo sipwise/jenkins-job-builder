@@ -163,6 +163,30 @@
     },
     {
       "key": {
+        "uuid": "5a8bc5a2_8a995371",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 838,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-09-22T15:24:36Z",
+      "side": 1,
+      "message": "Yes I think that\u0027s a good idea. I\u0027m not sure what test best wording is so please submit a suggestion  and we can go from there.",
+      "parentUuid": "7a8ec9b2_7e673bb7",
+      "range": {
+        "startLine": 838,
+        "startChar": 38,
+        "endLine": 838,
+        "endChar": 41
+      },
+      "revId": "3a977494143714f67438c69d76d50d2e6c822eeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8ec9b2_ef195023",
         "filename": "jenkins_jobs/modules/properties.py",
         "patchSetId": 2
