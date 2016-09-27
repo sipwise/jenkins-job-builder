@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a8bc5a2_4759548d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3632,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-09-27T04:45:09Z",
+      "side": 1,
+      "message": "Should be (default https) instead of (default to https).",
+      "range": {
+        "startLine": 3632,
+        "startChar": 59,
+        "endLine": 3632,
+        "endChar": 77
+      },
+      "revId": "17bd2c8a8532219639c86c4957f3fe6811cad1b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_478234c9",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3634,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-09-27T04:45:09Z",
+      "side": 1,
+      "message": "Missing default value here. Same with all the other ones below this.",
+      "revId": "17bd2c8a8532219639c86c4957f3fe6811cad1b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_4743146c",
+        "filename": "tests/builders/fixtures/nexus_artifact_uploader001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-09-27T04:45:09Z",
+      "side": 1,
+      "message": "2 space indent here would be more consistent with convention",
+      "revId": "17bd2c8a8532219639c86c4957f3fe6811cad1b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a8bc5a2_e77b40bc",
+        "filename": "tests/builders/fixtures/nexus_artifact_uploader001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-09-27T04:45:09Z",
+      "side": 1,
+      "message": "Remove extra whitespace here.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 10
+      },
+      "revId": "17bd2c8a8532219639c86c4957f3fe6811cad1b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
