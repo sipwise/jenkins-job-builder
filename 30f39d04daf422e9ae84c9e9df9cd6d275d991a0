@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a98d1f4_281e7263",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-09-29T11:04:28Z",
+      "side": 1,
+      "message": "forgot to update comment?",
+      "revId": "30f39d04daf422e9ae84c9e9df9cd6d275d991a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_882b0682",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-09-29T11:04:28Z",
+      "side": 1,
+      "message": "forgot to update comment?",
+      "revId": "30f39d04daf422e9ae84c9e9df9cd6d275d991a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_e8dd6a71",
+        "filename": "jenkins_jobs/cli/subcommand/delete_all.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-09-29T11:04:28Z",
+      "side": 1,
+      "message": "I think this block can be simplified to the following:\n\n reach \u003d set()\n if options.del_jobs and options.del_views:\n     raise JenkinsJobsException(\n         \u0027\"--views-only\" and \"--jobs-only\" cannot be used together.\u0027)\n elif options.del_jobs and not options.del_views:\n     reach.add(\u0027jobs\u0027)\n elif options.del_views and not options.del_jobs:\n     reach.add(\u0027views\u0027)\n else:\n     reach.update((\u0027jobs\u0027, \u0027views\u0027))",
+      "revId": "30f39d04daf422e9ae84c9e9df9cd6d275d991a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_88d5c644",
+        "filename": "jenkins_jobs/cli/subcommand/delete_all.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-09-29T11:04:28Z",
+      "side": 1,
+      "message": "Then change the format here to be:\n\n .format(\" AND \".join(reach))\n\nIf there is only one item in the set, only that will be returned, otherwise the user will see \u0027jobs AND views\u0027.",
+      "revId": "30f39d04daf422e9ae84c9e9df9cd6d275d991a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_a899a270",
+        "filename": "jenkins_jobs/cli/subcommand/delete_all.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-09-29T11:04:28Z",
+      "side": 1,
+      "message": "and just check the options directly here.",
+      "revId": "30f39d04daf422e9ae84c9e9df9cd6d275d991a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_c89eee55",
+        "filename": "jenkins_jobs/cli/subcommand/delete_all.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-09-29T11:04:28Z",
+      "side": 1,
+      "message": "and here",
+      "revId": "30f39d04daf422e9ae84c9e9df9cd6d275d991a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_086b761f",
+        "filename": "jenkins_jobs/cli/subcommand/test.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-09-29T11:04:28Z",
+      "side": 1,
+      "message": "Seems likely that we\u0027ll want to be able to check that patches don\u0027t change the resulting views generated at some stage in the future, so seems that it might be sensible to be able to output them to files.\n\nAdditionally if someone has 20 or 30 views, it\u0027s probably a bit much to dump them to the console.",
+      "revId": "30f39d04daf422e9ae84c9e9df9cd6d275d991a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a98d1f4_e8548a55",
+        "filename": "jenkins_jobs/cli/subcommand/update.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-09-29T11:04:28Z",
+      "side": 1,
+      "message": "Forgot to remove this line?",
+      "revId": "30f39d04daf422e9ae84c9e9df9cd6d275d991a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
