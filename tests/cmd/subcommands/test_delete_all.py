@@ -27,8 +27,6 @@ from tests.cmd.test_cmd import CmdTestsBase
             mock.MagicMock)
 class DeleteAllTests(CmdTestsBase):
 
-    input_module = "jenkins_jobs.utils" if six.PY2 else "builtins"
-
     @mock.patch('jenkins_jobs.cli.subcommand.update.'
                 'JenkinsManager.delete_all_jobs')
     def test_delete_all_accept(self, delete_job_mock):
@@ -37,7 +35,7 @@ class DeleteAllTests(CmdTestsBase):
         """
 
         args = ['--conf', self.default_config_file, 'delete-all']
-        with mock.patch('%s.input' % self.input_module, return_value="y"):
+        with mock.patch('jenkins_jobs.utils.input', return_value="y"):
             self.execute_jenkins_jobs_with_args(args)
 
     @mock.patch('jenkins_jobs.cli.subcommand.update.'
@@ -48,6 +46,6 @@ class DeleteAllTests(CmdTestsBase):
         """
 
         args = ['--conf', self.default_config_file, 'delete-all']
-        with mock.patch('%s.input' % self.input_module, return_value="n"):
+        with mock.patch('jenkins_jobs.utils.input', return_value="n"):
             self.assertRaises(SystemExit,
                               self.execute_jenkins_jobs_with_args, args)
