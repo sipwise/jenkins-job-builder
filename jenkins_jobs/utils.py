@@ -20,6 +20,12 @@ import fnmatch
 import locale
 import os.path
 
+try:
+    # In python 3.x 'raw_input' = 'input'
+    import __builtin__
+    input = getattr(__builtin__, 'raw_input')
+except (ImportError, AttributeError):
+    pass
 
 def wrap_stream(stream, encoding='utf-8'):
 
