@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_72d62050",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 14760
+      },
+      "writtenOn": "2016-10-14T12:42:00Z",
+      "side": 1,
+      "message": "Unneeded from Python 2.7 and on.  Just use:  \"{}\"",
+      "range": {
+        "startLine": 313,
+        "startChar": 48,
+        "endLine": 313,
+        "endChar": 49
+      },
+      "revId": "33a5e85f134f96091273e26107afa3d6943c6429",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_d2fc4cba",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 14760
+      },
+      "writtenOn": "2016-10-14T12:42:00Z",
+      "side": 1,
+      "message": "unsure how this is passing pep8 test???",
+      "range": {
+        "startLine": 321,
+        "startChar": 12,
+        "endLine": 321,
+        "endChar": 16
+      },
+      "revId": "33a5e85f134f96091273e26107afa3d6943c6429",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
