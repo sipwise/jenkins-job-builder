@@ -317,7 +317,10 @@ def timeout(registry, xml_parent, data):
     valid_strategies = ['absolute', 'no-activity', 'likely-stuck', 'elastic',
                         'deadline']
 
-    if version >= pkg_resources.parse_version("1.14"):
+    # NOTE(toabctl): if we don't know the version (version==0) assume that we
+    # use a newer version of the plugin
+    if (version == pkg_resources.parse_version("0") or
+        version >= pkg_resources.parse_version("1.14")):
         strategy = data.get('type', 'absolute')
         if strategy not in valid_strategies:
             InvalidAttributeError('type', strategy, valid_strategies)
