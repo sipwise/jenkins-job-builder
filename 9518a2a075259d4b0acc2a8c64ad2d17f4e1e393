@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_4f02a60c",
+        "filename": "tests/publishers/fixtures/performance-complete.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-10-19T16:58:50Z",
+      "side": 1,
+      "message": "Trailing whitespace",
+      "revId": "9518a2a075259d4b0acc2a8c64ad2d17f4e1e393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
