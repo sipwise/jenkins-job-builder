@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa6399be_931232b3",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4094,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-10-19T14:27:55Z",
+      "side": 1,
+      "message": "Does the GitLab plugin default to a blank name in the UI if you don\u0027t set one? If so I think name should have a default of (default \u0027\u0027).\n\nWe\u0027ve found there\u0027s inconsistencies in Jenkins when allowing a parameter to be (optional) as unsetting the option sometimes makes the setting not reset back to the default and instead leaving the setting as is. We\u0027d prefer to set defaults where possible so that we can try to make the behaviour of not setting a setting be predictable.",
+      "range": {
+        "startLine": 4094,
+        "startChar": 51,
+        "endLine": 4094,
+        "endChar": 61
+      },
+      "revId": "ebb828382cd908f7570b67502fa1209e3b078068",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_93ba32e0",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4096,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-10-19T14:27:55Z",
+      "side": 1,
+      "message": "Please use 4 space indents for continuation lines.",
+      "range": {
+        "startLine": 4096,
+        "startChar": 49,
+        "endLine": 4096,
+        "endChar": 72
+      },
+      "revId": "ebb828382cd908f7570b67502fa1209e3b078068",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa6399be_9304f27e",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4109,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-10-19T14:27:55Z",
+      "side": 1,
+      "message": "We started using the convert_mapping_to_xml helper function and are working through switching all plugins to use this. Can you redo this patch using that function?\n\nHere\u0027s an example:\nhttps://review.openstack.org/#/c/370560/1/jenkins_jobs/modules/publishers.py",
+      "revId": "ebb828382cd908f7570b67502fa1209e3b078068",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
