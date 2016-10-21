@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6895a0_e41db1be",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1015,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-10-21T11:37:36Z",
+      "side": 1,
+      "message": "Switch to InvalidAttributeError ?",
+      "revId": "e5729e6d1aaa35a77db31a4d341b16dedab47045",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6895a0_24308956",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1016,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-10-21T11:37:36Z",
+      "side": 1,
+      "message": "this should really be a \u0027{}\u0027 for the default value here. bug in the original, but wouldn\u0027t hurt to fix as well.\n\nProbably not spotted since none of the tests just define an item under targets without also adding healthy/unhealthy.\n\nFollowing would expose this, otherwise need to remove the idea that heathly and unhealthy thresholds allow for a default value.\n\n publishers:\n   - jacoco:\n       exec-pattern: \u0027**/**.exec\u0027\n       class-pattern: \u0027**/classes\u0027\n       source-pattern: \u0027**/src/main/java\u0027\n       update-build-status: true\n       inclusion-pattern: \u0027**/*.class\u0027\n       exclusion-pattern: \u0027**/*Test*.class\u0027\n       targets:\n         - instruction:\n         - branch:",
+      "revId": "e5729e6d1aaa35a77db31a4d341b16dedab47045",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
