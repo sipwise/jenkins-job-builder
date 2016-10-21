@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6895a0_c4342de0",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1184,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-10-21T11:25:41Z",
+      "side": 1,
+      "message": "This isn\u0027t a backward compatible change with regards to the yaml format accepted",
+      "revId": "e949fdb625f89786bac5cb3884f5d4001938c318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6895a0_24524914",
+        "filename": "tests/triggers/fixtures/build-result-complete.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-10-21T11:25:41Z",
+      "side": 1,
+      "message": "While it might be nice to switch format, we need to ensure we remain compatible with the original input format that was supported.",
+      "revId": "e949fdb625f89786bac5cb3884f5d4001938c318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
