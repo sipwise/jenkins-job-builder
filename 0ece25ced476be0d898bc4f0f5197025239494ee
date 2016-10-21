@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6895a0_ff4c5c78",
+        "filename": "tools/jenkins-jobs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-10-21T11:43:44Z",
+      "side": 0,
+      "message": "This could be updated to:\n\n import jenkins_jobs.cli.entry\n\n jenkins_jobs.cli.entry.main()",
+      "revId": "0ece25ced476be0d898bc4f0f5197025239494ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
