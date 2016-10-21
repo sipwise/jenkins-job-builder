@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6895a0_a96f1291",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-10-21T11:04:51Z",
+      "side": 1,
+      "message": "Lets trim this off, same as the previous changes, can do it via the review view so will tweak it directly to move things along.",
+      "revId": "cd06b344a8e582c79674e784666a17c2f1870615",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
