@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6895a0_098f1e24",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-10-21T11:13:28Z",
+      "side": 1,
+      "message": "How would this work if I provided https://url.com/to/my/file.jar as the value to url?\n\nI\u0027m also thinking that \u0027file:/\u0027 should be \u0027file://\u0027 since usually the correct url for a file path is: \"file:///home/jenkins/files/myfile.jar\" and \u0027file://\u0027 gets removed by the url parser.\n\nSeems like it should be test as to whether the url describes a path or is already a url first?",
+      "revId": "aa2b4171799803e8379746178fb1c01a787cd698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6895a0_e9466abe",
+        "filename": "tests/properties/fixtures/groovy-label-full.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-10-21T11:13:28Z",
+      "side": 1,
+      "message": "I would imagine on first glance that the following would be correct file urls (based on experience with other tooling supporting such):\n\n file:///home/jenkins/workspace/\u003cjob\u003e/path/to/file (absolute)\n file://path/to/file (relative to workspace)\n\nAlso should have an example involing a http(s) or ftp url.",
+      "revId": "aa2b4171799803e8379746178fb1c01a787cd698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
