@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6895a0_5fe2a804",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1407,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-10-21T11:53:36Z",
+      "side": 1,
+      "message": "Seems like it would be good to remove the above snipet in favour of the test you added so that it has the following:\n\n\n    Example:\n\n    .. literalinclude::\n        /../../tests/wrappers/fixtures/pre-scm-buildstep001.yaml",
+      "revId": "793880165b64930ac50cdfe4a6720c046ac1c70a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
