@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6895a0_ffb53cd0",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2638,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-10-21T11:56:50Z",
+      "side": 1,
+      "message": "I think we should switch this to raise an exception while we\u0027re at it instead of calling sys.exit(1)",
+      "revId": "1f806b00217e0c026181ffc409b0d192b180cbcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6895a0_dfaa3870",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2654,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-10-21T11:56:50Z",
+      "side": 1,
+      "message": "I think we should switch this to raise an exception while we\u0027re at it instead of calling sys.exit(1)",
+      "revId": "1f806b00217e0c026181ffc409b0d192b180cbcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
