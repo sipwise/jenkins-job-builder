@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da6895a0_4baa9871",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-10-25T17:57:50Z",
+      "side": 1,
+      "message": "nit replace \u0027__\u0027 with \u0027_\u0027.",
+      "revId": "f98b24c3b16344e83b86d71f542c8660c2c3a9d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6895a0_6bb75cd8",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-10-25T17:57:50Z",
+      "side": 1,
+      "message": "nit replace \u0027__\u0027 with \u0027_\u0027.",
+      "revId": "f98b24c3b16344e83b86d71f542c8660c2c3a9d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da6895a0_cbb4e8d2",
+        "filename": "setup.cfg",
+        "patchSetId": 13
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-10-25T17:57:50Z",
+      "side": 1,
+      "message": "should include zuul here? to support zuul macros?",
+      "revId": "f98b24c3b16344e83b86d71f542c8660c2c3a9d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
