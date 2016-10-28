@@ -1,0 +1,12 @@
+builders:
+  - saltstack:
+      servername: '{{SALT_MASTER}}'
+      credentials: 'credentials ID'
+      clientinterface: local-batch
+      batchsize: '50%'
+      wait: true
+      polltime: 10
+      target: '{{HOSTS}}'
+      targettype: list
+      function: pkg.update
+      saveoutput: true
