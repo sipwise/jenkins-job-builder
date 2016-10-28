@@ -1,0 +1,6 @@
+builders:
+  - saltstack:
+      servername: '{{SALT_MASTER}}'
+      credentials: 'credentials ID'
+      target: '{{HOSTS_GLOB}}'
+      function: pkg.update
