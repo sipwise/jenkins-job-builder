@@ -2196,6 +2196,7 @@ def cppcheck(registry, xml_parent, data):
        :language: yaml
 
     Full Example:
+
     .. literalinclude::
         /../../tests/publishers/fixtures/cppcheck-complete.yaml
        :language: yaml
@@ -2610,6 +2611,7 @@ def sonar(registry, xml_parent, data):
        :language: yaml
 
     Full Example:
+
     .. literalinclude:: /../../tests/publishers/fixtures/sonar-complete.yaml
        :language: yaml
     """
