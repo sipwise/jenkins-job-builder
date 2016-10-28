@@ -2158,6 +2158,127 @@ def publish_over_ssh(registry, xml_parent, data):
     ssh(registry, xml_parent, data)
 
 
+def saltstack(parser, xml_parent, data):
+    """yaml: saltstack
+
+    Send a message to Salt API. Requires the :jenkins-wiki:`saltstack plugin
+    <saltstack-plugin>`.
+
+    :arg str servername: Salt master server name
+    :arg str authtype: Authentication type ('pam' or 'ldap', default 'pam')
+    :arg str credentials: Credentials ID for which to authenticate to Salt
+        master
+    :arg str target: Target minions
+    :arg str targettype: Target type ('glob', 'pcre', 'list', 'grain',
+        'pillar', 'nodegroup', 'range', or 'compound', default 'glob')
+    :arg str function: Function to execute
+    :arg str arguments: Salt function arguments
+    :arg str kwarguments: Salt keyword arguments
+    :arg bool saveoutput: Save Salt return data into environment variable
+        (default false)
+    :arg str clientinterface: Client interface type ('local', 'local-batch',
+        or 'runner', default 'local')
+    :arg bool wait: Wait for completion of command (default false)
+    :arg str polltime: Number of seconds to wait before polling job completion
+        status
+    :arg str batchsize: Salt batch size, absolute value or %-age (default 100%)
+    :arg str mods: Mods to runner
+    :arg bool setpillardata: Set Pillar data (default false)
+    :arg str pillarkey: Pillar key
+    :arg str pillarvalue: Pillar value
+
+    Example:
+
+    .. literalinclude:: ../../tests/builders/fixtures/saltstack001.yaml
+       :language: yaml
+    """
+    saltstack = XML.SubElement(xml_parent, 'com.waytta.SaltAPIBuilder')
+    try:
+        XML.SubElement(saltstack, 'servername').text = data['servername']
+    except KeyError:
+        raise MissingAttributeError('servername')
+    try:
+        XML.SubElement(saltstack, 'credentialsId').text = data['credentials']
+    except KeyError:
+        raise MissingAttributeError('credentials')
+
+    XML.SubElement(saltstack, 'authtype').text = data.get('authtype', 'pam')
+    XML.SubElement(saltstack, 'target').text = data.get('target', '')
+    XML.SubElement(saltstack, 'targettype').text = data.get('targettype',
+                                                            'glob')
+    XML.SubElement(saltstack, 'function').text = data.get('function', '')
+    XML.SubElement(saltstack, 'arguments').text = data.get('arguments', '')
+    XML.SubElement(saltstack, 'kwarguments').text = data.get('kwarguments', '')
+
+    clientInterface = data.get('clientinterface', 'local')
+    XML.SubElement(saltstack, 'clientInterface').text = clientInterface
+
+    blockbuild = str(data.get('wait', False)).lower()
+    XML.SubElement(saltstack, 'blockbuild').text = blockbuild
+
+    jobPollTime = str(data.get('polltime', ''))
+    XML.SubElement(saltstack, 'jobPollTime').text = jobPollTime
+
+    batchSize = data.get('batchsize', '100%')
+    XML.SubElement(saltstack, 'batchSize').text = batchSize
+
+    mods = data.get('mods', '')
+    XML.SubElement(saltstack, 'mods').text = mods
+
+    usePillar = str(data.get('setpillardata', False)).lower()
+    XML.SubElement(saltstack, 'usePillar').text = usePillar
+    XML.SubElement(saltstack, 'pillarkey').text = data.get('pillarkey', '')
+    XML.SubElement(saltstack, 'pillarvalue').text = data.get('pillarvalue', '')
+
+    saveEnvVar = str(data.get('saveoutput', False)).lower()
+    XML.SubElement(saltstack, 'saveEnvVar').text = saveEnvVar
+
+    # Build the clientInterfaces structure, based on the
+    # clientinterface setting
+    clientInterfaces = XML.SubElement(saltstack, 'clientInterfaces')
+    XML.SubElement(clientInterfaces, 'nullObject').text = 'false'
+
+    ci_attrib = {
+        'class': 'org.apache.commons.collections.map.ListOrderedMap',
+        'serialization': 'custom'
+    }
+    properties = XML.SubElement(clientInterfaces, 'properties', ci_attrib)
+
+    lomElement = 'org.apache.commons.collections.map.ListOrderedMap'
+    listOrderedMap = XML.SubElement(properties, lomElement)
+
+    default = XML.SubElement(listOrderedMap, 'default')
+    map = XML.SubElement(listOrderedMap, 'map')
+
+    insertOrder = XML.SubElement(default, 'insertOrder')
+
+    ci_config = {}
+    if clientInterface == 'local':
+        ci_config = {
+            'blockbuild': blockbuild,
+            'jobPollTime': jobPollTime,
+            'clientInterface': clientInterface
+        }
+
+    elif clientInterface == 'local-batch':
+        ci_config = {
+            'batchSize': batchSize,
+            'clientInterface': clientInterface
+        }
+
+    elif clientInterface == 'runner':
+        ci_config = {
+            'mods': mods,
+            'clientInterface': clientInterface
+        }
+
+    for emt in sorted(ci_config.keys()):
+        XML.SubElement(insertOrder, 'string').text = emt
+        entry = XML.SubElement(map, 'entry')
+        XML.SubElement(entry, 'string').text = emt
+        XML.SubElement(entry, 'string').text = ci_config[emt]
+
+
 class Builders(jenkins_jobs.modules.base.Base):
     sequence = 60
 
