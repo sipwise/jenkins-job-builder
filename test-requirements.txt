@@ -7,5 +7,5 @@ setuptools_git>=0.4
 testscenarios
 testtools
 testrepository
-sphinxcontrib-programoutput
+git+git://github.com/lunaryorn/sphinxcontrib-programoutput.git@0.8
 mock
