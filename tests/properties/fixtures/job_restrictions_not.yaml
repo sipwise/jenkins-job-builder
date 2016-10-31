@@ -1,0 +1,9 @@
+---
+properties:
+  - job-restrictions:
+      restrict-from-upstream:
+        not: 
+          regex:
+            pattern: 'foobar'
+            check-short-name: true
+        skip-check-for-missing-info: true

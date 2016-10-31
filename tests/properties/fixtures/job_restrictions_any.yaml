@@ -1,0 +1,6 @@
+---
+properties:
+  - job-restrictions:
+      restrict-from-upstream:
+        take-any: true
+        skip-check-for-missing-info: true

@@ -1,0 +1,17 @@
+---
+properties:
+  - job-restrictions:
+      restrict-from-upstream:
+        mult-or: 
+          user:
+            user-list:
+              - test-user-1
+              - test-user-2
+            accept-automatic-runs: true
+            accept-anonymous-users: true
+          group:
+            group-list:
+              - test-group-1
+              - test-group-2
+            accept-upstream: true 
+        skip-check-for-missing-info: true

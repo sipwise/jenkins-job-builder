@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <properties>
+    <com.synopsys.arc.jenkinsci.plugins.jobrestrictions.jobs.JobRestrictionProperty>
+      <config>
+        <upstreamCauseRestriction>
+          <jobRestriction class="com.synopsys.arc.jenkinsci.plugins.jobrestrictions.restrictions.job.RegexNameRestriction">
+            <regexExpression>foobar</regexExpression>
+            <checkShortName>true</checkShortName>
+          </jobRestriction>
+          <skipCheckForMissingInfo>true</skipCheckForMissingInfo>
+        </upstreamCauseRestriction>
+      </config>
+    </com.synopsys.arc.jenkinsci.plugins.jobrestrictions.jobs.JobRestrictionProperty>
+  </properties>
+</project>

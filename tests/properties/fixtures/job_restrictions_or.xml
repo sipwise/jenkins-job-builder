@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <properties>
+    <com.synopsys.arc.jenkinsci.plugins.jobrestrictions.jobs.JobRestrictionProperty>
+      <config>
+        <upstreamCauseRestriction>
+          <jobRestriction class="com.synopsys.arc.jenkinsci.plugins.jobrestrictions.restrictions.logic.OrJobRestriction">
+            <first class="com.synopsys.arc.jenkinsci.plugins.jobrestrictions.restrictions.job.StartedByUserRestriction">
+              <checkUpstreamProjects>true</checkUpstreamProjects>
+              <usersList>
+                <com.synopsys.arc.jenkinsci.plugins.jobrestrictions.util.UserSelector>
+                  <selectedUserId>test-user-1</selectedUserId>
+                </com.synopsys.arc.jenkinsci.plugins.jobrestrictions.util.UserSelector>
+                <com.synopsys.arc.jenkinsci.plugins.jobrestrictions.util.UserSelector>
+                  <selectedUserId>test-user-2</selectedUserId>
+                </com.synopsys.arc.jenkinsci.plugins.jobrestrictions.util.UserSelector>
+              </usersList>
+              <acceptAutomaticRuns>true</acceptAutomaticRuns>
+              <acceptAnonymousUsers>true</acceptAnonymousUsers>
+            </first>
+            <second class="com.synopsys.arc.jenkinsci.plugins.jobrestrictions.restrictions.job.StartedByMemberOfGroupRestriction">
+              <checkUpstreamProjects>true</checkUpstreamProjects>
+              <groupList>
+                <com.synopsys.arc.jenkinsci.plugins.jobrestrictions.util.GroupSelector>
+                  <selectedGroupId>test-group-1</selectedGroupId>
+                </com.synopsys.arc.jenkinsci.plugins.jobrestrictions.util.GroupSelector>
+                <com.synopsys.arc.jenkinsci.plugins.jobrestrictions.util.GroupSelector>
+                  <selectedGroupId>test-group-2</selectedGroupId>
+                </com.synopsys.arc.jenkinsci.plugins.jobrestrictions.util.GroupSelector>
+              </groupList>
+            </second>
+          </jobRestriction>
+          <skipCheckForMissingInfo>true</skipCheckForMissingInfo>
+        </upstreamCauseRestriction>
+      </config>
+    </com.synopsys.arc.jenkinsci.plugins.jobrestrictions.jobs.JobRestrictionProperty>
+  </properties>
+</project>

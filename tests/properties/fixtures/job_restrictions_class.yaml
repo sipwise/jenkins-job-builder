@@ -1,0 +1,8 @@
+---
+properties:
+  - job-restrictions:
+      restrict-from-upstream:
+        class-list:
+          - test-class-1
+          - test-class-2
+        skip-check-for-missing-info: true

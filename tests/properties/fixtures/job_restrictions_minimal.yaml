@@ -1,0 +1,4 @@
+---
+properties:
+  - job-restrictions:
+      prohibit-manual-launch: true

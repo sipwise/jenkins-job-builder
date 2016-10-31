@@ -1,0 +1,10 @@
+---
+properties:
+  - job-restrictions:
+      restrict-from-upstream:
+        group:
+          group-list:
+            - test-group-1
+            - test-group-2
+          accept-upstream: true
+        skip-check-for-missing-info: true

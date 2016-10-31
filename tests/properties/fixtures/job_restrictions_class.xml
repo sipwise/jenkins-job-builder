@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <properties>
+    <com.synopsys.arc.jenkinsci.plugins.jobrestrictions.jobs.JobRestrictionProperty>
+      <config>
+        <upstreamCauseRestriction>
+          <jobRestriction class="io.jenkins.plugins.jobrestrictions.restrictions.job.JobClassNameRestriction">
+            <jobClasses>
+              <io.jenkins.plugins.jobrestrictions.util.ClassSelector>
+                <selectedClass>test-class-1</selectedClass>
+              </io.jenkins.plugins.jobrestrictions.util.ClassSelector>
+              <io.jenkins.plugins.jobrestrictions.util.ClassSelector>
+                <selectedClass>test-class-2</selectedClass>
+              </io.jenkins.plugins.jobrestrictions.util.ClassSelector>
+            </jobClasses>
+          </jobRestriction>
+          <skipCheckForMissingInfo>true</skipCheckForMissingInfo>
+        </upstreamCauseRestriction>
+      </config>
+    </com.synopsys.arc.jenkinsci.plugins.jobrestrictions.jobs.JobRestrictionProperty>
+  </properties>
+</project>

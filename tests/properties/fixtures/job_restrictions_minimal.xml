@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <properties>
+    <com.synopsys.arc.jenkinsci.plugins.jobrestrictions.jobs.JobRestrictionProperty>
+      <config>
+        <userIdCauseRestriction>
+          <prohibitManualLaunch>true</prohibitManualLaunch>
+        </userIdCauseRestriction>
+      </config>
+    </com.synopsys.arc.jenkinsci.plugins.jobrestrictions.jobs.JobRestrictionProperty>
+  </properties>
+</project>
