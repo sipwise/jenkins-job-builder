@@ -19,6 +19,7 @@ import codecs
 import fnmatch
 import locale
 import os.path
+import re
 from six.moves import input
 
 
@@ -68,3 +69,7 @@ def recurse_path(root, excludes=None):
 def confirm(question):
     answer = input('%s (Y/N): ' % question).upper().strip()
     return answer == 'Y'
+
+
+def escape_braces(data):
+    return re.sub(r'({|})', r'\1\1', data)
