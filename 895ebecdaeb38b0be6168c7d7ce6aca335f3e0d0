@@ -1,0 +1,238 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a629dbe_3373f616",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2194,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-11-10T01:57:20Z",
+      "side": 1,
+      "message": "My suggestion is to create only 2 tests and link them as examples here.\n\n1) saltstack-minimal.yaml\n2) saltstack-full.yaml\n\nThe 1st one should be a test that configures the absolute bare minimum. As in only required fields should be set and everything else should be left untouched.\n\nThe 2nd one should be a test that tests the non-default configuration of every possible setting this plugin can use.\n\nOnce these 2 tests are created we don\u0027t really need tests 001, 002, 003, or 004 as the 2 tests is enough to test both the default case as well as the non-default case for every setting.",
+      "revId": "895ebecdaeb38b0be6168c7d7ce6aca335f3e0d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_134d12c4",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2200,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-11-10T01:57:20Z",
+      "side": 1,
+      "message": "If you add servername to the mapping below and set the last field to \"None\" (without the quotes). It will automatically handle the missing attribute error. That is the signifigance behind the \"failed_required\u003dTrue\" option you passed in the convert_mapping_to_xml function below.",
+      "range": {
+        "startLine": 2197,
+        "startChar": 4,
+        "endLine": 2200,
+        "endChar": 49
+      },
+      "revId": "895ebecdaeb38b0be6168c7d7ce6aca335f3e0d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_f3da5ee7",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2204,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-11-10T01:57:20Z",
+      "side": 1,
+      "message": "Same with servername above. Please move it into the mapping and pass it an option of None to cause MissingAttributeError to be handled.",
+      "range": {
+        "startLine": 2201,
+        "startChar": 4,
+        "endLine": 2204,
+        "endChar": 50
+      },
+      "revId": "895ebecdaeb38b0be6168c7d7ce6aca335f3e0d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_53330a14",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2209,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-11-10T01:57:20Z",
+      "side": 1,
+      "message": "convert_mapping_to_xml can also handle valid attributes. You just need to pass a 4th option in the tuple into the mapping for authType.\n\nSee example here, look for valid_values and how it is used in this patch:\n\nhttps://review.openstack.org/#/c/350940/6/jenkins_jobs/modules/publishers.py",
+      "range": {
+        "startLine": 2207,
+        "startChar": 3,
+        "endLine": 2209,
+        "endChar": 57
+      },
+      "revId": "895ebecdaeb38b0be6168c7d7ce6aca335f3e0d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_b33e26d8",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2215,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-11-10T01:57:20Z",
+      "side": 1,
+      "message": "Like above the convert_mapping_to_xml is able to handle valid values and throw the invalid attribute error. Take a look at the example link.",
+      "range": {
+        "startLine": 2213,
+        "startChar": 4,
+        "endLine": 2215,
+        "endChar": 59
+      },
+      "revId": "895ebecdaeb38b0be6168c7d7ce6aca335f3e0d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_132ef2a4",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2221,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-11-10T01:57:20Z",
+      "side": 1,
+      "message": "Like above the convert_mapping_to_xml is able to handle valid values and throw the invalid attribute error. Take a look at the example link.",
+      "range": {
+        "startLine": 2219,
+        "startChar": 0,
+        "endLine": 2221,
+        "endChar": 64
+      },
+      "revId": "895ebecdaeb38b0be6168c7d7ce6aca335f3e0d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_f3d09ef8",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2239,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-11-10T01:57:20Z",
+      "side": 1,
+      "message": "Can this also go into the mapping?",
+      "revId": "895ebecdaeb38b0be6168c7d7ce6aca335f3e0d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_730bae8e",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2242,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-11-10T01:57:20Z",
+      "side": 1,
+      "message": "Can this also go into the mapping?",
+      "revId": "895ebecdaeb38b0be6168c7d7ce6aca335f3e0d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_d3faba74",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2245,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-11-10T01:57:20Z",
+      "side": 1,
+      "message": "Can this also go into the mapping?",
+      "revId": "895ebecdaeb38b0be6168c7d7ce6aca335f3e0d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_13f19295",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2248,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-11-10T01:57:20Z",
+      "side": 1,
+      "message": "Can this also go into the mapping?",
+      "revId": "895ebecdaeb38b0be6168c7d7ce6aca335f3e0d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_7332ce60",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2251,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-11-10T01:57:20Z",
+      "side": 1,
+      "message": "Can this also go into the mapping?",
+      "revId": "895ebecdaeb38b0be6168c7d7ce6aca335f3e0d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_d341daaa",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2254,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-11-10T01:57:20Z",
+      "side": 1,
+      "message": "Can this also go into the mapping?",
+      "revId": "895ebecdaeb38b0be6168c7d7ce6aca335f3e0d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
