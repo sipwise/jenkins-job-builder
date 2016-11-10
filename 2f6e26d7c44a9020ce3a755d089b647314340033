@@ -1,0 +1,197 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a629dbe_16f97bc7",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2168,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-11-10T06:41:59Z",
+      "side": 1,
+      "message": "Add \u0027(required)\u0027",
+      "revId": "2f6e26d7c44a9020ce3a755d089b647314340033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_3602ffb4",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2171,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-11-10T06:41:59Z",
+      "side": 1,
+      "message": "Add \u0027(required)\u0027",
+      "revId": "2f6e26d7c44a9020ce3a755d089b647314340033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_762e3744",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2172,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-11-10T06:41:59Z",
+      "side": 1,
+      "message": "Add \u0027(default \u0027\u0027)\u0027",
+      "revId": "2f6e26d7c44a9020ce3a755d089b647314340033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_d629c338",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2175,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-11-10T06:41:59Z",
+      "side": 1,
+      "message": "Add \u0027(default \u0027\u0027)\u0027",
+      "revId": "2f6e26d7c44a9020ce3a755d089b647314340033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_16209b47",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2176,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-11-10T06:41:59Z",
+      "side": 1,
+      "message": "Add \u0027(default \u0027\u0027)\u0027",
+      "revId": "2f6e26d7c44a9020ce3a755d089b647314340033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_76d5571a",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2177,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-11-10T06:41:59Z",
+      "side": 1,
+      "message": "Add \u0027(default \u0027\u0027)\u0027",
+      "revId": "2f6e26d7c44a9020ce3a755d089b647314340033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_16e7bb11",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2184,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-11-10T06:41:59Z",
+      "side": 1,
+      "message": "Add \u0027(default \u0027\u0027)\u0027",
+      "revId": "2f6e26d7c44a9020ce3a755d089b647314340033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_36f03fc9",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2186,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-11-10T06:41:59Z",
+      "side": 1,
+      "message": "Add \u0027(default \u0027\u0027)\u0027",
+      "revId": "2f6e26d7c44a9020ce3a755d089b647314340033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_b6b28f04",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2188,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-11-10T06:41:59Z",
+      "side": 1,
+      "message": "Add \u0027(default \u0027\u0027)\u0027",
+      "revId": "2f6e26d7c44a9020ce3a755d089b647314340033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_d6b703f3",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2189,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-11-10T06:41:59Z",
+      "side": 1,
+      "message": "Add \u0027(default \u0027\u0027)\u0027",
+      "revId": "2f6e26d7c44a9020ce3a755d089b647314340033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a629dbe_36f11f96",
+        "filename": "tests/builders/fixtures/saltstack-minimal.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2016-11-10T06:41:59Z",
+      "side": 1,
+      "message": "from the code these 2 parameters is not required, so don\u0027t need to include it in minimal test",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 26
+      },
+      "revId": "2f6e26d7c44a9020ce3a755d089b647314340033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
