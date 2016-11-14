@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a629dbe_b7e68942",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2718,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-11-14T14:03:00Z",
+      "side": 1,
+      "message": "Need period here.",
+      "revId": "0b75601543dae259fceeecbda3bd5c4a6ce61ec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
