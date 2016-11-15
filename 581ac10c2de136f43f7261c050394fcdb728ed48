@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_88d31938",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-11-15T16:01:07Z",
+      "side": 1,
+      "message": "I might shorten this to just \u0027from_config\u0027",
+      "revId": "581ac10c2de136f43f7261c050394fcdb728ed48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
