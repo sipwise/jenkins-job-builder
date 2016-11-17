@@ -66,5 +66,5 @@ def recurse_path(root, excludes=None):
 
 
 def confirm(question):
-    answer = input('%s (Y/N): ' % question).upper().strip()
+    answer = raw_input('%s (Y/N): ' % question).upper().strip()
     return answer == 'Y'
