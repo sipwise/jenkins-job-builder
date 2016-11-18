@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_529bc065",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2254,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-11-18T19:13:19Z",
+      "side": 1,
+      "message": "Probably not wise to shadow a builtin with \u0027map\u0027 here. \u0027ordered_map\u0027 or \u0027omap\u0027 would be better.",
+      "revId": "7b846af528e85d71185bacec449024c2127fa8c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a77a97e_b21fb4b5",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2286,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-11-18T19:13:19Z",
+      "side": 1,
+      "message": "There is an assumption here that alphabetical order will always be correct? That does strike me as odd, though I can\u0027t see anything in the plugin page that suggests this order ever needs to be controllable by a user.\n\nBe good if you could confirm that, and confirm that the order in the resulting XML matches what is currently done, rather than just doing this in order to satisfy python 3 tests.\n\nIf alphabetical order is not 100% correct you can use the following to replace (need to rename \u0027map\u0027 above to \u0027ordered_map\u0027 or adjust the snippet below):\n\n    ci_config \u003d []\n    if clientInterface \u003d\u003d \u0027local\u0027:\n        ci_config \u003d [\n            (\u0027blockbuild\u0027, blockbuild),\n            (\u0027clientInterface\u0027, clientInterface),\n            (\u0027jobPollTime\u0027, jobPollTime)\n        ]\n\n    elif clientInterface \u003d\u003d \u0027local-batch\u0027:\n        ci_config \u003d [\n            (\u0027batchSize\u0027, batchSize),\n            (\u0027clientInterface\u0027, clientInterface)\n        ]\n\n    elif clientInterface \u003d\u003d \u0027runner\u0027:\n        ci_config \u003d [\n            (\u0027clientInterface\u0027, clientInterface),\n            (\u0027mods\u0027, mods)\n        ]\n\n        if usePillar \u003d\u003d \u0027true\u0027:\n            ci_config.append((\u0027usePillar\u0027, usePillar))\n\n            pillar_cfg \u003d [\n                (\u0027pillarkey\u0027, data.get(\u0027pillarkey\u0027)),\n                (\u0027pillarvalue\u0027, data.get(\u0027pillarvalue\u0027))\n            ]\n\n    for emt, value in ci_config:\n        XML.SubElement(insertOrder, \u0027string\u0027).text \u003d emt\n        entry \u003d XML.SubElement(ordered_map, \u0027entry\u0027)\n        XML.SubElement(entry, \u0027string\u0027).text \u003d emt\n\n        # Special handling when usePillar \u003d\u003d true, requires additional\n        # structure in the builder XML\n        if emt !\u003d \u0027usePillar\u0027:\n            XML.SubElement(entry, \u0027string\u0027).text \u003d value\n        else:\n            jsonobj \u003d XML.SubElement(entry, \u0027net.sf.json.JSONObject\u0027)\n            XML.SubElement(jsonobj, \u0027nullObject\u0027).text \u003d \u0027false\u0027\n\n            pillarProps \u003d XML.SubElement(jsonobj, \u0027properties\u0027, ci_attrib)\n            XML.SubElement(pillarProps, \u0027unserializable-parents\u0027)\n\n            pillarLom \u003d XML.SubElement(pillarProps, lomElement)\n\n            pillarDefault \u003d XML.SubElement(pillarLom, \u0027default\u0027)\n            pillarMap \u003d XML.SubElement(pillarLom, \u0027map\u0027)\n            pillarInsertOrder \u003d XML.SubElement(pillarDefault, \u0027insertOrder\u0027)\n\n            for pemt, value in pillar_cfg:\n                XML.SubElement(pillarInsertOrder, \u0027string\u0027).text \u003d pemt\n                pillarEntry \u003d XML.SubElement(pillarMap, \u0027entry\u0027)\n                XML.SubElement(pillarEntry, \u0027string\u0027).text \u003d pemt\n                XML.SubElement(pillarEntry, \u0027string\u0027).text \u003d value",
+      "revId": "7b846af528e85d71185bacec449024c2127fa8c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
