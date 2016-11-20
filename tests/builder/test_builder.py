@@ -33,9 +33,12 @@ class TestCaseTestBuilder(base.BaseTestCase):
         self.assertEqual(self.builder.plugins_list, ['plugin1', 'plugin2'])
 
     @mock.patch.object(jenkins_jobs.builder.jenkins.Jenkins,
-                       'get_plugins_info', return_value=['p1', 'p2'])
+                       'get_plugins_info',
+                       return_value=[{'longName': '',
+                                     'shortName': '', 'version': ''}])
     def test_plugins_list_from_jenkins(self, jenkins_mock):
         # Trigger fetching the plugins from jenkins when accessing the property
         self.jjb_config.builder['plugins_info'] = None
         self.builder = jenkins_jobs.builder.JenkinsManager(self.jjb_config)
-        self.assertEqual(self.builder.plugins_list, ['p1', 'p2'])
+        self.assertEqual(self.builder.plugins_list,
+                         [{'longName': '', 'shortName': '', 'version': ''}])
