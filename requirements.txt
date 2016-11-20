@@ -1,3 +1,4 @@
+multi_key_dict
 six>=1.5.2
 PyYAML
 python-jenkins>=0.4.8
