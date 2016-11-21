@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a77a97e_9dce0bb3",
+        "filename": "tests/publishers/fixtures/plot004.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 21595
+      },
+      "writtenOn": "2016-11-21T18:54:28Z",
+      "side": 1,
+      "message": "The plot004.yaml specified this flag should be true. Fixed in xml, and corrected publishers.py",
+      "revId": "6061bc97c6f4a87706b480d12e080f69976696b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
