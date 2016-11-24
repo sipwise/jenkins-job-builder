@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a74a57a_55425f11",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-11-24T10:12:19Z",
+      "side": 1,
+      "message": "I\u0027m guessing that this code is not being exercised properly by the updated tests, otherwise it would have failed. .iteritems() is python2 only.\n\nIn any case since the key is unneeded should just use self.jenkins.get_plugins().values() instead.\n\nIn fact, could just copy what python-jenkins uses for get_plugins_info() for compatibility:\n\n return [plugin_data for plugin_data in self.get_plugins(depth).values()]",
+      "revId": "83894402b43df94845875e765c0cc939add985a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_d54aefc4",
+        "filename": "tests/builder/test_builder.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2016-11-24T10:12:19Z",
+      "side": 1,
+      "message": "This doesn\u0027t look right, you\u0027ve changed the call to use get_plugins() instead of get_plugins_info(), so need to change this to mock the correct method. Fixing this should expose the bug in updated code around python 3 as well.\n\nSwitching to the following will remove the need to change the assertion test as well and still provide use:\n\n           \u0027get_plugins\u0027,\n           return_value\u003d{\u0027pluginA\u0027: \u0027p1\u0027, \u0027pluginB\u0027: \u0027p2\u0027})",
+      "revId": "83894402b43df94845875e765c0cc939add985a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
