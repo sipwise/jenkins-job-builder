@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_9d278c11",
+        "filename": "jenkins_jobs/modules/project_pipeline.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 13505
+      },
+      "writtenOn": "2016-11-25T13:34:29Z",
+      "side": 1,
+      "message": "will fix:)",
+      "parentUuid": "5a74a57a_e71afd16",
+      "revId": "27394e636d3f0015553298b42e921988b5e77771",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a74a57a_6a32fa11",
         "filename": "jenkins_jobs/modules/project_pipeline.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2016-11-24T23:40:04Z",
       "side": 1,
       "message": "would it be possible to add these prarms to the existing tests or create a new test for it?",
+      "revId": "27394e636d3f0015553298b42e921988b5e77771",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_fda9607c",
+        "filename": "jenkins_jobs/modules/project_pipeline.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 13505
+      },
+      "writtenOn": "2016-11-25T13:34:29Z",
+      "side": 1,
+      "message": "ok, will do.",
+      "parentUuid": "5a74a57a_6a32fa11",
       "revId": "27394e636d3f0015553298b42e921988b5e77771",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5a74a57a_7d39d040",
+        "filename": "jenkins_jobs/modules/project_pipeline.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 13505
+      },
+      "writtenOn": "2016-11-25T13:34:29Z",
+      "side": 1,
+      "message": "yeah, reference is not required, although it won\u0027t accept scm list, only a single definition, like this:\n\npipeline-scm:\n  scm:\n    hg:\n      url: http://hg.example.org/project\n      clean: true\n\nI\u0027ll change the docs to make it clear",
+      "parentUuid": "5a74a57a_2da1fca3",
+      "revId": "27394e636d3f0015553298b42e921988b5e77771",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a74a57a_ed3b84cf",
         "filename": "jenkins_jobs/modules/project_pipeline.py",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2016-11-24T23:40:04Z",
       "side": 1,
       "message": "should this be script-path?",
+      "revId": "27394e636d3f0015553298b42e921988b5e77771",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_fd45e0b2",
+        "filename": "jenkins_jobs/modules/project_pipeline.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 13505
+      },
+      "writtenOn": "2016-11-25T13:34:29Z",
+      "side": 1,
+      "message": "right, thanks",
+      "parentUuid": "5a74a57a_ed3b84cf",
       "revId": "27394e636d3f0015553298b42e921988b5e77771",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -98,6 +170,24 @@
       "writtenOn": "2016-11-24T23:40:04Z",
       "side": 1,
       "message": "I see this in the config.xml, not sure if it\u0027s needed though.  i\u0027m using jenkins ver 2.19.3\n\n  \u003cproperties\u003e\n     \u003corg.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty\u003e\n      \u003ctriggers/\u003e\n    \u003c/org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty\u003e\n  \u003c/properties\u003e",
+      "revId": "27394e636d3f0015553298b42e921988b5e77771",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a74a57a_1d61bc39",
+        "filename": "tests/yamlparser/fixtures/project_pipeline_template001.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 13505
+      },
+      "writtenOn": "2016-11-25T13:34:29Z",
+      "side": 1,
+      "message": "not required, but I\u0027ll add this just in case, thanks",
+      "parentUuid": "5a74a57a_ea8a8abe",
       "revId": "27394e636d3f0015553298b42e921988b5e77771",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
