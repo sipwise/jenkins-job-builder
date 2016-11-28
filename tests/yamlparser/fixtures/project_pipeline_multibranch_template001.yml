@@ -1,0 +1,46 @@
+- workflow_job_defaults: &workflow_job_defaults
+    name: 'workflow_job_defaults'
+    project-type: multibranch
+    disabled: false
+    logrotate:
+        daysToKeep: 7
+        numToKeep: 5
+        artifactDaysToKeep: -1
+        artifactNumToKeep: -1
+    jdk: '{default-jdk}'
+
+- job-template:
+    name: '{name}-{workflowComponentId}-demo-mb'
+    description: 'Workflow demo'
+    <<: *workflow_job_defaults
+    multibranch:
+        timer-trigger: "@midnight"
+        periodic-folder-interval: 'H H * * *'
+        periodic-folder-spec: '86400000'
+        prune-dead-branches: 'true'
+        number-to-keep: '10'
+        days-to-keep: '10'
+        scm:
+            git:
+                url: '{gitUrl}/{gitlab-user}/{workflowComponentId}.git'
+                credentials-id: '{gitCredentialsId}'
+            bitbucket:
+                repo-owner: 'SANDBOX'
+                repository: 'test'
+                scan-credentials-id: '{gitCredentialsId}'
+        env-properties: |
+            semVer=prerelease
+            foo=bar
+
+
+- job-group:
+    name: '{name}-workflow'
+    jobs:
+        - '{name}-{workflowComponentId}-demo-mb':
+
+- project:
+    name: rnd
+    gitlab-user: jvandergriendt
+    jobs:
+        - '{name}-workflow':
+            workflowComponentId: keep-frontend

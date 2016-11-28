@@ -85,17 +85,18 @@ class XmlJobGenerator(object):
             Mod = ep.load()
             mod = Mod(self.registry)
             xml = mod.root_xml(data)
-            self._gen_xml(xml, data)
+            self._gen_xml(xml, data, kind=kind)
             job = XmlJob(xml, data['name'])
             return job
 
         raise errors.JenkinsJobsException("Unrecognized project type: '%s'"
                                           % kind)
 
-    def _gen_xml(self, xml, data):
+    def _gen_xml(self, xml, data, kind=None):
         for module in self.registry.modules:
-            if hasattr(module, 'gen_xml'):
-                module.gen_xml(xml, data)
+            if hasattr(module, 'gen_xml') and \
+                not (kind == 'multibranch' and module.component_type == 'scm'):
+                    module.gen_xml(xml, data)
 
 
 class XmlViewGenerator(object):
