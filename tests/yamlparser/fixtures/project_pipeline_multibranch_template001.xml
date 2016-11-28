@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject plugin="workflow-multibranch">
+  <properties>
+    <com.cloudbees.hudson.plugins.folder.properties.FolderCredentialsProvider_-FolderCredentialsProperty plugin="cloudbees-folder">
+      <entry>
+        <com.cloudbees.plugins.credentials.domains.Domain>
+          <specifications/>
+        </com.cloudbees.plugins.credentials.domains.Domain>
+      </entry>
+    </com.cloudbees.hudson.plugins.folder.properties.FolderCredentialsProvider_-FolderCredentialsProperty>
+    <com.cloudbees.hudson.plugins.folder.properties.EnvVarsFolderProperty plugin="cloudbees-folders-plus">
+      <properties>semVer=prerelease
+foo=bar
+</properties>
+    </com.cloudbees.hudson.plugins.folder.properties.EnvVarsFolderProperty>
+  </properties>
+  <orphanedItemStrategy class="com.cloudbees.hudson.plugins.folder.computed.DefaultOrphanedItemStrategy" plugin="cloudbees-folder">
+    <pruneDeadBranches>true</pruneDeadBranches>
+    <daysToKeep>10</daysToKeep>
+    <numToKeep>10</numToKeep>
+  </orphanedItemStrategy>
+  <triggers>
+    <hudson.triggers.TimerTrigger>
+      <spec>@midnight</spec>
+    </hudson.triggers.TimerTrigger>
+    <com.cloudbees.hudson.plugins.folder.computed.PeriodicFolderTrigger plugin="cloudbees-folder">
+      <spec>86400000</spec>
+      <interval>H H * * *</interval>
+    </com.cloudbees.hudson.plugins.folder.computed.PeriodicFolderTrigger>
+  </triggers>
+  <sources class="jenkins.branch.MultiBranchProject$BranchSourceList" plugin="branch-api">
+    <data>
+      <jenkins.branch.BranchSource>
+        <source class="com.cloudbees.jenkins.plugins.bitbucket.BitbucketSCMSource" plugin="cloudbees-bitbucket-branch-source">
+          <credentialsId>4f0dfb96-a7b1-421c-a4ea-b6a154f91b08</credentialsId>
+          <checkoutCredentialsId>SAME</checkoutCredentialsId>
+          <repoOwner>SANDBOX</repoOwner>
+          <repository>test</repository>
+          <includes>*</includes>
+          <excludes></excludes>
+          <autoRegisterHook>false</autoRegisterHook>
+          <bitbucketServerUrl>https://gitlab.flusso.nl</bitbucketServerUrl>
+          <sshPort></sshPort>
+        </source>
+      </jenkins.branch.BranchSource>
+      <jenkins.branch.BranchSource>
+        <source class="jenkins.plugins.git.GitSCMSource" plugin="git">
+          <remote>https://gitlab.flusso.nl/jvandergriendt/keep-frontend.git</remote>
+          <credentialsId>4f0dfb96-a7b1-421c-a4ea-b6a154f91b08</credentialsId>
+          <includes>*</includes>
+          <excludes/>
+          <ignoreOnPushNotifications>true</ignoreOnPushNotifications>
+        </source>
+      </jenkins.branch.BranchSource>
+    </data>
+  </sources>
+  <factory>
+    <strategy class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
+  </factory>
+  <jdk>JDK 1.8</jdk>
+  <actions/>
+  <description>Workflow demo&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <keepDependencies>false</keepDependencies>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <concurrentBuild>false</concurrentBuild>
+  <canRoam>true</canRoam>
+  <logRotator>
+    <daysToKeep>7</daysToKeep>
+    <numToKeep>5</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
+  <scm class="hudson.scm.NullSCM"/>
+  <publishers/>
+  <buildWrappers/>
+</org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject>

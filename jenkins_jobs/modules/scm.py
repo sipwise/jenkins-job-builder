@@ -45,6 +45,12 @@ import jenkins_jobs.modules.base
 from jenkins_jobs.modules.helpers import convert_mapping_to_xml
 
 
+def gerrit(registry, xml_parent, data):
+    """yaml: gerrit
+    """
+    return git(registry, xml_parent, data)
+
+
 def git(registry, xml_parent, data):
     """yaml: git
     Specifies the git SCM repository for this job.
