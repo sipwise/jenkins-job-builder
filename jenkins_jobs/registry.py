@@ -198,7 +198,8 @@ class ModuleRegistry(object):
                                      name_line)
                         continue
                     ep_name = name_line[0].split(' ')[1]
-                except (AttributeError, IndexError):
+                except (AttributeError, IndexError) as e:
+                    print('ERROR', e)
                     # AttributeError by docstring not being defined as
                     # a string to have split called on it.
                     # IndexError raised by name_line not containing anything
@@ -253,6 +254,7 @@ class ModuleRegistry(object):
             func = eps[name].load()
             func(self, xml_parent, component_data)
         else:
+            print(component, eps)
             raise JenkinsJobsException("Unknown entry point or macro '{0}' "
                                        "for component type: '{1}'.".
                                        format(name, component_type))
