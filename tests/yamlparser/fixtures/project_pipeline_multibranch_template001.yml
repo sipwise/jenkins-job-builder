@@ -1,0 +1,76 @@
+- workflow_job_defaults: &workflow_job_defaults
+    name: 'workflow_job_defaults'
+    project-type: multibranch
+    disabled: false
+    logrotate:
+        daysToKeep: 7
+        numToKeep: 5
+        artifactDaysToKeep: -1
+        artifactNumToKeep: -1
+    jdk: '{default-jdk}'
+
+- job-template:
+    name: '{name}-{workflowComponentId}-demo-mb'
+    description: 'Workflow demo'
+    <<: *workflow_job_defaults
+    multibranch:
+        timer-trigger: "@midnight"
+        periodic-folder-interval: 'H H * * *'
+        periodic-folder-spec: '86400000'
+        prune-dead-branches: 'true'
+        number-to-keep: '10'
+        days-to-keep: '10'
+        scm:
+            git:
+                url: '{gitUrl}/{gitlab-user}/{workflowComponentId}.git'
+                credentials-id: '{gitCredentialsId}'
+        publisher-white-list:
+            - au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger
+            - com.cloudbees.jenkins.GitHubCommitNotifier
+            - com.cloudbees.opscenter.triggers.RemoteTriggerPublisher
+            - com.cloudbees.plugins.deployer.DeployPublisher
+            - com.michelin.cio.hudson.plugins.copytoslave.CopyToMasterNotifier
+            - com.sonatype.insight.ci.hudson.PostBuildScan
+            - com.urbancode.ds.jenkins.plugins.urbandeploypublisher.UrbanDeployPublisher
+            - hudson.maven.MavenTestDataPublisher
+            - hudson.maven.RedeployPublisher
+            - hudson.plugins.analysis.collector.AnalysisPublisher
+            - hudson.plugins.checkstyle.CheckStylePublisher
+            - hudson.plugins.descriptionsetter.DescriptionSetterPublisher
+            - hudson.plugins.findbugs.FindBugsPublisher
+            - hudson.plugins.git.GitPublisher
+            - hudson.plugins.jacoco.JacocoPublisher
+            - hudson.plugins.parameterizedtrigger.BuildTrigger
+            - hudson.plugins.pmd.PmdPublisher
+            - hudson.plugins.promoted_builds.KeepBuildForeverAction
+            - hudson.plugins.promoted_builds.tasks.RedeployBatchTaskPublisher
+            - hudson.plugins.sonar.SonarPublisher
+            - hudson.tasks.ArtifactArchiver
+            - hudson.tasks.BuildTrigger
+            - hudson.tasks.Fingerprinter
+            - hudson.tasks.JavadocArchiver
+            - hudson.tasks.Mailer
+            - hudson.tasks.junit.JUnitResultArchiver
+            - hudson.tasks.test.AggregatedTestResultPublisher
+            - jenkins.plugins.publish_over_cifs.CifsPromotionPublisherPlugin
+            - jenkins.plugins.publish_over_cifs.CifsPublisherPlugin
+            - org.jenkins_ci.plugins.flexible_publish.FlexiblePublisher
+            - org.jenkinsci.plugins.nexus.NexusTaskPublisher
+            - org.jenkinsci.plugins.stashNotifier.StashNotifier
+            - stashpullrequestbuilder.stashpullrequestbuilder.StashPostBuildComment
+        env-properties: |
+            semVer=prerelease
+            foo=bar
+
+
+- job-group:
+    name: '{name}-workflow'
+    jobs:
+        - '{name}-{workflowComponentId}-demo-mb':
+
+- project:
+    name: rnd
+    gitlab-user: jvandergriendt
+    jobs:
+        - '{name}-workflow':
+            workflowComponentId: keep-frontend

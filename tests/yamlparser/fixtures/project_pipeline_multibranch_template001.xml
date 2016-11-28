@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject plugin="workflow-multibranch">
+  <properties>
+    <com.cloudbees.hudson.plugins.folder.properties.FolderCredentialsProvider_-FolderCredentialsProperty plugin="cloudbees-folder">
+      <entry>
+        <com.cloudbees.plugins.credentials.domains.Domain>
+          <specifications/>
+        </com.cloudbees.plugins.credentials.domains.Domain>
+      </entry>
+    </com.cloudbees.hudson.plugins.folder.properties.FolderCredentialsProvider_-FolderCredentialsProperty>
+    <com.cloudbees.hudson.plugins.folder.properties.EnvVarsFolderProperty plugin="cloudbees-folders-plus">
+      <properties>semVer=prerelease
+foo=bar
+</properties>
+    </com.cloudbees.hudson.plugins.folder.properties.EnvVarsFolderProperty>
+  </properties>
+  <orphanedItemStrategy class="com.cloudbees.hudson.plugins.folder.computed.DefaultOrphanedItemStrategy" plugin="cloudbees-folder">
+    <pruneDeadBranches>true</pruneDeadBranches>
+    <daysToKeep>10</daysToKeep>
+    <numToKeep>10</numToKeep>
+  </orphanedItemStrategy>
+  <triggers>
+    <hudson.triggers.TimerTrigger>
+      <spec>@midnight</spec>
+    </hudson.triggers.TimerTrigger>
+    <com.cloudbees.hudson.plugins.folder.computed.PeriodicFolderTrigger plugin="cloudbees-folder">
+      <spec>86400000</spec>
+      <interval>H H * * *</interval>
+    </com.cloudbees.hudson.plugins.folder.computed.PeriodicFolderTrigger>
+  </triggers>
+  <sources class="jenkins.branch.MultiBranchProject$BranchSourceList" plugin="branch-api">
+    <data>
+      <jenkins.branch.BranchSource>
+        <source class="jenkins.plugins.git.GitSCMSource" plugin="git">
+          <remote>https://gitlab.flusso.nl//jvandergriendt/keep-frontend.git</remote>
+          <credentialsId>4f0dfb96-a7b1-421c-a4ea-b6a154f91b08</credentialsId>
+          <includes>*</includes>
+          <excludes/>
+          <ignoreOnPushNotifications>true</ignoreOnPushNotifications>
+        </source>
+        <strategy class="jenkins.branch.DefaultBranchPropertyStrategy">
+          <properties class="java.util.Arrays$ArrayList">
+            <a class="jenkins.branch.BranchProperty-array">
+              <jenkins.branch.UntrustedBranchProperty>
+                <publisherWhitelist class="sorted-set">
+                  <string>au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger</string>
+                  <string>com.cloudbees.jenkins.GitHubCommitNotifier</string>
+                  <string>com.cloudbees.opscenter.triggers.RemoteTriggerPublisher</string>
+                  <string>com.cloudbees.plugins.deployer.DeployPublisher</string>
+                  <string>com.michelin.cio.hudson.plugins.copytoslave.CopyToMasterNotifier</string>
+                  <string>com.sonatype.insight.ci.hudson.PostBuildScan</string>
+                  <string>com.urbancode.ds.jenkins.plugins.urbandeploypublisher.UrbanDeployPublisher</string>
+                  <string>hudson.maven.MavenTestDataPublisher</string>
+                  <string>hudson.maven.RedeployPublisher</string>
+                  <string>hudson.plugins.analysis.collector.AnalysisPublisher</string>
+                  <string>hudson.plugins.checkstyle.CheckStylePublisher</string>
+                  <string>hudson.plugins.descriptionsetter.DescriptionSetterPublisher</string>
+                  <string>hudson.plugins.findbugs.FindBugsPublisher</string>
+                  <string>hudson.plugins.git.GitPublisher</string>
+                  <string>hudson.plugins.jacoco.JacocoPublisher</string>
+                  <string>hudson.plugins.parameterizedtrigger.BuildTrigger</string>
+                  <string>hudson.plugins.pmd.PmdPublisher</string>
+                  <string>hudson.plugins.promoted_builds.KeepBuildForeverAction</string>
+                  <string>hudson.plugins.promoted_builds.tasks.RedeployBatchTaskPublisher</string>
+                  <string>hudson.plugins.sonar.SonarPublisher</string>
+                  <string>hudson.tasks.ArtifactArchiver</string>
+                  <string>hudson.tasks.BuildTrigger</string>
+                  <string>hudson.tasks.Fingerprinter</string>
+                  <string>hudson.tasks.JavadocArchiver</string>
+                  <string>hudson.tasks.Mailer</string>
+                  <string>hudson.tasks.junit.JUnitResultArchiver</string>
+                  <string>hudson.tasks.test.AggregatedTestResultPublisher</string>
+                  <string>jenkins.plugins.publish_over_cifs.CifsPromotionPublisherPlugin</string>
+                  <string>jenkins.plugins.publish_over_cifs.CifsPublisherPlugin</string>
+                  <string>org.jenkins_ci.plugins.flexible_publish.FlexiblePublisher</string>
+                  <string>org.jenkinsci.plugins.nexus.NexusTaskPublisher</string>
+                  <string>org.jenkinsci.plugins.stashNotifier.StashNotifier</string>
+                  <string>stashpullrequestbuilder.stashpullrequestbuilder.StashPostBuildComment</string>
+                </publisherWhitelist>
+              </jenkins.branch.UntrustedBranchProperty>
+            </a>
+          </properties>
+        </strategy>
+      </jenkins.branch.BranchSource>
+    </data>
+  </sources>
+  <factory>
+    <strategy class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
+  </factory>
+  <jdk>JDK 1.8</jdk>
+  <actions/>
+  <description>Workflow demo&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <keepDependencies>false</keepDependencies>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <concurrentBuild>false</concurrentBuild>
+  <canRoam>true</canRoam>
+  <logRotator>
+    <daysToKeep>7</daysToKeep>
+    <numToKeep>5</numToKeep>
+    <artifactDaysToKeep>-1</artifactDaysToKeep>
+    <artifactNumToKeep>-1</artifactNumToKeep>
+  </logRotator>
+  <scm class="hudson.scm.NullSCM"/>
+  <publishers/>
+  <buildWrappers/>
+</org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject>
