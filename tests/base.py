@@ -149,6 +149,18 @@ class BaseTestCase(testtools.TestCase):
 
         return jjb_config
 
+    def _assert_yaml2xml(self, yaml_file, xml_file):
+
+        yaml_file = os.path.join(self.fixtures_path, yaml_file)
+        xml_file = os.path.join(self.fixtures_path, xml_file)
+
+        console_out = io.BytesIO()
+        with mock.patch('sys.stdout', console_out):
+            args = ['--conf', self.default_config_file, 'test', yaml_file]
+            self.execute_jenkins_jobs_with_args(args)
+        xml_content = io.open(xml_file, 'r', encoding='utf-8').read()
+        self.assertEqual(console_out.getvalue().decode('utf-8'), xml_content)
+
 
 class BaseScenariosTestCase(testscenarios.TestWithScenarios, BaseTestCase):
 

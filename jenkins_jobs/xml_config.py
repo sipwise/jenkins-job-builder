@@ -93,8 +93,8 @@ class XmlJobGenerator(object):
                                           % kind)
 
     def _gen_xml(self, xml, data):
+
         for module in self.registry.modules:
-            if hasattr(module, 'gen_xml'):
                 module.gen_xml(xml, data)
 
 
