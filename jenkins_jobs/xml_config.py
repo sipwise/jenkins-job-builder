@@ -84,6 +84,8 @@ class XmlJobGenerator(object):
                 group='jenkins_jobs.projects', name=kind):
             Mod = ep.load()
             mod = Mod(self.registry)
+            if hasattr(mod, 'module_blacklist'):
+                data['module_blacklist'] = mod.module_blacklist
             xml = mod.root_xml(data)
             self._gen_xml(xml, data)
             job = XmlJob(xml, data['name'])
@@ -93,8 +95,18 @@ class XmlJobGenerator(object):
                                           % kind)
 
     def _gen_xml(self, xml, data):
+
+        def fullname(module):
+            return module.__class__.__module__ + '.' + \
+                module.__class__.__name__
+
         for module in self.registry.modules:
-            if hasattr(module, 'gen_xml'):
+            if fullname(module) not in data.get('module_blacklist', []) and \
+                    hasattr(module, 'module_blacklist'):
+                data['module_blacklist'].union(module.module_blacklist)
+        for module in self.registry.modules:
+            if fullname(module) not in data.get('module_blacklist', []) and \
+                    hasattr(module, 'gen_xml'):
                 module.gen_xml(xml, data)
 
 
