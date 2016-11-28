@@ -1,0 +1,46 @@
+- workflow_job_defaults: &workflow_job_defaults
+    name: 'workflow_job_defaults'
+    project-type: multibranch
+    disabled: false
+    logrotate:
+        daysToKeep: 7
+        numToKeep: 5
+        artifactDaysToKeep: -1
+        artifactNumToKeep: -1
+
+- job-template:
+    name: '{name}-{workflowComponentId}-demo-mb'
+    description: 'Workflow demo'
+    <<: *workflow_job_defaults
+    timer-trigger: "@midnight"
+    periodic-folder-trigger:
+      interval: 'H H * * *'
+      spec: '86400000'
+    prune-dead-branches: True
+    number-to-keep: '10'
+    days-to-keep: '10'
+    scm:
+        - gerrit:
+            url: 'https://review.gerrithub.io/johndoe/foo'
+        - git:
+            url: 'https://example.com/jonhndoe/{workflowComponentId}.git'
+            credentials-id: 'secret'
+        - github:
+            repo: 'foo'
+            repo-owner: 'johndoe'
+            scan-credentials-id: 'secret'
+        - bitbucket:
+            repo-owner: 'SANDBOX'
+            repo: 'test'
+            scan-credentials-id: 'secret'
+
+- job-group:
+    name: '{name}-workflow'
+    jobs:
+        - '{name}-{workflowComponentId}-demo-mb':
+
+- project:
+    name: rnd
+    jobs:
+        - '{name}-workflow':
+            workflowComponentId: keep-frontend
