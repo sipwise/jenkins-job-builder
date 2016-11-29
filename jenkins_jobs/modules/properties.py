@@ -237,6 +237,8 @@ def throttle(registry, xml_parent, data):
     :arg list categories: multiproject throttle categories
     :arg bool matrix-builds: throttle matrix master builds (default true)
     :arg bool matrix-configs: throttle matrix config builds (default false)
+    :arg str parameters-limit: prevent jobs with matching parameters from
+         running concurrently. (optional)
 
     Example:
 
@@ -273,6 +275,11 @@ def throttle(registry, xml_parent, data):
         data.get('matrix-builds', True)).lower()
     XML.SubElement(matrixopt, 'throttleMatrixConfigurations').text = str(
         data.get('matrix-configs', False)).lower()
+
+    parameters_limit = str(data.get('parameters-limit', ''))
+    if parameters_limit != '':
+        XML.SubElement(throttle, 'limitOneJobWithMatchingParams').text = 'true'
+        XML.SubElement(throttle, 'paramsToUseForLimit').text = parameters_limit
 
 
 def sidebar(registry, xml_parent, data):
