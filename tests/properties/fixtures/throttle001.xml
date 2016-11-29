@@ -15,6 +15,8 @@
         <throttleMatrixBuilds>false</throttleMatrixBuilds>
         <throttleMatrixConfigurations>true</throttleMatrixConfigurations>
       </matrixOptions>
+      <limitOneJobWithMatchingParams>false</limitOneJobWithMatchingParams>
+      <paramsToUseForLimit/>
     </hudson.plugins.throttleconcurrents.ThrottleJobProperty>
   </properties>
 </project>
