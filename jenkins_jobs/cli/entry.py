@@ -86,6 +86,7 @@ class JenkinsJobs(object):
         self._set_config(self.jjb_config.builder, 'ignore_cache')
         self._set_config(self.jjb_config.builder, 'flush_cache')
         self._set_config(self.jjb_config.yamlparser, 'allow_empty_variables')
+        self._set_config(self.jjb_config.yamlparser, 'allow_duplicates')
         self._set_config(self.jjb_config.jenkins, 'user')
         self._set_config(self.jjb_config.jenkins, 'password')
 

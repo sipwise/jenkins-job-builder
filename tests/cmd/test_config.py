@@ -91,8 +91,8 @@ class TestConfigs(CmdTestsBase):
         self.assertEqual(jjb_config.jenkins['password'], "jenkins_password")
         self.assertEqual(jjb_config.builder['ignore_cache'], True)
         self.assertEqual(jjb_config.builder['flush_cache'], True)
-        self.assertEqual(
-            jjb_config.yamlparser['allow_empty_variables'], True)
+        self.assertEqual(jjb_config.yamlparser['allow_empty_variables'], True)
+        self.assertEqual(jjb_config.yamlparser['allow_duplicates'], True)
 
     def test_config_options_overriden_by_cli(self):
         """
@@ -100,7 +100,8 @@ class TestConfigs(CmdTestsBase):
         when non of the global CLI options are set.
         """
         args = ['--user', 'myuser', '--password', 'mypassword',
-                '--ignore-cache', '--flush-cache', '--allow-empty-variables',
+                '--ignore-cache', '--flush-cache',
+                '--allow-empty-variables', '--allow-duplicates',
                 'test', 'dummy.yaml']
         jenkins_jobs = entry.JenkinsJobs(args)
         jjb_config = jenkins_jobs.jjb_config
@@ -108,8 +109,8 @@ class TestConfigs(CmdTestsBase):
         self.assertEqual(jjb_config.jenkins['password'], "mypassword")
         self.assertEqual(jjb_config.builder['ignore_cache'], True)
         self.assertEqual(jjb_config.builder['flush_cache'], True)
-        self.assertEqual(
-            jjb_config.yamlparser['allow_empty_variables'], True)
+        self.assertEqual(jjb_config.yamlparser['allow_empty_variables'], True)
+        self.assertEqual(jjb_config.yamlparser['allow_duplicates'], True)
 
     @mock.patch('jenkins_jobs.cli.subcommand.update.JenkinsManager')
     def test_update_timeout_not_set(self, jenkins_mock):

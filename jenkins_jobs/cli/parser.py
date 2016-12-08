@@ -73,6 +73,13 @@ def create_parser():
         '--password', '-p',
         help="Password or API token to use for authenticating towards Jenkins."
         " This overrides the password specified in the configuration file.")
+    parser.add_argument(
+        '--allow-duplicates',
+        action='store_true',
+        dest='allow_duplicates',
+        default=None,
+        help="Don\'t abort when a duplicate macrio, template, job-group "
+        "or job name is found")
 
     subparser = parser.add_subparsers(
         dest='command',

@@ -131,6 +131,7 @@ class JJBConfig(object):
         self.plugins_info = None
         self.timeout = builder._DEFAULT_TIMEOUT
         self.allow_empty_variables = None
+        self.allow_duplicates = None
 
         self.jenkins = defaultdict(None)
         self.builder = defaultdict(None)
@@ -252,11 +253,11 @@ class JJBConfig(object):
         self.yamlparser['include_path'] = path
 
         # allow duplicates?
-        allow_duplicates = False
-        if config and config.has_option('job_builder', 'allow_duplicates'):
-            allow_duplicates = config.getboolean('job_builder',
-                                                 'allow_duplicates')
-        self.yamlparser['allow_duplicates'] = allow_duplicates
+        self.yamlparser['allow_duplicates'] = (
+            self.allow_duplicates or
+            config and config.has_section('job_builder') and
+            config.has_option('job_builder', 'allow_duplicates') and
+            config.getboolean('job_builder', 'allow_duplicates'))
 
         # allow empty variables?
         self.yamlparser['allow_empty_variables'] = (
