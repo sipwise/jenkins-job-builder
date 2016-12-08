@@ -17,13 +17,20 @@
 import xml.etree.ElementTree as XML
 
 
-def add_nonblank_xml_subelement(parent, tag, value):
+def add_nonblank_xml_subelement(parent, data, mapping):
     """
     Adds an XML SubElement with the name tag to parent if value is a non-empty
     string
     """
-    if value is not None and value != '':
-        XML.SubElement(parent, tag).text = value
+    for elem in mapping:
+        (optname, tag, value) = elem
+        value = data.get(optname, value)
+
+        if type(value) == bool:
+            value = str(value).lower()
+
+        if value is not None and value != '':
+            XML.SubElement(parent, tag).text = value
 
 
 class Base(object):
