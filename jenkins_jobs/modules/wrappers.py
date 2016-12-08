@@ -934,15 +934,14 @@ def inject(registry, xml_parent, data):
     """
     eib = XML.SubElement(xml_parent, 'EnvInjectBuildWrapper')
     info = XML.SubElement(eib, 'info')
-    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
-        info, 'propertiesFilePath', data.get('properties-file'))
-    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
-        info, 'propertiesContent', data.get('properties-content'))
-    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
-        info, 'scriptFilePath', data.get('script-file'))
-    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
-        info, 'scriptContent', data.get('script-content'))
-    XML.SubElement(info, 'loadFilesFromMaster').text = 'false'
+    info_mapping = [
+        ('properties-file', 'propertiesFilePath', ''),
+        ('properties-content', 'propertiesContent', ''),
+        ('script-file', 'scriptFilePath', ''),
+        ('script-content', 'scriptContent', ''),
+        ('load-from-master', 'loadFilesFromMaster', False),
+    ]
+    jenkins_jobs.modules.base.add_nonblank_xml_subelement(info, data, info_mapping)
 
 
 def inject_ownership_variables(registry, xml_parent, data):
@@ -1016,8 +1015,10 @@ def env_file(registry, xml_parent, data):
     """
     eib = XML.SubElement(xml_parent,
                          'hudson.plugins.envfile.EnvFileBuildWrapper')
-    jenkins_jobs.modules.base.add_nonblank_xml_subelement(
-        eib, 'filePath', data.get('properties-file'))
+    mapping = [
+        ('properties-file', 'filePath', ''),
+    ]
+    jenkins_jobs.modules.base.add_nonblank_xml_subelement(eib, data, mapping)
 
 
 def env_script(registry, xml_parent, data):
