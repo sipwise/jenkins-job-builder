@@ -522,3 +522,19 @@ def convert_mapping_to_xml(parent, data, mapping, fail_required=False):
             XML.SubElement(parent, xmlname).text = str(valid_dict[val])
         else:
             XML.SubElement(parent, xmlname).text = str(val)
+
+
+def convert_mapping_to_xml_exclude_empty(parent, data, mapping):
+    """
+    Adds an XML SubElement with the name tag to parent if value is a non-empty
+    string
+    """
+    for elem in mapping:
+        (optname, tag, value) = elem
+        value = data.get(optname, value)
+
+        if type(value) == bool:
+            value = str(value).lower()
+
+        if value is not None and value != '':
+            XML.SubElement(parent, tag).text = value
