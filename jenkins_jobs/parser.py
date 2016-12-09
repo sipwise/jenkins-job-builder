@@ -71,6 +71,10 @@ def combination_matches(combination, match_combinations):
     return False
 
 
+class VerbatimString(str):
+    verbatim = True
+
+
 class YamlParser(object):
     def __init__(self, jjb_config=None):
         self.data = {}
@@ -337,6 +341,7 @@ class YamlParser(object):
 
         for values in itertools.product(*dimensions):
             params = copy.deepcopy(project)
+            params['template-name'] = VerbatimString(template_name)
             params = self._applyDefaults(params, template)
 
             try:
@@ -373,7 +378,6 @@ class YamlParser(object):
                 if key not in params:
                     params[key] = template[key]
 
-            params['template-name'] = template_name
             expanded = deep_format(
                 template, params,
                 self.jjb_config.yamlparser['allow_empty_variables'])
