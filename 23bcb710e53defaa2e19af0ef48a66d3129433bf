@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_0a036b0e",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2016-12-13T18:59:36Z",
+      "side": 1,
+      "message": "I don\u0027t see an implementation for description ?",
+      "revId": "23bcb710e53defaa2e19af0ef48a66d3129433bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
