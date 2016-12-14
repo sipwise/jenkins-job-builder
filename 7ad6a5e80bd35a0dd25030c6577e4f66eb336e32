@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_8cba2422",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3276,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2016-12-14T06:41:06Z",
+      "side": 1,
+      "message": "Should this be required? Looking at the old code, regex would have been needed.",
+      "range": {
+        "startLine": 3276,
+        "startChar": 51,
+        "endLine": 3276,
+        "endChar": 61
+      },
+      "revId": "7ad6a5e80bd35a0dd25030c6577e4f66eb336e32",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
