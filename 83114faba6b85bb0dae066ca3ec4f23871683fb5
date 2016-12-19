@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6eadb0_cc5d2f4a",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2016-12-19T14:08:30Z",
+      "side": 0,
+      "message": "I think Allow Duplicates was False by default but this patch appears to be switching the default pattern to True. This seems like a behaviour change to me. Should we be keeping the original behaviour?",
+      "range": {
+        "startLine": 255,
+        "startChar": 8,
+        "endLine": 255,
+        "endChar": 32
+      },
+      "revId": "83114faba6b85bb0dae066ca3ec4f23871683fb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
