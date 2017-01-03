@@ -16,6 +16,24 @@
       "revId": "23bcb710e53defaa2e19af0ef48a66d3129433bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_8f2cbf4b",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 9060
+      },
+      "writtenOn": "2017-01-03T22:03:41Z",
+      "side": 1,
+      "message": "I believe the standard description field is handled in the base_param call below.",
+      "parentUuid": "1a6eadb0_0a036b0e",
+      "revId": "23bcb710e53defaa2e19af0ef48a66d3129433bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
