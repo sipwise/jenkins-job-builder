@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_c21e7562",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 681,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-01-04T17:33:13Z",
+      "side": 1,
+      "message": "Thinking about what the best way to handle this is, because we want to discourage the use of fail_required\u003dFalse unless absolutely necessary.\n\nThe reason is because \"Optional\" parameters in Jenkins are ambiguous. For example let\u0027s say you set a boolean setting to True, and then decide you don\u0027t want that setting anymore and remove it from the YAML definition. XML generated for that setting is not produced. In Jenkins sometimes this means keep the previously configured setting but intuitively you might think it should be switched to False.\n\nThis was why fail_required\u003dTrue was introduced and we\u0027ve been trying to switch all the plugins to use it and ensuring every setting has a default fallback setting.",
+      "range": {
+        "startLine": 681,
+        "startChar": 56,
+        "endLine": 681,
+        "endChar": 75
+      },
+      "revId": "fc318f27965280bba143c689a40fffdc73deac38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
