@@ -16,6 +16,24 @@
       "revId": "1bb41bfa5ac13f0860b1a876cc8988933be3eae4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_a73d03bd",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1067,
+      "author": {
+        "id": 24756
+      },
+      "writtenOn": "2017-01-04T17:14:30Z",
+      "side": 1,
+      "message": "These two settings are configurable [1]. Is there any reason they were hardcoded to \u0027\u0027 originally? Should we change to data.get() for these too?\n\n[1]: https://plugins.jenkins.io/gradle",
+      "parentUuid": "ba5201f7_871c9c78",
+      "revId": "1bb41bfa5ac13f0860b1a876cc8988933be3eae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
