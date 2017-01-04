@@ -34,6 +34,24 @@
       "revId": "1bb41bfa5ac13f0860b1a876cc8988933be3eae4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_87f9df82",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1067,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-01-04T17:23:21Z",
+      "side": 1,
+      "message": "If they are configurable then please make them configurable in JJB as well. Part of this project will be to identify configurations that are lacking and implement them where necessary.\n\nI do not know why they were hardcoded before. Perhaps they were not configurable in previous versions of the plugin but produced XML output?",
+      "parentUuid": "ba5201f7_a73d03bd",
+      "revId": "1bb41bfa5ac13f0860b1a876cc8988933be3eae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
