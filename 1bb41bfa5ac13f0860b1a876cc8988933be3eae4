@@ -70,6 +70,24 @@
       "revId": "1bb41bfa5ac13f0860b1a876cc8988933be3eae4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_144a74ac",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1067,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-01-04T19:46:41Z",
+      "side": 1,
+      "message": "If they are removing it then we probably shouldn\u0027t make it configurable.\n\nthe last parameter in the mappings is the default value. So you would set something like:\n\n (\u0027build-file\u0027, \u0027buildFile\u0027, \u0027build.gradle\u0027),\n\nMake sense?",
+      "parentUuid": "ba5201f7_491f096c",
+      "revId": "1bb41bfa5ac13f0860b1a876cc8988933be3eae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
