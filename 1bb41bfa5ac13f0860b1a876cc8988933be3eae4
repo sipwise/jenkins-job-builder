@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_871c9c78",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1067,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-01-04T03:37:57Z",
+      "side": 1,
+      "message": "Can you confirm that these 2 settings are not configurable options in the Gradle plugin?\n\nSeems strange that one wouldn\u0027t be able to actually configure them.",
+      "revId": "1bb41bfa5ac13f0860b1a876cc8988933be3eae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
