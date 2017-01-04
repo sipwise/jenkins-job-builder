@@ -52,6 +52,24 @@
       "revId": "1bb41bfa5ac13f0860b1a876cc8988933be3eae4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_491f096c",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1067,
+      "author": {
+        "id": 24756
+      },
+      "writtenOn": "2017-01-04T19:20:32Z",
+      "side": 1,
+      "message": "I don\u0027t know what to say but they are removing support to collect description from UI in v1.26 [1].\n\nDefault value for buildFile is build.gradle. I\u0027m not sure how to specify this in the YAML/XML, any issues about path?\n\n[1]: https://github.com/jenkinsci/gradle-plugin/blob/master/README.md#release-notes",
+      "parentUuid": "ba5201f7_87f9df82",
+      "revId": "1bb41bfa5ac13f0860b1a876cc8988933be3eae4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
