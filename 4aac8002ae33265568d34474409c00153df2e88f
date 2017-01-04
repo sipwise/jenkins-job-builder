@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_84a64f0e",
+        "filename": "jenkins_jobs/cli/parser.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2017-01-04T09:25:54Z",
+      "side": 1,
+      "message": "typo. macro.",
+      "range": {
+        "startLine": 81,
+        "startChar": 44,
+        "endLine": 81,
+        "endChar": 50
+      },
+      "revId": "4aac8002ae33265568d34474409c00153df2e88f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
