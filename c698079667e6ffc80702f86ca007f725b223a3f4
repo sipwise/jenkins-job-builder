@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_e8388cf0",
+        "filename": "jenkins_jobs/cache.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1297
+      },
+      "writtenOn": "2017-01-05T18:20:42Z",
+      "side": 1,
+      "message": "It\u0027s usually better to do this explicitly, just FYI, not really sure it matters for jjb, just saying.",
+      "revId": "c698079667e6ffc80702f86ca007f725b223a3f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
