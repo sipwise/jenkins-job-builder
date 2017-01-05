@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_ed38b03f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3277,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-01-05T10:40:47Z",
+      "side": 1,
+      "message": "Previously this was optional, it\u0027s not clear that it should be changed to required?",
+      "revId": "1ce21a2969e1768b23bbd3579db961414b045ce5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

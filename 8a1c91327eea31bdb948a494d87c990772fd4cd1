@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_0d2974e6",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3295,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-01-05T10:40:47Z",
+      "side": 0,
+      "message": "Note that this tests whether the item exists before accessing directly, so it is optional.",
+      "revId": "8a1c91327eea31bdb948a494d87c990772fd4cd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
