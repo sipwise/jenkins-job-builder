@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_79210d9f",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3547,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-01-05T10:34:19Z",
+      "side": 1,
+      "message": "Code below treats both uri and credentials-id as optional. Should align so the code and docstring are consistent. Don\u0027t mind which way, just good to have it consistent.",
+      "revId": "5c1976d7d1c6a067e18f2a4e7732e25edaf4e3ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_b93b75d0",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3550,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-01-05T10:34:19Z",
+      "side": 1,
+      "message": "Same as above for url.",
+      "revId": "5c1976d7d1c6a067e18f2a4e7732e25edaf4e3ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_f94c1d72",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3553,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-01-05T10:34:19Z",
+      "side": 1,
+      "message": "If an empty tag is provided for credentials-id, does it cause an issue with usage of either of the above two settings?\n\nJust thinking it might be neater to be able to convert these to also use the mapping method, possibly by adding additional separate mapping arrays for these. However that could be done in a separate patch.",
+      "revId": "5c1976d7d1c6a067e18f2a4e7732e25edaf4e3ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
