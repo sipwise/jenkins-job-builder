@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_a92d9ca9",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1071,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2017-01-06T02:08:21Z",
+      "side": 1,
+      "message": "I think this is an unintended change, as \u0027tasks\u0027 was a required variable looking at the old code and documentation.",
+      "range": {
+        "startLine": 1071,
+        "startChar": 27,
+        "endLine": 1071,
+        "endChar": 29
+      },
+      "revId": "078ff231b7daa98237e199573df815579b24b894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
