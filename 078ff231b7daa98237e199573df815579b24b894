@@ -46,6 +46,30 @@
       "revId": "078ff231b7daa98237e199573df815579b24b894",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_bf9a2a6c",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1071,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-01-06T03:28:46Z",
+      "side": 1,
+      "message": "Umesh, I\u0027m not sure I understand what you mean here. If the user does not provide this setting then don\u0027t we want it to run the default tasks as mentioned in the documentation?\n\n\nI think that blank is a perfectly valid default setting here in my opinion.\n\n\nOn the other hand if we want to maintain the functionality as the previously coded then we should actually set this value to None with fail_required\u003dTrue as this will force \"tasks\" to be a required setting rather than forcing a default here.",
+      "parentUuid": "ba5201f7_e4b7c9d5",
+      "range": {
+        "startLine": 1071,
+        "startChar": 27,
+        "endLine": 1071,
+        "endChar": 29
+      },
+      "revId": "078ff231b7daa98237e199573df815579b24b894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
