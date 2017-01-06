@@ -1569,15 +1569,7 @@ def ivy(registry, xml_parent, data):
                 ('download-artifacts', 'downloadArtifacts', True),
                 ('enable-concurrent', 'enableConcurrentBuild', False),
                 ('cron', 'spec', '')]
-    for prop in mappings:
-        opt, xmlopt, default_val = prop[:3]
-        val = data.get(opt, default_val)
-        if val is not None:
-            if type(val) == bool:
-                val = str(val).lower()
-            if type(val) == list:
-                val = ";".join(val)
-            XML.SubElement(it, xmlopt).text = val
+    convert_mapping_to_xml(it, data, mappings, fail_required=True)
     label = data.get('label')
     XML.SubElement(it, 'labelRestriction').text = str(bool(label)).lower()
     if label:
