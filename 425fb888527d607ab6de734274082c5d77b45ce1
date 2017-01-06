@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba5201f7_1e02430a",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1566,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2017-01-06T16:34:08Z",
+      "side": 1,
+      "message": "This attribute type is list, convert_mapping_to_xml can\u0027t handle list.",
+      "revId": "425fb888527d607ab6de734274082c5d77b45ce1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
