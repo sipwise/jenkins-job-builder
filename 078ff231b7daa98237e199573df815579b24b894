@@ -70,6 +70,30 @@
       "revId": "078ff231b7daa98237e199573df815579b24b894",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba5201f7_7f6c4235",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1071,
+      "author": {
+        "id": 24756
+      },
+      "writtenOn": "2017-01-06T03:35:23Z",
+      "side": 1,
+      "message": "I guess I mistook [] for None, for keeping the original functionality.",
+      "parentUuid": "ba5201f7_bf9a2a6c",
+      "range": {
+        "startLine": 1071,
+        "startChar": 27,
+        "endLine": 1071,
+        "endChar": 29
+      },
+      "revId": "078ff231b7daa98237e199573df815579b24b894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
