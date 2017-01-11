@@ -1,0 +1,10 @@
+scm:
+  - dimensions:
+      project: myProduct:myProject
+      folders:
+        - src
+        - test
+      exclude:
+        - excluded_dir
+
+
