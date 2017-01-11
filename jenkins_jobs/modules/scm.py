@@ -1256,6 +1256,129 @@ def url(registry, xml_parent, data):
         data.get('clear-workspace', False)).lower()
 
 
+def dimensions(registry, xml_parent, data):
+    """yaml: dimensions
+
+    Specifies the Dimensions SCM repository for this job.
+    Requires Jenkins :jenkins-wiki:`Dimensions Plugin <Dimensions+Plugin>`.
+
+    :arg str project: Project name of format PRODUCT_ID:PROJECT_NAME (required)
+    :arg str permissions: Default Permissions for updated files
+        (default: DEFAULT)
+        
+        :Permissions:
+            * **DEFAULT**
+            * **READONLY**
+            * **WRITABLE**
+    :arg str eol: End of line (default: DEFAULT)
+
+        :End of line:
+            * **DEFAULT**
+            * **UNIX**
+            * **WINDOWS**
+            * **UNCHANGED**
+    :arg list folders: Folders to monitor (default /)
+    :arg list exclude: Paths to exclude from monitor
+    :arg str username: Repository username for this job
+    :arg str password: Repository password for this job
+    :arg str server: Dimensions server for this job
+    :arg str database: Dimensions database for this job.
+        Format must be database@dsn
+    :arg bool update: Use update
+    :arg bool clear-workspace: Clear workspace prior to build
+    :arg bool force-build: Force build even if the repository SCM checkout
+        operation fails
+    :arg bool overwrite-modified: Overwrite files in worspace from
+        repository files
+    :arg bool expand-vars: Expand substitution variables
+    :arg bool no-metadata: Checkout files with no metadata
+    :arg bool maintain-timestamp: Maintain file timestamp from Dimensions
+    :arg bool slave-checkout: Force slave based checkout
+    :arg str timezone: Server timezone
+    :arg str web-url: Dimensions Web URL
+
+    Examples:
+
+    .. literalinclude:: /../../tests/scm/fixtures/dimensions001.yaml
+       :language: yaml
+
+    """
+
+    scm = XML.SubElement(
+        xml_parent,
+        'scm', {'class': 'hudson.plugins.dimensionsscm.DimensionsSCM'})
+
+    # Check for project name
+    if 'project' not in data:
+        raise JenkinsJobsException("You must enter a project name")
+
+    # Check for valid permission
+    perm = ['DEFAULT', 'READONLY', 'WRITABLE']
+    if 'permissions' in data:
+        if data['permissions'].upper() not in perm:
+            raise JenkinsJobsException(data['permissions'].upper() + ' is not '
+                                       'a valid permission')
+        else:
+            data['permissions'] = data['permissions'].upper()
+
+    # Check for valid end of line
+    eol = ['DEFAULT', 'UNIX', 'WINDOWS', 'UNCHANGED']
+    if 'eol' in data:
+        if data['eol'].upper() not in eol:
+            raise JenkinsJobsException(data['eol'].upper() + ' is not a valid'
+                                       ' end of line')
+        else:
+            data['eol'] = data['eol'].upper()
+
+    mapping = [
+        # option, xml name, default value (text), attributes (hard coded)
+        ('project', 'project', ''),
+        ('permissions', 'permissions', 'DEFAULT'),
+        ('eol', 'eol', 'DEFAULT'),
+        ('update', 'canJobUpdate', False),
+        ('clear-workspace', 'canJobDelete', False),
+        ('force-build', 'canJobForce', False),
+        ('overwrite-modified', 'canJobRevert', False),
+        ('expand-vars', 'canJobExpand', False),
+        ('no-metadata', 'canJobNoMetadata', False),
+        ('maintain-timestamp', 'canJobNoTouch', False),
+        ('slave-checkout', 'forceAsSlave', False),
+    ]
+    convert_mapping_to_xml(scm, data, mapping, fail_required=True)
+
+    # Folders to monitor. Default '/'
+    folders = XML.SubElement(scm, 'folders')
+    if 'folders' in data:
+        for folder in data['folders']:
+            XML.SubElement(folders, 'string').text = folder
+    else:
+        XML.SubElement(folders, 'string').text = '/'
+
+    # Excluded paths
+    exclude = XML.SubElement(scm, 'pathsToExclude')
+    if 'exclude' in data:
+        for exc in data['exclude']:
+            XML.SubElement(exclude, 'string').text = exc
+
+    if 'username' in data:
+        XML.SubElement(scm, 'jobUserName').text = data['username']
+
+    if 'password' in data:
+        XML.SubElement(scm, 'jobPasswd').text = data['password']
+
+    if 'server' in data:
+        XML.SubElement(scm, 'jobServer').text = data['server']
+
+    if 'database' in data:
+        XML.SubElement(scm, 'jobDatabase').text = data['database']
+
+    if 'timezone' in data:
+        XML.SubElement(scm, 'jobTimeZone').text = data['timezone']
+
+    if 'web-url' in data:
+        XML.SubElement(scm, 'jobWebUrl').text = data['web-url']
+
+
 class SCM(jenkins_jobs.modules.base.Base):
     sequence = 30
 
