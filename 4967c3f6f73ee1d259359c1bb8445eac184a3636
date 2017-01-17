@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a3c09a3_f7ea1d0e",
+        "filename": "jenkins_jobs/modules/base.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-01-17T17:27:27Z",
+      "side": 1,
+      "message": "Interesting. I wasn\u0027t aware until now that this function was being used. As I understand it this is similar to the convert_mapping_to_xml function except instead of setting  things to an empty string it allows XML to be excluded in the final result.\n\nMy suggestion here would be to move this to the helpers module and maybe rename it to \"convert_mapping_to_xml_exclude_empty()\". This will make this function easier to find and use imo.",
+      "range": {
+        "startLine": 20,
+        "startChar": 4,
+        "endLine": 20,
+        "endChar": 31
+      },
+      "revId": "4967c3f6f73ee1d259359c1bb8445eac184a3636",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
