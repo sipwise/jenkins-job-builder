@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a3c09a3_a56cde35",
+        "filename": "tests/wrappers/fixtures/rvm/version-0.4/rvm-0.4.plugins_info.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-01-17T17:18:05Z",
+      "side": 1,
+      "message": "Rather than having it mapped to another file why not just put the contents of that file directly here so that there is less redirection?",
+      "revId": "d56daf91804a508eeaa78b2e0edcafc50e04fa88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
