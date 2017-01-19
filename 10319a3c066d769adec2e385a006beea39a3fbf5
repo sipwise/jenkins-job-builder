@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_eb6f2990",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-01-19T16:14:54Z",
+      "side": 1,
+      "message": "All of this is already defined in jenkins_jobs/modules/hudson_model.py so I think would be better to reuse from there instead.",
+      "revId": "10319a3c066d769adec2e385a006beea39a3fbf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_6b309957",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6478,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-01-19T16:14:54Z",
+      "side": 1,
+      "message": "These will trigger KeyErrors if not defined, rather than returning None, so need to use \u0027if sound_event.get(..., None) is None\u0027 instead.\n\nI\u0027d also be tempted to just use \u0027try/except KeyError\u0027 and throw MissingAttributeError rather than testing directly.",
+      "range": {
+        "startLine": 6475,
+        "startChar": 8,
+        "endLine": 6478,
+        "endChar": 55
+      },
+      "revId": "10319a3c066d769adec2e385a006beea39a3fbf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_baa00c92",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6483,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-01-19T16:14:54Z",
+      "side": 1,
+      "message": "Creating a function for a single call doesn\u0027t really help to my mind, also there\u0027s not enough inside this function to make it clear it makes sense to separate out.",
+      "revId": "10319a3c066d769adec2e385a006beea39a3fbf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_3ac17ce5",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6507,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-01-19T16:14:54Z",
+      "side": 1,
+      "message": "We can replace this if statement check by amending the for loop to the following:\n\n for sound_event in (data.get(\u0027sound-events\u0027) or []):\n     ...\n\nThe use of \u0027or\u0027 ensures that if a None value is returned or \u0027sound-events\u0027 is not present, an empty list \u0027[]\u0027 is used by default.",
+      "range": {
+        "startLine": 6506,
+        "startChar": 3,
+        "endLine": 6507,
+        "endChar": 56
+      },
+      "revId": "10319a3c066d769adec2e385a006beea39a3fbf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
