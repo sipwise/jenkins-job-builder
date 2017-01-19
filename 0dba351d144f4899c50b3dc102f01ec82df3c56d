@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_da34f8df",
+        "filename": "jenkins_jobs/modules/reporters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-01-19T16:06:36Z",
+      "side": 1,
+      "message": "Looks like hudson.maven.reporters.Mailer was a typo, as I\u0027ve been unable to locate any class by that name, appears it was always hudson.maven.reporters.MavenMailer, and I\u0027m amazed that any part of this definition ever worked",
+      "revId": "0dba351d144f4899c50b3dc102f01ec82df3c56d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
