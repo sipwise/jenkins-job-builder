@@ -1,0 +1,205 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a3905b3_b83c59e3",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1296,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-01-20T15:23:36Z",
+      "side": 1,
+      "message": "These booleans have defaults of false defined below. Please add to the docs to mention the defaults are false.",
+      "range": {
+        "startLine": 1287,
+        "startChar": 0,
+        "endLine": 1296,
+        "endChar": 56
+      },
+      "revId": "2b24b5fe752772162413456891ee128d8c88738d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_a3d7ca21",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1303,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-01-20T15:23:36Z",
+      "side": 1,
+      "message": "Can we create 2 examples instead. One called dimensions-minimal.yaml that has the absolute minimum YAML to test (setting only required fields and letting the defaults take over).\n\nThe 2nd test dimensions-full.yaml configures every possible setting in this plugin to a non-default value to ensure that the values we\u0027re providing are getting configured.",
+      "range": {
+        "startLine": 1302,
+        "startChar": 0,
+        "endLine": 1303,
+        "endChar": 22
+      },
+      "revId": "2b24b5fe752772162413456891ee128d8c88738d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_58c53559",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1313,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-01-20T15:23:36Z",
+      "side": 1,
+      "message": "With the fail_required\u003dTrue configured below for convert_mapping_to_xml function. we do not need this if statement. (See below for more details)",
+      "revId": "2b24b5fe752772162413456891ee128d8c88738d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_98f23d6e",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1322,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-01-20T15:23:36Z",
+      "side": 1,
+      "message": "Keep the perm \u003d [] list but everything else isn\u0027t really needed. If we pass a list into the 4rd parameter of the mapping below it will throw the appropriate error if the user provides an invalid option.",
+      "range": {
+        "startLine": 1315,
+        "startChar": 0,
+        "endLine": 1322,
+        "endChar": 61
+      },
+      "revId": "2b24b5fe752772162413456891ee128d8c88738d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_f88a61be",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1331,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-01-20T15:23:36Z",
+      "side": 1,
+      "message": "Same as above, keep eol list and remove everything else. We can pass the list as a 4th option in the mapping below.",
+      "range": {
+        "startLine": 1324,
+        "startChar": 0,
+        "endLine": 1331,
+        "endChar": 45
+      },
+      "revId": "2b24b5fe752772162413456891ee128d8c88738d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_f8a421a7",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1335,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-01-20T15:23:36Z",
+      "side": 1,
+      "message": "Set this to None. With fail_required\u003dTrue, none will detect that the required field is missing and raise the appropriate error to let the user know they forgot to include a required field.",
+      "range": {
+        "startLine": 1335,
+        "startChar": 30,
+        "endLine": 1335,
+        "endChar": 33
+      },
+      "revId": "2b24b5fe752772162413456891ee128d8c88738d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_18ff2d35",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1336,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-01-20T15:23:36Z",
+      "side": 1,
+      "message": "Add a 4th parameter here passing in the perm list from above.",
+      "range": {
+        "startLine": 1336,
+        "startChar": 48,
+        "endLine": 1336,
+        "endChar": 50
+      },
+      "revId": "2b24b5fe752772162413456891ee128d8c88738d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_78bd9167",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1337,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-01-20T15:23:36Z",
+      "side": 1,
+      "message": "Add a 4th parameter here passing in the eol list from above.",
+      "range": {
+        "startLine": 1337,
+        "startChar": 32,
+        "endLine": 1337,
+        "endChar": 34
+      },
+      "revId": "2b24b5fe752772162413456891ee128d8c88738d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_03741e66",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1379,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-01-20T15:23:36Z",
+      "side": 1,
+      "message": "I assume this isn\u0027t in the mapping above because you want to ensure that these options do not get configured with a default value if the user does not pass it in?\n\nIn that case you can create a new separate mapping instead setting the 3rd parameter to None and passing using convert_mapping_to_xml with the fail_required\u003dFalse option. For example:\n\n optional_mapping \u003d [\n        # option, xml name, default value (text), attributes (hard coded)\n        (\u0027username\u0027, \u0027jobUserName\u0027, None),\n        (\u0027password\u0027, \u0027jobPasswd\u0027, None),\n        (\u0027server\u0027, \u0027jobServer\u0027, None),\n        (\u0027database\u0027, \u0027jobDatabase\u0027, None),\n        (\u0027timezone\u0027, \u0027jobTimeZone\u0027, None),\n        (\u0027web-url\u0027, \u0027jobWebUrl\u0027, None),\n    ]\n    convert_mapping_to_xml(scm, data, mapping, fail_required\u003dFalse)",
+      "range": {
+        "startLine": 1363,
+        "startChar": 0,
+        "endLine": 1379,
+        "endChar": 63
+      },
+      "revId": "2b24b5fe752772162413456891ee128d8c88738d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
