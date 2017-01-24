@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_dc3c2795",
+        "filename": "jenkins_jobs/modules/project_pipeline.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 13505
+      },
+      "writtenOn": "2017-01-24T15:38:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_08cde265",
+      "revId": "d3021f3193b453cb030892a9c17b99c92fa15d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_8891d249",
         "filename": "jenkins_jobs/modules/project_workflow.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2017-01-19T15:07:46Z",
       "side": 1,
       "message": "Should use logger.warning(..) as logger.warn(..) is deprecated for python 3.",
+      "revId": "d3021f3193b453cb030892a9c17b99c92fa15d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_2f6a93ee",
+        "filename": "jenkins_jobs/modules/project_workflow.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 13505
+      },
+      "writtenOn": "2017-01-24T15:38:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_8891d249",
       "revId": "d3021f3193b453cb030892a9c17b99c92fa15d52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5a3905b3_165cd07b",
+        "filename": "tests/yamlparser/fixtures/project_pipeline_template004.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13505
+      },
+      "writtenOn": "2017-01-24T15:38:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_c8391af4",
+      "revId": "d3021f3193b453cb030892a9c17b99c92fa15d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba5201f7_a8513638",
         "filename": "tests/yamlparser/fixtures/project_pipeline_template005.yaml",
         "patchSetId": 10
@@ -64,6 +118,24 @@
       "writtenOn": "2017-01-19T15:07:46Z",
       "side": 1,
       "message": "In a previous review is was indicated that pipeline-scm cannot take a list, yet this will essentially expand to a list when used below.\n\nI suspect this is because currently the macro is not expanded when being parsed by the code that processes pipeline-scm, but only after it is dispatched.\n\nA future plan to expand macros fully before passing to be mapped to the XML will run into problems here.",
+      "revId": "d3021f3193b453cb030892a9c17b99c92fa15d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a3905b3_5cc2f785",
+        "filename": "tests/yamlparser/fixtures/project_pipeline_template005.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 13505
+      },
+      "writtenOn": "2017-01-24T15:38:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba5201f7_a8513638",
       "revId": "d3021f3193b453cb030892a9c17b99c92fa15d52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
