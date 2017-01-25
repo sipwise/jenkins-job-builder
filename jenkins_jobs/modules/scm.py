@@ -371,10 +371,15 @@ def git(registry, xml_parent, data):
     if 'scm-name' in data:
         ext = XML.SubElement(exts_node, impl_prefix + 'ScmName')
         XML.SubElement(ext, 'name').text = str(data['scm-name'])
-    if 'shallow-clone' in data or 'timeout' in data:
+    if 'shallow-clone' in data or 'timeout' in data or 'no-tags' in data:
         clo = XML.SubElement(exts_node, impl_prefix + 'CloneOption')
         XML.SubElement(clo, 'shallow').text = str(
             data.get('shallow-clone', False)).lower()
+        if data.get('shallow-clone'):
+            if 'depth' in data:
+                XML.SubElement(clo, 'depth').text = str(data['depth'])
+        XML.SubElement(clo, 'noTags').text = str(
+            data.get('no-tags', False)).lower()
         if 'timeout' in data:
             XML.SubElement(clo, 'timeout').text = str(data['timeout'])
     if 'sparse-checkout' in data:
