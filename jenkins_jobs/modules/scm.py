@@ -381,8 +381,11 @@ def git(registry, xml_parent, data):
     )
     if any(key in data for key in clone_options):
         clo = XML.SubElement(exts_node, impl_prefix + 'CloneOption')
-        XML.SubElement(clo, 'shallow').text = str(
-            data.get('shallow-clone', False)).lower()
+        clone_mapping = [
+            ('shallow-clone', 'shallow', False),
+            ('depth', 'depth', 0)
+        ]
+        convert_mapping_to_xml(clo, data, clone_mapping, fail_required=True)
         if 'do-not-fetch-tags' in data:
             XML.SubElement(clo, 'noTags').text = str(
                 data.get('do-not-fetch-tags', False)).lower()
