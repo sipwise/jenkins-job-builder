@@ -22,6 +22,30 @@
       "revId": "fc318f27965280bba143c689a40fffdc73deac38",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a461143_e14bc557",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 681,
+      "author": {
+        "id": 23603
+      },
+      "writtenOn": "2017-01-26T09:25:45Z",
+      "side": 1,
+      "message": "I wonder if it would be a good idea to move only the options that would generate an empty tag to the optional_mapping.\n\nBecause that is the problem, as an empty tag still triggers the Repo plugin to generate the commandline option that requires an argument, but the argument is empty (I am not sure why, looking at the code an empty string should be converted to null and if the option is null).\n\nBut moving only the options with default value \"None\" to optional_mapping would still get you the behaviour that you described I think, right?\n\nI will upload a new patchset for this.",
+      "parentUuid": "ba5201f7_c21e7562",
+      "range": {
+        "startLine": 681,
+        "startChar": 56,
+        "endLine": 681,
+        "endChar": 75
+      },
+      "revId": "fc318f27965280bba143c689a40fffdc73deac38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
