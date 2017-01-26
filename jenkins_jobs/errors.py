@@ -30,6 +30,11 @@ class ModuleError(JenkinsJobsException):
                 data = frame.f_locals['data']
                 module_name = next(iter(data.keys()))
                 break
+            # XML generation done directly by class using root_xml
+            if co_name == 'root_xml':
+                data = frame.f_locals['data']
+                module_name = next(iter(data.keys()))
+                break
             frame = frame.f_back
             co_name = frame.f_code.co_name
 
