@@ -1,0 +1,8 @@
+publishers:
+  - mqtt:
+      brokerUrl: tcp://localhost:1883
+      topic: hello
+      message: world
+      qos: AT_MOST_ONCE
+      retainMessage: false
+      credentials-id: abcde
