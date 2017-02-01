@@ -294,6 +294,60 @@ def campfire(registry, xml_parent, data):
         XML.SubElement(room, 'campfire reference="../../campfire"')
 
 
+def mqtt(registry, xml_parent, data):
+    """yaml: mqtt
+    This plugin lets you send build notifications to a MQTT message queue.
+    Requires the :jenkins-wiki:`MQTT Notification Plugin
+    <MQTT+Notification+Plugin>`.
+
+    :arg str brokerUrl: the broker URL, as protocol://address:port
+    :arg str credentials-id: (optional) credentials to use to connect to
+    the broker
+    :arg str topic: the message topic (default is "jenkins/$PROJECT_URL")
+    :arg str message: the message itself (default is "$BUILD_RESULT")
+    :arg str qos: (optional) one of AT_MOST_ONCE, AT_LEAST_ONCE, or
+    EXACTLY_ONCE
+    :arg bool retain: (optional) whether to resend message or not when a
+    new client connects
+
+    Minimal Example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/mqtt-minimal.yaml
+       :language: yaml
+
+    Full Example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/mqtt-full.yaml
+       :language: yaml
+    """
+
+    mqtt = XML.SubElement(xml_parent,
+                          'jenkins.plugins.mqttnotification.MqttNotifier')
+    mqtt.set('plugin', 'mqtt-notification-plugin')
+
+    if not data.get('brokerUrl'):
+        raise JenkinsJobsException('Missing broker URL')
+    XML.SubElement(mqtt, 'brokerUrl').text = str(data.get('brokerUrl'))
+    if data.get('credentials-id'):
+        XML.SubElement(mqtt,
+                       'credentialsId').text = str(data.get('credentials-id'))
+    topic = XML.SubElement(mqtt, 'topic')
+    if data.get('topic'):
+        topic.text = str(data.get('topic'))
+    message = XML.SubElement(mqtt, 'message')
+    if data.get('message'):
+        message.text = str(data.get('message'))
+    qos_mapping = [
+        ('qos', 'qos', 'AT_MOST_ONCE', {'AT_MOST_ONCE': '0',
+                                        'AT_LEAST_ONCE': '1',
+                                        'EXACTLY_ONCE': '2'})
+    ]
+    helpers.convert_mapping_to_xml(
+        mqtt, data, qos_mapping)
+    XML.SubElement(
+        mqtt, 'retainMessage').text = str(data.get('retain', 'false')).lower()
+
+
 def codecover(registry, xml_parent, data):
     """yaml: codecover
     This plugin allows you to capture code coverage report from CodeCover.

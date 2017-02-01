@@ -1,0 +1,3 @@
+publishers:
+  - mqtt:
+      brokerUrl: tcp://localhost:1883
