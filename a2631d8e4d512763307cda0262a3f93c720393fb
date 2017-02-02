@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a461143_b3f83ec6",
+        "filename": "jenkins_jobs/errors.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2017-02-02T06:36:35Z",
+      "side": 1,
+      "message": "couldn\u0027t this be combined with the condition above it?\n\n\n  if co_name \u003d\u003d \u0027gen_xml\u0027 or co_name \u003d\u003d \u0027root_xml\u0027:",
+      "revId": "a2631d8e4d512763307cda0262a3f93c720393fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
