@@ -1,0 +1,7 @@
+properties:
+    - groovy-label:
+        script: "$LABEL_NAME"
+        sandbox: true
+        classpath:
+            - "file:/absolute-path-to/file.jar"
+            - "http://some.org/path-to/file.jar"
