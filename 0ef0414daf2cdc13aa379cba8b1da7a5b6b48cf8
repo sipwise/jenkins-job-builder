@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_b059d200",
+        "filename": "tests/publishers/fixtures/archive004.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-06T14:59:58Z",
+      "side": 1,
+      "message": "I would just update an existing test file to test case-sensitive option rather than creating yet another test.\n\nIdeally we should only have 2 test files:\n\n archive-minimal: absolute minimum configuration to get plugin working\n archive-full: configures every single option with a non-default setting.\n\nbut that can be fixed in a later patch.",
+      "range": {
+        "startLine": 7,
+        "startChar": 6,
+        "endLine": 7,
+        "endChar": 27
+      },
+      "revId": "0ef0414daf2cdc13aa379cba8b1da7a5b6b48cf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
