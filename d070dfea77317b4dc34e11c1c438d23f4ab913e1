@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_3d487787",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 878,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-06T00:41:51Z",
+      "side": 1,
+      "message": "Can you provide 2 examples.\n\n1) groovy-label-minimal.yaml configuring the absolute minimum configuration needed by this plugin.\n\n2) groovy-label-full.yaml: configuring every possible configuration in the plugin with a non-default value.\n\nThis allows us to ensure all the possible configurations as well as defaults are properly parsed.",
+      "range": {
+        "startLine": 878,
+        "startChar": 57,
+        "endLine": 878,
+        "endChar": 69
+      },
+      "revId": "d070dfea77317b4dc34e11c1c438d23f4ab913e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
