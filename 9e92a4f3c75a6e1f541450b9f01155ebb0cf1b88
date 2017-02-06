@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1a430d35_10daa678",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 898,
+      "author": {
+        "id": 25047
+      },
+      "writtenOn": "2017-02-06T14:59:21Z",
+      "side": 1,
+      "message": "I agree",
+      "parentUuid": "1a430d35_ed78e5c6",
+      "range": {
+        "startLine": 898,
+        "startChar": 28,
+        "endLine": 898,
+        "endChar": 31
+      },
+      "revId": "9e92a4f3c75a6e1f541450b9f01155ebb0cf1b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a430d35_2d5aed4f",
         "filename": "tests/properties/fixtures/groovy-label-minimal.yaml",
         "patchSetId": 7
