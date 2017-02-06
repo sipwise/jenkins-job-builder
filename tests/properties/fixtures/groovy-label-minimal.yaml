@@ -1,0 +1,3 @@
+properties:
+    - groovy-label:
+        script: "$LABEL_NAME"
