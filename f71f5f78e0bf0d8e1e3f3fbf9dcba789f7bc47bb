@@ -22,6 +22,30 @@
       "revId": "f71f5f78e0bf0d8e1e3f3fbf9dcba789f7bc47bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_b6de2a3d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 25047
+      },
+      "writtenOn": "2017-02-06T15:39:30Z",
+      "side": 1,
+      "message": "It would be short just remove \"add\" and leave only:\nSupport for ...",
+      "parentUuid": "1a430d35_3be94315",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 5
+      },
+      "revId": "f71f5f78e0bf0d8e1e3f3fbf9dcba789f7bc47bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
