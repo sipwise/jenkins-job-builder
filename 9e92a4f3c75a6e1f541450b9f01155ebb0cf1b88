@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_ed78e5c6",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 898,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-06T14:54:44Z",
+      "side": 1,
+      "message": "Is script really required?\n\nAccording to the docs it\u0027s required but here it\u0027s configuring a blank default. If having a blank groovy script produces a working configuration then I\u0027d update the docs to state that it\u0027s (default \u0027\u0027).",
+      "range": {
+        "startLine": 898,
+        "startChar": 28,
+        "endLine": 898,
+        "endChar": 31
+      },
+      "revId": "9e92a4f3c75a6e1f541450b9f01155ebb0cf1b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_2d5aed4f",
+        "filename": "tests/properties/fixtures/groovy-label-minimal.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-06T14:54:44Z",
+      "side": 1,
+      "message": "See my other comment. If script is not required than the minimal configuration here would be 2 lines:\n\n properties:\n     - groovy-label",
+      "range": {
+        "startLine": 3,
+        "startChar": 8,
+        "endLine": 3,
+        "endChar": 14
+      },
+      "revId": "9e92a4f3c75a6e1f541450b9f01155ebb0cf1b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
