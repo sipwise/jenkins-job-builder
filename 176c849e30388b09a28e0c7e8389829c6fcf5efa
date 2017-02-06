@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a430d35_f0d27aff",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-06T15:05:27Z",
+      "side": 1,
+      "message": "Thinking about this more I think we actually don\u0027t need this function. The existing convert_mapping_to_xml function already handles the same function as this one by configuring the parameter \"fail_required\u003dFalse\" and setting the default options field to \"None\".\n\nI think this will further simplify this patch.",
+      "range": {
+        "startLine": 527,
+        "startChar": 4,
+        "endLine": 527,
+        "endChar": 40
+      },
+      "revId": "176c849e30388b09a28e0c7e8389829c6fcf5efa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
