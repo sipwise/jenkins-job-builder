@@ -46,6 +46,30 @@
       "revId": "f71f5f78e0bf0d8e1e3f3fbf9dcba789f7bc47bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a430d35_3f5f660f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-06T17:52:40Z",
+      "side": 1,
+      "message": "You misunderstood. What I mean is instead of \"Added\" you should use \"Add\" it saves you 2 characters and is present-tense whereas \"Added\" is past tense.\n\nCommit messages has limited line space so Best Practice suggests using Present-tense to describe a commit message as it saves you some valuable column space.",
+      "parentUuid": "1a430d35_b6de2a3d",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 5
+      },
+      "revId": "f71f5f78e0bf0d8e1e3f3fbf9dcba789f7bc47bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
