@@ -199,9 +199,11 @@ def change_assembly_version(registry, xml_parent, data):
     cav_builder_tag = ('org.jenkinsci.plugins.changeassemblyversion.'
                        'ChangeAssemblyVersion')
     cav = XML.SubElement(xml_parent, cav_builder_tag)
-    XML.SubElement(cav, 'task').text = data.get('version', '1.0.0')
-    XML.SubElement(cav, 'assemblyFile').text = str(
-        data.get('assembly-file', 'AssemblyInfo.cs'))
+    mappings = [
+        ('version', 'task', '1.0.0'),
+        ('assembly-file', 'assemblyFile', 'AssemblyInfo.cs'),
+    ]
+    convert_mapping_to_xml(cav, data, mappings, fail_required=True)
 
 
 def fingerprint(registry, xml_parent, data):
