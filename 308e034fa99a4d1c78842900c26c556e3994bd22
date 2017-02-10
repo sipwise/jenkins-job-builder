@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa31d9ce_1fa3f79f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-10T00:49:53Z",
+      "side": 1,
+      "message": "Can you provide details on which options are required, which ones have defaults, and which ones are optional?\n\nAlso would be good to link to the test files for examples. My recommendation is 2 examples a minimal and a full each containing the absolute minimum configuration and another contain every possible configuration with a non-default setting.\n\n Example:\n\n    .. literalinclude::  /../../tests/publishers/fixtures/mqtt-minimal.yaml\n       :language: yaml\n    .. literalinclude::  /../../tests/publishers/fixtures/mqtt-full.yaml\n       :language: yaml",
+      "revId": "308e034fa99a4d1c78842900c26c556e3994bd22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_bf082b93",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-10T00:49:53Z",
+      "side": 1,
+      "message": "It would be good to use the convert_mapping_to_xml function (see example in codecover below) as it makes maintaining things a lot easier.\n\nThe helper function also supports an optional 4th parameter that allows you to pass a list or dictionary into it to check for invalid selection so you can use that to pass in the qos configuration too.",
+      "revId": "308e034fa99a4d1c78842900c26c556e3994bd22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
