@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa31d9ce_9ed7a2be",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-12T16:49:24Z",
+      "side": 1,
+      "message": "This change seems unnecessary to me nothing is changed in the above mapping that requires a change to fail_required\u003dFalse. Only the mapping above with the properties-file etc.. should have the False setting.\n\nWe should leave this bottom one fail_required\u003dTrue. Basically ideally we want fail_required\u003dTrue when possible. Setting it to false is an exception in cases where we want to allow optional values. Rather than forcing required, or defaults.",
+      "range": {
+        "startLine": 349,
+        "startChar": 58,
+        "endLine": 349,
+        "endChar": 77
+      },
+      "revId": "beef80aa85b4dd9066f71d30820c9528569f96e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
