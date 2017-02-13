@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_04098331",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2017-02-13T14:03:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa31d9ce_1fa3f79f",
+      "revId": "308e034fa99a4d1c78842900c26c556e3994bd22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa31d9ce_bf082b93",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2017-02-10T00:49:53Z",
       "side": 1,
       "message": "It would be good to use the convert_mapping_to_xml function (see example in codecover below) as it makes maintaining things a lot easier.\n\nThe helper function also supports an optional 4th parameter that allows you to pass a list or dictionary into it to check for invalid selection so you can use that to pass in the qos configuration too.",
+      "revId": "308e034fa99a4d1c78842900c26c556e3994bd22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_7f03ac0d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2017-02-13T14:03:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa31d9ce_bf082b93",
       "revId": "308e034fa99a4d1c78842900c26c556e3994bd22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
