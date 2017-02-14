@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_51393fd6",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2017-02-14T16:17:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa31d9ce_bd251b0a",
+      "revId": "6dff038d4dec5f3d1e80c3a75dd574874b82bd1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa31d9ce_9dfa1774",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 3
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "fa31d9ce_912f3787",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2017-02-14T16:17:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa31d9ce_9dfa1774",
+      "range": {
+        "startLine": 304,
+        "startChar": 29,
+        "endLine": 304,
+        "endChar": 39
+      },
+      "revId": "6dff038d4dec5f3d1e80c3a75dd574874b82bd1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa31d9ce_9d56975a",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 3
@@ -53,6 +95,30 @@
       "writtenOn": "2017-02-13T20:19:16Z",
       "side": 1,
       "message": "Seems like you misunderstood how this function actually works. The correct usage is as follows:\n\n    mapping \u003d [\n        (\u0027broker-url\u0027, \u0027brokerUrl\u0027, None),\n        (\u0027credentials-id\u0027, \u0027credentialsId\u0027, \u0027\u0027),\n        (\u0027topic\u0027, \u0027topic\u0027, \u0027\u0027),\n        (\u0027message\u0027, \u0027message\u0027, \u0027\u0027),\n        # more options as needed\n    ]\n    helpers.convert_mapping_to_xml(\n        mqtt, data, mapping, fail_required\u003dTrue)\n\nSee how this makes the code significantly cleaner? no need for all those XML.SubElement declarations as the mappings handles it.",
+      "range": {
+        "startLine": 345,
+        "startChar": 4,
+        "endLine": 346,
+        "endChar": 32
+      },
+      "revId": "6dff038d4dec5f3d1e80c3a75dd574874b82bd1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa31d9ce_f154f3fe",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2017-02-14T16:17:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa31d9ce_9d56975a",
       "range": {
         "startLine": 345,
         "startChar": 4,
