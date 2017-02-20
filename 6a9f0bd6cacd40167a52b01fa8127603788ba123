@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_cd40a759",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-20T23:15:47Z",
+      "side": 1,
+      "message": "According to the mapping below this is actually: (default \u0027\u0027)\n\nIf you want it to be jenkins/$PROJECT_URL then we need to modify the 3rd tuple as such.",
+      "range": {
+        "startLine": 306,
+        "startChar": 38,
+        "endLine": 307,
+        "endChar": 27
+      },
+      "revId": "6a9f0bd6cacd40167a52b01fa8127603788ba123",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_6d317b0b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-20T23:15:47Z",
+      "side": 1,
+      "message": "According to the code below this is actually: (default \u0027\u0027)\n\nIf you really want it to be (default $BUILD_RESULT) then we need to edit the mapping below for message to have a 3rd tuple of \u0027$BUILD_RESULT\u0027",
+      "range": {
+        "startLine": 308,
+        "startChar": 41,
+        "endLine": 308,
+        "endChar": 79
+      },
+      "revId": "6a9f0bd6cacd40167a52b01fa8127603788ba123",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_ad445374",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-20T23:15:47Z",
+      "side": 1,
+      "message": "According to the code below this is actually: (default false)",
+      "range": {
+        "startLine": 312,
+        "startChar": 20,
+        "endLine": 312,
+        "endChar": 30
+      },
+      "revId": "6a9f0bd6cacd40167a52b01fa8127603788ba123",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
