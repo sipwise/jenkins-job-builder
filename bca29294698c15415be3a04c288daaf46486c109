@@ -1,0 +1,239 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_6d633b1b",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1110,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-20T23:11:36Z",
+      "side": 1,
+      "message": "The docs here say there\u0027s a \"file\" but below in the code there\u0027s no file configured. Is this a valid option?",
+      "revId": "bca29294698c15415be3a04c288daaf46486c109",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_ad6d3306",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1112,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-20T23:11:36Z",
+      "side": 1,
+      "message": "The docs here say there\u0027s a \"command\" but below in the code there\u0027s no command configured. Is this a valid option?",
+      "revId": "bca29294698c15415be3a04c288daaf46486c109",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_adb61388",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1114,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-20T23:11:36Z",
+      "side": 1,
+      "message": "According to the code below this is not optional it\u0027s actually (default \u0027\u0027)",
+      "range": {
+        "startLine": 1114,
+        "startChar": 62,
+        "endLine": 1114,
+        "endChar": 73
+      },
+      "revId": "bca29294698c15415be3a04c288daaf46486c109",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_2d94e3e0",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1116,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-20T23:11:36Z",
+      "side": 1,
+      "message": "According to the code below this is not optional it\u0027s actually (default \u0027\u0027)",
+      "range": {
+        "startLine": 1116,
+        "startChar": 8,
+        "endLine": 1116,
+        "endChar": 18
+      },
+      "revId": "bca29294698c15415be3a04c288daaf46486c109",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_4d9117f0",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1118,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-20T23:11:36Z",
+      "side": 1,
+      "message": "According to the code below this is not optional it\u0027s actually (default \u0027\u0027)",
+      "range": {
+        "startLine": 1118,
+        "startChar": 34,
+        "endLine": 1118,
+        "endChar": 44
+      },
+      "revId": "bca29294698c15415be3a04c288daaf46486c109",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_6dbc1b6d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1122,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-20T23:11:36Z",
+      "side": 1,
+      "message": "According to the code below this is not optional it\u0027s actually (default \u0027\u0027)",
+      "range": {
+        "startLine": 1122,
+        "startChar": 26,
+        "endLine": 1122,
+        "endChar": 36
+      },
+      "revId": "bca29294698c15415be3a04c288daaf46486c109",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_8dc14fe7",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1124,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-20T23:11:36Z",
+      "side": 1,
+      "message": "According to the code below this is not optional it\u0027s actually (default \u0027\u0027)",
+      "range": {
+        "startLine": 1124,
+        "startChar": 25,
+        "endLine": 1124,
+        "endChar": 35
+      },
+      "revId": "bca29294698c15415be3a04c288daaf46486c109",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_2dfdc33a",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1128,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-20T23:11:36Z",
+      "side": 1,
+      "message": "groovy-minimal.yaml",
+      "range": {
+        "startLine": 1128,
+        "startChar": 54,
+        "endLine": 1128,
+        "endChar": 71
+      },
+      "revId": "bca29294698c15415be3a04c288daaf46486c109",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_6d95fbe2",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1131,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-20T23:11:36Z",
+      "side": 1,
+      "message": "No need for 2 minimal tests. The first one should already cover the 2nd one.",
+      "range": {
+        "startLine": 1130,
+        "startChar": 0,
+        "endLine": 1131,
+        "endChar": 22
+      },
+      "revId": "bca29294698c15415be3a04c288daaf46486c109",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_cda42759",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1136,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-20T23:11:36Z",
+      "side": 1,
+      "message": "groovy-full.yaml",
+      "range": {
+        "startLine": 1136,
+        "startChar": 54,
+        "endLine": 1136,
+        "endChar": 68
+      },
+      "revId": "bca29294698c15415be3a04c288daaf46486c109",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_ed772bd2",
+        "filename": "tests/builders/fixtures/groovy001-minimal.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-20T23:11:36Z",
+      "side": 1,
+      "message": "According to the code all attributes including version have defaults so the true minimal test here is:\n\n - groovy",
+      "revId": "bca29294698c15415be3a04c288daaf46486c109",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
