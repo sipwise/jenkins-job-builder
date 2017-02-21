@@ -22,6 +22,30 @@
       "revId": "0583e30dc455a4f905f7598bc144dce1676bec74",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_cb95cee4",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-21T20:00:14Z",
+      "side": 1,
+      "message": "Good point. When I do a search I see.\n\n45 instances of complete\n68 instances of full\n\nI do not mind either way but looks like \"full\" is winning by a few files. I don\u0027t mind either way but we should submit a patch to rename them all to the same format.",
+      "parentUuid": "da36d5c6_420f0a2e",
+      "range": {
+        "startLine": 201,
+        "startChar": 61,
+        "endLine": 201,
+        "endChar": 65
+      },
+      "revId": "0583e30dc455a4f905f7598bc144dce1676bec74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
