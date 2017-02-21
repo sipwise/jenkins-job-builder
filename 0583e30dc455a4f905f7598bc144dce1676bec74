@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_420f0a2e",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2017-02-21T16:09:22Z",
+      "side": 1,
+      "message": "The earlier changes of this file named with -complete.yaml, can we make a decision to consistent the file name",
+      "range": {
+        "startLine": 201,
+        "startChar": 61,
+        "endLine": 201,
+        "endChar": 65
+      },
+      "revId": "0583e30dc455a4f905f7598bc144dce1676bec74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
