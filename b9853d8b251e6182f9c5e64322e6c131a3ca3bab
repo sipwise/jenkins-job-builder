@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da36d5c6_4dcd6e5c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2017-02-21T22:16:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da36d5c6_ae8516ae",
+      "revId": "b9853d8b251e6182f9c5e64322e6c131a3ca3bab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_4eb73a86",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2017-02-21T14:42:25Z",
       "side": 1,
       "message": "The syntax we typically use is simply just:\n\n :arg str message: the message itself (default $BUILD_RESULT)",
+      "revId": "b9853d8b251e6182f9c5e64322e6c131a3ca3bab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_6ddcf212",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2017-02-21T22:16:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da36d5c6_4eb73a86",
       "revId": "b9853d8b251e6182f9c5e64322e6c131a3ca3bab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da36d5c6_8dd766ec",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2017-02-21T22:16:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da36d5c6_ae7356e6",
+      "revId": "b9853d8b251e6182f9c5e64322e6c131a3ca3bab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da36d5c6_4e457a6e",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2017-02-21T14:42:25Z",
       "side": 1,
       "message": "Again: (default false)",
+      "revId": "b9853d8b251e6182f9c5e64322e6c131a3ca3bab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da36d5c6_cd079e7f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2017-02-21T22:16:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da36d5c6_4e457a6e",
       "revId": "b9853d8b251e6182f9c5e64322e6c131a3ca3bab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
