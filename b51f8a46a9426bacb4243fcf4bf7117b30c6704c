@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_faf87e4b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-02-22T16:15:10Z",
+      "side": 1,
+      "message": "Why 2 sign-off-by lines?",
+      "revId": "b51f8a46a9426bacb4243fcf4bf7117b30c6704c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
