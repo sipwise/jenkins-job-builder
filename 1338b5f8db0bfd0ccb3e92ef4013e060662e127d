@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da36d5c6_57254e08",
+        "filename": "tests/jenkins_manager/test_manager.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-02-27T19:22:59Z",
+      "side": 1,
+      "message": "I think this might be the one thing we may want to consider, as it\u0027s being included indirectly via python-jenkins. I\u0027m thinking we possibly shouldn\u0027t use it directly.\n\nAnd I\u0027m not sure we need to do anything other than use a standard dictionary, since we don\u0027t care about the underlying implementation which is hiding the fact that you can use either the short or long name to retrieve the plugin shouldn\u0027t be something we should worry about testing here, unless we want to also use python-jenkins to check some code my providing it with some plugins data to parse into a suitable format.",
+      "revId": "1338b5f8db0bfd0ccb3e92ef4013e060662e127d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
