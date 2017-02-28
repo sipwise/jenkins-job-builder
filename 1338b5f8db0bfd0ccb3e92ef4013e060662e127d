@@ -16,6 +16,24 @@
       "revId": "1338b5f8db0bfd0ccb3e92ef4013e060662e127d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_a25f3274",
+        "filename": "tests/jenkins_manager/test_manager.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2017-02-28T15:25:47Z",
+      "side": 1,
+      "message": "If python-jenkins API would not have returned instances of this class by themselves I would had agreed with you. \n\nI think that it would not be a good idea to use something else in this case because we are using this only for testing. Using other classes would mean that we would test something else than real life scenario.\nAlso I think that one issue is comparing two python dictionaries.",
+      "parentUuid": "da36d5c6_57254e08",
+      "revId": "1338b5f8db0bfd0ccb3e92ef4013e060662e127d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
