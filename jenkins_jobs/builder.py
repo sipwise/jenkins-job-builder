@@ -229,7 +229,10 @@ class JenkinsManager(object):
                         raise
                     continue
 
-                output_fn = os.path.join(output, job.name)
+                output_fn = os.path.join(output, job.name + '.xml')
+                output_dn = os.path.dirname(output_fn)
+                if not os.path.exists(output_dn):
+                    os.makedirs(output_dn)
                 logger.debug("Writing XML to '{0}'".format(output_fn))
                 with io.open(output_fn, 'w', encoding='utf-8') as f:
                     f.write(job.output().decode('utf-8'))
