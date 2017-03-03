@@ -34,6 +34,24 @@
       "revId": "1338b5f8db0bfd0ccb3e92ef4013e060662e127d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba2be162_c94743ba",
+        "filename": "tests/jenkins_manager/test_manager.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-03-03T14:45:02Z",
+      "side": 1,
+      "message": "To follow on from an IRC conversation, I would agree about checking against multi_key_dict if we were letting python-jenkins return the information here from a mocked request. However we\u0027ve completely isolated python-jenkins here from these tests and we\u0027re not testing that we can parse the data correctly, but rather it is getting passed through from one area to another in the expected manner.",
+      "parentUuid": "ba2be162_a25f3274",
+      "revId": "1338b5f8db0bfd0ccb3e92ef4013e060662e127d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
