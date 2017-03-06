@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba2be162_29989477",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 879,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-03-06T14:59:36Z",
+      "side": 1,
+      "message": "If you copy the mappings + helpers.convert_mapping_to_xml from the above plugin. You can achieve the same thing but have the helper function do most of the work.\n\nIn this case I would set the mappings as follows:\n\n mappings \u003d [\n     (\u0027script\u0027, \u0027script\u0027, None),\n     (\u0027cmd\u0027, \u0027cmd\u0027, \u0027shell\u0027, [\u0027cmd\u0027, \u0027shell\u0027]),\n ]\n helpers.convert_mapping_to_xml(\n        strategy, data, mappings, fail_required\u003dTrue)",
+      "range": {
+        "startLine": 875,
+        "startChar": 0,
+        "endLine": 879,
+        "endChar": 68
+      },
+      "revId": "90970ecc627abca009f4bdc8d8ea9fc0a8511882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
