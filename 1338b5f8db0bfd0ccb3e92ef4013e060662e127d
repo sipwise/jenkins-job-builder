@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "9a30ddce_09aa0e19",
+        "filename": "tests/jenkins_manager/test_manager.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2017-03-12T19:50:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_c94743ba",
+      "revId": "1338b5f8db0bfd0ccb3e92ef4013e060662e127d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba2be162_acf85dc4",
         "filename": "tests/jenkins_manager/test_manager.py",
         "patchSetId": 9
@@ -66,6 +84,24 @@
       "writtenOn": "2017-03-03T14:59:04Z",
       "side": 1,
       "message": "To follow on, this is almost a tautology, we are checking that the multikey dict we put in the mock is what we read here. That is really just testing assignment is working as expected.",
+      "revId": "1338b5f8db0bfd0ccb3e92ef4013e060662e127d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a30ddce_29a51246",
+        "filename": "tests/jenkins_manager/test_manager.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2017-03-12T19:50:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba2be162_acf85dc4",
       "revId": "1338b5f8db0bfd0ccb3e92ef4013e060662e127d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
