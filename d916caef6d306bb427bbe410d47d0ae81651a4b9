@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a1ff146_9387e611",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2348,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-03-14T15:37:53Z",
+      "side": 1,
+      "message": "Something we started recommending for new patches is to create 2 tests.\n\n1) logparser-minimal.yaml\n2) logparser-full.yaml\n\nand literalinclude them here. The minimal example will test the default settings of every configuration so should only configure the absolute minimum configuration. In this case I believe the minimal configuration is simply just:\n\n - logparser\n\nThe 2nd test will test the full configuration at the non-default setting so configure every setting possible to a setting that is not default.\n\nAll other log parser tests can be merged into one of the 2 test yamls as described above.",
+      "range": {
+        "startLine": 2345,
+        "startChar": 0,
+        "endLine": 2348,
+        "endChar": 22
+      },
+      "revId": "d916caef6d306bb427bbe410d47d0ae81651a4b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
