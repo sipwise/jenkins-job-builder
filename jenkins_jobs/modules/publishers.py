@@ -2335,9 +2335,12 @@ def logparser(registry, xml_parent, data):
     Requires the Jenkins :jenkins-wiki:`Log Parser Plugin <Log+Parser+Plugin>`.
 
     :arg str parse-rules: full path to parse rules (default '')
+    :arg bool use-project-rules: use project rules instead of global
+        (default true)
     :arg bool unstable-on-warning: mark build unstable on warning
         (default false)
     :arg bool fail-on-error: mark build failed on error (default false)
+    :arg bool show-graphs: show parser trend graphs (default true)
 
     Example:
 
@@ -2348,10 +2351,15 @@ def logparser(registry, xml_parent, data):
     clog = XML.SubElement(xml_parent,
                           'hudson.plugins.logparser.LogParserPublisher')
     clog.set('plugin', 'log-parser')
+    rules_path_element = ("projectRulePath"
+                          if data.get("use-project-rules", True)
+                          else "parsingRulesPath")
     mappings = [
         ('unstable-on-warning', 'unstableOnWarning', False),
         ('fail-on-error', 'failBuildOnError', False),
-        ('parse-rules', 'parsingRulesPath', '')
+        ('parse-rules', rules_path_element, ''),
+        ('show-graphs', 'showGraphs', True),
+        ('use-project-rules', 'useProjectRule', True),
     ]
     helpers.convert_mapping_to_xml(clog, data, mappings, fail_required=True)
 

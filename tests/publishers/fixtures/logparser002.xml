@@ -4,9 +4,9 @@
     <hudson.plugins.logparser.LogParserPublisher plugin="log-parser">
       <unstableOnWarning>true</unstableOnWarning>
       <failBuildOnError>true</failBuildOnError>
-      <parsingRulesPath>/path/to/global-rules</parsingRulesPath>
+      <projectRulePath>/path/to/project-rules</projectRulePath>
       <showGraphs>true</showGraphs>
-      <useProjectRule>false</useProjectRule>
+      <useProjectRule>true</useProjectRule>
     </hudson.plugins.logparser.LogParserPublisher>
   </publishers>
 </project>

@@ -1,7 +1,7 @@
 publishers:
   - logparser:
-      use-project-rules: false
-      parse-rules: "/path/to/global-rules"
+      use-project-rules: true
+      parse-rules: "/path/to/project-rules"
       unstable-on-warning: true
       fail-on-error: true
       show-graphs: true
