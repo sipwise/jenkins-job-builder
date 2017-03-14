@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a1ff146_39f53383",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 942,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2017-03-14T16:21:27Z",
+      "side": 1,
+      "message": "Is this statement needed? Looks verbose to me.",
+      "range": {
+        "startLine": 942,
+        "startChar": 6,
+        "endLine": 942,
+        "endChar": 23
+      },
+      "revId": "cbbbed1a839a76edec4446997264a5ee76fb5ddb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
