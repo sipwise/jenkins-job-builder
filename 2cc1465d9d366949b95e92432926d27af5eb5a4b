@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a1ff146_30f8d6e5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2017-03-14T23:48:28Z",
+      "side": 1,
+      "message": "How about add some documentation for this feature and maybe make this snippet a test and pull it into the documentation as well?",
+      "revId": "2cc1465d9d366949b95e92432926d27af5eb5a4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
