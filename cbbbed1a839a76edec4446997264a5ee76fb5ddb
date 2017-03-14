@@ -22,6 +22,30 @@
       "revId": "cbbbed1a839a76edec4446997264a5ee76fb5ddb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1ff146_392293ba",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 942,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2017-03-14T16:24:06Z",
+      "side": 1,
+      "message": "Is looks needed to me, data could be anything, maybe it could be improved to do \"if data and ...\".",
+      "parentUuid": "3a1ff146_39f53383",
+      "range": {
+        "startLine": 942,
+        "startChar": 6,
+        "endLine": 942,
+        "endChar": 23
+      },
+      "revId": "cbbbed1a839a76edec4446997264a5ee76fb5ddb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
