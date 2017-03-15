@@ -144,8 +144,9 @@ def build_gerrit_triggers(xml_parent, data):
     trigger_on_events = XML.SubElement(xml_parent, 'triggerOnEvents')
 
     for event in data.get('trigger-on', []):
-        if isinstance(event, six.string_types):
-            tag_name = available_simple_triggers.get(event)
+        if isinstance(event, six.string_types) or \
+            (type(event) is dict and not isinstance(event.values()[0], dict)):
+            tag_name = available_simple_triggers.get(event.keys()[0])
             if event == 'patchset-uploaded-event':
                 logger.warning(
                     "'%s' is deprecated. Use 'patchset-created-event' "
