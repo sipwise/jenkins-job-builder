@@ -1,0 +1,11 @@
+triggers:
+  - gerrit:
+      trigger-on:
+        - patchset-created-event:
+            exclude-drafts: false
+            exclude-trivial-rebase: false
+            exclude-no-code-change: false
+        - change-merged-event: true
+        - change-abandoned-event: true
+        - change-restored-event: false
+        - draft-published-event: false

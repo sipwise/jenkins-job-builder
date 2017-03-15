@@ -161,6 +161,13 @@ def build_gerrit_triggers(xml_parent, data):
             XML.SubElement(trigger_on_events,
                            '%s.%s' % (tag_namespace, tag_name))
         else:
+            # Every dictionary within the trigger-on one only contains a
+            # single entry.
+            if len(event.keys()) > 1:
+                msg = ("trigger-on dictionary '%s' has more than one entries" %
+                       event)
+                raise JenkinsJobsException(msg)
+
             if 'patchset-created-event' in event.keys():
                 pce = event['patchset-created-event']
                 pc = XML.SubElement(
@@ -173,7 +180,7 @@ def build_gerrit_triggers(xml_parent, data):
                 XML.SubElement(pc, 'excludeNoCodeChange').text = str(
                     pce.get('exclude-no-code-change', False)).lower()
 
-            if 'comment-added-event' in event.keys():
+            elif 'comment-added-event' in event.keys():
                 comment_added_event = event['comment-added-event']
                 cadded = XML.SubElement(
                     trigger_on_events,
@@ -185,7 +192,7 @@ def build_gerrit_triggers(xml_parent, data):
                     'commentAddedTriggerApprovalValue').text = \
                     str(comment_added_event['approval-value'])
 
-            if 'comment-added-contains-event' in event.keys():
+            elif 'comment-added-contains-event' in event.keys():
                 comment_added_event = event['comment-added-contains-event']
                 caddedc = XML.SubElement(
                     trigger_on_events,
@@ -193,6 +200,13 @@ def build_gerrit_triggers(xml_parent, data):
                                'PluginCommentAddedContainsEvent'))
                 XML.SubElement(caddedc, 'commentAddedCommentContains').text = \
                     comment_added_event['comment-contains-value']
+            else:
+                trigger_event = event.keys()[0]
+                if not event[trigger_event]:
+                    continue
+                tag_name = available_simple_triggers.get(trigger_event)
+                XML.SubElement(trigger_on_events,
+                               '%s.%s' % (tag_namespace, tag_name))
 
 
 def build_gerrit_skip_votes(xml_parent, data):
