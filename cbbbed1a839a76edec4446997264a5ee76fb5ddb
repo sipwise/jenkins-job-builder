@@ -70,6 +70,30 @@
       "revId": "cbbbed1a839a76edec4446997264a5ee76fb5ddb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1ff146_cea534b6",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 942,
+      "author": {
+        "id": 25047
+      },
+      "writtenOn": "2017-03-16T18:36:33Z",
+      "side": 1,
+      "message": "Sorin, what if data is True or 42?",
+      "parentUuid": "3a1ff146_392293ba",
+      "range": {
+        "startLine": 942,
+        "startChar": 6,
+        "endLine": 942,
+        "endChar": 23
+      },
+      "revId": "cbbbed1a839a76edec4446997264a5ee76fb5ddb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
