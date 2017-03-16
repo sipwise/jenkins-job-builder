@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a1ff146_18fae3bd",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 6133
+      },
+      "writtenOn": "2017-03-16T08:20:13Z",
+      "side": 1,
+      "message": "why is that print here?",
+      "range": {
+        "startLine": 204,
+        "startChar": 16,
+        "endLine": 204,
+        "endChar": 21
+      },
+      "revId": "2699b219a3a4cc427a0f9cc8fde148aa776c0dcd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
