@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a1ced50_a6782891",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 942,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2017-03-16T16:23:32Z",
+      "side": 1,
+      "message": "I notice that this portion was hard-coded to be false and was not a configurable option for the user to set. I am wondering if this is an intended change, and is now configurable. If so, we should update the documentation for this plugin.",
+      "range": {
+        "startLine": 942,
+        "startChar": 52,
+        "endLine": 942,
+        "endChar": 57
+      },
+      "revId": "fee4117822cbd7c3008ea12ba57ee8451ead817a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
