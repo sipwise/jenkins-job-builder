@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffe62b97_62c72498",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 3611,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-03-28T17:39:47Z",
+      "side": 1,
+      "message": "can replace the end of both of these blocks with either a common function call to use the same code or even with the same mapping.\n\n opts_mapping \u003d [\n     (\u0027credentials-id\u0027, \u0027credentialsId\u0027, None),\n     (\u0027url\u0027, \u0027url\u0027, None),\n ]\n\nthen call:\n\n if \u0027registry\u0027 in data:\n     registry \u003d XML.SubElement(db, \u0027registry\u0027)\n     registry.set(\u0027plugin\u0027, \u0027docker-commons\u0027)\n     convert_mapping_to_xml(data[\u0027registry\u0027], opts_mapping, fail_required\u003dFalse)\n\nBut that can be done separately as needed.",
+      "revId": "52a77d639c739b43239a37037559d238094cb71a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
