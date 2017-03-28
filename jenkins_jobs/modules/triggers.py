@@ -1739,6 +1739,92 @@ def parameterized_timer(parser, xml_parent, data):
         raise MissingAttributeError(e)
 
 
+def stash_pr_builder(registry, xml_parent, data):
+    """yaml: stash-pull-request
+    Trigger builds via Stash/Bitbucket Server Pull Requests.
+    Requires the Jenkins :jenkins-wiki:`Stash Pull Request Builder Plugin
+      <Stash+pullrequest+builder+plugin>`.
+
+      :arg str cron: cron syntax of when to run
+          (required)
+      :arg str stash-host: The HTTP or HTTPS URL of the Stash host (NOT ssh).
+          e.g.: https://example.com
+          (required)
+      :arg str credentials-id: Jenkins credential set to use.
+          (required)
+      :arg str project: Abbreviated project code. e.g.: PRJ or ~user
+          (required)
+      :arg str repository: Stash Repository Name.  e.g.:  Repo
+          (required)
+      :arg str ci-skip-phrases: CI Skip Phrases.
+          (optional) (default: ''NO TEST'')
+      :arg str ci-build-phrases: CI Build Phrases.
+          (optional) (default: ''test this please'')
+      :arg str target-branches: Target branches to filter.
+          (optional)
+      :arg bool ignore-ssl: Ignore SSL certificates for Stash host.
+          (optional) (default: False)
+      :arg bool check-destination-commit: Rebuild if destination branch
+          changes.
+          (optional) (default: False)
+      :arg bool check-mergable: Build only if PR is mergeable.
+          (optional) (default: False)
+      :arg bool merge-on-success: Merge PR if build is successful.
+          (optional) (default: False)
+      :arg bool check-not-conflicted: Build only if Stash reports no
+          conflicts.
+          (optional) (default: False)
+      :arg bool only-build-on-comment: Only build when asked (with test
+          phrase).
+          (optional) (default: False)
+      :arg bool delete-previous-build-finish-comments: Keep PR comment
+          only for most recent Build.
+          (optional) (default: False)
+      :arg bool cancel-outdated-jobs: Cancel outdated jobs.
+          (optional) (default: False)
+
+      Example:
+
+      .. literalinclude::
+          /../../tests/triggers/fixtures/stash-pull-request001.yaml
+         :language: yaml
+    """
+
+    pr_trigger = XML.SubElement(
+        xml_parent,
+        'stashpullrequestbuilder.stashpullrequestbuilder.StashBuildTrigger')
+
+    pr_trigger.set('plugin', 'stash-pullrequest-builder')
+
+    try:
+        XML.SubElement(pr_trigger, 'spec').text = str(
+            data.get('cron'))
+    except KeyError as e:
+        raise MissingAttributeError(e)
+
+    mappings = [
+        ('cron', 'cron', None),
+        ('stash-host', 'stashHost', None),
+        ('credentials-id', 'credentialsId', None),
+        ('project', 'projectCode', None),
+        ('repository', 'repositoryName', None),
+        ('ci-skip-phrases', 'ciSkipPhrases', 'NO TEST'),
+        ('ci-build-phrases', 'ciBuildPhrases', 'test this please'),
+        ('target-branches', 'targetBranchesToBuild', ''),
+        ('ignore-ssl', 'ignoreSsl', False),
+        ('check-destination-commit', 'checkDestinationCommit', False),
+        ('check-mergable', 'checkMergeable', False),
+        ('merge-on-success', 'mergeOnSuccess', False),
+        ('check-not-conflicted', 'checkNotConflicted', True),
+        ('only-build-on-comment', 'onlyBuildOnComment', False),
+        ('delete-previous-build-finish-comments',
+            'deletePreviousBuildFinishComments', False),
+        ('cancel-outdated-jobs', 'cancelOutdatedJobsEnabled', False)
+    ]
+
+    convert_mapping_to_xml(pr_trigger, data, mappings, fail_required=True)
+
+
 class Triggers(jenkins_jobs.modules.base.Base):
     sequence = 50
 
