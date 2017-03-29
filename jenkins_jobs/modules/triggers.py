@@ -1046,6 +1046,17 @@ def gitlab_merge_request(registry, xml_parent, data):
 
     :arg string cron: cron syntax of when to run (required)
     :arg string project-path: gitlab-relative path to project (required)
+    :arg string use-http-url: use the HTTP(S) URL to fetch/clone repository
+    :arg string assignee-filter: only MRs with this assigned user will
+        trigger the build automatically (default jenkins)
+    :arg string tag-filter: only MRs with this label will trigger the build
+        automatically (default Build)
+    :arg string trigger-comment: force build if this comment is the last
+        in merge reguest
+    :arg string publish-build-progress-messages: publish build progress
+        messages (except build failed)
+    :arg string auto-close-failed: on failure, auto close the request
+    :arg string auto-merge-passed: on success, auto merge the request
 
     Example:
 
@@ -1068,6 +1079,18 @@ def gitlab_merge_request(registry, xml_parent, data):
     XML.SubElement(ghprb, 'spec').text = data.get('cron')
     XML.SubElement(ghprb, '__cron').text = data.get('cron')
     XML.SubElement(ghprb, '__projectPath').text = data.get('project-path')
+    XML.SubElement(ghprb, '__useHttpUrl').text = data.get('use-http-url')
+    XML.SubElement(ghprb, '__assigneeFilter').text = data.get(
+        'assignee-filter')
+    XML.SubElement(ghprb, '__tagFilter').text = data.get('tag-filter')
+    XML.SubElement(ghprb, '__triggerComment').text = data.get(
+        'trigger-comment')
+    XML.SubElement(ghprb, '__publishBuildProgressMessages').text = data.get(
+        'publish-build-progress-messages')
+    XML.SubElement(ghprb, '__autoCloseFailed').text = data.get(
+        'auto-close-failed')
+    XML.SubElement(ghprb, '__autoMergePassed').text = data.get(
+        'auto-merge-passed')
 
 
 def gitlab(registry, xml_parent, data):
