@@ -1121,8 +1121,22 @@ def gitlab_merge_request(registry, xml_parent, data):
     Requires the Jenkins :jenkins-wiki:`Gitlab MergeRequest Builder Plugin.
     <Gitlab+Merge+Request+Builder+Plugin>`.
 
-    :arg string cron: cron syntax of when to run (required)
-    :arg string project-path: gitlab-relative path to project (required)
+    :arg string cron: Cron syntax of when to run (required)
+    :arg string project-path: Gitlab-relative path to project (required)
+    :arg string use-http-url: Use the HTTP(S) URL to fetch/clone repository
+        (default false)
+    :arg string assignee-filter: Only MRs with this assigned user will
+        trigger the build automatically (default 'jenkins')
+    :arg string tag-filter: Only MRs with this label will trigger the build
+        automatically (default 'Build')
+    :arg string trigger-comment: Force build if this comment is the last
+        in merge reguest (default '')
+    :arg string publish-build-progress-messages: Publish build progress
+        messages (except build failed) (default true)
+    :arg string auto-close-failed: On failure, auto close the request
+        (default false)
+    :arg string auto-merge-passed: On success, auto merge the request
+        (default false)
 
     Example:
 
@@ -1145,6 +1159,17 @@ def gitlab_merge_request(registry, xml_parent, data):
     XML.SubElement(ghprb, 'spec').text = data.get('cron')
     XML.SubElement(ghprb, '__cron').text = data.get('cron')
     XML.SubElement(ghprb, '__projectPath').text = data.get('project-path')
+    mapping = [
+        ('use-http-url', '__useHttpUrl', False),
+        ('assignee-filter', '__assigneeFilter', 'jenkins'),
+        ('tag-filter', '__tagFilter', 'Build'),
+        ('trigger-comment', '__triggerComment', ''),
+        ('publish-build-progress-messages', '__publishBuildProgressMessages',
+         True),
+        ('auto-close-failed', '__autoCloseFailed', False),
+        ('auto-merge-passed', '__autoMergePassed', False)
+    ]
+    convert_mapping_to_xml(ghprb, data, mapping, True)
 
 
 def gitlab(registry, xml_parent, data):
