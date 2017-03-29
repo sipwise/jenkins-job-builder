@@ -1123,6 +1123,20 @@ def gitlab_merge_request(registry, xml_parent, data):
 
     :arg string cron: cron syntax of when to run (required)
     :arg string project-path: gitlab-relative path to project (required)
+    :arg string use-http-url: use the HTTP(S) URL to fetch/clone repository
+        (default False)
+    :arg string assignee-filter: only MRs with this assigned user will
+        trigger the build automatically (default jenkins)
+    :arg string tag-filter: only MRs with this label will trigger the build
+        automatically (default Build)
+    :arg string trigger-comment: force build if this comment is the last
+        in merge reguest (default '')
+    :arg string publish-build-progress-messages: publish build progress
+        messages (except build failed) (default True)
+    :arg string auto-close-failed: on failure, auto close the request
+        (default False)
+    :arg string auto-merge-passed: on success, auto merge the request
+        (default False)
 
     Example:
 
@@ -1145,6 +1159,17 @@ def gitlab_merge_request(registry, xml_parent, data):
     XML.SubElement(ghprb, 'spec').text = data.get('cron')
     XML.SubElement(ghprb, '__cron').text = data.get('cron')
     XML.SubElement(ghprb, '__projectPath').text = data.get('project-path')
+    mapping = [
+        ('use-http-url', '__useHttpUrl', False),
+        ('assignee-filter', '__assigneeFilter', 'jenkins'),
+        ('tag-filter', '__tagFilter', 'Build'),
+        ('trigger-comment', '__triggerComment', ''),
+        ('publish-build-progress-messages', '__publishBuildProgressMessages',
+         True),
+        ('auto-close-failed', '__autoCloseFailed', False),
+        ('auto-merge-passed', '__autoMergePassed', False)
+    ]
+    convert_mapping_to_xml(ghprb, data, mapping)
 
 
 def gitlab(registry, xml_parent, data):
