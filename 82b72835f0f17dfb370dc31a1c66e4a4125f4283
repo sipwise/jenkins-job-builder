@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_71cf8d7f",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 791,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-03-31T10:09:04Z",
+      "side": 1,
+      "message": "I think this paragraph might read better in the generated docs without the double nesting.\n\nMaybe:\n\n  JMS Messaging Provider types supported:\n    - ActiveMQ\n    - FedMsg\n\nCan fix this via the review UI through editing and publishing directly.",
+      "revId": "82b72835f0f17dfb370dc31a1c66e4a4125f4283",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_519fe94f",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 841,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-03-31T10:09:04Z",
+      "side": 1,
+      "message": "Generally we try to avoid \u0027\\\u0027 except where there is no other option, in line with pep8 recommendations. So when tidying the above docstring could you edit the above lines to something like the following:\n\n  XML.SubElement(msgcheck,\n                 \u0027expectedValue\u0027).text \u003d check[\u0027expected-value\u0027]",
+      "revId": "82b72835f0f17dfb370dc31a1c66e4a4125f4283",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
