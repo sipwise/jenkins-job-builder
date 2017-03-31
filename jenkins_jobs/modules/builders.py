@@ -2654,8 +2654,9 @@ def cmake(registry, xml_parent, data):
     XML.SubElement(cmake, 'generator').text = str(
         data.get('generator', "Unix Makefiles"))
 
-    XML.SubElement(cmake, 'preloadScript').text = str(
-        data.get('preload-script', ''))
+    if data.get('preload-script'):
+        XML.SubElement(cmake, 'preloadScript').text = str(
+            data.get('preload-script', ''))
 
     XML.SubElement(cmake, 'cleanBuild').text = str(
         data.get('clean-build-dir', False)).lower()
