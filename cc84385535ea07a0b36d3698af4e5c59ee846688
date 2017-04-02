@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_280e0b32",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2017-04-02T15:53:07Z",
+      "side": 1,
+      "message": "\"parent-credentials\" or some other variant would be better here for consistency with naming convention.",
+      "range": {
+        "startLine": 184,
+        "startChar": 16,
+        "endLine": 184,
+        "endChar": 33
+      },
+      "revId": "cc84385535ea07a0b36d3698af4e5c59ee846688",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
