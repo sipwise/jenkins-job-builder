@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_b5681d87",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-04-03T15:49:24Z",
+      "side": 1,
+      "message": "I\u0027m having difficultly understanding this commit message.\n\nThe code update allows setting of \u0027parent-credentials\u0027 on submodules in order to use the default credentials for the super-project remote.\n\nSo the idea of \u0027bypass\u0027 which means to skip or avoid the setting git.submodule.parentCredentials doesn\u0027t really make much sense. \n\nCould you update the comment message to help make it clear what the purpose is so if we need to reference this in the future it\u0027s easy to know what the intent was.\n\nI\u0027d suggest describing first what this change does, which is to allow control of the option to control use the default remote credentials on submodules.\n\nFrom the below comment that it\u0027s not clear if for some reason without this setting set to \u0027true\u0027 no credentials or the wrong credentials when using multiple remotes are used by default for cloning submodules, or what happens if it is set it to false.",
+      "revId": "9b4fbed2f84766e6a7d6fad330e2bc83c886eed5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
