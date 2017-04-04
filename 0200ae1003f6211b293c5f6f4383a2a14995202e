@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_76415f39",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-04-04T10:55:13Z",
+      "side": 1,
+      "message": "Did you mean \u0027will *not*\u0027?\n\n So without this option jenkins git plugin will not be able to clone\n submodules, unless they are publicly available\n\nThanks it makes it easier to understand that without this option being set to true the plugin doesn\u0027t use the configured credentials when cloning submodules.",
+      "revId": "0200ae1003f6211b293c5f6f4383a2a14995202e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
