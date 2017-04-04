@@ -1,0 +1,9 @@
+Code-Review+2: Wayne Warren <waynr+launchpad@sdf.org>
+Code-Review+2: Darragh Bailey <daragh.bailey@gmail.com>
+Workflow+1: Darragh Bailey <daragh.bailey@gmail.com>
+Verified+2: Jenkins
+Submitted-by: Jenkins
+Submitted-at: Tue, 04 Apr 2017 15:22:17 +0000
+Reviewed-on: https://review.openstack.org/451871
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
