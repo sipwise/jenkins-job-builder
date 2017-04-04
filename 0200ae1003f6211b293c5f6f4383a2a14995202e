@@ -16,6 +16,24 @@
       "revId": "0200ae1003f6211b293c5f6f4383a2a14995202e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_b6b6c7f9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 25602
+      },
+      "writtenOn": "2017-04-04T11:02:15Z",
+      "side": 1,
+      "message": "Indeed, nice catch, thanks! (new version just pushed)",
+      "parentUuid": "dfeb2761_76415f39",
+      "revId": "0200ae1003f6211b293c5f6f4383a2a14995202e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
