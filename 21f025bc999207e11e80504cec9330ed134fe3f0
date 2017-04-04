@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dfeb2761_bfdc49e4",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2017-04-04T18:36:45Z",
+      "side": 1,
+      "message": "Is there an accepted list of valid values for this param?  should we be validating against that list?",
+      "revId": "21f025bc999207e11e80504cec9330ed134fe3f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_e280f648",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 727,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2017-04-04T18:36:45Z",
+      "side": 1,
+      "message": "a duplicate if condition (already checked on line 720)?  should this maybe check for \u0027name\u0027 instead?",
+      "revId": "21f025bc999207e11e80504cec9330ed134fe3f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_82524add",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 730,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2017-04-04T18:36:45Z",
+      "side": 1,
+      "message": "seems like it should not be dependent on \u0027node-label-name\u0027.  Maybe just need to unindent so it\u0027s at the same level as line 720?",
+      "revId": "21f025bc999207e11e80504cec9330ed134fe3f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dfeb2761_7ff12195",
+        "filename": "tests/publishers/fixtures/trigger_manual001.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6987
+      },
+      "writtenOn": "2017-04-04T18:36:45Z",
+      "side": 1,
+      "message": "looks like you are testing all paramters.  any reason for leaving out condition and node-label parameters or just forgot about it?",
+      "revId": "21f025bc999207e11e80504cec9330ed134fe3f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
