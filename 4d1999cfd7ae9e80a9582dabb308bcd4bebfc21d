@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bff0334d_11053611",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-04-11T13:55:47Z",
+      "side": 1,
+      "message": "This is a little misleading, could you tweak it to indicate it affects the files written out only?\n\n Create folder output directories for jobs in folders\n\n When writing out job configs to disk, ensure that the necessary\n parent folders have been created first.",
+      "revId": "4d1999cfd7ae9e80a9582dabb308bcd4bebfc21d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bff0334d_8eafe728",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-04-11T13:55:47Z",
+      "side": 1,
+      "message": "This isn\u0027t backwards compatible, not sure if people may be depending in scripts for the existing naming of files, so instead can you drop the alteration of the extension and look at what would be require to do the same as the proposed patch at https://review.openstack.org/126143 for the latest codebase.\n\nCan be done in a separate patch to allow this to land in the mean time once the extension change is removed.",
+      "revId": "4d1999cfd7ae9e80a9582dabb308bcd4bebfc21d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
