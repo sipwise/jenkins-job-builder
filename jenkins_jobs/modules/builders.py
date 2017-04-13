@@ -1474,7 +1474,7 @@ def conditional_step(registry, xml_parent, data):
         /../../tests/builders/fixtures/conditional-step-and.yaml
        :language: yaml
     """
-    def build_condition(cdata, cond_root_tag):
+    def build_condition(cdata, cond_root_tag, condition_tag):
         kind = cdata['condition-kind']
         ctag = XML.SubElement(cond_root_tag, condition_tag)
         core_prefix = 'org.jenkins_ci.plugins.run_condition.core.'
@@ -1655,7 +1655,7 @@ def conditional_step(registry, xml_parent, data):
                 notcondition = cdata['condition-operand']
             except KeyError:
                 raise MissingAttributeError('condition-operand')
-            build_condition(notcondition, ctag)
+            build_condition(notcondition, ctag, "condition")
         elif kind == "and" or "or":
             if kind == "and":
                 ctag.set('class', logic_prefix + 'And')
@@ -1671,7 +1671,8 @@ def conditional_step(registry, xml_parent, data):
             for condition in conditions_list:
                 conditions_container_tag = XML.SubElement(conditions_tag,
                                                           container_tag_text)
-                build_condition(condition, conditions_container_tag)
+                build_condition(condition, conditions_container_tag,
+                                "condition")
 
     def build_step(parent, step):
         for edited_node in create_builders(registry, step):
@@ -1696,7 +1697,7 @@ def conditional_step(registry, xml_parent, data):
         steps_parent = root_tag
         condition_tag = "condition"
 
-    build_condition(data, root_tag)
+    build_condition(data, root_tag, condition_tag)
     evaluation_classes_pkg = 'org.jenkins_ci.plugins.run_condition'
     evaluation_classes = {
         'fail': evaluation_classes_pkg + '.BuildStepRunner$Fail',
