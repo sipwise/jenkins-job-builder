@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7ffa3b31_c1832e56",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-04-14T17:39:33Z",
+      "side": 1,
+      "message": "Most of this is based on the \u0027trigger_parameterized_builds\u0027 publisher above, and the two of these are then consolidated into a single call in https://review.openstack.org/314108.\n\nWhich is better to try and fix that within this change, or in the subsequent change, or as a bugfix on top of both?\n\nNeed to update this anyway based on the bug you spotted below.",
+      "parentUuid": "dfeb2761_bfdc49e4",
+      "revId": "21f025bc999207e11e80504cec9330ed134fe3f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfeb2761_e280f648",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2017-04-04T18:36:45Z",
       "side": 1,
       "message": "a duplicate if condition (already checked on line 720)?  should this maybe check for \u0027name\u0027 instead?",
+      "revId": "21f025bc999207e11e80504cec9330ed134fe3f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_21abf2d6",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 727,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-04-14T17:39:33Z",
+      "side": 1,
+      "message": "I think the above condition on line 720 is incorrect, it should be:\n\n if \u0027node-label-name\u0027 in data or \u0027node-label\u0027 in data:\n\nAs both tags are to be added to the same parent XML tag.",
+      "parentUuid": "dfeb2761_e280f648",
       "revId": "21f025bc999207e11e80504cec9330ed134fe3f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7ffa3b31_41aefee7",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 730,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-04-14T17:39:33Z",
+      "side": 1,
+      "message": "It needs the same XML tag, and I believe only one parent xml tag is used to wrap both.",
+      "parentUuid": "dfeb2761_82524add",
+      "revId": "21f025bc999207e11e80504cec9330ed134fe3f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfeb2761_7ff12195",
         "filename": "tests/publishers/fixtures/trigger_manual001.yaml",
         "patchSetId": 9
@@ -64,6 +118,24 @@
       "writtenOn": "2017-04-04T18:36:45Z",
       "side": 1,
       "message": "looks like you are testing all paramters.  any reason for leaving out condition and node-label parameters or just forgot about it?",
+      "revId": "21f025bc999207e11e80504cec9330ed134fe3f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ffa3b31_817d2670",
+        "filename": "tests/publishers/fixtures/trigger_manual001.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-04-14T17:39:33Z",
+      "side": 1,
+      "message": "Expect it was just forgotten, which also explains the bug you caught.",
+      "parentUuid": "dfeb2761_7ff12195",
       "revId": "21f025bc999207e11e80504cec9330ed134fe3f0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
