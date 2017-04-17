@@ -16,6 +16,7 @@
 
 import os
 
+from mock import patch
 from testtools import ExpectedException
 from yaml.composer import ComposerError
 
@@ -45,6 +46,20 @@ class TestCaseLocalYamlInclude(base.JsonTestCase):
                 super(TestCaseLocalYamlInclude, self).test_yaml_snippet()
         else:
             super(TestCaseLocalYamlInclude, self).test_yaml_snippet()
+
+
+class TestCaseMockedGitBranchOutput(base.JsonTestCase):
+    """
+    Mock external cmd calls to return 'master' as a branch name
+    """
+    fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
+    scenarios = base.get_scenarios(fixtures_path, 'gityaml', 'gitjson',
+                                   filter_func=_exclude_scenarios)
+
+    @patch('subprocess.check_output', side_effect=lambda *a, **kw: 'master')
+    def test_yaml_snippet(self, patched_check_output):
+        super(TestCaseMockedGitBranchOutput, self).test_yaml_snippet()
+        patched_check_output.assert_called_once()
 
 
 class TestCaseLocalYamlAnchorAlias(base.YamlTestCase):
