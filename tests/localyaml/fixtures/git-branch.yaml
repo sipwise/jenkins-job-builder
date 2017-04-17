@@ -1,0 +1,9 @@
+### Better testing setup needed! Tests break on "no git" or branch!=master
+- job-template:
+    name: "test-job-{branch}"
+
+- project:
+    name: "test-git-branch"
+    branch: !git-branch
+    jobs:
+      - "test-job-{branch}"
