@@ -1,0 +1,16 @@
+[
+    {
+        "job-template": {
+            "name": "test-job-{branch}"
+        }
+    },
+    {
+        "project": {
+            "name": "test-git-branch",
+            "branch": "master",
+            "jobs": [
+                "test-job-{branch}"
+            ]
+        }
+    }
+]
