@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5ff73747_dd48d95c",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1760,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2017-05-01T23:59:34Z",
+      "side": 1,
+      "message": "Optional comment is not needed to be said.",
+      "range": {
+        "startLine": 1760,
+        "startChar": 10,
+        "endLine": 1760,
+        "endChar": 20
+      },
+      "revId": "db41a30205c3fc0c6c27a6bd6121e387000c4a94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ff73747_9d9db1bd",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1769,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2017-05-01T23:59:34Z",
+      "side": 1,
+      "message": "\"default false\" is preferred to keep in line with documentation conventions.",
+      "range": {
+        "startLine": 1769,
+        "startChar": 22,
+        "endLine": 1769,
+        "endChar": 36
+      },
+      "revId": "db41a30205c3fc0c6c27a6bd6121e387000c4a94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
