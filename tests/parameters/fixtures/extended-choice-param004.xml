@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+          <name>version_no</name>
+          <description/>
+          <value/>
+          <visibleItemCount>5</visibleItemCount>
+          <multiSelectDelimiter>,</multiSelectDelimiter>
+          <quoteValue>false</quoteValue>
+          <defaultValue/>
+          <descriptionPropertyValue/>
+          <type>PT_SINGLE_SELECT</type>
+          <propertyFile/>
+          <propertyKey/>
+          <defaultPropertyFile/>
+          <defaultPropertyKey/>
+          <descriptionPropertyFile/>
+          <descriptionPropertyKey/>
+          <groovyScript>import groovy.json.JsonSlurper
+import groovy.json.JsonBuilder
+</groovyScript>
+        </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+</project>

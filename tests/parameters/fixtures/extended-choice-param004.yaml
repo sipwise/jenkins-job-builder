@@ -1,0 +1,9 @@
+parameters:
+  - extended-choice:
+        name: version_no
+        type: 'PT_SINGLE_SELECT'
+        quoteValue: true
+        groovy-script: |
+            import groovy.json.JsonSlurper
+            import groovy.json.JsonBuilder
+
