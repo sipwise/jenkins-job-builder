@@ -155,3 +155,17 @@ class TestConfigs(CmdTestsBase):
 
         jjb_config = jenkins_mock.call_args[0][0]
         self.assertEquals(jjb_config.jenkins['timeout'], 0.2)
+
+    def test_jenkins_url_is_string_in_config(self):
+        """
+        Verify that jenkins url in config has type str
+        """
+
+        config_file = os.path.join(self.fixtures_path,
+                                   'settings_from_config.ini')
+        args = ['--conf', config_file, 'test', 'dummy.yaml']
+        jenkins_jobs = entry.JenkinsJobs(args)
+        jjb_config = jenkins_jobs.jjb_config
+        self.assertIsInstance(jjb_config.jenkins["url"], str)
+        self.assertIsInstance(jjb_config.jenkins["user"], str)
+        self.assertIsInstance(jjb_config.jenkins["password"], str)
