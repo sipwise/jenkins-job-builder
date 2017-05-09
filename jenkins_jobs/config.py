@@ -225,8 +225,19 @@ class JJBConfig(object):
         self.recursive = config.getboolean('job_builder', 'recursive')
         self.excludes = config.get('job_builder', 'exclude').split(os.pathsep)
 
+        jenkins_url = config.get('jenkins', 'url')
+        if PY2:
+            # ensure that jenkins url and credentials is instance of str
+            # the python-jenkins expects str for this variables
+            if jenkins_url:
+                jenkins_url = jenkins_url.encode("utf-8")
+            if self.user:
+                self.user = self.user.encode("utf-8")
+            if self.password:
+                self.password = self.password.encode("utf-8")
+
         # The way we want to do things moving forward:
-        self.jenkins['url'] = config.get('jenkins', 'url')
+        self.jenkins['url'] = jenkins_url
         self.jenkins['user'] = self.user
         self.jenkins['password'] = self.password
         self.jenkins['timeout'] = self.timeout
