@@ -133,6 +133,7 @@ class JJBConfig(object):
         self.plugins_info = None
         self.timeout = builder._DEFAULT_TIMEOUT
         self.allow_empty_variables = None
+        self.print_job_urls = False
 
         self.jenkins = defaultdict(None)
         self.builder = defaultdict(None)
@@ -218,6 +219,11 @@ class JJBConfig(object):
         if config.has_option('job_builder', 'flush_cache'):
             self.flush_cache = config.getboolean('job_builder', 'flush_cache')
 
+        # check the print_job_urls setting
+        if config.has_option('job_builder', 'print_job_urls'):
+            self.print_job_urls = config.getboolean('job_builder',
+                                                    'print_job_urls')
+
         # Jenkins supports access as an anonymous user, which can be used to
         # ensure read-only behaviour when querying the version of plugins
         # installed for test mode to generate XML output matching what will be
@@ -268,6 +274,7 @@ class JJBConfig(object):
         self.builder['ignore_cache'] = self.ignore_cache
         self.builder['flush_cache'] = self.flush_cache
         self.builder['plugins_info'] = self.plugins_info
+        self.builder['print_job_urls'] = self.print_job_urls
 
         # keep descriptions ? (used by yamlparser)
         keep_desc = False
