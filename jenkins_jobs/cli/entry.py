@@ -72,8 +72,20 @@ class JenkinsJobs(object):
                                              logger.getEffectiveLevel())
             logger.setLevel(self.options.log_level)
 
+        self.set_log_format(self.options.log_format)
+
         self._parse_additional()
         self.jjb_config.validate()
+
+        self.set_log_format(self.jjb_config.builder['log_format'])
+
+    def set_log_format(self, format_string):
+        logFormatter = logging.Formatter(format_string)
+        sh = logging.StreamHandler()
+        sh.setFormatter(logFormatter)
+        logger.handlers = []
+        logger.addHandler(sh)
+        logger.propagate = False
 
     def _set_config(self, target, option):
         """
@@ -87,6 +99,7 @@ class JenkinsJobs(object):
 
         self._set_config(self.jjb_config.builder, 'ignore_cache')
         self._set_config(self.jjb_config.builder, 'flush_cache')
+        self._set_config(self.jjb_config.builder, 'log_format')
         self._set_config(self.jjb_config.yamlparser, 'allow_empty_variables')
         self._set_config(self.jjb_config.jenkins, 'section')
         self._set_config(self.jjb_config.jenkins, 'user')

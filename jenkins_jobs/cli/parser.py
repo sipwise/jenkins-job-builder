@@ -40,6 +40,11 @@ def create_parser():
         default='info',
         help="log level (default: %(default)s)")
     parser.add_argument(
+        '--log_format',
+        dest='log_format',
+        default=None,
+        help="log format in Python logger format")
+    parser.add_argument(
         '--ignore-cache',
         action='store_true',
         dest='ignore_cache',

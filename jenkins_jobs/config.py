@@ -41,6 +41,8 @@ recursive=False
 exclude=.*
 allow_duplicates=False
 allow_empty_variables=False
+log_format=%(levelname)s %(message)s
+
 
 # other named sections could be used in addition to the implicit [jenkins]
 # if you have multiple jenkins servers.
@@ -136,6 +138,7 @@ class JJBConfig(object):
         self.plugins_info = None
         self.timeout = builder._DEFAULT_TIMEOUT
         self.allow_empty_variables = None
+        self.log_format = '%(levelname)s %(message)s'
 
         self.jenkins = defaultdict(None)
         self.builder = defaultdict(None)
@@ -147,7 +150,9 @@ class JJBConfig(object):
     def _init_defaults(self):
         """ Initialize default configuration values using DEFAULT_CONF
         """
-        config = configparser.ConfigParser()
+        # we use RawConfigParser in order to not attempt to substitute %
+        # sign on log_format line.
+        config = configparser.RawConfigParser()
         # Load default config always
         if PY2:
             config.readfp(StringIO(DEFAULT_CONF))
@@ -240,6 +245,12 @@ class JJBConfig(object):
         self.builder['ignore_cache'] = self.ignore_cache
         self.builder['flush_cache'] = self.flush_cache
         self.builder['plugins_info'] = self.plugins_info
+        self.builder['log_format'] = self.log_format
+
+        if (config and config.has_section('job_builder') and
+                config.has_option('job_builder', 'log_format')):
+            self.builder['log_format'] = config.get('job_builder',
+                                                    'log_format')
 
         # keep descriptions ? (used by yamlparser)
         keep_desc = False
