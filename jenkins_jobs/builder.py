@@ -37,6 +37,7 @@ __all__ = [
     "JenkinsManager"
 ]
 
+logging.basicConfig(format='%(levelname)s	%(message)s')
 logger = logging.getLogger(__name__)
 
 _DEFAULT_TIMEOUT = object()
