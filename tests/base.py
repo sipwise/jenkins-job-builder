@@ -36,6 +36,7 @@ from yaml import safe_dump
 from jenkins_jobs.config import JJBConfig
 from jenkins_jobs.errors import InvalidAttributeError
 import jenkins_jobs.local_yaml as yaml
+from jenkins_jobs.alphanum import AlphanumSort
 from jenkins_jobs.modules import project_externaljob
 from jenkins_jobs.modules import project_flow
 from jenkins_jobs.modules import project_matrix
@@ -224,7 +225,7 @@ class SingleJobTestCase(BaseScenariosTestCase):
         xml_generator = XmlJobGenerator(registry)
         xml_jobs = xml_generator.generateXML(job_data_list)
 
-        xml_jobs.sort(key=operator.attrgetter('name'))
+        xml_jobs.sort(key=AlphanumSort)
 
         # Prettify generated XML
         pretty_xml = u"\n".join(job.output().decode('utf-8')
