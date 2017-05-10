@@ -28,6 +28,7 @@ import xml.etree.ElementTree as XML
 
 import jenkins
 
+from jenkins_jobs.alphanum import AlphanumSort
 from jenkins_jobs.cache import JobCache
 from jenkins_jobs.constants import MAGIC_MANAGE_STRING
 from jenkins_jobs.parallel import concurrent
@@ -247,6 +248,9 @@ class JenkinsManager(object):
 
         if not jobs:
             return [], 0
+
+        # sorting job names using natural sorting for improving UX
+        jobs = sorted(jobs, key=AlphanumSort)
 
         # Update the jobs
         logging.debug('Updating jobs')
