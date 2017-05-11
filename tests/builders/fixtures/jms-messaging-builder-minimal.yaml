@@ -1,0 +1,6 @@
+builders:
+  - jms-messaging-builder:
+      provider-name: fedmsg
+      msg-type: CodeQualityChecksDone
+      msg-props: test
+      msg-content: test
