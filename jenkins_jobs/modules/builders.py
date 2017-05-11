@@ -3254,6 +3254,63 @@ def cloudformation(registry, xml_parent, data):
                              region_dict)
 
 
+def jms_messaging_builder(registry, xml_parent, data):
+    """yaml: jms-messaging-builder
+    The JMS Messaging Plugin provides the following functionality:
+     - A build trigger to submit jenkins jobs upon receipt
+       of a matching message.
+     - A builder that may be used to submit a message to the topic
+       upon the completion of a job
+     - A post-build action that may be used to submit a message to the topic
+       upon the completion of a job
+
+
+    JMS Messaging provider types supported:
+        - ActiveMQ
+        - FedMsg
+
+    Requires the Jenkins :jenkins-wiki:`JMS Messaging Plugin
+    Pipeline Plugin <JMS+Messaging+Plugin>`.
+
+    :arg str override-topic: If you need to override the default topic.
+        (default '')
+    :arg str provider-name: Name of message provider setup in the
+        global config. (default '')
+    :arg str msg-type: A message type
+        (default 'CodeQualityChecksDone')
+    :arg str msg-props: Message header to publish. (default '')
+    :arg str msg-content: Message body to publish. (default '')
+
+
+    Full Example:
+
+    .. literalinclude::
+        ../../tests/builders/fixtures/jms-messaging-builder-full.yaml
+       :language: yaml
+
+    Minimal Example:
+
+    .. literalinclude::
+        ../../tests/builders/fixtures/jms-messaging-builder-minimal.yaml
+       :language: yaml
+    """
+    namespace = XML.SubElement(xml_parent,
+                               'com.redhat.jenkins.plugins.ci.'
+                               'CIMessageBuilder')
+    if 'override-topic' in data:
+        overrides = XML.SubElement(namespace, 'overrides')
+        XML.SubElement(overrides,
+                       'topic').text = str(data.get('override-topic', ''))
+    mapping = [
+        # option, xml name, default value
+        ("provider-name", 'providerName', ''),
+        ("msg-type", 'messageType', 'CodeQualityChecksDone'),
+        ("msg-props", 'messageProperties', ''),
+        ("msg-content", 'messageContent', ''),
+    ]
+    convert_mapping_to_xml(namespace, data, mapping, fail_required=True)
+
+
 def openshift_build_verify(registry, xml_parent, data):
     """yaml: openshift-build-verify
     Performs the equivalent of an 'oc get builds` command invocation for the
