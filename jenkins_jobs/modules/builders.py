@@ -3254,6 +3254,65 @@ def cloudformation(registry, xml_parent, data):
                              region_dict)
 
 
+def jms_messaging_builder(registry, xml_parent, data):
+    """yaml: jms-messaging-builder
+    The JMS Messaging Plugin provides the following functionality:
+     - A build trigger to submit jenkins jobs upon receipt
+       of a matching message.
+     - A builder that may be used to submit a message to the topic
+       upon the completion of a job
+     - A post-build action that may be used to submit a message to the topic
+       upon the completion of a job
+
+
+    JMS Messaging provider types supported:
+        - ActiveMQ
+        - FedMsg
+
+    Requires the Jenkins :jenkins-wiki:`JMS Messaging Plugin
+    Pipeline Plugin <JMS+Messaging+Plugin>`.
+
+    :arg str provider-name: Name of message provider setup in the
+        global config. (default '')
+    :arg str override-topic: If you need to override the default topic.
+        (default '')
+    :arg str msg-type: A message type
+        (default 'CodeQualityChecksDone')
+    :arg str msg-props: Message header to publish. (default '')
+    :arg str msg-content: Message body to publish. (default '')
+
+
+    Full Example:
+
+    .. literalinclude::
+        ../../tests/triggers/fixtures/jms-messaging-builder001.yaml
+       :language: yaml
+
+    Minimal Example:
+
+    .. literalinclude::
+        ../../tests/triggers/fixtures/jms-messaging-builder002.yaml
+       :language: yaml
+    """
+    namespace = XML.SubElement(xml_parent,
+                               'com.redhat.jenkins.plugins.ci.'
+                               'CIMessageNotifier')
+    XML.SubElement(namespace,
+                   'providerName').text = str(data.get('provider-name', ''))
+    if 'override-topic' in data:
+        overrides = XML.SubElement(namespace, 'overrides')
+        XML.SubElement(overrides,
+                       'topic').text = str(data.get('override-topic', ''))
+    XML.SubElement(namespace,
+                   'messageType').text = str(data.get(
+                                             'msg-type',
+                                             'CodeQualityChecksDone'))
+    XML.SubElement(namespace,
+                   'messageProperties').text = str(data.get('msg-props', ''))
+    XML.SubElement(namespace,
+                   'messageContent').text = str(data.get('msg-content', ''))
+
+
 def openshift_build_verify(registry, xml_parent, data):
     """yaml: openshift-build-verify
     Performs the equivalent of an 'oc get builds` command invocation for the
