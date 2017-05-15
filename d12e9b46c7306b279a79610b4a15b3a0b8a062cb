@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f013ff3_4a94d48b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-05-15T11:06:51Z",
+      "side": 1,
+      "message": "This is likely to be a subjective area. I\u0027d certainly be inclined that you should include in your commit message how it was formatted before and what it would look like in the future with this change.",
+      "revId": "d12e9b46c7306b279a79610b4a15b3a0b8a062cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f013ff3_6a4af027",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-05-15T11:06:51Z",
+      "side": 1,
+      "message": "I\u0027m not aware that this is normally set for libraries, because it has the potential to override application specific logging settings depending on how the imports are done.\n\nCurrently for the 2.0 JJB cli this is defined in jenkins_jobs/cli/entry.py for the application, and for anything reusing JJB as a library rather than using the CLI I would expect that they would want to manage this directly themselves.\n\nSo I\u0027m unsure as to benefit of managing this directly for all consumers.",
+      "revId": "d12e9b46c7306b279a79610b4a15b3a0b8a062cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
