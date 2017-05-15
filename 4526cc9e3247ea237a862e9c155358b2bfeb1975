@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f013ff3_4f2186b4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-05-15T10:57:17Z",
+      "side": 1,
+      "message": "It would be good to expand on how your expecting the UX to be improved here. Just explaining with a  simple list of 3 job names and in what cases it would be useful to see this sorting.\n\nNever really worried about this since when handing large number of jobs I\u0027ve usually turned on the multiple workers which somewhat nullifies any sorting because the updates are never complete in the same order they are fed in.",
+      "revId": "4526cc9e3247ea237a862e9c155358b2bfeb1975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f013ff3_afb7ea86",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-05-15T10:57:17Z",
+      "side": 1,
+      "message": "This is something better off in the utils.py file.\n\nAnd potentially should be applied to the unit test code as well.",
+      "revId": "4526cc9e3247ea237a862e9c155358b2bfeb1975",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
