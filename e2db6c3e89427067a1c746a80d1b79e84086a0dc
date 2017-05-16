@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f013ff3_67cfa2b0",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3288,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-05-16T14:33:23Z",
+      "side": 1,
+      "message": "builders?",
+      "range": {
+        "startLine": 3288,
+        "startChar": 20,
+        "endLine": 3288,
+        "endChar": 28
+      },
+      "revId": "e2db6c3e89427067a1c746a80d1b79e84086a0dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f013ff3_47c6e69c",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3294,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-05-16T14:33:23Z",
+      "side": 1,
+      "message": "builders?",
+      "range": {
+        "startLine": 3294,
+        "startChar": 20,
+        "endLine": 3294,
+        "endChar": 28
+      },
+      "revId": "e2db6c3e89427067a1c746a80d1b79e84086a0dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f013ff3_07c0de7a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 6686,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-05-16T14:33:23Z",
+      "side": 1,
+      "message": "publishers?",
+      "range": {
+        "startLine": 6686,
+        "startChar": 20,
+        "endLine": 6686,
+        "endChar": 28
+      },
+      "revId": "e2db6c3e89427067a1c746a80d1b79e84086a0dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f013ff3_a73a4a95",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 6692,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-05-16T14:33:23Z",
+      "side": 1,
+      "message": "publishers?",
+      "range": {
+        "startLine": 6692,
+        "startChar": 20,
+        "endLine": 6692,
+        "endChar": 28
+      },
+      "revId": "e2db6c3e89427067a1c746a80d1b79e84086a0dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
