@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_df902f4d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3311,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-05-22T14:46:12Z",
+      "side": 1,
+      "message": "Seems like the above code after the initial namespace tag could be put into a common function and have both this and the publisher call it.\n\nIn which case, I would suggest adding an import for the helpers module rather than the individual function names, we should clean this up at some point.",
+      "revId": "1ecbebbb14f69554433cdbb8461a3c5797156275",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_bfa8db8b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 6656,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-05-22T14:46:12Z",
+      "side": 1,
+      "message": "Part of me wonders if being in separate modules already, there is no need to name the jms-messaging modules differently for build/trigger/publishing?",
+      "revId": "1ecbebbb14f69554433cdbb8461a3c5797156275",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
