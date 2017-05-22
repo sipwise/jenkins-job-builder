@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ff0f0b1f_ff4d339a",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3311,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-05-22T14:50:19Z",
+      "side": 1,
+      "message": "Agreed if the same mappings are used in multiple places we should put it in helpers as a common function so that the code can be reused rather than duplicated.",
+      "parentUuid": "ff0f0b1f_df902f4d",
+      "revId": "1ecbebbb14f69554433cdbb8461a3c5797156275",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff0f0b1f_bfa8db8b",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 5
