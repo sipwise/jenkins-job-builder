@@ -87,6 +87,24 @@
       "revId": "1ecbebbb14f69554433cdbb8461a3c5797156275",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_4a6b3884",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 6656,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-05-22T16:15:16Z",
+      "side": 1,
+      "message": "I think it should have the same name everywhere. My understanding is that this refers to the plugin. Since all these configurations come from the same plugin then it should use the same name in every instance.",
+      "parentUuid": "ff0f0b1f_aa72d4ab",
+      "revId": "1ecbebbb14f69554433cdbb8461a3c5797156275",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
