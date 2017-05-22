@@ -69,6 +69,24 @@
       "revId": "1ecbebbb14f69554433cdbb8461a3c5797156275",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_aa72d4ab",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 6656,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-05-22T16:11:29Z",
+      "side": 1,
+      "message": "potentially, where it is the same thing, just at different stages. Certainly the builder and publisher look to do the same thing, maybe the trigger being different, should have been named slightly differently.\n\nIt\u0027s not the first time:\n\n builders.py:def cloudformation(registry, xml_parent, data):\n publishers.py:def cloudformation(registry, xml_parent, data):\n\n builders.py:def config_file_provider(registry, xml_parent, data):\n wrappers.py:def config_file_provider(registry, xml_parent, data):\n\n properties.py:def delivery_pipeline(registry, xml_parent, data):\n wrappers.py:def delivery_pipeline(registry, xml_parent, data):\n\n publishers.py:def email(registry, xml_parent, data):\n reporters.py:def email(registry, xml_parent, data):\n\n publishers.py:def findbugs(registry, xml_parent, data):\n reporters.py:def findbugs(registry, xml_parent, data):\n\n builders.py:def github_notifier(registry, xml_parent, data):\n publishers.py:def github_notifier(registry, xml_parent, data):\n\n publishers.py:def git(registry, xml_parent, data):\n scm.py:def git(registry, xml_parent, data):\n\nThough I would wait until one of the other cores comments on it before making any changes.\n\nMost of these are really just refering to the same plugin when it supports actions at different points such as scm, build steps, post phase, properties, build wrappers, etc.\n\nSince the publishers:jms_messaging_notify and builders:jms_messaging_builder are part of the same plugin as triggers:jms_messaging then it seems like it makes it easier for users to link all three together as coming from the same Jenkins plugin, rather than appearing as though it\u0027s from 3 different ones as you might expect given the current usage of names through out.",
+      "parentUuid": "ff0f0b1f_31451f44",
+      "revId": "1ecbebbb14f69554433cdbb8461a3c5797156275",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
