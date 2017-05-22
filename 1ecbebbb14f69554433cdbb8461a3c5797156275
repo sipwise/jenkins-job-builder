@@ -51,6 +51,24 @@
       "revId": "1ecbebbb14f69554433cdbb8461a3c5797156275",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff0f0b1f_31451f44",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 6656,
+      "author": {
+        "id": 13292
+      },
+      "writtenOn": "2017-05-22T14:55:06Z",
+      "side": 1,
+      "message": "So are you saying all 3 should just be jms_messaging?",
+      "parentUuid": "ff0f0b1f_bfa8db8b",
+      "revId": "1ecbebbb14f69554433cdbb8461a3c5797156275",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
