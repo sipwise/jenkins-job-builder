@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff0f0b1f_90f56886",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1760,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2017-05-26T15:33:14Z",
+      "side": 1,
+      "message": "Remove colon to keep in line with documentation",
+      "range": {
+        "startLine": 1760,
+        "startChar": 18,
+        "endLine": 1760,
+        "endChar": 19
+      },
+      "revId": "a298ef7421d57ca7bee6ed26957e118f19a4c805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
