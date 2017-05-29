@@ -16,6 +16,24 @@
       "revId": "c698079667e6ffc80702f86ca007f725b223a3f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_e1fe28ad",
+        "filename": "jenkins_jobs/cache.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-05-29T11:22:32Z",
+      "side": 1,
+      "message": "I think we\u0027d need to check how we lock in that case as well, and require any place the cache object is created, to explicitly manage the unlocking process.\n\nWhich changes this from being encapsulated to something calling code needs to handle.\n\nI don\u0027t particularly like using the destructor in python, but I can\u0027t see a particularly good way that avoids the calling code having to be responsible for the teardown of any locks, which doesn\u0027t seem to be much better.\n\nAny thoughts, suggestions?",
+      "parentUuid": "ba5201f7_e8388cf0",
+      "revId": "c698079667e6ffc80702f86ca007f725b223a3f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
