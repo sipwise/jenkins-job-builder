@@ -1,0 +1,14 @@
+# Make sure conditional-step builder properly handles JJB macros in 'steps'
+- builder:
+    name: multiple-steps-macro
+    builders:
+        - shell: 'first command'
+        - shell: 'second and last command'
+
+- job:
+    name: conditional-steps-with-macros
+    builders:
+        - conditional-step:
+            condition-kind: always
+            steps:
+                - multiple-steps-macro

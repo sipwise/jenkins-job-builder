@@ -1688,6 +1688,11 @@ def conditional_step(registry, xml_parent, data):
     steps = data['steps']
     has_multiple_steps = len(steps) > 1
 
+    steps_expanded = []
+    for step in steps:
+        steps_expanded.extend(create_builders(registry, step))
+    has_multiple_steps = len(steps_expanded) > 1
+
     if has_multiple_steps:
         root_tag = XML.SubElement(xml_parent, cond_builders_tag)
         steps_parent = XML.SubElement(root_tag, "conditionalbuilders")
@@ -1711,8 +1716,10 @@ def conditional_step(registry, xml_parent, data):
                                                    'fail')]
     XML.SubElement(root_tag, "runner").set('class',
                                            evaluation_class)
-    for step in steps:
-        build_step(steps_parent, step)
+    if has_multiple_steps:
+        steps_parent.extend(steps_expanded)
+    else:
+        build_step(steps_parent, steps[0])
 
 
 def maven_builder(registry, xml_parent, data):
