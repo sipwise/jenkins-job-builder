@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df140735_579dd163",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2017-06-05T19:09:18Z",
+      "side": 1,
+      "message": "Please add documentation about the new parameters :] For example:\n\n :arg str groovy-script: an inline Groovy script. (optional, default \u0027\u0027)\n :arg str groovy-script-file: location of a Groovy file (optional, default \u0027\u0027)\n\n+ the advanced options",
+      "revId": "e2b8f73cd66ccdfa198384dfdc35885a20a73f96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_57ef11e8",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2017-06-05T19:09:18Z",
+      "side": 1,
+      "message": "There is also an option to point to a groovy file on disk.  Would you mind adding it as well?\n\nWe probably want in YAML \"groovy-script-file\" which will then generate an XML element: \u003cgroovyScriptFile\u003e\n\n\n\nBoth type show an advanced button to enable a couple more options:\n\n Variable bindings  \u003d\u003d\u003e \u003cbindings/\u003e\n Groovy Classpath   \u003d\u003d\u003e \u003cgroovyClasspath/\u003e\n\nMaybe in yaml they could be:  groovy-bindings and groovy-classpath ?\n\nThat would only apply when either \"groovy-script\" or \"groovy-script-file\" is set.\n\n\nAll of that would need to be documented in the python method doc block above.",
+      "revId": "e2b8f73cd66ccdfa198384dfdc35885a20a73f96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
