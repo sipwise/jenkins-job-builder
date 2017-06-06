@@ -89,6 +89,8 @@ class TestConfigs(CmdTestsBase):
         jjb_config = jenkins_jobs.jjb_config
         self.assertEqual(jjb_config.jenkins['user'], "jenkins_user")
         self.assertEqual(jjb_config.jenkins['password'], "jenkins_password")
+        self.assertEqual(jjb_config.jenkins['admin_user'], None)
+        self.assertEqual(jjb_config.jenkins['admin_password'], None)
         self.assertEqual(jjb_config.builder['ignore_cache'], True)
         self.assertEqual(jjb_config.builder['flush_cache'], True)
         self.assertEqual(
@@ -106,10 +108,44 @@ class TestConfigs(CmdTestsBase):
         jjb_config = jenkins_jobs.jjb_config
         self.assertEqual(jjb_config.jenkins['user'], "myuser")
         self.assertEqual(jjb_config.jenkins['password'], "mypassword")
+        self.assertEqual(jjb_config.jenkins['admin_user'], None)
+        self.assertEqual(jjb_config.jenkins['admin_password'], None)
         self.assertEqual(jjb_config.builder['ignore_cache'], True)
         self.assertEqual(jjb_config.builder['flush_cache'], True)
         self.assertEqual(
             jjb_config.yamlparser['allow_empty_variables'], True)
+
+    def test_admin_user_differs_from_user(self):
+        """
+        Run test mode and check config settings from conf file retained
+        when non of the global CLI options are set.
+        """
+        config_file = os.path.join(self.fixtures_path,
+                                   'admin_user.conf')
+        args = ['--conf', config_file, 'test', 'dummy.yaml']
+        jenkins_jobs = entry.JenkinsJobs(args)
+        jjb_config = jenkins_jobs.jjb_config
+        self.assertEqual(jjb_config.jenkins['user'], "myuser")
+        self.assertEqual(jjb_config.jenkins['password'], "mytoken")
+        self.assertEqual(jjb_config.jenkins['admin_user'], "myadminuser")
+        self.assertEqual(jjb_config.jenkins['admin_password'], "myadmintoken")
+
+    def test_admin_user_differs_from_user_cli(self):
+        """
+        Run test mode and check config settings from conf file retained
+        when non of the global CLI options are set.
+        """
+        config_file = os.path.join(self.fixtures_path,
+                                   'admin_user.conf')
+        args = ['--conf', config_file,
+                '--user', 'cliuser', '--password', 'clitoken',
+                'test', 'dummy.yaml']
+        jenkins_jobs = entry.JenkinsJobs(args)
+        jjb_config = jenkins_jobs.jjb_config
+        self.assertEqual(jjb_config.jenkins['user'], "cliuser")
+        self.assertEqual(jjb_config.jenkins['password'], "clitoken")
+        self.assertEqual(jjb_config.jenkins['admin_user'], "myadminuser")
+        self.assertEqual(jjb_config.jenkins['admin_password'], "myadmintoken")
 
     @mock.patch('jenkins_jobs.cli.subcommand.update.JenkinsManager')
     def test_update_timeout_not_set(self, jenkins_mock):

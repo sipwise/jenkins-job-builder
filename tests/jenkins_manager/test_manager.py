@@ -40,6 +40,34 @@ class TestCaseTestJenkinsManager(base.BaseTestCase):
         self.builder = jenkins_jobs.builder.JenkinsManager(self.jjb_config)
         self.assertEqual(self.builder.plugins_list, _plugins_info)
 
+    @mock.patch('jenkins.Jenkins', side_effect=range(2))
+    def test_admin_user_defaulting(self, jenkins_mock):
+        self.jjb_config.jenkins['user'] = 'myuser'
+        self.jjb_config.jenkins['password'] = 'mypassword'
+
+        self.builder = jenkins_jobs.builder.JenkinsManager(self.jjb_config)
+        self.assertEqual(self.builder.jenkins, 0)  # first call
+        self.assertEqual(jenkins_mock.call_args_list[0][0][1:3],
+                         ('myuser', 'mypassword'))
+        self.assertEqual(self.builder.admin_jenkins, 1)  # second call
+        self.assertEqual(jenkins_mock.call_args_list[1][0][1:3],
+                         ('myuser', 'mypassword'))
+
+    @mock.patch('jenkins.Jenkins', side_effect=range(2))
+    def test_admin_user_specified(self, jenkins_mock):
+        self.jjb_config.jenkins['user'] = 'myuser'
+        self.jjb_config.jenkins['password'] = 'mypassword'
+        self.jjb_config.jenkins['admin_user'] = 'myadminuser'
+        self.jjb_config.jenkins['admin_password'] = 'myadminpassword'
+
+        self.builder = jenkins_jobs.builder.JenkinsManager(self.jjb_config)
+        self.assertEqual(self.builder.jenkins, 0)  # first call
+        self.assertEqual(jenkins_mock.call_args_list[0][0][1:3],
+                         ('myuser', 'mypassword'))
+        self.assertEqual(self.builder.admin_jenkins, 1)  # second call
+        self.assertEqual(jenkins_mock.call_args_list[1][0][1:3],
+                         ('myadminuser', 'myadminpassword'))
+
     @mock.patch.object(jenkins_jobs.builder.jenkins.Jenkins,
                        'get_plugins',
                        return_value=_plugins_info)

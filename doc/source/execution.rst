@@ -62,11 +62,24 @@ jenkins section
   matrix: under the ``Global`` group of permissions, check ``Read``,
   then under the ``Job`` group of permissions, check ``Create``,
   ``Delete``, ``Configure`` and finally ``Read``.
+  Please note that ``Administer`` permissions are needed for
+  ``query_plugins_info``  since Jenkins 1.651.2/2.0 but you have an
+  option to specify ``admin_user`` and ``admin_password`` if you wish
+  to limit potential impact of this Jenkins user.
 
 **password**
   The API token for the user specified.  You can get this through the
   Jenkins management interface under ``People`` -> username ->
   ``Configure`` and then click the ``Show API Token`` button.
+
+**admin_user**
+  Jenkins user having ``Administer`` permissions. Currently used only
+  for querying plugin information if **query_plugins_info** is enabled.
+  Defaults to the value of ``user``.
+
+**admin_password**
+  The API token for Jenkins admin user. It should be specified if
+  ``admin_user`` is specified.
 
 **url**
   The base URL for your Jenkins installation.
@@ -78,8 +91,10 @@ jenkins section
 **query_plugins_info**
   Whether to query the Jenkins instance for plugin info. If no configuration
   files are found (either in the default paths or given through the
-  command-line), `jenkins-jobs` will skip querying for plugin information. True
-  by default.
+  command-line), `jenkins-jobs` will skip querying for plugin information.
+  Please note that ``Administer`` permissions on ``user``/``admin_user``
+  are needed to query plugin information since Jenkins 1.651/2.0. True by
+  default.
 
 
 hipchat section

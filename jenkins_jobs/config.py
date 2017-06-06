@@ -132,6 +132,8 @@ class JJBConfig(object):
         self.flush_cache = False
         self.user = None
         self.password = None
+        self.admin_user = None
+        self.admin_password = None
         self.section = config_section
         self.plugins_info = None
         self.timeout = builder._DEFAULT_TIMEOUT
@@ -209,6 +211,16 @@ class JJBConfig(object):
         except (TypeError, configparser.NoOptionError):
             pass
 
+        try:
+            self.admin_user = config.get(self.section, 'admin_user')
+        except (TypeError, configparser.NoOptionError):
+            pass
+
+        try:
+            self.admin_password = config.get(self.section, 'admin_password')
+        except (TypeError, configparser.NoOptionError):
+            pass
+
         # None -- no timeout, blocking mode; same as setblocking(True)
         # 0.0 -- non-blocking mode; same as setblocking(False) <--- default
         # > 0 -- timeout mode; operations time out after timeout seconds
@@ -236,6 +248,8 @@ class JJBConfig(object):
         self.jenkins['user'] = self.user
         self.jenkins['password'] = self.password
         self.jenkins['timeout'] = self.timeout
+        self.jenkins['admin_user'] = self.admin_user
+        self.jenkins['admin_password'] = self.admin_password
 
         self.builder['ignore_cache'] = self.ignore_cache
         self.builder['flush_cache'] = self.flush_cache

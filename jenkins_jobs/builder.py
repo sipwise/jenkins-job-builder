@@ -49,11 +49,21 @@ class JenkinsManager(object):
         user = jjb_config.jenkins['user']
         password = jjb_config.jenkins['password']
         timeout = jjb_config.jenkins['timeout']
+        admin_user = jjb_config.jenkins['admin_user']
+        admin_password = jjb_config.jenkins['admin_password']
+        # Default to the main user if admin user is not supplied
+        if admin_user is None:
+            admin_user = user
+            admin_password = password
 
         if timeout != _DEFAULT_TIMEOUT:
             self.jenkins = jenkins.Jenkins(url, user, password, timeout)
+            self.admin_jenkins = jenkins.Jenkins(url, admin_user,
+                                                 admin_password, timeout)
         else:
             self.jenkins = jenkins.Jenkins(url, user, password)
+            self.admin_jenkins = jenkins.Jenkins(url, admin_user,
+                                                 admin_password)
 
         self.cache = JobCache(jjb_config.jenkins['url'],
                               flush=jjb_config.builder['flush_cache'])
@@ -109,7 +119,7 @@ class JenkinsManager(object):
         Jenkins instance.
         """
         try:
-            plugins_list = self.jenkins.get_plugins().values()
+            plugins_list = self.admin_jenkins.get_plugins().values()
 
         except jenkins.JenkinsException as e:
             if re.search("Connection refused", str(e)):
