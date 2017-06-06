@@ -6,6 +6,7 @@
       <authToken>yourauthtoken</authToken>
       <buildServerUrl>http://localhost:8081</buildServerUrl>
       <room>#builds</room>
+      <authTokenCredentialId>yourauthcredentialid</authTokenCredentialId>
       <startNotification>true</startNotification>
       <notifySuccess>true</notifySuccess>
       <notifyAborted>true</notifyAborted>

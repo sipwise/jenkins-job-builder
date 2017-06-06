@@ -6,6 +6,7 @@
       <authToken/>
       <buildServerUrl>/</buildServerUrl>
       <room/>
+      <authTokenCredentialId/>
       <startNotification>false</startNotification>
       <notifySuccess>false</notifySuccess>
       <notifyAborted>false</notifyAborted>
