@@ -6481,6 +6481,9 @@ def slack(registry, xml_parent, data):
     :arg str team-domain: Your team's domain at slack. (default '')
     :arg str auth-token: The integration token to be used when sending
         notifications. (default '')
+    :arg str auth-token-credential-id: The ID for the integration token from
+        the Credentials plugin to be used to send notifications to Slack
+        (>= 2.1). (default: '')
     :arg str build-server-url: Specify the URL for your server installation.
         (default '/')
     :arg str room: A comma seperated list of rooms / channels to post the
@@ -6543,24 +6546,25 @@ def slack(registry, xml_parent, data):
     plugin_ver = pkg_resources.parse_version(plugin_info.get('version', "0"))
 
     mapping = (
-        ('team-domain', 'teamDomain', ''),
-        ('auth-token', 'authToken', ''),
-        ('build-server-url', 'buildServerUrl', '/'),
-        ('room', 'room', ''),
+        ('team-domain', 'teamDomain', '', '0'),
+        ('auth-token', 'authToken', '', '0'),
+        ('build-server-url', 'buildServerUrl', '/', '0'),
+        ('room', 'room', '', '0'),
     )
     mapping_20 = (
-        ('notify-start', 'startNotification', False),
-        ('notify-success', 'notifySuccess', False),
-        ('notify-aborted', 'notifyAborted', False),
-        ('notify-not-built', 'notifyNotBuilt', False),
-        ('notify-unstable', 'notifyUnstable', False),
-        ('notify-failure', 'notifyFailure', False),
-        ('notify-back-to-normal', 'notifyBackToNormal', False),
-        ('notify-repeated-failure', 'notifyRepeatedFailure', False),
-        ('include-test-summary', 'includeTestSummary', False),
-        ('commit-info-choice', 'commitInfoChoice', 'NONE'),
-        ('include-custom-message', 'includeCustomMessage', False),
-        ('custom-message', 'customMessage', ''),
+        ('auth-token-credential-id', 'authTokenCredentialId', '', '2.1'),
+        ('notify-start', 'startNotification', False, '2.0'),
+        ('notify-success', 'notifySuccess', False, '2.0'),
+        ('notify-aborted', 'notifyAborted', False, '2.0'),
+        ('notify-not-built', 'notifyNotBuilt', False, '2.0'),
+        ('notify-unstable', 'notifyUnstable', False, '2.0'),
+        ('notify-failure', 'notifyFailure', False, '2.0'),
+        ('notify-back-to-normal', 'notifyBackToNormal', False, '2.0'),
+        ('notify-repeated-failure', 'notifyRepeatedFailure', False, '2.0'),
+        ('include-test-summary', 'includeTestSummary', False, '2.0'),
+        ('commit-info-choice', 'commitInfoChoice', 'NONE', '2.0'),
+        ('include-custom-message', 'includeCustomMessage', False, '2.0'),
+        ('custom-message', 'customMessage', '', '2.0'),
     )
 
     commit_info_choices = ['NONE', 'AUTHORS', 'AUTHORS_AND_TITLES']
@@ -6574,21 +6578,25 @@ def slack(registry, xml_parent, data):
         mapping = mapping + mapping_20
 
     if plugin_ver < pkg_resources.parse_version("2.0"):
-        for yaml_name, _, default_value in mapping:
+        for yaml_name, _, default_value, minver in mapping:
             # All arguments that don't have a default value are mandatory for
             # the plugin to work as intended.
             if not data.get(yaml_name, default_value):
                 raise MissingAttributeError(yaml_name)
 
-        for yaml_name, _, _ in mapping_20:
+        for yaml_name, _, _, minver in mapping_20:
             if yaml_name in data:
                 logger.warning(
-                    "'%s' is invalid with plugin version < 2.0, ignored",
-                    yaml_name,
+                    "'%s' is invalid with plugin version < %s, ignored",
+                    yaml_name, minver
                 )
 
-    for yaml_name, xml_name, default_value in mapping:
+    for yaml_name, xml_name, default_value, minver in mapping:
         value = data.get(yaml_name, default_value)
+
+        # Check if minimal version requirement for the option is satified
+        if plugin_ver < pkg_resources.parse_version(minver):
+            continue
 
         # 'commit-info-choice' is enumerated type
         if yaml_name == 'commit-info-choice':
