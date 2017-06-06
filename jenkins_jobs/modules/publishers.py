@@ -6481,6 +6481,8 @@ def slack(registry, xml_parent, data):
     :arg str team-domain: Your team's domain at slack. (default '')
     :arg str auth-token: The integration token to be used when sending
         notifications. (default '')
+    :arg str auth-token-credential-id: The ID for the integration token from the
+        Credentials plugin to be used to send notifications to Slack. (default '')
     :arg str build-server-url: Specify the URL for your server installation.
         (default '/')
     :arg str room: A comma seperated list of rooms / channels to post the
@@ -6549,6 +6551,7 @@ def slack(registry, xml_parent, data):
         ('room', 'room', ''),
     )
     mapping_20 = (
+        ('auth-token-credential-id', 'authTokenCredentialId', ''),
         ('notify-start', 'startNotification', False),
         ('notify-success', 'notifySuccess', False),
         ('notify-aborted', 'notifyAborted', False),
