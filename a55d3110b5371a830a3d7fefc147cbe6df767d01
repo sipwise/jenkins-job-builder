@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df140735_74964597",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 6567,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-07T16:13:20Z",
+      "side": 1,
+      "message": "This is clever but we\u0027re trying to consolidate all the plugins to use the convert_mapping helper function which doesn\u0027t support this tuple. The 4th tuple in the current convert mapping function if I recall take a lost of valid options for parameters that have a defined set of allowed options.\n\nI think any improvements to that should be done in the convert_mapping helper function instead but should be done in a separate patch so that we can focus this patch on adding the new plugin feature.",
+      "range": {
+        "startLine": 6567,
+        "startChar": 49,
+        "endLine": 6567,
+        "endChar": 53
+      },
+      "revId": "a55d3110b5371a830a3d7fefc147cbe6df767d01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
