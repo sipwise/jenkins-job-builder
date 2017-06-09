@@ -170,6 +170,8 @@ def git(registry, xml_parent, data):
         * **scm-name** (`string`) - The unique scm name for this Git SCM
             (optional)
         * **shallow-clone** (`bool`) - Perform shallow clone (default false)
+        * **do-not-fetch-tags** (`bool`) - Perform a clone without tags
+            (default false)
         * **sparse-checkout** (`dict`)
             * **paths** (`list`) - List of paths to sparse checkout. (optional)
         * **submodule** (`dict`)
@@ -373,10 +375,14 @@ def git(registry, xml_parent, data):
     if 'scm-name' in data:
         ext = XML.SubElement(exts_node, impl_prefix + 'ScmName')
         XML.SubElement(ext, 'name').text = str(data['scm-name'])
-    if 'shallow-clone' in data or 'timeout' in data:
+    if ('shallow-clone' in data or 'do-not-fetch-tags' in data or
+            'timeout' in data):
         clo = XML.SubElement(exts_node, impl_prefix + 'CloneOption')
         XML.SubElement(clo, 'shallow').text = str(
             data.get('shallow-clone', False)).lower()
+        if 'do-not-fetch-tags' in data:
+            XML.SubElement(clo, 'noTags').text = str(
+                data.get('do-not-fetch-tags', False)).lower()
         if 'timeout' in data:
             XML.SubElement(clo, 'timeout').text = str(data['timeout'])
     if 'sparse-checkout' in data:
