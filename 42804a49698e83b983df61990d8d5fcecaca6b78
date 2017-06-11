@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f231b9d_38b1f390",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-11T04:02:23Z",
+      "side": 1,
+      "message": "Looks like this change does more than updates shell and python to use convert_mapping_to_xml. It modifies the convert_mapping_to_xml function as well. Can you provide details on what it\u0027s modifying and why?",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 61
+      },
+      "revId": "42804a49698e83b983df61990d8d5fcecaca6b78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
