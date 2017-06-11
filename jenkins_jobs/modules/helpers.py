@@ -490,6 +490,11 @@ def convert_mapping_to_xml(parent, data, mapping, fail_required=False):
     """
     for elem in mapping:
         (optname, xmlname, val) = elem[:3]
+
+        if optname == '':
+            XML.SubElement(parent, xmlname).text = val
+            continue
+
         val = data.get(optname, val)
 
         valid_options = []
