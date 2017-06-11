@@ -73,7 +73,8 @@ def shell(registry, xml_parent, data):
 
     """
     shell = XML.SubElement(xml_parent, 'hudson.tasks.Shell')
-    XML.SubElement(shell, 'command').text = data
+    mapping = [('', 'command', data)]
+    convert_mapping_to_xml(shell, {}, mapping, fail_required=True)
 
 
 def python(registry, xml_parent, data):
@@ -90,7 +91,8 @@ def python(registry, xml_parent, data):
 
     """
     python = XML.SubElement(xml_parent, 'hudson.plugins.python.Python')
-    XML.SubElement(python, 'command').text = data
+    mapping = [('', 'command', data)]
+    convert_mapping_to_xml(python, {}, mapping, fail_required=True)
 
 
 def copyartifact(registry, xml_parent, data):
