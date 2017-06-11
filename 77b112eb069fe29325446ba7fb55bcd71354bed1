@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f231b9d_7e563309",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2017-06-11T10:14:54Z",
+      "side": 1,
+      "message": "please don\u0027t use trailing \\",
+      "range": {
+        "startLine": 561,
+        "startChar": 49,
+        "endLine": 561,
+        "endChar": 50
+      },
+      "revId": "77b112eb069fe29325446ba7fb55bcd71354bed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_5e5b772d",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2017-06-11T10:14:54Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 564,
+        "startChar": 55,
+        "endLine": 564,
+        "endChar": 56
+      },
+      "revId": "77b112eb069fe29325446ba7fb55bcd71354bed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
