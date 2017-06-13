@@ -351,38 +351,31 @@ def trigger_remote(registry, xml_parent, data):
                               'org.jenkinsci.plugins.'
                               'ParameterizedRemoteTrigger.'
                               'RemoteBuildConfiguration')
-    XML.SubElement(triggerr,
-                   'remoteJenkinsName').text = data.get('remote-jenkins-name')
-    XML.SubElement(triggerr, 'token').text = data.get('token', '')
 
-    for attribute in ['job', 'remote-jenkins-name']:
+    """for attribute in ['job', 'remote-jenkins-name']:
         if attribute not in data:
             raise MissingAttributeError(attribute, "builders.trigger-remote")
         if data[attribute] == '':
             raise InvalidAttributeError(attribute,
                                         data[attribute],
-                                        "builders.trigger-remote")
+                                        "builders.trigger-remote")"""
+    mappings = [
+        ('remote-jenkins-name', 'remoteJenkinsName', None),
+        ('token', 'token', ''),
+        ('job', 'job', None),
+        ('should-not-fail-build', 'shouldNotFailBuild', False),
+        ('poll-interval', 'pollInterval', 10),
+        ('connection-retry-limit', 'connectionRetryLimit', 5),
+        ('prevent-remote-build-queue', 'preventRemoteBuildQueue', False),
+        ('block', 'blockBuildUntilComplete', True),
+    ]
+    convert_mapping_to_xml(triggerr, data, mappings, fail_required=True)
 
-    XML.SubElement(triggerr, 'job').text = data.get('job')
-
-    XML.SubElement(triggerr, 'shouldNotFailBuild').text = str(
-        data.get('should-not-fail-build', False)).lower()
-
-    XML.SubElement(triggerr,
-                   'pollInterval').text = str(data.get('poll-interval', 10))
-    XML.SubElement(triggerr, 'connectionRetryLimit').text = str(
-        data.get('connection-retry-limit', 5))
-
-    XML.SubElement(triggerr, 'preventRemoteBuildQueue').text = str(
-        data.get('prevent-remote-build-queue', False)).lower()
-
-    XML.SubElement(triggerr, 'blockBuildUntilComplete').text = str(
-        data.get('block', True)).lower()
-
+    mappings = []
     if 'predefined-parameters' in data:
-        parameters = XML.SubElement(triggerr, 'parameters')
-        parameters.text = data.get('predefined-parameters', '')
-        params_list = parameters.text.split("\n")
+        parameters = data.get('predefined-parameters', '')
+        XML.SubElement(triggerr, 'parameters').text = parameters
+        params_list = parameters.split("\n")
 
         parameter_list = XML.SubElement(triggerr, 'parameterList')
         for param in params_list:
@@ -392,13 +385,14 @@ def trigger_remote(registry, xml_parent, data):
             tmp.text = param
 
     if 'property-file' in data and data['property-file'] != '':
-        XML.SubElement(triggerr, 'loadParamsFromFile').text = 'true'
-        XML.SubElement(triggerr,
-                       'parameterFile').text = data.get('property-file')
+        mappings.append(('', 'loadParamsFromFile', 'true'))
+        mappings.append(('property-file', 'parameterFile', None))
     else:
-        XML.SubElement(triggerr, 'loadParamsFromFile').text = 'false'
+        mappings.append(('', 'loadParamsFromFile', 'false'))
 
-    XML.SubElement(triggerr, 'overrideAuth').text = "false"
+    mappings.append(('', 'overrideAuth', 'false'))
+
+    convert_mapping_to_xml(triggerr, data, mappings, fail_required=True)
 
 
 def trigger_builds(registry, xml_parent, data):
@@ -992,30 +986,36 @@ def artifact_resolver(registry, xml_parent, data):
     ar = XML.SubElement(xml_parent,
                         'org.jvnet.hudson.plugins.repositoryconnector.'
                         'ArtifactResolver')
-    XML.SubElement(ar, 'targetDirectory').text = data['target-directory']
+    mapping = [('target-directory', 'targetDirectory', None)]
+    convert_mapping_to_xml(ar, data, mapping, fail_required=True)
+
     artifacttop = XML.SubElement(ar, 'artifacts')
     artifacts = data['artifacts']
     for artifact in artifacts:
         rcartifact = XML.SubElement(artifacttop,
                                     'org.jvnet.hudson.plugins.'
                                     'repositoryconnector.Artifact')
-        XML.SubElement(rcartifact, 'groupId').text = artifact['group-id']
-        XML.SubElement(rcartifact, 'artifactId').text = artifact['artifact-id']
-        XML.SubElement(rcartifact, 'classifier').text = artifact.get(
-            'classifier', '')
-        XML.SubElement(rcartifact, 'version').text = artifact['version']
-        XML.SubElement(rcartifact, 'extension').text = artifact.get(
-            'extension', 'jar')
-        XML.SubElement(rcartifact, 'targetFileName').text = artifact.get(
-            'target-file-name', '')
-    XML.SubElement(ar, 'failOnError').text = str(data.get(
-        'fail-on-error', False)).lower()
-    XML.SubElement(ar, 'enableRepoLogging').text = str(data.get(
-        'repository-logging', False)).lower()
-    XML.SubElement(ar, 'snapshotUpdatePolicy').text = 'never'
-    XML.SubElement(ar, 'releaseUpdatePolicy').text = 'never'
-    XML.SubElement(ar, 'snapshotChecksumPolicy').text = 'warn'
-    XML.SubElement(ar, 'releaseChecksumPolicy').text = 'warn'
+
+        mapping = [
+            ('group-id', 'groupId', None),
+            ('artifact-id', 'artifactId', None),
+            ('classifier', 'classifier', ''),
+            ('version', 'version', None),
+            ('extension', 'extension', 'jar'),
+            ('target-file-name', 'targetFileName', ''),
+        ]
+        convert_mapping_to_xml(
+            rcartifact, artifact, mapping, fail_required=True)
+
+    mapping = [
+        ('fail-on-error', 'failOnError', False),
+        ('repository-logging', 'enableRepoLogging', False),
+        ('', 'snapshotUpdatePolicy', 'never'),
+        ('', 'releaseUpdatePolicy', 'never'),
+        ('', 'snapshotChecksumPolicy', 'warn'),
+        ('', 'releaseChecksumPolicy', 'warn')
+    ]
+    convert_mapping_to_xml(ar, data, mapping, fail_required=True)
 
 
 def doxygen(registry, xml_parent, data):
