@@ -141,7 +141,10 @@ def bool_param(registry, xml_parent, data):
             default: false
             description: "A parameter named FOO, defaults to 'false'."
     """
-    data['default'] = str(data.get('default', False)).lower()
+    default_str = str(data.get('default', False))
+    if "{" not in default_str:
+        default_str = default_str.lower()
+    data['default'] = default_str
     base_param(registry, xml_parent, data, True,
                'hudson.model.BooleanParameterDefinition')
 
