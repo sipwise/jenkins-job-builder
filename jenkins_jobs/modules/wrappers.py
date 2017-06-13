@@ -2420,6 +2420,84 @@ def version_number(parser, xml_parent, data):
     convert_mapping_to_xml(version_number, data, mapping, fail_required=True)
 
 
+def github_pull_request(parser, xml_parent, data):
+    """yaml: github-pull-request
+    Set GitHub commit status with custom context and message.
+    Requires the Jenkins :jenkins-wiki:`GitHub Pull Request Builder Plugin
+    <GitHub+pull+request+builder+plugin>`.
+
+    :arg bool show-matrix-status: Only post commit status of parent matrix job
+        (optional)
+    :arg string status-context: the context to include on PR status comments
+        (optional) (default 'default')
+    :arg string triggered-status: the status message to set when the build has
+        been triggered (optional)
+    :arg string started-status: the status comment to set when the build has
+        been started (optional)
+    :arg string status-url: the status URL to set (optional)
+    :arg bool status-add-test-results: add test result one-liner to status
+        message (optional)
+    :arg list statuses: List of custom statuses on the commit for when a build
+        is completed
+
+        :Status:
+            * **message** (`str`) -- The message that is appended to a comment
+              when a build finishes with the desired build status. If no status
+              updates should be made when a build finishes with the indicated
+              build status, use "--none--" to alert the trigger. (required)
+            * **result** (`str`) -- Build result. Can be one of 'SUCCESS',
+              'ERROR' or 'FAILURE'. (required)
+
+    Example:
+
+    .. literalinclude::
+        /../../tests/wrappers/fixtures/github-pull-request001.yaml
+       :language: yaml
+    .. literalinclude::
+        /../../tests/wrappers/fixtures/github-pull-request002.yaml
+       :language: yaml
+
+    """
+    ghprb = XML.SubElement(
+        xml_parent, 'org.jenkinsci.plugins.ghprb.upstream.GhprbUpstreamStatus'
+    )
+
+    mapping = [
+        # option, xml name, default value
+        ("show-matrix-status", 'showMatrixStatus', False),
+        ("status-context", 'commitStatusContext', ''),
+        ("triggered-status", 'triggeredStatus', ''),
+        ("started-status", 'startedStatus', ''),
+        ("status-url", 'statusUrl', ''),
+        ("status-add-test-results", 'addTestResults', False)
+    ]
+
+    statuses = data.get('statuses', [])
+    if statuses:
+        status_mapping = [
+            ('message', 'message', None),
+            ('result', 'result', ''),
+        ]
+        result_list = ['ERROR', 'SUCCESS', 'FAILURE']
+
+        completed_tag = XML.SubElement(ghprb, 'completedStatus')
+        for status in statuses:
+            result = status.get('result', '')
+            if result not in result_list:
+                raise JenkinsJobsException(
+                    "'result' must be one of: " + ', '.join(result_list))
+
+            result_tag = XML.SubElement(
+                completed_tag,
+                'org.jenkinsci.plugins.ghprb.extensions'
+                '.comments.GhprbBuildResultMessage'
+            )
+            convert_mapping_to_xml(result_tag, status, status_mapping,
+                                   fail_required=True)
+
+    convert_mapping_to_xml(ghprb, data, mapping, fail_required=True)
+
+
 class Wrappers(jenkins_jobs.modules.base.Base):
     sequence = 80
 
