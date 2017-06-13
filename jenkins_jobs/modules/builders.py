@@ -991,30 +991,36 @@ def artifact_resolver(registry, xml_parent, data):
     ar = XML.SubElement(xml_parent,
                         'org.jvnet.hudson.plugins.repositoryconnector.'
                         'ArtifactResolver')
-    XML.SubElement(ar, 'targetDirectory').text = data['target-directory']
+    mapping = [('target-directory', 'targetDirectory', None)]
+    convert_mapping_to_xml(ar, data, mapping, fail_required=True)
+
     artifacttop = XML.SubElement(ar, 'artifacts')
     artifacts = data['artifacts']
     for artifact in artifacts:
         rcartifact = XML.SubElement(artifacttop,
                                     'org.jvnet.hudson.plugins.'
                                     'repositoryconnector.Artifact')
-        XML.SubElement(rcartifact, 'groupId').text = artifact['group-id']
-        XML.SubElement(rcartifact, 'artifactId').text = artifact['artifact-id']
-        XML.SubElement(rcartifact, 'classifier').text = artifact.get(
-            'classifier', '')
-        XML.SubElement(rcartifact, 'version').text = artifact['version']
-        XML.SubElement(rcartifact, 'extension').text = artifact.get(
-            'extension', 'jar')
-        XML.SubElement(rcartifact, 'targetFileName').text = artifact.get(
-            'target-file-name', '')
-    XML.SubElement(ar, 'failOnError').text = str(data.get(
-        'fail-on-error', False)).lower()
-    XML.SubElement(ar, 'enableRepoLogging').text = str(data.get(
-        'repository-logging', False)).lower()
-    XML.SubElement(ar, 'snapshotUpdatePolicy').text = 'never'
-    XML.SubElement(ar, 'releaseUpdatePolicy').text = 'never'
-    XML.SubElement(ar, 'snapshotChecksumPolicy').text = 'warn'
-    XML.SubElement(ar, 'releaseChecksumPolicy').text = 'warn'
+
+        mapping = [
+            ('group-id', 'groupId', None),
+            ('artifact-id', 'artifactId', None),
+            ('classifier', 'classifier', ''),
+            ('version', 'version', None),
+            ('extension', 'extension', 'jar'),
+            ('target-file-name', 'targetFileName', ''),
+        ]
+        convert_mapping_to_xml(
+            rcartifact, artifact, mapping, fail_required=True)
+
+    mapping = [
+        ('fail-on-error', 'failOnError', False),
+        ('repository-logging', 'enableRepoLogging', False),
+        ('', 'snapshotUpdatePolicy', 'never'),
+        ('', 'releaseUpdatePolicy', 'never'),
+        ('', 'snapshotChecksumPolicy', 'warn'),
+        ('', 'releaseChecksumPolicy', 'warn')
+    ]
+    convert_mapping_to_xml(ar, data, mapping, fail_required=True)
 
 
 def doxygen(registry, xml_parent, data):
