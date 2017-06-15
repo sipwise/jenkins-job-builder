@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f231b9d_4790b54a",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-15T16:19:28Z",
+      "side": 1,
+      "message": "Looking at these reminds me of what needs changing here:\n\njob_builder should relate to options that affect how jobs are built, that is:\n\n keep_descriptions\u003dFalse\n allow_duplicates\u003dFalse\n allow_empty_variables\u003dFalse\n\nThe following options control are more about the application and less about the jobs and how they get expanded.\n ignore_cache\u003dFalse\n recursive\u003dFalse\n exclude\u003d.*\n\nNot sure what to name the different sections, but it seems like it would be a good idea to have some separation.",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 10
+      },
+      "revId": "13fc8bfa5fe892eebdd269a11fabff4cb5ee2bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_7415a19b",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-15T16:19:28Z",
+      "side": 1,
+      "message": "Maybe place this under a different section?\n\n [logging]\n format\u003d%(levelname)s %(message)s\n\nThat should allow adding \u0027level\u0027 to the configuration in the future. I presume it\u0027ll never be save to have python logging parse this conf file looking for logging only sections, so we\u0027d probably have the options: format \u0026 level or file under the logging section to allow switching to a more customizable logging setup?\n\nLooking at zuul, they have a setup_logging method that looks for a section/parameter to see if it provides a logging configuration and otherwise use some defaults.\n\nSo that would look like:\n\n [job_builder]\n ...\n log_config\u003d\u003cfile\u003e\n\n [logging]\n # settings used if no job_builder.log_file defined.\n format\u003d...\n level\u003d...\n\nNot going to suggest adding support for a separate logging conf file here, just wanted to share some context about why I\u0027m thinking it might make sense to use a different section.",
+      "revId": "13fc8bfa5fe892eebdd269a11fabff4cb5ee2bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_87a5ad49",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-15T16:19:28Z",
+      "side": 1,
+      "message": "Have to think if there is any downside of doing this?\n\nOnce option might be to set \u0027raw\u003dTrue\u0027 when retrieving the log_format item and see if that avoids the interpolation for just that?",
+      "revId": "13fc8bfa5fe892eebdd269a11fabff4cb5ee2bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_34fde96d",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-15T16:19:28Z",
+      "side": 1,
+      "message": "I think maybe place this under a different namespace such as \u0027self.logging\u0027?",
+      "revId": "13fc8bfa5fe892eebdd269a11fabff4cb5ee2bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
