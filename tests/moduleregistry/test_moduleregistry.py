@@ -1,3 +1,4 @@
+import os
 import pkg_resources
 
 from testtools.content import text_content
@@ -29,7 +30,7 @@ class ModuleRegistryPluginInfoTestsWithScenarios(
     def setUp(self):
         super(ModuleRegistryPluginInfoTestsWithScenarios, self).setUp()
 
-        jjb_config = JJBConfig()
+        jjb_config = JJBConfig(config_filename=os.devnull)
         jjb_config.validate()
 
         plugin_info = [{'shortName': "HerpDerpPlugin",

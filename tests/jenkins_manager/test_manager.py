@@ -14,6 +14,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import os
 from jenkins_jobs.config import JJBConfig
 import jenkins_jobs.builder
 from tests import base
@@ -31,7 +32,7 @@ class TestCaseTestJenkinsManager(base.BaseTestCase):
 
     def setUp(self):
         super(TestCaseTestJenkinsManager, self).setUp()
-        self.jjb_config = JJBConfig()
+        self.jjb_config = JJBConfig(config_filename=os.devnull)
         self.jjb_config.validate()
 
     def test_plugins_list(self):
