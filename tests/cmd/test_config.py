@@ -1,5 +1,6 @@
 import io
 import os
+import unittest
 
 from mock import patch
 from tests.base import mock
@@ -19,6 +20,8 @@ class TestConfigs(CmdTestsBase):
     local_conf = os.path.join(os.path.dirname(__file__),
                               'jenkins_jobs.ini')
 
+    @unittest.skipUnless(os.path.isfile(global_conf),
+                         "Skipping when global config missing.")
     def test_use_global_config(self):
         """
         Verify that JJB uses the global config file by default
@@ -40,6 +43,8 @@ class TestConfigs(CmdTestsBase):
                 m_open.assert_called_with(self.global_conf, 'r',
                                           encoding='utf-8')
 
+    @unittest.skipUnless(os.path.isfile(user_conf),
+                         "Skipping when user conf config missing.")
     def test_use_config_in_user_home(self):
         """
         Verify that JJB uses config file in user home folder
