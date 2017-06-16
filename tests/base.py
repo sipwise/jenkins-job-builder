@@ -141,7 +141,7 @@ class BaseTestCase(testtools.TestCase):
         return yaml_content
 
     def _get_config(self):
-        jjb_config = JJBConfig(self.conf_filename)
+        jjb_config = JJBConfig(config_filename=self.conf_filename)
         jjb_config.validate()
 
         return jjb_config
