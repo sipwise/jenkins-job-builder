@@ -159,16 +159,18 @@ class JJBConfig(object):
         """ Given path to configuration file, read it in as a ConfigParser
         object and return that object.
         """
-        if os.path.isfile(config_filename):
-            self.__config_file = config_filename  # remember file we read from
-            logger.debug("Reading config from {0}".format(config_filename))
-            config_fp = io.open(config_filename, 'r', encoding='utf-8')
-        else:
-            raise JJBConfigException(
-                "A valid configuration file is required. "
-                "\n{0} is not valid.".format(config_filename))
+        try:
+            with open(config_filename, 'r'):
+                # remember file we read from
+                self.__config_file = config_filename
+                logger.debug("Reading config from {0}".format(config_filename))
+                return io.open(config_filename, 'r', encoding='utf-8')
+        except IOError:
+            pass
 
-        return config_fp
+        raise JJBConfigException(
+            "A valid configuration file is required. "
+            "\nCannot read from {0}.".format(config_filename))
 
     def _setup(self):
         config = self.config_parser
