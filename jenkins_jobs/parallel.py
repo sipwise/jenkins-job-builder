@@ -62,7 +62,7 @@ class Worker(threading.Thread):
                                    **task['kwargs'])
             except Exception as exc:
                 res = exc
-                traceback.print_exc()
+                logger.error(traceback.format_exc())
             self.out_queue.put((task['ord'], res))
 
 

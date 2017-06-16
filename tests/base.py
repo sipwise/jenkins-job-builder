@@ -89,7 +89,7 @@ def get_scenarios(fixtures_path, in_ext='yaml', out_ext='xml',
         if os.path.basename(output_candidate) in files:
             out_filenames = files[os.path.basename(output_candidate)]
         else:
-            out_filenames = None
+            out_filenames = []
 
         plugins_info_candidate = re.sub(r'\.{0}$'.format(in_ext),
                                         '.{0}'.format(plugins_info_ext),
@@ -141,8 +141,9 @@ class BaseTestCase(testtools.TestCase):
         return yaml_content
 
     def _get_config(self):
-        jjb_config = JJBConfig(self.conf_filename)
-        jjb_config.validate()
+        with mock.patch('os.path.isfile', return_value=False):
+            jjb_config = JJBConfig(config_filename=self.conf_filename)
+            jjb_config.validate()
 
         return jjb_config
 
@@ -264,13 +265,14 @@ class SingleJobTestCase(BaseScenariosTestCase):
         ]))
         actual_folders = [os.path.dirname(f) for f in self.out_filenames]
 
-        six.assertCountEqual(
-            self,
-            expected_folders, actual_folders,
-            "Output file under wrong path, was '%s', should be '%s'" %
-            (self.out_filenames[0],
-                os.path.join(expected_folders[0],
-                             os.path.basename(self.out_filenames[0]))))
+        if self.out_filenames:
+            six.assertCountEqual(
+                self,
+                expected_folders, actual_folders,
+                "Output file under wrong path, was '%s', should be '%s'" %
+                (self.out_filenames[0],
+                    os.path.join(expected_folders[0],
+                                 os.path.basename(self.out_filenames[0]))))
 
         # Prettify generated XML
         pretty_xml = u"\n".join(job.output().decode('utf-8')
