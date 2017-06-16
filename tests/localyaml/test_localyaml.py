@@ -72,7 +72,7 @@ class TestCaseLocalYamlIncludeAnchors(base.BaseTestCase):
         files = ["custom_same_anchor-001-part1.yaml",
                  "custom_same_anchor-001-part2.yaml"]
 
-        jjb_config = JJBConfig()
+        jjb_config = JJBConfig(config_filename=os.devnull)
         jjb_config.jenkins['url'] = 'http://example.com'
         jjb_config.jenkins['user'] = 'jenkins'
         jjb_config.jenkins['password'] = 'password'
