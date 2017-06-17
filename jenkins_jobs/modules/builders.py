@@ -3748,13 +3748,15 @@ def description_setter(registry, xml_parent, data):
        :language: yaml
     """
 
+    mapping = []
     descriptionsetter = XML.SubElement(
         xml_parent,
         'hudson.plugins.descriptionsetter.DescriptionSetterBuilder')
-    XML.SubElement(descriptionsetter, 'regexp').text = data.get('regexp', '')
+    mapping.append(('regexp', 'regexp', ''))
     if 'description' in data:
-        XML.SubElement(descriptionsetter, 'description').text = data[
-            'description']
+        mapping.append(('description', 'description', None))
+    convert_mapping_to_xml(
+        descriptionsetter, data, mapping, fail_required=True)
 
 
 def docker_build_publish(parse, xml_parent, data):
