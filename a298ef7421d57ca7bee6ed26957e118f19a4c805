@@ -22,6 +22,29 @@
       "revId": "a298ef7421d57ca7bee6ed26957e118f19a4c805",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_21ab2c75",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1803,
+      "author": {
+        "id": 24522
+      },
+      "writtenOn": "2017-06-18T22:53:38Z",
+      "side": 1,
+      "message": "I suggest this be handled in the mappings with default value set to None. Convert_mapping_to_xml is still capable of catching the error, and it will work just fine.",
+      "range": {
+        "startLine": 1799,
+        "startChar": 0,
+        "endLine": 1803,
+        "endChar": 38
+      },
+      "revId": "a298ef7421d57ca7bee6ed26957e118f19a4c805",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
