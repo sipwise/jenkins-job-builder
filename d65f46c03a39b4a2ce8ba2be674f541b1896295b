@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "7f231b9d_e7eb0410",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2017-06-19T03:29:10Z",
+      "side": 1,
+      "message": "The commit message should follow this:\nhttps://wiki.openstack.org/wiki/GitCommitMessages#Summary_of_Git_commit_message_structure",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 30
+      },
+      "revId": "d65f46c03a39b4a2ce8ba2be674f541b1896295b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_816e80fd",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
