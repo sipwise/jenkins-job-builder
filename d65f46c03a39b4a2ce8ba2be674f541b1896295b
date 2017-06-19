@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f231b9d_816e80fd",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-19T01:11:57Z",
+      "side": 1,
+      "message": "Is blank really an acceptable option for this? How does the plugin work without a JDK configured?",
+      "range": {
+        "startLine": 49,
+        "startChar": 13,
+        "endLine": 49,
+        "endChar": 16
+      },
+      "revId": "d65f46c03a39b4a2ce8ba2be674f541b1896295b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_217facab",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-19T01:11:57Z",
+      "side": 1,
+      "message": "Is blank really an acceptable option here?\n\nThe text here kind of implies to me that an installation has to be identified what happens when no installation is chosen?",
+      "range": {
+        "startLine": 50,
+        "startChar": 13,
+        "endLine": 50,
+        "endChar": 24
+      },
+      "revId": "d65f46c03a39b4a2ce8ba2be674f541b1896295b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f231b9d_e14e5495",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-19T01:11:57Z",
+      "side": 1,
+      "message": "Personally I like to have the minimal example listed first because often when I try a new plugin I want to know what the absolute minimal thing I need to configure to get a POC running.",
+      "range": {
+        "startLine": 64,
+        "startChar": 4,
+        "endLine": 64,
+        "endChar": 19
+      },
+      "revId": "d65f46c03a39b4a2ce8ba2be674f541b1896295b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
