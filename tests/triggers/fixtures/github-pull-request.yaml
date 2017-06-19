@@ -20,4 +20,9 @@ triggers:
       white-list-target-branches:
         - master
         - testing
+      white-list-labels:
+        - ready
+        - backports
+      black-list-labels:
+        - wip
       auth-id: '123-456-789'

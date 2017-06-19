@@ -16,6 +16,8 @@ org2</orgslist>
       <useGitHubHooks>true</useGitHubHooks>
       <permitAll>false</permitAll>
       <autoCloseFailedPullRequests>false</autoCloseFailedPullRequests>
+      <whiteListLabels/>
+      <blackListLabels/>
       <extensions>
         <org.jenkinsci.plugins.ghprb.extensions.status.GhprbSimpleStatus>
           <commitStatusContext>test status context</commitStatusContext>

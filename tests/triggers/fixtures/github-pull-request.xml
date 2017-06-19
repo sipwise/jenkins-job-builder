@@ -25,6 +25,9 @@ org2</orgslist>
           <branch>testing</branch>
         </org.jenkinsci.plugins.ghprb.GhprbBranch>
       </whiteListTargetBranches>
+      <whiteListLabels>ready
+backports</whiteListLabels>
+      <blackListLabels>wip</blackListLabels>
       <gitHubAuthId>123-456-789</gitHubAuthId>
     </org.jenkinsci.plugins.ghprb.GhprbTrigger>
   </triggers>

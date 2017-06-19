@@ -913,6 +913,12 @@ def github_pull_request(registry, xml_parent, data):
         allows you to selectively test pull requests destined for these
         branches only. Supports regular expressions (e.g. 'master',
         'feature-.*'). (optional)
+    :arg list white-list-labels: Adding labels to this whitelist
+        allows you to selectively test pull requests with the specified
+        labels only. (optional)
+    :arg list black-list-labels: Adding labels to this blacklist
+        allows you to selectively not test pull requests with the specified
+        labels only. (optional)
     :arg string auth-id: the auth id to use (optional)
     :arg string build-desc-template: the template for build descriptions in
         jenkins (optional)
@@ -980,6 +986,11 @@ def github_pull_request(registry, xml_parent, data):
             be = XML.SubElement(ghprb_wltb, 'org.jenkinsci.plugins.'
                                 'ghprb.GhprbBranch')
             XML.SubElement(be, 'branch').text = str(branch)
+
+    white_labels_string = "\n".join(data.get('white-list-labels', []))
+    XML.SubElement(ghprb, 'whiteListLabels').text = white_labels_string
+    black_labels_string = "\n".join(data.get('black-list-labels', []))
+    XML.SubElement(ghprb, 'blackListLabels').text = black_labels_string
 
     auth_id = data.get('auth-id', '')
     if auth_id:
