@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_fe9370a2",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2017-06-20T16:29:33Z",
+      "side": 1,
+      "message": "Noway! Encoded strings are supposed to be used only for final output, not as variables. This cannot be correct.",
+      "revId": "643b13e225e557a6be6817f3b582533fefff72b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_fed81080",
+        "filename": "tests/cmd/test_config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2017-06-20T16:29:33Z",
+      "side": 1,
+      "message": "It is incorrect to test for str class, this is not Pythonic.",
+      "revId": "643b13e225e557a6be6817f3b582533fefff72b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
