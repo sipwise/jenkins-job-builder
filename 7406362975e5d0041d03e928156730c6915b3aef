@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_aa4493b8",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3755,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-20T16:17:02Z",
+      "side": 1,
+      "message": "There is no need to use mapping.append() here, just define the regexp property as part of the initial mapping array.",
+      "revId": "7406362975e5d0041d03e928156730c6915b3aef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
