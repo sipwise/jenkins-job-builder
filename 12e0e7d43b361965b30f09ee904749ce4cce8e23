@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_04c5c08e",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-20T15:17:53Z",
+      "side": 1,
+      "message": "Doesn\u0027t look like visible-item-count is a parameter that\u0027s documented. Do we even need this? seems redundant as the real user setting is `visible-items`. I\u0027d be okay with just setting 5 as the default below.",
+      "range": {
+        "startLine": 409,
+        "startChar": 24,
+        "endLine": 409,
+        "endChar": 42
+      },
+      "revId": "12e0e7d43b361965b30f09ee904749ce4cce8e23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_643b549c",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-20T15:17:53Z",
+      "side": 1,
+      "message": "See comment above. I think we should just set 5 here and remove the unused default variable.",
+      "range": {
+        "startLine": 412,
+        "startChar": 46,
+        "endLine": 412,
+        "endChar": 53
+      },
+      "revId": "12e0e7d43b361965b30f09ee904749ce4cce8e23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
