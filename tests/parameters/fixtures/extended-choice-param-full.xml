@@ -7,7 +7,7 @@
           <name>OPTIONS</name>
           <description>Available options</description>
           <value>foo|bar|select</value>
-          <visibleItemCount>2</visibleItemCount>
+          <visibleItemCount>5</visibleItemCount>
           <multiSelectDelimiter>|</multiSelectDelimiter>
           <quoteValue>true</quoteValue>
           <defaultValue>foo</defaultValue>

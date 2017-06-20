@@ -7,7 +7,7 @@ parameters:
       quote-value: true
       type: multi-select
       value: "foo|bar|select"
-      visible-items: 2
+      visible-items: 5
       multi-select-delimiter: '|'
       default-value: foo
       default-property-file: /home/property.prop
