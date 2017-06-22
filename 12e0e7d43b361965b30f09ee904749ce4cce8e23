@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f201791_66bc6e69",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 24522
+      },
+      "writtenOn": "2017-06-22T12:17:20Z",
+      "side": 1,
+      "message": "According to tests: https://github.com/openstack-infra/jenkins-job-builder/blob/master/tests/parameters/fixtures/extended-choice-param001.yaml#L7 \"visible-item-count\" is actually being used with value set to 2. Setting 5 as default would cause the test to fail. I suggest including \"visible-item-count\" to the documentation.",
+      "parentUuid": "5f201791_04c5c08e",
+      "range": {
+        "startLine": 409,
+        "startChar": 24,
+        "endLine": 409,
+        "endChar": 42
+      },
+      "revId": "12e0e7d43b361965b30f09ee904749ce4cce8e23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f201791_643b549c",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 1
