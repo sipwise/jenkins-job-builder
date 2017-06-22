@@ -104,6 +104,24 @@
       "revId": "6bdb7b91997b7f159c44116b124d8a19c91ea7a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abb7d3a_227937f7",
+        "filename": "jenkins_jobs/modules/project_matrix.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2017-06-22T14:34:34Z",
+      "side": 1,
+      "message": "Proposed in https://review.openstack.org/322976",
+      "parentUuid": "9abb7d3a_8f164c53",
+      "revId": "6bdb7b91997b7f159c44116b124d8a19c91ea7a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
