@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_43d6a0f3",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 751,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-23T16:12:42Z",
+      "side": 1,
+      "message": "Seems like this should be:\n\n (\u0027name\u0027, \u0027name\u0027, None)\n\nsince it\u0027s a required parameter the user must pass in. We can remove the try/except block above once we do this.",
+      "range": {
+        "startLine": 751,
+        "startChar": 8,
+        "endLine": 751,
+        "endChar": 27
+      },
+      "revId": "b3ae236b4655b536b88fb816e318a46606c4aeae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
