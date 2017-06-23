@@ -684,7 +684,7 @@ def dynamic_scriptler_param_common(registry, xml_parent, data, ptype):
     XML.SubElement(pdef, 'readonlyInputField').text = str(data.get(
         'read-only', False)).lower()
 
-
+S
 def matrix_combinations_param(registry, xml_parent, data):
     """yaml: matrix-combinations
     Matrix combinations parameter
@@ -709,13 +709,15 @@ def matrix_combinations_param(registry, xml_parent, data):
     if 'name' not in data:
         raise JenkinsJobsException('matrix-combinations must have a name '
                                    'parameter.')
-    XML.SubElement(pdef, 'name').text = data['name']
-    XML.SubElement(pdef, 'description').text = data.get('description', '')
+    mapping = [
+        ('name', 'name', None),
+        ('description', 'description', ''),
+    ]
+
     combination_filter = data.get('filter')
     if combination_filter:
-        XML.SubElement(pdef, 'defaultCombinationFilter').text = \
-            combination_filter
-
+        mapping.append(('', 'defaultCombinationFilter', combination_filter))
+        convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
     return pdef
 
 
