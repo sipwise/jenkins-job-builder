@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_c9d40fc0",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-23T17:40:24Z",
+      "side": 1,
+      "message": "I think this part of the condition is redundant. If subdomain is in data then for sure data is not None. Also convert_mapping will handle if the condition is missing and throw the correct error anyway.",
+      "range": {
+        "startLine": 284,
+        "startChar": 28,
+        "endLine": 284,
+        "endChar": 49
+      },
+      "revId": "d0ef483a82c86dbf2ba9206a0790b5cd0db3d1e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_a9db13eb",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-23T17:40:24Z",
+      "side": 1,
+      "message": "Same here.",
+      "range": {
+        "startLine": 286,
+        "startChar": 24,
+        "endLine": 286,
+        "endChar": 40
+      },
+      "revId": "d0ef483a82c86dbf2ba9206a0790b5cd0db3d1e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_c9ed2f8c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-23T17:40:24Z",
+      "side": 1,
+      "message": "And here.",
+      "range": {
+        "startLine": 292,
+        "startChar": 23,
+        "endLine": 292,
+        "endChar": 38
+      },
+      "revId": "d0ef483a82c86dbf2ba9206a0790b5cd0db3d1e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
