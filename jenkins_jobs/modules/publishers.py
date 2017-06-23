@@ -275,27 +275,24 @@ def campfire(registry, xml_parent, data):
     .. literalinclude::  /../../tests/publishers/fixtures/campfire001.yaml
        :language: yaml
     """
-
+    mapping = []
     root = XML.SubElement(xml_parent,
                           'hudson.plugins.campfire.'
                           'CampfireNotifier')
-
     campfire = XML.SubElement(root, 'campfire')
 
     if ('subdomain' in data and data['subdomain']):
-        subdomain = XML.SubElement(campfire, 'subdomain')
-        subdomain.text = data['subdomain']
+        mapping.append(('subdomain', 'subdomain', None))
     if ('token' in data and data['token']):
-        token = XML.SubElement(campfire, 'token')
-        token.text = data['token']
+        mapping.append(('token', 'token', None))
     if ('ssl' in data):
-        ssl = XML.SubElement(campfire, 'ssl')
-        ssl.text = str(data['ssl']).lower()
+        mapping.append(('ssl', 'ssl', None))
+    helpers.convert_mapping_to_xml(campfire, data, mapping, fail_required=True)
 
     if ('room' in data and data['room']):
         room = XML.SubElement(root, 'room')
-        name = XML.SubElement(room, 'name')
-        name.text = data['room']
+        mapping = [('room', 'name', None)]
+        helpers.convert_mapping_to_xml(room, data, mapping, fail_required=True)
 
         XML.SubElement(room, 'campfire reference="../../campfire"')
 
