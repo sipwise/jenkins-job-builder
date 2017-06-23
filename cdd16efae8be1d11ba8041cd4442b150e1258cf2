@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_093567f7",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-23T17:46:27Z",
+      "side": 1,
+      "message": "According to the docs allow-empty is false by default which we are setting. So no need for the if-statement, just add this directly to the mapping declaration.",
+      "range": {
+        "startLine": 85,
+        "startChar": 8,
+        "endLine": 85,
+        "endChar": 67
+      },
+      "revId": "cdd16efae8be1d11ba8041cd4442b150e1258cf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_895bb752",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-23T17:46:27Z",
+      "side": 1,
+      "message": "According to docs this is false by default which we are setting. So no need for the if-statement. just add this directly to the mapping declaration.",
+      "range": {
+        "startLine": 87,
+        "startChar": 8,
+        "endLine": 87,
+        "endChar": 70
+      },
+      "revId": "cdd16efae8be1d11ba8041cd4442b150e1258cf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_0950c731",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-23T17:46:27Z",
+      "side": 1,
+      "message": "According to the docs default is false which we are setting. So no need for the if-statement just add this directly to the mapping declaration.",
+      "range": {
+        "startLine": 89,
+        "startChar": 8,
+        "endLine": 89,
+        "endChar": 61
+      },
+      "revId": "cdd16efae8be1d11ba8041cd4442b150e1258cf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_69817b8f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-23T17:46:27Z",
+      "side": 1,
+      "message": "No need to mapping.append. just add this to the mapping directly, it makes the code easier to read.",
+      "range": {
+        "startLine": 90,
+        "startChar": 4,
+        "endLine": 90,
+        "endChar": 18
+      },
+      "revId": "cdd16efae8be1d11ba8041cd4442b150e1258cf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_897297e2",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-23T17:46:27Z",
+      "side": 1,
+      "message": "According to the docs case sensitive is true by default. If that\u0027s so no need to have an if-statement here just add this directly to the mapping declaration as we are setting True by default here anyway.",
+      "range": {
+        "startLine": 93,
+        "startChar": 8,
+        "endLine": 93,
+        "endChar": 22
+      },
+      "revId": "cdd16efae8be1d11ba8041cd4442b150e1258cf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
