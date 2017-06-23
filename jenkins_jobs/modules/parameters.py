@@ -747,9 +747,11 @@ def copyartifact_build_selector_param(registry, xml_parent, data):
         name = data['name']
     except KeyError:
         raise MissingAttributeError('name')
-
-    XML.SubElement(t, 'name').text = name
-    XML.SubElement(t, 'description').text = data.get('description', '')
+    mapping = [
+        ('', 'name', name),
+        ('description', 'description', ''),
+    ]
+    convert_mapping_to_xml(t, data, mapping, fail_required=True)
 
     copyartifact_build_selector(t, data, 'defaultSelector')
 
