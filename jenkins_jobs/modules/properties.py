@@ -640,15 +640,19 @@ def slave_utilization(registry, xml_parent, data):
         /../../tests/properties/fixtures/slave-utilization1.yaml
        :language: yaml
     """
+    mapping = []
     utilization = XML.SubElement(
         xml_parent, 'com.suryagaddipati.jenkins.SlaveUtilizationProperty')
     percent = int(data.get('slave-percentage', 0))
-    XML.SubElement(utilization, 'needsExclusiveAccessToNode'
-                   ).text = 'true' if percent else 'false'
-    XML.SubElement(utilization, 'slaveUtilizationPercentage'
-                   ).text = str(percent)
-    XML.SubElement(utilization, 'singleInstancePerSlave').text = str(
-        data.get('single-instance-per-slave', False)).lower()
+    if percent:
+        mapping.append(('', 'needsExclusiveAccessToNode', 'true'))
+    else:
+        mapping.append(('', 'needsExclusiveAccessToNode', 'false'))
+    mapping.append(('', 'slaveUtilizationPercentage', str(percent)))
+    mapping.append(('single-instance-per-slave',
+        'singleInstancePerSlave', False))
+    helpers.convert_mapping_to_xml(
+        utilization, data, mapping, fail_required=True)
 
 
 def delivery_pipeline(registry, xml_parent, data):
