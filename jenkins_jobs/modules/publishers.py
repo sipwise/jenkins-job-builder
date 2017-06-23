@@ -63,14 +63,13 @@ def archive(registry, xml_parent, data):
     .. literalinclude::  /../../tests/publishers/fixtures/archive001.yaml
        :language: yaml
     """
+
     logger = logging.getLogger("%s:archive" % __name__)
     archiver = XML.SubElement(xml_parent, 'hudson.tasks.ArtifactArchiver')
-    artifacts = XML.SubElement(archiver, 'artifacts')
-    artifacts.text = data['artifacts']
+    mapping = [('artifacts', 'artifacts', None)]
+
     if 'excludes' in data:
-        excludes = XML.SubElement(archiver, 'excludes')
-        excludes.text = data['excludes']
-    latest = XML.SubElement(archiver, 'latestOnly')
+        mapping.append(('excludes', 'excludes', None))
     # backward compatibility
     latest_only = data.get('latest_only', False)
     if 'latest_only' in data:
@@ -78,29 +77,21 @@ def archive(registry, xml_parent, data):
     if 'latest-only' in data:
         latest_only = data['latest-only']
     if latest_only:
-        latest.text = 'true'
+        mapping.append(('', 'latestOnly', 'true'))
     else:
-        latest.text = 'false'
-
+        mapping.append(('', 'latestOnly', 'false'))
     if 'allow-empty' in data:
-        empty = XML.SubElement(archiver, 'allowEmptyArchive')
         # Default behavior is to fail the build.
-        empty.text = str(data.get('allow-empty', False)).lower()
-
+        mapping.append(('allow-empty', 'allowEmptyArchive', False))
     if 'only-if-success' in data:
-        success = XML.SubElement(archiver, 'onlyIfSuccessful')
-        success.text = str(data.get('only-if-success', False)).lower()
-
+        mapping.append(('only-if-success', 'onlyIfSuccessful', False))
     if 'fingerprint' in data:
-        fingerprint = XML.SubElement(archiver, 'fingerprint')
-        fingerprint.text = str(data.get('fingerprint', False)).lower()
-
-    default_excludes = XML.SubElement(archiver, 'defaultExcludes')
-    default_excludes.text = str(data.get('default-excludes', True)).lower()
+        mapping.append(('fingerprint', 'fingerprint', False))
+    mapping.append(('default-excludes', 'defaultExcludes', True))
 
     if 'case-sensitive' in data:
-        case_sensitive = XML.SubElement(archiver, 'caseSensitive')
-        case_sensitive.text = str(data.get('case-sensitive', True)).lower()
+        mapping.append(('case-sensitive', 'caseSensitive', True))
+    helpers.convert_mapping_to_xml(archiver, data, mapping, fail_required=True)
 
 
 def blame_upstream(registry, xml_parent, data):
