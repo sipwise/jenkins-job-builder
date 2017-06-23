@@ -394,6 +394,10 @@ def extended_choice_param(registry, xml_parent, data):
         property file (optional, default '')
     :arg str multi-select-delimiter: value between selections when the
         parameter is a multi-select (optiona, default ',')
+    :arg str groovy-script: in-line groovy script to generate parameters
+        (optional, default '')
+    :arg str groovy-script-file: location of groovy script file to generate
+        parameters (optional, default '')
 
     Example:
 
@@ -445,6 +449,10 @@ def extended_choice_param(registry, xml_parent, data):
         'description-property-file', '')
     XML.SubElement(pdef, 'descriptionPropertyKey').text = data.get(
         'description-property-key', '')
+    XML.SubElement(pdef, 'groovyScript').text = data.get(
+        'groovy-script', '')
+    XML.SubElement(pdef, 'groovyScriptFile').text = data.get(
+        'groovy-script-file', '')
 
 
 def validating_string_param(registry, xml_parent, data):
