@@ -4382,22 +4382,22 @@ def build_publisher(registry, xml_parent, data):
     reporter = XML.SubElement(
         xml_parent,
         'hudson.plugins.build__publisher.BuildPublisher')
-
-    XML.SubElement(reporter, 'publishUnstableBuilds').text = \
-        str(data.get('publish-unstable-builds', True)).lower()
-    XML.SubElement(reporter, 'publishFailedBuilds').text = \
-        str(data.get('publish-failed-builds', True)).lower()
+    mapping = [
+        ('publish-unstable-builds', 'publishUnstableBuilds', True),
+        ('publish-failed-builds', 'publishFailedBuilds', True),
+    ]
+    helpers.convert_mapping_to_xml(reporter, data, mapping, fail_required=True)
 
     if 'days-to-keep' in data or 'num-to-keep' in data:
         logrotator = XML.SubElement(reporter, 'logRotator')
-        XML.SubElement(logrotator, 'daysToKeep').text = \
-            str(data.get('days-to-keep', -1))
-        XML.SubElement(logrotator, 'numToKeep').text = \
-            str(data.get('num-to-keep', -1))
-        # hardcoded to -1 to emulate what the build publisher
-        # plugin seem to do.
-        XML.SubElement(logrotator, 'artifactDaysToKeep').text = "-1"
-        XML.SubElement(logrotator, 'artifactNumToKeep').text = "-1"
+        mapping = [
+            ('days-to-keep', 'daysToKeep', -1),
+            ('num-to-keep', 'numToKeep', -1),
+            ('', 'artifactDaysToKeep', "-1"),
+            ('', 'artifactNumToKeep', "-1"),
+        ]
+        helpers.convert_mapping_to_xml(
+            logrotator, data, mapping, fail_required=True)
 
 
 def stash(registry, xml_parent, data):
