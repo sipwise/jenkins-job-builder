@@ -6039,25 +6039,24 @@ def flowdock(registry, xml_parent, data):
 
     def gen_notification_entry(data_item, default, text):
         e = XML.SubElement(nm, 'entry')
-        XML.SubElement(e, 'com.flowdock.jenkins.BuildResult').text = text
-        XML.SubElement(e, 'boolean').text = str(
-            data.get(data_item, default)).lower()
+        mapping = [
+            ('', 'com.flowdock.jenkins.BuildResult', text),
+            (data_item, 'boolean', default),
+        ]
+        helpers.convert_mapping_to_xml(e, data, mapping, fail_required=True)
 
     def gen_setting(item, default):
         XML.SubElement(parent, 'notify%s' % item).text = str(
             data.get('notify-%s' % item.lower(), default)).lower()
 
-    # Raise exception if token was not specified
-    if 'token' not in data:
-        raise MissingAttributeError('token')
-
     parent = XML.SubElement(xml_parent,
                             'com.flowdock.jenkins.FlowdockNotifier')
-
-    XML.SubElement(parent, 'flowToken').text = data['token']
-    XML.SubElement(parent, 'notificationTags').text = data.get('tags', '')
-    XML.SubElement(parent, 'chatNotification').text = str(
-        data.get('chat-notification', True)).lower()
+    mapping = [
+        ('token', 'flowToken', None),
+        ('tags', 'notificationTags', ''),
+        ('chat-notification', 'chatNotification', True),
+    ]
+    helpers.convert_mapping_to_xml(parent, data, mapping, fail_required=True)
 
     nm = XML.SubElement(parent, 'notifyMap')
 
