@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_e1ec5b90",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6345,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-26T14:36:34Z",
+      "side": 1,
+      "message": "These 2 options are now required code rather than optional as they were before. There are 2 ways to fix this.\n\n1. set fail_required\u003dFalse as it marks \"None\" options as optional\n2. Continue to use the if-statements",
+      "range": {
+        "startLine": 6344,
+        "startChar": 0,
+        "endLine": 6345,
+        "endChar": 57
+      },
+      "revId": "5acca6e6f87f5bf3102e61c255809b639d0860fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
