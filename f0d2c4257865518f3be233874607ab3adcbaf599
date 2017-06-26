@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_c175df65",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5894,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-26T14:28:12Z",
+      "side": 1,
+      "message": "No point making a new mapping. Just add this to the mapping declared above. One of the purposes of this convert_xml function is that it simplifies the code the less lines of code we have the easier it is to review. Especially we can put most of the mappings into the same variable. The ideal simple plugin only has 3 lines of code.\n\n1. XML.SubElement to create the initial element\n2. mapping of all variables\n3. helpers.convert_mapping_to_xml ...\n\nof course this is the best case scenario but we should try to simplify the work.",
+      "range": {
+        "startLine": 5892,
+        "startChar": 0,
+        "endLine": 5894,
+        "endChar": 65
+      },
+      "revId": "f0d2c4257865518f3be233874607ab3adcbaf599",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_810007ad",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5922,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-26T14:28:12Z",
+      "side": 1,
+      "message": "No point making a new mapping add this to the existing mapping previously declared in this function.",
+      "range": {
+        "startLine": 5919,
+        "startChar": 0,
+        "endLine": 5922,
+        "endChar": 65
+      },
+      "revId": "f0d2c4257865518f3be233874607ab3adcbaf599",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_4130af9f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5949,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-26T14:28:12Z",
+      "side": 1,
+      "message": "No point making a new mapping move this into the existing mapping in this function.",
+      "range": {
+        "startLine": 5946,
+        "startChar": 0,
+        "endLine": 5949,
+        "endChar": 65
+      },
+      "revId": "f0d2c4257865518f3be233874607ab3adcbaf599",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
