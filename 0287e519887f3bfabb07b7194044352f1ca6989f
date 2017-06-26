@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_cc4513b6",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-26T15:31:13Z",
+      "side": 1,
+      "message": "Is the default for this one really blank?\n\nIn the previous code it defaulted to unset. So if we want to retain the previous behaviour we have 2 choices:\n\n1) Continue to use the if-statement for directory\n2) Set fail_required\u003dFalse.\n\nIf however default of \u0027\u0027 is fine then we can leave code as is but change the docs above to (default \u0027\u0027). We should get confirmation about what the default setting here is for this plugin.",
+      "range": {
+        "startLine": 191,
+        "startChar": 36,
+        "endLine": 191,
+        "endChar": 38
+      },
+      "revId": "0287e519887f3bfabb07b7194044352f1ca6989f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
