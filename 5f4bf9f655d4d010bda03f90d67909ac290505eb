@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_61716b0c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 6077,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-26T14:35:10Z",
+      "side": 1,
+      "message": "All gen_setting() is doing is emulating what convert_mapping_to_xml is doing. We can simplify this by removing gen_setting function and just adding these to the existing mapping function.",
+      "range": {
+        "startLine": 6072,
+        "startChar": 0,
+        "endLine": 6077,
+        "endChar": 34
+      },
+      "revId": "5f4bf9f655d4d010bda03f90d67909ac290505eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
