@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_017cf76f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 5179,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-26T14:21:31Z",
+      "side": 1,
+      "message": "html-reports-directory was optional but this change makes it required. We can either leave the if-statement that was previously here or change fail_required\u003dFalse.",
+      "range": {
+        "startLine": 5179,
+        "startChar": 59,
+        "endLine": 5179,
+        "endChar": 63
+      },
+      "revId": "ee551c9b3b3ea876ca5ea7b4e4a78cd6960a76a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
