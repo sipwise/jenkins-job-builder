@@ -45,6 +45,23 @@
       "revId": "1593fc3cbb705bf9a7c5dcc07125ef8a68bdf565",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_6a17d6a5",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-27T16:24:31Z",
+      "side": 1,
+      "message": "I think also there is no harm in defining all of the options that can go into the mapping at the top and then doing an explicit insert to keep the ordering correct as needed to avoid multiple appends.",
+      "revId": "1593fc3cbb705bf9a7c5dcc07125ef8a68bdf565",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
