@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_f6acf99f",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 681,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-27T14:33:03Z",
+      "side": 1,
+      "message": "Define this outside of the loop, avoids redefining each time.",
+      "revId": "53292cbda62b9de15d8629a04e607d587aa8f40b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
