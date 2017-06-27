@@ -61,6 +61,8 @@ class JenkinsManager(object):
         self._plugins_list = jjb_config.builder['plugins_info']
         self._jobs = None
         self._job_list = None
+        self._promoted_builds = None
+        self._promoted_build_list = None
         self._views = None
         self._view_list = None
         self._jjb_config = jjb_config
@@ -171,9 +173,20 @@ class JenkinsManager(object):
         if jobs is not None:
             logger.info("Removing jenkins job(s): %s" % ", ".join(jobs))
         for job in jobs:
+            try:
+                promoted_builds = self.jenkins.get_promotions(job)
+            except jenkins.NotFoundException:
+                promoted_builds = []
+
             self.delete_job(job)
             if(self.cache.is_cached(job)):
                 self.cache.set(job, '')
+
+            for pb in promoted_builds:
+                pb_name = self.safe_promoted_build_name(pb['name'], job)
+                if self.cache.is_cached(pb_name):
+                    self.cache.set(pb_name, '')
+
         self.cache.save()
 
     def delete_all_jobs(self):
@@ -290,6 +303,198 @@ class JenkinsManager(object):
     def parallel_update_job(self, job):
         self.update_job(job.name, job.output().decode('utf-8'))
         return (job.name, job.md5())
+
+    ###########################
+    # Promoted Builds related #
+    ###########################
+
+    def safe_promoted_build_name(self, promoted_build_name, parent_job_name):
+        return '{}@promotion@{}'.format(parent_job_name, promoted_build_name)
+
+    @property
+    def promoted_builds(self):
+        if self._promoted_builds is None:
+            self._promoted_builds = []
+            for job in self.jenkins.get_jobs():
+                try:
+                    promoted_builds = self.jenkins.get_promotions(job['name'])
+                except jenkins.NotFoundException:
+                    logger.debug(
+                        'Job {} has no promoted builds'.format(job['name']))
+                    promoted_builds = []
+
+                for pb in promoted_builds:
+                    pb['parent_job_name'] = job['name']
+                    self._promoted_builds.append(pb)
+
+        return self._promoted_builds
+
+    @property
+    def promoted_build_list(self):
+        if self._promoted_build_list is None:
+            self._promoted_build_list = \
+                set(
+                    self.safe_promoted_build_name(
+                        pb['name'],
+                        pb['parent_job_name']
+                    ) for pb in self.promoted_builds)
+        return self._promoted_build_list
+
+    def update_promoted_build(self, promoted_build_name, parent_job_name, xml):
+        if self.is_promoted_build(promoted_build_name, parent_job_name):
+            logger.info("Reconfiguring jenkins promoted build '{p}' for job "
+                        "'{j}'".format(j=parent_job_name,
+                                       p=promoted_build_name))
+            self.jenkins.reconfig_promotion(promoted_build_name,
+                                            parent_job_name, xml)
+        else:
+            logger.info("Creating jenkins promoted build '{p}' for job "
+                        "'{j}'".format(p=promoted_build_name,
+                                       j=parent_job_name))
+            self.jenkins.create_promotion(promoted_build_name,
+                                          parent_job_name, xml)
+
+    def is_promoted_build(self, promoted_build_name, parent_job_name):
+        # first use cache
+        pb_name = self.safe_promoted_build_name(promoted_build_name,
+                                                parent_job_name)
+        if pb_name in self.promoted_build_list:
+            return True
+
+        return self.jenkins.promotion_exists(promoted_build_name,
+                                             parent_job_name)
+
+    def promoted_build_changed(self, promoted_build):
+        md5 = promoted_build.md5()
+
+        changed = (
+            self._jjb_config.builder['ignore_cache'] or
+            self.cache.has_changed(
+                self.safe_promoted_build_name(promoted_build.name,
+                                              promoted_build.parent_job_name),
+                md5)
+        )
+        if not changed:
+            logger.debug("'{} - {}' has not changed".format(
+                promoted_build.parent_job_name,
+                promoted_build.name)
+            )
+        return changed
+
+    def update_promoted_builds(self, xml_promoted_builds, output=None,
+                               n_workers=None, config_xml=False):
+        orig = time.time()
+
+        num_promoted_builds = len(xml_promoted_builds)
+        if num_promoted_builds == 0:
+            return [], 0
+        logger.info("Number of promoted builds jobs generated:  %d",
+                    num_promoted_builds)
+        xml_promoted_builds.sort(
+            key=operator.attrgetter('parent_job_name', 'name'))
+
+        if (output and not hasattr(output, 'write') and
+                not os.path.isdir(output)):
+            logger.info("Creating directory %s" % output)
+            try:
+                os.makedirs(output)
+            except OSError:
+                if not os.path.isdir(output):
+                    raise
+
+        if output:
+            # ensure only wrapped once
+            if hasattr(output, 'write'):
+                output = utils.wrap_stream(output)
+
+            for promoted_build in xml_promoted_builds:
+                if hasattr(output, 'write'):
+                    # `output` is a file-like object
+                    logger.info("Promoted Build job & name:  %s, %s",
+                                promoted_build.parent_job_name,
+                                promoted_build.name)
+                    logger.debug("Writing XML to '{0}'".format(output))
+                    try:
+                        output.write(promoted_build.output())
+                    except IOError as exc:
+                        if exc.errno == errno.EPIPE:
+                            # EPIPE could happen if piping output to something
+                            # that doesn't read the whole input (e.g.: the UNIX
+                            # `head` command)
+                            return
+                        raise
+                    continue
+
+                if config_xml:
+                    output_dir = os.path.join(output,
+                                              promoted_build.parent_job_name,
+                                              'promotion', 'process',
+                                              promoted_build.name)
+                    logger.info("Creating directory %s" % output_dir)
+                    try:
+                        os.makedirs(output_dir)
+                    except OSError:
+                        if not os.path.isdir(output_dir):
+                            raise
+                    output_fn = os.path.join(output_dir, 'config.xml')
+                else:
+                    output_fn = os.path.join(
+                        output,
+                        self.safe_promoted_build_name(
+                            promoted_build.name,
+                            promoted_build.parent_job_name)
+                    )
+                logger.debug("Writing XML to '{0}'".format(output_fn))
+                with io.open(output_fn, 'w', encoding='utf-8') as f:
+                    f.write(promoted_build.output().decode('utf-8'))
+            return xml_promoted_builds, len(xml_promoted_builds)
+
+        # Filter out the jobs that did not change
+        logging.debug('Filtering %d promoted builds jobs for changed jobs',
+                      len(xml_promoted_builds))
+        step = time.time()
+        promoted_builds = [pb for pb in xml_promoted_builds if
+                           self.promoted_build_changed(pb)]
+        logging.debug("Filtered for changed promoted builds jobs in %ss",
+                      (time.time() - step))
+
+        if not promoted_builds:
+            return [], 0
+
+        logging.debug('Updating promoted builds')
+        step = time.time()
+        p_params = [{'promoted_build': pb} for pb in promoted_builds]
+        results = self.parallel_update_promoted_build(
+            n_workers=n_workers,
+            concurrent=p_params)
+        logging.debug("Parsing results")
+        # generalize the result parsing, as a concurrent job always returns a
+        # list
+        if len(p_params) in (1, 0):
+            results = [results]
+        for result in results:
+            if isinstance(result, Exception):
+                raise result
+            else:
+                pb_name, pb_md5 = result
+                self.cache.set(pb_name, pb_md5)
+        self.cache.save()
+        logging.debug("Updated %d jobs in %ss",
+                      len(promoted_builds),
+                      time.time() - step)
+        logging.debug("Total run took %ss", (time.time() - orig))
+        return promoted_builds, len(promoted_builds)
+
+    @concurrent
+    def parallel_update_promoted_build(self, promoted_build):
+        self.update_promoted_build(promoted_build.name,
+                                   promoted_build.parent_job_name,
+                                   promoted_build.output().decode('utf-8'))
+        return (
+            self.safe_promoted_build_name(promoted_build.name,
+                                          promoted_build.parent_job_name),
+            promoted_build.md5()
+        )
 
     ################
     # View related #

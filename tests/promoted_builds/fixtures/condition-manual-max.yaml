@@ -1,0 +1,10 @@
+conditions:
+  - manual:
+      users:
+        - wilma
+        - fred
+      parameters:
+        - bool:
+            name: YAE_OR_NAE
+            default: true
+            description: This is borrowered from Parameters

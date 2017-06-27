@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <conditions>
+    <hudson.plugins.promoted__builds.conditions.ParameterizedSelfPromotionCondition>
+      <evenIfUnstable>false</evenIfUnstable>
+      <parameterName/>
+      <parameterValue/>
+    </hudson.plugins.promoted__builds.conditions.ParameterizedSelfPromotionCondition>
+  </conditions>
+  <icon>star-gold</icon>
+  <isVisible/>
+</project>

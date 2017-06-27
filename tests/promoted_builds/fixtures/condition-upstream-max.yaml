@@ -1,0 +1,4 @@
+conditions:
+  - upstream:
+      jobs:
+        - prod

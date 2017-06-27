@@ -2316,11 +2316,20 @@ class Builders(jenkins_jobs.modules.base.Base):
     component_type = 'builder'
     component_list_type = 'builders'
 
+    alias_xml_map = {'prebuilders': 'prebuilders',
+                     'builders': 'builders',
+                     'postbuilders': 'postbuilders',
+                     'build-steps': 'buildSteps'}
+
     def gen_xml(self, xml_parent, data):
 
-        for alias in ['prebuilders', 'builders', 'postbuilders']:
+        for alias in self.alias_xml_map.keys():
             if alias in data:
-                builders = XML.SubElement(xml_parent, alias)
+                xml_tag = self.alias_xml_map[alias]
+
+                builders = xml_parent.find(xml_tag)
+                if builders is None:
+                    builders = XML.SubElement(xml_parent, xml_tag)
                 for builder in data[alias]:
                     self.registry.dispatch('builder', builders, builder)
 

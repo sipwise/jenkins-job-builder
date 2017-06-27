@@ -33,8 +33,10 @@ logger = logging.getLogger(__name__)
 
 class ModuleRegistry(object):
     entry_points_cache = {}
+    module_callbacks = {}
 
-    def __init__(self, jjb_config, plugins_list=None):
+    def __init__(self, jjb_config, plugins_list=None,
+                 group='jenkins_jobs.modules'):
         self.modules = []
         self.modules_by_component_type = {}
         self.handlers = {}
@@ -47,7 +49,7 @@ class ModuleRegistry(object):
             self.plugins_dict = self._get_plugins_info_dict(plugins_list)
 
         for entrypoint in pkg_resources.iter_entry_points(
-                group='jenkins_jobs.modules'):
+                group=group):
             Mod = entrypoint.load()
             mod = Mod(self)
             self.modules.append(mod)
@@ -256,3 +258,6 @@ class ModuleRegistry(object):
             raise JenkinsJobsException("Unknown entry point or macro '{0}' "
                                        "for component type: '{1}'.".
                                        format(name, component_type))
+
+    def register_module_callback(self, name, callback):
+        self.module_callbacks[name] = callback

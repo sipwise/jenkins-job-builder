@@ -1,0 +1,3 @@
+conditions:
+  - immediate:
+      even-if-unstable: true

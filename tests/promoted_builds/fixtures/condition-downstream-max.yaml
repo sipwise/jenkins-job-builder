@@ -1,0 +1,6 @@
+conditions:
+  - downstream:
+      jobs:
+        - dev
+        - stage
+      even-if-unstable: true

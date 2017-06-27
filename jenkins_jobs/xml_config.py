@@ -63,22 +63,34 @@ class XmlJob(object):
         return out.toprettyxml(indent='  ', encoding='utf-8')
 
 
+class PromotedBuildsXmlJob(XmlJob):
+    def __init__(self, xml, name, parent_job_name):
+        super(PromotedBuildsXmlJob, self).__init__(xml, name)
+        self.parent_job_name = parent_job_name
+
+
 class XmlJobGenerator(object):
     """ This class is responsible for generating Jenkins Configuration XML from
-    a compatible intermediate representation of Jenkins Jobs.
+    a compatible intermediate representation of Jenkins Jobs, and if there are
+    any; generating the promoted builds data list.
     """
 
     def __init__(self, registry):
         self.registry = registry
+        self.promoted_builds_data_list = []
 
     def generateXML(self, jobdict_list):
         xml_jobs = []
         for job in jobdict_list:
             xml_jobs.append(self._getXMLForJob(job))
-        return xml_jobs
+        return xml_jobs, self.promoted_builds_data_list
 
     def _getXMLForJob(self, data):
         kind = data.get('project-type', 'freestyle')
+
+        self.current_job_name = data['name']
+        self.registry.register_module_callback('add_promoted_build',
+                                               self.add_promoted_build)
 
         for ep in pkg_resources.iter_entry_points(
                 group='jenkins_jobs.projects', name=kind):
@@ -91,6 +103,43 @@ class XmlJobGenerator(object):
 
         raise errors.JenkinsJobsException("Unrecognized project type: '%s'"
                                           % kind)
+
+    def _gen_xml(self, xml, data):
+        for module in self.registry.modules:
+            if hasattr(module, 'gen_xml'):
+                module.gen_xml(xml, data)
+
+    def add_promoted_build(self, promoted_build_data):
+        promoted_build_data['parent_job_name'] = self.current_job_name
+        self.promoted_builds_data_list.append(promoted_build_data)
+
+
+class XmlPromotedBuildsGenerator(object):
+    """ This class is responsible for generating Jenkins Configuration XML from
+    a compatible intermediate representation of Jenkins Prompted Builds plugin
+    Views.
+    """
+
+    def __init__(self, registry):
+        self.registry = registry
+
+    def generateXML(self, promotedbuilddict_list):
+        xml_promoted_builds = []
+        for promoted_build in promotedbuilddict_list:
+            xml_promoted_builds.append(
+                self._getXMLForPromotedBuild(promoted_build))
+        return xml_promoted_builds
+
+    def _getXMLForPromotedBuild(self, data):
+        for ep in pkg_resources.iter_entry_points(
+                group='jenkins_jobs.promoted_builds', name='promoted_builds'):
+            Mod = ep.load()
+            mod = Mod(self.registry)
+            xml = mod.root_xml(data)
+            self._gen_xml(xml, data)
+            promoted_build = PromotedBuildsXmlJob(xml, data['name'],
+                                                  data['parent_job_name'])
+            return promoted_build
 
     def _gen_xml(self, xml, data):
         for module in self.registry.modules:

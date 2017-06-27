@@ -76,7 +76,7 @@ def string_param(registry, xml_parent, data):
 
 
 def promoted_param(registry, xml_parent, data):
-    """yaml: promoted build
+    """yaml: promoted
     A promoted build parameter.
     Requires the Jenkins :jenkins-wiki:`Promoted Builds Plugin
     <Promoted+Builds+Plugin>`.

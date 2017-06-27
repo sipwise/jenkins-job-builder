@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <conditions>
+    <hudson.plugins.promoted__builds.conditions.UpstreamPromotionCondition>
+      <requiredPromotionNames>prod</requiredPromotionNames>
+    </hudson.plugins.promoted__builds.conditions.UpstreamPromotionCondition>
+  </conditions>
+  <icon>star-gold</icon>
+  <isVisible/>
+</project>

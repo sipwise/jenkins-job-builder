@@ -1,0 +1,3 @@
+build-steps:
+  - shell: "make test"
+project-type: 'promoted_builds'

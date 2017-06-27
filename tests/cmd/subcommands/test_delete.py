@@ -28,42 +28,50 @@ from tests.cmd.test_cmd import CmdTestsBase
             mock.MagicMock)
 class DeleteTests(CmdTestsBase):
 
+    @mock.patch('jenkins.Jenkins.get_promotions')
     @mock.patch('jenkins_jobs.cli.subcommand.update.'
                 'JenkinsManager.delete_jobs')
     @mock.patch('jenkins_jobs.cli.subcommand.update.'
                 'JenkinsManager.delete_views')
-    def test_delete_single_job(self, delete_job_mock, delete_view_mock):
+    def test_delete_single_job(self, get_promotions_mock,
+                               delete_job_mock, delete_view_mock):
         """
         Test handling the deletion of a single Jenkins job.
         """
+        get_promotions_mock.return_value = []
 
         args = ['--conf', self.default_config_file, 'delete', 'test_job']
         self.execute_jenkins_jobs_with_args(args)
 
+    @mock.patch('jenkins.Jenkins.get_promotions')
     @mock.patch('jenkins_jobs.cli.subcommand.update.'
                 'JenkinsManager.delete_jobs')
     @mock.patch('jenkins_jobs.cli.subcommand.update.'
                 'JenkinsManager.delete_views')
-    def test_delete_multiple_jobs(self, delete_job_mock, delete_view_mock):
+    def test_delete_multiple_jobs(self, get_promotions_mock,
+                                  delete_job_mock, delete_view_mock):
         """
         Test handling the deletion of multiple Jenkins jobs.
         """
+        get_promotions_mock.return_value = []
 
         args = ['--conf', self.default_config_file,
                 'delete', 'test_job1', 'test_job2']
         self.execute_jenkins_jobs_with_args(args)
 
+    @mock.patch('jenkins.Jenkins.get_promotions')
     @mock.patch('jenkins_jobs.builder.JenkinsManager.delete_job')
-    def test_delete_using_glob_params(self, delete_job_mock):
+    def test_delete_using_glob_params(self, get_promotions_mock,
+                                      delete_job_mock):
         """
         Test handling the deletion of multiple Jenkins jobs using the glob
         parameters feature.
         """
+        get_promotions_mock.return_value = []
 
         args = ['--conf', self.default_config_file,
                 'delete', '--path',
-                os.path.join(self.fixtures_path,
-                             'cmd-002.yaml'),
+                os.path.join(self.fixtures_path, 'cmd-002.yaml'),
                 '*bar*']
         self.execute_jenkins_jobs_with_args(args)
         calls = [mock.call('bar001'), mock.call('bar002')]

@@ -51,10 +51,14 @@ class TestSubCommand(update.UpdateSubCommand):
 
     def execute(self, options, jjb_config):
 
-        builder, xml_jobs, xml_views = self._generate_xmljobs(
-            options, jjb_config)
+        builder, xml_jobs, xml_promoted_builds, xml_views = \
+            self._generate_xmljobs(options, jjb_config)
 
         builder.update_jobs(xml_jobs, output=options.output_dir, n_workers=1,
                             config_xml=options.config_xml)
+        builder.update_promoted_builds(xml_promoted_builds,
+                                       output=options.output_dir,
+                                       n_workers=1,
+                                       config_xml=options.config_xml)
         builder.update_views(xml_views, output=options.output_dir, n_workers=1,
                              config_xml=options.config_xml)

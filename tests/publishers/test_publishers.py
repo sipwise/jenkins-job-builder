@@ -16,12 +16,32 @@
 # under the License.
 
 import os
+import xml.etree.ElementTree as XML
 
+from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.modules import publishers
 from tests import base
+
+# This dance deals with the fact that we want unittest.mock if
+# we're on Python 3.4 and later, and non-stdlib mock otherwise.
+try:
+    from unittest import mock
+except ImportError:
+    import mock  # noqa
 
 
 class TestCaseModulePublishers(base.BaseScenariosTestCase):
     fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
     scenarios = base.get_scenarios(fixtures_path)
     klass = publishers.Publishers
+
+
+class TestKeepBuildForever(base.BaseTestCase):
+
+    def test_keep_build_forever_not_allowed_unless_in_publish_steps(self):
+        registry = mock.MagicMock()
+        xml_parent = XML.Element('publishers')
+        data = 'dont_care'
+
+        self.assertRaises(JenkinsJobsException, publishers.keep_build_forever,
+                          registry, xml_parent, data)

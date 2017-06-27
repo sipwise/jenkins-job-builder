@@ -1,0 +1,5 @@
+conditions:
+  - parameter:
+      even-if-unstable: true
+      name: BRACKEN
+      value: moderate

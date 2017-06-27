@@ -180,6 +180,7 @@ class TestTests(CmdTestsBase):
         """
         Test handling of plugins_info stub option.
         """
+        generateXML_mock.return_value = ([], [])
         plugins_info_stub_yaml_file = os.path.join(self.fixtures_path,
                                                    'plugins-info.yaml')
         args = ['--conf',
@@ -195,8 +196,11 @@ class TestTests(CmdTestsBase):
                      'r', encoding='utf-8') as yaml_file:
             plugins_info_list = yaml.load(yaml_file)
 
-        registry_mock.assert_called_with(mock.ANY,
-                                         plugins_info_list)
+        registry_mock.assert_has_calls([
+            mock.call(mock.ANY, plugins_info_list),
+            mock.call(mock.ANY, plugins_info_list,
+                      group='promoted_builds.modules')
+        ], any_order=True)
 
     @mock.patch(
         'jenkins_jobs.cli.subcommand.update.XmlJobGenerator.generateXML')

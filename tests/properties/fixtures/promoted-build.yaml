@@ -1,0 +1,43 @@
+properties:
+  - promoted-build:
+      - name: dev
+        visible: oh yes
+        icon: star-gold-e
+        node: dockerbuild-ansible
+        conditions:
+          - manual:
+              users:
+                - wilma
+                - fred
+              parameters:
+                - bool:
+                    name: YAE_OR_NAE
+                    default: true
+                    description: This is borrowered from Parameters
+          - immediate:
+              even-if-unstable: true
+          - parameter:
+              even-if-unstable: true
+              name: BRACKEN
+              value: moderate
+          - downstream:
+              jobs:
+                - prod
+              even-if-unstable: true
+          - upstream:
+              jobs:
+                - dev
+        build-steps:
+          - shell: echo 'promote to dev'
+        publish-steps:
+          - keep-build-forever
+      - name: stage
+        icon: star-blue-w
+        conditions:
+          - manual
+          - even-if-unstable
+          - parameter
+          - downstream
+          - upstream
+      - name: prod
+        icon: star-red

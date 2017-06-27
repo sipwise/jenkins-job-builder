@@ -6847,14 +6847,62 @@ def chuck_norris(registry, xml_parent, data):
     return XML.SubElement(chuck, "factGenerator")
 
 
+def keep_build_forever(registry, xml_parent, data):
+    """yaml: keep-build-forever
+    This is only valid in a promoted-build property's publish-steps list.
+    When used in a promotion; keeps the build forever regardless of
+    build-discarder settings.
+    Requires the Jenkins :jenkins-wiki:`Promoted Builds Plugin
+    <Promoted+Builds+Plugin>`.
+
+    Example:
+
+    .. code-block:: yaml
+
+        - job:
+            name: A job with promotions
+            properties:
+              - promoted-build:
+                  - name: staging
+                    build-steps:
+                      - promote-to-stage
+                  - name: production
+                    build-steps:
+                      - promote-to-prod
+                    publish-steps:
+                      - keep-build-forever
+    """
+    if xml_parent.tag != 'buildSteps':
+        raise JenkinsJobsException("keep-build-forever is only valid in a "
+                                   "promoted-build property's publish-steps "
+                                   "list")
+
+    XML.SubElement(xml_parent, 'hudson.plugins.promoted__builds.KeepBuild'
+                               'ForeverAction')
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
     component_type = 'publisher'
     component_list_type = 'publishers'
 
-    def gen_xml(self, xml_parent, data):
-        publishers = XML.SubElement(xml_parent, 'publishers')
+    alias_xml_map = {'publishers': 'publishers',
+                     'publish-steps': 'buildSteps'}
 
-        for action in data.get('publishers', []):
-            self.registry.dispatch('publisher', publishers, action)
+    def gen_xml(self, xml_parent, data):
+        for alias in self.alias_xml_map.keys():
+            if alias in data:
+                xml_tag = self.alias_xml_map[alias]
+
+                publishers = xml_parent.find(xml_tag)
+                if publishers is None:
+                    publishers = XML.SubElement(xml_parent, xml_tag)
+                for action in data[alias]:
+                    self.registry.dispatch('publisher', publishers, action)
+
+        # Make sure projects that are not promoted-build jobs always have a
+        # <publishers> tag.
+        project_type = data.get('project-type', 'freestyle')
+        if project_type != 'promoted_builds' and 'publishers' not in data:
+            XML.SubElement(xml_parent, 'publishers')

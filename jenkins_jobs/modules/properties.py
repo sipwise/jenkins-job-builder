@@ -101,25 +101,98 @@ def ownership(registry, xml_parent, data):
 
 def promoted_build(registry, xml_parent, data):
     """yaml: promoted-build
-    Marks a build for promotion. A promotion process with an identical
-    name must be created via the web interface in the job in order for the job
-    promotion to persist. Promotion processes themselves cannot be configured
-    by jenkins-jobs due to the separate storage of plugin configuration files.
+    Add promotion processes to a build.
     Requires the Jenkins :jenkins-wiki:`Promoted Builds Plugin
     <Promoted+Builds+Plugin>`.
 
-    :arg list names: the promoted build names (optional)
+    :arg list promoted-build: List of promoted build definition dictionaries
+        with the following arguments:
+
+        * **name** *(str)* The promotion name. (default '')
+        * **visible** *(str)* If you are using Inheritance Projects; allows
+          promotion to be defined in the base job. (default '')
+        * **icon** *(str)* The icon to display for this promotion, choose from:
+          star-<gold|silver|blue|green|orange|purple|red>[-e|-w], where '-e'
+          suffix is empty-star and '-w' is white-star. (default 'star-gold')
+        * **node** *(str)* Restrict where this job can be run, set to the
+          NODE_LABEL eligible to run this promotion. If not set, the label of
+          the build will be used. (optional)
+        * **conditions** *(list)* A list of conditions under which the
+          promotion is triggered: (optional)
+
+          * **manual** *(dict | str)* Manually approve a promotion: (optional)
+
+            * **users** *(list)* A list of strings matching the jenkins
+              users or groups which may approve this promotion. (optional)
+
+              * **parameters** *(list)* A list of :ref:`parameters`.
+                (optional)
+            * **immediate** *(dict | str)* Promote immediately after the build
+              is complete. (optional)
+
+              * **even-if-unstable** *(bool)* Promote even if the build is
+                unstable. (default false)
+          * **parameter** *(dict | str)* Promote a build as soon as a build
+            is completed if the specified build parameter values match.
+            (Optional)
+
+            * **even-if-unstable** *(bool)* Promote even if the build is
+              unstable. (default false)
+            * **name** *(str)* The name of the parameter. (default '')
+            * **value** *(str)* The desired value of the parameter.
+              (default '')
+          * **downstream** *(dict | str)* This option requires that a
+            promoted build runs the designated downstream builds
+            successfully. (optional)
+
+            * **jobs** *(list)* A list of strings matching the downstream
+              job names. (optional)
+            * **even-if-unstable** *(bool)* Promote even if the build is
+              unstable. (default false)
+          * **upstream** *(dict | str)* This option requires that other
+            promotions happen prior to this promotion.
+
+            * **jobs** *(list)* A list of strings matching the upstream
+              promotion names. (optional)
+        * **build-steps** *(list)* A list of :ref:`builders` to run in this
+          promoted build. (optional)
+        * **publish-steps** *(list)* A list of :ref:`publishers` to run in this
+          promoted build. (optional)
 
     Example:
 
-    .. literalinclude:: /../../tests/properties/fixtures/promoted_build.yaml
+    .. literalinclude:: /../../tests/properties/fixtures/promoted-build-eg.yaml
        :language: yaml
     """
-    promoted = XML.SubElement(xml_parent, 'hudson.plugins.promoted__builds.'
-                                          'JobPropertyImpl')
-    names = data.get('names', [])
+    logger = logging.getLogger(__name__)
+
+    xml_promoted = XML.SubElement(
+        xml_parent, 'hudson.plugins.promoted__builds.JobPropertyImpl')
+
+    if type(data) is list:
+        names = []
+        for promoted_build in data:
+            for property in promoted_build.get('properties', []):
+                if 'promoted-build' in property:
+                    raise JenkinsJobsException('Recursive promoted-build'
+                                               'definitions are not allowed')
+
+            names.append(promoted_build['name'])
+
+            for required_data in ['build-steps', 'publish-steps']:
+                if required_data not in promoted_build:
+                    promoted_build[required_data] = []
+
+            promoted_build['project-type'] = 'promoted_builds'
+            registry.module_callbacks['add_promoted_build'](promoted_build)
+    else:
+        logger.warn('Deprecated use of promoted-build property found, '
+                    'promotions will be listed in job but no promoted-builds '
+                    'will be created.')
+        names = data.get('names', [])
+
     if names:
-        active_processes = XML.SubElement(promoted, 'activeProcessNames')
+        active_processes = XML.SubElement(xml_promoted, 'activeProcessNames')
         for n in names:
             XML.SubElement(active_processes, 'string').text = str(n)
 

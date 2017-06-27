@@ -1,0 +1,3 @@
+publish-steps:
+  - keep-build-forever
+project-type: promoted_builds

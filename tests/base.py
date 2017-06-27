@@ -141,6 +141,7 @@ class BaseScenariosTestCase(testscenarios.TestWithScenarios, BaseTestCase):
 
     scenarios = []
     fixtures_path = None
+    registry_plugins_group = None
 
     def test_yaml_snippet(self):
         if not self.in_filename:
@@ -160,7 +161,11 @@ class BaseScenariosTestCase(testscenarios.TestWithScenarios, BaseTestCase):
                            text_content(str(plugins_info)))
 
         parser = YamlParser(jjb_config)
-        registry = ModuleRegistry(jjb_config, plugins_info)
+        if self.registry_plugins_group:
+            registry = ModuleRegistry(jjb_config, plugins_info,
+                                      group=self.registry_plugins_group)
+        else:
+            registry = ModuleRegistry(jjb_config, plugins_info)
         registry.set_parser_data(parser.data)
 
         pub = self.klass(registry)
@@ -222,7 +227,8 @@ class SingleJobTestCase(BaseScenariosTestCase):
 
         # Generate the XML tree
         xml_generator = XmlJobGenerator(registry)
-        xml_jobs = xml_generator.generateXML(job_data_list)
+        xml_jobs, xml_promoted_builds = xml_generator.generateXML(
+            job_data_list)
 
         xml_jobs.sort(key=operator.attrgetter('name'))
 

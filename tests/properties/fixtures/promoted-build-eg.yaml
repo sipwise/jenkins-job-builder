@@ -1,0 +1,26 @@
+properties:
+  - promoted-build:
+      - name: staging
+        icon: star-blue
+        node: dockerbuild-ansible
+        conditions:
+          - immediate
+        build-steps:
+          - shell: |
+              echo 'promoting to staging'
+      - name: production
+        icon: star-gold
+        node: dockerbuild-ansible
+        conditions:
+          - upstream:
+              jobs:
+                - staging
+          - manual:
+              users:
+                - wilma
+                - fred
+        build-steps:
+          - shell: |
+              echo 'promoting to production'
+        publish-steps:
+          - keep-build-forever

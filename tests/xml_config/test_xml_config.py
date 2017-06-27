@@ -21,6 +21,13 @@ from jenkins_jobs import xml_config
 
 from tests import base
 
+# This dance deals with the fact that we want unittest.mock if
+# we're on Python 3.4 and later, and non-stdlib mock otherwise.
+try:
+    from unittest import mock
+except ImportError:
+    import mock  # noqa
+
 
 class TestXmlJobGeneratorExceptions(base.BaseTestCase):
     fixtures_path = os.path.join(os.path.dirname(__file__), 'exceptions')
@@ -58,3 +65,21 @@ class TestXmlJobGeneratorExceptions(base.BaseTestCase):
         self.assertRaises(Exception, xml_generator.generateXML, job_data_list)
         self.assertIn("Failure formatting component", self.logger.output)
         self.assertIn("Problem formatting with args", self.logger.output)
+
+
+class TestXMLJobGenerator(base.BaseTestCase):
+
+    def test_add_promoted_build_callback(self):
+        registry = mock.MagicMock()
+        data_before = {'some': 'data'}
+        data_after = {'some': 'data', 'parent_job_name': 'Developer'}
+
+        xml_generator = xml_config.XmlJobGenerator(registry)
+
+        xml_generator.current_job_name = 'Developer'
+
+        xml_generator.add_promoted_build(data_before)
+
+        self.assertEqual([data_after], xml_generator.promoted_builds_data_list,
+                         'Promoted build was not properly appended to list '
+                         'with parent job name')
