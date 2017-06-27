@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_ea43e640",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1011,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-27T16:06:59Z",
+      "side": 1,
+      "message": "nit: define outside of loop",
+      "revId": "95a9ee80ee9c1c35c97b6fec0e5fa9dd2127281d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
