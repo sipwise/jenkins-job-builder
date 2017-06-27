@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_aad96e22",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-27T16:21:48Z",
+      "side": 1,
+      "message": "Seems like the following would work here:\n\n    jobs \u003d \u0027\u0027\n    for value in data[\u0027blocking-jobs\u0027]:\n        jobs \u003d jobs + value + \u0027\\n\u0027\n\n    mapping \u003d [\n        (\u0027use-build-blocker\u0027, \u0027useBuildBlocker\u0027, True),\n        (\u0027\u0027, \u0027blockingJobs\u0027, jobs),\n        (\u0027block-level\u0027, \u0027blockLevel\u0027, \u0027GLOBAL\u0027, (\u0027GLOBAL\u0027, \u0027NODE\u0027)),\n        (\u0027queue-scanning\u0027, \u0027scanQueueFor\u0027, \u0027DISABLED\u0027, (\u0027DISABLED\u0027, \u0027ALL\u0027, \u0027BUILDABLE\u0027))\n    ]\n\n    helpers.convert_mapping_to_xml(\n        blocker, data, mapping, fail_required\u003dTrue)\n\nAnd it also suggests that supporting a callback as an alternative to the 4th option might also be useful for doing extra work with the data returned from the option before inclusion. But that\u0027s a for another day.",
+      "revId": "4a012b28de8e62a357f54094bf791eb84732e69b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
