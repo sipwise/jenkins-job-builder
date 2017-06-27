@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_56adfb98",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-27T09:04:27Z",
+      "side": 1,
+      "message": "This is the problem, by not providing an argument here, the substitution mechanism in JJB is assuming the macro does not need to be parsed and doesn\u0027t take any arguments.\n\nYou need to use \u0027:\u0027 to ensure it is sent through the templating engine.\n\nIf you have a look at the output of your current code, the default param value ends up being \u0027{MY_PARAM}\u0027 and not \u0027true\u0027.",
+      "revId": "6c2ee94521b29172ccddaeb99fd6cefa465cd175",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
