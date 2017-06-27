@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_19dc4644",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-27T14:59:31Z",
+      "side": 1,
+      "message": "How about simply replacing this sort wit the one below?",
+      "revId": "8455a1df05ba07e7ef731966ff943bad35364d16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_994736bd",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-27T14:59:31Z",
+      "side": 1,
+      "message": "I think you can move this above to replace the xml_jobs.sort() call with the following, which should also avoid copying the list:\n\n xml_jobs.sort(key\u003dAlphanumSort)",
+      "revId": "8455a1df05ba07e7ef731966ff943bad35364d16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
