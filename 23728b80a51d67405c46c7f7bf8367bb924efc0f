@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f201791_d9580e89",
+        "filename": "jenkins_jobs/cache.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-27T15:02:19Z",
+      "side": 1,
+      "message": "We\u0027re following the convention:\n\n \u003cbuiltin modules\u003e\n\n \u003cthird-party modules\u003e\n\n \u003cpackage modules\u003e",
+      "parentUuid": "7f231b9d_d0b5c17f",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 0
+      },
+      "revId": "23728b80a51d67405c46c7f7bf8367bb924efc0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_50e2d1a1",
         "filename": "jenkins_jobs/cache.py",
         "patchSetId": 11
@@ -36,6 +60,30 @@
       "writtenOn": "2017-06-14T18:04:23Z",
       "side": 1,
       "message": "none",
+      "range": {
+        "startLine": 50,
+        "startChar": 37,
+        "endLine": 50,
+        "endChar": 40
+      },
+      "revId": "23728b80a51d67405c46c7f7bf8367bb924efc0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_7949fab4",
+        "filename": "jenkins_jobs/cache.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-27T15:02:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_50e2d1a1",
       "range": {
         "startLine": 50,
         "startChar": 37,
