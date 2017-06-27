@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_b9ac32ed",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-27T14:45:38Z",
+      "side": 1,
+      "message": "Can add the list of valid options as a fourth element here:\n\n (\u0027report-build-policy\u0027, \u0027reportBuildPolicy\u0027, \u0027ALWAYS\u0027,\n  [\u0027ALWAYS\u0027, \u0027UNSTABLE\u0027, \u0027UNSUCCESSFUL\u0027]),\n\nThat will check the given values.",
+      "revId": "881bfcf4dcd7ba3e73c27071f0d6754a733fc782",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
