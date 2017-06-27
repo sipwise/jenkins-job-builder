@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_3698361a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 6759,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-27T13:05:56Z",
+      "side": 1,
+      "message": "Is \u0027app\u0027 the default type for this one?",
+      "revId": "c756503b3d26f9a5b6ec79467f20280ba9871d9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_017df26c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 6810,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-27T13:05:56Z",
+      "side": 1,
+      "message": "This should raise the correct exception \u0027InvalidAttributeError\u0027 from jenkins_jobs/errors.py should cover this here, which should then also print out the valid types.",
+      "revId": "c756503b3d26f9a5b6ec79467f20280ba9871d9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_96014a3b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 6816,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-27T13:05:56Z",
+      "side": 1,
+      "message": "This works, but it seems maybe a little complex, which appears to be driven by the structure of the items below. Presumably the only reason for this is that there is a default entry?",
+      "revId": "c756503b3d26f9a5b6ec79467f20280ba9871d9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_d347d476",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 6858,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-27T13:05:56Z",
+      "side": 1,
+      "message": "This seems overly complex, presumably it\u0027s because you need the default item to be first?\n\n\nAn alternative example:\n\n    release_notes_types \u003d {\n        \u0027none\u0027: (\u0027NoReleaseNotes\u0027, []),\n        \u0027changelog\u0027: (\u0027ChangelogReleaseNotes\u0027, []),\n        \u0027file\u0027: (\u0027FileReleaseNotes\u0027, [\n            (\u0027file-name\u0027, \u0027fileName\u0027, None),\n            (\u0027markdown\u0027, \u0027isMarkdown\u0027, False),\n        ]),\n        \u0027manual\u0027: ( \u0027ManualReleaseNotes\u0027, [\n            (\u0027notes\u0027, \u0027releaseNotes\u0027, None),\n            (\u0027markdown\u0027, \u0027isMarkdown\u0027, False),\n        ]),\n        \u0027_default\u0027: \u0027none\u0027,\n    }\n\nThat way the default could be looked up and not be related to the order, which might simplify some of the parsing code above.",
+      "range": {
+        "startLine": 6847,
+        "startChar": 4,
+        "endLine": 6858,
+        "endChar": 5
+      },
+      "revId": "c756503b3d26f9a5b6ec79467f20280ba9871d9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
