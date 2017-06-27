@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_cc972a48",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4151,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-27T15:50:19Z",
+      "side": 1,
+      "message": "I had a look at the plot code, appears it takes care of creating a temp name itself, so looks like this is good to go.\n\nThought I think maybe move this outside of the loop.",
+      "revId": "83b7c2d4d948572ef231b9f064041dff4f43b571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_6c281696",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4168,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-27T15:50:19Z",
+      "side": 1,
+      "message": "I\u0027d been included to define this outside of the loop as:\n\n csv_mappings",
+      "revId": "83b7c2d4d948572ef231b9f064041dff4f43b571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_ac0bce27",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4186,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-27T15:50:19Z",
+      "side": 1,
+      "message": "Similarly here, name this xml_mappings and define it outside of the loop?",
+      "revId": "83b7c2d4d948572ef231b9f064041dff4f43b571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_4f2b0c82",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4201,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-27T15:50:19Z",
+      "side": 1,
+      "message": "This also looks like it could be defined outside the loop as well.",
+      "revId": "83b7c2d4d948572ef231b9f064041dff4f43b571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
