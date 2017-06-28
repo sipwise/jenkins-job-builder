@@ -2398,53 +2398,54 @@ def groovy_postbuild(registry, xml_parent, data):
             'script': data,
         }
     # There are incompatible changes, we need to know version
-    info = registry.get_plugin_info('groovy-postbuild')
-    version = pkg_resources.parse_version(info.get('version', "0"))
-    # Version specific predicates
-    matrix_parent_support = version >= pkg_resources.parse_version("1.9")
-    security_plugin_support = version >= pkg_resources.parse_version("2.0")
-    extra_classpath_support = version >= pkg_resources.parse_version("1.6")
+    plugin_info = registry.get_plugin_info('groovy-postbuild')
+    version = plugin_info.get('version', None)
+    if version:
+        version = pkg_resources.parse_version(version)
 
     root_tag = (
         'org.jvnet.hudson.plugins.groovypostbuild.GroovyPostbuildRecorder'
     )
     groovy = XML.SubElement(xml_parent, root_tag)
 
-    behavior = data.get('on-failure')
-    XML.SubElement(groovy, 'behavior').text = {
+    BEHAVIOR_OPTIONS = {
+        'success': '0',
         'unstable': '1',
         'failed': '2',
-    }.get(behavior, '0')
+    }
 
-    if matrix_parent_support:
-        XML.SubElement(
-            groovy,
-            'runForMatrixParent',
-        ).text = str(data.get('matrix-parent', False)).lower()
+    mapping = [
+        ('on-failure', 'behavior', 'success', BEHAVIOR_OPTIONS),
+        ('matrix-parent', 'runForMatrixParent', False),
+        ('script', 'groovyScript', ''),
+    ]
+    helpers.convert_mapping_to_xml(groovy, data, mapping, fail_required=True)
 
     classpaths = data.get('classpath', list())
-    if security_plugin_support:
+
+    # Note: Assume latest version of plugin is preferred config format
+    if not version or version >= pkg_resources.parse_version("2.0"):
         script = XML.SubElement(groovy, 'script')
-        XML.SubElement(script, 'script').text = data.get('script')
-        XML.SubElement(script, 'sandbox').text = str(
-            data.get('sandbox', False)
-        ).lower()
+        script_mapping = [
+            ('script', 'script', ''),
+            ('sandbox', 'sandbox', False),
+        ]
+        helpers.convert_mapping_to_xml(
+            script, data, script_mapping, fail_required=True)
         if classpaths:
             classpath = XML.SubElement(script, 'classpath')
             for path in classpaths:
                 script_path = XML.SubElement(classpath, 'entry')
                 XML.SubElement(script_path, 'url').text = path
     else:
-        XML.SubElement(groovy, 'groovyScript').text = data.get('script')
-        if extra_classpath_support and classpaths:
-            classpath = XML.SubElement(groovy, 'classpath')
-            for path in classpaths:
-                script_path = XML.SubElement(
-                    classpath,
-                    'org.jvnet.hudson.plugins.groovypostbuild.'
-                    'GroovyScriptPath',
-                )
-                XML.SubElement(script_path, 'path').text = path
+        classpath = XML.SubElement(groovy, 'classpath')
+        for path in classpaths:
+            script_path = XML.SubElement(
+                classpath,
+                'org.jvnet.hudson.plugins.groovypostbuild.'
+                'GroovyScriptPath',
+            )
+            XML.SubElement(script_path, 'path').text = path
 
 
 def base_publish_over(xml_parent, data, console_prefix,

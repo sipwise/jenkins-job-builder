@@ -4,6 +4,7 @@
     <org.jvnet.hudson.plugins.groovypostbuild.GroovyPostbuildRecorder>
       <behavior>2</behavior>
       <runForMatrixParent>true</runForMatrixParent>
+      <groovyScript>manager.buildFailure()</groovyScript>
       <script>
         <script>manager.buildFailure()</script>
         <sandbox>false</sandbox>
