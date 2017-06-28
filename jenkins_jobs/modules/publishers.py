@@ -6461,7 +6461,9 @@ def slack(registry, xml_parent, data):
     logger = logging.getLogger(__name__)
 
     plugin_info = registry.get_plugin_info('Slack Notification Plugin')
-    plugin_ver = pkg_resources.parse_version(plugin_info.get('version', "0"))
+    version = plugin_info.get('version', None)
+    if version:
+        version = pkg_resources.parse_version(version)
 
     mapping = (
         ('team-domain', 'teamDomain', ''),
@@ -6491,10 +6493,10 @@ def slack(registry, xml_parent, data):
         'jenkins.plugins.slack.SlackNotifier',
     )
 
-    if plugin_ver >= pkg_resources.parse_version("2.0"):
+    if not version or version >= pkg_resources.parse_version("2.0"):
         mapping = mapping + mapping_20
 
-    if plugin_ver < pkg_resources.parse_version("2.0"):
+    if version and version < pkg_resources.parse_version("2.0"):
         for yaml_name, _, default_value in mapping:
             # All arguments that don't have a default value are mandatory for
             # the plugin to work as intended.
