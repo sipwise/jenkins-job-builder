@@ -5544,17 +5544,19 @@ def conditional_publisher(registry, xml_parent, data):
 
             action_parent = cond_publisher
 
-            plugin_info = \
-                registry.get_plugin_info("Flexible Publish Plugin")
-            version = pkg_resources.parse_version(plugin_info.get('version',
-                                                                  '0'))
+            plugin_info = registry.get_plugin_info("Flexible Publish Plugin")
+            version = plugin_info.get('version', None)
+            if version:
+                version = pkg_resources.parse_version(version)
+
             # XML tag changed from publisher to publisherList in v0.13
             # check the plugin version to determine further operations
-            use_publisher_list = version >= pkg_resources.parse_version("0.13")
-
-            if use_publisher_list:
+            # Note: Assume latest version of plugin is preferred config format
+            if not version or version >= pkg_resources.parse_version("0.13"):
+                use_publisher_list = True
                 action_parent = XML.SubElement(cond_publisher, 'publisherList')
             else:
+                use_publisher_list = False
                 # Check the length of actions list for versions prior to 0.13.
                 # Flexible Publish will overwrite action if more than one is
                 # specified.  Limit the action list to one element.
