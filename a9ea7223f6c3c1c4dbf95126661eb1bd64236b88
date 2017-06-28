@@ -22,6 +22,29 @@
       "revId": "a9ea7223f6c3c1c4dbf95126661eb1bd64236b88",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_981c99c2",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-06-28T23:32:16Z",
+      "side": 1,
+      "message": "I think if we want to assume the newest version of the plugin takes precedence than version should be set to sys.maxsize this simplifies the if-statement below as to not need \u0027if not version\u0027 and allows any code that wants to read the version number to also not need that.",
+      "range": {
+        "startLine": 315,
+        "startChar": 41,
+        "endLine": 315,
+        "endChar": 45
+      },
+      "revId": "a9ea7223f6c3c1c4dbf95126661eb1bd64236b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
