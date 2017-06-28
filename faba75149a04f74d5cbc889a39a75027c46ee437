@@ -105,6 +105,24 @@
       "revId": "faba75149a04f74d5cbc889a39a75027c46ee437",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f201791_5de84ab1",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-06-28T09:50:25Z",
+      "side": 1,
+      "message": "With the work done for the updated API, I\u0027ve realised it would be possible to make this entirely configurable by allowing order to be controlled by the user via the config object.",
+      "parentUuid": "7a016987_4145bc43",
+      "revId": "faba75149a04f74d5cbc889a39a75027c46ee437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
