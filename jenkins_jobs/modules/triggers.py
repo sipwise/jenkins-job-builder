@@ -870,7 +870,8 @@ def bitbucket(registry, xml_parent, data):
     """
     bbtrig = XML.SubElement(xml_parent, 'com.cloudbees.jenkins.'
                             'plugins.BitBucketTrigger')
-    XML.SubElement(bbtrig, 'spec').text = ''
+    mapping = [('', 'spec', '')]
+    convert_mapping_to_xml(bbtrig, data, mapping, fail_required=True)
 
 
 def github(registry, xml_parent, data):
