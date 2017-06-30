@@ -885,7 +885,8 @@ def github(registry, xml_parent, data):
     """
     ghtrig = XML.SubElement(xml_parent, 'com.cloudbees.jenkins.'
                             'GitHubPushTrigger')
-    XML.SubElement(ghtrig, 'spec').text = ''
+    mapping = [('', 'spec', '')]
+    convert_mapping_to_xml(ghtrig, data, mapping, fail_required=True)
 
 
 def github_pull_request(registry, xml_parent, data):
