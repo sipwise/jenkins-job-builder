@@ -1,9 +1,9 @@
-name: testBPview
 view-type: pipeline
 description: 'This is a description'
 filter-executors: false
 filter-queue: false
 first-job: job-one
+name: testBPview
 no-of-displayed-builds: 5
 title: Title
 link-style: New Window
