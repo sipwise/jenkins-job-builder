@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_b1df20d5",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1586,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2017-07-02T16:57:00Z",
+      "side": 1,
+      "message": "should be \u0027True\u0027 here as the parameter is required",
+      "range": {
+        "startLine": 1586,
+        "startChar": 61,
+        "endLine": 1586,
+        "endChar": 66
+      },
+      "revId": "eba47c74b9cc59f3452561588fe2567cd354281c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
