@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_71bbc8c3",
+        "filename": "jenkins_jobs/modules/view_list.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2017-07-02T15:53:58Z",
+      "side": 1,
+      "message": "This parameter changed to \u0027optional\u0027, but it should be \u0027required\u0027 from the old code",
+      "range": {
+        "startLine": 62,
+        "startChar": 12,
+        "endLine": 62,
+        "endChar": 35
+      },
+      "revId": "be54b04542bcb6ac12c128129f2cac7d2a151df7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
