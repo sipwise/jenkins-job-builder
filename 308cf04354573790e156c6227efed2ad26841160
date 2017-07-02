@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_112814e0",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 754,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2017-07-02T16:35:26Z",
+      "side": 1,
+      "message": "This should be \u0027false\u0027 if \u0027parcel-builder-file\u0027 not in data, your code here still is \u0027true\u0027",
+      "range": {
+        "startLine": 754,
+        "startChar": 8,
+        "endLine": 754,
+        "endChar": 52
+      },
+      "revId": "308cf04354573790e156c6227efed2ad26841160",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
