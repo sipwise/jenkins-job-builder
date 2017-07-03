@@ -20,6 +20,7 @@ import xml.etree.ElementTree as XML
 from jenkins_jobs.errors import InvalidAttributeError
 from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.errors import MissingAttributeError
+from jenkins_jobs.modules import hudson_model
 
 
 def build_trends_publisher(plugin_name, xml_element, data):
@@ -687,3 +688,212 @@ def jms_messaging_common(parent, subelement, data):
         ("msg-content", 'messageContent', ''),
     ]
     convert_mapping_to_xml(namespace, data, mapping, fail_required=True)
+
+
+def build_condition(cdata, cond_root_tag, condition_tag):
+    kind = cdata['condition-kind']
+    ctag = XML.SubElement(cond_root_tag, condition_tag)
+    core_prefix = 'org.jenkins_ci.plugins.run_condition.core.'
+    contributed_prefix = \
+        'org.jenkins_ci.plugins.run_condition.contributed.'
+    logic_prefix = 'org.jenkins_ci.plugins.run_condition.logic.'
+
+    if kind == "always":
+        ctag.set('class', core_prefix + 'AlwaysRun')
+    elif kind == "never":
+        ctag.set('class', core_prefix + 'NeverRun')
+    elif kind == "boolean-expression":
+        ctag.set('class', core_prefix + 'BooleanCondition')
+        try:
+            XML.SubElement(ctag, "token").text = (
+                cdata['condition-expression'])
+        except KeyError:
+            raise MissingAttributeError('condition-expression')
+    elif kind == "build-cause":
+        ctag.set('class', core_prefix + 'CauseCondition')
+        cause_list = ('USER_CAUSE', 'SCM_CAUSE', 'TIMER_CAUSE',
+                      'CLI_CAUSE', 'REMOTE_CAUSE', 'UPSTREAM_CAUSE',
+                      'FS_CAUSE', 'URL_CAUSE', 'IVY_CAUSE',
+                      'SCRIPT_CAUSE', 'BUILDRESULT_CAUSE')
+        cause_name = cdata.get('cause', 'USER_CAUSE')
+        if cause_name not in cause_list:
+            raise InvalidAttributeError('cause', cause_name, cause_list)
+        XML.SubElement(ctag, "buildCause").text = cause_name
+        XML.SubElement(ctag, "exclusiveCause").text = str(cdata.get(
+            'exclusive-cause', False)).lower()
+    elif kind == "day-of-week":
+        ctag.set('class', core_prefix + 'DayCondition')
+        day_selector_class_prefix = core_prefix + 'DayCondition$'
+        day_selector_classes = {
+            'weekend': day_selector_class_prefix + 'Weekend',
+            'weekday': day_selector_class_prefix + 'Weekday',
+            'select-days': day_selector_class_prefix + 'SelectDays',
+        }
+        day_selector = cdata.get('day-selector', 'weekend')
+        if day_selector not in day_selector_classes:
+            raise InvalidAttributeError('day-selector', day_selector,
+                                        day_selector_classes)
+        day_selector_tag = XML.SubElement(ctag, "daySelector")
+        day_selector_tag.set('class', day_selector_classes[day_selector])
+        if day_selector == "select-days":
+            days_tag = XML.SubElement(day_selector_tag, "days")
+            day_tag_text = ('org.jenkins__ci.plugins.run__condition.'
+                            'core.DayCondition_-Day')
+            inp_days = cdata.get('days') if cdata.get('days') else {}
+            days = ['SUN', 'MON', 'TUES', 'WED', 'THURS', 'FRI', 'SAT']
+            for day_no, day in enumerate(days, 1):
+                day_tag = XML.SubElement(days_tag, day_tag_text)
+                XML.SubElement(day_tag, "day").text = str(day_no)
+                XML.SubElement(day_tag, "selected").text = str(
+                    inp_days.get(day, False)).lower()
+        XML.SubElement(ctag, "useBuildTime").text = str(cdata.get(
+            'use-build-time', False)).lower()
+    elif kind == "execution-node":
+        ctag.set('class', core_prefix + 'NodeCondition')
+        allowed_nodes_tag = XML.SubElement(ctag, "allowedNodes")
+        try:
+            nodes_list = cdata['nodes']
+        except KeyError:
+            raise MissingAttributeError('nodes')
+        for node in nodes_list:
+            node_tag = XML.SubElement(allowed_nodes_tag, "string")
+            node_tag.text = node
+    elif kind == "strings-match":
+        ctag.set('class', core_prefix + 'StringsMatchCondition')
+        XML.SubElement(ctag, "arg1").text = cdata.get(
+            'condition-string1', '')
+        XML.SubElement(ctag, "arg2").text = cdata.get(
+            'condition-string2', '')
+        XML.SubElement(ctag, "ignoreCase").text = str(cdata.get(
+            'condition-case-insensitive', False)).lower()
+    elif kind == "current-status":
+        ctag.set('class', core_prefix + 'StatusCondition')
+        wr = XML.SubElement(ctag, 'worstResult')
+        wr_name = cdata.get('condition-worst', 'SUCCESS')
+        if wr_name not in hudson_model.THRESHOLDS:
+            raise InvalidAttributeError('condition-worst', wr_name,
+                                        hudson_model.THRESHOLDS.keys())
+        wr_threshold = hudson_model.THRESHOLDS[wr_name]
+        XML.SubElement(wr, "name").text = wr_threshold['name']
+        XML.SubElement(wr, "ordinal").text = wr_threshold['ordinal']
+        XML.SubElement(wr, "color").text = wr_threshold['color']
+        XML.SubElement(wr, "completeBuild").text = str(
+            wr_threshold['complete']).lower()
+
+        br = XML.SubElement(ctag, 'bestResult')
+        br_name = cdata.get('condition-best', 'SUCCESS')
+        if br_name not in hudson_model.THRESHOLDS:
+            raise InvalidAttributeError('condition-best', br_name,
+                                        hudson_model.THRESHOLDS.keys())
+        br_threshold = hudson_model.THRESHOLDS[br_name]
+        XML.SubElement(br, "name").text = br_threshold['name']
+        XML.SubElement(br, "ordinal").text = br_threshold['ordinal']
+        XML.SubElement(br, "color").text = br_threshold['color']
+        XML.SubElement(br, "completeBuild").text = str(
+            wr_threshold['complete']).lower()
+    elif kind == "shell":
+        ctag.set('class', contributed_prefix + 'ShellCondition')
+        XML.SubElement(ctag, "command").text = cdata.get(
+            'condition-command', '')
+    elif kind == "windows-shell":
+        ctag.set('class', contributed_prefix + 'BatchFileCondition')
+        XML.SubElement(ctag, "command").text = cdata.get(
+            'condition-command', '')
+    elif kind == "file-exists" or kind == "files-match":
+        if kind == "file-exists":
+            ctag.set('class', core_prefix + 'FileExistsCondition')
+            try:
+                XML.SubElement(ctag, "file").text = (
+                    cdata['condition-filename'])
+            except KeyError:
+                raise MissingAttributeError('condition-filename')
+        else:
+            ctag.set('class', core_prefix + 'FilesMatchCondition')
+            XML.SubElement(ctag, "includes").text = ",".join(cdata.get(
+                'include-pattern', ''))
+            XML.SubElement(ctag, "excludes").text = ",".join(cdata.get(
+                'exclude-pattern', ''))
+        basedir_class_prefix = ('org.jenkins_ci.plugins.run_condition.'
+                                'common.BaseDirectory$')
+        basedir_classes = {
+            'workspace': basedir_class_prefix + 'Workspace',
+            'artifact-directory': basedir_class_prefix + 'ArtifactsDir',
+            'jenkins-home': basedir_class_prefix + 'JenkinsHome'
+        }
+        basedir = cdata.get('condition-basedir', 'workspace')
+        if basedir not in basedir_classes:
+            raise InvalidAttributeError('condition-basedir', basedir,
+                                        basedir_classes)
+        XML.SubElement(ctag, "baseDir").set('class',
+                                            basedir_classes[basedir])
+    elif kind == "num-comp":
+        ctag.set('class', core_prefix + 'NumericalComparisonCondition')
+        try:
+            XML.SubElement(ctag, "lhs").text = cdata['lhs']
+            XML.SubElement(ctag, "rhs").text = cdata['rhs']
+        except KeyError as e:
+            raise MissingAttributeError(e.args[0])
+        comp_class_prefix = core_prefix + 'NumericalComparisonCondition$'
+        comp_classes = {
+            'less-than': comp_class_prefix + 'LessThan',
+            'greater-than': comp_class_prefix + 'GreaterThan',
+            'equal': comp_class_prefix + 'EqualTo',
+            'not-equal': comp_class_prefix + 'NotEqualTo',
+            'less-than-equal': comp_class_prefix + 'LessThanOrEqualTo',
+            'greater-than-equal': comp_class_prefix +
+            'GreaterThanOrEqualTo'
+        }
+        comp = cdata.get('comparator', 'less-than')
+        if comp not in comp_classes:
+            raise InvalidAttributeError('comparator', comp, comp_classes)
+        XML.SubElement(ctag, "comparator").set('class',
+                                               comp_classes[comp])
+    # Conditional BuildStep plugin
+    elif kind == "regex-match":
+        ctag.set('class', core_prefix + 'ExpressionCondition')
+        XML.SubElement(ctag, "expression").text = cdata.get('regex', '')
+        XML.SubElement(ctag, "label").text = cdata.get('label', '')
+    # Flexible Publishing plugin
+    elif kind == 'regexp':
+        ctag.set('class', core_prefix + 'ExpressionCondition')
+        XML.SubElement(ctag, "expression").text = cdata.get(
+            'condition-expression', '')
+        XML.SubElement(ctag, "label").text = cdata.get(
+            'condition-searchtext', '')
+
+    elif kind == "time":
+        ctag.set('class', core_prefix + 'TimeCondition')
+        XML.SubElement(ctag, "earliestHours").text = cdata.get(
+            'earliest-hour', '09')
+        XML.SubElement(ctag, "earliestMinutes").text = cdata.get(
+            'earliest-min', '00')
+        XML.SubElement(ctag, "latestHours").text = cdata.get(
+            'latest-hour', '17')
+        XML.SubElement(ctag, "latestMinutes").text = cdata.get(
+            'latest-min', '30')
+        XML.SubElement(ctag, "useBuildTime").text = str(cdata.get(
+            'use-build-time', False)).lower()
+    elif kind == "not":
+        ctag.set('class', logic_prefix + 'Not')
+        try:
+            notcondition = cdata['condition-operand']
+        except KeyError:
+            raise MissingAttributeError('condition-operand')
+        build_condition(notcondition, ctag, "condition")
+    elif kind == "and" or "or":
+        if kind == "and":
+            ctag.set('class', logic_prefix + 'And')
+        else:
+            ctag.set('class', logic_prefix + 'Or')
+        conditions_tag = XML.SubElement(ctag, "conditions")
+        container_tag_text = ('org.jenkins__ci.plugins.run__condition.'
+                              'logic.ConditionContainer')
+        try:
+            conditions_list = cdata['condition-operands']
+        except KeyError:
+            raise MissingAttributeError('condition-operands')
+        for condition in conditions_list:
+            conditions_container_tag = XML.SubElement(conditions_tag,
+                                                      container_tag_text)
+            build_condition(condition, conditions_container_tag,
+                            "condition")
