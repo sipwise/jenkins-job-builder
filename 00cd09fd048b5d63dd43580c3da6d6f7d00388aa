@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_cad1b0fd",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5552,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2017-07-03T15:11:00Z",
+      "side": 1,
+      "message": "sys.maxsize has to be cast to a string else:\n\n \u003e\u003e\u003e pkg_resources.parse_version(sys.maxsize)\n  File \"pkg_resources/__init__.py\", line 202, in parse_version\n    return SetuptoolsVersion(v)\n  File \"pkg_resources/_vendor/packaging/version.py\", line 200, in __init__\n    match \u003d self._regex.search(version)\n  TypeError: expected string or buffer\n \u003e\u003e\u003e\n\nIt seems str(sys.maxsize) does the work.",
+      "revId": "00cd09fd048b5d63dd43580c3da6d6f7d00388aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
