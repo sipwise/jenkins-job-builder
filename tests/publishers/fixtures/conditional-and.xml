@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <publishers>
+    <org.jenkins__ci.plugins.flexible__publish.FlexiblePublisher>
+      <publishers>
+        <org.jenkins__ci.plugins.flexible__publish.ConditionalPublisher>
+          <condition class="org.jenkins_ci.plugins.run_condition.logic.And">
+            <conditions>
+              <org.jenkins__ci.plugins.run__condition.logic.ConditionContainer>
+                <condition class="org.jenkins_ci.plugins.run_condition.core.ExpressionCondition">
+                  <expression>*yes*</expression>
+                  <label>do_archive</label>
+                </condition>
+              </org.jenkins__ci.plugins.run__condition.logic.ConditionContainer>
+              <org.jenkins__ci.plugins.run__condition.logic.ConditionContainer>
+                <condition class="org.jenkins_ci.plugins.run_condition.core.TimeCondition">
+                  <earliestHours>2</earliestHours>
+                  <earliestMinutes>0</earliestMinutes>
+                  <latestHours>23</latestHours>
+                  <latestMinutes>40</latestMinutes>
+                  <useBuildTime>true</useBuildTime>
+                </condition>
+              </org.jenkins__ci.plugins.run__condition.logic.ConditionContainer>
+            </conditions>
+          </condition>
+          <runner class="org.jenkins_ci.plugins.run_condition.BuildStepRunner$Fail"/>
+          <publisher class="hudson.tasks.ArtifactArchiver">
+            <artifacts>**/**</artifacts>
+            <latestOnly>false</latestOnly>
+            <defaultExcludes>true</defaultExcludes>
+          </publisher>
+        </org.jenkins__ci.plugins.flexible__publish.ConditionalPublisher>
+      </publishers>
+    </org.jenkins__ci.plugins.flexible__publish.FlexiblePublisher>
+  </publishers>
+</project>

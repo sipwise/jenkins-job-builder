@@ -1,0 +1,16 @@
+publishers:
+    - conditional-publisher:
+        - condition-kind: and
+          action:
+              - archive:
+                  artifacts: '**/**'
+          condition-operands:
+              - condition-kind: regex-match
+                regex: "*yes*"
+                label: "do_archive"
+              - condition-kind: time
+                earliest-hour: "2"
+                earliest-min: "0"
+                latest-hour: "23"
+                latest-min: "40"
+                use-build-time: true

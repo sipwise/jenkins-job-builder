@@ -38,6 +38,7 @@ from jenkins_jobs.errors import MissingAttributeError
 import jenkins_jobs.modules.base
 from jenkins_jobs.modules import hudson_model
 import jenkins_jobs.modules.helpers as helpers
+from jenkins_jobs.modules.helpers import build_condition
 
 
 def archive(registry, xml_parent, data):
@@ -5369,48 +5370,12 @@ def conditional_publisher(registry, xml_parent, data):
       `mark-unstable`, `run-and-mark-unstable`, `run` and `dont-run`.
       Default is `fail`.
     :arg list action: Action to run if the condition is verified. Item
-      can be any publisher known by Jenkins Job Builder and supported
+      can be any **publisher** known by Jenkins Job Builder and supported
       by the Flexible Publish Plugin.
 
     .. _conditions:
 
-    ================== ====================================================
-    Condition kind     Description
-    ================== ====================================================
-    always             Condition is always verified
-    never              Condition is never verified
-    boolean-expression Run the action if the expression expands to a
-                       representation of true
-
-                         :condition-expression: Expression to expand
-    current-status     Run the action if the current build status is
-                       within the configured range
-
-                         :condition-worst: Accepted values are SUCCESS,
-                           UNSTABLE, FAILURE, NOT_BUILD, ABORTED
-                         :condition-best: Accepted values are SUCCESS,
-                           UNSTABLE, FAILURE, NOT_BUILD, ABORTED
-
-    shell              Run the action if the shell command succeeds
-
-                         :condition-command: Shell command to execute
-    windows-shell      Similar to shell, except that commands will be
-                       executed by cmd, under Windows
-
-                         :condition-command: Command to execute
-    regexp             Run the action if a regular expression matches
-
-                         :condition-expression: Regular Expression
-                         :condition-searchtext: Text to match against
-                           the regular expression
-    file-exists        Run the action if a file exists
-
-                         :condition-filename: Check existence of this file
-                         :condition-basedir: If condition-filename is
-                           relative, it will be considered relative to
-                           either `workspace`, `artifact-directory`,
-                           or `jenkins-home`. Default is `workspace`.
-    ================== ====================================================
+    .. include:: helpers/build_condition.rst
 
     Single Conditional Action Example:
 
@@ -5426,87 +5391,16 @@ def conditional_publisher(registry, xml_parent, data):
     /../../tests/publishers/fixtures/conditional-publisher003.yaml
        :language: yaml
 
+    .. literalinclude:: \
+    /../../tests/publishers/fixtures/conditional-and.yaml
+       :language: yaml
+
     :download:`Multiple Conditional Actions Example for pre-v0.13 versions
     <../../tests/publishers/fixtures/conditional-publisher002.yaml>`
 
     """
     def publish_condition(cdata):
-        kind = cdata['condition-kind']
-        ctag = XML.SubElement(cond_publisher, condition_tag)
-        class_pkg = 'org.jenkins_ci.plugins.run_condition'
-
-        if kind == "always":
-            ctag.set('class',
-                     class_pkg + '.core.AlwaysRun')
-        elif kind == "never":
-            ctag.set('class',
-                     class_pkg + '.core.NeverRun')
-        elif kind == "boolean-expression":
-            ctag.set('class',
-                     class_pkg + '.core.BooleanCondition')
-            XML.SubElement(ctag, "token").text = cdata['condition-expression']
-        elif kind == "current-status":
-            ctag.set('class',
-                     class_pkg + '.core.StatusCondition')
-            wr = XML.SubElement(ctag, 'worstResult')
-            wr_name = cdata['condition-worst']
-            if wr_name not in hudson_model.THRESHOLDS:
-                raise JenkinsJobsException(
-                    "threshold must be one of %s" %
-                    ", ".join(hudson_model.THRESHOLDS.keys()))
-            wr_threshold = hudson_model.THRESHOLDS[wr_name]
-            XML.SubElement(wr, "name").text = wr_threshold['name']
-            XML.SubElement(wr, "ordinal").text = wr_threshold['ordinal']
-            XML.SubElement(wr, "color").text = wr_threshold['color']
-            XML.SubElement(wr, "completeBuild").text = \
-                str(wr_threshold['complete']).lower()
-
-            br = XML.SubElement(ctag, 'bestResult')
-            br_name = cdata['condition-best']
-            if br_name not in hudson_model.THRESHOLDS:
-                raise JenkinsJobsException(
-                    "threshold must be one of %s" %
-                    ", ".join(hudson_model.THRESHOLDS.keys()))
-            br_threshold = hudson_model.THRESHOLDS[br_name]
-            XML.SubElement(br, "name").text = br_threshold['name']
-            XML.SubElement(br, "ordinal").text = br_threshold['ordinal']
-            XML.SubElement(br, "color").text = br_threshold['color']
-            XML.SubElement(br, "completeBuild").text = \
-                str(wr_threshold['complete']).lower()
-        elif kind == "shell":
-            ctag.set('class',
-                     class_pkg + '.contributed.ShellCondition')
-            XML.SubElement(ctag, "command").text = cdata['condition-command']
-        elif kind == "windows-shell":
-            ctag.set('class',
-                     class_pkg + '.contributed.BatchFileCondition')
-            XML.SubElement(ctag, "command").text = cdata['condition-command']
-        elif kind == "regexp":
-            ctag.set('class',
-                     class_pkg + '.core.ExpressionCondition')
-            XML.SubElement(ctag,
-                           "expression").text = cdata['condition-expression']
-            XML.SubElement(ctag, "label").text = cdata['condition-searchtext']
-        elif kind == "file-exists":
-            ctag.set('class',
-                     class_pkg + '.core.FileExistsCondition')
-            XML.SubElement(ctag, "file").text = cdata['condition-filename']
-            basedir = cdata.get('condition-basedir', 'workspace')
-            basedir_tag = XML.SubElement(ctag, "baseDir")
-            if "workspace" == basedir:
-                basedir_tag.set('class',
-                                class_pkg + '.common.BaseDirectory$Workspace')
-            elif "artifact-directory" == basedir:
-                basedir_tag.set('class',
-                                class_pkg + '.common.'
-                                'BaseDirectory$ArtifactsDir')
-            elif "jenkins-home" == basedir:
-                basedir_tag.set('class',
-                                class_pkg + '.common.'
-                                'BaseDirectory$JenkinsHome')
-        else:
-            raise JenkinsJobsException('%s is not a valid condition-kind '
-                                       'value.' % kind)
+        pass
 
     def publish_action(parent, action):
         for edited_node in create_publishers(registry, action):
@@ -5522,7 +5416,6 @@ def conditional_publisher(registry, xml_parent, data):
 
     root_tag = XML.SubElement(xml_parent, flex_publisher_tag)
     publishers_tag = XML.SubElement(root_tag, "publishers")
-    condition_tag = "condition"
 
     evaluation_classes_pkg = 'org.jenkins_ci.plugins.run_condition'
     evaluation_classes = {
@@ -5537,7 +5430,7 @@ def conditional_publisher(registry, xml_parent, data):
 
     for cond_action in data:
         cond_publisher = XML.SubElement(publishers_tag, cond_publisher_tag)
-        publish_condition(cond_action)
+        build_condition(cond_action, cond_publisher, 'condition')
         evaluation_flag = cond_action.get('on-evaluation-failure', 'fail')
         if evaluation_flag not in evaluation_classes.keys():
             raise JenkinsJobsException('on-evaluation-failure value '
