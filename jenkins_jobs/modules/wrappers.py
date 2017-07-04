@@ -661,7 +661,8 @@ def m2_repository_cleanup(registry, xml_parent, data):
     XML.SubElement(m2repo, 'artifactPatterns').text = ",".join(patterns)
     p = XML.SubElement(m2repo, 'patterns')
     for pattern in patterns:
-        XML.SubElement(p, 'string').text = pattern
+        mapping = [('', 'string', pattern)]
+        convert_mapping_to_xml(p, data, mapping, fail_required=True)
 
 
 def rvm_env(registry, xml_parent, data):
