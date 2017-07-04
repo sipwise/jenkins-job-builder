@@ -839,7 +839,8 @@ def port_allocator(registry, xml_parent, data):
         dpt = XML.SubElement(ports,
                              'org.jvnet.hudson.plugins.port__allocator.'
                              'DefaultPortType')
-        XML.SubElement(dpt, 'name').text = name
+        mapping = [('', 'name', name)]
+        convert_mapping_to_xml(dpt, data, mapping, fail_required=True)
 
 
 def locks(registry, xml_parent, data):
