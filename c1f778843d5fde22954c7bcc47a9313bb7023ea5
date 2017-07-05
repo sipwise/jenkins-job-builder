@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_0802d06f",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 975,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T14:19:25Z",
+      "side": 1,
+      "message": "This looks like it can be added to the mapping too.",
+      "revId": "c1f778843d5fde22954c7bcc47a9313bb7023ea5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
