@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_e3afb527",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T14:46:00Z",
+      "side": 1,
+      "message": "Can we give this a more specific name? what is val?\n\nbased on below it should be something like exclusive_node_access \u003d True|False",
+      "range": {
+        "startLine": 647,
+        "startChar": 4,
+        "endLine": 647,
+        "endChar": 7
+      },
+      "revId": "340ec5cf5ec8e73872e32b7a6d79fb6f7ca305fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
