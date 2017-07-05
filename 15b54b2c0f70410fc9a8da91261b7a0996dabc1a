@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_63cde52f",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1000,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T14:42:49Z",
+      "side": 1,
+      "message": "I see a pattern of you calling everything \"mapping\" it\u0027s good practice to make your variable names specific when it\u0027s for specific things. In this case it looks like this is related to passwords, so I would recommend a name like \"password_mapping\" so that it\u0027s not overriding the above mapping variable.",
+      "range": {
+        "startLine": 1000,
+        "startChar": 12,
+        "endLine": 1000,
+        "endChar": 19
+      },
+      "revId": "15b54b2c0f70410fc9a8da91261b7a0996dabc1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
