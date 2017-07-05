@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_39e4bcdf",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1311,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T15:19:54Z",
+      "side": 1,
+      "message": "True",
+      "range": {
+        "startLine": 1311,
+        "startChar": 66,
+        "endLine": 1311,
+        "endChar": 71
+      },
+      "revId": "4675d0f2c032d531ae7b0cbe1965537bfa7234ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_79bd94d6",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1316,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T15:19:54Z",
+      "side": 1,
+      "message": "selenium_mapping",
+      "range": {
+        "startLine": 1316,
+        "startChar": 8,
+        "endLine": 1316,
+        "endChar": 15
+      },
+      "revId": "4675d0f2c032d531ae7b0cbe1965537bfa7234ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_39da7c4a",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1323,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T15:19:54Z",
+      "side": 1,
+      "message": "This can be moved into the selenium mapping.",
+      "range": {
+        "startLine": 1323,
+        "startChar": 8,
+        "endLine": 1323,
+        "endChar": 46
+      },
+      "revId": "4675d0f2c032d531ae7b0cbe1965537bfa7234ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_d9e4a80f",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1333,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T15:19:54Z",
+      "side": 1,
+      "message": "webdriver_mapping",
+      "range": {
+        "startLine": 1333,
+        "startChar": 8,
+        "endLine": 1333,
+        "endChar": 15
+      },
+      "revId": "4675d0f2c032d531ae7b0cbe1965537bfa7234ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_192a202b",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1341,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T15:19:54Z",
+      "side": 1,
+      "message": "These 3 can be moved into the mapping file at the top.",
+      "range": {
+        "startLine": 1339,
+        "startChar": 0,
+        "endLine": 1341,
+        "endChar": 49
+      },
+      "revId": "4675d0f2c032d531ae7b0cbe1965537bfa7234ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
