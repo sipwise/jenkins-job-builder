@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_482e8892",
+        "filename": "jenkins_jobs/modules/view_pipeline.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T14:04:25Z",
+      "side": 1,
+      "message": "Rather than having 3 mapping declarations we can probably get away with just 2.\n\n1) mapping, contains all of the mappings except optional ones\n2) mapping_optional, contains all of the optional mappings",
+      "range": {
+        "startLine": 78,
+        "startChar": 8,
+        "endLine": 78,
+        "endChar": 15
+      },
+      "revId": "da3cb35618625f6f9b6e68d69f0372d655840353",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_c83978d7",
+        "filename": "jenkins_jobs/modules/view_pipeline.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T14:04:25Z",
+      "side": 1,
+      "message": "Dong\u0027s comment here was not addressed.",
+      "range": {
+        "startLine": 99,
+        "startChar": 40,
+        "endLine": 99,
+        "endChar": 42
+      },
+      "revId": "da3cb35618625f6f9b6e68d69f0372d655840353",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_e83c34c9",
+        "filename": "jenkins_jobs/modules/view_pipeline.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T14:04:25Z",
+      "side": 1,
+      "message": "Dong\u0027s comment here was not addressed.",
+      "range": {
+        "startLine": 101,
+        "startChar": 34,
+        "endLine": 101,
+        "endChar": 36
+      },
+      "revId": "da3cb35618625f6f9b6e68d69f0372d655840353",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
