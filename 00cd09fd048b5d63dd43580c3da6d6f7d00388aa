@@ -16,6 +16,24 @@
       "revId": "00cd09fd048b5d63dd43580c3da6d6f7d00388aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_fe898ac9",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5552,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T15:05:12Z",
+      "side": 1,
+      "message": "Good catch. I\u0027ll look into updating all the related patches.",
+      "parentUuid": "3f1d235d_cad1b0fd",
+      "revId": "00cd09fd048b5d63dd43580c3da6d6f7d00388aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
