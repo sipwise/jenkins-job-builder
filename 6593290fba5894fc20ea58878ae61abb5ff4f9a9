@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f1d235d_bdc2f557",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2429,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T16:23:56Z",
+      "side": 1,
+      "message": "Actually python_mapping would make more sense here.",
+      "parentUuid": "3f1d235d_5d752163",
+      "range": {
+        "startLine": 2429,
+        "startChar": 8,
+        "endLine": 2429,
+        "endChar": 15
+      },
+      "revId": "6593290fba5894fc20ea58878ae61abb5ff4f9a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f1d235d_3d72657c",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 1
@@ -40,6 +64,29 @@
         "startLine": 2433,
         "startChar": 8,
         "endLine": 2433,
+        "endChar": 15
+      },
+      "revId": "6593290fba5894fc20ea58878ae61abb5ff4f9a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_7db8dde3",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2436,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T16:23:56Z",
+      "side": 1,
+      "message": "virtualenv_mapping",
+      "range": {
+        "startLine": 2436,
+        "startChar": 8,
+        "endLine": 2436,
         "endChar": 15
       },
       "revId": "6593290fba5894fc20ea58878ae61abb5ff4f9a9",
