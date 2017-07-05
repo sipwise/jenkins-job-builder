@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_39439c6e",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1819,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T15:25:58Z",
+      "side": 1,
+      "message": "skip-master-install and then remove the line above.\nDefault is False",
+      "range": {
+        "startLine": 1819,
+        "startChar": 16,
+        "endLine": 1819,
+        "endChar": 18
+      },
+      "revId": "9f9a71f1b6cf92655910b767067fb9db724dbb64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_997ab0b7",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1823,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T15:25:58Z",
+      "side": 1,
+      "message": "convert-homes-to-upper. and then remove the line above.\n\nDefault is False",
+      "range": {
+        "startLine": 1823,
+        "startChar": 16,
+        "endLine": 1823,
+        "endChar": 18
+      },
+      "revId": "9f9a71f1b6cf92655910b767067fb9db724dbb64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
