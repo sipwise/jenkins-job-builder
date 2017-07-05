@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_14ad459a",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T15:38:24Z",
+      "side": 1,
+      "message": "policy_by_day_mapping",
+      "range": {
+        "startLine": 508,
+        "startChar": 8,
+        "endLine": 508,
+        "endChar": 15
+      },
+      "revId": "ee047c58e2af10457a674b45438178ffcc97f12c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_748b591e",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T15:38:24Z",
+      "side": 1,
+      "message": "policy_keep_since_mapping",
+      "range": {
+        "startLine": 518,
+        "startChar": 8,
+        "endLine": 518,
+        "endChar": 15
+      },
+      "revId": "ee047c58e2af10457a674b45438178ffcc97f12c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_348161fc",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 528,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T15:38:24Z",
+      "side": 1,
+      "message": "policy_build_number_mapping",
+      "range": {
+        "startLine": 528,
+        "startChar": 8,
+        "endLine": 528,
+        "endChar": 15
+      },
+      "revId": "ee047c58e2af10457a674b45438178ffcc97f12c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_b4745137",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 538,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T15:38:24Z",
+      "side": 1,
+      "message": "policy_keep_first_failed_mapping",
+      "range": {
+        "startLine": 538,
+        "startChar": 8,
+        "endLine": 538,
+        "endChar": 15
+      },
+      "revId": "ee047c58e2af10457a674b45438178ffcc97f12c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
