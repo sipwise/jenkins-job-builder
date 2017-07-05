@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_3454c1fd",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1211,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T15:30:31Z",
+      "side": 1,
+      "message": "I think we can simplify this even more by doing:\n\n # Flip the logic to lineup YAML and XML definitions\n (\u0027keep-forever\u0027, \u0027doNotKeepLog\u0027, not True),\n\nThen the above no_keep_forever lines can be removed.",
+      "range": {
+        "startLine": 1211,
+        "startChar": 8,
+        "endLine": 1211,
+        "endChar": 46
+      },
+      "revId": "d60bce5eafbf50d671d66b5447cff5c3e6e53258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
