@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_bd8af566",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1147,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T16:19:09Z",
+      "side": 1,
+      "message": "instance_mapping",
+      "range": {
+        "startLine": 1147,
+        "startChar": 12,
+        "endLine": 1147,
+        "endChar": 19
+      },
+      "revId": "01c7a186f2693e182e1f68dd9c2f43544b8e50e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_fde06d28",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1151,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T16:19:09Z",
+      "side": 1,
+      "message": "I think this is a case where instance_mapping.append makes sense. So that we only need to call convert_mapping_to_xml once in this plugin.",
+      "range": {
+        "startLine": 1151,
+        "startChar": 16,
+        "endLine": 1151,
+        "endChar": 23
+      },
+      "revId": "01c7a186f2693e182e1f68dd9c2f43544b8e50e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_7da7bd0c",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1158,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T16:19:09Z",
+      "side": 1,
+      "message": "Move this into the instance_mapping",
+      "revId": "01c7a186f2693e182e1f68dd9c2f43544b8e50e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
