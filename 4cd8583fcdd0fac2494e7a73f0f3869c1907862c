@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_742fd93e",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T15:36:49Z",
+      "side": 1,
+      "message": "dockerfile_mapping",
+      "range": {
+        "startLine": 113,
+        "startChar": 8,
+        "endLine": 113,
+        "endChar": 15
+      },
+      "revId": "4cd8583fcdd0fac2494e7a73f0f3869c1907862c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_94ea75d5",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T15:36:49Z",
+      "side": 1,
+      "message": "No need for this docstring. If the code is not needed delete it.",
+      "range": {
+        "startLine": 120,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 27
+      },
+      "revId": "4cd8583fcdd0fac2494e7a73f0f3869c1907862c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_d41fcd05",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T15:36:49Z",
+      "side": 1,
+      "message": "pull_mapping",
+      "range": {
+        "startLine": 122,
+        "startChar": 8,
+        "endLine": 122,
+        "endChar": 15
+      },
+      "revId": "4cd8583fcdd0fac2494e7a73f0f3869c1907862c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_340cc1ea",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T15:36:49Z",
+      "side": 1,
+      "message": "mapping_optional",
+      "range": {
+        "startLine": 130,
+        "startChar": 4,
+        "endLine": 130,
+        "endChar": 11
+      },
+      "revId": "4cd8583fcdd0fac2494e7a73f0f3869c1907862c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
