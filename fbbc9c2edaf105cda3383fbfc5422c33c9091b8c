@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_2896ac3f",
+        "filename": "jenkins_jobs/modules/view_list.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T14:15:29Z",
+      "side": 1,
+      "message": "To make this simple I think we could change description to default to \u0027\u0027 (blank, need to update the docs too) and move this whole mapping into the above mapping. Because not setting a description is equivalent to setting the description to blank anyways as far as I can tell.\n\nThis allows us to only configure 1 mapping which makes things simple.",
+      "range": {
+        "startLine": 65,
+        "startChar": 43,
+        "endLine": 65,
+        "endChar": 47
+      },
+      "revId": "fbbc9c2edaf105cda3383fbfc5422c33c9091b8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
