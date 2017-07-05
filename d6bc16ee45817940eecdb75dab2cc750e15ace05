@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_4325495b",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 751,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T14:34:44Z",
+      "side": 1,
+      "message": "Can we give this a more specific name? val is generic so it\u0027s not clear what it is storing.\n\nIt\u0027s used by generateParcelBuilderInputFile so maybe something like generate_parcel \u003d True/False",
+      "range": {
+        "startLine": 751,
+        "startChar": 4,
+        "endLine": 751,
+        "endChar": 7
+      },
+      "revId": "d6bc16ee45817940eecdb75dab2cc750e15ace05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_43dae94a",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 752,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-05T14:34:44Z",
+      "side": 1,
+      "message": "Call this mapping_optional so it\u0027s clear that it\u0027s for configuring optional parameters.",
+      "range": {
+        "startLine": 752,
+        "startChar": 4,
+        "endLine": 752,
+        "endChar": 11
+      },
+      "revId": "d6bc16ee45817940eecdb75dab2cc750e15ace05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
