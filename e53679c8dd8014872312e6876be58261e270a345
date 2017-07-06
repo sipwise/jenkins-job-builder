@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_5b53c2e2",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2017-07-06T14:15:34Z",
+      "side": 1,
+      "message": "These three mapping all same, we can just define one mapping in the beginning and use it, what do you think?",
+      "range": {
+        "startLine": 508,
+        "startChar": 8,
+        "endLine": 510,
+        "endChar": 58
+      },
+      "revId": "e53679c8dd8014872312e6876be58261e270a345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
