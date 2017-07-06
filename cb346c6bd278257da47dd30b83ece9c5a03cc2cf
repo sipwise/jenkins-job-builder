@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_7ea0ac90",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 843,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2017-07-06T14:48:45Z",
+      "side": 1,
+      "message": "This line can be replaced by this:\n(\u0027repo-depth\u0027, \u0027depthOption\u0027, \u0027infinity\u0027, repo_depths),",
+      "range": {
+        "startLine": 843,
+        "startChar": 12,
+        "endLine": 843,
+        "endChar": 57
+      },
+      "revId": "cb346c6bd278257da47dd30b83ece9c5a03cc2cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
