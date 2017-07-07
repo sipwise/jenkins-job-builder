@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_0fef0fea",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 613,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2017-07-07T23:25:46Z",
+      "side": 1,
+      "message": "currently the minimal example named with \u0027-minimal.yaml\u0027",
+      "range": {
+        "startLine": 613,
+        "startChar": 57,
+        "endLine": 613,
+        "endChar": 60
+      },
+      "revId": "3e3002f351d5fe0ad7443f256ae89f3d0c8c1a6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
