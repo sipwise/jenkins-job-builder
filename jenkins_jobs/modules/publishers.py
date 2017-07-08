@@ -3688,14 +3688,9 @@ def postbuildscript(registry, xml_parent, data):
     # currently no easy ways to check for this though.
     if 'execute-on' in data:
         valid_values = ('matrix', 'axes', 'both')
-        execute_on = data['execute-on'].lower()
-        if execute_on not in valid_values:
-            raise JenkinsJobsException(
-                'execute-on must be one of %s, got %s' %
-                valid_values, execute_on
-            )
-        execute_on_xml = XML.SubElement(pbs_xml, 'executeOn')
-        execute_on_xml.text = execute_on.upper()
+        mapping = [('execute-on', 'executeOn', None, valid_values)]
+        helpers.convert_mapping_to_xml(pbs_xml,
+            data, mapping, fail_required=True)
 
 
 def xml_summary(registry, xml_parent, data):
