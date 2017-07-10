@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_1cf39de9",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3692,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-10T20:08:56Z",
+      "side": 1,
+      "message": "I think we can just set \u0027execute-on\u0027 here and remove the above line?",
+      "range": {
+        "startLine": 3692,
+        "startChar": 20,
+        "endLine": 3692,
+        "endChar": 22
+      },
+      "revId": "5dff0db59f5572009a6633e5e1a6ffc212b51ee7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
