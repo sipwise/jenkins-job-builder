@@ -1003,6 +1003,38 @@ def lockable_resources(registry, xml_parent, data):
         lockable_resources, data, mapping, fail_required=True)
 
 
+def docker_container(registry, xml_parent, data):
+    """yaml: docker-container
+    Requires the Jenkins: :jenkins-wiki:`Docker Plugin<Docker+Plugin>`.
+
+    :arg bool commit-on-success: When a job completes, the docker slave
+        instance is committed with repository based on the job name and build
+        number as tag. (default false)
+    :arg str additional-tag: Additional tag to apply to the docker slave
+        instance when committing it. (default '')
+    :arg bool push-on-success: Also push the resulting image when commiting the
+        docker slave instance. (default false)
+    :arg bool clean-local-images: Clean images from the local daemon after
+        building. (default 'true)
+
+    Example:
+
+    .. literalinclude::
+        /../../tests/properties/fixtures/docker-container002.yaml
+        :language: yaml
+    """
+    docker_container = XML.SubElement(
+        xml_parent, 'com.nirima.jenkins.plugins.docker.DockerJobProperty')
+    XML.SubElement(docker_container, 'tagOnCompletion').text = \
+        str(data.get('commit-on-success', False)).lower()
+    XML.SubElement(docker_container, 'additionalTag').text = \
+        data.get('additional-tag', '')
+    XML.SubElement(docker_container, 'pushOnSuccess').text = \
+        str(data.get('push-on-success', False)).lower()
+    XML.SubElement(docker_container, 'cleanImages').text = \
+        str(data.get('clean-local-images', True)).lower()
+
+
 class Properties(jenkins_jobs.modules.base.Base):
     sequence = 20
 

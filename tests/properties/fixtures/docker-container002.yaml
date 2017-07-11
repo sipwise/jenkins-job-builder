@@ -1,0 +1,4 @@
+properties:
+  - docker-container:
+      commit-on-success: true
+      additional-tag: latest
