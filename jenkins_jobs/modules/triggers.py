@@ -1549,19 +1549,13 @@ def monitor_files(registry, xml_parent, data):
     files_tag = XML.SubElement(ft, 'fileInfo')
     for file_info in files:
         file_tag = XML.SubElement(files_tag, ft_prefix + 'FileNameTriggerInfo')
-        try:
-            XML.SubElement(file_tag,
-                           'filePathPattern').text = file_info['path']
-        except KeyError:
-            raise MissingAttributeError('path')
-
-        strategy = file_info.get('strategy', 'LATEST')
-        if strategy not in valid_strategies:
-            raise InvalidAttributeError('strategy', strategy, valid_strategies)
-        XML.SubElement(file_tag, 'strategy').text = strategy
         check_content = file_info.get('check-content', [])
-        XML.SubElement(file_tag, 'inspectingContentFile').text = str(
-            bool(check_content)).lower()
+        mapping = [
+            ('path', 'filePathPattern', None),
+            ('strategy', 'strategy', 'LATEST', valid_strategies),
+            ('', 'inspectingContentFile', bool(check_content))]
+        convert_mapping_to_xml(file_tag,
+            file_info, mapping, fail_required=True)
 
         base_content_tag = XML.SubElement(file_tag, 'contentFileTypes')
         for content in check_content:
