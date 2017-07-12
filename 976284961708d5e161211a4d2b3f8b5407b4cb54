@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_8151b911",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1051,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2017-07-12T14:37:29Z",
+      "side": 1,
+      "message": "should be removed",
+      "range": {
+        "startLine": 1044,
+        "startChar": 0,
+        "endLine": 1051,
+        "endChar": 59
+      },
+      "revId": "976284961708d5e161211a4d2b3f8b5407b4cb54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
