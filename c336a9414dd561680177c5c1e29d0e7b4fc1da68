@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f1d235d_ac97a590",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1024,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2017-07-12T06:30:37Z",
+      "side": 1,
+      "message": "I would prefer the minimal and full examples be named \"*-minimal.yaml\" and \"*-full.yaml\" so that it\u0027s clear which example is the minimal and which one is the full from the filename.\n\n Minimal Example:\n .. literalinclude:: ...\n Full Example:\n .. literalinclude:: ...",
+      "range": {
+        "startLine": 1020,
+        "startChar": 0,
+        "endLine": 1024,
+        "endChar": 23
+      },
+      "revId": "c336a9414dd561680177c5c1e29d0e7b4fc1da68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f1d235d_4c5ed112",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1035,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2017-07-12T06:30:37Z",
+      "side": 1,
+      "message": "You added new plugin in, I suggest to use the convert_mapping_to_xml helper function instead of multiple XML.SubElement calls.",
+      "range": {
+        "startLine": 1028,
+        "startChar": 0,
+        "endLine": 1035,
+        "endChar": 57
+      },
+      "revId": "c336a9414dd561680177c5c1e29d0e7b4fc1da68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
