@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_e1127fb1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19921
+      },
+      "writtenOn": "2017-07-13T15:42:56Z",
+      "side": 1,
+      "message": "I\u0027d suggest to rewrite this message according to openstack contrib. guide and extend it with some additional info like this:\n\n```\nExtend multijob build step with \"execution-type\" option\n\nCurrently multijob build step has no support for executionType \nparameter added in X.Y.Z version of Multijob plugin. \nThis parameter allow to specify strategy for triggering build steps \ninside multijob stage and this strategy could be parallel (which \nis default and only supported version) or aequental.\n\nThis patch fixes this problem and adds corresponding parameter \n\"execution-type\" for such build step.\n```",
+      "revId": "944914b03b4696a0d15d5b228fd438cd99c42f4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
