@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_5ef6a9fb",
+        "filename": "doc/source/helpers/build_condition.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2017-07-13T17:18:51Z",
+      "side": 1,
+      "message": "Would it make sense to mark one of \"regex\" or \"regex-match\" as deprecated?",
+      "revId": "b7d77910cefeba7c51b96a1efbffe0d52e1e28c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
