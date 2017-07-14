@@ -22,6 +22,30 @@
       "revId": "976284961708d5e161211a4d2b3f8b5407b4cb54",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_0cc11481",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1051,
+      "author": {
+        "id": 26390
+      },
+      "writtenOn": "2017-07-14T08:46:01Z",
+      "side": 1,
+      "message": "How embarrassing, fixed in patchset 3.",
+      "parentUuid": "1f1a1f67_8151b911",
+      "range": {
+        "startLine": 1044,
+        "startChar": 0,
+        "endLine": 1051,
+        "endChar": 59
+      },
+      "revId": "976284961708d5e161211a4d2b3f8b5407b4cb54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
