@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_e82440b1",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1015,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2017-07-17T17:51:15Z",
+      "side": 1,
+      "message": "Typo: committing",
+      "revId": "ad6e5adfd5ec9c0b9a24501ce40b51c7db03eb6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
