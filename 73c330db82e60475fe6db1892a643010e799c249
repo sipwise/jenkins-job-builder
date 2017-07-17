@@ -68,6 +68,30 @@
       "revId": "73c330db82e60475fe6db1892a643010e799c249",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_404f9f33",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1042,
+      "author": {
+        "id": 26390
+      },
+      "writtenOn": "2017-07-17T08:48:32Z",
+      "side": 1,
+      "message": "It makes no difference to this mapping as everything has a non-None default value. I\u0027ll add it anyway as per the function documentation\u0027s advice. I appreciate that there\u0027s work ongoing around the function.",
+      "parentUuid": "1f1a1f67_2444c5b6",
+      "range": {
+        "startLine": 1041,
+        "startChar": 4,
+        "endLine": 1042,
+        "endChar": 40
+      },
+      "revId": "73c330db82e60475fe6db1892a643010e799c249",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
