@@ -16,6 +16,24 @@
       "revId": "77a20e8829c84dec0fe28d8b4e1b69cbb50033aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f1a1f67_3420dc49",
+        "filename": "test-requirements.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2017-07-20T14:59:20Z",
+      "side": 1,
+      "message": "$ pip install -r test-requirements.txt\n\n^^ this is how I install the test requirements into my local jjb test environment before running `tox -e somethingsomething`. I don\u0027t just have tox installed on my system because I don\u0027t assume that every project I interact with will want the same version of tox.",
+      "parentUuid": "1f1a1f67_28864fdd",
+      "revId": "77a20e8829c84dec0fe28d8b4e1b69cbb50033aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
