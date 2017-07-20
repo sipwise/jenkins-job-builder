@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f1a1f67_28864fdd",
+        "filename": "test-requirements.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-07-20T09:04:40Z",
+      "side": 1,
+      "message": "Isn\u0027t test-requirements.txt only parsed by tox? So it would only be installed in the isolated environment created by the tox version the user ran, and would never get used by default.\n\nJust wondering how this would work?",
+      "revId": "77a20e8829c84dec0fe28d8b4e1b69cbb50033aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
