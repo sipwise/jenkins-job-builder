@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_c3b670da",
+        "filename": "tests/wrappers/fixtures/artifactory002.plugins_info.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-07-24T11:12:48Z",
+      "side": 1,
+      "message": "Would a real version such as \u00271.0\u0027 or \u00272.2.9\u0027 be more suitable here?",
+      "revId": "92fca1886d9e812e8fc190aab307a25964a76c25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
