@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_d81e5e6f",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-07-24T13:03:18Z",
+      "side": 1,
+      "message": "Would it be better to move all the mappings to outside of the loop and use unique names for them, instead of redefining them on each iteration?\n\nPossibly cpython is smart enough to sort this out itself, but I thought that such behaviour was only part of pypy with it\u0027s JIT compiler to better deal with this.",
+      "revId": "5d8270283dbb8cc05a947dee80594cf6ba817fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
