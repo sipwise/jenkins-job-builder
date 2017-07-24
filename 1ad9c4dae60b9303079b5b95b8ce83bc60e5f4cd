@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_63ac648c",
+        "filename": "tests/triggers/fixtures/gitlab001.plugins_info.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-07-24T11:11:51Z",
+      "side": 1,
+      "message": "Would \u00271.0\u0027 be more appropriate here?",
+      "revId": "1ad9c4dae60b9303079b5b95b8ce83bc60e5f4cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
