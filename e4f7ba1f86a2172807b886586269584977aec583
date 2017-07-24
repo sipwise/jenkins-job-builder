@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_2ef3e0a0",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1776,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-07-24T13:23:41Z",
+      "side": 1,
+      "message": "I wonder if this behaviour is actually correct for the plugin, can you really not specify the variable in the case that it\u0027s not a username-password-separated or amazon-web-services key type?\n\nReading https://support.cloudbees.com/hc/en-us/articles/203802500-Injecting-Secrets-into-Jenkins-Build-Jobs suggests that it doesn\u0027t make sense to allow this to be unset.",
+      "range": {
+        "startLine": 1776,
+        "startChar": 50,
+        "endLine": 1776,
+        "endChar": 69
+      },
+      "revId": "e4f7ba1f86a2172807b886586269584977aec583",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
