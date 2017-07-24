@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_0e513cd9",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2076,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-07-24T13:12:04Z",
+      "side": 1,
+      "message": "Any reason to not have a single call after the if/else block?",
+      "range": {
+        "startLine": 2076,
+        "startChar": 8,
+        "endLine": 2076,
+        "endChar": 74
+      },
+      "revId": "dea355ae33fc6073007ef7573e425d94879a0e30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
