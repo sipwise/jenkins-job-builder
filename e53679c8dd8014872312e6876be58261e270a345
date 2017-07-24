@@ -22,6 +22,30 @@
       "revId": "e53679c8dd8014872312e6876be58261e270a345",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_bb3ba29a",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2017-07-24T01:36:08Z",
+      "side": 1,
+      "message": "I like this idea.",
+      "parentUuid": "3f1d235d_5b53c2e2",
+      "range": {
+        "startLine": 508,
+        "startChar": 8,
+        "endLine": 510,
+        "endChar": 58
+      },
+      "revId": "e53679c8dd8014872312e6876be58261e270a345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
