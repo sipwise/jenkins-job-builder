@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_8eaf6c93",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1088,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-07-24T13:16:29Z",
+      "side": 1,
+      "message": "Any reason to not collapse to a single call after the if/else block?",
+      "range": {
+        "startLine": 1088,
+        "startChar": 8,
+        "endLine": 1088,
+        "endChar": 79
+      },
+      "revId": "47e6a03c78199754722791ad1e0d9635cf0d62d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
