@@ -16,6 +16,24 @@
       "revId": "92fca1886d9e812e8fc190aab307a25964a76c25",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_cf6d3933",
+        "filename": "tests/wrappers/fixtures/artifactory002.plugins_info.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-25T19:21:24Z",
+      "side": 1,
+      "message": "Does not matter. I set it to 0 because it\u0027s the lowest possible number since we don\u0027t know when official support was added.",
+      "parentUuid": "ff346bd7_c3b670da",
+      "revId": "92fca1886d9e812e8fc190aab307a25964a76c25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
