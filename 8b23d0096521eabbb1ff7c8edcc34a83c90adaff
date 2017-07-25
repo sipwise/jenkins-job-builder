@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_0f47c17a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 5880,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-25T19:29:20Z",
+      "side": 1,
+      "message": "Since these 2 are bools we should leave them as False not a string.",
+      "range": {
+        "startLine": 5879,
+        "startChar": 0,
+        "endLine": 5880,
+        "endChar": 43
+      },
+      "revId": "8b23d0096521eabbb1ff7c8edcc34a83c90adaff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
