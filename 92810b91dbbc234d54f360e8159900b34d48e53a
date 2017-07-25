@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_0fb90179",
+        "filename": "tests/parameters/fixtures/extended-choice-param-full.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-25T19:26:20Z",
+      "side": 1,
+      "message": "visible-items has a default value of 5 so we should configure this to anything but 5 so that we can confirm that setting really get\u0027s passed through. I\u0027d leave this at 2 since that was the original value.",
+      "revId": "92810b91dbbc234d54f360e8159900b34d48e53a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_af8435b2",
+        "filename": "tests/parameters/fixtures/extended-choice-param-minimal.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-25T19:26:20Z",
+      "side": 1,
+      "message": "The idea of a minimal test is that we only set options for settings that are REQUIRED and do not configure any settings at all for settings that are optional or have default values. Such that we test the both the code path for default settings as well as settings that are non-default.",
+      "revId": "92810b91dbbc234d54f360e8159900b34d48e53a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
