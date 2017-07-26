@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_e9da1649",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2999,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-26T16:44:16Z",
+      "side": 1,
+      "message": "Should mention (default \u0027\u0027)",
+      "revId": "ba37a9f3524d6b6a538b26ba1c72fdc20217001a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_c9df5238",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3006,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-26T16:44:16Z",
+      "side": 1,
+      "message": "Should mention (default \u0027\u0027)",
+      "revId": "ba37a9f3524d6b6a538b26ba1c72fdc20217001a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
