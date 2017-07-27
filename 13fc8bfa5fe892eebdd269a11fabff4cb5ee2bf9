@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ff346bd7_7d47cbbd",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2017-07-27T22:04:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_4790b54a",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 10
+      },
+      "revId": "13fc8bfa5fe892eebdd269a11fabff4cb5ee2bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_7415a19b",
         "filename": "jenkins_jobs/config.py",
         "patchSetId": 3
@@ -53,6 +77,24 @@
       "writtenOn": "2017-06-15T16:19:28Z",
       "side": 1,
       "message": "Have to think if there is any downside of doing this?\n\nOnce option might be to set \u0027raw\u003dTrue\u0027 when retrieving the log_format item and see if that avoids the interpolation for just that?",
+      "revId": "13fc8bfa5fe892eebdd269a11fabff4cb5ee2bf9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff346bd7_9d3caf2f",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2017-07-27T22:04:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_87a5ad49",
       "revId": "13fc8bfa5fe892eebdd269a11fabff4cb5ee2bf9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
