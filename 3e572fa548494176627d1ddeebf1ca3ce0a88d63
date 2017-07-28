@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_b7ef50e8",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2430,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-28T18:24:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_cf8ac568",
+      "range": {
+        "startLine": 2430,
+        "startChar": 8,
+        "endLine": 2430,
+        "endChar": 18
+      },
+      "revId": "3e572fa548494176627d1ddeebf1ca3ce0a88d63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_afa2e9fa",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2017-06-14T14:55:46Z",
       "side": 1,
       "message": "No need to also state optional since default is already stated.\n\nAccording to the code below default appears to actually be (default \u0027\u0027).",
+      "range": {
+        "startLine": 2432,
+        "startChar": 8,
+        "endLine": 2432,
+        "endChar": 18
+      },
+      "revId": "3e572fa548494176627d1ddeebf1ca3ce0a88d63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_37b5a0ef",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2432,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-28T18:24:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_afa2e9fa",
       "range": {
         "startLine": 2432,
         "startChar": 8,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_d7cbf46f",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2434,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-28T18:24:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_af6d49cd",
+      "range": {
+        "startLine": 2434,
+        "startChar": 23,
+        "endLine": 2434,
+        "endChar": 33
+      },
+      "revId": "3e572fa548494176627d1ddeebf1ca3ce0a88d63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_2f48195a",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 2
@@ -82,6 +154,30 @@
       "writtenOn": "2017-06-14T14:55:46Z",
       "side": 1,
       "message": "(default \u0027\u0027)",
+      "range": {
+        "startLine": 2436,
+        "startChar": 21,
+        "endLine": 2436,
+        "endChar": 31
+      },
+      "revId": "3e572fa548494176627d1ddeebf1ca3ce0a88d63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_b7c87074",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2436,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-28T18:24:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_2f48195a",
       "range": {
         "startLine": 2436,
         "startChar": 21,
@@ -117,6 +213,30 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_97c56c5e",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2437,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-28T18:24:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_2c2ca7aa",
+      "range": {
+        "startLine": 2437,
+        "startChar": 50,
+        "endLine": 2437,
+        "endChar": 60
+      },
+      "revId": "3e572fa548494176627d1ddeebf1ca3ce0a88d63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_6c261fd1",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 2
@@ -128,6 +248,30 @@
       "writtenOn": "2017-06-14T14:55:46Z",
       "side": 1,
       "message": "Rather than (optional) I would say (default false)",
+      "range": {
+        "startLine": 2439,
+        "startChar": 15,
+        "endLine": 2439,
+        "endChar": 26
+      },
+      "revId": "3e572fa548494176627d1ddeebf1ca3ce0a88d63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_37aa4085",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2439,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-28T18:24:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_6c261fd1",
       "range": {
         "startLine": 2439,
         "startChar": 15,
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_17af3c95",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2458,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-28T18:24:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_cf6645c2",
+      "range": {
+        "startLine": 2451,
+        "startChar": 0,
+        "endLine": 2458,
+        "endChar": 22
+      },
+      "revId": "3e572fa548494176627d1ddeebf1ca3ce0a88d63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_261cbbbf",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 2
@@ -174,6 +342,30 @@
       "writtenOn": "2017-06-14T20:59:32Z",
       "side": 1,
       "message": "I guess this default value should be set to true, as the documentation proposed above.",
+      "range": {
+        "startLine": 2467,
+        "startChar": 51,
+        "endLine": 2467,
+        "endChar": 56
+      },
+      "revId": "3e572fa548494176627d1ddeebf1ca3ce0a88d63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_b79d1068",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2467,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-28T18:24:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_261cbbbf",
       "range": {
         "startLine": 2467,
         "startChar": 51,
