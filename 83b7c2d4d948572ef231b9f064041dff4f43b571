@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_51503433",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4151,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-28T17:49:30Z",
+      "side": 1,
+      "message": "Can not move this out of the loop as it would break the plugin. Each plot needs one of these mappings configured.",
+      "parentUuid": "5f201791_cc972a48",
+      "revId": "83b7c2d4d948572ef231b9f064041dff4f43b571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f201791_6c281696",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_f123a8bd",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4168,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-28T17:49:30Z",
+      "side": 1,
+      "message": "Same here I think it doesn\u0027t make sense to move out of the loop as each item in the loop needs one of these configured.",
+      "parentUuid": "5f201791_6c281696",
+      "revId": "83b7c2d4d948572ef231b9f064041dff4f43b571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f201791_ac0bce27",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2017-06-27T15:50:19Z",
       "side": 1,
       "message": "Similarly here, name this xml_mappings and define it outside of the loop?",
+      "revId": "83b7c2d4d948572ef231b9f064041dff4f43b571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_d109c431",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4186,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-28T17:49:30Z",
+      "side": 1,
+      "message": "Same here. Cannot move out of loop as each item needs one of these configured.",
+      "parentUuid": "5f201791_ac0bce27",
       "revId": "83b7c2d4d948572ef231b9f064041dff4f43b571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
