@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "df3967d1_b4918ef4",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4453,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-28T18:18:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_336c7435",
+      "range": {
+        "startLine": 4453,
+        "startChar": 16,
+        "endLine": 4453,
+        "endChar": 17
+      },
+      "revId": "b46da1e49c7c71455c21c9397e92c50dcc3234ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f231b9d_13697824",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2017-06-11T08:55:02Z",
       "side": 1,
       "message": "same as above",
+      "range": {
+        "startLine": 4454,
+        "startChar": 48,
+        "endLine": 4454,
+        "endChar": 49
+      },
+      "revId": "b46da1e49c7c71455c21c9397e92c50dcc3234ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_14a3ba51",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4454,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-07-28T18:18:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f231b9d_13697824",
       "range": {
         "startLine": 4454,
         "startChar": 48,
