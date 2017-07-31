@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "df3967d1_7be1a59a",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2017-07-31T16:58:37Z",
+      "side": 1,
+      "message": "Daragh, I think",
+      "revId": "57da6709e69de40d4b79c20535a3bfe30186a67f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f1a1f67_c857db26",
         "filename": "tests/xml_config/test_xml_config.py",
         "patchSetId": 17
@@ -13,6 +30,24 @@
       "writtenOn": "2017-07-20T09:21:33Z",
       "side": 1,
       "message": "I almost wonder if we should change the test here if it no longer throws an error formatting component?",
+      "revId": "57da6709e69de40d4b79c20535a3bfe30186a67f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_1bb5fa31",
+        "filename": "tests/xml_config/test_xml_config.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2017-07-31T16:58:37Z",
+      "side": 1,
+      "message": "You mean change the name of this yaml file?\n\nSo, thinking through this... the change to this file was necessary because the underlying \"Problem formatting with args\" exception is thrown by jenkins_jobs.formatter.deep_format which was called during geenrateXML\u0027s call to ModuleRegistry.dispatch; ModuleRegistry.dispatch was responsible for expanding macros in-place, which now happens in the YamlParser. YamlParser delegates macro expansion to the ModuleRegistry, which eventually tries to do the following: https://review.openstack.org/gitweb?p\u003dopenstack-infra/jenkins-job-builder.git;a\u003dblob;f\u003djenkins_jobs/registry.py;h\u003d701a329f998424f8dae8bd8da5dd785283f3e94e;hb\u003d57da6709e69de40d4b79c20535a3bfe30186a67f#l214\n\nWe should probably consider catching Exception and logging \"Failure formatting component\" there instead. One thing that puzzles me though is...why doesn\u0027t this test case reveal an exception raised there when it did reveal the exception raised during expansion that took place in the generateXML code path prior to this commit?\n\nI mean, an exception is raised because of the missing paramter during deep_format but that may be enough. Is the user experience debugging job configs really improved with the addtion of \"Failure formatting component\" to \"Problem formatting with args\"?",
+      "parentUuid": "1f1a1f67_c857db26",
       "revId": "57da6709e69de40d4b79c20535a3bfe30186a67f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

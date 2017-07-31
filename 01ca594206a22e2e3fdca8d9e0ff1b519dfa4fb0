@@ -16,6 +16,24 @@
       "revId": "01ca594206a22e2e3fdca8d9e0ff1b519dfa4fb0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_9bc5693f",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2017-07-31T16:58:37Z",
+      "side": 0,
+      "message": "I don\u0027t think we have necessarily eliminated the possibility, but I am a little puzzled as to why a similar exception isn\u0027t raised here https://review.openstack.org/gitweb?p\u003dopenstack-infra/jenkins-job-builder.git;a\u003dblob;f\u003djenkins_jobs/registry.py;h\u003d701a329f998424f8dae8bd8da5dd785283f3e94e;hb\u003d57da6709e69de40d4b79c20535a3bfe30186a67f#l214.\n\nThe test case changed in this commit should theoretically still raise an Exception there, but doesn\u0027t. Is it because I neglected to pass self.jjb_config.yamlparser[\u0027allow_empty_variables\u0027] to deep_format there?",
+      "parentUuid": "1f1a1f67_9c26c4ba",
+      "revId": "01ca594206a22e2e3fdca8d9e0ff1b519dfa4fb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
