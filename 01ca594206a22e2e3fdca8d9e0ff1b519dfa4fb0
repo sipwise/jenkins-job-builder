@@ -34,6 +34,24 @@
       "revId": "01ca594206a22e2e3fdca8d9e0ff1b519dfa4fb0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df3967d1_1e84c70b",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2017-07-31T17:13:38Z",
+      "side": 0,
+      "message": "Oh wait, that theory doesn\u0027t make sense since the new code in MacroRegistry is actually never allowing empty variables anyway. Hmmm.",
+      "parentUuid": "df3967d1_9bc5693f",
+      "revId": "01ca594206a22e2e3fdca8d9e0ff1b519dfa4fb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
