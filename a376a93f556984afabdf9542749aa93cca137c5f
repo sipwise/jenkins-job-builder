@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df3967d1_1a360a05",
+        "filename": "jenkins_jobs/cli/subcommand/get_plugins_info.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2017-07-31T22:45:24Z",
+      "side": 1,
+      "message": "This needs a comma.",
+      "revId": "a376a93f556984afabdf9542749aa93cca137c5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
