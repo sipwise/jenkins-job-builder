@@ -135,6 +135,7 @@ import logging
 import os
 import re
 
+import jinja2
 import yaml
 from yaml.constructor import BaseConstructor
 from yaml.representer import BaseRepresenter
@@ -349,8 +350,8 @@ class YamlInclude(BaseYAMLObject):
         elif isinstance(node, yaml.SequenceNode):
             contents = [cls._from_file(loader, scalar_node)
                         for scalar_node in node.value]
-            if any(isinstance(s, LazyLoader) for s in contents):
-                return LazyLoaderCollection(contents)
+            if any(isinstance(s, CustomLoader) for s in contents):
+                return CustomLoaderCollection(contents)
 
             return u'\n'.join(contents)
         else:
@@ -383,6 +384,15 @@ class YamlIncludeRawEscape(YamlIncludeRaw):
             return loader.escape_callback(data)
 
 
+class YamlIncludeJinja2(YamlIncludeRaw):
+    yaml_tag = u'!include-jinja2:'
+
+    @classmethod
+    def _from_file(cls, loader, node):
+        contents = cls._open_file(loader, node)
+        return Jinja2Loader(contents)
+
+
 class DeprecatedTag(BaseYAMLObject):
 
     @classmethod
@@ -407,8 +417,22 @@ class YamlIncludeRawEscapeDeprecated(DeprecatedTag):
     _new = YamlIncludeRawEscape
 
 
-class LazyLoaderCollection(object):
-    """Helper class to format a collection of LazyLoader objects"""
+class CustomLoader(object):
+    pass
+
+
+class Jinja2Loader(CustomLoader):
+
+    def __init__(self, contents):
+        self._contents = contents
+
+    def format(self, **kwargs):
+        template = jinja2.Template(self._contents)
+        return template.render(kwargs)
+
+
+class CustomLoaderCollection(object):
+    """Helper class to format a collection of CustomLoader objects"""
     def __init__(self, sequence):
         self._data = sequence
 
@@ -416,7 +440,7 @@ class LazyLoaderCollection(object):
         return u'\n'.join(item.format(*args, **kwargs) for item in self._data)
 
 
-class LazyLoader(object):
+class LazyLoader(CustomLoader):
     """Helper class to provide lazy loading of files included using !include*
     tags where the path to the given file contains unresolved placeholders.
     """
