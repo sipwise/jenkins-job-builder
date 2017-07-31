@@ -1,0 +1,5 @@
+# template: jinja2
+{{ var }}
+{% for item in test_list %}
+{{ item }}
+{% endfor %}
