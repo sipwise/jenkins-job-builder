@@ -20,9 +20,34 @@ from pprint import pformat
 import re
 from string import Formatter
 
+import jinja2
+
 from jenkins_jobs.errors import JenkinsJobsException
 
 logger = logging.getLogger(__name__)
+
+
+def default_format(obj, paramdict, allow_empty=False):
+    try:
+        ret = CustomFormatter(allow_empty).format(obj, **paramdict)
+    except KeyError as exc:
+        missing_key = exc.args[0]
+        desc = "%s parameter missing to format %s\nGiven:\n%s" % (
+            missing_key, obj, pformat(paramdict))
+        raise JenkinsJobsException(desc)
+    except Exception:
+        logging.error("Problem formatting with args:\nallow_empty:"
+                    "%s\nobj: %s\nparamdict: %s" %
+                    (allow_empty, obj, paramdict))
+        raise
+    return ret
+
+
+def jinja2_format(obj, paramdict, allow_empty=False):
+    template = jinja2.Template(obj)
+    if not allow_empty:
+        template.environment.undefined = jinja2.StrictUndefined
+    return template.render(paramdict)
 
 
 def deep_format(obj, paramdict, allow_empty=False):
@@ -33,18 +58,16 @@ def deep_format(obj, paramdict, allow_empty=False):
     # still be valid YAML (so substituting-in a string containing quotes, for
     # example, is problematic).
     if hasattr(obj, 'format'):
-        try:
-            ret = CustomFormatter(allow_empty).format(obj, **paramdict)
-        except KeyError as exc:
-            missing_key = exc.args[0]
-            desc = "%s parameter missing to format %s\nGiven:\n%s" % (
-                missing_key, obj, pformat(paramdict))
-            raise JenkinsJobsException(desc)
-        except Exception:
-            logging.error("Problem formatting with args:\nallow_empty:"
-                          "%s\nobj: %s\nparamdict: %s" %
-                          (allow_empty, obj, paramdict))
-            raise
+        if hasattr(obj, 'splitlines'):
+            lines = obj.splitlines()
+            if len(lines) > 0 and lines[0].strip() == '# template: jinja2':
+                obj = '\n'.join(obj.splitlines()[1:])
+                format_func = jinja2_format
+            else:
+                format_func = default_format
+        else:
+            format_func = default_format
+        ret = format_func(obj, paramdict, allow_empty=allow_empty)
 
     elif isinstance(obj, list):
         ret = type(obj)()
