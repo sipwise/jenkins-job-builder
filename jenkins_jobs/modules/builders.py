@@ -3902,6 +3902,7 @@ def ansible_playbook(parser, xml_parent, data):
         :inventory-type values:
             * **path**
             * **content**
+            * **donotspecify**
 
     :arg dict inventory: Inventory data, depends on inventory-type
 
@@ -3965,7 +3966,7 @@ def ansible_playbook(parser, xml_parent, data):
     except KeyError as ex:
         raise MissingAttributeError(ex)
 
-    inventory_types = ('path', 'content')
+    inventory_types = ('path', 'content', 'donotspecify')
     inventory_type = str(
         data.get('inventory-type', inventory_types[0])).lower()
 
@@ -3989,6 +3990,9 @@ def ansible_playbook(parser, xml_parent, data):
         XML.SubElement(inventory, 'content').text = content
         XML.SubElement(inventory, 'dynamic').text = str(
             inv_data.get('dynamic', False)).lower()
+    elif inventory_type == 'donotspecify':
+        inventory.set(
+            'class', 'org.jenkinsci.plugins.ansible.InventoryDoNotSpecify')
     else:
         raise InvalidAttributeError(
             'inventory-type', inventory_type, inventory_types)
