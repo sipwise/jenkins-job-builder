@@ -65,6 +65,13 @@ class UpdateSubCommand(base.BaseSubCommand):
             dest='n_workers',
             help="number of workers to use, 0 for autodetection and 1 "
             "for just one worker.")
+        update.add_argument(
+            '--existing-only',
+            action='store_true',
+            default=False,
+            dest='existing_only',
+            help='update existing jobs only'
+        )
 
     def _generate_xmljobs(self, options, jjb_config=None):
         builder = JenkinsManager(jjb_config)
@@ -105,11 +112,11 @@ class UpdateSubCommand(base.BaseSubCommand):
             options, jjb_config)
 
         jobs, num_updated_jobs = builder.update_jobs(
-            xml_jobs, n_workers=options.n_workers)
+            xml_jobs, n_workers=options.n_workers, existing_only=options.existing_only)
         logger.info("Number of jobs updated: %d", num_updated_jobs)
 
         views, num_updated_views = builder.update_views(
-            xml_views, n_workers=options.n_workers)
+            xml_views, n_workers=options.n_workers, existing_only=options.existing_only)
         logger.info("Number of views updated: %d", num_updated_views)
 
         keep_jobs = [job.name for job in xml_jobs]

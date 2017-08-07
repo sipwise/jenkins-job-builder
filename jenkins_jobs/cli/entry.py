@@ -143,3 +143,6 @@ def main():
     argv = sys.argv[1:]
     jjb = JenkinsJobs(argv)
     jjb.execute()
+
+if __name__ == "__main__":
+    main()
