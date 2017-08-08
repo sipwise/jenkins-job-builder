@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_5156e708",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-08-08T10:29:16Z",
+      "side": 1,
+      "message": "I\u0027m not familiar enough with Jinja2, does this need to be created clean for each format? or can the template be reused multiple times?",
+      "range": {
+        "startLine": 446,
+        "startChar": 8,
+        "endLine": 446,
+        "endChar": 50
+      },
+      "revId": "0fb2bb7c44462cfe6c9c4f68109f46d381509d47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
