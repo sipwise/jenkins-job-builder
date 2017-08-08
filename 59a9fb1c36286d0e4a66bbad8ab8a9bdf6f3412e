@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_f5d93e22",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-08-08T16:14:38Z",
+      "side": 1,
+      "message": "This allows seeing what jobs are on Jenkins without relying on the cache.",
+      "range": {
+        "startLine": 68,
+        "startChar": 3,
+        "endLine": 74,
+        "endChar": 25
+      },
+      "revId": "59a9fb1c36286d0e4a66bbad8ab8a9bdf6f3412e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_950af287",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-08-08T16:14:38Z",
+      "side": 1,
+      "message": "It seems like it would be more appropriate to simply check what jobs are on Jenkins instead, seeing as the property self.jobs would provide the list of jobs currently on jenkins which could be used to filter what is updated below.\n\nThat avoids needing to worry about the cache as otherwise you can\u0027t ignore it (wipe it out) and ensure you can update only those jobs in jenkins.",
+      "revId": "59a9fb1c36286d0e4a66bbad8ab8a9bdf6f3412e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_640da636",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-08-08T16:14:38Z",
+      "side": 1,
+      "message": "I\u0027m pretty certain this is not useful to run directly.",
+      "range": {
+        "startLine": 146,
+        "startChar": 0,
+        "endLine": 148,
+        "endChar": 10
+      },
+      "revId": "59a9fb1c36286d0e4a66bbad8ab8a9bdf6f3412e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
