@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "9f436f4f_7b82ddca",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 26607
+      },
+      "writtenOn": "2017-08-08T16:42:26Z",
+      "side": 1,
+      "message": "Thanks, I had failed to spot what was right in front of my face. I agree that is definitely a better way of doing it!",
+      "parentUuid": "9f436f4f_950af287",
+      "revId": "59a9fb1c36286d0e4a66bbad8ab8a9bdf6f3412e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f436f4f_640da636",
         "filename": "jenkins_jobs/cli/entry.py",
         "patchSetId": 2
@@ -53,6 +71,30 @@
       "writtenOn": "2017-08-08T16:14:38Z",
       "side": 1,
       "message": "I\u0027m pretty certain this is not useful to run directly.",
+      "range": {
+        "startLine": 146,
+        "startChar": 0,
+        "endLine": 148,
+        "endChar": 10
+      },
+      "revId": "59a9fb1c36286d0e4a66bbad8ab8a9bdf6f3412e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_fbe36da3",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 26607
+      },
+      "writtenOn": "2017-08-08T16:42:26Z",
+      "side": 1,
+      "message": "Apologies, that was put in as a way of debugging in PyCharm and should have been removed.",
+      "parentUuid": "9f436f4f_640da636",
       "range": {
         "startLine": 146,
         "startChar": 0,
