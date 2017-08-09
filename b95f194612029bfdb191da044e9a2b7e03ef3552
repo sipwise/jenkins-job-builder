@@ -22,6 +22,24 @@
       "revId": "b95f194612029bfdb191da044e9a2b7e03ef3552",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_464de170",
+        "filename": "jenkins_jobs/formatter.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2017-08-09T15:56:08Z",
+      "side": 1,
+      "message": "With something like:\n\n    !include-jinja2: template-with-{var}\n\nthe LazyLoader.format() call will return a Jinja2Loader instance. This unwraps that nesting.\n\n(This gets exercised by the lazy-load-jinja001.* fixtures.)",
+      "parentUuid": "9f436f4f_b2528866",
+      "revId": "b95f194612029bfdb191da044e9a2b7e03ef3552",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
