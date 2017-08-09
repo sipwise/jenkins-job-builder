@@ -1325,7 +1325,7 @@ def build_result(registry, xml_parent, data):
               - jobs:
                   - foo2
                 results:
-                  - not-built
+                  - not-builthttps://review.openstack.org/#/c/492266/
                   - aborted
     """
     brt = XML.SubElement(xml_parent, 'org.jenkinsci.plugins.'
@@ -1802,6 +1802,55 @@ def parameterized_timer(parser, xml_parent, data):
         ('', 'spec', ''),
         ('cron', 'parameterizedSpecification', None)]
     convert_mapping_to_xml(param_timer, data, mapping, fail_required=True)
+
+
+def jira_comment_trigger(registry, xml_parent, data):
+    """yaml: jira-comment-trigger
+    Trigger builds when a comment is added to JIRA.
+    Requires the Jenkins :jenkins-wiki:`JIRA Trigger Plugin
+    <JIRA+Trigger+Plugin>`.
+
+    :arg str jql-filter: Must match updated issues to trigger a build.
+        (default '')
+    :arg str comment-pattern: Triggers build only when the comment added to
+        JIRA matches pattern (default '(?i)build this please')
+    :arg list parameter-mapping:
+
+        :Issue Attribute Path:
+            * **jenkins-parameter** (`str`) -- Jenkins parameter name
+                (default '')
+            * **issue-attribute-path** (`str`) -- Attribute path (default '')
+
+    Minimal Example:
+
+    .. literalinclude::
+        /../../tests/triggers/fixtures/jira-comment-trigger-minimal.yaml
+       :language: yaml
+
+    Full Example:
+
+    .. literalinclude::
+        /../../tests/triggers/fixtures/jira-comment-trigger-full.yaml
+       :language: yaml
+    """
+    jct = XML.SubElement(xml_parent, 'com.ceilfors.jenkins.plugins.'
+                         'jiratrigger.JiraCommentTrigger')
+    jct.set('plugin', 'jira-trigger')
+    mapping = [
+        ('jql-filter', 'jqlFilter', ''),
+        ('comment-pattern', 'commentPattern', '(?i)build this please')]
+    convert_mapping_to_xml(jct, data, mapping, fail_required=True)
+
+    param = XML.SubElement(jct, 'parameterMappings')
+    for parameter in data.get('parameter-mapping', []):
+        parent = XML.SubElement(param, 'com.ceilfors.jenkins.plugins.'
+                                'jiratrigger.parameter.'
+                                'IssueAttributePathParameterMapping')
+        parameter_mappings = [
+            ('jenkins-parameter', 'jenkinsParameter', ''),
+            ('issue-attribute-path', 'issueAttributePath', '')]
+        convert_mapping_to_xml(
+            parent, parameter, parameter_mappings, fail_required=True)
 
 
 class Triggers(jenkins_jobs.modules.base.Base):
