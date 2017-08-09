@@ -1804,6 +1804,22 @@ def parameterized_timer(parser, xml_parent, data):
     convert_mapping_to_xml(param_timer, data, mapping, fail_required=True)
 
 
+def jira_comment_trigger(registry, xml_parent, data):
+    """yaml: jira-comment-trigger
+    Trigger builds when a comment is added to JIRA.
+    Requires the Jenkins :jenkins-wiki:`JIRA Trigger Plugin
+    <JIRA+Trigger+Plugin>`.
+
+    :arg str jql-filter:
+    :arg str comment-pattern:
+    :arg list parameter-mapping:
+    """
+    jct = XML.SubElement(xml_parent, 'com.ceilfors.jenkins.plugins.'
+                         'jiratrigger.JiraCommentTrigger')
+    jct.set('plugin', 'jira-trigger')
+    XML.SubElement(jct, 'jqlFilter').text = data.get('jql-filter', '')
+
+
 class Triggers(jenkins_jobs.modules.base.Base):
     sequence = 50
 

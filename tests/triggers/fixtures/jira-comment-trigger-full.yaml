@@ -1,0 +1,3 @@
+triggers:
+  - jira-comment-trigger:
+      jql-filter: filter
