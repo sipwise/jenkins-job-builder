@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_b2528866",
+        "filename": "jenkins_jobs/formatter.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-08-09T15:46:06Z",
+      "side": 1,
+      "message": "Does this actually get called? If you look at the top, if the object has a format method which the two CustomLoader objects do it\u0027ll be processed at the first if statement?",
+      "range": {
+        "startLine": 72,
+        "startChar": 4,
+        "endLine": 75,
+        "endChar": 66
+      },
+      "revId": "b95f194612029bfdb191da044e9a2b7e03ef3552",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
