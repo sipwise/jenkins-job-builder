@@ -16,6 +16,24 @@
       "revId": "9e17f01aac3b1689640d188f37987e763048b365",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_6af3ff0b",
+        "filename": "doc/source/definition.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-09T21:47:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f436f4f_7a3512da",
+      "revId": "9e17f01aac3b1689640d188f37987e763048b365",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
