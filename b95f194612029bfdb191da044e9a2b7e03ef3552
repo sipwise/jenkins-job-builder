@@ -40,6 +40,47 @@
       "revId": "b95f194612029bfdb191da044e9a2b7e03ef3552",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_f9f8ddc4",
+        "filename": "jenkins_jobs/formatter.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-08-10T11:04:14Z",
+      "side": 1,
+      "message": "Thanks, it took a bit of reading to understand how the LazyLoader and Jinja2 tag needed to work together.",
+      "parentUuid": "9f436f4f_464de170",
+      "revId": "b95f194612029bfdb191da044e9a2b7e03ef3552",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_9c24360f",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-08-10T11:04:14Z",
+      "side": 1,
+      "message": "ok, so this is the reason we end up doing a double resolution call subsequently, because we always use LazyLoader and then need to resolve that, I think it\u0027s probably fine to go with the code as is and then see if we can improve on it.",
+      "range": {
+        "startLine": 407,
+        "startChar": 8,
+        "endLine": 408,
+        "endChar": 27
+      },
+      "revId": "b95f194612029bfdb191da044e9a2b7e03ef3552",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
