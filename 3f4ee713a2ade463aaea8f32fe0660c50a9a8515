@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_68c62c9d",
+        "filename": "tests/views/fixtures/view_pipeline001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-11T15:42:14Z",
+      "side": 1,
+      "message": "Not sure this change was necessary. I think it would have worked even with name at the top.",
+      "revId": "3f4ee713a2ade463aaea8f32fe0660c50a9a8515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
