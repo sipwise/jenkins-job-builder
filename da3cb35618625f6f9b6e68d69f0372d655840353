@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "9f436f4f_ad09c62c",
+        "filename": "jenkins_jobs/modules/view_pipeline.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 24522
+      },
+      "writtenOn": "2017-08-11T15:09:29Z",
+      "side": 1,
+      "message": "Setting this to None would cause the test to fail because the xml tag is already created before it enters the if condition. Therefore if this is None as suggested, then no tag would be created at all. (\u0027\u0027) just creates the tag by default.",
+      "parentUuid": "3f1d235d_c83978d7",
+      "range": {
+        "startLine": 99,
+        "startChar": 40,
+        "endLine": 99,
+        "endChar": 42
+      },
+      "revId": "da3cb35618625f6f9b6e68d69f0372d655840353",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f1d235d_e83c34c9",
         "filename": "jenkins_jobs/modules/view_pipeline.py",
         "patchSetId": 2
@@ -59,6 +83,30 @@
       "writtenOn": "2017-07-05T14:04:25Z",
       "side": 1,
       "message": "Dong\u0027s comment here was not addressed.",
+      "range": {
+        "startLine": 101,
+        "startChar": 34,
+        "endLine": 101,
+        "endChar": 36
+      },
+      "revId": "da3cb35618625f6f9b6e68d69f0372d655840353",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_ed28ee86",
+        "filename": "jenkins_jobs/modules/view_pipeline.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 24522
+      },
+      "writtenOn": "2017-08-11T15:09:29Z",
+      "side": 1,
+      "message": "Same thing applies here.",
+      "parentUuid": "3f1d235d_e83c34c9",
       "range": {
         "startLine": 101,
         "startChar": 34,
