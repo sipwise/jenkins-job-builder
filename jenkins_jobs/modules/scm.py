@@ -236,25 +236,25 @@ def git(registry, xml_parent, data):
     user = XML.SubElement(scm, 'userRemoteConfigs')
     if 'remotes' not in data:
         data['remotes'] = [{data.get('name', 'origin'): data.copy()}]
-    for remoteData in data['remotes']:
+    for remote_data in data['remotes']:
         huser = XML.SubElement(user, 'hudson.plugins.git.UserRemoteConfig')
-        remoteName = next(iter(remoteData.keys()))
-        XML.SubElement(huser, 'name').text = remoteName
-        remoteParams = next(iter(remoteData.values()))
-        if 'refspec' in remoteParams:
-            refspec = remoteParams['refspec']
+        remote_name = next(iter(remote_data.keys()))
+        XML.SubElement(huser, 'name').text = remote_name
+        remote_params = next(iter(remote_data.values()))
+        if 'refspec' in remote_params:
+            refspec = remote_params['refspec']
         else:
-            refspec = '+refs/heads/*:refs/remotes/' + remoteName + '/*'
+            refspec = '+refs/heads/*:refs/remotes/' + remote_name + '/*'
         XML.SubElement(huser, 'refspec').text = refspec
-        if 'url' in remoteParams:
-            remoteURL = remoteParams['url']
+        if 'url' in remote_params:
+            remote_url = remote_params['url']
         else:
             raise JenkinsJobsException('Must specify a url for git remote \"' +
-                                       remoteName + '"')
-        XML.SubElement(huser, 'url').text = remoteURL
-        if 'credentials-id' in remoteParams:
-            credentialsId = remoteParams['credentials-id']
-            XML.SubElement(huser, 'credentialsId').text = credentialsId
+                                       remote_name + '"')
+        XML.SubElement(huser, 'url').text = remote_url
+        if 'credentials-id' in remote_params:
+            credentials_id = remote_params['credentials-id']
+            XML.SubElement(huser, 'credentialsId').text = credentials_id
     xml_branches = XML.SubElement(scm, 'branches')
     branches = data.get('branches', ['**'])
     for branch in branches:
@@ -767,6 +767,10 @@ def svn(registry, xml_parent, data):
         (default '.')
     :arg str credentials-id: optional argument to specify the ID of credentials
         to use
+    :arg str additional-credentials-id: optional argument to specify the
+        ID of additional credentials
+    :arg str additional-credentials-realm: optional argument to specify the
+        realm of additional credentials
     :arg str repo-depth: Repository depth. Can be one of 'infinity', 'empty',
         'files', 'immediates' or 'unknown'. (default 'infinity')
     :arg bool ignore-externals: Ignore Externals. (default false)
@@ -845,6 +849,17 @@ def svn(registry, xml_parent, data):
         populate_repo_xml(locations, data)
     else:
         raise JenkinsJobsException("A top level url or repos list must exist")
+
+    if 'additional-credentials-id' in data \
+            and 'additional-credentials-realm' in data:
+        additional_credentials = XML.SubElement(scm, 'additionalCredentials')
+        module = XML.SubElement(additional_credentials,
+                        'hudson.scm.SubversionSCM_-AdditionalCredentials')
+        XML.SubElement(module, 'credentialsId').text = \
+            data['additional-credentials-id']
+        XML.SubElement(module, 'realm').text = \
+            data['additional-credentials-realm']
+
     updater = data.get('workspaceupdater', 'wipeworkspace')
     if updater == 'wipeworkspace':
         updaterclass = 'CheckoutUpdater'
