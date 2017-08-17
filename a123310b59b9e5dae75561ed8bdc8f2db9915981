@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_aedf090b",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 770,
+      "author": {
+        "id": 24522
+      },
+      "writtenOn": "2017-08-17T01:35:31Z",
+      "side": 1,
+      "message": "There should be \u0027:\u0027 just after argument names, as you see above. Its convention and makes documentation more readable.",
+      "range": {
+        "startLine": 770,
+        "startChar": 13,
+        "endLine": 770,
+        "endChar": 38
+      },
+      "revId": "a123310b59b9e5dae75561ed8bdc8f2db9915981",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
