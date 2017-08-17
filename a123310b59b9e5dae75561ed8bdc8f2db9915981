@@ -22,6 +22,29 @@
       "revId": "a123310b59b9e5dae75561ed8bdc8f2db9915981",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_ae2dc9fe",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 772,
+      "author": {
+        "id": 24522
+      },
+      "writtenOn": "2017-08-17T01:38:59Z",
+      "side": 1,
+      "message": "Do same here",
+      "range": {
+        "startLine": 772,
+        "startChar": 13,
+        "endLine": 772,
+        "endChar": 41
+      },
+      "revId": "a123310b59b9e5dae75561ed8bdc8f2db9915981",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
