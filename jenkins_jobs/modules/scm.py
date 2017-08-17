@@ -767,9 +767,9 @@ def svn(registry, xml_parent, data):
         (default '.')
     :arg str credentials-id: optional argument to specify the ID of credentials
         to use
-    :arg str additional-credentials-id optional argument to specify the
+    :arg str additional-credentials-id: optional argument to specify the
         ID of additional credentials
-    :arg str additional-credentials-realm optional argument to specify the
+    :arg str additional-credentials-realm: optional argument to specify the
         realm of additional credentials
     :arg str repo-depth: Repository depth. Can be one of 'infinity', 'empty',
         'files', 'immediates' or 'unknown'. (default 'infinity')
