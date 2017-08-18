@@ -616,6 +616,31 @@ def gerrit(registry, xml_parent, data):
     convert_mapping_to_xml(gtrig, data, message_mappings, fail_required=True)
 
 
+def dockerhub_notification(registry, xml_parent, data):
+    """yaml: dockerhub-notification
+    The job will get triggered when Docker Hub/Registry notifies
+    that Docker image(s) used in this job has been rebuilt.
+
+    Requires the Jenkins :jenkins-wiki:`CloudBees Docker Hub Notification
+    <CloudBees+Docker+Hub+Notification>`.
+
+    :arg string repositories: Specified repositories to trigger the job.
+        (default '')
+
+    Minimal Example:
+
+    .. literalinclude::
+       /../../tests/triggers/fixtures/dockerhub-notification-minimal.yaml
+       :language: yaml
+
+    Full Example:
+
+    .. literalinclude::
+       /../../tests/triggers/fixtures/dockerhub-notification-full.yaml
+       :language: yaml
+    """
+
+
 def pollscm(registry, xml_parent, data):
     """yaml: pollscm
     Poll the SCM to determine if there has been a change.
