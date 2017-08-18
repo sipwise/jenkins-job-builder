@@ -616,6 +616,51 @@ def gerrit(registry, xml_parent, data):
     convert_mapping_to_xml(gtrig, data, message_mappings, fail_required=True)
 
 
+def dockerhub_notification(registry, xml_parent, data):
+    """yaml: dockerhub-notification
+    The job will get triggered when Docker Hub/Registry notifies
+    that Docker image(s) used in this job has been rebuilt.
+
+    Requires the Jenkins :jenkins-wiki:`CloudBees Docker Hub Notification
+    <CloudBees+Docker+Hub+Notification>`.
+
+    :arg string repositories: Specified repositories to trigger the job.
+        (default '')
+
+    Minimal Example:
+
+    .. literalinclude::
+       /../../tests/triggers/fixtures/dockerhub-notification-minimal.yaml
+       :language: yaml
+
+    Full Example:
+
+    .. literalinclude::
+       /../../tests/triggers/fixtures/dockerhub-notification-full.yaml
+       :language: yaml
+    """
+    dockerhub = XML.SubElement(xml_parent, 'org.jenkinsci.plugins.'
+                               'registry.notification.DockerHubTrigger')
+    dockerhub.set('plugin', 'dockerhub-notification')
+    option = XML.SubElement(dockerhub, 'options', {'class': 'vector'})
+
+    if 'referenced-image' in data:
+        XML.SubElement(option, 'org.jenkinsci.plugins.'
+                       'registry.notification.'
+                       'opt.impl.TriggerForAllUsedInJob')
+    if 'specified-repositories' in data:
+        specified_names = XML.SubElement(option,
+                                        'org.jenkinsci.plugins.registry'
+                                        'notification.opt.impl.'
+                                        'TriggerOnSpecifiedImageNames')
+        if data.get('repositories') == '':
+            XML.SubElement(specified_names, 'repoNames')
+        else:
+            repo_tag = XML.SubElement(specified_names, 'repoNames')
+            mapping = [('repositories', 'string', '')]
+            convert_mapping_to_xml(repo_tag, data, mapping, fail_required=True)
+
+
 def pollscm(registry, xml_parent, data):
     """yaml: pollscm
     Poll the SCM to determine if there has been a change.
