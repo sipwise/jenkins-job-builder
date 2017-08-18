@@ -1,0 +1,7 @@
+triggers:
+  - dockerhub-notification:
+      referenced-image: true
+      specified-repositories: true
+      repositories:
+        - repo1
+        - repo2
