@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_489dd1b9",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-21T14:54:03Z",
+      "side": 1,
+      "message": "I think it\u0027s fair game in JJB 2.0 to remove deprecated code. So my opinion here is to simply this and only support \"latest-only\" and add this directly to the mapping above.",
+      "range": {
+        "startLine": 79,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 51
+      },
+      "revId": "09208b8840036b705f13c8123162a9cfcc44a60d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
