@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_101ca211",
+        "filename": "tests/wrappers/fixtures/openstack001.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-21T00:34:45Z",
+      "side": 1,
+      "message": "The changes in this file are unnecessary. The order of the inputs does not affect the order of the output.",
+      "revId": "cd9208d462647d30566107692a2d4ca516b1a7b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_d015fae6",
+        "filename": "tests/wrappers/fixtures/openstack002.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-21T00:34:45Z",
+      "side": 1,
+      "message": "The changes in this file are unnecessary. The order of the inputs does not affect the order of the output.",
+      "revId": "cd9208d462647d30566107692a2d4ca516b1a7b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
