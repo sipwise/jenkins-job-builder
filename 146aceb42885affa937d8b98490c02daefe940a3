@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_e8f7e5d3",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1328,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-21T15:05:41Z",
+      "side": 1,
+      "message": "Looks like you accidently added something here.",
+      "revId": "146aceb42885affa937d8b98490c02daefe940a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
