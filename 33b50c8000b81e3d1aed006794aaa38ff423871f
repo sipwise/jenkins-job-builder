@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_22cf4980",
+        "filename": "tests/wrappers/fixtures/openstack001.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-21T17:02:02Z",
+      "side": 1,
+      "message": "Nothing in this file should change. including the new line here.",
+      "revId": "33b50c8000b81e3d1aed006794aaa38ff423871f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_e2c82175",
+        "filename": "tests/wrappers/fixtures/openstack002.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-21T17:02:02Z",
+      "side": 1,
+      "message": "Nothing in this file should change including the new line here.",
+      "revId": "33b50c8000b81e3d1aed006794aaa38ff423871f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
