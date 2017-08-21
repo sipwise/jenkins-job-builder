@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f436f4f_cd77933b",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1820,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-21T14:39:04Z",
+      "side": 1,
+      "message": "Looks like you have listed (default \u0027\u0027) twice. Keep the last instance.",
+      "revId": "7f5f0e96722308a7ffe5a15ad78d7d7bd44c9436",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f436f4f_2daa9f84",
+        "filename": "tests/triggers/fixtures/jira-changelog-trigger-full.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-21T14:39:04Z",
+      "side": 1,
+      "message": "Trailing whitespace.",
+      "revId": "7f5f0e96722308a7ffe5a15ad78d7d7bd44c9436",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
