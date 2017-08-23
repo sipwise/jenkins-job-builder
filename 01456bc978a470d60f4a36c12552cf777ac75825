@@ -1,0 +1,188 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_add0f251",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1127,
+      "author": {
+        "id": 24522
+      },
+      "writtenOn": "2017-08-23T14:26:12Z",
+      "side": 1,
+      "message": "We use lowercase false for documentation. This should be (default false).",
+      "range": {
+        "startLine": 1127,
+        "startChar": 17,
+        "endLine": 1127,
+        "endChar": 22
+      },
+      "revId": "01456bc978a470d60f4a36c12552cf777ac75825",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_cd27be64",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1129,
+      "author": {
+        "id": 24522
+      },
+      "writtenOn": "2017-08-23T14:26:12Z",
+      "side": 1,
+      "message": "This is a string value, so should be \u0027jenkins\u0027.",
+      "range": {
+        "startLine": 1129,
+        "startChar": 49,
+        "endLine": 1129,
+        "endChar": 56
+      },
+      "revId": "01456bc978a470d60f4a36c12552cf777ac75825",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_4d1bce1a",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1131,
+      "author": {
+        "id": 24522
+      },
+      "writtenOn": "2017-08-23T14:26:12Z",
+      "side": 1,
+      "message": "\u0027Build\u0027",
+      "range": {
+        "startLine": 1131,
+        "startChar": 31,
+        "endLine": 1131,
+        "endChar": 36
+      },
+      "revId": "01456bc978a470d60f4a36c12552cf777ac75825",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_cddc5e48",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1135,
+      "author": {
+        "id": 24522
+      },
+      "writtenOn": "2017-08-23T14:26:12Z",
+      "side": 1,
+      "message": "We use lowercase true for documentation. This should be (default true)",
+      "range": {
+        "startLine": 1135,
+        "startChar": 48,
+        "endLine": 1135,
+        "endChar": 52
+      },
+      "revId": "01456bc978a470d60f4a36c12552cf777ac75825",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_2ded22ef",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1137,
+      "author": {
+        "id": 24522
+      },
+      "writtenOn": "2017-08-23T14:26:12Z",
+      "side": 1,
+      "message": "false",
+      "range": {
+        "startLine": 1137,
+        "startChar": 17,
+        "endLine": 1137,
+        "endChar": 22
+      },
+      "revId": "01456bc978a470d60f4a36c12552cf777ac75825",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_cdb57ef0",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1139,
+      "author": {
+        "id": 24522
+      },
+      "writtenOn": "2017-08-23T14:26:12Z",
+      "side": 1,
+      "message": "false",
+      "range": {
+        "startLine": 1139,
+        "startChar": 17,
+        "endLine": 1139,
+        "endChar": 22
+      },
+      "revId": "01456bc978a470d60f4a36c12552cf777ac75825",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_6d7a0a25",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1140,
+      "author": {
+        "id": 24522
+      },
+      "writtenOn": "2017-08-23T14:26:12Z",
+      "side": 1,
+      "message": "Also, its proper for all argument descriptions after \u0027:\u0027 to begin in uppercase characters.",
+      "range": {
+        "startLine": 1140,
+        "startChar": 0,
+        "endLine": 1140,
+        "endChar": 0
+      },
+      "revId": "01456bc978a470d60f4a36c12552cf777ac75825",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_cd9e9e06",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1172,
+      "author": {
+        "id": 24522
+      },
+      "writtenOn": "2017-08-23T14:26:12Z",
+      "side": 1,
+      "message": "convert_mapping_to_xml() takes a fouth parameter, which is the fail_required setting, which in this case, should be True.",
+      "range": {
+        "startLine": 1172,
+        "startChar": 4,
+        "endLine": 1172,
+        "endChar": 48
+      },
+      "revId": "01456bc978a470d60f4a36c12552cf777ac75825",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
