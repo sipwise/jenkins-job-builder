@@ -1728,6 +1728,39 @@ def maven_builder(registry, xml_parent, data):
     convert_mapping_to_xml(maven, data, mapping, fail_required=True)
 
 
+def jira_issue_updater(registry, xml_parent, data):
+    """yaml: jenkins-jira-issue-updater
+    Updates issues in Atlassian JIRA as part of a Jenkins job.
+
+    Requires the Jenkins :jenkins-wiki:`Jira Issue Updater Plugin
+    <Jira+Issue+Updater+Plugin>`.
+
+    :arg str base-url: The base url of the rest API
+    :arg str user-name: The Jira username (required)
+    :arg str password: The Jira password (required)
+    :arg str jql: The JQL used to select the issues to update. (required)
+    :arg str workflow: The Name of the workflow action to be executed.
+    :arg str comment: The Jira comment to be added.
+    :arg str custom-field-Id: The Jira custom field to be edited.
+    :arg str custom-field-value: Jira custom field value.
+    :arg bool fail-if-error: Fail this build if JQL returns error.
+    :arg bool fail-if-no-match: Fail this build if no issues are matched.
+    :arg bool fail-if-no-connection: Fail this build if can't connect to Jira.
+
+    Minimal Example:
+
+    .. literalinclude::
+        /../../tests/builders/fixtures/jenkins-jira-issue-updater-minimal.yaml
+        :language: yaml
+
+    Full Example:
+
+    .. literalinclude::
+        /../../tests/builders/fixtures/jenkins-jira-issue-updater-full.yaml
+        :language: yaml
+    """
+
+
 def maven_target(registry, xml_parent, data):
     """yaml: maven-target
     Execute top-level Maven targets.
