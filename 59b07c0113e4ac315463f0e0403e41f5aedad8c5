@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_adf43dd0",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1738,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-25T00:18:57Z",
+      "side": 1,
+      "message": "(default \u0027\u0027)",
+      "revId": "59b07c0113e4ac315463f0e0403e41f5aedad8c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_8d03c1b8",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1742,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-25T00:18:57Z",
+      "side": 1,
+      "message": "(default \u0027\u0027)",
+      "revId": "59b07c0113e4ac315463f0e0403e41f5aedad8c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_6dfe55af",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1743,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-25T00:18:57Z",
+      "side": 1,
+      "message": "(default \u0027\u0027)",
+      "revId": "59b07c0113e4ac315463f0e0403e41f5aedad8c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_4d2f193f",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1744,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-25T00:18:57Z",
+      "side": 1,
+      "message": "(default \u0027\u0027)",
+      "revId": "59b07c0113e4ac315463f0e0403e41f5aedad8c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_2d328da8",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1745,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-25T00:18:57Z",
+      "side": 1,
+      "message": "(default \u0027\u0027)",
+      "revId": "59b07c0113e4ac315463f0e0403e41f5aedad8c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_0d291137",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1746,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-25T00:18:57Z",
+      "side": 1,
+      "message": "(default false)",
+      "revId": "59b07c0113e4ac315463f0e0403e41f5aedad8c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_ed2b652d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1747,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-25T00:18:57Z",
+      "side": 1,
+      "message": "(default false)",
+      "revId": "59b07c0113e4ac315463f0e0403e41f5aedad8c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_cd22e952",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1748,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-25T00:18:57Z",
+      "side": 1,
+      "message": "(default false)",
+      "revId": "59b07c0113e4ac315463f0e0403e41f5aedad8c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_ad1d5d10",
+        "filename": "tests/builders/fixtures/jenkins-jira-issue-updater-minimal.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-25T00:18:57Z",
+      "side": 1,
+      "message": "trailing whitespace",
+      "revId": "59b07c0113e4ac315463f0e0403e41f5aedad8c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
