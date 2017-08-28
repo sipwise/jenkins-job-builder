@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_11020a3e",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1748,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-28T20:37:08Z",
+      "side": 1,
+      "message": "This is a bool value and it\u0027s set to False below.",
+      "range": {
+        "startLine": 1748,
+        "startChar": 8,
+        "endLine": 1748,
+        "endChar": 20
+      },
+      "revId": "d41d2e1eb01c24949d85462ccf2049e357f34c7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_51ec128e",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1750,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-28T20:37:08Z",
+      "side": 1,
+      "message": "This is a bool value and it\u0027s set to False below.",
+      "range": {
+        "startLine": 1750,
+        "startChar": 8,
+        "endLine": 1750,
+        "endChar": 20
+      },
+      "revId": "d41d2e1eb01c24949d85462ccf2049e357f34c7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_b1f1f66d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1752,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-28T20:37:08Z",
+      "side": 1,
+      "message": "This is a bool value and it\u0027s set to False below.",
+      "range": {
+        "startLine": 1752,
+        "startChar": 8,
+        "endLine": 1752,
+        "endChar": 20
+      },
+      "revId": "d41d2e1eb01c24949d85462ccf2049e357f34c7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
