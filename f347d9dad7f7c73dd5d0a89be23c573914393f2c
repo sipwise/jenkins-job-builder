@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_91c4baf6",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 648,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-28T20:39:34Z",
+      "side": 1,
+      "message": "What is this? it\u0027s not documented above.",
+      "range": {
+        "startLine": 648,
+        "startChar": 6,
+        "endLine": 648,
+        "endChar": 35
+      },
+      "revId": "f347d9dad7f7c73dd5d0a89be23c573914393f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_b1645623",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 652,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-28T20:39:34Z",
+      "side": 1,
+      "message": "Doesn\u0027t look like this is documented above.",
+      "range": {
+        "startLine": 652,
+        "startChar": 7,
+        "endLine": 652,
+        "endChar": 41
+      },
+      "revId": "f347d9dad7f7c73dd5d0a89be23c573914393f2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
