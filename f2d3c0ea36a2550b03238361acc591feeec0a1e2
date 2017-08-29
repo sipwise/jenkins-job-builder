@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_01485f59",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 666,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-08-29T14:54:58Z",
+      "side": 1,
+      "message": "Considering repositories and specified-repositories seem to go hand in hand. I wonder if we can automatically detect the correct specified-repositories setting based on if the user passed \u0027repositories\u0027 or not?\n\nThis would simplify user configuration.",
+      "range": {
+        "startLine": 657,
+        "startChar": 4,
+        "endLine": 666,
+        "endChar": 58
+      },
+      "revId": "f2d3c0ea36a2550b03238361acc591feeec0a1e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
