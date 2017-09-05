@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_dec4dc42",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-09-05T14:27:46Z",
+      "side": 1,
+      "message": "It is more pythonic to do:\n\n if repos:\n\nBecause repos will evaluate to False if it is an empty list in Python.",
+      "revId": "b0b4e23d13823a5ca851b5bb96026216897a2e49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
