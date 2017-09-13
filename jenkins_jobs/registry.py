@@ -162,6 +162,48 @@ class MacroRegistry(object):
                 component_list.insert(component_index + i, macro_component)
                 i += 1
 
+        # Take care of special case plugin modules that might contain
+        # macros that need to be expanded.
+        self._maybe_expand_macros_for_modules(component_list,
+                                              component_list_type,
+                                              template_data)
+
+    def _maybe_expand_macros_for_modules(self,
+                                         module_list,
+                                         component_list_type,
+                                         template_data=None):
+        if component_list_type == "builders":
+            logger.info("whatever")
+            for module in module_list:
+                self._maybe_expand_macros_for_module(module,
+                                                     component_list_type,
+                                                     template_data)
+
+    def _maybe_expand_macros_for_module(self,
+                                        module,
+                                        component_list_type,
+                                        template_data=None):
+        name, data = next(iter(module.items()))
+        if name == "conditional-step":
+            step_list = data.get("steps", [])
+            subs = {}
+            for step in step_list:
+                if isinstance(step, dict):
+                    step_name, _ = next(iter(step.items()))
+                else:
+                    step_name = step
+                sub = self._maybe_expand_macro(step,
+                                               component_list_type,
+                                               template_data)
+                if sub is not None:
+                    subs[step_name] = sub
+
+            for name, module_list in subs.items():
+                module_index = step_list.index(name)
+                step_list.remove(name)
+                for i, module in enumerate(module_list):
+                    step_list.insert(module_index + i, module)
+
     def _maybe_expand_macro(self,
                             component,
                             component_list_type,
