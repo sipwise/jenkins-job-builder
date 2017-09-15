@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f2577a7_f70f7d34",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2017-09-15T06:51:14Z",
+      "side": 1,
+      "message": "Needs docstring",
+      "revId": "a1f88ff790b5430e270bc0a0605a1f58e2dc3a06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f2577a7_ea3d50c4",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2017-09-15T06:51:14Z",
+      "side": 1,
+      "message": "Not sure if it\u0027s worth distinguishing between \"component_list\" and \"module_list\" since they are really just two different ways to refer to the same type of content. I mean, it\u0027s kind of necessary in the method names.",
+      "revId": "a1f88ff790b5430e270bc0a0605a1f58e2dc3a06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f2577a7_d70c8142",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2017-09-15T06:51:14Z",
+      "side": 1,
+      "message": "Needs docstring",
+      "revId": "a1f88ff790b5430e270bc0a0605a1f58e2dc3a06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f2577a7_ea143046",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2017-09-15T06:51:14Z",
+      "side": 1,
+      "message": "Pretty much all the code in this block duplicates similar behaviour found elsewhere in this class. It may be worth considering ways to deduplicate, but really it\u0027s already so abstract that it gets hard to understand what\u0027s going on just reading through the code.",
+      "revId": "a1f88ff790b5430e270bc0a0605a1f58e2dc3a06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
