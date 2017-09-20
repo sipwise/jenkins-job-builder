@@ -2559,6 +2559,7 @@ def sonar(parser, xml_parent, data):
         AnalyzingwiththeSonarQubeScanner>`_
 
     :arg str sonar-name: Name of the Sonar installation.
+    :arg str scanner-name: Name of the Sonar scanner.
     :arg str task: Task to run. (optional)
     :arg str project: Path to Sonar project properties file. (optional)
     :arg str properties: Sonar configuration properties. (optional)
@@ -2573,6 +2574,7 @@ def sonar(parser, xml_parent, data):
     sonar = XML.SubElement(xml_parent,
                            'hudson.plugins.sonar.SonarRunnerBuilder')
     XML.SubElement(sonar, 'installationName').text = data['sonar-name']
+    XML.SubElement(sonar, 'sonarScannerName').text = data['scanner-name']
     XML.SubElement(sonar, 'task').text = data.get('task', '')
     XML.SubElement(sonar, 'project').text = data.get('project', '')
     XML.SubElement(sonar, 'properties').text = data.get('properties', '')
