@@ -72,9 +72,17 @@ def shell(registry, xml_parent, data):
     .. literalinclude:: /../../tests/builders/fixtures/shell.yaml
        :language: yaml
 
+    .. literalinclude:: /../../tests/builders/fixtures/shell-mapping.yaml
+       :language: yaml
     """
     shell = XML.SubElement(xml_parent, 'hudson.tasks.Shell')
-    XML.SubElement(shell, 'command').text = data
+    if isinstance(data, str):
+        XML.SubElement(shell, 'command').text = data
+    else:
+        mappings = [
+            ('command', 'command', None),
+        ]
+        convert_mapping_to_xml(shell, data, mappings, fail_required=True)
 
 
 def python(registry, xml_parent, data):
