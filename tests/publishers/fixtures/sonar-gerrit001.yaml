@@ -1,0 +1,15 @@
+publishers:
+  - sonar-gerrit:
+      sonar-url: 'http://192.168.0.1:9000'
+      sub-job-configs:
+        - project-path: $WORKSPACE
+          sonar-report-path: 'target/sonar/sonar-report.json'
+      severity: info
+      changed-lines-only: false
+      new-issues-only: false
+      post-score: true
+      category: 'Sonar-Review'
+      no-issues-score: 2
+      issues-score: -1
+      no-issues-notification: owner-reviewers
+      issues-notification: all

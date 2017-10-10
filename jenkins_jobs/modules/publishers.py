@@ -2393,6 +2393,119 @@ def sonar(parser, xml_parent, data):
     config_file_provider_settings(sonar, data)
 
 
+def sonar_gerrit(parser, xml_parent, data):
+    """yaml: sonar-gerrit
+    Sonar Gerrit plugin support
+    Requires the Jenkins `Sonar Gerrit Plugin.
+    <https://wiki.jenkins.io/display/JENKINS/Sonar+Gerrit>`_
+
+    :arg str sonar-url: URL of SonarQube instance (default
+       'http://localhost:9000', optional).
+    :arg list sub-job-configs: Project specific settings (optional)
+
+      :sub-job-configs: * **project-path** (`str`) -- Base of analysis (default
+          '', optional).
+              * **sonar-report-path** (`str`) -- Sonar report path (default
+                  'target/sonar/sonar-report.json', optional).
+
+    :arg str severity: Lowest issue severity that will be reported, one of
+        'info', 'minor', 'major', 'blocker', 'critical' (default 'major',
+        optional).
+    :arg bool changed-lines-only: If true, only changed lines will be reviewed
+        (default true).
+    :arg bool new-issues-only: If true, only new issues will be reviewed
+        (default true).
+    :arg str no-issues-to-post-text: message if no issues (default
+        'SonarQube violations have not been found.', optional).
+    :arg str some-issues-to-post-text: message if issues found (default
+        '&lt;total_count&gt; SonarQube violations have been found.', optional).
+    :arg issue-comment: per issue comment (default
+        '&lt;severity&gt; SonarQube violation: &lt;message&gt; Read more: &lt\
+        ;rule_url&gt;',
+        optional).
+    :arg bool override-credentials: Override default Gerrit HTTPS ReSTful \
+        Credentials (default false, optional).
+    :arg str http-username: HTTP ReSTful API username (default none, optional).
+    :arg str http-password: HTTP ReSTful Password (default none, optional).
+    :arg bool post-score: Whether to post the score to Gerrit (default true,
+        optional).
+    :arg str category: Category to review as (default 'Code-Review', optional).
+    :arg int no-issues-score: Score to post if no issues (default 1, optional).
+    :arg int issues-score: Score to post if issues (default -1, optional).
+    :arg str no-issues-notification: email if no issues to 'none', 'owner',
+        'owner-reviewers' or 'all' (default: 'none', optional).
+    :arg str issues-notification: email if issues to 'none', 'owner',
+        'owner-reviewers' or 'all' (default: 'owner', optional).
+
+    Example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/sonar-gerrit001.yaml
+       :language: yaml
+    """
+    sonar_gerrit = XML.SubElement(
+        xml_parent,
+        'org.jenkinsci.plugins.sonargerrit.SonarToGerritPublisher')
+    XML.SubElement(sonar_gerrit, 'sonarURL').text = data.get('sonar-url', '')
+    sub_job_configs = XML.SubElement(sonar_gerrit, 'subJobConfigs')
+    for sub_config in data.get('sub-job-configs', list()):
+        sub_job = XML.SubElement(
+            sub_job_configs,
+            'org.jenkinsci.plugins.sonargerrit.SubJobConfig')
+        XML.SubElement(sub_job, 'projectPath').text = sub_config.get(
+            'project-path', '')
+        XML.SubElement(sub_job, 'sonarReportPath').text = sub_config.get(
+            'sonar-report-path', '')
+    severity_types = {'info': 'INFO', 'minor': 'MINOR', 'major': 'MAJOR',
+                      'blocker': 'BLOCKER', 'critical': 'CRITICAL'}
+    severity = data.get('severity', 'major')
+    if severity not in severity_types:
+        raise JenkinsJobsException("severity invalid, must be one of:" +
+                                   "info, minor, major, blocker or critical")
+    XML.SubElement(sonar_gerrit, 'severity').text = severity_types[severity]
+    XML.SubElement(sonar_gerrit, 'changedLinesOnly').text = str(data.get(
+        'changed-lines-only', True)).lower()
+    XML.SubElement(sonar_gerrit, 'newIssuesOnly').text = str(data.get(
+        'new-issues-only', True)).lower()
+    XML.SubElement(sonar_gerrit, 'noIssuesToPostText').text = data.get(
+        'no-issues-to-post-text', 'SonarQube violations have not been found.')
+    XML.SubElement(sonar_gerrit, 'someIssuesToPostText').text = data.get(
+        'some-issues-to-post-text', '<total_count> SonarQube violations have been found.')
+    XML.SubElement(sonar_gerrit, 'issueComment').text = data.get(
+        'issue-comment', '<severity> SonarQube violation:\n\
+             <message>\n\
+             Read more: <rule_url>')
+    XML.SubElement(sonar_gerrit, 'overrideCredentials').text = str(data.get(
+        'override-credentials', False)).lower()
+    XML.SubElement(sonar_gerrit, 'httpUsername').text = data.get(
+        'http-username', '')
+    XML.SubElement(sonar_gerrit, 'httpPassword').text = data.get(
+        'http-password', '')
+    XML.SubElement(sonar_gerrit, 'postScore').text = str(
+        data.get('post-score', True)).lower()
+    XML.SubElement(sonar_gerrit, 'category').text = data.get(
+        'category', 'Code-Review')
+    XML.SubElement(sonar_gerrit, 'noIssuesScore').text = str(data.get(
+        'no-issues-score', 1))
+    XML.SubElement(sonar_gerrit, 'issuesScore').text = str(data.get(
+        'issues-score', -1))
+    notification_types = {'none': 'NONE', 'owner': 'OWNER', 'owner-reviewers':
+                          'OWNER_REVIEWERS', 'all': 'ALL'}
+    no_issues_notification = data.get('no-issues-notification', 'none')
+    if no_issues_notification not in notification_types:
+        raise JenkinsJobsException(
+            "no-issues-notification value invalid, must " +
+            "be one of: none, owner, owner-reviewers or all")
+    XML.SubElement(sonar_gerrit, 'noIssuesNotification').text = \
+        notification_types[no_issues_notification]
+    issues_notification = data.get('issues-notification', 'owner')
+    if issues_notification not in notification_types:
+        raise JenkinsJobsException(
+            "issues-notification value invalid, must " +
+            "be one of: none, owner, owner-reviewers or all")
+    XML.SubElement(sonar_gerrit, 'issuesNotification').text = \
+        notification_types[issues_notification]
+
+
 def performance(parser, xml_parent, data):
     """yaml: performance
     Publish performance test results from jmeter and junit.

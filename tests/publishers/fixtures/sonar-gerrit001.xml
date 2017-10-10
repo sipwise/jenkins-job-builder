@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <publishers>
+    <org.jenkinsci.plugins.sonargerrit.SonarToGerritPublisher>
+      <sonarURL>http://192.168.0.1:9000</sonarURL>
+      <subJobConfigs>
+        <org.jenkinsci.plugins.sonargerrit.SubJobConfig>
+          <projectPath>$WORKSPACE</projectPath>
+          <sonarReportPath>target/sonar/sonar-report.json</sonarReportPath>
+        </org.jenkinsci.plugins.sonargerrit.SubJobConfig>
+      </subJobConfigs>
+      <severity>INFO</severity>
+      <changedLinesOnly>false</changedLinesOnly>
+      <newIssuesOnly>false</newIssuesOnly>
+      <noIssuesToPostText>SonarQube violations have not been found.</noIssuesToPostText>
+      <someIssuesToPostText>&lt;total_count&gt; SonarQube violations have been found.</someIssuesToPostText>
+      <issueComment>&lt;severity&gt; SonarQube violation:
+             &lt;message&gt;
+             Read more: &lt;rule_url&gt;</issueComment>
+      <overrideCredentials>false</overrideCredentials>
+      <httpUsername/>
+      <httpPassword/>
+      <postScore>true</postScore>
+      <category>Sonar-Review</category>
+      <noIssuesScore>2</noIssuesScore>
+      <issuesScore>-1</issuesScore>
+      <noIssuesNotification>OWNER_REVIEWERS</noIssuesNotification>
+      <issuesNotification>ALL</issuesNotification>
+    </org.jenkinsci.plugins.sonargerrit.SonarToGerritPublisher>
+  </publishers>
+</project>
