@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "5f4e5783_3c3dd32a",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-10-16T16:16:43Z",
+      "side": 1,
+      "message": "Good catch. I had not realized the name change. I\u0027ll see if I can update this later if no one gets to it first.",
+      "parentUuid": "5f4e5783_dc06bfce",
+      "revId": "a9ea7223f6c3c1c4dbf95126661eb1bd64236b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f201791_981c99c2",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 2
