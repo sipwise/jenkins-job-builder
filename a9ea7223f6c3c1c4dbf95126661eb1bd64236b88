@@ -78,6 +78,24 @@
     },
     {
       "key": {
+        "uuid": "5f4e5783_c615c99d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-10-16T18:19:35Z",
+      "side": 1,
+      "message": "Feel free to update this patch if you\u0027ve already done the work.",
+      "parentUuid": "5f4e5783_13a9e522",
+      "revId": "a9ea7223f6c3c1c4dbf95126661eb1bd64236b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f201791_981c99c2",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 2
