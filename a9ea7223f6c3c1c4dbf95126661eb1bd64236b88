@@ -25,6 +25,23 @@
     },
     {
       "key": {
+        "uuid": "5f4e5783_dc06bfce",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 19147
+      },
+      "writtenOn": "2017-10-16T16:07:32Z",
+      "side": 1,
+      "message": "I\u0027m thinking that the problem here is that the plugin name was changes from \u0027Jenkins build timeout plugin\u0027 to \u0027Build Timeout\u0027 in https://github.com/jenkinsci/build-timeout-plugin/commit/ae3fdf93c3a67b75b0ddcb86f3939ffc475213bf\n\nMaybe we should consider both names instead:\n\n    plugin_info \u003d registry.get_plugin_info(\n        \"Build Timeout\")\n    if not \"version\" in plugin_info:\n        plugin_info \u003d registry.get_plugin_info(\n            \"Jenkins build timeout plugin\")\n    version \u003d pkg_resources.parse_version(plugin_info.get(\"version\", None))",
+      "revId": "a9ea7223f6c3c1c4dbf95126661eb1bd64236b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f201791_981c99c2",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 2
