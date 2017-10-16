@@ -60,6 +60,24 @@
     },
     {
       "key": {
+        "uuid": "5f4e5783_13a9e522",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 19147
+      },
+      "writtenOn": "2017-10-16T17:43:05Z",
+      "side": 1,
+      "message": "I \u0027published\u0027 a fix here: https://github.com/CoRfr/jenkins-job-builder/commit/cd8339250bf80d794532717be60babbca288d67e\n\nI cannot wait for this to be merged as this is a blocking issue on my side, so I had to take a different path.\n(I\u0027m using this commit as part of https://github.com/swi-infra/docker-jenkins-job-builder/tree/dev )",
+      "parentUuid": "5f4e5783_3c3dd32a",
+      "revId": "a9ea7223f6c3c1c4dbf95126661eb1bd64236b88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f201791_981c99c2",
         "filename": "jenkins_jobs/modules/wrappers.py",
         "patchSetId": 2
