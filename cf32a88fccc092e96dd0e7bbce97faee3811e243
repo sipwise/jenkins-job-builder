@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_fa85315b",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4119,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-10-23T19:36:45Z",
+      "side": 1,
+      "message": "I\u0027d add both of these directly to the mapping. In a lot of cases setting default of \u0027\u0027 works. If it doesn\u0027t work and causes configuration issue then the other option is to create a\n\n mapping_optional \u003d [ ....\n\nWhich contains these 2 values and calling another convert_mapping_to_xml with fail_required\u003dFalse which will handle the if blah in data. Like these statements do.",
+      "revId": "cf32a88fccc092e96dd0e7bbce97faee3811e243",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_9a807d48",
+        "filename": "tests/builders/fixtures/nodejs-executor001.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-10-23T19:36:45Z",
+      "side": 1,
+      "message": "I would call this nodejs-full.yaml",
+      "revId": "cf32a88fccc092e96dd0e7bbce97faee3811e243",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_3a8f4976",
+        "filename": "tests/builders/fixtures/nodejs-executor002.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-10-23T19:36:45Z",
+      "side": 1,
+      "message": "I would call this nodejs-minimal.yaml",
+      "revId": "cf32a88fccc092e96dd0e7bbce97faee3811e243",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
