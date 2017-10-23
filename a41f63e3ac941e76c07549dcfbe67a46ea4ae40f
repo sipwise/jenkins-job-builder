@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_b8ab4887",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 650,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2017-10-23T16:52:17Z",
+      "side": 1,
+      "message": "Verbose",
+      "range": {
+        "startLine": 650,
+        "startChar": 35,
+        "endLine": 650,
+        "endChar": 43
+      },
+      "revId": "a41f63e3ac941e76c07549dcfbe67a46ea4ae40f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_18ec9cf1",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 657,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2017-10-23T16:52:17Z",
+      "side": 1,
+      "message": "Need an extra space here. Should be behind parenthesis line.",
+      "range": {
+        "startLine": 657,
+        "startChar": 40,
+        "endLine": 657,
+        "endChar": 41
+      },
+      "revId": "a41f63e3ac941e76c07549dcfbe67a46ea4ae40f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_f8bc20dd",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 658,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2017-10-23T16:52:17Z",
+      "side": 1,
+      "message": "Same comment",
+      "range": {
+        "startLine": 658,
+        "startChar": 40,
+        "endLine": 658,
+        "endChar": 41
+      },
+      "revId": "a41f63e3ac941e76c07549dcfbe67a46ea4ae40f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_78d03020",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 659,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2017-10-23T16:52:17Z",
+      "side": 1,
+      "message": "Same comment",
+      "range": {
+        "startLine": 659,
+        "startChar": 40,
+        "endLine": 659,
+        "endChar": 41
+      },
+      "revId": "a41f63e3ac941e76c07549dcfbe67a46ea4ae40f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
