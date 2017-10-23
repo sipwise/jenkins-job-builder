@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_3850785d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1880,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2017-10-23T17:04:24Z",
+      "side": 1,
+      "message": "Need an extra space to put it behind parenthesis line.",
+      "range": {
+        "startLine": 1880,
+        "startChar": 39,
+        "endLine": 1880,
+        "endChar": 40
+      },
+      "revId": "2a89a2da3e537a64b17fa43903b4f7bf400cf175",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_78db90ec",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1881,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2017-10-23T17:04:24Z",
+      "side": 1,
+      "message": "Need an extra space to put it behind parenthesis line.",
+      "range": {
+        "startLine": 1881,
+        "startChar": 39,
+        "endLine": 1881,
+        "endChar": 40
+      },
+      "revId": "2a89a2da3e537a64b17fa43903b4f7bf400cf175",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
