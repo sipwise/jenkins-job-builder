@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f4b6375_5a3d6529",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4119,
+      "author": {
+        "id": 15943
+      },
+      "writtenOn": "2017-10-23T19:54:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f4b6375_fa85315b",
+      "revId": "cf32a88fccc092e96dd0e7bbce97faee3811e243",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f4b6375_9a807d48",
         "filename": "tests/builders/fixtures/nodejs-executor001.yaml",
         "patchSetId": 7
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3f4b6375_fa15319d",
+        "filename": "tests/builders/fixtures/nodejs-executor001.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15943
+      },
+      "writtenOn": "2017-10-23T19:54:05Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "3f4b6375_9a807d48",
+      "revId": "cf32a88fccc092e96dd0e7bbce97faee3811e243",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f4b6375_3a8f4976",
         "filename": "tests/builders/fixtures/nodejs-executor002.yaml",
         "patchSetId": 7
@@ -47,6 +83,24 @@
       "writtenOn": "2017-10-23T19:36:45Z",
       "side": 1,
       "message": "I would call this nodejs-minimal.yaml",
+      "revId": "cf32a88fccc092e96dd0e7bbce97faee3811e243",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_ba0b397b",
+        "filename": "tests/builders/fixtures/nodejs-executor002.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15943
+      },
+      "writtenOn": "2017-10-23T19:54:05Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "3f4b6375_3a8f4976",
       "revId": "cf32a88fccc092e96dd0e7bbce97faee3811e243",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
