@@ -22,6 +22,30 @@
       "revId": "4792eb50e788222509544bdae916b0e1f0b61780",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_d4900c4d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1294,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-10-23T18:28:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f1d235d_270420c6",
+      "range": {
+        "startLine": 1294,
+        "startChar": 50,
+        "endLine": 1294,
+        "endChar": 51
+      },
+      "revId": "4792eb50e788222509544bdae916b0e1f0b61780",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
