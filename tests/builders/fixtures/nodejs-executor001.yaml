@@ -1,0 +1,4 @@
+builders:
+  - nodejs:
+      name: "NodeJS_8.1"
+      script: "console.log('Some output');"

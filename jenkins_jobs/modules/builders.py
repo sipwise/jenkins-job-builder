@@ -4031,3 +4031,24 @@ def ansible_playbook(parser, xml_parent, data):
             XML.SubElement(value_elm, 'value').text = values.get('value', '')
             XML.SubElement(value_elm, 'hidden').text = str(
                 values.get('hidden', False)).lower()
+
+
+def nodejs(parser, xml_parent, data):
+    """yaml: nodejs
+    This plugin allows to execute NodeJS scripts as a job build step.
+    Requires the Jenkins :jenkins-wiki:`NodeJS Plugin <NodeJS+Plugin>`.
+
+    :arg str name: nodejs instalation name (required)
+    :arg str script: nojs script (required)
+
+    Example:
+
+    .. literalinclude::
+            /../../tests/builders/fixtures/nodejs-executor001.yaml
+
+    """
+    nodejs = XML.SubElement(xml_parent,
+                            'jenkins.plugins.nodejs.NodeJSCommandInterpreter')
+    mapping = [('name', 'nodeJSInstallationName', None),
+               ('script', 'command', None)]
+    convert_mapping_to_xml(nodejs, data, mapping, fail_required=True)
