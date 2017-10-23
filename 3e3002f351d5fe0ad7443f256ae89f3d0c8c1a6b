@@ -22,6 +22,30 @@
       "revId": "3e3002f351d5fe0ad7443f256ae89f3d0c8c1a6b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_d72ece90",
+        "filename": "tests/publishers/fixtures/postbuildscript003.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-10-23T18:49:09Z",
+      "side": 0,
+      "message": "According to the plugin these things should be uppercase.",
+      "parentUuid": "ff346bd7_a9b08e44",
+      "range": {
+        "startLine": 13,
+        "startChar": 17,
+        "endLine": 13,
+        "endChar": 23
+      },
+      "revId": "3e3002f351d5fe0ad7443f256ae89f3d0c8c1a6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
