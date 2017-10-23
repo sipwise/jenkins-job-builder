@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <builders>
+    <jenkins.plugins.nodejs.NodeJSCommandInterpreter>
+      <command>
+       'use strict'; let someVar = process.env.gitlabTargetBranch; console.log('The branch is ' + someVar);
+      </command>
+      <nodeJSInstallationName>NodeJS_8.1</nodeJSInstallationName>
+    </jenkins.plugins.nodejs.NodeJSCommandInterpreter>
+  </builders>
+</project>
