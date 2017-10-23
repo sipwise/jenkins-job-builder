@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_982bec2e",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4041,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-10-23T16:49:27Z",
+      "side": 1,
+      "message": "Typos:\n\n- NodeJS\n- installation",
+      "range": {
+        "startLine": 4041,
+        "startChar": 19,
+        "endLine": 4041,
+        "endChar": 25
+      },
+      "revId": "11158e2f0f0026cb9850823d71c9647e0e795756",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_f82e6041",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4042,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-10-23T16:49:27Z",
+      "side": 1,
+      "message": "NodeJS",
+      "range": {
+        "startLine": 4042,
+        "startChar": 21,
+        "endLine": 4042,
+        "endChar": 25
+      },
+      "revId": "11158e2f0f0026cb9850823d71c9647e0e795756",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
