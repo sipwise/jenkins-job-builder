@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_f44e686d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1516,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-10-23T18:15:12Z",
+      "side": 1,
+      "message": "Should remove this.",
+      "revId": "b1f388c8e4e9b82882180d302bc23d7556ee36b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
