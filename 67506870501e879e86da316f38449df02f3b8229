@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_f38fa120",
+        "filename": "doc/source/definition.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-10-23T17:29:39Z",
+      "side": 1,
+      "message": "typo: through",
+      "range": {
+        "startLine": 344,
+        "startChar": 71,
+        "endLine": 344,
+        "endChar": 77
+      },
+      "revId": "67506870501e879e86da316f38449df02f3b8229",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
