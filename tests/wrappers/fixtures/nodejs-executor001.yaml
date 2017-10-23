@@ -1,0 +1,7 @@
+builders:
+  - nodejs:
+      name: "NodeJS_8.1"
+      script: |
+        'use strict';
+        let someVar = process.env.gitlabTargetBranch;
+        console.log('The branch is ' + someVar);
