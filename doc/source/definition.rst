@@ -187,6 +187,11 @@ the Job Templates in the Job Group will be realized.  For example:
 Would cause the jobs `project-name-unit-tests` and `project-name-perf-tests` to be created
 in Jenkins.
 
+Job groups could be nested, so you may include job groups into jobs section of another
+job group. But they should not be recursive.
+
+.. literalinclude::  /../../tests/yamlparser/fixtures/jobgroups_nested.yaml
+
 .. _views:
 
 Views

@@ -177,14 +177,23 @@ class YamlParser(object):
         else:
             logger.warning(message)
 
+    def _has_job(self, name):
+        return name in self.data.get('job', {})
+
     def _getJob(self, name):
         job = self.data.get('job', {}).get(name, None)
         if not job:
             return job
         return self._applyDefaults(job)
 
+    def _has_job_group(self, name):
+        return name in self.data.get('job-group', {})
+
     def _getJobGroup(self, name):
         return self.data.get('job-group', {}).get(name, None)
+
+    def _has_job_template(self, name):
+        return name in self.data.get('job-template', {})
 
     def _getJobTemplate(self, name):
         job = self.data.get('job-template', {}).get(name, None)
@@ -232,6 +241,75 @@ class YamlParser(object):
 
         return data['name']
 
+    def _merge_params(self, root, *overrides):
+        merged = type(root)(root)
+        # Each override applied should replace parameters of root object
+        # Normally, root is a project or modified project, and
+        # overrides are group or job-template parameters
+        for override in overrides:
+            merged.update(override)
+        # Name is not overrided, since the group's name is not useful
+        merged['name'] = root['name']
+        return merged
+
+    def _expand_project_item(
+            self, project, item_name, item_params, seen, jobs_glob=None):
+        # here project is either original project dict or modified
+        # project dict with applied all nested overrides
+
+        # Trying to guess item and expand it properly
+        if self._has_job(item_name):
+            self._expand_job(
+                project, item_name, item_params, seen, jobs_glob=jobs_glob)
+
+        elif self._has_job_group(item_name):
+            self._expand_job_group(
+                project, item_name, item_params, seen, jobs_glob=jobs_glob)
+
+        # see if it's a template
+        elif self._has_job_template(item_name):
+            self._expand_job_template(
+                project, item_name, item_params, seen, jobs_glob=jobs_glob)
+
+        else:
+            raise JenkinsJobsException("Failed to find suitable "
+                                       "template named '{0}'"
+                                       .format(item_name))
+
+    def _expand_job(
+            self, project, name, params, seen, jobs_glob=None):
+        # Just naming an existing defined job
+        if name in seen:
+            self._handle_dups("Duplicate job '{0}' specified "
+                              "for project '{1}'"
+                              .format(name, project['name']))
+        seen.add(name)
+
+    def _expand_job_group(
+            self, project, name, jobparams, seen, jobs_glob=None):
+        group = self._getJobGroup(name)
+        for group_jobspec in group['jobs']:
+            if isinstance(group_jobspec, dict):
+                group_jobname, group_jobparams = \
+                    next(iter(group_jobspec.items()))
+                if not isinstance(group_jobparams, dict):
+                    group_jobparams = {}
+            else:
+                group_jobname = group_jobspec
+                group_jobparams = {}
+
+            d = self._merge_params(project, jobparams, group)
+
+            self._expand_project_item(
+                d, group_jobname, group_jobparams, seen, jobs_glob=jobs_glob)
+
+    def _expand_job_template(
+            self, project, jobname, jobparams, seen, jobs_glob=None):
+        template = self._getJobTemplate(jobname)
+        d = type(project)(project)
+        d.update(jobparams)
+        self._expandYamlForTemplateJob(d, template, jobs_glob)
+
     def expandYaml(self, registry, jobs_glob=None):
         changed = True
         while changed:
@@ -265,67 +343,19 @@ class YamlParser(object):
             logger.debug("Expanding project '{0}'".format(project['name']))
             # use a set to check for duplicate job references in projects
             seen = set()
-            for jobspec in project.get('jobs', []):
-                if isinstance(jobspec, dict):
+            for item_spec in project.get('jobs', []):
+                if isinstance(item_spec, dict):
                     # Singleton dict containing dict of job-specific params
-                    jobname, jobparams = next(iter(jobspec.items()))
-                    if not isinstance(jobparams, dict):
-                        jobparams = {}
+                    item_name, item_params = next(iter(item_spec.items()))
+                    if not isinstance(item_params, dict):
+                        item_params = {}
                 else:
-                    jobname = jobspec
-                    jobparams = {}
-                job = self._getJob(jobname)
-                if job:
-                    # Just naming an existing defined job
-                    if jobname in seen:
-                        self._handle_dups("Duplicate job '{0}' specified "
-                                          "for project '{1}'"
-                                          .format(jobname, project['name']))
-                    seen.add(jobname)
-                    continue
-                # see if it's a job group
-                group = self._getJobGroup(jobname)
-                if group:
-                    for group_jobspec in group['jobs']:
-                        if isinstance(group_jobspec, dict):
-                            group_jobname, group_jobparams = \
-                                next(iter(group_jobspec.items()))
-                            if not isinstance(group_jobparams, dict):
-                                group_jobparams = {}
-                        else:
-                            group_jobname = group_jobspec
-                            group_jobparams = {}
-                        job = self._getJob(group_jobname)
-                        if job:
-                            if group_jobname in seen:
-                                self._handle_dups(
-                                    "Duplicate job '{0}' specified for "
-                                    "project '{1}'".format(group_jobname,
-                                                           project['name']))
-                            seen.add(group_jobname)
-                            continue
-                        template = self._getJobTemplate(group_jobname)
-                        # Allow a group to override parameters set by a project
-                        d = type(project)(project)
-                        d.update(jobparams)
-                        d.update(group)
-                        d.update(group_jobparams)
-                        # Except name, since the group's name is not useful
-                        d['name'] = project['name']
-                        if template:
-                            self._expandYamlForTemplateJob(d, template,
-                                                           jobs_glob)
-                    continue
-                # see if it's a template
-                template = self._getJobTemplate(jobname)
-                if template:
-                    d = type(project)(project)
-                    d.update(jobparams)
-                    self._expandYamlForTemplateJob(d, template, jobs_glob)
-                else:
-                    raise JenkinsJobsException("Failed to find suitable "
-                                               "template named '{0}'"
-                                               .format(jobname))
+                    item_name = item_spec
+                    item_params = {}
+
+                self._expand_project_item(
+                        project, item_name, item_params, seen, jobs_glob=jobs_glob)
+
         # check for duplicate generated jobs
         seen = set()
         # walk the list in reverse so that last definition wins
