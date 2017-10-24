@@ -1,0 +1,39 @@
+- project:
+    name: root-1
+    a: a1
+    b: b1
+    c: c1
+    d: d1
+    e: e1
+    f: f1
+    jobs:
+        - nested-2:
+            b: b1-o
+
+- job-group:
+    name: nested-2
+    c: c2
+    d: d2
+    e: e2
+    f: f2
+    jobs:
+        - 'nested-3':
+            d: d2-o
+
+- job-group:
+    name: nested-3
+    e: e3
+    jobs:
+        - 'a_job_tmplt':
+            f: f3-o
+
+- job-template:
+    name: a_job_tmplt
+    builders:
+      - shell: |
+         echo {a} # a1
+         echo {b} # b1-o
+         echo {c} # c2
+         echo {d} # d2-o
+         echo {e} # e3
+         echo {f} # f3-o
