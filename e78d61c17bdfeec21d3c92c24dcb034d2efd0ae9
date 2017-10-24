@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_32406ca5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-10-24T21:56:32Z",
+      "side": 1,
+      "message": "Minor issue but leaving a blank line between the summary line and the body of a commit message allows git log tools to properly parse the commit message.",
+      "revId": "e78d61c17bdfeec21d3c92c24dcb034d2efd0ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
