@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_88c34c57",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 945,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-10-26T03:21:13Z",
+      "side": 1,
+      "message": "This is not necessary as fail_required\u003dTrue does this check and returns the proper error.",
+      "revId": "77591702b6d78086adb1e1b32ac616bfbbe5cfe5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_08ad1c9a",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 950,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-10-26T03:21:13Z",
+      "side": 1,
+      "message": "Seems like this has a list of valid values. We should pass that in convert_mapping_to_xml supports taking a list of acceptable values.",
+      "revId": "77591702b6d78086adb1e1b32ac616bfbbe5cfe5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_c8926457",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 954,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-10-26T03:21:13Z",
+      "side": 1,
+      "message": "Pass in a list of acceptable values to the convert_mapping_to_xml so that it can validate input.",
+      "revId": "77591702b6d78086adb1e1b32ac616bfbbe5cfe5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_a89de866",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 956,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-10-26T03:21:13Z",
+      "side": 1,
+      "message": "Pass in a list of acceptable values to convert_mapping_to_xml so that it can validate input.",
+      "revId": "77591702b6d78086adb1e1b32ac616bfbbe5cfe5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_688db030",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 958,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-10-26T03:21:13Z",
+      "side": 1,
+      "message": "Use the boolean false rather than a string.",
+      "revId": "77591702b6d78086adb1e1b32ac616bfbbe5cfe5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
