@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_2dffca67",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1153,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-10-26T02:47:53Z",
+      "side": 1,
+      "message": "This can be removed if added to the mapping below.",
+      "revId": "4e421c0e2d3c75c2e86bdfd3527485a6212e2a3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_4d0c46a4",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1161,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-10-26T02:47:53Z",
+      "side": 1,
+      "message": "Might as well add these to the mapping too to simplify things.",
+      "revId": "4e421c0e2d3c75c2e86bdfd3527485a6212e2a3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
