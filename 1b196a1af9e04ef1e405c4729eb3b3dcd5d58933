@@ -22,6 +22,23 @@
       "revId": "1b196a1af9e04ef1e405c4729eb3b3dcd5d58933",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f4b6375_fe66c1ee",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4117,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-11-08T14:06:34Z",
+      "side": 1,
+      "message": "Personally I prefer to have the minimal example first as usually when I\u0027m trying out a new plugin I just want the absolute minimum config to get me started.",
+      "revId": "1b196a1af9e04ef1e405c4729eb3b3dcd5d58933",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
