@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_4dd5311b",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 4109,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2017-11-08T11:55:36Z",
+      "side": 0,
+      "message": "Is it correct to remove this?  All of the other modules include this leading slash on the links.",
+      "range": {
+        "startLine": 4109,
+        "startChar": 12,
+        "endLine": 4109,
+        "endChar": 13
+      },
+      "revId": "0b51780d2caa7eaa059fc6c348f1e5f2db73d518",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
