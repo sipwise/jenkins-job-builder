@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f4b6375_2d0c35eb",
+        "filename": "requirements.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 10731
+      },
+      "writtenOn": "2017-11-08T11:51:35Z",
+      "side": 1,
+      "message": "Why is this upgraded?",
+      "revId": "e2b63a7030c66c663848cb9bfc43b0747374434d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
