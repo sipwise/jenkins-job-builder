@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f485f77_ccc8fe75",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4488,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2017-11-09T14:34:46Z",
+      "side": 1,
+      "message": "Do we have to do all this if-append? What happens if we set the Notes even if False?",
+      "revId": "a7f34db8a6f02739e1609dcd786fa6cb3b924986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
