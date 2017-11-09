@@ -889,6 +889,22 @@ def jms_messaging(registry, xml_parent, data):
                 msgcheck, check, mapping, fail_required=True)
 
 
+def schedule_failed_builds(parser, xml_parent, data):
+    """yaml: schedule-failed-builds
+    Trigger builds after failure (requires ScheduleFailedBuilds plugin)
+
+    :Parameter: spec for retrying failed builds (cron syntax)
+
+    Example::
+
+      triggers:
+        - schedule-failed-builds: "* * * * *"
+    """
+    sfbtrig = XML.SubElement(xml_parent,
+                             'com.progress.hudson.ScheduleFailedBuildsTrigger')
+    XML.SubElement(sfbtrig, 'spec').text = data
+
+
 def timed(registry, xml_parent, data):
     """yaml: timed
     Trigger builds at certain times.
