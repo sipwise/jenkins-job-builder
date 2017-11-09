@@ -16,6 +16,24 @@
       "revId": "a7f34db8a6f02739e1609dcd786fa6cb3b924986",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f485f77_7bed3a24",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4488,
+      "author": {
+        "id": 15943
+      },
+      "writtenOn": "2017-11-09T19:28:52Z",
+      "side": 1,
+      "message": "In this case nothing happened.\n\nI thought that we could make it in few ways. \n1st is presented in this patch\n2nd is when we just set `\u003cstatus\u003e-note-text` and if it is not set `\u003cstatus\u003e-note` value is False e.g\n\n```\ngitlab-message:\n    - success-note-text: \"some message\"\n```\n\nin this case `success-note` will be set to true and `success-note-text` to the given message.\nOther `\u003cstatus\u003e-note` will be set to false\n\nand the 3rd one is when we can set `\u003cstatus\u003e-note-text` but w/o message and default value will be used\ne.g.\n\n\n```\ngitlab-message:\n    - success-note-text\n    - unstable-note-text: \"Build is unstable\"\n```\n\nIn that case `success-note` will be set to true but `success-note-text` will be set to predefined default value e.g. \u0027 $BUILD_NUMBER SUCESS\u0027. \nunstable-note will be set to true and unstable-note-text to defined message. Other `\u003cstatus\u003e-note` will be set to false.\n\nI agree that current implementation is a bit ugly.\nWhat do you think about that? Which one fits better ?",
+      "parentUuid": "1f485f77_ccc8fe75",
+      "revId": "a7f34db8a6f02739e1609dcd786fa6cb3b924986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
