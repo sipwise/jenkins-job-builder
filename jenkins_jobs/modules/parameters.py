@@ -191,6 +191,10 @@ def label_param(registry, xml_parent, data):
     :arg str name: the name of the parameter
     :arg str default: the default value of the parameter (optional)
     :arg str description: a description of the parameter (optional)
+    :arg bool ignore-offline-nodes: Ignore nodes not online or not having
+        executors (default false)
+    :arg bool all-nodes-matching-label: FIXME. (default false)
+
 
     Example::
 
@@ -200,9 +204,13 @@ def label_param(registry, xml_parent, data):
             default: precise
             description: "The node on which to run the job"
     """
-    base_param(registry, xml_parent, data, True,
-               'org.jvnet.jenkins.plugins.nodelabelparameter.'
-               'LabelParameterDefinition')
+    pdef = base_param(registry, xml_parent, data, True,
+                      'org.jvnet.jenkins.plugins.nodelabelparameter.'
+                      'LabelParameterDefinition')
+    XML.SubElement(pdef, 'allNodesMatchingLabel').text = str(
+        data.get('allowed-multiselect', False)).lower()
+    XML.SubElement(pdef, 'ignoreOfflineNodes').text = str(
+        data.get('ignore-offline-nodes', False)).lower()
 
 
 def node_param(registry, xml_parent, data):
