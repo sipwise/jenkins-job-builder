@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "df140735_84943e38",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 25627
+      },
+      "writtenOn": "2017-11-13T14:20:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ffa3b31_6259f258",
+      "revId": "bb0cd9847b1e0a05e970c3d3402ea83b770fc1f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ffa3b31_422b9693",
         "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2017-04-15T15:25:25Z",
       "side": 1,
       "message": "should this be `int` ?",
+      "revId": "bb0cd9847b1e0a05e970c3d3402ea83b770fc1f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_6497ea3b",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 25627
+      },
+      "writtenOn": "2017-11-13T14:20:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ffa3b31_422b9693",
       "revId": "bb0cd9847b1e0a05e970c3d3402ea83b770fc1f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "df140735_449aa661",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 25627
+      },
+      "writtenOn": "2017-11-13T14:20:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ffa3b31_221aca7c",
+      "revId": "bb0cd9847b1e0a05e970c3d3402ea83b770fc1f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ffa3b31_c52690b8",
         "filename": "tests/yamlparser/fixtures/project_pipeline_multibranch_template001.xml",
         "patchSetId": 5
@@ -64,6 +118,30 @@
       "writtenOn": "2017-04-15T15:25:25Z",
       "side": 1,
       "message": "extra forward slash?",
+      "range": {
+        "startLine": 35,
+        "startChar": 42,
+        "endLine": 35,
+        "endChar": 44
+      },
+      "revId": "bb0cd9847b1e0a05e970c3d3402ea83b770fc1f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df140735_a4baa2bd",
+        "filename": "tests/yamlparser/fixtures/project_pipeline_multibranch_template001.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 25627
+      },
+      "writtenOn": "2017-11-13T14:20:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ffa3b31_c52690b8",
       "range": {
         "startLine": 35,
         "startChar": 42,
