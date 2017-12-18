@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df87a7cf_33565b2c",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1813,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2017-12-18T15:41:21Z",
+      "side": 1,
+      "message": "I guess some of these are misnamed, but lets not mix in any additional formats and maybe change this to be simply jira-changelog.",
+      "range": {
+        "startLine": 1812,
+        "startChar": 4,
+        "endLine": 1813,
+        "endChar": 35
+      },
+      "revId": "bbd1a34d2a4926d32ba1325040a036743e26fec3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
