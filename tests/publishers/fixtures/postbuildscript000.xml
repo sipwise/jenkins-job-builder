@@ -2,9 +2,9 @@
 <project>
   <publishers>
     <org.jenkinsci.plugins.postbuildscript.PostBuildScript>
+      <markBuildUnstable>false</markBuildUnstable>
       <scriptOnlyIfSuccess>true</scriptOnlyIfSuccess>
       <scriptOnlyIfFailure>false</scriptOnlyIfFailure>
-      <markBuildUnstable>false</markBuildUnstable>
     </org.jenkinsci.plugins.postbuildscript.PostBuildScript>
   </publishers>
 </project>
