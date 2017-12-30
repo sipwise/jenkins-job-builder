@@ -59,6 +59,7 @@ from jenkins_jobs.modules.helpers import convert_mapping_to_xml
 from jenkins_jobs.modules.helpers import copyartifact_build_selector
 from jenkins_jobs.modules import hudson_model
 from jenkins_jobs.modules.publishers import ssh
+from jenkins_jobs.registry import expand_inner_macros
 
 logger = logging.getLogger(__name__)
 
@@ -1275,6 +1276,7 @@ def create_builders(registry, step):
     return list(dummy_parent)
 
 
+@expand_inner_macros(inner_paths=["steps"])
 def conditional_step(registry, xml_parent, data):
     """yaml: conditional-step
     Conditionally execute some build steps. Requires the Jenkins

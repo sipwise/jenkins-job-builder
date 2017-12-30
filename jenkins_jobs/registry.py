@@ -32,6 +32,43 @@ __all__ = [
 logger = logging.getLogger(__name__)
 
 
+class expand_inner_macros(object):
+    """A decorator intended to simplify expansion of inner macros in plugin
+    xml expansion functions.
+
+    This is accomplished by keeping track of all decorated functions and the
+    data paths at which macro expansion must occur (passed as a mandatory
+    argument to the decorator) at the class-level while returning the decorated
+    function unchanged.
+    """
+    __plugins = {}
+
+    def __init__(self, inner_paths):
+        """
+        :param inner_paths: A list of data path tuples used to determine at
+            what point within the plugin data to perform additional macro
+            expansion.
+        :type inner_paths: list(tuple(str))
+        """
+        if inner_paths is None:
+            raise JenkinsJobsException(
+                "Please specify one or more inner paths to expand."
+            )
+        self.inner_paths = inner_paths
+
+    def __call__(self, func):
+        plugin_name = func.__name__.replace('_', '-')
+        self.__plugins[plugin_name] = self.inner_paths
+        return func
+
+    @classmethod
+    def plugin_paths(cls):
+        """Return the known plugins and the path tuples indicating where in the
+        plugin data structure additional macro expansion should occur.
+        """
+        return cls.__plugins
+
+
 class MacroRegistry(object):
 
     _component_to_component_list_mapping = {}
@@ -172,37 +209,50 @@ class MacroRegistry(object):
                                          module_list,
                                          component_list_type,
                                          template_data=None):
-        if component_list_type == "builders":
-            logger.info("whatever")
-            for module in module_list:
-                self._maybe_expand_macros_for_module(module,
-                                                     component_list_type,
-                                                     template_data)
+        for module in module_list:
+            self._maybe_expand_macros_for_module(module,
+                                                 component_list_type,
+                                                 template_data)
 
     def _maybe_expand_macros_for_module(self,
                                         module,
                                         component_list_type,
                                         template_data=None):
         name, data = next(iter(module.items()))
-        if name == "conditional-step":
-            step_list = data.get("steps", [])
-            subs = {}
-            for step in step_list:
-                if isinstance(step, dict):
-                    step_name, _ = next(iter(step.items()))
+        if name in expand_inner_macros.plugin_paths():
+            for expansion_path in expand_inner_macros.plugin_paths()[name]:
+                if isinstance(expansion_path, tuple):
+                    for word in expansion_path:
+                        data = data.get(word, None)
                 else:
-                    step_name = step
-                sub = self._maybe_expand_macro(step,
+                    data = data.get(expansion_path, None)
+                self._expand_macros_for_module(data,
+                                               module,
                                                component_list_type,
                                                template_data)
-                if sub is not None:
-                    subs[step_name] = sub
 
-            for name, module_list in subs.items():
-                module_index = step_list.index(name)
-                step_list.remove(name)
-                for i, module in enumerate(module_list):
-                    step_list.insert(module_index + i, module)
+    def _expand_macros_for_module(self,
+                                  step_list,
+                                  module,
+                                  component_list_type,
+                                  template_data=None):
+        subs = {}
+        for step in step_list:
+            if isinstance(step, dict):
+                step_name, _ = next(iter(step.items()))
+            else:
+                step_name = step
+            sub = self._maybe_expand_macro(step,
+                                           component_list_type,
+                                           template_data)
+            if sub is not None:
+                subs[step_name] = sub
+
+        for name, module_list in subs.items():
+            module_index = step_list.index(name)
+            step_list.remove(name)
+            for i, module in enumerate(module_list):
+                step_list.insert(module_index + i, module)
 
     def _maybe_expand_macro(self,
                             component,
