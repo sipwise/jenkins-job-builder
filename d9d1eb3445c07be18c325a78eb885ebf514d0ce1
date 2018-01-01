@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_df7afc86",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-01T12:41:44Z",
+      "side": 1,
+      "message": "When we landed the original change we updated this to be identified as a private class attribute, might be nice to tweak the revert to retain this as well as the \u0027self._entry_points_cache\u0027 references below in case we\u0027d like to resurrect this patch again.\n\nCould be done separately as well.",
+      "range": {
+        "startLine": 35,
+        "startChar": 4,
+        "endLine": 35,
+        "endChar": 22
+      },
+      "revId": "d9d1eb3445c07be18c325a78eb885ebf514d0ce1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
