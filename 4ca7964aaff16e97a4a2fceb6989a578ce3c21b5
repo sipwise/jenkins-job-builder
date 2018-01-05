@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_19a58db5",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-05T16:13:52Z",
+      "side": 1,
+      "message": "I\u0027d be inclined to have \"self.logging[\u0027format\u0027]\" and adding a corresponding defaultdict() entry above here.",
+      "revId": "4ca7964aaff16e97a4a2fceb6989a578ce3c21b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
