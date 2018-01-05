@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_e4059dc3",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5263
+      },
+      "writtenOn": "2018-01-05T20:09:56Z",
+      "side": 1,
+      "message": "Updated these while I was here, since if it supports 3.4 it likely works with 3.3 as well. Also we\u0027re actually testing it only with 3.5 at this point, but it _probably_ should be fine under 3.6 too (or at least, if it\u0027s not, people should consider that a bug worth fixing).",
+      "revId": "0b5ed0345a1aaba5c6502fedd6259932c78d750d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
