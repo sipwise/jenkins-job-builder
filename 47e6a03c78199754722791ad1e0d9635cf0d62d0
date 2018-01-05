@@ -22,6 +22,30 @@
       "revId": "47e6a03c78199754722791ad1e0d9635cf0d62d0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_8e607503",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1088,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-05T15:53:03Z",
+      "side": 1,
+      "message": "I missed the scriptSource.set() call.",
+      "parentUuid": "ff346bd7_8eaf6c93",
+      "range": {
+        "startLine": 1088,
+        "startChar": 8,
+        "endLine": 1088,
+        "endChar": 79
+      },
+      "revId": "47e6a03c78199754722791ad1e0d9635cf0d62d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
