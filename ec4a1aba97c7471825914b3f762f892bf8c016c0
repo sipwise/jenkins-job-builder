@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_f0b8282b",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-12T18:43:45Z",
+      "side": 1,
+      "message": "Change this to \"self.logging[\u0027format\u0027]\" and create a defaultdict attribute as needed.",
+      "range": {
+        "startLine": 270,
+        "startChar": 17,
+        "endLine": 270,
+        "endChar": 42
+      },
+      "revId": "ec4a1aba97c7471825914b3f762f892bf8c016c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
