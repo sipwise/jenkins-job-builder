@@ -31,8 +31,6 @@ __all__ = [
     "JJBConfig"
 ]
 
-logger = logging.getLogger(__name__)
-
 DEFAULT_CONF = """
 [job_builder]
 keep_descriptions=False
@@ -42,6 +40,9 @@ exclude=.*
 allow_duplicates=False
 allow_empty_variables=False
 retain_anchors=False
+
+[logging]
+format=%(levelname)s	%(message)s
 
 # other named sections could be used in addition to the implicit [jenkins]
 # if you have multiple jenkins servers.
@@ -90,7 +91,8 @@ class JJBConfig(object):
               will raise an exception or simply print a warning message
               indicating that no config file was found.
         """
-
+        logging.basicConfig()
+        self.logger = logging.getLogger(__name__)
         config_parser = self._init_defaults()
 
         global_conf = '/etc/jenkins_jobs/jenkins_jobs.ini'
@@ -120,8 +122,8 @@ class JJBConfig(object):
                 if config_file_required:
                     raise JJBConfigException(CONFIG_REQUIRED_MESSAGE)
                 else:
-                    logger.warning("Config file, {0}, not found. Using "
-                                   "default config values.".format(conf))
+                    self.logger.warning("Config file, {0}, not found. Using "
+                                        "default config values.".format(conf))
 
         if config_fp is not None:
             if PY2:
@@ -136,6 +138,7 @@ class JJBConfig(object):
 
         self.jenkins = defaultdict(None)
         self.builder = defaultdict(None)
+        self.logging = defaultdict(None)
         self.yamlparser = defaultdict(None)
 
         self._setup()
@@ -158,7 +161,8 @@ class JJBConfig(object):
         """
         if os.path.isfile(config_filename):
             self.__config_file = config_filename  # remember file we read from
-            logger.debug("Reading config from {0}".format(config_filename))
+            self.logger.debug(
+                "Reading config from {0}".format(config_filename))
             config_fp = io.open(config_filename, 'r', encoding='utf-8')
         else:
             raise JJBConfigException(
@@ -172,12 +176,12 @@ class JJBConfig(object):
 
         if config.has_section('hipchat'):
             if config.has_section('plugin "hipchat"'):
-                logger.warning(
+                self.logger.warning(
                     "Both [hipchat] and [plugin \"hipchat\"] sections "
                     "defined, legacy [hipchat] section will be ignored."
                 )
             else:
-                logger.warning(
+                self.logger.warning(
                     "[hipchat] section is deprecated and should be moved to a "
                     "[plugins \"hipchat\"] section instead as the [hipchat] "
                     "section will be ignored in the future."
@@ -201,15 +205,16 @@ class JJBConfig(object):
     def _setup(self):
         config = self.config_parser
 
-        logger.debug("Config: {0}".format(config))
+        self.logger.debug("Config: {0}".format(config))
 
         # check the ignore_cache setting
         ignore_cache = False
         if config.has_option(self._section, 'ignore_cache'):
-            logger.warning("ignore_cache option should be moved to the "
-                           "[job_builder] section in the config file, the "
-                           "one specified in the [jenkins] section will be "
-                           "ignored in the future")
+            self.logger.warning(
+                "ignore_cache option should be moved to the "
+                "[job_builder] section in the config file, the "
+                "one specified in the [jenkins] section will be "
+                "ignored in the future")
             ignore_cache = config.getboolean(self._section, 'ignore_cache')
         elif config.has_option('job_builder', 'ignore_cache'):
             ignore_cache = config.getboolean('job_builder', 'ignore_cache')
@@ -266,7 +271,7 @@ class JJBConfig(object):
         plugins_info = None
         if (config.has_option(self._section, 'query_plugins_info') and
            not config.getboolean(self._section, "query_plugins_info")):
-                logger.debug("Skipping plugin info retrieval")
+                self.logger.warn("Skipping plugin info retrieval")
                 plugins_info = []
         self.builder['plugins_info'] = plugins_info
 
@@ -276,6 +281,7 @@ class JJBConfig(object):
         # The way we want to do things moving forward:
         self.jenkins['url'] = config.get(self._section, 'url')
         self.builder['print_job_urls'] = self.print_job_urls
+        self.logging['format'] = config.get('logging', 'format', raw=True)
 
         # keep descriptions ? (used by yamlparser)
         keep_desc = False
@@ -318,7 +324,9 @@ class JJBConfig(object):
         # a real jenkins instance in test mode to get the plugin info to check
         # the XML generated.
         if self.jenkins['user'] is None and self.jenkins['password'] is None:
-            logger.info("Will use anonymous access to Jenkins if needed.")
+            # using debug level to avoid spamming user (or tests)
+            self.logger.debug(
+                "Will use anonymous access to Jenkins if needed.")
         elif ((self.jenkins['user'] is not None and
                self.jenkins['password'] is None) or
               (self.jenkins['user'] is None and
@@ -347,7 +355,7 @@ class JJBConfig(object):
                 JenkinsJobsException) as e:
             # use of default ignores missing sections/options
             if result is None:
-                logger.warning(
+                self.logger.warning(
                     "You didn't set a %s neither in the yaml job definition "
                     "nor in the %s section, blank default value will be "
                     "applied:\n%s", key, section, e)
@@ -365,7 +373,7 @@ class JJBConfig(object):
             # only log warning if detected a plugin config setting.
             if old_value is not _NOTSET:
                 value = old_value
-                logger.warning(
+                self.logger.warning(
                     DEPRECATED_PLUGIN_CONFIG_SECTION_MESSAGE.format(
                         plugin=plugin))
         return value

@@ -26,9 +26,6 @@ from jenkins_jobs.config import JJBConfig
 from jenkins_jobs import utils
 from jenkins_jobs import version
 
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger()
-
 
 def __version__():
     return "Jenkins Job Builder version: %s" % \
@@ -53,6 +50,9 @@ class JenkinsJobs(object):
     """
 
     def __init__(self, args=None, **kwargs):
+
+        self.logger = logging.getLogger()
+
         if args is None:
             args = []
         self.parser = create_parser()
@@ -68,11 +68,23 @@ class JenkinsJobs(object):
         if (self.options.log_level is not None):
             self.options.log_level = getattr(logging,
                                              self.options.log_level.upper(),
-                                             logger.getEffectiveLevel())
-            logger.setLevel(self.options.log_level)
+                                             self.logger.getEffectiveLevel())
+            self.logger.setLevel(self.options.log_level)
+
+        self.set_logging_format(self.options.logging_format)
 
         self._parse_additional()
         self.jjb_config.validate()
+
+        self.set_logging_format(self.jjb_config.logging['format'])
+
+    def set_logging_format(self, format_string):
+        logFormatter = logging.Formatter(format_string)
+        sh = logging.StreamHandler()
+        sh.setFormatter(logFormatter)
+        self.logger.handlers = []
+        self.logger.addHandler(sh)
+        self.logger.propagate = False
 
     def _set_config(self, target, option):
         """
@@ -102,13 +114,13 @@ class JenkinsJobs(object):
 
         if getattr(self.options, 'path', None):
             if hasattr(self.options.path, 'read'):
-                logger.debug("Input file is stdin")
+                self.logger.debug("Input file is stdin")
                 if self.options.path.isatty():
                     if platform.system() == 'Windows':
                         key = 'CTRL+Z'
                     else:
                         key = 'CTRL+D'
-                    logger.warning("Reading configuration from STDIN. "
+                    self.logger.warning("Reading configuration from STDIN. "
                                    "Press %s to end input.", key)
                 self.options.path = [self.options.path]
             else:
