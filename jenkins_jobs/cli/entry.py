@@ -72,8 +72,20 @@ class JenkinsJobs(object):
                                              logger.getEffectiveLevel())
             logger.setLevel(self.options.log_level)
 
+        self.set_logging_format(self.options.logging_format)
+
         self._parse_additional()
         self.jjb_config.validate()
+
+        self.set_logging_format(self.jjb_config.logging['format'])
+
+    def set_logging_format(self, format_string):
+        logFormatter = logging.Formatter(format_string)
+        sh = logging.StreamHandler()
+        sh.setFormatter(logFormatter)
+        logger.handlers = []
+        logger.addHandler(sh)
+        logger.propagate = False
 
     def _set_config(self, target, option):
         """
