@@ -42,6 +42,9 @@ exclude=.*
 allow_duplicates=False
 allow_empty_variables=False
 
+[logging]
+format=%(levelname)s	%(message)s
+
 # other named sections could be used in addition to the implicit [jenkins]
 # if you have multiple jenkins servers.
 [jenkins]
@@ -129,6 +132,7 @@ class JJBConfig(object):
 
         self.jenkins = defaultdict(None)
         self.builder = defaultdict(None)
+        self.logging = defaultdict(None)
         self.yamlparser = defaultdict(None)
 
         self._setup()
@@ -137,7 +141,7 @@ class JJBConfig(object):
     def _init_defaults(self):
         """ Initialize default configuration values using DEFAULT_CONF
         """
-        config = configparser.ConfigParser()
+        config = configparser.SafeConfigParser()
         # Load default config always
         if PY2:
             config.readfp(StringIO(DEFAULT_CONF))
@@ -261,6 +265,12 @@ class JJBConfig(object):
 
         # The way we want to do things moving forward:
         self.jenkins['url'] = config.get(self._section, 'url')
+
+        if (config and config.has_section('logging') and
+                config.has_option('logging', 'format')):
+            self.logging['format'] = config.get('logging',
+                                                'format',
+                                                raw=True)
 
         # keep descriptions ? (used by yamlparser)
         keep_desc = False
