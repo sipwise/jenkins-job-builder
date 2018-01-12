@@ -57,6 +57,8 @@ try:
 except ImportError:
     import mock  # noqa
 
+_TRUE_VALUES = ('true', '1', 'yes')
+
 
 def get_scenarios(fixtures_path, in_ext='yaml', out_ext='xml',
                   plugins_info_ext='plugins_info.yaml',
@@ -124,8 +126,19 @@ class BaseTestCase(testtools.TestCase):
     longMessage = True  # keep normal error message when providing our
 
     def setUp(self):
-
         super(BaseTestCase, self).setUp()
+
+        # If enabled, stdout and/or stderr is captured and will appear in
+        # test results if that test fails.
+        if os.environ.get('OS_STDOUT_CAPTURE') in _TRUE_VALUES:
+            self.stdout = \
+                self.useFixture(fixtures.StringStream('stdout')).stream
+            self.useFixture(fixtures.MonkeyPatch('sys.stdout', self.stdout))
+        if os.environ.get('OS_STDERR_CAPTURE') in _TRUE_VALUES:
+            self.stderr = \
+                self.useFixture(fixtures.StringStream('stderr')).stream
+            self.useFixture(fixtures.MonkeyPatch('sys.stderr', self.stderr))
+
         self.logger = self.useFixture(fixtures.FakeLogger(level=logging.DEBUG))
 
     def _read_utf8_content(self):

@@ -42,6 +42,11 @@ def create_parser():
         default=os.environ.get('JJB_LOG_LEVEL', 'info'),
         help="log level (default: %(default)s) [JJB_LOG_LEVEL]")
     parser.add_argument(
+        '--logging_format',
+        dest='logging_format',
+        default=None,
+        help="Python logging format")
+    parser.add_argument(
         '--ignore-cache',
         action='store_true',
         dest='ignore_cache',

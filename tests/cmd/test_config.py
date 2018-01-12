@@ -83,6 +83,7 @@ class TestConfigs(CmdTestsBase):
         in a warning, while ensuring that missing sections do not
         trigger the same warning if a default value is provided.
         """
+
         args = ['--conf',
                 os.path.join(self.fixtures_path, 'plugin_warning.ini'),
                 'test', 'foo']
@@ -93,16 +94,19 @@ class TestConfigs(CmdTestsBase):
             'old_plugin_no_conf', 'setting', True)
         jenkins_jobs.jjb_config.get_plugin_config(
             'new_plugin', 'setting')
+
+        self.stderr.seek(0)
+        stderr_lines = self.stderr.read()
         self.assertIn(
             'Defining plugin configuration using [old_plugin] is deprecated',
-            self.logger.output)
+            stderr_lines)
         self.assertNotIn(
             'Defining plugin configuration using [old_plugin_no_conf] is '
             'deprecated',
-            self.logger.output)
+            stderr_lines)
         self.assertNotIn(
             'Defining plugin configuration using [new_plugin] is deprecated',
-            self.logger.output)
+            stderr_lines)
 
     def test_config_options_not_replaced_by_cli_defaults(self):
         """
