@@ -16,6 +16,24 @@
       "revId": "e2b63a7030c66c663848cb9bfc43b0747374434d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_45ccbc60",
+        "filename": "requirements.txt",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-01-12T18:11:57Z",
+      "side": 1,
+      "message": "TBH, I do not remember, so I am removing it for the moment.",
+      "parentUuid": "3f4b6375_2d0c35eb",
+      "revId": "e2b63a7030c66c663848cb9bfc43b0747374434d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
