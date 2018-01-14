@@ -56,6 +56,10 @@ try:
 except ImportError:
     import mock  # noqa
 
+# os.path.isfile is mocked to prevent usage of config files that may
+# be existing on the test machine.
+original_isfile = os.path.isfile
+
 
 def get_scenarios(fixtures_path, in_ext='yaml', out_ext='xml',
                   plugins_info_ext='plugins_info.yaml',
@@ -113,6 +117,17 @@ def get_scenarios(fixtures_path, in_ext='yaml', out_ext='xml',
     return scenarios
 
 
+def isfile_sideeffect(*args, **kwargs):
+    if args[0] in [
+            '/etc/jenkins_jobs/jenkins_jobs.ini',
+            os.path.join(os.path.expanduser(
+                '~/.config/jenkins_jobs/jenkins_jobs.ini')),
+            os.path.join(os.path.dirname(__file__), 'jenkins_jobs.ini')]:
+        return False
+
+    return original_isfile(args[0])
+
+
 class BaseTestCase(testtools.TestCase):
 
     # TestCase settings:
@@ -123,6 +138,10 @@ class BaseTestCase(testtools.TestCase):
 
         super(BaseTestCase, self).setUp()
         self.logger = self.useFixture(fixtures.FakeLogger(level=logging.DEBUG))
+
+        patcher = mock.patch('os.path.isfile', side_effect=isfile_sideeffect)
+        self.addCleanup(patcher.stop)
+        self.mock_isfile = patcher.start()
 
     def _read_utf8_content(self):
         # if None assume empty file
