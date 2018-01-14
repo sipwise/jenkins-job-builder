@@ -14,6 +14,7 @@
 # under the License.
 
 import os
+import mock
 
 from testtools import ExpectedException
 
@@ -21,13 +22,27 @@ from jenkins_jobs.errors import JenkinsJobsException
 from tests import base
 from tests.base import mock
 
+# os.path.isfile is mocked to prevent usage of config files that may
+# be existing on the test machine.
+original_isfile = os.path.isfile
 
 class TestCaseModuleDuplicates(base.SingleJobTestCase):
     fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
     scenarios = base.get_scenarios(fixtures_path)
 
+    def isfile_sideeffect(*args, **kwargs):
+
+        if args[0] in [
+            '/etc/jenkins_jobs/jenkins_jobs.ini',
+            os.path.join(os.path.expanduser('~'), '.config', 'jenkins_jobs', 'jenkins_jobs.ini'),
+            os.path.join(os.path.dirname(__file__), 'jenkins_jobs.ini')]:
+                return False
+
+        return original_isfile(args[0])
+
     @mock.patch('jenkins_jobs.builder.logger', autospec=True)
-    def test_yaml_snippet(self, mock_logger):
+    @mock.patch('os.path.isfile', side_effect = isfile_sideeffect)
+    def test_yaml_snippet(self, mock_logger, mock_isfile):
 
         if os.path.basename(self.in_filename).startswith("exception_"):
             with ExpectedException(JenkinsJobsException, "^Duplicate .*"):
