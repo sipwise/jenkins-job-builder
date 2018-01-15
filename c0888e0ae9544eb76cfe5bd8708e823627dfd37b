@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_17f1e76b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-15T13:37:40Z",
+      "side": 1,
+      "message": "Running \u0027tox -e py35\u0027 locally for me shows no difference between this patch and the previous behaviour, so need a bit more info on what is meant by normal test execution, what is it that you see that is hidden by this change?",
+      "revId": "c0888e0ae9544eb76cfe5bd8708e823627dfd37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_97609703",
+        "filename": "tests/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-15T13:37:40Z",
+      "side": 1,
+      "message": "Probably worth just giving a few examples of running this in a comment for reviewers to have an easy way of comparing the differences you are referring to.\n\nPreference is also to avoid \u0027\\\u0027 so the following would be better:\n\n self.stderr \u003d self.useFixture(\n     fixtures.StringStream(\u0027stderr\u0027)).stream",
+      "revId": "c0888e0ae9544eb76cfe5bd8708e823627dfd37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_b7511365",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-15T13:37:40Z",
+      "side": 1,
+      "message": "Can you expand in the commit message as to the effect of these changes?",
+      "revId": "c0888e0ae9544eb76cfe5bd8708e823627dfd37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_976df733",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-15T13:37:40Z",
+      "side": 1,
+      "message": "I\u0027d be inclined to suggest that devs should be running \u0027git clean -X\u0027 or maybe we provide something to install a hook to perform a clean of such files post checkout.\n\nIs it really common to do this automatically for projects?",
+      "revId": "c0888e0ae9544eb76cfe5bd8708e823627dfd37b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
