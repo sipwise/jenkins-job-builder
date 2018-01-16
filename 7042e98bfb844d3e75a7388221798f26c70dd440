@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7f96bb07_912958e7",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 15215
+      },
+      "writtenOn": "2018-01-16T15:02:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df3967d1_c6c0927f",
+      "revId": "7042e98bfb844d3e75a7388221798f26c70dd440",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df3967d1_a6e6ae43",
         "filename": "jenkins_jobs/parser.py",
         "patchSetId": 4
@@ -30,6 +48,30 @@
       "writtenOn": "2017-08-01T16:29:39Z",
       "side": 1,
       "message": "Are we duplicating anything here or does this change mean that this reference should be removed?",
+      "range": {
+        "startLine": 386,
+        "startChar": 12,
+        "endLine": 386,
+        "endChar": 51
+      },
+      "revId": "7042e98bfb844d3e75a7388221798f26c70dd440",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_f1853cd0",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 15215
+      },
+      "writtenOn": "2018-01-16T15:02:44Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "df3967d1_a6e6ae43",
       "range": {
         "startLine": 386,
         "startChar": 12,
