@@ -46,7 +46,7 @@ allow_empty_variables=False
 # if you have multiple jenkins servers.
 [jenkins]
 url=http://localhost:8080/
-query_plugins_info=False
+query_plugins_info=True
 """
 
 CONFIG_REQUIRED_MESSAGE = ("A valid configuration file is required. "
@@ -115,7 +115,10 @@ class JJBConfig(object):
                     raise JJBConfigException(CONFIG_REQUIRED_MESSAGE)
                 else:
                     logger.warning("Config file, {0}, not found. Using "
-                                   "default config values.".format(conf))
+                                   "default conf and setting "
+                                   "query_info_plugins to False."
+                                   .format(conf))
+                    config_parser.set('jenkins', 'query_plugins_info', 'False')
 
         if config_fp is not None:
             if PY2:
