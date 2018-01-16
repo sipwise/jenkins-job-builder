@@ -255,6 +255,7 @@ class JJBConfig(object):
            not config.getboolean(self._section, "query_plugins_info")):
                 logger.debug("Skipping plugin info retrieval")
                 self.builder['plugins_info'] = []
+        self.builder['plugins_info'] = None
 
         self.recursive = config.getboolean('job_builder', 'recursive')
         self.excludes = config.get('job_builder', 'exclude').split(os.pathsep)
