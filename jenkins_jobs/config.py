@@ -46,6 +46,12 @@ allow_empty_variables=False
 # if you have multiple jenkins servers.
 [jenkins]
 url=http://localhost:8080/
+query_plugins_info=True
+"""
+
+""" Configuration to be applied if conf file is missing """
+NOCONF_FILE_CONF= """
+[jenkins]
 query_plugins_info=False
 """
 
@@ -115,13 +121,16 @@ class JJBConfig(object):
                     raise JJBConfigException(CONFIG_REQUIRED_MESSAGE)
                 else:
                     logger.warning("Config file, {0}, not found. Using "
-                                   "default config values.".format(conf))
+                                   "default conf." .format(conf))
+                    logger.warning("Config file, {0}, not found. Setting "
+                                    "query_info_plugins to False."
+                                    .format(conf))
+                    config_fp = StringIO(NOCONF_FILE_CONF)
 
-        if config_fp is not None:
-            if PY2:
-                config_parser.readfp(config_fp)
-            else:
-                config_parser.read_file(config_fp)
+        if PY2:
+            config_parser.readfp(config_fp)
+        else:
+            config_parser.read_file(config_fp)
 
         self.config_parser = config_parser
 
