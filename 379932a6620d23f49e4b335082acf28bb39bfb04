@@ -1,0 +1,124 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_bcceb37f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-16T12:05:58Z",
+      "side": 1,
+      "message": "Assuming you change the base module to fix this for all tests that will use the functions defined rather than just mocking for a single class I would suggest expanding on this to include something of the following:\n\nEnsure all tests return an empty configuration file unless providing a custom test config to prevent the config code from attempting to locate and load system, user or local configuration files that are used to control JJB.",
+      "revId": "379932a6620d23f49e4b335082acf28bb39bfb04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_da6f02fa",
+        "filename": "tests/base.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-16T12:05:58Z",
+      "side": 1,
+      "message": "To fix the problem with picking up a different conf file, what needs to be done is to ensure there is an empty default conf file (either checked in or created on the fly) in the tests directory and then always return that if the test doesn\u0027t specify a custom conf.\n\nThat will ensure that all tests are isolated, not just the set by the change in the tests/duplicates/test_duplicates.py file.\n\nAdding the following here along with a dummy empty conf (default_conf.ini below) file should be sufficient:\n\n        else:\n            conf_filename \u003d os.path.join(\u0027tests\u0027, \u0027default_conf.ini\u0027)",
+      "revId": "379932a6620d23f49e4b335082acf28bb39bfb04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_5c33eff6",
+        "filename": "tests/duplicates/test_duplicates.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-16T12:05:58Z",
+      "side": 1,
+      "message": "I think this should be fixed in the base module by explicitly returning an empty conf for all tests that don\u0027t explicitly define their own.",
+      "revId": "379932a6620d23f49e4b335082acf28bb39bfb04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_3ca2a3fe",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-16T12:05:58Z",
+      "side": 1,
+      "message": "We should really remove this and he PYTHONHASHSEED below at some point, with the switch to ordered dicts in the JJB configuration this problem was fixed. Just a note, unrelated to this patch.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 65
+      },
+      "revId": "379932a6620d23f49e4b335082acf28bb39bfb04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_5c6bef83",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-16T12:05:58Z",
+      "side": 1,
+      "message": "With your suggested config I was able to understand the change for the test to prevent the config issue but I\u0027ve not seen how these affect the behaviour? What am I missing?\n\nWere these and the associated python code changes belts and braces approach to capturing stdout from tests? I see they are defined in the testr.conf so I\u0027d be more inclined to set passenv to allow the user to set them as otherwise, but even then it would be good to know (and record in the commit message) what effect they can be used for.",
+      "range": {
+        "startLine": 10,
+        "startChar": 9,
+        "endLine": 12,
+        "endChar": 28
+      },
+      "revId": "379932a6620d23f49e4b335082acf28bb39bfb04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_9c6bb7b5",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-16T12:05:58Z",
+      "side": 1,
+      "message": "Looks like alternative to deleting the *.pyc files below? Are you planning to drop the explicit find/delete in place of this?",
+      "range": {
+        "startLine": 13,
+        "startChar": 9,
+        "endLine": 13,
+        "endChar": 34
+      },
+      "revId": "379932a6620d23f49e4b335082acf28bb39bfb04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
