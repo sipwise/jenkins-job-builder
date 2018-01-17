@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_d1c6d968",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-01-17T14:54:14Z",
+      "side": 1,
+      "message": "Not sure we need 2 separate messages. Otherwise I think the patch is fine.",
+      "revId": "14dcebd096b5b56d512ff7be8baa64e9120eae81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
