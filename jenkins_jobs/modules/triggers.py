@@ -35,6 +35,7 @@ import re
 import sys
 import xml.etree.ElementTree as XML
 
+from oslo_utils.strutils import bool_from_string
 import six
 
 from jenkins_jobs.errors import InvalidAttributeError
@@ -204,7 +205,7 @@ def build_gerrit_skip_votes(xml_parent, data):
     skip_vote_node = XML.SubElement(xml_parent, 'skipVote')
     skip_vote = data.get('skip-vote', {})
     for result_kind, tag_name in outcomes:
-        if skip_vote.get(result_kind, False):
+        if bool_from_string(skip_vote.get(result_kind), default=False):
             XML.SubElement(skip_vote_node, tag_name).text = 'true'
         else:
             XML.SubElement(skip_vote_node, tag_name).text = 'false'
