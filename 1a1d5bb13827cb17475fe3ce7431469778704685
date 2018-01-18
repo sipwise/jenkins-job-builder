@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_7458e92f",
+        "filename": "tests/base.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-18T15:34:56Z",
+      "side": 1,
+      "message": "I\u0027m not sure using a mock is the best approach, as that means anything testing configuration and inheriting from this class will potentially have issues, hence my suggestion about returning an alternative dummy config file above.",
+      "revId": "1a1d5bb13827cb17475fe3ce7431469778704685",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_149ac5b7",
+        "filename": "tox.ini",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-18T15:34:56Z",
+      "side": 1,
+      "message": "Are these no longer required with the setting PYTHONDONTWRITEBYTECODE above?",
+      "revId": "1a1d5bb13827cb17475fe3ce7431469778704685",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
