@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_5bb715f6",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-18T19:43:40Z",
+      "side": 1,
+      "message": "As the default Conf file has already been loaded, you can use the configparser api to set the section and option directly instead of needing to load another file.",
+      "revId": "b20ffc0a60e605898654bd609d9518ede379c3ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
