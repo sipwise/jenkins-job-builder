@@ -16,6 +16,24 @@
       "revId": "b20ffc0a60e605898654bd609d9518ede379c3ba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_3b448973",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 27501
+      },
+      "writtenOn": "2018-01-18T19:56:17Z",
+      "side": 1,
+      "message": "Sure, I initially did it this way but changed it to this because it is easier if other settings need to be changed if no conf file is found.\n\nDo you want me to go ahead and do it the way you proposed?",
+      "parentUuid": "7f96bb07_5bb715f6",
+      "revId": "b20ffc0a60e605898654bd609d9518ede379c3ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
