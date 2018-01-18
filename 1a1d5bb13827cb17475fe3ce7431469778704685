@@ -33,6 +33,24 @@
       "revId": "1a1d5bb13827cb17475fe3ce7431469778704685",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f96bb07_7b5bf4f4",
+        "filename": "tox.ini",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-01-18T17:52:47Z",
+      "side": 1,
+      "message": "Nope, they are needed. Think that these files can appear if the user runs code outside tox, if he installs the library in editable mode. We have no control over that, so the best thing is to perform cleanup before running the tests.\n\nI hope you are not worried about adding less than a second to execution time ;)\n\nIf you want I can add the \"- \" prefix to these commands, making tox ignore their failure. This would probably address the concern of potential Windows users without find command.",
+      "parentUuid": "7f96bb07_149ac5b7",
+      "revId": "1a1d5bb13827cb17475fe3ce7431469778704685",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
