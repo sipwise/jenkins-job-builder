@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_dec1e155",
+        "filename": "tests/base.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-18T15:34:56Z",
+      "side": 1,
+      "message": "If you just return a suitable empty Conf file here, there is no need for the mocks below.",
+      "revId": "3bd8ec5b69fd08c15f08ab14dbc754fa903452be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
