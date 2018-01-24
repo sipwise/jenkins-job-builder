@@ -51,7 +51,7 @@ import jenkins_jobs.modules.base
 from jenkins_jobs.modules.helpers import convert_mapping_to_xml
 
 
-COLUMN_DICT = {
+DEFAULT_COLUMN_DICT = {
     'status': 'hudson.views.StatusColumn',
     'weather': 'hudson.views.WeatherColumn',
     'job': 'hudson.views.JobColumn',
@@ -61,8 +61,24 @@ COLUMN_DICT = {
     'build-button': 'hudson.views.BuildButtonColumn',
     'last-stable': 'hudson.views.LastStableColumn',
 }
+
 DEFAULT_COLUMNS = ['status', 'weather', 'job', 'last-success', 'last-failure',
-                   'last-duration', 'build-button']
+                   'last-duration', 'build-button', 'last-stable']
+
+PLUGIN_COLUMNS = ['robot-list', 'find-bugs', 'jacoco', 'git-branch',
+                  'schedule-build', 'priority-sorter', 'build-filter',
+                  'desc']
+
+PLUGIN_COLUMN_DICT = {
+    'robot-list': 'hudson.plugins.robot.view.RobotListViewColum',
+    'find-bugs': 'hudson.plugins.findbugs.FindBugsColumn',
+    'jacoco': 'hudson.plugins.jacococoveragecolumn.JaCoCoColumn',
+    'git-branch': 'hudson.plugins.git.GitBranchSpecifierColumn',
+    'schedule-build': 'org.jenkinsci.plugins.schedulebuild.ScheduleBuildButtonColumn',
+    'priority-sorter': 'jenkins.advancedqueue.PrioritySorterJobColumn',
+    'build-filter': 'hudson.views.BuildFilterColumn',
+    'desc': 'jenkins.branch.DescriptionColumn',
+}
 
 
 class List(jenkins_jobs.modules.base.Base):
@@ -90,12 +106,21 @@ class List(jenkins_jobs.modules.base.Base):
                 XML.SubElement(jn_xml, 'string').text = str(jobname)
         XML.SubElement(root, 'jobFilters')
 
+        # Defalt columns
         c_xml = XML.SubElement(root, 'columns')
-        columns = data.get('columns', DEFAULT_COLUMNS)
+        dcolumns = data.get('columns', DEFAULT_COLUMNS)
 
-        for column in columns:
-            if column in COLUMN_DICT:
-                XML.SubElement(c_xml, COLUMN_DICT[column])
+        for dcolumn in dcolumns:
+            if dcolumn in DEFAULT_COLUMN_DICT:
+                XML.SubElement(c_xml, DEFAULT_COLUMN_DICT[dcolumn])
+
+        # Additional columns with plugin support
+        pcolumns = data.get('columns', [])
+        if pcolumns is not None:
+            for pcolumn in pcolumns:
+                if pcolumn in PLUGIN_COLUMN_DICT:
+                    XML.SubElement(c_xml, PLUGIN_COLUMN_DICT[pcolumn])
+
         mapping = [
             ('regex', 'includeRegex', None),
             ('recurse', 'recurse', False),

@@ -5,12 +5,6 @@
   <filterExecutors>true</filterExecutors>
   <filterQueue>true</filterQueue>
   <properties class="hudson.model.View$PropertyList"/>
-  <jobNames>
-    <comparator class="hudson.util.CaseInsensitiveComparator"/>
-    <string>job-name-1</string>
-    <string>job-name-2</string>
-    <string>job-name-3</string>
-  </jobNames>
   <jobFilters/>
   <columns>
     <hudson.views.StatusColumn/>
@@ -21,14 +15,6 @@
     <hudson.views.LastDurationColumn/>
     <hudson.views.BuildButtonColumn/>
     <hudson.views.LastStableColumn/>
-    <hudson.plugins.robot.view.RobotListViewColum/>
-    <hudson.plugins.findbugs.FindBugsColumn/>
-    <hudson.plugins.jacococoveragecolumn.JaCoCoColumn/>
-    <hudson.plugins.git.GitBranchSpecifierColumn/>
-    <org.jenkinsci.plugins.schedulebuild.ScheduleBuildButtonColumn/>
-    <jenkins.advancedqueue.PrioritySorterJobColumn/>
-    <hudson.views.BuildFilterColumn/>
-    <jenkins.branch.DescriptionColumn/>
   </columns>
   <recurse>true</recurse>
   <statusFilter>false</statusFilter>
