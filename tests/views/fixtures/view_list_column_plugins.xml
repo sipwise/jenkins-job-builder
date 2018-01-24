@@ -5,12 +5,6 @@
   <filterExecutors>true</filterExecutors>
   <filterQueue>true</filterQueue>
   <properties class="hudson.model.View$PropertyList"/>
-  <jobNames>
-    <comparator class="hudson.util.CaseInsensitiveComparator"/>
-    <string>job-name-1</string>
-    <string>job-name-2</string>
-    <string>job-name-3</string>
-  </jobNames>
   <jobFilters/>
   <columns>
     <hudson.views.StatusColumn/>
