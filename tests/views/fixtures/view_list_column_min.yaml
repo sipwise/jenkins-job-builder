@@ -1,0 +1,7 @@
+name: list-view-name01
+view-type: list
+description: 'Sample description'
+filter-executors: true
+filter-queue: true
+recurse: true
+status-filter: false
