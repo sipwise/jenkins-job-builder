@@ -27,6 +27,11 @@ to the :ref:`view_list` definition.
     * **filter-queue** (`bool`): Show only included jobs in builder
       queue. (default false)
     * **job-name** (`list`): List of jobs to be included.
+    * **job-filters** (`dict`): Job filters to be included.
+            :most-recent: * **max-to-include** (`int`): Maximum number of jobs
+                            to include. (default 0)
+                          * **check-start-time** (`bool`): Check job start time
+                            (default false)
     * **columns** (`list`): List of columns to be shown in view.
     * **regex** (`str`): . Regular expression for selecting jobs
       (optional)
@@ -50,7 +55,6 @@ import jenkins_jobs.modules.base
 
 from jenkins_jobs.modules.helpers import convert_mapping_to_xml
 
-
 COLUMN_DICT = {
     'status': 'hudson.views.StatusColumn',
     'weather': 'hudson.views.WeatherColumn',
@@ -63,7 +67,6 @@ COLUMN_DICT = {
 }
 DEFAULT_COLUMNS = ['status', 'weather', 'job', 'last-success', 'last-failure',
                    'last-duration', 'build-button']
-
 
 class List(jenkins_jobs.modules.base.Base):
     sequence = 0
@@ -88,7 +91,22 @@ class List(jenkins_jobs.modules.base.Base):
         if jobnames is not None:
             for jobname in jobnames:
                 XML.SubElement(jn_xml, 'string').text = str(jobname)
-        XML.SubElement(root, 'jobFilters')
+
+        job_filter_xml = XML.SubElement(root, 'jobFilters')
+        jobfilters = data.get('job-filters', [])
+
+        mapping = [
+            ('max-to-include', 'maxToInclude', '0'),
+            ('check-start-time', 'checkStartTime', False),
+        ]
+
+        for jobfilter in jobfilters:
+            if 'most-recent' in jobfilter:
+                mr_xml = XML.SubElement(job_filter_xml,
+                                       'hudson.views.MostRecentJobsFilter')
+                mr_xml.set('plugin', 'view-job-filters')
+                mr_data = jobfilter.get('most-recent')
+                convert_mapping_to_xml(mr_xml, mr_data, mapping, fail_required=True)
 
         c_xml = XML.SubElement(root, 'columns')
         columns = data.get('columns', DEFAULT_COLUMNS)
@@ -100,6 +118,7 @@ class List(jenkins_jobs.modules.base.Base):
             ('regex', 'includeRegex', None),
             ('recurse', 'recurse', False),
             ('status-filter', 'statusFilter', None)]
+
         convert_mapping_to_xml(root, data, mapping, fail_required=False)
 
         return root
