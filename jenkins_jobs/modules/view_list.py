@@ -27,6 +27,9 @@ to the :ref:`View-list` definition.
     * **filter-queue** (`bool`): Show only included jobs in builder
       queue. (default false)
     * **job-name** (`list`): List of jobs to be included.
+    * **job-filters** (`dict`): Job filters to be included.
+            :most-recent: * **max-to-include** (`int`)
+                          * **check-start-time** (`bool`)
     * **columns** (`list`): List of columns to be shown in view.
     * **regex** (`str`): . Regular expression for selecting jobs
       (optional)
@@ -45,11 +48,13 @@ Example:
         /../../tests/views/fixtures/view_list002.yaml
 """
 
+import logging
 import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 
 from jenkins_jobs.modules.helpers import convert_mapping_to_xml
 
+logger = logging.getLogger(__name__)
 
 COLUMN_DICT = {
     'status': 'hudson.views.StatusColumn',
@@ -64,6 +69,7 @@ COLUMN_DICT = {
 DEFAULT_COLUMNS = ['status', 'weather', 'job', 'last-success', 'last-failure',
                    'last-duration', 'build-button']
 
+JOB_FILTERS = ['most-recent']
 
 class List(jenkins_jobs.modules.base.Base):
     sequence = 0
@@ -88,7 +94,20 @@ class List(jenkins_jobs.modules.base.Base):
         if jobnames is not None:
             for jobname in jobnames:
                 XML.SubElement(jn_xml, 'string').text = str(jobname)
-        XML.SubElement(root, 'jobFilters')
+
+        job_filter_xml = XML.SubElement(root, 'jobFilters')
+        jobfilters = data.get('job-filters', JOB_FILTERS)
+
+        for jobfilter in jobfilters:
+            if jobfilter['most-recent']:
+                mr_xml = XML.SubElement(job_filter_xml,
+                                       'hudson.model.MostRecentJobsFilter')
+                mr_xml.set('plugin', 'view-job-filter')
+                most_recent = jobfilter['most-recent']
+                if most_recent['max-to-include']:
+                    XML.SubElement(mr_xml, 'maxToInclude').text = str(most_recent['max-to-include'])
+                if most_recent['check-start-time']:
+                    XML.SubElement(mr_xml, 'checkStartTime').text = str(most_recent['check-start-time'])
 
         c_xml = XML.SubElement(root, 'columns')
         columns = data.get('columns', DEFAULT_COLUMNS)
@@ -100,6 +119,7 @@ class List(jenkins_jobs.modules.base.Base):
             ('regex', 'includeRegex', None),
             ('recurse', 'recurse', False),
             ('status-filter', 'statusFilter', None)]
+
         convert_mapping_to_xml(root, data, mapping, fail_required=False)
 
         return root
