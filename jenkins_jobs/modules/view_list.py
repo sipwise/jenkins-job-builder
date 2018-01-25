@@ -67,6 +67,15 @@ class List(jenkins_jobs.modules.base.Base):
             ('filter-queue', 'filterQueue', False)]
         convert_mapping_to_xml(root, data, mapping, fail_required=True)
 
+        mr_xml = XML.SubElement(root, 'jobFilters')
+        XML.SubElement(mr_xml, 'hudson.views.MostRecentJobsFilter' 'plugin=view-job-filter')
+
+        mapping = [
+            ('max-to-include', 'maxToInclude', None),
+            ('start-time', 'checkStartTime', False)]
+
+        convert_mapping_to_xml(root, data, mapping, fail_required=True)
+
         XML.SubElement(root, 'properties',
                        {'class': 'hudson.model.View$PropertyList'})
 
@@ -77,7 +86,6 @@ class List(jenkins_jobs.modules.base.Base):
         if jobnames is not None:
             for jobname in jobnames:
                 XML.SubElement(jn_xml, 'string').text = str(jobname)
-        XML.SubElement(root, 'jobFilters')
 
         c_xml = XML.SubElement(root, 'columns')
         columns = data.get('columns', DEFAULT_COLUMNS)
@@ -89,6 +97,7 @@ class List(jenkins_jobs.modules.base.Base):
             ('regex', 'includeRegex', None),
             ('recurse', 'recurse', False),
             ('status-filter', 'statusFilter', None)]
+
         convert_mapping_to_xml(root, data, mapping, fail_required=False)
 
         return root
