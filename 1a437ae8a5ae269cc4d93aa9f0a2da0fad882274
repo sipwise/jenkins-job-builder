@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_ab7a6885",
+        "filename": "jenkins_jobs/cli/subcommand/update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2018-01-25T00:11:35Z",
+      "side": 1,
+      "message": "The `pep8` test is failing because there are too many lines here. Between the last line of one method in a class and the first line of the next there is only supposed to be one space.",
+      "revId": "1a437ae8a5ae269cc4d93aa9f0a2da0fad882274",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
