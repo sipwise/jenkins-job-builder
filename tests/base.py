@@ -49,13 +49,6 @@ from jenkins_jobs.registry import ModuleRegistry
 from jenkins_jobs.xml_config import XmlJob
 from jenkins_jobs.xml_config import XmlJobGenerator
 
-# This dance deals with the fact that we want unittest.mock if
-# we're on Python 3.4 and later, and non-stdlib mock otherwise.
-try:
-    from unittest import mock
-except ImportError:
-    import mock  # noqa
-
 
 def get_scenarios(fixtures_path, in_ext='yaml', out_ext='xml',
                   plugins_info_ext='plugins_info.yaml',
