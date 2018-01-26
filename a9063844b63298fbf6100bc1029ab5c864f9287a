@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_9ef694f9",
+        "filename": "test-requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-01-26T16:46:04Z",
+      "side": 1,
+      "message": "I\u0027m not sure if pinning to the absolute latest version is a good idea. RTD for example has 1.6.5 installed so would fail in the RTD build. Perhaps we can set \u003e\u003d1.6.0 here?",
+      "revId": "a9063844b63298fbf6100bc1029ab5c864f9287a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
