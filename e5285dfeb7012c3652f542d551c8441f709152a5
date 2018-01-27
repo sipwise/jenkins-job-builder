@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_af3a2a95",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-27T18:25:16Z",
+      "side": 1,
+      "message": "Was this intentional? Seems like initially taking what the user set on the command line and then overriding with a configuration file option. Would have expected it to be the other way around.",
+      "revId": "e5285dfeb7012c3652f542d551c8441f709152a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_afbf8ace",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-27T18:25:16Z",
+      "side": 1,
+      "message": "With a default provided in the config above, there shouldn\u0027t be any need to test for the section or option to exist. Should just be able to just query for the value",
+      "revId": "e5285dfeb7012c3652f542d551c8441f709152a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_afa46aba",
+        "filename": "tools/configs/non-defaults.conf",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-27T18:25:16Z",
+      "side": 1,
+      "message": "This is the same as the default rather than a non-default value?",
+      "revId": "e5285dfeb7012c3652f542d551c8441f709152a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
