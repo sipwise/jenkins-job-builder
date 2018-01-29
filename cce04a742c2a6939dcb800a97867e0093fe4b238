@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_76414439",
+        "filename": "jenkins_jobs/modules/view_list.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-01-29T16:30:28Z",
+      "side": 1,
+      "message": "What are the default values for these 2 options?",
+      "revId": "cce04a742c2a6939dcb800a97867e0093fe4b238",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_3b2f25a2",
+        "filename": "jenkins_jobs/modules/view_list.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-01-29T16:30:28Z",
+      "side": 1,
+      "message": "Probably don\u0027t need this import?",
+      "revId": "cce04a742c2a6939dcb800a97867e0093fe4b238",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_7b25adc1",
+        "filename": "jenkins_jobs/modules/view_list.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-01-29T16:30:28Z",
+      "side": 1,
+      "message": "Not sure why a logger is being added here.",
+      "revId": "cce04a742c2a6939dcb800a97867e0093fe4b238",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_b657cc02",
+        "filename": "jenkins_jobs/modules/view_list.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-01-29T16:30:28Z",
+      "side": 1,
+      "message": "I believe this will fail and crash JJB if max-t-include is not provided.\n\nconvert_mapping_to_xml provides some handy error handling features I think it would be better to write the code here using that for both max-to-include and check-start-time below.",
+      "range": {
+        "startLine": 107,
+        "startChar": 19,
+        "endLine": 107,
+        "endChar": 48
+      },
+      "revId": "cce04a742c2a6939dcb800a97867e0093fe4b238",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_b6090c2d",
+        "filename": "jenkins_jobs/modules/view_list.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-01-29T16:30:28Z",
+      "side": 1,
+      "message": "Unnecessary new line",
+      "revId": "cce04a742c2a6939dcb800a97867e0093fe4b238",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
