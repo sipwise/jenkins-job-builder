@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_e0dfaf37",
+        "filename": "jenkins_jobs/formatter.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-30T13:08:55Z",
+      "side": 1,
+      "message": "I\u0027m not sure this is a great idea, it means that now everything to be formatted is tested against this behaviour which is only valid once per template.\n\nWould have preferred either escaping the the braces as is done in local_yaml, or by having VerbatimString providing it\u0027s own format method.",
+      "revId": "28cab53d5d78438949b1ca14b50d0ea99377eed9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_40c78365",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-01-30T13:08:55Z",
+      "side": 1,
+      "message": "Probably should have need after the next line, as otherwise it allows the defaults to replace template-name. Unlikely someone really intended to do that, but it would probably surprise them if they did accidentally set it.",
+      "revId": "28cab53d5d78438949b1ca14b50d0ea99377eed9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
