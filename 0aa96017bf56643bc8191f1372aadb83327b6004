@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f93b717_53052c45",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-01-30T03:45:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f93b717_7b6dad30",
+      "revId": "0aa96017bf56643bc8191f1372aadb83327b6004",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f93b717_7b284de1",
         "filename": "jenkins_jobs/modules/view_list.py",
         "patchSetId": 1
@@ -53,6 +71,24 @@
       "writtenOn": "2018-01-29T16:25:36Z",
       "side": 1,
       "message": "Default columns should only be the default columns that Jenkins produces on a fresh install of Jenkins. Most of the views being added here come from different Jenkins plugins that need to be installed to make them available.",
+      "revId": "0aa96017bf56643bc8191f1372aadb83327b6004",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_3329809a",
+        "filename": "jenkins_jobs/modules/view_list.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-01-30T03:45:50Z",
+      "side": 1,
+      "message": "what is the better alternative here?",
+      "parentUuid": "5f93b717_bb357548",
       "revId": "0aa96017bf56643bc8191f1372aadb83327b6004",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
