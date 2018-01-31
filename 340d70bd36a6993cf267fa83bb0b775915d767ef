@@ -16,6 +16,24 @@
       "revId": "340d70bd36a6993cf267fa83bb0b775915d767ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_2299fa77",
+        "filename": "tests/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 27651
+      },
+      "writtenOn": "2018-01-31T13:56:07Z",
+      "side": 1,
+      "message": "\u003e \"is not None\" is superfluous. \"if self.plugins_info_filename\" is\n \u003e sufficient.\n\nIt was just a copypaste from\nhttps://github.com/openstack-infra/jenkins-job-builder/blob/92fcbab1230f2b6e421062714dc7bc6a0ffd3e37/tests/base.py#L168.\nShall I add another commit that drops \"is not None\" from there first?",
+      "parentUuid": "5f93b717_e27c7284",
+      "revId": "340d70bd36a6993cf267fa83bb0b775915d767ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
