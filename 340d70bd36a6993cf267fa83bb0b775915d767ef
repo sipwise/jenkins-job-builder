@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_e27c7284",
+        "filename": "tests/base.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-01-31T13:40:26Z",
+      "side": 1,
+      "message": "\"is not None\" is superfluous. \"if self.plugins_info_filename\" is sufficient.",
+      "revId": "340d70bd36a6993cf267fa83bb0b775915d767ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
