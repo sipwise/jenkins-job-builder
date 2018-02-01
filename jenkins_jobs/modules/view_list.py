@@ -62,7 +62,7 @@ COLUMN_DICT = {
     'last-stable': 'hudson.views.LastStableColumn',
 }
 DEFAULT_COLUMNS = ['status', 'weather', 'job', 'last-success', 'last-failure',
-                   'last-duration', 'build-button']
+                   'last-duration', 'build-button', 'last-stable']
 
 
 class List(jenkins_jobs.modules.base.Base):
