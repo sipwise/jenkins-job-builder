@@ -991,6 +991,12 @@ def github_pull_request(registry, xml_parent, data):
         (optional)
     :arg bool cancel-builds-on-update: cancel existing builds when a PR is
         updated (optional)
+    :arg list included-regions: Each inclusion uses regular expression pattern matching,
+                                and must be separated by a new line. An empty list implies
+                                that everything is included. (optional)
+    :arg list excluded-regions: Each exclusion uses regular expression pattern matching,
+                                and must be separated by a new line. Exclusions take precedence over inclusions,
+                                if there is an overlap between included and excluded regions. (optional)
 
     Example:
 
@@ -1013,6 +1019,10 @@ def github_pull_request(registry, xml_parent, data):
     black_list_labels_string = "\n".join(data.get('black-list-labels', []))
     XML.SubElement(ghprb, 'blackListLabels').text = black_list_labels_string
     XML.SubElement(ghprb, 'cron').text = data.get('cron', '')
+    excluded_regions_string = "\n".join(data.get('excluded-regions', []))
+    XML.SubElement(ghprb, 'excludedRegions').text = excluded_regions_string
+    included_regions_string = "\n".join(data.get('included-regions', []))
+    XML.SubElement(ghprb, 'includedRegions').text = included_regions_string
 
     build_desc_template = data.get('build-desc-template', '')
     if build_desc_template:
