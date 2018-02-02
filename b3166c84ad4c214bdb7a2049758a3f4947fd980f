@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f93b717_594e3497",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 999,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-02-02T23:56:49Z",
+      "side": 1,
+      "message": "these lines might be exceeding the limit causing the tox verify/pep jobs to fail.",
+      "range": {
+        "startLine": 994,
+        "startChar": 2,
+        "endLine": 999,
+        "endChar": 104
+      },
+      "revId": "b3166c84ad4c214bdb7a2049758a3f4947fd980f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f93b717_3947a879",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1025,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-02-02T23:56:49Z",
+      "side": 1,
+      "message": "this requires updating the tests (.xml/.yaml).",
+      "range": {
+        "startLine": 1022,
+        "startChar": 0,
+        "endLine": 1025,
+        "endChar": 75
+      },
+      "revId": "b3166c84ad4c214bdb7a2049758a3f4947fd980f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
