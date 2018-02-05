@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_cbeca1f5",
+        "filename": "jenkins_jobs/modules/view_list.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-02-05T01:41:05Z",
+      "side": 1,
+      "message": "Thanh: I have used the convert mapping function here, but this code is not the equivalent of the above, which is setting the values to 0 and False always, instead of reading the inputs from the yaml file. \n\nexpected output: \n      \u003cjobFilters\u003e\n        \u003chudson.views.MostRecentJobsFilter plugin\u003d\"view-job-filters\"\u003e\n          \u003cmaxToInclude\u003e25\u003c/maxToInclude\u003e\n          \u003ccheckStartTime\u003etrue\u003c/checkStartTime\u003e\n        \u003c/hudson.views.MostRecentJobsFilter\u003e\n      \u003c/jobFilters\u003e\n\noutput returned the mapping function:\n  \u003cjobFilters\u003e\n    \u003chudson.views.MostRecentJobsFilter plugin\u003d\"view-job-filter\"\u003e\n      \u003cmaxToInclude\u003e0\u003c/maxToInclude\u003e\n      \u003ccheckStartTime\u003efalse\u003c/checkStartTime\u003e\n    \u003c/hudson.views.MostRecentJobsFilter\u003e",
+      "range": {
+        "startLine": 118,
+        "startChar": 0,
+        "endLine": 126,
+        "endChar": 81
+      },
+      "revId": "9f2a72266b99d87180eabcd3fcc4d6aed65cf000",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
