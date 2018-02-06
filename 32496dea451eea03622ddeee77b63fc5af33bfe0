@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_bb985c6a",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2018-02-06T08:09:08Z",
+      "side": 1,
+      "message": "I didn\u0027t find any place to set this parameter in the plugin, so I suggest remove this document.",
+      "range": {
+        "startLine": 429,
+        "startChar": 4,
+        "endLine": 430,
+        "endChar": 29
+      },
+      "revId": "32496dea451eea03622ddeee77b63fc5af33bfe0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
