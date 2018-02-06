@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_b6a4f109",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 894,
+      "author": {
+        "id": 9725
+      },
+      "writtenOn": "2018-02-06T08:40:41Z",
+      "side": 1,
+      "message": "Any link about this plugin? didn\u0027t find it in jenkins plugin repo",
+      "range": {
+        "startLine": 894,
+        "startChar": 43,
+        "endLine": 894,
+        "endChar": 63
+      },
+      "revId": "3b0a7d9f5cb36202971a2fabc7bb819fa6324d77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
