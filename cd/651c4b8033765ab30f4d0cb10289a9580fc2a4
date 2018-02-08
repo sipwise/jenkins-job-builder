@@ -1,0 +1,10 @@
+Code-Review+2: Thanh Ha <zxiiro@gmail.com>
+Code-Review+2: Darragh Bailey <daragh.bailey@gmail.com>
+Code-Review+1: Anil Belur <askb23@gmail.com>
+Workflow+1: Thanh Ha <zxiiro@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 08 Feb 2018 04:08:00 +0000
+Reviewed-on: https://review.openstack.org/539511
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
