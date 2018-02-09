@@ -1,0 +1,9 @@
+Code-Review+2: Wayne Warren <wayne.warren.s@gmail.com>
+Code-Review+2: Dong Ma <winterma.dong@gmail.com>
+Workflow+1: Dong Ma <winterma.dong@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 09 Feb 2018 15:51:25 +0000
+Reviewed-on: https://review.openstack.org/542887
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
