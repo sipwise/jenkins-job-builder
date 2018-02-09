@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_94d5bfe7",
+        "filename": "jenkins_jobs/modules/view_list.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-02-09T16:47:49Z",
+      "side": 0,
+      "message": "Randomly deleted line?",
+      "revId": "92fcbab1230f2b6e421062714dc7bc6a0ffd3e37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

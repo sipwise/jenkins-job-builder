@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_94c05f2c",
+        "filename": "jenkins_jobs/modules/view_list.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-02-09T16:47:49Z",
+      "side": 1,
+      "message": "Minor nit but I\u0027d prefer if patches did not touch code outside of the zone that\u0027s relevant to the patch.",
+      "revId": "5ac990ae9c8c09c335db8dee9bd133cb40b93fbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
