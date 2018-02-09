@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_502ae02b",
+        "filename": "jenkins_jobs/modules/view_list.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-02-09T18:57:49Z",
+      "side": 1,
+      "message": "Newline?",
+      "revId": "525565724a73bd37376e8555fe8584cee096359d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
