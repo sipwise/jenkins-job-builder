@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_eeee6feb",
+        "filename": "tests/properties/fixtures/priority_sorter.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 13487
+      },
+      "writtenOn": "2018-02-13T15:15:03Z",
+      "side": 1,
+      "message": "Some poor fool somewhere in the world whose IT/Operations team refuses to upgrade to newer versions of Jenkins plugins may be depending on this test case to ensure that JJB consistently generates jobs for their CI/CD setup. (Maybe not very likely, but that\u0027s still the reason that we write test cases -- to prevent unexpected backwards incompatible changes)\n\nA better way to achieve your goal would be to make the generated xml contingent on the version of the plugin installed on the Jenkins server and write a new test case with test fixtures that set the plugin version appropriately.\n\nThe hipchat plugin module has a good example of this:\n\nhttps://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/jenkins_jobs/modules/hipchat_notif.py?id\u003d9663d32c605469d0495bd375fd87b1fbd06821d2#n136\n\nThe plugin version string is obtained at line 136, parsed at 137, and compared for version-dependent xml generation at line 139.\n\nYou can fool the new test case into thinking there is a new version of the priority queue plugin installed using a file called \"priority_sorterNNN.plugins_info.yaml (assuming your new test case has files named \"priority_sorterNNN.{yaml,xml}\" similar to the way the hipchat plugin tests are structured:\n\nhttps://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/tests/hipchat/fixtures?id\u003d9663d32c605469d0495bd375fd87b1fbd06821d2\n\nThe trick will be to figure out which version is the earliest version with these changes. I\u0027m guessing based on how old the priority sorter module in this repo is (circa 2013) that the old generated xml targets version 1.X",
+      "revId": "54a7bd86d0fd06020f0e25fa5814b4fc9161c64c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
