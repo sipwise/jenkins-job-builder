@@ -32,6 +32,18 @@ to the :ref:`view_list` definition.
                             to include. (default 0)
                           * **check-start-time** (`bool`): Check job start time
                             (default false)
+            :build-duration: * **match-type** ('str'): Jobs that match a filter
+                            to include. (default includeMatched)
+                            * **build-duration-type** ('str'): Duration of the
+                            build. (default Latest)
+                            * **amount-type**: ('str'): Duration in hours, days
+                            or builds. (default Hours)
+                            * **amount**: ('int'): How far back to check.
+                            (default 0)
+                            * **less-than**: ('bool'): Check build duration less
+                            than or more than. (default True)
+                            * **build-duration-minutes**: ('int'): Build
+                            duration minutes. (default 0)
     * **columns** (`list`): List of columns to be shown in view.
     * **regex** (`str`): . Regular expression for selecting jobs
       (optional)
@@ -109,6 +121,22 @@ class List(jenkins_jobs.modules.base.Base):
                 mr_xml.set('plugin', 'view-job-filters')
                 mr_data = jobfilter.get('most-recent')
                 convert_mapping_to_xml(mr_xml, mr_data, mapping,
+                                      fail_required=True)
+
+            if 'build-duration' in jobfilter:
+                bd_xml = XML.SubElement(job_filter_xml,
+                                     'hudson.views.BuildDurationFilter')
+                bd_xml.set('plugin', 'view-job-filters')
+                bd_data = jobfilter.get('build-duration')
+                mapping = [
+                    ('match-type', 'includeExcludeTypeString', 'includeMatched'),
+                    ('build-duration-type', 'buildCountTypeString', None),
+                    ('amount-type', 'amountTypeString', None),
+                    ('amount', 'amount', '0'),
+                    ('less-than', 'lessThan', True),
+                    ('build-duration-minutes', 'buildDurationMinutes', '0'),
+                ]
+                convert_mapping_to_xml(bd_xml, bd_data, mapping,
                                       fail_required=True)
 
         c_xml = XML.SubElement(root, 'columns')
