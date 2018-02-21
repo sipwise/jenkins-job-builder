@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_7f6007a6",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 7015,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-02-21T22:32:14Z",
+      "side": 1,
+      "message": "minor nit, do we need to set this as detault value as \u00270\u0027",
+      "range": {
+        "startLine": 7014,
+        "startChar": 1,
+        "endLine": 7015,
+        "endChar": 49
+      },
+      "revId": "c098805f69dec4c4760e5b559419d99c2c8bfd57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
