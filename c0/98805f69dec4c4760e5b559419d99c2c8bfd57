@@ -1,0 +1,10 @@
+Code-Review+2: Thanh Ha <zxiiro@gmail.com>
+Code-Review+1: Anil Belur <askb23@gmail.com>
+Code-Review+2: Dong Ma <winterma.dong@gmail.com>
+Workflow+1: Dong Ma <winterma.dong@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 22 Feb 2018 03:10:13 +0000
+Reviewed-on: https://review.openstack.org/532797
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
