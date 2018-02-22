@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_64a4e24b",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-02-22T20:16:17Z",
+      "side": 1,
+      "message": "Why are we adding this? as far as I\u0027m aware there is no Gerrit scm.",
+      "range": {
+        "startLine": 48,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 42
+      },
+      "revId": "3b1ed9a6d7cd2dd904b5b91d6d735a824641aa1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
