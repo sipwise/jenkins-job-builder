@@ -22,6 +22,30 @@
       "revId": "c098805f69dec4c4760e5b559419d99c2c8bfd57",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_6114e5a0",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 7015,
+      "author": {
+        "id": 11199
+      },
+      "writtenOn": "2018-02-22T08:33:37Z",
+      "side": 1,
+      "message": "\u003e minor nit, do we need to set this as detault value as \u00270\u0027\n\nAccording to the doc, if left empty then no health report is created. I guess it is better to keep that like that :)",
+      "parentUuid": "3fa0c359_7f6007a6",
+      "range": {
+        "startLine": 7014,
+        "startChar": 1,
+        "endLine": 7015,
+        "endChar": 49
+      },
+      "revId": "c098805f69dec4c4760e5b559419d99c2c8bfd57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
