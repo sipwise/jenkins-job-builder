@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_7dde9e6d",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-02-23T18:54:59Z",
+      "side": 1,
+      "message": "This is a truism in JJB terms, so I\u0027m not sure why it\u0027s being mentioned here.\n\n(If this is because there\u0027s some plugin-specific conflict of syntax, then a bit more information would be useful.)",
+      "revId": "c83f7ae7423a0f60b29b47d43c2a5aa9ec105476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_fda2aead",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-02-23T18:54:59Z",
+      "side": 1,
+      "message": "There\u0027s support for gerrit in the code, but it\u0027s not listed here.",
+      "revId": "c83f7ae7423a0f60b29b47d43c2a5aa9ec105476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_9df5aacd",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-02-23T18:54:59Z",
+      "side": 1,
+      "message": "This function is a monster; there\u0027s very little explanation of why things are being done, and it\u0027s pretty hard to follow along (because lol xml).  Ideally, I\u0027d like to see each stanza split in to a method or function that makes it clearer what it\u0027s intended to do, but at a bare minimum some comments would be good.",
+      "revId": "c83f7ae7423a0f60b29b47d43c2a5aa9ec105476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_3d6b3685",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-02-23T18:54:59Z",
+      "side": 1,
+      "message": "Should this reference `project_def` rather than `data` (as that\u0027s what\u0027s used within the body of the conditional)?",
+      "revId": "c83f7ae7423a0f60b29b47d43c2a5aa9ec105476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_dd281234",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-02-23T18:54:59Z",
+      "side": 1,
+      "message": "This if could be inverted to a guard to allow the entire for-loop to be dedented.",
+      "revId": "c83f7ae7423a0f60b29b47d43c2a5aa9ec105476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_3deed6ec",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-02-23T18:54:59Z",
+      "side": 1,
+      "message": "Drop this instead of just having it commented out?",
+      "revId": "c83f7ae7423a0f60b29b47d43c2a5aa9ec105476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_5de962e0",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-02-23T18:54:59Z",
+      "side": 1,
+      "message": "Drop this instead of just having it commented out?",
+      "revId": "c83f7ae7423a0f60b29b47d43c2a5aa9ec105476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_7d23fe56",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-02-23T18:54:59Z",
+      "side": 1,
+      "message": "This error message looks wonky to me; won\u0027t we reach here if _no_ scm is configured?  (It looks like the text was just copied from a few lines above.)",
+      "revId": "c83f7ae7423a0f60b29b47d43c2a5aa9ec105476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_ddab3285",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1381,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-02-23T18:54:59Z",
+      "side": 1,
+      "message": "We don\u0027t need to default to False here, the standard `get` default of None would be sufficient.",
+      "revId": "c83f7ae7423a0f60b29b47d43c2a5aa9ec105476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_1d0bda8d",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1382,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-02-23T18:54:59Z",
+      "side": 1,
+      "message": "Should we emit a warning of some type here?  (Or will we always get to this point for multibranch, but we\u0027re using the scm attribute in a multibranch-specific way elsewhere?)",
+      "revId": "c83f7ae7423a0f60b29b47d43c2a5aa9ec105476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_5df6425f",
+        "filename": "tests/yamlparser/fixtures/project_pipeline_multibranch_template001.yml",
+        "patchSetId": 19
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-02-23T18:54:59Z",
+      "side": 1,
+      "message": "Neither \"gerrit\" nor \"github\" appear in the rendered XML for this YAML; that seems unexpected to me.",
+      "revId": "c83f7ae7423a0f60b29b47d43c2a5aa9ec105476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
