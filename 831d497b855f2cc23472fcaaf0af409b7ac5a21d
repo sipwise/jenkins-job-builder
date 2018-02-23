@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_a03dddbb",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-02-23T18:59:29Z",
+      "side": 1,
+      "message": "TIL about skip_missing_interpreters.",
+      "revId": "831d497b855f2cc23472fcaaf0af409b7ac5a21d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
