@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa0c359_f4af0ae0",
+        "filename": "jenkins_jobs/cli/subcommand/list.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-02-26T14:54:30Z",
+      "side": 1,
+      "message": "I\u0027m not sure if we care as a project, but my mental linter pointed out that these imports aren\u0027t grouped per PEP-8.",
+      "revId": "5b1f7a8dfcb8e952a7908db64dbdc534a44c9e60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_742f7a3e",
+        "filename": "jenkins_jobs/cli/subcommand/list.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-02-26T14:54:30Z",
+      "side": 1,
+      "message": "IMO, this makes the list comprehension on the next line more confusing (because in a function about duplicates, I can infer what seen.add(x) means fairly easily, whereas I have to double-check what a function named seen_add does).\n\n(AFAICT it doesn\u0027t serve any purpose other than s/./_/ in the line that follows?)",
+      "revId": "5b1f7a8dfcb8e952a7908db64dbdc534a44c9e60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_b447424c",
+        "filename": "jenkins_jobs/cli/subcommand/list.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-02-26T14:54:30Z",
+      "side": 1,
+      "message": "Given that this is actually a glob of job names, `names` seems like a suboptimal argument name; at the very least, I would like to see some mention of globs in the help text.",
+      "revId": "5b1f7a8dfcb8e952a7908db64dbdc534a44c9e60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_d42d2e8f",
+        "filename": "jenkins_jobs/cli/subcommand/list.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-02-26T14:54:30Z",
+      "side": 1,
+      "message": "I\u0027m not wild about having to remember that this job (but not `update` or `test`) require me to add -p to invocations.  My expectation, as a user, would also be that this operates locally by default.\n\nI wonder if we could move \"names\" to be a flag (i.e. --names \u003cnames\u003e), and then path could be an optional positional argument (i.e. nargs\u003d\u0027?\u0027),\n\n(This would make list inconsistent with delete{,-all}; I would be OK with that because (a) I rarely use those commands, because they are operational rather than part of my development process like {update,test}, and (b) they _only_ operate on a remote Jenkins, whereas this is dual-mode.)",
+      "revId": "5b1f7a8dfcb8e952a7908db64dbdc534a44c9e60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_6907a783",
+        "filename": "jenkins_jobs/cli/subcommand/list.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-02-26T14:54:30Z",
+      "side": 1,
+      "message": "This branch will never be taken, because get_jobs is only called if options.path (passed here as fn) is False-ish.\n\n(This also means that duplicates will never be discovered for local jobs, but perhaps JJB won\u0027t actually generate duplicate jobs in a way that could be discovered?)",
+      "revId": "5b1f7a8dfcb8e952a7908db64dbdc534a44c9e60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_b4e3c233",
+        "filename": "tests/cmd/subcommands/test_list.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-02-26T14:54:30Z",
+      "side": 1,
+      "message": "I\u0027d like to see some testing of the duplicate checking in here.",
+      "revId": "5b1f7a8dfcb8e952a7908db64dbdc534a44c9e60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
