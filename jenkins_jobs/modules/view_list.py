@@ -62,6 +62,16 @@ to the :ref:`view_list` definition.
                              * **status**: ('str'): Job status.
                                (default Completed)
 
+        * **build-status** (`dict`)
+            :build-status: * **match-type** ('str'): Jobs that match a filter
+                               to include. (default includeMatched)
+                             * **never-built** ('bool'): Jobs that are never
+                               built. (default False)
+                             * **building** ('bool'): Jobs that are being
+                               built. (default False)
+                             * **in-build-queue** ('bool'): Jobs that are in
+                               the build queue. (default False)
+
     * **columns** (`list`): List of columns to be shown in view.
     * **regex** (`str`): . Regular expression for selecting jobs
       (optional)
@@ -180,6 +190,21 @@ class List(jenkins_jobs.modules.base.Base):
                     ('status', 'statusTypeString', 'Completed'),
                 ]
                 convert_mapping_to_xml(bt_xml, bt_data, mapping,
+                                       fail_required=True)
+
+            if jobfilter == 'build-status':
+                bs_xml = XML.SubElement(job_filter_xml,
+                                        'hudson.views.BuildStatusFilter')
+                bs_xml.set('plugin', 'view-job-filters')
+                bs_data = jobfilters.get('build-status')
+                mapping = [
+                    ('match-type', 'includeExcludeTypeString',
+                        'includeMatched'),
+                    ('never-built', 'neverBuilt', False),
+                    ('building', 'building', False),
+                    ('in-build-queue', 'inBuildQueue', False),
+                ]
+                convert_mapping_to_xml(bs_xml, bs_data, mapping,
                                        fail_required=True)
 
         c_xml = XML.SubElement(root, 'columns')
