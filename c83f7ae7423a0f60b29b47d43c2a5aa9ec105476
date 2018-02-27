@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_0fa4f2a4",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-02-27T15:23:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa0c359_7dde9e6d",
+      "revId": "c83f7ae7423a0f60b29b47d43c2a5aa9ec105476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_fda2aead",
         "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
         "patchSetId": 19
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_d4144e43",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-02-27T15:23:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa0c359_9df5aacd",
+      "revId": "c83f7ae7423a0f60b29b47d43c2a5aa9ec105476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_3d6b3685",
         "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
         "patchSetId": 19
@@ -64,6 +100,24 @@
       "writtenOn": "2018-02-23T18:54:59Z",
       "side": 1,
       "message": "Should this reference `project_def` rather than `data` (as that\u0027s what\u0027s used within the body of the conditional)?",
+      "revId": "c83f7ae7423a0f60b29b47d43c2a5aa9ec105476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_bd740d37",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-02-27T15:23:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa0c359_3d6b3685",
       "revId": "c83f7ae7423a0f60b29b47d43c2a5aa9ec105476",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +209,24 @@
     },
     {
       "key": {
+        "uuid": "3fa0c359_b432e2f0",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1381,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-02-27T15:23:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa0c359_ddab3285",
+      "revId": "c83f7ae7423a0f60b29b47d43c2a5aa9ec105476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa0c359_1d0bda8d",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 19
@@ -166,6 +238,24 @@
       "writtenOn": "2018-02-23T18:54:59Z",
       "side": 1,
       "message": "Should we emit a warning of some type here?  (Or will we always get to this point for multibranch, but we\u0027re using the scm attribute in a multibranch-specific way elsewhere?)",
+      "revId": "c83f7ae7423a0f60b29b47d43c2a5aa9ec105476",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa0c359_54703ea4",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1382,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-02-27T15:23:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fa0c359_1d0bda8d",
       "revId": "c83f7ae7423a0f60b29b47d43c2a5aa9ec105476",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
