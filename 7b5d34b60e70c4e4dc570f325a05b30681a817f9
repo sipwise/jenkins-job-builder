@@ -1,0 +1,215 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f9dbf25_bf2133a2",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-02-28T19:54:25Z",
+      "side": 1,
+      "message": "Are the other plugins for scm support not optional as well?",
+      "revId": "7b5d34b60e70c4e4dc570f325a05b30681a817f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_7f3babd0",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-02-28T19:54:25Z",
+      "side": 1,
+      "message": "Tidy up to follow the same style in the rest of the codebase:\n\n XML.SubElement(allView, \u0027name\u0027).text \u003d \u0027All\u0027\n XML.SubElement(allView, \u0027filterExecutors\u0027).text \u003d \u0027false\u0027\n XML.SubElement(allView, \u0027filterQueue\u0027).text \u003d \u0027false\u0027\n XML.SubElement(\n     allView, \u0027properties\u0027,\n     {\u0027class\u0027: \u0027hudson.model.View$PropertyList\u0027})\n\nMight not seem like much but its a lot easier reviewing code when it\u0027s consistent in style with the rest of the codebase.",
+      "range": {
+        "startLine": 164,
+        "startChar": 8,
+        "endLine": 171,
+        "endChar": 78
+      },
+      "revId": "7b5d34b60e70c4e4dc570f325a05b30681a817f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_1f2dc794",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-02-28T19:54:25Z",
+      "side": 1,
+      "message": "delete?",
+      "revId": "7b5d34b60e70c4e4dc570f325a05b30681a817f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_9f38f7d3",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-02-28T19:54:25Z",
+      "side": 1,
+      "message": "This should be defined as a single entry, there\u0027s no need to create a list and then append/extend to it.",
+      "range": {
+        "startLine": 208,
+        "startChar": 8,
+        "endLine": 216,
+        "endChar": 10
+      },
+      "revId": "7b5d34b60e70c4e4dc570f325a05b30681a817f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_ff4c9b77",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-02-28T19:54:25Z",
+      "side": 1,
+      "message": "This looked like a convenience for one particular user, rather than a list of only valid options. Worth a comment at the top pointing out that\u0027s not the case.",
+      "range": {
+        "startLine": 223,
+        "startChar": 8,
+        "endLine": 241,
+        "endChar": 49
+      },
+      "revId": "7b5d34b60e70c4e4dc570f325a05b30681a817f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_bf561306",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-02-28T19:54:25Z",
+      "side": 1,
+      "message": "could use a \u0027(\u0027 here and a \u0027)\u0027 at the end of the next line to avoid \u0027\\\u0027, but that\u0027s just personal perference.",
+      "revId": "7b5d34b60e70c4e4dc570f325a05b30681a817f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_df5bdf2b",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-02-28T19:54:25Z",
+      "side": 1,
+      "message": "I think each of these might be better moved out to a separate function, even if it\u0027s within this file, it\u0027s pretty hard to remember what was happening before and after these individual scm entries.\n\nProbably not critical to the patch though.",
+      "revId": "7b5d34b60e70c4e4dc570f325a05b30681a817f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_7f408b36",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-02-28T19:54:25Z",
+      "side": 1,
+      "message": "left in for debugging purposes?",
+      "revId": "7b5d34b60e70c4e4dc570f325a05b30681a817f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_9f3d57bd",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-02-28T19:54:25Z",
+      "side": 1,
+      "message": "Lets try and match the styles elsewhere:\n\n    factory \u003d XML.SubElement(\n        xml_parent, \u0027factory\u0027,\n        {\u0027class\u0027: \u0027....\u0027})\n    factory_owner \u003d XML.SubElement(\n        factory, \u0027owner\u0027,\n        {\u0027class\u0027: \u0027....\u0027,\n         \u0027reference\u0027: \u0027../..\u0027\n        })\n\nOr something similar.",
+      "range": {
+        "startLine": 439,
+        "startChar": 8,
+        "endLine": 446,
+        "endChar": 51
+      },
+      "revId": "7b5d34b60e70c4e4dc570f325a05b30681a817f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_bf6ff3c3",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1384,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-02-28T19:54:25Z",
+      "side": 1,
+      "message": "I wonder if we should find a way to allow project types to skip/ignore modules in general from the project definition, instead of needing to be this explicit?",
+      "revId": "7b5d34b60e70c4e4dc570f325a05b30681a817f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_ff757b99",
+        "filename": "tests/modules/test_multibranch_pipeline.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-02-28T19:54:25Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem like the right approach, is there a reason this can\u0027t use the same approach as the all the other tests and simply use mock.patch decorator on the class to ensure that uuid.uuid4 is mocked out? Rather than calling the cli interface?",
+      "revId": "7b5d34b60e70c4e4dc570f325a05b30681a817f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
