@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f9dbf25_d4409438",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-03-01T16:18:07Z",
+      "side": 1,
+      "message": "You don\u0027t need __class__ here:\n\n```\nclass Foo:\n  bar \u003d \u0027baz\u0027\n\n  def eggs(self):\n    print(self.bar)\n\nFoo().eggs()\n```\n\nwill produce \"baz\".",
+      "revId": "a433dc3f92ad51ebc262815b801cdae331fe949a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_d412d458",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-03-01T16:18:07Z",
+      "side": 1,
+      "message": "This long line (and the similar one below) could use self.jenkins_class now, I think?",
+      "revId": "a433dc3f92ad51ebc262815b801cdae331fe949a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_14703ca5",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-03-01T16:18:07Z",
+      "side": 1,
+      "message": "Drop the commented lines?",
+      "revId": "a433dc3f92ad51ebc262815b801cdae331fe949a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_544d6470",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-03-01T16:18:07Z",
+      "side": 1,
+      "message": "The use of \"data\" here masks the \"data\" parameter to the function.",
+      "range": {
+        "startLine": 284,
+        "startChar": 20,
+        "endLine": 284,
+        "endChar": 24
+      },
+      "revId": "a433dc3f92ad51ebc262815b801cdae331fe949a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
