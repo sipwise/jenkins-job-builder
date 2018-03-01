@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1f9dbf25_c576a0d9",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-03-01T19:38:20Z",
+      "side": 1,
+      "message": "When someone uses the plugin, do they create a different type of job in Jenkins, or just change an option on the multibranch type job?",
+      "revId": "a433dc3f92ad51ebc262815b801cdae331fe949a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f9dbf25_d4409438",
         "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
         "patchSetId": 26
@@ -36,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "1f9dbf25_e55cfc4c",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-03-01T19:38:20Z",
+      "side": 1,
+      "message": "In order to subclass this for the defaults workflow at the end of the file, it would seem like these entries should definitely use self.jenkins_class is needed?",
+      "parentUuid": "1f9dbf25_d412d458",
+      "revId": "a433dc3f92ad51ebc262815b801cdae331fe949a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f9dbf25_14703ca5",
         "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
         "patchSetId": 26
@@ -47,6 +82,29 @@
       "writtenOn": "2018-03-01T16:18:07Z",
       "side": 1,
       "message": "Drop the commented lines?",
+      "revId": "a433dc3f92ad51ebc262815b801cdae331fe949a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_852e58a3",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-03-01T19:38:20Z",
+      "side": 1,
+      "message": "Only mentioned about some of the code blocks following the different style and should be converted, but the comment applies to the entire file. Be nice to have all of it consistent with the rest of the codebase.",
+      "range": {
+        "startLine": 213,
+        "startChar": 8,
+        "endLine": 218,
+        "endChar": 68
+      },
       "revId": "a433dc3f92ad51ebc262815b801cdae331fe949a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +128,80 @@
         "endLine": 284,
         "endChar": 24
       },
+      "revId": "a433dc3f92ad51ebc262815b801cdae331fe949a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_85abb81b",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-03-01T19:38:20Z",
+      "side": 1,
+      "message": "Why does this one exist, if it\u0027s no different to the multi branch? Are there really two job types that take the exact same arguments but behave differently in Jenkins? Or does the workflow multibranch defaults plugin just add an option to the other job type?\n\nBtw, to avoid the #noqa being needed you can do the following:\n\n jenkins_class \u003d (\u0027org.jenkinsci.plugins.pipeline.multibranch\u0027\n                  \u0027.defaults.PipelineMultiBranchDefaultsProject\u0027)",
+      "revId": "a433dc3f92ad51ebc262815b801cdae331fe949a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_97768e06",
+        "filename": "jenkins_jobs/xml_config.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-03-01T19:38:20Z",
+      "side": 1,
+      "message": "I think you\u0027re overcomplicating this and making your code below more complex.\n\n data[\u0027module_blacklist\u0027] \u003d getattr(mod, \u0027module_blacklist\u0027, [])\n\nThis also seems like the sort of item that should be marked in that means it\u0027s internal and also to avoid every clashing with an actual job data item to be named as \u0027_module_blacklist\u0027.\n\nI\u0027d even go so far as to suggest it should be stored on \u0027data\u0027 directly instead of it\u0027s hash.",
+      "range": {
+        "startLine": 87,
+        "startChar": 12,
+        "endLine": 88,
+        "endChar": 63
+      },
+      "revId": "a433dc3f92ad51ebc262815b801cdae331fe949a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_c5f8e0c5",
+        "filename": "jenkins_jobs/xml_config.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-03-01T19:38:20Z",
+      "side": 1,
+      "message": "Seeing this, I worry that this patch will get stuck debating whether this is a good approach. Lets go with the original hardcoded approach and add this as a subsequent patch where we can discuss it separately rather than delaying the original too much longer?",
+      "revId": "a433dc3f92ad51ebc262815b801cdae331fe949a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_25bd0465",
+        "filename": "tests/modules/test_multibranch_pipeline.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-03-01T19:38:20Z",
+      "side": 1,
+      "message": "I think this test needs a bit of work, I\u0027ve pushed of a version of this commit to GitHub where I\u0027ve redone the testing code because I wasn\u0027t sure I could easily explain what I meant by following some of the other tests.\n\nhttps://github.com/electrofelix/jenkins-job-builder/commit/9233f48780e703c8fc3cdaa1973e7bd064f1be94#diff-9f88adcbd5721fd5b41a5dd5500fd7d3R26\n\nIf you alter the return value in my suggested change to change the result, you\u0027ll see the benefits that the existing framework of code provides in showing a fairly small and isolated diff so you can easily see where the problem is.",
       "revId": "a433dc3f92ad51ebc262815b801cdae331fe949a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
