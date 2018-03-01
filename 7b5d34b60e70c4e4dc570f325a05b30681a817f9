@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1f9dbf25_1f3387ad",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-03-01T10:37:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f9dbf25_bf2133a2",
+      "revId": "7b5d34b60e70c4e4dc570f325a05b30681a817f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f9dbf25_7f3babd0",
         "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
         "patchSetId": 24
@@ -30,6 +48,30 @@
       "writtenOn": "2018-02-28T19:54:25Z",
       "side": 1,
       "message": "Tidy up to follow the same style in the rest of the codebase:\n\n XML.SubElement(allView, \u0027name\u0027).text \u003d \u0027All\u0027\n XML.SubElement(allView, \u0027filterExecutors\u0027).text \u003d \u0027false\u0027\n XML.SubElement(allView, \u0027filterQueue\u0027).text \u003d \u0027false\u0027\n XML.SubElement(\n     allView, \u0027properties\u0027,\n     {\u0027class\u0027: \u0027hudson.model.View$PropertyList\u0027})\n\nMight not seem like much but its a lot easier reviewing code when it\u0027s consistent in style with the rest of the codebase.",
+      "range": {
+        "startLine": 164,
+        "startChar": 8,
+        "endLine": 171,
+        "endChar": 78
+      },
+      "revId": "7b5d34b60e70c4e4dc570f325a05b30681a817f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_88699a26",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-03-01T10:37:15Z",
+      "side": 1,
+      "message": "Totally agree with you, the only reason for that was that this is a 2 years old CR that I tried to fix, it was created before we had the new style.\n\nNo worry, I am fixing that.",
+      "parentUuid": "1f9dbf25_7f3babd0",
       "range": {
         "startLine": 164,
         "startChar": 8,
@@ -190,6 +232,24 @@
       "writtenOn": "2018-02-28T19:54:25Z",
       "side": 1,
       "message": "I wonder if we should find a way to allow project types to skip/ignore modules in general from the project definition, instead of needing to be this explicit?",
+      "revId": "7b5d34b60e70c4e4dc570f325a05b30681a817f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_1fd86751",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 1384,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-03-01T10:37:15Z",
+      "side": 1,
+      "message": "Yes, I was considering the same but I decided to postpose this for the moment when we will find the 2nd case where we need this. I wanted to avoid over-engineering, if possible.",
+      "parentUuid": "1f9dbf25_bf6ff3c3",
       "revId": "7b5d34b60e70c4e4dc570f325a05b30681a817f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
