@@ -30,51 +30,55 @@ to the :ref:`view_list` definition.
     * **job-filters** (`dict`): Job filters to be included. Requires
       :jenkins-wiki:`View Job Filters <View+Job+Filters>`
 
-        * **most-recent** (`dict`)
-            :most-recent: * **max-to-include** (`int`): Maximum number of jobs
-                            to include. (default 0)
-                          * **check-start-time** (`bool`): Check job start
-                            time. (default false)
+      * **most-recent** (`dict`)
+        :most-recent: * **max-to-include** (`int`): Maximum number of jobs
+                        to include. (default 0)
+                        * **check-start-time** (`bool`): Check job start
+                          time. (default false)
 
-        * **build-duration** (`dict`)
-            :build-duration: * **match-type** ('str'): Jobs that match a filter
-                               to include. (default includeMatched)
-                             * **build-duration-type** ('str'): Duration of the
-                               build. (default Latest)
-                             * **amount-type**: ('str'): Duration in hours,
-                               days or builds. (default Hours)
-                             * **amount**: ('int'): How far back to check.
-                               (default 0)
-                             * **less-than**: ('bool'): Check build duration
-                               less than or more than. (default True)
-                             * **build-duration-minutes**: ('int'): Build
-                               duration minutes. (default 0)
+      * **build-duration** (`dict`)
+        :build-duration: * **match-type** ('str'): Jobs that match a filter
+                           to include. (default includeMatched)
+                           * **build-duration-type** ('str'): Duration of the
+                             build. (default Latest)
+                           * **amount-type** ('str'): Duration in hours,
+                             days or builds. (default Hours)
+                           * **amount** ('int'): How far back to check.
+                             (default 0)
+                           * **less-than** ('bool'): Check build duration
+                             less than or more than. (default True)
+                           * **build-duration-minutes** ('int'): Build
+                             duration minutes. (default 0)
 
-        * **build-trend** (`dict`)
-            :build-trend: * **match-type** ('str'): Jobs that match a filter
-                               to include. (default includeMatched)
-                             * **build-trend-type** ('str'): Duration of the
-                               build. (default Latest)
-                             * **amount-type**: ('str'): Duration in hours,
-                               days or builds. (default Hours)
-                             * **amount**: ('int'): How far back to check.
-                               (default 0)
-                             * **status**: ('str'): Job status.
-                               (default Completed)
+      * **build-trend** (`dict`)
+        :build-trend: * **match-type** ('str'): Jobs that match a filter
+                        to include. (default includeMatched)
+                        * **build-trend-type** ('str'): Duration of the
+                          build. (default Latest)
+                        * **amount-type** ('str'): Duration in hours, days or
+                          builds. (default Hours)
+                        * **amount** ('int'): How far back to check.
+                          (default 0)
+                        * **status** ('str'): Job status.
+                          (default Completed)
 
-        * **job-status** (`dict`)
-            :job-status: * **match-type** ('str'): Jobs that match a filter
-                               to include. (default includeMatched)
-                             * **unstable** ('bool'): Jobs with status
-                               unstable. (default False)
-                             * **failed** ('bool'): Jobs with status
-                               failed. (default False)
-                             * **aborted** ('bool'): Jobs with status
-                               aborted. (default False)
-                             * **disabled** ('bool'): Jobs with status
-                               disabled. (default False)
-                             * **stable** ('bool'): Jobs with status
-                               stable. (default False)
+      * **job-status** (`dict`)
+        :job-status: * **match-type** ('str'): Jobs that match a filter
+                       to include. (default includeMatched)
+                       * **unstable** ('bool'): Jobs with status
+                         unstable. (default False)
+                       * **failed** ('bool'): Jobs with status
+                         failed. (default False)
+                       * **aborted** ('bool'): Jobs with status
+                         aborted. (default False)
+                       * **disabled** ('bool'): Jobs with status
+                         disabled. (default False)
+                       * **stable** ('bool'): Jobs with status
+                         stable. (default False)
+
+      * **fallback** (`dict`)
+        :fallback: * **fallback-type** ('str'): Fallback type
+                     to include. (default REMOVE_ALL_IF_ALL_INCLUDED)
 
     * **columns** (`list`): List of columns to be shown in view.
     * **regex** (`str`): . Regular expression for selecting jobs
@@ -211,6 +215,20 @@ class List(jenkins_jobs.modules.base.Base):
                     ('stable', 'stable', False),
                 ]
                 convert_mapping_to_xml(js_xml, js_data, mapping,
+                                       fail_required=True)
+
+            if jobfilter == 'fallback':
+                fb_xml = XML.SubElement(job_filter_xml,
+                                        'hudson.views.AddRemoveFallbackFilter')
+                fb_xml.set('plugin', 'view-job-filters')
+                fb_data = jobfilters.get('fallback')
+                mapping = [
+                    ('fallback-type', 'fallbackTypeString',
+                        'REMOVE_ALL_IF_ALL_INCLUDED'),
+                    ('fallback-type', 'fallbackType',
+                        'REMOVE_ALL_IF_ALL_INCLUDED'),
+                ]
+                convert_mapping_to_xml(fb_xml, fb_data, mapping,
                                        fail_required=True)
 
         c_xml = XML.SubElement(root, 'columns')
