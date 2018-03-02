@@ -62,6 +62,10 @@ to the :ref:`view_list` definition.
                              * **status**: ('str'): Job status.
                                (default Completed)
 
+        * **fallback** (`dict`)
+            :fallback: * **fallback-type** ('str'): Fallback type
+                         to include. (default REMOVE_ALL_IF_ALL_INCLUDED)
+
     * **columns** (`list`): List of columns to be shown in view.
     * **regex** (`str`): . Regular expression for selecting jobs
       (optional)
@@ -180,6 +184,20 @@ class List(jenkins_jobs.modules.base.Base):
                     ('status', 'statusTypeString', 'Completed'),
                 ]
                 convert_mapping_to_xml(bt_xml, bt_data, mapping,
+                                       fail_required=True)
+
+            if jobfilter == 'fallback':
+                fb_xml = XML.SubElement(job_filter_xml,
+                                        'hudson.views.AddRemoveFallbackFilter')
+                fb_xml.set('plugin', 'view-job-filters')
+                fb_data = jobfilters.get('fallback')
+                mapping = [
+                    ('fallback-type', 'fallbackTypeString',
+                        'REMOVE_ALL_IF_ALL_INCLUDED'),
+                    ('fallback-type', 'fallbackType',
+                        'REMOVE_ALL_IF_ALL_INCLUDED'),
+                ]
+                convert_mapping_to_xml(fb_xml, fb_data, mapping,
                                        fail_required=True)
 
         c_xml = XML.SubElement(root, 'columns')
