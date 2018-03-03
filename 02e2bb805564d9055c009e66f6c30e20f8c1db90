@@ -122,6 +122,23 @@
       "revId": "02e2bb805564d9055c009e66f6c30e20f8c1db90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1aca2d91_f681de4e",
+        "filename": "jenkins_jobs/cmd.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-03-03T12:18:36Z",
+      "side": 1,
+      "message": "Might look at submitting something around this to python-jenkins as while this is useful as a temporary fix in JJB, seems like it would make sense for python-jenkins to support enabling/disabling checking the certificate for https connections.",
+      "revId": "02e2bb805564d9055c009e66f6c30e20f8c1db90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
