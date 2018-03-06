@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "ff6b8bd7_f9535ae1",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-03-06T14:35:08Z",
+      "side": 1,
+      "message": "FWIW, I don\u0027t think it should ever become voting; it\u0027s unlikely to start failing due to a particular JJB change, so an upstream release could block development (when it should only block _release_).\n\n(I\u0027m not sure how releases work through Zuul, but if we can just have it vote for release testing, that would seem reasonable to me.)",
+      "parentUuid": "ff6b8bd7_7e3ad0e7",
+      "range": {
+        "startLine": 26,
+        "startChar": 9,
+        "endLine": 26,
+        "endChar": 13
+      },
+      "revId": "ab8d3c63256e64bbfa117e097e6d0e4f128a2ed6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff6b8bd7_9e1244b1",
         "filename": "tox.ini",
         "patchSetId": 1
