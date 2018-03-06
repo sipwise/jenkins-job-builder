@@ -1,0 +1,11 @@
+- job:
+    name: tox-risk
+    parent: tox
+    voting: false
+    vars:
+        tox_envlist: risk
+
+- project:
+    check:
+      jobs:
+        - tox-risk
