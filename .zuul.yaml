@@ -1,0 +1,13 @@
+- job:
+    name: jjb-tox-cross-python-jenkins
+    description: Tests compatibility with master branch of python-jenkins
+    parent: tox-py27
+    required-projects:
+      - openstack/python-jenkins
+      - openstack-infra/jenins-job-builder
+    voting: false
+
+- project:
+    check:
+      jobs:
+        - jjb-tox-cross-python-jenkins
