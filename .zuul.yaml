@@ -1,0 +1,6 @@
+- project:
+    check:
+        - tox:
+            voting: false
+            vars:
+                tox_envlist: risk
