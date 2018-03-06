@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "ff6b8bd7_7e3ad0e7",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-03-06T14:29:05Z",
+      "side": 1,
+      "message": "I was not able to find an industry standard for this type of testing as they are not very common. I am open to other suggestions.\n\nWe could use \"bleading\", \"edge\", \"optional\". \n\nWhat I like about risk is that we can later extend it to run multiple other commands that do improve testing in less than common scenarios.\n\nUsually risk is non voting, at least for start. If it proves to be stable over longer period of time we could make it voting.",
+      "parentUuid": "ff6b8bd7_9e39e442",
+      "range": {
+        "startLine": 26,
+        "startChar": 9,
+        "endLine": 26,
+        "endChar": 13
+      },
+      "revId": "ab8d3c63256e64bbfa117e097e6d0e4f128a2ed6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff6b8bd7_9e1244b1",
         "filename": "tox.ini",
         "patchSetId": 1
@@ -36,6 +60,24 @@
       "writtenOn": "2018-03-06T14:11:18Z",
       "side": 1,
       "message": "This might need to use \u0027-e\u0027 to be consistent on developer systems as well, there is some unusual behaviour in how pip handles git dependencies.\n\nSee https://pip.pypa.io/en/stable/reference/pip_install/#vcs-support\n\nThe \u0027-U\u0027 flag probably takes care of this, but adding \u0027-e\u0027 will ensure that it always works as intended rather than having some subtly different behaviour.",
+      "revId": "ab8d3c63256e64bbfa117e097e6d0e4f128a2ed6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff6b8bd7_f9903a98",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-03-06T14:29:05Z",
+      "side": 1,
+      "message": "in fact -e does not work well at same time with -r, so I had to add to move it separated. See last version.",
+      "parentUuid": "ff6b8bd7_9e1244b1",
       "revId": "ab8d3c63256e64bbfa117e097e6d0e4f128a2ed6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
