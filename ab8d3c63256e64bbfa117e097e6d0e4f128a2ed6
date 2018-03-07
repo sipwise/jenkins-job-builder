@@ -73,6 +73,54 @@
     },
     {
       "key": {
+        "uuid": "df7087c5_18c2dc86",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-03-07T09:38:09Z",
+      "side": 1,
+      "message": "AFAIK we can\u0027t really have it vote for releases, because they are controlled by application of tags which can\u0027t be reviewed before being applied. I thought that some work was being done on a recent Gerrit to support this, but we\u0027re not there yet.\n\nInstead we used to have a link-checker job in the past on this project that validated all the links in the documentation were reachable and it ran in a non-voting manner and reported \u0027WARNING\u0027 on failure which would be highlighted in yellow. Something similar might work in this case.",
+      "parentUuid": "ff6b8bd7_f9535ae1",
+      "range": {
+        "startLine": 26,
+        "startChar": 9,
+        "endLine": 26,
+        "endChar": 13
+      },
+      "revId": "ab8d3c63256e64bbfa117e097e6d0e4f128a2ed6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_2521b9b5",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-03-07T09:38:09Z",
+      "side": 1,
+      "message": "No worries, I was just wondering if openstack had a convention for this type of test.",
+      "parentUuid": "ff6b8bd7_7e3ad0e7",
+      "range": {
+        "startLine": 26,
+        "startChar": 9,
+        "endLine": 26,
+        "endChar": 13
+      },
+      "revId": "ab8d3c63256e64bbfa117e097e6d0e4f128a2ed6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff6b8bd7_9e1244b1",
         "filename": "tox.ini",
         "patchSetId": 1
@@ -102,6 +150,24 @@
       "side": 1,
       "message": "in fact -e does not work well at same time with -r, so I had to add to move it separated. See last version.",
       "parentUuid": "ff6b8bd7_9e1244b1",
+      "revId": "ab8d3c63256e64bbfa117e097e6d0e4f128a2ed6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_6571f1e0",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-03-07T09:38:09Z",
+      "side": 1,
+      "message": "odd, I tried the following and it appeared to work as expected:\n\n deps \u003d -r{toxinidir}/test-requirements.txt\n        -egit+https://github.com/openstack/python-jenkins.git@master#egg\u003dpython-jenkins\n\nPerhaps leaving a space \u0027 \u0027 causes issues? Just curious to know what it was.",
+      "parentUuid": "ff6b8bd7_f9903a98",
       "revId": "ab8d3c63256e64bbfa117e097e6d0e4f128a2ed6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
