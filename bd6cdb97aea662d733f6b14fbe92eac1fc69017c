@@ -36,6 +36,29 @@
     },
     {
       "key": {
+        "uuid": "df7087c5_98c02c53",
+        "filename": "jenkins_jobs/cli/subcommand/list.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-03-07T09:43:33Z",
+      "side": 1,
+      "message": "Just as a note, seems like we should consider moving this to expandYaml in the future?",
+      "range": {
+        "startLine": 68,
+        "startChar": 8,
+        "endLine": 71,
+        "endChar": 38
+      },
+      "revId": "bd6cdb97aea662d733f6b14fbe92eac1fc69017c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f9dbf25_7b13c067",
         "filename": "tests/cmd/subcommands/test_list.py",
         "patchSetId": 10
