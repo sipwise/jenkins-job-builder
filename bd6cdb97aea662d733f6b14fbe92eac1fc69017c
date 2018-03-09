@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "df7087c5_a017b751",
+        "filename": "jenkins_jobs/cli/subcommand/list.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-03-09T15:58:13Z",
+      "side": 1,
+      "message": "Done, changed it to Sorin since this new file was contributed by him.",
+      "parentUuid": "1f9dbf25_db1e946f",
+      "revId": "bd6cdb97aea662d733f6b14fbe92eac1fc69017c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f9dbf25_05c9ff76",
         "filename": "jenkins_jobs/cli/subcommand/list.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2018-02-28T17:12:10Z",
       "side": 1,
       "message": "Recommend importing the module rather than the specific class/function.\n\nWhen you import the class you\u0027re essentially adding the definition of the class to the current module rather than referencing the original class in the source module. It\u0027s usually only esoteric use cases (and unit test loading) that are impacted, but there\u0027s no harm in defaulting to the recommended python pattern when adding new files.",
+      "revId": "bd6cdb97aea662d733f6b14fbe92eac1fc69017c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_a381014d",
+        "filename": "jenkins_jobs/cli/subcommand/list.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-03-09T15:58:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f9dbf25_05c9ff76",
       "revId": "bd6cdb97aea662d733f6b14fbe92eac1fc69017c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
       "writtenOn": "2018-02-28T19:43:39Z",
       "side": 1,
       "message": "Missing license header.",
+      "revId": "bd6cdb97aea662d733f6b14fbe92eac1fc69017c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_8014f34f",
+        "filename": "tests/cmd/subcommands/test_list.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-03-09T15:58:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f9dbf25_7b13c067",
       "revId": "bd6cdb97aea662d733f6b14fbe92eac1fc69017c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
