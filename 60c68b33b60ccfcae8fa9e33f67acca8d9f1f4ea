@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_8fbbbbc2",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-03-09T20:24:26Z",
+      "side": 1,
+      "message": "I\u0027m not entirely convinced these source_mapping_optional cannot be done in the same source_mapping for the required options. In a lot of cases passing a blank string like \u0027\u0027 is perfectly fine. It would be nice if we could put it in so that there\u0027s only 1 mapping to look at.",
+      "range": {
+        "startLine": 464,
+        "startChar": 0,
+        "endLine": 467,
+        "endChar": 5
+      },
+      "revId": "60c68b33b60ccfcae8fa9e33f67acca8d9f1f4ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
