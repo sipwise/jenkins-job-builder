@@ -84,6 +84,30 @@
     },
     {
       "key": {
+        "uuid": "df7087c5_7e514062",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-03-09T17:02:19Z",
+      "side": 1,
+      "message": "I changed this to use convert_mapping_to_xml so that it\u0027s even easier to read.",
+      "parentUuid": "1f9dbf25_88699a26",
+      "range": {
+        "startLine": 164,
+        "startChar": 8,
+        "endLine": 171,
+        "endChar": 78
+      },
+      "revId": "7b5d34b60e70c4e4dc570f325a05b30681a817f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f9dbf25_1f2dc794",
         "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
         "patchSetId": 24
@@ -95,6 +119,24 @@
       "writtenOn": "2018-02-28T19:54:25Z",
       "side": 1,
       "message": "delete?",
+      "revId": "7b5d34b60e70c4e4dc570f325a05b30681a817f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_9e5c547f",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-03-09T17:02:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f9dbf25_1f2dc794",
       "revId": "7b5d34b60e70c4e4dc570f325a05b30681a817f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -164,6 +206,24 @@
     },
     {
       "key": {
+        "uuid": "df7087c5_7ed620c6",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-03-09T17:02:19Z",
+      "side": 1,
+      "message": "Fixed all instances of this.",
+      "parentUuid": "1f9dbf25_bf561306",
+      "revId": "7b5d34b60e70c4e4dc570f325a05b30681a817f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f9dbf25_df5bdf2b",
         "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
         "patchSetId": 24
@@ -175,6 +235,24 @@
       "writtenOn": "2018-02-28T19:54:25Z",
       "side": 1,
       "message": "I think each of these might be better moved out to a separate function, even if it\u0027s within this file, it\u0027s pretty hard to remember what was happening before and after these individual scm entries.\n\nProbably not critical to the patch though.",
+      "revId": "7b5d34b60e70c4e4dc570f325a05b30681a817f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_def08c6a",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-03-09T17:02:19Z",
+      "side": 1,
+      "message": "+1 will take care of this in a patch update.",
+      "parentUuid": "1f9dbf25_df5bdf2b",
       "revId": "7b5d34b60e70c4e4dc570f325a05b30681a817f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -209,6 +287,30 @@
       "writtenOn": "2018-02-28T19:54:25Z",
       "side": 1,
       "message": "Lets try and match the styles elsewhere:\n\n    factory \u003d XML.SubElement(\n        xml_parent, \u0027factory\u0027,\n        {\u0027class\u0027: \u0027....\u0027})\n    factory_owner \u003d XML.SubElement(\n        factory, \u0027owner\u0027,\n        {\u0027class\u0027: \u0027....\u0027,\n         \u0027reference\u0027: \u0027../..\u0027\n        })\n\nOr something similar.",
+      "range": {
+        "startLine": 439,
+        "startChar": 8,
+        "endLine": 446,
+        "endChar": 51
+      },
+      "revId": "7b5d34b60e70c4e4dc570f325a05b30681a817f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_be7038de",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-03-09T17:02:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f9dbf25_9f3d57bd",
       "range": {
         "startLine": 439,
         "startChar": 8,
