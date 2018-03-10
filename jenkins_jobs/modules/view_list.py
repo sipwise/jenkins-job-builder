@@ -76,6 +76,17 @@ to the :ref:`view_list` definition.
                              * **stable** ('bool'): Jobs with status
                                stable. (default False)
 
+        * **upstream-downstream** (`dict`)
+            :upstream-downstream: * **include-upstream** ('bool'): Jobs that
+                                    match upstream
+                                    (default False)
+                                    * **include-downstream** ('bool'): Jobs
+                                      that match downstream. (default False)
+                                    * **recursive** ('bool'): Jobs that are
+                                      recursive. (default False)
+                                    * **exclude-originals** ('bool'): Jobs
+                                      that are originals. (default False)
+
     * **columns** (`list`): List of columns to be shown in view.
     * **regex** (`str`): . Regular expression for selecting jobs
       (optional)
@@ -211,7 +222,23 @@ class List(jenkins_jobs.modules.base.Base):
                     ('stable', 'stable', False),
                 ]
                 convert_mapping_to_xml(js_xml, js_data, mapping,
+                                        fail_required=True)
+
+            if jobfilter == 'upstream-downstream':
+                ud_xml = XML.SubElement(job_filter_xml,
+                                        'hudson.views.UpstreamDownstreamJobsFilter')
+                ud_xml.set('plugin', 'view-job-filters')
+                ud_data = jobfilters.get('upstream-downstream')
+                mapping = [
+                    ('include-upstream', 'includeUpstream',
+                        False),
+                    ('include-downstream', 'includeDownstream', False),
+                    ('recursive', 'recursive', False),
+                    ('exclude-originals', 'excludeOriginals', False),
+                ]
+                convert_mapping_to_xml(ud_xml, ud_data, mapping,
                                        fail_required=True)
+
 
         c_xml = XML.SubElement(root, 'columns')
         columns = data.get('columns', DEFAULT_COLUMNS)
