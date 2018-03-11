@@ -76,6 +76,12 @@ to the :ref:`view_list` definition.
                              * **stable** ('bool'): Jobs with status
                                stable. (default False)
 
+        * **other-views** (`dict`)
+            :other-views: * **match-type** ('str'): Jobs that match a filter
+                               to include. (default includeMatched)
+                            * **view-name** ('str'): View name.
+                               (default select a view other than this one)
+
     * **columns** (`list`): List of columns to be shown in view.
     * **regex** (`str`): . Regular expression for selecting jobs
       (optional)
@@ -211,6 +217,19 @@ class List(jenkins_jobs.modules.base.Base):
                     ('stable', 'stable', False),
                 ]
                 convert_mapping_to_xml(js_xml, js_data, mapping,
+                                       fail_required=True)
+
+            if jobfilter == 'other-views':
+                ov_xml = XML.SubElement(job_filter_xml,
+                                        'hudson.views.OtherViewsFilter')
+                ov_xml.set('plugin', 'view-job-filters')
+                ov_data = jobfilters.get('other-views')
+                mapping = [
+                    ('match-type', 'includeExcludeTypeString',
+                        'includeMatched'),
+                    ('view-name', 'otherViewName', '\&lt;select a view other than this one\&gt;'),
+                ]
+                convert_mapping_to_xml(ov_xml, ov_data, mapping,
                                        fail_required=True)
 
         c_xml = XML.SubElement(root, 'columns')
