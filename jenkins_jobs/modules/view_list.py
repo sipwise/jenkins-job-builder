@@ -76,6 +76,10 @@ to the :ref:`view_list` definition.
                              * **stable** ('bool'): Jobs with status
                                stable. (default False)
 
+        * **unclassified** (`dict`)
+          :unclassified: * **match-type** ('str'): Jobs that match a filter
+                           to include. (default includeMatched)
+
     * **columns** (`list`): List of columns to be shown in view.
     * **regex** (`str`): . Regular expression for selecting jobs
       (optional)
@@ -211,6 +215,18 @@ class List(jenkins_jobs.modules.base.Base):
                     ('stable', 'stable', False),
                 ]
                 convert_mapping_to_xml(js_xml, js_data, mapping,
+                                       fail_required=True)
+
+            if jobfilter == 'unclassified':
+                uc_xml = XML.SubElement(job_filter_xml,
+                                        'hudson.views.UnclassifiedJobsFilter')
+                uc_xml.set('plugin', 'view-job-filters')
+                uc_data = jobfilters.get('unclassified')
+                mapping = [
+                    ('match-type', 'includeExcludeTypeString',
+                        'includeMatched'),
+                ]
+                convert_mapping_to_xml(uc_xml, uc_data, mapping,
                                        fail_required=True)
 
         c_xml = XML.SubElement(root, 'columns')
