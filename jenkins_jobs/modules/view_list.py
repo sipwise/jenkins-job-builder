@@ -76,6 +76,12 @@ to the :ref:`view_list` definition.
                              * **stable** ('bool'): Jobs with status
                                stable. (default False)
 
+        * **job-tpye** (`dict`)
+          :job-type: * **match-type** ('str'): Jobs that match a filter to include.
+                       (default includeMatched)
+                       * **job-type** ('str'): Type of Job.
+                         (default hudson.model.FreeStyleProject)
+
     * **columns** (`list`): List of columns to be shown in view.
     * **regex** (`str`): . Regular expression for selecting jobs
       (optional)
@@ -211,6 +217,19 @@ class List(jenkins_jobs.modules.base.Base):
                     ('stable', 'stable', False),
                 ]
                 convert_mapping_to_xml(js_xml, js_data, mapping,
+                                       fail_required=True)
+
+            if jobfilter == 'job-type':
+                jt_xml = XML.SubElement(job_filter_xml,
+                                        'hudson.views.JobTypeFilter')
+                jt_xml.set('plugin', 'view-job-filters')
+                jt_data = jobfilters.get('job-type')
+                mapping = [
+                    ('match-type', 'includeExcludeTypeString',
+                        'includeMatched'),
+                    ('job-type', 'jobType', 'hudson.model.FreeStyleProject'),
+                ]
+                convert_mapping_to_xml(jt_xml, jt_data, mapping,
                                        fail_required=True)
 
         c_xml = XML.SubElement(root, 'columns')
