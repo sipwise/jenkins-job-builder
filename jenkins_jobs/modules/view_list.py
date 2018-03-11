@@ -76,6 +76,10 @@ to the :ref:`view_list` definition.
                              * **stable** ('bool'): Jobs with status
                                stable. (default False)
 
+        * **secured-job** (`dict`)
+          :secured-job: * **match-type** ('str'): Jobs that match a filter
+                          to include. (default includeMatched)
+
     * **columns** (`list`): List of columns to be shown in view.
     * **regex** (`str`): . Regular expression for selecting jobs
       (optional)
@@ -211,6 +215,18 @@ class List(jenkins_jobs.modules.base.Base):
                     ('stable', 'stable', False),
                 ]
                 convert_mapping_to_xml(js_xml, js_data, mapping,
+                                       fail_required=True)
+
+            if jobfilter == 'secured-job':
+                sj_xml = XML.SubElement(job_filter_xml,
+                                        'hudson.views.SecuredJobsFilter')
+                sj_xml.set('plugin', 'view-job-filters')
+                sj_data = jobfilters.get('secured-job')
+                mapping = [
+                    ('match-type', 'includeExcludeTypeString',
+                        'includeMatched'),
+                ]
+                convert_mapping_to_xml(sj_xml, sj_data, mapping,
                                        fail_required=True)
 
         c_xml = XML.SubElement(root, 'columns')
