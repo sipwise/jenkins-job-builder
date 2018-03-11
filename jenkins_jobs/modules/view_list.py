@@ -76,6 +76,32 @@ to the :ref:`view_list` definition.
                              * **stable** ('bool'): Jobs with status
                                stable. (default False)
 
+        * **user-relevence** (`dict`)
+          :user-relevence: * **match-type** ('str'): Jobs that match a filter
+                             to include. (default includeMatched)
+                             * **build-count** ('str'): Count of builds.
+                               (default AtLeastOne)
+                             * **amount-type**: ('str'): Duration in hours,
+                               days or builds. (default Hours)
+                             * **amount**: ('int'): How far back to check.
+                               (default 0)
+                             * **match-user-id** ('bool'): Jobs matching
+                               user-id. (default False)
+                             * **match-user-fullname** ('bool'): Jobs
+                               matching user fullname. (default False)
+                             * **ignore-case** ('bool'): Ignore case.
+                               (default False)
+                             * **ignore-whitespace** ('bool'): Ignore
+                               whitespace. (default False)
+                             * **ignore-non-alphaNumeric** ('bool'): Ignore
+                               non-alphaNumeric. (default False)
+                             * **match-builder** ('bool'): Jobs matching
+                               builder. (default False)
+                             * **match-email** ('bool'): Jobs matching
+                               email. (default False)
+                             * **match-scm-changes** ('bool'): Jobs matching
+                               scm changes. (default False)
+
     * **columns** (`list`): List of columns to be shown in view.
     * **regex** (`str`): . Regular expression for selecting jobs
       (optional)
@@ -211,6 +237,30 @@ class List(jenkins_jobs.modules.base.Base):
                     ('stable', 'stable', False),
                 ]
                 convert_mapping_to_xml(js_xml, js_data, mapping,
+                                       fail_required=True)
+
+            if jobfilter == 'user-relevence':
+                ur_xml = XML.SubElement(job_filter_xml,
+                                        'hudson.views.UserRelevanceFilter')
+                ur_xml.set('plugin', 'view-job-filters')
+                ur_data = jobfilters.get('user-relevence')
+                mapping = [
+                    ('match-type', 'includeExcludeTypeString',
+                        'includeMatched'),
+                    ('build-count', 'buildCountTypeString', 'AtLeastOne'),
+                    ('amount-type', 'amountTypeString', 'Hours'),
+                    ('amount', 'amount', '0'),
+                    ('match-user-id', 'matchUserId', False),
+                    ('match-user-fullname', 'matchUserFullName', False),
+                    ('ignore-case', 'ignoreCase', False),
+                    ('ignore-whitespace', 'ignoreWhitespace', False),
+                    ('ignore-non-alphaNumeric', 'ignoreNonAlphaNumeric',
+                        False),
+                    ('match-builder', 'matchBuilder', False),
+                    ('match-email', 'matchEmail', False),
+                    ('match-scm-changes', 'matchScmChanges', False),
+                ]
+                convert_mapping_to_xml(ur_xml, ur_data, mapping,
                                        fail_required=True)
 
         c_xml = XML.SubElement(root, 'columns')
