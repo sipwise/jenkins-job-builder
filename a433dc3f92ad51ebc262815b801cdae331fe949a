@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1f9dbf25_0e890022",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-03-13T16:54:32Z",
+      "side": 1,
+      "message": "This creates a new job type, visible in UI. The funny story is that this is optional,\nthe user can obtain the same behaviour just by configuring the normal multibranch\njob.\n\nStill, both options exists so we should support both, and probably you already observed that the differences between them are mininimal, only the project\ntype and class names are different.\n\nThis is why I was very easy to add another class that implement it.",
+      "parentUuid": "1f9dbf25_c576a0d9",
+      "revId": "a433dc3f92ad51ebc262815b801cdae331fe949a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f9dbf25_d4409438",
         "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
         "patchSetId": 26
@@ -88,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "1f9dbf25_9f7d381e",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-03-13T16:54:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f9dbf25_14703ca5",
+      "revId": "a433dc3f92ad51ebc262815b801cdae331fe949a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f9dbf25_852e58a3",
         "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
         "patchSetId": 26
@@ -99,6 +135,30 @@
       "writtenOn": "2018-03-01T19:38:20Z",
       "side": 1,
       "message": "Only mentioned about some of the code blocks following the different style and should be converted, but the comment applies to the entire file. Be nice to have all of it consistent with the rest of the codebase.",
+      "range": {
+        "startLine": 213,
+        "startChar": 8,
+        "endLine": 218,
+        "endChar": 68
+      },
+      "revId": "a433dc3f92ad51ebc262815b801cdae331fe949a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_3f942437",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-03-13T16:54:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f9dbf25_852e58a3",
       "range": {
         "startLine": 213,
         "startChar": 8,
@@ -151,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "1f9dbf25_643545da",
+        "filename": "jenkins_jobs/modules/project_workflow_multibranch.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-03-13T16:54:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1f9dbf25_85abb81b",
+      "revId": "a433dc3f92ad51ebc262815b801cdae331fe949a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1f9dbf25_97768e06",
         "filename": "jenkins_jobs/xml_config.py",
         "patchSetId": 26
@@ -162,6 +240,30 @@
       "writtenOn": "2018-03-01T19:38:20Z",
       "side": 1,
       "message": "I think you\u0027re overcomplicating this and making your code below more complex.\n\n data[\u0027module_blacklist\u0027] \u003d getattr(mod, \u0027module_blacklist\u0027, [])\n\nThis also seems like the sort of item that should be marked in that means it\u0027s internal and also to avoid every clashing with an actual job data item to be named as \u0027_module_blacklist\u0027.\n\nI\u0027d even go so far as to suggest it should be stored on \u0027data\u0027 directly instead of it\u0027s hash.",
+      "range": {
+        "startLine": 87,
+        "startChar": 12,
+        "endLine": 88,
+        "endChar": 63
+      },
+      "revId": "a433dc3f92ad51ebc262815b801cdae331fe949a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f9dbf25_0eeca0c5",
+        "filename": "jenkins_jobs/xml_config.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-03-13T16:54:32Z",
+      "side": 1,
+      "message": "Currently data is only a classic dictionary, so I will go for underline prefix.\nBut longer run, I would like to replace it with something better that implements\nthe dict() interface. it would simplify the codebase a lot.\nImagine implicit defaults, accesing dic content as attributes.",
+      "parentUuid": "1f9dbf25_97768e06",
       "range": {
         "startLine": 87,
         "startChar": 12,
