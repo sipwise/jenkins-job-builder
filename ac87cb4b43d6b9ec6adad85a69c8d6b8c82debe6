@@ -1,0 +1,211 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_f3fa0641",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-03-14T10:58:19Z",
+      "side": 1,
+      "message": "Interesting, had not spotted this before, so this means that currently views are not configurable for this plugin?",
+      "range": {
+        "startLine": 99,
+        "startChar": 22,
+        "endLine": 99,
+        "endChar": 24
+      },
+      "revId": "ac87cb4b43d6b9ec6adad85a69c8d6b8c82debe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_d39b4215",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-03-14T10:58:19Z",
+      "side": 1,
+      "message": "Could also use the try/except approach instead, but that\u0027s just personal preference.",
+      "range": {
+        "startLine": 203,
+        "startChar": 12,
+        "endLine": 207,
+        "endChar": 35
+      },
+      "revId": "ac87cb4b43d6b9ec6adad85a69c8d6b8c82debe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_538732b6",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-03-14T10:58:19Z",
+      "side": 1,
+      "message": "optional based on the code below? and move to after the require parameters so?",
+      "range": {
+        "startLine": 286,
+        "startChar": 8,
+        "endLine": 286,
+        "endChar": 18
+      },
+      "revId": "ac87cb4b43d6b9ec6adad85a69c8d6b8c82debe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_f3a8c620",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-03-14T10:58:19Z",
+      "side": 1,
+      "message": "presumably these could use the mappings as well? but not required.",
+      "range": {
+        "startLine": 360,
+        "startChar": 4,
+        "endLine": 368,
+        "endChar": 77
+      },
+      "revId": "ac87cb4b43d6b9ec6adad85a69c8d6b8c82debe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_d36902f9",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-03-14T10:58:19Z",
+      "side": 1,
+      "message": "Presumably this needs to be updated to be optional based on the code below changing in the recent patchsets?",
+      "range": {
+        "startLine": 380,
+        "startChar": 62,
+        "endLine": 380,
+        "endChar": 72
+      },
+      "revId": "ac87cb4b43d6b9ec6adad85a69c8d6b8c82debe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_5375f2c9",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-03-14T10:58:19Z",
+      "side": 1,
+      "message": "Seems a redundant if statement, how would this be disabled? by explicit setting of \u0027False\u0027?\n\nIt seems convoluted, are we sure this is optional as opposed to having a default value?\n\nLooking through the tests helped illuminate, so I\u0027m good with this. By default this should be enabled, but users can explicitly remove it by setting to false.\n\nSame answer appears to apply to the below mentions.",
+      "range": {
+        "startLine": 431,
+        "startChar": 4,
+        "endLine": 431,
+        "endChar": 45
+      },
+      "revId": "ac87cb4b43d6b9ec6adad85a69c8d6b8c82debe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_b3324e0f",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-03-14T10:58:19Z",
+      "side": 1,
+      "message": "Same question as above.",
+      "range": {
+        "startLine": 445,
+        "startChar": 4,
+        "endLine": 445,
+        "endChar": 64
+      },
+      "revId": "ac87cb4b43d6b9ec6adad85a69c8d6b8c82debe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_93162a55",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-03-14T10:58:19Z",
+      "side": 1,
+      "message": "does this need to be wrapped in a try/except and on KeyError raise the  Invalid... exception with trust_map.keys() as the allowed values?",
+      "range": {
+        "startLine": 478,
+        "startChar": 56,
+        "endLine": 478,
+        "endChar": 72
+      },
+      "revId": "ac87cb4b43d6b9ec6adad85a69c8d6b8c82debe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_933dcade",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 480,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-03-14T10:58:19Z",
+      "side": 1,
+      "message": "Same question as above.",
+      "range": {
+        "startLine": 480,
+        "startChar": 4,
+        "endLine": 480,
+        "endChar": 55
+      },
+      "revId": "ac87cb4b43d6b9ec6adad85a69c8d6b8c82debe6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
