@@ -120,7 +120,6 @@ class XmlViewGenerator(object):
             Mod = ep.load()
             mod = Mod(self.registry)
             xml = mod.root_xml(data)
-            self._gen_xml(xml, data)
             view = XmlJob(xml, data['name'])
             return view
         names = [
