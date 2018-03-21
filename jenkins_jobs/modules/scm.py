@@ -1425,6 +1425,17 @@ class PipelineSCM(jenkins_jobs.modules.base.Base):
                 XML.SubElement(definition_parent, 'scriptPath'
                                ).text = pipeline_dict.get('script-path',
                                                           'Jenkinsfile')
+                lightweight_checkout = pipeline_dict.get(
+                    'lightweight-checkout')
+                if lightweight_checkout is not None:
+                    if type(lightweight_checkout) == bool:
+                        lightweight_checkout = str(lightweight_checkout)
+                        lightweight_checkout = lightweight_checkout.lower()
+                        XML.SubElement(definition_parent, 'lightweight'
+                                       ).text = lightweight_checkout
+                    else:
+                        raise JenkinsJobsException('lightweight-checkout must '
+                                                   'be true or false')
             else:
                 raise JenkinsJobsException('Only one SCM can be specified '
                                            'as pipeline-scm')
