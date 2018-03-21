@@ -22,6 +22,30 @@
       "revId": "bb2096b96577afa38231b6f5f5a36ca541b0b05c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_921c4478",
+        "filename": "jenkins_jobs/xml_config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-03-21T01:02:30Z",
+      "side": 1,
+      "message": "Its unused code, can be removed.",
+      "parentUuid": "df7087c5_25cbf972",
+      "range": {
+        "startLine": 132,
+        "startChar": 4,
+        "endLine": 135,
+        "endChar": 41
+      },
+      "revId": "bb2096b96577afa38231b6f5f5a36ca541b0b05c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
