@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "df7087c5_5ac1c8e3",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1438,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-03-21T20:07:53Z",
+      "side": 1,
+      "message": "Can we use the convert_mapping_to_xml function?\n\nIt is able to handle simple code like this and would be 2 lines of code rather than the many lines here. Additionally also handles exceptions when needed.\n\n mapping \u003d [(\u0027lightweight-checkout\u0027, \u0027lightweight\u0027, false)]\n helpers.convert_mapping_to_xml(definition_parent, pipeline_dict, mapping, fail_required\u003dTrue)\n\nMuch cleaner and easier to read code imo.",
+      "revId": "a19108fa8e0e7bb2f0d07e9c9612d8680b669570",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
