@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "df7087c5_37740b36",
+        "filename": ".zuul.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-03-27T14:25:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df7087c5_78fd1807",
+      "revId": "a4e946a29eb492e2fab9073eec819faf64d461d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_e502e10b",
         "filename": ".zuul.yaml",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2018-03-17T15:25:24Z",
       "side": 1,
       "message": "A good idea is to add a line:\n\ndescription: Describe job.",
+      "revId": "a4e946a29eb492e2fab9073eec819faf64d461d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_977b9726",
+        "filename": ".zuul.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-03-27T14:25:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df7087c5_e502e10b",
       "revId": "a4e946a29eb492e2fab9073eec819faf64d461d0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -59,6 +95,30 @@
     },
     {
       "key": {
+        "uuid": "df7087c5_d7858f08",
+        "filename": ".zuul.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-03-27T14:25:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df7087c5_c5055d16",
+      "range": {
+        "startLine": 4,
+        "startChar": 4,
+        "endLine": 5,
+        "endChar": 5
+      },
+      "revId": "a4e946a29eb492e2fab9073eec819faf64d461d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df7087c5_2509b930",
         "filename": "tox.ini",
         "patchSetId": 6
@@ -70,6 +130,24 @@
       "writtenOn": "2018-03-17T15:25:24Z",
       "side": 1,
       "message": "don\u0027t use github, that\u0027s a mirror and might be out of date.\n\nInstead you can use the tox-siblings feature to install from git. Just add \"required-projects: openstack/python-jenkins\" to the job and it will be checked out and used.",
+      "revId": "a4e946a29eb492e2fab9073eec819faf64d461d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "df7087c5_d7e82fb4",
+        "filename": "tox.ini",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-03-27T14:25:58Z",
+      "side": 1,
+      "message": "Ok, I will use gerrit instead of githut but i will not remove the line because tox should be usable without \"zuul\".",
+      "parentUuid": "df7087c5_2509b930",
       "revId": "a4e946a29eb492e2fab9073eec819faf64d461d0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
