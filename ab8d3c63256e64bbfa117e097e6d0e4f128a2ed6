@@ -145,6 +145,30 @@
     },
     {
       "key": {
+        "uuid": "bf659307_b8e4c7ad",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-03-27T14:25:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df7087c5_f8104852",
+      "range": {
+        "startLine": 26,
+        "startChar": 9,
+        "endLine": 26,
+        "endChar": 13
+      },
+      "revId": "ab8d3c63256e64bbfa117e097e6d0e4f128a2ed6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff6b8bd7_9e1244b1",
         "filename": "tox.ini",
         "patchSetId": 1
@@ -210,6 +234,24 @@
       "side": 1,
       "message": "Yes, you cannot have spaces here. Tox doesn\u0027t like spacing in this file for deps.",
       "parentUuid": "df7087c5_6571f1e0",
+      "revId": "ab8d3c63256e64bbfa117e097e6d0e4f128a2ed6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_d8df3bd4",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-03-27T14:25:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "df7087c5_a5bf09cf",
       "revId": "ab8d3c63256e64bbfa117e097e6d0e4f128a2ed6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
