@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "bf659307_b6647a23",
+        "filename": ".zuul.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2018-03-30T15:33:33Z",
+      "side": 1,
+      "message": "here you have required-projects",
+      "revId": "6dfffbce48f65b224989d8815b2ae1bdb60f3882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_243d9bdc",
         "filename": ".zuul.yaml",
         "patchSetId": 7
@@ -31,6 +48,23 @@
       "side": 1,
       "message": "This would be a zuul wide change, nothing for this repo only. Best ask on #openstack-infra.",
       "parentUuid": "bf659307_243d9bdc",
+      "revId": "6dfffbce48f65b224989d8815b2ae1bdb60f3882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_966ff6fa",
+        "filename": "tox.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2018-03-30T15:33:33Z",
+      "side": 1,
+      "message": "then you don\u0027t need it here. Just add it as requirement \"python-jenkins\" and the tox job will install from git, including a change under test.",
       "revId": "6dfffbce48f65b224989d8815b2ae1bdb60f3882",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
