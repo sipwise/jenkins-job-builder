@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_243d9bdc",
+        "filename": ".zuul.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-03-30T09:26:55Z",
+      "side": 1,
+      "message": "Is there a way to set the failure message at this point to start with the text \u0027WARNING\u0027? I recall that would result in a \u0027yellow\u0027 message appearing in the CI summary in Gerrit making it a little easier to spot non-voting failures?",
+      "revId": "6dfffbce48f65b224989d8815b2ae1bdb60f3882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
