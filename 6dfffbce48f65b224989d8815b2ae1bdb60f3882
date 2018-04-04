@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "bf659307_1e7c0d71",
+        "filename": ".zuul.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 2
+      },
+      "writtenOn": "2018-04-04T16:21:43Z",
+      "side": 1,
+      "message": "Make this parent: tox-py27",
+      "revId": "6dfffbce48f65b224989d8815b2ae1bdb60f3882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_b6647a23",
         "filename": ".zuul.yaml",
         "patchSetId": 7
@@ -13,6 +30,41 @@
       "writtenOn": "2018-03-30T15:33:33Z",
       "side": 1,
       "message": "here you have required-projects",
+      "revId": "6dfffbce48f65b224989d8815b2ae1bdb60f3882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_9e333df7",
+        "filename": ".zuul.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 2
+      },
+      "writtenOn": "2018-04-04T16:21:43Z",
+      "side": 1,
+      "message": "I\u0027d put openstack-infra/jenins-job-builder in here as well. That will let us also run this job against patches to the python-jenkins repo.\n\nThen also set a var of zuul_work_dir and set it to the value src/git.openstack.org/openstack-infra/jenkins-job-builder\n\nDoing that will ensure that running this job against python-jenkins patches will do the correct thing.",
+      "parentUuid": "bf659307_b6647a23",
+      "revId": "6dfffbce48f65b224989d8815b2ae1bdb60f3882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_7e50a90b",
+        "filename": ".zuul.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 2
+      },
+      "writtenOn": "2018-04-04T16:21:43Z",
+      "side": 1,
+      "message": "Then remove the tox_envlist",
       "revId": "6dfffbce48f65b224989d8815b2ae1bdb60f3882",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -83,6 +135,24 @@
       "side": 1,
       "message": "Andreas, python-jenkins is already a requirement but unless I do it here, I would not be able to run tox -e cross from my dev machine.\n\nI am looking for a solution that would work for both zuul and developers that checkout the repository.",
       "parentUuid": "bf659307_966ff6fa",
+      "revId": "6dfffbce48f65b224989d8815b2ae1bdb60f3882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_3e7311b4",
+        "filename": "tox.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 2
+      },
+      "writtenOn": "2018-04-04T16:21:43Z",
+      "side": 1,
+      "message": "Having this tox env for developer convenience is fine. However, if you use this env in the gate it will actually not do the correct thing. (it will break depends-on)\n\nWe have a similar construct in python-openstackclient - there is a tox env called \"tips\" that does a similar thing that this one does that adds git url depends. But that env is not used in the gate, because having tox do git urls breaks zuul\u0027s handling of git states.",
+      "parentUuid": "bf659307_fb228b01",
       "revId": "6dfffbce48f65b224989d8815b2ae1bdb60f3882",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
