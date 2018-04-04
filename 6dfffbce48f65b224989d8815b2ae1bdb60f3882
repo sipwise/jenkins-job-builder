@@ -68,6 +68,24 @@
       "revId": "6dfffbce48f65b224989d8815b2ae1bdb60f3882",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_fb228b01",
+        "filename": "tox.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-04-04T15:58:58Z",
+      "side": 1,
+      "message": "Andreas, python-jenkins is already a requirement but unless I do it here, I would not be able to run tox -e cross from my dev machine.\n\nI am looking for a solution that would work for both zuul and developers that checkout the repository.",
+      "parentUuid": "bf659307_966ff6fa",
+      "revId": "6dfffbce48f65b224989d8815b2ae1bdb60f3882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
