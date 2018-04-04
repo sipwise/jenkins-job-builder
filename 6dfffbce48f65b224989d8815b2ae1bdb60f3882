@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bf659307_3e5d51e9",
+        "filename": ".zuul.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-04-04T17:31:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_1e7c0d71",
+      "revId": "6dfffbce48f65b224989d8815b2ae1bdb60f3882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_b6647a23",
         "filename": ".zuul.yaml",
         "patchSetId": 7
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "bf659307_1e588df8",
+        "filename": ".zuul.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-04-04T17:31:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_9e333df7",
+      "revId": "6dfffbce48f65b224989d8815b2ae1bdb60f3882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_7e50a90b",
         "filename": ".zuul.yaml",
         "patchSetId": 7
@@ -65,6 +101,24 @@
       "writtenOn": "2018-04-04T16:21:43Z",
       "side": 1,
       "message": "Then remove the tox_envlist",
+      "revId": "6dfffbce48f65b224989d8815b2ae1bdb60f3882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_fe6ef994",
+        "filename": ".zuul.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-04-04T17:31:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_7e50a90b",
       "revId": "6dfffbce48f65b224989d8815b2ae1bdb60f3882",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -117,6 +171,24 @@
       "writtenOn": "2018-04-04T16:32:09Z",
       "side": 1,
       "message": "Yes, you can set:\n  failure-message: WARNING\nassuming we still have the css in gerrit to handle that.\n\nhttps://zuul-ci.org/docs/zuul/user/config.html#attr-job.failure-message",
+      "revId": "6dfffbce48f65b224989d8815b2ae1bdb60f3882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_a1e2a49f",
+        "filename": ".zuul.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-04-04T17:31:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf659307_fe8fd92b",
       "revId": "6dfffbce48f65b224989d8815b2ae1bdb60f3882",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
