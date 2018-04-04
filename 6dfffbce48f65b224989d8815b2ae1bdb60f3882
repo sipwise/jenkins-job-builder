@@ -106,6 +106,23 @@
     },
     {
       "key": {
+        "uuid": "bf659307_fe8fd92b",
+        "filename": ".zuul.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1
+      },
+      "writtenOn": "2018-04-04T16:32:09Z",
+      "side": 1,
+      "message": "Yes, you can set:\n  failure-message: WARNING\nassuming we still have the css in gerrit to handle that.\n\nhttps://zuul-ci.org/docs/zuul/user/config.html#attr-job.failure-message",
+      "revId": "6dfffbce48f65b224989d8815b2ae1bdb60f3882",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bf659307_966ff6fa",
         "filename": "tox.ini",
         "patchSetId": 7
