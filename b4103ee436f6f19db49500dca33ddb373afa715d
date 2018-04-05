@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_6a445975",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-04-05T07:54:11Z",
+      "side": 1,
+      "message": "While the conf file should override the command line default, this will override anything set from the command line as well. Looks like line 75 needs to be moved to be after this line, depending on whether it was explicitly set or not.",
+      "range": {
+        "startLine": 80,
+        "startChar": 8,
+        "endLine": 80,
+        "endChar": 66
+      },
+      "revId": "b4103ee436f6f19db49500dca33ddb373afa715d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
