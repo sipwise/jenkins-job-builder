@@ -70,6 +70,30 @@
       "revId": "bb2096b96577afa38231b6f5f5a36ca541b0b05c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_79cf51b0",
+        "filename": "jenkins_jobs/xml_config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-04-05T11:44:05Z",
+      "side": 1,
+      "message": "It is true that views options do depend on jenkins plugins. Still, we don\u0027t use jjb-modules to add them to the final xml.\n\nI think is better to remove it and, in the future, we could bring it back in a different form, one that activates *some* jjb modules for views. so we avoid generating invalid xml for views.",
+      "parentUuid": "bf659307_8abbed70",
+      "range": {
+        "startLine": 132,
+        "startChar": 4,
+        "endLine": 135,
+        "endChar": 41
+      },
+      "revId": "bb2096b96577afa38231b6f5f5a36ca541b0b05c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
