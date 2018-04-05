@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_2a0c2141",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-04-05T07:59:11Z",
+      "side": 1,
+      "message": "same as mentioned below.",
+      "range": {
+        "startLine": 361,
+        "startChar": 24,
+        "endLine": 362,
+        "endChar": 41
+      },
+      "revId": "c6a7ade23875bc0094b6c88cc00e2c614c3d031c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_aa183184",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-04-05T07:59:11Z",
+      "side": 1,
+      "message": "probably should copy the existing code:\n\n d \u003d type(project)(project)\n\nThis was to ensure that whatever data type was used by the yaml parsing, it would use the exact same type here instead of implicit conversion from an OrderedDict to a dict and at the same time without needing to know the data types being used in the yaml parsing code.",
+      "range": {
+        "startLine": 375,
+        "startChar": 20,
+        "endLine": 376,
+        "endChar": 37
+      },
+      "revId": "c6a7ade23875bc0094b6c88cc00e2c614c3d031c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
