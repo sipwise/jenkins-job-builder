@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_640d68e7",
+        "filename": "jenkins_jobs/cli/parser.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-04-05T12:34:41Z",
+      "side": 1,
+      "message": "how does this translate to the server/url?",
+      "range": {
+        "startLine": 75,
+        "startChar": 10,
+        "endLine": 75,
+        "endChar": 21
+      },
+      "revId": "d47634fc3f82f1240297b70549a1a6e5468deda7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
