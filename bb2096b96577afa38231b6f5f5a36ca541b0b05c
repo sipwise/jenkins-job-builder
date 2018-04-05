@@ -46,6 +46,30 @@
       "revId": "bb2096b96577afa38231b6f5f5a36ca541b0b05c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_8abbed70",
+        "filename": "jenkins_jobs/xml_config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-04-05T08:00:18Z",
+      "side": 1,
+      "message": "Only if there are no plugins that add options to views (as opposed to adding view types), otherwise will want it back again in the future in addition to the piece of code above.\n\nI would have thought that some views were able to add additional information depending on other plugins installed.",
+      "parentUuid": "df7087c5_25cbf972",
+      "range": {
+        "startLine": 132,
+        "startChar": 4,
+        "endLine": 135,
+        "endChar": 41
+      },
+      "revId": "bb2096b96577afa38231b6f5f5a36ca541b0b05c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
