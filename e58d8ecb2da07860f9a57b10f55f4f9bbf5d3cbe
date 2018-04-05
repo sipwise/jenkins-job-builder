@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_6ae8d97b",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-04-05T07:45:16Z",
+      "side": 1,
+      "message": "need to update this to stestr as well?",
+      "range": {
+        "startLine": 36,
+        "startChar": 20,
+        "endLine": 36,
+        "endChar": 25
+      },
+      "revId": "e58d8ecb2da07860f9a57b10f55f4f9bbf5d3cbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
