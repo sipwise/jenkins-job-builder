@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_ea96733e",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-04-12T23:27:59Z",
+      "side": 1,
+      "message": "Would be good to use the convert_mapping_to_xml helper function. Look at other plugin examples that are calling it.",
+      "range": {
+        "startLine": 210,
+        "startChar": 3,
+        "endLine": 213,
+        "endChar": 56
+      },
+      "revId": "83e344cb6a943e3bcbf896c7e321efd3655b862b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
