@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf659307_df81effc",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1960,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-04-12T22:43:17Z",
+      "side": 1,
+      "message": "Would be good to have these mappings defined outside of the loop so that it doesn\u0027t get redefined every time.",
+      "range": {
+        "startLine": 1955,
+        "startChar": 8,
+        "endLine": 1960,
+        "endChar": 62
+      },
+      "revId": "489eb9af5c12c5b29bdd58c2dc5f783646ca9dc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf659307_1f8c4734",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1972,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-04-12T22:43:17Z",
+      "side": 1,
+      "message": "Would be good to have these mappings defined outside of the loop so that it doesn\u0027t get redefined every time.",
+      "range": {
+        "startLine": 1970,
+        "startChar": 8,
+        "endLine": 1972,
+        "endChar": 63
+      },
+      "revId": "489eb9af5c12c5b29bdd58c2dc5f783646ca9dc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
