@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f6a8fd7_736c4436",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-04-16T21:48:06Z",
+      "side": 1,
+      "message": "This is a code change. Does the blame plugin upstream use the bad spelling or has this plugin never worked in the first place?",
+      "range": {
+        "startLine": 162,
+        "startChar": 19,
+        "endLine": 163,
+        "endChar": 54
+      },
+      "revId": "15bf5aab30c4a755877397ed25054b96b541d458",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f6a8fd7_73552450",
+        "filename": "tests/publishers/fixtures/blame001.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-04-16T21:48:06Z",
+      "side": 1,
+      "message": "This is actually code and has to match exactly what the upstream plugin depends on. We could be breaking the plugin support if the upstream plugin is expecting the incorrect spelling. We should double check to make sure which XML the blame plugin is truly expecting.",
+      "revId": "15bf5aab30c4a755877397ed25054b96b541d458",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
