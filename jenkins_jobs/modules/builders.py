@@ -1905,6 +1905,7 @@ def multijob(registry, xml_parent, data):
               parameters to the other job (optional)
             * **abort-all-job** (`bool`) -- Kill allsubs job and the phase job,
               if this subjob is killed (default false)
+            * **aggregate-results** (`bool`) -- Aggregate test results
             * **enable-condition** (`str`) -- Condition to run the
               job in groovy script format (optional)
             * **kill-phase-on** (`str`) -- Stop the phase execution
@@ -1999,6 +2000,11 @@ def multijob(registry, xml_parent, data):
 
         # Abort all other job
         mapping = [('abort-all-job', 'abortAllJob', False)]
+        convert_mapping_to_xml(phaseJob,
+            project, mapping, fail_required=True)
+
+        # Aggregate test results
+        mapping = [('aggregate-results', 'aggregatedTestResults', False)]
         convert_mapping_to_xml(phaseJob,
             project, mapping, fail_required=True)
 
