@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f6a8fd7_e29e2062",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2009,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-04-17T23:09:50Z",
+      "side": 1,
+      "message": "Both of these are updating the same phaseJob setting. Can we combine  the mappings together? Less code and makes everything a lot more simple.",
+      "range": {
+        "startLine": 2001,
+        "startChar": 0,
+        "endLine": 2009,
+        "endChar": 49
+      },
+      "revId": "8f28123da952d3249d1b25dc1f544c649ecb0e65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
