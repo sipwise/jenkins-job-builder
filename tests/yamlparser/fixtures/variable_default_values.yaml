@@ -2,19 +2,27 @@
     name: test_variable_default_values
     jobs:
         - 'variable_default_values':
-            defined_var: '7'
+            defined-var: 7
+            defined-boolean: false
 
 - job-template:
     name: 'variable_default_values'
+    parameters:
+      - string:
+          name: param
+          default: '{defined-var|+1}'
+    triggers:
+      - monitor-folders:
+          check-content: '{defined-boolean}'
     properties:
       - build-discarder:
-          days-to-keep: '{undefined_var|+1}'
-          num-to-keep: '{defined_var|+1}'
-          artifact-days-to-keep: '{undefined_var|-1}'
-          artifact-num-to-keep: '{defined_var|-1}'
+          days-to-keep: '{undefined-var|+1}'
+          num-to-keep: '{defined-var|+1}'
+          artifact-days-to-keep: '{undefined-var|-1}'
+          artifact-num-to-keep: '{defined-var|-1}'
     builders:
       - shell: |
-          echo "{{defined_var|+1}}"
-          echo "{{defined_var|-1}}"
-          echo "{{undefined_var|+1}}"
-          echo "{{undefined_var|-1}}"
+          echo "{{defined-var|+1}}"
+          echo "{{defined-var|-1}}"
+          echo "{{undefined-var|+1}}"
+          echo "{{undefined-var|-1}}"

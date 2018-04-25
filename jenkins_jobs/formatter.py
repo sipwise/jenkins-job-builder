@@ -83,8 +83,8 @@ class CustomFormatter(Formatter):
     """
     _expr = """
         (?<!{){({{)*                # non-pair opening {
-        (?:obj:)?                   # obj:
-        (?P<key>\w+)                # key
+        (?P<obj>obj:)?              # obj:
+        (?P<key>[\w\-]+)            # key
         (?:\|(?P<default>[^}]*))?   # default fallback
         }(}})*(?!})                 # non-pair closing }
     """
@@ -102,7 +102,7 @@ class CustomFormatter(Formatter):
             result = re.match('^%s$' % self._expr, format_string, re.VERBOSE)
         except TypeError:
             return format_string.format(**kwargs)
-        if result is not None:
+        if result is not None and result.group("obj") is not None:
             try:
                 return kwargs[result.group("key")]
             except KeyError:

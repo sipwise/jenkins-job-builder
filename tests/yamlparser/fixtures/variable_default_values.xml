@@ -16,14 +16,34 @@
         <artifactNumToKeep>7</artifactNumToKeep>
       </strategy>
     </jenkins.model.BuildDiscarderProperty>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>param</name>
+          <description/>
+          <defaultValue>7</defaultValue>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
   </properties>
   <scm class="hudson.scm.NullSCM"/>
+  <triggers class="vector">
+    <org.jenkinsci.plugins.fstrigger.triggers.FolderContentTrigger plugin="fstrigger">
+      <path/>
+      <spec/>
+      <includes/>
+      <excludes/>
+      <excludeCheckLastModificationDate>false</excludeCheckLastModificationDate>
+      <excludeCheckContent>true</excludeCheckContent>
+      <excludeCheckFewerOrMoreFiles>false</excludeCheckFewerOrMoreFiles>
+    </org.jenkinsci.plugins.fstrigger.triggers.FolderContentTrigger>
+  </triggers>
   <builders>
     <hudson.tasks.Shell>
-      <command>echo &quot;{defined_var|+1}&quot;
-echo &quot;{defined_var|-1}&quot;
-echo &quot;{undefined_var|+1}&quot;
-echo &quot;{undefined_var|-1}&quot;
+      <command>echo &quot;{defined-var|+1}&quot;
+echo &quot;{defined-var|-1}&quot;
+echo &quot;{undefined-var|+1}&quot;
+echo &quot;{undefined-var|-1}&quot;
 </command>
     </hudson.tasks.Shell>
   </builders>
