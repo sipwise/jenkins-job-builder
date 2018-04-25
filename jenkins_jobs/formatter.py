@@ -84,7 +84,7 @@ class CustomFormatter(Formatter):
     _expr = """
         (?<!{){({{)*                # non-pair opening {
         (?:obj:)?                   # obj:
-        (?P<key>\w+)                # key
+        (?P<key>[\w\-]+)            # key
         (?:\|(?P<default>[\w\s]*))? # default fallback
         }(}})*(?!})                 # non-pair closing }
     """
