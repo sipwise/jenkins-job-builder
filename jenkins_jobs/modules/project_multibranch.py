@@ -90,8 +90,22 @@ class WorkflowMultiBranch(jenkins_jobs.modules.base.Base):
     def root_xml(self, data):
         xml_parent = XML.Element(self.jenkins_class)
         xml_parent.attrib['plugin'] = 'workflow-multibranch'
-        XML.SubElement(xml_parent, 'properties')
-
+        props = XML.SubElement(xml_parent, 'properties')
+        if data.get('blueocean-plugin', False):
+            plugin = XML.SubElement(props, ''.join(['io.jenkins.blueocean.',
+                'rest.impl.pipeline.credential.BlueOceanCredentialsProvider_',
+                '-FolderPropertyImpl']), {
+                'plugin': 'blueocean-pipeline-scm-api'})
+            domain = XML.SubElement(plugin, 'domain', {
+                'plugin': 'credentials'})
+            XML.SubElement(domain, 'name').text = data.get(
+                'blueocean-plugin').get('domain-name', '')
+            XML.SubElement(domain, 'description').text = 'Blue Ocean'
+            XML.SubElement(domain, 'specifications')
+            XML.SubElement(plugin, 'user').text = data.get(
+                'blueocean-plugin').get('user', '')
+            XML.SubElement(plugin, 'id').text = data.get(
+                'blueocean-plugin').get('id', '')
         #########
         # Views #
         #########
