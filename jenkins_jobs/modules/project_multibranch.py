@@ -270,7 +270,9 @@ class WorkflowMultiBranch(jenkins_jobs.modules.base.Base):
             'class': self.jenkins_class,
             'reference': '../..'
         })
-        XML.SubElement(factory, 'scriptPath').text = 'Jenkinsfile'
+        XML.SubElement(factory, 'scriptPath').text = data.get(
+            'script-path', 'Jenkinsfile'
+        )
 
         return xml_parent
 
@@ -441,6 +443,7 @@ def git_scm(xml_parent, data):
     ##########
 
     traits_path = 'jenkins.plugins.git.traits'
+    hudson_traits_path = 'hudson.plugins.git.extensions.impl'
     traits = XML.SubElement(source, 'traits')
 
     if data.get('discover-branches', True):
@@ -449,6 +452,28 @@ def git_scm(xml_parent, data):
     if data.get('ignore-on-push-notifications', False):
         XML.SubElement(
             traits, ''.join([traits_path, '.IgnoreOnPushNotificationTrait']))
+
+    if data.get('clean-before-checkout', False):
+        cbct = XML.SubElement(
+            traits, ''.join([traits_path, '.CleanBeforeCheckoutTrait']))
+        XML.SubElement(
+            cbct, 'extension', {
+                'class': ''.join([hudson_traits_path, '.CleanBeforeCheckout'])})
+
+    if data.get('clean-after-checkout', False):
+        cact = XML.SubElement(
+            traits, ''.join([traits_path, '.CleanAfterCheckoutTrait']))
+        XML.SubElement(
+            cact, 'extension', {
+                'class': ''.join([hudson_traits_path, '.CleanCheckout'])})
+
+    if data.get('local-branch', False):
+        lbt = XML.SubElement(
+            traits, ''.join([traits_path, '.LocalBranchTrait']))
+        lb = XML.SubElement(
+            lbt, 'extension', {
+                'class': ''.join([hudson_traits_path, '.LocalBranch'])})
+        XML.SubElement(lb, 'localBranch').text = data.get('local-branch')
 
 
 def github_scm(xml_parent, data):
