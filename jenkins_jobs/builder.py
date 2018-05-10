@@ -78,6 +78,14 @@ class JenkinsManager(object):
             output_dir = os.path.join(
                 output_dir, os.path.basename(item))
             output_fn = os.path.join(output_dir, 'config.xml')
+        else:
+            logger.warn('The default output behaviour of `jenkins-jobs test`'
+                        ' when given the --output flag will change in JJB 3.0.'
+                        ' Instead of writing jobs to OUTPUT/jobname; in JJB 3.0,'
+                        ' they will be written to OUTPUT/jobname/config.xml.'
+                        ' You can enable the new default behaviour by passing'
+                        ' --config-xml (which will continue to behave the same'
+                        ' way in JJB 3.0)')
 
         if output_dir != output:
             logger.debug("Creating directory %s" % output_dir)
