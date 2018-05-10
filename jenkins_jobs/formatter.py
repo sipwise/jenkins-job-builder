@@ -26,13 +26,21 @@ from jenkins_jobs.local_yaml import CustomLoader
 logger = logging.getLogger(__name__)
 
 
-def deep_format(obj, paramdict, allow_empty=False):
+def deep_format(obj, paramdict, allow_empty=False,
+                disable_default_formatting=False):
     """Apply the paramdict via str.format() to all string objects found within
        the supplied obj. Lists and dicts are traversed recursively."""
     # YAML serialisation was originally used to achieve this, but that places
     # limitations on the values in paramdict - the post-format result must
     # still be valid YAML (so substituting-in a string containing quotes, for
     # example, is problematic).
+
+    if disable_default_formatting and isinstance(obj, str):
+        # If we don't have a string here, we still need to do some work to get
+        # a string; if we do have a string, we don't want to perform any
+        # further formatting, so we return it immediately.
+        return obj
+
     if hasattr(obj, 'format'):
         try:
             ret = CustomFormatter(allow_empty).format(obj, **paramdict)
