@@ -78,6 +78,10 @@ class JenkinsManager(object):
             output_dir = os.path.join(
                 output_dir, os.path.basename(item))
             output_fn = os.path.join(output_dir, 'config.xml')
+        else:
+            logging.warn('Running jenkins-jobs without --config-xml '
+                         'flag is deprecated and would be removed in ' 
+                         'the next release')
 
         if output_dir != output:
             logger.debug("Creating directory %s" % output_dir)
