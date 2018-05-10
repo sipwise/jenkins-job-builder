@@ -26,7 +26,8 @@ from jenkins_jobs.local_yaml import CustomLoader
 logger = logging.getLogger(__name__)
 
 
-def deep_format(obj, paramdict, allow_empty=False):
+def deep_format(obj, paramdict, allow_empty=False,
+                disable_default_formatting=False):
     """Apply the paramdict via str.format() to all string objects found within
        the supplied obj. Lists and dicts are traversed recursively."""
     # YAML serialisation was originally used to achieve this, but that places
@@ -35,7 +36,9 @@ def deep_format(obj, paramdict, allow_empty=False):
     # example, is problematic).
     if hasattr(obj, 'format'):
         try:
-            ret = CustomFormatter(allow_empty).format(obj, **paramdict)
+            ret = CustomFormatter(
+                allow_empty, disable_default_formatting).format(
+                    obj, **paramdict)
         except KeyError as exc:
             missing_key = exc.args[0]
             desc = "%s parameter missing to format %s\nGiven:\n%s" % (
@@ -50,13 +53,18 @@ def deep_format(obj, paramdict, allow_empty=False):
     elif isinstance(obj, list):
         ret = type(obj)()
         for item in obj:
-            ret.append(deep_format(item, paramdict, allow_empty))
+            ret.append(deep_format(
+                item, paramdict, allow_empty, disable_default_formatting))
     elif isinstance(obj, dict):
         ret = type(obj)()
         for item in obj:
             try:
-                ret[CustomFormatter(allow_empty).format(item, **paramdict)] = \
-                    deep_format(obj[item], paramdict, allow_empty)
+                key = CustomFormatter(
+                    allow_empty, disable_default_formatting).format(
+                        item, **paramdict)
+                ret[key] = deep_format(
+                    obj[item], paramdict, allow_empty,
+                    disable_default_formatting)
             except KeyError as exc:
                 missing_key = exc.args[0]
                 desc = "%s parameter missing to format %s\nGiven:\n%s" % (
@@ -72,7 +80,9 @@ def deep_format(obj, paramdict, allow_empty=False):
     if isinstance(ret, CustomLoader):
         # If we have a CustomLoader here, we've lazily-loaded a template;
         # attempt to format it.
-        ret = deep_format(ret, paramdict, allow_empty=allow_empty)
+        ret = deep_format(
+            ret, paramdict, allow_empty=allow_empty,
+            disable_default_formatting=disable_default_formatting)
     return ret
 
 
@@ -89,12 +99,19 @@ class CustomFormatter(Formatter):
         }(}})*(?!})                 # non-pair closing }
     """
 
-    def __init__(self, allow_empty=False):
+    def __init__(self, allow_empty=False, disable_default_formatting=False):
         super(CustomFormatter, self).__init__()
         self.allow_empty = allow_empty
+        self.disable_default_formatting = disable_default_formatting
 
     def vformat(self, format_string, args, kwargs):
         matcher = re.compile(self._expr, re.VERBOSE)
+
+        if self.disable_default_formatting and isinstance(format_string, str):
+            # If we don't have a string here, we still need to do some more
+            # formatting; if we do have a string, we don't want to perform
+            # default formatting, so we return it directly.
+            return format_string
 
         # special case of returning the object if the entire string
         # matches a single parameter
