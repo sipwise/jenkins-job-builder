@@ -78,6 +78,14 @@ class JenkinsManager(object):
             output_dir = os.path.join(
                 output_dir, os.path.basename(item))
             output_fn = os.path.join(output_dir, 'config.xml')
+        else:
+            logger.warn('Next version of JJB (3.0) will use only use'
+                ' path/job/config.xml output format. Adopt --config-xml'
+                ' now in order to be sure that your build process will'
+                ' not be affected by that change.'
+                ' Next version will ignore the parameter value because it'
+                ' will always consider it enabled. This was needed in order'
+                ' to fully support folders in Jenkins.')
 
         if output_dir != output:
             logger.debug("Creating directory %s" % output_dir)
