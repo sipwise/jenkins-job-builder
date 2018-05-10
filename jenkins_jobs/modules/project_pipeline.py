@@ -72,6 +72,7 @@ Inline DSL job template example:
 import xml.etree.ElementTree as XML
 
 from jenkins_jobs.errors import JenkinsJobsException
+from jenkins_jobs.formatter import deep_format
 import jenkins_jobs.modules.base
 
 
@@ -90,7 +91,8 @@ class Pipeline(jenkins_jobs.modules.base.Base):
                                             {'plugin': 'workflow-cps',
                                              'class': 'org.jenkinsci.plugins.'
                                              'workflow.cps.CpsFlowDefinition'})
-            XML.SubElement(xml_definition, 'script').text = data['dsl']
+            XML.SubElement(xml_definition, 'script').text = deep_format(
+                data['dsl'], {})
         elif 'pipeline-scm' in data:
             xml_definition = XML.SubElement(xml_parent, 'definition', {
                 'plugin': 'workflow-cps',
