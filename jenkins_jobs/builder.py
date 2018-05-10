@@ -67,10 +67,10 @@ class JenkinsManager(object):
 
     def _setup_output(self, output, item, config_xml=False):
         output_dir = output
-        output_fn = os.path.join(output, item)
+        output_fn = os.path.join(output, item) + '.xml'
         if '/' in item:
             # in item folder
-            output_fn = os.path.join(output, os.path.normpath(item))
+            output_fn = os.path.join(output, os.path.normpath(item)) + '.xml'
             output_dir = os.path.dirname(output_fn)
 
         # if in a folder, re-adding name to the directory here
