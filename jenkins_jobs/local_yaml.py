@@ -195,7 +195,11 @@ construct.
 
 Examples:
 
-    .. literalinclude:: /../../tests/yamlparser/fixtures/jinja-string01.yaml
+    .. literalinclude::
+       /../../tests/yamlparser/fixtures/jinja-string-freestyle.yaml
+
+    .. literalinclude::
+       /../../tests/yamlparser/fixtures/jinja-string-pipeline.yaml
 """
 
 import functools

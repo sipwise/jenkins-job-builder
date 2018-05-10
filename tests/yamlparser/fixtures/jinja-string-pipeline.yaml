@@ -1,0 +1,8 @@
+- job:
+    name: test-job-pipeline
+    project-type: pipeline
+    dsl: !j2: |
+       {# some jinja2 comment that will not endup in job #}
+       node() {
+         sh 'echo 1'
+         }
