@@ -1,0 +1,4 @@
+- job:
+    name: test-job-pipeline
+    type: project-type: pipeline
+    dsl: !j2: "node() {  sh 'echo 1' }"
