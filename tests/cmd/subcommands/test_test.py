@@ -86,7 +86,7 @@ class TestTests(CmdTestsBase):
         args = ['test', os.path.join(self.fixtures_path, 'cmd-001.yaml'),
                 '-o', tmpdir]
         self.execute_jenkins_jobs_with_args(args)
-        self.expectThat(os.path.join(tmpdir, 'foo-job'),
+        self.expectThat(os.path.join(tmpdir, 'foo-job.xml'),
                         testtools.matchers.FileExists())
 
     def test_output_dir_config_xml(self):
