@@ -1,0 +1,10 @@
+- job-template:
+    name: "test-job-{param}"
+    builders:
+        - shell: !j2: "should be param: {% include_jjb 'jinja_include_jjb001.yaml.inc' %}"
+
+- project:
+    name: test-include_jjb
+    param: "value"
+    jobs:
+      - "test-job-{param}"
