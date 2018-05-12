@@ -523,10 +523,13 @@ class Jinja2Loader(CustomLoader):
     """A loader for Jinja2-templated files."""
 
     def __init__(self, contents, search_path):
-        self._template = jinja2.Template(contents)
-        self._template.environment.undefined = jinja2.StrictUndefined
-        self._template.environment.loader = jinja2.FileSystemLoader(
-            search_path)
+        environment = jinja2.Environment(
+            extensions=[
+                'jenkins_jobs.jinja2_extension.TraditionalJJBTemplateExtension'],
+            loader=jinja2.FileSystemLoader(search_path),
+            undefined=jinja2.StrictUndefined,
+        )
+        self._template = environment.from_string(contents)
 
     def format(self, **kwargs):
         return self._template.render(kwargs)
