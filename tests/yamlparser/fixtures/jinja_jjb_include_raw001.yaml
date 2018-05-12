@@ -1,0 +1,10 @@
+- job-template:
+    name: "test-job-{param}"
+    builders:
+        - shell: !j2: "{% for x in [1, 2] %}{% jjb_include_raw 'jinja_jjb_include_raw001.sh.inc' %}{% endfor %}"
+
+- project:
+    name: test-include_jjb
+    param: "value"
+    jobs:
+      - "test-job-{param}"
