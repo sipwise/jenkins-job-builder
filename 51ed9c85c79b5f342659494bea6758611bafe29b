@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_e1e8d67c",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2063,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-05-14T14:40:42Z",
+      "side": 1,
+      "message": "Is this option a boolean or string? Looks to me like a boolean from the values we\u0027re passing in.",
+      "range": {
+        "startLine": 2063,
+        "startChar": 35,
+        "endLine": 2063,
+        "endChar": 38
+      },
+      "revId": "51ed9c85c79b5f342659494bea6758611bafe29b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
