@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_333dc88e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-05-14T13:28:14Z",
+      "side": 1,
+      "message": "AFAICT, this change only affects the `test` subcommand.  Could we make that clearer in the commit message?\n\n(Our workflow uses the `update` command, so _wouldn\u0027t_ need updating, but I didn\u0027t know that from just looking at this commit.)",
+      "revId": "e5885850aac4ab3c9c4f7b50c01d610b720d402d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_330b88d6",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-05-14T13:28:14Z",
+      "side": 1,
+      "message": "\"use only use\" should be fixed.\n\nThis message seems a little unclear to me; there\u0027s no mention that people seeing it are currently just using the default behaviour, nor what that default behaviour actually _is_ (so people may not understand what\u0027s going to change).\n\nPerhaps:\n\nThe default output behaviour of `jenkins-jobs test` when given the --output flag will change in JJB 3.0.  Instead of writing jobs to OUTPUT/jobname.xml; in JJB 3.0, they will be written to OUTPUT/jobname/config.xml.  You can enable the new default behaviour by passing --config-xml (which will continue to behave the same way in JJB 3.0).",
+      "revId": "e5885850aac4ab3c9c4f7b50c01d610b720d402d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
