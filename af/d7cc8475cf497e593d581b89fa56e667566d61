@@ -1,0 +1,9 @@
+Code-Review+2: Sorin Sbarnea <ssbarnea@redhat.com>
+Code-Review+2: Kien Ha <kienha9922@gmail.com>
+Workflow+1: Kien Ha <kienha9922@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 14 May 2018 14:16:43 +0000
+Reviewed-on: https://review.openstack.org/566679
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
