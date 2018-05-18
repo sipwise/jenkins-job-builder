@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_e1c70445",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5202,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-05-18T22:38:11Z",
+      "side": 1,
+      "message": "Was this option moved outside the entries list or never available in the entries list? We should maintain backward compatibility.",
+      "range": {
+        "startLine": 5202,
+        "startChar": 14,
+        "endLine": 5202,
+        "endChar": 46
+      },
+      "revId": "8fed481867c826057e54526093dcccfe0fbe379c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
