@@ -22,6 +22,30 @@
       "revId": "8fed481867c826057e54526093dcccfe0fbe379c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_1c45c717",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5202,
+      "author": {
+        "id": 28218
+      },
+      "writtenOn": "2018-05-18T23:36:16Z",
+      "side": 1,
+      "message": "Nope, this has always been a property of `\u003cS3BucketPublisher/\u003e`, original PR: https://github.com/jenkinsci/s3-plugin/pull/45",
+      "parentUuid": "5f7c97a3_e1c70445",
+      "range": {
+        "startLine": 5202,
+        "startChar": 14,
+        "endLine": 5202,
+        "endChar": 46
+      },
+      "revId": "8fed481867c826057e54526093dcccfe0fbe379c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
