@@ -22,6 +22,30 @@
       "revId": "119915a0f6010ac3b4a4f37f322fd37c70d54a9a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_b323a1be",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-05-19T07:56:14Z",
+      "side": 1,
+      "message": "As far as I understand, this is existing behaviour in the current master (latest release 2.0.7) of JJB. This patch isn\u0027t changing behaviour anywhere and is just adding a warning message.\n\nThis leads me to believe the message stating that it will be a behaviour change in 3.0 to be invalid as this behaviour exists in the currently released 2.0.7. Let me know if I\u0027m incorrect here...\n\nIf that is true then we shouldn\u0027t be suggesting that it is a behaviour change in JJB 3.0 when it is currently an existing behaviour in the current release.",
+      "parentUuid": "5f7c97a3_f0334f61",
+      "range": {
+        "startLine": 89,
+        "startChar": 37,
+        "endLine": 89,
+        "endChar": 40
+      },
+      "revId": "119915a0f6010ac3b4a4f37f322fd37c70d54a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
