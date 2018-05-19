@@ -46,6 +46,29 @@
       "revId": "8fed481867c826057e54526093dcccfe0fbe379c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_d0cc1363",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 5246,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-05-19T02:20:40Z",
+      "side": 1,
+      "message": "I think S3-profile and concurrent builds parameters could be put into a mapping.",
+      "range": {
+        "startLine": 5242,
+        "startChar": 0,
+        "endLine": 5246,
+        "endChar": 73
+      },
+      "revId": "8fed481867c826057e54526093dcccfe0fbe379c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
