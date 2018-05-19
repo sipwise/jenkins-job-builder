@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_10184b7f",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1818,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-05-19T03:17:48Z",
+      "side": 1,
+      "message": "Seems like we broke backwards compatibility for those using the older version of this plugin?\n\nWhich version was the XML changed in? perhaps we could add an if / else statement to check and do the right thing?",
+      "range": {
+        "startLine": 1818,
+        "startChar": 31,
+        "endLine": 1818,
+        "endChar": 49
+      },
+      "revId": "89b531613c88735d52c4280f31110c1ae53da714",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
