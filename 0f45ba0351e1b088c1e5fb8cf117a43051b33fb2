@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_10604b32",
+        "filename": "jenkins_jobs/modules/general.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-05-19T02:37:24Z",
+      "side": 1,
+      "message": "This is unnecessary and unpythonic. It\u0027s better to write it simply as:\n\n if authtoken:\n     ...",
+      "range": {
+        "startLine": 159,
+        "startChar": 21,
+        "endLine": 159,
+        "endChar": 32
+      },
+      "revId": "0f45ba0351e1b088c1e5fb8cf117a43051b33fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
