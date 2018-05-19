@@ -46,6 +46,30 @@
       "revId": "119915a0f6010ac3b4a4f37f322fd37c70d54a9a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_3fed1025",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-05-19T18:57:56Z",
+      "side": 1,
+      "message": "I think the idea is to point out that a new major release (presumably v3) will switch to the new behaviour rather than warn about it as that will be a break in backwards compatibility.\n\nDo we want to explicitly state v3 or just state the existing behaviour is deprecated?",
+      "parentUuid": "5f7c97a3_b323a1be",
+      "range": {
+        "startLine": 89,
+        "startChar": 37,
+        "endLine": 89,
+        "endChar": 40
+      },
+      "revId": "119915a0f6010ac3b4a4f37f322fd37c70d54a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
