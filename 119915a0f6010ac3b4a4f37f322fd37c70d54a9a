@@ -70,6 +70,30 @@
       "revId": "119915a0f6010ac3b4a4f37f322fd37c70d54a9a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_5f200cf8",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-05-19T21:19:26Z",
+      "side": 1,
+      "message": "Ah ok so in v3 we would be removing these lines of code then. That makes sense to me if that\u0027s the case and I am fine with having it state JJB 3.0 however...\n\nI think we should more clearly state that the behavior is being deprecated by including the \"deprecated\" word in the message somewhere. Maybe something like:\n\n (Deprecated) The default output behavior of `jenkins-jobs test`\n when given the --output flag will change in JJB 3.0.\n Instead of writing jobs to OUTPUT/jobname; they will\n be written to OUTPUT/jobname/config.xml. The new behavior\n can be enabled by the passing `--config-xml` parameter.\n\nI rewrote the message a little to make it less verbose and more straight to the point. Let me know if y\u0027all agree.",
+      "parentUuid": "5f7c97a3_3fed1025",
+      "range": {
+        "startLine": 89,
+        "startChar": 37,
+        "endLine": 89,
+        "endChar": 40
+      },
+      "revId": "119915a0f6010ac3b4a4f37f322fd37c70d54a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
