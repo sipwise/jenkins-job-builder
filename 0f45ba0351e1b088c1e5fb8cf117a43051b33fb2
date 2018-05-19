@@ -46,6 +46,30 @@
       "revId": "0f45ba0351e1b088c1e5fb8cf117a43051b33fb2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_3f667053",
+        "filename": "jenkins_jobs/modules/general.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-05-19T21:31:57Z",
+      "side": 1,
+      "message": "Ah I had missed that differentiation. I guess this is fine then.\n\n(We should look into cleaning this file up at some point and switching to the convert_xml helper because it does handle the None vs \u0027\u0027 empty string situation)",
+      "parentUuid": "5f7c97a3_ffa8f8db",
+      "range": {
+        "startLine": 159,
+        "startChar": 21,
+        "endLine": 159,
+        "endChar": 32
+      },
+      "revId": "0f45ba0351e1b088c1e5fb8cf117a43051b33fb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
