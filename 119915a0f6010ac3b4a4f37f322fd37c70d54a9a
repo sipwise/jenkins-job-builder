@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_f0334f61",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-05-19T02:27:49Z",
+      "side": 1,
+      "message": "Is there a series of patches we\u0027re expecting that will land in JJB 3.0?\n\nI\u0027m not aware of a 3.0 plan and we\u0027re releasing master every 2 weeks at this point so I\u0027m not sure what JJB 3.0 means right now, but if there is a series of patches we\u0027re expecting for the so called 3.0 we should probably plan better so what know if we need to branch current master.",
+      "range": {
+        "startLine": 89,
+        "startChar": 37,
+        "endLine": 89,
+        "endChar": 40
+      },
+      "revId": "119915a0f6010ac3b4a4f37f322fd37c70d54a9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
