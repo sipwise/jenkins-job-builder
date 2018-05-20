@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_f5d499bf",
+        "filename": "jenkins_jobs/builder.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-05-20T07:18:18Z",
+      "side": 1,
+      "message": "double space here should just be 1 space.",
+      "range": {
+        "startLine": 87,
+        "startChar": 42,
+        "endLine": 87,
+        "endChar": 44
+      },
+      "revId": "d9331d46ce8dfd3464355a06d6d297abfa4f8de9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
