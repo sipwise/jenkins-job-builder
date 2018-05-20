@@ -65,6 +65,12 @@ Inline DSL job template example:
 
     .. literalinclude::
       /../../tests/yamlparser/fixtures/project_pipeline_template005.yaml
+      
+"Pipeline as nested stage" example :
+
+    .. literalinclude::
+      /../../tests/yamlparser/fixtures/project_pipeline_template006.yaml
+
 
 .. _Pipeline as code: https://jenkins.io/solutions/pipeline/
 
