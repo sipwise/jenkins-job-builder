@@ -82,11 +82,11 @@ class CustomFormatter(Formatter):
     string
     """
     _expr = """
-        (?<!{){({{)*                # non-pair opening {
-        (?:obj:)?                   # obj:
-        (?P<key>\w+)                # key
-        (?:\|(?P<default>[\w\s]*))? # default fallback
-        }(}})*(?!})                 # non-pair closing }
+        (?<!{){({{)*                  # non-pair opening {
+        (?:obj:)?                     # obj:
+        (?P<key>\w+)                  # key
+        (?:\|(?P<default>[-?\w\s]*))? # default fallback
+        }(}})*(?!})                   # non-pair closing }
     """
 
     def __init__(self, allow_empty=False):
