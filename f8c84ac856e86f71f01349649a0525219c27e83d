@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_aa1c57c1",
+        "filename": "jenkins_jobs/modules/view_list.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-05-22T23:50:49Z",
+      "side": 1,
+      "message": "Ideally we don\u0027t use backslash. The example below, or some variant of it, would be more inline with JJB\u0027s syntax style\n\n\u0027com.sonatype.insight.ci.hudson.QualityColumn \u0027\n\u0027plugin\u003d\"sonatype-clm-ci\"\u0027",
+      "range": {
+        "startLine": 249,
+        "startChar": 54,
+        "endLine": 249,
+        "endChar": 55
+      },
+      "revId": "f8c84ac856e86f71f01349649a0525219c27e83d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
