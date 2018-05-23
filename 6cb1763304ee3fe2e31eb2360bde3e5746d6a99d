@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_35874c12",
+        "filename": "jenkins_jobs/modules/view_list.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-05-23T01:35:47Z",
+      "side": 1,
+      "message": "this format fails the tests?",
+      "range": {
+        "startLine": 248,
+        "startChar": 0,
+        "endLine": 251,
+        "endChar": 1
+      },
+      "revId": "6cb1763304ee3fe2e31eb2360bde3e5746d6a99d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
