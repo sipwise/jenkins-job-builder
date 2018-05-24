@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_64174247",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-05-24T07:41:37Z",
+      "side": 1,
+      "message": "Assure that relative paths are working on includes and that the lookup for file is also searching through defaults.\n\nWe are keeping our jjb templates in a nested defaults folder which is far away from the job files which can also be located in their own hierarchy.",
+      "revId": "2fb6f20767a759b73244fbac97270b174b8d7d81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_091a277c",
+        "filename": "tests/yamlparser/fixtures/jinja_jjb_include_raw001.sh",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-05-24T07:41:37Z",
+      "side": 1,
+      "message": "- Include a shebang line: #!/bin/bash\n- more complex example here that is also using brackets \nSomething like below (test that it does execute well first).\n\nHaving a bit more complex example will highlight the user the need to excape brackets, which is a common mistake.\n\n#!/bin/bash\nfunction display {{\n                    echo $1 \n                }}  \ndisplay \"jjb variable was {param}\"",
+      "revId": "2fb6f20767a759b73244fbac97270b174b8d7d81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_a95a134d",
+        "filename": "tests/yamlparser/fixtures/jinja_jjb_include_raw001.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-05-24T07:41:37Z",
+      "side": 1,
+      "message": "use .sh.inc extension to indicate user that this is not a pure .sh file. As jjb templaces do not have its own extension, we used .inc suffix to indicate that.",
+      "revId": "2fb6f20767a759b73244fbac97270b174b8d7d81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
