@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_f4945639",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-05-25T05:08:59Z",
+      "side": 1,
+      "message": "In another patch we should remove all of the optional statements so that the style matches our usually docs style. Default implies optional.",
+      "range": {
+        "startLine": 400,
+        "startChar": 20,
+        "endLine": 400,
+        "endChar": 41
+      },
+      "revId": "ba94e2ad72df24f89ef3e5e941d08b0ff761806c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
