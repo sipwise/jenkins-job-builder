@@ -1,0 +1,11 @@
+Code-Review+1: Daniel Watkins <daniel.watkins@canonical.com>
+Code-Review+1: Tim Birkett <tim.j.birkett@gmail.com>
+Code-Review+2: Sorin Sbarnea <ssbarnea@redhat.com>
+Code-Review+2: Thanh Ha <zxiiro@gmail.com>
+Workflow+1: Thanh Ha <zxiiro@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 25 May 2018 05:22:45 +0000
+Reviewed-on: https://review.openstack.org/570220
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
