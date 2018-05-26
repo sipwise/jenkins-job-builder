@@ -191,19 +191,42 @@ def label_param(registry, xml_parent, data):
     :arg str name: the name of the parameter
     :arg str default: the default value of the parameter (optional)
     :arg str description: a description of the parameter (optional)
+    :arg str matching-label: to run all nodes matching label 'success', 'unstable' or 'all' (optional)
+    :arg str node-eligibility: all nodes, ignore temporary nodes or ignore temporary offline nodes (optional, default all nodes)
 
-    Example::
+    Example:
 
-      parameters:
-        - label:
-            name: node
-            default: precise
-            description: "The node on which to run the job"
+    .. literalinclude::  /../../tests/parameters/fixtures/node-label001.yaml
+       :language: yaml
+
     """
-    base_param(registry, xml_parent, data, True,
+
+    pdef = base_param(registry, xml_parent, data, True,
                'org.jvnet.jenkins.plugins.nodelabelparameter.'
                'LabelParameterDefinition')
 
+    XML.SubElement(pdef, 'allNodesMatchingLabel').text = "true"
+    matching_label = data.get('matching-label', 'success').lower()
+    matching_label_dict = {'all': 'allCases',
+                           'success': 'success',
+                           'unstable': 'unstable',
+                           }
+    if matching_label not in matching_label_dict:
+        raise InvalidAttributeError(matching_label , matching_label, matching_label_dict.keys())
+
+    XML.SubElement(pdef, 'triggerIfResult').text = matching_label_dict[matching_label]
+
+    eligibility_label = data.get('node-eligibility', 'all').lower()
+    eligibility_label_dict = {'all': 'org.jvnet.jenkins.plugins.nodelabelparameter.node.AllNodeEligibility',
+                              'ignore-offline': 'org.jvnet.jenkins.plugins.nodelabelparameter.node.'
+                                                'IgnoreOfflineNodeEligibility',
+                              'ignore-temp-offline': 'org.jvnet.jenkins.plugins.nodelabelparameter.node.'
+                                                     'IgnoreTempOfflineNodeEligibility'
+                              }
+    if eligibility_label not in eligibility_label_dict:
+        raise InvalidAttributeError(eligibility_label, eligibility_label, eligibility_label_dict.keys())
+
+    XML.SubElement(pdef, 'nodeEligibility').set("class", eligibility_label_dict[eligibility_label])
 
 def node_param(registry, xml_parent, data):
     """yaml: node
