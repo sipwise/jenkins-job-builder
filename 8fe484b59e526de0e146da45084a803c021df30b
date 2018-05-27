@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_675de813",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-05-27T09:55:57Z",
+      "side": 1,
+      "message": "#Story should be valid number.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 22
+      },
+      "revId": "8fe484b59e526de0e146da45084a803c021df30b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
