@@ -53,9 +53,7 @@ class JenkinsJobs(object):
     various command line parameters.
     """
 
-    def __init__(self, args=None, **kwargs):
-        if args is None:
-            args = []
+    def __init__(self, args, **kwargs):
         self.parser = create_parser()
         self.options = self.parser.parse_args(args)
 
