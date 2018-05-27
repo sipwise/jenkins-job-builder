@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <buildWrappers>
+    <EnvInjectBuildWrapper>
+      <info>
+        <propertiesFilePath>example.prop 2</propertiesFilePath>
+        <propertiesContent>EXAMPLE=foo-bar 2</propertiesContent>
+        <scriptFilePath>script2.sh</scriptFilePath>
+        <scriptContent>test script content 2</scriptContent>
+        <loadFilesFromMaster>false</loadFilesFromMaster>
+        <secureGroovyScript>
+          <script>test groovy-script location 2</script>
+          <sandbox>false</sandbox>
+        </secureGroovyScript>
+      </info>
+    </EnvInjectBuildWrapper>
+  </buildWrappers>
+</project>

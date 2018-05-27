@@ -1,0 +1,8 @@
+wrappers:
+    - inject:
+        properties-file: example.prop 2
+        properties-content: EXAMPLE=foo-bar 2
+        script-file: script2.sh
+        script-content: test script content 2
+        groovy-script: test groovy-script location 2
+        groovy-sandbox: false
