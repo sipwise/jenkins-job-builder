@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_02eae20d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-05-27T17:35:24Z",
+      "side": 1,
+      "message": "Only if you require everyone to pass a argument. As it stands the api allows creation without any args, so this is a change to the api behaviour",
+      "revId": "41986ee4736facd87e35ba98bee6f3db62fdd5f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
