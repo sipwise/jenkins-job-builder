@@ -16,6 +16,24 @@
       "revId": "63cdbbdd1b30c67ea80265e0ce9827e7d1b1dd8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_a95f490d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 938,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-05-28T17:58:15Z",
+      "side": 1,
+      "message": "Good point, I am wondering if this line is needed or am I missing a point.",
+      "parentUuid": "5f7c97a3_8bbfe6a8",
+      "revId": "63cdbbdd1b30c67ea80265e0ce9827e7d1b1dd8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
