@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_8bbfe6a8",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 938,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-05-28T13:57:37Z",
+      "side": 1,
+      "message": "Looking at convert_mapping_to_xml, I believe that this entry will just cause a `continue` in its `for elem in mapping` loop.  Is this left over from a previous iteration on this patch?",
+      "revId": "63cdbbdd1b30c67ea80265e0ce9827e7d1b1dd8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
