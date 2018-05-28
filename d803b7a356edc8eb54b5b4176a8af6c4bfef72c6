@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_ab7e6216",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-05-28T13:52:12Z",
+      "side": 1,
+      "message": "This lookup and validation (and the matching validation/lookup) is quite similar to what you would get if you used convert_mapping_to_xml from jenkins_jobs.modules.helpers; have you considered using it?",
+      "revId": "d803b7a356edc8eb54b5b4176a8af6c4bfef72c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_2bd4921f",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 16703
+      },
+      "writtenOn": "2018-05-28T13:52:12Z",
+      "side": 1,
+      "message": "This is quite hard to read; I would suggest doing:\n\n    eligibility_label_dict \u003d {\n        \u0027all\u0027: ...,\n        ...,\n    }\n\nso that the keys and values aren\u0027t all indented at the same level.",
+      "revId": "d803b7a356edc8eb54b5b4176a8af6c4bfef72c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
