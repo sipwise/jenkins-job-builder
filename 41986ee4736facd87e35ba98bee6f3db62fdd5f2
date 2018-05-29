@@ -16,6 +16,29 @@
       "revId": "41986ee4736facd87e35ba98bee6f3db62fdd5f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_a6176bee",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-05-29T15:31:21Z",
+      "side": 1,
+      "message": "This changes args to be a required parameter. If you want it to match the previous default behaviour than this line needs to be declared as:\n\n args\u003d[]\n\nWhich will pass in an empty list if no \"args\" are passed.",
+      "range": {
+        "startLine": 56,
+        "startChar": 23,
+        "endLine": 56,
+        "endChar": 27
+      },
+      "revId": "41986ee4736facd87e35ba98bee6f3db62fdd5f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
