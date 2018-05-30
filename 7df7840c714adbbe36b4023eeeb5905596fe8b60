@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_5075da30",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-05-30T13:38:02Z",
+      "side": 1,
+      "message": "I think need to document some of the gotchas, the anchors/aliases will be dependent on load order, and this does mean that it will no longer be safe to re-use an anchor elsewhere, so potentially we should be either warning or erroring on encountering an anchor overriding a previous definition.\n\nI\u0027m not sure the load order of recursive files/directories is completely predictable across OS, do you know what it\u0027s based on?",
+      "revId": "7df7840c714adbbe36b4023eeeb5905596fe8b60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
