@@ -57,6 +57,11 @@ job_builder section
   so user can be sure which instance was updated. User may click the link to
   go directly to that job. False by default.
 
+**retain_anchors**
+  (Optional) If set to True, YAML anchors will be retained across files,
+  allowing jobs to be composed from bits of YAML defined in separate files.
+  False by default.
+
 
 jenkins section
 ^^^^^^^^^^^^^^^
