@@ -63,6 +63,30 @@
       "revId": "41986ee4736facd87e35ba98bee6f3db62fdd5f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_efec46bc",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-05-30T09:50:19Z",
+      "side": 1,
+      "message": "which of course is a gotcha in python in that any calls that modify the list subsequently will result in a modified contents for future calls.",
+      "parentUuid": "5f7c97a3_a6176bee",
+      "range": {
+        "startLine": 56,
+        "startChar": 23,
+        "endLine": 56,
+        "endChar": 27
+      },
+      "revId": "41986ee4736facd87e35ba98bee6f3db62fdd5f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
