@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_c7d7eabe",
+        "filename": "jenkins_jobs/modules/project_folder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 10354
+      },
+      "writtenOn": "2018-05-30T17:43:31Z",
+      "side": 1,
+      "message": "Dangling whitespace",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 8
+      },
+      "revId": "26de183f4de4ea917e06d3ef35c6012c3e67940b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_27f25e71",
+        "filename": "jenkins_jobs/modules/project_folder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 10354
+      },
+      "writtenOn": "2018-05-30T17:43:31Z",
+      "side": 1,
+      "message": "Convert tabs to spaces",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 2
+      },
+      "revId": "26de183f4de4ea917e06d3ef35c6012c3e67940b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
