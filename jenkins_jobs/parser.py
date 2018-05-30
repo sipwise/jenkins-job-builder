@@ -134,7 +134,9 @@ class YamlParser(object):
 
     def _parse_fp(self, fp):
         # wrap provided file streams to ensure correct encoding used
-        data = local_yaml.load(utils.wrap_stream(fp), search_path=self.path)
+        data = local_yaml.load(utils.wrap_stream(fp),
+                               self.jjb_config.yamlparser['retain_anchors'],
+                               search_path=self.path)
         if data:
             if not isinstance(data, list):
                 raise JenkinsJobsException(
