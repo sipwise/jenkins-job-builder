@@ -51,9 +51,9 @@ class Folder(jenkins_jobs.modules.base.Base):
         XML.SubElement(xml_parent, 'views')
         attributes = {"class": "hudson.views.DefaultViewsTabBar"}
         XML.SubElement(xml_parent, 'viewsTabBar', attrib=attributes)
-        
+
         mappings = [('primary-view', 'primaryView', 'All'),
-		    ('health-metrics', 'healthMetrics', '')]
+                   ('health-metrics', 'healthMetrics', '')]
         convert_mapping_to_xml(xml_parent, data, mappings, True)
 
         return xml_parent
