@@ -16,6 +16,24 @@
       "revId": "7df7840c714adbbe36b4023eeeb5905596fe8b60",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_3365c8b5",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 27136
+      },
+      "writtenOn": "2018-05-30T14:12:20Z",
+      "side": 1,
+      "message": "Fair point. os.walk calls os.scandir() or os.listdir() depending on Python version, and the docs for both explicitly state that \"entries are yielded in arbitrary order.\"\n\nhttps://docs.python.org/3/library/os.html#os.scandir\nhttps://docs.python.org/3/library/os.html#os.listdir\n\nOne fix, as suggested, is to change the recurse_path function in jenkins_jobs/utils.py to sort dirs alphabetically in the manner shown here - https://stackoverflow.com/a/18282602/504611 - and update the docs for the option to note this behaviour.",
+      "parentUuid": "5f7c97a3_5075da30",
+      "revId": "7df7840c714adbbe36b4023eeeb5905596fe8b60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
