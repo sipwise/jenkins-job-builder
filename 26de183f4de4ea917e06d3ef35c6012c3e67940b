@@ -45,6 +45,29 @@
       "revId": "26de183f4de4ea917e06d3ef35c6012c3e67940b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_050dd5e6",
+        "filename": "jenkins_jobs/modules/project_folder.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-05-31T01:15:37Z",
+      "side": 1,
+      "message": "PS rm tabs as Andy suggested.\n\nIs this change fully tested with the plugin?\n\nAlso make `mappings` more readable with the below format ..\n\n       mappings \u003d [\n           (\u0027primary-view\u0027, \u0027primaryView\u0027, \u0027All\u0027),\n\t   (\u0027health-metrics\u0027, \u0027healthMetrics\u0027, \u0027\u0027),\n       ]\n \nIs there a default value required for \u0027healthMetrics\u0027?\nAny reason `viewsTabBar` is not included in the mappings?",
+      "range": {
+        "startLine": 54,
+        "startChar": 8,
+        "endLine": 56,
+        "endChar": 46
+      },
+      "revId": "26de183f4de4ea917e06d3ef35c6012c3e67940b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
