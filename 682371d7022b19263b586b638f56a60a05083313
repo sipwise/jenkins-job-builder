@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_3b27d1c9",
+        "filename": "jenkins_jobs/modules/project_folder.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-05-31T06:32:13Z",
+      "side": 1,
+      "message": "missing comma",
+      "revId": "682371d7022b19263b586b638f56a60a05083313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
