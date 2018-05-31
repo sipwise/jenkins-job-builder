@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_737805c3",
+        "filename": "tests/hipchat/fixtures/hipchat001.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-05-31T19:13:52Z",
+      "side": 1,
+      "message": "Unintentional change or is it start-notify?",
+      "range": {
+        "startLine": 6,
+        "startChar": 2,
+        "endLine": 6,
+        "endChar": 7
+      },
+      "revId": "f89e48da46c9851193d9c36bc65d02129b8290d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
