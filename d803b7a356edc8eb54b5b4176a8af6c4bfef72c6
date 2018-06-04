@@ -33,6 +33,23 @@
       "revId": "d803b7a356edc8eb54b5b4176a8af6c4bfef72c6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_09c0597c",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-06-04T02:28:32Z",
+      "side": 1,
+      "message": "PS change the format as recommended by Daniel ... comma missing in the last line.",
+      "revId": "d803b7a356edc8eb54b5b4176a8af6c4bfef72c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
