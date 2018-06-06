@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_97d204d1",
+        "filename": "tests/cmd/subcommands/test_delete_all.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-06-06T13:50:21Z",
+      "side": 0,
+      "message": "To be clear it looks like the reason the bug got introduced is we have no assertions here or anywhere else within this class on making sure the delete methods expected to be called actually got called.\n\nI believe this is called a zero-assertion test... we need to avoid these.",
+      "range": {
+        "startLine": 37,
+        "startChar": 12,
+        "endLine": 37,
+        "endChar": 53
+      },
+      "revId": "307c09cff3ef030a72859cdc63ce555810af486d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
