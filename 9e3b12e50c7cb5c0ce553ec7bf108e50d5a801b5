@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_2866f3bc",
+        "filename": "jenkins_jobs/modules/project_folder.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-08T14:26:07Z",
+      "side": 1,
+      "message": "Comparing with the old code it seems like these values are not meant to be manually configured. If so then the mapping should look something like this:\n\n mappings \u003d [\n     (\u0027\u0027, \u0027primaryView\u0027, \u0027All\u0027),\n     (\u0027\u0027, \u0027healthMetrics\u0027, \u0027\u0027),\n ]\n\nOtherwise we need to add documentation if these values are supposed to be modifiable.",
+      "range": {
+        "startLine": 55,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 9
+      },
+      "revId": "9e3b12e50c7cb5c0ce553ec7bf108e50d5a801b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
