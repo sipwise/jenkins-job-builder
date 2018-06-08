@@ -89,3 +89,12 @@ class YAMLFormatError(JenkinsJobsException):
 
 class JJBConfigException(JenkinsJobsException):
     pass
+
+
+class PluginVersionMismatchException(JenkinsJobsException):
+    def __init__(self, plugin, version, minimal_version):
+        message = "Jenkins plugin '{0}' version '{1}' found but minimal " \
+                  "version '{2}' is needed.".format(
+                      plugin, version, minimal_version)
+
+        super(JenkinsJobsException, self).__init__(message)

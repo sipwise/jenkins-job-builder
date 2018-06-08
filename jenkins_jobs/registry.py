@@ -22,6 +22,7 @@ import re
 import types
 
 from jenkins_jobs.errors import JenkinsJobsException
+from jenkins_jobs.errors import PluginVersionMismatchException
 from jenkins_jobs.formatter import deep_format
 from jenkins_jobs.local_yaml import Jinja2Loader
 
@@ -113,6 +114,23 @@ class ModuleRegistry(object):
 
         """
         return self.plugins_dict.get(plugin_name, {})
+
+    def require_plugin(self, plugin_name, version='0'):
+        """ Require presence of a plugin and an optionam minimal version.
+        I will throw exception if this is not found. It will return current
+        plugin version being found.
+        """
+        plugin_info = self.get_plugin_info("ownership")
+        current_version = pkg_resources.parse_version(
+            plugin_info.get('version', '0'))
+
+        # if returned version is 0 it means that plugin_info was not read and
+        # we would skip the version check.
+        if str(current_version) != '0' and \
+            current_version < pkg_resources.parse_version(version):
+                raise PluginVersionMismatchException(plugin_name,
+                                                     current_version, version)
+        return current_version
 
     def registerHandler(self, category, name, method):
         cat_dict = self.handlers.get(category, {})

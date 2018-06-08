@@ -85,9 +85,13 @@ def ownership(registry, xml_parent, data):
     .. literalinclude:: /../../tests/properties/fixtures/ownership.yaml
        :language: yaml
     """
+    version = registry.require_plugin('ownership', '0.11.0')
+
     ownership_plugin = XML.SubElement(
         xml_parent,
-        'com.synopsys.arc.jenkins.plugins.ownership.jobs.JobOwnerJobProperty')
+        'org.jenkinsci.plugins.ownership.model.folders.'
+        'FolderOwnershipProperty')
+    ownership_plugin.set('plugin', 'ownership@%s' % version)
     ownership = XML.SubElement(ownership_plugin, 'ownership')
     owner = str(data.get('enabled', True)).lower()
     XML.SubElement(ownership, 'ownershipEnabled').text = owner
@@ -95,6 +99,7 @@ def ownership(registry, xml_parent, data):
     XML.SubElement(ownership, 'primaryOwnerId').text = data.get('owner')
 
     coownersIds = XML.SubElement(ownership, 'coownersIds')
+    coownersIds.set('class', 'sorted-set')
     for coowner in data.get('co-owners', []):
         XML.SubElement(coownersIds, 'string').text = coowner
 
