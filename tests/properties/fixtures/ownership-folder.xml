@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
   <properties>
-    <com.synopsys.arc.jenkins.plugins.ownership.jobs.JobOwnerJobProperty plugin="ownership@0">
+    <org.jenkinsci.plugins.ownership.model.folders.FolderOwnershipProperty plugin="ownership@0">
       <ownership>
         <ownershipEnabled>true</ownershipEnabled>
         <primaryOwnerId>foo</primaryOwnerId>
@@ -10,6 +10,6 @@
           <string>moo</string>
         </coownersIds>
       </ownership>
-    </com.synopsys.arc.jenkins.plugins.ownership.jobs.JobOwnerJobProperty>
+    </org.jenkinsci.plugins.ownership.model.folders.FolderOwnershipProperty>
   </properties>
 </project>

@@ -22,6 +22,7 @@ import re
 import types
 
 from jenkins_jobs.errors import JenkinsJobsException
+from jenkins_jobs.errors import PluginVersionMismatchException
 from jenkins_jobs.formatter import deep_format
 from jenkins_jobs.local_yaml import Jinja2Loader
 
@@ -113,6 +114,23 @@ class ModuleRegistry(object):
 
         """
         return self.plugins_dict.get(plugin_name, {})
+
+    def require_plugin(self, plugin_name, version='0'):
+        """ Require presence of a plugin and an option minimal version.
+        I will throw exception if this is not found. It will return current
+        plugin version being found.
+        """
+        plugin_info = self.get_plugin_info(plugin_name)
+        current_version = pkg_resources.parse_version(
+            plugin_info.get('version', '0'))
+
+        # if returned version is 0 it means that plugin_info was not read and
+        # we would skip the version check.
+        if str(current_version) != '0' and \
+            current_version < pkg_resources.parse_version(version):
+                raise PluginVersionMismatchException(plugin_name,
+                                                     current_version, version)
+        return current_version
 
     def registerHandler(self, category, name, method):
         cat_dict = self.handlers.get(category, {})
@@ -237,8 +255,8 @@ class ModuleRegistry(object):
                          component_list_type, eps)
 
         # check for macro first
-        component = self.parser_data.get(component_type, {}).get(name)
-        if component:
+        component_ = self.parser_data.get(component_type, {}).get(name)
+        if component_:
             if name in eps and name not in self.masked_warned:
                 self.masked_warned[name] = True
                 logger.warning(
@@ -246,13 +264,15 @@ class ModuleRegistry(object):
                     "component type that is masking an inbuilt "
                     "definition" % (name, component_type))
 
-            for b in component[component_list_type]:
+            for b in component_[component_list_type]:
                 # Pass component_data in as template data to this function
                 # so that if the macro is invoked with arguments,
                 # the arguments are interpolated into the real defn.
                 self.dispatch(component_type, xml_parent, b, component_data)
         elif name in eps:
             func = eps[name].load()
+            if '_plugin' in component:
+                component_data['_plugin'] = component['_plugin']
             func(self, xml_parent, component_data)
         else:
             raise JenkinsJobsException("Unknown entry point or macro '{0}' "

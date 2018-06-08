@@ -85,9 +85,17 @@ def ownership(registry, xml_parent, data):
     .. literalinclude:: /../../tests/properties/fixtures/ownership.yaml
        :language: yaml
     """
+    version = registry.require_plugin('ownership', '0.11.0')
+    class_name = \
+        'com.synopsys.arc.jenkins.plugins.ownership.jobs.JobOwnerJobProperty'
+    if '_plugin' in data and data['_plugin'] == 'cloudbees-folder':
+        class_name = \
+            'org.jenkinsci.plugins.ownership.model.folders.'\
+            'FolderOwnershipProperty'
+
     ownership_plugin = XML.SubElement(
-        xml_parent,
-        'com.synopsys.arc.jenkins.plugins.ownership.jobs.JobOwnerJobProperty')
+        xml_parent, class_name)
+    ownership_plugin.set('plugin', 'ownership@%s' % version)
     ownership = XML.SubElement(ownership_plugin, 'ownership')
     owner = str(data.get('enabled', True)).lower()
     XML.SubElement(ownership, 'ownershipEnabled').text = owner
@@ -95,6 +103,7 @@ def ownership(registry, xml_parent, data):
     XML.SubElement(ownership, 'primaryOwnerId').text = data.get('owner')
 
     coownersIds = XML.SubElement(ownership, 'coownersIds')
+    coownersIds.set('class', 'sorted-set')
     for coowner in data.get('co-owners', []):
         XML.SubElement(coownersIds, 'string').text = coowner
 
@@ -1100,4 +1109,6 @@ class Properties(jenkins_jobs.modules.base.Base):
             properties = XML.SubElement(xml_parent, 'properties')
 
         for prop in data.get('properties', []):
+            if 'plugin' in  xml_parent.attrib:
+                prop['_plugin'] = xml_parent.attrib['plugin']
             self.registry.dispatch('property', properties, prop)
