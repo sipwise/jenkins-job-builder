@@ -46,6 +46,30 @@
       "revId": "f0818da1b99480b46f9b59c27e047da616777ce0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_a883e3ca",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-08T14:41:26Z",
+      "side": 1,
+      "message": "It gives you more text space. Especially in cases where you are writing docs with long description if this trigger had an even longer than... and this project currently only allows 80 character column widths.\n\nIt\u0027s better to indent by 4 spaces only (which passes pep8) so that you have the maximum amount of potential character space to write in.\n\nThe style in JJB is mixed as we haven\u0027t had someone to really comb through and update the style across the board and there\u0027s been multiple generations of maintainers in this project. Which is also why you see a mix of plugins using \"convert_mapping_to_xml\" vs not using that handy function. The convert_mapping function is how we recommend configuring things moving forward.\n\nIt would be nice if we had someone with the time to go through and cleanup the codebase with our recommended code style and best practices but since the active maintainers are all volunteers we have only been updating in areas of code where we are modifying for our patches.",
+      "parentUuid": "5f7c97a3_3153c9e4",
+      "range": {
+        "startLine": 566,
+        "startChar": 47,
+        "endLine": 566,
+        "endChar": 73
+      },
+      "revId": "f0818da1b99480b46f9b59c27e047da616777ce0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
