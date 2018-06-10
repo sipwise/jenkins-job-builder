@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_0d79b3fa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-06-10T15:38:05Z",
+      "side": 1,
+      "message": "how long have we been broken? just wondering if this should try to remain compatible with the previous behaviour if the plugin installed is old enough or not, otherwise we\u0027re doing a patch release that potentially breaks JJB for someone using the old plugin.\n\nAs an aside seems like maybe we need to put together some guidelines for ourselves as when it\u0027s worth preserving compat and when not to bother?",
+      "range": {
+        "startLine": 9,
+        "startChar": 53,
+        "endLine": 10,
+        "endChar": 8
+      },
+      "revId": "f2bc67cca0a1f9a77ce1ce4ff4879afb81617c33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_cd097b84",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-06-10T15:38:05Z",
+      "side": 1,
+      "message": "so far we\u0027ve explicitly tried to avoid setting the plugin version, is there a reason to start doing this?",
+      "range": {
+        "startLine": 94,
+        "startChar": 4,
+        "endLine": 94,
+        "endChar": 60
+      },
+      "revId": "f2bc67cca0a1f9a77ce1ce4ff4879afb81617c33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
