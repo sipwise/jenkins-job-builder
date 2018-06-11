@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_01e897b0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-06-11T09:09:46Z",
+      "side": 1,
+      "message": "I have no idea because I was not able to find a changelog.\nI agree about the guidelines, and I would say that any new change on plugins should state minimal supported version.\n\nAlso, being realistic, I doubt me or you have the bandwidth to keep compatibility forever, even to test it. \n\nI think that the only common sense we can have is to setup a time based compatibility timeframe. Like, any release on JJB should be compatible with Jenkins stable released in the the last 6/3/12 months maximum. \n\nThe big problem is that cloudbees does not have a stable plugin repository so we would be forced to create a historical mirrors that do dump them repositories somewhere by date. Who is going to implement and host this?",
+      "parentUuid": "5f7c97a3_0d79b3fa",
+      "range": {
+        "startLine": 9,
+        "startChar": 53,
+        "endLine": 10,
+        "endChar": 8
+      },
+      "revId": "f2bc67cca0a1f9a77ce1ce4ff4879afb81617c33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_cd097b84",
         "filename": "jenkins_jobs/modules/properties.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-06-10T15:38:05Z",
       "side": 1,
       "message": "so far we\u0027ve explicitly tried to avoid setting the plugin version, is there a reason to start doing this?",
+      "range": {
+        "startLine": 94,
+        "startChar": 4,
+        "endLine": 94,
+        "endChar": 60
+      },
+      "revId": "f2bc67cca0a1f9a77ce1ce4ff4879afb81617c33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_01b737f7",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-06-11T09:09:46Z",
+      "side": 1,
+      "message": "I measure the quality of what JJB does by the lack of changes made by jenkins when you do \"edit, save\" on a job from the UI, without changing anything. As you know Jenkins adds at least the plugin version, in the best scenario.\n\nAnother benefit is that putting version in, states that this configuration was generated for this version of the plugin, allowing Jenkins to migrate configuration better.\n\nI see no reason for not putting version inside when you have it. Maybe the question is if is safe to put @0 for unknown versions.",
+      "parentUuid": "5f7c97a3_cd097b84",
       "range": {
         "startLine": 94,
         "startChar": 4,
