@@ -34,6 +34,24 @@
       "revId": "a7f34db8a6f02739e1609dcd786fa6cb3b924986",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f0895dc6",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4488,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-06-13T20:29:22Z",
+      "side": 1,
+      "message": "Because it does nothing, it is alright to have it in the mapping as well.",
+      "parentUuid": "1f485f77_7bed3a24",
+      "revId": "a7f34db8a6f02739e1609dcd786fa6cb3b924986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
