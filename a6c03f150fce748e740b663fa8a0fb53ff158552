@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_985039d8",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-14T16:35:00Z",
+      "side": 1,
+      "message": "default \u003d optional\n\nThe default should be 1 though as that\u0027s the shallowest clone you can do.",
+      "parentUuid": "5f7c97a3_95f9e44f",
+      "range": {
+        "startLine": 172,
+        "startChar": 55,
+        "endLine": 172,
+        "endChar": 64
+      },
+      "revId": "a6c03f150fce748e740b663fa8a0fb53ff158552",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_156954f7",
         "filename": "jenkins_jobs/modules/scm.py",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2018-06-14T16:17:38Z",
       "side": 1,
       "message": "I would have solved it like this, \nif \u0027shallow-clone\u0027 in data:\n            XML.SubElement(clo, \u0027shallow\u0027).text \u003d str(\n                data.get(\u0027shallow-clone\u0027, False)).lower()\n            XML.SubElement(clo, \u0027depth\u0027).text \u003d str(\n                data.get(\u0027depth\u0027, 1))",
+      "range": {
+        "startLine": 385,
+        "startChar": 8,
+        "endLine": 388,
+        "endChar": 76
+      },
+      "revId": "a6c03f150fce748e740b663fa8a0fb53ff158552",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_9817d9ef",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-14T16:35:00Z",
+      "side": 1,
+      "message": "Personally I like using convert_mapping_to_xml as it makes the code a lot easier to read imo.\n\nThe issue with not passing xml is that Jenkins by default keeps the current section configuration if a section of XML is not passed to it. This causes strange issues for example if you use the Gerrit Trigger plugin and then one day decide you don\u0027t want to use it anymore and remove the YAML. it produces an XML that excludes the Jenkins configuration for Gerrit Trigger. Jenkins will then apply the existing setting rather than resetting it to default. Causing some confusion if your expectation is that Gerrit Trigger is removed from the config.",
+      "parentUuid": "5f7c97a3_156954f7",
       "range": {
         "startLine": 385,
         "startChar": 8,
