@@ -87,6 +87,54 @@
       "revId": "41986ee4736facd87e35ba98bee6f3db62fdd5f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_26fcbb70",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 28240
+      },
+      "writtenOn": "2018-06-14T11:19:58Z",
+      "side": 1,
+      "message": "So, then maybe instead of args\u003dNone, args\u003d[] is a better option.I don\u0027t know how its used as an API, so what do you say.",
+      "parentUuid": "5f7c97a3_c6c2a753",
+      "range": {
+        "startLine": 56,
+        "startChar": 23,
+        "endLine": 56,
+        "endChar": 27
+      },
+      "revId": "41986ee4736facd87e35ba98bee6f3db62fdd5f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_c6be27ad",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 28240
+      },
+      "writtenOn": "2018-06-14T11:19:58Z",
+      "side": 1,
+      "message": "Since we are passing args explicitly in main(), isn\u0027t it a required variable anyway.",
+      "parentUuid": "5f7c97a3_a6176bee",
+      "range": {
+        "startLine": 56,
+        "startChar": 23,
+        "endLine": 56,
+        "endChar": 27
+      },
+      "revId": "41986ee4736facd87e35ba98bee6f3db62fdd5f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
