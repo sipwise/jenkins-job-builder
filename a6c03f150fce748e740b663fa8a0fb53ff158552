@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_95f9e44f",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 28455
+      },
+      "writtenOn": "2018-06-14T16:17:38Z",
+      "side": 1,
+      "message": "should it not be optional?\nhttps://jenkins.io/doc/pipeline/steps/workflow-scm-step/",
+      "range": {
+        "startLine": 172,
+        "startChar": 55,
+        "endLine": 172,
+        "endChar": 64
+      },
+      "revId": "a6c03f150fce748e740b663fa8a0fb53ff158552",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_156954f7",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 28455
+      },
+      "writtenOn": "2018-06-14T16:17:38Z",
+      "side": 1,
+      "message": "I would have solved it like this, \nif \u0027shallow-clone\u0027 in data:\n            XML.SubElement(clo, \u0027shallow\u0027).text \u003d str(\n                data.get(\u0027shallow-clone\u0027, False)).lower()\n            XML.SubElement(clo, \u0027depth\u0027).text \u003d str(\n                data.get(\u0027depth\u0027, 1))",
+      "range": {
+        "startLine": 385,
+        "startChar": 8,
+        "endLine": 388,
+        "endChar": 76
+      },
+      "revId": "a6c03f150fce748e740b663fa8a0fb53ff158552",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_35a01043",
+        "filename": "tests/macros/fixtures/scm/obj-in-scm-macro001.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 28455
+      },
+      "writtenOn": "2018-06-14T16:17:38Z",
+      "side": 1,
+      "message": "the shallowest clone one can do is 1\nWhich is 1 commit.",
+      "range": {
+        "startLine": 40,
+        "startChar": 15,
+        "endLine": 40,
+        "endChar": 16
+      },
+      "revId": "a6c03f150fce748e740b663fa8a0fb53ff158552",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
