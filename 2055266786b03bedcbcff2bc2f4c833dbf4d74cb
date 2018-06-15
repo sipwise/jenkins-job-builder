@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_3f2beb95",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-15T23:02:41Z",
+      "side": 1,
+      "message": "This needs to be:\n\n Co-Authored-By: Kien Ha \u003ckienha9922@gmail.com\u003e\n\nand moved inbetween the Change-Id and Signed-off-by lines.",
+      "revId": "2055266786b03bedcbcff2bc2f4c833dbf4d74cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
