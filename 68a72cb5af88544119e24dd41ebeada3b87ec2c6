@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_058ee778",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 926,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-15T15:42:55Z",
+      "side": 1,
+      "message": "Create 2 Example headers:\n\n Minimal Example:\n \n .. literalinclude:: /../../tests/wrappers/fixtures/inject-minimal.yaml\n \n Full Example:\n \n .. literalinclude:: /../../tests/wrappers/fixtures/inject-full.yaml",
+      "revId": "68a72cb5af88544119e24dd41ebeada3b87ec2c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e585eb5a",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 928,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-15T15:42:55Z",
+      "side": 1,
+      "message": "the file name is inject-minimal.yaml",
+      "range": {
+        "startLine": 928,
+        "startChar": 62,
+        "endLine": 928,
+        "endChar": 65
+      },
+      "revId": "68a72cb5af88544119e24dd41ebeada3b87ec2c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_45c29f88",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 943,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-15T15:42:55Z",
+      "side": 1,
+      "message": "In Python (PEP8) the standard practice for naming variables is to use underscores.\n\n secure_groovy_script \u003d ...",
+      "range": {
+        "startLine": 943,
+        "startChar": 4,
+        "endLine": 943,
+        "endChar": 22
+      },
+      "revId": "68a72cb5af88544119e24dd41ebeada3b87ec2c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_45d93f82",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 946,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-15T15:42:55Z",
+      "side": 1,
+      "message": "End with a trailing comma ,\n\nThis way if someone needs to add another item they won\u0027t have to add it.",
+      "revId": "68a72cb5af88544119e24dd41ebeada3b87ec2c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
