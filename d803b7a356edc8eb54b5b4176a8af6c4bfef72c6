@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_684e8739",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 28246
+      },
+      "writtenOn": "2018-06-16T04:33:41Z",
+      "side": 1,
+      "message": "Updated it in the latest patch :)",
+      "parentUuid": "5f7c97a3_ab7e6216",
+      "revId": "d803b7a356edc8eb54b5b4176a8af6c4bfef72c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_2bd4921f",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_085d93eb",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 28246
+      },
+      "writtenOn": "2018-06-16T04:33:41Z",
+      "side": 1,
+      "message": "Initially I did it that way but pep8 was complaining. I tried to make it easier to read in the latest patch, let me know if that\u0027s fine :)",
+      "parentUuid": "5f7c97a3_2bd4921f",
+      "revId": "d803b7a356edc8eb54b5b4176a8af6c4bfef72c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_09c0597c",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2018-06-04T02:28:32Z",
       "side": 1,
       "message": "PS change the format as recommended by Daniel ... comma missing in the last line.",
+      "revId": "d803b7a356edc8eb54b5b4176a8af6c4bfef72c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_2862cfae",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 28246
+      },
+      "writtenOn": "2018-06-16T04:33:41Z",
+      "side": 1,
+      "message": "Fixed! :)",
+      "parentUuid": "5f7c97a3_09c0597c",
       "revId": "d803b7a356edc8eb54b5b4176a8af6c4bfef72c6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
