@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_71698f24",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-17T14:51:26Z",
+      "side": 1,
+      "message": "Instead of trialing \\ here write the code like this:\n\n XML.SubElement(...).set(\n     \"class\", ...)\n\n\nIt avoids us having to add all those nasty trailing \\ everywhere.",
+      "range": {
+        "startLine": 232,
+        "startChar": 0,
+        "endLine": 234,
+        "endChar": 64
+      },
+      "revId": "275846674a34754a79bac566a5af1edbf743795b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
