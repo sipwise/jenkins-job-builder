@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_5bd91282",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-17T02:26:28Z",
+      "side": 1,
+      "message": "If you start this line at 4 indents on the next line, pep8 will allow you to use the full column length.\n\nDo this:\n\n eligibility_label_dict \u003d {\n     \u0027all\": ...\n     ...\n\n\nThe reason pep8 complains is the 2nd line of an indented set needs to match at least the starting line indented.",
+      "range": {
+        "startLine": 218,
+        "startChar": 30,
+        "endLine": 218,
+        "endChar": 65
+      },
+      "revId": "12bbb99665ba29e15138ab8e6a7b640be43667c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
