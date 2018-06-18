@@ -6,3 +6,5 @@ scm:
         repo-owner: 'SANDBOX'
         repo: 'test'
         discover-tags: true
+        discover-pr-origin: headOnly
+        discover-branch: all
