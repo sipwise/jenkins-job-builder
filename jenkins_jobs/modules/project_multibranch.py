@@ -298,6 +298,13 @@ def bitbucket_scm(xml_parent, data):
 
     :arg bool discover-tags: Discovers tags on the repository.
         (default false)
+    :arg str discovery-branch: Discovers branches on the repository.
+        Valid options: ex-pr, only-pr, all.
+        Value is not specified by default.
+    :arg str discover-pr-origin: Discovers pull requests where the origin
+        repository is the same as the target repository.
+        Valid options: mergeOnly, headOnly, mergeAndHead.
+        Value is not specified by default.
 
     Minimal Example:
 
@@ -331,6 +338,38 @@ def bitbucket_scm(xml_parent, data):
     if data.get('discover-tags', False):
         XML.SubElement(traits,
             'com.cloudbees.jenkins.plugins.bitbucket.TagDiscoveryTrait')
+
+    if data.get('discover-pr-origin', None):
+        dpro = XML.SubElement(traits,
+            'com.cloudbees.jenkins.plugins.bitbucket'
+            '.OriginPullRequestDiscoveryTrait')
+        dpro_strategies = {
+            'mergeOnly': '1',
+            'headOnly': '2',
+            'mergeAndHead': '3'
+        }
+        dpro_mapping = [(
+            'discover-pr-origin-strategy', 'strategyId', 'mergeOnly',
+            dpro_strategies
+        )]
+        helpers.convert_mapping_to_xml(
+            dpro, data, dpro_mapping, fail_required=True
+        )
+
+    if data.get('discover-branch', None):
+        dbr = XML.SubElement(traits,
+            'com.cloudbees.jenkins.plugins.bitbucket.BranchDiscoveryTrait')
+        dbr_strategies = {
+            'ex-pr': '1',
+            'only-pr': '2',
+            'all': '3'
+        }
+        dbr_mapping = [(
+            'discover-branch', 'strategyId', 'all', dbr_strategies
+        )]
+        helpers.convert_mapping_to_xml(
+            dbr, data, dbr_mapping, fail_required=True
+        )
 
 
 def gerrit_scm(xml_parent, data):
