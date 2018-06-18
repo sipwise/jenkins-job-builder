@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_b2d06e2d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-18T22:28:59Z",
+      "side": 1,
+      "message": "No need to ask the user for the rvm-version. We can query Jenkins directly to ask for which version is installed. Take a look at the Slack plugin as an example on how to do that.",
+      "range": {
+        "startLine": 689,
+        "startChar": 0,
+        "endLine": 690,
+        "endChar": 54
+      },
+      "revId": "161a985324ad0ec5a8d19408fec06a0cb99c3953",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
