@@ -672,6 +672,8 @@ def rvm_env(registry, xml_parent, data):
 
     :arg str implementation: Type of implementation. Syntax is RUBY[@GEMSET],
                              such as '1.9.3' or 'jruby@foo'.
+    :arg str rvm-version: The version of the rvm plugin installed (optional)
+                          Versions '0.5' and up require a different ruby-class
 
     Example::
 
@@ -683,6 +685,10 @@ def rvm_env(registry, xml_parent, data):
                          'ruby-proxy-object')
 
     ro_class = "Jenkins::Plugin::Proxies::BuildWrapper"
+
+    if data.get('rvm-version', '0.4') >= '0.5':
+        ro_class = "Jenkins::Tasks::BuildWrapperProxy"
+
     ro = XML.SubElement(rpo,
                         'ruby-object',
                         {'ruby-class': ro_class,
