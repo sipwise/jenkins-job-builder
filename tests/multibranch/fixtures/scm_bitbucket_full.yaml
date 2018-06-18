@@ -8,3 +8,5 @@ scm:
         repo: 'test'
         server-url: https://bitbucket.example.com:8080
         discover-tags: true
+        discover-pr-origin: headOnly
+        discover-branch: all

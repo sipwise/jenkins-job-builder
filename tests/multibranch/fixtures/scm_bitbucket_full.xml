@@ -39,6 +39,12 @@
           <serverUrl>https://bitbucket.example.com:8080</serverUrl>
           <traits>
             <com.cloudbees.jenkins.plugins.bitbucket.TagDiscoveryTrait/>
+            <com.cloudbees.jenkins.plugins.bitbucket.OriginPullRequestDiscoveryTrait>
+              <strategyId>2</strategyId>
+            </com.cloudbees.jenkins.plugins.bitbucket.OriginPullRequestDiscoveryTrait>
+            <com.cloudbees.jenkins.plugins.bitbucket.BranchDiscoveryTrait>
+              <strategyId>3</strategyId>
+            </com.cloudbees.jenkins.plugins.bitbucket.BranchDiscoveryTrait>
           </traits>
         </source>
       </jenkins.branch.BranchSource>
