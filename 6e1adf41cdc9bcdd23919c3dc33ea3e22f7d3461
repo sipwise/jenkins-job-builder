@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_ea3a81c2",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1381,
+      "author": {
+        "id": 14051
+      },
+      "writtenOn": "2018-06-18T04:23:21Z",
+      "side": 1,
+      "message": "Bad copy \u0026 paste here? \"Repo Plugin\" should be \"AccuRev Plugin\"",
+      "revId": "6e1adf41cdc9bcdd23919c3dc33ea3e22f7d3461",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
