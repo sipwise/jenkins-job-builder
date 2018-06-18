@@ -6,3 +6,4 @@ scm:
         repo-owner: 'SANDBOX'
         repo: 'test'
         discover-tags: true
+        head-filter-regex: 'master|\d+\.\d+'

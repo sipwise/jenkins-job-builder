@@ -298,6 +298,9 @@ def bitbucket_scm(xml_parent, data):
 
     :arg bool discover-tags: Discovers tags on the repository.
         (default false)
+    :arg str head-filter-regex: A regular expression for filtering
+        discovered source branches. Requires the :jenkins-wiki:`SCM API Plugin
+        <SCM+API+Plugin>`.
 
     Minimal Example:
 
@@ -331,6 +334,10 @@ def bitbucket_scm(xml_parent, data):
     if data.get('discover-tags', False):
         XML.SubElement(traits,
             'com.cloudbees.jenkins.plugins.bitbucket.TagDiscoveryTrait')
+    if data.get('head-filter-regex', None):
+        rshf = XML.SubElement(traits,
+            'jenkins.scm.impl.trait.RegexSCMHeadFilterTrait')
+        XML.SubElement(rshf, 'regex').text = data.get('head-filter-regex')
 
 
 def gerrit_scm(xml_parent, data):
