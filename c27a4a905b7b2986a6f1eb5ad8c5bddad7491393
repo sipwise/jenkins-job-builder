@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_799864cb",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-06-19T17:01:54Z",
+      "side": 1,
+      "message": "Are these the options available to the user? We will want to check if the user input a valid option for matching-label if this is the case.",
+      "range": {
+        "startLine": 195,
+        "startChar": 8,
+        "endLine": 195,
+        "endChar": 38
+      },
+      "revId": "c27a4a905b7b2986a6f1eb5ad8c5bddad7491393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
