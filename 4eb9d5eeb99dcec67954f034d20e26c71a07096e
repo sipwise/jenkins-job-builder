@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_95a98025",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-06-19T22:27:03Z",
+      "side": 1,
+      "message": "Trailing \\\n\nXML.SubElement(factory, \u0027scriptPath\u0027).text \u003d data.get(\n    \u0027script-path\u0027, \u0027Jenkinsfile\u0027)\n\nor some variant is acceptable",
+      "range": {
+        "startLine": 275,
+        "startChar": 53,
+        "endLine": 275,
+        "endChar": 54
+      },
+      "revId": "4eb9d5eeb99dcec67954f034d20e26c71a07096e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
