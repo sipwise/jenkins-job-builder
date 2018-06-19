@@ -1,0 +1,7 @@
+- view:
+   name: testint
+   view-type: list
+   job-name:
+      - job-1
+      - job-3
+      - job-2
