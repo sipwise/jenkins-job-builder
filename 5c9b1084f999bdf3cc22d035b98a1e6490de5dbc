@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_08955c88",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-06-19T15:22:38Z",
+      "side": 1,
+      "message": "Do we really require this though? Seems like we only require it for the folder ownership property so someone with an older version shouldn\u0027t see an error here unnecessarily just because they have an older version.\n\nI\u0027d be more inclined to throw an error only if the this is being done for a \u0027cloudbees-folder\u0027 case.",
+      "range": {
+        "startLine": 88,
+        "startChar": 4,
+        "endLine": 88,
+        "endChar": 60
+      },
+      "revId": "5c9b1084f999bdf3cc22d035b98a1e6490de5dbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_8a2e44a9",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-06-19T15:22:38Z",
+      "side": 1,
+      "message": "you know you can split across lines in python without \u0027\\\u0027.\n\n class_name \u003d (\n     \u0027com.synopsys.arc.jenkins.plugins.ownership.jobs.JobOwnerJobProperty\u0027)\n\n\nSimilarly below:\n\n  class_name \u003d (\n      \u0027org.jenkinsci.plugins.ownership.model.folders.\u0027\n      \u0027FolderOwnershipProperty\u0027)",
+      "range": {
+        "startLine": 89,
+        "startChar": 17,
+        "endLine": 89,
+        "endChar": 18
+      },
+      "revId": "5c9b1084f999bdf3cc22d035b98a1e6490de5dbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_4a110c5d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-06-19T15:22:38Z",
+      "side": 1,
+      "message": "I think you can simplify by just ensuring that the \u0027_plugin\u0027 data is always set even if it\u0027s \u0027None\u0027 and then it\u0027s a straight forward comparison.",
+      "revId": "5c9b1084f999bdf3cc22d035b98a1e6490de5dbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e842603b",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-06-19T15:22:38Z",
+      "side": 1,
+      "message": "Did you bring this up on the mailing list, can\u0027t recall. But if we\u0027re going to change our default behaviour here and start setting the version, then I think we need to make sure there it\u0027s clear that we\u0027re switching behaviour.\n\nI\u0027d certainly be a bit wary of injecting \u00270\u0027 for unknown versions as no idea how Jenkins will try to migrate such cases. Particular as getting the version information these days requires admin privs.",
+      "range": {
+        "startLine": 98,
+        "startChar": 36,
+        "endLine": 98,
+        "endChar": 48
+      },
+      "revId": "5c9b1084f999bdf3cc22d035b98a1e6490de5dbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_caa8bc21",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1113,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-06-19T15:22:38Z",
+      "side": 1,
+      "message": "Can simplify with:\n\n prop[\u0027_plugin\u0027] \u003d xml_parent.attrib.get(\u0027plugin\u0027, None)\n\nThen the comparison above is straight forward.\n\nOr is there something about needing to support this being set by the registry.dispatch method I\u0027m not following?\n\n---\n\nSo I\u0027ve spotted that the reason the copying of component_data is needed in the registry is because we\u0027re injecting \u0027_plugin\u0027 at the top level here.\n\nI\u0027d be inclined to either in the registry we do something to copy any private attributes set at this point without needing to know their names (just copying anything starting with \u0027_\u0027 from component_data) or we inject this into the next level into the data e.g.:\n\n prop[next(iter(prop))][\u0027_plugin\u0027] \u003d xml_parent.attrib.get(\u0027plugin\u0027)\n\nAnd don\u0027t have the registry involved.",
+      "range": {
+        "startLine": 1112,
+        "startChar": 12,
+        "endLine": 1113,
+        "endChar": 61
+      },
+      "revId": "5c9b1084f999bdf3cc22d035b98a1e6490de5dbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_ed5b521f",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-06-19T15:22:38Z",
+      "side": 1,
+      "message": "just avoid using this unless there is no other option, I would say that the clearest layout for this block is:\n\n if (str(current_version) !\u003d \u00270\u0027 and\n         current_version \u003c pkg_resources.parse_version(version)):\n     raise PluginVersionMismatchException(plugin_name,\n                                          current_version, version)\n \n\nThis makes it crystal clear that the next line is not the start of the block, but rather part of the previous statement because it\u0027s indented past the normal start of block point.\n\nOtherwise the subsequent line appears line it\u0027s nested a second block down.",
+      "range": {
+        "startLine": 129,
+        "startChar": 43,
+        "endLine": 129,
+        "endChar": 44
+      },
+      "revId": "5c9b1084f999bdf3cc22d035b98a1e6490de5dbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_8d817e50",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-06-19T15:22:38Z",
+      "side": 1,
+      "message": "I\u0027d rename completely rather than doing a following underscore as it\u0027s too easy for people to miss the difference between \u0027component\u0027 \u0026 \u0027component_\u0027.\n\nSince the comment says this is checking for a \u0027macro\u0027, seems like that might be a good replacement name.",
+      "range": {
+        "startLine": 258,
+        "startChar": 8,
+        "endLine": 258,
+        "endChar": 18
+      },
+      "revId": "5c9b1084f999bdf3cc22d035b98a1e6490de5dbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_2dbe2a00",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-06-19T15:22:38Z",
+      "side": 1,
+      "message": "Where is this being passed down to? it looks like it\u0027s being added to the data to be sent to the \u0027gen_xml()\u0027 calls, yet the gen_xml() call in properties is using the attribute information from the xml_parent?\n\nIs this a left over from a previous approach? or is this doing some copying that is needed for other cases?\n\nI think I understand, I would suggest that this means the change in gen_xml of properties is setting the _plugin attribute on the data in a less than idea manner if we need to copy it here again.",
+      "range": {
+        "startLine": 274,
+        "startChar": 12,
+        "endLine": 275,
+        "endChar": 64
+      },
+      "revId": "5c9b1084f999bdf3cc22d035b98a1e6490de5dbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
