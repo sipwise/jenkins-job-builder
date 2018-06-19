@@ -46,6 +46,30 @@
       "revId": "c27a4a905b7b2986a6f1eb5ad8c5bddad7491393",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_41880e21",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-19T18:09:04Z",
+      "side": 1,
+      "message": "Yes, there\u0027s an optional 4th tuple that accepts a list of valid options and checks against the list to ensure that the user is passing something valid.\n\nRefer to this for an example: \n\nhttps://github.com/openstack-infra/jenkins-job-builder/blob/master/jenkins_jobs/modules/builders.py#L831-L847",
+      "parentUuid": "5f7c97a3_a12ec289",
+      "range": {
+        "startLine": 195,
+        "startChar": 8,
+        "endLine": 195,
+        "endChar": 38
+      },
+      "revId": "c27a4a905b7b2986a6f1eb5ad8c5bddad7491393",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
