@@ -261,7 +261,7 @@ class List(jenkins_jobs.modules.base.Base):
 
         mapping = [
             ('name', 'name', None),
-            ('description', 'description', ''),
+            # ('description', 'description', ''),
             ('filter-executors', 'filterExecutors', False),
             ('filter-queue', 'filterQueue', False)]
         convert_mapping_to_xml(root, data, mapping, fail_required=True)
