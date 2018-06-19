@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_e5ae102e",
+        "filename": "jenkins_jobs/modules/view_list.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-06-19T11:53:47Z",
+      "side": 1,
+      "message": "Why there are two? The change needs to explain why there are two and check that description is not lost due to this removal.\n\nWe do not comment code, we remove it (when needed).",
+      "revId": "2c4dffad4226722711d99dd4fe924d7674888cb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
