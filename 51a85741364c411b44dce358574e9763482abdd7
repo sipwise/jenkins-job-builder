@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_cf1d1878",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 28498
+      },
+      "writtenOn": "2018-06-20T08:57:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_1ed356d5",
+      "range": {
+        "startLine": 354,
+        "startChar": 8,
+        "endLine": 354,
+        "endChar": 9
+      },
+      "revId": "51a85741364c411b44dce358574e9763482abdd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_3ea8928a",
         "filename": "jenkins_jobs/modules/project_multibranch.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2018-06-19T16:48:21Z",
       "side": 1,
       "message": "I personally don\u0027t like this being on a newline. I feel like it\u0027s best if we stick to\n\nhelpers.convert_mapping_to_xml(\n    dpro, data, dpro_mapping, fail_required\u003dTrue)",
+      "range": {
+        "startLine": 357,
+        "startChar": 8,
+        "endLine": 357,
+        "endChar": 9
+      },
+      "revId": "51a85741364c411b44dce358574e9763482abdd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_6f2c04ac",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 28498
+      },
+      "writtenOn": "2018-06-20T08:57:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_3ea8928a",
       "range": {
         "startLine": 357,
         "startChar": 8,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_8f2720c8",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 28498
+      },
+      "writtenOn": "2018-06-20T08:57:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_5eea2e74",
+      "range": {
+        "startLine": 367,
+        "startChar": 8,
+        "endLine": 369,
+        "endChar": 10
+      },
+      "revId": "51a85741364c411b44dce358574e9763482abdd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_1e8d9634",
         "filename": "jenkins_jobs/modules/project_multibranch.py",
         "patchSetId": 1
@@ -82,6 +154,30 @@
       "writtenOn": "2018-06-19T16:48:21Z",
       "side": 1,
       "message": "Same comment as above",
+      "range": {
+        "startLine": 372,
+        "startChar": 7,
+        "endLine": 372,
+        "endChar": 9
+      },
+      "revId": "51a85741364c411b44dce358574e9763482abdd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_ef11f45e",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 28498
+      },
+      "writtenOn": "2018-06-20T08:57:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_1e8d9634",
       "range": {
         "startLine": 372,
         "startChar": 7,
