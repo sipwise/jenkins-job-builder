@@ -16,6 +16,24 @@
       "revId": "5c8c0cbf4746aafcf9e08afbca29335554669c3c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_3b9c0869",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 28498
+      },
+      "writtenOn": "2018-06-20T15:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_89d877f0",
+      "revId": "5c8c0cbf4746aafcf9e08afbca29335554669c3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
