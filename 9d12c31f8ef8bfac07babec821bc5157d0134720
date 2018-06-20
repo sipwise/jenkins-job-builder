@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_b4a12bab",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-06-20T13:29:17Z",
+      "side": 1,
+      "message": "Can we really not do this from the python code itself?",
+      "revId": "9d12c31f8ef8bfac07babec821bc5157d0134720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
