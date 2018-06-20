@@ -74,3 +74,12 @@ class Base(object):
         """
 
         pass
+
+    def should_generate_output(self, data):
+        """This method is called before any XML is generated.  If it returns
+        False, the module will not generate any output.
+
+        :arg dict data: the YAML data structure
+        """
+        generate_output = data.get('generate-output', True)
+        return str(generate_output).lower() == 'true'

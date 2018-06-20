@@ -79,7 +79,9 @@ class XmlGenerator(object):
     def generateXML(self, data_list):
         xml_objs = []
         for data in data_list:
-            xml_objs.append(self._getXMLForData(data))
+            xml_obj = self._getXMLForData(data)
+            if xml_obj is not None:
+                xml_objs.append(xml_obj)
         return xml_objs
 
     def _getXMLForData(self, data):
@@ -89,6 +91,9 @@ class XmlGenerator(object):
                 group=self.entry_point_group, name=kind):
             Mod = ep.load()
             mod = Mod(self.registry)
+            if hasattr(mod, 'should_generate_output'):
+                if not mod.should_generate_output(data):
+                    return None
             xml = mod.root_xml(data)
             self._gen_xml(xml, data)
             obj = XmlJob(xml, data['name'])
