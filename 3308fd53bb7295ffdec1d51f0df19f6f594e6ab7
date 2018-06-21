@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_b3510a65",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-21T14:24:59Z",
+      "side": 1,
+      "message": "Wow is the input really \"allCases\" in exactly that casing?\n\nThat\u0027s kinda poor user experience, but I\u0027m not sure if there\u0027s an easy way around that with today\u0027s implementation of covert_mapping.",
+      "range": {
+        "startLine": 212,
+        "startChar": 20,
+        "endLine": 212,
+        "endChar": 28
+      },
+      "revId": "3308fd53bb7295ffdec1d51f0df19f6f594e6ab7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
