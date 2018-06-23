@@ -1022,6 +1022,79 @@ def inject_passwords(registry, xml_parent, data):
                 mapping, fail_required=True)
 
 
+def vault_secrets(registry, xml_parent, data):
+    """yaml: vault-secrets
+     Inject environment variables from a HashiCorp Vault secret.
+
+     Secrets are generally masked in the build log.
+
+    Requires the Jenkins
+        :jenkins-wiki:`HashiCorp Vault Plugin <HashiCorp+Vault+Plugin>`.
+
+    :arg str vault-url: Vault URL (required)
+    :arg str credentials-id: Vault Credential (required).
+    :arg list secrets: List of secrets
+
+      :secrets:
+        * **secret-path** (`str`) --
+          The path of the secret in the vault server (required).
+
+        :secret-values:
+          * **secret-values** (`list`) -- List of key / value pairs
+
+            :secret-value:
+              * **env-var** (`str`) --
+                The environment variable to set with the value of the
+                vault key (required).
+              * **vault-key** (`str`) -- The vault key whose value with
+                populate the environment variable (required).
+
+    Minimal Example:
+
+    .. literalinclude:: /../../tests/wrappers/fixtures/vault-minimal.yaml
+       :language: yaml
+
+    Full Example:
+
+    .. literalinclude:: /../../tests/wrappers/fixtures/vault-full.yaml
+       :language: yaml
+
+    """
+    vault = XML.SubElement(xml_parent,
+                           'com.datapipe.jenkins.vault.VaultBuildWrapper')
+    vault.set('plugin', 'hashicorp-vault-plugin')
+    configuration = XML.SubElement(vault, 'configuration')
+    conf_mapping = [
+        ('vault-url', 'vaultUrl', None),
+        ('credentials-id', 'vaultCredentialId', None),
+    ]
+    convert_mapping_to_xml(
+        configuration, data, conf_mapping, fail_required=True)
+
+    secretsobj = XML.SubElement(vault, 'vaultSecrets')
+    secrets = data.get('secrets', [])
+    for secret in secrets:
+        secretobj = XML.SubElement(
+            secretsobj, 'com.datapipe.jenkins.vault.model.VaultSecret')
+        XML.SubElement(
+            secretobj, 'path').text = secret['secret'].get('secret-path', '')
+        secretvaluesobj = XML.SubElement(secretobj, 'secretValues')
+        for secretvalue in secret['secret']['secret-values']:
+            secretvalueobj = XML.SubElement(
+                secretvaluesobj,
+                'com.datapipe.jenkins.vault.model.VaultSecretValue')
+            XML.SubElement(
+                secretvalueobj,
+                'envVar').text = \
+                secretvalue['secret-value'].get('env-var', '')
+            XML.SubElement(
+                secretvalueobj,
+                'vaultKey').text = \
+                secretvalue['secret-value'].get('vault-key', '')
+    XML.SubElement(vault, 'valuesToMask')
+    XML.SubElement(vault, 'vaultAccessor')
+
+
 def env_file(registry, xml_parent, data):
     """yaml: env-file
     Add or override environment variables to the whole build process
