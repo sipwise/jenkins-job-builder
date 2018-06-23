@@ -7553,6 +7553,30 @@ def tasks(registry, xml_parent, data):
         thrsh_xml, thrsh_data, thrsh_mappings, fail_required=True)
 
 
+def packer(registry, xml_parent, data):
+    """yaml: packer
+    This plugin allows for a job to publish an image generated Packer
+    Requires the Jenkins :jenkins-wiki:`Packer Plugin <Packer+Plugin>`.
+
+    :arg bool use-debug: adds -debug argument when packer executes.
+        (default false)
+
+    Full Example:
+
+        .. literalinclude::  /../../tests/publishers/fixtures/packer-full.yaml
+           :language: yaml
+    """
+
+    root = XML.SubElement(
+        xml_parent, 'biz.neustar.jenkins.plugins.packer.PackerPublisher')
+    root.set('plugin', 'packer')
+
+    mapping = [
+        ('use-debug', 'useDebug', False),
+    ]
+    helpers.convert_mapping_to_xml(root, data, mapping, fail_required=False)
+
+
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 

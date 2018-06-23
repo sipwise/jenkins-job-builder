@@ -1,0 +1,3 @@
+publishers:
+  - packer:
+      use-debug: true
