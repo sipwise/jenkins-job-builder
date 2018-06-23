@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <publishers>
+    <biz.neustar.jenkins.plugins.packer.PackerPublisher plugin="packer">
+      <params>additional params</params>
+      <useDebug>true</useDebug>
+    </biz.neustar.jenkins.plugins.packer.PackerPublisher>
+  </publishers>
+</project>

@@ -1,0 +1,5 @@
+publishers:
+  - packer:
+      params: additional params
+      use-debug: true
+      
