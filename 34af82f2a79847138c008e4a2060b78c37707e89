@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_acdbc11e",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1046,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-24T14:02:44Z",
+      "side": 1,
+      "message": "Typically we want to have 2 types of tests / examples:\n\n1. Minimal Example - contains the absolute minimum configuration to get the plugin to work. Basically only setting \"required\" fields and leaving defaults to take over for any non-required field.\n\n2. Full Example - tests every possible configuration with a non-default value.\n\nWe typically name the tests vault-minimal.xml and vault-full.xml",
+      "range": {
+        "startLine": 1044,
+        "startChar": 0,
+        "endLine": 1046,
+        "endChar": 68
+      },
+      "revId": "34af82f2a79847138c008e4a2060b78c37707e89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
