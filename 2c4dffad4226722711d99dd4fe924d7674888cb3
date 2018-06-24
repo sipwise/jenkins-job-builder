@@ -16,6 +16,24 @@
       "revId": "2c4dffad4226722711d99dd4fe924d7674888cb3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_1142123c",
+        "filename": "jenkins_jobs/modules/view_list.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 28240
+      },
+      "writtenOn": "2018-06-24T05:52:14Z",
+      "side": 1,
+      "message": "Hi Sorin,\n\nApologies for the incomplete description. Crux to this commit is that there should be only one description tag present in Hudson view. According to my thinking, one is part of default set of generated xml tags:\n```\u003chudson.model.ListView\u003e\n  \u003cactions/\u003e\n  \u003cdescription\u003e\u0026lt;!-- Managed by Jenkins Job Builder --\u0026gt;\u003c/description\u003e\n  \u003ckeepDependencies\u003efalse\u003c/keepDependencies\u003e\n\u003cblockBuildWhenDownstreamBuilding\u003efalse\u003c/blockBuildWhenDownstreamBuilding\u003e\n\u003cblockBuildWhenUpstreamBuilding\u003efalse\u003c/blockBuildWhenUpstreamBuilding\u003e\n  \u003cconcurrentBuild\u003efalse\u003c/concurrentBuild\u003e\n  \u003ccanRoam\u003etrue\u003c/canRoam\u003e\n  \u003cproperties/\u003e\n  \u003cscm class\u003d\"hudson.scm.NullSCM\"/\u003e\n  \u003cbuilders/\u003e\n  \u003cpublishers/\u003e\n  \u003cbuildWrappers/\u003e\n\u003c/hudson.model.ListView\u003e```\nand one is supplied in List class. I have commented out the one in List class. Now when description is provided in yaml, both have the same content as listed in yaml, so anyone be removed.\n\nI would remove it given the pr is accepted.\nFor more info: https://storyboard.openstack.org/#!/story/2002159",
+      "parentUuid": "5f7c97a3_e5ae102e",
+      "revId": "2c4dffad4226722711d99dd4fe924d7674888cb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
