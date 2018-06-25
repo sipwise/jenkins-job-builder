@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_6ddd9d6b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-06-25T08:53:22Z",
+      "side": 1,
+      "message": "please add a proper commit message.\n\nhttp://chris.beams.io/posts/git-commit/",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 5
+      },
+      "revId": "f58909bfeb13e4d1121c7c98dae1c915b7f2b9ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_8d97d990",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1042,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-06-25T08:53:22Z",
+      "side": 1,
+      "message": "this will fail pep8, max line lenght allowed \u003c 79 chars",
+      "range": {
+        "startLine": 1041,
+        "startChar": 19,
+        "endLine": 1042,
+        "endChar": 123
+      },
+      "revId": "f58909bfeb13e4d1121c7c98dae1c915b7f2b9ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
