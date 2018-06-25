@@ -1027,8 +1027,8 @@ def vault(registry, xml_parent, data):
     | Secrets are generally masked in the build log.
     | Requires the Jenkins :jenkins-wiki:`HashiCorp Vault Plugin <HashiCorp+Vault+Plugin>`.
 
-    :arg str vault-url: Vault URL
-    :arg str credentials-id: Vault Credential
+    :arg str vault-url: Vault URL (required)
+    :arg str credentials-id: Vault Credential (required).
     :arg list secrets: List of secrets
 
         :secrets:
@@ -1038,12 +1038,12 @@ def vault(registry, xml_parent, data):
                 * **secret-values** (`list`) -- List of key / value pairs
 
                 :secret-value:
-                    * **env-var** (`str`) -- The environment variable to set with the value of the vault key.
-                    * **vault-key** (`str`) -- The vault key whose value with populate the environment variable.
+                    * **env-var** (`str`) -- The environment variable to set with the value of the vault key (required).
+                    * **vault-key** (`str`) -- The vault key whose value with populate the environment variable (required).
 
     Example:
 
-    .. literalinclude:: /../../tests/wrappers/fixtures/vault001.yaml
+    .. literalinclude:: /../../tests/wrappers/fixtures/vault-minimal.yaml
 
     """
     vault = XML.SubElement(xml_parent, 'com.datapipe.jenkins.vault.VaultBuildWrapper')
