@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_a273bc7f",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1030,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-25T14:22:59Z",
+      "side": 1,
+      "message": "we don\u0027t need the literal pipes here IMO. If we want to separate the Requires line just leave a blank line in between.",
+      "revId": "df37f0a8ba34d10ea55f2315915e95ad739fa523",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e27e94e1",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1052,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-25T14:22:59Z",
+      "side": 1,
+      "message": "We need to list BOTH the minimal and full examples, and add the language flag so that it syntax highlights the yaml code.\n\n Minimal Example:\n \n .. literalinclude:: /../../tests/wrappers/fixtures/vault-minimal.yaml\n    :language: yaml\n \n Full Example:\n \n .. literalinclude:: /../../tests/wrappers/fixtures/vault-full.yaml\n    :language: yaml",
+      "range": {
+        "startLine": 1050,
+        "startChar": 0,
+        "endLine": 1052,
+        "endChar": 73
+      },
+      "revId": "df37f0a8ba34d10ea55f2315915e95ad739fa523",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e223f456",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1061,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-25T14:22:59Z",
+      "side": 1,
+      "message": "better to write the mapping variable in this style so that it\u0027s easy to insert new options in the future.\n\n conf_mapping \u003d [\n     (\u0027vault-url\u0027, \u0027vaultUrl\u0027, None),\n     (\u0027credentials-id\u0027, \u0027vaultCredentialId\u0027, None),\n ]\n\nThis way when we need to add another one in the future it\u0027s a one line change.",
+      "range": {
+        "startLine": 1059,
+        "startChar": 4,
+        "endLine": 1061,
+        "endChar": 54
+      },
+      "revId": "df37f0a8ba34d10ea55f2315915e95ad739fa523",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_821240fc",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1066,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-25T14:22:59Z",
+      "side": 1,
+      "message": "If you write this line this way it will only be 2 lines of code:\n\n convert_mapping_to_xml(\n     configuration, data, conf_mapping, fail_required\u003dTrue)",
+      "range": {
+        "startLine": 1062,
+        "startChar": 0,
+        "endLine": 1066,
+        "endChar": 27
+      },
+      "revId": "df37f0a8ba34d10ea55f2315915e95ad739fa523",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_a2d09cf8",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1074,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-25T14:22:59Z",
+      "side": 1,
+      "message": "If you move secretobj to the next line, pep8 will pass and you\u0027ll get more column space on line 2.\n\n XML.SubElement(\n     secretobj, \u0027path\u0027).text \u003d secret ....",
+      "range": {
+        "startLine": 1073,
+        "startChar": 0,
+        "endLine": 1074,
+        "endChar": 77
+      },
+      "revId": "df37f0a8ba34d10ea55f2315915e95ad739fa523",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_c2503861",
+        "filename": "tests/wrappers/fixtures/vault-minimal.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-25T14:22:59Z",
+      "side": 1,
+      "message": "According to the code documentation \"secrets\" is not required right? so we can remove this from the test as it\u0027s a minimal test.",
+      "range": {
+        "startLine": 5,
+        "startChar": 6,
+        "endLine": 11,
+        "endChar": 36
+      },
+      "revId": "df37f0a8ba34d10ea55f2315915e95ad739fa523",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
