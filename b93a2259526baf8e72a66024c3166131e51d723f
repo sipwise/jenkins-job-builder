@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_0f172bf0",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4284,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-26T00:24:04Z",
+      "side": 1,
+      "message": "Move the mappings outside of the for loop so that it doesn\u0027t get redeclared every time.",
+      "range": {
+        "startLine": 4278,
+        "startChar": 0,
+        "endLine": 4284,
+        "endChar": 9
+      },
+      "revId": "b93a2259526baf8e72a66024c3166131e51d723f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
