@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_9eba6109",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1027,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-27T15:51:52Z",
+      "side": 1,
+      "message": "Unindent here by 1 line otherwise Sphinx will render this as a block quote.",
+      "range": {
+        "startLine": 1027,
+        "startChar": 4,
+        "endLine": 1027,
+        "endChar": 5
+      },
+      "revId": "ac96a9f5930a4f5ad57aba5d039bca4b21b0964f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
