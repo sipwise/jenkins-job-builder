@@ -16,6 +16,24 @@
       "revId": "d1e2f75ec5c7e6d968e2292ed910afb47e798792",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_15e5d4a4",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1015,
+      "author": {
+        "id": 28537
+      },
+      "writtenOn": "2018-06-27T14:42:54Z",
+      "side": 0,
+      "message": "can you please point this to right line because I didn\u0027t touched this part of code.",
+      "parentUuid": "5f7c97a3_0d94ea34",
+      "revId": "d1e2f75ec5c7e6d968e2292ed910afb47e798792",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
