@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_0d94ea34",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1015,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-27T14:11:04Z",
+      "side": 0,
+      "message": "The indent here is one too many. which will produce a block quote in the generated html.\n\nPlease unindent by 1 space?",
+      "revId": "d1e2f75ec5c7e6d968e2292ed910afb47e798792",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

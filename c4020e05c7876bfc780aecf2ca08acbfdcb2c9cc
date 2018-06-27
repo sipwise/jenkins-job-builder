@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_8dc0fa2c",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1095,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-27T14:11:04Z",
+      "side": 1,
+      "message": "Seems odd that the 2 lines here are not configurable by the user. Is that correct?",
+      "revId": "c4020e05c7876bfc780aecf2ca08acbfdcb2c9cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_2d5a0681",
+        "filename": "tests/wrappers/fixtures/vault-full.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-27T14:11:04Z",
+      "side": 1,
+      "message": "I think it would be a better user experience if they didn\u0027t have to add those static \"- secret\" and \"- secret-value\" lines.\n\nMaybe the implementation could look more like:\n\n secrets:\n   - secret-path: \u0027/path/\u0027\n     secret-values:\n       - env-var: \u0027USERNAME\u0027\n         vault-key: \u0027username\u0027\n       - env-var: \u0027PASSWORD\u0027\n         vault-key: \u0027password\u0027\n\n\nIs there ever a case where \u0027- secret\u0027 and \u0027- secret-value\u0027  is a different key? if not then I think making it less redundant for the user would be good.",
+      "revId": "c4020e05c7876bfc780aecf2ca08acbfdcb2c9cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
