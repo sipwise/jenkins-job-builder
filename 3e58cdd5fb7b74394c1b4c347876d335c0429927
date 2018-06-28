@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_71575d5c",
+        "filename": "doc/requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2018-06-28T14:53:08Z",
+      "side": 1,
+      "message": "no idea about rtd.",
+      "parentUuid": "5f7c97a3_7b52dc14",
+      "revId": "3e58cdd5fb7b74394c1b4c347876d335c0429927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_bb29543b",
         "filename": "tox.ini",
         "patchSetId": 1
@@ -30,6 +48,30 @@
       "writtenOn": "2018-06-28T13:44:48Z",
       "side": 1,
       "message": "is this right? I thought tox uses \u0027deps\u0027 not \u0027requirements\u0027?",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 12
+      },
+      "revId": "3e58cdd5fb7b74394c1b4c347876d335c0429927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_91d1d9cf",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2018-06-28T14:53:08Z",
+      "side": 1,
+      "message": "indeed, it\u0027s deps. Strange that it worked locally...",
+      "parentUuid": "5f7c97a3_bb29543b",
       "range": {
         "startLine": 72,
         "startChar": 0,
