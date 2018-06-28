@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_7b52dc14",
+        "filename": "doc/requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-06-28T13:44:48Z",
+      "side": 1,
+      "message": "Will this work for readthedocs.io? I thought it needed pbr at the very least for reading the version and also thought similarly programoutput requires to be able to execute jjb commands which requires a number of dependencies to be present?\n\nCertainly that was the reason for the \u0027docs-requirements.txt\u0027 file as only one file could be specified for readthedocs.",
+      "revId": "3e58cdd5fb7b74394c1b4c347876d335c0429927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_bb29543b",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-06-28T13:44:48Z",
+      "side": 1,
+      "message": "is this right? I thought tox uses \u0027deps\u0027 not \u0027requirements\u0027?",
+      "range": {
+        "startLine": 72,
+        "startChar": 0,
+        "endLine": 72,
+        "endChar": 12
+      },
+      "revId": "3e58cdd5fb7b74394c1b4c347876d335c0429927",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
