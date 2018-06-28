@@ -261,7 +261,7 @@ class OrderedRepresenter(BaseRepresenter):
         return node
 
 
-class LocalAnchorLoader(yaml.Loader):
+class LocalAnchorLoader(yaml.DangerLoader):
     """Subclass for yaml.Loader which keeps Alias between calls"""
     anchors = {}
 
@@ -305,13 +305,15 @@ class LocalLoader(OrderedConstructor, LocalAnchorLoader):
 
         # Loading by providing the alternate class to the default yaml load
         from local_yaml import LocalLoader
-        data = yaml.load(io.open(fn, 'r', encoding='utf-8'), LocalLoader)
+        data = yaml.danger_load(io.open(fn, 'r', encoding='utf-8'),
+                                LocalLoader)
 
         # Loading with a search path
         from local_yaml import LocalLoader
         import functools
-        data = yaml.load(io.open(fn, 'r', encoding='utf-8'),
-                         functools.partial(LocalLoader, search_path=['path']))
+        data = yaml.danger_load(io.open(fn, 'r', encoding='utf-8'),
+                                functools.partial(LocalLoader,
+                                search_path=['path']))
 
     """
 
