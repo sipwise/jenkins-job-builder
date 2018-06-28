@@ -305,13 +305,14 @@ class LocalLoader(OrderedConstructor, LocalAnchorLoader):
 
         # Loading by providing the alternate class to the default yaml load
         from local_yaml import LocalLoader
-        data = yaml.load(io.open(fn, 'r', encoding='utf-8'), LocalLoader)
+        data = yaml.danger_load(io.open(fn, 'r', encoding='utf-8'), LocalLoader)
 
         # Loading with a search path
         from local_yaml import LocalLoader
         import functools
-        data = yaml.load(io.open(fn, 'r', encoding='utf-8'),
-                         functools.partial(LocalLoader, search_path=['path']))
+        data = yaml.danger_load(io.open(fn, 'r', encoding='utf-8'),
+                                functools.partial(LocalLoader,
+                                search_path=['path']))
 
     """
 
@@ -428,7 +429,7 @@ class YamlInclude(BaseYAMLObject):
         if isinstance(contents, LazyLoader):
             return contents
 
-        data = yaml.load(contents,
+        data = yaml.danger_load(contents,
                          functools.partial(cls.yaml_loader,
                                            search_path=loader.search_path))
         return data
@@ -567,7 +568,7 @@ class LazyLoader(CustomLoader):
 def load(stream, retain_anchors=False, **kwargs):
     if not retain_anchors:
         LocalAnchorLoader.reset_anchors()
-    return yaml.load(stream, functools.partial(LocalLoader, **kwargs))
+    return yaml.danger_load(stream, functools.partial(LocalLoader, **kwargs))
 
 
 def dump(data, stream=None, **kwargs):
