@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_72b8c874",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-06-28T08:14:48Z",
+      "side": 1,
+      "message": "what it appears happened was the major 4.x release switched the default load() behaviour to match safe_load(), and now you need to use danger_load() if you want to be able to load arbitrary python objects.\n\nWhile this might be a good temporary fix if we want to continue releasing quickly, it does seem like a better approach would be for us to make this a configurable behaviour within JJB allowing users to select the safe or risky behaviour depending on their environment and the trusted nature of submissions to their JJB config repo.\n\nThis would mean being able to detect whether to call load()/danger_load() for pyyaml \u003c4/\u003e\u003d4, or safe_load()/load() for pyyaml \u003c4/\u003e\u003d4.",
+      "range": {
+        "startLine": 9,
+        "startChar": 7,
+        "endLine": 9,
+        "endChar": 11
+      },
+      "revId": "0deb58146a05e66ebdbc43673988cf7042c8fe0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
