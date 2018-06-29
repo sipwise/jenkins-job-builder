@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_91453472",
+        "filename": "tests/builders/fixtures/jms-messaging-full.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-29T20:04:55Z",
+      "side": 1,
+      "message": "Personally I would have removed this one. Stylistically having the closing curly brace on a line on it\u0027s own looks nicer and more obvious.",
+      "range": {
+        "startLine": 19,
+        "startChar": 73,
+        "endLine": 19,
+        "endChar": 74
+      },
+      "revId": "ebc55c1d5c9ffe152714ae938ee9fceb557f7424",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_b576213f",
         "filename": "tests/builders/fixtures/jms-messaging-full.yaml",
         "patchSetId": 2
