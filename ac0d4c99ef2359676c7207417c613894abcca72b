@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_3590d142",
+        "filename": "tests/builders/fixtures/jms-messaging-full.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-06-29T16:20:21Z",
+      "side": 0,
+      "message": "probably a good idea to document this typo fix",
+      "range": {
+        "startLine": 20,
+        "startChar": 8,
+        "endLine": 20,
+        "endChar": 9
+      },
+      "revId": "ac0d4c99ef2359676c7207417c613894abcca72b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

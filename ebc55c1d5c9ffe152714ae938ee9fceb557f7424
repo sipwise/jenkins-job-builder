@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_b576213f",
+        "filename": "tests/builders/fixtures/jms-messaging-full.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-06-29T16:20:21Z",
+      "side": 1,
+      "message": "Still has newline",
+      "revId": "ebc55c1d5c9ffe152714ae938ee9fceb557f7424",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
