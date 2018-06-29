@@ -16,6 +16,24 @@
       "revId": "ebc55c1d5c9ffe152714ae938ee9fceb557f7424",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_403828ca",
+        "filename": "tests/builders/fixtures/jms-messaging-full.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-06-29T17:29:40Z",
+      "side": 1,
+      "message": "Why to bother? Just to increase CI load with a new change?\n\nYep, newline is apparently needed on this document. Anyway, eve if is there is something missing we can fix in the next CRs that will enable the pre-commit hook. As long this is passing the tests we should merge it. I see at zero risk.",
+      "parentUuid": "5f7c97a3_b576213f",
+      "revId": "ebc55c1d5c9ffe152714ae938ee9fceb557f7424",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
