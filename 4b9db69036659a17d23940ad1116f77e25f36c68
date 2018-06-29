@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_9f6544e5",
+        "filename": "tests/yamlparser/fixtures/folders/folders001.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-29T15:12:06Z",
+      "side": 1,
+      "message": "I think this is an accidental copy paste. There should be no changes to this file. (In fact the other file symlinks to this one now so would create a symlink loop)",
+      "revId": "4b9db69036659a17d23940ad1116f77e25f36c68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
