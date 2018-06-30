@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_3aebd0a4",
+        "filename": "setup.cfg",
+        "patchSetId": 4
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-30T23:06:02Z",
+      "side": 1,
+      "message": "While I\u0027m personally fine with this and use it in my own projects. We should probably check with the group if this is something we want to increase.\n\nAs a note this also makes it a little more difficult to review in Gerrit if you\u0027re using the side-by-side without forcing yourself to full screen your browser.",
+      "range": {
+        "startLine": 107,
+        "startChar": 0,
+        "endLine": 107,
+        "endChar": 21
+      },
+      "revId": "15be96de02c005d11c96fb50cf0a42850719b94a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_da273c1e",
+        "filename": "tests/base.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-06-30T23:06:02Z",
+      "side": 1,
+      "message": "I\u0027m not familiar with this but seems like we\u0027re hacking this to get around the folders plugin thing.\n\nDoes Jenkins use the \u003cBLANKLINE\u003e syntax for something? Does the folders functionaliity still work now that we\u0027ve stripped this out?",
+      "range": {
+        "startLine": 249,
+        "startChar": 56,
+        "endLine": 249,
+        "endChar": 105
+      },
+      "revId": "15be96de02c005d11c96fb50cf0a42850719b94a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
