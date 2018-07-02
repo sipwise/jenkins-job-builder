@@ -226,7 +226,6 @@ import jenkins_jobs.modules.base
 
 from jenkins_jobs.modules.helpers import convert_mapping_to_xml
 
-
 COLUMN_DICT = {
     'status': 'hudson.views.StatusColumn',
     'weather': 'hudson.views.WeatherColumn',
@@ -251,6 +250,18 @@ COLUMN_DICT = {
     'member-graph-view':
         'com.barchart.jenkins.cascade.GraphViewColumn '
         'plugin="maven-release-cascade"',
+    'extra-tests-total': [['jenkins.plugins.extracolumns.TestResultColumn', {'plugin':'extra-columns'}], '<testResultFormat>2</testResultFormat>'],
+    'extra-tests-failed': [['jenkins.plugins.extracolumns.TestResultColumn', {'plugin':'extra-columns'}], '<testResultFormat>3</testResultFormat>'],
+    'extra-tests-passed': [['jenkins.plugins.extracolumns.TestResultColumn', {'plugin':'extra-columns'}], '<testResultFormat>4</testResultFormat>'],
+    'extra-tests-skipped': [['jenkins.plugins.extracolumns.TestResultColumn', {'plugin':'extra-columns'}], '<testResultFormat>5</testResultFormat>'],
+    'extra-tests-format-0': [['jenkins.plugins.extracolumns.TestResultColumn', {'plugin':'extra-columns'}], '<testResultFormat>0</testResultFormat>'],
+    'extra-tests-format-1': [['jenkins.plugins.extracolumns.TestResultColumn', {'plugin':'extra-columns'}], '<testResultFormat>1</testResultFormat>'],
+    'extra-build-description': [['jenkins.plugins.extracolumns.BuildDescriptionColumn', {'plugin':'extra-columns'}], '<columnWidth>3</columnWidth>', '<forceWidth>false</forceWidth>'],
+    'extra-build-parameters': [['jenkins.plugins.extracolumns.BuildParametersColumn', {'plugin':'extra-columns'}], '<singlePara>false</singlePara>', '<parameterName/>'],
+    'extra-last-user-name': 'jenkins.plugins.extracolumns.UserNameColumn plugin="extra-columns"',
+    'extra-last-output': 'jenkins.plugins.extracolumns.LastBuildConsoleColumn plugin="extra-columns"',
+    'extra-workspace-link': 'jenkins.plugins.extracolumns.WorkspaceColumn plugin="extra-columns"',
+    'extra-configure-button': 'jenkins.plugins.extracolumns.ConfigureProjectColumn plugin="extra-columns"',
 }
 DEFAULT_COLUMNS = ['status', 'weather', 'job', 'last-success', 'last-failure',
                    'last-duration', 'build-button']
@@ -535,7 +546,12 @@ class List(jenkins_jobs.modules.base.Base):
 
         for column in columns:
             if column in COLUMN_DICT:
-                XML.SubElement(c_xml, COLUMN_DICT[column])
+                if isinstance(COLUMN_DICT[column], list):
+                    x = XML.SubElement(c_xml, COLUMN_DICT[column][0][0], **COLUMN_DICT[column][0][1])
+                    for tag in COLUMN_DICT[column][1:]:
+                        x.append(XML.fromstring(tag))
+                else:
+                    XML.SubElement(c_xml, COLUMN_DICT[column])
         mapping = [
             ('regex', 'includeRegex', None),
             ('recurse', 'recurse', False),
