@@ -226,6 +226,10 @@ import jenkins_jobs.modules.base
 
 from jenkins_jobs.modules.helpers import convert_mapping_to_xml
 
+EXTRA_COLUMNS_PLUGIN = 'plugin="extra-columns"'
+TEST_RESULT_COLUMN = 'jenkins.plugins.extracolumns.TestResultColumn ' + EXTRA_COLUMNS_PLUGIN
+BUILD_DESCRIPTION_COLUMN = 'jenkins.plugins.extracolumns.BuildDescriptionColumn ' + EXTRA_COLUMNS_PLUGIN
+BUILD_PARAMETERS_COLUMN = 'jenkins.plugins.extracolumns.BuildParametersColumn ' + EXTRA_COLUMNS_PLUGIN
 
 COLUMN_DICT = {
     'status': 'hudson.views.StatusColumn',
@@ -251,6 +255,18 @@ COLUMN_DICT = {
     'member-graph-view':
         'com.barchart.jenkins.cascade.GraphViewColumn '
         'plugin="maven-release-cascade"',
+    'extra-tests-total': [TEST_RESULT_COLUMN, '<testResultFormat>2</testResultFormat>'],
+    'extra-tests-failed': [TEST_RESULT_COLUMN, '<testResultFormat>3</testResultFormat>'],
+    'extra-tests-passed': [TEST_RESULT_COLUMN, '<testResultFormat>4</testResultFormat>'],
+    'extra-tests-skipped': [TEST_RESULT_COLUMN, '<testResultFormat>5</testResultFormat>'],
+    'extra-tests-format-0': [TEST_RESULT_COLUMN, '<testResultFormat>0</testResultFormat>'],
+    'extra-tests-format-1': [TEST_RESULT_COLUMN, '<testResultFormat>1</testResultFormat>'],
+    'extra-build-description': [BUILD_DESCRIPTION_COLUMN, '<columnWidth>3</columnWidth><forceWidth>false</forceWidth>'],
+    'extra-build-parameters': [BUILD_PARAMETERS_COLUMN, '<singlePara>false</singlePara><parameterName/>'],
+    'extra-last-user-name': 'jenkins.plugins.extracolumns.UserNameColumn ' + EXTRA_COLUMNS_PLUGIN,
+    'extra-last-output': 'jenkins.plugins.extracolumns.LastBuildConsoleColumn ' + EXTRA_COLUMNS_PLUGIN,
+    'extra-workspace-link': 'jenkins.plugins.extracolumns.WorkspaceColumn ' + EXTRA_COLUMNS_PLUGIN,
+    'extra-configure-button': 'jenkins.plugins.extracolumns.ConfigureProjectColumn ' + EXTRA_COLUMNS_PLUGIN,
 }
 DEFAULT_COLUMNS = ['status', 'weather', 'job', 'last-success', 'last-failure',
                    'last-duration', 'build-button']
@@ -535,7 +551,11 @@ class List(jenkins_jobs.modules.base.Base):
 
         for column in columns:
             if column in COLUMN_DICT:
-                XML.SubElement(c_xml, COLUMN_DICT[column])
+                if isinstance(COLUMN_DICT[column], list):
+                    x = XML.SubElement(c_xml, COLUMN_DICT[column][0])
+                    x.append(XML.fromstring(COLUMN_DICT[column][1]))
+                else:
+                    XML.SubElement(c_xml, COLUMN_DICT[column])
         mapping = [
             ('regex', 'includeRegex', None),
             ('recurse', 'recurse', False),
