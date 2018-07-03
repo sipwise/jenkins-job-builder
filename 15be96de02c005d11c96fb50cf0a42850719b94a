@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_0801b707",
+        "filename": "setup.cfg",
+        "patchSetId": 4
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-03T21:53:55Z",
+      "side": 1,
+      "message": "I wonder how many of the reviewers use side-by-side window? For myself, I am a frequent user of side-by-side window so making it more difficult to review on Gerrit without full screening would be something I dislike, but I\u0027m not completely against this change if I am the minority.",
+      "parentUuid": "5f7c97a3_3aebd0a4",
+      "range": {
+        "startLine": 107,
+        "startChar": 0,
+        "endLine": 107,
+        "endChar": 21
+      },
+      "revId": "15be96de02c005d11c96fb50cf0a42850719b94a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_da273c1e",
         "filename": "tests/base.py",
         "patchSetId": 4
