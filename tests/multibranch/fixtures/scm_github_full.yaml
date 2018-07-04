@@ -12,3 +12,19 @@ scm:
         discover-pr-forks-trust: everyone
         discover-pr-origin: both
         discover-tags: true
+        build-strategies:
+            - tags:
+                ignore-tags-older-than: 7
+                ignore-tags-newer-than: 0
+            - change-request:
+                ignore-target-only-changes: false
+            - regular-branches: true
+            - named-branches:
+                - exact-name:
+                    case-sensitive: false
+                - regex-name:
+                    case-sensitive: false
+                - wildcards-name:
+                    includes: '*'
+                - exact-name:
+                    case-sensitive: true
