@@ -7,3 +7,17 @@ scm:
         credentials-id: secret
         ignore-on-push-notifications: true
         refspecs: 'refs/heads/*'
+        build-strategies: 
+            - tags:
+                ignore-tags-older-than: 7
+            - change-request: 
+                ignore-target-only-changes: false
+            - regular-branches: true
+            - named-branches:
+                - exact-name:
+                    name: 'test'
+                    case-sensitive: false
+                - regex-name:
+                    case-sensitive: false
+                - wildcards-name:
+                    exclude: 'test'
