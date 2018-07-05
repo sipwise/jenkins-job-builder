@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_d0926f9f",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 703,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-05T05:08:38Z",
+      "side": 1,
+      "message": "Just to add a bit more context, from the code, this seems to be a default value of -1",
+      "parentUuid": "5f7c97a3_b586c5b9",
+      "range": {
+        "startLine": 703,
+        "startChar": 17,
+        "endLine": 703,
+        "endChar": 25
+      },
+      "revId": "aac6c944b24c947b21fa3e91c43e79d114bc0035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_d58341a8",
         "filename": "jenkins_jobs/modules/project_multibranch.py",
         "patchSetId": 3
