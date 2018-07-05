@@ -1,0 +1,326 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_b586c5b9",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 703,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-05T05:05:10Z",
+      "side": 1,
+      "message": "default -1",
+      "range": {
+        "startLine": 703,
+        "startChar": 17,
+        "endLine": 703,
+        "endChar": 25
+      },
+      "revId": "aac6c944b24c947b21fa3e91c43e79d114bc0035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_d58341a8",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 706,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-05T05:05:10Z",
+      "side": 1,
+      "message": "default -1",
+      "range": {
+        "startLine": 706,
+        "startChar": 27,
+        "endLine": 706,
+        "endChar": 35
+      },
+      "revId": "aac6c944b24c947b21fa3e91c43e79d114bc0035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_75a58d47",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 709,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-05T05:05:10Z",
+      "side": 1,
+      "message": "default false",
+      "range": {
+        "startLine": 709,
+        "startChar": 63,
+        "endLine": 709,
+        "endChar": 71
+      },
+      "revId": "aac6c944b24c947b21fa3e91c43e79d114bc0035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_12b78f87",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 749,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-05T05:05:10Z",
+      "side": 1,
+      "message": "Trailing backslash",
+      "range": {
+        "startLine": 749,
+        "startChar": 48,
+        "endLine": 749,
+        "endChar": 49
+      },
+      "revId": "aac6c944b24c947b21fa3e91c43e79d114bc0035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_d2acb736",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 755,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-05T05:05:10Z",
+      "side": 1,
+      "message": "Trailing backslash",
+      "range": {
+        "startLine": 755,
+        "startChar": 48,
+        "endLine": 755,
+        "endChar": 49
+      },
+      "revId": "aac6c944b24c947b21fa3e91c43e79d114bc0035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_502bbf80",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 760,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-05T05:05:10Z",
+      "side": 1,
+      "message": "accident? If the user has \u0027false\u0027 as their value for \u0027regular-branches\u0027, this would still go into the if statement.",
+      "range": {
+        "startLine": 760,
+        "startChar": 30,
+        "endLine": 760,
+        "endChar": 41
+      },
+      "revId": "aac6c944b24c947b21fa3e91c43e79d114bc0035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_15569906",
+        "filename": "tests/multibranch/fixtures/scm_bitbucket_full.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-05T05:05:10Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 14,
+        "startChar": 25,
+        "endLine": 14,
+        "endChar": 26
+      },
+      "revId": "aac6c944b24c947b21fa3e91c43e79d114bc0035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_f550bd0b",
+        "filename": "tests/multibranch/fixtures/scm_bitbucket_full.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-05T05:05:10Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 17,
+        "startChar": 29,
+        "endLine": 17,
+        "endChar": 30
+      },
+      "revId": "aac6c944b24c947b21fa3e91c43e79d114bc0035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_358dd529",
+        "filename": "tests/multibranch/fixtures/scm_gerrit_full.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-05T05:05:10Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 10,
+        "startChar": 25,
+        "endLine": 10,
+        "endChar": 26
+      },
+      "revId": "aac6c944b24c947b21fa3e91c43e79d114bc0035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_5592d14c",
+        "filename": "tests/multibranch/fixtures/scm_gerrit_full.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-05T05:05:10Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 13,
+        "startChar": 29,
+        "endLine": 13,
+        "endChar": 30
+      },
+      "revId": "aac6c944b24c947b21fa3e91c43e79d114bc0035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_1598d966",
+        "filename": "tests/multibranch/fixtures/scm_git_full.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-05T05:05:10Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 11,
+        "startChar": 25,
+        "endLine": 11,
+        "endChar": 26
+      },
+      "revId": "aac6c944b24c947b21fa3e91c43e79d114bc0035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_d59d8157",
+        "filename": "tests/multibranch/fixtures/scm_git_full.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-05T05:05:10Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 14,
+        "startChar": 29,
+        "endLine": 14,
+        "endChar": 30
+      },
+      "revId": "aac6c944b24c947b21fa3e91c43e79d114bc0035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_95a3899b",
+        "filename": "tests/multibranch/fixtures/scm_github_full.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-05T05:05:10Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 15,
+        "startChar": 25,
+        "endLine": 15,
+        "endChar": 26
+      },
+      "revId": "aac6c944b24c947b21fa3e91c43e79d114bc0035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_55bbb1c2",
+        "filename": "tests/multibranch/fixtures/scm_github_full.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-05T05:05:10Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 19,
+        "startChar": 29,
+        "endLine": 19,
+        "endChar": 30
+      },
+      "revId": "aac6c944b24c947b21fa3e91c43e79d114bc0035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
