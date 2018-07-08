@@ -40,7 +40,7 @@ from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.errors import MissingAttributeError
 from jenkins_jobs.errors import AttributeConflictError
 import jenkins_jobs.modules.base
-import jenkins_jobs.modules.helpers as helpers
+from jenkins_jobs.modules.helpers import convert_mapping_to_xml
 
 
 def builds_chain_fingerprinter(registry, xml_parent, data):
@@ -67,8 +67,7 @@ def builds_chain_fingerprinter(registry, xml_parent, data):
         ('per-builds-chain', 'isPerBuildsChainEnabled', False),
         ('per-job-chain', 'isPerJobsChainEnabled', False),
     ]
-    helpers.convert_mapping_to_xml(
-        fingerprinter, data, mapping, fail_required=True)
+    convert_mapping_to_xml(fingerprinter, data, mapping, fail_required=True)
 
 
 def ownership(registry, xml_parent, data):
@@ -150,8 +149,7 @@ def gitbucket(parser, xml_parent, data):
         ('url', 'url', None),
         ('link-enabled', 'linkEnabled', False),
     ]
-    helpers.convert_mapping_to_xml(
-        gitbucket, data, mapping, fail_required=True)
+    convert_mapping_to_xml(gitbucket, data, mapping, fail_required=True)
 
 
 def github(registry, xml_parent, data):
@@ -181,7 +179,7 @@ def github(registry, xml_parent, data):
         ('url', 'projectUrl', None),
         ('display-name', 'displayName', ''),
     ]
-    helpers.convert_mapping_to_xml(github, data, mapping, fail_required=True)
+    convert_mapping_to_xml(github, data, mapping, fail_required=True)
 
 
 def gitlab(registry, xml_parent, data):
@@ -201,9 +199,9 @@ def gitlab(registry, xml_parent, data):
                             'com.dabsquared.gitlabjenkins.connection.'
                             'GitLabConnectionProperty')
     mapping = [
-        ('connection', 'gitLabConnection', None)
+        ('connection', 'gitLabConnection', None),
     ]
-    helpers.convert_mapping_to_xml(gitlab, data, mapping, fail_required=True)
+    convert_mapping_to_xml(gitlab, data, mapping, fail_required=True)
 
 
 def least_load(registry, xml_parent, data):
@@ -222,8 +220,9 @@ def least_load(registry, xml_parent, data):
                            'org.bstick12.jenkinsci.plugins.leastload.'
                            'LeastLoadDisabledProperty')
     mapping = [
-        ('disabled', 'leastLoadDisabled', True)]
-    helpers.convert_mapping_to_xml(least, data, mapping, fail_required=True)
+        ('disabled', 'leastLoadDisabled', True),
+    ]
+    convert_mapping_to_xml(least, data, mapping, fail_required=True)
 
 
 def throttle(registry, xml_parent, data):
@@ -254,7 +253,7 @@ def throttle(registry, xml_parent, data):
         ('max-total', 'maxConcurrentTotal', '0'),
         ('enabled', 'throttleEnabled', True),
     ]
-    helpers.convert_mapping_to_xml(throttle, data, mapping, fail_required=True)
+    convert_mapping_to_xml(throttle, data, mapping, fail_required=True)
     cat = data.get('categories', [])
     if cat:
         cn = XML.SubElement(throttle, 'categories')
@@ -269,15 +268,14 @@ def throttle(registry, xml_parent, data):
         ('', 'throttleOption', option),
         ('', 'configVersion', '1'),
     ]
-    helpers.convert_mapping_to_xml(throttle, data, mapping, fail_required=True)
+    convert_mapping_to_xml(throttle, data, mapping, fail_required=True)
 
     matrixopt = XML.SubElement(throttle, 'matrixOptions')
     mapping = [
         ('matrix-builds', 'throttleMatrixBuilds', True),
-        ('matrix-configs', 'throttleMatrixConfigurations', False)
+        ('matrix-configs', 'throttleMatrixConfigurations', False),
     ]
-    helpers.convert_mapping_to_xml(
-        matrixopt, data, mapping, fail_required=True)
+    convert_mapping_to_xml(matrixopt, data, mapping, fail_required=True)
 
 
 def branch_api(registry, xml_parent, data):
@@ -313,8 +311,9 @@ def branch_api(registry, xml_parent, data):
 
     mapping = [
         ('time-period', 'durationName', 'Hour', valid_time_periods),
-        ('number-of-builds', 'count', 1)]
-    helpers.convert_mapping_to_xml(branch, data, mapping, fail_required=True)
+        ('number-of-builds', 'count', 1),
+    ]
+    convert_mapping_to_xml(branch, data, mapping, fail_required=True)
 
 
 def sidebar(registry, xml_parent, data):
@@ -345,7 +344,7 @@ def sidebar(registry, xml_parent, data):
         ('text', 'text', ''),
         ('icon', 'icon', ''),
     ]
-    helpers.convert_mapping_to_xml(action, data, mapping, fail_required=True)
+    convert_mapping_to_xml(action, data, mapping, fail_required=True)
 
 
 def inject(registry, xml_parent, data):
@@ -383,7 +382,7 @@ def inject(registry, xml_parent, data):
         ('groovy-content', 'groovyScriptContent', None),
         ('load-from-master', 'loadFilesFromMaster', False),
     ]
-    helpers.convert_mapping_to_xml(info, data, mapping, fail_required=False)
+    convert_mapping_to_xml(info, data, mapping, fail_required=False)
 
     mapping = [
         ('enabled', 'on', True),
@@ -391,7 +390,7 @@ def inject(registry, xml_parent, data):
         ('keep-build-variables', 'keepBuildVariables', True),
         ('override-build-parameters', 'overrideBuildParameters', False),
     ]
-    helpers.convert_mapping_to_xml(inject, data, mapping, fail_required=True)
+    convert_mapping_to_xml(inject, data, mapping, fail_required=True)
 
 
 def authenticated_build(registry, xml_parent, data):
@@ -524,9 +523,11 @@ def priority_sorter(registry, xml_parent, data):
                                              'hudson.queueSorter.'
                                              'PrioritySorterJobProperty')
 
-        mapping = [('priority', 'priority', None)]
+        mapping = [
+            ('priority', 'priority', None),
+        ]
 
-    helpers.convert_mapping_to_xml(
+    convert_mapping_to_xml(
         priority_sorter_tag, data, mapping, fail_required=True)
 
 
@@ -571,8 +572,7 @@ def build_blocker(registry, xml_parent, data):
         ('queue-scanning', 'scanQueueFor', 'DISABLED',
             ('DISABLED', 'ALL', 'BUILDABLE')),
     ]
-    helpers.convert_mapping_to_xml(
-        blocker, data, mapping, fail_required=True)
+    convert_mapping_to_xml(blocker, data, mapping, fail_required=True)
 
 
 def copyartifact(registry, xml_parent, data):
@@ -641,8 +641,7 @@ def batch_tasks(registry, xml_parent, data):
             ('name', 'name', None),
             ('script', 'script', None),
         ]
-        helpers.convert_mapping_to_xml(
-            batch_task, task, mapping, fail_required=True)
+        convert_mapping_to_xml(batch_task, task, mapping, fail_required=True)
 
 
 def heavy_job(registry, xml_parent, data):
@@ -664,8 +663,10 @@ def heavy_job(registry, xml_parent, data):
     heavyjob = XML.SubElement(xml_parent,
                               'hudson.plugins.'
                               'heavy__job.HeavyJobProperty')
-    mapping = [('weight', 'weight', 1)]
-    helpers.convert_mapping_to_xml(heavyjob, data, mapping, fail_required=True)
+    mapping = [
+        ('weight', 'weight', 1),
+    ]
+    convert_mapping_to_xml(heavyjob, data, mapping, fail_required=True)
 
 
 def slave_utilization(registry, xml_parent, data):
@@ -697,9 +698,9 @@ def slave_utilization(registry, xml_parent, data):
     mapping = [
         ('', 'needsExclusiveAccessToNode', exclusive_node_access),
         ('', 'slaveUtilizationPercentage', percent),
-        ('single-instance-per-slave', 'singleInstancePerSlave', False)]
-    helpers.convert_mapping_to_xml(
-        utilization, data, mapping, fail_required=True)
+        ('single-instance-per-slave', 'singleInstancePerSlave', False),
+    ]
+    convert_mapping_to_xml(utilization, data, mapping, fail_required=True)
 
 
 def delivery_pipeline(registry, xml_parent, data):
@@ -733,7 +734,7 @@ def delivery_pipeline(registry, xml_parent, data):
         ('task', 'taskName', ''),
         ('description', 'descriptionTemplate', ''),
     ]
-    helpers.convert_mapping_to_xml(pipeline, data, mapping, fail_required=True)
+    convert_mapping_to_xml(pipeline, data, mapping, fail_required=True)
 
 
 def zeromq_event(registry, xml_parent, data):
@@ -755,9 +756,10 @@ def zeromq_event(registry, xml_parent, data):
     zmq_event = XML.SubElement(xml_parent,
                                'org.jenkinsci.plugins.'
                                'ZMQEventPublisher.HudsonNotificationProperty')
-    mapping = [('', 'enabled', True)]
-    helpers.convert_mapping_to_xml(
-        zmq_event, data, mapping, fail_required=True)
+    mapping = [
+        ('', 'enabled', True),
+    ]
+    convert_mapping_to_xml(zmq_event, data, mapping, fail_required=True)
 
 
 def slack(registry, xml_parent, data):
@@ -834,7 +836,7 @@ def slack(registry, xml_parent, data):
         if not data.get('custom-message', ''):
             raise MissingAttributeError('custom-message')
 
-    helpers.convert_mapping_to_xml(slack, data, mapping, fail_required=True)
+    convert_mapping_to_xml(slack, data, mapping, fail_required=True)
 
 
 def rebuild(registry, xml_parent, data):
@@ -867,7 +869,7 @@ def rebuild(registry, xml_parent, data):
         ('auto-rebuild', 'autoRebuild', False),
         ('rebuild-disabled', 'rebuildDisabled', False),
     ]
-    helpers.convert_mapping_to_xml(
+    convert_mapping_to_xml(
         sub_element, data, mapping, fail_required=True)
 
 
@@ -902,8 +904,7 @@ def build_discarder(registry, xml_parent, data):
         ('artifact-days-to-keep', 'artifactDaysToKeep', -1),
         ('artifact-num-to-keep', 'artifactNumToKeep', -1),
     ]
-    helpers.convert_mapping_to_xml(
-        strategy, data, mappings, fail_required=True)
+    convert_mapping_to_xml(strategy, data, mappings, fail_required=True)
 
 
 def slave_prerequisites(registry, xml_parent, data):
@@ -940,8 +941,7 @@ def slave_prerequisites(registry, xml_parent, data):
             'cmd': 'windows batch command',
             'shell': 'shell script'}),
     ]
-    helpers.convert_mapping_to_xml(
-        prereqs, data, mappings, fail_required=True)
+    convert_mapping_to_xml(prereqs, data, mappings, fail_required=True)
 
 
 def groovy_label(registry, xml_parent, data):
@@ -994,8 +994,7 @@ def groovy_label(registry, xml_parent, data):
         ('sandbox', 'sandbox', False),
     ]
 
-    helpers.convert_mapping_to_xml(
-        security, data, mapping, fail_required=True)
+    convert_mapping_to_xml(security, data, mapping, fail_required=True)
     if data and 'classpath' in data:
         classpath = XML.SubElement(security, 'classpath')
         for value in data['classpath']:
@@ -1045,7 +1044,7 @@ def lockable_resources(registry, xml_parent, data):
         ('number', 'resourceNumber', 0),
         ('label', 'labelName', ''),
     ]
-    helpers.convert_mapping_to_xml(
+    convert_mapping_to_xml(
         lockable_resources, data, mapping, fail_required=True)
 
 
@@ -1082,10 +1081,9 @@ def docker_container(registry, xml_parent, data):
         ('commit-on-success', 'tagOnCompletion', False),
         ('additional-tag', 'additionalTag', ''),
         ('push-on-success', 'pushOnSuccess', False),
-        ('clean-local-images', 'cleanImages', True)
+        ('clean-local-images', 'cleanImages', True),
     ]
-    helpers.convert_mapping_to_xml(
-        xml_docker, data, mapping, fail_required=True)
+    convert_mapping_to_xml(xml_docker, data, mapping, fail_required=True)
 
 
 class Properties(jenkins_jobs.modules.base.Base):
