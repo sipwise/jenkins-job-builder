@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_0a940235",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-08T15:36:08Z",
+      "side": 0,
+      "message": "I believe Darragh wants us to go in the other direction. Where we `import jenkins_jobs.modules.helpers as helpers` and make sure everyone calls helpers.convert_mapping_to_xml.",
+      "range": {
+        "startLine": 43,
+        "startChar": 7,
+        "endLine": 43,
+        "endChar": 35
+      },
+      "revId": "11941c87f448ce525eec9a8ca77c00c2b119eee7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
