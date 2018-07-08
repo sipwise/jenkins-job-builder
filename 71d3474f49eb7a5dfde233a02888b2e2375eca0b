@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_0f6bb4ef",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1736,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-07-08T12:25:59Z",
+      "side": 1,
+      "message": "Make the format readable and consistent",
+      "range": {
+        "startLine": 1730,
+        "startChar": 4,
+        "endLine": 1736,
+        "endChar": 36
+      },
+      "revId": "71d3474f49eb7a5dfde233a02888b2e2375eca0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
