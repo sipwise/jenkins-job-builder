@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_cfab7c1b",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-07-08T12:24:50Z",
+      "side": 1,
+      "message": "comma",
+      "revId": "f34dea3243294776e5039467f5b967ad5ea90897",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_afb0808c",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-07-08T12:24:50Z",
+      "side": 1,
+      "message": "change the format consistent in all places\n\n   mapping \u003d [\n        (\u0027disabled\u0027, \u0027leastLoadDisabled\u0027, True),\n   ]",
+      "range": {
+        "startLine": 224,
+        "startChar": 0,
+        "endLine": 225,
+        "endChar": 48
+      },
+      "revId": "f34dea3243294776e5039467f5b967ad5ea90897",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_2f623017",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 700,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-07-08T12:24:50Z",
+      "side": 1,
+      "message": "Make the format consitant\n\nmapping \u003d [\n        (\u0027\u0027, \u0027needsExclusiveAccessToNode\u0027, exclusive_node_access),\n        (\u0027\u0027, \u0027slaveUtilizationPercentage\u0027, percent),\n        (\u0027single-instance-per-slave\u0027, \u0027singleInstancePerSlave\u0027, False),\n]",
+      "range": {
+        "startLine": 697,
+        "startChar": 4,
+        "endLine": 700,
+        "endChar": 71
+      },
+      "revId": "f34dea3243294776e5039467f5b967ad5ea90897",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
