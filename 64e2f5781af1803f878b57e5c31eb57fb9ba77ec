@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_7a0c5a41",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 28246
+      },
+      "writtenOn": "2018-07-09T14:40:55Z",
+      "side": 1,
+      "message": "This was actually recently fixed in https://review.openstack.org/#/c/580825/",
+      "revId": "64e2f5781af1803f878b57e5c31eb57fb9ba77ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_9d35b0dd",
+        "filename": "jenkins_jobs/modules/view_list.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 28246
+      },
+      "writtenOn": "2018-07-09T14:40:55Z",
+      "side": 1,
+      "message": "Can we make this consistent? For example, keep it similar to how \u0027extra-build-description\u0027 is written. Applies to other lines too.",
+      "revId": "64e2f5781af1803f878b57e5c31eb57fb9ba77ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_a83e5a23",
         "filename": "jenkins_jobs/modules/view_list.py",
         "patchSetId": 5
