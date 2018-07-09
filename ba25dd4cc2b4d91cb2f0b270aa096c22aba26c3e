@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_7d49b42f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-09T14:53:31Z",
+      "side": 1,
+      "message": "Can we word wrap this at 72 characters. It\u0027s difficult to read this commit message when it\u0027s just one really long line horizontal scroll.",
+      "revId": "ba25dd4cc2b4d91cb2f0b270aa096c22aba26c3e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
