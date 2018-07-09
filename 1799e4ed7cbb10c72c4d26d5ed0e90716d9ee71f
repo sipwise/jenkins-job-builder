@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_3d457c44",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-09T14:42:27Z",
+      "side": 1,
+      "message": "This commit message is no longer accurate.\n\nI would state something simply as: Add commas to all mapping tuples",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 29
+      },
+      "revId": "1799e4ed7cbb10c72c4d26d5ed0e90716d9ee71f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_bd1c2c66",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-09T14:42:27Z",
+      "side": 1,
+      "message": "What\u0027s the point of this change? if it fits on one line just leave it. We only indent like this if it doesn\u0027t pass pep8 usually.",
+      "revId": "1799e4ed7cbb10c72c4d26d5ed0e90716d9ee71f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_fd4b845b",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-09T14:42:27Z",
+      "side": 1,
+      "message": "I like this change and think all mappings should be in this style as adding / removing settings is easier and more clear this way.",
+      "range": {
+        "startLine": 204,
+        "startChar": 4,
+        "endLine": 206,
+        "endChar": 5
+      },
+      "revId": "1799e4ed7cbb10c72c4d26d5ed0e90716d9ee71f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
