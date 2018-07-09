@@ -328,7 +328,7 @@ def bitbucket_scm(xml_parent, data):
         'plugin': 'cloudbees-bitbucket-branch-source',
     })
     source_mapping = [
-        ('', 'id', str(uuid.uuid4())),
+        ('', 'id', '-'.join(['bb', data.get('repo-owner', ''), data.get('repo', '')])),
         ('repo-owner', 'repoOwner', None),
         ('repo', 'repository', None),
     ]
@@ -414,7 +414,7 @@ def gerrit_scm(xml_parent, data):
         'plugin': 'gerrit',
     })
     source_mapping = [
-        ('', 'id', str(uuid.uuid4())),
+        ('', 'id', '-'.join(['gr', data.get('url', '')])),
         ('url', 'remote', None),
         ('credentials-id', 'credentialsId', ''),
         ('includes', 'includes', '*'),
@@ -485,7 +485,7 @@ def git_scm(xml_parent, data):
         'plugin': 'git',
     })
     source_mapping = [
-        ('', 'id', str(uuid.uuid4())),
+        ('', 'id', '-'.join(['gt', data.get('url', '')])),
         ('url', 'remote', None),
         ('credentials-id', 'credentialsId', ''),
     ]
@@ -556,7 +556,7 @@ def github_scm(xml_parent, data):
         'plugin': 'github-branch-source',
     })
     mapping = [
-        ('', 'id', str(uuid.uuid4())),
+        ('', 'id', '-'.join(['gh', data.get('repo-owner', ''), data.get('repo', '')])),
         ('repo-owner', 'repoOwner', None),
         ('repo', 'repository', None),
     ]
