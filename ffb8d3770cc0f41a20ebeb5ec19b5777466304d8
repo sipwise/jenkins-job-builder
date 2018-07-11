@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_b9fabb74",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 782,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-11T23:58:46Z",
+      "side": 1,
+      "message": "double checking, is this line necessary? at a glance, it seems to be a verbose if statement as the one above checks for \"named-branches\".",
+      "range": {
+        "startLine": 782,
+        "startChar": 12,
+        "endLine": 782,
+        "endChar": 42
+      },
+      "revId": "ffb8d3770cc0f41a20ebeb5ec19b5777466304d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
