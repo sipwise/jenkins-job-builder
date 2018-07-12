@@ -42,6 +42,24 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_b0a39c43",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 653,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-12T15:20:54Z",
+      "side": 1,
+      "message": "I\u0027d prefer it to go into the mapping too.\n\nThere used to be an assumption that we shouldn\u0027t pass parameter XML unless it\u0027s configured but the behaviour of Jenkins turns out when you exclude a configuration is to Keep the previous result. So in cases where you set something, and then remove it from JJB leaves that setting set in Jenkins.\n\nI think it\u0027s better behaviour that we send explicit empty XML like \u003cworkspaceExcludeGlob/\u003e because this causes Jenkins to reset that setting rather than leave the last configured result.\n\n(Although I believe this behaviour is fixed in newer versions of Jenkins upstream but I have not confirmed that.)",
+      "parentUuid": "5f7c97a3_300eac8c",
+      "revId": "e1d239ad0fd42958b7abd8afb3c7c10840e30232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_904300b1",
         "filename": "tests/publishers/fixtures/clone-workspace002.yaml",
         "patchSetId": 1
