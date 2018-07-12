@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_10b28be6",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-12T18:24:13Z",
+      "side": 1,
+      "message": "Likewise, I think title() would work here with criteria to avoid breaking changes",
+      "range": {
+        "startLine": 647,
+        "startChar": 10,
+        "endLine": 647,
+        "endChar": 18
+      },
+      "revId": "7e2ea00712f1975090a36573ed84b880188a488e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_10ddab40",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
