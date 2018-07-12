@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_904300b1",
+        "filename": "tests/publishers/fixtures/clone-workspace002.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-12T15:13:16Z",
+      "side": 1,
+      "message": "This will likely break users since the past version of this automatically uppercased.\n\nAt least we throw an exception to let them know so might be ok.",
+      "range": {
+        "startLine": 3,
+        "startChar": 6,
+        "endLine": 4,
+        "endChar": 27
+      },
+      "revId": "e1d239ad0fd42958b7abd8afb3c7c10840e30232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
