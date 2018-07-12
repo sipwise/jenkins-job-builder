@@ -80,6 +80,30 @@
       "revId": "e1d239ad0fd42958b7abd8afb3c7c10840e30232",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_109a9012",
+        "filename": "tests/publishers/fixtures/clone-workspace002.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 28246
+      },
+      "writtenOn": "2018-07-12T15:21:17Z",
+      "side": 1,
+      "message": "I see. It will fail the tests though if I change this back to lower case. Or should I change the options in the list to lowercase?",
+      "parentUuid": "5f7c97a3_904300b1",
+      "range": {
+        "startLine": 3,
+        "startChar": 6,
+        "endLine": 4,
+        "endChar": 27
+      },
+      "revId": "e1d239ad0fd42958b7abd8afb3c7c10840e30232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
