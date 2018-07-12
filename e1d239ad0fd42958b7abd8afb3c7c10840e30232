@@ -104,6 +104,30 @@
       "revId": "e1d239ad0fd42958b7abd8afb3c7c10840e30232",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_b6a954df",
+        "filename": "tests/publishers/fixtures/clone-workspace002.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-12T16:00:01Z",
+      "side": 1,
+      "message": "You can\u0027t change the tests. Jenkins expects uppercase TAR and ZIP right?\n\nIf we change it to lowercase Jenkins will likely stop working. Unless the upstream plugin is manipulating the input too. Might be worth trying if you want to spin up a Jenkins server and see if the setting get\u0027s configured when it\u0027s lowercase (I suspect not)",
+      "parentUuid": "5f7c97a3_109a9012",
+      "range": {
+        "startLine": 3,
+        "startChar": 6,
+        "endLine": 4,
+        "endChar": 27
+      },
+      "revId": "e1d239ad0fd42958b7abd8afb3c7c10840e30232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
