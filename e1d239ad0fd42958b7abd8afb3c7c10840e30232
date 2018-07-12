@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_904a20ab",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-12T15:16:36Z",
+      "side": 1,
+      "message": "@Darragh, a bit off topic but I wonder if we can make the 4th input here some kind of `**kwargs`. The benefit would be that we can pass random additional parameters like:\n\n * list of valid inputs\n * switch to uppercase words\n * switch to lowercase words\n * ... switches to further modify inputs",
+      "range": {
+        "startLine": 647,
+        "startChar": 40,
+        "endLine": 647,
+        "endChar": 60
+      },
+      "revId": "e1d239ad0fd42958b7abd8afb3c7c10840e30232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_300eac8c",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 1
