@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_bc67f352",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 711,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-12T17:43:52Z",
+      "side": 1,
+      "message": "Nit: Looks like an extra space here",
+      "range": {
+        "startLine": 711,
+        "startChar": 39,
+        "endLine": 711,
+        "endChar": 40
+      },
+      "revId": "4480a106e7f82ed44cbe480eb8f9e64aaeb9c29f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_9c4c7740",
         "filename": "jenkins_jobs/modules/project_multibranch.py",
         "patchSetId": 6
