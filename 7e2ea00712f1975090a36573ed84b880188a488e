@@ -93,6 +93,30 @@
       "revId": "7e2ea00712f1975090a36573ed84b880188a488e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_9040dba4",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 648,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-12T18:30:59Z",
+      "side": 1,
+      "message": "Oh I see. Safe to ignore my comment then.",
+      "parentUuid": "5f7c97a3_50dd6311",
+      "range": {
+        "startLine": 648,
+        "startChar": 9,
+        "endLine": 648,
+        "endChar": 25
+      },
+      "revId": "7e2ea00712f1975090a36573ed84b880188a488e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
