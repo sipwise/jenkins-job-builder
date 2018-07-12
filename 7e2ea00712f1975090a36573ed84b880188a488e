@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_f0e10fd1",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 647,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-12T18:26:05Z",
+      "side": 1,
+      "message": "Doesn\u0027t work these are just strings, it\u0027s not the option being read. We\u0027d have to improve the convert_mapping_to_xml to support options",
+      "parentUuid": "5f7c97a3_10b28be6",
+      "range": {
+        "startLine": 647,
+        "startChar": 10,
+        "endLine": 647,
+        "endChar": 18
+      },
+      "revId": "7e2ea00712f1975090a36573ed84b880188a488e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_10ddab40",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2018-07-12T18:16:43Z",
       "side": 1,
       "message": "Should we not add the method upper() here to avoid breaking compatibility issues here?\n\n(\u0027archive-method\u0027.upper(), \u0027archiveMethod\u0027, \u0027TAR\u0027, archive_valid_types)\n\nworks if I recall correctly",
+      "range": {
+        "startLine": 648,
+        "startChar": 9,
+        "endLine": 648,
+        "endChar": 25
+      },
+      "revId": "7e2ea00712f1975090a36573ed84b880188a488e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_50dd6311",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 648,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-12T18:26:05Z",
+      "side": 1,
+      "message": "That doesn\u0027t work all it does is uppercases the string ARCHIVE-METHOD",
+      "parentUuid": "5f7c97a3_10ddab40",
       "range": {
         "startLine": 648,
         "startChar": 9,
