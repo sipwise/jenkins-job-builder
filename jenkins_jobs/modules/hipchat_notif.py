@@ -82,7 +82,7 @@ from six.moves import configparser
 
 import jenkins_jobs.errors
 import jenkins_jobs.modules.base
-from jenkins_jobs.modules.helpers import convert_mapping_to_xml
+import jenkins_jobs.modules.helpers as helpers
 
 
 logger = logging.getLogger(__name__)
@@ -176,7 +176,7 @@ class HipChat(jenkins_jobs.modules.base.Base):
                 ('notify-unstable', 'notifyUnstable', False),
                 ('notify-failure', 'notifyFailure', False),
                 ('notify-back-to-normal', 'notifyBackToNormal', False)]
-            convert_mapping_to_xml(pdefhip,
+            helpers.convert_mapping_to_xml(pdefhip,
                 hipchat, mapping, fail_required=True)
 
         publishers = xml_parent.find('publishers')
