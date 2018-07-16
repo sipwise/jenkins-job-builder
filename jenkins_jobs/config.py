@@ -354,18 +354,5 @@ class JJBConfig(object):
         return result
 
     def get_plugin_config(self, plugin, key, default=None):
-        value = self.get_module_config('plugin "{}"'.format(plugin), key,
-                                       default)
-
-        # Backwards compatibility for users who have not switched to the new
-        # plugin configuration format in their config. This code should be
-        # removed in future versions of JJB after 2.0.
-        if value is default:
-            old_value = self.get_module_config(plugin, key, _NOTSET)
-            # only log warning if detected a plugin config setting.
-            if old_value is not _NOTSET:
-                value = old_value
-                logger.warning(
-                    DEPRECATED_PLUGIN_CONFIG_SECTION_MESSAGE.format(
-                        plugin=plugin))
-        return value
+        return self.get_module_config('plugin "{}"'.format(plugin), key,
+                                      default)
