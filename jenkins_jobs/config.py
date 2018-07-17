@@ -42,6 +42,7 @@ exclude=.*
 allow_duplicates=False
 allow_empty_variables=False
 retain_anchors=False
+add_jobs=True
 
 # other named sections could be used in addition to the implicit [jenkins]
 # if you have multiple jenkins servers.
@@ -312,6 +313,20 @@ class JJBConfig(object):
             retain_anchors = config.getboolean('job_builder',
                                                'retain_anchors')
         self.yamlparser['retain_anchors'] = retain_anchors
+
+        # add jobs?
+        add_jobs = False
+        if config and config.has_option('job_builder', 'add_jobs'):
+            add_jobs = config.getboolean('job_builder',
+                                         'add_jobs')
+        self.builder['add_jobs'] = add_jobs
+
+        # add views?
+        add_views = False
+        if config and config.has_option('job_builder', 'add_views'):
+            add_views = config.getboolean('job_builder',
+                                          'add_views')
+        self.builder['add_views'] = add_views
 
     def validate(self):
         # Inform the user as to what is likely to happen, as they may specify

@@ -66,6 +66,15 @@ job_builder section
   they will be accessible in `qux.yml` but not in `bar.yml`. They will also be
   accessible in `mydir/bar.yml` and `mydir/qux.yml`. False by default.
 
+**add_jobs**
+  (Optional) This is the equivalent of `--jobs-only` flag. Enable/disable the
+  the option in the configuration file allows users to implicitly add jobs
+  on Jenkins without using `-j` option. False by default.
+
+**add_views**
+  (Optional) This is the equivalent of `--views-only` flag. Enable/disable the
+  the option in the configuration file allows users to implicitly add views
+  on Jenkins without using the `-v`. False by default.
 
 jenkins section
 ^^^^^^^^^^^^^^^
