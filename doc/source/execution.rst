@@ -66,6 +66,12 @@ job_builder section
   they will be accessible in `qux.yml` but not in `bar.yml`. They will also be
   accessible in `mydir/bar.yml` and `mydir/qux.yml`. False by default.
 
+**update**
+  (Optional) If set to one of the values "jobs" or "views", will allow
+  users to implicitly add jobs or views or both on Jenkins without having to
+  use `--jobs-only` or `--views-only` options explicitly. The value "all" is
+  equivalent to not both `--jobs-only` or `--views-only`. Note, when the CLI
+  options are used this overrides the options set in the config file.
 
 jenkins section
 ^^^^^^^^^^^^^^^

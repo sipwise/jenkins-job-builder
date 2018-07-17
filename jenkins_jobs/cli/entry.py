@@ -91,6 +91,22 @@ class JenkinsJobs(object):
         self._set_config(self.jjb_config.jenkins, 'user')
         self._set_config(self.jjb_config.jenkins, 'password')
 
+        # Get the options set on CLI
+        add_jobs = getattr(self.options, 'add_jobs', None)
+        add_views = getattr(self.options, 'add_views', None)
+        # Get the options set in config file
+        update = self.jjb_config.builder.get('update', None)
+
+        # Note: CLI options override the options set in the config.
+        if not add_jobs and not add_views:
+            if update == 'all':
+                self.options.add_jobs = False
+                self.options.add_views = False
+            elif update == 'jobs':
+                self.options.add_jobs = True
+            elif update == 'views':
+                self.options.add_views = True
+
         if getattr(self.options, 'plugins_info_path', None) is not None:
             with io.open(self.options.plugins_info_path, 'r',
                          encoding='utf-8') as yaml_file:
