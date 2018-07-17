@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_037bff28",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-07-17T12:07:55Z",
+      "side": 1,
+      "message": "I know this very well but this also break the ability to search for the entire string, which is something quite common if you copy the full class name from xml,\nfor example.\n\nSadly, we cannot avoid the split in most case unless we agree to dump the 79 char limit and replace it with something much larger.",
+      "parentUuid": "5f7c97a3_8a2e44a9",
+      "range": {
+        "startLine": 89,
+        "startChar": 17,
+        "endLine": 89,
+        "endChar": 18
+      },
+      "revId": "5c9b1084f999bdf3cc22d035b98a1e6490de5dbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_4a110c5d",
         "filename": "jenkins_jobs/modules/properties.py",
         "patchSetId": 2
@@ -99,6 +123,30 @@
       "writtenOn": "2018-06-19T15:22:38Z",
       "side": 1,
       "message": "Can simplify with:\n\n prop[\u0027_plugin\u0027] \u003d xml_parent.attrib.get(\u0027plugin\u0027, None)\n\nThen the comparison above is straight forward.\n\nOr is there something about needing to support this being set by the registry.dispatch method I\u0027m not following?\n\n---\n\nSo I\u0027ve spotted that the reason the copying of component_data is needed in the registry is because we\u0027re injecting \u0027_plugin\u0027 at the top level here.\n\nI\u0027d be inclined to either in the registry we do something to copy any private attributes set at this point without needing to know their names (just copying anything starting with \u0027_\u0027 from component_data) or we inject this into the next level into the data e.g.:\n\n prop[next(iter(prop))][\u0027_plugin\u0027] \u003d xml_parent.attrib.get(\u0027plugin\u0027)\n\nAnd don\u0027t have the registry involved.",
+      "range": {
+        "startLine": 1112,
+        "startChar": 12,
+        "endLine": 1113,
+        "endChar": 61
+      },
+      "revId": "5c9b1084f999bdf3cc22d035b98a1e6490de5dbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_a3b80bc7",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1113,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-07-17T12:07:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_caa8bc21",
       "range": {
         "startLine": 1112,
         "startChar": 12,
