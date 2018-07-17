@@ -84,12 +84,27 @@ class JenkinsJobs(object):
 
     def _parse_additional(self):
 
+
         self._set_config(self.jjb_config.builder, 'ignore_cache')
         self._set_config(self.jjb_config.builder, 'flush_cache')
         self._set_config(self.jjb_config.yamlparser, 'allow_empty_variables')
         self._set_config(self.jjb_config.jenkins, 'section')
         self._set_config(self.jjb_config.jenkins, 'user')
         self._set_config(self.jjb_config.jenkins, 'password')
+
+        if getattr(self.options, 'add_jobs', None):
+            self.jjb_config.builder['add_jobs'] = True
+        else:
+            add_jobs = self.jjb_config.builder.get('add_jobs', False)
+            if add_jobs:
+                self.options.add_jobs = add_jobs
+
+        if getattr(self.options, 'add_views', None):
+            self.jjb_config.builder['add_views'] = True
+        else:
+            add_views = self.jjb_config.builder.get('add_views', False)
+            if add_views:
+                self.options.add_views = add_views
 
         if getattr(self.options, 'plugins_info_path', None) is not None:
             with io.open(self.options.plugins_info_path, 'r',
