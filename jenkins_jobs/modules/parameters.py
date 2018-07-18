@@ -39,7 +39,7 @@ from jenkins_jobs.errors import MissingAttributeError
 from jenkins_jobs.errors import InvalidAttributeError
 import jenkins_jobs.modules.base
 from jenkins_jobs.modules.helpers import copyartifact_build_selector
-from jenkins_jobs.modules.helpers import convert_mapping_to_xml
+import jenkins_jobs.modules.helpers as helpers
 
 
 def base_param(registry, xml_parent, data, do_default, ptype):
@@ -211,9 +211,9 @@ def label_param(registry, xml_parent, data):
 
     valid_types = ['allCases', 'success', 'unstable']
     mapping = [
-        ('matching-label', 'triggerIfResult', 'allCases', valid_types)
+        ('matching-label', 'triggerIfResult', 'allCases', valid_types),
     ]
-    convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
     eligibility_label = data.get('node-eligibility', 'all').lower()
     eligibility_label_dict = {
@@ -387,8 +387,10 @@ def run_param(registry, xml_parent, data):
     """
     pdef = base_param(registry, xml_parent, data, False,
                       'hudson.model.RunParameterDefinition')
-    mapping = [('project-name', 'projectName', None)]
-    convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
+    mapping = [
+        ('project-name', 'projectName', None),
+    ]
+    helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
 
 def extended_choice_param(registry, xml_parent, data):
@@ -489,7 +491,7 @@ def extended_choice_param(registry, xml_parent, data):
         ('description-groovy-script', 'descriptionGroovyScript', ''),
         ('description-groovy-classpath', 'descriptionGroovyClasspath', ''),
     ]
-    convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
 
 def validating_string_param(registry, xml_parent, data):
@@ -521,7 +523,7 @@ def validating_string_param(registry, xml_parent, data):
         ('regex', 'regex', None),
         ('msg', 'failedValidationMessage', None),
     ]
-    convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
 
 def svn_tags_param(registry, xml_parent, data):
@@ -564,7 +566,7 @@ def svn_tags_param(registry, xml_parent, data):
         ('sort-z-to-a', 'reverseByName', False),
         ('', 'uuid', "1-1-1-1-1"),
     ]
-    convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
 
 def dynamic_choice_param(registry, xml_parent, data):
@@ -737,14 +739,14 @@ def dynamic_scriptler_param_common(registry, xml_parent, data, ptype):
                                           'dynamicparameter.scriptler.'
                                           'ScriptlerParameterDefinition_'
                                           '-ScriptParameter')
-            convert_mapping_to_xml(
+            helpers.convert_mapping_to_xml(
                 parameterXML, parameter, mapping, fail_required=True)
     mapping = [
         ('script-id', '__scriptlerScriptId', None),
         ('remote', '__remote', False),
         ('read-only', 'readonlyInputField', False),
     ]
-    convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
 
 def matrix_combinations_param(registry, xml_parent, data):
@@ -772,8 +774,9 @@ def matrix_combinations_param(registry, xml_parent, data):
     mapping = [
         ('name', 'name', None),
         ('description', 'description', ''),
-        ('filter', 'defaultCombinationFilter', '')]
-    convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
+        ('filter', 'defaultCombinationFilter', ''),
+    ]
+    helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
     return pdef
 
@@ -806,7 +809,7 @@ def copyartifact_build_selector_param(registry, xml_parent, data):
         ('name', 'name', None),
         ('description', 'description', ''),
     ]
-    convert_mapping_to_xml(t, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(t, data, mapping, fail_required=True)
 
     copyartifact_build_selector(t, data, 'defaultSelector')
 
@@ -860,7 +863,7 @@ def maven_metadata_param(registry, xml_parent, data):
         ('default-value', 'defaultValue', ''),
         ('versions-filter', 'versionFilter', ''),
     ]
-    convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
     sort_order = data.get('sorting-order', 'descending').lower()
     sort_dict = {'descending': 'DESC',
@@ -875,7 +878,7 @@ def maven_metadata_param(registry, xml_parent, data):
         ('repository-username', 'username', ''),
         ('repository-password', 'password', ''),
     ]
-    convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
 
 def hidden_param(parser, xml_parent, data):
@@ -928,7 +931,7 @@ def random_string_param(registry, xml_parent, data):
         ('description', 'description', ''),
         ('failed-validation-message', 'failedValidationMessage', ''),
     ]
-    convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
 
 def git_parameter_param(registry, xml_parent, data):
@@ -1034,7 +1037,7 @@ def git_parameter_param(registry, xml_parent, data):
         ('useRepository', 'useRepository', ''),
         ('quickFilterEnabled', 'quickFilterEnabled', False),
     ]
-    convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
 
 class Parameters(jenkins_jobs.modules.base.Base):
