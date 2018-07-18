@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_c024c6b4",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-18T14:34:59Z",
+      "side": 1,
+      "message": "Can you add some spacing so that it\u0027s clear above and below this if-statement?",
+      "revId": "f37a442a49dae26be50c81e37662a937c4029274",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
