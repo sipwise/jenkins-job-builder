@@ -1,0 +1,3 @@
+builders:
+  - nexus-iq-policy-evaluator:
+      stage: 'build'
