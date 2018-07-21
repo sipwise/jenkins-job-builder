@@ -1,0 +1,5 @@
+builders:
+  - nexus-iq-policy-evaluator:
+      stage: 'nexus-iq-stage001'
+      application-type: 'manual'
+      application-id: 'nexus-iq-application-id001'
