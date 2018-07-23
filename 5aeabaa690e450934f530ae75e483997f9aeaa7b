@@ -48,6 +48,144 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_e24ac180",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4094,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-23T17:37:45Z",
+      "side": 1,
+      "message": "nit: omit the period here. I believe if it is a single sentence, we encourage this convention.",
+      "range": {
+        "startLine": 4094,
+        "startChar": 42,
+        "endLine": 4094,
+        "endChar": 43
+      },
+      "revId": "5aeabaa690e450934f530ae75e483997f9aeaa7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_0201fd07",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4095,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-23T17:37:45Z",
+      "side": 1,
+      "message": "dict",
+      "range": {
+        "startLine": 4095,
+        "startChar": 9,
+        "endLine": 4095,
+        "endChar": 12
+      },
+      "revId": "5aeabaa690e450934f530ae75e483997f9aeaa7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_4259355a",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4097,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-23T17:37:45Z",
+      "side": 1,
+      "message": "Same comment",
+      "range": {
+        "startLine": 4097,
+        "startChar": 58,
+        "endLine": 4097,
+        "endChar": 60
+      },
+      "revId": "5aeabaa690e450934f530ae75e483997f9aeaa7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_02533d3c",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4099,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-23T17:37:45Z",
+      "side": 1,
+      "message": "Same comment",
+      "range": {
+        "startLine": 4099,
+        "startChar": 63,
+        "endLine": 4099,
+        "endChar": 64
+      },
+      "revId": "5aeabaa690e450934f530ae75e483997f9aeaa7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_82e3cda0",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4101,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-23T17:37:45Z",
+      "side": 1,
+      "message": "false",
+      "range": {
+        "startLine": 4101,
+        "startChar": 73,
+        "endLine": 4101,
+        "endChar": 78
+      },
+      "revId": "5aeabaa690e450934f530ae75e483997f9aeaa7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_c22a2596",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4101,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-23T17:37:45Z",
+      "side": 1,
+      "message": "Same comment",
+      "range": {
+        "startLine": 4101,
+        "startChar": 62,
+        "endLine": 4101,
+        "endChar": 64
+      },
+      "revId": "5aeabaa690e450934f530ae75e483997f9aeaa7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_83b43cf3",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 3
@@ -87,6 +225,52 @@
         "startChar": 0,
         "endLine": 4113,
         "endChar": 22
+      },
+      "revId": "5aeabaa690e450934f530ae75e483997f9aeaa7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_65323bf6",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4136,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-23T17:37:45Z",
+      "side": 1,
+      "message": "Looks like we can use the convert xml here",
+      "range": {
+        "startLine": 4127,
+        "startChar": 0,
+        "endLine": 4136,
+        "endChar": 71
+      },
+      "revId": "5aeabaa690e450934f530ae75e483997f9aeaa7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_453a9fc5",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4145,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-23T17:37:45Z",
+      "side": 1,
+      "message": "Trailing backslash",
+      "range": {
+        "startLine": 4145,
+        "startChar": 65,
+        "endLine": 4145,
+        "endChar": 66
       },
       "revId": "5aeabaa690e450934f530ae75e483997f9aeaa7b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
