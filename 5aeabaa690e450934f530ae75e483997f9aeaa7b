@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_e31410ed",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4089,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-07-23T11:44:01Z",
+      "side": 1,
+      "message": "Nexus",
+      "range": {
+        "startLine": 4089,
+        "startChar": 26,
+        "endLine": 4089,
+        "endChar": 31
+      },
+      "revId": "5aeabaa690e450934f530ae75e483997f9aeaa7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_83b43cf3",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4109,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-07-23T11:44:01Z",
+      "side": 1,
+      "message": "PS rm this line. redundant",
+      "range": {
+        "startLine": 4108,
+        "startChar": 0,
+        "endLine": 4109,
+        "endChar": 12
+      },
+      "revId": "5aeabaa690e450934f530ae75e483997f9aeaa7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
