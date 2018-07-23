@@ -68,6 +68,46 @@
       "revId": "5aeabaa690e450934f530ae75e483997f9aeaa7b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_a2336961",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4113,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-23T17:20:48Z",
+      "side": 1,
+      "message": "These examples should be minimal and full examples.",
+      "range": {
+        "startLine": 4103,
+        "startChar": 0,
+        "endLine": 4113,
+        "endChar": 22
+      },
+      "revId": "5aeabaa690e450934f530ae75e483997f9aeaa7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_22eaf99f",
+        "filename": "tests/builders/fixtures/nexus_iq_policy_evaluator002.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-23T17:20:48Z",
+      "side": 1,
+      "message": "Can we use the minimal and full example pattern that we use for new plugins?\n\nBasically the minimal example should configure only the absolute minimal configuration (everything defaults and only required settings set) and the full example is every single option set to a non-default value.",
+      "revId": "5aeabaa690e450934f530ae75e483997f9aeaa7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
