@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_83975c3a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-07-23T11:46:13Z",
+      "side": 1,
+      "message": "move this to the footer (last para), after change-id",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 49
+      },
+      "revId": "5aeabaa690e450934f530ae75e483997f9aeaa7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_e31410ed",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 3
