@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_d302f008",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-24T03:11:59Z",
+      "side": 1,
+      "message": "We should update this one too.",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 68
+      },
+      "revId": "f1a62c006c988daa8225bb1191963bd4a138c3a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
