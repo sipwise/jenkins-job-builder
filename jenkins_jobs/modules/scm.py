@@ -42,7 +42,7 @@ import xml.etree.ElementTree as XML
 from jenkins_jobs.errors import InvalidAttributeError
 from jenkins_jobs.errors import JenkinsJobsException
 import jenkins_jobs.modules.base
-from jenkins_jobs.modules.helpers import convert_mapping_to_xml
+import jenkins_jobs.modules.helpers as helpers
 
 
 def git(registry, xml_parent, data):
@@ -385,7 +385,7 @@ def git(registry, xml_parent, data):
         clone_mapping = [
             ('shallow-clone', 'shallow', False),
             ('depth', 'depth', 1)]
-        convert_mapping_to_xml(clo, data, clone_mapping, fail_required=True)
+        helpers.convert_mapping_to_xml(clo, data, clone_mapping, fail_required=True)
         if 'do-not-fetch-tags' in data:
             XML.SubElement(clo, 'noTags').text = str(
                 data.get('do-not-fetch-tags', False)).lower()
@@ -570,7 +570,7 @@ def cvs(registry, xml_parent, data):
         compression_level = repo.get('compression-level', '-1')
         repo_mapping = [('root', 'cvsRoot', None),
             ('', 'compressionLevel', int(compression_level), range(-1, 10))]
-        convert_mapping_to_xml(repo_tag,
+        helpers.convert_mapping_to_xml(repo_tag,
             repo, repo_mapping, fail_required=True)
 
         items_tag = XML.SubElement(repo_tag, 'repositoryItems')
@@ -585,14 +585,14 @@ def cvs(registry, xml_parent, data):
             loc_tag = XML.SubElement(item_tag, 'location',
                                      {'class': loc_class})
             mapping = [('type', 'locationType', 'HEAD')]
-            convert_mapping_to_xml(
+            helpers.convert_mapping_to_xml(
                 loc_tag, location, mapping, fail_required=True)
 
             if loc_type != 'HEAD':
                 mapping = [
                     ('name', 'locationName', ''),
                     ('use-head', 'useHeadIfNotFound', False)]
-                convert_mapping_to_xml(
+                helpers.convert_mapping_to_xml(
                     loc_tag, location, mapping, fail_required=True)
 
             modules = location.get('modules')
@@ -602,7 +602,7 @@ def cvs(registry, xml_parent, data):
                 mapping = [
                     ('remote', 'remoteName', None),
                     ('local-name', 'localName', '')]
-                convert_mapping_to_xml(
+                helpers.convert_mapping_to_xml(
                     module_tag, module, mapping, fail_required=True)
 
         excluded = repo.get('excluded-regions', [])
@@ -619,7 +619,7 @@ def cvs(registry, xml_parent, data):
         ('show-all-output', 'disableCvsQuiet', False),
         ('clean-checkout', 'cleanOnFailedUpdate', False),
         ('clean-copy', 'forceCleanCopy', False)]
-    convert_mapping_to_xml(cvs, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(cvs, data, mappings, fail_required=True)
 
 
 def repo(registry, xml_parent, data):
@@ -682,7 +682,7 @@ def repo(registry, xml_parent, data):
         ('trace', 'trace', False),
         ('show-all-changes', 'showAllChanges', False),
     ]
-    convert_mapping_to_xml(scm, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(scm, data, mapping, fail_required=True)
 
     optional_mapping = [
         # option, xml name, default value
@@ -694,7 +694,7 @@ def repo(registry, xml_parent, data):
         ('mirror-dir', 'mirrorDir', None),
         ('local-manifest', 'localManifest', None),
     ]
-    convert_mapping_to_xml(scm, data, optional_mapping, fail_required=False)
+    helpers.convert_mapping_to_xml(scm, data, optional_mapping, fail_required=False)
 
     # ignore-projects does not follow the same pattern of the other parameters,
     # so process it here:
@@ -733,7 +733,7 @@ def store(registry, xml_parent, data):
     mapping = [
         ('script', 'scriptName', None),
         ('repository', 'repositoryName', None)]
-    convert_mapping_to_xml(scm, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(scm, data, mapping, fail_required=True)
 
     pundle_specs = data.get('pundles', [])
     if not pundle_specs:
@@ -748,7 +748,7 @@ def store(registry, xml_parent, data):
         mapping = [
             ('', 'name', pundle_name),
             ('', 'pundleType', pundle_type.upper(), valid_pundle_types)]
-        convert_mapping_to_xml(pundle, data, mapping, fail_required=True)
+        helpers.convert_mapping_to_xml(pundle, data, mapping, fail_required=True)
 
     generate_parcel = 'parcel-builder-file' in data
     mapping_optional = [
@@ -756,7 +756,7 @@ def store(registry, xml_parent, data):
         ('minimum-blessing', 'minimumBlessingLevel', None),
         ('', 'generateParcelBuilderInputFile', generate_parcel),
         ('parcel-builder-file', 'parcelBuilderInputFilename', None)]
-    convert_mapping_to_xml(scm,
+    helpers.convert_mapping_to_xml(scm,
         data, mapping_optional, fail_required=False)
 
 
@@ -827,7 +827,7 @@ def svn(registry, xml_parent, data):
         browser = XML.SubElement(
             scm, 'browser', {'class': 'hudson.scm.browsers.ViewSVN'})
         mapping = [('viewvc-url', 'url', None)]
-        convert_mapping_to_xml(browser, data, mapping, fail_required=True)
+        helpers.convert_mapping_to_xml(browser, data, mapping, fail_required=True)
     locations = XML.SubElement(scm, 'locations')
 
     def populate_repo_xml(parent, data):
@@ -836,14 +836,14 @@ def svn(registry, xml_parent, data):
         mapping = [
             ('url', 'remote', None),
             ('basedir', 'local', '.')]
-        convert_mapping_to_xml(module, data, mapping, fail_required=True)
+        helpers.convert_mapping_to_xml(module, data, mapping, fail_required=True)
 
         repo_depths = ['infinity', 'empty', 'files', 'immediates', 'unknown']
         mapping_optional = [
             ('credentials-id', 'credentialsId', None),
             ('repo-depth', 'depthOption', 'infinity', repo_depths),
             ('ignore-externals', 'ignoreExternalsOption', False)]
-        convert_mapping_to_xml(module, data,
+        helpers.convert_mapping_to_xml(module, data,
             mapping_optional, fail_required=False)
 
     if 'repos' in data:
@@ -992,7 +992,7 @@ def tfs(registry, xml_parent, data):
         ('login', 'userName', ''),
         ('use-update', 'useUpdate', True),
     ]
-    convert_mapping_to_xml(tfs, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(tfs, data, mapping, fail_required=True)
 
     store = data.get('web-access', None)
     if isinstance(store, list):
@@ -1037,7 +1037,7 @@ def workspace(registry, xml_parent, data):
     mapping = [
         ('parent-job', 'parentJobName', ''),
         ('', 'criteria', criteria, criteria_list)]
-    convert_mapping_to_xml(workspace, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(workspace, data, mapping, fail_required=True)
 
 
 def hg(self, xml_parent, data):
@@ -1100,7 +1100,7 @@ def hg(self, xml_parent, data):
     scm = XML.SubElement(xml_parent, 'scm', {'class':
                          'hudson.plugins.mercurial.MercurialSCM'})
     mapping = [('url', 'source', None)]
-    convert_mapping_to_xml(scm, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(scm, data, mapping, fail_required=True)
 
     mapping_optional = [
         ('credentials-id', 'credentialsId', None),
@@ -1108,7 +1108,7 @@ def hg(self, xml_parent, data):
         ('revision', 'revision', 'default'),
         ('subdir', 'subdir', None),
         ('clean', 'clean', False)]
-    convert_mapping_to_xml(scm, data, mapping_optional, fail_required=False)
+    helpers.convert_mapping_to_xml(scm, data, mapping_optional, fail_required=False)
 
     modules = data.get('modules', '')
     if isinstance(modules, list):
@@ -1122,7 +1122,7 @@ def hg(self, xml_parent, data):
                             {'class': 'hudson.plugins.mercurial.browser.' +
                                       browserdict[browser]})
         mapping = [('browser-url', 'url', None, browserdict[browser])]
-        convert_mapping_to_xml(bc, data, mapping, fail_required=True)
+        helpers.convert_mapping_to_xml(bc, data, mapping, fail_required=True)
 
 
 def openshift_img_streams(registry, xml_parent, data):
@@ -1177,7 +1177,7 @@ def openshift_img_streams(registry, xml_parent, data):
         ("auth-token", 'authToken', ''),
         ("verbose", 'verbose', False),
     ]
-    convert_mapping_to_xml(scm, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(scm, data, mapping, fail_required=True)
 
 
 def bzr(registry, xml_parent, data):
@@ -1216,7 +1216,7 @@ def bzr(registry, xml_parent, data):
     ]
     scm_element = XML.SubElement(
         xml_parent, 'scm', {'class': 'hudson.plugins.bazaar.BazaarSCM'})
-    convert_mapping_to_xml(scm_element, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(scm_element, data, mapping, fail_required=True)
 
     browser_name_to_class = {
         'loggerhead': 'Loggerhead',
@@ -1234,11 +1234,11 @@ def bzr(registry, xml_parent, data):
         {'class': 'hudson.plugins.bazaar.browsers.{0}'.format(
             browser_name_to_class[browser])})
     mapping = [('browser-url', 'url', None)]
-    convert_mapping_to_xml(browser_element, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(browser_element, data, mapping, fail_required=True)
 
     if browser == 'opengrok':
         mapping = [('opengrok-root-module', 'rootModule', None)]
-        convert_mapping_to_xml(browser_element,
+        helpers.convert_mapping_to_xml(browser_element,
             data, mapping, fail_required=True)
 
 
@@ -1267,9 +1267,9 @@ def url(registry, xml_parent, data):
         url_tuple = XML.SubElement(
             urls, 'hudson.plugins.URLSCM.URLSCM_-URLTuple')
         mapping = [('', 'urlString', data_url)]
-        convert_mapping_to_xml(url_tuple, data, mapping, fail_required=True)
+        helpers.convert_mapping_to_xml(url_tuple, data, mapping, fail_required=True)
     mapping = [('clear-workspace', 'clearWorkspace', False)]
-    convert_mapping_to_xml(scm, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(scm, data, mapping, fail_required=True)
 
 
 def dimensions(registry, xml_parent, data):
@@ -1347,7 +1347,7 @@ def dimensions(registry, xml_parent, data):
         ('maintain-timestamp', 'canJobNoTouch', False),
         ('slave-checkout', 'forceAsSlave', False),
     ]
-    convert_mapping_to_xml(scm, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(scm, data, mapping, fail_required=True)
 
     # Folders to monitor. Default '/'
     folders = XML.SubElement(scm, 'folders')
@@ -1372,7 +1372,7 @@ def dimensions(registry, xml_parent, data):
         ('timezone', 'jobTimeZone', None),
         ('web-url', 'jobWebUrl', None),
     ]
-    convert_mapping_to_xml(scm, data, optional_mapping, fail_required=False)
+    helpers.convert_mapping_to_xml(scm, data, optional_mapping, fail_required=False)
 
 
 def accurev(registry, xml_parent, data):
@@ -1421,7 +1421,7 @@ def accurev(registry, xml_parent, data):
         ('build-from-snapshot', 'useSnapshot', False),
         ('do-not-pop-content', 'dontPopContent', False),
     ]
-    convert_mapping_to_xml(scm, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(scm, data, mapping, fail_required=True)
 
     additional_mapping = [
         ('workspace', 'workspace', None),
@@ -1431,7 +1431,7 @@ def accurev(registry, xml_parent, data):
         ('filter-poll-scm', 'filterForPollSCM', None),
         ('snapshot-name-format', 'snapshotNameFormat', None),
     ]
-    convert_mapping_to_xml(scm, data, additional_mapping, fail_required=False)
+    helpers.convert_mapping_to_xml(scm, data, additional_mapping, fail_required=False)
 
 
 class SCM(jenkins_jobs.modules.base.Base):
@@ -1489,7 +1489,7 @@ class PipelineSCM(jenkins_jobs.modules.base.Base):
                 mapping = [('script-path', 'scriptPath', 'Jenkinsfile'),
                            ('lightweight-checkout', 'lightweight', None,
                             [True, False])]
-                convert_mapping_to_xml(definition_parent, pipeline_dict,
+                helpers.convert_mapping_to_xml(definition_parent, pipeline_dict,
                                        mapping, fail_required=False)
             else:
                 raise JenkinsJobsException('Only one SCM can be specified '
