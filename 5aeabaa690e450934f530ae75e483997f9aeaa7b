@@ -2,6 +2,52 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_8dbf67aa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-24T13:13:45Z",
+      "side": 1,
+      "message": "This should be moved up. \"Add support for \"Invoke Nexus Policy Evaluation\"\n\nSince this patch does not add support for the full Nexus Platform Plugin.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 54
+      },
+      "revId": "5aeabaa690e450934f530ae75e483997f9aeaa7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_4dd70ff6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-24T13:13:45Z",
+      "side": 1,
+      "message": "No need to state this we can tell by looking at the patch.",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 39
+      },
+      "revId": "5aeabaa690e450934f530ae75e483997f9aeaa7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_83975c3a",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
