@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_fc3fabdc",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4095,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-24T16:32:12Z",
+      "side": 1,
+      "message": "We should document the list the available options that the users are allowed to use for application-type. In this case being, manual and selected",
+      "range": {
+        "startLine": 4095,
+        "startChar": 14,
+        "endLine": 4095,
+        "endChar": 30
+      },
+      "revId": "c2c00ed6027be505f0756ab82734c35105c65333",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_b0d63754",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4096,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-24T16:32:12Z",
+      "side": 1,
+      "message": "Is default manual or selected? From the code it seems to be manual but the default is documented as selected.",
+      "range": {
+        "startLine": 4096,
+        "startChar": 32,
+        "endLine": 4096,
+        "endChar": 40
+      },
+      "revId": "c2c00ed6027be505f0756ab82734c35105c65333",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_7015ffe5",
+        "filename": "tests/builders/fixtures/nexus-iq-policy-evaluator-minimal.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-24T16:32:12Z",
+      "side": 1,
+      "message": "Are these required fields? If they are, we should make changes to reflect this.",
+      "revId": "c2c00ed6027be505f0756ab82734c35105c65333",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
