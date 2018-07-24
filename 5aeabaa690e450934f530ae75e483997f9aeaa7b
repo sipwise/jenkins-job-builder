@@ -348,6 +348,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_5b058978",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4136,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-24T14:27:24Z",
+      "side": 1,
+      "message": "Oh I see, thanks for clarifying that for me. You\u0027re right, I don\u0027t know what I was thinking at the time when I saw this. Sorry about that. It\u0027s safe to dismiss this comment",
+      "parentUuid": "5f7c97a3_fb21f550",
+      "range": {
+        "startLine": 4127,
+        "startChar": 0,
+        "endLine": 4136,
+        "endChar": 71
+      },
+      "revId": "5aeabaa690e450934f530ae75e483997f9aeaa7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_453a9fc5",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 3
