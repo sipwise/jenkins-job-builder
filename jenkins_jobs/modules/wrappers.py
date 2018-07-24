@@ -31,13 +31,7 @@ from jenkins_jobs.errors import InvalidAttributeError
 from jenkins_jobs.errors import JenkinsJobsException
 import jenkins_jobs.modules.base
 from jenkins_jobs.modules.builders import create_builders
-from jenkins_jobs.modules.helpers import artifactory_common_details
-from jenkins_jobs.modules.helpers import artifactory_deployment_patterns
-from jenkins_jobs.modules.helpers import artifactory_env_vars_patterns
-from jenkins_jobs.modules.helpers import artifactory_optional_props
-from jenkins_jobs.modules.helpers import artifactory_repository
-from jenkins_jobs.modules.helpers import config_file_provider_builder
-from jenkins_jobs.modules.helpers import convert_mapping_to_xml
+import jenkins_jobs.modules.helpers as helpers
 
 logger = logging.getLogger(__name__)
 
@@ -113,13 +107,13 @@ def docker_custom_build_env(registry, xml_parent, data):
         dockerfile_mapping = [
             ('context-path', 'contextPath', '.'),
             ('dockerfile', 'dockerfile', 'Dockerfile')]
-        convert_mapping_to_xml(selectorobj, data,
+        helpers.convert_mapping_to_xml(selectorobj, data,
             dockerfile_mapping, fail_required=True)
 
     elif image_type == 'pull':
         selectorobj.set('class', core_prefix + 'PullDockerImageSelector')
         pull_mapping = [('image', 'image', '')]
-        convert_mapping_to_xml(selectorobj, data,
+        helpers.convert_mapping_to_xml(selectorobj, data,
             pull_mapping, fail_required=True)
 
     XML.SubElement(entry_xml, 'dockerInstallation').text = data.get(
@@ -130,7 +124,8 @@ def docker_custom_build_env(registry, xml_parent, data):
     mapping_optional = [
         ('host', 'uri', None),
         ('credentials-id', 'credentialsId', None)]
-    convert_mapping_to_xml(host, data, mapping_optional, fail_required=False)
+    helpers.convert_mapping_to_xml(
+        host, data, mapping_optional, fail_required=False)
 
     XML.SubElement(entry_xml, 'dockerRegistryCredentials').text = data.get(
         'registry-credentials-id', '')
@@ -153,7 +148,8 @@ def docker_custom_build_env(registry, xml_parent, data):
         ('group', 'group', ''),
         ('command', 'command', '/bin/cat'),
         ('net', 'net', 'bridge')]
-    convert_mapping_to_xml(entry_xml, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(
+        entry_xml, data, mapping, fail_required=True)
 
 
 def ci_skip(registry, xml_parent, data):
@@ -213,7 +209,7 @@ def config_file_provider(registry, xml_parent, data):
     cfp = XML.SubElement(xml_parent, 'org.jenkinsci.plugins.configfiles.'
                          'buildwrapper.ConfigFileBuildWrapper')
     cfp.set('plugin', 'config-file-provider')
-    config_file_provider_builder(cfp, data)
+    helpers.config_file_provider_builder(cfp, data)
 
 
 def logfilesize(registry, xml_parent, data):
@@ -247,7 +243,8 @@ def logfilesize(registry, xml_parent, data):
         ('size', 'maxLogSize', 128),
         ('fail', 'failBuild', False),
     ]
-    convert_mapping_to_xml(lfswrapper, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(
+        lfswrapper, data, mapping, fail_required=True)
 
 
 def timeout(registry, xml_parent, data):
@@ -337,7 +334,7 @@ def timeout(registry, xml_parent, data):
                 {'class': "hudson.plugins.build_timeout."
                           "impl.AbsoluteTimeOutStrategy"})
             mapping = [('timeout', 'timeoutMinutes', 3)]
-            convert_mapping_to_xml(strategy_element,
+            helpers.convert_mapping_to_xml(strategy_element,
                 data, mapping, fail_required=True)
         elif strategy == "no-activity":
             strategy_element = XML.SubElement(
@@ -346,7 +343,7 @@ def timeout(registry, xml_parent, data):
                           "impl.NoActivityTimeOutStrategy"})
             timeout_sec = int(data.get('timeout', 3)) * MIN_TO_SEC
             mapping = [('', 'timeoutSecondsString', timeout_sec)]
-            convert_mapping_to_xml(strategy_element,
+            helpers.convert_mapping_to_xml(strategy_element,
                 data, mapping, fail_required=True)
         elif strategy == "likely-stuck":
             strategy_element = XML.SubElement(
@@ -354,7 +351,7 @@ def timeout(registry, xml_parent, data):
                 {'class': "hudson.plugins.build_timeout."
                           "impl.LikelyStuckTimeOutStrategy"})
             mapping = [('timeout', 'timeoutMinutes', 3)]
-            convert_mapping_to_xml(strategy_element,
+            helpers.convert_mapping_to_xml(strategy_element,
                 data, mapping, fail_required=True)
         elif strategy == "elastic":
             strategy_element = XML.SubElement(
@@ -365,7 +362,7 @@ def timeout(registry, xml_parent, data):
                 ('elastic-percentage', 'timeoutPercentage', 0),
                 ('elastic-number-builds', 'numberOfBuilds', 0),
                 ('elastic-default-timeout', 'timeoutMinutesElasticDefault', 3)]
-            convert_mapping_to_xml(strategy_element,
+            helpers.convert_mapping_to_xml(strategy_element,
                 data, mapping, fail_required=True)
 
         elif strategy == "deadline":
@@ -378,7 +375,7 @@ def timeout(registry, xml_parent, data):
             mapping = [
                 ('', 'deadlineTime', deadline_time),
                 ('', 'deadlineToleranceInMinutes', deadline_tolerance)]
-            convert_mapping_to_xml(strategy_element,
+            helpers.convert_mapping_to_xml(strategy_element,
                 data, mapping, fail_required=True)
 
         actions = []
@@ -412,7 +409,7 @@ def timeout(registry, xml_parent, data):
                 raise JenkinsJobsException("Unsupported BuiltTimeoutWrapper "
                                            "plugin action: {0}".format(action))
         mapping = [('timeout-var', 'timeoutEnvVar', None)]
-        convert_mapping_to_xml(twrapper,
+        helpers.convert_mapping_to_xml(twrapper,
             data, mapping, fail_required=False)
     else:
         mapping = [
@@ -422,7 +419,7 @@ def timeout(registry, xml_parent, data):
             ('write-description', 'writingDescription', 'false'),
             ('elastic-percentage', 'timeoutPercentage', 0),
             ('elastic-default-timeout', 'timeoutMinutesElasticDefault', 3)]
-        convert_mapping_to_xml(twrapper,
+        helpers.convert_mapping_to_xml(twrapper,
                 data, mapping, fail_required=False)
 
         tout_type = str(data.get('type', 'absolute')).lower()
@@ -466,7 +463,8 @@ def ansicolor(registry, xml_parent, data):
         xml_parent,
         'hudson.plugins.ansicolor.AnsiColorBuildWrapper')
     mapping = [('colormap', 'colorMapName', None)]
-    convert_mapping_to_xml(cwrapper, data, mapping, fail_required=False)
+    helpers.convert_mapping_to_xml(
+        cwrapper, data, mapping, fail_required=False)
 
 
 def build_keeper(registry, xml_parent, data):
@@ -532,7 +530,8 @@ def build_keeper(registry, xml_parent, data):
     else:
         InvalidAttributeError('policy', policy, valid_policies)
 
-    convert_mapping_to_xml(policy_element, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(
+        policy_element, data, mapping, fail_required=True)
 
 
 def live_screenshot(registry, xml_parent, data):
@@ -564,7 +563,7 @@ def live_screenshot(registry, xml_parent, data):
         ('full-size', 'fullscreenFilename', 'screenshot.png'),
         ('thumbnail', 'thumbnailFilename', 'screenshot-thumb.png'),
     ]
-    convert_mapping_to_xml(live, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(live, data, mapping, fail_required=True)
 
 
 def mask_passwords(registry, xml_parent, data):
@@ -624,20 +623,20 @@ def workspace_cleanup(registry, xml_parent, data):
         mapping = [
             ('', 'pattern', inc),
             ('', 'type', "INCLUDE")]
-        convert_mapping_to_xml(ptrn, data, mapping, fail_required=True)
+        helpers.convert_mapping_to_xml(ptrn, data, mapping, fail_required=True)
 
     for exc in data.get("exclude", []):
         ptrn = XML.SubElement(patterns, 'hudson.plugins.ws__cleanup.Pattern')
         mapping = [
             ('', 'pattern', exc),
             ('', 'type', "EXCLUDE")]
-        convert_mapping_to_xml(ptrn, data, mapping, fail_required=True)
+        helpers.convert_mapping_to_xml(ptrn, data, mapping, fail_required=True)
 
     mapping = [
         ("dirmatch", 'deleteDirs', False),
         ('check-parameter', 'cleanupParameter', ''),
         ('external-deletion-command', 'externalDelete', '')]
-    convert_mapping_to_xml(p, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(p, data, mapping, fail_required=True)
 
 
 def m2_repository_cleanup(registry, xml_parent, data):
@@ -820,7 +819,7 @@ def build_name(registry, xml_parent, data):
                              'org.jenkinsci.plugins.buildnamesetter.'
                              'BuildNameSetter')
     mapping = [('name', 'template', None)]
-    convert_mapping_to_xml(bsetter, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(bsetter, data, mapping, fail_required=True)
 
 
 def port_allocator(registry, xml_parent, data):
@@ -918,7 +917,7 @@ def copy_to_slave(registry, xml_parent, data):
         ('include-ant-excludes', 'includeAntExcludes', False),
         ('relative-to', 'relativeTo', 'userContent', locations),
         ('', 'hudsonHomeRelative', False)]
-    convert_mapping_to_xml(cs, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(cs, data, mapping, fail_required=True)
 
 
 def inject(registry, xml_parent, data):
@@ -952,14 +951,14 @@ def inject(registry, xml_parent, data):
         ('script-content', 'scriptContent', None),
         ('load-from-master', 'loadFilesFromMaster', False),
     ]
-    convert_mapping_to_xml(info, data, mapping, fail_required=False)
+    helpers.convert_mapping_to_xml(info, data, mapping, fail_required=False)
 
     secure_groovy_script = XML.SubElement(info, 'secureGroovyScript')
     mapping = [
         ('groovy-script', 'script', None),
         ('groovy-sandbox', 'sandbox', False),
     ]
-    convert_mapping_to_xml(secure_groovy_script, data, mapping,
+    helpers.convert_mapping_to_xml(secure_groovy_script, data, mapping,
                            fail_required=False)
 
 
@@ -984,7 +983,8 @@ def inject_ownership_variables(registry, xml_parent, data):
     mapping = [
         ('node-variables', 'injectNodeOwnership', False),
         ('job-variables', 'injectJobOwnership', False)]
-    convert_mapping_to_xml(ownership, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(
+        ownership, data, mapping, fail_required=True)
 
 
 def inject_passwords(registry, xml_parent, data):
@@ -1008,7 +1008,7 @@ def inject_passwords(registry, xml_parent, data):
     mapping = [
         ('global', 'injectGlobalPasswords', False),
         ('mask-password-params', 'maskPasswordParameters', False)]
-    convert_mapping_to_xml(eib, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(eib, data, mapping, fail_required=True)
 
     entries = XML.SubElement(eib, 'passwordEntries')
     passwords = data.get('job-passwords', [])
@@ -1018,7 +1018,7 @@ def inject_passwords(registry, xml_parent, data):
             mapping = [
                 ('name', 'name', None),
                 ('password', 'value', None)]
-            convert_mapping_to_xml(entry, password,
+            helpers.convert_mapping_to_xml(entry, password,
                 mapping, fail_required=True)
 
 
@@ -1067,7 +1067,7 @@ def vault_secrets(registry, xml_parent, data):
         ('vault-url', 'vaultUrl', ''),
         ('credentials-id', 'vaultCredentialId', ''),
     ]
-    convert_mapping_to_xml(
+    helpers.convert_mapping_to_xml(
         configuration, data, conf_mapping, fail_required=True)
 
     secretsobj = XML.SubElement(vault, 'vaultSecrets')
@@ -1113,7 +1113,7 @@ def env_file(registry, xml_parent, data):
     mapping = [
         ('properties-file', 'filePath', None),
     ]
-    convert_mapping_to_xml(eib, data, mapping, fail_required=False)
+    helpers.convert_mapping_to_xml(eib, data, mapping, fail_required=False)
 
 
 def env_script(registry, xml_parent, data):
@@ -1148,7 +1148,7 @@ def env_script(registry, xml_parent, data):
         ('script-content', 'script', ''),
         ('script-type', 'scriptType', 'unix-script', valid_script_types),
         ('only-run-on-parent', 'runOnlyOnParent', False)]
-    convert_mapping_to_xml(el, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(el, data, mapping, fail_required=True)
 
 
 def jclouds(registry, xml_parent, data):
@@ -1243,7 +1243,7 @@ def openstack(registry, xml_parent, data):
             else:
                 instance_mapping.append(('template-name',
                     'templateName', None))
-            convert_mapping_to_xml(instances_to_run,
+            helpers.convert_mapping_to_xml(instances_to_run,
                 instance, instance_mapping, fail_required=True)
 
     if data.get('single-use', False):
@@ -1294,7 +1294,7 @@ def release(registry, xml_parent, data):
          not data.get('keep-forever', True)),
         ('override-build-parameters', 'overrideBuildParameters', False),
         ('version-template', 'releaseVersionTemplate', '')]
-    convert_mapping_to_xml(relwrap, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(relwrap, data, mapping, fail_required=True)
 
     parameters = data.get('parameters', [])
     if parameters:
@@ -1384,7 +1384,7 @@ def sauce_ondemand(registry, xml_parent, data):
         ('launch-sauce-connect-on-slave', 'launchSauceConnectOnSlave', False),
         ('https-protocol', 'httpsProtocol', ''),
         ('sauce-connect-options', 'options', '')]
-    convert_mapping_to_xml(sauce, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(sauce, data, mapping, fail_required=True)
 
     # Optional override global authentication
     username = data.get('override-username')
@@ -1394,20 +1394,21 @@ def sauce_ondemand(registry, xml_parent, data):
         mapping = [
             ('override-username', 'username', None),
             ('override-api-access-key', 'apiKey', None)]
-        convert_mapping_to_xml(cred, data, mapping, fail_required=True)
+        helpers.convert_mapping_to_xml(cred, data, mapping, fail_required=True)
     atype = data.get('type', 'selenium')
     info = XML.SubElement(sauce, 'seleniumInformation')
 
     if atype == 'selenium':
         selenium_mapping = [('starting-url', 'seleniumBrowsers', ''),
             ('', 'isWebDriver', False)]
-        convert_mapping_to_xml(
+        helpers.convert_mapping_to_xml(
             info, data, selenium_mapping, fail_required=True)
 
         browsers = XML.SubElement(info, 'seleniumBrowsers')
         for platform in data['platforms']:
             mapping = [('', 'string', platform)]
-            convert_mapping_to_xml(browsers, data, mapping, fail_required=True)
+            helpers.convert_mapping_to_xml(
+                browsers, data, mapping, fail_required=True)
         XML.SubElement(sauce, 'seleniumBrowsers',
                        {'reference': '../seleniumInformation/'
                         'seleniumBrowsers'})
@@ -1415,9 +1416,10 @@ def sauce_ondemand(registry, xml_parent, data):
         browsers = XML.SubElement(info, 'webDriverBrowsers')
         for platform in data['platforms']:
             mapping = [('', 'string', platform)]
-            convert_mapping_to_xml(browsers, data, mapping, fail_required=True)
+            helpers.convert_mapping_to_xml(
+                browsers, data, mapping, fail_required=True)
         webdriver_mapping = [('', 'isWebDriver', True)]
-        convert_mapping_to_xml(
+        helpers.convert_mapping_to_xml(
             info, data, webdriver_mapping, fail_required=True)
         XML.SubElement(sauce, 'webDriverBrowsers',
                        {'reference': '../seleniumInformation/'
@@ -1449,7 +1451,8 @@ def sonar(registry, xml_parent, data):
         mapping = [
             ('install-name', 'installationName', ''),
         ]
-        convert_mapping_to_xml(sonar, data, mapping, fail_required=True)
+        helpers.convert_mapping_to_xml(
+            sonar, data, mapping, fail_required=True)
 
 
 def pathignore(registry, xml_parent, data):
@@ -1520,7 +1523,7 @@ def pre_scm_buildstep(registry, xml_parent, data):
             bs.append(edited_node)
     if version >= pkg_resources.parse_version("0.3"):
         mapping = [('failOnError', 'failOnError', False)]
-        convert_mapping_to_xml(bsp, data, mapping, fail_required=True)
+        helpers.convert_mapping_to_xml(bsp, data, mapping, fail_required=True)
 
 
 def logstash(registry, xml_parent, data):
@@ -1553,7 +1556,7 @@ def logstash(registry, xml_parent, data):
     logstash.set('plugin', 'logstash@0.8.0')
 
     mapping = [('use-redis', 'useRedis', True)]
-    convert_mapping_to_xml(logstash, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(logstash, data, mapping, fail_required=True)
 
     if data.get('use-redis'):
         redis_config = data.get('redis', {})
@@ -1566,7 +1569,7 @@ def logstash(registry, xml_parent, data):
             ('database-password', 'pass', ''),
             ('data-type', 'dataType', 'list'),
             ('key', 'key', 'logstash')]
-        convert_mapping_to_xml(redis_sub_element,
+        helpers.convert_mapping_to_xml(redis_sub_element,
             redis_config, mapping, fail_required=True)
 
 
@@ -1602,7 +1605,7 @@ def mongo_db(registry, xml_parent, data):
         ('startup-params', 'parameters', ''),
         ('start-timeout', 'startTimeout', 0),
     ]
-    convert_mapping_to_xml(mongodb, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(mongodb, data, mapping, fail_required=True)
 
 
 def delivery_pipeline(registry, xml_parent, data):
@@ -1639,7 +1642,7 @@ def delivery_pipeline(registry, xml_parent, data):
         ('version-template', 'versionTemplate', ''),
         ('set-display-name', 'updateDisplayName', False),
     ]
-    convert_mapping_to_xml(pvc, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(pvc, data, mapping, fail_required=True)
 
 
 def matrix_tie_parent(registry, xml_parent, data):
@@ -1660,7 +1663,7 @@ def matrix_tie_parent(registry, xml_parent, data):
     """
     mtp = XML.SubElement(xml_parent, 'matrixtieparent.BuildWrapperMtp')
     mapping = [('node', 'labelName', None)]
-    convert_mapping_to_xml(mtp, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(mtp, data, mapping, fail_required=True)
 
 
 def exclusion(registry, xml_parent, data):
@@ -1687,7 +1690,7 @@ def exclusion(registry, xml_parent, data):
         dit = XML.SubElement(ids,
                            'org.jvnet.hudson.plugins.exclusion.DefaultIdType')
         mapping = [('', 'name', resource.upper())]
-        convert_mapping_to_xml(dit, data, mapping, fail_required=True)
+        helpers.convert_mapping_to_xml(dit, data, mapping, fail_required=True)
 
 
 def ssh_agent_credentials(registry, xml_parent, data):
@@ -1840,20 +1843,20 @@ def credentials_binding(registry, xml_parent, data):
                 mapping = [
                     ('username', 'usernameVariable', None),
                     ('password', 'passwordVariable', None)]
-                convert_mapping_to_xml(
+                helpers.convert_mapping_to_xml(
                     binding_xml, params, mapping, fail_required=True)
             elif binding_type == 'amazon-web-services':
                 mapping = [
                     ('access-key', 'accessKeyVariable', None),
                     ('secret-key', 'secretKeyVariable', None)]
-                convert_mapping_to_xml(
+                helpers.convert_mapping_to_xml(
                     binding_xml, params, mapping, fail_required=True)
             else:
                 mapping = [('variable', 'variable', None)]
-                convert_mapping_to_xml(
+                helpers.convert_mapping_to_xml(
                     binding_xml, params, mapping, fail_required=False)
             mapping = [('credential-id', 'credentialsId', None)]
-            convert_mapping_to_xml(binding_xml,
+            helpers.convert_mapping_to_xml(binding_xml,
                 params, mapping, fail_required=False)
 
 
@@ -1883,15 +1886,16 @@ def custom_tools(registry, xml_parent, data):
     for tool in tools:
         tool_wrapper = XML.SubElement(wrapper_tools, tool_node)
         mapping = [('', 'name', tool)]
-        convert_mapping_to_xml(tool_wrapper, data, mapping, fail_required=True)
+        helpers.convert_mapping_to_xml(
+            tool_wrapper, data, mapping, fail_required=True)
 
     opts = XML.SubElement(wrapper,
                           'multiconfigOptions')
     mapping = [('skip-master-install', 'skipMasterInstallation', False)]
-    convert_mapping_to_xml(opts, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(opts, data, mapping, fail_required=True)
 
     mapping = [('convert-homes-to-upper', 'convertHomesToUppercase', False)]
-    convert_mapping_to_xml(wrapper, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(wrapper, data, mapping, fail_required=True)
 
 
 def nodejs_installator(registry, xml_parent, data):
@@ -1913,7 +1917,7 @@ def nodejs_installator(registry, xml_parent, data):
     version = registry.get_plugin_info('nodejs').get('version', '0')
     npm_node.set("plugin", "nodejs@" + version)
     mapping = [('name', 'nodeJSInstallationName', None)]
-    convert_mapping_to_xml(npm_node, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(npm_node, data, mapping, fail_required=True)
 
 
 def xvnc(registry, xml_parent, data):
@@ -1943,7 +1947,7 @@ def xvnc(registry, xml_parent, data):
         ('screenshot', 'takeScreenshot', False),
         ('xauthority', 'useXauthority', True),
     ]
-    convert_mapping_to_xml(xwrapper, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(xwrapper, data, mapping, fail_required=True)
 
 
 def job_log_logger(registry, xml_parent, data):
@@ -1964,7 +1968,7 @@ def job_log_logger(registry, xml_parent, data):
                          'org.jenkins.ci.plugins.jobloglogger.'
                          'JobLogLoggerBuildWrapper')
     mapping = [('suppress-empty', 'suppressEmpty', True)]
-    convert_mapping_to_xml(top, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(top, data, mapping, fail_required=True)
 
 
 def xvfb(registry, xml_parent, data):
@@ -2020,7 +2024,7 @@ def xvfb(registry, xml_parent, data):
         ('debug', 'debug', False),
         ('shutdown-with-build', 'shutdownWithBuild', False),
     ]
-    convert_mapping_to_xml(xwrapper, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(xwrapper, data, mapping, fail_required=True)
 
 
 def android_emulator(registry, xml_parent, data):
@@ -2083,7 +2087,7 @@ def android_emulator(registry, xml_parent, data):
             ('target-abi', 'targetAbi', ''),
             ('sd-card', 'sdCardSize', '')
         ]
-        convert_mapping_to_xml(root, data, mapping, fail_required=True)
+        helpers.convert_mapping_to_xml(root, data, mapping, fail_required=True)
 
     hardware = XML.SubElement(root, 'hardwareProperties')
     for prop_name, prop_val in data.get('hardware-properties', {}).items():
@@ -2093,7 +2097,8 @@ def android_emulator(registry, xml_parent, data):
         mapping = [
             ('', 'key', prop_name),
             ('', 'value', prop_val)]
-        convert_mapping_to_xml(prop_node, data, mapping, fail_required=True)
+        helpers.convert_mapping_to_xml(
+            prop_node, data, mapping, fail_required=True)
     mapping = [
         ('wipe', 'wipeData', False),
         ('show-window', 'showWindow', False),
@@ -2103,7 +2108,7 @@ def android_emulator(registry, xml_parent, data):
         ('commandline-options', 'commandLineOptions', ''),
         ('exe', 'executable', ''),
     ]
-    convert_mapping_to_xml(root, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(root, data, mapping, fail_required=True)
 
 
 def artifactory_maven(registry, xml_parent, data):
@@ -2137,7 +2142,7 @@ def artifactory_maven(registry, xml_parent, data):
 
     # details
     details = XML.SubElement(artifactory, 'details')
-    artifactory_common_details(details, data)
+    helpers.artifactory_common_details(details, data)
 
     if 'repo-key' in data:
         mapping = [('repo-key', 'downloadRepositoryKey', None)]
@@ -2145,7 +2150,7 @@ def artifactory_maven(registry, xml_parent, data):
         mapping = [
             ('snapshot-repo-key', 'downloadSnapshotRepositoryKey', ''),
             ('release-repo-key', 'downloadReleaseRepositoryKey', '')]
-    convert_mapping_to_xml(details, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(details, data, mapping, fail_required=True)
 
 
 def artifactory_generic(registry, xml_parent, data):
@@ -2204,7 +2209,7 @@ def artifactory_generic(registry, xml_parent, data):
 
     # details
     details = XML.SubElement(artifactory, 'details')
-    artifactory_common_details(details, data)
+    helpers.artifactory_common_details(details, data)
 
     # Get plugin information to maintain backwards compatibility
     info = registry.get_plugin_info('artifactory')
@@ -2243,7 +2248,7 @@ def artifactory_generic(registry, xml_parent, data):
         data.get('discard-build-artifacts', True)).lower()
 
     # envVarsPatterns
-    artifactory_env_vars_patterns(artifactory, data)
+    helpers.artifactory_env_vars_patterns(artifactory, data)
 
 
 def artifactory_maven_freestyle(registry, xml_parent, data):
@@ -2353,41 +2358,41 @@ def artifactory_maven_freestyle(registry, xml_parent, data):
 
     # details
     details = XML.SubElement(artifactory, 'details')
-    artifactory_common_details(details, data)
+    helpers.artifactory_common_details(details, data)
 
     deploy_release = XML.SubElement(details, 'deployReleaseRepository')
-    artifactory_repository(deploy_release, data, 'release')
+    helpers.artifactory_repository(deploy_release, data, 'release')
 
     deploy_snapshot = XML.SubElement(details, 'deploySnapshotRepository')
-    artifactory_repository(deploy_snapshot, data, 'snapshot')
+    helpers.artifactory_repository(deploy_snapshot, data, 'snapshot')
 
     XML.SubElement(details, 'stagingPlugin').text = data.get(
         'resolve-staging-plugin', '')
 
     # resolverDetails
     resolver = XML.SubElement(artifactory, 'resolverDetails')
-    artifactory_common_details(resolver, data)
+    helpers.artifactory_common_details(resolver, data)
 
     resolve_snapshot = XML.SubElement(resolver, 'resolveSnapshotRepository')
-    artifactory_repository(resolve_snapshot, data, 'snapshot')
+    helpers.artifactory_repository(resolve_snapshot, data, 'snapshot')
 
     deploy_release = XML.SubElement(resolver, 'resolveReleaseRepository')
-    artifactory_repository(deploy_release, data, 'release')
+    helpers.artifactory_repository(deploy_release, data, 'release')
 
     XML.SubElement(resolver, 'stagingPlugin').text = data.get(
         'resolve-staging-plugin', '')
 
     # artifactDeploymentPatterns
-    artifactory_deployment_patterns(artifactory, data)
+    helpers.artifactory_deployment_patterns(artifactory, data)
 
     # envVarsPatterns
-    artifactory_env_vars_patterns(artifactory, data)
+    helpers.artifactory_env_vars_patterns(artifactory, data)
 
     XML.SubElement(artifactory, 'matrixParams').text = ','.join(
         data.get('matrix-params', []))
 
     # optional__props
-    artifactory_optional_props(artifactory, data, 'wrappers')
+    helpers.artifactory_optional_props(artifactory, data, 'wrappers')
 
 
 def maven_release(registry, xml_parent, data):
@@ -2433,7 +2438,8 @@ def maven_release(registry, xml_parent, data):
         ('scm-user-env-var', 'scmUserEnvVar', ''),
         ('scm-password-env-var', 'scmPasswordEnvVar', ''),
     ]
-    convert_mapping_to_xml(mvn_release, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(
+        mvn_release, data, mapping, fail_required=True)
 
 
 def version_number(parser, xml_parent, data):
@@ -2489,7 +2495,8 @@ def version_number(parser, xml_parent, data):
         ("builds-all-time", 'oBuildsAllTime', '-1'),
     ]
 
-    convert_mapping_to_xml(version_number, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(
+        version_number, data, mapping, fail_required=True)
 
 
 def github_pull_request(parser, xml_parent, data):
@@ -2546,7 +2553,7 @@ def github_pull_request(parser, xml_parent, data):
         ("status-url", 'statusUrl', ''),
         ("status-add-test-results", 'addTestResults', False)
     ]
-    convert_mapping_to_xml(ghprb, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(ghprb, data, mapping, fail_required=True)
 
     statuses = data.get('statuses', [])
     if statuses:
@@ -2568,7 +2575,7 @@ def github_pull_request(parser, xml_parent, data):
                 'org.jenkinsci.plugins.ghprb.extensions'
                 '.comments.GhprbBuildResultMessage'
             )
-            convert_mapping_to_xml(
+            helpers.convert_mapping_to_xml(
                 result_tag, status, status_mapping, fail_required=True)
 
 
