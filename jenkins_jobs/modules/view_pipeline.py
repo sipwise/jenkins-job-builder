@@ -14,7 +14,7 @@
 
 """
 The view pipeline module handles creating Jenkins Build Pipeline views.
-To create a list view specify ``list`` in the ``view-type`` attribute
+To create a pipeline view specify ``pipeline`` in the ``view-type`` attribute
 to the :ref:`view_pipeline` definition.
 Requires the Jenkins
 :jenkins-wiki:`Build Pipeline Plugin <build+pipeline+plugin>`.
@@ -62,8 +62,7 @@ Example:
 
 import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
-
-from jenkins_jobs.modules.helpers import convert_mapping_to_xml
+import jenkins_jobs.modules.helpers as helpers
 
 
 class Pipeline(jenkins_jobs.modules.base.Base):
@@ -78,8 +77,9 @@ class Pipeline(jenkins_jobs.modules.base.Base):
         mapping_optional = [
             ('description', 'description', None),
             ('filter-executors', 'filterExecutors', False),
-            ('filter-queue', 'filterQueue', False)]
-        convert_mapping_to_xml(root, data,
+            ('filter-queue', 'filterQueue', False),
+        ]
+        helpers.convert_mapping_to_xml(root, data,
             mapping_optional, fail_required=False)
 
         XML.SubElement(root, 'properties',
@@ -105,8 +105,8 @@ class Pipeline(jenkins_jobs.modules.base.Base):
                 'showPipelineParametersInHeaders', False),
             ('start-with-parameters', 'startsWithParameters', False),
             ('refresh-frequency', 'refreshFrequency', 3),
-            ('definition-header', 'showPipelineDefinitionHeader', False)
+            ('definition-header', 'showPipelineDefinitionHeader', False),
         ]
-        convert_mapping_to_xml(root, data, mapping, fail_required=True)
+        helpers.convert_mapping_to_xml(root, data, mapping, fail_required=True)
 
         return root
