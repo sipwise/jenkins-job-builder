@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_50bd6365",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 4096,
+      "author": {
+        "id": 28246
+      },
+      "writtenOn": "2018-07-24T16:50:23Z",
+      "side": 1,
+      "message": "I did a check again and you\u0027re right. The default is manual.",
+      "parentUuid": "5f7c97a3_b0d63754",
+      "range": {
+        "startLine": 4096,
+        "startChar": 32,
+        "endLine": 4096,
+        "endChar": 40
+      },
+      "revId": "c2c00ed6027be505f0756ab82734c35105c65333",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_7015ffe5",
         "filename": "tests/builders/fixtures/nexus-iq-policy-evaluator-minimal.yaml",
         "patchSetId": 5
