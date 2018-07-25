@@ -111,6 +111,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_e6538c39",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4123,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-25T02:05:55Z",
+      "side": 1,
+      "message": "Here\u0027s an example of the dictionary method:\n\nhttps://github.com/openstack-infra/jenkins-job-builder/blob/master/jenkins_jobs/modules/publishers.py#L4600-L4602",
+      "parentUuid": "5f7c97a3_e6f70c5a",
+      "range": {
+        "startLine": 4122,
+        "startChar": 0,
+        "endLine": 4123,
+        "endChar": 47
+      },
+      "revId": "b3dee67afe0e5915f264add2750aa681b2721c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_866df8cc",
         "filename": "tests/builders/fixtures/nexus-iq-policy-evaluator-minimal.yaml",
         "patchSetId": 6
