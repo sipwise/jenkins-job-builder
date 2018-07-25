@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_866df8cc",
+        "filename": "tests/builders/fixtures/nexus-iq-policy-evaluator-minimal.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-25T01:16:09Z",
+      "side": 1,
+      "message": "According to docs all of these are not required?\n\nBasically for a minimal test the only parameters that should be set are things have in the mapping is set to None with fail_required\u003dTrue\n\nIf a value has a default value then it is not a required parameter. In which case the input should just be:\n\n builders:\n     - nexus-iq-policy-evaluator",
+      "range": {
+        "startLine": 3,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 50
+      },
+      "revId": "b3dee67afe0e5915f264add2750aa681b2721c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
