@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "5f7c97a3_f75d7816",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4096,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-25T04:05:55Z",
+      "side": 1,
+      "message": "Thought about this more and I\u0027m starting to think manual might be the best default after all. Selected kind of doesn\u0027t even make sense as an option because you can only pick an application that\u0027s in Nexus IQ anyway so both of these settings essentially do the same thing.",
+      "parentUuid": "5f7c97a3_8632d85c",
+      "range": {
+        "startLine": 4096,
+        "startChar": 45,
+        "endLine": 4096,
+        "endChar": 51
+      },
+      "revId": "b3dee67afe0e5915f264add2750aa681b2721c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_46a7e052",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 6
