@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_209f16b4",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4095,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-25T17:41:09Z",
+      "side": 1,
+      "message": "I\u0027d like to see this formatted a bit differently to have a clearer view. Something like maybe bolding these values or listing them out the values out. You can find both examples in the testfairy plugin in the link below under parameters \u0027platform\u0027 and \u0027max-duration\u0027 respectively.  \n\nhttps://github.com/openstack-infra/jenkins-job-builder/blob/a861cf0f8b7f40b401a5c491aa456327773fc27f/jenkins_jobs/modules/publishers.py#L3461",
+      "range": {
+        "startLine": 4094,
+        "startChar": 44,
+        "endLine": 4095,
+        "endChar": 50
+      },
+      "revId": "25714d0ebfbdc8c028507798ff577815da234812",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_80e62a49",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 4097,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-25T17:41:09Z",
+      "side": 1,
+      "message": "same comment",
+      "range": {
+        "startLine": 4096,
+        "startChar": 61,
+        "endLine": 4097,
+        "endChar": 35
+      },
+      "revId": "25714d0ebfbdc8c028507798ff577815da234812",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
