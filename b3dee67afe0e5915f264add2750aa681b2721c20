@@ -2,6 +2,115 @@
   "comments": [
     {
       "key": {
+        "uuid": "5f7c97a3_6678dc7d",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4094,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-25T02:00:54Z",
+      "side": 1,
+      "message": "(required)\n\nAccording to the Web UI this is a required field to use this plugin. This setting also has a valid list of options which should both be documented as well as error handled using the 4th tuple in the mapping.\n\nvalid options are \u0027build\u0027, \u0027stage-release\u0027 and \u0027operate\u0027",
+      "range": {
+        "startLine": 4094,
+        "startChar": 43,
+        "endLine": 4094,
+        "endChar": 55
+      },
+      "revId": "b3dee67afe0e5915f264add2750aa681b2721c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_8632d85c",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4096,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-25T02:00:54Z",
+      "side": 1,
+      "message": "I think \"selected\" should be default here since it\u0027s the first option that the Web UI gives you.",
+      "range": {
+        "startLine": 4096,
+        "startChar": 45,
+        "endLine": 4096,
+        "endChar": 51
+      },
+      "revId": "b3dee67afe0e5915f264add2750aa681b2721c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_46a7e052",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4102,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-25T02:00:54Z",
+      "side": 1,
+      "message": "Looks like we are missing the job-credentials optional field.\n\nNot sure why but I couldn\u0027t get module excludes to work I guess we can ignore that for now since it seems like a bug.",
+      "revId": "b3dee67afe0e5915f264add2750aa681b2721c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_a67ef46a",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4120,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-25T02:00:54Z",
+      "side": 1,
+      "message": "According to the UI this is a required parameter so we should set this to the value None so that JJB will fail the build if the user does not enter a value.",
+      "range": {
+        "startLine": 4120,
+        "startChar": 71,
+        "endLine": 4120,
+        "endChar": 73
+      },
+      "revId": "b3dee67afe0e5915f264add2750aa681b2721c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_e6f70c5a",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4123,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-25T02:00:54Z",
+      "side": 1,
+      "message": "These really long strings that are really ugly to look at. Use a dictionary or variable as a lookup instead. For example this code will look a lot more pleasent for the mapping variable:\n\n stage \u003d \u0027com__sonatype__nexus__ci__iq__IqPolicyEvaluator____iqStage\u0027\n fone \u003d \u0027com__sonatype__nexus__ci__iq__IqPolicyEvaluator____failBuildOnNetworkError\u0027\n\n mapping \u003d [\n     (\u0027stage\u0027, stage, None, valid_stages),\n     (\u0027fail-on-network-error\u0027, fone, False),\n ]\n\nDefine all of the variables or dictionaries at the top of the function so you can use it as a lookup table for any really ugly xml.",
+      "range": {
+        "startLine": 4122,
+        "startChar": 0,
+        "endLine": 4123,
+        "endChar": 47
+      },
+      "revId": "b3dee67afe0e5915f264add2750aa681b2721c20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_866df8cc",
         "filename": "tests/builders/fixtures/nexus-iq-policy-evaluator-minimal.yaml",
         "patchSetId": 6
