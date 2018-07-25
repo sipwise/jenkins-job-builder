@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_4e8049bf",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4094,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-25T14:10:23Z",
+      "side": 1,
+      "message": "(required)\n\nThere is no default anymore.",
+      "range": {
+        "startLine": 4094,
+        "startChar": 44,
+        "endLine": 4094,
+        "endChar": 55
+      },
+      "revId": "5dc1e04deea89e8a1273ef0bf825059c0e130bbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_ee66f556",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4097,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-25T14:10:23Z",
+      "side": 1,
+      "message": "This should be (required) as well because this plugin does not work without one.",
+      "range": {
+        "startLine": 4097,
+        "startChar": 59,
+        "endLine": 4097,
+        "endChar": 71
+      },
+      "revId": "5dc1e04deea89e8a1273ef0bf825059c0e130bbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_ce6bf919",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4151,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-25T14:10:23Z",
+      "side": 1,
+      "message": "Application-id has to be required and fail if it is not passed.",
+      "range": {
+        "startLine": 4150,
+        "startChar": 4,
+        "endLine": 4151,
+        "endChar": 29
+      },
+      "revId": "5dc1e04deea89e8a1273ef0bf825059c0e130bbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
