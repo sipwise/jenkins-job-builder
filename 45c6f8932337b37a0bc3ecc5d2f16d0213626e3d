@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_31789bc0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-27T14:37:27Z",
+      "side": 1,
+      "message": "What option?\n\nBe as specific as you can be that way when you use \"git shortlog\" you can tell what each commit is doing by just reading the summary line of each commit message. For example:\n\n ssh-agent-cred: Support ignore-missing-credentials param\n\nThis immediately tells me which wrapper is being updated, and exactly which function is being added.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 42
+      },
+      "revId": "45c6f8932337b37a0bc3ecc5d2f16d0213626e3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
