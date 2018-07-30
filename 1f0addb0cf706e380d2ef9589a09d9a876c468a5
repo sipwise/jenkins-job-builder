@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f7c97a3_e0b69d26",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-30T22:59:53Z",
+      "side": 1,
+      "message": "nit: remove period",
+      "range": {
+        "startLine": 245,
+        "startChar": 29,
+        "endLine": 245,
+        "endChar": 31
+      },
+      "revId": "1f0addb0cf706e380d2ef9589a09d9a876c468a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_a032e5be",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-30T22:59:53Z",
+      "side": 1,
+      "message": "nit: remove period",
+      "range": {
+        "startLine": 247,
+        "startChar": 34,
+        "endLine": 247,
+        "endChar": 35
+      },
+      "revId": "1f0addb0cf706e380d2ef9589a09d9a876c468a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_a0cd05bb",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-07-30T22:59:53Z",
+      "side": 1,
+      "message": "Should be in the mapping above to keep from creating new mappings unnecessarily.",
+      "revId": "1f0addb0cf706e380d2ef9589a09d9a876c468a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
