@@ -2,10 +2,14 @@
     name: test_variable_default_values
     jobs:
         - 'variable_default_values':
-            defined-var: '7'
+            defined-var: 7
 
 - job-template:
     name: 'variable_default_values'
+    parameters:
+      - string:
+          name: param
+          default: '{defined-var|+1}'
     properties:
       - build-discarder:
           days-to-keep: '{undefined-var|+1}'
