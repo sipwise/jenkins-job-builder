@@ -20,10 +20,10 @@
   <scm class="hudson.scm.NullSCM"/>
   <builders>
     <hudson.tasks.Shell>
-      <command>echo &quot;{defined_var|+1}&quot;
-echo &quot;{defined_var|-1}&quot;
-echo &quot;{undefined_var|+1}&quot;
-echo &quot;{undefined_var|-1}&quot;
+      <command>echo &quot;{defined-var|+1}&quot;
+echo &quot;{defined-var|-1}&quot;
+echo &quot;{undefined-var|+1}&quot;
+echo &quot;{undefined-var|-1}&quot;
 </command>
     </hudson.tasks.Shell>
   </builders>
