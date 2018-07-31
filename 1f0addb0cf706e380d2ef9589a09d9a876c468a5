@@ -80,6 +80,24 @@
       "revId": "1f0addb0cf706e380d2ef9589a09d9a876c468a5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_0cb42280",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-07-31T15:11:43Z",
+      "side": 1,
+      "message": "I missed this. Yes, we should have it with the existing mapping above. I think there is confusion with the terms here. There are 3:\n\n1. required\n2. optional\n3. default\n\nfail_required\u003dTrue|False only affects 1 and 2 as in when the 3rd tuple is set to \"None\" if it\u0027s fail_required\u003dTrue it makes the variable \"required\" if it\u0027s fail_required\u003d\"False\" it makes the variable \"optional\". Optional in terms of JJB means JJB will not generate XML for that option. Required means the use MUST pass the parameter.\n\nThe 3rd method which is \"default\" means if the user does not pass in a parameter then set it to whatever is in the 3rd tuple. So \"Default\" and \"Optional\" are NOT the same thing. We should always be setting defaults based on what the Jenkins UI sets as defaults when we can.\n\nSo when you configure the setting using the UI if it\u0027s True by default then we should be using that as our default value etc...",
+      "parentUuid": "5f7c97a3_79431a41",
+      "revId": "1f0addb0cf706e380d2ef9589a09d9a876c468a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
