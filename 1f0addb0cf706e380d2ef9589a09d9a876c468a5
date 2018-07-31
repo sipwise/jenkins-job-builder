@@ -62,6 +62,24 @@
       "revId": "1f0addb0cf706e380d2ef9589a09d9a876c468a5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_79431a41",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 28246
+      },
+      "writtenOn": "2018-07-31T14:18:48Z",
+      "side": 1,
+      "message": "My concern is that this is an optional option so I didn\u0027t put it together with the mapping that does fail_required\u003dTrue",
+      "parentUuid": "5f7c97a3_a0cd05bb",
+      "revId": "1f0addb0cf706e380d2ef9589a09d9a876c468a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
