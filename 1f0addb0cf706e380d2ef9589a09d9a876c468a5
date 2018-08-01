@@ -98,6 +98,24 @@
       "revId": "1f0addb0cf706e380d2ef9589a09d9a876c468a5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f7c97a3_06f6245f",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 28246
+      },
+      "writtenOn": "2018-08-01T15:30:44Z",
+      "side": 1,
+      "message": "Thanks for the clarification!",
+      "parentUuid": "5f7c97a3_0cb42280",
+      "revId": "1f0addb0cf706e380d2ef9589a09d9a876c468a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
