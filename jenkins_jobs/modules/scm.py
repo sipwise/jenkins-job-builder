@@ -1521,6 +1521,7 @@ class PipelineSCM(jenkins_jobs.modules.base.Base):
         definition_parent = xml_parent.find('definition')
         pipeline_dict = data.get(self.component_type, {})
         scms = pipeline_dict.get('scm')
+        scriptPath = pipeline_dict.get('scriptPath', 'Jenkinsfile')
         if scms:
             scms_count = len(scms)
             if scms_count == 0:
@@ -1528,7 +1529,7 @@ class PipelineSCM(jenkins_jobs.modules.base.Base):
             elif scms_count == 1:
                 self.registry.dispatch('scm', definition_parent, scms[0])
                 mapping = [
-                    ('script-path', 'scriptPath', 'Jenkinsfile'),
+                    ('script-path', 'scriptPath', scriptPath),
                     ('lightweight-checkout', 'lightweight', None,
                      [True, False]),
                 ]
