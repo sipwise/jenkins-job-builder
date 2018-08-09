@@ -190,6 +190,8 @@ def label_param(registry, xml_parent, data):
     :arg str name: the name of the parameter
     :arg str default: the default value of the parameter (optional)
     :arg str description: a description of the parameter (optional)
+    :arg bool all-nodes: to run job on all nodes matching label
+        in parallel (optional)
     :arg str matching-label: to run all nodes matching label
         'success', 'unstable' or 'allCases' (optional)
     :arg str node-eligibility: all nodes, ignore temporary nodes or
@@ -206,7 +208,7 @@ def label_param(registry, xml_parent, data):
                'org.jvnet.jenkins.plugins.nodelabelparameter.'
                'LabelParameterDefinition')
 
-    XML.SubElement(pdef, 'allNodesMatchingLabel').text = "true"
+    XML.SubElement(pdef, 'allNodesMatchingLabel').text = str(data.get("all-nodes", True)).lower()
 
     valid_types = ['allCases', 'success', 'unstable']
     mapping = [
