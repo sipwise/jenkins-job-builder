@@ -324,7 +324,7 @@ class List(jenkins_jobs.modules.base.Base):
             }
         )
         if jobnames is not None:
-            jobnames = sorted(jobnames)  # Job names must be sorted in the xml
+            jobnames = sorted(jobnames, key=str.lower)  # Job names must be sorted in the xml
             for jobname in jobnames:
                 XML.SubElement(jn_xml, 'string').text = str(jobname)
 
