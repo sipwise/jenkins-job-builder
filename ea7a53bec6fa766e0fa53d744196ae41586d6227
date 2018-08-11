@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_023e59d9",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-08-11T21:19:33Z",
+      "side": 1,
+      "message": "The code change below makes this no longer optional. It looks like default: xterm now.",
+      "range": {
+        "startLine": 466,
+        "startChar": 47,
+        "endLine": 466,
+        "endChar": 57
+      },
+      "revId": "ea7a53bec6fa766e0fa53d744196ae41586d6227",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
