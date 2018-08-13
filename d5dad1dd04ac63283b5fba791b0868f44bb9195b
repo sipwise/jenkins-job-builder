@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_1957a0cc",
+        "filename": "tests/yamlparser/fixtures/variable_default_values.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-08-13T11:42:49Z",
+      "side": 1,
+      "message": "Technically if you set this to the integer 7 above you\u0027ll get an error, which would also be surprising based on looking at these. So I\u0027m not sure that auto-converting to a string (which is what this change switches the behaviour to) is better when you consider that it prevents pass-thru of booleans unless you use the \u0027obj:\u0027 notation which is also confusing.\n\nSo I\u0027m more inclined to say that the existing behaviour was probably less wrong in it\u0027s behaviour? and the params logic should have been converting the value passed to \u0027str()\u0027.",
+      "range": {
+        "startLine": 12,
+        "startChar": 19,
+        "endLine": 12,
+        "endChar": 37
+      },
+      "revId": "d5dad1dd04ac63283b5fba791b0868f44bb9195b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
