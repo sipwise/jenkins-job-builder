@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_0c08afd7",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-08-14T04:44:53Z",
+      "side": 1,
+      "message": "nit: remove colon",
+      "range": {
+        "startLine": 466,
+        "startChar": 55,
+        "endLine": 466,
+        "endChar": 56
+      },
+      "revId": "4733e2af3cf1c5e30787dc49eb3b7ab995bfcbf7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
