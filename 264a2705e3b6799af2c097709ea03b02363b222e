@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_8d6ee7c6",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-08-14T22:44:53Z",
+      "side": 1,
+      "message": "According to the code below. This is not optional it\u0027s \"(default true)\". There are 3 categories:\n\n1. (required) User must provide this option\n2. (default \u003cdefault\u003e) If user does not provide option JJB will set default)\n3. (optional) If user does not provide option, then JJB will not even generate XML for this key.",
+      "revId": "264a2705e3b6799af2c097709ea03b02363b222e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_0d62d7d8",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-08-14T22:44:53Z",
+      "side": 1,
+      "message": "I think we should add this to the mapping below, Makes things a lot more readable and maintainable. Add this line just above the matching-label line in the mapping.\n\n (\u0027all-nodes\u0027, \u0027allNodesMatchingLabel\u0027, True),",
+      "revId": "264a2705e3b6799af2c097709ea03b02363b222e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
