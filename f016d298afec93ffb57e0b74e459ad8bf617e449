@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_4d3e8fc1",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-08-14T22:40:07Z",
+      "side": 1,
+      "message": "If you add a trailing , we won\u0027t have to edit this line the next time someone wants to add another thing after this.",
+      "revId": "f016d298afec93ffb57e0b74e459ad8bf617e449",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
