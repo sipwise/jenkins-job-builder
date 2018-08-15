@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_bb3996f2",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 28882
+      },
+      "writtenOn": "2018-08-15T07:35:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_8d6ee7c6",
+      "revId": "264a2705e3b6799af2c097709ea03b02363b222e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_0d62d7d8",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2018-08-14T22:44:53Z",
       "side": 1,
       "message": "I think we should add this to the mapping below, Makes things a lot more readable and maintainable. Add this line just above the matching-label line in the mapping.\n\n (\u0027all-nodes\u0027, \u0027allNodesMatchingLabel\u0027, True),",
+      "revId": "264a2705e3b6799af2c097709ea03b02363b222e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_db3c92e2",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 28882
+      },
+      "writtenOn": "2018-08-15T07:35:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_0d62d7d8",
       "revId": "264a2705e3b6799af2c097709ea03b02363b222e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
