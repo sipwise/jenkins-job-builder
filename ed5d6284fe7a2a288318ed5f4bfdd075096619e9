@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_ca6b2c83",
+        "filename": "doc/source/definition.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-08-17T01:11:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_e077f439",
+      "revId": "ed5d6284fe7a2a288318ed5f4bfdd075096619e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_4090284f",
         "filename": "doc/source/definition.rst",
         "patchSetId": 1
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_2a6f4093",
+        "filename": "doc/source/definition.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 482,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-08-17T01:11:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_4090284f",
+      "range": {
+        "startLine": 479,
+        "startChar": 2,
+        "endLine": 482,
+        "endChar": 6
+      },
+      "revId": "ed5d6284fe7a2a288318ed5f4bfdd075096619e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5f7c97a3_2095ec40",
         "filename": "doc/source/definition.rst",
         "patchSetId": 1
@@ -53,6 +95,30 @@
       "writtenOn": "2018-05-07T18:52:12Z",
       "side": 1,
       "message": "To match the structure of this document I think this should be it\u0027s own section: \"Variable Defaults\"",
+      "range": {
+        "startLine": 512,
+        "startChar": 0,
+        "endLine": 512,
+        "endChar": 31
+      },
+      "revId": "ed5d6284fe7a2a288318ed5f4bfdd075096619e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_0a72847d",
+        "filename": "doc/source/definition.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-08-17T01:11:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5f7c97a3_2095ec40",
       "range": {
         "startLine": 512,
         "startChar": 0,
