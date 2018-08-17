@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_60aeb799",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-08-17T03:02:35Z",
+      "side": 1,
+      "message": "This isn\u0027t good user experience IMO. Having 2 settings that cannot be configured together.\n\nPerhaps we should have a different setting like (needs a better name):\n\n updates \u003d jobs|views|all",
+      "revId": "6c64813f1b6a2d862d1a46b24cf6b65101ec965e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
