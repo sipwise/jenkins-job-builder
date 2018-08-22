@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_0db54932",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-08-22T14:23:26Z",
+      "side": 1,
+      "message": "What\u0027s the point in declaring \"attrib\"? seems like a useless variable definition since it\u0027s not used?",
+      "range": {
+        "startLine": 176,
+        "startChar": 48,
+        "endLine": 176,
+        "endChar": 54
+      },
+      "revId": "40b2a32473635444806d98980fa67000f0daa520",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
