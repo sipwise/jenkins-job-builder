@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_9e589d8a",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-08-22T15:52:05Z",
+      "side": 1,
+      "message": "Instead of this complex determination of what to do I\u0027d be inclined to change how the CLI stores the information to determine which of these to support.\n\n e.g.\n\n       update.add_argument(\n            \u0027-j\u0027, \u0027--jobs-only\u0027,\n            action\u003d\u0027store_const\u0027, dest\u003d\u0027update\u0027, const\u003d\u0027jobs\u0027,\n            help\u003d\u0027update only jobs\u0027\n        )\n        update.add_argument(\n            \u0027-v\u0027, \u0027--views-only\u0027,\n            action\u003d\u0027store_const\u0027, dest\u003d\u0027update\u0027, const\u003d\u0027views\u0027,\n            help\u003d\u0027update only views\u0027\n        )\n        update.set_defaults(update\u003d\u0027all\u0027)",
+      "revId": "649d714343211c585103a06ff474d27047383f74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
