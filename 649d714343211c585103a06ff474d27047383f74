@@ -16,6 +16,24 @@
       "revId": "649d714343211c585103a06ff474d27047383f74",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_509bc271",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-08-23T02:31:28Z",
+      "side": 1,
+      "message": "@Darragh, its not clear to me what you are recommending if these changes are to be set in file parser.py:create_parser() def?\n\nWould `update` be considered as a separate flag?\n\nI\u0027d think to ensure back compatibility without breaking existing usage, requires the following:\n\n1. values set in config\n2. values set in CLI\n3. make sure CLI overrides the config options.",
+      "parentUuid": "3f79a3b5_9e589d8a",
+      "revId": "649d714343211c585103a06ff474d27047383f74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
