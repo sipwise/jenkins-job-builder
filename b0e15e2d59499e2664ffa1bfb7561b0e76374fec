@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_e7bd3ad8",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1223,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-08-25T14:12:12Z",
+      "side": 1,
+      "message": "Moving the mapping out of the 2 for loops. This is because mappings don\u0027t change so redefining them on every iteration is inefficient.",
+      "range": {
+        "startLine": 1219,
+        "startChar": 16,
+        "endLine": 1223,
+        "endChar": 17
+      },
+      "revId": "b0e15e2d59499e2664ffa1bfb7561b0e76374fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
