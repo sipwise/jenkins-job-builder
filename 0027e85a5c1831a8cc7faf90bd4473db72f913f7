@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_a7dae247",
+        "filename": "tests/multibranch/fixtures/scm_bitbucket_full.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-08-25T14:09:53Z",
+      "side": 1,
+      "message": "I wonder if it would be better user experience if we did something like:\n\n checkout-over-ssh:\n   credentials: true\n \n filter-by-name-wildcard:\n   include: \u0027*\u0027\n   exclude: \u0027*\u0027\n\nIn this model we can assume checkout-over-ssh and filter-by-name-worldcard to be \u0027true\u0027 if they simply exist. Then the configuration underneath is pulled for their values. Plus it\u0027s less typing for the user.",
+      "range": {
+        "startLine": 17,
+        "startChar": 8,
+        "endLine": 21,
+        "endChar": 49
+      },
+      "revId": "0027e85a5c1831a8cc7faf90bd4473db72f913f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
