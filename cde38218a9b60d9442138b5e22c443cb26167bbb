@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_67e84ae1",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1125,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-08-25T14:11:20Z",
+      "side": 1,
+      "message": "Instead of defining both mappings in the loops, move them out of the loop and then pass it to convert_mapping inside of the loop.\n\nThis is because mappings are static tuples that don\u0027t change so redefining them on every iteration is inefficient coding.",
+      "revId": "cde38218a9b60d9442138b5e22c443cb26167bbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
