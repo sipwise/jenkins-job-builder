@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_8791e654",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-08-25T14:23:10Z",
+      "side": 1,
+      "message": "Most of these options only apply depending on which run-condition. I would document this more clearly by sectioning off the different run-condition types and documenting which arguments apply where. Otherwise users won\u0027t have a chance to know when to use which.",
+      "revId": "c6636b901912269a3b32cea835ca2d4601fff4c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_c7ab5e85",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-08-25T14:23:10Z",
+      "side": 1,
+      "message": "If this is applicable to every single condition then put a single mapping declaration for this after line 581 so that you don\u0027t have to define it every single time.",
+      "range": {
+        "startLine": 589,
+        "startChar": 12,
+        "endLine": 591,
+        "endChar": 13
+      },
+      "revId": "c6636b901912269a3b32cea835ca2d4601fff4c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_67960a4f",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 608,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-08-25T14:23:10Z",
+      "side": 1,
+      "message": "You can give this mapping variable a different name so that it doesn\u0027t override the other mapping above. Like:\n\n bool_cond_mapping \u003d []\n\nIt\u0027s good practice to use different names to keep them organized if you have to declare more than 1 mapping.",
+      "revId": "c6636b901912269a3b32cea835ca2d4601fff4c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_e78bfa1b",
+        "filename": "tests/wrappers/fixtures/build-keeper0005.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-08-25T14:23:10Z",
+      "side": 1,
+      "message": "Considering there\u0027s different run-condition types and each have different supported values. I think a better user experience would be something like:\n\n policy: \u0027run-condition\u0027\n keep-build: true\n run-condition:\n   type: strings-match\n   arg1: abc\n   arg2: xyz\n   ignore-case: true",
+      "range": {
+        "startLine": 4,
+        "startChar": 6,
+        "endLine": 4,
+        "endChar": 34
+      },
+      "revId": "c6636b901912269a3b32cea835ca2d4601fff4c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
