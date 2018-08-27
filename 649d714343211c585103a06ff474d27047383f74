@@ -34,6 +34,24 @@
       "revId": "649d714343211c585103a06ff474d27047383f74",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_a5eac870",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-08-27T15:24:22Z",
+      "side": 1,
+      "message": "@Anil it\u0027s not a separate flag, what\u0027s I\u0027m suggesting is to change how the two flags are stored within the CLI parser to use a tristate variable instead of multiple separate variables. This makes it easier to map the same values from the CLI onto the configuration instead of needing to map separate variables onto a tristate config variable.",
+      "parentUuid": "3f79a3b5_509bc271",
+      "revId": "649d714343211c585103a06ff474d27047383f74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
