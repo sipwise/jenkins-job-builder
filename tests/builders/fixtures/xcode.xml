@@ -75,6 +75,9 @@
           <provisioningProfileUUID>bar2</provisioningProfileUUID>
         </au.com.rayh.ProvisioningProfile>
       </provisioningProfiles>
+      <uploadBitcode>false</uploadBitcode>
+      <uploadSymbols>false</uploadSymbols>
+      <compileBitcode>false</compileBitcode>
     </au.com.rayh.XCodeBuilder>
   </builders>
 </project>
