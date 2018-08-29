@@ -72,8 +72,8 @@
       <noNameAndEmailParameters>false</noNameAndEmailParameters>
       <readableMessage>false</readableMessage>
       <dependencyJobsNames/>
-      <notificationLevel/>
-      <dynamicTriggerConfiguration>False</dynamicTriggerConfiguration>
+      <notificationLevel>SERVER_DEFAULT</notificationLevel>
+      <dynamicTriggerConfiguration>false</dynamicTriggerConfiguration>
       <triggerConfigURL/>
       <triggerInformationAction/>
       <allowTriggeringUnreviewedPatches>false</allowTriggeringUnreviewedPatches>

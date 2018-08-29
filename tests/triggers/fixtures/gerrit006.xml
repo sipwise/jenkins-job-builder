@@ -34,8 +34,8 @@
       <noNameAndEmailParameters>false</noNameAndEmailParameters>
       <readableMessage>true</readableMessage>
       <dependencyJobsNames/>
-      <notificationLevel/>
-      <dynamicTriggerConfiguration>True</dynamicTriggerConfiguration>
+      <notificationLevel>SERVER_DEFAULT</notificationLevel>
+      <dynamicTriggerConfiguration>true</dynamicTriggerConfiguration>
       <triggerConfigURL>http://myhost/mytrigger</triggerConfigURL>
       <triggerInformationAction/>
       <allowTriggeringUnreviewedPatches>false</allowTriggeringUnreviewedPatches>

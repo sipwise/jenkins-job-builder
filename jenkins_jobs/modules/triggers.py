@@ -453,17 +453,6 @@ def gerrit(registry, xml_parent, data):
        :language: yaml
 
     """
-
-    def get_compare_type(xml_tag, compare_type):
-        valid_compare_types = ['PLAIN',
-                               'ANT',
-                               'REG_EXP']
-
-        if compare_type not in valid_compare_types:
-            raise InvalidAttributeError(xml_tag, compare_type,
-                                        valid_compare_types)
-        return compare_type
-
     gerrit_handle_legacy_configuration(data)
 
     projects = data.get('projects', [])
@@ -472,13 +461,29 @@ def gerrit(registry, xml_parent, data):
                            'hudsontrigger.GerritTrigger')
     XML.SubElement(gtrig, 'spec')
     gprojects = XML.SubElement(gtrig, 'gerritProjects')
+
+    valid_compare_types = ['PLAIN',
+                           'ANT',
+                           'REG_EXP']
+    gproj_mapping = [
+        ('project-compare-type', 'compareType', 'PLAIN', valid_compare_types),
+    ]
+    gbranch_mapping = [
+        ('branch-compare-type', 'compareType', 'PLAIN', valid_compare_types),
+    ]
+    fp_ffp_topic_mapping = [
+        ('compare-type', 'compareType', 'PLAIN', valid_compare_types),
+    ]
+    disable_strict_mapping = [
+        ('disable-strict-forbidden-file-verification',
+         'disableStrictForbiddenFileVerification', False),
+    ]
     for project in projects:
         gproj = XML.SubElement(gprojects,
                                'com.sonyericsson.hudson.plugins.gerrit.'
                                'trigger.hudsontrigger.data.GerritProject')
-        XML.SubElement(gproj, 'compareType').text = get_compare_type(
-            'project-compare-type', project.get(
-                'project-compare-type', 'PLAIN'))
+        helpers.convert_mapping_to_xml(
+            gproj, project, gproj_mapping, fail_required=False)
         XML.SubElement(gproj, 'pattern').text = project['project-pattern']
 
         branches = XML.SubElement(gproj, 'branches')
@@ -503,9 +508,8 @@ def gerrit(registry, xml_parent, data):
             gbranch = XML.SubElement(
                 branches, 'com.sonyericsson.hudson.plugins.'
                 'gerrit.trigger.hudsontrigger.data.Branch')
-            XML.SubElement(gbranch, 'compareType').text = get_compare_type(
-                'branch-compare-type', branch.get(
-                    'branch-compare-type', 'PLAIN'))
+            helpers.convert_mapping_to_xml(
+                gbranch, branch, gbranch_mapping, fail_required=False)
             XML.SubElement(gbranch, 'pattern').text = branch['branch-pattern']
 
         project_file_paths = project.get('file-paths', [])
@@ -516,8 +520,9 @@ def gerrit(registry, xml_parent, data):
                                         'com.sonyericsson.hudson.plugins.'
                                         'gerrit.trigger.hudsontrigger.data.'
                                         'FilePath')
-                XML.SubElement(fp_tag, 'compareType').text = get_compare_type(
-                    'compare-type', file_path.get('compare-type', 'PLAIN'))
+                helpers.convert_mapping_to_xml(
+                    fp_tag, file_path, fp_ffp_topic_mapping,
+                    fail_required=False)
                 XML.SubElement(fp_tag, 'pattern').text = file_path['pattern']
 
         project_forbidden_file_paths = project.get('forbidden-file-paths', [])
@@ -528,9 +533,9 @@ def gerrit(registry, xml_parent, data):
                                          'com.sonyericsson.hudson.plugins.'
                                          'gerrit.trigger.hudsontrigger.data.'
                                          'FilePath')
-                XML.SubElement(ffp_tag, 'compareType').text = get_compare_type(
-                    'compare-type', forbidden_file_path.get('compare-type',
-                                                            'PLAIN'))
+                helpers.convert_mapping_to_xml(
+                    ffp_tag, forbidden_file_path,
+                    fp_ffp_topic_mapping, fail_required=False)
                 XML.SubElement(ffp_tag, 'pattern').text = \
                     forbidden_file_path['pattern']
 
@@ -542,15 +547,13 @@ def gerrit(registry, xml_parent, data):
                                            'com.sonyericsson.hudson.plugins.'
                                            'gerrit.trigger.hudsontrigger.data.'
                                            'Topic')
-                XML.SubElement(topic_tag, 'compareType').text = \
-                    get_compare_type('compare-type', topic.get('compare-type',
-                                                               'PLAIN'))
+                helpers.convert_mapping_to_xml(
+                    topic_tag, topic,
+                    fp_ffp_topic_mapping, fail_required=False)
                 XML.SubElement(topic_tag, 'pattern').text = topic['pattern']
 
-        XML.SubElement(gproj,
-                       'disableStrictForbiddenFileVerification').text = str(
-            project.get('disable-strict-forbidden-file-verification',
-                        False)).lower()
+        helpers.convert_mapping_to_xml(
+            gproj, project, disable_strict_mapping, fail_required=False)
 
     build_gerrit_skip_votes(gtrig, data)
     general_mappings = [
@@ -565,22 +568,21 @@ def gerrit(registry, xml_parent, data):
         gtrig, data, general_mappings, fail_required=True)
     notification_levels = ['NONE', 'OWNER', 'OWNER_REVIEWERS', 'ALL',
                            'SERVER_DEFAULT']
-    notification_level = data.get('notification-level', 'SERVER_DEFAULT')
-    if notification_level not in notification_levels:
-        raise InvalidAttributeError('notification-level', notification_level,
-                                    notification_levels)
-    if notification_level == 'SERVER_DEFAULT':
-        XML.SubElement(gtrig, 'notificationLevel').text = ''
-    else:
-        XML.SubElement(gtrig, 'notificationLevel').text = notification_level
-    XML.SubElement(gtrig, 'dynamicTriggerConfiguration').text = str(
-        data.get('dynamic-trigger-enabled', False))
-    XML.SubElement(gtrig, 'triggerConfigURL').text = str(
-        data.get('dynamic-trigger-url', ''))
-    XML.SubElement(gtrig, 'triggerInformationAction').text = str(
-        data.get('trigger-information-action', ''))
-    XML.SubElement(gtrig, 'allowTriggeringUnreviewedPatches').text = str(
-        data.get('trigger-for-unreviewed-patches', False)).lower()
+    notification_level_mapping = [
+        ('notification-level', 'notificationLevel',
+         'SERVER_DEFAULT', notification_levels),
+    ]
+    helpers.convert_mapping_to_xml(
+        gtrig, data, notification_level_mapping, fail_required=False)
+    mapping = [
+        ('dynamic-trigger-enabled', 'dynamicTriggerConfiguration', False),
+        ('dynamic-trigger-url', 'triggerConfigURL', ''),
+        ('trigger-information-action', 'triggerInformationAction', ''),
+        ('trigger-for-unreviewed-patches',
+         'allowTriggeringUnreviewedPatches', False),
+
+    ]
+    helpers.convert_mapping_to_xml(gtrig, data, mapping, fail_required=False)
     build_gerrit_triggers(gtrig, data)
     override = str(data.get('override-votes', False)).lower()
     if override == 'true':
