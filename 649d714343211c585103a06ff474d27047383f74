@@ -52,6 +52,24 @@
       "revId": "649d714343211c585103a06ff474d27047383f74",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_c46778ea",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-08-30T09:26:32Z",
+      "side": 1,
+      "message": "@Darragh, in parser.py we are checking that --jobs-only and --views-only CLI options both are not set together. \n\nex: in parser.py\n\n        if options.add_jobs and options.add_views:\n            raise JenkinsJobsException(\n                \u0027\"--views-only\" and \"--jobs-only\" cannot be used together.\u0027)\n\nIf we get rid of the `add_view` and `add_jobs` flags, this would break the existing functionality.\n\nI\u0027d prefer to change the `--jobs-only` and `--view-only` to `--jobs` and `--views` which gives a better UX, but this will break the backwards compatibility.",
+      "parentUuid": "3f79a3b5_a5eac870",
+      "revId": "649d714343211c585103a06ff474d27047383f74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
