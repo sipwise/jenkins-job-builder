@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_5a2a31e7",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-08-31T23:37:12Z",
+      "side": 1,
+      "message": "This looks like a code change, should still be \u0027stable\u0027.",
+      "range": {
+        "startLine": 230,
+        "startChar": 24,
+        "endLine": 230,
+        "endChar": 26
+      },
+      "revId": "7a14e777de18abec060a4de288439699346a6c35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_1a8279c9",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-08-31T23:37:12Z",
+      "side": 1,
+      "message": "same comment.",
+      "range": {
+        "startLine": 235,
+        "startChar": 24,
+        "endLine": 235,
+        "endChar": 26
+      },
+      "revId": "7a14e777de18abec060a4de288439699346a6c35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
