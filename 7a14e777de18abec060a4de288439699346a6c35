@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_60e5fb37",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 28246
+      },
+      "writtenOn": "2018-09-01T13:34:32Z",
+      "side": 1,
+      "message": "May I ask what do you mean by that? \n\nThe code doesn\u0027t get any values from an user specified variable for this parameter, thus I placed an empty string as the first parameter.",
+      "parentUuid": "3f79a3b5_5a2a31e7",
+      "range": {
+        "startLine": 230,
+        "startChar": 24,
+        "endLine": 230,
+        "endChar": 26
+      },
+      "revId": "7a14e777de18abec060a4de288439699346a6c35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_1a8279c9",
         "filename": "jenkins_jobs/modules/helpers.py",
         "patchSetId": 1
