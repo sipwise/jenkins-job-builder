@@ -1378,6 +1378,8 @@ def cucumber_reports(registry, xml_parent, data):
                                       'CucumberReportPublisher')
     cucumber_reports.set('plugin', 'cucumber-reports')
 
+    valid_build_status = ['', 'UNSTABLE', 'FAILURE']
+    valid_sorting_method = ['NATURAL', 'ALPHABETICAL']
     mappings = [
         ('json-reports-path', 'jsonReportDirectory', ''),
         ('plugin-url-path', 'pluginUrlPath', ''),
@@ -1389,10 +1391,36 @@ def cucumber_reports(registry, xml_parent, data):
         ('missing-fails', 'missingFails', False),
         ('no-flash-charts', 'noFlashCharts', False),
         ('ignore-failed-tests', 'ignoreFailedTests', False),
-        ('parallel-testing', 'parallelTesting', False)
+        ('parallel-testing', 'parallelTesting', False),
+        ('failed-steps-number', 'failedStepsNumber', ''),
+        ('skipped-steps-number', 'skippedStepsNumber', ''),
+        ('pending-steps-number', 'pendingStepsNumber', ''),
+        ('undefined-steps-number', 'undefinedStepsNumber', ''),
+        ('failed-scenarios-number', 'failedScenariosNumber', ''),
+        ('failed-features-number', 'failedFeaturesNumber', ''),
+        ('build-status', 'buildStatus', '', valid_build_status),
+        ('trends-limit', 'trendsLimit', ''),
+        ('sorting-method', 'sortingMethod', 'NATURAL', valid_sorting_method),
     ]
     helpers.convert_mapping_to_xml(
         cucumber_reports, data, mappings, fail_required=True)
+
+    if 'sorting-values' in data:
+        format_dict = {
+            'classifications': 'net.masterthought.jenkins'
+                               '.CucumberReportPublisher_-Classification'
+        }
+        classifications_tag = XML.SubElement(
+            cucumber_reports, 'classifications')
+        for values in data['sorting-values']:
+            for value, params in values.items():
+                cucumber_report_publisher = XML.SubElement(
+                    classifications_tag, format_dict.get('classifications'))
+                XML.SubElement(
+                    cucumber_report_publisher, 'key').text = params.get('key')
+                XML.SubElement(
+                    cucumber_report_publisher, 'value').text = params.get(
+                    'value')
 
 
 def cucumber_testresult(registry, xml_parent, data):
