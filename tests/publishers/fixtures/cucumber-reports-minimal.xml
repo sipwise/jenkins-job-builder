@@ -13,6 +13,15 @@
       <noFlashCharts>false</noFlashCharts>
       <ignoreFailedTests>false</ignoreFailedTests>
       <parallelTesting>false</parallelTesting>
+      <failedStepsNumber/>
+      <skippedStepsNumber/>
+      <pendingStepsNumber/>
+      <undefinedStepsNumber/>
+      <failedScenariosNumber/>
+      <failedFeaturesNumber/>
+      <buildStatus/>
+      <trendsLimit/>
+      <sortingMethod>NATURAL</sortingMethod>
     </net.masterthought.jenkins.CucumberReportPublisher>
   </publishers>
 </project>
