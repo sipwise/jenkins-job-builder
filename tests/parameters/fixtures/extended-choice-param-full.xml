@@ -21,6 +21,7 @@
           <descriptionPropertyKey/>
           <groovyScript/>
           <groovyScriptFile/>
+          <bindings/>
           <groovyClasspath/>
           <defaultGroovyScript/>
           <defaultGroovyClasspath/>
@@ -45,6 +46,7 @@
           <descriptionPropertyKey/>
           <groovyScript/>
           <groovyScriptFile/>
+          <bindings/>
           <groovyClasspath/>
           <defaultGroovyScript/>
           <defaultGroovyClasspath/>
@@ -69,6 +71,7 @@
           <descriptionPropertyKey/>
           <groovyScript/>
           <groovyScriptFile/>
+          <bindings/>
           <groovyClasspath/>
           <defaultGroovyScript/>
           <defaultGroovyClasspath/>

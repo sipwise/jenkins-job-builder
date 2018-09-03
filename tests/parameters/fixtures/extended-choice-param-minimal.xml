@@ -21,6 +21,7 @@
           <descriptionPropertyKey/>
           <groovyScript/>
           <groovyScriptFile/>
+          <bindings/>
           <groovyClasspath/>
           <defaultGroovyScript/>
           <defaultGroovyClasspath/>
