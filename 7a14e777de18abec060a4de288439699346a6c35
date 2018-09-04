@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_70483eb2",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-09-04T19:37:21Z",
+      "side": 1,
+      "message": "The old code used data.get(\u0027stable\u0027, False) so does take user input as far as I can tell.",
+      "parentUuid": "3f79a3b5_60e5fb37",
+      "range": {
+        "startLine": 230,
+        "startChar": 24,
+        "endLine": 230,
+        "endChar": 26
+      },
+      "revId": "7a14e777de18abec060a4de288439699346a6c35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_1a8279c9",
         "filename": "jenkins_jobs/modules/helpers.py",
         "patchSetId": 1
@@ -60,6 +84,30 @@
       "writtenOn": "2018-08-31T23:37:12Z",
       "side": 1,
       "message": "same comment.",
+      "range": {
+        "startLine": 235,
+        "startChar": 24,
+        "endLine": 235,
+        "endChar": 26
+      },
+      "revId": "7a14e777de18abec060a4de288439699346a6c35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_b0525666",
+        "filename": "jenkins_jobs/modules/helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-09-04T19:37:21Z",
+      "side": 1,
+      "message": "I can see here that it didn\u0027t take input from user. So this is fine.",
+      "parentUuid": "3f79a3b5_1a8279c9",
       "range": {
         "startLine": 235,
         "startChar": 24,
