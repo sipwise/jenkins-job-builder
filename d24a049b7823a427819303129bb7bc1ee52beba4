@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_855fde3f",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1403,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-09-04T19:11:34Z",
+      "side": 1,
+      "message": "Do we need docs for all these new variables?",
+      "revId": "d24a049b7823a427819303129bb7bc1ee52beba4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
