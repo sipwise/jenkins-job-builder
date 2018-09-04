@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_6b1a93c6",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-09-04T20:00:35Z",
+      "side": 1,
+      "message": "This doc is no longer accurate. If I recall I think you can nest field names:\n\n :arg dict checkout-over-ssh:\n \n     :arg str credentials: Credentials to use for checkout of the repo over ssh ...",
+      "range": {
+        "startLine": 335,
+        "startChar": 0,
+        "endLine": 338,
+        "endChar": 13
+      },
+      "revId": "51e089a0c74dc4fccdce406f89ec69816d07f208",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_ab698b25",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-09-04T20:00:35Z",
+      "side": 1,
+      "message": "Same with the filter-by-name-wildcard settings.",
+      "range": {
+        "startLine": 339,
+        "startChar": 0,
+        "endLine": 345,
+        "endChar": 63
+      },
+      "revId": "51e089a0c74dc4fccdce406f89ec69816d07f208",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
