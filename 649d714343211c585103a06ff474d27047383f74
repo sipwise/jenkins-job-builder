@@ -70,6 +70,24 @@
       "revId": "649d714343211c585103a06ff474d27047383f74",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_2bc1fb54",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-09-04T19:52:36Z",
+      "side": 1,
+      "message": "@Anil maybe we can use dest? https://docs.python.org/3/library/argparse.html#dest",
+      "parentUuid": "3f79a3b5_c46778ea",
+      "revId": "649d714343211c585103a06ff474d27047383f74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
