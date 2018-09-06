@@ -217,7 +217,7 @@ def git(registry, xml_parent, data):
         ("fastpoll", 'remotePoll', False),
         # XXX does this option still exist?
         ("git-tool", 'gitTool', "Default"),
-        (None, 'submoduleCfg', '', {'class': 'list'}),
+        (None, 'submoduleCfg', ''),
         ('reference-repo', 'reference', ''),
         ("git-config-name", 'gitConfigName', ''),
         ("git-config-email", 'gitConfigEmail', ''),
@@ -253,32 +253,12 @@ def git(registry, xml_parent, data):
     for branch in branches:
         bspec = XML.SubElement(xml_branches, 'hudson.plugins.git.BranchSpec')
         XML.SubElement(bspec, 'name').text = branch
+    helpers.convert_mapping_to_xml(scm, data, mapping, fail_required=False)
     for elem in mapping:
         (optname, xmlname, val) = elem[:3]
-
-        # Throw warning for deprecated settings and skip if the 'submodule' key
-        # is available.
-        submodule_cfgs = ['disable-submodules', 'recursive-submodules']
-        if optname in submodule_cfgs:
-            if optname in data:
-                logger.warning(
-                    "'{0}' is deprecated, please convert to use the "
-                    "'submodule' section instead as support for this "
-                    "top level option will be removed in a future "
-                    "release.".format(optname))
-            if 'submodule' in data:
-                continue
-
-        attrs = {}
-        if len(elem) >= 4:
-            attrs = elem[3]
-        xe = XML.SubElement(scm, xmlname, attrs)
-        if optname and optname in data:
-            val = data[optname]
-        if type(val) == bool:
-            xe.text = str(val).lower()
-        else:
-            xe.text = val
+        if xmlname == "submoduleCfg":
+            elem_tag = scm.find(xmlname)
+            elem_tag.set("class", "list")
 
     exts = XML.SubElement(scm, 'extensions')
 
@@ -380,6 +360,7 @@ def git_extensions(xml_parent, data):
             clean_before = data['clean'].get('before', False)
         if clean_after:
             ext_name = impl_prefix + 'CleanCheckout'
+<<<<<<< HEAD
             if trait:
                 trait_name = 'CleanAfterCheckoutTrait'
                 tr = XML.SubElement(xml_parent, trait_prefix + trait_name)
@@ -395,6 +376,13 @@ def git_extensions(xml_parent, data):
             else:
                 ext = XML.SubElement(xml_parent, ext_name)
     if not trait and 'excluded-users' in data:
+=======
+            XML.SubElement(exts_node, ext_name)
+        if clean_before:
+            ext_name = impl_prefix + 'CleanBeforeCheckout'
+            XML.SubElement(exts_node, ext_name)
+    if 'excluded-users' in data:
+>>>>>>> git: Utilize convert_mapping_to_xml
         excluded_users = '\n'.join(data['excluded-users'])
         ext = XML.SubElement(xml_parent, impl_prefix + 'UserExclusion')
         XML.SubElement(ext, 'excludedUsers').text = excluded_users
@@ -477,6 +465,7 @@ def git_extensions(xml_parent, data):
                 XML.SubElement(path_tag, 'path').text = path
     if 'submodule' in data:
         ext_name = impl_prefix + 'SubmoduleOption'
+<<<<<<< HEAD
         if trait:
             trait_name = 'SubmoduleOptionTrait'
             tr = XML.SubElement(xml_parent, trait_prefix + trait_name)
@@ -496,6 +485,20 @@ def git_extensions(xml_parent, data):
             data['submodule'].get('reference-repo', ''))
         XML.SubElement(ext, 'timeout').text = str(
             data['submodule'].get('timeout', 10))
+=======
+        ext = XML.SubElement(exts_node, ext_name)
+        submodule = data['submodule']
+        mapping = [
+            ('disable', 'disableSubmodules', False),
+            ('recursive', 'recursiveSubmodules', False),
+            ('tracking', 'trackingSubmodules', False),
+            ('parent-credentials', 'parentCredentials', False),
+            ('reference-repo', 'reference', ''),
+            ('timeout', 'timeout', 10)
+        ]
+        helpers.convert_mapping_to_xml(
+            ext, submodule, mapping, fail_required=False)
+>>>>>>> git: Utilize convert_mapping_to_xml
     if 'timeout' in data:
         ext_name = impl_prefix + 'CheckoutOption'
         if trait:
@@ -539,12 +542,16 @@ def git_extensions(xml_parent, data):
     wipe_workspace = str(data.get('wipe-workspace', True)).lower()
     if wipe_workspace == 'true':
         ext_name = impl_prefix + 'WipeWorkspace'
+<<<<<<< HEAD
         if trait:
             trait_name = 'WipeWorkspaceTrait'
             tr = XML.SubElement(xml_parent, trait_prefix + trait_name)
             ext = XML.SubElement(tr, "extension", {"class": ext_name})
         else:
             ext = XML.SubElement(xml_parent, ext_name)
+=======
+        XML.SubElement(exts_node, ext_name)
+>>>>>>> git: Utilize convert_mapping_to_xml
 
     use_author = str(data.get('use-author', False)).lower()
     if use_author == 'true':
