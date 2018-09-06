@@ -25,6 +25,8 @@
         <name>other-branch</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
+    <disableSubmodules>false</disableSubmodules>
+    <recursiveSubmodules>false</recursiveSubmodules>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
     <remotePoll>true</remotePoll>
     <gitTool>Default</gitTool>

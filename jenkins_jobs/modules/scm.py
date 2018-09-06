@@ -217,7 +217,7 @@ def git(registry, xml_parent, data):
         ("fastpoll", 'remotePoll', False),
         # XXX does this option still exist?
         ("git-tool", 'gitTool', "Default"),
-        (None, 'submoduleCfg', '', {'class': 'list'}),
+        (None, 'submoduleCfg', ''),
         ('reference-repo', 'reference', ''),
         ("git-config-name", 'gitConfigName', ''),
         ("git-config-email", 'gitConfigEmail', ''),
@@ -260,32 +260,12 @@ def git(registry, xml_parent, data):
     for branch in branches:
         bspec = XML.SubElement(xml_branches, 'hudson.plugins.git.BranchSpec')
         XML.SubElement(bspec, 'name').text = branch
+    helpers.convert_mapping_to_xml(scm, data, mapping, fail_required=False)
     for elem in mapping:
         (optname, xmlname, val) = elem[:3]
-
-        # Throw warning for deprecated settings and skip if the 'submodule' key
-        # is available.
-        submodule_cfgs = ['disable-submodules', 'recursive-submodules']
-        if optname in submodule_cfgs:
-            if optname in data:
-                logger.warning(
-                    "'{0}' is deprecated, please convert to use the "
-                    "'submodule' section instead as support for this "
-                    "top level option will be removed in a future "
-                    "release.".format(optname))
-            if 'submodule' in data:
-                continue
-
-        attrs = {}
-        if len(elem) >= 4:
-            attrs = elem[3]
-        xe = XML.SubElement(scm, xmlname, attrs)
-        if optname and optname in data:
-            val = data[optname]
-        if type(val) == bool:
-            xe.text = str(val).lower()
-        else:
-            xe.text = val
+        if xmlname == "submoduleCfg":
+            elem_tag = scm.find(xmlname)
+            elem_tag.set("class", "list")
 
     exts_node = XML.SubElement(scm, 'extensions')
     impl_prefix = 'hudson.plugins.git.extensions.impl.'
@@ -326,10 +306,10 @@ def git(registry, xml_parent, data):
             clean_before = data['clean'].get('before', False)
         if clean_after:
             ext_name = impl_prefix + 'CleanCheckout'
-            ext = XML.SubElement(exts_node, ext_name)
+            XML.SubElement(exts_node, ext_name)
         if clean_before:
             ext_name = impl_prefix + 'CleanBeforeCheckout'
-            ext = XML.SubElement(exts_node, ext_name)
+            XML.SubElement(exts_node, ext_name)
     if 'excluded-users' in data:
         excluded_users = '\n'.join(data['excluded-users'])
         ext = XML.SubElement(exts_node, impl_prefix + 'UserExclusion')
@@ -406,18 +386,17 @@ def git(registry, xml_parent, data):
     if 'submodule' in data:
         ext_name = impl_prefix + 'SubmoduleOption'
         ext = XML.SubElement(exts_node, ext_name)
-        XML.SubElement(ext, 'disableSubmodules').text = str(
-            data['submodule'].get('disable', False)).lower()
-        XML.SubElement(ext, 'recursiveSubmodules').text = str(
-            data['submodule'].get('recursive', False)).lower()
-        XML.SubElement(ext, 'trackingSubmodules').text = str(
-            data['submodule'].get('tracking', False)).lower()
-        XML.SubElement(ext, 'parentCredentials').text = str(
-            data['submodule'].get('parent-credentials', False)).lower()
-        XML.SubElement(ext, 'reference').text = str(
-            data['submodule'].get('reference-repo', ''))
-        XML.SubElement(ext, 'timeout').text = str(
-            data['submodule'].get('timeout', 10))
+        submodule = data['submodule']
+        mapping = [
+            ('disable', 'disableSubmodules', False),
+            ('recursive', 'recursiveSubmodules', False),
+            ('tracking', 'trackingSubmodules', False),
+            ('parent-credentials', 'parentCredentials', False),
+            ('reference-repo', 'reference', ''),
+            ('timeout', 'timeout', 10)
+        ]
+        helpers.convert_mapping_to_xml(
+            ext, submodule, mapping, fail_required=False)
     if 'timeout' in data:
         co = XML.SubElement(exts_node, impl_prefix + 'CheckoutOption')
         XML.SubElement(co, 'timeout').text = str(data['timeout'])
@@ -449,7 +428,7 @@ def git(registry, xml_parent, data):
     wipe_workspace = str(data.get('wipe-workspace', True)).lower()
     if wipe_workspace == 'true':
         ext_name = impl_prefix + 'WipeWorkspace'
-        ext = XML.SubElement(exts_node, ext_name)
+        XML.SubElement(exts_node, ext_name)
 
     use_author = str(data.get('use-author', False)).lower()
     if use_author == 'true':
