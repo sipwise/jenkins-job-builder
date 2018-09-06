@@ -22,6 +22,30 @@
       "revId": "0027e85a5c1831a8cc7faf90bd4473db72f913f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_73a541b4",
+        "filename": "tests/multibranch/fixtures/scm_bitbucket_full.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 28900
+      },
+      "writtenOn": "2018-09-06T08:39:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_a7dae247",
+      "range": {
+        "startLine": 17,
+        "startChar": 8,
+        "endLine": 21,
+        "endChar": 49
+      },
+      "revId": "0027e85a5c1831a8cc7faf90bd4473db72f913f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
