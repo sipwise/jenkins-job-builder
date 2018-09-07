@@ -37,6 +37,7 @@ from jenkins_jobs.errors import JenkinsJobsException
 import jenkins_jobs.modules.base
 from jenkins_jobs.modules.helpers import build_trends_publisher
 from jenkins_jobs.modules.helpers import findbugs_settings
+from jenkins_jobs.modules.helpers import convert_mapping_to_xml
 
 
 def email(registry, xml_parent, data):
@@ -67,10 +68,12 @@ def email(registry, xml_parent, data):
         XML.SubElement(mailer, 'dontNotifyEveryUnstableBuild').text = 'false'
     else:
         XML.SubElement(mailer, 'dontNotifyEveryUnstableBuild').text = 'true'
-    XML.SubElement(mailer, 'sendToIndividuals').text = str(
-        data.get('send-to-individuals', False)).lower()
-    XML.SubElement(mailer, 'perModuleEmail').text = str(
-        data.get('notify-for-each-module', True)).lower()
+    mapping = [
+        ('send-to-individuals', 'sendToIndividuals', False),
+        ('notify-for-each-module', 'perModuleEmail', True),
+    ]
+    convert_mapping_to_xml(
+        mailer, data, mapping, fail_required=False)
 
 
 def findbugs(registry, xml_parent, data):
