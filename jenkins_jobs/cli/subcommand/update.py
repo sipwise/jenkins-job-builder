@@ -74,23 +74,22 @@ class UpdateSubCommand(base.BaseSubCommand):
             "for just one worker.")
         update.add_argument(
             '-j', '--jobs-only',
-            action='store_true', dest='add_jobs',
-            default=False,
-            help='update only jobs'
-        )
+            action='append_const',  # Use list to make the -j|-v exclusive
+            dest='update',
+            const='jobs',
+            help='update only jobs')
         update.add_argument(
             '-v', '--views-only',
-            action='store_true', dest='add_views',
-            default=False,
-            help='update only views'
-        )
+            action='append_const',  # Use list to make the -j|-v exclusive
+            dest='update',
+            const='views',
+            help='update only views')
         update.add_argument(
             '--existing-only',
             action='store_true',
             default=False,
             dest='existing_only',
-            help='update existing jobs only'
-        )
+            help='update existing jobs only')
 
     def _generate_xmljobs(self, options, jjb_config=None):
         builder = JenkinsManager(jjb_config)
@@ -123,9 +122,14 @@ class UpdateSubCommand(base.BaseSubCommand):
 
     def execute(self, options, jjb_config):
 
-        if options.add_jobs and options.add_views:
-            raise JenkinsJobsException(
-                '"--views-only" and "--jobs-only" cannot be used together.')
+        if options.update:
+            if len(options.update) == 1:
+                update = options.update[0]
+            else:
+                raise Exception("ERROR: Cannot use options --jobs-only|-j "
+                                "and --views-only|-v together.")
+        else:
+            update = 'all'
 
         if options.n_workers < 0:
             raise JenkinsJobsException(
@@ -134,12 +138,12 @@ class UpdateSubCommand(base.BaseSubCommand):
         builder, xml_jobs, xml_views = self._generate_xmljobs(
             options, jjb_config)
 
-        if options.add_jobs:
+        if update == 'jobs':
             jobs, num_updated_jobs = builder.update_jobs(
                 xml_jobs, n_workers=options.n_workers,
                 existing_only=options.existing_only)
             logger.info("Number of jobs updated: %d", num_updated_jobs)
-        elif options.add_views:
+        elif update == 'views':
             views, num_updated_views = builder.update_views(
                 xml_views, n_workers=options.n_workers,
                 existing_only=options.existing_only)
