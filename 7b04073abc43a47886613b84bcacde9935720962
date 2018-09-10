@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_4923b1a8",
+        "filename": "doc/source/execution.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-09-10T14:17:31Z",
+      "side": 1,
+      "message": "implicity means \"implied though not plainly expressed.\". If the user is stating something with this variable then they are not being implicit.\n\nI would word this as:\n\n (Optional) If set, allows the user to specify if only jobs \n or views (or \"all\") are updated. Users can override the\n setting here by passing ``--jobs-only`` or ``--views-only`` CLI options.\n (Valid options: jobs, views, all)",
+      "range": {
+        "startLine": 71,
+        "startChar": 11,
+        "endLine": 71,
+        "endChar": 21
+      },
+      "revId": "7b04073abc43a47886613b84bcacde9935720962",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_ee096332",
+        "filename": "jenkins_jobs/cli/subcommand/update.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-09-10T14:17:31Z",
+      "side": 1,
+      "message": "We should be consistent with the way we format things.",
+      "revId": "7b04073abc43a47886613b84bcacde9935720962",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_69fb0d15",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-09-10T14:17:31Z",
+      "side": 1,
+      "message": "What\u0027s the point of this comment? Just remove it since it doesn\u0027t appear to mean anything.",
+      "revId": "7b04073abc43a47886613b84bcacde9935720962",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
