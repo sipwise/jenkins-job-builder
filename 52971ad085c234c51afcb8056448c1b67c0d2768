@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_b147191f",
+        "filename": "jenkins_jobs/cli/subcommand/update.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-09-12T13:07:29Z",
+      "side": 1,
+      "message": "why not use a mutually exclusive group?",
+      "range": {
+        "startLine": 75,
+        "startChar": 8,
+        "endLine": 86,
+        "endChar": 37
+      },
+      "revId": "52971ad085c234c51afcb8056448c1b67c0d2768",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_d144151c",
+        "filename": "jenkins_jobs/cli/subcommand/update.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-09-12T13:07:29Z",
+      "side": 1,
+      "message": "If you convert the above two calls to use a mutually exclusive group and then add a single call after here to set the defaults:\n\n update.setdefaults(update\u003d\u0027all\u0027)\n\nThere is no need for append_const nor the code below that checks whether the length of the array.",
+      "revId": "52971ad085c234c51afcb8056448c1b67c0d2768",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_914e9d36",
+        "filename": "jenkins_jobs/cli/subcommand/update.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-09-12T13:07:29Z",
+      "side": 1,
+      "message": "If you use a mutually exclusive argparse group it means this code is unnecessary.",
+      "range": {
+        "startLine": 125,
+        "startChar": 8,
+        "endLine": 132,
+        "endChar": 26
+      },
+      "revId": "52971ad085c234c51afcb8056448c1b67c0d2768",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
