@@ -394,11 +394,17 @@ def inject(registry, xml_parent, data):
         ('properties-content', 'propertiesContent', None),
         ('script-file', 'scriptFilePath', None),
         ('script-content', 'scriptContent', None),
-        ('groovy-content', 'groovyScriptContent', None),
         ('load-from-master', 'loadFilesFromMaster', False),
     ]
     helpers.convert_mapping_to_xml(info, data, mapping, fail_required=False)
 
+    secure_groovy_script = XML.SubElement(info, 'secureGroovyScript')
+    mapping = [
+        ('groovy-content', 'script', None),
+        ('groovy-sandbox', 'sandbox', False),
+    ]
+    helpers.convert_mapping_to_xml(secure_groovy_script, data, mapping,
+                           fail_required=False)
     mapping = [
         ('enabled', 'on', True),
         ('keep-system-variables', 'keepJenkinsSystemVariables', True),
