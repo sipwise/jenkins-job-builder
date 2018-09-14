@@ -7,6 +7,9 @@
 BAZ=foobar
 </propertiesContent>
         <loadFilesFromMaster>false</loadFilesFromMaster>
+        <secureGroovyScript>
+          <sandbox>false</sandbox>
+        </secureGroovyScript>
       </info>
       <on>true</on>
       <keepJenkinsSystemVariables>true</keepJenkinsSystemVariables>
