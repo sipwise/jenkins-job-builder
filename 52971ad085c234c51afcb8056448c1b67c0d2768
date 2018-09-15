@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_d96dde03",
+        "filename": "jenkins_jobs/cli/subcommand/update.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-09-15T12:56:59Z",
+      "side": 1,
+      "message": "I may\u0027ve considered and left if it out because using a mutually exclusive groups makes the \u0027update\u0027 var a boolean, which requires again re-mapping and rewiring the code to handle the tristate variable read from the Jenkins conf file. \n\nIf the main concern is about removing these if conditions, using the exclusive group would require additional code is required to handle this in entry.py:_parse_additional(). \n\nEven if we want to go with this route, \u0027update\u0027 is subparser command, therefore update.add_mutually_exclusive_group() here.",
+      "parentUuid": "3f79a3b5_b147191f",
+      "range": {
+        "startLine": 75,
+        "startChar": 8,
+        "endLine": 86,
+        "endChar": 37
+      },
+      "revId": "52971ad085c234c51afcb8056448c1b67c0d2768",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_d144151c",
         "filename": "jenkins_jobs/cli/subcommand/update.py",
         "patchSetId": 5
