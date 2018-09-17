@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_0bcbee1d",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-09-17T09:13:51Z",
+      "side": 0,
+      "message": "I presume the move to the subsequent block and a nested XML is due to a newer version of the groovy plugin, but when did the plugin switch over? If it\u0027s only a few months ago we would need backwards compatibility, but if it\u0027s quite a while (2 years) and we\u0027ve been relying on the plugin to convert automatically, there\u0027s probably no need.",
+      "range": {
+        "startLine": 397,
+        "startChar": 8,
+        "endLine": 397,
+        "endChar": 56
+      },
+      "revId": "22307f715f42aeb5499e167d5ff9dea9c6d472b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

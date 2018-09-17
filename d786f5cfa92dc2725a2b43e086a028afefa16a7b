@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_0b668e52",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-09-17T09:13:51Z",
+      "side": 1,
+      "message": "While I happen to be aware of why this is needed, should describe the reason. That is with newer versions of the groovy plugin, if you cannot run the script in sandbox mode, the administrator will need to manually approve it.\n\nIt should be relatively common that adding env values doesn\u0027t need access to any internals of Jenkins so worth mentioning this in the commit?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 28
+      },
+      "revId": "d786f5cfa92dc2725a2b43e086a028afefa16a7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
