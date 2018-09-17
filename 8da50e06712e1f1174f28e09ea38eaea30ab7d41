@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_05fe6e04",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-09-17T17:53:21Z",
+      "side": 1,
+      "message": "Should this be \u0027all\u0027 by default instead of None?",
+      "range": {
+        "startLine": 98,
+        "startChar": 66,
+        "endLine": 98,
+        "endChar": 70
+      },
+      "revId": "8da50e06712e1f1174f28e09ea38eaea30ab7d41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
