@@ -1106,6 +1106,14 @@ def docker_container(registry, xml_parent, data):
     xml_docker = XML.SubElement(
         xml_parent, 'com.nirima.jenkins.plugins.docker.DockerJobProperty')
 
+    registry = XML.SubElement(xml_docker, 'registry')
+    registry.set('plugin', 'docker-commons')
+    registry_mapping = [
+        ('docker-registry-url', 'url', ''),
+        ('credentials-id', 'credentialsId', ''),
+    ]
+    helpers.convert_mapping_to_xml(
+        registry, data, registry_mapping, fail_required=False)
     mapping = [
         ('commit-on-success', 'tagOnCompletion', False),
         ('additional-tag', 'additionalTag', ''),
