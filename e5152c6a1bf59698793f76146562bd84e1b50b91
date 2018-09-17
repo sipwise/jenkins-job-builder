@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_4a179547",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-09-17T17:43:41Z",
+      "side": 1,
+      "message": "Should no longer be using a list here.\n\nself.options.update \u003d self.jjb_config.builder.get(\u0027update\u0027, None)",
+      "range": {
+        "startLine": 97,
+        "startChar": 12,
+        "endLine": 98,
+        "endChar": 74
+      },
+      "revId": "e5152c6a1bf59698793f76146562bd84e1b50b91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_2a2fb9f6",
+        "filename": "jenkins_jobs/cli/subcommand/update.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-09-17T17:43:41Z",
+      "side": 1,
+      "message": "I think we should not be setting this at all, since we want to override the \u0027update\u0027 from config file settings in entry.py. Is this because update is stored as a const which does not let it be updated from entry.py?",
+      "range": {
+        "startLine": 83,
+        "startChar": 8,
+        "endLine": 83,
+        "endChar": 46
+      },
+      "revId": "e5152c6a1bf59698793f76146562bd84e1b50b91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
