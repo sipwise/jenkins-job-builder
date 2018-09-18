@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_4f04727e",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 573,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-09-18T13:34:37Z",
+      "side": 1,
+      "message": "Did you test this?\n\nWhen I go to Jenkins and choose server default and click save the XML is:\n\n \u003cnotificationLevel/\u003e\n\nSo I think the original default setting of a blank string \u0027\u0027 is correct. This patch seems to be a behaviour change here and I don\u0027t think SERVER_DEFAULT is a valid option in Gerrit Trigger.",
+      "range": {
+        "startLine": 573,
+        "startChar": 10,
+        "endLine": 573,
+        "endChar": 24
+      },
+      "revId": "610afcb62d9aa596683dc2fc4d41d5409ae82f06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
