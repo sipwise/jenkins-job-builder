@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_b2ca306b",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-09-19T13:18:47Z",
+      "side": 1,
+      "message": "Not sure if it\u0027s too late because I +1 workflowed but this line does ont set options.update to all if the jenkins config file is missing the update command.",
+      "revId": "9399b1f9868ce04d8c95cdd271d102947534411a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
