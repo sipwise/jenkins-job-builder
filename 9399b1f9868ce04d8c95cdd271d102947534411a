@@ -16,6 +16,24 @@
       "revId": "9399b1f9868ce04d8c95cdd271d102947534411a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_b2f47088",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-09-19T13:26:38Z",
+      "side": 1,
+      "message": "I think this should be written like this to ensure that \u0027all\u0027 is set:\n\n if getattr(self.options, \u0027update\u0027, None) is None:\n     self.options.update \u003d \nself.jjb_config.builder.get(\u0027update\u0027)\n     if self.options.update is None:\n         self.options.update \u003d \u0027all\u0027",
+      "parentUuid": "3f79a3b5_b2ca306b",
+      "revId": "9399b1f9868ce04d8c95cdd271d102947534411a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
