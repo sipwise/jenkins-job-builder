@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_2d453e15",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3934,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-09-21T01:16:57Z",
+      "side": 1,
+      "message": "I don\u0027t see any supporting code for this. Did we forget to implement this?",
+      "range": {
+        "startLine": 3933,
+        "startChar": 0,
+        "endLine": 3934,
+        "endChar": 39
+      },
+      "revId": "6835bf4cf65ebebf1a80bf7075c23459dd49faa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
