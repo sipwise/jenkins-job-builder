@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_fcadabe9",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-09-21T13:27:23Z",
+      "side": 1,
+      "message": "None the datatype not None as in string.",
+      "range": {
+        "startLine": 194,
+        "startChar": 35,
+        "endLine": 194,
+        "endChar": 41
+      },
+      "revId": "88d797a1710388371746dce3255906a7a9b51777",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
