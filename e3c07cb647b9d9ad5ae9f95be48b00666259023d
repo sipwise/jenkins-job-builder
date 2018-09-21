@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_8d05727c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1378,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-09-21T01:34:05Z",
+      "side": 1,
+      "message": "Please document the defaults for all of these (default \u0027\u0027)",
+      "range": {
+        "startLine": 1363,
+        "startChar": 0,
+        "endLine": 1378,
+        "endChar": 46
+      },
+      "revId": "e3c07cb647b9d9ad5ae9f95be48b00666259023d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
