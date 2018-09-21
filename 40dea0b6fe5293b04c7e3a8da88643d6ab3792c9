@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_ad306e9f",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 666,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-09-21T01:22:40Z",
+      "side": 1,
+      "message": "This seems like an API change. Does this code still work on previous versions of this plugin?\n\nIf not, we should consider making the patch backwards compatible so that our users don\u0027t suddenly break when upgrading JJB.",
+      "revId": "40dea0b6fe5293b04c7e3a8da88643d6ab3792c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
