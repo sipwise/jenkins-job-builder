@@ -22,6 +22,30 @@
       "revId": "d40a7e747c5b11d6350de93dab5ceb177df4ffff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_f1263416",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-09-21T13:09:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_ad070ec9",
+      "range": {
+        "startLine": 74,
+        "startChar": 8,
+        "endLine": 74,
+        "endChar": 17
+      },
+      "revId": "d40a7e747c5b11d6350de93dab5ceb177df4ffff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
