@@ -22,6 +22,29 @@
       "revId": "6835bf4cf65ebebf1a80bf7075c23459dd49faa0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_2d8f7e2e",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3955,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-09-21T01:28:29Z",
+      "side": 1,
+      "message": "This is not correct formatting so completely breaks output of the generated HTML. Please fix this.",
+      "range": {
+        "startLine": 3947,
+        "startChar": 0,
+        "endLine": 3955,
+        "endChar": 40
+      },
+      "revId": "6835bf4cf65ebebf1a80bf7075c23459dd49faa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
