@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_7c5a0282",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1204,
+      "author": {
+        "id": 28547
+      },
+      "writtenOn": "2018-09-21T08:55:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_6d333662",
+      "range": {
+        "startLine": 1204,
+        "startChar": 43,
+        "endLine": 1204,
+        "endChar": 59
+      },
+      "revId": "85bb947d3e76f26d437d41e0bfe59c2bba786065",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_ad162ea6",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 1
@@ -36,6 +60,24 @@
       "writtenOn": "2018-09-21T01:38:54Z",
       "side": 1,
       "message": "Can we leave a comment on this if-statement to mention that this is for versions \u003c 2.0.0\n\nI\u0027m just thinking in the future when we have plugin_ver \u003d 3.0.0 and then we have an elif statement above it would be good to be explicit.",
+      "revId": "85bb947d3e76f26d437d41e0bfe59c2bba786065",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_5ccce632",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1260,
+      "author": {
+        "id": 28547
+      },
+      "writtenOn": "2018-09-21T08:55:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_ad162ea6",
       "revId": "85bb947d3e76f26d437d41e0bfe59c2bba786065",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
