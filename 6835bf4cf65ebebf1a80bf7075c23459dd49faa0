@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_343c8591",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3934,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-09-23T12:29:01Z",
+      "side": 1,
+      "message": "L3972 has this implemented correct?",
+      "parentUuid": "3f79a3b5_2d453e15",
+      "range": {
+        "startLine": 3933,
+        "startChar": 0,
+        "endLine": 3934,
+        "endChar": 39
+      },
+      "revId": "6835bf4cf65ebebf1a80bf7075c23459dd49faa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_2d8f7e2e",
         "filename": "jenkins_jobs/modules/builders.py",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2018-09-21T01:28:29Z",
       "side": 1,
       "message": "This is not correct formatting so completely breaks output of the generated HTML. Please fix this.",
+      "range": {
+        "startLine": 3947,
+        "startChar": 0,
+        "endLine": 3955,
+        "endChar": 40
+      },
+      "revId": "6835bf4cf65ebebf1a80bf7075c23459dd49faa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_54cca1ba",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3955,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-09-23T12:29:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_2d8f7e2e",
       "range": {
         "startLine": 3947,
         "startChar": 0,
