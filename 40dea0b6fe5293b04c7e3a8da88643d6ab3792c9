@@ -16,6 +16,24 @@
       "revId": "40dea0b6fe5293b04c7e3a8da88643d6ab3792c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_1e713fa9",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 666,
+      "author": {
+        "id": 12469
+      },
+      "writtenOn": "2018-09-25T16:17:13Z",
+      "side": 1,
+      "message": "Well, this arg, ssh-checkout, was my addition from 9 days ago, https://review.openstack.org/602217, so I don\u0027t think there\u0027s much chance that we\u0027re going to cause problems for anyone. Has there been a non-dev release since then?\n\nAnd even so, this brings the github_scm checkout behaviour into line with the bitbucket version which requires the credentials id to be specified.",
+      "parentUuid": "3f79a3b5_ad306e9f",
+      "revId": "40dea0b6fe5293b04c7e3a8da88643d6ab3792c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
