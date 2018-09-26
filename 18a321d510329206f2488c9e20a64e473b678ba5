@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_5936dc51",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2018-09-26T12:15:06Z",
+      "side": 1,
+      "message": "Was there a reason not to use the default value for get?",
+      "revId": "18a321d510329206f2488c9e20a64e473b678ba5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
