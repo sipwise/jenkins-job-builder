@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_6cf3636e",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 19844
+      },
+      "writtenOn": "2018-10-02T10:01:42Z",
+      "side": 1,
+      "message": "small nit: a comma at the end of this line to keep in line with our convention",
+      "revId": "6bb3f13789b3dd73690fb873f15c7b2481e81063",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
