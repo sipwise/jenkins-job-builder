@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_5121139e",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 596,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-10-04T22:17:30Z",
+      "side": 1,
+      "message": "This would need to update the test output, which is `tests/properties/fixtures/build-blocker-minimal.xml`.",
+      "range": {
+        "startLine": 596,
+        "startChar": 7,
+        "endLine": 596,
+        "endChar": 63
+      },
+      "revId": "5cf69b38791afd1d72d4715805b7e935a0f66699",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
