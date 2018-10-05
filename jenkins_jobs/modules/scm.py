@@ -443,6 +443,7 @@ def git_extensions(xml_parent, data):
     clone_options = (
         "shallow-clone",
         "timeout",
+        "reference-repo",
         "do-not-fetch-tags"
     )
     if any(key in data for key in clone_options):
@@ -465,6 +466,8 @@ def git_extensions(xml_parent, data):
                 data.get('do-not-fetch-tags', False)).lower()
         if 'timeout' in data:
             XML.SubElement(ext, 'timeout').text = str(data['timeout'])
+        if 'reference-repo' in data:
+            XML.SubElement(ext, 'reference').text = str(data['reference-repo'])
     if not trait and 'sparse-checkout' in data:
         ext_name = impl_prefix + 'SparseCheckoutPaths'
         ext = XML.SubElement(xml_parent, ext_name)
