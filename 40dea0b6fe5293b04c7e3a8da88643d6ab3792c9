@@ -34,6 +34,24 @@
       "revId": "40dea0b6fe5293b04c7e3a8da88643d6ab3792c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_a46a83b2",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 666,
+      "author": {
+        "id": 1297
+      },
+      "writtenOn": "2018-10-07T21:16:29Z",
+      "side": 1,
+      "message": "You could also just check if it\u0027s a boolean or string and handle the old way... If u really wanted.",
+      "parentUuid": "3f79a3b5_1e713fa9",
+      "revId": "40dea0b6fe5293b04c7e3a8da88643d6ab3792c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
