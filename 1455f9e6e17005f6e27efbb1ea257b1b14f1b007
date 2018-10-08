@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_2a9cf26e",
+        "filename": "tests/properties/fixtures/build-blocker-full.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-10-08T13:27:13Z",
+      "side": 1,
+      "message": "Should be \u0027GLOBAL\u0027\n\nCaptured traceback:\n~~~~~~~~~~~~~~~~~~~\n    Traceback (most recent call last):\n      File \"tests/base.py\", line 240, in test_yaml_snippet\n        doctest.REPORT_NDIFF)\n      File \"/home/abelur/git/jenkins-job-builder/.tox/py27/local/lib/python2.7/site-packages/testtools/testcase.py\", line 498, in assertThat\n        raise mismatch_error\n    testtools.matchers._impl.MismatchError: Differences (ndiff with -expected +actual):\n          \u003c?xml version\u003d\"1.0\" encoding\u003d\"utf-8\"?\u003e\n          \u003cproject\u003e\n            \u003cproperties\u003e\n              \u003chudson.plugins.buildblocker.BuildBlockerProperty\u003e\n                \u003cuseBuildBlocker\u003etrue\u003c/useBuildBlocker\u003e\n                \u003cblockingJobs\u003e.*-deploy\n          ^maintenance.*\u003c/blockingJobs\u003e\n        -       \u003cblockLevel\u003eGLOBAL\u003c/blockLevel\u003e\n        ?                   ^^ ^^^\n        +       \u003cblockLevel\u003eNODE\u003c/blockLevel\u003e\n        ?                   ^ ^^\n                \u003cscanQueueFor\u003eBUILDABLE\u003c/scanQueueFor\u003e\n              \u003c/hudson.plugins.buildblocker.BuildBlockerProperty\u003e\n            \u003c/properties\u003e\n          \u003c/project\u003e",
+      "range": {
+        "startLine": 7,
+        "startChar": 20,
+        "endLine": 7,
+        "endChar": 24
+      },
+      "revId": "1455f9e6e17005f6e27efbb1ea257b1b14f1b007",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
