@@ -862,14 +862,15 @@ def github_scm(xml_parent, data):
                 github_path_dscore, '.SSHCheckoutTrait'
             ])
         )
-        cossh_credentials = [
-            ('credentials', 'credentialsId', ''),
-        ]
-        helpers.convert_mapping_to_xml(
-            cossh,
-            data.get('ssh-checkout'),
-            cossh_credentials,
-            fail_required=True)
+        if not isinstance(data.get('ssh-checkout'), bool):
+            cossh_credentials = [
+                ('credentials', 'credentialsId', ''),
+            ]
+            helpers.convert_mapping_to_xml(
+                cossh,
+                data.get('ssh-checkout'),
+                cossh_credentials,
+                fail_required=True)
 
     if data.get('discover-tags', False):
         XML.SubElement(
