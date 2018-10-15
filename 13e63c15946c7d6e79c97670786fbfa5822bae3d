@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_e71d4177",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-10-15T09:43:24Z",
+      "side": 1,
+      "message": "this option needs to be documented.",
+      "range": {
+        "startLine": 446,
+        "startChar": 9,
+        "endLine": 446,
+        "endChar": 24
+      },
+      "revId": "13e63c15946c7d6e79c97670786fbfa5822bae3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
