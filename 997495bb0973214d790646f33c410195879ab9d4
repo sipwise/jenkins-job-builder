@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_bc8ada16",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 7400,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-10-16T14:53:42Z",
+      "side": 1,
+      "message": "Can we set this to project-name and then update above docs to \u0027project-name\u0027.",
+      "range": {
+        "startLine": 7400,
+        "startChar": 16,
+        "endLine": 7400,
+        "endChar": 18
+      },
+      "revId": "997495bb0973214d790646f33c410195879ab9d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_bc8f3a20",
+        "filename": "tests/publishers/fixtures/publishers-from.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-10-16T14:53:42Z",
+      "side": 1,
+      "message": "I\u0027d like to see this get changed to:\n\n - publishers-from:\n     project-name: \"base-build\"\n\nThe reason is we\u0027ve seen in several cases in the past where a plugin is updated by upstream to add a new option or parameter thus requiring us to break our YAML API to support the new format. By splitting this out this way now it makes it easier for us to add new mappings in the future and not break everyone\u0027s YAML inputs.",
+      "range": {
+        "startLine": 2,
+        "startChar": 4,
+        "endLine": 2,
+        "endChar": 33
+      },
+      "revId": "997495bb0973214d790646f33c410195879ab9d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
