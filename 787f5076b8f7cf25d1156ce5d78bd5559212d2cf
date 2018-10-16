@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_e1666dbc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-10-16T14:13:01Z",
+      "side": 1,
+      "message": "In a commit message the first line is the summary line and must be followed by a blank line. For example this should look like:\n\n Allow use to specify credential for ssh-checkout\n \n Same as the existing bitbucket checkout-over-ssh\n ssh-checkout for GitHub ....\n\n\nI would recommend highly to read the link I provided in one of my previous comments regarding the 7 rules of a good commit message.\n\nhttps://chris.beams.io/posts/git-commit/#seven-rules",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 45
+      },
+      "revId": "787f5076b8f7cf25d1156ce5d78bd5559212d2cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
