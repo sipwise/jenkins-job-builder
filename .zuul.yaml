@@ -8,6 +8,15 @@
     voting: true
 
 - project:
+    templates:
+      - openstack-python37-jobs-nonvoting
+      - openstack-python36-jobs
     check:
       jobs:
         - jjb-tox-cross-python-jenkins
+        - openstack-tox-linters
+        - openstack-tox-py27
+    gate:
+      jobs:
+        - openstack-tox-linters
+        - openstack-tox-py27
