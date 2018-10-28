@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_d30472c7",
+        "filename": ".zuul.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2018-10-28T06:26:06Z",
+      "side": 1,
+      "message": "you run different jobs in project-config, why not migrate them over one to one?",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 28
+      },
+      "revId": "0196f5a559149e2d27b30bb0fe0a8283ff356b6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
