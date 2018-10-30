@@ -8,3 +8,4 @@ stevedore>=1.17.1 # Apache-2.0
 python-jenkins>=0.4.15
 fasteners
 Jinja2
+foo-bar-that-does-not-exist # DO NOT MERGE ME

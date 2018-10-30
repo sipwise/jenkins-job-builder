@@ -6,6 +6,10 @@
       - openstack/python-jenkins
       - openstack-infra/jenkins-job-builder
     voting: true
+    files:
+      - requirements.txt
+    irrelevant-files:
+      - requirements.txt
 
 - project:
     check:
