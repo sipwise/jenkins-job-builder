@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_339d5409",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 813,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-11-01T13:50:16Z",
+      "side": 1,
+      "message": "This text seems random just before the examples. What\u0027s it\u0027s purpose? otherwise I think we should remove it.",
+      "revId": "13e9ceeca6ee2b2a7f02a435f73b12ff7cc3172b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
