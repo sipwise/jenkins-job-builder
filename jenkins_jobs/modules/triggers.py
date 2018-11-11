@@ -1118,6 +1118,8 @@ def github_pull_request(registry, xml_parent, data):
     )
 
     cancel_builds_on_update = data.get('cancel-builds-on-update', False)
+    if isinstance(cancel_builds_on_update, six.string_types):
+        cancel_builds_on_update = cancel_builds_on_update.lower() == 'true'
 
     # We want to have only one 'extensions' subelement, even if status
     # handling, comment handling and other extensions are enabled.
