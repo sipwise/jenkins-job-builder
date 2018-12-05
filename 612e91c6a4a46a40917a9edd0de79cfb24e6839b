@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_1e5b3423",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 27651
+      },
+      "writtenOn": "2018-12-05T08:53:43Z",
+      "side": 1,
+      "message": "\"Fix \u0027default: 0\u0027 being ignored\"\n\nis perhaps a better commit subject?",
+      "revId": "612e91c6a4a46a40917a9edd0de79cfb24e6839b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
