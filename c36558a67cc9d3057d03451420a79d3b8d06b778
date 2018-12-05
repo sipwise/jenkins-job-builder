@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_2ed918f1",
+        "filename": "jenkins_jobs/modules/scm.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 24162
+      },
+      "writtenOn": "2018-12-05T16:09:49Z",
+      "side": 1,
+      "message": "this was not properly rebased",
+      "revId": "c36558a67cc9d3057d03451420a79d3b8d06b778",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
