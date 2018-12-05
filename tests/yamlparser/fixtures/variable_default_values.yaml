@@ -18,3 +18,28 @@
           echo "{{defined_var|-1}}"
           echo "{{undefined_var|+1}}"
           echo "{{undefined_var|-1}}"
+
+- parameter:
+    name: test_default_value
+    parameters:
+      - string:
+          name: INT_DEFAULT
+          default: '{int}'
+
+- job-template:
+    name: 'test_int_default_{int}'
+    parameters:
+      - test_default_value:
+          int: '{int}'
+
+- project:
+   name: test_integer_default_0
+   jobs:
+     - 'test_int_default_{int}':
+         int: 0
+
+- project:
+   name: test_integer_default_1
+   jobs:
+     - 'test_int_default_{int}':
+         int: 1
