@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3f79a3b5_5360a934",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1376,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-12-06T10:29:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f79a3b5_01a0498d",
+      "range": {
+        "startLine": 1365,
+        "startChar": 0,
+        "endLine": 1376,
+        "endChar": 50
+      },
+      "revId": "09c958fefd7ed84c8156be662a86386e77b8d7f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f79a3b5_81ad3984",
         "filename": "jenkins_jobs/modules/publishers.py",
         "patchSetId": 5
@@ -36,6 +60,24 @@
       "writtenOn": "2018-10-29T15:06:25Z",
       "side": 1,
       "message": "What are the default numbers if this was an int?",
+      "revId": "09c958fefd7ed84c8156be662a86386e77b8d7f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_93416191",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1419,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-12-06T10:29:29Z",
+      "side": 1,
+      "message": "the default is 0 for all the params.",
+      "parentUuid": "3f79a3b5_81ad3984",
       "revId": "09c958fefd7ed84c8156be662a86386e77b8d7f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
