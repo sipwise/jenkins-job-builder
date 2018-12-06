@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_108eaad6",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-12-06T05:22:26Z",
+      "side": 1,
+      "message": "Considering JJB is no longer part of OpenStack infra perhaps we should change it to. \"Jenkins Job Builder Team\" ?",
+      "range": {
+        "startLine": 9,
+        "startChar": 9,
+        "endLine": 9,
+        "endChar": 38
+      },
+      "revId": "aa75ed5f2e6898a531d91531af73c837bb4d47fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_7084beaf",
+        "filename": "setup.cfg",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-12-06T05:22:26Z",
+      "side": 1,
+      "message": "We\u0027ve migrated our JJB discussions to Google groups earlier this year. Would it be more appropriate to set it to:\n\n jenkins-job-builder@googlegroups.com",
+      "range": {
+        "startLine": 10,
+        "startChar": 15,
+        "endLine": 10,
+        "endChar": 52
+      },
+      "revId": "aa75ed5f2e6898a531d91531af73c837bb4d47fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
