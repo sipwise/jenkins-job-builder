@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_397dbc1c",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1379,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-12-07T06:19:22Z",
+      "side": 1,
+      "message": "No datatype mentioned here. Is this a string or an int?",
+      "range": {
+        "startLine": 1379,
+        "startChar": 5,
+        "endLine": 1379,
+        "endChar": 21
+      },
+      "revId": "90475a5ceb340c3f0b9dd261e8ee44ae4475f32a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_f972e44a",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1380,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-12-07T06:19:22Z",
+      "side": 1,
+      "message": "What\u0027s the true default here? from the sound of the description it sounds like this is expecting an integer. So would the default be an int here too rather than a blank string?",
+      "range": {
+        "startLine": 1380,
+        "startChar": 46,
+        "endLine": 1380,
+        "endChar": 58
+      },
+      "revId": "90475a5ceb340c3f0b9dd261e8ee44ae4475f32a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_f9974436",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1421,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2018-12-07T06:19:22Z",
+      "side": 1,
+      "message": "The description of trends-limit in the docs seem to mention that this is a number, should this be an integer default then?",
+      "range": {
+        "startLine": 1421,
+        "startChar": 40,
+        "endLine": 1421,
+        "endChar": 42
+      },
+      "revId": "90475a5ceb340c3f0b9dd261e8ee44ae4475f32a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
