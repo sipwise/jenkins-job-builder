@@ -15,6 +15,22 @@ Online documentation:
 
 * http://docs.openstack.org/infra/jenkins-job-builder/
 
+Future plans
+------------
+
+We plan to migrate this CLI tool towards an ansible module that would allow
+users to configure jobs in jenkins. We will start implementing this in 3.0
+and as soon we have it working we will mark the CLI deprecated and raise
+a warning asking people to migrate. Version 4.0 will drop jenkins-job CLI
+and will be a pure ansible module.
+
+The main reason behind this change is that it will allow us to remove more than
+a half of current codebase and allow users to fully benefit from Jinja2
+templating used by Ansible.
+
+We plan to make the migration as easy as possible, with examples. Also we
+expect this to take a long period of time but you are welcomed to help.
+
 Developers
 ----------
 Bug report:
