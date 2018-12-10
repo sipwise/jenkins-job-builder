@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3f79a3b5_389b5679",
+        "filename": "README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-12-10T00:43:15Z",
+      "side": 1,
+      "message": "Is there are blueprint in place for these changes?",
+      "range": {
+        "startLine": 22,
+        "startChar": 44,
+        "endLine": 22,
+        "endChar": 74
+      },
+      "revId": "1bb6fafb0d66d492299d79ef72d9bd871cdc97ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f79a3b5_98baaad7",
+        "filename": "README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 10089
+      },
+      "writtenOn": "2018-12-10T00:43:15Z",
+      "side": 1,
+      "message": "Going the ansible way sounds great, dropping CLI support on 4.0 is probably a little too early before the implementation is tested, how much have the community has adopted the newer interface?",
+      "range": {
+        "startLine": 24,
+        "startChar": 36,
+        "endLine": 25,
+        "endChar": 34
+      },
+      "revId": "1bb6fafb0d66d492299d79ef72d9bd871cdc97ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
