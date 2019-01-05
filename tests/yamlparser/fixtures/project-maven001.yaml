@@ -1,0 +1,47 @@
+### job #1 - no defaults, explicit maven configuration
+- job:
+    project-type: maven
+    name: spring-petclinic
+    maven:
+      root-pom: 'sources/pom.xml'
+      private-repository: local-to-workspace
+      goals: deploy
+
+- defaults:
+    name: maven-global
+    project-type: maven
+    maven:
+      private-repository: local-to-workspace
+      root-pom: 'sources/pom.xml'
+      goals: deploy
+
+### job #2 - defaults to maven-global
+- job:
+    defaults: maven-global
+    name: spring-petclinic-defaults-1
+
+### job #3 - defaults to maven-global
+- job:
+    defaults: maven-global
+    name: spring-petclinic-defaults-2
+    maven:
+      # defaults should not be removed
+      goals: deploy
+
+- job-template:
+    defaults: maven-global
+    name: '{name}-template'
+
+### job #4 - from template with defaults from maven-global, overrides some maven attributes
+- project:
+    name: spring-petclinic-from-template-1
+    jobs:
+      - '{name}-template':
+          maven:
+            goals: deploy
+
+### job #5 - from template with defaults from maven-global
+- project:
+    name: spring-petclinic-from-template-2
+    jobs:
+      - '{name}-template'
