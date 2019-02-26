@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <publishers>
+    <jenkins.plugins.rocketchatnotifier.RocketChatNotifier plugin="rocketchatnotifier">
+      <trustSSL>false</trustSSL>
+      <channel/>
+      <startNotification>false</startNotification>
+      <notifySuccess>false</notifySuccess>
+      <notifyAborted>false</notifyAborted>
+      <notifyNotBuilt>false</notifyNotBuilt>
+      <notifyUnstable>false</notifyUnstable>
+      <notifyFailure>false</notifyFailure>
+      <notifyBackToNormal>false</notifyBackToNormal>
+      <notifyRepeatedFailure>false</notifyRepeatedFailure>
+      <includeTestSummary>false</includeTestSummary>
+      <includeTestLog>false</includeTestLog>
+      <includeCustomMessage>false</includeCustomMessage>
+      <commitInfoChoice>NONE</commitInfoChoice>
+      <rawMessage>false</rawMessage>
+      <webhookToken/>
+      <webhookTokenCredentialId/>
+      <attachments/>
+      <customMessage/>
+    </jenkins.plugins.rocketchatnotifier.RocketChatNotifier>
+  </publishers>
+</project>

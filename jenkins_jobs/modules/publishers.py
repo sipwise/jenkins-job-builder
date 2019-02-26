@@ -1267,6 +1267,84 @@ def ftp_publisher(registry, xml_parent, data):
     helpers.convert_mapping_to_xml(ftp, data, mapping, fail_required=True)
 
 
+def rocket(registry, xml_parent, data):
+    """yaml: rocket
+    RocketChat notification on build completion,
+    Requires the `RocketChat Notifier Plugin`.
+
+    Minimal example using defaults:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/rocket001.yaml
+       :language: yaml
+
+    Full example:
+
+    .. literalinclude:: /../../tests/publishers/fixtures/rocket002.yaml
+       :language: yaml
+    """
+    rocketchat = XML.SubElement(xml_parent,
+                    'jenkins.plugins.rocketchatnotifier.RocketChatNotifier')
+    rocketchat.set('plugin', 'rocketchatnotifier')
+    mapping = [
+        ('trust-ssl','trustSSL', False),
+        ('channel', 'channel', ''),
+        ('start', 'startNotification', False),
+        ('success', 'notifySuccess', False),
+        ('abort', 'notifyAborted', False),
+        ('not-built', 'notifyNotBuilt', False),
+        ('unstable', 'notifyUnstable', False),
+        ('failure', 'notifyFailure', False),
+        ('back-to-normal', 'notifyBackToNormal', False),
+        ('repeated-failure', 'notifyRepeatedFailure', False),
+        ('include-test-summary', 'includeTestSummary', False),
+        ('include-test-log', 'includeTestLog', False),
+        ('include-custom-message', 'includeCustomMessage', False),
+        ('commit-info', 'commitInfoChoice', 'none', {
+                'none': 'NONE',
+                'authors': 'AUTHORS',
+                'authors-and-titles': 'AUTHORS_AND_TITLES'}),
+        ('raw-message', 'rawMessage', False),
+        ('webhook-token', 'webhookToken', ''),
+        ('webhook-token-credential-id', 'webhookTokenCredentialId', ''),
+    ]
+
+    helpers.convert_mapping_to_xml(
+        rocketchat, data, mapping, fail_required=True)
+
+    attach_required_mapping = [
+        ('title', 'title', None),
+    ]
+    attach_optional_mapping = [
+        ('title-link', 'titleLink', None),
+        ('title-link-download', 'titleLinkDownload', None),
+        ('color', 'color', None),
+        ('text', 'text', None),
+        ('collapsed', 'collapsed', None), # false | true
+        ('message-link', 'messageLink', None),
+        ('author-name', 'authorName', None),
+        ('author-link', 'authorLink', None),
+        ('author-icon', 'authorIcon', None),
+        ('thumb', 'thumbUrl', None),
+        ('image', 'imageUrl', None),
+        ('audio', 'audioUrl', None),
+        ('video', 'videoUrl', None),
+    ]
+    attach_list = data.get('attachments', None)
+
+    attachments = XML.SubElement(rocketchat, 'attachments')
+    if attach_list is not None:
+        for attach_data in attach_list:
+            item = XML.SubElement(attachments,
+                'jenkins.plugins.rocketchatnotifier.model.MessageAttachment')
+            helpers.convert_mapping_to_xml(item, attach_data,
+                            attach_required_mapping, fail_required=True)
+            helpers.convert_mapping_to_xml(item, attach_data,
+                            attach_optional_mapping, fail_required=False)
+
+    XML.SubElement(rocketchat, 'customMessage').text = \
+        data.get('custom-message', '')
+
+
 def junit(registry, xml_parent, data):
     """yaml: junit
     Publish JUnit test results.
