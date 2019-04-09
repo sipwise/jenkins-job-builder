@@ -1,0 +1,8 @@
+Code-Review+2: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Workflow+1: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 09 Apr 2019 08:56:45 +0000
+Reviewed-on: https://review.openstack.org/610431
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
