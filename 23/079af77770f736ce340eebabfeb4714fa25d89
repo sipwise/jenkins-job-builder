@@ -1,0 +1,9 @@
+Code-Review+2: Clark Boylan <cboylan@sapwetik.org>
+Code-Review+2: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Workflow+1: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 09 Apr 2019 01:21:05 +0000
+Reviewed-on: https://review.openstack.org/650859
+Project: openstack-infra/jenkins-job-builder
+Branch: refs/heads/master
