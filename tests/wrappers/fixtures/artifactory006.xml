@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+<buildWrappers>
+  <org.jfrog.hudson.generic.ArtifactoryGenericConfigurator>
+    <details>
+      <artifactoryName>test</artifactoryName>
+      <artifactoryUrl>http://artifactory.example.net/artifactory</artifactoryUrl>
+      <repositoryKey>release-repo</repositoryKey>
+      <snapshotsRepositoryKey>snapshot-repo</snapshotsRepositoryKey>
+      <deployReleaseRepository>
+        <keyFromText/>
+        <keyFromSelect/>
+        <dynamicMode/>
+      </deployReleaseRepository>
+    </details>
+    <deployBuildInfo>true</deployBuildInfo>
+    <useSpecs>true</useSpecs>
+    <uploadSpec>
+      <filePath>path/to/upload-file</filePath>
+      <filePath>path/to/upload-file</filePath>
+    </uploadSpec>
+    <downloadSpec>
+      <filePath>path/to/download-file</filePath>
+      <filePath>path/to/download-file</filePath>
+    </downloadSpec>
+    <useSpecs>true</useSpecs>
+    <deployPattern/>
+    <resolvePattern/>
+    <matrixParams/>
+    <deployBuildInfo>true</deployBuildInfo>
+    <includeEnvVars>false</includeEnvVars>
+    <discardOldBuilds>false</discardOldBuilds>
+    <discardBuildArtifacts>true</discardBuildArtifacts>
+    <envVarsPatterns>
+      <includePatterns/>
+      <excludePatterns/>
+    </envVarsPatterns>
+  </org.jfrog.hudson.generic.ArtifactoryGenericConfigurator>
+</buildWrappers>
+</project>
