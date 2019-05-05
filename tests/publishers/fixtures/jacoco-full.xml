@@ -7,6 +7,7 @@
       <sourcePattern>**/src/main/java</sourcePattern>
       <changeBuildStatus>true</changeBuildStatus>
       <inclusionPattern>**/*.class</inclusionPattern>
+      <sourceInclusionPattern>**/*.java,**/*.kt</sourceInclusionPattern>
       <exclusionPattern>**/*Test*.class</exclusionPattern>
       <maximumInstructionCoverage>7</maximumInstructionCoverage>
       <minimumInstructionCoverage>1</minimumInstructionCoverage>

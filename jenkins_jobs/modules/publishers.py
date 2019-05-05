@@ -1085,6 +1085,8 @@ def jacoco(registry, xml_parent, data):
         to locate class files (default ``**/classes``)
     :arg str source-pattern: This is a file name pattern that can be used
         to locate source files (default ``**/src/main/java``)
+    :arg str source-inclusion-pattern: This is a file name pattern that can
+        be used to include certain source files (default ``**/*.java``)
     :arg bool update-build-status: Update the build according to the results
         (default false)
     :arg str inclusion-pattern: This is a file name pattern that can be used
@@ -1117,6 +1119,7 @@ def jacoco(registry, xml_parent, data):
         ('exec-pattern', 'execPattern', '**/**.exec'),
         ('class-pattern', 'classPattern', '**/classes'),
         ('source-pattern', 'sourcePattern', '**/src/main/java'),
+        ('source-inclusion-pattern', 'sourceInclusionPattern', '**/*.java'),
         ('update-build-status', 'changeBuildStatus', False),
         ('inclusion-pattern', 'inclusionPattern', ''),
         ('exclusion-pattern', 'exclusionPattern', ''),
