@@ -5,6 +5,7 @@ publishers:
       source-pattern: '**/src/main/java'
       update-build-status: true
       inclusion-pattern: '**/*.class'
+      source-inclusion-pattern: '**/*.java,**/*.kt'
       exclusion-pattern: '**/*Test*.class'
       targets:
         - instruction:
