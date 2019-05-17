@@ -1,0 +1,9 @@
+Code-Review+2: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Code-Review+2: Dong Ma <winterma.dong@gmail.com>
+Workflow+1: Dong Ma <winterma.dong@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 17 May 2019 01:57:38 +0000
+Reviewed-on: https://review.opendev.org/657508
+Project: jjb/jenkins-job-builder
+Branch: refs/heads/master
