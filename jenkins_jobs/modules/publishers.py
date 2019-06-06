@@ -1397,6 +1397,76 @@ def rocket(registry, xml_parent, data):
         data.get('custom-message', '')
 
 
+def hp_alm(registry, xml_parent, data):
+    """yaml: hp-alm
+    Publish test results to HP-ALM.
+
+    Requires the Jenkins :jenkins-wiki:`Micro Focus Application Automation
+    Tools <Micro+Focus+Application+Automation+Tools)>`.
+
+    :arg str server-name: The name of the ALM Server. (required)
+    :arg str credentials-id: credentials-id of the user (default '')
+    :arg str domaine: The Domain of the project to be used. (required)
+    :arg str client-type: Client type is required for some ALM above 12.60
+        in authentication.(default '')
+    :arg str project: The project to be used. (required)
+    :arg str testing-framework: The testing framework that is used when
+        generate the testing result file. (default Junit)
+    :arg str testing-tool: The testing tool that is used when generate
+        the testing result file. (default '')
+    :arg str folder: The path of the test folder that will contain
+        the uploaded test.
+        The path doesn't include the Root test folder (Subject).
+        For example, sampletestfolder/subfolder means, the tests will be
+        uploaded to test folder named 'subfolder', which is under
+        the test folder named 'sampletestfolder', and 'sampletestfolder'
+        is under the root test folder 'Subject'. (required)
+    :arg str set-folder: The path of the testset folder that will contain
+        the uploaded testset. The path doesn't include the Root testset folder.
+        For example, sampletestsetfolder/subfolder means, the testsets will be
+        uploaded to testset folder named 'subfolder', which is under
+        the testset folder named 'sampletestsetfolder',
+        and 'sampletestsetfolder' is under the root testset folder 'Root'.
+        (required)
+    :arg str testing-result-file: The condition to find the testing
+        result file, start from the root path of the job. For example,
+        **/junitResult.xml to find testing result file for Junit Plugin,
+        **/testng-results.xml to find testing result file for TestNG plugin.
+        (required)
+    :arg str jenkins-server-url: The HTTP URL of the Jenkins Server,
+        form example, http://myjenkinsserver.test.com:8080 . (optional)
+
+    Minimal example using defaults:
+
+    .. literalinclude::  /../../tests/publishers/fixtures/hp-alm001.yaml
+       :language: yaml
+
+    Full example:
+
+    .. literalinclude::  /../../tests/publishers/fixtures/hp-alm002.yaml
+       :language: yaml
+    """
+    alm_uploader = XML.SubElement(xml_parent,
+                                  'com.microfocus.application.automation.'
+                                  'tools.results.TestResultToALMUploader')
+    alm_uploader.set('plugin', 'hp-application-automation-tools-plugin')
+    mapping = [
+        ('server-name', 'almServerName', None),
+        ('credentials-id', 'credentialsId', ''),
+        ('domain', 'almDomain', None),
+        ('project', 'almProject', None),
+        ('client-type', 'clientType', ''),
+        ('testing-framework', 'testingFramework', 'JUnit'),
+        ('testing-tool', 'testingTool', ''),
+        ('folder', 'almTestFolder', None),
+        ('set-folder', 'almTestSetFolder', None),
+        ('testing-result-file', 'testingResultFile', None),
+        ('jenkins-server-url', 'jenkinsServerUrl', ''),
+    ]
+    helpers.convert_mapping_to_xml(
+        alm_uploader, data, mapping, fail_required=True)
+
+
 def junit(registry, xml_parent, data):
     """yaml: junit
     Publish JUnit test results.

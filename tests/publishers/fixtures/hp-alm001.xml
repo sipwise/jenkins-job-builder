@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <publishers>
+    <com.microfocus.application.automation.tools.results.TestResultToALMUploader plugin="hp-application-automation-tools-plugin">
+      <almServerName>HP-ALM</almServerName>
+      <credentialsId/>
+      <almDomain>FOO_COMPANY</almDomain>
+      <almProject>foo_project</almProject>
+      <clientType/>
+      <testingFramework>JUnit</testingFramework>
+      <testingTool/>
+      <almTestFolder>ALM/foo/release1/test_case1</almTestFolder>
+      <almTestSetFolder>ALM/foo/release1/test_case1/$env</almTestSetFolder>
+      <testingResultFile>**/junitResult.xml</testingResultFile>
+      <jenkinsServerUrl/>
+    </com.microfocus.application.automation.tools.results.TestResultToALMUploader>
+  </publishers>
+</project>
