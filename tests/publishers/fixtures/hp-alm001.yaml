@@ -1,0 +1,8 @@
+publishers:
+  - hp-alm:
+      server-name: HP-ALM
+      domain: FOO_COMPANY
+      project: foo_project
+      folder: 'ALM/foo/release1/test_case1'
+      set-folder: 'ALM/foo/release1/test_case1/$env'
+      testing-result-file: '**/junitResult.xml'
