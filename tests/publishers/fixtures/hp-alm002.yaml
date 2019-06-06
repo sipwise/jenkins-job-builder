@@ -1,0 +1,13 @@
+publishers:
+  - hp-alm:
+      server-name: HP-ALM
+      credentials-id: cba09876-4321-4567-890a-bcde12345678
+      domain: FOO_COMPANY
+      project: foo_project
+      client-type: foo_client
+      testing-framework: JUnit
+      testing-tool: foo_tool
+      folder: 'ALM/foo/release1/test_case1'
+      set-folder: 'ALM/foo/release1/test_case1/$env'
+      testing-result-file: '**/junitResult.xml'
+      jenkins-server-url: 'http://myjenkinsserver.test.com:8080'
