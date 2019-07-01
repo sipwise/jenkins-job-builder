@@ -15,6 +15,7 @@ scm:
         discover-pr-forks-trust: everyone
         discover-pr-origin: both
         discover-tags: true
+        notification-context: 'jenkins.example.com/my_context'
         property-strategies:
             all-branches:
                 - suppress-scm-triggering: true
