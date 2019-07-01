@@ -55,6 +55,10 @@
             <jenkins.scm.impl.trait.RegexSCMHeadFilterTrait>
               <regex>(.*/master|.*/release/.*)</regex>
             </jenkins.scm.impl.trait.RegexSCMHeadFilterTrait>
+            <org.jenkinsci.plugins.githubScmTraitNotificationContext.NotificationContextTrait>
+              <contextLabel>jenkins.example.com/my_context</contextLabel>
+              <typeSuffix>true</typeSuffix>
+            </org.jenkinsci.plugins.githubScmTraitNotificationContext.NotificationContextTrait>
             <jenkins.plugins.git.traits.CleanAfterCheckoutTrait>
               <extension class="hudson.plugins.git.extensions.impl.CleanCheckout"/>
             </jenkins.plugins.git.traits.CleanAfterCheckoutTrait>

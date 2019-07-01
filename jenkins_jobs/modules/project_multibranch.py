@@ -796,6 +796,10 @@ def github_scm(xml_parent, data):
         discovered initially or a change from the previous revision has been
         detected. (optional)
         Refer to :func:`~build_strategies <build_strategies>`.
+    :arg str notification-context: Change the default GitHub check notification
+        context from "continuous-integration/jenkins/SUFFIX" to a custom text,
+        Requires the :jenkins-wiki:`Github Custom Notification Context SCM
+        Behaviour <Github+Custom+Notification+Context+SCM+Behaviour+Plugin>`.
     :arg dict property-strategies: Provides control over how to build a branch
         (like to disable SCM triggering or to override the pipeline durability)
         (optional)
@@ -979,6 +983,12 @@ def github_scm(xml_parent, data):
 
     if data.get('build-strategies', None):
         build_strategies(xml_parent, data)
+
+    if data.get('notification-context', None):
+        rshf = XML.SubElement(traits,
+            'org.jenkinsci.plugins.githubScmTraitNotificationContext.NotificationContextTrait')
+        XML.SubElement(rshf, 'contextLabel').text = data.get('notification-context')
+        XML.SubElement(rshf, 'typeSuffix').text = 'true'
 
     # handle the default git extensions like:
     # - clean
