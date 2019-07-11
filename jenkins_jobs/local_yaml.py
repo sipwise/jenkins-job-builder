@@ -491,6 +491,17 @@ class YamlIncludeJinja2(YamlIncludeRaw):
         return Jinja2Loader(contents, loader.search_path)
 
 
+class YamlIncludeJinja2AsYaml(YamlIncludeJinja2):
+    yaml_tag = u'!include-jinja2-as-yaml:'
+
+    @classmethod
+    def _from_file(cls, loader, node):
+        contents = cls._open_file(loader, node)
+        if isinstance(contents, LazyLoader):
+            return contents
+        return Jinja2LoaderAsYaml(contents, loader.search_path)
+
+
 class DeprecatedTag(BaseYAMLObject):
 
     @classmethod
@@ -535,6 +546,14 @@ class Jinja2Loader(CustomLoader):
         # so we just overwrite with correct one
         self._template.environment.loader = self._loader
         return self._template.render(kwargs)
+
+
+class Jinja2LoaderAsYaml(Jinja2Loader):
+    """A loader for Jinja2-templated files that renders yaml."""
+
+    def format(self, **kwargs):
+        raw_yaml = super(Jinja2LoaderAsYaml, self).format(**kwargs)
+        return yaml.load(raw_yaml)
 
 
 class CustomLoaderCollection(object):
