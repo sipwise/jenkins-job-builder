@@ -1,0 +1,7 @@
+- job:
+    name: test-job-as-yaml
+    parameters:
+        - choice:
+            name: TEST_CHOICE
+            choices:
+                !include-jinja2-as-yaml: jinja-as-yaml-include01.yaml.inc
