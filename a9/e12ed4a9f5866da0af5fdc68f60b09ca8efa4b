@@ -1,0 +1,13 @@
+Code-Review+2: Sorin Sbarnea <ssbarnea@redhat.com>
+Code-Review+1: Vieri <15050873171@163.com>
+Code-Review+1: 98k <18552437190@163.com>
+Code-Review+1: Andriy Shevchenko <huang.zhiping@99cloud.net>
+Code-Review+1: Daniel Watkins <daniel.watkins@canonical.com>
+Code-Review+2: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Workflow+1: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 15 Jul 2019 16:54:35 +0000
+Reviewed-on: https://review.opendev.org/670334
+Project: jjb/jenkins-job-builder
+Branch: refs/heads/master
