@@ -1217,6 +1217,39 @@ def disable_resume(registry, xml_parent, data):
                    'DisableResumeJobProperty')
 
 
+def cachet_gating(registry, xml_parent, data):
+    """yaml: cachet-gating
+    The Cachet Gating Plugin provides a gating mechanism
+    based on the availability of resources.
+
+    Requires the Jenkins: :jenkins-wiki:`Cachet Gate Plugin
+    <Cachet+Gate+Plugin>`.
+
+    :arg bool required-resources: whether cachet is enabled (default true)
+    :arg list resources: which resources to gate
+
+    Example:
+
+    .. literalinclude:: /../../tests/properties/fixtures/cachet-gating.yaml
+        :language: yaml
+    """
+    cachet = XML.SubElement(
+        xml_parent, 'com.redhat.jenkins.plugins.cachet.CachetJobProperty')
+    cachet.set('plugin', 'cachet-gating')
+
+    mapping = [
+        ('required-resources', 'requiredResources', True),
+    ]
+    helpers.convert_mapping_to_xml(
+        cachet, data, mapping, fail_required=True)
+
+    resources_data = data.get('resources', [])
+    if resources_data:
+        resources = XML.SubElement(cachet, 'resources')
+        for resource in resources_data:
+            XML.SubElement(resources, 'string').text = str(resource)
+
+
 class Properties(jenkins_jobs.modules.base.Base):
     sequence = 20
 

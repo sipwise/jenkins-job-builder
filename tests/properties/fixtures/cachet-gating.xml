@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <properties>
+    <com.redhat.jenkins.plugins.cachet.CachetJobProperty plugin="cachet-gating">
+      <requiredResources>true</requiredResources>
+      <resources>
+        <string>beaker</string>
+        <string>brew</string>
+      </resources>
+    </com.redhat.jenkins.plugins.cachet.CachetJobProperty>
+  </properties>
+</project>
