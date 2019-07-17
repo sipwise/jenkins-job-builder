@@ -1,0 +1,6 @@
+properties:
+      - cachet-gating:
+          required-resources: true
+          resources:
+              - beaker
+              - brew
