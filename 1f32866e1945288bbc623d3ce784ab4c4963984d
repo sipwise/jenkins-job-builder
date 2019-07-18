@@ -16,6 +16,24 @@
       "revId": "1f32866e1945288bbc623d3ce784ab4c4963984d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_2191eaf1",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1228,
+      "author": {
+        "id": 30700
+      },
+      "writtenOn": "2019-07-18T06:21:04Z",
+      "side": 1,
+      "message": "I\u0027ve tried to make it similar to what the developer has done with JobDSL.\nSee: https://wiki.jenkins.io/display/JENKINS/Cachet+Gate+Plugin#CachetGatePlugin-JobsetupusingJobDSL",
+      "parentUuid": "7faddb67_606fe02a",
+      "revId": "1f32866e1945288bbc623d3ce784ab4c4963984d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
