@@ -34,6 +34,24 @@
       "revId": "1f32866e1945288bbc623d3ce784ab4c4963984d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_42417ea8",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1228,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2019-07-18T14:21:19Z",
+      "side": 1,
+      "message": "Hi Aviel, Right but that\u0027s just a code.\n\nIn this case we are writing documentation to explain what this option does. Put yourself in the shoes of someone reading this documentation for the first time and trying to understand what each option does.\n\nI think the help text from the screenshot is more helpful to the reader than \"whether cachet is enabled\". My understanding is that enabling the checkbox causes cachet to confirm that the listed resources are available before starting the build. I want to make sure the help text is helpful to someone who doesn\u0027t understand this plugin. I think a better help text would be something along the lines of:\n\n Confirm availability of listed resources before building. Requires the list of **resources** to also be defined. (default true)\n\nIMO this makes the option much more clear about what it does as it explains that not only do you have to enable the checkbox, you have to also provide a list of resources for the option to work.",
+      "parentUuid": "7faddb67_2191eaf1",
+      "revId": "1f32866e1945288bbc623d3ce784ab4c4963984d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
