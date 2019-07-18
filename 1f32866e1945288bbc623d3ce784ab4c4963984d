@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_606fe02a",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1228,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2019-07-18T01:17:26Z",
+      "side": 1,
+      "message": "I haven\u0027t used this plugin before but looking at the screenshot here:\nhttps://wiki.jenkins.io/display/JENKINS/Cachet+Gate+Plugin\n\nIt seems like \"required-resources\" help should say instead \"Confirm resource availability before building\". Is this correct?",
+      "revId": "1f32866e1945288bbc623d3ce784ab4c4963984d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
