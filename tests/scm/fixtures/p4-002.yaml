@@ -1,0 +1,21 @@
+scm:
+ - p4:
+     credential: credential
+     workspace-type: Manual
+     workspace-name: workspacename
+     populate-type: AutoClean
+     populate-have-list: True
+     populate-quiet: True
+     populate-revert: False
+     populate-label: populatelabel
+     spec-allwrite: True
+     spec-clobber: True
+     spec-compress: True
+     spec-locked: True
+     spec-modtime: True
+     spec-rmdir: True
+     spec-line: specline
+     spec-view: specview
+     spec-type: spectype
+     spec-backup: True
+     spec-stream-name: specstreamname

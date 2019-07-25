@@ -580,7 +580,16 @@ def priority_sorter(registry, xml_parent, data):
     plugin_info = registry.get_plugin_info('PrioritySorter')
     version = pkg_resources.parse_version(plugin_info.get('version', '0'))
 
-    if version >= pkg_resources.parse_version("2.0"):
+    if version >= pkg_resources.parse_version("3.0"):
+        priority_sorter_tag = XML.SubElement(xml_parent,
+                                             'jenkins.advancedqueue.jobinclusion.'
+                                             'strategy.JobInclusionJobProperty')
+
+        mapping = [
+            ('use', 'useJobGroup', True),
+            ('priority', 'jobGroupName', None)
+        ]
+    elif version >= pkg_resources.parse_version("2.0"):
         priority_sorter_tag = XML.SubElement(xml_parent,
                                              'jenkins.advancedqueue.priority.'
                                              'strategy.PriorityJobProperty')

@@ -1,0 +1,10 @@
+scm:
+  - p4:
+      credential: credential
+      workspace-type: Static
+      workspace-name: workspacename
+      populate-type: SyncOnly
+      populate-have-list: true
+      populate-quiet: true
+      populate-revert: false
+      populate-label: populatelabel

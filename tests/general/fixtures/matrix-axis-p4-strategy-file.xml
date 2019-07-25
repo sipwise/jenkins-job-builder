@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<matrix-project>
+  <executionStrategy class="org.jenkinsci.plugins.p4.matrix.MatrixOptions">
+    <runSequentially>false</runSequentially>
+    <buildParent>false</buildParent>
+  </executionStrategy>
+  <axes/>
+  <actions/>
+  <keepDependencies>false</keepDependencies>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <concurrentBuild>false</concurrentBuild>
+  <canRoam>true</canRoam>
+</matrix-project>

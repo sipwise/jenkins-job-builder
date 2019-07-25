@@ -1,0 +1,11 @@
+scm:
+  - p4:
+      credential: credential
+      workspace-type: Manual
+      workspace-name: workspacename
+      populate-type: SyncOnly
+      view-mask: viewmask
+      parallel-enabled: True
+      parallel-threads: 2
+      parallel-minfiles: 5
+      parallel-minbytes: 500

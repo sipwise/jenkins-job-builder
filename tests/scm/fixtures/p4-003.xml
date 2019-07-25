@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <scm class="org.jenkinsci.plugins.p4.PerforceScm" plugin="p4">
+    <credential>credential</credential>
+    <workspace class="org.jenkinsci.plugins.p4.workspace.ManualWorkspaceImpl">
+      <spec>
+        <allwrite>false</allwrite>
+        <clobber>false</clobber>
+        <compress>false</compress>
+        <locked>false</locked>
+        <modtime>false</modtime>
+        <rmdir>false</rmdir>
+        <line/>
+        <view/>
+        <type/>
+        <backup>false</backup>
+        <streamName/>
+      </spec>
+      <charset>none</charset>
+      <pinHost>false</pinHost>
+      <name>workspacename</name>
+    </workspace>
+    <filter>
+      <org.jenkinsci.plugins.p4.filters.FilterViewMaskImpl>
+        <viewMask>viewmask</viewMask>
+      </org.jenkinsci.plugins.p4.filters.FilterViewMaskImpl>
+    </filter>
+    <populate class="org.jenkinsci.plugins.p4.populate.SyncOnlyImpl">
+      <have>false</have>
+      <force>false</force>
+      <modtime>false</modtime>
+      <quiet>false</quiet>
+      <parallel>
+        <enable>true</enable>
+        <threads>2</threads>
+        <minfiles>5</minfiles>
+        <minbytes>500</minbytes>
+      </parallel>
+    </populate>
+  </scm>
+</project>
