@@ -1,0 +1,4 @@
+project-type: matrix
+p4-strategy:
+  sequential: false
+  build-parent: false

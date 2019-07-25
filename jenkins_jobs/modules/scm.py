@@ -37,12 +37,122 @@ Example of an empty ``scm``:
 """
 
 import logging
+import pkg_resources
 import xml.etree.ElementTree as XML
 
 from jenkins_jobs.errors import InvalidAttributeError
 from jenkins_jobs.errors import JenkinsJobsException
 import jenkins_jobs.modules.base
 import jenkins_jobs.modules.helpers as helpers
+
+def p4(registry, xml_parent, data):
+    r"""yaml: p4
+    Specifies the Perforce (P4) repository for this job
+    Requires the Jenkins :jenkins-wiki:`P4 Plugin <P4+Plugin>`.
+    """
+
+    plugin_info = registry.get_plugin_info("P4 Plugin")
+    version = pkg_resources.parse_version(plugin_info.get('version', '0'))
+
+    scm = XML.SubElement(xml_parent, 'scm', 
+        {'class': 'org.jenkinsci.plugins.p4.PerforceScm', 'plugin': 'p4'})
+
+    XML.SubElement(scm, 'credential').text = data.get('credential')
+
+    p4_construct_workspace(scm, data)
+
+    p4_construct_populate(scm, data)
+
+
+def p4_construct_workspace(xml_parent, data):
+    workspace = None
+
+    workspace_mapping = [
+        ('workspace-charset', 'charset', 'none'),
+        ('workspace-pin-host', 'pinHost', False),
+        ('workspace-name', 'name', ''),
+        ('workspace-cleanup', 'cleanup', None)
+    ]
+
+    if data.get('workspace-type') == 'Static':
+        workspace = XML.SubElement(xml_parent, 'workspace', 
+            {'class': 'org.jenkinsci.plugins.p4.workspace.StaticWorkspaceImpl'})
+    elif data.get('workspace-type') == 'Manual':
+        workspace = XML.SubElement(xml_parent, 'workspace', 
+            {'class': 'org.jenkinsci.plugins.p4.workspace.ManualWorkspaceImpl'})
+
+        spec = XML.SubElement(workspace, 'spec')
+
+        spec_mapping = [
+            ('spec-allwrite', 'allwrite', False),
+            ('spec-clobber', 'clobber', False),
+            ('spec-compress', 'compress', False),
+            ('spec-locked', 'locked', False),
+            ('spec-modtime', 'modtime', False),
+            ('spec-rmdir', 'rmdir', False),
+            ('spec-line', 'line', ''),
+            ('spec-view', 'view', ''),
+            ('spec-type', 'type', ''),
+            ('spec-backup', 'backup', False),
+            ('spec-stream-name', 'streamName', '')
+        ]
+
+        helpers.convert_mapping_to_xml(
+            spec, data, spec_mapping, fail_required=False)
+
+    if 'view-mask' in data.keys():
+        filter_node = XML.SubElement(xml_parent, 'filter')
+
+        view_mask = XML.SubElement(filter_node, 
+            'org.jenkinsci.plugins.p4.filters.FilterViewMaskImpl')
+
+        view_mask_mapping = [
+            ('view-mask', 'viewMask', None)
+        ]
+
+        helpers.convert_mapping_to_xml(
+            view_mask, data, view_mask_mapping, fail_required=False)
+
+    helpers.convert_mapping_to_xml(
+            workspace, data, workspace_mapping, fail_required=False)
+
+
+def p4_construct_populate(xml_parent, data):
+    populate = None
+
+    populate_mapping = [
+        ('populate-have-list', 'have', False),
+        ('populate-force-sync', 'force', False),
+        ('populate-modtime', 'modtime', False),
+        ('populate-quiet', 'quiet', False),
+        ('populate-label', 'pin', None),
+        ('populate-revert', 'revert', None),
+        ('populate-replace', 'replace', None),
+        ('populate-delete', 'delete', None),
+        ('populate-tidy', 'tidy', None)
+    ]
+
+    parallel_mapping = [
+        ('parallel-enabled', 'enable', False),
+        ('parallel-threads', 'threads', '4'),
+        ('parallel-minfiles', 'minfiles', '1'),
+        ('parallel-minbytes', 'minbytes', '1024')
+    ]
+
+    if data.get('populate-type') == 'SyncOnly':
+        populate = XML.SubElement(xml_parent, 'populate',
+            {'class': 'org.jenkinsci.plugins.p4.populate.SyncOnlyImpl'})
+    elif data.get('populate-type') == 'AutoClean':
+        populate = XML.SubElement(xml_parent, 'populate',
+            {'class': 'org.jenkinsci.plugins.p4.populate.AutoCleanImpl'})
+
+    helpers.convert_mapping_to_xml(
+        populate, data, populate_mapping, fail_required=False)
+
+    parallel = XML.SubElement(populate, 'parallel')
+
+    helpers.convert_mapping_to_xml(
+        parallel, data, parallel_mapping, fail_required=False)
 
 
 def git(registry, xml_parent, data):

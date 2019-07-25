@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <scm class="org.jenkinsci.plugins.p4.PerforceScm" plugin="p4">
+    <credential>credential</credential>
+    <workspace class="org.jenkinsci.plugins.p4.workspace.StaticWorkspaceImpl">
+      <charset>none</charset>
+      <pinHost>false</pinHost>
+      <name>workspacename</name>
+    </workspace>
+    <populate class="org.jenkinsci.plugins.p4.populate.SyncOnlyImpl">
+      <have>true</have>
+      <force>false</force>
+      <modtime>false</modtime>
+      <quiet>true</quiet>
+      <pin>populatelabel</pin>
+      <revert>false</revert>
+      <parallel>
+        <enable>false</enable>
+        <threads>4</threads>
+        <minfiles>1</minfiles>
+        <minbytes>1024</minbytes>
+      </parallel>
+    </populate>
+  </scm>
+</project>

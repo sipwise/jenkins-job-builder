@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <properties>
+    <jenkins.advancedqueue.jobinclusion.strategy.JobInclusionJobProperty>
+      <useJobGroup>true</useJobGroup>
+      <jobGroupName>Priority 3</jobGroupName>
+    </jenkins.advancedqueue.jobinclusion.strategy.JobInclusionJobProperty>
+  </properties>
+</project>

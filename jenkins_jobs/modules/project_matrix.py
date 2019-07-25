@@ -130,6 +130,8 @@ class Matrix(jenkins_jobs.modules.base.Base):
             'hudson.matrix.DefaultMatrixExecutionStrategyImpl',
         'yaml-strategy':
             'org.jenkinsci.plugins.yamlaxis.YamlMatrixExecutionStrategy',
+        'p4-strategy':
+            'org.jenkinsci.plugins.p4.matrix.MatrixOptions'
     }
 
     def root_xml(self, data):
@@ -201,6 +203,16 @@ class Matrix(jenkins_jobs.modules.base.Base):
             XML.SubElement(ex_r, 'yamlText').text = text
 
             XML.SubElement(ex_r, 'excludeKey').text = exclude_key
+
+        elif strategy_name == 'p4-strategy':
+            XML.SubElement(ex_r, 'runSequentially').text = (
+                str(strategy.get('sequential', False)).lower()
+            )
+
+            XML.SubElement(ex_r, 'buildParent').text = (
+                str(strategy.get('build-parent', False)).lower()
+            )
+            
 
         ax_root = XML.SubElement(root, 'axes')
         for axis_ in data.get('axes', []):

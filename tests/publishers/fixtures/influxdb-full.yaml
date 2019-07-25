@@ -1,0 +1,7 @@
+publishers:
+  - influx-db:
+      selected-target: selectedtarget
+      custom-project-name: customprojectname
+      custom-prefix: customprefix
+      jenkins-env-parameter-field: jenkinsenvparameterfield
+      jenkins-env-parameter-tag: jenkinsenvparametertag

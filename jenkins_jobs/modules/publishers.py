@@ -39,6 +39,26 @@ import jenkins_jobs.modules.base
 from jenkins_jobs.modules import hudson_model
 import jenkins_jobs.modules.helpers as helpers
 
+def influx_db(registry, xml_parent, data):
+    """yaml: influx-db
+    Requires the Jenkins :jenkins-wiki: `Influx DB
+    <Influx+DB+Plugin>`.
+    """
+
+    influx_db = XML.SubElement(xml_parent,
+        'jenkinsci.plugins.influxdb.InfluxDbPublisher',
+        {'plugin': 'influx-db'})
+
+    mapping = [
+        ('selected-target', 'selectedTarget', ''),
+        ('custom-project-name', 'customProjectName', ''),
+        ('custom-prefix', 'customPrefix', ''),
+        ('jenkins-env-parameter-field', 'jenkinsEnvParameterField', ''),
+        ('jenkins-env-parameter-tag', 'jenkinsEnvParameterTag', '')
+    ]
+
+    helpers.convert_mapping_to_xml(
+        influx_db, data, mapping, fail_required=True)
 
 def allure(registry, xml_parent, data):
     """yaml: allure
