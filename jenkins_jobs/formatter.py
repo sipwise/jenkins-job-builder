@@ -57,10 +57,11 @@ def deep_format(obj, paramdict, allow_empty=False, template=True):
         ret = type(obj)()
         for item in obj:
             try:
-                # deep_formatting dsl when not a job-template is not necessary
-                # as it will most likely result in keyerror due to trying
-                # to substitute values inside the dsl that do not exist.
-                if item not in ['dsl'] or template:
+                # deep_formatting for certain items when not a job-template is
+                # not necessary as it will most likely result in keyerror due
+                # to trying to substitute values inside the item that do not
+                # exist.
+                if item not in ['dsl', 'shell', 'scm'] or template:
                     ret[CustomFormatter(allow_empty).format(item,
                                                             **paramdict)] = \
                         deep_format(obj[item], paramdict,
