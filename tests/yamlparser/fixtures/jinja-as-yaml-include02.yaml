@@ -1,0 +1,5 @@
+- job:
+    name: test-job-as-yaml-scm-regress
+    scm:
+        - git:
+            url: ${SCM_BRANCH_AS_ENV_VAR}

@@ -1,0 +1,6 @@
+- job:
+    name: test-job-as-yaml-shell-regress
+    builders:
+        - shell: |
+              #!/bin/bash
+              mkdir -p go/{pkg,src,bin}
