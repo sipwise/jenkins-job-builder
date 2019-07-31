@@ -873,6 +873,11 @@ def jms_messaging(registry, xml_parent, data):
     jmsm = XML.SubElement(xml_parent,
                           namespace + 'CIBuildTrigger')
 
+    if 'override-topic' in data:
+        overrides = XML.SubElement(jmsm, 'overrides')
+        XML.SubElement(overrides,
+                       'topic').text = str(data.get('override-topic', ''))
+
     mapping = [
         # option, xml name, default value
         ("spec", 'spec', ''),
