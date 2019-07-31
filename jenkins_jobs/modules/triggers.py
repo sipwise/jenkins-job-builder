@@ -846,6 +846,8 @@ def jms_messaging(registry, xml_parent, data):
     Requires the Jenkins :jenkins-wiki:`JMS Messaging Plugin
     <JMS+Messaging+Plugin>`.
 
+    :arg str override-topic: If you need to override the default topic.
+        (default '')
     :arg str selector: The JSON or YAML formatted text that conforms to
         the schema for defining the various OpenShift resources. (default '')
         note: topic needs to be in double quotes
@@ -872,6 +874,11 @@ def jms_messaging(registry, xml_parent, data):
     namespace = 'com.redhat.jenkins.plugins.ci.'
     jmsm = XML.SubElement(xml_parent,
                           namespace + 'CIBuildTrigger')
+
+    if 'override-topic' in data:
+        overrides = XML.SubElement(jmsm, 'overrides')
+        XML.SubElement(overrides,
+                       'topic').text = str(data.get('override-topic', ''))
 
     mapping = [
         # option, xml name, default value
