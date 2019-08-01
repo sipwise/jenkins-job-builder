@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_ba70d241",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2019-08-01T10:02:24Z",
+      "side": 1,
+      "message": "I\u0027m a little rusty in reviewing for this project, but I\u0027d suggest considering noting the version this appeared somewhere so that once it\u0027s been released sufficiently long enough it can be made part of the mapping when someone next updates this section of code.",
+      "revId": "06bb44606a1c377001c3813e31d7130ee460af05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_7a8fba29",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 881,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2019-08-01T10:02:24Z",
+      "side": 1,
+      "message": "given you\u0027ve tested for the existence of the item can probably just use \"data[\u0027override-topic\u0027]\".",
+      "range": {
+        "startLine": 881,
+        "startChar": 43,
+        "endLine": 881,
+        "endChar": 73
+      },
+      "revId": "06bb44606a1c377001c3813e31d7130ee460af05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
