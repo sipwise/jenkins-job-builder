@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <triggers class="vector">
+    <org.jenkinsci.plugins.rabbitmqbuildtrigger.RemoteBuildTrigger>
+      <spec/>
+      <remoteBuildToken>build_trigger_token</remoteBuildToken>
+      <filters>
+        <org.jenkinsci.plugins.rabbitmqbuildtrigger.Filter>
+            <field>field1</field>
+            <value>value1</value>
+        </org.jenkinsci.plugins.rabbitmqbuildtrigger.Filter>
+        <org.jenkinsci.plugins.rabbitmqbuildtrigger.Filter>
+            <field>field2</field>
+            <value>value2</value>
+        </org.jenkinsci.plugins.rabbitmqbuildtrigger.Filter>
+      </filters>
+    </org.jenkinsci.plugins.rabbitmqbuildtrigger.RemoteBuildTrigger>
+  </triggers>
+</project>

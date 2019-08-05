@@ -1,0 +1,8 @@
+triggers:
+  - rabbitmq:
+      token: 'build_trigger_token'
+      filters:
+        - field: 'field1'
+          value: 'value1'
+        - field: 'field2'
+          value: 'value2'

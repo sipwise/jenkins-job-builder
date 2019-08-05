@@ -1922,17 +1922,40 @@ def rabbitmq(registry, xml_parent, data):
     <RabbitMQ+Build+Trigger+Plugin>`.
 
     :arg str token: the build token expected in the message queue (required)
+    :arg list filters: list of filters to apply (optional)
+
+        :Filter:
+            * **field** (`str`) - Some field in message (required)
+            * **value** (`str`) - value of specified field (required)
 
     Example:
 
     .. literalinclude:: /../../tests/triggers/fixtures/rabbitmq.yaml
        :language: yaml
+
+    Example with filters:
+
+    .. literalinclude:: /../../tests/triggers/fixtures/rabbitmq-filters.yaml
+       :language: yaml
     """
 
+    rabbitmq_prefix = 'org.jenkinsci.plugins.rabbitmqbuildtrigger.'
     rabbitmq = XML.SubElement(
         xml_parent,
-        'org.jenkinsci.plugins.rabbitmqbuildtrigger.'
-        'RemoteBuildTrigger')
+        rabbitmq_prefix + 'RemoteBuildTrigger')
+    filters = data.get('filters', [])
+    filter_mapping = [
+        ('field', 'field', None),
+        ('value', 'value', None),
+    ]
+    if filters:
+        filters_tag = XML.SubElement(rabbitmq, 'filters')
+    for filter_data in filters:
+        filter_tag = XML.SubElement(
+            filters_tag,
+            rabbitmq_prefix + 'Filter')
+        helpers.convert_mapping_to_xml(
+            filter_tag, data, filter_mapping, fail_required=True)
     mapping = [
         ('', 'spec', ''),
         ('token', 'remoteBuildToken', None),
