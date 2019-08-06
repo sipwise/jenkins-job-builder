@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_f05b861e",
+        "filename": "jenkins_jobs/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2019-08-06T13:33:00Z",
+      "side": 1,
+      "message": "Could probably close it at this point.",
+      "revId": "1e901d921db174d897d8732e9394f07effdad20d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
