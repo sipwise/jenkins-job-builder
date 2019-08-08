@@ -181,7 +181,7 @@ class JenkinsManager(object):
     def is_managed(self, job_name):
         xml = self.jenkins.get_job_config(job_name)
         try:
-            out = XML.fromstring(xml)
+            out = XML.fromstring(xml.encode('utf-8'))
             description = out.find(".//description").text
             return description.endswith(MAGIC_MANAGE_STRING)
         except (TypeError, AttributeError):
