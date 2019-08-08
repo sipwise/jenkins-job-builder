@@ -18,6 +18,7 @@
 import logging
 from pprint import pformat
 import re
+from six import string_types
 from string import Formatter
 
 from jenkins_jobs.errors import JenkinsJobsException
@@ -26,14 +27,16 @@ from jenkins_jobs.local_yaml import CustomLoader
 logger = logging.getLogger(__name__)
 
 
-def deep_format(obj, paramdict, allow_empty=False):
+def deep_format(obj, paramdict, allow_empty=False, template=True):
     """Apply the paramdict via str.format() to all string objects found within
        the supplied obj. Lists and dicts are traversed recursively."""
     # YAML serialisation was originally used to achieve this, but that places
     # limitations on the values in paramdict - the post-format result must
     # still be valid YAML (so substituting-in a string containing quotes, for
     # example, is problematic).
-    if hasattr(obj, 'format'):
+    # Only attempt to deep_format objects that are not of type str.
+    if hasattr(obj, 'format') and (not isinstance(obj, string_types) or
+                                   template):
         try:
             ret = CustomFormatter(allow_empty).format(obj, **paramdict)
         except KeyError as exc:
@@ -46,17 +49,21 @@ def deep_format(obj, paramdict, allow_empty=False):
                           "%s\nobj: %s\nparamdict: %s" %
                           (allow_empty, obj, paramdict))
             raise
-
     elif isinstance(obj, list):
         ret = type(obj)()
         for item in obj:
-            ret.append(deep_format(item, paramdict, allow_empty))
+            ret.append(deep_format(item, paramdict,
+                                   allow_empty=allow_empty,
+                                   template=template))
     elif isinstance(obj, dict):
         ret = type(obj)()
         for item in obj:
             try:
-                ret[CustomFormatter(allow_empty).format(item, **paramdict)] = \
-                    deep_format(obj[item], paramdict, allow_empty)
+                ret[CustomFormatter(allow_empty).format(item,
+                                                        **paramdict)] = \
+                    deep_format(obj[item], paramdict,
+                                allow_empty=allow_empty,
+                                template=template)
             except KeyError as exc:
                 missing_key = exc.args[0]
                 desc = "%s parameter missing to format %s\nGiven:\n%s" % (
@@ -72,7 +79,8 @@ def deep_format(obj, paramdict, allow_empty=False):
     if isinstance(ret, CustomLoader):
         # If we have a CustomLoader here, we've lazily-loaded a template;
         # attempt to format it.
-        ret = deep_format(ret, paramdict, allow_empty=allow_empty)
+        ret = deep_format(ret, paramdict, allow_empty=allow_empty,
+                          template=template)
     return ret
 
 

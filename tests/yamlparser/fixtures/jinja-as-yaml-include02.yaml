@@ -1,0 +1,10 @@
+- job:
+    name: test-job-as-yaml-inline
+    parameters:
+        - choice:
+            name: TEST_CHOICE
+            choices:
+                !j2-as-yaml: |
+                {% for item in ['a', 'b', 'c'] %}
+                - {{ item }}
+                {% endfor -%}

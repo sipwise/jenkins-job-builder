@@ -243,6 +243,16 @@ class YamlParser(object):
             if jobs_glob and not matches(job['name'], jobs_glob):
                 logger.debug("Ignoring job {0}".format(job['name']))
                 continue
+
+            # Attempt to format all parts of the job definition as they might
+            # be using custom loaders.
+            try:
+                job = deep_format(job, job, template=False)
+            except Exception:
+                logging.error(
+                    "Failure formatting job '%s' with itself", job)
+                raise
+
             logger.debug("Expanding job '{0}'".format(job['name']))
             self._formatDescription(job)
             self.jobs.append(job)
