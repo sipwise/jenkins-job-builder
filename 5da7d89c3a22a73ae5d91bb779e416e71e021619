@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_c508db92",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2019-08-12T11:35:19Z",
+      "side": 1,
+      "message": "I have to wonder if trying to base both lazy loading and jinja2 expansion off the same base object where it appears it is desirable to have two different behaviours when it comes to formatting is making the deep_format method more gnarly than is necessary.\n\nWould it work to have the jinja2 implement __str__ to render?",
+      "range": {
+        "startLine": 541,
+        "startChar": 0,
+        "endLine": 541,
+        "endChar": 33
+      },
+      "revId": "5da7d89c3a22a73ae5d91bb779e416e71e021619",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_7fa38801",
+        "filename": "jenkins_jobs/parser.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2019-08-12T11:35:19Z",
+      "side": 1,
+      "message": "This is what makes me think that it might be time to do something else rather than trying to reuse the substitution mechanism that is for templates \u0026 macros.\n\nOverriding the __str__ method might paper over this as it should result in the jinja2 being expanded by the XML rendering assuming it looks to convert objects to strings.",
+      "revId": "5da7d89c3a22a73ae5d91bb779e416e71e021619",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
