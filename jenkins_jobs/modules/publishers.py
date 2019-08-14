@@ -3521,6 +3521,8 @@ def workspace_cleanup(registry, xml_parent, data):
     :arg bool clean-parent: Cleanup matrix parent workspace (default false)
     :arg str external-deletion-command: external deletion command to run
         against files and directories
+    :arg bool disable-deferred-wipeout: Disable improved deferred wipeout
+        method (default false)
 
     Minimal Example:
 
@@ -3554,7 +3556,8 @@ def workspace_cleanup(registry, xml_parent, data):
     mappings = [
         ('dirmatch', 'deleteDirs', False),
         ('clean-parent', 'cleanupMatrixParent', False),
-        ('external-deletion-command', 'externalDelete', '')
+        ('external-deletion-command', 'externalDelete', ''),
+        ('disable-deferred-wipeout', 'disableDeferredWipeout', False),
     ]
     helpers.convert_mapping_to_xml(p, data, mappings, fail_required=True)
 

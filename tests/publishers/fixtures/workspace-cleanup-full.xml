@@ -15,6 +15,7 @@
       <deleteDirs>true</deleteDirs>
       <cleanupMatrixParent>true</cleanupMatrixParent>
       <externalDelete>command</externalDelete>
+      <disableDeferredWipeout>true</disableDeferredWipeout>
       <cleanWhenSuccess>false</cleanWhenSuccess>
       <cleanWhenUnstable>false</cleanWhenUnstable>
       <cleanWhenFailure>false</cleanWhenFailure>

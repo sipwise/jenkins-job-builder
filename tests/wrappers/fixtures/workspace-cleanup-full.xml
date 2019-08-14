@@ -15,6 +15,7 @@
       <deleteDirs>true</deleteDirs>
       <cleanupParameter>DO_WS_CLEANUP</cleanupParameter>
       <externalDelete>shred -u %s</externalDelete>
+      <disableDeferredWipeout>true</disableDeferredWipeout>
     </hudson.plugins.ws__cleanup.PreBuildCleanup>
   </buildWrappers>
 </project>

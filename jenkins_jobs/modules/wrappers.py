@@ -767,6 +767,8 @@ def workspace_cleanup(registry, xml_parent, data):
         determine whether to actually clean up
     :arg str external-deletion-command: external deletion command to run
         against files and directories
+    :arg bool disable-deferred-wipeout: Disable improved deferred wipeout
+        method (default false)
 
     Full Example:
 
@@ -808,6 +810,7 @@ def workspace_cleanup(registry, xml_parent, data):
         ("dirmatch", 'deleteDirs', False),
         ('check-parameter', 'cleanupParameter', ''),
         ('external-deletion-command', 'externalDelete', ''),
+        ('disable-deferred-wipeout', 'disableDeferredWipeout', False),
     ]
     helpers.convert_mapping_to_xml(p, data, mapping, fail_required=True)
 

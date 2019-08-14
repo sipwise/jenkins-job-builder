@@ -14,3 +14,4 @@ publishers:
       fail-build: false
       clean-parent: true
       external-deletion-command: 'command'
+      disable-deferred-wipeout: true
