@@ -1,0 +1,9 @@
+Code-Review+2: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Code-Review+2: Darragh Bailey (electrofelix) <daragh.bailey@gmail.com>
+Workflow+1: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 15 Aug 2019 19:00:56 +0000
+Reviewed-on: https://review.opendev.org/673317
+Project: jjb/jenkins-job-builder
+Branch: refs/heads/master
