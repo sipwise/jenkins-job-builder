@@ -523,16 +523,28 @@ class Jinja2Loader(CustomLoader):
     """A loader for Jinja2-templated files."""
 
     def __init__(self, contents, search_path):
-        self._template = jinja2.Template(contents)
-        self._template.environment.undefined = jinja2.StrictUndefined
-        self._template.environment.loader = jinja2.FileSystemLoader(
-            search_path)
-        self._loader = self._template.environment.loader
+        # capture template contents and search paths on loader creation.
+        self._contents = contents
+        self._search_path = search_path
+        self._template = None
+        self._loader = None
+
+    def __deepcopy__(self, memo):
+        # Jinja 2 templates are not deepcopy-able so just pass around
+        # the search_path and contents.
+        return Jinja2Loader(self._contents, self._search_path)
 
     def format(self, **kwargs):
-        # For some reasons loader is overwritten with incorrect one during
-        # instance lifecycle. It's not very clear how to fix this properly,
-        # so we just overwrite with correct one
+        # Wait until first render call to create a template then save
+        # the template on this instance for faster rendering.
+        if not self._template:
+            self._template = jinja2.Template(self._contents)
+            self._template.environment.undefined = jinja2.StrictUndefined
+            self._template.environment.loader = jinja2.FileSystemLoader(
+                self._search_path)
+            # Preserve this loader if it hasn't been overwritten
+            # elsewhere.
+            self._loader = self._template.environment.loader
         self._template.environment.loader = self._loader
         return self._template.render(kwargs)
 
