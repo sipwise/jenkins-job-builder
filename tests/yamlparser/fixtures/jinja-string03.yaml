@@ -1,0 +1,19 @@
+# Make sure Jinja subsittuions work from within "defaults"
+- defaults:
+    name: test-defaults
+    test_var:
+      !j2: "{% for x in [1, 2, 3] %}{{ x }}{% endfor %}"
+
+- project:
+    name: test-proj
+    jobs:
+      - test-jobs-{argument}:
+          argument:
+            - 1
+
+# This type of variable propagation only works in job templates.
+- job-template:
+    name: test-jobs-{argument}
+    defaults: test-defaults
+    builders:
+      - shell: "{test_var}"
