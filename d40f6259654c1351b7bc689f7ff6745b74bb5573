@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_cf779c9f",
+        "filename": ".pre-commit-config.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2019-08-23T13:19:56Z",
+      "side": 1,
+      "message": "So we need a minimum of python3.6 however I have python3.7 installed and I\u0027m not sure what the best way to handle users possibly having different python 3 versions installed.\n\nWith this method everyone who has python 3.5 and older will fail but everyone who has python 3.6 or newer will work.\n\nThe examples I\u0027ve seen on the internet is folks pin it to python 3.6 or 3.7 but that seems less flexible to me.\n\nPersonally I think setting a generic python3 as I\u0027d hope contributors have relatively recent distros installed on their dev systems.",
+      "range": {
+        "startLine": 20,
+        "startChar": 6,
+        "endLine": 20,
+        "endChar": 31
+      },
+      "revId": "d40f6259654c1351b7bc689f7ff6745b74bb5573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
