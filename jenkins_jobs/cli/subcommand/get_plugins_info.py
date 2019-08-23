@@ -25,17 +25,18 @@ logger = logging.getLogger(__name__)
 
 
 class GetPluginsInfoSubCommand(base.BaseSubCommand):
-
     def parse_args(self, subparser):
         plugins_info = subparser.add_parser(
-            'get-plugins-info',
-            help='get plugins info yaml by querying Jenkins server.')
+            "get-plugins-info", help="get plugins info yaml by querying Jenkins server."
+        )
 
         plugins_info.add_argument(
-            '-o', '--output-file',
-            default='plugins_info.yaml',
-            dest='plugins_info_file',
-            help='file to save output to.')
+            "-o",
+            "--output-file",
+            default="plugins_info.yaml",
+            dest="plugins_info_file",
+            help="file to save output to.",
+        )
 
     def execute(self, options, jjb_config):
         builder = JenkinsManager(jjb_config)
@@ -43,14 +44,14 @@ class GetPluginsInfoSubCommand(base.BaseSubCommand):
         plugins_info = []
         for plugin in plugin_data:
             info = {
-                'longName': str(plugin['longName']),
-                'shortName': str(plugin['shortName']),
-                'version': str(plugin['version']),
+                "longName": str(plugin["longName"]),
+                "shortName": str(plugin["shortName"]),
+                "version": str(plugin["version"]),
             }
             plugins_info.append(info)
 
         if options.plugins_info_file:
-            with open(options.plugins_info_file, 'w') as outfile:
+            with open(options.plugins_info_file, "w") as outfile:
                 outfile.write(yaml.dump(plugins_info))
             logger.info("Generated {} file".format(options.plugins_info_file))
         else:

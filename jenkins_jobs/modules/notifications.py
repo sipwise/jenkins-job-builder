@@ -52,44 +52,44 @@ def http_endpoint(registry, xml_parent, data):
        :language: yaml
 
     """
-    endpoint_element = XML.SubElement(xml_parent,
-                                      'com.tikal.hudson.plugins.notification.'
-                                      'Endpoint')
-    supported_formats = ['JSON', 'XML']
-    supported_events = ['started', 'completed', 'finalized', 'all']
-    fmt = data.get('format', 'JSON').upper()
-    event = data.get('event', 'all').lower()
+    endpoint_element = XML.SubElement(
+        xml_parent, "com.tikal.hudson.plugins.notification." "Endpoint"
+    )
+    supported_formats = ["JSON", "XML"]
+    supported_events = ["started", "completed", "finalized", "all"]
+    fmt = data.get("format", "JSON").upper()
+    event = data.get("event", "all").lower()
     mapping = [
-        ('', 'format', fmt, supported_formats),
-        ('', 'protocol', 'HTTP'),
-        ('', 'event', event, supported_events),
-        ('timeout', 'timeout', 30000),
-        ('url', 'url', None),
-        ('log', 'loglines', 0),
+        ("", "format", fmt, supported_formats),
+        ("", "protocol", "HTTP"),
+        ("", "event", event, supported_events),
+        ("timeout", "timeout", 30000),
+        ("url", "url", None),
+        ("log", "loglines", 0),
     ]
-    helpers.convert_mapping_to_xml(
-        endpoint_element, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(endpoint_element, data, mapping, fail_required=True)
 
 
 class Notifications(jenkins_jobs.modules.base.Base):
     sequence = 22
 
-    component_type = 'notification'
-    component_list_type = 'notifications'
+    component_type = "notification"
+    component_list_type = "notifications"
 
     def gen_xml(self, xml_parent, data):
-        properties = xml_parent.find('properties')
+        properties = xml_parent.find("properties")
         if properties is None:
-            properties = XML.SubElement(xml_parent, 'properties')
+            properties = XML.SubElement(xml_parent, "properties")
 
-        notifications = data.get('notifications', [])
+        notifications = data.get("notifications", [])
         if notifications:
-            notify_element = XML.SubElement(properties,
-                                            'com.tikal.hudson.plugins.'
-                                            'notification.'
-                                            'HudsonNotificationProperty')
-            endpoints_element = XML.SubElement(notify_element, 'endpoints')
+            notify_element = XML.SubElement(
+                properties,
+                "com.tikal.hudson.plugins."
+                "notification."
+                "HudsonNotificationProperty",
+            )
+            endpoints_element = XML.SubElement(notify_element, "endpoints")
 
             for endpoint in notifications:
-                self.registry.dispatch('notification',
-                                       endpoints_element, endpoint)
+                self.registry.dispatch("notification", endpoints_element, endpoint)

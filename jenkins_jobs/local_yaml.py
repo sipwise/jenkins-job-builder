@@ -235,9 +235,11 @@ class OrderedConstructor(BaseConstructor):
             self.flatten_mapping(node)
         else:
             raise yaml.constructor.ConstructorError(
-                None, None,
-                'expected a mapping node, but found %s' % node.id,
-                node.start_mark)
+                None,
+                None,
+                "expected a mapping node, but found %s" % node.id,
+                node.start_mark,
+            )
 
         mapping = OrderedDict()
         for key_node, value_node in node.value:
@@ -246,23 +248,26 @@ class OrderedConstructor(BaseConstructor):
                 hash(key)
             except TypeError as exc:
                 raise yaml.constructor.ConstructorError(
-                    'while constructing a mapping', node.start_mark,
-                    'found unacceptable key (%s)' % exc, key_node.start_mark)
+                    "while constructing a mapping",
+                    node.start_mark,
+                    "found unacceptable key (%s)" % exc,
+                    key_node.start_mark,
+                )
             value = self.construct_object(value_node, deep=False)
             mapping[key] = value
         data.update(mapping)
 
 
 class OrderedRepresenter(BaseRepresenter):
-
     def represent_yaml_mapping(self, mapping, flow_style=None):
-        tag = u'tag:yaml.org,2002:map'
+        tag = u"tag:yaml.org,2002:map"
         node = self.represent_mapping(tag, mapping, flow_style=flow_style)
         return node
 
 
 class LocalAnchorLoader(yaml.Loader):
     """Subclass for yaml.Loader which keeps Alias between calls"""
+
     anchors = {}
 
     def __init__(self, *args, **kwargs):
@@ -319,14 +324,13 @@ class LocalLoader(OrderedConstructor, LocalAnchorLoader):
         # make sure to pop off any local settings before passing to
         # the parent constructor as any unknown args may cause errors.
         self.search_path = list()
-        if 'search_path' in kwargs:
-            for p in kwargs.pop('search_path'):
-                logger.debug("Adding '{0}' to search path for include tags"
-                             .format(p))
+        if "search_path" in kwargs:
+            for p in kwargs.pop("search_path"):
+                logger.debug("Adding '{0}' to search path for include tags".format(p))
                 self.search_path.append(os.path.normpath(p))
 
-        if 'escape_callback' in kwargs:
-            self.escape_callback = kwargs.pop('escape_callback')
+        if "escape_callback" in kwargs:
+            self.escape_callback = kwargs.pop("escape_callback")
         else:
             self.escape_callback = self._escape
 
@@ -334,16 +338,17 @@ class LocalLoader(OrderedConstructor, LocalAnchorLoader):
 
         # constructor to preserve order of maps and ensure that the order of
         # keys returned is consistent across multiple python versions
-        self.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG,
-                             type(self).construct_yaml_map)
+        self.add_constructor(
+            yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG,
+            type(self).construct_yaml_map,
+        )
 
-        if hasattr(self.stream, 'name'):
-            self.search_path.append(os.path.normpath(
-                os.path.dirname(self.stream.name)))
+        if hasattr(self.stream, "name"):
+            self.search_path.append(os.path.normpath(os.path.dirname(self.stream.name)))
         self.search_path.append(os.path.normpath(os.path.curdir))
 
     def _escape(self, data):
-        return re.sub(r'({|})', r'\1\1', data)
+        return re.sub(r"({|})", r"\1\1", data)
 
 
 class LocalDumper(OrderedRepresenter, yaml.Dumper):
@@ -352,12 +357,10 @@ class LocalDumper(OrderedRepresenter, yaml.Dumper):
 
         # representer to ensure conversion back looks like normal
         # mapping and hides that we use OrderedDict internally
-        self.add_representer(OrderedDict,
-                             type(self).represent_yaml_mapping)
+        self.add_representer(OrderedDict, type(self).represent_yaml_mapping)
         # convert any tuples to lists as the JJB input is generally
         # in list format
-        self.add_representer(tuple,
-                             type(self).represent_list)
+        self.add_representer(tuple, type(self).represent_list)
 
 
 class BaseYAMLObject(YAMLObject):
@@ -366,7 +369,7 @@ class BaseYAMLObject(YAMLObject):
 
 
 class J2String(BaseYAMLObject):
-    yaml_tag = u'!j2:'
+    yaml_tag = u"!j2:"
 
     @classmethod
     def from_yaml(cls, loader, node):
@@ -374,7 +377,7 @@ class J2String(BaseYAMLObject):
 
 
 class YamlListJoin(BaseYAMLObject):
-    yaml_tag = u'!join:'
+    yaml_tag = u"!join:"
 
     @classmethod
     def from_yaml(cls, loader, node):
@@ -382,26 +385,34 @@ class YamlListJoin(BaseYAMLObject):
             delimiter = node.value[0].value
             if not isinstance(node.value[1], yaml.SequenceNode):
                 raise yaml.constructor.ConstructorError(
-                    None, None, "expected sequence node for join data, but "
-                                "found %s" % node.value[1].id, node.start_mark)
+                    None,
+                    None,
+                    "expected sequence node for join data, but "
+                    "found %s" % node.value[1].id,
+                    node.start_mark,
+                )
 
             return delimiter.join((v.value for v in node.value[1].value))
         else:
             raise yaml.constructor.ConstructorError(
-                None, None, "expected sequence node, but found %s" % node.id,
-                node.start_mark)
+                None,
+                None,
+                "expected sequence node, but found %s" % node.id,
+                node.start_mark,
+            )
 
 
 class YamlInclude(BaseYAMLObject):
-    yaml_tag = u'!include:'
+    yaml_tag = u"!include:"
 
     @classmethod
     def _find_file(cls, filename, search_path):
         for dirname in search_path:
             candidate = os.path.expanduser(os.path.join(dirname, filename))
             if os.path.isfile(candidate):
-                logger.debug("Including file '{0}' from path '{1}'"
-                            .format(filename, dirname))
+                logger.debug(
+                    "Including file '{0}' from path '{1}'".format(filename, dirname)
+                )
                 return candidate
         return filename
 
@@ -415,11 +426,14 @@ class YamlInclude(BaseYAMLObject):
 
         filename = cls._find_file(node_str, loader.search_path)
         try:
-            with io.open(filename, 'r', encoding='utf-8') as f:
+            with io.open(filename, "r", encoding="utf-8") as f:
                 return f.read()
         except Exception:
-            logger.error("Failed to include file using search path: '{0}'"
-                         .format(':'.join(loader.search_path)))
+            logger.error(
+                "Failed to include file using search path: '{0}'".format(
+                    ":".join(loader.search_path)
+                )
+            )
             raise
 
     @classmethod
@@ -428,15 +442,14 @@ class YamlInclude(BaseYAMLObject):
         if isinstance(contents, LazyLoader):
             return contents
 
-        data = yaml.load(contents,
-                         functools.partial(cls.yaml_loader,
-                                           search_path=loader.search_path))
+        data = yaml.load(
+            contents, functools.partial(cls.yaml_loader, search_path=loader.search_path)
+        )
         return data
 
     @classmethod
     def _lazy_load(cls, loader, tag, node_str):
-        logger.info("Lazy loading of file template '{0}' enabled"
-                    .format(node_str))
+        logger.info("Lazy loading of file template '{0}' enabled".format(node_str))
         return LazyLoader((cls, loader, node_str))
 
     @classmethod
@@ -444,20 +457,24 @@ class YamlInclude(BaseYAMLObject):
         if isinstance(node, yaml.ScalarNode):
             return cls._from_file(loader, node)
         elif isinstance(node, yaml.SequenceNode):
-            contents = [cls._from_file(loader, scalar_node)
-                        for scalar_node in node.value]
+            contents = [
+                cls._from_file(loader, scalar_node) for scalar_node in node.value
+            ]
             if any(isinstance(s, CustomLoader) for s in contents):
                 return CustomLoaderCollection(contents)
 
-            return u'\n'.join(contents)
+            return u"\n".join(contents)
         else:
             raise yaml.constructor.ConstructorError(
-                None, None, "expected either a sequence or scalar node, but "
-                "found %s" % node.id, node.start_mark)
+                None,
+                None,
+                "expected either a sequence or scalar node, but " "found %s" % node.id,
+                node.start_mark,
+            )
 
 
 class YamlIncludeRaw(YamlInclude):
-    yaml_tag = u'!include-raw:'
+    yaml_tag = u"!include-raw:"
 
     @classmethod
     def _from_file(cls, loader, node):
@@ -465,23 +482,26 @@ class YamlIncludeRaw(YamlInclude):
 
 
 class YamlIncludeRawEscape(YamlIncludeRaw):
-    yaml_tag = u'!include-raw-escape:'
+    yaml_tag = u"!include-raw-escape:"
 
     @classmethod
     def from_yaml(cls, loader, node):
         data = YamlIncludeRaw.from_yaml(loader, node)
         if isinstance(data, LazyLoader):
-            logger.warning("Replacing %s tag with %s since lazy loading means "
-                           "file contents will not be deep formatted for "
-                           "variable substitution.", cls.yaml_tag,
-                           YamlIncludeRaw.yaml_tag)
+            logger.warning(
+                "Replacing %s tag with %s since lazy loading means "
+                "file contents will not be deep formatted for "
+                "variable substitution.",
+                cls.yaml_tag,
+                YamlIncludeRaw.yaml_tag,
+            )
             return data
         else:
             return loader.escape_callback(data)
 
 
 class YamlIncludeJinja2(YamlIncludeRaw):
-    yaml_tag = u'!include-jinja2:'
+    yaml_tag = u"!include-jinja2:"
 
     @classmethod
     def _from_file(cls, loader, node):
@@ -492,26 +512,28 @@ class YamlIncludeJinja2(YamlIncludeRaw):
 
 
 class DeprecatedTag(BaseYAMLObject):
-
     @classmethod
     def from_yaml(cls, loader, node):
-        logger.warning("tag '%s' is deprecated, switch to using '%s'",
-                       cls.yaml_tag, cls._new.yaml_tag)
+        logger.warning(
+            "tag '%s' is deprecated, switch to using '%s'",
+            cls.yaml_tag,
+            cls._new.yaml_tag,
+        )
         return cls._new.from_yaml(loader, node)
 
 
 class YamlIncludeDeprecated(DeprecatedTag):
-    yaml_tag = u'!include'
+    yaml_tag = u"!include"
     _new = YamlInclude
 
 
 class YamlIncludeRawDeprecated(DeprecatedTag):
-    yaml_tag = u'!include-raw'
+    yaml_tag = u"!include-raw"
     _new = YamlIncludeRaw
 
 
 class YamlIncludeRawEscapeDeprecated(DeprecatedTag):
-    yaml_tag = u'!include-raw-escape'
+    yaml_tag = u"!include-raw-escape"
     _new = YamlIncludeRawEscape
 
 
@@ -525,8 +547,7 @@ class Jinja2Loader(CustomLoader):
     def __init__(self, contents, search_path):
         self._template = jinja2.Template(contents)
         self._template.environment.undefined = jinja2.StrictUndefined
-        self._template.environment.loader = jinja2.FileSystemLoader(
-            search_path)
+        self._template.environment.loader = jinja2.FileSystemLoader(search_path)
         self._loader = self._template.environment.loader
 
     def format(self, **kwargs):
@@ -539,11 +560,12 @@ class Jinja2Loader(CustomLoader):
 
 class CustomLoaderCollection(object):
     """Helper class to format a collection of CustomLoader objects"""
+
     def __init__(self, sequence):
         self._data = sequence
 
     def format(self, *args, **kwargs):
-        return u'\n'.join(item.format(*args, **kwargs) for item in self._data)
+        return u"\n".join(item.format(*args, **kwargs) for item in self._data)
 
 
 class LazyLoader(CustomLoader):
@@ -564,8 +586,8 @@ class LazyLoader(CustomLoader):
 
     def format(self, *args, **kwargs):
         node = yaml.ScalarNode(
-            tag=self._node.tag,
-            value=self._node.value.format(*args, **kwargs))
+            tag=self._node.tag, value=self._node.value.format(*args, **kwargs)
+        )
         return self._cls.from_yaml(self._loader, node)
 
 

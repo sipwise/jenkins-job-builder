@@ -227,147 +227,153 @@ import jenkins_jobs.modules.helpers as helpers
 import jenkins_jobs.modules.view_jobfilters as view_jobfilters
 
 COLUMN_DICT = {
-    'status': 'hudson.views.StatusColumn',
-    'weather': 'hudson.views.WeatherColumn',
-    'job': 'hudson.views.JobColumn',
-    'last-success': 'hudson.views.LastSuccessColumn',
-    'last-failure': 'hudson.views.LastFailureColumn',
-    'last-duration': 'hudson.views.LastDurationColumn',
-    'build-button': 'hudson.views.BuildButtonColumn',
-    'last-stable': 'hudson.views.LastStableColumn',
-    'robot-list': 'hudson.plugins.robot.view.RobotListViewColumn',
-    'find-bugs': 'hudson.plugins.findbugs.FindBugsColumn',
-    'jacoco': 'hudson.plugins.jacococoveragecolumn.JaCoCoColumn',
-    'git-branch': 'hudson.plugins.git.GitBranchSpecifierColumn',
-    'schedule-build':
-        'org.jenkinsci.plugins.schedulebuild.ScheduleBuildButtonColumn',
-    'priority-sorter': 'jenkins.advancedqueue.PrioritySorterJobColumn',
-    'build-filter': 'hudson.views.BuildFilterColumn',
-    'desc': 'jenkins.branch.DescriptionColumn',
-    'policy-violations':
-        'com.sonatype.insight.ci.hudson.QualityColumn '
-        'plugin="sonatype-clm-ci"',
-    'member-graph-view':
-        'com.barchart.jenkins.cascade.GraphViewColumn '
-        'plugin="maven-release-cascade"',
-    'extra-tests-total': [
-        ['jenkins.plugins.extracolumns.TestResultColumn',
-         {'plugin': 'extra-columns'}],
-        '<testResultFormat>2</testResultFormat>'],
-    'extra-tests-failed': [
-        ['jenkins.plugins.extracolumns.TestResultColumn',
-         {'plugin': 'extra-columns'}],
-        '<testResultFormat>3</testResultFormat>'],
-    'extra-tests-passed': [
-        ['jenkins.plugins.extracolumns.TestResultColumn',
-         {'plugin': 'extra-columns'}],
-        '<testResultFormat>4</testResultFormat>'],
-    'extra-tests-skipped': [
-        ['jenkins.plugins.extracolumns.TestResultColumn',
-         {'plugin': 'extra-columns'}],
-        '<testResultFormat>5</testResultFormat>'],
-    'extra-tests-format-0': [
-        ['jenkins.plugins.extracolumns.TestResultColumn',
-         {'plugin': 'extra-columns'}],
-        '<testResultFormat>0</testResultFormat>'],
-    'extra-tests-format-1': [
-        ['jenkins.plugins.extracolumns.TestResultColumn',
-         {'plugin': 'extra-columns'}],
-        '<testResultFormat>1</testResultFormat>'],
-    'extra-build-description': [
-        ['jenkins.plugins.extracolumns.BuildDescriptionColumn',
-         {'plugin': 'extra-columns'}],
-        '<columnWidth>3</columnWidth>', '<forceWidth>false</forceWidth>'],
-    'extra-build-parameters': [
-        ['jenkins.plugins.extracolumns.BuildParametersColumn',
-         {'plugin': 'extra-columns'}],
-        '<singlePara>false</singlePara>', '<parameterName/>'],
-    'extra-last-user-name':
-        'jenkins.plugins.extracolumns.UserNameColumn'
-        ' plugin="extra-columns"',
-    'extra-last-output':
-        'jenkins.plugins.extracolumns.LastBuildConsoleColumn'
-        ' plugin="extra-columns"',
-    'extra-workspace-link':
-        'jenkins.plugins.extracolumns.WorkspaceColumn '
-        'plugin="extra-columns"',
-    'extra-configure-button':
-        'jenkins.plugins.extracolumns.ConfigureProjectColumn'
-        ' plugin="extra-columns"',
+    "status": "hudson.views.StatusColumn",
+    "weather": "hudson.views.WeatherColumn",
+    "job": "hudson.views.JobColumn",
+    "last-success": "hudson.views.LastSuccessColumn",
+    "last-failure": "hudson.views.LastFailureColumn",
+    "last-duration": "hudson.views.LastDurationColumn",
+    "build-button": "hudson.views.BuildButtonColumn",
+    "last-stable": "hudson.views.LastStableColumn",
+    "robot-list": "hudson.plugins.robot.view.RobotListViewColumn",
+    "find-bugs": "hudson.plugins.findbugs.FindBugsColumn",
+    "jacoco": "hudson.plugins.jacococoveragecolumn.JaCoCoColumn",
+    "git-branch": "hudson.plugins.git.GitBranchSpecifierColumn",
+    "schedule-build": "org.jenkinsci.plugins.schedulebuild.ScheduleBuildButtonColumn",
+    "priority-sorter": "jenkins.advancedqueue.PrioritySorterJobColumn",
+    "build-filter": "hudson.views.BuildFilterColumn",
+    "desc": "jenkins.branch.DescriptionColumn",
+    "policy-violations": "com.sonatype.insight.ci.hudson.QualityColumn "
+    'plugin="sonatype-clm-ci"',
+    "member-graph-view": "com.barchart.jenkins.cascade.GraphViewColumn "
+    'plugin="maven-release-cascade"',
+    "extra-tests-total": [
+        ["jenkins.plugins.extracolumns.TestResultColumn", {"plugin": "extra-columns"}],
+        "<testResultFormat>2</testResultFormat>",
+    ],
+    "extra-tests-failed": [
+        ["jenkins.plugins.extracolumns.TestResultColumn", {"plugin": "extra-columns"}],
+        "<testResultFormat>3</testResultFormat>",
+    ],
+    "extra-tests-passed": [
+        ["jenkins.plugins.extracolumns.TestResultColumn", {"plugin": "extra-columns"}],
+        "<testResultFormat>4</testResultFormat>",
+    ],
+    "extra-tests-skipped": [
+        ["jenkins.plugins.extracolumns.TestResultColumn", {"plugin": "extra-columns"}],
+        "<testResultFormat>5</testResultFormat>",
+    ],
+    "extra-tests-format-0": [
+        ["jenkins.plugins.extracolumns.TestResultColumn", {"plugin": "extra-columns"}],
+        "<testResultFormat>0</testResultFormat>",
+    ],
+    "extra-tests-format-1": [
+        ["jenkins.plugins.extracolumns.TestResultColumn", {"plugin": "extra-columns"}],
+        "<testResultFormat>1</testResultFormat>",
+    ],
+    "extra-build-description": [
+        [
+            "jenkins.plugins.extracolumns.BuildDescriptionColumn",
+            {"plugin": "extra-columns"},
+        ],
+        "<columnWidth>3</columnWidth>",
+        "<forceWidth>false</forceWidth>",
+    ],
+    "extra-build-parameters": [
+        [
+            "jenkins.plugins.extracolumns.BuildParametersColumn",
+            {"plugin": "extra-columns"},
+        ],
+        "<singlePara>false</singlePara>",
+        "<parameterName/>",
+    ],
+    "extra-last-user-name": "jenkins.plugins.extracolumns.UserNameColumn"
+    ' plugin="extra-columns"',
+    "extra-last-output": "jenkins.plugins.extracolumns.LastBuildConsoleColumn"
+    ' plugin="extra-columns"',
+    "extra-workspace-link": "jenkins.plugins.extracolumns.WorkspaceColumn "
+    'plugin="extra-columns"',
+    "extra-configure-button": "jenkins.plugins.extracolumns.ConfigureProjectColumn"
+    ' plugin="extra-columns"',
 }
-DEFAULT_COLUMNS = ['status', 'weather', 'job', 'last-success', 'last-failure',
-                   'last-duration', 'build-button']
+DEFAULT_COLUMNS = [
+    "status",
+    "weather",
+    "job",
+    "last-success",
+    "last-failure",
+    "last-duration",
+    "build-button",
+]
 
 
 class List(jenkins_jobs.modules.base.Base):
     sequence = 0
 
     def root_xml(self, data):
-        root = XML.Element('hudson.model.ListView')
+        root = XML.Element("hudson.model.ListView")
 
         mapping = [
-            ('name', 'name', None),
-            ('description', 'description', ''),
-            ('filter-executors', 'filterExecutors', False),
-            ('filter-queue', 'filterQueue', False),
+            ("name", "name", None),
+            ("description", "description", ""),
+            ("filter-executors", "filterExecutors", False),
+            ("filter-queue", "filterQueue", False),
         ]
         helpers.convert_mapping_to_xml(root, data, mapping, fail_required=True)
 
-        XML.SubElement(root, 'properties',
-                       {'class': 'hudson.model.View$PropertyList'})
+        XML.SubElement(root, "properties", {"class": "hudson.model.View$PropertyList"})
 
-        jn_xml = XML.SubElement(root, 'jobNames')
-        jobnames = data.get('job-name', None)
+        jn_xml = XML.SubElement(root, "jobNames")
+        jobnames = data.get("job-name", None)
         XML.SubElement(
-            jn_xml,
-            'comparator', {
-                'class': 'hudson.util.CaseInsensitiveComparator'
-            }
+            jn_xml, "comparator", {"class": "hudson.util.CaseInsensitiveComparator"}
         )
         if jobnames is not None:
             # Job names must be sorted in the xml
             jobnames = sorted(jobnames, key=str.lower)
             for jobname in jobnames:
-                XML.SubElement(jn_xml, 'string').text = str(jobname)
+                XML.SubElement(jn_xml, "string").text = str(jobname)
 
-        job_filter_xml = XML.SubElement(root, 'jobFilters')
-        jobfilters = data.get('job-filters', [])
+        job_filter_xml = XML.SubElement(root, "jobFilters")
+        jobfilters = data.get("job-filters", [])
 
         for jobfilter in jobfilters:
-            filter = getattr(view_jobfilters, jobfilter.replace('-', '_'))
+            filter = getattr(view_jobfilters, jobfilter.replace("-", "_"))
             filter(job_filter_xml, jobfilters.get(jobfilter))
 
-        c_xml = XML.SubElement(root, 'columns')
-        columns = data.get('columns', DEFAULT_COLUMNS)
+        c_xml = XML.SubElement(root, "columns")
+        columns = data.get("columns", DEFAULT_COLUMNS)
 
         for column in columns:
             if isinstance(column, dict):
-                if 'extra-build-parameter' in column:
-                    p_name = column['extra-build-parameter']
+                if "extra-build-parameter" in column:
+                    p_name = column["extra-build-parameter"]
                     x = XML.SubElement(
                         c_xml,
-                        'jenkins.plugins.extracolumns.BuildParametersColumn',
-                        plugin='extra-columns'
+                        "jenkins.plugins.extracolumns.BuildParametersColumn",
+                        plugin="extra-columns",
                     )
-                    x.append(XML.fromstring(
-                        '<singlePara>true</singlePara>'))
-                    x.append(XML.fromstring(
-                        '<parameterName>%s</parameterName>' % p_name))
+                    x.append(XML.fromstring("<singlePara>true</singlePara>"))
+                    x.append(
+                        XML.fromstring("<parameterName>%s</parameterName>" % p_name)
+                    )
             else:
                 if column in COLUMN_DICT:
                     if isinstance(COLUMN_DICT[column], list):
-                        x = XML.SubElement(c_xml, COLUMN_DICT[column][0][0],
-                                           **COLUMN_DICT[column][0][1])
+                        x = XML.SubElement(
+                            c_xml,
+                            COLUMN_DICT[column][0][0],
+                            **COLUMN_DICT[column][0][1]
+                        )
                         for tag in COLUMN_DICT[column][1:]:
                             x.append(XML.fromstring(tag))
                     else:
                         XML.SubElement(c_xml, COLUMN_DICT[column])
         mapping = [
-            ('regex', 'includeRegex', None),
-            ('recurse', 'recurse', False),
-            ('status-filter', 'statusFilter', None),
+            ("regex", "includeRegex", None),
+            ("recurse", "recurse", False),
+            ("status-filter", "statusFilter", None),
         ]
-        helpers.convert_mapping_to_xml(
-            root, data, mapping, fail_required=False)
+        helpers.convert_mapping_to_xml(root, data, mapping, fail_required=False)
 
         return root

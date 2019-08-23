@@ -59,16 +59,17 @@ def builds_chain_fingerprinter(registry, xml_parent, data):
     .. literalinclude:: /../../tests/properties/fixtures/fingerprinter.yaml
        :language: yaml
     """
-    fingerprinter = XML.SubElement(xml_parent,
-                                   'org.jenkinsci.plugins.'
-                                   'buildschainfingerprinter.'
-                                   'AutomaticFingerprintJobProperty')
+    fingerprinter = XML.SubElement(
+        xml_parent,
+        "org.jenkinsci.plugins."
+        "buildschainfingerprinter."
+        "AutomaticFingerprintJobProperty",
+    )
     mapping = [
-        ('per-builds-chain', 'isPerBuildsChainEnabled', False),
-        ('per-job-chain', 'isPerJobsChainEnabled', False),
+        ("per-builds-chain", "isPerBuildsChainEnabled", False),
+        ("per-job-chain", "isPerJobsChainEnabled", False),
     ]
-    helpers.convert_mapping_to_xml(
-        fingerprinter, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(fingerprinter, data, mapping, fail_required=True)
 
 
 def ownership(registry, xml_parent, data):
@@ -87,16 +88,17 @@ def ownership(registry, xml_parent, data):
     """
     ownership_plugin = XML.SubElement(
         xml_parent,
-        'com.synopsys.arc.jenkins.plugins.ownership.jobs.JobOwnerJobProperty')
-    ownership = XML.SubElement(ownership_plugin, 'ownership')
-    owner = str(data.get('enabled', True)).lower()
-    XML.SubElement(ownership, 'ownershipEnabled').text = owner
+        "com.synopsys.arc.jenkins.plugins.ownership.jobs.JobOwnerJobProperty",
+    )
+    ownership = XML.SubElement(ownership_plugin, "ownership")
+    owner = str(data.get("enabled", True)).lower()
+    XML.SubElement(ownership, "ownershipEnabled").text = owner
 
-    XML.SubElement(ownership, 'primaryOwnerId').text = data.get('owner')
+    XML.SubElement(ownership, "primaryOwnerId").text = data.get("owner")
 
-    coownersIds = XML.SubElement(ownership, 'coownersIds')
-    for coowner in data.get('co-owners', []):
-        XML.SubElement(coownersIds, 'string').text = coowner
+    coownersIds = XML.SubElement(ownership, "coownersIds")
+    for coowner in data.get("co-owners", []):
+        XML.SubElement(coownersIds, "string").text = coowner
 
 
 def promoted_build(registry, xml_parent, data):
@@ -115,13 +117,14 @@ def promoted_build(registry, xml_parent, data):
     .. literalinclude:: /../../tests/properties/fixtures/promoted_build.yaml
        :language: yaml
     """
-    promoted = XML.SubElement(xml_parent, 'hudson.plugins.promoted__builds.'
-                                          'JobPropertyImpl')
-    names = data.get('names', [])
+    promoted = XML.SubElement(
+        xml_parent, "hudson.plugins.promoted__builds." "JobPropertyImpl"
+    )
+    names = data.get("names", [])
     if names:
-        active_processes = XML.SubElement(promoted, 'activeProcessNames')
+        active_processes = XML.SubElement(promoted, "activeProcessNames")
         for n in names:
-            XML.SubElement(active_processes, 'string').text = str(n)
+            XML.SubElement(active_processes, "string").text = str(n)
 
 
 def gitbucket(parser, xml_parent, data):
@@ -143,15 +146,12 @@ def gitbucket(parser, xml_parent, data):
        :language: yaml
     """
     gitbucket = XML.SubElement(
-        xml_parent, 'org.jenkinsci.plugins.gitbucket.GitBucketProjectProperty')
-    gitbucket.set('plugin', 'gitbucket')
+        xml_parent, "org.jenkinsci.plugins.gitbucket.GitBucketProjectProperty"
+    )
+    gitbucket.set("plugin", "gitbucket")
 
-    mapping = [
-        ('url', 'url', None),
-        ('link-enabled', 'linkEnabled', False),
-    ]
-    helpers.convert_mapping_to_xml(
-        gitbucket, data, mapping, fail_required=True)
+    mapping = [("url", "url", None), ("link-enabled", "linkEnabled", False)]
+    helpers.convert_mapping_to_xml(gitbucket, data, mapping, fail_required=True)
 
 
 def github(registry, xml_parent, data):
@@ -174,13 +174,11 @@ def github(registry, xml_parent, data):
        :language: yaml
     """
     github = XML.SubElement(
-        xml_parent, 'com.coravy.hudson.plugins.github.GithubProjectProperty')
-    github.set('plugin', 'github')
+        xml_parent, "com.coravy.hudson.plugins.github.GithubProjectProperty"
+    )
+    github.set("plugin", "github")
 
-    mapping = [
-        ('url', 'projectUrl', None),
-        ('display-name', 'displayName', ''),
-    ]
+    mapping = [("url", "projectUrl", None), ("display-name", "displayName", "")]
     helpers.convert_mapping_to_xml(github, data, mapping, fail_required=True)
 
 
@@ -197,12 +195,11 @@ def gitlab(registry, xml_parent, data):
     .. literalinclude:: /../../tests/properties/fixtures/gitlab.yaml
        :language: yaml
     """
-    gitlab = XML.SubElement(xml_parent,
-                            'com.dabsquared.gitlabjenkins.connection.'
-                            'GitLabConnectionProperty')
-    mapping = [
-        ('connection', 'gitLabConnection', None),
-    ]
+    gitlab = XML.SubElement(
+        xml_parent,
+        "com.dabsquared.gitlabjenkins.connection." "GitLabConnectionProperty",
+    )
+    mapping = [("connection", "gitLabConnection", None)]
     helpers.convert_mapping_to_xml(gitlab, data, mapping, fail_required=True)
 
 
@@ -219,12 +216,10 @@ def gitlab_logo(registry, xml_parent, data):
     .. literalinclude:: /../../tests/properties/fixtures/gitlab-logo.yaml
        :language: yaml
     """
-    logo = XML.SubElement(xml_parent,
-                          'org.jenkinsci.plugins.gitlablogo.'
-                          'GitlabLogoProperty')
-    mapping = [
-        ('repository-name', 'repositoryName', None)
-    ]
+    logo = XML.SubElement(
+        xml_parent, "org.jenkinsci.plugins.gitlablogo." "GitlabLogoProperty"
+    )
+    mapping = [("repository-name", "repositoryName", None)]
     helpers.convert_mapping_to_xml(logo, data, mapping, fail_required=True)
 
 
@@ -238,9 +233,7 @@ def disk_usage(registry, xml_parent, data):
     .. literalinclude:: /../../tests/properties/fixtures/disk-usage.yaml
        :language: yaml
     """
-    XML.SubElement(xml_parent,
-                   'hudson.plugins.disk__usage.'
-                   'DiskUsageProperty')
+    XML.SubElement(xml_parent, "hudson.plugins.disk__usage." "DiskUsageProperty")
 
 
 def least_load(registry, xml_parent, data):
@@ -255,12 +248,11 @@ def least_load(registry, xml_parent, data):
     .. literalinclude:: /../../tests/properties/fixtures/least-load002.yaml
        :language: yaml
     """
-    least = XML.SubElement(xml_parent,
-                           'org.bstick12.jenkinsci.plugins.leastload.'
-                           'LeastLoadDisabledProperty')
-    mapping = [
-        ('disabled', 'leastLoadDisabled', True),
-    ]
+    least = XML.SubElement(
+        xml_parent,
+        "org.bstick12.jenkinsci.plugins.leastload." "LeastLoadDisabledProperty",
+    )
+    mapping = [("disabled", "leastLoadDisabled", True)]
     helpers.convert_mapping_to_xml(least, data, mapping, fail_required=True)
 
 
@@ -288,43 +280,41 @@ def throttle(registry, xml_parent, data):
     .. literalinclude:: /../../tests/properties/fixtures/throttle001.yaml
        :language: yaml
     """
-    throttle = XML.SubElement(xml_parent,
-                              'hudson.plugins.throttleconcurrents.'
-                              'ThrottleJobProperty')
+    throttle = XML.SubElement(
+        xml_parent, "hudson.plugins.throttleconcurrents." "ThrottleJobProperty"
+    )
     mapping = [
-        ('max-per-node', 'maxConcurrentPerNode', '0'),
-        ('max-total', 'maxConcurrentTotal', '0'),
-        ('enabled', 'throttleEnabled', True),
+        ("max-per-node", "maxConcurrentPerNode", "0"),
+        ("max-total", "maxConcurrentTotal", "0"),
+        ("enabled", "throttleEnabled", True),
     ]
     helpers.convert_mapping_to_xml(throttle, data, mapping, fail_required=True)
-    cat = data.get('categories', [])
+    cat = data.get("categories", [])
     if cat:
-        cn = XML.SubElement(throttle, 'categories')
+        cn = XML.SubElement(throttle, "categories")
         for c in cat:
-            XML.SubElement(cn, 'string').text = str(c)
+            XML.SubElement(cn, "string").text = str(c)
 
-    options_list = ('category', 'project')
-    option = data.get('option')
+    options_list = ("category", "project")
+    option = data.get("option")
     if option not in options_list:
-        raise InvalidAttributeError('option', option, options_list)
+        raise InvalidAttributeError("option", option, options_list)
     mapping = [
-        ('', 'throttleOption', option),
-        ('', 'configVersion', '1'),
-        ('parameters-limit', 'limitOneJobWithMatchingParams', False),
+        ("", "throttleOption", option),
+        ("", "configVersion", "1"),
+        ("parameters-limit", "limitOneJobWithMatchingParams", False),
     ]
     helpers.convert_mapping_to_xml(throttle, data, mapping, fail_required=True)
 
-    matrixopt = XML.SubElement(throttle, 'matrixOptions')
+    matrixopt = XML.SubElement(throttle, "matrixOptions")
     mapping = [
-        ('matrix-builds', 'throttleMatrixBuilds', True),
-        ('matrix-configs', 'throttleMatrixConfigurations', False),
+        ("matrix-builds", "throttleMatrixBuilds", True),
+        ("matrix-configs", "throttleMatrixConfigurations", False),
     ]
-    helpers.convert_mapping_to_xml(
-        matrixopt, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(matrixopt, data, mapping, fail_required=True)
 
-    params_to_use = data.get('parameters-check-list', [])
-    XML.SubElement(throttle, 'paramsToUseForLimit').text = ",".join(
-        params_to_use)
+    params_to_use = data.get("parameters-check-list", [])
+    XML.SubElement(throttle, "paramsToUseForLimit").text = ",".join(params_to_use)
 
 
 def branch_api(registry, xml_parent, data):
@@ -354,16 +344,17 @@ def branch_api(registry, xml_parent, data):
            /../../tests/properties/fixtures/branch-api-full.yaml
            :language: yaml
     """
-    branch = XML.SubElement(xml_parent, 'jenkins.branch.'
-                            'RateLimitBranchProperty_-JobPropertyImpl')
-    branch.set('plugin', 'branch-api')
+    branch = XML.SubElement(
+        xml_parent, "jenkins.branch." "RateLimitBranchProperty_-JobPropertyImpl"
+    )
+    branch.set("plugin", "branch-api")
 
-    valid_time_periods = ['Hour', 'Day', 'Week', 'Month', 'Year']
+    valid_time_periods = ["Hour", "Day", "Week", "Month", "Year"]
 
     mapping = [
-        ('time-period', 'durationName', 'Hour', valid_time_periods),
-        ('number-of-builds', 'count', 1),
-        ('skip-rate-limit', 'userBoost', False),
+        ("time-period", "durationName", "Hour", valid_time_periods),
+        ("number-of-builds", "count", 1),
+        ("skip-rate-limit", "userBoost", False),
     ]
     helpers.convert_mapping_to_xml(branch, data, mapping, fail_required=True)
 
@@ -383,19 +374,16 @@ def sidebar(registry, xml_parent, data):
     .. literalinclude:: /../../tests/properties/fixtures/sidebar02.yaml
        :language: yaml
     """
-    sidebar = xml_parent.find('hudson.plugins.sidebar__link.ProjectLinks')
+    sidebar = xml_parent.find("hudson.plugins.sidebar__link.ProjectLinks")
     if sidebar is None:
-        sidebar = XML.SubElement(xml_parent,
-                                 'hudson.plugins.sidebar__link.ProjectLinks')
-        links = XML.SubElement(sidebar, 'links')
+        sidebar = XML.SubElement(
+            xml_parent, "hudson.plugins.sidebar__link.ProjectLinks"
+        )
+        links = XML.SubElement(sidebar, "links")
     else:
-        links = sidebar.find('links')
-    action = XML.SubElement(links, 'hudson.plugins.sidebar__link.LinkAction')
-    mapping = [
-        ('url', 'url', ''),
-        ('text', 'text', ''),
-        ('icon', 'icon', ''),
-    ]
+        links = sidebar.find("links")
+    action = XML.SubElement(links, "hudson.plugins.sidebar__link.LinkAction")
+    mapping = [("url", "url", ""), ("text", "text", ""), ("icon", "icon", "")]
     helpers.convert_mapping_to_xml(action, data, mapping, fail_required=True)
 
 
@@ -423,43 +411,40 @@ def inject(registry, xml_parent, data):
        :language: yaml
 
     """
-    inject = XML.SubElement(xml_parent,
-                            'EnvInjectJobProperty')
-    info = XML.SubElement(inject, 'info')
+    inject = XML.SubElement(xml_parent, "EnvInjectJobProperty")
+    info = XML.SubElement(inject, "info")
 
     mapping = [
-        ('properties-file', 'propertiesFilePath', None),
-        ('properties-content', 'propertiesContent', None),
-        ('script-file', 'scriptFilePath', None),
-        ('script-content', 'scriptContent', None),
-        ('load-from-master', 'loadFilesFromMaster', False),
+        ("properties-file", "propertiesFilePath", None),
+        ("properties-content", "propertiesContent", None),
+        ("script-file", "scriptFilePath", None),
+        ("script-content", "scriptContent", None),
+        ("load-from-master", "loadFilesFromMaster", False),
     ]
     helpers.convert_mapping_to_xml(info, data, mapping, fail_required=False)
 
     # determine version of plugin
     plugin_info = registry.get_plugin_info("Groovy")
-    version = pkg_resources.parse_version(plugin_info.get('version', '0'))
+    version = pkg_resources.parse_version(plugin_info.get("version", "0"))
 
     if version >= pkg_resources.parse_version("2.0.0"):
-        secure_groovy_script = XML.SubElement(info, 'secureGroovyScript')
+        secure_groovy_script = XML.SubElement(info, "secureGroovyScript")
         mapping = [
-            ('groovy-content', 'script', None),
-            ('groovy-sandbox', 'sandbox', False),
+            ("groovy-content", "script", None),
+            ("groovy-sandbox", "sandbox", False),
         ]
-        helpers.convert_mapping_to_xml(secure_groovy_script, data, mapping,
-                            fail_required=False)
+        helpers.convert_mapping_to_xml(
+            secure_groovy_script, data, mapping, fail_required=False
+        )
     else:
-        mapping = [
-            ('groovy-content', 'groovyScriptContent', None),
-        ]
-        helpers.convert_mapping_to_xml(info, data, mapping,
-                            fail_required=False)
+        mapping = [("groovy-content", "groovyScriptContent", None)]
+        helpers.convert_mapping_to_xml(info, data, mapping, fail_required=False)
 
     mapping = [
-        ('enabled', 'on', True),
-        ('keep-system-variables', 'keepJenkinsSystemVariables', True),
-        ('keep-build-variables', 'keepBuildVariables', True),
-        ('override-build-parameters', 'overrideBuildParameters', False),
+        ("enabled", "on", True),
+        ("keep-system-variables", "keepJenkinsSystemVariables", True),
+        ("keep-build-variables", "keepBuildVariables", True),
+        ("override-build-parameters", "overrideBuildParameters", False),
     ]
     helpers.convert_mapping_to_xml(inject, data, mapping, fail_required=True)
 
@@ -479,11 +464,12 @@ def authenticated_build(registry, xml_parent, data):
 
     """
     # TODO: generalize this
-    security = XML.SubElement(xml_parent,
-                              'hudson.security.'
-                              'AuthorizationMatrixProperty')
-    XML.SubElement(security, 'permission').text = (
-        'hudson.model.Item.Build:authenticated')
+    security = XML.SubElement(
+        xml_parent, "hudson.security." "AuthorizationMatrixProperty"
+    )
+    XML.SubElement(
+        security, "permission"
+    ).text = "hudson.model.Item.Build:authenticated"
 
 
 def authorization(registry, xml_parent, data):
@@ -523,38 +509,39 @@ def authorization(registry, xml_parent, data):
        :language: yaml
     """
 
-    credentials = 'com.cloudbees.plugins.credentials.CredentialsProvider.'
-    ownership = 'com.synopsys.arc.jenkins.plugins.ownership.OwnershipPlugin.'
+    credentials = "com.cloudbees.plugins.credentials.CredentialsProvider."
+    ownership = "com.synopsys.arc.jenkins.plugins.ownership.OwnershipPlugin."
 
     mapping = {
-        'credentials-create': ''.join((credentials, 'Create')),
-        'credentials-delete': ''.join((credentials, 'Delete')),
-        'credentials-manage-domains': ''.join((credentials, 'ManageDomains')),
-        'credentials-update': ''.join((credentials, 'Update')),
-        'credentials-view': ''.join((credentials, 'View')),
-        'job-build': 'hudson.model.Item.Build',
-        'job-cancel': 'hudson.model.Item.Cancel',
-        'job-configure': 'hudson.model.Item.Configure',
-        'job-delete': 'hudson.model.Item.Delete',
-        'job-discover': 'hudson.model.Item.Discover',
-        'job-extended-read': 'hudson.model.Item.ExtendedRead',
-        'job-move': 'hudson.model.Item.Move',
-        'job-read': 'hudson.model.Item.Read',
-        'job-status': 'hudson.model.Item.ViewStatus',
-        'job-workspace': 'hudson.model.Item.Workspace',
-        'ownership-jobs': ''.join((ownership, 'Jobs')),
-        'run-delete': 'hudson.model.Run.Delete',
-        'run-replay': 'hudson.model.Run.Replay',
-        'run-update': 'hudson.model.Run.Update',
-        'scm-tag': 'hudson.scm.SCM.Tag',
+        "credentials-create": "".join((credentials, "Create")),
+        "credentials-delete": "".join((credentials, "Delete")),
+        "credentials-manage-domains": "".join((credentials, "ManageDomains")),
+        "credentials-update": "".join((credentials, "Update")),
+        "credentials-view": "".join((credentials, "View")),
+        "job-build": "hudson.model.Item.Build",
+        "job-cancel": "hudson.model.Item.Cancel",
+        "job-configure": "hudson.model.Item.Configure",
+        "job-delete": "hudson.model.Item.Delete",
+        "job-discover": "hudson.model.Item.Discover",
+        "job-extended-read": "hudson.model.Item.ExtendedRead",
+        "job-move": "hudson.model.Item.Move",
+        "job-read": "hudson.model.Item.Read",
+        "job-status": "hudson.model.Item.ViewStatus",
+        "job-workspace": "hudson.model.Item.Workspace",
+        "ownership-jobs": "".join((ownership, "Jobs")),
+        "run-delete": "hudson.model.Run.Delete",
+        "run-replay": "hudson.model.Run.Replay",
+        "run-update": "hudson.model.Run.Update",
+        "scm-tag": "hudson.scm.SCM.Tag",
     }
 
     if data:
-        matrix = XML.SubElement(xml_parent,
-                                'hudson.security.AuthorizationMatrixProperty')
+        matrix = XML.SubElement(
+            xml_parent, "hudson.security.AuthorizationMatrixProperty"
+        )
         for (username, perms) in data.items():
             for perm in perms:
-                pe = XML.SubElement(matrix, 'permission')
+                pe = XML.SubElement(matrix, "permission")
                 try:
                     pe.text = "{0}:{1}".format(mapping[perm], username)
                 except KeyError:
@@ -577,39 +564,32 @@ def priority_sorter(registry, xml_parent, data):
         /../../tests/properties/fixtures/priority_sorter002.yaml
        :language: yaml
     """
-    plugin_info = registry.get_plugin_info('PrioritySorter')
-    version = pkg_resources.parse_version(plugin_info.get('version', '0'))
+    plugin_info = registry.get_plugin_info("PrioritySorter")
+    version = pkg_resources.parse_version(plugin_info.get("version", "0"))
 
     if version >= pkg_resources.parse_version("3.0"):
         priority_sorter_tag = XML.SubElement(
             xml_parent,
-            'jenkins.advancedqueue.jobinclusion.'
-            'strategy.JobInclusionJobProperty')
+            "jenkins.advancedqueue.jobinclusion." "strategy.JobInclusionJobProperty",
+        )
 
-        mapping = [
-            ('use', 'useJobGroup', True),
-            ('priority', 'jobGroupName', None)
-        ]
+        mapping = [("use", "useJobGroup", True), ("priority", "jobGroupName", None)]
     elif version >= pkg_resources.parse_version("2.0"):
-        priority_sorter_tag = XML.SubElement(xml_parent,
-                                             'jenkins.advancedqueue.priority.'
-                                             'strategy.PriorityJobProperty')
+        priority_sorter_tag = XML.SubElement(
+            xml_parent, "jenkins.advancedqueue.priority." "strategy.PriorityJobProperty"
+        )
 
-        mapping = [
-            ('use', 'useJobPriority', True),
-            ('priority', 'priority', None)
-        ]
+        mapping = [("use", "useJobPriority", True), ("priority", "priority", None)]
     else:
-        priority_sorter_tag = XML.SubElement(xml_parent,
-                                             'hudson.queueSorter.'
-                                             'PrioritySorterJobProperty')
+        priority_sorter_tag = XML.SubElement(
+            xml_parent, "hudson.queueSorter." "PrioritySorterJobProperty"
+        )
 
-        mapping = [
-            ('priority', 'priority', None),
-        ]
+        mapping = [("priority", "priority", None)]
 
     helpers.convert_mapping_to_xml(
-        priority_sorter_tag, data, mapping, fail_required=True)
+        priority_sorter_tag, data, mapping, fail_required=True
+    )
 
 
 def build_blocker(registry, xml_parent, data):
@@ -643,25 +623,25 @@ def build_blocker(registry, xml_parent, data):
        /../../tests/properties/fixtures/build-blocker-full.yaml
        :language: yaml
     """
-    blocker = XML.SubElement(xml_parent,
-                             'hudson.plugins.'
-                             'buildblocker.BuildBlockerProperty')
-    if data is None or 'blocking-jobs' not in data:
-        raise JenkinsJobsException('blocking-jobs field is missing')
-    elif data.get('blocking-jobs', None) is None:
-        raise JenkinsJobsException('blocking-jobs list must not be empty')
+    blocker = XML.SubElement(
+        xml_parent, "hudson.plugins." "buildblocker.BuildBlockerProperty"
+    )
+    if data is None or "blocking-jobs" not in data:
+        raise JenkinsJobsException("blocking-jobs field is missing")
+    elif data.get("blocking-jobs", None) is None:
+        raise JenkinsJobsException("blocking-jobs list must not be empty")
 
-    jobs = ''
+    jobs = ""
     for setting, value in data.items():
-        if setting == 'blocking-jobs':
-            jobs = '\n'.join(value)
-    block_level_types = ['GLOBAL', 'NODE']
-    queue_scan_types = ['DISABLED', 'ALL', 'BUILDABLE']
+        if setting == "blocking-jobs":
+            jobs = "\n".join(value)
+    block_level_types = ["GLOBAL", "NODE"]
+    queue_scan_types = ["DISABLED", "ALL", "BUILDABLE"]
     mapping = [
-        ('use-build-blocker', 'useBuildBlocker', True),
-        ('', 'blockingJobs', jobs),
-        ('block-level', 'blockLevel', 'GLOBAL', block_level_types),
-        ('queue-scanning', 'scanQueueFor', 'DISABLED', queue_scan_types),
+        ("use-build-blocker", "useBuildBlocker", True),
+        ("", "blockingJobs", jobs),
+        ("block-level", "blockLevel", "GLOBAL", block_level_types),
+        ("queue-scanning", "scanQueueFor", "DISABLED", queue_scan_types),
     ]
     helpers.convert_mapping_to_xml(blocker, data, mapping, fail_required=True)
 
@@ -684,17 +664,16 @@ def copyartifact(registry, xml_parent, data):
        :language: yaml
 
     """
-    copyartifact = XML.SubElement(xml_parent,
-                                  'hudson.plugins.'
-                                  'copyartifact.'
-                                  'CopyArtifactPermissionProperty',
-                                  plugin='copyartifact')
-    if not data or not data.get('projects', None):
-        raise JenkinsJobsException("projects string must exist and "
-                                   "not be empty")
-    projectlist = XML.SubElement(copyartifact, 'projectNameList')
-    for project in str(data.get('projects')).split(','):
-        XML.SubElement(projectlist, 'string').text = project
+    copyartifact = XML.SubElement(
+        xml_parent,
+        "hudson.plugins." "copyartifact." "CopyArtifactPermissionProperty",
+        plugin="copyartifact",
+    )
+    if not data or not data.get("projects", None):
+        raise JenkinsJobsException("projects string must exist and " "not be empty")
+    projectlist = XML.SubElement(copyartifact, "projectNameList")
+    for project in str(data.get("projects")).split(","):
+        XML.SubElement(projectlist, "string").text = project
 
 
 def batch_tasks(registry, xml_parent, data):
@@ -722,18 +701,12 @@ def batch_tasks(registry, xml_parent, data):
        :language: yaml
 
     """
-    pdef = XML.SubElement(xml_parent,
-                          'hudson.plugins.batch__task.BatchTaskProperty')
-    tasks = XML.SubElement(pdef, 'tasks')
+    pdef = XML.SubElement(xml_parent, "hudson.plugins.batch__task.BatchTaskProperty")
+    tasks = XML.SubElement(pdef, "tasks")
     for task in data:
-        batch_task = XML.SubElement(tasks,
-                                    'hudson.plugins.batch__task.BatchTask')
-        mapping = [
-            ('name', 'name', None),
-            ('script', 'script', None),
-        ]
-        helpers.convert_mapping_to_xml(
-            batch_task, task, mapping, fail_required=True)
+        batch_task = XML.SubElement(tasks, "hudson.plugins.batch__task.BatchTask")
+        mapping = [("name", "name", None), ("script", "script", None)]
+        helpers.convert_mapping_to_xml(batch_task, task, mapping, fail_required=True)
 
 
 def heavy_job(registry, xml_parent, data):
@@ -752,12 +725,10 @@ def heavy_job(registry, xml_parent, data):
        :language: yaml
 
     """
-    heavyjob = XML.SubElement(xml_parent,
-                              'hudson.plugins.'
-                              'heavy__job.HeavyJobProperty')
-    mapping = [
-        ('weight', 'weight', 1),
-    ]
+    heavyjob = XML.SubElement(
+        xml_parent, "hudson.plugins." "heavy__job.HeavyJobProperty"
+    )
+    mapping = [("weight", "weight", 1)]
     helpers.convert_mapping_to_xml(heavyjob, data, mapping, fail_required=True)
 
 
@@ -782,18 +753,18 @@ def slave_utilization(registry, xml_parent, data):
        :language: yaml
     """
     utilization = XML.SubElement(
-        xml_parent, 'com.suryagaddipati.jenkins.SlaveUtilizationProperty')
+        xml_parent, "com.suryagaddipati.jenkins.SlaveUtilizationProperty"
+    )
 
-    percent = int(data.get('slave-percentage', 0))
+    percent = int(data.get("slave-percentage", 0))
     exclusive_node_access = True if percent else False
 
     mapping = [
-        ('', 'needsExclusiveAccessToNode', exclusive_node_access),
-        ('', 'slaveUtilizationPercentage', percent),
-        ('single-instance-per-slave', 'singleInstancePerSlave', False),
+        ("", "needsExclusiveAccessToNode", exclusive_node_access),
+        ("", "slaveUtilizationPercentage", percent),
+        ("single-instance-per-slave", "singleInstancePerSlave", False),
     ]
-    helpers.convert_mapping_to_xml(
-        utilization, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(utilization, data, mapping, fail_required=True)
 
 
 def delivery_pipeline(registry, xml_parent, data):
@@ -818,14 +789,13 @@ def delivery_pipeline(registry, xml_parent, data):
        /../../tests/properties/fixtures/delivery-pipeline-full.yaml
        :language: yaml
     """
-    pipeline = XML.SubElement(
-        xml_parent, 'se.diabol.jenkins.pipeline.PipelineProperty')
-    pipeline.set('plugin', 'delivery-pipeline-plugin')
+    pipeline = XML.SubElement(xml_parent, "se.diabol.jenkins.pipeline.PipelineProperty")
+    pipeline.set("plugin", "delivery-pipeline-plugin")
 
     mapping = [
-        ('stage', 'stageName', ''),
-        ('task', 'taskName', ''),
-        ('description', 'descriptionTemplate', ''),
+        ("stage", "stageName", ""),
+        ("task", "taskName", ""),
+        ("description", "descriptionTemplate", ""),
     ]
     helpers.convert_mapping_to_xml(pipeline, data, mapping, fail_required=True)
 
@@ -846,14 +816,12 @@ def zeromq_event(registry, xml_parent, data):
 
     """
 
-    zmq_event = XML.SubElement(xml_parent,
-                               'org.jenkinsci.plugins.'
-                               'ZMQEventPublisher.HudsonNotificationProperty')
-    mapping = [
-        ('', 'enabled', True),
-    ]
-    helpers.convert_mapping_to_xml(
-        zmq_event, data, mapping, fail_required=True)
+    zmq_event = XML.SubElement(
+        xml_parent,
+        "org.jenkinsci.plugins." "ZMQEventPublisher.HudsonNotificationProperty",
+    )
+    mapping = [("", "enabled", True)]
+    helpers.convert_mapping_to_xml(zmq_event, data, mapping, fail_required=True)
 
 
 def slack(registry, xml_parent, data):
@@ -896,39 +864,36 @@ def slack(registry, xml_parent, data):
     """
     logger = logging.getLogger(__name__)
 
-    plugin_info = registry.get_plugin_info('Slack Notification Plugin')
-    plugin_ver = pkg_resources.parse_version(plugin_info.get('version', "0"))
+    plugin_info = registry.get_plugin_info("Slack Notification Plugin")
+    plugin_ver = pkg_resources.parse_version(plugin_info.get("version", "0"))
 
     if plugin_ver >= pkg_resources.parse_version("2.0"):
-        logger.warning(
-            "properties section is not used with plugin version >= 2.0",
-        )
+        logger.warning("properties section is not used with plugin version >= 2.0")
 
     mapping = (
-        ('notify-start', 'startNotification', False),
-        ('notify-success', 'notifySuccess', False),
-        ('notify-aborted', 'notifyAborted', False),
-        ('notify-not-built', 'notifyNotBuilt', False),
-        ('notify-unstable', 'notifyUnstable', False),
-        ('notify-failure', 'notifyFailure', False),
-        ('notify-back-to-normal', 'notifyBackToNormal', False),
-        ('notify-repeated-failure', 'notifyRepeatedFailure', False),
-        ('include-test-summary', 'includeTestSummary', False),
-        ('include-custom-message', 'includeCustomMessage', False),
-        ('custom-message', 'customMessage', ''),
-        ('room', 'room', ''),
+        ("notify-start", "startNotification", False),
+        ("notify-success", "notifySuccess", False),
+        ("notify-aborted", "notifyAborted", False),
+        ("notify-not-built", "notifyNotBuilt", False),
+        ("notify-unstable", "notifyUnstable", False),
+        ("notify-failure", "notifyFailure", False),
+        ("notify-back-to-normal", "notifyBackToNormal", False),
+        ("notify-repeated-failure", "notifyRepeatedFailure", False),
+        ("include-test-summary", "includeTestSummary", False),
+        ("include-custom-message", "includeCustomMessage", False),
+        ("custom-message", "customMessage", ""),
+        ("room", "room", ""),
     )
 
     slack = XML.SubElement(
-        xml_parent,
-        'jenkins.plugins.slack.SlackNotifier_-SlackJobProperty',
+        xml_parent, "jenkins.plugins.slack.SlackNotifier_-SlackJobProperty"
     )
 
     # Ensure that custom-message is set when include-custom-message is set
     # to true.
-    if data.get('include-custom-message', False):
-        if not data.get('custom-message', ''):
-            raise MissingAttributeError('custom-message')
+    if data.get("include-custom-message", False):
+        if not data.get("custom-message", ""):
+            raise MissingAttributeError("custom-message")
 
     helpers.convert_mapping_to_xml(slack, data, mapping, fail_required=True)
 
@@ -955,16 +920,14 @@ def rebuild(registry, xml_parent, data):
     .. literalinclude:: /../../tests/properties/fixtures/rebuild-full.yaml
        :language: yaml
     """
-    sub_element = XML.SubElement(xml_parent,
-                                 'com.sonyericsson.rebuild.RebuildSettings')
-    sub_element.set('plugin', 'rebuild')
+    sub_element = XML.SubElement(xml_parent, "com.sonyericsson.rebuild.RebuildSettings")
+    sub_element.set("plugin", "rebuild")
 
     mapping = [
-        ('auto-rebuild', 'autoRebuild', False),
-        ('rebuild-disabled', 'rebuildDisabled', False),
+        ("auto-rebuild", "autoRebuild", False),
+        ("rebuild-disabled", "rebuildDisabled", False),
     ]
-    helpers.convert_mapping_to_xml(
-        sub_element, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(sub_element, data, mapping, fail_required=True)
 
 
 def build_discarder(registry, xml_parent, data):
@@ -987,19 +950,17 @@ def build_discarder(registry, xml_parent, data):
         /../../tests/properties/fixtures/build-discarder-002.yaml
        :language: yaml
     """
-    base_sub = XML.SubElement(xml_parent,
-                              'jenkins.model.BuildDiscarderProperty')
-    strategy = XML.SubElement(base_sub, 'strategy')
-    strategy.set('class', 'hudson.tasks.LogRotator')
+    base_sub = XML.SubElement(xml_parent, "jenkins.model.BuildDiscarderProperty")
+    strategy = XML.SubElement(base_sub, "strategy")
+    strategy.set("class", "hudson.tasks.LogRotator")
 
     mappings = [
-        ('days-to-keep', 'daysToKeep', -1),
-        ('num-to-keep', 'numToKeep', -1),
-        ('artifact-days-to-keep', 'artifactDaysToKeep', -1),
-        ('artifact-num-to-keep', 'artifactNumToKeep', -1),
+        ("days-to-keep", "daysToKeep", -1),
+        ("num-to-keep", "numToKeep", -1),
+        ("artifact-days-to-keep", "artifactDaysToKeep", -1),
+        ("artifact-num-to-keep", "artifactNumToKeep", -1),
     ]
-    helpers.convert_mapping_to_xml(
-        strategy, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(strategy, data, mappings, fail_required=True)
 
 
 def slave_prerequisites(registry, xml_parent, data):
@@ -1027,14 +988,16 @@ def slave_prerequisites(registry, xml_parent, data):
         /../../tests/properties/fixtures/slave-prerequisites-full.yaml
        :language: yaml
     """
-    prereqs = XML.SubElement(xml_parent,
-                             'com.cloudbees.plugins.JobPrerequisites')
+    prereqs = XML.SubElement(xml_parent, "com.cloudbees.plugins.JobPrerequisites")
 
     mappings = [
-        ('script', 'script', None),
-        ('interpreter', 'interpreter', 'shell', {
-            'cmd': 'windows batch command',
-            'shell': 'shell script'}),
+        ("script", "script", None),
+        (
+            "interpreter",
+            "interpreter",
+            "shell",
+            {"cmd": "windows batch command", "shell": "shell script"},
+        ),
     ]
     helpers.convert_mapping_to_xml(prereqs, data, mappings, fail_required=True)
 
@@ -1077,24 +1040,23 @@ def groovy_label(registry, xml_parent, data):
         /../../tests/properties/fixtures/groovy-label-full.yaml
        :language: yaml
     """
-    sub_element = XML.SubElement(xml_parent,
-                                 'jp.ikedam.jenkins.plugins.'
-                                 'groovy__label__assignment.'
-                                 'GroovyLabelAssignmentProperty')
-    sub_element.set('plugin', 'groovy-label-assignment')
-    security = XML.SubElement(sub_element, 'secureGroovyScript')
-    security.set('plugin', 'script-security')
-    mapping = [
-        ('script', 'script', ''),
-        ('sandbox', 'sandbox', False),
-    ]
+    sub_element = XML.SubElement(
+        xml_parent,
+        "jp.ikedam.jenkins.plugins."
+        "groovy__label__assignment."
+        "GroovyLabelAssignmentProperty",
+    )
+    sub_element.set("plugin", "groovy-label-assignment")
+    security = XML.SubElement(sub_element, "secureGroovyScript")
+    security.set("plugin", "script-security")
+    mapping = [("script", "script", ""), ("sandbox", "sandbox", False)]
 
     helpers.convert_mapping_to_xml(security, data, mapping, fail_required=True)
-    if data and 'classpath' in data:
-        classpath = XML.SubElement(security, 'classpath')
-        for value in data['classpath']:
-            entry = XML.SubElement(classpath, 'entry')
-            XML.SubElement(entry, 'url').text = value
+    if data and "classpath" in data:
+        classpath = XML.SubElement(security, "classpath")
+        for value in data["classpath"]:
+            entry = XML.SubElement(classpath, "entry")
+            XML.SubElement(entry, "url").text = value
 
 
 def lockable_resources(registry, xml_parent, data):
@@ -1137,26 +1099,24 @@ def lockable_resources(registry, xml_parent, data):
        :language: yaml
     """
     lockable_resources = XML.SubElement(
-        xml_parent,
-        'org.jenkins.plugins.lockableresources.RequiredResourcesProperty')
-    if data.get('resources') and data.get('label'):
-        raise AttributeConflictError('resources', ('label',))
+        xml_parent, "org.jenkins.plugins.lockableresources.RequiredResourcesProperty"
+    )
+    if data.get("resources") and data.get("label"):
+        raise AttributeConflictError("resources", ("label",))
     mapping = [
-        ('resources', 'resourceNames', ''),
-        ('var-name', 'resourceNamesVar', ''),
-        ('number', 'resourceNumber', 0),
-        ('label', 'labelName', ''),
+        ("resources", "resourceNames", ""),
+        ("var-name", "resourceNamesVar", ""),
+        ("number", "resourceNumber", 0),
+        ("label", "labelName", ""),
     ]
     helpers.convert_mapping_to_xml(
-        lockable_resources, data, mapping, fail_required=True)
-    secure_groovy_script = XML.SubElement(lockable_resources,
-        'resourceMatchScript')
-    mapping = [
-        ('match-script', 'script', None),
-        ('groovy-sandbox', 'sandbox', False),
-    ]
-    helpers.convert_mapping_to_xml(secure_groovy_script, data, mapping,
-        fail_required=False)
+        lockable_resources, data, mapping, fail_required=True
+    )
+    secure_groovy_script = XML.SubElement(lockable_resources, "resourceMatchScript")
+    mapping = [("match-script", "script", None), ("groovy-sandbox", "sandbox", False)]
+    helpers.convert_mapping_to_xml(
+        secure_groovy_script, data, mapping, fail_required=False
+    )
 
 
 def docker_container(registry, xml_parent, data):
@@ -1189,24 +1149,25 @@ def docker_container(registry, xml_parent, data):
         :language: yaml
     """
     xml_docker = XML.SubElement(
-        xml_parent, 'com.nirima.jenkins.plugins.docker.DockerJobProperty')
+        xml_parent, "com.nirima.jenkins.plugins.docker.DockerJobProperty"
+    )
 
-    registry = XML.SubElement(xml_docker, 'registry')
-    registry.set('plugin', 'docker-commons')
+    registry = XML.SubElement(xml_docker, "registry")
+    registry.set("plugin", "docker-commons")
     registry_mapping = [
-        ('docker-registry-url', 'url', ''),
-        ('credentials-id', 'credentialsId', ''),
+        ("docker-registry-url", "url", ""),
+        ("credentials-id", "credentialsId", ""),
     ]
     helpers.convert_mapping_to_xml(
-        registry, data, registry_mapping, fail_required=False)
+        registry, data, registry_mapping, fail_required=False
+    )
     mapping = [
-        ('commit-on-success', 'tagOnCompletion', False),
-        ('additional-tag', 'additionalTag', ''),
-        ('push-on-success', 'pushOnSuccess', False),
-        ('clean-local-images', 'cleanImages', True),
+        ("commit-on-success", "tagOnCompletion", False),
+        ("additional-tag", "additionalTag", ""),
+        ("push-on-success", "pushOnSuccess", False),
+        ("clean-local-images", "cleanImages", True),
     ]
-    helpers.convert_mapping_to_xml(
-        xml_docker, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(xml_docker, data, mapping, fail_required=True)
 
 
 def disable_resume(registry, xml_parent, data):
@@ -1222,9 +1183,10 @@ def disable_resume(registry, xml_parent, data):
        :language: yaml
 
     """
-    XML.SubElement(xml_parent,
-                   'org.jenkinsci.plugins.workflow.job.properties.'
-                   'DisableResumeJobProperty')
+    XML.SubElement(
+        xml_parent,
+        "org.jenkinsci.plugins.workflow.job.properties." "DisableResumeJobProperty",
+    )
 
 
 def cachet_gating(registry, xml_parent, data):
@@ -1246,32 +1208,30 @@ def cachet_gating(registry, xml_parent, data):
         :language: yaml
     """
     cachet = XML.SubElement(
-        xml_parent, 'com.redhat.jenkins.plugins.cachet.CachetJobProperty')
-    cachet.set('plugin', 'cachet-gating')
+        xml_parent, "com.redhat.jenkins.plugins.cachet.CachetJobProperty"
+    )
+    cachet.set("plugin", "cachet-gating")
 
-    mapping = [
-        ('required-resources', 'requiredResources', True),
-    ]
-    helpers.convert_mapping_to_xml(
-        cachet, data, mapping, fail_required=True)
+    mapping = [("required-resources", "requiredResources", True)]
+    helpers.convert_mapping_to_xml(cachet, data, mapping, fail_required=True)
 
-    resources_data = data.get('resources', [])
+    resources_data = data.get("resources", [])
     if resources_data:
-        resources = XML.SubElement(cachet, 'resources')
+        resources = XML.SubElement(cachet, "resources")
         for resource in resources_data:
-            XML.SubElement(resources, 'string').text = str(resource)
+            XML.SubElement(resources, "string").text = str(resource)
 
 
 class Properties(jenkins_jobs.modules.base.Base):
     sequence = 20
 
-    component_type = 'property'
-    component_list_type = 'properties'
+    component_type = "property"
+    component_list_type = "properties"
 
     def gen_xml(self, xml_parent, data):
-        properties = xml_parent.find('properties')
+        properties = xml_parent.find("properties")
         if properties is None:
-            properties = XML.SubElement(xml_parent, 'properties')
+            properties = XML.SubElement(xml_parent, "properties")
 
-        for prop in data.get('properties', []):
-            self.registry.dispatch('property', properties, prop)
+        for prop in data.get("properties", []):
+            self.registry.dispatch("property", properties, prop)

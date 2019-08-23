@@ -18,8 +18,8 @@ from jenkins_jobs.version import version_info as jenkins_jobs_version
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-sys.path.insert(0, os.path.abspath('../..'))
-sys.path.insert(0, os.path.abspath('../../jenkins_jobs/modules'))
+sys.path.insert(0, os.path.abspath("../.."))
+sys.path.insert(0, os.path.abspath("../../jenkins_jobs/modules"))
 
 # -- General configuration ----------------------------------------------------
 
@@ -28,25 +28,30 @@ sys.path.insert(0, os.path.abspath('../../jenkins_jobs/modules'))
 
 # Add any Sphinx extension module names here, as strings. They can be
 #  extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.coverage',
-              'jenkins_jobs.sphinx.yaml', 'sphinxcontrib.programoutput',
-              'sphinx.ext.extlinks', 'sphinx.ext.doctest']
+extensions = [
+    "sphinx.ext.autodoc",
+    "sphinx.ext.coverage",
+    "jenkins_jobs.sphinx.yaml",
+    "sphinxcontrib.programoutput",
+    "sphinx.ext.extlinks",
+    "sphinx.ext.doctest",
+]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 # The suffix of source filenames.
-source_suffix = '.rst'
+source_suffix = ".rst"
 
 # The encoding of source files.
 # source_encoding = 'utf-8-sig'
 
 # The master toctree document.
-master_doc = 'index'
+master_doc = "index"
 
 # General information about the project.
-project = u'Jenkins Job Builder'
-copyright = u'2012, Jenkins Job Builder Maintainers'
+project = u"Jenkins Job Builder"
+copyright = u"2012, Jenkins Job Builder Maintainers"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -86,7 +91,7 @@ exclude_patterns = []
 # show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = "sphinx"
 
 # A list of ignored prefixes for module index sorting.
 # modindex_common_prefix = []
@@ -96,7 +101,7 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'default'
+html_theme = "default"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -169,7 +174,7 @@ html_theme = 'default'
 # html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'JenkinsJobBuilderdoc'
+htmlhelp_basename = "JenkinsJobBuilderdoc"
 
 
 # -- Options for LaTeX output -------------------------------------------------
@@ -177,10 +182,8 @@ htmlhelp_basename = 'JenkinsJobBuilderdoc'
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     # 'papersize': 'letterpaper',
-
     # The font size ('10pt', '11pt' or '12pt').
     # 'pointsize': '10pt',
-
     # Additional stuff for the LaTeX preamble.
     # 'preamble': '',
 }
@@ -189,8 +192,13 @@ latex_elements = {
 # (source start file, target name, title, author, documentclass
 # [howto/manual]).
 latex_documents = [
-    ('index', 'JenkinsJobBuilder.tex', u'Jenkins Job Builder Documentation',
-     u'Jenkins Job Builder Maintainers', 'manual'),
+    (
+        "index",
+        "JenkinsJobBuilder.tex",
+        u"Jenkins Job Builder Documentation",
+        u"Jenkins Job Builder Maintainers",
+        "manual",
+    )
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -225,8 +233,13 @@ linkcheck_timeout = 15
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'jenkins-jobs', u'Jenkins Job Builder Documentation',
-     [u'Jenkins Job Builder Maintainers'], 1)
+    (
+        "index",
+        "jenkins-jobs",
+        u"Jenkins Job Builder Documentation",
+        [u"Jenkins Job Builder Maintainers"],
+        1,
+    )
 ]
 
 # If true, show URL addresses after external links.
@@ -239,10 +252,15 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    ('index', 'JenkinsJobBuilder', u'Jenkins Job Builder Documentation',
-    u'Jenkins Job Builder Maintainers',
-    'JenkinsJobBuilder', 'One line description of project.',
-    'Miscellaneous'),
+    (
+        "index",
+        "JenkinsJobBuilder",
+        u"Jenkins Job Builder Documentation",
+        u"Jenkins Job Builder Maintainers",
+        "JenkinsJobBuilder",
+        "One line description of project.",
+        "Miscellaneous",
+    )
 ]
 
 # Documents to append as an appendix to all manuals.
@@ -254,6 +272,7 @@ texinfo_documents = [
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 # texinfo_show_urls = 'footnote'
 
-extlinks = {'jenkins-wiki': ('https://wiki.jenkins.io/display/JENKINS/%s',
-                             None),
-            'jenkins-plugins': ('https://plugins.jenkins.io/%s', None)}
+extlinks = {
+    "jenkins-wiki": ("https://wiki.jenkins.io/display/JENKINS/%s", None),
+    "jenkins-plugins": ("https://plugins.jenkins.io/%s", None),
+}

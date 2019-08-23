@@ -46,20 +46,21 @@ def influx_db(registry, xml_parent, data):
     <Influx+DB+Plugin>`.
     """
 
-    influx_db = XML.SubElement(xml_parent,
-        'jenkinsci.plugins.influxdb.InfluxDbPublisher',
-        {'plugin': 'influx-db'})
+    influx_db = XML.SubElement(
+        xml_parent,
+        "jenkinsci.plugins.influxdb.InfluxDbPublisher",
+        {"plugin": "influx-db"},
+    )
 
     mapping = [
-        ('selected-target', 'selectedTarget', ''),
-        ('custom-project-name', 'customProjectName', ''),
-        ('custom-prefix', 'customPrefix', ''),
-        ('jenkins-env-parameter-field', 'jenkinsEnvParameterField', ''),
-        ('jenkins-env-parameter-tag', 'jenkinsEnvParameterTag', '')
+        ("selected-target", "selectedTarget", ""),
+        ("custom-project-name", "customProjectName", ""),
+        ("custom-prefix", "customPrefix", ""),
+        ("jenkins-env-parameter-field", "jenkinsEnvParameterField", ""),
+        ("jenkins-env-parameter-tag", "jenkinsEnvParameterTag", ""),
     ]
 
-    helpers.convert_mapping_to_xml(
-        influx_db, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(influx_db, data, mapping, fail_required=True)
 
 
 def allure(registry, xml_parent, data):
@@ -90,44 +91,45 @@ def allure(registry, xml_parent, data):
            :language: yaml
 
     """
-    publisher_class = 'ru.yandex.qatools.allure.jenkins.AllureReportPublisher'
-    property_class = 'ru.yandex.qatools.allure.jenkins.config.PropertyConfig'
-    results_class = 'ru.yandex.qatools.allure.jenkins.config.ResultsConfig'
+    publisher_class = "ru.yandex.qatools.allure.jenkins.AllureReportPublisher"
+    property_class = "ru.yandex.qatools.allure.jenkins.config.PropertyConfig"
+    results_class = "ru.yandex.qatools.allure.jenkins.config.ResultsConfig"
 
     allure_publisher = XML.SubElement(xml_parent, publisher_class)
-    allure_publisher.set('plugin', 'allure-jenkins-plugin')
-    config = XML.SubElement(allure_publisher, 'config')
+    allure_publisher.set("plugin", "allure-jenkins-plugin")
+    config = XML.SubElement(allure_publisher, "config")
 
-    results = XML.SubElement(config, 'results')
-    if 'results-paths' in data:
-        for results_path in data['results-paths']:
+    results = XML.SubElement(config, "results")
+    if "results-paths" in data:
+        for results_path in data["results-paths"]:
             entry = XML.SubElement(results, results_class)
-            path = XML.SubElement(entry, 'path')
-            path.text = results_path['path']
+            path = XML.SubElement(entry, "path")
+            path.text = results_path["path"]
 
-    properties = XML.SubElement(config, 'properties')
-    if 'properties' in data:
-        property_mapping = [
-            ('key', 'key', None),
-            ('value', 'value', None)
-        ]
-        for prop in data['properties']:
+    properties = XML.SubElement(config, "properties")
+    if "properties" in data:
+        property_mapping = [("key", "key", None), ("value", "value", None)]
+        for prop in data["properties"]:
             entry = XML.SubElement(properties, property_class)
-            helpers.convert_mapping_to_xml(entry, prop, property_mapping,
-                                           fail_required=True)
+            helpers.convert_mapping_to_xml(
+                entry, prop, property_mapping, fail_required=True
+            )
     else:
-        properties.set('class', 'empty-list')
+        properties.set("class", "empty-list")
 
     mapping = [
-        ('jdk', 'jdk', ''),
-        ('commandline', 'commandline', ''),
-        ('report-build-policy', 'reportBuildPolicy', 'ALWAYS',
-            ['ALWAYS', 'UNSTABLE', 'UNSUCCESSFUL']),
-        ('include-properties', 'includeProperties', False)
+        ("jdk", "jdk", ""),
+        ("commandline", "commandline", ""),
+        (
+            "report-build-policy",
+            "reportBuildPolicy",
+            "ALWAYS",
+            ["ALWAYS", "UNSTABLE", "UNSUCCESSFUL"],
+        ),
+        ("include-properties", "includeProperties", False),
     ]
 
-    helpers.convert_mapping_to_xml(config, data, mapping,
-                                   fail_required=True)
+    helpers.convert_mapping_to_xml(config, data, mapping, fail_required=True)
 
 
 def archive(registry, xml_parent, data):
@@ -153,18 +155,19 @@ def archive(registry, xml_parent, data):
         .. literalinclude::  /../../tests/publishers/fixtures/archive001.yaml
            :language: yaml
     """
-    archiver = XML.SubElement(xml_parent, 'hudson.tasks.ArtifactArchiver')
+    archiver = XML.SubElement(xml_parent, "hudson.tasks.ArtifactArchiver")
     mapping = [
-        ('artifacts', 'artifacts', None),
-        ('allow-empty', 'allowEmptyArchive', False),
-        ('only-if-success', 'onlyIfSuccessful', False),
-        ('fingerprint', 'fingerprint', False),
-        ('default-excludes', 'defaultExcludes', True),
-        ('case-sensitive', 'caseSensitive', True),
-        ('latest-only', 'latestOnly', False)]
+        ("artifacts", "artifacts", None),
+        ("allow-empty", "allowEmptyArchive", False),
+        ("only-if-success", "onlyIfSuccessful", False),
+        ("fingerprint", "fingerprint", False),
+        ("default-excludes", "defaultExcludes", True),
+        ("case-sensitive", "caseSensitive", True),
+        ("latest-only", "latestOnly", False),
+    ]
 
-    if 'excludes' in data:
-        mapping.append(('excludes', 'excludes', None))
+    if "excludes" in data:
+        mapping.append(("excludes", "excludes", None))
     helpers.convert_mapping_to_xml(archiver, data, mapping, fail_required=True)
 
 
@@ -180,9 +183,10 @@ def blame_upstream(registry, xml_parent, data):
            :language: yaml
     """
 
-    XML.SubElement(xml_parent,
-                   'hudson.plugins.blame__upstream__commiters.'
-                   'BlameUpstreamCommitersPublisher')
+    XML.SubElement(
+        xml_parent,
+        "hudson.plugins.blame__upstream__commiters." "BlameUpstreamCommitersPublisher",
+    )
 
 
 def jclouds(registry, xml_parent, data):
@@ -205,30 +209,27 @@ def jclouds(registry, xml_parent, data):
 
     """
 
-    deployer = XML.SubElement(xml_parent,
-                              'jenkins.plugins.jclouds.blobstore.'
-                              'BlobStorePublisher')
-    entries = XML.SubElement(deployer, 'entries')
-    deployer_entry = XML.SubElement(entries,
-                                    'jenkins.plugins.jclouds.blobstore.'
-                                    'BlobStoreEntry')
-    deployer_mapping = [
-        ('profile', 'profileName', None),
-    ]
-    helpers.convert_mapping_to_xml(
-        deployer, data, deployer_mapping, fail_required=True)
+    deployer = XML.SubElement(
+        xml_parent, "jenkins.plugins.jclouds.blobstore." "BlobStorePublisher"
+    )
+    entries = XML.SubElement(deployer, "entries")
+    deployer_entry = XML.SubElement(
+        entries, "jenkins.plugins.jclouds.blobstore." "BlobStoreEntry"
+    )
+    deployer_mapping = [("profile", "profileName", None)]
+    helpers.convert_mapping_to_xml(deployer, data, deployer_mapping, fail_required=True)
     try:
-        XML.SubElement(deployer_entry, 'container').text = data['container']
-        XML.SubElement(deployer_entry, 'sourceFile').text = data['files']
+        XML.SubElement(deployer_entry, "container").text = data["container"]
+        XML.SubElement(deployer_entry, "sourceFile").text = data["files"]
     except KeyError as e:
-        raise JenkinsJobsException("blobstore requires '%s' to be set"
-                                   % e.args[0])
+        raise JenkinsJobsException("blobstore requires '%s' to be set" % e.args[0])
     deployer_entry_mapping = [
-        ('hierarchy', 'keepHierarchy', False),
-        ('basedir', 'path', ''),
+        ("hierarchy", "keepHierarchy", False),
+        ("basedir", "path", ""),
     ]
     helpers.convert_mapping_to_xml(
-        deployer_entry, data, deployer_entry_mapping, fail_required=True)
+        deployer_entry, data, deployer_entry_mapping, fail_required=True
+    )
 
 
 def javadoc(registry, xml_parent, data):
@@ -250,11 +251,11 @@ def javadoc(registry, xml_parent, data):
            :language: yaml
     """
 
-    root = XML.SubElement(xml_parent, 'hudson.tasks.JavadocArchiver')
+    root = XML.SubElement(xml_parent, "hudson.tasks.JavadocArchiver")
 
     mapping = [
-        ('directory', 'javadocDir', None),
-        ('keep-all-successful', 'keepAll', False),
+        ("directory", "javadocDir", None),
+        ("keep-all-successful", "keepAll", False),
     ]
     helpers.convert_mapping_to_xml(root, data, mapping, fail_required=False)
 
@@ -271,12 +272,8 @@ def jdepend(registry, xml_parent, data):
         .. literalinclude::  /../../tests/publishers/fixtures/jdepend001.yaml
            :language: yaml
     """
-    jdepend = XML.SubElement(
-        xml_parent,
-        'hudson.plugins.jdepend.JDependRecorder')
-    mapping = [
-        ('file', 'configuredJDependFile', None),
-    ]
+    jdepend = XML.SubElement(xml_parent, "hudson.plugins.jdepend.JDependRecorder")
+    mapping = [("file", "configuredJDependFile", None)]
     helpers.convert_mapping_to_xml(jdepend, data, mapping, fail_required=True)
 
 
@@ -309,24 +306,21 @@ def hue_light(registry, xml_parent, data):
     """
 
     hue_light = XML.SubElement(
-        xml_parent, 'org.jenkinsci.plugins.hue__light.LightNotifier')
-    hue_light.set('plugin', 'hue-light')
-    lightId = XML.SubElement(hue_light, 'lightId')
+        xml_parent, "org.jenkinsci.plugins.hue__light.LightNotifier"
+    )
+    hue_light.set("plugin", "hue-light")
+    lightId = XML.SubElement(hue_light, "lightId")
 
-    id_mapping = [
-        ('light-id', 'string', None),
-    ]
-    helpers.convert_mapping_to_xml(
-        lightId, data, id_mapping, fail_required=True)
+    id_mapping = [("light-id", "string", None)]
+    helpers.convert_mapping_to_xml(lightId, data, id_mapping, fail_required=True)
 
     build_mapping = [
-        ('pre-build', 'preBuild', 'blue'),
-        ('good-build', 'goodBuild', 'green'),
-        ('unstable-build', 'unstableBuild', 'yellow'),
-        ('bad-build', 'badBuild', 'red'),
+        ("pre-build", "preBuild", "blue"),
+        ("good-build", "goodBuild", "green"),
+        ("unstable-build", "unstableBuild", "yellow"),
+        ("bad-build", "badBuild", "red"),
     ]
-    helpers.convert_mapping_to_xml(
-        hue_light, data, build_mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(hue_light, data, build_mapping, fail_required=True)
 
 
 def campfire(registry, xml_parent, data):
@@ -349,22 +343,19 @@ def campfire(registry, xml_parent, data):
            :language: yaml
     """
 
-    root = XML.SubElement(xml_parent,
-                          'hudson.plugins.campfire.'
-                          'CampfireNotifier')
-    campfire = XML.SubElement(root, 'campfire')
+    root = XML.SubElement(xml_parent, "hudson.plugins.campfire." "CampfireNotifier")
+    campfire = XML.SubElement(root, "campfire")
 
     mapping = [
-        ('subdomain', 'subdomain', None),
-        ('token', 'token', None),
-        ('ssl', 'ssl', None),
+        ("subdomain", "subdomain", None),
+        ("token", "token", None),
+        ("ssl", "ssl", None),
     ]
-    helpers.convert_mapping_to_xml(
-        campfire, data, mapping, fail_required=False)
+    helpers.convert_mapping_to_xml(campfire, data, mapping, fail_required=False)
 
-    if 'room' in data:
-        room = XML.SubElement(root, 'room')
-        mapping = [('room', 'name', None)]
+    if "room" in data:
+        room = XML.SubElement(root, "room")
+        mapping = [("room", "name", None)]
         helpers.convert_mapping_to_xml(room, data, mapping, fail_required=True)
 
         XML.SubElement(room, 'campfire reference="../../campfire"')
@@ -397,24 +388,23 @@ def mqtt(registry, xml_parent, data):
            :language: yaml
     """
 
-    mqtt = XML.SubElement(xml_parent,
-                          'jenkins.plugins.mqttnotification.MqttNotifier')
-    mqtt.set('plugin', 'mqtt-notification-plugin')
+    mqtt = XML.SubElement(xml_parent, "jenkins.plugins.mqttnotification.MqttNotifier")
+    mqtt.set("plugin", "mqtt-notification-plugin")
+    mqtt_mapping = [("broker-url", "brokerUrl", None)]
+    helpers.convert_mapping_to_xml(mqtt, data, mqtt_mapping, fail_required=True)
     mqtt_mapping = [
-        ('broker-url', 'brokerUrl', None), ]
-    helpers.convert_mapping_to_xml(mqtt, data, mqtt_mapping,
-                                   fail_required=True)
-    mqtt_mapping = [
-        ('credentials-id', 'credentialsId', None),
-        ('topic', 'topic', 'jenkins/$PROJECT_URL'),
-        ('message', 'message', '$BUILD_RESULT'),
-        ('qos', 'qos', 'AT_MOST_ONCE', {'AT_MOST_ONCE': '0',
-                                        'AT_LEAST_ONCE': '1',
-                                        'EXACTLY_ONCE': '2'}),
-        ('retain-message', 'retainMessage', False)
+        ("credentials-id", "credentialsId", None),
+        ("topic", "topic", "jenkins/$PROJECT_URL"),
+        ("message", "message", "$BUILD_RESULT"),
+        (
+            "qos",
+            "qos",
+            "AT_MOST_ONCE",
+            {"AT_MOST_ONCE": "0", "AT_LEAST_ONCE": "1", "EXACTLY_ONCE": "2"},
+        ),
+        ("retain-message", "retainMessage", False),
     ]
-    helpers.convert_mapping_to_xml(mqtt, data, mqtt_mapping,
-                                   fail_required=False)
+    helpers.convert_mapping_to_xml(mqtt, data, mqtt_mapping, fail_required=False)
 
 
 def codecover(registry, xml_parent, data):
@@ -448,24 +438,24 @@ def codecover(registry, xml_parent, data):
     """
 
     codecover = XML.SubElement(
-        xml_parent, 'hudson.plugins.codecover.CodeCoverPublisher')
-    codecover.set('plugin', 'codecover')
+        xml_parent, "hudson.plugins.codecover.CodeCoverPublisher"
+    )
+    codecover.set("plugin", "codecover")
 
-    XML.SubElement(codecover, 'includes').text = str(data.get('include', ''))
+    XML.SubElement(codecover, "includes").text = str(data.get("include", ""))
 
-    health_report = XML.SubElement(codecover, 'healthReports')
+    health_report = XML.SubElement(codecover, "healthReports")
     mapping = [
-        ('min-statement', 'minStatement', 0),
-        ('max-statement', 'maxStatement', 90),
-        ('min-branch', 'minBranch', 0),
-        ('max-branch', 'maxBranch', 80),
-        ('min-loop', 'minLoop', 0),
-        ('max-loop', 'maxLoop', 50),
-        ('min-condition', 'minCondition', 0),
-        ('max-condition', 'maxCondition', 50),
+        ("min-statement", "minStatement", 0),
+        ("max-statement", "maxStatement", 90),
+        ("min-branch", "minBranch", 0),
+        ("max-branch", "maxBranch", 80),
+        ("min-loop", "minLoop", 0),
+        ("max-loop", "maxLoop", 50),
+        ("min-condition", "minCondition", 0),
+        ("max-condition", "maxCondition", 50),
     ]
-    helpers.convert_mapping_to_xml(
-        health_report, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(health_report, data, mapping, fail_required=True)
 
 
 def emotional_jenkins(registry, xml_parent, data):
@@ -482,9 +472,10 @@ def emotional_jenkins(registry, xml_parent, data):
            /../../tests/publishers/fixtures/emotional-jenkins.yaml
            :language: yaml
     """
-    XML.SubElement(xml_parent,
-                   'org.jenkinsci.plugins.emotional__jenkins.'
-                   'EmotionalJenkinsPublisher')
+    XML.SubElement(
+        xml_parent,
+        "org.jenkinsci.plugins.emotional__jenkins." "EmotionalJenkinsPublisher",
+    )
 
 
 def trigger_parameterized_builds(registry, xml_parent, data):
@@ -562,38 +553,40 @@ def trigger_parameterized_builds(registry, xml_parent, data):
             /../../tests/publishers/fixtures/trigger_parameterized_builds003.yaml
            :language: yaml
     """
-    pt_prefix = 'hudson.plugins.parameterizedtrigger.'
-    tbuilder = XML.SubElement(xml_parent, pt_prefix + 'BuildTrigger')
-    configs = XML.SubElement(tbuilder, 'configs')
+    pt_prefix = "hudson.plugins.parameterizedtrigger."
+    tbuilder = XML.SubElement(xml_parent, pt_prefix + "BuildTrigger")
+    configs = XML.SubElement(tbuilder, "configs")
 
     param_order = helpers.trigger_get_parameter_order(
-        registry, 'trigger-parameterized-builds')
+        registry, "trigger-parameterized-builds"
+    )
 
     for project_def in data:
-        tconfig = XML.SubElement(configs, pt_prefix + 'BuildTriggerConfig')
-        tconfigs = XML.SubElement(tconfig, 'configs')
+        tconfig = XML.SubElement(configs, pt_prefix + "BuildTriggerConfig")
+        tconfigs = XML.SubElement(tconfig, "configs")
 
         helpers.trigger_project(tconfigs, project_def, param_order)
 
         if not list(tconfigs):
             # no child parameter tags added
-            tconfigs.set('class', 'java.util.Collections$EmptyList')
+            tconfigs.set("class", "java.util.Collections$EmptyList")
 
-        projects = XML.SubElement(tconfig, 'projects')
+        projects = XML.SubElement(tconfig, "projects")
 
-        if isinstance(project_def['project'], list):
-            projects.text = ",".join(project_def['project'])
+        if isinstance(project_def["project"], list):
+            projects.text = ",".join(project_def["project"])
         else:
-            projects.text = project_def['project']
+            projects.text = project_def["project"]
 
-        condition = XML.SubElement(tconfig, 'condition')
-        condition.text = project_def.get('condition', 'ALWAYS')
+        condition = XML.SubElement(tconfig, "condition")
+        condition.text = project_def.get("condition", "ALWAYS")
         mapping = [
-            ('trigger-from-child-projects', 'triggerFromChildProjects', False),
-            ('trigger-with-no-params', 'triggerWithNoParameters', False),
+            ("trigger-from-child-projects", "triggerFromChildProjects", False),
+            ("trigger-with-no-params", "triggerWithNoParameters", False),
         ]
         helpers.convert_mapping_to_xml(
-            tconfig, project_def, mapping, fail_required=False)
+            tconfig, project_def, mapping, fail_required=False
+        )
 
 
 def trigger(registry, xml_parent, data):
@@ -609,22 +602,23 @@ def trigger(registry, xml_parent, data):
     .. literalinclude:: /../../tests/publishers/fixtures/trigger_success.yaml
        :language: yaml
     """
-    tconfig = XML.SubElement(xml_parent, 'hudson.tasks.BuildTrigger')
-    childProjects = XML.SubElement(tconfig, 'childProjects')
-    childProjects.text = data['project']
-    tthreshold = XML.SubElement(tconfig, 'threshold')
+    tconfig = XML.SubElement(xml_parent, "hudson.tasks.BuildTrigger")
+    childProjects = XML.SubElement(tconfig, "childProjects")
+    childProjects.text = data["project"]
+    tthreshold = XML.SubElement(tconfig, "threshold")
 
-    threshold = data.get('threshold', 'SUCCESS')
-    supported_thresholds = ['SUCCESS', 'UNSTABLE', 'FAILURE']
+    threshold = data.get("threshold", "SUCCESS")
+    supported_thresholds = ["SUCCESS", "UNSTABLE", "FAILURE"]
     if threshold not in supported_thresholds:
-        raise JenkinsJobsException("threshold must be one of %s" %
-                                   ", ".join(supported_thresholds))
-    tname = XML.SubElement(tthreshold, 'name')
-    tname.text = hudson_model.THRESHOLDS[threshold]['name']
-    tordinal = XML.SubElement(tthreshold, 'ordinal')
-    tordinal.text = hudson_model.THRESHOLDS[threshold]['ordinal']
-    tcolor = XML.SubElement(tthreshold, 'color')
-    tcolor.text = hudson_model.THRESHOLDS[threshold]['color']
+        raise JenkinsJobsException(
+            "threshold must be one of %s" % ", ".join(supported_thresholds)
+        )
+    tname = XML.SubElement(tthreshold, "name")
+    tname.text = hudson_model.THRESHOLDS[threshold]["name"]
+    tordinal = XML.SubElement(tthreshold, "ordinal")
+    tordinal.text = hudson_model.THRESHOLDS[threshold]["ordinal"]
+    tcolor = XML.SubElement(tthreshold, "color")
+    tcolor.text = hudson_model.THRESHOLDS[threshold]["color"]
 
 
 def clone_workspace(registry, xml_parent, data):
@@ -657,27 +651,23 @@ def clone_workspace(registry, xml_parent, data):
     """
 
     cloneworkspace = XML.SubElement(
-        xml_parent,
-        'hudson.plugins.cloneworkspace.CloneWorkspacePublisher')
-    cloneworkspace.set('plugin', 'clone-workspace-scm')
+        xml_parent, "hudson.plugins.cloneworkspace.CloneWorkspacePublisher"
+    )
+    cloneworkspace.set("plugin", "clone-workspace-scm")
 
-    criteria_valid_types = ['Any', 'Not Failed', 'Successful']
-    archive_valid_types = ['TAR', 'ZIP']
-
-    mappings = [
-        ('workspace-glob', 'workspaceGlob', ''),
-        ('override-default-excludes', 'overrideDefaultExcludes', False),
-        ('criteria', 'criteria', 'Any', criteria_valid_types),
-        ('archive-method', 'archiveMethod', 'TAR', archive_valid_types),
-    ]
-    helpers.convert_mapping_to_xml(
-        cloneworkspace, data, mappings, fail_required=True)
+    criteria_valid_types = ["Any", "Not Failed", "Successful"]
+    archive_valid_types = ["TAR", "ZIP"]
 
     mappings = [
-        ('workspace-exclude-glob', 'workspaceExcludeGlob', ''),
+        ("workspace-glob", "workspaceGlob", ""),
+        ("override-default-excludes", "overrideDefaultExcludes", False),
+        ("criteria", "criteria", "Any", criteria_valid_types),
+        ("archive-method", "archiveMethod", "TAR", archive_valid_types),
     ]
-    helpers.convert_mapping_to_xml(
-        cloneworkspace, data, mappings, fail_required=False)
+    helpers.convert_mapping_to_xml(cloneworkspace, data, mappings, fail_required=True)
+
+    mappings = [("workspace-exclude-glob", "workspaceExcludeGlob", "")]
+    helpers.convert_mapping_to_xml(cloneworkspace, data, mappings, fail_required=False)
 
 
 def cloud_foundry(parser, xml_parent, data):
@@ -753,82 +743,81 @@ def cloud_foundry(parser, xml_parent, data):
        :language: yaml
     """
     cloud_foundry = XML.SubElement(
-        xml_parent, 'com.hpe.cloudfoundryjenkins.CloudFoundryPushPublisher')
-    cloud_foundry.set('plugin', 'cloudfoundry')
+        xml_parent, "com.hpe.cloudfoundryjenkins.CloudFoundryPushPublisher"
+    )
+    cloud_foundry.set("plugin", "cloudfoundry")
 
     mapping = [
-        ('target', 'target', None),
-        ('organization', 'organization', None),
-        ('space', 'cloudSpace', None),
-        ('credentials-id', 'credentialsId', None),
-        ('self-signed', 'selfSigned', False),
-        ('reset-app', 'resetIfExists', False),
-        ('timeout', 'pluginTimeout', 120),
+        ("target", "target", None),
+        ("organization", "organization", None),
+        ("space", "cloudSpace", None),
+        ("credentials-id", "credentialsId", None),
+        ("self-signed", "selfSigned", False),
+        ("reset-app", "resetIfExists", False),
+        ("timeout", "pluginTimeout", 120),
     ]
-    helpers.convert_mapping_to_xml(
-        cloud_foundry, data, mapping, fail_required=True)
-    XML.SubElement(cloud_foundry, 'appURIs').text = ''
+    helpers.convert_mapping_to_xml(cloud_foundry, data, mapping, fail_required=True)
+    XML.SubElement(cloud_foundry, "appURIs").text = ""
 
-    create_services = XML.SubElement(cloud_foundry, 'servicesToCreate')
+    create_services = XML.SubElement(cloud_foundry, "servicesToCreate")
     create_services_mapping = [
-        ('name', 'name', ''),
-        ('type', 'type', ''),
-        ('plan', 'plan', ''),
-        ('reset-service', 'resetService', '')]
-    for service in data.get('create-services', ''):
+        ("name", "name", ""),
+        ("type", "type", ""),
+        ("plan", "plan", ""),
+        ("reset-service", "resetService", ""),
+    ]
+    for service in data.get("create-services", ""):
         create_services_sub = XML.SubElement(
             create_services,
-            'com.hpe.cloudfoundryjenkins.CloudFoundryPushPublisher_-Service')
-        helpers.convert_mapping_to_xml(create_services_sub,
-                                       service,
-                                       create_services_mapping,
-                                       fail_required=True)
+            "com.hpe.cloudfoundryjenkins.CloudFoundryPushPublisher_-Service",
+        )
+        helpers.convert_mapping_to_xml(
+            create_services_sub, service, create_services_mapping, fail_required=True
+        )
 
-    manifest = XML.SubElement(cloud_foundry, 'manifestChoice')
-    valid_values = ['manifestFile', 'jenkinsConfig']
+    manifest = XML.SubElement(cloud_foundry, "manifestChoice")
+    valid_values = ["manifestFile", "jenkinsConfig"]
     manifest_mapping = [
-        ('value', 'value', 'manifestFile', valid_values),
-        ('manifest-file', 'manifestFile', 'manifest.yml'),
-        ('app-name', 'appName', ''),
-        ('memory', 'memory', 512),
-        ('host-name', 'hostname', ''),
-        ('instances', 'instances', 1),
-        ('manifest-timeout', 'timeout', 60),
-        ('no-route', 'noRoute', False),
-        ('app-path', 'appPath', ''),
-        ('build-pack', 'buildpack', ''),
-        ('stack', 'stack', ''),
-        ('command', 'command', ''),
-        ('domain', 'domain', ''),
+        ("value", "value", "manifestFile", valid_values),
+        ("manifest-file", "manifestFile", "manifest.yml"),
+        ("app-name", "appName", ""),
+        ("memory", "memory", 512),
+        ("host-name", "hostname", ""),
+        ("instances", "instances", 1),
+        ("manifest-timeout", "timeout", 60),
+        ("no-route", "noRoute", False),
+        ("app-path", "appPath", ""),
+        ("build-pack", "buildpack", ""),
+        ("stack", "stack", ""),
+        ("command", "command", ""),
+        ("domain", "domain", ""),
     ]
-    helpers.convert_mapping_to_xml(
-        manifest, data, manifest_mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(manifest, data, manifest_mapping, fail_required=True)
 
-    if 'environment-variables' in data:
-        env_vars = XML.SubElement(manifest, 'envVars')
-        env_vars_mapping = [
-            ('key', 'key', ''),
-            ('value', 'value', '')]
-        for var in data['environment-variables']:
+    if "environment-variables" in data:
+        env_vars = XML.SubElement(manifest, "envVars")
+        env_vars_mapping = [("key", "key", ""), ("value", "value", "")]
+        for var in data["environment-variables"]:
             env_vars_sub = XML.SubElement(
                 env_vars,
-                'com.hpe.cloudfoundryjenkins.CloudFoundryPushPublisher_-'
-                'EnvironmentVariable')
+                "com.hpe.cloudfoundryjenkins.CloudFoundryPushPublisher_-"
+                "EnvironmentVariable",
+            )
             helpers.convert_mapping_to_xml(
-                env_vars_sub, var, env_vars_mapping, fail_required=True)
+                env_vars_sub, var, env_vars_mapping, fail_required=True
+            )
 
-    if 'services-names' in data:
-        services_names = XML.SubElement(manifest, 'servicesNames')
-        service_name_mapping = [('name', 'name', '')]
-        for name in data['services-names']:
+    if "services-names" in data:
+        services_names = XML.SubElement(manifest, "servicesNames")
+        service_name_mapping = [("name", "name", "")]
+        for name in data["services-names"]:
             services_names_sub = XML.SubElement(
                 services_names,
-                'com.hpe.cloudfoundryjenkins.CloudFoundryPushPublisher_-'
-                'ServiceName')
-            helpers.convert_mapping_to_xml(services_names_sub,
-                                           name,
-                                           service_name_mapping,
-                                           fail_required=True)
+                "com.hpe.cloudfoundryjenkins.CloudFoundryPushPublisher_-" "ServiceName",
+            )
+            helpers.convert_mapping_to_xml(
+                services_names_sub, name, service_name_mapping, fail_required=True
+            )
 
 
 def cloverphp(registry, xml_parent, data):
@@ -873,13 +862,13 @@ def cloverphp(registry, xml_parent, data):
        :language: yaml
     """
     cloverphp = XML.SubElement(
-        xml_parent,
-        'org.jenkinsci.plugins.cloverphp.CloverPHPPublisher')
-    cloverphp.set('plugin', 'cloverphp')
+        xml_parent, "org.jenkinsci.plugins.cloverphp.CloverPHPPublisher"
+    )
+    cloverphp.set("plugin", "cloverphp")
 
     # The plugin requires clover XML file to parse
-    if 'xml-location' not in data:
-        raise JenkinsJobsException('xml-location must be set')
+    if "xml-location" not in data:
+        raise JenkinsJobsException("xml-location must be set")
 
     # Whether HTML publishing has been checked
     html_publish = False
@@ -887,32 +876,28 @@ def cloverphp(registry, xml_parent, data):
     # reversed logic.
     html_archive = True
 
-    if 'html' in data:
+    if "html" in data:
         html_publish = True
-        html_dir = data['html'].get('dir', None)
-        html_archive = data['html'].get('archive', html_archive)
+        html_dir = data["html"].get("dir", None)
+        html_archive = data["html"].get("archive", html_archive)
         if html_dir is None:
             # No point in going further, the plugin would not work
-            raise JenkinsJobsException('htmldir is required in a html block')
+            raise JenkinsJobsException("htmldir is required in a html block")
 
-    XML.SubElement(cloverphp, 'publishHtmlReport').text = str(
-        html_publish).lower()
+    XML.SubElement(cloverphp, "publishHtmlReport").text = str(html_publish).lower()
     if html_publish:
-        XML.SubElement(cloverphp, 'reportDir').text = html_dir
-    XML.SubElement(cloverphp, 'xmlLocation').text = data.get('xml-location')
-    XML.SubElement(cloverphp, 'disableArchiving').text = str(
-        not html_archive).lower()
+        XML.SubElement(cloverphp, "reportDir").text = html_dir
+    XML.SubElement(cloverphp, "xmlLocation").text = data.get("xml-location")
+    XML.SubElement(cloverphp, "disableArchiving").text = str(not html_archive).lower()
 
     # Handle targets
 
     # Plugin v0.3.3 will fill defaults for us whenever healthy targets are both
     # blanks.
-    default_metrics = {
-        'healthy': {'method': 70, 'statement': 80}
-    }
-    allowed_metrics = ['healthy', 'unhealthy', 'failing']
+    default_metrics = {"healthy": {"method": 70, "statement": 80}}
+    allowed_metrics = ["healthy", "unhealthy", "failing"]
 
-    metrics = data.get('metric-targets', [])
+    metrics = data.get("metric-targets", [])
     # list of dicts to dict
     metrics = dict(kv for m in metrics for kv in m.items())
 
@@ -925,17 +910,18 @@ def cloverphp(registry, xml_parent, data):
     # we output them all in the XML regardless of what the user
     # has or has not entered.
     for target in allowed_metrics:
-        cur_target = XML.SubElement(cloverphp, target + 'Target')
+        cur_target = XML.SubElement(cloverphp, target + "Target")
 
-        for t_type in ['method', 'statement']:
+        for t_type in ["method", "statement"]:
             val = metrics.get(target, {}).get(t_type)
             if val is None or type(val) != int:
                 continue
             if val < 0 or val > 100:
                 raise JenkinsJobsException(
                     "Publisher cloverphp metric target %s:%s = %s "
-                    "is not in valid range 0-100." % (target, t_type, val))
-            XML.SubElement(cur_target, t_type + 'Coverage').text = str(val)
+                    "is not in valid range 0-100." % (target, t_type, val)
+                )
+            XML.SubElement(cur_target, t_type + "Coverage").text = str(val)
 
 
 def coverage(registry, xml_parent, data):
@@ -953,59 +939,84 @@ def coverage(registry, xml_parent, data):
     logger = logging.getLogger(__name__)
     logger.warning("Coverage function is deprecated. Switch to cobertura.")
 
-    cobertura = XML.SubElement(xml_parent,
-                               'hudson.plugins.cobertura.CoberturaPublisher')
-    XML.SubElement(cobertura, 'coberturaReportFile').text = '**/coverage.xml'
-    XML.SubElement(cobertura, 'onlyStable').text = 'false'
-    healthy = XML.SubElement(cobertura, 'healthyTarget')
-    targets = XML.SubElement(healthy, 'targets', {
-        'class': 'enum-map',
-        'enum-type': 'hudson.plugins.cobertura.targets.CoverageMetric'})
-    entry = XML.SubElement(targets, 'entry')
-    XML.SubElement(entry, 'hudson.plugins.cobertura.targets.CoverageMetric'
-                   ).text = 'CONDITIONAL'
-    XML.SubElement(entry, 'int').text = '70'
-    entry = XML.SubElement(targets, 'entry')
-    XML.SubElement(entry, 'hudson.plugins.cobertura.targets.CoverageMetric'
-                   ).text = 'LINE'
-    XML.SubElement(entry, 'int').text = '80'
-    entry = XML.SubElement(targets, 'entry')
-    XML.SubElement(entry, 'hudson.plugins.cobertura.targets.CoverageMetric'
-                   ).text = 'METHOD'
-    XML.SubElement(entry, 'int').text = '80'
-    unhealthy = XML.SubElement(cobertura, 'unhealthyTarget')
-    targets = XML.SubElement(unhealthy, 'targets', {
-        'class': 'enum-map',
-        'enum-type': 'hudson.plugins.cobertura.targets.CoverageMetric'})
-    entry = XML.SubElement(targets, 'entry')
-    XML.SubElement(entry, 'hudson.plugins.cobertura.targets.CoverageMetric'
-                   ).text = 'CONDITIONAL'
-    XML.SubElement(entry, 'int').text = '0'
-    entry = XML.SubElement(targets, 'entry')
-    XML.SubElement(entry, 'hudson.plugins.cobertura.targets.CoverageMetric'
-                   ).text = 'LINE'
-    XML.SubElement(entry, 'int').text = '0'
-    entry = XML.SubElement(targets, 'entry')
-    XML.SubElement(entry, 'hudson.plugins.cobertura.targets.CoverageMetric'
-                   ).text = 'METHOD'
-    XML.SubElement(entry, 'int').text = '0'
-    failing = XML.SubElement(cobertura, 'failingTarget')
-    targets = XML.SubElement(failing, 'targets', {
-        'class': 'enum-map',
-        'enum-type': 'hudson.plugins.cobertura.targets.CoverageMetric'})
-    entry = XML.SubElement(targets, 'entry')
-    XML.SubElement(entry, 'hudson.plugins.cobertura.targets.CoverageMetric'
-                   ).text = 'CONDITIONAL'
-    XML.SubElement(entry, 'int').text = '0'
-    entry = XML.SubElement(targets, 'entry')
-    XML.SubElement(entry, 'hudson.plugins.cobertura.targets.CoverageMetric'
-                   ).text = 'LINE'
-    XML.SubElement(entry, 'int').text = '0'
-    entry = XML.SubElement(targets, 'entry')
-    XML.SubElement(entry, 'hudson.plugins.cobertura.targets.CoverageMetric'
-                   ).text = 'METHOD'
-    XML.SubElement(entry, 'int').text = '0'
-    XML.SubElement(cobertura, 'sourceEncoding').text = 'ASCII'
+    cobertura = XML.SubElement(
+        xml_parent, "hudson.plugins.cobertura.CoberturaPublisher"
+    )
+    XML.SubElement(cobertura, "coberturaReportFile").text = "**/coverage.xml"
+    XML.SubElement(cobertura, "onlyStable").text = "false"
+    healthy = XML.SubElement(cobertura, "healthyTarget")
+    targets = XML.SubElement(
+        healthy,
+        "targets",
+        {
+            "class": "enum-map",
+            "enum-type": "hudson.plugins.cobertura.targets.CoverageMetric",
+        },
+    )
+    entry = XML.SubElement(targets, "entry")
+    XML.SubElement(
+        entry, "hudson.plugins.cobertura.targets.CoverageMetric"
+    ).text = "CONDITIONAL"
+    XML.SubElement(entry, "int").text = "70"
+    entry = XML.SubElement(targets, "entry")
+    XML.SubElement(
+        entry, "hudson.plugins.cobertura.targets.CoverageMetric"
+    ).text = "LINE"
+    XML.SubElement(entry, "int").text = "80"
+    entry = XML.SubElement(targets, "entry")
+    XML.SubElement(
+        entry, "hudson.plugins.cobertura.targets.CoverageMetric"
+    ).text = "METHOD"
+    XML.SubElement(entry, "int").text = "80"
+    unhealthy = XML.SubElement(cobertura, "unhealthyTarget")
+    targets = XML.SubElement(
+        unhealthy,
+        "targets",
+        {
+            "class": "enum-map",
+            "enum-type": "hudson.plugins.cobertura.targets.CoverageMetric",
+        },
+    )
+    entry = XML.SubElement(targets, "entry")
+    XML.SubElement(
+        entry, "hudson.plugins.cobertura.targets.CoverageMetric"
+    ).text = "CONDITIONAL"
+    XML.SubElement(entry, "int").text = "0"
+    entry = XML.SubElement(targets, "entry")
+    XML.SubElement(
+        entry, "hudson.plugins.cobertura.targets.CoverageMetric"
+    ).text = "LINE"
+    XML.SubElement(entry, "int").text = "0"
+    entry = XML.SubElement(targets, "entry")
+    XML.SubElement(
+        entry, "hudson.plugins.cobertura.targets.CoverageMetric"
+    ).text = "METHOD"
+    XML.SubElement(entry, "int").text = "0"
+    failing = XML.SubElement(cobertura, "failingTarget")
+    targets = XML.SubElement(
+        failing,
+        "targets",
+        {
+            "class": "enum-map",
+            "enum-type": "hudson.plugins.cobertura.targets.CoverageMetric",
+        },
+    )
+    entry = XML.SubElement(targets, "entry")
+    XML.SubElement(
+        entry, "hudson.plugins.cobertura.targets.CoverageMetric"
+    ).text = "CONDITIONAL"
+    XML.SubElement(entry, "int").text = "0"
+    entry = XML.SubElement(targets, "entry")
+    XML.SubElement(
+        entry, "hudson.plugins.cobertura.targets.CoverageMetric"
+    ).text = "LINE"
+    XML.SubElement(entry, "int").text = "0"
+    entry = XML.SubElement(targets, "entry")
+    XML.SubElement(
+        entry, "hudson.plugins.cobertura.targets.CoverageMetric"
+    ).text = "METHOD"
+    XML.SubElement(entry, "int").text = "0"
+    XML.SubElement(cobertura, "sourceEncoding").text = "ASCII"
 
 
 def cobertura(registry, xml_parent, data):
@@ -1042,58 +1053,75 @@ def cobertura(registry, xml_parent, data):
     .. literalinclude:: /../../tests/publishers/fixtures/cobertura001.yaml
        :language: yaml
     """
-    cobertura = XML.SubElement(xml_parent,
-                               'hudson.plugins.cobertura.CoberturaPublisher')
+    cobertura = XML.SubElement(
+        xml_parent, "hudson.plugins.cobertura.CoberturaPublisher"
+    )
     mapping = [
-        ('report-file', 'coberturaReportFile', '**/coverage.xml'),
-        ('only-stable', 'onlyStable', False),
-        ('fail-unhealthy', 'failUnhealthy', False),
-        ('fail-unstable', 'failUnstable', False),
-        ('health-auto-update', 'autoUpdateHealth', False),
-        ('stability-auto-update', 'autoUpdateStability', False),
-        ('zoom-coverage-chart', 'zoomCoverageChart', False),
-        ('fail-no-reports', 'failNoReports', False),
+        ("report-file", "coberturaReportFile", "**/coverage.xml"),
+        ("only-stable", "onlyStable", False),
+        ("fail-unhealthy", "failUnhealthy", False),
+        ("fail-unstable", "failUnstable", False),
+        ("health-auto-update", "autoUpdateHealth", False),
+        ("stability-auto-update", "autoUpdateStability", False),
+        ("zoom-coverage-chart", "zoomCoverageChart", False),
+        ("fail-no-reports", "failNoReports", False),
     ]
-    helpers.convert_mapping_to_xml(
-        cobertura, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(cobertura, data, mapping, fail_required=True)
 
-    healthy = XML.SubElement(cobertura, 'healthyTarget')
-    targets = XML.SubElement(healthy, 'targets', {
-        'class': 'enum-map',
-        'enum-type': 'hudson.plugins.cobertura.targets.CoverageMetric'})
-    for item in data['targets']:
+    healthy = XML.SubElement(cobertura, "healthyTarget")
+    targets = XML.SubElement(
+        healthy,
+        "targets",
+        {
+            "class": "enum-map",
+            "enum-type": "hudson.plugins.cobertura.targets.CoverageMetric",
+        },
+    )
+    for item in data["targets"]:
         item_name = next(iter(item.keys()))
         item_values = item.get(item_name, 0)
-        entry = XML.SubElement(targets, 'entry')
-        XML.SubElement(entry,
-                       'hudson.plugins.cobertura.targets.'
-                       'CoverageMetric').text = str(item_name).upper()
-        XML.SubElement(entry, 'int').text = str(item_values.get('healthy', 0))
-    unhealthy = XML.SubElement(cobertura, 'unhealthyTarget')
-    targets = XML.SubElement(unhealthy, 'targets', {
-        'class': 'enum-map',
-        'enum-type': 'hudson.plugins.cobertura.targets.CoverageMetric'})
-    for item in data['targets']:
+        entry = XML.SubElement(targets, "entry")
+        XML.SubElement(
+            entry, "hudson.plugins.cobertura.targets." "CoverageMetric"
+        ).text = str(item_name).upper()
+        XML.SubElement(entry, "int").text = str(item_values.get("healthy", 0))
+    unhealthy = XML.SubElement(cobertura, "unhealthyTarget")
+    targets = XML.SubElement(
+        unhealthy,
+        "targets",
+        {
+            "class": "enum-map",
+            "enum-type": "hudson.plugins.cobertura.targets.CoverageMetric",
+        },
+    )
+    for item in data["targets"]:
         item_name = next(iter(item.keys()))
         item_values = item.get(item_name, 0)
-        entry = XML.SubElement(targets, 'entry')
-        XML.SubElement(entry, 'hudson.plugins.cobertura.targets.'
-                              'CoverageMetric').text = str(item_name).upper()
-        XML.SubElement(entry, 'int').text = str(item_values.get('unhealthy',
-                                                                0))
-    failing = XML.SubElement(cobertura, 'failingTarget')
-    targets = XML.SubElement(failing, 'targets', {
-        'class': 'enum-map',
-        'enum-type': 'hudson.plugins.cobertura.targets.CoverageMetric'})
-    for item in data['targets']:
+        entry = XML.SubElement(targets, "entry")
+        XML.SubElement(
+            entry, "hudson.plugins.cobertura.targets." "CoverageMetric"
+        ).text = str(item_name).upper()
+        XML.SubElement(entry, "int").text = str(item_values.get("unhealthy", 0))
+    failing = XML.SubElement(cobertura, "failingTarget")
+    targets = XML.SubElement(
+        failing,
+        "targets",
+        {
+            "class": "enum-map",
+            "enum-type": "hudson.plugins.cobertura.targets.CoverageMetric",
+        },
+    )
+    for item in data["targets"]:
         item_name = next(iter(item.keys()))
         item_values = item.get(item_name, 0)
-        entry = XML.SubElement(targets, 'entry')
-        XML.SubElement(entry, 'hudson.plugins.cobertura.targets.'
-                              'CoverageMetric').text = str(item_name).upper()
-        XML.SubElement(entry, 'int').text = str(item_values.get('failing', 0))
-    XML.SubElement(cobertura, 'sourceEncoding').text = data.get(
-        'source-encoding', 'ASCII')
+        entry = XML.SubElement(targets, "entry")
+        XML.SubElement(
+            entry, "hudson.plugins.cobertura.targets." "CoverageMetric"
+        ).text = str(item_name).upper()
+        XML.SubElement(entry, "int").text = str(item_values.get("failing", 0))
+    XML.SubElement(cobertura, "sourceEncoding").text = data.get(
+        "source-encoding", "ASCII"
+    )
 
 
 def jacoco(registry, xml_parent, data):
@@ -1133,50 +1161,40 @@ def jacoco(registry, xml_parent, data):
        :language: yaml
     """
 
-    jacoco = XML.SubElement(xml_parent,
-                            'hudson.plugins.jacoco.JacocoPublisher')
-    jacoco.set('plugin', 'jacoco')
+    jacoco = XML.SubElement(xml_parent, "hudson.plugins.jacoco.JacocoPublisher")
+    jacoco.set("plugin", "jacoco")
 
     mappings = [
-        ('exec-pattern', 'execPattern', '**/**.exec'),
-        ('class-pattern', 'classPattern', '**/classes'),
-        ('source-pattern', 'sourcePattern', '**/src/main/java'),
-        ('source-inclusion-pattern', 'sourceInclusionPattern', '**/*.java'),
-        ('update-build-status', 'changeBuildStatus', False),
-        ('inclusion-pattern', 'inclusionPattern', ''),
-        ('exclusion-pattern', 'exclusionPattern', ''),
+        ("exec-pattern", "execPattern", "**/**.exec"),
+        ("class-pattern", "classPattern", "**/classes"),
+        ("source-pattern", "sourcePattern", "**/src/main/java"),
+        ("source-inclusion-pattern", "sourceInclusionPattern", "**/*.java"),
+        ("update-build-status", "changeBuildStatus", False),
+        ("inclusion-pattern", "inclusionPattern", ""),
+        ("exclusion-pattern", "exclusionPattern", ""),
     ]
     helpers.convert_mapping_to_xml(jacoco, data, mappings, fail_required=True)
 
-    itemsList = ['instruction',
-                 'branch',
-                 'complexity',
-                 'line',
-                 'method',
-                 'class']
+    itemsList = ["instruction", "branch", "complexity", "line", "method", "class"]
 
-    if 'targets' in data:
-        for item in data['targets']:
+    if "targets" in data:
+        for item in data["targets"]:
             item_name = next(iter(item.keys()))
             if item_name not in itemsList:
-                raise InvalidAttributeError('targets', item_name, itemsList)
+                raise InvalidAttributeError("targets", item_name, itemsList)
 
             item_values = item[item_name]
             if item_values:
-                XML.SubElement(jacoco,
-                               'maximum' +
-                               item_name.capitalize() +
-                               'Coverage').text = str(
-                                   item_values.get('healthy', 0))
-                XML.SubElement(jacoco,
-                               'minimum' +
-                               item_name.capitalize() +
-                               'Coverage').text = str(
-                                   item_values.get('unhealthy', 0))
+                XML.SubElement(
+                    jacoco, "maximum" + item_name.capitalize() + "Coverage"
+                ).text = str(item_values.get("healthy", 0))
+                XML.SubElement(
+                    jacoco, "minimum" + item_name.capitalize() + "Coverage"
+                ).text = str(item_values.get("unhealthy", 0))
             else:
                 raise MissingAttributeError(
-                    ['healthy', 'unhealthy'],
-                    'publishers.jacoco.targets.' + item_name)
+                    ["healthy", "unhealthy"], "publishers.jacoco.targets." + item_name
+                )
 
 
 def ftp(registry, xml_parent, data):
@@ -1216,24 +1234,24 @@ def ftp(registry, xml_parent, data):
            :language: yaml
 
     """
-    console_prefix = 'FTP: '
-    plugin_tag = 'jenkins.plugins.publish__over__ftp.BapFtpPublisherPlugin'
-    publisher_tag = 'jenkins.plugins.publish__over__ftp.BapFtpPublisher'
-    transfer_tag = 'jenkins.plugins.publish__over__ftp.BapFtpTransfer'
-    retry_tag = 'jenkins.plugins.publish_over_ftp.BapFtpRetry'
-    plugin_reference_tag = 'jenkins.plugins.publish_over_ftp.'    \
-        'BapFtpPublisherPlugin'
-    (_, transfer_node) = base_publish_over(xml_parent,
-                                           data,
-                                           console_prefix,
-                                           plugin_tag,
-                                           publisher_tag,
-                                           transfer_tag,
-                                           retry_tag,
-                                           plugin_reference_tag)
-    mapping = [('', 'asciiMode', 'false')]
-    helpers.convert_mapping_to_xml(
-        transfer_node, data, mapping, fail_required=True)
+    console_prefix = "FTP: "
+    plugin_tag = "jenkins.plugins.publish__over__ftp.BapFtpPublisherPlugin"
+    publisher_tag = "jenkins.plugins.publish__over__ftp.BapFtpPublisher"
+    transfer_tag = "jenkins.plugins.publish__over__ftp.BapFtpTransfer"
+    retry_tag = "jenkins.plugins.publish_over_ftp.BapFtpRetry"
+    plugin_reference_tag = "jenkins.plugins.publish_over_ftp." "BapFtpPublisherPlugin"
+    (_, transfer_node) = base_publish_over(
+        xml_parent,
+        data,
+        console_prefix,
+        plugin_tag,
+        publisher_tag,
+        transfer_tag,
+        retry_tag,
+        plugin_reference_tag,
+    )
+    mapping = [("", "asciiMode", "false")]
+    helpers.convert_mapping_to_xml(transfer_node, data, mapping, fail_required=True)
 
 
 def ftp_publisher(registry, xml_parent, data):
@@ -1269,25 +1287,26 @@ def ftp_publisher(registry, xml_parent, data):
        /../../tests/publishers/fixtures/ftp-publisher-full.yaml
        :language: yaml
     """
-    ftp = XML.SubElement(xml_parent, 'com.zanox.hudson.plugins.FTPPublisher')
-    ftp.set('plugin', 'ftppublisher')
+    ftp = XML.SubElement(xml_parent, "com.zanox.hudson.plugins.FTPPublisher")
+    ftp.set("plugin", "ftppublisher")
 
-    entries = XML.SubElement(ftp, 'entries')
-    if 'uploads' in data:
+    entries = XML.SubElement(ftp, "entries")
+    if "uploads" in data:
         upload_mapping = [
-            ('file-path', 'filePath', ''),
-            ('source-file', 'sourceFile', ''),
+            ("file-path", "filePath", ""),
+            ("source-file", "sourceFile", ""),
         ]
-        for upload in data['uploads']:
-            entry = XML.SubElement(entries, 'com.zanox.hudson.plugins.Entry')
+        for upload in data["uploads"]:
+            entry = XML.SubElement(entries, "com.zanox.hudson.plugins.Entry")
             helpers.convert_mapping_to_xml(
-                entry, upload, upload_mapping, fail_required=True)
+                entry, upload, upload_mapping, fail_required=True
+            )
 
     mapping = [
-        ('site-name', 'siteName', None),
-        ('use-timestamps', 'useTimestamps', False),
-        ('flatten-files', 'flatten', False),
-        ('skip-publishing', 'skip', False),
+        ("site-name", "siteName", None),
+        ("use-timestamps", "useTimestamps", False),
+        ("flatten-files", "flatten", False),
+        ("skip-publishing", "skip", False),
     ]
     helpers.convert_mapping_to_xml(ftp, data, mapping, fail_required=True)
 
@@ -1349,74 +1368,82 @@ def rocket(registry, xml_parent, data):
     .. literalinclude:: /../../tests/publishers/fixtures/rocket002.yaml
        :language: yaml
     """
-    rocketchat = XML.SubElement(xml_parent,
-                    'jenkins.plugins.rocketchatnotifier.RocketChatNotifier')
-    rocketchat.set('plugin', 'rocketchatnotifier')
+    rocketchat = XML.SubElement(
+        xml_parent, "jenkins.plugins.rocketchatnotifier.RocketChatNotifier"
+    )
+    rocketchat.set("plugin", "rocketchatnotifier")
     required_mapping = [
-        ('channel', 'channel', ''),
-        ('start', 'startNotification', False),
-        ('success', 'notifySuccess', False),
-        ('abort', 'notifyAborted', False),
-        ('not-built', 'notifyNotBuilt', False),
-        ('unstable', 'notifyUnstable', False),
-        ('failure', 'notifyFailure', False),
-        ('back-to-normal', 'notifyBackToNormal', False),
-        ('repeated-failure', 'notifyRepeatedFailure', False),
-        ('include-test-summary', 'includeTestSummary', False),
-        ('include-test-log', 'includeTestLog', False),
-        ('include-custom-message', 'includeCustomMessage', False),
-        ('commit-info', 'commitInfoChoice', 'none',
+        ("channel", "channel", ""),
+        ("start", "startNotification", False),
+        ("success", "notifySuccess", False),
+        ("abort", "notifyAborted", False),
+        ("not-built", "notifyNotBuilt", False),
+        ("unstable", "notifyUnstable", False),
+        ("failure", "notifyFailure", False),
+        ("back-to-normal", "notifyBackToNormal", False),
+        ("repeated-failure", "notifyRepeatedFailure", False),
+        ("include-test-summary", "includeTestSummary", False),
+        ("include-test-log", "includeTestLog", False),
+        ("include-custom-message", "includeCustomMessage", False),
+        (
+            "commit-info",
+            "commitInfoChoice",
+            "none",
             {
-                'none': 'NONE',
-                'authors': 'AUTHORS',
-                'authors-and-titles': 'AUTHORS_AND_TITLES'
-            }),
-        ('raw-message', 'rawMessage', False),
-        ('webhook-token', 'webhookToken', ''),
-        ('webhook-token-credential-id', 'webhookTokenCredentialId', ''),
+                "none": "NONE",
+                "authors": "AUTHORS",
+                "authors-and-titles": "AUTHORS_AND_TITLES",
+            },
+        ),
+        ("raw-message", "rawMessage", False),
+        ("webhook-token", "webhookToken", ""),
+        ("webhook-token-credential-id", "webhookTokenCredentialId", ""),
     ]
     optional_mapping = [
-        ('trust-ssl', 'trustSSL', None),
-        ('build-server', 'buildServerUrl', None),
+        ("trust-ssl", "trustSSL", None),
+        ("build-server", "buildServerUrl", None),
     ]
 
     helpers.convert_mapping_to_xml(
-        rocketchat, data, optional_mapping, fail_required=False)
+        rocketchat, data, optional_mapping, fail_required=False
+    )
     helpers.convert_mapping_to_xml(
-        rocketchat, data, required_mapping, fail_required=True)
+        rocketchat, data, required_mapping, fail_required=True
+    )
 
-    attach_required_mapping = [
-        ('title', 'title', None),
-    ]
+    attach_required_mapping = [("title", "title", None)]
     attach_optional_mapping = [
-        ('title-link', 'titleLink', None),
-        ('title-link-download', 'titleLinkDownload', None),
-        ('color', 'color', None),
-        ('text', 'text', None),
-        ('collapsed', 'collapsed', None),       # false | true
-        ('message-link', 'messageLink', None),
-        ('author-name', 'authorName', None),
-        ('author-link', 'authorLink', None),
-        ('author-icon', 'authorIcon', None),
-        ('thumb', 'thumbUrl', None),
-        ('image', 'imageUrl', None),
-        ('audio', 'audioUrl', None),
-        ('video', 'videoUrl', None),
+        ("title-link", "titleLink", None),
+        ("title-link-download", "titleLinkDownload", None),
+        ("color", "color", None),
+        ("text", "text", None),
+        ("collapsed", "collapsed", None),  # false | true
+        ("message-link", "messageLink", None),
+        ("author-name", "authorName", None),
+        ("author-link", "authorLink", None),
+        ("author-icon", "authorIcon", None),
+        ("thumb", "thumbUrl", None),
+        ("image", "imageUrl", None),
+        ("audio", "audioUrl", None),
+        ("video", "videoUrl", None),
     ]
-    attach_list = data.get('attachments', None)
+    attach_list = data.get("attachments", None)
 
-    attachments = XML.SubElement(rocketchat, 'attachments')
+    attachments = XML.SubElement(rocketchat, "attachments")
     if attach_list is not None:
         for attach_data in attach_list:
-            item = XML.SubElement(attachments,
-                'jenkins.plugins.rocketchatnotifier.model.MessageAttachment')
-            helpers.convert_mapping_to_xml(item, attach_data,
-                            attach_required_mapping, fail_required=True)
-            helpers.convert_mapping_to_xml(item, attach_data,
-                            attach_optional_mapping, fail_required=False)
+            item = XML.SubElement(
+                attachments,
+                "jenkins.plugins.rocketchatnotifier.model.MessageAttachment",
+            )
+            helpers.convert_mapping_to_xml(
+                item, attach_data, attach_required_mapping, fail_required=True
+            )
+            helpers.convert_mapping_to_xml(
+                item, attach_data, attach_optional_mapping, fail_required=False
+            )
 
-    XML.SubElement(rocketchat, 'customMessage').text = \
-        data.get('custom-message', '')
+    XML.SubElement(rocketchat, "customMessage").text = data.get("custom-message", "")
 
 
 def hp_alm(registry, xml_parent, data):
@@ -1468,25 +1495,26 @@ def hp_alm(registry, xml_parent, data):
     .. literalinclude::  /../../tests/publishers/fixtures/hp-alm002.yaml
        :language: yaml
     """
-    alm_uploader = XML.SubElement(xml_parent,
-                                  'com.microfocus.application.automation.'
-                                  'tools.results.TestResultToALMUploader')
-    alm_uploader.set('plugin', 'hp-application-automation-tools-plugin')
+    alm_uploader = XML.SubElement(
+        xml_parent,
+        "com.microfocus.application.automation."
+        "tools.results.TestResultToALMUploader",
+    )
+    alm_uploader.set("plugin", "hp-application-automation-tools-plugin")
     mapping = [
-        ('server-name', 'almServerName', None),
-        ('credentials-id', 'credentialsId', ''),
-        ('domain', 'almDomain', None),
-        ('project', 'almProject', None),
-        ('client-type', 'clientType', ''),
-        ('testing-framework', 'testingFramework', 'JUnit'),
-        ('testing-tool', 'testingTool', ''),
-        ('folder', 'almTestFolder', None),
-        ('set-folder', 'almTestSetFolder', None),
-        ('testing-result-file', 'testingResultFile', None),
-        ('jenkins-server-url', 'jenkinsServerUrl', ''),
+        ("server-name", "almServerName", None),
+        ("credentials-id", "credentialsId", ""),
+        ("domain", "almDomain", None),
+        ("project", "almProject", None),
+        ("client-type", "clientType", ""),
+        ("testing-framework", "testingFramework", "JUnit"),
+        ("testing-tool", "testingTool", ""),
+        ("folder", "almTestFolder", None),
+        ("set-folder", "almTestSetFolder", None),
+        ("testing-result-file", "testingResultFile", None),
+        ("jenkins-server-url", "jenkinsServerUrl", ""),
     ]
-    helpers.convert_mapping_to_xml(
-        alm_uploader, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(alm_uploader, data, mapping, fail_required=True)
 
 
 def junit(registry, xml_parent, data):
@@ -1528,36 +1556,37 @@ def junit(registry, xml_parent, data):
     .. literalinclude::  /../../tests/publishers/fixtures/junit002.yaml
        :language: yaml
     """
-    junitresult = XML.SubElement(xml_parent,
-                                 'hudson.tasks.junit.JUnitResultArchiver')
-    junitresult.set('plugin', 'junit')
+    junitresult = XML.SubElement(xml_parent, "hudson.tasks.junit.JUnitResultArchiver")
+    junitresult.set("plugin", "junit")
     mapping = [
-        ('results', 'testResults', None),
-        ('keep-long-stdio', 'keepLongStdio', True),
-        ('health-scale-factor', 'healthScaleFactor', '1.0'),
-        ('allow-empty-results', 'allowEmptyResults', False),
+        ("results", "testResults", None),
+        ("keep-long-stdio", "keepLongStdio", True),
+        ("health-scale-factor", "healthScaleFactor", "1.0"),
+        ("allow-empty-results", "allowEmptyResults", False),
     ]
-    helpers.convert_mapping_to_xml(
-        junitresult, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(junitresult, data, mapping, fail_required=True)
 
-    datapublisher = XML.SubElement(junitresult, 'testDataPublishers')
-    if str(data.get('test-stability', False)).lower() == 'true':
-        XML.SubElement(datapublisher,
-                       'de.esailors.jenkins.teststability'
-                       '.StabilityTestDataPublisher')
-    if str(data.get('claim-build', False)).lower() == 'true':
-        XML.SubElement(datapublisher,
-                       'hudson.plugins.claim.ClaimTestDataPublisher')
-    if str(data.get('measurement-plots', False)).lower() == 'true':
-        XML.SubElement(datapublisher,
-                       'hudson.plugins.measurement__plots.TestDataPublisher')
-    if str(data.get('flaky-test-reports', False)).lower() == 'true':
-        XML.SubElement(datapublisher,
-                       'com.google.jenkins.flakyTestHandler.plugin'
-                       '.JUnitFlakyTestDataPublisher')
-    if str(data.get('junit-attachments', False)).lower() == 'true':
-        XML.SubElement(datapublisher,
-                       'hudson.plugins.junitattachments.AttachmentPublisher')
+    datapublisher = XML.SubElement(junitresult, "testDataPublishers")
+    if str(data.get("test-stability", False)).lower() == "true":
+        XML.SubElement(
+            datapublisher,
+            "de.esailors.jenkins.teststability" ".StabilityTestDataPublisher",
+        )
+    if str(data.get("claim-build", False)).lower() == "true":
+        XML.SubElement(datapublisher, "hudson.plugins.claim.ClaimTestDataPublisher")
+    if str(data.get("measurement-plots", False)).lower() == "true":
+        XML.SubElement(
+            datapublisher, "hudson.plugins.measurement__plots.TestDataPublisher"
+        )
+    if str(data.get("flaky-test-reports", False)).lower() == "true":
+        XML.SubElement(
+            datapublisher,
+            "com.google.jenkins.flakyTestHandler.plugin" ".JUnitFlakyTestDataPublisher",
+        )
+    if str(data.get("junit-attachments", False)).lower() == "true":
+        XML.SubElement(
+            datapublisher, "hudson.plugins.junitattachments.AttachmentPublisher"
+        )
 
 
 def cucumber_reports(registry, xml_parent, data):
@@ -1619,54 +1648,54 @@ def cucumber_reports(registry, xml_parent, data):
        /../../tests/publishers/fixtures/cucumber-reports-minimal.yaml
        :language: yaml
     """
-    cucumber_reports = XML.SubElement(xml_parent,
-                                      'net.masterthought.jenkins.'
-                                      'CucumberReportPublisher')
-    cucumber_reports.set('plugin', 'cucumber-reports')
+    cucumber_reports = XML.SubElement(
+        xml_parent, "net.masterthought.jenkins." "CucumberReportPublisher"
+    )
+    cucumber_reports.set("plugin", "cucumber-reports")
 
-    valid_build_status = ['', 'UNSTABLE', 'FAILURE']
-    valid_sorting_method = ['NATURAL', 'ALPHABETICAL']
+    valid_build_status = ["", "UNSTABLE", "FAILURE"]
+    valid_sorting_method = ["NATURAL", "ALPHABETICAL"]
     mappings = [
-        ('json-reports-path', 'jsonReportDirectory', ''),
-        ('plugin-url-path', 'pluginUrlPath', ''),
-        ('file-include-pattern', 'fileIncludePattern', ''),
-        ('file-exclude-pattern', 'fileExcludePattern', ''),
-        ('skipped-fails', 'skippedFails', False),
-        ('pending-fails', 'pendingFails', False),
-        ('undefined-fails', 'undefinedFails', False),
-        ('missing-fails', 'missingFails', False),
-        ('no-flash-charts', 'noFlashCharts', False),
-        ('ignore-failed-tests', 'ignoreFailedTests', False),
-        ('parallel-testing', 'parallelTesting', False),
-        ('failed-steps-number', 'failedStepsNumber', 0),
-        ('skipped-steps-number', 'skippedStepsNumber', 0),
-        ('pending-steps-number', 'pendingStepsNumber', 0),
-        ('undefined-steps-number', 'undefinedStepsNumber', 0),
-        ('failed-scenarios-number', 'failedScenariosNumber', 0),
-        ('failed-features-number', 'failedFeaturesNumber', 0),
-        ('build-status', 'buildStatus', '', valid_build_status),
-        ('trends-limit', 'trendsLimit', 0),
-        ('sorting-method', 'sortingMethod', 'NATURAL', valid_sorting_method),
+        ("json-reports-path", "jsonReportDirectory", ""),
+        ("plugin-url-path", "pluginUrlPath", ""),
+        ("file-include-pattern", "fileIncludePattern", ""),
+        ("file-exclude-pattern", "fileExcludePattern", ""),
+        ("skipped-fails", "skippedFails", False),
+        ("pending-fails", "pendingFails", False),
+        ("undefined-fails", "undefinedFails", False),
+        ("missing-fails", "missingFails", False),
+        ("no-flash-charts", "noFlashCharts", False),
+        ("ignore-failed-tests", "ignoreFailedTests", False),
+        ("parallel-testing", "parallelTesting", False),
+        ("failed-steps-number", "failedStepsNumber", 0),
+        ("skipped-steps-number", "skippedStepsNumber", 0),
+        ("pending-steps-number", "pendingStepsNumber", 0),
+        ("undefined-steps-number", "undefinedStepsNumber", 0),
+        ("failed-scenarios-number", "failedScenariosNumber", 0),
+        ("failed-features-number", "failedFeaturesNumber", 0),
+        ("build-status", "buildStatus", "", valid_build_status),
+        ("trends-limit", "trendsLimit", 0),
+        ("sorting-method", "sortingMethod", "NATURAL", valid_sorting_method),
     ]
-    helpers.convert_mapping_to_xml(
-        cucumber_reports, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(cucumber_reports, data, mappings, fail_required=True)
 
-    if 'sorting-values' in data:
+    if "sorting-values" in data:
         format_dict = {
-            'classifications': 'net.masterthought.jenkins'
-                               '.CucumberReportPublisher_-Classification'
+            "classifications": "net.masterthought.jenkins"
+            ".CucumberReportPublisher_-Classification"
         }
-        classifications_tag = XML.SubElement(
-            cucumber_reports, 'classifications')
-        for values in data['sorting-values']:
+        classifications_tag = XML.SubElement(cucumber_reports, "classifications")
+        for values in data["sorting-values"]:
             for value, params in values.items():
                 cucumber_report_publisher = XML.SubElement(
-                    classifications_tag, format_dict.get('classifications'))
-                XML.SubElement(
-                    cucumber_report_publisher, 'key').text = params.get('key')
-                XML.SubElement(
-                    cucumber_report_publisher, 'value').text = params.get(
-                    'value')
+                    classifications_tag, format_dict.get("classifications")
+                )
+                XML.SubElement(cucumber_report_publisher, "key").text = params.get(
+                    "key"
+                )
+                XML.SubElement(cucumber_report_publisher, "value").text = params.get(
+                    "value"
+                )
 
 
 def cucumber_testresult(registry, xml_parent, data):
@@ -1690,18 +1719,19 @@ def cucumber_testresult(registry, xml_parent, data):
        /../../tests/publishers/fixtures/cucumber-testresult-full.yaml
        :language: yaml
     """
-    cucumber_result = XML.SubElement(xml_parent,
-                                     'org.jenkinsci.plugins.cucumber.'
-                                     'jsontestsupport.'
-                                     'CucumberTestResultArchiver')
-    cucumber_result.set('plugin', 'cucumber-testresult-plugin')
+    cucumber_result = XML.SubElement(
+        xml_parent,
+        "org.jenkinsci.plugins.cucumber."
+        "jsontestsupport."
+        "CucumberTestResultArchiver",
+    )
+    cucumber_result.set("plugin", "cucumber-testresult-plugin")
 
     mappings = [
-        ('results', 'testResults', None),
-        ('ignore-bad-steps', 'ignoreBadSteps', False)
+        ("results", "testResults", None),
+        ("ignore-bad-steps", "ignoreBadSteps", False),
     ]
-    helpers.convert_mapping_to_xml(
-        cucumber_result, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(cucumber_result, data, mappings, fail_required=True)
 
 
 def xunit(registry, xml_parent, data):
@@ -1754,28 +1784,28 @@ def xunit(registry, xml_parent, data):
 
     """
     logger = logging.getLogger(__name__)
-    xunit = XML.SubElement(xml_parent, 'xunit')
-    xunit.set('plugin', 'xunit')
+    xunit = XML.SubElement(xml_parent, "xunit")
+    xunit.set("plugin", "xunit")
 
     # Map our internal types to the XML element names used by Jenkins plugin
     types_to_plugin_types = {
-        'aunit': 'AUnitJunitHudsonTestType',
-        'boosttest': 'BoostTestJunitHudsonTestType',
-        'checktype': 'CheckType',
-        'cpptest': 'CppTestJunitHudsonTestType',
-        'cppunit': 'CppUnitJunitHudsonTestType',
-        'ctest': 'CTestType',
-        'dotnettest': 'XUnitDotNetTestType',  # since plugin v1.93
-        'embunit': 'EmbUnitType',  # since plugin v1.84
-        'fpcunit': 'FPCUnitJunitHudsonTestType',
-        'gtest': 'GoogleTestType',
-        'junit': 'JUnitType',
-        'mstest': 'MSTestJunitHudsonTestType',
-        'nunit': 'NUnitJunitHudsonTestType',
-        'phpunit': 'PHPUnitJunitHudsonTestType',
-        'tusar': 'TUSARJunitHudsonTestType',
-        'unittest': 'UnitTestJunitHudsonTestType',
-        'valgrind': 'ValgrindJunitHudsonTestType',
+        "aunit": "AUnitJunitHudsonTestType",
+        "boosttest": "BoostTestJunitHudsonTestType",
+        "checktype": "CheckType",
+        "cpptest": "CppTestJunitHudsonTestType",
+        "cppunit": "CppUnitJunitHudsonTestType",
+        "ctest": "CTestType",
+        "dotnettest": "XUnitDotNetTestType",  # since plugin v1.93
+        "embunit": "EmbUnitType",  # since plugin v1.84
+        "fpcunit": "FPCUnitJunitHudsonTestType",
+        "gtest": "GoogleTestType",
+        "junit": "JUnitType",
+        "mstest": "MSTestJunitHudsonTestType",
+        "nunit": "NUnitJunitHudsonTestType",
+        "phpunit": "PHPUnitJunitHudsonTestType",
+        "tusar": "TUSARJunitHudsonTestType",
+        "unittest": "UnitTestJunitHudsonTestType",
+        "valgrind": "ValgrindJunitHudsonTestType",
         # FIXME should implement the 'custom' type
     }
     implemented_types = types_to_plugin_types.keys()  # shortcut
@@ -1783,87 +1813,85 @@ def xunit(registry, xml_parent, data):
     # Unit framework we are going to generate xml for
     supported_types = []
 
-    for configured_type in data['types']:
+    for configured_type in data["types"]:
         type_name = next(iter(configured_type.keys()))
         if type_name not in implemented_types:
-            logger.warning("Requested xUnit type '%s' is not yet supported",
-                           type_name)
+            logger.warning("Requested xUnit type '%s' is not yet supported", type_name)
         else:
             # Append for generation
             supported_types.append(configured_type)
 
     # Generate XML for each of the supported framework types
-    xmltypes = XML.SubElement(xunit, 'types')
+    xmltypes = XML.SubElement(xunit, "types")
     for supported_type in supported_types:
         framework_name = next(iter(supported_type.keys()))
-        xmlframework = XML.SubElement(xmltypes,
-                                      types_to_plugin_types[framework_name])
+        xmlframework = XML.SubElement(xmltypes, types_to_plugin_types[framework_name])
 
         mappings = [
-            ('pattern', 'pattern', ''),
-            ('requireupdate', 'failIfNotNew', True),
-            ('deleteoutput', 'deleteOutputFiles', True),
-            ('skip-if-no-test-files', 'skipNoTestFiles', False),
-            ('stoponerror', 'stopProcessingIfError', True),
+            ("pattern", "pattern", ""),
+            ("requireupdate", "failIfNotNew", True),
+            ("deleteoutput", "deleteOutputFiles", True),
+            ("skip-if-no-test-files", "skipNoTestFiles", False),
+            ("stoponerror", "stopProcessingIfError", True),
         ]
-        helpers.convert_mapping_to_xml(xmlframework,
-                                       supported_type[framework_name],
-                                       mappings,
-                                       fail_required=True)
+        helpers.convert_mapping_to_xml(
+            xmlframework, supported_type[framework_name], mappings, fail_required=True
+        )
 
-    xmlthresholds = XML.SubElement(xunit, 'thresholds')
-    for t in data.get('thresholds', []):
-        if not ('failed' in t or 'skipped' in t):
-            logger.warning(
-                "Unrecognized threshold, should be 'failed' or 'skipped'")
+    xmlthresholds = XML.SubElement(xunit, "thresholds")
+    for t in data.get("thresholds", []):
+        if not ("failed" in t or "skipped" in t):
+            logger.warning("Unrecognized threshold, should be 'failed' or 'skipped'")
             continue
-        elname = ("org.jenkinsci.plugins.xunit.threshold.%sThreshold" %
-                  next(iter(t.keys())).title())
+        elname = (
+            "org.jenkinsci.plugins.xunit.threshold.%sThreshold"
+            % next(iter(t.keys())).title()
+        )
         el = XML.SubElement(xmlthresholds, elname)
         for threshold_name, threshold_value in next(iter(t.values())).items():
             # Normalize and craft the element name for this threshold
-            elname = "%sThreshold" % threshold_name.lower().replace(
-                'new', 'New')
+            elname = "%sThreshold" % threshold_name.lower().replace("new", "New")
             XML.SubElement(el, elname).text = str(threshold_value)
 
     # Whether to use percent of exact number of tests.
     # Thresholdmode is either:
     # - 1 : absolute (number of tests), default.
     # - 2 : relative (percentage of tests)
-    thresholdmode = '1'
-    if 'percent' == data.get('thresholdmode', 'number'):
-        thresholdmode = '2'
-    XML.SubElement(xunit, 'thresholdMode').text = thresholdmode
+    thresholdmode = "1"
+    if "percent" == data.get("thresholdmode", "number"):
+        thresholdmode = "2"
+    XML.SubElement(xunit, "thresholdMode").text = thresholdmode
 
-    extra_config = XML.SubElement(xunit, 'extraConfiguration')
-    XML.SubElement(extra_config, 'testTimeMargin').text = str(
-        data.get('test-time-margin', '3000'))
+    extra_config = XML.SubElement(xunit, "extraConfiguration")
+    XML.SubElement(extra_config, "testTimeMargin").text = str(
+        data.get("test-time-margin", "3000")
+    )
 
 
 def _violations_add_entry(xml_parent, name, data):
-    vmin = data.get('min', 10)
-    vmax = data.get('max', 999)
-    vunstable = data.get('unstable', 999)
-    pattern = data.get('pattern', None)
+    vmin = data.get("min", 10)
+    vmax = data.get("max", 999)
+    vunstable = data.get("unstable", 999)
+    pattern = data.get("pattern", None)
 
-    entry = XML.SubElement(xml_parent, 'entry')
-    mapping = [('', 'string', name)]
+    entry = XML.SubElement(xml_parent, "entry")
+    mapping = [("", "string", name)]
     helpers.convert_mapping_to_xml(entry, data, mapping, fail_required=True)
 
-    tconfig = XML.SubElement(entry, 'hudson.plugins.violations.TypeConfig')
+    tconfig = XML.SubElement(entry, "hudson.plugins.violations.TypeConfig")
     mapping = [
-        ('', 'type', name),
-        ('', 'min', str(vmin)),
-        ('', 'max', str(vmax)),
-        ('', 'unstable', str(vunstable)),
-        ('', 'usePattern', 'false'),
+        ("", "type", name),
+        ("", "min", str(vmin)),
+        ("", "max", str(vmax)),
+        ("", "unstable", str(vunstable)),
+        ("", "usePattern", "false"),
     ]
     helpers.convert_mapping_to_xml(tconfig, data, mapping, fail_required=True)
 
     if pattern:
-        XML.SubElement(tconfig, 'pattern').text = pattern
+        XML.SubElement(tconfig, "pattern").text = pattern
     else:
-        XML.SubElement(tconfig, 'pattern')
+        XML.SubElement(tconfig, "pattern")
 
 
 def violations(registry, xml_parent, data):
@@ -1893,38 +1921,39 @@ def violations(registry, xml_parent, data):
     .. literalinclude::  /../../tests/publishers/fixtures/violations001.yaml
        :language: yaml
     """
-    violations = XML.SubElement(xml_parent,
-                                'hudson.plugins.violations.'
-                                'ViolationsPublisher')
-    config = XML.SubElement(violations, 'config')
-    suppressions = XML.SubElement(config, 'suppressions',
-                                  {'class': 'tree-set'})
-    XML.SubElement(suppressions, 'no-comparator')
-    configs = XML.SubElement(config, 'typeConfigs')
-    XML.SubElement(configs, 'no-comparator')
+    violations = XML.SubElement(
+        xml_parent, "hudson.plugins.violations." "ViolationsPublisher"
+    )
+    config = XML.SubElement(violations, "config")
+    suppressions = XML.SubElement(config, "suppressions", {"class": "tree-set"})
+    XML.SubElement(suppressions, "no-comparator")
+    configs = XML.SubElement(config, "typeConfigs")
+    XML.SubElement(configs, "no-comparator")
 
-    for name in ['checkstyle',
-                 'codenarc',
-                 'cpd',
-                 'cpplint',
-                 'csslint',
-                 'findbugs',
-                 'fxcop',
-                 'gendarme',
-                 'jcreport',
-                 'jslint',
-                 'pep8',
-                 'perlcritic',
-                 'pmd',
-                 'pylint',
-                 'simian',
-                 'stylecop']:
+    for name in [
+        "checkstyle",
+        "codenarc",
+        "cpd",
+        "cpplint",
+        "csslint",
+        "findbugs",
+        "fxcop",
+        "gendarme",
+        "jcreport",
+        "jslint",
+        "pep8",
+        "perlcritic",
+        "pmd",
+        "pylint",
+        "simian",
+        "stylecop",
+    ]:
         _violations_add_entry(configs, name, data.get(name, {}))
     mapping = [
-        ('', 'limit', '100'),
-        ('', 'sourcePathPattern', ''),
-        ('', 'fauxProjectPath', ''),
-        ('', 'encoding', 'default'),
+        ("", "limit", "100"),
+        ("", "sourcePathPattern", ""),
+        ("", "fauxProjectPath", ""),
+        ("", "encoding", "default"),
     ]
     helpers.convert_mapping_to_xml(config, data, mapping, fail_required=True)
 
@@ -1990,12 +2019,11 @@ def findbugs(registry, xml_parent, data):
 
     .. literalinclude:: /../../tests/publishers/fixtures/findbugs-full.yaml
     """
-    findbugs = XML.SubElement(xml_parent,
-                              'hudson.plugins.findbugs.FindBugsPublisher')
-    findbugs.set('plugin', 'findbugs')
+    findbugs = XML.SubElement(xml_parent, "hudson.plugins.findbugs.FindBugsPublisher")
+    findbugs.set("plugin", "findbugs")
 
     helpers.findbugs_settings(findbugs, data)
-    helpers.build_trends_publisher('[FINDBUGS] ', findbugs, data)
+    helpers.build_trends_publisher("[FINDBUGS] ", findbugs, data)
 
 
 def checkstyle(registry, xml_parent, data):
@@ -2062,6 +2090,7 @@ def checkstyle(registry, xml_parent, data):
     .. literalinclude::  /../../tests/publishers/fixtures/checkstyle006.yaml
        :language: yaml
     """
+
     def convert_settings(lookup, data):
         """Helper to convert settings from one key to another
         """
@@ -2071,30 +2100,36 @@ def checkstyle(registry, xml_parent, data):
                 data.setdefault(lookup[old_key], data[old_key])
                 del data[old_key]
 
-    checkstyle = XML.SubElement(xml_parent,
-                                'hudson.plugins.checkstyle.'
-                                'CheckStylePublisher')
-    checkstyle.set('plugin', 'checkstyle')
+    checkstyle = XML.SubElement(
+        xml_parent, "hudson.plugins.checkstyle." "CheckStylePublisher"
+    )
+    checkstyle.set("plugin", "checkstyle")
 
     # Convert old style yaml to new style
-    convert_settings({
-        'unHealthy': 'unhealthy',
-        'healthThreshold': 'health-threshold',
-        'defaultEncoding': 'default-encoding',
-        'canRunOnFailed': 'can-run-on-failed',
-        'shouldDetectModules': 'should-detect-modules'
-    }, data)
+    convert_settings(
+        {
+            "unHealthy": "unhealthy",
+            "healthThreshold": "health-threshold",
+            "defaultEncoding": "default-encoding",
+            "canRunOnFailed": "can-run-on-failed",
+            "shouldDetectModules": "should-detect-modules",
+        },
+        data,
+    )
 
-    threshold_data = data.get('thresholds', {})
-    for threshold in ['unstable', 'failed']:
-        convert_settings({
-            'totalAll': 'total-all',
-            'totalHigh': 'total-high',
-            'totalNormal': 'total-normal',
-            'totalLow': 'total-low'
-        }, threshold_data.get(threshold, {}))
+    threshold_data = data.get("thresholds", {})
+    for threshold in ["unstable", "failed"]:
+        convert_settings(
+            {
+                "totalAll": "total-all",
+                "totalHigh": "total-high",
+                "totalNormal": "total-normal",
+                "totalLow": "total-low",
+            },
+            threshold_data.get(threshold, {}),
+        )
 
-    helpers.build_trends_publisher('[CHECKSTYLE] ', checkstyle, data)
+    helpers.build_trends_publisher("[CHECKSTYLE] ", checkstyle, data)
 
 
 def scp(registry, xml_parent, data):
@@ -2140,27 +2175,25 @@ def scp(registry, xml_parent, data):
     .. literalinclude:: /../../tests/publishers/fixtures/scp001.yaml
        :language: yaml
     """
-    scp = XML.SubElement(xml_parent,
-                         'be.certipost.hudson.plugin.SCPRepositoryPublisher')
-    scp.set('plugin', 'scp')
+    scp = XML.SubElement(
+        xml_parent, "be.certipost.hudson.plugin.SCPRepositoryPublisher"
+    )
+    scp.set("plugin", "scp")
 
-    mappings = [
-        ('site', 'siteName', None),
-    ]
+    mappings = [("site", "siteName", None)]
     helpers.convert_mapping_to_xml(scp, data, mappings, fail_required=True)
 
-    entries = XML.SubElement(scp, 'entries')
-    for entry in data['files']:
-        entry_e = XML.SubElement(entries, 'be.certipost.hudson.plugin.Entry')
+    entries = XML.SubElement(scp, "entries")
+    for entry in data["files"]:
+        entry_e = XML.SubElement(entries, "be.certipost.hudson.plugin.Entry")
         mappings = [
-            ('target', 'filePath', None),
-            ('source', 'sourceFile', ''),
-            ('keep-hierarchy', 'keepHierarchy', False),
-            ('copy-console', 'copyConsoleLog', False),
-            ('copy-after-failure', 'copyAfterFailure', False),
+            ("target", "filePath", None),
+            ("source", "sourceFile", ""),
+            ("keep-hierarchy", "keepHierarchy", False),
+            ("copy-console", "copyConsoleLog", False),
+            ("copy-after-failure", "copyAfterFailure", False),
         ]
-        helpers.convert_mapping_to_xml(
-            entry_e, entry, mappings, fail_required=True)
+        helpers.convert_mapping_to_xml(entry_e, entry, mappings, fail_required=True)
 
 
 def ssh(registry, xml_parent, data):
@@ -2204,23 +2237,31 @@ def ssh(registry, xml_parent, data):
         .. literalinclude::  /../../tests/publishers/fixtures/ssh-full.yaml
            :language: yaml
     """
-    console_prefix = 'SSH: '
-    tag_prefix = 'jenkins.plugins.publish'
-    publisher_tag = '%s__over__ssh.BapSshPublisher' % tag_prefix
-    transfer_tag = '%s__over__ssh.BapSshTransfer' % tag_prefix
-    retry_tag = '%s_over_ssh.BapSshRetry' % tag_prefix
-    reference_tag = '%s_over_ssh.BapSshPublisherPlugin' % tag_prefix
+    console_prefix = "SSH: "
+    tag_prefix = "jenkins.plugins.publish"
+    publisher_tag = "%s__over__ssh.BapSshPublisher" % tag_prefix
+    transfer_tag = "%s__over__ssh.BapSshTransfer" % tag_prefix
+    retry_tag = "%s_over_ssh.BapSshRetry" % tag_prefix
+    reference_tag = "%s_over_ssh.BapSshPublisherPlugin" % tag_prefix
 
-    if xml_parent.tag == 'publishers':
-        plugin_tag = '%s__over__ssh.BapSshPublisherPlugin' % tag_prefix
+    if xml_parent.tag == "publishers":
+        plugin_tag = "%s__over__ssh.BapSshPublisherPlugin" % tag_prefix
         is_builder = False
     else:
-        plugin_tag = '%s__over__ssh.BapSshBuilderPlugin' % tag_prefix
+        plugin_tag = "%s__over__ssh.BapSshBuilderPlugin" % tag_prefix
         is_builder = True
 
-    base_publish_over(xml_parent, data, console_prefix, plugin_tag,
-                      publisher_tag, transfer_tag, retry_tag, reference_tag,
-                      is_builder)
+    base_publish_over(
+        xml_parent,
+        data,
+        console_prefix,
+        plugin_tag,
+        publisher_tag,
+        transfer_tag,
+        retry_tag,
+        reference_tag,
+        is_builder,
+    )
 
 
 def pipeline(registry, xml_parent, data):
@@ -2284,25 +2325,28 @@ def pipeline(registry, xml_parent, data):
     See 'samples/pipeline.yaml' for an example pipeline implementation.
     """
     logger = logging.getLogger("%s:pipeline" % __name__)
-    param_order = helpers.trigger_get_parameter_order(registry, 'pipeline')
+    param_order = helpers.trigger_get_parameter_order(registry, "pipeline")
 
-    if 'project' in data:
+    if "project" in data:
         logger.warning(
             "Using 'project' for pipeline definition is deprecated. Please "
-            "update your job definition to use 'projects' with a list format.")
+            "update your job definition to use 'projects' with a list format."
+        )
 
-    projects = ",".join(data.get('projects', [data.get('project', '')]))
-    if projects != '':
+    projects = ",".join(data.get("projects", [data.get("project", "")]))
+    if projects != "":
 
-        pippub = XML.SubElement(xml_parent,
-                                'au.com.centrumsystems.hudson.plugin.'
-                                'buildpipeline.trigger.BuildPipelineTrigger')
+        pippub = XML.SubElement(
+            xml_parent,
+            "au.com.centrumsystems.hudson.plugin."
+            "buildpipeline.trigger.BuildPipelineTrigger",
+        )
 
-        configs = XML.SubElement(pippub, 'configs')
+        configs = XML.SubElement(pippub, "configs")
 
         helpers.trigger_project(configs, data, param_order)
 
-        XML.SubElement(pippub, 'downstreamProjectNames').text = projects
+        XML.SubElement(pippub, "downstreamProjectNames").text = projects
 
 
 def email(registry, xml_parent, data):
@@ -2330,21 +2374,19 @@ def email(registry, xml_parent, data):
     """
 
     # TODO: raise exception if this is applied to a maven job
-    mailer = XML.SubElement(xml_parent,
-                            'hudson.tasks.Mailer')
-    mailer.set('plugin', 'mailer')
-    mapping = [
-        ('recipients', 'recipients', None)
-    ]
+    mailer = XML.SubElement(xml_parent, "hudson.tasks.Mailer")
+    mailer.set("plugin", "mailer")
+    mapping = [("recipients", "recipients", None)]
     helpers.convert_mapping_to_xml(mailer, data, mapping, fail_required=True)
 
     # Note the logic reversal (included here to match the GUI
-    if data.get('notify-every-unstable-build', True):
-        XML.SubElement(mailer, 'dontNotifyEveryUnstableBuild').text = 'false'
+    if data.get("notify-every-unstable-build", True):
+        XML.SubElement(mailer, "dontNotifyEveryUnstableBuild").text = "false"
     else:
-        XML.SubElement(mailer, 'dontNotifyEveryUnstableBuild').text = 'true'
-    XML.SubElement(mailer, 'sendToIndividuals').text = str(
-        data.get('send-to-individuals', False)).lower()
+        XML.SubElement(mailer, "dontNotifyEveryUnstableBuild").text = "true"
+    XML.SubElement(mailer, "sendToIndividuals").text = str(
+        data.get("send-to-individuals", False)
+    ).lower()
 
 
 def claim_build(registry, xml_parent, data):
@@ -2358,33 +2400,37 @@ def claim_build(registry, xml_parent, data):
        :language: yaml
     """
 
-    XML.SubElement(xml_parent, 'hudson.plugins.claim.ClaimPublisher')
+    XML.SubElement(xml_parent, "hudson.plugins.claim.ClaimPublisher")
 
 
 def base_email_ext(registry, xml_parent, data, ttype):
-    trigger = XML.SubElement(xml_parent,
-                             'hudson.plugins.emailext.plugins.trigger.' +
-                             ttype)
-    email = XML.SubElement(trigger, 'email')
-    XML.SubElement(email, 'recipientList').text = ''
-    XML.SubElement(email, 'subject').text = '$PROJECT_DEFAULT_SUBJECT'
-    XML.SubElement(email, 'body').text = '$PROJECT_DEFAULT_CONTENT'
-    if 'send-to' in data:
-        XML.SubElement(email, 'sendToDevelopers').text = str(
-            'developers' in data['send-to']).lower()
-        XML.SubElement(email, 'sendToRequester').text = str(
-            'requester' in data['send-to']).lower()
-        XML.SubElement(email, 'includeCulprits').text = str(
-            'culprits' in data['send-to']).lower()
-        XML.SubElement(email, 'sendToRecipientList').text = str(
-            'recipients' in data['send-to']).lower()
+    trigger = XML.SubElement(
+        xml_parent, "hudson.plugins.emailext.plugins.trigger." + ttype
+    )
+    email = XML.SubElement(trigger, "email")
+    XML.SubElement(email, "recipientList").text = ""
+    XML.SubElement(email, "subject").text = "$PROJECT_DEFAULT_SUBJECT"
+    XML.SubElement(email, "body").text = "$PROJECT_DEFAULT_CONTENT"
+    if "send-to" in data:
+        XML.SubElement(email, "sendToDevelopers").text = str(
+            "developers" in data["send-to"]
+        ).lower()
+        XML.SubElement(email, "sendToRequester").text = str(
+            "requester" in data["send-to"]
+        ).lower()
+        XML.SubElement(email, "includeCulprits").text = str(
+            "culprits" in data["send-to"]
+        ).lower()
+        XML.SubElement(email, "sendToRecipientList").text = str(
+            "recipients" in data["send-to"]
+        ).lower()
     else:
-        XML.SubElement(email, 'sendToRequester').text = 'false'
-        XML.SubElement(email, 'sendToDevelopers').text = 'false'
-        XML.SubElement(email, 'includeCulprits').text = 'false'
-        XML.SubElement(email, 'sendToRecipientList').text = 'true'
-    if ttype == 'ScriptTrigger':
-        XML.SubElement(trigger, 'triggerScript').text = data['trigger-script']
+        XML.SubElement(email, "sendToRequester").text = "false"
+        XML.SubElement(email, "sendToDevelopers").text = "false"
+        XML.SubElement(email, "includeCulprits").text = "false"
+        XML.SubElement(email, "sendToRecipientList").text = "true"
+    if ttype == "ScriptTrigger":
+        XML.SubElement(trigger, "triggerScript").text = data["trigger-script"]
 
 
 def email_ext(registry, xml_parent, data):
@@ -2468,87 +2514,89 @@ def email_ext(registry, xml_parent, data):
        :language: yaml
     """
 
-    emailext = XML.SubElement(xml_parent,
-                              'hudson.plugins.emailext.ExtendedEmailPublisher')
-    if 'recipients' in data:
-        XML.SubElement(emailext, 'recipientList').text = data['recipients']
+    emailext = XML.SubElement(
+        xml_parent, "hudson.plugins.emailext.ExtendedEmailPublisher"
+    )
+    if "recipients" in data:
+        XML.SubElement(emailext, "recipientList").text = data["recipients"]
     else:
-        XML.SubElement(emailext, 'recipientList').text = '$DEFAULT_RECIPIENTS'
-    ctrigger = XML.SubElement(emailext, 'configuredTriggers')
-    if data.get('always', False):
-        base_email_ext(registry, ctrigger, data, 'AlwaysTrigger')
-    if data.get('unstable', False):
-        base_email_ext(registry, ctrigger, data, 'UnstableTrigger')
-    if data.get('first-failure', False):
-        base_email_ext(registry, ctrigger, data, 'FirstFailureTrigger')
-    if data.get('first-unstable', False):
-        base_email_ext(registry, ctrigger, data, 'FirstUnstableTrigger')
-    if data.get('not-built', False):
-        base_email_ext(registry, ctrigger, data, 'NotBuiltTrigger')
-    if data.get('aborted', False):
-        base_email_ext(registry, ctrigger, data, 'AbortedTrigger')
-    if data.get('regression', False):
-        base_email_ext(registry, ctrigger, data, 'RegressionTrigger')
-    if data.get('failure', True):
-        base_email_ext(registry, ctrigger, data, 'FailureTrigger')
-    if data.get('second-failure', False):
-        base_email_ext(registry, ctrigger, data, 'SecondFailureTrigger')
-    if data.get('improvement', False):
-        base_email_ext(registry, ctrigger, data, 'ImprovementTrigger')
-    if data.get('still-failing', False):
-        base_email_ext(registry, ctrigger, data, 'StillFailingTrigger')
-    if data.get('success', False):
-        base_email_ext(registry, ctrigger, data, 'SuccessTrigger')
-    if data.get('fixed', False):
-        base_email_ext(registry, ctrigger, data, 'FixedTrigger')
-    if data.get('fixed-unhealthy', False):
-        base_email_ext(registry, ctrigger, data, 'FixedUnhealthyTrigger')
-    if data.get('still-unstable', False):
-        base_email_ext(registry, ctrigger, data, 'StillUnstableTrigger')
-    if data.get('pre-build', False):
-        base_email_ext(registry, ctrigger, data, 'PreBuildTrigger')
-    if data.get('trigger-script', False):
-        base_email_ext(registry, ctrigger, data, 'ScriptTrigger')
+        XML.SubElement(emailext, "recipientList").text = "$DEFAULT_RECIPIENTS"
+    ctrigger = XML.SubElement(emailext, "configuredTriggers")
+    if data.get("always", False):
+        base_email_ext(registry, ctrigger, data, "AlwaysTrigger")
+    if data.get("unstable", False):
+        base_email_ext(registry, ctrigger, data, "UnstableTrigger")
+    if data.get("first-failure", False):
+        base_email_ext(registry, ctrigger, data, "FirstFailureTrigger")
+    if data.get("first-unstable", False):
+        base_email_ext(registry, ctrigger, data, "FirstUnstableTrigger")
+    if data.get("not-built", False):
+        base_email_ext(registry, ctrigger, data, "NotBuiltTrigger")
+    if data.get("aborted", False):
+        base_email_ext(registry, ctrigger, data, "AbortedTrigger")
+    if data.get("regression", False):
+        base_email_ext(registry, ctrigger, data, "RegressionTrigger")
+    if data.get("failure", True):
+        base_email_ext(registry, ctrigger, data, "FailureTrigger")
+    if data.get("second-failure", False):
+        base_email_ext(registry, ctrigger, data, "SecondFailureTrigger")
+    if data.get("improvement", False):
+        base_email_ext(registry, ctrigger, data, "ImprovementTrigger")
+    if data.get("still-failing", False):
+        base_email_ext(registry, ctrigger, data, "StillFailingTrigger")
+    if data.get("success", False):
+        base_email_ext(registry, ctrigger, data, "SuccessTrigger")
+    if data.get("fixed", False):
+        base_email_ext(registry, ctrigger, data, "FixedTrigger")
+    if data.get("fixed-unhealthy", False):
+        base_email_ext(registry, ctrigger, data, "FixedUnhealthyTrigger")
+    if data.get("still-unstable", False):
+        base_email_ext(registry, ctrigger, data, "StillUnstableTrigger")
+    if data.get("pre-build", False):
+        base_email_ext(registry, ctrigger, data, "PreBuildTrigger")
+    if data.get("trigger-script", False):
+        base_email_ext(registry, ctrigger, data, "ScriptTrigger")
 
     content_type_mime = {
-        'text': 'text/plain',
-        'html': 'text/html',
-        'default': 'default',
-        'both-html-text': 'both',
+        "text": "text/plain",
+        "html": "text/html",
+        "default": "default",
+        "both-html-text": "both",
     }
-    ctype = data.get('content-type', 'default')
+    ctype = data.get("content-type", "default")
     if ctype not in content_type_mime:
         raise InvalidAttributeError(ctype, ctype, content_type_mime.keys())
-    XML.SubElement(emailext, 'contentType').text = content_type_mime[ctype]
+    XML.SubElement(emailext, "contentType").text = content_type_mime[ctype]
 
     mappings = [
-        ('subject', 'defaultSubject', '$DEFAULT_SUBJECT'),
-        ('body', 'defaultContent', '$DEFAULT_CONTENT'),
-        ('attachments', 'attachmentsPattern', ''),
-        ('presend-script', 'presendScript', ''),
-        ('postsend-script', 'postsendScript', ''),
-        ('attach-build-log', 'attachBuildLog', False),
-        ('compress-log', 'compressBuildLog', False),
-        ('save-output', 'saveOutput', False),
-        ('disable-publisher', 'disabled', False),
-        ('reply-to', 'replyTo', '$DEFAULT_REPLYTO'),
+        ("subject", "defaultSubject", "$DEFAULT_SUBJECT"),
+        ("body", "defaultContent", "$DEFAULT_CONTENT"),
+        ("attachments", "attachmentsPattern", ""),
+        ("presend-script", "presendScript", ""),
+        ("postsend-script", "postsendScript", ""),
+        ("attach-build-log", "attachBuildLog", False),
+        ("compress-log", "compressBuildLog", False),
+        ("save-output", "saveOutput", False),
+        ("disable-publisher", "disabled", False),
+        ("reply-to", "replyTo", "$DEFAULT_REPLYTO"),
     ]
-    helpers.convert_mapping_to_xml(
-        emailext, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(emailext, data, mappings, fail_required=True)
 
     matrix_dict = {
-        'both': 'BOTH',
-        'only-configurations': 'ONLY_CONFIGURATIONS',
-        'only-parent': 'ONLY_PARENT'
+        "both": "BOTH",
+        "only-configurations": "ONLY_CONFIGURATIONS",
+        "only-parent": "ONLY_PARENT",
     }
-    matrix_trigger = data.get('matrix-trigger', None)
+    matrix_trigger = data.get("matrix-trigger", None)
     # If none defined, then do not create entry
     if matrix_trigger is not None:
         if matrix_trigger not in matrix_dict:
-            raise InvalidAttributeError(matrix_trigger, matrix_trigger,
-                                        matrix_dict.keys())
-        XML.SubElement(emailext, 'matrixTriggerMode').text = matrix_dict.get(
-            matrix_trigger)
+            raise InvalidAttributeError(
+                matrix_trigger, matrix_trigger, matrix_dict.keys()
+            )
+        XML.SubElement(emailext, "matrixTriggerMode").text = matrix_dict.get(
+            matrix_trigger
+        )
 
 
 def fingerprint(registry, xml_parent, data):
@@ -2566,10 +2614,10 @@ def fingerprint(registry, xml_parent, data):
     .. literalinclude::  /../../tests/publishers/fixtures/fingerprint001.yaml
        :language: yaml
     """
-    finger = XML.SubElement(xml_parent, 'hudson.tasks.Fingerprinter')
+    finger = XML.SubElement(xml_parent, "hudson.tasks.Fingerprinter")
     mappings = [
-        ('files', 'targets', ''),
-        ('record-artifacts', 'recordBuildArtifacts', False)
+        ("files", "targets", ""),
+        ("record-artifacts", "recordBuildArtifacts", False),
     ]
     helpers.convert_mapping_to_xml(finger, data, mappings, fail_required=True)
 
@@ -2587,9 +2635,8 @@ def aggregate_tests(registry, xml_parent, data):
         /../../tests/publishers/fixtures/aggregate-tests001.yaml
        :language: yaml
     """
-    agg = XML.SubElement(xml_parent,
-                         'hudson.tasks.test.AggregatedTestResultPublisher')
-    mapping = [('include-failed-builds', 'includeFailedBuilds', False)]
+    agg = XML.SubElement(xml_parent, "hudson.tasks.test.AggregatedTestResultPublisher")
+    mapping = [("include-failed-builds", "includeFailedBuilds", False)]
     helpers.convert_mapping_to_xml(agg, data, mapping, fail_required=True)
 
 
@@ -2609,9 +2656,11 @@ def aggregate_flow_tests(registry, xml_parent, data):
        :language: yaml
 
     """
-    agg_flow = XML.SubElement(xml_parent, 'org.zeroturnaround.jenkins.'
-                              'flowbuildtestaggregator.FlowTestAggregator')
-    mapping = [('show-test-results-trend', 'showTestResultTrend', True)]
+    agg_flow = XML.SubElement(
+        xml_parent,
+        "org.zeroturnaround.jenkins." "flowbuildtestaggregator.FlowTestAggregator",
+    )
+    mapping = [("show-test-results-trend", "showTestResultTrend", True)]
     helpers.convert_mapping_to_xml(agg_flow, data, mapping, fail_required=True)
 
 
@@ -2682,68 +2731,64 @@ def cppcheck(registry, xml_parent, data):
            :language: yaml
     """
 
-    cppextbase = XML.SubElement(xml_parent,
-                                'org.jenkinsci.plugins.cppcheck.'
-                                'CppcheckPublisher')
-    cppextbase.set('plugin', 'cppcheck')
-    cppext = XML.SubElement(cppextbase, 'cppcheckConfig')
+    cppextbase = XML.SubElement(
+        xml_parent, "org.jenkinsci.plugins.cppcheck." "CppcheckPublisher"
+    )
+    cppextbase.set("plugin", "cppcheck")
+    cppext = XML.SubElement(cppextbase, "cppcheckConfig")
     mappings = [
-        ('pattern', 'pattern', None),
-        ('ignoreblankfiles', 'ignoreBlankFiles', False),
-        ('allow-no-report', 'allowNoReport', False)
+        ("pattern", "pattern", None),
+        ("ignoreblankfiles", "ignoreBlankFiles", False),
+        ("allow-no-report", "allowNoReport", False),
     ]
     helpers.convert_mapping_to_xml(cppext, data, mappings, fail_required=True)
 
-    csev = XML.SubElement(cppext, 'configSeverityEvaluation')
-    thrsh = data.get('thresholds', {})
+    csev = XML.SubElement(cppext, "configSeverityEvaluation")
+    thrsh = data.get("thresholds", {})
     thrsh_mappings = [
-        ('unstable', 'threshold', ''),
-        ('new-unstable', 'newThreshold', ''),
-        ('failure', 'failureThreshold', ''),
-        ('new-failure', 'newFailureThreshold', ''),
-        ('healthy', 'healthy', ''),
-        ('unhealthy', 'unHealthy', '')
+        ("unstable", "threshold", ""),
+        ("new-unstable", "newThreshold", ""),
+        ("failure", "failureThreshold", ""),
+        ("new-failure", "newFailureThreshold", ""),
+        ("healthy", "healthy", ""),
+        ("unhealthy", "unHealthy", ""),
     ]
-    helpers.convert_mapping_to_xml(
-        csev, thrsh, thrsh_mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(csev, thrsh, thrsh_mappings, fail_required=True)
 
-    sev = thrsh.get('severity', {})
+    sev = thrsh.get("severity", {})
     sev_mappings = [
-        ('error', 'severityError', True),
-        ('warning', 'severityWarning', True),
-        ('style', 'severityStyle', True),
-        ('performance', 'severityPerformance', True),
-        ('information', 'severityInformation', True),
-        ('nocategory', 'severityNoCategory', True),
-        ('portability', 'severityPortability', True)
+        ("error", "severityError", True),
+        ("warning", "severityWarning", True),
+        ("style", "severityStyle", True),
+        ("performance", "severityPerformance", True),
+        ("information", "severityInformation", True),
+        ("nocategory", "severityNoCategory", True),
+        ("portability", "severityPortability", True),
     ]
-    helpers.convert_mapping_to_xml(
-        csev, sev, sev_mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(csev, sev, sev_mappings, fail_required=True)
 
-    graph = data.get('graph', {})
-    cgraph = XML.SubElement(cppext, 'configGraph')
-    x, y = graph.get('xysize', [500, 200])
-    XML.SubElement(cgraph, 'xSize').text = str(x)
-    XML.SubElement(cgraph, 'ySize').text = str(y)
-    graph_mapping = [
-        ('num-builds-in-graph', 'numBuildsInGraph', 0)
-    ]
-    helpers.convert_mapping_to_xml(
-        cgraph, graph, graph_mapping, fail_required=True)
+    graph = data.get("graph", {})
+    cgraph = XML.SubElement(cppext, "configGraph")
+    x, y = graph.get("xysize", [500, 200])
+    XML.SubElement(cgraph, "xSize").text = str(x)
+    XML.SubElement(cgraph, "ySize").text = str(y)
+    graph_mapping = [("num-builds-in-graph", "numBuildsInGraph", 0)]
+    helpers.convert_mapping_to_xml(cgraph, graph, graph_mapping, fail_required=True)
 
-    gdisplay = graph.get('display', {})
+    gdisplay = graph.get("display", {})
     gdisplay_mappings = [
-        ('sum', 'displayAllErrors', True),
-        ('error', 'displayErrorSeverity', False),
-        ('warning', 'displayWarningSeverity', False),
-        ('style', 'displayStyleSeverity', False),
-        ('performance', 'displayPerformanceSeverity', False),
-        ('information', 'displayInformationSeverity', False),
-        ('nocategory', 'displayNoCategorySeverity', False),
-        ('portability', 'displayPortabilitySeverity', False)
+        ("sum", "displayAllErrors", True),
+        ("error", "displayErrorSeverity", False),
+        ("warning", "displayWarningSeverity", False),
+        ("style", "displayStyleSeverity", False),
+        ("performance", "displayPerformanceSeverity", False),
+        ("information", "displayInformationSeverity", False),
+        ("nocategory", "displayNoCategorySeverity", False),
+        ("portability", "displayPortabilitySeverity", False),
     ]
     helpers.convert_mapping_to_xml(
-        cgraph, gdisplay, gdisplay_mappings, fail_required=True)
+        cgraph, gdisplay, gdisplay_mappings, fail_required=True
+    )
 
 
 def logparser(registry, xml_parent, data):
@@ -2771,18 +2816,17 @@ def logparser(registry, xml_parent, data):
            :language: yaml
     """
 
-    clog = XML.SubElement(xml_parent,
-                          'hudson.plugins.logparser.LogParserPublisher')
-    clog.set('plugin', 'log-parser')
-    rules_path_element = ("projectRulePath"
-                          if data.get("use-project-rules", True)
-                          else "parsingRulesPath")
+    clog = XML.SubElement(xml_parent, "hudson.plugins.logparser.LogParserPublisher")
+    clog.set("plugin", "log-parser")
+    rules_path_element = (
+        "projectRulePath" if data.get("use-project-rules", True) else "parsingRulesPath"
+    )
     mappings = [
-        ('unstable-on-warning', 'unstableOnWarning', False),
-        ('fail-on-error', 'failBuildOnError', False),
-        ('show-graphs', 'showGraphs', True),
-        ('use-project-rules', 'useProjectRule', True),
-        ('parse-rules', rules_path_element, ''),
+        ("unstable-on-warning", "unstableOnWarning", False),
+        ("fail-on-error", "failBuildOnError", False),
+        ("show-graphs", "showGraphs", True),
+        ("use-project-rules", "useProjectRule", True),
+        ("parse-rules", rules_path_element, ""),
     ]
     helpers.convert_mapping_to_xml(clog, data, mappings, fail_required=True)
 
@@ -2807,20 +2851,22 @@ def copy_to_master(registry, xml_parent, data):
         /../../tests/publishers/fixtures/copy-to-master001.yaml
        :language: yaml
     """
-    cm = XML.SubElement(xml_parent, 'com.michelin.'
-                        'cio.hudson.plugins.copytoslave.CopyToMasterNotifier')
-    cm.set('plugin', 'copy-to-slave')
+    cm = XML.SubElement(
+        xml_parent,
+        "com.michelin." "cio.hudson.plugins.copytoslave.CopyToMasterNotifier",
+    )
+    cm.set("plugin", "copy-to-slave")
 
-    XML.SubElement(cm, 'includes').text = ','.join(data.get('includes', ['']))
-    XML.SubElement(cm, 'excludes').text = ','.join(data.get('excludes', ['']))
+    XML.SubElement(cm, "includes").text = ",".join(data.get("includes", [""]))
+    XML.SubElement(cm, "excludes").text = ",".join(data.get("excludes", [""]))
     mappings = [
-        ('run-after-result', 'runAfterResultFinalised', True),
-        ('destination', 'destinationFolder', '')
+        ("run-after-result", "runAfterResultFinalised", True),
+        ("destination", "destinationFolder", ""),
     ]
     helpers.convert_mapping_to_xml(cm, data, mappings, fail_required=True)
 
-    if data.get('destination', ''):
-        XML.SubElement(cm, 'overrideDestinationFolder').text = 'true'
+    if data.get("destination", ""):
+        XML.SubElement(cm, "overrideDestinationFolder").text = "true"
 
 
 def jira(registry, xml_parent, data):
@@ -2833,7 +2879,7 @@ def jira(registry, xml_parent, data):
         .. literalinclude:: /../../tests/publishers/fixtures/jira001.yaml
            :language: yaml
     """
-    XML.SubElement(xml_parent, 'hudson.plugins.jira.JiraIssueUpdater')
+    XML.SubElement(xml_parent, "hudson.plugins.jira.JiraIssueUpdater")
 
 
 def growl(registry, xml_parent, data):
@@ -2855,12 +2901,12 @@ def growl(registry, xml_parent, data):
         .. literalinclude:: /../../tests/publishers/fixtures/growl-full.yaml
            :language: yaml
     """
-    growl = XML.SubElement(xml_parent, 'hudson.plugins.growl.GrowlPublisher')
-    growl.set('plugin', 'growl')
+    growl = XML.SubElement(xml_parent, "hudson.plugins.growl.GrowlPublisher")
+    growl.set("plugin", "growl")
 
     mapping = [
-        ('ip', 'IP', None),
-        ('notify-only-on-fail-or-recovery', 'onlyOnFailureOrRecovery', False),
+        ("ip", "IP", None),
+        ("notify-only-on-fail-or-recovery", "onlyOnFailureOrRecovery", False),
     ]
     helpers.convert_mapping_to_xml(growl, data, mapping, fail_required=True)
 
@@ -2901,118 +2947,121 @@ def groovy_postbuild(registry, xml_parent, data):
             "to change configuration. It is not going to be supported in "
             "future releases!"
         )
-        data = {
-            'script': data,
-        }
+        data = {"script": data}
     # There are incompatible changes, we need to know version
-    info = registry.get_plugin_info('groovy-postbuild')
+    info = registry.get_plugin_info("groovy-postbuild")
     # Note: Assume latest version of plugin is preferred config format
-    version = pkg_resources.parse_version(
-        info.get('version', str(sys.maxsize)))
+    version = pkg_resources.parse_version(info.get("version", str(sys.maxsize)))
     # Version specific predicates
     matrix_parent_support = version >= pkg_resources.parse_version("1.9")
     security_plugin_support = version >= pkg_resources.parse_version("2.0")
     extra_classpath_support = version >= pkg_resources.parse_version("1.6")
 
-    root_tag = (
-        'org.jvnet.hudson.plugins.groovypostbuild.GroovyPostbuildRecorder'
-    )
+    root_tag = "org.jvnet.hudson.plugins.groovypostbuild.GroovyPostbuildRecorder"
     groovy = XML.SubElement(xml_parent, root_tag)
 
-    behavior = data.get('on-failure')
-    XML.SubElement(groovy, 'behavior').text = {
-        'unstable': '1',
-        'failed': '2',
-    }.get(behavior, '0')
+    behavior = data.get("on-failure")
+    XML.SubElement(groovy, "behavior").text = {"unstable": "1", "failed": "2"}.get(
+        behavior, "0"
+    )
 
     if matrix_parent_support:
-        XML.SubElement(
-            groovy,
-            'runForMatrixParent',
-        ).text = str(data.get('matrix-parent', False)).lower()
-
-    classpaths = data.get('classpath', list())
-    if security_plugin_support:
-        script = XML.SubElement(groovy, 'script')
-        XML.SubElement(script, 'script').text = data.get('script')
-        XML.SubElement(script, 'sandbox').text = str(
-            data.get('sandbox', False)
+        XML.SubElement(groovy, "runForMatrixParent").text = str(
+            data.get("matrix-parent", False)
         ).lower()
+
+    classpaths = data.get("classpath", list())
+    if security_plugin_support:
+        script = XML.SubElement(groovy, "script")
+        XML.SubElement(script, "script").text = data.get("script")
+        XML.SubElement(script, "sandbox").text = str(data.get("sandbox", False)).lower()
         if classpaths:
-            classpath = XML.SubElement(script, 'classpath')
+            classpath = XML.SubElement(script, "classpath")
             for path in classpaths:
-                script_path = XML.SubElement(classpath, 'entry')
-                XML.SubElement(script_path, 'url').text = path
+                script_path = XML.SubElement(classpath, "entry")
+                XML.SubElement(script_path, "url").text = path
     else:
-        XML.SubElement(groovy, 'groovyScript').text = data.get('script')
+        XML.SubElement(groovy, "groovyScript").text = data.get("script")
         if extra_classpath_support and classpaths:
-            classpath = XML.SubElement(groovy, 'classpath')
+            classpath = XML.SubElement(groovy, "classpath")
             for path in classpaths:
                 script_path = XML.SubElement(
                     classpath,
-                    'org.jvnet.hudson.plugins.groovypostbuild.'
-                    'GroovyScriptPath',
+                    "org.jvnet.hudson.plugins.groovypostbuild." "GroovyScriptPath",
                 )
-                XML.SubElement(script_path, 'path').text = path
+                XML.SubElement(script_path, "path").text = path
 
 
-def base_publish_over(xml_parent, data, console_prefix,
-                      plugin_tag, publisher_tag,
-                      transferset_tag, retry_tag,
-                      reference_plugin_tag, is_builder=False):
+def base_publish_over(
+    xml_parent,
+    data,
+    console_prefix,
+    plugin_tag,
+    publisher_tag,
+    transferset_tag,
+    retry_tag,
+    reference_plugin_tag,
+    is_builder=False,
+):
     outer = XML.SubElement(xml_parent, plugin_tag)
     # 'Publish over SSH' builder has an extra top delegate element
-    if xml_parent.tag == 'builders' or is_builder:
-        outer = XML.SubElement(outer, 'delegate')
+    if xml_parent.tag == "builders" or is_builder:
+        outer = XML.SubElement(outer, "delegate")
 
-    XML.SubElement(outer, 'consolePrefix').text = console_prefix
-    delegate = XML.SubElement(outer, 'delegate')
-    publishers = XML.SubElement(delegate, 'publishers')
+    XML.SubElement(outer, "consolePrefix").text = console_prefix
+    delegate = XML.SubElement(outer, "delegate")
+    publishers = XML.SubElement(delegate, "publishers")
 
     inner = XML.SubElement(publishers, publisher_tag)
-    XML.SubElement(inner, 'configName').text = data['site']
-    XML.SubElement(inner, 'verbose').text = str(
-        data.get('verbose', False)).lower()
+    XML.SubElement(inner, "configName").text = data["site"]
+    XML.SubElement(inner, "verbose").text = str(data.get("verbose", False)).lower()
 
-    transfers = XML.SubElement(inner, 'transfers')
+    transfers = XML.SubElement(inner, "transfers")
     transfersset = XML.SubElement(transfers, transferset_tag)
 
-    XML.SubElement(transfersset, 'remoteDirectory').text = data['target']
-    XML.SubElement(transfersset, 'sourceFiles').text = data['source']
-    XML.SubElement(transfersset, 'excludes').text = data.get('excludes', '')
-    XML.SubElement(transfersset, 'removePrefix').text = data.get(
-        'remove-prefix', '')
-    XML.SubElement(transfersset, 'remoteDirectorySDF').text = str(
-        data.get('target-is-date-format', False)).lower()
-    XML.SubElement(transfersset, 'flatten').text = str(
-        data.get('flatten', False)).lower()
-    XML.SubElement(transfersset, 'cleanRemote').text = str(
-        data.get('clean-remote', False)).lower()
+    XML.SubElement(transfersset, "remoteDirectory").text = data["target"]
+    XML.SubElement(transfersset, "sourceFiles").text = data["source"]
+    XML.SubElement(transfersset, "excludes").text = data.get("excludes", "")
+    XML.SubElement(transfersset, "removePrefix").text = data.get("remove-prefix", "")
+    XML.SubElement(transfersset, "remoteDirectorySDF").text = str(
+        data.get("target-is-date-format", False)
+    ).lower()
+    XML.SubElement(transfersset, "flatten").text = str(
+        data.get("flatten", False)
+    ).lower()
+    XML.SubElement(transfersset, "cleanRemote").text = str(
+        data.get("clean-remote", False)
+    ).lower()
 
-    if 'command' in data:
-        XML.SubElement(transfersset, 'execCommand').text = data['command']
-    if 'timeout' in data:
-        XML.SubElement(transfersset, 'execTimeout').text = str(data['timeout'])
-    if 'use-pty' in data:
-        XML.SubElement(transfersset, 'usePty').text = str(
-            data.get('use-pty', False)).lower()
+    if "command" in data:
+        XML.SubElement(transfersset, "execCommand").text = data["command"]
+    if "timeout" in data:
+        XML.SubElement(transfersset, "execTimeout").text = str(data["timeout"])
+    if "use-pty" in data:
+        XML.SubElement(transfersset, "usePty").text = str(
+            data.get("use-pty", False)
+        ).lower()
 
-    XML.SubElement(inner, 'useWorkspaceInPromotion').text = 'false'
-    XML.SubElement(inner, 'usePromotionTimestamp').text = 'false'
+    XML.SubElement(inner, "useWorkspaceInPromotion").text = "false"
+    XML.SubElement(inner, "usePromotionTimestamp").text = "false"
 
-    if 'retries' in data:
-        retry = XML.SubElement(inner, 'retry', {'class': retry_tag})
-        XML.SubElement(retry, 'retries').text = str(data.get('retries', 0))
-        XML.SubElement(retry, 'retryDelay').text = str(
-            data.get('retry-delay', 10000))
+    if "retries" in data:
+        retry = XML.SubElement(inner, "retry", {"class": retry_tag})
+        XML.SubElement(retry, "retries").text = str(data.get("retries", 0))
+        XML.SubElement(retry, "retryDelay").text = str(data.get("retry-delay", 10000))
 
-    XML.SubElement(delegate, 'continueOnError').text = 'false'
-    XML.SubElement(delegate, 'failOnError').text = str(
-        data.get('fail-on-error', False)).lower()
-    XML.SubElement(delegate, 'alwaysPublishFromMaster').text = str(
-        data.get('always-publish-from-master', False)).lower()
-    XML.SubElement(delegate, 'hostConfigurationAccess',
-                   {'class': reference_plugin_tag, 'reference': '../..'})
+    XML.SubElement(delegate, "continueOnError").text = "false"
+    XML.SubElement(delegate, "failOnError").text = str(
+        data.get("fail-on-error", False)
+    ).lower()
+    XML.SubElement(delegate, "alwaysPublishFromMaster").text = str(
+        data.get("always-publish-from-master", False)
+    ).lower()
+    XML.SubElement(
+        delegate,
+        "hostConfigurationAccess",
+        {"class": reference_plugin_tag, "reference": "../.."},
+    )
 
     return (outer, transfersset)
 
@@ -3054,27 +3103,28 @@ def cifs(registry, xml_parent, data):
            :language: yaml
 
     """
-    console_prefix = 'CIFS: '
-    if xml_parent.tag == 'publishers':
-        plugin_tag = 'jenkins.plugins.publish__over__cifs.CifsPublisherPlugin'
+    console_prefix = "CIFS: "
+    if xml_parent.tag == "publishers":
+        plugin_tag = "jenkins.plugins.publish__over__cifs.CifsPublisherPlugin"
         is_builder = False
     else:
-        plugin_tag = 'jenkins.plugins.publish__over__cifs.CifsBuilderPlugin'
+        plugin_tag = "jenkins.plugins.publish__over__cifs.CifsBuilderPlugin"
         is_builder = True
-    publisher_tag = 'jenkins.plugins.publish__over__cifs.CifsPublisher'
-    transfer_tag = 'jenkins.plugins.publish__over__cifs.CifsTransfer'
-    retry_tag = 'jenkins.plugins.publish_over_cifs.CifsRetry'
-    plugin_reference_tag = ('jenkins.plugins.publish_over_cifs.'
-                            'CifsPublisherPlugin')
-    base_publish_over(xml_parent,
-                      data,
-                      console_prefix,
-                      plugin_tag,
-                      publisher_tag,
-                      transfer_tag,
-                      retry_tag,
-                      plugin_reference_tag,
-                      is_builder)
+    publisher_tag = "jenkins.plugins.publish__over__cifs.CifsPublisher"
+    transfer_tag = "jenkins.plugins.publish__over__cifs.CifsTransfer"
+    retry_tag = "jenkins.plugins.publish_over_cifs.CifsRetry"
+    plugin_reference_tag = "jenkins.plugins.publish_over_cifs." "CifsPublisherPlugin"
+    base_publish_over(
+        xml_parent,
+        data,
+        console_prefix,
+        plugin_tag,
+        publisher_tag,
+        transfer_tag,
+        retry_tag,
+        plugin_reference_tag,
+        is_builder,
+    )
 
 
 def cigame(registry, xml_parent, data):
@@ -3089,7 +3139,7 @@ def cigame(registry, xml_parent, data):
         .. literalinclude:: /../../tests/publishers/fixtures/cigame.yaml
            :language: yaml
     """
-    XML.SubElement(xml_parent, 'hudson.plugins.cigame.GamePublisher')
+    XML.SubElement(xml_parent, "hudson.plugins.cigame.GamePublisher")
 
 
 def sonar(registry, xml_parent, data):
@@ -3143,37 +3193,38 @@ def sonar(registry, xml_parent, data):
            :language: yaml
     """
 
-    sonar = XML.SubElement(xml_parent, 'hudson.plugins.sonar.SonarPublisher')
-    sonar.set('plugin', 'sonar')
-    if 'installation-name' in data:
-        XML.SubElement(sonar, 'installationName').text = data[
-            'installation-name']
-    if 'jdk' in data:
-        XML.SubElement(sonar, 'jdk').text = data['jdk']
-    if 'maven-installation-name' in data:
-        XML.SubElement(sonar, 'mavenInstallationName').text = data[
-            'maven-installation-name']
+    sonar = XML.SubElement(xml_parent, "hudson.plugins.sonar.SonarPublisher")
+    sonar.set("plugin", "sonar")
+    if "installation-name" in data:
+        XML.SubElement(sonar, "installationName").text = data["installation-name"]
+    if "jdk" in data:
+        XML.SubElement(sonar, "jdk").text = data["jdk"]
+    if "maven-installation-name" in data:
+        XML.SubElement(sonar, "mavenInstallationName").text = data[
+            "maven-installation-name"
+        ]
 
     mappings = [
-        ('branch', 'branch', ''),
-        ('language', 'language', ''),
-        ('root-pom', 'rootPom', 'pom.xml'),
-        ('private-maven-repo', 'usePrivateRepository', False),
-        ('maven-opts', 'mavenOpts', ''),
-        ('additional-properties', 'jobAdditionalProperties', '')
+        ("branch", "branch", ""),
+        ("language", "language", ""),
+        ("root-pom", "rootPom", "pom.xml"),
+        ("private-maven-repo", "usePrivateRepository", False),
+        ("maven-opts", "mavenOpts", ""),
+        ("additional-properties", "jobAdditionalProperties", ""),
     ]
     helpers.convert_mapping_to_xml(sonar, data, mappings, fail_required=True)
 
-    if 'skip-global-triggers' in data:
-        data_triggers = data['skip-global-triggers']
-        triggers = XML.SubElement(sonar, 'triggers')
+    if "skip-global-triggers" in data:
+        data_triggers = data["skip-global-triggers"]
+        triggers = XML.SubElement(sonar, "triggers")
         triggers_mappings = [
-            ('skip-when-scm-change', 'skipScmCause', False),
-            ('skip-when-upstream-build', 'skipUpstreamCause', False),
-            ('skip-when-envvar-defined', 'envVar', '')
+            ("skip-when-scm-change", "skipScmCause", False),
+            ("skip-when-upstream-build", "skipUpstreamCause", False),
+            ("skip-when-envvar-defined", "envVar", ""),
         ]
         helpers.convert_mapping_to_xml(
-            triggers, data_triggers, triggers_mappings, fail_required=True)
+            triggers, data_triggers, triggers_mappings, fail_required=True
+        )
 
     helpers.config_file_provider_settings(sonar, data)
 
@@ -3221,43 +3272,46 @@ def sounds(parser, xml_parent, data):
        :language: yaml
     """
 
-    mapping_dict = {'success': hudson_model.SUCCESS,
-                    'unstable': hudson_model.UNSTABLE,
-                    'failure': hudson_model.FAILURE,
-                    'not_build': hudson_model.NOTBUILD,
-                    'aborted': hudson_model.ABORTED}
-    sounds = XML.SubElement(xml_parent, 'net.hurstfrost.hudson.'
-                                        'sounds.HudsonSoundsNotifier')
-    events = XML.SubElement(sounds, 'soundEvents')
+    mapping_dict = {
+        "success": hudson_model.SUCCESS,
+        "unstable": hudson_model.UNSTABLE,
+        "failure": hudson_model.FAILURE,
+        "not_build": hudson_model.NOTBUILD,
+        "aborted": hudson_model.ABORTED,
+    }
+    sounds = XML.SubElement(
+        xml_parent, "net.hurstfrost.hudson." "sounds.HudsonSoundsNotifier"
+    )
+    events = XML.SubElement(sounds, "soundEvents")
     for status, v in data.items():
         try:
             model = mapping_dict[status]
         except KeyError:
-            raise InvalidAttributeError('build status', status, mapping_dict)
+            raise InvalidAttributeError("build status", status, mapping_dict)
 
-        event = XML.SubElement(events,
-                               'net.hurstfrost.hudson.sounds.'
-                               'HudsonSoundsNotifier_-SoundEvent')
-        XML.SubElement(event, 'soundId').text = v['sound']
-        to_result = XML.SubElement(event, 'toResult')
-        XML.SubElement(to_result, 'name').text = model['name']
-        XML.SubElement(to_result, 'ordinal').text = model['ordinal']
-        XML.SubElement(to_result, 'color').text = model['color']
-        XML.SubElement(to_result, 'completeBuild').text = str(
-            model['complete']).lower()
+        event = XML.SubElement(
+            events, "net.hurstfrost.hudson.sounds." "HudsonSoundsNotifier_-SoundEvent"
+        )
+        XML.SubElement(event, "soundId").text = v["sound"]
+        to_result = XML.SubElement(event, "toResult")
+        XML.SubElement(to_result, "name").text = model["name"]
+        XML.SubElement(to_result, "ordinal").text = model["ordinal"]
+        XML.SubElement(to_result, "color").text = model["color"]
+        XML.SubElement(to_result, "completeBuild").text = str(model["complete"]).lower()
 
-        from_results = XML.SubElement(event, 'fromResults')
-        results = ['not_build', 'success', 'aborted', 'failure', 'unstable']
-        if 'from' in v:
-            results = v['from']
+        from_results = XML.SubElement(event, "fromResults")
+        results = ["not_build", "success", "aborted", "failure", "unstable"]
+        if "from" in v:
+            results = v["from"]
         for result in results:
             model = mapping_dict[result]
-            from_result = XML.SubElement(from_results, 'hudson.model.Result')
-            XML.SubElement(from_result, 'name').text = model['name']
-            XML.SubElement(from_result, 'ordinal').text = model['ordinal']
-            XML.SubElement(from_result, 'color').text = model['color']
-            XML.SubElement(from_result, 'completeBuild').text = str(
-                model['complete']).lower()
+            from_result = XML.SubElement(from_results, "hudson.model.Result")
+            XML.SubElement(from_result, "name").text = model["name"]
+            XML.SubElement(from_result, "ordinal").text = model["ordinal"]
+            XML.SubElement(from_result, "color").text = model["color"]
+            XML.SubElement(from_result, "completeBuild").text = str(
+                model["complete"]
+            ).lower()
 
 
 def performance(registry, xml_parent, data):
@@ -3318,76 +3372,71 @@ def performance(registry, xml_parent, data):
            /../../tests/publishers/fixtures/performance-full.yaml
            :language: yaml
     """
-    perf = XML.SubElement(xml_parent, 'hudson.plugins.performance.'
-                                      'PerformancePublisher')
-    perf.set('plugin', 'performance')
-    types = ['ART', 'MRT', 'PRT']
+    perf = XML.SubElement(
+        xml_parent, "hudson.plugins.performance." "PerformancePublisher"
+    )
+    perf.set("plugin", "performance")
+    types = ["ART", "MRT", "PRT"]
     mappings = [
-        ('failed-threshold', 'errorFailedThreshold', 0),
-        ('unstable-threshold', 'errorUnstableThreshold', 0),
-        ('unstable-response-time-threshold',
-         'errorUnstableResponseTimeThreshold',
-         ''),
-        ('failed-threshold-positive',
-         'relativeFailedThresholdPositive',
-         '0.0'),
-        ('failed-threshold-negative',
-         'relativeFailedThresholdNegative',
-         '0.0'),
-        ('unstable-threshold-positive',
-         'relativeUnstableThresholdPositive',
-         '0.0'),
-        ('unstable-threshold-negative',
-         'relativeUnstableThresholdNegative',
-         '0.0'),
-        ('nth-build-number', 'nthBuildNumber', 0),
-        ('mode-relative-thresholds', 'modeRelativeThresholds', False),
-        ('config-type', 'configType', 'ART', types),
-        ('mode-of-threshold', 'modeOfThreshold', False),
-        ('fail-build', 'failBuildIfNoResultFile', False),
-        ('compare-build-previous', 'compareBuildPrevious', False),
-        ('mode-performance-per-test-case', 'modePerformancePerTestCase', True),
-        ('mode-thoughput', 'modeThroughput', False)
+        ("failed-threshold", "errorFailedThreshold", 0),
+        ("unstable-threshold", "errorUnstableThreshold", 0),
+        ("unstable-response-time-threshold", "errorUnstableResponseTimeThreshold", ""),
+        ("failed-threshold-positive", "relativeFailedThresholdPositive", "0.0"),
+        ("failed-threshold-negative", "relativeFailedThresholdNegative", "0.0"),
+        ("unstable-threshold-positive", "relativeUnstableThresholdPositive", "0.0"),
+        ("unstable-threshold-negative", "relativeUnstableThresholdNegative", "0.0"),
+        ("nth-build-number", "nthBuildNumber", 0),
+        ("mode-relative-thresholds", "modeRelativeThresholds", False),
+        ("config-type", "configType", "ART", types),
+        ("mode-of-threshold", "modeOfThreshold", False),
+        ("fail-build", "failBuildIfNoResultFile", False),
+        ("compare-build-previous", "compareBuildPrevious", False),
+        ("mode-performance-per-test-case", "modePerformancePerTestCase", True),
+        ("mode-thoughput", "modeThroughput", False),
     ]
     helpers.convert_mapping_to_xml(perf, data, mappings, fail_required=True)
 
-    parsers = XML.SubElement(perf, 'parsers')
-    if 'report' in data:
-        for item in data['report']:
+    parsers = XML.SubElement(perf, "parsers")
+    if "report" in data:
+        for item in data["report"]:
             if isinstance(item, dict):
                 item_name = next(iter(item.keys()))
                 item_values = item.get(item_name, None)
-                if item_name == 'jmeter':
-                    jmhold = XML.SubElement(parsers, 'hudson.plugins.'
-                                                     'performance.'
-                                                     'JMeterParser')
-                    XML.SubElement(jmhold, 'glob').text = str(item_values)
-                elif item_name == 'junit':
-                    juhold = XML.SubElement(parsers, 'hudson.plugins.'
-                                                     'performance.'
-                                                     'JUnitParser')
-                    XML.SubElement(juhold, 'glob').text = str(item_values)
+                if item_name == "jmeter":
+                    jmhold = XML.SubElement(
+                        parsers, "hudson.plugins." "performance." "JMeterParser"
+                    )
+                    XML.SubElement(jmhold, "glob").text = str(item_values)
+                elif item_name == "junit":
+                    juhold = XML.SubElement(
+                        parsers, "hudson.plugins." "performance." "JUnitParser"
+                    )
+                    XML.SubElement(juhold, "glob").text = str(item_values)
                 else:
-                    raise JenkinsJobsException("You have not specified jmeter "
-                                               "or junit, or you have "
-                                               "incorrectly assigned the key "
-                                               "value.")
+                    raise JenkinsJobsException(
+                        "You have not specified jmeter "
+                        "or junit, or you have "
+                        "incorrectly assigned the key "
+                        "value."
+                    )
             elif isinstance(item, str):
-                if item == 'jmeter':
-                    jmhold = XML.SubElement(parsers, 'hudson.plugins.'
-                                                     'performance.'
-                                                     'JMeterParser')
-                    XML.SubElement(jmhold, 'glob').text = '**/*.jtl'
-                elif item == 'junit':
-                    juhold = XML.SubElement(parsers, 'hudson.plugins.'
-                                                     'performance.'
-                                                     'JUnitParser')
-                    XML.SubElement(juhold, 'glob').text = '**/TEST-*.xml'
+                if item == "jmeter":
+                    jmhold = XML.SubElement(
+                        parsers, "hudson.plugins." "performance." "JMeterParser"
+                    )
+                    XML.SubElement(jmhold, "glob").text = "**/*.jtl"
+                elif item == "junit":
+                    juhold = XML.SubElement(
+                        parsers, "hudson.plugins." "performance." "JUnitParser"
+                    )
+                    XML.SubElement(juhold, "glob").text = "**/TEST-*.xml"
                 else:
-                    raise JenkinsJobsException("You have not specified jmeter "
-                                               "or junit, or you have "
-                                               "incorrectly assigned the key "
-                                               "value.")
+                    raise JenkinsJobsException(
+                        "You have not specified jmeter "
+                        "or junit, or you have "
+                        "incorrectly assigned the key "
+                        "value."
+                    )
 
 
 def join_trigger(registry, xml_parent, data):
@@ -3407,18 +3456,18 @@ def join_trigger(registry, xml_parent, data):
            /../../tests/publishers/fixtures/join-trigger001.yaml
            :language: yaml
     """
-    jointrigger = XML.SubElement(xml_parent, 'join.JoinTrigger')
+    jointrigger = XML.SubElement(xml_parent, "join.JoinTrigger")
 
-    joinProjectsText = ','.join(data.get('projects', ['']))
-    XML.SubElement(jointrigger, 'joinProjects').text = joinProjectsText
+    joinProjectsText = ",".join(data.get("projects", [""]))
+    XML.SubElement(jointrigger, "joinProjects").text = joinProjectsText
 
-    publishers = XML.SubElement(jointrigger, 'joinPublishers')
-    for pub in data.get('publishers', []):
+    publishers = XML.SubElement(jointrigger, "joinPublishers")
+    for pub in data.get("publishers", []):
         for edited_node in create_publishers(registry, pub):
             publishers.append(edited_node)
 
-    unstable = str(data.get('even-if-unstable', 'false')).lower()
-    XML.SubElement(jointrigger, 'evenIfDownstreamUnstable').text = unstable
+    unstable = str(data.get("even-if-unstable", "false")).lower()
+    XML.SubElement(jointrigger, "evenIfDownstreamUnstable").text = unstable
 
 
 def jabber(registry, xml_parent, data):
@@ -3467,57 +3516,67 @@ def jabber(registry, xml_parent, data):
         .. literalinclude:: /../../tests/publishers/fixtures/jabber-full.yaml
            :language: yaml
     """
-    j = XML.SubElement(xml_parent, 'hudson.plugins.jabber.im.transport.'
-                       'JabberPublisher')
-    j.set('plugin', 'jabber')
+    j = XML.SubElement(
+        xml_parent, "hudson.plugins.jabber.im.transport." "JabberPublisher"
+    )
+    j.set("plugin", "jabber")
 
-    t = XML.SubElement(j, 'targets')
-    if 'group-targets' in data:
-        for group in data['group-targets']:
-            gcimt = XML.SubElement(t, 'hudson.plugins.im.'
-                                   'GroupChatIMMessageTarget')
-            gcimt.set('plugin', 'instant-messaging')
-            XML.SubElement(gcimt, 'name').text = group
-            XML.SubElement(gcimt, 'notificationOnly').text = 'false'
-    if 'individual-targets' in data:
-        for individual in data['individual-targets']:
-            dimt = XML.SubElement(t, 'hudson.plugins.im.'
-                                  'DefaultIMMessageTarget')
-            dimt.set('plugin', 'instant-messaging')
-            XML.SubElement(dimt, 'value').text = individual
-    strategy = data.get('strategy', 'all')
-    strategydict = {'all': 'ALL',
-                    'failure': 'ANY_FAILURE',
-                    'failure-fixed': 'FAILURE_AND_FIXED',
-                    'new-failure-fixed': 'NEW_FAILURE_AND_FIXED',
-                    'change': 'STATECHANGE_ONLY'}
+    t = XML.SubElement(j, "targets")
+    if "group-targets" in data:
+        for group in data["group-targets"]:
+            gcimt = XML.SubElement(t, "hudson.plugins.im." "GroupChatIMMessageTarget")
+            gcimt.set("plugin", "instant-messaging")
+            XML.SubElement(gcimt, "name").text = group
+            XML.SubElement(gcimt, "notificationOnly").text = "false"
+    if "individual-targets" in data:
+        for individual in data["individual-targets"]:
+            dimt = XML.SubElement(t, "hudson.plugins.im." "DefaultIMMessageTarget")
+            dimt.set("plugin", "instant-messaging")
+            XML.SubElement(dimt, "value").text = individual
+    strategy = data.get("strategy", "all")
+    strategydict = {
+        "all": "ALL",
+        "failure": "ANY_FAILURE",
+        "failure-fixed": "FAILURE_AND_FIXED",
+        "new-failure-fixed": "NEW_FAILURE_AND_FIXED",
+        "change": "STATECHANGE_ONLY",
+    }
     if strategy not in strategydict:
-        raise JenkinsJobsException("Strategy entered is not valid, must be " +
-                                   "one of: all, failure, failure-fixed, or "
-                                   "change")
-    XML.SubElement(j, 'strategy').text = strategydict[strategy]
+        raise JenkinsJobsException(
+            "Strategy entered is not valid, must be "
+            + "one of: all, failure, failure-fixed, or "
+            "change"
+        )
+    XML.SubElement(j, "strategy").text = strategydict[strategy]
 
     mappings = [
-        ('notify-on-build-start', 'notifyOnBuildStart', False),
-        ('notify-scm-committers', 'notifySuspects', False),
-        ('notify-scm-culprits', 'notifyCulprits', False),
-        ('notify-scm-fixers', 'notifyFixers', False),
-        ('notify-upstream-committers', 'notifyUpstreamCommitters', False)
+        ("notify-on-build-start", "notifyOnBuildStart", False),
+        ("notify-scm-committers", "notifySuspects", False),
+        ("notify-scm-culprits", "notifyCulprits", False),
+        ("notify-scm-fixers", "notifyFixers", False),
+        ("notify-upstream-committers", "notifyUpstreamCommitters", False),
     ]
     helpers.convert_mapping_to_xml(j, data, mappings, fail_required=True)
 
-    message = data.get('message', 'summary-scm')
-    messagedict = {'summary-scm': 'DefaultBuildToChatNotifier',
-                   'summary': 'SummaryOnlyBuildToChatNotifier',
-                   'summary-build': 'BuildParametersBuildToChatNotifier',
-                   'summary-scm-fail': 'PrintFailingTestsBuildToChatNotifier'}
+    message = data.get("message", "summary-scm")
+    messagedict = {
+        "summary-scm": "DefaultBuildToChatNotifier",
+        "summary": "SummaryOnlyBuildToChatNotifier",
+        "summary-build": "BuildParametersBuildToChatNotifier",
+        "summary-scm-fail": "PrintFailingTestsBuildToChatNotifier",
+    }
     if message not in messagedict:
-        raise JenkinsJobsException("Message entered is not valid, must be one "
-                                   "of: summary-scm, summary, summary-build "
-                                   "or summary-scm-fail")
-    XML.SubElement(j, 'buildToChatNotifier', {
-        'class': 'hudson.plugins.im.build_notify.' + messagedict[message]})
-    XML.SubElement(j, 'matrixMultiplier').text = 'ONLY_CONFIGURATIONS'
+        raise JenkinsJobsException(
+            "Message entered is not valid, must be one "
+            "of: summary-scm, summary, summary-build "
+            "or summary-scm-fail"
+        )
+    XML.SubElement(
+        j,
+        "buildToChatNotifier",
+        {"class": "hudson.plugins.im.build_notify." + messagedict[message]},
+    )
+    XML.SubElement(j, "matrixMultiplier").text = "ONLY_CONFIGURATIONS"
 
 
 def workspace_cleanup(registry, xml_parent, data):
@@ -3559,36 +3618,37 @@ def workspace_cleanup(registry, xml_parent, data):
        :language: yaml
     """
 
-    p = XML.SubElement(xml_parent,
-                       'hudson.plugins.ws__cleanup.WsCleanup')
+    p = XML.SubElement(xml_parent, "hudson.plugins.ws__cleanup.WsCleanup")
     p.set("plugin", "ws-cleanup")
     if "include" in data or "exclude" in data:
-        patterns = XML.SubElement(p, 'patterns')
+        patterns = XML.SubElement(p, "patterns")
 
     for inc in data.get("include", []):
-        ptrn = XML.SubElement(patterns, 'hudson.plugins.ws__cleanup.Pattern')
-        XML.SubElement(ptrn, 'pattern').text = inc
-        XML.SubElement(ptrn, 'type').text = "INCLUDE"
+        ptrn = XML.SubElement(patterns, "hudson.plugins.ws__cleanup.Pattern")
+        XML.SubElement(ptrn, "pattern").text = inc
+        XML.SubElement(ptrn, "type").text = "INCLUDE"
 
     for exc in data.get("exclude", []):
-        ptrn = XML.SubElement(patterns, 'hudson.plugins.ws__cleanup.Pattern')
-        XML.SubElement(ptrn, 'pattern').text = exc
-        XML.SubElement(ptrn, 'type').text = "EXCLUDE"
+        ptrn = XML.SubElement(patterns, "hudson.plugins.ws__cleanup.Pattern")
+        XML.SubElement(ptrn, "pattern").text = exc
+        XML.SubElement(ptrn, "type").text = "EXCLUDE"
 
     mappings = [
-        ('dirmatch', 'deleteDirs', False),
-        ('clean-parent', 'cleanupMatrixParent', False),
-        ('external-deletion-command', 'externalDelete', ''),
-        ('disable-deferred-wipeout', 'disableDeferredWipeout', False),
+        ("dirmatch", "deleteDirs", False),
+        ("clean-parent", "cleanupMatrixParent", False),
+        ("external-deletion-command", "externalDelete", ""),
+        ("disable-deferred-wipeout", "disableDeferredWipeout", False),
     ]
     helpers.convert_mapping_to_xml(p, data, mappings, fail_required=True)
 
-    mask = [('success', 'cleanWhenSuccess'),
-            ('unstable', 'cleanWhenUnstable'),
-            ('failure', 'cleanWhenFailure'),
-            ('not-built', 'cleanWhenNotBuilt'),
-            ('aborted', 'cleanWhenAborted')]
-    clean = data.get('clean-if', [])
+    mask = [
+        ("success", "cleanWhenSuccess"),
+        ("unstable", "cleanWhenUnstable"),
+        ("failure", "cleanWhenFailure"),
+        ("not-built", "cleanWhenNotBuilt"),
+        ("aborted", "cleanWhenAborted"),
+    ]
+    clean = data.get("clean-if", [])
     cdict = dict()
     for d in clean:
         cdict.update(d)
@@ -3596,12 +3656,12 @@ def workspace_cleanup(registry, xml_parent, data):
         XML.SubElement(p, v).text = str(cdict.pop(k, True)).lower()
 
     if len(cdict) > 0:
-        raise ValueError('clean-if must be one of: %r' % list(mask.keys()))
+        raise ValueError("clean-if must be one of: %r" % list(mask.keys()))
 
-    if str(data.get("fail-build", False)).lower() == 'false':
-        XML.SubElement(p, 'notFailBuild').text = 'true'
+    if str(data.get("fail-build", False)).lower() == "false":
+        XML.SubElement(p, "notFailBuild").text = "true"
     else:
-        XML.SubElement(p, 'notFailBuild').text = 'false'
+        XML.SubElement(p, "notFailBuild").text = "false"
 
 
 def maven_deploy(registry, xml_parent, data):
@@ -3624,17 +3684,19 @@ def maven_deploy(registry, xml_parent, data):
        :language: yaml
     """
 
-    p = XML.SubElement(xml_parent, 'hudson.maven.RedeployPublisher')
-    if 'id' in data:
-        XML.SubElement(p, 'id').text = data['id']
-    if 'url' in data:
-        XML.SubElement(p, 'url').text = data['url']
-    XML.SubElement(p, 'uniqueVersion').text = str(
-        data.get('unique-version', True)).lower()
-    XML.SubElement(p, 'evenIfUnstable').text = str(
-        data.get('deploy-unstable', False)).lower()
-    if 'release-env-var' in data:
-        XML.SubElement(p, 'releaseEnvVar').text = data['release-env-var']
+    p = XML.SubElement(xml_parent, "hudson.maven.RedeployPublisher")
+    if "id" in data:
+        XML.SubElement(p, "id").text = data["id"]
+    if "url" in data:
+        XML.SubElement(p, "url").text = data["url"]
+    XML.SubElement(p, "uniqueVersion").text = str(
+        data.get("unique-version", True)
+    ).lower()
+    XML.SubElement(p, "evenIfUnstable").text = str(
+        data.get("deploy-unstable", False)
+    ).lower()
+    if "release-env-var" in data:
+        XML.SubElement(p, "releaseEnvVar").text = data["release-env-var"]
 
 
 def artifactory(registry, xml_parent, data):
@@ -3748,26 +3810,28 @@ def artifactory(registry, xml_parent, data):
     """
 
     artifactory = XML.SubElement(
-        xml_parent, 'org.jfrog.hudson.ArtifactoryRedeployPublisher')
+        xml_parent, "org.jfrog.hudson.ArtifactoryRedeployPublisher"
+    )
 
     # optional_props
-    helpers.artifactory_optional_props(artifactory, data, 'publishers')
+    helpers.artifactory_optional_props(artifactory, data, "publishers")
 
-    XML.SubElement(artifactory, 'matrixParams').text = ','.join(
-        data.get('matrix-params', []))
+    XML.SubElement(artifactory, "matrixParams").text = ",".join(
+        data.get("matrix-params", [])
+    )
 
     # details
-    details = XML.SubElement(artifactory, 'details')
+    details = XML.SubElement(artifactory, "details")
     helpers.artifactory_common_details(details, data)
 
     mapping = [
-        ('release-repo-key', 'repositoryKey', ''),
-        ('snapshot-repo-key', 'snapshotsRepositoryKey', ''),
+        ("release-repo-key", "repositoryKey", ""),
+        ("snapshot-repo-key", "snapshotsRepositoryKey", ""),
     ]
     helpers.convert_mapping_to_xml(details, data, mapping, fail_required=True)
 
-    plugin = XML.SubElement(details, 'stagingPlugin')
-    XML.SubElement(plugin, 'pluginName').text = 'None'
+    plugin = XML.SubElement(details, "stagingPlugin")
+    XML.SubElement(plugin, "pluginName").text = "None"
 
     # artifactDeploymentPatterns
     helpers.artifactory_deployment_patterns(artifactory, data)
@@ -3862,35 +3926,35 @@ def test_fairy(registry, xml_parent, data):
        /../../tests/publishers/fixtures/test-fairy-ios001.yaml
        :language: yaml
     """
-    platform = data.get('platform')
-    valid_platforms = ['android', 'ios']
+    platform = data.get("platform")
+    valid_platforms = ["android", "ios"]
 
-    if 'platform' not in data:
-        raise MissingAttributeError('platform')
-    if platform == 'android':
+    if "platform" not in data:
+        raise MissingAttributeError("platform")
+    if platform == "android":
         root = XML.SubElement(
-            xml_parent,
-            'org.jenkinsci.plugins.testfairy.TestFairyAndroidRecorder')
+            xml_parent, "org.jenkinsci.plugins.testfairy.TestFairyAndroidRecorder"
+        )
         helpers.test_fairy_common(root, data)
 
         mappings = [
-            ('proguard-file', 'mappingFile', ''),
-            ('keystorepath', 'keystorePath', None),
-            ('storepass', 'storepass', 'android'),
-            ('alias', 'alias', 'androiddebugkey'),
-            ('keypass', 'keypass', '')]
-        helpers.convert_mapping_to_xml(
-            root, data, mappings, fail_required=True)
-    elif platform == 'ios':
+            ("proguard-file", "mappingFile", ""),
+            ("keystorepath", "keystorePath", None),
+            ("storepass", "storepass", "android"),
+            ("alias", "alias", "androiddebugkey"),
+            ("keypass", "keypass", ""),
+        ]
+        helpers.convert_mapping_to_xml(root, data, mappings, fail_required=True)
+    elif platform == "ios":
         root = XML.SubElement(
-            xml_parent, 'org.jenkinsci.plugins.testfairy.TestFairyIosRecorder')
+            xml_parent, "org.jenkinsci.plugins.testfairy.TestFairyIosRecorder"
+        )
         helpers.test_fairy_common(root, data)
 
-        mappings = [('dSYM-file', 'mappingFile', '')]
-        helpers.convert_mapping_to_xml(
-            root, data, mappings, fail_required=True)
+        mappings = [("dSYM-file", "mappingFile", "")]
+        helpers.convert_mapping_to_xml(root, data, mappings, fail_required=True)
     else:
-        raise InvalidAttributeError('platform', platform, valid_platforms)
+        raise InvalidAttributeError("platform", platform, valid_platforms)
 
 
 def text_finder(registry, xml_parent, data):
@@ -3917,16 +3981,15 @@ def text_finder(registry, xml_parent, data):
        :language: yaml
     """
 
-    finder = XML.SubElement(xml_parent,
-                            'hudson.plugins.textfinder.TextFinderPublisher')
-    finder.set('plugin', 'text-finder')
-    if ('fileset' in data):
-        XML.SubElement(finder, 'fileSet').text = data['fileset']
+    finder = XML.SubElement(xml_parent, "hudson.plugins.textfinder.TextFinderPublisher")
+    finder.set("plugin", "text-finder")
+    if "fileset" in data:
+        XML.SubElement(finder, "fileSet").text = data["fileset"]
     mappings = [
-        ('regexp', 'regexp', None),
-        ('also-check-console-output', 'alsoCheckConsoleOutput', False),
-        ('succeed-if-found', 'succeedIfFound', False),
-        ('unstable-if-found', 'unstableIfFound', False)
+        ("regexp", "regexp", None),
+        ("also-check-console-output", "alsoCheckConsoleOutput", False),
+        ("succeed-if-found", "succeedIfFound", False),
+        ("unstable-if-found", "unstableIfFound", False),
     ]
     helpers.convert_mapping_to_xml(finder, data, mappings, fail_required=True)
 
@@ -3954,20 +4017,20 @@ def html_publisher(registry, xml_parent, data):
        :language: yaml
     """
 
-    reporter = XML.SubElement(xml_parent, 'htmlpublisher.HtmlPublisher')
-    targets = XML.SubElement(reporter, 'reportTargets')
-    ptarget = XML.SubElement(targets, 'htmlpublisher.HtmlPublisherTarget')
+    reporter = XML.SubElement(xml_parent, "htmlpublisher.HtmlPublisher")
+    targets = XML.SubElement(reporter, "reportTargets")
+    ptarget = XML.SubElement(targets, "htmlpublisher.HtmlPublisherTarget")
 
     mapping = [
-        ('name', 'reportName', None),
-        ('dir', 'reportDir', None),
-        ('files', 'reportFiles', None),
-        ('link-to-last-build', 'alwaysLinkToLastBuild', False),
-        ('keep-all', 'keepAll', False),
-        ('allow-missing', 'allowMissing', False),
+        ("name", "reportName", None),
+        ("dir", "reportDir", None),
+        ("files", "reportFiles", None),
+        ("link-to-last-build", "alwaysLinkToLastBuild", False),
+        ("keep-all", "keepAll", False),
+        ("allow-missing", "allowMissing", False),
     ]
     helpers.convert_mapping_to_xml(ptarget, data, mapping, fail_required=True)
-    XML.SubElement(ptarget, 'wrapperName').text = "htmlpublisher-wrapper.html"
+    XML.SubElement(ptarget, "wrapperName").text = "htmlpublisher-wrapper.html"
 
 
 def rich_text_publisher(registry, xml_parent, data):
@@ -4001,22 +4064,21 @@ def rich_text_publisher(registry, xml_parent, data):
        :language: yaml
     """
 
-    parsers = ['HTML', 'Confluence', 'WikiText']
+    parsers = ["HTML", "Confluence", "WikiText"]
     reporter = XML.SubElement(
-        xml_parent,
-        'org.korosoft.jenkins.plugin.rtp.RichTextPublisher')
-    reporter.set('plugin', 'rich-text-publisher-plugin')
+        xml_parent, "org.korosoft.jenkins.plugin.rtp.RichTextPublisher"
+    )
+    reporter.set("plugin", "rich-text-publisher-plugin")
 
     mappings = [
-        ('stable-text', 'stableText', None),
-        ('unstable-text', 'unstableText', ''),
-        ('failed-text', 'failedText', ''),
-        ('unstable-as-stable', 'unstableAsStable', True),
-        ('failed-as-stable', 'failedAsStable', True),
-        ('parser-name', 'parserName', 'WikiText', parsers)
+        ("stable-text", "stableText", None),
+        ("unstable-text", "unstableText", ""),
+        ("failed-text", "failedText", ""),
+        ("unstable-as-stable", "unstableAsStable", True),
+        ("failed-as-stable", "failedAsStable", True),
+        ("parser-name", "parserName", "WikiText", parsers),
     ]
-    helpers.convert_mapping_to_xml(
-        reporter, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(reporter, data, mappings, fail_required=True)
 
 
 def tap(registry, xml_parent, data):
@@ -4053,24 +4115,22 @@ def tap(registry, xml_parent, data):
        :language: yaml
     """
 
-    tap = XML.SubElement(xml_parent, 'org.tap4j.plugin.TapPublisher')
-    tap.set('plugin', 'tap')
+    tap = XML.SubElement(xml_parent, "org.tap4j.plugin.TapPublisher")
+    tap.set("plugin", "tap")
 
     mappings = [
-        ('results', 'testResults', None),
-        ('fail-if-no-results', 'failIfNoResults', False),
-        ('failed-tests-mark-build-as-failure',
-         'failedTestsMarkBuildAsFailure',
-         False),
-        ('output-tap-to-console', 'outputTapToConsole', True),
-        ('enable-subtests', 'enableSubtests', True),
-        ('discard-old-reports', 'discardOldReports', False),
-        ('todo-is-failure', 'todoIsFailure', True),
-        ('include-comment-diagnostics', 'includeCommentDiagnostics', False),
-        ('validate-tests', 'validateNumberOfTests', False),
-        ('plan-required', 'planRequired', True),
-        ('verbose', 'verbose', True),
-        ('show-only-failures', 'showOnlyFailures', False),
+        ("results", "testResults", None),
+        ("fail-if-no-results", "failIfNoResults", False),
+        ("failed-tests-mark-build-as-failure", "failedTestsMarkBuildAsFailure", False),
+        ("output-tap-to-console", "outputTapToConsole", True),
+        ("enable-subtests", "enableSubtests", True),
+        ("discard-old-reports", "discardOldReports", False),
+        ("todo-is-failure", "todoIsFailure", True),
+        ("include-comment-diagnostics", "includeCommentDiagnostics", False),
+        ("validate-tests", "validateNumberOfTests", False),
+        ("plan-required", "planRequired", True),
+        ("verbose", "verbose", True),
+        ("show-only-failures", "showOnlyFailures", False),
     ]
     helpers.convert_mapping_to_xml(tap, data, mappings, fail_required=True)
 
@@ -4104,28 +4164,29 @@ def post_tasks(registry, xml_parent, data):
        :language: yaml
     """
 
-    pb_xml = XML.SubElement(xml_parent,
-                            'hudson.plugins.postbuildtask.PostbuildTask')
-    tasks_xml = XML.SubElement(pb_xml, 'tasks')
+    pb_xml = XML.SubElement(xml_parent, "hudson.plugins.postbuildtask.PostbuildTask")
+    tasks_xml = XML.SubElement(pb_xml, "tasks")
     for task in data:
         task_xml = XML.SubElement(
-            tasks_xml,
-            'hudson.plugins.postbuildtask.TaskProperties')
-        matches_xml = XML.SubElement(task_xml, 'logTexts')
-        for match in task.get('matches', []):
+            tasks_xml, "hudson.plugins.postbuildtask.TaskProperties"
+        )
+        matches_xml = XML.SubElement(task_xml, "logTexts")
+        for match in task.get("matches", []):
             lt_xml = XML.SubElement(
-                matches_xml,
-                'hudson.plugins.postbuildtask.LogProperties')
-            XML.SubElement(lt_xml, 'logText').text = str(
-                match.get('log-text', False) or '')
-            XML.SubElement(lt_xml, 'operator').text = str(
-                match.get('operator', 'AND')).upper()
+                matches_xml, "hudson.plugins.postbuildtask.LogProperties"
+            )
+            XML.SubElement(lt_xml, "logText").text = str(
+                match.get("log-text", False) or ""
+            )
+            XML.SubElement(lt_xml, "operator").text = str(
+                match.get("operator", "AND")
+            ).upper()
         mapping = [
-            ('escalate-status', 'EscalateStatus', False),
-            ('run-if-job-successful', 'RunIfJobSuccessful', False),
-            ('script', 'script', '')]
-        helpers.convert_mapping_to_xml(task_xml,
-            task, mapping, fail_required=True)
+            ("escalate-status", "EscalateStatus", False),
+            ("run-if-job-successful", "RunIfJobSuccessful", False),
+            ("script", "script", ""),
+        ]
+        helpers.convert_mapping_to_xml(task_xml, task, mapping, fail_required=True)
 
 
 def postbuildscript(registry, xml_parent, data):
@@ -4230,19 +4291,16 @@ def postbuildscript(registry, xml_parent, data):
     """
 
     pbs_xml = XML.SubElement(
-        xml_parent,
-        'org.jenkinsci.plugins.postbuildscript.PostBuildScript')
+        xml_parent, "org.jenkinsci.plugins.postbuildscript.PostBuildScript"
+    )
 
-    info = registry.get_plugin_info('postbuildscript')
+    info = registry.get_plugin_info("postbuildscript")
     # Note: Assume latest version of plugin is preferred config format
-    version = pkg_resources.parse_version(
-        info.get('version', str(sys.maxsize)))
-    if version >= pkg_resources.parse_version('2.0'):
-        pbs_xml = XML.SubElement(pbs_xml, 'config')
+    version = pkg_resources.parse_version(info.get("version", str(sys.maxsize)))
+    if version >= pkg_resources.parse_version("2.0"):
+        pbs_xml = XML.SubElement(pbs_xml, "config")
 
-    mapping = [
-        ('mark-unstable-if-failed', 'markBuildUnstable', False),
-    ]
+    mapping = [("mark-unstable-if-failed", "markBuildUnstable", False)]
     helpers.convert_mapping_to_xml(pbs_xml, data, mapping, fail_required=True)
 
     if version >= pkg_resources.parse_version("2.0"):
@@ -4251,153 +4309,148 @@ def postbuildscript(registry, xml_parent, data):
         # Script Files #
         ################
 
-        script_mapping = [
-            ('role', 'role', 'BOTH'),
-            ('file-path', 'filePath', False),
-        ]
-        sf_path = 'org.jenkinsci.plugins.postbuildscript.model.ScriptFile'
-        sf_xml = XML.SubElement(pbs_xml, 'scriptFiles')
+        script_mapping = [("role", "role", "BOTH"), ("file-path", "filePath", False)]
+        sf_path = "org.jenkinsci.plugins.postbuildscript.model.ScriptFile"
+        sf_xml = XML.SubElement(pbs_xml, "scriptFiles")
 
-        for gs_data in data.get('generic-script', []):
+        for gs_data in data.get("generic-script", []):
             x = XML.SubElement(sf_xml, sf_path)
-            results_xml = XML.SubElement(x, 'results')
+            results_xml = XML.SubElement(x, "results")
 
-            for result in gs_data.get('build-on', ['SUCCESS']):
-                XML.SubElement(results_xml, 'string').text = result
+            for result in gs_data.get("build-on", ["SUCCESS"]):
+                XML.SubElement(results_xml, "string").text = result
 
             helpers.convert_mapping_to_xml(
-                x, gs_data, script_mapping, fail_required=True)
-            XML.SubElement(x, 'scriptType').text = 'GENERIC'
+                x, gs_data, script_mapping, fail_required=True
+            )
+            XML.SubElement(x, "scriptType").text = "GENERIC"
 
-        for gs_data in data.get('groovy-script', []):
+        for gs_data in data.get("groovy-script", []):
             x = XML.SubElement(sf_xml, sf_path)
-            results_xml = XML.SubElement(x, 'results')
+            results_xml = XML.SubElement(x, "results")
 
-            for result in gs_data.get('build-on', ['SUCCESS']):
-                XML.SubElement(results_xml, 'string').text = result
+            for result in gs_data.get("build-on", ["SUCCESS"]):
+                XML.SubElement(results_xml, "string").text = result
 
             helpers.convert_mapping_to_xml(
-                x, gs_data, script_mapping, fail_required=True)
-            XML.SubElement(x, 'scriptType').text = 'GROOVY'
+                x, gs_data, script_mapping, fail_required=True
+            )
+            XML.SubElement(x, "scriptType").text = "GROOVY"
 
         #################
         # Inline Groovy #
         #################
 
-        groovy_mapping = [
-            ('role', 'role', 'BOTH'),
-            ('content', 'content', False),
-        ]
-        gs_path = 'org.jenkinsci.plugins.postbuildscript.model.Script'
-        gs_xml = XML.SubElement(pbs_xml, 'groovyScripts')
-        for gs_data in data.get('groovy', []):
+        groovy_mapping = [("role", "role", "BOTH"), ("content", "content", False)]
+        gs_path = "org.jenkinsci.plugins.postbuildscript.model.Script"
+        gs_xml = XML.SubElement(pbs_xml, "groovyScripts")
+        for gs_data in data.get("groovy", []):
             x = XML.SubElement(gs_xml, gs_path)
-            results_xml = XML.SubElement(x, 'results')
+            results_xml = XML.SubElement(x, "results")
 
-            for result in gs_data.get('build-on', ['SUCCESS']):
-                XML.SubElement(results_xml, 'string').text = result
+            for result in gs_data.get("build-on", ["SUCCESS"]):
+                XML.SubElement(results_xml, "string").text = result
 
             helpers.convert_mapping_to_xml(
-                x, gs_data, groovy_mapping, fail_required=True)
+                x, gs_data, groovy_mapping, fail_required=True
+            )
 
         ############
         # Builders #
         ############
 
-        builder_mapping = [
-            ('role', 'role', 'BOTH'),
-        ]
-        bs_path = 'org.jenkinsci.plugins.postbuildscript.model.PostBuildStep'
-        bs_xml = XML.SubElement(pbs_xml, 'buildSteps')
-        for bs_data in data.get('builders', []):
+        builder_mapping = [("role", "role", "BOTH")]
+        bs_path = "org.jenkinsci.plugins.postbuildscript.model.PostBuildStep"
+        bs_xml = XML.SubElement(pbs_xml, "buildSteps")
+        for bs_data in data.get("builders", []):
             x = XML.SubElement(bs_xml, bs_path)
-            results_xml = XML.SubElement(x, 'results')
+            results_xml = XML.SubElement(x, "results")
 
-            for result in bs_data.get('build-on', ['SUCCESS']):
-                XML.SubElement(results_xml, 'string').text = result
+            for result in bs_data.get("build-on", ["SUCCESS"]):
+                XML.SubElement(results_xml, "string").text = result
 
             helpers.convert_mapping_to_xml(
-                x, bs_data, builder_mapping, fail_required=True)
+                x, bs_data, builder_mapping, fail_required=True
+            )
 
-            build_steps_xml = XML.SubElement(x, 'buildSteps')
-            for builder in bs_data.get('build-steps'):
-                registry.dispatch('builder', build_steps_xml, builder)
+            build_steps_xml = XML.SubElement(x, "buildSteps")
+            for builder in bs_data.get("build-steps"):
+                registry.dispatch("builder", build_steps_xml, builder)
 
     else:  # Options below are all deprecated in version < 2.0 of plugin
 
         # Shell/Groovy in a file
         script_types = {
-            'generic-script': 'GenericScript',
-            'groovy-script': 'GroovyScriptFile',
+            "generic-script": "GenericScript",
+            "groovy-script": "GroovyScriptFile",
         }
 
         # Assuming yaml preserves order of input data make sure
         # corresponding XML steps are generated in the same order
-        build_scripts = [(k, v) for k, v in data.items()
-                         if k in script_types or k in ['groovy', 'builders']]
+        build_scripts = [
+            (k, v)
+            for k, v in data.items()
+            if k in script_types or k in ["groovy", "builders"]
+        ]
 
         for step, script_data in build_scripts:
             if step in script_types:
                 scripts_xml = XML.SubElement(
-                    pbs_xml, step[:-len('-script')] + 'ScriptFileList')
+                    pbs_xml, step[: -len("-script")] + "ScriptFileList"
+                )
                 for shell_script in script_data:
                     script_xml = XML.SubElement(
                         scripts_xml,
-                        'org.jenkinsci.plugins.postbuildscript.' +
-                        script_types[step])
-                    file_path_xml = XML.SubElement(script_xml, 'filePath')
+                        "org.jenkinsci.plugins.postbuildscript." + script_types[step],
+                    )
+                    file_path_xml = XML.SubElement(script_xml, "filePath")
                     file_path_xml.text = shell_script
 
             # Inlined Groovy
-            if step == 'groovy':
-                groovy_inline_xml = XML.SubElement(
-                    pbs_xml, 'groovyScriptContentList')
+            if step == "groovy":
+                groovy_inline_xml = XML.SubElement(pbs_xml, "groovyScriptContentList")
                 for groovy in script_data:
                     groovy_xml = XML.SubElement(
                         groovy_inline_xml,
-                        'org.jenkinsci.plugins.postbuildscript.'
-                        'GroovyScriptContent'
+                        "org.jenkinsci.plugins.postbuildscript." "GroovyScriptContent",
                     )
-                    groovy_content = XML.SubElement(groovy_xml, 'content')
+                    groovy_content = XML.SubElement(groovy_xml, "content")
                     groovy_content.text = groovy
 
             # Inject builders
-            if step == 'builders':
-                build_steps_xml = XML.SubElement(pbs_xml, 'buildSteps')
+            if step == "builders":
+                build_steps_xml = XML.SubElement(pbs_xml, "buildSteps")
                 for builder in script_data:
-                    registry.dispatch('builder', build_steps_xml, builder)
+                    registry.dispatch("builder", build_steps_xml, builder)
 
         # When to run the build? Note the plugin let one specify both options
         # although they are antinomic
         # onsuccess and onfailure parameters are deprecated, this is to keep
         # backwards compatability
-        success_xml = XML.SubElement(pbs_xml, 'scriptOnlyIfSuccess')
-        if 'script-only-if-succeeded' in data:
-            success_xml.text = str(
-                data.get('script-only-if-succeeded', True)).lower()
+        success_xml = XML.SubElement(pbs_xml, "scriptOnlyIfSuccess")
+        if "script-only-if-succeeded" in data:
+            success_xml.text = str(data.get("script-only-if-succeeded", True)).lower()
         else:
-            success_xml.text = str(data.get('onsuccess', True)).lower()
+            success_xml.text = str(data.get("onsuccess", True)).lower()
 
-        failure_xml = XML.SubElement(pbs_xml, 'scriptOnlyIfFailure')
-        if 'script-only-if-failed' in data:
-            failure_xml.text = str(
-                data.get('script-only-if-failed', False)).lower()
+        failure_xml = XML.SubElement(pbs_xml, "scriptOnlyIfFailure")
+        if "script-only-if-failed" in data:
+            failure_xml.text = str(data.get("script-only-if-failed", False)).lower()
         else:
-            failure_xml.text = str(data.get('onfailure', False)).lower()
+            failure_xml.text = str(data.get("onfailure", False)).lower()
 
         # TODO: we may want to avoid setting "execute-on" on non-matrix jobs,
         # either by skipping this part or by raising an error to let the user
         # know an attempt was made to set execute-on on a non-matrix job.
         # There are currently no easy ways to check for this though.
-        if 'execute-on' in data:
-            valid_values = ('matrix', 'axes', 'both')
-            execute_on = data['execute-on'].lower()
+        if "execute-on" in data:
+            valid_values = ("matrix", "axes", "both")
+            execute_on = data["execute-on"].lower()
             if execute_on not in valid_values:
                 raise JenkinsJobsException(
-                    'execute-on must be one of %s, got %s' %
-                    valid_values, execute_on
+                    "execute-on must be one of %s, got %s" % valid_values, execute_on
                 )
-            execute_on_xml = XML.SubElement(pbs_xml, 'executeOn')
+            execute_on_xml = XML.SubElement(pbs_xml, "executeOn")
             execute_on_xml.text = execute_on.upper()
 
 
@@ -4425,12 +4478,13 @@ def xml_summary(registry, xml_parent, data):
     """
 
     summary = XML.SubElement(
-        xml_parent, 'hudson.plugins.summary__report.ACIPluginPublisher')
-    summary.set('plugin', 'summary_report')
+        xml_parent, "hudson.plugins.summary__report.ACIPluginPublisher"
+    )
+    summary.set("plugin", "summary_report")
 
     mapping = [
-        ('files', 'name', None),
-        ('shown-on-project-page', 'shownOnProjectPage', False),
+        ("files", "name", None),
+        ("shown-on-project-page", "shownOnProjectPage", False),
     ]
     helpers.convert_mapping_to_xml(summary, data, mapping, fail_required=True)
 
@@ -4473,26 +4527,27 @@ def robot(registry, xml_parent, data):
     .. literalinclude:: /../../tests/publishers/fixtures/robot-full.yaml
        :language: yaml
     """
-    parent = XML.SubElement(xml_parent, 'hudson.plugins.robot.RobotPublisher')
-    parent.set('plugin', 'robot')
+    parent = XML.SubElement(xml_parent, "hudson.plugins.robot.RobotPublisher")
+    parent.set("plugin", "robot")
     mappings = [
-        ('output-path', 'outputPath', None),
-        ('log-file-link', 'logFileLink', ''),
-        ('report-html', 'reportFileName', 'report.html'),
-        ('log-html', 'logFileName', 'log.html'),
-        ('output-xml', 'outputFileName', 'output.xml'),
-        ('pass-threshold', 'passThreshold', '0.0'),
-        ('unstable-threshold', 'unstableThreshold', '0.0'),
-        ('only-critical', 'onlyCritical', True),
-        ('enable-cache', 'enableCache', True)
+        ("output-path", "outputPath", None),
+        ("log-file-link", "logFileLink", ""),
+        ("report-html", "reportFileName", "report.html"),
+        ("log-html", "logFileName", "log.html"),
+        ("output-xml", "outputFileName", "output.xml"),
+        ("pass-threshold", "passThreshold", "0.0"),
+        ("unstable-threshold", "unstableThreshold", "0.0"),
+        ("only-critical", "onlyCritical", True),
+        ("enable-cache", "enableCache", True),
     ]
     helpers.convert_mapping_to_xml(parent, data, mappings, fail_required=True)
 
-    other_files = XML.SubElement(parent, 'otherFiles')
-    for other_file in data.get('other-files', []):
-        XML.SubElement(other_files, 'string').text = str(other_file)
-    XML.SubElement(parent, 'disableArchiveOutput').text = str(
-        not data.get('archive-output-xml', True)).lower()
+    other_files = XML.SubElement(parent, "otherFiles")
+    for other_file in data.get("other-files", []):
+        XML.SubElement(other_files, "string").text = str(other_file)
+    XML.SubElement(parent, "disableArchiveOutput").text = str(
+        not data.get("archive-output-xml", True)
+    ).lower()
 
 
 def warnings(registry, xml_parent, data):
@@ -4617,79 +4672,80 @@ def warnings(registry, xml_parent, data):
        :language: yaml
     """
 
-    warnings = XML.SubElement(xml_parent,
-                              'hudson.plugins.warnings.'
-                              'WarningsPublisher')
-    warnings.set('plugin', 'warnings')
-    console = XML.SubElement(warnings, 'consoleParsers')
-    for parser in data.get('console-log-parsers', []):
-        console_parser = XML.SubElement(console,
-                                        'hudson.plugins.warnings.'
-                                        'ConsoleParser')
-        XML.SubElement(console_parser, 'parserName').text = parser
-    workspace = XML.SubElement(warnings, 'parserConfigurations')
-    for wfs in data.get('workspace-file-scanners', []):
-        workspace_pattern = XML.SubElement(workspace,
-                                           'hudson.plugins.warnings.'
-                                           'ParserConfiguration')
+    warnings = XML.SubElement(
+        xml_parent, "hudson.plugins.warnings." "WarningsPublisher"
+    )
+    warnings.set("plugin", "warnings")
+    console = XML.SubElement(warnings, "consoleParsers")
+    for parser in data.get("console-log-parsers", []):
+        console_parser = XML.SubElement(
+            console, "hudson.plugins.warnings." "ConsoleParser"
+        )
+        XML.SubElement(console_parser, "parserName").text = parser
+    workspace = XML.SubElement(warnings, "parserConfigurations")
+    for wfs in data.get("workspace-file-scanners", []):
+        workspace_pattern = XML.SubElement(
+            workspace, "hudson.plugins.warnings." "ParserConfiguration"
+        )
         workspace_pattern_mappings = [
-            ('file-pattern', 'pattern', None),
-            ('scanner', 'parserName', '')
+            ("file-pattern", "pattern", None),
+            ("scanner", "parserName", ""),
         ]
-        helpers.convert_mapping_to_xml(workspace_pattern,
-                                       wfs,
-                                       workspace_pattern_mappings,
-                                       fail_required=True)
-    prioritiesDict = {'priority-high': 'high',
-                      'high-and-normal': 'normal',
-                      'all-priorities': 'low'}
+        helpers.convert_mapping_to_xml(
+            workspace_pattern, wfs, workspace_pattern_mappings, fail_required=True
+        )
+    prioritiesDict = {
+        "priority-high": "high",
+        "high-and-normal": "normal",
+        "all-priorities": "low",
+    }
     warnings_mappings = [
-        ('files-to-include', 'includePattern', ''),
-        ('files-to-ignore', 'excludePattern', ''),
-        ('messages-to-ignore', 'messagesPattern', ''),
-        ('categories-to-ignore', 'categoriesPattern', ''),
-        ('plugin-name', 'pluginName', '[WARNINGS]'),
-        ('run-always', 'canRunOnFailed', False),
-        ('detect-modules', 'shouldDetectModules', False),
-        ('health-threshold-high', 'healthy', ''),
-        ('health-threshold-low', 'unHealthy', ''),
-        ('health-priorities',
-         'thresholdLimit',
-         'all-priorities',
-         prioritiesDict),
-        ('default-encoding', 'defaultEncoding', '')
+        ("files-to-include", "includePattern", ""),
+        ("files-to-ignore", "excludePattern", ""),
+        ("messages-to-ignore", "messagesPattern", ""),
+        ("categories-to-ignore", "categoriesPattern", ""),
+        ("plugin-name", "pluginName", "[WARNINGS]"),
+        ("run-always", "canRunOnFailed", False),
+        ("detect-modules", "shouldDetectModules", False),
+        ("health-threshold-high", "healthy", ""),
+        ("health-threshold-low", "unHealthy", ""),
+        ("health-priorities", "thresholdLimit", "all-priorities", prioritiesDict),
+        ("default-encoding", "defaultEncoding", ""),
     ]
     helpers.convert_mapping_to_xml(
-        warnings, data, warnings_mappings, fail_required=True)
+        warnings, data, warnings_mappings, fail_required=True
+    )
     # Note the logic reversal (included here to match the GUI)
-    XML.SubElement(warnings, 'doNotResolveRelativePaths').text = str(
-        not data.get('resolve-relative-paths', False)).lower()
-    td = XML.SubElement(warnings, 'thresholds')
+    XML.SubElement(warnings, "doNotResolveRelativePaths").text = str(
+        not data.get("resolve-relative-paths", False)
+    ).lower()
+    td = XML.SubElement(warnings, "thresholds")
     for base in ["total", "new"]:
         thresholds = data.get("%s-thresholds" % base, {})
         for status in ["unstable", "failed"]:
             bystatus = thresholds.get(status, {})
             for level in ["all", "high", "normal", "low"]:
-                val = str(bystatus.get("%s-%s" % (base, level), ''))
-                XML.SubElement(td, "%s%s%s" % (status,
-                               base.capitalize(), level.capitalize())
-                               ).text = val
-    if data.get('new-thresholds'):
-        XML.SubElement(warnings, 'dontComputeNew').text = 'false'
-        delta = data.get('use-delta-for-new-warnings', False)
-        XML.SubElement(warnings, 'useDeltaValues').text = str(delta).lower()
-        use_previous_build = data.get('use-previous-build-as-reference', False)
-        XML.SubElement(warnings, 'usePreviousBuildAsReference').text = str(
-            use_previous_build).lower()
-        use_stable_builds = data.get('only-use-stable-builds-as-reference',
-                                     False)
-        XML.SubElement(warnings, 'useStableBuildAsReference').text = str(
-            use_stable_builds).lower()
+                val = str(bystatus.get("%s-%s" % (base, level), ""))
+                XML.SubElement(
+                    td, "%s%s%s" % (status, base.capitalize(), level.capitalize())
+                ).text = val
+    if data.get("new-thresholds"):
+        XML.SubElement(warnings, "dontComputeNew").text = "false"
+        delta = data.get("use-delta-for-new-warnings", False)
+        XML.SubElement(warnings, "useDeltaValues").text = str(delta).lower()
+        use_previous_build = data.get("use-previous-build-as-reference", False)
+        XML.SubElement(warnings, "usePreviousBuildAsReference").text = str(
+            use_previous_build
+        ).lower()
+        use_stable_builds = data.get("only-use-stable-builds-as-reference", False)
+        XML.SubElement(warnings, "useStableBuildAsReference").text = str(
+            use_stable_builds
+        ).lower()
     else:
-        XML.SubElement(warnings, 'dontComputeNew').text = 'true'
-        XML.SubElement(warnings, 'useDeltaValues').text = 'false'
-        XML.SubElement(warnings, 'usePreviousBuildAsReference').text = 'false'
-        XML.SubElement(warnings, 'useStableBuildAsReference').text = 'false'
+        XML.SubElement(warnings, "dontComputeNew").text = "true"
+        XML.SubElement(warnings, "useDeltaValues").text = "false"
+        XML.SubElement(warnings, "usePreviousBuildAsReference").text = "false"
+        XML.SubElement(warnings, "useStableBuildAsReference").text = "false"
 
 
 def sloccount(registry, xml_parent, data):
@@ -4723,15 +4779,14 @@ def sloccount(registry, xml_parent, data):
        /../../tests/publishers/fixtures/sloccount-full.yaml
        :language: yaml
     """
-    top = XML.SubElement(xml_parent,
-                         'hudson.plugins.sloccount.SloccountPublisher')
-    top.set('plugin', 'sloccount')
+    top = XML.SubElement(xml_parent, "hudson.plugins.sloccount.SloccountPublisher")
+    top.set("plugin", "sloccount")
     mappings = [
-        ('report-files', 'pattern', '**/sloccount.sc'),
-        ('charset', 'encoding', 'UTF-8'),
-        ('builds-in-graph', 'numBuildsInGraph', 0),
-        ('comment-is-code', 'commentIsCode', False),
-        ('ignore-build-failure', 'ignoreBuildFailure', False)
+        ("report-files", "pattern", "**/sloccount.sc"),
+        ("charset", "encoding", "UTF-8"),
+        ("builds-in-graph", "numBuildsInGraph", 0),
+        ("comment-is-code", "commentIsCode", False),
+        ("ignore-build-failure", "ignoreBuildFailure", False),
     ]
     helpers.convert_mapping_to_xml(top, data, mappings, fail_required=True)
 
@@ -4800,50 +4855,52 @@ def ircbot(registry, xml_parent, data):
     .. literalinclude:: /../../tests/publishers/fixtures/ircbot-full.yaml
        :language: yaml
     """
-    top = XML.SubElement(xml_parent, 'hudson.plugins.ircbot.IrcPublisher')
-    top.set('plugin', 'ircbot')
-    message_dict = {'summary-scm': 'DefaultBuildToChatNotifier',
-                    'summary': 'SummaryOnlyBuildToChatNotifier',
-                    'summary-params': 'BuildParametersBuildToChatNotifier',
-                    'summary-scm-fail': 'PrintFailingTestsBuildToChatNotifier'}
-    message = data.get('message-type', 'summary-scm')
+    top = XML.SubElement(xml_parent, "hudson.plugins.ircbot.IrcPublisher")
+    top.set("plugin", "ircbot")
+    message_dict = {
+        "summary-scm": "DefaultBuildToChatNotifier",
+        "summary": "SummaryOnlyBuildToChatNotifier",
+        "summary-params": "BuildParametersBuildToChatNotifier",
+        "summary-scm-fail": "PrintFailingTestsBuildToChatNotifier",
+    }
+    message = data.get("message-type", "summary-scm")
     if message not in message_dict:
-        raise JenkinsJobsException("message-type entered is not valid, must "
-                                   "be one of: %s" %
-                                   ", ".join(message_dict.keys()))
+        raise JenkinsJobsException(
+            "message-type entered is not valid, must "
+            "be one of: %s" % ", ".join(message_dict.keys())
+        )
     message = "hudson.plugins.im.build_notify." + message_dict.get(message)
-    XML.SubElement(top, 'buildToChatNotifier', attrib={'class': message})
-    targets = XML.SubElement(top, 'targets')
-    channels = data.get('channels', [])
+    XML.SubElement(top, "buildToChatNotifier", attrib={"class": message})
+    targets = XML.SubElement(top, "targets")
+    channels = data.get("channels", [])
     for channel in channels:
-        sub = XML.SubElement(targets,
-                             'hudson.plugins.im.GroupChatIMMessageTarget')
+        sub = XML.SubElement(targets, "hudson.plugins.im.GroupChatIMMessageTarget")
         sub_mappings = [
-            ('name', 'name', ''),
-            ('password', 'password', ''),
-            ('notify-only', 'notificationOnly', False)
+            ("name", "name", ""),
+            ("password", "password", ""),
+            ("notify-only", "notificationOnly", False),
         ]
-        helpers.convert_mapping_to_xml(
-            sub, channel, sub_mappings, fail_required=True)
-    strategy_dict = {'all': 'ALL',
-                     'any-failure': 'ANY_FAILURE',
-                     'failure-and-fixed': 'FAILURE_AND_FIXED',
-                     'new-failure-and-fixed': 'NEW_FAILURE_AND_FIXED',
-                     'statechange-only': 'STATECHANGE_ONLY'}
-    matrix_dict = {'all': 'ALL',
-                   'only-configurations': 'ONLY_CONFIGURATIONS',
-                   'only-parent': 'ONLY_PARENT'}
+        helpers.convert_mapping_to_xml(sub, channel, sub_mappings, fail_required=True)
+    strategy_dict = {
+        "all": "ALL",
+        "any-failure": "ANY_FAILURE",
+        "failure-and-fixed": "FAILURE_AND_FIXED",
+        "new-failure-and-fixed": "NEW_FAILURE_AND_FIXED",
+        "statechange-only": "STATECHANGE_ONLY",
+    }
+    matrix_dict = {
+        "all": "ALL",
+        "only-configurations": "ONLY_CONFIGURATIONS",
+        "only-parent": "ONLY_PARENT",
+    }
     mappings = [
-        ('strategy', 'strategy', 'all', strategy_dict),
-        ('notify-start', 'notifyOnBuildStart', False),
-        ('notify-committers', 'notifySuspects', False),
-        ('notify-culprits', 'notifyCulprits', False),
-        ('notify-fixers', 'notifyFixers', False),
-        ('notify-upstream', 'notifyUpstreamCommitters', False),
-        ('matrix-notifier',
-         'matrixMultiplier',
-         'only-configurations',
-         matrix_dict)
+        ("strategy", "strategy", "all", strategy_dict),
+        ("notify-start", "notifyOnBuildStart", False),
+        ("notify-committers", "notifySuspects", False),
+        ("notify-culprits", "notifyCulprits", False),
+        ("notify-fixers", "notifyFixers", False),
+        ("notify-upstream", "notifyUpstreamCommitters", False),
+        ("matrix-notifier", "matrixMultiplier", "only-configurations", matrix_dict),
     ]
     helpers.convert_mapping_to_xml(top, data, mappings, fail_required=True)
 
@@ -4921,80 +4978,99 @@ def plot(registry, xml_parent, data):
     .. literalinclude:: /../../tests/publishers/fixtures/plot-full.yaml
        :language: yaml
     """
-    top = XML.SubElement(xml_parent, 'hudson.plugins.plot.PlotPublisher')
-    plots = XML.SubElement(top, 'plots')
-    format_dict = {'properties': 'hudson.plugins.plot.PropertiesSeries',
-                   'csv': 'hudson.plugins.plot.CSVSeries',
-                   'xml': 'hudson.plugins.plot.XMLSeries'}
-    xpath_dict = {'nodeset': 'NODESET', 'node': 'NODE', 'string': 'STRING',
-                  'boolean': 'BOOLEAN', 'number': 'NUMBER'}
-    inclusion_dict = {'off': 'OFF',
-                      'include-by-string': 'INCLUDE_BY_STRING',
-                      'exclude-by-string': 'EXCLUDE_BY_STRING',
-                      'include-by-column': 'INCLUDE_BY_COLUMN',
-                      'exclude-by-column': 'EXCLUDE_BY_COLUMN'}
+    top = XML.SubElement(xml_parent, "hudson.plugins.plot.PlotPublisher")
+    plots = XML.SubElement(top, "plots")
+    format_dict = {
+        "properties": "hudson.plugins.plot.PropertiesSeries",
+        "csv": "hudson.plugins.plot.CSVSeries",
+        "xml": "hudson.plugins.plot.XMLSeries",
+    }
+    xpath_dict = {
+        "nodeset": "NODESET",
+        "node": "NODE",
+        "string": "STRING",
+        "boolean": "BOOLEAN",
+        "number": "NUMBER",
+    }
+    inclusion_dict = {
+        "off": "OFF",
+        "include-by-string": "INCLUDE_BY_STRING",
+        "exclude-by-string": "EXCLUDE_BY_STRING",
+        "include-by-column": "INCLUDE_BY_COLUMN",
+        "exclude-by-column": "EXCLUDE_BY_COLUMN",
+    }
 
-    style_list = ['area', 'bar', 'bar3d', 'line', 'line3d', 'stackedArea',
-                  'stackedbar', 'stackedbar3d', 'waterfall']
+    style_list = [
+        "area",
+        "bar",
+        "bar3d",
+        "line",
+        "line3d",
+        "stackedArea",
+        "stackedbar",
+        "stackedbar3d",
+        "waterfall",
+    ]
 
     plot_mappings = [
-        ('title', 'title', ''),
-        ('yaxis', 'yaxis', ''),
-        ('width', 'width', '750'),
-        ('height', 'height', '450'),
-        ('csv-file-name', 'csvFileName', ''),
-        ('group', 'group', None),
-        ('use-description', 'useDescr', False),
-        ('exclude-zero-yaxis', 'exclZero', False),
-        ('logarithmic-yaxis', 'logarithmic', False),
-        ('keep-records', 'keepRecords', False),
-        ('num-builds', 'numBuilds', ''),
-        ('style', 'style', 'line', style_list),
+        ("title", "title", ""),
+        ("yaxis", "yaxis", ""),
+        ("width", "width", "750"),
+        ("height", "height", "450"),
+        ("csv-file-name", "csvFileName", ""),
+        ("group", "group", None),
+        ("use-description", "useDescr", False),
+        ("exclude-zero-yaxis", "exclZero", False),
+        ("logarithmic-yaxis", "logarithmic", False),
+        ("keep-records", "keepRecords", False),
+        ("num-builds", "numBuilds", ""),
+        ("style", "style", "line", style_list),
     ]
 
     plot_csv_mappings = [
-        ('inclusion-flag', 'inclusionFlag', 'off', inclusion_dict),
-        ('exclude', 'exclusionValues', ''),
-        ('url', 'url', ''),
-        ('display-table', 'displayTableFlag', False)
+        ("inclusion-flag", "inclusionFlag", "off", inclusion_dict),
+        ("exclude", "exclusionValues", ""),
+        ("url", "url", ""),
+        ("display-table", "displayTableFlag", False),
     ]
 
     plot_xml_mappings = [
-        ('url', 'url', ''),
-        ('xpath', 'xpathString', ''),
-        ('xpath-type', 'nodeTypeString', 'node', xpath_dict)
+        ("url", "url", ""),
+        ("xpath", "xpathString", ""),
+        ("xpath-type", "nodeTypeString", "node", xpath_dict),
     ]
 
     for plot in data:
-        plugin = XML.SubElement(plots, 'hudson.plugins.plot.Plot')
-        helpers.convert_mapping_to_xml(
-            plugin, plot, plot_mappings, fail_required=True)
+        plugin = XML.SubElement(plots, "hudson.plugins.plot.Plot")
+        helpers.convert_mapping_to_xml(plugin, plot, plot_mappings, fail_required=True)
 
-        topseries = XML.SubElement(plugin, 'series')
-        series = plot['series']
+        topseries = XML.SubElement(plugin, "series")
+        series = plot["series"]
         for serie in series:
-            format_data = serie.get('format')
+            format_data = serie.get("format")
             if format_data not in format_dict:
-                raise JenkinsJobsException("format entered is not valid, must "
-                                           "be one of: %s" %
-                                           " , ".join(format_dict.keys()))
+                raise JenkinsJobsException(
+                    "format entered is not valid, must "
+                    "be one of: %s" % " , ".join(format_dict.keys())
+                )
             subserie = XML.SubElement(topseries, format_dict.get(format_data))
-            XML.SubElement(subserie, 'file').text = serie.get('file')
-            if format_data == 'properties':
-                XML.SubElement(subserie, 'label').text = serie.get('label', '')
-            if format_data == 'csv':
+            XML.SubElement(subserie, "file").text = serie.get("file")
+            if format_data == "properties":
+                XML.SubElement(subserie, "label").text = serie.get("label", "")
+            if format_data == "csv":
                 helpers.convert_mapping_to_xml(
-                    subserie, serie, plot_csv_mappings, fail_required=True)
-                if serie.get('exclude', ''):
-                    exclude_strings = serie.get('exclude', '').split(',')
-                    exclusionset = XML.SubElement(subserie, 'strExclusionSet')
+                    subserie, serie, plot_csv_mappings, fail_required=True
+                )
+                if serie.get("exclude", ""):
+                    exclude_strings = serie.get("exclude", "").split(",")
+                    exclusionset = XML.SubElement(subserie, "strExclusionSet")
                     for exclude_string in exclude_strings:
-                        XML.SubElement(exclusionset, 'string').text = \
-                            exclude_string
-            if format_data == 'xml':
+                        XML.SubElement(exclusionset, "string").text = exclude_string
+            if format_data == "xml":
                 helpers.convert_mapping_to_xml(
-                    subserie, serie, plot_xml_mappings, fail_required=True)
-            XML.SubElement(subserie, 'fileType').text = serie.get('format')
+                    subserie, serie, plot_xml_mappings, fail_required=True
+                )
+            XML.SubElement(subserie, "fileType").text = serie.get("format")
 
 
 def git(registry, xml_parent, data):
@@ -5050,59 +5126,68 @@ def git(registry, xml_parent, data):
     .. literalinclude:: /../../tests/publishers/fixtures/git-full.yaml
        :language: yaml
     """
-    mappings = [('push-merge', 'pushMerge', False),
-                ('push-only-if-success', 'pushOnlyIfSuccess', True),
-                ('force-push', 'forcePush', False)]
+    mappings = [
+        ("push-merge", "pushMerge", False),
+        ("push-only-if-success", "pushOnlyIfSuccess", True),
+        ("force-push", "forcePush", False),
+    ]
 
-    tag_mappings = [('remote', 'targetRepoName', 'origin'),
-                    ('name', 'tagName', None),
-                    ('message', 'tagMessage', ''),
-                    ('create-tag', 'createTag', False),
-                    ('update-tag', 'updateTag', False)]
+    tag_mappings = [
+        ("remote", "targetRepoName", "origin"),
+        ("name", "tagName", None),
+        ("message", "tagMessage", ""),
+        ("create-tag", "createTag", False),
+        ("update-tag", "updateTag", False),
+    ]
 
-    branch_mappings = [('remote', 'targetRepoName', 'origin'),
-                       ('name', 'branchName', None)]
+    branch_mappings = [
+        ("remote", "targetRepoName", "origin"),
+        ("name", "branchName", None),
+    ]
 
-    note_mappings = [('remote', 'targetRepoName', 'origin'),
-                     ('message', 'noteMsg', None),
-                     ('namespace', 'noteNamespace', 'master'),
-                     ('replace-note', 'noteReplace', False)]
+    note_mappings = [
+        ("remote", "targetRepoName", "origin"),
+        ("message", "noteMsg", None),
+        ("namespace", "noteNamespace", "master"),
+        ("replace-note", "noteReplace", False),
+    ]
 
-    top = XML.SubElement(xml_parent, 'hudson.plugins.git.GitPublisher')
-    XML.SubElement(top, 'configVersion').text = '2'
+    top = XML.SubElement(xml_parent, "hudson.plugins.git.GitPublisher")
+    XML.SubElement(top, "configVersion").text = "2"
     helpers.convert_mapping_to_xml(top, data, mappings, fail_required=True)
 
-    tags = data.get('tags', [])
+    tags = data.get("tags", [])
     if tags:
-        xml_tags = XML.SubElement(top, 'tagsToPush')
+        xml_tags = XML.SubElement(top, "tagsToPush")
         for tag in tags:
             xml_tag = XML.SubElement(
-                xml_tags,
-                'hudson.plugins.git.GitPublisher_-TagToPush')
+                xml_tags, "hudson.plugins.git.GitPublisher_-TagToPush"
+            )
             helpers.convert_mapping_to_xml(
-                xml_tag, tag['tag'], tag_mappings, fail_required=True)
+                xml_tag, tag["tag"], tag_mappings, fail_required=True
+            )
 
-    branches = data.get('branches', [])
+    branches = data.get("branches", [])
     if branches:
-        xml_branches = XML.SubElement(top, 'branchesToPush')
+        xml_branches = XML.SubElement(top, "branchesToPush")
         for branch in branches:
             xml_branch = XML.SubElement(
-                xml_branches,
-                'hudson.plugins.git.GitPublisher_-BranchToPush')
-            helpers.convert_mapping_to_xml(xml_branch,
-                                           branch['branch'],
-                                           branch_mappings,
-                                           fail_required=True)
+                xml_branches, "hudson.plugins.git.GitPublisher_-BranchToPush"
+            )
+            helpers.convert_mapping_to_xml(
+                xml_branch, branch["branch"], branch_mappings, fail_required=True
+            )
 
-    notes = data.get('notes', [])
+    notes = data.get("notes", [])
     if notes:
-        xml_notes = XML.SubElement(top, 'notesToPush')
+        xml_notes = XML.SubElement(top, "notesToPush")
         for note in notes:
             xml_note = XML.SubElement(
-                xml_notes,
-                'hudson.plugins.git.GitPublisher_-NoteToPush')
+                xml_notes, "hudson.plugins.git.GitPublisher_-NoteToPush"
+            )
             helpers.convert_mapping_to_xml(
-                xml_note, note['note'], note_mappings, fail_required=True)
+                xml_note, note["note"], note_mappings, fail_required=True
+            )
 
 
 def github_notifier(registry, xml_parent, data):
@@ -5115,8 +5200,7 @@ def github_notifier(registry, xml_parent, data):
     .. literalinclude:: /../../tests/publishers/fixtures/github-notifier.yaml
        :language: yaml
     """
-    XML.SubElement(xml_parent,
-                   'com.cloudbees.jenkins.GitHubCommitNotifier')
+    XML.SubElement(xml_parent, "com.cloudbees.jenkins.GitHubCommitNotifier")
 
 
 def gitlab_notifier(registry, xml_parent, data):
@@ -5142,13 +5226,13 @@ def gitlab_notifier(registry, xml_parent, data):
        :language: yaml
     """
     top = XML.SubElement(
-        xml_parent,
-        'com.dabsquared.gitlabjenkins.publisher.GitLabCommitStatusPublisher')
-    top.set('plugin', 'gitlab-plugin')
+        xml_parent, "com.dabsquared.gitlabjenkins.publisher.GitLabCommitStatusPublisher"
+    )
+    top.set("plugin", "gitlab-plugin")
 
     mappings = [
-        ('name', 'name', 'jenkins'),
-        ('mark-unstable-as-success', 'markUnstableAsSuccess', False),
+        ("name", "name", "jenkins"),
+        ("mark-unstable-as-success", "markUnstableAsSuccess", False),
     ]
     helpers.convert_mapping_to_xml(top, data, mappings, fail_required=True)
 
@@ -5165,8 +5249,8 @@ def gitlab_vote(registry, xml_parent, data):
         :language: yaml
     """
     XML.SubElement(
-        xml_parent,
-        'com.dabsquared.gitlabjenkins.publisher.GitLabVotePublisher')
+        xml_parent, "com.dabsquared.gitlabjenkins.publisher.GitLabVotePublisher"
+    )
 
 
 def gitlab_message(registry, xml_parent, data):
@@ -5202,20 +5286,21 @@ def gitlab_message(registry, xml_parent, data):
        :language: yaml
     """
     gitlab = XML.SubElement(
-        xml_parent,
-        'com.dabsquared.gitlabjenkins.publisher.GitLabMessagePublisher'
+        xml_parent, "com.dabsquared.gitlabjenkins.publisher.GitLabMessagePublisher"
     )
-    gitlab.set('plugin', 'gitlab-plugin')
+    gitlab.set("plugin", "gitlab-plugin")
 
-    mapping = [('failure-only', 'onlyForFailure', False),
-               ('success-note', 'replaceSuccessNote', False),
-               ('failure-note', 'replaceFailureNote', False),
-               ('abort-note', 'replaceAbortNote', False),
-               ('unstable-note', 'replaceUnstableNote', False),
-               ('success-note-text', 'successNoteText', ''),
-               ('failure-note-text', 'failureNoteText', ''),
-               ('abort-note-text', 'abortNoteText', ''),
-               ('unstable-note-text', 'unstableNoteText', '')]
+    mapping = [
+        ("failure-only", "onlyForFailure", False),
+        ("success-note", "replaceSuccessNote", False),
+        ("failure-note", "replaceFailureNote", False),
+        ("abort-note", "replaceAbortNote", False),
+        ("unstable-note", "replaceUnstableNote", False),
+        ("success-note-text", "successNoteText", ""),
+        ("failure-note-text", "failureNoteText", ""),
+        ("abort-note-text", "abortNoteText", ""),
+        ("unstable-note-text", "unstableNoteText", ""),
+    ]
 
     helpers.convert_mapping_to_xml(gitlab, data, mapping, fail_required=True)
 
@@ -5230,8 +5315,7 @@ def zulip(registry, xml_parent, data):
     .. literalinclude:: /../../tests/publishers/fixtures/zulip.yaml
        :language: yaml
     """
-    XML.SubElement(xml_parent,
-                   'hudson.plugins.humbug.HumbugNotifier')
+    XML.SubElement(xml_parent, "hudson.plugins.humbug.HumbugNotifier")
 
 
 def build_publisher(registry, xml_parent, data):
@@ -5262,27 +5346,25 @@ def build_publisher(registry, xml_parent, data):
     """
 
     reporter = XML.SubElement(
-        xml_parent,
-        'hudson.plugins.build__publisher.BuildPublisher')
+        xml_parent, "hudson.plugins.build__publisher.BuildPublisher"
+    )
 
     mappings = [
-        ('publish-unstable-builds', 'publishUnstableBuilds', True),
-        ('publish-failed-builds', 'publishFailedBuilds', True)
+        ("publish-unstable-builds", "publishUnstableBuilds", True),
+        ("publish-failed-builds", "publishFailedBuilds", True),
     ]
-    helpers.convert_mapping_to_xml(
-        reporter, data, mappings, fail_required=True)
-    if 'days-to-keep' in data or 'num-to-keep' in data:
-        logrotator = XML.SubElement(reporter, 'logRotator')
+    helpers.convert_mapping_to_xml(reporter, data, mappings, fail_required=True)
+    if "days-to-keep" in data or "num-to-keep" in data:
+        logrotator = XML.SubElement(reporter, "logRotator")
         mappings = [
-            ('days-to-keep', 'daysToKeep', -1),
-            ('num-to-keep', 'numToKeep', -1),
+            ("days-to-keep", "daysToKeep", -1),
+            ("num-to-keep", "numToKeep", -1),
             # hardcoded to -1 to emulate what the build publisher
             # plugin seem to do.
-            ('', 'artifactDaysToKeep', -1),
-            ('', 'artifactNumToKeep', -1)
+            ("", "artifactDaysToKeep", -1),
+            ("", "artifactNumToKeep", -1),
         ]
-        helpers.convert_mapping_to_xml(
-            logrotator, data, mappings, fail_required=True)
+        helpers.convert_mapping_to_xml(logrotator, data, mappings, fail_required=True)
 
 
 def stash(registry, xml_parent, data):
@@ -5312,27 +5394,30 @@ def stash(registry, xml_parent, data):
     .. literalinclude:: /../../tests/publishers/fixtures/stash-full.yaml
        :language: yaml
     """
-    top = XML.SubElement(xml_parent,
-                         'org.jenkinsci.plugins.stashNotifier.StashNotifier')
+    top = XML.SubElement(
+        xml_parent, "org.jenkinsci.plugins.stashNotifier.StashNotifier"
+    )
 
-    XML.SubElement(top, 'stashServerBaseUrl').text = data.get('url', '')
-    if data.get('credentials-id') is not None:
-        XML.SubElement(top, 'credentialsId').text = str(
-            data.get('credentials-id'))
+    XML.SubElement(top, "stashServerBaseUrl").text = data.get("url", "")
+    if data.get("credentials-id") is not None:
+        XML.SubElement(top, "credentialsId").text = str(data.get("credentials-id"))
     else:
-        XML.SubElement(top, 'stashUserName'
-                       ).text = helpers.get_value_from_yaml_or_config_file(
-                           'username', 'stash', data, registry.jjb_config)
-        XML.SubElement(top, 'stashUserPassword'
-                       ).text = helpers.get_value_from_yaml_or_config_file(
-                           'password', 'stash', data, registry.jjb_config)
+        XML.SubElement(
+            top, "stashUserName"
+        ).text = helpers.get_value_from_yaml_or_config_file(
+            "username", "stash", data, registry.jjb_config
+        )
+        XML.SubElement(
+            top, "stashUserPassword"
+        ).text = helpers.get_value_from_yaml_or_config_file(
+            "password", "stash", data, registry.jjb_config
+        )
     mappings = [
-        ('ignore-ssl', 'ignoreUnverifiedSSLPeer', False),
-        ('commit-sha1', 'commitSha1', ''),
-        ('include-build-number', 'includeBuildNumberInKey', False)
+        ("ignore-ssl", "ignoreUnverifiedSSLPeer", False),
+        ("commit-sha1", "commitSha1", ""),
+        ("include-build-number", "includeBuildNumberInKey", False),
     ]
-    helpers.convert_mapping_to_xml(
-        top, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(top, data, mappings, fail_required=True)
 
 
 def dependency_check(registry, xml_parent, data):
@@ -5404,12 +5489,11 @@ def dependency_check(registry, xml_parent, data):
     """
 
     dependency_check = XML.SubElement(
-        xml_parent,
-        'org.jenkinsci.plugins.DependencyCheck.DependencyCheckPublisher')
+        xml_parent, "org.jenkinsci.plugins.DependencyCheck.DependencyCheckPublisher"
+    )
 
     # trends
-    helpers.build_trends_publisher(
-        '[DEPENDENCYCHECK] ', dependency_check, data)
+    helpers.build_trends_publisher("[DEPENDENCYCHECK] ", dependency_check, data)
 
 
 def description_setter(registry, xml_parent, data):
@@ -5444,17 +5528,18 @@ def description_setter(registry, xml_parent, data):
     """
 
     descriptionsetter = XML.SubElement(
-        xml_parent,
-        'hudson.plugins.descriptionsetter.DescriptionSetterPublisher')
+        xml_parent, "hudson.plugins.descriptionsetter.DescriptionSetterPublisher"
+    )
     mappings = [
-        ('regexp', 'regexp', ''),
-        ('regexp-for-failed', 'regexpForFailed', ''),
-        ('description', 'description', None),
-        ('description-for-failed', 'descriptionForFailed', None),
-        ('set-for-matrix', 'setForMatrix', False)
+        ("regexp", "regexp", ""),
+        ("regexp-for-failed", "regexpForFailed", ""),
+        ("description", "description", None),
+        ("description-for-failed", "descriptionForFailed", None),
+        ("set-for-matrix", "setForMatrix", False),
     ]
     helpers.convert_mapping_to_xml(
-        descriptionsetter, data, mappings, fail_required=False)
+        descriptionsetter, data, mappings, fail_required=False
+    )
 
 
 def doxygen(registry, xml_parent, data):
@@ -5483,27 +5568,25 @@ def doxygen(registry, xml_parent, data):
     """
 
     logger = logging.getLogger(__name__)
-    p = XML.SubElement(xml_parent, 'hudson.plugins.doxygen.DoxygenArchiver')
+    p = XML.SubElement(xml_parent, "hudson.plugins.doxygen.DoxygenArchiver")
     mappings = [
-        ('doxyfile', 'doxyfilePath', None),
-        ('slave', 'runOnChild', ''),
-        ('folder', 'folderWhereYouRunDoxygen', '')
+        ("doxyfile", "doxyfilePath", None),
+        ("slave", "runOnChild", ""),
+        ("folder", "folderWhereYouRunDoxygen", ""),
     ]
     helpers.convert_mapping_to_xml(p, data, mappings, fail_required=True)
     # backward compatibility
-    if 'keepall' in data:
-        if 'keep-all' in data:
-            XML.SubElement(p, 'keepAll').text = str(
-                data.get('keep-all', False)).lower()
-            logger.warning("The value of 'keepall' will be ignored "
-                           "in preference to 'keep-all'.")
+    if "keepall" in data:
+        if "keep-all" in data:
+            XML.SubElement(p, "keepAll").text = str(data.get("keep-all", False)).lower()
+            logger.warning(
+                "The value of 'keepall' will be ignored " "in preference to 'keep-all'."
+            )
         else:
-            XML.SubElement(p, 'keepAll').text = str(
-                data.get('keepall', False)).lower()
+            XML.SubElement(p, "keepAll").text = str(data.get("keepall", False)).lower()
             logger.warning("'keepall' is deprecated please use 'keep-all'")
     else:
-        XML.SubElement(p, 'keepAll').text = str(
-            data.get('keep-all', False)).lower()
+        XML.SubElement(p, "keepAll").text = str(data.get("keep-all", False)).lower()
 
 
 def docker_stop_container(registry, xml_parent, data):
@@ -5523,15 +5606,15 @@ def docker_stop_container(registry, xml_parent, data):
     .. literalinclude:: /../../tests/
     publishers/fixtures/docker-stop-container-full.yaml
     """
-    docker_stop_container = XML.SubElement(xml_parent,
-        'com.nirima.jenkins.plugins.docker'
-        '.publisher.DockerPublisherControl')
-    docker_stop_container.set('plugin', 'docker-plugin')
-    mapping = [
-        ('remove-stopped-containers', 'remove', False),
-    ]
+    docker_stop_container = XML.SubElement(
+        xml_parent,
+        "com.nirima.jenkins.plugins.docker" ".publisher.DockerPublisherControl",
+    )
+    docker_stop_container.set("plugin", "docker-plugin")
+    mapping = [("remove-stopped-containers", "remove", False)]
     helpers.convert_mapping_to_xml(
-        docker_stop_container, data, mapping, fail_required=False)
+        docker_stop_container, data, mapping, fail_required=False
+    )
 
 
 def sitemonitor(registry, xml_parent, data):
@@ -5553,14 +5636,12 @@ def sitemonitor(registry, xml_parent, data):
     .. literalinclude:: /../../tests/publishers/fixtures/sitemonitor-full.yaml
         :language: yaml
     """
-    mon = XML.SubElement(xml_parent,
-                         'hudson.plugins.sitemonitor.SiteMonitorRecorder')
-    if data.get('sites'):
-        sites = XML.SubElement(mon, 'mSites')
-        for siteurl in data.get('sites'):
-            site = XML.SubElement(sites,
-                                  'hudson.plugins.sitemonitor.model.Site')
-            XML.SubElement(site, 'mUrl').text = siteurl['url']
+    mon = XML.SubElement(xml_parent, "hudson.plugins.sitemonitor.SiteMonitorRecorder")
+    if data.get("sites"):
+        sites = XML.SubElement(mon, "mSites")
+        for siteurl in data.get("sites"):
+            site = XML.SubElement(sites, "hudson.plugins.sitemonitor.model.Site")
+            XML.SubElement(site, "mUrl").text = siteurl["url"]
 
 
 def testng(registry, xml_parent, data):
@@ -5603,26 +5684,23 @@ def testng(registry, xml_parent, data):
        :language: yaml
     """
 
-    reporter = XML.SubElement(xml_parent, 'hudson.plugins.testng.Publisher')
-    reporter.set('plugin', 'testng-plugin')
-    threshold_modes = {
-        'number': 1,
-        'percentage': 2}
+    reporter = XML.SubElement(xml_parent, "hudson.plugins.testng.Publisher")
+    reporter.set("plugin", "testng-plugin")
+    threshold_modes = {"number": 1, "percentage": 2}
 
     mappings = [
-        ('pattern', 'reportFilenamePattern', None),
-        ('escape-test-description', 'escapeTestDescp', True),
-        ('escape-exception-msg', 'escapeExceptionMsg', True),
-        ('fail-on-failed-test-config', 'failureOnFailedTestConfig', False),
-        ('show-failed-builds', 'showFailedBuilds', False),
-        ('unstable-skips', 'unstableSkips', 100),
-        ('unstable-fails', 'unstableFails', 0),
-        ('failed-skips', 'failedSkips', 100),
-        ('failed-fails', 'failedFails', 100),
-        ('threshold-mode', 'thresholdMode', 'percentage', threshold_modes)
+        ("pattern", "reportFilenamePattern", None),
+        ("escape-test-description", "escapeTestDescp", True),
+        ("escape-exception-msg", "escapeExceptionMsg", True),
+        ("fail-on-failed-test-config", "failureOnFailedTestConfig", False),
+        ("show-failed-builds", "showFailedBuilds", False),
+        ("unstable-skips", "unstableSkips", 100),
+        ("unstable-fails", "unstableFails", 0),
+        ("failed-skips", "failedSkips", 100),
+        ("failed-fails", "failedFails", 100),
+        ("threshold-mode", "thresholdMode", "percentage", threshold_modes),
     ]
-    helpers.convert_mapping_to_xml(
-        reporter, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(reporter, data, mappings, fail_required=True)
 
 
 def artifact_deployer(registry, xml_parent, data):
@@ -5657,38 +5735,41 @@ def artifact_deployer(registry, xml_parent, data):
        :language: yaml
     """
 
-    deployer = XML.SubElement(xml_parent,
-                              'org.jenkinsci.plugins.artifactdeployer.'
-                              'ArtifactDeployerPublisher')
-    if data is None or 'entries' not in data:
-        raise Exception('entries field is missing')
-    elif data.get('entries', None) is None:
-        entries = XML.SubElement(deployer, 'entries', {'class': 'empty-list'})
+    deployer = XML.SubElement(
+        xml_parent,
+        "org.jenkinsci.plugins.artifactdeployer." "ArtifactDeployerPublisher",
+    )
+    if data is None or "entries" not in data:
+        raise Exception("entries field is missing")
+    elif data.get("entries", None) is None:
+        entries = XML.SubElement(deployer, "entries", {"class": "empty-list"})
     else:
-        entries = XML.SubElement(deployer, 'entries')
-        for entry in data.get('entries'):
+        entries = XML.SubElement(deployer, "entries")
+        for entry in data.get("entries"):
             deployer_entry = XML.SubElement(
-                entries,
-                'org.jenkinsci.plugins.artifactdeployer.ArtifactDeployerEntry')
-            XML.SubElement(deployer_entry, 'includes').text = \
-                entry.get('files')
-            XML.SubElement(deployer_entry, 'basedir').text = \
-                entry.get('basedir')
-            XML.SubElement(deployer_entry, 'excludes').text = \
-                entry.get('excludes')
-            XML.SubElement(deployer_entry, 'remote').text = entry.get('remote')
-            XML.SubElement(deployer_entry, 'flatten').text = \
-                str(entry.get('flatten', False)).lower()
-            XML.SubElement(deployer_entry, 'deleteRemote').text = \
-                str(entry.get('delete-remote', False)).lower()
-            XML.SubElement(deployer_entry, 'deleteRemoteArtifacts').text = \
-                str(entry.get('delete-remote-artifacts', False)).lower()
-            XML.SubElement(deployer_entry, 'failNoFilesDeploy').text = \
-                str(entry.get('fail-no-files', False)).lower()
-            XML.SubElement(deployer_entry, 'groovyExpression').text = \
-                entry.get('groovy-script')
-    deploy_if_fail = str(data.get('deploy-if-fail', False)).lower()
-    XML.SubElement(deployer, 'deployEvenBuildFail').text = deploy_if_fail
+                entries, "org.jenkinsci.plugins.artifactdeployer.ArtifactDeployerEntry"
+            )
+            XML.SubElement(deployer_entry, "includes").text = entry.get("files")
+            XML.SubElement(deployer_entry, "basedir").text = entry.get("basedir")
+            XML.SubElement(deployer_entry, "excludes").text = entry.get("excludes")
+            XML.SubElement(deployer_entry, "remote").text = entry.get("remote")
+            XML.SubElement(deployer_entry, "flatten").text = str(
+                entry.get("flatten", False)
+            ).lower()
+            XML.SubElement(deployer_entry, "deleteRemote").text = str(
+                entry.get("delete-remote", False)
+            ).lower()
+            XML.SubElement(deployer_entry, "deleteRemoteArtifacts").text = str(
+                entry.get("delete-remote-artifacts", False)
+            ).lower()
+            XML.SubElement(deployer_entry, "failNoFilesDeploy").text = str(
+                entry.get("fail-no-files", False)
+            ).lower()
+            XML.SubElement(deployer_entry, "groovyExpression").text = entry.get(
+                "groovy-script"
+            )
+    deploy_if_fail = str(data.get("deploy-if-fail", False)).lower()
+    XML.SubElement(deployer, "deployEvenBuildFail").text = deploy_if_fail
 
 
 def s3(registry, xml_parent, data):
@@ -5733,48 +5814,49 @@ def s3(registry, xml_parent, data):
     .. literalinclude:: /../../tests/publishers/fixtures/s3001.yaml
        :language: yaml
     """
-    deployer = XML.SubElement(xml_parent,
-                              'hudson.plugins.s3.S3BucketPublisher')
-    if data is None or not data.get('entries'):
-        raise JenkinsJobsException('No filesets defined.')
+    deployer = XML.SubElement(xml_parent, "hudson.plugins.s3.S3BucketPublisher")
+    if data is None or not data.get("entries"):
+        raise JenkinsJobsException("No filesets defined.")
 
-    XML.SubElement(deployer, 'dontWaitForConcurrentBuildCompletion').text = (
-        str(data.get('dont-wait-for-concurrent-builds', False)).lower()
-    )
+    XML.SubElement(deployer, "dontWaitForConcurrentBuildCompletion").text = str(
+        data.get("dont-wait-for-concurrent-builds", False)
+    ).lower()
 
-    XML.SubElement(deployer, 'profileName').text = data.get('s3-profile')
+    XML.SubElement(deployer, "profileName").text = data.get("s3-profile")
 
-    entries = XML.SubElement(deployer, 'entries')
+    entries = XML.SubElement(deployer, "entries")
 
-    for entry in data.get('entries'):
-        fileset = XML.SubElement(entries, 'hudson.plugins.s3.Entry')
+    for entry in data.get("entries"):
+        fileset = XML.SubElement(entries, "hudson.plugins.s3.Entry")
 
         # xml keys -> yaml keys
-        settings = [('bucket', 'destination-bucket', ''),
-                    ('sourceFile', 'source-files', ''),
-                    ('storageClass', 'storage-class', ''),
-                    ('selectedRegion', 'bucket-region', ''),
-                    ('noUploadOnFailure', 'upload-on-failure', False),
-                    ('uploadFromSlave', 'upload-from-slave', False),
-                    ('managedArtifacts', 'managed-artifacts', False),
-                    ('useServerSideEncryption', 's3-encryption', False),
-                    ('flatten', 'flatten', False)]
+        settings = [
+            ("bucket", "destination-bucket", ""),
+            ("sourceFile", "source-files", ""),
+            ("storageClass", "storage-class", ""),
+            ("selectedRegion", "bucket-region", ""),
+            ("noUploadOnFailure", "upload-on-failure", False),
+            ("uploadFromSlave", "upload-from-slave", False),
+            ("managedArtifacts", "managed-artifacts", False),
+            ("useServerSideEncryption", "s3-encryption", False),
+            ("flatten", "flatten", False),
+        ]
 
         for xml_key, yaml_key, default in settings:
             xml_config = XML.SubElement(fileset, xml_key)
             config_value = entry.get(yaml_key, default)
-            if xml_key == 'noUploadOnFailure':
+            if xml_key == "noUploadOnFailure":
                 xml_config.text = str(not config_value).lower()
             elif isinstance(default, bool):
                 xml_config.text = str(config_value).lower()
             else:
                 xml_config.text = str(config_value)
 
-    metadata = XML.SubElement(deployer, 'userMetadata')
-    for tag in data.get('metadata-tags', []):
-        pair = XML.SubElement(metadata, 'hudson.plugins.s3.MetadataPair')
-        XML.SubElement(pair, 'key').text = tag.get('key')
-        XML.SubElement(pair, 'value').text = tag.get('value')
+    metadata = XML.SubElement(deployer, "userMetadata")
+    for tag in data.get("metadata-tags", []):
+        pair = XML.SubElement(metadata, "hudson.plugins.s3.MetadataPair")
+        XML.SubElement(pair, "key").text = tag.get("key")
+        XML.SubElement(pair, "value").text = tag.get("value")
 
 
 def ruby_metrics(registry, xml_parent, data):
@@ -5801,28 +5883,27 @@ def ruby_metrics(registry, xml_parent, data):
     """
 
     metrics = XML.SubElement(
-        xml_parent,
-        'hudson.plugins.rubyMetrics.rcov.RcovPublisher')
-    report_dir = data.get('report-dir', '')
-    XML.SubElement(metrics, 'reportDir').text = report_dir
-    targets = XML.SubElement(metrics, 'targets')
-    if 'target' in data:
-        for t in data['target']:
-            if not ('code-coverage' in t or 'total-coverage' in t):
-                raise JenkinsJobsException('Unrecognized target name')
+        xml_parent, "hudson.plugins.rubyMetrics.rcov.RcovPublisher"
+    )
+    report_dir = data.get("report-dir", "")
+    XML.SubElement(metrics, "reportDir").text = report_dir
+    targets = XML.SubElement(metrics, "targets")
+    if "target" in data:
+        for t in data["target"]:
+            if not ("code-coverage" in t or "total-coverage" in t):
+                raise JenkinsJobsException("Unrecognized target name")
             el = XML.SubElement(
-                targets,
-                'hudson.plugins.rubyMetrics.rcov.model.MetricTarget')
-            if 'total-coverage' in t:
-                XML.SubElement(el, 'metric').text = 'TOTAL_COVERAGE'
+                targets, "hudson.plugins.rubyMetrics.rcov.model.MetricTarget"
+            )
+            if "total-coverage" in t:
+                XML.SubElement(el, "metric").text = "TOTAL_COVERAGE"
             else:
-                XML.SubElement(el, 'metric').text = 'CODE_COVERAGE'
-            for threshold_name, threshold_value in \
-                    next(iter(t.values())).items():
+                XML.SubElement(el, "metric").text = "CODE_COVERAGE"
+            for threshold_name, threshold_value in next(iter(t.values())).items():
                 elname = threshold_name.lower()
                 XML.SubElement(el, elname).text = str(threshold_value)
     else:
-        raise JenkinsJobsException('Coverage metric targets must be set')
+        raise JenkinsJobsException("Coverage metric targets must be set")
 
 
 def fitnesse(registry, xml_parent, data):
@@ -5839,10 +5920,10 @@ def fitnesse(registry, xml_parent, data):
        :language: yaml
     """
     fitnesse = XML.SubElement(
-        xml_parent,
-        'hudson.plugins.fitnesse.FitnesseResultsRecorder')
-    results = data.get('results', '')
-    XML.SubElement(fitnesse, 'fitnessePathToXmlResultsIn').text = results
+        xml_parent, "hudson.plugins.fitnesse.FitnesseResultsRecorder"
+    )
+    results = data.get("results", "")
+    XML.SubElement(fitnesse, "fitnessePathToXmlResultsIn").text = results
 
 
 def valgrind(registry, xml_parent, data):
@@ -5879,38 +5960,38 @@ def valgrind(registry, xml_parent, data):
     .. literalinclude:: /../../tests/publishers/fixtures/valgrind001.yaml
        :language: yaml
     """
-    p = XML.SubElement(xml_parent,
-                       'org.jenkinsci.plugins.valgrind.ValgrindPublisher')
-    p = XML.SubElement(p, 'valgrindPublisherConfig')
+    p = XML.SubElement(xml_parent, "org.jenkinsci.plugins.valgrind.ValgrindPublisher")
+    p = XML.SubElement(p, "valgrindPublisherConfig")
 
-    if 'pattern' not in data:
+    if "pattern" not in data:
         raise JenkinsJobsException("A filename pattern must be specified.")
 
-    XML.SubElement(p, 'pattern').text = data['pattern']
+    XML.SubElement(p, "pattern").text = data["pattern"]
 
-    dthresholds = data.get('thresholds', {})
+    dthresholds = data.get("thresholds", {})
 
-    for threshold in ['unstable', 'failed']:
+    for threshold in ["unstable", "failed"]:
         dthreshold = dthresholds.get(threshold, {})
-        threshold = threshold.replace('failed', 'fail')
+        threshold = threshold.replace("failed", "fail")
 
-        ThresholdInvalidReadWrite = '%sThresholdInvalidReadWrite' % threshold
-        ThresholdDefinitelyLost = '%sThresholdDefinitelyLost' % threshold
-        ThresholdTotal = '%sThresholdTotal' % threshold
+        ThresholdInvalidReadWrite = "%sThresholdInvalidReadWrite" % threshold
+        ThresholdDefinitelyLost = "%sThresholdDefinitelyLost" % threshold
+        ThresholdTotal = "%sThresholdTotal" % threshold
 
         threshold_mapping = [
-            ('invalid-read-write', ThresholdInvalidReadWrite, ''),
-            ('definitely-lost', ThresholdDefinitelyLost, ''),
-            ('total', ThresholdTotal, ''),
+            ("invalid-read-write", ThresholdInvalidReadWrite, ""),
+            ("definitely-lost", ThresholdDefinitelyLost, ""),
+            ("total", ThresholdTotal, ""),
         ]
         helpers.convert_mapping_to_xml(
-            p, dthreshold, threshold_mapping, fail_required=True)
+            p, dthreshold, threshold_mapping, fail_required=True
+        )
 
     mapping = [
-        ('fail-no-reports', 'failBuildOnMissingReports', False),
-        ('fail-invalid-reports', 'failBuildOnInvalidReports', False),
-        ('publish-if-aborted', 'publishResultsForAbortedBuilds', False),
-        ('publish-if-failed', 'publishResultsForFailedBuilds', False),
+        ("fail-no-reports", "failBuildOnMissingReports", False),
+        ("fail-invalid-reports", "failBuildOnInvalidReports", False),
+        ("publish-if-aborted", "publishResultsForAbortedBuilds", False),
+        ("publish-if-failed", "publishResultsForFailedBuilds", False),
     ]
     helpers.convert_mapping_to_xml(p, data, mapping, fail_required=True)
 
@@ -5979,9 +6060,9 @@ def pmd(registry, xml_parent, data):
        :language: yaml
     """
 
-    xml_element = XML.SubElement(xml_parent, 'hudson.plugins.pmd.PmdPublisher')
+    xml_element = XML.SubElement(xml_parent, "hudson.plugins.pmd.PmdPublisher")
 
-    helpers.build_trends_publisher('[PMD] ', xml_element, data)
+    helpers.build_trends_publisher("[PMD] ", xml_element, data)
 
 
 def scan_build(registry, xml_parent, data):
@@ -6014,15 +6095,15 @@ def scan_build(registry, xml_parent, data):
        :language: yaml
     """
     p = XML.SubElement(
-        xml_parent,
-        'jenkins.plugins.clangscanbuild.publisher.ClangScanBuildPublisher')
-    p.set('plugin', 'clang-scanbuild')
+        xml_parent, "jenkins.plugins.clangscanbuild.publisher.ClangScanBuildPublisher"
+    )
+    p.set("plugin", "clang-scanbuild")
 
     mappings = [
-        ('mark-unstable', 'markBuildUnstableWhenThresholdIsExceeded', False),
-        ('threshold', 'bugThreshold', 0),
-        ('exclude-paths', 'clangexcludedpaths', ''),
-        ('report-folder', 'reportFolderName', 'clangScanBuildReports'),
+        ("mark-unstable", "markBuildUnstableWhenThresholdIsExceeded", False),
+        ("threshold", "bugThreshold", 0),
+        ("exclude-paths", "clangexcludedpaths", ""),
+        ("report-folder", "reportFolderName", "clangScanBuildReports"),
     ]
     helpers.convert_mapping_to_xml(p, data, mappings, fail_required=True)
 
@@ -6094,16 +6175,16 @@ def dry(registry, xml_parent, data):
        :language: yaml
     """
 
-    xml_element = XML.SubElement(xml_parent, 'hudson.plugins.dry.DryPublisher')
+    xml_element = XML.SubElement(xml_parent, "hudson.plugins.dry.DryPublisher")
 
-    helpers.build_trends_publisher('[DRY] ', xml_element, data)
+    helpers.build_trends_publisher("[DRY] ", xml_element, data)
 
     # Add specific settings for this trends publisher
     settings = [
-        ('high-threshold', 'highThreshold', 50),
-        ('normal-threshold', 'normalThreshold', 25)]
-    helpers.convert_mapping_to_xml(
-        xml_element, data, settings, fail_required=True)
+        ("high-threshold", "highThreshold", 50),
+        ("normal-threshold", "normalThreshold", 25),
+    ]
+    helpers.convert_mapping_to_xml(xml_element, data, settings, fail_required=True)
 
 
 def shining_panda(registry, xml_parent, data):
@@ -6120,12 +6201,13 @@ def shining_panda(registry, xml_parent, data):
        :language: yaml
     """
     shining_panda_plugin = XML.SubElement(
-        xml_parent,
-        'jenkins.plugins.shiningpanda.publishers.CoveragePublisher')
+        xml_parent, "jenkins.plugins.shiningpanda.publishers.CoveragePublisher"
+    )
 
-    mapping = [('html-reports-directory', 'htmlDir', None)]
+    mapping = [("html-reports-directory", "htmlDir", None)]
     helpers.convert_mapping_to_xml(
-        shining_panda_plugin, data, mapping, fail_required=False)
+        shining_panda_plugin, data, mapping, fail_required=False
+    )
 
 
 def downstream_ext(registry, xml_parent, data):
@@ -6158,39 +6240,39 @@ def downstream_ext(registry, xml_parent, data):
     conditions = {
         "equal-or-over": "AND_HIGHER",
         "equal-or-under": "AND_LOWER",
-        "equal": "EXACT"
+        "equal": "EXACT",
     }
 
-    p = XML.SubElement(xml_parent,
-                       'hudson.plugins.downstream__ext.DownstreamTrigger')
+    p = XML.SubElement(xml_parent, "hudson.plugins.downstream__ext.DownstreamTrigger")
 
-    if 'projects' not in data:
+    if "projects" not in data:
         raise JenkinsJobsException("Missing list of downstream projects.")
 
-    XML.SubElement(p, 'childProjects').text = ','.join(data['projects'])
+    XML.SubElement(p, "childProjects").text = ",".join(data["projects"])
 
-    th = XML.SubElement(p, 'threshold')
+    th = XML.SubElement(p, "threshold")
 
-    criteria = data.get('criteria', 'success').upper()
+    criteria = data.get("criteria", "success").upper()
 
-    wr_threshold = hudson_model.THRESHOLDS[
-        criteria]
+    wr_threshold = hudson_model.THRESHOLDS[criteria]
     if criteria not in hudson_model.THRESHOLDS:
-        raise JenkinsJobsException("criteria must be one of %s" %
-                                   ", ".join(hudson_model.THRESHOLDS.keys()))
-    mapping = [('name', 'name', None),
-        ('ordinal', 'ordinal', None),
-        ('color', 'color', None),
-        ('complete', 'completeBuild', None)]
-    helpers.convert_mapping_to_xml(th,
-        wr_threshold, mapping, fail_required=True)
+        raise JenkinsJobsException(
+            "criteria must be one of %s" % ", ".join(hudson_model.THRESHOLDS.keys())
+        )
+    mapping = [
+        ("name", "name", None),
+        ("ordinal", "ordinal", None),
+        ("color", "color", None),
+        ("complete", "completeBuild", None),
+    ]
+    helpers.convert_mapping_to_xml(th, wr_threshold, mapping, fail_required=True)
 
-    condition_mapping = [('condition',
-        'thresholdStrategy', 'equal-or-over', conditions),
-        ('only-on-scm-change', 'onlyIfSCMChanges', False),
-        ('only-on-local-scm-change', 'onlyIfLocalSCMChanges', False)]
-    helpers.convert_mapping_to_xml(p, data,
-        condition_mapping, fail_required=True)
+    condition_mapping = [
+        ("condition", "thresholdStrategy", "equal-or-over", conditions),
+        ("only-on-scm-change", "onlyIfSCMChanges", False),
+        ("only-on-local-scm-change", "onlyIfLocalSCMChanges", False),
+    ]
+    helpers.convert_mapping_to_xml(p, data, condition_mapping, fail_required=True)
 
 
 def rundeck(registry, xml_parent, data):
@@ -6229,24 +6311,22 @@ def rundeck(registry, xml_parent, data):
         :language: yaml
     """
 
-    p = XML.SubElement(
-        xml_parent,
-        'org.jenkinsci.plugins.rundeck.RundeckNotifier')
+    p = XML.SubElement(xml_parent, "org.jenkinsci.plugins.rundeck.RundeckNotifier")
 
     mappings = [
-        ('job-id', 'jobId', None),
-        ('options', 'options', ''),
-        ('node-filters', 'nodeFilters', ''),
-        ('tag', 'tag', ''),
-        ('wait-for-rundeck', 'shouldWaitForRundeckJob', False),
-        ('fail-the-build', 'shouldFailTheBuild', False),
+        ("job-id", "jobId", None),
+        ("options", "options", ""),
+        ("node-filters", "nodeFilters", ""),
+        ("tag", "tag", ""),
+        ("wait-for-rundeck", "shouldWaitForRundeckJob", False),
+        ("fail-the-build", "shouldFailTheBuild", False),
     ]
     helpers.convert_mapping_to_xml(p, data, mappings, fail_required=True)
 
 
 def create_publishers(registry, action):
     dummy_parent = XML.Element("dummy")
-    registry.dispatch('publisher', dummy_parent, action)
+    registry.dispatch("publisher", dummy_parent, action)
     return list(dummy_parent)
 
 
@@ -6332,125 +6412,120 @@ def conditional_publisher(registry, xml_parent, data):
     <../../tests/publishers/fixtures/conditional-publisher002.yaml>`
 
     """
+
     def publish_condition_tag(cdata, prefix, condition_tag):
-        kind = cdata['%s-kind' % prefix]
+        kind = cdata["%s-kind" % prefix]
         ctag = XML.SubElement(cond_publisher, condition_tag)
-        class_pkg = 'org.jenkins_ci.plugins.run_condition'
+        class_pkg = "org.jenkins_ci.plugins.run_condition"
 
         if kind == "always":
-            ctag.set('class',
-                     class_pkg + '.core.AlwaysRun')
+            ctag.set("class", class_pkg + ".core.AlwaysRun")
         elif kind == "never":
-            ctag.set('class',
-                     class_pkg + '.core.NeverRun')
+            ctag.set("class", class_pkg + ".core.NeverRun")
         elif kind == "boolean-expression":
-            ctag.set('class',
-                     class_pkg + '.core.BooleanCondition')
-            XML.SubElement(ctag,
-                           "token").text = cdata['%s-expression' % prefix]
+            ctag.set("class", class_pkg + ".core.BooleanCondition")
+            XML.SubElement(ctag, "token").text = cdata["%s-expression" % prefix]
         elif kind == "current-status":
-            ctag.set('class',
-                     class_pkg + '.core.StatusCondition')
-            wr = XML.SubElement(ctag, 'worstResult')
-            wr_name = cdata['%s-worst' % prefix]
+            ctag.set("class", class_pkg + ".core.StatusCondition")
+            wr = XML.SubElement(ctag, "worstResult")
+            wr_name = cdata["%s-worst" % prefix]
             if wr_name not in hudson_model.THRESHOLDS:
                 raise JenkinsJobsException(
-                    "threshold must be one of %s" %
-                    ", ".join(hudson_model.THRESHOLDS.keys()))
+                    "threshold must be one of %s"
+                    % ", ".join(hudson_model.THRESHOLDS.keys())
+                )
             wr_threshold = hudson_model.THRESHOLDS[wr_name]
-            XML.SubElement(wr, "name").text = wr_threshold['name']
-            XML.SubElement(wr, "ordinal").text = wr_threshold['ordinal']
-            XML.SubElement(wr, "color").text = wr_threshold['color']
-            XML.SubElement(wr, "completeBuild").text = \
-                str(wr_threshold['complete']).lower()
+            XML.SubElement(wr, "name").text = wr_threshold["name"]
+            XML.SubElement(wr, "ordinal").text = wr_threshold["ordinal"]
+            XML.SubElement(wr, "color").text = wr_threshold["color"]
+            XML.SubElement(wr, "completeBuild").text = str(
+                wr_threshold["complete"]
+            ).lower()
 
-            br = XML.SubElement(ctag, 'bestResult')
-            br_name = cdata['%s-best' % prefix]
+            br = XML.SubElement(ctag, "bestResult")
+            br_name = cdata["%s-best" % prefix]
             if br_name not in hudson_model.THRESHOLDS:
                 raise JenkinsJobsException(
-                    "threshold must be one of %s" %
-                    ", ".join(hudson_model.THRESHOLDS.keys()))
+                    "threshold must be one of %s"
+                    % ", ".join(hudson_model.THRESHOLDS.keys())
+                )
             br_threshold = hudson_model.THRESHOLDS[br_name]
-            XML.SubElement(br, "name").text = br_threshold['name']
-            XML.SubElement(br, "ordinal").text = br_threshold['ordinal']
-            XML.SubElement(br, "color").text = br_threshold['color']
-            XML.SubElement(br, "completeBuild").text = \
-                str(wr_threshold['complete']).lower()
+            XML.SubElement(br, "name").text = br_threshold["name"]
+            XML.SubElement(br, "ordinal").text = br_threshold["ordinal"]
+            XML.SubElement(br, "color").text = br_threshold["color"]
+            XML.SubElement(br, "completeBuild").text = str(
+                wr_threshold["complete"]
+            ).lower()
         elif kind == "shell":
-            ctag.set('class',
-                     class_pkg + '.contributed.ShellCondition')
-            XML.SubElement(ctag, "command").text = cdata['%s-command' % prefix]
+            ctag.set("class", class_pkg + ".contributed.ShellCondition")
+            XML.SubElement(ctag, "command").text = cdata["%s-command" % prefix]
         elif kind == "windows-shell":
-            ctag.set('class',
-                     class_pkg + '.contributed.BatchFileCondition')
-            XML.SubElement(ctag, "command").text = cdata['%s-command' % prefix]
+            ctag.set("class", class_pkg + ".contributed.BatchFileCondition")
+            XML.SubElement(ctag, "command").text = cdata["%s-command" % prefix]
         elif kind == "regexp":
-            ctag.set('class',
-                     class_pkg + '.core.ExpressionCondition')
-            XML.SubElement(ctag,
-                           "expression").text = cdata['%s-expression' % prefix]
-            XML.SubElement(ctag,
-                           "label").text = cdata['%s-searchtext' % prefix]
+            ctag.set("class", class_pkg + ".core.ExpressionCondition")
+            XML.SubElement(ctag, "expression").text = cdata["%s-expression" % prefix]
+            XML.SubElement(ctag, "label").text = cdata["%s-searchtext" % prefix]
         elif kind == "file-exists":
-            ctag.set('class',
-                     class_pkg + '.core.FileExistsCondition')
-            XML.SubElement(ctag, "file").text = cdata['%s-filename' % prefix]
-            basedir = cdata.get('%s-basedir', 'workspace')
+            ctag.set("class", class_pkg + ".core.FileExistsCondition")
+            XML.SubElement(ctag, "file").text = cdata["%s-filename" % prefix]
+            basedir = cdata.get("%s-basedir", "workspace")
             basedir_tag = XML.SubElement(ctag, "baseDir")
             if "workspace" == basedir:
-                basedir_tag.set('class',
-                                class_pkg + '.common.BaseDirectory$Workspace')
+                basedir_tag.set("class", class_pkg + ".common.BaseDirectory$Workspace")
             elif "artifact-directory" == basedir:
-                basedir_tag.set('class',
-                                class_pkg + '.common.'
-                                'BaseDirectory$ArtifactsDir')
+                basedir_tag.set(
+                    "class", class_pkg + ".common." "BaseDirectory$ArtifactsDir"
+                )
             elif "jenkins-home" == basedir:
-                basedir_tag.set('class',
-                                class_pkg + '.common.'
-                                'BaseDirectory$JenkinsHome')
+                basedir_tag.set(
+                    "class", class_pkg + ".common." "BaseDirectory$JenkinsHome"
+                )
         else:
-            raise JenkinsJobsException('%s is not a valid %s-kind '
-                                       'value.' % (kind, prefix))
+            raise JenkinsJobsException(
+                "%s is not a valid %s-kind " "value." % (kind, prefix)
+            )
 
     def publish_condition(cdata):
-        return publish_condition_tag(cdata, 'condition', condition_tag)
+        return publish_condition_tag(cdata, "condition", condition_tag)
 
     def publish_aggregation_condition(cdata):
-        return publish_condition_tag(cdata, 'condition-aggregation',
-                                     aggregation_condition_tag)
+        return publish_condition_tag(
+            cdata, "condition-aggregation", aggregation_condition_tag
+        )
 
     def publish_action(parent, action):
         for edited_node in create_publishers(registry, action):
             if not use_publisher_list:
-                edited_node.set('class', edited_node.tag)
-                edited_node.tag = 'publisher'
+                edited_node.set("class", edited_node.tag)
+                edited_node.tag = "publisher"
             parent.append(edited_node)
 
-    flex_publisher_tag = 'org.jenkins__ci.plugins.flexible__publish.'    \
-        'FlexiblePublisher'
-    cond_publisher_tag = 'org.jenkins__ci.plugins.flexible__publish.'   \
-        'ConditionalPublisher'
+    flex_publisher_tag = (
+        "org.jenkins__ci.plugins.flexible__publish." "FlexiblePublisher"
+    )
+    cond_publisher_tag = (
+        "org.jenkins__ci.plugins.flexible__publish." "ConditionalPublisher"
+    )
 
     root_tag = XML.SubElement(xml_parent, flex_publisher_tag)
     publishers_tag = XML.SubElement(root_tag, "publishers")
     condition_tag = "condition"
     aggregation_condition_tag = "aggregationCondition"
 
-    evaluation_classes_pkg = 'org.jenkins_ci.plugins.run_condition'
+    evaluation_classes_pkg = "org.jenkins_ci.plugins.run_condition"
     evaluation_classes = {
-        'fail': evaluation_classes_pkg + '.BuildStepRunner$Fail',
-        'mark-unstable': evaluation_classes_pkg +
-        '.BuildStepRunner$Unstable',
-        'run-and-mark-unstable': evaluation_classes_pkg +
-        '.BuildStepRunner$RunUnstable',
-        'run': evaluation_classes_pkg + '.BuildStepRunner$Run',
-        'dont-run': evaluation_classes_pkg + '.BuildStepRunner$DontRun',
+        "fail": evaluation_classes_pkg + ".BuildStepRunner$Fail",
+        "mark-unstable": evaluation_classes_pkg + ".BuildStepRunner$Unstable",
+        "run-and-mark-unstable": evaluation_classes_pkg
+        + ".BuildStepRunner$RunUnstable",
+        "run": evaluation_classes_pkg + ".BuildStepRunner$Run",
+        "dont-run": evaluation_classes_pkg + ".BuildStepRunner$DontRun",
     }
 
     plugin_info = registry.get_plugin_info("Flexible Publish Plugin")
     # Note: Assume latest version of plugin is preferred config format
-    version = pkg_resources.parse_version(
-        plugin_info.get('version', str(sys.maxsize)))
+    version = pkg_resources.parse_version(plugin_info.get("version", str(sys.maxsize)))
 
     # Support for MatrixAggregator was added in v0.11
     # See JENKINS-14494
@@ -6459,24 +6534,26 @@ def conditional_publisher(registry, xml_parent, data):
     for cond_action in data:
         cond_publisher = XML.SubElement(publishers_tag, cond_publisher_tag)
         publish_condition(cond_action)
-        condition_aggregation = cond_action.get('condition-aggregation', False)
+        condition_aggregation = cond_action.get("condition-aggregation", False)
         if condition_aggregation and has_matrix_aggregator:
             publish_aggregation_condition(cond_action)
         elif condition_aggregation:
-            raise JenkinsJobsException("Matrix Aggregation is not supported "
-                                       "in your plugin version.")
-        evaluation_flag = cond_action.get('on-evaluation-failure', 'fail')
+            raise JenkinsJobsException(
+                "Matrix Aggregation is not supported " "in your plugin version."
+            )
+        evaluation_flag = cond_action.get("on-evaluation-failure", "fail")
         if evaluation_flag not in evaluation_classes.keys():
-            raise JenkinsJobsException('on-evaluation-failure value '
-                                       'specified is not valid.  Must be one '
-                                       'of: %s' % evaluation_classes.keys())
+            raise JenkinsJobsException(
+                "on-evaluation-failure value "
+                "specified is not valid.  Must be one "
+                "of: %s" % evaluation_classes.keys()
+            )
 
         evaluation_class = evaluation_classes[evaluation_flag]
-        XML.SubElement(cond_publisher, "runner").set('class',
-                                                     evaluation_class)
+        XML.SubElement(cond_publisher, "runner").set("class", evaluation_class)
 
-        if 'action' in cond_action:
-            actions = cond_action['action']
+        if "action" in cond_action:
+            actions = cond_action["action"]
 
             action_parent = cond_publisher
 
@@ -6485,18 +6562,19 @@ def conditional_publisher(registry, xml_parent, data):
             use_publisher_list = version >= pkg_resources.parse_version("0.13")
 
             if use_publisher_list:
-                action_parent = XML.SubElement(cond_publisher, 'publisherList')
+                action_parent = XML.SubElement(cond_publisher, "publisherList")
             else:
                 # Check the length of actions list for versions prior to 0.13.
                 # Flexible Publish will overwrite action if more than one is
                 # specified.  Limit the action list to one element.
                 if len(actions) != 1:
-                    raise JenkinsJobsException("Only one action may be "
-                                               "specified for each condition.")
+                    raise JenkinsJobsException(
+                        "Only one action may be " "specified for each condition."
+                    )
             for action in actions:
                 publish_action(action_parent, action)
         else:
-            raise JenkinsJobsException('action must be set for each condition')
+            raise JenkinsJobsException("action must be set for each condition")
 
 
 def scoverage(registry, xml_parent, data):
@@ -6515,16 +6593,15 @@ def scoverage(registry, xml_parent, data):
        :language: yaml
     """
     scoverage = XML.SubElement(
-        xml_parent,
-        'org.jenkinsci.plugins.scoverage.ScoveragePublisher')
-    scoverage.set('plugin', 'scoverage')
+        xml_parent, "org.jenkinsci.plugins.scoverage.ScoveragePublisher"
+    )
+    scoverage.set("plugin", "scoverage")
 
     mappings = [
-        ('report-directory', 'reportDir', None),
-        ('report-file', 'reportFile', None),
+        ("report-directory", "reportDir", None),
+        ("report-file", "reportFile", None),
     ]
-    helpers.convert_mapping_to_xml(
-        scoverage, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(scoverage, data, mappings, fail_required=True)
 
 
 def display_upstream_changes(registry, xml_parent, data):
@@ -6540,8 +6617,8 @@ def display_upstream_changes(registry, xml_parent, data):
     """
     XML.SubElement(
         xml_parent,
-        'jenkins.plugins.displayupstreamchanges.'
-        'DisplayUpstreamChangesRecorder')
+        "jenkins.plugins.displayupstreamchanges." "DisplayUpstreamChangesRecorder",
+    )
 
 
 def gatling(registry, xml_parent, data):
@@ -6554,9 +6631,8 @@ def gatling(registry, xml_parent, data):
     .. literalinclude:: /../../tests/publishers/fixtures/gatling001.yaml
        :language: yaml
     """
-    gatling = XML.SubElement(
-        xml_parent, 'io.gatling.jenkins.GatlingPublisher')
-    mapping = [('', 'enabled', 'true')]
+    gatling = XML.SubElement(xml_parent, "io.gatling.jenkins.GatlingPublisher")
+    mapping = [("", "enabled", "true")]
     helpers.convert_mapping_to_xml(gatling, data, mapping, fail_required=True)
 
 
@@ -6582,14 +6658,10 @@ def logstash(registry, xml_parent, data):
        :language: yaml
     """
 
-    logstash = XML.SubElement(xml_parent,
-                              'jenkins.plugins.logstash.LogstashNotifier')
-    logstash.set('plugin', 'logstash')
+    logstash = XML.SubElement(xml_parent, "jenkins.plugins.logstash.LogstashNotifier")
+    logstash.set("plugin", "logstash")
 
-    mapping = [
-        ('max-lines', 'maxLines', 1000),
-        ('fail-build', 'failBuild', False),
-    ]
+    mapping = [("max-lines", "maxLines", 1000), ("fail-build", "failBuild", False)]
     helpers.convert_mapping_to_xml(logstash, data, mapping, fail_required=True)
 
 
@@ -6619,51 +6691,47 @@ def image_gallery(registry, xml_parent, data):
     .. literalinclude:: /../../tests/publishers/fixtures/image-gallery001.yaml
 
     """
-    def include_comparative_elements(gallery_parent_elem, gallery):
-        XML.SubElement(gallery_parent_elem, 'baseRootFolder').text = str(
-            gallery.get('base-root-folder', ''))
-        image_inner_width = gallery.get('image-inner-width', '')
-        if image_inner_width:
-            XML.SubElement(gallery_parent_elem, 'imageInnerWidth').text = str(
-                image_inner_width)
 
-    package_prefix = 'org.jenkinsci.plugins.imagegallery.'
-    builder = XML.SubElement(
-        xml_parent, package_prefix + 'ImageGalleryRecorder'
-    )
-    image_galleries = XML.SubElement(builder, 'imageGalleries')
+    def include_comparative_elements(gallery_parent_elem, gallery):
+        XML.SubElement(gallery_parent_elem, "baseRootFolder").text = str(
+            gallery.get("base-root-folder", "")
+        )
+        image_inner_width = gallery.get("image-inner-width", "")
+        if image_inner_width:
+            XML.SubElement(gallery_parent_elem, "imageInnerWidth").text = str(
+                image_inner_width
+            )
+
+    package_prefix = "org.jenkinsci.plugins.imagegallery."
+    builder = XML.SubElement(xml_parent, package_prefix + "ImageGalleryRecorder")
+    image_galleries = XML.SubElement(builder, "imageGalleries")
     galleries = {
-        'archived-images-gallery': package_prefix + 'imagegallery.'
-        'ArchivedImagesGallery',
-        'in-folder-comparative-gallery': package_prefix + 'comparative.'
-        'InFolderComparativeArchivedImagesGallery',
-        'multiple-folder-comparative-gallery': package_prefix + 'comparative.'
-        'MultipleFolderComparativeArchivedImagesGallery'
+        "archived-images-gallery": package_prefix + "imagegallery."
+        "ArchivedImagesGallery",
+        "in-folder-comparative-gallery": package_prefix + "comparative."
+        "InFolderComparativeArchivedImagesGallery",
+        "multiple-folder-comparative-gallery": package_prefix + "comparative."
+        "MultipleFolderComparativeArchivedImagesGallery",
     }
     for gallery_def in data:
-        gallery_type = gallery_def.get('gallery-type',
-                                       'archived-images-gallery')
+        gallery_type = gallery_def.get("gallery-type", "archived-images-gallery")
         if gallery_type not in galleries:
-            raise InvalidAttributeError('gallery-type', gallery_type,
-                                        galleries.keys())
-        gallery_config = XML.SubElement(
-            image_galleries, galleries[gallery_type])
-        XML.SubElement(gallery_config, 'title').text = str(
-            gallery_def.get('title', ''))
-        image_width = str(gallery_def.get('image-width', ''))
+            raise InvalidAttributeError("gallery-type", gallery_type, galleries.keys())
+        gallery_config = XML.SubElement(image_galleries, galleries[gallery_type])
+        XML.SubElement(gallery_config, "title").text = str(gallery_def.get("title", ""))
+        image_width = str(gallery_def.get("image-width", ""))
         if image_width:
-            XML.SubElement(gallery_config, 'imageWidth').text = str(
-                image_width)
+            XML.SubElement(gallery_config, "imageWidth").text = str(image_width)
         XML.SubElement(
-            gallery_config,
-            'markBuildAsUnstableIfNoArchivesFound').text = str(gallery_def.get(
-                'unstable-if-no-artifacts', False))
-        if gallery_type == 'archived-images-gallery':
-            XML.SubElement(gallery_config, 'includes').text = str(
-                gallery_def.get('includes', ''))
-        if gallery_type == 'in-folder-comparative-gallery':
+            gallery_config, "markBuildAsUnstableIfNoArchivesFound"
+        ).text = str(gallery_def.get("unstable-if-no-artifacts", False))
+        if gallery_type == "archived-images-gallery":
+            XML.SubElement(gallery_config, "includes").text = str(
+                gallery_def.get("includes", "")
+            )
+        if gallery_type == "in-folder-comparative-gallery":
             include_comparative_elements(gallery_config, gallery_def)
-        if gallery_type == 'multiple-folder-comparative-gallery':
+        if gallery_type == "multiple-folder-comparative-gallery":
             include_comparative_elements(gallery_config, gallery_def)
 
 
@@ -6696,39 +6764,49 @@ def naginator(registry, xml_parent, data):
         :language: yaml
     """
     naginator = XML.SubElement(
-        xml_parent,
-        'com.chikli.hudson.plugin.naginator.NaginatorPublisher')
-    XML.SubElement(naginator, 'regexpForRerun').text = str(
-        data.get('regular-expression', ''))
-    XML.SubElement(naginator, 'checkRegexp').text = str(
-        'regular-expression' in data).lower()
-    XML.SubElement(naginator, 'rerunIfUnstable').text = str(
-        data.get('rerun-unstable-builds', False)).lower()
-    XML.SubElement(naginator, 'rerunMatrixPart').text = str(
-        data.get('rerun-matrix-part', False)).lower()
-    progressive_delay = ('progressive-delay-increment' in data or
-                         'progressive-delay-maximum' in data)
-    if 'fixed-delay' in data and progressive_delay:
-        raise JenkinsJobsException("You cannot specify both fixed "
-                                   "and progressive delays")
+        xml_parent, "com.chikli.hudson.plugin.naginator.NaginatorPublisher"
+    )
+    XML.SubElement(naginator, "regexpForRerun").text = str(
+        data.get("regular-expression", "")
+    )
+    XML.SubElement(naginator, "checkRegexp").text = str(
+        "regular-expression" in data
+    ).lower()
+    XML.SubElement(naginator, "rerunIfUnstable").text = str(
+        data.get("rerun-unstable-builds", False)
+    ).lower()
+    XML.SubElement(naginator, "rerunMatrixPart").text = str(
+        data.get("rerun-matrix-part", False)
+    ).lower()
+    progressive_delay = (
+        "progressive-delay-increment" in data or "progressive-delay-maximum" in data
+    )
+    if "fixed-delay" in data and progressive_delay:
+        raise JenkinsJobsException(
+            "You cannot specify both fixed " "and progressive delays"
+        )
     if not progressive_delay:
         delay = XML.SubElement(
             naginator,
-            'delay',
-            {'class': 'com.chikli.hudson.plugin.naginator.FixedDelay'})
-        XML.SubElement(delay, 'delay').text = str(
-            data.get('fixed-delay', '0'))
+            "delay",
+            {"class": "com.chikli.hudson.plugin.naginator.FixedDelay"},
+        )
+        XML.SubElement(delay, "delay").text = str(data.get("fixed-delay", "0"))
     else:
         delay = XML.SubElement(
             naginator,
-            'delay',
-            {'class': 'com.chikli.hudson.plugin.naginator.ProgressiveDelay'})
-        XML.SubElement(delay, 'increment').text = str(
-            data.get('progressive-delay-increment', '0'))
-        XML.SubElement(delay, 'max').text = str(
-            data.get('progressive-delay-maximum', '0'))
-    XML.SubElement(naginator, 'maxSchedule').text = str(
-        data.get('max-failed-builds', '0'))
+            "delay",
+            {"class": "com.chikli.hudson.plugin.naginator.ProgressiveDelay"},
+        )
+        XML.SubElement(delay, "increment").text = str(
+            data.get("progressive-delay-increment", "0")
+        )
+        XML.SubElement(delay, "max").text = str(
+            data.get("progressive-delay-maximum", "0")
+        )
+    XML.SubElement(naginator, "maxSchedule").text = str(
+        data.get("max-failed-builds", "0")
+    )
 
 
 def disable_failed_job(registry, xml_parent, data):
@@ -6755,25 +6833,24 @@ def disable_failed_job(registry, xml_parent, data):
        :language: yaml
     """
 
-    xml_element = XML.SubElement(xml_parent, 'disableFailedJob.'
-                                 'disableFailedJob.DisableFailedJob',
-                                 {'plugin': 'disable-failed-job'})
+    xml_element = XML.SubElement(
+        xml_parent,
+        "disableFailedJob." "disableFailedJob.DisableFailedJob",
+        {"plugin": "disable-failed-job"},
+    )
 
-    valid_conditions = ['Only Failure',
-                        'Failure and Unstable',
-                        'Only Unstable']
-    mapping = [('when-to-disable', 'whenDisable', None, valid_conditions)]
-    helpers.convert_mapping_to_xml(
-        xml_element, data, mapping, fail_required=True)
+    valid_conditions = ["Only Failure", "Failure and Unstable", "Only Unstable"]
+    mapping = [("when-to-disable", "whenDisable", None, valid_conditions)]
+    helpers.convert_mapping_to_xml(xml_element, data, mapping, fail_required=True)
 
-    if 'no-of-failures' in data:
+    if "no-of-failures" in data:
         mapping = [
-            ('no-of-failures', 'failureTimes', None),
-            ('', 'optionalBrockChecked', True)]
-        helpers.convert_mapping_to_xml(xml_element,
-           data, mapping, fail_required=True)
+            ("no-of-failures", "failureTimes", None),
+            ("", "optionalBrockChecked", True),
+        ]
+        helpers.convert_mapping_to_xml(xml_element, data, mapping, fail_required=True)
     else:
-        XML.SubElement(xml_element, 'optionalBrockChecked').text = 'false'
+        XML.SubElement(xml_element, "optionalBrockChecked").text = "false"
 
 
 def google_cloud_storage(registry, xml_parent, data):
@@ -6845,94 +6922,117 @@ def google_cloud_storage(registry, xml_parent, data):
     def expiring_elements(properties, upload_element, types):
         # Handle expiring elements upload action
 
-        xml_element = XML.SubElement(upload_element, 'com.google.'
-                                     'jenkins.plugins.storage.'
-                                     'ExpiringBucketLifecycleManager')
+        xml_element = XML.SubElement(
+            upload_element,
+            "com.google." "jenkins.plugins.storage." "ExpiringBucketLifecycleManager",
+        )
         mapping = [
-            ('bucket-name', 'bucketNameWithVars', None),
-            ('', 'sharedPublicly', False),
-            ('', 'forFailedJobs', False),
-            ('days-to-retain', 'bucketObjectTTL', None)]
+            ("bucket-name", "bucketNameWithVars", None),
+            ("", "sharedPublicly", False),
+            ("", "forFailedJobs", False),
+            ("days-to-retain", "bucketObjectTTL", None),
+        ]
         helpers.convert_mapping_to_xml(
-            xml_element, properties, mapping, fail_required=True)
+            xml_element, properties, mapping, fail_required=True
+        )
 
-        if types.count('expiring-elements') > 1:
-            XML.SubElement(xml_element, 'module',
-                           {'reference': '../../com.google.jenkins.plugins.'
-                            'storage.ExpiringBucketLifecycleManager/module'})
+        if types.count("expiring-elements") > 1:
+            XML.SubElement(
+                xml_element,
+                "module",
+                {
+                    "reference": "../../com.google.jenkins.plugins."
+                    "storage.ExpiringBucketLifecycleManager/module"
+                },
+            )
         else:
-            XML.SubElement(xml_element, 'module')
+            XML.SubElement(xml_element, "module")
 
     def build_log(properties, upload_element, types):
         # Handle build log upload action
 
-        xml_element = XML.SubElement(upload_element, 'com.google.jenkins.'
-                                     'plugins.storage.StdoutUpload')
+        xml_element = XML.SubElement(
+            upload_element, "com.google.jenkins." "plugins.storage.StdoutUpload"
+        )
         mapping = [
-            ('storage-location', 'bucketNameWithVars', None),
-            ('share-publicly', 'sharedPublicly', False),
-            ('upload-for-failed-jobs', 'forFailedJobs', False),
-            ('show-inline', 'showInline', True),
-            ('strip-prefix', 'pathPrefix', ''),
-            ('log-name', 'logName', None)]
+            ("storage-location", "bucketNameWithVars", None),
+            ("share-publicly", "sharedPublicly", False),
+            ("upload-for-failed-jobs", "forFailedJobs", False),
+            ("show-inline", "showInline", True),
+            ("strip-prefix", "pathPrefix", ""),
+            ("log-name", "logName", None),
+        ]
         helpers.convert_mapping_to_xml(
-            xml_element, properties, mapping, fail_required=True)
+            xml_element, properties, mapping, fail_required=True
+        )
 
-        if types.count('build-log') > 1:
-            XML.SubElement(xml_element, 'module',
-                           {'reference': '../../com.google.jenkins.plugins.'
-                            'storage.StdoutUpload/module'})
+        if types.count("build-log") > 1:
+            XML.SubElement(
+                xml_element,
+                "module",
+                {
+                    "reference": "../../com.google.jenkins.plugins."
+                    "storage.StdoutUpload/module"
+                },
+            )
         else:
-            XML.SubElement(xml_element, 'module')
+            XML.SubElement(xml_element, "module")
 
     def classic(properties, upload_element, types):
         # Handle classic upload action
 
-        xml_element = XML.SubElement(upload_element, 'com.google.jenkins.'
-                                     'plugins.storage.ClassicUpload')
+        xml_element = XML.SubElement(
+            upload_element, "com.google.jenkins." "plugins.storage.ClassicUpload"
+        )
         mapping = [
-            ('storage-location', 'bucketNameWithVars', None),
-            ('share-publicly', 'sharedPublicly', False),
-            ('upload-for-failed-jobs', 'forFailedJobs', False),
-            ('show-inline', 'showInline', False),
-            ('strip-prefix', 'pathPrefix', ''),
-            ('file-pattern', 'sourceGlobWithVars', None)]
+            ("storage-location", "bucketNameWithVars", None),
+            ("share-publicly", "sharedPublicly", False),
+            ("upload-for-failed-jobs", "forFailedJobs", False),
+            ("show-inline", "showInline", False),
+            ("strip-prefix", "pathPrefix", ""),
+            ("file-pattern", "sourceGlobWithVars", None),
+        ]
         helpers.convert_mapping_to_xml(
-            xml_element, properties, mapping, fail_required=True)
+            xml_element, properties, mapping, fail_required=True
+        )
 
-        if types.count('classic') > 1:
-            XML.SubElement(xml_element, 'module',
-                           {'reference': '../../com.google.jenkins.plugins.'
-                            'storage.ClassicUpload/module'})
+        if types.count("classic") > 1:
+            XML.SubElement(
+                xml_element,
+                "module",
+                {
+                    "reference": "../../com.google.jenkins.plugins."
+                    "storage.ClassicUpload/module"
+                },
+            )
         else:
-            XML.SubElement(xml_element, 'module')
+            XML.SubElement(xml_element, "module")
 
-    uploader = XML.SubElement(xml_parent,
-                              'com.google.jenkins.plugins.storage.'
-                              'GoogleCloudStorageUploader',
-                              {'plugin': 'google-storage-plugin'})
+    uploader = XML.SubElement(
+        xml_parent,
+        "com.google.jenkins.plugins.storage." "GoogleCloudStorageUploader",
+        {"plugin": "google-storage-plugin"},
+    )
 
-    mapping = [('credentials-id', 'credentialsId', None)]
+    mapping = [("credentials-id", "credentialsId", None)]
     helpers.convert_mapping_to_xml(uploader, data, mapping, fail_required=True)
 
-    valid_upload_types = ['expiring-elements',
-                          'build-log',
-                          'classic']
+    valid_upload_types = ["expiring-elements", "build-log", "classic"]
     types = []
 
-    upload_element = XML.SubElement(uploader, 'uploads')
+    upload_element = XML.SubElement(uploader, "uploads")
 
-    uploads = data['uploads']
+    uploads = data["uploads"]
     for upload in uploads:
         for upload_type, properties in upload.items():
             types.append(upload_type)
 
             if upload_type not in valid_upload_types:
-                raise InvalidAttributeError('uploads', upload_type,
-                                            valid_upload_types)
+                raise InvalidAttributeError("uploads", upload_type, valid_upload_types)
             else:
-                locals()[upload_type.replace('-', '_')](
-                    properties, upload_element, types)
+                locals()[upload_type.replace("-", "_")](
+                    properties, upload_element, types
+                )
 
 
 def flowdock(registry, xml_parent, data):
@@ -6971,36 +7071,38 @@ def flowdock(registry, xml_parent, data):
     .. literalinclude:: /../../tests/publishers/fixtures/flowdock002.yaml
        :language: yaml
     """
+
     def gen_notification_entry(data_item, default, text):
-        e = XML.SubElement(nm, 'entry')
+        e = XML.SubElement(nm, "entry")
         mapping = [
-            ('', 'com.flowdock.jenkins.BuildResult', text),
-            (data_item, 'boolean', default)]
+            ("", "com.flowdock.jenkins.BuildResult", text),
+            (data_item, "boolean", default),
+        ]
         helpers.convert_mapping_to_xml(e, data, mapping, fail_required=True)
 
-    parent = XML.SubElement(xml_parent,
-                            'com.flowdock.jenkins.FlowdockNotifier')
+    parent = XML.SubElement(xml_parent, "com.flowdock.jenkins.FlowdockNotifier")
     mapping = [
-        ('token', 'flowToken', None),
-        ('tags', 'notificationTags', ''),
-        ('chat-notification', 'chatNotification', True),
-        ('notify-success', 'notifySuccess', True),
-        ('notify-failure', 'notifyFailure', True),
-        ('notify-fixed', 'notifyFixed', True),
-        ('notify-unstable', 'notifyUnstable', False),
-        ('notify-aborted', 'notifyAborted', False),
-        ('notify-notbuilt', 'notifyNotBuilt', False)]
+        ("token", "flowToken", None),
+        ("tags", "notificationTags", ""),
+        ("chat-notification", "chatNotification", True),
+        ("notify-success", "notifySuccess", True),
+        ("notify-failure", "notifyFailure", True),
+        ("notify-fixed", "notifyFixed", True),
+        ("notify-unstable", "notifyUnstable", False),
+        ("notify-aborted", "notifyAborted", False),
+        ("notify-notbuilt", "notifyNotBuilt", False),
+    ]
     helpers.convert_mapping_to_xml(parent, data, mapping, fail_required=True)
 
-    nm = XML.SubElement(parent, 'notifyMap')
+    nm = XML.SubElement(parent, "notifyMap")
 
     # notification entries
-    gen_notification_entry('notify-success', True, 'SUCCESS')
-    gen_notification_entry('notify-failure', True, 'FAILURE')
-    gen_notification_entry('notify-fixed', True, 'FIXED')
-    gen_notification_entry('notify-unstable', False, 'UNSTABLE')
-    gen_notification_entry('notify-aborted', False, 'ABORTED')
-    gen_notification_entry('notify-notbuilt', False, 'NOT_BUILT')
+    gen_notification_entry("notify-success", True, "SUCCESS")
+    gen_notification_entry("notify-failure", True, "FAILURE")
+    gen_notification_entry("notify-fixed", True, "FIXED")
+    gen_notification_entry("notify-unstable", False, "UNSTABLE")
+    gen_notification_entry("notify-aborted", False, "ABORTED")
+    gen_notification_entry("notify-notbuilt", False, "NOT_BUILT")
 
 
 def clamav(registry, xml_parent, data):
@@ -7023,15 +7125,10 @@ def clamav(registry, xml_parent, data):
     .. literalinclude:: /../../tests/publishers/fixtures/clamav-minimal.yaml
        :language: yaml
     """
-    clamav = XML.SubElement(
-        xml_parent,
-        'org.jenkinsci.plugins.clamav.ClamAvRecorder')
-    clamav.set('plugin', 'clamav')
+    clamav = XML.SubElement(xml_parent, "org.jenkinsci.plugins.clamav.ClamAvRecorder")
+    clamav.set("plugin", "clamav")
 
-    mappings = [
-        ('includes', 'includes', ''),
-        ('excludes', 'excludes', ''),
-    ]
+    mappings = [("includes", "includes", ""), ("excludes", "excludes", "")]
     helpers.convert_mapping_to_xml(clamav, data, mappings, fail_required=True)
 
 
@@ -7065,21 +7162,21 @@ def testselector(registry, xml_parent, data):
        :language: yaml
     """
 
-    testselector = XML.SubElement(xml_parent, 'il.ac.technion.jenkins.plugins'
-                                              'TestExecuter')
+    testselector = XML.SubElement(
+        xml_parent, "il.ac.technion.jenkins.plugins" "TestExecuter"
+    )
 
     mapping = [
-        ('name', 'name', None),
-        ('description', 'description', ''),
-        ('properties-file', 'propertiesFilePath', None),
-        ('enable-field', 'enableField', ''),
-        ('groupby', 'groupBy', ''),
-        ('field-separator', 'fieldSeparator', ''),
-        ('show-fields', 'showFields', ''),
-        ('multiplicity-field', 'multiplicityField', ''),
+        ("name", "name", None),
+        ("description", "description", ""),
+        ("properties-file", "propertiesFilePath", None),
+        ("enable-field", "enableField", ""),
+        ("groupby", "groupBy", ""),
+        ("field-separator", "fieldSeparator", ""),
+        ("show-fields", "showFields", ""),
+        ("multiplicity-field", "multiplicityField", ""),
     ]
-    helpers.convert_mapping_to_xml(
-        testselector, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(testselector, data, mapping, fail_required=True)
 
 
 def cloudformation(registry, xml_parent, data):
@@ -7145,16 +7242,19 @@ def cloudformation(registry, xml_parent, data):
     """
     region_dict = helpers.cloudformation_region_dict()
     stacks = helpers.cloudformation_init(
-        xml_parent, data, 'CloudFormationPostBuildNotifier')
-    for stack in data.get('create-stacks', []):
-        helpers.cloudformation_stack(xml_parent, stack, 'PostBuildStackBean',
-                                     stacks, region_dict)
+        xml_parent, data, "CloudFormationPostBuildNotifier"
+    )
+    for stack in data.get("create-stacks", []):
+        helpers.cloudformation_stack(
+            xml_parent, stack, "PostBuildStackBean", stacks, region_dict
+        )
     delete_stacks = helpers.cloudformation_init(
-        xml_parent, data, 'CloudFormationNotifier')
-    for delete_stack in data.get('delete-stacks', []):
-        helpers.cloudformation_stack(xml_parent, delete_stack,
-                                     'SimpleStackBean', delete_stacks,
-                                     region_dict)
+        xml_parent, data, "CloudFormationNotifier"
+    )
+    for delete_stack in data.get("delete-stacks", []):
+        helpers.cloudformation_stack(
+            xml_parent, delete_stack, "SimpleStackBean", delete_stacks, region_dict
+        )
 
 
 def whitesource(registry, xml_parent, data):
@@ -7188,27 +7288,25 @@ def whitesource(registry, xml_parent, data):
        /../../tests/publishers/fixtures/whitesource-minimal.yaml
        :language: yaml
     """
-    whitesource = XML.SubElement(xml_parent, 'org.whitesource.jenkins.'
-                                             'WhiteSourcePublisher')
-    whitesource.set('plugin', 'whitesource')
-    policies = ['global', 'enable', 'disable']
+    whitesource = XML.SubElement(
+        xml_parent, "org.whitesource.jenkins." "WhiteSourcePublisher"
+    )
+    whitesource.set("plugin", "whitesource")
+    policies = ["global", "enable", "disable"]
 
     mappings = [
-        ('policies', 'jobCheckPolicies', 'global', policies),
-        ('override-token', 'jobApiToken', ''),
-        ('product-token', 'product', ''),
-        ('version', 'productVersion', ''),
-        ('project-token', 'projectToken', ''),
-        ('requester-email', 'requesterEmail', ''),
+        ("policies", "jobCheckPolicies", "global", policies),
+        ("override-token", "jobApiToken", ""),
+        ("product-token", "product", ""),
+        ("version", "productVersion", ""),
+        ("project-token", "projectToken", ""),
+        ("requester-email", "requesterEmail", ""),
     ]
-    helpers.convert_mapping_to_xml(
-        whitesource, data, mappings, fail_required=True)
+    helpers.convert_mapping_to_xml(whitesource, data, mappings, fail_required=True)
 
-    XML.SubElement(whitesource, 'libIncludes').text = ' '.join(
-        data.get('includes', []))
-    XML.SubElement(whitesource, 'libExcludes').text = ' '.join(
-        data.get('excludes', []))
-    XML.SubElement(whitesource, 'ignorePomModules').text = 'false'
+    XML.SubElement(whitesource, "libIncludes").text = " ".join(data.get("includes", []))
+    XML.SubElement(whitesource, "libExcludes").text = " ".join(data.get("excludes", []))
+    XML.SubElement(whitesource, "ignorePomModules").text = "false"
 
 
 def hipchat(registry, xml_parent, data):
@@ -7248,26 +7346,22 @@ def hipchat(registry, xml_parent, data):
     .. literalinclude::  /../../tests/publishers/fixtures/hipchat001.yaml
        :language: yaml
     """
-    hipchat = XML.SubElement(
-        xml_parent,
-        'jenkins.plugins.hipchat.HipChatNotifier')
-    XML.SubElement(hipchat, 'token').text = str(
-        data.get('token', ''))
+    hipchat = XML.SubElement(xml_parent, "jenkins.plugins.hipchat.HipChatNotifier")
+    XML.SubElement(hipchat, "token").text = str(data.get("token", ""))
 
-    if 'rooms' in data:
-        XML.SubElement(hipchat, 'room').text = str(
-            ",".join(data['rooms']))
+    if "rooms" in data:
+        XML.SubElement(hipchat, "room").text = str(",".join(data["rooms"]))
 
     mapping = [
-        ('notify-start', 'startNotification', False),
-        ('notify-success', 'notifySuccess', False),
-        ('notify-aborted', 'notifyAborted', False),
-        ('notify-not-built', 'notifyNotBuilt', False),
-        ('notify-unstable', 'notifyUnstable', False),
-        ('notify-failure', 'notifyFailure', False),
-        ('notify-back-to-normal', 'notifyBackToNormal', False),
-        ('start-message', 'startJobMessage', None),
-        ('complete-message', 'completeJobMessage', None),
+        ("notify-start", "startNotification", False),
+        ("notify-success", "notifySuccess", False),
+        ("notify-aborted", "notifyAborted", False),
+        ("notify-not-built", "notifyNotBuilt", False),
+        ("notify-unstable", "notifyUnstable", False),
+        ("notify-failure", "notifyFailure", False),
+        ("notify-back-to-normal", "notifyBackToNormal", False),
+        ("start-message", "startJobMessage", None),
+        ("complete-message", "completeJobMessage", None),
     ]
     helpers.convert_mapping_to_xml(hipchat, data, mapping, fail_required=False)
 
@@ -7356,51 +7450,50 @@ def slack(registry, xml_parent, data):
         :language: yaml
 
     """
-    def _add_xml(elem, name, value=''):
+
+    def _add_xml(elem, name, value=""):
         if isinstance(value, bool):
             value = str(value).lower()
         XML.SubElement(elem, name).text = value
 
     logger = logging.getLogger(__name__)
 
-    plugin_info = registry.get_plugin_info('Slack Notification Plugin')
+    plugin_info = registry.get_plugin_info("Slack Notification Plugin")
     # Note: Assume latest version of plugin is preferred config format
     plugin_ver = pkg_resources.parse_version(
-        plugin_info.get('version', str(sys.maxsize)))
+        plugin_info.get("version", str(sys.maxsize))
+    )
 
     mapping = (
-        ('team-domain', 'teamDomain', ''),
-        ('auth-token', 'authToken', ''),
-        ('auth-token-id', 'authTokenCredentialId', ''),
-        ('build-server-url', 'buildServerUrl', '/'),
-        ('room', 'room', ''),
+        ("team-domain", "teamDomain", ""),
+        ("auth-token", "authToken", ""),
+        ("auth-token-id", "authTokenCredentialId", ""),
+        ("build-server-url", "buildServerUrl", "/"),
+        ("room", "room", ""),
     )
     mapping_20 = (
-        ('notify-start', 'startNotification', False),
-        ('notify-success', 'notifySuccess', False),
-        ('notify-aborted', 'notifyAborted', False),
-        ('notify-not-built', 'notifyNotBuilt', False),
-        ('notify-unstable', 'notifyUnstable', False),
-        ('notify-failure', 'notifyFailure', False),
-        ('notify-back-to-normal', 'notifyBackToNormal', False),
-        ('notify-regression', 'notifyRegression', False),
-        ('notify-repeated-failure', 'notifyRepeatedFailure', False),
-        ('include-test-summary', 'includeTestSummary', False),
-        ('include-failed-tests', 'includeFailedTests', False),
-        ('commit-info-choice', 'commitInfoChoice', 'NONE'),
-        ('include-custom-message', 'includeCustomMessage', False),
-        ('custom-message', 'customMessage', ''),
-        ('auth-token-credential-id', 'authTokenCredentialId', ''),
-        ('bot-user', 'botUser', False),
-        ('base-url', 'baseUrl', ''),
+        ("notify-start", "startNotification", False),
+        ("notify-success", "notifySuccess", False),
+        ("notify-aborted", "notifyAborted", False),
+        ("notify-not-built", "notifyNotBuilt", False),
+        ("notify-unstable", "notifyUnstable", False),
+        ("notify-failure", "notifyFailure", False),
+        ("notify-back-to-normal", "notifyBackToNormal", False),
+        ("notify-regression", "notifyRegression", False),
+        ("notify-repeated-failure", "notifyRepeatedFailure", False),
+        ("include-test-summary", "includeTestSummary", False),
+        ("include-failed-tests", "includeFailedTests", False),
+        ("commit-info-choice", "commitInfoChoice", "NONE"),
+        ("include-custom-message", "includeCustomMessage", False),
+        ("custom-message", "customMessage", ""),
+        ("auth-token-credential-id", "authTokenCredentialId", ""),
+        ("bot-user", "botUser", False),
+        ("base-url", "baseUrl", ""),
     )
 
-    commit_info_choices = ['NONE', 'AUTHORS', 'AUTHORS_AND_TITLES']
+    commit_info_choices = ["NONE", "AUTHORS", "AUTHORS_AND_TITLES"]
 
-    slack = XML.SubElement(
-        xml_parent,
-        'jenkins.plugins.slack.SlackNotifier',
-    )
+    slack = XML.SubElement(xml_parent, "jenkins.plugins.slack.SlackNotifier")
 
     if plugin_ver >= pkg_resources.parse_version("2.0"):
         mapping = mapping + mapping_20
@@ -7415,28 +7508,24 @@ def slack(registry, xml_parent, data):
         for yaml_name, _, _ in mapping_20:
             if yaml_name in data:
                 logger.warning(
-                    "'%s' is invalid with plugin version < 2.0, ignored",
-                    yaml_name,
+                    "'%s' is invalid with plugin version < 2.0, ignored", yaml_name
                 )
 
     for yaml_name, xml_name, default_value in mapping:
         value = data.get(yaml_name, default_value)
 
         # 'commit-info-choice' is enumerated type
-        if (
-                yaml_name == 'commit-info-choice' and
-                value not in commit_info_choices):
-            raise InvalidAttributeError(
-                yaml_name, value, commit_info_choices,
-            )
+        if yaml_name == "commit-info-choice" and value not in commit_info_choices:
+            raise InvalidAttributeError(yaml_name, value, commit_info_choices)
 
         # Ensure that custom-message is set when include-custom-message is set
         # to true.
         if (
-                yaml_name == 'include-custom-message' and
-                data is False and
-                not data.get('custom-message', '')):
-            raise MissingAttributeError('custom-message')
+            yaml_name == "include-custom-message"
+            and data is False
+            and not data.get("custom-message", "")
+        ):
+            raise MissingAttributeError("custom-message")
 
         _add_xml(slack, xml_name, value)
 
@@ -7464,15 +7553,19 @@ def phabricator(registry, xml_parent, data):
        :language: yaml
     """
 
-    root = XML.SubElement(xml_parent,
-                          'com.uber.jenkins.phabricator.PhabricatorNotifier')
+    root = XML.SubElement(
+        xml_parent, "com.uber.jenkins.phabricator.PhabricatorNotifier"
+    )
     mapping = [
-        ('comment-on-success', 'commentOnSuccess', None),
-        ('uberalls-enabled', 'uberallsEnabled', None),
-        ('comment-file', 'commentFile', None),
-        ('comment-size', 'commentSize', None),
-        ('comment-with-console-link-on-failure',
-            'commentWithConsoleLinkOnFailure', None),
+        ("comment-on-success", "commentOnSuccess", None),
+        ("uberalls-enabled", "uberallsEnabled", None),
+        ("comment-file", "commentFile", None),
+        ("comment-size", "commentSize", None),
+        (
+            "comment-with-console-link-on-failure",
+            "commentWithConsoleLinkOnFailure",
+            None,
+        ),
     ]
     helpers.convert_mapping_to_xml(root, data, mapping, fail_required=False)
 
@@ -7517,8 +7610,9 @@ def jms_messaging(registry, xml_parent, data):
             ../../tests/publishers/fixtures/jms-messaging-minimal.yaml
            :language: yaml
     """
-    helpers.jms_messaging_common(xml_parent, 'com.redhat.jenkins.plugins.ci.'
-                                             'CIMessageNotifier', data)
+    helpers.jms_messaging_common(
+        xml_parent, "com.redhat.jenkins.plugins.ci." "CIMessageNotifier", data
+    )
 
 
 def openshift_build_canceller(registry, xml_parent, data):
@@ -7558,16 +7652,16 @@ def openshift_build_canceller(registry, xml_parent, data):
            :language: yaml
     """
 
-    osb = XML.SubElement(xml_parent,
-                         'com.openshift.jenkins.plugins.pipeline.'
-                         'OpenShiftBuildCanceller')
+    osb = XML.SubElement(
+        xml_parent, "com.openshift.jenkins.plugins.pipeline." "OpenShiftBuildCanceller"
+    )
     mapping = [
         # option, xml name, default value
-        ("api-url", 'apiURL', 'https://openshift.default.svc.cluster.local'),
-        ("bld-cfg", 'bldCfg', 'frontend'),
-        ("namespace", 'namespace', 'test'),
-        ("auth-token", 'authToken', ''),
-        ("verbose", 'verbose', False),
+        ("api-url", "apiURL", "https://openshift.default.svc.cluster.local"),
+        ("bld-cfg", "bldCfg", "frontend"),
+        ("namespace", "namespace", "test"),
+        ("auth-token", "authToken", ""),
+        ("verbose", "verbose", False),
     ]
     helpers.convert_mapping_to_xml(osb, data, mapping, fail_required=True)
 
@@ -7606,16 +7700,16 @@ def openshift_deploy_canceller(registry, xml_parent, data):
            :language: yaml
     """
 
-    osb = XML.SubElement(xml_parent,
-                         'com.openshift.jenkins.plugins.pipeline.'
-                         'OpenShiftDeployCanceller')
+    osb = XML.SubElement(
+        xml_parent, "com.openshift.jenkins.plugins.pipeline." "OpenShiftDeployCanceller"
+    )
     mapping = [
         # option, xml name, default value
-        ("api-url", 'apiURL', 'https://openshift.default.svc.cluster.local'),
-        ("dep-cfg", 'depCfg', 'frontend'),
-        ("namespace", 'namespace', 'test'),
-        ("auth-token", 'authToken', ''),
-        ("verbose", 'verbose', False),
+        ("api-url", "apiURL", "https://openshift.default.svc.cluster.local"),
+        ("dep-cfg", "depCfg", "frontend"),
+        ("namespace", "namespace", "test"),
+        ("auth-token", "authToken", ""),
+        ("verbose", "verbose", False),
     ]
     helpers.convert_mapping_to_xml(osb, data, mapping, fail_required=True)
 
@@ -7652,15 +7746,16 @@ def github_pull_request_merge(registry, xml_parent, data):
            :language: yaml
     """
 
-    osb = XML.SubElement(xml_parent,
-                         'org.jenkinsci.plugins.ghprb.GhprbPullRequestMerge')
+    osb = XML.SubElement(
+        xml_parent, "org.jenkinsci.plugins.ghprb.GhprbPullRequestMerge"
+    )
     mapping = [
         # option, xml name, default value
-        ("only-admins-merge", 'onlyAdminsMerge', 'false'),
-        ("disallow-own-code", 'disallowOwnCode', 'false'),
-        ("merge-comment", 'mergeComment', ''),
-        ("fail-on-non-merge", 'failOnNonMerge', 'false'),
-        ("delete-on-merge", 'deleteOnMerge', 'false'),
+        ("only-admins-merge", "onlyAdminsMerge", "false"),
+        ("disallow-own-code", "disallowOwnCode", "false"),
+        ("merge-comment", "mergeComment", ""),
+        ("fail-on-non-merge", "failOnNonMerge", "false"),
+        ("delete-on-merge", "deleteOnMerge", "false"),
     ]
 
     helpers.convert_mapping_to_xml(osb, data, mapping, fail_required=True)
@@ -7679,8 +7774,9 @@ def chuck_norris(registry, xml_parent, data):
            :language: yaml
     """
 
-    chuck = XML.SubElement(xml_parent,
-                           'hudson.plugins.chucknorris.CordellWalkerRecorder')
+    chuck = XML.SubElement(
+        xml_parent, "hudson.plugins.chucknorris.CordellWalkerRecorder"
+    )
     return XML.SubElement(chuck, "factGenerator")
 
 
@@ -7697,9 +7793,8 @@ def publishers_from(registry, xml_parent, data):
     .. literalinclude:: ../../tests/publishers/fixtures/publishers-from.yaml
        :language: yaml
     """
-    pbs = XML.SubElement(xml_parent,
-                         'hudson.plugins.templateproject.ProxyPublisher')
-    mapping = [('project-name', 'projectName', None)]
+    pbs = XML.SubElement(xml_parent, "hudson.plugins.templateproject.ProxyPublisher")
+    mapping = [("project-name", "projectName", None)]
     helpers.convert_mapping_to_xml(pbs, data, mapping, fail_required=True)
 
 
@@ -7843,71 +7938,70 @@ def tasks(registry, xml_parent, data):
        :language: yaml
     """
 
-    root = XML.SubElement(xml_parent,
-                          'hudson.plugins.tasks.TasksPublisher')
-    root.set('plugin', 'tasks')
+    root = XML.SubElement(xml_parent, "hudson.plugins.tasks.TasksPublisher")
+    root.set("plugin", "tasks")
 
-    if 'files-to-scan' in data:
-        XML.SubElement(root, 'pattern').text = str(
-            ",".join(data['files-to-scan']))
+    if "files-to-scan" in data:
+        XML.SubElement(root, "pattern").text = str(",".join(data["files-to-scan"]))
 
-    if 'files-to-exclude' in data:
-        XML.SubElement(root, 'excludePattern').text = str(
-            ",".join(data['files-to-exclude']))
+    if "files-to-exclude" in data:
+        XML.SubElement(root, "excludePattern").text = str(
+            ",".join(data["files-to-exclude"])
+        )
 
-    for prio in ['high', 'normal', 'low']:
-        if 'tasks-tags-' + prio in data:
-            XML.SubElement(root, prio).text = str(
-                ",".join(data['tasks-tags-' + prio]))
+    for prio in ["high", "normal", "low"]:
+        if "tasks-tags-" + prio in data:
+            XML.SubElement(root, prio).text = str(",".join(data["tasks-tags-" + prio]))
 
     # on the UI, we can see compute-new-warnings but we need the opposite (XML)
-    if 'compute-new-warnings' in data and data['compute-new-warnings']:
-        XML.SubElement(root, 'dontComputeNew').text = "false"
+    if "compute-new-warnings" in data and data["compute-new-warnings"]:
+        XML.SubElement(root, "dontComputeNew").text = "false"
     else:
-        XML.SubElement(root, 'dontComputeNew').text = "true"
+        XML.SubElement(root, "dontComputeNew").text = "true"
 
     # Two parameters we cannot modify from the UI
-    XML.SubElement(root, 'pluginName').text = "[TASKS] "
-    XML.SubElement(root, 'doNotResolveRelativePaths').text = "false"
+    XML.SubElement(root, "pluginName").text = "[TASKS] "
+    XML.SubElement(root, "doNotResolveRelativePaths").text = "false"
 
     mappings = [
-        ('ignore-case', 'ignoreCase', False),
-        ('regular-expression', 'asRegexp', False),
-        ('run-always', 'canRunOnFailed', False),
-        ('detect-module', 'shouldDetectModules', False),
-        ('health-thresholds-100', 'healthy', ''),
-        ('health-thresholds-0', 'unHealthy', ''),
-        ('health-priorities', 'thresholdLimit', 'low'),
-        ('use-delta', 'useDeltaValues', False),
-        ('use-prev-build-as-ref', 'usePreviousBuildAsReference', False),
-        ('only-use-stable-as-ref', 'useStableBuildAsReference', False),
-        ('default-encoding', 'defaultEncoding', '')
+        ("ignore-case", "ignoreCase", False),
+        ("regular-expression", "asRegexp", False),
+        ("run-always", "canRunOnFailed", False),
+        ("detect-module", "shouldDetectModules", False),
+        ("health-thresholds-100", "healthy", ""),
+        ("health-thresholds-0", "unHealthy", ""),
+        ("health-priorities", "thresholdLimit", "low"),
+        ("use-delta", "useDeltaValues", False),
+        ("use-prev-build-as-ref", "usePreviousBuildAsReference", False),
+        ("only-use-stable-as-ref", "useStableBuildAsReference", False),
+        ("default-encoding", "defaultEncoding", ""),
     ]
     helpers.convert_mapping_to_xml(root, data, mappings, fail_required=True)
 
-    thrsh_xml = XML.SubElement(root, 'thresholds')
-    thrsh_xml.set('plugin', 'analysis-core')
-    thrsh_data = data.get('status-thresholds', {})
+    thrsh_xml = XML.SubElement(root, "thresholds")
+    thrsh_xml.set("plugin", "analysis-core")
+    thrsh_data = data.get("status-thresholds", {})
     thrsh_mappings = [
-        ('unstable-total-all', 'unstableTotalAll', ''),
-        ('unstable-total-high', 'unstableTotalHigh', ''),
-        ('unstable-total-normal', 'unstableTotalNormal', ''),
-        ('unstable-total-low', 'unstableTotalLow', ''),
-        ('unstable-new-all', 'unstableNewAll', ''),
-        ('unstable-new-high', 'unstableNewHigh', ''),
-        ('unstable-new-normal', 'unstableNewNormal', ''),
-        ('unstable-new-low', 'unstableNewLow', ''),
-        ('failed-total-all', 'failedTotalAll', ''),
-        ('failed-total-high', 'failedTotalHigh', ''),
-        ('failed-total-normal', 'failedTotalNormal', ''),
-        ('failed-total-low', 'failedTotalLow', ''),
-        ('failed-new-all', 'failedNewAll', ''),
-        ('failed-new-high', 'failedNewHigh', ''),
-        ('failed-new-normal', 'failedNewNormal', ''),
-        ('failed-new-low', 'failedNewLow', '')
+        ("unstable-total-all", "unstableTotalAll", ""),
+        ("unstable-total-high", "unstableTotalHigh", ""),
+        ("unstable-total-normal", "unstableTotalNormal", ""),
+        ("unstable-total-low", "unstableTotalLow", ""),
+        ("unstable-new-all", "unstableNewAll", ""),
+        ("unstable-new-high", "unstableNewHigh", ""),
+        ("unstable-new-normal", "unstableNewNormal", ""),
+        ("unstable-new-low", "unstableNewLow", ""),
+        ("failed-total-all", "failedTotalAll", ""),
+        ("failed-total-high", "failedTotalHigh", ""),
+        ("failed-total-normal", "failedTotalNormal", ""),
+        ("failed-total-low", "failedTotalLow", ""),
+        ("failed-new-all", "failedNewAll", ""),
+        ("failed-new-high", "failedNewHigh", ""),
+        ("failed-new-normal", "failedNewNormal", ""),
+        ("failed-new-low", "failedNewLow", ""),
     ]
     helpers.convert_mapping_to_xml(
-        thrsh_xml, thrsh_data, thrsh_mappings, fail_required=True)
+        thrsh_xml, thrsh_data, thrsh_mappings, fail_required=True
+    )
 
 
 def packer(registry, xml_parent, data):
@@ -7949,45 +8043,48 @@ def packer(registry, xml_parent, data):
         :language: yaml
     """
 
-    root = XML.SubElement(xml_parent,
-        'biz.neustar.jenkins.plugins.packer.PackerPublisher')
+    root = XML.SubElement(
+        xml_parent, "biz.neustar.jenkins.plugins.packer.PackerPublisher"
+    )
 
-    template_valid_types = ['global', 'file', 'text']
+    template_valid_types = ["global", "file", "text"]
     mapping = [
-        ('name', 'name', None),
-        ('json-template', 'jsonTemplate', ''),
-        ('json-template-text', 'jsonTemplateText', ''),
-        ('add-params', 'params', ''),
-        ('use-debug', 'useDebug', False),
-        ('change-dir', 'changeDir', ''),
-        ('template-mode', 'templateMode', 'global', template_valid_types),
+        ("name", "name", None),
+        ("json-template", "jsonTemplate", ""),
+        ("json-template-text", "jsonTemplateText", ""),
+        ("add-params", "params", ""),
+        ("use-debug", "useDebug", False),
+        ("change-dir", "changeDir", ""),
+        ("template-mode", "templateMode", "global", template_valid_types),
     ]
     helpers.convert_mapping_to_xml(root, data, mapping, fail_required=True)
 
     format_dict = {
-        'packer-file-entry':
-            'biz.neustar.jenkins.plugins.packer.PackerFileEntry'
+        "packer-file-entry": "biz.neustar.jenkins.plugins.packer.PackerFileEntry"
     }
-    if 'file-entries' in data:
-        file_entries_tag = XML.SubElement(root, 'fileEntries')
-        for file_entries in data['file-entries']:
+    if "file-entries" in data:
+        file_entries_tag = XML.SubElement(root, "fileEntries")
+        for file_entries in data["file-entries"]:
             for file, params in file_entries.items():
-                packer_file_entry_tag = XML.SubElement(file_entries_tag,
-                                       format_dict.get('packer-file-entry'))
-                XML.SubElement(packer_file_entry_tag,
-                       'varFileName').text = params.get('variable-name', '')
-                XML.SubElement(packer_file_entry_tag,
-                       'contents').text = params.get('contents', '')
+                packer_file_entry_tag = XML.SubElement(
+                    file_entries_tag, format_dict.get("packer-file-entry")
+                )
+                XML.SubElement(packer_file_entry_tag, "varFileName").text = params.get(
+                    "variable-name", ""
+                )
+                XML.SubElement(packer_file_entry_tag, "contents").text = params.get(
+                    "contents", ""
+                )
 
 
 class Publishers(jenkins_jobs.modules.base.Base):
     sequence = 70
 
-    component_type = 'publisher'
-    component_list_type = 'publishers'
+    component_type = "publisher"
+    component_list_type = "publishers"
 
     def gen_xml(self, xml_parent, data):
-        publishers = XML.SubElement(xml_parent, 'publishers')
+        publishers = XML.SubElement(xml_parent, "publishers")
 
-        for action in data.get('publishers', []):
-            self.registry.dispatch('publisher', publishers, action)
+        for action in data.get("publishers", []):
+            self.registry.dispatch("publisher", publishers, action)

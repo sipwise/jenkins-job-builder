@@ -69,43 +69,45 @@ class Pipeline(jenkins_jobs.modules.base.Base):
     sequence = 0
 
     def root_xml(self, data):
-        linktypes = ['Lightbox', 'New Window']
-        root = XML.Element('au.com.centrumsystems.hudson.'
-                           'plugin.buildpipeline.BuildPipelineView',
-                           {'plugin': 'build-pipeline-plugin'})
+        linktypes = ["Lightbox", "New Window"]
+        root = XML.Element(
+            "au.com.centrumsystems.hudson." "plugin.buildpipeline.BuildPipelineView",
+            {"plugin": "build-pipeline-plugin"},
+        )
 
         mapping_optional = [
-            ('description', 'description', None),
-            ('filter-executors', 'filterExecutors', False),
-            ('filter-queue', 'filterQueue', False),
+            ("description", "description", None),
+            ("filter-executors", "filterExecutors", False),
+            ("filter-queue", "filterQueue", False),
         ]
-        helpers.convert_mapping_to_xml(root, data,
-            mapping_optional, fail_required=False)
+        helpers.convert_mapping_to_xml(
+            root, data, mapping_optional, fail_required=False
+        )
 
-        XML.SubElement(root, 'properties',
-                       {'class': 'hudson.model.View$PropertyList'})
+        XML.SubElement(root, "properties", {"class": "hudson.model.View$PropertyList"})
 
-        GBurl = ('au.com.centrumsystems.hudson.plugin.buildpipeline.'
-                 'DownstreamProjectGridBuilder')
-        gridBuilder = XML.SubElement(root, 'gridBuilder', {'class': GBurl})
+        GBurl = (
+            "au.com.centrumsystems.hudson.plugin.buildpipeline."
+            "DownstreamProjectGridBuilder"
+        )
+        gridBuilder = XML.SubElement(root, "gridBuilder", {"class": GBurl})
 
-        jobname = data.get('first-job', '')
-        XML.SubElement(gridBuilder, 'firstJob').text = jobname
+        jobname = data.get("first-job", "")
+        XML.SubElement(gridBuilder, "firstJob").text = jobname
 
         mapping = [
-            ('name', 'name', None),
-            ('no-of-displayed-builds', 'noOfDisplayedBuilds', 1),
-            ('title', 'buildViewTitle', ''),
-            ('link-style', 'consoleOutputLinkStyle', 'Lightbox', linktypes),
-            ('css-Url', 'cssUrl', ''),
-            ('latest-job-only', 'triggerOnlyLatestJob', False),
-            ('manual-trigger', 'alwaysAllowManualTrigger', False),
-            ('show-parameters', 'showPipelineParameters', False),
-            ('parameters-in-headers',
-                'showPipelineParametersInHeaders', False),
-            ('start-with-parameters', 'startsWithParameters', False),
-            ('refresh-frequency', 'refreshFrequency', 3),
-            ('definition-header', 'showPipelineDefinitionHeader', False),
+            ("name", "name", None),
+            ("no-of-displayed-builds", "noOfDisplayedBuilds", 1),
+            ("title", "buildViewTitle", ""),
+            ("link-style", "consoleOutputLinkStyle", "Lightbox", linktypes),
+            ("css-Url", "cssUrl", ""),
+            ("latest-job-only", "triggerOnlyLatestJob", False),
+            ("manual-trigger", "alwaysAllowManualTrigger", False),
+            ("show-parameters", "showPipelineParameters", False),
+            ("parameters-in-headers", "showPipelineParametersInHeaders", False),
+            ("start-with-parameters", "startsWithParameters", False),
+            ("refresh-frequency", "refreshFrequency", 3),
+            ("definition-header", "showPipelineDefinitionHeader", False),
         ]
         helpers.convert_mapping_to_xml(root, data, mapping, fail_required=True)
 

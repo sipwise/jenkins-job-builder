@@ -20,18 +20,18 @@ from tests import base
 
 
 class TestCaseModuleViewAll(base.BaseScenariosTestCase):
-    fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
+    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
     scenarios = base.get_scenarios(fixtures_path)
     klass = view_all.All
 
 
 class TestCaseModuleViewList(base.BaseScenariosTestCase):
-    fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
+    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
     scenarios = base.get_scenarios(fixtures_path)
     klass = view_list.List
 
 
 class TestCaseModuleViewPipeline(base.BaseScenariosTestCase):
-    fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
+    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
     scenarios = base.get_scenarios(fixtures_path)
     klass = view_pipeline.Pipeline

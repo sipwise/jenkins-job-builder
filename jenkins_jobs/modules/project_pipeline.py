@@ -82,31 +82,38 @@ import jenkins_jobs.modules.base
 
 class Pipeline(jenkins_jobs.modules.base.Base):
     sequence = 0
-    error_msg = ("You cannot declare both 'dsl' and 'pipeline-scm' on a "
-                 "pipeline job")
+    error_msg = "You cannot declare both 'dsl' and 'pipeline-scm' on a " "pipeline job"
 
     def root_xml(self, data):
-        xml_parent = XML.Element('flow-definition',
-                                 {'plugin': 'workflow-job'})
-        if 'dsl' in data and 'pipeline-scm' in data:
+        xml_parent = XML.Element("flow-definition", {"plugin": "workflow-job"})
+        if "dsl" in data and "pipeline-scm" in data:
             raise JenkinsJobsException(self.error_msg)
-        if 'dsl' in data:
-            xml_definition = XML.SubElement(xml_parent, 'definition',
-                                            {'plugin': 'workflow-cps',
-                                             'class': 'org.jenkinsci.plugins.'
-                                             'workflow.cps.CpsFlowDefinition'})
-            XML.SubElement(xml_definition, 'script').text = data['dsl']
-        elif 'pipeline-scm' in data:
-            xml_definition = XML.SubElement(xml_parent, 'definition', {
-                'plugin': 'workflow-cps',
-                'class': 'org.jenkinsci.plugins.workflow.cps.'
-                'CpsScmFlowDefinition'})
+        if "dsl" in data:
+            xml_definition = XML.SubElement(
+                xml_parent,
+                "definition",
+                {
+                    "plugin": "workflow-cps",
+                    "class": "org.jenkinsci.plugins." "workflow.cps.CpsFlowDefinition",
+                },
+            )
+            XML.SubElement(xml_definition, "script").text = data["dsl"]
+        elif "pipeline-scm" in data:
+            xml_definition = XML.SubElement(
+                xml_parent,
+                "definition",
+                {
+                    "plugin": "workflow-cps",
+                    "class": "org.jenkinsci.plugins.workflow.cps."
+                    "CpsScmFlowDefinition",
+                },
+            )
         else:
-            raise JenkinsJobsException("Either 'dsl' or 'pipeline-scm' "
-                                       "is required for pipeline job")
+            raise JenkinsJobsException(
+                "Either 'dsl' or 'pipeline-scm' " "is required for pipeline job"
+            )
 
-        needs_workspace = data.get('sandbox', False)
-        XML.SubElement(xml_definition, 'sandbox').text = str(
-            needs_workspace).lower()
+        needs_workspace = data.get("sandbox", False)
+        XML.SubElement(xml_definition, "sandbox").text = str(needs_workspace).lower()
 
         return xml_parent

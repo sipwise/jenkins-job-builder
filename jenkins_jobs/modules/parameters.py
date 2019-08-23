@@ -43,14 +43,14 @@ import jenkins_jobs.modules.helpers as helpers
 
 def base_param(registry, xml_parent, data, do_default, ptype):
     pdef = XML.SubElement(xml_parent, ptype)
-    XML.SubElement(pdef, 'name').text = data['name']
-    XML.SubElement(pdef, 'description').text = data.get('description', '')
+    XML.SubElement(pdef, "name").text = data["name"]
+    XML.SubElement(pdef, "description").text = data.get("description", "")
     if do_default:
-        default = data.get('default', None)
+        default = data.get("default", None)
         if default is not None:
-            XML.SubElement(pdef, 'defaultValue').text = str(default)
+            XML.SubElement(pdef, "defaultValue").text = str(default)
         else:
-            XML.SubElement(pdef, 'defaultValue')
+            XML.SubElement(pdef, "defaultValue")
     return pdef
 
 
@@ -70,8 +70,9 @@ def string_param(registry, xml_parent, data):
             default: bar
             description: "A parameter named FOO, defaults to 'bar'."
     """
-    base_param(registry, xml_parent, data, True,
-               'hudson.model.StringParameterDefinition')
+    base_param(
+        registry, xml_parent, data, True, "hudson.model.StringParameterDefinition"
+    )
 
 
 def promoted_param(registry, xml_parent, data):
@@ -92,16 +93,20 @@ def promoted_param(registry, xml_parent, data):
        :language: yaml
 
     """
-    pdef = base_param(registry, xml_parent, data, False,
-                      'hudson.plugins.promoted__builds.parameters.'
-                      'PromotedBuildParameterDefinition')
+    pdef = base_param(
+        registry,
+        xml_parent,
+        data,
+        False,
+        "hudson.plugins.promoted__builds.parameters."
+        "PromotedBuildParameterDefinition",
+    )
     try:
-        XML.SubElement(pdef, 'projectName').text = data['project-name']
+        XML.SubElement(pdef, "projectName").text = data["project-name"]
     except KeyError:
-        raise MissingAttributeError('project-name')
+        raise MissingAttributeError("project-name")
 
-    XML.SubElement(pdef, 'promotionProcessName').text = data.get(
-        'promotion-name', None)
+    XML.SubElement(pdef, "promotionProcessName").text = data.get("promotion-name", None)
 
 
 def password_param(registry, xml_parent, data):
@@ -120,8 +125,9 @@ def password_param(registry, xml_parent, data):
             default: 1HSC0Ts6E161FysGf+e1xasgsHkgleLh09JUTYnipPvw=
             description: "A parameter named FOO."
     """
-    base_param(registry, xml_parent, data, True,
-               'hudson.model.PasswordParameterDefinition')
+    base_param(
+        registry, xml_parent, data, True, "hudson.model.PasswordParameterDefinition"
+    )
 
 
 def bool_param(registry, xml_parent, data):
@@ -140,9 +146,10 @@ def bool_param(registry, xml_parent, data):
             default: false
             description: "A parameter named FOO, defaults to 'false'."
     """
-    data['default'] = str(data.get('default', False)).lower()
-    base_param(registry, xml_parent, data, True,
-               'hudson.model.BooleanParameterDefinition')
+    data["default"] = str(data.get("default", False)).lower()
+    base_param(
+        registry, xml_parent, data, True, "hudson.model.BooleanParameterDefinition"
+    )
 
 
 def file_param(registry, xml_parent, data):
@@ -159,8 +166,9 @@ def file_param(registry, xml_parent, data):
             name: test.txt
             description: "Upload test.txt."
     """
-    base_param(registry, xml_parent, data, False,
-               'hudson.model.FileParameterDefinition')
+    base_param(
+        registry, xml_parent, data, False, "hudson.model.FileParameterDefinition"
+    )
 
 
 def text_param(registry, xml_parent, data):
@@ -179,8 +187,7 @@ def text_param(registry, xml_parent, data):
             default: bar
             description: "A parameter named FOO, defaults to 'bar'."
     """
-    base_param(registry, xml_parent, data, True,
-               'hudson.model.TextParameterDefinition')
+    base_param(registry, xml_parent, data, True, "hudson.model.TextParameterDefinition")
 
 
 def label_param(registry, xml_parent, data):
@@ -204,35 +211,41 @@ def label_param(registry, xml_parent, data):
 
     """
 
-    pdef = base_param(registry, xml_parent, data, True,
-               'org.jvnet.jenkins.plugins.nodelabelparameter.'
-               'LabelParameterDefinition')
+    pdef = base_param(
+        registry,
+        xml_parent,
+        data,
+        True,
+        "org.jvnet.jenkins.plugins.nodelabelparameter." "LabelParameterDefinition",
+    )
 
-    valid_types = ['allCases', 'success', 'unstable']
+    valid_types = ["allCases", "success", "unstable"]
     mapping = [
-        ('all-nodes', 'allNodesMatchingLabel', False),
-        ('matching-label', 'triggerIfResult', 'allCases', valid_types),
+        ("all-nodes", "allNodesMatchingLabel", False),
+        ("matching-label", "triggerIfResult", "allCases", valid_types),
     ]
     helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
-    eligibility_label = data.get('node-eligibility', 'all').lower()
+    eligibility_label = data.get("node-eligibility", "all").lower()
     eligibility_label_dict = {
-        'all': 'org.jvnet.jenkins.plugins.'
-               'nodelabelparameter.node.'
-               'AllNodeEligibility',
-        'ignore-offline': 'org.jvnet.jenkins.plugins.'
-                          'nodelabelparameter.node.'
-                          'IgnoreOfflineNodeEligibility',
-        'ignore-temp-offline': 'org.jvnet.jenkins.plugins.'
-                               'nodelabelparameter.node.'
-                               'IgnoreTempOfflineNodeEligibility',
+        "all": "org.jvnet.jenkins.plugins."
+        "nodelabelparameter.node."
+        "AllNodeEligibility",
+        "ignore-offline": "org.jvnet.jenkins.plugins."
+        "nodelabelparameter.node."
+        "IgnoreOfflineNodeEligibility",
+        "ignore-temp-offline": "org.jvnet.jenkins.plugins."
+        "nodelabelparameter.node."
+        "IgnoreTempOfflineNodeEligibility",
     }
     if eligibility_label not in eligibility_label_dict:
-        raise InvalidAttributeError(eligibility_label, eligibility_label,
-                                    eligibility_label_dict.keys())
+        raise InvalidAttributeError(
+            eligibility_label, eligibility_label, eligibility_label_dict.keys()
+        )
 
-    XML.SubElement(pdef, 'nodeEligibility').set(
-        "class", eligibility_label_dict[eligibility_label])
+    XML.SubElement(pdef, "nodeEligibility").set(
+        "class", eligibility_label_dict[eligibility_label]
+    )
 
 
 def node_param(registry, xml_parent, data):
@@ -263,30 +276,37 @@ def node_param(registry, xml_parent, data):
        :language: yaml
 
     """
-    pdef = base_param(registry, xml_parent, data, False,
-                      'org.jvnet.jenkins.plugins.nodelabelparameter.'
-                      'NodeParameterDefinition')
-    default = XML.SubElement(pdef, 'defaultSlaves')
-    if 'default-slaves' in data:
-        for slave in data['default-slaves']:
-            XML.SubElement(default, 'string').text = slave
-    allowed = XML.SubElement(pdef, 'allowedSlaves')
-    if 'allowed-slaves' in data:
-        for slave in data['allowed-slaves']:
-            XML.SubElement(allowed, 'string').text = slave
-    XML.SubElement(pdef, 'ignoreOfflineNodes').text = str(
-        data.get('ignore-offline-nodes', False)).lower()
+    pdef = base_param(
+        registry,
+        xml_parent,
+        data,
+        False,
+        "org.jvnet.jenkins.plugins.nodelabelparameter." "NodeParameterDefinition",
+    )
+    default = XML.SubElement(pdef, "defaultSlaves")
+    if "default-slaves" in data:
+        for slave in data["default-slaves"]:
+            XML.SubElement(default, "string").text = slave
+    allowed = XML.SubElement(pdef, "allowedSlaves")
+    if "allowed-slaves" in data:
+        for slave in data["allowed-slaves"]:
+            XML.SubElement(allowed, "string").text = slave
+    XML.SubElement(pdef, "ignoreOfflineNodes").text = str(
+        data.get("ignore-offline-nodes", False)
+    ).lower()
 
-    if data.get('allowed-multiselect', False):
-        XML.SubElement(pdef, 'triggerIfResult').text = \
-            'allowMultiSelectionForConcurrentBuilds'
+    if data.get("allowed-multiselect", False):
+        XML.SubElement(
+            pdef, "triggerIfResult"
+        ).text = "allowMultiSelectionForConcurrentBuilds"
     else:
-        XML.SubElement(pdef, 'triggerIfResult').text = \
-            'multiSelectionDisallowed'
-    XML.SubElement(pdef, 'allowMultiNodeSelection').text = str(
-        data.get('allowed-multiselect', False)).lower()
-    XML.SubElement(pdef, 'triggerConcurrentBuilds').text = str(
-        data.get('allowed-multiselect', False)).lower()
+        XML.SubElement(pdef, "triggerIfResult").text = "multiSelectionDisallowed"
+    XML.SubElement(pdef, "allowMultiNodeSelection").text = str(
+        data.get("allowed-multiselect", False)
+    ).lower()
+    XML.SubElement(pdef, "triggerConcurrentBuilds").text = str(
+        data.get("allowed-multiselect", False)
+    ).lower()
 
 
 def choice_param(registry, xml_parent, data):
@@ -307,13 +327,13 @@ def choice_param(registry, xml_parent, data):
               - glance
             description: "On which project to run?"
     """
-    pdef = base_param(registry, xml_parent, data, False,
-                      'hudson.model.ChoiceParameterDefinition')
-    choices = XML.SubElement(pdef, 'choices',
-                             {'class': 'java.util.Arrays$ArrayList'})
-    a = XML.SubElement(choices, 'a', {'class': 'string-array'})
-    for choice in data['choices']:
-        XML.SubElement(a, 'string').text = choice
+    pdef = base_param(
+        registry, xml_parent, data, False, "hudson.model.ChoiceParameterDefinition"
+    )
+    choices = XML.SubElement(pdef, "choices", {"class": "java.util.Arrays$ArrayList"})
+    a = XML.SubElement(choices, "a", {"class": "string-array"})
+    for choice in data["choices"]:
+        XML.SubElement(a, "string").text = choice
 
 
 def credentials_param(registry, xml_parent, data):
@@ -345,30 +365,33 @@ def credentials_param(registry, xml_parent, data):
 
     """
     cred_impl_types = {
-        'any': 'com.cloudbees.plugins.credentials.common.StandardCredentials',
-        'usernamepassword': 'com.cloudbees.plugins.credentials.impl.' +
-                            'UsernamePasswordCredentialsImpl',
-        'sshkey': 'com.cloudbees.jenkins.plugins.sshcredentials.impl.' +
-                  'BasicSSHUserPrivateKey',
-        'secretfile': 'org.jenkinsci.plugins.plaincredentials.impl.' +
-                      'FileCredentialsImpl',
-        'secrettext': 'org.jenkinsci.plugins.plaincredentials.impl.' +
-                      'StringCredentialsImpl',
-        'certificate': 'com.cloudbees.plugins.credentials.impl.' +
-                       'CertificateCredentialsImpl'
+        "any": "com.cloudbees.plugins.credentials.common.StandardCredentials",
+        "usernamepassword": "com.cloudbees.plugins.credentials.impl."
+        + "UsernamePasswordCredentialsImpl",
+        "sshkey": "com.cloudbees.jenkins.plugins.sshcredentials.impl."
+        + "BasicSSHUserPrivateKey",
+        "secretfile": "org.jenkinsci.plugins.plaincredentials.impl."
+        + "FileCredentialsImpl",
+        "secrettext": "org.jenkinsci.plugins.plaincredentials.impl."
+        + "StringCredentialsImpl",
+        "certificate": "com.cloudbees.plugins.credentials.impl."
+        + "CertificateCredentialsImpl",
     }
 
-    cred_type = data.get('type', 'any').lower()
+    cred_type = data.get("type", "any").lower()
     if cred_type not in cred_impl_types:
-        raise InvalidAttributeError('type', cred_type, cred_impl_types.keys())
+        raise InvalidAttributeError("type", cred_type, cred_impl_types.keys())
 
-    pdef = base_param(registry, xml_parent, data, False,
-                      'com.cloudbees.plugins.credentials.' +
-                      'CredentialsParameterDefinition')
-    XML.SubElement(pdef, 'defaultValue').text = data.get('default', '')
-    XML.SubElement(pdef, 'credentialType').text = cred_impl_types[cred_type]
-    XML.SubElement(pdef, 'required').text = str(data.get('required',
-                                                         False)).lower()
+    pdef = base_param(
+        registry,
+        xml_parent,
+        data,
+        False,
+        "com.cloudbees.plugins.credentials." + "CredentialsParameterDefinition",
+    )
+    XML.SubElement(pdef, "defaultValue").text = data.get("default", "")
+    XML.SubElement(pdef, "credentialType").text = cred_impl_types[cred_type]
+    XML.SubElement(pdef, "required").text = str(data.get("required", False)).lower()
 
 
 def run_param(registry, xml_parent, data):
@@ -385,11 +408,10 @@ def run_param(registry, xml_parent, data):
        :language: yaml
 
     """
-    pdef = base_param(registry, xml_parent, data, False,
-                      'hudson.model.RunParameterDefinition')
-    mapping = [
-        ('project-name', 'projectName', None),
-    ]
+    pdef = base_param(
+        registry, xml_parent, data, False, "hudson.model.RunParameterDefinition"
+    )
+    mapping = [("project-name", "projectName", None)]
     helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
 
@@ -456,43 +478,50 @@ def extended_choice_param(registry, xml_parent, data):
         /../../tests/parameters/fixtures/extended-choice-param-full.yaml
            :language: yaml
     """
-    pdef = base_param(registry, xml_parent, data, False,
-                      'com.cwctravel.hudson.plugins.'
-                      'extended__choice__parameter.'
-                      'ExtendedChoiceParameterDefinition')
+    pdef = base_param(
+        registry,
+        xml_parent,
+        data,
+        False,
+        "com.cwctravel.hudson.plugins."
+        "extended__choice__parameter."
+        "ExtendedChoiceParameterDefinition",
+    )
 
-    choicedict = {'single-select': 'PT_SINGLE_SELECT',
-                  'multi-select': 'PT_MULTI_SELECT',
-                  'radio': 'PT_RADIO',
-                  'checkbox': 'PT_CHECKBOX',
-                  'textbox': 'PT_TEXTBOX',
-                  'PT_SINGLE_SELECT': 'PT_SINGLE_SELECT',
-                  'PT_MULTI_SELECT': 'PT_MULTI_SELECT',
-                  'PT_RADIO': 'PT_RADIO',
-                  'PT_CHECKBOX': 'PT_CHECKBOX',
-                  'PT_TEXTBOX': 'PT_TEXTBOX'}
+    choicedict = {
+        "single-select": "PT_SINGLE_SELECT",
+        "multi-select": "PT_MULTI_SELECT",
+        "radio": "PT_RADIO",
+        "checkbox": "PT_CHECKBOX",
+        "textbox": "PT_TEXTBOX",
+        "PT_SINGLE_SELECT": "PT_SINGLE_SELECT",
+        "PT_MULTI_SELECT": "PT_MULTI_SELECT",
+        "PT_RADIO": "PT_RADIO",
+        "PT_CHECKBOX": "PT_CHECKBOX",
+        "PT_TEXTBOX": "PT_TEXTBOX",
+    }
     mapping = [
-        ('value', 'value', ''),
-        ('visible-items', 'visibleItemCount', 5),
-        ('multi-select-delimiter', 'multiSelectDelimiter', ','),
-        ('quote-value', 'quoteValue', False),
-        ('default-value', 'defaultValue', ''),
-        ('value-description', 'descriptionPropertyValue', ''),
-        ('type', 'type', 'single-select', choicedict),
-        ('property-file', 'propertyFile', ''),
-        ('property-key', 'propertyKey', ''),
-        ('default-property-file', 'defaultPropertyFile', ''),
-        ('default-property-key', 'defaultPropertyKey', ''),
-        ('description-property-file', 'descriptionPropertyFile', ''),
-        ('description-property-key', 'descriptionPropertyKey', ''),
-        ('bindings', 'bindings', ''),
-        ('groovy-script', 'groovyScript', ''),
-        ('groovy-script-file', 'groovyScriptFile', ''),
-        ('classpath', 'groovyClasspath', ''),
-        ('default-groovy-script', 'defaultGroovyScript', ''),
-        ('default-groovy-classpath', 'defaultGroovyClasspath', ''),
-        ('description-groovy-script', 'descriptionGroovyScript', ''),
-        ('description-groovy-classpath', 'descriptionGroovyClasspath', ''),
+        ("value", "value", ""),
+        ("visible-items", "visibleItemCount", 5),
+        ("multi-select-delimiter", "multiSelectDelimiter", ","),
+        ("quote-value", "quoteValue", False),
+        ("default-value", "defaultValue", ""),
+        ("value-description", "descriptionPropertyValue", ""),
+        ("type", "type", "single-select", choicedict),
+        ("property-file", "propertyFile", ""),
+        ("property-key", "propertyKey", ""),
+        ("default-property-file", "defaultPropertyFile", ""),
+        ("default-property-key", "defaultPropertyKey", ""),
+        ("description-property-file", "descriptionPropertyFile", ""),
+        ("description-property-key", "descriptionPropertyKey", ""),
+        ("bindings", "bindings", ""),
+        ("groovy-script", "groovyScript", ""),
+        ("groovy-script-file", "groovyScriptFile", ""),
+        ("classpath", "groovyClasspath", ""),
+        ("default-groovy-script", "defaultGroovyScript", ""),
+        ("default-groovy-classpath", "defaultGroovyClasspath", ""),
+        ("description-groovy-script", "descriptionGroovyScript", ""),
+        ("description-groovy-classpath", "descriptionGroovyClasspath", ""),
     ]
     helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
@@ -519,13 +548,15 @@ def validating_string_param(registry, xml_parent, data):
             regex: [A-Za-z]*
             msg: Your entered value failed validation
     """
-    pdef = base_param(registry, xml_parent, data, True,
-                      'hudson.plugins.validating__string__parameter.'
-                      'ValidatingStringParameterDefinition')
-    mapping = [
-        ('regex', 'regex', None),
-        ('msg', 'failedValidationMessage', None),
-    ]
+    pdef = base_param(
+        registry,
+        xml_parent,
+        data,
+        True,
+        "hudson.plugins.validating__string__parameter."
+        "ValidatingStringParameterDefinition",
+    )
+    mapping = [("regex", "regex", None), ("msg", "failedValidationMessage", None)]
     helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
 
@@ -557,17 +588,21 @@ def svn_tags_param(registry, xml_parent, data):
             url: http://svn.example.com/repo
             filter: [A-za-z0-9]*
     """
-    pdef = base_param(registry, xml_parent, data, True,
-                      'hudson.scm.listtagsparameter.'
-                      'ListSubversionTagsParameterDefinition')
+    pdef = base_param(
+        registry,
+        xml_parent,
+        data,
+        True,
+        "hudson.scm.listtagsparameter." "ListSubversionTagsParameterDefinition",
+    )
     mapping = [
-        ('url', 'tagsDir', None),
-        ('credentials-id', 'credentialsId', ''),
-        ('filter', 'tagsFilter', ''),
-        ('max-tags', 'maxTags', '100'),
-        ('sort-newest-first', 'reverseByDate', True),
-        ('sort-z-to-a', 'reverseByName', False),
-        ('', 'uuid', "1-1-1-1-1"),
+        ("url", "tagsDir", None),
+        ("credentials-id", "credentialsId", ""),
+        ("filter", "tagsFilter", ""),
+        ("max-tags", "maxTags", "100"),
+        ("sort-newest-first", "reverseByDate", True),
+        ("sort-z-to-a", "reverseByName", False),
+        ("", "uuid", "1-1-1-1-1"),
     ]
     helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
@@ -597,8 +632,7 @@ def dynamic_choice_param(registry, xml_parent, data):
             remote: false
             read-only: false
     """
-    dynamic_param_common(registry, xml_parent, data,
-                         'ChoiceParameterDefinition')
+    dynamic_param_common(registry, xml_parent, data, "ChoiceParameterDefinition")
 
 
 def dynamic_string_param(registry, xml_parent, data):
@@ -626,8 +660,7 @@ def dynamic_string_param(registry, xml_parent, data):
             remote: false
             read-only: false
     """
-    dynamic_param_common(registry, xml_parent, data,
-                         'StringParameterDefinition')
+    dynamic_param_common(registry, xml_parent, data, "StringParameterDefinition")
 
 
 def dynamic_choice_scriptler_param(registry, xml_parent, data):
@@ -663,8 +696,9 @@ def dynamic_choice_scriptler_param(registry, xml_parent, data):
             remote: false
             read-only: false
     """
-    dynamic_scriptler_param_common(registry, xml_parent, data,
-                                   'ScriptlerChoiceParameterDefinition')
+    dynamic_scriptler_param_common(
+        registry, xml_parent, data, "ScriptlerChoiceParameterDefinition"
+    )
 
 
 def dynamic_string_scriptler_param(registry, xml_parent, data):
@@ -700,54 +734,64 @@ def dynamic_string_scriptler_param(registry, xml_parent, data):
             remote: false
             read-only: false
     """
-    dynamic_scriptler_param_common(registry, xml_parent, data,
-                                   'ScriptlerStringParameterDefinition')
+    dynamic_scriptler_param_common(
+        registry, xml_parent, data, "ScriptlerStringParameterDefinition"
+    )
 
 
 def dynamic_param_common(registry, xml_parent, data, ptype):
-    pdef = base_param(registry, xml_parent, data, False,
-                      'com.seitenbau.jenkins.plugins.dynamicparameter.' +
-                      ptype)
-    XML.SubElement(pdef, '__remote').text = str(
-        data.get('remote', False)).lower()
-    XML.SubElement(pdef, '__script').text = data.get('script', None)
-    localBaseDir = XML.SubElement(pdef, '__localBaseDirectory',
-                                  {'serialization': 'custom'})
-    filePath = XML.SubElement(localBaseDir, 'hudson.FilePath')
-    default = XML.SubElement(filePath, 'default')
-    XML.SubElement(filePath, 'boolean').text = "true"
-    XML.SubElement(default, 'remote').text = \
-        "/var/lib/jenkins/dynamic_parameter/classpath"
-    XML.SubElement(pdef, '__remoteBaseDirectory').text = \
-        "dynamic_parameter_classpath"
-    XML.SubElement(pdef, '__classPath').text = data.get('classpath', None)
-    XML.SubElement(pdef, 'readonlyInputField').text = str(
-        data.get('read-only', False)).lower()
+    pdef = base_param(
+        registry,
+        xml_parent,
+        data,
+        False,
+        "com.seitenbau.jenkins.plugins.dynamicparameter." + ptype,
+    )
+    XML.SubElement(pdef, "__remote").text = str(data.get("remote", False)).lower()
+    XML.SubElement(pdef, "__script").text = data.get("script", None)
+    localBaseDir = XML.SubElement(
+        pdef, "__localBaseDirectory", {"serialization": "custom"}
+    )
+    filePath = XML.SubElement(localBaseDir, "hudson.FilePath")
+    default = XML.SubElement(filePath, "default")
+    XML.SubElement(filePath, "boolean").text = "true"
+    XML.SubElement(
+        default, "remote"
+    ).text = "/var/lib/jenkins/dynamic_parameter/classpath"
+    XML.SubElement(pdef, "__remoteBaseDirectory").text = "dynamic_parameter_classpath"
+    XML.SubElement(pdef, "__classPath").text = data.get("classpath", None)
+    XML.SubElement(pdef, "readonlyInputField").text = str(
+        data.get("read-only", False)
+    ).lower()
 
 
 def dynamic_scriptler_param_common(registry, xml_parent, data, ptype):
-    pdef = base_param(registry, xml_parent, data, False,
-                      'com.seitenbau.jenkins.plugins.dynamicparameter.'
-                      'scriptler.' + ptype)
-    parametersXML = XML.SubElement(pdef, '__parameters')
-    parameters = data.get('parameters', [])
+    pdef = base_param(
+        registry,
+        xml_parent,
+        data,
+        False,
+        "com.seitenbau.jenkins.plugins.dynamicparameter." "scriptler." + ptype,
+    )
+    parametersXML = XML.SubElement(pdef, "__parameters")
+    parameters = data.get("parameters", [])
     if parameters:
-        mapping = [
-            ('name', 'name', None),
-            ('value', 'value', None),
-        ]
+        mapping = [("name", "name", None), ("value", "value", None)]
         for parameter in parameters:
-            parameterXML = XML.SubElement(parametersXML,
-                                          'com.seitenbau.jenkins.plugins.'
-                                          'dynamicparameter.scriptler.'
-                                          'ScriptlerParameterDefinition_'
-                                          '-ScriptParameter')
+            parameterXML = XML.SubElement(
+                parametersXML,
+                "com.seitenbau.jenkins.plugins."
+                "dynamicparameter.scriptler."
+                "ScriptlerParameterDefinition_"
+                "-ScriptParameter",
+            )
             helpers.convert_mapping_to_xml(
-                parameterXML, parameter, mapping, fail_required=True)
+                parameterXML, parameter, mapping, fail_required=True
+            )
     mapping = [
-        ('script-id', '__scriptlerScriptId', None),
-        ('remote', '__remote', False),
-        ('read-only', 'readonlyInputField', False),
+        ("script-id", "__scriptlerScriptId", None),
+        ("remote", "__remote", False),
+        ("read-only", "readonlyInputField", False),
     ]
     helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
@@ -770,14 +814,16 @@ def matrix_combinations_param(registry, xml_parent, data):
        :language: yaml
 
     """
-    element_name = 'hudson.plugins.matrix__configuration__parameter.' \
-                   'MatrixCombinationsParameterDefinition'
+    element_name = (
+        "hudson.plugins.matrix__configuration__parameter."
+        "MatrixCombinationsParameterDefinition"
+    )
     pdef = XML.SubElement(xml_parent, element_name)
 
     mapping = [
-        ('name', 'name', None),
-        ('description', 'description', ''),
-        ('filter', 'defaultCombinationFilter', ''),
+        ("name", "name", None),
+        ("description", "description", ""),
+        ("filter", "defaultCombinationFilter", ""),
     ]
     helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
@@ -806,15 +852,13 @@ def copyartifact_build_selector_param(registry, xml_parent, data):
 
     """
 
-    t = XML.SubElement(xml_parent, 'hudson.plugins.copyartifact.'
-                       'BuildSelectorParameter')
-    mapping = [
-        ('name', 'name', None),
-        ('description', 'description', ''),
-    ]
+    t = XML.SubElement(
+        xml_parent, "hudson.plugins.copyartifact." "BuildSelectorParameter"
+    )
+    mapping = [("name", "name", None), ("description", "description", "")]
     helpers.convert_mapping_to_xml(t, data, mapping, fail_required=True)
 
-    helpers.copyartifact_build_selector(t, data, 'defaultSelector')
+    helpers.copyartifact_build_selector(t, data, "defaultSelector")
 
 
 def maven_metadata_param(registry, xml_parent, data):
@@ -855,31 +899,34 @@ def maven_metadata_param(registry, xml_parent, data):
        :language: yaml
 
     """
-    pdef = base_param(registry, xml_parent, data, False,
-                      'eu.markov.jenkins.plugin.mvnmeta.'
-                      'MavenMetadataParameterDefinition')
+    pdef = base_param(
+        registry,
+        xml_parent,
+        data,
+        False,
+        "eu.markov.jenkins.plugin.mvnmeta." "MavenMetadataParameterDefinition",
+    )
     mapping = [
-        ('repository-base-url', 'repoBaseUrl', ''),
-        ('artifact-group-id', 'groupId', ''),
-        ('artifact-id', 'artifactId', ''),
-        ('packaging', 'packaging', ''),
-        ('default-value', 'defaultValue', ''),
-        ('versions-filter', 'versionFilter', ''),
+        ("repository-base-url", "repoBaseUrl", ""),
+        ("artifact-group-id", "groupId", ""),
+        ("artifact-id", "artifactId", ""),
+        ("packaging", "packaging", ""),
+        ("default-value", "defaultValue", ""),
+        ("versions-filter", "versionFilter", ""),
     ]
     helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
-    sort_order = data.get('sorting-order', 'descending').lower()
-    sort_dict = {'descending': 'DESC',
-                 'ascending': 'ASC'}
+    sort_order = data.get("sorting-order", "descending").lower()
+    sort_dict = {"descending": "DESC", "ascending": "ASC"}
 
     if sort_order not in sort_dict:
         raise InvalidAttributeError(sort_order, sort_order, sort_dict.keys())
 
-    XML.SubElement(pdef, 'sortOrder').text = sort_dict[sort_order]
+    XML.SubElement(pdef, "sortOrder").text = sort_dict[sort_order]
     mapping = [
-        ('maximum-versions-to-display', 'maxVersions', 10),
-        ('repository-username', 'username', ''),
-        ('repository-password', 'password', ''),
+        ("maximum-versions-to-display", "maxVersions", 10),
+        ("repository-username", "username", ""),
+        ("repository-password", "password", ""),
     ]
     helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
@@ -901,8 +948,9 @@ def hidden_param(parser, xml_parent, data):
        :language: yaml
 
     """
-    base_param(parser, xml_parent, data, True,
-               'com.wangyin.parameter.WHideParameterDefinition')
+    base_param(
+        parser, xml_parent, data, True, "com.wangyin.parameter.WHideParameterDefinition"
+    )
 
 
 def random_string_param(registry, xml_parent, data):
@@ -923,16 +971,17 @@ def random_string_param(registry, xml_parent, data):
        /../../tests/parameters/fixtures/random-string-param001.yaml
        :language: yaml
     """
-    pdef = XML.SubElement(xml_parent,
-                          'hudson.plugins.random__string__parameter.'
-                          'RandomStringParameterDefinition')
-    if 'name' not in data:
-        raise JenkinsJobsException('random-string must have a name parameter.')
+    pdef = XML.SubElement(
+        xml_parent,
+        "hudson.plugins.random__string__parameter." "RandomStringParameterDefinition",
+    )
+    if "name" not in data:
+        raise JenkinsJobsException("random-string must have a name parameter.")
 
     mapping = [
-        ('name', 'name', None),
-        ('description', 'description', ''),
-        ('failed-validation-message', 'failedValidationMessage', ''),
+        ("name", "name", None),
+        ("description", "description", ""),
+        ("failed-validation-message", "failedValidationMessage", ""),
     ]
     helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
@@ -1005,40 +1054,41 @@ def git_parameter_param(registry, xml_parent, data):
        /../../tests/parameters/fixtures/git-parameter-param-full.yaml
        :language: yaml
     """
-    pdef = XML.SubElement(xml_parent,
-                          'net.uaznia.lukanus.hudson.plugins.gitparameter.'
-                          'GitParameterDefinition')
+    pdef = XML.SubElement(
+        xml_parent,
+        "net.uaznia.lukanus.hudson.plugins.gitparameter." "GitParameterDefinition",
+    )
 
     valid_types = [
-        'PT_TAG',
-        'PT_BRANCH',
-        'PT_BRANCH_TAG',
-        'PT_REVISION',
-        'PT_PULL_REQUEST',
+        "PT_TAG",
+        "PT_BRANCH",
+        "PT_BRANCH_TAG",
+        "PT_REVISION",
+        "PT_PULL_REQUEST",
     ]
 
     valid_sort_modes = [
-        'NONE',
-        'ASCENDING',
-        'ASCENDING_SMART',
-        'DESCENDING',
-        'DESCENDING_SMART',
+        "NONE",
+        "ASCENDING",
+        "ASCENDING_SMART",
+        "DESCENDING",
+        "DESCENDING_SMART",
     ]
 
-    valid_selected_values = ['NONE', 'TOP', 'DEFAULT']
+    valid_selected_values = ["NONE", "TOP", "DEFAULT"]
 
     mapping = [
-        ('name', 'name', None),
-        ('description', 'description', ''),
-        ('type', 'type', 'PT_TAG', valid_types),
-        ('branch', 'branch', ''),
-        ('tagFilter', 'tagFilter', '*'),
-        ('branchFilter', 'branchFilter', '.*'),
-        ('sortMode', 'sortMode', 'NONE', valid_sort_modes),
-        ('defaultValue', 'defaultValue', ''),
-        ('selectedValue', 'selectedValue', 'NONE', valid_selected_values),
-        ('useRepository', 'useRepository', ''),
-        ('quickFilterEnabled', 'quickFilterEnabled', False),
+        ("name", "name", None),
+        ("description", "description", ""),
+        ("type", "type", "PT_TAG", valid_types),
+        ("branch", "branch", ""),
+        ("tagFilter", "tagFilter", "*"),
+        ("branchFilter", "branchFilter", ".*"),
+        ("sortMode", "sortMode", "NONE", valid_sort_modes),
+        ("defaultValue", "defaultValue", ""),
+        ("selectedValue", "selectedValue", "NONE", valid_selected_values),
+        ("useRepository", "useRepository", ""),
+        ("quickFilterEnabled", "quickFilterEnabled", False),
     ]
     helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
@@ -1046,28 +1096,29 @@ def git_parameter_param(registry, xml_parent, data):
 class Parameters(jenkins_jobs.modules.base.Base):
     sequence = 21
 
-    component_type = 'parameter'
-    component_list_type = 'parameters'
+    component_type = "parameter"
+    component_list_type = "parameters"
 
     def gen_xml(self, xml_parent, data):
-        properties = xml_parent.find('properties')
+        properties = xml_parent.find("properties")
         if properties is None:
-            properties = XML.SubElement(xml_parent, 'properties')
+            properties = XML.SubElement(xml_parent, "properties")
 
-        parameters = data.get('parameters', [])
-        hmodel = 'hudson.model.'
+        parameters = data.get("parameters", [])
+        hmodel = "hudson.model."
         if parameters:
             # The conditionals here are to work around the extended_choice
             # parameter also being definable in the properties module.  This
             # usage has been deprecated but not removed.  Because it may have
             # added these elements before us, we need to check if they already
             # exist, and only add them if they're missing.
-            pdefp = properties.find(hmodel + 'ParametersDefinitionProperty')
+            pdefp = properties.find(hmodel + "ParametersDefinitionProperty")
             if pdefp is None:
-                pdefp = XML.SubElement(properties,
-                                       hmodel + 'ParametersDefinitionProperty')
-            pdefs = pdefp.find('parameterDefinitions')
+                pdefp = XML.SubElement(
+                    properties, hmodel + "ParametersDefinitionProperty"
+                )
+            pdefs = pdefp.find("parameterDefinitions")
             if pdefs is None:
-                pdefs = XML.SubElement(pdefp, 'parameterDefinitions')
+                pdefs = XML.SubElement(pdefp, "parameterDefinitions")
             for param in parameters:
-                self.registry.dispatch('parameter', pdefs, param)
+                self.registry.dispatch("parameter", pdefs, param)

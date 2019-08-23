@@ -33,18 +33,22 @@ def deep_format(obj, paramdict, allow_empty=False):
     # limitations on the values in paramdict - the post-format result must
     # still be valid YAML (so substituting-in a string containing quotes, for
     # example, is problematic).
-    if hasattr(obj, 'format'):
+    if hasattr(obj, "format"):
         try:
             ret = CustomFormatter(allow_empty).format(obj, **paramdict)
         except KeyError as exc:
             missing_key = exc.args[0]
             desc = "%s parameter missing to format %s\nGiven:\n%s" % (
-                missing_key, obj, pformat(paramdict))
+                missing_key,
+                obj,
+                pformat(paramdict),
+            )
             raise JenkinsJobsException(desc)
         except Exception:
-            logging.error("Problem formatting with args:\nallow_empty:"
-                          "%s\nobj: %s\nparamdict: %s" %
-                          (allow_empty, obj, paramdict))
+            logging.error(
+                "Problem formatting with args:\nallow_empty:"
+                "%s\nobj: %s\nparamdict: %s" % (allow_empty, obj, paramdict)
+            )
             raise
 
     elif isinstance(obj, list):
@@ -55,17 +59,22 @@ def deep_format(obj, paramdict, allow_empty=False):
         ret = type(obj)()
         for item in obj:
             try:
-                ret[CustomFormatter(allow_empty).format(item, **paramdict)] = \
-                    deep_format(obj[item], paramdict, allow_empty)
+                ret[
+                    CustomFormatter(allow_empty).format(item, **paramdict)
+                ] = deep_format(obj[item], paramdict, allow_empty)
             except KeyError as exc:
                 missing_key = exc.args[0]
                 desc = "%s parameter missing to format %s\nGiven:\n%s" % (
-                    missing_key, obj, pformat(paramdict))
+                    missing_key,
+                    obj,
+                    pformat(paramdict),
+                )
                 raise JenkinsJobsException(desc)
             except Exception:
-                logging.error("Problem formatting with args:\nallow_empty:"
-                              "%s\nobj: %s\nparamdict: %s" %
-                              (allow_empty, obj, paramdict))
+                logging.error(
+                    "Problem formatting with args:\nallow_empty:"
+                    "%s\nobj: %s\nparamdict: %s" % (allow_empty, obj, paramdict)
+                )
                 raise
     else:
         ret = obj
@@ -81,6 +90,7 @@ class CustomFormatter(Formatter):
     Custom formatter to allow non-existing key references when formatting a
     string
     """
+
     _expr = r"""
         (?<!{){({{)*                # non-pair opening {
         (?:obj:)?                   # obj:
@@ -99,7 +109,7 @@ class CustomFormatter(Formatter):
         # special case of returning the object if the entire string
         # matches a single parameter
         try:
-            result = re.match('^%s$' % self._expr, format_string, re.VERBOSE)
+            result = re.match("^%s$" % self._expr, format_string, re.VERBOSE)
         except TypeError:
             return format_string.format(**kwargs)
         if result is not None:
@@ -130,8 +140,7 @@ class CustomFormatter(Formatter):
         except KeyError:
             if self.allow_empty:
                 logger.debug(
-                    'Found uninitialized key %s, replaced with empty string',
-                    key
+                    "Found uninitialized key %s, replaced with empty string", key
                 )
-                return ''
+                return ""
             raise

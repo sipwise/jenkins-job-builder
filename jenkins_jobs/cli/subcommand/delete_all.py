@@ -27,26 +27,30 @@ logger = logging.getLogger(__name__)
 
 
 class DeleteAllSubCommand(base.BaseSubCommand):
-
     def parse_args(self, subparser):
         delete_all = subparser.add_parser(
-            'delete-all',
+            "delete-all",
             help="delete *ALL* jobs from Jenkins server, including "
-            "those not managed by Jenkins Job Builder.")
+            "those not managed by Jenkins Job Builder.",
+        )
 
         self.parse_option_recursive_exclude(delete_all)
 
         delete_all.add_argument(
-            '-j', '--jobs-only',
-            action='store_true', dest='del_jobs',
+            "-j",
+            "--jobs-only",
+            action="store_true",
+            dest="del_jobs",
             default=False,
-            help='delete only jobs'
+            help="delete only jobs",
         )
         delete_all.add_argument(
-            '-v', '--views-only',
-            action='store_true', dest='del_views',
+            "-v",
+            "--views-only",
+            action="store_true",
+            dest="del_views",
             default=False,
-            help='delete only views'
+            help="delete only views",
         )
 
     def execute(self, options, jjb_config):
@@ -55,24 +59,26 @@ class DeleteAllSubCommand(base.BaseSubCommand):
         reach = set()
         if options.del_jobs and options.del_views:
             raise JenkinsJobsException(
-                '"--views-only" and "--jobs-only" cannot be used together.')
+                '"--views-only" and "--jobs-only" cannot be used together.'
+            )
         elif options.del_jobs and not options.del_views:
-            reach.add('jobs')
+            reach.add("jobs")
         elif options.del_views and not options.del_jobs:
-            reach.add('views')
+            reach.add("views")
         else:
-            reach.update(('jobs', 'views'))
+            reach.update(("jobs", "views"))
 
         if not utils.confirm(
-                'Sure you want to delete *ALL* {} from Jenkins '
-                'server?\n(including those not managed by Jenkins '
-                'Job Builder)'.format(" AND ".join(reach))):
-            sys.exit('Aborted')
+            "Sure you want to delete *ALL* {} from Jenkins "
+            "server?\n(including those not managed by Jenkins "
+            "Job Builder)".format(" AND ".join(reach))
+        ):
+            sys.exit("Aborted")
 
-        if 'jobs' in reach:
+        if "jobs" in reach:
             logger.info("Deleting all jobs")
             builder.delete_all_jobs()
 
-        if 'views' in reach:
+        if "views" in reach:
             logger.info("Deleting all views")
             builder.delete_all_views()

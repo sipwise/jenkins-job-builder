@@ -22,6 +22,6 @@ from tests import base
 
 
 class TestCaseModuleProperties(base.BaseScenariosTestCase):
-    fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
+    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
     scenarios = base.get_scenarios(fixtures_path)
     klass = properties.Properties

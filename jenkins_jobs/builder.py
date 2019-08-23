@@ -34,9 +34,7 @@ from jenkins_jobs.constants import MAGIC_MANAGE_STRING
 from jenkins_jobs.parallel import concurrent
 from jenkins_jobs import utils
 
-__all__ = [
-    "JenkinsManager"
-]
+__all__ = ["JenkinsManager"]
 
 logger = logging.getLogger(__name__)
 
@@ -44,22 +42,22 @@ _DEFAULT_TIMEOUT = object()
 
 
 class JenkinsManager(object):
-
     def __init__(self, jjb_config):
-        url = jjb_config.jenkins['url']
-        user = jjb_config.jenkins['user']
-        password = jjb_config.jenkins['password']
-        timeout = jjb_config.jenkins['timeout']
+        url = jjb_config.jenkins["url"]
+        user = jjb_config.jenkins["user"]
+        password = jjb_config.jenkins["password"]
+        timeout = jjb_config.jenkins["timeout"]
 
         if timeout != _DEFAULT_TIMEOUT:
             self.jenkins = jenkins.Jenkins(url, user, password, timeout)
         else:
             self.jenkins = jenkins.Jenkins(url, user, password)
 
-        self.cache = JobCache(jjb_config.jenkins['url'],
-                              flush=jjb_config.builder['flush_cache'])
+        self.cache = JobCache(
+            jjb_config.jenkins["url"], flush=jjb_config.builder["flush_cache"]
+        )
 
-        self._plugins_list = jjb_config.builder['plugins_info']
+        self._plugins_list = jjb_config.builder["plugins_info"]
         self._jobs = None
         self._job_list = None
         self._views = None
@@ -69,16 +67,15 @@ class JenkinsManager(object):
     def _setup_output(self, output, item, config_xml=False):
         output_dir = output
         output_fn = os.path.join(output, item)
-        if '/' in item:
+        if "/" in item:
             # in item folder
             output_fn = os.path.join(output, os.path.normpath(item))
             output_dir = os.path.dirname(output_fn)
 
         # if in a folder, re-adding name to the directory here
         if config_xml:
-            output_dir = os.path.join(
-                output_dir, os.path.basename(item))
-            output_fn = os.path.join(output_dir, 'config.xml')
+            output_dir = os.path.join(output_dir, os.path.basename(item))
+            output_fn = os.path.join(output_dir, "config.xml")
 
         if output_dir != output:
             logger.debug("Creating directory %s" % output_dir)
@@ -102,36 +99,43 @@ class JenkinsManager(object):
     def job_list(self):
         if self._job_list is None:
             # python-jenkins uses 'fullname' for folder/name combination
-            self._job_list = set(job['fullname'] for job in self.jobs)
+            self._job_list = set(job["fullname"] for job in self.jobs)
         return self._job_list
 
     def _job_format(self, job_name):
         # returns job name or url based on config option
-        if self._jjb_config.builder['print_job_urls']:
-            return self._jjb_config.jenkins['url'] + \
-                '/job/' + quote(
-                    '/job/'.join(job_name.split('/')).encode('utf8')) + '/'
+        if self._jjb_config.builder["print_job_urls"]:
+            return (
+                self._jjb_config.jenkins["url"]
+                + "/job/"
+                + quote("/job/".join(job_name.split("/")).encode("utf8"))
+                + "/"
+            )
         else:
             return job_name
 
     def _view_format(self, view_name):
         # returns job name or url based on config option
-        if self._jjb_config.builder['print_job_urls']:
-            parts = view_name.split('/')
-            return self._jjb_config.jenkins['url'] + \
-                ''.join(['/job/' + item for item in parts[:-1]]) + \
-                '/view/' + parts[-1] + '/'
+        if self._jjb_config.builder["print_job_urls"]:
+            parts = view_name.split("/")
+            return (
+                self._jjb_config.jenkins["url"]
+                + "".join(["/job/" + item for item in parts[:-1]])
+                + "/view/"
+                + parts[-1]
+                + "/"
+            )
         else:
             return view_name
 
     def update_job(self, job_name, xml):
         if self.is_job(job_name):
-            logger.info("Reconfiguring jenkins job {0}".format(
-                self._job_format(job_name)))
+            logger.info(
+                "Reconfiguring jenkins job {0}".format(self._job_format(job_name))
+            )
             self.jenkins.reconfig_job(job_name, xml)
         else:
-            logger.info("Creating jenkins job {0}".format(
-                self._job_format(job_name)))
+            logger.info("Creating jenkins job {0}".format(self._job_format(job_name)))
             self.jenkins.create_job(job_name, xml)
 
     def is_job(self, job_name, use_cache=True):
@@ -143,7 +147,7 @@ class JenkinsManager(object):
 
     def get_job_md5(self, job_name):
         xml = self.jenkins.get_job_config(job_name)
-        return hashlib.md5(xml.encode('utf-8')).hexdigest()
+        return hashlib.md5(xml.encode("utf-8")).hexdigest()
 
     def delete_job(self, job_name):
         if self.is_job(job_name):
@@ -162,10 +166,10 @@ class JenkinsManager(object):
                 logger.warning(
                     "Unable to retrieve Jenkins Plugin Info from {0},"
                     " using default empty plugins info list.".format(
-                        self.jenkins.server))
-                plugins_list = [{'shortName': '',
-                                 'version': '',
-                                 'longName': ''}]
+                        self.jenkins.server
+                    )
+                )
+                plugins_list = [{"shortName": "", "version": "", "longName": ""}]
             else:
                 raise
         logger.debug("Jenkins Plugin Info {0}".format(pformat(plugins_list)))
@@ -181,7 +185,7 @@ class JenkinsManager(object):
     def is_managed(self, job_name):
         xml = self.jenkins.get_job_config(job_name)
         try:
-            out = XML.fromstring(xml.encode('utf-8'))
+            out = XML.fromstring(xml.encode("utf-8"))
             description = out.find(".//description").text
             return description.endswith(MAGIC_MANAGE_STRING)
         except (TypeError, AttributeError):
@@ -202,18 +206,21 @@ class JenkinsManager(object):
         for job in jobs:
             # python-jenkins stores the folder and name as 'fullname'
             # Check if the job was deleted when his parent folder was deleted
-            if job['fullname'] not in keep and \
-                    self.is_job(job['fullname'], use_cache=False):
-                if self.is_managed(job['fullname']):
-                    logger.info("Removing obsolete jenkins job {0}"
-                                .format(job['fullname']))
-                    self.delete_job(job['fullname'])
+            if job["fullname"] not in keep and self.is_job(
+                job["fullname"], use_cache=False
+            ):
+                if self.is_managed(job["fullname"]):
+                    logger.info(
+                        "Removing obsolete jenkins job {0}".format(job["fullname"])
+                    )
+                    self.delete_job(job["fullname"])
                     deleted_jobs += 1
                 else:
-                    logger.info("Not deleting unmanaged jenkins job %s",
-                                job['fullname'])
+                    logger.info(
+                        "Not deleting unmanaged jenkins job %s", job["fullname"]
+                    )
             else:
-                logger.debug("Keeping job %s", job['fullname'])
+                logger.debug("Keeping job %s", job["fullname"])
         return deleted_jobs
 
     def delete_jobs(self, jobs):
@@ -221,15 +228,17 @@ class JenkinsManager(object):
             logger.info("Removing jenkins job(s): %s" % ", ".join(jobs))
         for job in jobs:
             self.delete_job(job)
-            if(self.cache.is_cached(job)):
-                self.cache.set(job, '')
+            if self.cache.is_cached(job):
+                self.cache.set(job, "")
         self.cache.save()
 
     def delete_all_jobs(self):
         jobs = self.get_jobs()
         logger.info("Number of jobs to delete:  %d", len(jobs))
-        script = ('for(job in jenkins.model.Jenkins.theInstance.getAllItems())'
-                  '       { job.delete(); }')
+        script = (
+            "for(job in jenkins.model.Jenkins.theInstance.getAllItems())"
+            "       { job.delete(); }"
+        )
         self.jenkins.run_script(script)
         # Need to clear the JJB cache after deletion
         self.cache.clear()
@@ -237,8 +246,9 @@ class JenkinsManager(object):
     def changed(self, job):
         md5 = job.md5()
 
-        changed = (self._jjb_config.builder['ignore_cache'] or
-                   self.cache.has_changed(job.name, md5))
+        changed = self._jjb_config.builder["ignore_cache"] or self.cache.has_changed(
+            job.name, md5
+        )
         if not changed:
             logger.debug("'{0}' has not changed".format(job.name))
         return changed
@@ -249,15 +259,20 @@ class JenkinsManager(object):
             logger.debug("'{0}' does not currently exist".format(job.name))
         return exists
 
-    def update_jobs(self, xml_jobs, output=None, n_workers=None,
-                    existing_only=None, config_xml=False):
+    def update_jobs(
+        self,
+        xml_jobs,
+        output=None,
+        n_workers=None,
+        existing_only=None,
+        config_xml=False,
+    ):
         orig = time.time()
 
         logger.info("Number of jobs generated:  %d", len(xml_jobs))
         xml_jobs.sort(key=AlphanumSort)
 
-        if (output and not hasattr(output, 'write') and
-                not os.path.isdir(output)):
+        if output and not hasattr(output, "write") and not os.path.isdir(output):
             logger.debug("Creating directory %s" % output)
             try:
                 os.makedirs(output)
@@ -267,11 +282,11 @@ class JenkinsManager(object):
 
         if output:
             # ensure only wrapped once
-            if hasattr(output, 'write'):
+            if hasattr(output, "write"):
                 output = utils.wrap_stream(output)
 
             for job in xml_jobs:
-                if hasattr(output, 'write'):
+                if hasattr(output, "write"):
                     # `output` is a file-like object
                     logger.info("Job name:  %s", job.name)
                     logger.debug("Writing XML to '{0}'".format(output))
@@ -289,39 +304,31 @@ class JenkinsManager(object):
                 output_fn = self._setup_output(output, job.name, config_xml)
 
                 logger.debug("Writing XML to '{0}'".format(output_fn))
-                with io.open(output_fn, 'w', encoding='utf-8') as f:
-                    f.write(job.output().decode('utf-8'))
+                with io.open(output_fn, "w", encoding="utf-8") as f:
+                    f.write(job.output().decode("utf-8"))
             return xml_jobs, len(xml_jobs)
 
         # Filter out the jobs that did not change
-        logging.debug('Filtering %d jobs for changed jobs',
-                      len(xml_jobs))
+        logging.debug("Filtering %d jobs for changed jobs", len(xml_jobs))
         step = time.time()
-        jobs = [job for job in xml_jobs
-                if self.changed(job)]
-        logging.debug("Filtered for changed jobs in %ss",
-                      (time.time() - step))
+        jobs = [job for job in xml_jobs if self.changed(job)]
+        logging.debug("Filtered for changed jobs in %ss", (time.time() - step))
 
         if existing_only:
             # Filter out the jobs not already in the cache
-            logging.debug('Filtering %d jobs for existing jobs',
-                          len(jobs))
+            logging.debug("Filtering %d jobs for existing jobs", len(jobs))
             step = time.time()
-            jobs = [job for job in jobs
-                    if self.exists(job)]
-            logging.debug("Filtered for existing jobs in %ss",
-                          (time.time() - step))
+            jobs = [job for job in jobs if self.exists(job)]
+            logging.debug("Filtered for existing jobs in %ss", (time.time() - step))
 
         if not jobs:
             return [], 0
 
         # Update the jobs
-        logging.debug('Updating jobs')
+        logging.debug("Updating jobs")
         step = time.time()
-        p_params = [{'job': job} for job in jobs]
-        results = self.parallel_update_job(
-            n_workers=n_workers,
-            concurrent=p_params)
+        p_params = [{"job": job} for job in jobs]
+        results = self.parallel_update_job(n_workers=n_workers, concurrent=p_params)
         logging.debug("Parsing results")
         # generalize the result parsing, as a concurrent job always returns a
         # list
@@ -336,15 +343,13 @@ class JenkinsManager(object):
                 self.cache.set(j_name, j_md5)
         # write cache to disk
         self.cache.save()
-        logging.debug("Updated %d jobs in %ss",
-                      len(jobs),
-                      time.time() - step)
+        logging.debug("Updated %d jobs in %ss", len(jobs), time.time() - step)
         logging.debug("Total run took %ss", (time.time() - orig))
         return jobs, len(jobs)
 
     @concurrent
     def parallel_update_job(self, job):
-        self.update_job(job.name, job.output().decode('utf-8'))
+        self.update_job(job.name, job.output().decode("utf-8"))
         return (job.name, job.md5())
 
     ################
@@ -361,7 +366,7 @@ class JenkinsManager(object):
     @property
     def view_list(self):
         if self._view_list is None:
-            self._view_list = set(view['name'] for view in self.views)
+            self._view_list = set(view["name"] for view in self.views)
         return self._view_list
 
     def get_views(self, cache=True):
@@ -389,7 +394,7 @@ class JenkinsManager(object):
         for view in views:
             self.delete_view(view)
             if self.cache.is_cached(view):
-                self.cache.set(view, '')
+                self.cache.set(view, "")
         self.cache.save()
 
     def delete_all_views(self):
@@ -399,22 +404,30 @@ class JenkinsManager(object):
         views.pop(0)
         logger.info("Number of views to delete:  %d", len(views))
         for view in views:
-            self.delete_view(view['name'])
+            self.delete_view(view["name"])
         # Need to clear the JJB cache after deletion
         self.cache.clear()
 
     def update_view(self, view_name, xml):
         if self.is_view(view_name):
-            logger.info("Reconfiguring jenkins view {0}".format(
-                self._view_format(view_name)))
+            logger.info(
+                "Reconfiguring jenkins view {0}".format(self._view_format(view_name))
+            )
             self.jenkins.reconfig_view(view_name, xml)
         else:
-            logger.info("Creating jenkins view {0}".format(
-                self._view_format(view_name)))
+            logger.info(
+                "Creating jenkins view {0}".format(self._view_format(view_name))
+            )
             self.jenkins.create_view(view_name, xml)
 
-    def update_views(self, xml_views, output=None, n_workers=None,
-                     existing_only=None, config_xml=False):
+    def update_views(
+        self,
+        xml_views,
+        output=None,
+        n_workers=None,
+        existing_only=None,
+        config_xml=False,
+    ):
         orig = time.time()
 
         logger.info("Number of views generated:  %d", len(xml_views))
@@ -422,11 +435,11 @@ class JenkinsManager(object):
 
         if output:
             # ensure only wrapped once
-            if hasattr(output, 'write'):
+            if hasattr(output, "write"):
                 output = utils.wrap_stream(output)
 
             for view in xml_views:
-                if hasattr(output, 'write'):
+                if hasattr(output, "write"):
                     # `output` is a file-like object
                     logger.info("View name:  %s", view.name)
                     logger.debug("Writing XML to '{0}'".format(output))
@@ -444,39 +457,31 @@ class JenkinsManager(object):
                 output_fn = self._setup_output(output, view.name, config_xml)
 
                 logger.debug("Writing XML to '{0}'".format(output_fn))
-                with io.open(output_fn, 'w', encoding='utf-8') as f:
-                    f.write(view.output().decode('utf-8'))
+                with io.open(output_fn, "w", encoding="utf-8") as f:
+                    f.write(view.output().decode("utf-8"))
             return xml_views, len(xml_views)
 
         # Filter out the views that did not change
-        logging.debug('Filtering %d views for changed views',
-                      len(xml_views))
+        logging.debug("Filtering %d views for changed views", len(xml_views))
         step = time.time()
-        views = [view for view in xml_views
-                 if self.changed(view)]
-        logging.debug("Filtered for changed views in %ss",
-                      (time.time() - step))
+        views = [view for view in xml_views if self.changed(view)]
+        logging.debug("Filtered for changed views in %ss", (time.time() - step))
 
         if existing_only:
             # Filter out the jobs not already in the cache
-            logging.debug('Filtering %d views for existing jobs',
-                          len(views))
+            logging.debug("Filtering %d views for existing jobs", len(views))
             step = time.time()
-            views = [view for view in views
-                    if self.exists(view)]
-            logging.debug("Filtered for existing views in %ss",
-                          (time.time() - step))
+            views = [view for view in views if self.exists(view)]
+            logging.debug("Filtered for existing views in %ss", (time.time() - step))
 
         if not views:
             return [], 0
 
         # Update the views
-        logging.debug('Updating views')
+        logging.debug("Updating views")
         step = time.time()
-        p_params = [{'view': view} for view in views]
-        results = self.parallel_update_view(
-            n_workers=n_workers,
-            concurrent=p_params)
+        p_params = [{"view": view} for view in views]
+        results = self.parallel_update_view(n_workers=n_workers, concurrent=p_params)
         logging.debug("Parsing results")
         # generalize the result parsing, as a concurrent view always returns a
         # list
@@ -491,13 +496,11 @@ class JenkinsManager(object):
                 self.cache.set(v_name, v_md5)
         # write cache to disk
         self.cache.save()
-        logging.debug("Updated %d views in %ss",
-                      len(views),
-                      time.time() - step)
+        logging.debug("Updated %d views in %ss", len(views), time.time() - step)
         logging.debug("Total run took %ss", (time.time() - orig))
         return views, len(views)
 
     @concurrent
     def parallel_update_view(self, view):
-        self.update_view(view.name, view.output().decode('utf-8'))
+        self.update_view(view.name, view.output().decode("utf-8"))
         return (view.name, view.md5())

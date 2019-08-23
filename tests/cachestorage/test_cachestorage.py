@@ -21,28 +21,25 @@ from tests.base import mock
 
 
 class TestCaseJobCache(base.BaseTestCase):
-
-    @mock.patch('jenkins_jobs.builder.JobCache.get_cache_dir',
-                lambda x: '/bad/file')
+    @mock.patch("jenkins_jobs.builder.JobCache.get_cache_dir", lambda x: "/bad/file")
     def test_save_on_exit(self):
         """
         Test that the cache is saved on normal object deletion
         """
 
-        with mock.patch('jenkins_jobs.builder.JobCache.save') as save_mock:
-            with mock.patch('os.path.isfile', return_value=False):
-                with mock.patch('jenkins_jobs.builder.JobCache._lock'):
+        with mock.patch("jenkins_jobs.builder.JobCache.save") as save_mock:
+            with mock.patch("os.path.isfile", return_value=False):
+                with mock.patch("jenkins_jobs.builder.JobCache._lock"):
                     jenkins_jobs.builder.JobCache("dummy")
             save_mock.assert_called_with()
 
-    @mock.patch('jenkins_jobs.builder.JobCache.get_cache_dir',
-                lambda x: '/bad/file')
+    @mock.patch("jenkins_jobs.builder.JobCache.get_cache_dir", lambda x: "/bad/file")
     def test_cache_file(self):
         """
         Test providing a cachefile.
         """
         test_file = os.path.abspath(__file__)
-        with mock.patch('os.path.join', return_value=test_file):
-            with mock.patch('yaml.load'):
-                with mock.patch('jenkins_jobs.builder.JobCache._lock'):
+        with mock.patch("os.path.join", return_value=test_file):
+            with mock.patch("yaml.load"):
+                with mock.patch("jenkins_jobs.builder.JobCache._lock"):
                     jenkins_jobs.builder.JobCache("dummy").data = None

@@ -43,19 +43,18 @@ class Folder(jenkins_jobs.modules.base.Base):
     sequence = 0
 
     def root_xml(self, data):
-        xml_parent = XML.Element('com.cloudbees.hudson.plugins.folder.Folder',
-                                 plugin="cloudbees-folder")
-        attributes = {"class": "com.cloudbees.hudson.plugins.folder."
-                               "icons.StockFolderIcon"}
-        XML.SubElement(xml_parent, 'icon', attrib=attributes)
-        XML.SubElement(xml_parent, 'views')
+        xml_parent = XML.Element(
+            "com.cloudbees.hudson.plugins.folder.Folder", plugin="cloudbees-folder"
+        )
+        attributes = {
+            "class": "com.cloudbees.hudson.plugins.folder." "icons.StockFolderIcon"
+        }
+        XML.SubElement(xml_parent, "icon", attrib=attributes)
+        XML.SubElement(xml_parent, "views")
         attributes = {"class": "hudson.views.DefaultViewsTabBar"}
-        XML.SubElement(xml_parent, 'viewsTabBar', attrib=attributes)
+        XML.SubElement(xml_parent, "viewsTabBar", attrib=attributes)
 
-        mappings = [
-            ('', 'primaryView', 'All'),
-            ('', 'healthMetrics', ''),
-        ]
+        mappings = [("", "primaryView", "All"), ("", "healthMetrics", "")]
         convert_mapping_to_xml(xml_parent, data, mappings, True)
 
         return xml_parent

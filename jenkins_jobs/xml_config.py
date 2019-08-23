@@ -22,10 +22,7 @@ import xml.etree.ElementTree as XML
 
 from jenkins_jobs import errors
 
-__all__ = [
-    "XmlJobGenerator",
-    "XmlJob"
-]
+__all__ = ["XmlJobGenerator", "XmlJob"]
 
 
 def remove_ignorable_whitespace(node):
@@ -59,8 +56,8 @@ class XmlJob(object):
         return hashlib.md5(self.output()).hexdigest()
 
     def output(self):
-        out = minidom.parseString(XML.tostring(self.xml, encoding='UTF-8'))
-        return out.toprettyxml(indent='  ', encoding='utf-8')
+        out = minidom.parseString(XML.tostring(self.xml, encoding="UTF-8"))
+        return out.toprettyxml(indent="  ", encoding="utf-8")
 
 
 class XmlGenerator(object):
@@ -86,25 +83,29 @@ class XmlGenerator(object):
         kind = data.get(self.kind_attribute, self.kind_default)
 
         for ep in pkg_resources.iter_entry_points(
-                group=self.entry_point_group, name=kind):
+            group=self.entry_point_group, name=kind
+        ):
             Mod = ep.load()
             mod = Mod(self.registry)
             xml = mod.root_xml(data)
             if "view-type" not in data:
                 self._gen_xml(xml, data)
-            obj = XmlJob(xml, data['name'])
+            obj = XmlJob(xml, data["name"])
             return obj
 
         names = [
-            ep.name for ep in pkg_resources.iter_entry_points(
-                group=self.entry_point_group)]
+            ep.name
+            for ep in pkg_resources.iter_entry_points(group=self.entry_point_group)
+        ]
         raise errors.JenkinsJobsException(
-            'Unrecognized {}: {} (supported types are: {})'.format(
-                self.kind_attribute, kind, ', '.join(names)))
+            "Unrecognized {}: {} (supported types are: {})".format(
+                self.kind_attribute, kind, ", ".join(names)
+            )
+        )
 
     def _gen_xml(self, xml, data):
         for module in self.registry.modules:
-            if hasattr(module, 'gen_xml'):
+            if hasattr(module, "gen_xml"):
                 module.gen_xml(xml, data)
 
 
@@ -112,15 +113,17 @@ class XmlJobGenerator(XmlGenerator):
     """ This class is responsible for generating Jenkins Configuration XML from
     a compatible intermediate representation of Jenkins Jobs.
     """
-    entry_point_group = 'jenkins_jobs.projects'
-    kind_attribute = 'project-type'
-    kind_default = 'freestyle'
+
+    entry_point_group = "jenkins_jobs.projects"
+    kind_attribute = "project-type"
+    kind_default = "freestyle"
 
 
 class XmlViewGenerator(XmlGenerator):
     """ This class is responsible for generating Jenkins Configuration XML from
     a compatible intermediate representation of Jenkins Views.
     """
-    entry_point_group = 'jenkins_jobs.views'
-    kind_attribute = 'view-type'
-    kind_default = 'list'
+
+    entry_point_group = "jenkins_jobs.views"
+    kind_attribute = "view-type"
+    kind_default = "list"

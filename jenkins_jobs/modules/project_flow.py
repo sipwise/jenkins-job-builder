@@ -59,15 +59,15 @@ class Flow(jenkins_jobs.modules.base.Base):
     sequence = 0
 
     def root_xml(self, data):
-        xml_parent = XML.Element('com.cloudbees.plugins.flow.BuildFlow')
+        xml_parent = XML.Element("com.cloudbees.plugins.flow.BuildFlow")
 
-        needs_workspace = data.get('needs-workspace', False)
+        needs_workspace = data.get("needs-workspace", False)
         mapping = [
-            ('dsl', 'dsl', ''),
-            ('needs-workspace', 'buildNeedsWorkspace', False),
+            ("dsl", "dsl", ""),
+            ("needs-workspace", "buildNeedsWorkspace", False),
         ]
         convert_mapping_to_xml(xml_parent, data, mapping, fail_required=True)
-        if needs_workspace and 'dsl-file' in data:
-            XML.SubElement(xml_parent, 'dslFile').text = data['dsl-file']
+        if needs_workspace and "dsl-file" in data:
+            XML.SubElement(xml_parent, "dslFile").text = data["dsl-file"]
 
         return xml_parent

@@ -19,9 +19,9 @@ import os
 from jenkins_jobs.modules import project_multibranch
 
 
-@mock.patch('uuid.uuid4', mock.Mock(return_value='1-1-1-1-1'))
+@mock.patch("uuid.uuid4", mock.Mock(return_value="1-1-1-1-1"))
 class TestCaseMultibranchPipeline(base.BaseScenariosTestCase):
-    fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
+    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
     scenarios = base.get_scenarios(fixtures_path)
-    default_config_file = '/dev/null'
+    default_config_file = "/dev/null"
     klass = project_multibranch.WorkflowMultiBranch

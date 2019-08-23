@@ -24,20 +24,19 @@ from tests import base
 
 
 class TestCaseModuleYamlInclude(base.SingleJobTestCase):
-    fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
+    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
     scenarios = base.get_scenarios(fixtures_path)
 
 
 class TestYamlParserExceptions(base.BaseTestCase):
-    fixtures_path = os.path.join(os.path.dirname(__file__), 'exceptions')
+    fixtures_path = os.path.join(os.path.dirname(__file__), "exceptions")
 
     def test_incorrect_template_dimensions(self):
         self.conf_filename = None
         config = self._get_config()
 
         yp = parser.YamlParser(config)
-        yp.parse(os.path.join(self.fixtures_path,
-                              "incorrect_template_dimensions.yaml"))
+        yp.parse(os.path.join(self.fixtures_path, "incorrect_template_dimensions.yaml"))
 
         reg = registry.ModuleRegistry(config)
 
@@ -47,23 +46,22 @@ class TestYamlParserExceptions(base.BaseTestCase):
 
 
 class TestYamlParserFailureFormattingExceptions(base.BaseScenariosTestCase):
-    fixtures_path = os.path.join(os.path.dirname(__file__), 'exceptions')
-    scenarios = [
-        ('s1', {'name': 'template'}),
-        ('s2', {'name': 'params'})
-    ]
+    fixtures_path = os.path.join(os.path.dirname(__file__), "exceptions")
+    scenarios = [("s1", {"name": "template"}), ("s2", {"name": "params"})]
 
     def test_yaml_snippet(self):
         self.conf_filename = None
         config = self._get_config()
 
         yp = parser.YamlParser(config)
-        yp.parse(os.path.join(self.fixtures_path,
-                              "failure_formatting_{}.yaml".format(self.name)))
+        yp.parse(
+            os.path.join(
+                self.fixtures_path, "failure_formatting_{}.yaml".format(self.name)
+            )
+        )
 
         reg = registry.ModuleRegistry(config)
 
         self.assertRaises(Exception, yp.expandYaml, reg)
-        self.assertIn("Failure formatting {}".format(self.name),
-                      self.logger.output)
+        self.assertIn("Failure formatting {}".format(self.name), self.logger.output)
         self.assertIn("Problem formatting with args", self.logger.output)

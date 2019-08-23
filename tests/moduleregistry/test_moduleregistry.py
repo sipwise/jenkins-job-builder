@@ -9,25 +9,34 @@ from tests import base
 
 
 class ModuleRegistryPluginInfoTestsWithScenarios(
-        testscenarios.TestWithScenarios, base.BaseTestCase):
+    testscenarios.TestWithScenarios, base.BaseTestCase
+):
     scenarios = [
-        ('s1', dict(v1='1.0.0', op='__gt__', v2='0.8.0')),
-        ('s2', dict(v1='1.0.1alpha', op='__gt__', v2='1.0.0')),
-        ('s3', dict(v1='1.0', op='__eq__', v2='1.0.0')),
-        ('s4', dict(v1='1.0', op='__eq__', v2='1.0')),
-        ('s5', dict(v1='1.0', op='__lt__', v2='1.8.0')),
-        ('s6', dict(v1='1.0.1alpha', op='__lt__', v2='1.0.1')),
-        ('s7', dict(v1='1.0alpha', op='__lt__', v2='1.0.0')),
-        ('s8', dict(v1='1.0-alpha', op='__lt__', v2='1.0.0')),
-        ('s9', dict(v1='1.1-alpha', op='__gt__', v2='1.0')),
-        ('s10', dict(v1='1.0-SNAPSHOT', op='__lt__', v2='1.0')),
-        ('s11', dict(v1='1.0.preview', op='__lt__', v2='1.0')),
-        ('s12', dict(v1='1.1-SNAPSHOT', op='__gt__', v2='1.0')),
-        ('s13', dict(v1='1.0a-SNAPSHOT', op='__lt__', v2='1.0a')),
-        ('s14', dict(v1='1.4.6-SNAPSHOT (private-0986edd9-example)',
-                     op='__lt__', v2='1.4.6')),
-        ('s15', dict(v1='1.4.6-SNAPSHOT (private-0986edd9-example)',
-                     op='__gt__', v2='1.4.5')),
+        ("s1", dict(v1="1.0.0", op="__gt__", v2="0.8.0")),
+        ("s2", dict(v1="1.0.1alpha", op="__gt__", v2="1.0.0")),
+        ("s3", dict(v1="1.0", op="__eq__", v2="1.0.0")),
+        ("s4", dict(v1="1.0", op="__eq__", v2="1.0")),
+        ("s5", dict(v1="1.0", op="__lt__", v2="1.8.0")),
+        ("s6", dict(v1="1.0.1alpha", op="__lt__", v2="1.0.1")),
+        ("s7", dict(v1="1.0alpha", op="__lt__", v2="1.0.0")),
+        ("s8", dict(v1="1.0-alpha", op="__lt__", v2="1.0.0")),
+        ("s9", dict(v1="1.1-alpha", op="__gt__", v2="1.0")),
+        ("s10", dict(v1="1.0-SNAPSHOT", op="__lt__", v2="1.0")),
+        ("s11", dict(v1="1.0.preview", op="__lt__", v2="1.0")),
+        ("s12", dict(v1="1.1-SNAPSHOT", op="__gt__", v2="1.0")),
+        ("s13", dict(v1="1.0a-SNAPSHOT", op="__lt__", v2="1.0a")),
+        (
+            "s14",
+            dict(
+                v1="1.4.6-SNAPSHOT (private-0986edd9-example)", op="__lt__", v2="1.4.6"
+            ),
+        ),
+        (
+            "s15",
+            dict(
+                v1="1.4.6-SNAPSHOT (private-0986edd9-example)", op="__gt__", v2="1.4.5"
+            ),
+        ),
     ]
 
     def setUp(self):
@@ -36,13 +45,16 @@ class ModuleRegistryPluginInfoTestsWithScenarios(
         jjb_config = JJBConfig()
         jjb_config.validate()
 
-        plugin_info = [{'shortName': "HerpDerpPlugin",
-                        'longName': "Blah Blah Blah Plugin"
-                        }]
-        plugin_info.append({'shortName': "JankyPlugin1",
-                            'longName': "Not A Real Plugin",
-                            'version': self.v1
-                            })
+        plugin_info = [
+            {"shortName": "HerpDerpPlugin", "longName": "Blah Blah Blah Plugin"}
+        ]
+        plugin_info.append(
+            {
+                "shortName": "JankyPlugin1",
+                "longName": "Not A Real Plugin",
+                "version": self.v1,
+            }
+        )
 
         self.addDetail("plugin_info", text_content(str(plugin_info)))
         self.registry = ModuleRegistry(jjb_config, plugin_info)
@@ -61,7 +73,7 @@ class ModuleRegistryPluginInfoTestsWithScenarios(
         plugin_info = self.registry.get_plugin_info(plugin_name)
 
         self.assertIsInstance(plugin_info, dict)
-        self.assertEqual(plugin_info['shortName'], plugin_name)
+        self.assertEqual(plugin_info["shortName"], plugin_name)
 
     def test_get_plugin_info_dict_using_longName(self):
         """
@@ -74,7 +86,7 @@ class ModuleRegistryPluginInfoTestsWithScenarios(
         plugin_info = self.registry.get_plugin_info(plugin_name)
 
         self.assertIsInstance(plugin_info, dict)
-        self.assertEqual(plugin_info['longName'], plugin_name)
+        self.assertEqual(plugin_info["longName"], plugin_name)
 
     def test_get_plugin_info_dict_no_plugin(self):
         """
@@ -101,8 +113,8 @@ class ModuleRegistryPluginInfoTestsWithScenarios(
         plugin_info = self.registry.get_plugin_info(plugin_name)
 
         self.assertIsInstance(plugin_info, dict)
-        self.assertEqual(plugin_info['shortName'], plugin_name)
-        self.assertEqual(plugin_info['version'], '0')
+        self.assertEqual(plugin_info["shortName"], plugin_name)
+        self.assertEqual(plugin_info["version"], "0")
 
     def test_plugin_version_comparison(self):
         """
@@ -117,7 +129,8 @@ class ModuleRegistryPluginInfoTestsWithScenarios(
         op = getattr(pkg_resources.parse_version(v1), self.op)
         test = op(pkg_resources.parse_version(self.v2))
 
-        self.assertTrue(test,
-                        msg="Unexpectedly found {0} {2} {1} == False "
-                            "when comparing versions!"
-                            .format(v1, self.v2, self.op))
+        self.assertTrue(
+            test,
+            msg="Unexpectedly found {0} {2} {1} == False "
+            "when comparing versions!".format(v1, self.v2, self.op),
+        )

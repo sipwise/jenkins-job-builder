@@ -31,8 +31,7 @@ logger = logging.getLogger()
 
 
 def __version__():
-    return "Jenkins Job Builder version: %s" % \
-        version.version_info.version_string()
+    return "Jenkins Job Builder version: %s" % version.version_info.version_string()
 
 
 class JenkinsJobs(object):
@@ -58,17 +57,17 @@ class JenkinsJobs(object):
         self.parser = create_parser()
         self.options = self.parser.parse_args(args)
 
-        self.jjb_config = JJBConfig(self.options.conf,
-                                    config_section=self.options.section,
-                                    **kwargs)
+        self.jjb_config = JJBConfig(
+            self.options.conf, config_section=self.options.section, **kwargs
+        )
 
         if not self.options.command:
             self.parser.error("Must specify a 'command' to be performed")
 
-        if (self.options.log_level is not None):
-            self.options.log_level = getattr(logging,
-                                             self.options.log_level.upper(),
-                                             logger.getEffectiveLevel())
+        if self.options.log_level is not None:
+            self.options.log_level = getattr(
+                logging, self.options.log_level.upper(), logger.getEffectiveLevel()
+            )
             logger.setLevel(self.options.log_level)
 
         self._parse_additional()
@@ -84,50 +83,58 @@ class JenkinsJobs(object):
 
     def _parse_additional(self):
 
-        self._set_config(self.jjb_config.builder, 'ignore_cache')
-        self._set_config(self.jjb_config.builder, 'flush_cache')
-        self._set_config(self.jjb_config.builder, 'update')
-        self._set_config(self.jjb_config.yamlparser, 'allow_empty_variables')
-        self._set_config(self.jjb_config.jenkins, 'section')
-        self._set_config(self.jjb_config.jenkins, 'user')
-        self._set_config(self.jjb_config.jenkins, 'password')
+        self._set_config(self.jjb_config.builder, "ignore_cache")
+        self._set_config(self.jjb_config.builder, "flush_cache")
+        self._set_config(self.jjb_config.builder, "update")
+        self._set_config(self.jjb_config.yamlparser, "allow_empty_variables")
+        self._set_config(self.jjb_config.jenkins, "section")
+        self._set_config(self.jjb_config.jenkins, "user")
+        self._set_config(self.jjb_config.jenkins, "password")
 
         # Note: CLI options override config file options.
-        if getattr(self.options, 'update', None) is None:
-            self.options.update = self.jjb_config.builder.get('update')
+        if getattr(self.options, "update", None) is None:
+            self.options.update = self.jjb_config.builder.get("update")
             if self.options.update is None:
-                self.options.update = 'all'
+                self.options.update = "all"
 
-        if getattr(self.options, 'plugins_info_path', None) is not None:
-            with io.open(self.options.plugins_info_path, 'r',
-                         encoding='utf-8') as yaml_file:
+        if getattr(self.options, "plugins_info_path", None) is not None:
+            with io.open(
+                self.options.plugins_info_path, "r", encoding="utf-8"
+            ) as yaml_file:
                 plugins_info = yaml.load(yaml_file)
             if not isinstance(plugins_info, list):
-                self.parser.error("{0} must contain a Yaml list!".format(
-                                  self.options.plugins_info_path))
-            self.jjb_config.builder['plugins_info'] = plugins_info
+                self.parser.error(
+                    "{0} must contain a Yaml list!".format(
+                        self.options.plugins_info_path
+                    )
+                )
+            self.jjb_config.builder["plugins_info"] = plugins_info
 
-        if getattr(self.options, 'path', None):
-            if hasattr(self.options.path, 'read'):
+        if getattr(self.options, "path", None):
+            if hasattr(self.options.path, "read"):
                 logger.debug("Input file is stdin")
                 if self.options.path.isatty():
-                    if platform.system() == 'Windows':
-                        key = 'CTRL+Z'
+                    if platform.system() == "Windows":
+                        key = "CTRL+Z"
                     else:
-                        key = 'CTRL+D'
-                    logger.warning("Reading configuration from STDIN. "
-                                   "Press %s to end input.", key)
+                        key = "CTRL+D"
+                    logger.warning(
+                        "Reading configuration from STDIN. " "Press %s to end input.",
+                        key,
+                    )
                 self.options.path = [self.options.path]
             else:
                 # take list of paths
                 self.options.path = self.options.path.split(os.pathsep)
 
-                do_recurse = (getattr(self.options, 'recursive', False) or
-                              self.jjb_config.recursive)
+                do_recurse = (
+                    getattr(self.options, "recursive", False)
+                    or self.jjb_config.recursive
+                )
 
-                excludes = ([e for elist in self.options.exclude
-                             for e in elist.split(os.pathsep)] or
-                            self.jjb_config.excludes)
+                excludes = [
+                    e for elist in self.options.exclude for e in elist.split(os.pathsep)
+                ] or self.jjb_config.excludes
                 paths = []
                 for path in self.options.path:
                     if do_recurse and os.path.isdir(path):
@@ -139,8 +146,8 @@ class JenkinsJobs(object):
     def execute(self):
 
         extension_manager = extension.ExtensionManager(
-            namespace='jjb.cli.subcommands',
-            invoke_on_load=True,)
+            namespace="jjb.cli.subcommands", invoke_on_load=True
+        )
 
         ext = extension_manager[self.options.command]
         ext.obj.execute(self.options, self.jjb_config)
@@ -154,10 +161,11 @@ def main():
 
     if sys.version_info[0] == 2:
         import codecs
+
         reload(sys)  # noqa
-        sys.setdefaultencoding('utf-8')
-        sys.stdout = codecs.getwriter('utf8')(sys.stdout)
-        sys.stderr = codecs.getwriter('utf8')(sys.stderr)
+        sys.setdefaultencoding("utf-8")
+        sys.stdout = codecs.getwriter("utf8")(sys.stdout)
+        sys.stderr = codecs.getwriter("utf8")(sys.stderr)
         # end of workaround
 
     argv = sys.argv[1:]

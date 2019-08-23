@@ -21,5 +21,5 @@ from tests import base
 
 
 class TestCaseModuleJsonParser(base.SingleJobTestCase):
-    fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
-    scenarios = base.get_scenarios(fixtures_path, in_ext='json', out_ext='xml')
+    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
+    scenarios = base.get_scenarios(fixtures_path, in_ext="json", out_ext="xml")

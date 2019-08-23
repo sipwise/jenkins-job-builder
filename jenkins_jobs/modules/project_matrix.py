@@ -113,139 +113,144 @@ class Matrix(jenkins_jobs.modules.base.Base):
     # List the supported Axis names in our configuration
     # and map them to the Jenkins XML element name.
     supported_axis = {
-        'label-expression': 'hudson.matrix.LabelExpAxis',
-        'user-defined': 'hudson.matrix.TextAxis',
-        'slave': 'hudson.matrix.LabelAxis',
-        'jdk': 'hudson.matrix.JDKAxis',
-        'dynamic': 'ca.silvermaplesolutions.jenkins.plugins.daxis.DynamicAxis',
-        'python': 'jenkins.plugins.shiningpanda.matrix.PythonAxis',
-        'tox': 'jenkins.plugins.shiningpanda.matrix.ToxAxis',
-        'groovy': 'org.jenkinsci.plugins.GroovyAxis',
-        'yaml': 'org.jenkinsci.plugins.yamlaxis.YamlAxis',
+        "label-expression": "hudson.matrix.LabelExpAxis",
+        "user-defined": "hudson.matrix.TextAxis",
+        "slave": "hudson.matrix.LabelAxis",
+        "jdk": "hudson.matrix.JDKAxis",
+        "dynamic": "ca.silvermaplesolutions.jenkins.plugins.daxis.DynamicAxis",
+        "python": "jenkins.plugins.shiningpanda.matrix.PythonAxis",
+        "tox": "jenkins.plugins.shiningpanda.matrix.ToxAxis",
+        "groovy": "org.jenkinsci.plugins.GroovyAxis",
+        "yaml": "org.jenkinsci.plugins.yamlaxis.YamlAxis",
     }
 
     supported_strategies = {
         # Jenkins built-in, default
-        'execution-strategy':
-            'hudson.matrix.DefaultMatrixExecutionStrategyImpl',
-        'yaml-strategy':
-            'org.jenkinsci.plugins.yamlaxis.YamlMatrixExecutionStrategy',
-        'p4-strategy':
-            'org.jenkinsci.plugins.p4.matrix.MatrixOptions'
+        "execution-strategy": "hudson.matrix.DefaultMatrixExecutionStrategyImpl",
+        "yaml-strategy": "org.jenkinsci.plugins.yamlaxis.YamlMatrixExecutionStrategy",
+        "p4-strategy": "org.jenkinsci.plugins.p4.matrix.MatrixOptions",
     }
 
     def root_xml(self, data):
-        root = XML.Element('matrix-project')
+        root = XML.Element("matrix-project")
 
         # Default to 'execution-strategy'
-        strategies = ([s for s in data.keys() if s.endswith('-strategy')] or
-                      ['execution-strategy'])
+        strategies = [s for s in data.keys() if s.endswith("-strategy")] or [
+            "execution-strategy"
+        ]
 
         # Job can not have multiple strategies
         if len(strategies) > 1:
             raise ValueError(
-                'matrix-project does not support multiple strategies. '
-                'Given %s: %s' % (len(strategies), ', '.join(strategies)))
+                "matrix-project does not support multiple strategies. "
+                "Given %s: %s" % (len(strategies), ", ".join(strategies))
+            )
         strategy_name = strategies[0]
 
         if strategy_name not in self.supported_strategies:
             raise ValueError(
-                'Given strategy %s. Only %s strategies are supported'
-                % (strategy_name, self.supported_strategies.keys()))
+                "Given strategy %s. Only %s strategies are supported"
+                % (strategy_name, self.supported_strategies.keys())
+            )
 
         ex_r = XML.SubElement(
-            root, 'executionStrategy',
-            {'class': self.supported_strategies[strategy_name]})
+            root,
+            "executionStrategy",
+            {"class": self.supported_strategies[strategy_name]},
+        )
 
         strategy = data.get(strategy_name, {})
 
-        if strategy_name == 'execution-strategy':
-            XML.SubElement(root, 'combinationFilter').text = (
-                str(strategy.get('combination-filter', '')).rstrip()
-            )
-            XML.SubElement(ex_r, 'runSequentially').text = (
-                str(strategy.get('sequential', False)).lower()
-            )
-            if 'touchstone' in strategy:
-                XML.SubElement(ex_r, 'touchStoneCombinationFilter').text = (
-                    str(strategy['touchstone'].get('expr', ''))
+        if strategy_name == "execution-strategy":
+            XML.SubElement(root, "combinationFilter").text = str(
+                strategy.get("combination-filter", "")
+            ).rstrip()
+            XML.SubElement(ex_r, "runSequentially").text = str(
+                strategy.get("sequential", False)
+            ).lower()
+            if "touchstone" in strategy:
+                XML.SubElement(ex_r, "touchStoneCombinationFilter").text = str(
+                    strategy["touchstone"].get("expr", "")
                 )
 
-                threshold = strategy['touchstone'].get(
-                    'result', 'stable').upper()
-                supported_thresholds = ('STABLE', 'UNSTABLE')
+                threshold = strategy["touchstone"].get("result", "stable").upper()
+                supported_thresholds = ("STABLE", "UNSTABLE")
                 if threshold not in supported_thresholds:
                     raise InvalidAttributeError(
-                        'touchstone', threshold, supported_thresholds)
+                        "touchstone", threshold, supported_thresholds
+                    )
 
                 # Web ui uses Stable but hudson.model.Result has Success
-                if threshold == 'STABLE':
-                    threshold = 'SUCCESS'
+                if threshold == "STABLE":
+                    threshold = "SUCCESS"
 
-                t_r = XML.SubElement(ex_r, 'touchStoneResultCondition')
-                for sub_elem in ('name', 'ordinal', 'color'):
-                    XML.SubElement(t_r, sub_elem).text = (
-                        hudson_model.THRESHOLDS[threshold][sub_elem])
+                t_r = XML.SubElement(ex_r, "touchStoneResultCondition")
+                for sub_elem in ("name", "ordinal", "color"):
+                    XML.SubElement(t_r, sub_elem).text = hudson_model.THRESHOLDS[
+                        threshold
+                    ][sub_elem]
 
-        elif strategy_name == 'yaml-strategy':
-            filename = str(strategy.get('filename', ''))
-            text = str(strategy.get('text', ''))
-            exclude_key = str(strategy.get('exclude-key', ''))
+        elif strategy_name == "yaml-strategy":
+            filename = str(strategy.get("filename", ""))
+            text = str(strategy.get("text", ""))
+            exclude_key = str(strategy.get("exclude-key", ""))
 
             if bool(filename) == bool(text):  # xor with str
-                raise ValueError('yaml-strategy must be given '
-                                 'either "filename" or "text"')
+                raise ValueError(
+                    "yaml-strategy must be given " 'either "filename" or "text"'
+                )
 
-            yamlType = (filename and 'file') or (text and 'text')
-            XML.SubElement(ex_r, 'yamlType').text = yamlType
+            yamlType = (filename and "file") or (text and "text")
+            XML.SubElement(ex_r, "yamlType").text = yamlType
 
-            XML.SubElement(ex_r, 'yamlFile').text = filename
-            XML.SubElement(ex_r, 'yamlText').text = text
+            XML.SubElement(ex_r, "yamlFile").text = filename
+            XML.SubElement(ex_r, "yamlText").text = text
 
-            XML.SubElement(ex_r, 'excludeKey').text = exclude_key
+            XML.SubElement(ex_r, "excludeKey").text = exclude_key
 
-        elif strategy_name == 'p4-strategy':
-            XML.SubElement(ex_r, 'runSequentially').text = (
-                str(strategy.get('sequential', False)).lower()
-            )
+        elif strategy_name == "p4-strategy":
+            XML.SubElement(ex_r, "runSequentially").text = str(
+                strategy.get("sequential", False)
+            ).lower()
 
-            XML.SubElement(ex_r, 'buildParent').text = (
-                str(strategy.get('build-parent', False)).lower()
-            )
+            XML.SubElement(ex_r, "buildParent").text = str(
+                strategy.get("build-parent", False)
+            ).lower()
 
-        ax_root = XML.SubElement(root, 'axes')
-        for axis_ in data.get('axes', []):
-            axis = axis_['axis']
-            axis_type = axis['type']
+        ax_root = XML.SubElement(root, "axes")
+        for axis_ in data.get("axes", []):
+            axis = axis_["axis"]
+            axis_type = axis["type"]
             if axis_type not in self.supported_axis:
-                raise ValueError('Only %s axes types are supported'
-                                 % self.supported_axis.keys())
+                raise ValueError(
+                    "Only %s axes types are supported" % self.supported_axis.keys()
+                )
             axis_name = self.supported_axis.get(axis_type)
             lbl_root = XML.SubElement(ax_root, axis_name)
-            name, values = axis.get('name', ''), axis.get('values', [''])
-            if axis_type == 'jdk':
-                XML.SubElement(lbl_root, 'name').text = 'jdk'
-            elif axis_type == 'python':
-                XML.SubElement(lbl_root, 'name').text = 'PYTHON'
-            elif axis_type == 'tox':
-                XML.SubElement(lbl_root, 'name').text = 'TOXENV'
+            name, values = axis.get("name", ""), axis.get("values", [""])
+            if axis_type == "jdk":
+                XML.SubElement(lbl_root, "name").text = "jdk"
+            elif axis_type == "python":
+                XML.SubElement(lbl_root, "name").text = "PYTHON"
+            elif axis_type == "tox":
+                XML.SubElement(lbl_root, "name").text = "TOXENV"
             else:
-                XML.SubElement(lbl_root, 'name').text = str(name)
+                XML.SubElement(lbl_root, "name").text = str(name)
             if axis_type != "groovy":
-                v_root = XML.SubElement(lbl_root, 'values')
+                v_root = XML.SubElement(lbl_root, "values")
             if axis_type == "dynamic":
-                XML.SubElement(v_root, 'string').text = str(values[0])
-                XML.SubElement(lbl_root, 'varName').text = str(values[0])
-                v_root = XML.SubElement(lbl_root, 'axisValues')
-                XML.SubElement(v_root, 'string').text = 'default'
+                XML.SubElement(v_root, "string").text = str(values[0])
+                XML.SubElement(lbl_root, "varName").text = str(values[0])
+                v_root = XML.SubElement(lbl_root, "axisValues")
+                XML.SubElement(v_root, "string").text = "default"
             elif axis_type == "groovy":
-                command = XML.SubElement(lbl_root, 'groovyString')
-                command.text = axis.get('command')
-                XML.SubElement(lbl_root, 'computedValues').text = ''
+                command = XML.SubElement(lbl_root, "groovyString")
+                command.text = axis.get("command")
+                XML.SubElement(lbl_root, "computedValues").text = ""
             elif axis_type == "yaml":
-                XML.SubElement(v_root, 'string').text = axis.get('filename')
+                XML.SubElement(v_root, "string").text = axis.get("filename")
             else:
                 for v in values:
-                    XML.SubElement(v_root, 'string').text = str(v)
+                    XML.SubElement(v_root, "string").text = str(v)
 
         return root

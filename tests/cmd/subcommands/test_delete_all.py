@@ -21,31 +21,27 @@ from tests.base import mock
 from tests.cmd.test_cmd import CmdTestsBase
 
 
-@mock.patch('jenkins_jobs.builder.JenkinsManager.get_plugins_info',
-            mock.MagicMock)
+@mock.patch("jenkins_jobs.builder.JenkinsManager.get_plugins_info", mock.MagicMock)
 class DeleteAllTests(CmdTestsBase):
-
-    @mock.patch('jenkins_jobs.cli.subcommand.update.'
-                'JenkinsManager.delete_all_jobs')
+    @mock.patch("jenkins_jobs.cli.subcommand.update." "JenkinsManager.delete_all_jobs")
     def test_delete_all_accept(self, delete_job_mock):
         """
         Test handling the deletion of a single Jenkins job.
         """
 
-        args = ['--conf', self.default_config_file, 'delete-all']
-        with mock.patch('jenkins_jobs.builder.JenkinsManager.get_views',
-                        return_value=[None]):
-            with mock.patch('jenkins_jobs.utils.input', return_value="y"):
+        args = ["--conf", self.default_config_file, "delete-all"]
+        with mock.patch(
+            "jenkins_jobs.builder.JenkinsManager.get_views", return_value=[None]
+        ):
+            with mock.patch("jenkins_jobs.utils.input", return_value="y"):
                 self.execute_jenkins_jobs_with_args(args)
 
-    @mock.patch('jenkins_jobs.cli.subcommand.update.'
-                'JenkinsManager.delete_all_jobs')
+    @mock.patch("jenkins_jobs.cli.subcommand.update." "JenkinsManager.delete_all_jobs")
     def test_delete_all_abort(self, delete_job_mock):
         """
         Test handling the deletion of a single Jenkins job.
         """
 
-        args = ['--conf', self.default_config_file, 'delete-all']
-        with mock.patch('jenkins_jobs.utils.input', return_value="n"):
-            self.assertRaises(SystemExit,
-                              self.execute_jenkins_jobs_with_args, args)
+        args = ["--conf", self.default_config_file, "delete-all"]
+        with mock.patch("jenkins_jobs.utils.input", return_value="n"):
+            self.assertRaises(SystemExit, self.execute_jenkins_jobs_with_args, args)

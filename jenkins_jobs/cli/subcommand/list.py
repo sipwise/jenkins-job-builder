@@ -27,18 +27,15 @@ def list_duplicates(seq):
 
 
 class ListSubCommand(base.BaseSubCommand):
-
     def parse_args(self, subparser):
-        list = subparser.add_parser('list', help="List jobs")
+        list = subparser.add_parser("list", help="List jobs")
 
         self.parse_option_recursive_exclude(list)
 
-        list.add_argument('names',
-                          help='name(s) of job(s)',
-                          nargs='*',
-                          default=None)
-        list.add_argument('-p', '--path', default=None,
-                          help='path to YAML file or directory')
+        list.add_argument("names", help="name(s) of job(s)", nargs="*", default=None)
+        list.add_argument(
+            "-p", "--path", default=None, help="path to YAML file or directory"
+        )
 
     def execute(self, options, jjb_config):
         self.jjb_config = jjb_config
@@ -50,24 +47,25 @@ class ListSubCommand(base.BaseSubCommand):
         stdout = utils.wrap_stream(sys.stdout)
 
         for job in jobs:
-            stdout.write((job + '\n').encode('utf-8'))
+            stdout.write((job + "\n").encode("utf-8"))
 
     def get_jobs(self, jobs_glob=None, fn=None):
         if fn:
-            r = registry.ModuleRegistry(self.jjb_config,
-                                      self.jenkins.plugins_list)
+            r = registry.ModuleRegistry(self.jjb_config, self.jenkins.plugins_list)
             p = parser.YamlParser(self.jjb_config)
             p.load_files(fn)
             p.expandYaml(r, jobs_glob)
-            jobs = [j['name'] for j in p.jobs]
+            jobs = [j["name"] for j in p.jobs]
         else:
-            jobs = [j['name'] for j in self.jenkins.get_jobs()
-                    if not jobs_glob or parser.matches(j['name'], jobs_glob)]
+            jobs = [
+                j["name"]
+                for j in self.jenkins.get_jobs()
+                if not jobs_glob or parser.matches(j["name"], jobs_glob)
+            ]
 
         jobs = sorted(jobs)
         for duplicate in list_duplicates(jobs):
-            logging.warning("Found duplicate job name '%s', likely bug.",
-                            duplicate)
+            logging.warning("Found duplicate job name '%s', likely bug.", duplicate)
 
         logging.debug("Builder.get_jobs: returning %r", jobs)
 

@@ -25,9 +25,7 @@ from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.formatter import deep_format
 from jenkins_jobs.local_yaml import Jinja2Loader
 
-__all__ = [
-    "ModuleRegistry"
-]
+__all__ = ["ModuleRegistry"]
 
 logger = logging.getLogger(__name__)
 
@@ -47,12 +45,11 @@ class ModuleRegistry(object):
         else:
             self.plugins_dict = self._get_plugins_info_dict(plugins_list)
 
-        for entrypoint in pkg_resources.iter_entry_points(
-                group='jenkins_jobs.modules'):
+        for entrypoint in pkg_resources.iter_entry_points(group="jenkins_jobs.modules"):
             Mod = entrypoint.load()
             mod = Mod(self)
             self.modules.append(mod)
-            self.modules.sort(key=operator.attrgetter('sequence'))
+            self.modules.sort(key=operator.attrgetter("sequence"))
             if mod.component_type is not None:
                 self.modules_by_component_type[mod.component_type] = entrypoint
 
@@ -64,12 +61,13 @@ class ModuleRegistry(object):
             return a dictionary with the longName and shortName of the plugin
             mapped to its plugin info dictionary.
             """
-            version = plugin_info.get('version', '0')
-            plugin_info['version'] = re.sub(r'(.*)-(?:SNAPSHOT|BETA).*',
-                                            r'\g<1>.preview', version)
+            version = plugin_info.get("version", "0")
+            plugin_info["version"] = re.sub(
+                r"(.*)-(?:SNAPSHOT|BETA).*", r"\g<1>.preview", version
+            )
 
             aliases = []
-            for key in ['longName', 'shortName']:
+            for key in ["longName", "shortName"]:
                 value = plugin_info.get(key, None)
                 if value is not None:
                     aliases.append(value)
@@ -130,8 +128,7 @@ class ModuleRegistry(object):
     def set_parser_data(self, parser_data):
         self.__parser_data = parser_data
 
-    def dispatch(self, component_type, xml_parent,
-                 component, template_data={}):
+    def dispatch(self, component_type, xml_parent, component, template_data={}):
         """This is a method that you can call from your implementation of
         Base.gen_xml or component.  It allows modules to define a type
         of component, and benefit from extensibility via Python
@@ -152,8 +149,9 @@ class ModuleRegistry(object):
         """
 
         if component_type not in self.modules_by_component_type:
-            raise JenkinsJobsException("Unknown component type: "
-                                       "'{0}'.".format(component_type))
+            raise JenkinsJobsException(
+                "Unknown component type: " "'{0}'.".format(component_type)
+            )
 
         entry_point = self.modules_by_component_type[component_type]
         component_list_type = entry_point.load().component_list_type
@@ -167,12 +165,16 @@ class ModuleRegistry(object):
                 # that don't contain any variables, we also deep format those.
                 try:
                     component_data = deep_format(
-                        component_data, template_data,
-                        self.jjb_config.yamlparser['allow_empty_variables'])
+                        component_data,
+                        template_data,
+                        self.jjb_config.yamlparser["allow_empty_variables"],
+                    )
                 except Exception:
                     logging.error(
                         "Failure formatting component ('%s') data '%s'",
-                        name, component_data)
+                        name,
+                        component_data,
+                    )
                     raise
         else:
             # The component is a simple string name, eg "run-tests"
@@ -185,41 +187,54 @@ class ModuleRegistry(object):
             module_eps = []
             # auto build entry points by inferring from base component_types
             mod = pkg_resources.EntryPoint(
-                "__all__", entry_point.module_name, dist=entry_point.dist)
+                "__all__", entry_point.module_name, dist=entry_point.dist
+            )
 
             Mod = mod.load()
-            func_eps = [Mod.__dict__.get(a) for a in dir(Mod)
-                        if isinstance(Mod.__dict__.get(a),
-                                      types.FunctionType)]
+            func_eps = [
+                Mod.__dict__.get(a)
+                for a in dir(Mod)
+                if isinstance(Mod.__dict__.get(a), types.FunctionType)
+            ]
             for func_ep in func_eps:
                 try:
                     # extract entry point based on docstring
-                    name_line = func_ep.__doc__.split('\n')
-                    if not name_line[0].startswith('yaml:'):
-                        logger.debug("Ignoring '%s' as an entry point" %
-                                     name_line)
+                    name_line = func_ep.__doc__.split("\n")
+                    if not name_line[0].startswith("yaml:"):
+                        logger.debug("Ignoring '%s' as an entry point" % name_line)
                         continue
-                    ep_name = name_line[0].split(' ')[1]
+                    ep_name = name_line[0].split(" ")[1]
                 except (AttributeError, IndexError):
                     # AttributeError by docstring not being defined as
                     # a string to have split called on it.
                     # IndexError raised by name_line not containing anything
                     # after the 'yaml:' string.
-                    logger.debug("Not including func '%s' as an entry point"
-                                 % func_ep.__name__)
+                    logger.debug(
+                        "Not including func '%s' as an entry point" % func_ep.__name__
+                    )
                     continue
 
                 module_eps.append(
                     pkg_resources.EntryPoint(
-                        ep_name, entry_point.module_name,
-                        dist=entry_point.dist, attrs=(func_ep.__name__,)))
+                        ep_name,
+                        entry_point.module_name,
+                        dist=entry_point.dist,
+                        attrs=(func_ep.__name__,),
+                    )
+                )
                 logger.debug(
-                    "Adding auto EP '%s=%s:%s'" %
-                    (ep_name, entry_point.module_name, func_ep.__name__))
+                    "Adding auto EP '%s=%s:%s'"
+                    % (ep_name, entry_point.module_name, func_ep.__name__)
+                )
 
             # load from explicitly defined entry points
-            module_eps.extend(list(pkg_resources.iter_entry_points(
-                group='jenkins_jobs.{0}'.format(component_list_type))))
+            module_eps.extend(
+                list(
+                    pkg_resources.iter_entry_points(
+                        group="jenkins_jobs.{0}".format(component_list_type)
+                    )
+                )
+            )
 
             eps = {}
             for module_ep in module_eps:
@@ -227,14 +242,14 @@ class ModuleRegistry(object):
                     raise JenkinsJobsException(
                         "Duplicate entry point found for component type: "
                         "'{0}', '{0}',"
-                        "name: '{1}'".format(component_type, name))
+                        "name: '{1}'".format(component_type, name)
+                    )
 
                 eps[module_ep.name] = module_ep
 
             # cache both sets of entry points
             self._entry_points_cache[component_list_type] = eps
-            logger.debug("Cached entry point group %s = %s",
-                         component_list_type, eps)
+            logger.debug("Cached entry point group %s = %s", component_list_type, eps)
 
         # check for macro first
         component = self.parser_data.get(component_type, {}).get(name)
@@ -244,7 +259,8 @@ class ModuleRegistry(object):
                 logger.warning(
                     "You have a macro ('%s') defined for '%s' "
                     "component type that is masking an inbuilt "
-                    "definition" % (name, component_type))
+                    "definition" % (name, component_type)
+                )
 
             for b in component[component_list_type]:
                 # Pass component_data in as template data to this function
@@ -255,6 +271,7 @@ class ModuleRegistry(object):
             func = eps[name].load()
             func(self, xml_parent, component_data)
         else:
-            raise JenkinsJobsException("Unknown entry point or macro '{0}' "
-                                       "for component type: '{1}'.".
-                                       format(name, component_type))
+            raise JenkinsJobsException(
+                "Unknown entry point or macro '{0}' "
+                "for component type: '{1}'.".format(name, component_type)
+            )

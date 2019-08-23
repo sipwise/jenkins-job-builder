@@ -50,11 +50,13 @@ def p4(registry, xml_parent, data):
     Specifies the Perforce (P4) repository for this job
     Requires the Jenkins :jenkins-wiki:`P4 Plugin <P4+Plugin>`.
     """
-    scm = XML.SubElement(xml_parent, 'scm',
-                        {'class': 'org.jenkinsci.plugins.p4.PerforceScm',
-                        'plugin': 'p4'})
+    scm = XML.SubElement(
+        xml_parent,
+        "scm",
+        {"class": "org.jenkinsci.plugins.p4.PerforceScm", "plugin": "p4"},
+    )
 
-    XML.SubElement(scm, 'credential').text = data.get('credential')
+    XML.SubElement(scm, "credential").text = data.get("credential")
 
     p4_construct_workspace(scm, data)
 
@@ -65,93 +67,105 @@ def p4_construct_workspace(xml_parent, data):
     workspace = None
 
     workspace_mapping = [
-        ('workspace-charset', 'charset', 'none'),
-        ('workspace-pin-host', 'pinHost', False),
-        ('workspace-name', 'name', ''),
-        ('workspace-cleanup', 'cleanup', None)
+        ("workspace-charset", "charset", "none"),
+        ("workspace-pin-host", "pinHost", False),
+        ("workspace-name", "name", ""),
+        ("workspace-cleanup", "cleanup", None),
     ]
 
-    if data.get('workspace-type') == 'Static':
-        workspace = XML.SubElement(xml_parent, 'workspace',
-            {'class':
-            'org.jenkinsci.plugins.p4.workspace.StaticWorkspaceImpl'})
-    elif data.get('workspace-type') == 'Manual':
-        workspace = XML.SubElement(xml_parent, 'workspace',
-            {'class':
-            'org.jenkinsci.plugins.p4.workspace.ManualWorkspaceImpl'})
+    if data.get("workspace-type") == "Static":
+        workspace = XML.SubElement(
+            xml_parent,
+            "workspace",
+            {"class": "org.jenkinsci.plugins.p4.workspace.StaticWorkspaceImpl"},
+        )
+    elif data.get("workspace-type") == "Manual":
+        workspace = XML.SubElement(
+            xml_parent,
+            "workspace",
+            {"class": "org.jenkinsci.plugins.p4.workspace.ManualWorkspaceImpl"},
+        )
 
-        spec = XML.SubElement(workspace, 'spec')
+        spec = XML.SubElement(workspace, "spec")
 
         spec_mapping = [
-            ('spec-allwrite', 'allwrite', False),
-            ('spec-clobber', 'clobber', False),
-            ('spec-compress', 'compress', False),
-            ('spec-locked', 'locked', False),
-            ('spec-modtime', 'modtime', False),
-            ('spec-rmdir', 'rmdir', False),
-            ('spec-line', 'line', ''),
-            ('spec-view', 'view', ''),
-            ('spec-type', 'type', ''),
-            ('spec-backup', 'backup', False),
-            ('spec-stream-name', 'streamName', '')
+            ("spec-allwrite", "allwrite", False),
+            ("spec-clobber", "clobber", False),
+            ("spec-compress", "compress", False),
+            ("spec-locked", "locked", False),
+            ("spec-modtime", "modtime", False),
+            ("spec-rmdir", "rmdir", False),
+            ("spec-line", "line", ""),
+            ("spec-view", "view", ""),
+            ("spec-type", "type", ""),
+            ("spec-backup", "backup", False),
+            ("spec-stream-name", "streamName", ""),
         ]
 
-        helpers.convert_mapping_to_xml(
-            spec, data, spec_mapping, fail_required=False)
+        helpers.convert_mapping_to_xml(spec, data, spec_mapping, fail_required=False)
 
-    if 'view-mask' in data.keys():
-        filter_node = XML.SubElement(xml_parent, 'filter')
+    if "view-mask" in data.keys():
+        filter_node = XML.SubElement(xml_parent, "filter")
 
-        view_mask = XML.SubElement(filter_node,
-            'org.jenkinsci.plugins.p4.filters.FilterViewMaskImpl')
+        view_mask = XML.SubElement(
+            filter_node, "org.jenkinsci.plugins.p4.filters.FilterViewMaskImpl"
+        )
 
-        view_mask_mapping = [
-            ('view-mask', 'viewMask', None)
-        ]
+        view_mask_mapping = [("view-mask", "viewMask", None)]
 
         helpers.convert_mapping_to_xml(
-            view_mask, data, view_mask_mapping, fail_required=False)
+            view_mask, data, view_mask_mapping, fail_required=False
+        )
 
     helpers.convert_mapping_to_xml(
-        workspace, data, workspace_mapping, fail_required=False)
+        workspace, data, workspace_mapping, fail_required=False
+    )
 
 
 def p4_construct_populate(xml_parent, data):
     populate = None
 
     populate_mapping = [
-        ('populate-have-list', 'have', False),
-        ('populate-force-sync', 'force', False),
-        ('populate-modtime', 'modtime', False),
-        ('populate-quiet', 'quiet', False),
-        ('populate-label', 'pin', None),
-        ('populate-revert', 'revert', None),
-        ('populate-replace', 'replace', None),
-        ('populate-delete', 'delete', None),
-        ('populate-tidy', 'tidy', None)
+        ("populate-have-list", "have", False),
+        ("populate-force-sync", "force", False),
+        ("populate-modtime", "modtime", False),
+        ("populate-quiet", "quiet", False),
+        ("populate-label", "pin", None),
+        ("populate-revert", "revert", None),
+        ("populate-replace", "replace", None),
+        ("populate-delete", "delete", None),
+        ("populate-tidy", "tidy", None),
     ]
 
     parallel_mapping = [
-        ('parallel-enabled', 'enable', False),
-        ('parallel-threads', 'threads', '4'),
-        ('parallel-minfiles', 'minfiles', '1'),
-        ('parallel-minbytes', 'minbytes', '1024')
+        ("parallel-enabled", "enable", False),
+        ("parallel-threads", "threads", "4"),
+        ("parallel-minfiles", "minfiles", "1"),
+        ("parallel-minbytes", "minbytes", "1024"),
     ]
 
-    if data.get('populate-type') == 'SyncOnly':
-        populate = XML.SubElement(xml_parent, 'populate',
-            {'class': 'org.jenkinsci.plugins.p4.populate.SyncOnlyImpl'})
-    elif data.get('populate-type') == 'AutoClean':
-        populate = XML.SubElement(xml_parent, 'populate',
-            {'class': 'org.jenkinsci.plugins.p4.populate.AutoCleanImpl'})
+    if data.get("populate-type") == "SyncOnly":
+        populate = XML.SubElement(
+            xml_parent,
+            "populate",
+            {"class": "org.jenkinsci.plugins.p4.populate.SyncOnlyImpl"},
+        )
+    elif data.get("populate-type") == "AutoClean":
+        populate = XML.SubElement(
+            xml_parent,
+            "populate",
+            {"class": "org.jenkinsci.plugins.p4.populate.AutoCleanImpl"},
+        )
 
     helpers.convert_mapping_to_xml(
-        populate, data, populate_mapping, fail_required=False)
+        populate, data, populate_mapping, fail_required=False
+    )
 
-    parallel = XML.SubElement(populate, 'parallel')
+    parallel = XML.SubElement(populate, "parallel")
 
     helpers.convert_mapping_to_xml(
-        parallel, data, parallel_mapping, fail_required=False)
+        parallel, data, parallel_mapping, fail_required=False
+    )
 
 
 def git(registry, xml_parent, data):
@@ -321,63 +335,64 @@ def git(registry, xml_parent, data):
     # None so we have a sensible name/key for it.
     mapping = [
         # option, xml name, default value (text), attributes (hard coded)
-        ("disable-submodules", 'disableSubmodules', False),
-        ("recursive-submodules", 'recursiveSubmodules', False),
-        (None, 'doGenerateSubmoduleConfigurations', False),
+        ("disable-submodules", "disableSubmodules", False),
+        ("recursive-submodules", "recursiveSubmodules", False),
+        (None, "doGenerateSubmoduleConfigurations", False),
         # XXX is this the same as force-polling-using-workspace?
-        ("fastpoll", 'remotePoll', False),
+        ("fastpoll", "remotePoll", False),
         # XXX does this option still exist?
-        ("git-tool", 'gitTool', "Default"),
-        (None, 'submoduleCfg', '', {'class': 'list'}),
-        ('reference-repo', 'reference', ''),
-        ("git-config-name", 'gitConfigName', ''),
-        ("git-config-email", 'gitConfigEmail', ''),
+        ("git-tool", "gitTool", "Default"),
+        (None, "submoduleCfg", "", {"class": "list"}),
+        ("reference-repo", "reference", ""),
+        ("git-config-name", "gitConfigName", ""),
+        ("git-config-email", "gitConfigEmail", ""),
     ]
 
-    scm = XML.SubElement(xml_parent,
-                         'scm', {'class': 'hudson.plugins.git.GitSCM'})
-    XML.SubElement(scm, 'configVersion').text = '2'
-    user = XML.SubElement(scm, 'userRemoteConfigs')
-    if 'remotes' not in data:
-        data['remotes'] = [{data.get('name', 'origin'): data.copy()}]
-    for remoteData in data['remotes']:
-        huser = XML.SubElement(user, 'hudson.plugins.git.UserRemoteConfig')
+    scm = XML.SubElement(xml_parent, "scm", {"class": "hudson.plugins.git.GitSCM"})
+    XML.SubElement(scm, "configVersion").text = "2"
+    user = XML.SubElement(scm, "userRemoteConfigs")
+    if "remotes" not in data:
+        data["remotes"] = [{data.get("name", "origin"): data.copy()}]
+    for remoteData in data["remotes"]:
+        huser = XML.SubElement(user, "hudson.plugins.git.UserRemoteConfig")
         remoteName = next(iter(remoteData.keys()))
-        XML.SubElement(huser, 'name').text = remoteName
+        XML.SubElement(huser, "name").text = remoteName
         remoteParams = next(iter(remoteData.values()))
-        if 'refspec' in remoteParams:
-            refspec = remoteParams['refspec']
+        if "refspec" in remoteParams:
+            refspec = remoteParams["refspec"]
         else:
-            refspec = '+refs/heads/*:refs/remotes/' + remoteName + '/*'
-        XML.SubElement(huser, 'refspec').text = refspec
-        if 'url' in remoteParams:
-            remoteURL = remoteParams['url']
+            refspec = "+refs/heads/*:refs/remotes/" + remoteName + "/*"
+        XML.SubElement(huser, "refspec").text = refspec
+        if "url" in remoteParams:
+            remoteURL = remoteParams["url"]
         else:
             raise JenkinsJobsException(
-                'Must specify a url for git remote \"' + remoteName + '"')
-        XML.SubElement(huser, 'url').text = remoteURL
-        if 'credentials-id' in remoteParams:
-            credentialsId = remoteParams['credentials-id']
-            XML.SubElement(huser, 'credentialsId').text = credentialsId
-    xml_branches = XML.SubElement(scm, 'branches')
-    branches = data.get('branches', ['**'])
+                'Must specify a url for git remote "' + remoteName + '"'
+            )
+        XML.SubElement(huser, "url").text = remoteURL
+        if "credentials-id" in remoteParams:
+            credentialsId = remoteParams["credentials-id"]
+            XML.SubElement(huser, "credentialsId").text = credentialsId
+    xml_branches = XML.SubElement(scm, "branches")
+    branches = data.get("branches", ["**"])
     for branch in branches:
-        bspec = XML.SubElement(xml_branches, 'hudson.plugins.git.BranchSpec')
-        XML.SubElement(bspec, 'name').text = branch
+        bspec = XML.SubElement(xml_branches, "hudson.plugins.git.BranchSpec")
+        XML.SubElement(bspec, "name").text = branch
     for elem in mapping:
         (optname, xmlname, val) = elem[:3]
 
         # Throw warning for deprecated settings and skip if the 'submodule' key
         # is available.
-        submodule_cfgs = ['disable-submodules', 'recursive-submodules']
+        submodule_cfgs = ["disable-submodules", "recursive-submodules"]
         if optname in submodule_cfgs:
             if optname in data:
                 logger.warning(
                     "'{0}' is deprecated, please convert to use the "
                     "'submodule' section instead as support for this "
                     "top level option will be removed in a future "
-                    "release.".format(optname))
-            if 'submodule' in data:
+                    "release.".format(optname)
+                )
+            if "submodule" in data:
                 continue
 
         attrs = {}
@@ -391,52 +406,52 @@ def git(registry, xml_parent, data):
         else:
             xe.text = val
 
-    exts = XML.SubElement(scm, 'extensions')
+    exts = XML.SubElement(scm, "extensions")
 
     # handle all supported git extensions
     git_extensions(exts, data)
 
-    browser = data.get('browser', 'auto')
+    browser = data.get("browser", "auto")
     browserdict = {
-        'auto': 'auto',
-        'assemblaweb': 'AssemblaWeb',
-        'bitbucketweb': 'BitbucketWeb',
-        'cgit': 'CGit',
-        'fisheye': 'FisheyeGitRepositoryBrowser',
-        'gitblit': 'GitBlitRepositoryBrowser',
-        'githubweb': 'GithubWeb',
-        'gitiles': 'Gitiles',
-        'gitlab': 'GitLab',
-        'gitlist': 'GitList',
-        'gitoriousweb': 'GitoriousWeb',
-        'gitweb': 'GitWeb',
-        'kiln': 'KilnGit',
-        'microsoft-tfs-2013': 'TFS2013GitRepositoryBrowser',
-        'phabricator': 'Phabricator',
-        'redmineweb': 'RedmineWeb',
-        'rhodecode': 'RhodeCode',
-        'stash': 'Stash',
-        'viewgit': 'ViewGitWeb',
+        "auto": "auto",
+        "assemblaweb": "AssemblaWeb",
+        "bitbucketweb": "BitbucketWeb",
+        "cgit": "CGit",
+        "fisheye": "FisheyeGitRepositoryBrowser",
+        "gitblit": "GitBlitRepositoryBrowser",
+        "githubweb": "GithubWeb",
+        "gitiles": "Gitiles",
+        "gitlab": "GitLab",
+        "gitlist": "GitList",
+        "gitoriousweb": "GitoriousWeb",
+        "gitweb": "GitWeb",
+        "kiln": "KilnGit",
+        "microsoft-tfs-2013": "TFS2013GitRepositoryBrowser",
+        "phabricator": "Phabricator",
+        "redmineweb": "RedmineWeb",
+        "rhodecode": "RhodeCode",
+        "stash": "Stash",
+        "viewgit": "ViewGitWeb",
     }
     if browser not in browserdict:
         valid = sorted(browserdict.keys())
-        raise JenkinsJobsException("Browser entered is not valid must be one "
-                                   "of: %s or %s." % (", ".join(valid[:-1]),
-                                                      valid[-1]))
-    if browser != 'auto':
-        bc = XML.SubElement(scm, 'browser', {'class':
-                                             'hudson.plugins.git.browser.' +
-                                             browserdict[browser]})
-        XML.SubElement(bc, 'url').text = data['browser-url']
-        if browser in ['gitblit', 'viewgit']:
-            XML.SubElement(bc, 'projectName').text = str(
-                data.get('project-name', ''))
-        if browser == 'gitlab':
-            XML.SubElement(bc, 'version').text = str(
-                data.get('browser-version', '0.0'))
-        if browser == 'phabricator':
-            XML.SubElement(bc, 'repo').text = str(
-                data.get('repo-name', ''))
+        raise JenkinsJobsException(
+            "Browser entered is not valid must be one "
+            "of: %s or %s." % (", ".join(valid[:-1]), valid[-1])
+        )
+    if browser != "auto":
+        bc = XML.SubElement(
+            scm,
+            "browser",
+            {"class": "hudson.plugins.git.browser." + browserdict[browser]},
+        )
+        XML.SubElement(bc, "url").text = data["browser-url"]
+        if browser in ["gitblit", "viewgit"]:
+            XML.SubElement(bc, "projectName").text = str(data.get("project-name", ""))
+        if browser == "gitlab":
+            XML.SubElement(bc, "version").text = str(data.get("browser-version", "0.0"))
+        if browser == "phabricator":
+            XML.SubElement(bc, "repo").text = str(data.get("repo-name", ""))
 
 
 def git_extensions(xml_parent, data):
@@ -445,111 +460,120 @@ def git_extensions(xml_parent, data):
     trait = xml_parent.tag == "traits"
 
     # list of availavble traits here: https://bit.ly/2CNEtqS
-    trait_prefix = 'jenkins.plugins.git.traits.'
-    impl_prefix = 'hudson.plugins.git.extensions.impl.'
+    trait_prefix = "jenkins.plugins.git.traits."
+    impl_prefix = "hudson.plugins.git.extensions.impl."
 
     choosing_strategies = {
-        'default': 'hudson.plugins.git.util.DefaultBuildChooser',
-        'gerrit': ('com.sonyericsson.hudson.plugins.'
-                   'gerrit.trigger.hudsontrigger.GerritTriggerBuildChooser'),
-        'inverse': 'hudson.plugins.git.util.InverseBuildChooser',
+        "default": "hudson.plugins.git.util.DefaultBuildChooser",
+        "gerrit": (
+            "com.sonyericsson.hudson.plugins."
+            "gerrit.trigger.hudsontrigger.GerritTriggerBuildChooser"
+        ),
+        "inverse": "hudson.plugins.git.util.InverseBuildChooser",
     }
 
-    if not trait and 'basedir' in data:
-        ext = XML.SubElement(xml_parent,
-                             impl_prefix + 'RelativeTargetDirectory')
-        XML.SubElement(ext, 'relativeTargetDir').text = data['basedir']
-    if not trait and 'changelog-against' in data:
-        ext_name = impl_prefix + 'ChangelogToBranch'
+    if not trait and "basedir" in data:
+        ext = XML.SubElement(xml_parent, impl_prefix + "RelativeTargetDirectory")
+        XML.SubElement(ext, "relativeTargetDir").text = data["basedir"]
+    if not trait and "changelog-against" in data:
+        ext_name = impl_prefix + "ChangelogToBranch"
         ext = XML.SubElement(xml_parent, ext_name)
-        opts = XML.SubElement(ext, 'options')
-        change_remote = data['changelog-against'].get('remote', 'origin')
-        change_branch = data['changelog-against'].get('branch', 'master')
-        XML.SubElement(opts, 'compareRemote').text = change_remote
-        XML.SubElement(opts, 'compareTarget').text = change_branch
-    if not trait and 'choosing-strategy' in data:
+        opts = XML.SubElement(ext, "options")
+        change_remote = data["changelog-against"].get("remote", "origin")
+        change_branch = data["changelog-against"].get("branch", "master")
+        XML.SubElement(opts, "compareRemote").text = change_remote
+        XML.SubElement(opts, "compareTarget").text = change_branch
+    if not trait and "choosing-strategy" in data:
         try:
-            choosing_strategy = choosing_strategies[
-                data.get('choosing-strategy')]
+            choosing_strategy = choosing_strategies[data.get("choosing-strategy")]
         except KeyError:
-            raise ValueError('Invalid choosing-strategy %r' %
-                             data.get('choosing-strategy'))
-        ext = XML.SubElement(xml_parent, impl_prefix + 'BuildChooserSetting')
-        XML.SubElement(ext, 'buildChooser', {'class': choosing_strategy})
-    if 'clean' in data:
+            raise ValueError(
+                "Invalid choosing-strategy %r" % data.get("choosing-strategy")
+            )
+        ext = XML.SubElement(xml_parent, impl_prefix + "BuildChooserSetting")
+        XML.SubElement(ext, "buildChooser", {"class": choosing_strategy})
+    if "clean" in data:
         # Keep support for old format 'clean' configuration by checking
         # if 'clean' is boolean. Else we're using the new extensions style.
-        if isinstance(data['clean'], bool):
-            clean_after = data['clean']
+        if isinstance(data["clean"], bool):
+            clean_after = data["clean"]
             clean_before = False
             logger.warning(
                 "'clean: bool' configuration format is deprecated, "
                 "please use the extension style format to configure "
-                "this option.")
+                "this option."
+            )
         else:
-            clean_after = data['clean'].get('after', False)
-            clean_before = data['clean'].get('before', False)
+            clean_after = data["clean"].get("after", False)
+            clean_before = data["clean"].get("before", False)
         if clean_after:
-            ext_name = impl_prefix + 'CleanCheckout'
+            ext_name = impl_prefix + "CleanCheckout"
             if trait:
-                trait_name = 'CleanAfterCheckoutTrait'
+                trait_name = "CleanAfterCheckoutTrait"
                 tr = XML.SubElement(xml_parent, trait_prefix + trait_name)
                 ext = XML.SubElement(tr, "extension", {"class": ext_name})
             else:
                 ext = XML.SubElement(xml_parent, ext_name)
         if clean_before:
-            ext_name = impl_prefix + 'CleanBeforeCheckout'
+            ext_name = impl_prefix + "CleanBeforeCheckout"
             if trait:
-                trait_name = 'CleanBeforeCheckoutTrait'
+                trait_name = "CleanBeforeCheckoutTrait"
                 tr = XML.SubElement(xml_parent, trait_prefix + trait_name)
                 ext = XML.SubElement(tr, "extension", {"class": ext_name})
             else:
                 ext = XML.SubElement(xml_parent, ext_name)
-    if not trait and 'excluded-users' in data:
-        excluded_users = '\n'.join(data['excluded-users'])
-        ext = XML.SubElement(xml_parent, impl_prefix + 'UserExclusion')
-        XML.SubElement(ext, 'excludedUsers').text = excluded_users
-    if not trait and 'included-regions' in data or 'excluded-regions' in data:
-        ext = XML.SubElement(xml_parent,
-                             'hudson.plugins.git.extensions.impl.'
-                             'PathRestriction')
-        if 'included-regions' in data:
-            include_string = '\n'.join(data['included-regions'])
-            XML.SubElement(ext, 'includedRegions').text = include_string
-        if 'excluded-regions' in data:
-            exclude_string = '\n'.join(data['excluded-regions'])
-            XML.SubElement(ext, 'excludedRegions').text = exclude_string
-    if not trait and 'ignore-commits-with-messages' in data:
-        for msg in data['ignore-commits-with-messages']:
-            ext_name = impl_prefix + 'MessageExclusion'
+    if not trait and "excluded-users" in data:
+        excluded_users = "\n".join(data["excluded-users"])
+        ext = XML.SubElement(xml_parent, impl_prefix + "UserExclusion")
+        XML.SubElement(ext, "excludedUsers").text = excluded_users
+    if not trait and "included-regions" in data or "excluded-regions" in data:
+        ext = XML.SubElement(
+            xml_parent, "hudson.plugins.git.extensions.impl." "PathRestriction"
+        )
+        if "included-regions" in data:
+            include_string = "\n".join(data["included-regions"])
+            XML.SubElement(ext, "includedRegions").text = include_string
+        if "excluded-regions" in data:
+            exclude_string = "\n".join(data["excluded-regions"])
+            XML.SubElement(ext, "excludedRegions").text = exclude_string
+    if not trait and "ignore-commits-with-messages" in data:
+        for msg in data["ignore-commits-with-messages"]:
+            ext_name = impl_prefix + "MessageExclusion"
             ext = XML.SubElement(xml_parent, ext_name)
-            XML.SubElement(ext, 'excludedMessage').text = msg
-    if not trait and 'local-branch' in data:
-        ext = XML.SubElement(xml_parent, impl_prefix + 'LocalBranch')
-        XML.SubElement(ext, 'localBranch').text = str(data['local-branch'])
-    if not trait and 'merge' in data:
-        merge = data['merge']
-        merge_strategies = ['default', 'resolve', 'recursive', 'octopus',
-                            'ours', 'subtree']
-        fast_forward_modes = ['FF', 'FF_ONLY', 'NO_FF']
-        name = merge.get('remote', 'origin')
-        branch = merge['branch']
-        ext = XML.SubElement(xml_parent, impl_prefix + 'PreBuildMerge')
-        merge_opts = XML.SubElement(ext, 'options')
-        XML.SubElement(merge_opts, 'mergeRemote').text = name
-        XML.SubElement(merge_opts, 'mergeTarget').text = branch
-        strategy = merge.get('strategy', 'default')
+            XML.SubElement(ext, "excludedMessage").text = msg
+    if not trait and "local-branch" in data:
+        ext = XML.SubElement(xml_parent, impl_prefix + "LocalBranch")
+        XML.SubElement(ext, "localBranch").text = str(data["local-branch"])
+    if not trait and "merge" in data:
+        merge = data["merge"]
+        merge_strategies = [
+            "default",
+            "resolve",
+            "recursive",
+            "octopus",
+            "ours",
+            "subtree",
+        ]
+        fast_forward_modes = ["FF", "FF_ONLY", "NO_FF"]
+        name = merge.get("remote", "origin")
+        branch = merge["branch"]
+        ext = XML.SubElement(xml_parent, impl_prefix + "PreBuildMerge")
+        merge_opts = XML.SubElement(ext, "options")
+        XML.SubElement(merge_opts, "mergeRemote").text = name
+        XML.SubElement(merge_opts, "mergeTarget").text = branch
+        strategy = merge.get("strategy", "default")
         if strategy not in merge_strategies:
-            raise InvalidAttributeError('strategy', strategy, merge_strategies)
-        XML.SubElement(merge_opts, 'mergeStrategy').text = strategy
-        fast_forward_mode = merge.get('fast-forward-mode', 'FF')
+            raise InvalidAttributeError("strategy", strategy, merge_strategies)
+        XML.SubElement(merge_opts, "mergeStrategy").text = strategy
+        fast_forward_mode = merge.get("fast-forward-mode", "FF")
         if fast_forward_mode not in fast_forward_modes:
-            raise InvalidAttributeError('fast-forward-mode', fast_forward_mode,
-                                        fast_forward_modes)
-        XML.SubElement(merge_opts, 'fastForwardMode').text = fast_forward_mode
-    if not trait and 'scm-name' in data:
-        ext = XML.SubElement(xml_parent, impl_prefix + 'ScmName')
-        XML.SubElement(ext, 'name').text = str(data['scm-name'])
+            raise InvalidAttributeError(
+                "fast-forward-mode", fast_forward_mode, fast_forward_modes
+            )
+        XML.SubElement(merge_opts, "fastForwardMode").text = fast_forward_mode
+    if not trait and "scm-name" in data:
+        ext = XML.SubElement(xml_parent, impl_prefix + "ScmName")
+        XML.SubElement(ext, "name").text = str(data["scm-name"])
 
     clone_options = (
         "shallow-clone",
@@ -559,116 +583,118 @@ def git_extensions(xml_parent, data):
         "reference-repo",
     )
     if any(key in data for key in clone_options):
-        ext_name = impl_prefix + 'CloneOption'
+        ext_name = impl_prefix + "CloneOption"
 
         if trait:
-            tr = XML.SubElement(xml_parent, trait_prefix + 'CloneOptionTrait')
+            tr = XML.SubElement(xml_parent, trait_prefix + "CloneOptionTrait")
             ext = XML.SubElement(tr, "extension", {"class": ext_name})
         else:
             ext = XML.SubElement(xml_parent, ext_name)
 
-        clone_mapping = [
-            ('shallow-clone', 'shallow', False),
-            ('depth', 'depth', 1),
-        ]
-        helpers.convert_mapping_to_xml(
-            ext, data, clone_mapping, fail_required=True)
-        if 'do-not-fetch-tags' in data:
-            XML.SubElement(ext, 'noTags').text = str(
-                data.get('do-not-fetch-tags', False)).lower()
-        if 'timeout' in data:
-            XML.SubElement(ext, 'timeout').text = str(data['timeout'])
-        if 'honor-refspec' in data:
-            XML.SubElement(ext, 'honorRefspec').text = str(
-                data.get('honor-refspec', False)).lower()
-        if 'reference-repo' in data:
-            XML.SubElement(ext, 'reference').text = str(data['reference-repo'])
-    if not trait and 'sparse-checkout' in data:
-        ext_name = impl_prefix + 'SparseCheckoutPaths'
+        clone_mapping = [("shallow-clone", "shallow", False), ("depth", "depth", 1)]
+        helpers.convert_mapping_to_xml(ext, data, clone_mapping, fail_required=True)
+        if "do-not-fetch-tags" in data:
+            XML.SubElement(ext, "noTags").text = str(
+                data.get("do-not-fetch-tags", False)
+            ).lower()
+        if "timeout" in data:
+            XML.SubElement(ext, "timeout").text = str(data["timeout"])
+        if "honor-refspec" in data:
+            XML.SubElement(ext, "honorRefspec").text = str(
+                data.get("honor-refspec", False)
+            ).lower()
+        if "reference-repo" in data:
+            XML.SubElement(ext, "reference").text = str(data["reference-repo"])
+    if not trait and "sparse-checkout" in data:
+        ext_name = impl_prefix + "SparseCheckoutPaths"
         ext = XML.SubElement(xml_parent, ext_name)
-        sparse_co = XML.SubElement(ext, 'sparseCheckoutPaths')
-        sparse_paths = data['sparse-checkout'].get('paths')
+        sparse_co = XML.SubElement(ext, "sparseCheckoutPaths")
+        sparse_paths = data["sparse-checkout"].get("paths")
         if sparse_paths is not None:
-            path_tagname = impl_prefix + 'SparseCheckoutPath'
+            path_tagname = impl_prefix + "SparseCheckoutPath"
             for path in sparse_paths:
                 path_tag = XML.SubElement(sparse_co, path_tagname)
-                XML.SubElement(path_tag, 'path').text = path
-    if 'submodule' in data:
-        ext_name = impl_prefix + 'SubmoduleOption'
+                XML.SubElement(path_tag, "path").text = path
+    if "submodule" in data:
+        ext_name = impl_prefix + "SubmoduleOption"
         if trait:
-            trait_name = 'SubmoduleOptionTrait'
+            trait_name = "SubmoduleOptionTrait"
             tr = XML.SubElement(xml_parent, trait_prefix + trait_name)
             ext = XML.SubElement(tr, "extension", {"class": ext_name})
         else:
             ext = XML.SubElement(xml_parent, ext_name)
 
-        XML.SubElement(ext, 'disableSubmodules').text = str(
-            data['submodule'].get('disable', False)).lower()
-        XML.SubElement(ext, 'recursiveSubmodules').text = str(
-            data['submodule'].get('recursive', False)).lower()
-        XML.SubElement(ext, 'trackingSubmodules').text = str(
-            data['submodule'].get('tracking', False)).lower()
-        XML.SubElement(ext, 'parentCredentials').text = str(
-            data['submodule'].get('parent-credentials', False)).lower()
-        XML.SubElement(ext, 'reference').text = str(
-            data['submodule'].get('reference-repo', ''))
-        XML.SubElement(ext, 'timeout').text = str(
-            data['submodule'].get('timeout', 10))
-    if 'timeout' in data:
-        ext_name = impl_prefix + 'CheckoutOption'
+        XML.SubElement(ext, "disableSubmodules").text = str(
+            data["submodule"].get("disable", False)
+        ).lower()
+        XML.SubElement(ext, "recursiveSubmodules").text = str(
+            data["submodule"].get("recursive", False)
+        ).lower()
+        XML.SubElement(ext, "trackingSubmodules").text = str(
+            data["submodule"].get("tracking", False)
+        ).lower()
+        XML.SubElement(ext, "parentCredentials").text = str(
+            data["submodule"].get("parent-credentials", False)
+        ).lower()
+        XML.SubElement(ext, "reference").text = str(
+            data["submodule"].get("reference-repo", "")
+        )
+        XML.SubElement(ext, "timeout").text = str(data["submodule"].get("timeout", 10))
+    if "timeout" in data:
+        ext_name = impl_prefix + "CheckoutOption"
         if trait:
-            trait_name = 'CheckoutOptionTrait'
+            trait_name = "CheckoutOptionTrait"
             tr = XML.SubElement(xml_parent, trait_prefix + trait_name)
             ext = XML.SubElement(tr, "extension", {"class": ext_name})
         else:
             ext = XML.SubElement(xml_parent, ext_name)
-        XML.SubElement(ext, 'timeout').text = str(data['timeout'])
+        XML.SubElement(ext, "timeout").text = str(data["timeout"])
 
-    polling_using_workspace = str(data.get('force-polling-using-workspace',
-                                           False)).lower()
-    if not trait and polling_using_workspace == 'true':
-        ext_name = impl_prefix + 'DisableRemotePoll'
+    polling_using_workspace = str(
+        data.get("force-polling-using-workspace", False)
+    ).lower()
+    if not trait and polling_using_workspace == "true":
+        ext_name = impl_prefix + "DisableRemotePoll"
         ext = XML.SubElement(xml_parent, ext_name)
-    if not trait and 'per-build-tag' in data or 'skip-tag' in data:
+    if not trait and "per-build-tag" in data or "skip-tag" in data:
         # We want to support both skip-tag (the old option) and per-build-tag
         # (the new option), with the new one overriding the old one.
         # Unfortunately they have inverse meanings, so we have to be careful.
         # The default value of per-build-tag is False if skip-tag is not set,
         # so we set the default value of skip-tag to True.
         per_build_tag_default = False
-        if str(data.get('skip-tag', True)).lower() == 'false':
+        if str(data.get("skip-tag", True)).lower() == "false":
             per_build_tag_default = True
-        if str(data.get('per-build-tag',
-                        per_build_tag_default)).lower() == 'true':
-            XML.SubElement(xml_parent, impl_prefix + 'PerBuildTag')
-    prune = str(data.get('prune', False)).lower()
-    if prune == 'true':
-        ext_name = impl_prefix + 'PruneStaleBranch'
+        if str(data.get("per-build-tag", per_build_tag_default)).lower() == "true":
+            XML.SubElement(xml_parent, impl_prefix + "PerBuildTag")
+    prune = str(data.get("prune", False)).lower()
+    if prune == "true":
+        ext_name = impl_prefix + "PruneStaleBranch"
         if trait:
-            trait_name = 'PruneStaleBranchTrait'
+            trait_name = "PruneStaleBranchTrait"
             tr = XML.SubElement(xml_parent, trait_prefix + trait_name)
             ext = XML.SubElement(tr, "extension", {"class": ext_name})
         else:
             ext = XML.SubElement(xml_parent, ext_name)
-    ignore_notify_commits = str(data.get('ignore-notify', False)).lower()
-    if not trait and ignore_notify_commits == 'true':
-        XML.SubElement(xml_parent, impl_prefix + 'IgnoreNotifyCommit')
+    ignore_notify_commits = str(data.get("ignore-notify", False)).lower()
+    if not trait and ignore_notify_commits == "true":
+        XML.SubElement(xml_parent, impl_prefix + "IgnoreNotifyCommit")
     # By default we wipe the workspace
-    wipe_workspace = str(data.get('wipe-workspace', True)).lower()
-    if wipe_workspace == 'true':
-        ext_name = impl_prefix + 'WipeWorkspace'
+    wipe_workspace = str(data.get("wipe-workspace", True)).lower()
+    if wipe_workspace == "true":
+        ext_name = impl_prefix + "WipeWorkspace"
         if trait:
-            trait_name = 'WipeWorkspaceTrait'
+            trait_name = "WipeWorkspaceTrait"
             tr = XML.SubElement(xml_parent, trait_prefix + trait_name)
             ext = XML.SubElement(tr, "extension", {"class": ext_name})
         else:
             ext = XML.SubElement(xml_parent, ext_name)
 
-    use_author = str(data.get('use-author', False)).lower()
-    if use_author == 'true':
-        ext_name = impl_prefix + 'AuthorInChangelog'
+    use_author = str(data.get("use-author", False)).lower()
+    if use_author == "true":
+        ext_name = impl_prefix + "AuthorInChangelog"
         if trait:
-            trait_name = 'AuthorInChangelogTrait'
+            trait_name = "AuthorInChangelogTrait"
             tr = XML.SubElement(xml_parent, trait_prefix + trait_name)
             ext = XML.SubElement(tr, "extension", {"class": ext_name})
         else:
@@ -737,76 +763,71 @@ def cvs(registry, xml_parent, data):
     .. literalinclude:: /../../tests/scm/fixtures/cvs002.yaml
        :language: yaml
     """
-    prefix = 'hudson.scm.'
-    valid_loc_types = {
-        'HEAD': 'Head',
-        'TAG': 'Tag',
-        'BRANCH': 'Branch'
-    }
+    prefix = "hudson.scm."
+    valid_loc_types = {"HEAD": "Head", "TAG": "Tag", "BRANCH": "Branch"}
 
-    cvs = XML.SubElement(xml_parent, 'scm', {'class': prefix + 'CVSSCM'})
-    repos = data.get('repos')
-    repos_tag = XML.SubElement(cvs, 'repositories')
+    cvs = XML.SubElement(xml_parent, "scm", {"class": prefix + "CVSSCM"})
+    repos = data.get("repos")
+    repos_tag = XML.SubElement(cvs, "repositories")
     for repo in repos:
-        repo_tag = XML.SubElement(repos_tag, prefix + 'CvsRepository')
-        compression_level = repo.get('compression-level', '-1')
+        repo_tag = XML.SubElement(repos_tag, prefix + "CvsRepository")
+        compression_level = repo.get("compression-level", "-1")
         repo_mapping = [
-            ('root', 'cvsRoot', None),
-            ('', 'compressionLevel', int(compression_level), range(-1, 10)),
+            ("root", "cvsRoot", None),
+            ("", "compressionLevel", int(compression_level), range(-1, 10)),
         ]
-        helpers.convert_mapping_to_xml(repo_tag,
-            repo, repo_mapping, fail_required=True)
+        helpers.convert_mapping_to_xml(repo_tag, repo, repo_mapping, fail_required=True)
 
-        items_tag = XML.SubElement(repo_tag, 'repositoryItems')
-        locations = repo.get('locations')
+        items_tag = XML.SubElement(repo_tag, "repositoryItems")
+        locations = repo.get("locations")
         for location in locations:
-            item_tag = XML.SubElement(items_tag, prefix + 'CvsRepositoryItem')
-            loc_type = location.get('type', 'HEAD')
+            item_tag = XML.SubElement(items_tag, prefix + "CvsRepositoryItem")
+            loc_type = location.get("type", "HEAD")
             if loc_type not in valid_loc_types:
-                raise InvalidAttributeError('type', loc_type, valid_loc_types)
-            loc_class = ('{0}CvsRepositoryLocation${1}Repository'
-                         'Location').format(prefix, valid_loc_types[loc_type])
-            loc_tag = XML.SubElement(item_tag, 'location',
-                                     {'class': loc_class})
-            mapping = [
-                ('type', 'locationType', 'HEAD'),
-            ]
+                raise InvalidAttributeError("type", loc_type, valid_loc_types)
+            loc_class = ("{0}CvsRepositoryLocation${1}Repository" "Location").format(
+                prefix, valid_loc_types[loc_type]
+            )
+            loc_tag = XML.SubElement(item_tag, "location", {"class": loc_class})
+            mapping = [("type", "locationType", "HEAD")]
             helpers.convert_mapping_to_xml(
-                loc_tag, location, mapping, fail_required=True)
+                loc_tag, location, mapping, fail_required=True
+            )
 
-            if loc_type != 'HEAD':
+            if loc_type != "HEAD":
                 mapping = [
-                    ('name', 'locationName', ''),
-                    ('use-head', 'useHeadIfNotFound', False),
+                    ("name", "locationName", ""),
+                    ("use-head", "useHeadIfNotFound", False),
                 ]
                 helpers.convert_mapping_to_xml(
-                    loc_tag, location, mapping, fail_required=True)
+                    loc_tag, location, mapping, fail_required=True
+                )
 
-            modules = location.get('modules')
-            modules_tag = XML.SubElement(item_tag, 'modules')
+            modules = location.get("modules")
+            modules_tag = XML.SubElement(item_tag, "modules")
             for module in modules:
-                module_tag = XML.SubElement(modules_tag, prefix + 'CvsModule')
+                module_tag = XML.SubElement(modules_tag, prefix + "CvsModule")
                 mapping = [
-                    ('remote', 'remoteName', None),
-                    ('local-name', 'localName', ''),
+                    ("remote", "remoteName", None),
+                    ("local-name", "localName", ""),
                 ]
                 helpers.convert_mapping_to_xml(
-                    module_tag, module, mapping, fail_required=True)
+                    module_tag, module, mapping, fail_required=True
+                )
 
-        excluded = repo.get('excluded-regions', [])
-        excluded_tag = XML.SubElement(repo_tag, 'excludedRegions')
+        excluded = repo.get("excluded-regions", [])
+        excluded_tag = XML.SubElement(repo_tag, "excludedRegions")
         for pattern in excluded:
-            pattern_tag = XML.SubElement(excluded_tag,
-                                         prefix + 'ExcludedRegion')
-            XML.SubElement(pattern_tag, 'pattern').text = pattern
+            pattern_tag = XML.SubElement(excluded_tag, prefix + "ExcludedRegion")
+            XML.SubElement(pattern_tag, "pattern").text = pattern
 
     mappings = [
-        ('use-update', 'canUseUpdate', True),
-        ('prune-empty', 'pruneEmptyDirectories', True),
-        ('skip-changelog', 'skipChangeLog', False),
-        ('show-all-output', 'disableCvsQuiet', False),
-        ('clean-checkout', 'cleanOnFailedUpdate', False),
-        ('clean-copy', 'forceCleanCopy', False),
+        ("use-update", "canUseUpdate", True),
+        ("prune-empty", "pruneEmptyDirectories", True),
+        ("skip-changelog", "skipChangeLog", False),
+        ("show-all-output", "disableCvsQuiet", False),
+        ("clean-checkout", "cleanOnFailedUpdate", False),
+        ("clean-copy", "forceCleanCopy", False),
     ]
     helpers.convert_mapping_to_xml(cvs, data, mappings, fail_required=True)
 
@@ -855,43 +876,41 @@ def repo(registry, xml_parent, data):
     .. literalinclude:: /../../tests/scm/fixtures/repo001.yaml
     """
 
-    scm = XML.SubElement(xml_parent,
-                         'scm', {'class': 'hudson.plugins.repo.RepoScm'})
+    scm = XML.SubElement(xml_parent, "scm", {"class": "hudson.plugins.repo.RepoScm"})
 
     mapping = [
         # option, xml name, default value
-        ('manifest-url', 'manifestRepositoryUrl', None),
-        ('jobs', 'jobs', 0),
-        ('depth', 'depth', 0),
-        ('current-branch', 'currentBranch', True),
-        ('reset-first', 'resetFirst', False),
-        ('quiet', 'quiet', True),
-        ('force-sync', 'forceSync', False),
-        ('no-tags', 'noTags', False),
-        ('trace', 'trace', False),
-        ('show-all-changes', 'showAllChanges', False),
+        ("manifest-url", "manifestRepositoryUrl", None),
+        ("jobs", "jobs", 0),
+        ("depth", "depth", 0),
+        ("current-branch", "currentBranch", True),
+        ("reset-first", "resetFirst", False),
+        ("quiet", "quiet", True),
+        ("force-sync", "forceSync", False),
+        ("no-tags", "noTags", False),
+        ("trace", "trace", False),
+        ("show-all-changes", "showAllChanges", False),
     ]
     helpers.convert_mapping_to_xml(scm, data, mapping, fail_required=True)
 
     optional_mapping = [
         # option, xml name, default value
-        ('manifest-branch', 'manifestBranch', None),
-        ('manifest-file', 'manifestFile', None),
-        ('manifest-group', 'manifestGroup', None),
-        ('destination-dir', 'destinationDir', None),
-        ('repo-url', 'repoUrl', None),
-        ('mirror-dir', 'mirrorDir', None),
-        ('local-manifest', 'localManifest', None),
+        ("manifest-branch", "manifestBranch", None),
+        ("manifest-file", "manifestFile", None),
+        ("manifest-group", "manifestGroup", None),
+        ("destination-dir", "destinationDir", None),
+        ("repo-url", "repoUrl", None),
+        ("mirror-dir", "mirrorDir", None),
+        ("local-manifest", "localManifest", None),
     ]
-    helpers.convert_mapping_to_xml(
-        scm, data, optional_mapping, fail_required=False)
+    helpers.convert_mapping_to_xml(scm, data, optional_mapping, fail_required=False)
 
     # ignore-projects does not follow the same pattern of the other parameters,
     # so process it here:
-    ip = XML.SubElement(scm, 'ignoreProjects', {'class': 'linked-hash-set'})
-    ignored_projects = data.get('ignore-projects', [''])
+    ip = XML.SubElement(scm, "ignoreProjects", {"class": "linked-hash-set"})
+    ignored_projects = data.get("ignore-projects", [""])
     for ignored_project in ignored_projects:
-        XML.SubElement(ip, 'string').text = str(ignored_project)
+        XML.SubElement(ip, "string").text = str(ignored_project)
 
 
 def store(registry, xml_parent, data):
@@ -917,41 +936,35 @@ def store(registry, xml_parent, data):
     .. literalinclude:: /../../tests/scm/fixtures/store001.yaml
     """
 
-    namespace = 'org.jenkinsci.plugins.visualworks_store'
-    scm = XML.SubElement(xml_parent, 'scm',
-                         {'class': '{0}.StoreSCM'.format(namespace)})
-    mapping = [
-        ('script', 'scriptName', None),
-        ('repository', 'repositoryName', None),
-    ]
+    namespace = "org.jenkinsci.plugins.visualworks_store"
+    scm = XML.SubElement(xml_parent, "scm", {"class": "{0}.StoreSCM".format(namespace)})
+    mapping = [("script", "scriptName", None), ("repository", "repositoryName", None)]
     helpers.convert_mapping_to_xml(scm, data, mapping, fail_required=True)
 
-    pundle_specs = data.get('pundles', [])
+    pundle_specs = data.get("pundles", [])
     if not pundle_specs:
         raise JenkinsJobsException("At least one pundle must be specified")
-    valid_pundle_types = ['PACKAGE', 'BUNDLE']
-    pundles = XML.SubElement(scm, 'pundles')
+    valid_pundle_types = ["PACKAGE", "BUNDLE"]
+    pundles = XML.SubElement(scm, "pundles")
 
     for pundle_spec in pundle_specs:
-        pundle = XML.SubElement(pundles, '{0}.PundleSpec'.format(namespace))
+        pundle = XML.SubElement(pundles, "{0}.PundleSpec".format(namespace))
         pundle_type = next(iter(pundle_spec))
         pundle_name = pundle_spec[pundle_type]
         mapping = [
-            ('', 'name', pundle_name),
-            ('', 'pundleType', pundle_type.upper(), valid_pundle_types),
+            ("", "name", pundle_name),
+            ("", "pundleType", pundle_type.upper(), valid_pundle_types),
         ]
-        helpers.convert_mapping_to_xml(
-            pundle, data, mapping, fail_required=True)
+        helpers.convert_mapping_to_xml(pundle, data, mapping, fail_required=True)
 
-    generate_parcel = 'parcel-builder-file' in data
+    generate_parcel = "parcel-builder-file" in data
     mapping_optional = [
-        ('version-regex', 'versionRegex', None),
-        ('minimum-blessing', 'minimumBlessingLevel', None),
-        ('', 'generateParcelBuilderInputFile', generate_parcel),
-        ('parcel-builder-file', 'parcelBuilderInputFilename', None),
+        ("version-regex", "versionRegex", None),
+        ("minimum-blessing", "minimumBlessingLevel", None),
+        ("", "generateParcelBuilderInputFile", generate_parcel),
+        ("parcel-builder-file", "parcelBuilderInputFilename", None),
     ]
-    helpers.convert_mapping_to_xml(scm,
-        data, mapping_optional, fail_required=False)
+    helpers.convert_mapping_to_xml(scm, data, mapping_optional, fail_required=False)
 
 
 def svn(registry, xml_parent, data):
@@ -1015,93 +1028,87 @@ def svn(registry, xml_parent, data):
 
     .. literalinclude:: /../../tests/scm/fixtures/svn-regions-001.yaml
     """
-    scm = XML.SubElement(xml_parent, 'scm', {'class':
-                         'hudson.scm.SubversionSCM'})
-    if 'viewvc-url' in data:
+    scm = XML.SubElement(xml_parent, "scm", {"class": "hudson.scm.SubversionSCM"})
+    if "viewvc-url" in data:
         browser = XML.SubElement(
-            scm, 'browser', {'class': 'hudson.scm.browsers.ViewSVN'})
-        mapping = [
-            ('viewvc-url', 'url', None),
-        ]
-        helpers.convert_mapping_to_xml(
-            browser, data, mapping, fail_required=True)
-    locations = XML.SubElement(scm, 'locations')
+            scm, "browser", {"class": "hudson.scm.browsers.ViewSVN"}
+        )
+        mapping = [("viewvc-url", "url", None)]
+        helpers.convert_mapping_to_xml(browser, data, mapping, fail_required=True)
+    locations = XML.SubElement(scm, "locations")
 
     def populate_repo_xml(parent, data):
-        module = XML.SubElement(parent,
-                                'hudson.scm.SubversionSCM_-ModuleLocation')
-        mapping = [
-            ('url', 'remote', None),
-            ('basedir', 'local', '.'),
+        module = XML.SubElement(parent, "hudson.scm.SubversionSCM_-ModuleLocation")
+        mapping = [("url", "remote", None), ("basedir", "local", ".")]
+        helpers.convert_mapping_to_xml(module, data, mapping, fail_required=True)
+
+        repo_depths = ["infinity", "empty", "files", "immediates", "unknown"]
+        mapping_optional = [
+            ("credentials-id", "credentialsId", None),
+            ("repo-depth", "depthOption", "infinity", repo_depths),
+            ("ignore-externals", "ignoreExternalsOption", False),
         ]
         helpers.convert_mapping_to_xml(
-            module, data, mapping, fail_required=True)
+            module, data, mapping_optional, fail_required=False
+        )
 
-        repo_depths = ['infinity', 'empty', 'files', 'immediates', 'unknown']
-        mapping_optional = [
-            ('credentials-id', 'credentialsId', None),
-            ('repo-depth', 'depthOption', 'infinity', repo_depths),
-            ('ignore-externals', 'ignoreExternalsOption', False),
-        ]
-        helpers.convert_mapping_to_xml(module, data,
-            mapping_optional, fail_required=False)
-
-    if 'repos' in data:
-        repos = data['repos']
+    if "repos" in data:
+        repos = data["repos"]
         for repo in repos:
             populate_repo_xml(locations, repo)
-    elif 'url' in data:
+    elif "url" in data:
         populate_repo_xml(locations, data)
     else:
         raise JenkinsJobsException("A top level url or repos list must exist")
 
     def populate_additional_credential_xml(parent, data):
-        module = XML.SubElement(parent,
-                            'hudson.scm.SubversionSCM_-AdditionalCredentials')
-        XML.SubElement(module, 'realm').text = data['realm']
-        if 'credentials-id' in data:
-            XML.SubElement(module, 'credentialsId').text = data[
-                'credentials-id']
+        module = XML.SubElement(
+            parent, "hudson.scm.SubversionSCM_-AdditionalCredentials"
+        )
+        XML.SubElement(module, "realm").text = data["realm"]
+        if "credentials-id" in data:
+            XML.SubElement(module, "credentialsId").text = data["credentials-id"]
 
-    if 'additional-credentials' in data:
-        additional_credentials = XML.SubElement(scm, 'additionalCredentials')
-        additional_credentials_data = data['additional-credentials']
+    if "additional-credentials" in data:
+        additional_credentials = XML.SubElement(scm, "additionalCredentials")
+        additional_credentials_data = data["additional-credentials"]
 
         for additional_credential in additional_credentials_data:
-            populate_additional_credential_xml(additional_credentials,
-                                               additional_credential)
+            populate_additional_credential_xml(
+                additional_credentials, additional_credential
+            )
 
-    updater = data.get('workspaceupdater', 'wipeworkspace')
-    if updater == 'wipeworkspace':
-        updaterclass = 'CheckoutUpdater'
-    elif updater == 'revertupdate':
-        updaterclass = 'UpdateWithRevertUpdater'
-    elif updater == 'emulateclean':
-        updaterclass = 'UpdateWithCleanUpdater'
-    elif updater == 'update':
-        updaterclass = 'UpdateUpdater'
-    XML.SubElement(scm, 'workspaceUpdater', {'class':
-                   'hudson.scm.subversion.' + updaterclass})
+    updater = data.get("workspaceupdater", "wipeworkspace")
+    if updater == "wipeworkspace":
+        updaterclass = "CheckoutUpdater"
+    elif updater == "revertupdate":
+        updaterclass = "UpdateWithRevertUpdater"
+    elif updater == "emulateclean":
+        updaterclass = "UpdateWithCleanUpdater"
+    elif updater == "update":
+        updaterclass = "UpdateUpdater"
+    XML.SubElement(
+        scm, "workspaceUpdater", {"class": "hudson.scm.subversion." + updaterclass}
+    )
 
     mapping = [
         # option, xml name, default value
-        ("excluded-regions", 'excludedRegions', []),
-        ("included-regions", 'includedRegions', []),
-        ("excluded-users", 'excludedUsers', []),
-        ("exclusion-revprop-name", 'excludedRevprop', ''),
-        ("excluded-commit-messages", 'excludedCommitMessages', []),
-        ("ignore-property-changes-on-directories", 'ignoreDirPropChanges',
-            False),
-        ("filter-changelog", 'filterChangelog', False),
+        ("excluded-regions", "excludedRegions", []),
+        ("included-regions", "includedRegions", []),
+        ("excluded-users", "excludedUsers", []),
+        ("exclusion-revprop-name", "excludedRevprop", ""),
+        ("excluded-commit-messages", "excludedCommitMessages", []),
+        ("ignore-property-changes-on-directories", "ignoreDirPropChanges", False),
+        ("filter-changelog", "filterChangelog", False),
     ]
 
     for optname, xmlname, defvalue in mapping:
         if isinstance(defvalue, list):
-            val = '\n'.join(data.get(optname, defvalue))
+            val = "\n".join(data.get(optname, defvalue))
         else:
             val = data.get(optname, defvalue)
         # Skip adding xml entry if default is empty and no value given
-        if not val and (defvalue in ['', []]):
+        if not val and (defvalue in ["", []]):
             continue
 
         xe = XML.SubElement(scm, xmlname)
@@ -1177,34 +1184,42 @@ def tfs(registry, xml_parent, data):
 
     """
 
-    tfs = XML.SubElement(xml_parent, 'scm',
-                         {'class': 'hudson.plugins.tfs.'
-                                   'TeamFoundationServerScm'})
+    tfs = XML.SubElement(
+        xml_parent, "scm", {"class": "hudson.plugins.tfs." "TeamFoundationServerScm"}
+    )
     mapping = [
-        ('server-url', 'serverUrl', ''),
-        ('project-path', 'projectPath', ''),
-        ('local-path', 'localPath', '.'),
-        ('workspace', 'workspaceName', 'Hudson-${JOB_NAME}-${NODE_NAME}'),
+        ("server-url", "serverUrl", ""),
+        ("project-path", "projectPath", ""),
+        ("local-path", "localPath", "."),
+        ("workspace", "workspaceName", "Hudson-${JOB_NAME}-${NODE_NAME}"),
         # TODO: In the future, it would be nice to have a place that can pull
         # passwords into JJB without having to commit them in plaintext. This
         # could also integrate nicely with global configuration options.
-        ('', 'userPassword', ''),
-        ('login', 'userName', ''),
-        ('use-update', 'useUpdate', True),
+        ("", "userPassword", ""),
+        ("login", "userName", ""),
+        ("use-update", "useUpdate", True),
     ]
     helpers.convert_mapping_to_xml(tfs, data, mapping, fail_required=True)
 
-    store = data.get('web-access', None)
+    store = data.get("web-access", None)
     if isinstance(store, list):
-        web = XML.SubElement(tfs, 'repositoryBrowser',
-                             {'class': 'hudson.plugins.tfs.browsers.'
-                                       'TeamSystemWebAccessBrowser'})
-        XML.SubElement(web, 'url').text = str(store[0].get('web-url', None))
-    elif 'web-access' in data and store is None:
-        XML.SubElement(tfs, 'repositoryBrowser', {'class': 'hudson.'
-                                                  'plugins.tfs.browsers.'
-                                                  'TeamSystemWebAccess'
-                                                  'Browser'})
+        web = XML.SubElement(
+            tfs,
+            "repositoryBrowser",
+            {"class": "hudson.plugins.tfs.browsers." "TeamSystemWebAccessBrowser"},
+        )
+        XML.SubElement(web, "url").text = str(store[0].get("web-url", None))
+    elif "web-access" in data and store is None:
+        XML.SubElement(
+            tfs,
+            "repositoryBrowser",
+            {
+                "class": "hudson."
+                "plugins.tfs.browsers."
+                "TeamSystemWebAccess"
+                "Browser"
+            },
+        )
 
 
 def workspace(registry, xml_parent, data):
@@ -1228,18 +1243,20 @@ def workspace(registry, xml_parent, data):
     .. literalinclude:: /../../tests/scm/fixtures/workspace001.yaml
     """
 
-    workspace = XML.SubElement(xml_parent, 'scm', {'class': 'hudson.plugins.'
-                               'cloneworkspace.CloneWorkspaceSCM'})
-    criteria_list = ['Any', 'Not Failed', 'Successful']
+    workspace = XML.SubElement(
+        xml_parent,
+        "scm",
+        {"class": "hudson.plugins." "cloneworkspace.CloneWorkspaceSCM"},
+    )
+    criteria_list = ["Any", "Not Failed", "Successful"]
 
-    criteria = data.get('criteria', 'Any').title()
+    criteria = data.get("criteria", "Any").title()
 
     mapping = [
-        ('parent-job', 'parentJobName', ''),
-        ('', 'criteria', criteria, criteria_list),
+        ("parent-job", "parentJobName", ""),
+        ("", "criteria", criteria, criteria_list),
     ]
-    helpers.convert_mapping_to_xml(
-        workspace, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(workspace, data, mapping, fail_required=True)
 
 
 def hg(self, xml_parent, data):
@@ -1282,54 +1299,50 @@ def hg(self, xml_parent, data):
     .. literalinclude:: ../../tests/scm/fixtures/hg02.yaml
     """
 
-    revision_type_dict = {
-        'branch': 'BRANCH',
-        'tag': 'TAG',
-    }
-    browser = data.get('browser', 'auto')
+    revision_type_dict = {"branch": "BRANCH", "tag": "TAG"}
+    browser = data.get("browser", "auto")
     browserdict = {
-        'auto': '',
-        'bitbucket': 'BitBucket',  # deprecated
-        'bitbucketweb': 'BitBucket',
-        'fisheye': 'FishEye',
-        'googlecode': 'GoogleCode',
-        'hgweb': 'HgWeb',
-        'kilnhg': 'KilnHG',
-        'rhodecode': 'RhodeCode',
-        'rhodecode-pre-1.2.0': 'RhodeCodeLegacy'
+        "auto": "",
+        "bitbucket": "BitBucket",  # deprecated
+        "bitbucketweb": "BitBucket",
+        "fisheye": "FishEye",
+        "googlecode": "GoogleCode",
+        "hgweb": "HgWeb",
+        "kilnhg": "KilnHG",
+        "rhodecode": "RhodeCode",
+        "rhodecode-pre-1.2.0": "RhodeCodeLegacy",
     }
 
-    scm = XML.SubElement(xml_parent, 'scm', {'class':
-                         'hudson.plugins.mercurial.MercurialSCM'})
-    mapping = [
-        ('url', 'source', None),
-    ]
+    scm = XML.SubElement(
+        xml_parent, "scm", {"class": "hudson.plugins.mercurial.MercurialSCM"}
+    )
+    mapping = [("url", "source", None)]
     helpers.convert_mapping_to_xml(scm, data, mapping, fail_required=True)
 
     mapping_optional = [
-        ('credentials-id', 'credentialsId', None),
-        ('revision-type', 'revisionType', 'branch', revision_type_dict),
-        ('revision', 'revision', 'default'),
-        ('subdir', 'subdir', None),
-        ('clean', 'clean', False),
+        ("credentials-id", "credentialsId", None),
+        ("revision-type", "revisionType", "branch", revision_type_dict),
+        ("revision", "revision", "default"),
+        ("subdir", "subdir", None),
+        ("clean", "clean", False),
     ]
-    helpers.convert_mapping_to_xml(
-        scm, data, mapping_optional, fail_required=False)
+    helpers.convert_mapping_to_xml(scm, data, mapping_optional, fail_required=False)
 
-    modules = data.get('modules', '')
+    modules = data.get("modules", "")
     if isinstance(modules, list):
         modules = " ".join(modules)
-    XML.SubElement(scm, 'modules').text = modules
-    XML.SubElement(scm, 'disableChangeLog').text = str(data.get(
-        'disable-changelog', False)).lower()
+    XML.SubElement(scm, "modules").text = modules
+    XML.SubElement(scm, "disableChangeLog").text = str(
+        data.get("disable-changelog", False)
+    ).lower()
 
-    if browser != 'auto':
-        bc = XML.SubElement(scm, 'browser',
-                            {'class': 'hudson.plugins.mercurial.browser.' +
-                                      browserdict[browser]})
-        mapping = [
-            ('browser-url', 'url', None, browserdict[browser]),
-        ]
+    if browser != "auto":
+        bc = XML.SubElement(
+            scm,
+            "browser",
+            {"class": "hudson.plugins.mercurial.browser." + browserdict[browser]},
+        )
+        mapping = [("browser-url", "url", None, browserdict[browser])]
         helpers.convert_mapping_to_xml(bc, data, mapping, fail_required=True)
 
 
@@ -1372,18 +1385,19 @@ def openshift_img_streams(registry, xml_parent, data):
         ../../tests/scm/fixtures/openshift-img-streams002.yaml
        :language: yaml
     """
-    scm = XML.SubElement(xml_parent,
-                         'scm', {'class':
-                                 'com.openshift.jenkins.plugins.pipeline.'
-                                 'OpenShiftImageStreams'})
+    scm = XML.SubElement(
+        xml_parent,
+        "scm",
+        {"class": "com.openshift.jenkins.plugins.pipeline." "OpenShiftImageStreams"},
+    )
     mapping = [
         # option, xml name, default value
-        ("image-stream-name", 'imageStreamName', 'nodejs-010-centos7'),
-        ("tag", 'tag', 'latest'),
-        ("api-url", 'apiURL', 'https://openshift.default.svc.cluster.local'),
-        ("namespace", 'namespace', 'test'),
-        ("auth-token", 'authToken', ''),
-        ("verbose", 'verbose', False),
+        ("image-stream-name", "imageStreamName", "nodejs-010-centos7"),
+        ("tag", "tag", "latest"),
+        ("api-url", "apiURL", "https://openshift.default.svc.cluster.local"),
+        ("namespace", "namespace", "test"),
+        ("auth-token", "authToken", ""),
+        ("verbose", "verbose", False),
     ]
     helpers.convert_mapping_to_xml(scm, data, mapping, fail_required=True)
 
@@ -1418,42 +1432,38 @@ def bzr(registry, xml_parent, data):
     """
     mapping = [
         # option, xml name, default value (text), attributes (hard coded)
-        ('url', 'source', None),
-        ('clean-tree', 'cleantree', False),
-        ('lightweight-checkout', 'checkout', False),
+        ("url", "source", None),
+        ("clean-tree", "cleantree", False),
+        ("lightweight-checkout", "checkout", False),
     ]
     scm_element = XML.SubElement(
-        xml_parent, 'scm', {'class': 'hudson.plugins.bazaar.BazaarSCM'})
-    helpers.convert_mapping_to_xml(
-        scm_element, data, mapping, fail_required=True)
+        xml_parent, "scm", {"class": "hudson.plugins.bazaar.BazaarSCM"}
+    )
+    helpers.convert_mapping_to_xml(scm_element, data, mapping, fail_required=True)
 
-    browser_name_to_class = {
-        'loggerhead': 'Loggerhead',
-        'opengrok': 'OpenGrok',
-    }
-    browser = data.get('browser', 'auto')
-    if browser == 'auto':
+    browser_name_to_class = {"loggerhead": "Loggerhead", "opengrok": "OpenGrok"}
+    browser = data.get("browser", "auto")
+    if browser == "auto":
         return
     if browser not in browser_name_to_class:
-        raise InvalidAttributeError('browser', browser,
-                                    browser_name_to_class.keys())
+        raise InvalidAttributeError("browser", browser, browser_name_to_class.keys())
     browser_element = XML.SubElement(
         scm_element,
-        'browser',
-        {'class': 'hudson.plugins.bazaar.browsers.{0}'.format(
-            browser_name_to_class[browser])})
-    mapping = [
-        ('browser-url', 'url', None),
-    ]
-    helpers.convert_mapping_to_xml(
-        browser_element, data, mapping, fail_required=True)
+        "browser",
+        {
+            "class": "hudson.plugins.bazaar.browsers.{0}".format(
+                browser_name_to_class[browser]
+            )
+        },
+    )
+    mapping = [("browser-url", "url", None)]
+    helpers.convert_mapping_to_xml(browser_element, data, mapping, fail_required=True)
 
-    if browser == 'opengrok':
-        mapping = [
-            ('opengrok-root-module', 'rootModule', None),
-        ]
-        helpers.convert_mapping_to_xml(browser_element,
-            data, mapping, fail_required=True)
+    if browser == "opengrok":
+        mapping = [("opengrok-root-module", "rootModule", None)]
+        helpers.convert_mapping_to_xml(
+            browser_element, data, mapping, fail_required=True
+        )
 
 
 def url(registry, xml_parent, data):
@@ -1474,20 +1484,13 @@ def url(registry, xml_parent, data):
        :language: yaml
     """
 
-    scm = XML.SubElement(xml_parent, 'scm', {'class':
-                         'hudson.plugins.URLSCM.URLSCM'})
-    urls = XML.SubElement(scm, 'urls')
-    for data_url in data['url-list']:
-        url_tuple = XML.SubElement(
-            urls, 'hudson.plugins.URLSCM.URLSCM_-URLTuple')
-        mapping = [
-            ('', 'urlString', data_url),
-        ]
-        helpers.convert_mapping_to_xml(
-            url_tuple, data, mapping, fail_required=True)
-    mapping = [
-        ('clear-workspace', 'clearWorkspace', False),
-    ]
+    scm = XML.SubElement(xml_parent, "scm", {"class": "hudson.plugins.URLSCM.URLSCM"})
+    urls = XML.SubElement(scm, "urls")
+    for data_url in data["url-list"]:
+        url_tuple = XML.SubElement(urls, "hudson.plugins.URLSCM.URLSCM_-URLTuple")
+        mapping = [("", "urlString", data_url)]
+        helpers.convert_mapping_to_xml(url_tuple, data, mapping, fail_required=True)
+    mapping = [("clear-workspace", "clearWorkspace", False)]
     helpers.convert_mapping_to_xml(scm, data, mapping, fail_required=True)
 
 
@@ -1543,56 +1546,55 @@ def dimensions(registry, xml_parent, data):
     """
 
     scm = XML.SubElement(
-        xml_parent,
-        'scm', {'class': 'hudson.plugins.dimensionsscm.DimensionsSCM'})
+        xml_parent, "scm", {"class": "hudson.plugins.dimensionsscm.DimensionsSCM"}
+    )
 
     # List to check against for valid permission
-    perm = ['DEFAULT', 'READONLY', 'WRITABLE']
+    perm = ["DEFAULT", "READONLY", "WRITABLE"]
 
     # List to check against for valid end of line
-    eol = ['DEFAULT', 'UNIX', 'WINDOWS', 'UNCHANGED']
+    eol = ["DEFAULT", "UNIX", "WINDOWS", "UNCHANGED"]
 
     mapping = [
         # option, xml name, default value (text), attributes (hard coded)
-        ('project', 'project', None),
-        ('permissions', 'permissions', 'DEFAULT', perm),
-        ('eol', 'eol', 'DEFAULT', eol),
-        ('update', 'canJobUpdate', False),
-        ('clear-workspace', 'canJobDelete', False),
-        ('force-build', 'canJobForce', False),
-        ('overwrite-modified', 'canJobRevert', False),
-        ('expand-vars', 'canJobExpand', False),
-        ('no-metadata', 'canJobNoMetadata', False),
-        ('maintain-timestamp', 'canJobNoTouch', False),
-        ('slave-checkout', 'forceAsSlave', False),
+        ("project", "project", None),
+        ("permissions", "permissions", "DEFAULT", perm),
+        ("eol", "eol", "DEFAULT", eol),
+        ("update", "canJobUpdate", False),
+        ("clear-workspace", "canJobDelete", False),
+        ("force-build", "canJobForce", False),
+        ("overwrite-modified", "canJobRevert", False),
+        ("expand-vars", "canJobExpand", False),
+        ("no-metadata", "canJobNoMetadata", False),
+        ("maintain-timestamp", "canJobNoTouch", False),
+        ("slave-checkout", "forceAsSlave", False),
     ]
     helpers.convert_mapping_to_xml(scm, data, mapping, fail_required=True)
 
     # Folders to monitor. Default '/'
-    folders = XML.SubElement(scm, 'folders')
-    if 'folders' in data:
-        for folder in data['folders']:
-            XML.SubElement(folders, 'string').text = folder
+    folders = XML.SubElement(scm, "folders")
+    if "folders" in data:
+        for folder in data["folders"]:
+            XML.SubElement(folders, "string").text = folder
     else:
-        XML.SubElement(folders, 'string').text = '/'
+        XML.SubElement(folders, "string").text = "/"
 
     # Excluded paths
-    exclude = XML.SubElement(scm, 'pathsToExclude')
-    if 'exclude' in data:
-        for exc in data['exclude']:
-            XML.SubElement(exclude, 'string').text = exc
+    exclude = XML.SubElement(scm, "pathsToExclude")
+    if "exclude" in data:
+        for exc in data["exclude"]:
+            XML.SubElement(exclude, "string").text = exc
 
     optional_mapping = [
         # option, xml name, default value (text), attributes (hard coded)
-        ('username', 'jobUserName', None),
-        ('password', 'jobPasswd', None),
-        ('server', 'jobServer', None),
-        ('database', 'jobDatabase', None),
-        ('timezone', 'jobTimeZone', None),
-        ('web-url', 'jobWebUrl', None),
+        ("username", "jobUserName", None),
+        ("password", "jobPasswd", None),
+        ("server", "jobServer", None),
+        ("database", "jobDatabase", None),
+        ("timezone", "jobTimeZone", None),
+        ("web-url", "jobWebUrl", None),
     ]
-    helpers.convert_mapping_to_xml(
-        scm, data, optional_mapping, fail_required=False)
+    helpers.convert_mapping_to_xml(scm, data, optional_mapping, fail_required=False)
 
 
 def accurev(registry, xml_parent, data):
@@ -1630,61 +1632,61 @@ def accurev(registry, xml_parent, data):
 
     .. literalinclude:: /../../tests/scm/fixtures/accurev001.yaml
     """
-    scm = XML.SubElement(xml_parent,
-                         'scm', {'class': 'hudson.plugins.accurev.AccurevSCM'})
+    scm = XML.SubElement(
+        xml_parent, "scm", {"class": "hudson.plugins.accurev.AccurevSCM"}
+    )
     mapping = [
-        ('depot', 'depot', None),
-        ('stream', 'stream', None),
-        ('server-name', 'serverName', None),
-        ('ignore-parent-changes', 'ignoreStreamParent', False),
-        ('clean-reference-tree', 'cleanreftree', False),
-        ('build-from-snapshot', 'useSnapshot', False),
-        ('do-not-pop-content', 'dontPopContent', False),
+        ("depot", "depot", None),
+        ("stream", "stream", None),
+        ("server-name", "serverName", None),
+        ("ignore-parent-changes", "ignoreStreamParent", False),
+        ("clean-reference-tree", "cleanreftree", False),
+        ("build-from-snapshot", "useSnapshot", False),
+        ("do-not-pop-content", "dontPopContent", False),
     ]
     helpers.convert_mapping_to_xml(scm, data, mapping, fail_required=True)
 
     additional_mapping = [
-        ('workspace', 'workspace', None),
-        ('reference-tree', 'reftree', None),
-        ('directory-offset', 'directoryOffset', None),
-        ('sub-path', 'subPath', None),
-        ('filter-poll-scm', 'filterForPollSCM', None),
-        ('snapshot-name-format', 'snapshotNameFormat', None),
+        ("workspace", "workspace", None),
+        ("reference-tree", "reftree", None),
+        ("directory-offset", "directoryOffset", None),
+        ("sub-path", "subPath", None),
+        ("filter-poll-scm", "filterForPollSCM", None),
+        ("snapshot-name-format", "snapshotNameFormat", None),
     ]
-    helpers.convert_mapping_to_xml(
-        scm, data, additional_mapping, fail_required=False)
+    helpers.convert_mapping_to_xml(scm, data, additional_mapping, fail_required=False)
 
 
 class SCM(jenkins_jobs.modules.base.Base):
     sequence = 30
 
-    component_type = 'scm'
-    component_list_type = 'scm'
+    component_type = "scm"
+    component_list_type = "scm"
 
     def gen_xml(self, xml_parent, data):
 
         # multibranch-pipeline scm implementation is incompatible with SCM
-        if data.get('project-type') in ['multibranch', 'multibranch-defaults']:
+        if data.get("project-type") in ["multibranch", "multibranch-defaults"]:
             logging.debug("SCM Module skipped for multibranch project-type.")
             return
 
-        scms_parent = XML.Element('scms')
-        for scm in data.get('scm', []):
-            self.registry.dispatch('scm', scms_parent, scm)
+        scms_parent = XML.Element("scms")
+        for scm in data.get("scm", []):
+            self.registry.dispatch("scm", scms_parent, scm)
         scms_count = len(scms_parent)
         if scms_count == 0:
-            XML.SubElement(xml_parent, 'scm', {'class': 'hudson.scm.NullSCM'})
+            XML.SubElement(xml_parent, "scm", {"class": "hudson.scm.NullSCM"})
         elif scms_count == 1:
             xml_parent.append(scms_parent[0])
         else:
-            class_name = 'org.jenkinsci.plugins.multiplescms.MultiSCM'
-            xml_attribs = {'class': class_name}
-            xml_parent = XML.SubElement(xml_parent, 'scm', xml_attribs)
+            class_name = "org.jenkinsci.plugins.multiplescms.MultiSCM"
+            xml_attribs = {"class": class_name}
+            xml_parent = XML.SubElement(xml_parent, "scm", xml_attribs)
 
             for scms_child in scms_parent:
                 try:
-                    scms_child.tag = scms_child.attrib['class']
-                    del(scms_child.attrib['class'])
+                    scms_child.tag = scms_child.attrib["class"]
+                    del scms_child.attrib["class"]
                 except KeyError:
                     pass
 
@@ -1694,27 +1696,27 @@ class SCM(jenkins_jobs.modules.base.Base):
 class PipelineSCM(jenkins_jobs.modules.base.Base):
     sequence = 30
 
-    component_type = 'pipeline-scm'
-    component_list_type = 'pipeline-scm'
+    component_type = "pipeline-scm"
+    component_list_type = "pipeline-scm"
 
     def gen_xml(self, xml_parent, data):
-        definition_parent = xml_parent.find('definition')
+        definition_parent = xml_parent.find("definition")
         pipeline_dict = data.get(self.component_type, {})
-        scms = pipeline_dict.get('scm')
+        scms = pipeline_dict.get("scm")
         if scms:
             scms_count = len(scms)
             if scms_count == 0:
                 raise JenkinsJobsException("'scm' missing or empty")
             elif scms_count == 1:
-                self.registry.dispatch('scm', definition_parent, scms[0])
+                self.registry.dispatch("scm", definition_parent, scms[0])
                 mapping = [
-                    ('script-path', 'scriptPath', 'Jenkinsfile'),
-                    ('lightweight-checkout', 'lightweight', None,
-                     [True, False]),
+                    ("script-path", "scriptPath", "Jenkinsfile"),
+                    ("lightweight-checkout", "lightweight", None, [True, False]),
                 ]
                 helpers.convert_mapping_to_xml(
-                    definition_parent, pipeline_dict, mapping,
-                    fail_required=False)
+                    definition_parent, pipeline_dict, mapping, fail_required=False
+                )
             else:
-                raise JenkinsJobsException('Only one SCM can be specified '
-                                           'as pipeline-scm')
+                raise JenkinsJobsException(
+                    "Only one SCM can be specified " "as pipeline-scm"
+                )

@@ -30,19 +30,18 @@ class TestCaseParallel(TestCase):
         def parallel_test(num_base, num_extra):
             return num_base + num_extra
 
-        parallel_args = [{'num_extra': num} for num in range(10)]
+        parallel_args = [{"num_extra": num} for num in range(10)]
         result = parallel_test(10, concurrent=parallel_args)
         self.assertThat(result, matchers.Equals(expected))
 
     def test_parallel_time_less_than_serial(self):
-
         @concurrent
         def wait(secs):
             time.sleep(secs)
 
         before = time.time()
         # ten threads to make it as fast as possible
-        wait(concurrent=[{'secs': 1} for _ in range(10)], n_workers=10)
+        wait(concurrent=[{"secs": 1} for _ in range(10)], n_workers=10)
         after = time.time()
         self.assertThat(after - before, matchers.LessThan(5))
 
@@ -53,18 +52,16 @@ class TestCaseParallel(TestCase):
         def parallel_test(num_base, num_extra):
             return num_base + num_extra
 
-        parallel_args = [{'num_extra': num} for num in range(10)]
+        parallel_args = [{"num_extra": num} for num in range(10)]
         result = parallel_test(10, concurrent=parallel_args, n_workers=1)
         self.assertThat(result, matchers.Equals(expected))
 
-    @mock.patch('jenkins_jobs.parallel.cpu_count', wraps=cpu_count)
+    @mock.patch("jenkins_jobs.parallel.cpu_count", wraps=cpu_count)
     def test_use_auto_detect_cores(self, mockCpu_count):
-
         @concurrent
         def parallel_test():
             return True
 
-        result = parallel_test(concurrent=[{} for _ in range(10)],
-                               n_workers=0)
+        result = parallel_test(concurrent=[{} for _ in range(10)], n_workers=0)
         self.assertThat(result, matchers.Equals([True for _ in range(10)]))
         mockCpu_count.assert_called_once_with()

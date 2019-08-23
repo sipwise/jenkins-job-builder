@@ -59,22 +59,21 @@ class Workflow(jenkins_jobs.modules.base.Base):
 
     def root_xml(self, data):
         logger = logging.getLogger(__name__)
-        logger.warning(
-            "Workflow job type is deprecated, please use Pipeline job type"
+        logger.warning("Workflow job type is deprecated, please use Pipeline job type")
+
+        xml_parent = XML.Element("flow-definition", {"plugin": "workflow-job"})
+        xml_definition = XML.SubElement(
+            xml_parent,
+            "definition",
+            {
+                "plugin": "workflow-cps",
+                "class": "org.jenkinsci.plugins." "workflow.cps.CpsFlowDefinition",
+            },
         )
 
-        xml_parent = XML.Element('flow-definition',
-                                 {'plugin': 'workflow-job'})
-        xml_definition = XML.SubElement(xml_parent, 'definition',
-                                        {'plugin': 'workflow-cps',
-                                         'class': 'org.jenkinsci.plugins.'
-                                         'workflow.cps.CpsFlowDefinition'})
-
-        mapping = [
-            ('dsl', 'script', None),
-            ('sandbox', 'sandbox', False),
-        ]
+        mapping = [("dsl", "script", None), ("sandbox", "sandbox", False)]
         helpers.convert_mapping_to_xml(
-            xml_definition, data, mapping, fail_required=True)
+            xml_definition, data, mapping, fail_required=True
+        )
 
         return xml_parent

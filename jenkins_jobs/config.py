@@ -27,9 +27,7 @@ from jenkins_jobs import builder
 from jenkins_jobs.errors import JJBConfigException
 from jenkins_jobs.errors import JenkinsJobsException
 
-__all__ = [
-    "JJBConfig"
-]
+__all__ = ["JJBConfig"]
 
 logger = logging.getLogger(__name__)
 
@@ -50,21 +48,21 @@ url=http://localhost:8080/
 query_plugins_info=False
 """
 
-CONFIG_REQUIRED_MESSAGE = ("A valid configuration file is required. "
-                           "No configuration file passed.")
+CONFIG_REQUIRED_MESSAGE = (
+    "A valid configuration file is required. " "No configuration file passed."
+)
 DEPRECATED_PLUGIN_CONFIG_SECTION_MESSAGE = (
     "Defining plugin configuration using a [{plugin}] section in your config"
     " file is deprecated. The recommended way to define plugins now is by"
-    " using a [plugin \"{plugin}\"] section"
+    ' using a [plugin "{plugin}"] section'
 )
 _NOTSET = object()
 
 
 class JJBConfig(object):
-
-    def __init__(self, config_filename=None,
-                 config_file_required=False,
-                 config_section='jenkins'):
+    def __init__(
+        self, config_filename=None, config_file_required=False, config_section="jenkins"
+    ):
 
         """
         The JJBConfig class is intended to encapsulate and resolve priority
@@ -93,11 +91,11 @@ class JJBConfig(object):
 
         config_parser = self._init_defaults()
 
-        global_conf = '/etc/jenkins_jobs/jenkins_jobs.ini'
-        user_conf = os.path.join(os.path.expanduser('~'), '.config',
-                                 'jenkins_jobs', 'jenkins_jobs.ini')
-        local_conf = os.path.join(os.path.dirname(__file__),
-                                  'jenkins_jobs.ini')
+        global_conf = "/etc/jenkins_jobs/jenkins_jobs.ini"
+        user_conf = os.path.join(
+            os.path.expanduser("~"), ".config", "jenkins_jobs", "jenkins_jobs.ini"
+        )
+        local_conf = os.path.join(os.path.dirname(__file__), "jenkins_jobs.ini")
         conf = None
         if config_filename is not None:
             conf = config_filename
@@ -120,8 +118,10 @@ class JJBConfig(object):
                 if config_file_required:
                     raise JJBConfigException(CONFIG_REQUIRED_MESSAGE)
                 else:
-                    logger.warning("Config file, {0}, not found. Using "
-                                   "default config values.".format(conf))
+                    logger.warning(
+                        "Config file, {0}, not found. Using "
+                        "default config values.".format(conf)
+                    )
 
         if config_fp is not None:
             if PY2:
@@ -162,33 +162,35 @@ class JJBConfig(object):
         if os.path.isfile(config_filename):
             self.__config_file = config_filename  # remember file we read from
             logger.debug("Reading config from {0}".format(config_filename))
-            config_fp = io.open(config_filename, 'r', encoding='utf-8')
+            config_fp = io.open(config_filename, "r", encoding="utf-8")
         else:
             raise JJBConfigException(
                 "A valid configuration file is required. "
-                "\n{0} is not valid.".format(config_filename))
+                "\n{0} is not valid.".format(config_filename)
+            )
 
         return config_fp
 
     def _handle_deprecated_hipchat_config(self):
         config = self.config_parser
 
-        if config.has_section('hipchat'):
+        if config.has_section("hipchat"):
             if config.has_section('plugin "hipchat"'):
                 logger.warning(
-                    "Both [hipchat] and [plugin \"hipchat\"] sections "
+                    'Both [hipchat] and [plugin "hipchat"] sections '
                     "defined, legacy [hipchat] section will be ignored."
                 )
             else:
                 logger.warning(
                     "[hipchat] section is deprecated and should be moved to a "
-                    "[plugins \"hipchat\"] section instead as the [hipchat] "
+                    '[plugins "hipchat"] section instead as the [hipchat] '
                     "section will be ignored in the future."
                 )
                 config.add_section('plugin "hipchat"')
                 for option in config.options("hipchat"):
-                    config.set('plugin "hipchat"', option,
-                               config.get("hipchat", option))
+                    config.set(
+                        'plugin "hipchat"', option, config.get("hipchat", option)
+                    )
 
                 config.remove_section("hipchat")
 
@@ -197,9 +199,10 @@ class JJBConfig(object):
         # interpolation to remove the need for plugins to need information
         # directly from the jenkins section within code and allow variables
         # in the config file to refer instead.
-        if (config.has_section('plugin "hipchat"') and
-                not config.has_option('plugin "hipchat"', 'url')):
-            config.set('plugin "hipchat"', "url", config.get('jenkins', 'url'))
+        if config.has_section('plugin "hipchat"') and not config.has_option(
+            'plugin "hipchat"', "url"
+        ):
+            config.set('plugin "hipchat"', "url", config.get("jenkins", "url"))
 
     def _setup(self):
         config = self.config_parser
@@ -208,26 +211,27 @@ class JJBConfig(object):
 
         # check the ignore_cache setting
         ignore_cache = False
-        if config.has_option(self._section, 'ignore_cache'):
-            logger.warning("ignore_cache option should be moved to the "
-                           "[job_builder] section in the config file, the "
-                           "one specified in the [jenkins] section will be "
-                           "ignored in the future")
-            ignore_cache = config.getboolean(self._section, 'ignore_cache')
-        elif config.has_option('job_builder', 'ignore_cache'):
-            ignore_cache = config.getboolean('job_builder', 'ignore_cache')
-        self.builder['ignore_cache'] = ignore_cache
+        if config.has_option(self._section, "ignore_cache"):
+            logger.warning(
+                "ignore_cache option should be moved to the "
+                "[job_builder] section in the config file, the "
+                "one specified in the [jenkins] section will be "
+                "ignored in the future"
+            )
+            ignore_cache = config.getboolean(self._section, "ignore_cache")
+        elif config.has_option("job_builder", "ignore_cache"):
+            ignore_cache = config.getboolean("job_builder", "ignore_cache")
+        self.builder["ignore_cache"] = ignore_cache
 
         # check the flush_cache setting
         flush_cache = False
-        if config.has_option('job_builder', 'flush_cache'):
-            flush_cache = config.getboolean('job_builder', 'flush_cache')
-        self.builder['flush_cache'] = flush_cache
+        if config.has_option("job_builder", "flush_cache"):
+            flush_cache = config.getboolean("job_builder", "flush_cache")
+        self.builder["flush_cache"] = flush_cache
 
         # check the print_job_urls setting
-        if config.has_option('job_builder', 'print_job_urls'):
-            self.print_job_urls = config.getboolean('job_builder',
-                                                    'print_job_urls')
+        if config.has_option("job_builder", "print_job_urls"):
+            self.print_job_urls = config.getboolean("job_builder", "print_job_urls")
 
         # Jenkins supports access as an anonymous user, which can be used to
         # ensure read-only behaviour when querying the version of plugins
@@ -240,16 +244,16 @@ class JJBConfig(object):
         # https://bugs.launchpad.net/openstack-ci/+bug/1259631
 
         try:
-            user = config.get(self._section, 'user')
+            user = config.get(self._section, "user")
         except (TypeError, configparser.NoOptionError):
             user = None
-        self.jenkins['user'] = user
+        self.jenkins["user"] = user
 
         try:
-            password = config.get(self._section, 'password')
+            password = config.get(self._section, "password")
         except (TypeError, configparser.NoOptionError):
             password = None
-        self.jenkins['password'] = password
+        self.jenkins["password"] = password
 
         # None -- no timeout, blocking mode; same as setblocking(True)
         # 0.0 -- non-blocking mode; same as setblocking(False) <--- default
@@ -259,86 +263,94 @@ class JJBConfig(object):
         # "timeout=jenkins_jobs.builder._DEFAULT_TIMEOUT" or not set timeout at
         # all.
         try:
-            timeout = config.getfloat(self._section, 'timeout')
+            timeout = config.getfloat(self._section, "timeout")
         except (ValueError):
             raise JenkinsJobsException("Jenkins timeout config is invalid")
         except (TypeError, configparser.NoOptionError):
             timeout = builder._DEFAULT_TIMEOUT
-        self.jenkins['timeout'] = timeout
+        self.jenkins["timeout"] = timeout
 
         plugins_info = None
-        if (config.has_option(self._section, 'query_plugins_info') and
-                not config.getboolean(self._section, "query_plugins_info")):
+        if config.has_option(
+            self._section, "query_plugins_info"
+        ) and not config.getboolean(self._section, "query_plugins_info"):
             logger.debug("Skipping plugin info retrieval")
             plugins_info = []
-        self.builder['plugins_info'] = plugins_info
+        self.builder["plugins_info"] = plugins_info
 
-        self.recursive = config.getboolean('job_builder', 'recursive')
-        self.excludes = config.get('job_builder', 'exclude').split(os.pathsep)
+        self.recursive = config.getboolean("job_builder", "recursive")
+        self.excludes = config.get("job_builder", "exclude").split(os.pathsep)
 
         # The way we want to do things moving forward:
-        self.jenkins['url'] = config.get(self._section, 'url')
-        self.builder['print_job_urls'] = self.print_job_urls
+        self.jenkins["url"] = config.get(self._section, "url")
+        self.builder["print_job_urls"] = self.print_job_urls
 
         # keep descriptions ? (used by yamlparser)
         keep_desc = False
-        if (config and config.has_section('job_builder') and
-                config.has_option('job_builder', 'keep_descriptions')):
-            keep_desc = config.getboolean('job_builder',
-                                          'keep_descriptions')
-        self.yamlparser['keep_descriptions'] = keep_desc
+        if (
+            config
+            and config.has_section("job_builder")
+            and config.has_option("job_builder", "keep_descriptions")
+        ):
+            keep_desc = config.getboolean("job_builder", "keep_descriptions")
+        self.yamlparser["keep_descriptions"] = keep_desc
 
         # figure out the include path (used by yamlparser)
         path = ["."]
-        if (config and config.has_section('job_builder') and
-                config.has_option('job_builder', 'include_path')):
-            path = config.get('job_builder',
-                              'include_path').split(':')
-        self.yamlparser['include_path'] = path
+        if (
+            config
+            and config.has_section("job_builder")
+            and config.has_option("job_builder", "include_path")
+        ):
+            path = config.get("job_builder", "include_path").split(":")
+        self.yamlparser["include_path"] = path
 
         # allow duplicates?
         allow_duplicates = False
-        if config and config.has_option('job_builder', 'allow_duplicates'):
-            allow_duplicates = config.getboolean('job_builder',
-                                                 'allow_duplicates')
-        self.yamlparser['allow_duplicates'] = allow_duplicates
+        if config and config.has_option("job_builder", "allow_duplicates"):
+            allow_duplicates = config.getboolean("job_builder", "allow_duplicates")
+        self.yamlparser["allow_duplicates"] = allow_duplicates
 
         # allow empty variables?
-        self.yamlparser['allow_empty_variables'] = (
-            config and config.has_section('job_builder') and
-            config.has_option('job_builder', 'allow_empty_variables') and
-            config.getboolean('job_builder', 'allow_empty_variables'))
+        self.yamlparser["allow_empty_variables"] = (
+            config
+            and config.has_section("job_builder")
+            and config.has_option("job_builder", "allow_empty_variables")
+            and config.getboolean("job_builder", "allow_empty_variables")
+        )
 
         # retain anchors across files?
         retain_anchors = False
-        if config and config.has_option('job_builder', 'retain_anchors'):
-            retain_anchors = config.getboolean('job_builder',
-                                               'retain_anchors')
-        self.yamlparser['retain_anchors'] = retain_anchors
+        if config and config.has_option("job_builder", "retain_anchors"):
+            retain_anchors = config.getboolean("job_builder", "retain_anchors")
+        self.yamlparser["retain_anchors"] = retain_anchors
 
         update = None
-        if (config and config.has_section('job_builder') and
-                config.has_option('job_builder', 'update')):
-            update = config.get('job_builder', 'update')
-        self.builder['update'] = update
+        if (
+            config
+            and config.has_section("job_builder")
+            and config.has_option("job_builder", "update")
+        ):
+            update = config.get("job_builder", "update")
+        self.builder["update"] = update
 
     def validate(self):
         # Inform the user as to what is likely to happen, as they may specify
         # a real jenkins instance in test mode to get the plugin info to check
         # the XML generated.
-        if self.jenkins['user'] is None and self.jenkins['password'] is None:
+        if self.jenkins["user"] is None and self.jenkins["password"] is None:
             logger.info("Will use anonymous access to Jenkins if needed.")
-        elif ((self.jenkins['user'] is not None and
-               self.jenkins['password'] is None) or
-              (self.jenkins['user'] is None and
-               self.jenkins['password'] is not None)):
+        elif (
+            self.jenkins["user"] is not None and self.jenkins["password"] is None
+        ) or (self.jenkins["user"] is None and self.jenkins["password"] is not None):
             raise JenkinsJobsException(
                 "Cannot authenticate to Jenkins with only one of User and "
                 "Password provided, please check your configuration."
             )
 
-        if (self.builder['plugins_info'] is not None and
-                not isinstance(self.builder['plugins_info'], list)):
+        if self.builder["plugins_info"] is not None and not isinstance(
+            self.builder["plugins_info"], list
+        ):
             raise JenkinsJobsException("plugins_info must contain a list!")
 
     def get_module_config(self, section, key, default=None):
@@ -349,19 +361,23 @@ class JJBConfig(object):
         """
         result = default
         try:
-            result = self.config_parser.get(
-                section, key
-            )
-        except (configparser.NoSectionError, configparser.NoOptionError,
-                JenkinsJobsException) as e:
+            result = self.config_parser.get(section, key)
+        except (
+            configparser.NoSectionError,
+            configparser.NoOptionError,
+            JenkinsJobsException,
+        ) as e:
             # use of default ignores missing sections/options
             if result is None:
                 logger.warning(
                     "You didn't set a %s neither in the yaml job definition "
                     "nor in the %s section, blank default value will be "
-                    "applied:\n%s", key, section, e)
+                    "applied:\n%s",
+                    key,
+                    section,
+                    e,
+                )
         return result
 
     def get_plugin_config(self, plugin, key, default=None):
-        return self.get_module_config('plugin "{}"'.format(plugin), key,
-                                      default)
+        return self.get_module_config('plugin "{}"'.format(plugin), key, default)

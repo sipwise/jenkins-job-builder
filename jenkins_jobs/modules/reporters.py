@@ -57,21 +57,19 @@ def email(registry, xml_parent, data):
             recipients: breakage@example.com
     """
 
-    mailer = XML.SubElement(xml_parent,
-                            'hudson.maven.reporters.MavenMailer')
-    XML.SubElement(mailer, 'recipients').text = data['recipients']
+    mailer = XML.SubElement(xml_parent, "hudson.maven.reporters.MavenMailer")
+    XML.SubElement(mailer, "recipients").text = data["recipients"]
 
     # Note the logic reversal (included here to match the GUI
-    if data.get('notify-every-unstable-build', True):
-        XML.SubElement(mailer, 'dontNotifyEveryUnstableBuild').text = 'false'
+    if data.get("notify-every-unstable-build", True):
+        XML.SubElement(mailer, "dontNotifyEveryUnstableBuild").text = "false"
     else:
-        XML.SubElement(mailer, 'dontNotifyEveryUnstableBuild').text = 'true'
+        XML.SubElement(mailer, "dontNotifyEveryUnstableBuild").text = "true"
     mapping = [
-        ('send-to-individuals', 'sendToIndividuals', False),
-        ('notify-for-each-module', 'perModuleEmail', True),
+        ("send-to-individuals", "sendToIndividuals", False),
+        ("notify-for-each-module", "perModuleEmail", True),
     ]
-    helpers.convert_mapping_to_xml(
-        mailer, data, mapping, fail_required=False)
+    helpers.convert_mapping_to_xml(mailer, data, mapping, fail_required=False)
 
 
 def findbugs(registry, xml_parent, data):
@@ -131,29 +129,29 @@ def findbugs(registry, xml_parent, data):
 
     .. literalinclude::  /../../tests/reporters/fixtures/findbugs01.yaml
     """
-    findbugs = XML.SubElement(xml_parent,
-                              'hudson.plugins.findbugs.FindBugsReporter')
-    findbugs.set('plugin', 'findbugs')
+    findbugs = XML.SubElement(xml_parent, "hudson.plugins.findbugs.FindBugsReporter")
+    findbugs.set("plugin", "findbugs")
 
     helpers.findbugs_settings(findbugs, data)
-    helpers.build_trends_publisher('[FINDBUGS] ', findbugs, data)
+    helpers.build_trends_publisher("[FINDBUGS] ", findbugs, data)
 
 
 class Reporters(jenkins_jobs.modules.base.Base):
     sequence = 55
 
-    component_type = 'reporter'
-    component_list_type = 'reporters'
+    component_type = "reporter"
+    component_list_type = "reporters"
 
     def gen_xml(self, xml_parent, data):
-        if 'reporters' not in data:
+        if "reporters" not in data:
             return
 
-        if xml_parent.tag != 'maven2-moduleset':
-            raise JenkinsJobsException("Reporters may only be used for Maven "
-                                       "modules.")
+        if xml_parent.tag != "maven2-moduleset":
+            raise JenkinsJobsException(
+                "Reporters may only be used for Maven " "modules."
+            )
 
-        reporters = XML.SubElement(xml_parent, 'reporters')
+        reporters = XML.SubElement(xml_parent, "reporters")
 
-        for action in data.get('reporters', []):
-            self.registry.dispatch('reporter', reporters, action)
+        for action in data.get("reporters", []):
+            self.registry.dispatch("reporter", reporters, action)

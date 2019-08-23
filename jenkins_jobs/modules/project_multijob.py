@@ -59,6 +59,7 @@ class MultiJob(jenkins_jobs.modules.base.Base):
     sequence = 0
 
     def root_xml(self, data):
-        xml_parent = XML.Element('com.tikal.jenkins.plugins.multijob.'
-                                 'MultiJobProject')
+        xml_parent = XML.Element(
+            "com.tikal.jenkins.plugins.multijob." "MultiJobProject"
+        )
         return xml_parent

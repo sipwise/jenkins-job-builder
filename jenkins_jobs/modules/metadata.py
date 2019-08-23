@@ -38,13 +38,14 @@ import jenkins_jobs.modules.base
 
 def base_metadata(registry, xml_parent, data, mtype):
     pdef = XML.SubElement(xml_parent, mtype)
-    XML.SubElement(pdef, 'name').text = data['name']
-    XML.SubElement(pdef, 'generated').text = 'false'
-    XML.SubElement(pdef, 'parent', attrib={"class": "job-metadata",
-                                           "reference": "../../.."})
+    XML.SubElement(pdef, "name").text = data["name"]
+    XML.SubElement(pdef, "generated").text = "false"
+    XML.SubElement(
+        pdef, "parent", attrib={"class": "job-metadata", "reference": "../../.."}
+    )
 
-    exposed_to_env = XML.SubElement(pdef, 'exposedToEnvironment')
-    exposed_to_env.text = str(data.get('expose-to-env', False)).lower()
+    exposed_to_env = XML.SubElement(pdef, "exposedToEnvironment")
+    exposed_to_env.text = str(data.get("expose-to-env", False)).lower()
     return pdef
 
 
@@ -64,10 +65,9 @@ def string_metadata(registry, xml_parent, data):
             value: bar
             expose-to-env: true
     """
-    pdef = base_metadata(registry, xml_parent, data,
-                         'metadata-string')
-    value = data.get('value', '')
-    XML.SubElement(pdef, 'value').text = value
+    pdef = base_metadata(registry, xml_parent, data, "metadata-string")
+    value = data.get("value", "")
+    XML.SubElement(pdef, "value").text = value
 
 
 def number_metadata(registry, xml_parent, data):
@@ -86,10 +86,9 @@ def number_metadata(registry, xml_parent, data):
             value: 1
             expose-to-env: true
     """
-    pdef = base_metadata(registry, xml_parent, data,
-                         'metadata-number')
-    value = data.get('value', '')
-    XML.SubElement(pdef, 'value').text = value
+    pdef = base_metadata(registry, xml_parent, data, "metadata-number")
+    value = data.get("value", "")
+    XML.SubElement(pdef, "value").text = value
 
 
 def date_metadata(registry, xml_parent, data):
@@ -110,30 +109,28 @@ def date_metadata(registry, xml_parent, data):
             timezone: Australia/Melbourne
             expose-to-env: true
     """
-    pdef = base_metadata(registry, xml_parent, data,
-                         'metadata-date')
+    pdef = base_metadata(registry, xml_parent, data, "metadata-date")
     # TODO: convert time from any reasonable format into epoch
-    mval = XML.SubElement(pdef, 'value')
-    XML.SubElement(mval, 'time').text = data['time']
-    XML.SubElement(mval, 'timezone').text = data['timezone']
-    XML.SubElement(pdef, 'checked').text = 'true'
+    mval = XML.SubElement(pdef, "value")
+    XML.SubElement(mval, "time").text = data["time"]
+    XML.SubElement(mval, "timezone").text = data["timezone"]
+    XML.SubElement(pdef, "checked").text = "true"
 
 
 class Metadata(jenkins_jobs.modules.base.Base):
     sequence = 21
 
-    component_type = 'metadata'
-    component_list_type = 'metadata'
+    component_type = "metadata"
+    component_list_type = "metadata"
 
     def gen_xml(self, xml_parent, data):
-        properties = xml_parent.find('properties')
+        properties = xml_parent.find("properties")
         if properties is None:
-            properties = XML.SubElement(xml_parent, 'properties')
+            properties = XML.SubElement(xml_parent, "properties")
 
-        metadata = data.get('metadata', [])
+        metadata = data.get("metadata", [])
         if metadata:
-            pdefp = XML.SubElement(properties,
-                                   'job-metadata', plugin="metadata@1.0b")
-            pdefs = XML.SubElement(pdefp, 'values')
+            pdefp = XML.SubElement(properties, "job-metadata", plugin="metadata@1.0b")
+            pdefs = XML.SubElement(pdefp, "values")
             for mdata in metadata:
-                self.registry.dispatch('metadata', pdefs, mdata)
+                self.registry.dispatch("metadata", pdefs, mdata)

@@ -83,99 +83,102 @@ logger = logging.getLogger(str(__name__))
 
 class WorkflowMultiBranch(jenkins_jobs.modules.base.Base):
     sequence = 0
-    multibranch_path = 'org.jenkinsci.plugins.workflow.multibranch'
-    jenkins_class = ''.join([multibranch_path, '.WorkflowMultiBranchProject'])
-    jenkins_factory_class = ''.join(
-        [multibranch_path, '.WorkflowBranchProjectFactory'])
+    multibranch_path = "org.jenkinsci.plugins.workflow.multibranch"
+    jenkins_class = "".join([multibranch_path, ".WorkflowMultiBranchProject"])
+    jenkins_factory_class = "".join([multibranch_path, ".WorkflowBranchProjectFactory"])
 
     def root_xml(self, data):
         xml_parent = XML.Element(self.jenkins_class)
-        xml_parent.attrib['plugin'] = 'workflow-multibranch'
-        XML.SubElement(xml_parent, 'properties')
+        xml_parent.attrib["plugin"] = "workflow-multibranch"
+        XML.SubElement(xml_parent, "properties")
 
         #########
         # Views #
         #########
 
-        views = XML.SubElement(xml_parent, 'views')
-        all_view = XML.SubElement(views, 'hudson.model.AllView')
+        views = XML.SubElement(xml_parent, "views")
+        all_view = XML.SubElement(views, "hudson.model.AllView")
         all_view_mapping = [
-            ('', 'name', 'All'),
-            ('', 'filterExecutors', False),
-            ('', 'filterQueue', False),
+            ("", "name", "All"),
+            ("", "filterExecutors", False),
+            ("", "filterQueue", False),
         ]
         helpers.convert_mapping_to_xml(
-            all_view, {}, all_view_mapping, fail_required=True)
+            all_view, {}, all_view_mapping, fail_required=True
+        )
 
-        XML.SubElement(all_view, 'properties', {
-            'class': 'hudson.model.View$PropertyList'
-        })
+        XML.SubElement(
+            all_view, "properties", {"class": "hudson.model.View$PropertyList"}
+        )
 
-        XML.SubElement(all_view, 'owner', {
-            'class': self.jenkins_class,
-            'reference': '../../..'
-        })
+        XML.SubElement(
+            all_view, "owner", {"class": self.jenkins_class, "reference": "../../.."}
+        )
 
-        XML.SubElement(xml_parent, 'viewsTabBar', {
-            'class': 'hudson.views.DefaultViewsTabBar'
-        })
+        XML.SubElement(
+            xml_parent, "viewsTabBar", {"class": "hudson.views.DefaultViewsTabBar"}
+        )
 
         ################
         # Folder Views #
         ################
 
-        folderViews = XML.SubElement(xml_parent, 'folderViews', {
-            'class': 'jenkins.branch.MultiBranchProjectViewHolder',
-            'plugin': 'branch-api',
-        })
+        folderViews = XML.SubElement(
+            xml_parent,
+            "folderViews",
+            {
+                "class": "jenkins.branch.MultiBranchProjectViewHolder",
+                "plugin": "branch-api",
+            },
+        )
 
-        XML.SubElement(folderViews, 'owner', {
-            'class': self.jenkins_class,
-            'reference': '../..'
-        })
+        XML.SubElement(
+            folderViews, "owner", {"class": self.jenkins_class, "reference": "../.."}
+        )
 
         ##################
         # Health Metrics #
         ##################
 
-        hm = XML.SubElement(xml_parent, 'healthMetrics')
-        hm_path = ('com.cloudbees.hudson.plugins.folder.health'
-                   '.WorstChildHealthMetric')
-        hm_plugin = XML.SubElement(hm, hm_path, {
-            'plugin': 'cloudbees-folder',
-        })
-        XML.SubElement(hm_plugin, 'nonRecursive').text = 'false'
+        hm = XML.SubElement(xml_parent, "healthMetrics")
+        hm_path = "com.cloudbees.hudson.plugins.folder.health" ".WorstChildHealthMetric"
+        hm_plugin = XML.SubElement(hm, hm_path, {"plugin": "cloudbees-folder"})
+        XML.SubElement(hm_plugin, "nonRecursive").text = "false"
 
         ########
         # Icon #
         ########
 
-        icon = XML.SubElement(xml_parent, 'icon', {
-            'class': 'jenkins.branch.MetadataActionFolderIcon',
-            'plugin': 'branch-api',
-        })
-        XML.SubElement(icon, 'owner', {
-            'class': self.jenkins_class,
-            'reference': '../..'
-        })
+        icon = XML.SubElement(
+            xml_parent,
+            "icon",
+            {
+                "class": "jenkins.branch.MetadataActionFolderIcon",
+                "plugin": "branch-api",
+            },
+        )
+        XML.SubElement(
+            icon, "owner", {"class": self.jenkins_class, "reference": "../.."}
+        )
 
         ########################
         # Orphan Item Strategy #
         ########################
 
-        ois_default_strategy = ('com.cloudbees.hudson.plugins.'
-            'folder.computed.DefaultOrphanedItemStrategy')
+        ois_default_strategy = (
+            "com.cloudbees.hudson.plugins."
+            "folder.computed.DefaultOrphanedItemStrategy"
+        )
         ois = XML.SubElement(
-            xml_parent, 'orphanedItemStrategy', {
-                'class': ois_default_strategy,
-                'plugin': 'cloudbees-folder',
-            }
+            xml_parent,
+            "orphanedItemStrategy",
+            {"class": ois_default_strategy, "plugin": "cloudbees-folder"},
         )
 
         ois_mapping = [
-            ('prune-dead-branches', 'pruneDeadBranches', True, [True, False]),
-            ('days-to-keep', 'daysToKeep', -1),
-            ('number-to-keep', 'numToKeep', -1),
+            ("prune-dead-branches", "pruneDeadBranches", True, [True, False]),
+            ("days-to-keep", "daysToKeep", -1),
+            ("number-to-keep", "numToKeep", -1),
         ]
         helpers.convert_mapping_to_xml(ois, data, ois_mapping)
 
@@ -183,111 +186,109 @@ class WorkflowMultiBranch(jenkins_jobs.modules.base.Base):
         # Periodic Folder Trigger #
         ###########################
 
-        triggers = XML.SubElement(xml_parent, 'triggers')
+        triggers = XML.SubElement(xml_parent, "triggers")
 
         # Valid options for the periodic trigger interval.
-        pft_map = collections.OrderedDict([
-            ("1m", ("* * * * *", '60000')),
-            ("2m", ("*/2 * * * *", '120000')),
-            ("5m", ("*/5 * * * *", '300000')),
-            ("10m", ("H/6 * * * *", '600000')),
-            ("15m", ("H/6 * * * *", '900000')),
-            ("20m", ("H/3 * * * *", '1200000')),
-            ("25m", ("H/3 * * * *", '1500000')),
-            ("30m", ("H/2 * * * *", '1800000')),
-            ("1h", ("H * * * *", '3600000')),
-            ("2h", ("H * * * *", '7200000')),
-            ("4h", ("H * * * *", '14400000')),
-            ("8h", ("H * * * *", '28800000')),
-            ("12h", ("H H * * *", '43200000')),
-            ("1d", ("H H * * *", '86400000')),
-            ("2d", ("H H * * *", '172800000')),
-            ("1w", ("H H * * *", '604800000')),
-            ("2w", ("H H * * *", '1209600000')),
-            ("4w", ("H H * * *", '2419200000')),
-        ])
+        pft_map = collections.OrderedDict(
+            [
+                ("1m", ("* * * * *", "60000")),
+                ("2m", ("*/2 * * * *", "120000")),
+                ("5m", ("*/5 * * * *", "300000")),
+                ("10m", ("H/6 * * * *", "600000")),
+                ("15m", ("H/6 * * * *", "900000")),
+                ("20m", ("H/3 * * * *", "1200000")),
+                ("25m", ("H/3 * * * *", "1500000")),
+                ("30m", ("H/2 * * * *", "1800000")),
+                ("1h", ("H * * * *", "3600000")),
+                ("2h", ("H * * * *", "7200000")),
+                ("4h", ("H * * * *", "14400000")),
+                ("8h", ("H * * * *", "28800000")),
+                ("12h", ("H H * * *", "43200000")),
+                ("1d", ("H H * * *", "86400000")),
+                ("2d", ("H H * * *", "172800000")),
+                ("1w", ("H H * * *", "604800000")),
+                ("2w", ("H H * * *", "1209600000")),
+                ("4w", ("H H * * *", "2419200000")),
+            ]
+        )
 
-        pft_val = data.get('periodic-folder-trigger')
+        pft_val = data.get("periodic-folder-trigger")
         if pft_val:
             if not pft_map.get(pft_val):
                 raise InvalidAttributeError(
-                    'periodic-folder-trigger',
-                    pft_val,
-                    pft_map.keys())
+                    "periodic-folder-trigger", pft_val, pft_map.keys()
+                )
 
             pft_path = (
-                'com.cloudbees.hudson.plugins.folder.computed.'
-                'PeriodicFolderTrigger')
-            pft = XML.SubElement(triggers, pft_path, {
-                'plugin': 'cloudbees-folder'
-            })
-            XML.SubElement(pft, 'spec').text = pft_map[pft_val][0]
-            XML.SubElement(pft, 'interval').text = pft_map[pft_val][1]
+                "com.cloudbees.hudson.plugins.folder.computed." "PeriodicFolderTrigger"
+            )
+            pft = XML.SubElement(triggers, pft_path, {"plugin": "cloudbees-folder"})
+            XML.SubElement(pft, "spec").text = pft_map[pft_val][0]
+            XML.SubElement(pft, "interval").text = pft_map[pft_val][1]
 
         ###########
         # Sources #
         ###########
 
-        sources = XML.SubElement(xml_parent, 'sources', {
-            'class': 'jenkins.branch.MultiBranchProject$BranchSourceList',
-            'plugin': 'branch-api',
-        })
-        sources_data = XML.SubElement(sources, 'data')
-        XML.SubElement(sources, 'owner', {
-            'class': self.jenkins_class,
-            'reference': '../..',
-        })
+        sources = XML.SubElement(
+            xml_parent,
+            "sources",
+            {
+                "class": "jenkins.branch.MultiBranchProject$BranchSourceList",
+                "plugin": "branch-api",
+            },
+        )
+        sources_data = XML.SubElement(sources, "data")
+        XML.SubElement(
+            sources, "owner", {"class": self.jenkins_class, "reference": "../.."}
+        )
 
-        valid_scm = [
-            'bitbucket',
-            'gerrit',
-            'git',
-            'github',
-        ]
-        for scm_data in data.get('scm', None):
+        valid_scm = ["bitbucket", "gerrit", "git", "github"]
+        for scm_data in data.get("scm", None):
             for scm in scm_data:
-                bs = XML.SubElement(
-                    sources_data, 'jenkins.branch.BranchSource')
+                bs = XML.SubElement(sources_data, "jenkins.branch.BranchSource")
 
-                if scm == 'bitbucket':
+                if scm == "bitbucket":
                     bitbucket_scm(bs, scm_data[scm])
 
-                elif scm == 'gerrit':
+                elif scm == "gerrit":
                     gerrit_scm(bs, scm_data[scm])
 
-                elif scm == 'git':
+                elif scm == "git":
                     git_scm(bs, scm_data[scm])
 
-                elif scm == 'github':
+                elif scm == "github":
                     github_scm(bs, scm_data[scm])
 
                 else:
-                    raise InvalidAttributeError('scm', scm_data, valid_scm)
+                    raise InvalidAttributeError("scm", scm_data, valid_scm)
 
         ###########
         # Factory #
         ###########
 
-        factory = XML.SubElement(xml_parent, 'factory', {
-            'class': self.jenkins_factory_class,
-        })
-        XML.SubElement(factory, 'owner', {
-            'class': self.jenkins_class,
-            'reference': '../..'
-        })
-        XML.SubElement(factory, 'scriptPath').text = data.get(
-            'script-path', 'Jenkinsfile')
+        factory = XML.SubElement(
+            xml_parent, "factory", {"class": self.jenkins_factory_class}
+        )
+        XML.SubElement(
+            factory, "owner", {"class": self.jenkins_class, "reference": "../.."}
+        )
+        XML.SubElement(factory, "scriptPath").text = data.get(
+            "script-path", "Jenkinsfile"
+        )
 
         return xml_parent
 
 
 class WorkflowMultiBranchDefaults(WorkflowMultiBranch):
     jenkins_class = (
-        'org.jenkinsci.plugins.pipeline.multibranch'
-        '.defaults.PipelineMultiBranchDefaultsProject')
+        "org.jenkinsci.plugins.pipeline.multibranch"
+        ".defaults.PipelineMultiBranchDefaultsProject"
+    )
     jenkins_factory_class = (
-        'org.jenkinsci.plugins.pipeline.multibranch'
-        '.defaults.PipelineBranchDefaultsProjectFactory')
+        "org.jenkinsci.plugins.pipeline.multibranch"
+        ".defaults.PipelineBranchDefaultsProjectFactory"
+    )
 
 
 def bitbucket_scm(xml_parent, data):
@@ -395,148 +396,140 @@ def bitbucket_scm(xml_parent, data):
     .. literalinclude::
        /../../tests/multibranch/fixtures/scm_bitbucket_full.yaml
     """
-    source = XML.SubElement(xml_parent, 'source', {
-        'class': 'com.cloudbees.jenkins.plugins.bitbucket.BitbucketSCMSource',
-        'plugin': 'cloudbees-bitbucket-branch-source',
-    })
+    source = XML.SubElement(
+        xml_parent,
+        "source",
+        {
+            "class": "com.cloudbees.jenkins.plugins.bitbucket.BitbucketSCMSource",
+            "plugin": "cloudbees-bitbucket-branch-source",
+        },
+    )
     source_mapping = [
-        ('', 'id', '-'.join(['bb', data.get('repo-owner', ''),
-            data.get('repo', '')])),
-        ('repo-owner', 'repoOwner', None),
-        ('repo', 'repository', None),
+        ("", "id", "-".join(["bb", data.get("repo-owner", ""), data.get("repo", "")])),
+        ("repo-owner", "repoOwner", None),
+        ("repo", "repository", None),
     ]
-    helpers.convert_mapping_to_xml(
-        source, data, source_mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(source, data, source_mapping, fail_required=True)
 
     mapping_optional = [
-        ('credentials-id', 'credentialsId', None),
-        ('server-url', 'serverUrl', None),
+        ("credentials-id", "credentialsId", None),
+        ("server-url", "serverUrl", None),
     ]
-    helpers.convert_mapping_to_xml(
-        source, data, mapping_optional, fail_required=False)
+    helpers.convert_mapping_to_xml(source, data, mapping_optional, fail_required=False)
 
-    traits = XML.SubElement(source, 'traits')
-    if data.get('discover-tags', False):
-        XML.SubElement(traits,
-            'com.cloudbees.jenkins.plugins.bitbucket.TagDiscoveryTrait')
-    if data.get('head-filter-regex', None):
-        rshf = XML.SubElement(traits,
-            'jenkins.scm.impl.trait.RegexSCMHeadFilterTrait')
-        XML.SubElement(rshf, 'regex').text = data.get('head-filter-regex')
+    traits = XML.SubElement(source, "traits")
+    if data.get("discover-tags", False):
+        XML.SubElement(
+            traits, "com.cloudbees.jenkins.plugins.bitbucket.TagDiscoveryTrait"
+        )
+    if data.get("head-filter-regex", None):
+        rshf = XML.SubElement(traits, "jenkins.scm.impl.trait.RegexSCMHeadFilterTrait")
+        XML.SubElement(rshf, "regex").text = data.get("head-filter-regex")
 
-    if data.get('discover-pr-origin', None):
-        dpro = XML.SubElement(traits,
-            'com.cloudbees.jenkins.plugins.bitbucket'
-            '.OriginPullRequestDiscoveryTrait')
-        dpro_strategies = {
-            'mergeOnly': '1',
-            'headOnly': '2',
-            'mergeAndHead': '3'
-        }
-        dpro_mapping = [
-            ('discover-pr-origin', 'strategyId', None, dpro_strategies)
-        ]
-        helpers.convert_mapping_to_xml(
-            dpro, data, dpro_mapping, fail_required=True)
+    if data.get("discover-pr-origin", None):
+        dpro = XML.SubElement(
+            traits,
+            "com.cloudbees.jenkins.plugins.bitbucket"
+            ".OriginPullRequestDiscoveryTrait",
+        )
+        dpro_strategies = {"mergeOnly": "1", "headOnly": "2", "mergeAndHead": "3"}
+        dpro_mapping = [("discover-pr-origin", "strategyId", None, dpro_strategies)]
+        helpers.convert_mapping_to_xml(dpro, data, dpro_mapping, fail_required=True)
 
-    if data.get('discover-pr-forks-strategy'):
-        dprf = XML.SubElement(traits,
-             'com.cloudbees.jenkins.plugins.bitbucket'
-             '.ForkPullRequestDiscoveryTrait')
-        dprf_strategy = {
-            'merge-current': '1',
-            'current': '2',
-            'both': '3',
-        }
+    if data.get("discover-pr-forks-strategy"):
+        dprf = XML.SubElement(
+            traits,
+            "com.cloudbees.jenkins.plugins.bitbucket" ".ForkPullRequestDiscoveryTrait",
+        )
+        dprf_strategy = {"merge-current": "1", "current": "2", "both": "3"}
         dprf_mapping = [
-            ('discover-pr-forks-strategy', 'strategyId', 'merge-current',
-            dprf_strategy)
+            ("discover-pr-forks-strategy", "strategyId", "merge-current", dprf_strategy)
         ]
-        helpers.convert_mapping_to_xml(
-            dprf, data, dprf_mapping, fail_required=True)
+        helpers.convert_mapping_to_xml(dprf, data, dprf_mapping, fail_required=True)
 
-        trust = data.get('discover-pr-forks-trust', 'contributors')
+        trust = data.get("discover-pr-forks-trust", "contributors")
         trust_map = {
-            'contributors': ''.join([
-                'com.cloudbees.jenkins.plugins.bitbucket'
-                '.ForkPullRequestDiscoveryTrait$TrustContributors']),
-            'everyone': ''.join([
-                'com.cloudbees.jenkins.plugins.bitbucket'
-                '.ForkPullRequestDiscoveryTrait$TrustEveryone']),
-            'permission': ''.join([
-                'com.cloudbees.jenkins.plugins.bitbucket'
-                '.ForkPullRequestDiscoveryTrait$TrustPermission']),
-            'nobody': ''.join([
-                'com.cloudbees.jenkins.plugins.bitbucket'
-                '.ForkPullRequestDiscoveryTrait$TrustNobody']),
+            "contributors": "".join(
+                [
+                    "com.cloudbees.jenkins.plugins.bitbucket"
+                    ".ForkPullRequestDiscoveryTrait$TrustContributors"
+                ]
+            ),
+            "everyone": "".join(
+                [
+                    "com.cloudbees.jenkins.plugins.bitbucket"
+                    ".ForkPullRequestDiscoveryTrait$TrustEveryone"
+                ]
+            ),
+            "permission": "".join(
+                [
+                    "com.cloudbees.jenkins.plugins.bitbucket"
+                    ".ForkPullRequestDiscoveryTrait$TrustPermission"
+                ]
+            ),
+            "nobody": "".join(
+                [
+                    "com.cloudbees.jenkins.plugins.bitbucket"
+                    ".ForkPullRequestDiscoveryTrait$TrustNobody"
+                ]
+            ),
         }
         if trust not in trust_map:
-            raise InvalidAttributeError('discover-pr-forks-trust',
-                                        trust,
-                                        trust_map.keys())
-        XML.SubElement(dprf, 'trust').attrib['class'] = trust_map[trust]
+            raise InvalidAttributeError(
+                "discover-pr-forks-trust", trust, trust_map.keys()
+            )
+        XML.SubElement(dprf, "trust").attrib["class"] = trust_map[trust]
 
-    if data.get('discover-branch', None):
-        dbr = XML.SubElement(traits,
-            'com.cloudbees.jenkins.plugins.bitbucket.BranchDiscoveryTrait')
-        dbr_strategies = {
-            'ex-pr': '1',
-            'only-pr': '2',
-            'all': '3'
-        }
-        dbr_mapping = [
-            ('discover-branch', 'strategyId', None, dbr_strategies)
-        ]
-        helpers.convert_mapping_to_xml(
-            dbr, data, dbr_mapping, fail_required=True)
+    if data.get("discover-branch", None):
+        dbr = XML.SubElement(
+            traits, "com.cloudbees.jenkins.plugins.bitbucket.BranchDiscoveryTrait"
+        )
+        dbr_strategies = {"ex-pr": "1", "only-pr": "2", "all": "3"}
+        dbr_mapping = [("discover-branch", "strategyId", None, dbr_strategies)]
+        helpers.convert_mapping_to_xml(dbr, data, dbr_mapping, fail_required=True)
 
-    if data.get('property-strategies', None):
+    if data.get("property-strategies", None):
         property_strategies(xml_parent, data)
 
-    if data.get('build-strategies', None):
+    if data.get("build-strategies", None):
         build_strategies(xml_parent, data)
 
-    if data.get('local-branch', False):
-        lbr = XML.SubElement(traits,
-            'jenkins.plugins.git.traits.LocalBranchTrait', {
-                'plugin': 'git',
-            }
+    if data.get("local-branch", False):
+        lbr = XML.SubElement(
+            traits, "jenkins.plugins.git.traits.LocalBranchTrait", {"plugin": "git"}
         )
-        lbr_extension = XML.SubElement(lbr,
-            'extension', {
-                'class': 'hudson.plugins.git.extensions.impl.LocalBranch',
-            }
+        lbr_extension = XML.SubElement(
+            lbr,
+            "extension",
+            {"class": "hudson.plugins.git.extensions.impl.LocalBranch"},
         )
-        XML.SubElement(lbr_extension,
-            'localBranch').text = "**"
+        XML.SubElement(lbr_extension, "localBranch").text = "**"
 
-    if data.get('checkout-over-ssh', None):
-        cossh = XML.SubElement(traits,
-            'com.cloudbees.jenkins.plugins.bitbucket.SSHCheckoutTrait')
-        cossh_credentials = [
-            ('credentials', 'credentialsId', ''),
-        ]
+    if data.get("checkout-over-ssh", None):
+        cossh = XML.SubElement(
+            traits, "com.cloudbees.jenkins.plugins.bitbucket.SSHCheckoutTrait"
+        )
+        cossh_credentials = [("credentials", "credentialsId", "")]
         helpers.convert_mapping_to_xml(
-            cossh,
-            data.get('checkout-over-ssh'),
-            cossh_credentials,
-            fail_required=True)
+            cossh, data.get("checkout-over-ssh"), cossh_credentials, fail_required=True
+        )
 
-    if data.get('filter-by-name-wildcard', None):
-        wscmf_name = XML.SubElement(traits,
-            'jenkins.scm.impl.trait.WildcardSCMHeadFilterTrait', {
-                'plugin': 'scm-api',
-            }
+    if data.get("filter-by-name-wildcard", None):
+        wscmf_name = XML.SubElement(
+            traits,
+            "jenkins.scm.impl.trait.WildcardSCMHeadFilterTrait",
+            {"plugin": "scm-api"},
         )
         wscmf_name_mapping = [
-            ('includes', 'includes', ''),
-            ('excludes', 'excludes', '')
+            ("includes", "includes", ""),
+            ("excludes", "excludes", ""),
         ]
         helpers.convert_mapping_to_xml(
             wscmf_name,
-            data.get('filter-by-name-wildcard', ''),
+            data.get("filter-by-name-wildcard", ""),
             wscmf_name_mapping,
-            fail_required=True)
+            fail_required=True,
+        )
 
     # handle the default git extensions like:
     # - clean
@@ -587,56 +580,56 @@ def gerrit_scm(xml_parent, data):
     .. literalinclude::
        /../../tests/multibranch/fixtures/scm_gerrit_full.yaml
     """
-    source = XML.SubElement(xml_parent, 'source', {
-        'class': 'jenkins.plugins.gerrit.GerritSCMSource',
-        'plugin': 'gerrit',
-    })
+    source = XML.SubElement(
+        xml_parent,
+        "source",
+        {"class": "jenkins.plugins.gerrit.GerritSCMSource", "plugin": "gerrit"},
+    )
     source_mapping = [
-        ('', 'id', '-'.join(['gr', data.get('url', '')])),
-        ('url', 'remote', None),
-        ('credentials-id', 'credentialsId', ''),
-        ('includes', 'includes', '*'),
-        ('excludes', 'excludes', ''),
-        ('ignore-on-push-notifications', 'ignoreOnPushNotifications', True),
+        ("", "id", "-".join(["gr", data.get("url", "")])),
+        ("url", "remote", None),
+        ("credentials-id", "credentialsId", ""),
+        ("includes", "includes", "*"),
+        ("excludes", "excludes", ""),
+        ("ignore-on-push-notifications", "ignoreOnPushNotifications", True),
     ]
-    helpers.convert_mapping_to_xml(
-        source, data, source_mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(source, data, source_mapping, fail_required=True)
 
-    source_mapping_optional = [
-        ('api-uri', 'apiUri', None),
-    ]
+    source_mapping_optional = [("api-uri", "apiUri", None)]
     helpers.convert_mapping_to_xml(
-        source, data, source_mapping_optional, fail_required=False)
+        source, data, source_mapping_optional, fail_required=False
+    )
 
     # Traits
-    traits = XML.SubElement(source, 'traits')
-    XML.SubElement(traits,
-        'jenkins.plugins.gerrit.traits.ChangeDiscoveryTrait')
+    traits = XML.SubElement(source, "traits")
+    XML.SubElement(traits, "jenkins.plugins.gerrit.traits.ChangeDiscoveryTrait")
 
     # Refspec Trait
     refspec_trait = XML.SubElement(
-        traits, 'jenkins.plugins.git.traits.RefSpecsSCMSourceTrait', {
-            'plugin': 'git',
-        }
+        traits, "jenkins.plugins.git.traits.RefSpecsSCMSourceTrait", {"plugin": "git"}
     )
-    templates = XML.SubElement(refspec_trait, 'templates')
-    refspecs = data.get('refspecs', [
-        '+refs/changes/*:refs/remotes/@{remote}/*',
-        '+refs/heads/*:refs/remotes/@{remote}/*',
-    ])
+    templates = XML.SubElement(refspec_trait, "templates")
+    refspecs = data.get(
+        "refspecs",
+        [
+            "+refs/changes/*:refs/remotes/@{remote}/*",
+            "+refs/heads/*:refs/remotes/@{remote}/*",
+        ],
+    )
     # convert single string to list
     if isinstance(refspecs, six.string_types):
         refspecs = [refspecs]
     for x in refspecs:
         e = XML.SubElement(
-            templates, ('jenkins.plugins.git.traits'
-            '.RefSpecsSCMSourceTrait_-RefSpecTemplate'))
-        XML.SubElement(e, 'value').text = x
+            templates,
+            ("jenkins.plugins.git.traits" ".RefSpecsSCMSourceTrait_-RefSpecTemplate"),
+        )
+        XML.SubElement(e, "value").text = x
 
-    if data.get('property-strategies', None):
+    if data.get("property-strategies", None):
         property_strategies(xml_parent, data)
 
-    if data.get('build-strategies', None):
+    if data.get("build-strategies", None):
         build_strategies(xml_parent, data)
 
 
@@ -707,44 +700,42 @@ def git_scm(xml_parent, data):
 
     .. literalinclude:: /../../tests/multibranch/fixtures/scm_git_full.yaml
     """
-    source = XML.SubElement(xml_parent, 'source', {
-        'class': 'jenkins.plugins.git.GitSCMSource',
-        'plugin': 'git',
-    })
+    source = XML.SubElement(
+        xml_parent,
+        "source",
+        {"class": "jenkins.plugins.git.GitSCMSource", "plugin": "git"},
+    )
     source_mapping = [
-        ('', 'id', '-'.join(['gt', data.get('url', '')])),
-        ('url', 'remote', None),
-        ('credentials-id', 'credentialsId', ''),
+        ("", "id", "-".join(["gt", data.get("url", "")])),
+        ("url", "remote", None),
+        ("credentials-id", "credentialsId", ""),
     ]
-    helpers.convert_mapping_to_xml(
-        source, data, source_mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(source, data, source_mapping, fail_required=True)
 
     ##########
     # Traits #
     ##########
 
-    traits_path = 'jenkins.plugins.git.traits'
-    traits = XML.SubElement(source, 'traits')
+    traits_path = "jenkins.plugins.git.traits"
+    traits = XML.SubElement(source, "traits")
 
-    if data.get('discover-branches', True):
-        XML.SubElement(traits, ''.join([traits_path, '.BranchDiscoveryTrait']))
+    if data.get("discover-branches", True):
+        XML.SubElement(traits, "".join([traits_path, ".BranchDiscoveryTrait"]))
 
-    if data.get('discover-tags', False):
-        XML.SubElement(traits, ''.join([traits_path, '.TagDiscoveryTrait']))
+    if data.get("discover-tags", False):
+        XML.SubElement(traits, "".join([traits_path, ".TagDiscoveryTrait"]))
 
-    if data.get('ignore-on-push-notifications', False):
-        XML.SubElement(
-            traits, ''.join([traits_path, '.IgnoreOnPushNotificationTrait']))
+    if data.get("ignore-on-push-notifications", False):
+        XML.SubElement(traits, "".join([traits_path, ".IgnoreOnPushNotificationTrait"]))
 
-    if data.get('head-filter-regex', None):
-        rshf = XML.SubElement(traits,
-            'jenkins.scm.impl.trait.RegexSCMHeadFilterTrait')
-        XML.SubElement(rshf, 'regex').text = data.get('head-filter-regex')
+    if data.get("head-filter-regex", None):
+        rshf = XML.SubElement(traits, "jenkins.scm.impl.trait.RegexSCMHeadFilterTrait")
+        XML.SubElement(rshf, "regex").text = data.get("head-filter-regex")
 
-    if data.get('property-strategies', None):
+    if data.get("property-strategies", None):
         property_strategies(xml_parent, data)
 
-    if data.get('build-strategies', None):
+    if data.get("build-strategies", None):
         build_strategies(xml_parent, data)
 
     # handle the default git extensions like:
@@ -850,147 +841,117 @@ def github_scm(xml_parent, data):
     .. literalinclude::
        /../../tests/multibranch/fixtures/scm_github_full.yaml
     """
-    github_path = 'org.jenkinsci.plugins.github_branch_source'
-    github_path_dscore = 'org.jenkinsci.plugins.github__branch__source'
+    github_path = "org.jenkinsci.plugins.github_branch_source"
+    github_path_dscore = "org.jenkinsci.plugins.github__branch__source"
 
-    source = XML.SubElement(xml_parent, 'source', {
-        'class': ''.join([github_path, '.GitHubSCMSource']),
-        'plugin': 'github-branch-source',
-    })
+    source = XML.SubElement(
+        xml_parent,
+        "source",
+        {
+            "class": "".join([github_path, ".GitHubSCMSource"]),
+            "plugin": "github-branch-source",
+        },
+    )
     mapping = [
-        ('', 'id', '-'.join(['gh', data.get('repo-owner', ''),
-            data.get('repo', '')])),
-        ('repo-owner', 'repoOwner', None),
-        ('repo', 'repository', None),
+        ("", "id", "-".join(["gh", data.get("repo-owner", ""), data.get("repo", "")])),
+        ("repo-owner", "repoOwner", None),
+        ("repo", "repository", None),
     ]
-    helpers.convert_mapping_to_xml(
-        source, data, mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(source, data, mapping, fail_required=True)
 
     mapping_optional = [
-        ('api-uri', 'apiUri', None),
-        ('credentials-id', 'credentialsId', None),
+        ("api-uri", "apiUri", None),
+        ("credentials-id", "credentialsId", None),
     ]
-    helpers.convert_mapping_to_xml(
-        source, data, mapping_optional, fail_required=False)
+    helpers.convert_mapping_to_xml(source, data, mapping_optional, fail_required=False)
 
-    traits = XML.SubElement(source, 'traits')
+    traits = XML.SubElement(source, "traits")
 
     # no-pr value is assumed if branch-discovery not mentioned.
-    if data.get('branch-discovery', 'no-pr'):
-        bd = XML.SubElement(traits, ''.join([
-            github_path_dscore, '.BranchDiscoveryTrait']))
-        bd_strategy = {
-            'no-pr': '1',
-            'only-pr': '2',
-            'all': '3',
-        }
-        bd_mapping = [
-            ('branch-discovery', 'strategyId', 'no-pr', bd_strategy)
-        ]
-        helpers.convert_mapping_to_xml(
-            bd, data, bd_mapping, fail_required=True)
+    if data.get("branch-discovery", "no-pr"):
+        bd = XML.SubElement(
+            traits, "".join([github_path_dscore, ".BranchDiscoveryTrait"])
+        )
+        bd_strategy = {"no-pr": "1", "only-pr": "2", "all": "3"}
+        bd_mapping = [("branch-discovery", "strategyId", "no-pr", bd_strategy)]
+        helpers.convert_mapping_to_xml(bd, data, bd_mapping, fail_required=True)
 
-    if data.get('ssh-checkout', None):
+    if data.get("ssh-checkout", None):
         cossh = XML.SubElement(
-            traits, ''.join([
-                github_path_dscore, '.SSHCheckoutTrait'
-            ])
+            traits, "".join([github_path_dscore, ".SSHCheckoutTrait"])
         )
-        if not isinstance(data.get('ssh-checkout'), bool):
-            cossh_credentials = [
-                ('credentials', 'credentialsId', ''),
-            ]
+        if not isinstance(data.get("ssh-checkout"), bool):
+            cossh_credentials = [("credentials", "credentialsId", "")]
             helpers.convert_mapping_to_xml(
-                cossh,
-                data.get('ssh-checkout'),
-                cossh_credentials,
-                fail_required=True)
+                cossh, data.get("ssh-checkout"), cossh_credentials, fail_required=True
+            )
 
-    if data.get('discover-tags', False):
-        XML.SubElement(
-            traits, ''.join([
-                github_path_dscore, '.TagDiscoveryTrait'
-            ])
-        )
+    if data.get("discover-tags", False):
+        XML.SubElement(traits, "".join([github_path_dscore, ".TagDiscoveryTrait"]))
 
-    if data.get('discover-pr-forks-strategy', 'merged-current'):
+    if data.get("discover-pr-forks-strategy", "merged-current"):
         dprf = XML.SubElement(
-            traits, ''.join([
-                github_path_dscore, '.ForkPullRequestDiscoveryTrait'
-            ])
+            traits, "".join([github_path_dscore, ".ForkPullRequestDiscoveryTrait"])
         )
-        dprf_strategy = {
-            'merge-current': '1',
-            'current': '2',
-            'both': '3',
-        }
+        dprf_strategy = {"merge-current": "1", "current": "2", "both": "3"}
         dprf_mapping = [
-            ('discover-pr-forks-strategy', 'strategyId', 'merge-current',
-            dprf_strategy)
+            ("discover-pr-forks-strategy", "strategyId", "merge-current", dprf_strategy)
         ]
-        helpers.convert_mapping_to_xml(
-            dprf, data, dprf_mapping, fail_required=True)
+        helpers.convert_mapping_to_xml(dprf, data, dprf_mapping, fail_required=True)
 
-        trust = data.get('discover-pr-forks-trust', 'contributors')
+        trust = data.get("discover-pr-forks-trust", "contributors")
         trust_map = {
-            'contributors': ''.join([
-                github_path,
-                '.ForkPullRequestDiscoveryTrait$TrustContributors']),
-            'everyone': ''.join([
-                github_path,
-                '.ForkPullRequestDiscoveryTrait$TrustEveryone']),
-            'permission': ''.join([
-                github_path,
-                '.ForkPullRequestDiscoveryTrait$TrustPermission']),
-            'nobody': ''.join([
-                github_path,
-                '.ForkPullRequestDiscoveryTrait$TrustNobody']),
+            "contributors": "".join(
+                [github_path, ".ForkPullRequestDiscoveryTrait$TrustContributors"]
+            ),
+            "everyone": "".join(
+                [github_path, ".ForkPullRequestDiscoveryTrait$TrustEveryone"]
+            ),
+            "permission": "".join(
+                [github_path, ".ForkPullRequestDiscoveryTrait$TrustPermission"]
+            ),
+            "nobody": "".join(
+                [github_path, ".ForkPullRequestDiscoveryTrait$TrustNobody"]
+            ),
         }
         if trust not in trust_map:
-            raise InvalidAttributeError('discover-pr-forks-trust',
-                                        trust,
-                                        trust_map.keys())
-        XML.SubElement(dprf, 'trust').attrib['class'] = trust_map[trust]
+            raise InvalidAttributeError(
+                "discover-pr-forks-trust", trust, trust_map.keys()
+            )
+        XML.SubElement(dprf, "trust").attrib["class"] = trust_map[trust]
 
-    dpro_strategy = data.get('discover-pr-origin', 'merge-current')
-    dpro = XML.SubElement(traits, ''.join([
-        github_path_dscore,
-        '.OriginPullRequestDiscoveryTrait'
-    ]))
-    dpro_strategy_map = {
-        'merge-current': '1',
-        'current': '2',
-        'both': '3',
-    }
+    dpro_strategy = data.get("discover-pr-origin", "merge-current")
+    dpro = XML.SubElement(
+        traits, "".join([github_path_dscore, ".OriginPullRequestDiscoveryTrait"])
+    )
+    dpro_strategy_map = {"merge-current": "1", "current": "2", "both": "3"}
     if dpro_strategy not in dpro_strategy_map:
-        raise InvalidAttributeError('discover-pr-origin',
-                                    dpro_strategy,
-                                    dpro_strategy_map.keys())
+        raise InvalidAttributeError(
+            "discover-pr-origin", dpro_strategy, dpro_strategy_map.keys()
+        )
     dpro_mapping = [
-        ('discover-pr-origin', 'strategyId', 'merge-current',
-        dpro_strategy_map)
+        ("discover-pr-origin", "strategyId", "merge-current", dpro_strategy_map)
     ]
-    helpers.convert_mapping_to_xml(
-        dpro, data, dpro_mapping, fail_required=True)
+    helpers.convert_mapping_to_xml(dpro, data, dpro_mapping, fail_required=True)
 
-    if data.get('head-filter-regex', None):
-        rshf = XML.SubElement(traits,
-            'jenkins.scm.impl.trait.RegexSCMHeadFilterTrait')
-        XML.SubElement(rshf, 'regex').text = data.get('head-filter-regex')
+    if data.get("head-filter-regex", None):
+        rshf = XML.SubElement(traits, "jenkins.scm.impl.trait.RegexSCMHeadFilterTrait")
+        XML.SubElement(rshf, "regex").text = data.get("head-filter-regex")
 
-    if data.get('property-strategies', None):
+    if data.get("property-strategies", None):
         property_strategies(xml_parent, data)
 
-    if data.get('build-strategies', None):
+    if data.get("build-strategies", None):
         build_strategies(xml_parent, data)
 
-    if data.get('notification-context', None):
-        rshf = XML.SubElement(traits,
-            'org.jenkinsci.plugins.githubScmTraitNotificationContext.'
-            'NotificationContextTrait')
-        XML.SubElement(rshf, 'contextLabel').text = data.get(
-            'notification-context')
-        XML.SubElement(rshf, 'typeSuffix').text = 'true'
+    if data.get("notification-context", None):
+        rshf = XML.SubElement(
+            traits,
+            "org.jenkinsci.plugins.githubScmTraitNotificationContext."
+            "NotificationContextTrait",
+        )
+        XML.SubElement(rshf, "contextLabel").text = data.get("notification-context")
+        XML.SubElement(rshf, "typeSuffix").text = "true"
 
     # handle the default git extensions like:
     # - clean
@@ -1005,14 +966,13 @@ def github_scm(xml_parent, data):
 
     # github-only extensions
     disable_github_status_path_dscore = (
-        'com.adobe.jenkins.disable__github__multibranch__status')
-    if data.get('disable-pr-notifications', False):
+        "com.adobe.jenkins.disable__github__multibranch__status"
+    )
+    if data.get("disable-pr-notifications", False):
         XML.SubElement(
-            traits, ''.join([
-                disable_github_status_path_dscore, '.DisableStatusUpdateTrait'
-            ]), {
-                'plugin': 'disable-github-multibranch-status'
-            }
+            traits,
+            "".join([disable_github_status_path_dscore, ".DisableStatusUpdateTrait"]),
+            {"plugin": "disable-github-multibranch-status"},
         )
 
 
@@ -1065,101 +1025,128 @@ def build_strategies(xml_parent, data):
 
     """
 
-    basic_build_strategies = 'jenkins.branch.buildstrategies.basic'
-    bbs = XML.SubElement(xml_parent, 'buildStrategies')
-    for bbs_list in data.get('build-strategies', None):
-        if 'tags' in bbs_list:
-            tags = bbs_list['tags']
-            tags_elem = XML.SubElement(bbs, ''.join([basic_build_strategies,
-            '.TagBuildStrategyImpl']), {
-                'plugin': 'basic-branch-build-strategies',
-            })
+    basic_build_strategies = "jenkins.branch.buildstrategies.basic"
+    bbs = XML.SubElement(xml_parent, "buildStrategies")
+    for bbs_list in data.get("build-strategies", None):
+        if "tags" in bbs_list:
+            tags = bbs_list["tags"]
+            tags_elem = XML.SubElement(
+                bbs,
+                "".join([basic_build_strategies, ".TagBuildStrategyImpl"]),
+                {"plugin": "basic-branch-build-strategies"},
+            )
 
             newer_than = -1
-            if ('ignore-tags-newer-than' in tags and
-                    tags['ignore-tags-newer-than'] >= 0):
-                newer_than = str(tags['ignore-tags-newer-than'] * 86400000)
-            XML.SubElement(tags_elem, 'atMostMillis').text = str(newer_than)
+            if "ignore-tags-newer-than" in tags and tags["ignore-tags-newer-than"] >= 0:
+                newer_than = str(tags["ignore-tags-newer-than"] * 86400000)
+            XML.SubElement(tags_elem, "atMostMillis").text = str(newer_than)
 
             older_than = -1
-            if ('ignore-tags-older-than' in tags and
-                    tags['ignore-tags-older-than'] >= 0):
-                older_than = str(tags['ignore-tags-older-than'] * 86400000)
-            XML.SubElement(tags_elem, 'atLeastMillis').text = str(older_than)
+            if "ignore-tags-older-than" in tags and tags["ignore-tags-older-than"] >= 0:
+                older_than = str(tags["ignore-tags-older-than"] * 86400000)
+            XML.SubElement(tags_elem, "atLeastMillis").text = str(older_than)
 
-        if bbs_list.get('regular-branches', False):
-            XML.SubElement(bbs, ''.join([basic_build_strategies,
-            '.BranchBuildStrategyImpl']), {
-                'plugin': 'basic-branch-build-strategies',
-            })
+        if bbs_list.get("regular-branches", False):
+            XML.SubElement(
+                bbs,
+                "".join([basic_build_strategies, ".BranchBuildStrategyImpl"]),
+                {"plugin": "basic-branch-build-strategies"},
+            )
 
-        if bbs_list.get('skip-initial-build', False):
-            XML.SubElement(bbs, ''.join([basic_build_strategies,
-            '.SkipInitialBuildOnFirstBranchIndexing']), {
-                'plugin': 'basic-branch-build-strategies',
-            })
+        if bbs_list.get("skip-initial-build", False):
+            XML.SubElement(
+                bbs,
+                "".join(
+                    [basic_build_strategies, ".SkipInitialBuildOnFirstBranchIndexing"]
+                ),
+                {"plugin": "basic-branch-build-strategies"},
+            )
 
-        if 'change-request' in bbs_list:
-            cr = bbs_list['change-request']
-            cr_elem = XML.SubElement(bbs, ''.join([basic_build_strategies,
-            '.ChangeRequestBuildStrategyImpl']), {
-                'plugin': 'basic-branch-build-strategies',
-            })
-            itoc = cr.get('ignore-target-only-changes', False)
-            XML.SubElement(cr_elem, 'ignoreTargetOnlyChanges').text = (
-                str(itoc).lower())
+        if "change-request" in bbs_list:
+            cr = bbs_list["change-request"]
+            cr_elem = XML.SubElement(
+                bbs,
+                "".join([basic_build_strategies, ".ChangeRequestBuildStrategyImpl"]),
+                {"plugin": "basic-branch-build-strategies"},
+            )
+            itoc = cr.get("ignore-target-only-changes", False)
+            XML.SubElement(cr_elem, "ignoreTargetOnlyChanges").text = str(itoc).lower()
 
-        if 'named-branches' in bbs_list:
-            named_branch_elem = XML.SubElement(bbs, ''.join(
-                [basic_build_strategies, '.NamedBranchBuildStrategyImpl']), {
-                'plugin': 'basic-branch-build-strategies',
-            })
+        if "named-branches" in bbs_list:
+            named_branch_elem = XML.SubElement(
+                bbs,
+                "".join([basic_build_strategies, ".NamedBranchBuildStrategyImpl"]),
+                {"plugin": "basic-branch-build-strategies"},
+            )
 
-            filters = XML.SubElement(named_branch_elem, 'filters')
+            filters = XML.SubElement(named_branch_elem, "filters")
 
-            for nb in bbs_list['named-branches']:
-                if 'exact-name' in nb:
-                    exact_name_elem = XML.SubElement(filters, ''.join(
-                        [basic_build_strategies,
-                        '.NamedBranchBuildStrategyImpl',
-                        '_-ExactNameFilter']))
+            for nb in bbs_list["named-branches"]:
+                if "exact-name" in nb:
+                    exact_name_elem = XML.SubElement(
+                        filters,
+                        "".join(
+                            [
+                                basic_build_strategies,
+                                ".NamedBranchBuildStrategyImpl",
+                                "_-ExactNameFilter",
+                            ]
+                        ),
+                    )
                     exact_name_mapping = [
-                        ('name', 'name', ''),
-                        ('case-sensitive', 'caseSensitive', False)
+                        ("name", "name", ""),
+                        ("case-sensitive", "caseSensitive", False),
                     ]
                     helpers.convert_mapping_to_xml(
                         exact_name_elem,
-                        nb['exact-name'],
+                        nb["exact-name"],
                         exact_name_mapping,
-                        fail_required=False)
+                        fail_required=False,
+                    )
 
-                if 'regex-name' in nb:
-                    regex_name_elem = XML.SubElement(filters, ''.join([
-                        basic_build_strategies,
-                        '.NamedBranchBuildStrategyImpl',
-                        '_-RegexNameFilter']))
+                if "regex-name" in nb:
+                    regex_name_elem = XML.SubElement(
+                        filters,
+                        "".join(
+                            [
+                                basic_build_strategies,
+                                ".NamedBranchBuildStrategyImpl",
+                                "_-RegexNameFilter",
+                            ]
+                        ),
+                    )
                     regex_name_mapping = [
-                        ('regex', 'regex', '^.*$'),
-                        ('case-sensitive', 'caseSensitive', False)
+                        ("regex", "regex", "^.*$"),
+                        ("case-sensitive", "caseSensitive", False),
                     ]
                     helpers.convert_mapping_to_xml(
-                        regex_name_elem, nb['regex-name'],
-                        regex_name_mapping, fail_required=False)
+                        regex_name_elem,
+                        nb["regex-name"],
+                        regex_name_mapping,
+                        fail_required=False,
+                    )
 
-                if 'wildcards-name' in nb:
-                    wildcards_name_elem = XML.SubElement(filters, ''.join([
-                        basic_build_strategies,
-                        '.NamedBranchBuildStrategyImpl',
-                        '_-WildcardsNameFilter']))
+                if "wildcards-name" in nb:
+                    wildcards_name_elem = XML.SubElement(
+                        filters,
+                        "".join(
+                            [
+                                basic_build_strategies,
+                                ".NamedBranchBuildStrategyImpl",
+                                "_-WildcardsNameFilter",
+                            ]
+                        ),
+                    )
                     wildcards_name_mapping = [
-                        ('includes', 'includes', '*'),
-                        ('excludes', 'excludes', '')
+                        ("includes", "includes", "*"),
+                        ("excludes", "excludes", ""),
                     ]
                     helpers.convert_mapping_to_xml(
                         wildcards_name_elem,
-                        nb['wildcards-name'],
+                        nb["wildcards-name"],
                         wildcards_name_mapping,
-                        fail_required=False)
+                        fail_required=False,
+                    )
 
 
 def property_strategies(xml_parent, data):
@@ -1217,91 +1204,140 @@ def property_strategies(xml_parent, data):
                             <Pipeline+Multibranch+Plugin>`
     """
 
-    valid_prop_strats = [
-        'all-branches',
-        'named-branches'
-    ]
+    valid_prop_strats = ["all-branches", "named-branches"]
 
-    basic_property_strategies = 'jenkins.branch'
+    basic_property_strategies = "jenkins.branch"
 
-    prop_strats = data.get('property-strategies', None)
+    prop_strats = data.get("property-strategies", None)
 
     if prop_strats:
 
         for prop_strat in prop_strats:
             if prop_strat not in valid_prop_strats:
-                raise InvalidAttributeError('property-strategies',
-                                            prop_strat,
-                                            valid_prop_strats)
+                raise InvalidAttributeError(
+                    "property-strategies", prop_strat, valid_prop_strats
+                )
         if len(prop_strats) > 1:
-            raise JenkinsJobsException(
-                'Only one property strategy may be specified')
+            raise JenkinsJobsException("Only one property strategy may be specified")
 
-        all_branches = prop_strats.get('all-branches', None)
-        named_branches = prop_strats.get('named-branches', None)
+        all_branches = prop_strats.get("all-branches", None)
+        named_branches = prop_strats.get("named-branches", None)
 
         if all_branches:
 
-            strat_elem = XML.SubElement(xml_parent, 'strategy', {
-                'class': ''.join([basic_property_strategies,
-                                  '.DefaultBranchPropertyStrategy'])})
-            props_elem = XML.SubElement(strat_elem, 'properties', {
-                'class': 'java.util.Arrays$ArrayList'})
-            props_elem = XML.SubElement(props_elem, 'a', {
-                'class': ''.join([
-                    basic_property_strategies, '.BranchProperty-array'])})
+            strat_elem = XML.SubElement(
+                xml_parent,
+                "strategy",
+                {
+                    "class": "".join(
+                        [basic_property_strategies, ".DefaultBranchPropertyStrategy"]
+                    )
+                },
+            )
+            props_elem = XML.SubElement(
+                strat_elem, "properties", {"class": "java.util.Arrays$ArrayList"}
+            )
+            props_elem = XML.SubElement(
+                props_elem,
+                "a",
+                {
+                    "class": "".join(
+                        [basic_property_strategies, ".BranchProperty-array"]
+                    )
+                },
+            )
 
             apply_property_strategies(props_elem, all_branches)
 
         elif named_branches:
 
-            strat_elem = XML.SubElement(xml_parent, 'strategy', {
-                'class': ''.join([basic_property_strategies,
-                                  '.NamedExceptionsBranchPropertyStrategy'])})
+            strat_elem = XML.SubElement(
+                xml_parent,
+                "strategy",
+                {
+                    "class": "".join(
+                        [
+                            basic_property_strategies,
+                            ".NamedExceptionsBranchPropertyStrategy",
+                        ]
+                    )
+                },
+            )
 
-            nbs_defaults = named_branches.get('defaults', None)
+            nbs_defaults = named_branches.get("defaults", None)
             if nbs_defaults:
 
-                props_elem = XML.SubElement(strat_elem, 'defaultProperties', {
-                    'class': 'java.util.Arrays$ArrayList'})
-                props_elem = XML.SubElement(props_elem, 'a', {
-                    'class': ''.join([
-                        basic_property_strategies, '.BranchProperty-array'])})
+                props_elem = XML.SubElement(
+                    strat_elem,
+                    "defaultProperties",
+                    {"class": "java.util.Arrays$ArrayList"},
+                )
+                props_elem = XML.SubElement(
+                    props_elem,
+                    "a",
+                    {
+                        "class": "".join(
+                            [basic_property_strategies, ".BranchProperty-array"]
+                        )
+                    },
+                )
 
                 apply_property_strategies(props_elem, nbs_defaults)
 
-            nbs_exceptions = named_branches.get('exceptions', None)
+            nbs_exceptions = named_branches.get("exceptions", None)
             if nbs_exceptions:
 
-                props_elem = XML.SubElement(strat_elem, 'namedExceptions', {
-                    'class': 'java.util.Arrays$ArrayList'})
-                props_elem = XML.SubElement(props_elem, 'a', {
-                    'class': ''.join([
-                        basic_property_strategies,
-                        '.NamedExceptionsBranchPropertyStrategy$Named-array'
-                    ])})
+                props_elem = XML.SubElement(
+                    strat_elem,
+                    "namedExceptions",
+                    {"class": "java.util.Arrays$ArrayList"},
+                )
+                props_elem = XML.SubElement(
+                    props_elem,
+                    "a",
+                    {
+                        "class": "".join(
+                            [
+                                basic_property_strategies,
+                                ".NamedExceptionsBranchPropertyStrategy$Named-array",
+                            ]
+                        )
+                    },
+                )
 
                 for named_exception in nbs_exceptions:
-                    named_exception = named_exception.get('exception', None)
+                    named_exception = named_exception.get("exception", None)
                     if not named_exception:
                         continue
 
-                    exc_elem = XML.SubElement(props_elem, ''.join([
-                        basic_property_strategies,
-                        '.NamedExceptionsBranchPropertyStrategy_-Named']))
-
-                    ne_branch_name = named_exception.get('branch-name', None)
-                    if ne_branch_name is not None:
-                        XML.SubElement(exc_elem, 'name').text = ne_branch_name
-
-                    ne_properties = named_exception.get('properties', None)
-                    if ne_properties:
-                        exc_elem = XML.SubElement(exc_elem, 'props', {
-                            'class': 'java.util.Arrays$ArrayList'})
-                        exc_elem = XML.SubElement(exc_elem, 'a', {
-                            'class': ''.join([
+                    exc_elem = XML.SubElement(
+                        props_elem,
+                        "".join(
+                            [
                                 basic_property_strategies,
-                                '.BranchProperty-array'])})
+                                ".NamedExceptionsBranchPropertyStrategy_-Named",
+                            ]
+                        ),
+                    )
+
+                    ne_branch_name = named_exception.get("branch-name", None)
+                    if ne_branch_name is not None:
+                        XML.SubElement(exc_elem, "name").text = ne_branch_name
+
+                    ne_properties = named_exception.get("properties", None)
+                    if ne_properties:
+                        exc_elem = XML.SubElement(
+                            exc_elem, "props", {"class": "java.util.Arrays$ArrayList"}
+                        )
+                        exc_elem = XML.SubElement(
+                            exc_elem,
+                            "a",
+                            {
+                                "class": "".join(
+                                    [basic_property_strategies, ".BranchProperty-array"]
+                                )
+                            },
+                        )
                         apply_property_strategies(exc_elem, ne_properties)
 
 
@@ -1310,32 +1346,34 @@ def apply_property_strategies(props_elem, props_list):
     # globally (all-branches), defaults (named-branches), exceptions
     # (also named-branches)
 
-    basic_property_strategies = 'jenkins.branch'
-    workflow_multibranch = 'org.jenkinsci.plugins.workflow.multibranch'
+    basic_property_strategies = "jenkins.branch"
+    workflow_multibranch = "org.jenkinsci.plugins.workflow.multibranch"
     # Valid options for the pipeline branch durability override.
-    pbdo_map = collections.OrderedDict([
-        ("max-survivability", "MAX_SURVIVABILITY"),
-        ("performance-optimized", "PERFORMANCE_OPTIMIZED"),
-        ("survivable-nonatomic", "SURVIVABLE_NONATOMIC"),
-    ])
+    pbdo_map = collections.OrderedDict(
+        [
+            ("max-survivability", "MAX_SURVIVABILITY"),
+            ("performance-optimized", "PERFORMANCE_OPTIMIZED"),
+            ("survivable-nonatomic", "SURVIVABLE_NONATOMIC"),
+        ]
+    )
 
     for dbs_list in props_list:
 
-        if dbs_list.get('suppress-scm-triggering', False):
-            XML.SubElement(props_elem, ''.join([
-                basic_property_strategies, '.NoTriggerBranchProperty']))
+        if dbs_list.get("suppress-scm-triggering", False):
+            XML.SubElement(
+                props_elem,
+                "".join([basic_property_strategies, ".NoTriggerBranchProperty"]),
+            )
 
-        pbdo_val = dbs_list.get(
-            'pipeline-branch-durability-override', None)
+        pbdo_val = dbs_list.get("pipeline-branch-durability-override", None)
         if pbdo_val:
             if not pbdo_map.get(pbdo_val):
                 raise InvalidAttributeError(
-                    'pipeline-branch-durability-override',
-                    pbdo_val,
-                    pbdo_map.keys())
-            pbdo_elem = XML.SubElement(props_elem, ''.join([
-                workflow_multibranch,
-                '.DurabilityHintBranchProperty']), {
-                    'plugin': 'workflow-multibranch'})
-            XML.SubElement(pbdo_elem, 'hint').text = pbdo_map.get(
-                pbdo_val)
+                    "pipeline-branch-durability-override", pbdo_val, pbdo_map.keys()
+                )
+            pbdo_elem = XML.SubElement(
+                props_elem,
+                "".join([workflow_multibranch, ".DurabilityHintBranchProperty"]),
+                {"plugin": "workflow-multibranch"},
+            )
+            XML.SubElement(pbdo_elem, "hint").text = pbdo_map.get(pbdo_val)

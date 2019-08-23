@@ -33,17 +33,16 @@ class All(jenkins_jobs.modules.base.Base):
     sequence = 0
 
     def root_xml(self, data):
-        root = XML.Element('hudson.model.AllView')
+        root = XML.Element("hudson.model.AllView")
 
         mapping = [
-            ('name', 'name', None),
-            ('description', 'description', ''),
-            ('filter-executors', 'filterExecutors', False),
-            ('filter-queue', 'filterQueue', False),
+            ("name", "name", None),
+            ("description", "description", ""),
+            ("filter-executors", "filterExecutors", False),
+            ("filter-queue", "filterQueue", False),
         ]
         helpers.convert_mapping_to_xml(root, data, mapping, fail_required=True)
 
-        XML.SubElement(root, 'properties',
-                       {'class': 'hudson.model.View$PropertyList'})
+        XML.SubElement(root, "properties", {"class": "hudson.model.View$PropertyList"})
 
         return root

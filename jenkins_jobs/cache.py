@@ -43,43 +43,45 @@ class JobCache(object):
     def __init__(self, jenkins_url, flush=False):
         cache_dir = self.get_cache_dir()
         # One cache per remote Jenkins URL:
-        host_vary = re.sub(r'[^A-Za-z0-9\-\~]', '_', jenkins_url)
+        host_vary = re.sub(r"[^A-Za-z0-9\-\~]", "_", jenkins_url)
         self.cachefilename = os.path.join(
-            cache_dir, 'cache-host-jobs-' + host_vary + '.yml')
+            cache_dir, "cache-host-jobs-" + host_vary + ".yml"
+        )
 
         # generate named lockfile if none exists, and lock it
         self._locked = self._lock()
         if not self._locked:
             raise errors.JenkinsJobsException(
-                "Unable to lock cache for '%s'" % jenkins_url)
+                "Unable to lock cache for '%s'" % jenkins_url
+            )
 
         if flush or not os.path.isfile(self.cachefilename):
             self.data = {}
         else:
-            with io.open(self.cachefilename, 'r', encoding='utf-8') as yfile:
+            with io.open(self.cachefilename, "r", encoding="utf-8") as yfile:
                 self.data = yaml.load(yfile)
         logger.debug("Using cache: '{0}'".format(self.cachefilename))
 
     def _lock(self):
-        self._fastener = fasteners.InterProcessLock("%s.lock" %
-                                                    self.cachefilename)
+        self._fastener = fasteners.InterProcessLock("%s.lock" % self.cachefilename)
 
         return self._fastener.acquire(delay=1, max_delay=2, timeout=60)
 
     def _unlock(self):
-        if getattr(self, '_locked', False):
-            if getattr(self, '_fastener', None) is not None:
+        if getattr(self, "_locked", False):
+            if getattr(self, "_fastener", None) is not None:
                 self._fastener.release()
             self._locked = None
 
     @staticmethod
     def get_cache_dir():
-        home = os.path.expanduser('~')
-        if home == '~':
-            raise OSError('Could not locate home folder')
-        xdg_cache_home = os.environ.get('XDG_CACHE_HOME') or \
-            os.path.join(home, '.cache')
-        path = os.path.join(xdg_cache_home, 'jenkins_jobs')
+        home = os.path.expanduser("~")
+        if home == "~":
+            raise OSError("Could not locate home folder")
+        xdg_cache_home = os.environ.get("XDG_CACHE_HOME") or os.path.join(
+            home, ".cache"
+        )
+        path = os.path.join(xdg_cache_home, "jenkins_jobs")
         if not os.path.isdir(path):
             try:
                 os.makedirs(path)
@@ -111,9 +113,10 @@ class JobCache(object):
         # use self references to required modules in case called via __del__
         # write to tempfile under same directory and then replace to avoid
         # issues around corruption such the process be killed
-        tfile = self._tempfile.NamedTemporaryFile(dir=self.get_cache_dir(),
-                                                  delete=False)
-        tfile.write(self._yaml.dump(self.data).encode('utf-8'))
+        tfile = self._tempfile.NamedTemporaryFile(
+            dir=self.get_cache_dir(), delete=False
+        )
+        tfile.write(self._yaml.dump(self.data).encode("utf-8"))
         # force contents to be synced on disk before overwriting cachefile
         tfile.flush()
         self._os.fsync(tfile.fileno())
@@ -131,10 +134,12 @@ class JobCache(object):
     def __del__(self):
         # check we initialized sufficiently in case called
         # due to an exception occurring in the __init__
-        if getattr(self, 'data', None) is not None:
+        if getattr(self, "data", None) is not None:
             try:
                 self.save()
             except Exception as e:
-                self._logger.error("Failed to write to cache file '%s' on "
-                                   "exit: %s" % (self.cachefilename, e))
+                self._logger.error(
+                    "Failed to write to cache file '%s' on "
+                    "exit: %s" % (self.cachefilename, e)
+                )
         self._unlock()

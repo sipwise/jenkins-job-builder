@@ -22,6 +22,7 @@ class BaseSubCommand(object):
     """Base class for Jenkins Job Builder subcommands, intended to allow
     subcommands to be loaded as stevedore extensions by third party users.
     """
+
     def __init__(self):
         pass
 
@@ -52,16 +53,20 @@ class BaseSubCommand(object):
         """Add '--recursive'  and '--exclude' arguments to given parser.
         """
         parser.add_argument(
-            '-r', '--recursive',
-            action='store_true',
-            dest='recursive',
+            "-r",
+            "--recursive",
+            action="store_true",
+            dest="recursive",
             default=False,
-            help="look for yaml files recursively")
+            help="look for yaml files recursively",
+        )
 
         parser.add_argument(
-            '-x', '--exclude',
-            dest='exclude',
-            action='append',
+            "-x",
+            "--exclude",
+            dest="exclude",
+            action="append",
             default=[],
             help="paths to exclude when using recursive search, "
-            "uses standard globbing.")
+            "uses standard globbing.",
+        )

@@ -40,5 +40,5 @@ class ExternalJob(jenkins_jobs.modules.base.Base):
     sequence = 0
 
     def root_xml(self, data):
-        xml_parent = XML.Element('hudson.model.ExternalJob')
+        xml_parent = XML.Element("hudson.model.ExternalJob")
         return xml_parent

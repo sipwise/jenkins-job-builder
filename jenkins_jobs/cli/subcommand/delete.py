@@ -22,32 +22,33 @@ import jenkins_jobs.cli.subcommand.base as base
 
 
 class DeleteSubCommand(base.BaseSubCommand):
-
     def parse_args(self, subparser):
-        delete = subparser.add_parser('delete')
+        delete = subparser.add_parser("delete")
 
         self.parse_option_recursive_exclude(delete)
 
+        delete.add_argument("name", help="name of job", nargs="+")
         delete.add_argument(
-            'name',
-            help='name of job',
-            nargs='+')
-        delete.add_argument(
-            '-p', '--path',
+            "-p",
+            "--path",
             default=None,
-            help="colon-separated list of paths to YAML files "
-            "or directories")
-        delete.add_argument(
-            '-j', '--jobs-only',
-            action='store_true', dest='del_jobs',
-            default=False,
-            help='delete only jobs'
+            help="colon-separated list of paths to YAML files " "or directories",
         )
         delete.add_argument(
-            '-v', '--views-only',
-            action='store_true', dest='del_views',
+            "-j",
+            "--jobs-only",
+            action="store_true",
+            dest="del_jobs",
             default=False,
-            help='delete only views'
+            help="delete only jobs",
+        )
+        delete.add_argument(
+            "-v",
+            "--views-only",
+            action="store_true",
+            dest="del_views",
+            default=False,
+            help="delete only views",
         )
 
     def execute(self, options, jjb_config):
@@ -55,7 +56,8 @@ class DeleteSubCommand(base.BaseSubCommand):
 
         if options.del_jobs and options.del_views:
             raise JenkinsJobsException(
-                '"--views-only" and "--jobs-only" cannot be used together.')
+                '"--views-only" and "--jobs-only" cannot be used together.'
+            )
 
         fn = options.path
         registry = ModuleRegistry(jjb_config, builder.plugins_list)
@@ -64,8 +66,8 @@ class DeleteSubCommand(base.BaseSubCommand):
         if fn:
             parser.load_files(fn)
             parser.expandYaml(registry, options.name)
-            jobs = [j['name'] for j in parser.jobs]
-            views = [v['name'] for v in parser.views]
+            jobs = [j["name"] for j in parser.jobs]
+            views = [v["name"] for v in parser.views]
         else:
             jobs = options.name
             views = options.name

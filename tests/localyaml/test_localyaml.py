@@ -34,15 +34,16 @@ class TestCaseLocalYamlInclude(base.JsonTestCase):
     Verify application specific tags independently of any changes to
     modules XML parsing behaviour
     """
-    fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
-    scenarios = base.get_scenarios(fixtures_path, 'yaml', 'json',
-                                   filter_func=_exclude_scenarios)
+
+    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
+    scenarios = base.get_scenarios(
+        fixtures_path, "yaml", "json", filter_func=_exclude_scenarios
+    )
 
     def test_yaml_snippet(self):
 
         if os.path.basename(self.in_filename).startswith("exception_"):
-            with ExpectedException(ComposerError,
-                                   "^found duplicate anchor .*"):
+            with ExpectedException(ComposerError, "^found duplicate anchor .*"):
                 super(TestCaseLocalYamlInclude, self).test_yaml_snippet()
         else:
             super(TestCaseLocalYamlInclude, self).test_yaml_snippet()
@@ -53,13 +54,14 @@ class TestCaseLocalYamlAnchorAlias(base.YamlTestCase):
     Verify yaml input is expanded to the expected yaml output when using yaml
     anchors and aliases.
     """
-    fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
-    scenarios = base.get_scenarios(fixtures_path, 'iyaml', 'oyaml')
+
+    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
+    scenarios = base.get_scenarios(fixtures_path, "iyaml", "oyaml")
 
 
 class TestCaseLocalYamlIncludeAnchors(base.BaseTestCase):
 
-    fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
+    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
 
     def test_multiple_same_anchor_in_multiple_toplevel_yaml(self):
         """
@@ -70,14 +72,16 @@ class TestCaseLocalYamlIncludeAnchors(base.BaseTestCase):
         are treated by the yaml loader as independent.
         """
 
-        files = ["custom_same_anchor-001-part1.yaml",
-                 "custom_same_anchor-001-part2.yaml"]
+        files = [
+            "custom_same_anchor-001-part1.yaml",
+            "custom_same_anchor-001-part2.yaml",
+        ]
 
         jjb_config = JJBConfig()
-        jjb_config.jenkins['url'] = 'http://example.com'
-        jjb_config.jenkins['user'] = 'jenkins'
-        jjb_config.jenkins['password'] = 'password'
-        jjb_config.builder['plugins_info'] = []
+        jjb_config.jenkins["url"] = "http://example.com"
+        jjb_config.jenkins["user"] = "jenkins"
+        jjb_config.jenkins["password"] = "password"
+        jjb_config.builder["plugins_info"] = []
         jjb_config.validate()
         j = YamlParser(jjb_config)
         j.load_files([os.path.join(self.fixtures_path, f) for f in files])
@@ -85,22 +89,20 @@ class TestCaseLocalYamlIncludeAnchors(base.BaseTestCase):
 
 class TestCaseLocalYamlRetainAnchors(base.BaseTestCase):
 
-    fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
+    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
 
     def test_retain_anchors_default(self):
         """
         Verify that anchors are NOT retained across files by default.
         """
 
-        files = ["custom_retain_anchors_include001.yaml",
-                 "custom_retain_anchors.yaml"]
+        files = ["custom_retain_anchors_include001.yaml", "custom_retain_anchors.yaml"]
 
         jjb_config = JJBConfig()
         # use the default value for retain_anchors
         jjb_config.validate()
         j = YamlParser(jjb_config)
-        with ExpectedException(yaml.composer.ComposerError,
-                               "found undefined alias.*"):
+        with ExpectedException(yaml.composer.ComposerError, "found undefined alias.*"):
             j.load_files([os.path.join(self.fixtures_path, f) for f in files])
 
     def test_retain_anchors_enabled(self):
@@ -109,11 +111,10 @@ class TestCaseLocalYamlRetainAnchors(base.BaseTestCase):
         enabled in the config.
         """
 
-        files = ["custom_retain_anchors_include001.yaml",
-                 "custom_retain_anchors.yaml"]
+        files = ["custom_retain_anchors_include001.yaml", "custom_retain_anchors.yaml"]
 
         jjb_config = JJBConfig()
-        jjb_config.yamlparser['retain_anchors'] = True
+        jjb_config.yamlparser["retain_anchors"] = True
         jjb_config.validate()
         j = YamlParser(jjb_config)
         j.load_files([os.path.join(self.fixtures_path, f) for f in files])

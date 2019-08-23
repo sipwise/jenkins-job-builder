@@ -23,10 +23,10 @@ from tests.base import mock
 
 
 class TestCaseModuleDuplicates(base.SingleJobTestCase):
-    fixtures_path = os.path.join(os.path.dirname(__file__), 'fixtures')
+    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
     scenarios = base.get_scenarios(fixtures_path)
 
-    @mock.patch('jenkins_jobs.builder.logger', autospec=True)
+    @mock.patch("jenkins_jobs.builder.logger", autospec=True)
     def test_yaml_snippet(self, mock_logger):
 
         if os.path.basename(self.in_filename).startswith("exception_"):

@@ -123,88 +123,85 @@ class General(jenkins_jobs.modules.base.Base):
     logrotate_warn_issued = False
 
     def gen_xml(self, xml, data):
-        jdk = data.get('jdk', None)
+        jdk = data.get("jdk", None)
         if jdk:
-            XML.SubElement(xml, 'jdk').text = jdk
-        XML.SubElement(xml, 'actions')
-        desc_text = data.get('description', None)
+            XML.SubElement(xml, "jdk").text = jdk
+        XML.SubElement(xml, "actions")
+        desc_text = data.get("description", None)
         if desc_text is not None:
-            description = XML.SubElement(xml, 'description')
+            description = XML.SubElement(xml, "description")
             description.text = desc_text
-        XML.SubElement(xml, 'keepDependencies').text = 'false'
+        XML.SubElement(xml, "keepDependencies").text = "false"
 
         # Need to ensure we support the None parameter to allow disabled to
         # remain the last setting if the user purposely adds and then removes
         # the disabled parameter.
         # See: http://lists.openstack.org/pipermail/openstack-infra/2016-March/003980.html  # noqa
-        disabled = data.get('disabled', None)
+        disabled = data.get("disabled", None)
         if disabled is not None:
-            XML.SubElement(xml, 'disabled').text = str(disabled).lower()
+            XML.SubElement(xml, "disabled").text = str(disabled).lower()
 
-        if 'display-name' in data:
-            XML.SubElement(xml, 'displayName').text = data['display-name']
-        if data.get('block-downstream'):
-            XML.SubElement(xml,
-                           'blockBuildWhenDownstreamBuilding').text = 'true'
+        if "display-name" in data:
+            XML.SubElement(xml, "displayName").text = data["display-name"]
+        if data.get("block-downstream"):
+            XML.SubElement(xml, "blockBuildWhenDownstreamBuilding").text = "true"
         else:
-            XML.SubElement(xml,
-                           'blockBuildWhenDownstreamBuilding').text = 'false'
-        if data.get('block-upstream'):
-            XML.SubElement(xml,
-                           'blockBuildWhenUpstreamBuilding').text = 'true'
+            XML.SubElement(xml, "blockBuildWhenDownstreamBuilding").text = "false"
+        if data.get("block-upstream"):
+            XML.SubElement(xml, "blockBuildWhenUpstreamBuilding").text = "true"
         else:
-            XML.SubElement(xml,
-                           'blockBuildWhenUpstreamBuilding').text = 'false'
-        authtoken = data.get('auth-token', None)
+            XML.SubElement(xml, "blockBuildWhenUpstreamBuilding").text = "false"
+        authtoken = data.get("auth-token", None)
         if authtoken is not None:
-            XML.SubElement(xml, 'authToken').text = authtoken
-        if data.get('concurrent'):
-            XML.SubElement(xml, 'concurrentBuild').text = 'true'
+            XML.SubElement(xml, "authToken").text = authtoken
+        if data.get("concurrent"):
+            XML.SubElement(xml, "concurrentBuild").text = "true"
         else:
-            XML.SubElement(xml, 'concurrentBuild').text = 'false'
-        if 'workspace' in data:
-            XML.SubElement(xml, 'customWorkspace').text = \
-                str(data['workspace'])
-        if (xml.tag == 'matrix-project') and ('child-workspace' in data):
-            XML.SubElement(xml, 'childCustomWorkspace').text = \
-                str(data['child-workspace'])
-        if 'quiet-period' in data:
-            XML.SubElement(xml, 'quietPeriod').text = str(data['quiet-period'])
-        node = data.get('node', None)
+            XML.SubElement(xml, "concurrentBuild").text = "false"
+        if "workspace" in data:
+            XML.SubElement(xml, "customWorkspace").text = str(data["workspace"])
+        if (xml.tag == "matrix-project") and ("child-workspace" in data):
+            XML.SubElement(xml, "childCustomWorkspace").text = str(
+                data["child-workspace"]
+            )
+        if "quiet-period" in data:
+            XML.SubElement(xml, "quietPeriod").text = str(data["quiet-period"])
+        node = data.get("node", None)
         if node:
-            XML.SubElement(xml, 'assignedNode').text = node
-            XML.SubElement(xml, 'canRoam').text = 'false'
+            XML.SubElement(xml, "assignedNode").text = node
+            XML.SubElement(xml, "canRoam").text = "false"
         else:
-            XML.SubElement(xml, 'canRoam').text = 'true'
-        if 'retry-count' in data:
-            XML.SubElement(xml, 'scmCheckoutRetryCount').text = \
-                str(data['retry-count'])
+            XML.SubElement(xml, "canRoam").text = "true"
+        if "retry-count" in data:
+            XML.SubElement(xml, "scmCheckoutRetryCount").text = str(data["retry-count"])
 
-        if 'logrotate' in data:
+        if "logrotate" in data:
             if not self.logrotate_warn_issued:
-                logging.warning('logrotate is deprecated on jenkins>=1.637,'
-                                ' the property build-discarder on newer'
-                                ' jenkins instead')
+                logging.warning(
+                    "logrotate is deprecated on jenkins>=1.637,"
+                    " the property build-discarder on newer"
+                    " jenkins instead"
+                )
                 self.logrotate_warn_issued = True
 
-            lr_xml = XML.SubElement(xml, 'logRotator')
-            logrotate = data['logrotate']
-            lr_days = XML.SubElement(lr_xml, 'daysToKeep')
-            lr_days.text = str(logrotate.get('daysToKeep', -1))
-            lr_num = XML.SubElement(lr_xml, 'numToKeep')
-            lr_num.text = str(logrotate.get('numToKeep', -1))
-            lr_adays = XML.SubElement(lr_xml, 'artifactDaysToKeep')
-            lr_adays.text = str(logrotate.get('artifactDaysToKeep', -1))
-            lr_anum = XML.SubElement(lr_xml, 'artifactNumToKeep')
-            lr_anum.text = str(logrotate.get('artifactNumToKeep', -1))
+            lr_xml = XML.SubElement(xml, "logRotator")
+            logrotate = data["logrotate"]
+            lr_days = XML.SubElement(lr_xml, "daysToKeep")
+            lr_days.text = str(logrotate.get("daysToKeep", -1))
+            lr_num = XML.SubElement(lr_xml, "numToKeep")
+            lr_num.text = str(logrotate.get("numToKeep", -1))
+            lr_adays = XML.SubElement(lr_xml, "artifactDaysToKeep")
+            lr_adays.text = str(logrotate.get("artifactDaysToKeep", -1))
+            lr_anum = XML.SubElement(lr_xml, "artifactNumToKeep")
+            lr_anum.text = str(logrotate.get("artifactNumToKeep", -1))
 
-        if 'raw' in data:
-            raw(self.registry, xml, data['raw'])
+        if "raw" in data:
+            raw(self.registry, xml, data["raw"])
 
 
 def raw(registry, xml_parent, data):
     # documented in definition.rst since includes and docs is not working well
     # For cross cutting method like this
-    root = XML.fromstring(data.get('xml'))
+    root = XML.fromstring(data.get("xml"))
     remove_ignorable_whitespace(root)
     xml_parent.append(root)
