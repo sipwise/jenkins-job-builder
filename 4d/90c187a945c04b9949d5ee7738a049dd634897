@@ -1,0 +1,8 @@
+Code-Review+2: Sorin Sbarnea <ssbarnea@redhat.com>
+Workflow+1: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 09 Sep 2019 18:55:50 +0000
+Reviewed-on: https://review.opendev.org/678220
+Project: jjb/jenkins-job-builder
+Branch: refs/heads/master
