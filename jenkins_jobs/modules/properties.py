@@ -509,6 +509,9 @@ def authorization(registry, xml_parent, data):
        :language: yaml
     """
 
+    # get the folder name if it exists
+    in_a_folder = data.pop("_use_folder_perms")
+
     credentials = "com.cloudbees.plugins.credentials.CredentialsProvider."
     ownership = "com.synopsys.arc.jenkins.plugins.ownership.OwnershipPlugin."
 
@@ -536,9 +539,23 @@ def authorization(registry, xml_parent, data):
     }
 
     if data:
-        matrix = XML.SubElement(
-            xml_parent, "hudson.security.AuthorizationMatrixProperty"
-        )
+        if in_a_folder:
+            matrix = XML.SubElement(
+                xml_parent,
+                "com.cloudbees.hudson.plugins.folder.properties.AuthorizationMatrixProperty",
+            )
+            XML.SubElement(
+                matrix,
+                "inheritanceStrategy",
+                {
+                    "class": "org.jenkinsci.plugins.matrixauth.inheritance.InheritParentStrategy"
+                },
+            )
+        else:
+            matrix = XML.SubElement(
+                xml_parent, "hudson.security.AuthorizationMatrixProperty"
+            )
+
         for (username, perms) in data.items():
             for perm in perms:
                 pe = XML.SubElement(matrix, "permission")
@@ -1234,4 +1251,15 @@ class Properties(jenkins_jobs.modules.base.Base):
             properties = XML.SubElement(xml_parent, "properties")
 
         for prop in data.get("properties", []):
+            # Pass a flag for folder permissions to the authorization method
+            if next(iter(prop)) == "authorization":
+                # Only projects are placed in folders
+                if "project-type" in data:
+                    if data["project-type"] == "folder":
+                        prop["authorization"]["_use_folder_perms"] = True
+                    else:
+                        prop["authorization"]["_use_folder_perms"] = "folder" in data
+                else:
+                    prop["authorization"]["_use_folder_perms"] = False
+
             self.registry.dispatch("property", properties, prop)

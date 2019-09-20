@@ -1,0 +1,9 @@
+- job:
+    name: folder_with_auth
+    project-type: folder
+    description: foo bar
+    properties:
+      - authorization:
+          foobar:
+            - 'job-read'
+            - 'job-extended-read'
