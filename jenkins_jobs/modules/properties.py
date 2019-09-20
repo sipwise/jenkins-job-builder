@@ -509,6 +509,10 @@ def authorization(registry, xml_parent, data):
        :language: yaml
     """
 
+    # get the folder name if it exists
+    has_a_folder = data.pop('_pass_in_folder')
+    print(has_a_folder)
+
     credentials = "com.cloudbees.plugins.credentials.CredentialsProvider."
     ownership = "com.synopsys.arc.jenkins.plugins.ownership.OwnershipPlugin."
 
@@ -536,9 +540,20 @@ def authorization(registry, xml_parent, data):
     }
 
     if data:
-        matrix = XML.SubElement(
-            xml_parent, "hudson.security.AuthorizationMatrixProperty"
-        )
+        if has_a_folder:
+            matrix = XML.SubElement(
+                xml_parent, "com.cloudbees.hudson.plugins.folder.properties.AuthorizationMatrixProperty"
+            )
+            inheritance_strategy = XML.SubElement(
+                matrix,
+                "inheritanceStrategy",
+                {"class": "org.jenkinsci.plugins.matrixauth.inheritance.InheritParentStrategy"}
+            )
+        else:
+            matrix = XML.SubElement(
+                xml_parent, "hudson.security.AuthorizationMatrixProperty"
+            )
+
         for (username, perms) in data.items():
             for perm in perms:
                 pe = XML.SubElement(matrix, "permission")
@@ -1234,4 +1249,7 @@ class Properties(jenkins_jobs.modules.base.Base):
             properties = XML.SubElement(xml_parent, "properties")
 
         for prop in data.get("properties", []):
+            # Pass the folder to the authorization method
+            if next(iter(prop)) == 'authorization':
+                prop['authorization']['_pass_in_folder'] = data['folder']
             self.registry.dispatch("property", properties, prop)
