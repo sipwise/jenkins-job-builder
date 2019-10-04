@@ -7402,6 +7402,8 @@ def slack(registry, xml_parent, data):
         (>=2.0). (default false)
     :arg bool notify-failure: Send notification when job fails for the first
         time (previous build was a success) (>=2.0).  (default false)
+    :arg bool notify-every-failure: Send notification everytime a job fails
+        (>=2.23). (default false)
     :arg bool notify-back-to-normal: Send notification when job is succeeding
         again after being unstable or failed (>=2.0). (default false)
     :arg bool notify-repeated-failure: Send notification when job fails
