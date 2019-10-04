@@ -11,6 +11,7 @@ publishers:
       notify-not-built: True
       notify-unstable: True
       notify-failure: True
+      notify-every-failure: True
       notify-back-to-normal: True
       notify-repeated-failure: True
       notify-regression: True
