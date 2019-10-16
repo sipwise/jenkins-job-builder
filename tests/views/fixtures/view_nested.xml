@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hudson.plugins.nested__view.NestedView>
+  <name>NestedViewTest</name>
+  <description/>
+  <filterExecutors>false</filterExecutors>
+  <filterQueue>false</filterQueue>
+  <properties class="hudson.model.View$PropertyList"/>
+  <views>
+    <hudson.model.AllView>
+      <name>All</name>
+      <description/>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+    </hudson.model.AllView>
+  </views>
+  <defaultView>All</defaultView>
+  <columns>
+    <columns>
+      <hudson.views.StatusColumn/>
+      <hudson.views.WeatherColumn/>
+    </columns>
+  </columns>
+</hudson.plugins.nested__view.NestedView>

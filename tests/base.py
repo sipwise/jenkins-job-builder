@@ -22,6 +22,7 @@ import io
 import json
 import logging
 import os
+import pkg_resources
 import re
 import xml.etree.ElementTree as XML
 
@@ -45,6 +46,7 @@ from jenkins_jobs.modules import project_multibranch
 from jenkins_jobs.modules import project_multijob
 from jenkins_jobs.modules import view_all
 from jenkins_jobs.modules import view_list
+from jenkins_jobs.modules import view_nested
 from jenkins_jobs.modules import view_pipeline
 from jenkins_jobs.parser import YamlParser
 from jenkins_jobs.registry import ModuleRegistry
@@ -169,7 +171,8 @@ class BaseScenariosTestCase(testscenarios.TestWithScenarios, BaseTestCase):
     scenarios = []
     fixtures_path = None
 
-    def test_yaml_snippet(self):
+    @mock.patch('pkg_resources.iter_entry_points')
+    def test_yaml_snippet(self, mock):
         if not self.in_filename:
             return
 
@@ -188,6 +191,14 @@ class BaseScenariosTestCase(testscenarios.TestWithScenarios, BaseTestCase):
 
         parser = YamlParser(jjb_config)
         registry = ModuleRegistry(jjb_config, plugins_info)
+        e = pkg_resources.EntryPoint.parse
+        d = pkg_resources.Distribution()
+        mock.return_value = (
+            e('all=jenkins_jobs.modules.view_all:All', dist=d),
+            e('list=jenkins_jobs.modules.view_list:List', dist=d),
+            e('nested=jenkins_jobs.modules.view_nested:Nested', dist=d),
+            e('pipeline=jenkins_jobs.modules.view_pipeline:Pipeline', dist=d),
+            )
         registry.set_parser_data(parser.data)
 
         pub = self.klass(registry)
@@ -213,11 +224,13 @@ class BaseScenariosTestCase(testscenarios.TestWithScenarios, BaseTestCase):
 
         if "view-type" in yaml_content:
             if yaml_content["view-type"] == "all":
-                project = view_all.All(None)
+                project = view_all.All(registry)
             elif yaml_content["view-type"] == "list":
-                project = view_list.List(None)
+                project = view_list.List(registry)
+            elif yaml_content["view-type"] == "nested":
+                project = view_nested.Nested(registry)
             elif yaml_content["view-type"] == "pipeline":
-                project = view_pipeline.Pipeline(None)
+                project = view_pipeline.Pipeline(registry)
             else:
                 raise InvalidAttributeError("view-type", yaml_content["view-type"])
 

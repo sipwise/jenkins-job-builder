@@ -1,0 +1,8 @@
+name: NestedViewTest
+view-type: nested
+views:
+  - name: All
+    view-type: all
+columns:
+  - status
+  - weather

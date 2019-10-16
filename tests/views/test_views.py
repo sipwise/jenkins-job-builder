@@ -15,6 +15,7 @@
 import os
 from jenkins_jobs.modules import view_all
 from jenkins_jobs.modules import view_list
+from jenkins_jobs.modules import view_nested
 from jenkins_jobs.modules import view_pipeline
 from tests import base
 
@@ -29,6 +30,12 @@ class TestCaseModuleViewList(base.BaseScenariosTestCase):
     fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
     scenarios = base.get_scenarios(fixtures_path)
     klass = view_list.List
+
+
+class TestCaseModuleViewNested(base.BaseScenariosTestCase):
+    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
+    scenarios = base.get_scenarios(fixtures_path)
+    klass = view_nested.Nested
 
 
 class TestCaseModuleViewPipeline(base.BaseScenariosTestCase):
