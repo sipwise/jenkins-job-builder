@@ -1311,6 +1311,50 @@ def ftp_publisher(registry, xml_parent, data):
     helpers.convert_mapping_to_xml(ftp, data, mapping, fail_required=True)
 
 
+def opsgenie(registry, xml_parent, data):
+    """yaml: opsgenie
+    RocketChat notification on build completion,
+    Requires the `RocketChat Notifier Plugin`.
+    :arg bool enable-sending-alerts: false
+    :arg bool notify-build-start: false
+    :arg str api-key: ''
+    :arg str tags: ''
+    :arg str teams: ''
+    :arg str priority: 'P3'
+    :arg str build-starts-alerts-priority: 'P3'
+    :arg str api-url: ''
+    """
+
+    valid_priorities = ["P1", "P2", "P3", "P4", "P5"]
+    for arg in ["build-starts-alerts-priority", "priority"]:
+        data[arg] = (
+            data.get(arg, "P3") if data.get(arg, "P3") in valid_priorities else "P3"
+        )
+
+    xml_keys = {
+        "enable-sending-alerts": "enable",
+        "tags": "tags",
+        "notify-build-start": "notifyBuildStart",
+        "build-starts-alerts-priority": "notifyBuildStartPriority",
+        "api-key": "apiKey",
+        "api-url": "apiUrl",
+        "teams": "teams",
+        "priority": "alertPriority",
+    }
+
+    opsgenie_notifier = XML.SubElement(
+        xml_parent,
+        "com.opsgenie.integration.jenkins.OpsGenieNotifier",
+        {"plugin": "opsgenie@1.8"},
+    )
+
+    for data_key, val in data.items():
+        if type(val) is bool:
+            val = "true" if val else "false"
+        xml_key = xml_keys[data_key]
+        XML.SubElement(opsgenie_notifier, xml_key).text = val
+
+
 def rocket(registry, xml_parent, data):
     """yaml: rocket
     RocketChat notification on build completion,
