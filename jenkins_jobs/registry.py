@@ -32,6 +32,7 @@ logger = logging.getLogger(__name__)
 
 class ModuleRegistry(object):
     _entry_points_cache = {}
+    _component_type_cache = {}
 
     def __init__(self, jjb_config, plugins_list=None):
         self.modules = []
@@ -154,7 +155,13 @@ class ModuleRegistry(object):
             )
 
         entry_point = self.modules_by_component_type[component_type]
-        component_list_type = entry_point.load().component_list_type
+        if entry_point in self._component_type_cache:
+            component_list_type = self._component_type_cache[entry_point]
+        else:
+            # pkg_resources.EntryPoint.load() is costly
+            component_list_type = entry_point.load().component_list_type
+            logging.info("Caching type %s of %s", component_list_type, entry_point)
+            self._component_type_cache[entry_point] = component_list_type
 
         if isinstance(component, dict):
             # The component is a singleton dictionary of name: dict(args)
