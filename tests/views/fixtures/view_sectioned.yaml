@@ -1,0 +1,14 @@
+name: SectionedViewTest
+view-type: sectioned
+sections:
+  - name: testName
+    job-name:
+      - testJobName
+    columns:
+      - job
+    view-type: list
+    width: HALF
+    alignment: LEFT
+  - text: test text
+    style: INFO
+    view-type: text

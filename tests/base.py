@@ -49,6 +49,7 @@ from jenkins_jobs.modules import view_all
 from jenkins_jobs.modules import view_list
 from jenkins_jobs.modules import view_nested
 from jenkins_jobs.modules import view_pipeline
+from jenkins_jobs.modules import view_sectioned
 from jenkins_jobs.parser import YamlParser
 from jenkins_jobs.registry import ModuleRegistry
 from jenkins_jobs.xml_config import XmlJob
@@ -242,6 +243,8 @@ class BaseScenariosTestCase(testscenarios.TestWithScenarios, BaseTestCase):
                 project = view_nested.Nested(registry)
             elif yaml_content["view-type"] == "pipeline":
                 project = view_pipeline.Pipeline(registry)
+            elif yaml_content["view-type"] == "sectioned":
+                project = view_sectioned.Sectioned(registry)
             else:
                 raise InvalidAttributeError("view-type", yaml_content["view-type"])
 

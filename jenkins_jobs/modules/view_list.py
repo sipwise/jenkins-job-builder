@@ -225,6 +225,7 @@ import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 import jenkins_jobs.modules.helpers as helpers
 import jenkins_jobs.modules.view_jobfilters as view_jobfilters
+from jenkins_jobs.modules import view_sectioned
 
 COLUMN_DICT = {
     "status": "hudson.views.StatusColumn",
@@ -310,18 +311,27 @@ DEFAULT_COLUMNS = [
 class List(jenkins_jobs.modules.base.Base):
     sequence = 0
 
-    def root_xml(self, data):
-        root = XML.Element("hudson.model.ListView")
+    def root_xml(self, data, sectioned=False):
+        name = "hudson.model.ListView"
+        if sectioned:
+            name = "hudson.plugins.sectioned__view.ListViewSection"
+        root = XML.Element(name)
 
-        mapping = [
-            ("name", "name", None),
-            ("description", "description", ""),
-            ("filter-executors", "filterExecutors", False),
-            ("filter-queue", "filterQueue", False),
-        ]
+        mapping = [("name", "name", None)]
+        if not sectioned:
+            mapping.extend(
+                [
+                    ("description", "description", ""),
+                    ("filter-executors", "filterExecutors", False),
+                    ("filter-queue", "filterQueue", False),
+                ]
+            )
         helpers.convert_mapping_to_xml(root, data, mapping, fail_required=True)
 
-        XML.SubElement(root, "properties", {"class": "hudson.model.View$PropertyList"})
+        if not sectioned:
+            XML.SubElement(
+                root, "properties", {"class": "hudson.model.View$PropertyList"}
+            )
 
         jn_xml = XML.SubElement(root, "jobNames")
         jobnames = data.get("job-name", None)
@@ -340,6 +350,9 @@ class List(jenkins_jobs.modules.base.Base):
         for jobfilter in jobfilters:
             filter = getattr(view_jobfilters, jobfilter.replace("-", "_"))
             filter(job_filter_xml, jobfilters.get(jobfilter))
+
+        if sectioned:
+            view_sectioned.common_arguments(root, data)
 
         c_xml = XML.SubElement(root, "columns")
         columns = data.get("columns", DEFAULT_COLUMNS)
@@ -369,11 +382,11 @@ class List(jenkins_jobs.modules.base.Base):
                             x.append(XML.fromstring(tag))
                     else:
                         XML.SubElement(c_xml, COLUMN_DICT[column])
-        mapping = [
-            ("regex", "includeRegex", None),
-            ("recurse", "recurse", False),
-            ("status-filter", "statusFilter", None),
-        ]
+        mapping = [("regex", "includeRegex", None)]
+        if not sectioned:
+            mapping.extend(
+                [("recurse", "recurse", False), ("status-filter", "statusFilter", None)]
+            )
         helpers.convert_mapping_to_xml(root, data, mapping, fail_required=False)
 
         return root
