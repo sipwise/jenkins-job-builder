@@ -22,6 +22,30 @@
       "revId": "9c78c092038e2baa56698fd69603db898dd79196",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_ea32f5a6",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2019-10-29T19:57:49Z",
+      "side": 1,
+      "message": "Maybe we should add a \"TODO\" comment as a separate patch to mark this? \n\nThis review won\u0027t be where a potential future dev will see this kind of suggestion.",
+      "parentUuid": "3fa7e38b_ed4c5940",
+      "range": {
+        "startLine": 184,
+        "startChar": 8,
+        "endLine": 186,
+        "endChar": 23
+      },
+      "revId": "9c78c092038e2baa56698fd69603db898dd79196",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
