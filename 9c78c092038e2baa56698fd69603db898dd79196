@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_ed4c5940",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2019-10-29T11:39:09Z",
+      "side": 1,
+      "message": "I mention in the other review that it might be a good idea to consider moving some code to separate methods, this block is probably a candidate for the same treatment in the future",
+      "range": {
+        "startLine": 184,
+        "startChar": 8,
+        "endLine": 186,
+        "endChar": 23
+      },
+      "revId": "9c78c092038e2baa56698fd69603db898dd79196",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
