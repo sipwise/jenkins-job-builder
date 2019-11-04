@@ -46,6 +46,30 @@
       "revId": "c86054728195c266f9fe0942989ea7ee0c1db367",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_b18f5321",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2019-11-04T09:46:53Z",
+      "side": 1,
+      "message": "I have done the proposed change ;)",
+      "parentUuid": "3fa7e38b_4d3c8d91",
+      "range": {
+        "startLine": 158,
+        "startChar": 8,
+        "endLine": 164,
+        "endChar": 73
+      },
+      "revId": "c86054728195c266f9fe0942989ea7ee0c1db367",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
