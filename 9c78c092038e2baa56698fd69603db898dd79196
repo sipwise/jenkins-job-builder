@@ -46,6 +46,30 @@
       "revId": "9c78c092038e2baa56698fd69603db898dd79196",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_b1a193ab",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2019-11-04T09:39:20Z",
+      "side": 1,
+      "message": "I thought about extracting the code to a standalone method, but it has at least four variables tied with the rest of this method.   It is not very convenient and I wanted to keep this change as small as possible ;]",
+      "parentUuid": "3fa7e38b_ea32f5a6",
+      "range": {
+        "startLine": 184,
+        "startChar": 8,
+        "endLine": 186,
+        "endChar": 23
+      },
+      "revId": "9c78c092038e2baa56698fd69603db898dd79196",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
