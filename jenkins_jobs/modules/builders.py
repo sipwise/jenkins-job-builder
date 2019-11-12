@@ -1958,6 +1958,9 @@ def multijob(registry, xml_parent, data):
 
         :Project:
             * **name** (`str`) -- Project name
+            * **alias** (`str`) -- Project alias, which will be shown
+              in MultiJob Overview. Helpful when working with the same
+              project multiple times with different configurations
             * **current-parameters** (`bool`) -- Pass current build
               parameters to the other job (default false)
             * **node-label-name** (`str`) -- Define a list of nodes
@@ -2025,6 +2028,13 @@ def multijob(registry, xml_parent, data):
         ]
         helpers.convert_mapping_to_xml(phaseJob, project, mapping, fail_required=True)
         # Pass through other params
+        if project.get('alias'):
+            mapping = [
+                ("alias", "jobAlias", None),
+            ]
+            helpers.convert_mapping_to_xml(
+                phaseJob, project, mapping, fail_required=True)
+
         configs = XML.SubElement(phaseJob, "configs")
 
         nodeLabelName = project.get("node-label-name")
