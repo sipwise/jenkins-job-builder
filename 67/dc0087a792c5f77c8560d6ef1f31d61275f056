@@ -1,0 +1,9 @@
+Code-Review+2: Antoine Musso <hashar@free.fr>
+Code-Review+2: Darragh Bailey (electrofelix) <daragh.bailey@gmail.com>
+Workflow+1: Darragh Bailey (electrofelix) <daragh.bailey@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 26 Nov 2019 16:39:56 +0000
+Reviewed-on: https://review.opendev.org/695706
+Project: jjb/jenkins-job-builder
+Branch: refs/heads/master
