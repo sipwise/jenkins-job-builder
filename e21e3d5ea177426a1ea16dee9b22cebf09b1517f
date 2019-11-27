@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_cc1a4a7b",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1317,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2019-11-27T18:39:02Z",
+      "side": 1,
+      "message": "RocketChat? did you mean opsgenie plugin?",
+      "range": {
+        "startLine": 1317,
+        "startChar": 18,
+        "endLine": 1317,
+        "endChar": 44
+      },
+      "revId": "e21e3d5ea177426a1ea16dee9b22cebf09b1517f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_a72367aa",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1332,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2019-11-27T18:39:02Z",
+      "side": 1,
+      "message": "Instead of this for loop could we instead use the convert_mapping_to_xml() function? It also supports passing a list of valid data to validate against.",
+      "range": {
+        "startLine": 1328,
+        "startChar": 0,
+        "endLine": 1332,
+        "endChar": 9
+      },
+      "revId": "e21e3d5ea177426a1ea16dee9b22cebf09b1517f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_67048f15",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1348,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2019-11-27T18:39:02Z",
+      "side": 1,
+      "message": "We typically don\u0027t include the version here, only the plugin name.",
+      "range": {
+        "startLine": 1348,
+        "startChar": 28,
+        "endLine": 1348,
+        "endChar": 32
+      },
+      "revId": "e21e3d5ea177426a1ea16dee9b22cebf09b1517f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_c7ff83fe",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1355,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2019-11-27T18:39:02Z",
+      "side": 1,
+      "message": "Instead of this complicated for loop, could we instead us a mapping variable with the convert_mapping_to_xml function?\n\nThe function handles many similar use cases so I think it should be applyable here. Take a look at other modules that use convert_mapping_to_xml() for examples.",
+      "range": {
+        "startLine": 1351,
+        "startChar": 4,
+        "endLine": 1355,
+        "endChar": 61
+      },
+      "revId": "e21e3d5ea177426a1ea16dee9b22cebf09b1517f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
