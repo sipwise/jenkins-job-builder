@@ -933,6 +933,12 @@ def jms_messaging(registry, xml_parent, data):
     Requires the Jenkins :jenkins-wiki:`JMS Messaging Plugin
     <JMS+Messaging+Plugin>`.
 
+    :arg bool no-squash: true = schedule a new job for every triggering message.
+        (default false)
+        Normally if a job is queued and another triggering message is received, a new job
+        is not submitted and the job is "squashed" into the job already queued.
+        Setting this option to 'True' forces a new job to be submitted for every triggering
+        message that is received.
     :arg str override-topic: If you need to override the default topic.
         (default '')
     :arg str selector: The JSON or YAML formatted text that conforms to
@@ -968,6 +974,7 @@ def jms_messaging(registry, xml_parent, data):
     mapping = [
         # option, xml name, default value
         ("spec", "spec", ""),
+        ("no-squash", "noSquash", False, False),
         ("selector", "selector", ""),
         ("provider-name", "providerName", ""),
     ]
