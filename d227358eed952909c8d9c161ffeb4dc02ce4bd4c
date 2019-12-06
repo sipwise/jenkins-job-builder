@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_50618f10",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2019-12-06T17:14:01Z",
+      "side": 1,
+      "message": "Why\u0027s the default an empty string? but the value above says \u0027True\u0027. Is this a boolean setting?\n\nIf so we should set :arg bool no-squash: and set the default to be true or false depending on what the plugin\u0027s normal default configuration is.",
+      "range": {
+        "startLine": 937,
+        "startChar": 8,
+        "endLine": 937,
+        "endChar": 20
+      },
+      "revId": "d227358eed952909c8d9c161ffeb4dc02ce4bd4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_3045f36f",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 977,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2019-12-06T17:14:01Z",
+      "side": 1,
+      "message": "convert_mapping_to_xml supports booleans so instead of a blank string set this to true|false depending on which is the plugin\u0027s usual default configuration.",
+      "range": {
+        "startLine": 977,
+        "startChar": 34,
+        "endLine": 977,
+        "endChar": 36
+      },
+      "revId": "d227358eed952909c8d9c161ffeb4dc02ce4bd4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
