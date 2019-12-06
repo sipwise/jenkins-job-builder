@@ -1,5 +1,6 @@
 triggers:
   - jms-messaging:
+      no-squash: true
       selector: topic = "org.fedoraproject.prod.fedimg.image.upload"
       provider-name: fedmsg
       checks:
