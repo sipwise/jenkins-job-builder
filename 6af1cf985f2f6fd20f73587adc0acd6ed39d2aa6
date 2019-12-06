@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_0608c17d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 977,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2019-12-06T18:48:53Z",
+      "side": 1,
+      "message": "Ah in Python it\u0027s False with a capital F.  That should fix the Zuul error.",
+      "range": {
+        "startLine": 977,
+        "startChar": 34,
+        "endLine": 977,
+        "endChar": 39
+      },
+      "revId": "6af1cf985f2f6fd20f73587adc0acd6ed39d2aa6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
