@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_1336afe8",
+        "filename": "tests/triggers/fixtures/jms-messaging001.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2019-12-09T11:43:07Z",
+      "side": 1,
+      "message": "Not sure why this was changed from the earlier revisions to be set the same as the default, as this means you don\u0027t test the non-default value gets passed through correctly?",
+      "revId": "93f892a2280e9d2a3bb4889df045f6c279d8635d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_331bab6f",
+        "filename": "tests/triggers/fixtures/jms-messaging002.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2019-12-09T11:43:07Z",
+      "side": 1,
+      "message": "Probably should leave this unset to allow the default behaviour to appear, after all I assume the intent is not to require explicit setting of this value to get the expected behaviour, so the defaults should result in the correct XML being outputted?",
+      "revId": "93f892a2280e9d2a3bb4889df045f6c279d8635d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
