@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_9c32640e",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 975,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2019-12-13T14:38:51Z",
+      "side": 1,
+      "message": "So I prefer this code would be part of the mapping as it significanlly cuts down on the amount of code to maintain.\n\nconvert_mapping_to_xml actually has 2 modes of operation that affect how the \"None\" default value triggers the output XML.\n\nfail_required\u003dTrue, in this mode any option with a default value of \"None\" will fail JJB and print an error to the user notifying them that this value is required for the operation of this module.\n\nfail_required\u003dFalse, in this mode any option with the default value of \"None\" will skip processing XML for thus not generating any XML at all for said option.\n\nConsidering the mapping below does not have any None default values you could flip the switch to fail_required\u003dFalse and then have noSquash XML be skipped in it\u0027s code generation.\n\nTypically though for switches that are just a simple true|false value I\u0027d prefer that it just set the default to whatever the plugin defaults to when you configure that plugin via Jenkins Web UI. This makes it extremely clear what the default setting is if you don\u0027t set it, rather than letting the user guess as to which the default setting is (or in the case the plugin authors decide to flip flop on what the default value is).",
+      "revId": "5aed4018e8049b131cf0758bf37dc89e5b3e8a7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
