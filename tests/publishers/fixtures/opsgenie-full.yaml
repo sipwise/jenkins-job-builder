@@ -1,0 +1,10 @@
+publishers:
+- opsgenie:
+    enable-sending-alerts: true
+    notify-build-start: true
+    api-key: "test api key"
+    priority: "P1"
+    build-starts-alerts-priority: "P2"
+    api-url: "another-opsgenie-instance.com"
+    tags: "a,b,c"
+    teams: "team a, team b"
