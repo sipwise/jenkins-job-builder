@@ -46,6 +46,30 @@
       "revId": "2207c9feac0517601e0c990176b56e2ddf340a0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_bcbf20a9",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 977,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2019-12-13T14:20:41Z",
+      "side": 1,
+      "message": "That would make sense, was assuming this was passing already and was surprised not to see that test case appear in the output.\n\nBut I see you\u0027ve switched behaviour with a newer change, do you really want to not emit the \u003cnoSquash\u003e tag when this is left at the default?",
+      "parentUuid": "3fa7e38b_59e71eac",
+      "range": {
+        "startLine": 977,
+        "startChar": 34,
+        "endLine": 977,
+        "endChar": 39
+      },
+      "revId": "2207c9feac0517601e0c990176b56e2ddf340a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
