@@ -1,0 +1,3 @@
+publishers:
+- opsgenie:
+    tags: 'a,b,c'
