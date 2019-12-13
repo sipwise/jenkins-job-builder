@@ -1311,6 +1311,51 @@ def ftp_publisher(registry, xml_parent, data):
     helpers.convert_mapping_to_xml(ftp, data, mapping, fail_required=True)
 
 
+def opsgenie(registry, xml_parent, data):
+    """yaml: opsgenie
+    OpsGenie notification on build completion,
+    Requires the :jenkins-wiki:`OpsGenie Notifier Plugin <OpsGenie+Plugin>`.
+
+    :arg bool enable-sending-alerts: Send alerts to opsgenie. (default false)
+    :arg bool notify-build-start: Send a notification when the build starts. (default false)
+    :arg str api-key: This token is used to verify requests between OpsGenie and Jenkins. You can copy this key from your OpsGenie-Jenkins Integration page. (default '')
+    :arg str priority: Set the priority of the alert that's going to be created at OpsGenie, if job's build fails. (default 'P3')
+    :arg str build-starts-alerts-priority: Set the priority of the build started alert that's going to be created at OpsGenie. (default 'P3')
+    :arg str api-url: Api url that collects the webhook. (default '')
+
+    Minimal example:
+
+    .. literalinclude::
+       /../../tests/publishers/fixtures/opsgenie-minimal.yaml
+       :language: yaml
+
+    Full Example:
+
+    .. literalinclude::
+       /../../tests/publishers/fixtures/opsgenie-full.yaml
+       :language: yaml
+    """
+
+    mapping = [
+        ("priority", "alertPriority", "P3"),
+        ("build-starts-alerts-priority", "notifyBuildStartPriority", "P3"),
+        ("enable-sending-alerts", "enable", "false"),
+        ("notify-build-start", "notifyBuildStart", "false"),
+        ("api-key", "apiKey", ""),
+        ("api-url", "apiUrl", ""),
+        ("tags", "tags", ""),
+        ("teams", "teams", ""),
+    ]
+
+    opsgenie_notifier = XML.SubElement(
+        xml_parent,
+        "com.opsgenie.integration.jenkins.OpsGenieNotifier",
+        {"plugin": "opsgenie"},
+    )
+
+    helpers.convert_mapping_to_xml(opsgenie_notifier, data, mapping, fail_required=True)
+
+
 def rocket(registry, xml_parent, data):
     """yaml: rocket
     RocketChat notification on build completion,

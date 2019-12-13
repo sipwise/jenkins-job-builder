@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <publishers>
+    <com.opsgenie.integration.jenkins.OpsGenieNotifier plugin="opsgenie">
+      <alertPriority>P1</alertPriority>
+      <notifyBuildStartPriority>P2</notifyBuildStartPriority>
+      <enable>true</enable>
+      <notifyBuildStart>true</notifyBuildStart>
+      <apiKey>test api key</apiKey>
+      <apiUrl>another-opsgenie-instance.com</apiUrl>
+      <tags>a,b,c</tags>
+      <teams>team a, team b</teams>
+    </com.opsgenie.integration.jenkins.OpsGenieNotifier>
+  </publishers>
+</project>
