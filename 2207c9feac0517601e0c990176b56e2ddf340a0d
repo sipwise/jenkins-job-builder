@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_59963e3f",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 977,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2019-12-13T13:02:01Z",
+      "side": 1,
+      "message": "Seems like this isn\u0027t resulting in default XML being outputted, I\u0027m a little rusty with the mapping code, but seems like that\u0027s not the intended behaviour? Or am I missing something?",
+      "range": {
+        "startLine": 977,
+        "startChar": 34,
+        "endLine": 977,
+        "endChar": 39
+      },
+      "revId": "2207c9feac0517601e0c990176b56e2ddf340a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
