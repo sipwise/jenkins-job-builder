@@ -1311,6 +1311,52 @@ def ftp_publisher(registry, xml_parent, data):
     helpers.convert_mapping_to_xml(ftp, data, mapping, fail_required=True)
 
 
+def opsgenie(registry, xml_parent, data):
+    """yaml: opsgenie
+    OpsGenie notification on build completion,
+    Requires the `OpsGenie Notifier Plugin`.
+    :arg bool enable-sending-alerts: false
+    :arg bool notify-build-start: false
+    :arg str api-key: ''
+    :arg str tags: ''
+    :arg str teams: ''
+    :arg str priority: 'P3'
+    :arg str build-starts-alerts-priority: 'P3'
+    :arg str api-url: ''
+
+    Minimal example:
+
+    .. literalinclude::
+       /../../tests/publishers/fixtures/opsgenie001.yaml
+       :language: yaml
+
+    Full Example:
+
+    .. literalinclude::
+       /../../tests/publishers/fixtures/opsgenie002.yaml
+       :language: yaml
+    """
+
+    mapping = [
+        ("priority", "alertPriority", "P3"),
+        ("build-starts-alerts-priority", "notifyBuildStartPriority", "P3"),
+        ("enable-sending-alerts", "enable", "false"),
+        ("notify-build-start", "notifyBuildStart", "false"),
+        ("build-starts-alerts-priority", "notifyBuildStartPriority", ""),
+        ("api-key", "apiKey", ""),
+        ("api-url", "apiUrl", ""),
+        ("priority", "alertPriority", ""),
+    ]
+
+    opsgenie_notifier = XML.SubElement(
+        xml_parent,
+        "com.opsgenie.integration.jenkins.OpsGenieNotifier",
+        {"plugin": "opsgenie"},
+    )
+
+    helpers.convert_mapping_to_xml(opsgenie_notifier, data, mapping, fail_required=True)
+
+
 def rocket(registry, xml_parent, data):
     """yaml: rocket
     RocketChat notification on build completion,
