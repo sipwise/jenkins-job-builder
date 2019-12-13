@@ -22,6 +22,30 @@
       "revId": "2207c9feac0517601e0c990176b56e2ddf340a0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_59e71eac",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 977,
+      "author": {
+        "id": 14287
+      },
+      "writtenOn": "2019-12-13T13:15:33Z",
+      "side": 1,
+      "message": "the gating CI job for the latest version makes me thing that once the keyval (here no-squash/noSquash) is in \u0027mapping\u0027 here then it has to be part of \u0027minimal\u0027 (aka 002) xml",
+      "parentUuid": "3fa7e38b_59963e3f",
+      "range": {
+        "startLine": 977,
+        "startChar": 34,
+        "endLine": 977,
+        "endChar": 39
+      },
+      "revId": "2207c9feac0517601e0c990176b56e2ddf340a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
