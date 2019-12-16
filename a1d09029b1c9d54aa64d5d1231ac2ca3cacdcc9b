@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_6acb01a4",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1325,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2019-12-16T14:49:16Z",
+      "side": 1,
+      "message": "Can you write some a documentation on what each of these parameters do? (refer to rocket plugin below for an example on our recommended formatting)\n\nSometimes you can copy the same description from the plugin in Jenkins WebUI. This is helpful so that users don\u0027t have to look up what each item does through another system when they are already looking at docs here.",
+      "revId": "a1d09029b1c9d54aa64d5d1231ac2ca3cacdcc9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_ca4eb538",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1330,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2019-12-16T14:49:16Z",
+      "side": 1,
+      "message": "Please rename this to \"opsgenie-minimal.yaml\" (we\u0027re trying to make these things more consistent and standout)",
+      "range": {
+        "startLine": 1330,
+        "startChar": 40,
+        "endLine": 1330,
+        "endChar": 56
+      },
+      "revId": "a1d09029b1c9d54aa64d5d1231ac2ca3cacdcc9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_8a5afdf2",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1336,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2019-12-16T14:49:16Z",
+      "side": 1,
+      "message": "Please rename this to \"opsgenie-full.yaml\" (we\u0027re trying to make these things more consistent and standout)",
+      "range": {
+        "startLine": 1336,
+        "startChar": 40,
+        "endLine": 1336,
+        "endChar": 56
+      },
+      "revId": "a1d09029b1c9d54aa64d5d1231ac2ca3cacdcc9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
