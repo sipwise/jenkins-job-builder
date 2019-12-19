@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_dd188484",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1262,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2019-12-19T13:03:53Z",
+      "side": 1,
+      "message": "Should use this as the example for the plugin that is depended on as it will automatically render a link to the external documentation see https://6e84b50c364d7e277563-65c8cd20428a10135cd2762abf51d9a7.ssl.cf2.rackcdn.com/696382/5/check/opendev-tox-docs/78b35d3/docs/publishers.html#publishers.ftp-publisher for the preview from this change to see the links in action. Potentially someone should update the macro to adjust to upstreams moving documentation to a different hosting, but if you copy this it shouldbe taken care for you automatically anyway",
+      "range": {
+        "startLine": 1261,
+        "startChar": 25,
+        "endLine": 1262,
+        "endChar": 27
+      },
+      "revId": "513a7a7bc39ae419c8956a8f2d27124d7039118b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_1d77fcd3",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1317,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2019-12-19T13:03:53Z",
+      "side": 1,
+      "message": "Is there no actual plugin docs to reference here? I see the rocket example below is also using this format, but really the intent is to use the same as in the FTP Publisher above.",
+      "range": {
+        "startLine": 1317,
+        "startChar": 18,
+        "endLine": 1317,
+        "endChar": 42
+      },
+      "revId": "513a7a7bc39ae419c8956a8f2d27124d7039118b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_7d6870f3",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1318,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2019-12-19T13:03:53Z",
+      "side": 1,
+      "message": "Requiers a new line before here to separate from the preceding paragraph to allow the params to format correctly. See https://6e84b50c364d7e277563-65c8cd20428a10135cd2762abf51d9a7.ssl.cf2.rackcdn.com/696382/5/check/opendev-tox-docs/78b35d3/docs/publishers.html#publishers.opsgenie for a preview.",
+      "range": {
+        "startLine": 1318,
+        "startChar": 4,
+        "endLine": 1318,
+        "endChar": 13
+      },
+      "revId": "513a7a7bc39ae419c8956a8f2d27124d7039118b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_1dfe1c06",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1321,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2019-12-19T13:03:53Z",
+      "side": 1,
+      "message": "Not seeing this appear below?",
+      "range": {
+        "startLine": 1321,
+        "startChar": 13,
+        "endLine": 1321,
+        "endChar": 17
+      },
+      "revId": "513a7a7bc39ae419c8956a8f2d27124d7039118b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_98077a18",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1322,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2019-12-19T13:03:53Z",
+      "side": 1,
+      "message": "Similarly not present below?",
+      "range": {
+        "startLine": 1322,
+        "startChar": 13,
+        "endLine": 1322,
+        "endChar": 18
+      },
+      "revId": "513a7a7bc39ae419c8956a8f2d27124d7039118b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_58090227",
+        "filename": "tests/publishers/fixtures/opsgenie-full.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2019-12-19T13:03:53Z",
+      "side": 1,
+      "message": "neither of these appear in the XML?",
+      "range": {
+        "startLine": 6,
+        "startChar": 4,
+        "endLine": 7,
+        "endChar": 27
+      },
+      "revId": "513a7a7bc39ae419c8956a8f2d27124d7039118b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_f8178e45",
+        "filename": "tests/publishers/fixtures/opsgenie-minimal.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2019-12-19T13:03:53Z",
+      "side": 1,
+      "message": "has no impact?",
+      "range": {
+        "startLine": 3,
+        "startChar": 4,
+        "endLine": 3,
+        "endChar": 17
+      },
+      "revId": "513a7a7bc39ae419c8956a8f2d27124d7039118b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
