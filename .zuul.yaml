@@ -7,7 +7,14 @@
       - jjb/jenkins-job-builder
     voting: true
 
+- job:
+    name: jjb-tox-docs-linkcheck
+    parent: tox
+    vars:
+      tox_envlist: docs-linkcheck
+
 - project:
     check:
       jobs:
         - jjb-tox-cross-python-jenkins
+        - jjb-tox-docs-linkcheck

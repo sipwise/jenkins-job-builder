@@ -115,7 +115,7 @@ def copyartifact(registry, xml_parent, data):
     Artifact plugin <Copy+Artifact+Plugin>`.
 
     Please note using the multijob-build for which-build argument requires
-    the :jenkins-wiki:`Multijob plugin <Multijob+Plugin>`
+    the :jenkins-plugins:`Multijob plugin <jenkins-multijob-plugin>`
 
     :arg str project: Project to copy from
     :arg str filter: what files to copy
@@ -1940,7 +1940,7 @@ def maven_target(registry, xml_parent, data):
 def multijob(registry, xml_parent, data):
     """yaml: multijob
     Define a multijob phase. Requires the Jenkins
-    :jenkins-wiki:`Multijob Plugin <Multijob+Plugin>`.
+    :jenkins-plugins:`Multijob Plugin <jenkins-multijob-plugin>`.
 
     This builder may only be used in
     :py:class:`jenkins_jobs.modules.project_multijob.MultiJob` projects.
