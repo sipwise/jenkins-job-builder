@@ -1451,7 +1451,7 @@ def hp_alm(registry, xml_parent, data):
     Publish test results to HP-ALM.
 
     Requires the Jenkins :jenkins-wiki:`Micro Focus Application Automation
-    Tools <Micro+Focus+Application+Automation+Tools)>`.
+    Tools <Micro+Focus+Application+Automation+Tools>`.
 
     :arg str server-name: The name of the ALM Server. (required)
     :arg str credentials-id: credentials-id of the user (default '')
@@ -1483,7 +1483,7 @@ def hp_alm(registry, xml_parent, data):
         for Junit Plugin, ``**/testng-results.xml`` to find
         testing result file for TestNG plugin. (required)
     :arg str jenkins-server-url: The HTTP URL of the Jenkins Server,
-        form example, http://myjenkinsserver.test.com:8080 . (optional)
+        form example, http://jenkins.example.org:8080 . (optional)
 
     Minimal example using defaults:
 
@@ -3146,8 +3146,7 @@ def sonar(registry, xml_parent, data):
     """yaml: sonar
     Sonar plugin support.
     Requires the Jenkins `Sonar Plugin.
-    <http://docs.sonarqube.org/display/SONAR/\
-        Analyzing+with+SonarQube+Scanner+for+Jenkins>`_
+    <https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-jenkins>`_
 
     :arg str installation-name: name of the Sonar instance to use (optional)
     :arg str jdk: JDK to use (inherited from the job if omitted). (optional)
@@ -5310,7 +5309,7 @@ def gitlab_message(registry, xml_parent, data):
 def zulip(registry, xml_parent, data):
     """yaml: zulip
     Set build status on zulip.
-    Requires the Jenkins :jenkins-wiki:`Humbug Plugin <Humbug+Plugin>`.
+    Requires the Jenkins :jenkins-wiki:`Humbug Plugin <Deprecated%3A+Humbug+Plugin>`.
 
     Example:
 
@@ -5375,7 +5374,7 @@ def stash(registry, xml_parent, data):
     notify Atlassian Stash after job completes.
 
     Requires the Jenkins :jenkins-wiki:`StashNotifier Plugin
-    <StashNotifier+Plugin>`.
+    <Bitbucket+%28Stash%29+Notifier+Plugin>`.
 
     :arg string url: Base url of Stash Server (default "")
     :arg string username: Username of Stash Server (default "")
@@ -7537,7 +7536,7 @@ def slack(registry, xml_parent, data):
 
 def phabricator(registry, xml_parent, data):
     """yaml: phabricator
-    Integrate with `Phabricator <http://phabricator.org/>`_
+    Integrate with `Phabricator <https://www.phacility.com/>`_
 
     Requires the Jenkins :jenkins-wiki:`Phabricator Plugin
     <Phabricator+Differential+Plugin>`.

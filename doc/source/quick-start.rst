@@ -12,9 +12,9 @@ job definitions we use to test JJB.
 
 Usage of the commands below assumes that you are at the root of the cloned directory.
 
-.. _repository: http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/
-.. _pypi: https://pypi.python.org/pypi/jenkins-job-builder/
-.. _examples: http://git.openstack.org/cgit/openstack-infra/jenkins-job-builder/tree/tests
+.. _repository: https://opendev.org/jjb/jenkins-job-builder/
+.. _pypi: https://pypi.org/project/jenkins-job-builder/
+.. _examples: https://opendev.org/jjb/jenkins-job-builder/src/branch/master/tests
 
 
 .. _use-case-1:

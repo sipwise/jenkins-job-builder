@@ -296,8 +296,8 @@ def gerrit(registry, xml_parent, data):
                * **approval-category** (`str`) -- Approval (verdict) category
                  (for example 'APRV', 'CRVW', 'VRIF' -- see `Gerrit access
                  control
-                 <http://gerrit.googlecode.com/svn/documentation/2.1/
-                 access-control.html#categories>`_
+                 <https://gerrit-review.googlesource.com/Documentation/
+                 access-control.html#access_categories>`_
 
                * **approval-value** -- Approval value for the comment added.
          * **comment-added-contains-event** (`dict`) -- Trigger on comment

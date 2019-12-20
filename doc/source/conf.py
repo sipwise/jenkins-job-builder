@@ -276,3 +276,10 @@ extlinks = {
     "jenkins-wiki": ("https://wiki.jenkins.io/display/JENKINS/%s", None),
     "jenkins-plugins": ("https://plugins.jenkins.io/%s", None),
 }
+
+linkcheck_ignore = [
+    r"https?:\/\/.*example\.org",
+    # gitorious is read-only archived with an expired certificate
+    "https://gitorious.org",
+]
+linkcheck_timeout = 300

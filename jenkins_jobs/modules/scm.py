@@ -225,17 +225,17 @@ def git(registry, xml_parent, data):
             * **fisheye** - https://www.atlassian.com/software/fisheye
             * **gitblit** - http://gitblit.com/
             * **githubweb** - https://github.com/
-            * **gitiles** - https://code.google.com/p/gitiles/
+            * **gitiles** - https://code.google.com/archive/p/gitiles/
             * **gitlab** - https://about.gitlab.com/
             * **gitlist** - http://gitlist.org/
             * **gitoriousweb** - https://gitorious.org/
             * **gitweb** - https://git-scm.com/docs/gitweb
-            * **kiln** - https://www.fogcreek.com/kiln/
+            * **kiln** - https://www.fogbugz.com/version-control
             * **microsoft\-tfs\-2013** - |tfs_2013|
-            * **phabricator** - http://phabricator.org/
+            * **phabricator** - https://www.phacility.com/
             * **redmineweb** - http://www.redmine.org/
             * **rhodecode** - https://rhodecode.com/
-            * **stash** - https://www.atlassian.com/software/bitbucket/server
+            * **stash** - https://www.atlassian.com/software/bitbucket/enterprise/data-center
             * **viewgit** - http://viewgit.fealdia.org/
     :arg str browser-url: url for the repository browser (required if browser
         is not 'auto', no default)
@@ -326,7 +326,7 @@ def git(registry, xml_parent, data):
     .. literalinclude:: /../../tests/scm/fixtures/git001.yaml
 
     .. |tfs_2013| replace::
-        https://www.visualstudio.com/en-us/products/tfs-overview-vs.aspx
+        https://azure.microsoft.com/en-us/services/devops/server
 
     """
     logger = logging.getLogger("%s:git" % __name__)
@@ -1285,8 +1285,8 @@ def hg(self, xml_parent, data):
             * **bitbucketweb** - https://bitbucket.org/
             * **fisheye** - https://www.atlassian.com/software/fisheye
             * **googlecode** - https://code.google.com/
-            * **hgweb** - https://www.selenic.com/hg/help/hgweb
-            * **kilnhg** - https://www.fogcreek.com/kiln/
+            * **hgweb** - https://www.mercurial-scm.org/repo/hg/help/hgweb
+            * **kilnhg** - https://www.fogbugz.com/version-control
             * **rhodecode** - https://rhodecode.com/ (versions >= 1.2)
             * **rhodecode-pre-1.2.0** - https://rhodecode.com/ (versions < 1.2)
 

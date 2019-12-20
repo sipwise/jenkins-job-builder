@@ -823,7 +823,7 @@ def zeromq_event(registry, xml_parent, data):
     (start, complete, finish) to a ZMQ PUB socket.
 
     Requires the Jenkins `ZMQ Event Publisher.
-    <https://git.openstack.org/cgit/openstack-infra/zmq-event-publisher>`_
+    <https://opendev.org/x/zmq-event-publisher>`_
 
     Example:
 

@@ -585,7 +585,7 @@ def svn_tags_param(registry, xml_parent, data):
             name: BRANCH_NAME
             default: release
             description: A parameter named BRANCH_NAME default is release
-            url: http://svn.example.com/repo
+            url: http://svn.example.org/repo
             filter: [A-za-z0-9]*
     """
     pdef = base_param(
@@ -800,7 +800,7 @@ def matrix_combinations_param(registry, xml_parent, data):
     """yaml: matrix-combinations
     Matrix combinations parameter
     Requires the Jenkins :jenkins-wiki:`Matrix Combinations Plugin
-    <Matrix+Combinations+Plugin>`.
+    <Matrix+Configuration+Parameter+Plugin>`.
 
     :arg str name: the name of the parameter
     :arg str description: a description of the parameter (optional)

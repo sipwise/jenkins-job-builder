@@ -115,7 +115,7 @@ def copyartifact(registry, xml_parent, data):
     Artifact plugin <Copy+Artifact+Plugin>`.
 
     Please note using the multijob-build for which-build argument requires
-    the :jenkins-wiki:`Multijob plugin <Multijob+Plugin>`
+    the :jenkins-plugins:`Multijob plugin <jenkins-multijob-plugin>`
 
     :arg str project: Project to copy from
     :arg str filter: what files to copy
@@ -956,7 +956,7 @@ def kmap(registry, xml_parent, data):
     :arg str password:  Password for the KMAP user uploading/publishing
         applications (required)
     :arg str url: KMAP's url. This url must always end with "/kmap-client/".
-        For example: http://testing.keivox.com/kmap-client/ (required)
+        For example: http://testing.example.org/kmap-client/ (required)
     :arg str categories: Categories' names. If you want to add the application
         to more than one category, write the categories between commas.
         (required)
@@ -1803,8 +1803,8 @@ def maven_builder(registry, xml_parent, data):
 
     Allows your build jobs to deploy artifacts automatically to Artifactory.
 
-    Requires the Jenkins :jenkins-wiki:`Artifactory Plugin
-    <Artifactory+Plugin>`.
+    Requires the Jenkins `Artifactory Plugin
+    <https://www.jfrog.com/confluence/display/RTF/Jenkins+Artifactory+Plug-in>`_.
 
     :arg str name: Name of maven installation from the configuration (required)
     :arg str pom: Location of pom.xml (default 'pom.xml')
@@ -1940,7 +1940,7 @@ def maven_target(registry, xml_parent, data):
 def multijob(registry, xml_parent, data):
     """yaml: multijob
     Define a multijob phase. Requires the Jenkins
-    :jenkins-wiki:`Multijob Plugin <Multijob+Plugin>`.
+    :jenkins-plugins:`Multijob Plugin <jenkins-multijob-plugin>`.
 
     This builder may only be used in
     :py:class:`jenkins_jobs.modules.project_multijob.MultiJob` projects.
@@ -3090,10 +3090,7 @@ def sonar(registry, xml_parent, data):
     """yaml: sonar
     Invoke standalone Sonar analysis.
     Requires the Jenkins `Sonar Plugin.
-    <http://docs.sonarqube.org/display/SCAN/\
-        Analyzing+with+SonarQube+Scanner+for+Jenkins\
-        #AnalyzingwithSonarQubeScannerforJenkins-\
-        AnalyzingwiththeSonarQubeScanner>`_
+    <https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-jenkins>`_
 
     :arg str sonar-name: Name of the Sonar installation.
     :arg str sonar-scanner: Name of the Sonar Scanner.

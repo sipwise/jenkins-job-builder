@@ -21,7 +21,7 @@ the :ref:`Job` definition.
 This project type may use :py:func:`jenkins_jobs.modules.builders.multijob` \
 builders.
 
-Requires the Jenkins :jenkins-wiki:`Multijob Plugin <Multijob+Plugin>`.
+Requires the Jenkins :jenkins-plugins:`Multijob Plugin <jenkins-multijob-plugin>`.
 
 Example::
 

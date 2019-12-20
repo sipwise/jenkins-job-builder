@@ -2415,7 +2415,7 @@ def artifactory_maven(registry, xml_parent, data):
     :jenkins-wiki:`Artifactory Plugin <Artifactory+Plugin>`
 
     :arg str url: URL of the Artifactory server. e.g.
-        https://www.jfrog.com/artifactory/ (default '')
+        https://jfrog.com/artifactory/ (default '')
     :arg str name: Artifactory user with permissions use for
         connected to the selected Artifactory Server
         (default '')
@@ -2458,7 +2458,7 @@ def artifactory_generic(registry, xml_parent, data):
     :jenkins-wiki:`Artifactory Plugin <Artifactory+Plugin>`
 
     :arg str url: URL of the Artifactory server. e.g.
-        https://www.jfrog.com/artifactory/ (default '')
+        https://jfrog.com/artifactory/ (default '')
     :arg str name: Artifactory user with permissions use for
         connected to the selected Artifactory Server
         (default '')
@@ -2590,7 +2590,7 @@ def artifactory_maven_freestyle(registry, xml_parent, data):
     Requires :jenkins-wiki:`Artifactory Plugin <Artifactory+Plugin>`
 
     :arg str url: URL of the Artifactory server. e.g.
-        https://www.jfrog.com/artifactory/ (default '')
+        https://jfrog.com/artifactory/ (default '')
     :arg str name: Artifactory user with permissions use for
         connected to the selected Artifactory Server (default '')
     :arg str release-repo-key: Release repository name (default '')
