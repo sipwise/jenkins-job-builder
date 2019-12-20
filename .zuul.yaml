@@ -11,3 +11,4 @@
     check:
       jobs:
         - jjb-tox-cross-python-jenkins
+        - openstack-tox-docs-linkcheck
