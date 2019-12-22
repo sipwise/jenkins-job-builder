@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_0b131a67",
+        "filename": "tox.ini",
+        "patchSetId": 4
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6547
+      },
+      "writtenOn": "2019-12-22T16:34:47Z",
+      "side": 1,
+      "message": "you really should not use python setup.py anymore\n\nuse sphinx-build directly like\nsphinx-build -W  -b linkcheck \\\n        doc/source doc/build/html",
+      "range": {
+        "startLine": 87,
+        "startChar": 3,
+        "endLine": 87,
+        "endChar": 45
+      },
+      "revId": "cfbd2fa36a57794b108bbb98571751cf47d7ba16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
