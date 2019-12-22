@@ -8,6 +8,13 @@
     voting: true
 
 - project:
+    templates:
+      - docs-on-readthedocs
+      - openstack-python-jobs-no-constraints
+      - openstack-python35-jobs-no-constraints
+    vars:
+      rtd_webhook_id: '47271'
     check:
       jobs:
         - jjb-tox-cross-python-jenkins
+        - tox-cover
