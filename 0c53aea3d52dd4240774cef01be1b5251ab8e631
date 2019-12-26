@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_bd96b33c",
+        "filename": "jenkins_jobs/modules/zuul.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2019-12-26T22:24:32Z",
+      "side": 1,
+      "message": "Not sure what to set this link too as zuul-parameters is no longer a link in the current Zuul docs. I\u0027m not sure if Zuul still supports Jenkins today or not. If not perhaps it\u0027s time to deprecate and eventually retire this module?\n\nIn anycase I think we shouldn\u0027t hold off merging this patch on this URL.",
+      "revId": "0c53aea3d52dd4240774cef01be1b5251ab8e631",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
