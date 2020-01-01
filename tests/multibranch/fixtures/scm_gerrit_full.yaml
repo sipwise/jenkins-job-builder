@@ -11,6 +11,9 @@ scm:
             all-branches:
                 - suppress-scm-triggering: true
                 - pipeline-branch-durability-override: max-survivability
+        filter-checks:
+            query-operator: 'SCHEME'
+            query-string: 'jenkins'
         build-strategies:
             - tags:
                 ignore-tags-newer-than: 1
