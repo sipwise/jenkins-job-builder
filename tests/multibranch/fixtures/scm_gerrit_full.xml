@@ -47,6 +47,10 @@
                 </jenkins.plugins.git.traits.RefSpecsSCMSourceTrait_-RefSpecTemplate>
               </templates>
             </jenkins.plugins.git.traits.RefSpecsSCMSourceTrait>
+            <jenkins.plugins.gerrit.traits.FilterChecksTrait>
+              <queryOperator>SCHEME</queryOperator>
+              <queryString>jenkins</queryString>
+            </jenkins.plugins.gerrit.traits.FilterChecksTrait>
           </traits>
         </source>
         <strategy class="jenkins.branch.DefaultBranchPropertyStrategy">

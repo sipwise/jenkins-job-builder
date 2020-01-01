@@ -632,6 +632,20 @@ def gerrit_scm(xml_parent, data):
     if data.get("build-strategies", None):
         build_strategies(xml_parent, data)
 
+    # FilterChecks Trait
+    checks = data.get("filter-checks", None)
+    if checks:
+        checks_trait = XML.SubElement(
+            traits, "jenkins.plugins.gerrit.traits.FilterChecksTrait"
+        )
+        checks_source_mapping = [
+            ("query-operator", "queryOperator", None),
+            ("query-string", "queryString", None),
+        ]
+        helpers.convert_mapping_to_xml(
+            checks_trait, checks, checks_source_mapping, fail_required=True
+        )
+
 
 def git_scm(xml_parent, data):
     r"""Configure Git SCM
