@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_529d0fb9",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 19946
+      },
+      "writtenOn": "2020-01-03T10:33:52Z",
+      "side": 1,
+      "message": "Yep. Unfortunately, OpenDev still uses Gerrit v2.13 (they are planning to upgrade) and the diff experience isn\u0027t great in showing the changes introduced by a rebase.\n\nIn the latest versions of Gerrit (starting from v2.15 / PolyGerrit) you would have noticed the changes in a different colour.",
+      "parentUuid": "3fa7e38b_92406734",
+      "revId": "28a9ab14b89123164c942606ce816722ce055326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_524f4f69",
         "filename": "jenkins_jobs/modules/project_multibranch.py",
         "patchSetId": 3
@@ -48,6 +66,30 @@
       "writtenOn": "2020-01-03T10:30:07Z",
       "side": 1,
       "message": "All strings above use double quotes. Why change it here?",
+      "range": {
+        "startLine": 636,
+        "startChar": 22,
+        "endLine": 636,
+        "endChar": 23
+      },
+      "revId": "28a9ab14b89123164c942606ce816722ce055326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_12a31701",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 636,
+      "author": {
+        "id": 19946
+      },
+      "writtenOn": "2020-01-03T10:33:52Z",
+      "side": 1,
+      "message": "Good catch, let me align with the other syntax.",
+      "parentUuid": "3fa7e38b_524f4f69",
       "range": {
         "startLine": 636,
         "startChar": 22,
