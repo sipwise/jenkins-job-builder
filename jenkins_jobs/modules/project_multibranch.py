@@ -583,7 +583,7 @@ def gerrit_scm(xml_parent, data):
     source = XML.SubElement(
         xml_parent,
         "source",
-        {"class": "jenkins.plugins.gerrit.GerritSCMSource", "plugin": "gerrit"},
+        {"class": "jenkins.plugins.gerrit.GerritSCMSource", "plugin": "gerrit-code-review"},
     )
     source_mapping = [
         ("", "id", "-".join(["gr", data.get("url", "")])),

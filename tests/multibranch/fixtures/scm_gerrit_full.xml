@@ -31,7 +31,7 @@
   <sources class="jenkins.branch.MultiBranchProject$BranchSourceList" plugin="branch-api">
     <data>
       <jenkins.branch.BranchSource>
-        <source class="jenkins.plugins.gerrit.GerritSCMSource" plugin="gerrit">
+        <source class="jenkins.plugins.gerrit.GerritSCMSource" plugin="gerrit-code-review">
           <id>gr-https://review.gerrithub.io/johndoe/foo</id>
           <remote>https://review.gerrithub.io/johndoe/foo</remote>
           <credentialsId>secret</credentialsId>
