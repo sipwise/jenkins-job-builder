@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_92406734",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 31474
+      },
+      "writtenOn": "2020-01-03T10:31:31Z",
+      "side": 1,
+      "message": "Ah I see, this change was done in a previous change. the patchset comparison (PS2 \u003c-\u003e PS3) did not show this",
+      "parentUuid": "3fa7e38b_324ad35a",
+      "revId": "28a9ab14b89123164c942606ce816722ce055326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_524f4f69",
         "filename": "jenkins_jobs/modules/project_multibranch.py",
         "patchSetId": 3
