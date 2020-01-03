@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_324ad35a",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 31474
+      },
+      "writtenOn": "2020-01-03T10:30:07Z",
+      "side": 1,
+      "message": "Is this code change related to the main aim of this change?",
+      "revId": "28a9ab14b89123164c942606ce816722ce055326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_524f4f69",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 636,
+      "author": {
+        "id": 31474
+      },
+      "writtenOn": "2020-01-03T10:30:07Z",
+      "side": 1,
+      "message": "All strings above use double quotes. Why change it here?",
+      "range": {
+        "startLine": 636,
+        "startChar": 22,
+        "endLine": 636,
+        "endChar": 23
+      },
+      "revId": "28a9ab14b89123164c942606ce816722ce055326",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
