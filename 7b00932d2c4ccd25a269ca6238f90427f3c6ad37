@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_10fbfebe",
+        "filename": "doc/source/conf.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2020-01-06T17:14:14Z",
+      "side": 1,
+      "message": "Yeah I think it would be worth doing. Depends how many CPU cores Zuul jobs have access to though since I think this won\u0027t help much if we\u0027re running on a smaller system.\n\nIn any case let\u0027s explore this as a separate patch so that we can move forward with getting the link checking going.",
+      "parentUuid": "3fa7e38b_0add11dd",
+      "revId": "7b00932d2c4ccd25a269ca6238f90427f3c6ad37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_4a38e9d2",
         "filename": "doc/source/conf.py",
         "patchSetId": 9
@@ -30,6 +48,30 @@
       "writtenOn": "2020-01-06T15:51:41Z",
       "side": 1,
       "message": "I\u0027m guessing this is for an individual link rather than a total because the full run required ~7-8 minutes for me? \n\nWould it be worth tuning it down, maybe to 30 seconds, if it takes longer than that for a connection attempt to return, I think maybe better to have it marked as bad and return rather than churning away waiting for 5 minutes.",
+      "range": {
+        "startLine": 285,
+        "startChar": 20,
+        "endLine": 285,
+        "endChar": 23
+      },
+      "revId": "7b00932d2c4ccd25a269ca6238f90427f3c6ad37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_d05c86f1",
+        "filename": "doc/source/conf.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2020-01-06T17:14:14Z",
+      "side": 1,
+      "message": "I had to explicitly bump this up due to wiki.jenkins.io taking extra long to respond. Without this links to wiki.jenkins.io will randomly fail.",
+      "parentUuid": "3fa7e38b_4a38e9d2",
       "range": {
         "startLine": 285,
         "startChar": 20,
