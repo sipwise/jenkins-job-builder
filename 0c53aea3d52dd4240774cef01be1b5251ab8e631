@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_c4f7efd0",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2020-01-06T14:50:02Z",
+      "side": 1,
+      "message": "It\u0027s what I added to the linkcheck_ignore in conf.py for another link. Figured we should consolidate all the example.com|org into a single one. Doesn\u0027t really matter which one is used imo.",
+      "parentUuid": "3fa7e38b_13778f3d",
+      "range": {
+        "startLine": 588,
+        "startChar": 36,
+        "endLine": 588,
+        "endChar": 39
+      },
+      "revId": "0c53aea3d52dd4240774cef01be1b5251ab8e631",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_bd96b33c",
         "filename": "jenkins_jobs/modules/zuul.py",
         "patchSetId": 8
@@ -54,6 +78,24 @@
       "side": 1,
       "message": "Would https://opendev.org/zuul/zuul/src/tag/2.6.0/doc/source/launchers.rst#zuul-parameters be reasonable?",
       "parentUuid": "3fa7e38b_bd96b33c",
+      "revId": "0c53aea3d52dd4240774cef01be1b5251ab8e631",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_e41d4b10",
+        "filename": "jenkins_jobs/modules/zuul.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2020-01-06T14:50:02Z",
+      "side": 1,
+      "message": "Yes. Thanks for hunting that down. I\u0027ll update the patch.",
+      "parentUuid": "3fa7e38b_337c0b21",
       "revId": "0c53aea3d52dd4240774cef01be1b5251ab8e631",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
