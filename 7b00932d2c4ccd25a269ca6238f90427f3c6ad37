@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_0add11dd",
+        "filename": "doc/source/conf.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2020-01-06T15:51:41Z",
+      "side": 1,
+      "message": "would it be worth experimenting with https://www.sphinx-doc.org/en/1.2/config.html#confval-linkcheck_workers here to bump the number of threads checking links to 10 or 20?\n\nA local test with 30 takes only 3m55.314s versus 7m38.708 with the default of 5. I suspect it does the link checking per file so it has to wait at the end of each file before it can start checking the next batch, limiting the speed up.\n\nAny further improvements would likely require switching the links to use the newer plugins website references instead as I think that responds quicker than the confluence based links (rudimentary test locally puts a curl to https://plugins.jenkins.io/view-job-filters at 0m1.037s vs 0m5.441s for https://wiki.jenkins.io/display/JENKINS/View+Job+Filters), but at least this would reduce the initial impact to CI times.",
+      "revId": "7b00932d2c4ccd25a269ca6238f90427f3c6ad37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_4a38e9d2",
+        "filename": "doc/source/conf.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2020-01-06T15:51:41Z",
+      "side": 1,
+      "message": "I\u0027m guessing this is for an individual link rather than a total because the full run required ~7-8 minutes for me? \n\nWould it be worth tuning it down, maybe to 30 seconds, if it takes longer than that for a connection attempt to return, I think maybe better to have it marked as bad and return rather than churning away waiting for 5 minutes.",
+      "range": {
+        "startLine": 285,
+        "startChar": 20,
+        "endLine": 285,
+        "endChar": 23
+      },
+      "revId": "7b00932d2c4ccd25a269ca6238f90427f3c6ad37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
