@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "3fa7e38b_13778f3d",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2020-01-06T10:52:20Z",
+      "side": 1,
+      "message": "Any particular reason to use \u0027org\u0027 instead of \u0027com\u0027?",
+      "range": {
+        "startLine": 588,
+        "startChar": 36,
+        "endLine": 588,
+        "endChar": 39
+      },
+      "revId": "0c53aea3d52dd4240774cef01be1b5251ab8e631",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_bd96b33c",
         "filename": "jenkins_jobs/modules/zuul.py",
         "patchSetId": 8
@@ -13,6 +36,24 @@
       "writtenOn": "2019-12-26T22:24:32Z",
       "side": 1,
       "message": "Not sure what to set this link too as zuul-parameters is no longer a link in the current Zuul docs. I\u0027m not sure if Zuul still supports Jenkins today or not. If not perhaps it\u0027s time to deprecate and eventually retire this module?\n\nIn anycase I think we shouldn\u0027t hold off merging this patch on this URL.",
+      "revId": "0c53aea3d52dd4240774cef01be1b5251ab8e631",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_337c0b21",
+        "filename": "jenkins_jobs/modules/zuul.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2020-01-06T10:52:20Z",
+      "side": 1,
+      "message": "Would https://opendev.org/zuul/zuul/src/tag/2.6.0/doc/source/launchers.rst#zuul-parameters be reasonable?",
+      "parentUuid": "3fa7e38b_bd96b33c",
       "revId": "0c53aea3d52dd4240774cef01be1b5251ab8e631",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
