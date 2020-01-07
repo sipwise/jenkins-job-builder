@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_4063dddd",
+        "filename": "doc/source/conf.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2020-01-07T11:05:36Z",
+      "side": 1,
+      "message": "As the link checks are I/O limited, this should work well on a single core as well as the main slowness is waiting for responses.",
+      "parentUuid": "3fa7e38b_10fbfebe",
+      "revId": "7b00932d2c4ccd25a269ca6238f90427f3c6ad37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_4a38e9d2",
         "filename": "doc/source/conf.py",
         "patchSetId": 9
@@ -72,6 +90,30 @@
       "side": 1,
       "message": "I had to explicitly bump this up due to wiki.jenkins.io taking extra long to respond. Without this links to wiki.jenkins.io will randomly fail.",
       "parentUuid": "3fa7e38b_4a38e9d2",
+      "range": {
+        "startLine": 285,
+        "startChar": 20,
+        "endLine": 285,
+        "endChar": 23
+      },
+      "revId": "7b00932d2c4ccd25a269ca6238f90427f3c6ad37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_e089a96f",
+        "filename": "doc/source/conf.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2020-01-07T11:05:36Z",
+      "side": 1,
+      "message": "oh wow that\u0027s interesting, I mean I wouldn\u0027t have expected a single socket to require 300 seconds to complete a connection. \n\nMust go try and understand how this timeout applies.",
+      "parentUuid": "3fa7e38b_d05c86f1",
       "range": {
         "startLine": 285,
         "startChar": 20,
