@@ -16,6 +16,52 @@
       "revId": "fe534c32b0c27c813156a81727a1019487bfbb64",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_0ba2e1fb",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 4720
+      },
+      "writtenOn": "2020-01-07T19:45:59Z",
+      "side": 1,
+      "message": "Make it more descriptive/ meaningful: filter-gerrit-checks-plugin?",
+      "range": {
+        "startLine": 639,
+        "startChar": 23,
+        "endLine": 639,
+        "endChar": 36
+      },
+      "revId": "fe534c32b0c27c813156a81727a1019487bfbb64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_4b853958",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 4720
+      },
+      "writtenOn": "2020-01-07T19:45:59Z",
+      "side": 1,
+      "message": "FilterGerritChecksPluginTrait?",
+      "range": {
+        "startLine": 642,
+        "startChar": 51,
+        "endLine": 642,
+        "endChar": 68
+      },
+      "revId": "fe534c32b0c27c813156a81727a1019487bfbb64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
