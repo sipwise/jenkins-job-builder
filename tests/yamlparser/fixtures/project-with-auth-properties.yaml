@@ -1,0 +1,12 @@
+- property:
+    name: auth-prop-test
+    properties:
+    - authorization:
+        auser:
+          - job-build
+
+- job:
+    name: auth-job-test
+    project-type: folder
+    properties:
+    - auth-prop-test

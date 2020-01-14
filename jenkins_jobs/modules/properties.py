@@ -32,6 +32,7 @@ Example::
 """
 
 import logging
+
 import pkg_resources
 import xml.etree.ElementTree as XML
 
@@ -510,7 +511,7 @@ def authorization(registry, xml_parent, data):
     """
 
     # get the folder name if it exists
-    in_a_folder = data.pop("_use_folder_perms")
+    in_a_folder = data.pop("_use_folder_perms", None) if data else None
 
     credentials = "com.cloudbees.plugins.credentials.CredentialsProvider."
     ownership = "com.synopsys.arc.jenkins.plugins.ownership.OwnershipPlugin."
