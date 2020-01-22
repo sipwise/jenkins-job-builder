@@ -244,8 +244,9 @@ def gerrit(registry, xml_parent, data):
     """yaml: gerrit
 
     Trigger on a Gerrit event.
-    Requires the Jenkins :jenkins-wiki:`Gerrit Trigger Plugin <Gerrit+Trigger>`
-    version >= 2.6.0.
+
+    Requires the Jenkins :jenkins-plugins:`Gerrit Trigger Plugin
+    <gerrit-trigger>` version >= 2.6.0.
 
     :arg list trigger-on: Events to react on. Please use either the new
       **trigger-on**, or the old **trigger-on-*** events definitions. You
@@ -693,8 +694,8 @@ def dockerhub_notification(registry, xml_parent, data):
     The job will get triggered when Docker Hub/Registry notifies
     that Docker image(s) used in this job has been rebuilt.
 
-    Requires the Jenkins :jenkins-wiki:`CloudBees Docker Hub Notification
-    <CloudBees+Docker+Hub+Notification>`.
+    Requires the Jenkins :jenkins-plugins:`CloudBees Docker Hub Notification
+    <dockerhub-notification>`.
 
     :arg bool referenced-image: Trigger the job based on repositories
         used by any compatible docker plugin in this job. (default true)
@@ -812,7 +813,7 @@ def build_content_type(
 def pollurl(registry, xml_parent, data):
     """yaml: pollurl
     Trigger when the HTTP response from a URL changes.
-    Requires the Jenkins :jenkins-wiki:`URLTrigger Plugin <URLTrigger+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`URLTrigger Plugin <urltrigger>`.
 
     :arg string cron: cron syntax of when to run (default '')
     :arg string polling-node: Restrict where the polling should run.
@@ -930,8 +931,8 @@ def jms_messaging(registry, xml_parent, data):
         - ActiveMQ
         - FedMsg
 
-    Requires the Jenkins :jenkins-wiki:`JMS Messaging Plugin
-    <JMS+Messaging+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`JMS Messaging Plugin
+    <jms-messaging>`.
 
     :arg bool no-squash: true = schedule a new job for every triggering message.
         (default false)
@@ -1009,8 +1010,9 @@ def timed(registry, xml_parent, data):
 def bitbucket(registry, xml_parent, data):
     """yaml: bitbucket
     Trigger a job when bitbucket repository is pushed to.
-    Requires the Jenkins :jenkins-wiki:`BitBucket Plugin
-    <BitBucket+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`BitBucket Plugin
+    <bitbucket>`.
 
     Example:
 
@@ -1025,7 +1027,8 @@ def bitbucket(registry, xml_parent, data):
 def github(registry, xml_parent, data):
     """yaml: github
     Trigger a job when github repository is pushed to.
-    Requires the Jenkins :jenkins-wiki:`GitHub Plugin <GitHub+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`GitHub Plugin <github>`.
 
     Example::
 
@@ -1039,8 +1042,9 @@ def github(registry, xml_parent, data):
 def github_pull_request(registry, xml_parent, data):
     """yaml: github-pull-request
     Build pull requests in github and report results.
-    Requires the Jenkins :jenkins-wiki:`GitHub Pull Request Builder Plugin
-    <GitHub+pull+request+builder+plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`GitHub Pull Request Builder Plugin
+    <ghprb>`.
 
     :arg list admin-list: the users with admin rights (optional)
     :arg list white-list: users whose pull requests build (optional)
@@ -1290,8 +1294,9 @@ def github_pull_request(registry, xml_parent, data):
 def gitlab_merge_request(registry, xml_parent, data):
     """yaml: gitlab-merge-request
     Build merge requests in gitlab and report results.
-    Requires the Jenkins :jenkins-wiki:`Gitlab MergeRequest Builder Plugin
-    <Gitlab+Merge+Request+Builder+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Gitlab MergeRequest Builder Plugin
+    <ghprb>`.
 
     :arg string cron: Cron syntax of when to run (required)
     :arg string project-path: Gitlab-relative path to project (required)
@@ -1375,8 +1380,8 @@ def gitlab_merge_request(registry, xml_parent, data):
 def gitlab(registry, xml_parent, data):
     """yaml: gitlab
     Makes Jenkins act like a GitLab CI server.
-    Requires the Jenkins :jenkins-wiki:`GitLab Plugin
-    <GitLab+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`GitLab Plugin <gitlab-plugin>`.
 
     :arg bool trigger-push: Build on Push Events (default true)
     :arg bool trigger-merge-request: Build on Merge Request Events (default
@@ -1540,8 +1545,9 @@ def build_result(registry, xml_parent, data):
     """yaml: build-result
     Configure jobB to monitor jobA build result. A build is scheduled if there
     is a new build result that matches your criteria (unstable, failure, ...).
-    Requires the Jenkins :jenkins-wiki:`BuildResultTrigger Plugin
-    <BuildResultTrigger+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`BuildResultTrigger Plugin
+    <buildresult-trigger>`.
 
     :arg list groups: List groups of jobs and results to monitor for
     :arg list jobs: The jobs to monitor (required)
@@ -1658,8 +1664,9 @@ def reverse(registry, xml_parent, data):
 def monitor_folders(registry, xml_parent, data):
     """yaml: monitor-folders
     Configure Jenkins to monitor folders.
-    Requires the Jenkins :jenkins-wiki:`Filesystem Trigger Plugin
-    <FSTrigger+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Filesystem Trigger Plugin
+    <fstrigger>`.
 
     :arg str path: Folder path to poll. (default '')
     :arg list includes: Fileset includes setting that specifies the list of
@@ -1711,8 +1718,8 @@ def monitor_folders(registry, xml_parent, data):
 def monitor_files(registry, xml_parent, data):
     """yaml: monitor-files
     Configure Jenkins to monitor files.
-    Requires the Jenkins :jenkins-wiki:`Filesystem Trigger Plugin
-    <FSTrigger+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Filesystem Trigger Plugin
+    <fstrigger>`.
 
     :arg list files: List of files to monitor
 
@@ -1866,9 +1873,10 @@ def monitor_files(registry, xml_parent, data):
 
 def ivy(registry, xml_parent, data):
     """yaml: ivy
-    Poll with an Ivy script
-    Requires the Jenkins :jenkins-wiki:`IvyTrigger Plugin
-    <IvyTrigger+Plugin>`.
+    Poll with an Ivy script.
+
+    Requires the Jenkins :jenkins-plugins:`IvyTrigger Plugin
+    <ivytrigger>`.
 
     :arg str path: Path of the ivy file. (optional)
     :arg str settings-path: Ivy Settings Path. (optional)
@@ -1911,6 +1919,7 @@ def ivy(registry, xml_parent, data):
 def script(registry, xml_parent, data):
     """yaml: script
     Triggers the job using shell or batch script.
+
     Requires the Jenkins :jenkins-wiki:`ScriptTrigger Plugin
     <ScriptTrigger+Plugin>`.
 
@@ -1951,6 +1960,7 @@ def script(registry, xml_parent, data):
 def groovy_script(registry, xml_parent, data):
     """yaml: groovy-script
     Triggers the job using a groovy script.
+
     Requires the Jenkins :jenkins-wiki:`ScriptTrigger Plugin
     <ScriptTrigger+Plugin>`.
 
@@ -2000,8 +2010,9 @@ def groovy_script(registry, xml_parent, data):
 def rabbitmq(registry, xml_parent, data):
     """yaml: rabbitmq
     This plugin triggers build using remote build message in RabbitMQ queue.
-    Requires the Jenkins :jenkins-wiki:`RabbitMQ Build Trigger Plugin
-    <RabbitMQ+Build+Trigger+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`RabbitMQ Build Trigger Plugin
+    <rabbitmq-build-trigger>`.
 
     :arg str token: the build token expected in the message queue (required)
     :arg list filters: list of filters to apply (optional)
@@ -2039,8 +2050,8 @@ def rabbitmq(registry, xml_parent, data):
 def parameterized_timer(parser, xml_parent, data):
     """yaml: parameterized-timer
     Trigger builds with parameters at certain times.
-    Requires the Jenkins :jenkins-wiki:`Parameterized Scheduler Plugin
-    <Parameterized+Scheduler+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Parameterized Scheduler Plugin
+    <parameterized-scheduler>`.
 
     :arg str cron: cron syntax of when to run and with which parameters
         (required)
@@ -2062,9 +2073,10 @@ def parameterized_timer(parser, xml_parent, data):
 
 def jira_changelog(registry, xml_parent, data):
     """yaml: jira-changelog
-    Sets up a trigger that listens to JIRA issue changes
-    Requires the Jenkins :jenkins-wiki:`JIRA Trigger Plugin
-    <JIRA+Trigger+Plugin>`.
+    Sets up a trigger that listens to JIRA issue changes.
+
+    Requires the Jenkins :jenkins-plugins:`JIRA Trigger Plugin
+    <jira-trigger>`.
 
     :arg str jql-filter: Must match updated issues to trigger a build.
         (default '')
@@ -2175,8 +2187,9 @@ def jira_changelog(registry, xml_parent, data):
 def jira_comment_trigger(registry, xml_parent, data):
     """yaml: jira-comment-trigger
     Trigger builds when a comment is added to JIRA.
-    Requires the Jenkins :jenkins-wiki:`JIRA Trigger Plugin
-    <JIRA+Trigger+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`JIRA Trigger Plugin
+    <jira-trigger>`.
 
     :arg str jql-filter: Must match updated issues to trigger a build.
         (default '')
@@ -2231,8 +2244,9 @@ def jira_comment_trigger(registry, xml_parent, data):
 def stash_pull_request(registry, xml_parent, data):
     """yaml: stash-pull-request
     Trigger builds via Stash/Bitbucket Server Pull Requests.
-    Requires the Jenkins :jenkins-wiki:`Stash Pull Request Builder Plugin
-    <Stash+pullrequest+builder+plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Stash Pull Request Builder Plugin
+    <stash-pullrequest-builder>`.
 
       :arg str cron: cron syntax of when to run (required)
       :arg str stash-host: The HTTP or HTTPS URL of the Stash host (NOT ssh).
@@ -2305,8 +2319,9 @@ def stash_pull_request(registry, xml_parent, data):
 def generic_webhook_trigger(registry, xml_parent, data):
     """yaml: generic-webhook-trigger
     Generic webhook trigger. Trigger when a set of parameters are submitted.
-    Requires the Jenkins
-    :jenkins-wiki:`Generic Webhook Trigger <Generic+Webhook+Trigger+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Generic Webhook Trigger
+    <generic-webhook-trigger>`.
 
 
     :arg string token: A token to use to trigger the job. (default '')

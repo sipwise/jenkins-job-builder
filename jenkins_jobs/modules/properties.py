@@ -46,6 +46,7 @@ import jenkins_jobs.modules.helpers as helpers
 def builds_chain_fingerprinter(registry, xml_parent, data):
     """yaml: builds-chain-fingerprinter
     Builds chain fingerprinter.
+
     Requires the Jenkins :jenkins-wiki:`Builds chain fingerprinter Plugin
     <Builds+chain+fingerprinter>`.
 
@@ -75,7 +76,8 @@ def builds_chain_fingerprinter(registry, xml_parent, data):
 def ownership(registry, xml_parent, data):
     """yaml: ownership
     Plugin provides explicit ownership for jobs and slave nodes.
-    Requires the Jenkins :jenkins-wiki:`Ownership Plugin <Ownership+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Ownership Plugin <ownership>`.
 
     :arg bool enabled: whether ownership enabled (default : true)
     :arg str owner: the owner of job
@@ -107,8 +109,9 @@ def promoted_build(registry, xml_parent, data):
     name must be created via the web interface in the job in order for the job
     promotion to persist. Promotion processes themselves cannot be configured
     by jenkins-jobs due to the separate storage of plugin configuration files.
-    Requires the Jenkins :jenkins-wiki:`Promoted Builds Plugin
-    <Promoted+Builds+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Promoted Builds Plugin
+    <promoted-builds>`.
 
     :arg list names: the promoted build names (optional)
 
@@ -130,7 +133,8 @@ def promoted_build(registry, xml_parent, data):
 def gitbucket(parser, xml_parent, data):
     """yaml: gitbucket
     Integrate GitBucket to Jenkins.
-    Requires the Jenkins :jenkins-wiki:`GitBucket Plugin <GitBucket+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`GitBucket Plugin <gitbucket>`.
 
     :arg str url: GitBucket URL to issue (required)
     :arg bool link-enabled: Enable hyperlink to issue (default false)
@@ -186,7 +190,8 @@ def gitlab(registry, xml_parent, data):
     """yaml: gitlab
     Sets the GitLab connection for the project. Configured via Jenkins Global
     Configuration.
-    Requires the Jenkins :jenkins-wiki:`GitLab Plugin <GitLab+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`GitLab Plugin <gitlab>`.
 
     :arg str connection: the GitLab connection name (required)
 
@@ -206,8 +211,9 @@ def gitlab(registry, xml_parent, data):
 def gitlab_logo(registry, xml_parent, data):
     """yaml: gitlab-logo
     Configures the GitLab-Logo Plugin.
-    Requires the Jenkins :jenkins-wiki:`GitLab Logo Plugin
-    <GitLab+Logo+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`GitLab Logo Plugin
+    <gitlab-logo>`.
 
     :arg str repository-name: the GitLab repository name (required)
 
@@ -226,7 +232,8 @@ def gitlab_logo(registry, xml_parent, data):
 def disk_usage(registry, xml_parent, data):
     """yaml: disk-usage
     Enables the Disk Usage Plugin.
-    Requires the Jenkins :jenkins-wiki:`Disk Usage Plugin <Disk+Usage+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Disk Usage Plugin <disk-usage>`.
 
     Example:
 
@@ -239,7 +246,8 @@ def disk_usage(registry, xml_parent, data):
 def least_load(registry, xml_parent, data):
     """yaml: least-load
     Enables the Least Load Plugin.
-    Requires the Jenkins :jenkins-wiki:`Least Load Plugin <Least+Load+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Least Load Plugin <leastload>`.
 
     :arg bool disabled: whether or not leastload is disabled (default true)
 
@@ -259,8 +267,9 @@ def least_load(registry, xml_parent, data):
 def throttle(registry, xml_parent, data):
     """yaml: throttle
     Throttles the number of builds for this job.
-    Requires the Jenkins :jenkins-wiki:`Throttle Concurrent Builds Plugin
-    <Throttle+Concurrent+Builds+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Throttle Concurrent Builds Plugin
+    <throttle-concurrents>`.
 
     :arg str option: throttle `project` (throttle the project alone)
          or `category` (throttle the project as part of one or more categories)
@@ -320,8 +329,8 @@ def throttle(registry, xml_parent, data):
 def branch_api(registry, xml_parent, data):
     """yaml: branch-api
     Enforces a minimum time between builds based on the desired maximum rate.
-    Requires the Jenkins :jenkins-wiki:`Branch API Plugin
-    <Branch+API+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Branch API Plugin <branch-api>`.
 
     :arg int number-of-builds: The maximum number of builds allowed within
         the specified time period. (default 1)
@@ -362,8 +371,7 @@ def branch_api(registry, xml_parent, data):
 def sidebar(registry, xml_parent, data):
     """yaml: sidebar
     Allows you to add links in the sidebar.
-    Requires the Jenkins :jenkins-wiki:`Sidebar-Link Plugin
-    <Sidebar-Link+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Sidebar-Link Plugin <sidebar-link>`.
 
     :arg str url: url to link to (optional)
     :arg str text: text for the link (optional)
@@ -390,7 +398,8 @@ def sidebar(registry, xml_parent, data):
 def inject(registry, xml_parent, data):
     """yaml: inject
     Allows you to inject environment variables into the build.
-    Requires the Jenkins :jenkins-wiki:`Env Inject Plugin <EnvInject+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`EnvInject Plugin <envinject>`.
 
     :arg str properties-file: file to read with properties (optional)
     :arg str properties-content: key=value properties (optional)
@@ -569,8 +578,8 @@ def priority_sorter(registry, xml_parent, data):
     """yaml: priority-sorter
     Allows simple ordering of builds, using a configurable job priority.
 
-    Requires the Jenkins :jenkins-wiki:`Priority Sorter Plugin
-    <Priority+Sorter+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Priority Sorter Plugin
+    <PrioritySorter>`.
 
     :arg int priority: Priority of the job.  Higher value means higher
         priority, with 3 as the default priority. (required)
@@ -615,8 +624,8 @@ def build_blocker(registry, xml_parent, data):
     if at least one name of currently running jobs
     is matching with one of the given regular expressions.
 
-    Requires the Jenkins :jenkins-wiki:`Build Blocker Plugin
-    <Build+Blocker+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Build Blocker Plugin
+    <build-blocker-plugin>`.
 
     :arg bool use-build-blocker: Enable or disable build blocker (default true)
     :arg list blocking-jobs: One regular expression per line to select
@@ -668,8 +677,8 @@ def copyartifact(registry, xml_parent, data):
     Specify a list of projects that have access to copy the artifacts of
     this project.
 
-    Requires the Jenkins :jenkins-wiki:`Copy Artifact plugin
-    <Copy+Artifact+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Copy Artifact plugin
+    <copyartifact>`.
 
     :arg str projects: comma separated list of projects that can copy
         artifacts of this project. Wild card character '*' is available.
@@ -704,7 +713,7 @@ def batch_tasks(registry, xml_parent, data):
     Batch tasks and builds "lock" the workspace, so when one of those
     activities is in progress, all the others will block in the queue.
 
-    Requires the Jenkins :jenkins-wiki:`Batch Task Plugin <Batch+Task+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Batch Task Plugin <batch-task>`.
 
     :arg list batch-tasks: Batch tasks.
 
@@ -731,7 +740,7 @@ def heavy_job(registry, xml_parent, data):
     This plugin allows you to define "weight" on each job,
     and making each job consume that many executors
 
-    Requires the Jenkins :jenkins-wiki:`Heavy Job Plugin <Heavy+Job+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Heavy Job Plugin <heavy-job>`.
 
     :arg int weight: Specify the total number of executors
         that this job should occupy (default 1)
@@ -754,8 +763,8 @@ def slave_utilization(registry, xml_parent, data):
     This plugin allows you to specify the percentage of a slave's capacity a
     job wants to use.
 
-    Requires the Jenkins :jenkins-wiki:`Slave Utilization Plugin
-    <Slave+Utilization+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Slave Utilization Plugin
+    <slave-utilization-plugin>`.
 
     :arg int slave-percentage: Specify the percentage of a slave's execution
         slots that this job should occupy (default 0)
@@ -786,8 +795,8 @@ def slave_utilization(registry, xml_parent, data):
 
 def delivery_pipeline(registry, xml_parent, data):
     """yaml: delivery-pipeline
-    Requires the Jenkins :jenkins-wiki:`Delivery Pipeline Plugin
-    <Delivery+Pipeline+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Delivery Pipeline Plugin
+    <delivery-pipeline-plugin>`.
 
     :arg str stage: Name of the stage for this job (default '')
     :arg str task: Name of the task for this job (default '')
@@ -843,7 +852,7 @@ def zeromq_event(registry, xml_parent, data):
 
 def slack(registry, xml_parent, data):
     """yaml: slack
-    Requires the Jenkins :jenkins-wiki:`Slack Plugin <Slack+Plugin>`
+    Requires the Jenkins :jenkins-plugins:`Slack Plugin <slack>`.
 
     When using Slack Plugin version < 2.0, Slack Plugin itself requires a
     publisher aswell as properties please note that you have to add the
@@ -920,7 +929,8 @@ def rebuild(registry, xml_parent, data):
     This plug-in allows the user to rebuild a parameterized build without
     entering the parameters again.It will also allow the user to edit the
     parameters before rebuilding.
-    Requires the Jenkins :jenkins-wiki:`Rebuild Plugin <Rebuild+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Rebuild Plugin <rebuild>`.
 
     :arg bool auto-rebuild: Rebuild without asking for parameters
         (default false)
@@ -985,8 +995,8 @@ def slave_prerequisites(registry, xml_parent, data):
     This plugin allows you to check prerequisites on slave before
     a job can run a build on it
 
-    Requires the Jenkins :jenkins-wiki:`Slave Prerequisites Plugin
-    <Slave+Prerequisites+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Slave Prerequisites Plugin
+    <slave-prerequisites>`.
 
     :arg str script: A script to be executed on slave node.
         If returning non 0 status, the node will be vetoed from hosting
@@ -1024,8 +1034,8 @@ def groovy_label(registry, xml_parent, data):
     This plugin allows you to use Groovy script to restrict where this project
     can be run.
 
-    Requires the Jenkins :jenkins-wiki:`Groovy Label Assignment Plugin
-    <Groovy+Label+Assignment+plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Groovy Label Assignment Plugin
+    <groovy-label-assignment>`.
 
     Return value from Groovy script is treated as Label Expression.
     It is treated as followings:
@@ -1078,8 +1088,8 @@ def groovy_label(registry, xml_parent, data):
 
 def lockable_resources(registry, xml_parent, data):
     """yaml: lockable-resources
-    Requires the Jenkins :jenkins-wiki:`Lockable Resources Plugin
-    <Lockable+Resources+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Lockable Resources Plugin
+    <lockable-resources>`.
 
     :arg str resources: List of required resources, space separated.
         (required, mutual exclusive with label)
@@ -1138,7 +1148,7 @@ def lockable_resources(registry, xml_parent, data):
 
 def docker_container(registry, xml_parent, data):
     """yaml: docker-container
-    Requires the Jenkins: :jenkins-wiki:`Docker Plugin<Docker+Plugin>`.
+    Requires the Jenkins: :jenkins-plugins:`Docker Plugin <docker-plugin>`.
 
     :arg str docker-registry-url: URL of the Docker registry. (default '')
     :arg str credentials-id: Credentials Id for the Docker registey.
@@ -1190,8 +1200,9 @@ def docker_container(registry, xml_parent, data):
 def disable_resume(registry, xml_parent, data):
     """yaml: disable-resume
     Do not allow the pipeline to resume if the master restarts
-    Requires the Jenkins :jenkins-wiki:`Pipeline Job Plugin
-    <Pipeline+Job+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Pipeline Job Plugin
+    <workflow-aggregator>`.
 
     Example:
 
@@ -1211,8 +1222,8 @@ def cachet_gating(registry, xml_parent, data):
     The Cachet Gating Plugin provides a gating mechanism
     based on the availability of resources.
 
-    Requires the Jenkins: :jenkins-wiki:`Cachet Gate Plugin
-    <Cachet+Gate+Plugin>`.
+    Requires the Jenkins: :jenkins-plugins:`Cachet Gate Plugin
+    <cachet-gating>`.
 
     :arg bool required-resources: Confirm availability of listed
         resources before building. Requires the list of resources to
