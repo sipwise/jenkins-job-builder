@@ -78,8 +78,9 @@ def string_param(registry, xml_parent, data):
 def promoted_param(registry, xml_parent, data):
     """yaml: promoted build
     A promoted build parameter.
-    Requires the Jenkins :jenkins-wiki:`Promoted Builds Plugin
-    <Promoted+Builds+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Promoted Builds Plugin
+    <promoted-builds>`.
 
     :arg str name: the name of the parameter (required)
     :arg str project-name: the job from which the user can pick runs (required)
@@ -338,9 +339,9 @@ def choice_param(registry, xml_parent, data):
 
 def credentials_param(registry, xml_parent, data):
     """yaml: credentials
-    A credentials selection parameter. Requires the Jenkins
-    :jenkins-wiki:`Credentials Plugin
-    <Credentials+Plugin>`.
+    A credentials selection parameter.
+
+    Requires the Jenkins :jenkins-plugins:`Credentials Plugin <credentials>`.
 
     :arg str name: the name of the parameter
     :arg str type: credential type (optional, default 'any')
@@ -418,8 +419,9 @@ def run_param(registry, xml_parent, data):
 def extended_choice_param(registry, xml_parent, data):
     """yaml: extended-choice
     Creates an extended choice parameter where values can be read from a file
-    Requires the Jenkins :jenkins-wiki:`Extended Choice Parameter Plugin
-    <Extended+Choice+Parameter+plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Extended Choice Parameter Plugin
+    <extended-choice-parameter>`.
 
     :arg str name: name of the parameter
     :arg str description: description of the parameter
@@ -529,8 +531,9 @@ def extended_choice_param(registry, xml_parent, data):
 def validating_string_param(registry, xml_parent, data):
     """yaml: validating-string
     A validating string parameter
-    Requires the Jenkins :jenkins-wiki:`Validating String Plugin
-    <Validating+String+Parameter+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Validating String Plugin
+    <validating-string-parameter>`.
 
     :arg str name: the name of the parameter
     :arg str default: the default value of the parameter (optional)
@@ -563,8 +566,9 @@ def validating_string_param(registry, xml_parent, data):
 def svn_tags_param(registry, xml_parent, data):
     """yaml: svn-tags
     A svn tag parameter
-    Requires the Jenkins :jenkins-wiki:`Parameterized Trigger Plugin
-    <Parameterized+Trigger+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Parameterized Trigger Plugin
+    <parameterized-trigger>`.
 
     :arg str name: the name of the parameter
     :arg str url: the url to list tags from
@@ -610,6 +614,7 @@ def svn_tags_param(registry, xml_parent, data):
 def dynamic_choice_param(registry, xml_parent, data):
     """yaml: dynamic-choice
     Dynamic Choice Parameter
+
     Requires the Jenkins :jenkins-wiki:`Jenkins Dynamic Parameter Plug-in
     <Dynamic+Parameter+Plug-in>`.
 
@@ -638,6 +643,7 @@ def dynamic_choice_param(registry, xml_parent, data):
 def dynamic_string_param(registry, xml_parent, data):
     """yaml: dynamic-string
     Dynamic Parameter
+
     Requires the Jenkins :jenkins-wiki:`Jenkins Dynamic Parameter Plug-in
     <Dynamic+Parameter+Plug-in>`.
 
@@ -666,6 +672,7 @@ def dynamic_string_param(registry, xml_parent, data):
 def dynamic_choice_scriptler_param(registry, xml_parent, data):
     """yaml: dynamic-choice-scriptler
     Dynamic Choice Parameter (Scriptler)
+
     Requires the Jenkins :jenkins-wiki:`Jenkins Dynamic Parameter Plug-in
     <Dynamic+Parameter+Plug-in>`.
 
@@ -704,6 +711,7 @@ def dynamic_choice_scriptler_param(registry, xml_parent, data):
 def dynamic_string_scriptler_param(registry, xml_parent, data):
     """yaml: dynamic-string-scriptler
     Dynamic Parameter (Scriptler)
+
     Requires the Jenkins :jenkins-wiki:`Jenkins Dynamic Parameter Plug-in
     <Dynamic+Parameter+Plug-in>`.
 
@@ -799,8 +807,9 @@ def dynamic_scriptler_param_common(registry, xml_parent, data, ptype):
 def matrix_combinations_param(registry, xml_parent, data):
     """yaml: matrix-combinations
     Matrix combinations parameter
-    Requires the Jenkins :jenkins-wiki:`Matrix Combinations Plugin
-    <Matrix+Configuration+Parameter+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Matrix Combinations Plugin
+    <matrix-combinations-parameter>`.
 
     :arg str name: the name of the parameter
     :arg str description: a description of the parameter (optional)
@@ -834,8 +843,9 @@ def copyartifact_build_selector_param(registry, xml_parent, data):
     """yaml: copyartifact-build-selector
 
     Control via a build parameter, which build the copyartifact plugin should
-    copy when it is configured to use 'build-param'. Requires the Jenkins
-    :jenkins-wiki:`Copy Artifact plugin <Copy+Artifact+Plugin>`.
+    copy when it is configured to use 'build-param'.
+
+    Requires the Jenkins :jenkins-plugins:`Copy Artifact plugin <copyartifact>`.
 
     :arg str name: name of the build parameter to store the selection in
     :arg str description: a description of the parameter (optional)
@@ -865,8 +875,9 @@ def maven_metadata_param(registry, xml_parent, data):
     """yaml: maven-metadata
     This parameter allows the resolution of maven artifact versions
     by contacting the repository and reading the maven-metadata.xml.
-    Requires the Jenkins :jenkins-wiki:`Maven Metadata Plugin
-    <Maven+Metadata+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Maven Metadata Plugin
+    <maven-metadata-plugin>`.
 
     :arg str name: Name of the parameter
     :arg str description: Description of the parameter (optional)
@@ -934,8 +945,9 @@ def maven_metadata_param(registry, xml_parent, data):
 def hidden_param(parser, xml_parent, data):
     """yaml: hidden
     Allows you to use parameters hidden from the build with parameter page.
-    Requires the Jenkins :jenkins-wiki:`Hidden Parameter Plugin
-    <Hidden+Parameter+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Hidden Parameter Plugin
+    <hidden-parameter>`.
 
     :arg str name: the name of the parameter
     :arg str default: the default value of the parameter (optional)
@@ -957,8 +969,9 @@ def random_string_param(registry, xml_parent, data):
     """yaml: random-string
     This parameter generates a random string and passes it to the
     build, preventing Jenkins from combining queued builds.
-    Requires the Jenkins :jenkins-wiki:`Random String Parameter Plugin
-    <Random+String+Parameter+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Random String Parameter Plugin
+    <random-string-parameter>`.
 
     :arg str name: Name of the parameter
     :arg str description: Description of the parameter (default '')
@@ -990,8 +1003,9 @@ def git_parameter_param(registry, xml_parent, data):
     """yaml: git-parameter
     This parameter allows you to select a git tag, branch or revision number as
     parameter in Parametrized builds.
-    Requires the Jenkins :jenkins-wiki:`Git Parameter Plugin
-    <Git+Parameter+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Git Parameter Plugin
+    <git-parameter>`.
 
     :arg str name: Name of the parameter
     :arg str description: Description of the parameter (default '')
