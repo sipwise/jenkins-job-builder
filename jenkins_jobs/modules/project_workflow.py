@@ -25,7 +25,7 @@ You may specify ``workflow`` in the ``project-type`` attribute of
 the :ref:`Job` definition.
 For now only inline scripts are supported.
 
-Requires the Jenkins :jenkins-wiki:`Workflow Plugin <Workflow+Plugin>`.
+Requires the Jenkins :jenkins-plugins:`Workflow Plugin <workflow-aggregator>`.
 
 In order to use it for job-template you have to escape the curly braces by
 doubling them in the DSL: { -> {{ , otherwise it will be interpreted by the

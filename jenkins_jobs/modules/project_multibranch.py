@@ -26,7 +26,7 @@ which means that there is no guarantee that its behavior (or configuration)
 will not change, even between minor releases.
 
 Plugins required:
-    * :jenkins-wiki:`Workflow Plugin <Workflow+Plugin>`.
+    * :jenkins-plugins:`Workflow Plugin <workflow-aggregator>`.
     * :jenkins-wiki:`Pipeline Multibranch Defaults Plugin
       <Pipeline+Multibranch+Defaults+Plugin>` (optional)
     * :jenkins-wiki:`Basic Branch Build Strategies Plugin
