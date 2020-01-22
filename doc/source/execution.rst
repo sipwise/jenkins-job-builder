@@ -116,7 +116,7 @@ hipchat section
   can be used for any room your jobs might be configured to notify. For more
   information on this topic, please see the `Hipchat API Documentation`__
 
-__ https://www.hipchat.com/docs/apiv2/auth
+__ https://developer.atlassian.com/server/hipchat/about-the-hipchat-rest-api/
 
 
 stash section
