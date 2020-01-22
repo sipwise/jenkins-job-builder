@@ -42,8 +42,8 @@ import jenkins_jobs.modules.helpers as helpers
 
 def influx_db(registry, xml_parent, data):
     """yaml: influx-db
-    Requires the Jenkins :jenkins-wiki: `Influx DB
-    <Influx+DB+Plugin>`.
+    Requires the Jenkins :jenkins-plugins: `Influx DB
+    <influxdb>`.
     """
 
     influx_db = XML.SubElement(
@@ -67,7 +67,7 @@ def allure(registry, xml_parent, data):
     """yaml: allure
 
     Publish Allure report for the build. Requires the Jenkins
-    :jenkins-wiki:`Allure Plugin <Allure+Plugin>`.
+    :jenkins-plugins:`Allure Plugin <allure-jenkins-plugin>`.
 
     :arg str jdk: String identifier for a JDK installation in Jenkins
     :arg str commandline: String identifier for a Allure-commandline tool
@@ -193,7 +193,7 @@ def jclouds(registry, xml_parent, data):
     """yaml: jclouds
     JClouds Cloud Storage Settings provides a way to store artifacts on
     JClouds supported storage providers. Requires the Jenkins
-    :jenkins-wiki:`JClouds Plugin <JClouds+Plugin>`.
+    :jenkins-plugins:`JClouds Plugin <jclouds-jenkins>`.
 
     JClouds Cloud Storage Settings must be configured for the Jenkins instance.
 
@@ -235,7 +235,7 @@ def jclouds(registry, xml_parent, data):
 def javadoc(registry, xml_parent, data):
     """yaml: javadoc
     Publish Javadoc
-    Requires the Jenkins :jenkins-wiki:`Javadoc Plugin <Javadoc+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Javadoc Plugin <javadoc>`.
 
     :arg str directory: Directory relative to the root of the workspace,
       such as 'myproject/build/javadoc' (optional)
@@ -263,7 +263,7 @@ def javadoc(registry, xml_parent, data):
 def jdepend(registry, xml_parent, data):
     """yaml: jdepend
     Publish jdepend report
-    Requires the :jenkins-wiki:`JDepend Plugin <JDepend+Plugin>`.
+    Requires the :jenkins-plugins:`JDepend Plugin <jdepend>`.
 
     :arg str file: path to jdepend file (required)
 
@@ -282,8 +282,8 @@ def hue_light(registry, xml_parent, data):
     This plugin shows the state of your builds using the awesome Philips hue
     lights.
 
-    Requires the Jenkins :jenkins-wiki:`hue-light Plugin
-    <hue-light+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`hue-light Plugin
+    <hue-light>`.
 
     :arg int light-id: ID of light. Define multiple lights by a comma as a
         separator (required)
@@ -326,7 +326,7 @@ def hue_light(registry, xml_parent, data):
 def campfire(registry, xml_parent, data):
     """yaml: campfire
     Send build notifications to Campfire rooms.
-    Requires the Jenkins :jenkins-wiki:`Campfire Plugin <Campfire+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Campfire Plugin <campfire>`.
 
     Campfire notifications global default values must be configured for
     the Jenkins instance. Default values will be used if no specific
@@ -364,8 +364,8 @@ def campfire(registry, xml_parent, data):
 def mqtt(registry, xml_parent, data):
     """yaml: mqtt
     This plugin lets you send build notifications to a MQTT message queue.
-    Requires the :jenkins-wiki:`MQTT Notification Plugin
-    <MQTT+Notification+Plugin>`.
+    Requires the :jenkins-plugins:`MQTT Notification Plugin
+    <mqtt-notification-plugin>`.
 
     :arg str broker-url: the broker URL, as protocol://address:port (required)
     :arg str credentials-id: credentials to use to connect to the broker
@@ -411,7 +411,7 @@ def codecover(registry, xml_parent, data):
     """yaml: codecover
     This plugin allows you to capture code coverage report from CodeCover.
     Jenkins will generate the trend report of coverage.
-    Requires the Jenkins :jenkins-wiki:`CodeCover Plugin <CodeCover+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`CodeCover Plugin <codecover>`.
 
     :arg str include: Specify the path to the CodeCover HTML report file,
         relative to the workspace root (default '')
@@ -463,8 +463,8 @@ def emotional_jenkins(registry, xml_parent, data):
     Emotional Jenkins. This funny plugin changes the expression of Mr. Jenkins
     in the background when your builds fail.
 
-    Requires the Jenkins :jenkins-wiki:`Emotional Jenkins Plugin
-    <Emotional+Jenkins+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Emotional Jenkins Plugin
+    <emotional-jenkins-plugin>`.
 
     Example:
 
@@ -481,12 +481,12 @@ def emotional_jenkins(registry, xml_parent, data):
 def trigger_parameterized_builds(registry, xml_parent, data):
     """yaml: trigger-parameterized-builds
     Trigger parameterized builds of other jobs.
-    Requires the Jenkins :jenkins-wiki:`Parameterized Trigger Plugin
-    <Parameterized+Trigger+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Parameterized Trigger Plugin
+    <parameterized-trigger>`.
 
     Use of the `node-label-name` or `node-label` parameters
-    requires the Jenkins :jenkins-wiki:`NodeLabel Parameter Plugin
-    <NodeLabel+Parameter+Plugin>`.
+    requires the Jenkins :jenkins-plugins:`NodeLabel Parameter Plugin
+    <nodelabelparameter>`.
     Note: 'node-parameters' overrides the Node that the triggered
     project is tied to.
 
@@ -625,8 +625,8 @@ def clone_workspace(registry, xml_parent, data):
     """yaml: clone-workspace
     Archive the workspace from builds of one project and reuse them as the SCM
     source for another project.
-    Requires the Jenkins :jenkins-wiki:`Clone Workspace SCM Plugin
-    <Clone+Workspace+SCM+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Clone Workspace SCM Plugin
+    <clone-workspace-scm>`.
 
     :arg str workspace-glob: Files to include in cloned workspace (default '')
     :arg str workspace-exclude-glob: Files to exclude from cloned workspace
@@ -673,8 +673,8 @@ def clone_workspace(registry, xml_parent, data):
 def cloud_foundry(parser, xml_parent, data):
     """yaml: cloudfoundry
     Pushes a project to Cloud Foundry or a CF-based platform (e.g. Stackato) at
-    the end of a build. Requires the Jenkins :jenkins-wiki:`Cloud Foundry
-    Plugin <Cloud+Foundry+Plugin>`.
+    the end of a build. Requires the Jenkins :jenkins-plugins:`Cloud Foundry
+    Plugin <cloudfoundry>`.
 
     :arg str target: The API endpoint of the platform you want to push to.
         This is the URL you use to access the platform, possibly with ".api"
@@ -823,7 +823,7 @@ def cloud_foundry(parser, xml_parent, data):
 def cloverphp(registry, xml_parent, data):
     """yaml: cloverphp
     Capture code coverage reports from PHPUnit
-    Requires the Jenkins :jenkins-wiki:`Clover PHP Plugin <Clover+PHP+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Clover PHP Plugin <cloverphp>`.
 
     Your job definition should pass to PHPUnit the --coverage-clover option
     pointing to a file in the workspace (ex: clover-coverage.xml). The filename
@@ -928,8 +928,8 @@ def coverage(registry, xml_parent, data):
     """yaml: coverage
     WARNING: The coverage function is deprecated. Instead, use the
     cobertura function to generate a cobertura coverage report.
-    Requires the Jenkins :jenkins-wiki:`Cobertura Coverage Plugin
-    <Cobertura+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Cobertura Coverage Plugin
+    <cobertura>`.
 
     Example:
 
@@ -1022,8 +1022,8 @@ def coverage(registry, xml_parent, data):
 def cobertura(registry, xml_parent, data):
     """yaml: cobertura
     Generate a cobertura coverage report.
-    Requires the Jenkins :jenkins-wiki:`Cobertura Coverage Plugin
-    <Cobertura+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Cobertura Coverage Plugin
+    <cobertura>`.
 
     :arg str report-file: This is a file name pattern that can be used
         to locate the cobertura xml report files (optional)
@@ -1127,7 +1127,7 @@ def cobertura(registry, xml_parent, data):
 def jacoco(registry, xml_parent, data):
     """yaml: jacoco
     Generate a JaCoCo coverage report.
-    Requires the Jenkins :jenkins-wiki:`JaCoCo Plugin <JaCoCo+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`JaCoCo Plugin <jacoco>`.
 
     :arg str exec-pattern: This is a file name pattern that can be used to
         locate the jacoco report files (default ``**/**.exec``)
@@ -1200,8 +1200,8 @@ def jacoco(registry, xml_parent, data):
 def ftp(registry, xml_parent, data):
     """yaml: ftp
     Upload files via FTP.
-    Requires the Jenkins :jenkins-wiki:`Publish over FTP Plugin
-    <Publish+Over+FTP+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Publish over FTP Plugin
+    <publish-over-ftp>`.
 
     :arg str site: name of the ftp site (required)
     :arg str target: destination directory (required)
@@ -1258,8 +1258,8 @@ def ftp_publisher(registry, xml_parent, data):
     """yaml: ftp-publisher
     This plugin can be used to upload project artifacts and whole directories
     to an ftp server.
-    Requires the Jenkins :jenkins-wiki:`FTP-Publisher Plugin
-    <FTP-Publisher+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`FTP-Publisher Plugin
+    <ftppublisher>`.
 
     :arg list uploads: List of files to upload
 
@@ -1314,7 +1314,7 @@ def ftp_publisher(registry, xml_parent, data):
 def opsgenie(registry, xml_parent, data):
     """yaml: opsgenie
     OpsGenie notification on build completion,
-    Requires the :jenkins-wiki:`OpsGenie Notifier Plugin <OpsGenie+Plugin>`.
+    Requires the :jenkins-plugins:`OpsGenie Notifier Plugin <opsgenie>`.
 
     :arg bool enable-sending-alerts: Send alerts to opsgenie. (default false)
     :arg bool notify-build-start: Send a notification when the build starts. (default false)
@@ -1361,7 +1361,8 @@ def opsgenie(registry, xml_parent, data):
 def rocket(registry, xml_parent, data):
     """yaml: rocket
     RocketChat notification on build completion,
-    Requires the `RocketChat Notifier Plugin`.
+    Requires the :jenkins-plugins:`RocketChat Notifier Plugin
+    <rocketchatnotifier>`.
 
     :arg str channel: Comma separated list of rooms (e.g. #project)
         or persons (e.g. @john)
@@ -1497,8 +1498,8 @@ def hp_alm(registry, xml_parent, data):
     """yaml: hp-alm
     Publish test results to HP-ALM.
 
-    Requires the Jenkins :jenkins-wiki:`Micro Focus Application Automation
-    Tools <Micro+Focus+Application+Automation+Tools>`.
+    Requires the Jenkins :jenkins-plugins:`Micro Focus Application Automation
+    Tools <hp-application-automation-tools-plugin>`.
 
     :arg str server-name: The name of the ALM Server. (required)
     :arg str credentials-id: credentials-id of the user (default '')
@@ -1640,8 +1641,8 @@ def cucumber_reports(registry, xml_parent, data):
     """yaml: cucumber-reports
     This plugin creates pretty cucumber-jvm html reports on jenkins.
 
-    Requires the Jenkins :jenkins-wiki:`cucumber reports
-    <Cucumber+Reports+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`cucumber reports
+    <cucumber-reports>`.
 
     :arg str json-reports-path: The path relative to the workspace of
         the json reports generated by cucumber-jvm e.g. target - leave
@@ -1748,8 +1749,8 @@ def cucumber_reports(registry, xml_parent, data):
 def cucumber_testresult(registry, xml_parent, data):
     """yaml: cucumber-testresult
     Publish cucumber test results.
-    Requires the Jenkins :jenkins-wiki:`cucumber testresult
-    <Cucumber+Test+Result+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Cucumber testresult
+    <cucumber-testresult-plugin>`.
 
     :arg str results: Results filename (required)
     :arg bool ignore-bad-steps: Ignore not existed step results (default false)
@@ -1783,8 +1784,8 @@ def cucumber_testresult(registry, xml_parent, data):
 
 def xunit(registry, xml_parent, data):
     """yaml: xunit
-    Publish tests results. Requires the Jenkins :jenkins-wiki:`xUnit Plugin
-    <xUnit+Plugin>`.
+    Publish tests results. Requires the Jenkins :jenkins-plugins:`xUnit Plugin
+    <xunit>`.
 
     :arg str thresholdmode: Whether thresholds represents an absolute number
         of tests or a percentage. Either 'number' or 'percent'. (default
@@ -1944,7 +1945,7 @@ def _violations_add_entry(xml_parent, name, data):
 def violations(registry, xml_parent, data):
     """yaml: violations
     Publish code style violations.
-    Requires the Jenkins :jenkins-wiki:`Violations Plugin <Violations>`.
+    Requires the Jenkins :jenkins-plugins:`Violations Plugin <violations>`.
 
     The violations component accepts any number of dictionaries keyed
     by the name of the violations system.  The dictionary has the
@@ -2009,8 +2010,8 @@ def findbugs(registry, xml_parent, data):
     r"""yaml: findbugs
     FindBugs reporting for builds
 
-    Requires the Jenkins :jenkins-wiki:`FindBugs Plugin
-    <FindBugs+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`FindBugs Plugin
+    <findbugs>`.
 
     :arg str pattern: specifies the generated raw FindBugs XML report files,
         such as \*\*/findbugs.xml or \*\*/findbugsXml.xml. (default '')
@@ -2076,7 +2077,7 @@ def findbugs(registry, xml_parent, data):
 def checkstyle(registry, xml_parent, data):
     """yaml: checkstyle
     Publish trend reports with Checkstyle.
-    Requires the Jenkins :jenkins-wiki:`Checkstyle Plugin <Checkstyle+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Checkstyle Plugin <checkstyle>`.
 
     The checkstyle component accepts a dictionary with the
     following values:
@@ -2182,12 +2183,12 @@ def checkstyle(registry, xml_parent, data):
 def scp(registry, xml_parent, data):
     """yaml: scp
     Upload files via SCP
-    Requires the Jenkins :jenkins-wiki:`SCP Plugin <SCP+plugin>`.
+    Requires the Jenkins :jenkins-plugins:`SCP Plugin <scp>`.
 
     When writing a publisher macro, it is important to keep in mind that
     Jenkins uses Ant's `SCP Task
     <https://ant.apache.org/manual/Tasks/scp.html>`_ via the Jenkins
-    :jenkins-wiki:`SCP Plugin <SCP+plugin>` which relies on `FileSet
+    :jenkins-plugins:`SCP Plugin <scp>` which relies on `FileSet
     <https://ant.apache.org/manual/Types/fileset.html>`_
     and `DirSet <https://ant.apache.org/manual/Types/dirset.html>`_ patterns.
     The relevant piece of documentation is excerpted below:
@@ -2246,8 +2247,8 @@ def scp(registry, xml_parent, data):
 def ssh(registry, xml_parent, data):
     """yaml: ssh
     Upload files via SCP.
-    Requires the Jenkins :jenkins-wiki:`Publish over SSH Plugin
-    <Publish+Over+SSH+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Publish over SSH Plugin
+    <publish-over-ssh>`.
 
     :arg str site: name of the ssh site
     :arg str target: destination directory
@@ -2314,12 +2315,12 @@ def ssh(registry, xml_parent, data):
 def pipeline(registry, xml_parent, data):
     """yaml: pipeline
     Specify a downstream project in a pipeline.
-    Requires the Jenkins :jenkins-wiki:`Build Pipeline Plugin
-    <Build+Pipeline+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Build Pipeline Plugin
+    <build-pipeline-plugin>`.
 
     Use of the `node-label-name` or `node-label` parameters
-    requires the Jenkins :jenkins-wiki:`NodeLabel Parameter Plugin
-    <NodeLabel+Parameter+Plugin>`.
+    requires the Jenkins :jenkins-plugins:`NodeLabel Parameter Plugin
+    <nodelabelparameter>`.
     Note: 'node-parameters' overrides the Node that the triggered
     project is tied to.
 
@@ -2399,9 +2400,7 @@ def pipeline(registry, xml_parent, data):
 def email(registry, xml_parent, data):
     """yaml: email
     Email notifications on build failure.
-    Requires the Jenkins :jenkins-wiki:`Mailer Plugin
-    <Mailer>`.
-
+    Requires the Jenkins :jenkins-plugins:`Mailer Plugin <mailer>`.
 
     :arg str recipients: Space separated list of recipient email addresses
         (required)
@@ -2439,7 +2438,7 @@ def email(registry, xml_parent, data):
 def claim_build(registry, xml_parent, data):
     """yaml: claim-build
     Claim build failures
-    Requires the Jenkins :jenkins-wiki:`Claim Plugin <Claim+plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Claim Plugin <claim>`.
 
     Example:
 
@@ -2483,8 +2482,8 @@ def base_email_ext(registry, xml_parent, data, ttype):
 def email_ext(registry, xml_parent, data):
     """yaml: email-ext
     Extend Jenkin's built in email notification
-    Requires the Jenkins :jenkins-wiki:`Email-ext Plugin
-    <Email-ext+plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Email-ext Plugin
+    <email-ext>`.
 
     :arg bool disable-publisher: Disable the publisher, while maintaining the
         settings. The usage model for this is when you want to test things out
@@ -2649,7 +2648,7 @@ def email_ext(registry, xml_parent, data):
 def fingerprint(registry, xml_parent, data):
     """yaml: fingerprint
     Fingerprint files to track them across builds. Requires the
-    Jenkins :jenkins-wiki:`Fingerprint Plugin <Fingerprint+Plugin>`.
+    Jenkins :jenkins-plugins:`Fingerprint Plugin <create-fingerprint>`.
 
     :arg str files: files to fingerprint, follows the @includes of Ant fileset
         (default '')
@@ -2714,7 +2713,7 @@ def aggregate_flow_tests(registry, xml_parent, data):
 def cppcheck(registry, xml_parent, data):
     """yaml: cppcheck
     Cppcheck result publisher
-    Requires the Jenkins :jenkins-wiki:`Cppcheck Plugin <Cppcheck+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Cppcheck Plugin <cppcheck>`.
 
     :arg str pattern: File pattern for cppcheck xml report (required)
     :arg bool ignoreblankfiles: Ignore blank files (default false)
@@ -2840,7 +2839,7 @@ def cppcheck(registry, xml_parent, data):
 
 def logparser(registry, xml_parent, data):
     """yaml: logparser
-    Requires the Jenkins :jenkins-wiki:`Log Parser Plugin <Log+Parser+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Log Parser Plugin <log-parser>`.
 
     :arg str parse-rules: full path to parse rules (default '')
     :arg bool use-project-rules: use project rules instead of global
@@ -2919,7 +2918,7 @@ def copy_to_master(registry, xml_parent, data):
 def jira(registry, xml_parent, data):
     """yaml: jira
     Update relevant JIRA issues
-    Requires the Jenkins :jenkins-wiki:`JIRA Plugin <JIRA+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`JIRA Plugin <jira>`.
 
     Example:
 
@@ -2932,7 +2931,7 @@ def jira(registry, xml_parent, data):
 def growl(registry, xml_parent, data):
     """yaml: growl
     Push notifications to growl client.
-    Requires the Jenkins :jenkins-wiki:`Growl Plugin <Growl+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Growl Plugin <growl>`.
 
     :arg str ip: IP address to send growl notifications to (required)
     :arg bool notify-only-on-fail-or-recovery: send a growl only when build
@@ -2961,12 +2960,12 @@ def growl(registry, xml_parent, data):
 def groovy_postbuild(registry, xml_parent, data):
     """yaml: groovy-postbuild
     Execute a groovy script.
-    Requires the Jenkins :jenkins-wiki:`Groovy Postbuild Plugin
-    <Groovy+Postbuild+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Groovy Postbuild Plugin
+    <groovy-postbuild>`.
 
     Please pay attention on version of plugin you have installed.
     There were incompatible changes between 1.x and 2.x. Please see
-    :jenkins-wiki:`home page <Groovy+Postbuild+Plugin>` of this plugin
+    :jenkins-plugins:`home page <groovy-postbuild>` of this plugin
     for full information including migration process.
 
     :arg str script: The groovy script to execute
@@ -3116,8 +3115,8 @@ def base_publish_over(
 def cifs(registry, xml_parent, data):
     """yaml: cifs
     Upload files via CIFS.
-    Requires the Jenkins :jenkins-wiki:`Publish over CIFS Plugin
-    <Publish+Over+CIFS+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Publish over CIFS Plugin
+    <publish-over-cifs>`.
 
     :arg str site: name of the cifs site/share (required)
     :arg str target: destination directory (required)
@@ -3178,8 +3177,8 @@ def cigame(registry, xml_parent, data):
     """yaml: cigame
     This plugin introduces a game where users get points
     for improving the builds.
-    Requires the Jenkins :jenkins-wiki:`The Continuous Integration Game plugin
-    <The+Continuous+Integration+Game+plugin>`.
+    Requires the Jenkins :jenkins-plugins:`The Continuous Integration Game
+    plugin <ci-game>`.
 
     Example:
 
@@ -3281,8 +3280,8 @@ def sounds(parser, xml_parent, data):
     remotely by piping them through an operating system command,
     or simultaneously through all browsers on a Jenkins page.
 
-    Requires the Jenkins :jenkins-wiki:`Jenkins Sounds plugin
-    <Jenkins+Sounds+plugin>`
+    Requires the Jenkins :jenkins-plugins:`Jenkins Sounds plugin
+    <sounds>`
 
     :arg dict success: Play on success
 
@@ -3363,8 +3362,8 @@ def sounds(parser, xml_parent, data):
 def performance(registry, xml_parent, data):
     r"""yaml: performance
     Publish performance test results from jmeter and junit.
-    Requires the Jenkins :jenkins-wiki:`Performance Plugin
-    <Performance+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Performance Plugin
+    <performance>`.
 
     :arg int failed-threshold: Specify the error percentage threshold that
         set the build failed. A negative value means don't use this threshold
@@ -3488,7 +3487,7 @@ def performance(registry, xml_parent, data):
 def join_trigger(registry, xml_parent, data):
     """yaml: join-trigger
     Trigger a job after all the immediate downstream jobs have completed.
-    Requires the Jenkins :jenkins-wiki:`Join Plugin <Join+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Join Plugin <join>`.
 
     :arg bool even-if-unstable: if true jobs will trigger even if some
         downstream jobs are marked as unstable (default false)
@@ -3519,7 +3518,7 @@ def join_trigger(registry, xml_parent, data):
 def jabber(registry, xml_parent, data):
     """yaml: jabber
     Integrates Jenkins with the Jabber/XMPP instant messaging protocol
-    Requires the Jenkins :jenkins-wiki:`Jabber Plugin <Jabber+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Jabber Plugin <jabber>`.
 
     :arg bool notify-on-build-start: Whether to send notifications
         to channels when a build starts (default false)
@@ -3628,8 +3627,8 @@ def jabber(registry, xml_parent, data):
 def workspace_cleanup(registry, xml_parent, data):
     """yaml: workspace-cleanup (post-build)
 
-    Requires the Jenkins :jenkins-wiki:`Workspace Cleanup Plugin
-    <Workspace+Cleanup+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Workspace Cleanup Plugin
+    <ws-cleanup>`.
 
     The pre-build workspace-cleanup is available as a wrapper.
 
@@ -3750,8 +3749,8 @@ def artifactory(registry, xml_parent, data):
     Uses/requires the Artifactory plugin to deploy artifacts to
     Artifactory Server.
 
-    Requires the Jenkins :jenkins-wiki:`Artifactory Plugin
-    <Artifactory+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Artifactory Plugin
+    <artifactory>`.
 
     :arg str url: Artifactory server url (default '')
     :arg str name: Artifactory user with permissions use for
@@ -3891,8 +3890,8 @@ def test_fairy(registry, xml_parent, data):
     This plugin helps you to upload Android APKs or iOS IPA files to
     www.testfairy.com.
 
-    Requires the Jenkins :jenkins-wiki:`Test Fairy Plugin
-    <TestFairy+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Test Fairy Plugin
+    <TestFairy>`.
 
     :arg str platform: Select platform to upload to, **android** or **ios**
         (required)
@@ -4008,8 +4007,8 @@ def text_finder(registry, xml_parent, data):
     This plugin lets you search keywords in the files you specified and
     additionally check build status
 
-    Requires the Jenkins :jenkins-wiki:`Text-finder Plugin
-    <Text-finder+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Text-finder Plugin
+    <text-finder>`.
 
     :arg str regexp: Specify a regular expression (required)
     :arg str fileset: Specify the path to search (optional)
@@ -4046,8 +4045,8 @@ def html_publisher(registry, xml_parent, data):
     """yaml: html-publisher
     This plugin publishes HTML reports.
 
-    Requires the Jenkins :jenkins-wiki:`HTML Publisher Plugin
-    <HTML+Publisher+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`HTML Publisher Plugin
+    <htmlpublisher>`.
 
     :arg str name: Report name (required)
     :arg str dir: HTML directory to archive (required)
@@ -4086,8 +4085,8 @@ def rich_text_publisher(registry, xml_parent, data):
     This plugin puts custom rich text message to the Build pages and Job main
     page.
 
-    Requires the Jenkins :jenkins-wiki:`Rich Text Publisher Plugin
-    <Rich+Text+Publisher+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Rich Text Publisher Plugin
+    <rich-text-publisher-plugin>`.
 
     :arg str stable-text: The stable text (required)
     :arg str unstable-text: The unstable text if different from stable
@@ -4133,7 +4132,7 @@ def tap(registry, xml_parent, data):
     """yaml: tap
     Adds support to TAP test result files
 
-    Requires the Jenkins :jenkins-wiki:`TAP Plugin <TAP+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`TAP Plugin <tap>`.
 
     :arg str results: TAP test result files (required)
     :arg bool fail-if-no-results: Fail if no result (default false)
@@ -4187,8 +4186,8 @@ def post_tasks(registry, xml_parent, data):
     """yaml: post-tasks
     Adds support to post build task plugin
 
-    Requires the Jenkins :jenkins-wiki:`Post Build Task plugin
-    <Post+build+task>`.
+    Requires the Jenkins :jenkins-plugins:`Post Build Task plugin
+    <postbuild-task>`.
 
     :arg dict task: Post build task definition
     :arg list task[matches]: list of matches when to run the task
@@ -4242,8 +4241,8 @@ def postbuildscript(registry, xml_parent, data):
     Executes additional builders, script or Groovy after the build is
     complete.
 
-    Requires the Jenkins :jenkins-wiki:`Post Build Script plugin
-    <PostBuildScript+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Post Build Script plugin
+    <postbuildscript>`.
 
     :arg list generic-script: Series of Batch/Shell scripts to to run
 
@@ -4506,8 +4505,8 @@ def xml_summary(registry, xml_parent, data):
     """yaml: xml-summary
     Adds support for the Summary Display Plugin
 
-    Requires the Jenkins :jenkins-wiki:`Summary Display Plugin
-    <Summary+Display+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Summary Display Plugin
+    <summary_report>`.
 
     :arg str files: Files to parse (required)
     :arg bool shown-on-project-page: Display summary on project page
@@ -4541,8 +4540,7 @@ def robot(registry, xml_parent, data):
     """yaml: robot
     Adds support for the Robot Framework Plugin
 
-    Requires the Jenkins :jenkins-wiki:`Robot Framework Plugin
-    <Robot+Framework+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Robot Framework Plugin <robot>`.
 
     :arg str output-path: Path to directory containing robot xml and html files
         relative to build workspace. (required)
@@ -4601,8 +4599,8 @@ def robot(registry, xml_parent, data):
 def warnings(registry, xml_parent, data):
     """yaml: warnings
     Generate trend report for compiler warnings in the console log or
-    in log files. Requires the Jenkins :jenkins-wiki:`Warnings Plugin
-    <Warnings+Plugin>`.
+    in log files. Requires the Jenkins :jenkins-plugins:`Warnings Plugin
+    <warnings>`.
 
     :arg list console-log-parsers: The parser to use to scan the console
         log (default '')
@@ -4800,7 +4798,7 @@ def sloccount(registry, xml_parent, data):
     r"""yaml: sloccount
     Generates the trend report for SLOCCount
 
-    Requires the Jenkins :jenkins-wiki:`SLOCCount Plugin <SLOCCount+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`SLOCCount Plugin <sloccount>`.
 
     :arg str report-files: Setting that specifies the generated raw
         SLOCCount report files. Be sure not to include any non-report files
@@ -4844,7 +4842,7 @@ def ircbot(registry, xml_parent, data):
     ircbot enables Jenkins to send build notifications via IRC and lets you
     interact with Jenkins via an IRC bot.
 
-    Requires the Jenkins :jenkins-wiki:`IRC Plugin <IRC+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`IRC Plugin <ircbot>`.
 
     :arg string strategy: When to send notifications
 
@@ -4957,7 +4955,7 @@ def plot(registry, xml_parent, data):
     """yaml: plot
     Plot provides generic plotting (or graphing).
 
-    Requires the Jenkins :jenkins-wiki:`Plot Plugin <Plot+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Plot Plugin <plot>`.
 
     :arg str title: title for the graph (default '')
     :arg str yaxis: title of Y axis (default '')
@@ -5127,7 +5125,7 @@ def git(registry, xml_parent, data):
     push merge results, tags, and/or branches to
     remote repositories after the job completes.
 
-    Requires the Jenkins :jenkins-wiki:`Git Plugin <Git+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Git Plugin <git>`.
 
     :arg bool push-merge: push merges back to the origin specified in the
                           pre-build merge options (default false)
@@ -5241,7 +5239,7 @@ def git(registry, xml_parent, data):
 def github_notifier(registry, xml_parent, data):
     """yaml: github-notifier
     Set build status on Github commit.
-    Requires the Jenkins :jenkins-wiki:`Github Plugin <GitHub+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Github Plugin <github>`.
 
     Example:
 
@@ -5254,7 +5252,7 @@ def github_notifier(registry, xml_parent, data):
 def gitlab_notifier(registry, xml_parent, data):
     """yaml: gitlab-notifier
     Set build status on GitLab commit.
-    Requires the Jenkins :jenkins-wiki:`GitLab Plugin <GitLab+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`GitLab Plugin <gitlab-plugin>`.
 
     :arg str name: The name of the build in GitLab. With this you can
         distinguish different Jenkins jobs for the same commit in GitLab.
@@ -5288,7 +5286,7 @@ def gitlab_notifier(registry, xml_parent, data):
 def gitlab_vote(registry, xml_parent, data):
     """yaml: gitlab-vote
     Set vote for build status on GitLab merge request.
-    Requires the Jenkins :jenkins-wiki:`GitLab Plugin <GitLab+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`GitLab Plugin <gitlab-plugin>`.
 
     Example:
 
@@ -5304,7 +5302,7 @@ def gitlab_vote(registry, xml_parent, data):
 def gitlab_message(registry, xml_parent, data):
     """yaml: gitlab-message
     Add note with build status on GitLab merge request.
-    Requires the Jenkins :jenkins-wiki:`GitLab Plugin <GitLab+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`GitLab Plugin <gitlab-plugin>`.
 
     :arg bool failure-only: make a comment only on failure (default false)
     :arg bool success-note: make a comment on GitLab Merge Request
@@ -5356,7 +5354,7 @@ def gitlab_message(registry, xml_parent, data):
 def zulip(registry, xml_parent, data):
     """yaml: zulip
     Set build status on zulip.
-    Requires the Jenkins :jenkins-wiki:`Humbug Plugin <Deprecated%3A+Humbug+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Humbug Plugin <humbug>`.
 
     Example:
 
@@ -5371,8 +5369,8 @@ def build_publisher(registry, xml_parent, data):
     This plugin allows records from one Jenkins to be published
     on another Jenkins.
 
-    Requires the Jenkins :jenkins-wiki:`Build Publisher Plugin
-    <Build+Publisher+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Build Publisher Plugin
+    <build-publisher>`.
 
     :arg bool publish-unstable-builds: publish unstable builds (default true)
     :arg bool publish-failed-builds: publish failed builds (default true)
@@ -5417,11 +5415,11 @@ def build_publisher(registry, xml_parent, data):
 
 def stash(registry, xml_parent, data):
     """yaml: stash
-    This plugin will configure the Jenkins Stash Notifier plugin to
-    notify Atlassian Stash after job completes.
+    This plugin will configure the Jenkins BitBucket Server Notifier plugin to
+    notify Atlassian BitBucket after job completes.
 
-    Requires the Jenkins :jenkins-wiki:`StashNotifier Plugin
-    <Bitbucket+%28Stash%29+Notifier+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Bitbucket Server Notifier Plugin
+    <stashNotifier>`.
 
     :arg string url: Base url of Stash Server (default "")
     :arg string username: Username of Stash Server (default "")
@@ -5474,8 +5472,8 @@ def dependency_check(registry, xml_parent, data):
     dependencies and checks if there are any known, publicly disclosed,
     vulnerabilities.
 
-    Requires the Jenkins :jenkins-wiki:`OWASP Dependency-Check Plugin
-    <OWASP+Dependency-Check+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`OWASP Dependency-Check Plugin
+    <dependency-check-jenkins-plugin>`.
 
     :arg str pattern: Report filename pattern (optional)
     :arg bool can-run-on-failed: Also runs for failed builds, instead of just
@@ -5549,8 +5547,8 @@ def description_setter(registry, xml_parent, data):
     This plugin sets the description for each build,
     based upon a RegEx test of the build log file.
 
-    Requires the Jenkins :jenkins-wiki:`Description Setter Plugin
-    <Description+Setter+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Description Setter Plugin
+    <description-setter>`.
 
     :arg str regexp: A RegEx which is used to scan the build log file
         (default '')
@@ -5595,7 +5593,7 @@ def doxygen(registry, xml_parent, data):
     This plugin parses the Doxygen descriptor (Doxyfile) and provides a link to
     the generated Doxygen documentation.
 
-    Requires the Jenkins :jenkins-wiki:`Doxygen Plugin <Doxygen+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Doxygen Plugin <doxygen>`.
 
     :arg str doxyfile: The doxyfile path (required)
     :arg str slave: The node or label to pull the doxygen HTML files from
@@ -5640,8 +5638,8 @@ def doxygen(registry, xml_parent, data):
 def docker_stop_container(registry, xml_parent, data):
     """yaml: docker-stop-container
     This plugin allows removing stopped docker containers.
-    It requires the :jenkins-wiki:`Docker build step plugin
-    <Docker+build+step+plugin>`.
+    It requires the :jenkins-plugins:`Docker build step plugin
+    <docker-build-step>`.
 
     :arg bool remove-stopped-containers: Boolean value to remove
         stopped docker containers (default False)
@@ -5696,7 +5694,8 @@ def testng(registry, xml_parent, data):
     """yaml: testng
     This plugin publishes TestNG test reports.
 
-    Requires the Jenkins :jenkins-wiki:`TestNG Results Plugin <testng-plugin>`.
+    Requires the Jenkins :jenkins-plugins:`TestNG Results Plugin
+    <testng-plugin>`.
 
     :arg str pattern: filename pattern to locate the TestNG XML report files
         (required)
@@ -5755,8 +5754,8 @@ def artifact_deployer(registry, xml_parent, data):
     """yaml: artifact-deployer
     This plugin makes it possible to copy artifacts to remote locations.
 
-    Requires the Jenkins :jenkins-wiki:`ArtifactDeployer Plugin
-    <ArtifactDeployer+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`ArtifactDeployer Plugin
+    <artifactdeployer>`.
 
     :arg list entries:
         :entries:
@@ -5824,7 +5823,7 @@ def s3(registry, xml_parent, data):
     """yaml: s3
     Upload build artifacts to Amazon S3.
 
-    Requires the Jenkins :jenkins-wiki:`S3 plugin <S3+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`S3 plugin <s3>`.
 
     :arg str s3-profile: Globally-defined S3 profile to use
     :arg bool dont-wait-for-concurrent-builds: Don't wait
@@ -5912,8 +5911,8 @@ def ruby_metrics(registry, xml_parent, data):
     Rcov plugin parses rcov html report files and
     shows it in Jenkins with a trend graph.
 
-    Requires the Jenkins :jenkins-wiki:`Ruby metrics plugin
-    <RubyMetrics+plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Ruby metrics plugin
+    <rubyMetrics>`.
 
     :arg str report-dir: Relative path to the coverage report directory
     :arg dict targets:
@@ -5958,7 +5957,7 @@ def fitnesse(registry, xml_parent, data):
     """yaml: fitnesse
     Publish Fitnesse test results
 
-    Requires the Jenkins :jenkins-wiki:`Fitnesse plugin <Fitnesse+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Fitnesse plugin <fitnesse>`.
 
     :arg str results: path specifier for results files
 
@@ -5978,7 +5977,7 @@ def valgrind(registry, xml_parent, data):
     """yaml: valgrind
     This plugin publishes Valgrind Memcheck XML results.
 
-    Requires the Jenkins :jenkins-wiki:`Valgrind Plugin <Valgrind+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Valgrind Plugin <valgrind>`.
 
     :arg str pattern: Filename pattern to locate the Valgrind XML report files
         (required)
@@ -6047,7 +6046,7 @@ def valgrind(registry, xml_parent, data):
 def pmd(registry, xml_parent, data):
     """yaml: pmd
     Publish trend reports with PMD.
-    Requires the Jenkins :jenkins-wiki:`PMD Plugin <PMD+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`PMD Plugin <pmd>`.
 
     The PMD component accepts a dictionary with the following values:
 
@@ -6120,8 +6119,8 @@ def scan_build(registry, xml_parent, data):
     The scan-build report has to be generated in the directory
     ``${WORKSPACE}/clangScanBuildReports`` for the publisher to find it.
 
-    Requires the Jenkins :jenkins-wiki:`Clang Scan-Build Plugin
-    <Clang+Scan-Build+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Clang Scan-Build Plugin
+    <clang-scanbuild>`.
 
     :arg bool mark-unstable: Mark build as unstable if the number of bugs
         exceeds a threshold (default false)
@@ -6159,7 +6158,7 @@ def scan_build(registry, xml_parent, data):
 def dry(registry, xml_parent, data):
     """yaml: dry
     Publish trend reports with DRY.
-    Requires the Jenkins :jenkins-wiki:`DRY Plugin <DRY+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`DRY Plugin <dry>`.
 
     The DRY component accepts a dictionary with the following values:
 
@@ -6238,7 +6237,7 @@ def dry(registry, xml_parent, data):
 def shining_panda(registry, xml_parent, data):
     """yaml: shining-panda
     Publish coverage.py results. Requires the Jenkins
-    :jenkins-wiki:`ShiningPanda Plugin <ShiningPanda+Plugin>`.
+    :jenkins-plugins:`ShiningPanda Plugin <shiningpanda>`.
 
     :arg str html-reports-directory: path to coverage.py html results
                                     (optional)
@@ -6263,8 +6262,8 @@ def downstream_ext(registry, xml_parent, data):
     Trigger multiple downstream jobs when a job is completed and
     condition is met.
 
-    Requires the Jenkins :jenkins-wiki:`Downstream-Ext Plugin
-    <Downstream-Ext+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Downstream-Ext Plugin
+    <downstream-ext>`.
 
     :arg list projects: Projects to build (required)
     :arg string condition: comparison condition used for the criteria.
@@ -6327,8 +6326,7 @@ def rundeck(registry, xml_parent, data):
     """yaml: rundeck
     Trigger a rundeck job when the build is complete.
 
-    Requires the Jenkins :jenkins-wiki:`RunDeck
-    Plugin <RunDeck+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`RunDeck Plugin <rundeck>`.
 
     :arg str job-id: The RunDeck job identifier. (required)
         This could be:
@@ -6381,7 +6379,7 @@ def create_publishers(registry, action):
 def conditional_publisher(registry, xml_parent, data):
     """yaml: conditional-publisher
     Conditionally execute some post-build steps. Requires the Jenkins
-    :jenkins-wiki:`Flexible Publish Plugin <Flexible+Publish+Plugin>`.
+    :jenkins-plugins:`Flexible Publish Plugin <flexible-publish>`.
 
     A Flexible Publish list of Conditional Actions is created in Jenkins.
 
@@ -6628,7 +6626,7 @@ def conditional_publisher(registry, xml_parent, data):
 def scoverage(registry, xml_parent, data):
     """yaml: scoverage
     Publish scoverage results as a trend graph.
-    Requires the Jenkins :jenkins-wiki:`Scoverage Plugin <Scoverage+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Scoverage Plugin <scoverage>`.
 
     :arg str report-directory: This is a directory that specifies the locations
         where the xml scoverage report is generated (required)
@@ -6655,8 +6653,8 @@ def scoverage(registry, xml_parent, data):
 def display_upstream_changes(registry, xml_parent, data):
     """yaml: display-upstream-changes
     Display SCM changes of upstream jobs. Requires the Jenkins
-    :jenkins-wiki:`Display Upstream Changes Plugin
-    <Display+Upstream+Changes+Plugin>`.
+    :jenkins-plugins:`Display Upstream Changes Plugin
+    <display-upstream-changes>`.
 
     Example:
 
@@ -6672,7 +6670,7 @@ def display_upstream_changes(registry, xml_parent, data):
 def gatling(registry, xml_parent, data):
     """yaml: gatling
     Publish gatling results as a trend graph
-    Requires the Jenkins :jenkins-wiki:`Gatling Plugin <Gatling+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Gatling Plugin <gatling>`.
 
     Example:
 
@@ -6688,7 +6686,7 @@ def logstash(registry, xml_parent, data):
     """yaml: logstash
     Send job's console log to Logstash for processing and analyis of
     your job data. Also stores test metrics from Junit.
-    Requires the Jenkins :jenkins-wiki:`Logstash Plugin <Logstash+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Logstash Plugin <logstash>`.
 
     :arg int max-lines: The maximum number of log lines to send to Logstash.
         (default 1000)
@@ -6716,7 +6714,7 @@ def logstash(registry, xml_parent, data):
 def image_gallery(registry, xml_parent, data):
     """yaml: image-gallery
     Produce an image gallery using Javascript library. Requires the Jenkins
-    :jenkins-wiki:`Image Gallery Plugin<Image+Gallery+Plugin>`.
+    :jenkins-plugins:`Image Gallery Plugin <image-gallery>`.
 
     :arg str gallery-type:
 
@@ -6786,7 +6784,7 @@ def image_gallery(registry, xml_parent, data):
 def naginator(registry, xml_parent, data):
     """yaml: naginator
     Automatically reschedule a build after a build failure
-    Requires the Jenkins :jenkins-wiki:`Naginator Plugin <Naginator+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Naginator Plugin <naginator>`.
 
     :arg bool rerun-unstable-builds: Rerun build for unstable builds as well
         as failures (default false)
@@ -6861,8 +6859,8 @@ def disable_failed_job(registry, xml_parent, data):
     """yaml: disable-failed-job
     Automatically disable failed jobs.
 
-    Requires the Jenkins :jenkins-wiki:`Disable Failed Job Plugin
-    <Disable+Failed+Job+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Disable Failed Job Plugin
+    <disable-failed-job>`.
 
     :arg str when-to-disable: The condition to disable the job. (required)
         Possible values are
@@ -6904,8 +6902,8 @@ def disable_failed_job(registry, xml_parent, data):
 def google_cloud_storage(registry, xml_parent, data):
     """yaml: google-cloud-storage
     Upload build artifacts to Google Cloud Storage. Requires the
-    Jenkins :jenkins-wiki:`Google Cloud Storage plugin
-    <Google+Cloud+Storage+Plugin>`.
+    Jenkins :jenkins-plugins:`Google Cloud Storage plugin
+    <google-storage-plugin>`.
 
     Apart from the Google Cloud Storage Plugin itself, installation of Google
     OAuth Credentials and addition of required credentials to Jenkins is
@@ -7156,7 +7154,7 @@ def flowdock(registry, xml_parent, data):
 def clamav(registry, xml_parent, data):
     """yaml: clamav
     Check files with ClamAV, an open source antivirus engine.
-    Requires the Jenkins :jenkins-wiki:`ClamAV Plugin <ClamAV+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`ClamAV Plugin <clamav>`.
 
     :arg str includes: Comma separated list of files that should be scanned.
         Must be set for ClamAV to check for artifacts. (default '')
@@ -7184,8 +7182,8 @@ def testselector(registry, xml_parent, data):
     """yaml: testselector
     This plugin allows you to choose specific tests you want to run.
 
-    Requires the Jenkins :jenkins-wiki:`Tests Selector Plugin
-    <Tests+Selector+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Tests Selector Plugin
+    <selected-tests-executor>`.
 
     :arg str name: Environment variable in which selected tests are saved
       (required)
@@ -7230,8 +7228,8 @@ def testselector(registry, xml_parent, data):
 def cloudformation(registry, xml_parent, data):
     """yaml: cloudformation
     Create cloudformation stacks before running a build and optionally
-    delete them at the end.  Requires the Jenkins :jenkins-wiki:`AWS
-    Cloudformation Plugin <AWS+Cloudformation+Plugin>`.
+    delete them at the end.  Requires the Jenkins :jenkins-plugins:`AWS
+    Cloudformation Plugin <jenkins-cloudformation-plugin>`.
 
     :arg list create-stacks: List of stacks to create
 
@@ -7309,8 +7307,8 @@ def whitesource(registry, xml_parent, data):
     """yaml: whitesource
     This plugin brings automatic open source management to Jenkins users.
 
-    Requires the Jenkins :jenkins-wiki:`Whitesource Plugin
-    <Whitesource+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Whitesource Plugin
+    <whitesource>`.
 
     :arg str product-token: Product name or token to update (default '')
     :arg str version: Product version (default '')
@@ -7360,8 +7358,8 @@ def whitesource(registry, xml_parent, data):
 def hipchat(registry, xml_parent, data):
     """yaml: hipchat
     Publisher that sends hipchat notifications on job events
-    Requires the Jenkins :jenkins-wiki:`Hipchat Plugin
-    <Hipchat+Plugin>` version >=1.9
+    Requires the Jenkins :jenkins-plugins:`Hipchat Plugin
+    <hipchat>` version >=1.9
 
     Please see documentation for older plugin version
     https://jenkins-job-builder.readthedocs.io/en/latest/hipchat.html
@@ -7418,7 +7416,7 @@ def slack(registry, xml_parent, data):
     """yaml: slack
     Publisher that sends slack notifications on job events.
 
-    Requires the Jenkins :jenkins-wiki:`Slack Plugin <Slack+Plugin>`
+    Requires the Jenkins :jenkins-plugins:`Slack Plugin <slack>`
 
     When using Slack Plugin version < 2.0, Slack Plugin itself requires a
     publisher as well as properties please note that you have to create those
@@ -7585,8 +7583,8 @@ def phabricator(registry, xml_parent, data):
     """yaml: phabricator
     Integrate with `Phabricator <https://www.phacility.com/>`_
 
-    Requires the Jenkins :jenkins-wiki:`Phabricator Plugin
-    <Phabricator+Differential+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Phabricator Plugin
+    <phabricator-plugin>`.
 
     :arg bool comment-on-success: Post a *comment* when the build
       succeeds. (optional)
@@ -7636,8 +7634,8 @@ def jms_messaging(registry, xml_parent, data):
         - ActiveMQ
         - FedMsg
 
-    Requires the Jenkins :jenkins-wiki:`JMS Messaging Plugin
-    Pipeline Plugin <JMS+Messaging+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`JMS Messaging Plugin
+    Pipeline Plugin <jms-messaging>`.
 
     :arg str override-topic: If you need to override the default topic.
         (default '')
@@ -7674,8 +7672,9 @@ def openshift_build_canceller(registry, xml_parent, data):
     for the provided build config; any builds under that build config which
     are not previously terminated (either successfully or unsuccessfully)
     or cancelled will be cancelled.
-    Requires the Jenkins :jenkins-wiki:`OpenShift
-    Pipeline Plugin <OpenShift+Pipeline+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`OpenShift Pipeline Plugin
+    <openshift-pipeline>`.
 
     :arg str api-url: this would be the value you specify if you leverage the
         --server option on the OpenShift `oc` command.
@@ -7722,8 +7721,9 @@ def openshift_deploy_canceller(registry, xml_parent, data):
     This action is intended to provide cleanup for any OpenShift deployments
     left running when the Job completes; this step will allow you to perform
     the equivalent of a oc deploy --cancel for the provided deployment config.
-    Requires the Jenkins :jenkins-wiki:`OpenShift
-    Pipeline Plugin <OpenShift+Pipeline+Plugin>`.
+
+    Requires the Jenkins :jenkins-wiki:`OpenShift Pipeline Plugin
+    <openshift-pipeline>`.
 
     :arg str api-url: this would be the value you specify if you leverage the
         --server option on the OpenShift `oc` command.
@@ -7769,8 +7769,9 @@ def github_pull_request_merge(registry, xml_parent, data):
     """yaml: github-pull-request-merge
     This action merges the pull request that triggered the build (see the
     github pull request trigger)
-    Requires the Jenkins :jenkins-wiki:`GitHub pull request builder plugin
-    <GitHub+pull+request+builder+plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`GitHub pull request builder plugin
+    <ghprb>`.
 
 
     :arg bool only-admins-merge: if `true` only administrators can merge the
@@ -7816,8 +7817,8 @@ def chuck_norris(registry, xml_parent, data):
     """yaml: chuck-norris
     Displays a picture of Chuck Norris (instead of Jenkins the butler) and a
     random Chuck Norris 'The Programmer' fact on each build page.
-    Requires the Jenkins :jenkins-wiki:`ChuckNorris Plugin
-    <ChuckNorris+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`ChuckNorris Plugin <chucknorris>`.
 
     Example:
 
@@ -7834,8 +7835,8 @@ def chuck_norris(registry, xml_parent, data):
 def publishers_from(registry, xml_parent, data):
     """yaml: publishers-from
     Use publishers from another project.
-    Requires the Jenkins :jenkins-wiki:`Template Project Plugin
-    <Template+Project+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Template Project Plugin
+    <template-project>`.
 
     :arg str project-name: The name of the other project.
 
@@ -7854,7 +7855,7 @@ def tasks(registry, xml_parent, data):
 
     Scans the workspace files for open tasks and generates a trend report.
     Requires the Jenkins
-    :jenkins-wiki:`Task Scanner Plugin <Task+Scanner+Plugin>`.
+    :jenkins-plugin:`Task Scanner Plugin <tasks>`.
 
     :arg list files-to-scan: Fileset includes setting that specifies the
         workspace files to scan for tasks, such as ``**/*.java``. Basedir of
@@ -8058,7 +8059,7 @@ def tasks(registry, xml_parent, data):
 def packer(registry, xml_parent, data):
     """yaml: packer
     This plugin allows for a job to publish an image generated Packer
-    Requires the Jenkins :jenkins-wiki:`Packer Plugin <Packer+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Packer Plugin <packer>`.
 
     :arg str name: Name of the packer installation (required)
     :arg str json-template: Path to a Packer JSON template file (default '')
