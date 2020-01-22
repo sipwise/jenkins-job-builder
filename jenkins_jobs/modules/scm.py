@@ -233,7 +233,7 @@ def git(registry, xml_parent, data):
             * **kiln** - https://www.fogbugz.com/version-control
             * **microsoft\-tfs\-2013** - |tfs_2013|
             * **phabricator** - https://www.phacility.com/
-            * **redmineweb** - http://www.redmine.org/
+            * **redmineweb** - https://www.redmine.org/
             * **rhodecode** - https://rhodecode.com/
             * **stash** - https://www.atlassian.com/software/bitbucket/enterprise/data-center
             * **viewgit** - http://viewgit.fealdia.org/
