@@ -28,7 +28,7 @@ to the :ref:`view_list` definition.
       queue. (default false)
     * **job-name** (`list`): List of jobs to be included.
     * **job-filters** (`dict`): Job filters to be included. Requires
-      :jenkins-wiki:`View Job Filters <View+Job+Filters>`
+      :jenkins-plugins:`View Job Filters <view-job-filters>`
 
         * **most-recent** (`dict`)
             :most-recent:

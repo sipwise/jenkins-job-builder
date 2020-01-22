@@ -26,11 +26,12 @@ which means that there is no guarantee that its behavior (or configuration)
 will not change, even between minor releases.
 
 Plugins required:
-    * :jenkins-wiki:`Workflow Plugin <Workflow+Plugin>`.
-    * :jenkins-wiki:`Pipeline Multibranch Defaults Plugin
-      <Pipeline+Multibranch+Defaults+Plugin>` (optional)
-    * :jenkins-wiki:`Basic Branch Build Strategies Plugin
-      <Basic+Branch+Build+Strategies+Plugin>` (optional)
+
+* :jenkins-plugins:`Workflow Plugin <workflow-aggregator>`.
+* :jenkins-plugins:`Pipeline Multibranch Defaults Plugin
+  <pipeline-multibranch-defaults>` (optional)
+* :jenkins-plugins:`Basic Branch Build Strategies Plugin
+  <basic-branch-build-strategies>` (optional)
 
 :Job Parameters:
 
@@ -294,8 +295,8 @@ class WorkflowMultiBranchDefaults(WorkflowMultiBranch):
 def bitbucket_scm(xml_parent, data):
     r"""Configure BitBucket scm
 
-    Requires the :jenkins-wiki:`Bitbucket Branch Source Plugin
-    <Bitbucket+Branch+Source+Plugin>`.
+    Requires the :jenkins-plugins:`Bitbucket Branch Source Plugin
+    <cloudbees-bitbucket-branch-source>`.
 
     :arg str credentials-id: The credential to use to scan BitBucket.
         (required)
@@ -307,8 +308,8 @@ def bitbucket_scm(xml_parent, data):
         (default false)
     :arg str server-url: The address of the bitbucket server. (optional)
     :arg str head-filter-regex: A regular expression for filtering
-        discovered source branches. Requires the :jenkins-wiki:`SCM API Plugin
-        <SCM+API+Plugin>`.
+        discovered source branches. Requires the :jenkins-plugins:`SCM API
+        Plugin <scm-api>`.
     :arg str discover-branch: Discovers branches on the repository.
         Valid options: ex-pr, only-pr, all.
         Value is not specified by default.
@@ -338,14 +339,14 @@ def bitbucket_scm(xml_parent, data):
         be checked out to a local branch named master, and a remote branch
         origin/develop/new-feature will be checked out to a local branch
         named develop/newfeature.
-        Requires the :jenkins-wiki:`Git Plugin <Git+Plugin>`.
+        Requires the :jenkins-plugins:`Git Plugin <git>`.
     :arg dict checkout-over-ssh: Checkout repo over ssh.
 
         * **credentials** ('str'): Credentials to use for
             checkout of the repo over ssh.
 
     :arg dict filter-by-name-wildcard: Enable filter by name with wildcards.
-        Requires the :jenkins-wiki:`SCM API Plugin <SCM+API+Plugin>`.
+        Requires the :jenkins-plugins:`SCM API Plugin <scm-api>`.
 
         * **includes** ('str'): Space-separated list
             of name patterns to consider. You may use * as a wildcard;
@@ -546,8 +547,8 @@ def bitbucket_scm(xml_parent, data):
 def gerrit_scm(xml_parent, data):
     """Configure Gerrit SCM
 
-    Requires the :jenkins-wiki:`Gerrit Code Review Plugin
-    <Gerrit+Code+Review+Plugin>`.
+    Requires the :jenkins-plugins:`Gerrit Code Review Plugin
+    <gerrit-code-review>`.
 
     :arg str url: The git url. (required)
     :arg str credentials-id: The credential to use to connect to the GIT URL.
@@ -574,7 +575,7 @@ def gerrit_scm(xml_parent, data):
         the gerrit checks plugin.
         (optional)
         query-operator: Name of the query operator, supported values are:
-            'SCHEME' or 'ID'.
+        'SCHEME' or 'ID'.
         query-string: Value of the query operator.
 
     Minimal Example:
@@ -660,7 +661,7 @@ def gerrit_scm(xml_parent, data):
 def git_scm(xml_parent, data):
     r"""Configure Git SCM
 
-    Requires the :jenkins-wiki:`Git Plugin <Git+Plugin>`.
+    Requires the :jenkins-plugins:`Git Plugin <git>`.
 
     :arg str url: The git repo url. (required)
     :arg str credentials-id: The credential to use to connect to the GIT repo.
@@ -673,8 +674,8 @@ def git_scm(xml_parent, data):
     :arg bool ignore-on-push-notifications: If a job should not trigger upon
         push notifications. (default false)
     :arg str head-filter-regex: A regular expression for filtering
-        discovered source branches. Requires the :jenkins-wiki:`SCM API Plugin
-        <SCM+API+Plugin>`.
+        discovered source branches. Requires the :jenkins-plugins:`SCM API
+        Plugin <scm-api>`.
     :arg list build-strategies: Provides control over whether to build a branch
         (or branch like things such as change requests and tags) whenever it is
         discovered initially or a change from the previous revision has been
@@ -777,8 +778,8 @@ def git_scm(xml_parent, data):
 def github_scm(xml_parent, data):
     r"""Configure GitHub SCM
 
-    Requires the :jenkins-wiki:`GitHub Branch Source Plugin
-    <GitHub+Branch+Source+Plugin>`.
+    Requires the :jenkins-plugins:`GitHub Branch Source Plugin
+    <github-branch-source>`.
 
     :arg str api-uri: The GitHub API uri for hosted / on-site GitHub. Must
         first be configured in Global Configuration. (default GitHub)
@@ -813,8 +814,8 @@ def github_scm(xml_parent, data):
         Refer to :func:`~build_strategies <build_strategies>`.
     :arg str notification-context: Change the default GitHub check notification
         context from "continuous-integration/jenkins/SUFFIX" to a custom text,
-        Requires the :jenkins-wiki:`Github Custom Notification Context SCM
-        Behaviour <Github+Custom+Notification+Context+SCM+Behaviour+Plugin>`.
+        Requires the :jenkins-plugins:`Github Custom Notification Context SCM
+        Behaviour <github-scm-trait-notification-context>`.
     :arg dict property-strategies: Provides control over how to build a branch
         (like to disable SCM triggering or to override the pipeline durability)
         (optional)
@@ -1003,8 +1004,8 @@ def github_scm(xml_parent, data):
 def build_strategies(xml_parent, data):
     """Configure Basic Branch Build Strategies.
 
-    Requires the :jenkins-wiki:`Basic Branch Build Strategies Plugin
-    <Basic+Branch+Build+Strategies+Plugin>`.
+    Requires the :jenkins-plugins:`Basic Branch Build Strategies Plugin
+    <basic-branch-build-strategies>`.
 
     :arg list build-strategies: Definition of build strategies.
 
@@ -1176,7 +1177,7 @@ def build_strategies(xml_parent, data):
 def property_strategies(xml_parent, data):
     """Configure Basic Branch Property Strategies.
 
-    Requires the :jenkins-wiki:`Branch API Plugin <Branch+API+Plugin>`.
+    Requires the :jenkins-plugins:`Branch API Plugin <branch-api>`.
 
     :arg dict property-strategies: Definition of property strategies.  Either
         `named-branches` or `all-branches` may be specified, but not both.
@@ -1189,8 +1190,9 @@ def property_strategies(xml_parent, data):
             * **pipeline-branch-durability-override** (str): Set a custom
                 branch speed/durability level. Valid values:
                 performance-optimized, survivable-nonatomic, or
-                max-survivability (optional) Requires the :jenkins-wiki:
-                `Pipeline Multibranch Plugin <Pipeline+Multibranch+Plugin>`
+                max-survivability (optional)
+                Requires the :jenkins-plugins:`Pipeline Multibranch Plugin
+                <workflow-multibranch>`
 
         * **named-branches** (dict): Named branches get different properties.
             Comprised of a list of defaults and a list of property strategy
@@ -1205,8 +1207,9 @@ def property_strategies(xml_parent, data):
                 * **pipeline-branch-durability-override** (str): Set a custom
                     branch speed/durability level. Valid values:
                     performance-optimized, survivable-nonatomic, or
-                    max-survivability (optional) Requires the :jenkins-wiki:
-                    `Pipeline Multibranch Plugin <Pipeline+Multibranch+Plugin>`
+                    max-survivability (optional)
+                    Requires the :jenkins-plugins:`Pipeline Multibranch Plugin
+                    <workflow-multibranch>`
 
             * **exceptions** (list): A list of branch names and the property
                 strategies to be used on that branch, instead of any listed
@@ -1223,9 +1226,9 @@ def property_strategies(xml_parent, data):
                         * **pipeline-branch-durability-override** (str): Set a
                             custom branch speed/durability level. Valid values:
                             performance-optimized, survivable-nonatomic, or
-                            max-survivability (optional) Requires the
-                            :jenkins-wiki:`Pipeline Multibranch Plugin
-                            <Pipeline+Multibranch+Plugin>`
+                            max-survivability (optional)
+                            Requires the :jenkins-plugins:`Pipeline
+                            Multibranch Plugin <workflow-multibranch>`
     """
 
     valid_prop_strats = ["all-branches", "named-branches"]

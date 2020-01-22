@@ -25,17 +25,17 @@ internal YAML structure:
 * slave name or label (``slave``)
 * JDK name (``jdk``)
 
-Requires the Jenkins :jenkins-wiki:`Matrix Project Plugin
-<Matrix+Project+Plugin>`.
+Requires the Jenkins :jenkins-plugins:`Matrix Project Plugin
+<matrix-project>`.
 
 The module also supports additional, plugin-defined axes:
 
 * DynamicAxis (``dynamic``), requires the Jenkins
-  :jenkins-wiki:`DynamicAxis Plugin <DynamicAxis+Plugin>`
+  :jenkins-plugins:`DynamicAxis Plugin <dynamic-axis>`
 * GroovyAxis (``groovy``), requires the Jenkins
   :jenkins-wiki:`GroovyAxis Plugin <GroovyAxis>`
 * YamlAxis (``yaml``), requires the Jenkins
-  :jenkins-wiki:`Yaml Axis Plugin <Yaml+Axis+Plugin>`
+  :jenkins-plugins:`Yaml Axis Plugin <yaml-axis>`
 
 To tie the parent job to a specific node, you should use ``node`` parameter.
 On a matrix project, this will tie *only* the parent job.  To restrict axes
@@ -56,7 +56,7 @@ jobs, you can define a single value ``slave`` axis.
             stable (default) or unstable
 
     * **yaml-strategy** (optional, requires
-      :jenkins-wiki:`Yaml Axis Plugin <Yaml+Axis+Plugin>`):
+      :jenkins-plugins:`Yaml Axis Plugin <yaml-axis>`):
 
         * **exclude-key** (`str`) -- top key containing exclusion rules
         * Either one of:
@@ -67,7 +67,7 @@ jobs, you can define a single value ``slave`` axis.
     * **axes** (`list`):
         * **axis**:
             * **type** (`str`) -- axis type, must be either type defined by
-              :jenkins-wiki:`Matrix Project Plugin <Matrix+Project+Plugin>`
+              :jenkins-plugins:`Matrix Project Plugin <matrix-project>`
               (``label-expression``, ``user-defined``, ``slave`` or ``jdk``) or
               a type defined by a plugin (see top of this document for a list
               of supported plugins).
@@ -80,7 +80,7 @@ Example:
 
 .. literalinclude::  /../../tests/general/fixtures/matrix-axis003.yaml
 
-Requires the Jenkins :jenkins-wiki:`ShiningPanda Plugin <ShiningPanda+Plugin>`.
+Requires the Jenkins :jenkins-plugins:`ShiningPanda Plugin <shiningpanda>`.
 
 Example:
 

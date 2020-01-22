@@ -22,8 +22,8 @@ This type of job allows you to record the execution of a process run outside
 Jenkins, even on a remote machine. This is designed so that you can use
 Jenkins as a dashboard of your existing automation system.
 
-Requires the Jenkins :jenkins-wiki:`External Monitor Job Type Plugin
-<Monitoring+external+jobs>`.
+Requires the Jenkins :jenkins-plugins:`External Monitor Job Type Plugin
+<external-monitor-job>`.
 
 Example:
 

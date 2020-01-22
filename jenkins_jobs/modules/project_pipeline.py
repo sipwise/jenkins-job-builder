@@ -23,7 +23,7 @@ The Pipeline Project module handles creating Jenkins Pipeline projects
 You may specify ``pipeline`` in the ``project-type`` attribute of
 the :ref:`Job` definition.
 
-Requires the Jenkins :jenkins-wiki:`Pipeline Plugin <Pipeline+Plugin>`:
+Requires the Jenkins :jenkins-plugins:`Pipeline Plugin <workflow-aggregator>`.
 
 In order to write an inline script within a job-template you have to escape the
 curly braces by doubling them in the DSL: { -> {{ , otherwise it will be
