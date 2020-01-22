@@ -116,7 +116,7 @@ hipchat section
   can be used for any room your jobs might be configured to notify. For more
   information on this topic, please see the `Hipchat API Documentation`__
 
-__ https://www.hipchat.com/docs/apiv2/auth
+__ https://developer.atlassian.com/server/hipchat/about-the-hipchat-rest-api/
 
 
 stash section
@@ -372,4 +372,4 @@ Command Reference
          can be overridden by setting the ``XDG_CACHE_HOME`` environment
          variable.
 .. [#f2] Jenkins Security Advisory affecting plugins info retrieval
-         https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2016-05-11
+         https://wiki.jenkins.io/display/SECURITY/Jenkins+Security+Advisory+2016-05-11
