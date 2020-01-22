@@ -33,8 +33,9 @@ import jenkins_jobs.modules.helpers as helpers
 def http_endpoint(registry, xml_parent, data):
     """yaml: http
     Defines an HTTP notification endpoint.
-    Requires the Jenkins :jenkins-wiki:`Notification Plugin
-    <Notification+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Notification Plugin
+    <notification>`.
 
     :arg str format: notification payload format, JSON (default) or XML
     :arg str event: job events that trigger notifications: started,

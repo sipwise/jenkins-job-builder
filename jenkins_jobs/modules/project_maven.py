@@ -70,8 +70,8 @@ in the :ref:`Job` definition.
       build succeeds ('SUCCESS'), build succeeds or is unstable ('UNSTABLE'),
       regardless of build result ('FAILURE'). (default 'FAILURE').
 
-Requires the Jenkins :jenkins-wiki:`Config File Provider Plugin
-<Config+File+Provider+Plugin>`
+Requires the Jenkins :jenkins-plugins:`Config File Provider Plugin
+<config-file-provider>`
 for the Config File Provider "settings" and "global-settings" config.
 
 Example:

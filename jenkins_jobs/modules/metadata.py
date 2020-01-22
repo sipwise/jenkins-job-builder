@@ -16,7 +16,8 @@
 """
 The Metadata plugin module enables the ability to add metadata to the projects
 that can be exposed to job environment.
-Requires the Jenkins :jenkins-wiki:`Metadata Plugin <Metadata+plugin>`.
+
+Requires the Jenkins :jenkins-plugins:`Metadata Plugin <metadata>`.
 
 **Component**: metadata
   :Macro: metadata
