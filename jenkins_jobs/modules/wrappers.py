@@ -42,8 +42,9 @@ def docker_custom_build_env(registry, xml_parent, data):
     """yaml: docker-custom-build-env
     Allows the definition of a build environment for a job using a Docker
     container.
-    Requires the Jenkins :jenkins-wiki:`CloudBees Docker Custom Build
-    Environment Plugin<CloudBees+Docker+Custom+Build+Environment+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`CloudBees Docker Custom Build
+    Environment Plugin<docker-custom-build-environment>`.
 
     :arg str image-type: Docker image type. Valid values and their
         additional attributes described in the image_types_ table
@@ -168,7 +169,8 @@ def ci_skip(registry, xml_parent, data):
     Skip making a build for certain push.
     Just add [ci skip] into your commit's message to let Jenkins know,
     that you do not want to perform build for the next push.
-    Requires the Jenkins :jenkins-wiki:`Ci Skip Plugin <Ci+Skip+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Ci Skip Plugin <ci-skip>`.
 
     Example:
 
@@ -194,8 +196,9 @@ def config_file_provider(registry, xml_parent, data):
     """yaml: config-file-provider
     Provide configuration files (i.e., settings.xml for maven etc.)
     which will be copied to the job's workspace.
-    Requires the Jenkins :jenkins-wiki:`Config File Provider Plugin
-    <Config+File+Provider+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Config File Provider Plugin
+    <config-file-provider>`.
 
     :arg list files: List of managed config files made up of three
       parameters
@@ -231,8 +234,9 @@ def config_file_provider(registry, xml_parent, data):
 def logfilesize(registry, xml_parent, data):
     """yaml: logfilesize
     Abort the build if its logfile becomes too big.
-    Requires the Jenkins :jenkins-wiki:`Logfilesizechecker Plugin
-    <Logfilesizechecker+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Logfilesizechecker Plugin
+    <logfilesizechecker>`.
 
     :arg bool set-own: Use job specific maximum log size instead of global
         config value (default false).
@@ -265,8 +269,9 @@ def logfilesize(registry, xml_parent, data):
 def timeout(registry, xml_parent, data):
     """yaml: timeout
     Abort the build if it runs too long.
-    Requires the Jenkins :jenkins-wiki:`Build Timeout Plugin
-    <Build-timeout+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Build Timeout Plugin
+    <build-timeout>`.
 
     :arg bool fail: Mark the build as failed (default false)
     :arg bool abort: Mark the build as aborted (default false)
@@ -479,7 +484,8 @@ def timeout(registry, xml_parent, data):
 def timestamps(registry, xml_parent, data):
     """yaml: timestamps
     Add timestamps to the console log.
-    Requires the Jenkins :jenkins-wiki:`Timestamper Plugin <Timestamper>`.
+
+    Requires the Jenkins :jenkins-plugins:`Timestamper Plugin <timestamper>`.
 
     Example::
 
@@ -492,7 +498,8 @@ def timestamps(registry, xml_parent, data):
 def ansicolor(registry, xml_parent, data):
     """yaml: ansicolor
     Translate ANSI color codes to HTML in the console log.
-    Requires the Jenkins :jenkins-wiki:`Ansi Color Plugin <AnsiColor+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Ansi Color Plugin <ansicolor>`.
 
     :arg string colormap: Color mapping to use (default xterm)
 
@@ -518,8 +525,9 @@ def ansicolor(registry, xml_parent, data):
 def build_keeper(registry, xml_parent, data):
     """yaml: build-keeper
     Keep builds based on specific policy.
-    Requires the Jenkins :jenkins-wiki:`Build Keeper Plugin
-    <Build+Keeper+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Build Keeper Plugin
+    <build-keeper-plugin>`.
 
     :arg str policy: Policy to keep builds.
 
@@ -790,8 +798,9 @@ def build_keeper(registry, xml_parent, data):
 def live_screenshot(registry, xml_parent, data):
     """yaml: live-screenshot
     Show live screenshots of running jobs in the job list.
-    Requires the Jenkins :jenkins-wiki:`Live-Screenshot Plugin
-    <LiveScreenshot+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Live-Screenshot Plugin
+    <livescreenshot>`.
 
     :arg str full-size: name of screenshot file (default 'screenshot.png')
     :arg str thumbnail: name of thumbnail file (default 'screenshot-thumb.png')
@@ -822,8 +831,9 @@ def live_screenshot(registry, xml_parent, data):
 def mask_passwords(registry, xml_parent, data):
     """yaml: mask-passwords
     Hide passwords in the console log.
-    Requires the Jenkins :jenkins-wiki:`Mask Passwords Plugin
-    <Mask+Passwords+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Mask Passwords Plugin
+    <mask-passwords>`.
 
     Example::
 
@@ -839,8 +849,8 @@ def mask_passwords(registry, xml_parent, data):
 def workspace_cleanup(registry, xml_parent, data):
     """yaml: workspace-cleanup (pre-build)
 
-    Requires the Jenkins :jenkins-wiki:`Workspace Cleanup Plugin
-    <Workspace+Cleanup+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Workspace Cleanup Plugin
+    <ws-cleanup>`.
 
     The post-build workspace-cleanup is available as a publisher.
 
@@ -894,9 +904,10 @@ def workspace_cleanup(registry, xml_parent, data):
 
 def m2_repository_cleanup(registry, xml_parent, data):
     """yaml: m2-repository-cleanup
-    Configure M2 Repository Cleanup
-    Requires the Jenkins :jenkins-wiki:`M2 Repository Cleanup
-    <M2+Repository+Cleanup+Plugin>`.
+    Configure M2 Repository Cleanup.
+
+    Requires the Jenkins :jenkins-plugins:`M2 Repository Cleanup
+    <maven-repo-cleaner>`.
 
     :arg list patterns: List of patterns for artifacts to cleanup before
                         building. (optional)
@@ -922,8 +933,9 @@ def m2_repository_cleanup(registry, xml_parent, data):
 
 def rvm_env(registry, xml_parent, data):
     """yaml: rvm-env
-    Set the RVM implementation
-    Requires the Jenkins :jenkins-wiki:`Rvm Plugin <RVM+Plugin>`.
+    Set the RVM implementation.
+
+    Requires the Jenkins :jenkins-plugins:`Rvm Plugin <rvm>`.
 
     :arg str implementation: Type of implementation. Syntax is RUBY[@GEMSET],
                              such as '1.9.3' or 'jruby@foo'.
@@ -962,7 +974,8 @@ def rvm_env(registry, xml_parent, data):
 def rbenv(registry, xml_parent, data):
     """yaml: rbenv
     Set the rbenv implementation.
-    Requires the Jenkins :jenkins-wiki:`rbenv plugin <rbenv+plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`rbenv plugin <rbenv>`.
 
     All parameters are optional.
 
@@ -1039,9 +1052,10 @@ def rbenv(registry, xml_parent, data):
 
 def build_name(registry, xml_parent, data):
     """yaml: build-name
-    Set the name of the build
-    Requires the Jenkins :jenkins-wiki:`Build Name Setter Plugin
-    <Build+Name+Setter+Plugin>`.
+    Set the name of the build.
+
+    Requires the Jenkins :jenkins-plugins:`Build Name Setter Plugin
+    <build-name-setter>`.
 
     :arg str name: Name for the build.  Typically you would use a variable
                    from Jenkins in the name.  The syntax would be ${FOO} for
@@ -1062,9 +1076,10 @@ def build_name(registry, xml_parent, data):
 
 def port_allocator(registry, xml_parent, data):
     """yaml: port-allocator
-    Assign unique TCP port numbers
-    Requires the Jenkins :jenkins-wiki:`Port Allocator Plugin
-    <Port+Allocator+Plugin>`.
+    Assign unique TCP port numbers.
+
+    Requires the Jenkins :jenkins-plugins:`Port Allocator Plugin
+    <port-allocator>`.
 
     :arg str name: Deprecated, use names instead
     :arg list names: Variable list of names of the port or list of
@@ -1095,6 +1110,7 @@ def port_allocator(registry, xml_parent, data):
 def locks(registry, xml_parent, data):
     """yaml: locks
     Control parallel execution of jobs.
+
     Requires the Jenkins :jenkins-wiki:`Locks and Latches Plugin
     <Locks+and+Latches+plugin>`.
 
@@ -1118,7 +1134,8 @@ def locks(registry, xml_parent, data):
 
 def copy_to_slave(registry, xml_parent, data):
     """yaml: copy-to-slave
-    Copy files to slave before build
+    Copy files to slave before build.
+
     Requires the Jenkins :jenkins-wiki:`Copy To Slave Plugin
     <Copy+To+Slave+Plugin>`.
 
@@ -1160,8 +1177,9 @@ def copy_to_slave(registry, xml_parent, data):
 
 def inject(registry, xml_parent, data):
     """yaml: inject
-    Add or override environment variables to the whole build process
-    Requires the Jenkins :jenkins-wiki:`EnvInject Plugin <EnvInject+Plugin>`.
+    Add or override environment variables to the whole build process.
+
+    Requires the Jenkins :jenkins-plugins:`EnvInject Plugin <envinject>`.
 
     :arg str properties-file: path to the properties file (optional)
     :arg str properties-content: key value pair of properties (optional)
@@ -1201,8 +1219,9 @@ def inject(registry, xml_parent, data):
 def inject_ownership_variables(registry, xml_parent, data):
     """yaml: inject-ownership-variables
     Inject ownership variables to the build as environment variables.
-    Requires the Jenkins :jenkins-wiki:`EnvInject Plugin <EnvInject+Plugin>`
-    and Jenkins :jenkins-wiki:`Ownership plugin <Ownership+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`EnvInject Plugin <envinject>`
+    and Jenkins :jenkins-plugins:`Ownership plugin <ownership>`.
 
     :arg bool job-variables: inject job ownership variables to the job
         (default false)
@@ -1228,7 +1247,8 @@ def inject_ownership_variables(registry, xml_parent, data):
 def inject_passwords(registry, xml_parent, data):
     """yaml: inject-passwords
     Inject passwords to the build as environment variables.
-    Requires the Jenkins :jenkins-wiki:`EnvInject Plugin <EnvInject+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`EnvInject Plugin <envinject>`.
 
     :arg bool global: inject global passwords to the job
     :arg bool mask-password-params: mask password parameters
@@ -1264,8 +1284,8 @@ def vault_secrets(registry, xml_parent, data):
 
     Secrets are generally masked in the build log.
 
-    Requires the Jenkins
-        :jenkins-wiki:`HashiCorp Vault Plugin <HashiCorp+Vault+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`HashiCorp Vault Plugin
+    <hashicorp-vault-plugin>`.
 
     :arg str vault-url: Vault URL
     :arg str credentials-id: Vault Credential
@@ -1332,9 +1352,9 @@ def vault_secrets(registry, xml_parent, data):
 
 def env_file(registry, xml_parent, data):
     """yaml: env-file
-    Add or override environment variables to the whole build process
-    Requires the Jenkins :jenkins-wiki:`Environment File Plugin
-    <Envfile+Plugin>`.
+    Add or override environment variables to the whole build process.
+
+    Requires the Jenkins :jenkins-plugins:`Environment File Plugin <envfile>`.
 
     :arg str properties-file: path to the properties file (optional)
 
@@ -1352,8 +1372,9 @@ def env_file(registry, xml_parent, data):
 def env_script(registry, xml_parent, data):
     """yaml: env-script
     Add or override environment variables to the whole build process.
-    Requires the Jenkins :jenkins-wiki:`Environment Script Plugin
-    <Environment+Script+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Environment Script Plugin
+    <environment-script>`.
 
     :arg script-content: The script to run (default '')
     :arg str script-type: The script type.
@@ -1389,7 +1410,8 @@ def jclouds(registry, xml_parent, data):
     """yaml: jclouds
     Uses JClouds to provide slave launching on most of the currently
     usable Cloud infrastructures.
-    Requires the Jenkins :jenkins-wiki:`JClouds Plugin <JClouds+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`JClouds Plugin <jclouds-jenkins>`.
 
     :arg bool single-use: Whether or not to terminate the slave after use
                           (default false).
@@ -1434,8 +1456,10 @@ def jclouds(registry, xml_parent, data):
 
 def openstack(registry, xml_parent, data):
     """yaml: openstack
-    Provision slaves from OpenStack on demand.  Requires the Jenkins
-    :jenkins-wiki:`Openstack Cloud Plugin <Openstack+Cloud+Plugin>`.
+    Provision slaves from OpenStack on demand.
+
+    Requires the Jenkins :jenkins-plugins:`Openstack Cloud Plugin
+    <openstack-cloud>`.
 
     :arg list instances: List of instances to be launched at the beginning of
         the build.
@@ -1492,8 +1516,9 @@ def openstack(registry, xml_parent, data):
 def build_user_vars(registry, xml_parent, data):
     """yaml: build-user-vars
     Set environment variables to the value of the user that started the build.
-    Requires the Jenkins :jenkins-wiki:`Build User Vars Plugin
-    <Build+User+Vars+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Build User Vars Plugin
+    <build-user-vars-plugin>`.
 
     Example::
 
@@ -1505,8 +1530,9 @@ def build_user_vars(registry, xml_parent, data):
 
 def release(registry, xml_parent, data):
     """yaml: release
-    Add release build configuration
-    Requires the Jenkins :jenkins-wiki:`Release Plugin <Release+Plugin>`.
+    Add release build configuration.
+
+    Requires the Jenkins :jenkins-plugins:`Release Plugin <release>`.
 
     :arg bool keep-forever: Keep build forever (default true)
     :arg bool override-build-parameters: Enable build-parameter override
@@ -1555,8 +1581,10 @@ def sauce_ondemand(registry, xml_parent, data):
     """yaml: sauce-ondemand
     Allows you to integrate Sauce OnDemand with Jenkins.  You can
     automate the setup and tear down of Sauce Connect and integrate
-    the Sauce OnDemand results videos per test. Requires the Jenkins
-    :jenkins-wiki:`Sauce OnDemand Plugin <Sauce+OnDemand+Plugin>`.
+    the Sauce OnDemand results videos per test.
+
+    Requires the Jenkins :jenkins-plugins:`Sauce OnDemand Plugin
+    <sauce-ondemand>`.
 
     :arg bool enable-sauce-connect: launches a SSH tunnel from their cloud
         to your private network (default false)
@@ -1672,8 +1700,9 @@ def sauce_ondemand(registry, xml_parent, data):
 
 def sonar(registry, xml_parent, data):
     """yaml: sonar
-    Wrapper for SonarQube Plugin
-    Requires :jenkins-wiki:`SonarQube plugin <SonarQube+plugin>`
+    Wrapper for SonarQube Plugin.
+
+    Requires :jenkins-plugins:`SonarQube plugin <sonar>`
 
     :arg str install-name: Release goals and options (default '')
 
@@ -1700,7 +1729,7 @@ def pathignore(registry, xml_parent, data):
     This plugin allows SCM-triggered jobs to ignore
     build requests if only certain paths have changed.
 
-    Requires the Jenkins :jenkins-wiki:`Pathignore Plugin <Pathignore+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Pathignore Plugin <pathignore>`.
 
     :arg str ignored: A set of patterns to define ignored changes
 
@@ -1737,8 +1766,10 @@ def pathignore(registry, xml_parent, data):
 
 def pre_scm_buildstep(registry, xml_parent, data):
     """yaml: pre-scm-buildstep
-    Execute a Build Step before running the SCM
-    Requires the Jenkins :jenkins-wiki:`pre-scm-buildstep <pre-scm-buildstep>`.
+    Execute a Build Step before running the SCM.
+
+    Requires the Jenkins :jenkins-plugins:`Pre SCM BuildStep
+    <preSCMbuildstep>`.
 
     :arg string failOnError: Specifies if the job should fail on error
         (plugin >= 0.3) (default false).
@@ -1772,8 +1803,9 @@ def pre_scm_buildstep(registry, xml_parent, data):
 
 def logstash(registry, xml_parent, data):
     """yaml: logstash build wrapper
-    Dump the Jenkins console output to Logstash
-    Requires the Jenkins :jenkins-wiki:`logstash plugin <Logstash+Plugin>`.
+    Dump the Jenkins console output to Logstash.
+
+    Requires the Jenkins :jenkins-plugins:`logstash plugin <logstash>`.
 
     :arg use-redis: Boolean to use Redis. (default true)
     :arg redis: Redis config params
@@ -1822,7 +1854,8 @@ def logstash(registry, xml_parent, data):
 def mongo_db(registry, xml_parent, data):
     """yaml: mongo-db build wrapper
     Initializes a MongoDB database while running the build.
-    Requires the Jenkins :jenkins-wiki:`MongoDB plugin <MongoDB+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`MongoDB plugin <mongodb>`.
 
     :arg str name: The name of the MongoDB install to use (required)
     :arg str data-directory: Data directory for the server (default '')
@@ -1860,8 +1893,8 @@ def delivery_pipeline(registry, xml_parent, data):
     The version will be set to the environment variable PIPELINE_VERSION and
     will also be set in the downstream jobs.
 
-    Requires the Jenkins :jenkins-wiki:`Delivery Pipeline Plugin
-    <Delivery+Pipeline+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Delivery Pipeline Plugin
+    <delivery-pipeline-plugin>`.
 
     :arg str version-template: Template for generated version e.g
         1.0.${BUILD_NUMBER} (default '')
@@ -1895,8 +1928,10 @@ def delivery_pipeline(registry, xml_parent, data):
 def matrix_tie_parent(registry, xml_parent, data):
     """yaml: matrix-tie-parent
     Tie parent to a node.
-    Requires the Jenkins :jenkins-wiki:`Matrix Tie Parent Plugin
-    <Matrix+Tie+Parent+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Matrix Tie Parent Plugin
+    <matrixtieparent>`.
+
     Note that from Jenkins version 1.532 this plugin's functionality is
     available under the "advanced" option of the matrix project configuration.
     You can use the top level ``node`` parameter to control where the parent
@@ -1919,7 +1954,7 @@ def exclusion(registry, xml_parent, data):
     another job specifies the same resource, the second job will wait for the
     blocked resource to become available.
 
-    Requires the Jenkins :jenkins-wiki:`Exclusion Plugin <Exclusion-Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Exclusion Plugin <Exclusion>`.
 
     :arg list resources: List of resources to add for exclusion
 
@@ -1942,7 +1977,7 @@ def ssh_agent_credentials(registry, xml_parent, data):
     """yaml: ssh-agent-credentials
     Sets up the user for the ssh agent plugin for jenkins.
 
-    Requires the Jenkins :jenkins-wiki:`SSH-Agent Plugin <SSH+Agent+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`SSH-Agent Plugin <ssh-agent>`.
 
     :arg list users: A list of Jenkins users credential IDs (required)
     :arg str user: The user id of the jenkins user credentials (deprecated)
@@ -2020,8 +2055,8 @@ def credentials_binding(registry, xml_parent, data):
     Binds credentials to environment variables using the credentials binding
     plugin for jenkins.
 
-    Requires the Jenkins :jenkins-wiki:`Credentials Binding Plugin
-    <Credentials+Binding+Plugin>` version 1.1 or greater.
+    Requires the Jenkins :jenkins-plugins:`Credentials Binding Plugin
+    <credentials-binding>` version 1.1 or greater.
 
     :arg list binding-type: List of each bindings to create.  Bindings may be
       of type `zip-file`, `file`, `username-password`, `text`,
@@ -2032,7 +2067,7 @@ def credentials_binding(registry, xml_parent, data):
       variable to the password given in the credentials.
       amazon-web-services sets one variable to the access key and one
       variable to the secret access key. Requires the
-      :jenkins-wiki:`AWS Credentials Plugin <CloudBees+AWS+Credentials+Plugin>`
+      :jenkins-plugins:`AWS Credentials Plugin <aws-credentials>`
       .
 
         :Parameters: * **credential-id** (`str`) UUID of the credential being
@@ -2163,8 +2198,8 @@ def credentials_binding(registry, xml_parent, data):
 
 def custom_tools(registry, xml_parent, data):
     """yaml: custom-tools
-    Requires the Jenkins :jenkins-wiki:`Custom Tools Plugin
-    <Custom+Tools+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Custom Tools Plugin
+    <custom-tools-plugin>`.
 
     :arg list tools: List of custom tools to add
                      (optional)
@@ -2198,8 +2233,10 @@ def custom_tools(registry, xml_parent, data):
 
 def nodejs_installator(registry, xml_parent, data):
     """yaml: nodejs-installator
-    Requires the Jenkins :jenkins-wiki:`NodeJS Plugin
-    <NodeJS+Plugin>`.
+    Provides Jenkins integration for NodeJS & npm packages.
+
+    Requires the Jenkins :jenkins-plugins:`NodeJS Plugin
+    <nodejs>`.
 
     :arg str name: nodejs installation name (required)
 
@@ -2221,7 +2258,8 @@ def nodejs_installator(registry, xml_parent, data):
 def xvnc(registry, xml_parent, data):
     """yaml: xvnc
     Enable xvnc during the build.
-    Requires the Jenkins :jenkins-wiki:`xvnc plugin <Xvnc+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`xvnc plugin <xvnc>`.
 
     :arg bool screenshot: Take screenshot upon build completion (default false)
     :arg bool xauthority: Create a dedicated Xauthority file per build (default
@@ -2250,11 +2288,11 @@ def xvnc(registry, xml_parent, data):
 def job_log_logger(registry, xml_parent, data):
     """yaml: job-log-logger
     Enable writing the job log to the underlying logging system.
-    Requires the Jenkins :jenkins-wiki:`Job Log Logger plugin
-    <Job+Log+Logger+Plugin>`.
 
-    :arg bool suppress-empty: Suppress empty log messages
-                              (default true)
+    Requires the Jenkins :jenkins-plugins:`Job Log Logger plugin
+    <job-log-logger-plugin>`.
+
+    :arg bool suppress-empty: Suppress empty log messages (default true)
 
     Example:
 
@@ -2271,7 +2309,8 @@ def job_log_logger(registry, xml_parent, data):
 def xvfb(registry, xml_parent, data):
     """yaml: xvfb
     Enable xvfb during the build.
-    Requires the Jenkins :jenkins-wiki:`Xvfb Plugin <Xvfb+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Xvfb Plugin <xvfb>`.
 
     :arg str installation-name: The name of the Xvfb tool installation (default
         'default')
@@ -2328,8 +2367,9 @@ def android_emulator(registry, xml_parent, data):
     Automates many Android development tasks including SDK installation,
     build file generation, emulator creation and launch,
     APK (un)installation...
-    Requires the Jenkins :jenkins-wiki:`Android Emulator Plugin
-    <Android+Emulator+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Android Emulator Plugin
+    <android-emulator>`.
 
     :arg str avd: Enter the name of an existing Android emulator configuration.
         If this is exclusive with the 'os' arg.
@@ -2411,8 +2451,9 @@ def android_emulator(registry, xml_parent, data):
 
 def artifactory_maven(registry, xml_parent, data):
     """yaml: artifactory-maven
-    Wrapper for non-Maven projects. Requires the
-    :jenkins-wiki:`Artifactory Plugin <Artifactory+Plugin>`
+    Wrapper for non-Maven projects.
+
+    Requires the Jenkins :jenkins-plugins:`Artifactory Plugin <artifactory>`
 
     :arg str url: URL of the Artifactory server. e.g.
         https://jfrog.com/artifactory/ (default '')
@@ -2454,8 +2495,9 @@ def artifactory_maven(registry, xml_parent, data):
 
 def artifactory_generic(registry, xml_parent, data):
     """yaml: artifactory-generic
-    Wrapper for non-Maven projects. Requires the
-    :jenkins-wiki:`Artifactory Plugin <Artifactory+Plugin>`
+    Wrapper for non-Maven projects.
+
+    Requires the Jenkins :jenkins-plugins:`Artifactory Plugin <artifactory>`
 
     :arg str url: URL of the Artifactory server. e.g.
         https://jfrog.com/artifactory/ (default '')
@@ -2586,8 +2628,9 @@ def artifactory_generic(registry, xml_parent, data):
 
 def artifactory_maven_freestyle(registry, xml_parent, data):
     """yaml: artifactory-maven-freestyle
-    Wrapper for Free Stype projects. Requires the Artifactory plugin.
-    Requires :jenkins-wiki:`Artifactory Plugin <Artifactory+Plugin>`
+    Wrapper for Free Stype projects.
+
+    Requires the Jenkins :jenkins-plugins:`Artifactory Plugin <artifactory>`
 
     :arg str url: URL of the Artifactory server. e.g.
         https://jfrog.com/artifactory/ (default '')
@@ -2734,7 +2777,8 @@ def artifactory_maven_freestyle(registry, xml_parent, data):
 def maven_release(registry, xml_parent, data):
     """yaml: maven-release
     Wrapper for Maven projects
-    Requires :jenkins-wiki:`M2 Release Plugin <M2+Release+Plugin>`
+
+    Requires the Jenkins :jenkins-plugins:`M2 Release Plugin <m2release>`
 
     :arg str release-goals: Release goals and options (default '')
     :arg str dry-run-goals: DryRun goals and options (default '')
@@ -2780,8 +2824,8 @@ def version_number(parser, xml_parent, data):
     Generate a version number for the build using a format string. See the
     wiki page for more detailed descriptions of options.
 
-    Requires the Jenkins :jenkins-wiki:`version number plugin
-    <Version+Number+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Version number plugin
+    <versionnumber>`.
 
     :arg str variable-name: Name of environment variable to assign version
         number to (required)
@@ -2834,8 +2878,9 @@ def version_number(parser, xml_parent, data):
 def github_pull_request(parser, xml_parent, data):
     """yaml: github-pull-request
     Set GitHub commit status with custom context and message.
-    Requires the Jenkins :jenkins-wiki:`GitHub Pull Request Builder Plugin
-    <GitHub+pull+request+builder+plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`GitHub Pull Request Builder Plugin
+    <ghprb>`.
 
     :arg bool show-matrix-status: Only post commit status of parent matrix job
         (default false)

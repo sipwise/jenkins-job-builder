@@ -27,7 +27,7 @@ default with no SCM.
 
 The scm module allows referencing multiple repositories in a Jenkins job.
 Note: Adding more than one scm definition requires the Jenkins
-:jenkins-wiki:`Multiple SCMs plugin <Multiple+SCMs+Plugin>`.
+:jenkins-plugins:`Multiple SCMs plugin <multiple-scms>`.
 
 Example of multiple repositories in a single job:
     .. literalinclude:: /../../tests/macros/fixtures/scm/multi-scms001.yaml
@@ -47,8 +47,9 @@ import jenkins_jobs.modules.helpers as helpers
 
 def p4(registry, xml_parent, data):
     r"""yaml: p4
-    Specifies the Perforce (P4) repository for this job
-    Requires the Jenkins :jenkins-wiki:`P4 Plugin <P4+Plugin>`.
+    Specifies the Perforce (P4) repository for this job.
+
+    Requires the Jenkins :jenkins-plugins:`P4 Plugin <p4>`.
     """
     scm = XML.SubElement(
         xml_parent,
@@ -171,7 +172,8 @@ def p4_construct_populate(xml_parent, data):
 def git(registry, xml_parent, data):
     r"""yaml: git
     Specifies the git SCM repository for this job.
-    Requires the Jenkins :jenkins-wiki:`Git Plugin <Git+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Git Plugin <git>`.
 
     :arg str url: URL of the git repository
     :arg str credentials-id: ID of credential to use to connect, which is the
@@ -704,7 +706,8 @@ def git_extensions(xml_parent, data):
 def cvs(registry, xml_parent, data):
     """yaml: cvs
     Specifies the CVS SCM repository for this job.
-    Requires the Jenkins :jenkins-wiki:`CVS Plugin <CVS+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`CVS Plugin <cvs>`.
 
     :arg list repos: List of CVS repositories. (required)
 
@@ -835,7 +838,8 @@ def cvs(registry, xml_parent, data):
 def repo(registry, xml_parent, data):
     """yaml: repo
     Specifies the repo SCM repository for this job.
-    Requires the Jenkins :jenkins-wiki:`Repo Plugin <Repo+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Repo Plugin <repo>`.
 
     :arg str manifest-url: URL of the repo manifest (required)
     :arg str manifest-branch: The branch of the manifest to use (optional)
@@ -916,8 +920,9 @@ def repo(registry, xml_parent, data):
 def store(registry, xml_parent, data):
     """yaml: store
     Specifies the Visualworks Smalltalk Store repository for this job.
-    Requires the Jenkins :jenkins-wiki:`Visualworks Smalltalk Store Plugin
-    <Visualworks+Smalltalk+Store+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Visualworks Smalltalk Store Plugin
+    <visualworks-store>`.
 
     :arg str script: name of the Store script to run
     :arg str repository: name of the Store repository
@@ -1121,8 +1126,9 @@ def svn(registry, xml_parent, data):
 def tfs(registry, xml_parent, data):
     r"""yaml: tfs
     Specifies the Team Foundation Server repository for this job.
-    Requires the Jenkins :jenkins-wiki:`Team Foundation Server Plugin
-    <Team+Foundation+Server+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Team Foundation Server Plugin
+    <tfs>`.
 
     **NOTE**: TFS Password must be entered manually on the project if a
     user name is specified. The password will be overwritten with an empty
@@ -1225,8 +1231,9 @@ def tfs(registry, xml_parent, data):
 def workspace(registry, xml_parent, data):
     """yaml: workspace
     Specifies the cloned workspace for this job to use as a SCM source.
-    Requires the Jenkins :jenkins-wiki:`Clone Workspace SCM Plugin
-    <Clone+Workspace+SCM+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Clone Workspace SCM Plugin
+    <clone-workspace-scm>`.
 
     The job the workspace is cloned from must be configured with an
     clone-workspace publisher
@@ -1262,7 +1269,8 @@ def workspace(registry, xml_parent, data):
 def hg(self, xml_parent, data):
     """yaml: hg
     Specifies the mercurial SCM repository for this job.
-    Requires the Jenkins :jenkins-wiki:`Mercurial Plugin <Mercurial+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Mercurial Plugin <mercurial>`.
 
     :arg str url: URL of the hg repository (required)
     :arg str credentials-id: ID of credentials to use to connect (optional)
@@ -1354,8 +1362,9 @@ def openshift_img_streams(registry, xml_parent, data):
     OpenShift ImageStreams (which are abstractions of Docker repositories)
     and SCMs - versions / commit IDs of related artifacts
     (images vs. programmatics files)
-    Requires the Jenkins :jenkins-wiki:`OpenShift
-    Pipeline Plugin <OpenShift+Pipeline+Plugin>`._
+
+    Requires the Jenkins :jenkins-plugins:`OpenShift Pipeline Plugin
+    <openshift-pipeline>`.
 
     :arg str image-stream-name: The name of the ImageStream is what shows up
         in the NAME column if you dump all the ImageStream's with the
@@ -1405,7 +1414,8 @@ def openshift_img_streams(registry, xml_parent, data):
 def bzr(registry, xml_parent, data):
     """yaml: bzr
     Specifies the bzr SCM repository for this job.
-    Requires the Jenkins :jenkins-wiki:`Bazaar Plugin <Bazaar+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`Bazaar Plugin <bazaar>`.
 
     :arg str url: URL of the bzr branch (required)
     :arg bool clean-tree: Clean up the workspace (using bzr) before pulling
@@ -1470,7 +1480,8 @@ def url(registry, xml_parent, data):
     """yaml: url
 
     Watch for changes in, and download an artifact from a particular url.
-    Requires the Jenkins :jenkins-wiki:`URL SCM <URL+SCM>`.
+
+    Requires the Jenkins :jenkins-plugins:`URL SCM <URLSCM>`.
 
     :arg list url-list: List of URLs to watch. (required)
     :arg bool clear-workspace: If set to true, clear the workspace before
@@ -1498,7 +1509,8 @@ def dimensions(registry, xml_parent, data):
     """yaml: dimensions
 
     Specifies the Dimensions SCM repository for this job.
-    Requires Jenkins :jenkins-wiki:`Dimensions Plugin <Dimensions+Plugin>`.
+
+    Requires Jenkins :jenkins-plugins:`Dimensions Plugin <dimensionsscm>`.
 
     :arg str project: Project name of format PRODUCT_ID:PROJECT_NAME (required)
     :arg str permissions: Default Permissions for updated files
@@ -1600,7 +1612,8 @@ def dimensions(registry, xml_parent, data):
 def accurev(registry, xml_parent, data):
     """yaml: accurev
     Specifies the AccuRev SCM repository for this job.
-    Requires the Jenkins :jenkins-wiki:`AccuRev Plugin <AccuRev+Plugin>`.
+
+    Requires the Jenkins :jenkins-plugins:`AccuRev Plugin <accurev>`.
 
     :arg str depot: Depot you want to use for the current job (optional)
     :arg str stream: Stream where the build will be generated from (optional)
