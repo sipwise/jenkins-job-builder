@@ -158,18 +158,18 @@ def copyartifact(registry, xml_parent, data):
         last-successful is specified as which-build
     :arg bool fallback-to-last-successful: specifies to fallback to
         last successful build when upstream-build is specified as which-build
-    :arg string param: specifies to use a build parameter to get the build when
+    :arg str param: specifies to use a build parameter to get the build when
         build-param is specified as which-build
     :arg str upstream-project-name: specifies the project name of downstream
         when downstream-build is specified as which-build
     :arg str upstream-build-number: specifies the number of the build to
         find its downstream build when downstream-build is specified as
         which-build
-    :arg string parameter-filters: Filter matching jobs based on these
+    :arg str parameter-filters: Filter matching jobs based on these
         parameters (optional)
-    :arg string exclude: Specify paths or patterns of artifacts to
+    :arg str exclude: Specify paths or patterns of artifacts to
         exclude, even if specified in "Artifacts to copy". (default '')
-    :arg string result-var-suffix: The build number of the selected build
+    :arg str result-var-suffix: The build number of the selected build
         will be recorded into the variable named
         COPYARTIFACT_BUILD_NUMBER_(SUFFIX)
         for later build steps to reference. (default '')
@@ -3443,7 +3443,7 @@ def cloudformation(registry, xml_parent, data):
     :arg str secret-key: The Amazon API Secret Key (required)
     :arg int sleep: Number of seconds to wait before continuing to the
         next step (default 0)
-    :arg array region: The region to run cloudformation in (required)
+    :arg str region: The region to run cloudformation in (required)
 
         :region values:
             * **us-east-1**

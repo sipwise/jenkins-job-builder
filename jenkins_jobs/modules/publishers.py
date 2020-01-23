@@ -288,10 +288,10 @@ def hue_light(registry, xml_parent, data):
 
     :arg int light-id: ID of light. Define multiple lights by a comma as a
         separator (required)
-    :arg string pre-build: Colour of building state (default 'blue')
-    :arg string good-build: Colour of successful state (default 'green')
-    :arg string unstable-build: Colour of unstable state (default 'yellow')
-    :arg string bad-build: Colour of unsuccessful state (default 'red')
+    :arg str pre-build: Colour of building state (default 'blue')
+    :arg str good-build: Colour of successful state (default 'green')
+    :arg str unstable-build: Colour of unstable state (default 'yellow')
+    :arg str bad-build: Colour of unsuccessful state (default 'red')
 
     Full Example:
 
@@ -2888,7 +2888,7 @@ def copy_to_master(registry, xml_parent, data):
 
     :arg list includes: list of file patterns to copy
     :arg list excludes: list of file patterns to exclude
-    :arg string destination: absolute path into which the files will be copied.
+    :arg str destination: absolute path into which the files will be copied.
         If left blank they will be copied into the workspace of the current job
         (default '')
     :arg bool run-after-result: If this is checked then copying files back to
@@ -4847,7 +4847,7 @@ def ircbot(registry, xml_parent, data):
 
     Requires the Jenkins :jenkins-plugins:`IRC Plugin <ircbot>`.
 
-    :arg string strategy: When to send notifications
+    :arg str strategy: When to send notifications
 
         :strategy values:
             * **all** always (default)
@@ -4866,7 +4866,7 @@ def ircbot(registry, xml_parent, data):
         (default false)
     :arg bool notify-fixers: Whether to send notifications to the users that
         have fixed a broken build (default false)
-    :arg string message-type: Channel Notification Message.
+    :arg str message-type: Channel Notification Message.
 
         :message-type values:
             * **summary-scm** for summary and SCM changes (default)
@@ -4884,7 +4884,7 @@ def ircbot(registry, xml_parent, data):
                   * **password** (`str`) Channel password (optional)
                   * **notify-only** (`bool`) Set to true if you want to
                     disallow bot commands (default false)
-    :arg string matrix-notifier: notify for matrix projects
+    :arg str matrix-notifier: notify for matrix projects
         instant-messaging-plugin injects an additional
         field in the configuration form whenever the
         project is a multi-configuration project
@@ -5424,12 +5424,12 @@ def stash(registry, xml_parent, data):
     Requires the Jenkins :jenkins-plugins:`Bitbucket Server Notifier Plugin
     <stashNotifier>`.
 
-    :arg string url: Base url of Stash Server (default "")
-    :arg string username: Username of Stash Server (default "")
-    :arg string password: Password of Stash Server (default "")
-    :arg string credentials-id: Credentials of Stash Server (optional)
+    :arg str url: Base url of Stash Server (default "")
+    :arg str username: Username of Stash Server (default "")
+    :arg str password: Password of Stash Server (default "")
+    :arg str credentials-id: Credentials of Stash Server (optional)
     :arg bool   ignore-ssl: Ignore unverified SSL certificate (default false)
-    :arg string commit-sha1: Commit SHA1 to notify (default "")
+    :arg str commit-sha1: Commit SHA1 to notify (default "")
     :arg bool   include-build-number: Include build number in key
                 (default false)
 
@@ -6128,9 +6128,9 @@ def scan_build(registry, xml_parent, data):
     :arg bool mark-unstable: Mark build as unstable if the number of bugs
         exceeds a threshold (default false)
     :arg int threshold: Threshold for marking builds as unstable (default 0)
-    :arg string exclude-paths: Comma separated paths to exclude from reports
+    :arg str exclude-paths: Comma separated paths to exclude from reports
         (>=1.5) (default '')
-    :arg string report-folder: Folder where generated reports are located
+    :arg str report-folder: Folder where generated reports are located
         (>=1.7) (default 'clangScanBuildReports')
 
     Full Example:
@@ -6269,10 +6269,10 @@ def downstream_ext(registry, xml_parent, data):
     <downstream-ext>`.
 
     :arg list projects: Projects to build (required)
-    :arg string condition: comparison condition used for the criteria.
+    :arg str condition: comparison condition used for the criteria.
       One of 'equal-or-over', 'equal-or-under', 'equal'
       (default 'equal-or-over')
-    :arg string criteria: Trigger downstream job if build results meets
+    :arg str criteria: Trigger downstream job if build results meets
       condition. One of 'success', 'unstable', 'failure' or
       'aborted' (default 'success')
     :arg bool only-on-scm-change: Trigger only if downstream project

@@ -57,7 +57,7 @@ class Base(object):
             loaded from JJB Yaml files without variables interpolation or other
             yaml expansions.
 
-        :rtype: boolean
+        :rtype: bool
         """
 
         return False

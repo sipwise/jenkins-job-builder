@@ -355,7 +355,7 @@ def credentials_param(registry, xml_parent, data):
 
     :arg bool required: whether this parameter is required (optional, default
         false)
-    :arg string default: default credentials ID (optional)
+    :arg str default: default credentials ID (optional)
     :arg str description: a description of the parameter (optional)
 
     Example:

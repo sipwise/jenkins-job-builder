@@ -283,3 +283,17 @@ linkcheck_ignore = [
     "https://gitorious.org",
 ]
 linkcheck_timeout = 300
+
+nitpicky = True
+nitpick_ignore = [
+    ("py:class", "jenkins_jobs.modules.project_multijob.MultiJob"),
+    ("py:func", "jenkins_jobs.modules.builders.multijob"),
+    ("py:obj", "bool"),
+    ("py:obj", "dict"),
+    ("py:obj", "float"),
+    ("py:obj", "int"),
+    ("py:obj", "list"),
+    ("py:obj", "str"),
+    ("py:obj", "Element"),
+    ("py:obj", "YAMLParser"),
+]

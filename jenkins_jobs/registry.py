@@ -94,7 +94,7 @@ class ModuleRegistry(object):
         This allows module authors to differentiate generated XML output based
         on information such as specific plugin versions.
 
-        :arg string plugin_name: Either the shortName or longName of a plugin
+        :arg str plugin_name: Either the shortName or longName of a plugin
           as see in a query that looks like:
           ``http://<jenkins-hostname>/pluginManager/api/json?pretty&depth=2``
 
@@ -146,7 +146,7 @@ class ModuleRegistry(object):
         of component, and benefit from extensibility via Python
         entry points and Jenkins Job Builder :ref:`Macros <macro>`.
 
-        :arg string component_type: the name of the component
+        :arg str component_type: the name of the component
           (e.g., `builder`)
         :arg YAMLParser parser: the global YAML Parser
         :arg Element xml_parent: the parent XML element

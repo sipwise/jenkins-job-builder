@@ -752,7 +752,7 @@ def pollscm(registry, xml_parent, data):
 
     .. _cron:
 
-    :arg string cron: the polling interval (cron syntax, required)
+    :arg str cron: the polling interval (cron syntax, required)
     :arg bool ignore-post-commit-hooks: Ignore changes notified by SCM
         post-commit hooks. The subversion-plugin supports this since
         version 1.44. (default false)
@@ -815,8 +815,8 @@ def pollurl(registry, xml_parent, data):
     Trigger when the HTTP response from a URL changes.
     Requires the Jenkins :jenkins-plugins:`URLTrigger Plugin <urltrigger>`.
 
-    :arg string cron: cron syntax of when to run (default '')
-    :arg string polling-node: Restrict where the polling should run.
+    :arg str cron: cron syntax of when to run (default '')
+    :arg str polling-node: Restrict where the polling should run.
                               (optional)
     :arg list urls: List of URLs to monitor
 
@@ -824,9 +824,9 @@ def pollurl(registry, xml_parent, data):
             * **proxy** (`bool`) -- Activate the Jenkins proxy (default false)
             * **timeout** (`int`) -- Connect/read timeout in seconds
               (default 300)
-            * **username** (`string`) -- User name for basic authentication
+            * **username** (`str`) -- User name for basic authentication
               (optional)
-            * **password** (`string`) -- Password for basic authentication
+            * **password** (`str`) -- Password for basic authentication
               (optional)
             * **check-status** (`int`) -- Check for a specific HTTP status
               code (optional)
@@ -1051,16 +1051,16 @@ def github_pull_request(registry, xml_parent, data):
     :arg list org-list: orgs whose users should be white listed (optional)
     :arg bool allow-whitelist-orgs-as-admins: members of white listed orgs
         will have admin rights. (default false)
-    :arg string cron: cron syntax of when to run (optional)
-    :arg string trigger-phrase: when filled, commenting this phrase
+    :arg str cron: cron syntax of when to run (optional)
+    :arg str trigger-phrase: when filled, commenting this phrase
         in the pull request will trigger a build (optional)
     :arg bool only-trigger-phrase: only commenting the trigger phrase
         in the pull request will trigger a build (default false)
-    :arg string skip-build-phrase: when filled, adding this phrase to
+    :arg str skip-build-phrase: when filled, adding this phrase to
         the pull request title or body will not trigger a build (optional)
-    :arg string black-list-labels: list of GitHub labels for which the build
+    :arg str black-list-labels: list of GitHub labels for which the build
         should not be triggered (optional)
-    :arg string white-list-labels: list of GitHub labels for which the build
+    :arg str white-list-labels: list of GitHub labels for which the build
         should only be triggered. (Leave blank for 'any') (optional)
     :arg bool github-hooks: use github hook (default false)
     :arg bool permit-all: build every pull request automatically
@@ -1075,29 +1075,29 @@ def github_pull_request(registry, xml_parent, data):
         allows you to selectively prevent pull requests builds destined for
         these branches. Supports regular expressions (e.g. 'master',
         'feature-.*'). (optional)
-    :arg string auth-id: the auth id to use (optional)
-    :arg string build-desc-template: the template for build descriptions in
+    :arg str auth-id: the auth id to use (optional)
+    :arg str build-desc-template: the template for build descriptions in
         jenkins (optional)
-    :arg string status-context: the context to include on PR status comments
+    :arg str status-context: the context to include on PR status comments
         (optional)
-    :arg string triggered-status: the status message to set when the build has
+    :arg str triggered-status: the status message to set when the build has
         been triggered (optional)
-    :arg string started-status: the status comment to set when the build has
+    :arg str started-status: the status comment to set when the build has
         been started (optional)
-    :arg string status-url: the status URL to set (optional)
+    :arg str status-url: the status URL to set (optional)
     :arg bool status-add-test-results: add test result one-liner to status
         message (optional)
-    :arg string success-status: the status message to set if the job succeeds
+    :arg str success-status: the status message to set if the job succeeds
         (optional)
-    :arg string failure-status: the status message to set if the job fails
+    :arg str failure-status: the status message to set if the job fails
         (optional)
-    :arg string error-status: the status message to set if the job errors
+    :arg str error-status: the status message to set if the job errors
         (optional)
-    :arg string success-comment: comment to add to the PR on a successful job
+    :arg str success-comment: comment to add to the PR on a successful job
         (optional)
-    :arg string failure-comment: comment to add to the PR on a failed job
+    :arg str failure-comment: comment to add to the PR on a failed job
         (optional)
-    :arg string error-comment: comment to add to the PR on an errored job
+    :arg str error-comment: comment to add to the PR on an errored job
         (optional)
     :arg bool cancel-builds-on-update: cancel existing builds when a PR is
         updated (optional)
@@ -1298,27 +1298,27 @@ def gitlab_merge_request(registry, xml_parent, data):
     Requires the Jenkins :jenkins-plugins:`Gitlab MergeRequest Builder Plugin
     <ghprb>`.
 
-    :arg string cron: Cron syntax of when to run (required)
-    :arg string project-path: Gitlab-relative path to project (required)
-    :arg string target-branch-regex: Allow execution of this job for certain
+    :arg str cron: Cron syntax of when to run (required)
+    :arg str project-path: Gitlab-relative path to project (required)
+    :arg str target-branch-regex: Allow execution of this job for certain
         branches only (default ''). Requires Gitlab MergeRequest Builder
         Plugin >= 2.0.0
-    :arg string use-http-url: Use the HTTP(S) URL to fetch/clone repository
+    :arg str use-http-url: Use the HTTP(S) URL to fetch/clone repository
         (default false)
-    :arg string assignee-filter: Only MRs with this assigned user will
+    :arg str assignee-filter: Only MRs with this assigned user will
         trigger the build automatically (default 'jenkins')
-    :arg string tag-filter: Only MRs with this label will trigger the build
+    :arg str tag-filter: Only MRs with this label will trigger the build
         automatically (default 'Build')
-    :arg string trigger-comment: Force build if this comment is the last
+    :arg str trigger-comment: Force build if this comment is the last
         in merge reguest (default '')
-    :arg string publish-build-progress-messages: Publish build progress
+    :arg str publish-build-progress-messages: Publish build progress
         messages (except build failed) (default true)
 
         .. deprecated:: 2.0.0
 
-    :arg string auto-close-failed: On failure, auto close the request
+    :arg str auto-close-failed: On failure, auto close the request
         (default false)
-    :arg string auto-merge-passed: On success, auto merge the request
+    :arg str auto-merge-passed: On success, auto merge the request
         (default false)
 
     Example (version < 2.0.0):
@@ -2324,39 +2324,39 @@ def generic_webhook_trigger(registry, xml_parent, data):
     <generic-webhook-trigger>`.
 
 
-    :arg string token: A token to use to trigger the job. (default '')
+    :arg str token: A token to use to trigger the job. (default '')
     :arg bool print-post-content: Print post content in job log.
     :arg bool print-contrib-var: Print contributed variables in job log.
     :arg bool silent-response: Avoid responding with information about
      triggered jobs.
-    :arg string cause: This will be displayed in any triggered job.
-    :arg string regex-filter-expression: Regular expression to test on the
+    :arg str cause: This will be displayed in any triggered job.
+    :arg str regex-filter-expression: Regular expression to test on the
      evaluated text specified in regex-filter-text
-    :arg string regex-filter-text: Text to test for the given
+    :arg str regex-filter-text: Text to test for the given
      regexp-filter-expression.
 
     :arg list post-content-params: Parameters to use from posted JSON/XML
 
-        :post-content-params: * **type** (`string`) -- JSONPath or XPath
-            * **key** (`string`) -- Variable name
-            * **value** (`string`) -- Expression to evaluate in POST content.
+        :post-content-params: * **type** (`str`) -- JSONPath or XPath
+            * **key** (`str`) -- Variable name
+            * **value** (`str`) -- Expression to evaluate in POST content.
               Use JSONPath for JSON or XPath for XML.
-            * **regex-filter** (`string`) -- Anything in the evaluated value,
+            * **regex-filter** (`str`) -- Anything in the evaluated value,
               matching this regular expression, will be removed. (optional)
-            * **default-value** (`string`) -- This value will be used if
+            * **default-value** (`str`) -- This value will be used if
               expression does not match anything. (optional)
 
     :arg list request-params: Parameters to use passed in as request arguments
 
-        :request-params: * **key** (`string`) -- Name of request parameter
-            * **regex-filter** (`string`) -- Anything in the evaluated value,
+        :request-params: * **key** (`str`) -- Name of request parameter
+            * **regex-filter** (`str`) -- Anything in the evaluated value,
               matching this regular expression, will be removed. (optional)
     :arg list header-params: Parameters to use passed in as headers
 
-        :header-params: * **key** (`string`) -- Name of request header in
+        :header-params: * **key** (`str`) -- Name of request header in
               lowercase. Resulting variable name has '_' instead of '-'
               characters.
-            * **regex-filter** (`string`) -- Anything in the evaluated value,
+            * **regex-filter** (`str`) -- Anything in the evaluated value,
               matching this regular expression, will be removed. (optional)
 
     Example:

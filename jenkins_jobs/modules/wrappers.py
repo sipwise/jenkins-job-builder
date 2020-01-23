@@ -501,7 +501,7 @@ def ansicolor(registry, xml_parent, data):
 
     Requires the Jenkins :jenkins-plugins:`Ansi Color Plugin <ansicolor>`.
 
-    :arg string colormap: Color mapping to use (default xterm)
+    :arg str colormap: Color mapping to use (default xterm)
 
     Minimal Example:
 
@@ -1537,7 +1537,7 @@ def release(registry, xml_parent, data):
     :arg bool keep-forever: Keep build forever (default true)
     :arg bool override-build-parameters: Enable build-parameter override
         (default false)
-    :arg string version-template: Release version template (default '')
+    :arg str version-template: Release version template (default '')
     :arg list parameters: Release parameters (see the :ref:`Parameters` module)
     :arg list pre-build: Pre-build steps (see the :ref:`Builders` module)
     :arg list post-build: Post-build steps (see :ref:`Builders`)
@@ -1771,7 +1771,7 @@ def pre_scm_buildstep(registry, xml_parent, data):
     Requires the Jenkins :jenkins-plugins:`Pre SCM BuildStep
     <preSCMbuildstep>`.
 
-    :arg string failOnError: Specifies if the job should fail on error
+    :arg str failOnError: Specifies if the job should fail on error
         (plugin >= 0.3) (default false).
     :arg list buildsteps: List of build steps to execute
 
