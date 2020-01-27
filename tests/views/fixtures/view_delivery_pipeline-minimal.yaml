@@ -1,0 +1,6 @@
+name: Test pipeline
+description: Test jobs created by JJB.
+view-type: delivery_pipeline
+components:
+  - name: Test
+    initial-job: Test-A
