@@ -1,0 +1,16 @@
+name: Test pipeline
+description: Test jobs created by JJB.
+view-type: delivery_pipeline
+components:
+  - name: Test
+    initial-job: Test-A
+regexps:
+  - regexp: ^Test-A
+no-of-pipelines: 1
+allow-manual-triggers: yes
+show-total-build-time: yes
+allow-rebuild: yes
+allow-pipeline-start: yes
+allow-abort: yes
+paging-enabled: yes
+link-to-console-log: yes
