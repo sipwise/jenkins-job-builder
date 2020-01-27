@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<se.diabol.jenkins.pipeline.DeliveryPipelineView plugin="delivery-pipeline-plugin">
+  <description>Test jobs created by JJB.</description>
+  <filterExecutors>false</filterExecutors>
+  <filterQueue>false</filterQueue>
+  <aggregatedChangesGroupingPattern/>
+  <allowAbort>false</allowAbort>
+  <allowManualTriggers>false</allowManualTriggers>
+  <allowPipelineStart>false</allowPipelineStart>
+  <allowRebuild>false</allowRebuild>
+  <linkRelative>false</linkRelative>
+  <linkToConsoleLog>false</linkToConsoleLog>
+  <maxNumberOfVisiblePipelines>-1</maxNumberOfVisiblePipelines>
+  <name>Test pipeline</name>
+  <noOfColumns>1</noOfColumns>
+  <noOfPipelines>3</noOfPipelines>
+  <pagingEnabled>false</pagingEnabled>
+  <showAbsoluteDateTime>false</showAbsoluteDateTime>
+  <showAggregatedChanges>false</showAggregatedChanges>
+  <showAggregatedPipeline>false</showAggregatedPipeline>
+  <showAvatars>false</showAvatars>
+  <showChanges>false</showChanges>
+  <showDescription>false</showDescription>
+  <showPromotions>false</showPromotions>
+  <showStaticAnalysisResults>false</showStaticAnalysisResults>
+  <showTestResults>false</showTestResults>
+  <showTotalBuildTime>false</showTotalBuildTime>
+  <updateInterval>2</updateInterval>
+  <sorting>None</sorting>
+  <componentSpecs>
+    <se.diabol.jenkins.pipeline.DeliveryPipelineView_-ComponentSpec>
+      <name>Test</name>
+      <firstJob>Test-A</firstJob>
+      <lastJob/>
+      <showUpstream>false</showUpstream>
+    </se.diabol.jenkins.pipeline.DeliveryPipelineView_-ComponentSpec>
+  </componentSpecs>
+</se.diabol.jenkins.pipeline.DeliveryPipelineView>
