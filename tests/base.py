@@ -46,6 +46,7 @@ from jenkins_jobs.modules import project_maven
 from jenkins_jobs.modules import project_multibranch
 from jenkins_jobs.modules import project_multijob
 from jenkins_jobs.modules import view_all
+from jenkins_jobs.modules import view_delivery_pipeline
 from jenkins_jobs.modules import view_list
 from jenkins_jobs.modules import view_nested
 from jenkins_jobs.modules import view_pipeline
@@ -237,6 +238,8 @@ class BaseScenariosTestCase(testscenarios.TestWithScenarios, BaseTestCase):
         if "view-type" in yaml_content:
             if yaml_content["view-type"] == "all":
                 project = view_all.All(registry)
+            elif yaml_content["view-type"] == "delivery_pipeline":
+                project = view_delivery_pipeline.DeliveryPipeline(registry)
             elif yaml_content["view-type"] == "list":
                 project = view_list.List(registry)
             elif yaml_content["view-type"] == "nested":
