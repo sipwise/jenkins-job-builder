@@ -66,8 +66,8 @@ class Workflow(jenkins_jobs.modules.base.Base):
             xml_parent,
             "definition",
             {
-                "plugin": "workflow-cps",
                 "class": "org.jenkinsci.plugins." "workflow.cps.CpsFlowDefinition",
+                "plugin": "workflow-cps",
             },
         )
 

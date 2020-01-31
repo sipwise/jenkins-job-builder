@@ -1003,7 +1003,7 @@ def rbenv(registry, xml_parent, data):
 
     ro_class = "Jenkins::Tasks::BuildWrapperProxy"
     ro = XML.SubElement(
-        rpo, "ruby-object", {"ruby-class": ro_class, "pluginid": "rbenv"}
+        rpo, "ruby-object", {"pluginid": "rbenv", "ruby-class": ro_class}
     )
 
     XML.SubElement(
@@ -1011,7 +1011,7 @@ def rbenv(registry, xml_parent, data):
     ).text = "rbenv"
 
     o = XML.SubElement(
-        ro, "object", {"ruby-class": "RbenvWrapper", "pluginid": "rbenv"}
+        ro, "object", {"pluginid": "rbenv", "ruby-class": "RbenvWrapper"}
     )
 
     mapping = [
@@ -1033,8 +1033,8 @@ def rbenv(registry, xml_parent, data):
     for elem in mapping:
         (optname, xmlname, val) = elem[:3]
         elem_tag = o.find(xmlname)
-        elem_tag.set("ruby-class", "String")
         elem_tag.set("pluginid", "rbenv")
+        elem_tag.set("ruby-class", "String")
 
     ignore_local_class = "FalseClass"
 
@@ -1046,7 +1046,7 @@ def rbenv(registry, xml_parent, data):
     XML.SubElement(
         o,
         "ignore__local__version",
-        {"ruby-class": ignore_local_class, "pluginid": "rbenv"},
+        {"pluginid": "rbenv", "ruby-class": ignore_local_class},
     )
 
 

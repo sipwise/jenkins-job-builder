@@ -93,8 +93,8 @@ class Pipeline(jenkins_jobs.modules.base.Base):
                 xml_parent,
                 "definition",
                 {
-                    "plugin": "workflow-cps",
                     "class": "org.jenkinsci.plugins." "workflow.cps.CpsFlowDefinition",
+                    "plugin": "workflow-cps",
                 },
             )
             XML.SubElement(xml_definition, "script").text = data["dsl"]
@@ -103,9 +103,9 @@ class Pipeline(jenkins_jobs.modules.base.Base):
                 xml_parent,
                 "definition",
                 {
-                    "plugin": "workflow-cps",
                     "class": "org.jenkinsci.plugins.workflow.cps."
                     "CpsScmFlowDefinition",
+                    "plugin": "workflow-cps",
                 },
             )
         else:
