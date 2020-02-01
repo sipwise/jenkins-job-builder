@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_c2d52a1c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2020-02-01T19:46:38Z",
+      "side": 1,
+      "message": "Can you update the commit message so that it\u0027s not a very long summary line?\n\nI\u0027d recommend following the guidelines discussed here https://chris.beams.io/posts/git-commit/#seven-rules",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 95
+      },
+      "revId": "88c5f1a2c72531447ea053b3a70f83cdc44a193b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
