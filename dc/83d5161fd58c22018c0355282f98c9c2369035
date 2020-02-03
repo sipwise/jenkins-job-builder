@@ -1,0 +1,9 @@
+Code-Review+2: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Code-Review+2: Antoine Musso <hashar@free.fr>
+Workflow+1: Antoine Musso <hashar@free.fr>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 03 Feb 2020 23:37:36 +0000
+Reviewed-on: https://review.opendev.org/705269
+Project: jjb/jenkins-job-builder
+Branch: refs/heads/master
