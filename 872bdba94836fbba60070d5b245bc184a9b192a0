@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_7af041db",
+        "filename": "jenkins_jobs/modules/view_delivery_pipeline.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2020-02-07T15:24:24Z",
+      "side": 1,
+      "message": "These 2 files need to actually match what\u0027s in the fixtures repo otherwise it won\u0027t properly load the examples.\n\nThese days we recommend using 2 examples a \"full\" example and a \"minimal\" example. To show what the absolute minimum configuration is needed to get the view working (proving defaults work) as compared to an example with every option set to a non-default setting.",
+      "range": {
+        "startLine": 98,
+        "startChar": 0,
+        "endLine": 102,
+        "endChar": 66
+      },
+      "revId": "872bdba94836fbba60070d5b245bc184a9b192a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
