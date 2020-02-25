@@ -4460,6 +4460,11 @@ def ansible_playbook(parser, xml_parent, data):
         XML.SubElement(plugin, "sudoUser").text = data.get("sudo-user", "")
     else:
         XML.SubElement(plugin, "sudo").text = "false"
+    if data.get("become", False):
+        XML.SubElement(plugin, "become").text = "true"
+        XML.SubElement(plugin, "becomeUser").text = data.get("become-user", "")
+    else:
+        XML.SubElement(plugin, "become").text = "false"
     XML.SubElement(plugin, "forks").text = str(data.get("workers", "5"))
     XML.SubElement(plugin, "unbufferedOutput").text = str(
         data.get("unbuffered-output", True)
