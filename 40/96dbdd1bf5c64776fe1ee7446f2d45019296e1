@@ -1,0 +1,9 @@
+Code-Review+2: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Code-Review+1: Mattia Rizzolo <mattia@mapreri.org>
+Workflow+1: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 04 Mar 2020 02:16:25 +0000
+Reviewed-on: https://review.opendev.org/706317
+Project: jjb/jenkins-job-builder
+Branch: refs/heads/master
