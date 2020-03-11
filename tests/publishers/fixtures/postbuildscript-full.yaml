@@ -13,12 +13,14 @@ publishers:
                   - NOT_BUILT
                   - ABORTED
                   - FAILURE
+              execute-on: matrix
         groovy-script:
             - file-path: '/fakepath/groovy'
               role: MASTER
               build-on:
                   - SUCCESS
                   - UNSTABLE
+              execute-on: axes
             - file-path: '/fakepath/groovy-too'
               role: SLAVE
               build-on:
@@ -30,6 +32,7 @@ publishers:
               build-on:
                   - SUCCESS
                   - UNSTABLE
+              execute-on: matrix
               content: 'println "Hello world!"'
             - role: SLAVE
               build-on:
@@ -45,6 +48,7 @@ publishers:
               build-on:
                   - SUCCESS
                   - UNSTABLE
+              execute-on: axes
               build-steps:
                   - shell: 'echo "Hello world!"'
             - role: SLAVE
@@ -52,6 +56,7 @@ publishers:
                   - NOT_BUILT
                   - ABORTED
                   - FAILURE
+              execute-on: both
               build-steps:
                   - shell: 'echo "Hello world!"'
                   - shell: 'echo "Goodbye world!"'
