@@ -4292,6 +4292,12 @@ def postbuildscript(registry, xml_parent, data):
         if job will be successfully completed but publishing script will return
         non zero exit code (default false)
 
+    Options for versions >= 0.13 of plugin:
+
+    :arg str execute-on: For matrix projects, scripts can be run after each
+        axis is built (`axes`), after all axis of the matrix are built
+        (`matrix`) or after each axis AND the matrix are built (`both`).
+
     Deprecated Options for versions < 2.0 of plugin:
 
     :arg bool onsuccess: Deprecated, replaced with script-only-if-succeeded
@@ -4300,10 +4306,6 @@ def postbuildscript(registry, xml_parent, data):
     :arg bool onfailure: Deprecated, replaced with script-only-if-failed
     :arg bool script-only-if-failed: Scripts and builders are run only if the
         build failed (default false)
-
-    :arg str execute-on: For matrix projects, scripts can be run after each
-        axis is built (`axes`), after all axis of the matrix are built
-        (`matrix`) or after each axis AND the matrix are built (`both`).
 
     The `script-only-if-succeeded` and `bool script-only-if-failed` options are
     confusing. If you want the post build to always run regardless of the build
@@ -4489,6 +4491,8 @@ def postbuildscript(registry, xml_parent, data):
         else:
             failure_xml.text = str(data.get("onfailure", False)).lower()
 
+    # executeOn feature was added in version 0.13 of plugin (JENKINS-11219)
+    if version >= pkg_resources.parse_version("0.13"):
         # TODO: we may want to avoid setting "execute-on" on non-matrix jobs,
         # either by skipping this part or by raising an error to let the user
         # know an attempt was made to set execute-on on a non-matrix job.
