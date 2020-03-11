@@ -4256,6 +4256,10 @@ def postbuildscript(registry, xml_parent, data):
                            the scripts. Valid options:
                            SUCCESS / UNSTABLE / FAILURE / NOT_BUILT / ABORTED
                            (default 'SUCCESS')
+                         * ** execute-on (`str`) - For matrix projects, scripts
+                           can be run after each axis is built (`axes`), after
+                           all axis of the matrix are built (`matrix`) or after
+                           each axis AND the matrix are built (`both`). (default `both`)
 
     :arg list groovy-script: Paths to Groovy scripts
 
@@ -4266,6 +4270,10 @@ def postbuildscript(registry, xml_parent, data):
                           the scripts. Valid options:
                           SUCCESS / UNSTABLE / FAILURE / NOT_BUILT / ABORTED
                           (default 'SUCCESS')
+                        * ** execute-on (`str`) - For matrix projects, scripts
+                          can be run after each axis is built (`axes`), after
+                          all axis of the matrix are built (`matrix`) or after
+                          each axis AND the matrix are built (`both`). (default `both`)
 
     :arg list groovy: Inline Groovy
 
@@ -4276,6 +4284,10 @@ def postbuildscript(registry, xml_parent, data):
                    the scripts. Valid options:
                    SUCCESS / UNSTABLE / FAILURE / NOT_BUILT / ABORTED
                    (default 'SUCCESS')
+                 * ** execute-on (`str`) - For matrix projects, scripts
+                   can be run after each axis is built (`axes`), after
+                   all axis of the matrix are built (`matrix`) or after
+                   each axis AND the matrix are built (`both`). (default `both`)
 
     :arg list builders: Execute any number of supported Jenkins builders.
 
@@ -4287,6 +4299,10 @@ def postbuildscript(registry, xml_parent, data):
                      the scripts. Valid options:
                      SUCCESS / UNSTABLE / FAILURE / NOT_BUILT / ABORTED
                      (default 'SUCCESS')
+                   * ** execute-on (`str`) - For matrix projects, scripts
+                     can be run after each axis is built (`axes`), after
+                     all axis of the matrix are built (`matrix`) or after
+                     each axis AND the matrix are built (`both`). (default `both`)
 
     :arg bool mark-unstable-if-failed: Build will be marked unstable
         if job will be successfully completed but publishing script will return
@@ -4300,7 +4316,6 @@ def postbuildscript(registry, xml_parent, data):
     :arg bool onfailure: Deprecated, replaced with script-only-if-failed
     :arg bool script-only-if-failed: Scripts and builders are run only if the
         build failed (default false)
-
     :arg str execute-on: For matrix projects, scripts can be run after each
         axis is built (`axes`), after all axis of the matrix are built
         (`matrix`) or after each axis AND the matrix are built (`both`).
@@ -4355,6 +4370,18 @@ def postbuildscript(registry, xml_parent, data):
 
     if version >= pkg_resources.parse_version("2.0"):
 
+        def add_execute_on(bs_data, result_xml):
+            valid_values = ("matrix", "axes", "both")
+            execute_on = bs_data.get("execute-on")
+            if not execute_on:
+                return
+            if execute_on not in valid_values:
+                raise JenkinsJobsException(
+                    "execute-on must be one of %s, got %s" % valid_values, execute_on
+                )
+            execute_on_xml = XML.SubElement(result_xml, "executeOn")
+            execute_on_xml.text = execute_on.upper()
+
         ################
         # Script Files #
         ################
@@ -4370,6 +4397,8 @@ def postbuildscript(registry, xml_parent, data):
             for result in gs_data.get("build-on", ["SUCCESS"]):
                 XML.SubElement(results_xml, "string").text = result
 
+            add_execute_on(gs_data, x)
+
             helpers.convert_mapping_to_xml(
                 x, gs_data, script_mapping, fail_required=True
             )
@@ -4381,6 +4410,8 @@ def postbuildscript(registry, xml_parent, data):
 
             for result in gs_data.get("build-on", ["SUCCESS"]):
                 XML.SubElement(results_xml, "string").text = result
+
+            add_execute_on(gs_data, x)
 
             helpers.convert_mapping_to_xml(
                 x, gs_data, script_mapping, fail_required=True
@@ -4401,6 +4432,8 @@ def postbuildscript(registry, xml_parent, data):
             for result in gs_data.get("build-on", ["SUCCESS"]):
                 XML.SubElement(results_xml, "string").text = result
 
+            add_execute_on(gs_data, x)
+
             helpers.convert_mapping_to_xml(
                 x, gs_data, groovy_mapping, fail_required=True
             )
@@ -4418,6 +4451,8 @@ def postbuildscript(registry, xml_parent, data):
 
             for result in bs_data.get("build-on", ["SUCCESS"]):
                 XML.SubElement(results_xml, "string").text = result
+
+            add_execute_on(bs_data, x)
 
             helpers.convert_mapping_to_xml(
                 x, bs_data, builder_mapping, fail_required=True

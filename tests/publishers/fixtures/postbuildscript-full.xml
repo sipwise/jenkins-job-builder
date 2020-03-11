@@ -20,6 +20,7 @@
               <string>ABORTED</string>
               <string>FAILURE</string>
             </results>
+            <executeOn>MATRIX</executeOn>
             <role>SLAVE</role>
             <filePath>/fakepath/generic-two</filePath>
             <scriptType>GENERIC</scriptType>
@@ -29,6 +30,7 @@
               <string>SUCCESS</string>
               <string>UNSTABLE</string>
             </results>
+            <executeOn>AXES</executeOn>
             <role>MASTER</role>
             <filePath>/fakepath/groovy</filePath>
             <scriptType>GROOVY</scriptType>
@@ -50,6 +52,7 @@
               <string>SUCCESS</string>
               <string>UNSTABLE</string>
             </results>
+            <executeOn>MATRIX</executeOn>
             <role>MASTER</role>
             <content>println &quot;Hello world!&quot;</content>
           </org.jenkinsci.plugins.postbuildscript.model.Script>
@@ -71,6 +74,7 @@ println &quot;Multi-line script&quot;
               <string>SUCCESS</string>
               <string>UNSTABLE</string>
             </results>
+            <executeOn>AXES</executeOn>
             <role>MASTER</role>
             <buildSteps>
               <hudson.tasks.Shell>
@@ -84,6 +88,7 @@ println &quot;Multi-line script&quot;
               <string>ABORTED</string>
               <string>FAILURE</string>
             </results>
+            <executeOn>BOTH</executeOn>
             <role>SLAVE</role>
             <buildSteps>
               <hudson.tasks.Shell>
