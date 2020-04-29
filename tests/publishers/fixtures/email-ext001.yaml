@@ -33,3 +33,4 @@ publishers:
         - requester
         - culprits
         - recipients
+        - upstream-committers
