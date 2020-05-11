@@ -521,6 +521,9 @@ def authorization(registry, xml_parent, data):
     # get the folder name if it exists
     in_a_folder = data.pop("_use_folder_perms", None) if data else None
 
+    # check if it's a folder or a job
+    is_a_folder = data.pop("_is_a_folder", None) if data else False
+
     credentials = "com.cloudbees.plugins.credentials.CredentialsProvider."
     ownership = "com.synopsys.arc.jenkins.plugins.ownership.OwnershipPlugin."
 
@@ -549,10 +552,11 @@ def authorization(registry, xml_parent, data):
 
     if data:
         if in_a_folder:
-            matrix = XML.SubElement(
-                xml_parent,
-                "com.cloudbees.hudson.plugins.folder.properties.AuthorizationMatrixProperty",
-            )
+            if is_a_folder:
+                element_name = "com.cloudbees.hudson.plugins.folder.properties.AuthorizationMatrixProperty"
+            else:
+                element_name = "hudson.security.AuthorizationMatrixProperty"
+            matrix = XML.SubElement(xml_parent, element_name)
             XML.SubElement(
                 matrix,
                 "inheritanceStrategy",
@@ -1266,13 +1270,14 @@ class Properties(jenkins_jobs.modules.base.Base):
             if next(iter(prop)) == "authorization":
                 # Only projects are placed in folders
                 if "project-type" in data:
-                    if data["project-type"] == "folder":
+                    if data["project-type"] in ("folder", "miltibranch"):
                         prop["authorization"]["_use_folder_perms"] = True
-                    elif data["project-type"] == "multibranch":
-                        prop["authorization"]["_use_folder_perms"] = True
+                        prop["authorization"]["_is_a_folder"] = True
                     else:
                         prop["authorization"]["_use_folder_perms"] = "folder" in data
+                        prop["authorization"]["_is_a_folder"] = False
                 else:
                     prop["authorization"]["_use_folder_perms"] = False
+                    prop["authorization"]["_is_a_folder"] = False
 
             self.registry.dispatch("property", properties, prop)

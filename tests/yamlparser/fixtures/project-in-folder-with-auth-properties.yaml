@@ -1,0 +1,8 @@
+- job:
+    folder: auth-jobs
+    name: auth-job-test
+    project-type: freestyle
+    properties:
+    - authorization:
+        auser:
+          - job-build
