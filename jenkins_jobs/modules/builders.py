@@ -4445,8 +4445,8 @@ def ansible_playbook(parser, xml_parent, data):
         (default true)
     :arg bool colorized-output: Check this box to allow ansible to render ANSI
         color codes in the Jenkins console. (default false)
-    :arg bool host-key-checking: Check this box to enforce the validation of
-        the hosts SSH server keys. (default false)
+    :arg bool disable-host-key-checking: Check this box to disable the
+        validation of the hosts SSH server keys. (>= 1.0) (default false)
     :arg str additional-parameters: Any additional parameters to pass to the
         ansible command. (default '')
     :arg list variables: List of extra variables to be passed to ansible.
@@ -4456,6 +4456,12 @@ def ansible_playbook(parser, xml_parent, data):
             * **name** (`str`) -- Name of variable (required)
             * **value** (`str`) -- Desired value (default '')
             * **hidden** (`bool`) -- Hide variable in build log (default false)
+
+    Outdated Options for versions >= 1.0 of plugin:
+
+    :arg bool host-key-checking: Outdated, replaced with disable-host-key-checking.
+        Check this box to enforce the validation of the hosts SSH server keys.
+        (< 1.0) (default true)
 
     Example:
 
@@ -4467,6 +4473,12 @@ def ansible_playbook(parser, xml_parent, data):
 
     .. literalinclude::
         /../../tests/builders/fixtures/ansible-playbook002.yaml
+       :language: yaml
+
+    Example(s) versions < 1.0:
+
+    .. literalinclude::
+        /../../tests/builders/fixtures/ansible-playbook005.yaml
        :language: yaml
     """
     plugin = XML.SubElement(
@@ -4528,8 +4540,11 @@ def ansible_playbook(parser, xml_parent, data):
     XML.SubElement(plugin, "colorizedOutput").text = str(
         data.get("colorized-output", False)
     ).lower()
+    XML.SubElement(plugin, "disableHostKeyChecking").text = str(
+        data.get("disable-host-key-checking", False)
+    ).lower()
     XML.SubElement(plugin, "hostKeyChecking").text = str(
-        data.get("host-key-checking", False)
+        data.get("host-key-checking", True)
     ).lower()
     XML.SubElement(plugin, "additionalParameters").text = str(
         data.get("additional-parameters", "")

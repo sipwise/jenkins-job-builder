@@ -3,9 +3,7 @@
   <builders>
     <org.jenkinsci.plugins.ansible.AnsiblePlaybookBuilder>
       <playbook>path/to/playbook.yml</playbook>
-      <inventory class="org.jenkinsci.plugins.ansible.InventoryPath">
-        <path>path/to/inventory-file</path>
-      </inventory>
+      <inventory class="org.jenkinsci.plugins.ansible.InventoryDoNotSpecify"/>
       <limit/>
       <tags/>
       <skippedTags/>
@@ -13,21 +11,15 @@
       <credentialsId/>
       <vaultCredentialsId/>
       <sudo>false</sudo>
-      <become>false</become>
+      <become>true</become>
+      <becomeUser>cloud-user</becomeUser>
       <forks>5</forks>
       <unbufferedOutput>true</unbufferedOutput>
       <colorizedOutput>false</colorizedOutput>
       <disableHostKeyChecking>false</disableHostKeyChecking>
-      <hostKeyChecking>true</hostKeyChecking>
+      <hostKeyChecking>false</hostKeyChecking>
       <additionalParameters/>
       <copyCredentialsInWorkspace>false</copyCredentialsInWorkspace>
-      <extraVars>
-        <org.jenkinsci.plugins.ansible.ExtraVar>
-          <key>my_variable</key>
-          <value>my_value</value>
-          <hidden>false</hidden>
-        </org.jenkinsci.plugins.ansible.ExtraVar>
-      </extraVars>
     </org.jenkinsci.plugins.ansible.AnsiblePlaybookBuilder>
   </builders>
 </project>

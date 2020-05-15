@@ -22,6 +22,7 @@ machine02.example.com
       <forks>2</forks>
       <unbufferedOutput>false</unbufferedOutput>
       <colorizedOutput>true</colorizedOutput>
+      <disableHostKeyChecking>false</disableHostKeyChecking>
       <hostKeyChecking>true</hostKeyChecking>
       <additionalParameters>-vvv</additionalParameters>
       <copyCredentialsInWorkspace>false</copyCredentialsInWorkspace>

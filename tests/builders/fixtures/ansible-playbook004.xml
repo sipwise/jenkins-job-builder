@@ -16,7 +16,8 @@
       <forks>5</forks>
       <unbufferedOutput>true</unbufferedOutput>
       <colorizedOutput>false</colorizedOutput>
-      <hostKeyChecking>false</hostKeyChecking>
+      <disableHostKeyChecking>false</disableHostKeyChecking>
+      <hostKeyChecking>true</hostKeyChecking>
       <additionalParameters/>
       <copyCredentialsInWorkspace>false</copyCredentialsInWorkspace>
     </org.jenkinsci.plugins.ansible.AnsiblePlaybookBuilder>

@@ -19,7 +19,6 @@ builders:
       sudo-user: "cloud-user"
       unbuffered-output: false
       colorized-output: true
-      host-key-checking: true
       additional-parameters: "-vvv"
       variables:
         - name: "complete_var"

@@ -3,4 +3,6 @@ builders:
   - ansible-playbook:
       playbook: "path/to/playbook.yml"
       inventory-type: "do-not-specify"
-      disable-host-key-checking: true
+      become: "yes"
+      become-user: "cloud-user"
+      host-key-checking: false
