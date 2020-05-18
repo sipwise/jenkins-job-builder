@@ -1,0 +1,9 @@
+Code-Review+1: Sergey Lebedev <s.lebedev@li.ru>
+Code-Review+2: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Workflow+1: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Mon, 18 May 2020 14:38:35 +0000
+Reviewed-on: https://review.opendev.org/728815
+Project: jjb/jenkins-job-builder
+Branch: refs/heads/master
