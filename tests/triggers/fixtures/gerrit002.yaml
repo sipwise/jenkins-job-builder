@@ -21,6 +21,5 @@ triggers:
           notbuilt: true
       silent: false
       escape-quotes: false
-      no-name-and-email: false
       dynamic-trigger-enabled: true
       dynamic-trigger-url: http://myhost/mytrigger

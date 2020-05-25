@@ -450,10 +450,39 @@ def gerrit(registry, xml_parent, data):
         parameters (default true)
     :arg bool no-name-and-email: Do not pass compound 'name and email'
         parameters (default false)
+
+        .. deprecated:: 3.5.0  Please use `name-and-email-parameter-mode`
+            parameter.
+
     :arg bool readable-message: If parameters regarding multiline text,
         e.g. commit message, should be as human readable or not. If false,
         those parameters are Base64 encoded to keep environment variables
         clean. (default false)
+
+        .. deprecated:: 3.5.0  Please use `commit-message-parameter-mode`
+            parameter.
+
+    :arg str name-and-email-parameter-mode: The parameter mode for the compound
+        "name and email" parameters (like GERRIT_PATCHSET_UPLOADER or
+        GERRIT_CHANGE_OWNER). This can either be 'NONE' to avoid passing the
+        parameter all together, 'PLAIN' to pass the parameter in human readable
+        form, or 'BASE64' to pass the parameter in base64 encoded form.
+        (default 'PLAIN')
+    :arg str commit-message-parameter-mode: The parameter mode for the
+        GERRIT_CHANGE_COMMIT_MESSAGE parameter. This can either be 'NONE' to
+        avoid passing the parameter all together, 'PLAIN' to pass the parameter
+        in human readable form, or 'BASE64' to pass the parameter in base64
+        encoded form. (default 'BASE64')
+    :arg str change-subject-parameter-mode: The parameter mode for the
+        GERRIT_CHANGE_SUBJECT parameter. This can either be 'NONE' to avoid
+        passing the parameter all together, 'PLAIN' to pass the parameter in
+        human readable form, or 'BASE64' to pass the parameter in base64
+        encoded form. (default 'PLAIN')
+    :arg str comment-text-parameter-mode: The parameter mode for the
+        GERRIT_EVENT_COMMENT_TEXT parameter. This can either be 'NONE' to avoid
+        passing the parameter all together, 'PLAIN' to pass the parameter in
+        human readable form, or 'BASE64' to pass the parameter in base64
+        encoded form. (default 'BASE64')
     :arg str dependency-jobs: All jobs on which this job depends. If a commit
         should trigger both a dependency and this job, the dependency will be
         built first. Use commas to separate job names. Beware of cyclic
@@ -469,7 +498,11 @@ def gerrit(registry, xml_parent, data):
         trigger configuration will be fetched from there on a regular interval
     :arg bool trigger-for-unreviewed-patches: trigger patchset-created events
         for changes that were uploaded while connection to Gerrit was down
-        (default false). Requires Gerrit Trigger Plugin version >= 2.11.0
+        (default false). Requires Gerrit Trigger Plugin version >= 2.11.0.
+
+        .. deprecated:: 3.5.0  Not supported by Gerrit Trigger Plugin version
+           >= 2.14.0.
+
     :arg str custom-url: Custom URL for a message sent to Gerrit. Build
         details URL will be used if empty. (default '')
     :arg str server-name: Name of the server to trigger on, or ''__ANY__'' to
@@ -603,13 +636,39 @@ def gerrit(registry, xml_parent, data):
         ).lower()
 
     build_gerrit_skip_votes(gtrig, data)
+    parameter_modes = ("NONE", "PLAIN", "BASE64")
+    for parameter_name in (
+        "commit-message",
+        "name-and-email",
+        "change-subject",
+        "comment-text",
+    ):
+        parameter_mode_attr = "{}-parameter-mode".format(parameter_name)
+        parameter_mode_value = data.get(parameter_mode_attr)
+        if (parameter_mode_value is not None) and (
+            parameter_mode_value not in parameter_modes
+        ):
+            raise InvalidAttributeError(
+                parameter_mode_attr, parameter_mode_value, parameter_modes
+            )
+    for prop in (
+        "no-name-and-email",
+        "readable-message",
+        "trigger-for-unreviewed-patches",
+    ):
+        if prop in data:
+            logger.warning(
+                "gerrit trigger property '{}' is not supported anymore".format(prop)
+            )
     general_mappings = [
         ("silent", "silentMode", False),
         ("silent-start", "silentStartMode", False),
         ("escape-quotes", "escapeQuotes", True),
-        ("no-name-and-email", "noNameAndEmailParameters", False),
-        ("readable-message", "readableMessage", False),
         ("dependency-jobs", "dependencyJobsNames", ""),
+        ("commit-message-parameter-mode", "commitMessageParameterMode", "BASE64"),
+        ("name-and-email-parameter-mode", "nameAndEmailParameterMode", "PLAIN"),
+        ("change-subject-parameter-mode", "changeSubjectParameterMode", "PLAIN"),
+        ("comment-text-parameter-mode", "commentTextParameterMode", "BASE64"),
     ]
     helpers.convert_mapping_to_xml(gtrig, data, general_mappings, fail_required=True)
     notification_levels = ["NONE", "OWNER", "OWNER_REVIEWERS", "ALL", "SERVER_DEFAULT"]
@@ -624,16 +683,15 @@ def gerrit(registry, xml_parent, data):
         XML.SubElement(gtrig, "notificationLevel").text = notification_level
     XML.SubElement(gtrig, "dynamicTriggerConfiguration").text = str(
         data.get("dynamic-trigger-enabled", False)
-    )
+    ).lower()
     XML.SubElement(gtrig, "triggerConfigURL").text = str(
         data.get("dynamic-trigger-url", "")
     )
+    if data.get("dynamic-trigger-enabled", False) is False:
+        XML.SubElement(gtrig, "dynamicGerritProjects").set("class", "empty-list")
     XML.SubElement(gtrig, "triggerInformationAction").text = str(
         data.get("trigger-information-action", "")
     )
-    XML.SubElement(gtrig, "allowTriggeringUnreviewedPatches").text = str(
-        data.get("trigger-for-unreviewed-patches", False)
-    ).lower()
     build_gerrit_triggers(gtrig, data)
     override = str(data.get("override-votes", False)).lower()
     if override == "true":
