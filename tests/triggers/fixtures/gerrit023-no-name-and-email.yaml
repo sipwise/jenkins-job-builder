@@ -1,0 +1,3 @@
+triggers:
+  - gerrit:
+      no-name-and-email: true

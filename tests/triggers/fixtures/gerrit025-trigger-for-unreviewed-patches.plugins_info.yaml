@@ -1,0 +1,3 @@
+- longName: 'Gerrit Trigger'
+  shortName: 'gerrit-trigger'
+  version: '2.13.0'

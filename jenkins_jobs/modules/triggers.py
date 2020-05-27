@@ -240,6 +240,36 @@ def build_gerrit_skip_votes(xml_parent, data):
         XML.SubElement(skip_vote_node, tag_name).text = str(setting).lower()
 
 
+def build_gerrit_parameter_modes(xml_parent, data, plugin_ver):
+    if plugin_ver < pkg_resources.parse_version("2.18.0"):
+        for parameter_name in (
+            "commit-message",
+            "name-and-email",
+            "change-subject",
+            "comment-text",
+        ):
+            parameter_mode = "{}-parameter-mode".format(parameter_name)
+            if parameter_mode in data:
+                logger.warning("Gerrit Trigger property '{}' is not supported in this plugin version".format(parameter_mode))
+        deprecated_mappings = (
+            ("no-name-and-email", "noNameAndEmailParameters", False),
+            ("readable-message", "readableMessage", False),
+        )
+        helpers.convert_mapping_to_xml(xml_parent, data, deprecated_mappings, fail_required=True)
+    else: # version >= 2.18.0
+        for deprecated_property in ("no-name-and-email", "readable-message"):
+            if deprecated_property in data:
+                logger.warning("Gerrit Trigger property '{}' is not supported in this plugin version".format(deprecated_property))
+        allowed_parameter_modes = ["NONE", "PLAIN", "BASE64"]
+        new_mappings = (
+            ("commit-message-parameter-mode", "commitMessageParameterMode", "BASE64", allowed_parameter_modes),
+            ("name-and-email-parameter-mode", "nameAndEmailParameterMode", "PLAIN", allowed_parameter_modes),
+            ("change-subject-parameter-mode", "changeSubjectParameterMode", "PLAIN", allowed_parameter_modes),
+            ("comment-text-parameter-mode", "commentTextParameterMode", "BASE64", allowed_parameter_modes),
+        )
+        helpers.convert_mapping_to_xml(xml_parent, data, new_mappings, fail_required=True)
+
+
 def gerrit(registry, xml_parent, data):
     """yaml: gerrit
 
@@ -450,10 +480,44 @@ def gerrit(registry, xml_parent, data):
         parameters (default true)
     :arg bool no-name-and-email: Do not pass compound 'name and email'
         parameters (default false)
+
+        .. deprecated:: 3.5.0  Supported for Gerrit Trigger Plugin versions
+            < 2.18.0. For newer versions please use
+            `name-and-email-parameter-mode` parameter.
+
     :arg bool readable-message: If parameters regarding multiline text,
         e.g. commit message, should be as human readable or not. If false,
         those parameters are Base64 encoded to keep environment variables
         clean. (default false)
+
+        .. deprecated:: 3.5.0  Supported for Gerrit Trigger Plugin versions
+            < 2.18.0. For newer versions please use
+            `commit-message-parameter-mode` parameter.
+
+    :arg str name-and-email-parameter-mode: The parameter mode for the compound
+        "name and email" parameters (like GERRIT_PATCHSET_UPLOADER or
+        GERRIT_CHANGE_OWNER). This can either be 'NONE' to avoid passing the
+        parameter all together, 'PLAIN' to pass the parameter in human readable
+        form, or 'BASE64' to pass the parameter in base64 encoded form (default
+        'PLAIN'). Requires Gerrit Trigger Plugin version >= 2.18.0.
+    :arg str commit-message-parameter-mode: The parameter mode for the
+        GERRIT_CHANGE_COMMIT_MESSAGE parameter. This can either be 'NONE' to
+        avoid passing the parameter all together, 'PLAIN' to pass the parameter
+        in human readable form, or 'BASE64' to pass the parameter in base64
+        encoded form (default 'BASE64'). Requires Gerrit Trigger Plugin version
+        >= 2.18.0.
+    :arg str change-subject-parameter-mode: The parameter mode for the
+        GERRIT_CHANGE_SUBJECT parameter. This can either be 'NONE' to avoid
+        passing the parameter all together, 'PLAIN' to pass the parameter in
+        human readable form, or 'BASE64' to pass the parameter in base64
+        encoded form (default 'PLAIN'). Requires Gerrit Trigger Plugin version
+        >= 2.18.0.
+    :arg str comment-text-parameter-mode: The parameter mode for the
+        GERRIT_EVENT_COMMENT_TEXT parameter. This can either be 'NONE' to avoid
+        passing the parameter all together, 'PLAIN' to pass the parameter in
+        human readable form, or 'BASE64' to pass the parameter in base64
+        encoded form (default 'BASE64'). Requires Gerrit Trigger Plugin version
+        >= 2.18.0.
     :arg str dependency-jobs: All jobs on which this job depends. If a commit
         should trigger both a dependency and this job, the dependency will be
         built first. Use commas to separate job names. Beware of cyclic
@@ -469,7 +533,12 @@ def gerrit(registry, xml_parent, data):
         trigger configuration will be fetched from there on a regular interval
     :arg bool trigger-for-unreviewed-patches: trigger patchset-created events
         for changes that were uploaded while connection to Gerrit was down
-        (default false). Requires Gerrit Trigger Plugin version >= 2.11.0
+        (default false). Requires Gerrit Trigger Plugin version >= 2.11.0.
+
+        .. deprecated:: 3.5.0  Supported for Gerrit Trigger Plugin versions
+            < 2.14.0. Not supported for newer plugin versions (no replacement
+            is available).
+
     :arg str custom-url: Custom URL for a message sent to Gerrit. Build
         details URL will be used if empty. (default '')
     :arg str server-name: Name of the server to trigger on, or ''__ANY__'' to
@@ -489,7 +558,7 @@ def gerrit(registry, xml_parent, data):
 
     Example:
 
-    .. literalinclude:: /../../tests/triggers/fixtures/gerrit004.yaml
+    .. literalinclude:: /../../tests/triggers/fixtures/gerrit-docs-example.yaml
        :language: yaml
 
     """
@@ -502,6 +571,11 @@ def gerrit(registry, xml_parent, data):
         return compare_type
 
     gerrit_handle_legacy_configuration(data)
+
+    plugin_info = registry.get_plugin_info("Gerrit Trigger")
+    plugin_ver = pkg_resources.parse_version(
+        plugin_info.get("version", str(sys.maxsize))
+    )
 
     projects = data.get("projects", [])
     gtrig = XML.SubElement(
@@ -607,11 +681,10 @@ def gerrit(registry, xml_parent, data):
         ("silent", "silentMode", False),
         ("silent-start", "silentStartMode", False),
         ("escape-quotes", "escapeQuotes", True),
-        ("no-name-and-email", "noNameAndEmailParameters", False),
-        ("readable-message", "readableMessage", False),
         ("dependency-jobs", "dependencyJobsNames", ""),
     ]
     helpers.convert_mapping_to_xml(gtrig, data, general_mappings, fail_required=True)
+    build_gerrit_parameter_modes(gtrig, data, plugin_ver)
     notification_levels = ["NONE", "OWNER", "OWNER_REVIEWERS", "ALL", "SERVER_DEFAULT"]
     notification_level = data.get("notification-level", "SERVER_DEFAULT")
     if notification_level not in notification_levels:
@@ -624,16 +697,23 @@ def gerrit(registry, xml_parent, data):
         XML.SubElement(gtrig, "notificationLevel").text = notification_level
     XML.SubElement(gtrig, "dynamicTriggerConfiguration").text = str(
         data.get("dynamic-trigger-enabled", False)
-    )
+    ).lower()
     XML.SubElement(gtrig, "triggerConfigURL").text = str(
         data.get("dynamic-trigger-url", "")
     )
+    if data.get("dynamic-trigger-enabled", False) is False:
+        XML.SubElement(gtrig, "dynamicGerritProjects").set("class", "empty-list")
     XML.SubElement(gtrig, "triggerInformationAction").text = str(
         data.get("trigger-information-action", "")
     )
-    XML.SubElement(gtrig, "allowTriggeringUnreviewedPatches").text = str(
-        data.get("trigger-for-unreviewed-patches", False)
-    ).lower()
+    if (plugin_ver >= pkg_resources.parse_version("2.11.0")) and (plugin_ver < pkg_resources.parse_version("2.14.0")):
+        XML.SubElement(gtrig, "allowTriggeringUnreviewedPatches").text = str(
+            data.get("trigger-for-unreviewed-patches", False)
+        ).lower()
+    elif "trigger-for-unreviewed-patches" in data:
+        logger.warning(
+            "Gerrit Trigger property 'trigger-for-unreviewed-patches' is not supported in this plugin version"
+        )
     build_gerrit_triggers(gtrig, data)
     override = str(data.get("override-votes", False)).lower()
     if override == "true":

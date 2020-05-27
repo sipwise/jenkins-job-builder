@@ -52,14 +52,15 @@
       <silentMode>false</silentMode>
       <silentStartMode>false</silentStartMode>
       <escapeQuotes>false</escapeQuotes>
-      <noNameAndEmailParameters>false</noNameAndEmailParameters>
-      <readableMessage>false</readableMessage>
       <dependencyJobsNames/>
+      <commitMessageParameterMode>BASE64</commitMessageParameterMode>
+      <nameAndEmailParameterMode>PLAIN</nameAndEmailParameterMode>
+      <changeSubjectParameterMode>PLAIN</changeSubjectParameterMode>
+      <commentTextParameterMode>BASE64</commentTextParameterMode>
       <notificationLevel/>
-      <dynamicTriggerConfiguration>True</dynamicTriggerConfiguration>
+      <dynamicTriggerConfiguration>true</dynamicTriggerConfiguration>
       <triggerConfigURL>http://myhost/mytrigger</triggerConfigURL>
       <triggerInformationAction/>
-      <allowTriggeringUnreviewedPatches>false</allowTriggeringUnreviewedPatches>
       <triggerOnEvents>
         <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginCommentAddedEvent>
           <verdictCategory>APRV</verdictCategory>

@@ -1,0 +1,3 @@
+triggers:
+  - gerrit:
+      name-and-email-parameter-mode: PLAIN
