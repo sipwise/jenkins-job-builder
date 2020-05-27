@@ -69,6 +69,24 @@
       "revId": "6b38d4956c083153332257599ffcc8be07cb8293",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_13397b3e",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2020-05-27T12:41:06Z",
+      "side": 1,
+      "message": "You\u0027re totally right. I went too far with these changes, for the benefit of simplified implementation and maintenance.\n\nThe idea with defaults from the old input keys and overriding with the new ones is fine for me. I will update the code accordingly.\n\nOne more question regarding \"trigger-for-unreviewed-patches\" - is it OK to completely drop support for it as it\u0027s no longer supported by the plugin since v2.14.0, so for almost 5 years now?",
+      "parentUuid": "ff570b3c_d37263ad",
+      "revId": "6b38d4956c083153332257599ffcc8be07cb8293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
