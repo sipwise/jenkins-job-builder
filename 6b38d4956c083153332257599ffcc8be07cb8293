@@ -105,6 +105,24 @@
       "revId": "6b38d4956c083153332257599ffcc8be07cb8293",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_d311c055",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2020-05-27T14:24:08Z",
+      "side": 1,
+      "message": "I\u0027ve uploaded patchset 2 in the meantime which doesn\u0027t take your comment into account.\n\nHowever I\u0027m afraid we cannot address all of these concerns. This change, and also one of the previous ones I made, align the XML markup with the latest version of the plugin. So it might happen that these old Jenkins installations with some old versions of the plugins will stop working when updated with XMLs from the latest JJB. I\u0027m pretty sure that\u0027s the meaning of the new in the docs: \"Jenkins Job Builder 2.x plugins are designed to default to generating the xml format for the latest supported version of JJB\", right?\n\nFor example - regarding \u0027\u003cnoNameAndEmailParameters\u003e\u0027 - it got replaced with \u0027\u003cnameAndEmailParameterMode\u003e\u0027. Period. So some old Jenkins installations might suffer, but that\u0027s something we need to accept right?",
+      "parentUuid": "ff570b3c_50c64618",
+      "revId": "6b38d4956c083153332257599ffcc8be07cb8293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
