@@ -1,0 +1,3 @@
+triggers:
+  - gerrit:
+      change-subject-parameter-mode: NONE

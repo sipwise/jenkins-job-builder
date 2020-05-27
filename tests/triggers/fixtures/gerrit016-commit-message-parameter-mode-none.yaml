@@ -1,0 +1,3 @@
+triggers:
+  - gerrit:
+      commit-message-parameter-mode: NONE
