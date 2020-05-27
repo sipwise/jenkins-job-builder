@@ -87,6 +87,24 @@
       "revId": "6b38d4956c083153332257599ffcc8be07cb8293",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_50c64618",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2020-05-27T14:15:05Z",
+      "side": 1,
+      "message": "You\u0027d be surprised that there are possibly still orgs that have not upgraded even though it\u0027s been 5 years. I\u0027d err on the side of caution and deprecate it with a warning message and we can remove it in a 4.x release if we ever get there.",
+      "parentUuid": "ff570b3c_13397b3e",
+      "revId": "6b38d4956c083153332257599ffcc8be07cb8293",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
