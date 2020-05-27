@@ -16,19 +16,14 @@
       <dependencyJobsNames/>
       <commitMessageParameterMode>BASE64</commitMessageParameterMode>
       <nameAndEmailParameterMode>PLAIN</nameAndEmailParameterMode>
-      <changeSubjectParameterMode>PLAIN</changeSubjectParameterMode>
+      <changeSubjectParameterMode>NONE</changeSubjectParameterMode>
       <commentTextParameterMode>BASE64</commentTextParameterMode>
       <notificationLevel/>
-      <dynamicTriggerConfiguration>true</dynamicTriggerConfiguration>
-      <triggerConfigURL>http://myhost/mytrigger</triggerConfigURL>
+      <dynamicTriggerConfiguration>false</dynamicTriggerConfiguration>
+      <triggerConfigURL/>
+      <dynamicGerritProjects class="empty-list"/>
       <triggerInformationAction/>
-      <triggerOnEvents>
-        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginCommentAddedEvent>
-          <verdictCategory>APRV</verdictCategory>
-          <commentAddedTriggerApprovalValue>-1</commentAddedTriggerApprovalValue>
-        </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginCommentAddedEvent>
-        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginChangeAbandonedEvent/>
-      </triggerOnEvents>
+      <triggerOnEvents/>
       <buildStartMessage/>
       <buildFailureMessage/>
       <buildSuccessfulMessage/>
