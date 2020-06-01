@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_66dee23e",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1145,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2020-06-01T21:21:45Z",
+      "side": 1,
+      "message": "This red here means there\u0027s a trailing whitespace. Please clean that up.",
+      "revId": "842b8dc9c6d9c81464751c48a738c9e3bb7944ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
