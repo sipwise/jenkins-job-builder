@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_e6b83212",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2020-06-01T21:08:18Z",
+      "side": 1,
+      "message": "This commit message summary is fairly long please keep the summary line to 50 chars or less and move detailed info into the commit message body.\n\nI\u0027d recommend following the 7 rules of a great commit message for inspiration.\n\nSee: https://chris.beams.io/posts/git-commit/#seven-rules",
+      "revId": "e03d1f58fd528203fe3a660a1fd6ae1699e5eb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_46e91e18",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1143,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2020-06-01T21:08:18Z",
+      "side": 1,
+      "message": "Would be good to document the default setting here. Follow similar examples above for format. Do the same with the parameter below too.",
+      "revId": "e03d1f58fd528203fe3a660a1fd6ae1699e5eb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_e68af261",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1144,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2020-06-01T21:08:18Z",
+      "side": 1,
+      "message": "typo: project",
+      "range": {
+        "startLine": 1144,
+        "startChar": 62,
+        "endLine": 1144,
+        "endChar": 70
+      },
+      "revId": "e03d1f58fd528203fe3a660a1fd6ae1699e5eb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff570b3c_e6df9263",
+        "filename": "tests/builders/fixtures/gradle.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2020-06-01T21:08:18Z",
+      "side": 1,
+      "message": "Set to true be because the default value is false. We want to test non-default values to ensure that the parameter is set given the input.",
+      "range": {
+        "startLine": 10,
+        "startChar": 31,
+        "endLine": 10,
+        "endChar": 36
+      },
+      "revId": "e03d1f58fd528203fe3a660a1fd6ae1699e5eb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
