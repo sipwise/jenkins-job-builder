@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_2c0b397d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2020-06-01T13:34:32Z",
+      "side": 1,
+      "message": "So Git has a feature called commit message trailers which is a series of \"Key: Value\" pairs attached to the footer of the commit message.\n\nWhile we in JJB don\u0027t really use that feature if you want your commit message to be technically correct there should be no blank lines between \"Key: Value\" pairs in the footer for them to properly be picked up by Git as a commit message trailer.",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 42,
+        "endChar": 52
+      },
+      "revId": "3afcf355af041dcc90617a822a2838e88890ec8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
