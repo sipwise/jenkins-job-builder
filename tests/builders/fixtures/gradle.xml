@@ -13,6 +13,8 @@ tests
       <useWrapper>true</useWrapper>
       <makeExecutable>true</makeExecutable>
       <fromRootBuildScriptDir>true</fromRootBuildScriptDir>
+      <passAllAsSystemProperties>true</passAllAsSystemProperties>
+      <passAllAsProjectProperties>true</passAllAsProjectProperties>
       <switches>-g /foo/bar/.gradle
 -PmavenUserName=foobar</switches>
     </hudson.plugins.gradle.Gradle>

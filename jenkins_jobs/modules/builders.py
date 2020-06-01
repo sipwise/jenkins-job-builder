@@ -1140,6 +1140,10 @@ def gradle(registry, xml_parent, data):
         root) here, such as ${workspace}/parent/ instead of just
         ${workspace}.
     :arg str build-file: name of gradle build script (default 'build.gradle')
+    :arg bool pass-system-properties: Pass all parameters as 
+        System properties (default false)
+    :arg bool pass-project-properties: Pass all parameters as 
+        Project properties (default false)
 
     Example:
 
@@ -1158,6 +1162,8 @@ def gradle(registry, xml_parent, data):
         ("wrapper", "useWrapper", False),
         ("executable", "makeExecutable", False),
         ("use-root-dir", "fromRootBuildScriptDir", False),
+        ("pass-system-properties", "passAllAsSystemProperties", False),
+        ("pass-project-properties", "passAllAsProjectProperties", False),
     ]
     helpers.convert_mapping_to_xml(gradle, data, mappings, fail_required=True)
 

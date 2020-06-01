@@ -6,6 +6,8 @@ builders:
       executable: true
       use-root-dir: true
       root-build-script-dir: ${workspace}/tests
+      pass-system-properties: true
+      pass-project-properties: true
       switches:
         - "-g /foo/bar/.gradle"
         - "-PmavenUserName=foobar"
