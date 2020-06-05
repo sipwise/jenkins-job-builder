@@ -154,8 +154,9 @@ def build_gerrit_triggers(xml_parent, data):
         "draft-published-event": "PluginDraftPublishedEvent",
         "patchset-uploaded-event": "PluginPatchsetCreatedEvent",
         "patchset-created-event": "PluginPatchsetCreatedEvent",
-        "ref-updated-event": "PluginRefUpdatedEvent",
         "private-state-changed-event": "PluginPrivateStateChangedEvent",
+        "ref-updated-event": "PluginRefUpdatedEvent",
+        "topic-changed-event": "PluginTopicChangedEvent",
         "wip-state-changed-event": "PluginWipStateChangedEvent",
     }
     tag_namespace = (
@@ -288,6 +289,8 @@ def gerrit(registry, xml_parent, data):
          * **draft-published-event** -- Trigger on draft published event.
          * **ref-updated-event** -- Trigger on ref-updated.
            Gerrit Trigger Plugin version >= 2.29.0
+         * **topic-changed-event** -- Trigger on topic-changed.
+           Gerrit Trigger Plugin version >= 2.26.0
          * **private-state-changed-event** -- Trigger on private state changed event.
          * **wip-state-changed-event** -- Trigger on wip state changed event.
            Gerrit Trigger Plugin version >= 2.8.0
