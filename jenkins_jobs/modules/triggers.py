@@ -155,6 +155,7 @@ def build_gerrit_triggers(xml_parent, data):
         "patchset-uploaded-event": "PluginPatchsetCreatedEvent",
         "patchset-created-event": "PluginPatchsetCreatedEvent",
         "ref-updated-event": "PluginRefUpdatedEvent",
+        "topic-changed-event": "PluginTopicChangedEvent",
         "private-state-changed-event": "PluginPrivateStateChangedEvent",
         "wip-state-changed-event": "PluginWipStateChangedEvent",
     }
@@ -288,6 +289,8 @@ def gerrit(registry, xml_parent, data):
          * **draft-published-event** -- Trigger on draft published event.
          * **ref-updated-event** -- Trigger on ref-updated.
            Gerrit Trigger Plugin version >= 2.29.0
+         * **topic-changed-event** -- Trigger on topic-changed.
+           Gerrit Trigger Plugin version >= 2.30.5
          * **private-state-changed-event** -- Trigger on private state changed event.
          * **wip-state-changed-event** -- Trigger on wip state changed event.
            Gerrit Trigger Plugin version >= 2.8.0
