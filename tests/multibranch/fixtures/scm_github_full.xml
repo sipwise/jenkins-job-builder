@@ -107,6 +107,11 @@
               <org.jenkinsci.plugins.workflow.multibranch.DurabilityHintBranchProperty plugin="workflow-multibranch">
                 <hint>MAX_SURVIVABILITY</hint>
               </org.jenkinsci.plugins.workflow.multibranch.DurabilityHintBranchProperty>
+              <com.adobe.jenkins.github__pr__comment__build.TriggerPRCommentBranchProperty plugin="github-pr-comment-build">
+                <commentBody>Ci build!</commentBody>
+              </com.adobe.jenkins.github__pr__comment__build.TriggerPRCommentBranchProperty>
+              <com.adobe.jenkins.github__pr__comment__build.TriggerPRReviewBranchProperty plugin="github-pr-comment-build"/>
+              <com.adobe.jenkins.github__pr__comment__build.TriggerPRUpdateBranchProperty plugin="github-pr-comment-build"/>
             </a>
           </properties>
         </strategy>
