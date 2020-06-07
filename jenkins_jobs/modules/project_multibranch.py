@@ -1193,7 +1193,27 @@ def property_strategies(xml_parent, data):
                 max-survivability (optional)
                 Requires the :jenkins-plugins:`Pipeline Multibranch Plugin
                 <workflow-multibranch>`
-
+            * **trigger-build-on-pr-comment** (str): The comment body to
+                trigger a new build for a PR job when it is received. This
+                is compiled as a case insensitive regular expression, so
+                use ``".*"`` to trigger a build on any comment whatsoever.
+                (optional)
+                Requires the :jenkins-plugins:`GitHub PR Comment Build Plugin
+                <github-pr-comment-build>`
+            * **trigger-build-on-pr-review** (bool): This property will
+                cause a job for a pull request ``(PR-*)`` to be triggered
+                immediately when a review is made on the PR in GitHub.
+                This has no effect on jobs that are not for pull requests.
+                (optional)
+                Requires the :jenkins-plugins:`GitHub PR Comment Build Plugin
+                <github-pr-comment-build>`
+            * **trigger-build-on-pr-update** (bool): This property will
+                cause a job for a pull request ``(PR-*)`` to be triggered
+                immediately when the PR title or description is edited in
+                GitHub. This has no effect on jobs that are not for pull
+                requests. (optional)
+                Requires the :jenkins-plugins:`GitHub PR Comment Build Plugin
+                <github-pr-comment-build>`
         * **named-branches** (dict): Named branches get different properties.
             Comprised of a list of defaults and a list of property strategy
             exceptions for use with specific branches.
@@ -1210,6 +1230,27 @@ def property_strategies(xml_parent, data):
                     max-survivability (optional)
                     Requires the :jenkins-plugins:`Pipeline Multibranch Plugin
                     <workflow-multibranch>`
+                * **trigger-build-on-pr-comment** (str): The comment body to
+                    trigger a new build for a PR job when it is received. This
+                    is compiled as a case insensitive regular expression, so
+                    use ``".*"`` to trigger a build on any comment whatsoever.
+                    (optional)
+                    Requires the :jenkins-plugins:`GitHub PR Comment Build Plugin
+                    <github-pr-comment-build>`
+                * **trigger-build-on-pr-review** (bool): This property will
+                    cause a job for a pull request ``(PR-*)`` to be triggered
+                    immediately when a review is made on the PR in GitHub.
+                    This has no effect on jobs that are not for pull requests.
+                    (optional)
+                    Requires the :jenkins-plugins:`GitHub PR Comment Build Plugin
+                    <github-pr-comment-build>`
+                * **trigger-build-on-pr-update** (bool): This property will
+                    cause a job for a pull request ``(PR-*)`` to be triggered
+                    immediately when the PR title or description is edited in
+                    GitHub. This has no effect on jobs that are not for pull
+                    requests. (optional)
+                    Requires the :jenkins-plugins:`GitHub PR Comment Build Plugin
+                    <github-pr-comment-build>`
 
             * **exceptions** (list): A list of branch names and the property
                 strategies to be used on that branch, instead of any listed
@@ -1375,12 +1416,20 @@ def apply_property_strategies(props_elem, props_list):
 
     basic_property_strategies = "jenkins.branch"
     workflow_multibranch = "org.jenkinsci.plugins.workflow.multibranch"
+    pr_comment_build = "com.adobe.jenkins.github__pr__comment__build"
     # Valid options for the pipeline branch durability override.
     pbdo_map = collections.OrderedDict(
         [
             ("max-survivability", "MAX_SURVIVABILITY"),
             ("performance-optimized", "PERFORMANCE_OPTIMIZED"),
             ("survivable-nonatomic", "SURVIVABLE_NONATOMIC"),
+        ]
+    )
+
+    pcb_bool_opts = collections.OrderedDict(
+        [
+            ("trigger-build-on-pr-review", ".TriggerPRReviewBranchProperty"),
+            ("trigger-build-on-pr-update", ".TriggerPRUpdateBranchProperty"),
         ]
     )
 
@@ -1404,3 +1453,19 @@ def apply_property_strategies(props_elem, props_list):
                 {"plugin": "workflow-multibranch"},
             )
             XML.SubElement(pbdo_elem, "hint").text = pbdo_map.get(pbdo_val)
+
+        tbopc_val = dbs_list.get("trigger-build-on-pr-comment", None)
+        if tbopc_val:
+            tbopc_elem = XML.SubElement(
+                props_elem,
+                "".join([pr_comment_build, ".TriggerPRCommentBranchProperty"]),
+                {"plugin": "github-pr-comment-build"},
+            )
+            XML.SubElement(tbopc_elem, "commentBody").text = tbopc_val
+        for opt in pcb_bool_opts:
+            if dbs_list.get(opt, False):
+                XML.SubElement(
+                    props_elem,
+                    "".join([pr_comment_build, pcb_bool_opts.get(opt)]),
+                    {"plugin": "github-pr-comment-build"},
+                )

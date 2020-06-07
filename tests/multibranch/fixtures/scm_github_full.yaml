@@ -20,6 +20,9 @@ scm:
             all-branches:
                 - suppress-scm-triggering: true
                 - pipeline-branch-durability-override: max-survivability
+                - trigger-build-on-pr-comment: "Ci build!"
+                - trigger-build-on-pr-rewiev: true
+                - trigger-build-on-pr-update: true
         build-strategies:
             - tags:
                 ignore-tags-newer-than: 1
