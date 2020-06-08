@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff570b3c_2f4f396b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2020-06-08T12:24:09Z",
+      "side": 1,
+      "message": "Need to insert a blank line after the 1st line in a commit message so that Gerrit properly parses the Summary from the Body. Should look something like this:\n\n Implement GitHub PR Comment Build Plugin\n \n Added support of trigger-build-on-pr-comment, trigger ...",
+      "revId": "77bbf6ede8d8d07561071d4067c30c709a54b171",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
