@@ -1,0 +1,9 @@
+name: 'demo-multibranch-defaults'
+project-type: multibranch-defaults
+script-id: my-pipeline
+sandbox: true
+scm:
+    - github:
+        repo: 'foo'
+        repo-owner: 'johndoe'
+        credentials-id: 'secret'

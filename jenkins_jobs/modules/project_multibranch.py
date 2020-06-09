@@ -60,10 +60,20 @@ Plugins required:
       (default '-1, forever')
     * **script-path** (`str`): Path to Jenkinsfile, relative to workspace.
       (default 'Jenkinsfile')
+    * **script-id** (`str`): Script id from the global Jenkins script store
+      provided by the config-file provider plugin. Usable only with
+      project-type multibranch-defaults and mutually exclusive with
+      **script-path** option.
+    * **sandbox** (`bool`): This option is strongly recommended if the
+      Jenkinsfile is using load to evaluate a groovy source file from an
+      SCM repository. Usable only with project-type multibranch-defaults
+      and **script-id** option. (default 'false')
 
 Job examples:
 
-.. literalinclude:: /../../tests/multibranch/fixtures/multibranch_defaults.yaml
+.. literalinclude:: /../../tests/multibranch/fixtures/multibranch_defaults_id_mode.yaml
+
+.. literalinclude:: /../../tests/multibranch/fixtures/multibranch_defaults_path_mode.yaml
 
 .. literalinclude:: /../../tests/multibranch/fixtures/multi_scm_full.yaml
 
@@ -87,6 +97,31 @@ class WorkflowMultiBranch(jenkins_jobs.modules.base.Base):
     multibranch_path = "org.jenkinsci.plugins.workflow.multibranch"
     jenkins_class = "".join([multibranch_path, ".WorkflowMultiBranchProject"])
     jenkins_factory_class = "".join([multibranch_path, ".WorkflowBranchProjectFactory"])
+
+    def __init__(self, registry):
+        super(WorkflowMultiBranch, self).__init__(registry)
+        self._fopts_map = (("script-path", "scriptPath", "Jenkinsfile"),)
+
+    @property
+    def fopts_map(self):
+        return self._fopts_map
+
+    @staticmethod
+    def _factory_opts_check(data):
+        sandbox = data.get("sandbox", None)
+        script_id = data.get("script-id", None)
+        if script_id:
+            error_msg = (
+                "script-id is applicable only for "
+                "multibranch with defaults project type."
+            )
+            raise JenkinsJobsException(error_msg)
+        elif sandbox:
+            error_msg = (
+                "Sandbox mode is applicable only for multibranch with defaults"
+                "project type used with script-id option"
+            )
+            raise JenkinsJobsException(error_msg)
 
     def root_xml(self, data):
         xml_parent = XML.Element(self.jenkins_class)
@@ -268,14 +303,21 @@ class WorkflowMultiBranch(jenkins_jobs.modules.base.Base):
         # Factory #
         ###########
 
+        self._factory_opts_check(data)
+
         factory = XML.SubElement(
             xml_parent, "factory", {"class": self.jenkins_factory_class}
         )
         XML.SubElement(
             factory, "owner", {"class": self.jenkins_class, "reference": "../.."}
         )
-        XML.SubElement(factory, "scriptPath").text = data.get(
-            "script-path", "Jenkinsfile"
+
+        # multibranch default
+        if not self.fopts_map:
+            self.fopts_map = data
+
+        helpers.convert_mapping_to_xml(
+            factory, data, self.fopts_map, fail_required=False
         )
 
         return xml_parent
@@ -290,6 +332,41 @@ class WorkflowMultiBranchDefaults(WorkflowMultiBranch):
         "org.jenkinsci.plugins.pipeline.multibranch"
         ".defaults.PipelineBranchDefaultsProjectFactory"
     )
+
+    def __init__(self, registry):
+        super(WorkflowMultiBranchDefaults, self).__init__(registry)
+        self._fopts_map = ()
+
+    @staticmethod
+    def _factory_opts_check(data):
+
+        sandbox = data.get("sandbox", None)
+        script_id = data.get("script-id", None)
+        script_path = data.get("script-path", None)
+
+        if script_id and script_path:
+            error_msg = "script-id and script-path are mutually exclusive options"
+            raise JenkinsJobsException(error_msg)
+        elif not script_id and sandbox:
+            error_msg = (
+                "Sandbox mode is applicable only for multibranch with defaults"
+                "project type used with script-id option"
+            )
+            raise JenkinsJobsException(error_msg)
+
+    @property
+    def fopts_map(self):
+        return self._fopts_map
+
+    @fopts_map.setter
+    def fopts_map(self, data):
+        sandbox_default = False if data.get("script-id") else None
+        script_path_default = None if data.get("script-id") else "Jenkinsfile"
+        self._fopts_map = (
+            ("script-id", "scriptId", None),
+            ("script-path", "scriptPath", script_path_default),
+            ("sandbox", "useSandbox", sandbox_default),
+        )
 
 
 def bitbucket_scm(xml_parent, data):
