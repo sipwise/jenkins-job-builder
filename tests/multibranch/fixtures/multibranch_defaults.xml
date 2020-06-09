@@ -58,6 +58,7 @@
   </sources>
   <factory class="org.jenkinsci.plugins.pipeline.multibranch.defaults.PipelineBranchDefaultsProjectFactory">
     <owner class="org.jenkinsci.plugins.pipeline.multibranch.defaults.PipelineMultiBranchDefaultsProject" reference="../.."/>
-    <scriptPath>Jenkinsfile</scriptPath>
+    <scriptId>my-pipeline</scriptId>
+    <useSandbox>true</useSandbox>
   </factory>
 </org.jenkinsci.plugins.pipeline.multibranch.defaults.PipelineMultiBranchDefaultsProject>
