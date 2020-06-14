@@ -804,7 +804,7 @@ def github_scm(xml_parent, data):
         (default 'contributors')
     :arg str discover-pr-origin: Discovers pull requests where the origin
         repository is the same as the target repository.
-        Valid options: merge-current, current, both.  (default 'merge-current')
+        Valid options: merge-current, current, both, false.  (default 'merge-current')
     :arg bool discover-tags: Discovers tags on the repository.
         (default false)
     :arg list build-strategies: Provides control over whether to build a branch
@@ -946,18 +946,19 @@ def github_scm(xml_parent, data):
         XML.SubElement(dprf, "trust").attrib["class"] = trust_map[trust]
 
     dpro_strategy = data.get("discover-pr-origin", "merge-current")
-    dpro = XML.SubElement(
-        traits, "".join([github_path_dscore, ".OriginPullRequestDiscoveryTrait"])
-    )
-    dpro_strategy_map = {"merge-current": "1", "current": "2", "both": "3"}
-    if dpro_strategy not in dpro_strategy_map:
-        raise InvalidAttributeError(
-            "discover-pr-origin", dpro_strategy, dpro_strategy_map.keys()
+    if dpro_strategy:
+        dpro = XML.SubElement(
+            traits, "".join([github_path_dscore, ".OriginPullRequestDiscoveryTrait"])
         )
-    dpro_mapping = [
-        ("discover-pr-origin", "strategyId", "merge-current", dpro_strategy_map)
-    ]
-    helpers.convert_mapping_to_xml(dpro, data, dpro_mapping, fail_required=True)
+        dpro_strategy_map = {"merge-current": "1", "current": "2", "both": "3"}
+        if dpro_strategy not in dpro_strategy_map:
+            raise InvalidAttributeError(
+                "discover-pr-origin", dpro_strategy, dpro_strategy_map.keys()
+            )
+        dpro_mapping = [
+            ("discover-pr-origin", "strategyId", "merge-current", dpro_strategy_map)
+        ]
+        helpers.convert_mapping_to_xml(dpro, data, dpro_mapping, fail_required=True)
 
     if data.get("head-filter-regex", None):
         rshf = XML.SubElement(traits, "jenkins.scm.impl.trait.RegexSCMHeadFilterTrait")

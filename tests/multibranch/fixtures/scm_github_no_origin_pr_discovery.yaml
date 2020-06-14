@@ -1,0 +1,7 @@
+name: 'demo-multibranch-github-no-fork-prs'
+project-type: multibranch
+scm:
+    - github:
+        repo: 'foo'
+        repo-owner: 'johndoe'
+        discover-pr-origin: no
