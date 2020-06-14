@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bf51134e_ac651be4",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1203,
+      "author": {
+        "id": 32064
+      },
+      "writtenOn": "2020-06-14T07:27:19Z",
+      "side": 1,
+      "message": "fixed typo",
+      "parentUuid": "ff570b3c_303467de",
+      "revId": "1cdc97b54a30a21f4cb72b29333646b3d20cf159",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_102fa388",
         "filename": "jenkins_jobs/modules/project_multibranch.py",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "bf51134e_0c6367de",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1240,
+      "author": {
+        "id": 32064
+      },
+      "writtenOn": "2020-06-14T07:27:19Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "ff570b3c_102fa388",
+      "revId": "1cdc97b54a30a21f4cb72b29333646b3d20cf159",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff570b3c_704b7f5e",
         "filename": "jenkins_jobs/modules/project_multibranch.py",
         "patchSetId": 5
@@ -47,6 +83,47 @@
       "writtenOn": "2020-06-12T06:43:41Z",
       "side": 1,
       "message": "same as above",
+      "revId": "1cdc97b54a30a21f4cb72b29333646b3d20cf159",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf51134e_ec5f130c",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1431,
+      "author": {
+        "id": 32064
+      },
+      "writtenOn": "2020-06-14T07:27:19Z",
+      "side": 1,
+      "message": "fixed",
+      "parentUuid": "ff570b3c_704b7f5e",
+      "revId": "1cdc97b54a30a21f4cb72b29333646b3d20cf159",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf51134e_2c9f4bb5",
+        "filename": "tests/multibranch/fixtures/scm_github_full.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 32064
+      },
+      "writtenOn": "2020-06-14T07:27:19Z",
+      "side": 1,
+      "message": "fixed typo",
+      "range": {
+        "startLine": 24,
+        "startChar": 38,
+        "endLine": 24,
+        "endChar": 44
+      },
       "revId": "1cdc97b54a30a21f4cb72b29333646b3d20cf159",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
