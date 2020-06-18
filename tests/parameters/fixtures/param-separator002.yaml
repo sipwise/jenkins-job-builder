@@ -1,0 +1,5 @@
+parameters:
+  - parameter-separator:
+      separator-style: FOO
+      section-header: MISCELLANEOUS
+      section-header-style: font-weight:bold;margin-bottom:20px;
