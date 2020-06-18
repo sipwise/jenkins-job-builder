@@ -1113,6 +1113,36 @@ def git_parameter_param(registry, xml_parent, data):
     helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
 
+def param_separator(registry, xml_parent, data):
+    """yaml: parameter-separator
+    A parameter separator.
+
+    :arg str name: name of the separator (default "", the plugin will assign a randomly generated UUID if not specified)
+    :arg str separator-style: the style of the separator. Uses CSS. (default "")
+    :arg str section-header-text: the section header text of the separator (default "")
+    :arg str section-header-style: the section header style (CSS) of the separator. Uses CSS. (default "")
+
+    Example::
+
+      parameters:
+        - parameter-separator:
+            name: lorem
+            separator-style: FOO
+            section-header: bar
+            section-header-style: font-weight:bold;z-index:10000
+    """
+    element_name = "jenkins.plugins.parameter__separator.ParameterSeparatorDefinition"
+    pdef = XML.SubElement(xml_parent, element_name)
+    XML.SubElement(pdef, "description")  # To create empty description tag
+    mapping = [
+        ("name", "name", ""),
+        ("section-header", "sectionHeader", ""),
+        ("section-header-style", "sectionHeaderStyle", ""),
+        ("separator-style", "separatorStyle", ""),
+    ]
+    helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
+
+
 class Parameters(jenkins_jobs.modules.base.Base):
     sequence = 21
 
