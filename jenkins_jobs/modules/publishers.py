@@ -3513,11 +3513,11 @@ def join_trigger(registry, xml_parent, data):
     Trigger a job after all the immediate downstream jobs have completed.
     Requires the Jenkins :jenkins-plugins:`Join Plugin <join>`.
 
-    :arg bool even-if-unstable: if true jobs will trigger even if some
-        downstream jobs are marked as unstable (default false)
     :arg list projects: list of projects to trigger
     :arg list publishers: list of triggers from publishers module that
         defines projects that need to be triggered
+    :arg bool even-if-unstable: if true jobs will trigger even if some
+        downstream jobs are marked as unstable (default false) (DEPRECATED)
 
     Example:
 
@@ -3535,8 +3535,9 @@ def join_trigger(registry, xml_parent, data):
         for edited_node in create_publishers(registry, pub):
             publishers.append(edited_node)
 
-    unstable = str(data.get("even-if-unstable", "false")).lower()
-    XML.SubElement(jointrigger, "evenIfDownstreamUnstable").text = unstable
+    unstable = str(data.get("even-if-unstable", "")).lower()
+    if unstable:
+        XML.SubElement(jointrigger, "evenIfDownstreamUnstable").text = unstable
 
 
 def jabber(registry, xml_parent, data):
