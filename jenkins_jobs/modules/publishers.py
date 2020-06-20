@@ -592,6 +592,25 @@ def trigger_parameterized_builds(registry, xml_parent, data):
         )
 
 
+def _make_threshold(
+    parent_element, element_name, threshold_name, supported_thresholds=None):
+    """Generate a resultThreshold XML element"""
+    element = XML.SubElement(parent_element, element_name)
+
+    try:
+        threshold = hudson_model.THRESHOLDS[threshold_name.upper()]
+    except KeyError:
+        if not supported_thresholds:
+            supported_thresholds = hudson_model.THRESHOLDS.keys()
+        raise JenkinsJobsException(
+            "threshold must be one of %s" % ", ".join(supported_thresholds)
+        )
+    XML.SubElement(element, "name").text = threshold["name"]
+    XML.SubElement(element, "ordinal").text = threshold["ordinal"]
+    XML.SubElement(element, "color").text = threshold["color"]
+    return element
+
+
 def trigger(registry, xml_parent, data):
     """yaml: trigger
     Trigger non-parametrised builds of other jobs.
@@ -608,20 +627,11 @@ def trigger(registry, xml_parent, data):
     tconfig = XML.SubElement(xml_parent, "hudson.tasks.BuildTrigger")
     childProjects = XML.SubElement(tconfig, "childProjects")
     childProjects.text = data["project"]
-    tthreshold = XML.SubElement(tconfig, "threshold")
 
     threshold = data.get("threshold", "SUCCESS")
     supported_thresholds = ["SUCCESS", "UNSTABLE", "FAILURE"]
-    if threshold not in supported_thresholds:
-        raise JenkinsJobsException(
-            "threshold must be one of %s" % ", ".join(supported_thresholds)
-        )
-    tname = XML.SubElement(tthreshold, "name")
-    tname.text = hudson_model.THRESHOLDS[threshold]["name"]
-    tordinal = XML.SubElement(tthreshold, "ordinal")
-    tordinal.text = hudson_model.THRESHOLDS[threshold]["ordinal"]
-    tcolor = XML.SubElement(tthreshold, "color")
-    tcolor.text = hudson_model.THRESHOLDS[threshold]["color"]
+    _make_threshold(tconfig, "threshold", threshold,
+                    supported_thresholds=supported_thresholds)
 
 
 def clone_workspace(registry, xml_parent, data):
