@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <publishers>
+    <hudson.tasks.BuildTrigger>
+      <childProjects>project-1,project-2</childProjects>
+      <threshold>
+        <name>FAILURE</name>
+        <ordinal>2</ordinal>
+        <color>RED</color>
+      </threshold>
+    </hudson.tasks.BuildTrigger>
+    <join.JoinTrigger>
+      <joinProjects>cleanup</joinProjects>
+      <joinPublishers/>
+      <resultThreshold>
+        <name>FAILURE</name>
+        <ordinal>2</ordinal>
+        <color>RED</color>
+      </resultThreshold>
+    </join.JoinTrigger>
+  </publishers>
+</project>
