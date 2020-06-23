@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf51134e_4d777da1",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2020-06-23T12:26:34Z",
+      "side": 1,
+      "message": "I don\u0027t believe you need to deep copy self._cls, other than that it seems similar to what the Jinja2 needed.",
+      "revId": "82a05614637d3c5ecbdcb662326e666424007cd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
