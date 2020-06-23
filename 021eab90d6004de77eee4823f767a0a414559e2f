@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf51134e_caa3739d",
+        "filename": "jenkins_jobs/modules/publishers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 595,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2020-06-23T11:22:33Z",
+      "side": 1,
+      "message": "There\u0027s a file called helpers.py which we typically put shared functions like this in. Maybe this is a good candidate to go there?",
+      "range": {
+        "startLine": 595,
+        "startChar": 4,
+        "endLine": 595,
+        "endChar": 19
+      },
+      "revId": "021eab90d6004de77eee4823f767a0a414559e2f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
