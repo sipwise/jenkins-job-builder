@@ -1,0 +1,13 @@
+- project:
+    name: pipeline_dsl
+    jobs:
+        - 'pipeline-dsl-{os}':
+            os: ubuntu
+        - 'pipeline-dsl-{os}':
+            os: debian
+
+- job-template:
+    name: 'pipeline-dsl-{os}'
+    project-type: pipeline
+    dsl:
+      !include-jinja2: project_pipeline_dsl_jinja.yaml.inc

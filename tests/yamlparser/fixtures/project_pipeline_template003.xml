@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <flow-definition plugin="workflow-job">
   <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps">
+    <sandbox>true</sandbox>
     <script>build job: &quot;job1&quot;
 parallel [
   2a: build job: &quot;job2a&quot;,
@@ -9,7 +10,6 @@ parallel [
   }
 ]
 </script>
-    <sandbox>true</sandbox>
   </definition>
   <actions/>
   <description>&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
