@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf51134e_18756ffa",
+        "filename": "jenkins_jobs/modules/pipeline_dsl.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2020-06-29T12:18:03Z",
+      "side": 1,
+      "message": "Basically I\u0027m using registry.dispatch() to get to deep_format() which happens to evaluate Jinja templates under the hood. Maybe I could use deep_format() directly here?\n\nFeedback on this part will be highly appreciated.",
+      "revId": "1f00d4b83f823975fc00b598604daffef527b2e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
