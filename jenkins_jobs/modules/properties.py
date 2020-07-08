@@ -1,4 +1,5 @@
 # Copyright 2012 Hewlett-Packard Development Company, L.P.
+# Copyright 2020 Liberty Global B.V.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -1274,7 +1275,10 @@ class Properties(jenkins_jobs.modules.base.Base):
                         prop["authorization"]["_use_folder_perms"] = True
                         prop["authorization"]["_is_a_folder"] = True
                     else:
-                        prop["authorization"]["_use_folder_perms"] = "folder" in data
+                        job_in_folder = ("folder" in data) or (
+                            "/" in data.get("name", "")
+                        )
+                        prop["authorization"]["_use_folder_perms"] = job_in_folder
                         prop["authorization"]["_is_a_folder"] = False
                 else:
                     prop["authorization"]["_use_folder_perms"] = False
