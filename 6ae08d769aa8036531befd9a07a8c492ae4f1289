@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf51134e_eb249d62",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1279,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2020-07-08T17:00:19Z",
+      "side": 1,
+      "message": "Seems reasonable and I just double checked that Jenkins disallowed \u0027/\u0027 characters in job names.",
+      "range": {
+        "startLine": 1279,
+        "startChar": 28,
+        "endLine": 1279,
+        "endChar": 55
+      },
+      "revId": "6ae08d769aa8036531befd9a07a8c492ae4f1289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
