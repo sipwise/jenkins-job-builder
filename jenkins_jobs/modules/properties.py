@@ -230,6 +230,26 @@ def gitlab_logo(registry, xml_parent, data):
     helpers.convert_mapping_to_xml(logo, data, mapping, fail_required=True)
 
 
+def naginator_opt_out(registry, xml_parent, data):
+    """yaml: naginator-opt-out
+    Lets you opt-out so no rebuild option for Naginator is added.
+
+
+    Requires the Jenkins :jenkins-plugins:`Naginator Plugin <naginator>`.
+
+    Example:
+
+    .. literalinclude:: /../../tests/properties/fixtures/naginator-opt-out002.yaml
+       :language: yaml
+    """
+
+    opt_out = XML.SubElement(
+        xml_parent, "com.chikli.hudson.plugin.naginator." "NaginatorOptOutProperty"
+    )
+    mapping = [("opt-out", "optOut", False)]
+    helpers.convert_mapping_to_xml(opt_out, data, mapping, fail_required=True)
+
+
 def disk_usage(registry, xml_parent, data):
     """yaml: disk-usage
     Enables the Disk Usage Plugin.
