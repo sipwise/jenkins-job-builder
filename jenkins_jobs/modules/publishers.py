@@ -2453,36 +2453,123 @@ def base_email_ext(registry, xml_parent, data, ttype):
     trigger = XML.SubElement(
         xml_parent, "hudson.plugins.emailext.plugins.trigger." + ttype
     )
+
+    info = registry.get_plugin_info("email-ext")
+    plugin_version = pkg_resources.parse_version(info.get("version", str(sys.maxsize)))
+
     email = XML.SubElement(trigger, "email")
-    XML.SubElement(email, "recipientList").text = ""
+
+    if plugin_version < pkg_resources.parse_version("2.39"):
+        XML.SubElement(email, "recipientList").text = ""
     XML.SubElement(email, "subject").text = "$PROJECT_DEFAULT_SUBJECT"
     XML.SubElement(email, "body").text = "$PROJECT_DEFAULT_CONTENT"
+    if plugin_version >= pkg_resources.parse_version("2.39"):
+        XML.SubElement(email, "replyTo").text = "$PROJECT_DEFAULT_REPLYTO"
+        XML.SubElement(email, "contentType").text = "project"
     if "send-to" in data:
-        XML.SubElement(email, "sendToDevelopers").text = str(
-            "developers" in data["send-to"]
-        ).lower()
-        XML.SubElement(email, "sendToRequester").text = str(
-            "requester" in data["send-to"]
-        ).lower()
-        XML.SubElement(email, "includeCulprits").text = str(
-            "culprits" in data["send-to"]
-        ).lower()
-        XML.SubElement(email, "sendToRecipientList").text = str(
-            "recipients" in data["send-to"]
-        ).lower()
-        if "upstream-committers" in data["send-to"]:
+        recipient_providers = None
+        if plugin_version < pkg_resources.parse_version("2.39"):
+            XML.SubElement(email, "sendToDevelopers").text = str(
+                "developers" in data["send-to"]
+            ).lower()
+            XML.SubElement(email, "sendToRequester").text = str(
+                "requester" in data["send-to"]
+            ).lower()
+            XML.SubElement(email, "includeCulprits").text = str(
+                "culprits" in data["send-to"]
+            ).lower()
+            XML.SubElement(email, "sendToRecipientList").text = str(
+                "recipients" in data["send-to"]
+            ).lower()
+        if plugin_version >= pkg_resources.parse_version("2.39"):
+            for recipient in data["send-to"]:
+                if "developers" == recipient:
+                    if recipient_providers is None:
+                        recipient_providers = XML.SubElement(
+                            email, "recipientProviders"
+                        )
+                    XML.SubElement(
+                        recipient_providers,
+                        "hudson.plugins.emailext.plugins.recipients.DevelopersRecipientProvider",
+                    ).text = ""
+                elif "requester" == recipient:
+                    if recipient_providers is None:
+                        recipient_providers = XML.SubElement(
+                            email, "recipientProviders"
+                        )
+                    XML.SubElement(
+                        recipient_providers,
+                        "hudson.plugins.emailext.plugins.recipients.RequesterRecipientProvider",
+                    ).text = ""
+                elif "culprits" == recipient:
+                    if recipient_providers is None:
+                        recipient_providers = XML.SubElement(
+                            email, "recipientProviders"
+                        )
+                    XML.SubElement(
+                        recipient_providers,
+                        "hudson.plugins.emailext.plugins.recipients.CulpritsRecipientProvider",
+                    ).text = ""
+                elif "recipients" == recipient:
+                    if recipient_providers is None:
+                        recipient_providers = XML.SubElement(
+                            email, "recipientProviders"
+                        )
+                    XML.SubElement(
+                        recipient_providers,
+                        "hudson.plugins.emailext.plugins.recipients.ListRecipientProvider",
+                    ).text = ""
+                elif "failing-test-suspects-recipients" == recipient:
+                    if recipient_providers is None:
+                        recipient_providers = XML.SubElement(
+                            email, "recipientProviders"
+                        )
+                    XML.SubElement(
+                        recipient_providers,
+                        "hudson.plugins.emailext.plugins.recipients.FailingTestSuspectsRecipientProvider",
+                    ).text = ""
+                elif "first-failing-build-suspects-recipients" == recipient:
+                    if recipient_providers is None:
+                        recipient_providers = XML.SubElement(
+                            email, "recipientProviders"
+                        )
+                    XML.SubElement(
+                        recipient_providers,
+                        "hudson.plugins.emailext.plugins.recipients.FirstFailingBuildSuspectsRecipientProvider",
+                    ).text = ""
+            # `failureCount` is deprecated and has no effect
+            # on email, but the element has been created
+            # in order to match the XML generated via UI.
+            failure_count_supporters = ["FirstFailureTrigger", "SecondFailureTrigger"]
+            if ttype in failure_count_supporters:
+                XML.SubElement(trigger, "failureCount").text = "0"
+            if "upstream-committers" in data["send-to"]:
+                if recipient_providers is None:
+                    recipient_providers = XML.SubElement(email, "recipientProviders")
+                XML.SubElement(
+                    recipient_providers,
+                    "hudson.plugins.emailext.plugins.recipients.UpstreamComitterRecipientProvider",
+                ).text = ""
+    else:
+        if plugin_version < pkg_resources.parse_version("2.39"):
+            XML.SubElement(email, "sendToRequester").text = "false"
+            XML.SubElement(email, "sendToDevelopers").text = "false"
+            XML.SubElement(email, "includeCulprits").text = "false"
+            XML.SubElement(email, "sendToRecipientList").text = "true"
+        elif plugin_version >= pkg_resources.parse_version("2.39"):
             recipient_providers = XML.SubElement(email, "recipientProviders")
             XML.SubElement(
                 recipient_providers,
-                "hudson.plugins.emailext.plugins.recipients.UpstreamComitterRecipientProvider",
+                "hudson.plugins.emailext.plugins.recipients.ListRecipientProvider",
             ).text = ""
-    else:
-        XML.SubElement(email, "sendToRequester").text = "false"
-        XML.SubElement(email, "sendToDevelopers").text = "false"
-        XML.SubElement(email, "includeCulprits").text = "false"
-        XML.SubElement(email, "sendToRecipientList").text = "true"
+
     if ttype == "ScriptTrigger":
         XML.SubElement(trigger, "triggerScript").text = data["trigger-script"]
+
+    if plugin_version >= pkg_resources.parse_version("2.39"):
+        XML.SubElement(email, "attachmentsPattern").text = ""
+        XML.SubElement(email, "attachBuildLog").text = "false"
+        XML.SubElement(email, "compressBuildLog").text = "false"
 
 
 def email_ext(registry, xml_parent, data):
@@ -2500,6 +2587,8 @@ def email_ext(registry, xml_parent, data):
         (default '$DEFAULT_RECIPIENTS')
     :arg str reply-to: Comma separated list of email addresses that should be
         in the Reply-To header for this project (default '$DEFAULT_REPLYTO')
+    :arg str from: Email address that should be
+        in the From header for this project (default '')
     :arg str content-type: The content type of the emails sent. If not set, the
         Jenkins plugin uses the value set on the main configuration page.
         Possible values: 'html', 'text', 'both-html-text' or 'default'
@@ -2560,6 +2649,8 @@ def email_ext(registry, xml_parent, data):
             * **culprits** (disabled by default)
             * **recipients** (enabled by default)
             * **upstream-committers** (>=2.39) (disabled by default)
+            * **failing-test-suspects-recipients** (>=2.39) (disabled by default)
+            * **first-failing-build-suspects-recipients** (>=2.39) (disabled by default)
 
     Example:
 
@@ -2570,6 +2661,10 @@ def email_ext(registry, xml_parent, data):
     emailext = XML.SubElement(
         xml_parent, "hudson.plugins.emailext.ExtendedEmailPublisher"
     )
+
+    info = registry.get_plugin_info("email-ext")
+    plugin_version = pkg_resources.parse_version(info.get("version", str(sys.maxsize)))
+
     if "recipients" in data:
         XML.SubElement(emailext, "recipientList").text = data["recipients"]
     else:
@@ -2633,6 +2728,10 @@ def email_ext(registry, xml_parent, data):
         ("disable-publisher", "disabled", False),
         ("reply-to", "replyTo", "$DEFAULT_REPLYTO"),
     ]
+
+    if plugin_version >= pkg_resources.parse_version("2.39"):
+        mappings.append(("from", "from", ""))
+
     helpers.convert_mapping_to_xml(emailext, data, mappings, fail_required=True)
 
     matrix_dict = {
