@@ -13,9 +13,6 @@
             <sendToRequester>true</sendToRequester>
             <includeCulprits>true</includeCulprits>
             <sendToRecipientList>true</sendToRecipientList>
-            <recipientProviders>
-              <hudson.plugins.emailext.plugins.recipients.UpstreamComitterRecipientProvider/>
-            </recipientProviders>
           </email>
         </hudson.plugins.emailext.plugins.trigger.AlwaysTrigger>
         <hudson.plugins.emailext.plugins.trigger.UnstableTrigger>
@@ -27,9 +24,6 @@
             <sendToRequester>true</sendToRequester>
             <includeCulprits>true</includeCulprits>
             <sendToRecipientList>true</sendToRecipientList>
-            <recipientProviders>
-              <hudson.plugins.emailext.plugins.recipients.UpstreamComitterRecipientProvider/>
-            </recipientProviders>
           </email>
         </hudson.plugins.emailext.plugins.trigger.UnstableTrigger>
         <hudson.plugins.emailext.plugins.trigger.FirstFailureTrigger>
@@ -41,9 +35,6 @@
             <sendToRequester>true</sendToRequester>
             <includeCulprits>true</includeCulprits>
             <sendToRecipientList>true</sendToRecipientList>
-            <recipientProviders>
-              <hudson.plugins.emailext.plugins.recipients.UpstreamComitterRecipientProvider/>
-            </recipientProviders>
           </email>
         </hudson.plugins.emailext.plugins.trigger.FirstFailureTrigger>
         <hudson.plugins.emailext.plugins.trigger.FirstUnstableTrigger>
@@ -55,9 +46,6 @@
             <sendToRequester>true</sendToRequester>
             <includeCulprits>true</includeCulprits>
             <sendToRecipientList>true</sendToRecipientList>
-            <recipientProviders>
-              <hudson.plugins.emailext.plugins.recipients.UpstreamComitterRecipientProvider/>
-            </recipientProviders>
           </email>
         </hudson.plugins.emailext.plugins.trigger.FirstUnstableTrigger>
         <hudson.plugins.emailext.plugins.trigger.NotBuiltTrigger>
@@ -69,9 +57,6 @@
             <sendToRequester>true</sendToRequester>
             <includeCulprits>true</includeCulprits>
             <sendToRecipientList>true</sendToRecipientList>
-            <recipientProviders>
-              <hudson.plugins.emailext.plugins.recipients.UpstreamComitterRecipientProvider/>
-            </recipientProviders>
           </email>
         </hudson.plugins.emailext.plugins.trigger.NotBuiltTrigger>
         <hudson.plugins.emailext.plugins.trigger.AbortedTrigger>
@@ -83,9 +68,6 @@
             <sendToRequester>true</sendToRequester>
             <includeCulprits>true</includeCulprits>
             <sendToRecipientList>true</sendToRecipientList>
-            <recipientProviders>
-              <hudson.plugins.emailext.plugins.recipients.UpstreamComitterRecipientProvider/>
-            </recipientProviders>
           </email>
         </hudson.plugins.emailext.plugins.trigger.AbortedTrigger>
         <hudson.plugins.emailext.plugins.trigger.RegressionTrigger>
@@ -97,9 +79,6 @@
             <sendToRequester>true</sendToRequester>
             <includeCulprits>true</includeCulprits>
             <sendToRecipientList>true</sendToRecipientList>
-            <recipientProviders>
-              <hudson.plugins.emailext.plugins.recipients.UpstreamComitterRecipientProvider/>
-            </recipientProviders>
           </email>
         </hudson.plugins.emailext.plugins.trigger.RegressionTrigger>
         <hudson.plugins.emailext.plugins.trigger.FailureTrigger>
@@ -111,9 +90,6 @@
             <sendToRequester>true</sendToRequester>
             <includeCulprits>true</includeCulprits>
             <sendToRecipientList>true</sendToRecipientList>
-            <recipientProviders>
-              <hudson.plugins.emailext.plugins.recipients.UpstreamComitterRecipientProvider/>
-            </recipientProviders>
           </email>
         </hudson.plugins.emailext.plugins.trigger.FailureTrigger>
         <hudson.plugins.emailext.plugins.trigger.SecondFailureTrigger>
@@ -125,9 +101,6 @@
             <sendToRequester>true</sendToRequester>
             <includeCulprits>true</includeCulprits>
             <sendToRecipientList>true</sendToRecipientList>
-            <recipientProviders>
-              <hudson.plugins.emailext.plugins.recipients.UpstreamComitterRecipientProvider/>
-            </recipientProviders>
           </email>
         </hudson.plugins.emailext.plugins.trigger.SecondFailureTrigger>
         <hudson.plugins.emailext.plugins.trigger.ImprovementTrigger>
@@ -139,9 +112,6 @@
             <sendToRequester>true</sendToRequester>
             <includeCulprits>true</includeCulprits>
             <sendToRecipientList>true</sendToRecipientList>
-            <recipientProviders>
-              <hudson.plugins.emailext.plugins.recipients.UpstreamComitterRecipientProvider/>
-            </recipientProviders>
           </email>
         </hudson.plugins.emailext.plugins.trigger.ImprovementTrigger>
         <hudson.plugins.emailext.plugins.trigger.StillFailingTrigger>
@@ -153,9 +123,6 @@
             <sendToRequester>true</sendToRequester>
             <includeCulprits>true</includeCulprits>
             <sendToRecipientList>true</sendToRecipientList>
-            <recipientProviders>
-              <hudson.plugins.emailext.plugins.recipients.UpstreamComitterRecipientProvider/>
-            </recipientProviders>
           </email>
         </hudson.plugins.emailext.plugins.trigger.StillFailingTrigger>
         <hudson.plugins.emailext.plugins.trigger.SuccessTrigger>
@@ -167,9 +134,6 @@
             <sendToRequester>true</sendToRequester>
             <includeCulprits>true</includeCulprits>
             <sendToRecipientList>true</sendToRecipientList>
-            <recipientProviders>
-              <hudson.plugins.emailext.plugins.recipients.UpstreamComitterRecipientProvider/>
-            </recipientProviders>
           </email>
         </hudson.plugins.emailext.plugins.trigger.SuccessTrigger>
         <hudson.plugins.emailext.plugins.trigger.FixedTrigger>
@@ -181,9 +145,6 @@
             <sendToRequester>true</sendToRequester>
             <includeCulprits>true</includeCulprits>
             <sendToRecipientList>true</sendToRecipientList>
-            <recipientProviders>
-              <hudson.plugins.emailext.plugins.recipients.UpstreamComitterRecipientProvider/>
-            </recipientProviders>
           </email>
         </hudson.plugins.emailext.plugins.trigger.FixedTrigger>
         <hudson.plugins.emailext.plugins.trigger.FixedUnhealthyTrigger>
@@ -195,9 +156,6 @@
             <sendToRequester>true</sendToRequester>
             <includeCulprits>true</includeCulprits>
             <sendToRecipientList>true</sendToRecipientList>
-            <recipientProviders>
-              <hudson.plugins.emailext.plugins.recipients.UpstreamComitterRecipientProvider/>
-            </recipientProviders>
           </email>
         </hudson.plugins.emailext.plugins.trigger.FixedUnhealthyTrigger>
         <hudson.plugins.emailext.plugins.trigger.StillUnstableTrigger>
@@ -209,9 +167,6 @@
             <sendToRequester>true</sendToRequester>
             <includeCulprits>true</includeCulprits>
             <sendToRecipientList>true</sendToRecipientList>
-            <recipientProviders>
-              <hudson.plugins.emailext.plugins.recipients.UpstreamComitterRecipientProvider/>
-            </recipientProviders>
           </email>
         </hudson.plugins.emailext.plugins.trigger.StillUnstableTrigger>
         <hudson.plugins.emailext.plugins.trigger.PreBuildTrigger>
@@ -223,9 +178,6 @@
             <sendToRequester>true</sendToRequester>
             <includeCulprits>true</includeCulprits>
             <sendToRecipientList>true</sendToRecipientList>
-            <recipientProviders>
-              <hudson.plugins.emailext.plugins.recipients.UpstreamComitterRecipientProvider/>
-            </recipientProviders>
           </email>
         </hudson.plugins.emailext.plugins.trigger.PreBuildTrigger>
       </configuredTriggers>
