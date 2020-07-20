@@ -1,0 +1,17 @@
+publishers:
+  - email-ext:
+      recipients: foo@example.com, bar@example.com
+      reply-to: foo@example.com
+      from: lorem@ipsum.dolor
+      content-type: html
+      subject: Subject for Build ${BUILD_NUMBER}
+      body: The build has finished
+      attach-build-log: false
+      compress-log: false
+      attachments: "*/foo*.log"
+      always: true
+      unstable: true
+      matrix-trigger: only-configurations
+      presend-script: "cancel=true"
+      postsend-script: "cancel=true"
+      save-output: true
