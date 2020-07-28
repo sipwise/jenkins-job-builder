@@ -1,0 +1,19 @@
+- job-template:
+    name: 'test-job-{variant}'
+    properties: !j2-yaml: |
+        - rebuild
+        {% if discard_old_builds|default %}
+        - build-discarder:
+            days-to-keep: 7
+        {% endif %}
+
+- project:
+    name: test-project
+
+    jobs:
+    - 'test-job-{variant}':
+        variant: abc
+
+    - 'test-job-{variant}':
+        variant: def
+        discard_old_builds: true
