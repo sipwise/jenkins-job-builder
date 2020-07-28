@@ -1,0 +1,30 @@
+- job-template:
+    name: test-job-template
+    triggers:
+    - gerrit:
+        projects:
+            !j2-yaml: |
+                {% for item in triggers %}
+                - branches:
+                  - branch-compare-type: PLAIN
+                    branch-pattern: '{{ item.branch }}'
+                  project-compare-type: REG_EXP
+                  project-pattern: '{{ item.repositories|join("|") }}'
+                {% endfor %}
+
+- project:
+    name: test-job-project
+
+    jobs:
+    - test-job-template:
+        triggers:
+        - repositories:
+            - a
+            - b
+            - c
+          branch: master
+        - repositories:
+            - d
+            - e
+            - f
+          branch: stable
