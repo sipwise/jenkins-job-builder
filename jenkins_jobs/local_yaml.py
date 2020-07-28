@@ -196,6 +196,24 @@ construct.
 Examples:
 
     .. literalinclude:: /../../tests/yamlparser/fixtures/jinja-string01.yaml
+
+The tag ``!j2-yaml:`` is similar to the ``!j2:`` tag, just that it loads the
+Jinja-rendered string as YAML and embeds it in the calling YAML construct. This
+provides a very flexible and convenient way of generating pieces of YAML
+structures. One of use cases is defining complex YAML structures with much
+simpler configuration, without any duplication.
+
+Examples:
+
+    .. literalinclude:: /../../tests/yamlparser/fixtures/jinja-yaml01.yaml
+
+Another use case is controlling lists dynamically, like conditionally adding
+list elements based on project configuration.
+
+Examples:
+
+    .. literalinclude:: /../../tests/yamlparser/fixtures/jinja-yaml02.yaml
+
 """
 
 import functools
@@ -367,6 +385,14 @@ class LocalDumper(OrderedRepresenter, yaml.Dumper):
 class BaseYAMLObject(YAMLObject):
     yaml_loader = LocalLoader
     yaml_dumper = LocalDumper
+
+
+class J2Yaml(YAMLObject):
+    yaml_tag = u"!j2-yaml:"
+
+    @classmethod
+    def from_yaml(cls, loader, node):
+        return Jinja2YamlLoader(node.value, loader.search_path)
 
 
 class J2String(BaseYAMLObject):
@@ -571,6 +597,12 @@ class Jinja2Loader(CustomLoader):
             self._loader = self._template.environment.loader
         self._template.environment.loader = self._loader
         return self._template.render(kwargs)
+
+
+class Jinja2YamlLoader(Jinja2Loader):
+    def format(self, **kwargs):
+        yaml_str = super(Jinja2YamlLoader, self).format(**kwargs)
+        return load(yaml_str)
 
 
 class CustomLoaderCollection(object):
