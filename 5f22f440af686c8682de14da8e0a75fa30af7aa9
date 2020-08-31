@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f560f44_c262b8ad",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2020-08-31T11:26:47Z",
+      "side": 1,
+      "message": "should this be using BaseYAMLObject?",
+      "revId": "5f22f440af686c8682de14da8e0a75fa30af7aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f560f44_6292cc5a",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2020-08-31T11:26:47Z",
+      "side": 1,
+      "message": "Might be worth considering switching the j2 below to a j2-string and making this the main `j2` tag in the future? as it seems like it might be the better long term engine approach for templating?",
+      "revId": "5f22f440af686c8682de14da8e0a75fa30af7aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
