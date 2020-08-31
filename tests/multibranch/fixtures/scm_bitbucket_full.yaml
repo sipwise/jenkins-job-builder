@@ -23,6 +23,9 @@ scm:
             all-branches:
                 - suppress-scm-triggering: true
                 - pipeline-branch-durability-override: max-survivability
+        refspecs:
+            - '+refs/heads/*:refs/remotes/@{remote}/*'
+            - '+refs/tags/*:refs/remotes/@{remote}/*'
         build-strategies:
             - tags:
                 ignore-tags-newer-than: 1
