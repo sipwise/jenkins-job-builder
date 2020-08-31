@@ -38,6 +38,16 @@
           <credentialsId>secret</credentialsId>
           <serverUrl>https://bitbucket.example.com:8080</serverUrl>
           <traits>
+            <jenkins.plugins.git.traits.RefSpecsSCMSourceTrait plugin="git">
+              <templates>
+                <jenkins.plugins.git.traits.RefSpecsSCMSourceTrait_-RefSpecTemplate>
+                  <value>+refs/heads/*:refs/remotes/@{remote}/*</value>
+                </jenkins.plugins.git.traits.RefSpecsSCMSourceTrait_-RefSpecTemplate>
+                <jenkins.plugins.git.traits.RefSpecsSCMSourceTrait_-RefSpecTemplate>
+                  <value>+refs/tags/*:refs/remotes/@{remote}/*</value>
+                </jenkins.plugins.git.traits.RefSpecsSCMSourceTrait_-RefSpecTemplate>
+              </templates>
+            </jenkins.plugins.git.traits.RefSpecsSCMSourceTrait>
             <com.cloudbees.jenkins.plugins.bitbucket.TagDiscoveryTrait/>
             <jenkins.scm.impl.trait.RegexSCMHeadFilterTrait>
               <regex>master|\d+\.\d+</regex>

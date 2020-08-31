@@ -401,6 +401,7 @@ def bitbucket_scm(xml_parent, data):
         origin/develop/new-feature will be checked out to a local branch
         named develop/newfeature.
         Requires the :jenkins-plugins:`Git Plugin <git>`.
+    :arg list(str) refspecs: Which refspecs to look for.
     :arg dict checkout-over-ssh: Checkout repo over ssh.
 
         * **credentials** ('str'): Credentials to use for
@@ -480,6 +481,25 @@ def bitbucket_scm(xml_parent, data):
     helpers.convert_mapping_to_xml(source, data, mapping_optional, fail_required=False)
 
     traits = XML.SubElement(source, "traits")
+
+    if data.get("refspecs"):
+        refspec_trait = XML.SubElement(
+            traits,
+            "jenkins.plugins.git.traits.RefSpecsSCMSourceTrait",
+            {"plugin": "git"},
+        )
+        templates = XML.SubElement(refspec_trait, "templates")
+        refspecs = data.get("refspecs")
+        for refspec in refspecs:
+            e = XML.SubElement(
+                templates,
+                (
+                    "jenkins.plugins.git.traits"
+                    ".RefSpecsSCMSourceTrait_-RefSpecTemplate"
+                ),
+            )
+            XML.SubElement(e, "value").text = refspec
+
     if data.get("discover-tags", False):
         XML.SubElement(
             traits, "com.cloudbees.jenkins.plugins.bitbucket.TagDiscoveryTrait"
