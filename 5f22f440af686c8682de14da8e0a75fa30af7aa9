@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9f560f44_22e8d47a",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2020-08-31T11:51:38Z",
+      "side": 1,
+      "message": "I haven\u0027t noticed any difference when switched to BaseYAMLObject but in any case it\u0027s better to have it aligned with the rest.\n\nThanks. Done.",
+      "parentUuid": "9f560f44_c262b8ad",
+      "revId": "5f22f440af686c8682de14da8e0a75fa30af7aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f560f44_6292cc5a",
         "filename": "jenkins_jobs/local_yaml.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2020-08-31T11:26:47Z",
       "side": 1,
       "message": "Might be worth considering switching the j2 below to a j2-string and making this the main `j2` tag in the future? as it seems like it might be the better long term engine approach for templating?",
+      "revId": "5f22f440af686c8682de14da8e0a75fa30af7aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f560f44_62af6c2b",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2020-08-31T11:51:38Z",
+      "side": 1,
+      "message": "I just run a quick test and 5 test cases failed, so there are some things that would probably make the change backward incompatible change...",
+      "parentUuid": "9f560f44_6292cc5a",
       "revId": "5f22f440af686c8682de14da8e0a75fa30af7aa9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
