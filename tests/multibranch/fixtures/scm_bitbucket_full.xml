@@ -49,6 +49,9 @@
               </templates>
             </jenkins.plugins.git.traits.RefSpecsSCMSourceTrait>
             <com.cloudbees.jenkins.plugins.bitbucket.TagDiscoveryTrait/>
+            <jenkins.plugins.git.traits.GitLFSPullTrait plugin="git">
+              <extension class="hudson.plugins.git.extensions.impl.GitLFSPull"/>
+            </jenkins.plugins.git.traits.GitLFSPullTrait>
             <jenkins.scm.impl.trait.RegexSCMHeadFilterTrait>
               <regex>master|\d+\.\d+</regex>
             </jenkins.scm.impl.trait.RegexSCMHeadFilterTrait>
