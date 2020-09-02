@@ -367,6 +367,8 @@ def bitbucket_scm(xml_parent, data):
 
     :arg bool discover-tags: Discovers tags on the repository.
         (default false)
+    :arg bool lfs: Git LFS pull after checkout.
+        (default false)
     :arg str server-url: The address of the bitbucket server. (optional)
     :arg str head-filter-regex: A regular expression for filtering
         discovered source branches. Requires the :jenkins-plugins:`SCM API
@@ -499,6 +501,11 @@ def bitbucket_scm(xml_parent, data):
         XML.SubElement(
             traits, "com.cloudbees.jenkins.plugins.bitbucket.TagDiscoveryTrait"
         )
+
+    if data.get("lfs", False):
+        gitlfspull = XML.SubElement(traits, "jenkins.plugins.git.traits.GitLFSPullTrait", {"plugin": "git"})
+        XML.SubElement(gitlfspull, "extension", {"class": "hudson.plugins.git.extensions.impl.GitLFSPull"})
+
     if data.get("head-filter-regex", None):
         rshf = XML.SubElement(traits, "jenkins.scm.impl.trait.RegexSCMHeadFilterTrait")
         XML.SubElement(rshf, "regex").text = data.get("head-filter-regex")
