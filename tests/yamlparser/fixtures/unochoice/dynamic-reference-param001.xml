@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <actions/>
+  <description>&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <keepDependencies>false</keepDependencies>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <concurrentBuild>false</concurrentBuild>
+  <canRoam>true</canRoam>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <org.biouno.unochoice.DynamicReferenceParameter>
+          <script>
+            <secureScript>
+              <script>return [
+    'param1',
+    'param2'
+]</script>
+              <sandbox>true</sandbox>
+              <classpath>
+                <entry>
+                  <url>file:/path</url>
+                </entry>
+                <entry>
+                  <url>file:/path2</url>
+                </entry>
+              </classpath>
+            </secureScript>
+          </script>
+          <script>
+            <secureFallbackScript>
+              <script>return [
+    'param3',
+    'param4'
+]</script>
+              <sandbox>true</sandbox>
+              <classpath>
+                <entry>
+                  <url>file:/path</url>
+                </entry>
+                <entry>
+                  <url>file:/path2</url>
+                </entry>
+              </classpath>
+            </secureFallbackScript>
+          </script>
+          <parameters/>
+          <name>lorem</name>
+          <description>ipsum</description>
+          <choiceType>ET_TEXT_BOX</choiceType>
+          <projectName>dynamic-reference-job</projectName>
+          <projectFullName>unochoice/dynamic-reference-job</projectFullName>
+          <referencedParameters>dolor</referencedParameters>
+          <omitValueField>true</omitValueField>
+        </org.biouno.unochoice.DynamicReferenceParameter>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <builders/>
+  <publishers/>
+  <buildWrappers/>
+</project>

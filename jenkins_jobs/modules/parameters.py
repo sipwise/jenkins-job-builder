@@ -1143,6 +1143,222 @@ def param_separator(registry, xml_parent, data):
     helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
 
+def __handle_unochoice_script(data, pdef, script_type):
+    main_script_xml = XML.SubElement(pdef, "script")
+    if script_type == "script":
+        secure_script_xml = XML.SubElement(main_script_xml, "secureScript")
+    elif script_type == "fallback-script":
+        secure_script_xml = XML.SubElement(main_script_xml, "secureFallbackScript")
+
+    sub_script_xml = XML.SubElement(secure_script_xml, "script")
+    groovy_sandbox_xml = XML.SubElement(secure_script_xml, "sandbox")
+
+    script = data.get(script_type, {})
+    sub_script_xml.text = script.get("groovy", "")
+    groovy_sandbox_xml.text = str(script.get("use-groovy-sandbox", False)).lower()
+
+    if "script-additional-classpath" in script:
+        classpath_xml = XML.SubElement(secure_script_xml, "classpath")
+        for additional_classpath in script.get("script-additional-classpath"):
+            entry_xml = XML.SubElement(classpath_xml, "entry")
+            url_xml = XML.SubElement(entry_xml, "url")
+            url_xml.text = additional_classpath
+
+
+def active_choices_param(registry, xml_parent, data):
+    """yaml: active-choices
+    Active Choices Parameter
+
+    Requires the Jenkins :jenkins-wiki:`Active Choices Plug-in
+    <active+choices+plugin>`.
+
+    :arg str name: Name of the parameter (required).
+    :arg str description: Description of the parameter.
+    :arg list script: Use a Groovy script to define the parameter.
+
+        :Parameter: * **groovy** (`str`) Groovy DSL Script
+                    * **use-groovy-sandbox** (`bool`) To run this
+                        Groovy script in a sandbox with limited abilities
+                        (default False)
+                    * **script-additional-classpath** (`list`) Additional
+                        classpath entries accessible from the script.
+    :arg list fallback-script: Use a Fallback script. If the script
+        (specified above) fails, the fallback script will be used as a fallback.
+
+        :Parameter: * **groovy** (`str`) Groovy DSL Script
+                    * **use-groovy-sandbox** (`bool`) To run this Groovy
+                        script in a sandbox with limited abilities.
+                        (default False  )
+                    * **script-additional-classpath** (`list`) Additional
+                        classpath entries accessible from the script.
+    :arg bool enable-filters: If enabled a text box will appear next to
+        this element and will permit the user to filter its entries. The
+        list values never get re-evaluated (default False).
+    :arg int filter-starts-at: How many characters a user must enter
+        before the filter is applied (default 1).
+    :arg str choice-type: type of the choices. (default 'single-select')
+
+        :Allowed Values: * **single-select**
+                    * **multi-select**
+                    * **radio-buttons**
+                    * **checkboxes**
+
+    Example::
+
+      parameters:
+        - active-choices:
+            name: lorem
+            description: ipsum
+            script:
+                groovy: |-
+                    return [
+                        'param1',
+                        'param2'
+                    ]
+                use-groovy-sandbox: true
+                script-additional-classpath:
+                    - file:/jar-file-path
+                    - file:/jar-file-path2
+            fallback-script:
+                groovy: |-
+                    return [
+                        'param3',
+                        'param4'
+                    ]
+                use-groovy-sandbox: true
+                script-additional-classpath:
+                    - file:/jar-file-path
+                    - file:/jar-file-path2
+            choice-type: multi-select
+            enable-filters: False
+            filter-starts-at: 1
+    """
+    element_name = "org.biouno.unochoice.ChoiceParameter"
+    pdef = XML.SubElement(xml_parent, element_name)
+
+    valid_choice_types_dict = {
+        "single-select": "PT_SINGLE_SELECT",
+        "multi-select": "PT_MULTI_SELECT",
+        "radio-buttons": "PT_RADIO",
+        "checkboxes": "PT_CHECKBOX",
+    }
+
+    mapping = [
+        ("name", "name", None),
+        ("description", "description", ""),
+        ("choice-type", "choiceType", "PT_SINGLE_SELECT", valid_choice_types_dict),
+        ("enable-filters", "filterable", False),
+        ("filter-starts-at", "filterLength", 1),
+        ("_project-name", "projectName", None),
+        ("_project-full-name", "projectFullName", None),
+    ]
+
+    __handle_unochoice_script(data, pdef, "script")
+    __handle_unochoice_script(data, pdef, "fallback-script")
+
+    helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
+
+
+def dynamic_reference_param(registry, xml_parent, data):
+    """yaml: dynamic-reference
+    Active Choices Reactive Reference Parameter
+
+    Requires the Jenkins :jenkins-wiki:`Active Choices Plug-in
+    <active+choices+plugin>`.
+
+    :arg str name: Name of the parameter (required).
+    :arg str description: Description of the parameter.
+    :arg list script: Use a Groovy script to define the parameter.
+
+        :Parameter: * **groovy** (`str`) Groovy DSL Script
+                    * **use-groovy-sandbox** (`bool`) To run this
+                        Groovy script in a sandbox with limited abilities
+                    * **script-additional-classpath** (`list`) Additional
+                        classpath entries accessible from the script.
+    :arg list fallback-script: Use a Fallback script. If the script
+        (specified above) fails, the fallback script will be used as a fallback.
+
+        :Parameter: * **groovy** (`str`) Groovy DSL Script
+                    * **use-groovy-sandbox** (`bool`) To run this Groovy
+                        script in a sandbox with limited abilities.
+                    * **script-additional-classpath** (`list`) Additional
+                        classpath entries accessible from the script.
+    :arg bool omit-value-field: By default Dynamic Reference Parameters always
+        include a hidden input for the value. If your script creates an input
+        HTML element, you can check this option and the value input field will
+        be omitted.
+    :arg str referenced-parameters: Comma separated list of other job
+         parameters referenced in the uno-choice script. When any of the
+         referenced parameters are updated, the Groovy script will
+         re-evaluate the choice list using the updated values of referenced
+         parameters.
+    :arg str choice-type: type of the choices. (default 'input-text-box')
+
+        :Allowed Values: * **input-text-box**
+                    * **numbered-list**
+                    * **bullet-items-list**
+                    * **formatted-html**
+                    * **formatted-hidden-html**
+
+    Example::
+
+      parameters:
+        - dynamic-reference:
+            name: lorem
+            description: ipsum
+            script:
+                groovy: |-
+                    return [
+                        'param1',
+                        'param2'
+                    ]
+                use-groovy-sandbox: true
+                script-additional-classpath:
+                    - file:/jar-file-path
+                    - file:/jar-file-path2
+            fallback-script:
+                groovy: |-
+                    return [
+                        'param3',
+                        'param4'
+                    ]
+                use-groovy-sandbox: true
+                script-additional-classpath:
+                    - file:/jar-file-path
+                    - file:/jar-file-path2
+            referenced-parameters: param1, param2
+            choice-type: numbered-list
+            omit-value-field: False
+    """
+    element_name = "org.biouno.unochoice.DynamicReferenceParameter"
+    pdef = XML.SubElement(xml_parent, element_name)
+
+    valid_choice_types_dict = {
+        "input-text-box": "ET_TEXT_BOX",
+        "numbered-list": "ET_ORDERED_LIST",
+        "bullet-items-list": "ET_UNORDERED_LIST",
+        "formatted-html": "ET_FORMATTED_HTML",
+        "formatted-hidden-html": "ET_FORMATTED_HIDDEN_HTML",
+    }
+
+    mapping = [
+        ("name", "name", None),
+        ("description", "description", ""),
+        ("choice-type", "choiceType", "input-text-box", valid_choice_types_dict),
+        ("_project-name", "projectName", None),
+        ("_project-full-name", "projectFullName", None),
+        ("referenced-parameters", "referencedParameters", ""),
+        ("omit-value-field", "omitValueField", False),
+    ]
+
+    __handle_unochoice_script(data, pdef, "script")
+    __handle_unochoice_script(data, pdef, "fallback-script")
+
+    XML.SubElement(pdef, "parameters")  # Empty parameters tag
+
+    helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
+
+
 class Parameters(jenkins_jobs.modules.base.Base):
     sequence = 21
 
@@ -1171,4 +1387,9 @@ class Parameters(jenkins_jobs.modules.base.Base):
             if pdefs is None:
                 pdefs = XML.SubElement(pdefp, "parameterDefinitions")
             for param in parameters:
+                # Pass job name to the uno-choice plugin
+                param_type = next(iter(param))
+                if param_type in ("active-choices", "dynamic-reference"):
+                    param[param_type]["_project-name"] = data["name"].split("/")[-1]
+                    param[param_type]["_project-full-name"] = data["name"]
                 self.registry.dispatch("parameter", pdefs, param)

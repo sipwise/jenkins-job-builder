@@ -1,0 +1,9 @@
+- job:
+    name: unochoice/active-choices-job
+    parameters:
+      - active-choices:
+          name: lorem
+          description: ipsum
+          choice-type: multi-select
+          enable-filters: False
+          filter-starts-at: 1

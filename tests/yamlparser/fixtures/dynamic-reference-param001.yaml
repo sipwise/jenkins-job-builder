@@ -1,0 +1,30 @@
+- job:
+    name: dynamic-reference-job
+    folder: unochoice
+    parameters:
+      - dynamic-reference:
+          name: lorem
+          description: ipsum
+          script:
+              groovy: |-
+                  return [
+                      'param1',
+                      'param2'
+                  ]
+              use-groovy-sandbox: true
+              script-additional-classpath:
+                  - file:/path
+                  - file:/path2
+          fallback-script:
+              groovy: |-
+                  return [
+                      'param3',
+                      'param4'
+                  ]
+              use-groovy-sandbox: true
+              script-additional-classpath:
+                  - file:/path
+                  - file:/path2
+          choice-type: input-text-box
+          omit-value-field: True
+          referenced-parameters: dolor
