@@ -69,6 +69,24 @@
       "revId": "5f22f440af686c8682de14da8e0a75fa30af7aa9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f560f44_fb09f0dc",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2020-09-08T10:00:55Z",
+      "side": 1,
+      "message": "Meant it more as a future idea, it would probably have to be done via something similar to the code below that deprecates some older tags (which possibly should have been removed at some point)\n\n class YamlIncludeDeprecated(DeprecatedTag):\n     yaml_tag \u003d u\"!include\"\n     _new \u003d YamlInclude\n\nI wouldn\u0027t worry about it in this change.",
+      "parentUuid": "9f560f44_62af6c2b",
+      "revId": "5f22f440af686c8682de14da8e0a75fa30af7aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
