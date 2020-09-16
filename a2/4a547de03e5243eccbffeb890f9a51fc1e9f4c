@@ -1,0 +1,9 @@
+Code-Review+1: Eren Atas <eren_atas@hotmail.com>
+Code-Review+2: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Workflow+1: Thanh Ha (zxiiro) <zxiiro@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Wed, 16 Sep 2020 16:22:23 +0000
+Reviewed-on: https://review.opendev.org/749071
+Project: jjb/jenkins-job-builder
+Branch: refs/heads/master
