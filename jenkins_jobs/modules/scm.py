@@ -299,6 +299,7 @@ def git(registry, xml_parent, data):
             (default false)
         * **honor-refspec** (`bool`) - Perform initial clone using the refspec
             defined for the repository (default false)
+        * **skip-notifications** (`bool`) - Skip build status notifications
         * **sparse-checkout** (`dict`)
             * **paths** (`list`) - List of paths to sparse checkout. (optional)
         * **submodule** (`dict`)
@@ -607,6 +608,10 @@ def git_extensions(xml_parent, data):
             ).lower()
         if "reference-repo" in data:
             XML.SubElement(ext, "reference").text = str(data["reference-repo"])
+    skip_notifications = data.get('skip-notifications', False)
+    if trait and skip_notifications:
+        trait_name = 'com.cloudbees.jenkins.plugins.bitbucket.notifications.SkipNotificationsTrait'
+        XML.SubElement(xml_parent, trait_name)
     if not trait and "sparse-checkout" in data:
         ext_name = impl_prefix + "SparseCheckoutPaths"
         ext = XML.SubElement(xml_parent, ext_name)

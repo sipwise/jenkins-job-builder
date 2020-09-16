@@ -64,5 +64,6 @@ scm:
             parent-credentials: true
             timeout: 100
         timeout: "100"
+        skip-notifications: true
         use-author: true
         wipe-workspace: true

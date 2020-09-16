@@ -91,6 +91,7 @@
                 <timeout>100</timeout>
               </extension>
             </jenkins.plugins.git.traits.CloneOptionTrait>
+            <com.cloudbees.jenkins.plugins.bitbucket.notifications.SkipNotificationsTrait/>
             <jenkins.plugins.git.traits.SubmoduleOptionTrait>
               <extension class="hudson.plugins.git.extensions.impl.SubmoduleOption">
                 <disableSubmodules>false</disableSubmodules>
