@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f560f44_0a15a79b",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2020-09-18T14:35:29Z",
+      "side": 1,
+      "message": "Instead of coding like this, I suggest using the convert_mapping_to_xml and spelling out the optOut parameter as a parameter of the plugin.\n\nWhile this plugin only accepts one parameter as the top level config for now, we have seen cases in the past where a later version of similar plugins added additional parameters restructuring the XML layout. So using the convert_mappings function will future proof this property. Also it adds some common error checking conditions too which is helpful.",
+      "range": {
+        "startLine": 249,
+        "startChar": 4,
+        "endLine": 249,
+        "endChar": 62
+      },
+      "revId": "2fcf3b2d7d114144027487f3b52409833e43d941",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
