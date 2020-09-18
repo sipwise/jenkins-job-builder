@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f560f44_6ab0a3de",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1120,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2020-09-18T14:30:03Z",
+      "side": 1,
+      "message": "This should be \"(default: \"\") according to the code below.\n\nThe way we use the word \"(optional)\" in JJB would be when the mapping is something like this:\n\n mapping \u003d [(\"name\", \"name\", None)]\n helpers.convert_mapping_to_xml(..., fail_required\u003dFalse)\n\nNote the `fail_required\u003dFalse` as what this does when matched with a \"None\" mapping is skips generating the XML altogether.\n\nIn cases where a blank string like (\"\") is being passed this should be documented as (default: \"\") as a blank string is being passed in.\n\n(This comment applies to the other 3 \"optional\" config below too)",
+      "range": {
+        "startLine": 1120,
+        "startChar": 42,
+        "endLine": 1120,
+        "endChar": 50
+      },
+      "revId": "dd0092a68b4b1e5df47d6e0c1a536aa702296d41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
