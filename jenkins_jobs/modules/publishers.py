@@ -4948,6 +4948,63 @@ def warnings(registry, xml_parent, data):
         XML.SubElement(warnings, "useStableBuildAsReference").text = "false"
 
 
+def warningsng(registry, xml_parent, data):
+    """yaml: warningsng
+    The Jenkins Next Generation Warnings plugin collects compiler warnings or
+    issues reported by static analysis tools and visualizes the results.
+
+    Requires the Jenkins :jenkins-plugins:`Warnings Next Generation
+    <warnings-ng>`.
+    """
+    parent = XML.SubElement(xml_parent,
+        'io.jenkins.plugins.analysis.core.steps.IssuesRecorder')
+    parent.set("plugin", "warnings-ng")
+
+    # IssuesRecorder.java, enum TrendChartType
+    trend_chart_types = {
+        'aggregation-first': 'AGGREGATION_TOOLS',
+        'tools-first': 'TOOLS_AGGREGATION',
+        'tools-only': 'TOOLS_ONLY',
+        'none': 'NONE',
+    }
+
+    warningsng_mappings = [
+        ("analysis-tools", "analysisTools", ""),
+        ("source-code-encoding", "sourceCodeEncoding", ""),
+        ("source-directory", "sourceDirectory", ""),
+        ("ignore-quality-gate", "ignoreQualityGate", False),
+        ("ignore-failed-builds", "ignoreFailedBuilds", True),
+        ("reference-job-name", "referenceJobName", "-"),
+        ("fail-on-error", "failOnError", False),
+        ("healthy", "healthy", 0),
+        ("unhealthy", "unhealthy", 0),
+        # XXX
+        # <filters/>
+        ("is-enabled-for-failure", "isEnabledForFailure", False),
+        ("is-aggregating-results", "isAggregatingResults", False),
+        ("is-blame-disabled", "isBlameDisabled", False),
+        ("is-forensics-disabled", "isForensicsDisabled", False),
+        # XXX
+        # <qualityGates/>
+        ("trend-chart-type", "trendChartType",
+            "aggregation-first", trend_chart_types),
+    ]
+    helpers.convert_mapping_to_xml(
+        parent, data, warningsng_mappings, fail_required=True
+    )
+
+    # XXX should be moved to a jjb helper/lib
+    # https://github.com/jenkinsci/analysis-model
+    min_severity = XML.Element("minimumSeverity")
+    min_severity.set("plugin", "analysis-model-api")
+    # LOW (default), NORMAL or HIGH
+    severity_name = XML.SubElement(min_severity, "name")
+    severity_name.text = data.get('min-severity', 'LOW').upper().strip()
+    parent.insert(
+        1 + parent.getchildren().index(parent.find('unhealthy')),
+        min_severity)
+
+
 def sloccount(registry, xml_parent, data):
     r"""yaml: sloccount
     Generates the trend report for SLOCCount
