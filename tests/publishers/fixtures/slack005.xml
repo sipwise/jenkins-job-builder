@@ -22,11 +22,11 @@
       <commitInfoChoice>AUTHORS_AND_TITLES</commitInfoChoice>
       <includeCustomMessage>true</includeCustomMessage>
       <customMessage>A custom message.</customMessage>
-      <customMessageSuccess/>
-      <customMessageAborted/>
-      <customMessageNotBuilt/>
-      <customMessageUnstable/>
-      <customMessageFailure/>
+      <customMessageSuccess>A custom message for sucessful builds.</customMessageSuccess>
+      <customMessageAborted>A custom message for aborted builds.</customMessageAborted>
+      <customMessageNotBuilt>A custom message for not-built.</customMessageNotBuilt>
+      <customMessageUnstable>A custom message for unstable builds.</customMessageUnstable>
+      <customMessageFailure>A custom message for failed builds.</customMessageFailure>
       <authTokenCredentialId>yourauthtoken</authTokenCredentialId>
       <botUser>true</botUser>
       <baseUrl>https://hooks.slack.com/services/</baseUrl>

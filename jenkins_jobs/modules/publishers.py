@@ -7629,8 +7629,18 @@ def slack(registry, xml_parent, data):
         includes commit list with authors and titles (>=2.0). (default "NONE")
     :arg bool include-custom-message: Include a custom message into the
         notification (>=2.0). (default false)
-    :arg str custom-message: Custom message to be included (>=2.0).
-        (default '')
+    :arg str custom-message: Custom message to be included for all statuses
+        (>=2.0). (default '')
+    :arg str custom-message-success: Custom message for succesful builds
+        (>=2.10). (default '')
+    :arg str custom-message-aborted: Custom message for aborted builds
+        (>=2.10). (default '')
+    :arg str custom-message-not-built: Custom message for not-built
+        (>=2.10). (default '')
+    :arg str custom-message-unstable: Custom message for unstable builds
+        (>=2.10). (default '')
+    :arg str custom-message-failure: Custom message for failed builds
+        (>=2.10). (default '')
     :arg str auth-token-credential-id: The ID for the integration token from
         the Credentials plugin to be used to send notifications to Slack.
         (>=2.1) (default '')
@@ -7651,10 +7661,10 @@ def slack(registry, xml_parent, data):
         /../../tests/publishers/fixtures/slack003.yaml
         :language: yaml
 
-    Full example (version >= 2.0):
+    Full example (version >= 2.10):
 
     .. literalinclude::
-        /../../tests/publishers/fixtures/slack004.yaml
+        /../../tests/publishers/fixtures/slack005.yaml
         :language: yaml
 
     """
@@ -7695,6 +7705,11 @@ def slack(registry, xml_parent, data):
         ("commit-info-choice", "commitInfoChoice", "NONE"),
         ("include-custom-message", "includeCustomMessage", False),
         ("custom-message", "customMessage", ""),
+        ("custom-message-success", "customMessageSuccess", ""),
+        ("custom-message-aborted", "customMessageAborted", ""),
+        ("custom-message-not-built", "customMessageNotBuilt", ""),
+        ("custom-message-unstable", "customMessageUnstable", ""),
+        ("custom-message-failure", "customMessageFailure", ""),
         ("auth-token-credential-id", "authTokenCredentialId", ""),
         ("bot-user", "botUser", False),
         ("base-url", "baseUrl", ""),

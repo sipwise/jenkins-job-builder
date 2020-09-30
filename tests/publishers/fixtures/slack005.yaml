@@ -1,0 +1,30 @@
+publishers:
+  - slack:
+      team-domain: 'teamname'
+      auth-token: 'yourauthtoken'
+      auth-token-id: 'yourauthtokenid'
+      build-server-url: 'http://localhost:8081'
+      room: '#builds'
+      notify-start: True
+      notify-success: True
+      notify-aborted: True
+      notify-not-built: True
+      notify-unstable: True
+      notify-failure: True
+      notify-every-failure: True
+      notify-back-to-normal: True
+      notify-repeated-failure: True
+      notify-regression: True
+      include-test-summary: True
+      include-failed-tests: True
+      commit-info-choice: 'AUTHORS_AND_TITLES'
+      include-custom-message: True
+      custom-message: 'A custom message.'
+      custom-message-success: 'A custom message for sucessful builds.'
+      custom-message-aborted: 'A custom message for aborted builds.'
+      custom-message-not-built: 'A custom message for not-built.'
+      custom-message-unstable: 'A custom message for unstable builds.'
+      custom-message-failure: 'A custom message for failed builds.'
+      auth-token-credential-id: yourauthtoken
+      bot-user: True
+      base-url: https://hooks.slack.com/services/
