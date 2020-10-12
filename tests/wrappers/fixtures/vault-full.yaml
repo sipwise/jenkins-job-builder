@@ -2,6 +2,9 @@ wrappers:
   - vault-secrets:
       vault-url: 'http://127.0.0.1:8200'
       credentials-id: 'myCredentials'
+      fail-if-not-found: 'false'
+      skip-ssl-verification: 'true'
+      engine-version: '2'
       secrets:
         - secret-path: 'secret/my-secret'
           secret-values:
@@ -10,6 +13,7 @@ wrappers:
             - env-var: 'PASSWORD'
               vault-key: 'password'
         - secret-path: 'secret/my-secret2'
+          engine-version: '2'
           secret-values:
             - env-var: 'USERNAME2'
               vault-key: 'username2'

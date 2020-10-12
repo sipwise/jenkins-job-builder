@@ -5,10 +5,14 @@
       <configuration>
         <vaultUrl>http://127.0.0.1:8200</vaultUrl>
         <vaultCredentialId>myCredentials</vaultCredentialId>
+        <engineVersion>1</engineVersion>
+        <failIfNotFound>true</failIfNotFound>
+        <skipSslVerification>false</skipSslVerification>
       </configuration>
       <vaultSecrets>
         <com.datapipe.jenkins.vault.model.VaultSecret>
           <path>secret/my-token</path>
+          <engineVersion>1</engineVersion>
           <secretValues>
             <com.datapipe.jenkins.vault.model.VaultSecretValue>
               <envVar>TOKEN</envVar>

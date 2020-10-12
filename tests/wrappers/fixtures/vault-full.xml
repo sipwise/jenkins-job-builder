@@ -5,10 +5,14 @@
       <configuration>
         <vaultUrl>http://127.0.0.1:8200</vaultUrl>
         <vaultCredentialId>myCredentials</vaultCredentialId>
+        <engineVersion>2</engineVersion>
+        <failIfNotFound>false</failIfNotFound>
+        <skipSslVerification>true</skipSslVerification>
       </configuration>
       <vaultSecrets>
         <com.datapipe.jenkins.vault.model.VaultSecret>
           <path>secret/my-secret</path>
+          <engineVersion>1</engineVersion>
           <secretValues>
             <com.datapipe.jenkins.vault.model.VaultSecretValue>
               <envVar>USERNAME</envVar>
@@ -22,6 +26,7 @@
         </com.datapipe.jenkins.vault.model.VaultSecret>
         <com.datapipe.jenkins.vault.model.VaultSecret>
           <path>secret/my-secret2</path>
+          <engineVersion>2</engineVersion>
           <secretValues>
             <com.datapipe.jenkins.vault.model.VaultSecretValue>
               <envVar>USERNAME2</envVar>
