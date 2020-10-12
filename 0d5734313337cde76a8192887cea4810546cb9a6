@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "9f560f44_bbf8eac0",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1234,
+      "author": {
+        "id": 32058
+      },
+      "writtenOn": "2020-10-12T12:01:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f560f44_61ed85ef",
+      "range": {
+        "startLine": 1208,
+        "startChar": 0,
+        "endLine": 1234,
+        "endChar": 31
+      },
+      "revId": "0d5734313337cde76a8192887cea4810546cb9a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9f560f44_41e841de",
         "filename": "jenkins_jobs/modules/parameters.py",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2020-10-02T14:01:46Z",
       "side": 1,
       "message": "Same comment as the examples comment above.",
+      "range": {
+        "startLine": 1305,
+        "startChar": 0,
+        "endLine": 1331,
+        "endChar": 35
+      },
+      "revId": "0d5734313337cde76a8192887cea4810546cb9a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f560f44_1b2d9645",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1331,
+      "author": {
+        "id": 32058
+      },
+      "writtenOn": "2020-10-12T12:01:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f560f44_41e841de",
       "range": {
         "startLine": 1305,
         "startChar": 0,
