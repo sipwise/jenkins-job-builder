@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f6b1bfe_d6c5845d",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1326,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2020-10-13T12:44:09Z",
+      "side": 1,
+      "message": "Please add documentation for these new settings in the pydocs above.",
+      "range": {
+        "startLine": 1324,
+        "startChar": 0,
+        "endLine": 1326,
+        "endChar": 66
+      },
+      "revId": "5a2bf3f7327987b60e459295b28dd407246e9616",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f6b1bfe_36a038a6",
+        "filename": "jenkins_jobs/modules/wrappers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1334,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2020-10-13T12:44:09Z",
+      "side": 1,
+      "message": "Same here please document in the pydocs above.",
+      "revId": "5a2bf3f7327987b60e459295b28dd407246e9616",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
