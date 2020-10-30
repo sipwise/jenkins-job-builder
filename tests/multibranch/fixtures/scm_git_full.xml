@@ -140,6 +140,9 @@
               </jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl_-WildcardsNameFilter>
             </filters>
           </jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl>
+          <com.igalg.jenkins.plugins.multibranch.buildstrategy.IncludeRegionBranchBuildStrategy plugin="multibranch-build-strategy-extension">
+            <includedRegions>my/cool/project/*.cpp</includedRegions>
+          </com.igalg.jenkins.plugins.multibranch.buildstrategy.IncludeRegionBranchBuildStrategy>
         </buildStrategies>
       </jenkins.branch.BranchSource>
     </data>

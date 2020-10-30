@@ -86,6 +86,7 @@ import six
 from jenkins_jobs.modules.scm import git_extensions
 from jenkins_jobs.errors import InvalidAttributeError
 from jenkins_jobs.errors import JenkinsJobsException
+from jenkins_jobs.xml_config import remove_ignorable_whitespace
 
 logger = logging.getLogger(str(__name__))
 
@@ -1142,6 +1143,8 @@ def build_strategies(xml_parent, data):
                     for example: `master release*` (default `*`)
                 * **excludes** (str) Name patterns to ignore even if matched
                     by the includes list. For example: release (optional)
+        * **raw** (dict): Injects raw BuildStrategy XML to use custom build
+            strategy plugins.
 
     """
 
@@ -1267,6 +1270,11 @@ def build_strategies(xml_parent, data):
                         wildcards_name_mapping,
                         fail_required=False,
                     )
+
+        if "raw" in bbs_list:
+            raw_xml = XML.fromstring(bbs_list["raw"].get("xml"))
+            remove_ignorable_whitespace(raw_xml)
+            XML.SubElement(bbs, None).append(raw_xml)
 
 
 def property_strategies(xml_parent, data):

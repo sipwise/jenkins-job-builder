@@ -37,6 +37,11 @@ scm:
                 - exact-name: {}
                 - regex-name: {}
                 - wildcards-name: {}
+            - raw:
+                xml: |
+                  <com.igalg.jenkins.plugins.multibranch.buildstrategy.IncludeRegionBranchBuildStrategy plugin="multibranch-build-strategy-extension">
+                    <includedRegions>my/cool/project/*.cpp</includedRegions>
+                  </com.igalg.jenkins.plugins.multibranch.buildstrategy.IncludeRegionBranchBuildStrategy>
         clean:
             after: true
             before: true
