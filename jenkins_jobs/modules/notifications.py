@@ -43,6 +43,8 @@ def http_endpoint(registry, xml_parent, data):
     :arg str url: URL of the endpoint
     :arg str timeout: Timeout in milliseconds for sending notification
         request (30 seconds by default)
+    :arg str retries: Nr of times to retry sending notification in case
+        sending notification fails. (0 by default)
     :arg str log: Number lines of log messages to send (0 by default).
         Use -1 for all (use with caution).
 
@@ -65,6 +67,7 @@ def http_endpoint(registry, xml_parent, data):
         ("", "protocol", "HTTP"),
         ("", "event", event, supported_events),
         ("timeout", "timeout", 30000),
+        ("retries", "retries", 0),
         ("url", "url", None),
         ("log", "loglines", 0),
     ]

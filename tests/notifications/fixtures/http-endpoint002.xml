@@ -8,6 +8,7 @@
           <protocol>HTTP</protocol>
           <event>completed</event>
           <timeout>40000</timeout>
+          <retries>5</retries>
           <url>http://example.com/jenkins_endpoint</url>
           <loglines>-1</loglines>
         </com.tikal.hudson.plugins.notification.Endpoint>
