@@ -65,6 +65,7 @@ def http_endpoint(registry, xml_parent, data):
         ("", "protocol", "HTTP"),
         ("", "event", event, supported_events),
         ("timeout", "timeout", 30000),
+        ("retries", "retries", 0),
         ("url", "url", None),
         ("log", "loglines", 0),
     ]
