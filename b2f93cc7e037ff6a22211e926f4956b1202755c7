@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f621f24_f348da2d",
+        "filename": "jenkins_jobs/modules/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2020-11-11T15:41:27Z",
+      "side": 1,
+      "message": "Looks good, please add documentation in theh docstring above and this should be good to go.",
+      "revId": "b2f93cc7e037ff6a22211e926f4956b1202755c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
