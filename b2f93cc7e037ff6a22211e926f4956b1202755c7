@@ -16,6 +16,24 @@
       "revId": "b2f93cc7e037ff6a22211e926f4956b1202755c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f621f24_87867b12",
+        "filename": "jenkins_jobs/modules/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 32654
+      },
+      "writtenOn": "2020-11-12T07:32:30Z",
+      "side": 1,
+      "message": "Thanks, fixed.\n\nI notice existing timeout-arg is specified as str. I just followed this this pattern. Or would it have been better to set new arg as int, or even change both existing and new to int?",
+      "parentUuid": "1f621f24_f348da2d",
+      "revId": "b2f93cc7e037ff6a22211e926f4956b1202755c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
