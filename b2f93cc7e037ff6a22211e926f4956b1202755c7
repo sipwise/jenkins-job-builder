@@ -34,6 +34,24 @@
       "revId": "b2f93cc7e037ff6a22211e926f4956b1202755c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f621f24_df9af311",
+        "filename": "jenkins_jobs/modules/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2020-11-12T14:32:52Z",
+      "side": 1,
+      "message": "Both should be int. In reality convert_mapping_to_xml converts everything to string in the backend. But the docs here is to help the user with what they should input. Feel free to fix the other input as well :)",
+      "parentUuid": "1f621f24_87867b12",
+      "revId": "b2f93cc7e037ff6a22211e926f4956b1202755c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
