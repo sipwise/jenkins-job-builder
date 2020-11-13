@@ -2078,7 +2078,9 @@ def findbugs(registry, xml_parent, data):
 def checkstyle(registry, xml_parent, data):
     """yaml: checkstyle
     Publish trend reports with Checkstyle.
-    Requires the Jenkins :jenkins-plugins:`Checkstyle Plugin <checkstyle>`.
+
+    Requires the Jenkins Checkstyle Plugin
+    (https://github.com/jenkinsci/checkstyle-plugin).
 
     The checkstyle component accepts a dictionary with the
     following values:
@@ -3289,8 +3291,8 @@ def cigame(registry, xml_parent, data):
     """yaml: cigame
     This plugin introduces a game where users get points
     for improving the builds.
-    Requires the Jenkins :jenkins-plugins:`The Continuous Integration Game
-    plugin <ci-game>`.
+    Requires the Jenkins Continuous Integration Game
+    plugin (https://github.com/jenkinsci/ci-game-plugin).
 
     Example:
 
@@ -6312,7 +6314,8 @@ def scan_build(registry, xml_parent, data):
 def dry(registry, xml_parent, data):
     """yaml: dry
     Publish trend reports with DRY.
-    Requires the Jenkins :jenkins-plugins:`DRY Plugin <dry>`.
+
+    Requires the Jenkins DRY Plugin (https://github.com/jenkinsci/dry-plugin).
 
     The DRY component accepts a dictionary with the following values:
 
