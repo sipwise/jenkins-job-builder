@@ -1,5 +1,6 @@
 builders:
   - system-groovy:
-      command: "Some command"
-      bindings: "Some bindings"
-      class-path: "Some classpath"
+      command: "println 'Hello'"
+      bindings: "EXAMPLE=foo-bar"
+      class-path: "file:/home/user/example.jar"
+      sandbox: true

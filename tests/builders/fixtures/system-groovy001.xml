@@ -6,7 +6,6 @@
         <scriptFile>test.groovy</scriptFile>
       </scriptSource>
       <bindings/>
-      <classpath/>
     </hudson.plugins.groovy.SystemGroovy>
   </builders>
 </project>
