@@ -2078,7 +2078,8 @@ def findbugs(registry, xml_parent, data):
 def checkstyle(registry, xml_parent, data):
     """yaml: checkstyle
     Publish trend reports with Checkstyle.
-    Requires the Jenkins :jenkins-plugins:`Checkstyle Plugin <checkstyle>`.
+
+    Requires the Jenkins Checkstyle Plugin.
 
     The checkstyle component accepts a dictionary with the
     following values:
