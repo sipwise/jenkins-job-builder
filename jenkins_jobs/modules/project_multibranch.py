@@ -930,6 +930,7 @@ def github_scm(xml_parent, data):
             notifications on pull requests (default false) (Requires the
             :jenkins-plugins:`GitHub Branch Source Plugin
             <disable-github-multibranch-status>`.)
+        * **refspecs** (`list(str)`): Which refspecs to fetch.
         * **submodule** (`dict`)
             * **disable** (`bool`) - By disabling support for submodules you
               can still keep using basic git plugin functionality and just have
@@ -1084,6 +1085,24 @@ def github_scm(xml_parent, data):
     # - wipe-workspace
     # - use-author
     git_extensions(traits, data)
+
+    if data.get("refspecs"):
+        refspec_trait = XML.SubElement(
+            traits,
+            "jenkins.plugins.git.traits.RefSpecsSCMSourceTrait",
+            {"plugin": "git"},
+        )
+        templates = XML.SubElement(refspec_trait, "templates")
+        refspecs = data.get("refspecs")
+        for refspec in refspecs:
+            e = XML.SubElement(
+                templates,
+                (
+                    "jenkins.plugins.git.traits"
+                    ".RefSpecsSCMSourceTrait_-RefSpecTemplate"
+                ),
+            )
+            XML.SubElement(e, "value").text = refspec
 
     # github-only extensions
     disable_github_status_path_dscore = (

@@ -103,6 +103,13 @@
             <jenkins.plugins.git.traits.AuthorInChangelogTrait>
               <extension class="hudson.plugins.git.extensions.impl.AuthorInChangelog"/>
             </jenkins.plugins.git.traits.AuthorInChangelogTrait>
+            <jenkins.plugins.git.traits.RefSpecsSCMSourceTrait plugin="git">
+              <templates>
+                <jenkins.plugins.git.traits.RefSpecsSCMSourceTrait_-RefSpecTemplate>
+                  <value>+refs/heads/*:refs/remotes/@{remote}/*</value>
+                </jenkins.plugins.git.traits.RefSpecsSCMSourceTrait_-RefSpecTemplate>
+              </templates>
+            </jenkins.plugins.git.traits.RefSpecsSCMSourceTrait>
             <com.adobe.jenkins.disable__github__multibranch__status.DisableStatusUpdateTrait plugin="disable-github-multibranch-status"/>
           </traits>
         </source>

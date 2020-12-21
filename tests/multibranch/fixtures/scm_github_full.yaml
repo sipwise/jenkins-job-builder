@@ -66,6 +66,8 @@ scm:
         depth: 3
         do-not-fetch-tags: true
         disable-pr-notifications: true
+        refspecs:
+          - '+refs/heads/*:refs/remotes/@{remote}/*'
         submodule:
             disable: false
             recursive: true
