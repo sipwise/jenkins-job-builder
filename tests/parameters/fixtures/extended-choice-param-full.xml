@@ -4,13 +4,42 @@
     <hudson.model.ParametersDefinitionProperty>
       <parameterDefinitions>
         <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
-          <name>OPTIONS</name>
+          <name>OPTIONS_VALUE</name>
           <description>Available options</description>
           <value>foo|bar|select</value>
           <visibleItemCount>2</visibleItemCount>
           <multiSelectDelimiter>|</multiSelectDelimiter>
           <quoteValue>true</quoteValue>
           <defaultValue>foo</defaultValue>
+          <descriptionPropertyValue/>
+          <type>PT_MULTI_SELECT</type>
+          <propertyFile/>
+          <propertyKey>key</propertyKey>
+          <defaultPropertyFile/>
+          <defaultPropertyKey>fookey</defaultPropertyKey>
+          <descriptionPropertyFile/>
+          <descriptionPropertyKey/>
+          <bindings/>
+          <groovyScript/>
+          <groovyScriptFile/>
+          <groovyClasspath/>
+          <defaultGroovyScript/>
+          <defaultGroovyClasspath/>
+          <descriptionGroovyScript/>
+          <descriptionGroovyScriptFile/>
+          <descriptionGroovyClasspath/>
+          <javascript/>
+          <javascriptFile/>
+          <saveJSONParameterToFile>false</saveJSONParameterToFile>
+        </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+          <name>OPTIONS_FILE</name>
+          <description>Available options</description>
+          <value/>
+          <visibleItemCount>2</visibleItemCount>
+          <multiSelectDelimiter>|</multiSelectDelimiter>
+          <quoteValue>true</quoteValue>
+          <defaultValue/>
           <descriptionPropertyValue/>
           <type>PT_MULTI_SELECT</type>
           <propertyFile>/home/foo/property.prop</propertyFile>
@@ -26,7 +55,11 @@
           <defaultGroovyScript/>
           <defaultGroovyClasspath/>
           <descriptionGroovyScript/>
+          <descriptionGroovyScriptFile/>
           <descriptionGroovyClasspath/>
+          <javascript/>
+          <javascriptFile/>
+          <saveJSONParameterToFile>false</saveJSONParameterToFile>
         </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
         <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
           <name>OPTIONS_CHECKBOX</name>
@@ -51,7 +84,11 @@
           <defaultGroovyScript/>
           <defaultGroovyClasspath/>
           <descriptionGroovyScript/>
+          <descriptionGroovyScriptFile/>
           <descriptionGroovyClasspath/>
+          <javascript/>
+          <javascriptFile/>
+          <saveJSONParameterToFile>false</saveJSONParameterToFile>
         </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
         <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
           <name>MULTISELECTOPTIONS</name>
@@ -76,7 +113,98 @@
           <defaultGroovyScript/>
           <defaultGroovyClasspath/>
           <descriptionGroovyScript/>
+          <descriptionGroovyScriptFile/>
           <descriptionGroovyClasspath/>
+          <javascript/>
+          <javascriptFile/>
+          <saveJSONParameterToFile>false</saveJSONParameterToFile>
+        </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+          <name>JSON</name>
+          <description/>
+          <value/>
+          <visibleItemCount>5</visibleItemCount>
+          <multiSelectDelimiter>,</multiSelectDelimiter>
+          <quoteValue>false</quoteValue>
+          <defaultValue/>
+          <descriptionPropertyValue/>
+          <type>PT_JSON</type>
+          <propertyFile/>
+          <propertyKey/>
+          <defaultPropertyFile/>
+          <defaultPropertyKey/>
+          <descriptionPropertyFile/>
+          <descriptionPropertyKey/>
+          <bindings/>
+          <groovyScript>import net.sf.json.JSONObject; def jsonEditorOptions = JSONObject.fromObject(/{schema: {&quot;type&quot;: &quot;object&quot;, &quot;title&quot;: &quot;Name&quot;, &quot;properties&quot;: {&quot;name&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;propertyOrder&quot; : 1}}}}/);</groovyScript>
+          <groovyScriptFile/>
+          <groovyClasspath/>
+          <defaultGroovyScript/>
+          <defaultGroovyClasspath/>
+          <descriptionGroovyScript/>
+          <descriptionGroovyScriptFile/>
+          <descriptionGroovyClasspath/>
+          <javascript/>
+          <javascriptFile/>
+          <saveJSONParameterToFile>false</saveJSONParameterToFile>
+        </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+          <name>MULTILEVELMULTISELECT</name>
+          <description/>
+          <value>foo,bar,baz</value>
+          <visibleItemCount>5</visibleItemCount>
+          <multiSelectDelimiter>,</multiSelectDelimiter>
+          <quoteValue>false</quoteValue>
+          <defaultValue/>
+          <descriptionPropertyValue/>
+          <type>PT_MULTI_LEVEL_MULTI_SELECT</type>
+          <propertyFile/>
+          <propertyKey/>
+          <defaultPropertyFile/>
+          <defaultPropertyKey/>
+          <descriptionPropertyFile/>
+          <descriptionPropertyKey/>
+          <bindings/>
+          <groovyScript/>
+          <groovyScriptFile/>
+          <groovyClasspath/>
+          <defaultGroovyScript/>
+          <defaultGroovyClasspath/>
+          <descriptionGroovyScript/>
+          <descriptionGroovyScriptFile/>
+          <descriptionGroovyClasspath/>
+          <javascript/>
+          <javascriptFile/>
+          <saveJSONParameterToFile>false</saveJSONParameterToFile>
+        </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+        <com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
+          <name>MULTILEVELSINGLESELECT</name>
+          <description/>
+          <value>foo</value>
+          <visibleItemCount>5</visibleItemCount>
+          <multiSelectDelimiter>,</multiSelectDelimiter>
+          <quoteValue>false</quoteValue>
+          <defaultValue/>
+          <descriptionPropertyValue/>
+          <type>PT_MULTI_LEVEL_SINGLE_SELECT</type>
+          <propertyFile/>
+          <propertyKey/>
+          <defaultPropertyFile/>
+          <defaultPropertyKey/>
+          <descriptionPropertyFile/>
+          <descriptionPropertyKey/>
+          <bindings/>
+          <groovyScript/>
+          <groovyScriptFile/>
+          <groovyClasspath/>
+          <defaultGroovyScript/>
+          <defaultGroovyClasspath/>
+          <descriptionGroovyScript/>
+          <descriptionGroovyScriptFile/>
+          <descriptionGroovyClasspath/>
+          <javascript/>
+          <javascriptFile/>
+          <saveJSONParameterToFile>false</saveJSONParameterToFile>
         </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>

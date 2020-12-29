@@ -422,6 +422,11 @@ def run_param(registry, xml_parent, data):
     helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
 
+@helpers.check_mutual_exclusive_data_args(2, "value", "property-file", "groovy-script", "groovy-script-file")
+@helpers.check_mutual_exclusive_data_args(2, "default-value", "default-property-file", "default-groovy-script")
+@helpers.check_mutual_exclusive_data_args(2, "value-description", "description-property-file",
+                                          "description-groovy-script", "description-groovy-script-file")
+@helpers.check_mutual_exclusive_data_args(2, "javascript", "javascript-file")
 def extended_choice_param(registry, xml_parent, data):
     """yaml: extended-choice
     Creates an extended choice parameter where values can be read from a file
@@ -440,7 +445,8 @@ def extended_choice_param(registry, xml_parent, data):
     :arg str visible-items: number of items to show in the list
         (optional, default 5)
     :arg str type: type of select, can be single-select, multi-select,
-        radio, checkbox or textbox (optional, default single-select)
+        multi-level-single-select, multi-level-multi-select,
+        radio, checkbox, textbox, json (optional, default single-select)
     :arg str value: comma separated list of values for the single select
         or multi-select box (optional, default '')
     :arg str default-value: used to set the initial selection of the
@@ -470,9 +476,15 @@ def extended_choice_param(registry, xml_parent, data):
         groovy script (optional, default '')
     :arg str description-groovy-script: location of groovy script when value
         description needs to come from a groovy script (optional, default '')
+    :arg str description-groovy-script-file: location of groovy script file when value
+        description needs to come from a groovy script (optional, default '')
     :arg str description-groovy-classpath: classpath for the value description
         groovy script (optional, default '')
-
+    :arg str javascript: the javascript script contents (optional, default '')
+    :arg str javascript-file: location of javasript script file to generate
+        parameters (optional, default '')
+    :arg bool save-json-parameter-to-file: if json parameter should be saved
+        to file (optional, default False)
 
     Minimal Example:
 
@@ -499,14 +511,20 @@ def extended_choice_param(registry, xml_parent, data):
     choicedict = {
         "single-select": "PT_SINGLE_SELECT",
         "multi-select": "PT_MULTI_SELECT",
+        "multi-level-single-select": "PT_MULTI_LEVEL_SINGLE_SELECT",
+        "multi-level-multi-select": "PT_MULTI_LEVEL_MULTI_SELECT",
         "radio": "PT_RADIO",
         "checkbox": "PT_CHECKBOX",
         "textbox": "PT_TEXTBOX",
+        "json": "PT_JSON",
         "PT_SINGLE_SELECT": "PT_SINGLE_SELECT",
         "PT_MULTI_SELECT": "PT_MULTI_SELECT",
+        "PT_MULTI_LEVEL_SINGLE_SELECT": "PT_MULTI_LEVEL_SINGLE_SELECT",
+        "PT_MULTI_LEVEL_MULTI_SELECT": "PT_MULTI_LEVEL_MULTI_SELECT",
         "PT_RADIO": "PT_RADIO",
         "PT_CHECKBOX": "PT_CHECKBOX",
         "PT_TEXTBOX": "PT_TEXTBOX",
+        "PT_JSON": "PT_JSON",
     }
     mapping = [
         ("value", "value", ""),
@@ -529,7 +547,11 @@ def extended_choice_param(registry, xml_parent, data):
         ("default-groovy-script", "defaultGroovyScript", ""),
         ("default-groovy-classpath", "defaultGroovyClasspath", ""),
         ("description-groovy-script", "descriptionGroovyScript", ""),
+        ("description-groovy-script-file", "descriptionGroovyScriptFile", ""),
         ("description-groovy-classpath", "descriptionGroovyClasspath", ""),
+        ("javascript", "javascript", ""),
+        ("javascript-file", "javascriptFile", ""),
+        ("save-json-parameter-to-file", "saveJSONParameterToFile", False),
     ]
     helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 

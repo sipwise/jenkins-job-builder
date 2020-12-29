@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from functools import wraps
 import logging
 import sys
 
@@ -726,3 +727,18 @@ def jms_messaging_common(parent, subelement, data):
         ("msg-content", "messageContent", ""),
     ]
     convert_mapping_to_xml(namespace, data, mapping, fail_required=True)
+
+
+def check_mutual_exclusive_data_args(data_arg_position, *args):
+    mutual_exclusive_args = set(args)
+    def validator(f):
+        @wraps(f)
+        def wrap(*args):
+            actual_args = set(args[data_arg_position].keys())
+            if len(actual_args & mutual_exclusive_args) > 1:
+                raise JenkinsJobsException(
+                    "Args: {} in {} are mutual exclusive. Please define one of it.".format(
+                        mutual_exclusive_args, f.__name__))
+            return f(*args)
+        return wrap
+    return validator
