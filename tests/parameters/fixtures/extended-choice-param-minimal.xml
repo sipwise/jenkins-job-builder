@@ -26,7 +26,11 @@
           <defaultGroovyScript/>
           <defaultGroovyClasspath/>
           <descriptionGroovyScript/>
+          <descriptionGroovyScriptFile/>
           <descriptionGroovyClasspath/>
+          <javascript/>
+          <javascriptFile/>
+          <saveJSONParameterToFile>false</saveJSONParameterToFile>
         </com.cwctravel.hudson.plugins.extended__choice__parameter.ExtendedChoiceParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>

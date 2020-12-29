@@ -19,7 +19,11 @@ import yaml
 
 from jenkins_jobs.errors import InvalidAttributeError
 from jenkins_jobs.errors import MissingAttributeError
-from jenkins_jobs.modules.helpers import convert_mapping_to_xml
+from jenkins_jobs.errors import JenkinsJobsException
+from jenkins_jobs.modules.helpers import (
+    convert_mapping_to_xml,
+    check_mutual_exclusive_data_args,
+)
 from tests import base
 
 
@@ -112,3 +116,19 @@ class TestCaseTestHelpers(base.BaseTestCase):
             user_input_data,
             user_input_mappings,
         )
+
+    def test_check_mutual_exclusive_data_args_no_mutual_exclusive(self):
+        @check_mutual_exclusive_data_args(0, "foo", "bar")
+        @check_mutual_exclusive_data_args(0, "foo", "baz")
+        def func(data):
+            pass
+
+        func({"baz": "qaz", "bar": "qaz"})
+
+    def test_check_mutual_exclusive_data_args_mutual_exclusive(self):
+        @check_mutual_exclusive_data_args(0, "foo", "bar")
+        @check_mutual_exclusive_data_args(0, "foo", "baz")
+        def func(data):
+            pass
+
+        self.assertRaises(JenkinsJobsException, func, {"foo": "qaz", "bar": "qaz"})

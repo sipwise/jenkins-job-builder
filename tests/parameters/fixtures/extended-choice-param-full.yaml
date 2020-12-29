@@ -1,8 +1,7 @@
 parameters:
   - extended-choice:
-      name: OPTIONS
+      name: OPTIONS_VALUE
       description: "Available options"
-      property-file: /home/foo/property.prop
       property-key: key
       quote-value: true
       type: multi-select
@@ -10,6 +9,16 @@ parameters:
       visible-items: 2
       multi-select-delimiter: '|'
       default-value: foo
+      default-property-key: fookey
+  - extended-choice:
+      name: OPTIONS_FILE
+      description: "Available options"
+      property-file: /home/foo/property.prop
+      property-key: key
+      quote-value: true
+      type: multi-select
+      visible-items: 2
+      multi-select-delimiter: '|'
       default-property-file: /home/property.prop
       default-property-key: fookey
   - extended-choice:
@@ -37,3 +46,24 @@ parameters:
       visible-items: 2
       multi-select-delimiter: '|'
       default-value: foo
+  - extended-choice:
+      name: JSON
+      type: json
+      groovy-script: >-
+          import net.sf.json.JSONObject;
+          def jsonEditorOptions = JSONObject.fromObject(/{schema:
+          {"type": "object", "title": "Name", "properties":
+          {"name": {"type": "string", "propertyOrder" : 1}}}}/);
+  - extended-choice:
+      name: MULTILEVELMULTISELECT
+      type: multi-level-multi-select
+      value: !join:
+          - ','
+          -
+              - foo
+              - bar
+              - baz
+  - extended-choice:
+      name: MULTILEVELSINGLESELECT
+      type: multi-level-single-select
+      value: foo
