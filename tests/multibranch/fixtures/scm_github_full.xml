@@ -55,6 +55,26 @@
             <jenkins.scm.impl.trait.RegexSCMHeadFilterTrait>
               <regex>(.*/master|.*/release/.*)</regex>
             </jenkins.scm.impl.trait.RegexSCMHeadFilterTrait>
+            <net.gleske.scmfilter.impl.trait.RegexSCMHeadFilterTrait plugin="scm-filter-branch-pr">
+              <regex>foo/.*</regex>
+              <tagRegex>20\..*</tagRegex>
+            </net.gleske.scmfilter.impl.trait.RegexSCMHeadFilterTrait>
+            <net.gleske.scmfilter.impl.trait.WildcardSCMHeadFilterTrait plugin="scm-filter-branch-pr">
+              <includes>foo*</includes>
+              <excludes>bar*</excludes>
+              <tagIncludes>qaz*</tagIncludes>
+              <tagExcludes>*baz</tagExcludes>
+            </net.gleske.scmfilter.impl.trait.WildcardSCMHeadFilterTrait>
+            <net.gleske.scmfilter.impl.trait.RegexSCMOriginFilterTrait plugin="scm-filter-branch-pr">
+              <regex>(foo/.*|bar/.*)</regex>
+              <tagRegex>1\..*</tagRegex>
+            </net.gleske.scmfilter.impl.trait.RegexSCMOriginFilterTrait>
+            <net.gleske.scmfilter.impl.trait.WildcardSCMOriginFilterTrait plugin="scm-filter-branch-pr">
+              <includes>qaz*</includes>
+              <excludes>baz*</excludes>
+              <tagIncludes>bar*</tagIncludes>
+              <tagExcludes>*qaz</tagExcludes>
+            </net.gleske.scmfilter.impl.trait.WildcardSCMOriginFilterTrait>
             <org.jenkinsci.plugins.githubScmTraitNotificationContext.NotificationContextTrait>
               <contextLabel>jenkins.example.com/my_context</contextLabel>
               <typeSuffix>true</typeSuffix>

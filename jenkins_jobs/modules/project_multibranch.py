@@ -374,6 +374,10 @@ def bitbucket_scm(xml_parent, data):
     :arg str head-filter-regex: A regular expression for filtering
         discovered source branches. Requires the :jenkins-plugins:`SCM API
         Plugin <scm-api>`.
+    :arg list head-pr-filter-behaviors: Definition of Filter Branch PR behaviors.
+        Requires the :jenkins-plugins:`SCM Filter Branch PR Plugin
+        <scm-filter-branch-pr>`.
+        Refer to :func:`~add_filter_branch_pr_behaviors <add_filter_branch_pr_behaviors>`.
     :arg str discover-branch: Discovers branches on the repository.
         Valid options: ex-pr, only-pr, all.
         Value is not specified by default.
@@ -521,6 +525,9 @@ def bitbucket_scm(xml_parent, data):
     if data.get("head-filter-regex", None):
         rshf = XML.SubElement(traits, "jenkins.scm.impl.trait.RegexSCMHeadFilterTrait")
         XML.SubElement(rshf, "regex").text = data.get("head-filter-regex")
+
+    if data.get("head-pr-filter-behaviors", None):
+        add_filter_branch_pr_behaviors(traits, data.get("head-pr-filter-behaviors"))
 
     if data.get("discover-pr-origin", None):
         dpro = XML.SubElement(
@@ -771,6 +778,10 @@ def git_scm(xml_parent, data):
     :arg str head-filter-regex: A regular expression for filtering
         discovered source branches. Requires the :jenkins-plugins:`SCM API
         Plugin <scm-api>`.
+    :arg list head-pr-filter-behaviors: Definition of Filter Branch PR behaviors.
+        Requires the :jenkins-plugins:`SCM Filter Branch PR Plugin
+        <scm-filter-branch-pr>`.
+        Refer to :func:`~add_filter_branch_pr_behaviors <add_filter_branch_pr_behaviors>`.
     :arg list build-strategies: Provides control over whether to build a branch
         (or branch like things such as change requests and tags) whenever it is
         discovered initially or a change from the previous revision has been
@@ -852,6 +863,9 @@ def git_scm(xml_parent, data):
         rshf = XML.SubElement(traits, "jenkins.scm.impl.trait.RegexSCMHeadFilterTrait")
         XML.SubElement(rshf, "regex").text = data.get("head-filter-regex")
 
+    if data.get("head-pr-filter-behaviors", None):
+        add_filter_branch_pr_behaviors(traits, data.get("head-pr-filter-behaviors"))
+
     if data.get("property-strategies", None):
         property_strategies(xml_parent, data)
 
@@ -902,6 +916,10 @@ def github_scm(xml_parent, data):
         Valid options: merge-current, current, both, false.  (default 'merge-current')
     :arg bool discover-tags: Discovers tags on the repository.
         (default false)
+    :arg list head-pr-filter-behaviors: Definition of Filter Branch PR behaviors.
+        Requires the :jenkins-plugins:`SCM Filter Branch PR Plugin
+        <scm-filter-branch-pr>`.
+        Refer to :func:`~add_filter_branch_pr_behaviors <add_filter_branch_pr_behaviors>`.
     :arg list build-strategies: Provides control over whether to build a branch
         (or branch like things such as change requests and tags) whenever it is
         discovered initially or a change from the previous revision has been
@@ -1058,6 +1076,9 @@ def github_scm(xml_parent, data):
     if data.get("head-filter-regex", None):
         rshf = XML.SubElement(traits, "jenkins.scm.impl.trait.RegexSCMHeadFilterTrait")
         XML.SubElement(rshf, "regex").text = data.get("head-filter-regex")
+
+    if data.get("head-pr-filter-behaviors", None):
+        add_filter_branch_pr_behaviors(traits, data.get("head-pr-filter-behaviors"))
 
     if data.get("property-strategies", None):
         property_strategies(xml_parent, data)
@@ -1601,3 +1622,113 @@ def apply_property_strategies(props_elem, props_list):
                     "".join([pr_comment_build, pcb_bool_opts.get(opt)]),
                     {"plugin": "github-pr-comment-build"},
                 )
+
+
+def add_filter_branch_pr_behaviors(traits, data):
+    """Configure Filter Branch PR behaviors
+
+    Requires the :jenkins-plugins:`SCM Filter Branch PR Plugin
+    <scm-filter-branch-pr>`.
+
+    :arg list head-pr-filter-behaviors: Definition of filters.
+
+        * **head-pr-destined-regex** (dict): Filter by name incl. PR destined to
+            this branch with regexp
+
+            * **branch-regexp** (str) Regular expression to filter branches and
+                PRs (optional, default ".*")
+            * **tag-regexp** (str) Regular expression to filter tags
+                (optional, default "(?!.*)")
+
+        * **head-pr-destined-wildcard** (dict): Filter by name incl. PR
+            destined to this branch with wildcard
+
+            * **branch-includes** (str) Wildcard expression to include branches
+                and PRs (optional, default "*")
+            * **tag-includes** (str) Wildcard expression to include tags
+                (optional, default "")
+            * **branch-excludes** (str) Wildcard expression to exclude branches
+                and PRs (optional, default "")
+            * **tag-excludes** (str) Wildcard expression to exclude tags
+                (optional, default "*")
+
+        * **head-pr-originated-regex** (dict): Filter by name incl. PR destined
+            to this branch with regexp
+
+            * **branch-regexp** (str) Regular expression to filter branches
+                and PRs (optional, default ".*")
+            * **tag-regexp** (str) Regular expression to filter tags
+                (optional, default "(?!.*)")
+
+        * **head-pr-originated-wildcard** (dict): Filter by name incl. PR
+            destined to this branch with wildcard
+
+            * **branch-includes** (str) Wildcard expression to include branches
+                and PRs (optional, default "*")
+            * **tag-includes** (str) Wildcard expression to include tags
+                (optional, default "")
+            * **branch-excludes** (str) Wildcard expression to exclude branches
+                and PRs (optional, default "")
+            * **tag-excludes** (str) Wildcard expression to exclude tags
+                (optional, default "*")
+    """
+
+    regexp_mapping = [
+        ("branch-regexp", "regex", ".*"),
+        ("tag-regexp", "tagRegex", "(?!.*)"),
+    ]
+    wildcard_mapping = [
+        ("branch-includes", "includes", "*"),
+        ("branch-excludes", "excludes", ""),
+        ("tag-includes", "tagIncludes", ""),
+        ("tag-excludes", "tagExcludes", "*"),
+    ]
+
+    if data.get("head-pr-destined-regex"):
+        rshf = XML.SubElement(
+            traits,
+            "net.gleske.scmfilter.impl.trait.RegexSCMHeadFilterTrait",
+            {"plugin": "scm-filter-branch-pr"},
+        )
+        helpers.convert_mapping_to_xml(
+            rshf, data.get("head-pr-destined-regex"), regexp_mapping, fail_required=True
+        )
+
+    if data.get("head-pr-destined-wildcard"):
+        wshf = XML.SubElement(
+            traits,
+            "net.gleske.scmfilter.impl.trait.WildcardSCMHeadFilterTrait",
+            {"plugin": "scm-filter-branch-pr"},
+        )
+        helpers.convert_mapping_to_xml(
+            wshf,
+            data.get("head-pr-destined-wildcard"),
+            wildcard_mapping,
+            fail_required=True,
+        )
+
+    if data.get("head-pr-originated-regex"):
+        rsof = XML.SubElement(
+            traits,
+            "net.gleske.scmfilter.impl.trait.RegexSCMOriginFilterTrait",
+            {"plugin": "scm-filter-branch-pr"},
+        )
+        helpers.convert_mapping_to_xml(
+            rsof,
+            data.get("head-pr-originated-regex"),
+            regexp_mapping,
+            fail_required=True,
+        )
+
+    if data.get("head-pr-originated-wildcard"):
+        wsof = XML.SubElement(
+            traits,
+            "net.gleske.scmfilter.impl.trait.WildcardSCMOriginFilterTrait",
+            {"plugin": "scm-filter-branch-pr"},
+        )
+        helpers.convert_mapping_to_xml(
+            wsof,
+            data.get("head-pr-originated-wildcard"),
+            wildcard_mapping,
+            fail_required=True,
+        )
