@@ -10,6 +10,23 @@ scm:
         discover-tags: true
         lfs: true
         head-filter-regex: 'master|\d+\.\d+'
+        head-pr-filter-behaviors:
+            head-pr-destined-regex:
+                branch-regexp: "foo/.*"
+                tag-regexp: "20\\..*"
+            head-pr-destined-wildcard:
+                branch-includes: "foo*"
+                tag-includes: "qaz*"
+                branch-excludes: "bar*"
+                tag-excludes: "*baz"
+            head-pr-originated-regex:
+                branch-regexp: "(foo/.*|bar/.*)"
+                tag-regexp: "1\\..*"
+            head-pr-originated-wildcard:
+                branch-includes: "qaz*"
+                tag-includes: "bar*"
+                branch-excludes: "baz*"
+                tag-excludes: "*qaz"
         discover-pr-origin: headOnly
         discover-branch: all
         discover-pr-forks-strategy: current
