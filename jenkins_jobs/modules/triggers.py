@@ -1705,6 +1705,22 @@ def gitlab(registry, xml_parent, data):
         _add_xml(gitlab, xml_name, value)
 
 
+def gogs(registry, xml_parent, data):
+    """yaml: gogs
+    Trigger a job when gogs repository is pushed to.
+
+    Requires the Jenkins :jenkins-plugins:`Gogs Plugin <gogs-webhook>`.
+
+    Example:
+
+    .. literalinclude::
+       /../../tests/triggers/fixtures/gogs.yaml
+       :language: yaml
+    """
+    gogstrig = XML.SubElement(xml_parent, "org.jenkinsci.plugins.gogs.GogsTrigger")
+    XML.SubElement(gogstrig, "spec")
+
+
 def build_result(registry, xml_parent, data):
     """yaml: build-result
     Configure jobB to monitor jobA build result. A build is scheduled if there
