@@ -230,6 +230,25 @@ def gitlab_logo(registry, xml_parent, data):
     helpers.convert_mapping_to_xml(logo, data, mapping, fail_required=True)
 
 
+def gogs(registry, xml_parent, data):
+    """yaml: gogs
+    Sets the Gogs webhook properties for the project.
+
+    Requires the Jenkins :jenkins-plugins:`Gogs Plugin <gogs-webhook>`.
+
+    :arg str secret: webhook secret (default '')
+    :arg str branch-filter: filter which needs to match to trigger a job (default '')
+
+    Example:
+
+    .. literalinclude:: /../../tests/properties/fixtures/gogs.yaml
+       :language: yaml
+    """
+    gogs = XML.SubElement(xml_parent, "org.jenkinsci.plugins.gogs.GogsProjectProperty")
+    mapping = [("branch-filter", "gogsBranchFilter", ""), ("secret", "gogsSecret", "")]
+    helpers.convert_mapping_to_xml(gogs, data, mapping)
+
+
 def naginator_opt_out(registry, xml_parent, data):
     """yaml: naginator-opt-out
     Lets you opt-out so no rebuild option for Naginator is added.
