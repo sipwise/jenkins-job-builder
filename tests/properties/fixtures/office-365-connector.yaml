@@ -1,0 +1,26 @@
+properties:
+  - office-365-connector:
+      webhooks:
+        - url: http://outlook.office.com/webhook/1
+          name: simple
+        - url: http://outlook.office.com/webhook/2
+          name: full
+          start-notification: true
+          notify-success: false
+          notify-aborted: true
+          notify-not-built: true
+          notify-unstable: false
+          notify-failure: false
+          notify-back-to-normal: false
+          notify-repeated-failure: true
+          timeout: 30001
+          macros:
+            - template: macro1
+              value: macro1_value
+            - template: macro2
+              value: macro2_value
+          fact-definitions:
+            - name: fd1
+              template: fd1_value
+            - name: fd2
+              template: fd2_value

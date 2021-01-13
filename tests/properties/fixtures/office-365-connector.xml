@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <properties>
+    <jenkins.plugins.office365connector.WebhookJobProperty plugin="Office-365-Connector">
+      <webhooks>
+        <jenkins.plugins.office365connector.Webhook>
+          <url>http://outlook.office.com/webhook/1</url>
+          <name>simple</name>
+          <startNotification>false</startNotification>
+          <notifySuccess>true</notifySuccess>
+          <notifyAborted>false</notifyAborted>
+          <notifyNotBuilt>false</notifyNotBuilt>
+          <notifyUnstable>true</notifyUnstable>
+          <notifyFailure>true</notifyFailure>
+          <notifyBackToNormal>true</notifyBackToNormal>
+          <notifyRepeatedFailure>false</notifyRepeatedFailure>
+          <timeout>30000</timeout>
+        </jenkins.plugins.office365connector.Webhook>
+        <jenkins.plugins.office365connector.Webhook>
+          <url>http://outlook.office.com/webhook/2</url>
+          <name>full</name>
+          <startNotification>true</startNotification>
+          <notifySuccess>false</notifySuccess>
+          <notifyAborted>true</notifyAborted>
+          <notifyNotBuilt>true</notifyNotBuilt>
+          <notifyUnstable>false</notifyUnstable>
+          <notifyFailure>false</notifyFailure>
+          <notifyBackToNormal>false</notifyBackToNormal>
+          <notifyRepeatedFailure>true</notifyRepeatedFailure>
+          <timeout>30001</timeout>
+          <macros>
+            <jenkins.plugins.office365connector.model.Macro>
+              <template>macro1</template>
+              <value>macro1_value</value>
+            </jenkins.plugins.office365connector.model.Macro>
+            <jenkins.plugins.office365connector.model.Macro>
+              <template>macro2</template>
+              <value>macro2_value</value>
+            </jenkins.plugins.office365connector.model.Macro>
+          </macros>
+          <factDefinitions>
+            <jenkins.plugins.office365connector.model.FactDefinition>
+              <name>fd1</name>
+              <template>fd1_value</template>
+            </jenkins.plugins.office365connector.model.FactDefinition>
+            <jenkins.plugins.office365connector.model.FactDefinition>
+              <name>fd2</name>
+              <template>fd2_value</template>
+            </jenkins.plugins.office365connector.model.FactDefinition>
+          </factDefinitions>
+        </jenkins.plugins.office365connector.Webhook>
+      </webhooks>
+    </jenkins.plugins.office365connector.WebhookJobProperty>
+  </properties>
+</project>
