@@ -1268,6 +1268,33 @@ def cachet_gating(registry, xml_parent, data):
             XML.SubElement(resources, "string").text = str(resource)
 
 
+def speed_durability(registry, xml_parent, data):
+    """yaml: speed-durability
+    This setting allows users to change the default durability mode
+    for running Pipelines.
+
+    :arg str hint: speed durability hint to be used, can be performance-optimized,
+        survivable-non-atomic, max-survivability
+
+    Example:
+
+    .. literalinclude::
+        /../../tests/properties/fixtures/speed-durability.yaml
+       :language: yaml
+    """
+    dhp = XML.SubElement(
+        xml_parent,
+        "org.jenkinsci.plugins.workflow.job.properties.DurabilityHintJobProperty",
+    )
+    choicedict = {
+        "performance-optimized": "PERFORMANCE_OPTIMIZED",
+        "survivable-non-atomic": "SURVIVABLE_NONATOMIC",
+        "max-survivability": "MAX_SURVIVABILITY",
+    }
+    mapping = [("hint", "hint", None, choicedict)]
+    helpers.convert_mapping_to_xml(dhp, data, mapping, fail_required=True)
+
+
 class Properties(jenkins_jobs.modules.base.Base):
     sequence = 20
 
