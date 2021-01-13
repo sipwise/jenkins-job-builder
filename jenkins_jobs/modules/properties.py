@@ -1268,6 +1268,109 @@ def cachet_gating(registry, xml_parent, data):
             XML.SubElement(resources, "string").text = str(resource)
 
 
+def office_365_connector(registry, xml_parent, data):
+    """yaml: office-365-connector
+    Used to send actionable messages to MS Outlook or Teams
+
+    Requires the Jenkins: :jenkins-plugins:` Office-365-Connector Plugin
+    <Office-365-Connector>`.
+
+    :arg list webhooks: List of webhooks (required)
+
+        * **url** (srt): URL generated in the Office 365 Connectors page (required)
+        * **name** (str): Allows to provide name fo the connection. Name is not
+            mandatory but helps managing when there are many connection
+            assigned to the build (optional, default '')
+        * **start-notification** (bool): If the notification should be sent on
+            start of build (optional, default False)
+        * **notify-success** (bool): If the notification should be sent on
+            succeeded build (optional, default True)
+        * **notify-aborted** (bool): If the notification should be sent on
+            aborted build (optional, default False)
+        * **notify-not-built** (bool): If the notification should be sent on
+            not built build (optional, default False)
+        * **notify-unstable** (bool): If the notification should be sent on
+            unstable build (optional, default True)
+        * **notify-failure** (bool): If the notification should be sent on
+            failed build (optional, default True)
+        * **notify-back-to-normal** (bool): If the notification should be sent on
+            back to normal build (optional, default True)
+        * **notify-repeated-failure** (bool): If the notification should be sent on
+            repeated failures (optional, default False)
+        * **timeout** (int): connection timeout (in milliseconds) for TCP and HTTP
+            (optional, default 30000)
+        * **macros** (list): List of macros
+
+            * **template** (str)
+              **value** (str)
+
+        * **fact-definitions** (list): List of fact definitions
+
+            * **name** (str)
+              **template** (str)
+
+    Example:
+
+    .. literalinclude:: /../../tests/properties/fixtures/office-365-connector.yaml
+        :language: yaml
+    """
+
+    office_365_connector = XML.SubElement(
+        xml_parent, "jenkins.plugins.office365connector.WebhookJobProperty"
+    )
+    office_365_connector.set("plugin", "Office-365-Connector")
+    webhooks = XML.SubElement(office_365_connector, "webhooks")
+
+    webhook_mapping = [
+        ("url", "url", None),
+        ("name", "name", ""),
+        ("start-notification", "startNotification", False),
+        ("notify-success", "notifySuccess", True),
+        ("notify-aborted", "notifyAborted", False),
+        ("notify-not-built", "notifyNotBuilt", False),
+        ("notify-unstable", "notifyUnstable", True),
+        ("notify-failure", "notifyFailure", True),
+        ("notify-back-to-normal", "notifyBackToNormal", True),
+        ("notify-repeated-failure", "notifyRepeatedFailure", False),
+        ("timeout", "timeout", 30000),
+    ]
+    macro_mapping = [("template", "template", None), ("value", "value", None)]
+    fact_definition_mapping = [("name", "name", None), ("template", "template", None)]
+
+    if "webhooks" not in data.keys():
+        raise MissingAttributeError("webhooks")
+
+    for webhook_data in data["webhooks"]:
+        webhook_element = XML.SubElement(
+            webhooks, "jenkins.plugins.office365connector.Webhook"
+        )
+        helpers.convert_mapping_to_xml(
+            webhook_element, webhook_data, webhook_mapping, fail_required=True
+        )
+        if "macros" in webhook_data.keys():
+            macros = XML.SubElement(webhook_element, "macros")
+            for macro_data in webhook_data["macros"]:
+                macro_element = XML.SubElement(
+                    macros, "jenkins.plugins.office365connector.model.Macro"
+                )
+                helpers.convert_mapping_to_xml(
+                    macro_element, macro_data, macro_mapping, fail_required=True
+                )
+        if "fact-definitions" in webhook_data.keys():
+            fact_definitions = XML.SubElement(webhook_element, "factDefinitions")
+            for fact_definition_data in webhook_data["fact-definitions"]:
+                fact_definition_element = XML.SubElement(
+                    fact_definitions,
+                    "jenkins.plugins.office365connector.model.FactDefinition",
+                )
+                helpers.convert_mapping_to_xml(
+                    fact_definition_element,
+                    fact_definition_data,
+                    fact_definition_mapping,
+                    fail_required=True,
+                )
+
+
 class Properties(jenkins_jobs.modules.base.Base):
     sequence = 20
 
