@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5bdb2e70_16575308",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1721,
+      "author": {
+        "id": 31699
+      },
+      "writtenOn": "2021-01-14T07:37:02Z",
+      "side": 1,
+      "message": "Isn\u0027t it the same as \nXML.SubElement(ghtrig, \"spec\")",
+      "revId": "540484ace9dcc37783857d90a54c7b1dc44e6922",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
