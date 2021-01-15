@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fb9c9790_f4d4dbb7",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2021-01-15T00:36:45Z",
+      "side": 1,
+      "message": "We typically try to create 2 examples.\n\n1) gogs-minimal.yaml to test the default settings by only passing required config.\n2) gogs-full.yaml to test every possible setting at their non-default value to confirm that each documented config is usable.\n\nCan you update to provide the 2 tests?",
+      "range": {
+        "startLine": 242,
+        "startChar": 4,
+        "endLine": 245,
+        "endChar": 22
+      },
+      "revId": "45b8240912427c7ee56e15278f3c03478066f532",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
