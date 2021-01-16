@@ -22,6 +22,30 @@
       "revId": "45b8240912427c7ee56e15278f3c03478066f532",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "befecf03_e0931086",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 32969
+      },
+      "writtenOn": "2021-01-16T11:25:03Z",
+      "side": 1,
+      "message": "Makes sense, included in latest PS",
+      "parentUuid": "fb9c9790_f4d4dbb7",
+      "range": {
+        "startLine": 242,
+        "startChar": 4,
+        "endLine": 245,
+        "endChar": 22
+      },
+      "revId": "45b8240912427c7ee56e15278f3c03478066f532",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
