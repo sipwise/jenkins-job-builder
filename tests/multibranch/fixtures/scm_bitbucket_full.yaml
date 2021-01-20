@@ -83,6 +83,11 @@ scm:
             user: CI System
             email: no-reply@ci.example.com
         prune: true
+        sparse-checkout:
+            paths:
+                - "path1"
+                - "path2"
+                - "path3"
         shallow-clone: true
         depth: 3
         do-not-fetch-tags: true

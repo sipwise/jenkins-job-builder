@@ -431,6 +431,9 @@ def bitbucket_scm(xml_parent, data):
             * **before** (`bool`) - Clean the workspace before checkout
         * **prune** (`bool`) - Prune remote branches (default false)
         * **shallow-clone** (`bool`) - Perform shallow clone (default false)
+        * **sparse-checkout** (dict)
+            * **paths** (list) - List of paths to sparse checkout. (optional)
+        * **local-branch** (string) - Checkout/merge to local branch (optional)
         * **depth** (`int`) - Set shallow clone depth (default 1)
         * **do-not-fetch-tags** (`bool`) - Perform a clone without tags
             (default false)
@@ -799,6 +802,9 @@ def git_scm(xml_parent, data):
             * **before** (`bool`) - Clean the workspace before checkout
         * **prune** (`bool`) - Prune remote branches (default false)
         * **shallow-clone** (`bool`) - Perform shallow clone (default false)
+        * **sparse-checkout** (dict)
+            * **paths** (list) - List of paths to sparse checkout. (optional)
+        * **local-branch** (string) - Checkout/merge to local branch (optional)
         * **depth** (`int`) - Set shallow clone depth (default 1)
         * **do-not-fetch-tags** (`bool`) - Perform a clone without tags
             (default false)
@@ -941,6 +947,9 @@ def github_scm(xml_parent, data):
             * **before** (`bool`) - Clean the workspace before checkout
         * **prune** (`bool`) - Prune remote branches (default false)
         * **shallow-clone** (`bool`) - Perform shallow clone (default false)
+        * **sparse-checkout** (dict)
+            * **paths** (list) - List of paths to sparse checkout. (optional)
+        * **local-branch** (string) - Checkout/merge to local branch (optional)
         * **depth** (`int`) - Set shallow clone depth (default 1)
         * **do-not-fetch-tags** (`bool`) - Perform a clone without tags
             (default false)

@@ -75,6 +75,21 @@
                 <timeout>100</timeout>
               </extension>
             </jenkins.plugins.git.traits.CloneOptionTrait>
+            <jenkins.plugins.git.traits.SparseCheckoutPathsTrait>
+              <extension class="hudson.plugins.git.extensions.impl.SparseCheckoutPaths">
+                <sparseCheckoutPaths>
+                  <hudson.plugins.git.extensions.impl.SparseCheckoutPath>
+                    <path>path1</path>
+                  </hudson.plugins.git.extensions.impl.SparseCheckoutPath>
+                  <hudson.plugins.git.extensions.impl.SparseCheckoutPath>
+                    <path>path2</path>
+                  </hudson.plugins.git.extensions.impl.SparseCheckoutPath>
+                  <hudson.plugins.git.extensions.impl.SparseCheckoutPath>
+                    <path>path3</path>
+                  </hudson.plugins.git.extensions.impl.SparseCheckoutPath>
+                </sparseCheckoutPaths>
+              </extension>
+            </jenkins.plugins.git.traits.SparseCheckoutPathsTrait>
             <jenkins.plugins.git.traits.SubmoduleOptionTrait>
               <extension class="hudson.plugins.git.extensions.impl.SubmoduleOption">
                 <disableSubmodules>false</disableSubmodules>

@@ -565,8 +565,14 @@ def git_extensions(xml_parent, data):
             ext_name = impl_prefix + "MessageExclusion"
             ext = XML.SubElement(xml_parent, ext_name)
             XML.SubElement(ext, "excludedMessage").text = msg
-    if not trait and "local-branch" in data:
-        ext = XML.SubElement(xml_parent, impl_prefix + "LocalBranch")
+    if "local-branch" in data:
+        ext_name = impl_prefix + "LocalBranch"
+        if trait:
+            trait_name = "LocalBranchTrait"
+            tr = XML.SubElement(xml_parent, trait_prefix + trait_name)
+            ext = XML.SubElement(tr, "extension", {"class": ext_name})
+        else:
+            ext = XML.SubElement(xml_parent, ext_name)
         XML.SubElement(ext, "localBranch").text = str(data["local-branch"])
     if not trait and "merge" in data:
         merge = data["merge"]
@@ -633,9 +639,14 @@ def git_extensions(xml_parent, data):
     if trait and skip_notifications:
         trait_name = "com.cloudbees.jenkins.plugins.bitbucket.notifications.SkipNotificationsTrait"
         XML.SubElement(xml_parent, trait_name)
-    if not trait and "sparse-checkout" in data:
+    if "sparse-checkout" in data:
         ext_name = impl_prefix + "SparseCheckoutPaths"
-        ext = XML.SubElement(xml_parent, ext_name)
+        if trait:
+            trait_name = "SparseCheckoutPathsTrait"
+            tr = XML.SubElement(xml_parent, trait_prefix + trait_name)
+            ext = XML.SubElement(tr, "extension", {"class": ext_name})
+        else:
+            ext = XML.SubElement(xml_parent, ext_name)
         sparse_co = XML.SubElement(ext, "sparseCheckoutPaths")
         sparse_paths = data["sparse-checkout"].get("paths")
         if sparse_paths is not None:
