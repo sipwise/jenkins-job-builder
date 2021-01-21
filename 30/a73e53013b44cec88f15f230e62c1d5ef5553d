@@ -1,0 +1,8 @@
+Code-Review+2: Thanh Ha <zxiiro@gmail.com>
+Workflow+1: Thanh Ha <zxiiro@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Thu, 21 Jan 2021 02:01:37 +0000
+Reviewed-on: https://review.opendev.org/c/jjb/jenkins-job-builder/+/771174
+Project: jjb/jenkins-job-builder
+Branch: refs/heads/master
