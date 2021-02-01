@@ -31,6 +31,7 @@
         <onFailed>true</onFailed>
         <onUnstable>true</onUnstable>
         <onNotBuilt>true</onNotBuilt>
+        <onAborted>false</onAborted>
       </skipVote>
       <silentMode>false</silentMode>
       <silentStartMode>false</silentStartMode>
@@ -58,6 +59,7 @@
       <buildUnsuccessfulFilepath/>
       <customUrl/>
       <serverName>__ANY__</serverName>
+      <buildAbortedMessage/>
     </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritTrigger>
   </triggers>
 </project>

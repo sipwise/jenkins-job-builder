@@ -74,6 +74,11 @@
             "trigger-on-ref-updated-event": false,
             "trigger-on-comment-added-event": false,
             "override-votes": true,
+            "build-cancellation-policy": {
+                "abort-new-patchsets": true,
+                "abort-manual-patchsets": false,
+                "abort-same-topic": true
+            },
             "gerrit-build-started-verified-value": 0,
             "gerrit-build-successful-verified-value": 1,
             "gerrit-build-failed-verified-value": -1,
@@ -84,6 +89,8 @@
             "gerrit-build-failed-codereview-value": -1,
             "gerrit-build-unstable-codereview-value": -1,
             "gerrit-build-notbuilt-codereview-value": -1,
+            "gerrit-build-aborted-verified-value": 0,
+            "gerrit-build-aborted-codereview-value": 0,
             "projects": [
               {
                 "project-compare-type": "PLAIN",
@@ -100,7 +107,8 @@
             "failure-message": "Failed message.",
             "successful-message": "Success message.",
             "unstable-message": "Unstable message.",
-            "notbuilt-message": "Not built message."
+            "notbuilt-message": "Not built message.",
+            "aborted-message": "Aborted message."
           }
         }
       ]

@@ -7,6 +7,7 @@ triggers:
             exclude-no-code-change: true
             exclude-private: true
             exclude-wip: true
+            commit-message-contains-regex: "regex"
         - comment-added-event:
             approval-category: 'APRV'
             approval-value: 1
@@ -29,6 +30,11 @@ triggers:
           failed: true
           unstable: true
           notbuilt: true
+          aborted: true
+      build-cancellation-policy:
+        abort-new-patchsets: false
+        abort-manual-patchsets: true
+        abort-same-topic: true
       silent: false
       silent-start: true
       escape-quotes: false

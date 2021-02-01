@@ -9,14 +9,13 @@
         <onFailed>false</onFailed>
         <onUnstable>false</onUnstable>
         <onNotBuilt>false</onNotBuilt>
-        <onAborted>false</onAborted>
       </skipVote>
       <silentMode>false</silentMode>
       <silentStartMode>false</silentStartMode>
       <escapeQuotes>true</escapeQuotes>
       <dependencyJobsNames/>
       <commitMessageParameterMode>BASE64</commitMessageParameterMode>
-      <nameAndEmailParameterMode>NONE</nameAndEmailParameterMode>
+      <nameAndEmailParameterMode>PLAIN</nameAndEmailParameterMode>
       <changeSubjectParameterMode>PLAIN</changeSubjectParameterMode>
       <commentTextParameterMode>BASE64</commentTextParameterMode>
       <notificationLevel/>
@@ -25,6 +24,16 @@
       <dynamicGerritProjects class="empty-list"/>
       <triggerInformationAction/>
       <triggerOnEvents/>
+      <gerritBuildStartedVerifiedValue>0</gerritBuildStartedVerifiedValue>
+      <gerritBuildSuccessfulVerifiedValue>1</gerritBuildSuccessfulVerifiedValue>
+      <gerritBuildFailedVerifiedValue>-1</gerritBuildFailedVerifiedValue>
+      <gerritBuildUnstableVerifiedValue>-1</gerritBuildUnstableVerifiedValue>
+      <gerritBuildNotBuiltVerifiedValue>-1</gerritBuildNotBuiltVerifiedValue>
+      <gerritBuildStartedCodeReviewValue>0</gerritBuildStartedCodeReviewValue>
+      <gerritBuildSuccessfulCodeReviewValue>1</gerritBuildSuccessfulCodeReviewValue>
+      <gerritBuildFailedCodeReviewValue>-1</gerritBuildFailedCodeReviewValue>
+      <gerritBuildUnstableCodeReviewValue>-1</gerritBuildUnstableCodeReviewValue>
+      <gerritBuildNotBuiltCodeReviewValue>-1</gerritBuildNotBuiltCodeReviewValue>
       <buildStartMessage/>
       <buildFailureMessage/>
       <buildSuccessfulMessage/>
@@ -33,7 +42,6 @@
       <buildUnsuccessfulFilepath/>
       <customUrl/>
       <serverName>__ANY__</serverName>
-      <buildAbortedMessage/>
     </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritTrigger>
   </triggers>
 </project>

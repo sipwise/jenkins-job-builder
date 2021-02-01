@@ -26,6 +26,7 @@ triggers:
           failed: true
           unstable: true
           notbuilt: true
+          aborted: true
       silent: false
       escape-quotes: false
       no-name-and-email: false

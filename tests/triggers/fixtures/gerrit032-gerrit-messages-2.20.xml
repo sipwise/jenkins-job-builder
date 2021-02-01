@@ -16,7 +16,7 @@
       <escapeQuotes>true</escapeQuotes>
       <dependencyJobsNames/>
       <commitMessageParameterMode>BASE64</commitMessageParameterMode>
-      <nameAndEmailParameterMode>NONE</nameAndEmailParameterMode>
+      <nameAndEmailParameterMode>PLAIN</nameAndEmailParameterMode>
       <changeSubjectParameterMode>PLAIN</changeSubjectParameterMode>
       <commentTextParameterMode>BASE64</commentTextParameterMode>
       <notificationLevel/>
@@ -25,11 +25,11 @@
       <dynamicGerritProjects class="empty-list"/>
       <triggerInformationAction/>
       <triggerOnEvents/>
-      <buildStartMessage/>
-      <buildFailureMessage/>
-      <buildSuccessfulMessage/>
-      <buildUnstableMessage/>
-      <buildNotBuiltMessage/>
+      <buildStartMessage>Start message.</buildStartMessage>
+      <buildFailureMessage>Failed message.</buildFailureMessage>
+      <buildSuccessfulMessage>Success message.</buildSuccessfulMessage>
+      <buildUnstableMessage>Unstable message.</buildUnstableMessage>
+      <buildNotBuiltMessage>Not built message.</buildNotBuiltMessage>
       <buildUnsuccessfulFilepath/>
       <customUrl/>
       <serverName>__ANY__</serverName>

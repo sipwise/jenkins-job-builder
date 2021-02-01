@@ -145,7 +145,7 @@ def gerrit_handle_legacy_configuration(data):
                 )
 
 
-def build_gerrit_triggers(xml_parent, data):
+def build_gerrit_triggers(xml_parent, data, plugin_ver):
     available_simple_triggers = {
         "change-abandoned-event": "PluginChangeAbandonedEvent",
         "change-merged-event": "PluginChangeMergedEvent",
@@ -198,6 +198,15 @@ def build_gerrit_triggers(xml_parent, data):
                     ("exclude-private", "excludePrivateState", False),
                     ("exclude-wip", "excludeWipState", False),
                 ]
+                if plugin_ver >= pkg_resources.parse_version("2.32.0"):
+                    mapping.append(
+                        (
+                            "commit-message-contains-regex",
+                            "commitMessageContainsRegEx",
+                            "",
+                        )
+                    )
+
                 helpers.convert_mapping_to_xml(pc, pce, mapping, fail_required=True)
 
             if "comment-added-event" in event.keys():
@@ -225,19 +234,41 @@ def build_gerrit_triggers(xml_parent, data):
                 ).text = comment_added_event["comment-contains-value"]
 
 
-def build_gerrit_skip_votes(xml_parent, data):
+def build_gerrit_skip_votes(xml_parent, data, plugin_ver):
     outcomes = [
         ("successful", "onSuccessful"),
         ("failed", "onFailed"),
         ("unstable", "onUnstable"),
         ("notbuilt", "onNotBuilt"),
     ]
+    if plugin_ver >= pkg_resources.parse_version("2.32.0"):
+        outcomes.append(("aborted", "onAborted"))
 
     skip_vote_node = XML.SubElement(xml_parent, "skipVote")
     skip_vote = data.get("skip-vote", {})
     for result_kind, tag_name in outcomes:
         setting = skip_vote.get(result_kind, False)
         XML.SubElement(skip_vote_node, tag_name).text = str(setting).lower()
+
+
+def build_cancellation_policy(xml_parent, data, plugin_ver):
+    if plugin_ver >= pkg_resources.parse_version("2.32.0"):
+        options = [
+            ("abort-new-patchsets", "abortNewPatchsets"),
+            ("abort-manual-patchsets", "abortManualPatchsets"),
+            ("abort-same-topic", "abortSameTopic"),
+        ]
+
+        build_cancellation_policy_node = XML.SubElement(
+            xml_parent, "buildCancellationPolicy"
+        )
+        build_cancellation_policy_object = data.get("build-cancellation-policy", {})
+        XML.SubElement(build_cancellation_policy_node, "enabled").text = "true"
+        for tag, tag_name in options:
+            setting = build_cancellation_policy_object.get(tag, False)
+            XML.SubElement(build_cancellation_policy_node, tag_name).text = str(
+                setting
+            ).lower()
 
 
 def build_gerrit_parameter_modes(xml_parent, data, plugin_ver):
@@ -330,6 +361,9 @@ def gerrit(registry, xml_parent, data):
                  (default false)
                * **exclude-wip** (`bool`) -- exclude wip change
                  (default false)
+               * **commit-message-contains-regex** (`str`) -- Commit message
+                 contains regular expression. (default '')
+                 Requires Gerrit Trigger Plugin >= 2.32.0
 
            exclude-private|exclude-wip needs
            Gerrit Trigger v2.29.0
@@ -418,6 +452,8 @@ def gerrit(registry, xml_parent, data):
     :arg int gerrit-build-unstable-verified-value: Unstable ''Verified'' value
     :arg int gerrit-build-notbuilt-verified-value: Not built ''Verified''
         value
+    :arg int gerrit-build-aborted-verified-value: Aborted ''Verified'' value
+        Requires Gerrit Trigger Plugin version >= 2.31.0
     :arg int gerrit-build-started-codereview-value: Started ''CodeReview''
         value
     :arg int gerrit-build-successful-codereview-value: Successful
@@ -427,10 +463,14 @@ def gerrit(registry, xml_parent, data):
         value
     :arg int gerrit-build-notbuilt-codereview-value: Not built ''CodeReview''
         value
+    :arg int gerrit-build-aborted-codereview-value: Aborted ''CodeReview''
+        value
+        Requires Gerrit Trigger Plugin version >= 2.31.0
     :arg str failure-message: Message to leave on failure (default '')
     :arg str successful-message: Message to leave on success (default '')
     :arg str unstable-message: Message to leave when unstable (default '')
     :arg str notbuilt-message: Message to leave when not built (default '')
+    :arg str aborted-message: Message to leave when aborted (default '')
     :arg str failure-message-file: Sets the filename within the workspace from
         which to retrieve the unsuccessful review message. (optional)
     :arg list projects: list of projects to match
@@ -500,6 +540,7 @@ def gerrit(registry, xml_parent, data):
                   * **failed** (`bool`)
                   * **unstable** (`bool`)
                   * **notbuilt** (`bool`)
+                  * **aborted** (`bool`) -- Requires Gerrit Trigger Plugin version >= 2.31.0
 
     :arg bool silent:  When silent mode is on there will be no communication
         back to Gerrit, i.e. no build started/failed/successful approve
@@ -511,6 +552,23 @@ def gerrit(registry, xml_parent, data):
         to Gerrit. (default false)
     :arg bool escape-quotes: escape quotes in the values of Gerrit change
         parameters (default true)
+    :arg dict build-cancellation-policy: If used, rules regarding
+        cancellation of builds can be set with this option when
+        patchsets of the same change comes in. This setting overrides global
+        server configuration. If build-cancellation-policy is not present in
+        YAML the global server configuration is used.
+        Requires Gerrit Trigger Plugin version >= 2.32.0
+
+        :Options: * **abort-new-patchsets** (`bool`) -- Only running jobs
+                    will be cancelled if a new patch version is pushed over
+                    (default false).
+                  * **abort-manual-patchsets** (`bool`) -- Builds triggered
+                    manually will be aborted when a new patch set arrives
+                    (default false).
+                  * **abort-same-topic** (`bool`) -- Builds triggered with
+                    topic will be aborted when a new patch set with the
+                    same topic arrives (default false).
+
     :arg bool no-name-and-email: Do not pass compound 'name and email'
         parameters (default false)
 
@@ -709,7 +767,9 @@ def gerrit(registry, xml_parent, data):
             project.get("disable-strict-forbidden-file-verification", False)
         ).lower()
 
-    build_gerrit_skip_votes(gtrig, data)
+    build_gerrit_skip_votes(gtrig, data, plugin_ver)
+    if "build-cancellation-policy" in data:
+        build_cancellation_policy(gtrig, data, plugin_ver)
     general_mappings = [
         ("silent", "silentMode", False),
         ("silent-start", "silentStartMode", False),
@@ -750,10 +810,10 @@ def gerrit(registry, xml_parent, data):
             "Gerrit Trigger property 'trigger-for-unreviewed-patches' is not "
             "supported in this plugin version"
         )
-    build_gerrit_triggers(gtrig, data)
+    build_gerrit_triggers(gtrig, data, plugin_ver)
     override = str(data.get("override-votes", False)).lower()
     if override == "true":
-        for yamlkey, xmlkey in [
+        votes = [
             ("gerrit-build-started-verified-value", "gerritBuildStartedVerifiedValue"),
             (
                 "gerrit-build-successful-verified-value",
@@ -788,7 +848,23 @@ def gerrit(registry, xml_parent, data):
                 "gerrit-build-notbuilt-codereview-value",
                 "gerritBuildNotBuiltCodeReviewValue",
             ),
-        ]:
+        ]
+
+        if plugin_ver >= pkg_resources.parse_version("2.31.0"):
+            votes.append(
+                (
+                    "gerrit-build-aborted-verified-value",
+                    "gerritBuildAbortedVerifiedValue",
+                )
+            )
+            votes.append(
+                (
+                    "gerrit-build-aborted-codereview-value",
+                    "gerritBuildAbortedCodeReviewValue",
+                )
+            )
+
+        for yamlkey, xmlkey in votes:
             if data.get(yamlkey) is not None:
                 # str(int(x)) makes input values like '+1' work
                 XML.SubElement(gtrig, xmlkey).text = str(int(data.get(yamlkey)))
@@ -802,6 +878,9 @@ def gerrit(registry, xml_parent, data):
         ("custom-url", "customUrl", ""),
         ("server-name", "serverName", "__ANY__"),
     ]
+    if plugin_ver >= pkg_resources.parse_version("2.31.0"):
+        message_mappings.append(("aborted-message", "buildAbortedMessage", ""))
+
     helpers.convert_mapping_to_xml(gtrig, data, message_mappings, fail_required=True)
 
 

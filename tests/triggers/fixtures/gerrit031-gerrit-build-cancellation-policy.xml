@@ -11,12 +11,18 @@
         <onNotBuilt>false</onNotBuilt>
         <onAborted>false</onAborted>
       </skipVote>
+      <buildCancellationPolicy>
+        <enabled>true</enabled>
+        <abortNewPatchsets>false</abortNewPatchsets>
+        <abortManualPatchsets>true</abortManualPatchsets>
+        <abortSameTopic>true</abortSameTopic>
+      </buildCancellationPolicy>
       <silentMode>false</silentMode>
       <silentStartMode>false</silentStartMode>
       <escapeQuotes>true</escapeQuotes>
       <dependencyJobsNames/>
       <commitMessageParameterMode>BASE64</commitMessageParameterMode>
-      <nameAndEmailParameterMode>NONE</nameAndEmailParameterMode>
+      <nameAndEmailParameterMode>PLAIN</nameAndEmailParameterMode>
       <changeSubjectParameterMode>PLAIN</changeSubjectParameterMode>
       <commentTextParameterMode>BASE64</commentTextParameterMode>
       <notificationLevel/>

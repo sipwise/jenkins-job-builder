@@ -65,7 +65,14 @@
         <onFailed>false</onFailed>
         <onUnstable>false</onUnstable>
         <onNotBuilt>false</onNotBuilt>
+        <onAborted>false</onAborted>
       </skipVote>
+      <buildCancellationPolicy>
+        <enabled>true</enabled>
+        <abortNewPatchsets>true</abortNewPatchsets>
+        <abortManualPatchsets>false</abortManualPatchsets>
+        <abortSameTopic>true</abortSameTopic>
+      </buildCancellationPolicy>
       <silentMode>false</silentMode>
       <silentStartMode>false</silentStartMode>
       <escapeQuotes>true</escapeQuotes>
@@ -92,6 +99,8 @@
       <gerritBuildFailedCodeReviewValue>-1</gerritBuildFailedCodeReviewValue>
       <gerritBuildUnstableCodeReviewValue>-1</gerritBuildUnstableCodeReviewValue>
       <gerritBuildNotBuiltCodeReviewValue>-1</gerritBuildNotBuiltCodeReviewValue>
+      <gerritBuildAbortedVerifiedValue>0</gerritBuildAbortedVerifiedValue>
+      <gerritBuildAbortedCodeReviewValue>0</gerritBuildAbortedCodeReviewValue>
       <buildStartMessage>Start message.</buildStartMessage>
       <buildFailureMessage>Failed message.</buildFailureMessage>
       <buildSuccessfulMessage>Success message.</buildSuccessfulMessage>
@@ -100,6 +109,7 @@
       <buildUnsuccessfulFilepath/>
       <customUrl/>
       <serverName>__ANY__</serverName>
+      <buildAbortedMessage>Aborted message.</buildAbortedMessage>
     </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritTrigger>
   </triggers>
   <builders>

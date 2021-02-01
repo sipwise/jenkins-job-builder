@@ -19,6 +19,7 @@ triggers:
             exclude-private: false
             exclude-trivial-rebase: false
             exclude-wip: true
+            commit-message-contains-regex: regex
         - private-state-changed-event
         - ref-updated-event
         - topic-changed-event

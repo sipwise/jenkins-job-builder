@@ -7,6 +7,7 @@ triggers:
             exclude-no-code-change: true
             exclude-private: true
             exclude-wip: true
+            commit-message-contains-regex: regex
         - comment-added-event:
             approval-category: 'APRV'
             approval-value: 1
@@ -32,6 +33,7 @@ triggers:
           failed: true
           unstable: true
           notbuilt: true
+          aborted: true
       silent: false
       silent-start: true
       escape-quotes: false

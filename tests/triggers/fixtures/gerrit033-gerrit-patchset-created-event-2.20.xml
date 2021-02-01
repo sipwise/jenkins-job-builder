@@ -9,14 +9,13 @@
         <onFailed>false</onFailed>
         <onUnstable>false</onUnstable>
         <onNotBuilt>false</onNotBuilt>
-        <onAborted>false</onAborted>
       </skipVote>
       <silentMode>false</silentMode>
       <silentStartMode>false</silentStartMode>
       <escapeQuotes>true</escapeQuotes>
       <dependencyJobsNames/>
       <commitMessageParameterMode>BASE64</commitMessageParameterMode>
-      <nameAndEmailParameterMode>NONE</nameAndEmailParameterMode>
+      <nameAndEmailParameterMode>PLAIN</nameAndEmailParameterMode>
       <changeSubjectParameterMode>PLAIN</changeSubjectParameterMode>
       <commentTextParameterMode>BASE64</commentTextParameterMode>
       <notificationLevel/>
@@ -24,7 +23,15 @@
       <triggerConfigURL/>
       <dynamicGerritProjects class="empty-list"/>
       <triggerInformationAction/>
-      <triggerOnEvents/>
+      <triggerOnEvents>
+        <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginPatchsetCreatedEvent>
+          <excludeDrafts>true</excludeDrafts>
+          <excludeTrivialRebase>true</excludeTrivialRebase>
+          <excludeNoCodeChange>true</excludeNoCodeChange>
+          <excludePrivateState>true</excludePrivateState>
+          <excludeWipState>true</excludeWipState>
+        </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginPatchsetCreatedEvent>
+      </triggerOnEvents>
       <buildStartMessage/>
       <buildFailureMessage/>
       <buildSuccessfulMessage/>
@@ -33,7 +40,6 @@
       <buildUnsuccessfulFilepath/>
       <customUrl/>
       <serverName>__ANY__</serverName>
-      <buildAbortedMessage/>
     </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritTrigger>
   </triggers>
 </project>

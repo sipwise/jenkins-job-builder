@@ -43,6 +43,7 @@
         <onFailed>true</onFailed>
         <onUnstable>true</onUnstable>
         <onNotBuilt>true</onNotBuilt>
+        <onAborted>true</onAborted>
       </skipVote>
       <silentMode>false</silentMode>
       <silentStartMode>true</silentStartMode>
@@ -63,6 +64,7 @@
           <excludeNoCodeChange>true</excludeNoCodeChange>
           <excludePrivateState>true</excludePrivateState>
           <excludeWipState>true</excludeWipState>
+          <commitMessageContainsRegEx>regex</commitMessageContainsRegEx>
         </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginPatchsetCreatedEvent>
         <com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.events.PluginCommentAddedEvent>
           <verdictCategory>APRV</verdictCategory>
@@ -77,6 +79,7 @@
       <buildUnsuccessfulFilepath>path/to/filename</buildUnsuccessfulFilepath>
       <customUrl/>
       <serverName>my-server</serverName>
+      <buildAbortedMessage/>
     </com.sonyericsson.hudson.plugins.gerrit.trigger.hudsontrigger.GerritTrigger>
   </triggers>
 </project>

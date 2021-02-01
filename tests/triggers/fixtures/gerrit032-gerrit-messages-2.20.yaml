@@ -1,0 +1,7 @@
+triggers:
+  - gerrit:
+      start-message: 'Start message.'
+      failure-message: 'Failed message.'
+      successful-message: 'Success message.'
+      unstable-message: 'Unstable message.'
+      notbuilt-message: 'Not built message.'

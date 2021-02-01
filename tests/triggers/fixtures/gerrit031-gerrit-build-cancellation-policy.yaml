@@ -1,0 +1,6 @@
+triggers:
+  - gerrit:
+      build-cancellation-policy:
+        abort-new-patchsets: false
+        abort-manual-patchsets: true
+        abort-same-topic: true

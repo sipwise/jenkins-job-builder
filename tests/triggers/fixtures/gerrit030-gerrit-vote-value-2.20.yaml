@@ -1,0 +1,13 @@
+triggers:
+  - gerrit:
+      override-votes: true
+      gerrit-build-started-verified-value: 0
+      gerrit-build-successful-verified-value: 1
+      gerrit-build-failed-verified-value: -1
+      gerrit-build-unstable-verified-value: -1
+      gerrit-build-notbuilt-verified-value: -1
+      gerrit-build-started-codereview-value: 0
+      gerrit-build-successful-codereview-value: 1
+      gerrit-build-failed-codereview-value: -1
+      gerrit-build-unstable-codereview-value: -1
+      gerrit-build-notbuilt-codereview-value: -1
