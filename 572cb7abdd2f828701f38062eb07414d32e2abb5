@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2338ce0c_1f74f98d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2021-02-01T20:13:58Z",
+      "side": 1,
+      "message": "Change-Id is usually separated from commit message by an empty line.",
+      "revId": "572cb7abdd2f828701f38062eb07414d32e2abb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
