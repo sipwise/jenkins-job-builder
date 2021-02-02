@@ -15,11 +15,14 @@
 
 # Manage Jenkins plugin module registry.
 
+import inspect
 import logging
 import operator
 import pkg_resources
 import re
 import types
+
+from six import PY2
 
 from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.formatter import deep_format
@@ -28,6 +31,8 @@ from jenkins_jobs.local_yaml import Jinja2Loader
 __all__ = ["ModuleRegistry"]
 
 logger = logging.getLogger(__name__)
+
+getargspec = inspect.getargspec if PY2 else inspect.getfullargspec
 
 
 class ModuleRegistry(object):
@@ -87,6 +92,14 @@ class ModuleRegistry(object):
 
         return plugins_info_dict
 
+    @staticmethod
+    def _filter_kwargs(func, **kwargs):
+        arg_spec = getargspec(func)
+        for name in list(kwargs.keys()):
+            if name not in arg_spec.args:
+                del kwargs[name]
+        return kwargs
+
     def get_plugin_info(self, plugin_name):
         """Provide information about plugins within a module's impl of Base.gen_xml.
 
@@ -141,7 +154,7 @@ class ModuleRegistry(object):
 
         return component_list_type
 
-    def dispatch(self, component_type, xml_parent, component, template_data={}):
+    def dispatch(self, component_type, xml_parent, component, template_data={}, job_data=None):
         """This is a method that you can call from your implementation of
         Base.gen_xml or component.  It allows modules to define a type
         of component, and benefit from extensibility via Python
@@ -151,8 +164,10 @@ class ModuleRegistry(object):
           (e.g., `builder`)
         :arg YAMLParser parser: the global YAML Parser
         :arg Element xml_parent: the parent XML element
+        :arg component: component definition
         :arg dict template_data: values that should be interpolated into
           the component definition
+        :arg dict job_data: full job definition
 
         See :py:class:`jenkins_jobs.modules.base.Base` for how to register
         components of a module.
@@ -173,13 +188,16 @@ class ModuleRegistry(object):
             # The component is a singleton dictionary of name: dict(args)
             name, component_data = next(iter(component.items()))
             if template_data or isinstance(component_data, Jinja2Loader):
+                paramdict = {}
+                paramdict.update(template_data)
+                paramdict.update(job_data or {})
                 # Template data contains values that should be interpolated
                 # into the component definition.  To handle Jinja2 templates
                 # that don't contain any variables, we also deep format those.
                 try:
                     component_data = deep_format(
                         component_data,
-                        template_data,
+                        paramdict,
                         self.jjb_config.yamlparser["allow_empty_variables"],
                     )
                 except Exception:
@@ -280,10 +298,11 @@ class ModuleRegistry(object):
                 # Pass component_data in as template data to this function
                 # so that if the macro is invoked with arguments,
                 # the arguments are interpolated into the real defn.
-                self.dispatch(component_type, xml_parent, b, component_data)
+                self.dispatch(component_type, xml_parent, b, component_data, job_data=job_data)
         elif name in eps:
             func = eps[name]
-            func(self, xml_parent, component_data)
+            kwargs = self._filter_kwargs(func, job_data=job_data)
+            func(self, xml_parent, component_data, **kwargs)
         else:
             raise JenkinsJobsException(
                 "Unknown entry point or macro '{0}' "

@@ -13,10 +13,10 @@
   <concurrentBuild>false</concurrentBuild>
   <canRoam>true</canRoam>
   <properties>
-    <hudson.security.AuthorizationMatrixProperty>
+    <com.cloudbees.hudson.plugins.folder.properties.AuthorizationMatrixProperty>
       <inheritanceStrategy class="org.jenkinsci.plugins.matrixauth.inheritance.InheritParentStrategy"/>
       <permission>hudson.model.Item.Build:auser</permission>
-    </hudson.security.AuthorizationMatrixProperty>
+    </com.cloudbees.hudson.plugins.folder.properties.AuthorizationMatrixProperty>
   </properties>
   <scm class="hudson.scm.NullSCM"/>
   <publishers/>

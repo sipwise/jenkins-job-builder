@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <actions/>
+  <description>&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <keepDependencies>false</keepDependencies>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <concurrentBuild>false</concurrentBuild>
+  <canRoam>true</canRoam>
+  <properties>
+    <hudson.security.AuthorizationMatrixProperty>
+      <inheritanceStrategy class="org.jenkinsci.plugins.matrixauth.inheritance.InheritParentStrategy"/>
+      <permission>hudson.model.Item.Build:john</permission>
+      <permission>hudson.model.Item.Cancel:john</permission>
+      <permission>hudson.model.Item.Read:john</permission>
+      <permission>hudson.model.Item.Build:megan</permission>
+      <permission>hudson.model.Item.Cancel:megan</permission>
+      <permission>hudson.model.Item.Read:megan</permission>
+      <permission>hudson.model.Item.Build:steve</permission>
+      <permission>hudson.model.Item.Cancel:steve</permission>
+      <permission>hudson.model.Item.Read:steve</permission>
+    </hudson.security.AuthorizationMatrixProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <builders/>
+  <publishers/>
+  <buildWrappers/>
+</project>

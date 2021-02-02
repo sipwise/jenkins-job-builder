@@ -1,0 +1,14 @@
+- job:
+    name: test
+    authorized_people:
+    - john
+    - megan
+    - steve
+    properties:
+    - authorization: !j2-yaml: |
+        {% for user in authorized_people %}
+        {{ user }}:
+        - job-build
+        - job-cancel
+        - job-read
+        {% endfor %}

@@ -527,7 +527,7 @@ def authenticated_build(registry, xml_parent, data):
     ).text = "hudson.model.Item.Build:authenticated"
 
 
-def authorization(registry, xml_parent, data):
+def authorization(registry, xml_parent, data, job_data):
     """yaml: authorization
     Specifies an authorization matrix
 
@@ -564,8 +564,7 @@ def authorization(registry, xml_parent, data):
        :language: yaml
     """
 
-    # check if it's a folder or a job
-    is_a_folder = data.pop("_is_a_folder", None) if data else False
+    is_a_folder = job_data.get("project-type") in ("folder", "multibranch")
 
     credentials = "com.cloudbees.plugins.credentials.CredentialsProvider."
     ownership = "com.synopsys.arc.jenkins.plugins.ownership.OwnershipPlugin."
@@ -1434,15 +1433,4 @@ class Properties(jenkins_jobs.modules.base.Base):
             properties = XML.SubElement(xml_parent, "properties")
 
         for prop in data.get("properties", []):
-            # Pass a flag for folder permissions to the authorization method
-            if next(iter(prop)) == "authorization":
-                # Only projects are placed in folders
-                if "project-type" in data:
-                    if data["project-type"] in ("folder", "multibranch"):
-                        prop["authorization"]["_is_a_folder"] = True
-                    else:
-                        prop["authorization"]["_is_a_folder"] = False
-                else:
-                    prop["authorization"]["_is_a_folder"] = False
-
-            self.registry.dispatch("property", properties, prop)
+            self.registry.dispatch("property", properties, prop, job_data=data)
