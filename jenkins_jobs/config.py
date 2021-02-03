@@ -45,7 +45,7 @@ retain_anchors=False
 # if you have multiple jenkins servers.
 [jenkins]
 url=http://localhost:8080/
-query_plugins_info=False
+query_plugins_info=True
 """
 
 CONFIG_REQUIRED_MESSAGE = (
