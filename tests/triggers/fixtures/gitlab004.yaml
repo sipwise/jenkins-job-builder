@@ -16,3 +16,4 @@ triggers:
       exclude-branches:
         - 'broken-test'
         - 'master-foo'
+      pending-build-name: 'test'
