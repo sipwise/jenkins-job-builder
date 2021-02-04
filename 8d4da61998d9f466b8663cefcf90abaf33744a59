@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a846a044_f09f048a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2021-02-04T21:31:00Z",
+      "side": 1,
+      "message": "There was a debate in the change that this one tries to revert. The conclusion was that the default should be False.\n\nSo I\u0027d rather change the documentation to reflect the current behavior than change the behavior again (and break users relying on the defaults).",
+      "range": {
+        "startLine": 16,
+        "startChar": 2,
+        "endLine": 16,
+        "endChar": 18
+      },
+      "revId": "8d4da61998d9f466b8663cefcf90abaf33744a59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
