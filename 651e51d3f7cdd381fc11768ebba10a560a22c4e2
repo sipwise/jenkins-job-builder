@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "abdc324a_763d95ec",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1576,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2021-02-04T21:35:09Z",
+      "side": 1,
+      "message": "Based on the implementation I can see this argument is optional, so it should be mentioned here. Moreover, what\u0027s the default behavior if not specified?",
+      "revId": "651e51d3f7cdd381fc11768ebba10a560a22c4e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b3c17d31_69a6781d",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1707,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2021-02-04T21:35:09Z",
+      "side": 1,
+      "message": "Would it be possible to use helpers.convert_mapping_to_xml()?",
+      "revId": "651e51d3f7cdd381fc11768ebba10a560a22c4e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
