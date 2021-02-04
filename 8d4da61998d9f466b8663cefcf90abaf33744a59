@@ -22,6 +22,30 @@
       "revId": "8d4da61998d9f466b8663cefcf90abaf33744a59",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "28de02c2_c54770f3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2021-02-04T22:15:27Z",
+      "side": 1,
+      "message": "Is it worth considering having to blocks of default configuration where the second one is only loaded if there is an existing configuration file detected. That way it would behave as currently documented assuming that is the most useful for end users.",
+      "parentUuid": "a846a044_f09f048a",
+      "range": {
+        "startLine": 16,
+        "startChar": 2,
+        "endLine": 16,
+        "endChar": 18
+      },
+      "revId": "8d4da61998d9f466b8663cefcf90abaf33744a59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
     }
   ]
 }
