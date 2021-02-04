@@ -24,6 +24,7 @@
       <secretToken/>
       <includeBranchesSpec>master, master2, local-test</includeBranchesSpec>
       <excludeBranchesSpec>broken-test, master-foo</excludeBranchesSpec>
+      <pendingBuildName>test</pendingBuildName>
     </com.dabsquared.gitlabjenkins.GitLabPushTrigger>
   </triggers>
 </project>
