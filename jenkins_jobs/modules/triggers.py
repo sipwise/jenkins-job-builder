@@ -1573,6 +1573,7 @@ def gitlab(registry, xml_parent, data):
         (eg. Merge request or Git Push) (default true)
     :arg bool cancel-pending-builds-on-update: Cancel pending merge request
         builds on update (default false)
+    :arg str pending-build-name: Set the pending merge request build name
     :arg bool add-note-merge-request: Add note with build status on
         merge requests (default true)
     :arg bool add-vote-merge-request: Vote added to note with build status
@@ -1693,16 +1694,21 @@ def gitlab(registry, xml_parent, data):
         ("target-branch-regex", "targetBranchRegex", ""),
         ("secret-token", "secretToken", ""),
     ]
+    helpers.convert_mapping_to_xml(gitlab, data, mapping, fail_required=True)
 
     list_mapping = (
         ("include-branches", "includeBranchesSpec", []),
         ("exclude-branches", "excludeBranchesSpec", []),
     )
-    helpers.convert_mapping_to_xml(gitlab, data, mapping, fail_required=True)
-
     for yaml_name, xml_name, default_val in list_mapping:
         value = ", ".join(data.get(yaml_name, default_val))
         _add_xml(gitlab, xml_name, value)
+
+    optional_mapping = (("pending-build-name", "pendingBuildName"),)
+    for yaml_name, xml_name in optional_mapping:
+        value = data.get(yaml_name, None)
+        if value is not None:
+            XML.SubElement(gitlab, xml_name).text = value
 
 
 def gogs(registry, xml_parent, data):
