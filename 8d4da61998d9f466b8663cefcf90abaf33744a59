@@ -46,6 +46,30 @@
       "revId": "8d4da61998d9f466b8663cefcf90abaf33744a59",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "89989c92_014c1a8e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 27831
+      },
+      "writtenOn": "2021-02-05T07:21:39Z",
+      "side": 1,
+      "message": "Hello and thaks for replying. Personally, I have no strong opinion (documentation or code). So, feel free to do what you want with this PR. \n\nI should point out though that after I found the \"culprit\" of my problems (I upgraded from 1.6 to 2.9!) this was clearly a bug from the point of view of the developer because 1. the xml was not correct (plugins were not queried) and at the same time 2. I got no warning/error regarding the fact that I had no plugins yml file. From a dev\u0027s point of view, this is not normal, since clearly a plugin list is required, needs to be present.\n\nHaving said that, I poked with the tests trying to write one for this PR and I started looking at \"test_skip_plugin_retrieval_if_disabled\". This test ALWAYS passes, no matter what the default is. Which is one of the reasons the commit 30d61a21 was made with no tests changes. The test should be fixed to reflect the correct default.\n\nPS: I don\u0027t have the capacity to do that.\n\nThank you.",
+      "parentUuid": "28de02c2_c54770f3",
+      "range": {
+        "startLine": 16,
+        "startChar": 2,
+        "endLine": 16,
+        "endChar": 18
+      },
+      "revId": "8d4da61998d9f466b8663cefcf90abaf33744a59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
     }
   ]
 }
