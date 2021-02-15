@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5eebd098_12bcf884",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1711,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2021-02-15T19:21:40Z",
+      "side": 1,
+      "message": "The convert_mapping_to_xml handles optionals too. I\u0027d create a separate mapping variable for optional parameters like:\n\n optional_mapping \u003d [(\"pending-build-name\", \"pendingBuildName\", None)]\n\nThen to make this field optional when calling the convert_mapping_to_xml set fail_require\u003dFalse which will make all None fields as optional.\n\n helpers.convert_mapping_to_xml(gitlab, data, optional_mapping, fail_required\u003dFalse)\n\nThis way if someone in the future wants to add a new optional setting they can just append to the optional_mapping rather than building custom code to handle it.",
+      "range": {
+        "startLine": 1707,
+        "startChar": 0,
+        "endLine": 1711,
+        "endChar": 57
+      },
+      "revId": "e41609d0dc8216e9abb08798bfa4f9c8ecec1eac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
