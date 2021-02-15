@@ -22,6 +22,30 @@
       "revId": "e41609d0dc8216e9abb08798bfa4f9c8ecec1eac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe870a9f_9ce55de7",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1711,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2021-02-15T19:30:42Z",
+      "side": 1,
+      "message": "This was exactly my point in my comment for PS1: https://review.opendev.org/c/jjb/jenkins-job-builder/+/774114/1/jenkins_jobs/modules/triggers.py#1707\n\nThe other comment was not addressed too.",
+      "parentUuid": "5eebd098_12bcf884",
+      "range": {
+        "startLine": 1707,
+        "startChar": 0,
+        "endLine": 1711,
+        "endChar": 57
+      },
+      "revId": "e41609d0dc8216e9abb08798bfa4f9c8ecec1eac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
     }
   ]
 }
