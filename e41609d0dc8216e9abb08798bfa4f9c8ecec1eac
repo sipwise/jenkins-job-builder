@@ -46,6 +46,30 @@
       "revId": "e41609d0dc8216e9abb08798bfa4f9c8ecec1eac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3eabcf0f_6133cf41",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1711,
+      "author": {
+        "id": 32123
+      },
+      "writtenOn": "2021-02-20T06:55:22Z",
+      "side": 1,
+      "message": "Thanks for the tip on how to use convert_mapping_to_xml to allow optionals.  This has been updated.\n\nThe docstring already specifies \"(optional)\" as suggested. Let me know if there\u0027s anything I\u0027m missing.",
+      "parentUuid": "fe870a9f_9ce55de7",
+      "range": {
+        "startLine": 1707,
+        "startChar": 0,
+        "endLine": 1711,
+        "endChar": 57
+      },
+      "revId": "e41609d0dc8216e9abb08798bfa4f9c8ecec1eac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

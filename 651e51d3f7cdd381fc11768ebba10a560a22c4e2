@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ebb2833d_4171c4b7",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1576,
+      "author": {
+        "id": 32123
+      },
+      "writtenOn": "2021-02-20T06:55:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "abdc324a_763d95ec",
+      "revId": "651e51d3f7cdd381fc11768ebba10a560a22c4e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b3c17d31_69a6781d",
         "filename": "jenkins_jobs/modules/triggers.py",
         "patchSetId": 1
@@ -33,6 +51,24 @@
       "revId": "651e51d3f7cdd381fc11768ebba10a560a22c4e2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3918dc85_85ecf68c",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1707,
+      "author": {
+        "id": 32123
+      },
+      "writtenOn": "2021-02-20T06:55:22Z",
+      "side": 1,
+      "message": "Good note -- I\u0027ll make a note that the argument is optional in the docstring.\n\nWhen not specified the behavior is as it is today -- no pending build message is displayed in the merge request.\n\nI didn\u0027t use helpers.convert_mapping_to_xml because I don\u0027t want it to add an empty xml tag when there is no value -- does that function handle that?  If so I can switch it over.\n\nFor now I\u0027ll update the docstring unless it\u0027s better to use convert_mapping_to_xml.\n\n---\n\nI just verified to see what Jenkins does when this is edited using the Jenkins UI.  What\u0027s implemented here matches the behavior of the UI.\n\nWhen the pending build name is not specified / empty, no xml tags are emitted.  The xml tag is only present when the value is specified in the UI.\n\nSo I think this seems good to go as-is, modulo any other implementation sugs.",
+      "parentUuid": "b3c17d31_69a6781d",
+      "revId": "651e51d3f7cdd381fc11768ebba10a560a22c4e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
