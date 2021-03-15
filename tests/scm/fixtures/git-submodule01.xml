@@ -28,7 +28,8 @@
         <trackingSubmodules>true</trackingSubmodules>
         <parentCredentials>true</parentCredentials>
         <reference>/jenkins_home/.gitcache/submodules</reference>
-        <timeout>15</timeout>
+	<timeout>15</timeout>
+	<threads>1</threads>
       </hudson.plugins.git.extensions.impl.SubmoduleOption>
       <hudson.plugins.git.extensions.impl.WipeWorkspace/>
     </extensions>
