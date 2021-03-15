@@ -8,3 +8,4 @@ scm:
             parent-credentials: true
             reference-repo: /jenkins_home/.gitcache/submodules
             timeout: 15
+            threads: 1
