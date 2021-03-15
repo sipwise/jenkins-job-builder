@@ -322,6 +322,8 @@ def git(registry, xml_parent, data):
               during clone (optional)
             * **timeout** (`int`) - Specify a timeout (in minutes) for
               submodules operations (default 10).
+            * **threads** (`int`) - Number of parallel processes to be used when
+            updating submodules. Default is to use a single thread for submodule updates.
         * **timeout** (`str`) - Timeout for git commands in minutes (optional)
         * **use-author** (`bool`): Use author rather than committer in Jenkin's
             build changeset (default false)
@@ -673,6 +675,7 @@ def git_extensions(xml_parent, data):
             data["submodule"].get("reference-repo", "")
         )
         XML.SubElement(ext, "timeout").text = str(data["submodule"].get("timeout", 10))
+        XML.SubElement(ext, "threads").text = str(data["submodule"].get("threads", 1))
     if "timeout" in data:
         ext_name = impl_prefix + "CheckoutOption"
         if trait:
