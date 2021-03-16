@@ -14,3 +14,4 @@ scm:
       scm-name: something_special
       use-author: true
       wipe-workspace: false
+      lfs-pull: true

@@ -84,6 +84,7 @@
          browser: gitweb
          browser-url: http://review.openstack.org/gitweb?p={project_pattern}.git
          choosing-strategy: gerrit
+         lfs-pull: true
 
 - project:
     name: complete001

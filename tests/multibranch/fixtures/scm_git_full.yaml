@@ -88,3 +88,4 @@ scm:
         timeout: "100"
         use-author: true
         wipe-workspace: true
+        lfs-pull: true

@@ -37,6 +37,7 @@ bob@example.com</excludedUsers>
       <hudson.plugins.git.extensions.impl.PerBuildTag/>
       <hudson.plugins.git.extensions.impl.PruneStaleBranch/>
       <hudson.plugins.git.extensions.impl.AuthorInChangelog/>
+      <hudson.plugins.git.extensions.impl.GitLFSPull/>
     </extensions>
     <browser class="hudson.plugins.git.browser.GithubWeb">
       <url>http://github.com/foo/example.git</url>

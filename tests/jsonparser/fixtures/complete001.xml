@@ -38,6 +38,7 @@
       <hudson.plugins.git.extensions.impl.CleanCheckout/>
       <hudson.plugins.git.extensions.impl.PruneStaleBranch/>
       <hudson.plugins.git.extensions.impl.WipeWorkspace/>
+      <hudson.plugins.git.extensions.impl.GitLFSPull/>
     </extensions>
     <browser class="hudson.plugins.git.browser.GitWeb">
       <url>http://review.openstack.org/gitweb?p=openstack-infra/jenkins-job-builder.git</url>

@@ -100,3 +100,4 @@ scm:
         skip-notifications: true
         use-author: true
         wipe-workspace: true
+        lfs-pull: true

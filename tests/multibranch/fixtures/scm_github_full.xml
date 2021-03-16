@@ -138,6 +138,9 @@
             <jenkins.plugins.git.traits.AuthorInChangelogTrait>
               <extension class="hudson.plugins.git.extensions.impl.AuthorInChangelog"/>
             </jenkins.plugins.git.traits.AuthorInChangelogTrait>
+            <jenkins.plugins.git.traits.GitLFSPullTrait>
+              <extension class="hudson.plugins.git.extensions.impl.GitLFSPull"/>
+            </jenkins.plugins.git.traits.GitLFSPullTrait>
             <jenkins.plugins.git.traits.RefSpecsSCMSourceTrait plugin="git">
               <templates>
                 <jenkins.plugins.git.traits.RefSpecsSCMSourceTrait_-RefSpecTemplate>

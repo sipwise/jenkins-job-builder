@@ -733,6 +733,16 @@ def git_extensions(xml_parent, data):
         else:
             ext = XML.SubElement(xml_parent, ext_name)
 
+    lfs_pull = str(data.get("lfs-pull", False)).lower()
+    if lfs_pull == "true":
+        ext_name = impl_prefix + "GitLFSPull"
+        if trait:
+            trait_name = "GitLFSPullTrait"
+            tr = XML.SubElement(xml_parent, trait_prefix + trait_name)
+            XML.SubElement(tr, "extension", {"class": ext_name})
+        else:
+            XML.SubElement(xml_parent, ext_name)
+
 
 def cvs(registry, xml_parent, data):
     """yaml: cvs
