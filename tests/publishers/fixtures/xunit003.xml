@@ -2,7 +2,7 @@
 <project>
   <publishers>
     <xunit plugin="xunit">
-      <types>
+      <tools>
         <PHPUnitJunitHudsonTestType>
           <pattern>junit.log</pattern>
           <failIfNotNew>true</failIfNotNew>
@@ -10,7 +10,7 @@
           <skipNoTestFiles>false</skipNoTestFiles>
           <stopProcessingIfError>true</stopProcessingIfError>
         </PHPUnitJunitHudsonTestType>
-      </types>
+      </tools>
       <thresholds>
         <org.jenkinsci.plugins.xunit.threshold.FailedThreshold>
           <unstableThreshold>10</unstableThreshold>

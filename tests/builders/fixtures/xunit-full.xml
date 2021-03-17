@@ -2,7 +2,7 @@
 <project>
   <builders>
     <org.jenkinsci.plugins.xunit.XUnitBuilder plugin="xunit">
-      <types>
+      <tools>
         <PHPUnitJunitHudsonTestType>
           <pattern>phpunit.log</pattern>
           <failIfNotNew>true</failIfNotNew>
@@ -24,7 +24,7 @@
           <skipNoTestFiles>false</skipNoTestFiles>
           <stopProcessingIfError>true</stopProcessingIfError>
         </GoogleTestType>
-      </types>
+      </tools>
       <thresholds>
         <org.jenkinsci.plugins.xunit.threshold.FailedThreshold>
           <unstableThreshold>0</unstableThreshold>

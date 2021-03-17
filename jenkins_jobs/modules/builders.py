@@ -4733,7 +4733,8 @@ def xunit(registry, xml_parent, data):
             supported_types.append(configured_type)
 
     # Generate XML for each of the supported framework types
-    xmltypes = XML.SubElement(xunit, "types")
+    # Note: versions 3+ are now using the 'tools' sub-element instead of 'types'
+    xmltools = XML.SubElement(xunit, "tools")
     mappings = [
         ("pattern", "pattern", ""),
         ("requireupdate", "failIfNotNew", True),
@@ -4743,7 +4744,7 @@ def xunit(registry, xml_parent, data):
     ]
     for supported_type in supported_types:
         framework_name = next(iter(supported_type.keys()))
-        xmlframework = XML.SubElement(xmltypes, types_to_plugin_types[framework_name])
+        xmlframework = XML.SubElement(xmltools, types_to_plugin_types[framework_name])
 
         helpers.convert_mapping_to_xml(
             xmlframework, supported_type[framework_name], mappings, fail_required=True
