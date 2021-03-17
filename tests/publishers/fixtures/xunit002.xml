@@ -2,7 +2,7 @@
 <project>
   <publishers>
     <xunit plugin="xunit">
-      <types>
+      <tools>
         <CTestType>
           <pattern>build/tests/reports/ctest.xml</pattern>
           <failIfNotNew>true</failIfNotNew>
@@ -10,7 +10,7 @@
           <skipNoTestFiles>true</skipNoTestFiles>
           <stopProcessingIfError>true</stopProcessingIfError>
         </CTestType>
-      </types>
+      </tools>
       <thresholds>
         <org.jenkinsci.plugins.xunit.threshold.FailedThreshold>
           <unstableThreshold>1</unstableThreshold>

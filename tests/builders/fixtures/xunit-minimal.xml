@@ -2,7 +2,7 @@
 <project>
   <builders>
     <org.jenkinsci.plugins.xunit.XUnitBuilder plugin="xunit">
-      <types>
+      <tools>
         <JUnitType>
           <pattern>junit.xml</pattern>
           <failIfNotNew>true</failIfNotNew>
@@ -10,7 +10,7 @@
           <skipNoTestFiles>false</skipNoTestFiles>
           <stopProcessingIfError>true</stopProcessingIfError>
         </JUnitType>
-      </types>
+      </tools>
       <thresholds/>
       <thresholdMode>1</thresholdMode>
       <extraConfiguration>
