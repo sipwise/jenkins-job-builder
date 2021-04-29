@@ -1310,9 +1310,10 @@ def active_choices_reactive_param(registry, xml_parent, data):
 
     __active_choice_param_internal(pdef, data)
 
-    mapping = [("referenced-parameters", "referencedParameters", ""),
-               ("random-name", "randomName", 'choice-param-{0}'.format(data["name"]).lower()),
-               ("visible-items", "visibleItemCount", 1),
+    mapping = [
+        ("referenced-parameters", "referencedParameters", ""),
+        ("random-name", "randomName", "choice-param-{0}".format(data["name"]).lower()),
+        ("visible-items", "visibleItemCount", 1),
     ]
     helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=False)
     XML.SubElement(pdef, "parameters", {"class": "linked-hash-map"})
