@@ -29,6 +29,8 @@
           <projectName>active-choices-job</projectName>
           <projectFullName>active-choices-job</projectFullName>
           <referencedParameters/>
+          <randomName>choice-param-foo</randomName>
+          <visibleItemCount>1</visibleItemCount>
           <parameters class="linked-hash-map"/>
         </org.biouno.unochoice.CascadeChoiceParameter>
       </parameterDefinitions>
