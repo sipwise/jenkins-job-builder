@@ -1,0 +1,61 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9dd5560f_b80a9d1c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2021-05-01T20:33:49Z",
+      "side": 1,
+      "message": "Can you put more details about what specifically this fixes?\n\nSeems to me like what\u0027s being added here is some new features rather than fixing something that\u0027s broken. Also would be good to document which version of the active choices plugin added these features as part of the docstring.",
+      "revId": "15a0896791009815cfbec6e52bfd832e9cb39b7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "71130255_620a3eef",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1315,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2021-05-01T20:33:49Z",
+      "side": 1,
+      "message": "Setting this means that random-name is always set and defaults to this value. Is this correct for this plugin? Should this actually be an optional parameter?\n\nIf you set the value to \"None\" instead convert_mapping_to_xml will parse this as an optional field and not generate XML for it. Just want to be sure that random-name is something users of this plugin always want to configure.",
+      "range": {
+        "startLine": 1315,
+        "startChar": 38,
+        "endLine": 1315,
+        "endChar": 85
+      },
+      "revId": "15a0896791009815cfbec6e52bfd832e9cb39b7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "46d5629e_e7fe76ca",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1316,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2021-05-01T20:33:49Z",
+      "side": 1,
+      "message": "Please add docs to the docstring for these 2 new parameters.",
+      "revId": "15a0896791009815cfbec6e52bfd832e9cb39b7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
