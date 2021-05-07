@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d41cc073_92d37a99",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1137,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2021-05-07T09:41:59Z",
+      "side": 1,
+      "message": "I guess the implementation was copied from bitbucket_scm(). Can you extract it to a function and call from both places?",
+      "revId": "4bbafbcd2c9a3041701c83edf0fc513a0debf47c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
