@@ -86,6 +86,7 @@
       <gerritBuildStartedVerifiedValue>0</gerritBuildStartedVerifiedValue>
       <gerritBuildSuccessfulVerifiedValue>1</gerritBuildSuccessfulVerifiedValue>
       <gerritBuildFailedVerifiedValue>-1</gerritBuildFailedVerifiedValue>
+      <gerritBuildAbortedVerifiedValue>0</gerritBuildAbortedVerifiedValue>
       <gerritBuildUnstableVerifiedValue>-1</gerritBuildUnstableVerifiedValue>
       <gerritBuildNotBuiltVerifiedValue>-1</gerritBuildNotBuiltVerifiedValue>
       <gerritBuildStartedCodeReviewValue>0</gerritBuildStartedCodeReviewValue>

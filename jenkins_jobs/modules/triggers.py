@@ -415,6 +415,7 @@ def gerrit(registry, xml_parent, data):
     :arg int gerrit-build-successful-verified-value: Successful ''Verified''
         value
     :arg int gerrit-build-failed-verified-value: Failed ''Verified'' value
+    :arg int gerrit-build-aborted-verified-value: Aborted ''Verified'' value
     :arg int gerrit-build-unstable-verified-value: Unstable ''Verified'' value
     :arg int gerrit-build-notbuilt-verified-value: Not built ''Verified''
         value
@@ -760,6 +761,7 @@ def gerrit(registry, xml_parent, data):
                 "gerritBuildSuccessfulVerifiedValue",
             ),
             ("gerrit-build-failed-verified-value", "gerritBuildFailedVerifiedValue"),
+            ("gerrit-build-aborted-verified-value", "gerritBuildAbortedVerifiedValue"),
             (
                 "gerrit-build-unstable-verified-value",
                 "gerritBuildUnstableVerifiedValue",
