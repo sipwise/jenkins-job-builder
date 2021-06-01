@@ -1,0 +1,9 @@
+Code-Review+2: Antoine Musso <hashar@free.fr>
+Code-Review+1: Anil Shashikumar Belur <askb23@gmail.com>
+Workflow+1: Antoine Musso <hashar@free.fr>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 01 Jun 2021 20:55:42 +0000
+Reviewed-on: https://review.opendev.org/c/jjb/jenkins-job-builder/+/794039
+Project: jjb/jenkins-job-builder
+Branch: refs/heads/master
