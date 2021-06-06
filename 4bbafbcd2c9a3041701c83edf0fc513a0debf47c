@@ -16,6 +16,24 @@
       "revId": "4bbafbcd2c9a3041701c83edf0fc513a0debf47c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c8254590_d203bcb8",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1137,
+      "author": {
+        "id": 33445
+      },
+      "writtenOn": "2021-06-06T16:42:24Z",
+      "side": 1,
+      "message": "hi Adam, yep you\u0027re right. i\u0027ve moved the implementation into a common function below.",
+      "parentUuid": "d41cc073_92d37a99",
+      "revId": "4bbafbcd2c9a3041701c83edf0fc513a0debf47c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
     }
   ]
 }
