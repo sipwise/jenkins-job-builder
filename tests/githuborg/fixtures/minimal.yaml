@@ -1,0 +1,5 @@
+name: github-org-minimal
+project-type: githuborg
+project: example-project
+github-org:
+    repo-owner: example-owner

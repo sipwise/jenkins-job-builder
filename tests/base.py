@@ -41,6 +41,7 @@ import jenkins_jobs.local_yaml as yaml
 from jenkins_jobs.alphanum import AlphanumSort
 from jenkins_jobs.modules import project_externaljob
 from jenkins_jobs.modules import project_flow
+from jenkins_jobs.modules import project_githuborg
 from jenkins_jobs.modules import project_matrix
 from jenkins_jobs.modules import project_maven
 from jenkins_jobs.modules import project_multibranch
@@ -224,6 +225,8 @@ class BaseScenariosTestCase(testscenarios.TestWithScenarios, BaseTestCase):
                 project = project_matrix.Matrix(registry)
             elif yaml_content["project-type"] == "flow":
                 project = project_flow.Flow(registry)
+            elif yaml_content["project-type"] == "githuborg":
+                project = project_githuborg.GithubOrganization(registry)
             elif yaml_content["project-type"] == "multijob":
                 project = project_multijob.MultiJob(registry)
             elif yaml_content["project-type"] == "multibranch":

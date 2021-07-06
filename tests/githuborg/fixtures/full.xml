@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jenkins.branch.OrganizationFolder plugin="branch-api">
+  <properties/>
+  <folderViews class="jenkins.branch.OrganizationFolderViewHolder">
+    <owner reference="../.."/>
+  </folderViews>
+  <healthMetrics>
+    <com.cloudbees.hudson.plugins.folder.health.WorstChildHealthMetric plugin="cloudbees-folder">
+      <nonRecursive>false</nonRecursive>
+    </com.cloudbees.hudson.plugins.folder.health.WorstChildHealthMetric>
+  </healthMetrics>
+  <icon class="jenkins.branch.MetadataActionFolderIcon">
+    <owner class="jenkins.branch.OrganizationFolder" reference="../.."/>
+  </icon>
+  <orphanedItemStrategy class="com.cloudbees.hudson.plugins.folder.computed.DefaultOrphanedItemStrategy" plugin="cloudbees-folder">
+    <pruneDeadBranches>true</pruneDeadBranches>
+    <daysToKeep>-1</daysToKeep>
+    <numToKeep>-1</numToKeep>
+  </orphanedItemStrategy>
+  <triggers/>
+  <navigators>
+    <org.jenkinsci.plugins.github__branch__source.GitHubSCMNavigator plugin="github-branch-source">
+      <repoOwner>example-owner</repoOwner>
+      <apiUri>http://example.org/github</apiUri>
+      <credentialsId>example-credential</credentialsId>
+      <traits>
+        <org.jenkinsci.plugins.github__branch__source.BranchDiscoveryTrait>
+          <strategyId>3</strategyId>
+        </org.jenkinsci.plugins.github__branch__source.BranchDiscoveryTrait>
+        <org.jenkinsci.plugins.github__branch__source.SSHCheckoutTrait>
+          <credentialsId>ssh_secret</credentialsId>
+        </org.jenkinsci.plugins.github__branch__source.SSHCheckoutTrait>
+        <org.jenkinsci.plugins.github__branch__source.TagDiscoveryTrait/>
+        <org.jenkinsci.plugins.github__branch__source.ForkPullRequestDiscoveryTrait>
+          <strategyId>3</strategyId>
+          <trust class="org.jenkinsci.plugins.github_branch_source.ForkPullRequestDiscoveryTrait$TrustEveryone"/>
+        </org.jenkinsci.plugins.github__branch__source.ForkPullRequestDiscoveryTrait>
+        <org.jenkinsci.plugins.github__branch__source.OriginPullRequestDiscoveryTrait>
+          <strategyId>3</strategyId>
+        </org.jenkinsci.plugins.github__branch__source.OriginPullRequestDiscoveryTrait>
+        <jenkins.scm.impl.trait.RegexSCMHeadFilterTrait>
+          <regex>(.*/master|.*/release/.*)</regex>
+        </jenkins.scm.impl.trait.RegexSCMHeadFilterTrait>
+        <net.gleske.scmfilter.impl.trait.RegexSCMHeadFilterTrait plugin="scm-filter-branch-pr">
+          <regex>foo/.*</regex>
+          <tagRegex>20\..*</tagRegex>
+        </net.gleske.scmfilter.impl.trait.RegexSCMHeadFilterTrait>
+        <net.gleske.scmfilter.impl.trait.WildcardSCMHeadFilterTrait plugin="scm-filter-branch-pr">
+          <includes>foo*</includes>
+          <excludes>bar*</excludes>
+          <tagIncludes>qaz*</tagIncludes>
+          <tagExcludes>*baz</tagExcludes>
+        </net.gleske.scmfilter.impl.trait.WildcardSCMHeadFilterTrait>
+        <net.gleske.scmfilter.impl.trait.RegexSCMOriginFilterTrait plugin="scm-filter-branch-pr">
+          <regex>(foo/.*|bar/.*)</regex>
+          <tagRegex>1\..*</tagRegex>
+        </net.gleske.scmfilter.impl.trait.RegexSCMOriginFilterTrait>
+        <net.gleske.scmfilter.impl.trait.WildcardSCMOriginFilterTrait plugin="scm-filter-branch-pr">
+          <includes>qaz*</includes>
+          <excludes>baz*</excludes>
+          <tagIncludes>bar*</tagIncludes>
+          <tagExcludes>*qaz</tagExcludes>
+        </net.gleske.scmfilter.impl.trait.WildcardSCMOriginFilterTrait>
+        <org.jenkinsci.plugins.githubScmTraitNotificationContext.NotificationContextTrait>
+          <contextLabel>jenkins.example.com/my_context</contextLabel>
+          <typeSuffix>true</typeSuffix>
+        </org.jenkinsci.plugins.githubScmTraitNotificationContext.NotificationContextTrait>
+        <jenkins.plugins.git.traits.CleanAfterCheckoutTrait>
+          <extension class="hudson.plugins.git.extensions.impl.CleanCheckout"/>
+        </jenkins.plugins.git.traits.CleanAfterCheckoutTrait>
+        <jenkins.plugins.git.traits.CleanBeforeCheckoutTrait>
+          <extension class="hudson.plugins.git.extensions.impl.CleanBeforeCheckout"/>
+        </jenkins.plugins.git.traits.CleanBeforeCheckoutTrait>
+        <jenkins.plugins.git.traits.UserIdentityTrait>
+          <extension class="hudson.plugins.git.extensions.impl.UserIdentity">
+            <email>no-reply@ci.example.com</email>
+          </extension>
+        </jenkins.plugins.git.traits.UserIdentityTrait>
+        <jenkins.plugins.git.traits.CloneOptionTrait>
+          <extension class="hudson.plugins.git.extensions.impl.CloneOption">
+            <shallow>true</shallow>
+            <depth>3</depth>
+            <noTags>true</noTags>
+            <timeout>100</timeout>
+          </extension>
+        </jenkins.plugins.git.traits.CloneOptionTrait>
+        <com.cloudbees.jenkins.plugins.bitbucket.notifications.SkipNotificationsTrait/>
+        <jenkins.plugins.git.traits.SparseCheckoutPathsTrait>
+          <extension class="hudson.plugins.git.extensions.impl.SparseCheckoutPaths">
+            <sparseCheckoutPaths>
+              <hudson.plugins.git.extensions.impl.SparseCheckoutPath>
+                <path>path1</path>
+              </hudson.plugins.git.extensions.impl.SparseCheckoutPath>
+              <hudson.plugins.git.extensions.impl.SparseCheckoutPath>
+                <path>path2</path>
+              </hudson.plugins.git.extensions.impl.SparseCheckoutPath>
+              <hudson.plugins.git.extensions.impl.SparseCheckoutPath>
+                <path>path3</path>
+              </hudson.plugins.git.extensions.impl.SparseCheckoutPath>
+            </sparseCheckoutPaths>
+          </extension>
+        </jenkins.plugins.git.traits.SparseCheckoutPathsTrait>
+        <jenkins.plugins.git.traits.SubmoduleOptionTrait>
+          <extension class="hudson.plugins.git.extensions.impl.SubmoduleOption">
+            <disableSubmodules>false</disableSubmodules>
+            <recursiveSubmodules>true</recursiveSubmodules>
+            <trackingSubmodules>false</trackingSubmodules>
+            <parentCredentials>true</parentCredentials>
+            <reference/>
+            <timeout>100</timeout>
+            <threads>1</threads>
+          </extension>
+        </jenkins.plugins.git.traits.SubmoduleOptionTrait>
+        <jenkins.plugins.git.traits.CheckoutOptionTrait>
+          <extension class="hudson.plugins.git.extensions.impl.CheckoutOption">
+            <timeout>100</timeout>
+          </extension>
+        </jenkins.plugins.git.traits.CheckoutOptionTrait>
+        <jenkins.plugins.git.traits.PruneStaleBranchTrait>
+          <extension class="hudson.plugins.git.extensions.impl.PruneStaleBranch"/>
+        </jenkins.plugins.git.traits.PruneStaleBranchTrait>
+        <jenkins.plugins.git.traits.WipeWorkspaceTrait>
+          <extension class="hudson.plugins.git.extensions.impl.WipeWorkspace"/>
+        </jenkins.plugins.git.traits.WipeWorkspaceTrait>
+        <jenkins.plugins.git.traits.AuthorInChangelogTrait>
+          <extension class="hudson.plugins.git.extensions.impl.AuthorInChangelog"/>
+        </jenkins.plugins.git.traits.AuthorInChangelogTrait>
+        <jenkins.plugins.git.traits.GitLFSPullTrait>
+          <extension class="hudson.plugins.git.extensions.impl.GitLFSPull"/>
+        </jenkins.plugins.git.traits.GitLFSPullTrait>
+        <jenkins.plugins.git.traits.RefSpecsSCMSourceTrait plugin="git">
+          <templates>
+            <jenkins.plugins.git.traits.RefSpecsSCMSourceTrait_-RefSpecTemplate>
+              <value>+refs/heads/*:refs/remotes/@{remote}/*</value>
+            </jenkins.plugins.git.traits.RefSpecsSCMSourceTrait_-RefSpecTemplate>
+          </templates>
+        </jenkins.plugins.git.traits.RefSpecsSCMSourceTrait>
+        <com.adobe.jenkins.disable__github__multibranch__status.DisableStatusUpdateTrait plugin="disable-github-multibranch-status"/>
+      </traits>
+      <strategy class="jenkins.branch.DefaultBranchPropertyStrategy">
+        <properties class="java.util.Arrays$ArrayList">
+          <a class="jenkins.branch.BranchProperty-array">
+            <jenkins.branch.NoTriggerBranchProperty/>
+            <org.jenkinsci.plugins.workflow.multibranch.DurabilityHintBranchProperty plugin="workflow-multibranch">
+              <hint>MAX_SURVIVABILITY</hint>
+            </org.jenkinsci.plugins.workflow.multibranch.DurabilityHintBranchProperty>
+            <com.adobe.jenkins.github__pr__comment__build.TriggerPRCommentBranchProperty plugin="github-pr-comment-build">
+              <commentBody>Ci build!</commentBody>
+            </com.adobe.jenkins.github__pr__comment__build.TriggerPRCommentBranchProperty>
+            <com.adobe.jenkins.github__pr__comment__build.TriggerPRReviewBranchProperty plugin="github-pr-comment-build"/>
+            <com.adobe.jenkins.github__pr__comment__build.TriggerPRUpdateBranchProperty plugin="github-pr-comment-build"/>
+          </a>
+        </properties>
+      </strategy>
+      <buildStrategies>
+        <jenkins.branch.buildstrategies.basic.AllBranchBuildStrategyImpl plugin="basic-branch-build-strategies">
+          <strategies>
+            <jenkins.branch.buildstrategies.basic.BranchBuildStrategyImpl plugin="basic-branch-build-strategies"/>
+            <jenkins.branch.buildstrategies.basic.SkipInitialBuildOnFirstBranchIndexing plugin="basic-branch-build-strategies"/>
+          </strategies>
+        </jenkins.branch.buildstrategies.basic.AllBranchBuildStrategyImpl>
+        <jenkins.branch.buildstrategies.basic.AnyBranchBuildStrategyImpl plugin="basic-branch-build-strategies">
+          <strategies>
+            <jenkins.branch.buildstrategies.basic.ChangeRequestBuildStrategyImpl plugin="basic-branch-build-strategies">
+              <ignoreTargetOnlyChanges>false</ignoreTargetOnlyChanges>
+            </jenkins.branch.buildstrategies.basic.ChangeRequestBuildStrategyImpl>
+            <jenkins.branch.buildstrategies.basic.TagBuildStrategyImpl plugin="basic-branch-build-strategies">
+              <atMostMillis>-1</atMostMillis>
+              <atLeastMillis>-1</atLeastMillis>
+            </jenkins.branch.buildstrategies.basic.TagBuildStrategyImpl>
+          </strategies>
+        </jenkins.branch.buildstrategies.basic.AnyBranchBuildStrategyImpl>
+        <jenkins.branch.buildstrategies.basic.TagBuildStrategyImpl plugin="basic-branch-build-strategies">
+          <atMostMillis>86400000</atMostMillis>
+          <atLeastMillis>604800000</atLeastMillis>
+        </jenkins.branch.buildstrategies.basic.TagBuildStrategyImpl>
+        <jenkins.branch.buildstrategies.basic.TagBuildStrategyImpl plugin="basic-branch-build-strategies">
+          <atMostMillis>-1</atMostMillis>
+          <atLeastMillis>-1</atLeastMillis>
+        </jenkins.branch.buildstrategies.basic.TagBuildStrategyImpl>
+        <jenkins.branch.buildstrategies.basic.ChangeRequestBuildStrategyImpl plugin="basic-branch-build-strategies">
+          <ignoreTargetOnlyChanges>true</ignoreTargetOnlyChanges>
+        </jenkins.branch.buildstrategies.basic.ChangeRequestBuildStrategyImpl>
+        <jenkins.branch.buildstrategies.basic.ChangeRequestBuildStrategyImpl plugin="basic-branch-build-strategies">
+          <ignoreTargetOnlyChanges>false</ignoreTargetOnlyChanges>
+        </jenkins.branch.buildstrategies.basic.ChangeRequestBuildStrategyImpl>
+        <jenkins.branch.buildstrategies.basic.BranchBuildStrategyImpl plugin="basic-branch-build-strategies"/>
+        <jenkins.branch.buildstrategies.basic.SkipInitialBuildOnFirstBranchIndexing plugin="basic-branch-build-strategies"/>
+        <jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl plugin="basic-branch-build-strategies">
+          <filters>
+            <jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl_-ExactNameFilter>
+              <name>test</name>
+              <caseSensitive>true</caseSensitive>
+            </jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl_-ExactNameFilter>
+            <jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl_-RegexNameFilter>
+              <regex>test.*$</regex>
+              <caseSensitive>true</caseSensitive>
+            </jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl_-RegexNameFilter>
+            <jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl_-WildcardsNameFilter>
+              <includes>testinclude</includes>
+              <excludes>testexclude</excludes>
+            </jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl_-WildcardsNameFilter>
+          </filters>
+        </jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl>
+        <jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl plugin="basic-branch-build-strategies">
+          <filters>
+            <jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl_-ExactNameFilter>
+              <name/>
+              <caseSensitive>false</caseSensitive>
+            </jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl_-ExactNameFilter>
+            <jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl_-RegexNameFilter>
+              <regex>^.*$</regex>
+              <caseSensitive>false</caseSensitive>
+            </jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl_-RegexNameFilter>
+            <jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl_-WildcardsNameFilter>
+              <includes>*</includes>
+              <excludes/>
+            </jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl_-WildcardsNameFilter>
+          </filters>
+        </jenkins.branch.buildstrategies.basic.NamedBranchBuildStrategyImpl>
+      </buildStrategies>
+    </org.jenkinsci.plugins.github__branch__source.GitHubSCMNavigator>
+  </navigators>
+  <projectFactories>
+    <org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProjectFactory plugin="workflow-multibranch">
+      <scriptPath>some.Jenkinsfile</scriptPath>
+    </org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProjectFactory>
+  </projectFactories>
+</jenkins.branch.OrganizationFolder>
