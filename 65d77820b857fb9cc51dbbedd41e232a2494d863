@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ad7b937_963f2da6",
+        "filename": "jenkins_jobs/modules/project_githuborg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 32058
+      },
+      "writtenOn": "2021-07-08T08:09:30Z",
+      "side": 1,
+      "message": "Please provide a minimal and a full example in here as well for documentation.",
+      "revId": "65d77820b857fb9cc51dbbedd41e232a2494d863",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
