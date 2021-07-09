@@ -16,6 +16,24 @@
       "revId": "65d77820b857fb9cc51dbbedd41e232a2494d863",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "36179400_d923cf67",
+        "filename": "jenkins_jobs/modules/project_githuborg.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 33604
+      },
+      "writtenOn": "2021-07-09T23:57:36Z",
+      "side": 1,
+      "message": "Done. The minimal example is the same (since a minimal github-org is required for the job to work at all), but I\u0027m moved the example of exercising this function here, and added a new \"full\" example above that just shows the parameters that aren\u0027t part of this to the parent class.",
+      "parentUuid": "7ad7b937_963f2da6",
+      "revId": "65d77820b857fb9cc51dbbedd41e232a2494d863",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
