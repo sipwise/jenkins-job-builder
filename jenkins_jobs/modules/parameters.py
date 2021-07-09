@@ -1185,7 +1185,7 @@ def __handle_unochoice_script(data, pdef, script_type, main_script_xml):
     groovy_sandbox_xml = XML.SubElement(secure_script_xml, "sandbox")
 
     script = data.get(script_type, {})
-    sub_script_xml.text = script.get("groovy", "")
+    sub_script_xml.text = str(script.get("groovy", ""))
     groovy_sandbox_xml.text = str(script.get("use-groovy-sandbox", True)).lower()
 
     if "script-additional-classpath" in script:
@@ -1193,7 +1193,7 @@ def __handle_unochoice_script(data, pdef, script_type, main_script_xml):
         for additional_classpath in script.get("script-additional-classpath"):
             entry_xml = XML.SubElement(classpath_xml, "entry")
             url_xml = XML.SubElement(entry_xml, "url")
-            url_xml.text = additional_classpath
+            url_xml.text = str(additional_classpath)
 
 
 def active_choices_param(registry, xml_parent, data):
@@ -1460,12 +1460,29 @@ class Parameters(jenkins_jobs.modules.base.Base):
                 pdefs = XML.SubElement(pdefp, "parameterDefinitions")
             for param in parameters:
                 # Pass job name to the uno-choice plugin
-                param_type = next(iter(param))
-                if param_type in (
-                    "active-choices",
-                    "active-choices-reactive",
-                    "dynamic-reference",
-                ):
-                    param[param_type]["_project-name"] = data["name"].split("/")[-1]
-                    param[param_type]["_project-full-name"] = data["name"]
+                if isinstance(param, dict):
+                    param_type = next(iter(param))
+                    if param_type in (
+                            "active-choices",
+                            "active-choices-reactive",
+                            "dynamic-reference",
+                    ):
+                        param[param_type]["_project-name"] = data["name"].split("/")[-1]
+                        param[param_type]["_project-full-name"] = data["name"]
+                else:
+                    # Process macro case.
+                    # TODO: Find a way to do it more properly.
+                    # It's possible has an issue with macro parameter chain,
+                    # when a macro calls another macro with uno-choice plugin parameters.
+                    component = self.registry.parser_data.get("parameter", {}).get(param)
+                    for macro_param in component.get("parameters", []):
+                        for macro_param_type in macro_param:
+                            if macro_param_type in (
+                            "active-choices",
+                            "active-choices-reactive",
+                            "dynamic-reference",
+                            ):
+                                macro_param[macro_param_type]["_project-name"] = data["name"].split("/")[-1]
+                                macro_param[macro_param_type]["_project-full-name"] = data["name"]
+
                 self.registry.dispatch("parameter", pdefs, param)
