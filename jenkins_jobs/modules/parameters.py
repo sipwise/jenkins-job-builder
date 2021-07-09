@@ -1460,12 +1460,29 @@ class Parameters(jenkins_jobs.modules.base.Base):
                 pdefs = XML.SubElement(pdefp, "parameterDefinitions")
             for param in parameters:
                 # Pass job name to the uno-choice plugin
-                param_type = next(iter(param))
-                if param_type in (
-                    "active-choices",
-                    "active-choices-reactive",
-                    "dynamic-reference",
-                ):
-                    param[param_type]["_project-name"] = data["name"].split("/")[-1]
-                    param[param_type]["_project-full-name"] = data["name"]
+                if isinstance(param, dict):
+                    param_type = next(iter(param))
+                    if param_type in (
+                            "active-choices",
+                            "active-choices-reactive",
+                            "dynamic-reference",
+                    ):
+                        param[param_type]["_project-name"] = data["name"].split("/")[-1]
+                        param[param_type]["_project-full-name"] = data["name"]
+                else:
+                    # Process macro case.
+                    # TODO: Find a way to do it more properly.
+                    # It's possible has an issue with macro parameter chain,
+                    # when a macro calls another macro with uno-choice plugin parameters.
+                    component = self.registry.parser_data.get("parameter", {}).get(param)
+                    for macro_param in component.get("parameters", []):
+                        for macro_param_type in macro_param:
+                            if macro_param_type in (
+                            "active-choices",
+                            "active-choices-reactive",
+                            "dynamic-reference",
+                            ):
+                                macro_param[macro_param_type]["_project-name"] = data["name"].split("/")[-1]
+                                macro_param[macro_param_type]["_project-full-name"] = data["name"]
+
                 self.registry.dispatch("parameter", pdefs, param)

@@ -1,0 +1,15 @@
+- parameter:
+    name: p_ACTIVE_CHOICES
+    parameters:
+      - active-choices:
+          name: ACTIVE_CHOICES
+          description: >-
+            Active choices.
+          script:
+            groovy: |
+              return ['param1', 'param2']
+
+- job:
+    name: my-job
+    parameters:
+      - p_ACTIVE_CHOICES
