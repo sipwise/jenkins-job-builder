@@ -637,7 +637,7 @@ def bitbucket_scm(xml_parent, data):
 
 
 def gerrit_scm(xml_parent, data):
-    """Configure Gerrit SCM
+    r"""Configure Gerrit SCM
 
     Requires the :jenkins-plugins:`Gerrit Code Review Plugin
     <gerrit-code-review>`.
@@ -669,6 +669,41 @@ def gerrit_scm(xml_parent, data):
         query-operator: Name of the query operator, supported values are:
         'SCHEME' or 'ID'.
         query-string: Value of the query operator.
+
+    :extensions:
+
+        * **clean** (`dict`)
+            * **after** (`bool`) - Clean the workspace after checkout
+            * **before** (`bool`) - Clean the workspace before checkout
+        * **prune** (`bool`) - Prune remote branches (default false)
+        * **shallow-clone** (`bool`) - Perform shallow clone (default false)
+        * **sparse-checkout** (dict)
+            * **paths** (list) - List of paths to sparse checkout. (optional)
+        * **depth** (`int`) - Set shallow clone depth (default 1)
+        * **do-not-fetch-tags** (`bool`) - Perform a clone without tags
+            (default false)
+        * **submodule** (`dict`)
+            * **disable** (`bool`) - By disabling support for submodules you
+              can still keep using basic git plugin functionality and just have
+              Jenkins to ignore submodules completely as if they didn't exist.
+            * **recursive** (`bool`) - Retrieve all submodules recursively
+              (uses '--recursive' option which requires git>=1.6.5)
+            * **tracking** (`bool`) - Retrieve the tip of the configured
+              branch in .gitmodules (Uses '\-\-remote' option which requires
+              git>=1.8.2)
+            * **parent-credentials** (`bool`) - Use credentials from default
+              remote of parent repository (default false).
+            * **reference-repo** (`str`) - Path of the reference repo to use
+              during clone (optional)
+            * **timeout** (`int`) - Specify a timeout (in minutes) for
+              submodules operations (default 10).
+        * **timeout** (`str`) - Timeout for git commands in minutes (optional)
+        * **use-author** (`bool`): Use author rather than committer in Jenkin's
+            build changeset (default false)
+        * **wipe-workspace** (`bool`) - Wipe out workspace before build
+            (default true)
+        * **lfs-pull** (`bool`) - Call git lfs pull after checkout
+            (default false)
 
     Minimal Example:
 
@@ -748,6 +783,18 @@ def gerrit_scm(xml_parent, data):
         helpers.convert_mapping_to_xml(
             checks_trait, checks, checks_source_mapping, fail_required=True
         )
+
+    # handle the default git extensions like:
+    # - clean
+    # - shallow-clone
+    # - timeout
+    # - do-not-fetch-tags
+    # - submodule
+    # - prune
+    # - wipe-workspace
+    # - use-author
+    # - lfs-pull
+    git_extensions(traits, data)
 
 
 def git_scm(xml_parent, data):

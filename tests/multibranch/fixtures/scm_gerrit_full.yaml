@@ -46,3 +46,26 @@ scm:
                 - exact-name: {}
                 - regex-name: {}
                 - wildcards-name: {}
+        clean:
+            after: true
+            before: true
+        prune: true
+        local-branch: true
+        sparse-checkout:
+            paths:
+                - "path1"
+                - "path2"
+                - "path3"
+        shallow-clone: true
+        depth: 3
+        do-not-fetch-tags: true
+        submodule:
+            disable: false
+            recursive: true
+            parent-credentials: true
+            timeout: 100
+            threads: 1
+        timeout: "100"
+        use-author: true
+        wipe-workspace: true
+        lfs-pull: true
