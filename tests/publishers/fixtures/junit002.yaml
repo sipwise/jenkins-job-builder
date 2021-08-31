@@ -5,6 +5,7 @@ publishers:
     health-scale-factor: 2.0
     allow-empty-results: true
     skip-publishing-checks: true
+    skip-marking-build-unstable: true
     test-stability: true
     claim-build: true
     measurement-plots: true

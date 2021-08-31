@@ -1580,6 +1580,8 @@ def junit(registry, xml_parent, data):
         (default false)
     :arg bool skip-publishing-checks: Do not publish issues to SCM provider
         platforms (default false)
+    :arg bool skip-marking-build-unstable: Do not mark build as unstable on
+        test failure (default false)
     :arg bool test-stability: Add historical information about test
         results stability (default false).
         Requires the Jenkins :jenkins-plugins:`Test stability Plugin
@@ -1615,6 +1617,7 @@ def junit(registry, xml_parent, data):
         ("health-scale-factor", "healthScaleFactor", "1.0"),
         ("allow-empty-results", "allowEmptyResults", False),
         ("skip-publishing-checks", "skipPublishingChecks", False),
+        ("skip-marking-build-unstable", "skipMarkingBuildUnstable", False),
     ]
     helpers.convert_mapping_to_xml(junitresult, data, mapping, fail_required=True)
 
