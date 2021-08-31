@@ -1568,7 +1568,8 @@ def hp_alm(registry, xml_parent, data):
 
 def junit(registry, xml_parent, data):
     """yaml: junit
-    Publish JUnit test results.
+    Publish JUnit test results. Requires the Jenkins :jenkins-plugins:`JUnit
+    Plugin <junit>`.
 
     :arg str results: results filename (required)
     :arg bool keep-long-stdio: Retain long standard output/error in test
