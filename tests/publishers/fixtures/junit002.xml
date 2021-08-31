@@ -6,6 +6,7 @@
       <keepLongStdio>false</keepLongStdio>
       <healthScaleFactor>2.0</healthScaleFactor>
       <allowEmptyResults>true</allowEmptyResults>
+      <skipPublishingChecks>true</skipPublishingChecks>
       <testDataPublishers>
         <de.esailors.jenkins.teststability.StabilityTestDataPublisher/>
         <hudson.plugins.claim.ClaimTestDataPublisher/>

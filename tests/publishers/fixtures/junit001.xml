@@ -6,6 +6,7 @@
       <keepLongStdio>true</keepLongStdio>
       <healthScaleFactor>1.0</healthScaleFactor>
       <allowEmptyResults>false</allowEmptyResults>
+      <skipPublishingChecks>false</skipPublishingChecks>
       <testDataPublishers/>
     </hudson.tasks.junit.JUnitResultArchiver>
   </publishers>

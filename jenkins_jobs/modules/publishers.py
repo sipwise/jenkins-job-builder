@@ -1578,6 +1578,8 @@ def junit(registry, xml_parent, data):
         health score. (default 1.0)
     :arg bool allow-empty-results: Do not fail the build on empty test results
         (default false)
+    :arg bool skip-publishing-checks: Do not publish issues to SCM provider
+        platforms (default false)
     :arg bool test-stability: Add historical information about test
         results stability (default false).
         Requires the Jenkins :jenkins-plugins:`Test stability Plugin
@@ -1612,6 +1614,7 @@ def junit(registry, xml_parent, data):
         ("keep-long-stdio", "keepLongStdio", True),
         ("health-scale-factor", "healthScaleFactor", "1.0"),
         ("allow-empty-results", "allowEmptyResults", False),
+        ("skip-publishing-checks", "skipPublishingChecks", False),
     ]
     helpers.convert_mapping_to_xml(junitresult, data, mapping, fail_required=True)
 

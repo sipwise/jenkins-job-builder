@@ -4,6 +4,7 @@ publishers:
     keep-long-stdio: false
     health-scale-factor: 2.0
     allow-empty-results: true
+    skip-publishing-checks: true
     test-stability: true
     claim-build: true
     measurement-plots: true
