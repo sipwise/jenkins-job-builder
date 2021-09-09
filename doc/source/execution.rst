@@ -372,4 +372,4 @@ Command Reference
          can be overridden by setting the ``XDG_CACHE_HOME`` environment
          variable.
 .. [#f2] Jenkins Security Advisory affecting plugins info retrieval
-         https://wiki.jenkins.io/display/SECURITY/Jenkins+Security+Advisory+2016-05-11
+         https://www.jenkins.io/security/advisory/2016-05-11/#information-on-installed-plugins-exposed-via-api

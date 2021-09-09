@@ -652,8 +652,8 @@ def dynamic_choice_param(registry, xml_parent, data):
     """yaml: dynamic-choice
     Dynamic Choice Parameter
 
-    Requires the Jenkins :jenkins-wiki:`Jenkins Dynamic Parameter Plug-in
-    <Dynamic+Parameter+Plug-in>`.
+    Requires the Jenkins :jenkins-plugins:`Jenkins Dynamic Parameter Plug-in
+    <dynamicparameter>`.
 
     :arg str name: the name of the parameter
     :arg str description: a description of the parameter (optional)
@@ -681,8 +681,8 @@ def dynamic_string_param(registry, xml_parent, data):
     """yaml: dynamic-string
     Dynamic Parameter
 
-    Requires the Jenkins :jenkins-wiki:`Jenkins Dynamic Parameter Plug-in
-    <Dynamic+Parameter+Plug-in>`.
+    Requires the Jenkins :jenkins-plugins:`Jenkins Dynamic Parameter Plug-in
+    <dynamicparameter>`.
 
     :arg str name: the name of the parameter
     :arg str description: a description of the parameter (optional)
@@ -710,8 +710,8 @@ def dynamic_choice_scriptler_param(registry, xml_parent, data):
     """yaml: dynamic-choice-scriptler
     Dynamic Choice Parameter (Scriptler)
 
-    Requires the Jenkins :jenkins-wiki:`Jenkins Dynamic Parameter Plug-in
-    <Dynamic+Parameter+Plug-in>`.
+    Requires the Jenkins :jenkins-plugins:`Jenkins Dynamic Parameter Plug-in
+    <dynamicparameter>`.
 
     :arg str name: the name of the parameter
     :arg str description: a description of the parameter (optional)
@@ -749,8 +749,8 @@ def dynamic_string_scriptler_param(registry, xml_parent, data):
     """yaml: dynamic-string-scriptler
     Dynamic Parameter (Scriptler)
 
-    Requires the Jenkins :jenkins-wiki:`Jenkins Dynamic Parameter Plug-in
-    <Dynamic+Parameter+Plug-in>`.
+    Requires the Jenkins :jenkins-plugins:`Jenkins Dynamic Parameter Plug-in
+    <dynamicparameter>`.
 
     :arg str name: the name of the parameter
     :arg str description: a description of the parameter (optional)
@@ -1200,8 +1200,8 @@ def active_choices_param(registry, xml_parent, data):
     """yaml: active-choices
     Active Choices Parameter
 
-    Requires the Jenkins :jenkins-wiki:`Active Choices Plug-in
-    <active+choices+plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Active Choices Plug-in
+    <uno-choice>`.
 
     :arg str name: Name of the parameter (required).
     :arg str description: Description of the parameter.
@@ -1256,8 +1256,8 @@ def active_choices_reactive_param(registry, xml_parent, data):
     """yaml: active-choices-reactive
     Active Choices Reactive Parameter
 
-    Requires the Jenkins :jenkins-wiki:`Active Choices Plug-in
-    <active+choices+plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Active Choices Plug-in
+    <uno-choice>`.
 
     :arg str name: Name of the parameter (required).
     :arg str description: Description of the parameter.
@@ -1349,8 +1349,8 @@ def dynamic_reference_param(registry, xml_parent, data):
     """yaml: dynamic-reference
     Active Choices Reactive Reference Parameter
 
-    Requires the Jenkins :jenkins-wiki:`Active Choices Plug-in
-    <active+choices+plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Active Choices Plug-in
+    <uno-choice>`.
 
     :arg str name: Name of the parameter (required).
     :arg str description: Description of the parameter.
