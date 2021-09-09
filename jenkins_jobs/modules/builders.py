@@ -2218,7 +2218,7 @@ def grails(registry, xml_parent, data):
     """yaml: grails
     Execute a grails build step.
 
-    Requires the :jenkins-wiki:`Jenkins Grails Plugin <Grails+Plugin>`.
+    Requires the :jenkins-plugins:`Jenkins Grails Plugin <grails>`.
 
     :arg bool use-wrapper: Use a grails wrapper (default false)
     :arg str name: Select a grails installation to use (default '(Default)')
@@ -3337,8 +3337,12 @@ def xcode(registry, xml_parent, data):
 
 def sonatype_clm(registry, xml_parent, data):
     """yaml: sonatype-clm
-    Requires the Jenkins :jenkins-wiki:`Sonatype CLM Plugin
-    <Sonatype+CLM+%28formerly+Insight+for+CI%29>`.
+    Requires the Jenkins Sonatype CLM Plugin.
+
+    WARNING: This plugin appears to be deprecated. There does not seem
+    to be any place where it is available for download.
+
+    Try the :py:yamlfunction:`nexus-artifact-uploader` plugin instead.
 
     :arg str value: Select CLM application from a list of available CLM
         applications or specify CLM Application ID (default list)
@@ -4238,6 +4242,7 @@ def build_name_setter(registry, xml_parent, data):
 
 def nexus_artifact_uploader(registry, xml_parent, data):
     """yaml: nexus-artifact-uploader
+
     To upload result of a build as an artifact in Nexus without the need of
     Maven.
 

@@ -275,6 +275,7 @@ texinfo_documents = [
 extlinks = {
     "jenkins-wiki": ("https://wiki.jenkins.io/display/JENKINS/%s", None),
     "jenkins-plugins": ("https://plugins.jenkins.io/%s", None),
+    "jenkins-github": ("https://github.com/jenkinsci/%s", None)
 }
 
 linkcheck_ignore = [

@@ -33,7 +33,7 @@ The module also supports additional, plugin-defined axes:
 * DynamicAxis (``dynamic``), requires the Jenkins
   :jenkins-plugins:`DynamicAxis Plugin <dynamic-axis>`
 * GroovyAxis (``groovy``), requires the Jenkins
-  :jenkins-wiki:`GroovyAxis Plugin <GroovyAxis>`
+  :jenkins-github:`GroovyAxis Plugin <groovyaxis-plugin>`
 * YamlAxis (``yaml``), requires the Jenkins
   :jenkins-plugins:`Yaml Axis Plugin <yaml-axis>`
 

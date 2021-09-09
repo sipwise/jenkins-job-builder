@@ -48,8 +48,8 @@ def builds_chain_fingerprinter(registry, xml_parent, data):
     """yaml: builds-chain-fingerprinter
     Builds chain fingerprinter.
 
-    Requires the Jenkins :jenkins-wiki:`Builds chain fingerprinter Plugin
-    <Builds+chain+fingerprinter>`.
+    Requires the Jenkins :jenkins-github:`Builds chain fingerprinter Plugin
+    <builds-chain-fingerprinter-plugin>`.
 
     :arg bool per-builds-chain: enable builds hierarchy fingerprinting
         (default false)
