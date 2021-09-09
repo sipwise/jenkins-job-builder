@@ -23,7 +23,7 @@ import re
 
 from sphinx import addnodes
 from sphinx.domains.python import _pseudo_parse_arglist
-from sphinx.domains.python import PyModulelevel
+from sphinx.domains.python import PyModulelevel, PyXRefRole
 from sphinx.ext.autodoc import Documenter
 from sphinx.ext.autodoc import FunctionDocumenter
 from sphinx.locale import _
@@ -142,3 +142,4 @@ class YAMLFunctionDocumenter(FunctionDocumenter):
 def setup(app):
     app.add_autodocumenter(YAMLFunctionDocumenter)
     app.add_directive_to_domain("py", "yamlfunction", PyYAMLFunction)
+    app.add_role_to_domain("py", "yamlfunction", PyXRefRole())

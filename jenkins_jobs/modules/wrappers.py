@@ -1138,8 +1138,8 @@ def locks(registry, xml_parent, data):
     """yaml: locks
     Control parallel execution of jobs.
 
-    Requires the Jenkins :jenkins-wiki:`Locks and Latches Plugin
-    <Locks+and+Latches+plugin>`.
+    Requires the Jenkins :jenkins-github:`Locks and Latches Plugin
+    <locks-and-latches-plugin>`.
 
     :arg: list of locks to use
 
@@ -1163,8 +1163,7 @@ def copy_to_slave(registry, xml_parent, data):
     """yaml: copy-to-slave
     Copy files to slave before build.
 
-    Requires the Jenkins :jenkins-wiki:`Copy To Slave Plugin
-    <Copy+To+Slave+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Copy To Slave Plugin <copy-to-slave>`.
 
     :arg list includes: list of file patterns to copy (optional)
     :arg list excludes: list of file patterns to exclude (optional)

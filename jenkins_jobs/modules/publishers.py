@@ -177,8 +177,8 @@ def blame_upstream(registry, xml_parent, data):
     """yaml: blame-upstream
     Notify upstream committers when build fails
 
-    Requires the Jenkins :jenkins-wiki:`Blame upstream committers Plugin
-    <Blame+Upstream+Committers+Plugin>`.
+    Requires the Jenkins :jenkins-github:`Blame upstream committers Plugin
+    <blame-upstream-committers-plugin>`.
 
     Example:
 
@@ -1590,8 +1590,8 @@ def junit(registry, xml_parent, data):
     :arg bool claim-build: Allow claiming of failed tests (default false)
         Requires the Jenkins :jenkins-plugins:`Claim Plugin <claim>`.
     :arg bool measurement-plots: Create measurement plots (default false)
-        Requires the Jenkins :jenkins-wiki:`Measurement Plots Plugin
-        <Measurement+Plots+Plugin>`.
+        Requires the Jenkins :jenkins-github:`Measurement Plots Plugin
+        <measurement-plots-plugin>`.
     :arg bool flaky-test-reports: Publish flaky test reports (default false).
         Requires the Jenkins :jenkins-plugins:`Flaky Test Handler Plugin
         <flaky-test-handler>`.
@@ -2818,8 +2818,8 @@ def aggregate_flow_tests(registry, xml_parent, data):
     """yaml: aggregate-flow-tests
     Aggregate downstream test results in a Build Flow job.
 
-    Requires the Jenkins :jenkins-wiki:`Build Flow Test Aggregator Plugin
-    <Build+Flow+Test+Aggregator+Plugin>`.
+    Requires the Jenkins `Build Flow Test Aggregator Plugin
+    <https://github.com/zeroturnaround/build-flow-test-aggregator>`_.
 
     :arg bool show-test-results-trend: whether to show test results
         trend graph (default true)
@@ -3010,8 +3010,7 @@ def copy_to_master(registry, xml_parent, data):
     """yaml: copy-to-master
     Copy files to master from slave.
 
-    Requires the Jenkins :jenkins-wiki:`Copy To Slave Plugin
-    <Copy+To+Slave+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`Copy To Slave Plugin <copy-to-slave>`.
 
     :arg list includes: list of file patterns to copy
     :arg list excludes: list of file patterns to exclude

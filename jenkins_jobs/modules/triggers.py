@@ -2182,8 +2182,7 @@ def script(registry, xml_parent, data):
     """yaml: script
     Triggers the job using shell or batch script.
 
-    Requires the Jenkins :jenkins-wiki:`ScriptTrigger Plugin
-    <ScriptTrigger+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`ScriptTrigger Plugin <scripttrigger>`.
 
     :arg str label: Restrict where the polling should run. (default '')
     :arg str script: A shell or batch script. (default '')
@@ -2223,8 +2222,8 @@ def groovy_script(registry, xml_parent, data):
     """yaml: groovy-script
     Triggers the job using a groovy script.
 
-    Requires the Jenkins :jenkins-wiki:`ScriptTrigger Plugin
-    <ScriptTrigger+Plugin>`.
+    Requires the Jenkins :jenkins-plugins:`ScriptTrigger Plugin
+    <scripttrigger>`.
 
     :arg bool system-script: If true, run the groovy script as a system script,
       the script will have access to the same variables as the Groovy Console.
