@@ -57,6 +57,11 @@
             <jenkins.plugins.git.traits.CleanBeforeCheckoutTrait>
               <extension class="hudson.plugins.git.extensions.impl.CleanBeforeCheckout"/>
             </jenkins.plugins.git.traits.CleanBeforeCheckoutTrait>
+            <jenkins.plugins.git.traits.LocalBranchTrait plugin="git">
+              <extension class="hudson.plugins.git.extensions.impl.LocalBranch">
+                <localBranch>**</localBranch>
+              </extension>
+            </jenkins.plugins.git.traits.LocalBranchTrait>
             <jenkins.plugins.git.traits.CloneOptionTrait>
               <extension class="hudson.plugins.git.extensions.impl.CloneOption">
                 <shallow>true</shallow>

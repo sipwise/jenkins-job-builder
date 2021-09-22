@@ -569,9 +569,20 @@ def git_extensions(xml_parent, data):
             ext_name = impl_prefix + "MessageExclusion"
             ext = XML.SubElement(xml_parent, ext_name)
             XML.SubElement(ext, "excludedMessage").text = msg
-    if not trait and "local-branch" in data:
-        ext = XML.SubElement(xml_parent, impl_prefix + "LocalBranch")
-        XML.SubElement(ext, "localBranch").text = str(data["local-branch"])
+    if data.get("local-branch"):
+        ext_name = impl_prefix + "LocalBranch"
+        if trait:
+            trait_name = "LocalBranchTrait"
+            tr = XML.SubElement(
+                xml_parent, trait_prefix + trait_name, {"plugin": "git"}
+            )
+            ext = XML.SubElement(tr, "extension", {"class": ext_name})
+        else:
+            ext = XML.SubElement(xml_parent, impl_prefix + "LocalBranch")
+        XML.SubElement(ext, "localBranch").text = (
+            str(data["local-branch"]) if data["local-branch"] is not True else "**"
+        )
+
     if not trait and "merge" in data:
         merge = data["merge"]
         merge_strategies = [
@@ -610,6 +621,7 @@ def git_extensions(xml_parent, data):
         "honor-refspec",
         "reference-repo",
     )
+
     if any(key in data for key in clone_options):
         ext_name = impl_prefix + "CloneOption"
 

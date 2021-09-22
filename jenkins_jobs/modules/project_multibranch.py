@@ -400,14 +400,6 @@ def bitbucket_scm(xml_parent, data):
         (like to disable SCM triggering or to override the pipeline durability)
         (optional)
         Refer to :func:`~property_strategies <property_strategies>`.
-    :arg bool local-branch: Check out to matching local branch
-        If given, checkout the revision to build as HEAD on this branch.
-        If selected, then the branch name is computed from the remote branch
-        without the origin. In that case, a remote branch origin/master will
-        be checked out to a local branch named master, and a remote branch
-        origin/develop/new-feature will be checked out to a local branch
-        named develop/newfeature.
-        Requires the :jenkins-plugins:`Git Plugin <git>`.
     :arg list(str) refspecs: Which refspecs to look for.
     :arg dict checkout-over-ssh: Checkout repo over ssh.
 
@@ -458,6 +450,15 @@ def bitbucket_scm(xml_parent, data):
             (default true)
         * **lfs-pull** (`bool`) - Call git lfs pull after checkout
             (default false)
+        * **local-branch** (`bool`) - Check out to matching local branch
+            If given, checkout the revision to build as HEAD on this branch.
+            If selected, then the branch name is computed from the remote branch
+            without the origin. In that case, a remote branch origin/master will
+            be checked out to a local branch named master, and a remote branch
+            origin/develop/new-feature will be checked out to a local branch
+            named develop/newfeature.
+            Requires the :jenkins-plugins:`Git Plugin <git>`.
+
 
 
     Minimal Example:
@@ -601,17 +602,6 @@ def bitbucket_scm(xml_parent, data):
     if data.get("build-strategies", None):
         build_strategies(xml_parent, data)
 
-    if data.get("local-branch", False):
-        lbr = XML.SubElement(
-            traits, "jenkins.plugins.git.traits.LocalBranchTrait", {"plugin": "git"}
-        )
-        lbr_extension = XML.SubElement(
-            lbr,
-            "extension",
-            {"class": "hudson.plugins.git.extensions.impl.LocalBranch"},
-        )
-        XML.SubElement(lbr_extension, "localBranch").text = "**"
-
     if data.get("checkout-over-ssh", None):
         cossh = XML.SubElement(
             traits, "com.cloudbees.jenkins.plugins.bitbucket.SSHCheckoutTrait"
@@ -633,6 +623,7 @@ def bitbucket_scm(xml_parent, data):
     # - wipe-workspace
     # - use-author
     # - lfs-pull
+    # - local-branch
     git_extensions(traits, data)
 
 
@@ -704,6 +695,15 @@ def gerrit_scm(xml_parent, data):
             (default true)
         * **lfs-pull** (`bool`) - Call git lfs pull after checkout
             (default false)
+                * **local-branch** (`bool`) - Check out to matching local branch
+            If given, checkout the revision to build as HEAD on this branch.
+            If selected, then the branch name is computed from the remote branch
+            without the origin. In that case, a remote branch origin/master will
+            be checked out to a local branch named master, and a remote branch
+            origin/develop/new-feature will be checked out to a local branch
+            named develop/newfeature.
+            Requires the :jenkins-plugins:`Git Plugin <git>`.
+
 
     Minimal Example:
 
@@ -794,6 +794,7 @@ def gerrit_scm(xml_parent, data):
     # - wipe-workspace
     # - use-author
     # - lfs-pull
+    # - local-branch
     git_extensions(traits, data)
 
 
@@ -863,6 +864,15 @@ def git_scm(xml_parent, data):
             (default true)
         * **lfs-pull** (`bool`) - Call git lfs pull after checkout
             (default false)
+        * **local-branch** (`bool`) - Check out to matching local branch
+            If given, checkout the revision to build as HEAD on this branch.
+            If selected, then the branch name is computed from the remote branch
+            without the origin. In that case, a remote branch origin/master will
+            be checked out to a local branch named master, and a remote branch
+            origin/develop/new-feature will be checked out to a local branch
+            named develop/newfeature.
+            Requires the :jenkins-plugins:`Git Plugin <git>`.
+
 
     Minimal Example:
 
@@ -923,6 +933,7 @@ def git_scm(xml_parent, data):
     # - wipe-workspace
     # - use-author
     # - lfs-pull
+    # - local-branch
     git_extensions(traits, data)
 
 
@@ -1024,6 +1035,15 @@ def github_scm(xml_parent, data):
             (default true)
         * **lfs-pull** (`bool`) - Call git lfs pull after checkout
             (default false)
+        * **local-branch** (`bool`) - Check out to matching local branch
+            If given, checkout the revision to build as HEAD on this branch.
+            If selected, then the branch name is computed from the remote branch
+            without the origin. In that case, a remote branch origin/master will
+            be checked out to a local branch named master, and a remote branch
+            origin/develop/new-feature will be checked out to a local branch
+            named develop/newfeature.
+            Requires the :jenkins-plugins:`Git Plugin <git>`.
+
 
     Minimal Example:
 
@@ -1163,6 +1183,7 @@ def github_scm(xml_parent, data):
     # - wipe-workspace
     # - use-author
     # - lfs-pull
+    # - local-branch
     git_extensions(traits, data)
 
     if data.get("refspecs"):
