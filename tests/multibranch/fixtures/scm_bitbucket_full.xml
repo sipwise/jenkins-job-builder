@@ -85,11 +85,6 @@
             <com.cloudbees.jenkins.plugins.bitbucket.BranchDiscoveryTrait>
               <strategyId>3</strategyId>
             </com.cloudbees.jenkins.plugins.bitbucket.BranchDiscoveryTrait>
-            <jenkins.plugins.git.traits.LocalBranchTrait plugin="git">
-              <extension class="hudson.plugins.git.extensions.impl.LocalBranch">
-                <localBranch>**</localBranch>
-              </extension>
-            </jenkins.plugins.git.traits.LocalBranchTrait>
             <com.cloudbees.jenkins.plugins.bitbucket.SSHCheckoutTrait>
               <credentialsId>ssh_secret</credentialsId>
             </com.cloudbees.jenkins.plugins.bitbucket.SSHCheckoutTrait>
@@ -108,6 +103,11 @@
                 <email>no-reply@ci.example.com</email>
               </extension>
             </jenkins.plugins.git.traits.UserIdentityTrait>
+            <jenkins.plugins.git.traits.LocalBranchTrait plugin="git">
+              <extension class="hudson.plugins.git.extensions.impl.LocalBranch">
+                <localBranch>**</localBranch>
+              </extension>
+            </jenkins.plugins.git.traits.LocalBranchTrait>
             <jenkins.plugins.git.traits.CloneOptionTrait>
               <extension class="hudson.plugins.git.extensions.impl.CloneOption">
                 <shallow>true</shallow>

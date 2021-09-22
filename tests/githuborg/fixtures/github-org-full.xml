@@ -76,6 +76,11 @@
             <email>no-reply@ci.example.com</email>
           </extension>
         </jenkins.plugins.git.traits.UserIdentityTrait>
+        <jenkins.plugins.git.traits.LocalBranchTrait plugin="git">
+          <extension class="hudson.plugins.git.extensions.impl.LocalBranch">
+            <localBranch>**</localBranch>
+          </extension>
+        </jenkins.plugins.git.traits.LocalBranchTrait>
         <jenkins.plugins.git.traits.CloneOptionTrait>
           <extension class="hudson.plugins.git.extensions.impl.CloneOption">
             <shallow>true</shallow>
