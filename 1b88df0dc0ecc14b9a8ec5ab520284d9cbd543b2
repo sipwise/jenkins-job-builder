@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1c1301cd_2fb8c215",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2021-09-23T20:06:53Z",
+      "side": 1,
+      "message": "Zuul failed for this change in this area:\n/home/zuul/src/opendev.org/jjb/jenkins-job-builder/jenkins_jobs/modules/project_multibranch.py:docstring of project_multibranch.gerrit_scm:69:Definition list ends without a blank line; unexpected unindent.\n\nPlease fix it.",
+      "revId": "1b88df0dc0ecc14b9a8ec5ab520284d9cbd543b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": true
+    }
+  ]
+}
