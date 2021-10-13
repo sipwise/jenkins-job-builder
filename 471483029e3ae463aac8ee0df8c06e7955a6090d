@@ -16,6 +16,24 @@
       "message": "Thanks for the fix!",
       "revId": "471483029e3ae463aac8ee0df8c06e7955a6090d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "619199c8_b5aa7d04",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 15362
+      },
+      "writtenOn": "2021-10-13T20:44:22Z",
+      "side": 1,
+      "message": "thanks for fast review.\n\nwas working on adding a new trigger and hit this issue. will send the trigger change probably tomorrow.",
+      "parentUuid": "e1261a5a_1c7e215a",
+      "revId": "471483029e3ae463aac8ee0df8c06e7955a6090d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
