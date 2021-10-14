@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <triggers class="vector">
+    <org.jfrog.hudson.trigger.ArtifactoryTrigger plugin="artifactory">
+      <details>
+        <artifactoryName>my-artifactory</artifactoryName>
+        <stagingPlugin/>
+      </details>
+      <spec>H/15 * * * *</spec>
+      <paths>myrepo/myfolder/latest</paths>
+      <branches/>
+      <lastModified/>
+    </org.jfrog.hudson.trigger.ArtifactoryTrigger>
+  </triggers>
+</project>

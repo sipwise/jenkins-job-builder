@@ -1,0 +1,5 @@
+triggers:
+  - artifactory:
+        artifactory-server: my-artifactory
+        schedule: H 0,8,16 * * *
+        paths: myrepo/myfolder/latest;myrepo/myfolder/commit

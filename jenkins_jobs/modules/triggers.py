@@ -2701,6 +2701,52 @@ def generic_webhook_trigger(registry, xml_parent, data):
     helpers.convert_mapping_to_xml(gwtrig, data, mapping, fail_required=False)
 
 
+def artifactory(registry, xml_parent, data):
+    """yaml: artifactory
+    Artifactory trigger. Trigger if files are added or modified in configured
+    path(s) to watch on chosen Artifactory server.
+
+    Requires the Jenkins :jenkins-plugins:`Artifactory Plugin <Artifactory>`.
+
+    :arg str artifactory-server: Artifactory server where the configured
+      path(s) are monitored from. Available Artifactory servers must be
+      configured on Jenkins Global Configuration in advance. (default '')
+    :arg str schedule: cron syntax of when to poll. (default '')
+    :arg bool paths: Paths in Artifactory to poll for changes. Multiple
+      paths can be configured by the ';' separator. (default '')
+
+    Example with Single Path to Monitor:
+
+    .. literalinclude::
+        /../../tests/triggers/fixtures/artifactory-trigger-single-path.yaml
+        :language: yaml
+
+    Example with Multiple Paths to Monitor:
+
+    .. literalinclude::
+        /../../tests/triggers/fixtures/artifactory-trigger-multi-path.yaml
+        :language: yaml
+    """
+
+    artifactory = XML.SubElement(
+        xml_parent, "org.jfrog.hudson.trigger.ArtifactoryTrigger"
+    )
+    artifactory.set("plugin", "artifactory")
+
+    details = XML.SubElement(artifactory, "details")
+    XML.SubElement(details, "artifactoryName").text = str(data["artifactory-server"])
+    XML.SubElement(details, "stagingPlugin")
+
+    mapping = [
+        ("schedule", "spec", ""),
+        ("paths", "paths", ""),
+        ("", "branches", ""),
+        ("", "lastModified", ""),
+    ]
+
+    helpers.convert_mapping_to_xml(artifactory, data, mapping, fail_required=False)
+
+
 class Triggers(jenkins_jobs.modules.base.Base):
     sequence = 50
 
