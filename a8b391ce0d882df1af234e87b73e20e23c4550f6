@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a717270_12ad8c3e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2021-10-14T12:28:07Z",
+      "side": 1,
+      "message": "One suggestion but otherwise looks good.",
+      "revId": "a8b391ce0d882df1af234e87b73e20e23c4550f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "be93099f_b65a5e7c",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2737,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2021-10-14T12:28:07Z",
+      "side": 1,
+      "message": "Would be worth creating a details_mapping and adding this to mapping variable so that we can use the convert_mapping_to_xml() since it has built-in exceptions for error cases and makes it easy to add new parameters if this plugin ever adds them.\n\nIf you set \"fail_required\u003dTrue\" and artifactory-server\u0027s default value to None it will report the correct error if the user does not pass the parameter.",
+      "revId": "a8b391ce0d882df1af234e87b73e20e23c4550f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
