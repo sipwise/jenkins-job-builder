@@ -11,3 +11,4 @@ parameters:
       selectedValue: TOP
       useRepository: buh
       quickFilterEnabled: true
+      listSize: 0

@@ -15,6 +15,7 @@
           <selectedValue>NONE</selectedValue>
           <useRepository/>
           <quickFilterEnabled>false</quickFilterEnabled>
+          <listSize>0</listSize>
         </net.uaznia.lukanus.hudson.plugins.gitparameter.GitParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>

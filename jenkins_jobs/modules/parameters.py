@@ -1092,6 +1092,8 @@ def git_parameter_param(registry, xml_parent, data):
         repository. (default '')
     :arg bool quickFilterEnabled: When this option is enabled will show a text
         field. Parameter is filtered on the fly. (default false)
+    :arg str listSize: Specify the number of items the list will display.
+        A value of 0 will display as a DropDown list.
 
     Minimal Example:
 
@@ -1140,6 +1142,7 @@ def git_parameter_param(registry, xml_parent, data):
         ("selectedValue", "selectedValue", "NONE", valid_selected_values),
         ("useRepository", "useRepository", ""),
         ("quickFilterEnabled", "quickFilterEnabled", False),
+        ("listSize", "listSize", "0"),
     ]
     helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
