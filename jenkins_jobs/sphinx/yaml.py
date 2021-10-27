@@ -23,7 +23,7 @@ import re
 
 from sphinx import addnodes
 from sphinx.domains.python import _pseudo_parse_arglist
-from sphinx.domains.python import PyModulelevel, PyXRefRole
+from sphinx.domains.python import PyMethod, PyXRefRole
 from sphinx.ext.autodoc import Documenter
 from sphinx.ext.autodoc import FunctionDocumenter
 from sphinx.locale import _
@@ -32,7 +32,7 @@ from sphinx.locale import _
 yaml_sig_re = re.compile(r"yaml:\s*(.*)")
 
 
-class PyYAMLFunction(PyModulelevel):
+class PyYAMLFunction(PyMethod):
     def handle_signature(self, sig, signode):
         """Transform a Python signature into RST nodes.
 
