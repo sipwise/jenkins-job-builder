@@ -596,6 +596,7 @@ class Jinja2Loader(CustomLoader):
             # elsewhere.
             self._loader = self._template.environment.loader
         self._template.environment.loader = self._loader
+        kwargs.update({'all_variables': kwargs})
         return self._template.render(kwargs)
 
     def get_object_to_format(self):
