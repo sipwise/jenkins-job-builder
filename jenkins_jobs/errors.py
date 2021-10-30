@@ -82,3 +82,20 @@ class YAMLFormatError(JenkinsJobsException):
 
 class JJBConfigException(JenkinsJobsException):
     pass
+
+
+class ReservedVariableException(JenkinsJobsException):
+    def __init__(self, variable_name, template_name="", project_name=""):
+        location = ""
+        if project_name and template_name:
+            location = " used by project '{0}' with job-template '{1}'".format(
+                project_name, template_name
+            )
+        elif project_name:
+            location = " used by project {0}".format(project_name)
+        elif template_name:
+            location = " used by job-template '{0}'".format(template_name)
+        message = "Variable named '{0}'{1} is reserved for internal usage, select different name please.".format(
+            variable_name, location
+        )
+        super(ReservedVariableException, self).__init__(message)

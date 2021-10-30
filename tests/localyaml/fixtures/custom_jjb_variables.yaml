@@ -1,0 +1,27 @@
+- job-template:
+    name: 'reusable-template-{abc}'
+    description: !j2: |
+      Example of project/template specs extracted:
+      {% for varName in (jjb_variables()|sort) %}
+      {%- if varName.startswith('custom_') %}
+      {{- varName.upper() }}={{ jjb_variables()[varName] }}
+      {% endif -%}
+      {% endfor -%}
+
+- project:
+    name: 'example'
+    custom_verbosity: 3
+    custom_version: 1.2.3
+    jobs:
+      - 'reusable-template-{abc}':
+          abc: 'basics'
+      - 'reusable-template-{abc}':
+          abc: 'verbose'
+          custom_verbosity: 4
+
+- project:
+    name: 'another-example'
+    custom_source: 'git'
+    jobs:
+      - 'reusable-template-{abc}':
+           abc: 'source'

@@ -231,6 +231,8 @@ from yaml import YAMLObject
 
 from collections import OrderedDict
 
+from jenkins_jobs import errors
+
 
 logger = logging.getLogger(__name__)
 
@@ -596,6 +598,11 @@ class Jinja2Loader(CustomLoader):
             # elsewhere.
             self._loader = self._template.environment.loader
         self._template.environment.loader = self._loader
+        if "jjb_variables" in kwargs:
+            raise errors.ReservedVariableException(
+                "jjb_variables", kwargs.get("template-name", ""), kwargs.get("name")
+            )
+        kwargs.update({"jjb_variables": lambda: kwargs})
         return self._template.render(kwargs)
 
     def get_object_to_format(self):
