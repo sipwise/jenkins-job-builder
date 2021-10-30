@@ -1,0 +1,10 @@
+- job-template:
+    name: 'conflicting-variable-template-{abc}'
+    jjb_variables: 'setting-this-result-in-failure'
+    description: !j2: "anything here"
+
+- project:
+    name: 'conflicting-example'
+    abc: 'not-important'
+    jobs:
+      - 'conflicting-variable-template-{abc}'

@@ -21,6 +21,7 @@ from testtools import ExpectedException
 from yaml.composer import ComposerError
 
 from jenkins_jobs.config import JJBConfig
+from jenkins_jobs.errors import ReservedVariableException
 from jenkins_jobs.parser import YamlParser
 from jenkins_jobs.registry import ModuleRegistry
 from tests import base
@@ -139,3 +140,24 @@ class TestCaseLocalYamlRetainAnchors(base.BaseTestCase):
         registry = ModuleRegistry(jjb_config, None)
         jobs, _ = j.expandYaml(registry)
         self.assertEqual(jobs[0]["builders"][0]["shell"], "docker run ubuntu:latest")
+
+def _include_only_jjb_variables(input_filename):
+    return not os.path.basename(input_filename).startswith('custom_jjb_variables')
+
+class TestCaseLocalYamlAllVariables(base.SingleJobTestCase):
+
+    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
+    scenarios = base.get_scenarios(
+        fixtures_path, "yaml", "xml", filter_func=_include_only_jjb_variables
+    )
+
+    def test_yaml_snippet(self):
+
+        if '_conflict' in os.path.basename(self.in_filename):
+            # ensure that error mentions what variable name
+            # also in which project/template it conflicts
+            with ExpectedException(ReservedVariableException, "^Variable .*'jjb_variables'.*'conflicting-example'.*'conflicting-variable-template.*is reserved.*"):
+                self.out_filenames = []
+                super(TestCaseLocalYamlAllVariables, self).test_yaml_snippet()
+        else:
+            super(TestCaseLocalYamlAllVariables, self).test_yaml_snippet()
