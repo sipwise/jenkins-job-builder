@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "756ac9a9c90adca4c99faf787d28407d91b0bcc9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ac008f34_18119ee8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2021-11-04T02:17:50Z",
+      "side": 1,
+      "message": "Ah looks like we\u0027re still using Sphinx 1.6.7. We\u0027ll have to upgrade that first.",
+      "revId": "756ac9a9c90adca4c99faf787d28407d91b0bcc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
