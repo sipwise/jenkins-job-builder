@@ -33,6 +33,40 @@
       "message": "One alternative which comes to my mind is adding special yaml tag for this,\ne.g. \u0027j2varsDict\u0027 or something, which would have custom loader calling to Jinja2Loader with param asking for the dictionary.\n\nThough if desired for all jinja2 possible cases (with Jinja2YamlLoader and includes etc),\ncould mean possibly unnecessary cluttering of the code too?",
       "revId": "eb23845c66cc79e24129f4201b8df08563b38380",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c047dfdd_308073f1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2021-11-12T11:28:59Z",
+      "side": 1,
+      "message": "I don\u0027t track what happens with JJB much these days, other than when I see something changing in the main engine as I remain curious about how this area gets improved. Certainly it seems like any way to be able to iterate over all of the variables passed in to a j2 template would be very useful.\n\nI think this could do with a couple of tests to show the concept working and maybe one checking what happens if a variable with the name all_variables is passed in.\n\nhttps://opendev.org/jjb/jenkins-job-builder/src/branch/master/tests/localyaml/test_localyaml.py#L33-L50 should support testing both examples that work and also ones that should cause an exception with the fixtures added under  https://opendev.org/jjb/jenkins-job-builder/src/branch/master/tests/localyaml/fixtures.",
+      "revId": "eb23845c66cc79e24129f4201b8df08563b38380",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "90b6325d_2b75999c",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2021-11-12T11:28:59Z",
+      "side": 1,
+      "message": "Is it possible for `all_variables` to already exist and contain something different, in which case what would happen? e.g. someone defined it already as an input\n\nMight be worth making sure that gets flagged or see if it can be exposed in another way here that won\u0027t shadow what is passed in.\n\nI wonder if all_variables was a function that can return kwargs when called, so that in templates it has to be used \u0027all_variables()\u0027 would that automatically trigger an error if someone attempted overrode it or if at least the behaviour would not be surprising that trying to use \u0027all_variables()\u0027 when you\u0027ve defined all_variables in your own templates to have it not work?",
+      "revId": "eb23845c66cc79e24129f4201b8df08563b38380",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
