@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c293a674_ae4d22b2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2021-11-12T02:02:18Z",
+      "side": 1,
+      "message": "Personally i would prefer to have such feature as config option,\nbut seems to me there is no easy way how to get JJBConfig info into Jinja2Loader or at least be visible in local_yaml (quite few things would need to be changed?).\nSo would appreciate suggestion how to achieve that.\n(E.g. config option which would control if to pass variables directly or via dict, instead of dict in addition.)\n\nAnother thing would be the name of the dict variable \u0027all_variables\u0027,\nwhich could easily be problematic and colliding with existing usage,\nso maybe some safer name (__all_vars__ or such?) could be better?",
+      "revId": "eb23845c66cc79e24129f4201b8df08563b38380",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
