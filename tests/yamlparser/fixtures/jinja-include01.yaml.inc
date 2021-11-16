@@ -1,1 +1,1 @@
-{% include 'jinja01.yaml.inc' %}
+{% include 'jinja01.yaml.inc' -%}

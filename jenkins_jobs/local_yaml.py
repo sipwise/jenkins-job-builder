@@ -592,6 +592,7 @@ class Jinja2Loader(CustomLoader):
             self._template.environment.loader = jinja2.FileSystemLoader(
                 self._search_path
             )
+            self._template.environment.keep_trailing_newline = True
             # Preserve this loader if it hasn't been overwritten
             # elsewhere.
             self._loader = self._template.environment.loader

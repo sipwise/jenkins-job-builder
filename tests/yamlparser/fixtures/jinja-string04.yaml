@@ -10,7 +10,7 @@
           test-shell-builder-alternate
         {%- else -%}
           test-shell-builder-default
-        {%- endif %}
+        {%- endif -%}
 
 - project:
     name: test-proj

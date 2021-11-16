@@ -11,7 +11,8 @@
   <scm class="hudson.scm.NullSCM"/>
   <builders>
     <hudson.tasks.Shell>
-      <command>1</command>
+      <command>1
+</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers/>
