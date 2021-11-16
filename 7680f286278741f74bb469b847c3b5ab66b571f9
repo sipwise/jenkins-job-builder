@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9772d1ce_26abcc99",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2021-11-16T17:01:45Z",
+      "side": 1,
+      "message": "Really a WIP, I should look closer at the changes introduced in the existing test suite and probably add a test dedicated to this change.\n\nSomething like:\n\n\n - shell: |\n   echo \"hello\"\n - shell: |-\n   echo \"hello\"\n - shell: |+\n   echo \"hello\"\n\n - shell: !j2: |\n   echo \"hello\"\n - shell: !j2: |-\n   echo \"hello\"\n - shell: !j2: |+\n   echo \"hello\"\n\nAnd ensure the resulting XML has the proper newlines (or lack of).\n\n",
+      "revId": "7680f286278741f74bb469b847c3b5ab66b571f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
