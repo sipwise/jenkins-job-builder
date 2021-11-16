@@ -54,6 +54,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "4b390bb5_51453afc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2021-11-16T01:48:39Z",
+      "side": 1,
+      "message": "Yes, adding tests seems definitely good idea, thanks, i\u0027ve missed those.\nWill do in any next patchset, according where it goes with the other comment.",
+      "parentUuid": "c047dfdd_308073f1",
+      "revId": "eb23845c66cc79e24129f4201b8df08563b38380",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "90b6325d_2b75999c",
         "filename": "jenkins_jobs/local_yaml.py",
         "patchSetId": 2
@@ -65,6 +83,24 @@
       "writtenOn": "2021-11-12T11:28:59Z",
       "side": 1,
       "message": "Is it possible for `all_variables` to already exist and contain something different, in which case what would happen? e.g. someone defined it already as an input\n\nMight be worth making sure that gets flagged or see if it can be exposed in another way here that won\u0027t shadow what is passed in.\n\nI wonder if all_variables was a function that can return kwargs when called, so that in templates it has to be used \u0027all_variables()\u0027 would that automatically trigger an error if someone attempted overrode it or if at least the behaviour would not be surprising that trying to use \u0027all_variables()\u0027 when you\u0027ve defined all_variables in your own templates to have it not work?",
+      "revId": "eb23845c66cc79e24129f4201b8df08563b38380",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "68888b93_9c28cba6",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2021-11-16T01:48:39Z",
+      "side": 1,
+      "message": "So currently \u0027all_variables\u0027 key contents gets replaced by \u0027kwargs\u0027.\nThat is why I mentioned that this may not be the best name to use.\n\nI do not see any easy way for doing it without possible collision:\n- even when passed as function it would still override/overshadow the value expected by user\n- it could be passed via \u0027globals\u0027, though then it is not expected to change (according to the docs, and then since template is \u0027cached\u0027 in _template and or there may be consequences if e.g. parallel rendering is attempted or such ... i would think it may not be the safest road to take)\n- there might be way of using jinja2 extension though that seems quite complex (seems requires correctly handling jinja2 inner parser and AST is required, else \"all kinds of compiler or runtime errors that are horrible to debug\" - https://jinja.palletsprojects.com/en/3.0.x/extensions/#module-jinja2.ext so unless really desired i would prefer to avoid it)\n- to me atm it seems it\u0027s leaving only the easier but less ideal possibilites:\n-- using less-likely-to-overlap name (like __all_variables__ etc?)\n-- issuing warning (or even error) when overlap is detected (we can easily check if \u0027all_variables\u0027 is present)\n-- not injecting all_variables if presence is detected (as per point above, or can be combined with warning)\n--- i believe this would practically work as if passing to globals - users value would be visible? (though maybe global values are procted\n-- automatically selecting unused key (unpredictable or hardly, very likely to cause confusion)\n\nThis is why I was first thinking about config option to control this.\n\n\nAlternative way possibly could be using the _template.environment.globals but injecting \u0027universal\u0027 helper function - as based on jinja2.contextfunction https://newbedev.com/how-to-get-a-list-of-current-variables-from-jinja-2-template - though that does include all resolvable names, including default jinja2 helpers and such, more then just the variables as passed from \u0027user-point-of-view\u0027 here in kwargs - and so may need filtering (as using the also injected helpers e.g. \u0027callable\u0027 in the linked article).",
+      "parentUuid": "90b6325d_2b75999c",
       "revId": "eb23845c66cc79e24129f4201b8df08563b38380",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
