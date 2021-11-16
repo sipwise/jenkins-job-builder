@@ -297,6 +297,7 @@ class J2BaseYamlObject(BaseYamlObject):
         self._jinja2_env = jinja2.Environment(
             loader=jinja2.FileSystemLoader(self._search_path),
             undefined=jinja2.StrictUndefined,
+            keep_trailing_newline=True,
         )
 
     def _render_template(self, pos, template_text, template, params):

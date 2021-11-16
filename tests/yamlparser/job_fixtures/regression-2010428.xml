@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <flow-definition plugin="workflow-job">
   <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps">
-    <script>some builder</script>
+    <script>some builder
+</script>
     <sandbox>false</sandbox>
   </definition>
   <actions/>

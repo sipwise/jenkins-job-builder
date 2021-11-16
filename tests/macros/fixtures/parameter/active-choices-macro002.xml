@@ -17,7 +17,8 @@
               <sandbox>true</sandbox>
             </secureFallbackScript>
             <secureScript>
-              <script>return ['default_value']</script>
+              <script>return ['default_value']
+</script>
               <sandbox>true</sandbox>
             </secureScript>
           </script>

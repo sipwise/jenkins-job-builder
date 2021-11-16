@@ -9,5 +9,5 @@
     name: sample-job
     param_3: '{param_2}-plus'
     builders:
-      - shell: !j2: |
+      - shell: !j2: |-
           echo {{ param_3 }}

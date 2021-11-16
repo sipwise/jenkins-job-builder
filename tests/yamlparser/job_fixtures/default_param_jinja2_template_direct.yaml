@@ -6,5 +6,5 @@
 - job-template:
     name: sample-job
     builders:
-      - shell: !j2: |
+      - shell: !j2: |-
           echo {{ missing_param | default('default_value') }}

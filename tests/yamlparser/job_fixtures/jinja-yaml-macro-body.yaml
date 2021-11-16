@@ -3,7 +3,7 @@
     builders:
       !j2-yaml: |
         # Check that inner elements are expanded, but only once.
-        - shell: !j2: |
+        - shell: !j2: |-
             echo ${var}
 
 - job-template:
