@@ -103,6 +103,24 @@
       "parentUuid": "90b6325d_2b75999c",
       "revId": "eb23845c66cc79e24129f4201b8df08563b38380",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d4d6df2_1b8cf10c",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 1054
+      },
+      "writtenOn": "2021-11-16T17:23:31Z",
+      "side": 1,
+      "message": "Yes, I\u0027d expect a function to still shadow, but was thinking that use of \u0027all_variables()\u0027 vs \u0027all_variables\u0027 might provide a useful hint as well as possibly calling \u0027all_variables\u0027 when it\u0027s now a function would cause an immediate error on parsing instead of leaving empty values for things might help.\n\nI think probably the safest way would be to raise an exception with a useful message, if all_variables is already in use. Things prefixed \u0027__\u0027 tend to indicate stuff that should be treated as private in python, where as I think this is intended to be used.\n\nThere maybe some additional debate on the actual name, whether it should use `jjb_variables` and then reserve anything prefixed with `jjb_` for future possible usage, changing the name should be a relatively simple find replace, so I wouldn\u0027t worry about that too much.\n\nI\u0027d recommend opting for the simple approach of whatever the name is, consider it reserved, with any usage of it being passed in to be considered an error and do the best possible to raise an exception when that is detected.",
+      "parentUuid": "68888b93_9c28cba6",
+      "revId": "eb23845c66cc79e24129f4201b8df08563b38380",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
