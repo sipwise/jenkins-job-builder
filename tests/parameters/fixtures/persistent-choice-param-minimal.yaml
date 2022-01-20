@@ -1,0 +1,6 @@
+parameters:
+  - persistent-choice:
+      name: project
+      choices:
+        - nova
+        - glance

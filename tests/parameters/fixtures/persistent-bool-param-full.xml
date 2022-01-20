@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <com.gem.persistentparameter.PersistentBooleanParameterDefinition>
+          <name>FOO</name>
+          <description>A persistent parameter named FOO, defaults to 'true'.</description>
+          <defaultValue>true</defaultValue>
+          <successfulOnly>true</successfulOnly>
+        </com.gem.persistentparameter.PersistentBooleanParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+</project>
