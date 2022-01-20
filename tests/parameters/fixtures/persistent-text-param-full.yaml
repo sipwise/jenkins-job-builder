@@ -1,0 +1,7 @@
+parameters:
+  - persistent-text:
+      name: FOO
+      default: bar
+      description: A persistent parameter named FOO, defaults to 'bar'.
+      trim: true
+      successfulOnly: true

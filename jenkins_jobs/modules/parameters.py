@@ -1431,6 +1431,155 @@ def dynamic_reference_param(registry, xml_parent, data):
     helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
 
 
+def persistent_string_param(registry, xml_parent, data):
+    """yaml: persistent-string
+    A persistent string parameter.
+
+    Requires the Jenkins :jenkins-plugins:`Persistent Parameter Plugin
+    <persistent-parameter>`.
+
+    :arg str name: the name of the parameter
+    :arg str default: the default value of the parameter (optional)
+    :arg str description: a description of the parameter (optional)
+    :arg bool trim: strip whitespaces from the begnning and end
+        of the string (optional, default: false)
+    :arg bool successfulOnly: if persistent the parameter
+        only build successful(optional, default: false)
+
+    Example::
+
+      parameters:
+        - persistent-string:
+            name: FOO
+            default: bar
+            description: "A parameter named FOO, defaults to 'bar'."
+            trim: false
+            successfulOnly: false
+    """
+    pdef = base_param(
+        registry,
+        xml_parent,
+        data,
+        True,
+        "com.gem.persistentparameter.PersistentStringParameterDefinition",
+    )
+
+    mapping = [("trim", "trim", False), ("successfulOnly", "successfulOnly", False)]
+    helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
+
+
+def persistent_bool_param(registry, xml_parent, data):
+    """yaml: persistent-bool
+    A persistent boolean parameter.
+
+    Requires the Jenkins :jenkins-plugins:`Persistent Parameter Plugin
+    <persistent-parameter>`.
+
+    :arg str name: the name of the parameter
+    :arg str default: the default value of the parameter (optional)
+    :arg str description: a description of the parameter (optional)
+    :arg bool successfulOnly: if persistent the parameter
+        only build successful(optional, default: false)
+
+    Example::
+
+      parameters:
+        - persistent-bool:
+            name: FOO
+            default: false
+            description: "A persistent parameter named FOO, defaults to 'false'."
+            successfulOnly: false
+    """
+    data["default"] = str(data.get("default", False)).lower()
+    pdef = base_param(
+        registry,
+        xml_parent,
+        data,
+        True,
+        "com.gem.persistentparameter.PersistentBooleanParameterDefinition",
+    )
+
+    mapping = [("successfulOnly", "successfulOnly", False)]
+    helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
+
+
+def persistent_text_param(registry, xml_parent, data):
+    """yaml: persistent-text
+    A persistent text parameter.
+
+    Requires the Jenkins :jenkins-plugins:`Persistent Parameter Plugin
+    <persistent-parameter>`.
+
+    :arg str name: the name of the parameter
+    :arg str default: the default value of the parameter (optional)
+    :arg str description: a description of the parameter (optional)
+    :arg bool trim: strip whitespaces from the begnning and end
+        of the string (optional, default: false)
+    :arg bool successfulOnly: if persistent the parameter
+        only build successful(optional, default: false)
+
+    Example::
+
+      parameters:
+        - persistent-text:
+            name: FOO
+            default: bar
+            description: "A persistent parameter named FOO, defaults to 'bar'."
+            successfulOnly: false
+    """
+
+    pdef = base_param(
+        registry,
+        xml_parent,
+        data,
+        True,
+        "com.gem.persistentparameter.PersistentTextParameterDefinition",
+    )
+
+    mapping = [("trim", "trim", False), ("successfulOnly", "successfulOnly", False)]
+    helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
+
+
+def persistent_choice_param(registry, xml_parent, data):
+    """yaml: persistent-choice
+    A persistent single selection parameter.
+
+    Requires the Jenkins :jenkins-plugins:`Persistent Parameter Plugin
+    <persistent-parameter>`.
+
+    :arg str name: the name of the parameter
+    :arg list choices: the available choices, first one is the default one.
+    :arg str description: a description of the parameter (optional)
+    :arg bool successfulOnly: if persistent the parameter
+        only build successful(optional, default: false)
+
+    Example::
+
+      parameters:
+        - persistent-choice:
+            name: project
+            choices:
+              - nova
+              - glance
+            description: "On which project to run?"
+            successfulOnly: false
+    """
+    pdef = base_param(
+        registry,
+        xml_parent,
+        data,
+        False,
+        "com.gem.persistentparameter.PersistentChoiceParameterDefinition",
+    )
+    choices = XML.SubElement(pdef, "choices", {"class": "java.util.Arrays$ArrayList"})
+    a = XML.SubElement(choices, "a", {"class": "string-array"})
+    for choice in data["choices"]:
+        XML.SubElement(a, "string").text = choice
+
+    mapping = [("successfulOnly", "successfulOnly", False)]
+    helpers.convert_mapping_to_xml(pdef, data, mapping, fail_required=True)
+
+
 class Parameters(jenkins_jobs.modules.base.Base):
     sequence = 21
 

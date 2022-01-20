@@ -1,0 +1,8 @@
+parameters:
+  - persistent-choice:
+      name: project
+      choices:
+        - nova
+        - glance
+      description: "On which project to run?"
+      successfulOnly: true

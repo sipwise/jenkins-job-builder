@@ -1,0 +1,6 @@
+parameters:
+  - persistent-bool:
+      name: FOO
+      default: true
+      description: A persistent parameter named FOO, defaults to 'true'.
+      successfulOnly: true
