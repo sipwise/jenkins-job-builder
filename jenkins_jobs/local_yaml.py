@@ -279,7 +279,7 @@ class OrderedConstructor(BaseConstructor):
 
 class OrderedRepresenter(BaseRepresenter):
     def represent_yaml_mapping(self, mapping, flow_style=None):
-        tag = u"tag:yaml.org,2002:map"
+        tag = "tag:yaml.org,2002:map"
         node = self.represent_mapping(tag, mapping, flow_style=flow_style)
         return node
 
@@ -388,7 +388,7 @@ class BaseYAMLObject(YAMLObject):
 
 
 class J2Yaml(BaseYAMLObject):
-    yaml_tag = u"!j2-yaml:"
+    yaml_tag = "!j2-yaml:"
 
     @classmethod
     def from_yaml(cls, loader, node):
@@ -396,7 +396,7 @@ class J2Yaml(BaseYAMLObject):
 
 
 class J2String(BaseYAMLObject):
-    yaml_tag = u"!j2:"
+    yaml_tag = "!j2:"
 
     @classmethod
     def from_yaml(cls, loader, node):
@@ -404,7 +404,7 @@ class J2String(BaseYAMLObject):
 
 
 class YamlListJoin(BaseYAMLObject):
-    yaml_tag = u"!join:"
+    yaml_tag = "!join:"
 
     @classmethod
     def from_yaml(cls, loader, node):
@@ -430,7 +430,7 @@ class YamlListJoin(BaseYAMLObject):
 
 
 class YamlInclude(BaseYAMLObject):
-    yaml_tag = u"!include:"
+    yaml_tag = "!include:"
 
     @classmethod
     def _find_file(cls, filename, search_path):
@@ -490,7 +490,7 @@ class YamlInclude(BaseYAMLObject):
             if any(isinstance(s, CustomLoader) for s in contents):
                 return CustomLoaderCollection(contents)
 
-            return u"\n".join(contents)
+            return "\n".join(contents)
         else:
             raise yaml.constructor.ConstructorError(
                 None,
@@ -501,7 +501,7 @@ class YamlInclude(BaseYAMLObject):
 
 
 class YamlIncludeRaw(YamlInclude):
-    yaml_tag = u"!include-raw:"
+    yaml_tag = "!include-raw:"
 
     @classmethod
     def _from_file(cls, loader, node):
@@ -509,7 +509,7 @@ class YamlIncludeRaw(YamlInclude):
 
 
 class YamlIncludeRawEscape(YamlIncludeRaw):
-    yaml_tag = u"!include-raw-escape:"
+    yaml_tag = "!include-raw-escape:"
 
     @classmethod
     def from_yaml(cls, loader, node):
@@ -528,7 +528,7 @@ class YamlIncludeRawEscape(YamlIncludeRaw):
 
 
 class YamlIncludeJinja2(YamlIncludeRaw):
-    yaml_tag = u"!include-jinja2:"
+    yaml_tag = "!include-jinja2:"
 
     @classmethod
     def _from_file(cls, loader, node):
@@ -550,17 +550,17 @@ class DeprecatedTag(BaseYAMLObject):
 
 
 class YamlIncludeDeprecated(DeprecatedTag):
-    yaml_tag = u"!include"
+    yaml_tag = "!include"
     _new = YamlInclude
 
 
 class YamlIncludeRawDeprecated(DeprecatedTag):
-    yaml_tag = u"!include-raw"
+    yaml_tag = "!include-raw"
     _new = YamlIncludeRaw
 
 
 class YamlIncludeRawEscapeDeprecated(DeprecatedTag):
-    yaml_tag = u"!include-raw-escape"
+    yaml_tag = "!include-raw-escape"
     _new = YamlIncludeRawEscape
 
 
@@ -635,7 +635,7 @@ class CustomLoaderCollection(object):
         self._data = sequence
 
     def format(self, *args, **kwargs):
-        return u"\n".join(item.format(*args, **kwargs) for item in self._data)
+        return "\n".join(item.format(*args, **kwargs) for item in self._data)
 
 
 class LazyLoader(CustomLoader):

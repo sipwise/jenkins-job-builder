@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <com.gem.persistentparameter.PersistentChoiceParameterDefinition>
+          <name>project</name>
+          <description>On which project to run?</description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>nova</string>
+              <string>glance</string>
+            </a>
+          </choices>
+          <successfulOnly>true</successfulOnly>
+        </com.gem.persistentparameter.PersistentChoiceParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+</project>
