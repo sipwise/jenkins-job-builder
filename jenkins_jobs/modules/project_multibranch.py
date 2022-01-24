@@ -669,6 +669,11 @@ def gerrit_scm(xml_parent, data):
         query-operator: Name of the query operator, supported values are:
         'SCHEME' or 'ID'.
         query-string: Value of the query operator.
+    :arg dict change-discovery: Configure the query string in 'Discover open changes'.
+        The default 'p:<project> status:open -age:24w' will be added prior to the
+        query-string specified here.
+        (optional)
+        query-string: Value of the query operator.
 
     :extensions:
 
@@ -740,7 +745,18 @@ def gerrit_scm(xml_parent, data):
 
     # Traits
     traits = XML.SubElement(source, "traits")
-    XML.SubElement(traits, "jenkins.plugins.gerrit.traits.ChangeDiscoveryTrait")
+    change_discovery_trait = XML.SubElement(
+        traits, "jenkins.plugins.gerrit.traits.ChangeDiscoveryTrait"
+    )
+    change_discovery = data.get("change-discovery", None)
+    if change_discovery:
+        change_discovery_mapping = [("query-string", "queryString", None)]
+        helpers.convert_mapping_to_xml(
+            change_discovery_trait,
+            change_discovery,
+            change_discovery_mapping,
+            fail_required=True,
+        )
 
     # Refspec Trait
     refspec_trait = XML.SubElement(
