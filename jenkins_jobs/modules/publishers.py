@@ -5323,6 +5323,8 @@ def git(registry, xml_parent, data):
         :branch: * **remote** (`str`) remote repo name to push to
                    (default 'origin')
                  * **name** (`str`) name of remote branch to push to
+                 * **rebase** (`bool`) whether or not to rebase before push
+                   (default false)
 
     :arg list notes: notes to push at the completion of the build
 
@@ -5362,6 +5364,7 @@ def git(registry, xml_parent, data):
     branch_mappings = [
         ("remote", "targetRepoName", "origin"),
         ("name", "branchName", None),
+        ("rebase", "rebaseBeforePush", False),
     ]
 
     note_mappings = [
