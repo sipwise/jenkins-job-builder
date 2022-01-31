@@ -34,6 +34,24 @@
       "parentUuid": "cb938773_294d83d5",
       "revId": "f020cf5296d98d801743473bd5b19398ad105116",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e40d52bf_49bd8ef1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34507
+      },
+      "writtenOn": "2022-01-31T18:00:15Z",
+      "side": 1,
+      "message": "Thanks!  Do you have a timeframe on when the text release would be?  We\u0027d like to pick this up so we can index one of our large repos.",
+      "parentUuid": "32555a52_c75439cf",
+      "revId": "f020cf5296d98d801743473bd5b19398ad105116",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
