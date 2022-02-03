@@ -52,6 +52,24 @@
       "parentUuid": "32555a52_c75439cf",
       "revId": "f020cf5296d98d801743473bd5b19398ad105116",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ead08ad9_3c1c15b1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2022-02-03T14:29:00Z",
+      "side": 1,
+      "message": "Hi Matt, I just pushed 3.12.0 that includes your patch, it should appear in PyPi shortly.\n\nAs for release timeframe there isn\u0027t one, I typically push one out when asked but I no longer use JJB myself so maintaining this project is no longer a priority for me. I think it would be nice if the project continues to be maintained by those who actually use JJB but until someone steps up to maintain it I\u0027m happy to help occassionally merge reviews and push releases when asked.",
+      "parentUuid": "e40d52bf_49bd8ef1",
+      "revId": "f020cf5296d98d801743473bd5b19398ad105116",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
