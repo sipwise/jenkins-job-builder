@@ -50,8 +50,8 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = u"Jenkins Job Builder"
-copyright = u"2012, Jenkins Job Builder Maintainers"
+project = "Jenkins Job Builder"
+copyright = "2012, Jenkins Job Builder Maintainers"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -195,8 +195,8 @@ latex_documents = [
     (
         "index",
         "JenkinsJobBuilder.tex",
-        u"Jenkins Job Builder Documentation",
-        u"Jenkins Job Builder Maintainers",
+        "Jenkins Job Builder Documentation",
+        "Jenkins Job Builder Maintainers",
         "manual",
     )
 ]
@@ -236,8 +236,8 @@ man_pages = [
     (
         "index",
         "jenkins-jobs",
-        u"Jenkins Job Builder Documentation",
-        [u"Jenkins Job Builder Maintainers"],
+        "Jenkins Job Builder Documentation",
+        ["Jenkins Job Builder Maintainers"],
         1,
     )
 ]
@@ -255,8 +255,8 @@ texinfo_documents = [
     (
         "index",
         "JenkinsJobBuilder",
-        u"Jenkins Job Builder Documentation",
-        u"Jenkins Job Builder Maintainers",
+        "Jenkins Job Builder Documentation",
+        "Jenkins Job Builder Maintainers",
         "JenkinsJobBuilder",
         "One line description of project.",
         "Miscellaneous",

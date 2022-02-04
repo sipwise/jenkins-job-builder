@@ -149,13 +149,13 @@ class BaseTestCase(testtools.TestCase):
     def _read_utf8_content(self):
         # if None assume empty file
         if not self.out_filenames:
-            return u""
+            return ""
 
         # Read XML content, assuming it is unicode encoded
         xml_content = ""
         for f in sorted(self.out_filenames):
             with io.open(f, "r", encoding="utf-8") as xml_file:
-                xml_content += u"%s" % xml_file.read()
+                xml_content += "%s" % xml_file.read()
         return xml_content
 
     def _read_yaml_content(self, filename):
@@ -361,7 +361,7 @@ class SingleJobTestCase(BaseScenariosTestCase):
 
         # Prettify generated XML
         pretty_xml = (
-            u"\n".join(job.output().decode("utf-8") for job in xml_jobs)
+            "\n".join(job.output().decode("utf-8") for job in xml_jobs)
             .strip()
             .replace("\n\n", "\n")
         )
