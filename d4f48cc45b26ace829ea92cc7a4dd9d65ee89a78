@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f18adacf_b429d103",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31275
+      },
+      "writtenOn": "2022-02-08T09:33:25Z",
+      "side": 1,
+      "message": "@Than @Antoine Could you, please, clarify what\u0027s wrong with my review? There are two failed tests: tox-pep8 and jjb-tox-cross-python-jenkins, but looks like the error messages don\u0027t correspond to my review changes. ",
+      "revId": "d4f48cc45b26ace829ea92cc7a4dd9d65ee89a78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
