@@ -1437,6 +1437,19 @@ class Parameters(jenkins_jobs.modules.base.Base):
     component_type = "parameter"
     component_list_type = "parameters"
 
+    @staticmethod
+    def _extend_uno_choice_param_data(param, param_type, data):
+        """Pass job name to the uno-choice plugin"""
+        if param_type in (
+            "active-choices",
+            "active-choices-reactive",
+            "dynamic-reference",
+        ):
+            # Extend uno-choice plugin parameter data with mandatory properties:
+            # `project-name` and `project-full-name`
+            param[param_type]["_project-name"] = data["name"].split("/")[-1]
+            param[param_type]["_project-full-name"] = data["name"]
+
     def gen_xml(self, xml_parent, data):
         properties = xml_parent.find("properties")
         if properties is None:
@@ -1459,36 +1472,23 @@ class Parameters(jenkins_jobs.modules.base.Base):
             if pdefs is None:
                 pdefs = XML.SubElement(pdefp, "parameterDefinitions")
             for param in parameters:
-                # Pass job name to the uno-choice plugin
+
                 if isinstance(param, dict):
-                    param_type = next(iter(param))
-                    if param_type in (
-                        "active-choices",
-                        "active-choices-reactive",
-                        "dynamic-reference",
-                    ):
-                        param[param_type]["_project-name"] = data["name"].split("/")[-1]
-                        param[param_type]["_project-full-name"] = data["name"]
+                    param_type, param_data = next(iter(param.items()))
+                else:
+                    # Macro parameter without arguments
+                    param_type, param_data = param, {}
+                component = self.registry.parser_data.get("parameter", {}).get(
+                    param_type
+                )
+                if component is None:
+                    self._extend_uno_choice_param_data(param, param_type, data)
+                    self.registry.dispatch("parameter", pdefs, param)
                 else:
                     # Process macro case.
-                    # TODO: Find a way to do it more properly.
-                    # It's possible has an issue with macro parameter chain,
-                    # when a macro calls another macro with uno-choice plugin parameters.
-                    component = self.registry.parser_data.get("parameter", {}).get(
-                        param
-                    )
                     for macro_param in component.get("parameters", []):
                         for macro_param_type in macro_param:
-                            if macro_param_type in (
-                                "active-choices",
-                                "active-choices-reactive",
-                                "dynamic-reference",
-                            ):
-                                macro_param[macro_param_type]["_project-name"] = data[
-                                    "name"
-                                ].split("/")[-1]
-                                macro_param[macro_param_type][
-                                    "_project-full-name"
-                                ] = data["name"]
-
-                self.registry.dispatch("parameter", pdefs, param)
+                            self._extend_uno_choice_param_data(
+                                macro_param, macro_param_type, data
+                            )
+                    self.registry.dispatch("parameter", pdefs, {param_type: param_data})
