@@ -2035,10 +2035,6 @@ def ssh_agent_credentials(registry, xml_parent, data):
     .. literalinclude::
             /../../tests/wrappers/fixtures/ssh-agent-credentials003.yaml
 
-    The **users** with one value in list equals to the **user**. In this
-    case old style XML will be generated. Use this format if you use
-    SSH-Agent plugin < 1.5.
-
     Example:
 
     .. literalinclude::
@@ -2053,16 +2049,22 @@ def ssh_agent_credentials(registry, xml_parent, data):
 
     logger = logging.getLogger(__name__)
 
+    plugin_info = registry.get_plugin_info("SSH Agent Plugin")
+    plugin_ver = pkg_resources.parse_version(
+        plugin_info.get("version", str(sys.maxsize))
+    )
+
     entry_xml = XML.SubElement(
         xml_parent, "com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper"
     )
+    user_parent_entry_xml = entry_xml
     xml_key = "user"
 
     user_list = list()
     if "users" in data:
         user_list += data["users"]
-        if len(user_list) > 1:
-            entry_xml = XML.SubElement(entry_xml, "credentialIds")
+        if plugin_ver >= pkg_resources.parse_version("1.5.0"):
+            user_parent_entry_xml = XML.SubElement(entry_xml, "credentialIds")
             xml_key = "string"
         if "user" in data:
             logger.warning(
@@ -2081,7 +2083,7 @@ def ssh_agent_credentials(registry, xml_parent, data):
         )
 
     for user in user_list:
-        XML.SubElement(entry_xml, xml_key).text = user
+        XML.SubElement(user_parent_entry_xml, xml_key).text = user
 
     mapping = [("ignore-missing-credentials", "ignoreMissing", False)]
     helpers.convert_mapping_to_xml(entry_xml, data, mapping, fail_required=False)
