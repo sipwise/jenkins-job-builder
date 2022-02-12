@@ -16,6 +16,24 @@
       "message": "@Thanh please review and possibly merge to unblock CI for other pending changes.",
       "revId": "1590466de9cc344bf4dd941ae2f0f567d52c6416",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb173976_960b5a5a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2022-02-12T16:05:06Z",
+      "side": 1,
+      "message": "Approved. Thanks Adam!",
+      "parentUuid": "26c940e8_58f057a8",
+      "revId": "1590466de9cc344bf4dd941ae2f0f567d52c6416",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
