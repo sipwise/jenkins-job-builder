@@ -33,6 +33,24 @@
       "message": "CI issues are resolved for now. Please revert changes unrelated to adding support for the new parameter - here and in other places.",
       "revId": "06230dc37db3c1156dbc9e9fdb4e0eff7a1eb873",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b7bd7109_c3db3966",
+        "filename": "doc/source/conf.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 34474
+      },
+      "writtenOn": "2022-02-14T07:53:00Z",
+      "side": 1,
+      "message": "ok, I have reverted them. thanks!",
+      "parentUuid": "e9a03472_3f4c612b",
+      "revId": "06230dc37db3c1156dbc9e9fdb4e0eff7a1eb873",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
