@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "983b3643_c8998347",
+        "filename": "jenkins_jobs/modules/parameters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1447,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2022-02-14T08:00:59Z",
+      "side": 1,
+      "message": "Could you please rephrase the description of this argument as it\u0027s not clear, at least to me. Does it mean: \"if true, then the value of the parameter gets persisted only between successful builds\"?\n\n(Please apply here and in other places below too)\n\nAnd sorry for not bringing this up in the review for the previous patchset.",
+      "revId": "63d1480e22dab9b4f9a33462a60964e132f253d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
