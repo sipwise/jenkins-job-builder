@@ -33,6 +33,24 @@
       "message": "Next time when you upload a new patchset there\u0027s no need to call \"recheck\", Zuul checks new patchsets automatically, it just takes time.",
       "revId": "50f7b49f6433d6ed757c7ac8fbd595d84e996ed1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b609417f_6709788a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34474
+      },
+      "writtenOn": "2022-02-14T09:51:34Z",
+      "side": 1,
+      "message": "ok,thanks",
+      "parentUuid": "ea2f9310_f4eaf16f",
+      "revId": "50f7b49f6433d6ed757c7ac8fbd595d84e996ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
