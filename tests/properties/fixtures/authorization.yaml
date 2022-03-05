@@ -1,6 +1,6 @@
 properties:
     - authorization:
-        admin:
+        USER:admin:
             - credentials-create
             - credentials-delete
             - credentials-manage-domains
@@ -20,6 +20,6 @@ properties:
             - run-replay
             - run-update
             - scm-tag
-        anonymous:
+        GROUP:anonymous:
             - job-read
             - job-extended-read

@@ -3,20 +3,20 @@
   <properties>
     <hudson.security.AuthorizationMatrixProperty>
       <inheritanceStrategy class="org.jenkinsci.plugins.matrixauth.inheritance.InheritParentStrategy"/>
-      <permission>hudson.model.Item.Delete:admin</permission>
-      <permission>hudson.model.Item.Configure:admin</permission>
-      <permission>hudson.model.Item.Read:admin</permission>
-      <permission>hudson.model.Item.Discover:admin</permission>
-      <permission>hudson.model.Item.Build:admin</permission>
-      <permission>hudson.model.Item.Workspace:admin</permission>
-      <permission>hudson.model.Item.Cancel:admin</permission>
-      <permission>hudson.model.Run.Delete:admin</permission>
-      <permission>hudson.model.Run.Replay:admin</permission>
-      <permission>hudson.model.Run.Update:admin</permission>
-      <permission>hudson.scm.SCM.Tag:admin</permission>
-      <permission>hudson.model.Item.Discover:anonymous</permission>
-      <permission>hudson.model.Item.Read:anonymous</permission>
-      <permission>hudson.model.Item.ExtendedRead:anonymous</permission>
+      <permission>USER:hudson.model.Item.Delete:admin</permission>
+      <permission>USER:hudson.model.Item.Configure:admin</permission>
+      <permission>USER:hudson.model.Item.Read:admin</permission>
+      <permission>USER:hudson.model.Item.Discover:admin</permission>
+      <permission>USER:hudson.model.Item.Build:admin</permission>
+      <permission>USER:hudson.model.Item.Workspace:admin</permission>
+      <permission>USER:hudson.model.Item.Cancel:admin</permission>
+      <permission>USER:hudson.model.Run.Delete:admin</permission>
+      <permission>USER:hudson.model.Run.Replay:admin</permission>
+      <permission>USER:hudson.model.Run.Update:admin</permission>
+      <permission>USER:hudson.scm.SCM.Tag:admin</permission>
+      <permission>GROUP:hudson.model.Item.Discover:anonymous</permission>
+      <permission>GROUP:hudson.model.Item.Read:anonymous</permission>
+      <permission>GROUP:hudson.model.Item.ExtendedRead:anonymous</permission>
     </hudson.security.AuthorizationMatrixProperty>
   </properties>
 </project>

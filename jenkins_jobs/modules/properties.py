@@ -533,8 +533,11 @@ def authorization(registry, xml_parent, data, job_data):
 
     .. _authorization:
 
-    :arg list <name>: `<name>` is the name of the group or user, containing
-        the list of rights to grant.
+    :arg list prefix:<name>: 
+            * `prefix`  
+                * **GROUP**
+                * **USER**
+            * `<name>` is the name of the group or user, containing the list of rights to grant.
 
        :<name> rights:
             * **credentials-create**
@@ -610,7 +613,10 @@ def authorization(registry, xml_parent, data, job_data):
             for perm in perms:
                 pe = XML.SubElement(matrix, "permission")
                 try:
-                    pe.text = "{0}:{1}".format(mapping[perm], username)
+                    if username.upper().startswith('GROUP:') or username.upper().startswith('USER:'):
+                        pe.text = "{0}:{1}:{2}".format(username.split(':')[0].upper(), mapping[perm], username.split(':')[1])
+                    else:
+                        pe.text = "{0}:{1}".format(mapping[perm], username)
                 except KeyError:
                     raise InvalidAttributeError(username, perm, mapping.keys())
 
