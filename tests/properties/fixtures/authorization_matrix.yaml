@@ -1,6 +1,6 @@
 properties:
   - authorization:
-      admin:
+      USER:admin:
         - job-delete
         - job-configure
         - job-read
@@ -12,7 +12,10 @@ properties:
         - run-replay
         - run-update
         - scm-tag
-      anonymous:
+      GROUP:anonymous:
         - job-discover
         - job-read
         - job-extended-read
+      authenticated:
+        - job-discover
+        - job-read
