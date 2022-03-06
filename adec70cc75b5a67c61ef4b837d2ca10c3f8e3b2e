@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2cf764b4_d245b480",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2022-03-06T13:44:06Z",
+      "side": 1,
+      "message": "Please mention that the prefix (and the colon) is optional and only required for plugin v3.0+ (that\u0027s my understanding). Btw how does the plugin v3.0+ deal with XMLs without the USER/GROUP prefix? Is the plugin backward compatible?",
+      "revId": "adec70cc75b5a67c61ef4b837d2ca10c3f8e3b2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "145a86ce_b877b982",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 625,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2022-03-06T13:44:06Z",
+      "side": 1,
+      "message": "For the test cases changed to match v3.0+ format, please create a set of corresponding test cases for \u003c3.0 format, which will help maintain backward compatibility. See https://review.opendev.org/c/jjb/jenkins-job-builder/+/828861 for an example on how to do this.",
+      "revId": "adec70cc75b5a67c61ef4b837d2ca10c3f8e3b2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
