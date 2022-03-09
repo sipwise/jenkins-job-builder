@@ -1840,7 +1840,8 @@ def xunit(registry, xml_parent, data):
 
     """
     info = registry.get_plugin_info("xunit")
-    plugin_version = pkg_resources.parse_version(info.get("version", str(sys.maxsize)))
+    safe_version = info.get("version", str(sys.maxsize)).replace("-", "+")
+    plugin_version = pkg_resources.parse_version(safe_version)
 
     logger = logging.getLogger(__name__)
     xunit = XML.SubElement(xml_parent, "xunit")
@@ -2473,7 +2474,8 @@ def base_email_ext(registry, xml_parent, data, ttype):
     )
 
     info = registry.get_plugin_info("email-ext")
-    plugin_version = pkg_resources.parse_version(info.get("version", str(sys.maxsize)))
+    safe_version = info.get("version", str(sys.maxsize)).replace("-", "+")
+    plugin_version = pkg_resources.parse_version(safe_version)
 
     email = XML.SubElement(trigger, "email")
 
@@ -2685,7 +2687,8 @@ def email_ext(registry, xml_parent, data):
     )
 
     info = registry.get_plugin_info("email-ext")
-    plugin_version = pkg_resources.parse_version(info.get("version", str(sys.maxsize)))
+    safe_version = info.get("version", str(sys.maxsize)).replace("-", "+")
+    plugin_version = pkg_resources.parse_version(safe_version)
 
     if "recipients" in data:
         XML.SubElement(emailext, "recipientList").text = data["recipients"]
@@ -3126,7 +3129,8 @@ def groovy_postbuild(registry, xml_parent, data):
     # There are incompatible changes, we need to know version
     info = registry.get_plugin_info("groovy-postbuild")
     # Note: Assume latest version of plugin is preferred config format
-    version = pkg_resources.parse_version(info.get("version", str(sys.maxsize)))
+    safe_version = info.get("version", str(sys.maxsize)).replace("-", "+")
+    version = pkg_resources.parse_version(safe_version)
     # Version specific predicates
     matrix_parent_support = version >= pkg_resources.parse_version("1.9")
     security_plugin_support = version >= pkg_resources.parse_version("2.0")
@@ -4494,7 +4498,8 @@ def postbuildscript(registry, xml_parent, data):
 
     info = registry.get_plugin_info("postbuildscript")
     # Note: Assume latest version of plugin is preferred config format
-    version = pkg_resources.parse_version(info.get("version", str(sys.maxsize)))
+    safe_version = info.get("version", str(sys.maxsize)).replace("-", "+")
+    version = pkg_resources.parse_version(safe_version)
     if version >= pkg_resources.parse_version("2.0"):
         pbs_xml = XML.SubElement(pbs_xml, "config")
 

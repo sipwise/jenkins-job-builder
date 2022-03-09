@@ -2888,7 +2888,8 @@ def cmake(registry, xml_parent, data):
 
     info = registry.get_plugin_info("CMake plugin")
     # Note: Assume latest version of plugin is preferred config format
-    version = pkg_resources.parse_version(info.get("version", str(sys.maxsize)))
+    safe_version = info.get("version", str(sys.maxsize)).replace("-", "+")
+    version = pkg_resources.parse_version(safe_version)
 
     if version >= pkg_resources.parse_version("2.0"):
         mapping_20 = [
@@ -4700,7 +4701,8 @@ def xunit(registry, xml_parent, data):
 
     """
     info = registry.get_plugin_info("xunit")
-    plugin_version = pkg_resources.parse_version(info.get("version", str(sys.maxsize)))
+    safe_version = info.get("version", str(sys.maxsize)).replace("-", "+")
+    plugin_version = pkg_resources.parse_version(safe_version)
 
     logger = logging.getLogger(__name__)
     xunit = XML.SubElement(xml_parent, "org.jenkinsci.plugins.xunit.XUnitBuilder")

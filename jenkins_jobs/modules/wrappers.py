@@ -1822,6 +1822,8 @@ def pre_scm_buildstep(registry, xml_parent, data):
     """
     # Get plugin information to maintain backwards compatibility
     info = registry.get_plugin_info("preSCMbuildstep")
+    safe_version = info.get("version", "0").replace("-", "+")
+    version = pkg_resources.parse_version(safe_version)
     version = pkg_resources.parse_version(info.get("version", "0"))
 
     bsp = XML.SubElement(
@@ -2601,7 +2603,8 @@ def artifactory_generic(registry, xml_parent, data):
     # Get plugin information to maintain backwards compatibility
     info = registry.get_plugin_info("artifactory")
     # Note: Assume latest version of plugin is preferred config format
-    version = pkg_resources.parse_version(info.get("version", str(sys.maxsize)))
+    safe_version = info.get("version", str(sys.maxsize)).replace("-", "+")
+    version = pkg_resources.parse_version(safe_version)
 
     if version >= pkg_resources.parse_version("2.3.0"):
         deploy_release_repo = XML.SubElement(details, "deployReleaseRepository")

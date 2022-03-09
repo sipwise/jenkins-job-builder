@@ -516,7 +516,8 @@ def trigger_get_parameter_order(registry, plugin):
 def trigger_project(tconfigs, project_def, registry, param_order=None):
 
     info = registry.get_plugin_info("parameterized-trigger")
-    plugin_version = pkg_resources.parse_version(info.get("version", str(sys.maxsize)))
+    safe_version = info.get("version", str(sys.maxsize)).replace("-", "+")
+    plugin_version = pkg_resources.parse_version(safe_version)
 
     logger = logging.getLogger("%s:trigger_project" % __name__)
     pt_prefix = "hudson.plugins.parameterizedtrigger."
