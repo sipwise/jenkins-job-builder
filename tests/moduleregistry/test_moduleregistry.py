@@ -37,6 +37,10 @@ class ModuleRegistryPluginInfoTestsWithScenarios(
                 v1="1.4.6-SNAPSHOT (private-0986edd9-example)", op="__gt__", v2="1.4.5"
             ),
         ),
+        ("s16", dict(v1="1.0.1-1.v1", op="__gt__", v2="1.0.1")),
+        ("s17", dict(v1="1.0.1-1.v1", op="__lt__", v2="1.0.2")),
+        ("s18", dict(v1="1.0.2-1.v1", op="__gt__", v2="1.0.1")),
+        ("s19", dict(v1="1.0.2-1.v1", op="__gt__", v2="1.0.1-2")),
     ]
 
     def setUp(self):
