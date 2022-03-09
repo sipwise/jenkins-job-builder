@@ -17,6 +17,7 @@
 
 import hashlib
 import pkg_resources
+import sys
 from xml.dom import minidom
 import xml.etree.ElementTree as XML
 
@@ -53,7 +54,13 @@ class XmlJob(object):
         self.name = name
 
     def md5(self):
-        return hashlib.md5(self.output()).hexdigest()
+        if sys.version_info[:2] >= (3, 6):
+            # allows md5 use on fips-enabled systems
+            hash_func = hashlib.new('md5', usedforsecurity=False)
+            hash_func.update(self.output())
+            return hash_func.hexdigest()
+        else:
+            return hashlib.md5(self.output()).hexdigest()
 
     def output(self):
         out = minidom.parseString(XML.tostring(self.xml, encoding="UTF-8"))
