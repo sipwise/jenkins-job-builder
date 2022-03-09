@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6699062_521c81c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10354
+      },
+      "writtenOn": "2022-03-09T21:51:31Z",
+      "side": 1,
+      "message": "Just a comment on this.\n\nI rather like the conversion of \u0027-\u0027 to \u0027+\u0027 if it actually fixes this. It\u0027s much better than the initial fix that I found of stripping the weird \"v${SHORTSHA}\" from the version string that I initially thought it was.\n\nWe found this particular bug because of the latest version of the postbuildscript plugin getting a security update and then our not being able to deploy JJB to our Jenkins systems!",
+      "revId": "0c0ae4806e2fc84df762d02b752c75faabfbefda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
