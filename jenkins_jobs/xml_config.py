@@ -53,7 +53,9 @@ class XmlJob(object):
         self.name = name
 
     def md5(self):
-        return hashlib.md5(self.output()).hexdigest()
+        h = hashlib.new('md5', usedforsecurity=False)
+        h.update(self.output())
+        return h.hexdigest()
 
     def output(self):
         out = minidom.parseString(XML.tostring(self.xml, encoding="UTF-8"))
