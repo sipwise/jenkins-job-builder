@@ -18,6 +18,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e44147d_8a1440b7",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 33621
+      },
+      "writtenOn": "2022-03-14T10:46:44Z",
+      "side": 1,
+      "message": "Plugin has backward compatible. It show warnings when permissions are ambiguously assigned to users and groups of a given name.\nChangelog\nhttps://github.com/jenkinsci/matrix-auth-plugin/releases/tag/matrix-auth-3.0",
+      "parentUuid": "2cf764b4_d245b480",
+      "revId": "adec70cc75b5a67c61ef4b837d2ca10c3f8e3b2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "145a86ce_b877b982",
@@ -31,6 +49,24 @@
       "writtenOn": "2022-03-06T13:44:06Z",
       "side": 1,
       "message": "For the test cases changed to match v3.0+ format, please create a set of corresponding test cases for \u003c3.0 format, which will help maintain backward compatibility. See https://review.opendev.org/c/jjb/jenkins-job-builder/+/828861 for an example on how to do this.",
+      "revId": "adec70cc75b5a67c61ef4b837d2ca10c3f8e3b2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6fc07f13_87c94bf6",
+        "filename": "jenkins_jobs/modules/properties.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 625,
+      "author": {
+        "id": 33621
+      },
+      "writtenOn": "2022-03-14T10:46:44Z",
+      "side": 1,
+      "message": "tests for backward compatible added in patch-5",
+      "parentUuid": "145a86ce_b877b982",
       "revId": "adec70cc75b5a67c61ef4b837d2ca10c3f8e3b2e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
