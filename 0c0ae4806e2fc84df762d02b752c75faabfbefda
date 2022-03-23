@@ -33,6 +33,24 @@
       "message": "Hi Eric, first of all, thanks for your contribution!\n\nSince this is a common pattern I\u0027d suggest adding a \"shortcut\" in \u0027registry\u0027 (ModuleRegistry), something like:\n\n  def get_plugin_version(self, plugin_name):\n    info \u003d self.get_plugin_info(plugin_name)\n    safe_version \u003d info.get(\"version\", str(sys.maxsize)).replace(\"-\", \"+\")\n    return pkg_resources.parse_version(safe_version)\n\nThen you could simply replace the above 4 lines with just:\n\n    version \u003d registry.get_plugin_version(\"CMake plugin\")\n\nThis would greatly simplify the code all over the place.\n\nOn the other hand I just found an existing code in JJB which does some version string parsing and manipulation: https://opendev.org/jjb/jenkins-job-builder/src/branch/master/jenkins_jobs/registry.py#L71\n\nSo it would be good to move your \u0027-\u0027 -\u003e \u0027+\u0027 replacement there.\n\nFinally please implement some tests to show it works as expected.",
       "revId": "0c0ae4806e2fc84df762d02b752c75faabfbefda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "57240652_74c368d1",
+        "filename": "jenkins_jobs/modules/builders.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2892,
+      "author": {
+        "id": 33604
+      },
+      "writtenOn": "2022-03-23T22:10:46Z",
+      "side": 1,
+      "message": "Thanks for your feedback Adam! Fixing this in registry.py is much cleaner. I added tests, and in the testing, I found that not ALL versions with hyphens become LegacyVersions (e.g. \"1.0.1-1\" is a Version, but \"1.0.1-1.2\" is a LegacyVersion). So I\u0027m now testing to see if the version returned is LegacyVersion, and only then changing the \u0027-\u0027 to \u0027+\u0027.",
+      "parentUuid": "d3575bdf_a1f0d652",
+      "revId": "0c0ae4806e2fc84df762d02b752c75faabfbefda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
