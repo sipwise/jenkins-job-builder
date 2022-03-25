@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aa583085_abdccf23",
+        "filename": "jenkins_jobs/sphinx/yaml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2022-03-25T07:24:53Z",
+      "side": 1,
+      "message": "In another change someone proposed to switch to PyMethod: https://review.opendev.org/c/jjb/jenkins-job-builder/+/815624/1/jenkins_jobs/sphinx/yaml.py\n\nCould you please check which one is more appropriate here?",
+      "revId": "b9f73f3e938672dc9dbfb776be865669da9f4bc4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49176cee_ff7c92b2",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2022-03-25T07:24:53Z",
+      "side": 1,
+      "message": "Looks like we still need to disable the Zuul jobs for EOL python versions to make CI pass. I\u0027ll check how this can be done.",
+      "revId": "b9f73f3e938672dc9dbfb776be865669da9f4bc4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
