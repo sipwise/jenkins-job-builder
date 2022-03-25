@@ -164,8 +164,7 @@ class ModuleRegistry(object):
 
         :arg str component_type: the name of the component
           (e.g., `builder`)
-        :arg YAMLParser parser: the global YAML Parser
-        :arg Element xml_parent: the parent XML element
+        :arg xml_parent: the parent XML element
         :arg component: component definition
         :arg dict template_data: values that should be interpolated into
           the component definition

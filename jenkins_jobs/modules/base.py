@@ -68,8 +68,7 @@ class Base(object):
         Element objects and add them to the xml_parent.  The YAML data
         structure must not be modified.
 
-        :arg YAMLParser parser: the global YAML Parser
-        :arg Element xml_parent: the parent XML element
+        :arg class:`xml.etree.ElementTree` xml_parent: the parent XML element
         :arg dict data: the YAML data structure
         """
 
