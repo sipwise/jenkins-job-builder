@@ -23,7 +23,7 @@ import re
 
 from sphinx import addnodes
 from sphinx.domains.python import _pseudo_parse_arglist
-from sphinx.domains.python import PyModulelevel, PyXRefRole
+from sphinx.domains.python import PyFunction, PyXRefRole
 from sphinx.ext.autodoc import Documenter
 from sphinx.ext.autodoc import FunctionDocumenter
 from sphinx.locale import _
@@ -32,7 +32,7 @@ from sphinx.locale import _
 yaml_sig_re = re.compile(r"yaml:\s*(.*)")
 
 
-class PyYAMLFunction(PyModulelevel):
+class PyYAMLFunction(PyFunction):
     def handle_signature(self, sig, signode):
         """Transform a Python signature into RST nodes.
 
@@ -104,7 +104,7 @@ class YAMLFunctionDocumenter(FunctionDocumenter):
         return False
 
     def _find_signature(self, encoding=None):
-        docstrings = Documenter.get_doc(self, encoding, 2)
+        docstrings = Documenter.get_doc(self)
         if len(docstrings) != 1:
             return
         doclines = docstrings[0]
@@ -128,7 +128,7 @@ class YAMLFunctionDocumenter(FunctionDocumenter):
         lines = getattr(self, "__new_doclines", None)
         if lines is not None:
             return [lines]
-        return Documenter.get_doc(self, encoding, ignore)
+        return Documenter.get_doc(self)
 
     def format_signature(self):
         result = self._find_signature()
