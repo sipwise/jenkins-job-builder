@@ -77,7 +77,7 @@ def findbugs(registry, xml_parent, data):
     FindBugs reporting for builds
 
     Requires the Jenkins FindBugs Plugin
-    (https://github.com/jenkinsci/findbugs-plugin).
+    (:jenkins-github:`findbugs-plugin`).
 
     :arg bool rank-priority: Use rank as priority (default false)
     :arg str include-files: Comma separated list of files to include.

@@ -2028,7 +2028,7 @@ def findbugs(registry, xml_parent, data):
     FindBugs reporting for builds
 
     Requires the Jenkins FindBugs Plugin
-    (https://github.com/jenkinsci/findbugs-plugin).
+    (:jenkins-github:`findbugs-plugin`).
 
     :arg str pattern: specifies the generated raw FindBugs XML report files,
         such as \*\*/findbugs.xml or \*\*/findbugsXml.xml. (default '')
@@ -2096,7 +2096,7 @@ def checkstyle(registry, xml_parent, data):
     Publish trend reports with Checkstyle.
 
     Requires the Jenkins Checkstyle Plugin
-    (https://github.com/jenkinsci/checkstyle-plugin).
+    (:jenkins-github:`checkstyle-plugin`).
 
     The checkstyle component accepts a dictionary with the
     following values:
@@ -3307,7 +3307,7 @@ def cigame(registry, xml_parent, data):
     This plugin introduces a game where users get points
     for improving the builds.
     Requires the Jenkins Continuous Integration Game
-    plugin (https://github.com/jenkinsci/ci-game-plugin).
+    plugin (:jenkins-github:`ci-game-plugin`).
 
     Example:
 
@@ -4773,7 +4773,7 @@ def warnings(registry, xml_parent, data):
     in log files.
 
     Requires the Jenkins Warnings Plugin
-    (https://github.com/jenkinsci/warnings-plugin).
+    (:jenkins-github:`warnings-plugin`).
 
     :arg list console-log-parsers: The parser to use to scan the console
         log (default '')
@@ -6223,7 +6223,7 @@ def pmd(registry, xml_parent, data):
     """yaml: pmd
     Publish trend reports with PMD.
 
-    Requires the Jenkins PMD Plugin (https://github.com/jenkinsci/pmd-plugin).
+    Requires the Jenkins PMD Plugin (:jenkins-github:`pmd-plugin`).
 
     The PMD component accepts a dictionary with the following values:
 
@@ -6336,7 +6336,7 @@ def dry(registry, xml_parent, data):
     """yaml: dry
     Publish trend reports with DRY.
 
-    Requires the Jenkins DRY Plugin (https://github.com/jenkinsci/dry-plugin).
+    Requires the Jenkins DRY Plugin (:jenkins-github:`dry-plugin`).
 
     The DRY component accepts a dictionary with the following values:
 
@@ -8055,7 +8055,7 @@ def tasks(registry, xml_parent, data):
     Scans the workspace files for open tasks and generates a trend report.
 
     Requires the Jenkins Task Scanner Plugin
-    (https://github.com/jenkinsci/tasks-plugin).
+    (:jenkins-github:`tasks-plugin`).
 
     :arg list files-to-scan: Fileset includes setting that specifies the
         workspace files to scan for tasks, such as ``**/*.java``. Basedir of

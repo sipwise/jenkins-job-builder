@@ -29,11 +29,10 @@ step.  All of the YAML to XML functions in Jenkins Job Builder have
 the same signature:
 
 .. _component_interface:
-.. py:function:: component(parser, xml_parent, data)
+.. py:function:: component(xml_parent, data)
   :noindex:
 
-  :arg YAMLParser parser: the jenkins jobs YAML parser
-  :arg Element xml_parent: this attribute's parent XML element
+  :arg class:`xml.etree.ElementTree` xml_parent: this attribute's parent XML element
   :arg dict data: the YAML data structure for this attribute and below
 
 The function is expected to examine the YAML data structure and create

@@ -1174,7 +1174,7 @@ def tfs(registry, xml_parent, data):
     Specifies the Team Foundation Server repository for this job.
 
     Requires the Jenkins Team Foundation Server Plugin
-    (https://github.com/jenkinsci/tfs-plugin).
+    (:jenkins-github:`tfs-plugin`).
 
     **NOTE**: TFS Password must be entered manually on the project if a
     user name is specified. The password will be overwritten with an empty

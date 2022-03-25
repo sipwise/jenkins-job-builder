@@ -1256,7 +1256,7 @@ def system_groovy(registry, xml_parent, data):
     :arg str bindings: Define variable bindings (in the properties file
         format). Specified variables can be addressed from the script.
         (optional)
-    :arg (list str) class-path: List of script class paths.
+    :arg list class-path: List of script class paths.
         (optional)
 
     Examples:
