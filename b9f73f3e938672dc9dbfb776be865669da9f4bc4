@@ -18,6 +18,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "13ff640a_f3037f6c",
+        "filename": "jenkins_jobs/sphinx/yaml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 33604
+      },
+      "writtenOn": "2022-03-25T23:25:07Z",
+      "side": 1,
+      "message": "The one I\u0027m using is the documented replacement for PyModulelevel. Please see here: https://www.sphinx-doc.org/en/master/extdev/deprecated.html",
+      "parentUuid": "aa583085_abdccf23",
+      "revId": "b9f73f3e938672dc9dbfb776be865669da9f4bc4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "49176cee_ff7c92b2",
