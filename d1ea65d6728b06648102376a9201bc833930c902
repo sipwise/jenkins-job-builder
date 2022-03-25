@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "abeda3db_92fb9197",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33604
+      },
+      "writtenOn": "2022-03-25T02:14:31Z",
+      "side": 1,
+      "message": "This is failing Zuul testing due to an issue building docs, which is being caused by a recent change in jinja2. The fix for this is actually to update to a more recent version of sphinx. I\u0027ve created the following change to address this: https://review.opendev.org/c/jjb/jenkins-job-builder/+/835167",
+      "revId": "d1ea65d6728b06648102376a9201bc833930c902",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
