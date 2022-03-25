@@ -33,6 +33,24 @@
       "message": "Looks like we still need to disable the Zuul jobs for EOL python versions to make CI pass. I\u0027ll check how this can be done.",
       "revId": "b9f73f3e938672dc9dbfb776be865669da9f4bc4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d4423371_238b90e9",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2022-03-25T07:31:57Z",
+      "side": 1,
+      "message": "Please see my other change in which I added support for Python 3.7/3.8: https://review.opendev.org/c/jjb/jenkins-job-builder/+/768822. This should be a good starting point.",
+      "parentUuid": "49176cee_ff7c92b2",
+      "revId": "b9f73f3e938672dc9dbfb776be865669da9f4bc4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
