@@ -626,9 +626,7 @@ def gerrit(registry, xml_parent, data):
 
         .. deprecated:: 3.5.0  Supported for Gerrit Trigger Plugin versions
             < 2.14.0. See
-            `Missed Events Playback Feature <https://plugins.jenkins.io/
-            gerrit-trigger/#plugin-content-missed-events-playback-feature
-            -available-from-v-2140>`_.
+            :jenkins-plugins:`Missed Events Playback Feature <gerrit-trigger/#plugin-content-missed-events-playback-feature-available-from-v-2140>`.
 
     :arg str custom-url: Custom URL for a message sent to Gerrit. Build
         details URL will be used if empty. (default '')
@@ -2142,7 +2140,7 @@ def ivy(registry, xml_parent, data):
 
     :arg str path: Path of the ivy file. (optional)
     :arg str settings-path: Ivy Settings Path. (optional)
-    :arg list str properties-file: List of properties file path. Properties
+    :arg list properties-file: List of properties file path. Properties
       will be injected as variables in the ivy settings file. (optional)
     :arg str properties-content: Properties content. Properties will be
       injected as variables in the ivy settings file. (optional)
