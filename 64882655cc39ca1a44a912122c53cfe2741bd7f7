@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd3110a1_f53cf44c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2022-03-27T10:08:55Z",
+      "side": 1,
+      "message": "@Thanh, how do we properly announce this breaking change in the changelog for the upcoming 3.0 release?",
+      "revId": "64882655cc39ca1a44a912122c53cfe2741bd7f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
