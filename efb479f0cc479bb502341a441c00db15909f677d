@@ -16,6 +16,24 @@
       "message": "Does removing support for EOL Python versions need to happen along with this change?\n\nIf not maybe we can make it, it\u0027s own separate change so that the commit message for it can be more standalone. If it has to happen first maybe we can make this change a dependency of the EOL change.\n\nI just feel like it would be better as a standalone change to call attentin to it considering we are dropping support for something rather than being a footnote in a different change.",
       "revId": "efb479f0cc479bb502341a441c00db15909f677d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fe6c378b_61709732",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 33604
+      },
+      "writtenOn": "2022-03-31T21:36:03Z",
+      "side": 0,
+      "message": "The problem is that in terms of fixing testing, you run into a bit of a chicken-and-egg problem by separating them. I think if I just keep the change to the Zuul jobs for older py versions, this would pass CI, and then other changes will pass CI as well. So all changes to the py versions except the Zuul tests could be pulled from here. Would that be acceptable?",
+      "parentUuid": "a4484ae1_f3ddf6a6",
+      "revId": "efb479f0cc479bb502341a441c00db15909f677d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
