@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e356f348_1f4f571d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2022-03-31T12:48:00Z",
+      "side": 1,
+      "message": "Considering we are dropping support for EOL Python versions. Maybe add an exclaimation mark. At the end of fix to draw attention to the potentially breaking change:\n\n Fix!: Update sphinx version pin, fix warnings",
+      "revId": "64882655cc39ca1a44a912122c53cfe2741bd7f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "cd3110a1_f53cf44c",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
@@ -14,6 +31,24 @@
       "writtenOn": "2022-03-27T10:08:55Z",
       "side": 1,
       "message": "@Thanh, how do we properly announce this breaking change in the changelog for the upcoming 3.0 release?",
+      "revId": "64882655cc39ca1a44a912122c53cfe2741bd7f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c8fc103a_4c18e974",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2022-03-31T12:48:00Z",
+      "side": 1,
+      "message": "There\u0027s no standard way but I guess when I send out the release notice I\u0027ll have to highlight this one as particularly interesting in the email I send out.",
+      "parentUuid": "cd3110a1_f53cf44c",
       "revId": "64882655cc39ca1a44a912122c53cfe2741bd7f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
