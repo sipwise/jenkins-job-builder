@@ -34,6 +34,24 @@
       "parentUuid": "a4484ae1_f3ddf6a6",
       "revId": "efb479f0cc479bb502341a441c00db15909f677d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5c0c8db_76f1e4fa",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2022-04-01T02:17:00Z",
+      "side": 0,
+      "message": "Okay I didn\u0027t think of the Zuul change when I was looking at this. Yes that sounds fine to me. If we can make the breaking change part more clear when we cut our next release it\u0027ll be easier to make note of it in the release email.",
+      "parentUuid": "fe6c378b_61709732",
+      "revId": "efb479f0cc479bb502341a441c00db15909f677d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
