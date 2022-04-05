@@ -52,6 +52,24 @@
       "parentUuid": "fe6c378b_61709732",
       "revId": "efb479f0cc479bb502341a441c00db15909f677d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96baa43d_84d0dc7c",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 33604
+      },
+      "writtenOn": "2022-04-05T20:17:22Z",
+      "side": 0,
+      "message": "So is this okay as is? With the python changes as a separate change, can we get this one merged? Or should I prep that change first as a dependent change upon this?",
+      "parentUuid": "c5c0c8db_76f1e4fa",
+      "revId": "efb479f0cc479bb502341a441c00db15909f677d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
