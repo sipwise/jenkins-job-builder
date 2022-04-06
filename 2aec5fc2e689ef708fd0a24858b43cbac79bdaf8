@@ -16,6 +16,23 @@
       "message": "recheck",
       "revId": "2aec5fc2e689ef708fd0a24858b43cbac79bdaf8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4619fd96_a3f1a8a2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33621
+      },
+      "writtenOn": "2022-04-06T06:54:58Z",
+      "side": 1,
+      "message": "I have a problem with zuul global tests \n\nI was resolve all of it localy\n- adding enum34 package to `requirements.txt` for tox27\n- setting up version of jinja2 \u003c\u003d 3.1.0 in `test-requirements.txt` for docs\n- adding \n       ```additional_dependencies:\n          - click\u003c8.1```\nin `.pre-commit-config.yaml` for black package for pep8\n\nCan I commit and send for review this changes?\n",
+      "revId": "2aec5fc2e689ef708fd0a24858b43cbac79bdaf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
