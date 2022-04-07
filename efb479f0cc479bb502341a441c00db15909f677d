@@ -70,6 +70,24 @@
       "parentUuid": "c5c0c8db_76f1e4fa",
       "revId": "efb479f0cc479bb502341a441c00db15909f677d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31bcfe77_946cca63",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2022-04-07T19:49:38Z",
+      "side": 0,
+      "message": "My proposal is to keep the change as is, just change the commit message top line to something like:\n\n  BREAKING: Drop Python EOL versions, update Sphinx, fix warnings\n\nThis way we will clearly indicate this is a breaking change and we should be good to merge it.\n\nThanh, are you OK with this?",
+      "parentUuid": "96baa43d_84d0dc7c",
+      "revId": "efb479f0cc479bb502341a441c00db15909f677d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
