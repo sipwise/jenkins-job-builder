@@ -88,6 +88,24 @@
       "parentUuid": "96baa43d_84d0dc7c",
       "revId": "efb479f0cc479bb502341a441c00db15909f677d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae7809d9_63e8b8aa",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 33604
+      },
+      "writtenOn": "2022-04-07T19:52:58Z",
+      "side": 0,
+      "message": "In the current patch, we\u0027re no longer dropping the Python versions (except the Zuul jobs). We still could, if I revert back to the patch 2 code.",
+      "parentUuid": "31bcfe77_946cca63",
+      "revId": "efb479f0cc479bb502341a441c00db15909f677d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
