@@ -106,6 +106,24 @@
       "parentUuid": "31bcfe77_946cca63",
       "revId": "efb479f0cc479bb502341a441c00db15909f677d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b78f6817_0900073d",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2022-04-07T19:58:23Z",
+      "side": 0,
+      "message": "So, we\u0027re simply ignoring the fact that starting with this change JJB will not work with these Python EOL versions that you removed from Zuul config? If it\u0027s just to make Zuul happy, then I\u0027m OK, assuming we\u0027ll properly remove Python EOL versions from JJB in another change, that will get merged right after this one. Could you please prepare it?",
+      "parentUuid": "ae7809d9_63e8b8aa",
+      "revId": "efb479f0cc479bb502341a441c00db15909f677d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
