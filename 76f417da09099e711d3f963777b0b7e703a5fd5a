@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6778c52d_d852e547",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2022-04-07T19:51:43Z",
+      "side": 1,
+      "message": "The CI for JJB is currently broken so Zuul fails, but we\u0027re already trying to fix this. I\u0027ll trigger a recheck once the issue is resolved.",
+      "revId": "76f417da09099e711d3f963777b0b7e703a5fd5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
