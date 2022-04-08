@@ -124,6 +124,24 @@
       "parentUuid": "ae7809d9_63e8b8aa",
       "revId": "efb479f0cc479bb502341a441c00db15909f677d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a5577ce5_be7908a3",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2022-04-08T14:30:54Z",
+      "side": 0,
+      "message": "While I do think having 2 separate changes makes the git log more clear. I\u0027m okay with either approaches so whatever is easier for you is fine.",
+      "parentUuid": "b78f6817_0900073d",
+      "revId": "efb479f0cc479bb502341a441c00db15909f677d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
