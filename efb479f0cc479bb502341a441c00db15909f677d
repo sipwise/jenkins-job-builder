@@ -142,6 +142,24 @@
       "parentUuid": "b78f6817_0900073d",
       "revId": "efb479f0cc479bb502341a441c00db15909f677d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ade01b4_7898e5dc",
+        "filename": "tox.ini",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 33604
+      },
+      "writtenOn": "2022-04-11T17:02:47Z",
+      "side": 0,
+      "message": "I\u0027ve added this dependent change to remove python\u003c3.6 support: https://review.opendev.org/c/jjb/jenkins-job-builder/+/837381",
+      "parentUuid": "a5577ce5_be7908a3",
+      "revId": "efb479f0cc479bb502341a441c00db15909f677d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
