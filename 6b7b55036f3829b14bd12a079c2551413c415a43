@@ -16,6 +16,24 @@
       "message": "OK, so maybe after replacing the hyphen, we should do a final check to see if the version string is still parsed into a LegacyVersion and at least report a warning in the log? This should help identifying similar issues in the future.",
       "revId": "6b7b55036f3829b14bd12a079c2551413c415a43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a77b4d03_90ea9c70",
+        "filename": "jenkins_jobs/registry.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 33604
+      },
+      "writtenOn": "2022-04-19T16:00:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f9ba310f_da6fce34",
+      "revId": "6b7b55036f3829b14bd12a079c2551413c415a43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
