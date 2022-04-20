@@ -983,10 +983,12 @@ def github_scm(xml_parent, data):
         discovered initially or a change from the previous revision has been
         detected. (optional)
         Refer to :func:`~build_strategies <build_strategies>`.
-    :arg str notification-context: Change the default GitHub check notification
-        context from "continuous-integration/jenkins/SUFFIX" to a custom text,
+    :arg dict notification-context: Change the default GitHub check notification
+        context from "continuous-integration/jenkins/SUFFIX" to a custom label / suffix.
+        (set a label and suffix to true or false, optional)
         Requires the :jenkins-plugins:`Github Custom Notification Context SCM
         Behaviour <github-scm-trait-notification-context>`.
+        Refer to :func:`~add_notification_context_trait <add_notification_context_trait>`.
     :arg dict property-strategies: Provides control over how to build a branch
         (like to disable SCM triggering or to override the pipeline durability)
         (optional)
@@ -1158,15 +1160,7 @@ def github_scm(xml_parent, data):
     if data.get("build-strategies", None):
         build_strategies(xml_parent, data)
 
-    if data.get("notification-context", None):
-        rshf = XML.SubElement(
-            traits,
-            "org.jenkinsci.plugins.githubScmTraitNotificationContext."
-            "NotificationContextTrait",
-        )
-        XML.SubElement(rshf, "contextLabel").text = data.get("notification-context")
-        XML.SubElement(rshf, "typeSuffix").text = "true"
-
+    add_notification_context_trait(traits, data)
     add_filter_by_name_wildcard_behaviors(traits, data)
 
     # handle the default git extensions like:
@@ -1856,3 +1850,43 @@ def add_filter_by_name_wildcard_behaviors(traits, data):
             wscmf_name_mapping,
             fail_required=True,
         )
+
+def add_notification_context_trait(traits, data):
+    """Change the default GitHub check notification context from
+    "continuous-integration/jenkins/SUFFIX" to a custom label / suffix.
+    (set a label and suffix to true or false, optional)
+
+    Requires the :jenkins-plugins:`Github Custom Notification Context SCM
+    Behaviour <github-scm-trait-notification-context>`.
+
+    :arg dict notification-context: Definition of notification-context. A
+        `label` must be specified. `suffix` may be specified with true /
+        false, default being true.
+
+        * **label** (str): The text of the context label for Github status
+            notifications.
+        * **suffix** (bool): Appends the relevant suffix to the context label
+            based on the build type. '/pr-merge', '/pr-head' or '/branch'
+            (optional, default true)
+    """
+    if data.get("notification-context", None):
+        nc_trait = XML.SubElement(
+            traits,
+            "org.jenkinsci.plugins.githubScmTraitNotificationContext."
+            "NotificationContextTrait",
+        )
+        nc = data.get("notification-context")
+        nc_trait_label = XML.SubElement(nc_trait, "contextLabel")
+        nc_trait_suffix = XML.SubElement(nc_trait, "typeSuffix")
+        if isinstance(nc, str):
+            nc_trait_label.text = nc
+            nc_trait_suffix.text = "true"
+        else:
+            nc_trait_label.text = nc.get("label")
+            nc_suffix = nc.get("suffix", None)
+            if nc_suffix is None:
+                nc_trait_suffix.text = "true"
+            elif type(nc_suffix) == bool:
+                nc_trait_suffix.text = str(nc_suffix).lower()
+            else:
+                nc_trait_suffix.text = nc_suffix

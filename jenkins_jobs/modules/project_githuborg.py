@@ -228,10 +228,12 @@ def github_org(xml_parent, data):
         Requires the :jenkins-plugins:`SCM Filter Branch PR Plugin
         <scm-filter-branch-pr>`. Refer to
         :func:`~add_filter_branch_pr_behaviors <project_multibranch.add_filter_branch_pr_behaviors>`.
-    :arg str notification-context: Change the default GitHub check notification
-        context from "continuous-integration/jenkins/SUFFIX" to a custom text,
+    :arg dict notification-context: Change the default GitHub check notification
+        context from "continuous-integration/jenkins/SUFFIX" to a custom label / suffix.
+        (set a label and suffix to true or false, optional)
         Requires the :jenkins-plugins:`Github Custom Notification Context SCM
         Behaviour <github-scm-trait-notification-context>`.
+        Refer to :func:`~add_notification_context_trait <project_multibranch.add_notification_context_trait>`.
     :arg dict property-strategies: Provides control over how to build a branch
         (like to disable SCM triggering or to override the pipeline durability)
         (optional)
@@ -387,14 +389,7 @@ def github_org(xml_parent, data):
     if data.get("build-strategies", None):
         multibranch.build_strategies(xml_parent, data)
 
-    if data.get("notification-context", None):
-        rshf = XML.SubElement(
-            traits,
-            "org.jenkinsci.plugins.githubScmTraitNotificationContext."
-            "NotificationContextTrait",
-        )
-        XML.SubElement(rshf, "contextLabel").text = data.get("notification-context")
-        XML.SubElement(rshf, "typeSuffix").text = "true"
+    multibranch.add_notification_context_trait(traits, data)
 
     # handle the default git extensions like:
     # - clean
