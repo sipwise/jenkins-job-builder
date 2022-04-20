@@ -33,6 +33,23 @@
       "message": "recheck",
       "revId": "76f417da09099e711d3f963777b0b7e703a5fd5a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f89e4866_62babd2f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2022-04-20T06:21:54Z",
+      "side": 1,
+      "message": "PyYAML was pinned to \u003c6 probably because in v6 they dropped Python 2.7, which we were trying to support in JJB for a while. But with some recent changes support for Python 2.7 and other EOL Python 3.x versions is gone, so I think it\u0027s safe to unpin the upper bound for PyYAML.",
+      "revId": "76f417da09099e711d3f963777b0b7e703a5fd5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
