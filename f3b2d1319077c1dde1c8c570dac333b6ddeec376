@@ -16,6 +16,23 @@
       "message": "Hope this change is fine.",
       "revId": "f3b2d1319077c1dde1c8c570dac333b6ddeec376",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f565ff7f_d80cca3b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2022-04-21T12:16:36Z",
+      "side": 1,
+      "message": "Should we add backwards compatibililty here in case folks are still on older versions of this plugin?",
+      "revId": "f3b2d1319077c1dde1c8c570dac333b6ddeec376",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
