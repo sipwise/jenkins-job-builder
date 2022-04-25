@@ -55,12 +55,12 @@ class ListSubCommand(base.BaseSubCommand):
             p = parser.YamlParser(self.jjb_config)
             p.load_files(fn)
             p.expandYaml(r, jobs_glob)
-            jobs = [j["name"] for j in p.jobs]
+            jobs = [j["fullname"] for j in p.jobs]
         else:
             jobs = [
-                j["name"]
+                j["fullname"]
                 for j in self.jenkins.get_jobs()
-                if not jobs_glob or parser.matches(j["name"], jobs_glob)
+                if not jobs_glob or parser.matches(j["fullname"], jobs_glob)
             ]
 
         jobs = sorted(jobs)
