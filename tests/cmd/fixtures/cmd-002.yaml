@@ -14,6 +14,10 @@
     name: 'bam001'
     description: 'My fourth job'
 
+- job-template:
+    name: 'folder001/bar001'
+    description: 'My first folder job'
+
 - project:
     name: my-projects
     jobs:
@@ -21,3 +25,4 @@
       - 'bar002'
       - 'baz001'
       - 'bam001'
+      - 'folder001/bar001'

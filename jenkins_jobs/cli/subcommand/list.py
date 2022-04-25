@@ -58,9 +58,9 @@ class ListSubCommand(base.BaseSubCommand):
             jobs = [j["name"] for j in p.jobs]
         else:
             jobs = [
-                j["name"]
+                j["fullname"]
                 for j in self.jenkins.get_jobs()
-                if not jobs_glob or parser.matches(j["name"], jobs_glob)
+                if not jobs_glob or parser.matches(j["fullname"], jobs_glob)
             ]
 
         jobs = sorted(jobs)

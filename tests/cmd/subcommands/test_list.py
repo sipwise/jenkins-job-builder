@@ -28,6 +28,14 @@ class ListFromJenkinsTests(TestWithScenarios, CmdTestsBase):
         ("single", dict(jobs=["job1"], globs=[], found=["job1"])),
         ("multiple", dict(jobs=["job1", "job2"], globs=[], found=["job1", "job2"])),
         (
+            "multiple_with_folder",
+            dict(
+                jobs=["folder1", "folder1/job1", "folder1/job2"],
+                globs=[],
+                found=["folder1", "folder1/job1", "folder1/job2"]
+            )
+        ),
+        (
             "multiple_with_glob",
             dict(
                 jobs=["job1", "job2", "job3"],
@@ -48,7 +56,7 @@ class ListFromJenkinsTests(TestWithScenarios, CmdTestsBase):
     @mock.patch("jenkins_jobs.builder.JenkinsManager.get_jobs")
     def test_list(self, get_jobs_mock):
         def _get_jobs():
-            return [{"name": name} for name in self.jobs]
+            return [{"fullname": fullname} for fullname in self.jobs]
 
         get_jobs_mock.side_effect = _get_jobs
         console_out = io.BytesIO()
@@ -67,11 +75,11 @@ class ListFromJenkinsTests(TestWithScenarios, CmdTestsBase):
 class ListFromYamlTests(TestWithScenarios, CmdTestsBase):
 
     scenarios = [
-        ("all", dict(globs=[], found=["bam001", "bar001", "bar002", "baz001"])),
+        ("all", dict(globs=[], found=["bam001", "bar001", "bar002", "baz001", "folder001/bar001"])),
         (
             "some",
             dict(
-                globs=["*am*", "*002", "bar001"], found=["bam001", "bar001", "bar002"]
+                globs=["*am*", "*002", "bar001"], found=["bam001", "bar001", "bar002", "folder001/bar001"]
             ),
         ),
     ]
