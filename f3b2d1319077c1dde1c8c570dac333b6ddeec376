@@ -33,6 +33,24 @@
       "message": "Should we add backwards compatibililty here in case folks are still on older versions of this plugin?",
       "revId": "f3b2d1319077c1dde1c8c570dac333b6ddeec376",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f00f6768_5a3a8f2b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34764
+      },
+      "writtenOn": "2022-04-25T16:39:25Z",
+      "side": 1,
+      "message": "Should be fully backwards compatible already :) I made sure that both syntax are still correct:\n\nnotification-context: str\n\nand the new\n\nnotification-context: dict\n\nI changed the documentation to the new syntax though, as I saw this is how it was commonly done, throughout your project! 👍 Please let me know if there is anything to change and I\u0027d be happy to follow up 😊",
+      "parentUuid": "f565ff7f_d80cca3b",
+      "revId": "f3b2d1319077c1dde1c8c570dac333b6ddeec376",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
