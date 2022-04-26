@@ -51,6 +51,24 @@
       "parentUuid": "f565ff7f_d80cca3b",
       "revId": "f3b2d1319077c1dde1c8c570dac333b6ddeec376",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "60e98fbe_1c21abc2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2022-04-26T13:35:47Z",
+      "side": 1,
+      "message": "Ah okay. I definitely missed that. Thanks for the clarification.",
+      "parentUuid": "f00f6768_5a3a8f2b",
+      "revId": "f3b2d1319077c1dde1c8c570dac333b6ddeec376",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
