@@ -1,0 +1,9 @@
+Code-Review+2: Thanh Ha <zxiiro@gmail.com>
+Code-Review+1: Adam Romanek <romanek.adam@gmail.com>
+Workflow+1: Thanh Ha <zxiiro@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 29 Apr 2022 17:23:42 +0000
+Reviewed-on: https://review.opendev.org/c/jjb/jenkins-job-builder/+/838086
+Project: jjb/jenkins-job-builder
+Branch: refs/heads/master
