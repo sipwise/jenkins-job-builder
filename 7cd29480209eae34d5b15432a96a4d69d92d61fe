@@ -16,6 +16,24 @@
       "message": "It would be good to keep this test with the original type (str) and add a new one with the new type (dict) to make sure backwards compatibility is preserved.",
       "revId": "7cd29480209eae34d5b15432a96a4d69d92d61fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc83038f_96a9fed1",
+        "filename": "tests/githuborg/fixtures/github-org-full.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 34764
+      },
+      "writtenOn": "2022-04-29T20:53:18Z",
+      "side": 1,
+      "message": "Sure can do so. Thanks for the feedback Adam",
+      "parentUuid": "c676e7a9_dd0a3ae6",
+      "revId": "7cd29480209eae34d5b15432a96a4d69d92d61fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
