@@ -33,6 +33,24 @@
       "message": "This is potentially backwards incompatible in case someone parses the output of the \u0027list\u0027 command. On the other hand the original output from this command was in fact limited so I guess this is a good change, just I\u0027m not sure if we should announce this change somehow.",
       "revId": "f6556f56365a94a44120c576af4300110d0de76e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "01b70941_66edcea3",
+        "filename": "jenkins_jobs/cli/subcommand/list.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 34474
+      },
+      "writtenOn": "2022-04-30T14:56:53Z",
+      "side": 1,
+      "message": "I think I can add a log output，for example: \u0027Builder.get_jobs: get jobs fullname from jenkins\u0027, or do you have any other recommended methods？",
+      "parentUuid": "a7cadacf_3cc5c8d3",
+      "revId": "f6556f56365a94a44120c576af4300110d0de76e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
