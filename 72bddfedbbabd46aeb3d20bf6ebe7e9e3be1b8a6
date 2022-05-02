@@ -16,6 +16,24 @@
       "message": "What\u0027s the reason for installing directly from source?\n\nI don\u0027t think we should be recommending that to our end users as we publish our artifacts to PyPi.",
       "revId": "72bddfedbbabd46aeb3d20bf6ebe7e9e3be1b8a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aee2029a_f367ddd3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34474
+      },
+      "writtenOn": "2022-05-02T13:52:34Z",
+      "side": 1,
+      "message": "The previous line says:\nTo install Jenkins Job Builder from source, run::",
+      "parentUuid": "229a5b82_8f9cf261",
+      "revId": "72bddfedbbabd46aeb3d20bf6ebe7e9e3be1b8a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
