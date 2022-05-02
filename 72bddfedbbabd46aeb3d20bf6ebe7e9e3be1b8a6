@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "229a5b82_8f9cf261",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2022-05-02T13:25:08Z",
+      "side": 1,
+      "message": "What\u0027s the reason for installing directly from source?\n\nI don\u0027t think we should be recommending that to our end users as we publish our artifacts to PyPi.",
+      "revId": "72bddfedbbabd46aeb3d20bf6ebe7e9e3be1b8a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
