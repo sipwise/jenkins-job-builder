@@ -51,6 +51,24 @@
       "parentUuid": "a7cadacf_3cc5c8d3",
       "revId": "f6556f56365a94a44120c576af4300110d0de76e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1f88e360_bca04e75",
+        "filename": "jenkins_jobs/cli/subcommand/list.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2022-05-03T11:43:08Z",
+      "side": 1,
+      "message": "Not really, except maybe Thanh should add a note to the release notes for the next release.",
+      "parentUuid": "01b70941_66edcea3",
+      "revId": "f6556f56365a94a44120c576af4300110d0de76e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
