@@ -69,6 +69,24 @@
       "parentUuid": "01b70941_66edcea3",
       "revId": "f6556f56365a94a44120c576af4300110d0de76e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "307272ea_325feb21",
+        "filename": "jenkins_jobs/cli/subcommand/list.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 34474
+      },
+      "writtenOn": "2022-05-06T15:18:13Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1f88e360_bca04e75",
+      "revId": "f6556f56365a94a44120c576af4300110d0de76e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
