@@ -34,6 +34,23 @@
       "parentUuid": "d3af0ed8_bd56b6c4",
       "revId": "bf385683631006bc2f6c6e52dc93e5e3232f9472",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1922c3bb_8c929ae9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34764
+      },
+      "writtenOn": "2022-05-17T21:08:40Z",
+      "side": 1,
+      "message": "Thats great news and helps us a lot! Thank you so much! 😊 Thanks for merging again \u0026 all the best, Kristian",
+      "revId": "bf385683631006bc2f6c6e52dc93e5e3232f9472",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
