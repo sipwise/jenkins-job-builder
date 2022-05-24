@@ -653,6 +653,9 @@ def gerrit_scm(xml_parent, data):
         (default '*')
     :arg str excludes: Comma-separated list of branches to be excluded.
         (default '')
+    :arg str head-filter-regex: A regular expression for filtering
+        discovered source branches. Requires the :jenkins-plugins:`SCM API
+        Plugin <scm-api>`.
     :arg list build-strategies: Provides control over whether to build a branch
         (or branch like things such as change requests and tags) whenever it is
         discovered initially or a change from the previous revision has been
@@ -785,6 +788,10 @@ def gerrit_scm(xml_parent, data):
 
     if data.get("build-strategies", None):
         build_strategies(xml_parent, data)
+
+    if data.get("head-filter-regex", None):
+        rshf = XML.SubElement(traits, "jenkins.scm.impl.trait.RegexSCMHeadFilterTrait")
+        XML.SubElement(rshf, "regex").text = data.get("head-filter-regex")
 
     # FilterChecks Trait
     checks = data.get("filter-checks", None)
