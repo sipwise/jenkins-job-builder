@@ -26,6 +26,7 @@
     <pruneDeadBranches>true</pruneDeadBranches>
     <daysToKeep>-1</daysToKeep>
     <numToKeep>-1</numToKeep>
+    <abortBuilds>false</abortBuilds>
   </orphanedItemStrategy>
   <triggers/>
   <sources class="jenkins.branch.MultiBranchProject$BranchSourceList" plugin="branch-api">

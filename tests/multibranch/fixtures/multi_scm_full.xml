@@ -26,6 +26,7 @@
     <pruneDeadBranches>true</pruneDeadBranches>
     <daysToKeep>10</daysToKeep>
     <numToKeep>10</numToKeep>
+    <abortBuilds>false</abortBuilds>
   </orphanedItemStrategy>
   <triggers>
     <com.cloudbees.hudson.plugins.folder.computed.PeriodicFolderTrigger plugin="cloudbees-folder">

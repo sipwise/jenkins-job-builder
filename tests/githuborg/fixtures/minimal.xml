@@ -16,6 +16,7 @@
     <pruneDeadBranches>true</pruneDeadBranches>
     <daysToKeep>-1</daysToKeep>
     <numToKeep>-1</numToKeep>
+    <abortBuilds>false</abortBuilds>
   </orphanedItemStrategy>
   <triggers/>
   <navigators>
