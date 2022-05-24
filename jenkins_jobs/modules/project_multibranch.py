@@ -220,6 +220,7 @@ class WorkflowMultiBranch(jenkins_jobs.modules.base.Base):
             ("prune-dead-branches", "pruneDeadBranches", True, [True, False]),
             ("days-to-keep", "daysToKeep", -1),
             ("number-to-keep", "numToKeep", -1),
+            ("abort-builds", "abortBuilds", False, [True, False])
         ]
         helpers.convert_mapping_to_xml(ois, data, ois_mapping)
 
