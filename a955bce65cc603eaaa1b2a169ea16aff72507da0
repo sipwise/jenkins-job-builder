@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a8d946f_93cfe71e",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 31965
+      },
+      "writtenOn": "2022-05-31T20:21:36Z",
+      "side": 1,
+      "message": "This should be documented somewhere. Additionally you should add a test case to ensure enabling this option produces the right output.",
+      "revId": "a955bce65cc603eaaa1b2a169ea16aff72507da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
