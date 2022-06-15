@@ -1,7 +1,4 @@
-import os
-
-from tests.base import mock
-import testtools
+from pathlib import Path
 
 from jenkins_jobs import utils
 
@@ -26,114 +23,104 @@ def fake_os_walk(paths):
     return os_walk
 
 
-# Testing the utils module can sometimes result in the JobCache class
-# attempting to create the cache directory multiple times as the tests
-# are run in parallel.  Stub out the JobCache to ensure that each
-# test can safely create the object without effect.
-@mock.patch("jenkins_jobs.builder.JobCache", mock.MagicMock)
-class CmdRecursePath(testtools.TestCase):
-    @mock.patch("jenkins_jobs.utils.os.walk")
-    def test_recursive_path_option_exclude_pattern(self, oswalk_mock):
-        """
-        Test paths returned by the recursive processing when using pattern
-        excludes.
+def test_recursive_path_option_exclude_pattern(mocker):
+    """
+    Test paths returned by the recursive processing when using pattern
+    excludes.
 
-        testing paths
-            /jjb_configs/dir1/test1/
-            /jjb_configs/dir1/file
-            /jjb_configs/dir2/test2/
-            /jjb_configs/dir3/bar/
-            /jjb_configs/test3/bar/
-            /jjb_configs/test3/baz/
-        """
+    testing paths
+        /jjb_configs/dir1/test1/
+        /jjb_configs/dir1/file
+        /jjb_configs/dir2/test2/
+        /jjb_configs/dir3/bar/
+        /jjb_configs/test3/bar/
+        /jjb_configs/test3/baz/
+    """
 
-        os_walk_paths = [
-            ("/jjb_configs", (["dir1", "dir2", "dir3", "test3"], ())),
-            ("/jjb_configs/dir1", (["test1"], ("file"))),
-            ("/jjb_configs/dir2", (["test2"], ())),
-            ("/jjb_configs/dir3", (["bar"], ())),
-            ("/jjb_configs/dir3/bar", ([], ())),
-            ("/jjb_configs/test3/bar", None),
-            ("/jjb_configs/test3/baz", None),
-        ]
+    os_walk_paths = [
+        ("/jjb_configs", (["dir1", "dir2", "dir3", "test3"], ())),
+        ("/jjb_configs/dir1", (["test1"], ("file"))),
+        ("/jjb_configs/dir2", (["test2"], ())),
+        ("/jjb_configs/dir3", (["bar"], ())),
+        ("/jjb_configs/dir3/bar", ([], ())),
+        ("/jjb_configs/test3/bar", None),
+        ("/jjb_configs/test3/baz", None),
+    ]
 
-        paths = [k for k, v in os_walk_paths if v is not None]
+    paths = [k for k, v in os_walk_paths if v is not None]
 
-        oswalk_mock.side_effect = fake_os_walk(os_walk_paths)
-        self.assertEqual(paths, utils.recurse_path("/jjb_configs", ["test*"]))
+    mocker.patch("jenkins_jobs.utils.os.walk", side_effect=fake_os_walk(os_walk_paths))
+    assert paths == utils.recurse_path("/jjb_configs", ["test*"])
 
-    @mock.patch("jenkins_jobs.utils.os.walk")
-    def test_recursive_path_option_exclude_absolute(self, oswalk_mock):
-        """
-        Test paths returned by the recursive processing when using absolute
-        excludes.
 
-        testing paths
-            /jjb_configs/dir1/test1/
-            /jjb_configs/dir1/file
-            /jjb_configs/dir2/test2/
-            /jjb_configs/dir3/bar/
-            /jjb_configs/test3/bar/
-            /jjb_configs/test3/baz/
-        """
+def test_recursive_path_option_exclude_absolute(mocker):
+    """
+    Test paths returned by the recursive processing when using absolute
+    excludes.
 
-        os_walk_paths = [
-            ("/jjb_configs", (["dir1", "dir2", "dir3", "test3"], ())),
-            ("/jjb_configs/dir1", None),
-            ("/jjb_configs/dir2", (["test2"], ())),
-            ("/jjb_configs/dir3", (["bar"], ())),
-            ("/jjb_configs/test3", (["bar", "baz"], ())),
-            ("/jjb_configs/dir2/test2", ([], ())),
-            ("/jjb_configs/dir3/bar", ([], ())),
-            ("/jjb_configs/test3/bar", ([], ())),
-            ("/jjb_configs/test3/baz", ([], ())),
-        ]
+    testing paths
+        /jjb_configs/dir1/test1/
+        /jjb_configs/dir1/file
+        /jjb_configs/dir2/test2/
+        /jjb_configs/dir3/bar/
+        /jjb_configs/test3/bar/
+        /jjb_configs/test3/baz/
+    """
 
-        paths = [k for k, v in os_walk_paths if v is not None]
+    os_walk_paths = [
+        ("/jjb_configs", (["dir1", "dir2", "dir3", "test3"], ())),
+        ("/jjb_configs/dir1", None),
+        ("/jjb_configs/dir2", (["test2"], ())),
+        ("/jjb_configs/dir3", (["bar"], ())),
+        ("/jjb_configs/test3", (["bar", "baz"], ())),
+        ("/jjb_configs/dir2/test2", ([], ())),
+        ("/jjb_configs/dir3/bar", ([], ())),
+        ("/jjb_configs/test3/bar", ([], ())),
+        ("/jjb_configs/test3/baz", ([], ())),
+    ]
 
-        oswalk_mock.side_effect = fake_os_walk(os_walk_paths)
+    paths = [k for k, v in os_walk_paths if v is not None]
 
-        self.assertEqual(
-            paths, utils.recurse_path("/jjb_configs", ["/jjb_configs/dir1"])
-        )
+    mocker.patch("jenkins_jobs.utils.os.walk", side_effect=fake_os_walk(os_walk_paths))
 
-    @mock.patch("jenkins_jobs.utils.os.walk")
-    def test_recursive_path_option_exclude_relative(self, oswalk_mock):
-        """
-        Test paths returned by the recursive processing when using relative
-        excludes.
+    assert paths == utils.recurse_path("/jjb_configs", ["/jjb_configs/dir1"])
 
-        testing paths
-            ./jjb_configs/dir1/test/
-            ./jjb_configs/dir1/file
-            ./jjb_configs/dir2/test/
-            ./jjb_configs/dir3/bar/
-            ./jjb_configs/test3/bar/
-            ./jjb_configs/test3/baz/
-        """
 
-        os_walk_paths = [
-            ("jjb_configs", (["dir1", "dir2", "dir3", "test3"], ())),
-            ("jjb_configs/dir1", (["test"], ("file"))),
-            ("jjb_configs/dir2", (["test2"], ())),
-            ("jjb_configs/dir3", (["bar"], ())),
-            ("jjb_configs/test3", (["bar", "baz"], ())),
-            ("jjb_configs/dir1/test", ([], ())),
-            ("jjb_configs/dir2/test2", ([], ())),
-            ("jjb_configs/dir3/bar", ([], ())),
-            ("jjb_configs/test3/bar", None),
-            ("jjb_configs/test3/baz", ([], ())),
-        ]
+def test_recursive_path_option_exclude_relative(mocker):
+    """
+    Test paths returned by the recursive processing when using relative
+    excludes.
 
-        rel_os_walk_paths = [
-            (os.path.abspath(os.path.join(os.path.curdir, k)), v)
-            for k, v in os_walk_paths
-        ]
+    testing paths
+        ./jjb_configs/dir1/test/
+        ./jjb_configs/dir1/file
+        ./jjb_configs/dir2/test/
+        ./jjb_configs/dir3/bar/
+        ./jjb_configs/test3/bar/
+        ./jjb_configs/test3/baz/
+    """
 
-        paths = [k for k, v in rel_os_walk_paths if v is not None]
+    os_walk_paths = [
+        ("jjb_configs", (["dir1", "dir2", "dir3", "test3"], ())),
+        ("jjb_configs/dir1", (["test"], ("file"))),
+        ("jjb_configs/dir2", (["test2"], ())),
+        ("jjb_configs/dir3", (["bar"], ())),
+        ("jjb_configs/test3", (["bar", "baz"], ())),
+        ("jjb_configs/dir1/test", ([], ())),
+        ("jjb_configs/dir2/test2", ([], ())),
+        ("jjb_configs/dir3/bar", ([], ())),
+        ("jjb_configs/test3/bar", None),
+        ("jjb_configs/test3/baz", ([], ())),
+    ]
 
-        oswalk_mock.side_effect = fake_os_walk(rel_os_walk_paths)
+    rel_os_walk_paths = [
+        (str(Path.cwd().joinpath(k).absolute()), v) for k, v in os_walk_paths
+    ]
 
-        self.assertEqual(
-            paths, utils.recurse_path("jjb_configs", ["jjb_configs/test3/bar"])
-        )
+    paths = [k for k, v in rel_os_walk_paths if v is not None]
+
+    mocker.patch(
+        "jenkins_jobs.utils.os.walk", side_effect=fake_os_walk(rel_os_walk_paths)
+    )
+
+    assert paths == utils.recurse_path("jjb_configs", ["jjb_configs/test3/bar"])

@@ -1,160 +1,177 @@
 import io
-import os
+from pathlib import Path
 
-from tests.base import mock
-from tests.cmd.test_cmd import CmdTestsBase
+import pytest
 
 from jenkins_jobs.cli import entry
 from jenkins_jobs import builder
 
-patch = mock.patch
+
+global_conf = "/etc/jenkins_jobs/jenkins_jobs.ini"
+user_conf = Path.home() / ".config" / "jenkins_jobs" / "jenkins_jobs.ini"
+local_conf = Path(__file__).parent / "jenkins_jobs.ini"
 
 
-@mock.patch("jenkins_jobs.builder.JenkinsManager.get_plugins_info", mock.MagicMock)
-class TestConfigs(CmdTestsBase):
+def test_use_global_config(mocker, default_config_file):
+    """
+    Verify that JJB uses the global config file by default
+    """
+    mocker.patch("jenkins_jobs.builder.JenkinsManager.get_plugins_info")
 
-    global_conf = "/etc/jenkins_jobs/jenkins_jobs.ini"
-    user_conf = os.path.join(
-        os.path.expanduser("~"), ".config", "jenkins_jobs", "jenkins_jobs.ini"
-    )
-    local_conf = os.path.join(os.path.dirname(__file__), "jenkins_jobs.ini")
+    args = ["test", "foo"]
 
-    def test_use_global_config(self):
-        """
-        Verify that JJB uses the global config file by default
-        """
+    default_io_open = io.open
 
-        args = ["test", "foo"]
-        conffp = io.open(self.default_config_file, "r", encoding="utf-8")
+    def io_open(file, *args, **kw):
+        if file == global_conf:
+            default_io_open(default_config_file, "r", encoding="utf-8")
+        else:
+            return default_io_open(file, *args, **kw)
 
-        with patch("os.path.isfile", return_value=True) as m_isfile:
+    def isfile(path):
+        if path == global_conf:
+            return True
+        return False
 
-            def side_effect(path):
-                if path == self.global_conf:
-                    return True
-                return False
+    mocker.patch("os.path.isfile", side_effect=isfile)
+    mocked_open = mocker.patch("io.open", side_effect=io_open)
 
-            m_isfile.side_effect = side_effect
+    entry.JenkinsJobs(args, config_file_required=True)
 
-            with patch("io.open", return_value=conffp) as m_open:
-                entry.JenkinsJobs(args, config_file_required=True)
-                m_open.assert_called_with(self.global_conf, "r", encoding="utf-8")
+    mocked_open.assert_called_with(global_conf, "r", encoding="utf-8")
 
-    def test_use_config_in_user_home(self):
-        """
-        Verify that JJB uses config file in user home folder
-        """
 
-        args = ["test", "foo"]
+def test_use_config_in_user_home(mocker, default_config_file):
+    """
+    Verify that JJB uses config file in user home folder
+    """
 
-        conffp = io.open(self.default_config_file, "r", encoding="utf-8")
-        with patch("os.path.isfile", return_value=True) as m_isfile:
+    args = ["test", "foo"]
 
-            def side_effect(path):
-                if path == self.user_conf:
-                    return True
-                return False
+    default_io_open = io.open
 
-            m_isfile.side_effect = side_effect
-            with patch("io.open", return_value=conffp) as m_open:
-                entry.JenkinsJobs(args, config_file_required=True)
-                m_open.assert_called_with(self.user_conf, "r", encoding="utf-8")
+    def io_open(file, *args, **kw):
+        if file == str(user_conf):
+            default_io_open(default_config_file, "r", encoding="utf-8")
+        else:
+            return default_io_open(file, *args, **kw)
 
-    def test_non_existing_config_dir(self):
-        """
-        Run test mode and pass a non-existing configuration directory
-        """
-        args = ["--conf", self.default_config_file, "test", "foo"]
-        jenkins_jobs = entry.JenkinsJobs(args)
-        self.assertRaises(IOError, jenkins_jobs.execute)
+    def isfile(path):
+        if path == str(user_conf):
+            return True
+        return False
 
-    def test_non_existing_config_file(self):
-        """
-        Run test mode and pass a non-existing configuration file
-        """
-        args = ["--conf", self.default_config_file, "test", "non-existing.yaml"]
-        jenkins_jobs = entry.JenkinsJobs(args)
-        self.assertRaises(IOError, jenkins_jobs.execute)
+    mocker.patch("os.path.isfile", side_effect=isfile)
+    mocked_open = mocker.patch("io.open", side_effect=io_open)
 
-    def test_config_options_not_replaced_by_cli_defaults(self):
-        """
-        Run test mode and check config settings from conf file retained
-        when none of the global CLI options are set.
-        """
-        config_file = os.path.join(self.fixtures_path, "settings_from_config.ini")
-        args = ["--conf", config_file, "test", "dummy.yaml"]
-        jenkins_jobs = entry.JenkinsJobs(args)
-        jjb_config = jenkins_jobs.jjb_config
-        self.assertEqual(jjb_config.jenkins["user"], "jenkins_user")
-        self.assertEqual(jjb_config.jenkins["password"], "jenkins_password")
-        self.assertEqual(jjb_config.builder["ignore_cache"], True)
-        self.assertEqual(jjb_config.builder["flush_cache"], True)
-        self.assertEqual(jjb_config.builder["update"], "all")
-        self.assertEqual(jjb_config.yamlparser["allow_empty_variables"], True)
+    entry.JenkinsJobs(args, config_file_required=True)
+    mocked_open.assert_called_with(str(user_conf), "r", encoding="utf-8")
 
-    def test_config_options_overriden_by_cli(self):
-        """
-        Run test mode and check config settings from conf file retained
-        when none of the global CLI options are set.
-        """
-        args = [
-            "--user",
-            "myuser",
-            "--password",
-            "mypassword",
-            "--ignore-cache",
-            "--flush-cache",
-            "--allow-empty-variables",
-            "test",
-            "dummy.yaml",
-        ]
-        jenkins_jobs = entry.JenkinsJobs(args)
-        jjb_config = jenkins_jobs.jjb_config
-        self.assertEqual(jjb_config.jenkins["user"], "myuser")
-        self.assertEqual(jjb_config.jenkins["password"], "mypassword")
-        self.assertEqual(jjb_config.builder["ignore_cache"], True)
-        self.assertEqual(jjb_config.builder["flush_cache"], True)
-        self.assertEqual(jjb_config.yamlparser["allow_empty_variables"], True)
 
-    @mock.patch("jenkins_jobs.cli.subcommand.update.JenkinsManager")
-    def test_update_timeout_not_set(self, jenkins_mock):
-        """Check that timeout is left unset
+def test_non_existing_config_dir(default_config_file):
+    """
+    Run test mode and pass a non-existing configuration directory
+    """
+    args = ["--conf", default_config_file, "test", "foo"]
+    jenkins_jobs = entry.JenkinsJobs(args)
+    with pytest.raises(IOError):
+        jenkins_jobs.execute()
 
-        Test that the Jenkins object has the timeout set on it only when
-        provided via the config option.
-        """
 
-        path = os.path.join(self.fixtures_path, "cmd-002.yaml")
-        args = ["--conf", self.default_config_file, "update", path]
+def test_non_existing_config_file(default_config_file):
+    """
+    Run test mode and pass a non-existing configuration file
+    """
+    args = ["--conf", default_config_file, "test", "non-existing.yaml"]
+    jenkins_jobs = entry.JenkinsJobs(args)
+    with pytest.raises(IOError):
+        jenkins_jobs.execute()
 
-        jenkins_mock.return_value.update_jobs.return_value = ([], 0)
-        jenkins_mock.return_value.update_views.return_value = ([], 0)
-        self.execute_jenkins_jobs_with_args(args)
 
-        # validate that the JJBConfig used to initialize builder.Jenkins
-        # contains the expected timeout value.
+def test_config_options_not_replaced_by_cli_defaults(fixtures_dir):
+    """
+    Run test mode and check config settings from conf file retained
+    when none of the global CLI options are set.
+    """
+    config_file = fixtures_dir / "settings_from_config.ini"
+    args = ["--conf", str(config_file), "test", "dummy.yaml"]
+    jenkins_jobs = entry.JenkinsJobs(args)
+    jjb_config = jenkins_jobs.jjb_config
+    assert jjb_config.jenkins["user"] == "jenkins_user"
+    assert jjb_config.jenkins["password"] == "jenkins_password"
+    assert jjb_config.builder["ignore_cache"]
+    assert jjb_config.builder["flush_cache"]
+    assert jjb_config.builder["update"] == "all"
+    assert jjb_config.yamlparser["allow_empty_variables"]
 
-        jjb_config = jenkins_mock.call_args[0][0]
-        self.assertEqual(jjb_config.jenkins["timeout"], builder._DEFAULT_TIMEOUT)
 
-    @mock.patch("jenkins_jobs.cli.subcommand.update.JenkinsManager")
-    def test_update_timeout_set(self, jenkins_mock):
-        """Check that timeout is set correctly
+def test_config_options_overriden_by_cli():
+    """
+    Run test mode and check config settings from conf file retained
+    when none of the global CLI options are set.
+    """
+    args = [
+        "--user",
+        "myuser",
+        "--password",
+        "mypassword",
+        "--ignore-cache",
+        "--flush-cache",
+        "--allow-empty-variables",
+        "test",
+        "dummy.yaml",
+    ]
+    jenkins_jobs = entry.JenkinsJobs(args)
+    jjb_config = jenkins_jobs.jjb_config
+    assert jjb_config.jenkins["user"] == "myuser"
+    assert jjb_config.jenkins["password"] == "mypassword"
+    assert jjb_config.builder["ignore_cache"]
+    assert jjb_config.builder["flush_cache"]
+    assert jjb_config.yamlparser["allow_empty_variables"]
 
-        Test that the Jenkins object has the timeout set on it only when
-        provided via the config option.
-        """
 
-        path = os.path.join(self.fixtures_path, "cmd-002.yaml")
-        config_file = os.path.join(self.fixtures_path, "non-default-timeout.ini")
-        args = ["--conf", config_file, "update", path]
+def test_update_timeout_not_set(mocker, fixtures_dir, default_config_file):
+    """Check that timeout is left unset
 
-        jenkins_mock.return_value.update_jobs.return_value = ([], 0)
-        jenkins_mock.return_value.update_views.return_value = ([], 0)
-        self.execute_jenkins_jobs_with_args(args)
+    Test that the Jenkins object has the timeout set on it only when
+    provided via the config option.
+    """
+    jenkins_mock = mocker.patch("jenkins_jobs.cli.subcommand.update.JenkinsManager")
 
-        # validate that the JJBConfig used to initialize builder.Jenkins
-        # contains the expected timeout value.
+    path = fixtures_dir / "cmd-002.yaml"
+    args = ["--conf", default_config_file, "update", str(path)]
 
-        jjb_config = jenkins_mock.call_args[0][0]
-        self.assertEqual(jjb_config.jenkins["timeout"], 0.2)
+    jenkins_mock.return_value.update_jobs.return_value = ([], 0)
+    jenkins_mock.return_value.update_views.return_value = ([], 0)
+    jenkins_jobs = entry.JenkinsJobs(args)
+    jenkins_jobs.execute()
+
+    # validate that the JJBConfig used to initialize builder.Jenkins
+    # contains the expected timeout value.
+
+    jjb_config = jenkins_mock.call_args[0][0]
+    assert jjb_config.jenkins["timeout"] == builder._DEFAULT_TIMEOUT
+
+
+def test_update_timeout_set(mocker, fixtures_dir):
+    """Check that timeout is set correctly
+
+    Test that the Jenkins object has the timeout set on it only when
+    provided via the config option.
+    """
+    jenkins_mock = mocker.patch("jenkins_jobs.cli.subcommand.update.JenkinsManager")
+
+    path = fixtures_dir / "cmd-002.yaml"
+    config_file = fixtures_dir / "non-default-timeout.ini"
+    args = ["--conf", str(config_file), "update", str(path)]
+
+    jenkins_mock.return_value.update_jobs.return_value = ([], 0)
+    jenkins_mock.return_value.update_views.return_value = ([], 0)
+    jenkins_jobs = entry.JenkinsJobs(args)
+    jenkins_jobs.execute()
+
+    # validate that the JJBConfig used to initialize builder.Jenkins
+    # contains the expected timeout value.
+
+    jjb_config = jenkins_mock.call_args[0][0]
+    assert jjb_config.jenkins["timeout"] == 0.2

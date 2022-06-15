@@ -14,72 +14,72 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from unittest import mock
+
+import pytest
+
 from jenkins_jobs.config import JJBConfig
 import jenkins_jobs.builder
-from tests import base
-from tests.base import mock
 
 
 _plugins_info = {}
 _plugins_info["plugin1"] = {"longName": "", "shortName": "", "version": ""}
 
 
-@mock.patch("jenkins_jobs.builder.JobCache", mock.MagicMock)
-class TestCaseTestJenkinsManager(base.BaseTestCase):
-    def setUp(self):
-        super(TestCaseTestJenkinsManager, self).setUp()
-        self.jjb_config = JJBConfig()
-        self.jjb_config.validate()
+@pytest.fixture
+def jjb_config():
+    config = JJBConfig()
+    config.validate()
+    return config
 
-    def test_plugins_list(self):
-        self.jjb_config.builder["plugins_info"] = _plugins_info
 
-        self.builder = jenkins_jobs.builder.JenkinsManager(self.jjb_config)
-        self.assertEqual(self.builder.plugins_list, _plugins_info)
+def test_plugins_list(jjb_config):
+    jjb_config.builder["plugins_info"] = _plugins_info
 
-    @mock.patch.object(
+    builder = jenkins_jobs.builder.JenkinsManager(jjb_config)
+    assert builder.plugins_list == _plugins_info
+
+
+def test_plugins_list_from_jenkins(mocker, jjb_config):
+    mocker.patch.object(
         jenkins_jobs.builder.jenkins.Jenkins, "get_plugins", return_value=_plugins_info
     )
-    def test_plugins_list_from_jenkins(self, jenkins_mock):
-        # Trigger fetching the plugins from jenkins when accessing the property
-        self.jjb_config.builder["plugins_info"] = {}
-        self.builder = jenkins_jobs.builder.JenkinsManager(self.jjb_config)
-        # See https://github.com/formiaczek/multi_key_dict/issues/17
-        # self.assertEqual(self.builder.plugins_list, k)
-        for key_tuple in self.builder.plugins_list.keys():
-            for key in key_tuple:
-                self.assertEqual(self.builder.plugins_list[key], _plugins_info[key])
+    # Trigger fetching the plugins from jenkins when accessing the property
+    jjb_config.builder["plugins_info"] = {}
+    builder = jenkins_jobs.builder.JenkinsManager(jjb_config)
+    # See https://github.com/formiaczek/multi_key_dict/issues/17
+    # self.assertEqual(self.builder.plugins_list, k)
+    for key_tuple in builder.plugins_list.keys():
+        for key in key_tuple:
+            assert builder.plugins_list[key] == _plugins_info[key]
 
-    def test_delete_managed(self):
-        self.jjb_config.builder["plugins_info"] = {}
-        self.builder = jenkins_jobs.builder.JenkinsManager(self.jjb_config)
 
-        with mock.patch.multiple(
-            "jenkins_jobs.builder.JenkinsManager",
-            get_jobs=mock.DEFAULT,
-            is_job=mock.DEFAULT,
-            is_managed=mock.DEFAULT,
-            delete_job=mock.DEFAULT,
-        ) as patches:
-            patches["get_jobs"].return_value = [
-                {"fullname": "job1"},
-                {"fullname": "job2"},
-            ]
-            patches["is_managed"].side_effect = [True, True]
-            patches["is_job"].side_effect = [True, True]
+def test_delete_managed(mocker, jjb_config):
+    jjb_config.builder["plugins_info"] = {}
+    builder = jenkins_jobs.builder.JenkinsManager(jjb_config)
 
-            self.builder.delete_old_managed()
-            self.assertEqual(patches["delete_job"].call_count, 2)
+    patches = mocker.patch.multiple(
+        "jenkins_jobs.builder.JenkinsManager",
+        get_jobs=mock.DEFAULT,
+        is_job=mock.DEFAULT,
+        is_managed=mock.DEFAULT,
+        delete_job=mock.DEFAULT,
+    )
+    patches["get_jobs"].return_value = [
+        {"fullname": "job1"},
+        {"fullname": "job2"},
+    ]
+    patches["is_managed"].side_effect = [True, True]
+    patches["is_job"].side_effect = [True, True]
 
-    def _get_plugins_info_error_test(self, error_string):
-        builder = jenkins_jobs.builder.JenkinsManager(self.jjb_config)
-        exception = jenkins_jobs.builder.jenkins.JenkinsException(error_string)
-        with mock.patch.object(builder.jenkins, "get_plugins", side_effect=exception):
-            plugins_info = builder.get_plugins_info()
-        self.assertEqual([_plugins_info["plugin1"]], plugins_info)
+    builder.delete_old_managed()
+    assert patches["delete_job"].call_count == 2
 
-    def test_get_plugins_info_handles_connectionrefused_errors(self):
-        self._get_plugins_info_error_test("Connection refused")
 
-    def test_get_plugins_info_handles_forbidden_errors(self):
-        self._get_plugins_info_error_test("Forbidden")
+@pytest.mark.parametrize("error_string", ["Connection refused", "Forbidden"])
+def test_get_plugins_info_error(mocker, jjb_config, error_string):
+    builder = jenkins_jobs.builder.JenkinsManager(jjb_config)
+    exception = jenkins_jobs.builder.jenkins.JenkinsException(error_string)
+    mocker.patch.object(builder.jenkins, "get_plugins", side_effect=exception)
+    plugins_info = builder.get_plugins_info()
+    assert [_plugins_info["plugin1"]] == plugins_info

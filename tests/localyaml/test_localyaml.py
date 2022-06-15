@@ -14,128 +14,169 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import os
-import yaml
+from io import StringIO
+from pathlib import Path
+from yaml import safe_dump
 
-from testtools import ExpectedException
+import json
+import pytest
 from yaml.composer import ComposerError
 
+import jenkins_jobs.local_yaml as yaml
 from jenkins_jobs.config import JJBConfig
 from jenkins_jobs.parser import YamlParser
 from jenkins_jobs.registry import ModuleRegistry
-from tests import base
+from tests.enum_scenarios import scenario_list
 
 
-def _exclude_scenarios(input_filename):
-    return os.path.basename(input_filename).startswith("custom_")
+fixtures_dir = Path(__file__).parent / "fixtures"
 
 
-class TestCaseLocalYamlInclude(base.JsonTestCase):
+@pytest.fixture
+def read_input(scenario):
+    def read():
+        return yaml.load(
+            scenario.in_path.read_text(),
+            search_path=[str(fixtures_dir)],
+        )
+
+    return read
+
+
+@pytest.mark.parametrize(
+    "scenario",
+    [
+        pytest.param(s, id=s.name)
+        for s in scenario_list(fixtures_dir, out_ext=".json")
+        if not s.name.startswith(("custom_", "exception_"))
+    ],
+)
+def test_include(read_input, expected_output):
     """
     Verify application specific tags independently of any changes to
     modules XML parsing behaviour
     """
 
-    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
-    scenarios = base.get_scenarios(
-        fixtures_path, "yaml", "json", filter_func=_exclude_scenarios
-    )
-
-    def test_yaml_snippet(self):
-
-        if os.path.basename(self.in_filename).startswith("exception_"):
-            with ExpectedException(ComposerError, "^found duplicate anchor .*"):
-                super(TestCaseLocalYamlInclude, self).test_yaml_snippet()
-        else:
-            super(TestCaseLocalYamlInclude, self).test_yaml_snippet()
+    input = read_input()
+    pretty_json = json.dumps(input, indent=4, separators=(",", ": "))
+    assert expected_output.rstrip() == pretty_json
 
 
-class TestCaseLocalYamlAnchorAlias(base.YamlTestCase):
+@pytest.mark.parametrize(
+    "scenario",
+    [
+        pytest.param(s, id=s.name)
+        for s in scenario_list(fixtures_dir, out_ext=".json")
+        if s.name.startswith("exception_")
+    ],
+)
+def test_include_error(read_input, expected_output):
+    with pytest.raises(ComposerError) as excinfo:
+        _ = read_input()
+    assert str(excinfo.value).startswith("found duplicate anchor ")
+
+
+@pytest.mark.parametrize(
+    "scenario",
+    [
+        pytest.param(s, id=s.name)
+        for s in scenario_list(fixtures_dir, in_ext=".iyaml", out_ext=".oyaml")
+    ],
+)
+def test_anchor_alias(read_input, expected_output):
     """
     Verify yaml input is expanded to the expected yaml output when using yaml
     anchors and aliases.
     """
 
-    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
-    scenarios = base.get_scenarios(fixtures_path, "iyaml", "oyaml")
+    input = read_input()
+    data = StringIO(json.dumps(input))
+    pretty_yaml = safe_dump(json.load(data), default_flow_style=False)
+    assert expected_output == pretty_yaml
 
 
-class TestCaseLocalYamlIncludeAnchors(base.BaseTestCase):
+def test_include_anchors():
+    """
+    Verify that anchors/aliases only span use of '!include' tag
 
-    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
+    To ensure that any yaml loaded by the include tag is in the same
+    space as the top level file, but individual top level yaml definitions
+    are treated by the yaml loader as independent.
+    """
 
-    def test_multiple_same_anchor_in_multiple_toplevel_yaml(self):
-        """
-        Verify that anchors/aliases only span use of '!include' tag
+    config = JJBConfig()
+    config.jenkins["url"] = "http://example.com"
+    config.jenkins["user"] = "jenkins"
+    config.jenkins["password"] = "password"
+    config.builder["plugins_info"] = []
+    config.validate()
 
-        To ensure that any yaml loaded by the include tag is in the same
-        space as the top level file, but individual top level yaml definitions
-        are treated by the yaml loader as independent.
-        """
+    files = [
+        "custom_same_anchor-001-part1.yaml",
+        "custom_same_anchor-001-part2.yaml",
+    ]
 
-        files = [
-            "custom_same_anchor-001-part1.yaml",
-            "custom_same_anchor-001-part2.yaml",
-        ]
-
-        jjb_config = JJBConfig()
-        jjb_config.jenkins["url"] = "http://example.com"
-        jjb_config.jenkins["user"] = "jenkins"
-        jjb_config.jenkins["password"] = "password"
-        jjb_config.builder["plugins_info"] = []
-        jjb_config.validate()
-        j = YamlParser(jjb_config)
-        j.load_files([os.path.join(self.fixtures_path, f) for f in files])
+    parser = YamlParser(config)
+    # Should not raise ComposerError.
+    parser.load_files([str(fixtures_dir / name) for name in files])
 
 
-class TestCaseLocalYamlRetainAnchors(base.BaseTestCase):
+def test_retain_anchor_default():
+    """
+    Verify that anchors are NOT retained across files by default.
+    """
 
-    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
+    config = JJBConfig()
+    config.validate()
 
-    def test_retain_anchors_default(self):
-        """
-        Verify that anchors are NOT retained across files by default.
-        """
+    files = [
+        "custom_retain_anchors_include001.yaml",
+        "custom_retain_anchors.yaml",
+    ]
 
-        files = ["custom_retain_anchors_include001.yaml", "custom_retain_anchors.yaml"]
+    parser = YamlParser(config)
+    with pytest.raises(ComposerError) as excinfo:
+        parser.load_files([str(fixtures_dir / name) for name in files])
+    assert "found undefined alias" in str(excinfo.value)
 
-        jjb_config = JJBConfig()
-        # use the default value for retain_anchors
-        jjb_config.validate()
-        j = YamlParser(jjb_config)
-        with ExpectedException(yaml.composer.ComposerError, "found undefined alias.*"):
-            j.load_files([os.path.join(self.fixtures_path, f) for f in files])
 
-    def test_retain_anchors_enabled(self):
-        """
-        Verify that anchors are retained across files if retain_anchors is
-        enabled in the config.
-        """
+def test_retain_anchors_enabled():
+    """
+    Verify that anchors are retained across files if retain_anchors is
+    enabled in the config.
+    """
 
-        files = ["custom_retain_anchors_include001.yaml", "custom_retain_anchors.yaml"]
+    config = JJBConfig()
+    config.yamlparser["retain_anchors"] = True
+    config.validate()
 
-        jjb_config = JJBConfig()
-        jjb_config.yamlparser["retain_anchors"] = True
-        jjb_config.validate()
-        j = YamlParser(jjb_config)
-        j.load_files([os.path.join(self.fixtures_path, f) for f in files])
+    files = [
+        "custom_retain_anchors_include001.yaml",
+        "custom_retain_anchors.yaml",
+    ]
 
-    def test_retain_anchors_enabled_j2_yaml(self):
-        """
-        Verify that anchors are retained across files and are properly retained when using !j2-yaml.
-        """
+    parser = YamlParser(config)
+    # Should not raise ComposerError.
+    parser.load_files([str(fixtures_dir / name) for name in files])
 
-        files = [
-            "custom_retain_anchors_j2_yaml_include001.yaml",
-            "custom_retain_anchors_j2_yaml.yaml",
-        ]
 
-        jjb_config = JJBConfig()
-        jjb_config.yamlparser["retain_anchors"] = True
-        jjb_config.validate()
-        j = YamlParser(jjb_config)
-        j.load_files([os.path.join(self.fixtures_path, f) for f in files])
+def test_retain_anchors_enabled_j2_yaml():
+    """
+    Verify that anchors are retained across files and are properly retained when using !j2-yaml.
+    """
 
-        registry = ModuleRegistry(jjb_config, None)
-        jobs, _ = j.expandYaml(registry)
-        self.assertEqual(jobs[0]["builders"][0]["shell"], "docker run ubuntu:latest")
+    config = JJBConfig()
+    config.yamlparser["retain_anchors"] = True
+    config.validate()
+
+    files = [
+        "custom_retain_anchors_j2_yaml_include001.yaml",
+        "custom_retain_anchors_j2_yaml.yaml",
+    ]
+
+    parser = YamlParser(config)
+    parser.load_files([str(fixtures_dir / name) for name in files])
+
+    registry = ModuleRegistry(config, None)
+    jobs, _ = parser.expandYaml(registry)
+    assert "docker run ubuntu:latest" == jobs[0]["builders"][0]["shell"]

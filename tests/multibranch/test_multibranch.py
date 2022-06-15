@@ -13,15 +13,25 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from tests import base
-from tests.base import mock
-import os
+from operator import attrgetter
+from pathlib import Path
+
+import pytest
+
+from tests.enum_scenarios import scenario_list
 from jenkins_jobs.modules import project_multibranch
 
 
-@mock.patch("uuid.uuid4", mock.Mock(return_value="1-1-1-1-1"))
-class TestCaseMultibranchPipeline(base.BaseScenariosTestCase):
-    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
-    scenarios = base.get_scenarios(fixtures_path)
-    default_config_file = "/dev/null"
-    klass = project_multibranch.WorkflowMultiBranch
+fixtures_dir = Path(__file__).parent / "fixtures"
+
+
+@pytest.fixture(
+    params=scenario_list(fixtures_dir),
+    ids=attrgetter("name"),
+)
+def scenario(request):
+    return request.param
+
+
+def test_yaml_snippet(check_generator):
+    check_generator(project_multibranch.WorkflowMultiBranch)

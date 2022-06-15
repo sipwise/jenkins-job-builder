@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+#
 # Joint copyright:
 #  - Copyright 2012,2013 Wikimedia Foundation
 #  - Copyright 2012,2013 Antoine "hashar" Musso
@@ -15,13 +17,25 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import os
+from operator import attrgetter
+from pathlib import Path
 
+import pytest
+
+from tests.enum_scenarios import scenario_list
 from jenkins_jobs.modules import builders
-from tests import base
 
 
-class TestCaseModuleBuilders(base.BaseScenariosTestCase):
-    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
-    scenarios = base.get_scenarios(fixtures_path)
-    klass = builders.Builders
+fixtures_dir = Path(__file__).parent / "fixtures"
+
+
+@pytest.fixture(
+    params=scenario_list(fixtures_dir),
+    ids=attrgetter("name"),
+)
+def scenario(request):
+    return request.param
+
+
+def test_yaml_snippet(check_generator):
+    check_generator(builders.Builders)

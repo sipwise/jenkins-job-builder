@@ -13,24 +13,30 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import os
+from operator import attrgetter
+from pathlib import Path
 
-from testtools import ExpectedException
+import pytest
 
 from jenkins_jobs.errors import JenkinsJobsException
-from tests import base
-from tests.base import mock
+from tests.enum_scenarios import scenario_list
 
 
-class TestCaseModuleDuplicates(base.SingleJobTestCase):
-    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
-    scenarios = base.get_scenarios(fixtures_path)
+fixtures_dir = Path(__file__).parent / "fixtures"
 
-    @mock.patch("jenkins_jobs.builder.logger", autospec=True)
-    def test_yaml_snippet(self, mock_logger):
 
-        if os.path.basename(self.in_filename).startswith("exception_"):
-            with ExpectedException(JenkinsJobsException, "^Duplicate .*"):
-                super(TestCaseModuleDuplicates, self).test_yaml_snippet()
-        else:
-            super(TestCaseModuleDuplicates, self).test_yaml_snippet()
+@pytest.fixture(
+    params=scenario_list(fixtures_dir),
+    ids=attrgetter("name"),
+)
+def scenario(request):
+    return request.param
+
+
+def test_yaml_snippet(scenario, check_job):
+    if scenario.in_path.name.startswith("exception_"):
+        with pytest.raises(JenkinsJobsException) as excinfo:
+            check_job()
+        assert str(excinfo.value).startswith("Duplicate ")
+    else:
+        check_job()

@@ -13,33 +13,40 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import os
+import os.path
+
+import pytest
 
 import jenkins_jobs
-from tests import base
-from tests.base import mock
 
 
-class TestCaseJobCache(base.BaseTestCase):
-    @mock.patch("jenkins_jobs.builder.JobCache.get_cache_dir", lambda x: "/bad/file")
-    def test_save_on_exit(self):
-        """
-        Test that the cache is saved on normal object deletion
-        """
+# Override fixture - do not use this mock.
+@pytest.fixture(autouse=True)
+def job_cache_mocked(mocker):
+    pass
 
-        with mock.patch("jenkins_jobs.builder.JobCache.save") as save_mock:
-            with mock.patch("os.path.isfile", return_value=False):
-                with mock.patch("jenkins_jobs.builder.JobCache._lock"):
-                    jenkins_jobs.builder.JobCache("dummy")
-            save_mock.assert_called_with()
 
-    @mock.patch("jenkins_jobs.builder.JobCache.get_cache_dir", lambda x: "/bad/file")
-    def test_cache_file(self):
-        """
-        Test providing a cachefile.
-        """
-        test_file = os.path.abspath(__file__)
-        with mock.patch("os.path.join", return_value=test_file):
-            with mock.patch("yaml.safe_load"):
-                with mock.patch("jenkins_jobs.builder.JobCache._lock"):
-                    jenkins_jobs.builder.JobCache("dummy").data = None
+def test_save_on_exit(mocker):
+    """
+    Test that the cache is saved on normal object deletion
+    """
+    mocker.patch("jenkins_jobs.builder.JobCache.get_cache_dir", lambda x: "/bad/file")
+
+    save_mock = mocker.patch("jenkins_jobs.builder.JobCache.save")
+    mocker.patch("os.path.isfile", return_value=False)
+    mocker.patch("jenkins_jobs.builder.JobCache._lock")
+    jenkins_jobs.builder.JobCache("dummy")
+    save_mock.assert_called_with()
+
+
+def test_cache_file(mocker):
+    """
+    Test providing a cachefile.
+    """
+    mocker.patch("jenkins_jobs.builder.JobCache.get_cache_dir", lambda x: "/bad/file")
+
+    test_file = os.path.abspath(__file__)
+    mocker.patch("os.path.join", return_value=test_file)
+    mocker.patch("yaml.safe_load")
+    mocker.patch("jenkins_jobs.builder.JobCache._lock")
+    jenkins_jobs.builder.JobCache("dummy").data = None

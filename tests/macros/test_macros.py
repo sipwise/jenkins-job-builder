@@ -15,11 +15,24 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import os
+from operator import attrgetter
+from pathlib import Path
 
-from tests import base
+import pytest
+
+from tests.enum_scenarios import scenario_list
 
 
-class TestCaseModuleSCMMacro(base.SingleJobTestCase):
-    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
-    scenarios = base.get_scenarios(fixtures_path)
+fixtures_dir = Path(__file__).parent / "fixtures"
+
+
+@pytest.fixture(
+    params=scenario_list(fixtures_dir),
+    ids=attrgetter("name"),
+)
+def scenario(request):
+    return request.param
+
+
+def test_yaml_snippet(check_job):
+    check_job()

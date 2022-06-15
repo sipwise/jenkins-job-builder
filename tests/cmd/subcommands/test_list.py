@@ -12,87 +12,83 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
-import io
-import os
 
-from testscenarios.testcase import TestWithScenarios
+from collections import namedtuple
 
-from tests.base import mock
-from tests.cmd.test_cmd import CmdTestsBase
+import pytest
 
 
-@mock.patch("jenkins_jobs.builder.JenkinsManager.get_plugins_info", mock.MagicMock)
-class ListFromJenkinsTests(TestWithScenarios, CmdTestsBase):
+JobsScenario = namedtuple("JobsScnenario", "name jobs globs found")
 
-    scenarios = [
-        ("single", dict(jobs=["job1"], globs=[], found=["job1"])),
-        ("multiple", dict(jobs=["job1", "job2"], globs=[], found=["job1", "job2"])),
-        (
-            "multiple_with_folder",
-            dict(
-                jobs=["folder1", "folder1/job1", "folder1/job2"],
-                globs=[],
-                found=["folder1", "folder1/job1", "folder1/job2"],
-            ),
-        ),
-        (
-            "multiple_with_glob",
-            dict(
-                jobs=["job1", "job2", "job3"],
-                globs=["job[1-2]"],
-                found=["job1", "job2"],
-            ),
-        ),
-        (
-            "multiple_with_multi_glob",
-            dict(
-                jobs=["job1", "job2", "job3", "job4"],
-                globs=["job1", "job[24]"],
-                found=["job1", "job2", "job4"],
-            ),
-        ),
-    ]
-
-    @mock.patch("jenkins_jobs.builder.JenkinsManager.get_jobs")
-    def test_list(self, get_jobs_mock):
-        def _get_jobs():
-            return [{"fullname": fullname} for fullname in self.jobs]
-
-        get_jobs_mock.side_effect = _get_jobs
-        console_out = io.BytesIO()
-
-        args = ["--conf", self.default_config_file, "list"] + self.globs
-
-        with mock.patch("sys.stdout", console_out):
-            self.execute_jenkins_jobs_with_args(args)
-
-        self.assertEqual(
-            console_out.getvalue().decode("utf-8").rstrip(), ("\n".join(self.found))
-        )
+jobs_scenarios = [
+    JobsScenario("single", jobs=["job1"], globs=[], found=["job1"]),
+    JobsScenario("multiple", jobs=["job1", "job2"], globs=[], found=["job1", "job2"]),
+    JobsScenario(
+        "multiple_with_folder",
+        jobs=["folder1", "folder1/job1", "folder1/job2"],
+        globs=[],
+        found=["folder1", "folder1/job1", "folder1/job2"],
+    ),
+    JobsScenario(
+        "multiple_with_glob",
+        jobs=["job1", "job2", "job3"],
+        globs=["job[1-2]"],
+        found=["job1", "job2"],
+    ),
+    JobsScenario(
+        "multiple_with_multi_glob",
+        jobs=["job1", "job2", "job3", "job4"],
+        globs=["job1", "job[24]"],
+        found=["job1", "job2", "job4"],
+    ),
+]
 
 
-@mock.patch("jenkins_jobs.builder.JenkinsManager.get_plugins_info", mock.MagicMock)
-class ListFromYamlTests(TestWithScenarios, CmdTestsBase):
+@pytest.mark.parametrize(
+    "scenario",
+    [pytest.param(s, id=s.name) for s in jobs_scenarios],
+)
+def test_from_jenkins_tests(
+    capsys, mocker, default_config_file, execute_jenkins_jobs, scenario
+):
+    def get_jobs():
+        return [{"fullname": fullname} for fullname in scenario.jobs]
 
-    scenarios = [
-        ("all", dict(globs=[], found=["bam001", "bar001", "bar002", "baz001"])),
-        (
-            "some",
-            dict(
-                globs=["*am*", "*002", "bar001"], found=["bam001", "bar001", "bar002"]
-            ),
-        ),
-    ]
+    mocker.patch("jenkins_jobs.builder.JenkinsManager.get_jobs", side_effect=get_jobs)
 
-    def test_list(self):
-        path = os.path.join(self.fixtures_path, "cmd-002.yaml")
+    args = ["--conf", default_config_file, "list"] + scenario.globs
+    execute_jenkins_jobs(args)
 
-        console_out = io.BytesIO()
-        with mock.patch("sys.stdout", console_out):
-            self.execute_jenkins_jobs_with_args(
-                ["--conf", self.default_config_file, "list", "-p", path] + self.globs
-            )
+    expected_out = "\n".join(scenario.found)
+    captured = capsys.readouterr()
+    assert captured.out.rstrip() == expected_out
 
-        self.assertEqual(
-            console_out.getvalue().decode("utf-8").rstrip(), ("\n".join(self.found))
-        )
+
+YamlScenario = namedtuple("YamlScnenario", "name globs found")
+
+yaml_scenarios = [
+    YamlScenario("all", globs=[], found=["bam001", "bar001", "bar002", "baz001"]),
+    YamlScenario(
+        "some",
+        globs=["*am*", "*002", "bar001"],
+        found=["bam001", "bar001", "bar002"],
+    ),
+]
+
+
+@pytest.mark.parametrize(
+    "scenario",
+    [pytest.param(s, id=s.name) for s in yaml_scenarios],
+)
+def test_from_yaml_tests(
+    capsys, fixtures_dir, default_config_file, execute_jenkins_jobs, scenario
+):
+    path = fixtures_dir / "cmd-002.yaml"
+
+    execute_jenkins_jobs(
+        ["--conf", default_config_file, "list", "-p", str(path)] + scenario.globs
+    )
+
+    expected_out = "\n".join(scenario.found)
+    captured = capsys.readouterr()
+    assert captured.out.rstrip() == expected_out

@@ -17,31 +17,30 @@
 # of actions by the JJB library, usually through interaction with the
 # python-jenkins library.
 
-from tests.base import mock
-from tests.cmd.test_cmd import CmdTestsBase
+import pytest
 
 
-@mock.patch("jenkins_jobs.builder.JenkinsManager.get_plugins_info", mock.MagicMock)
-class DeleteAllTests(CmdTestsBase):
-    @mock.patch("jenkins_jobs.cli.subcommand.update." "JenkinsManager.delete_all_jobs")
-    def test_delete_all_accept(self, delete_job_mock):
-        """
-        Test handling the deletion of a single Jenkins job.
-        """
+def test_delete_all_accept(mocker, default_config_file, execute_jenkins_jobs):
+    """
+    Test handling the deletion of a single Jenkins job.
+    """
 
-        args = ["--conf", self.default_config_file, "delete-all"]
-        with mock.patch(
-            "jenkins_jobs.builder.JenkinsManager.get_views", return_value=[None]
-        ):
-            with mock.patch("jenkins_jobs.utils.input", return_value="y"):
-                self.execute_jenkins_jobs_with_args(args)
+    mocker.patch("jenkins_jobs.cli.subcommand.update.JenkinsManager.delete_all_jobs")
+    mocker.patch("jenkins_jobs.builder.JenkinsManager.get_views", return_value=[None])
+    mocker.patch("jenkins_jobs.utils.input", return_value="y")
 
-    @mock.patch("jenkins_jobs.cli.subcommand.update." "JenkinsManager.delete_all_jobs")
-    def test_delete_all_abort(self, delete_job_mock):
-        """
-        Test handling the deletion of a single Jenkins job.
-        """
+    args = ["--conf", default_config_file, "delete-all"]
+    execute_jenkins_jobs(args)
 
-        args = ["--conf", self.default_config_file, "delete-all"]
-        with mock.patch("jenkins_jobs.utils.input", return_value="n"):
-            self.assertRaises(SystemExit, self.execute_jenkins_jobs_with_args, args)
+
+def test_delete_all_abort(mocker, default_config_file, execute_jenkins_jobs):
+    """
+    Test handling the deletion of a single Jenkins job.
+    """
+
+    mocker.patch("jenkins_jobs.cli.subcommand.update.JenkinsManager.delete_all_jobs")
+    mocker.patch("jenkins_jobs.utils.input", return_value="n")
+
+    args = ["--conf", default_config_file, "delete-all"]
+    with pytest.raises(SystemExit):
+        execute_jenkins_jobs(args)
