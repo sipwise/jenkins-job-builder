@@ -90,6 +90,10 @@ execute the command::
 
     tox -e py38
 
+Unit tests could be run in parallel, using pytest-parallel pytest plugin::
+
+    tox -e py38 -- --workers=auto
+
 * Note: View ``tox.ini`` to run tests on other versions of Python,
   generating the documentation and additionally for any special notes
   on running the test to validate documentation external URLs from behind

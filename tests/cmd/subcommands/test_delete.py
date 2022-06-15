@@ -18,55 +18,57 @@
 # of actions by the JJB library, usually through interaction with the
 # python-jenkins library.
 
-import os
-
-from tests.base import mock
-from tests.cmd.test_cmd import CmdTestsBase
+from unittest import mock
 
 
-@mock.patch("jenkins_jobs.builder.JenkinsManager.get_plugins_info", mock.MagicMock)
-class DeleteTests(CmdTestsBase):
-    @mock.patch("jenkins_jobs.cli.subcommand.update." "JenkinsManager.delete_jobs")
-    @mock.patch("jenkins_jobs.cli.subcommand.update." "JenkinsManager.delete_views")
-    def test_delete_single_job(self, delete_job_mock, delete_view_mock):
-        """
-        Test handling the deletion of a single Jenkins job.
-        """
+def test_delete_single_job(mocker, default_config_file, execute_jenkins_jobs):
+    """
+    Test handling the deletion of a single Jenkins job.
+    """
 
-        args = ["--conf", self.default_config_file, "delete", "test_job"]
-        self.execute_jenkins_jobs_with_args(args)
+    mocker.patch("jenkins_jobs.cli.subcommand.update.JenkinsManager.delete_jobs")
+    mocker.patch("jenkins_jobs.cli.subcommand.update.JenkinsManager.delete_views")
 
-    @mock.patch("jenkins_jobs.cli.subcommand.update." "JenkinsManager.delete_jobs")
-    @mock.patch("jenkins_jobs.cli.subcommand.update." "JenkinsManager.delete_views")
-    def test_delete_multiple_jobs(self, delete_job_mock, delete_view_mock):
-        """
-        Test handling the deletion of multiple Jenkins jobs.
-        """
+    args = ["--conf", default_config_file, "delete", "test_job"]
+    execute_jenkins_jobs(args)
 
-        args = ["--conf", self.default_config_file, "delete", "test_job1", "test_job2"]
-        self.execute_jenkins_jobs_with_args(args)
 
-    @mock.patch("jenkins_jobs.builder.JenkinsManager.delete_job")
-    def test_delete_using_glob_params(self, delete_job_mock):
-        """
-        Test handling the deletion of multiple Jenkins jobs using the glob
-        parameters feature.
-        """
+def test_delete_multiple_jobs(mocker, default_config_file, execute_jenkins_jobs):
+    """
+    Test handling the deletion of multiple Jenkins jobs.
+    """
 
-        args = [
-            "--conf",
-            self.default_config_file,
-            "delete",
-            "--path",
-            os.path.join(self.fixtures_path, "cmd-002.yaml"),
-            "*bar*",
-        ]
-        self.execute_jenkins_jobs_with_args(args)
-        calls = [mock.call("bar001"), mock.call("bar002")]
-        delete_job_mock.assert_has_calls(calls, any_order=True)
-        self.assertEqual(
-            delete_job_mock.call_count,
-            len(calls),
-            "Jenkins.delete_job() was called '%s' times when "
-            "expected '%s'" % (delete_job_mock.call_count, len(calls)),
-        )
+    mocker.patch("jenkins_jobs.cli.subcommand.update.JenkinsManager.delete_jobs")
+    mocker.patch("jenkins_jobs.cli.subcommand.update.JenkinsManager.delete_views")
+
+    args = ["--conf", default_config_file, "delete", "test_job1", "test_job2"]
+    execute_jenkins_jobs(args)
+
+
+def test_delete_using_glob_params(
+    mocker, fixtures_dir, default_config_file, execute_jenkins_jobs
+):
+    """
+    Test handling the deletion of multiple Jenkins jobs using the glob
+    parameters feature.
+    """
+
+    delete_job_mock = mocker.patch("jenkins_jobs.builder.JenkinsManager.delete_job")
+
+    args = [
+        "--conf",
+        default_config_file,
+        "delete",
+        "--path",
+        str(fixtures_dir / "cmd-002.yaml"),
+        "*bar*",
+    ]
+    execute_jenkins_jobs(args)
+    calls = [mock.call("bar001"), mock.call("bar002")]
+    delete_job_mock.assert_has_calls(calls, any_order=True)
+    assert delete_job_mock.call_count == len(
+        calls
+    ), "Jenkins.delete_job() was called '%s' times when " "expected '%s'" % (
+        delete_job_mock.call_count,
+        len(calls),
+    )

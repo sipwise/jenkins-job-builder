@@ -12,47 +12,62 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.import os
 
-import os
+from operator import attrgetter
+from pathlib import Path
+
+import pytest
+
 from jenkins_jobs.modules import view_all
 from jenkins_jobs.modules import view_delivery_pipeline
 from jenkins_jobs.modules import view_list
 from jenkins_jobs.modules import view_nested
 from jenkins_jobs.modules import view_pipeline
 from jenkins_jobs.modules import view_sectioned
-from tests import base
+from tests.enum_scenarios import scenario_list
 
 
-class TestCaseModuleViewAll(base.BaseScenariosTestCase):
-    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
-    scenarios = base.get_scenarios(fixtures_path)
-    klass = view_all.All
+fixtures_dir = Path(__file__).parent / "fixtures"
 
 
-class TestCaseModuleViewDeliveryPipeline(base.BaseScenariosTestCase):
-    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
-    scenarios = base.get_scenarios(fixtures_path)
-    klass = view_delivery_pipeline.DeliveryPipeline
+@pytest.fixture(
+    params=scenario_list(fixtures_dir),
+    ids=attrgetter("name"),
+)
+def scenario(request):
+    return request.param
 
 
-class TestCaseModuleViewList(base.BaseScenariosTestCase):
-    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
-    scenarios = base.get_scenarios(fixtures_path)
-    klass = view_list.List
+# But actually this is a view.
+@pytest.fixture
+def project(input, registry):
+    type_to_class = {
+        "all": view_all.All,
+        "delivery_pipeline": view_delivery_pipeline.DeliveryPipeline,
+        "list": view_list.List,
+        "nested": view_nested.Nested,
+        "pipeline": view_pipeline.Pipeline,
+        "sectioned": view_sectioned.Sectioned,
+    }
+    try:
+        class_name = input["view-type"]
+    except KeyError:
+        raise RuntimeError("'view-type' element is expected in input yaml")
+    cls = type_to_class[class_name]
+    return cls(registry)
 
 
-class TestCaseModuleViewNested(base.BaseScenariosTestCase):
-    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
-    scenarios = base.get_scenarios(fixtures_path)
-    klass = view_nested.Nested
+view_class_list = [
+    view_all.All,
+    view_delivery_pipeline.DeliveryPipeline,
+    view_list.List,
+    view_nested.Nested,
+    view_pipeline.Pipeline,
+    view_sectioned.Sectioned,
+]
 
 
-class TestCaseModuleViewPipeline(base.BaseScenariosTestCase):
-    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
-    scenarios = base.get_scenarios(fixtures_path)
-    klass = view_pipeline.Pipeline
-
-
-class TestCaseModuleViewSectioned(base.BaseScenariosTestCase):
-    fixtures_path = os.path.join(os.path.dirname(__file__), "fixtures")
-    scenarios = base.get_scenarios(fixtures_path)
-    klass = view_sectioned.Sectioned
+@pytest.mark.parametrize(
+    "view_class", [pytest.param(cls, id=cls.__name__) for cls in view_class_list]
+)
+def test_view(view_class, check_generator):
+    check_generator(view_class)

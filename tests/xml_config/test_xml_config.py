@@ -12,65 +12,67 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import os
+from pathlib import Path
 
-from jenkins_jobs import errors
-from jenkins_jobs import parser
-from jenkins_jobs import registry
-from jenkins_jobs import xml_config
+import pytest
 
-from tests import base
+from jenkins_jobs.config import JJBConfig
+from jenkins_jobs.errors import JenkinsJobsException
+from jenkins_jobs.parser import YamlParser
+from jenkins_jobs.registry import ModuleRegistry
+from jenkins_jobs.xml_config import XmlJobGenerator, XmlViewGenerator
 
 
-class TestXmlJobGeneratorExceptions(base.BaseTestCase):
-    fixtures_path = os.path.join(os.path.dirname(__file__), "exceptions")
+fixtures_dir = Path(__file__).parent / "exceptions"
 
-    def test_invalid_project(self):
-        self.conf_filename = None
-        config = self._get_config()
 
-        yp = parser.YamlParser(config)
-        yp.parse(os.path.join(self.fixtures_path, "invalid_project.yaml"))
+@pytest.fixture
+def config():
+    config = JJBConfig()
+    config.validate()
+    return config
 
-        reg = registry.ModuleRegistry(config)
-        job_data, _ = yp.expandYaml(reg)
 
-        # Generate the XML tree
-        xml_generator = xml_config.XmlJobGenerator(reg)
-        e = self.assertRaises(
-            errors.JenkinsJobsException, xml_generator.generateXML, job_data
-        )
-        self.assertIn("Unrecognized project-type:", str(e))
+@pytest.fixture
+def parser(config):
+    return YamlParser(config)
 
-    def test_invalid_view(self):
-        self.conf_filename = None
-        config = self._get_config()
 
-        yp = parser.YamlParser(config)
-        yp.parse(os.path.join(self.fixtures_path, "invalid_view.yaml"))
+@pytest.fixture
+def registry(config):
+    return ModuleRegistry(config)
 
-        reg = registry.ModuleRegistry(config)
-        _, view_data = yp.expandYaml(reg)
 
-        # Generate the XML tree
-        xml_generator = xml_config.XmlViewGenerator(reg)
-        e = self.assertRaises(
-            errors.JenkinsJobsException, xml_generator.generateXML, view_data
-        )
-        self.assertIn("Unrecognized view-type:", str(e))
+def test_invalid_project(parser, registry):
+    parser.parse(str(fixtures_dir / "invalid_project.yaml"))
+    jobs, views = parser.expandYaml(registry)
 
-    def test_incorrect_template_params(self):
-        self.conf_filename = None
-        config = self._get_config()
+    generator = XmlJobGenerator(registry)
 
-        yp = parser.YamlParser(config)
-        yp.parse(os.path.join(self.fixtures_path, "failure_formatting_component.yaml"))
+    with pytest.raises(JenkinsJobsException) as excinfo:
+        generator.generateXML(jobs)
+    assert "Unrecognized project-type:" in str(excinfo.value)
 
-        reg = registry.ModuleRegistry(config)
-        reg.set_parser_data(yp.data)
-        job_data_list, view_data_list = yp.expandYaml(reg)
 
-        xml_generator = xml_config.XmlJobGenerator(reg)
-        self.assertRaises(Exception, xml_generator.generateXML, job_data_list)
-        self.assertIn("Failure formatting component", self.logger.output)
-        self.assertIn("Problem formatting with args", self.logger.output)
+def test_invalid_view(parser, registry):
+    parser.parse(str(fixtures_dir / "invalid_view.yaml"))
+    jobs, views = parser.expandYaml(registry)
+
+    generator = XmlViewGenerator(registry)
+
+    with pytest.raises(JenkinsJobsException) as excinfo:
+        generator.generateXML(views)
+    assert "Unrecognized view-type:" in str(excinfo.value)
+
+
+def test_template_params(caplog, parser, registry):
+    parser.parse(str(fixtures_dir / "failure_formatting_component.yaml"))
+    registry.set_parser_data(parser.data)
+    jobs, views = parser.expandYaml(registry)
+
+    generator = XmlJobGenerator(registry)
+
+    with pytest.raises(Exception):
+        generator.generateXML(jobs)
+    assert "Failure formatting component" in caplog.text
+    assert "Problem formatting with args" in caplog.text
