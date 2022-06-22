@@ -16,6 +16,24 @@
       "message": "This should be documented somewhere. Additionally you should add a test case to ensure enabling this option produces the right output.",
       "revId": "a955bce65cc603eaaa1b2a169ea16aff72507da0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8d38558_12099738",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 34916
+      },
+      "writtenOn": "2022-06-22T12:08:43Z",
+      "side": 1,
+      "message": "Documentation added and testing in multi_scm_full.yaml",
+      "parentUuid": "9a8d946f_93cfe71e",
+      "revId": "a955bce65cc603eaaa1b2a169ea16aff72507da0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
