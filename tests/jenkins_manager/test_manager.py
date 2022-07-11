@@ -45,17 +45,13 @@ def test_plugins_list_from_jenkins(mocker, jjb_config):
         jenkins_jobs.builder.jenkins.Jenkins, "get_plugins", return_value=_plugins_info
     )
     # Trigger fetching the plugins from jenkins when accessing the property
-    jjb_config.builder["plugins_info"] = {}
+    jjb_config.builder["plugins_info"] = None
     builder = jenkins_jobs.builder.JenkinsManager(jjb_config)
-    # See https://github.com/formiaczek/multi_key_dict/issues/17
-    # self.assertEqual(self.builder.plugins_list, k)
-    for key_tuple in builder.plugins_list.keys():
-        for key in key_tuple:
-            assert builder.plugins_list[key] == _plugins_info[key]
+    assert list(builder.plugins_list) == list(_plugins_info.values())
 
 
 def test_delete_managed(mocker, jjb_config):
-    jjb_config.builder["plugins_info"] = {}
+    jjb_config.builder["plugins_info"] = None
     builder = jenkins_jobs.builder.JenkinsManager(jjb_config)
 
     patches = mocker.patch.multiple(
