@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "033c105a_79780930",
+        "filename": "tests/parameters/fixtures/git-parameter-param-full.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 34567
+      },
+      "writtenOn": "2022-07-12T08:03:31Z",
+      "side": 1,
+      "message": "This is a default value. When using it in test, we are not actually checking that value passed is used.\n\nI think better to change it to something else, like 123.",
+      "revId": "9ed63a98db805a0ec6ef14476bc78799ea2320b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
