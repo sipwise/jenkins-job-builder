@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ecb98c7e_cffde03c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34567
+      },
+      "writtenOn": "2022-07-13T08:24:08Z",
+      "side": 1,
+      "message": "Test coverage:\nBefore (from review https://review.opendev.org/c/jjb/jenkins-job-builder/+/849297):\nhttps://c75a355f7aec62c918a1-10955244430898ac5659b860db970033.ssl.cf5.rackcdn.com/849297/1/check/tox-cover/c5a8629/cover/\nAfter (from this review):\nhttps://0349974870174d62a6da-8808c7dad455f40256be2047078d3ae0.ssl.cf1.rackcdn.com/849627/1/check/tox-cover/e61b753/cover/\n",
+      "revId": "3bfa2cb3f420bdab45bba63a07a5152f9efb7765",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
