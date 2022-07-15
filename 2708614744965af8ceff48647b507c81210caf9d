@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3012dd4b_c33642d3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2022-07-15T11:33:00Z",
+      "side": 1,
+      "message": "Sorry for the long delay, i\u0027ve finally got time to get back to this effort.\n\nI\u0027ve added the tests as also modified accordingly to previous comments.\nLikely this will need also docs update.\n\nAnother thing I\u0027m not so happy about is, that currently the detection of possible conflict happens only when jinja2 template is used by template.\nWhile that may be ok, as that is the only case when it injects the jjb_variables,\ni wonder if reserved names should not be detected and warned about always - like in https://opendev.org/jjb/jenkins-job-builder/src/branch/master/jenkins_jobs/parser.py#L480 right after the .update() expansion is done.\nThough currently this is only specific for jinja2 - so maybe the exposed name should be \u0027jjb_j2_variables\u0027 instead, to scope it accordingly?",
+      "revId": "2708614744965af8ceff48647b507c81210caf9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}

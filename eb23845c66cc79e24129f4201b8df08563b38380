@@ -121,6 +121,24 @@
       "parentUuid": "68888b93_9c28cba6",
       "revId": "eb23845c66cc79e24129f4201b8df08563b38380",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "43c0d892_abd895ee",
+        "filename": "jenkins_jobs/local_yaml.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 6683
+      },
+      "writtenOn": "2022-07-15T11:33:00Z",
+      "side": 1,
+      "message": "- switched to name \u0027jjb_variables\u0027\n- made it function (lambda)\n- added error in case that name is already defined by user",
+      "parentUuid": "3d4d6df2_1b8cf10c",
+      "revId": "eb23845c66cc79e24129f4201b8df08563b38380",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
