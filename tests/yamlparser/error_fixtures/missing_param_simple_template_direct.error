@@ -1,7 +1,1 @@
-missing_param parameter missing to format echo {missing_param}
-
-Given:
-{'': '',
- 'builders': [OrderedDict([('shell', 'echo {missing_param}\n')])],
- 'name': 'sample-project',
- 'template-name': 'sample-job'}
+While formatting string 'echo {missing_param}\n': Missing parameter: 'missing_param'

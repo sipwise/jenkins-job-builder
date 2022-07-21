@@ -16,12 +16,10 @@
 
 from jenkins_jobs.builder import JenkinsManager
 from jenkins_jobs.errors import JenkinsJobsException
-from jenkins_jobs.parser import YamlParser
-from jenkins_jobs.registry import ModuleRegistry
 import jenkins_jobs.cli.subcommand.base as base
 
 
-class DeleteSubCommand(base.BaseSubCommand):
+class DeleteSubCommand(base.JobsSubCommand):
     def parse_args(self, subparser):
         delete = subparser.add_parser("delete")
 
@@ -59,23 +57,20 @@ class DeleteSubCommand(base.BaseSubCommand):
                 '"--views-only" and "--jobs-only" cannot be used together.'
             )
 
-        fn = options.path
-        registry = ModuleRegistry(jjb_config, builder.plugins_list)
-        parser = YamlParser(jjb_config)
-
-        if fn:
-            parser.load_files(fn)
-            parser.expandYaml(registry, options.name)
-            jobs = [j["name"] for j in parser.jobs]
-            views = [v["name"] for v in parser.views]
+        if options.path:
+            roots = self.load_roots(jjb_config, options.path)
+            jobs = base.filter_matching(roots.generate_jobs(), options.name)
+            views = base.filter_matching(roots.generate_views(), options.name)
+            job_names = [j["name"] for j in jobs]
+            view_names = [v["name"] for v in views]
         else:
-            jobs = options.name
-            views = options.name
+            job_names = options.name
+            view_names = options.name
 
         if options.del_jobs:
-            builder.delete_jobs(jobs)
+            builder.delete_jobs(job_names)
         elif options.del_views:
-            builder.delete_views(views)
+            builder.delete_views(view_names)
         else:
-            builder.delete_jobs(jobs)
-            builder.delete_views(views)
+            builder.delete_jobs(job_names)
+            builder.delete_views(view_names)

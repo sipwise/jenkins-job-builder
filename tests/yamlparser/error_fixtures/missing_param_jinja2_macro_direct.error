@@ -1,1 +1,1 @@
-'missing_param' is undefined
+While expanding macro 'sample-builder': While formatting jinja2 template 'echo {{ missing_param }} {{ other_param ...': 'missing_param' is undefined
