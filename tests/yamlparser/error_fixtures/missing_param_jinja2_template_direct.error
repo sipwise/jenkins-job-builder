@@ -1,1 +1,1 @@
-'missing_param' is undefined
+While formatting jinja2 template 'echo {{ missing_param }}\n': 'missing_param' is undefined

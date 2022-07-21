@@ -136,7 +136,7 @@ def test_update_timeout_not_set(mocker, fixtures_dir, default_config_file):
     Test that the Jenkins object has the timeout set on it only when
     provided via the config option.
     """
-    jenkins_mock = mocker.patch("jenkins_jobs.cli.subcommand.update.JenkinsManager")
+    jenkins_mock = mocker.patch("jenkins_jobs.cli.subcommand.base.JenkinsManager")
 
     path = fixtures_dir / "cmd-002.yaml"
     args = ["--conf", default_config_file, "update", str(path)]
@@ -159,7 +159,7 @@ def test_update_timeout_set(mocker, fixtures_dir):
     Test that the Jenkins object has the timeout set on it only when
     provided via the config option.
     """
-    jenkins_mock = mocker.patch("jenkins_jobs.cli.subcommand.update.JenkinsManager")
+    jenkins_mock = mocker.patch("jenkins_jobs.cli.subcommand.base.JenkinsManager")
 
     path = fixtures_dir / "cmd-002.yaml"
     config_file = fixtures_dir / "non-default-timeout.ini"

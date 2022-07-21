@@ -11,9 +11,13 @@
   <scm class="hudson.scm.NullSCM"/>
   <builders>
     <hudson.tasks.Shell>
-      <command>echo job_param_1=[{project_param_1} at-job-param-1]
-echo job_param_2=[{project_job_param_1} at-job-param-2]
-echo job_param_4=[{job_param_3} at-job-param-4]
+      <command>echo job_param_1=[project-param-1-value at-job-param-1]
+echo job_param_2=[project-job-param-1 at-job-param-2]
+echo job_param_4=[job-param-3-value at-job-param-4]
+</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>echo project_param_2=[project-job-param-1 at-job-param-2 at-project-param-2]
 </command>
     </hudson.tasks.Shell>
   </builders>
@@ -33,7 +37,11 @@ echo job_param_4=[{job_param_3} at-job-param-4]
   <scm class="hudson.scm.NullSCM"/>
   <builders>
     <hudson.tasks.Shell>
-      <command>echo job_param_1=[{group_param_1} at-job-param-1]
+      <command>echo job_param_1=[group-param-1-value at-job-param-1]
+</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>echo group_param_2=[job-param-2-value at-group-param-2]
 </command>
     </hudson.tasks.Shell>
   </builders>
