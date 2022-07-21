@@ -1,0 +1,13 @@
+# Attempt to use same parameter name in it's value leads to 'Recursive parameters usage' error.
+
+- job-template:
+    name: sample-job
+    timer: '{timer}'
+    builders:
+      - shell: |
+          echo {timer}
+
+- project:
+    name: sample-project
+    jobs:
+      - sample-job

@@ -14,4 +14,4 @@
       !include: lazy-load-wrappers-{version}.yaml.inc
     builders:
       - shell:
-          !include-raw: echo_vars_{version}.sh
+          !include-raw-escape: echo_vars_{version}.sh

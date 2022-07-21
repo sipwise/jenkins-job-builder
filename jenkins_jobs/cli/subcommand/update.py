@@ -15,13 +15,7 @@
 
 import logging
 import sys
-import time
 
-from jenkins_jobs.builder import JenkinsManager
-from jenkins_jobs.parser import YamlParser
-from jenkins_jobs.registry import ModuleRegistry
-from jenkins_jobs.xml_config import XmlJobGenerator
-from jenkins_jobs.xml_config import XmlViewGenerator
 from jenkins_jobs.errors import JenkinsJobsException
 import jenkins_jobs.cli.subcommand.base as base
 
@@ -29,7 +23,7 @@ import jenkins_jobs.cli.subcommand.base as base
 logger = logging.getLogger(__name__)
 
 
-class UpdateSubCommand(base.BaseSubCommand):
+class UpdateSubCommand(base.JobsSubCommand):
     def parse_arg_path(self, parser):
         parser.add_argument(
             "path",
@@ -99,39 +93,15 @@ class UpdateSubCommand(base.BaseSubCommand):
             help="update only views",
         )
 
-    def _generate_xmljobs(self, options, jjb_config=None):
-        builder = JenkinsManager(jjb_config)
-
-        logger.info("Updating jobs in {0} ({1})".format(options.path, options.names))
-        orig = time.time()
-
-        # Generate XML
-        parser = YamlParser(jjb_config)
-        registry = ModuleRegistry(jjb_config, builder.plugins_list)
-        xml_job_generator = XmlJobGenerator(registry)
-        xml_view_generator = XmlViewGenerator(registry)
-
-        parser.load_files(options.path)
-        registry.set_parser_data(parser.data)
-
-        job_data_list, view_data_list = parser.expandYaml(registry, options.names)
-
-        xml_jobs = xml_job_generator.generateXML(job_data_list)
-        xml_views = xml_view_generator.generateXML(view_data_list)
-
-        jobs = parser.jobs
-        step = time.time()
-        logging.debug("%d XML files generated in %ss", len(jobs), str(step - orig))
-
-        return builder, xml_jobs, xml_views
-
     def execute(self, options, jjb_config):
         if options.n_workers < 0:
             raise JenkinsJobsException(
                 "Number of workers must be equal or greater than 0"
             )
 
-        builder, xml_jobs, xml_views = self._generate_xmljobs(options, jjb_config)
+        builder, xml_jobs, xml_views = self.make_jobs_and_views_xml(
+            jjb_config, options.path, options.names
+        )
 
         if options.update == "jobs":
             jobs, num_updated_jobs = builder.update_jobs(
