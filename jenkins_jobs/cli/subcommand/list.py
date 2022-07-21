@@ -14,11 +14,10 @@
 # under the License.
 import logging
 import sys
+
+from jenkins_jobs.builder import JenkinsManager
 import jenkins_jobs.cli.subcommand.base as base
 import jenkins_jobs.utils as utils
-import jenkins_jobs.builder as builder
-import jenkins_jobs.parser as parser
-import jenkins_jobs.registry as registry
 
 
 def list_duplicates(seq):
@@ -26,7 +25,7 @@ def list_duplicates(seq):
     return set(x for x in seq if x in seen or seen.add(x))
 
 
-class ListSubCommand(base.BaseSubCommand):
+class ListSubCommand(base.JobsSubCommand):
     def parse_args(self, subparser):
         list = subparser.add_parser("list", help="List jobs")
 
@@ -38,10 +37,7 @@ class ListSubCommand(base.BaseSubCommand):
         )
 
     def execute(self, options, jjb_config):
-        self.jjb_config = jjb_config
-        self.jenkins = builder.JenkinsManager(jjb_config)
-
-        jobs = self.get_jobs(options.names, options.path)
+        jobs = self.get_jobs(jjb_config, options.path, options.names)
 
         logging.info("Matching jobs: %d", len(jobs))
         stdout = utils.wrap_stream(sys.stdout)
@@ -49,24 +45,23 @@ class ListSubCommand(base.BaseSubCommand):
         for job in jobs:
             stdout.write((job + "\n").encode("utf-8"))
 
-    def get_jobs(self, jobs_glob=None, fn=None):
-        if fn:
-            r = registry.ModuleRegistry(self.jjb_config, self.jenkins.plugins_list)
-            p = parser.YamlParser(self.jjb_config)
-            p.load_files(fn)
-            p.expandYaml(r, jobs_glob)
-            jobs = [j["name"] for j in p.jobs]
+    def get_jobs(self, jjb_config, path_list, glob_list):
+        if path_list:
+            roots = self.load_roots(jjb_config, path_list)
+            jobs = base.filter_matching(roots.generate_jobs(), glob_list)
+            job_names = [j["name"] for j in jobs]
         else:
-            jobs = [
+            jenkins = JenkinsManager(jjb_config)
+            job_names = [
                 j["fullname"]
-                for j in self.jenkins.get_jobs()
-                if not jobs_glob or parser.matches(j["fullname"], jobs_glob)
+                for j in jenkins.get_jobs()
+                if not glob_list or base.matches(j["fullname"], glob_list)
             ]
 
-        jobs = sorted(jobs)
-        for duplicate in list_duplicates(jobs):
+        job_names = sorted(job_names)
+        for duplicate in list_duplicates(job_names):
             logging.warning("Found duplicate job name '%s', likely bug.", duplicate)
 
-        logging.debug("Builder.get_jobs: returning %r", jobs)
+        logging.debug("Builder.get_jobs: returning %r", job_names)
 
-        return jobs
+        return job_names

@@ -659,12 +659,12 @@ the same anchor name in included files without collisions.
 A simple example can be seen in the specs `full length example`_ with the
 following being more representative of usage within JJB:
 
-.. literalinclude:: /../../tests/localyaml/fixtures/anchors_aliases.iyaml
+.. literalinclude:: /../../tests/loader/fixtures/anchors_aliases.iyaml
 
 
 Which will be expanded to the following yaml before being processed:
 
-.. literalinclude:: /../../tests/localyaml/fixtures/anchors_aliases.oyaml
+.. literalinclude:: /../../tests/loader/fixtures/anchors_aliases.oyaml
 
 
 .. _full length example: https://yaml.org/spec/1.2.2/#25-full-length-example
@@ -674,7 +674,7 @@ Which will be expanded to the following yaml before being processed:
 Custom Yaml Tags
 ----------------
 
-.. automodule:: jenkins_jobs.local_yaml
+.. automodule:: jenkins_jobs.yaml_objects
 
 
 Modules

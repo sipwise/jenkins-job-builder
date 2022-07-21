@@ -191,8 +191,8 @@ def test_plugins_info_stub_option(mocker, fixtures_dir, execute_jenkins_jobs):
     """
     Test handling of plugins_info stub option.
     """
-    mocker.patch("jenkins_jobs.cli.subcommand.update.XmlJobGenerator.generateXML")
-    registry_mock = mocker.patch("jenkins_jobs.cli.subcommand.update.ModuleRegistry")
+    mocker.patch("jenkins_jobs.cli.subcommand.base.XmlJobGenerator.generateXML")
+    registry_mock = mocker.patch("jenkins_jobs.cli.subcommand.base.ModuleRegistry")
 
     plugins_info_stub_yaml_file = fixtures_dir / "plugins-info.yaml"
     args = [
@@ -218,8 +218,8 @@ def test_bogus_plugins_info_stub_option(
     Verify that a JenkinsJobException is raised if the plugins_info stub
     file does not yield a list as its top-level object.
     """
-    mocker.patch("jenkins_jobs.cli.subcommand.update.XmlJobGenerator.generateXML")
-    mocker.patch("jenkins_jobs.cli.subcommand.update.ModuleRegistry")
+    mocker.patch("jenkins_jobs.cli.subcommand.base.XmlJobGenerator.generateXML")
+    mocker.patch("jenkins_jobs.cli.subcommand.base.ModuleRegistry")
 
     plugins_info_stub_yaml_file = fixtures_dir / "bogus-plugins-info.yaml"
     args = [

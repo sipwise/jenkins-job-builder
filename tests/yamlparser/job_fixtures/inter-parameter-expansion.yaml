@@ -6,14 +6,11 @@
     job_param_4: '{job_param_3} at-job-param-4'
     builders:
       - shell: |
-          # Does not substitute project_param_1 value:
           echo job_param_1=[{job_param_1}]
-          # Does not substitute project_job_param_1 value:
           echo job_param_2=[{job_param_2}]
-          # Does not substitute job_param_3 value:
           echo job_param_4=[{job_param_4}]
-      # - shell: |
-      #     echo project_param_2=[{project_param_2}]
+      - shell: |
+          echo project_param_2=[{project_param_2}]
 
 
 - job-template:
@@ -22,24 +19,23 @@
     job_param_2: job-param-2-value
     builders:
       - shell: |
-          # Does not substitute group_param_1 value:
           echo job_param_1=[{job_param_1}]
-      # - shell: |
-      #     echo group_param_2=[{group_param_2}]
+      - shell: |
+          echo group_param_2=[{group_param_2}]
 
 - job-group:
     name: sample-job-group
     jobs:
       - sample-job-2:
           group_param_1: group-param-1-value
-          # Group parameters can not access job parameters:
-          # group_param_2: '{job_param_2} at-group-param-2'
+          # Group parameters can access job parameters:
+          group_param_2: '{job_param_2} at-group-param-2'
 
 - project:
     name: sample-project
     project_param_1: project-param-1-value
-    # Project parameters can not access job parameters:
-    # project_param_2: '{job_param_2} at-project-param-2'
+    # Project parameters can access job parameters:
+    project_param_2: '{job_param_2} at-project-param-2'
     jobs:
       - sample-job-1:
           project_job_param_1: project-job-param-1
