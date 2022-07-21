@@ -1,4 +1,4 @@
-- wrapper_defaults: &wrapper_defaults
+- _wrapper_defaults: &wrapper_defaults
     name: 'wrapper_defaults'
     wrappers:
       - timeout:
@@ -6,7 +6,7 @@
           fail: true
       - timestamps
 
-- job_defaults: &job_defaults
+- _job_defaults: &job_defaults
     name: 'defaults'
     <<: *wrapper_defaults
 

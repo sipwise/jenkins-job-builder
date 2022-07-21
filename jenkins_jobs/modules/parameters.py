@@ -1629,14 +1629,13 @@ class Parameters(jenkins_jobs.modules.base.Base):
                     # Macro parameter without arguments
                     param = {param: {}}
                 param_type = next(iter(param))
-                component = self.registry.parser_data.get("parameter", {}).get(
-                    param_type
-                )
-                if component is None:
+                macro_dict = self.registry.macros.get("parameter", {})
+                macro = macro_dict.get(param_type)
+                if not macro:
                     self._extend_uno_choice_param_data(param, param_type, data)
                 else:
                     # Process macro case.
-                    for macro_param in component.get("parameters", []):
+                    for macro_param in macro.elements:
                         for macro_param_type in macro_param:
                             self._extend_uno_choice_param_data(
                                 macro_param, macro_param_type, data
