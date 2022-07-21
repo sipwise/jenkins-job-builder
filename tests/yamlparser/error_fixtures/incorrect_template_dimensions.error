@@ -1,0 +1,1 @@
+Invalid parameter 'stream' definition for template 'template-incorrect-args-{stream}-{os}': Expected a value or a dict with single element, but got: {'current': None, 'branch': 'current'}

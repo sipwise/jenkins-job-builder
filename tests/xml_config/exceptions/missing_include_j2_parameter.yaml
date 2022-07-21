@@ -1,0 +1,18 @@
+- builder:
+    name: a-builder
+    builders:
+    - shell:
+        !include-jinja2: missing_include_j2.yaml.inc
+
+- project:
+    name: missing_params_for_component
+    jobs:
+      - 'template-requiring-component-param-{os}':
+          os: 'ubuntu-xenial'
+
+- job-template:
+    name: 'template-requiring-component-param-{os}'
+    disabled: true
+    builders:
+    - a-builder:
+        branch: master

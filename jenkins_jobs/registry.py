@@ -25,8 +25,7 @@ import types
 from six import PY2
 
 from jenkins_jobs.errors import JenkinsJobsException
-from jenkins_jobs.formatter import deep_format
-from jenkins_jobs.local_yaml import Jinja2Loader
+from jenkins_jobs.expander import Expander, ParamsExpander
 
 __all__ = ["ModuleRegistry"]
 
@@ -45,6 +44,9 @@ class ModuleRegistry(object):
         self.handlers = {}
         self.jjb_config = jjb_config
         self.masked_warned = {}
+        self._macros = {}
+        self._expander = Expander(jjb_config)
+        self._params_expander = ParamsExpander(jjb_config)
 
         if plugins_list is None:
             self.plugins_dict = {}
@@ -160,11 +162,21 @@ class ModuleRegistry(object):
         return self.handlers[category][name]
 
     @property
-    def parser_data(self):
-        return self.__parser_data
+    def macros(self):
+        return self._macros
 
-    def set_parser_data(self, parser_data):
-        self.__parser_data = parser_data
+    def set_macros(self, macros):
+        self._macros = macros
+
+    def amend_job_dicts(self, job_data_list):
+        while True:
+            changed = False
+            for data in job_data_list:
+                for module in self.modules:
+                    if module.amend_job_dict(data):
+                        changed = True
+            if not changed:
+                break
 
     def get_component_list_type(self, entry_point):
         if entry_point in self._component_type_cache:
@@ -211,26 +223,10 @@ class ModuleRegistry(object):
         if isinstance(component, dict):
             # The component is a singleton dictionary of name: dict(args)
             name, component_data = next(iter(component.items()))
-            if template_data or isinstance(component_data, Jinja2Loader):
+            if template_data:
                 paramdict = {}
                 paramdict.update(template_data)
                 paramdict.update(job_data or {})
-                # Template data contains values that should be interpolated
-                # into the component definition.  To handle Jinja2 templates
-                # that don't contain any variables, we also deep format those.
-                try:
-                    component_data = deep_format(
-                        component_data,
-                        paramdict,
-                        self.jjb_config.yamlparser["allow_empty_variables"],
-                    )
-                except Exception:
-                    logging.error(
-                        "Failure formatting component ('%s') data '%s'",
-                        name,
-                        component_data,
-                    )
-                    raise
         else:
             # The component is a simple string name, eg "run-tests"
             name = component
@@ -307,9 +303,9 @@ class ModuleRegistry(object):
             self._entry_points_cache[component_list_type] = eps
             logger.debug("Cached entry point group %s = %s", component_list_type, eps)
 
-        # check for macro first
-        component = self.parser_data.get(component_type, {}).get(name)
-        if component:
+        macro_dict = self.macros.get(component_type, {})
+        macro = macro_dict.get(name)
+        if macro:
             if name in eps and name not in self.masked_warned:
                 self.masked_warned[name] = True
                 logger.warning(
@@ -318,12 +314,28 @@ class ModuleRegistry(object):
                     "definition" % (name, component_type)
                 )
 
-            for b in component[component_list_type]:
+            # Expand macro strings only if at least one macro parameter is provided.
+            if component_data:
+                expander = self._params_expander
+            else:
+                expander = self._expander
+
+            for b in macro.elements:
+                try:
+                    element = expander.expand(
+                        b, params={**component_data, **(job_data or {})}
+                    )
+                except JenkinsJobsException as x:
+                    raise JenkinsJobsException(f"While expanding macro {name!r}: {x}")
                 # Pass component_data in as template data to this function
                 # so that if the macro is invoked with arguments,
                 # the arguments are interpolated into the real defn.
                 self.dispatch(
-                    component_type, xml_parent, b, component_data, job_data=job_data
+                    component_type,
+                    xml_parent,
+                    element,
+                    component_data,
+                    job_data=job_data,
                 )
         elif name in eps:
             func = eps[name]
