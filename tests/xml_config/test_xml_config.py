@@ -18,35 +18,41 @@ import pytest
 
 from jenkins_jobs.config import JJBConfig
 from jenkins_jobs.errors import JenkinsJobsException
-from jenkins_jobs.parser import YamlParser
-from jenkins_jobs.registry import ModuleRegistry
 from jenkins_jobs.xml_config import XmlJobGenerator, XmlViewGenerator
+from jenkins_jobs.roots import Roots
+from jenkins_jobs.loader import load_files
 
 
 fixtures_dir = Path(__file__).parent / "exceptions"
 
 
+# Override jjb_config and plugins_info so that scenarios won't be used.
 @pytest.fixture
-def config():
+def jjb_config():
     config = JJBConfig()
     config.validate()
     return config
 
 
 @pytest.fixture
-def parser(config):
-    return YamlParser(config)
+def plugins_info():
+    return None
 
 
 @pytest.fixture
-def registry(config):
-    return ModuleRegistry(config)
+def parser(jjb_config, registry):
+    def parse(fname):
+        roots = Roots(jjb_config)
+        load_files(jjb_config, roots, [fixtures_dir / fname])
+        registry.set_macros(roots.macros)
+        return roots
+
+    return parse
 
 
 def test_invalid_project(parser, registry):
-    parser.parse(str(fixtures_dir / "invalid_project.yaml"))
-    jobs, views = parser.expandYaml(registry)
-
+    roots = parser("invalid_project.yaml")
+    jobs = roots.generate_jobs()
     generator = XmlJobGenerator(registry)
 
     with pytest.raises(JenkinsJobsException) as excinfo:
@@ -55,9 +61,8 @@ def test_invalid_project(parser, registry):
 
 
 def test_invalid_view(parser, registry):
-    parser.parse(str(fixtures_dir / "invalid_view.yaml"))
-    jobs, views = parser.expandYaml(registry)
-
+    roots = parser("invalid_view.yaml")
+    views = roots.generate_views()
     generator = XmlViewGenerator(registry)
 
     with pytest.raises(JenkinsJobsException) as excinfo:
@@ -65,14 +70,44 @@ def test_invalid_view(parser, registry):
     assert "Unrecognized view-type:" in str(excinfo.value)
 
 
-def test_template_params(caplog, parser, registry):
-    parser.parse(str(fixtures_dir / "failure_formatting_component.yaml"))
-    registry.set_parser_data(parser.data)
-    jobs, views = parser.expandYaml(registry)
-
+def test_template_params(parser, registry):
+    roots = parser("failure_formatting_component.yaml")
+    jobs = roots.generate_jobs()
     generator = XmlJobGenerator(registry)
 
-    with pytest.raises(Exception):
+    with pytest.raises(Exception) as excinfo:
         generator.generateXML(jobs)
-    assert "Failure formatting component" in caplog.text
-    assert "Problem formatting with args" in caplog.text
+    message = (
+        "While expanding macro 'default-git-scm':"
+        " While formatting string '{branches}': Missing parameter: 'branches'"
+    )
+    assert str(excinfo.value) == message
+
+
+def test_missing_j2_param(parser, registry):
+    roots = parser("missing_j2_parameter.yaml")
+    jobs = roots.generate_jobs()
+    generator = XmlJobGenerator(registry)
+
+    with pytest.raises(Exception) as excinfo:
+        generator.generateXML(jobs)
+    message = (
+        "While expanding macro 'default-git-scm':"
+        " While formatting jinja2 template '{{ branches }}': 'branches' is undefined"
+    )
+    assert str(excinfo.value) == message
+
+
+def test_missing_include_j2_param(parser, registry):
+    roots = parser("missing_include_j2_parameter.yaml")
+    jobs = roots.generate_jobs()
+    generator = XmlJobGenerator(registry)
+
+    with pytest.raises(Exception) as excinfo:
+        generator.generateXML(jobs)
+    message = (
+        "While expanding macro 'a-builder':"
+        " While formatting jinja2 template 'echo \"Parameter branch={{ branches }} is...':"
+        " 'branches' is undefined"
+    )
+    assert str(excinfo.value) == message

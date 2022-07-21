@@ -15,80 +15,17 @@
 
 # Manage interpolation of JJB variables into template strings.
 
+import _string
 import logging
-from pprint import pformat
 import re
 from string import Formatter
 
-from jenkins_jobs.errors import JenkinsJobsException
-from jenkins_jobs.local_yaml import CustomLoader
+from jinja2 import Undefined
+from jinja2.exceptions import UndefinedError
+
+from .errors import JenkinsJobsException
 
 logger = logging.getLogger(__name__)
-
-
-def deep_format(obj, paramdict, allow_empty=False):
-    """Deep format configuration.
-
-    Apply the paramdict via str.format() to all string objects found within
-    the supplied obj. Lists and dicts are traversed recursively.
-    """
-    # YAML serialisation was originally used to achieve this, but that places
-    # limitations on the values in paramdict - the post-format result must
-    # still be valid YAML (so substituting-in a string containing quotes, for
-    # example, is problematic).
-    if hasattr(obj, "format"):
-        try:
-            ret = CustomFormatter(allow_empty).format(obj, **paramdict)
-        except KeyError as exc:
-            missing_key = exc.args[0]
-            desc = "%s parameter missing to format %s\nGiven:\n%s" % (
-                missing_key,
-                obj,
-                pformat(paramdict),
-            )
-            raise JenkinsJobsException(desc)
-        except Exception:
-            logging.error(
-                "Problem formatting with args:\nallow_empty:"
-                "%s\nobj: %s\nparamdict: %s" % (allow_empty, obj, paramdict)
-            )
-            raise
-
-    elif isinstance(obj, list):
-        ret = type(obj)()
-        for item in obj:
-            ret.append(deep_format(item, paramdict, allow_empty))
-    elif isinstance(obj, dict):
-        ret = type(obj)()
-        for item in obj:
-            try:
-                ret[deep_format(item, paramdict, allow_empty)] = deep_format(
-                    obj[item], paramdict, allow_empty
-                )
-            except KeyError as exc:
-                missing_key = exc.args[0]
-                desc = "%s parameter missing to format %s\nGiven:\n%s" % (
-                    missing_key,
-                    obj,
-                    pformat(paramdict),
-                )
-                raise JenkinsJobsException(desc)
-            except Exception:
-                logging.error(
-                    "Problem formatting with args:\nallow_empty:"
-                    "%s\nobj: %s\nparamdict: %s" % (allow_empty, obj, paramdict)
-                )
-                raise
-    else:
-        ret = obj
-    if isinstance(ret, CustomLoader):
-        # If we have a CustomLoader here, we've lazily-loaded a template
-        # or rendered a template to a piece of YAML;
-        # attempt to format it.
-        ret = deep_format(
-            ret.get_object_to_format(), paramdict, allow_empty=allow_empty
-        )
-    return ret
 
 
 class CustomFormatter(Formatter):
@@ -104,25 +41,25 @@ class CustomFormatter(Formatter):
         (?:\|(?P<default>[^}]*))?   # default fallback
         }(}})*(?!})                 # non-pair closing }
     """
+    _matcher = re.compile(_expr, re.VERBOSE)
+    _whole_matcher = re.compile(f"^{_expr}$", re.VERBOSE)
 
     def __init__(self, allow_empty=False):
-        super(CustomFormatter, self).__init__()
+        super().__init__()
         self.allow_empty = allow_empty
 
     def vformat(self, format_string, args, kwargs):
-        matcher = re.compile(self._expr, re.VERBOSE)
-
-        # special case of returning the object if the entire string
-        # matches a single parameter
-        try:
-            result = re.match("^%s$" % self._expr, format_string, re.VERBOSE)
-        except TypeError:
-            return format_string.format(**kwargs)
+        # Special case of returning the object preserving it's type if the entire string
+        # matches a single parameter.
+        result = self._whole_matcher.match(format_string)
         if result is not None:
             try:
-                return kwargs[result.group("key")]
+                value = kwargs[result.group("key")]
             except KeyError:
                 pass
+            else:
+                if not isinstance(value, Undefined):
+                    return value
 
         # handle multiple fields within string via a callback to re.sub()
         def re_replace(match):
@@ -130,23 +67,65 @@ class CustomFormatter(Formatter):
             default = match.group("default")
 
             if default is not None:
-                if key not in kwargs:
+                if key not in kwargs or isinstance(kwargs[key], Undefined):
                     return default
                 else:
                     return "{%s}" % key
             return match.group(0)
 
-        format_string = matcher.sub(re_replace, format_string)
+        format_string = self._matcher.sub(re_replace, format_string)
 
-        return Formatter.vformat(self, format_string, args, kwargs)
+        try:
+            return super().vformat(format_string, args, kwargs)
+        except (JenkinsJobsException, UndefinedError) as x:
+            if len(format_string) > 40:
+                short_fmt = format_string[:80] + "..."
+            else:
+                short_fmt = format_string
+            raise JenkinsJobsException(f"While formatting string {short_fmt!r}: {x}")
+
+    def enum_required_params(self, format_string):
+        def re_replace(match):
+            key = match.group("key")
+            return "{%s}" % key
+
+        prepared_format_string = self._matcher.sub(re_replace, format_string)
+        for literal_text, field_name, format_spec, conversion in self.parse(
+            prepared_format_string
+        ):
+            if field_name is None:
+                continue
+            arg_used, rest = _string.formatter_field_name_split(field_name)
+            if arg_used == "" or type(arg_used) is int:
+                raise RuntimeError(
+                    f"Positional format arguments are not supported: {format_string!r}"
+                )
+            yield arg_used
+
+    def enum_param_defaults(self, format_string):
+        for match in self._matcher.finditer(format_string):
+            key = match.group("key")
+            default = match.group("default")
+            if default is not None:
+                yield (key, default)
 
     def get_value(self, key, args, kwargs):
         try:
-            return Formatter.get_value(self, key, args, kwargs)
+            return super().get_value(key, args, kwargs)
         except KeyError:
             if self.allow_empty:
                 logger.debug(
                     "Found uninitialized key %s, replaced with empty string", key
                 )
                 return ""
-            raise
+            raise JenkinsJobsException(f"Missing parameter: {key!r}")
+
+
+def enum_str_format_required_params(format):
+    formatter = CustomFormatter()
+    yield from formatter.enum_required_params(format)
+
+
+def enum_str_format_param_defaults(format):
+    formatter = CustomFormatter()
+    yield from formatter.enum_param_defaults(format)

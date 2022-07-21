@@ -1,0 +1,8 @@
+# Using include-raw-excape inside job cause double braces in included file, like: {{VAR1}}.
+- job:
+    name: test-job-include-raw
+    builders:
+      - shell:
+          !include-raw-escape: include-raw001-hello-world.sh
+      - shell:
+          !include-raw-escape: include-raw001-vars.sh
