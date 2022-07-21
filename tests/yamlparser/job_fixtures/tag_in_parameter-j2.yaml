@@ -1,0 +1,13 @@
+# !j2: tag in a variable.
+
+- job-template:
+    name: sample-job
+    var: !j2: '{{ "some-" "value" }}'
+    builders:
+      - shell: |
+          echo {var}
+
+- project:
+    name: sample-project
+    jobs:
+      - sample-job

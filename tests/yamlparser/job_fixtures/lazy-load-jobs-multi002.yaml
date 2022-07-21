@@ -2,7 +2,7 @@
     name: "test-job-{job_name}"
     builders:
       - shell:
-          !include-raw: 'lazy-load-scripts/echo_vars_{job_name}.sh'
+          !include-raw-escape: 'lazy-load-scripts/echo_vars_{job_name}.sh'
 
 - project:
     name: 'test-project'

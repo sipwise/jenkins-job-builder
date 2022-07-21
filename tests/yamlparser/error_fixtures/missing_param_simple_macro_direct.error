@@ -1,4 +1,1 @@
-missing_param parameter missing to format echo {missing_param} {other_param}
-
-Given:
-{'other_param': 'abc'}
+While expanding macro 'sample-builder': While formatting string 'echo {missing_param} {other_param}\n': Missing parameter: 'missing_param'
