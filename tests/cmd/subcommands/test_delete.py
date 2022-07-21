@@ -26,8 +26,8 @@ def test_delete_single_job(mocker, default_config_file, execute_jenkins_jobs):
     Test handling the deletion of a single Jenkins job.
     """
 
-    mocker.patch("jenkins_jobs.cli.subcommand.update.JenkinsManager.delete_jobs")
-    mocker.patch("jenkins_jobs.cli.subcommand.update.JenkinsManager.delete_views")
+    mocker.patch("jenkins_jobs.cli.subcommand.base.JenkinsManager.delete_jobs")
+    mocker.patch("jenkins_jobs.cli.subcommand.base.JenkinsManager.delete_views")
 
     args = ["--conf", default_config_file, "delete", "test_job"]
     execute_jenkins_jobs(args)
@@ -38,8 +38,8 @@ def test_delete_multiple_jobs(mocker, default_config_file, execute_jenkins_jobs)
     Test handling the deletion of multiple Jenkins jobs.
     """
 
-    mocker.patch("jenkins_jobs.cli.subcommand.update.JenkinsManager.delete_jobs")
-    mocker.patch("jenkins_jobs.cli.subcommand.update.JenkinsManager.delete_views")
+    mocker.patch("jenkins_jobs.cli.subcommand.base.JenkinsManager.delete_jobs")
+    mocker.patch("jenkins_jobs.cli.subcommand.base.JenkinsManager.delete_views")
 
     args = ["--conf", default_config_file, "delete", "test_job1", "test_job2"]
     execute_jenkins_jobs(args)
