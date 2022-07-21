@@ -20,7 +20,6 @@ have. It is entirely optional, Zuul 2.0+ pass the parameters over Gearman.
 https://opendev.org/zuul/zuul/src/tag/2.6.0/doc/source/launchers.rst#user-content-zuul-parameters
 """
 
-import itertools
 import jenkins_jobs.modules.base
 
 
@@ -187,27 +186,16 @@ ZUUL_POST_PARAMETERS = [
 class Zuul(jenkins_jobs.modules.base.Base):
     sequence = 0
 
-    def handle_data(self, job_data):
-        changed = False
-        jobs = itertools.chain(
-            job_data.get("job", {}).values(), job_data.get("job-template", {}).values()
-        )
-        for job in jobs:
-            triggers = job.get("triggers")
-            if not triggers:
-                continue
+    def amend_job_dict(self, job):
+        triggers = job.get("triggers", [])
+        if "zuul" not in triggers and "zuul-post" not in triggers:
+            return False
 
-            if "zuul" not in job.get("triggers", []) and "zuul-post" not in job.get(
-                "triggers", []
-            ):
-                continue
-            if "parameters" not in job:
-                job["parameters"] = []
-            if "zuul" in job.get("triggers", []):
-                job["parameters"].extend(ZUUL_PARAMETERS)
-                job["triggers"].remove("zuul")
-            if "zuul-post" in job.get("triggers", []):
-                job["parameters"].extend(ZUUL_POST_PARAMETERS)
-                job["triggers"].remove("zuul-post")
-            changed = True
-        return changed
+        parameters = job.setdefault("parameters", [])
+        if "zuul" in triggers:
+            parameters.extend(ZUUL_PARAMETERS)
+            triggers.remove("zuul")
+        if "zuul-post" in triggers:
+            parameters.extend(ZUUL_POST_PARAMETERS)
+            triggers.remove("zuul-post")
+        return True

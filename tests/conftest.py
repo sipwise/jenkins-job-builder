@@ -4,9 +4,11 @@ import xml.etree.ElementTree as XML
 from pathlib import Path
 
 import pytest
+import yaml
 
 from jenkins_jobs.alphanum import AlphanumSort
 from jenkins_jobs.config import JJBConfig
+from jenkins_jobs.loader import Loader
 from jenkins_jobs.modules import project_externaljob
 from jenkins_jobs.modules import project_flow
 from jenkins_jobs.modules import project_githuborg
@@ -14,10 +16,11 @@ from jenkins_jobs.modules import project_matrix
 from jenkins_jobs.modules import project_maven
 from jenkins_jobs.modules import project_multibranch
 from jenkins_jobs.modules import project_multijob
-from jenkins_jobs.parser import YamlParser
 from jenkins_jobs.registry import ModuleRegistry
 from jenkins_jobs.xml_config import XmlJob, XmlJobGenerator, XmlViewGenerator
-import jenkins_jobs.local_yaml as yaml
+
+from jenkins_jobs.roots import Roots
+from jenkins_jobs.loader import load_files
 
 
 # Avoid writing to ~/.cache/jenkins_jobs.
@@ -59,15 +62,16 @@ def mock_iter_entry_points():
 
 
 @pytest.fixture
-def input(scenario):
-    return yaml.load(scenario.in_path.read_text())
+def input(scenario, jjb_config):
+    loader = Loader.empty(jjb_config)
+    return loader.load_path(scenario.in_path)
 
 
 @pytest.fixture
 def plugins_info(scenario):
     if not scenario.plugins_info_path.exists():
         return None
-    return yaml.load(scenario.plugins_info_path.read_text())
+    return yaml.safe_load(scenario.plugins_info_path.read_text())
 
 
 @pytest.fixture
@@ -117,8 +121,11 @@ def expected_error(scenario):
 def check_folder(scenario, jjb_config, input):
     if "name" not in input:
         return
-    parser = YamlParser(jjb_config)
-    *dirs, name = parser._getfullname(input).split("/")
+    if "folder" in input:
+        full_name = input["folder"] + "/" + input["name"]
+    else:
+        full_name = input["name"]
+    *dirs, name = full_name.split("/")
     input_dir = scenario.in_path.parent
     expected_out_dirs = [input_dir.joinpath(*dirs)]
     actual_out_dirs = [path.parent for path in scenario.out_paths]
@@ -127,7 +134,6 @@ def check_folder(scenario, jjb_config, input):
 
 @pytest.fixture
 def check_generator(scenario, input, expected_output, jjb_config, registry, project):
-    registry.set_parser_data({})
 
     if project:
         xml = project.root_xml(input)
@@ -146,26 +152,27 @@ def check_generator(scenario, input, expected_output, jjb_config, registry, proj
 
 @pytest.fixture
 def check_parser(jjb_config, registry):
-    parser = YamlParser(jjb_config)
-
     def check(in_path):
-        parser.parse(str(in_path))
-        registry.set_parser_data(parser.data)
-        job_data_list, job_view_list = parser.expandYaml(registry)
+        roots = Roots(jjb_config)
+        load_files(jjb_config, roots, [in_path])
+        registry.set_macros(roots.macros)
+        job_data_list = roots.generate_jobs()
+        view_data_list = roots.generate_views()
         generator = XmlJobGenerator(registry)
         _ = generator.generateXML(job_data_list)
+        _ = generator.generateXML(view_data_list)
 
     return check
 
 
 @pytest.fixture
 def check_job(scenario, expected_output, jjb_config, registry):
-    parser = YamlParser(jjb_config)
-
     def check():
-        parser.parse(str(scenario.in_path))
-        registry.set_parser_data(parser.data)
-        job_data_list, view_data_list = parser.expandYaml(registry)
+        roots = Roots(jjb_config)
+        load_files(jjb_config, roots, [scenario.in_path])
+        registry.set_macros(roots.macros)
+        job_data_list = roots.generate_jobs()
+        registry.amend_job_dicts(job_data_list)
         generator = XmlJobGenerator(registry)
         job_xml_list = generator.generateXML(job_data_list)
         job_xml_list.sort(key=AlphanumSort)
@@ -187,12 +194,11 @@ def check_job(scenario, expected_output, jjb_config, registry):
 
 @pytest.fixture
 def check_view(scenario, expected_output, jjb_config, registry):
-    parser = YamlParser(jjb_config)
-
     def check():
-        parser.parse(str(scenario.in_path))
-        registry.set_parser_data(parser.data)
-        job_data_list, view_data_list = parser.expandYaml(registry)
+        roots = Roots(jjb_config)
+        load_files(jjb_config, roots, [scenario.in_path])
+        registry.set_macros(roots.macros)
+        view_data_list = roots.generate_views()
         generator = XmlViewGenerator(registry)
         view_xml_list = generator.generateXML(view_data_list)
         view_xml_list.sort(key=AlphanumSort)
