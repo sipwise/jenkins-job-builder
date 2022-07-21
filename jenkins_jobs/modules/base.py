@@ -46,15 +46,15 @@ class Base(object):
     def __init__(self, registry):
         self.registry = registry
 
-    def handle_data(self, job_data):
+    def amend_job_dict(self, job):
         """This method is called before any XML is generated.  By
-        overriding this method, a module may arbitrarily modify a data
-        structure which will probably be the JJB YamlParser's intermediate data
+        overriding this method, a module may arbitrarily modify a job data
+        structure which will probably be the JJB Job intermediate data dict
         representation. If it has changed the data structure at all, it must
         return ``True``, otherwise, it must return ``False``.
 
-        :arg dict job_data: the intermediate representation of job data
-            loaded from JJB Yaml files without variables interpolation or other
+        :arg dict job: the intermediate representation of job data
+            loaded from JJB Yaml files after variables interpolation and other
             yaml expansions.
 
         :rtype: bool

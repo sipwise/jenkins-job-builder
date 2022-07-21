@@ -17,6 +17,7 @@ import io
 import os
 import logging
 import platform
+from pathlib import Path
 
 from stevedore import extension
 import yaml
@@ -126,7 +127,9 @@ class JenkinsJobs(object):
                 self.options.path = [self.options.path]
             else:
                 # take list of paths
-                self.options.path = self.options.path.split(os.pathsep)
+                self.options.path = [
+                    Path(p) for p in self.options.path.split(os.pathsep)
+                ]
 
                 do_recurse = (
                     getattr(self.options, "recursive", False)
@@ -142,7 +145,7 @@ class JenkinsJobs(object):
                         paths.extend(utils.recurse_path(path, excludes))
                     else:
                         paths.append(path)
-                self.options.path = paths
+                self.options.path = [Path(p) for p in paths]
 
     def execute(self):
 
