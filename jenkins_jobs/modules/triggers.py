@@ -1875,7 +1875,7 @@ def build_result(registry, xml_parent, data):
             "BuildResultTriggerInfo",
         )
         jobs_string = ",".join(group["jobs"])
-        mapping = [("", "jobNames", jobs_string, group)]
+        mapping = [("", "jobNames", jobs_string)]
         helpers.convert_mapping_to_xml(brti, group, mapping, fail_required=True)
         checked_results = XML.SubElement(brti, "checkedResults")
         for result in group.get("results", ["success"]):

@@ -1,0 +1,17 @@
+# Defaults defined at project should be honored.
+
+- defaults:
+    name: custom-defaults
+    project-type: pipeline
+    var: var-value
+
+- job-template:
+    name: sample-job
+    dsl: |
+      build var={var}
+
+- project:
+    name: sample-project
+    defaults: custom-defaults
+    jobs:
+      - sample-job

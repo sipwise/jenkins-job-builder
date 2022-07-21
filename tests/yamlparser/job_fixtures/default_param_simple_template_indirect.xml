@@ -11,7 +11,7 @@
   <scm class="hudson.scm.NullSCM"/>
   <builders>
     <hudson.tasks.Shell>
-      <command>echo {param_2}-plus
+      <command>echo default_value-plus
 </command>
     </hudson.tasks.Shell>
   </builders>

@@ -1,0 +1,10 @@
+- _retain_anchors_wrapper_defaults: &retain_anchors_wrapper_defaults
+    name: 'retain_anchors_wrapper_defaults'
+    wrappers:
+      - timeout:
+          timeout: 180
+          fail: true
+
+- _retain_anchors_defaults: &retain_anchors_defaults
+    name: 'retain_anchors_defaults'
+    <<: *retain_anchors_wrapper_defaults
