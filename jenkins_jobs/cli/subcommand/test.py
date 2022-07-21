@@ -51,7 +51,7 @@ class TestSubCommand(update.UpdateSubCommand):
 
     def execute(self, options, jjb_config):
         if not options.config_xml:
-            logger.warn(
+            logger.warning(
                 "(Deprecated) The default output behavior of"
                 " `jenkins-jobs test` when given the --output"
                 " flag will change in JJB 3.0."
@@ -61,7 +61,9 @@ class TestSubCommand(update.UpdateSubCommand):
                 " `--config-xml` parameter."
             )
 
-        builder, xml_jobs, xml_views = self._generate_xmljobs(options, jjb_config)
+        builder, xml_jobs, xml_views = self.make_jobs_and_views_xml(
+            jjb_config, options.path, options.names
+        )
 
         builder.update_jobs(
             xml_jobs,

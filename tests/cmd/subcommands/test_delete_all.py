@@ -25,7 +25,7 @@ def test_delete_all_accept(mocker, default_config_file, execute_jenkins_jobs):
     Test handling the deletion of a single Jenkins job.
     """
 
-    mocker.patch("jenkins_jobs.cli.subcommand.update.JenkinsManager.delete_all_jobs")
+    mocker.patch("jenkins_jobs.cli.subcommand.base.JenkinsManager.delete_all_jobs")
     mocker.patch("jenkins_jobs.builder.JenkinsManager.get_views", return_value=[None])
     mocker.patch("jenkins_jobs.utils.input", return_value="y")
 
@@ -38,7 +38,7 @@ def test_delete_all_abort(mocker, default_config_file, execute_jenkins_jobs):
     Test handling the deletion of a single Jenkins job.
     """
 
-    mocker.patch("jenkins_jobs.cli.subcommand.update.JenkinsManager.delete_all_jobs")
+    mocker.patch("jenkins_jobs.cli.subcommand.base.JenkinsManager.delete_all_jobs")
     mocker.patch("jenkins_jobs.utils.input", return_value="n")
 
     args = ["--conf", default_config_file, "delete-all"]

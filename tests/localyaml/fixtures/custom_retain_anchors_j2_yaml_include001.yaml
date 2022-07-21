@@ -1,3 +1,0 @@
-- globals:
-    name: globals
-    docker-image: &docker-image "ubuntu:latest"

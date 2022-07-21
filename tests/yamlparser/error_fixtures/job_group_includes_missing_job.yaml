@@ -1,0 +1,17 @@
+# When job group includes job which is never declared, it issues an error.
+
+- job-template:
+    name: job-1
+    builders:
+      - shell: echo hi
+
+- job-group:
+    name: group-1
+    jobs:
+      - job-1
+      - job-2
+
+- project:
+    name: sample-project
+    jobs:
+      - group-1
