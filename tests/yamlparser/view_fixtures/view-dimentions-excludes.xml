@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hudson.model.ListView>
+  <name>my-view-1-11</name>
+  <description>View N 1.11&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <filterExecutors>false</filterExecutors>
+  <filterQueue>false</filterQueue>
+  <properties class="hudson.model.View$PropertyList"/>
+  <jobNames>
+    <comparator class="hudson.util.CaseInsensitiveComparator"/>
+  </jobNames>
+  <jobFilters/>
+  <columns>
+    <hudson.views.StatusColumn/>
+    <hudson.views.WeatherColumn/>
+  </columns>
+  <includeRegex>1.11</includeRegex>
+  <recurse>false</recurse>
+</hudson.model.ListView>
+<?xml version="1.0" encoding="utf-8"?>
+<hudson.model.ListView>
+  <name>my-view-2-11</name>
+  <description>View N 2.11&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <filterExecutors>false</filterExecutors>
+  <filterQueue>false</filterQueue>
+  <properties class="hudson.model.View$PropertyList"/>
+  <jobNames>
+    <comparator class="hudson.util.CaseInsensitiveComparator"/>
+  </jobNames>
+  <jobFilters/>
+  <columns>
+    <hudson.views.StatusColumn/>
+    <hudson.views.WeatherColumn/>
+  </columns>
+  <includeRegex>2.11</includeRegex>
+  <recurse>false</recurse>
+</hudson.model.ListView>
+<?xml version="1.0" encoding="utf-8"?>
+<hudson.model.ListView>
+  <name>my-view-2-22</name>
+  <description>View N 2.22&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <filterExecutors>false</filterExecutors>
+  <filterQueue>false</filterQueue>
+  <properties class="hudson.model.View$PropertyList"/>
+  <jobNames>
+    <comparator class="hudson.util.CaseInsensitiveComparator"/>
+  </jobNames>
+  <jobFilters/>
+  <columns>
+    <hudson.views.StatusColumn/>
+    <hudson.views.WeatherColumn/>
+  </columns>
+  <includeRegex>2.22</includeRegex>
+  <recurse>false</recurse>
+</hudson.model.ListView>
