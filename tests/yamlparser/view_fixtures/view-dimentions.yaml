@@ -1,0 +1,19 @@
+- view-template:
+    name: my-view-{num}
+    view-type: list
+    description: 'View N{num}'
+    columns:
+      - status
+      - weather
+    regex: '{my_regex}'
+
+- project:
+    name: test-project
+    my_regex: '(?!test.*).*'
+    num:
+      - 1
+      - 2
+      - 3:
+          my_regex: regex-for-view-3
+    views:
+      - my-view-{num}

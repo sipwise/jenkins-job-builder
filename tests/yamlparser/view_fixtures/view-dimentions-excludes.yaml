@@ -1,0 +1,19 @@
+- view-template:
+    name: my-view-{major}-{minor}
+    view-type: list
+    description: 'View N {major}.{minor}'
+    columns:
+      - status
+      - weather
+    regex: '{major}.{minor}'
+
+- project:
+    name: test-project
+    major: [1, 2, 3]
+    minor: [11, 22]
+    exclude:
+      - major: 1
+        minor: 22
+      - major: 3
+    views:
+      - my-view-{major}-{minor}
