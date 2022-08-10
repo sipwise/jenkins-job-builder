@@ -1,0 +1,15 @@
+- view-template:
+    name: list-minimal
+    view-type: list
+    description: 'description'
+    columns: '{columns}'
+    regex: (?!test.*).*
+
+- project:
+    name: test-project
+    columns:
+      - status
+      - weather
+      - extra-build-parameter: MY_PARAMETER
+    views:
+      - list-minimal
