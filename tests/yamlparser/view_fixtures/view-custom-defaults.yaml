@@ -1,0 +1,20 @@
+- defaults:
+    name: my-defaults
+    view_regex: (?!test.*).*
+    my_columns:
+      - status
+      - weather
+      - extra-build-parameter: MY_PARAMETER
+
+- view-template:
+    name: list-minimal
+    defaults: my-defaults
+    view-type: list
+    description: 'description'
+    columns: '{my_columns}'
+    regex: '{view_regex}'
+
+- project:
+    name: test-project
+    views:
+      - list-minimal
