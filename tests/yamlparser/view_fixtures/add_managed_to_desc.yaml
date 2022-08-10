@@ -1,0 +1,9 @@
+- project:
+    name: add_managed_to_desc
+    views:
+    - 'add_managed_to_desc'
+
+- view-template:
+    name: add_managed_to_desc
+    description: 'My nice description'
+    view-type: all

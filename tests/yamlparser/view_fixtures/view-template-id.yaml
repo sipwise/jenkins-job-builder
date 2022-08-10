@@ -1,0 +1,31 @@
+- project:
+    name: test_template_id
+    views:
+      - simple-template:
+          test_var: Hello World
+          type: periodic
+          num: 1
+      - not-as-simple-template:
+          test_var: Goodbye World
+          type: canary
+          num: 2
+
+- view-template:
+    name: 'simple-template-test-ids-{num}-{type}'
+    id: simple-template
+    view-type: list
+    columns:
+      - status
+      - weather
+      - extra-build-parameter: MY_PARAMETER
+    regex: '{template-name} {test_var} {num} {type}'
+
+- view-template:
+    name: 'not-as-simple-template-test-ids-{num}-{type}'
+    id: not-as-simple-template
+    view-type: list
+    columns:
+      - status
+      - weather
+      - extra-build-parameter: MY_PARAMETER
+    regex: '{template-name} {test_var} {num} {type}'

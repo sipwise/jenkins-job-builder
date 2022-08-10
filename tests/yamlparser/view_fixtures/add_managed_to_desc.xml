@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hudson.model.AllView>
+  <name>add_managed_to_desc</name>
+  <description>My nice description&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <filterExecutors>false</filterExecutors>
+  <filterQueue>false</filterQueue>
+  <properties class="hudson.model.View$PropertyList"/>
+</hudson.model.AllView>

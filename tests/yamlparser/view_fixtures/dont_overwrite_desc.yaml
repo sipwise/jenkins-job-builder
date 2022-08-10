@@ -1,0 +1,8 @@
+- project:
+    name: dont_overwrite_desc
+    views:
+     - dont_overwrite_desc
+
+- view-template:
+    name: dont_overwrite_desc
+    view-type: all

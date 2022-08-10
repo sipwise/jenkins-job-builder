@@ -1,0 +1,24 @@
+- view-template:
+    name: my-view-{num}
+    view-type: list
+    description: 'View N{num}'
+    columns:
+      - status
+      - weather
+      - extra-build-parameter: MY_PARAMETER
+    regex: (?!test.*).*
+
+- view-group:
+    name: my-view-group
+    views:
+      - my-view-{num}
+      - my-view-{num}:
+          num: 3
+
+- project:
+    name: test-project
+    views:
+      - my-view-{num}:
+          num: 1
+      - my-view-group:
+          num: 2

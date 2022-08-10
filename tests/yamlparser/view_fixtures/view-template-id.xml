@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hudson.model.ListView>
+  <name>not-as-simple-template-test-ids-2-canary</name>
+  <description>&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <filterExecutors>false</filterExecutors>
+  <filterQueue>false</filterQueue>
+  <properties class="hudson.model.View$PropertyList"/>
+  <jobNames>
+    <comparator class="hudson.util.CaseInsensitiveComparator"/>
+  </jobNames>
+  <jobFilters/>
+  <columns>
+    <hudson.views.StatusColumn/>
+    <hudson.views.WeatherColumn/>
+    <jenkins.plugins.extracolumns.BuildParametersColumn plugin="extra-columns">
+      <singlePara>true</singlePara>
+      <parameterName>MY_PARAMETER</parameterName>
+    </jenkins.plugins.extracolumns.BuildParametersColumn>
+  </columns>
+  <includeRegex>not-as-simple-template-test-ids-{num}-{type} Goodbye World 2 canary</includeRegex>
+  <recurse>false</recurse>
+</hudson.model.ListView>
+<?xml version="1.0" encoding="utf-8"?>
+<hudson.model.ListView>
+  <name>simple-template-test-ids-1-periodic</name>
+  <description>&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <filterExecutors>false</filterExecutors>
+  <filterQueue>false</filterQueue>
+  <properties class="hudson.model.View$PropertyList"/>
+  <jobNames>
+    <comparator class="hudson.util.CaseInsensitiveComparator"/>
+  </jobNames>
+  <jobFilters/>
+  <columns>
+    <hudson.views.StatusColumn/>
+    <hudson.views.WeatherColumn/>
+    <jenkins.plugins.extracolumns.BuildParametersColumn plugin="extra-columns">
+      <singlePara>true</singlePara>
+      <parameterName>MY_PARAMETER</parameterName>
+    </jenkins.plugins.extracolumns.BuildParametersColumn>
+  </columns>
+  <includeRegex>simple-template-test-ids-{num}-{type} Hello World 1 periodic</includeRegex>
+  <recurse>false</recurse>
+</hudson.model.ListView>
