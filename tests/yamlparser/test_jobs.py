@@ -24,7 +24,7 @@ import pytest
 from tests.enum_scenarios import scenario_list
 
 
-fixtures_dir = Path(__file__).parent / "fixtures"
+fixtures_dir = Path(__file__).parent / "job_fixtures"
 
 
 @pytest.fixture(

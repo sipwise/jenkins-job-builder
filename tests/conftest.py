@@ -16,7 +16,7 @@ from jenkins_jobs.modules import project_multibranch
 from jenkins_jobs.modules import project_multijob
 from jenkins_jobs.parser import YamlParser
 from jenkins_jobs.registry import ModuleRegistry
-from jenkins_jobs.xml_config import XmlJob, XmlJobGenerator
+from jenkins_jobs.xml_config import XmlJob, XmlJobGenerator, XmlViewGenerator
 import jenkins_jobs.local_yaml as yaml
 
 
@@ -158,6 +158,31 @@ def check_job(scenario, expected_output, jjb_config, registry):
 
         pretty_xml = (
             "\n".join(job.output().decode() for job in job_xml_list)
+            .strip()
+            .replace("\n\n", "\n")
+        )
+        stripped_expected_output = (
+            expected_output.strip().replace("<BLANKLINE>", "").replace("\n\n", "\n")
+        )
+        assert stripped_expected_output == pretty_xml
+
+    return check
+
+
+@pytest.fixture
+def check_view(scenario, expected_output, jjb_config, registry):
+    parser = YamlParser(jjb_config)
+
+    def check():
+        parser.parse(str(scenario.in_path))
+        registry.set_parser_data(parser.data)
+        job_data_list, view_data_list = parser.expandYaml(registry)
+        generator = XmlViewGenerator(registry)
+        view_xml_list = generator.generateXML(view_data_list)
+        view_xml_list.sort(key=AlphanumSort)
+
+        pretty_xml = (
+            "\n".join(view.output().decode() for view in view_xml_list)
             .strip()
             .replace("\n\n", "\n")
         )
