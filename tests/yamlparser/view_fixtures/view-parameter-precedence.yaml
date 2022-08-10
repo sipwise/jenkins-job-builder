@@ -1,0 +1,42 @@
+- defaults:
+    name: global
+    param_1: '1-defaults'
+    param_2: '2-defaults'
+    param_3: '3-defaults'
+    param_4: '4-defaults'
+    param_5: '5-defaults'  # Should be used.
+
+- view-template:
+    name: my-view-{num}
+    view-type: list
+    param_1: '1-template'
+    param_2: '2-template'
+    param_3: '3-template'
+    param_4: '4-template'  # Should be used.
+    description: 'View N{num}'
+    columns:
+      - status
+      - weather
+    regex: '{param_1} {param_2} {param_3} {param_4} {param_5}'
+
+- view-group:
+    name: my-view-group
+    views:
+      - my-view-{num}:
+          num: 2
+      - my-view-{num}:
+          num: 3
+          param_3: '3-group'  # Should be used.
+
+- project:
+    name: test-project
+    param_1: '1-project'  # Should be used.
+    param_2: '2-project'
+    param_3: '3-project'
+    views:
+      - my-view-{num}:
+          num: 1
+          param_2: '2-view-param'  # Should be used.
+      - my-view-group:
+          param_2: '2-group-param'  # Should be used.
+          param_3: '3-group-param'
