@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <actions/>
+  <description>Job N1&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <keepDependencies>false</keepDependencies>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <concurrentBuild>false</concurrentBuild>
+  <canRoam>true</canRoam>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>echo job=1
+# job*:1-project
+echo param_1=1-project
+# job1:2-job-param, job2:2-group-param, job3:2-group-param
+echo param_2=2-job-param
+# job1:3-project, job2: 3-group-param, job3: 3-group
+echo param_3=3-project
+# job*: 4-template
+echo param_4=4-template
+# job*: 5-defaults
+echo param_5=5-defaults
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <actions/>
+  <description>Job N2&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <keepDependencies>false</keepDependencies>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <concurrentBuild>false</concurrentBuild>
+  <canRoam>true</canRoam>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>echo job=2
+# job*:1-project
+echo param_1=1-project
+# job1:2-job-param, job2:2-group-param, job3:2-group-param
+echo param_2=2-group-param
+# job1:3-project, job2: 3-group-param, job3: 3-group
+echo param_3=3-group-param
+# job*: 4-template
+echo param_4=4-template
+# job*: 5-defaults
+echo param_5=5-defaults
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <actions/>
+  <description>Job N3&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <keepDependencies>false</keepDependencies>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <concurrentBuild>false</concurrentBuild>
+  <canRoam>true</canRoam>
+  <properties/>
+  <scm class="hudson.scm.NullSCM"/>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>echo job=3
+# job*:1-project
+echo param_1=1-project
+# job1:2-job-param, job2:2-group-param, job3:2-group-param
+echo param_2=2-group-param
+# job1:3-project, job2: 3-group-param, job3: 3-group
+echo param_3=3-group
+# job*: 4-template
+echo param_4=4-template
+# job*: 5-defaults
+echo param_5=5-defaults
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>
