@@ -1,0 +1,50 @@
+- defaults:
+    name: global
+    param_1: '1-defaults'
+    param_2: '2-defaults'
+    param_3: '3-defaults'
+    param_4: '4-defaults'
+    param_5: '5-defaults'  # Should be used.
+
+- job-template:
+    name: my-job-{num}
+    param_1: '1-template'
+    param_2: '2-template'
+    param_3: '3-template'
+    param_4: '4-template'  # Should be used.
+    description: 'Job N{num}'
+    builders:
+      - shell: |
+          echo job={num}
+          # job*:1-project
+          echo param_1={param_1}
+          # job1:2-job-param, job2:2-group-param, job3:2-group-param
+          echo param_2={param_2}
+          # job1:3-project, job2: 3-group-param, job3: 3-group
+          echo param_3={param_3}
+          # job*: 4-template
+          echo param_4={param_4}
+          # job*: 5-defaults
+          echo param_5={param_5}
+
+- job-group:
+    name: my-job-group
+    jobs:
+      - my-job-{num}:
+          num: 2
+      - my-job-{num}:
+          num: 3
+          param_3: '3-group'  # Should be used.
+
+- project:
+    name: test-project
+    param_1: '1-project'  # Should be used.
+    param_2: '2-project'
+    param_3: '3-project'
+    jobs:
+      - my-job-{num}:
+          num: 1
+          param_2: '2-job-param'  # Should be used.
+      - my-job-group:
+          param_2: '2-group-param'  # Should be used.
+          param_3: '3-group-param'
