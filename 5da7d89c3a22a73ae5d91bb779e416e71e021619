@@ -1,6 +1,24 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3d0c0d44_ba20a122",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31245
+      },
+      "writtenOn": "2022-08-25T07:03:02Z",
+      "side": 1,
+      "message": "What is the status here? The patch is still relevant? If yes, I can take it in charge.",
+      "revId": "5da7d89c3a22a73ae5d91bb779e416e71e021619",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
       "key": {
         "uuid": "7faddb67_c508db92",
         "filename": "jenkins_jobs/local_yaml.py",
@@ -20,10 +38,10 @@
         "endChar": 33
       },
       "revId": "5da7d89c3a22a73ae5d91bb779e416e71e021619",
-      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
-      "unresolved": false
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "7faddb67_7fa38801",
         "filename": "jenkins_jobs/parser.py",
@@ -37,8 +55,7 @@
       "side": 1,
       "message": "This is what makes me think that it might be time to do something else rather than trying to reuse the substitution mechanism that is for templates \u0026 macros.\n\nOverriding the __str__ method might paper over this as it should result in the jinja2 being expanded by the XML rendering assuming it looks to convert objects to strings.",
       "revId": "5da7d89c3a22a73ae5d91bb779e416e71e021619",
-      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
-      "unresolved": false
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
