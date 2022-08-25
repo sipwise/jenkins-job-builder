@@ -67,6 +67,23 @@
       "message": "Thomas, it looks like this review is obsolete and superseded by https://review.opendev.org/c/jjb/jenkins-job-builder/+/835167.\n\nMay be, it should be closed now?",
       "revId": "756ac9a9c90adca4c99faf787d28407d91b0bcc9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c68d818f_f9082f0a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31245
+      },
+      "writtenOn": "2022-08-25T07:08:55Z",
+      "side": 1,
+      "message": "I think we can close here. It\u0027s already fixed in master.",
+      "revId": "756ac9a9c90adca4c99faf787d28407d91b0bcc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
