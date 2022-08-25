@@ -16,6 +16,23 @@
       "message": "Really a WIP, I should look closer at the changes introduced in the existing test suite and probably add a test dedicated to this change.\n\nSomething like:\n\n\n - shell: |\n   echo \"hello\"\n - shell: |-\n   echo \"hello\"\n - shell: |+\n   echo \"hello\"\n\n - shell: !j2: |\n   echo \"hello\"\n - shell: !j2: |-\n   echo \"hello\"\n - shell: !j2: |+\n   echo \"hello\"\n\nAnd ensure the resulting XML has the proper newlines (or lack of).\n\n",
       "revId": "7680f286278741f74bb469b847c3b5ab66b571f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f375c0b5_ff64ed13",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 31245
+      },
+      "writtenOn": "2022-08-25T07:10:11Z",
+      "side": 1,
+      "message": "What is the status here?",
+      "revId": "7680f286278741f74bb469b847c3b5ab66b571f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
