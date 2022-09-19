@@ -19,6 +19,8 @@ import logging
 import platform
 
 from stevedore import extension
+from dotenv import load_dotenv
+
 import yaml
 
 from jenkins_jobs.cli.parser import create_parser
@@ -26,6 +28,7 @@ from jenkins_jobs.config import JJBConfig
 from jenkins_jobs import utils
 from jenkins_jobs import version
 
+load_dotenv()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
 

@@ -9,3 +9,4 @@ stevedore>=1.17.1; python_version >= '3.0'  # Apache-2.0
 python-jenkins>=0.4.15
 fasteners
 Jinja2
+python-dotenv
