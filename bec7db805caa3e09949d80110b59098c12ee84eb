@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e0d8264_3715df96",
+        "filename": "jenkins_jobs/cli/entry.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 34567
+      },
+      "writtenOn": "2022-09-19T12:01:03Z",
+      "side": 1,
+      "message": "I think it would be better to move this into constructor of JenkinsJobs class, below.\n\nIt could be unexpected that environment variables are changed by just importing this module, for example by tests.",
+      "revId": "bec7db805caa3e09949d80110b59098c12ee84eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
