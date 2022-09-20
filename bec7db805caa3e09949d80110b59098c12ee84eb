@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c840f44b_40b6d197",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 35326
+      },
+      "writtenOn": "2022-09-20T06:00:31Z",
+      "side": 1,
+      "message": "In most case it should be put at the very beginning of entry point to ensure it can take effect before other modules start to read envvars.\n\nIt only take effects where there are .env files in the path, so if there is no such file I don\u0027t think envvars will have unexpected changes.",
+      "revId": "bec7db805caa3e09949d80110b59098c12ee84eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5e0d8264_3715df96",
