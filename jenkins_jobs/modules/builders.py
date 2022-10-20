@@ -2976,6 +2976,7 @@ def dsl(registry, xml_parent, data):
     :arg str additional-classpath: Newline separated list of additional
         classpath entries for the Job DSL scripts. All entries must be
         relative to the workspace root, e.g. build/classes/main. (optional)
+    :arg bool sandbox: Execute script inside of groovy sandbox (default false)
 
     Example:
 
@@ -3011,6 +3012,8 @@ def dsl(registry, xml_parent, data):
         XML.SubElement(dsl, "usingScriptText").text = "false"
     else:
         raise MissingAttributeError(["script-text", "target"])
+
+    XML.SubElement(dsl, "sandbox").text = str(data.get("sandbox", "false")).lower()
 
     XML.SubElement(dsl, "ignoreExisting").text = str(
         data.get("ignore-existing", False)
