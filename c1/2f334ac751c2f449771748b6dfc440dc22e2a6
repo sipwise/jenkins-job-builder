@@ -1,0 +1,9 @@
+Code-Review+1: Vsevolod Fedorov <vfedorov@networkoptix.com>
+Code-Review+2: Artem Nikitin <anikitin@networkoptix.com>
+Workflow+1: Artem Nikitin <anikitin@networkoptix.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 21 Oct 2022 14:44:02 +0000
+Reviewed-on: https://review.opendev.org/c/jjb/jenkins-job-builder/+/862196
+Project: jjb/jenkins-job-builder
+Branch: refs/heads/master
