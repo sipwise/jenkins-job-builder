@@ -8,6 +8,7 @@
     name: jjb-tox-cross-python-jenkins
     description: Tests compatibility with master branch of python-jenkins
     parent: tox-py38
+    nodeset: ubuntu-focal
     required-projects:
       - jjb/python-jenkins
       - jjb/jenkins-job-builder
