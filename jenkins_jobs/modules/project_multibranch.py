@@ -427,8 +427,14 @@ def bitbucket_scm(xml_parent, data):
     :extensions:
 
         * **clean** (`dict`)
-            * **after** (`bool`) - Clean the workspace after checkout
-            * **before** (`bool`) - Clean the workspace before checkout
+            * **after** (`dict`) - Clean the workspace after checkout
+                * **remove-stale-nested-repos** (`bool`) - Deletes untracked
+                  submodules and any other subdirectories which contain .git directories
+                  (default false)
+            * **before** (`dict`) - Clean the workspace before checkout
+                * **remove-stale-nested-repos** (`bool`) - Deletes untracked
+                  submodules and any other subdirectories which contain .git directories
+                  (default false)
         * **prune** (`bool`) - Prune remote branches (default false)
         * **shallow-clone** (`bool`) - Perform shallow clone (default false)
         * **sparse-checkout** (dict)
@@ -678,8 +684,14 @@ def gerrit_scm(xml_parent, data):
     :extensions:
 
         * **clean** (`dict`)
-            * **after** (`bool`) - Clean the workspace after checkout
-            * **before** (`bool`) - Clean the workspace before checkout
+            * **after** (`dict`) - Clean the workspace after checkout
+                * **remove-stale-nested-repos** (`bool`) - Deletes untracked
+                  submodules and any other subdirectories which contain .git directories
+                  (default false)
+            * **before** (`dict`) - Clean the workspace before checkout
+                * **remove-stale-nested-repos** (`bool`) - Deletes untracked
+                  submodules and any other subdirectories which contain .git directories
+                  (default false)
         * **prune** (`bool`) - Prune remote branches (default false)
         * **shallow-clone** (`bool`) - Perform shallow clone (default false)
         * **sparse-checkout** (dict)
@@ -848,8 +860,14 @@ def git_scm(xml_parent, data):
     :extensions:
 
         * **clean** (`dict`)
-            * **after** (`bool`) - Clean the workspace after checkout
-            * **before** (`bool`) - Clean the workspace before checkout
+            * **after** (`dict`) - Clean the workspace after checkout
+                * **remove-stale-nested-repos** (`bool`) - Deletes untracked
+                  submodules and any other subdirectories which contain .git directories
+                  (default false)
+            * **before** (`dict`) - Clean the workspace before checkout
+                * **remove-stale-nested-repos** (`bool`) - Deletes untracked
+                  submodules and any other subdirectories which contain .git directories
+                  (default false)
         * **prune** (`bool`) - Prune remote branches (default false)
         * **shallow-clone** (`bool`) - Perform shallow clone (default false)
         * **sparse-checkout** (dict)
@@ -1006,8 +1024,14 @@ def github_scm(xml_parent, data):
     :extensions:
 
         * **clean** (`dict`)
-            * **after** (`bool`) - Clean the workspace after checkout
-            * **before** (`bool`) - Clean the workspace before checkout
+            * **after** (`dict`) - Clean the workspace after checkout
+                * **remove-stale-nested-repos** (`bool`) - Deletes untracked
+                    submodules and any other subdirectories which contain .git directories
+                    (default false)
+            * **before** (`dict`) - Clean the workspace before checkout
+                * **remove-stale-nested-repos** (`bool`) - Deletes untracked
+                    submodules and any other subdirectories which contain .git directories
+                    (default false)
         * **prune** (`bool`) - Prune remote branches (default false)
         * **shallow-clone** (`bool`) - Perform shallow clone (default false)
         * **sparse-checkout** (dict)

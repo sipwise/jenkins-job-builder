@@ -1,4 +1,8 @@
 - job:
+    name: tox-py38
+    nodeset: ubuntu-focal
+
+- job:
     name: jjb-tox-linters
     parent: tox
     vars:
