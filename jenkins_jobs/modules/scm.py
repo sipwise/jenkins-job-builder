@@ -262,8 +262,14 @@ def git(registry, xml_parent, data):
             to build. Can be one of `default`,`inverse`, or `gerrit`
             (default 'default')
         * **clean** (`dict`)
-            * **after** (`bool`) - Clean the workspace after checkout
-            * **before** (`bool`) - Clean the workspace before checkout
+            * **after** (`dict`) - Clean the workspace after checkout
+                * **remove-stale-nested-repos** (`bool`) - Deletes untracked
+                  submodules and any other subdirectories which contain .git directories
+                  (default false)
+            * **before** (`dict`) - Clean the workspace before checkout
+                * **remove-stale-nested-repos** (`bool`) - Deletes untracked
+                  submodules and any other subdirectories which contain .git directories
+                  (default false)
         * **committer** (`dict`)
             * **name** (`str`) - Name to use as author of new commits
             * **email** (`str`) - E-mail address to use for new commits
@@ -518,7 +524,17 @@ def git_extensions(xml_parent, data):
         else:
             clean_after = data["clean"].get("after", False)
             clean_before = data["clean"].get("before", False)
-        if clean_after:
+        if clean_after is not False:
+            if isinstance(clean_after, bool):
+                clean_after_opts = {}
+                logger.warning(
+                    "'clean: after: bool' configuration format is deprecated, "
+                    "after should be an empty dict or filled with accepted "
+                    "options."
+                )
+            else:
+                clean_after_opts = clean_after
+
             ext_name = impl_prefix + "CleanCheckout"
             if trait:
                 trait_name = "CleanAfterCheckoutTrait"
@@ -526,7 +542,20 @@ def git_extensions(xml_parent, data):
                 ext = XML.SubElement(tr, "extension", {"class": ext_name})
             else:
                 ext = XML.SubElement(xml_parent, ext_name)
-        if clean_before:
+            if "remove-stale-nested-repos" in clean_after_opts:
+                elm = XML.SubElement(ext, "deleteUntrackedNestedRepositories")
+                elm.text = "true"
+        if clean_before is not False:
+            if isinstance(clean_before, bool):
+                clean_before_opts = {}
+                logger.warning(
+                    "'clean: before: bool' configuration format is deprecated, "
+                    "before should be an empty dict or filled with accepted "
+                    "options."
+                )
+            else:
+                clean_before_opts = clean_before
+
             ext_name = impl_prefix + "CleanBeforeCheckout"
             if trait:
                 trait_name = "CleanBeforeCheckoutTrait"
@@ -534,6 +563,9 @@ def git_extensions(xml_parent, data):
                 ext = XML.SubElement(tr, "extension", {"class": ext_name})
             else:
                 ext = XML.SubElement(xml_parent, ext_name)
+            if "remove-stale-nested-repos" in clean_before_opts:
+                elm = XML.SubElement(ext, "deleteUntrackedNestedRepositories")
+                elm.text = "true"
     committer = data.get("committer", {})
     if committer:
         ext_name = impl_prefix + "UserIdentity"

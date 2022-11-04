@@ -246,8 +246,14 @@ def github_org(xml_parent, data):
     :extensions:
 
         * **clean** (`dict`)
-            * **after** (`bool`) - Clean the workspace after checkout
-            * **before** (`bool`) - Clean the workspace before checkout
+            * **after** (`dict`) - Clean the workspace after checkout
+                * **remove-stale-nested-repos** (`bool`) - Deletes untracked
+                  submodules and any other subdirectories which contain .git directories
+                  (default false)
+            * **before** (`dict`) - Clean the workspace before checkout
+                * **remove-stale-nested-repos** (`bool`) - Deletes untracked
+                  submodules and any other subdirectories which contain .git directories
+                  (default false)
         * **depth** (`int`) - Set shallow clone depth (default 1)
         * **disable-pr-notifications** (`bool`) - Disable default github status
             notifications on pull requests (default false) (Requires the
