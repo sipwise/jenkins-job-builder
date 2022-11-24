@@ -7,7 +7,7 @@
 - job:
     name: jjb-tox-cross-python-jenkins
     description: Tests compatibility with master branch of python-jenkins
-    parent: tox-py38
+    parent: openstack-tox-py38
     required-projects:
       - jjb/python-jenkins
       - jjb/jenkins-job-builder
@@ -23,7 +23,7 @@
     templates:
       - docs-on-readthedocs
       - openstack-python37-jobs-no-constraints
-      - openstack-python38-jobs-no-constraints
+      - openstack-python38-jobs
     vars:
       rtd_webhook_id: '47271'
     check:
