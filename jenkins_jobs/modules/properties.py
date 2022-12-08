@@ -381,9 +381,9 @@ def branch_api(registry, xml_parent, data):
     :arg int number-of-builds: The maximum number of builds allowed within
         the specified time period. (default 1)
     :arg str time-period: The time period within which the maximum number
-        of builds will be enforced. (default 'Hour')
+        of builds will be enforced. (default 'hour')
 
-        :valid values: **Second** **Minute** **Hour**, **Day**, **Week**, **Month**, **Year**
+        :valid values: **second** **minute** **hour**, **day**, **week**, **month**, **year**
     :arg bool skip-rate-limit: Permit user triggered builds to
         skip the rate limit (default false)
 
@@ -404,10 +404,10 @@ def branch_api(registry, xml_parent, data):
     )
     branch.set("plugin", "branch-api")
 
-    valid_time_periods = ["Second", "Minute", "Hour", "Day", "Week", "Month", "Year"]
+    valid_time_periods = ["second", "minute", "hour", "day", "week", "month", "year"]
 
     mapping = [
-        ("time-period", "durationName", "Hour", valid_time_periods),
+        ("time-period", "durationName", "hour", valid_time_periods),
         ("number-of-builds", "count", 1),
         ("skip-rate-limit", "userBoost", False),
     ]

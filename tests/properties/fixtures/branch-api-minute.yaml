@@ -1,4 +1,4 @@
 properties:
   - branch-api:
-      time-period: Minute
+      time-period: minute
       number-of-builds: 3
