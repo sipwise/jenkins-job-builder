@@ -11,6 +11,7 @@
     required-projects:
       - jjb/python-jenkins
       - jjb/jenkins-job-builder
+    nodeset: ubuntu-focal
     voting: true
 
 - job:
@@ -23,12 +24,17 @@
     templates:
       - docs-on-readthedocs
       - openstack-python37-jobs-no-constraints
-      - openstack-python38-jobs-no-constraints
     vars:
       rtd_webhook_id: '47271'
     check:
       jobs:
+        - tox-py38:
+            nodeset: ubuntu-focal
         - jjb-tox-linters
         - jjb-tox-cross-python-jenkins
         - jjb-tox-docs-linkcheck
         - tox-cover
+    gate:
+      jobs:
+        - tox-py38:
+            nodeset: ubuntu-focal
