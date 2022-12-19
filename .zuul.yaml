@@ -5,9 +5,15 @@
       tox_envlist: linters
 
 - job:
+    name: jjb-tox-py38
+    description: Stock tox-py38 with fixed nodeset
+    parent: tox-py38
+    nodeset: ubuntu-focal
+
+- job:
     name: jjb-tox-cross-python-jenkins
     description: Tests compatibility with master branch of python-jenkins
-    parent: tox-py38
+    parent: jjb-tox-py38
     required-projects:
       - jjb/python-jenkins
       - jjb/jenkins-job-builder
@@ -28,6 +34,7 @@
       rtd_webhook_id: '47271'
     check:
       jobs:
+        - jjb-tox-py38
         - jjb-tox-linters
         - jjb-tox-cross-python-jenkins
         - jjb-tox-docs-linkcheck
