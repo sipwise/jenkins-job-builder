@@ -16,6 +16,24 @@
       "message": "Can you move this change to another patchset? It is very useful, but not related to this one.",
       "revId": "07aea86c05692a3d7d423d6a511f455675872d1e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73454756_f0465144",
+        "filename": ".zuul.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 33253
+      },
+      "writtenOn": "2022-12-19T14:28:33Z",
+      "side": 1,
+      "message": "Already did, sorry I had the reply comment in a draft.",
+      "parentUuid": "ac40bb51_ed5a3b27",
+      "revId": "07aea86c05692a3d7d423d6a511f455675872d1e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
