@@ -6,7 +6,7 @@
         - 'duplicates002_1.1'
         - 'duplicates002_1.1'
 
-- job:
+- job-template:
     name: duplicates002_1.1
     scm:
       - git:

@@ -9,5 +9,5 @@
     jobs:
       - dummy-job
 
-- job:
+- job-template:
     name: dummy-job
