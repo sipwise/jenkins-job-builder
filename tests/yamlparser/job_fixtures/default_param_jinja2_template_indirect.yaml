@@ -1,0 +1,13 @@
+- project:
+    name: sample-project
+    param_1: !j2: '{{ missing_param | default("default_value") }}'
+    param_2: '{param_1}'
+    jobs:
+      - sample-job
+
+- job-template:
+    name: sample-job
+    param_3: '{param_2}-plus'
+    builders:
+      - shell: !j2: |
+          echo {{ param_3 }}

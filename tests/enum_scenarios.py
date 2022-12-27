@@ -21,7 +21,7 @@ from collections import namedtuple
 
 
 Scenario = namedtuple(
-    "Scnenario", "name in_path out_paths config_path plugins_info_path"
+    "Scnenario", "name in_path out_paths error_path config_path plugins_info_path"
 )
 
 
@@ -35,6 +35,7 @@ def scenario_list(fixtures_dir, in_ext=".yaml", out_ext=".xml"):
             name=path.stem,
             in_path=path,
             out_paths=out_path_list,
+            error_path=path.with_suffix(".error"),
             # When config file is missing it will still be passed and not None,
             # so JJBConfig will prefer it over system and user configs.
             config_path=path.with_suffix(".conf"),

@@ -106,6 +106,14 @@ def expected_output(scenario):
     return "".join(path.read_text() for path in sorted(scenario.out_paths))
 
 
+@pytest.fixture
+def expected_error(scenario):
+    if scenario.error_path.exists():
+        return scenario.error_path.read_text().rstrip()
+    else:
+        return None
+
+
 def check_folder(scenario, jjb_config, input):
     if "name" not in input:
         return
@@ -142,7 +150,10 @@ def check_parser(jjb_config, registry):
 
     def check(in_path):
         parser.parse(str(in_path))
-        _ = parser.expandYaml(registry)
+        registry.set_parser_data(parser.data)
+        job_data_list, job_view_list = parser.expandYaml(registry)
+        generator = XmlJobGenerator(registry)
+        _ = generator.generateXML(job_data_list)
 
     return check
 

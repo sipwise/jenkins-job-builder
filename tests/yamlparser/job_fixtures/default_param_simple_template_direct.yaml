@@ -1,0 +1,10 @@
+- project:
+    name: sample-project
+    jobs:
+      - sample-job
+
+- job-template:
+    name: sample-job
+    builders:
+      - shell: |
+          echo {missing_param|default_value}
