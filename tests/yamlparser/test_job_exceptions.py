@@ -16,12 +16,32 @@
 # under the License.
 
 import os
+from operator import attrgetter
 from pathlib import Path
 
 import pytest
 
+from tests.enum_scenarios import scenario_list
 
-exceptions_dir = Path(__file__).parent / "job_exceptions"
+
+fixtures_dir = Path(__file__).parent / "job_exceptions"
+
+
+@pytest.fixture(
+    params=[
+        s
+        for s in scenario_list(fixtures_dir)
+        if s.in_path.name
+        not in {
+            "incorrect_template_dimensions.yaml",
+            "failure_formatting_template.yaml",
+            "failure_formatting_params.yaml",
+        }
+    ],
+    ids=attrgetter("name"),
+)
+def scenario(request):
+    return request.param
 
 
 # Override to avoid scenarios usage.
@@ -37,7 +57,7 @@ def plugins_info():
 
 
 def test_incorrect_template_dimensions(caplog, check_parser):
-    in_path = exceptions_dir / "incorrect_template_dimensions.yaml"
+    in_path = fixtures_dir / "incorrect_template_dimensions.yaml"
     with pytest.raises(Exception) as excinfo:
         check_parser(in_path)
     assert "'NoneType' object is not iterable" in str(excinfo.value)
@@ -46,8 +66,14 @@ def test_incorrect_template_dimensions(caplog, check_parser):
 
 @pytest.mark.parametrize("name", ["template", "params"])
 def test_failure_formatting(caplog, check_parser, name):
-    in_path = exceptions_dir / f"failure_formatting_{name}.yaml"
+    in_path = fixtures_dir / f"failure_formatting_{name}.yaml"
     with pytest.raises(Exception):
         check_parser(in_path)
     assert f"Failure formatting {name}" in caplog.text
     assert "Problem formatting with args" in caplog.text
+
+
+def test_exception(check_parser, scenario, expected_error):
+    with pytest.raises(Exception) as excinfo:
+        check_parser(scenario.in_path)
+    assert str(excinfo.value) == expected_error
