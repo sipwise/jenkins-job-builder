@@ -1671,8 +1671,14 @@ def gitlab(registry, xml_parent, data):
         (default [])
     :arg list exclude-branches: Defined list of branches to exclude
         (default [])
+    :arg str source-branch-regex: Regular expression to select branches
     :arg str target-branch-regex: Regular expression to select branches
     :arg str secret-token: Secret token for build trigger
+    :arg dict merge-request-label-filter-config: If used allow merge requests
+        filtering by labels
+
+        :Options: * **include** (`str`) Run for specified labels.
+                  * **exclude** (`str`) Do not run for specified labels.
 
     .. _`branch filter type`:
 
@@ -1692,7 +1698,7 @@ def gitlab(registry, xml_parent, data):
                        The target branch regex allows you to limit the
                        execution of this job to certain branches. Any
                        branch matching the specified pattern in
-                       **target-branch-regex** triggers the job. No
+                       **target-branch-regex** and **source-branch-regex** triggers the job. No
                        filtering is performed if the field is left empty.
     ================== ====================================================
 
@@ -1772,6 +1778,7 @@ def gitlab(registry, xml_parent, data):
         ("accept-merge-request-on-success", "acceptMergeRequestOnSuccess", False),
         ("add-ci-message", "addCiMessage", False),
         ("allow-all-branches", "allowAllBranches", False),
+        ("source-branch-regex", "sourceBranchRegex", ""),
         ("target-branch-regex", "targetBranchRegex", ""),
         ("secret-token", "secretToken", ""),
     ]
@@ -1787,6 +1794,19 @@ def gitlab(registry, xml_parent, data):
 
     optional_mapping = (("pending-build-name", "pendingBuildName", None),)
     helpers.convert_mapping_to_xml(gitlab, data, optional_mapping, fail_required=False)
+
+    if data.get("merge-request-label-filter-config"):
+        merge_request_filter = XML.SubElement(gitlab, "mergeRequestLabelFilterConfig")
+        merge_mapping = [
+            ("include", "include", ""),
+            ("exclude", "exclude", ""),
+        ]
+        helpers.convert_mapping_to_xml(
+            merge_request_filter,
+            data.get("merge-request-label-filter-config", ""),
+            merge_mapping,
+            fail_required=False,
+        )
 
 
 def gogs(registry, xml_parent, data):

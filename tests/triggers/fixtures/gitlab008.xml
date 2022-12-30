@@ -21,6 +21,7 @@
       <acceptMergeRequestOnSuccess>false</acceptMergeRequestOnSuccess>
       <addCiMessage>true</addCiMessage>
       <allowAllBranches>false</allowAllBranches>
+      <sourceBranchRegex/>
       <targetBranchRegex/>
       <secretToken/>
       <includeBranchesSpec/>

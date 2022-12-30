@@ -21,6 +21,7 @@
       <acceptMergeRequestOnSuccess>true</acceptMergeRequestOnSuccess>
       <addCiMessage>true</addCiMessage>
       <allowAllBranches>false</allowAllBranches>
+      <sourceBranchRegex/>
       <targetBranchRegex>(.*debug.*|.*release.*)</targetBranchRegex>
       <secretToken>secret-build-token</secretToken>
       <includeBranchesSpec>include1, include2</includeBranchesSpec>

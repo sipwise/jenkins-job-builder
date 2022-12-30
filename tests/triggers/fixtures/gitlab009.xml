@@ -2,7 +2,7 @@
 <project>
   <triggers class="vector">
     <com.dabsquared.gitlabjenkins.GitLabPushTrigger>
-      <triggerOpenMergeRequestOnPush>never</triggerOpenMergeRequestOnPush>
+      <triggerOpenMergeRequestOnPush>true</triggerOpenMergeRequestOnPush>
       <branchFilterName/>
       <spec/>
       <triggerOnPush>true</triggerOnPush>
@@ -26,6 +26,10 @@
       <secretToken/>
       <includeBranchesSpec/>
       <excludeBranchesSpec/>
+      <mergeRequestLabelFilterConfig>
+        <include>IncludedLabel</include>
+        <exclude>ExcludedLabel</exclude>
+      </mergeRequestLabelFilterConfig>
     </com.dabsquared.gitlabjenkins.GitLabPushTrigger>
   </triggers>
 </project>
