@@ -1,0 +1,22 @@
+# Override parameter value while reusing it's name in value
+# This leads to incorrect parameter expansion:
+# Result is '{param}-a-a'.
+
+- job-template:
+    name: sample-job
+    param: '{param}-b'
+    builders:
+      - shell: |
+          echo {param}
+
+- job-group:
+    name: sample-group
+    jobs:
+      - sample-job:
+          param: '{param}-a'
+
+- project:
+    name: sample-project
+    param: value
+    jobs:
+      - sample-group

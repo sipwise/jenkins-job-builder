@@ -1,0 +1,14 @@
+# Override parameter value while reusing it's name in value
+
+- job-template:
+    name: sample-job
+    param: '{param}-b'
+    builders:
+      - shell: |
+          echo {param}
+
+- project:
+    name: sample-project
+    param: value
+    jobs:
+      - sample-job
