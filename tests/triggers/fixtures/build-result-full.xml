@@ -24,6 +24,14 @@
             </org.jenkinsci.plugins.buildresulttrigger.model.CheckedResult>
           </checkedResults>
         </org.jenkinsci.plugins.buildresulttrigger.model.BuildResultTriggerInfo>
+        <org.jenkinsci.plugins.buildresulttrigger.model.BuildResultTriggerInfo>
+          <jobNames>test4</jobNames>
+          <checkedResults>
+            <org.jenkinsci.plugins.buildresulttrigger.model.CheckedResult>
+              <checked>SUCCESS</checked>
+            </org.jenkinsci.plugins.buildresulttrigger.model.CheckedResult>
+          </checkedResults>
+        </org.jenkinsci.plugins.buildresulttrigger.model.BuildResultTriggerInfo>
       </jobsInfo>
     </org.jenkinsci.plugins.buildresulttrigger.BuildResultTrigger>
   </triggers>
