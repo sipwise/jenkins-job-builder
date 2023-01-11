@@ -13,3 +13,6 @@ triggers:
             - test3
           results:
             - unstable
+        # Use default results (success):
+        - jobs:
+            - test4
