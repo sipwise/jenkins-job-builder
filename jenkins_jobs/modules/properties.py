@@ -1054,6 +1054,33 @@ def build_discarder(registry, xml_parent, data):
     helpers.convert_mapping_to_xml(strategy, data, mappings, fail_required=True)
 
 
+def build_failure_analyzer(registry, xml_parent, data):
+    """yaml: build-failure-analyzer
+
+    Controls failure cause analysis for builds.
+    Requires the Jenkins :jenkins-plugins:`Build Failure Analyzer Plugin
+    <build-failure-analyzer>`.
+
+    Example:
+
+    .. literalinclude::
+        /../../tests/properties/fixtures/build-failure-analyzer-001.yaml
+       :language: yaml
+
+    .. literalinclude::
+        /../../tests/properties/fixtures/build-failure-analyzer-003.yaml
+       :language: yaml
+    """
+    base_sub = XML.SubElement(
+        xml_parent, "com.sonyericsson.jenkins.plugins.bfa.model.ScannerJobProperty"
+    )
+
+    mappings = [
+        ("disabled", "doNotScan", False),
+    ]
+    helpers.convert_mapping_to_xml(base_sub, data, mappings, fail_required=True)
+
+
 def slave_prerequisites(registry, xml_parent, data):
     """yaml: slave-prerequisites
     This plugin allows you to check prerequisites on slave before
