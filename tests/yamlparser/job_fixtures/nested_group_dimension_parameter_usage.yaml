@@ -1,0 +1,30 @@
+# Parameter defined at template level (param_3) should see parameters defined under job group axes level.
+
+- builder:
+    name: sample_builder
+    builders:
+      - shell: 'echo {param_3}'
+
+- job-template:
+    name: job-{axis_1}
+    param_3: !j2: '[{{ param_1 | default("") }}] [{{ param_2 | default("") }}]'
+    builders:
+      - sample_builder:
+          param_3: '{param_3}'
+
+- job-group:
+    name: sample_group
+    param_1: param_1_group_default
+    axis_1:
+      - key_1:
+          param_1: param_1_value_1
+      - key_2:
+          param_2: param_2_value_2
+    jobs:
+      - job-{axis_1}
+
+
+- project:
+    name: sample-project
+    jobs:
+      - sample_group
