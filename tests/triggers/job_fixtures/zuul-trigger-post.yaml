@@ -1,0 +1,9 @@
+- job-template:
+    name: sample-job
+    triggers:
+      - zuul-post
+
+- project:
+    name: sample-project
+    jobs:
+      - sample-job
