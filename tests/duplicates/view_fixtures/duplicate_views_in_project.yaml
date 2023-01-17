@@ -1,0 +1,12 @@
+- view-template:
+    name: sample-template-{version}
+    view-type: all
+    description: 'Views for version {version}'
+
+- project:
+    name: sample-project
+    version: 1.1
+    views:
+      - sample-template-{version}
+      - sample-template-{version}:
+          version: 2.0
