@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba65c021_842a8c57",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 31275
+      },
+      "writtenOn": "2023-01-17T08:13:05Z",
+      "side": 1,
+      "message": "It looks not related to changes in the review. I suggest to create a separate review for such changes in future.",
+      "revId": "927bb1919b6e4e70cdd2473bd2c1ae0f21d4b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
