@@ -1,0 +1,11 @@
+# When project includes view which is never declared, it issues an error.
+
+- view-template:
+    name: view-1
+    view-type: all
+
+- project:
+    name: sample-project
+    views:
+      - view-1
+      - view-2
