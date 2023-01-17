@@ -16,6 +16,24 @@
       "message": "It looks not related to changes in the review. I suggest to create a separate review for such changes in future.",
       "revId": "927bb1919b6e4e70cdd2473bd2c1ae0f21d4b2c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "29f61268_87f0697d",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 35706
+      },
+      "writtenOn": "2023-01-17T08:18:18Z",
+      "side": 1,
+      "message": "OK. Thanks!\n\nIt was necessary for the tests to pass - without the change tox complained about not allowed external commands (seems like a change between tox 3 and 4). I\u0027ll keep it in mind to structure the review in a cleaner way.",
+      "parentUuid": "ba65c021_842a8c57",
+      "revId": "927bb1919b6e4e70cdd2473bd2c1ae0f21d4b2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
