@@ -1,0 +1,9 @@
+- view-template:
+    name: sample-template
+    view-type: all
+
+- project:
+    name: sample-project
+    views:
+      - sample-template
+      - sample-template

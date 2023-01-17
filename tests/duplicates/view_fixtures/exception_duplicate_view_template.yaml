@@ -1,0 +1,12 @@
+- view-template:
+    name: duplicate-view-template
+    view-type: all
+
+- view-template:
+    name: duplicate-view-template
+    view-type: all
+
+- project:
+    name: sample-project
+    views:
+      - duplicate-view-template
