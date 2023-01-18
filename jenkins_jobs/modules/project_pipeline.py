@@ -49,27 +49,27 @@ Note that ``dsl`` and ``pipeline-scm`` parameters are mutually exclusive.
 Inline DSL job example:
 
     .. literalinclude::
-      /../../tests/yamlparser/fixtures/project_pipeline_template001.yaml
+      /../../tests/yamlparser/job_fixtures/project_pipeline_template001.yaml
 
 Inline DSL job template example:
 
     .. literalinclude::
-      /../../tests/yamlparser/fixtures/project_pipeline_template002.yaml
+      /../../tests/yamlparser/job_fixtures/project_pipeline_template002.yaml
 
 "Pipeline as code" example:
 
     .. literalinclude::
-      /../../tests/yamlparser/fixtures/project_pipeline_template004.yaml
+      /../../tests/yamlparser/job_fixtures/project_pipeline_template004.yaml
 
 "Pipeline as code" example using templates:
 
     .. literalinclude::
-      /../../tests/yamlparser/fixtures/project_pipeline_template005.yaml
+      /../../tests/yamlparser/job_fixtures/project_pipeline_template005.yaml
 
 "Pipeline as nested stage" example :
 
     .. literalinclude::
-      /../../tests/yamlparser/fixtures/project_pipeline_template006.yaml
+      /../../tests/yamlparser/job_fixtures/project_pipeline_template006.yaml
 
 .. _Pipeline as code: https://jenkins.io/solutions/pipeline/
 

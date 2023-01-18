@@ -21,7 +21,7 @@ from pathlib import Path
 import pytest
 
 
-exceptions_dir = Path(__file__).parent / "exceptions"
+exceptions_dir = Path(__file__).parent / "job_exceptions"
 
 
 # Override to avoid scenarios usage.
