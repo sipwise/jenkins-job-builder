@@ -39,12 +39,12 @@ python str.format() command.
 Job example:
 
     .. literalinclude::
-      /../../tests/yamlparser/fixtures/project_workflow_template001.yaml
+      /../../tests/yamlparser/job_fixtures/project_workflow_template001.yaml
 
 Job template example:
 
     .. literalinclude::
-      /../../tests/yamlparser/fixtures/project_workflow_template002.yaml
+      /../../tests/yamlparser/job_fixtures/project_workflow_template002.yaml
 
 """
 import logging

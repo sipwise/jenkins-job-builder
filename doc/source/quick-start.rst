@@ -28,13 +28,13 @@ you to validate the XML before you attempt to upload it to Jenkins.
 
 Test a YAML job definition::
 
-    jenkins-jobs test tests/yamlparser/fixtures/templates002.yaml
+    jenkins-jobs test tests/yamlparser/job_fixtures/templates002.yaml
 
 
 The above command prints the generated Jenkins XML to the console.  If you
 prefer to send it to a directory::
 
-    jenkins-jobs test -o output tests/yamlparser/fixtures/templates002.yaml
+    jenkins-jobs test -o output tests/yamlparser/job_fixtures/templates002.yaml
 
 
 The `output` directory will contain files with the XML configurations.
@@ -49,7 +49,7 @@ Once you've tested your job definition and are happy with it then you can use th
 configuration file.  An example file is supplied in the etc folder, you should
 update it to match your Jenkins master::
 
-    jenkins-jobs --conf etc/jenkins_jobs.ini-sample update tests/yamlparser/fixtures/templates002.yaml
+    jenkins-jobs --conf etc/jenkins_jobs.ini-sample update tests/yamlparser/job_fixtures/templates002.yaml
 
 The above command will update your Jenkins master with the generated jobs.
 

@@ -25,12 +25,12 @@ Requires the Jenkins :jenkins-plugins:`CloudBees Folders Plugin
 Job example:
 
     .. literalinclude::
-      /../../tests/yamlparser/fixtures/project_folder_template001.yaml
+      /../../tests/yamlparser/job_fixtures/project_folder_template001.yaml
 
 Job template example:
 
     .. literalinclude::
-      /../../tests/yamlparser/fixtures/project_folder_template002.yaml
+      /../../tests/yamlparser/job_fixtures/project_folder_template002.yaml
 
 """
 

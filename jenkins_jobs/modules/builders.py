@@ -2322,7 +2322,7 @@ def critical_block_start(registry, xml_parent, data):
     Example:
 
     .. literalinclude::
-        ../../tests/yamlparser/fixtures/critical_block_complete001.yaml
+        ../../tests/yamlparser/job_fixtures/critical_block_complete001.yaml
        :language: yaml
     """
     cbs = XML.SubElement(
@@ -2344,7 +2344,7 @@ def critical_block_end(registry, xml_parent, data):
     Example:
 
     .. literalinclude::
-        ../../tests/yamlparser/fixtures/critical_block_complete001.yaml
+        ../../tests/yamlparser/job_fixtures/critical_block_complete001.yaml
        :language: yaml
     """
     cbs = XML.SubElement(

@@ -1237,13 +1237,13 @@ def active_choices_param(registry, xml_parent, data):
     Minimal Example:
 
     .. literalinclude::
-        /../../tests/yamlparser/fixtures/active-choices-param001.yaml
+        /../../tests/yamlparser/job_fixtures/active-choices-param001.yaml
        :language: yaml
 
     Full Example:
 
     .. literalinclude::
-        /../../tests/yamlparser/fixtures/active-choices-param002.yaml
+        /../../tests/yamlparser/job_fixtures/active-choices-param002.yaml
        :language: yaml
     """
     element_name = "org.biouno.unochoice.ChoiceParameter"
@@ -1295,13 +1295,13 @@ def active_choices_reactive_param(registry, xml_parent, data):
     Minimal Example:
 
     .. literalinclude::
-        /../../tests/yamlparser/fixtures/active-choices-reactive-param001.yaml
+        /../../tests/yamlparser/job_fixtures/active-choices-reactive-param001.yaml
        :language: yaml
 
     Full Example:
 
     .. literalinclude::
-        /../../tests/yamlparser/fixtures/active-choices-reactive-param002.yaml
+        /../../tests/yamlparser/job_fixtures/active-choices-reactive-param002.yaml
        :language: yaml
     """
 
@@ -1391,13 +1391,13 @@ def dynamic_reference_param(registry, xml_parent, data):
     Minimal Example:
 
     .. literalinclude::
-        /../../tests/yamlparser/fixtures/dynamic-reference-param001.yaml
+        /../../tests/yamlparser/job_fixtures/dynamic-reference-param001.yaml
        :language: yaml
 
     Full Example:
 
     .. literalinclude::
-        /../../tests/yamlparser/fixtures/dynamic-reference-param002.yaml
+        /../../tests/yamlparser/job_fixtures/dynamic-reference-param002.yaml
        :language: yaml
     """
     element_name = "org.biouno.unochoice.DynamicReferenceParameter"

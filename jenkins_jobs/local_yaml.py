@@ -78,7 +78,7 @@ Example:
 
     contents of include001.yaml.inc:
 
-    .. literalinclude:: /../../tests/yamlparser/fixtures/include001.yaml.inc
+    .. literalinclude:: /../../tests/yamlparser/job_fixtures/include001.yaml.inc
 
 
 The tag ``!include-raw:`` will treat the given string or list of strings as
@@ -153,12 +153,12 @@ parsing, it is delayed until the variable substitution is performed.
 
 Example:
 
-    .. literalinclude:: /../../tests/yamlparser/fixtures/lazy-load-jobs001.yaml
+    .. literalinclude:: /../../tests/yamlparser/job_fixtures/lazy-load-jobs001.yaml
 
     using a list of files:
 
     .. literalinclude::
-        /../../tests/yamlparser/fixtures/lazy-load-jobs-multi001.yaml
+        /../../tests/yamlparser/job_fixtures/lazy-load-jobs-multi001.yaml
 
 .. note::
 
@@ -182,11 +182,11 @@ templating that will happen with ``!include-raw``.)
 
 Examples:
 
-    .. literalinclude:: /../../tests/yamlparser/fixtures/jinja01.yaml
+    .. literalinclude:: /../../tests/yamlparser/job_fixtures/jinja01.yaml
 
     contents of jinja01.yaml.inc:
 
-        .. literalinclude:: /../../tests/yamlparser/fixtures/jinja01.yaml.inc
+        .. literalinclude:: /../../tests/yamlparser/job_fixtures/jinja01.yaml.inc
 
 
 The tag ``!j2:`` takes a string and treats it as a Jinja2 template.  It will be
@@ -195,7 +195,7 @@ construct.
 
 Examples:
 
-    .. literalinclude:: /../../tests/yamlparser/fixtures/jinja-string01.yaml
+    .. literalinclude:: /../../tests/yamlparser/job_fixtures/jinja-string01.yaml
 
 The tag ``!j2-yaml:`` is similar to the ``!j2:`` tag, just that it loads the
 Jinja-rendered string as YAML and embeds it in the calling YAML construct. This
@@ -205,14 +205,14 @@ simpler configuration, without any duplication.
 
 Examples:
 
-    .. literalinclude:: /../../tests/yamlparser/fixtures/jinja-yaml01.yaml
+    .. literalinclude:: /../../tests/yamlparser/job_fixtures/jinja-yaml01.yaml
 
 Another use case is controlling lists dynamically, like conditionally adding
 list elements based on project configuration.
 
 Examples:
 
-    .. literalinclude:: /../../tests/yamlparser/fixtures/jinja-yaml02.yaml
+    .. literalinclude:: /../../tests/yamlparser/job_fixtures/jinja-yaml02.yaml
 
 """
 

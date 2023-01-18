@@ -168,7 +168,7 @@ job-template.
 More complex example:
 
 .. literalinclude::
-    /../../tests/yamlparser/fixtures/template_default_variables.yaml
+    /../../tests/yamlparser/job_fixtures/template_default_variables.yaml
    :language: yaml
 
 To use a default value for a variable used in the name would be
@@ -224,14 +224,14 @@ If there are templates being realized that differ only in the variable
 used for its name (thus not a use case for job-specific substitutions),
 additional variables can be specified for project variables. Example:
 
-.. literalinclude::  /../../tests/yamlparser/fixtures/templates002.yaml
+.. literalinclude::  /../../tests/yamlparser/job_fixtures/templates002.yaml
 
 You can also specify some variable combinations to exclude from the matrix with
 the ``exclude`` keyword, to avoid generating jobs for those combinations. You
 can specify all the variables of the combination or only a subset, if you
 specify a subset, any value of the omited variable will match:
 
-.. literalinclude:: /../../tests/yamlparser/fixtures/template_exclude.yaml
+.. literalinclude:: /../../tests/yamlparser/job_fixtures/template_exclude.yaml
 
 The above example will omit the jobs:
 
@@ -244,7 +244,7 @@ a bit more complicated, that gets more complicated for each dimension in the
 combination, for the previous example, the counterpart would be:
 
 .. literalinclude::
-    /../../tests/yamlparser/fixtures/template_without_exclude.yaml
+    /../../tests/yamlparser/job_fixtures/template_without_exclude.yaml
 
 Job Group
 ^^^^^^^^^
@@ -254,7 +254,7 @@ together, you can define a Job Group to collect them.  Simply use the
 Job Group where you would normally use a `Job Template`_ and all of
 the Job Templates in the Job Group will be realized.  For example:
 
-.. literalinclude::  /../../tests/yamlparser/fixtures/templates001.yaml
+.. literalinclude::  /../../tests/yamlparser/job_fixtures/templates001.yaml
 
 Would cause the jobs `project-name-unit-tests` and `project-name-perf-tests` to be created
 in Jenkins.
@@ -450,11 +450,11 @@ own preferences.
 
 Job Name Example:
 
-.. literalinclude:: /../../tests/yamlparser/fixtures/folders-job-name.yaml
+.. literalinclude:: /../../tests/yamlparser/job_fixtures/folders-job-name.yaml
 
 Folder Attribute Example:
 
-.. literalinclude:: /../../tests/yamlparser/fixtures/folders-attribute.yaml
+.. literalinclude:: /../../tests/yamlparser/job_fixtures/folders-attribute.yaml
 
 
 .. _ids:
@@ -476,7 +476,7 @@ to reference it instead of the name. This has two primary functions:
 
 Example:
 
-.. literalinclude::  /../../tests/yamlparser/fixtures/template_ids.yaml
+.. literalinclude::  /../../tests/yamlparser/job_fixtures/template_ids.yaml
 
 .. _raw:
 
@@ -506,7 +506,7 @@ You can use `raw` in most locations, the following example show them
 with arbitrary xml-data:
 
 .. literalinclude::
-   /../../tests/yamlparser/fixtures/complete-raw001.yaml
+   /../../tests/yamlparser/job_fixtures/complete-raw001.yaml
 
 Note: If you have a need to use `raw` please consider submitting a patch to
 add or fix the module that will remove your need to use `raw`.
@@ -532,7 +532,7 @@ Will set the job description for every job created.
 
 You can define variables that will be realized in a `Job Template`.
 
-.. literalinclude::  /../../tests/yamlparser/fixtures/template_honor_defaults.yaml
+.. literalinclude::  /../../tests/yamlparser/job_fixtures/template_honor_defaults.yaml
 
 Would create jobs ``build-i386`` and ``build-amd64``.
 
@@ -550,7 +550,7 @@ of code that retains the original object type.
 
 For example:
 
-.. literalinclude::  /../../tests/yamlparser/fixtures/custom_distri.yaml
+.. literalinclude::  /../../tests/yamlparser/job_fixtures/custom_distri.yaml
 
 
 JJB also supports interpolation of parameters within parameters. This allows a
@@ -559,7 +559,7 @@ projects and job groups.
 
 For example:
 
-.. literalinclude:: /../../tests/yamlparser/fixtures/second_order_parameter_interpolation002.yaml
+.. literalinclude:: /../../tests/yamlparser/job_fixtures/second_order_parameter_interpolation002.yaml
 
 
 By default JJB will fail if it tries to interpolate a variable that was not
@@ -568,7 +568,7 @@ allow_empty_variables configuration option.
 
 For example, having a configuration file with that option enabled:
 
-.. literalinclude:: /../../tests/yamlparser/fixtures/allow_empty_variables.conf
+.. literalinclude:: /../../tests/yamlparser/job_fixtures/allow_empty_variables.conf
 
 Will prevent JJb from failing if there are any non-initialized variables used
 and replace them with the empty string instead.
@@ -649,7 +649,7 @@ that JJB definitions allow references to variables in templates.
 
 For example:
 
-.. literalinclude::  /../../tests/yamlparser/fixtures/yaml_anchor.yaml
+.. literalinclude::  /../../tests/yamlparser/job_fixtures/yaml_anchor.yaml
 
 
 The `anchors and aliases`_ are expanded internally within JJB's yaml loading

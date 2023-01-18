@@ -17,7 +17,7 @@
 
 Example:
 
-.. literalinclude::  /../../tests/yamlparser/fixtures/general-example-001.yaml
+.. literalinclude::  /../../tests/yamlparser/job_fixtures/general-example-001.yaml
 
 :Job Parameters:
     * **project-type**:

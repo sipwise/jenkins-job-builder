@@ -84,7 +84,7 @@ Requires the Jenkins :jenkins-plugins:`ShiningPanda Plugin <shiningpanda>`.
 
 Example:
 
-  .. literalinclude::  /../../tests/yamlparser/fixtures/project-matrix001.yaml
+  .. literalinclude::  /../../tests/yamlparser/job_fixtures/project-matrix001.yaml
     :language: yaml
 
 Examples for yaml axis:
