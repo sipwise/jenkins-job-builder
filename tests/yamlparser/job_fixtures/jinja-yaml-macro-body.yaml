@@ -1,0 +1,17 @@
+- builder:
+    name: sample-macro
+    builders:
+      !j2-yaml: |
+        # Check that inner elements are expanded, but only once.
+        - shell: !j2: |
+            echo ${var}
+
+- job-template:
+    name: sample-job
+    builders:
+      - sample-macro
+
+- project:
+    name: sample-project
+    jobs:
+      - sample-job
