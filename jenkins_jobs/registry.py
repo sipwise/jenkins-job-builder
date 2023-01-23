@@ -26,6 +26,7 @@ from six import PY2
 
 from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.expander import Expander, ParamsExpander
+from jenkins_jobs.yaml_objects import BaseYamlObject
 
 __all__ = ["ModuleRegistry"]
 
@@ -296,12 +297,16 @@ class ModuleRegistry(object):
                 expander = self._params_expander
             else:
                 expander = self._expander
+            expander_params = {**component_data, **(job_data or {})}
 
-            for b in macro.elements:
+            elements = macro.elements
+            if isinstance(elements, BaseYamlObject):
+                # Expand !j2-yaml element right below macro body.
+                elements = elements.expand(expander, expander_params)
+
+            for b in elements:
                 try:
-                    element = expander.expand(
-                        b, params={**component_data, **(job_data or {})}
-                    )
+                    element = expander.expand(b, expander_params)
                 except JenkinsJobsException as x:
                     raise JenkinsJobsException(f"While expanding macro {name!r}: {x}")
                 # Pass component_data in as template data to this function
