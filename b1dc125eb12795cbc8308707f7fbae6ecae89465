@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a786d08d_ade95dbb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 31275
+      },
+      "writtenOn": "2023-01-25T10:02:07Z",
+      "side": 1,
+      "message": "The reason of renaming isn\u0027t clear for me. Could you, please, add some words about this.",
+      "revId": "b1dc125eb12795cbc8308707f7fbae6ecae89465",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
