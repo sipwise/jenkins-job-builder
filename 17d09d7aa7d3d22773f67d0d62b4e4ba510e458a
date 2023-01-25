@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5fab79ea_83620f74",
+        "filename": "tests/yamlparser/job_fixtures/dimension_name_parameter_override.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 31275
+      },
+      "writtenOn": "2023-01-25T10:07:38Z",
+      "side": 1,
+      "message": "Why `may`? In which cases it doesn\u0027t happen?",
+      "revId": "17d09d7aa7d3d22773f67d0d62b4e4ba510e458a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
