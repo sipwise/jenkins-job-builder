@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "035182c6_677ee292",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 31275
+      },
+      "writtenOn": "2023-01-25T10:01:55Z",
+      "side": 1,
+      "message": "In previous review your added view test to separate folder with `_view` suffix in the folder\u0027s name.",
+      "revId": "b995c0ac23d2c0ee73ac3d7c95c256d5f33e857d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
