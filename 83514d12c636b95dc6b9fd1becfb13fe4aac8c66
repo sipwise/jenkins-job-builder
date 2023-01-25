@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "997874cf_b614818d",
+        "filename": "tests/yamlparser/job_fixtures/parameter_name_reuse_override.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 31275
+      },
+      "writtenOn": "2023-01-25T09:50:39Z",
+      "side": 1,
+      "message": "AFAIU, parameter value overrided on the project layer. If so, why do we need `job-group` in this test? In fact `job-group` doesn\u0027t contain `sample-job` and it\u0027s unclear for me how `param` value from the `job-group` layer is useful for the test.",
+      "revId": "83514d12c636b95dc6b9fd1becfb13fe4aac8c66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
