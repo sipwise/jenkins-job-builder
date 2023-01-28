@@ -1,0 +1,9 @@
+Code-Review+2: Vsevolod Fedorov <vsevolod.fedorov@gmail.com>
+Code-Review+2: Thanh Ha <zxiiro@gmail.com>
+Workflow+1: Thanh Ha <zxiiro@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Sat, 28 Jan 2023 10:35:25 +0000
+Reviewed-on: https://review.opendev.org/c/jjb/jenkins-job-builder/+/868927
+Project: jjb/jenkins-job-builder
+Branch: refs/heads/master
