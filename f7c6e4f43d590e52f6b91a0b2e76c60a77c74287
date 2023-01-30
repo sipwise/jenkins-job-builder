@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94ece74b_77bbcd5e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2023-01-30T16:45:28Z",
+      "side": 1,
+      "message": "Does this mean we will be dropping support for single non-parsed entries like \"job\", \"view\", etc.... if we merge the feature later in this change chain?\n\nIf so, I guess I\u0027m not against that since I think job-template is much more useful than \"job\" and can be used statically if you really want but with extra steps. I\u0027m not sure how many users use single job definitions but I guess we\u0027ll have to do a major version bump once the final change is merged to signal breaking changes.\n\n(Apologies if this is obvious further down the change chain since I don\u0027t have time to go through and fully understand everything in this chain of changes just yet but am trying to slowly look at them.)",
+      "revId": "f7c6e4f43d590e52f6b91a0b2e76c60a77c74287",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
