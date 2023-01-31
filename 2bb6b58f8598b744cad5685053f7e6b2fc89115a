@@ -16,6 +16,23 @@
       "message": "Not yet ready for merge. I should make some more manual checks. And I plan to make a mail list message with explanation for upcoming changes before merging that, so that anyone affected may object.",
       "revId": "2bb6b58f8598b744cad5685053f7e6b2fc89115a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "da95de3f_0adba14c",
+        "filename": "jenkins_jobs/root_base.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 34567
+      },
+      "writtenOn": "2023-01-31T14:08:41Z",
+      "side": 1,
+      "message": "Any suggestions to name base class for jobs, views, templates, groups and projects other than \u0027root\u0027 are welcomed.",
+      "revId": "2bb6b58f8598b744cad5685053f7e6b2fc89115a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
