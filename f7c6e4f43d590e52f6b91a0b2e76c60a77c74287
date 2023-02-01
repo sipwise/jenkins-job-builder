@@ -34,6 +34,24 @@
       "parentUuid": "94ece74b_77bbcd5e",
       "revId": "f7c6e4f43d590e52f6b91a0b2e76c60a77c74287",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98857d93_01bc9091",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2023-02-01T10:25:43Z",
+      "side": 1,
+      "message": "Thanks for explaining. That sounds reasonable. I don\u0027t have much time so don\u0027t expect quick reviews but I\u0027m trying to get through my review queue one at a time when I have a moment to spare. 😊",
+      "parentUuid": "76c34ff5_b76612d7",
+      "revId": "f7c6e4f43d590e52f6b91a0b2e76c60a77c74287",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
