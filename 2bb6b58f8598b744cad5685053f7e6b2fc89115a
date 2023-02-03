@@ -20,6 +20,40 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "afc856ef_f00fb207",
+        "filename": "jenkins_jobs/dimensions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 31275
+      },
+      "writtenOn": "2023-02-03T09:07:24Z",
+      "side": 1,
+      "message": "The other files in this folder contains copyright information with Apache license notes. Do we need to use this policy for all new failes in the `jenkins-jobs` folder.",
+      "revId": "2bb6b58f8598b744cad5685053f7e6b2fc89115a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "982ca80d_1eddfbe8",
+        "filename": "jenkins_jobs/dimensions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 31275
+      },
+      "writtenOn": "2023-02-03T09:07:24Z",
+      "side": 1,
+      "message": "I suggest to add here and for the other new classes doc-string and describe its purpose and usages.",
+      "revId": "2bb6b58f8598b744cad5685053f7e6b2fc89115a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "da95de3f_0adba14c",
         "filename": "jenkins_jobs/root_base.py",
         "patchSetId": 3
@@ -31,6 +65,24 @@
       "writtenOn": "2023-01-31T14:08:41Z",
       "side": 1,
       "message": "Any suggestions to name base class for jobs, views, templates, groups and projects other than \u0027root\u0027 are welcomed.",
+      "revId": "2bb6b58f8598b744cad5685053f7e6b2fc89115a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea66085c_05fa145d",
+        "filename": "jenkins_jobs/root_base.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 31275
+      },
+      "writtenOn": "2023-02-03T09:07:24Z",
+      "side": 1,
+      "message": "HeadItem, TopUnit",
+      "parentUuid": "da95de3f_0adba14c",
       "revId": "2bb6b58f8598b744cad5685053f7e6b2fc89115a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
