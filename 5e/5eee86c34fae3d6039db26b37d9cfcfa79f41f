@@ -1,0 +1,9 @@
+Code-Review+2: Artem Nikitin <anikitin@networkoptix.com>
+Code-Review+2: Thanh Ha <zxiiro@gmail.com>
+Workflow+1: Thanh Ha <zxiiro@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Fri, 03 Feb 2023 20:17:59 +0000
+Reviewed-on: https://review.opendev.org/c/jjb/jenkins-job-builder/+/871579
+Project: jjb/jenkins-job-builder
+Branch: refs/heads/master
