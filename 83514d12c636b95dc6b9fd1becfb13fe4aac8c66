@@ -34,6 +34,24 @@
       "parentUuid": "997874cf_b614818d",
       "revId": "83514d12c636b95dc6b9fd1becfb13fe4aac8c66",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "347872c8_e0e57bc0",
+        "filename": "tests/yamlparser/job_fixtures/parameter_name_reuse_override.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2023-02-03T20:02:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9314532d_6ff1342f",
+      "revId": "83514d12c636b95dc6b9fd1becfb13fe4aac8c66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
