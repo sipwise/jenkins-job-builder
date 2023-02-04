@@ -34,6 +34,24 @@
       "parentUuid": "5fab79ea_83620f74",
       "revId": "17d09d7aa7d3d22773f67d0d62b4e4ba510e458a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4555cfb1_cffc318b",
+        "filename": "tests/yamlparser/job_fixtures/dimension_name_parameter_override.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2023-02-04T17:57:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b86e05e0_f64a7b1a",
+      "revId": "17d09d7aa7d3d22773f67d0d62b4e4ba510e458a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
