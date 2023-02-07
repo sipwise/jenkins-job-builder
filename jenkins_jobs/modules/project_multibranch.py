@@ -1194,6 +1194,7 @@ def github_scm(xml_parent, data):
     if data.get("build-strategies", None):
         build_strategies(xml_parent, data)
 
+    add_github_checks_traits(traits, data)
     add_notification_context_trait(traits, data)
     add_filter_by_name_wildcard_behaviors(traits, data)
 
@@ -1925,3 +1926,59 @@ def add_notification_context_trait(traits, data):
                 nc_trait_suffix.text = str(nc_suffix).lower()
             else:
                 nc_trait_suffix.text = nc_suffix
+
+
+def add_github_checks_traits(traits, data):
+    """Enable and configure the usage of GitHub Checks API
+
+    Requires the :jenkins-plugins:`Github Checks <github-checks>` plugin.
+
+    :arg dict status-checks:
+
+        * **name** (str): The text of the context label for GitHub Checks entry
+        * **skip** (bool): Skips publishing Checks (optional, default false)
+        * **skip-branch-source-notifications** (bool): Disables the default
+            option of publishing statuses through Status API
+            (optional, default false)
+        * **publish-unstable-as-neutral** (bool): Publishes UNSTABLE builds
+            as neutral (not failed) checks
+            (optional, default false)
+        * **suppress-log-output** (bool): Suppresses sending build logs to GitHub
+            (optional, default false)
+        * **suppress-progress-updates** (bool): Suppresses updating build progress
+            (optional, default false)
+        * **verbose-logs** (bool): Enables sending build console logs to GitHub
+            (optional, default false)
+    """
+    if data.get("status-checks", None):
+        status_checks_section = data["status-checks"]
+        if status_checks_section.get("verbose-logs", None):
+            sct = XML.SubElement(
+                traits,
+                "io.jenkins.plugins.checks.github.config.GitHubSCMSourceChecksTrait",
+                {"plugin": "github-checks"},
+            )
+            sct_mapping = [("verbose-logs", "verboseConsoleLog", "false")]
+            helpers.convert_mapping_to_xml(
+                sct, status_checks_section, sct_mapping, fail_required=True
+            )
+
+        status_check_trait = XML.SubElement(
+            traits,
+            "io.jenkins.plugins.checks.github.status.GitHubSCMSourceStatusChecksTrait",
+            {"plugin": "github-checks"},
+        )
+        status_check_trait_mapping = [
+            ("skip", "skip", "false"),
+            ("skip-branch-source-notifications", "skipNotifications", "false"),
+            ("publish-unstable-as-neutral", "unstableBuildNeutral", "false"),
+            ("name", "name", "Jenkins"),
+            ("suppress-log-output", "suppressLogs", "false"),
+            ("suppress-progress-updates", "skipProgressUpdates", "false"),
+        ]
+        helpers.convert_mapping_to_xml(
+            status_check_trait,
+            status_checks_section,
+            status_check_trait_mapping,
+            fail_required=True,
+        )

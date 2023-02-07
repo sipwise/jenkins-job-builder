@@ -76,6 +76,17 @@
               <tagIncludes>bar*</tagIncludes>
               <tagExcludes>*qaz</tagExcludes>
             </net.gleske.scmfilter.impl.trait.WildcardSCMOriginFilterTrait>
+            <io.jenkins.plugins.checks.github.config.GitHubSCMSourceChecksTrait plugin="github-checks">
+              <verboseConsoleLog>true</verboseConsoleLog>
+            </io.jenkins.plugins.checks.github.config.GitHubSCMSourceChecksTrait>
+            <io.jenkins.plugins.checks.github.status.GitHubSCMSourceStatusChecksTrait plugin="github-checks">
+              <skip>true</skip>
+              <skipNotifications>true</skipNotifications>
+              <unstableBuildNeutral>true</unstableBuildNeutral>
+              <name>my-checks</name>
+              <suppressLogs>true</suppressLogs>
+              <skipProgressUpdates>true</skipProgressUpdates>
+            </io.jenkins.plugins.checks.github.status.GitHubSCMSourceStatusChecksTrait>
             <org.jenkinsci.plugins.githubScmTraitNotificationContext.NotificationContextTrait>
               <contextLabel>jenkins.example.com/my_context</contextLabel>
               <typeSuffix>false</typeSuffix>

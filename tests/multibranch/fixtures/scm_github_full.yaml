@@ -35,6 +35,14 @@ scm:
         notification-context:
             label: 'jenkins.example.com/my_context'
             suffix: false
+        status-checks:
+            name: my-checks
+            skip: true
+            skip-branch-source-notifications: true
+            publish-unstable-as-neutral: true
+            suppress-log-output: true
+            suppress-progress-updates: true
+            verbose-logs: true
         property-strategies:
             all-branches:
                 - suppress-scm-triggering: true
