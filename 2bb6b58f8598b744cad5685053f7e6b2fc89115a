@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2b56d877_fca43292",
+        "filename": "jenkins_jobs/dimensions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 34567
+      },
+      "writtenOn": "2023-02-07T07:56:17Z",
+      "side": 1,
+      "message": "Added Apache license notes to all new classes.",
+      "parentUuid": "afc856ef_f00fb207",
+      "revId": "2bb6b58f8598b744cad5685053f7e6b2fc89115a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "982ca80d_1eddfbe8",
         "filename": "jenkins_jobs/dimensions.py",
         "patchSetId": 3
@@ -48,6 +66,24 @@
       "writtenOn": "2023-02-03T09:07:24Z",
       "side": 1,
       "message": "I suggest to add here and for the other new classes doc-string and describe its purpose and usages.",
+      "revId": "2bb6b58f8598b744cad5685053f7e6b2fc89115a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ec110ce8_acbdf775",
+        "filename": "jenkins_jobs/dimensions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 34567
+      },
+      "writtenOn": "2023-02-07T07:56:17Z",
+      "side": 1,
+      "message": "I have added comments or docs to every class where I were able to invent description that would be useful. In other places, it would just reword it\u0027s name or repeat implementation.",
+      "parentUuid": "982ca80d_1eddfbe8",
       "revId": "2bb6b58f8598b744cad5685053f7e6b2fc89115a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
