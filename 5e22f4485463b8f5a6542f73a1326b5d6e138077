@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2983b428_4820abb5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34567
+      },
+      "writtenOn": "2023-02-09T06:50:39Z",
+      "side": 1,
+      "message": "Please, ignore Zuul errors, I will fix that.",
+      "revId": "5e22f4485463b8f5a6542f73a1326b5d6e138077",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
