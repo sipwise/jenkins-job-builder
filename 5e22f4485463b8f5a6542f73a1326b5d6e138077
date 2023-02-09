@@ -34,6 +34,24 @@
       "parentUuid": "2983b428_4820abb5",
       "revId": "5e22f4485463b8f5a6542f73a1326b5d6e138077",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "44337bc7_158d5a35",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34567
+      },
+      "writtenOn": "2023-02-09T16:21:08Z",
+      "side": 1,
+      "message": "Yep. That is what I was actually meaning. I rebased this review to the fix.",
+      "parentUuid": "f53a1dc1_fb32741a",
+      "revId": "5e22f4485463b8f5a6542f73a1326b5d6e138077",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
