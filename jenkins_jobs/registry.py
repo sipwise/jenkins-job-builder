@@ -72,6 +72,12 @@ class ModuleRegistry(object):
                 r"(.*)-(?:SNAPSHOT|BETA).*", r"\g<1>.preview", version
             )
 
+            logger.info(
+                "Packaging %r: %r",
+                pkg_resources.extern.packaging.version,
+                pkg_resources.extern.packaging.__version__,
+            )
+
             if isinstance(
                 pkg_resources.parse_version(plugin_info["version"]),
                 pkg_resources.extern.packaging.version.LegacyVersion,
