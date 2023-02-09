@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36d4efb8_edeffadb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 30506
+      },
+      "writtenOn": "2023-02-09T15:33:29Z",
+      "side": 1,
+      "message": "I hit this issue with plugin: Azure SDK API on version: 61.v6a8af1f5f5b6\nGot an error: kg_resources.extern.packaging.version.InvalidVersion: Invalid version: \u002761.v6a8af1f5f5b6\u0027 \n\nAfter making change from this review I can update the JJB jobs without error. ",
+      "revId": "571df29fd752cf80570f9648e1502d4571f9aaa6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
