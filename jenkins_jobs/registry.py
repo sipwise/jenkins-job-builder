@@ -20,6 +20,7 @@ import logging
 import operator
 import pkg_resources
 import re
+import setuptools
 import types
 
 from six import PY2
@@ -70,6 +71,18 @@ class ModuleRegistry(object):
             version = plugin_info.get("version", "0")
             plugin_info["version"] = re.sub(
                 r"(.*)-(?:SNAPSHOT|BETA).*", r"\g<1>.preview", version
+            )
+
+            logger.info(
+                "setuptools %r: %r",
+                setuptools,
+                setuptools.__version__,
+            )
+
+            logger.info(
+                "packaging %r: %r",
+                pkg_resources.extern.packaging.version,
+                pkg_resources.extern.packaging.__version__,
             )
 
             if isinstance(
