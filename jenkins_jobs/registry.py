@@ -72,29 +72,6 @@ class ModuleRegistry(object):
                 r"(.*)-(?:SNAPSHOT|BETA).*", r"\g<1>.preview", version
             )
 
-            if isinstance(
-                pkg_resources.parse_version(plugin_info["version"]),
-                pkg_resources.extern.packaging.version.LegacyVersion,
-            ):
-                plugin_info["version"] = plugin_info["version"].replace("-", "+")
-            if isinstance(
-                pkg_resources.parse_version(plugin_info["version"]),
-                pkg_resources.extern.packaging.version.LegacyVersion,
-            ):
-                plugin_name = plugin_info.get(
-                    "shortName", plugin_info.get("longName", None)
-                )
-                if plugin_name:
-                    logger.warning(
-                        "Version %s for plugin %s is being treated as a LegacyVersion"
-                        % (plugin_info["version"], plugin_name)
-                    )
-                else:
-                    logger.warning(
-                        "Version %s is being treated as a LegacyVersion"
-                        % plugin_info["version"]
-                    )
-
             aliases = []
             for key in ["longName", "shortName"]:
                 value = plugin_info.get(key, None)

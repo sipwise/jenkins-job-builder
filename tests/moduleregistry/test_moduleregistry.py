@@ -31,10 +31,6 @@ scenarios = [
     Scenario(
         "s15", v1="1.4.6-SNAPSHOT (private-0986edd9-example)", op="__gt__", v2="1.4.5"
     ),
-    Scenario("s16", v1="1.0.1-1.v1", op="__gt__", v2="1.0.1"),
-    Scenario("s17", v1="1.0.1-1.v1", op="__lt__", v2="1.0.2"),
-    Scenario("s18", v1="1.0.2-1.v1", op="__gt__", v2="1.0.1"),
-    Scenario("s19", v1="1.0.2-1.v1", op="__gt__", v2="1.0.1-2"),
 ]
 
 
