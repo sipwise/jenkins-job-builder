@@ -16,6 +16,24 @@
       "message": "Please, ignore Zuul errors, I will fix that.",
       "revId": "5e22f4485463b8f5a6542f73a1326b5d6e138077",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f53a1dc1_fb32741a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13807
+      },
+      "writtenOn": "2023-02-09T11:24:23Z",
+      "side": 1,
+      "message": "I believe Zuul won\u0027t let us merge unless it passes the Zuul check so we must fix it first.",
+      "parentUuid": "2983b428_4820abb5",
+      "revId": "5e22f4485463b8f5a6542f73a1326b5d6e138077",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
