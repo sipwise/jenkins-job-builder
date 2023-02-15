@@ -47,9 +47,13 @@ scm:
             all-branches:
                 - suppress-scm-triggering: true
                 - pipeline-branch-durability-override: max-survivability
-                - trigger-build-on-pr-comment: "Ci build!"
-                - trigger-build-on-pr-review: true
-                - trigger-build-on-pr-update: true
+                - trigger-build-on-pr-comment:
+                    comment: "Ci build!"
+                    allow-untrusted-users: true
+                - trigger-build-on-pr-review:
+                    allow-untrusted-users: true
+                - trigger-build-on-pr-update:
+                    allow-untrusted-users: true
         build-strategies:
             - all-strategies-match:
                 strategies:

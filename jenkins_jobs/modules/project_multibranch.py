@@ -1736,14 +1736,26 @@ def apply_property_strategies(props_elem, props_list):
                 "".join([pr_comment_build, ".TriggerPRCommentBranchProperty"]),
                 {"plugin": "github-pr-comment-build"},
             )
-            XML.SubElement(tbopc_elem, "commentBody").text = tbopc_val
+            if isinstance(tbopc_val, dict):
+                XML.SubElement(tbopc_elem, "commentBody").text = tbopc_val.get(
+                    "comment"
+                )
+                if tbopc_val.get("allow-untrusted-users", False):
+                    XML.SubElement(tbopc_elem, "allowUntrusted").text = "true"
+            else:
+                XML.SubElement(tbopc_elem, "commentBody").text = tbopc_val
         for opt in pcb_bool_opts:
-            if dbs_list.get(opt, False):
-                XML.SubElement(
+            opt_value = dbs_list.get(opt, None)
+            if opt_value:
+                opt_elem = XML.SubElement(
                     props_elem,
                     "".join([pr_comment_build, pcb_bool_opts.get(opt)]),
                     {"plugin": "github-pr-comment-build"},
                 )
+                if isinstance(opt_value, dict) and opt_value.get(
+                    "allow-untrusted-users", False
+                ):
+                    XML.SubElement(opt_elem, "allowUntrusted").text = "true"
 
 
 def add_filter_branch_pr_behaviors(traits, data):
