@@ -16,6 +16,24 @@
       "message": "May be more tests should be added for completeness.\nLike these:\n```\n- trigger-build-on-pr-*: false\n```\n\n```\n- trigger-build-on-pr-*:\n    -allow-untrusted-users: false\n```\n\n```\n- trigger-build-on-pr-*:\n```\n\n```\n- trigger-build-on-pr-comment:\n    # Without comment.\n    -allow-untrusted-users: true\n```",
       "revId": "aa9897dff3b17981bf9fc100b220bdb382396d45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5496395_70ed33a6",
+        "filename": "tests/multibranch/fixtures/scm_github_full.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 35706
+      },
+      "writtenOn": "2023-02-15T20:45:28Z",
+      "side": 1,
+      "message": "I\u0027ll add them. The last one is a good one - what should the behavior be here? Should we:\n- silently treat the option as completely disabled (I don\u0027t like it - silent errors are not fun when debugging),\n- raise an exception or\n- use an empty/default string as the comment? \n\nThe plugin itself allows to save an empty comment tag, but the next configuration attempt displays \"^REBUILD$\" as a comment (which is then saved into XML when the user saves the configuration unless they change it).",
+      "parentUuid": "b0e3307f_4f34a238",
+      "revId": "aa9897dff3b17981bf9fc100b220bdb382396d45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
