@@ -129,12 +129,12 @@ def check_folder(scenario, jjb_config, input):
 def check_generator(scenario, input, expected_output, jjb_config, registry, project):
     registry.set_parser_data({})
 
-    if project:
-        xml = project.root_xml(input)
-    else:
-        xml = XML.Element("project")
-
     def check(Generator):
+        if project:
+            xml = project.root_xml(input)
+        else:
+            xml = XML.Element("project")
+
         generator = Generator(registry)
         generator.gen_xml(xml, input)
         check_folder(scenario, jjb_config, input)

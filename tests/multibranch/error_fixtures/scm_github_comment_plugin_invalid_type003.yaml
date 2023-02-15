@@ -1,0 +1,17 @@
+name: 'demo-multibranch-github-min'
+project-type: multibranch
+scm:
+    - github:
+        repo: 'foo'
+        repo-owner: 'johndoe'
+
+        property-strategies:
+            all-branches:
+                - suppress-scm-triggering: true
+                - pipeline-branch-durability-override: max-survivability
+                - trigger-build-on-pr-comment:
+                    comment: "CI build!"
+                - trigger-build-on-pr-review:
+                    allow-untrusted-users: false
+                - trigger-build-on-pr-update:
+                    - test
