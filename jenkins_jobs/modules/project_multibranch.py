@@ -1468,25 +1468,37 @@ def property_strategies(xml_parent, data):
                 max-survivability (optional)
                 Requires the :jenkins-plugins:`Pipeline Multibranch Plugin
                 <workflow-multibranch>`
-            * **trigger-build-on-pr-comment** (str): The comment body to
+            * **trigger-build-on-pr-comment** (str or dict): The comment body to
                 trigger a new build for a PR job when it is received. This
-                is compiled as a case insensitive regular expression, so
+                is compiled as a case-insensitive regular expression, so
                 use ``".*"`` to trigger a build on any comment whatsoever.
                 (optional)
+                If dictionary syntax is used, the option requires 2 fields:
+                ``comment`` with the comment body and ``allow-untrusted-users``
+                (bool) causing the plugin to skip checking if the comment author
+                is a collaborator of the GitHub project.
                 Requires the :jenkins-plugins:`GitHub PR Comment Build Plugin
                 <github-pr-comment-build>`
-            * **trigger-build-on-pr-review** (bool): This property will
+            * **trigger-build-on-pr-review** (bool or dict): This property will
                 cause a job for a pull request ``(PR-*)`` to be triggered
                 immediately when a review is made on the PR in GitHub.
                 This has no effect on jobs that are not for pull requests.
                 (optional)
+                If dictionary syntax is used, the option requires
+                ``allow-untrusted-users`` (bool) causing the plugin to skip
+                checking if the review author is a collaborator of the GitHub
+                project.
                 Requires the :jenkins-plugins:`GitHub PR Comment Build Plugin
                 <github-pr-comment-build>`
-            * **trigger-build-on-pr-update** (bool): This property will
+            * **trigger-build-on-pr-update** (bool or dict): This property will
                 cause a job for a pull request ``(PR-*)`` to be triggered
                 immediately when the PR title or description is edited in
                 GitHub. This has no effect on jobs that are not for pull
                 requests. (optional)
+                If dictionary syntax is used, the option requires
+                ``allow-untrusted-users`` (bool) causing the plugin to skip
+                checking if the update author is a collaborator of the GitHub
+                project.
                 Requires the :jenkins-plugins:`GitHub PR Comment Build Plugin
                 <github-pr-comment-build>`
         * **named-branches** (dict): Named branches get different properties.
@@ -1505,25 +1517,37 @@ def property_strategies(xml_parent, data):
                     max-survivability (optional)
                     Requires the :jenkins-plugins:`Pipeline Multibranch Plugin
                     <workflow-multibranch>`
-                * **trigger-build-on-pr-comment** (str): The comment body to
+                * **trigger-build-on-pr-comment** (str or dict): The comment body to
                     trigger a new build for a PR job when it is received. This
-                    is compiled as a case insensitive regular expression, so
+                    is compiled as a case-insensitive regular expression, so
                     use ``".*"`` to trigger a build on any comment whatsoever.
                     (optional)
+                    If dictionary syntax is used, the option requires 2 fields:
+                    ``comment`` with the comment body and ``allow-untrusted-users``
+                    (bool) causing the plugin to skip checking if the comment author
+                    is a collaborator of the GitHub project.
                     Requires the :jenkins-plugins:`GitHub PR Comment Build Plugin
                     <github-pr-comment-build>`
-                * **trigger-build-on-pr-review** (bool): This property will
+                * **trigger-build-on-pr-review** (bool or dict): This property will
                     cause a job for a pull request ``(PR-*)`` to be triggered
                     immediately when a review is made on the PR in GitHub.
                     This has no effect on jobs that are not for pull requests.
                     (optional)
+                    If dictionary syntax is used, the option requires
+                    ``allow-untrusted-users`` (bool) causing the plugin to skip
+                    checking if the review author is a collaborator of the GitHub
+                    project.
                     Requires the :jenkins-plugins:`GitHub PR Comment Build Plugin
                     <github-pr-comment-build>`
-                * **trigger-build-on-pr-update** (bool): This property will
+                * **trigger-build-on-pr-update** (bool or dict): This property will
                     cause a job for a pull request ``(PR-*)`` to be triggered
                     immediately when the PR title or description is edited in
                     GitHub. This has no effect on jobs that are not for pull
                     requests. (optional)
+                    If dictionary syntax is used, the option requires
+                    ``allow-untrusted-users`` (bool) causing the plugin to skip
+                    checking if the update author is a collaborator of the GitHub
+                    project.
                     Requires the :jenkins-plugins:`GitHub PR Comment Build Plugin
                     <github-pr-comment-build>`
 
@@ -1736,14 +1760,26 @@ def apply_property_strategies(props_elem, props_list):
                 "".join([pr_comment_build, ".TriggerPRCommentBranchProperty"]),
                 {"plugin": "github-pr-comment-build"},
             )
-            XML.SubElement(tbopc_elem, "commentBody").text = tbopc_val
+            if isinstance(tbopc_val, dict):
+                XML.SubElement(tbopc_elem, "commentBody").text = tbopc_val.get(
+                    "comment"
+                )
+                if tbopc_val.get("allow-untrusted-users", False):
+                    XML.SubElement(tbopc_elem, "allowUntrusted").text = "true"
+            else:
+                XML.SubElement(tbopc_elem, "commentBody").text = tbopc_val
         for opt in pcb_bool_opts:
-            if dbs_list.get(opt, False):
-                XML.SubElement(
+            opt_value = dbs_list.get(opt, None)
+            if opt_value:
+                opt_elem = XML.SubElement(
                     props_elem,
                     "".join([pr_comment_build, pcb_bool_opts.get(opt)]),
                     {"plugin": "github-pr-comment-build"},
                 )
+                if isinstance(opt_value, dict) and opt_value.get(
+                    "allow-untrusted-users", False
+                ):
+                    XML.SubElement(opt_elem, "allowUntrusted").text = "true"
 
 
 def add_filter_branch_pr_behaviors(traits, data):

@@ -173,9 +173,14 @@
               </org.jenkinsci.plugins.workflow.multibranch.DurabilityHintBranchProperty>
               <com.adobe.jenkins.github__pr__comment__build.TriggerPRCommentBranchProperty plugin="github-pr-comment-build">
                 <commentBody>Ci build!</commentBody>
+                <allowUntrusted>true</allowUntrusted>
               </com.adobe.jenkins.github__pr__comment__build.TriggerPRCommentBranchProperty>
-              <com.adobe.jenkins.github__pr__comment__build.TriggerPRReviewBranchProperty plugin="github-pr-comment-build"/>
-              <com.adobe.jenkins.github__pr__comment__build.TriggerPRUpdateBranchProperty plugin="github-pr-comment-build"/>
+              <com.adobe.jenkins.github__pr__comment__build.TriggerPRReviewBranchProperty plugin="github-pr-comment-build">
+                <allowUntrusted>true</allowUntrusted>
+              </com.adobe.jenkins.github__pr__comment__build.TriggerPRReviewBranchProperty>
+              <com.adobe.jenkins.github__pr__comment__build.TriggerPRUpdateBranchProperty plugin="github-pr-comment-build">
+                <allowUntrusted>true</allowUntrusted>
+              </com.adobe.jenkins.github__pr__comment__build.TriggerPRUpdateBranchProperty>
             </a>
           </properties>
         </strategy>
