@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0e3307f_4f34a238",
+        "filename": "tests/multibranch/fixtures/scm_github_full.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 34567
+      },
+      "writtenOn": "2023-02-15T14:42:35Z",
+      "side": 1,
+      "message": "May be more tests should be added for completeness.\nLike these:\n```\n- trigger-build-on-pr-*: false\n```\n\n```\n- trigger-build-on-pr-*:\n    -allow-untrusted-users: false\n```\n\n```\n- trigger-build-on-pr-*:\n```\n\n```\n- trigger-build-on-pr-comment:\n    # Without comment.\n    -allow-untrusted-users: true\n```",
+      "revId": "aa9897dff3b17981bf9fc100b220bdb382396d45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
