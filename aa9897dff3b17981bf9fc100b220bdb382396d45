@@ -70,6 +70,24 @@
       "parentUuid": "99894a33_0b5e7139",
       "revId": "aa9897dff3b17981bf9fc100b220bdb382396d45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3b7b5453_5fe2fdc1",
+        "filename": "tests/multibranch/fixtures/scm_github_full.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 35706
+      },
+      "writtenOn": "2023-02-16T21:09:59Z",
+      "side": 1,
+      "message": "Thanks for the pointer.\nI\u0027ve added more positive test cases, however it seems that the exception case will take some time. I\u0027ve added also `test_errors` (same mechanism as in `yamlparser`), but `check_generator` has some deep fixture magic that causes that XML generation happens on test setup instead of in the test body... This causes `pytest.raises` to miss the exception (well, it\u0027s not even executed).\n\nThis is my current `test_errors`:\n\n  def test_error(check_generator, expected_error):\n      with pytest.raises(Exception) as excinfo:\n          check_generator(project_multibranch.WorkflowMultiBranch)\n      assert str(excinfo.value) \u003d\u003d expected_error",
+      "parentUuid": "4622bf43_9125420d",
+      "revId": "aa9897dff3b17981bf9fc100b220bdb382396d45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
