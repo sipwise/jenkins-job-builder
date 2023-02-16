@@ -52,6 +52,24 @@
       "parentUuid": "d5496395_70ed33a6",
       "revId": "aa9897dff3b17981bf9fc100b220bdb382396d45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4622bf43_9125420d",
+        "filename": "tests/multibranch/fixtures/scm_github_full.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 34567
+      },
+      "writtenOn": "2023-02-16T07:35:04Z",
+      "side": 1,
+      "message": "Also note that exceptions could also be tested - see .error files as examples.",
+      "parentUuid": "99894a33_0b5e7139",
+      "revId": "aa9897dff3b17981bf9fc100b220bdb382396d45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
