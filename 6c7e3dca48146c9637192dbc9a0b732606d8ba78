@@ -16,6 +16,24 @@
       "message": "Raise error if it is not of expected type. If user made an error, just silently ignoring it will make his life much harder...",
       "revId": "6c7e3dca48146c9637192dbc9a0b732606d8ba78",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "157468a6_d6b8f489",
+        "filename": "jenkins_jobs/modules/project_multibranch.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1779,
+      "author": {
+        "id": 35706
+      },
+      "writtenOn": "2023-02-17T11:23:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b39705a8_60f96f0b",
+      "revId": "6c7e3dca48146c9637192dbc9a0b732606d8ba78",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }

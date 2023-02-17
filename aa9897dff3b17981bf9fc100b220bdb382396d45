@@ -106,6 +106,24 @@
       "parentUuid": "3b7b5453_5fe2fdc1",
       "revId": "aa9897dff3b17981bf9fc100b220bdb382396d45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c3a321b4_09fb317d",
+        "filename": "tests/multibranch/fixtures/scm_github_full.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 35706
+      },
+      "writtenOn": "2023-02-17T11:23:56Z",
+      "side": 1,
+      "message": "Thanks. Added the error cases too.",
+      "parentUuid": "f5fdb7d6_00ecf94f",
+      "revId": "aa9897dff3b17981bf9fc100b220bdb382396d45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
