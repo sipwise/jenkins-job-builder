@@ -1,0 +1,8 @@
+# https://storyboard.openstack.org/#!/story/2010428
+# Bug: TypeError: argument of type 'Jinja2Loader' is not iterable
+
+- job:
+    name: test
+    project-type: pipeline
+
+    dsl: !include-jinja2: regression-2010428.inc.j2
