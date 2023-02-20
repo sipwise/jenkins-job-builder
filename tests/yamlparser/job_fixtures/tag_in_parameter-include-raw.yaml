@@ -1,0 +1,13 @@
+# !include-raw: tag in a variable.
+
+- job-template:
+    name: sample-job
+    var: !include-raw: tag_in_parameter-include-raw.inc.txt
+    builders:
+      - shell: |
+          echo {var}
+
+- project:
+    name: sample-project
+    jobs:
+      - sample-job

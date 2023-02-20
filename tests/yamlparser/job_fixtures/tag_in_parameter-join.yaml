@@ -1,0 +1,15 @@
+# !j2: tag in a variable.
+
+- job-template:
+    name: sample-job
+    var: !join:
+      - ' '
+      - [some, variable]
+    builders:
+      - shell: |
+          echo {var}
+
+- project:
+    name: sample-project
+    jobs:
+      - sample-job

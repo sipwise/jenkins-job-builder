@@ -1,0 +1,18 @@
+# https://storyboard.openstack.org/#!/story/2007227
+# with Python 3 there is TypeError when include-raw with property replacement is used in defaults
+
+- defaults:
+    name: 'test-defaults'
+    prop: 'regression-2007227.description'
+    description: !include-raw:
+    - '{prop}.html'
+
+- project:
+    name: 'test-project'
+    jobs:
+    - 'test-job'
+
+- job-template:
+    id: 'test-job'
+    name: '{id}'
+    defaults: 'test-defaults'

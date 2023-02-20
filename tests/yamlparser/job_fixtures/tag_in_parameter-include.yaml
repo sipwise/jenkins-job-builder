@@ -1,0 +1,13 @@
+# !include: tag in a variable.
+
+- job-template:
+    name: sample-job
+    var: !include: tag_in_parameter-include.inc
+    builders:
+      - shell: |
+          echo {var}
+
+- project:
+    name: sample-project
+    jobs:
+      - sample-job
