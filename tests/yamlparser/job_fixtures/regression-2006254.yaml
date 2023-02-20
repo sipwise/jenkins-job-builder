@@ -1,0 +1,45 @@
+# https://storyboard.openstack.org/#!/story/2006254
+# Bug introduced when added support for rendering Jinja template
+
+- job:
+    name: gluster-csi-containers
+    node: fedora
+    disabled: true
+    description: Build gluster-sci containers and push it to dockerhub
+    project-type: freestyle
+    concurrent: true
+
+    scm:
+    - git:
+        basedir: go/src/github.com/gluster/gluster-csi-driver
+        url: https://github.com/gluster/gluster-csi-driver.git
+        branches:
+        - master
+
+    # properties:
+    # - discard-after-x:
+    #     x: 10
+    # - one-build-per-node
+
+    triggers:
+    - timed: "H 14 * * *"
+
+    builders:
+    - shell: !include-raw: regression-2006254.inc
+
+    parameters:
+    - bool:
+        default: true
+        description: Push to Docker Hub
+        name: PUSH_TO_HUB
+
+    wrappers:
+    - timestamps
+    - credentials-binding:
+      - file:
+          credential-id: xxx
+          variable: AUTH_JSON
+    - timeout:
+        timeout: 30
+        abort: true
+        type: absolute

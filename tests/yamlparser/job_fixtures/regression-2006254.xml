@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <actions/>
+  <description>Build gluster-sci containers and push it to dockerhub&lt;!-- Managed by Jenkins Job Builder --&gt;</description>
+  <keepDependencies>false</keepDependencies>
+  <disabled>true</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <concurrentBuild>true</concurrentBuild>
+  <assignedNode>fedora</assignedNode>
+  <canRoam>false</canRoam>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.BooleanParameterDefinition>
+          <name>PUSH_TO_HUB</name>
+          <description>Push to Docker Hub</description>
+          <defaultValue>true</defaultValue>
+        </hudson.model.BooleanParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+  <scm class="hudson.plugins.git.GitSCM">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <name>origin</name>
+        <refspec>+refs/heads/*:refs/remotes/origin/*</refspec>
+        <url>https://github.com/gluster/gluster-csi-driver.git</url>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>master</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <disableSubmodules>false</disableSubmodules>
+    <recursiveSubmodules>false</recursiveSubmodules>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <remotePoll>false</remotePoll>
+    <gitTool>Default</gitTool>
+    <submoduleCfg class="list"/>
+    <reference/>
+    <gitConfigName/>
+    <gitConfigEmail/>
+    <extensions>
+      <hudson.plugins.git.extensions.impl.RelativeTargetDirectory>
+        <relativeTargetDir>go/src/github.com/gluster/gluster-csi-driver</relativeTargetDir>
+      </hudson.plugins.git.extensions.impl.RelativeTargetDirectory>
+      <hudson.plugins.git.extensions.impl.WipeWorkspace/>
+    </extensions>
+  </scm>
+  <triggers class="vector">
+    <hudson.triggers.TimerTrigger>
+      <spec>H 14 * * *</spec>
+    </hudson.triggers.TimerTrigger>
+  </triggers>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>#!/bin/bash
+IMG_NAME=&quot;gluster/glusterd2-nightly&quot;
+IMG_VERSION=$(date +%Y%m%d)
+
+
+mkdir -p go/{pkg,src,bin}
+export GOPATH=$PWD/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=/usr/sbin:$PATH
+
+export CSISRC=$GOPATH/src/github.com/gluster/gluster-csi-driver
+cd $CSISRC
+go get github.com/xxx/yyy
+go get -u github.com/golang/dep/cmd/dep
+make
+
+cp pkg/glusterfs/Dockerfile .
+buildah bud .
+#if [ &quot;$PUSH_TO_HUB&quot; = true ]; then
+    #buildah push --authfile $AUTH_JSON &quot;localhost/$IMG_NAME:$IMG_VERSION&quot; &quot;docker://docker.io/gluster/glusterd2-nightly:$IMG_VERSION&quot;
+    #buildah push --authfile $AUTH_JSON &quot;localhost/$IMG_NAME:$IMG_VERSION&quot; &quot;docker://docker.io/gluster/glusterd2-nightly:latest&quot;
+#fi
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers>
+    <hudson.plugins.timestamper.TimestamperBuildWrapper/>
+    <org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper>
+      <bindings>
+        <org.jenkinsci.plugins.credentialsbinding.impl.FileBinding>
+          <variable>AUTH_JSON</variable>
+          <credentialsId>xxx</credentialsId>
+        </org.jenkinsci.plugins.credentialsbinding.impl.FileBinding>
+      </bindings>
+    </org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper>
+    <hudson.plugins.build__timeout.BuildTimeoutWrapper>
+      <strategy class="hudson.plugins.build_timeout.impl.AbsoluteTimeOutStrategy">
+        <timeoutMinutes>30</timeoutMinutes>
+      </strategy>
+      <operationList>
+        <hudson.plugins.build__timeout.operations.AbortOperation/>
+      </operationList>
+    </hudson.plugins.build__timeout.BuildTimeoutWrapper>
+  </buildWrappers>
+</project>
