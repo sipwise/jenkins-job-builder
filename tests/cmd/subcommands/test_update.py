@@ -45,6 +45,27 @@ def test_update_jobs(mocker, fixtures_dir, default_config_file, execute_jenkins_
     )
 
 
+def test_update_jobs_enabled_only(
+    mocker, fixtures_dir, default_config_file, execute_jenkins_jobs
+):
+    """
+    Test update_job is called with --enabled-only
+    """
+    mocker.patch("jenkins_jobs.builder.jenkins.Jenkins.job_exists")
+    mocker.patch("jenkins_jobs.builder.jenkins.Jenkins.get_all_jobs")
+    reconfig_job = mocker.patch("jenkins_jobs.builder.jenkins.Jenkins.reconfig_job")
+
+    path = fixtures_dir / "cmd-002.yaml"
+    args = ["--conf", default_config_file, "update", "--enabled-only", str(path)]
+
+    execute_jenkins_jobs(args)
+
+    reconfig_job.assert_has_calls(
+        [mock.call(job_name, mock.ANY) for job_name in ["bar001", "bar002", "baz001"]],
+        any_order=True,
+    )
+
+
 def test_update_jobs_decode_job_output(
     mocker, fixtures_dir, default_config_file, execute_jenkins_jobs
 ):

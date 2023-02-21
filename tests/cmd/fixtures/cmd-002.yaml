@@ -1,16 +1,20 @@
 - job-template:
+    disabled: false
     name: 'bar001'
     description: 'My first job'
 
 - job-template:
+    disabled: false
     name: 'bar002'
     description: 'My second job'
 
 - job-template:
+    disabled: false
     name: 'baz001'
     description: 'My third job'
 
 - job-template:
+    disabled: true
     name: 'bam001'
     description: 'My fourth job'
 

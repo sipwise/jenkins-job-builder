@@ -81,6 +81,14 @@ class UpdateSubCommand(base.BaseSubCommand):
             help="update existing jobs only",
         )
 
+        update.add_argument(
+            "--enabled-only",
+            action="store_true",
+            default=False,
+            dest="enabled_only",
+            help="update enabled jobs only",
+        )
+
         update_type = update.add_mutually_exclusive_group()
         update_type.add_argument(
             "-j",
@@ -132,6 +140,24 @@ class UpdateSubCommand(base.BaseSubCommand):
             )
 
         builder, xml_jobs, xml_views = self._generate_xmljobs(options, jjb_config)
+
+        if options.enabled_only:
+            # filter out jobs which are disabled
+            xml_jobs_filtered = []
+            for xml_job in xml_jobs:
+                el = xml_job.xml.find("./disabled")
+                if el is not None:
+                    if el.text == "true":
+                        continue
+                    xml_jobs_filtered.append(xml_job)
+
+            logging.info(
+                "Will only deploy enabled jobs "
+                "(skipping {} disabled jobs)".format(
+                    len(xml_jobs) - len(xml_jobs_filtered)
+                )
+            )
+            xml_jobs = xml_jobs_filtered
 
         if options.update == "jobs":
             jobs, num_updated_jobs = builder.update_jobs(
