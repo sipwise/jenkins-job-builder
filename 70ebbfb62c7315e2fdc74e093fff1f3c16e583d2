@@ -18,6 +18,24 @@
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d4ad94fa_c372c749",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 7102
+      },
+      "writtenOn": "2023-02-22T08:11:43Z",
+      "side": 1,
+      "message": "No. The parameter will automatically be there because it\u0027s using \".. program-output::\". I built locally and checked.",
+      "parentUuid": "f95ebbca_44d3ce38",
+      "revId": "70ebbfb62c7315e2fdc74e093fff1f3c16e583d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9c51a3bb_9f285a47",
@@ -31,6 +49,24 @@
       "writtenOn": "2023-02-22T07:49:07Z",
       "side": 1,
       "message": "If I understand documentation correctly, assert_has_calls does not check if there were more calls. If that so, you need to add assert_not_called call for bam001 job.\n\nhttps://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.assert_has_calls",
+      "revId": "70ebbfb62c7315e2fdc74e093fff1f3c16e583d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "64b93e84_e4c898d4",
+        "filename": "tests/cmd/subcommands/test_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 7102
+      },
+      "writtenOn": "2023-02-22T08:11:43Z",
+      "side": 1,
+      "message": "Done by checking that it\u0027s only called 3x.",
+      "parentUuid": "9c51a3bb_9f285a47",
       "revId": "70ebbfb62c7315e2fdc74e093fff1f3c16e583d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
