@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f95ebbca_44d3ce38",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34567
+      },
+      "writtenOn": "2023-02-22T07:49:07Z",
+      "side": 1,
+      "message": "I think you also need to add this option to documentation. See doc/source/execution.rst, `Command Reference` section.",
+      "revId": "70ebbfb62c7315e2fdc74e093fff1f3c16e583d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c51a3bb_9f285a47",
+        "filename": "tests/cmd/subcommands/test_update.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 34567
+      },
+      "writtenOn": "2023-02-22T07:49:07Z",
+      "side": 1,
+      "message": "If I understand documentation correctly, assert_has_calls does not check if there were more calls. If that so, you need to add assert_not_called call for bam001 job.\n\nhttps://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock.assert_has_calls",
+      "revId": "70ebbfb62c7315e2fdc74e093fff1f3c16e583d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
