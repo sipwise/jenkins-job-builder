@@ -16,6 +16,23 @@
       "message": "CI fails due to the `black` style checker. Running `tox -e linters`  locally invokes the automatic fixes to the file, one of the line was too long ;)",
       "revId": "7c5300459d6545bb12d382e679bf3f652c1a9c09",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7473e7f1_0c272fab",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 2475
+      },
+      "writtenOn": "2023-02-28T10:38:55Z",
+      "side": 1,
+      "message": "Vsevolod and Thomas do you have the permission to approve changes (vote Workflow +1)?",
+      "revId": "7c5300459d6545bb12d382e679bf3f652c1a9c09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
