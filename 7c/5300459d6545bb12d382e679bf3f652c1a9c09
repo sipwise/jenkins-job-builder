@@ -1,0 +1,9 @@
+Code-Review+2: Antoine Musso <hashar@free.fr>
+Code-Review+2: Vsevolod Fedorov <vsevolod.fedorov@gmail.com>
+Workflow+1: Vsevolod Fedorov <vsevolod.fedorov@gmail.com>
+Verified+2: Zuul
+Submitted-by: Zuul
+Submitted-at: Tue, 28 Feb 2023 11:13:53 +0000
+Reviewed-on: https://review.opendev.org/c/jjb/jenkins-job-builder/+/875624
+Project: jjb/jenkins-job-builder
+Branch: refs/heads/master
