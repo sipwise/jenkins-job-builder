@@ -13,6 +13,7 @@
 
 import os
 import sys
+import datetime
 from jenkins_jobs.version import version_info as jenkins_jobs_version
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -51,7 +52,7 @@ master_doc = "index"
 
 # General information about the project.
 project = "Jenkins Job Builder"
-copyright = "2012, Jenkins Job Builder Maintainers"
+copyright = "2012 - {}, Jenkins Job Builder Maintainers".format(datetime.datetime.now().year)
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
