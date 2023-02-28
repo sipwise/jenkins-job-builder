@@ -22,6 +22,30 @@
       },
       "revId": "e9fb7c70a103be5c1c0e18d00e81db3694957f56",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a35f3331_6920bc6f",
+        "filename": "tests/yamlparser/job_fixtures/tag_in_parameter-join.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 34567
+      },
+      "writtenOn": "2023-02-28T15:49:33Z",
+      "side": 1,
+      "message": "Thanks. Fixed.",
+      "parentUuid": "909871e7_b1830cf7",
+      "range": {
+        "startLine": 1,
+        "startChar": 2,
+        "endLine": 1,
+        "endChar": 5
+      },
+      "revId": "e9fb7c70a103be5c1c0e18d00e81db3694957f56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
