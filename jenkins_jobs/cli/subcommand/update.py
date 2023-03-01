@@ -149,7 +149,7 @@ class UpdateSubCommand(base.BaseSubCommand):
                 if el is not None:
                     if el.text == "true":
                         continue
-                    xml_jobs_filtered.append(xml_job)
+                xml_jobs_filtered.append(xml_job)
 
             logging.info(
                 "Will only deploy enabled jobs "
