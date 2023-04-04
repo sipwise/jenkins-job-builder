@@ -1,1 +1,9 @@
-Job group group-1: Failed to find suitable job/view/template named 'job-2'
+job_group_includes_missing_job.yaml:14:3: In project 'sample-project'
+    - project:
+      ^
+job_group_includes_missing_job.yaml:8:3: In job group 'group-1'
+    - job-group:
+      ^
+job_group_includes_missing_job.yaml:12:9: Failed to find suitable job/view/template named 'job-2'
+          - job-2
+            ^

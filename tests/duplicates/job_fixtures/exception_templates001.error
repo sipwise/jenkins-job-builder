@@ -1,0 +1,6 @@
+exception_templates001.yaml:12:3: Duplicate job template: '{name}-001'
+    - job-template:
+      ^
+exception_templates001.yaml:6:3: Previous job template definition
+    - job-template:
+      ^

@@ -1,0 +1,12 @@
+incorrect_dimension_exclude_not_dict.yaml:6:3: In project 'sample-project'
+    - project:
+      ^
+incorrect_dimension_exclude_not_dict.yaml:1:3: In job template 'sample-job-{dimension}'
+    - job-template:
+      ^
+incorrect_dimension_exclude_not_dict.yaml:11:5: In template exclude list
+        exclude:
+        ^
+incorrect_dimension_exclude_not_dict.yaml:12:7: Expected a dict, but got: 'wrong-value'
+        - wrong-value
+          ^

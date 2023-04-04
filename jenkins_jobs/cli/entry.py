@@ -22,6 +22,7 @@ from pathlib import Path
 from stevedore import extension
 import yaml
 
+from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.cli.parser import create_parser
 from jenkins_jobs.config import JJBConfig
 from jenkins_jobs import utils
@@ -174,7 +175,13 @@ def main():
 
     argv = sys.argv[1:]
     jjb = JenkinsJobs(argv)
-    jjb.execute()
+    try:
+        jjb.execute()
+    except JenkinsJobsException as x:
+        print(file=sys.stderr)
+        for line in x.lines:
+            print(line, file=sys.stderr)
+        sys.exit(1)
 
 
 if __name__ == "__main__":

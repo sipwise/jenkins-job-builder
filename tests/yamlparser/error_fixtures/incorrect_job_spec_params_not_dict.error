@@ -1,0 +1,6 @@
+incorrect_job_spec_params_not_dict.yaml:4:3: In project 'sample-project'
+    - project:
+      ^
+incorrect_job_spec_params_not_dict.yaml:8:11: Job/view 'sample-job' params type should be dict, but is ['abc', 'def'].
+              - abc
+              ^

@@ -1,0 +1,16 @@
+- project:
+    name: sample-project
+    jobs:
+      - sample-job
+
+- job-template:
+    name: sample-job
+    builders:
+      - shell: !j2: |
+          #!/bin/bash
+
+          set -x
+          echo {{ missing_param }}
+          echo "All is done"
+
+          exit 0

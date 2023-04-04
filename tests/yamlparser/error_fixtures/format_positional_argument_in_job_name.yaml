@@ -1,0 +1,9 @@
+- job-template:
+    name: sample-job-{0}
+    builders:
+      - shell: echo ok
+
+- project:
+    name: sample-project
+    jobs:
+      - sample-job-{0}

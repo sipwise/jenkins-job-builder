@@ -1,0 +1,6 @@
+exception_duplicates001.yaml:7:3: Duplicate job: 'duplicate001'
+    - job:
+      ^
+exception_duplicates001.yaml:1:3: Previous job definition
+    - job:
+      ^

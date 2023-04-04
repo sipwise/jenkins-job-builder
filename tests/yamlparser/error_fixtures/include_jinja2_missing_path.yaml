@@ -1,0 +1,9 @@
+- job-template:
+    name: sample-job
+    builders:
+      - shell: !include-jinja2: missing-path.inc
+
+- project:
+    name: sample-project
+    jobs:
+      - sample-job

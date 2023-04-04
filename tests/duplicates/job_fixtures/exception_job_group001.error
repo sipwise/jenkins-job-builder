@@ -1,0 +1,6 @@
+exception_job_group001.yaml:14:3: Duplicate job group: 'group-1'
+    - job-group:
+      ^
+exception_job_group001.yaml:11:3: Previous job group definition
+    - job-group:
+      ^

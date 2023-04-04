@@ -1,0 +1,11 @@
+- job-template:
+    name: sample-job
+    builders:
+      - shell:
+          !include:
+            key: value
+
+- project:
+    name: sample-project
+    jobs:
+      - sample-job

@@ -43,7 +43,7 @@ def matches(name, glob_list):
 def filter_matching(item_list, glob_list):
     if not glob_list:
         return item_list
-    return [item for item in item_list if matches(item["name"], glob_list)]
+    return [item for item in item_list if matches(item.name, glob_list)]
 
 
 class BaseSubCommand(metaclass=abc.ABCMeta):

@@ -1,6 +1,9 @@
 """Exception classes for jenkins_jobs errors"""
 
 import inspect
+from dataclasses import dataclass
+
+from .position import Pos
 
 
 def is_sequence(arg):
@@ -9,8 +12,53 @@ def is_sequence(arg):
     )
 
 
+def context_lines(message, pos):
+    if not pos:
+        return [message]
+    snippet_lines = [line.rstrip() for line in pos.snippet.splitlines()]
+    return [
+        f"{pos.path}:{pos.line+1}:{pos.column+1}: {message}",
+        *snippet_lines,
+    ]
+
+
+@dataclass
+class Context:
+    message: str
+    pos: Pos
+
+    @property
+    def lines(self):
+        return context_lines(self.message, self.pos)
+
+
 class JenkinsJobsException(Exception):
-    pass
+    def __init__(self, message, pos=None, ctx=None):
+        super().__init__(message)
+        self.pos = pos
+        self.ctx = ctx or []  # Context list
+
+    @property
+    def message(self):
+        return self.args[0]
+
+    def with_pos(self, pos):
+        return JenkinsJobsException(self.message, pos, self.ctx)
+
+    def with_context(self, message, pos, ctx=None):
+        return JenkinsJobsException(
+            self.message, self.pos, [*(ctx or []), Context(message, pos), *self.ctx]
+        )
+
+    def with_ctx_list(self, ctx):
+        return JenkinsJobsException(self.message, self.pos, [*ctx, *self.ctx])
+
+    @property
+    def lines(self):
+        ctx_lines = []
+        for ctx in self.ctx:
+            ctx_lines += ctx.lines
+        return [*ctx_lines, *context_lines(self.message, self.pos)]
 
 
 class ModuleError(JenkinsJobsException):
@@ -37,7 +85,7 @@ class ModuleError(JenkinsJobsException):
 
 
 class InvalidAttributeError(ModuleError):
-    def __init__(self, attribute_name, value, valid_values=None):
+    def __init__(self, attribute_name, value, valid_values=None, pos=None, ctx=None):
         message = "'{0}' is an invalid value for attribute {1}.{2}".format(
             value, self.get_module_name(), attribute_name
         )
@@ -47,11 +95,11 @@ class InvalidAttributeError(ModuleError):
                 ", ".join("'{0}'".format(value) for value in valid_values)
             )
 
-        super(InvalidAttributeError, self).__init__(message)
+        super().__init__(message, pos, ctx)
 
 
 class MissingAttributeError(ModuleError):
-    def __init__(self, missing_attribute, module_name=None):
+    def __init__(self, missing_attribute, module_name=None, pos=None, ctx=None):
         module = module_name or self.get_module_name()
         if is_sequence(missing_attribute):
             message = "One of {0} must be present in '{1}'".format(
@@ -62,7 +110,7 @@ class MissingAttributeError(ModuleError):
                 missing_attribute, module
             )
 
-        super(MissingAttributeError, self).__init__(message)
+        super().__init__(message, pos, ctx)
 
 
 class AttributeConflictError(ModuleError):

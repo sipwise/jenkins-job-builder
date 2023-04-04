@@ -1,1 +1,18 @@
-While expanding 'param' for template 'sample-job':  Recursive parameters usage: param <- param
+parameter_name_reuse_group_override.yaml:18:3: In project 'sample-project'
+    - project:
+      ^
+parameter_name_reuse_group_override.yaml:12:3: In job group 'sample-group'
+    - job-group:
+      ^
+parameter_name_reuse_group_override.yaml:5:3: In job template 'sample-job'
+    - job-template:
+      ^
+parameter_name_reuse_group_override.yaml:16:18: Used by param
+              param: '{param}-a'
+                     ^
+parameter_name_reuse_group_override.yaml:16:11: While expanding 'param'
+              param: '{param}-a'
+              ^
+parameter_name_reuse_group_override.yaml:16:18: Recursive parameters usage: param
+              param: '{param}-a'
+                     ^

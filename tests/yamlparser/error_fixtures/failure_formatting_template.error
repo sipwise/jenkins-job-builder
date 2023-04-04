@@ -1,1 +1,9 @@
-While formatting string 'template-requiring-param-{os}': Missing parameter: 'os'
+failure_formatting_template.yaml:1:3: In project 'missing_params_for_template'
+    - project:
+      ^
+failure_formatting_template.yaml:6:3: In job template 'template-requiring-param-{os}'
+    - job-template:
+      ^
+failure_formatting_template.yaml:7:12: While formatting string 'template-requiring-param-{os}': Missing parameter: 'os'
+        name: 'template-requiring-param-{os}'
+               ^

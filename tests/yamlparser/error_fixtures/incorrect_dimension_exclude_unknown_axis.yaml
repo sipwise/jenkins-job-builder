@@ -1,0 +1,15 @@
+- job-template:
+    name: 'sample-job-{dimension}'
+    builders:
+      - shell: echo {dimension}
+
+- project:
+    name: sample-project
+    dimension:
+    - first
+    - second
+    exclude:
+    - dimension: second
+    - wrong_axis: some-value
+    jobs:
+    - 'sample-job-{dimension}'

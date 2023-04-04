@@ -1,6 +1,7 @@
 import pytest
 from jinja2 import StrictUndefined
 
+from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.formatter import (
     CustomFormatter,
     enum_str_format_required_params,
@@ -144,7 +145,7 @@ def test_format(format, vars, used_vars, expected_defaults, expected_result):
 def test_used_params(
     format, vars, expected_used_vars, expected_defaults, expected_result
 ):
-    used_vars = set(enum_str_format_required_params(format))
+    used_vars = set(enum_str_format_required_params(format, pos=None))
     assert used_vars == set(expected_used_vars)
 
 
@@ -193,7 +194,7 @@ positional_cases = [
 @pytest.mark.parametrize("format", positional_cases)
 def test_positional_args(format):
     formatter = CustomFormatter(allow_empty=False)
-    with pytest.raises(RuntimeError) as excinfo:
+    with pytest.raises(JenkinsJobsException) as excinfo:
         list(formatter.enum_required_params(format))
     message = f"Positional format arguments are not supported: {format!r}"
     assert str(excinfo.value) == message

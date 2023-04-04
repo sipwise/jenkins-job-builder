@@ -1,0 +1,9 @@
+include_jinja2_missing_path.yaml:6:3: In project 'sample-project'
+    - project:
+      ^
+include_jinja2_missing_path.yaml:1:3: In job template 'sample-job'
+    - job-template:
+      ^
+include_jinja2_missing_path.yaml:4:16: File missing-path.inc does not exist in any of include directories: .,fixtures-dir
+          - shell: !include-jinja2: missing-path.inc
+                   ^

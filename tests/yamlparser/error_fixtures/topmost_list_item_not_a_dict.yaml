@@ -1,0 +1,2 @@
+# Top-most collection element should be a dict, but here it is a string.
+- some_string

@@ -1,0 +1,6 @@
+exception_duplicate_view_template.yaml:5:3: Duplicate view template: 'duplicate-view-template'
+    - view-template:
+      ^
+exception_duplicate_view_template.yaml:1:3: Previous view template definition
+    - view-template:
+      ^

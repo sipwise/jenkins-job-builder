@@ -21,7 +21,7 @@ import sys
 from xml.dom import minidom
 import xml.etree.ElementTree as XML
 
-from jenkins_jobs import errors
+from jenkins_jobs.errors import JenkinsJobsException
 
 __all__ = ["XmlJobGenerator", "XmlJob"]
 
@@ -83,7 +83,10 @@ class XmlGenerator(object):
     def generateXML(self, data_list):
         xml_objs = []
         for data in data_list:
-            xml_objs.append(self._getXMLForData(data))
+            try:
+                xml_objs.append(self._getXMLForData(data.data))
+            except JenkinsJobsException as x:
+                raise x.with_ctx_list(data.context)
         return xml_objs
 
     def _getXMLForData(self, data):
@@ -104,7 +107,7 @@ class XmlGenerator(object):
             ep.name
             for ep in pkg_resources.iter_entry_points(group=self.entry_point_group)
         ]
-        raise errors.JenkinsJobsException(
+        raise JenkinsJobsException(
             "Unrecognized {}: {} (supported types are: {})".format(
                 self.kind_attribute, kind, ", ".join(names)
             )

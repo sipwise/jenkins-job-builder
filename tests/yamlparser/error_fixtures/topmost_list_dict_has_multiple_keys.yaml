@@ -1,0 +1,3 @@
+# Missing indent for job elements, resulting in dict with several keys.
+- job:
+  name: sample-job

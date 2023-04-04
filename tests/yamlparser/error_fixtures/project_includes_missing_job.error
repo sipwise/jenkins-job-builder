@@ -1,1 +1,6 @@
-Project sample-project: Failed to find suitable job/view/template named 'job-2'
+project_includes_missing_job.yaml:8:3: In project 'sample-project'
+    - project:
+      ^
+project_includes_missing_job.yaml:12:9: Failed to find suitable job/view/template named 'job-2'
+          - job-2:
+            ^

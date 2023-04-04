@@ -1,0 +1,3 @@
+# Project with no 'name' element defined.
+- project:
+    some_param: value

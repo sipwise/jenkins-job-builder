@@ -13,7 +13,7 @@
 import logging
 from collections import defaultdict
 
-from .errors import JenkinsJobsException
+from .errors import Context, JenkinsJobsException
 from .defaults import Defaults
 from .job import Job, JobTemplate, JobGroup
 from .view import View, ViewTemplate, ViewGroup
@@ -57,7 +57,7 @@ class Roots:
             expanded_jobs += job.top_level_generate_items()
         for project in self.projects.values():
             expanded_jobs += project.generate_jobs()
-        return self._remove_duplicates(expanded_jobs)
+        return self._remove_duplicates(expanded_jobs, "job")
 
     def generate_views(self):
         expanded_views = []
@@ -65,31 +65,44 @@ class Roots:
             expanded_views += view.top_level_generate_items()
         for project in self.projects.values():
             expanded_views += project.generate_views()
-        return self._remove_duplicates(expanded_views)
+        return self._remove_duplicates(expanded_views, "view")
 
-    def assign(self, container, id, value, title):
+    def assign(self, container, id, value, element_type):
         if id in container:
-            self._handle_dups(f"Duplicate {title}: {id}")
+            self._handle_dups(element_type, id, value.pos, container[id].pos)
         container[id] = value
 
-    def _remove_duplicates(self, job_list):
-        seen = set()
+    def _remove_duplicates(self, job_or_view_list, element_type):
+        seen = {}
         unique_list = []
         # Last definition wins.
-        for job in reversed(job_list):
-            name = job["name"]
+        for job_or_view in reversed(job_or_view_list):
+            name = job_or_view.name
             if name in seen:
+                origin = seen[name]
                 self._handle_dups(
-                    f"Duplicate definitions for job {name!r} specified",
+                    element_type,
+                    name,
+                    job_or_view.data.pos,
+                    origin.data.pos,
+                    # Skip job context, leave only project context.
+                    job_or_view.context[:-1],
+                    origin.context[:-1],
                 )
             else:
-                unique_list.append(job)
-                seen.add(name)
+                unique_list.append(job_or_view)
+                seen[name] = job_or_view
         return unique_list[::-1]
 
-    def _handle_dups(self, message):
+    def _handle_dups(
+        self, element_type, id, pos, origin_pos, ctx=None, origin_ctx=None
+    ):
+        message = f"Duplicate {element_type}: {id!r}"
         if self._allow_duplicates:
             logger.warning(message)
         else:
             logger.error(message)
-            raise JenkinsJobsException(message)
+            ctx = [*(ctx or []), Context(message, pos), *(origin_ctx or [])]
+            raise JenkinsJobsException(
+                f"Previous {element_type} definition", origin_pos, ctx
+            )

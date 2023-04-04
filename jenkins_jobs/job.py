@@ -12,6 +12,8 @@
 
 from dataclasses import dataclass
 
+from .errors import JenkinsJobsException
+from .loc_loader import LocDict
 from .root_base import RootBase, NonTemplateRootMixin, TemplateRootMixin, Group
 from .defaults import split_contents_params, job_contents_keys
 
@@ -22,15 +24,15 @@ class JobBase(RootBase):
     folder: str
 
     @classmethod
-    def from_dict(cls, config, roots, expander, data):
+    def from_dict(cls, config, roots, expander, data, pos):
         keep_descriptions = config.yamlparser["keep_descriptions"]
-        d = {**data}
-        name = d.pop("name")
-        id = d.pop("id", None)
-        description = d.pop("description", None)
-        defaults = d.pop("defaults", "global")
-        project_type = d.pop("project-type", None)
-        folder = d.pop("folder", None)
+        d = data.copy()
+        name = d.pop_required_loc_string("name")
+        id = d.pop_loc_string("id", None)
+        description = d.pop_loc_string("description", None)
+        defaults = d.pop_loc_string("defaults", "global")
+        project_type = d.pop_loc_string("project-type", None)
+        folder = d.pop_loc_string("folder", None)
         contents, params = split_contents_params(d, job_contents_keys)
         return cls(
             roots.defaults,
@@ -38,6 +40,7 @@ class JobBase(RootBase):
             keep_descriptions,
             id,
             name,
+            pos,
             description,
             defaults,
             params,
@@ -47,10 +50,10 @@ class JobBase(RootBase):
         )
 
     def _as_dict(self):
-        data = {
-            "name": self._full_name,
-            **self.contents,
-        }
+        data = LocDict.merge(
+            {"name": self._full_name},
+            self.contents,
+        )
         if self.project_type:
             data["project-type"] = self.project_type
         return data
@@ -65,16 +68,22 @@ class JobBase(RootBase):
 
 class Job(JobBase, NonTemplateRootMixin):
     @classmethod
-    def add(cls, config, roots, expander, param_expander, data):
-        job = cls.from_dict(config, roots, expander, data)
+    def add(cls, config, roots, expander, param_expander, data, pos):
+        job = cls.from_dict(config, roots, expander, data, pos)
         roots.assign(roots.jobs, job.id, job, "job")
+
+    def __str__(self):
+        return f"job {self.name!r}"
 
 
 class JobTemplate(JobBase, TemplateRootMixin):
     @classmethod
-    def add(cls, config, roots, expander, params_expander, data):
-        template = cls.from_dict(config, roots, params_expander, data)
+    def add(cls, config, roots, expander, params_expander, data, pos):
+        template = cls.from_dict(config, roots, params_expander, data, pos)
         roots.assign(roots.job_templates, template.id, template, "job template")
+
+    def __str__(self):
+        return f"job template {self.name!r}"
 
 
 @dataclass
@@ -83,15 +92,16 @@ class JobGroup(Group):
     _job_templates: dict
 
     @classmethod
-    def add(cls, config, roots, expander, params_expander, data):
-        d = {**data}
-        name = d.pop("name")
-        job_specs = [
-            cls._spec_from_dict(item, error_context=f"Job group {name}")
-            for item in d.pop("jobs", [])
-        ]
+    def add(cls, config, roots, expander, params_expander, data, pos):
+        d = data.copy()
+        name = d.pop_required_loc_string("name")
+        try:
+            job_specs = cls._specs_from_list(d.pop("jobs", None))
+        except JenkinsJobsException as x:
+            raise x.with_context(f"In job {name!r}", pos=pos)
         group = cls(
             name,
+            pos,
             job_specs,
             d,
             roots.jobs,
@@ -100,7 +110,7 @@ class JobGroup(Group):
         roots.assign(roots.job_groups, group.name, group, "job group")
 
     def __str__(self):
-        return f"Job group {self.name}"
+        return f"job group {self.name!r}"
 
     @property
     def _root_dicts(self):

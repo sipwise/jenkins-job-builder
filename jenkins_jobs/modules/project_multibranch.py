@@ -87,7 +87,7 @@ import six
 
 from jenkins_jobs.modules.scm import git_extensions
 from jenkins_jobs.errors import InvalidAttributeError, MissingAttributeError
-from jenkins_jobs.errors import JenkinsJobsException
+from jenkins_jobs.errors import Context, JenkinsJobsException
 from jenkins_jobs.xml_config import remove_ignorable_whitespace
 
 logger = logging.getLogger(str(__name__))
@@ -1838,14 +1838,24 @@ def apply_property_strategies(props_elem, props_list):
             )
             if isinstance(tbopc_val, dict):
                 if "comment" not in tbopc_val:
-                    raise MissingAttributeError("trigger-build-on-pr-comment[comment]")
+                    raise MissingAttributeError(
+                        "trigger-build-on-pr-comment[comment]",
+                        pos=dbs_list.key_pos.get("trigger-build-on-pr-comment"),
+                    )
                 XML.SubElement(tbopc_elem, "commentBody").text = tbopc_val["comment"]
                 if tbopc_val.get("allow-untrusted-users", False):
                     XML.SubElement(tbopc_elem, "allowUntrusted").text = "true"
             elif isinstance(tbopc_val, str):
                 XML.SubElement(tbopc_elem, "commentBody").text = tbopc_val
             else:
-                raise InvalidAttributeError("trigger-build-on-pr-comment", tbopc_val)
+                attr = "trigger-build-on-pr-comment"
+                ctx = [Context(f"For attribute {attr!r}", dbs_list.key_pos.get(attr))]
+                raise InvalidAttributeError(
+                    attr,
+                    tbopc_val,
+                    pos=dbs_list.value_pos.get(attr),
+                    ctx=ctx,
+                )
         for opt in pcb_bool_opts:
             opt_value = dbs_list.get(opt, None)
             if opt_value:
@@ -1861,7 +1871,10 @@ def apply_property_strategies(props_elem, props_list):
                     # no sub-elements in this case
                     pass
                 else:
-                    raise InvalidAttributeError(opt, opt_value)
+                    ctx = Context(f"For attribute {opt!r}", dbs_list.key_pos.get(opt))
+                    raise InvalidAttributeError(
+                        opt, opt_value, pos=dbs_list.value_pos.get(opt), ctx=[ctx]
+                    )
 
 
 def add_filter_branch_pr_behaviors(traits, data):

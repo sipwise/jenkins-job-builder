@@ -1,0 +1,15 @@
+missing_param_in_include_jinja2_format.yaml:5:3: In project 'sample-project'
+    - project:
+      ^
+missing_param_in_include_jinja2_format.yaml:1:3: In job template 'sample-job'
+    - job-template:
+      ^
+missing_param_in_include_jinja2_format.yaml:3:15: In included file 'missing_param_in_include_jinja2_format.yaml.inc'
+        builders: !include: missing_param_in_include_jinja2_for ...
+                  ^
+missing_param_in_include_jinja2_format.yaml.inc:2:14: While formatting jinja2 template '#!/bin/bash\n\necho "hello, {{ unknown_one...'
+        command: !j2: |
+                 ^
+missing_param_in_include_jinja2_format.yaml.inc:5:7: 'unknown_one' is undefined
+          echo "hello, {{ unknown_one }}!"
+          ^

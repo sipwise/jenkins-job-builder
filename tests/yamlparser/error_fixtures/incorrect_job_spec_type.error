@@ -1,0 +1,6 @@
+incorrect_job_spec_type.yaml:4:3: In project 'sample-project'
+    - project:
+      ^
+incorrect_job_spec_type.yaml:7:9: Job/view spec should name or dict, but is <class 'int'> (123). Missing indent?
+          - 123
+            ^

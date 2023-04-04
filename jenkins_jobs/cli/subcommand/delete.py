@@ -61,8 +61,8 @@ class DeleteSubCommand(base.JobsSubCommand):
             roots = self.load_roots(jjb_config, options.path)
             jobs = base.filter_matching(roots.generate_jobs(), options.name)
             views = base.filter_matching(roots.generate_views(), options.name)
-            job_names = [j["name"] for j in jobs]
-            view_names = [v["name"] for v in views]
+            job_names = [j.name for j in jobs]
+            view_names = [v.name for v in views]
         else:
             job_names = options.name
             view_names = options.name

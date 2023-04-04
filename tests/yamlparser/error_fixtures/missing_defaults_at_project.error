@@ -1,0 +1,9 @@
+missing_defaults_at_project.yaml:4:3: In project 'sample-project'
+    - project:
+      ^
+missing_defaults_at_project.yaml:1:3: In job template 'sample-job'
+    - job-template:
+      ^
+missing_defaults_at_project.yaml:6:15: Job template 'sample-job' wants defaults 'global' but it was never defined
+        defaults: missing-defaults
+                  ^

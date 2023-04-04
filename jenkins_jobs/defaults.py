@@ -12,6 +12,9 @@
 
 from dataclasses import dataclass
 
+from .loc_loader import LocDict
+from .position import Pos
+
 
 job_contents_keys = {
     # Same as for macros.
@@ -154,34 +157,40 @@ view_contents_keys = {
 
 
 def split_contents_params(data, contents_keys):
-    contents = {key: value for key, value in data.items() if key in contents_keys}
-    params = {key: value for key, value in data.items() if key not in contents_keys}
+    contents = data.copy_with(
+        {key: value for key, value in data.items() if key in contents_keys}
+    )
+    params = data.copy_with(
+        {key: value for key, value in data.items() if key not in contents_keys}
+    )
     return (contents, params)
 
 
 @dataclass
 class Defaults:
     name: str
+    pos: Pos
     params: dict
     contents: dict  # Values that go to job contents.
 
     @classmethod
-    def add(cls, config, roots, expander, params_expander, data):
-        d = {**data}
-        name = d.pop("name")
+    def add(cls, config, roots, expander, params_expander, data, pos):
+        d = data.copy()
+        name = d.pop_required_loc_string("name")
         contents, params = split_contents_params(
             d, job_contents_keys | view_contents_keys
         )
-        defaults = cls(name, params, contents)
+        defaults = cls(name, pos, params, contents)
         roots.defaults[name] = defaults
 
     @classmethod
     def empty(cls):
-        return Defaults("empty", params={}, contents={})
+        return Defaults("empty", pos=None, params={}, contents={})
 
     def merged_with_global(self, global_):
         return Defaults(
             name=f"{self.name}-merged-with-global",
-            params={**global_.params, **self.params},
-            contents={**global_.contents, **self.contents},
+            pos=self.pos,
+            params=LocDict.merge(global_.params, self.params),
+            contents=LocDict.merge(global_.contents, self.contents),
         )

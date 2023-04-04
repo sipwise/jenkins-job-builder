@@ -1,1 +1,6 @@
-'['test']' is an invalid value for attribute name.trigger-build-on-pr-comment
+scm_github_comment_plugin_invalid_type001.yaml:12:19: For attribute 'trigger-build-on-pr-comment'
+                    - trigger-build-on-pr-comment:
+                      ^
+scm_github_comment_plugin_invalid_type001.yaml:13:21: '['test']' is an invalid value for attribute name.trigger-build-on-pr-comment
+                        - test
+                        ^

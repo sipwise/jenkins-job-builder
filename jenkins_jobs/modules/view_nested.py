@@ -42,6 +42,7 @@ Example:
 import xml.etree.ElementTree as XML
 import jenkins_jobs.modules.base
 import jenkins_jobs.modules.helpers as helpers
+from jenkins_jobs.root_base import JobViewData
 from jenkins_jobs.xml_config import XmlViewGenerator
 
 COLUMN_DICT = {
@@ -66,9 +67,10 @@ class Nested(jenkins_jobs.modules.base.Base):
 
         v_xml = XML.SubElement(root, "views")
         views = data.get("views", [])
+        view_data_list = [JobViewData(v) for v in views]
 
         xml_view_generator = XmlViewGenerator(self.registry)
-        xml_views = xml_view_generator.generateXML(views)
+        xml_views = xml_view_generator.generateXML(view_data_list)
 
         for xml_job in xml_views:
             v_xml.append(xml_job.xml)

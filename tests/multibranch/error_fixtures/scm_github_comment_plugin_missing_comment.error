@@ -1,1 +1,3 @@
-Missing trigger-build-on-pr-comment[comment] from an instance of 'name'
+scm_github_comment_plugin_missing_comment.yaml:12:19: Missing trigger-build-on-pr-comment[comment] from an instance of 'name'
+                    - trigger-build-on-pr-comment:
+                      ^

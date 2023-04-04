@@ -1,0 +1,10 @@
+- job-template:
+    name: sample-job
+    builders:
+      - shell: echo {param}
+
+- project:
+    name: sample-project
+    param: 'positional-format-{0}'
+    jobs:
+      - sample-job

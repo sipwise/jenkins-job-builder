@@ -1,0 +1,16 @@
+- defaults:
+    name: global
+    param_1:
+      - param_1_value_1
+      - '{param_2}-at-project'
+
+- job-template:
+    name: 'sample-job-{param_1}'
+    param_2: '{param_3}-at-template'
+
+- project:
+    name: sample-project
+    param_3: '{param_4}-at-globals'
+    param_4: '{missing_param}-error'
+    jobs:
+      - 'sample-job-{param_1}'

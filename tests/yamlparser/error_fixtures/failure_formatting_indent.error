@@ -1,1 +1,6 @@
-Project missing_params_for_params: Job/view dict should be single-item, but have keys ['template-requiring-param-{os}', 'os']. Missing indent?
+failure_formatting_indent.yaml:5:3: In project 'missing_params_for_params'
+    - project:
+      ^
+failure_formatting_indent.yaml:13:9: Job/view dict should be single-item, but have keys ['template-requiring-param-{os}', 'os']. Missing indent?
+          - 'template-requiring-param-{os}':
+            ^

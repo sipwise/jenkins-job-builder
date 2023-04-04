@@ -1,0 +1,9 @@
+missing_param_simple_template_direct_multi_line.yaml:1:3: In project 'sample-project'
+    - project:
+      ^
+missing_param_simple_template_direct_multi_line.yaml:6:3: In job template 'sample-job'
+    - job-template:
+      ^
+missing_param_simple_template_direct_multi_line.yaml:10:11: While formatting string '#!/bin/bash\necho {missing_param}\n': Missing parameter: 'missing_param'
+              #!/bin/bash
+              ^

@@ -14,6 +14,7 @@ from dataclasses import dataclass
 from functools import partial
 
 from .errors import JenkinsJobsException
+from .position import Pos
 
 
 macro_specs = [
@@ -33,20 +34,31 @@ macro_specs = [
 @dataclass
 class Macro:
     name: str
+    pos: Pos
     elements: list
 
     @classmethod
     def add(
-        cls, type_name, elements_name, config, roots, expander, params_expander, data
+        cls,
+        type_name,
+        elements_name,
+        config,
+        roots,
+        expander,
+        params_expander,
+        data,
+        pos,
     ):
-        d = {**data}
-        name = d.pop("name")
-        elements = d.pop(elements_name)
+        d = data.copy()
+        name = d.pop_required_loc_string("name")
+        elements = d.pop_required_element(elements_name)
         if d:
+            example_key = next(iter(d.keys()))
             raise JenkinsJobsException(
-                f"Macro {type_name} {name!r}: unexpected elements: {','.join(d.keys())}"
+                f"In {type_name} macro {name!r}: unexpected elements: {','.join(d.keys())}",
+                pos=data.key_pos.get(example_key),
             )
-        macro = cls(name, elements or [])
+        macro = cls(name, pos, elements or [])
         roots.assign(roots.macros[type_name], name, macro, "macro")
 
 

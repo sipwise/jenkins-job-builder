@@ -1,0 +1,11 @@
+- project:
+    name: sample-project
+    jobs:
+      - sample-job
+
+- job-template:
+    name: sample-job
+    builders:
+      - shell: |
+          #!/bin/bash
+          echo {missing_param}

@@ -1,0 +1,3 @@
+missing_job_element_name.yaml:3:5: Missing required element: 'name'
+        some_thing: value
+        ^

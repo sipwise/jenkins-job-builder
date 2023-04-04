@@ -77,10 +77,7 @@ def test_template_params(parser, registry):
 
     with pytest.raises(Exception) as excinfo:
         generator.generateXML(jobs)
-    message = (
-        "While expanding macro 'default-git-scm':"
-        " While formatting string '{branches}': Missing parameter: 'branches'"
-    )
+    message = "While formatting string '{branches}': Missing parameter: 'branches'"
     assert str(excinfo.value) == message
 
 
@@ -91,10 +88,7 @@ def test_missing_j2_param(parser, registry):
 
     with pytest.raises(Exception) as excinfo:
         generator.generateXML(jobs)
-    message = (
-        "While expanding macro 'default-git-scm':"
-        " While formatting jinja2 template '{{ branches }}': 'branches' is undefined"
-    )
+    message = "'branches' is undefined"
     assert str(excinfo.value) == message
 
 
@@ -105,9 +99,5 @@ def test_missing_include_j2_param(parser, registry):
 
     with pytest.raises(Exception) as excinfo:
         generator.generateXML(jobs)
-    message = (
-        "While expanding macro 'a-builder':"
-        " While formatting jinja2 template 'echo \"Parameter branch={{ branches }} is...':"
-        " 'branches' is undefined"
-    )
+    message = "'branches' is undefined"
     assert str(excinfo.value) == message

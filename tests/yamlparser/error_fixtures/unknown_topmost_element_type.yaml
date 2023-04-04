@@ -1,0 +1,5 @@
+- job:
+    name: sample-job
+
+- unknown_element_type:
+    name: sample_error

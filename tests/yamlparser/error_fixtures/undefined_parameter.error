@@ -1,0 +1,18 @@
+undefined_parameter.yaml:11:3: In project 'sample-project'
+    - project:
+      ^
+undefined_parameter.yaml:7:3: In job template 'sample-job-{param_1}'
+    - job-template:
+      ^
+undefined_parameter.yaml:9:14: Used by param_2
+        param_2: '{param_3}-at-template'
+                 ^
+undefined_parameter.yaml:13:14: Used by param_3
+        param_3: '{param_4}-at-globals'
+                 ^
+undefined_parameter.yaml:14:5: While expanding parameter 'param_4'
+        param_4: '{missing_param}-error'
+        ^
+undefined_parameter.yaml:14:15: While formatting string '{missing_param}-error': 'missing_param' is undefined
+        param_4: '{missing_param}-error'
+                  ^

@@ -172,9 +172,9 @@ class ModuleRegistry(object):
     def amend_job_dicts(self, job_data_list):
         while True:
             changed = False
-            for data in job_data_list:
+            for job in job_data_list:
                 for module in self.modules:
-                    if module.amend_job_dict(data):
+                    if module.amend_job_dict(job.data):
                         changed = True
             if not changed:
                 break
@@ -247,9 +247,15 @@ class ModuleRegistry(object):
                 component_data, component_type, eps, job_data, macro, name, xml_parent
             )
         elif name in eps:
-            func = eps[name]
-            kwargs = self._filter_kwargs(func, job_data=job_data)
-            func(self, xml_parent, component_data, **kwargs)
+            try:
+                func = eps[name]
+                kwargs = self._filter_kwargs(func, job_data=job_data)
+                func(self, xml_parent, component_data, **kwargs)
+            except JenkinsJobsException as x:
+                raise x.with_context(
+                    f"In {component_type} {name!r}",
+                    pos=component.pos,
+                )
         else:
             raise JenkinsJobsException(
                 "Unknown entry point or macro '{0}' "
@@ -280,7 +286,10 @@ class ModuleRegistry(object):
             try:
                 element = expander.expand(b, expander_params)
             except JenkinsJobsException as x:
-                raise JenkinsJobsException(f"While expanding macro {name!r}: {x}")
+                raise x.with_context(
+                    f"While expanding macro {name!r}",
+                    pos=macro.pos,
+                )
             # Pass component_data in as template data to this function
             # so that if the macro is invoked with arguments,
             # the arguments are interpolated into the real defn.

@@ -1,0 +1,18 @@
+exception_duplicate_views_in_project.yaml:5:3: In project 'sample-project'
+    - project:
+      ^
+exception_duplicate_views_in_project.yaml:8:9: Defined here
+          - sample-template
+            ^
+exception_duplicate_views_in_project.yaml:1:3: Duplicate view: 'sample-template'
+    - view-template:
+      ^
+exception_duplicate_views_in_project.yaml:5:3: In project 'sample-project'
+    - project:
+      ^
+exception_duplicate_views_in_project.yaml:9:9: Defined here
+          - sample-template
+            ^
+exception_duplicate_views_in_project.yaml:1:3: Previous view definition
+    - view-template:
+      ^

@@ -1,0 +1,8 @@
+- job-template:
+    name: sample-job
+    builders: !include: missing_param_in_include_jinja2_format.yaml.inc
+
+- project:
+    name: sample-project
+    jobs:
+      - sample-job

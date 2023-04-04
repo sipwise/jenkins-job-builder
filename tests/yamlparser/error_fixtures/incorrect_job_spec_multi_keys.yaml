@@ -1,0 +1,8 @@
+- job-template:
+    name: sample-job
+
+- project:
+    name: sample-project
+    jobs:
+      - sample-job:
+        incorrectly_indented_parameter:

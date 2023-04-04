@@ -12,6 +12,8 @@
 
 from dataclasses import dataclass
 
+from .errors import JenkinsJobsException
+from .loc_loader import LocDict
 from .root_base import RootBase, NonTemplateRootMixin, TemplateRootMixin, Group
 from .defaults import split_contents_params, view_contents_keys
 
@@ -21,14 +23,14 @@ class ViewBase(RootBase):
     view_type: str
 
     @classmethod
-    def from_dict(cls, config, roots, expander, data):
+    def from_dict(cls, config, roots, expander, data, pos):
         keep_descriptions = config.yamlparser["keep_descriptions"]
-        d = {**data}
-        name = d.pop("name")
-        id = d.pop("id", None)
-        description = d.pop("description", None)
-        defaults = d.pop("defaults", "global")
-        view_type = d.pop("view-type", "list")
+        d = data.copy()
+        name = d.pop_required_loc_string("name")
+        id = d.pop_loc_string("id", None)
+        description = d.pop_loc_string("description", None)
+        defaults = d.pop_loc_string("defaults", "global")
+        view_type = d.pop_loc_string("view-type", "list")
         contents, params = split_contents_params(d, view_contents_keys)
         return cls(
             roots.defaults,
@@ -36,6 +38,7 @@ class ViewBase(RootBase):
             keep_descriptions,
             id,
             name,
+            pos,
             description,
             defaults,
             params,
@@ -44,25 +47,33 @@ class ViewBase(RootBase):
         )
 
     def _as_dict(self):
-        return {
-            "name": self.name,
-            "view-type": self.view_type,
-            **self.contents,
-        }
+        return LocDict.merge(
+            {
+                "name": self.name,
+                "view-type": self.view_type,
+            },
+            self.contents,
+        )
 
 
 class View(ViewBase, NonTemplateRootMixin):
     @classmethod
-    def add(cls, config, roots, expander, param_expander, data):
-        view = cls.from_dict(config, roots, expander, data)
+    def add(cls, config, roots, expander, param_expander, data, pos):
+        view = cls.from_dict(config, roots, expander, data, pos)
         roots.assign(roots.views, view.id, view, "view")
+
+    def __str__(self):
+        return f"view {self.name!r}"
 
 
 class ViewTemplate(ViewBase, TemplateRootMixin):
     @classmethod
-    def add(cls, config, roots, expander, params_expander, data):
-        template = cls.from_dict(config, roots, params_expander, data)
+    def add(cls, config, roots, expander, params_expander, data, pos):
+        template = cls.from_dict(config, roots, params_expander, data, pos)
         roots.assign(roots.view_templates, template.id, template, "view template")
+
+    def __str__(self):
+        return f"view template {self.name!r}"
 
 
 @dataclass
@@ -71,15 +82,16 @@ class ViewGroup(Group):
     _view_templates: dict
 
     @classmethod
-    def add(cls, config, roots, expander, params_expander, data):
-        d = {**data}
-        name = d.pop("name")
-        view_specs = [
-            cls._spec_from_dict(item, error_context=f"View group {name}")
-            for item in d.pop("views")
-        ]
+    def add(cls, config, roots, expander, params_expander, data, pos):
+        d = data.copy()
+        name = d.pop_required_loc_string("name")
+        try:
+            view_specs = cls._specs_from_list(d.pop("views", None))
+        except JenkinsJobsException as x:
+            raise x.with_context(f"In view {name!r}", pos=pos)
         group = cls(
             name,
+            pos,
             view_specs,
             d,
             roots.views,
@@ -88,7 +100,7 @@ class ViewGroup(Group):
         roots.assign(roots.view_groups, group.name, group, "view group")
 
     def __str__(self):
-        return f"View group {self.name}"
+        return f"view group {self.name!r}"
 
     @property
     def _root_dicts(self):

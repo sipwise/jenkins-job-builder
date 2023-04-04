@@ -1,0 +1,5 @@
+- job-template:
+    name: sample-job
+    builders:
+      - shell: !join:
+          - element_1

@@ -21,6 +21,7 @@ from pathlib import Path
 
 import pytest
 
+from jenkins_jobs.errors import JenkinsJobsException
 from tests.enum_scenarios import scenario_list
 
 fixtures_dir = Path(__file__).parent / "error_fixtures"
@@ -47,6 +48,12 @@ def plugins_info():
 
 
 def test_error(check_parser, scenario, expected_error):
-    with pytest.raises(Exception) as excinfo:
+    with pytest.raises(JenkinsJobsException) as excinfo:
         check_parser(scenario.in_path)
-    assert str(excinfo.value) == expected_error
+    error = "\n".join(excinfo.value.lines)
+    print()
+    print(error)
+    canonical_error = error.replace(str(fixtures_dir) + "/", "").replace(
+        str(fixtures_dir), "fixtures-dir"
+    )
+    assert canonical_error == expected_error

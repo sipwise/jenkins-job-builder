@@ -11,14 +11,32 @@
 # under the License.
 
 from collections import namedtuple
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from typing import List
 
 from .constants import MAGIC_MANAGE_STRING
-from .errors import JenkinsJobsException
+from .errors import Context, JenkinsJobsException
+from .loc_loader import LocDict, LocString
+from .position import Pos
 from .formatter import enum_str_format_required_params, enum_str_format_param_defaults
 from .expander import Expander, expand_parameters
 from .defaults import Defaults
-from .dimensions import DimensionsExpander
+from .dimensions import enum_dimensions_params, is_point_included
+
+
+@dataclass
+class JobViewData:
+    """Expanded job or view data, with added source context. Fed into xml generator"""
+
+    data: LocDict
+    context: List[Context] = field(default_factory=list)
+
+    @property
+    def name(self):
+        return self.data["name"]
+
+    def with_context(self, message, pos):
+        return JobViewData(self.data, [Context(message, pos), *self.context])
 
 
 @dataclass
@@ -30,6 +48,7 @@ class RootBase:
     _keep_descriptions: bool
     _id: str
     name: str
+    pos: Pos
     description: str
     defaults_name: str
     params: dict
@@ -42,12 +61,19 @@ class RootBase:
         else:
             return self.name
 
+    @property
+    def title(self):
+        return str(self).capitalize()
+
     def _format_description(self, params):
         if self.description is None:
             defaults = self._pick_defaults(self.defaults_name)
             description = defaults.params.get("description")
         else:
-            description = self.description
+            if type(self.description) is LocString:
+                description = str(self.description)
+            else:
+                description = self.description
         if description is None and self._keep_descriptions:
             return {}
         expanded_desc = self._expander.expand(description, params)
@@ -60,8 +86,9 @@ class RootBase:
             if name == "global":
                 return Defaults.empty()
             raise JenkinsJobsException(
-                f"Job template {self.name!r} wants defaults {self.defaults_name!r}"
-                " but it was never defined"
+                f"{self.title} wants defaults {self.defaults_name!r}"
+                " but it was never defined",
+                pos=name.pos,
             )
         if name == "global":
             return defaults
@@ -73,15 +100,21 @@ class RootBase:
 
 class NonTemplateRootMixin:
     def top_level_generate_items(self):
-        defaults = self._pick_defaults(self.defaults_name, merge_global=False)
-        description = self._format_description(params={})
-        data = self._as_dict()
-        contents = self._expander.expand(data, self.params)
-        yield {
-            **defaults.contents,
-            **contents,
-            **description,
-        }
+        try:
+            defaults = self._pick_defaults(self.defaults_name, merge_global=False)
+            description = self._format_description(params={})
+            raw_data = self._as_dict()
+            contents = self._expander.expand(raw_data, self.params)
+            data = LocDict.merge(
+                defaults.contents,
+                contents,
+                description,
+                pos=self.pos,
+            )
+            context = [Context(f"In {self}", self.pos)]
+            yield JobViewData(data, context)
+        except JenkinsJobsException as x:
+            raise x.with_context(f"In {self}", pos=self.pos)
 
     def generate_items(self, defaults_name, params):
         # Do not produce jobs/views from under project - they are produced when
@@ -91,62 +124,77 @@ class NonTemplateRootMixin:
 
 class TemplateRootMixin:
     def generate_items(self, defaults_name, params):
-        defaults = self._pick_defaults(defaults_name or self.defaults_name)
-        item_params = {
-            **defaults.params,
-            **self.params,
-            **params,
-            "template-name": self.name,
-        }
-        if self._id:
-            item_params["id"] = self._id
-        contents = {
-            **defaults.contents,
-            **self._as_dict(),
-        }
-        axes = list(enum_str_format_required_params(self.name))
-        axes_defaults = dict(enum_str_format_param_defaults(self.name))
-        dim_expander = DimensionsExpander(context=self.name)
-        for dim_params in dim_expander.enum_dimensions_params(
-            axes, item_params, axes_defaults
-        ):
-            instance_params = {
-                **item_params,
-                **dim_params,
-            }
-            expanded_params = expand_parameters(
-                self._expander, instance_params, template_name=self.name
+        try:
+            defaults = self._pick_defaults(defaults_name or self.defaults_name)
+            item_params = LocDict.merge(
+                defaults.params,
+                self.params,
+                params,
+                {"template-name": self.name},
             )
-            exclude_list = expanded_params.get("exclude")
-            if not dim_expander.is_point_included(exclude_list, expanded_params):
-                continue
-            description = self._format_description(expanded_params)
-            expanded_contents = self._expander.expand(contents, expanded_params)
-            yield {
-                **expanded_contents,
-                **description,
-            }
+            if self._id:
+                item_params["id"] = self._id
+            contents = LocDict.merge(
+                defaults.contents,
+                self._as_dict(),
+            )
+            axes = list(enum_str_format_required_params(self.name, self.name.pos))
+            axes_defaults = dict(enum_str_format_param_defaults(self.name))
+            for dim_params in enum_dimensions_params(axes, item_params, axes_defaults):
+                instance_params = LocDict.merge(
+                    item_params,
+                    dim_params,
+                )
+                expanded_params = expand_parameters(self._expander, instance_params)
+                if not is_point_included(
+                    exclude_list=expanded_params.get("exclude"),
+                    params=expanded_params,
+                    key_pos=expanded_params.key_pos.get("exclude"),
+                ):
+                    continue
+                description = self._format_description(expanded_params)
+                expanded_contents = self._expander.expand(contents, expanded_params)
+                data = LocDict.merge(
+                    expanded_contents,
+                    description,
+                    pos=self.pos,
+                )
+                context = [Context(f"In {self}", self.pos)]
+                yield JobViewData(data, context)
+        except JenkinsJobsException as x:
+            raise x.with_context(f"In {self}", pos=self.pos)
 
 
 class GroupBase:
-    Spec = namedtuple("Spec", "name params")
+    Spec = namedtuple("Spec", "name params pos")
 
     def __repr__(self):
         return f"<{self}>"
 
     @classmethod
-    def _spec_from_dict(cls, d, error_context):
-        if isinstance(d, str):
-            return cls.Spec(d, params={})
+    def _specs_from_list(cls, spec_list=None):
+        if spec_list is None:
+            return []
+        return [
+            cls._spec_from_dict(item, spec_list.value_pos[idx])
+            for idx, item in enumerate(spec_list)
+        ]
+
+    @classmethod
+    def _spec_from_dict(cls, d, pos):
+        if isinstance(d, (str, LocString)):
+            return cls.Spec(d, params={}, pos=pos)
         if not isinstance(d, dict):
             raise JenkinsJobsException(
-                f"{error_context}: Job/view spec should name or dict,"
-                f" but is {type(d)}. Missing indent?"
+                "Job/view spec should name or dict,"
+                f" but is {type(d)} ({d!r}). Missing indent?",
+                pos=pos,
             )
         if len(d) != 1:
             raise JenkinsJobsException(
-                f"{error_context}: Job/view dict should be single-item,"
-                f" but have keys {list(d.keys())}. Missing indent?"
+                "Job/view dict should be single-item,"
+                f" but have keys {list(d.keys())}. Missing indent?",
+                pos=d.pos,
             )
         name, params = next(iter(d.items()))
         if params is None:
@@ -154,40 +202,51 @@ class GroupBase:
         else:
             if not isinstance(params, dict):
                 raise JenkinsJobsException(
-                    f"{error_context}: Job/view {name} params type should be dict,"
-                    f" but is {type(params)} ({params})."
+                    f"Job/view {name!r} params type should be dict,"
+                    f" but is {params!r}.",
+                    pos=params.pos,
                 )
-        return cls.Spec(name, params)
+        return cls.Spec(name, params, pos)
 
     def _generate_items(self, root_dicts, spec_list, defaults_name, params):
-        for spec in spec_list:
-            item = self._pick_item(root_dicts, spec.name)
-            item_params = {
-                **params,
-                **self.params,
-                **self._my_params,
-                **spec.params,
-            }
-            yield from item.generate_items(defaults_name, item_params)
+        try:
+            for spec in spec_list:
+                item = self._pick_spec_item(root_dicts, spec)
+                item_params = LocDict.merge(
+                    params,
+                    self.params,
+                    self._my_params,
+                    spec.params,
+                )
+                for job_data in item.generate_items(defaults_name, item_params):
+                    yield (
+                        job_data.with_context("Defined here", spec.pos).with_context(
+                            f"In {self}", self.pos
+                        )
+                    )
+        except JenkinsJobsException as x:
+            raise x.with_context(f"In {self}", self.pos)
 
     @property
     def _my_params(self):
         return {}
 
-    def _pick_item(self, root_dict_list, name):
+    def _pick_spec_item(self, root_dict_list, spec):
         for roots_dict in root_dict_list:
             try:
-                return roots_dict[name]
+                return roots_dict[spec.name]
             except KeyError:
                 pass
         raise JenkinsJobsException(
-            f"{self}: Failed to find suitable job/view/template named '{name}'"
+            f"Failed to find suitable job/view/template named '{spec.name}'",
+            pos=spec.pos,
         )
 
 
 @dataclass
 class Group(GroupBase):
     name: str
+    pos: Pos
     specs: list  # list[Spec]
     params: dict
 

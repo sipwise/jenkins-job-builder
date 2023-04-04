@@ -12,78 +12,91 @@
 
 import itertools
 
-from .errors import JenkinsJobsException
+from .errors import Context, JenkinsJobsException
+from .loc_loader import LocList, LocDict
 
 
-def merge_dicts(dict_list):
-    result = {}
-    for d in dict_list:
-        result.update(d)
-    return result
-
-
-class DimensionsExpander:
-    def __init__(self, context):
-        self._context = context
-
-    def enum_dimensions_params(self, axes, params, defaults):
-        if not axes:
-            # No axes - instantiate one job/view.
-            yield {}
-            return
-        dim_values = []
-        for axis in axes:
-            try:
-                value = params[axis]
-            except KeyError:
-                try:
-                    value = defaults[axis]
-                except KeyError:
-                    continue  # May be, value would be received from an another axis values.
-            value = self._decode_axis_value(axis, value)
-            dim_values.append(value)
-        for values in itertools.product(*dim_values):
-            yield merge_dicts(values)
-
-    def _decode_axis_value(self, axis, value):
-        if not isinstance(value, list):
-            yield {axis: value}
-            return
-        for item in value:
-            if not isinstance(item, dict):
-                yield {axis: item}
-                continue
-            if len(item.items()) != 1:
-                raise JenkinsJobsException(
-                    f"Invalid parameter {axis!r} definition for template {self._context!r}:"
-                    f" Expected a value or a dict with single element, but got: {item!r}"
-                )
-            value, p = next(iter(item.items()))
-            yield {
-                axis: value,  # Point axis value.
-                **p,  # Point-specific parameters. May override asis value.
-            }
-
-    def is_point_included(self, exclude_list, params):
-        return not any(self._match_exclude(params, el) for el in exclude_list or [])
-
-    def _match_exclude(self, params, exclude):
-        if not isinstance(exclude, dict):
+def _decode_axis_value(axis, value, key_pos, value_pos):
+    if not isinstance(value, (list, LocList)):
+        yield {axis: value}
+        return
+    for idx, item in enumerate(value):
+        if not isinstance(item, (dict, LocDict)):
+            d = LocDict()
+            if type(value) is LocList:
+                d.set_item(axis, item, key_pos, value.value_pos[idx])
+            else:
+                d[axis] = item
+            yield d
+            continue
+        if len(item.items()) != 1:
             raise JenkinsJobsException(
-                f"Template {self._context!r}: Exclude element should be dict, but is: {exclude!r}"
+                f"Expected a value or a dict with single element, but got: {item!r}",
+                pos=value.value_pos[idx],
+                ctx=[Context(f"In pamareter {axis!r} definition", key_pos)],
             )
-        if not exclude:
-            raise JenkinsJobsException(
-                f"Template {self._context!r}: Exclude element should be dict, but is empty: {exclude!r}"
-            )
-        for axis, value in exclude.items():
+        value, p = next(iter(item.items()))
+        yield LocDict.merge(
+            {axis: value},  # Point axis value.
+            p,  # Point-specific parameters. May override axis value.
+        )
+
+
+def enum_dimensions_params(axes, params, defaults):
+    if not axes:
+        # No axes - instantiate one job/view.
+        yield {}
+        return
+    dim_values = []
+    for axis in axes:
+        try:
+            value, key_pos, value_pos = params.item_with_pos(axis)
+        except KeyError:
             try:
-                v = params[axis]
+                value = defaults[axis]
             except KeyError:
-                raise JenkinsJobsException(
-                    f"Template {self._context!r}: Unknown axis {axis!r} for exclude element: {exclude!r}"
-                )
-            if value != v:
-                return False
-        # All required exclude values are matched.
+                continue  # May be, value would be received from an another axis values.
+        value = list(_decode_axis_value(axis, value, key_pos, value_pos))
+        dim_values.append(value)
+    for values in itertools.product(*dim_values):
+        yield LocDict.merge(*values)
+
+
+def _match_exclude(params, exclude, pos):
+    if not isinstance(exclude, dict):
+        raise JenkinsJobsException(
+            f"Expected a dict, but got: {exclude!r}",
+            pos=pos,
+        )
+    if not exclude:
+        raise JenkinsJobsException(
+            f"Expected a dict, but is empty: {exclude!r}",
+            pos=pos,
+        )
+    for axis, value in exclude.items():
+        try:
+            v = params[axis]
+        except KeyError:
+            raise JenkinsJobsException(
+                f"Unknown axis {axis!r}",
+                pos=pos,
+            )
+        if value != v:
+            return False
+    # All required exclude values are matched.
+    return True
+
+
+def is_point_included(exclude_list, params, key_pos=None):
+    if not exclude_list:
         return True
+    try:
+        for idx, exclude in enumerate(exclude_list):
+            if _match_exclude(params, exclude, exclude_list.value_pos[idx]):
+                return False
+    except JenkinsJobsException as x:
+        raise x.with_context(
+            f"In template exclude list",
+            pos=key_pos,
+        )
+    return True

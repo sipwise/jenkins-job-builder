@@ -1,0 +1,15 @@
+# Check for error handling inside expanded template.
+
+- job-template:
+    name: sample-job
+    builders: !j2-yaml: |
+      {# Comment lines -#}
+      {# added to change templated position -#}
+      {# of include error -#}
+      - shell:
+          !include: missing-file.sh
+
+- project:
+    name: sample-project
+    jobs:
+      - sample-job

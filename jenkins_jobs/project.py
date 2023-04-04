@@ -12,6 +12,8 @@
 
 from dataclasses import dataclass
 
+from .errors import JenkinsJobsException
+from .position import Pos
 from .root_base import GroupBase
 
 
@@ -24,24 +26,22 @@ class Project(GroupBase):
     _view_templates: dict
     _view_groups: dict
     name: str
+    pos: Pos
     defaults_name: str
     job_specs: list  # list[Spec]
     view_specs: list  # list[Spec]
     params: dict
 
     @classmethod
-    def add(cls, config, roots, expander, params_expander, data):
-        d = {**data}
-        name = d.pop("name")
-        defaults = d.pop("defaults", None)
-        job_specs = [
-            cls._spec_from_dict(item, error_context=f"Project {name}")
-            for item in d.pop("jobs", [])
-        ]
-        view_specs = [
-            cls._spec_from_dict(item, error_context=f"Project {name}")
-            for item in d.pop("views", [])
-        ]
+    def add(cls, config, roots, expander, params_expander, data, pos):
+        d = data.copy()
+        name = d.pop_required_loc_string("name")
+        defaults = d.pop_loc_string("defaults", None)
+        try:
+            job_specs = cls._specs_from_list(d.pop("jobs", None))
+            view_specs = cls._specs_from_list(d.pop("views", None))
+        except JenkinsJobsException as x:
+            raise x.with_context(f"In project {name!r}", pos=pos)
         project = cls(
             roots.jobs,
             roots.job_templates,
@@ -50,6 +50,7 @@ class Project(GroupBase):
             roots.view_templates,
             roots.view_groups,
             name,
+            pos,
             defaults,
             job_specs,
             view_specs,
@@ -58,7 +59,7 @@ class Project(GroupBase):
         roots.assign(roots.projects, project.name, project, "project")
 
     def __str__(self):
-        return f"Project {self.name}"
+        return f"project {self.name!r}"
 
     @property
     def _my_params(self):

@@ -1,6 +1,7 @@
 import pytest
 
-from jenkins_jobs.dimensions import DimensionsExpander
+from jenkins_jobs.loc_loader import LocDict, LocList
+from jenkins_jobs.dimensions import enum_dimensions_params, is_point_included
 
 
 # Axes, params, exclude, expected resulting params.
@@ -197,10 +198,9 @@ cases = [
 
 @pytest.mark.parametrize("axes,params,exclude,expected_dimension_params", cases)
 def test_dimensions(axes, params, exclude, expected_dimension_params):
-    dim_expander = DimensionsExpander(context=None)
     dimension_params = [
         p
-        for p in dim_expander.enum_dimensions_params(axes, params, defaults={})
-        if dim_expander.is_point_included(exclude, p)
+        for p in enum_dimensions_params(axes, LocDict(params), defaults={})
+        if is_point_included(LocList(exclude), p)
     ]
     assert dimension_params == expected_dimension_params

@@ -1,0 +1,13 @@
+xml_generator_builder_error_in_job_template.yaml:9:3: In project 'sample-project'
+    - project:
+      ^
+xml_generator_builder_error_in_job_template.yaml:12:9: Defined here
+          - sample-job
+            ^
+xml_generator_builder_error_in_job_template.yaml:3:3: In job template 'sample-job'
+    - job-template:
+      ^
+xml_generator_builder_error_in_job_template.yaml:6:9: In builder 'shell'
+          - shell:
+            ^
+Missing command from an instance of 'builder.shell'

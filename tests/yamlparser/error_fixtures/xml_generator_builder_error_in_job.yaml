@@ -1,0 +1,12 @@
+# For XML generator functions context should be added.
+
+- job:
+    name: sample-job
+    builders:
+      - shell:
+          wrong_element: hello
+
+- project:
+    name: sample-project
+    jobs:
+      - sample-job

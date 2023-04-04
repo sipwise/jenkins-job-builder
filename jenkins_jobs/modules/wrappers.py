@@ -1828,7 +1828,7 @@ def pre_scm_buildstep(registry, xml_parent, data):
         xml_parent, "org.jenkinsci.plugins.preSCMbuildstep." "PreSCMBuildStepsWrapper"
     )
     bs = XML.SubElement(bsp, "buildSteps")
-    stepList = data if type(data) is list else data.get("buildsteps")
+    stepList = data if isinstance(data, list) else data.get("buildsteps")
 
     for step in stepList:
         for edited_node in create_builders(registry, step):

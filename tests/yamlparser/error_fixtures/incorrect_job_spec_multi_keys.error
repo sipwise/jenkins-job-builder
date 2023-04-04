@@ -1,0 +1,6 @@
+incorrect_job_spec_multi_keys.yaml:4:3: In project 'sample-project'
+    - project:
+      ^
+incorrect_job_spec_multi_keys.yaml:7:9: Job/view dict should be single-item, but have keys ['sample-job', 'incorrectly_indented_parameter']. Missing indent?
+          - sample-job:
+            ^

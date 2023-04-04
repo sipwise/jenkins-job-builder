@@ -1,0 +1,9 @@
+format_positional_argument_in_param.yaml:6:3: In project 'sample-project'
+    - project:
+      ^
+format_positional_argument_in_param.yaml:1:3: In job template 'sample-job'
+    - job-template:
+      ^
+format_positional_argument_in_param.yaml:8:12: Positional format arguments are not supported: 'positional-format-{0}'
+        param: 'positional-format-{0}'
+               ^

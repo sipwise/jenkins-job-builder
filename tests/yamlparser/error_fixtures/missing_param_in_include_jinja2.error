@@ -1,0 +1,15 @@
+missing_param_in_include_jinja2.yaml:6:3: In project 'sample-project'
+    - project:
+      ^
+missing_param_in_include_jinja2.yaml:1:3: In job template 'sample-job'
+    - job-template:
+      ^
+missing_param_in_include_jinja2.yaml:4:16: In included file 'missing_param_in_include_jinja2.inc'
+          - shell: !include-jinja2: missing_param_in_include_jin ...
+                   ^
+missing_param_in_include_jinja2.yaml:4:16: While formatting jinja2 template '{# Sample comment #}\n#!/bin/bash\n\nif [ -...'
+          - shell: !include-jinja2: missing_param_in_include_jin ...
+                   ^
+missing_param_in_include_jinja2.inc:5:5: 'johnny' is undefined
+        echo "Here is {{ johnny }}!"
+        ^

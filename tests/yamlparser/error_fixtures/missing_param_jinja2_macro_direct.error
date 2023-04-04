@@ -1,1 +1,18 @@
-While expanding macro 'sample-builder': While formatting jinja2 template 'echo {{ missing_param }} {{ other_param ...': 'missing_param' is undefined
+missing_param_jinja2_macro_direct.yaml:1:3: In project 'sample-project'
+    - project:
+      ^
+missing_param_jinja2_macro_direct.yaml:4:9: Defined here
+          - sample-job
+            ^
+missing_param_jinja2_macro_direct.yaml:12:3: In job template 'sample-job'
+    - job-template:
+      ^
+missing_param_jinja2_macro_direct.yaml:6:3: While expanding macro 'sample-builder'
+    - builder:
+      ^
+missing_param_jinja2_macro_direct.yaml:9:16: While formatting jinja2 template 'echo {{ missing_param }} {{ other_param ...'
+          - shell: !j2: |
+                   ^
+missing_param_jinja2_macro_direct.yaml:10:11: 'missing_param' is undefined
+              echo {{ missing_param }} {{ other_param }}
+              ^

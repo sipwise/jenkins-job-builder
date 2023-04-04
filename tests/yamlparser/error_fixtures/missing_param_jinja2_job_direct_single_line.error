@@ -1,0 +1,9 @@
+missing_param_jinja2_job_direct_single_line.yaml:1:3: In job 'sample-job'
+    - job:
+      ^
+missing_param_jinja2_job_direct_single_line.yaml:4:16: While formatting jinja2 template 'echo {{ missing_param }}'
+          - shell: !j2: echo {{ missing_param }}
+                   ^
+missing_param_jinja2_job_direct_single_line.yaml:4:21: 'missing_param' is undefined
+          - shell: !j2: echo {{ missing_param }}
+                        ^

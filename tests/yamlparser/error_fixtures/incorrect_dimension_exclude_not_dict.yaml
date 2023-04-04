@@ -1,0 +1,14 @@
+- job-template:
+    name: 'sample-job-{dimension}'
+    builders:
+      - shell: echo {dimension}
+
+- project:
+    name: sample-project
+    dimension:
+    - first
+    - second
+    exclude:
+    - wrong-value
+    jobs:
+    - 'sample-job-{dimension}'

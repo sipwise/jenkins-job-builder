@@ -6,5 +6,4 @@
 - job-template:
     name: sample-job
     builders:
-      - shell: !j2: |
-          echo {{ missing_param }}
+      - shell: 'echo {missing_param}'

@@ -49,7 +49,7 @@ class ListSubCommand(base.JobsSubCommand):
         if path_list:
             roots = self.load_roots(jjb_config, path_list)
             jobs = base.filter_matching(roots.generate_jobs(), glob_list)
-            job_names = [j["name"] for j in jobs]
+            job_names = [j.name for j in jobs]
         else:
             jenkins = JenkinsManager(jjb_config)
             job_names = [

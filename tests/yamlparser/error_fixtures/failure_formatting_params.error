@@ -1,1 +1,12 @@
-While expanding 'flavor', used by , used by template 'template-requiring-param-{os}': While formatting string 'xenial-{bdate}': 'bdate' is undefined
+failure_formatting_params.yaml:5:3: In project 'missing_params_for_params'
+    - project:
+      ^
+failure_formatting_params.yaml:16:3: In job template 'template-requiring-param-{os}'
+    - job-template:
+      ^
+failure_formatting_params.yaml:9:5: While expanding parameter 'flavor'
+        flavor:
+        ^
+failure_formatting_params.yaml:11:9: While formatting string 'xenial-{bdate}': 'bdate' is undefined
+          - xenial-{bdate}
+            ^

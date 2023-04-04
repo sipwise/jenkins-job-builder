@@ -1,0 +1,9 @@
+include_missing_path.yaml:7:3: In project 'sample-project'
+    - project:
+      ^
+include_missing_path.yaml:1:3: In job template 'sample-job'
+    - job-template:
+      ^
+include_missing_path.yaml:5:11: File missing-file.sh does not exist in any of include directories: .,fixtures-dir
+              !include: missing-file.sh
+              ^

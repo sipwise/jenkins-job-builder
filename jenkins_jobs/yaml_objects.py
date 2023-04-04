@@ -216,6 +216,7 @@ Examples:
 import abc
 import os.path
 import logging
+import traceback
 import sys
 from pathlib import Path
 
@@ -223,49 +224,50 @@ import jinja2
 import jinja2.meta
 import yaml
 
-from .errors import JenkinsJobsException
+from .errors import Context, JenkinsJobsException
+from .loc_loader import LocList
+from .position import Pos
 from .formatter import CustomFormatter, enum_str_format_required_params
-
-logger = logging.getLogger(__name__)
-
 
 if sys.version_info >= (3, 8):
     from functools import cached_property
 else:
-    from functools import lru_cache
+    from .cached_property import cached_property
 
-    # cached_property was introduced in python 3.8.
-    # Recipe from https://stackoverflow.com/a/19979379
-    def cached_property(fn):
-        return property(lru_cache()(fn))
+logger = logging.getLogger(__name__)
 
 
 class BaseYamlObject(metaclass=abc.ABCMeta):
     @staticmethod
     def path_list_from_node(loader, node):
         if isinstance(node, yaml.ScalarNode):
-            return [loader.construct_yaml_str(node)]
+            return LocList(
+                [loader.construct_yaml_str(node)],
+                value_pos=[loader.pos_from_node(node)],
+            )
         elif isinstance(node, yaml.SequenceNode):
-            return loader.construct_sequence(node)
+            return LocList(
+                loader.construct_sequence(node),
+                value_pos=[loader.pos_from_node(n) for n in node.value],
+            )
         else:
-            raise yaml.constructor.ConstructorError(
-                None,
-                None,
-                f"expected either a sequence or scalar node, but found {node.id}",
-                node.start_mark,
+            raise JenkinsJobsException(
+                f"Expected either a sequence or scalar node, but found {node.id}",
+                pos=loader.pos_from_node(node),
             )
 
     @classmethod
     def from_yaml(cls, loader, node):
         value = loader.construct_yaml_str(node)
-        return cls(loader.jjb_config, loader, value)
+        return cls(loader.jjb_config, loader, loader.pos_from_node(node), value)
 
-    def __init__(self, jjb_config, loader):
+    def __init__(self, jjb_config, loader, pos):
         self._search_path = jjb_config.yamlparser["include_path"]
         if loader.source_path:
             # Loaded from a file, find includes beside it too.
             self._search_path.append(os.path.dirname(loader.source_path))
         self._loader = loader
+        self._pos = pos
         allow_empty = jjb_config.yamlparser["allow_empty_variables"]
         self._formatter = CustomFormatter(allow_empty)
 
@@ -278,7 +280,7 @@ class BaseYamlObject(metaclass=abc.ABCMeta):
         """Expand object and substitute template parameters"""
         return self.expand(expander, params)
 
-    def _find_file(self, rel_path):
+    def _find_file(self, rel_path, pos):
         search_path = self._search_path
         if "." not in search_path:
             search_path.append(".")
@@ -288,37 +290,60 @@ class BaseYamlObject(metaclass=abc.ABCMeta):
             if candidate.is_file():
                 logger.debug("Including file %r from path %r", str(rel_path), str(dir))
                 return candidate
+        dir_list_str = ",".join(str(d) for d in dir_list)
         raise JenkinsJobsException(
-            f"File {rel_path} does not exist on any of include directories:"
-            f" {','.join([str(d) for d in dir_list])}"
+            f"File {rel_path} does not exist in any of include directories: {dir_list_str}",
+            pos=pos,
         )
+
+    def _expand_path_list(self, path_list, *args):
+        for idx, path in enumerate(path_list):
+            yield self._expand_path(path, path_list.value_pos[idx], *args)
+
+    def _subst_path_list(self, path_list, *args):
+        for idx, path in enumerate(path_list):
+            yield self._subst_path(path, path_list.value_pos[idx], *args)
 
 
 class J2BaseYamlObject(BaseYamlObject):
-    def __init__(self, jjb_config, loader):
-        super().__init__(jjb_config, loader)
+    def __init__(self, jjb_config, loader, pos):
+        super().__init__(jjb_config, loader, pos)
         self._jinja2_env = jinja2.Environment(
             loader=jinja2.FileSystemLoader(self._search_path),
             undefined=jinja2.StrictUndefined,
         )
 
-    @staticmethod
-    def _render_template(template_text, template, params):
+    def _render_template(self, pos, template_text, template, params):
         try:
             return template.render(params)
         except jinja2.UndefinedError as x:
+            # Jinja2 adds fake traceback entry with template line number.
+            tb = traceback.extract_tb(x.__traceback__)
+            line_ofs = tb[-1].lineno - 1  # traceback lineno starts with 1.
+            lines = template_text.splitlines()
+            start_ofs = pos.body.index(lines[0])
+            # Examples for pre_pad: '!j2: \n<indent spaces>', '!j2: '.
+            pre_pad = pos.body[:start_ofs]
+            # Shift position to reflect template position inside yaml file:
+            if "\n" in pre_pad:
+                pos = pos.with_offset(line_ofs=1)
+                column_ofs = 0
+            else:
+                column_ofs = start_ofs
+            # Move position to error inside template:
+            pos = pos.with_offset(line_ofs, column_ofs)
+            pos = pos.with_contents_start()
             if len(template_text) > 40:
                 text = template_text[:40] + "..."
             else:
                 text = template_text
-            raise JenkinsJobsException(
-                f"While formatting jinja2 template {text!r}: {x}"
-            )
+            context = Context(f"While formatting jinja2 template {text!r}", self._pos)
+            raise JenkinsJobsException(str(x), pos=pos, ctx=[context])
 
 
 class J2Template(J2BaseYamlObject):
-    def __init__(self, jjb_config, loader, template_text):
-        super().__init__(jjb_config, loader)
+    def __init__(self, jjb_config, loader, pos, template_text):
+        super().__init__(jjb_config, loader, pos)
         self._template_text = template_text
         self._template = self._jinja2_env.from_string(template_text)
 
@@ -328,7 +353,9 @@ class J2Template(J2BaseYamlObject):
         return jinja2.meta.find_undeclared_variables(ast)
 
     def _render(self, params):
-        return self._render_template(self._template_text, self._template, params)
+        return self._render_template(
+            self._pos, self._template_text, self._template, params
+        )
 
 
 class J2String(J2Template):
@@ -343,8 +370,11 @@ class J2Yaml(J2Template):
 
     def expand(self, expander, params):
         text = self._render(params)
-        data = self._loader.load(text)
-        return expander.expand(data, params)
+        data = self._loader.load(text, source_path="<expanded j2-yaml>")
+        try:
+            return expander.expand(data, params)
+        except JenkinsJobsException as x:
+            raise x.with_context("In expanded !j2-yaml:", self._pos)
 
 
 class IncludeJinja2(J2BaseYamlObject):
@@ -353,10 +383,10 @@ class IncludeJinja2(J2BaseYamlObject):
     @classmethod
     def from_yaml(cls, loader, node):
         path_list = cls.path_list_from_node(loader, node)
-        return cls(loader.jjb_config, loader, path_list)
+        return cls(loader.jjb_config, loader, loader.pos_from_node(node), path_list)
 
-    def __init__(self, jjb_config, loader, path_list):
-        super().__init__(jjb_config, loader)
+    def __init__(self, jjb_config, loader, pos, path_list):
+        super().__init__(jjb_config, loader, pos)
         self._path_list = path_list
 
     @property
@@ -364,91 +394,98 @@ class IncludeJinja2(J2BaseYamlObject):
         return []
 
     def expand(self, expander, params):
-        return "\n".join(
-            self._expand_path(expander, params, path) for path in self._path_list
-        )
+        return "\n".join(self._expand_path_list(self._path_list, expander, params))
 
-    def _expand_path(self, expander, params, path_template):
+    def _expand_path(self, path_template, pos, expander, params):
         rel_path = self._formatter.format(path_template, **params)
-        full_path = self._find_file(rel_path)
+        full_path = self._find_file(rel_path, pos)
         template_text = full_path.read_text()
         template = self._jinja2_env.from_string(template_text)
-        return self._render_template(template_text, template, params)
+        pos = Pos.from_file(full_path, template_text)
+        try:
+            return self._render_template(pos, template_text, template, params)
+        except JenkinsJobsException as x:
+            raise x.with_context(f"In included file {str(full_path)!r}", pos=self._pos)
 
 
 class IncludeBaseObject(BaseYamlObject):
     @classmethod
     def from_yaml(cls, loader, node):
         path_list = cls.path_list_from_node(loader, node)
-        return cls(loader.jjb_config, loader, path_list)
+        return cls(loader.jjb_config, loader, loader.pos_from_node(node), path_list)
 
-    def __init__(self, jjb_config, loader, path_list):
-        super().__init__(jjb_config, loader)
+    def __init__(self, jjb_config, loader, pos, path_list):
+        super().__init__(jjb_config, loader, pos)
         self._path_list = path_list
 
     @property
     def required_params(self):
-        for path in self._path_list:
-            yield from enum_str_format_required_params(path)
+        for idx, path in enumerate(self._path_list):
+            yield from enum_str_format_required_params(
+                path, pos=self._path_list.value_pos[idx]
+            )
 
 
 class YamlInclude(IncludeBaseObject):
     yaml_tag = "!include:"
 
     def expand(self, expander, params):
-        yaml_list = [
-            self._expand_path(expander, params, path) for path in self._path_list
-        ]
+        yaml_list = list(self._expand_path_list(self._path_list, expander, params))
         if len(yaml_list) == 1:
             return yaml_list[0]
         else:
             return "\n".join(yaml_list)
 
-    def _expand_path(self, expander, params, path_template):
+    def _expand_path(self, path_template, pos, expander, params):
         rel_path = self._formatter.format(path_template, **params)
-        full_path = self._find_file(rel_path)
-        text = full_path.read_text()
-        data = self._loader.load(text)
-        return expander.expand(data, params)
+        full_path = self._find_file(rel_path, pos)
+        data = self._loader.load_path(full_path)
+        try:
+            return expander.expand(data, params)
+        except JenkinsJobsException as x:
+            raise x.with_context(f"In included file {str(full_path)!r}", pos=self._pos)
 
 
 class IncludeRawBase(IncludeBaseObject):
     def expand(self, expander, params):
-        return "\n".join(self._expand_path(path, params) for path in self._path_list)
+        return "\n".join(self._expand_path_list(self._path_list, params))
 
     def subst(self, expander, params):
-        return "\n".join(self._subst_path(path, params) for path in self._path_list)
+        return "\n".join(self._subst_path_list(self._path_list, params))
 
 
 class IncludeRaw(IncludeRawBase):
     yaml_tag = "!include-raw:"
 
-    def _expand_path(self, rel_path_template, params):
+    def _expand_path(self, rel_path_template, pos, params):
         rel_path = self._formatter.format(rel_path_template, **params)
-        full_path = self._find_file(rel_path)
+        full_path = self._find_file(rel_path, pos)
         return full_path.read_text()
 
-    def _subst_path(self, rel_path_template, params):
+    def _subst_path(self, rel_path_template, pos, params):
         rel_path = self._formatter.format(rel_path_template, **params)
-        full_path = self._find_file(rel_path)
+        full_path = self._find_file(rel_path, pos)
         template = full_path.read_text()
-        return self._formatter.format(template, **params)
+        try:
+            return self._formatter.format(template, **params)
+        except JenkinsJobsException as x:
+            raise x.with_context(f"In included file {str(full_path)!r}", pos=self._pos)
 
 
 class IncludeRawEscape(IncludeRawBase):
     yaml_tag = "!include-raw-escape:"
 
-    def _expand_path(self, rel_path_template, params):
+    def _expand_path(self, rel_path_template, pos, params):
         rel_path = self._formatter.format(rel_path_template, **params)
-        full_path = self._find_file(rel_path)
+        full_path = self._find_file(rel_path, pos)
         text = full_path.read_text()
         # Backward compatibility:
         # if used inside job or macro without parameters, curly braces are duplicated.
         return text.replace("{", "{{").replace("}", "}}")
 
-    def _subst_path(self, rel_path_template, params):
+    def _subst_path(self, rel_path_template, pos, params):
         rel_path = self._formatter.format(rel_path_template, **params)
-        full_path = self._find_file(rel_path)
+        full_path = self._find_file(rel_path, pos)
         return full_path.read_text()
 
 
@@ -459,12 +496,10 @@ class YamlListJoin:
     def from_yaml(cls, loader, node):
         value = loader.construct_sequence(node, deep=True)
         if len(value) != 2:
-            raise yaml.constructor.ConstructorError(
-                None,
-                None,
+            raise JenkinsJobsException(
                 "Join value should contain 2 elements: delimiter and string list,"
                 f" but contains {len(value)} elements: {value!r}",
-                node.start_mark,
+                pos=loader.pos_from_node(node),
             )
         delimiter, seq = value
         return delimiter.join(seq)

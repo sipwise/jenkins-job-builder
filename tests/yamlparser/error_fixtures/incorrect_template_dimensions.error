@@ -1,1 +1,12 @@
-Invalid parameter 'stream' definition for template 'template-incorrect-args-{stream}-{os}': Expected a value or a dict with single element, but got: {'current': None, 'branch': 'current'}
+incorrect_template_dimensions.yaml:1:3: In project 'template_incorrect_args'
+    - project:
+      ^
+incorrect_template_dimensions.yaml:14:3: In job template 'template-incorrect-args-{stream}-{os}'
+    - job-template:
+      ^
+incorrect_template_dimensions.yaml:6:5: In pamareter 'stream' definition
+        stream:
+        ^
+incorrect_template_dimensions.yaml:7:9: Expected a value or a dict with single element, but got: {'current': None, 'branch': 'current'}
+          - current:
+            ^

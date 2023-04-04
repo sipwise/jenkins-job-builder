@@ -1,0 +1,3 @@
+string_join_not_2_elements.yaml:4:16: Join value should contain 2 elements: delimiter and string list, but contains 1 elements: ['element_1']
+          - shell: !join:
+                   ^

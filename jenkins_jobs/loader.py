@@ -14,9 +14,8 @@ import io
 import logging
 from functools import partial
 
-import yaml
-
 from .errors import JenkinsJobsException
+from .loc_loader import LocLoader
 from .yaml_objects import BaseYamlObject
 from .expander import Expander, ParamsExpander, deprecated_yaml_tags, yaml_classes_list
 from .roots import root_adders
@@ -24,13 +23,13 @@ from .roots import root_adders
 logger = logging.getLogger(__name__)
 
 
-class Loader(yaml.Loader):
+class Loader(LocLoader):
     @classmethod
     def empty(cls, jjb_config):
         return cls(io.StringIO(), jjb_config)
 
     def __init__(self, stream, jjb_config, source_path=None, anchors=None):
-        super().__init__(stream)
+        super().__init__(stream, source_path)
         self.jjb_config = jjb_config
         self.source_path = source_path
         self._retain_anchors = jjb_config.yamlparser["retain_anchors"]
@@ -74,10 +73,10 @@ def load_deprecated_yaml(tag, cls, loader, node):
 
 
 for cls in yaml_classes_list:
-    yaml.add_constructor(cls.yaml_tag, cls.from_yaml, Loader)
+    Loader.add_constructor(cls.yaml_tag, cls.from_yaml)
 
 for tag, cls in deprecated_yaml_tags:
-    yaml.add_constructor(tag, partial(load_deprecated_yaml, tag, cls), Loader)
+    Loader.add_constructor(tag, partial(load_deprecated_yaml, tag, cls))
 
 
 def is_stdin(path):
@@ -122,19 +121,21 @@ def load_files(config, roots, path_list):
             data = loader.load_path(path)
         if not isinstance(data, list):
             raise JenkinsJobsException(
-                f"The topmost collection in file '{path}' must be a list,"
-                f" not a {type(data)}"
+                f"The topmost collection must be a list, but is: {data}",
+                pos=data.pos,
             )
-        for item in data:
+        for idx, item in enumerate(data):
             if not isinstance(item, dict):
                 raise JenkinsJobsException(
-                    f"{path}: Topmost list should contain single-item dict,"
-                    f" not a {type(item)}. Missing indent?"
+                    f"Topmost list should contain single-item dict,"
+                    f" not a {type(item)}. Missing indent?",
+                    pos=data.value_pos[idx],
                 )
             if len(item) != 1:
                 raise JenkinsJobsException(
-                    f"{path}: Topmost dict should be single-item,"
-                    f" but have keys {item.keys()}. Missing indent?"
+                    f"Topmost dict should be single-item,"
+                    f" but have keys {list(item.keys())}. Missing indent?",
+                    pos=item.pos,
                 )
             kind, contents = next(iter(item.items()))
             if kind.startswith("_"):
@@ -145,7 +146,8 @@ def load_files(config, roots, path_list):
                 adder = root_adders[kind]
             except KeyError:
                 raise JenkinsJobsException(
-                    f"{path}: Unknown topmost element type : {kind!r},"
-                    f" Known are: {','.join(root_adders)}."
+                    f"Unknown topmost element type : {kind!r};"
+                    f" known are: {','.join(root_adders)}.",
+                    pos=item.pos,
                 )
-            adder(config, roots, expander, params_expander, contents)
+            adder(config, roots, expander, params_expander, contents, item.pos)

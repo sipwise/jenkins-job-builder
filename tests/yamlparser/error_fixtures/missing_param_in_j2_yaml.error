@@ -1,0 +1,12 @@
+missing_param_in_j2_yaml.yaml:10:3: In project 'sample-project'
+    - project:
+      ^
+missing_param_in_j2_yaml.yaml:1:3: In job template 'sample-job'
+    - job-template:
+      ^
+missing_param_in_j2_yaml.yaml:3:15: While formatting jinja2 template '- shell:\n    command: |\n      #!/bin/bas...'
+        builders: !j2-yaml: |
+                  ^
+missing_param_in_j2_yaml.yaml:8:13: 'unknown_one' is undefined
+                echo "hello, {{ unknown_one }}!"
+                ^

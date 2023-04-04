@@ -1,0 +1,29 @@
+- job_template:
+    name: sample-job-1
+    builders: &job_builders
+      - shell: |
+          #!/usr/bin/env bash -xe
+          echo this is sample bash script
+          and this is it's third line
+      - sample_macro: &macro_params
+          param_1: value_1
+          param_2: value_2
+
+- job_template:
+    name: sample-job-2
+    builders: *job_builders
+
+- job_template:
+    name: sample-job-3
+    builders:
+      - sample_macro:
+          <<: *macro_params
+          param_3: value_3
+
+- project:
+    name: sample-project
+    param_1: sample_value
+    jobs:
+      - sample-job-1
+      - sample-job-2
+      - sample-job-3

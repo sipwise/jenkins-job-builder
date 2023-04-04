@@ -1,0 +1,9 @@
+- job-template:
+    name: sample-job
+
+- project:
+    name: sample-project
+    jobs:
+      - sample-job:
+          - abc
+          - def

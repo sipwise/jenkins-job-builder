@@ -1,0 +1,3 @@
+unknown_topmost_element_type.yaml:4:3: Unknown topmost element type : 'unknown_element_type'; known are: defaults,job,job-template,job-group,view,view-template,view-group,project,parameter,property,builder,wrapper,trigger,publisher,scm,pipeline-scm,reporter.
+    - unknown_element_type:
+      ^

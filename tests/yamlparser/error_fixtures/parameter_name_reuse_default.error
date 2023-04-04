@@ -1,1 +1,15 @@
-While expanding 'timer' for template 'sample-job':  Recursive parameters usage: timer <- timer
+parameter_name_reuse_default.yaml:10:3: In project 'sample-project'
+    - project:
+      ^
+parameter_name_reuse_default.yaml:3:3: In job template 'sample-job'
+    - job-template:
+      ^
+parameter_name_reuse_default.yaml:5:12: Used by timer
+        timer: '{timer}'
+               ^
+parameter_name_reuse_default.yaml:5:5: While expanding 'timer'
+        timer: '{timer}'
+        ^
+parameter_name_reuse_default.yaml:5:12: Recursive parameters usage: timer
+        timer: '{timer}'
+               ^

@@ -1,0 +1,3 @@
+missing_macro_element.yaml:3:5: Missing required element: 'builders'
+        name: sample-builder
+        ^

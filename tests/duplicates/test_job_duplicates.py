@@ -33,10 +33,13 @@ def scenario(request):
     return request.param
 
 
-def test_yaml_snippet(scenario, check_job):
-    if scenario.in_path.name.startswith("exception_"):
+def test_yaml_snippet(scenario, expected_error, check_job):
+    if scenario.error_path.exists():
         with pytest.raises(JenkinsJobsException) as excinfo:
             check_job()
-        assert str(excinfo.value).startswith("Duplicate ")
+        error = "\n".join(excinfo.value.lines)
+        print()
+        print(error)
+        assert error.replace(str(fixtures_dir) + "/", "") == expected_error
     else:
         check_job()

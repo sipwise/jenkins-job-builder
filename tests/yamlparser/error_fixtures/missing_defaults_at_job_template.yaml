@@ -1,0 +1,8 @@
+- job-template:
+    name: sample-job
+    defaults: missing-defaults
+
+- project:
+    name: sample-project
+    jobs:
+      - sample-job

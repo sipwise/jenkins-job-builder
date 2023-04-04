@@ -1,0 +1,18 @@
+exception_projects003.yaml:1:3: In project 'duplicate-templates'
+    - project:
+      ^
+exception_projects003.yaml:4:11: Defined here
+            - '{name}-001'
+              ^
+exception_projects003.yaml:7:3: Duplicate job: 'duplicate-templates-001'
+    - job-template:
+      ^
+exception_projects003.yaml:1:3: In project 'duplicate-templates'
+    - project:
+      ^
+exception_projects003.yaml:5:11: Defined here
+            - '{name}-001'
+              ^
+exception_projects003.yaml:7:3: Previous job definition
+    - job-template:
+      ^

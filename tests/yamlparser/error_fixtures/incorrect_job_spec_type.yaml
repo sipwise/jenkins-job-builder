@@ -1,0 +1,7 @@
+- job-template:
+    name: sample-job
+
+- project:
+    name: sample-project
+    jobs:
+      - 123

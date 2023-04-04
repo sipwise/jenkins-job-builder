@@ -97,7 +97,7 @@ class CustomFormatter(Formatter):
                 continue
             arg_used, rest = _string.formatter_field_name_split(field_name)
             if arg_used == "" or type(arg_used) is int:
-                raise RuntimeError(
+                raise JenkinsJobsException(
                     f"Positional format arguments are not supported: {format_string!r}"
                 )
             yield arg_used
@@ -121,11 +121,14 @@ class CustomFormatter(Formatter):
             raise JenkinsJobsException(f"Missing parameter: {key!r}")
 
 
-def enum_str_format_required_params(format):
+def enum_str_format_required_params(format, pos):
     formatter = CustomFormatter()
-    yield from formatter.enum_required_params(format)
+    try:
+        yield from formatter.enum_required_params(str(format))
+    except JenkinsJobsException as x:
+        raise x.with_pos(pos)
 
 
 def enum_str_format_param_defaults(format):
     formatter = CustomFormatter()
-    yield from formatter.enum_param_defaults(format)
+    yield from formatter.enum_param_defaults(str(format))

@@ -14,8 +14,9 @@ from functools import partial
 
 from jinja2 import StrictUndefined
 
-from .errors import JenkinsJobsException
+from .errors import Context, JenkinsJobsException
 from .formatter import CustomFormatter, enum_str_format_required_params
+from .loc_loader import LocDict, LocString, LocList
 from .yaml_objects import (
     J2String,
     J2Yaml,
@@ -27,21 +28,30 @@ from .yaml_objects import (
 )
 
 
-def expand_dict(expander, obj, params):
-    result = {}
+def expand_dict(expander, obj, params, key_pos, value_pos):
+    result = LocDict(pos=obj.pos)
     for key, value in obj.items():
-        expanded_key = expander.expand(key, params)
-        expanded_value = expander.expand(value, params)
-        result[expanded_key] = expanded_value
+        expanded_key = expander.expand(key, params, None)
+        expanded_value = expander.expand(
+            value, params, obj.key_pos.get(key), obj.value_pos.get(key)
+        )
+        result.set_item(
+            expanded_key, expanded_value, obj.key_pos.get(key), obj.value_pos.get(key)
+        )
     return result
 
 
-def expand_list(expander, obj, params):
-    return [expander.expand(item, params) for item in obj]
+def expand_list(expander, obj, params, key_pos, value_pos):
+    items = [
+        expander.expand(item, params, None, obj.value_pos[idx])
+        for idx, item in enumerate(obj)
+    ]
+    value_pos = [obj.value_pos[idx] for idx, _ in enumerate(obj)]
+    return LocList(items, obj.pos, value_pos)
 
 
-def expand_tuple(expander, obj, params):
-    return tuple(expander.expand(item, params) for item in obj)
+def expand_tuple(expander, obj, params, key_pos, value_pos):
+    return tuple(expander.expand(item, params, None) for item in obj)
 
 
 class StrExpander:
@@ -49,19 +59,31 @@ class StrExpander:
         allow_empty = config.yamlparser["allow_empty_variables"]
         self._formatter = CustomFormatter(allow_empty)
 
-    def __call__(self, obj, params):
-        return self._formatter.format(obj, **params)
+    def __call__(self, obj, params, key_pos, value_pos):
+        try:
+            return self._formatter.format(str(obj), **params)
+        except JenkinsJobsException as x:
+            lines = str(obj).splitlines()
+            start_ofs = value_pos.body.index(lines[0])
+            pre_pad = value_pos.body[:start_ofs]
+            # Shift position to reflect template position inside yaml file:
+            if "\n" in pre_pad:
+                pos = value_pos.with_offset(line_ofs=1)
+            else:
+                pos = value_pos.with_offset(column_ofs=start_ofs)
+            pos = pos.with_contents_start()
+            raise x.with_pos(pos)
 
 
-def call_expand(expander, obj, params):
+def call_expand(expander, obj, params, key_pos, value_pos):
     return obj.expand(expander, params)
 
 
-def call_subst(expander, obj, params):
+def call_subst(expander, obj, params, key_pos, value_pos):
     return obj.subst(expander, params)
 
 
-def dont_expand(obj, params):
+def dont_expand(obj, params, key_pos, value_pos):
     return obj
 
 
@@ -90,9 +112,12 @@ class Expander:
         }
         self.expanders = {
             dict: partial(expand_dict, self),
+            LocDict: partial(expand_dict, self),
             list: partial(expand_list, self),
+            LocList: partial(expand_list, self),
             tuple: partial(expand_tuple, self),
             str: dont_expand,
+            LocString: dont_expand,
             bool: dont_expand,
             int: dont_expand,
             float: dont_expand,
@@ -100,13 +125,15 @@ class Expander:
             **_yaml_object_expanders,
         }
 
-    def expand(self, obj, params):
+    def expand(self, obj, params, key_pos=None, value_pos=None):
         t = type(obj)
         try:
             expander = self.expanders[t]
         except KeyError:
-            raise RuntimeError(f"Do not know how to expand type: {t!r}")
-        return expander(obj, params)
+            raise JenkinsJobsException(
+                f"Do not know how to expand type: {t!r}", pos=value_pos
+            )
+        return expander(obj, params, key_pos, value_pos)
 
 
 # Expands string formats also. Used in jobs templates and macros with parameters.
@@ -119,27 +146,33 @@ class ParamsExpander(Expander):
         self.expanders.update(
             {
                 str: StrExpander(config),
+                LocString: StrExpander(config),
                 **_yaml_object_expanders,
             }
         )
 
 
-def call_required_params(obj):
+def call_required_params(obj, pos):
     yield from obj.required_params
 
 
-def enum_dict_params(obj):
+def enum_dict_params(obj, pos):
     for key, value in obj.items():
-        yield from enum_required_params(key)
-        yield from enum_required_params(value)
+        yield from enum_required_params(key, obj.key_pos.get(key))
+        yield from enum_required_params(value, obj.value_pos.get(key))
 
 
-def enum_seq_params(obj):
-    for value in obj:
-        yield from enum_required_params(value)
+def enum_seq_params(obj, pos):
+    for idx, value in enumerate(obj):
+        yield from enum_required_params(value, pos=None)
 
 
-def no_parameters(obj):
+def enum_loc_list_params(obj, pos):
+    for idx, value in enumerate(obj):
+        yield from enum_required_params(value, obj.value_pos[idx])
+
+
+def no_parameters(obj, pos):
     return []
 
 
@@ -147,8 +180,11 @@ yaml_classes_enumers = {cls: call_required_params for cls in yaml_classes_list}
 
 param_enumers = {
     str: enum_str_format_required_params,
+    LocString: enum_str_format_required_params,
     dict: enum_dict_params,
+    LocDict: enum_dict_params,
     list: enum_seq_params,
+    LocList: enum_loc_list_params,
     tuple: enum_seq_params,
     bool: no_parameters,
     int: no_parameters,
@@ -161,53 +197,68 @@ param_enumers = {
 disable_expand_for = {"template-name"}
 
 
-def enum_required_params(obj):
+def enum_required_params(obj, pos):
     t = type(obj)
     try:
         enumer = param_enumers[t]
     except KeyError:
-        raise RuntimeError(
-            f"Do not know how to enumerate required parameters for type: {t!r}"
+        raise JenkinsJobsException(
+            f"Do not know how to enumerate required parameters for type: {t!r}",
+            pos=pos,
         )
-    return enumer(obj)
+    return enumer(obj, pos)
 
 
-def expand_parameters(expander, param_dict, template_name):
-    expanded_params = {}
-    deps = {}  # Using dict as ordered set.
+def expand_parameters(expander, param_dict):
+    expanded_params = LocDict()
+    deps = {}  # Variable name -> variable pos.
+
+    def deps_context():
+        return [Context(f"Used by {n}", vp) for n, (kp, vp) in deps.items()]
 
     def expand(name):
         try:
-            return expanded_params[name]
+            value = expanded_params[name]
+            key_pos = expanded_params.key_pos.get(name)
+            value_pos = expanded_params.value_pos.get(name)
+            return (value, key_pos, value_pos)
         except KeyError:
             pass
         try:
             format = param_dict[name]
         except KeyError:
-            return StrictUndefined(name=name)
+            return (StrictUndefined(name=name), None, None)
+        key_pos = param_dict.key_pos.get(name)
+        value_pos = param_dict.value_pos.get(name)
         if name in deps:
-            raise RuntimeError(
-                f"While expanding {name!r} for template {template_name!r}:"
-                f"  Recursive parameters usage: {name} <- {' <- '.join(deps)}"
+            expand_ctx = Context(f"While expanding {name!r}", key_pos)
+            raise JenkinsJobsException(
+                f"Recursive parameters usage: {' <- '.join(deps)}",
+                pos=value_pos,
+                ctx=[*deps_context(), expand_ctx],
             )
         if name in disable_expand_for:
             value = format
         else:
-            required_params = list(enum_required_params(format))
-            deps[name] = None
+            required_params = list(enum_required_params(format, value_pos))
+            deps[name] = (key_pos, value_pos)
             try:
-                params = {n: expand(n) for n in required_params}
+                params = LocDict()
+                for n in required_params:
+                    v, kp, vp = expand(n)
+                    params.set_item(n, v, kp, vp)
             finally:
                 deps.popitem()
             try:
-                value = expander.expand(format, params)
+                value = expander.expand(format, params, key_pos, value_pos)
             except JenkinsJobsException as x:
-                used_by_deps = ", used by".join(f"{d!r}" for d in deps)
-                raise RuntimeError(
-                    f"While expanding {name!r}, used by {used_by_deps}, used by template {template_name!r}: {x}"
+                raise x.with_context(
+                    f"While expanding parameter {name!r}",
+                    pos=key_pos,
+                    ctx=deps_context(),
                 )
-        expanded_params[name] = value
-        return value
+        expanded_params.set_item(name, value, key_pos, value_pos)
+        return (value, key_pos, value_pos)
 
     for name in param_dict:
         expand(name)

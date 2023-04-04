@@ -1,0 +1,7 @@
+xml_generator_builder_error_in_job.yaml:3:3: In job 'sample-job'
+    - job:
+      ^
+xml_generator_builder_error_in_job.yaml:6:9: In builder 'shell'
+          - shell:
+            ^
+Missing command from an instance of 'builder.shell'

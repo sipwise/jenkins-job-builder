@@ -1,0 +1,4 @@
+- job:
+    name: sample-job
+    builders:
+      - shell: !j2: echo {{ missing_param }}
