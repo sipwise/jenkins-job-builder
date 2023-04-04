@@ -30,6 +30,9 @@
       jobs:
         - tox-py38:
             nodeset: ubuntu-focal
+        - tox-py39:
+            nodeset: ubuntu-focal
+        - tox-py310
         - jjb-tox-linters
         - jjb-tox-cross-python-jenkins
         - jjb-tox-docs-linkcheck
@@ -38,3 +41,6 @@
       jobs:
         - tox-py38:
             nodeset: ubuntu-focal
+        - tox-py39:
+            nodeset: ubuntu-focal
+        - tox-py310
