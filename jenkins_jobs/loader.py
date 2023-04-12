@@ -119,6 +119,8 @@ def load_files(config, roots, path_list):
             data = loader.load_fp(path)
         else:
             data = loader.load_path(path)
+        if data is None:
+            continue
         if not isinstance(data, list):
             raise JenkinsJobsException(
                 f"The topmost collection must be a list, but is: {data}",
