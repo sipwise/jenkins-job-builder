@@ -262,7 +262,7 @@ class BaseYamlObject(metaclass=abc.ABCMeta):
         return cls(loader.jjb_config, loader, loader.pos_from_node(node), value)
 
     def __init__(self, jjb_config, loader, pos):
-        self._search_path = jjb_config.yamlparser["include_path"]
+        self._search_path = jjb_config.yamlparser["include_path"].copy()
         if loader.source_path:
             # Loaded from a file, find includes beside it too.
             self._search_path.append(os.path.dirname(loader.source_path))
