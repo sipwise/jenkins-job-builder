@@ -282,6 +282,15 @@ class BaseYamlObject(metaclass=abc.ABCMeta):
 
     def _find_file(self, rel_path, pos):
         search_path = self._search_path
+        current_path = Path(pos.path)
+        candidate = current_path.parent.joinpath(rel_path)
+        if candidate.is_file():
+            logger.debug(
+                "Including file %r from path %r",
+                str(rel_path),
+                str(current_path.parent),
+            )
+            return candidate
         if "." not in search_path:
             search_path.append(".")
         dir_list = [Path(d).expanduser() for d in self._search_path]
