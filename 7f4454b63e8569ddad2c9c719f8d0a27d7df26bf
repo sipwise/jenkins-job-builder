@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "447ab237_964ecff0",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2720,
+      "author": {
+        "id": 34567
+      },
+      "writtenOn": "2023-06-12T16:54:39Z",
+      "side": 1,
+      "message": "Please, add it to documentation (docstring above) too.",
+      "revId": "7f4454b63e8569ddad2c9c719f8d0a27d7df26bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
