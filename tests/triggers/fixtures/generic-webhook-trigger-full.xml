@@ -37,6 +37,7 @@
       <printContributedVariables>true</printContributedVariables>
       <causeString>Generic Cause</causeString>
       <token>blah</token>
+      <tokenCredentialId>token_credential_id</tokenCredentialId>
       <silentResponse>true</silentResponse>
     </org.jenkinsci.plugins.gwt.GenericTrigger>
   </triggers>

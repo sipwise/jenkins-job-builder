@@ -2717,6 +2717,7 @@ def generic_webhook_trigger(registry, xml_parent, data):
         ("print-contrib-var", "printContributedVariables", False),
         ("cause", "causeString", ""),
         ("token", "token", ""),
+        ("token-credential-id", "tokenCredentialId", ""),
         ("silent-response", "silentResponse", False),
     ]
     # This should cover all the top level

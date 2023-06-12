@@ -23,4 +23,5 @@ triggers:
         print-contrib-var: true
         cause: Generic Cause
         token: blah
+        token-credential-id: token_credential_id
         silent-response: true

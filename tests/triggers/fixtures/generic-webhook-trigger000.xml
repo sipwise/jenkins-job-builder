@@ -18,6 +18,7 @@
       <printContributedVariables>false</printContributedVariables>
       <causeString/>
       <token/>
+      <tokenCredentialId/>
       <silentResponse>false</silentResponse>
     </org.jenkinsci.plugins.gwt.GenericTrigger>
   </triggers>
