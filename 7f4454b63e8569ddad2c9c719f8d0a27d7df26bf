@@ -16,6 +16,24 @@
       "message": "Please, add it to documentation (docstring above) too.",
       "revId": "7f4454b63e8569ddad2c9c719f8d0a27d7df26bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72148ad1_079ad1ce",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2720,
+      "author": {
+        "id": 34567
+      },
+      "writtenOn": "2023-06-13T10:20:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "447ab237_964ecff0",
+      "revId": "7f4454b63e8569ddad2c9c719f8d0a27d7df26bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
