@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de08ab67_fa1f0786",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34567
+      },
+      "writtenOn": "2023-06-13T10:16:09Z",
+      "side": 1,
+      "message": "You have created separate patchset. But you need to merge it to original one.",
+      "revId": "1a41c04eb289bfd35440db24205bfc9ce7357a6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
