@@ -34,6 +34,24 @@
       "parentUuid": "447ab237_964ecff0",
       "revId": "7f4454b63e8569ddad2c9c719f8d0a27d7df26bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "961978ef_21793eb5",
+        "filename": "jenkins_jobs/modules/triggers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2720,
+      "author": {
+        "id": 36094
+      },
+      "writtenOn": "2023-06-13T10:21:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "447ab237_964ecff0",
+      "revId": "7f4454b63e8569ddad2c9c719f8d0a27d7df26bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
