@@ -2608,6 +2608,7 @@ def generic_webhook_trigger(registry, xml_parent, data):
 
 
     :arg str token: A token to use to trigger the job. (default '')
+    :arg str token-credential-id: A token credential id to use to trigger the job. (default '')
     :arg bool print-post-content: Print post content in job log.
     :arg bool print-contrib-var: Print contributed variables in job log.
     :arg bool silent-response: Avoid responding with information about
