@@ -1,0 +1,17 @@
+    - job-template:
+        name: '{environment}-{fruit}-orchard'
+        builders:
+          - shell: 'echo The {environment} orchard has {fruit} trees'
+
+    - project:
+        name: 'Fruit orchard'
+        environment:
+          - sandbox:
+              fruit: 'orange'
+          - sandbox:
+              fruit: 'cherry'
+          - qa
+          - prod
+        fruit: apple
+        jobs:
+          - '{environment}-{fruit}-orchard'

@@ -8,7 +8,6 @@
       - shell: |
           echo {param_1} {param_2}
 
-
 - project:
     name: sample-project
     param_1:

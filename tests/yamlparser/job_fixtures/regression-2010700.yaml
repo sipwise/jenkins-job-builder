@@ -1,0 +1,18 @@
+- job-template:
+    name: 'XXX-{module}-DP-DB-FlywayMigrations-{branch}'
+    builders:
+      - shell: 'echo module={module} branch={branch}'
+
+- project:
+    name: 'XXX-Flyway'
+    module:
+        - 'helper-repo':
+            key: 'XXX'
+            repo: 'ssh://git@...'
+            branch: master
+        - 'helper-repo':
+            key: 'XXX'
+            repo: 'ssh://git@...'
+            branch: UAT
+    jobs:
+        - 'XXX-{module}-DP-DB-FlywayMigrations-{branch}'

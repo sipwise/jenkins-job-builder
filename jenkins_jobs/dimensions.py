@@ -11,10 +11,14 @@
 # under the License.
 
 import itertools
+from collections import namedtuple
 
 from .errors import Context, JenkinsJobsException
 from .loc_loader import LocList, LocDict
 from jenkins_jobs.expander import Expander
+
+
+Dimension = namedtuple("Dimension", "axis params")
 
 
 def _decode_axis_value(axis, value, key_pos, value_pos):
@@ -59,10 +63,20 @@ def enum_dimensions_params(axes, params, defaults):
             except KeyError:
                 continue  # May be, value would be received from an another axis values.
         expanded_value = expander.expand(value, params)
-        value = list(_decode_axis_value(axis, expanded_value, key_pos, value_pos))
+        value = [
+            Dimension(axis, params)
+            for params in _decode_axis_value(axis, expanded_value, key_pos, value_pos)
+        ]
         dim_values.append(value)
-    for values in itertools.product(*dim_values):
-        yield LocDict.merge(*values)
+    for dimensions in itertools.product(*dim_values):
+        overrides = {}  # Axis -> overridden param.
+        for dim in dimensions:
+            for name, value in dim.params.items():
+                if name != dim.axis:
+                    overrides[name] = value
+        param_dicts = [d.params for d in dimensions]
+        # Parameter overrides should take precedence over axis values.
+        yield LocDict.merge(*param_dicts, overrides)
 
 
 def _match_exclude(params, exclude, pos):
