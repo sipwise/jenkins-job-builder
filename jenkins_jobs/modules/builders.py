@@ -440,7 +440,7 @@ def trigger_builds(registry, xml_parent, data):
     :arg bool property-file-fail-on-missing:
         Don't trigger if any files are missing (default true)
     :arg bool current-parameters: Whether to include the parameters passed
-        to the current build to the triggered job.
+        to the current build to the triggered job (default false)
     :arg str node-label-name: Define a name for the NodeLabel parameter to be
         set. Used in conjunction with node-label. Requires NodeLabel Parameter
         Plugin (optional)
