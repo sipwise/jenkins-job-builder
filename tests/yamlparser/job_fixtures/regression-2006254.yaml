@@ -25,7 +25,7 @@
     - timed: "H 14 * * *"
 
     builders:
-    - shell: !include-raw: regression-2006254.inc
+    - shell: !include-raw-escape: regression-2006254.inc
 
     parameters:
     - bool:

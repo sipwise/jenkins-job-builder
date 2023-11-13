@@ -102,9 +102,13 @@ class NonTemplateRootMixin:
     def top_level_generate_items(self):
         try:
             defaults = self._pick_defaults(self.defaults_name, merge_global=False)
+            item_params = LocDict.merge(
+                defaults.params,
+                self.params,
+            )
             description = self._format_description(params={})
             raw_data = self._as_dict()
-            contents = self._expander.expand(raw_data, self.params)
+            contents = self._expander.expand(raw_data, item_params)
             data = LocDict.merge(
                 defaults.contents,
                 contents,

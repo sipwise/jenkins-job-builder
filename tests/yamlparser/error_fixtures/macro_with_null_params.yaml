@@ -2,13 +2,13 @@
     name: sample-macro
     builders:
       # Add parameter to check if macro behaves the same way as if no params were provided.
-      # That is, it should not be expanded.
+      # That is, it should try to expand the parameter.
       - shell: 'echo {hello}'
 
 - job-template:
     name: sample-job
     builders:
-      # Place colon but define no parameters.
+      # Place colon but define no parameters (parameters are null instead of dict).
       - sample-macro:
 
 - project:

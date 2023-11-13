@@ -30,13 +30,13 @@ exit 0
 
 VAR1=&quot;hello&quot;
 VAR2=&quot;world&quot;
-VAR3=&quot;${{VAR1}} ${{VAR2}}&quot;
+VAR3=&quot;${VAR1} ${VAR2}&quot;
 
-[[ -n &quot;${{VAR3}}&quot; ]] &amp;&amp; {{
+[[ -n &quot;${VAR3}&quot; ]] &amp;&amp; {
     # this next section is executed as one
-    echo &quot;${{VAR3}}&quot;
+    echo &quot;${VAR3}&quot;
     exit 0
-}}
+}
 </command>
     </hudson.tasks.Shell>
   </builders>

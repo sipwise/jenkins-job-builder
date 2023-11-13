@@ -33,7 +33,7 @@ class Project(GroupBase):
     params: dict
 
     @classmethod
-    def add(cls, config, roots, expander, params_expander, data, pos):
+    def add(cls, config, roots, data, pos):
         d = data.copy()
         name = d.pop_required_loc_string("name")
         defaults = d.pop_loc_string("defaults", None)

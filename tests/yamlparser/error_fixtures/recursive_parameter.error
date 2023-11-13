@@ -5,13 +5,13 @@ recursive_parameter.yaml:7:3: In job template 'sample-job-{param_1}'
     - job-template:
       ^
 recursive_parameter.yaml:5:9: Used by param_1
-          - '{param_2}-at-project'
+          - '{param_2}-at-globals'
             ^
 recursive_parameter.yaml:9:14: Used by param_2
         param_2: '{param_3}-at-template'
                  ^
 recursive_parameter.yaml:13:14: Used by param_3
-        param_3: '{param_4}-at-globals'
+        param_3: '{param_4}-at-project'
                  ^
 recursive_parameter.yaml:16:20: Used by param_4
               param_4: '{param_1}-at-job-spec'
@@ -20,5 +20,5 @@ recursive_parameter.yaml:3:5: While expanding 'param_1'
         param_1:
         ^
 recursive_parameter.yaml:5:9: Recursive parameters usage: param_1 <- param_2 <- param_3 <- param_4
-          - '{param_2}-at-project'
+          - '{param_2}-at-globals'
             ^

@@ -11,7 +11,7 @@
   <scm class="hudson.scm.NullSCM"/>
   <builders>
     <hudson.tasks.Shell>
-      <command>echo Build arch {arch}.</command>
+      <command>echo Build arch i386.</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers/>
