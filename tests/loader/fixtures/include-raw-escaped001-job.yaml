@@ -1,4 +1,4 @@
-# Using include-raw-excape inside job cause double braces in included file, like: {{VAR1}}.
+# Using include-raw-escape inside job works the same way as inside job template.
 - job:
     name: test-job-include-raw
     builders:

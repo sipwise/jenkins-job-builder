@@ -273,12 +273,8 @@ class BaseYamlObject(metaclass=abc.ABCMeta):
 
     @abc.abstractmethod
     def expand(self, expander, params):
-        """Expand object but do not substitute template parameters"""
-        pass
-
-    def subst(self, expander, params):
         """Expand object and substitute template parameters"""
-        return self.expand(expander, params)
+        pass
 
     def _find_file(self, rel_path, pos):
         search_path = self._search_path
@@ -299,10 +295,6 @@ class BaseYamlObject(metaclass=abc.ABCMeta):
     def _expand_path_list(self, path_list, *args):
         for idx, path in enumerate(path_list):
             yield self._expand_path(path, path_list.value_pos[idx], *args)
-
-    def _subst_path_list(self, path_list, *args):
-        for idx, path in enumerate(path_list):
-            yield self._subst_path(path, path_list.value_pos[idx], *args)
 
 
 class J2BaseYamlObject(BaseYamlObject):
@@ -450,19 +442,11 @@ class IncludeRawBase(IncludeBaseObject):
     def expand(self, expander, params):
         return "\n".join(self._expand_path_list(self._path_list, params))
 
-    def subst(self, expander, params):
-        return "\n".join(self._subst_path_list(self._path_list, params))
-
 
 class IncludeRaw(IncludeRawBase):
     yaml_tag = "!include-raw:"
 
     def _expand_path(self, rel_path_template, pos, params):
-        rel_path = self._formatter.format(rel_path_template, **params)
-        full_path = self._find_file(rel_path, pos)
-        return full_path.read_text()
-
-    def _subst_path(self, rel_path_template, pos, params):
         rel_path = self._formatter.format(rel_path_template, **params)
         full_path = self._find_file(rel_path, pos)
         template = full_path.read_text()
@@ -476,14 +460,6 @@ class IncludeRawEscape(IncludeRawBase):
     yaml_tag = "!include-raw-escape:"
 
     def _expand_path(self, rel_path_template, pos, params):
-        rel_path = self._formatter.format(rel_path_template, **params)
-        full_path = self._find_file(rel_path, pos)
-        text = full_path.read_text()
-        # Backward compatibility:
-        # if used inside job or macro without parameters, curly braces are duplicated.
-        return text.replace("{", "{{").replace("}", "}}")
-
-    def _subst_path(self, rel_path_template, pos, params):
         rel_path = self._formatter.format(rel_path_template, **params)
         full_path = self._find_file(rel_path, pos)
         return full_path.read_text()

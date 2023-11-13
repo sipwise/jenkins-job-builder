@@ -15,7 +15,7 @@ from collections import namedtuple
 
 from .errors import Context, JenkinsJobsException
 from .loc_loader import LocList, LocDict
-from jenkins_jobs.expander import Expander
+from jenkins_jobs.expander import YamlObjectsExpander
 
 
 Dimension = namedtuple("Dimension", "axis params")
@@ -48,7 +48,7 @@ def _decode_axis_value(axis, value, key_pos, value_pos):
 
 
 def enum_dimensions_params(axes, params, defaults):
-    expander = Expander()
+    expander = YamlObjectsExpander()
     if not axes:
         # No axes - instantiate one job/view.
         yield {}
@@ -60,9 +60,10 @@ def enum_dimensions_params(axes, params, defaults):
         except KeyError:
             try:
                 value = defaults[axis]
+                key_pos = value_pos = None
             except KeyError:
                 continue  # May be, value would be received from an another axis values.
-        expanded_value = expander.expand(value, params)
+        expanded_value = expander.expand(value, params, key_pos, value_pos)
         value = [
             Dimension(axis, params)
             for params in _decode_axis_value(axis, expanded_value, key_pos, value_pos)

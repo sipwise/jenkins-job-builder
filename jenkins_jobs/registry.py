@@ -25,7 +25,7 @@ import types
 from six import PY2
 
 from jenkins_jobs.errors import JenkinsJobsException
-from jenkins_jobs.expander import Expander, ParamsExpander
+from jenkins_jobs.expander import Expander, StringsOnlyExpander
 from jenkins_jobs.yaml_objects import BaseYamlObject
 
 __all__ = ["ModuleRegistry"]
@@ -47,7 +47,7 @@ class ModuleRegistry(object):
         self.masked_warned = {}
         self._macros = {}
         self._expander = Expander(jjb_config)
-        self._params_expander = ParamsExpander(jjb_config)
+        self._str_expander = StringsOnlyExpander(jjb_config)
 
         if plugins_list is None:
             self.plugins_dict = {}
@@ -272,20 +272,16 @@ class ModuleRegistry(object):
                 "component type that is masking an inbuilt "
                 "definition" % (name, component_type)
             )
-        # Expand macro strings only if at least one macro parameter is provided.
-        if component_data:
-            expander = self._params_expander
-        else:
-            expander = self._expander
-            component_data = {}  # It may be None.
+        if component_data is None:
+            component_data = {}
         expander_params = {**component_data, **(job_data or {})}
         elements = macro.elements
         if isinstance(elements, BaseYamlObject):
             # Expand !j2-yaml element right below macro body.
-            elements = elements.expand(expander, expander_params)
+            elements = elements.expand(self._str_expander, expander_params)
         for b in elements:
             try:
-                element = expander.expand(b, expander_params)
+                element = self._expander.expand(b, expander_params)
             except JenkinsJobsException as x:
                 raise x.with_context(
                     f"While expanding macro {name!r}",
