@@ -13,7 +13,7 @@
         <hudson.model.StringParameterDefinition>
           <name>PARAM_1</name>
           <description/>
-          <defaultValue>{default|my_default}</defaultValue>
+          <defaultValue>my_default</defaultValue>
           <trim>false</trim>
         </hudson.model.StringParameterDefinition>
         <hudson.model.StringParameterDefinition>

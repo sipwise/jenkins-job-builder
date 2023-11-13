@@ -83,40 +83,9 @@ filenames to be opened as one or more data blob, which should be read into
 the calling yaml construct without any further parsing. Any data in a file
 included through this tag, will be treated as string data.
 
-Examples:
-
-    .. literalinclude:: /../../tests/loader/fixtures/include-raw001-job.yaml
-
-    contents of include-raw001-hello-world.sh:
-
-        .. literalinclude::
-            /../../tests/loader/fixtures/include-raw001-hello-world.sh
-
-    contents of include-raw001-vars.sh:
-
-        .. literalinclude::
-            /../../tests/loader/fixtures/include-raw001-vars.sh
-
-    using a list of files:
-
-    .. literalinclude::
-        /../../tests/loader/fixtures/include-raw-multi001.yaml
-
-The tag ``!include-raw-escape:`` treats the given string or list of strings as
-filenames to be opened as one or more data blobs, which should be escaped
-before being read in as string data. This allows job-templates to use this tag
-to include scripts from files without needing to escape braces in the original
-file.
-
-.. warning::
-
-    When used as a macro ``!include-raw-escape:`` should only be used if
-    parameters are passed into the escaped file and you would like to escape
-    those parameters. If the file does not have any jjb parameters passed into
-    it then ``!include-raw:`` should be used instead otherwise you will run
-    into an interesting issue where ``include-raw-escape:`` actually adds
-    additional curly braces around existing curly braces. For example
-    ${PROJECT} becomes ${{PROJECT}} which may break bash scripts.
+It will expand variables inside the file. If your file contains curly braces,
+you should double them. Or, you can use tag ``!include-raw-escape``, which
+does not substitute variables.
 
 Examples:
 
@@ -260,12 +229,8 @@ class BaseYamlObject(metaclass=abc.ABCMeta):
 
     @abc.abstractmethod
     def expand(self, expander, params):
-        """Expand object but do not substitute template parameters"""
-        pass
-
-    def subst(self, expander, params):
         """Expand object and substitute template parameters"""
-        return self.expand(expander, params)
+        pass
 
     def _find_file(self, rel_path, pos):
         search_path = self._search_path
@@ -286,10 +251,6 @@ class BaseYamlObject(metaclass=abc.ABCMeta):
     def _expand_path_list(self, path_list, *args):
         for idx, path in enumerate(path_list):
             yield self._expand_path(path, path_list.value_pos[idx], *args)
-
-    def _subst_path_list(self, path_list, *args):
-        for idx, path in enumerate(path_list):
-            yield self._subst_path(path, path_list.value_pos[idx], *args)
 
 
 class J2BaseYamlObject(BaseYamlObject):
@@ -437,19 +398,11 @@ class IncludeRawBase(IncludeBaseObject):
     def expand(self, expander, params):
         return "\n".join(self._expand_path_list(self._path_list, params))
 
-    def subst(self, expander, params):
-        return "\n".join(self._subst_path_list(self._path_list, params))
-
 
 class IncludeRaw(IncludeRawBase):
     yaml_tag = "!include-raw:"
 
     def _expand_path(self, rel_path_template, pos, params):
-        rel_path = self._formatter.format(rel_path_template, **params)
-        full_path = self._find_file(rel_path, pos)
-        return full_path.read_text()
-
-    def _subst_path(self, rel_path_template, pos, params):
         rel_path = self._formatter.format(rel_path_template, **params)
         full_path = self._find_file(rel_path, pos)
         template = full_path.read_text()
@@ -463,14 +416,6 @@ class IncludeRawEscape(IncludeRawBase):
     yaml_tag = "!include-raw-escape:"
 
     def _expand_path(self, rel_path_template, pos, params):
-        rel_path = self._formatter.format(rel_path_template, **params)
-        full_path = self._find_file(rel_path, pos)
-        text = full_path.read_text()
-        # Backward compatibility:
-        # if used inside job or macro without parameters, curly braces are duplicated.
-        return text.replace("{", "{{").replace("}", "}}")
-
-    def _subst_path(self, rel_path_template, pos, params):
         rel_path = self._formatter.format(rel_path_template, **params)
         full_path = self._find_file(rel_path, pos)
         return full_path.read_text()

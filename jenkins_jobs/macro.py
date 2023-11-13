@@ -45,8 +45,6 @@ class Macro:
         elements_name,
         config,
         roots,
-        expander,
-        params_expander,
         data,
         pos,
     ):

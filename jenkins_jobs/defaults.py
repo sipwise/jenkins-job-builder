@@ -174,7 +174,7 @@ class Defaults:
     contents: dict  # Values that go to job contents.
 
     @classmethod
-    def add(cls, config, roots, expander, params_expander, data, pos):
+    def add(cls, config, roots, data, pos):
         d = data.copy()
         name = d.pop_required_loc_string("name")
         contents, params = split_contents_params(

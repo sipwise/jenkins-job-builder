@@ -17,7 +17,7 @@ from functools import partial
 from .errors import JenkinsJobsException
 from .loc_loader import LocLoader
 from .yaml_objects import BaseYamlObject
-from .expander import Expander, ParamsExpander, deprecated_yaml_tags, yaml_classes_list
+from .expander import Expander, deprecated_yaml_tags, yaml_classes_list
 from .roots import root_adders
 
 logger = logging.getLogger(__name__)
@@ -112,7 +112,6 @@ def enum_expanded_paths(path_list):
 
 def load_files(config, roots, path_list):
     expander = Expander(config)
-    params_expander = ParamsExpander(config)
     loader = Loader.empty(config)
     for path in enum_expanded_paths(path_list):
         if is_stdin(path):
@@ -152,4 +151,4 @@ def load_files(config, roots, path_list):
                     f" known are: {','.join(root_adders)}.",
                     pos=item.pos,
                 )
-            adder(config, roots, expander, params_expander, contents, item.pos)
+            adder(config, roots, contents, item.pos)

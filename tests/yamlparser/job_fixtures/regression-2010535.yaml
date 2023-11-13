@@ -1,5 +1,5 @@
 # https://storyboard.openstack.org/#!/story/2010535
-# Bug: JJB doesn't expand macro in case of usage without arguments
+# Fixed: Bug: JJB doesn't expand macro in case of usage without arguments
 # String templates in macro calls without parameters are NOT expanded.
 # Jinja2 templates in macro calls without parameters ARE expanded.
 

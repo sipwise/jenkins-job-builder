@@ -1,4 +1,4 @@
-# Variables in jobs are not expanded.
+# Variables in jobs are not expanded using defaults.
 
 - defaults:
     name: global
