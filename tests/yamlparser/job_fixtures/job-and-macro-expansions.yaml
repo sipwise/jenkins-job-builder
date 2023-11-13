@@ -1,0 +1,46 @@
+# Example for tickets:
+# https://storyboard.openstack.org/#!/story/2010588 Expand macros even if called without arguments
+# https://storyboard.openstack.org/#!/story/2010963 Expand jobs the same way as job templates are expanded
+
+# Demonstrate different style of variable expansion and inclusion tags for
+# macros with and without parameters and for jobs versus job templates.
+
+- builder:
+    name: builder-without-params
+    builders:
+    - shell: |
+        echo Should not be expanded: {param}
+    - shell: !include-raw: job-and-macro-expansions.yaml.inc
+
+- builder:
+    name: builder-with-params
+    builders:
+    - shell: |
+        echo Should not be expanded: {{param}}
+    - shell: !include-raw-escape: job-and-macro-expansions.yaml.inc
+
+- job:
+    name: sample-job
+    builders:
+    - builder-without-params
+    - builder-with-params:
+        param: sample unused param value
+    - shell: |
+        echo Should not be expanded: {param}
+    - shell: !include-raw: job-and-macro-expansions.yaml.inc
+
+- job-template:
+    name: sample-job-template
+    builders:
+    - builder-without-params
+    - builder-with-params:
+        param: sample unused param value
+    - shell: |
+        echo Should not be expanded: {{param}}
+    - shell: !include-raw-escape: job-and-macro-expansions.yaml.inc
+
+- project:
+    name: sample-project
+    param: sample unused param value
+    jobs:
+    - sample-job-template
