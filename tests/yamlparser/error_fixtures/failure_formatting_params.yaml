@@ -11,7 +11,7 @@
       - xenial-{bdate}
     jobs:
       - 'template-requiring-param-{os}':
-          os: 'ubuntu-{flavour}'
+          os: 'ubuntu-{flavor}'
 
 - job-template:
     name: 'template-requiring-param-{os}'

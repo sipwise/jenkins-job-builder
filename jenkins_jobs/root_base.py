@@ -103,12 +103,16 @@ class NonTemplateRootMixin:
     def top_level_generate_items(self):
         try:
             defaults = self._pick_defaults(self.defaults_name, merge_global=False)
+            item_params = LocDict.merge(
+                defaults.params,
+                self.params,
+            )
             contents = LocDict.merge(
                 defaults.contents,
                 self.contents,
                 pos=self.pos,
             )
-            expanded_contents = self._expand_contents(contents, self.params)
+            expanded_contents = self._expand_contents(contents, item_params)
             context = [Context(f"In {self}", self.pos)]
             yield JobViewData(expanded_contents, context)
         except JenkinsJobsException as x:
