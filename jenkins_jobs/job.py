@@ -14,6 +14,7 @@ from dataclasses import dataclass
 
 from .errors import JenkinsJobsException
 from .loc_loader import LocDict
+from .expander import Expander
 from .root_base import RootBase, NonTemplateRootMixin, TemplateRootMixin, Group
 from .defaults import split_contents_params, job_contents_keys
 
@@ -24,7 +25,7 @@ class JobBase(RootBase):
     folder: str
 
     @classmethod
-    def from_dict(cls, config, roots, expander, data, pos):
+    def from_dict(cls, config, roots, data, pos):
         keep_descriptions = config.yamlparser["keep_descriptions"]
         d = data.copy()
         name = d.pop_required_loc_string("name")
@@ -36,7 +37,7 @@ class JobBase(RootBase):
         contents, params = split_contents_params(d, job_contents_keys)
         return cls(
             roots.defaults,
-            expander,
+            Expander(config),
             keep_descriptions,
             id,
             name,
@@ -68,8 +69,8 @@ class JobBase(RootBase):
 
 class Job(JobBase, NonTemplateRootMixin):
     @classmethod
-    def add(cls, config, roots, expander, param_expander, data, pos):
-        job = cls.from_dict(config, roots, expander, data, pos)
+    def add(cls, config, roots, data, pos):
+        job = cls.from_dict(config, roots, data, pos)
         roots.assign(roots.jobs, job.id, job, "job")
 
     def __str__(self):
@@ -78,8 +79,8 @@ class Job(JobBase, NonTemplateRootMixin):
 
 class JobTemplate(JobBase, TemplateRootMixin):
     @classmethod
-    def add(cls, config, roots, expander, params_expander, data, pos):
-        template = cls.from_dict(config, roots, params_expander, data, pos)
+    def add(cls, config, roots, data, pos):
+        template = cls.from_dict(config, roots, data, pos)
         roots.assign(roots.job_templates, template.id, template, "job template")
 
     def __str__(self):
@@ -92,7 +93,7 @@ class JobGroup(Group):
     _job_templates: dict
 
     @classmethod
-    def add(cls, config, roots, expander, params_expander, data, pos):
+    def add(cls, config, roots, data, pos):
         d = data.copy()
         name = d.pop_required_loc_string("name")
         try:

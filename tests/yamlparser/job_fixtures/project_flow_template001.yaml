@@ -4,6 +4,6 @@
       dsl: |
         build("job1")
         parallel (
-          { build("job2a") },
-          { build("job2b") }
+          {{ build("job2a") }},
+          {{ build("job2b") }}
         )

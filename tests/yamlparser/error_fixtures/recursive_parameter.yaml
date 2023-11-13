@@ -2,7 +2,7 @@
     name: global
     param_1:
       - param_1_value_1
-      - '{param_2}-at-project'
+      - '{param_2}-at-globals'
 
 - job-template:
     name: 'sample-job-{param_1}'
@@ -10,7 +10,7 @@
 
 - project:
     name: sample-project
-    param_3: '{param_4}-at-globals'
+    param_3: '{param_4}-at-project'
     jobs:
       - 'sample-job-{param_1}':
           param_4: '{param_1}-at-job-spec'

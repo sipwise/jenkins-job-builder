@@ -14,6 +14,7 @@ from dataclasses import dataclass
 
 from .errors import JenkinsJobsException
 from .loc_loader import LocDict
+from .expander import Expander
 from .root_base import RootBase, NonTemplateRootMixin, TemplateRootMixin, Group
 from .defaults import split_contents_params, view_contents_keys
 
@@ -23,7 +24,7 @@ class ViewBase(RootBase):
     view_type: str
 
     @classmethod
-    def from_dict(cls, config, roots, expander, data, pos):
+    def from_dict(cls, config, roots, data, pos):
         keep_descriptions = config.yamlparser["keep_descriptions"]
         d = data.copy()
         name = d.pop_required_loc_string("name")
@@ -34,7 +35,7 @@ class ViewBase(RootBase):
         contents, params = split_contents_params(d, view_contents_keys)
         return cls(
             roots.defaults,
-            expander,
+            Expander(config),
             keep_descriptions,
             id,
             name,
@@ -58,8 +59,8 @@ class ViewBase(RootBase):
 
 class View(ViewBase, NonTemplateRootMixin):
     @classmethod
-    def add(cls, config, roots, expander, param_expander, data, pos):
-        view = cls.from_dict(config, roots, expander, data, pos)
+    def add(cls, config, roots, data, pos):
+        view = cls.from_dict(config, roots, data, pos)
         roots.assign(roots.views, view.id, view, "view")
 
     def __str__(self):
@@ -68,8 +69,8 @@ class View(ViewBase, NonTemplateRootMixin):
 
 class ViewTemplate(ViewBase, TemplateRootMixin):
     @classmethod
-    def add(cls, config, roots, expander, params_expander, data, pos):
-        template = cls.from_dict(config, roots, params_expander, data, pos)
+    def add(cls, config, roots, data, pos):
+        template = cls.from_dict(config, roots, data, pos)
         roots.assign(roots.view_templates, template.id, template, "view template")
 
     def __str__(self):
@@ -82,7 +83,7 @@ class ViewGroup(Group):
     _view_templates: dict
 
     @classmethod
-    def add(cls, config, roots, expander, params_expander, data, pos):
+    def add(cls, config, roots, data, pos):
         d = data.copy()
         name = d.pop_required_loc_string("name")
         try:

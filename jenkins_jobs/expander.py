@@ -55,9 +55,8 @@ def expand_tuple(expander, obj, params, key_pos, value_pos):
 
 
 class StrExpander:
-    def __init__(self, config):
-        allow_empty = config.yamlparser["allow_empty_variables"]
-        self._formatter = CustomFormatter(allow_empty)
+    def __init__(self, allow_empty_variables):
+        self._formatter = CustomFormatter(allow_empty_variables)
 
     def __call__(self, obj, params, key_pos, value_pos):
         try:
@@ -77,10 +76,6 @@ class StrExpander:
 
 def call_expand(expander, obj, params, key_pos, value_pos):
     return obj.expand(expander, params)
-
-
-def call_subst(expander, obj, params, key_pos, value_pos):
-    return obj.subst(expander, params)
 
 
 def dont_expand(obj, params, key_pos, value_pos):
@@ -104,9 +99,13 @@ deprecated_yaml_tags = [
 ]
 
 
-# Does not expand string formats. Used in jobs and macros without parameters.
+# Expand strings and yaml objects.
 class Expander:
     def __init__(self, config=None):
+        if config:
+            allow_empty_variables = config.yamlparser["allow_empty_variables"]
+        else:
+            allow_empty_variables = False
         _yaml_object_expanders = {
             cls: partial(call_expand, self) for cls in yaml_classes_list
         }
@@ -116,8 +115,8 @@ class Expander:
             list: partial(expand_list, self),
             LocList: partial(expand_list, self),
             tuple: partial(expand_tuple, self),
-            str: dont_expand,
-            LocString: dont_expand,
+            str: StrExpander(allow_empty_variables),
+            LocString: StrExpander(allow_empty_variables),
             bool: dont_expand,
             int: dont_expand,
             float: dont_expand,
@@ -136,18 +135,14 @@ class Expander:
         return expander(obj, params, key_pos, value_pos)
 
 
-# Expands string formats also. Used in jobs templates and macros with parameters.
-class ParamsExpander(Expander):
-    def __init__(self, config):
-        super().__init__(config)
-        _yaml_object_expanders = {
-            cls: partial(call_subst, self) for cls in yaml_classes_list
-        }
+# Expand only yaml objects.
+class YamlObjectsExpander(Expander):
+    def __init__(self):
+        super().__init__()
         self.expanders.update(
             {
-                str: StrExpander(config),
-                LocString: StrExpander(config),
-                **_yaml_object_expanders,
+                str: dont_expand,
+                LocString: dont_expand,
             }
         )
 

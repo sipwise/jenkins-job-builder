@@ -9,8 +9,8 @@
     name: builder-without-params
     builders:
     - shell: |
-        echo Should not be expanded: {param}
-    - shell: !include-raw: job-and-macro-expansions.yaml.no-expand.inc
+        echo Should not be expanded: {{param}}
+    - shell: !include-raw-escape: job-and-macro-expansions.yaml.no-expand.inc
 
 - builder:
     name: builder-with-params
@@ -27,8 +27,8 @@
     display-name: sample-job
     builders:
     - shell: |
-        echo Should not be expanded: {param}
-    - shell: !include-raw: job-and-macro-expansions.yaml.no-expand.inc
+        echo Should not be expanded: {{param}}
+    - shell: !include-raw-escape: job-and-macro-expansions.yaml.no-expand.inc
 
 - job-template:
     name: sample-job-template
