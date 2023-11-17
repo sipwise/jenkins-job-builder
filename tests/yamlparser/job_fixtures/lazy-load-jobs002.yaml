@@ -20,4 +20,4 @@
       !include lazy-load-wrappers-{version}.yaml.inc
     builders:
       - shell:
-          !include-raw-escape lazy-load-scripts/echo_vars_{version}.sh
+          !include-raw-escape: lazy-load-scripts/echo_vars_{version}.sh
