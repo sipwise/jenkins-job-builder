@@ -1,0 +1,10 @@
+# Variables in jobs are not expanded.
+
+- defaults:
+    name: global
+    arch: 'i386'
+
+- job:
+    name: sample-job
+    builders:
+    - shell: "echo Build arch {arch}."
