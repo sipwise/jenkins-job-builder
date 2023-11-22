@@ -80,7 +80,7 @@ class RootBase:
             expanded_contents["description"] = amended_description
         return expanded_contents
 
-    def _pick_defaults(self, name, merge_global=True):
+    def _pick_defaults(self, name):
         try:
             defaults = self._defaults[name]
         except KeyError:
@@ -93,16 +93,13 @@ class RootBase:
             )
         if name == "global":
             return defaults
-        if merge_global:
-            return defaults.merged_with_global(self._pick_defaults("global"))
-        else:
-            return defaults
+        return defaults.merged_with_global(self._pick_defaults("global"))
 
 
 class NonTemplateRootMixin:
     def top_level_generate_items(self):
         try:
-            defaults = self._pick_defaults(self.defaults_name, merge_global=False)
+            defaults = self._pick_defaults(self.defaults_name)
             item_params = LocDict.merge(
                 defaults.params,
                 self.params,

@@ -1,4 +1,5 @@
-# Global defaults are not used, not merged to custom ones if used from a job.
+# Global defaults are merged to custom ones if used from jobs,
+# not just from job templates.
 
 - defaults:
     name: global
