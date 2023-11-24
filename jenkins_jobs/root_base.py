@@ -52,7 +52,7 @@ class RootBase:
     description: str
     defaults_name: str
     params: dict
-    contents: dict
+    _contents: dict
 
     @property
     def id(self):
@@ -65,19 +65,20 @@ class RootBase:
     def title(self):
         return str(self).capitalize()
 
-    def _format_description(self, params):
-        if self.description is None:
-            defaults = self._pick_defaults(self.defaults_name)
-            description = defaults.params.get("description")
-        else:
-            if type(self.description) is LocString:
-                description = str(self.description)
-            else:
-                description = self.description
-        if description is None and self._keep_descriptions:
-            return {}
-        expanded_desc = self._expander.expand(description, params)
-        return {"description": (expanded_desc or "") + MAGIC_MANAGE_STRING}
+    @property
+    def contents(self):
+        contents = self._contents.copy()
+        if self.description is not None:
+            contents["description"] = self.description
+        return contents
+
+    def _expand_contents(self, contents, params):
+        expanded_contents = self._expander.expand(contents, params)
+        description = expanded_contents.get("description")
+        if description is not None or not self._keep_descriptions:
+            amended_description = (description or "") + MAGIC_MANAGE_STRING
+            expanded_contents["description"] = amended_description
+        return expanded_contents
 
     def _pick_defaults(self, name, merge_global=True):
         try:
@@ -102,17 +103,14 @@ class NonTemplateRootMixin:
     def top_level_generate_items(self):
         try:
             defaults = self._pick_defaults(self.defaults_name, merge_global=False)
-            description = self._format_description(params={})
-            raw_data = self._as_dict()
-            contents = self._expander.expand(raw_data, self.params)
-            data = LocDict.merge(
+            contents = LocDict.merge(
                 defaults.contents,
-                contents,
-                description,
+                self.contents,
                 pos=self.pos,
             )
+            expanded_contents = self._expand_contents(contents, self.params)
             context = [Context(f"In {self}", self.pos)]
-            yield JobViewData(data, context)
+            yield JobViewData(expanded_contents, context)
         except JenkinsJobsException as x:
             raise x.with_context(f"In {self}", pos=self.pos)
 
@@ -136,7 +134,8 @@ class TemplateRootMixin:
                 item_params["id"] = self._id
             contents = LocDict.merge(
                 defaults.contents,
-                self._as_dict(),
+                self.contents,
+                pos=self.pos,
             )
             axes = list(enum_str_format_required_params(self.name, self.name.pos))
             axes_defaults = dict(enum_str_format_param_defaults(self.name))
@@ -152,15 +151,9 @@ class TemplateRootMixin:
                     key_pos=expanded_params.key_pos.get("exclude"),
                 ):
                     continue
-                description = self._format_description(expanded_params)
-                expanded_contents = self._expander.expand(contents, expanded_params)
-                data = LocDict.merge(
-                    expanded_contents,
-                    description,
-                    pos=self.pos,
-                )
+                expanded_contents = self._expand_contents(contents, expanded_params)
                 context = [Context(f"In {self}", self.pos)]
-                yield JobViewData(data, context)
+                yield JobViewData(expanded_contents, context)
         except JenkinsJobsException as x:
             raise x.with_context(f"In {self}", pos=self.pos)
 
