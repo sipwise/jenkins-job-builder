@@ -454,7 +454,7 @@ Job Name Example:
 
 Folder Attribute Example:
 
-.. literalinclude:: /../../tests/yamlparser/job_fixtures/folders-attribute.yaml
+.. literalinclude:: /../../tests/yamlparser/job_fixtures/folders-defaults-for-job.yaml
 
 
 .. _ids:

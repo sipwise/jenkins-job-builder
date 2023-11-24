@@ -46,13 +46,14 @@ class ViewBase(RootBase):
             view_type,
         )
 
-    def _as_dict(self):
+    @property
+    def contents(self):
         return LocDict.merge(
             {
                 "name": self.name,
                 "view-type": self.view_type,
             },
-            self.contents,
+            super().contents,
         )
 
 

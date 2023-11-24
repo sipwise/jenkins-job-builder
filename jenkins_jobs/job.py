@@ -13,7 +13,6 @@
 from dataclasses import dataclass
 
 from .errors import JenkinsJobsException
-from .loc_loader import LocDict
 from .root_base import RootBase, NonTemplateRootMixin, TemplateRootMixin, Group
 from .defaults import split_contents_params, job_contents_keys
 
@@ -49,21 +48,26 @@ class JobBase(RootBase):
             folder,
         )
 
-    def _as_dict(self):
-        data = LocDict.merge(
-            {"name": self._full_name},
-            self.contents,
-        )
-        if self.project_type:
-            data["project-type"] = self.project_type
-        return data
-
     @property
-    def _full_name(self):
+    def contents(self):
+        contents = super().contents
+        contents["name"] = self.name
+        if self.project_type:
+            contents["project-type"] = self.project_type
         if self.folder:
-            return f"{self.folder}/{self.name}"
+            contents["folder"] = self.folder
+        return contents
+
+    def _expand_contents(self, contents, params):
+        expanded_contents = super()._expand_contents(contents, params)
+        try:
+            folder = expanded_contents["folder"]
+        except KeyError:
+            pass
         else:
-            return self.name
+            name = expanded_contents["name"]
+            expanded_contents["name"] = f"{folder}/{name}"
+        return expanded_contents
 
 
 class Job(JobBase, NonTemplateRootMixin):

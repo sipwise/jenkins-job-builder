@@ -118,18 +118,24 @@ def expected_error(scenario):
         return None
 
 
-def check_folder(scenario, jjb_config, input):
-    if "name" not in input:
-        return
-    if "folder" in input:
-        full_name = input["folder"] + "/" + input["name"]
-    else:
-        full_name = input["name"]
-    *dirs, name = full_name.split("/")
-    input_dir = scenario.in_path.parent
-    expected_out_dirs = [input_dir.joinpath(*dirs)]
-    actual_out_dirs = [path.parent for path in scenario.out_paths]
-    assert expected_out_dirs == actual_out_dirs
+# Tests use output files directories as expected folder name.
+def check_folders(scenario, job_xml_list):
+    root_dir = scenario.in_path.parent
+
+    def name_parent(name):
+        *dirs, name = name.split("/")
+        return "/".join(dirs)
+
+    def path_parent(path):
+        dir = str(path.relative_to(root_dir).parent)
+        if dir == ".":
+            return ""
+        else:
+            return dir
+
+    actual_dirs = list(sorted(set(name_parent(jx.name) for jx in job_xml_list)))
+    expected_dirs = list(sorted(path_parent(path) for path in scenario.out_paths))
+    assert expected_dirs == actual_dirs
 
 
 @pytest.fixture
@@ -142,7 +148,6 @@ def check_generator(scenario, input, expected_output, jjb_config, registry, proj
 
         generator = Generator(registry)
         generator.gen_xml(xml, input)
-        check_folder(scenario, jjb_config, input)
         pretty_xml = XmlJob(xml, "fixturejob").output().decode()
         assert expected_output == pretty_xml
 
@@ -187,6 +192,8 @@ def check_job(scenario, expected_output, jjb_config, registry):
             expected_output.strip().replace("<BLANKLINE>", "").replace("\n\n", "\n")
         )
         assert stripped_expected_output == pretty_xml
+
+        check_folders(scenario, job_xml_list)
 
     return check
 
