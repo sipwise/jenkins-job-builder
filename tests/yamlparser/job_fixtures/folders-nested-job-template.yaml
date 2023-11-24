@@ -1,0 +1,9 @@
+- job-template:
+    name: sample-job
+    project-type: freestyle
+    folder: folders/test-nested-folder
+
+- project:
+    name: sample-project
+    jobs:
+    - sample-job

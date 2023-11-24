@@ -1,12 +1,19 @@
+# 'folders' attribute from defaults should be used (combined with job name) for job templates.
+
 - defaults:
     name: team1
     folder: team1-jobs
 
 - job:
-    name: ruby-jobs/rspec
+    name: ruby-jobs/sample-job
     defaults: team1
     builders:
       - shell: |
           rvm use --create ruby-2.3.0@rspec
           bundle install
           bundle exec rspec
+
+- project:
+    name: sample-project
+    jobs:
+    - ruby-jobs/sample-job

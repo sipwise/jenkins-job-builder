@@ -28,6 +28,7 @@ job_contents_keys = {
     "pipeline-scm",
     "reporters",
     # General.
+    "description",
     "project-type",
     "folder",
     "node",
@@ -89,6 +90,7 @@ job_contents_keys = {
 
 view_contents_keys = {
     # Common.
+    "description",
     "filter-executors",
     "filter-queue",
     # All
