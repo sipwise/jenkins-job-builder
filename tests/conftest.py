@@ -18,6 +18,7 @@ from jenkins_jobs.modules import project_multibranch
 from jenkins_jobs.modules import project_multijob
 from jenkins_jobs.registry import ModuleRegistry
 from jenkins_jobs.xml_config import XmlJob, XmlJobGenerator, XmlViewGenerator
+from jenkins_jobs import utils
 
 from jenkins_jobs.roots import Roots
 from jenkins_jobs.loader import load_files
@@ -127,7 +128,13 @@ def check_folders(scenario, job_xml_list):
         return "/".join(dirs)
 
     def path_parent(path):
-        dir = str(path.relative_to(root_dir).parent)
+        if scenario.in_path.is_dir():
+            # In directory tests, output file directory does not
+            # indicate expected job folder.
+            base_dir = scenario.in_path
+        else:
+            base_dir = root_dir
+        dir = str(path.relative_to(base_dir).parent)
         if dir == ".":
             return ""
         else:
@@ -173,7 +180,11 @@ def check_parser(jjb_config, registry):
 def check_job(scenario, expected_output, jjb_config, registry):
     def check():
         roots = Roots(jjb_config)
-        load_files(jjb_config, roots, [scenario.in_path])
+        if jjb_config.recursive:
+            path_list = [Path(p) for p in utils.recurse_path(str(scenario.in_path))]
+        else:
+            path_list = [scenario.in_path]
+        load_files(jjb_config, roots, path_list)
         registry.set_macros(roots.macros)
         job_data_list = roots.generate_jobs()
         registry.amend_job_dicts(job_data_list)
