@@ -1,0 +1,13 @@
+# https://storyboard.openstack.org/#!/story/2010711
+# Bug: Wrong files adding by tag !include-raw(include-raw-escape, etc)
+
+- job-template:
+    name: sample-job-2
+    description: sample-job-2
+    builders:
+    - shell: !include-raw-escape: sample_file.sh
+
+- project:
+    name: sample-project-2
+    jobs:
+    - sample-job-2
