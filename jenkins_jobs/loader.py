@@ -28,10 +28,13 @@ class Loader(LocLoader):
     def empty(cls, jjb_config):
         return cls(io.StringIO(), jjb_config)
 
-    def __init__(self, stream, jjb_config, source_path=None, anchors=None):
+    def __init__(
+        self, stream, jjb_config, source_path=None, source_dir=None, anchors=None
+    ):
         super().__init__(stream, source_path)
         self.jjb_config = jjb_config
         self.source_path = source_path
+        self.source_dir = source_dir
         self._retain_anchors = jjb_config.yamlparser["retain_anchors"]
         if anchors:
             # Override default set by super class.
@@ -48,17 +51,17 @@ class Loader(LocLoader):
         self.get_event()
         return node
 
-    def _with_stream(self, stream, source_path):
-        return Loader(stream, self.jjb_config, source_path, self.anchors)
+    def _with_stream(self, stream, source_path, source_dir):
+        return Loader(stream, self.jjb_config, source_path, source_dir, self.anchors)
 
     def load_fp(self, fp):
         return self.load(fp)
 
     def load_path(self, path):
-        return self.load(path.read_text(), source_path=path)
+        return self.load(path.read_text(), source_path=path, source_dir=path.parent)
 
-    def load(self, stream, source_path=None):
-        loader = self._with_stream(stream, source_path)
+    def load(self, stream, source_path=None, source_dir=None):
+        loader = self._with_stream(stream, source_path, source_dir)
         try:
             return loader.get_single_data()
         finally:

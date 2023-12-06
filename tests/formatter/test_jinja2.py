@@ -16,6 +16,6 @@ cases = [
 @pytest.mark.parametrize("format,expected_used_params", cases)
 def test_jinja2_required_params(format, expected_used_params):
     config = JJBConfig()
-    loader = Mock(source_path=None)
+    loader = Mock(source_dir=None)
     template = J2String(config, loader, pos=None, template_text=format)
     assert template.required_params == set(expected_used_params)

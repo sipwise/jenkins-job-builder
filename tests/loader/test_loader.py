@@ -40,6 +40,7 @@ def read_input(scenario, jjb_config):
             scenario.in_path.read_text(),
             jjb_config=jjb_config,
             source_path=scenario.in_path,
+            source_dir=scenario.in_path.parent,
         )
         return loader.get_single_data()
 

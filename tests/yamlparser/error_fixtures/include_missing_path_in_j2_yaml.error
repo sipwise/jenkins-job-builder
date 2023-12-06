@@ -7,6 +7,6 @@ include_missing_path_in_j2_yaml.yaml:3:3: In job template 'sample-job'
 include_missing_path_in_j2_yaml.yaml:5:15: In expanded !j2-yaml:
         builders: !j2-yaml: |
                   ^
-<expanded j2-yaml>:2:5: File missing-file.sh does not exist in any of include directories: .,fixtures-dir,.
+<expanded j2-yaml>:2:5: File missing-file.sh does not exist in any of include directories: .,fixtures-dir,fixtures-dir
         !include: missing-file.sh
         ^

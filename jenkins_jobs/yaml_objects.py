@@ -201,7 +201,6 @@ Examples:
 """
 
 import abc
-import os.path
 import logging
 import traceback
 import sys
@@ -250,9 +249,9 @@ class BaseYamlObject(metaclass=abc.ABCMeta):
 
     def __init__(self, jjb_config, loader, pos):
         self._search_path = jjb_config.yamlparser["include_path"]
-        if loader.source_path:
+        if loader.source_dir:
             # Loaded from a file, find includes beside it too.
-            self._search_path.append(os.path.dirname(loader.source_path))
+            self._search_path.append(loader.source_dir)
         self._loader = loader
         self._pos = pos
         allow_empty = jjb_config.yamlparser["allow_empty_variables"]
@@ -357,7 +356,9 @@ class J2Yaml(J2Template):
 
     def expand(self, expander, params):
         text = self._render(params)
-        data = self._loader.load(text, source_path="<expanded j2-yaml>")
+        data = self._loader.load(
+            text, source_path="<expanded j2-yaml>", source_dir=self._loader.source_dir
+        )
         try:
             return expander.expand(data, params)
         except JenkinsJobsException as x:
