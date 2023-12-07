@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "98124c1d_d7d6b0a8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34567
+      },
+      "writtenOn": "2023-12-07T14:34:43Z",
+      "side": 1,
+      "message": "Antonio, please, add to commit message description of the problem this solve. Add your use-case.",
+      "revId": "06fc9d1d6362ea4e78f041b863d7c50fc7e0dba2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
