@@ -30,9 +30,7 @@ Example::
 """
 
 import logging
-import pkg_resources
 import re
-import sys
 import xml.etree.ElementTree as XML
 
 import six
@@ -198,7 +196,7 @@ def build_gerrit_triggers(xml_parent, data, plugin_ver):
                     ("exclude-private", "excludePrivateState", False),
                     ("exclude-wip", "excludeWipState", False),
                 ]
-                if plugin_ver >= pkg_resources.parse_version("2.32.0"):
+                if plugin_ver >= "2.32.0":
                     mapping.append(
                         (
                             "commit-message-contains-regex",
@@ -241,7 +239,7 @@ def build_gerrit_skip_votes(xml_parent, data, plugin_ver):
         ("unstable", "onUnstable"),
         ("notbuilt", "onNotBuilt"),
     ]
-    if plugin_ver >= pkg_resources.parse_version("2.32.0"):
+    if plugin_ver >= "2.32.0":
         outcomes.append(("aborted", "onAborted"))
 
     skip_vote_node = XML.SubElement(xml_parent, "skipVote")
@@ -252,7 +250,7 @@ def build_gerrit_skip_votes(xml_parent, data, plugin_ver):
 
 
 def build_cancellation_policy(xml_parent, data, plugin_ver):
-    if plugin_ver >= pkg_resources.parse_version("2.32.0"):
+    if plugin_ver >= "2.32.0":
         options = [
             ("abort-new-patchsets", "abortNewPatchsets"),
             ("abort-manual-patchsets", "abortManualPatchsets"),
@@ -272,7 +270,7 @@ def build_cancellation_policy(xml_parent, data, plugin_ver):
 
 
 def build_gerrit_parameter_modes(xml_parent, data, plugin_ver):
-    if plugin_ver < pkg_resources.parse_version("2.18.0"):
+    if plugin_ver < "2.18.0":
         for parameter_name in (
             "commit-message",
             "name-and-email",
@@ -661,10 +659,7 @@ def gerrit(registry, xml_parent, data):
 
     gerrit_handle_legacy_configuration(data)
 
-    plugin_info = registry.get_plugin_info("Gerrit Trigger")
-    plugin_ver = pkg_resources.parse_version(
-        plugin_info.get("version", str(sys.maxsize))
-    )
+    plugin_ver = registry.get_plugin_version("Gerrit Trigger")
 
     projects = data.get("projects", [])
     gtrig = XML.SubElement(
@@ -797,9 +792,7 @@ def gerrit(registry, xml_parent, data):
     XML.SubElement(gtrig, "triggerInformationAction").text = str(
         data.get("trigger-information-action", "")
     )
-    if (plugin_ver >= pkg_resources.parse_version("2.11.0")) and (
-        plugin_ver < pkg_resources.parse_version("2.14.0")
-    ):
+    if plugin_ver >= "2.11.0" and plugin_ver < "2.14.0":
         XML.SubElement(gtrig, "allowTriggeringUnreviewedPatches").text = str(
             data.get("trigger-for-unreviewed-patches", False)
         ).lower()
@@ -848,7 +841,7 @@ def gerrit(registry, xml_parent, data):
             ),
         ]
 
-        if plugin_ver >= pkg_resources.parse_version("2.31.0"):
+        if plugin_ver >= "2.31.0":
             votes.append(
                 (
                     "gerrit-build-aborted-verified-value",
@@ -876,7 +869,7 @@ def gerrit(registry, xml_parent, data):
         ("custom-url", "customUrl", ""),
         ("server-name", "serverName", "__ANY__"),
     ]
-    if plugin_ver >= pkg_resources.parse_version("2.31.0"):
+    if plugin_ver >= "2.31.0":
         message_mappings.append(("aborted-message", "buildAbortedMessage", ""))
 
     helpers.convert_mapping_to_xml(gtrig, data, message_mappings, fail_required=True)
@@ -1573,14 +1566,9 @@ def gitlab_merge_request(registry, xml_parent, data):
         xml_parent, "org.jenkinsci.plugins.gitlab." "GitlabBuildTrigger"
     )
 
-    plugin_info = registry.get_plugin_info("Gitlab Merge Request Builder")
+    plugin_ver = registry.get_plugin_version("Gitlab Merge Request Builder")
 
-    # Note: Assume latest version of plugin is preferred config format
-    plugin_ver = pkg_resources.parse_version(
-        plugin_info.get("version", str(sys.maxsize))
-    )
-
-    if plugin_ver >= pkg_resources.parse_version("2.0.0"):
+    if plugin_ver >= "2.0.0":
         mapping = [
             ("cron", "spec", None),
             ("project-path", "projectPath", None),
@@ -1725,15 +1713,11 @@ def gitlab(registry, xml_parent, data):
         xml_parent, "com.dabsquared.gitlabjenkins.GitLabPushTrigger"
     )
 
-    plugin_info = registry.get_plugin_info("GitLab Plugin")
-    # Note: Assume latest version of plugin is preferred config format
-    plugin_ver = pkg_resources.parse_version(
-        plugin_info.get("version", str(sys.maxsize))
-    )
+    plugin_ver = registry.get_plugin_version("GitLab Plugin")
 
     valid_merge_request = ["never", "source", "both"]
 
-    if plugin_ver >= pkg_resources.parse_version("1.1.26"):
+    if plugin_ver >= "1.1.26":
         mapping = [
             (
                 "trigger-open-merge-request-push",
@@ -1749,7 +1733,7 @@ def gitlab(registry, xml_parent, data):
         ]
         helpers.convert_mapping_to_xml(gitlab, data, mapping, fail_required=True)
 
-    if plugin_ver < pkg_resources.parse_version("1.2.0"):
+    if plugin_ver < "1.2.0":
         if data.get("branch-filter-type", "") == "All":
             data["branch-filter-type"] = ""
         valid_filters = ["", "NameBasedFilter", "RegexBasedFilter"]

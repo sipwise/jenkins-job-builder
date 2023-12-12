@@ -74,7 +74,6 @@ Example:
 # and this object is passed to the HipChat() class initialiser.
 
 import logging
-import pkg_resources
 import sys
 import xml.etree.ElementTree as XML
 
@@ -137,10 +136,9 @@ class HipChat(jenkins_jobs.modules.base.Base):
                 logger.warning("'room' is deprecated, please use 'rooms'")
                 hipchat["rooms"] = [hipchat["room"]]
 
-        plugin_info = self.registry.get_plugin_info("Jenkins HipChat Plugin")
-        version = pkg_resources.parse_version(plugin_info.get("version", "0"))
+        plugin_ver = self.registry.get_plugin_version("Jenkins HipChat Plugin")
 
-        if version >= pkg_resources.parse_version("0.1.9"):
+        if plugin_ver >= "0.1.9":
             publishers = xml_parent.find("publishers")
             if publishers is None:
                 publishers = XML.SubElement(xml_parent, "publishers")
@@ -173,7 +171,7 @@ class HipChat(jenkins_jobs.modules.base.Base):
             hipchat.get("notify-start", hipchat.get("start-notify", False))
         ).lower()
 
-        if version >= pkg_resources.parse_version("0.1.5"):
+        if plugin_ver >= "0.1.5":
             mapping = [
                 ("notify-success", "notifySuccess", False),
                 ("notify-aborted", "notifyAborted", False),
@@ -191,7 +189,7 @@ class HipChat(jenkins_jobs.modules.base.Base):
             publishers = XML.SubElement(xml_parent, "publishers")
         hippub = XML.SubElement(publishers, "jenkins.plugins.hipchat.HipChatNotifier")
 
-        if version >= pkg_resources.parse_version("0.1.8"):
+        if plugin_ver >= "0.1.8":
             XML.SubElement(hippub, "buildServerUrl").text = self.jenkinsUrl
             XML.SubElement(hippub, "sendAs").text = self.sendAs
         else:
