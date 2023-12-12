@@ -37,7 +37,6 @@ Example::
 """
 
 import logging
-import sys
 import xml.etree.ElementTree as XML
 
 import six
@@ -48,7 +47,6 @@ from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.errors import MissingAttributeError
 import jenkins_jobs.modules.base
 import jenkins_jobs.modules.helpers as helpers
-import pkg_resources
 from jenkins_jobs.modules import hudson_model
 from jenkins_jobs.modules.publishers import ssh
 from jenkins_jobs.modules.publishers import cifs
@@ -2885,11 +2883,9 @@ def cmake(registry, xml_parent, data):
     ]
     helpers.convert_mapping_to_xml(cmake, data, mapping, fail_required=True)
 
-    info = registry.get_plugin_info("CMake plugin")
-    # Note: Assume latest version of plugin is preferred config format
-    version = pkg_resources.parse_version(info.get("version", str(sys.maxsize)))
+    plugin_ver = registry.get_plugin_version("CMake plugin")
 
-    if version >= pkg_resources.parse_version("2.0"):
+    if plugin_ver >= "2.0":
         mapping_20 = [
             ("preload-script", "preloadScript", None),  # Optional parameter
             ("working-dir", "workingDir", ""),
@@ -4701,8 +4697,7 @@ def xunit(registry, xml_parent, data):
        :language: yaml
 
     """
-    info = registry.get_plugin_info("xunit")
-    plugin_version = pkg_resources.parse_version(info.get("version", str(sys.maxsize)))
+    plugin_ver = registry.get_plugin_version("xunit")
 
     logger = logging.getLogger(__name__)
     xunit = XML.SubElement(xml_parent, "org.jenkinsci.plugins.xunit.XUnitBuilder")
@@ -4744,7 +4739,7 @@ def xunit(registry, xml_parent, data):
 
     # Generate XML for each of the supported framework types
     # Note: versions 3+ are now using the 'tools' sub-element instead of 'types'
-    if plugin_version < pkg_resources.parse_version("3.0.0"):
+    if plugin_ver < "3.0.0":
         types_name = "types"
     else:
         types_name = "tools"

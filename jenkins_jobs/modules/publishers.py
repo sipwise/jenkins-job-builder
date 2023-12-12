@@ -26,8 +26,6 @@ the build is complete.
 """
 
 import logging
-import pkg_resources
-import sys
 import xml.etree.ElementTree as XML
 
 import six
@@ -1842,8 +1840,7 @@ def xunit(registry, xml_parent, data):
        :language: yaml
 
     """
-    info = registry.get_plugin_info("xunit")
-    plugin_version = pkg_resources.parse_version(info.get("version", str(sys.maxsize)))
+    plugin_ver = registry.get_plugin_version("xunit")
 
     logger = logging.getLogger(__name__)
     xunit = XML.SubElement(xml_parent, "xunit")
@@ -1885,7 +1882,7 @@ def xunit(registry, xml_parent, data):
 
     # Generate XML for each of the supported framework types
     # Note: versions 3+ are now using the 'tools' sub-element instead of 'types'
-    if plugin_version < pkg_resources.parse_version("3.0.0"):
+    if plugin_ver < "3.0.0":
         types_name = "types"
     else:
         types_name = "tools"
@@ -2475,21 +2472,20 @@ def base_email_ext(registry, xml_parent, data, ttype):
         xml_parent, "hudson.plugins.emailext.plugins.trigger." + ttype
     )
 
-    info = registry.get_plugin_info("email-ext")
-    plugin_version = pkg_resources.parse_version(info.get("version", str(sys.maxsize)))
+    plugin_ver = registry.get_plugin_version("email-ext")
 
     email = XML.SubElement(trigger, "email")
 
-    if plugin_version < pkg_resources.parse_version("2.39"):
+    if plugin_ver < "2.39":
         XML.SubElement(email, "recipientList").text = ""
     XML.SubElement(email, "subject").text = "$PROJECT_DEFAULT_SUBJECT"
     XML.SubElement(email, "body").text = "$PROJECT_DEFAULT_CONTENT"
-    if plugin_version >= pkg_resources.parse_version("2.39"):
+    if plugin_ver >= "2.39":
         XML.SubElement(email, "replyTo").text = "$PROJECT_DEFAULT_REPLYTO"
         XML.SubElement(email, "contentType").text = "project"
     if "send-to" in data:
         recipient_providers = None
-        if plugin_version < pkg_resources.parse_version("2.39"):
+        if plugin_ver < "2.39":
             XML.SubElement(email, "sendToDevelopers").text = str(
                 "developers" in data["send-to"]
             ).lower()
@@ -2572,7 +2568,7 @@ def base_email_ext(registry, xml_parent, data, ttype):
                     "hudson.plugins.emailext.plugins.recipients.UpstreamComitterRecipientProvider",
                 ).text = ""
     else:
-        if plugin_version < pkg_resources.parse_version("2.39"):
+        if plugin_ver < "2.39":
             XML.SubElement(email, "sendToRequester").text = "false"
             XML.SubElement(email, "sendToDevelopers").text = "false"
             XML.SubElement(email, "includeCulprits").text = "false"
@@ -2587,7 +2583,7 @@ def base_email_ext(registry, xml_parent, data, ttype):
     if ttype == "ScriptTrigger":
         XML.SubElement(trigger, "triggerScript").text = data["trigger-script"]
 
-    if plugin_version >= pkg_resources.parse_version("2.39"):
+    if plugin_ver >= "2.39":
         mappings = [
             ("attachments", "attachmentsPattern", ""),
             ("attach-build-log", "attachBuildLog", False),
@@ -2687,8 +2683,7 @@ def email_ext(registry, xml_parent, data):
         xml_parent, "hudson.plugins.emailext.ExtendedEmailPublisher"
     )
 
-    info = registry.get_plugin_info("email-ext")
-    plugin_version = pkg_resources.parse_version(info.get("version", str(sys.maxsize)))
+    plugin_ver = registry.get_plugin_version("email-ext")
 
     if "recipients" in data:
         XML.SubElement(emailext, "recipientList").text = data["recipients"]
@@ -2754,7 +2749,7 @@ def email_ext(registry, xml_parent, data):
         ("reply-to", "replyTo", "$DEFAULT_REPLYTO"),
     ]
 
-    if plugin_version >= pkg_resources.parse_version("2.39"):
+    if plugin_ver >= "2.39":
         mappings.append(("from", "from", ""))
 
     helpers.convert_mapping_to_xml(emailext, data, mappings, fail_required=True)
@@ -3127,13 +3122,11 @@ def groovy_postbuild(registry, xml_parent, data):
         )
         data = {"script": data}
     # There are incompatible changes, we need to know version
-    info = registry.get_plugin_info("groovy-postbuild")
-    # Note: Assume latest version of plugin is preferred config format
-    version = pkg_resources.parse_version(info.get("version", str(sys.maxsize)))
+    plugin_ver = registry.get_plugin_version("groovy-postbuild")
     # Version specific predicates
-    matrix_parent_support = version >= pkg_resources.parse_version("1.9")
-    security_plugin_support = version >= pkg_resources.parse_version("2.0")
-    extra_classpath_support = version >= pkg_resources.parse_version("1.6")
+    matrix_parent_support = plugin_ver >= "1.9"
+    security_plugin_support = plugin_ver >= "2.0"
+    extra_classpath_support = plugin_ver >= "1.6"
 
     root_tag = "org.jvnet.hudson.plugins.groovypostbuild.GroovyPostbuildRecorder"
     groovy = XML.SubElement(xml_parent, root_tag)
@@ -4495,16 +4488,14 @@ def postbuildscript(registry, xml_parent, data):
         xml_parent, "org.jenkinsci.plugins.postbuildscript.PostBuildScript"
     )
 
-    info = registry.get_plugin_info("postbuildscript")
-    # Note: Assume latest version of plugin is preferred config format
-    version = pkg_resources.parse_version(info.get("version", str(sys.maxsize)))
-    if version >= pkg_resources.parse_version("2.0"):
+    plugin_ver = registry.get_plugin_version("postbuildscript")
+    if plugin_ver >= "2.0":
         pbs_xml = XML.SubElement(pbs_xml, "config")
 
     mapping = [("mark-unstable-if-failed", "markBuildUnstable", False)]
     helpers.convert_mapping_to_xml(pbs_xml, data, mapping, fail_required=True)
 
-    if version >= pkg_resources.parse_version("2.0"):
+    if plugin_ver >= "2.0":
 
         def add_execute_on(bs_data, result_xml):
             valid_values = ("matrix", "axes", "both")
@@ -6756,13 +6747,11 @@ def conditional_publisher(registry, xml_parent, data):
         "dont-run": evaluation_classes_pkg + ".BuildStepRunner$DontRun",
     }
 
-    plugin_info = registry.get_plugin_info("Flexible Publish Plugin")
-    # Note: Assume latest version of plugin is preferred config format
-    version = pkg_resources.parse_version(plugin_info.get("version", str(sys.maxsize)))
+    plugin_ver = registry.get_plugin_version("Flexible Publish Plugin")
 
     # Support for MatrixAggregator was added in v0.11
     # See JENKINS-14494
-    has_matrix_aggregator = version >= pkg_resources.parse_version("0.11")
+    has_matrix_aggregator = plugin_ver >= "0.11"
 
     for cond_action in data:
         cond_publisher = XML.SubElement(publishers_tag, cond_publisher_tag)
@@ -6792,7 +6781,7 @@ def conditional_publisher(registry, xml_parent, data):
 
             # XML tag changed from publisher to publisherList in v0.13
             # check the plugin version to determine further operations
-            use_publisher_list = version >= pkg_resources.parse_version("0.13")
+            use_publisher_list = plugin_ver >= "0.13"
 
             if use_publisher_list:
                 action_parent = XML.SubElement(cond_publisher, "publisherList")
@@ -7703,11 +7692,7 @@ def slack(registry, xml_parent, data):
 
     logger = logging.getLogger(__name__)
 
-    plugin_info = registry.get_plugin_info("Slack Notification Plugin")
-    # Note: Assume latest version of plugin is preferred config format
-    plugin_ver = pkg_resources.parse_version(
-        plugin_info.get("version", str(sys.maxsize))
-    )
+    plugin_ver = registry.get_plugin_version("Slack Notification Plugin")
 
     mapping = (
         ("team-domain", "teamDomain", ""),
@@ -7746,10 +7731,10 @@ def slack(registry, xml_parent, data):
 
     slack = XML.SubElement(xml_parent, "jenkins.plugins.slack.SlackNotifier")
 
-    if plugin_ver >= pkg_resources.parse_version("2.0"):
+    if plugin_ver >= "2.0":
         mapping = mapping + mapping_20
 
-    if plugin_ver < pkg_resources.parse_version("2.0"):
+    if plugin_ver < "2.0":
         for yaml_name, _, default_value in mapping:
             # All arguments that don't have a default value are mandatory for
             # the plugin to work as intended.
