@@ -11,6 +11,9 @@
     <EnvInjectJobProperty>
       <info>
         <loadFilesFromMaster>false</loadFilesFromMaster>
+        <secureGroovyScript>
+          <sandbox>false</sandbox>
+        </secureGroovyScript>
       </info>
       <on>true</on>
       <keepJenkinsSystemVariables>true</keepJenkinsSystemVariables>
@@ -55,6 +58,7 @@ echo &quot;Doing somethin cool with zsh&quot;
           </info>
         </EnvInjectBuilder>
       </buildSteps>
+      <failOnError>false</failOnError>
     </org.jenkinsci.plugins.preSCMbuildstep.PreSCMBuildStepsWrapper>
     <com.michelin.cio.hudson.plugins.copytoslave.CopyToSlaveBuildWrapper>
       <includes>file1,file2*.txt</includes>
