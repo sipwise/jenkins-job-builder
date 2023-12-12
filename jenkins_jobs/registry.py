@@ -19,11 +19,13 @@ import inspect
 import logging
 import operator
 import pkg_resources
-import re
+import sys
 import types
+from pkg_resources.extern.packaging.version import InvalidVersion
 
 from six import PY2
 
+from jenkins.plugins import PluginVersion
 from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.expander import Expander, ParamsExpander
 from jenkins_jobs.yaml_objects import BaseYamlObject
@@ -50,9 +52,10 @@ class ModuleRegistry(object):
         self._params_expander = ParamsExpander(jjb_config)
 
         if plugins_list is None:
-            self.plugins_dict = {}
+            self._plugin_version = {}
         else:
-            self.plugins_dict = self._get_plugins_info_dict(plugins_list)
+            # PluginVersion by short and long plugin name.
+            self._plugin_version = self._get_plugins_versions(plugins_list)
 
         for entrypoint in pkg_resources.iter_entry_points(group="jenkins_jobs.modules"):
             Mod = entrypoint.load()
@@ -63,60 +66,38 @@ class ModuleRegistry(object):
                 self.modules_by_component_type[mod.component_type] = entrypoint
 
     @staticmethod
-    def _get_plugins_info_dict(plugins_list):
-        def mutate_plugin_info(plugin_info):
-            """
-            We perform mutations on a single member of plugin_info here, then
-            return a dictionary with the longName and shortName of the plugin
-            mapped to its plugin info dictionary.
-            """
-            version = plugin_info.get("version", "0")
-            plugin_info["version"] = re.sub(
-                r"(.*)-(?:SNAPSHOT|BETA).*", r"\g<1>.preview", version
-            )
+    def _get_plugins_versions(plugins_list):
+        plugin_version = {}
 
-            if isinstance(
-                pkg_resources.parse_version(plugin_info["version"]),
-                pkg_resources.extern.packaging.version.LegacyVersion,
-            ):
-                plugin_info["version"] = plugin_info["version"].replace("-", "+")
-            if isinstance(
-                pkg_resources.parse_version(plugin_info["version"]),
-                pkg_resources.extern.packaging.version.LegacyVersion,
-            ):
-                plugin_name = plugin_info.get(
-                    "shortName", plugin_info.get("longName", None)
-                )
+        for plugin_info in plugins_list:
+            short_name = plugin_info.get("shortName")
+            long_name = plugin_info.get("longName")
+
+            version = plugin_info["version"]
+            if version == None:  # noqa: E711; should call PluginInfo.__eq__.
+                # Ensure that plugin_info always has version and it is instance of PluginVersion.
+                plugin_info["version"] = str(sys.maxsize)
+                version = plugin_info["version"]
+
+            try:
+                pkg_resources.parse_version(version)
+            except InvalidVersion:
+                plugin_name = short_name or long_name
                 if plugin_name:
                     logger.warning(
-                        "Version %s for plugin %s is being treated as a LegacyVersion"
-                        % (plugin_info["version"], plugin_name)
+                        "Version %s for plugin %s does not conform to PEP440",
+                        version,
+                        plugin_name,
                     )
                 else:
-                    logger.warning(
-                        "Version %s is being treated as a LegacyVersion"
-                        % plugin_info["version"]
-                    )
+                    logger.warning("Version %s does not conform to PEP440", version)
 
-            aliases = []
-            for key in ["longName", "shortName"]:
-                value = plugin_info.get(key, None)
-                if value is not None:
-                    aliases.append(value)
+            if short_name:
+                plugin_version[short_name] = version
+            if long_name:
+                plugin_version[long_name] = version
 
-            plugin_info_dict = {}
-            for name in aliases:
-                plugin_info_dict[name] = plugin_info
-
-            return plugin_info_dict
-
-        list_of_dicts = [mutate_plugin_info(v) for v in plugins_list]
-
-        plugins_info_dict = {}
-        for d in list_of_dicts:
-            plugins_info_dict.update(d)
-
-        return plugins_info_dict
+        return plugin_version
 
     @staticmethod
     def _filter_kwargs(func, **kwargs):
@@ -126,17 +107,21 @@ class ModuleRegistry(object):
                 del kwargs[name]
         return kwargs
 
-    def get_plugin_info(self, plugin_name):
-        """Provide information about plugins within a module's impl of Base.gen_xml.
+    def get_plugin_version(self, plugin_name, alt_plugin_name=None, default=None):
+        """Provide plugin version to be used from a module's impl of Base.gen_xml.
 
-        The return value is a dictionary with data obtained directly from a
-        running Jenkins instance.
+        The return value is a plugin version obtained directly from a running
+        Jenkins instance.
         This allows module authors to differentiate generated XML output based
-        on information such as specific plugin versions.
+        on it.
 
         :arg str plugin_name: Either the shortName or longName of a plugin
-          as see in a query that looks like:
+          as seen in a query that looks like:
           ``http://<jenkins-hostname>/pluginManager/api/json?pretty&depth=2``
+        :arg str alt_plugin_name: Alternative plugin name. Used if plugin_name
+          is missing in plugin list.
+        :arg str default: Default value. Used if plugin name is missing in
+          plugin list.
 
         During a 'test' run, it is possible to override JJB's query to a live
         Jenkins instance by passing it a path to a file containing a YAML list
@@ -151,7 +136,19 @@ class ModuleRegistry(object):
         .. literalinclude:: /../../tests/cmd/fixtures/plugins-info.yaml
 
         """
-        return self.plugins_dict.get(plugin_name, {})
+        try:
+            return self._plugin_version[plugin_name]
+        except KeyError:
+            pass
+        if alt_plugin_name:
+            try:
+                return self._plugin_version[alt_plugin_name]
+            except KeyError:
+                pass
+        if default is not None:
+            return PluginVersion(default)
+        # Assume latest version of plugin is preferred config format.
+        return PluginVersion(str(sys.maxsize))
 
     def registerHandler(self, category, name, method):
         cat_dict = self.handlers.get(category, {})

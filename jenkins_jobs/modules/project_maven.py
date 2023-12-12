@@ -82,7 +82,6 @@ CFP Example:
 
     .. literalinclude:: /../../tests/general/fixtures/project-maven003.yaml
 """
-import pkg_resources
 import xml.etree.ElementTree as XML
 
 from jenkins_jobs.errors import InvalidAttributeError
@@ -106,8 +105,7 @@ class Maven(jenkins_jobs.modules.base.Base):
             return xml_parent
 
         # determine version of plugin
-        plugin_info = self.registry.get_plugin_info("Maven Integration plugin")
-        version = pkg_resources.parse_version(plugin_info.get("version", "0"))
+        plugin_ver = self.registry.get_plugin_version("Maven Integration plugin")
 
         if "root-module" in data["maven"]:
             root_module = XML.SubElement(xml_parent, "rootModule")
@@ -160,9 +158,7 @@ class Maven(jenkins_jobs.modules.base.Base):
         XML.SubElement(xml_parent, "fingerprintingDisabled").text = str(
             not data["maven"].get("automatic-fingerprinting", True)
         ).lower()
-        if version > pkg_resources.parse_version(
-            "0"
-        ) and version < pkg_resources.parse_version("2.0.1"):
+        if plugin_ver < "2.0.1":
             XML.SubElement(xml_parent, "perModuleEmail").text = str(
                 data.get("per-module-email", True)
             ).lower()
