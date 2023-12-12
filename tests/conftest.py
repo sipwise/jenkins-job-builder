@@ -6,6 +6,7 @@ from pathlib import Path
 import pytest
 import yaml
 
+from jenkins.plugins import Plugin
 from jenkins_jobs.alphanum import AlphanumSort
 from jenkins_jobs.config import JJBConfig
 from jenkins_jobs.loader import Loader
@@ -72,7 +73,8 @@ def input(scenario, jjb_config):
 def plugins_info(scenario):
     if not scenario.plugins_info_path.exists():
         return None
-    return yaml.safe_load(scenario.plugins_info_path.read_text())
+    plugin_dict_list = yaml.safe_load(scenario.plugins_info_path.read_text())
+    return [Plugin(**plugin_dict) for plugin_dict in plugin_dict_list]
 
 
 @pytest.fixture

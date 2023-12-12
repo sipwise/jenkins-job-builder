@@ -33,7 +33,6 @@ Example::
 """
 
 import logging
-import pkg_resources
 import xml.etree.ElementTree as XML
 
 from jenkins_jobs.errors import InvalidAttributeError
@@ -479,10 +478,9 @@ def inject(registry, xml_parent, data):
     helpers.convert_mapping_to_xml(info, data, mapping, fail_required=False)
 
     # determine version of plugin
-    plugin_info = registry.get_plugin_info("Groovy")
-    version = pkg_resources.parse_version(plugin_info.get("version", "0"))
+    plugin_ver = registry.get_plugin_version("Groovy")
 
-    if version >= pkg_resources.parse_version("2.0.0"):
+    if plugin_ver >= "2.0.0":
         secure_groovy_script = XML.SubElement(info, "secureGroovyScript")
         mapping = [
             ("groovy-content", "script", None),
@@ -654,17 +652,16 @@ def priority_sorter(registry, xml_parent, data):
         /../../tests/properties/fixtures/priority_sorter002.yaml
        :language: yaml
     """
-    plugin_info = registry.get_plugin_info("PrioritySorter")
-    version = pkg_resources.parse_version(plugin_info.get("version", "0"))
+    plugin_ver = registry.get_plugin_version("PrioritySorter")
 
-    if version >= pkg_resources.parse_version("3.0"):
+    if plugin_ver >= "3.0":
         priority_sorter_tag = XML.SubElement(
             xml_parent,
             "jenkins.advancedqueue.jobinclusion." "strategy.JobInclusionJobProperty",
         )
 
         mapping = [("use", "useJobGroup", True), ("priority", "jobGroupName", None)]
-    elif version >= pkg_resources.parse_version("2.0"):
+    elif plugin_ver >= "2.0":
         priority_sorter_tag = XML.SubElement(
             xml_parent, "jenkins.advancedqueue.priority." "strategy.PriorityJobProperty"
         )
@@ -954,10 +951,9 @@ def slack(registry, xml_parent, data):
     """
     logger = logging.getLogger(__name__)
 
-    plugin_info = registry.get_plugin_info("Slack Notification Plugin")
-    plugin_ver = pkg_resources.parse_version(plugin_info.get("version", "0"))
+    plugin_ver = registry.get_plugin_version("Slack Notification Plugin")
 
-    if plugin_ver >= pkg_resources.parse_version("2.0"):
+    if plugin_ver >= "2.0":
         logger.warning("properties section is not used with plugin version >= 2.0")
 
     mapping = (

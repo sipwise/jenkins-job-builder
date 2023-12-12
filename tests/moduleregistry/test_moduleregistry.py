@@ -1,9 +1,10 @@
-import pkg_resources
+import sys
 from collections import namedtuple
 from operator import attrgetter
 
 import pytest
 
+from jenkins.plugins import Plugin, PluginVersion
 from jenkins_jobs.config import JJBConfig
 from jenkins_jobs.registry import ModuleRegistry
 
@@ -35,6 +36,18 @@ scenarios = [
     Scenario("s17", v1="1.0.1-1.v1", op="__lt__", v2="1.0.2"),
     Scenario("s18", v1="1.0.2-1.v1", op="__gt__", v2="1.0.1"),
     Scenario("s19", v1="1.0.2-1.v1", op="__gt__", v2="1.0.1-2"),
+    # 'Groovy' plugin in 'inject' property.
+    Scenario("s20", v1="453.vcdb_a_c5c99890", op="__ge__", v2="2.0.0"),
+    # 'postbuildscript' plugin in 'postbuildscript' publisher.
+    Scenario("s21", v1="3.2.0-460.va_fda_0fa_26720", op="__ge__", v2="2.0"),
+    # Same, from story: 2009943.
+    Scenario("s22", v1="3.1.0-375.v3db_cd92485e1", op="__ge__", v2="2.0"),
+    # 'Slack Notification Plugin' in 'slack' publisher, from story: 2009819.
+    Scenario("s23", v1="602.v0da_f7458945d", op="__ge__", v2="2.0"),
+    # 'preSCMbuildstep' plugin in 'pre_scm_buildstep' wrapper.
+    Scenario("s24", v1="44.v6ef4fd97f56e", op="__ge__", v2="0.3"),
+    # 'SSH Agent Plugin' plugin in 'ssh_agent_credentials' wrapper.
+    Scenario("s25", v1="295.v9ca_a_1c7cc3a_a_", op="__ge__", v2="1.5.0"),
 ]
 
 
@@ -66,65 +79,69 @@ def registry(config, scenario):
             "version": scenario.v1,
         },
     ]
-    return ModuleRegistry(config, plugin_info)
+    return ModuleRegistry(config, [Plugin(**d) for d in plugin_info])
 
 
-def test_get_plugin_info_dict(registry):
+def test_get_plugin_version_by_short_name(scenario, registry):
     """
-    The goal of this test is to validate that the plugin_info returned by
-    ModuleRegistry.get_plugin_info is a dictionary whose key 'shortName' is
-    the same value as the string argument passed to
-    ModuleRegistry.get_plugin_info.
+    Plugin version should be available by it's short name
     """
     plugin_name = "JankyPlugin1"
-    plugin_info = registry.get_plugin_info(plugin_name)
+    version = registry.get_plugin_version(plugin_name)
 
-    assert isinstance(plugin_info, dict)
-    assert plugin_info["shortName"] == plugin_name
+    assert isinstance(version, PluginVersion)
+    assert version == scenario.v1
 
 
-def test_get_plugin_info_dict_using_longName(registry):
+def test_get_plugin_version_by_long_name(scenario, registry):
     """
-    The goal of this test is to validate that the plugin_info returned by
-    ModuleRegistry.get_plugin_info is a dictionary whose key 'longName' is
-    the same value as the string argument passed to
-    ModuleRegistry.get_plugin_info.
+    Plugin version should be available by it's long name
     """
-    plugin_name = "Blah Blah Blah Plugin"
-    plugin_info = registry.get_plugin_info(plugin_name)
+    plugin_name = "Not A Real Plugin"
+    version = registry.get_plugin_version(plugin_name)
 
-    assert isinstance(plugin_info, dict)
-    assert plugin_info["longName"] == plugin_name
+    assert isinstance(version, PluginVersion)
+    assert version == scenario.v1
 
 
-def test_get_plugin_info_dict_no_plugin(registry):
+def test_get_plugin_version_by_alternative_name(scenario, registry):
+    version = registry.get_plugin_version("Non-existent name", "Not A Real Plugin")
+    assert version == scenario.v1
+
+
+def test_get_plugin_version_default_value(registry):
+    version = registry.get_plugin_version("Non-existent name", default="1.2.3")
+    assert isinstance(version, PluginVersion)
+    assert version == "1.2.3"
+
+
+def test_get_plugin_version_for_missing_plugin(registry):
     """
     The goal of this test case is to validate the behavior of
-    ModuleRegistry.get_plugin_info when the given plugin cannot be found in
+    ModuleRegistry.get_plugin_version when the given plugin cannot be found in
     ModuleRegistry's internal representation of the plugins_info.
     """
     plugin_name = "PluginDoesNotExist"
-    plugin_info = registry.get_plugin_info(plugin_name)
+    version = registry.get_plugin_version(plugin_name)
 
-    assert isinstance(plugin_info, dict)
-    assert plugin_info == {}
+    assert isinstance(version, PluginVersion)
+    assert version == str(sys.maxsize)
 
 
-def test_get_plugin_info_dict_no_version(registry):
+def test_get_plugin_version_for_missing_version(registry):
     """
     The goal of this test case is to validate the behavior of
-    ModuleRegistry.get_plugin_info when the given plugin shortName returns
+    ModuleRegistry.get_plugin_version when the given plugin shortName returns
     plugin_info dict that has no version string. In a sane world where
     plugin frameworks like Jenkins' are sane this should never happen, but
     I am including this test and the corresponding default behavior
     because, well, it's Jenkins.
     """
     plugin_name = "HerpDerpPlugin"
-    plugin_info = registry.get_plugin_info(plugin_name)
+    version = registry.get_plugin_version(plugin_name)
 
-    assert isinstance(plugin_info, dict)
-    assert plugin_info["shortName"] == plugin_name
-    assert plugin_info["version"] == "0"
+    assert isinstance(version, PluginVersion)
+    assert version == str(sys.maxsize)
 
 
 def test_plugin_version_comparison(registry, scenario):
@@ -134,13 +151,12 @@ def test_plugin_version_comparison(registry, scenario):
     where 'op' is the equality operator defined for the scenario.
     """
     plugin_name = "JankyPlugin1"
-    plugin_info = registry.get_plugin_info(plugin_name)
-    v1 = plugin_info.get("version")
+    v1 = registry.get_plugin_version(plugin_name)
 
-    op = getattr(pkg_resources.parse_version(v1), scenario.op)
-    test = op(pkg_resources.parse_version(scenario.v2))
+    op = getattr(v1, scenario.op)
+    test = op(scenario.v2)
 
     assert test, (
-        f"Unexpectedly found {v1} {scenario.v2} {scenario.op} == False"
+        f"Unexpectedly found {v1} {scenario.op} {scenario.v2} == False"
         " when comparing versions!"
     )
