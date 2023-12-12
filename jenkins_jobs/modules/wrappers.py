@@ -23,8 +23,6 @@ Wrappers can alter the way the build is run as well as the build output.
 """
 
 import logging
-import pkg_resources
-import sys
 import xml.etree.ElementTree as XML
 
 from jenkins_jobs.errors import InvalidAttributeError
@@ -336,12 +334,9 @@ def timeout(registry, xml_parent, data):
     prefix = "hudson.plugins.build__timeout."
     twrapper = XML.SubElement(xml_parent, prefix + "BuildTimeoutWrapper")
 
-    plugin_info = registry.get_plugin_info("Build Timeout")
-    if "version" not in plugin_info:
-        plugin_info = registry.get_plugin_info("Jenkins build timeout plugin")
-    version = plugin_info.get("version", None)
-    if version:
-        version = pkg_resources.parse_version(version)
+    plugin_ver = registry.get_plugin_version(
+        "Build Timeout", "Jenkins build timeout plugin"
+    )
 
     valid_strategies = [
         "absolute",
@@ -353,7 +348,7 @@ def timeout(registry, xml_parent, data):
 
     # NOTE(toabctl): if we don't know the version assume that we
     # use a newer version of the plugin
-    if not version or version >= pkg_resources.parse_version("1.14"):
+    if plugin_ver >= "1.14":
         strategy = data.get("type", "absolute")
         if strategy not in valid_strategies:
             InvalidAttributeError("type", strategy, valid_strategies)
@@ -438,7 +433,7 @@ def timeout(registry, xml_parent, data):
         all_actions = ["fail", "abort"]
         actions = []
 
-        if version is not None and version >= pkg_resources.parse_version("1.17"):
+        if plugin_ver >= "1.17":
             all_actions.append("abort-and-restart")
 
         for action in all_actions:
@@ -966,12 +961,9 @@ def rvm_env(registry, xml_parent, data):
 
     ro_class = "Jenkins::Plugin::Proxies::BuildWrapper"
 
-    plugin_info = registry.get_plugin_info("RVM Plugin")
-    plugin_ver = pkg_resources.parse_version(
-        plugin_info.get("version", str(sys.maxsize))
-    )
+    plugin_ver = registry.get_plugin_version("RVM Plugin")
 
-    if plugin_ver >= pkg_resources.parse_version("0.5"):
+    if plugin_ver >= "0.5":
         ro_class = "Jenkins::Tasks::BuildWrapperProxy"
 
     ro = XML.SubElement(rpo, "ruby-object", {"ruby-class": ro_class, "pluginid": "rvm"})
@@ -1821,8 +1813,7 @@ def pre_scm_buildstep(registry, xml_parent, data):
        :language: yaml
     """
     # Get plugin information to maintain backwards compatibility
-    info = registry.get_plugin_info("preSCMbuildstep")
-    version = pkg_resources.parse_version(info.get("version", "0"))
+    plugin_ver = registry.get_plugin_version("preSCMbuildstep")
 
     bsp = XML.SubElement(
         xml_parent, "org.jenkinsci.plugins.preSCMbuildstep." "PreSCMBuildStepsWrapper"
@@ -1833,7 +1824,7 @@ def pre_scm_buildstep(registry, xml_parent, data):
     for step in stepList:
         for edited_node in create_builders(registry, step):
             bs.append(edited_node)
-    if version >= pkg_resources.parse_version("0.3") and not isinstance(data, list):
+    if plugin_ver >= "0.3" and not isinstance(data, list):
         mapping = [("failOnError", "failOnError", False)]
         helpers.convert_mapping_to_xml(bsp, data, mapping, fail_required=True)
 
@@ -2049,10 +2040,7 @@ def ssh_agent_credentials(registry, xml_parent, data):
 
     logger = logging.getLogger(__name__)
 
-    plugin_info = registry.get_plugin_info("SSH Agent Plugin")
-    plugin_ver = pkg_resources.parse_version(
-        plugin_info.get("version", str(sys.maxsize))
-    )
+    plugin_ver = registry.get_plugin_version("SSH Agent Plugin")
 
     entry_xml = XML.SubElement(
         xml_parent, "com.cloudbees.jenkins.plugins.sshagent.SSHAgentBuildWrapper"
@@ -2063,7 +2051,7 @@ def ssh_agent_credentials(registry, xml_parent, data):
     user_list = list()
     if "users" in data:
         user_list += data["users"]
-        if plugin_ver >= pkg_resources.parse_version("1.5.0"):
+        if plugin_ver >= "1.5.0":
             user_parent_entry_xml = XML.SubElement(entry_xml, "credentialIds")
             xml_key = "string"
         if "user" in data:
@@ -2288,8 +2276,8 @@ def nodejs_installator(registry, xml_parent, data):
         xml_parent, "jenkins.plugins.nodejs." "NodeJSBuildWrapper"
     )
 
-    version = registry.get_plugin_info("nodejs").get("version", "0")
-    npm_node.set("plugin", "nodejs@" + version)
+    plugin_ver = registry.get_plugin_version("nodejs", default="0")
+    npm_node.set("plugin", "nodejs@" + plugin_ver)
     mapping = [("name", "nodeJSInstallationName", None)]
     helpers.convert_mapping_to_xml(npm_node, data, mapping, fail_required=True)
 
@@ -2601,11 +2589,9 @@ def artifactory_generic(registry, xml_parent, data):
     helpers.artifactory_common_details(details, data)
 
     # Get plugin information to maintain backwards compatibility
-    info = registry.get_plugin_info("artifactory")
-    # Note: Assume latest version of plugin is preferred config format
-    version = pkg_resources.parse_version(info.get("version", str(sys.maxsize)))
+    plugin_ver = registry.get_plugin_version("artifactory")
 
-    if version >= pkg_resources.parse_version("2.3.0"):
+    if plugin_ver >= "2.3.0":
         deploy_release_repo = XML.SubElement(details, "deployReleaseRepository")
         mapping = [
             ("key-from-text", "keyFromText", ""),

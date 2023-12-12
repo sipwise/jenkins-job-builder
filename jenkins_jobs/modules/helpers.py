@@ -14,7 +14,6 @@
 
 from functools import wraps
 import logging
-import sys
 
 import xml.etree.ElementTree as XML
 
@@ -22,8 +21,6 @@ from jenkins_jobs.errors import InvalidAttributeError
 from jenkins_jobs.errors import JenkinsJobsException
 from jenkins_jobs.errors import MissingAttributeError
 from jenkins_jobs.modules import hudson_model
-
-import pkg_resources
 
 
 def build_trends_publisher(plugin_name, xml_element, data):
@@ -515,8 +512,7 @@ def trigger_get_parameter_order(registry, plugin):
 
 def trigger_project(tconfigs, project_def, registry, param_order=None):
 
-    info = registry.get_plugin_info("parameterized-trigger")
-    plugin_version = pkg_resources.parse_version(info.get("version", str(sys.maxsize)))
+    plugin_ver = registry.get_plugin_version("parameterized-trigger")
 
     logger = logging.getLogger("%s:trigger_project" % __name__)
     pt_prefix = "hudson.plugins.parameterizedtrigger."
@@ -554,7 +550,7 @@ def trigger_project(tconfigs, project_def, registry, param_order=None):
                 ("fail-on-missing", "failTriggerOnMissing", False),
             ]
 
-            if plugin_version >= pkg_resources.parse_version("2.35.2"):
+            if plugin_ver >= "2.35.2":
                 property_file_mapping.append(
                     ("property-multiline", "textParamValueOnNewLine", False)
                 )
