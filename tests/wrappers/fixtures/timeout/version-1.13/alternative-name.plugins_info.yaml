@@ -1,0 +1,3 @@
+# Check that another plugin long name is also checked.
+- longName: "Build Timeout"
+  version: "1.13"
