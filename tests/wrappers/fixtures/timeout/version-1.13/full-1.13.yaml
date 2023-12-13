@@ -1,0 +1,9 @@
+wrappers:
+- timeout:
+    timeout: 10
+    timeout-var: 'BUILD_TIMEOUT'
+    fail: true
+    write-description: sample timeout description
+    elastic-percentage: 150
+    elastic-default-timeout: 90
+    type: elastic
