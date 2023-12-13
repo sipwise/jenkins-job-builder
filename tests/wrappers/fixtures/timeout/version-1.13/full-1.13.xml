@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <buildWrappers>
+    <hudson.plugins.build__timeout.BuildTimeoutWrapper>
+      <timeoutMinutes>10</timeoutMinutes>
+      <timeoutEnvVar>BUILD_TIMEOUT</timeoutEnvVar>
+      <failBuild>true</failBuild>
+      <writingDescription>sample timeout description</writingDescription>
+      <timeoutPercentage>150</timeoutPercentage>
+      <timeoutMinutesElasticDefault>90</timeoutMinutesElasticDefault>
+      <timeoutType>elastic</timeoutType>
+    </hudson.plugins.build__timeout.BuildTimeoutWrapper>
+  </buildWrappers>
+</project>
