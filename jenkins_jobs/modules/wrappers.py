@@ -1833,7 +1833,7 @@ def pre_scm_buildstep(registry, xml_parent, data):
     for step in stepList:
         for edited_node in create_builders(registry, step):
             bs.append(edited_node)
-    if version >= pkg_resources.parse_version("0.3"):
+    if version >= pkg_resources.parse_version("0.3") and not isinstance(data, list):
         mapping = [("failOnError", "failOnError", False)]
         helpers.convert_mapping_to_xml(bsp, data, mapping, fail_required=True)
 
