@@ -2,7 +2,7 @@
 <project>
   <buildWrappers>
     <jenkins.plugins.nodejs.NodeJSBuildWrapper plugin="nodejs@123">
-      <nodeJSInstallationName>latest node</nodeJSInstallationName>
+      <nodeJSInstallationName>specific node</nodeJSInstallationName>
     </jenkins.plugins.nodejs.NodeJSBuildWrapper>
   </buildWrappers>
 </project>
