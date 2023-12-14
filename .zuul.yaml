@@ -33,6 +33,7 @@
         - tox-py39:
             nodeset: ubuntu-focal
         - tox-py310
+        - tox-py311
         - jjb-tox-linters
         - jjb-tox-cross-python-jenkins
         - jjb-tox-docs-linkcheck
@@ -44,3 +45,4 @@
         - tox-py39:
             nodeset: ubuntu-focal
         - tox-py310
+        - tox-py311
