@@ -21,7 +21,7 @@ from collections import namedtuple
 
 
 Scenario = namedtuple(
-    "Scnenario", "name in_path out_paths error_path config_path plugins_info_path"
+    "Scenario", "name in_path out_paths error_path config_path plugins_info_path"
 )
 
 
