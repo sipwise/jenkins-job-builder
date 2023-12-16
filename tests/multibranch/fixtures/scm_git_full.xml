@@ -144,18 +144,18 @@
                 <ignoreTargetOnlyChanges>false</ignoreTargetOnlyChanges>
               </jenkins.branch.buildstrategies.basic.ChangeRequestBuildStrategyImpl>
               <jenkins.branch.buildstrategies.basic.TagBuildStrategyImpl plugin="basic-branch-build-strategies">
-                <atMostMillis>-1</atMostMillis>
                 <atLeastMillis>-1</atLeastMillis>
+                <atMostMillis>-1</atMostMillis>
               </jenkins.branch.buildstrategies.basic.TagBuildStrategyImpl>
             </strategies>
           </jenkins.branch.buildstrategies.basic.AnyBranchBuildStrategyImpl>
           <jenkins.branch.buildstrategies.basic.TagBuildStrategyImpl plugin="basic-branch-build-strategies">
-            <atMostMillis>86400000</atMostMillis>
-            <atLeastMillis>604800000</atLeastMillis>
+            <atLeastMillis>86400000</atLeastMillis>
+            <atMostMillis>604800000</atMostMillis>
           </jenkins.branch.buildstrategies.basic.TagBuildStrategyImpl>
           <jenkins.branch.buildstrategies.basic.TagBuildStrategyImpl plugin="basic-branch-build-strategies">
-            <atMostMillis>-1</atMostMillis>
             <atLeastMillis>-1</atLeastMillis>
+            <atMostMillis>-1</atMostMillis>
           </jenkins.branch.buildstrategies.basic.TagBuildStrategyImpl>
           <jenkins.branch.buildstrategies.basic.ChangeRequestBuildStrategyImpl plugin="basic-branch-build-strategies">
             <ignoreTargetOnlyChanges>true</ignoreTargetOnlyChanges>

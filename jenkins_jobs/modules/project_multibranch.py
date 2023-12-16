@@ -1334,12 +1334,12 @@ def build_strategies(xml_parent, data):
             newer_than = -1
             if "ignore-tags-newer-than" in tags and tags["ignore-tags-newer-than"] >= 0:
                 newer_than = str(tags["ignore-tags-newer-than"] * 86400000)
-            XML.SubElement(tags_elem, "atMostMillis").text = str(newer_than)
+            XML.SubElement(tags_elem, "atLeastMillis").text = str(newer_than)
 
             older_than = -1
             if "ignore-tags-older-than" in tags and tags["ignore-tags-older-than"] >= 0:
                 older_than = str(tags["ignore-tags-older-than"] * 86400000)
-            XML.SubElement(tags_elem, "atLeastMillis").text = str(older_than)
+            XML.SubElement(tags_elem, "atMostMillis").text = str(older_than)
 
         if bbs_list.get("regular-branches", False):
             XML.SubElement(
