@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a06f80b4_09996a9c",
+        "filename": "tests/enum_scenarios.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 34567
+      },
+      "writtenOn": "2023-12-17T07:01:59Z",
+      "side": 0,
+      "message": "Thank you.",
+      "revId": "d741ea02c6ea45357318b0d5ff759802e34ecf69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
