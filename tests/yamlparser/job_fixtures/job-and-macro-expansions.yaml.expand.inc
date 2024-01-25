@@ -1,1 +1,1 @@
-echo Should be expanded: {param}
+echo include-raw-expand: should be expanded: {param}

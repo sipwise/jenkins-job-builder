@@ -12,11 +12,11 @@
   <scm class="hudson.scm.NullSCM"/>
   <builders>
     <hudson.tasks.Shell>
-      <command>echo Should not be expanded: {param}
+      <command>echo sample-job: should not be expanded: {param}
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>echo Should not be expanded: {param}
+      <command>echo include-raw-verbatim: should not be expanded: {param}
 </command>
     </hudson.tasks.Shell>
   </builders>
@@ -37,43 +37,43 @@
   <scm class="hudson.scm.NullSCM"/>
   <builders>
     <hudson.tasks.Shell>
-      <command>echo Should not be expanded: {param}
+      <command>echo builder-without-params: should not be expanded: {param}
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>echo Should not be expanded: {param}
+      <command>echo include-raw-verbatim: should not be expanded: {param}
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>echo Should not be expanded: {param}
+      <command>echo builder-with-params: should not be expanded: {param}
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>echo Should be expanded: sample param value
+      <command>echo builder-with-params: should be expanded: sample macro param value
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>echo Should not be expanded: {param}
+      <command>echo include-raw-verbatim: should not be expanded: {param}
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>echo Should be expanded: sample param value
+      <command>echo include-raw-expand: should be expanded: sample macro param value
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>echo Should not be expanded: {param}
+      <command>echo sample-job-template: should not be expanded: {param}
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>echo Should be expanded: sample param value
+      <command>echo sample-job-template: should be expanded: sample project param value
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>echo Should not be expanded: {param}
+      <command>echo include-raw-verbatim: should not be expanded: {param}
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>echo Should be expanded: sample param value
+      <command>echo include-raw-expand: should be expanded: sample project param value
 </command>
     </hudson.tasks.Shell>
   </builders>

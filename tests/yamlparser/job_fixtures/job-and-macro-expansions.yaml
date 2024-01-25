@@ -9,16 +9,16 @@
     name: builder-without-params
     builders:
     - shell: |
-        echo Should not be expanded: {{param}}
+        echo builder-without-params: should not be expanded: {{param}}
     - shell: !include-raw-verbatim: job-and-macro-expansions.yaml.no-expand.inc
 
 - builder:
     name: builder-with-params
     builders:
     - shell: |
-        echo Should not be expanded: {{param}}
+        echo builder-with-params: should not be expanded: {{param}}
     - shell: |
-        echo Should be expanded: {param}
+        echo builder-with-params: should be expanded: {param}
     - shell: !include-raw-verbatim: job-and-macro-expansions.yaml.no-expand.inc
     - shell: !include-raw-expand: job-and-macro-expansions.yaml.expand.inc
 
@@ -27,7 +27,7 @@
     display-name: sample-job
     builders:
     - shell: |
-        echo Should not be expanded: {{param}}
+        echo sample-job: should not be expanded: {{param}}
     - shell: !include-raw-verbatim: job-and-macro-expansions.yaml.no-expand.inc
 
 - job-template:
@@ -36,16 +36,16 @@
     builders:
     - builder-without-params
     - builder-with-params:
-        param: sample param value
+        param: sample macro param value
     - shell: |
-        echo Should not be expanded: {{param}}
+        echo sample-job-template: should not be expanded: {{param}}
     - shell: |
-        echo Should be expanded: {param}
+        echo sample-job-template: should be expanded: {param}
     - shell: !include-raw-verbatim: job-and-macro-expansions.yaml.no-expand.inc
     - shell: !include-raw-expand: job-and-macro-expansions.yaml.expand.inc
 
 - project:
     name: sample-project
-    param: sample param value
+    param: sample project param value
     jobs:
     - sample-job-template

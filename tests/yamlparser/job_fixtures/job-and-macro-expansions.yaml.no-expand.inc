@@ -1,1 +1,1 @@
-echo Should not be expanded: {param}
+echo include-raw-verbatim: should not be expanded: {param}
