@@ -9,16 +9,50 @@
   <canRoam>true</canRoam>
   <properties/>
   <scm class="hudson.scm.NullSCM"/>
-  <builders/>
+  <builders>
+    <hudson.plugins.copyartifact.CopyArtifact>
+      <project>foo</project>
+      <filter>*.tar.gz</filter>
+      <target>/home/foo</target>
+      <flatten>true</flatten>
+      <optional>true</optional>
+      <doNotFingerprintArtifacts>true</doNotFingerprintArtifacts>
+      <parameters>PUBLISH=true</parameters>
+      <exclude/>
+      <resultVariableSuffix/>
+      <selector class="hudson.plugins.copyartifact.StatusBuildSelector">
+        <stable>false</stable>
+      </selector>
+    </hudson.plugins.copyartifact.CopyArtifact>
+    <hudson.plugins.copyartifact.CopyArtifact>
+      <project>bar</project>
+      <filter>*.tar.gz</filter>
+      <target>/home/foo</target>
+      <flatten>true</flatten>
+      <optional>true</optional>
+      <doNotFingerprintArtifacts>true</doNotFingerprintArtifacts>
+      <parameters>PUBLISH=true</parameters>
+      <exclude/>
+      <resultVariableSuffix/>
+      <selector class="hudson.plugins.copyartifact.SpecificBuildSelector">
+        <buildNumber>123</buildNumber>
+      </selector>
+    </hudson.plugins.copyartifact.CopyArtifact>
+    <hudson.plugins.copyartifact.CopyArtifact>
+      <project>baz</project>
+      <filter>*.tar.gz</filter>
+      <target>/home/foo</target>
+      <flatten>true</flatten>
+      <optional>true</optional>
+      <doNotFingerprintArtifacts>true</doNotFingerprintArtifacts>
+      <parameters>PUBLISH=true</parameters>
+      <exclude/>
+      <resultVariableSuffix/>
+      <selector class="hudson.plugins.copyartifact.TriggeredBuildSelector">
+        <fallbackToLastSuccessful>false</fallbackToLastSuccessful>
+      </selector>
+    </hudson.plugins.copyartifact.CopyArtifact>
+  </builders>
   <publishers/>
-  <buildWrappers>
-    <hudson.plugins.build__timeout.BuildTimeoutWrapper>
-      <timeoutMinutes>3</timeoutMinutes>
-      <failBuild>true</failBuild>
-      <writingDescription>false</writingDescription>
-      <timeoutPercentage>150</timeoutPercentage>
-      <timeoutMinutesElasticDefault>90</timeoutMinutesElasticDefault>
-      <timeoutType>elastic</timeoutType>
-    </hudson.plugins.build__timeout.BuildTimeoutWrapper>
-  </buildWrappers>
+  <buildWrappers/>
 </project>
