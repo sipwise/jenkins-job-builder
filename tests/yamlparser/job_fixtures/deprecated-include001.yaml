@@ -1,0 +1,4 @@
+- job:
+    name: test-job-1
+    builders:
+      !include deprecated-include001.yaml.inc
