@@ -75,7 +75,7 @@ Example:
 
     contents of include001.yaml.inc:
 
-    .. literalinclude:: /../../tests/yamlparser/job_fixtures/include001.yaml.inc
+    .. literalinclude:: /../../tests/loader/fixtures/include001.yaml.inc
 
 
 The tag ``!include-raw:`` will treat the given string or list of strings as
