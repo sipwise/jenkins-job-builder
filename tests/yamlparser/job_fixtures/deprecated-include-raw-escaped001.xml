@@ -13,7 +13,7 @@
     <hudson.tasks.Shell>
       <command>#!/bin/bash
 #
-# Sample script showing how the yaml include-raw tag can be used
+# Sample script showing how the yaml include-raw-escape tag can be used
 # to inline scripts that are maintained outside of the jenkins
 # job yaml configuration.
 
@@ -25,8 +25,8 @@ exit 0
     <hudson.tasks.Shell>
       <command>#!/bin/bash
 #
-# sample script to check that brackets aren't escaped
-# when using the include-raw application yaml tag
+# sample script to check that brackets aren't expanded
+# when using the include-raw-escape application yaml tag
 
 VAR1=&quot;hello&quot;
 VAR2=&quot;world&quot;

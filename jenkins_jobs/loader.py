@@ -12,6 +12,7 @@
 
 import io
 import logging
+import warnings
 from functools import partial
 
 from .errors import JenkinsJobsException
@@ -71,7 +72,10 @@ class Loader(LocLoader):
 
 
 def load_deprecated_yaml(tag, cls, loader, node):
-    logger.warning("Tag %r is deprecated, switch to using %r", tag, cls.yaml_tag)
+    warnings.warn(
+        f"Tag {tag!r} is deprecated, switch to using {cls.yaml_tag!r}",
+        UserWarning,
+    )
     return cls.from_yaml(loader, node)
 
 
