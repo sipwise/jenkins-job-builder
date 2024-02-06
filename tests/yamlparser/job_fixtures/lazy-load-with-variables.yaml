@@ -5,7 +5,7 @@
     name: 'sample-job-{version}'
     builders:
     - shell:
-        !include-raw: lazy-load-scripts/subst_vars_{version}.sh
+        !include-raw-expand: lazy-load-scripts/subst_vars_{version}.sh
 
 - project:
     name: sample-project

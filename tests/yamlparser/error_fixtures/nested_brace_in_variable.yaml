@@ -1,5 +1,5 @@
 # Check braces inside variable does not cause parser to fail.
-# This may happen when tag !include-raw: is used instead of !include-raw-escape:
+# This may happen when tag !include-raw-expand: is used instead of !include-raw-verbatim:
 # and there are nested blocks of groovy code inside included file.
 
 - job-template:

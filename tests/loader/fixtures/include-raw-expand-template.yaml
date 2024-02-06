@@ -1,0 +1,11 @@
+- job-template:
+    name: test-job-include-raw-{num}
+    builders:
+      - shell:
+          !include-raw-expand: include-raw-parameterized.sh
+
+- project:
+    name: test-job-template
+    num: 1
+    jobs:
+      - 'test-job-include-raw-{num}'

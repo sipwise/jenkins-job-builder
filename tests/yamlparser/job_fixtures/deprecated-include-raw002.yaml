@@ -1,0 +1,7 @@
+- job:
+    name: test-job-include-raw-1
+    builders:
+      - shell:
+          !include-raw: deprecated-include-raw002.hello-world.sh
+      - shell:
+          !include-raw: deprecated-include-raw002.vars.sh

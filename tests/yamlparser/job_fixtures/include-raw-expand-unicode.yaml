@@ -1,0 +1,12 @@
+- wrapper:
+    name: unicode-raw-include-wrapper
+    wrappers:
+      - pre-scm-buildstep:
+          buildsteps:
+            - shell:
+                !include-raw-expand: include-raw-expand-unicode-cool.sh
+
+- job:
+    name: test-unicode-raw-include-wrapper
+    wrappers:
+        - unicode-raw-include-wrapper

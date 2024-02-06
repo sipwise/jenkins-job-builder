@@ -1,0 +1,13 @@
+- job-template:
+    name: test-include-raw-verbatim-job-{num}
+    builders:
+      - shell:
+          !include-raw-verbatim: include-raw-hello-world.sh
+      - shell:
+          !include-raw-verbatim: include-raw-vars.sh
+
+- project:
+    name: test-job-template-1
+    num: 1
+    jobs:
+      - 'test-include-raw-verbatim-job-{num}'

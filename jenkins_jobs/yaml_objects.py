@@ -78,34 +78,34 @@ Example:
     .. literalinclude:: /../../tests/loader/fixtures/include001.yaml.inc
 
 
-The tag ``!include-raw:`` will treat the given string or list of strings as
-filenames to be opened as one or more data blob, which should be read into
+The tag ``!include-raw-expand:`` will treat the given string or list of strings
+as filenames to be opened as one or more data blob, which should be read into
 the calling yaml construct without any further parsing. Any data in a file
 included through this tag, will be treated as string data.
 
 It will expand variables inside the file. If your file contains curly braces,
-you should double them. Or, you can use tag ``!include-raw-escape``, which
+you should double them. Or, you can use tag ``!include-raw-verbatim:``, which
 does not substitute variables.
 
 Examples:
 
     .. literalinclude::
-        /../../tests/loader/fixtures/include-raw-escaped001-template.yaml
+        /../../tests/loader/fixtures/include-raw-verbatim-template.yaml
 
-    contents of include-raw001-hello-world.sh:
-
-        .. literalinclude::
-            /../../tests/loader/fixtures/include-raw001-hello-world.sh
-
-    contents of include-raw001-vars.sh:
+    contents of include-raw-hello-world.sh:
 
         .. literalinclude::
-            /../../tests/loader/fixtures/include-raw001-vars.sh
+            /../../tests/loader/fixtures/include-raw-hello-world.sh
 
-    using a list of files:
+    contents of include-raw-vars.sh:
+
+        .. literalinclude::
+            /../../tests/loader/fixtures/include-raw-vars.sh
+
+    Using a list of files:
 
     .. literalinclude::
-        /../../tests/loader/fixtures/include-raw-escaped-multi001.yaml
+        /../../tests/loader/fixtures/include-raw-verbatim-multi-template.yaml
 
 
 For all the multi file includes, the files are simply appended using a newline
@@ -400,8 +400,8 @@ class IncludeRawBase(IncludeBaseObject):
         return "\n".join(self._expand_path_list(self._path_list, params))
 
 
-class IncludeRaw(IncludeRawBase):
-    yaml_tag = "!include-raw:"
+class IncludeRawExpand(IncludeRawBase):
+    yaml_tag = "!include-raw-expand:"
 
     def _expand_path(self, rel_path_template, pos, params):
         rel_path = self._formatter.format(rel_path_template, **params)
@@ -413,8 +413,8 @@ class IncludeRaw(IncludeRawBase):
             raise x.with_context(f"In included file {str(full_path)!r}", pos=self._pos)
 
 
-class IncludeRawEscape(IncludeRawBase):
-    yaml_tag = "!include-raw-escape:"
+class IncludeRawVerbatim(IncludeRawBase):
+    yaml_tag = "!include-raw-verbatim:"
 
     def _expand_path(self, rel_path_template, pos, params):
         rel_path = self._formatter.format(rel_path_template, **params)

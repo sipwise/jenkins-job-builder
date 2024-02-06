@@ -1,0 +1,7 @@
+- job:
+    name: test-job-include-raw-verbatim-multi-001
+    builders:
+      - shell:
+          !include-raw-verbatim:
+              - include-raw-hello-world.sh
+              - include-raw-vars.sh

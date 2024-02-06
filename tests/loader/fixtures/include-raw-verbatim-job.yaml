@@ -1,0 +1,8 @@
+# Using !include-raw-verbatim: inside job works the same way as inside job template.
+- job:
+    name: test-include-raw-verbatim-job
+    builders:
+      - shell:
+          !include-raw-verbatim: include-raw-hello-world.sh
+      - shell:
+          !include-raw-verbatim: include-raw-vars.sh

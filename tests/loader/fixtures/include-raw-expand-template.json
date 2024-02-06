@@ -1,0 +1,11 @@
+[
+    {
+        "builders": [
+            {
+                "shell": "#!/bin/bash\n#\n# sample script to check that variables are expanded\n# when using the !include-raw-expand: application yaml tag\n\nVAR1=\"1\"\nVAR2=\"world\"\nVAR3=\"${VAR1} ${VAR2}\"\n\n[[ -n \"${VAR3}\" ]] && {\n    # this next section is executed as one\n    echo \"${VAR3}\"\n    exit 0\n}\n"
+            }
+        ],
+        "description": "<!-- Managed by Jenkins Job Builder -->",
+        "name": "test-job-include-raw-1"
+    }
+]

@@ -1,0 +1,9 @@
+- job-template:
+    name: sample-job
+    builders:
+      - shell: !include-raw-expand: missing_param_in_include_raw_expand.inc
+
+- project:
+    name: sample-project
+    jobs:
+      - sample-job

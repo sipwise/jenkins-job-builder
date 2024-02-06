@@ -1,10 +1,10 @@
 # https://storyboard.openstack.org/#!/story/2007227
-# with Python 3 there is TypeError when include-raw with property replacement is used in defaults
+# with Python 3 there is TypeError when !include-raw-expand: with property replacement is used in defaults
 
 - defaults:
     name: 'test-defaults'
     prop: 'regression-2007227.description'
-    description: !include-raw:
+    description: !include-raw-expand:
     - '{prop}.html'
 
 - project:

@@ -10,7 +10,7 @@
     builders:
     - shell: |
         echo Should not be expanded: {{param}}
-    - shell: !include-raw-escape: job-and-macro-expansions.yaml.no-expand.inc
+    - shell: !include-raw-verbatim: job-and-macro-expansions.yaml.no-expand.inc
 
 - builder:
     name: builder-with-params
@@ -19,8 +19,8 @@
         echo Should not be expanded: {{param}}
     - shell: |
         echo Should be expanded: {param}
-    - shell: !include-raw-escape: job-and-macro-expansions.yaml.no-expand.inc
-    - shell: !include-raw: job-and-macro-expansions.yaml.expand.inc
+    - shell: !include-raw-verbatim: job-and-macro-expansions.yaml.no-expand.inc
+    - shell: !include-raw-expand: job-and-macro-expansions.yaml.expand.inc
 
 - job:
     name: sample-job
@@ -28,7 +28,7 @@
     builders:
     - shell: |
         echo Should not be expanded: {{param}}
-    - shell: !include-raw-escape: job-and-macro-expansions.yaml.no-expand.inc
+    - shell: !include-raw-verbatim: job-and-macro-expansions.yaml.no-expand.inc
 
 - job-template:
     name: sample-job-template
@@ -41,8 +41,8 @@
         echo Should not be expanded: {{param}}
     - shell: |
         echo Should be expanded: {param}
-    - shell: !include-raw-escape: job-and-macro-expansions.yaml.no-expand.inc
-    - shell: !include-raw: job-and-macro-expansions.yaml.expand.inc
+    - shell: !include-raw-verbatim: job-and-macro-expansions.yaml.no-expand.inc
+    - shell: !include-raw-expand: job-and-macro-expansions.yaml.expand.inc
 
 - project:
     name: sample-project

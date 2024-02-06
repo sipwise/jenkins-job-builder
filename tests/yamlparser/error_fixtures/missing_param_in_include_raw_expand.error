@@ -1,0 +1,10 @@
+missing_param_in_include_raw_expand.yaml:6:3: In project 'sample-project'
+    - project:
+      ^
+missing_param_in_include_raw_expand.yaml:1:3: In job template 'sample-job'
+    - job-template:
+      ^
+missing_param_in_include_raw_expand.yaml:4:16: In included file 'missing_param_in_include_raw_expand.inc'
+          - shell: !include-raw-expand: missing_param_in_include ...
+                   ^
+While formatting string '#!/bin/bash\necho "This one is {missing}!"\n...': Missing parameter: 'missing'

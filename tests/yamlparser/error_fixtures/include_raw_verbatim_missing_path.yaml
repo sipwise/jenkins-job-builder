@@ -1,0 +1,10 @@
+- job-template:
+    name: sample-job
+    builders:
+      - shell:
+          !include-raw-verbatim: missing-file.sh
+
+- project:
+    name: sample-project
+    jobs:
+      - sample-job

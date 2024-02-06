@@ -23,8 +23,8 @@ from .yaml_objects import (
     YamlInclude,
     YamlListJoin,
     IncludeJinja2,
-    IncludeRaw,
-    IncludeRawEscape,
+    IncludeRawExpand,
+    IncludeRawVerbatim,
 )
 
 
@@ -92,14 +92,16 @@ yaml_classes_list = [
     YamlInclude,
     YamlListJoin,
     IncludeJinja2,
-    IncludeRaw,
-    IncludeRawEscape,
+    IncludeRawExpand,
+    IncludeRawVerbatim,
 ]
 
 deprecated_yaml_tags = [
     ("!include", YamlInclude),
-    ("!include-raw", IncludeRaw),
-    ("!include-raw-escape", IncludeRawEscape),
+    ("!include-raw", IncludeRawExpand),
+    ("!include-raw:", IncludeRawExpand),
+    ("!include-raw-escape", IncludeRawVerbatim),
+    ("!include-raw-escape:", IncludeRawVerbatim),
 ]
 
 

@@ -1,0 +1,13 @@
+# !include-raw-verbatim: tag in a variable.
+
+- job-template:
+    name: sample-job
+    var: !include-raw-verbatim: tag_in_parameter-include-raw-verbatim.inc.txt
+    builders:
+      - shell: |
+          echo {var}
+
+- project:
+    name: sample-project
+    jobs:
+      - sample-job

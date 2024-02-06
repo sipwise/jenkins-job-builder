@@ -5,7 +5,7 @@
     name: sample-job-1
     description: sample-job-1
     builders:
-    - shell: !include-raw-escape: sample_file.sh
+    - shell: !include-raw-verbatim: sample_file.sh
 
 - project:
     name: sample-project-1

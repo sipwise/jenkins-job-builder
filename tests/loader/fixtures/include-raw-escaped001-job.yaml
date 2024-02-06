@@ -1,8 +1,0 @@
-# Using include-raw-escape inside job works the same way as inside job template.
-- job:
-    name: test-job-include-raw
-    builders:
-      - shell:
-          !include-raw-escape: include-raw001-hello-world.sh
-      - shell:
-          !include-raw-escape: include-raw001-vars.sh
