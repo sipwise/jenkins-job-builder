@@ -13,6 +13,7 @@ Contents
    execution
    definition
    extending
+   changelog
 
 Indices and tables
 ==================
