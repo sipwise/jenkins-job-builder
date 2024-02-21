@@ -239,9 +239,7 @@ class ModuleRegistry(object):
         # Look for a component function defined in an entry point
         eps = self._entry_points_cache.get(component_list_type)
         if eps is None:
-            eps = self._load_eps(
-                component_list_type, component_type, entry_point, eps, name
-            )
+            eps = self._load_eps(component_list_type, component_type, entry_point, name)
 
         macro_dict = self.macros.get(component_type, {})
         macro = macro_dict.get(name)
@@ -317,7 +315,7 @@ class ModuleRegistry(object):
                 job_data=job_data,
             )
 
-    def _load_eps(self, component_list_type, component_type, entry_point, eps, name):
+    def _load_eps(self, component_list_type, component_type, entry_point, name):
         logging.debug("Caching entrypoints for %s" % component_list_type)
         module_eps = []
         # auto build entry points by inferring from base component_types
