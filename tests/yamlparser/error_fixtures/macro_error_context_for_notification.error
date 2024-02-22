@@ -10,7 +10,7 @@ macro_error_context_for_notification.yaml:9:3: In job template 'sample-job'
 macro_error_context_for_notification.yaml:13:7: While expanding notification macro call 'sample-notification'
         - sample-notification:
           ^
-macro_error_context_for_notification.yaml:3:3: While expanding macro 'sample-notification'
+macro_error_context_for_notification.yaml:3:3: While expanding notification macro 'sample-notification'
     - notification:
       ^
 macro_error_context_for_notification.yaml:7:15: While formatting string '{missing_parameter}': Missing parameter: 'missing_parameter'

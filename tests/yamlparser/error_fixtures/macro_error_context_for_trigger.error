@@ -10,7 +10,7 @@ macro_error_context_for_trigger.yaml:9:3: In job template 'sample-job'
 macro_error_context_for_trigger.yaml:12:7: While expanding trigger macro call 'sample-trigger'
         - sample-trigger:
           ^
-macro_error_context_for_trigger.yaml:3:3: While expanding macro 'sample-trigger'
+macro_error_context_for_trigger.yaml:3:3: While expanding trigger macro 'sample-trigger'
     - trigger:
       ^
 macro_error_context_for_trigger.yaml:7:16: While formatting string '{missing_parameter}': Missing parameter: 'missing_parameter'

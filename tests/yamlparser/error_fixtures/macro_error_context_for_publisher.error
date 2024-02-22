@@ -10,7 +10,7 @@ macro_error_context_for_publisher.yaml:9:3: In job template 'sample-job'
 macro_error_context_for_publisher.yaml:12:7: While expanding publisher macro call 'sample-publisher'
         - sample-publisher:
           ^
-macro_error_context_for_publisher.yaml:3:3: While expanding macro 'sample-publisher'
+macro_error_context_for_publisher.yaml:3:3: While expanding publisher macro 'sample-publisher'
     - publisher:
       ^
 macro_error_context_for_publisher.yaml:7:21: While formatting string '{missing_parameter}': Missing parameter: 'missing_parameter'

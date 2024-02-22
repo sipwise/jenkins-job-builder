@@ -10,7 +10,7 @@ macro_error_context_for_wrapper.yaml:9:3: In job template 'sample-job'
 macro_error_context_for_wrapper.yaml:12:7: While expanding wrapper macro call 'sample-wrapper'
         - sample-wrapper:
           ^
-macro_error_context_for_wrapper.yaml:3:3: While expanding macro 'sample-wrapper'
+macro_error_context_for_wrapper.yaml:3:3: While expanding wrapper macro 'sample-wrapper'
     - wrapper:
       ^
 macro_error_context_for_wrapper.yaml:7:19: While formatting string '{missing_parameter}': Missing parameter: 'missing_parameter'

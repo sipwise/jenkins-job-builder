@@ -10,7 +10,7 @@ missing_param_jinja2_macro_direct.yaml:12:3: In job template 'sample-job'
 missing_param_jinja2_macro_direct.yaml:15:9: While expanding builder macro call 'sample-builder'
           - sample-builder:
             ^
-missing_param_jinja2_macro_direct.yaml:6:3: While expanding macro 'sample-builder'
+missing_param_jinja2_macro_direct.yaml:6:3: While expanding builder macro 'sample-builder'
     - builder:
       ^
 missing_param_jinja2_macro_direct.yaml:9:16: While formatting jinja2 template 'echo {{ missing_param }} {{ other_param ...'
