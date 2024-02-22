@@ -10,7 +10,7 @@ macro_error_context_for_parameter.yaml:10:3: In job template 'sample-job'
 macro_error_context_for_parameter.yaml:13:7: While expanding parameter macro call 'sample-parameter'
         - sample-parameter:
           ^
-macro_error_context_for_parameter.yaml:3:3: While expanding macro 'sample-parameter'
+macro_error_context_for_parameter.yaml:3:3: While expanding parameter macro 'sample-parameter'
     - parameter:
       ^
 macro_error_context_for_parameter.yaml:8:19: While formatting string '{missing_parameter}': Missing parameter: 'missing_parameter'

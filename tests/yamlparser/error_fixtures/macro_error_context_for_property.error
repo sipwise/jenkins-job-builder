@@ -10,7 +10,7 @@ macro_error_context_for_property.yaml:9:3: In job template 'sample-job'
 macro_error_context_for_property.yaml:12:7: While expanding property macro call 'sample-property'
         - sample-property:
           ^
-macro_error_context_for_property.yaml:3:3: While expanding macro 'sample-property'
+macro_error_context_for_property.yaml:3:3: While expanding property macro 'sample-property'
     - property:
       ^
 macro_error_context_for_property.yaml:7:28: While formatting string '{missing_parameter}': Missing parameter: 'missing_parameter'

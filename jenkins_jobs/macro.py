@@ -81,7 +81,7 @@ class Macro(ElementBase):
         roots.assign(roots.macros[type_name], name, macro, "macro")
 
     def __str__(self):
-        return f"macro {self.name!r}"
+        return f"{self._type_name} macro {self.name!r}"
 
     def dispatch_elements(self, registry, xml_parent, component_data, job_data, params):
         defaults = self._pick_defaults(self.defaults_name)
