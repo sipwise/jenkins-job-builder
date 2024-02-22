@@ -13,6 +13,10 @@
 from dataclasses import dataclass
 from functools import partial
 
+from .root_base import ElementBase
+from .expander import Expander, StringsOnlyExpander
+from .yaml_objects import BaseYamlObject
+from .loc_loader import LocDict
 from .errors import JenkinsJobsException
 from .position import Pos
 
@@ -33,8 +37,12 @@ macro_specs = [
 
 
 @dataclass
-class Macro:
+class Macro(ElementBase):
+    _expander: Expander
+    _str_expander: StringsOnlyExpander
+    _type_name: str
     name: str
+    defaults_name: str
     pos: Pos
     elements: list
 
@@ -50,15 +58,60 @@ class Macro:
     ):
         d = data.copy()
         name = d.pop_required_loc_string("name")
+        defaults = d.pop_loc_string("defaults", "global")
         elements = d.pop_required_element(elements_name)
+        expander = Expander(config)
+        str_expander = StringsOnlyExpander(config)
         if d:
             example_key = next(iter(d.keys()))
             raise JenkinsJobsException(
                 f"In {type_name} macro {name!r}: unexpected elements: {','.join(d.keys())}",
                 pos=data.key_pos.get(example_key),
             )
-        macro = cls(name, pos, elements or [])
+        macro = cls(
+            roots.defaults,
+            expander,
+            str_expander,
+            type_name,
+            name,
+            defaults,
+            pos,
+            elements or [],
+        )
         roots.assign(roots.macros[type_name], name, macro, "macro")
+
+    def __str__(self):
+        return f"macro {self.name!r}"
+
+    def dispatch_elements(self, registry, xml_parent, component_data, job_data, params):
+        defaults = self._pick_defaults(self.defaults_name)
+        full_params = LocDict.merge(
+            defaults.params,
+            params,
+        )
+        element_list = self.elements
+        if isinstance(element_list, BaseYamlObject):
+            # Expand !j2-yaml tag if it is right below macro body.
+            # But do not expand yaml tags inside it - they will be expanded later.
+            element_list = element_list.expand(self._str_expander, full_params)
+        for element in element_list:
+            try:
+                expanded_element = self._expander.expand(element, full_params)
+            except JenkinsJobsException as x:
+                raise x.with_context(
+                    f"While expanding {self}",
+                    pos=self.pos,
+                )
+            # Pass component_data in as template data to this function
+            # so that if the macro is invoked with arguments,
+            # the arguments are interpolated into the real defn.
+            registry.dispatch(
+                self._type_name,
+                xml_parent,
+                expanded_element,
+                component_data,
+                job_data=job_data,
+            )
 
 
 macro_adders = {

@@ -9,6 +9,11 @@ Features added
 
 * Update TAP publisher plugin (by Kienan Stewart).
 * Add tags: ``!include-raw-verbatim:`` and ``!include-raw-expand:``. Tags ``!include-raw:`` and ``!include-raw-escape:`` are now deprecated.
+* Macros can now use parameters specified in defaults, the same way as job-templates.
+  See this examples:
+
+  * `macro-uses-global-defaults.yaml <https://review.opendev.org/c/jjb/jenkins-job-builder/+/910877/1/tests/yamlparser/job_fixtures/macro-uses-global-defaults.yaml>`_
+  * `macro-uses-custom-defaults.yaml <https://review.opendev.org/c/jjb/jenkins-job-builder/+/910877/1/tests/yamlparser/job_fixtures/macro-uses-custom-defaults.yaml>`_
 
 .. note::
    After moving to 6.1.0 release, to remove deprecation warnings make these adjustments to your JJB sources:
