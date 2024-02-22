@@ -1,4 +1,4 @@
-# Macros do not use custom defaults.
+# Macros use custom defaults.
 
 - defaults:
     name: custom
@@ -6,21 +6,20 @@
 
 - builder:
     name: builder-without-params
-    # defaults: custom
+    defaults: custom
     builders:
     - shell: |
-        echo "builder-without-params: Fails when trying to expand: {global_param}"
-    # Also fails when trying to expand:
+        echo "builder-without-params: Should be expanded: {global_param}"
     - shell: !include-raw-expand: macro-uses-custom-defaults.yaml.inc
 
 - builder:
     name: builder-with-params
-    # defaults: custom
+    defaults: custom
     builders:
     - shell: |
         echo "builder-with-params: Should be expanded: {param}"
     - shell: |
-        echo "builder-with-params: Fails when trying to expand: {global_param}"
+        echo "builder-with-params: Should be expanded: {global_param}"
     - shell: !include-raw-expand: macro-uses-custom-defaults.yaml.inc
 
 - job-template:

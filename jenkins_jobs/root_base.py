@@ -40,10 +40,34 @@ class JobViewData:
 
 
 @dataclass
-class RootBase:
-    """Base class for YAML root elements - job, view or template"""
+class ElementBase:
+    """Base class for YAML elements - job, view, template, or macro"""
 
     _defaults: dict
+
+    @property
+    def title(self):
+        return str(self).capitalize()
+
+    def _pick_defaults(self, name):
+        try:
+            defaults = self._defaults[name]
+        except KeyError:
+            if name == "global":
+                return Defaults.empty()
+            raise JenkinsJobsException(
+                f"{self.title} wants defaults {name!r}, but it was never defined",
+                pos=name.pos,
+            )
+        if name == "global":
+            return defaults
+        return defaults.merged_with_global(self._pick_defaults("global"))
+
+
+@dataclass
+class RootBase(ElementBase):
+    """Base class for YAML root elements - job, view or template"""
+
     _expander: Expander
     _keep_descriptions: bool
     _id: str
@@ -62,10 +86,6 @@ class RootBase:
             return self.name
 
     @property
-    def title(self):
-        return str(self).capitalize()
-
-    @property
     def contents(self):
         contents = self._contents.copy()
         if self.description is not None:
@@ -79,21 +99,6 @@ class RootBase:
             amended_description = (description or "") + MAGIC_MANAGE_STRING
             expanded_contents["description"] = amended_description
         return expanded_contents
-
-    def _pick_defaults(self, name):
-        try:
-            defaults = self._defaults[name]
-        except KeyError:
-            if name == "global":
-                return Defaults.empty()
-            raise JenkinsJobsException(
-                f"{self.title} wants defaults {self.defaults_name!r}"
-                " but it was never defined",
-                pos=name.pos,
-            )
-        if name == "global":
-            return defaults
-        return defaults.merged_with_global(self._pick_defaults("global"))
 
 
 class NonTemplateRootMixin:

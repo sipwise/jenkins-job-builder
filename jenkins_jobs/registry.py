@@ -27,8 +27,6 @@ from six import PY2
 
 from jenkins.plugins import PluginVersion
 from jenkins_jobs.errors import JenkinsJobsException
-from jenkins_jobs.expander import Expander, StringsOnlyExpander
-from jenkins_jobs.yaml_objects import BaseYamlObject
 
 __all__ = ["ModuleRegistry"]
 
@@ -48,8 +46,6 @@ class ModuleRegistry(object):
         self.jjb_config = jjb_config
         self.masked_warned = {}
         self._macros = {}
-        self._expander = Expander(jjb_config)
-        self._str_expander = StringsOnlyExpander(jjb_config)
 
         if plugins_list is None:
             self._plugin_version = {}
@@ -290,30 +286,8 @@ class ModuleRegistry(object):
             )
         if component_data is None:
             component_data = {}
-        expander_params = {**component_data, **(job_data or {})}
-        elements = macro.elements
-        if isinstance(elements, BaseYamlObject):
-            # Expand !j2-yaml tag if it is right below macro body.
-            # But do not expand yaml tags inside it - they will be expanded later.
-            elements = elements.expand(self._str_expander, expander_params)
-        for b in elements:
-            try:
-                element = self._expander.expand(b, expander_params)
-            except JenkinsJobsException as x:
-                raise x.with_context(
-                    f"While expanding macro {name!r}",
-                    pos=macro.pos,
-                )
-            # Pass component_data in as template data to this function
-            # so that if the macro is invoked with arguments,
-            # the arguments are interpolated into the real defn.
-            self.dispatch(
-                component_type,
-                xml_parent,
-                element,
-                component_data,
-                job_data=job_data,
-            )
+        params = {**component_data, **(job_data or {})}
+        macro.dispatch_elements(self, xml_parent, component_data, job_data, params)
 
     def _load_eps(self, component_list_type, component_type, entry_point, name):
         logging.debug("Caching entrypoints for %s" % component_list_type)
