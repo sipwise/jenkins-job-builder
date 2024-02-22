@@ -1,4 +1,4 @@
-# Macros do not use global defaults.
+# Macros use global defaults.
 
 - defaults:
     name: global
@@ -8,8 +8,7 @@
     name: builder-without-params
     builders:
     - shell: |
-        echo "builder-without-params: Fails when trying to expand: {global_param}"
-    # Also fails when trying to expand:
+        echo "builder-without-params: Should be expanded: {global_param}"
     - shell: !include-raw-expand: macro-uses-global-defaults.yaml.inc
 
 - builder:
@@ -18,7 +17,7 @@
     - shell: |
         echo "builder-with-params: Should be expanded: {param}"
     - shell: |
-        echo "builder-with-params: Fails when trying to expand: {global_param}"
+        echo "builder-with-params: Should be expanded: {global_param}"
     - shell: !include-raw-expand: macro-uses-global-defaults.yaml.inc
 
 - job-template:
