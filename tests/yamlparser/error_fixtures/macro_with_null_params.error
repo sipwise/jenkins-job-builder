@@ -10,7 +10,7 @@ macro_with_null_params.yaml:8:3: In job template 'sample-job'
 macro_with_null_params.yaml:12:9: While expanding builder macro call 'sample-macro'
           - sample-macro:
             ^
-macro_with_null_params.yaml:1:3: While expanding macro 'sample-macro'
+macro_with_null_params.yaml:1:3: While expanding builder macro 'sample-macro'
     - builder:
       ^
 macro_with_null_params.yaml:6:17: While formatting string 'echo {hello}': Missing parameter: 'hello'

@@ -10,6 +10,6 @@ missing_defaults_at_macro.yaml:7:3: In job template 'sample-job'
 missing_defaults_at_macro.yaml:10:7: While expanding builder macro call 'sample-builder'
         - sample-builder
           ^
-missing_defaults_at_macro.yaml:3:15: Macro 'sample-builder' wants defaults 'missing-defaults', but it was never defined
+missing_defaults_at_macro.yaml:3:15: Builder macro 'sample-builder' wants defaults 'missing-defaults', but it was never defined
         defaults: missing-defaults
                   ^

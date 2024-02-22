@@ -10,7 +10,7 @@ macro_error_context_for_pipeline_scm.yaml:9:3: In job template 'sample-job'
 macro_error_context_for_pipeline_scm.yaml:14:9: While expanding scm macro call 'sample-scm'
           - sample-scm:
             ^
-macro_error_context_for_pipeline_scm.yaml:3:3: While expanding macro 'sample-scm'
+macro_error_context_for_pipeline_scm.yaml:3:3: While expanding scm macro 'sample-scm'
     - scm:
       ^
 macro_error_context_for_pipeline_scm.yaml:7:15: While formatting string '{missing_parameter}': Missing parameter: 'missing_parameter'

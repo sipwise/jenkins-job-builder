@@ -10,7 +10,7 @@ macro_error_context_for_builder.yaml:8:3: In job template 'sample-job'
 macro_error_context_for_builder.yaml:11:7: While expanding builder macro call 'sample-builder'
         - sample-builder:
           ^
-macro_error_context_for_builder.yaml:3:3: While expanding macro 'sample-builder'
+macro_error_context_for_builder.yaml:3:3: While expanding builder macro 'sample-builder'
     - builder:
       ^
 macro_error_context_for_builder.yaml:6:15: While formatting string 'echo {missing_parameter}': Missing parameter: 'missing_parameter'
