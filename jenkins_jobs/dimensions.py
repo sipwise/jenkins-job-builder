@@ -38,7 +38,7 @@ def _decode_axis_value(axis, value, key_pos, value_pos):
             raise JenkinsJobsException(
                 f"Expected a value or a dict with single element, but got: {item!r}",
                 pos=value.value_pos[idx],
-                ctx=[Context(f"In pamareter {axis!r} definition", key_pos)],
+                ctx=[Context(f"In parameter {axis!r} definition", key_pos)],
             )
         value, p = next(iter(item.items()))
         yield LocDict.merge(
