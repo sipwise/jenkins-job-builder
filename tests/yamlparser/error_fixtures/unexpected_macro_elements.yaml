@@ -1,4 +1,0 @@
-- builder:
-    name: sample-builder
-    something_unexpected: sample-value
-    builders: []

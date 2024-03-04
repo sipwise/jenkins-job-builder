@@ -34,17 +34,17 @@ class ViewBase(RootBase):
         view_type = d.pop_loc_string("view-type", "list")
         contents, params = split_contents_params(d, view_contents_keys)
         return cls(
-            roots.defaults,
-            Expander(config),
-            keep_descriptions,
-            id,
-            name,
-            pos,
-            description,
-            defaults,
-            params,
-            contents,
-            view_type,
+            _defaults=roots.defaults,
+            _expander=Expander(config),
+            _keep_descriptions=keep_descriptions,
+            _id=id,
+            name=name,
+            pos=pos,
+            description=description,
+            defaults_name=defaults,
+            params=params,
+            _contents=contents,
+            view_type=view_type,
         )
 
     @property

@@ -15,6 +15,10 @@ Features added
   * `macro-uses-global-defaults.yaml <https://review.opendev.org/c/jjb/jenkins-job-builder/+/910877/4/tests/yamlparser/job_fixtures/macro-uses-global-defaults.yaml>`_
   * `macro-uses-custom-defaults.yaml <https://review.opendev.org/c/jjb/jenkins-job-builder/+/910877/4/tests/yamlparser/job_fixtures/macro-uses-custom-defaults.yaml>`_
 
+* Macros can now define default parameters in their body the same way as jobs, job-templates and projects.
+  See this example:
+  `macro-parameter-precenence.yaml <https://review.opendev.org/c/jjb/jenkins-job-builder/+/910880/1/tests/yamlparser/job_fixtures/macro-parameter-precenence.yaml>`_
+
 .. note::
    After moving to 6.1.0 release, to remove deprecation warnings make these adjustments to your JJB sources:
 
