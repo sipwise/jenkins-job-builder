@@ -35,18 +35,18 @@ class JobBase(RootBase):
         folder = d.pop_loc_string("folder", None)
         contents, params = split_contents_params(d, job_contents_keys)
         return cls(
-            roots.defaults,
-            Expander(config),
-            keep_descriptions,
-            id,
-            name,
-            pos,
-            description,
-            defaults,
-            params,
-            contents,
-            project_type,
-            folder,
+            _defaults=roots.defaults,
+            _expander=Expander(config),
+            _keep_descriptions=keep_descriptions,
+            _id=id,
+            name=name,
+            pos=pos,
+            description=description,
+            defaults_name=defaults,
+            params=params,
+            _contents=contents,
+            project_type=project_type,
+            folder=folder,
         )
 
     @property

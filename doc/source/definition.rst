@@ -131,6 +131,8 @@ job-template.
    top of the file. Just once. This will be the value that the job takes on if
    it is not passed in by a project using the template.
 
+   And, you can do the same in `Macro`_ definitions.
+
 #. Using {var|default}
 
    In this method we can define the default with the definition of the
@@ -468,8 +470,8 @@ Defaults
 
 Defaults collect job attributes (including actions) and will supply
 those values when the job is created, unless superseded by a value in
-the 'Job'_ definition.  If a set of Defaults is specified with the
-name ``global``, that will be used by all `Job`_ (and `Job Template`_)
+the `Job`_ definition.  If a set of Defaults is specified with the
+name ``global``, that will be used by all `Job`_, `Job Template`_ and `Macro`_
 definitions unless they specify a different Default object with the
 ``defaults`` attribute.  For example::
 
@@ -485,8 +487,8 @@ You can define variables that will be realized in a `Job Template`.
 
 Would create jobs ``build-i386`` and ``build-amd64``.
 
-You can also reference a variable ``{template-name}`` in any value and it will
-be subtitued by the name of the current job template being processed.
+In job templates, you can also reference a variable ``{template-name}`` in any value
+and it will be subtitued by the name of the current job template being processed.
 
 .. _variable_references:
 

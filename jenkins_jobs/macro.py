@@ -60,23 +60,19 @@ class Macro(ElementBase):
         name = d.pop_required_loc_string("name")
         defaults = d.pop_loc_string("defaults", "global")
         elements = d.pop_required_element(elements_name)
+        params = d
         expander = Expander(config)
         str_expander = StringsOnlyExpander(config)
-        if d:
-            example_key = next(iter(d.keys()))
-            raise JenkinsJobsException(
-                f"In {type_name} macro {name!r}: unexpected elements: {','.join(d.keys())}",
-                pos=data.key_pos.get(example_key),
-            )
         macro = cls(
-            roots.defaults,
-            expander,
-            str_expander,
-            type_name,
-            name,
-            defaults,
-            pos,
-            elements or [],
+            _defaults=roots.defaults,
+            _expander=expander,
+            _str_expander=str_expander,
+            _type_name=type_name,
+            name=name,
+            defaults_name=defaults,
+            pos=pos,
+            params=params,
+            elements=elements or [],
         )
         roots.assign(roots.macros[type_name], name, macro, "macro")
 
@@ -87,6 +83,7 @@ class Macro(ElementBase):
         defaults = self._pick_defaults(self.defaults_name)
         full_params = LocDict.merge(
             defaults.params,
+            self.params,
             params,
         )
         element_list = self.elements

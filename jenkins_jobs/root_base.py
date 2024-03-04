@@ -44,6 +44,7 @@ class ElementBase:
     """Base class for YAML elements - job, view, template, or macro"""
 
     _defaults: dict
+    params: dict
 
     @property
     def title(self):
@@ -75,7 +76,6 @@ class RootBase(ElementBase):
     pos: Pos
     description: str
     defaults_name: str
-    params: dict
     _contents: dict
 
     @property
