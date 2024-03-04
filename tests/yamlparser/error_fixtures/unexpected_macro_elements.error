@@ -1,3 +1,0 @@
-unexpected_macro_elements.yaml:3:5: In builder macro 'sample-builder': unexpected elements: something_unexpected
-        something_unexpected: sample-value
-        ^
