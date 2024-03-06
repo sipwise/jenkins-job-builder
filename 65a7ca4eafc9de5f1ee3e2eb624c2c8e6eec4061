@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "994bcb17_5ab0b869",
+        "filename": "tests/yamlparser/error_fixtures/unexpected_macro_elements.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 31275
+      },
+      "writtenOn": "2024-03-06T15:47:28Z",
+      "side": 0,
+      "message": "I can\u0027t get why have you removed this test. What\u0027s happening now in this case?",
+      "revId": "65a7ca4eafc9de5f1ee3e2eb624c2c8e6eec4061",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
