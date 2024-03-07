@@ -16,6 +16,24 @@
       "message": "I can\u0027t get why have you removed this test. What\u0027s happening now in this case?",
       "revId": "65a7ca4eafc9de5f1ee3e2eb624c2c8e6eec4061",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2d3e168f_50727beb",
+        "filename": "tests/yamlparser/error_fixtures/unexpected_macro_elements.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 34567
+      },
+      "writtenOn": "2024-03-07T17:36:03Z",
+      "side": 0,
+      "message": "Because now there are no unexpected elements. All those are default parameters, the same way as in job templates.\nSee for example test added in this review:\nhttps://review.opendev.org/c/jjb/jenkins-job-builder/+/910880/2/tests/yamlparser/job_fixtures/macro-parameter-precenence.yaml",
+      "parentUuid": "994bcb17_5ab0b869",
+      "revId": "65a7ca4eafc9de5f1ee3e2eb624c2c8e6eec4061",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
     }
   ]
 }
