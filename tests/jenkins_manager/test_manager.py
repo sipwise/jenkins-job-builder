@@ -50,7 +50,7 @@ def test_plugins_list_from_jenkins(mocker, jjb_config):
     assert list(builder.plugins_list) == list(_plugins_info.values())
 
 
-def test_delete_managed(mocker, jjb_config):
+def test_delete_old_managed_jobs(mocker, jjb_config):
     jjb_config.builder["plugins_info"] = None
     builder = jenkins_jobs.builder.JenkinsManager(jjb_config)
 
@@ -58,18 +58,40 @@ def test_delete_managed(mocker, jjb_config):
         "jenkins_jobs.builder.JenkinsManager",
         get_jobs=mock.DEFAULT,
         is_job=mock.DEFAULT,
-        is_managed=mock.DEFAULT,
+        is_managed_job=mock.DEFAULT,
         delete_job=mock.DEFAULT,
     )
     patches["get_jobs"].return_value = [
         {"fullname": "job1"},
         {"fullname": "job2"},
     ]
-    patches["is_managed"].side_effect = [True, True]
+    patches["is_managed_job"].side_effect = [True, True]
     patches["is_job"].side_effect = [True, True]
 
-    builder.delete_old_managed()
+    builder.delete_old_managed_jobs()
     assert patches["delete_job"].call_count == 2
+
+
+def test_delete_old_managed_views(mocker, jjb_config):
+    jjb_config.builder["plugins_info"] = None
+    builder = jenkins_jobs.builder.JenkinsManager(jjb_config)
+
+    patches = mocker.patch.multiple(
+        "jenkins_jobs.builder.JenkinsManager",
+        get_views=mock.DEFAULT,
+        is_view=mock.DEFAULT,
+        is_managed_view=mock.DEFAULT,
+        delete_view=mock.DEFAULT,
+    )
+    patches["get_views"].return_value = [
+        {"name": "view-1"},
+        {"name": "view-2"},
+    ]
+    patches["is_managed_view"].side_effect = [True, True]
+    patches["is_view"].side_effect = [True, True]
+
+    builder.delete_old_managed_views()
+    assert patches["delete_view"].call_count == 2
 
 
 @pytest.mark.parametrize("error_string", ["Connection refused", "Forbidden"])

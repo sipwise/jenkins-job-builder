@@ -183,7 +183,7 @@ class JenkinsManager(object):
             self._job_list = None
         return self.jobs
 
-    def is_managed(self, job_name):
+    def is_managed_job(self, job_name):
         xml = self.jenkins.get_job_config(job_name)
         try:
             out = XML.fromstring(xml.encode("utf-8"))
@@ -199,7 +199,7 @@ class JenkinsManager(object):
             self._plugins_list = self.get_plugins_info()
         return self._plugins_list
 
-    def delete_old_managed(self, keep=None):
+    def delete_old_managed_jobs(self, keep=None):
         jobs = self.get_jobs()
         deleted_jobs = 0
         if keep is None:
@@ -210,7 +210,7 @@ class JenkinsManager(object):
             if job["fullname"] not in keep and self.is_job(
                 job["fullname"], use_cache=False
             ):
-                if self.is_managed(job["fullname"]):
+                if self.is_managed_job(job["fullname"]):
                     logger.info(
                         "Removing obsolete jenkins job {0}".format(job["fullname"])
                     )
@@ -376,13 +376,41 @@ class JenkinsManager(object):
             self._view_list = None
         return self.views
 
-    def is_view(self, view_name):
-        # first use cache
-        if view_name in self.view_list:
+    def is_view(self, view_name, use_cache=True):
+        if use_cache and view_name in self.view_list:
             return True
 
         # if not exists, use jenkins
         return self.jenkins.view_exists(view_name)
+
+    def is_managed_view(self, view_name):
+        xml = self.jenkins.get_view_config(view_name)
+        try:
+            out = XML.fromstring(xml.encode("utf-8"))
+            description = out.find(".//description").text
+            return description.endswith(MAGIC_MANAGE_STRING)
+        except (TypeError, AttributeError):
+            pass
+        return False
+
+    def delete_old_managed_views(self, keep=None):
+        view_list = self.get_views()
+        deleted_views = 0
+        if keep is None:
+            keep = []
+        for view in view_list:
+            if view["name"] not in keep and self.is_view(view["name"], use_cache=False):
+                if self.is_managed_view(view["name"]):
+                    logger.info(
+                        "Removing obsolete jenkins view {0}".format(view["name"])
+                    )
+                    self.delete_view(view["name"])
+                    deleted_views += 1
+                else:
+                    logger.debug("Not deleting unmanaged jenkins view %s", view["name"])
+            else:
+                logger.debug("Keeping view %s", view["name"])
+        return deleted_views
 
     def delete_view(self, view_name):
         if self.is_view(view_name):

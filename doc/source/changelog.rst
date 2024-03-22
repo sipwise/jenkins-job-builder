@@ -4,6 +4,11 @@ Changelog
 Release 6.2.0
 -------------
 
+Features added
+~~~~~~~~~~~~~~
+
+* `--delete-old` flag for `update` cli command is now deletes obsolete views also, not only jobs.
+
 Bugs fixed
 ~~~~~~~~~~
 
