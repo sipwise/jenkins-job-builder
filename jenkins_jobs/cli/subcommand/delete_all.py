@@ -52,6 +52,12 @@ class DeleteAllSubCommand(base.BaseSubCommand):
             default=False,
             help="delete only views",
         )
+        delete_all.add_argument(
+            "-f",
+            "--force",
+            action="store_true",
+            help="Do not ask interactively for confirmation. Ba cautious!",
+        )
 
     def execute(self, options, jjb_config):
         builder = JenkinsManager(jjb_config)
@@ -68,7 +74,7 @@ class DeleteAllSubCommand(base.BaseSubCommand):
         else:
             reach.update(("jobs", "views"))
 
-        if not utils.confirm(
+        if not options.force and not utils.confirm(
             "Sure you want to delete *ALL* {} from Jenkins "
             "server?\n(including those not managed by Jenkins "
             "Job Builder)".format(" AND ".join(reach))
