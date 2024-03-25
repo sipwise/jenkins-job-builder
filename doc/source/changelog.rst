@@ -8,6 +8,7 @@ Features added
 ~~~~~~~~~~~~~~
 
 * `--delete-old` flag for `update` cli command is now deletes obsolete views also, not only jobs.
+* Add `--force` flag to `delete-all` cli command to allow it's usage in scripts.
 
 Bugs fixed
 ~~~~~~~~~~
