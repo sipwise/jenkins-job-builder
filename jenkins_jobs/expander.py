@@ -143,12 +143,13 @@ class Expander:
 
 # Expand only yaml objects.
 class YamlObjectsExpander(Expander):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, config=None):
+        super().__init__(config)
         self.expanders.update(
             {
                 str: dont_expand,
                 LocString: dont_expand,
+                IncludeRawVerbatim: dont_expand,
             }
         )
 

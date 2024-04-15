@@ -1,0 +1,6 @@
+# using !include in job-template
+- job-template: !include: include002.yaml.inc
+- project:
+    name: acc-cdi
+    jobs:
+      - test-gerrit
