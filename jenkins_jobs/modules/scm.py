@@ -942,6 +942,9 @@ def repo(registry, xml_parent, data):
     :arg bool reset-first: Remove any commits that are not on the repositories
         by running the following command before anything else (default false):
         ``repo forall -c "git reset --hard"``
+    :arg bool clean-first: Remove any files that are not tracked in the repositories
+        by running the following command before anything else (default false):
+        ``repo forall -c "git clean -fdx"``
     :arg bool quiet: Make repo more quiet
         (default true)
     :arg bool force-sync: Continue sync even if a project fails to sync
@@ -968,6 +971,7 @@ def repo(registry, xml_parent, data):
         ("depth", "depth", 0),
         ("current-branch", "currentBranch", True),
         ("reset-first", "resetFirst", False),
+        ("clean-first", "cleanFirst", False),
         ("quiet", "quiet", True),
         ("force-sync", "forceSync", False),
         ("no-tags", "noTags", False),

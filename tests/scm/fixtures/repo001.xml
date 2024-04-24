@@ -6,6 +6,7 @@
     <depth>0</depth>
     <currentBranch>false</currentBranch>
     <resetFirst>true</resetFirst>
+    <cleanFirst>true</cleanFirst>
     <quiet>false</quiet>
     <forceSync>true</forceSync>
     <noTags>true</noTags>

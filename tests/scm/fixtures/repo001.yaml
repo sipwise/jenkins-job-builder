@@ -13,6 +13,7 @@ scm:
       jobs: 3
       current-branch: false
       reset-first: true
+      clean-first: true
       quiet: false
       force-sync: true
       no-tags: true

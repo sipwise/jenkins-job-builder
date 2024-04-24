@@ -16,6 +16,7 @@
         <depth>2</depth>
         <currentBranch>false</currentBranch>
         <resetFirst>false</resetFirst>
+        <cleanFirst>false</cleanFirst>
         <quiet>false</quiet>
         <forceSync>false</forceSync>
         <noTags>false</noTags>
