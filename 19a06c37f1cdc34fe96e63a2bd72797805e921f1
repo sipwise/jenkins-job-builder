@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0b6203b3_f52b84e5",
+        "filename": "tests/loader/fixtures/include002.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 34567
+      },
+      "writtenOn": "2024-04-27T12:38:33Z",
+      "side": 1,
+      "message": "Why is this file included? It looks unused.",
+      "revId": "19a06c37f1cdc34fe96e63a2bd72797805e921f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543"
+    }
+  ]
+}
